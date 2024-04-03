@@ -3,7 +3,7 @@
 	name = "Blood Contract Target"
 	show_in_roundend = FALSE
 	show_in_antagpanel = FALSE
-	soft_antag = FALSE // BLUEMOON ADDITION
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/blood_contract/on_gain()
 	. = ..()

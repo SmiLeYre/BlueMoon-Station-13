@@ -46,7 +46,12 @@
 				integrating_blood = blood_integrated
 				if(blood_volume < BLOOD_VOLUME_MAXIMUM)
 					blood_volume += blood_diff
-			if(blood_volume < BLOOD_VOLUME_NORMAL)
+
+			// BLUEMOON ADD START - роботы не восстанавливают кровь привычными путями
+			if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+				blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume)
+			// BLUEMOON ADD END
+			else if(blood_volume < BLOOD_VOLUME_NORMAL * blood_ratio) // BLUEMOON EDIT - в начале добавлено else
 				var/nutrition_ratio = 0
 				if(!HAS_TRAIT(src, TRAIT_NOHUNGER))
 					switch(nutrition)
@@ -63,7 +68,7 @@
 					if(satiety > 80)
 						nutrition_ratio *= 1.25
 					adjust_nutrition(-nutrition_ratio * HUNGER_FACTOR)
-					blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * nutrition_ratio)
+					blood_volume = min(BLOOD_VOLUME_NORMAL * blood_ratio, blood_volume + 0.5 * nutrition_ratio * blood_ratio)
 				var/thirst_ratio = 0
 				if(!HAS_TRAIT(src, TRAIT_NOTHIRST))
 					switch(thirst)
@@ -78,7 +83,7 @@
 						else
 							thirst_ratio = 1
 					adjust_thirst(-thirst_ratio * THIRST_FACTOR)
-					blood_volume = min(BLOOD_VOLUME_NORMAL, blood_volume + 0.5 * thirst_ratio)
+					blood_volume = min(BLOOD_VOLUME_NORMAL * blood_ratio, blood_volume + 0.5 * thirst_ratio * blood_ratio)
 
 			//Effects of bloodloss
 			if(!HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))	//Synths are immune to direct consequences of bloodloss, instead suffering penalties to heat exchange.
@@ -108,13 +113,14 @@
 
 		var/temp_bleed = 0
 		//Bleeding out
-		for(var/X in bodyparts)
-			var/obj/item/bodypart/BP = X
-			temp_bleed += BP.get_bleed_rate()
-			BP.generic_bleedstacks = max(0, BP.generic_bleedstacks - 1)
+		if(blood_volume > 0) // BLUEMOON ADD - если в теле есть кровь, то она будет вытекать
+			for(var/X in bodyparts)
+				var/obj/item/bodypart/BP = X
+				temp_bleed += BP.get_bleed_rate()
+				BP.generic_bleedstacks = max(0, BP.generic_bleedstacks - 1)
 
-		if(temp_bleed)
-			bleed(temp_bleed)
+			if(temp_bleed )
+				bleed(temp_bleed)
 
 //Makes a blood drop, leaking amt units of blood from the mob
 /mob/living/carbon/proc/bleed(amt, force)
@@ -200,7 +206,7 @@
 /mob/living/carbon/get_blood_data()
 	var/blood_data = list()
 	//set the blood data
-	blood_data["donor"] = src
+	blood_data["donor"] = WEAKREF(src)
 	blood_data["viruses"] = list()
 
 	for(var/thing in diseases)

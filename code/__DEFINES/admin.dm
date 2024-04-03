@@ -109,3 +109,6 @@
 #define ADMINSAY_PING_UNDERLINE_NAME_INDEX "!underlined_names"
 
 #define DEFAULT_CENTCOM_NAME "Центральное Командование"
+
+/// Displays "(SHOW)" in the chat, when clicked it tries to show atom(paper). First you need to set the request_state variable to TRUE for the paper.
+#define ADMIN_SHOW_PAPER(atom) "(<A href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];show_paper=[REF(atom)]'>SHOW</a>)"

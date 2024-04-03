@@ -105,14 +105,19 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/neck/cloak/syndiecap
-	name = "syndicate officer's cloak"
+	name = "Syndicate Officer's Cloak"
 	desc = "A cloak that inspires fear among Nanotrasen employees, worn by the greatest Syndicate officer."
 	icon_state = "syndcapt"
-	item_state = "syndcapt"
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/neck/cloak/sencloak
+	name = "Senior Commander's Trenchcloak"
+	desc = "Dark trenchcloak made to order for senior officers. Consists of really strong leather and armored fabric. The inside of the collar has a label with ''V'' written on it."
+	icon_state = "sencloak"
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/neck/cloak/syndieadm
-	name = "syndicate admiral's cloak"
+	name = "Syndicate Admiral's Cloak"
 	desc = "A deep red cloak, worn by only the greatest of the Syndicate. If you are looking at this, you probably won't be looking at it for much longer."
 	icon_state = "syndadmiral"
 	item_state = "syndadmiral"

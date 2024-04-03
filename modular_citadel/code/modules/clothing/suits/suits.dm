@@ -13,6 +13,7 @@
 	item_state = "hostrench"
 	mutantrace_variation = STYLE_DIGITIGRADE
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON // BLUEMOON ADD - фикс отсутствия спрайта для персонажей с альтернативными ногами
 
 /obj/item/clothing/suit/hooded/cloak/david
 	name = "red cloak"

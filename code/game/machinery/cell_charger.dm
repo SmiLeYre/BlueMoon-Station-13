@@ -135,45 +135,6 @@
 
 	update_icon()
 
-/obj/item/stock_parts/cell
-	icon = 'icons/obj/power.dmi'
-	/// The charge overlay icon file for the cell charge lights
-	var/charging_icon = "cell_in"
-	var/connector_type = null
-
-/obj/item/stock_parts/cell/super
-	charging_icon = "scell_in"
-
-/obj/item/stock_parts/cell/hyper
-	charging_icon = "hpcell_in"
-
-/obj/item/stock_parts/cell/high
-	charging_icon = "hcell_in"
-
-/obj/item/stock_parts/cell/high/plus
-	charging_icon = "hpcell_in"
-
-/obj/item/stock_parts/cell/emproof
-	charging_icon = "hpcell_in"
-
-/obj/item/stock_parts/cell/bluespace
-	charging_icon = "bscell_in"
-
-/obj/item/stock_parts/cell/infinite
-	charging_icon = "icell_in"
-
-/obj/item/stock_parts/cell/potato
-	charging_icon = "potato_in"
-
-/obj/item/stock_parts/cell/high/slime
-	charging_icon = "slime_in"
-
-/obj/item/stock_parts/cell/high/slime
-	charging_icon = "slime_in"
-
-/obj/item/stock_parts/cell/lead
-	charging_icon = "lead_in"
-
 /obj/machinery/cell_charger/update_overlays()
 	. = ..()
 

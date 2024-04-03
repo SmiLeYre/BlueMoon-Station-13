@@ -3,7 +3,7 @@
 	name = "Stray Cargo Pod"
 	typepath = /datum/round_event/stray_cargo
 	weight = 50
-	max_occurrences = 15
+	max_occurrences = 7
 	earliest_start = 10 MINUTES
 	category = EVENT_CATEGORY_BUREAUCRATIC
 	description = "A pod containing a random supply crate lands on the station."
@@ -88,8 +88,8 @@
 /datum/round_event_control/stray_cargo/syndicate
 	name = "Stray Syndicate Cargo Pod"
 	typepath = /datum/round_event/stray_cargo/syndicate
-	weight = 75
-	max_occurrences = 5
+	weight = 25
+	max_occurrences = 3
 	earliest_start = 10 MINUTES
 
 /datum/round_event/stray_cargo/syndicate

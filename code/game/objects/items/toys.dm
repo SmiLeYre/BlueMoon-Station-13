@@ -789,29 +789,15 @@
 	. = ..()
 	populate_deck()
 
+///Generates all the cards within the deck.
 /obj/item/toy/cards/deck/proc/populate_deck()
 	icon_state = "deck_[deckstyle]_full"
-	for(var/i in 2 to 10)
-		cards += "[i] of Hearts"
-		cards += "[i] of Spades"
-		cards += "[i] of Clubs"
-		cards += "[i] of Diamonds"
-	cards += "King of Hearts"
-	cards += "King of Spades"
-	cards += "King of Clubs"
-	cards += "King of Diamonds"
-	cards += "Queen of Hearts"
-	cards += "Queen of Spades"
-	cards += "Queen of Clubs"
-	cards += "Queen of Diamonds"
-	cards += "Jack of Hearts"
-	cards += "Jack of Spades"
-	cards += "Jack of Clubs"
-	cards += "Jack of Diamonds"
-	cards += "Ace of Hearts"
-	cards += "Ace of Spades"
-	cards += "Ace of Clubs"
-	cards += "Ace of Diamonds"
+	for(var/suit in list("Hearts", "Spades", "Clubs", "Diamonds"))
+		cards += "Ace of [suit]"
+		for(var/i in 2 to 10)
+			cards += "[i] of [suit]"
+		for(var/person in list("Jack", "Queen", "King"))
+			cards += "[person] of [suit]"
 
 //ATTACK HAND NOT CALLING PARENT
 /obj/item/toy/cards/deck/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
@@ -1002,7 +988,7 @@
 
 /obj/item/toy/cards/singlecard
 	name = "card"
-	desc = "a card"
+	desc = "A card."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "singlecard_down_nanotrasen"
 	w_class = WEIGHT_CLASS_TINY
@@ -1612,7 +1598,7 @@
 	icon_state = "therapyred"
 
 /obj/effect/spawner/lootdrop/therapy/Initialize(mapload)
-	loot = typecacheof(/obj/item/toy/therapy)
+	loot = typecacheof(/obj/item/toy/plush/therapy)
 	. = ..()
 
 /obj/item/toy/prizeball/New()
@@ -1640,27 +1626,3 @@
 	name = "Therapy Doll Capsule"
 	desc = "Contains one squishy therapy doll."
 	possible_contents = list(/obj/effect/spawner/lootdrop/therapy)
-
-/obj/item/toy/therapy
-	name = "Therapy Doll"
-	desc = "A toy for therapeutic and recreational purposes."
-	icon = 'icons/obj/toy.dmi'
-	icon_state = "therapyred"
-	item_state = "egg4"
-	w_class = WEIGHT_CLASS_TINY
-	var/cooldown = 0
-	resistance_flags = FLAMMABLE
-
-/obj/item/toy/therapy/New()
-	..()
-	var/therapy_color = pick("green","blue","red", "orange", "purple", "yellow")
-	if(therapy_color)
-		desc += " This one is [therapy_color]."
-		icon_state = "therapy[therapy_color]"
-
-/obj/item/toy/therapy/attack_self(mob/user)
-	if(cooldown < world.time - 8)
-		to_chat(user, "<span class='notice'>Вы сжимаете анти-стресс игрушку - [src].</span>")
-		playsound(user, 'sound/items/squeaktoy.ogg', 20, 1)
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "plushpet", /datum/mood_event/plushpet)
-		cooldown = world.time

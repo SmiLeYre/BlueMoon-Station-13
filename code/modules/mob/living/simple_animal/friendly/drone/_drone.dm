@@ -39,6 +39,7 @@
 	speech_span = SPAN_ROBOT
 	bubble_icon = "machine"
 	initial_language_holder = /datum/language_holder
+	access_card = /obj/item/card/id
 	mob_size = MOB_SIZE_SMALL
 	silicon_privileges = PRIVILEGES_DRONE
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
@@ -87,7 +88,7 @@
 /mob/living/simple_animal/drone/Initialize(mapload)
 	. = ..()
 	GLOB.drones_list += src
-	access_card = new /obj/item/card/id(src)
+	access_card = new access_card (src)
 	var/datum/job/captain/C = new /datum/job/captain
 	access_card.access = C.get_access()
 

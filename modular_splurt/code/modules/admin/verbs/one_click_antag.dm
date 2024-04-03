@@ -33,7 +33,7 @@
 				leader_chosen = TRUE
 				new_character.mind.add_antag_datum(/datum/antagonist/slaver/leader)
 			else
-				new_character.mind.add_antag_datum(/datum/antagonist/slaver,slaver_team)
+				new_character.mind.add_antag_datum(/datum/antagonist/slaver, slaver_team)
 
 		GLOB.slavers_spawned = TRUE
 		return 1

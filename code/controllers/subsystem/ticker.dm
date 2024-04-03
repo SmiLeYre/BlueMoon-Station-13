@@ -134,7 +134,6 @@ SUBSYSTEM_DEF(ticker)
 	else
 		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
 
-
 	if(!GLOB.syndicate_code_phrase)
 		GLOB.syndicate_code_phrase	= generate_code_phrase(return_list=TRUE)
 
@@ -165,7 +164,7 @@ SUBSYSTEM_DEF(ticker)
 				start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)
 			for(var/client/C in GLOB.clients)
 				window_flash(C, ignorepref = TRUE) //let them know lobby has opened up.
-			to_chat(world, "<span class='boldnotice'>Welcome to [station_name()]!</span>")
+			to_chat(world, "<span class='boldnotice'>Добро пожаловать на [station_name()]!</span>")
 			send2chat(new /datum/tgs_message_content("Новый раунд начинается на [SSmapping.config.map_name], голосование за режим полным ходом!"), CONFIG_GET(string/chat_announce_new_game))
 			current_state = GAME_STATE_PREGAME
 			//SPLURT EDIT - Bring back old panel
@@ -282,7 +281,7 @@ SUBSYSTEM_DEF(ticker)
 		var/list/modes = new
 		for (var/datum/game_mode/M in runnable_modes)
 			modes += M.name
-		modes = sortList(modes)
+		modes = sort_list(modes)
 		to_chat(world, "<b>The gamemode is: secret!\nPossibilities:</B> [english_list(modes)]")
 	else
 		mode.announce()*/
@@ -308,6 +307,7 @@ SUBSYSTEM_DEF(ticker)
 
 	SEND_SIGNAL(src, COMSIG_TICKER_ROUND_STARTING)
 	real_round_start_time = world.timeofday
+	// SSautotransfer.new_shift(real_round_start_time) // BLUEMOON ADD
 
 	log_world("Game start took [(world.timeofday - init_start)/10]s")
 	round_start_time = world.time
@@ -567,7 +567,7 @@ SUBSYSTEM_DEF(ticker)
 	queue_delay = SSticker.queue_delay
 	queued_players = SSticker.queued_players
 	maprotatechecked = SSticker.maprotatechecked
-	round_start_time = SSticker.round_start_time
+	// round_start_time = SSticker.round_start_time
 
 	queue_delay = SSticker.queue_delay
 	queued_players = SSticker.queued_players
@@ -747,6 +747,14 @@ SUBSYSTEM_DEF(ticker)
 		'sound/roundend/gondolabridge.ogg',
 		'sound/roundend/haveabeautifultime.ogg',
 		'sound/roundend/CitadelStationHasSeenBetterDays.ogg',
+		'sound/roundend/not_working.ogg',
+		'sound/roundend/lovko_pridumal.ogg',
+		'sound/roundend/punk.ogg',
+		'sound/roundend/tupye.ogg',
+		'sound/roundend/get_up.ogg',
+		'sound/roundend/phonk_cats.ogg',
+		'sound/roundend/russian_fear.ogg',
+		'sound/roundend/gandon.ogg',
 		'sound/roundend/approachingbaystation.ogg'\
 		)
 

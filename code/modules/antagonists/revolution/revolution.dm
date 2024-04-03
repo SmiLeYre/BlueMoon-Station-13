@@ -17,7 +17,6 @@
 	show_in_antagpanel = TRUE
 	/// What message should the player receive when they are being demoted, and the revolution has won?
 	var/victory_message = "The revolution has overpowered the command staff! Viva la revolution! Execute any head of staff and security should you find them alive."
-	soft_antag = FALSE // BLUEMOON ADDITION
 	//var/rev_cooldown = 0
 	reminded_times_left = 1 // BLUEMOON ADD - 1 напоминания достаточно, чтобы не играли в мирномага
 	time_needed_to_remind = 5 MINUTES // BLUEMOON ADD
@@ -51,6 +50,7 @@
 
 /datum/antagonist/rev/on_removal()
 	remove_objectives()
+	owner.special_role = null // BLUEMOON ADD
 	. = ..()
 
 /datum/antagonist/rev/greet()
@@ -429,6 +429,7 @@
 			if (target_body.stat == DEAD)
 				target_body.makeUncloneable()
 			else
+				mind.add_antag_datum(/datum/antagonist/rev)
 				mind.announce_objectives()
 
 		for (var/job_name in GLOB.command_positions + GLOB.security_positions)
@@ -442,8 +443,8 @@
 			dynamic.threat_log += "[worldtime2text()]: Revolution victory. Added [revs_win_injection_amount] threat."
 
 		priority_announce("В результате недавней оценки состояния вашей станции она была отмечена как зона повышенного риска для высокопоставленных представителей NanoTrasen  \
-		В целях безопасности мы заблокировали прибытие на станцию новых сотрудников службы безопасности и командования. \
-		[pick(world.file2list("strings/anti_union_propaganda.txt"))]", null, 'sound/announcer/classic/attention.ogg', null, "Отдел ЦК по мониторингу лояльности")
+		В целях безопасности мы заблокировали прибытие на станцию новых сотрудников службы безопасности и командования", null, 'sound/announcer/classic/attention.ogg', \
+		null, "Отдел ЦК по мониторингу лояльности")
 
 /// Mutates the ticker to report that the revs have won
 /datum/team/revolution/proc/round_result(finished)

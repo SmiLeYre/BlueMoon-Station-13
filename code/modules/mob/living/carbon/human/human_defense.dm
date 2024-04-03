@@ -68,12 +68,16 @@
 
 /mob/living/carbon/human/proc/check_martial_melee_block()
 	if(mind)
-		if(mind.martial_art && prob(mind.martial_art.block_chance) && mind.martial_art.can_use(src) && in_throw_mode && !incapacitated(FALSE, TRUE))
+		if(mind.martial_art && prob(mind.martial_art.block_chance) && mind.martial_art.can_use(src) && throw_mode && !incapacitated(FALSE, TRUE))
 			return TRUE
 	return FALSE
 
 /mob/living/carbon/human/hitby(atom/movable/AM, skipcatch = FALSE, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
-	return dna?.species?.spec_hitby(AM, src) || ..()
+	if(dna?.species)
+		var/spec_return = dna.species.spec_hitby(AM, src)
+		if(spec_return)
+			return spec_return
+	return ..()
 
 /mob/living/carbon/human/grabbedby(mob/living/carbon/user, supress_message = 0)
 	if(user == src && pulling && !pulling.anchored && grab_state >= GRAB_AGGRESSIVE && (HAS_TRAIT(src, TRAIT_FAT)) && ismonkey(pulling))
@@ -380,7 +384,12 @@
 	for(var/obj/item/bodypart/L in src.bodyparts)
 		if(L.is_robotic_limb())
 			if(!informed)
-				to_chat(src, "<span class='userdanger'>Вы ощущаете острую боль от перегрузки вашей роботизированной конечности.</span>")
+				// BLUEMOON ADD START
+				if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+					to_chat(src, "<span class='userdanger'>Alert: перегрузка конечностей.</span>")
+				else
+				// BLUEMOON ADD END
+					to_chat(src, "<span class='userdanger'>Вы ощущаете острую боль от перегрузки вашей роботизированной конечности.</span>")
 				informed = TRUE
 			L.receive_damage(0,severity/10)
 			if(!do_not_stun)	//Tiny bit better than checking for the trait another six times in succession
@@ -505,7 +514,8 @@
 		if(affecting.name == BODY_ZONE_HEAD)
 			if(prob(min(acidpwr*acid_volume/10, 90))) //Applies disfigurement
 				affecting.receive_damage(acidity, 2*acidity)
-				emote("scream")
+				if(!HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					emote("scream")
 				facial_hair_style = "Shaved"
 				hair_style = "Bald"
 				update_hair()
@@ -551,8 +561,8 @@
 					remove_status_effect(STATUS_EFFECT_CHOKINGSTRAND)
 				return
 			var/to_send = "<div class='info'>"
-			visible_message("[src] осматривает себя.", "")
-			to_send += "<span class='notice'>Вы осматриваете себя на предмет повреждений.</span>\n"
+			visible_message("<span class='notice'>[src] осматривает себя.</span>","")
+			to_send += "<span class='notice'><center><b>Вы осматриваете себя</b></span></center><hr>"
 
 			var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 			for(var/X in bodyparts)
@@ -594,6 +604,8 @@
 
 					if(status == "")
 						status = "в норме"
+						if(LB.wounds)
+							status = "имеет увечье"
 				var/no_damage
 				if(status == "в норме" || status == "не повреждена")
 					no_damage = TRUE
@@ -604,20 +616,20 @@
 					var/msg
 					switch(W.severity)
 						if(WOUND_SEVERITY_TRIVIAL)
-							msg = "<span class='danger'>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)].</span>"
+							msg = "<span class='danger'>Она страдает от [lowertext(W.ru_name_r)].</span>\n"
 						if(WOUND_SEVERITY_MODERATE)
-							msg = "<span class='warning'>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!</span>"
+							msg = "<span class='warning'>Она страдает от [lowertext(W.ru_name_r)]!</span>\n"
 						if(WOUND_SEVERITY_SEVERE)
-							msg = "<span class='warning'><b>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!</b></span>"
+							msg = "<span class='warning'><b>Она страдает от [lowertext(W.ru_name_r)]!</b></span>\n"
 						if(WOUND_SEVERITY_CRITICAL)
-							msg = "\t <span class='warning'><b>Ваша [LB.ru_name] страдает от [lowertext(W.ru_name_r)]!!</b></span>"
-					to_send += "\n[msg]"
+							msg = "<span class='warning'><b>Она страдает от [lowertext(W.ru_name_r)]!!</b></span>\n"
+					to_send += "   [msg]"
 
 				for(var/obj/item/I in LB.embedded_objects)
 					if(I.isEmbedHarmless())
-						to_send += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>В вашей [LB.ru_name_v] прорезался \a [I]!</a>"
+						to_send += "\n\t<a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>В вашей [LB.ru_name_v] прорезался \a [I]!</a>"
 					else
-						to_send += "\n\t <a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>В вашей [LB.ru_name_v] застрял \a [I]!</a>"
+						to_send += "\n\t<a href='?src=[REF(src)];embedded_object=[REF(I)];embedded_limb=[REF(LB)]' class='warning'>В вашей [LB.ru_name_v] застрял \a [I]!</a>"
 
 			for(var/t in missing)
 				to_send += "<span class='boldannounce'>Ваша [ru_parse_zone(t)] отсутствует!</span>\n"
@@ -640,7 +652,7 @@
 							bleed_text += " [BP.ru_name_v],"
 						bleed_text += " и [bleeding_limbs[num_bleeds].ru_name_v]"
 				bleed_text += "!</span>"
-				to_send += "\n[bleed_text]"
+				to_send += "\n[bleed_text]\n"
 			if(getStaminaLoss())
 				if(getStaminaLoss() > 30)
 					to_send += "<span class='info'>Вы полностью измотаны.</span>\n"

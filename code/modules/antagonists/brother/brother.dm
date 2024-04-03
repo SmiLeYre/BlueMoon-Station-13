@@ -6,7 +6,6 @@
 	var/datum/team/brother_team/team
 	antag_moodlet = /datum/mood_event/focused
 	threat = 3
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/brother/create_team(datum/team/brother_team/new_team)
 	if(!new_team)

@@ -89,7 +89,8 @@
 	if(owner.stat < UNCONSCIOUS && !silent)
 		switch(disabled)
 			if(BODYPART_DISABLED_DAMAGE)
-				owner.emote("scream")
+				if(!HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					owner.emote("scream")
 				to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
 			if(BODYPART_DISABLED_PARALYSIS)
 				to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
@@ -154,7 +155,8 @@
 	if(owner.stat < UNCONSCIOUS && !silent)
 		switch(disabled)
 			if(BODYPART_DISABLED_DAMAGE)
-				owner.emote("scream")
+				if(!HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					owner.emote("scream")
 				to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
 			if(BODYPART_DISABLED_PARALYSIS)
 				to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
@@ -218,7 +220,8 @@
 	if(!silent)
 		switch(disabled)
 			if(BODYPART_DISABLED_DAMAGE)
-				owner.emote("scream")
+				if(!HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					owner.emote("scream")
 				to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
 			if(BODYPART_DISABLED_PARALYSIS)
 				to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
@@ -279,7 +282,8 @@
 	if(!silent)
 		switch(disabled)
 			if(BODYPART_DISABLED_DAMAGE)
-				owner.emote("scream")
+				if(!HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					owner.emote("scream")
 				to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
 			if(BODYPART_DISABLED_PARALYSIS)
 				to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")

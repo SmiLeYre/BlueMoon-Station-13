@@ -43,7 +43,7 @@ GLOBAL_LIST_EMPTY(antagonists_to_remind) // BLUEMOON ADD - список анта
 	/// The typepath for the outfit to show in the preview for the preferences menu.
 	var/preview_outfit
 	/// If set to true, the antag will not be added to the living antag list.
-	var/soft_antag = TRUE // BLUEMOON CHANGE - пока багует, что изредка падают обычные антаги, всем нормальным антагам ставим FALSE.
+	var/soft_antag = FALSE
 
 	//Antag panel properties
 	///This will hide adding this antag type in antag panel, use only for internal subtypes that shouldn't be added directly but still show if possessed by mind
@@ -86,6 +86,7 @@ GLOBAL_LIST_EMPTY(antagonists_to_remind) // BLUEMOON ADD - список анта
 /datum/antagonist/New()
 	GLOB.antagonists += src
 	typecache_datum_blacklist = typecacheof(typecache_datum_blacklist)
+	time_of_last_antag_remind = world.time // BLUEMOON ADD
 
 /datum/antagonist/Destroy()
 	GLOB.antagonists -= src
@@ -500,9 +501,11 @@ GLOBAL_LIST_EMPTY(antagonists_to_remind) // BLUEMOON ADD - список анта
 
 //This one is created by admin tools for custom objectives
 /datum/antagonist/custom
+	name = "Custom Antagonist" // BLUEMOON ADD
 	antagpanel_category = "Custom"
 	show_name_in_check_antagonists = TRUE //They're all different
 	var/datum/team/custom_team
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/custom/create_team(datum/team/team)
 	custom_team = team

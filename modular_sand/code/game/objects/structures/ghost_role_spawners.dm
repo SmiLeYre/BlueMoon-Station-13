@@ -20,7 +20,7 @@
 	death = FALSE
 	assignedrole = "Cafe Robot"
 	short_desc = "Вы Киборг из Призрачного Кафе!"
-	flavour_text = "Who could have thought? This awesome local cafe accepts cyborgs too!"
+	flavour_text = "Вы совершенно уверены в одном. Вы не живое существо. Вы в симуляции? Заходя за данную роль вы соглашаетесь с тем, что на территории Гост-Кафе полностью отсутствуют какие-либо правила Ролевой Игры. Тем не менее, базовые серверные правила не отменяются. Вы должны вести себя адекватно так, чтобы не мешать другим игрокам и не портить саму локацию. Если в чём-то не уверены или нужна помощь - всегда можете попросить помощи Администратора. Несоблюдение базовых норм поведения повлекут за собой наказание."
 	skip_reentry_check = TRUE
 	banType = ROLE_GHOSTCAFE
 	mob_type = /mob/living/silicon/robot/modules/roleplay
@@ -32,7 +32,7 @@
 		var/area/A = get_area(src)
 		new_spawn.AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE)
 		new_spawn.AddElement(/datum/element/dusts_on_catatonia)
-		new_spawn.AddElement(/datum/element/dusts_on_leaving_area, list(A.type, /area/hilbertshotel))
+		new_spawn.AddElement(/datum/element/dusts_on_leaving_area,list(A.type, /area/centcom/holding/exterior,  /area/hilbertshotel)) // BLUEMOON EDIT - добавлена внешняя зона ГК
 		ADD_TRAIT(new_spawn, TRAIT_SIXTHSENSE, GHOSTROLE_TRAIT)
 		ADD_TRAIT(new_spawn, TRAIT_EXEMPT_HEALTH_EVENTS, GHOSTROLE_TRAIT)
 		ADD_TRAIT(new_spawn, TRAIT_NO_MIDROUND_ANTAG, GHOSTROLE_TRAIT) //The mob can't be made into a random antag, they are still eligible for ghost roles popups.

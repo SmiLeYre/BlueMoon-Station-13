@@ -18,9 +18,9 @@
 		to_chat(usr, "<span class='notice'>You frown because now there's nothing you can show.</span>")
 	else if(!HAS_TRAIT(I, ABSTRACT_ITEM_TRAIT))
 		I.showoff(src)
-		create_point_bubble(I)
+		point_bubble(I)
 
-/atom/movable/proc/create_point_bubble(atom/pointed_atom)
+/atom/movable/proc/point_bubble(atom/pointed_atom)
 	var/mutable_appearance/thought_bubble = mutable_appearance(
 		'modular_bluemoon/icons/effects/effects.dmi',
 		"thought_bubble",

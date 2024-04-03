@@ -7,7 +7,6 @@
 /datum/gear/backpack/condom_box
 	name = "Box of Condoms"
 	path = /obj/item/storage/box/bulk_condoms
-	cost = 2
 
 /datum/gear/backpack/sounding
 	name = "Sounding rod"
@@ -104,6 +103,22 @@
 /datum/gear/backpack/towel
 	name = "Towel"
 	path = /obj/item/reagent_containers/rag/towel
+	cost = 2
+
+/datum/gear/backpack/towel_red
+	name = "Red Towel"
+	path = /obj/item/reagent_containers/rag/towel/syndicate
+	cost = 4
+
+/datum/gear/backpack/hugbox
+	name = "Box of Hugs"
+	path = /obj/item/storage/box/hug
+
+/datum/gear/backpack/shockcollar
+	name = "Shock Collar Kit"
+	path = /obj/item/storage/box/shockcollar
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS
+	cost = 3
 
 /datum/gear/backpack/standard_chastity_box
 	name = "Chastity Box"
@@ -120,3 +135,30 @@
 /datum/gear/backpack/estim_chastity_box
 	name = "E-Stim Chastity Box"
 	path = /obj/item/storage/box/chastity_cage/estim
+
+/datum/gear/backpack/chastity_hypno/magazine
+	name = "Hypnotic Chastity Magazine"
+	path = /obj/item/chastity_hypno/magazine
+
+/datum/gear/backpack/chastity_hypno/watch
+	name = "Hypnotic Chastity Watch"
+	path = /obj/item/chastity_hypno/watch
+
+//MODIFIED COSTS - MODULAR SPLURT
+/datum/gear/backpack/tennis/tri
+	cost = 1
+
+/datum/gear/backpack/tennis/tri/squeak
+	cost = 1
+
+/datum/gear/backpack/bone/squeak
+	cost = 1
+
+/datum/gear/backpack/toykatana
+	cost = 1
+
+/datum/gear/backpack/modular_tablet
+	cost = 3
+
+/datum/gear/backpack/modular_laptop
+	cost = 3

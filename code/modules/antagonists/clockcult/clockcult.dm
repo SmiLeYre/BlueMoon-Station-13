@@ -9,7 +9,6 @@
 	ui_name = "AntagInfoClockwork"
 	var/datum/action/innate/hierophant/hierophant_network = new
 	threat = 3
-	soft_antag = FALSE // BLUEMOON ADDITION
 	var/datum/team/clockcult/clock_team
 	var/make_team = TRUE //This should be only false for tutorial scarabs
 	var/neutered = FALSE			//can not use round ending, gibbing, converting, or similar things with unmatched round impact

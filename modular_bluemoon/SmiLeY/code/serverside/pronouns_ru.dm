@@ -11,6 +11,11 @@
 	if(capitalized)
 		. = capitalize(.)
 
+/datum/proc/ru_nego(capitalized, temp_gender)
+	. = "него"
+	if(capitalized)
+		. = capitalize(.)
+
 /datum/proc/ru_do(temp_gender)
 	. = "делает"
 
@@ -145,6 +150,18 @@
 			. = "её"
 		if(MALE)
 			. = "его"
+	if(capitalized)
+		. = capitalize(.)
+
+/atom/ru_nego(capitalized, temp_gender)
+	if(!temp_gender)
+		temp_gender = gender
+	. = "него"
+	switch(temp_gender)
+		if(FEMALE)
+			. = "неё"
+		if(MALE)
+			. = "него"
 	if(capitalized)
 		. = capitalize(.)
 

@@ -292,10 +292,6 @@
 /obj/structure/light_construct,
 /turf/open/floor/mineral/titanium/white,
 /area/ruin/space/has_grav/whiteship/box)
-"ZI" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/wall/mineral/titanium,
-/area/ruin/space/has_grav/whiteship/box)
 
 (1,1,1) = {"
 Xp
@@ -948,7 +944,6 @@ Os
 Os
 Os
 Tc
-ZI
 ei
 ei
 ej

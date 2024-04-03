@@ -25,13 +25,13 @@
 	antag_flag = ROLE_BLOODSUCKER
 	false_report_weight = 1
 	chaos = 4
-	restricted_jobs = list("Prisoner", "AI","Cyborg")
-	protected_jobs = list("Chaplain", "Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director", "Quartermaster", "Blueshield", "Brig Physician", "Peacekeeper", "NanoTrasen Representative", "Lawyer")
+	protected_jobs = list("Prisoner", "Shaft Miner",  "NanoTrasen Representative", "Internal Affairs Agent", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security","Bridge Officer", "Captain") // BLUEMOON EDIT
+	restricted_jobs = list("AI", "Cyborg", "Positronic Brain") // BLUEMOON EDIT
 	required_players = 2
 	required_enemies = 2
 	recommended_enemies = 4
 	reroll_friendly = FALSE
-	enemy_minimum_age = 7
+	enemy_minimum_age = 0 // BLUEMOON EDIT - было 7, сделал 0, т.к. на сервере ВЛ и загриферить ролью тяжело
 	round_ends_with_antag_death = FALSE
 
 

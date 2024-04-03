@@ -66,7 +66,7 @@
 		if(istype(NP))
 			NP.close_spawn_windows()
 			NP.stop_sound_channel(CHANNEL_LOBBYMUSIC)
-	log_game("[key_name(user)] became [mob_name]")
+	log_game("[key_name(user)] становится [mob_name]!")
 	create(ckey = user.ckey)
 	return TRUE
 
@@ -164,6 +164,7 @@
 // Base version - place these on maps/templates.
 /obj/effect/mob_spawn/human
 	mob_type = /mob/living/carbon/human
+	icon_state = "corpsegreytider"
 	//Human specific stuff.
 	var/mob_species = null		//Set to make them a mutant race such as lizard or skeleton. Uses the datum typepath instead of the ID.
 	var/datum/outfit/outfit = /datum/outfit	//If this is a path, it will be instanced in Initialize()
@@ -205,6 +206,10 @@
 	var/datum/team/ghost_role/ghost_team
 
 	var/give_cooler_to_mob_if_synth = FALSE // BLUEMOON ADD - если персонаж - синтетик, то ему выдаётся заряженный космический охладитель. Для специальных ролей
+
+	/// set this to make the spawner use the outfit.name instead of its name var for things like cryo announcements and ghost records
+	/// modifying the actual name during the game will cause issues with the GLOB.mob_spawners associative list
+	var/use_outfit_name
 
 /obj/effect/mob_spawn/human/Initialize(mapload)
 	if(ispath(outfit))
@@ -288,6 +293,7 @@
 			W.assignment = id_job
 		W.registered_name = H.real_name
 		W.update_label()
+
 	if (canloadappearance)
 		H.canloadappearance = TRUE
 	else
@@ -313,16 +319,26 @@
 
 //Non-human spawners
 
-/obj/effect/mob_spawn/AICorpse/create(ckey, name) //Creates a corrupted AI
-	var/A = locate(/mob/living/silicon/ai) in loc
-	if(A)
+/obj/effect/mob_spawn/AICorpse //Creates a corrupted AI
+	mob_type = /mob/living/silicon/ai/spawned
+
+/obj/effect/mob_spawn/AICorpse/create(ckey, name)
+	var/ai_already_present = locate(/mob/living/silicon/ai) in loc
+	if(ai_already_present)
+		qdel(src)
 		return
-	var/mob/living/silicon/ai/spawned/M = new(loc) //spawn new AI at landmark as var M
-	M.name = src.name
-	M.real_name = src.name
-	M.aiPDA.toff = TRUE //turns the AI's PDA messenger off, stopping it showing up on player PDAs
-	M.death() //call the AI's death proc
-	qdel(src)
+	. = ..()
+
+// TODO: Port the upstream tgstation rewrite of this.
+/obj/effect/mob_spawn/AICorpse/equip(mob/living/silicon/ai/ai)
+	. = ..()
+	if(!isAI(ai)) // This should never happen.
+		stack_trace("[type] spawned a mob of type [ai?.type || "NULL"] that was not an AI!")
+		return
+	ai.name = name
+	ai.real_name = name
+	ai.aiPDA.toff = TRUE //turns the AI's PDA messenger off, stopping it showing up on player PDAs
+	ai.death() //call the AI's death proc
 
 /obj/effect/mob_spawn/slime
 	mob_type = 	/mob/living/simple_animal/slime
@@ -602,6 +618,31 @@
 	short_desc = "By unknown powers, your skeletal remains have been reanimated!"
 	flavour_text = "Walk this mortal plain and terrorize all living adventurers who dare cross your path."
 	assignedrole = "Skeleton"
+
+/obj/effect/mob_spawn/human/skeleton/alive/Initialize(mapload)
+	. = ..()
+	var/arrpee = rand(1,2)
+	switch(arrpee)
+		if(1)
+			flavour_text += " You're a miner from a long since lost mining expiditon. You had been assigned to this cursed rock to preform work for a individual mining company to preform a survery of its potential gain. \
+			However, the last thing you remember is fighting for your life when you were ambushed by the local fuana with a friend of yours before it all went dark."
+			outfit.uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
+			outfit.suit = /obj/item/clothing/suit/space/hardsuit/mining
+			outfit.shoes = /obj/item/clothing/shoes/workboots/mining
+			outfit.gloves = /obj/item/clothing/gloves/fingerless
+			outfit.back = /obj/item/storage/backpack
+			outfit.mask = /obj/item/clothing/mask/gas/explorer
+			r_pocket = /obj/item/kitchen/knife/combat
+		if(2)
+			flavour_text += " You were a pirate ship captain on the hunt for a foretold treasure, from stories of cultists to a legendary pirate hiding their treasure in this hellscape! \
+			However, it sadly seems you weren't destined to collect it for when you landed here with your crew, slashing and blasting your way through the hoards of beast lurking below this abandoned facility. \
+			You had been betrayed by your own second in hand, that blasted devil tried to claim the treasure for their own, but jokes on them, they wouldn't get too far."
+			outfit.uniform = /obj/item/clothing/under/costume/pirate
+			outfit.suit = /obj/item/clothing/suit/pirate/captain
+			outfit.back = /obj/item/storage/backpack/satchel
+			outfit.shoes = /obj/item/clothing/shoes/jackboots
+			outfit.head = /obj/item/clothing/head/pirate/captain
+			r_pocket = /obj/item/melee/transforming/energy/sword/pirate
 
 /obj/effect/mob_spawn/human/zombie
 	name = "rotting corpse"

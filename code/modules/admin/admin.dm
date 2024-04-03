@@ -232,7 +232,6 @@
 //ambition end
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Player Panel") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
-
 /datum/admins/proc/access_news_network() //MARKER
 	set category = "Admin.Events"
 	set name = "Access Newscaster Network"
@@ -439,7 +438,6 @@
 
 	usr << browse(dat, "window=admincaster_main;size=400x600")
 	onclose(usr, "admincaster_main")
-
 
 /datum/admins/proc/Game()
 	if(!check_rights(0))
@@ -932,27 +930,20 @@
 	browser.open()
 
 /datum/admins/proc/dynamic_mode_options(mob/user)
-	var/dat = {"
+	var/dat = {"<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
 		<center><B><h2>Dynamic Mode Options</h2></B></center><hr>
 		<br/>
 		<h3>Common options</h3>
 		<i>All these options can be changed midround.</i> <br/>
 		<br/>
-		<b>Force extended:</b> - Option is <a href='?src=[REF(src)];[HrefToken()];f_dynamic_force_extended=1'> <b>[GLOB.dynamic_forced_extended ? "ON" : "OFF"]</a></b>.
-		<br/>This will force the round to be extended. No rulesets will be drafted. <br/>
-		<br/>
 		<b>No stacking:</b> - Option is <a href='?src=[REF(src)];[HrefToken()];f_dynamic_no_stacking=1'> <b>[GLOB.dynamic_no_stacking ? "ON" : "OFF"]</b></a>.
 		<br/>Unless the threat goes above [GLOB.dynamic_stacking_limit], only one "round-ender" ruleset will be drafted. <br/>
 		<br/>
-		<b>Extended dynamic:</b> - Option is <a href='?src=[REF(src)];[HrefToken()];f_extended_dynamic=1'> <b>[GLOB.dynamic_extended ? "ON" : "OFF"]</b></a>.
-		<br/>BLUEMOON ADDITION - Light dynamic, which forbids spawn of team antags. <br/>
-		<br/>
-		<b>Team based:</b> - Option is <a href='?src=[REF(src)];[HrefToken()];f_teambased_dynamic=1'> <b>[GLOB.teambased_dynamic ? "ON" : "OFF"]</b></a>.
-		<br/>BLUEMOON ADDITION - Dynamic will only roll team antags (as well as most of ghost antags). <br/>
+		<b>Round Type:</b> - Current one is <a href='?src=[REF(src)];[HrefToken()];f_round_type=1'> <b>[GLOB.round_type]</b></a>.
+		<br/>BLUEMOON ADD - Выбор режима. Влияет на возможность появления антагонистов (некоторые не повляются в [ROUNDTYPE_DYNAMIC_LIGHT], например). Уровень угрозы выставится сам в случае, если не будет выставлен принудительный в настройке ниже.<br/>
 		<br/>
 		<b>Forced threat level:</b> Current value : <a href='?src=[REF(src)];[HrefToken()];f_dynamic_forced_threat=1'><b>[GLOB.dynamic_forced_threat_level]</b></a>.
 		<br/>The value threat is set to if it is higher than -1.<br/>
-		<br/>
 		<br/>
 		<b>Stacking threeshold:</b> Current value : <a href='?src=[REF(src)];[HrefToken()];f_dynamic_stacking_limit=1'><b>[GLOB.dynamic_stacking_limit]</b></a>.
 		<br/>The threshold at which "round-ender" rulesets will stack. A value higher than 100 ensure this never happens. <br/>

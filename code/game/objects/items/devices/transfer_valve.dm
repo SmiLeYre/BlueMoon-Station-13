@@ -6,7 +6,7 @@
 	lefthand_file = 'icons/mob/inhands/weapons/bombs_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/bombs_righthand.dmi'
 	desc = "Regulates the transfer of air between two tanks."
-	w_class = WEIGHT_CLASS_BULKY
+	w_class = WEIGHT_CLASS_NORMAL
 	var/obj/item/tank/tank_one
 	var/obj/item/tank/tank_two
 	var/obj/item/assembly/attached_device
@@ -36,7 +36,16 @@
 		update_appearance()
 		return
 
+/obj/item/grenade/attack_hand(mob/user)
+	if(HAS_TRAIT(user, TRAIT_PACIFISM))
+		to_chat(user, span_notice("Я не хочу держать [src]... вдруг это приведёт к катастрофическим последствиям?"))
+		return
+	. = ..()
+
 /obj/item/transfer_valve/attackby(obj/item/item, mob/user, params)
+	if(HAS_TRAIT(user, TRAIT_PACIFISM))
+		to_chat(user, span_notice("Я боюсь использовать [src]... вдруг это приведёт к катастрофическим последствиям?"))
+		return
 	if(istype(item, /obj/item/tank))
 		if(tank_one && tank_two)
 			to_chat(user, "<span class='warning'>There are already two tanks attached, remove one first!</span>")
@@ -95,6 +104,12 @@
 	. = ..()
 	if(attached_device)
 		attached_device.Crossed(AM)
+
+/obj/item/transfer_valve/attack_hand(mob/user)
+	if(HAS_TRAIT(user, TRAIT_PACIFISM))
+		to_chat(user, span_notice("Я не хочу держать [src]... вдруг это приведёт к катастрофическим последствиям?"))
+		return
+	. = ..()
 
 /obj/item/transfer_valve/on_attack_hand(mob/living/user)//Triggers mousetraps
 	. = ..()

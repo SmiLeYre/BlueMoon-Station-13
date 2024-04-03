@@ -58,7 +58,7 @@
 		if(!initial(potential_sign.is_editable))
 			continue
 		output[initial(potential_sign.sign_change_name)] = potential_sign
-	output = sortList(output) //Alphabetizes the results.
+	output = sort_list(output) //Alphabetizes the results.
 	return output
 
 /obj/item/sign/proc/set_sign_type(obj/structure/sign/fake_type)
@@ -212,3 +212,8 @@
 	name = "nanotrasen logo"
 	desc = "The Nanotrasen corporate logo."
 	icon_state = "nanotrasen_sign1"
+
+/obj/structure/sign/xenobio_guide
+	name = "\improper Slime Genealogy Sign"
+	desc = "A sign depicting how the slime colors change with mutations, and the grey slime in the root."
+	icon_state = "xenobio-guide"

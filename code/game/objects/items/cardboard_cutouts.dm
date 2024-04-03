@@ -19,7 +19,7 @@
 	. = ..()
 	if(possible_appearances)
 		return
-	possible_appearances = sortList(list(
+	possible_appearances = sort_list(list(
 		"Assistant" = image(icon = src.icon, icon_state = "cutout_greytide"),
 		"Clown" = image(icon = src.icon, icon_state = "cutout_clown"),
 		"Mime" = image(icon = src.icon, icon_state = "cutout_mime"),
@@ -137,7 +137,7 @@
 			desc = "...(A cardboard cutout of a mime.)"
 			icon_state = "cutout_mime"
 		if("Traitor")
-			name = "[pick("Unknown", "Captain")]"
+			name = "[pick("Unknown","Bridge Officer", "Captain")]"
 			desc = "A cardboard cutout of a traitor."
 			icon_state = "cutout_traitor"
 		if("Nuke Op")

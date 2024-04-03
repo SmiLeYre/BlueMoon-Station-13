@@ -13,3 +13,5 @@
 #define PLANE_GROUP_MAIN "main"
 /// A secondary group, used when a client views a generic window
 #define PLANE_GROUP_POPUP_WINDOW(screen) "popup-[REF(screen)]"
+/// The filter name for the hover outline
+#define HOVER_OUTLINE_FILTER "hover_outline"

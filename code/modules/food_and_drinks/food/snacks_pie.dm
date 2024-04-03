@@ -82,7 +82,8 @@
 				A.forceMove(T)
 				A.throw_at(T, 1, 1)
 				M.visible_message("[src] bursts out of [M]!</span>")
-			M.emote("scream")
+			if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				M.emote("scream")
 			M.DefaultCombatKnockdown(40)
 			M.adjustBruteLoss(60)
 	return ..()

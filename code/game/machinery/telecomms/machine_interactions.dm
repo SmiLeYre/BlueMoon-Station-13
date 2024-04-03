@@ -152,6 +152,7 @@
 
 				temp = "-% Buffer successfully flushed. %-"
 				P.buffer = null
+				P.update_icon()
 
 			if("Add" in params)
 				if(!canAccess(usr))
@@ -161,6 +162,7 @@
 					return
 
 				P.buffer = src
+				P.update_icon()
 				temp = "% Successfully stored [REF(P.buffer)] [P.buffer] in buffer %-"
 
 		if("unlink")

@@ -162,7 +162,7 @@
 		if(W.use_tool(src, user, 30, 1))
 			obj_integrity = max_integrity
 			stat &= ~BROKEN
-			to_chat(user, "<span class='notice'>You repair \the [src].</span>")
+			to_chat(user, "<span class='notice'>Вы починили [src].</span>")
 			update_icon()
 
 	else if(W.tool_behaviour == TOOL_WRENCH)

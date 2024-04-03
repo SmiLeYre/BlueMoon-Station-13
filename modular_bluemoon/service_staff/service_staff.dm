@@ -32,6 +32,8 @@
 		"Fitness Coach",
 		"Guide",
 		"Masseur",
+		"Fortuneteller", // add nta_of
+		"Palmist", // add nta_of
 		"Musician",
 		"Scene Performer",
 		"Stylist",

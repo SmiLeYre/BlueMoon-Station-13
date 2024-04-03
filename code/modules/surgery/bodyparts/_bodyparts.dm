@@ -109,6 +109,19 @@
 	// see code\modules\surgery\limb_augmentation.dm, or code\game\machinery\limbgrower.dm
 	var/forcereplace = FALSE
 
+/obj/item/bodypart/New()
+	. = ..()
+	// BLUEMOON ADD START
+	if(is_robotic_limb())
+		light_brute_msg = "искрится"
+		medium_brute_msg = "покрыта множеством вмятин"
+		heavy_brute_msg = "отваливается"
+
+		light_burn_msg = "покрыта сажей"
+		medium_burn_msg = "обуглена"
+		heavy_burn_msg = "расплавлена"
+	// BLUEMOON ADD END
+
 /obj/item/bodypart/examine(mob/user)
 	. = ..()
 	if(brute_dam > DAMAGE_PRECISION)
@@ -246,20 +259,20 @@
 		if(BIO_JUST_BONE)
 			if(wounding_type == WOUND_SLASH)
 				wounding_type = WOUND_BLUNT
-				wounding_dmg *= (easy_dismember ? 1 : 0.5)
-				wounding_dmg *= (glass_bones ? 1.5 : 1)
+				wounding_dmg *= (easy_dismember ? 3 : 1.5)
+				wounding_dmg *= (glass_bones ? 3 : 1.5)
 			else if(wounding_type == WOUND_PIERCE)
 				wounding_type = WOUND_BLUNT
-				wounding_dmg *= (easy_dismember ? 1 : 0.75)
-				wounding_dmg *= (glass_bones ? 1.5 : 1)
+				wounding_dmg *= (easy_dismember ? 3 : 1.5)
+				wounding_dmg *= (glass_bones ? 3 : 1.5)
 			if((mangled_state & BODYPART_MANGLED_BONE) && try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus))
 				return
 		// if we're flesh only, all blunt attacks become weakened slashes in terms of wound damage
 		if(BIO_JUST_FLESH)
 			if(wounding_type == WOUND_BLUNT)
 				wounding_type = WOUND_SLASH
-				wounding_dmg *= (easy_dismember ? 1 : 0.5)
-				wounding_dmg *= (paper_skin ? 1.5 : 1)
+				wounding_dmg *= (easy_dismember ? 3 : 1.5)
+				wounding_dmg *= (paper_skin ? 3 : 1.5)
 			if((mangled_state & BODYPART_MANGLED_FLESH) && try_dismember(wounding_type, wounding_dmg, wound_bonus, bare_wound_bonus))
 				return
 		// standard humanoids
@@ -267,9 +280,9 @@
 			// if we've already mangled the skin (critical slash or piercing wound), then the bone is exposed, and we can damage it with sharp weapons at a reduced rate
 			// So a big sharp weapon is still all you need to destroy a limb
 			if(wounding_type == WOUND_SLASH || wounding_type == WOUND_PIERCE)
-				wounding_dmg *= (paper_skin ? 1.5 : 1)
+				wounding_dmg *= (paper_skin ? 3 : 1.5)
 			else
-				wounding_dmg *= (glass_bones ? 1.5 : 1)
+				wounding_dmg *= (glass_bones ? 3 : 1.5)
 			if(mangled_state == BODYPART_MANGLED_FLESH && sharpness)
 				playsound(src, "sound/effects/wounds/crackandbleed.ogg", 100)
 				if(wounding_type == WOUND_SLASH && !easy_dismember)
@@ -539,7 +552,8 @@
 		. = disabled //inertia, to avoid limbs healing 0.1 damage and being re-enabled
 		if(get_damage(TRUE) >= disable_threshold * (HAS_TRAIT(owner, TRAIT_EASYLIMBDISABLE) ? 0.6 : 1)) //Easy limb disable disables the limb at 40% health instead of 0%
 			if(!last_maxed && !silent)
-				owner.emote("scream")
+				if(!HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					owner.emote("scream")
 				last_maxed = TRUE
 			if(!is_organic_limb(FALSE) || stamina_dam >= disable_threshold)
 				return BODYPART_DISABLED_DAMAGE
@@ -639,7 +653,10 @@
 /obj/item/bodypart/proc/update_limb(dropping_limb, mob/living/carbon/source)
 	body_markings_list = list()
 	var/mob/living/carbon/C
-	owner.create_weakref()
+	if(source)
+		source.create_weakref()
+	else
+		owner.create_weakref()
 	if(source)
 		C = source
 		if(!original_owner)
@@ -831,11 +848,17 @@
 
 	var/list/markings_list = list()
 	if(is_organic_limb())
+		// BLUEMOON ADD START - красивые ноги
+		var/use_racial_sprite = FALSE
+		if(istype(src, /obj/item/bodypart/l_leg) || istype(src, /obj/item/bodypart/r_leg))
+			if(species_id in list(SPECIES_HUMAN, SPECIES_MAMMAL, SPECIES_XENOHYBRID, SPECIES_SLIME_LUMI, SPECIES_SLIME, SPECIES_SYNTH_LIZARD, SPECIES_STARGAZER, SPECIES_JELLY, "vox")) // заносим только те расы, у которых есть свои прорисованные ноги. Иначе используется бэкап ниже
+				use_racial_sprite = TRUE
+		// BLUEMOON ADD END
 		limb.icon = base_bp_icon || 'icons/mob/human_parts.dmi'
 		if(should_draw_gender)
 			limb.icon_state = "[species_id]_[body_zone]_[icon_gender]"
 		else if (use_digitigrade)
-			if(base_bp_icon == DEFAULT_BODYPART_ICON_ORGANIC) //Compatibility hack for the current iconset.
+			if(!use_racial_sprite) // BLUEMOON CHANGES - was if(base_bp_icon == DEFAULT_BODYPART_ICON_ORGANIC) - чтобы использовались наши спрайты ног
 				limb.icon_state = "[digitigrade_type]_[use_digitigrade]_[body_zone]"
 			else
 				limb.icon_state = "[species_id]_[digitigrade_type]_[use_digitigrade]_[body_zone]"
@@ -843,7 +866,7 @@
 			limb.icon_state = "[species_id]_[body_zone]"
 
 		if(istype(src, /obj/item/bodypart/l_leg) || istype(src, /obj/item/bodypart/r_leg))
-			second_limb = image(layer = -BODYPARTS_LAYER, dir = image_dir)
+			second_limb = image(layer = -BODYPARTS_LAYER-0.1, dir = image_dir) // BLUEMOON CHANGES - WAS second_limb = image(layer = -BODYPARTS_LAYER, dir = image_dir) - фикс для отображения ног (РАБОТАЕТ ТОЛЬКО ЕСЛИ ИСПОЛЬЗУЕТСЯ НАШ GREYSCALE ФАЙЛ КОНЕЧНОСТЕЙ)
 			second_limb.icon = limb.icon
 			. += second_limb
 
@@ -995,7 +1018,7 @@
 	update_disabled()
 
 /obj/item/bodypart/proc/get_bleed_rate()
-	if(!is_organic_limb()) // maybe in the future we can bleed oil from aug parts, but not now
+	if(!is_organic_limb() && !HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON EDIT - добавлена проверка на robotic_organism
 		return
 	var/bleed_rate = 0
 	if(generic_bleedstacks > 0)

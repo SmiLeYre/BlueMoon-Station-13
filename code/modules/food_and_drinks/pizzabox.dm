@@ -189,7 +189,7 @@
 		if(open && !bomb)
 			if(!user.transferItemToLoc(I, src))
 				return
-			wires = new /datum/wires/explosive/pizza(src)
+			set_wires(new /datum/wires/explosive/pizza(src))
 			bomb = I
 			to_chat(user, "<span class='notice'>You put [I] in [src]. Sneeki breeki...</span>")
 			update_icon()
@@ -270,7 +270,7 @@
 	var/randompizza = pick(subtypesof(/obj/item/reagent_containers/food/snacks/pizza))
 	pizza = new randompizza(src)
 	bomb = new(src)
-	wires = new /datum/wires/explosive/pizza(src)
+	set_wires(new /datum/wires/explosive/pizza(src))
 
 /obj/item/pizzabox/margherita/Initialize(mapload)
 	. = ..()

@@ -92,13 +92,13 @@
 				return
 
 			user.visible_message("[user] begins repairing [src].", \
-				"<span class='notice'>You begin repairing [src]...</span>", \
+				"<span class='notice'>Вы начинаете чинить [src]...</span>", \
 				"<span class='italics'>You hear welding.</span>")
 
 			if(O.use_tool(src, user, 40, volume=50))
 				if(!(stat & BROKEN))
 					return
-				to_chat(user, "<span class='notice'>You repair [src].</span>")
+				to_chat(user, "<span class='notice'>Вы починили [src].</span>")
 				stat &= ~BROKEN
 				obj_integrity = max(obj_integrity, max_integrity)
 				update_icon()

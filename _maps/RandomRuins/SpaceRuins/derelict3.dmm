@@ -22,18 +22,12 @@
 /obj/effect/spawner/lootdrop/salvage,
 /turf/template_noop,
 /area/space/nearstation)
-"A" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/wall,
-/area/ruin/unpowered/no_grav)
 "Q" = (
 /obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered/no_grav)
 
 (1,1,1) = {"
-a
-a
 a
 a
 a
@@ -943,7 +937,7 @@ b
 b
 b
 c
-A
+c
 c
 c
 b

@@ -147,7 +147,7 @@
 /turf/open/floor/engine,
 /area/ruin/powered)
 "I" = (
-/obj/item/aiModule/toyAI,
+/obj/item/ai_module/toyAI,
 /turf/open/floor/engine,
 /area/ruin/powered)
 "J" = (
@@ -161,10 +161,6 @@
 "O" = (
 /obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating/asteroid/airless,
-/area/ruin/powered)
-"P" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/wall/mineral/titanium/survival/pod,
 /area/ruin/powered)
 
 (1,1,1) = {"
@@ -438,7 +434,7 @@ b
 c
 c
 c
-P
+d
 f
 l
 r

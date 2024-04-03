@@ -67,8 +67,8 @@
 	name = "PMC Skull flag"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/sign/flag/skull
-	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob")
-	subcategory = LOADOUT_SUBCATEGORIES_DON10
+	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob", "vulpshiro", "sodastrike", "lonofera", "mihana964", "hellsinggc")
+	subcategory = LOADOUT_SUBCATEGORIES_DON01
 
 //InteQ
 
@@ -278,15 +278,15 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/paper/book_alch
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON18
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/cat_alch
-	name = "Alchemist's Neko Wallet"
+	name = "Neko Wallet"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/storage/wallet/cat_alch
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON18
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/vape
@@ -294,7 +294,7 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/vape
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON18
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/electropack
@@ -302,7 +302,7 @@
 	slot = ITEM_SLOT_HANDS
 	path = /obj/item/electropack
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON18
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/straight_jacket
@@ -310,7 +310,7 @@
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/straight_jacket
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON18
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/boxing
@@ -318,7 +318,7 @@
 	slot = ITEM_SLOT_GLOVES
 	path = /obj/item/clothing/gloves/boxing
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON18
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/coconut_bong
@@ -326,7 +326,7 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/bong/coconut
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON18
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/armyknife
@@ -334,5 +334,5 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/armyknife
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON18
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION

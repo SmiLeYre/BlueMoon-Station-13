@@ -126,7 +126,7 @@
 /obj/machinery/door/firedoor/power_change()
 	if(powered(power_channel))
 		stat &= ~NOPOWER
-		latetoggle()
+		INVOKE_ASYNC(src, .proc/latetoggle)
 	else
 		stat |= NOPOWER
 
@@ -321,6 +321,7 @@
 			unbuilt_lock.update_appearance()
 		else
 			new /obj/item/electronics/firelock (targetloc)
+			new /obj/item/stack/sheet/metal/five (targetloc)
 	qdel(src)
 
 /obj/machinery/door/firedoor/proc/latetoggle()

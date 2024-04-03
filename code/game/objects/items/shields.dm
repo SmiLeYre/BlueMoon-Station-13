@@ -78,8 +78,8 @@
 	animate(effect, alpha = 0, pixel_x = px * 1.5, pixel_y = py * 1.5, time = 3, flags = ANIMATION_PARALLEL | ANIMATION_RELATIVE)
 
 /obj/item/shield/proc/bash_target(mob/living/user, mob/living/target, bashdir, harmful)
-	if(!(HAS_TRAIT(target, CANKNOCKDOWN)) || HAS_TRAIT(target, TRAIT_STUNIMMUNE))	// should probably add stun absorption check at some point I guess..
-		// unified stun absorption system when lol
+	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))	// AYE
+		// unified stun absorption system when lol вот это бля баг и вызвало
 		target.visible_message("<span class='warning'>[user] slams [target] with [src], but [target] doesn't falter!</span>", "<span class='userdanger'>[user] slams you with [src], but it barely fazes you!</span>")
 		return FALSE
 	var/target_downed = !CHECK_MOBILITY(target, MOBILITY_STAND)
@@ -224,7 +224,7 @@
 			var/obj/item/stack/S = W
 			S.use(1)
 			obj_integrity = max_integrity
-			to_chat(user, "<span class='notice'>You repair [src] with [S].</span>")
+			to_chat(user, "<span class='notice'>Вы починили [src] with [S].</span>")
 	else
 		return ..()
 
@@ -469,7 +469,7 @@
 	add_fingerprint(user)
 
 /obj/item/shield/makeshift
-	name = "metal shield"
+	name = "Metal Shield"
 	desc = "A large shield made of wired and welded sheets of metal. The handle is made of cloth and leather, making it unwieldy."
 	armor = list(MELEE = 25, BULLET = 25, LASER = 5, ENERGY = 0, BOMB = 30, BIO = 0, RAD = 0, FIRE = 70, ACID = 80)
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
@@ -477,7 +477,8 @@
 	item_state = "metal"
 	icon_state = "makeshift_shield"
 	custom_materials = list(/datum/material/iron = 18000)
-	slot_flags = null
+	slot_flags = ITEM_SLOT_BACK
+	w_class = WEIGHT_CLASS_BULKY
 	max_integrity = 300 //Made of metal welded together its strong but not unkillable
 	force = 10
 	throwforce = 7

@@ -111,7 +111,7 @@
 	if(prob(10)) //Chance of permanent effects
 		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
 		if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
-			to_chat(owner, span_danger("Fatal failure detected in [src] - Seek for replace immediately."))
+			to_chat(owner, span_userdanger("Fatal failure detected in [src] - Seek for replace immediately."))
 // BLUEMOON ADD END
 
 /obj/item/organ/liver/cybernetic

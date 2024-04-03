@@ -43,6 +43,8 @@
 	var/obj/machinery/camera/builtInCamera = null
 	var/updating = FALSE //portable camera camerachunk update
 
+	///Whether we have been emagged
+	var/emagged = FALSE
 	var/hack_software = FALSE //Will be able to use hacking actions
 	var/interaction_range = 7			//wireless control range
 
@@ -67,18 +69,19 @@
 	AddElement(/datum/element/flavor_text, "", "Temporary Flavor Text", "This should be used only for things pertaining to the current round!", _save_key = null)
 	AddElement(/datum/element/flavor_text, _name = "OOC Notes", _addendum = "Put information on ERP/vore/lewd-related preferences here. THIS SHOULD NOT CONTAIN REGULAR FLAVORTEXT!!", _save_key = "ooc_notes", _examine_no_preview = TRUE)
 
+/mob/living/silicon/Destroy()
+	QDEL_NULL(radio)
+	QDEL_NULL(aicamera)
+	QDEL_NULL(builtInCamera)
+	QDEL_NULL(laws)
+	GLOB.silicon_mobs -= src
+	return ..()
+
 /mob/living/silicon/med_hud_set_health()
 	return //we use a different hud
 
 /mob/living/silicon/med_hud_set_status()
 	return //we use a different hud
-
-/mob/living/silicon/Destroy()
-	radio = null
-	aicamera = null
-	QDEL_NULL(builtInCamera)
-	GLOB.silicon_mobs -= src
-	return ..()
 
 /mob/living/silicon/contents_explosion(severity, target, origin)
 	return
@@ -283,7 +286,7 @@
 
 /mob/living/silicon/proc/checklaws() //Gives you a link-driven interface for deciding what laws the statelaws() proc will share with the crew. --NeoFite
 
-	var/list = "<b>Which laws do you want to include when stating them for the crew?</b><br><br>"
+	var/list = {"<meta charset="UTF-8"><b>Какие законы вы хотите продемонстрировать, когда будете излагать их для экипажа?</b><br><br>"}
 
 	if (laws.devillaws && laws.devillaws.len)
 		for(var/index = 1, index <= laws.devillaws.len, index++)

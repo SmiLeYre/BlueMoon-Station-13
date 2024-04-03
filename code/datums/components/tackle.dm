@@ -66,7 +66,7 @@
 
 ///See if we can tackle or not. If we can, leap!
 /datum/component/tackler/proc/checkTackle(mob/living/carbon/user, atom/A, params)
-	if(!user.in_throw_mode || user.get_active_held_item() || user.pulling || user.buckling)
+	if(!user.throw_mode || user.get_active_held_item() || user.pulling || user.buckling)
 		return
 
 	if(HAS_TRAIT(user, TRAIT_HULK))
@@ -370,7 +370,8 @@
 			user.adjustBruteLoss(30)
 			playsound(user, 'sound/effects/blobattack.ogg', 60, TRUE)
 			playsound(user, 'sound/effects/splat.ogg', 70, TRUE)
-			user.emote("scream")
+			if(!HAS_TRAIT(user, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				user.emote("scream")
 			user.gain_trauma(/datum/brain_trauma/severe/paralysis/spinesnapped) // oopsie indeed!
 			shake_camera(user, 7, 7)
 			user.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/tiled/flash)

@@ -183,6 +183,55 @@ Doesn't work on other aliens/AI.*/
 	if(user.getPlasma() > A.plasma_cost && A.corrode(O))
 		user.adjustPlasma(-A.plasma_cost)
 
+//BLUEMOON EDIT START
+/obj/effect/proc_holder/alien/set_genital
+	name = "Set genital"
+	desc = "Пробуждает в вашем ксеноморфском организме мужское, или женское начало. Или оба сразу."
+	active = TRUE
+	action_icon_state = "set_genital"
+	var/list/genitals = list(
+		"Член" = 		new /obj/item/organ/genital/penis,
+		"Семенники" =	new /obj/item/organ/genital/testicles,
+		"Вагина" = 		new /obj/item/organ/genital/vagina,
+		"Матка" = 		new /obj/item/organ/genital/womb
+	)
+
+/obj/effect/proc_holder/alien/set_genital/fire(mob/living/carbon/user)
+	if(active)
+		var/genital = input("Выберите тип гениталий","Выбор гениталий") as null|anything in genitals
+		var/obj/item/organ/genital/genital_path = genitals[genital]
+		if(!user.internal_organs.Find(genital_path)) //Позволяет убрать генеталии, если они уже есть
+			genital_path.Insert(usr)
+			genital_path.shape = "knotted"
+			if(genital_path == /obj/item/organ/genital/womb) //Было бы странно, если бы появление/убирание матки было видно визуально
+				to_chat(user,"<span class='lewd'>Вы ощущаете, как ваше лоно обретает матку</span>") //Но самому юзеру можно об этом сказать
+				return
+			to_chat(user,"<span class='lewd'>У вас между ног вырастает[genital]</span>")
+			user.visible_message("<span class='danger'>У [usr] между ног вырастает [genital]!</span>")
+			if(genital == "Член")
+				var/obj/item/organ/genital/penis/P = user.getorganslot(ORGAN_SLOT_PENIS)
+				P.max_length = 120
+				var/size = input(user, "Введите желаемый размер полового органа в пределах([P.min_length]-[P.max_length])", "Параметры члена") as null|num
+				if(size == null)
+					return
+				if(size >= P.max_length)
+					size = P.max_length
+				P.length = size
+				var/diameter = input(user, "Введите желаемый диаметр полового органа в пределах ([COCK_DIAMETER_RATIO_DEF]-2)", "Параметры члена") as null|num
+				if(diameter == null && diameter <= COCK_DIAMETER_RATIO_DEF)
+					diameter = COCK_DIAMETER_RATIO_DEF
+				if(diameter >= 2)
+					diameter = 2
+				P.diameter = diameter
+				P.update()
+		else
+			genital_path.Remove(usr)//Убирается вот тут
+			if(genital_path == /obj/item/organ/genital/womb)
+				to_chat(user,"<span class='lewd'>Ваша матка сокращается, прекращая выполнять свои функции</span>")
+				return
+			to_chat(user,"<span class='lewd'>[genital] пропадает, всасываясь обратно вглубь вашего гибкого тела</span>")
+			user.visible_message("<span class='danger'>У [usr] [genital] исчезает куда-то внутрь, больше не представляя угрозы</span>")
+//BLUEMOON EDIT END
 /obj/effect/proc_holder/alien/neurotoxin
 	name = "Spit Neurotoxin"
 	desc = "Activates your Neurotoxin glands. You can shoot paralyzing shots. Each shot costs 50 Plasma."

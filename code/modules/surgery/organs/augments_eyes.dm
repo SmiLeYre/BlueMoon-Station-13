@@ -1,16 +1,11 @@
 /obj/item/organ/cyberimp/eyes/hud
-	name = "cybernetic hud"
-	desc = "artificial photoreceptors with specialized functionality"
+	name = "HUD implant"
+	desc = "These cybernetic eyes will display a HUD over everything you see. Maybe."
 	icon_state = "eye_implant"
 	implant_overlay = "eye_implant_overlay"
 	slot = ORGAN_SLOT_EYES
 	zone = BODY_ZONE_PRECISE_EYES
 	w_class = WEIGHT_CLASS_TINY
-
-// HUD implants
-/obj/item/organ/cyberimp/eyes/hud
-	name = "HUD implant"
-	desc = "These cybernetic eyes will display a HUD over everything you see. Maybe."
 	slot = ORGAN_SLOT_HUD
 	var/HUD_type = 0
 

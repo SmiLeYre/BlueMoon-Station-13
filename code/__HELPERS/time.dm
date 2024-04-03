@@ -80,3 +80,13 @@ GLOBAL_VAR_INIT(rollovercheck_last_timeofday, 0)
 
 /proc/gameTimestamp(format = "hh:mm:ss", wtime=world.time)
 	return time2text(wtime - GLOB.timezoneOffset, format)
+
+//Take a value in seconds and returns a string of minutes and seconds in the format X minute(s) and X seconds.
+/proc/seconds_to_time(var/seconds as num)
+	var/numSeconds = seconds % 60
+	var/numMinutes = (seconds - numSeconds) / 60
+	return "[numMinutes] [numMinutes > 1 ? "минут" : "минуты"] и [numSeconds] секунд"
+
+//Take a value in seconds and makes it display like a clock
+/proc/seconds_to_clock(var/seconds as num)
+	return "[add_zero(num2text((seconds / 60) % 60), 2)]:[add_zero(num2text(seconds % 60), 2)]"

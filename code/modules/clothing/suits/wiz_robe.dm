@@ -307,6 +307,7 @@
 	max_charges = 15
 	current_charges = 15
 	shield_state = "shield-red"
+	alternate_screams = SPASEMAR_SCREAMS // BLUEMOON CHANGE
 	min_cold_protection_temperature = ARMOR_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/wizard

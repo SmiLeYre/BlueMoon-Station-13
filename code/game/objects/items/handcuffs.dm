@@ -280,6 +280,7 @@
 	desc = "A trap used to catch bears and other legged creatures."
 	var/armed = FALSE
 	var/trap_damage = 60
+	var/ignore_weight = FALSE //BLUEMOON ADD капканы реагируют на вес карбонов
 
 /obj/item/restraints/legcuffs/beartrap/prearmed
 	armed = TRUE
@@ -304,25 +305,25 @@
 	if(armed && isturf(src.loc))
 		if(isliving(AM))
 			var/mob/living/L = AM
-			var/snap = FALSE
+//BLUEMOON CHANGE переписывание прока для взаимодействия карбонов с полётом и учитыванием их веса
+			var/snap = TRUE
 			var/def_zone = BODY_ZONE_CHEST
-			if(iscarbon(L))
-				var/mob/living/carbon/C = L
-				if(!C.lying)
-					def_zone = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-					if(!C.legcuffed && C.get_num_legs(FALSE) >= 2) //beartrap can't cuff your leg if there's already a beartrap or legcuffs, or you don't have two legs.
-						snap = TRUE
-						C.legcuffed = src
-						forceMove(C)
-						C.update_equipment_speed_mods()
-						C.update_inv_legcuffed()
-						SSblackbox.record_feedback("tally", "handcuffs", 1, type)
-			else if(isanimal(L))
-				var/mob/living/simple_animal/SA = L
-				if(SA.mob_size > MOB_SIZE_TINY)
-					snap = TRUE
 			if(L.movement_type & (FLYING | FLOATING))
 				snap = FALSE
+			else if(!ignore_weight && (L.mob_size <= MOB_SIZE_TINY || (L.mob_size <= MOB_SIZE_SMALL && HAS_TRAIT(L, TRAIT_BLUEMOON_LIGHT))))
+				snap = FALSE
+			if(iscarbon(L))
+				var/mob/living/carbon/C = L
+				def_zone = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+				if(C.lying)
+					snap = FALSE
+				else if(!C.legcuffed && C.get_num_legs(FALSE) >= 2 && snap) //beartrap can't cuff your leg if there's already a beartrap or legcuffs, or you don't have two legs.
+					C.legcuffed = src
+					forceMove(C)
+					C.update_equipment_speed_mods()
+					C.update_inv_legcuffed()
+					SSblackbox.record_feedback("tally", "handcuffs", 1, type)
+//BLUEMOON CHANGE END
 			if(snap)
 				armed = FALSE
 				icon_state = "[initial(icon_state)][armed]"
@@ -340,6 +341,7 @@
 	item_flags = DROPDEL
 	flags_1 = NONE
 	breakouttime = 50
+	ignore_weight = TRUE //BLUEMOON ADD энерголовушкам плевать на вес персонажа
 
 /obj/item/restraints/legcuffs/beartrap/energy/New()
 	..()

@@ -163,6 +163,8 @@
 
 /datum/emote/living/carbon/lick/run_emote(mob/user)
 	. = ..()
+	if(!iscarbon(user) || !.)
+		return
 	if(user.get_active_held_item())
 		to_chat(user, span_warning("Ваша активная рука занята, и поэтому вы не можете ничего лизнуть! Не спрашивайте, почему!"))
 		return

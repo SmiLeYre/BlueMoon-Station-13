@@ -70,7 +70,7 @@
 	create_reagents(1000)
 	if(noreact_reagents)
 		reagents.reagents_holder_flags |= NO_REACT
-	wires = new /datum/wires/poolcontroller(src)
+	set_wires(new /datum/wires/poolcontroller(src))
 	scan_things()
 
 /obj/machinery/pool/controller/Destroy()

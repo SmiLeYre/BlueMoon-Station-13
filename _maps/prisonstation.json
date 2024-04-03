@@ -1,0 +1,14 @@
+{
+    "map_name": "PrisonStation",
+    "map_path": "map_files/PrisonStation",
+    "map_file": "PrisonStation.dmm",
+    "shuttles": {
+		"emergency": "emergency_pubby",
+		"whiteship": "whiteship_pubby",
+		"ferry": "ferry_fancy",
+		"cargo": "cargo_box"
+    },
+	"traits": [
+		{ "Weather_Longrain":true }
+	]
+}

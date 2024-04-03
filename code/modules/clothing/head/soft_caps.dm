@@ -115,7 +115,7 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/sec
-	name = "security cap"
+	name = "Security Cap"
 	desc = "It's a robust baseball hat in tasteful red colour."
 	icon_state = "secsoft"
 	soft_type = "sec"

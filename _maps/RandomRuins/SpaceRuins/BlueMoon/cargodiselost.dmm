@@ -1,0 +1,5661 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ak" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"al" = (
+/obj/structure/table/reinforced,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"am" = (
+/obj/effect/turf_decal/tile/blue/half/contrasted,
+/obj/machinery/light/directional/south,
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"ao" = (
+/obj/effect/turf_decal/tile/blue/anticorner{
+	dir = 4
+	},
+/obj/structure/table/wood/fancy/blue,
+/obj/machinery/light/directional/north,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"ar" = (
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"aB" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"aJ" = (
+/obj/structure/table,
+/obj/machinery/chem_dispenser/drinks/beer{
+	dir = 4
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 4
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"aK" = (
+/obj/effect/turf_decal/tile/blue/anticorner/contrasted{
+	dir = 8
+	},
+/obj/item/kirbyplants/random,
+/obj/machinery/light_switch/directional/west,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"aT" = (
+/obj/structure/table/optable,
+/obj/effect/turf_decal/tile/blue/anticorner/contrasted,
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"aY" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 10
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/ftu_cargo)
+"aZ" = (
+/obj/structure/ore_box,
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"bt" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 1
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"bu" = (
+/obj/structure/extinguisher_cabinet/directional/north,
+/obj/machinery/atmospherics/components/unary/tank/air,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"bD" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Mess Hall"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"bM" = (
+/obj/structure/table/wood/fancy/blue,
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 4
+	},
+/obj/machinery/button/door/directional/north{
+	id = "cargoshlockdown";
+	name = "Bridge Blastdoors";
+	pixel_y = 10;
+	dir = 4;
+	pixel_x = 4
+	},
+/obj/machinery/button/door/directional/north{
+	id = "windlockdown";
+	name = "Bridge Blastdoors";
+	pixel_y = 10;
+	dir = 8;
+	pixel_x = -5
+	},
+/obj/machinery/button/door/directional/north{
+	id = "cargolockdown";
+	name = "Bridge Blastdoors";
+	pixel_y = -1;
+	dir = 4;
+	pixel_x = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"bU" = (
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"ca" = (
+/obj/machinery/light/directional/north,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"cd" = (
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"ci" = (
+/obj/structure/closet/secure_closet/miner/unlocked,
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"ct" = (
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"cA" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"cF" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"cN" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"cO" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/box/shipping,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"cP" = (
+/obj/machinery/computer/crew,
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"cT" = (
+/obj/machinery/holopad,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"db" = (
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"df" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"dk" = (
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"dm" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"do" = (
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"dp" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 10
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"dr" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"dy" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue/half/contrasted,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"dB" = (
+/mob/living/simple_animal/hostile/looter/ranged/space,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"dC" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
+/obj/machinery/power/port_gen/pacman/super,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"dJ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"dK" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/belt/utility/full/engi,
+/obj/item/crowbar/red,
+/obj/item/crowbar/red,
+/obj/item/crowbar/red,
+/obj/item/crowbar/red,
+/obj/item/crowbar/red,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/ftu_cargo)
+"dQ" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"dR" = (
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 4
+	},
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"dS" = (
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"ef" = (
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 1
+	},
+/obj/item/kirbyplants/random,
+/obj/machinery/light/directional/north,
+/obj/structure/closet/firecloset/wall{
+	pixel_y = 26
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"ei" = (
+/obj/machinery/door/airlock/command/glass{
+	name = "Bridge"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor{
+	id = "cargoshlockdown"
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"ej" = (
+/obj/machinery/door/poddoor/shutters/old,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"ek" = (
+/obj/machinery/vending/hydronutrients,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"el" = (
+/obj/effect/turf_decal/tile/green/anticorner/contrasted{
+	dir = 1
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"eo" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/machinery/vending/coffee,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"et" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"ex" = (
+/obj/machinery/door/airlock/survival_pod/glass,
+/obj/structure/fans/tiny,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
+	cycle_id = "lostfreighter"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"ez" = (
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 4
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"eA" = (
+/obj/effect/turf_decal/tile/blue/anticorner/contrasted{
+	dir = 8
+	},
+/obj/machinery/light_switch/directional/west,
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"eC" = (
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
+	dir = 4
+	},
+/obj/item/kirbyplants/random,
+/obj/machinery/light/directional/east,
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"eI" = (
+/obj/machinery/door/airlock/command/glass{
+	name = "Bridge"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor{
+	id = "cargoshlockdown"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"eY" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1
+	},
+/obj/structure/closet/crate/secure/engineering,
+/obj/item/storage/toolbox/inteq,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"fo" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"fG" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Mess Hall"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"fO" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"fP" = (
+/obj/machinery/hydroponics/constructable,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"fS" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/ftu_cargo)
+"fV" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	faction = list("hostile")
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"gf" = (
+/obj/machinery/computer/operating{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue/half/contrasted,
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"gm" = (
+/obj/effect/turf_decal/tile/yellow,
+/turf/open/floor/iron/dark/smooth_corner,
+/area/ruin/space/has_grav/ftu_cargo)
+"gq" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/ftu_cargo)
+"gA" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"gM" = (
+/obj/item/kirbyplants/random,
+/obj/effect/turf_decal/tile/yellow/anticorner,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"gQ" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"gS" = (
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"gT" = (
+/obj/effect/turf_decal/tile/brown{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"gW" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 4
+	},
+/obj/machinery/light/directional/east,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"gY" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"hg" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/machinery/light/directional/north,
+/obj/machinery/light_switch/directional/north,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"hH" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"hJ" = (
+/obj/machinery/door/airlock/silver{
+	name = "Dorm 1"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"hK" = (
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"hL" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 9
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"hM" = (
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ftu_cargo)
+"hQ" = (
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"hT" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"iz" = (
+/obj/effect/turf_decal/tile/brown/half{
+	dir = 4
+	},
+/obj/machinery/suit_storage_unit/ftu_work,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"iA" = (
+/obj/effect/turf_decal/tile/brown/half/contrasted,
+/obj/structure/closet/crate,
+/obj/item/stack/cable_coil,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"iE" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"iK" = (
+/obj/machinery/computer/camera_advanced,
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"iT" = (
+/obj/effect/turf_decal/tile/green/half/contrasted,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"iU" = (
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
+	dir = 1
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/dark/smooth_corner,
+/area/ruin/space/has_grav/ftu_cargo)
+"iX" = (
+/obj/structure/chair/sofa/corp/right{
+	dir = 1
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"jb" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/ftu_cargo)
+"jd" = (
+/obj/structure/showcase/machinery/oldpod/used/oldpod,
+/turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"jo" = (
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"jC" = (
+/obj/effect/turf_decal/tile/yellow,
+/obj/machinery/button/door/directional/north{
+	id = "cargolockdown";
+	name = "Loading Bay Blastdoors";
+	pixel_y = -24
+	},
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"jP" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/toolbox/electrical{
+	pixel_y = 8
+	},
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = 3;
+	pixel_y = -2
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"jR" = (
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 1
+	},
+/obj/machinery/iv_drip,
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"kn" = (
+/obj/item/kirbyplants/random,
+/obj/machinery/light_switch/directional/north,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"kt" = (
+/obj/machinery/seed_extractor,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"kK" = (
+/obj/structure/table/reinforced,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 9
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"kM" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"kW" = (
+/obj/structure/closet/crate/secure/gear,
+/obj/item/stack/sheet/plastic/fifty,
+/obj/item/stack/sheet/plastic/fifty,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"la" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/orange/auto,
+/obj/machinery/power/apc/unlocked{
+	pixel_x = 33
+	},
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"lf" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"lg" = (
+/obj/effect/turf_decal/tile/yellow/anticorner{
+	dir = 8
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 4
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"ll" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"lp" = (
+/obj/structure/table/wood/fancy/blue,
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 4
+	},
+/obj/item/clipboard,
+/obj/item/pen/fountain,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"lt" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/closed,
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"lx" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"lB" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 1
+	},
+/mob/living/simple_animal/hostile/looter/ranged/space/laser,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"lV" = (
+/obj/machinery/hydroponics/constructable,
+/obj/machinery/light/cold/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"mb" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/ftu_cargo)
+"mf" = (
+/obj/effect/turf_decal/tile/blue/half/contrasted,
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"mi" = (
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/obj/machinery/door/airlock/hydroponics,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"mq" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/ftu_cargo)
+"mv" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/machinery/light/directional/north,
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/ftu_cargo)
+"mC" = (
+/obj/effect/turf_decal/trimline/blue/corner{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"mL" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"mR" = (
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"mV" = (
+/obj/machinery/atmospherics/pipe/simple/supply{
+	dir = 5
+	},
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"mY" = (
+/obj/structure/table/wood,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"ng" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"nu" = (
+/obj/machinery/door/poddoor{
+	id = "freighterbay"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ftu_cargo)
+"nv" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/m2a100,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/ftu_cargo)
+"nw" = (
+/mob/living/simple_animal/hostile/looter,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"nC" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 8
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"nL" = (
+/obj/machinery/autolathe/hacked,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"nU" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ftu_cargo)
+"nV" = (
+/obj/effect/turf_decal/tile/brown/half/contrasted,
+/obj/structure/closet/emcloset/wall{
+	pixel_y = -26
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"oa" = (
+/obj/effect/turf_decal/tile/yellow/anticorner{
+	dir = 1
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/dark/smooth_corner,
+/area/ruin/space/has_grav/ftu_cargo)
+"ok" = (
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/light/cold/directional/east,
+/obj/machinery/atmospherics/pipe/simple/supply{
+	dir = 9
+	},
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"oz" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_half{
+	dir = 4
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"oK" = (
+/obj/machinery/door/airlock/glass{
+	name = "Crew Quarters"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"oN" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"oV" = (
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 8
+	},
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"oZ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 6
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"pb" = (
+/mob/living/simple_animal/hostile/looter,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"pf" = (
+/obj/effect/turf_decal/tile/yellow/anticorner{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 8
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"pm" = (
+/obj/machinery/atmospherics/components/unary/tank/air,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"pp" = (
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/west,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"pu" = (
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"pv" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"py" = (
+/obj/structure/salvage/protolathe,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"pA" = (
+/obj/effect/turf_decal/tile/green/half/contrasted,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"pB" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"pH" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 6
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"pI" = (
+/obj/structure/closet/crate/secure/engineering,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/plasteel/fifty,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"qd" = (
+/obj/effect/turf_decal/siding/dark/corner,
+/obj/structure/table,
+/obj/machinery/chem_dispenser/drinks{
+	dir = 4
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"qE" = (
+/obj/machinery/door/airlock/maintenance/glass{
+	name = "Utilities Room"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"qG" = (
+/obj/structure/chair/sofa/right/maroon{
+	dir = 8
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"qJ" = (
+/obj/structure/salvage/computer{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"qK" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"qN" = (
+/obj/effect/turf_decal/tile/brown/half/contrasted,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"qR" = (
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"qS" = (
+/obj/effect/turf_decal/tile/yellow/half,
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"rb" = (
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
+	dir = 1
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"rt" = (
+/obj/machinery/hydroponics/constructable,
+/obj/machinery/light/cold/directional/north,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"rB" = (
+/obj/machinery/hydroponics/constructable,
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"rF" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
+	},
+/obj/machinery/light/directional/east,
+/obj/machinery/photocopier,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"rH" = (
+/obj/effect/turf_decal/tile/blue/anticorner/contrasted{
+	dir = 1
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"rR" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"rW" = (
+/mob/living/simple_animal/hostile/looter/ranged/space/laser,
+/turf/template_noop,
+/area/template_noop)
+"rY" = (
+/obj/effect/turf_decal/tile/green/anticorner/contrasted,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"sc" = (
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"so" = (
+/obj/effect/turf_decal/tile/yellow/half,
+/mob/living/simple_animal/hostile/vox/melee,
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"st" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"sy" = (
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
+	dir = 1
+	},
+/obj/machinery/light_switch/directional/north,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"sA" = (
+/obj/structure/showcase/machinery/oldpod/used/oldpod{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium/yellow,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"sV" = (
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
+	dir = 4
+	},
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"sW" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/ftu_cargo)
+"ti" = (
+/obj/item/circuitboard/machine/ore_silo,
+/obj/item/circuitboard/machine/ore_redemption{
+	pixel_x = 5;
+	pixel_y = -6
+	},
+/obj/item/storage/box/stockparts/deluxe,
+/obj/item/storage/box/stockparts/deluxe,
+/obj/structure/closet/crate,
+/obj/item/storage/toolbox/mechanical,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/circuitboard/machine/circuit_imprinter/department,
+/obj/item/circuitboard/machine/rtg/advanced,
+/obj/item/circuitboard/machine/rtg/advanced,
+/obj/item/circuitboard/machine/rtg/advanced,
+/obj/item/circuitboard/computer/powermonitor,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"tB" = (
+/obj/structure/window/shuttle/survival_pod,
+/obj/structure/grille{
+	layer = 2.5
+	},
+/obj/machinery/door/poddoor{
+	id = "windlockdown";
+	layer = 4
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ftu_cargo)
+"tD" = (
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured_half{
+	dir = 4
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"tL" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/e_gun/mini{
+	pixel_y = 5
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"tS" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"tW" = (
+/obj/structure/bed/double,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"tY" = (
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
+	dir = 8
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"uh" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 10
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/ftu_cargo)
+"uo" = (
+/obj/effect/turf_decal/tile/blue/anticorner/contrasted,
+/obj/structure/salvage/computer{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"uu" = (
+/obj/machinery/portable_atmospherics/pump,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"ux" = (
+/obj/structure/window/shuttle/survival_pod,
+/obj/structure/grille{
+	layer = 2.5
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ftu_cargo)
+"uO" = (
+/obj/machinery/rnd/production/protolathe/department/autobottler,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"vb" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"ve" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"vj" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"vv" = (
+/obj/machinery/atmospherics/pipe/layer_manifold,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"vx" = (
+/obj/machinery/door/airlock/mining/glass{
+	name = "Loading Bay"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor{
+	id = "cargolockdown"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"vH" = (
+/turf/closed/mineral/random/high_chance,
+/area/ruin/unpowered/no_grav)
+"vJ" = (
+/obj/structure/chair/sofa/right/maroon{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"vM" = (
+/obj/structure/table,
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/item/storage/backpack/duffelbag/syndie/inteq/surgery_adv,
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"wd" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"wf" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"wx" = (
+/obj/effect/turf_decal/tile/blue/anticorner/contrasted{
+	dir = 1
+	},
+/obj/structure/table/wood/fancy/blue,
+/obj/item/papercutter,
+/obj/machinery/light/directional/north,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"wB" = (
+/obj/effect/turf_decal/tile/blue/half/contrasted,
+/obj/machinery/light/directional/south,
+/obj/structure/closet/emcloset/wall{
+	pixel_y = -26
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"wK" = (
+/obj/machinery/suit_storage_unit/ftu_combat,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"wQ" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "freighterkitchen"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"wT" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
+	},
+/obj/item/kirbyplants/random,
+/obj/structure/closet/firecloset/wall{
+	pixel_x = 26
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"wX" = (
+/obj/effect/turf_decal/tile/green/half/contrasted,
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"xh" = (
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 1
+	},
+/obj/structure/rack/shelf,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"xo" = (
+/turf/closed/wall/r_wall/syndicate,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"xs" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"xt" = (
+/obj/structure/chair/sofa/corp{
+	dir = 1
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"xw" = (
+/obj/machinery/light/cold/directional/west,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"xy" = (
+/obj/effect/turf_decal/tile/yellow/anticorner{
+	dir = 4
+	},
+/obj/item/kirbyplants/random,
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 8
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"xC" = (
+/obj/structure/bed/double,
+/obj/item/bedsheet/qm/double,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 8
+	},
+/turf/open/floor/carpet/orange,
+/area/ruin/space/has_grav/ftu_cargo)
+"xE" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"xZ" = (
+/obj/machinery/firealarm/directional/south,
+/obj/machinery/suit_storage_unit/ftu_combat,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"yg" = (
+/obj/effect/turf_decal/tile/yellow/anticorner,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"yj" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"yl" = (
+/obj/structure/closet/crate/hydroponics{
+	name = "Delivery - Seed Vault"
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"yr" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"yv" = (
+/obj/machinery/vending/engivend,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"yy" = (
+/obj/structure/closet/secure_closet/miner/unlocked,
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"yM" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/south,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"yT" = (
+/obj/machinery/door/airlock/mining/glass{
+	name = "Mining EVA"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"yW" = (
+/obj/structure/table,
+/obj/machinery/reagentgrinder,
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"yY" = (
+/obj/item/storage/box/shipping,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/obj/structure/closet/crate/secure/medical,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"zj" = (
+/obj/machinery/mineral/ore_redemption,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"zn" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured_half{
+	dir = 4
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"zo" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 9
+	},
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"zF" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"zK" = (
+/obj/structure/toilet{
+	dir = 4
+	},
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"zV" = (
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 1
+	},
+/obj/structure/table/wood/fancy/blue,
+/obj/item/paper_bin,
+/obj/item/pen,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"zY" = (
+/obj/structure/bed/double{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Af" = (
+/obj/machinery/hydroponics/constructable,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ah" = (
+/obj/machinery/light/directional/south,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ai" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 6
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Aj" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ak" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ar" = (
+/obj/structure/closet/crate/freezer/blood,
+/obj/effect/turf_decal/tile/blue/anticorner/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"Au" = (
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 8
+	},
+/obj/machinery/light_switch/directional/west,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Av" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ay" = (
+/obj/structure/table/wood,
+/obj/item/toy/cards/deck,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"AA" = (
+/obj/machinery/light/directional/west,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/ftu_cargo)
+"AE" = (
+/obj/structure/closet/crate/science{
+	req_access = list("science");
+	name = "Delivery - Nanotrasen Science Division"
+	},
+/obj/item/raw_anomaly_core/random,
+/obj/item/raw_anomaly_core/random,
+/obj/item/raw_anomaly_core/random,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"AN" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/ftu_cargo)
+"AP" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/carpet/orange,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ba" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/chair/office{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Bb" = (
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Bt" = (
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"By" = (
+/obj/structure/table,
+/obj/machinery/microwave,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"BE" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
+/obj/machinery/power/port_gen/pacman/super,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"BW" = (
+/obj/machinery/chem_master/condimaster,
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"BZ" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ce" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 6
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Cg" = (
+/obj/machinery/door/airlock/mining/glass{
+	name = "Loading Bay"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor{
+	id = "cargolockdown"
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ck" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/ftu_cargo)
+"Cz" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 8
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"CH" = (
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/looter,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"CI" = (
+/obj/machinery/door/airlock/hatch,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"CQ" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"CZ" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/mob/living/simple_animal/hostile/looter/ranged/space/laser,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"De" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"Df" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "freighterkitchen"
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"Dn" = (
+/obj/effect/turf_decal/tile/blue/anticorner/contrasted{
+	dir = 4
+	},
+/obj/machinery/vending/wallmed/directional/east,
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"Do" = (
+/obj/machinery/light/directional/west,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Dr" = (
+/obj/machinery/door/airlock/silver{
+	name = "Dorm 2"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Du" = (
+/obj/effect/turf_decal/tile/yellow/half,
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"Dz" = (
+/obj/structure/salvage/computer,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"DE" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 4
+	},
+/obj/machinery/door/firedoor/closed,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"DG" = (
+/mob/living/simple_animal/hostile/vox/melee,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"DQ" = (
+/obj/structure/table,
+/obj/item/storage/box/condimentbottles{
+	pixel_y = 6
+	},
+/obj/item/storage/box/drinkingglasses{
+	pixel_x = 6
+	},
+/obj/item/storage/box/beakers/variety,
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ee" = (
+/obj/effect/turf_decal/tile/yellow/half,
+/obj/machinery/door/firedoor/closed,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ef" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"Eo" = (
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"Et" = (
+/obj/machinery/light/cold/directional/south,
+/obj/machinery/light_switch/directional/west,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
+/obj/machinery/power/port_gen/pacman/super,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ew" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ey" = (
+/obj/structure/dresser,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"EC" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"EG" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 1
+	},
+/obj/structure/closet/emcloset/wall{
+	pixel_y = 26
+	},
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"EI" = (
+/obj/machinery/door/airlock/survival_pod/glass,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper_multi{
+	cycle_id = "lostfreighter"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"EL" = (
+/obj/machinery/door/airlock/vault{
+	name = "Freighter Armoury"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor{
+	id = "bridgelockdown"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"EP" = (
+/turf/open/floor/carpet/orange,
+/area/ruin/space/has_grav/ftu_cargo)
+"EZ" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/ftu_cargo)
+"Fb" = (
+/obj/item/kirbyplants/random,
+/obj/effect/turf_decal/tile/yellow/anticorner{
+	dir = 4
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 8
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"Fm" = (
+/obj/effect/turf_decal/tile/blue/anticorner/contrasted{
+	dir = 4
+	},
+/obj/structure/salvage/computer{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Fu" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/structure/closet/secure_closet/personal,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Fw" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"Fy" = (
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"FP" = (
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 4
+	},
+/obj/machinery/suit_storage_unit/ftu_work,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"FT" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 6
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"FW" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/closet/emcloset/wall{
+	pixel_y = -26
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/ftu_cargo)
+"Gh" = (
+/turf/template_noop,
+/area/template_noop)
+"Gk" = (
+/obj/effect/turf_decal/tile/yellow/anticorner/contrasted{
+	dir = 4
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 8
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"Gr" = (
+/obj/machinery/door/airlock/silver{
+	name = "Bathroom"
+	},
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"Gs" = (
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/ftu_cargo)
+"GA" = (
+/mob/living/simple_animal/hostile/vox/melee,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"GN" = (
+/obj/structure/shuttle/engine/propulsion{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"Ha" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"Hd" = (
+/turf/closed/wall/r_wall/lf_haron/diagonal,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"Hi" = (
+/obj/effect/turf_decal/trimline/blue/corner{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 4
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"Hj" = (
+/obj/machinery/door/airlock/medical/glass{
+	name = "Medbay"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Hk" = (
+/obj/structure/chair/sofa/left/maroon{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Hn" = (
+/obj/item/clothing/suit/armor/riot,
+/obj/item/shield/riot,
+/obj/item/storage/belt/utility/atmostech,
+/obj/item/storage/belt/utility/full/engi,
+/obj/item/storage/belt/utility/syndicate,
+/obj/item/storage/box/monkeycubes,
+/obj/item/storage/box/monkeycubes,
+/obj/item/paper{
+	default_raw_text = "Admiral, due to increased Nanotrasen presence in your sector, we are providing some extra supplies to deal with it. The telecrystals are to be held for a contact that will come to collect them in the coming weeks, a solo operative. Please ensure they get the crystals, as their mission is gravely important.";
+	name = "CONFIDENTIAL - DS-2 Admiral's Eyes Only"
+	},
+/obj/item/stack/telecrystal{
+	amount = 10
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 1
+	},
+/obj/structure/closet/crate/secure/gear,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Hr" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 8
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"Hx" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/ftu_cargo)
+"HC" = (
+/obj/effect/turf_decal/tile/green/anticorner/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"HE" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"HH" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"HJ" = (
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"HK" = (
+/mob/living/simple_animal/hostile/looter/ranged/space,
+/turf/template_noop,
+/area/template_noop)
+"HO" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"HP" = (
+/obj/effect/turf_decal/tile/yellow/half,
+/obj/machinery/door/firedoor/closed,
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ii" = (
+/obj/structure/closet/crate/secure/hydroponics,
+/obj/item/reagent_containers/glass/bottle/random_virus,
+/obj/item/reagent_containers/glass/bottle/random_virus,
+/obj/item/reagent_containers/glass/bottle/random_virus,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Im" = (
+/obj/effect/turf_decal/trimline/blue/corner,
+/turf/open/floor/iron/dark/smooth_corner,
+/area/ruin/space/has_grav/ftu_cargo)
+"Iy" = (
+/obj/machinery/vending/medical/syndicate_access/cybersun{
+	req_access = null
+	},
+/obj/effect/turf_decal/tile/blue/anticorner/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"IP" = (
+/obj/machinery/vending/dinnerware,
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"IV" = (
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/north,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Jd" = (
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Jm" = (
+/obj/effect/turf_decal/tile/blue,
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Jx" = (
+/obj/machinery/door/airlock/mining/glass{
+	name = "Mining EVA"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor{
+	id = "cargolockdown"
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Jy" = (
+/obj/machinery/door/airlock/vault{
+	name = "Freighter Vault"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Jz" = (
+/obj/machinery/vending/clothing,
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"JC" = (
+/obj/machinery/door/airlock/freezer{
+	name = "Kitchen Storage"
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"JD" = (
+/obj/effect/turf_decal/tile/brown/half/contrasted,
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"JG" = (
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/template_noop,
+/area/template_noop)
+"JQ" = (
+/obj/structure/lattice/catwalk,
+/obj/item/stack/marker_beacon{
+	anchored = 1;
+	icon_state = "markerburgundy-on";
+	light_color = "#FA644B";
+	light_power = 3;
+	light_range = 3;
+	name = "Docking Beacon";
+	picked_color = "Burgundy"
+	},
+/turf/template_noop,
+/area/template_noop)
+"JW" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Kb" = (
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Kj" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 8
+	},
+/obj/machinery/door/firedoor/closed,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"Kt" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Kw" = (
+/obj/structure/barricade/sandbags,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"KH" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/ftu_cargo)
+"KN" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"KR" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 8
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"KS" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/ftu_cargo)
+"KY" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/shuttle/engine/propulsion{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ftu_cargo)
+"Lb" = (
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Lm" = (
+/obj/machinery/vending/hydroseeds,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ln" = (
+/obj/structure/closet/crate/goldcrate,
+/obj/item/stack/sheet/plasteel/twenty,
+/obj/item/stack/sheet/mineral/diamond,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/uranium/five,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"Lt" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/ftu_cargo)
+"LG" = (
+/turf/closed/wall/r_wall/syndicate,
+/area/ruin/space/has_grav/ftu_cargo)
+"LH" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 1
+	},
+/obj/machinery/door/firedoor/closed,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"LK" = (
+/obj/machinery/door/poddoor/shutters/preopen,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"LM" = (
+/mob/living/simple_animal/hostile/vox/ranged/space/laser,
+/turf/template_noop,
+/area/template_noop)
+"Mb" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Mc" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/turf_decal/caution/stand_clear,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Mo" = (
+/obj/structure/table/reinforced,
+/obj/item/clothing/head/helmet/space/plasmaman/cargo{
+	pixel_x = 2
+	},
+/obj/item/clothing/under/plasmaman/cargo{
+	pixel_x = 2;
+	pixel_y = -12
+	},
+/obj/item/clothing/head/helmet/space/plasmaman/cargo{
+	pixel_x = 2
+	},
+/obj/item/clothing/under/plasmaman/cargo{
+	pixel_x = 2;
+	pixel_y = -12
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/ftu_cargo)
+"Mt" = (
+/obj/item/reagent_containers/hypospray/medipen/stimpack,
+/obj/structure/closet/crate/secure/medical,
+/obj/item/storage/firstaid/brute,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"MG" = (
+/turf/closed/wall/r_wall/lf_haron/diagonal{
+	dir = 8
+	},
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"MM" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 8
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"MN" = (
+/obj/effect/turf_decal/tile/yellow/half,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"MS" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"MZ" = (
+/obj/structure/extinguisher_cabinet/directional/east,
+/obj/structure/sink/kitchen/directional/west,
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ni" = (
+/obj/structure/table,
+/obj/machinery/processor,
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"Nr" = (
+/obj/structure/closet/emcloset/wall{
+	pixel_y = -26
+	},
+/obj/machinery/power/smes,
+/obj/effect/mapping_helpers/network_builder/power_cable/orange/auto,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ny" = (
+/obj/machinery/light/cold/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"NC" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"NH" = (
+/obj/structure/chair/sofa/corp/left{
+	dir = 1
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"NQ" = (
+/obj/structure/safe,
+/obj/item/mod/module/jetpack,
+/obj/item/mod/control/pre_equipped/standard,
+/obj/item/stack/spacecash/c100000,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"NV" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"Oa" = (
+/obj/structure/table/wood/fancy/orange,
+/obj/item/clipboard,
+/obj/item/pen/fountain,
+/obj/item/flashlight/lamp/green{
+	pixel_x = -7;
+	pixel_y = 14
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ob" = (
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Oe" = (
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Oj" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured_half{
+	dir = 4
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"Om" = (
+/obj/effect/turf_decal/tile/brown/half/contrasted{
+	dir = 1
+	},
+/obj/item/kirbyplants/random,
+/obj/machinery/light/directional/north,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"On" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 6
+	},
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"Or" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ox" = (
+/obj/machinery/vending/boozeomat/all_access,
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"Oy" = (
+/obj/machinery/light/cold/directional/north,
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"OC" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"OF" = (
+/obj/machinery/biogenerator,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"OS" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"OT" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/shuttle/engine/large{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ftu_cargo)
+"Pa" = (
+/obj/machinery/shower/directional/south,
+/obj/item/soap,
+/obj/machinery/light/directional/east,
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"Pe" = (
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"PJ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/ftu_cargo)
+"PP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"PU" = (
+/obj/effect/turf_decal/trimline/blue/corner{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 8
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"PW" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 4
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"Qk" = (
+/obj/effect/turf_decal/tile/brown,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ql" = (
+/mob/living/simple_animal/hostile/vox/melee,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Qn" = (
+/obj/machinery/button/door/directional/north{
+	id = "bridgelockdown";
+	name = "Bridge Blastdoors";
+	pixel_y = -24
+	},
+/mob/living/simple_animal/hostile/looter/ranged/space/laser,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"Qv" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Qw" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 4
+	},
+/obj/machinery/light/directional/east,
+/obj/effect/mob_spawn/human/corpse/pirate,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"QA" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"QE" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 1
+	},
+/obj/machinery/firealarm/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/turf/open/floor/iron/dark/smooth_half,
+/area/ruin/space/has_grav/ftu_cargo)
+"QH" = (
+/obj/machinery/firealarm/directional/west,
+/obj/structure/barricade/sandbags,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"QO" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Mess Hall"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"QU" = (
+/obj/structure/sign/ftu_display,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/ftu_cargo)
+"QY" = (
+/obj/effect/turf_decal/tile/blue/half/contrasted,
+/obj/structure/rack/shelf,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Rz" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Sc" = (
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/mineral/plastitanium/fifty,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"Sg" = (
+/obj/machinery/atmospherics/components/unary/passive_vent{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/ftu_cargo)
+"Sn" = (
+/obj/structure/table,
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 4
+	},
+/obj/item/organ/cyberimp/arm/toolset,
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"Sr" = (
+/obj/structure/shuttle/engine/heater{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"St" = (
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/structure/chair/sofa/left/maroon{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/east,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Sz" = (
+/obj/machinery/hydroponics/constructable,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"SF" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/shuttle/engine/huge{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/ftu_cargo)
+"SN" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/clipboard,
+/obj/item/pen/fountain,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"SQ" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 5
+	},
+/turf/open/floor/carpet/orange,
+/area/ruin/space/has_grav/ftu_cargo)
+"TA" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/shuttle/engine/propulsion{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/ftu_cargo)
+"TU" = (
+/obj/structure/closet/crate/secure/weapon,
+/obj/item/gun/ballistic/shotgun/boltaction,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ug" = (
+/obj/structure/barricade/sandbags,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Up" = (
+/obj/machinery/computer{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured_half{
+	dir = 4
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"Ur" = (
+/obj/structure/sink/directional/east,
+/obj/structure/mirror/directional/west,
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"UD" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/structure/reagent_dispensers/watertank/high,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"UH" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/shuttle/engine/large{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/ftu_cargo)
+"UJ" = (
+/obj/machinery/light/directional/west,
+/obj/machinery/vending/cigarette,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/ftu_cargo)
+"UN" = (
+/mob/living/simple_animal/hostile/looter/ranged/space/laser,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"UP" = (
+/obj/effect/turf_decal/trimline/blue/line,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured_half{
+	dir = 4
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"Vd" = (
+/obj/structure/salvage/circuit_imprinter,
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"Vl" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/ftu_cargo)
+"Vu" = (
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"VB" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/looter,
+/obj/machinery/light_switch/directional/east,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"VR" = (
+/obj/effect/turf_decal/stripes/corner,
+/obj/machinery/button/door/directional/south{
+	id = "freighterbay";
+	name = "Bay Doors"
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Wc" = (
+/obj/machinery/door/firedoor/closed,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Wh" = (
+/mob/living/simple_animal/hostile/looter/ranged/space,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/ftu_cargo)
+"Wi" = (
+/obj/effect/turf_decal/tile/green/anticorner/contrasted{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Wl" = (
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Wp" = (
+/obj/structure/table/wood/fancy/orange,
+/obj/item/modular_computer/laptop/preset/civilian,
+/obj/item/storage/fancy/cigarettes/cigpack_robustgold,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Wq" = (
+/mob/living/simple_animal/hostile/looter/crusher,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ws" = (
+/obj/structure/table/reinforced,
+/obj/item/tank/internals/plasmaman/belt/full,
+/obj/item/tank/internals/plasmaman/belt/full,
+/obj/item/tank/internals/plasmaman/belt/full,
+/obj/item/tank/internals/plasmaman/belt/full,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/turf/open/floor/wood,
+/area/ruin/space/has_grav/ftu_cargo)
+"Wt" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue/half/contrasted{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Ww" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"WB" = (
+/obj/machinery/button/door/directional/south{
+	id = "freighterkitchen";
+	name = "Kitchen Shutters"
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"WJ" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 4
+	},
+/obj/structure/closet/emcloset/wall{
+	pixel_x = 26
+	},
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"WP" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"WQ" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/structure/closet/secure_closet/personal,
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"WS" = (
+/turf/open/floor/iron/white,
+/area/ruin/space/has_grav/ftu_cargo)
+"WY" = (
+/obj/effect/turf_decal/tile/yellow,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"Xl" = (
+/obj/structure/closet/crate/secure,
+/obj/item/stack/sheet/plasmaglass/fifty,
+/obj/item/stack/sheet/plasmaglass/fifty,
+/obj/item/stack/sheet/mineral/titanium/fifty,
+/obj/item/stack/sheet/mineral/gold,
+/obj/item/stack/sheet/mineral/gold,
+/obj/item/stack/sheet/mineral/gold,
+/obj/item/stack/sheet/mineral/gold,
+/obj/item/stack/sheet/mineral/gold,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Xm" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 1
+	},
+/obj/structure/closet/crate/secure,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/plastitaniumglass/fifty,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Xx" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"Xz" = (
+/obj/effect/turf_decal/tile/green/anticorner/contrasted{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"XI" = (
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_edge{
+	dir = 4
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"XV" = (
+/mob/living/simple_animal/hostile/looter/ranged/space/laser,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Yb" = (
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"Ym" = (
+/obj/structure/window/shuttle/survival_pod,
+/obj/structure/grille{
+	layer = 2.5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ftu_cargo)
+"Yo" = (
+/mob/living/simple_animal/hostile/looter/ranged/space/laser,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"YB" = (
+/obj/effect/turf_decal/tile/yellow/half/contrasted{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"YE" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	faction = list("hostile");
+	dir = 1
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"YL" = (
+/obj/item/tank/internals/oxygen/red,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/tank/internals/oxygen/red,
+/obj/item/pickaxe/drill/jackhammer,
+/obj/item/storage/box/minertracker,
+/obj/structure/closet/crate/secure/gear,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"YM" = (
+/obj/structure/dresser,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"YO" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/looter,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 4
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"YQ" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 4
+	},
+/turf/open/floor/iron/smooth,
+/area/ruin/space/has_grav/ftu_cargo)
+"YT" = (
+/obj/effect/turf_decal/tile/yellow/anticorner,
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"YV" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/kitchen,
+/area/ruin/space/has_grav/ftu_cargo)
+"YY" = (
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/ancient_shuttle)
+"Ze" = (
+/obj/machinery/door/airlock/command/glass{
+	name = "Freighter Boss's Quarters"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Zj" = (
+/obj/item/kirbyplants/random,
+/obj/effect/turf_decal/tile/yellow/anticorner{
+	dir = 8
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 4
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"Zo" = (
+/obj/machinery/door/firedoor/closed,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/smooth_large,
+/area/ruin/space/has_grav/ftu_cargo)
+"Zq" = (
+/obj/effect/turf_decal/tile/green/half/contrasted{
+	dir = 1
+	},
+/obj/machinery/light_switch/directional/north,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"Zu" = (
+/obj/structure/window/shuttle/survival_pod,
+/obj/structure/grille{
+	layer = 2.5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/ftu_cargo)
+"Zz" = (
+/obj/effect/turf_decal/tile/yellow/anticorner{
+	dir = 4
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/dark/smooth_corner{
+	dir = 8
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"ZM" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"ZN" = (
+/obj/machinery/door/airlock/glass{
+	name = "Kitchen"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+"ZV" = (
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
+/area/ruin/space/has_grav/ftu_cargo)
+"ZZ" = (
+/obj/effect/turf_decal/tile/brown/anticorner/contrasted,
+/obj/machinery/suit_storage_unit/ftu_work,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/ftu_cargo)
+
+(1,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+HK
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(2,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(3,1,1) = {"
+Gh
+LM
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+HK
+JQ
+Gh
+Gh
+Gh
+Gh
+KS
+KS
+SF
+Gh
+Gh
+Gh
+Gh
+JQ
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+vH
+vH
+vH
+vH
+vH
+Gh
+Gh
+"}
+(4,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Ef
+Gh
+Gh
+KS
+UH
+AN
+AN
+AN
+KS
+UH
+Gh
+Gh
+Ef
+Gh
+Gh
+Gh
+HK
+Gh
+Gh
+Gh
+vH
+vH
+vH
+vH
+vH
+vH
+vH
+Gh
+Gh
+"}
+(5,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Ef
+Gh
+Gh
+AN
+AN
+AN
+AN
+AN
+AN
+AN
+Gh
+Gh
+Ef
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+vH
+vH
+Gh
+Gh
+Gh
+"}
+(6,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+nU
+OT
+Gh
+Ef
+Gh
+LG
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+LG
+Gh
+Ef
+Gh
+KS
+UH
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+vH
+LM
+Gh
+Gh
+"}
+(7,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+KY
+hM
+hM
+KY
+Sg
+LG
+mb
+mb
+Fy
+uu
+nL
+yv
+ti
+mb
+mb
+LG
+Sg
+TA
+AN
+AN
+TA
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+vH
+Gh
+Gh
+Gh
+"}
+(8,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+LG
+mb
+mb
+mb
+Zu
+mb
+mb
+pm
+mV
+dS
+YQ
+dS
+dS
+Et
+mb
+mb
+Zu
+mb
+mb
+mb
+LG
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(9,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+mb
+mb
+Lm
+ek
+UD
+kt
+mb
+pm
+cF
+py
+Xx
+uO
+dS
+BE
+mb
+Ar
+vM
+Sn
+eA
+mb
+mb
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(10,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+mb
+Af
+qR
+qR
+oZ
+Sz
+mb
+bu
+cF
+Dz
+Xx
+Vd
+dS
+BE
+mb
+ar
+On
+zo
+WS
+Iy
+mb
+Gh
+Gh
+JG
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+vH
+Gh
+"}
+(11,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+HK
+Gh
+mb
+rt
+qR
+fP
+hH
+Af
+mb
+pm
+mR
+vv
+Ak
+dr
+dS
+dC
+mb
+jR
+lf
+ll
+WS
+gf
+mb
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+vH
+vH
+Gh
+"}
+(12,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+mb
+Af
+qR
+lV
+wf
+rB
+mb
+pm
+ok
+dS
+yr
+dS
+la
+Nr
+mb
+Dn
+ct
+ez
+dR
+aT
+mb
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+vH
+vH
+Gh
+"}
+(13,1,1) = {"
+Gh
+Gh
+JQ
+Ef
+Ef
+Ef
+mb
+mb
+OF
+mb
+mi
+mb
+mb
+mb
+mb
+mb
+qE
+mb
+mb
+mb
+mb
+mb
+Hj
+mb
+mb
+mb
+mb
+Ef
+Ef
+Ef
+JQ
+Gh
+Gh
+Gh
+vH
+vH
+vH
+Gh
+Gh
+"}
+(14,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+ux
+oa
+ak
+MM
+NV
+ak
+ak
+Kj
+OC
+db
+Yo
+QH
+Hr
+Kj
+ak
+ak
+NV
+MM
+ak
+lg
+ux
+Gh
+Gh
+Gh
+Gh
+rW
+Gh
+Gh
+vH
+vH
+Gh
+Gh
+Gh
+"}
+(15,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+ux
+QA
+CZ
+dJ
+Mb
+vj
+vj
+Zo
+vj
+Kw
+Ug
+Kw
+vj
+Zo
+vj
+vj
+Or
+dJ
+lB
+qS
+ux
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+vH
+Gh
+Gh
+Gh
+"}
+(16,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+ux
+Zz
+WP
+WJ
+WP
+WP
+WP
+DE
+YO
+qR
+wf
+qR
+gm
+DE
+WP
+WP
+WP
+WP
+WP
+YT
+ux
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+vH
+Gh
+Gh
+Gh
+"}
+(17,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+mb
+mb
+mb
+mb
+mb
+mb
+bD
+mb
+Fb
+PW
+wf
+gm
+gM
+mb
+Cg
+ux
+Cg
+mb
+mb
+mb
+mb
+Ef
+Ef
+Ef
+JQ
+Gh
+Gh
+vH
+vH
+vH
+Gh
+Gh
+Gh
+"}
+(18,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+ux
+qR
+xw
+Kb
+hJ
+HC
+Wi
+mb
+mb
+LH
+Wc
+Ee
+mb
+mb
+sy
+tS
+tS
+Cz
+tS
+nC
+mb
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(19,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+mb
+tW
+Ey
+WQ
+mb
+Zq
+oN
+Wi
+mb
+QA
+wf
+qS
+mb
+rb
+Oe
+Oe
+pI
+nw
+kW
+VR
+mb
+Ef
+Ef
+JQ
+Gh
+Gh
+Gh
+vH
+vH
+vH
+Gh
+Gh
+Gh
+"}
+(20,1,1) = {"
+Gh
+Gh
+Gh
+JQ
+Ef
+Ef
+mb
+mb
+mb
+mb
+mb
+Jd
+df
+iT
+mb
+QA
+wf
+so
+mb
+bt
+yl
+Ce
+eY
+Ai
+Hn
+Mc
+nu
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+vH
+Gh
+Gh
+Gh
+"}
+(21,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+mb
+zY
+Ey
+Fu
+mb
+Jz
+df
+iT
+mb
+QA
+wf
+qS
+mb
+HO
+Oe
+GA
+AE
+df
+YL
+Wl
+nu
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+vH
+Gh
+Gh
+Gh
+"}
+(22,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+ux
+qR
+Ny
+Kb
+Dr
+Jd
+df
+iT
+mb
+QA
+wf
+qS
+mb
+dm
+dk
+JW
+Ii
+df
+TU
+Wl
+nu
+Gh
+Gh
+Gh
+Gh
+Gh
+HK
+vH
+vH
+vH
+Gh
+Gh
+Gh
+"}
+(23,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+HK
+mb
+mb
+mb
+mb
+mb
+IV
+DG
+iT
+mb
+dQ
+wf
+Ew
+mb
+YB
+Oe
+JW
+Mt
+df
+Xl
+Wl
+nu
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+Gh
+Gh
+Gh
+Gh
+"}
+(24,1,1) = {"
+Gh
+Gh
+Gh
+vH
+vH
+vH
+mb
+Pa
+Ur
+zK
+mb
+Pe
+CQ
+pA
+QO
+pB
+Ob
+pB
+vx
+KN
+PP
+Av
+yY
+BZ
+Xm
+Mc
+nu
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+Gh
+Gh
+Gh
+Gh
+"}
+(25,1,1) = {"
+Gh
+Gh
+Gh
+vH
+vH
+vH
+mb
+mb
+Gr
+mb
+mb
+Jd
+ng
+wX
+ux
+yj
+xs
+Ah
+ux
+bt
+Oe
+Oe
+Wq
+Oe
+dk
+iE
+QU
+Ef
+Ef
+JQ
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(26,1,1) = {"
+Gh
+Gh
+vH
+vH
+vH
+vH
+mb
+el
+Bt
+Bb
+Bt
+Lb
+ng
+iT
+fG
+gS
+wf
+gS
+Cg
+sV
+HH
+rF
+cO
+jP
+SN
+wT
+mb
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+MG
+GN
+Hd
+Gh
+Gh
+Gh
+"}
+(27,1,1) = {"
+Gh
+Gh
+vH
+vH
+vH
+LG
+mb
+Xz
+jo
+jo
+jo
+jo
+CH
+rY
+mb
+zF
+wf
+jC
+mb
+mb
+Jx
+mb
+mb
+mb
+mb
+mb
+mb
+Ef
+Ef
+Ef
+JQ
+Gh
+GN
+kM
+Sr
+kM
+GN
+Gh
+Gh
+"}
+(28,1,1) = {"
+Gh
+Gh
+vH
+vH
+vH
+mb
+mb
+ZN
+mb
+mb
+mb
+OS
+YV
+OS
+mb
+lx
+wf
+qS
+mb
+sc
+cd
+pp
+cd
+Au
+oV
+tY
+mb
+vH
+vH
+Gh
+Gh
+Gh
+Sr
+kM
+kM
+kM
+Sr
+Gh
+Gh
+"}
+(29,1,1) = {"
+Gh
+Gh
+vH
+vH
+vH
+mb
+Ox
+pu
+aJ
+qd
+mb
+Oy
+al
+NH
+mb
+EG
+wf
+qS
+mb
+aZ
+Oe
+aB
+Oe
+Oe
+Oe
+iA
+mb
+vH
+vH
+vH
+Gh
+Gh
+kM
+kM
+Yb
+kM
+kM
+Gh
+Gh
+"}
+(30,1,1) = {"
+Gh
+Gh
+vH
+vH
+vH
+mb
+yW
+pu
+cA
+pu
+Df
+pu
+al
+xt
+mb
+pv
+wf
+qS
+mb
+Om
+Oe
+JW
+zj
+Oe
+Oe
+JD
+mb
+vH
+vH
+vH
+Gh
+Gh
+YE
+sA
+YY
+sA
+fV
+Gh
+Gh
+"}
+(31,1,1) = {"
+Gh
+Gh
+vH
+vH
+vH
+mb
+By
+wd
+dp
+ve
+wQ
+ve
+kK
+iX
+mb
+EC
+wf
+Du
+mb
+ci
+Oe
+FT
+fo
+Ql
+Oe
+nV
+mb
+vH
+vH
+vH
+Gh
+Gh
+kM
+sA
+dB
+sA
+kM
+Gh
+Gh
+"}
+(32,1,1) = {"
+Gh
+Gh
+Gh
+vH
+vH
+mb
+Ni
+pu
+pu
+WB
+mb
+mb
+mb
+mb
+mb
+QA
+wf
+qS
+mb
+ci
+Oe
+Qk
+iz
+bU
+FP
+ZZ
+mb
+vH
+vH
+vH
+Gh
+Gh
+LK
+YY
+YY
+YY
+ej
+Gh
+Gh
+"}
+(33,1,1) = {"
+Gh
+Gh
+Gh
+vH
+vH
+mb
+pu
+pu
+pu
+pu
+JC
+pu
+Ha
+IP
+mb
+QA
+wf
+qS
+mb
+yy
+gT
+qN
+mb
+EI
+mb
+mb
+mb
+vH
+vH
+vH
+Gh
+Gh
+kM
+jd
+UN
+jd
+kM
+Gh
+Gh
+"}
+(34,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+vH
+mb
+pu
+MZ
+BW
+DQ
+mb
+pu
+pu
+mb
+mb
+lt
+Wc
+HP
+mb
+mb
+eC
+HJ
+mb
+ca
+Wh
+ex
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+kM
+jd
+YY
+jd
+kM
+Gh
+Gh
+"}
+(35,1,1) = {"
+Gh
+Gh
+JQ
+Ef
+Ef
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+mb
+oa
+OC
+wf
+KR
+Zj
+mb
+mb
+yT
+mb
+EI
+mb
+mb
+mb
+Ef
+Ef
+Ef
+JQ
+Gh
+kM
+kM
+CI
+kM
+kM
+Gh
+Gh
+"}
+(36,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+HK
+ux
+iU
+ak
+ak
+NC
+Vu
+ZV
+Kj
+OC
+qR
+wf
+qR
+KR
+Kj
+Fw
+ZM
+ZV
+ak
+ak
+lg
+ux
+Gh
+Gh
+Gh
+Gh
+Gh
+kM
+YY
+YY
+YY
+kM
+Gh
+Gh
+"}
+(37,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+ux
+QA
+HE
+dJ
+dJ
+Rz
+vj
+Zo
+vj
+vj
+Ob
+vj
+vj
+Zo
+vj
+Ww
+dJ
+dJ
+lB
+qS
+ux
+Gh
+Gh
+Gh
+Gh
+Gh
+YE
+qJ
+qJ
+qJ
+fV
+Gh
+Gh
+"}
+(38,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+ux
+Gk
+WP
+WP
+VB
+ZM
+WY
+DE
+PW
+pb
+wf
+qR
+gm
+DE
+gY
+ZM
+WY
+Qw
+WP
+YT
+ux
+Gh
+Gh
+Gh
+Gh
+Gh
+xo
+kM
+kM
+kM
+xo
+Gh
+Gh
+"}
+(39,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+mb
+mb
+mb
+mb
+mb
+Jy
+mb
+mb
+xy
+PW
+wf
+gm
+YT
+mb
+mb
+oK
+mb
+mb
+mb
+mb
+mb
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(40,1,1) = {"
+Gh
+Gh
+LM
+Gh
+Gh
+Gh
+Gh
+mb
+mb
+Ln
+MS
+De
+Sc
+mb
+mb
+lt
+Wc
+HP
+mb
+mb
+mv
+Lt
+dK
+mb
+LG
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(41,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+mb
+mb
+do
+Eo
+cN
+st
+Qn
+mb
+QA
+wf
+qS
+mb
+Oe
+jb
+Lt
+sW
+mb
+Gh
+Gh
+Gh
+Gh
+HK
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+Gh
+Gh
+Gh
+"}
+(42,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+mb
+NQ
+pH
+hL
+mL
+xZ
+mb
+QA
+wf
+qS
+mb
+Oe
+jb
+Lt
+Mo
+mb
+LG
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(43,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+mb
+mb
+EL
+mb
+mb
+mb
+mb
+QE
+xs
+MN
+mb
+Oe
+jb
+uh
+Ws
+mb
+mb
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(44,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+rW
+vH
+vH
+Gh
+mb
+mb
+aY
+KH
+AA
+Vl
+mb
+QA
+wf
+qS
+mb
+Oe
+jb
+PJ
+Gs
+UJ
+mb
+LG
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(45,1,1) = {"
+Gh
+Gh
+Gh
+vH
+vH
+vH
+vH
+Gh
+Gh
+mb
+EZ
+gq
+gq
+gq
+mb
+QA
+wf
+qS
+mb
+et
+Aj
+Hx
+mq
+FW
+Ck
+mb
+Ef
+Ef
+JQ
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+Gh
+Gh
+"}
+(46,1,1) = {"
+Gh
+Gh
+vH
+vH
+vH
+vH
+vH
+Gh
+Gh
+mb
+mb
+gq
+fS
+nv
+mb
+pf
+gW
+yg
+mb
+tL
+qR
+Hk
+vJ
+qR
+Kt
+ux
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+Gh
+Gh
+"}
+(47,1,1) = {"
+Gh
+Gh
+vH
+vH
+vH
+vH
+vH
+Gh
+Gh
+mb
+mb
+mb
+mb
+mb
+mb
+ei
+Ym
+ei
+mb
+mb
+qR
+mY
+Ay
+qR
+qR
+ux
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(48,1,1) = {"
+Gh
+Gh
+vH
+vH
+vH
+vH
+vH
+Gh
+rW
+Gh
+Gh
+Gh
+Gh
+mb
+rH
+Oe
+Do
+Oe
+aK
+mb
+kn
+qG
+St
+gA
+eo
+ux
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(49,1,1) = {"
+Gh
+Gh
+vH
+vH
+vH
+vH
+vH
+Gh
+vH
+Gh
+Gh
+Gh
+mb
+mb
+hQ
+Oe
+XV
+Oe
+QY
+mb
+mb
+mb
+mb
+Ze
+mb
+mb
+Ef
+JQ
+Gh
+Gh
+Gh
+Gh
+LM
+Gh
+Gh
+vH
+vH
+vH
+Gh
+"}
+(50,1,1) = {"
+Gh
+Gh
+Gh
+vH
+vH
+vH
+vH
+Gh
+Gh
+Gh
+JQ
+Ef
+mb
+wx
+xE
+dk
+ng
+Oe
+wB
+mb
+Kt
+Wp
+Oa
+fO
+mb
+LG
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+vH
+vH
+Gh
+"}
+(51,1,1) = {"
+Gh
+Gh
+Gh
+vH
+vH
+vH
+vH
+vH
+Gh
+Gh
+Gh
+Gh
+tB
+cP
+rR
+Im
+hK
+Hi
+qK
+mb
+hg
+vb
+Ba
+gA
+mb
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+vH
+vH
+vH
+vH
+Gh
+"}
+(52,1,1) = {"
+Gh
+Gh
+Gh
+vH
+vH
+vH
+vH
+vH
+Gh
+Gh
+Gh
+Gh
+tB
+zV
+fo
+UP
+cT
+tD
+PP
+eI
+Qv
+gQ
+AP
+SQ
+mb
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(53,1,1) = {"
+Gh
+vH
+Gh
+vH
+vH
+vH
+vH
+vH
+Gh
+Gh
+Gh
+Gh
+tB
+iK
+rR
+PU
+XI
+mC
+Jm
+mb
+YM
+Kb
+EP
+xC
+mb
+vH
+vH
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(54,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+JQ
+Ef
+Ef
+mb
+ao
+hT
+Oe
+oz
+Oe
+am
+mb
+wK
+yM
+mb
+mb
+mb
+vH
+vH
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(55,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+vH
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+mb
+mb
+xh
+Oe
+oz
+dk
+QY
+mb
+mb
+ux
+mb
+LG
+Gh
+vH
+vH
+Gh
+rW
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(56,1,1) = {"
+Gh
+Gh
+LM
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+LG
+mb
+ef
+Oe
+zn
+Oe
+mf
+mb
+LG
+Gh
+Ef
+Gh
+Gh
+vH
+vH
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(57,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+rW
+mb
+Wt
+Oe
+Oj
+Oe
+dy
+mb
+Gh
+Gh
+Ef
+vH
+vH
+vH
+vH
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(58,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+mb
+Fm
+lp
+Up
+bM
+uo
+mb
+vH
+Gh
+JQ
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(59,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+LG
+tB
+tB
+tB
+tB
+tB
+LG
+vH
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(60,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}
+(61,1,1) = {"
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+Gh
+"}

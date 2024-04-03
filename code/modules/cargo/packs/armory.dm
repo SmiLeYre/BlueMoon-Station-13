@@ -223,7 +223,16 @@
 					/obj/item/kitchen/knife/combat,
 					/obj/item/clothing/gloves/tackler/combat/insulated,
 					/obj/item/clothing/gloves/tackler/combat/insulated)
-	crate_name = "swat crate"
+	crate_name = "SWAT Crate"
+
+/datum/supply_pack/security/armory/altyn_helmets
+	name = "Altyn Helmets Crate"
+	desc = "Содержит три специальных шлема типа 'АЛТЫН'. Для открытия требуется доступ к оружейной."
+	cost = 1750
+	contains = list(/obj/item/clothing/head/helmet/swat/nanotrasen/altyn,
+					/obj/item/clothing/head/helmet/swat/nanotrasen/altyn,
+					/obj/item/clothing/head/helmet/swat/nanotrasen/altyn)
+	crate_name = "Altyn Helmets Crate"
 
 /datum/supply_pack/security/armory/swat/updated_medsec
 	name = "ERT Armor Crate | MedSec"
@@ -336,7 +345,7 @@
 	contains = list(/obj/item/gun/ballistic/shotgun/leveraction,
 					/obj/item/storage/fancy/cigarettes/derringer/gold,
 					/obj/item/gun/ballistic/revolver/nagant,
-					/obj/item/gun/ballistic/automatic/pistol/aps,
+					/obj/item/gun/ballistic/automatic/pistol/APS,
 					/obj/item/gun/ballistic/revolver/golden)
 
 /datum/supply_pack/security/armory/esoteric_arms/fill(obj/structure/closet/crate/C)

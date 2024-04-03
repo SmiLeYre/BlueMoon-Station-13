@@ -9,6 +9,7 @@
 	antag_hud_name = "heretic_beast"
 	show_in_antagpanel = FALSE
 	var/datum/antagonist/master
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/heretic_monster/admin_add(datum/mind/new_owner,mob/admin)
 	new_owner.add_antag_datum(src)

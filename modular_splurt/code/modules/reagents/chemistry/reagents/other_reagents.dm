@@ -61,7 +61,7 @@
 	// Check for Bloodfledge quirk
 	if(HAS_TRAIT(M,TRAIT_BLOODFLEDGE))
 		// Check for own blood
-		if(data["donor"] == M)
+		if(data["donor"] == WEAKREF(M))
 			// Warn user and return
 			to_chat(M, span_warning("You gain no nourishment from the familiar blood..."))
 			return
@@ -174,8 +174,8 @@
 		M.adjustStaminaLoss(1)
 
 		// Reduce hunger and thirst.
-		M.adjust_nutrition(1)
-		M.adjust_thirst(1)
+		// M.adjust_nutrition(1)
+		// M.adjust_thirst(1)
 
 		// Heal brute and burn.
 		// Accounts for robotic limbs.

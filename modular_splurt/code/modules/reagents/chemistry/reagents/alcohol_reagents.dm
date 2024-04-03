@@ -85,7 +85,10 @@
 /datum/reagent/consumable/ethanol/cum_in_a_hot_tub/semen/on_mob_metabolize(mob/living/L)
 	if(ishuman(L))
 		var/mob/living/carbon/human/H = L
-		if(HAS_TRAIT(H, TRAIT_DUMB_CUM) || HAS_TRAIT(H, TRAIT_GFLUID_DETECT))
+		if(HAS_TRAIT(H, TRAIT_DUMB_CUM))
+			var/datum/quirk/dumb4cum/quirk_instance = locate() in H.roundstart_quirks
+			quirk_instance.uncrave(print_text = TRUE)
+		else if(HAS_TRAIT(H, TRAIT_GFLUID_DETECT))
 			to_chat(H, span_love("Незабываемый вкус свежей спермы вы узнаете из тысячи~"))
 	. = ..()
 

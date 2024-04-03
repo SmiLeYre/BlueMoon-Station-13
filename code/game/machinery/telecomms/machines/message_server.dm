@@ -66,7 +66,7 @@
 		icon_state = "blackbox"
 
 /obj/item/blackbox
-	name = "the blackbox"
+	name = "The Blackbox"
 	desc = "A strange relic, capable of recording data on extradimensional vertices. It lives inside the blackbox recorder for safe keeping."
 	icon = 'icons/obj/stationobjs.dmi'
 	icon_state = "blackcube"

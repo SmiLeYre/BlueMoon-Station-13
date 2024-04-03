@@ -3,11 +3,13 @@
 	var/hole = CUM_TARGET_VAGINA
 
 /obj/item/dildo/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
-	//var/possessive_verb = user.ru_ego()
-	user.DelayNextAction(CLICK_CD_RANGE)
 	var/message = ""
 	var/lust_amt = 0
 	var/organ //SPLURT edit
+
+	if(!user.canUseTopic(user, BE_CLOSE))
+		return
+	user.DelayNextAction(CLICK_CD_RANGE)
 
 	if(ishuman(M) && (M?.client?.prefs?.toggles & VERB_CONSENT))
 		switch(user.zone_selected)
@@ -32,6 +34,10 @@
 		playsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
 							'modular_sand/sound/interactions/bang5.ogg',
 							'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
+		if(!HAS_TRAIT(M, TRAIT_LEWD_JOB))
+			new /obj/effect/temp_visual/heart(M.loc)
+
+
 	else if(user.a_intent == INTENT_HARM)
 		return ..()
 

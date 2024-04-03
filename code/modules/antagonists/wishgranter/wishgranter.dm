@@ -3,7 +3,6 @@
 	show_in_antagpanel = FALSE
 	show_name_in_check_antagonists = TRUE
 	threat = 20
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/wishgranter/proc/forge_objectives()
 	var/datum/objective/hijack/hijack = new

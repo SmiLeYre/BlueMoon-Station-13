@@ -415,9 +415,9 @@ DEFINE_BITFIELD(turret_flags, list(
 	if(cover && obj_integrity < max_integrity)
 		if(!I.tool_start_check(user, amount=0))
 			return
-		user.visible_message("[user] is welding the turret.", \
-						"<span class='notice'>You begin repairing the turret...</span>", \
-						"<span class='italics'>You hear welding.</span>")
+		user.visible_message("[user] чинит турель сваркой.", \
+						"<span class='notice'>Вы начинаете чинить турель...</span>", \
+						"<span class='italics'>Вы слышите звук сварки.</span>")
 		if(I.use_tool(src, user, 40, volume=50))
 			obj_integrity = max_integrity
 			user.visible_message("[user.name] has repaired [src].", \
@@ -578,7 +578,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	if(turret_flags & TURRET_FLAG_SHOOT_CRIMINALS)	//if the turret can check the records, check if they are set to *Arrest* on records
 		var/perpname = perp.get_face_name(perp.get_id_name())
 		var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.security)
-		if(!R || (R.fields["criminal"] == "*Arrest*"))
+		if(!R || (R.fields["criminal"] == SEC_RECORD_STATUS_ARREST || SEC_RECORD_STATUS_EXECUTE || SEC_RECORD_STATUS_INCARCERATED))
 			threatcount += 4
 
 	if((turret_flags & TURRET_FLAG_SHOOT_UNSHIELDED) && (!HAS_TRAIT(perp, TRAIT_MINDSHIELD)))
@@ -763,7 +763,7 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/porta_turret/syndicate/assess_perp(mob/living/carbon/human/perp)
 	var/obj/item/card/id/target_card = perp.get_idcard(FALSE)
 	if(target_card && (ACCESS_SYNDICATE in target_card?.access) && istype(target_card, /obj/item/card/id/syndicate))
-		if(istype(target_card, /obj/item/card/id/syndicate/inteq) || istype(target_card, /obj/item/card/id/syndicate/anyone/inteq) || istype(target_card, /obj/item/card/id/syndicate/nuke_leader/inteq))
+		if(istype(target_card, /obj/item/card/id/syndicate/inteq) || istype(target_card, /obj/item/card/id/syndicate/inteq/anyone) || istype(target_card, /obj/item/card/id/syndicate/inteq/nuke_leader))
 			return 10	//no InteQ allowed!
 		else
 			return 0
@@ -810,21 +810,28 @@ DEFINE_BITFIELD(turret_flags, list(
 
 /obj/machinery/porta_turret/syndicate/pod
 	integrity_failure = 0.5
+	shot_delay = 2
 	max_integrity = 40
 	stun_projectile = /obj/item/projectile/bullet/syndicate_turret
 	lethal_projectile = /obj/item/projectile/bullet/syndicate_turret
 
 /obj/machinery/porta_turret/syndicate/shuttle
 	scan_range = 9
-	shot_delay = 20
-	stun_projectile = /obj/item/projectile/bullet/p50/penetrator/shuttle
-	lethal_projectile = /obj/item/projectile/bullet/p50/penetrator/shuttle
+	shot_delay = 3
+	stun_projectile = /obj/item/projectile/bullet/syndicate_turret
+	lethal_projectile = /obj/item/projectile/bullet/syndicate_turret
 	lethal_projectile_sound = 'sound/weapons/gunshot_smg.ogg'
 	stun_projectile_sound = 'sound/weapons/gunshot_smg.ogg'
 	armor = list(MELEE = 50, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 80, BIO = 0, RAD = 0, FIRE = 90, ACID = 90)
 
 /obj/machinery/porta_turret/syndicate/pod/toolbox
-	max_integrity = 100
+	icon_state = "toolbox_off"
+	base_icon_state = "toolbox"
+	max_integrity = 220
+
+/obj/machinery/porta_turret/syndicate/pod/toolbox/Initialize(mapload)
+	. = ..()
+	underlays += image(icon = icon, icon_state = "[base_icon_state]_frame")
 
 /obj/machinery/porta_turret/syndicate/shuttle/target(atom/movable/target)
 	if(target)

@@ -64,8 +64,8 @@
 									"[src] is aggressively grabbing [ru_ego()] own neck! It looks like [p_theyre()] trying to commit suicide.", \
 									"[src] is pulling [ru_ego()] eyes out of their sockets! It looks like [p_theyre()] trying to commit suicide.")
 		if(a_intent == INTENT_HELP)
-			suicide_message = pick("[src] is hugging [ru_na()]self to death! It looks like [p_theyre()] trying to commit suicide.", \
-									"[src] is high-fiving [ru_na()]self to death! It looks like [p_theyre()] trying to commit suicide.", \
+			suicide_message = pick("[src] is hugging [p_them()]self to death! It looks like [p_theyre()] trying to commit suicide.", \
+									"[src] is high-fiving [p_them()]self to death! It looks like [p_theyre()] trying to commit suicide.", \
 									"[src] is getting too high on life! It looks like [p_theyre()] trying to commit suicide.")
 		else
 			suicide_message = pick("[src] is attempting to bite [ru_ego()] tongue off! It looks like [p_theyre()] trying to commit suicide.", \

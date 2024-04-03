@@ -515,6 +515,16 @@
 	strip_delay = 60
 	dog_fashion = null
 
+/obj/item/clothing/accessory/armband/sfparmband
+	name = "SFP Department Armpatch"
+	desc = "Armpatch one of superior forces of Federal Agencies on territory of SolGov. This one belongs to Agent."
+	icon_state = "sfp_patch"
+	item_state = "sfp_patch"
+	icon = 'modular_bluemoon/SmiLeY/icons/sfp_armpatch_obj.dmi'
+	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/sfp_armpatch.dmi'
+	strip_delay = 60
+	dog_fashion = null
+
 //////////////
 //OBJECTION!//
 //////////////
@@ -592,21 +602,21 @@
 	name = "protective padding"
 	desc = "A soft padding meant to cushion the wearer from melee harm."
 	icon_state = "padding"
-	armor = list(MELEE = 20, BULLET = 10, LASER = 0, ENERGY = 0, BOMB = 5, BIO = 0, RAD = 0, FIRE = -20, ACID = 45)
+	armor = list(MELEE = 10, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 5, BIO = 0, RAD = 0, FIRE = -20, ACID = 45) // BLUEMOON CHANGE нёрф защиты в два раза
 	flags_inv = HIDEACCESSORY //hidden from indiscrete mob examines.
 
 /obj/item/clothing/accessory/kevlar
 	name = "kevlar padding"
 	desc = "A layered kevlar padding meant to cushion the wearer from ballistic harm."
 	icon_state = "padding"
-	armor = list(MELEE = 10, BULLET = 20, LASER = 0, ENERGY = 0, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 25)
+	armor = list(MELEE = 0, BULLET = 10, LASER = 0, ENERGY = 0, BOMB = 10, BIO = 0, RAD = 0, FIRE = 0, ACID = 25) // BLUEMOON CHANGE нёрф защиты в два раза
 	flags_inv = HIDEACCESSORY
 
 /obj/item/clothing/accessory/plastics
 	name = "ablative padding"
 	desc = "A thin ultra-refractory composite padding meant to cushion the wearer from energy lasers harm."
 	icon_state = "plastics"
-	armor = list(MELEE = 0, BULLET = 0, LASER = 20, ENERGY = 10, BOMB = 0, BIO = 0, RAD = 0, FIRE = 20, ACID = -40)
+	armor = list(MELEE = 5, BULLET = 0, LASER = 10, ENERGY = 10, BOMB = 0, BIO = 0, RAD = 0, FIRE = 20, ACID = -40) // BLUEMOON CHANGE нёрф защиты в два раза
 	flags_inv = HIDEACCESSORY
 
 //necklace

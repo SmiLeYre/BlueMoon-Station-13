@@ -146,11 +146,19 @@ Class Procs:
 	/// TRUE for on, FALSE for off, -1 for never checked
 	var/appearance_power_state = -1
 
+	var/allow_oversized_characters = FALSE // BLUEMOON ADD - чтобы большие персонажи могли помещаться в некоторые машины
+
+	///A combination of factors such as having power, not being broken and so on. Boolean.
+	var/is_operational = TRUE
+
 /obj/machinery/Initialize(mapload)
 	if(!armor)
 		armor = list(MELEE = 25, BULLET = 10, LASER = 10, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 70)
 	. = ..()
+	SSmachines.register_machine(src)
 	GLOB.machines += src
+
+	check_on_table()
 
 	if(ispath(circuit, /obj/item/circuitboard))
 		circuit = new circuit(src)
@@ -172,6 +180,7 @@ Class Procs:
 	power_change()
 
 /obj/machinery/Destroy()
+	SSmachines.unregister_machine(src)
 	GLOB.machines.Remove(src)
 	if(!speed_process)
 		STOP_PROCESSING(SSmachines, src)
@@ -201,10 +210,17 @@ Class Procs:
 		return
 	. = stat
 	stat = new_value
-	on_machine_stat_update(stat)
+	on_stat_update(.)
 
-/obj/machinery/proc/on_machine_stat_update(stat)
-	return
+///Called when the value of `stat` changes, so we can react to it.
+/obj/machinery/proc/on_stat_update(old_value)
+	//From off to on.
+	if((old_value & (NOPOWER|BROKEN|MAINT)) && !(stat & (NOPOWER|BROKEN|MAINT)))
+		set_is_operational(TRUE)
+		return
+	//From on to off.
+	if(stat & (NOPOWER|BROKEN|MAINT))
+		set_is_operational(FALSE)
 
 /obj/machinery/emp_act(severity)
 	. = ..()
@@ -248,7 +264,7 @@ Class Procs:
 				continue
 			if(isliving(AM))
 				var/mob/living/L = am
-				if(L.buckled || L.mob_size >= MOB_SIZE_LARGE)
+				if(L.buckled || (!allow_oversized_characters && L.mob_size >= MOB_SIZE_LARGE)) // BLUEMOON EDIT - добавлено allow_oversized_characters
 					continue
 			target = am
 
@@ -416,6 +432,8 @@ Class Procs:
 	. = ..()
 
 /obj/machinery/ui_act(action, params)
+	if(params["ic_advactivator"])
+		return
 	add_fingerprint(usr)
 	return ..()
 
@@ -578,13 +596,14 @@ Class Procs:
 		if(!can_be_unfasten || can_be_unfasten == FAILED_UNFASTEN)
 			return can_be_unfasten
 		if(time)
-			to_chat(user, "<span class='notice'>Вы начинаете [anchored ? "un" : ""]вкручивать [src]...</span>")
+			to_chat(user, "<span class='notice'>Вы начинаете [anchored ? "откручивать" : "вкручивать"] [src]...</span>")
 		I.play_tool_sound(src, 50)
 		var/prev_anchored = anchored
 		//as long as we're the same anchored state and we're either on a floor or are anchored, toggle our anchored state
 		if(I.use_tool(src, user, time, extra_checks = CALLBACK(src, .proc/unfasten_wrench_check, prev_anchored, user)))
-			to_chat(user, "<span class='notice'>You [anchored ? "un" : ""]secure [src].</span>")
+			to_chat(user, "<span class='notice'>Вы начинаете [anchored ? "откручивать" : "вкручивать"] [src].</span>")
 			setAnchored(!anchored)
+			check_on_table()
 			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
 			SEND_SIGNAL(src, COMSIG_OBJ_DEFAULT_UNFASTEN_WRENCH, anchored)
 			return SUCCESSFUL_UNFASTEN
@@ -730,4 +749,21 @@ Class Procs:
 			playsound(src, custom_clicksound, clickvol)
 		else if(clicksound)
 			playsound(src, clicksound, clickvol)
+	return
+
+/// Adjusts the vertical pixel offset when the object is anchored on a tile with table
+/obj/proc/check_on_table()
+	if(anchored_tabletop_offset != 0 && !istype(src, /obj/structure/table) && locate(/obj/structure/table) in loc)
+		pixel_y = anchored ? anchored_tabletop_offset : initial(pixel_y)
+
+///Called when we want to change the value of the `is_operational` variable. Boolean.
+/obj/machinery/proc/set_is_operational(new_value)
+	if(new_value == is_operational)
+		return
+	. = is_operational
+	is_operational = new_value
+	on_set_is_operational(.)
+
+///Called when the value of `is_operational` changes, so we can react to it.
+/obj/machinery/proc/on_set_is_operational(old_value)
 	return

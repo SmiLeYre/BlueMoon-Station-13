@@ -2510,10 +2510,6 @@
 /obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating,
 /area/awaymission/BMPship/Fore)
-"RA" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/mineral/random,
-/area/awaymission/BMPship)
 "Sl" = (
 /obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating/airless{
@@ -3736,7 +3732,7 @@ ce
 ce
 aq
 gb
-RA
+gb
 gb
 gb
 gb

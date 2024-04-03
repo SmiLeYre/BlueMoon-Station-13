@@ -6,7 +6,6 @@
 	show_in_antagpanel = TRUE
 	show_name_in_check_antagonists = TRUE
 	var/list/datum/mind/carp = list()
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/space_dragon/greet()
 	to_chat(owner, "<b>Endless time and space we have moved through.  We do not remember from where we came, we do not know where we will go.  All space belongs to us.\n\

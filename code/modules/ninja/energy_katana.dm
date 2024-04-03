@@ -152,9 +152,22 @@
 	obj_flags = UNIQUE_RENAME
 	max_integrity = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	block_parry_data = /datum/block_parry_data/dual_esword
 	var/datum/effect_system/spark_spread/spark_system
 	var/datum/action/innate/dash/ninja/ronin/jaunt_ronin
 	var/dash_toggled = TRUE
+
+/obj/item/energy_naginata/check_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	block_return[BLOCK_RETURN_REFLECT_PROJECTILE_CHANCE] = 100
+	return ..()
+
+/obj/item/energy_naginata/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if((is_energy_reflectable_projectile(object) ||  !is_energy_reflectable_projectile(object)) && (attack_type & ATTACK_TYPE_PROJECTILE) && prob(75))
+		block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_RETURN_TO_SENDER			//no you
+		owner.visible_message("<span class='danger'>Ranged attacks just make [owner] angrier!</span>")
+		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, 1)
+		return BLOCK_SHOULD_REDIRECT | BLOCK_SUCCESS | BLOCK_REDIRECTED
+	return ..()
 
 /obj/item/energy_naginata/Initialize(mapload)
 	. = ..()

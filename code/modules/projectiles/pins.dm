@@ -1,16 +1,16 @@
 /obj/item/firing_pin
-	name = "electronic firing pin"
-	desc = "A small authentication device, to be inserted into a firearm receiver to allow operation. NT safety regulations require all new designs to incorporate one."
+	name = "Electronic Firing Pin"
+	desc = "Небольшое устройство аутентификации, которое должно быть вставлено в приемник огнестрельного оружия, чтобы позволить сделать выстрел. Правила безопасности NT требуют, чтобы все новые конструкции включали это."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "firing_pin"
 	item_state = "pen"
 	flags_1 = CONDUCT_1
 	w_class = WEIGHT_CLASS_TINY
 	attack_verb = list("poked")
-	var/fail_message = "<span class='warning'>INVALID USER.</span>"
-	var/selfdestruct = 0 // Explode when user check is failed.
-	var/force_replace = 0 // Can forcefully replace other pins.
-	var/pin_removeable = 0 // Can be replaced by any pin.
+	var/fail_message = "<span class='warning'>НЕИЗВЕСТНЫЙ ПОЛЬЗОВАТЕЛЬ.</span>"
+	var/selfdestruct = FALSE // Explode when user check is failed.
+	var/force_replace = FALSE // Can forcefully replace other pins.
+	var/pin_removeable = FALSE // Can be replaced by any pin.
 	var/obj/item/gun/gun
 
 /obj/item/firing_pin/Initialize(mapload, newloc)
@@ -28,20 +28,22 @@
 	if(proximity_flag)
 		if(istype(target, /obj/item/gun))
 			var/obj/item/gun/G = target
-			if(G.no_pin_required)
-				return
-			if(G.pin && (force_replace || G.pin.pin_removeable))
-				G.pin.forceMove(get_turf(G))
-				G.pin.gun_remove(user)
-				to_chat(user, "<span class ='notice'>You remove [G]'s old pin.</span>")
+			var/obj/item/firing_pin/old_pin = G.pin
+			if(old_pin && (force_replace || old_pin.pin_removeable))
+				to_chat(user, span_notice("Убираю [old_pin] из [G]."))
+				if(Adjacent(user))
+					user.put_in_hands(old_pin)
+				else
+					old_pin.forceMove(G.drop_location())
+				gun_remove(user, G)
 
 			if(!G.pin)
 				if(!user.temporarilyRemoveItemFromInventory(src))
 					return
 				gun_insert(user, G)
-				to_chat(user, "<span class ='notice'>You insert [src] into [G].</span>")
+				to_chat(user, span_notice("Вставляю [src] в [G]."))
 			else
-				to_chat(user, "<span class ='notice'>This firearm already has a firing pin installed.</span>")
+				to_chat(user, span_notice("Это оружие уже имеет боек."))
 
 /obj/item/firing_pin/emag_act(mob/user)
 	. = ..()
@@ -58,7 +60,8 @@
 	gun.pin = src
 	return
 
-/obj/item/firing_pin/proc/gun_remove(mob/living/user)
+/obj/item/firing_pin/proc/gun_remove(mob/living/user, obj/item/gun/G)
+	gun = G
 	gun.pin = null
 	gun = null
 	return
@@ -71,8 +74,8 @@
 		user.show_message(fail_message, MSG_VISUAL)
 	if(selfdestruct)
 		if(user)
-			user.show_message("<span class='danger'>SELF-DESTRUCTING...</span><br>", MSG_VISUAL)
-			to_chat(user, "<span class='userdanger'>[gun] explodes!</span>")
+			user.show_message("<span class='danger'>АКТИВИРОВАНО САМОУНИЧТОЖЕНИЕ...</span><br>", MSG_VISUAL)
+			to_chat(user, "<span class='userdanger'>[gun] взрывается!</span>")
 		explosion(get_turf(gun), -1, 0, 2, 3)
 		if(gun)
 			qdel(gun)
@@ -185,7 +188,7 @@
 	if(!unique_enzymes)
 		if(user && user.dna && user.dna.unique_enzymes)
 			unique_enzymes = user.dna.unique_enzymes
-			to_chat(user, "<span class='notice'>DNA-LOCK SET.</span>")
+			to_chat(user, "<span class='notice'>ДНК-БЛОКИРОВКА ВЫСТАВЛЕНА.</span>")
 	else
 		..()
 

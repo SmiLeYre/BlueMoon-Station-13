@@ -61,9 +61,10 @@
 
 /obj/item/melee/baton/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	..()
+	var/mob/thrown_by = thrownby?.resolve()
 	//Only mob/living types have stun handling
-	if(turned_on && prob(throw_hit_chance) && iscarbon(hit_atom) && thrownby)
-		baton_stun(hit_atom, thrownby, shoving = TRUE)
+	if(turned_on && prob(throw_hit_chance) && iscarbon(hit_atom) && thrown_by)
+		baton_stun(hit_atom, thrown_by, shoving = TRUE)
 
 /obj/item/melee/baton/loaded //this one starts with a cell pre-installed.
 	preload_cell_type = /obj/item/stock_parts/cell/high/plus
@@ -215,6 +216,11 @@
 	var/zap_block = L.run_armor_check(BODY_ZONE_CHEST, MELEE, null, null, zap_penetration) //armor check, including calculation for armor penetration, for our attack
 	final_stamina_loss_amount = block_calculate_resultant_damage(final_stamina_loss_amount, return_list)
 
+	// BLUEMOON ADD START - больших и тяжёлых существ проблематично нормально оглушить
+	if(HAS_TRAIT(L, TRAIT_BLUEMOON_HEAVY_SUPER))
+		final_stamina_loss_amount *= 0.5
+	// BLUEMOON ADD END
+
 	var/obj/item/stock_parts/cell/our_cell = get_cell()
 
 	if(!our_cell)
@@ -235,8 +241,9 @@
 		return FALSE
 
 	if(shoving && COOLDOWN_FINISHED(src, shove_cooldown) && !HAS_TRAIT(L, TRAIT_IWASBATONED)) //Rightclicking applies a knockdown, but only once every couple of seconds, based on the cooldown_duration var. If they were recently knocked down, they can't be knocked down again by a baton.
-		L.DefaultCombatKnockdown(50, override_stamdmg = 0)
-		L.apply_status_effect(STATUS_EFFECT_TASED_WEAK_NODMG, status_duration) //Even if they shove themselves up, they're still slowed.
+		if(!(HAS_TRAIT(L, TRAIT_BLUEMOON_HEAVY_SUPER))) // BLUEMOON ADD - больших и тяжёлых существ проблематично нормально оглушить
+			L.DefaultCombatKnockdown(50, override_stamdmg = 0)
+			L.apply_status_effect(STATUS_EFFECT_TASED_WEAK_NODMG, status_duration) //Even if they shove themselves up, they're still slowed.
 		L.apply_status_effect(STATUS_EFFECT_OFF_BALANCE, status_duration) //They're very likely to drop items if shoved briefly after a knockdown.
 		shoved = TRUE
 		COOLDOWN_START(src, shove_cooldown, cooldown_duration)
@@ -250,8 +257,9 @@
 	L.apply_effect(EFFECT_STUTTER, stamina_loss_amount)
 	SEND_SIGNAL(L, COMSIG_LIVING_MINOR_SHOCK)
 	if(user)
-		L.Jitter(25)
-		L.Dizzy(25)
+		if(!(HAS_TRAIT(L, TRAIT_BLUEMOON_HEAVY_SUPER))) // BLUEMOON ADD - больших и тяжёлых существ проблематично нормально оглушить
+			L.Jitter(25)
+			L.Dizzy(25)
 		L.set_last_attacker(user)
 		L.visible_message("<span class='danger'>[user] has [shoved ? "brutally stunned" : "stunned"] [L] with [src]!</span>", \
 								"<span class='userdanger'>[user] has [shoved ? "brutally stunnned" : "stunned"] you with [src]!</span>")
@@ -352,7 +360,7 @@
 	armor_pen = 35
 	hitcost = 1000
 	throw_hit_chance = 10
-	slot_flags = ITEM_SLOT_BACK
+	slot_flags = ITEM_SLOT_BELT | ITEM_SLOT_BACK
 	cooldown_duration = 7 SECONDS //It's a little on the weak side
 	status_duration = 3 //Slows someone for a tiny bit
 	var/obj/item/assembly/igniter/sparkler
@@ -389,8 +397,9 @@
 /obj/item/melee/baton/boomerang/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	if(turned_on)
 		var/caught = hit_atom.hitby(src, FALSE, FALSE, throwingdatum=throwingdatum)
-		if(ishuman(hit_atom) && !caught && prob(throw_hit_chance) && thrownby)//if they are a carbon and they didn't catch it
-			baton_stun(hit_atom, thrownby, shoving = TRUE)
+		var/mob/thrown_by = thrownby?.resolve()
+		if(ishuman(hit_atom) && !caught && prob(throw_hit_chance) && thrown_by)//if they are a carbon and they didn't catch it
+			baton_stun(hit_atom, thrown_by, shoving = TRUE)
 		if(thrownby && !caught)
 			throw_back()
 	else
@@ -399,8 +408,9 @@
 /obj/item/melee/baton/boomerang/proc/throw_back()
 	set waitfor = FALSE
 	sleep(1)
+	var/mob/thrown_by = thrownby?.resolve()
 	if(!QDELETED(src))
-		throw_at(thrownby, throw_range+2, throw_speed, null, TRUE)
+		throw_at(thrown_by, throw_range+2, throw_speed, null, TRUE)
 
 /obj/item/melee/baton/boomerang/update_icon()
 	if(turned_on)

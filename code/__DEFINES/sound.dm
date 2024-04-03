@@ -117,6 +117,14 @@
 #define RUSSIAN_SCREAMS list('sound/voice/human/cyka1.ogg', 'sound/voice/human/rus1.ogg', 'sound/voice/human/rus2.ogg', 'sound/voice/human/rus3.ogg',\
 	'sound/voice/human/rus4.ogg', 'sound/voice/human/rus5.ogg', 'sound/voice/human/rus6.ogg')
 
+#define ALLIANCE_SCREAMS list('sound/voice/human/combine_hit1.ogg', 'sound/voice/human/combine_hit2.ogg', 'sound/voice/human/combine_hit3.ogg',\
+	'sound/voice/human/combine_hit4.ogg', 'sound/voice/human/combine_hit5.ogg', 'sound/voice/human/combine_hit6.ogg',\
+	'sound/voice/human/combine_hit7.ogg', 'sound/voice/human/combine_hit8.ogg', 'sound/voice/human/combine_hit9.ogg',\
+	'sound/voice/human/combine_hit10.ogg')
+
+#define SPASEMAR_SCREAMS list('modular_bluemoon/Ren/Sound/screams/he_die.ogg', 'modular_bluemoon/Ren/Sound/screams/aah_1.ogg', 'modular_bluemoon/Ren/Sound/screams/nooh.ogg', 'modular_bluemoon/Ren/Sound/screams/nyaahaa.ogg',\
+	'modular_bluemoon/Ren/Sound/screams/oh.ogg') // BLUEMOON ADD
+
 #define BLOOD_SCREAMS list('modular_bluemoon/kovac_shitcode/sound/blood/cult_1.ogg', 'modular_bluemoon/kovac_shitcode/sound/blood/cult_2.ogg', 'modular_bluemoon/kovac_shitcode/sound/blood/cult_3.ogg',\
 	'modular_bluemoon/kovac_shitcode/sound/blood/cult_4.ogg', 'modular_bluemoon/kovac_shitcode/sound/blood/cult_5.ogg')
 
@@ -242,3 +250,21 @@ GLOBAL_LIST_INIT(announcer_keys, list(
 	ANNOUNCER_IROD,
 	ANNOUNCER_LAMBDA
 ))
+
+// Возможные звуки эмоции *deathgasp
+GLOBAL_LIST_INIT(deathgasp_sounds, list(
+	"По умолчанию" =		null,
+	"Беззвучный" =			-1,
+	"Классический (1)" =	'sound/voice/deathgasp1.ogg',
+	"Классический (2)" =	'sound/voice/deathgasp2.ogg',
+	"Киборг" =				'sound/voice/borg_deathsound.ogg',
+	"Демон" =				'sound/magic/demon_dies.ogg',
+	"Имп" =					'modular_sand/sound/misc/impdies.wav',
+	"Гладиатор" =			'modular_sand/sound/effects/gladiatordeathsound.ogg',
+	"Посох Смерти" =		'sound/magic/WandODeath.ogg',
+	"Проклятие" =			'sound/magic/curse.ogg',
+	"Конструкт Ратвара" =	'sound/magic/clockwork/anima_fragment_death.ogg',
+	"Ксеноморф" =			'sound/voice/hiss6.ogg',
+	"Свинья" =				'modular_bluemoon/SmiLeY/code/mob/pig/death.ogg',
+	"Офицер ГО" =			'modular_bluemoon/SmiLeY/sounds/combine_death.ogg'
+	))

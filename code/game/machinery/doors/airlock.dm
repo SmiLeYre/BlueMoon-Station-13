@@ -117,6 +117,7 @@
 
 	/// sigh
 	var/unelectrify_timerid
+	var/advactivator_action = FALSE
 
 /obj/machinery/door/airlock/Initialize(mapload)
 	. = ..()
@@ -359,6 +360,17 @@
 				cyclelinkedairlock.delayed_close_requested = TRUE
 			else
 				addtimer(CALLBACK(cyclelinkedairlock, .proc/close), 2)
+	if(ishuman(user) && prob(5) && src.density)
+		var/mob/living/carbon/human/H = user
+		if((HAS_TRAIT(H, TRAIT_DUMB)) && Adjacent(user))
+			playsound(src.loc, 'sound/effects/bang.ogg', 25, 1)
+			if(!istype(H.head, /obj/item/clothing/head/helmet))
+				H.visible_message("<span class='danger'>[user] headbutts the airlock.</span>", \
+									"<span class='userdanger'>You headbutt the airlock!</span>")
+				H.DefaultCombatKnockdown(100)
+				H.apply_damage(1, BRUTE, BODY_ZONE_HEAD)
+			else
+				visible_message("<span class='danger'>[user] headbutts the airlock. Good thing [user.ru_who()] wearing a helmet.</span>")
 	..()
 
 /obj/machinery/door/airlock/proc/isElectrified()
@@ -832,20 +844,7 @@
 		if(isElectrified())
 			if(shock(user, 100))
 				return
-
-	if(ishuman(user) && prob(40) && src.density)
-		var/mob/living/carbon/human/H = user
-		if((HAS_TRAIT(H, TRAIT_DUMB)) && Adjacent(user))
-			playsound(src.loc, 'sound/effects/bang.ogg', 25, 1)
-			if(!istype(H.head, /obj/item/clothing/head/helmet))
-				H.visible_message("<span class='danger'>[user] headbutts the airlock.</span>", \
-									"<span class='userdanger'>You headbutt the airlock!</span>")
-				H.DefaultCombatKnockdown(100)
-				H.apply_damage(5, BRUTE, BODY_ZONE_HEAD)
-			else
-				visible_message("<span class='danger'>[user] headbutts the airlock. Good thing [user.ru_who()] wearing a helmet.</span>")
-	else
-		return ..()
+	return ..()
 
 /obj/machinery/door/airlock/attempt_wire_interaction(mob/user)
 	if(security_level)
@@ -1066,9 +1065,9 @@
 			if(obj_integrity < max_integrity)
 				if(!W.tool_start_check(user, amount=0))
 					return
-				user.visible_message("[user] is welding the airlock.", \
-								"<span class='notice'>You begin repairing the airlock...</span>", \
-								"<span class='italics'>You hear welding.</span>")
+				user.visible_message("[user] чинит шлюз сваркой.", \
+								"<span class='notice'>Вы начинаете чинить шлюз...</span>", \
+								"<span class='italics'>Вы слышите звук сварки.</span>")
 				if(W.use_tool(src, user, 40, volume=50, extra_checks = CALLBACK(src, .proc/weld_checks, W, user)))
 					obj_integrity = max_integrity
 					stat &= ~BROKEN
@@ -1292,7 +1291,7 @@
 		return
 
 	// reads from the airlock painter's `available paintjob` list. lets the player choose a paint option, or cancel painting
-	var/current_paintjob = tgui_input_list(user, "Paintjob for this airlock", "Customize", sortList(painter.available_paint_jobs))
+	var/current_paintjob = tgui_input_list(user, "Paintjob for this airlock", "Customize", sort_list(painter.available_paint_jobs))
 	if(isnull(current_paintjob)) // if the user clicked cancel on the popup, return
 		return
 
@@ -1546,6 +1545,8 @@
 /obj/machinery/door/airlock/ui_act(action, params)
 	if(..())
 		return
+	if(params["ic_advactivator"])
+		advactivator_action = TRUE
 	if(!user_allowed(usr))
 		return
 	switch(action)
@@ -1594,9 +1595,10 @@
 		if("open-close")
 			user_toggle_open(usr)
 			. = TRUE
+	advactivator_action = FALSE
 
 /obj/machinery/door/airlock/proc/user_allowed(mob/user)
-	return (hasSiliconAccessInArea(user) && canAIControl(user)) || IsAdminGhost(user)
+	return (hasSiliconAccessInArea(user) && canAIControl(user)) || IsAdminGhost(user) || advactivator_action
 
 /obj/machinery/door/airlock/proc/shock_restore(mob/user)
 	if(!user_allowed(user))

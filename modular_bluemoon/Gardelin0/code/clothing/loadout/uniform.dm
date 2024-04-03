@@ -96,3 +96,23 @@
 /datum/gear/uniform/sexymaid
 	name = "Sexy maid uniform"
 	path = /obj/item/clothing/under/dress/skirt/maidsexy
+
+/datum/gear/uniform/dress/turtledress
+	name = "Turtleneck dress"
+	path = /obj/item/clothing/under/dress/turtledress
+
+/datum/gear/uniform/sweater/poly_sweater
+	name =  "polychromic sweater"
+	path = /obj/item/clothing/under/poly_sweater
+
+/datum/gear/uniform/sweater/poly_sweater_shoulderless
+	name =  "shoulderless polychromic sweater"
+	path = /obj/item/clothing/under/poly_sweater_shoulderless
+
+/datum/gear/uniform/sweater/poly_sweater_shoulderlessalt
+	name =  "shoulderless polychromic sweater alt"
+	path = /obj/item/clothing/under/poly_sweater_shoulderlessalt
+
+/datum/gear/uniform/sweater/poly_keyholesweater
+	name =  "polychromic keyhole sweater"
+	path = /obj/item/clothing/under/poly_keyholesweater

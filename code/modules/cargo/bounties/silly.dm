@@ -35,7 +35,7 @@
 /datum/bounty/item/silly/shoes
 	name = "Shoes"
 	description = "An assistant stole a clown's shoes, the clown incinerated every pair we had. Send us some new footwear please."
-	reward = 1200
+	reward = 3200
 	required_count = 8
 	wanted_types = list(/obj/item/clothing/shoes)
 	exclude_types = list(/obj/item/clothing/shoes/wraps, /obj/item/clothing/shoes/wraps/silver, /obj/item/clothing/shoes/wraps/red, /obj/item/clothing/shoes/wraps/blue)
@@ -43,14 +43,14 @@
 /datum/bounty/item/silly/sunglasses
 	name = "Sunglasses"
 	description = "A famous blues duo is passing through the sector, but they've lost their shades and they can't perform. Ship new sunglasses to CentCom to rectify this."
-	reward = 1400
+	reward = 2400
 	required_count = 2
 	wanted_types = list(/obj/item/clothing/glasses/sunglasses)
 
 /datum/bounty/item/silly/strange_object
 	name = "Strange Object"
 	description = "Nanotrasen has taken an interest in strange objects. Find one in maint, and ship it off to CentCom right away."
-	reward = 1000
+	reward = 3300
 	wanted_types = list(/obj/item/relic)
 
 /datum/bounty/item/silly/coconut_bong
@@ -62,5 +62,5 @@
 /datum/bounty/item/silly/toy_swords
 	name = "Toy Swords"
 	description = "Nanotrasen has secured a contract in a reenactment of a famous movie, but we only have lethal energy based swords. Send us some convincing replicas so we save on medical costs."
-	reward = 1200
+	reward = 5200
 	required_count = 3

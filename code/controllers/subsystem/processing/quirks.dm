@@ -17,12 +17,34 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 /datum/controller/subsystem/processing/quirks/Initialize(timeofday)
 	if(!quirks.len)
 		SetupQuirks()
-		quirk_blacklist = list(list("Blind","Nearsighted"),list("Jolly","Depression","Apathetic"),list("Ageusia","Deviant Tastes"),list("Ananas Affinity","Ananas Aversion"),list("Alcohol Tolerance","Alcohol Intolerance"),list("Alcohol Intolerance","Drunken Resilience"))
+		//BLUEMOON ADD чиним под русский текст и добавляем всё в одном листе
+		quirk_blacklist = list(
+						  list("Слепота","Близорукость"),
+						  list("Жизнерадостный","Депрессия","Равнодушный"),
+						  list("Агевзия","Извращенные Вкусы"),
+						  list("Пристрастие к Ананасам","Неприязнь к Ананасам"),
+						  list("Устойчивость к Алкоголю","Непереносимость Алкоголя"),
+						  list("Непереносимость Алкоголя","Пьяный Угар"),
+						  list("Сверхтяжёлый", "Тяжёлый", "Лёгкий"),
+						  list("Тактилофилия", "Отстраненность"),
+						  list("Азиат", "Украиновый"),
+						  list("Толстые пальцы","Ужасный стрелок"),
+						  list("Отпрыск Ночного Кошмара", "Светочувствительность"),
+						  list("Святой Дух","Проклятая Кровь"),
+						  list("Святой Дух","Отпрыск Кровопийцы"),
+						  list("Жаждущий","Отпрыск Кровопийцы"),
+						  list("Жаждущий","Инкуб"),
+						  list("Жаждущий","Суккуб"),
+						  list("Булки Грома","Стальные Булки"),
+						  list("Сверхтяжёлый","Пожиратель", "Лёгкий"),
+						  list("Звериный Дух", "Дуллахан")
+						  )
+		//BLUEMOON ADD END
 	return ..()
 
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()
 // Sort by Positive, Negative, Neutral; and then by name
-	var/list/quirk_list = sortList(subtypesof(/datum/quirk), /proc/cmp_quirk_asc)
+	var/list/quirk_list = sort_list(subtypesof(/datum/quirk), /proc/cmp_quirk_asc)
 
 	for(var/V in quirk_list)
 		var/datum/quirk/T = V

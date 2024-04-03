@@ -72,7 +72,7 @@
 	return FALSE
 
 /obj/item/book/granter/trait/on_reading_start(mob/user)
-	to_chat(user, "<span class='notice'>You start reading about [traitname]...</span>")
+	to_chat(user, "<span class='notice'>Ты начинаешь читать о [traitname]...</span>")
 
 /obj/item/book/granter/trait/on_reading_finished(mob/user)
 	to_chat(user, "<span class='notice'>You feel like you've got a good handle on [traitname]!</span>")
@@ -103,7 +103,7 @@
 	return FALSE
 
 /obj/item/book/granter/action/on_reading_start(mob/user)
-	to_chat(user, "<span class='notice'>You start reading about [actionname]...</span>")
+	to_chat(user, "<span class='notice'>Ты начинаешь читать о [actionname]...</span>")
 
 /obj/item/book/granter/action/on_reading_finished(mob/user)
 	to_chat(user, "<span class='notice'>You feel like you've got a good handle on [actionname]!</span>")
@@ -183,7 +183,7 @@
 	return FALSE
 
 /obj/item/book/granter/spell/on_reading_start(mob/user)
-	to_chat(user, "<span class='notice'>You start reading about casting [spellname]...</span>")
+	to_chat(user, "<span class='notice'>Ты начинаешь читать о том, как использовать заклинание [spellname]...</span>")
 
 /obj/item/book/granter/spell/on_reading_finished(mob/user)
 	to_chat(user, "<span class='notice'>You feel like you've experienced enough to cast [spellname]!</span>")
@@ -387,12 +387,12 @@
 		return TRUE
 	var/datum/martial_art/MA = martial
 	if(user.mind.has_martialart(initial(MA.id)))
-		to_chat(user,"<span class='warning'>You already know [martialname]!</span>")
+		to_chat(user,"<span class='warning'>Ты уже знаешь [martialname]!</span>")
 		return TRUE
 	return FALSE
 
 /obj/item/book/granter/martial/on_reading_start(mob/user)
-	to_chat(user, "<span class='notice'>You start reading about [martialname]...</span>")
+	to_chat(user, "<span class='notice'>Ты начинаешь читать про [martialname]...</span>")
 
 /obj/item/book/granter/martial/on_reading_finished(mob/user)
 	to_chat(user, "[greet]")

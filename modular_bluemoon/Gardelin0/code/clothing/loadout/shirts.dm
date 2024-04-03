@@ -18,14 +18,6 @@
 	name = "formal shirt"
 	path = /obj/item/clothing/underwear/shirt/formalshirt
 
-/datum/gear/shirt/poly_sweater
-	name = "polychromic sweater"
-	path = /obj/item/clothing/underwear/shirt/poly_sweater
-
-/datum/gear/shirt/poly_sweater_shoulderless
-	name = "shoulderless polychromic sweater"
-	path = /obj/item/clothing/underwear/shirt/poly_sweater_shoulderless
-
 /datum/gear/shirt/poly_shirt
 	name = "polychromic shirt"
 	path = /obj/item/clothing/underwear/shirt/poly_shirt
@@ -61,3 +53,19 @@
 /datum/gear/shirt/poly_mesh
 	name = "polychromic mesh top"
 	path = /obj/item/clothing/underwear/shirt/poly_mesh
+
+/datum/gear/shirt/poly_sweater
+	name = "polychromic sweater"
+	path = /obj/item/clothing/underwear/shirt/poly_sweater
+
+/datum/gear/shirt/poly_sweater_shoulderless
+	name = "shoulderless polychromic sweater"
+	path = /obj/item/clothing/underwear/shirt/poly_sweater_shoulderless
+
+/datum/gear/shirt/poly_sweater_shoulderlessalt
+	name = "shoulderless polychromic sweater alt"
+	path = /obj/item/clothing/underwear/shirt/poly_sweater_shoulderlessalt
+
+/datum/gear/shirt/poly_keyholesweater
+	name = "polychromic keyhole sweater"
+	path = /obj/item/clothing/underwear/shirt/poly_keyholesweater

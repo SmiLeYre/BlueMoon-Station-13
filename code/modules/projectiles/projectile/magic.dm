@@ -125,6 +125,8 @@
 	if(!istype(M) || M.stat == DEAD || M.mob_transforming || (GODMODE & M.status_flags))
 		return
 
+	to_chat(M, span_reallybig("ВНИМАНИЕ! ВЫ БЫЛИ ОБРАЩЕНЫ В ДРУГОЕ СУЩЕСТВО, ВАША ПРОШЛАЯ ЛИЧНОСТЬ ЗАБЫТА!! ИЗУЧИТЕ СВОЮ НОВУЮ ОБОЛОЧКУ И ИГРАЙТЕ!!"))
+	tgui_alert_async(M, "ВНИМАНИЕ! ВЫ БЫЛИ ОБРАЩЕНЫ В ДРУГОЕ СУЩЕСТВО, ВАША ПРОШЛАЯ ЛИЧНОСТЬ ЗАБЫТА!! ИЗУЧИТЕ СВОЮ НОВУЮ ОБОЛОЧКУ И ИГРАЙТЕ!!!")
 	M.mob_transforming = TRUE
 	M.Paralyze(INFINITY)
 	M.icon = null
@@ -135,8 +137,7 @@
 
 	if(iscyborg(M))
 		var/mob/living/silicon/robot/Robot = M
-		if(Robot.mmi)
-			qdel(Robot.mmi)
+		QDEL_NULL(Robot.mmi)
 		Robot.notify_ai(NEW_BORG)
 	else
 		for(var/obj/item/W in contents)
@@ -152,11 +153,9 @@
 
 		if("robot")
 			var/robot = pick(200;/mob/living/silicon/robot,
-							/mob/living/silicon/robot/modules/inteq, //BM Changes /Krashly
-							/mob/living/silicon/robot/modules/inteq/medical, //BM Changes /Krashly
-							/mob/living/silicon/robot/modules/inteq/saboteur, //BM Changes /Krashly
-							200;/mob/living/simple_animal/drone/polymorphed,
-							/mob/living/simple_animal/drone/syndrone/badass/inteq)
+							/mob/living/silicon/robot/modules/inteq,
+							/mob/living/silicon/robot/modules/inteq/medical,
+							/mob/living/silicon/robot/modules/inteq/saboteur)
 
 			new_mob = new robot(M.loc)
 			if(issilicon(new_mob))
@@ -241,6 +240,8 @@
 	M.log_message("became [new_mob.real_name]", LOG_ATTACK, color="orange")
 
 	new_mob.a_intent = INTENT_HARM
+
+	new_mob.fully_replace_character_name("[pick(GLOB.nightmare_names)]")
 
 	M.wabbajack_act(new_mob)
 

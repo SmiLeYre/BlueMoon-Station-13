@@ -6,6 +6,13 @@
 	icon_state = "aliend"
 	meleeKnockdownPower = 80
 
+/mob/living/carbon/alien/humanoid/drone/maid
+	name = "Xeno Maid"
+	icon_state = "alienmaid"
+	caste = "maid"
+	has_fine_manipulation = 1
+	initial_language_holder = /datum/language_holder
+
 /mob/living/carbon/alien/humanoid/drone/Initialize(mapload)
 	AddAbility(new/obj/effect/proc_holder/alien/evolve(null))
 	. = ..()

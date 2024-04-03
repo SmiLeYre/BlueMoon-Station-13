@@ -68,7 +68,7 @@
 				string += span_love(" Они выглядят влажными.")
 
 		else
-			string += "абсолютно нагую промежность! Следом ты замечаешь"
+			string += "абсолютно нагую промежность! [peeked.internal_organs ? "Следом ты замечаешь:" : ""]"
 			var/list/genitals = list()
 			for(var/obj/item/organ/genital/genital in peeked.internal_organs)
 				if(CHECK_BITFIELD(genital.genital_flags, (GENITAL_INTERNAL|GENITAL_HIDDEN)))
@@ -78,24 +78,25 @@
 				switch(genital.type)
 					if(/obj/item/organ/genital/vagina)
 						if(genital.aroused_state)
-							appended += " влажную"
-						if(lowertext(genital.shape) != "человеческая")
+							appended += " влажная"
+						if(lowertext(genital.shape) != "human")
 							appended += " [lowertext(genital.shape)]"
-						if(lowertext(genital.shape) != "клоаковидная") //their wet cloaca vagina
+						if(lowertext(genital.shape) != "cloaca") //their wet cloaca vagina
 							appended += " [lowertext(genital.name)]" // goodbye pussy
+						appended += ","
 
 					if(/obj/item/organ/genital/testicles)
 						var/obj/item/organ/genital/testicles/nuts = genital
-						appended += " [lowertext(nuts.size_name)] [lowertext(nuts.name)]"
+						appended += " [lowertext(nuts.size_name)] размера [lowertext(nuts.name)], "
 					if(/obj/item/organ/genital/penis)
 						if(genital.aroused_state)
 							appended += " стоящий"
 						if(lowertext(genital.shape) != "human")
 							appended += " [lowertext(genital.shape)]"
-						appended += " [lowertext(genital.name)]" // Name it something funny, i dare you.
+						appended += " [lowertext(genital.name)]," // Name it something funny, i dare you.
 					if(/obj/item/organ/genital/butt)
 						var/obj/item/organ/genital/butt/booty = genital
-						appended += " [booty.size_name] [lowertext(booty.name)]" // Maybe " average butt pair" isn't the best for now
+						appended += " [booty.size_name] размера [lowertext(booty.name)]" // Maybe " average butt pair" isn't the best for now
 					else
 						continue
 				genitals += appended

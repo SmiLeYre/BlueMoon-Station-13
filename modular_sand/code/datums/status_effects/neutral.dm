@@ -3,7 +3,7 @@
 	status_type = STATUS_EFFECT_MULTIPLE
 	// We only end when we run out!
 	duration = -1
-	tick_interval = 1 SECONDS
+	tick_interval = 5 SECONDS
 	alert_type = /atom/movable/screen/alert/status_effect/dripping_cum
 	var/datum/reagents/contents
 	var/list/blood_DNA
@@ -51,7 +51,7 @@
 	var/turf/location = get_turf(owner)
 
 	var/obj/effect/decal/cleanable/semen/S = locate(/obj/effect/decal/cleanable/semen) in location
-	if(S)
+	if(S && !istype(S, /obj/effect/decal/cleanable/semen/femcum))
 		if(contents.trans_to(S, 1))
 			if(cum_in_anus > 0)
 				cum_in_anus--

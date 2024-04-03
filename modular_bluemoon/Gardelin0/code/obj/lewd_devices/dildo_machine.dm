@@ -10,6 +10,7 @@
 	var/hole = CUM_TARGET_VAGINA
 	var/fuck_hole
 	buckle_lying = TRUE
+	flags_1 = NODECONSTRUCT_1
 
 /obj/structure/bed/dildo_machine/New()
 	..()
@@ -96,8 +97,14 @@
 									M.emote("moan")
 
 /obj/structure/bed/dildo_machine/attackby(obj/item/used_item, mob/user, params)
-	if(istype(used_item, /obj/item/screwdriver))
+	if(used_item.tool_behaviour == TOOL_WRENCH)
+		to_chat(user, "<span class='notice'>You begin to [anchored ? "unwrench" : "wrench"] [src].</span>")
+		if(used_item.use_tool(src, user, 20, volume=30))
+			to_chat(user, "<span class='notice'>You successfully [anchored ? "unwrench" : "wrench"] [src].</span>")
+			setAnchored(!anchored)
+	else if(istype(used_item, /obj/item/screwdriver))
 		to_chat(user, span_notice("You unscrew the frame and begin to deconstruct it..."))
+		playsound(loc, "'sound/items/screwdriver.ogg'", 30, 1)
 		if(used_item.use_tool(src, user, 8 SECONDS, volume = 50))
 			to_chat(user, span_notice("You disassemble it."))
 			new /obj/item/dildo_machine_kit (src.loc)
@@ -119,6 +126,7 @@
 	if(istype(used_item, /obj/item/screwdriver))
 		if (!(item_flags & IN_INVENTORY) && !(item_flags & IN_STORAGE))
 			to_chat(user, span_notice("You screw the frame to the floor and begin to construct it..."))
+			playsound(loc, "'sound/items/screwdriver.ogg'", 30, 1)
 			if(used_item.use_tool(src, user, 8 SECONDS, volume = 50))
 				to_chat(user, span_notice("You assemble it."))
 				new /obj/structure/bed/dildo_machine (src.loc)

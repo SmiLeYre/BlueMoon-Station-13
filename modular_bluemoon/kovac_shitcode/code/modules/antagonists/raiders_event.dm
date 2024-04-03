@@ -90,25 +90,3 @@
 				notify_ghosts("The InteQ ship has an object of interest: [spawner]!", source=spawner, action=NOTIFY_ORBIT, header="Something's Interesting!")
 
 	priority_announce("В секторе обнаружен вооружённный корабль.", "Отдел ССО Пакта Синих Лун", 'modular_bluemoon/phenyamomota/sound/announcer/pirate_incoming.ogg')
-
-/// Dynamic ruleset additions
-/datum/dynamic_ruleset/midround/raiders
-	name = "InteQ Raiders"
-	antag_flag = "InteQ Raiders"
-	required_type = /mob/dead/observer
-	enemy_roles = list("Security Officer", "Detective", "Head of Security", "Captain")
-	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
-	required_candidates = 0
-	weight = 4
-	cost = 15
-	requirements = list(101,101,101,40,30,20,10,10,10,10)
-	repeatable = FALSE
-
-/datum/dynamic_ruleset/midround/raiders/acceptable(population=0, threat=0)
-	if (!SSmapping.empty_space)
-		return FALSE
-	return ..()
-
-/datum/dynamic_ruleset/midround/raiders/execute()
-	send_raider_threat()
-	return ..()

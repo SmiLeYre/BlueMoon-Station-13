@@ -133,6 +133,14 @@
 	build_path = /obj/item/clothing/head/welding
 	category = list("initial","Tools")
 
+/datum/design/gas_mask
+	name = "Gas Mask"
+	id = "gas_mask"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 1750, /datum/material/glass = 400)
+	build_path = /obj/item/clothing/mask/gas
+	category = list("initial","Tools")
+
 /datum/design/cable_coil
 	name = "Cable Coil"
 	id = "cable_coil"
@@ -166,6 +174,14 @@
 	build_type = AUTOLATHE
 	materials = list(/datum/material/iron = 150, /datum/material/glass = 150)
 	build_path = /obj/item/geiger_counter
+	category = list("initial", "Tools")
+
+/datum/design/ttsdevice
+	name = "TTS Device"
+	id = "ttsdevice"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/iron = 150, /datum/material/glass = 150)
+	build_path = /obj/item/ttsdevice
 	category = list("initial", "Tools")
 
 /datum/design/chisel

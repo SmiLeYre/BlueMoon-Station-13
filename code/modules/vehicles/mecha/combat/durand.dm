@@ -4,14 +4,13 @@
 	icon_state = "durand"
 	movedelay = 4
 	dir_in = 1 //Facing North.
-	max_integrity = 400
+	max_integrity = 500
 	deflect_chance = 30
 	armor = list(MELEE = 50, BULLET = 55, LASER = 40, ENERGY = 30, BOMB = 30, BIO = 0, RAD = 60, FIRE = 100, ACID = 100)
 	max_temperature = 50000
 	force = 40
 	wreckage = /obj/structure/mecha_wreckage/durand
 	var/obj/durand_shield/shield
-
 
 /obj/vehicle/sealed/mecha/combat/durand/Initialize(mapload)
 	. = ..()
@@ -177,7 +176,7 @@ own integrity back to max. Shield is automatically dropped if we run out of powe
 /obj/durand_shield/proc/activate(datum/source, mob/owner, list/signal_args)
 	SIGNAL_HANDLER
 	currentuser = owner
-	if(!chassis?.occupants)
+	if(!LAZYLEN(chassis?.occupants))
 		return
 	if(switching && !signal_args[1])
 		return

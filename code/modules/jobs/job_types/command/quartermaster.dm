@@ -31,7 +31,7 @@
 	bounty_types = CIV_JOB_RANDOM
 
 	display_order = JOB_DISPLAY_ORDER_QUARTERMASTER
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal)
 	threat = 0.5
 
 	family_heirlooms = list(
@@ -50,8 +50,8 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_hand = /obj/item/clipboard
 	id = /obj/item/card/id/silver
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic = 1, /obj/item/modular_computer/tablet/preset/advanced = 1)
-
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1)
+	box = /obj/item/storage/box/survival/command
 	chameleon_extras = /obj/item/stamp/qm
 
 /datum/outfit/job/quartermaster/syndicate

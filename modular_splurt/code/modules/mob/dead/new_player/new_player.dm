@@ -114,6 +114,12 @@
 		//Avoid updating ready if we're after PREGAME (they should use latejoin instead)
 		//This is likely not an actual issue but I don't have time to prove that this
 		//no longer is required
+		// BLUEMOON ADD START - предупреждение, если у игрока включены роли
+		if(tready == PLAYER_READY_TO_PLAY && !(client.prefs.toggles & NO_ANTAG))
+			if(alert(src, "У вас включена возможность стать антагонистом. Вы уверены, что не хотите выключить её?", "...Клянусь, что не сдам роль...", "Я готов", "Прошу временно отключить") == "Прошу временно отключить")
+				client.prefs.toggles ^= NO_ANTAG
+				to_chat(src, "<span class='redtext'>На этот раунд, у вас отключена возможность стать антагонистом (её можно включить в Character Setup > Preferences).</span>")
+		// BLUEMOON ADD END
 		if(SSticker.current_state <= GAME_STATE_PREGAME)
 			ready = tready
 		//if it's post initialisation and they're trying to observe we do the needful

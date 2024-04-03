@@ -324,7 +324,9 @@ GLOBAL_LIST_EMPTY(rubber_toolbox_icons)
 		/obj/item/clothing/shoes/combat/sneakboots,
 		/obj/item/gun/ballistic/automatic/pistol,
 		/obj/item/gun/ballistic/revolver,
-		/obj/item/ammo_box
+		/obj/item/ammo_box,
+		/obj/item/melee/transforming,
+		/obj/item/tank/internals
 		))
 
 /obj/item/storage/toolbox/infiltrator/PopulateContents()

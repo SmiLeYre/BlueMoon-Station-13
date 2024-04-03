@@ -7,17 +7,17 @@
 	threat = 10
 	skill_modifiers = list(/datum/skill_modifier/job/level/wiring)
 	show_to_ghosts = TRUE
+	hijack_speed = 3
 	var/datum/team/nuclear/nuke_team
 	var/always_new_team = FALSE //If not assigned a team by default ops will try to join existing ones, set this to TRUE to always create new team.
 	var/send_to_spawnpoint = TRUE //Should the user be moved to default spawnpoint.
 	var/nukeop_outfit = /datum/outfit/inteq
 	var/title
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/nukeop/proc/update_synd_icons_added(mob/living/M)
 	var/datum/atom_hud/antag/opshud = GLOB.huds[ANTAG_HUD_OPS]
 	opshud.join_hud(M)
-	set_antag_hud(M, "synd")
+	set_antag_hud(M, "inteq")
 
 /datum/antagonist/nukeop/proc/update_synd_icons_removed(mob/living/M)
 	var/datum/atom_hud/antag/opshud = GLOB.huds[ANTAG_HUD_OPS]
@@ -42,7 +42,7 @@
 
 	if(!istype(H))
 		return
-	if(SSticker.mode.name == "Extended")
+	if(GLOB.master_mode == "Extended")
 		H.equipOutfit(/datum/outfit/syndicate/lone)
 		priority_announce("Приветствую, Станция. Мы отправляем к вам Специалиста по Защите Ядерного Диска ввиду того, что заметили недостаточную его безопасность. Bстречайте.", "Фрегат [title] ССО Синдиката")
 	else
@@ -52,6 +52,8 @@
 		H.canloadappearance = TRUE
 		H.checkloadappearance()
 
+	give_alias()
+
 	return TRUE
 
 /datum/antagonist/nukeop/greet()
@@ -60,7 +62,6 @@
 	owner.announce_objectives()
 
 /datum/antagonist/nukeop/on_gain()
-	give_alias()
 	forge_objectives()
 	. = ..()
 	equip_op()
@@ -256,7 +257,7 @@
 	syndicate_name = syndicate_name()
 
 /datum/team/nuclear/proc/update_objectives()
-	if(SSticker.mode.name == "Extended")
+	if(GLOB.master_mode == "Extended")
 		var/datum/objective/O = new revert_objective
 		O.team = src
 		objectives += O

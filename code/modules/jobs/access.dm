@@ -99,7 +99,7 @@
 		if("Thunderdome Overseer")
 			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_THUNDER)
 		if("CentCom Official")
-			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_BRIDGE_OFFICER, ACCESS_HEADS)
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_CENT_THUNDER, ACCESS_BRIDGE_OFFICER, ACCESS_HEADS)
 		if("Medical Officer")
 			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_CENT_MEDICAL)
 		if("Death Commando")
@@ -154,7 +154,7 @@
 	return list(ACCESS_AWAY_COMMAND, ACCESS_AWAY_ENGINEERING, ACCESS_AWAY_MEDICAL, ACCESS_AWAY_SUPPLY, ACCESS_AWAY_SCIENCE, ACCESS_AWAY_MAINTENANCE, ACCESS_AWAY_GENERAL , ACCESS_AWAY_MAINT, ACCESS_AWAY_MED, ACCESS_AWAY_SEC, ACCESS_AWAY_ENGINE, ACCESS_AWAY_GENERIC1, ACCESS_AWAY_GENERIC2, ACCESS_AWAY_GENERIC3, ACCESS_AWAY_GENERIC4)
 
 /proc/get_all_syndicate_access()
-	return list(ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER, ACCESS_SLAVER, ACCESS_BLOODCULT, ACCESS_CLOCKCULT)
+	return list(ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER, ACCESS_SLAVER, ACCESS_BLOODCULT, ACCESS_CLOCKCULT, ACCESS_INTEQ, ACCESS_INTEQ_LEADER)
 
 /proc/get_region_accesses(code)
 	switch(code)
@@ -366,8 +366,8 @@
 			return "Code Scotch"
 
 /proc/get_all_jobs()
-	return list("Assistant", "Captain", "Blueshield", "Head of Personnel", "Bridge Officer", "Bartender", "Cook", "Entertainer", "Botanist", "Quartermaster", "Cargo Technician",
-				"Shaft Miner", "Clown", "Mime", "Janitor", "Curator", "Lawyer", "Chaplain", "Chief Engineer", "Station Engineer",
+	return list("Assistant","Bridge Officer", "Captain", "Blueshield", "Head of Personnel", "Bartender", "Cook", "Entertainer", "Botanist", "Quartermaster", "Cargo Technician",
+				"Shaft Miner", "Clown", "Mime", "Janitor", "Curator", "Internal Affairs Agent", "Chaplain", "Chief Engineer", "Station Engineer",
 				"Atmospheric Technician", "Chief Medical Officer", "Medical Doctor", "Chemist", "Geneticist", "Virologist", "Psychologist", "Paramedic",
 				"Research Director", "Scientist", "Roboticist", "Expeditor", "Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Prisoner", "NanoTrasen Representative", "Bouncer") //BlueMoon edit
 
@@ -375,7 +375,7 @@
 	return get_all_jobs()
 
 /proc/get_all_centcom_jobs()
-	return list("VIP Guest","Custodian","Thunderdome Overseer","CentCom Official","Medical Officer","Death Commando","Research Officer","Special Ops Officer","Admiral","CentCom Commander","Emergency Response Team Commander","Security Response Officer","Engineer Response Officer", "Medical Response Officer","CentCom Bartender","Nuclear Waste Expert") //No idea how to modularly edit a global proc
+	return list("VIP Guest","Custodian","Thunderdome Overseer","CentCom Official","Medical Officer","Death Commando","Research Officer","Special Ops Officer","Admiral","CentCom Commander","Emergency Response Team Commander","Security Response Officer","Engineer Response Officer", "Medical Response Officer","CentCom Bartender","Nuclear Waste Expert","Giant Bun Liaison") //No idea how to modularly edit a global proc
 
 /// Gets the job title, if the job name is an alt title, locates the original title using a prebuilt cache
 /proc/GetJobName(jobName)
@@ -385,7 +385,9 @@
 	if (istype(src, /obj/item/card/id/debug/bst))
 		return "scrambled"
 	if (istype(src, /obj/item/card/id/syndicate))
-		return "scrambled"
+		return "syndicate"
+	if (istype(src, /obj/item/card/id/syndicate/inteq))
+		return "inteq"
 	if (istype(src, /obj/item/card/id/nri))
 		return "nri"
 	if (istype(src, /obj/item/card/id/nri_citizen))

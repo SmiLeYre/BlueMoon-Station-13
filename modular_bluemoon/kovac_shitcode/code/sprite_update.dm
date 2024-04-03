@@ -603,6 +603,16 @@
 	icon_state = "aiko"
 	item_state = "aiko"
 
+/obj/item/toy/plush/mammal/fox/emma/rozgo
+	name = "Rozgo Plushie"
+	icon_state = "rozgo"
+	item_state = "aiko"
+
+/obj/item/toy/plush/mammal/fox/emma/taliza
+	name = "Siya Taliza Plushie"
+	icon_state = "siya"
+	item_state = "aiko"
+
 /obj/item/toy/plush/mammal/fox/emma/red
 	name = "Red plushie"
 	icon_state = "red"
@@ -659,6 +669,11 @@
 /obj/item/storage/backpack/ert_commander
 	name = "Tactical Backpack"
 	icon_state = "ert_commander"
+
+/obj/item/storage/backpack/ert_commander/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_volume = STORAGE_VOLUME_BAG_OF_HOLDING
 
 /obj/item/storage/backpack/ert_commander/ert_security
 	icon_state = "ert_security"

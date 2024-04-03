@@ -71,6 +71,26 @@
 		user.alien_talk(message)
 	return FALSE
 
+/datum/saymode/terror
+	key = "t"
+	mode = MODE_TERROR
+
+/datum/saymode/terror/handle_message(mob/living/user, message, datum/language/language)
+	if(user.terrorhivecheck())
+		user.terror_talk(message)
+	return FALSE
+
+/datum/saymode/terror/alternative
+	key = "е"
+	mode = MODE_TERROR
+
+/datum/saymode/qareen
+	key = "q"
+	mode = MODE_QAREEN
+
+/datum/saymode/qareen/handle_message(mob/living/user, message, datum/language/language)
+	user.qareen_talk(message)
+	return FALSE
 
 /datum/saymode/vocalcords
 	key = MODE_KEY_VOCALCORDS
@@ -121,7 +141,7 @@
 	return TRUE
 
 /datum/saymode/statusdisplay
-	key = "q"
+	key = "qq"
 	mode = MODE_STATUSDISPLAY
 
 /datum/saymode/statusdisplay/handle_message(mob/living/user, message, datum/language/language)

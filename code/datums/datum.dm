@@ -56,6 +56,7 @@
 	* add_timer() returns the truthy value of -1 when not stoppable, and else a truthy numeric index
 	*/
 	var/list/cooldowns
+	var/tmp/unique_datum_id = null
 
 #ifdef REFERENCE_TRACKING
 	var/running_find_references

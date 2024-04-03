@@ -11,8 +11,8 @@
 	layer = 2.75
 	max_integrity = 3
 	var/stillborn = FALSE
-	var/mob/living/simple_animal/hostile/poison/terror_spider/queen/spider_myqueen = null
-	var/mob/living/simple_animal/hostile/poison/terror_spider/spider_mymother = null
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/spider_myqueen = null
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/spider_mymother = null
 	var/goto_mother = FALSE
 	var/ventcrawl_chance = 30 // 30% every process(), assuming 33% wander does not trigger
 	var/immediate_ventcrawl = TRUE
@@ -88,8 +88,8 @@
 		qdel(src)
 	else
 		if(!grow_as)
-			grow_as = pick(/mob/living/simple_animal/hostile/poison/terror_spider/knight, /mob/living/simple_animal/hostile/poison/terror_spider/lurker, /mob/living/simple_animal/hostile/poison/terror_spider/healer, /mob/living/simple_animal/hostile/poison/terror_spider/reaper, /mob/living/simple_animal/hostile/poison/terror_spider/builder)
-		var/mob/living/simple_animal/hostile/poison/terror_spider/S = new grow_as(T)
+			grow_as = pick(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/lurker, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/reaper, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder)
+		var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/S = new grow_as(T)
 		S.spider_myqueen = spider_myqueen
 		S.spider_mymother = spider_mymother
 		S.enemies = enemies
@@ -176,7 +176,7 @@
 // ----------------- TERROR SPIDERS: EGGS (USED BY NURSE AND QUEEN TYPES) ---------
 // --------------------------------------------------------------------------------
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/DoLayTerrorEggs(lay_type, lay_number)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/DoLayTerrorEggs(lay_type, lay_number)
 	stop_automated_movement = 1
 	var/obj/structure/spider/eggcluster/terror_eggcluster/C = new /obj/structure/spider/eggcluster/terror_eggcluster(get_turf(src), lay_type)
 	C.spiderling_number = lay_number
@@ -195,8 +195,8 @@
 	icon_state = "egg"
 	max_integrity = 40
 	var/spider_growinstantly = FALSE
-	var/mob/living/simple_animal/hostile/poison/terror_spider/queen/spider_myqueen = null
-	var/mob/living/simple_animal/hostile/poison/terror_spider/spider_mymother = null
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/spider_myqueen = null
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/spider_mymother = null
 	var/spiderling_type = null
 	var/spiderling_number = 1
 	var/list/enemies = list()
@@ -207,29 +207,29 @@
 	spiderling_type = lay_type
 
 	switch(spiderling_type)
-		if(/mob/living/simple_animal/hostile/poison/terror_spider/knight)
+		if(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight)
 			name = "knight of terror eggs"
-		if(/mob/living/simple_animal/hostile/poison/terror_spider/lurker)
+		if(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/lurker)
 			name = "lurker of terror eggs"
-		if(/mob/living/simple_animal/hostile/poison/terror_spider/healer)
+		if(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer)
 			name = "healer of terror eggs"
-		if(/mob/living/simple_animal/hostile/poison/terror_spider/reaper)
+		if(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/reaper)
 			name = "reaper of terror eggs"
-		if(/mob/living/simple_animal/hostile/poison/terror_spider/builder)
+		if(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder)
 			name = "builder of terror eggs"
-		if(/mob/living/simple_animal/hostile/poison/terror_spider/widow)
+		if(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow)
 			name = "widow of terror eggs"
-		if(/mob/living/simple_animal/hostile/poison/terror_spider/guardian)
+		if(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/guardian)
 			name = "guardian of terror eggs"
-		if(/mob/living/simple_animal/hostile/poison/terror_spider/destroyer)
+		if(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/destroyer)
 			name = "destroyer of terror eggs"
-		if(/mob/living/simple_animal/hostile/poison/terror_spider/defiler)
+		if(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler)
 			name = "defiler of terror eggs"
-		if(/mob/living/simple_animal/hostile/poison/terror_spider/mother)
+		if(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/mother)
 			name = "mother of terror eggs"
-		if(/mob/living/simple_animal/hostile/poison/terror_spider/prince)
+		if(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/prince)
 			name = "prince of terror eggs"
-		if(/mob/living/simple_animal/hostile/poison/terror_spider/queen)
+		if(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen)
 			name = "queen of terror eggs"
 
 /obj/structure/spider/eggcluster/terror_eggcluster/Destroy()
@@ -251,8 +251,3 @@
 			if(spider_growinstantly)
 				S.amount_grown = 250
 		qdel(src)
-
-/obj/structure/spider/royaljelly
-	name = "royal jelly"
-	desc = "A pulsating mass of slime, jelly, blood, and or liquified human organs considered delicious and highly nutritious by terror spiders."
-	icon_state = "spiderjelly"

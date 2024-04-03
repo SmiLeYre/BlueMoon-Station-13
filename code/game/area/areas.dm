@@ -40,7 +40,7 @@
 	/// Bonus mood for being in this area
 	var/mood_bonus = 0
 	/// Mood message for being here, only shows up if mood_bonus != 0
-	var/mood_message = "<span class='nicegreen'>This area is pretty nice!\n</span>"
+	var/mood_message = span_nicegreen("This area is pretty nice!\n")
 
 	///Will objects this area be needing power?
 	var/requires_power = TRUE
@@ -335,7 +335,7 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 				A.power_light = FALSE
 				A.power_equip = FALSE
 				A.power_environ = FALSE
-			INVOKE_ASYNC(A, .proc/power_change)
+			A.power_change()
 	STOP_PROCESSING(SSobj, src)
 	return ..()
 
@@ -594,15 +594,20 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 // called when power status changes
 
 /area/proc/power_change()
-	for(var/obj/machinery/M in src)	// for each machine in the area
-		M.power_change()				// reverify power status (to update icons etc.)
-	if(sub_areas)
-		for(var/i in sub_areas)
-			var/area/A = i
-			A.power_light = power_light
-			A.power_equip = power_equip
-			A.power_environ = power_environ
-			INVOKE_ASYNC(A, .proc/power_change)
+	SHOULD_NOT_SLEEP(TRUE)
+	if(contents.len < GLOB.machines.len) // it would be faster to loop over contents
+		for(var/obj/machinery/M in src) // for each machine in the area
+			M.power_change() // reverify power status (to update icons etc.)
+	else // it would be faster to loop over the machines list
+		for(var/obj/machinery/M as anything in GLOB.machines) // for each machine
+			if(get_area(M) != src) // in the area
+				continue
+			M.power_change() // reverify power status (to update icons etc.)
+	for(var/area/A as anything in sub_areas)
+		A.power_light = power_light
+		A.power_equip = power_equip
+		A.power_environ = power_environ
+		A.power_change()
 	update_appearance()
 
 /area/proc/usage(chan)
@@ -669,7 +674,6 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 	var/area/A = oldTurf?.loc
 	var/area/my_area = get_area(L)
 
-
 	set waitfor = FALSE
 	SEND_SIGNAL(src, COMSIG_AREA_ENTERED, M, A)
 	SEND_SIGNAL(M, COMSIG_ENTER_AREA, src) //The atom that enters the area
@@ -681,6 +685,9 @@ GLOBAL_LIST_EMPTY(teleportlocs)
 		L.update_gravity(L.mob_has_gravity())
 
 	if(!L.ckey)
+		return
+
+	if(!L.client)
 		return
 
 	if(L.client.prefs.toggles & SOUND_SHIP_AMBIENCE && shipambience != A.shipambience)

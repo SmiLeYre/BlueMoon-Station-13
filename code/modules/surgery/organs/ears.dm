@@ -153,7 +153,7 @@
 	. = ..()
 	if(!owner || . & EMP_PROTECT_SELF)
 		return
-	to_chat(owner, "<span class='warning'>Alert: Auditory systems corrupted!.</span>")
+	to_chat(owner, "<span class='warning'>Alert: Auditory systems corrupted!</span>")
 	switch(severity)
 		if(1 to 50)
 			owner.Jitter(15)
@@ -165,11 +165,10 @@
 			owner.Dizzy(30)
 			owner.DefaultCombatKnockdown(80)
 			deaf = max(deaf, 30)
-	damage += 0.15 * severity
 
 	// BLUEMOON ADD START - шанс на перманентный выход из строя
 	if(prob(10)) //Chance of permanent effects
-		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
+		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replace soon
 		if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
-			to_chat(owner, span_danger("Fatal failure detected in \the [src] - Seek for replace immediately."))
+			to_chat(owner, span_userdanger("Fatal failure detected in \the [src] - Seek for replace immediately."))
 	// BLUEMOON ADD END

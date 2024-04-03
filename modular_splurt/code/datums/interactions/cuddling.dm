@@ -2,7 +2,7 @@
 	description = "Обнимашки!"
 	simple_message = "USER обнимает TARGET."
 	simple_style = "lewd"
-	needs_physical_contact = TRUE
+	interaction_flags = INTERACTION_FLAG_ADJACENT
 	interaction_sound = 'sound/weapons/thudswoosh.ogg'
 
 /datum/interaction/cuddle/display_interaction(mob/living/user, mob/living/target)
@@ -22,3 +22,7 @@
 	var/use_message = replacetext(pick(possible_messages), "USER", "\the [user]")
 	use_message = replacetext(use_message, "TARGET", "\the [target]")
 	user.visible_message("<span class='[simple_style]'>[capitalize(use_message)]</span>")
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(target, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(target.loc)

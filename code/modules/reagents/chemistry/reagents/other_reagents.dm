@@ -63,10 +63,7 @@
 	// BLUEMOON ADD START - синтетики могут пить свою же "кровь" (гидравлическую жидкость), чтобы восполнять её запасы
 	if(HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM))
 		if(data && (data["blood_type"] in get_safe_blood(C.dna.blood_type)))
-			if(C.blood_volume > BLOOD_VOLUME_NORMAL) // если крови слишком много, она не восполняет запасы в организме
-				to_chat(C, span_warning("[C] leaks out with hydraulic fluid! It streams from holes in hull parts."))
-			else //восполнение крови в соотношении 1 к 1
-				C.blood_volume = max(C.blood_volume + round(metabolization_rate, 0.1), 0)
+			C.blood_volume = C.blood_volume + clamp(volume, 0, metabolization_rate) //восполнение крови в соотношении 1 к 1
 	// BLUEMOON ADD END
 	..()
 
@@ -378,7 +375,7 @@
 		to_chat(L, "<span class='userdanger'>Священный Туман распространяется по вашему сознанию, ослабляя связь с Красным Измерением и очищая вас от влияния Нар-Си</span>")
 	else if(HAS_TRAIT(L,TRAIT_RUSSIAN))
 		// Alert user of holy water effect.
-		to_chat(L, span_nicegreen("Святая вода питает и заряжает энергией!"))
+		to_chat(L, span_nicegreen("Святая водица питает и заряжает энергией!"))
 	else
 		to_chat(L, span_nicegreen("Священный Туман распространяется по вашему сознанию."))
 
@@ -2205,7 +2202,7 @@
 
 /datum/reagent/romerol/reaction_mob(mob/living/carbon/human/H, method=TOUCH, reac_volume)
 	// Silently add the zombie infection organ to be activated upon death
-	if(!H.getorganslot(ORGAN_SLOT_ZOMBIE))
+	if(!H.getorganslot(ORGAN_SLOT_ZOMBIE) && !HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - добавлена проверка для роботов
 		var/obj/item/organ/zombie_infection/nodamage/ZI = new()
 		ZI.Insert(H)
 	..()
@@ -2585,6 +2582,12 @@
 	if(!istype(location))
 		return
 
+	if(istype(src, /datum/reagent/consumable/semen/femcum)) //let it be here
+		var/obj/effect/decal/cleanable/semen/femcum/F = (locate(/obj/effect/decal/cleanable/semen/femcum) in location) || new(location)
+		if(F.reagents.add_reagent(type, volume, data))
+			F.update_icon()
+			return
+
 	var/obj/effect/decal/cleanable/semen/S = locate(/obj/effect/decal/cleanable/semen) in location
 	if(S)
 		if(S.reagents.add_reagent(type, volume, data))
@@ -2692,21 +2695,21 @@
 
 /datum/reagent/eldritch/on_mob_life(mob/living/carbon/M)
 	if(IS_HERETIC(M))
-		M.drowsyness = max(M.drowsyness-5, 0)
-		M.AdjustAllImmobility(-40, FALSE)
-		M.adjustStaminaLoss(-15, FALSE)
-		M.adjustToxLoss(-3, FALSE, TRUE)
-		M.adjustOxyLoss(-3, FALSE)
-		M.adjustBruteLoss(-3, FALSE)
-		M.adjustFireLoss(-3, FALSE)
+		M.drowsyness = max(M.drowsyness-10, 0)
+		M.AdjustAllImmobility(-80, FALSE)
+		M.adjustStaminaLoss(-30, FALSE)
+		M.adjustToxLoss(-6, FALSE, TRUE)
+		M.adjustOxyLoss(-6, FALSE)
+		M.adjustBruteLoss(-6, FALSE)
+		M.adjustFireLoss(-6, FALSE)
 		if(ishuman(M) && M.blood_volume < BLOOD_VOLUME_NORMAL)
-			M.adjust_integration_blood(3)
+			M.adjust_integration_blood(6)
 	else
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
-		M.adjustToxLoss(2, FALSE)
-		M.adjustFireLoss(2, FALSE)
-		M.adjustOxyLoss(2, FALSE)
-		M.adjustBruteLoss(2, FALSE)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 6, 150)
+		M.adjustToxLoss(4, FALSE)
+		M.adjustFireLoss(4, FALSE)
+		M.adjustOxyLoss(4, FALSE)
+		M.adjustBruteLoss(4, FALSE)
 	holder.remove_reagent(type, 1)
 	return TRUE
 
@@ -2769,7 +2772,7 @@
 /datum/reagent/red_ichor
 	name = "Red Ichor"
 	can_synth = FALSE
-	description = "A unknown red liquid, linked to healing of most moral wounds."
+	description = "An unknown red liquid, linked to healing of most moral wounds."
 	color = "#c10000"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	chemical_flags = REAGENT_ALL_PROCESS
@@ -2787,7 +2790,7 @@
 /datum/reagent/green_ichor
 	name = "Green Ichor"
 	can_synth = FALSE
-	description = "A unknown green liquid, linked to healing of most internal wounds."
+	description = "An unknown green liquid, linked to healing of most internal wounds."
 	color = "#158c00"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	chemical_flags = REAGENT_ALL_PROCESS
@@ -2805,7 +2808,7 @@
 /datum/reagent/blue_ichor
 	name = "Blue Ichor"
 	can_synth = FALSE
-	description = "A unknown blue liquid, linked to healing the mind."
+	description = "An unknown blue liquid, linked to healing the mind."
 	color = "#0914e0"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	chemical_flags = REAGENT_ALL_PROCESS

@@ -6,7 +6,7 @@
 	path = /obj/item/clothing/wrists/clockwork_watch
 	cost = 0
 
-/datum/gear/wrists/steam_watch
+/datum/gear/wrists/red_watch
 	name = "Red Watch"
 	category = LOADOUT_CATEGORY_WRISTS
 	subcategory = LOADOUT_SUBCATEGORY_WATCHES

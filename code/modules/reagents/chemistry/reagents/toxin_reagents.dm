@@ -354,6 +354,7 @@
 	reagent_state = SOLID
 	color = "#000067" // rgb: 0, 0, 103
 	toxpwr = 0
+	overdose_threshold = 30
 	metabolization_rate = 1.5 * REAGENTS_METABOLISM
 	pH = 11
 
@@ -362,14 +363,15 @@
 		if(1 to 10)
 			M.confused += 2
 			M.drowsyness += 2
-		if(10 to 50)
+		if(10 to INFINITY)
 			M.Sleeping(40, 0)
-			. = 1
-		if(51 to INFINITY)
-			M.Sleeping(40, 0)
-			M.adjustToxLoss((current_cycle - 50)*REM, 0)
 			. = 1
 	..()
+
+/datum/reagent/toxin/histamine/overdose_process(mob/living/M)
+	M.adjustToxLoss(2*REM, 0)
+	..()
+	. = 1
 
 /datum/reagent/toxin/fakebeer	//disguised as normal beer for use by emagged brobots
 	name = "Beer"

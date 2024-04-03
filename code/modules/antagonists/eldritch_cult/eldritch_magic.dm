@@ -67,7 +67,8 @@
 		var/mob/living/carbon/C = target
 		C.adjustBruteLoss(25)
 		C.DefaultCombatKnockdown(60, override_stamdmg = 0)
-		C.adjustStaminaLoss(80)
+		C.adjustStaminaLoss(90) // Bluemoon change, was 80
+		C.Stun(10) // Bluemoon change
 	var/list/knowledge = cultie.get_all_knowledge()
 
 	for(var/X in knowledge)

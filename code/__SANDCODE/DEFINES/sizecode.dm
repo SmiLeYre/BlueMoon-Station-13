@@ -2,6 +2,7 @@
 //alright bet -BoxBoy
 #define RESIZE_MACRO 6
 #define RESIZE_HUGE 4
+#define RESIZE_LARGE 3 // BLUEMOON ADD - добавляю сюда для наглядности
 #define RESIZE_BIG 2
 #define RESIZE_NORMAL 1
 #define RESIZE_SMALL 0.75

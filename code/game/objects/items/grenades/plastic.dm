@@ -186,7 +186,7 @@
 	full_damage_on_mobs = TRUE
 
 /obj/item/grenade/plastic/c4/New()
-	wires = new /datum/wires/explosive/c4(src)
+	set_wires(new /datum/wires/explosive/c4(src))
 	..()
 
 /obj/item/grenade/plastic/c4/Destroy()

@@ -38,4 +38,5 @@
 	if(M)
 		M.apply_damage(0.8*reac_volume, BURN, wound_bonus=9)
 	if(iscarbon(M))
-		M.emote("scream")
+		if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+			M.emote("scream")

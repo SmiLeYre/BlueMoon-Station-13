@@ -1,22 +1,24 @@
 /datum/interaction/lewd/nipsuck
-	description = "Рот. Пососать соски."
-	require_target_breasts = REQUIRE_EXPOSED
-	require_user_mouth = TRUE
+	description = "Грудь. Пососать соски."
+	required_from_user = INTERACTION_REQUIRE_MOUTH
+	required_from_target_exposed = INTERACTION_REQUIRE_BREASTS
 	write_log_user = "sucked nipples"
 	write_log_target = "had their nipples sucked by"
 	interaction_sound = null
-	max_distance = 1
 
 /datum/interaction/lewd/nipsuck/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
+	var/obj/item/organ/genital/breasts/B = target.getorganslot(ORGAN_SLOT_BREASTS)
+	var/milktype = B?.fluid_id
+	var/modifier = 1 //Optimized variables. - Gardelin0
 	if((user.a_intent == INTENT_HELP) || (user.a_intent == INTENT_DISARM))
-		user.visible_message(
-				pick("<span class='lewd'>\The <b>[user]</b> аккуратно хватается за грудь партнёра и нежно обсасывает [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
-					"<span class='lewd'>\The <b>[user]</b> поглаживает грудь партнёра, аккуратно хватаясь своими губами за [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
-					"<span class='lewd'>\The <b>[user]</b> в улыбке облизывает [pick("сосок", "соски")] \the <b>[target]</b> и усмехается.</span>"))
 		if(target.has_breasts(REQUIRE_EXPOSED))
-			var/modifier = 1
-			var/obj/item/organ/genital/breasts/B = target.getorganslot(ORGAN_SLOT_BREASTS)
 			if(B.climaxable(target, TRUE))
+				var/datum/reagent/milk = find_reagent_object_from_type(milktype)
+				var/milktext = milk.name //So you know what are you drinking. - Gardelin0
+				user.visible_message(
+					pick("<span class='lewd'>\The <b>[user]</b> аккуратно хватается за грудь партнёра и нежно обсасывает [pick("сосок", "соски")] \the <b>[target]</b>, выпивая тёплое <b>'[lowertext(milktext)]'</b>.</span>",
+						"<span class='lewd'>\The <b>[user]</b> поглаживает грудь партнёра, аккуратно хватаясь своими губами за [pick("сосок", "соски")] \the <b>[target]</b>, пробуя сладкое на первовкусие <b>'[lowertext(milktext)]'</b>.</span>",
+						"<span class='lewd'>\The <b>[user]</b> в улыбке облизывает [pick("сосок", "соски")] \the <b>[target]</b>, чувствуя вкус <b>'[lowertext(milktext)]'</b> и усмехается.</span>"))
 				switch(B.size)
 					if("c", "d", "e")
 						modifier = 2
@@ -27,17 +29,22 @@
 							modifier = clamp(GLOB.breast_values[B.size] - 5, 0, INFINITY)
 						else
 							modifier = 1
-				if(B.fluid_id)
-					user.reagents.add_reagent(B.fluid_id, rand(1,2 * modifier) * user.get_fluid_mod(B)) //SPLURT edit
+				if(milktype)
+					user.reagents.add_reagent(milktype, rand(1,2 * modifier) * user.get_fluid_mod(B)) //SPLURT edit
+			else
+				user.visible_message(
+					pick("<span class='lewd'>\The <b>[user]</b> аккуратно хватается за грудь партнёра и нежно обсасывает [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
+						"<span class='lewd'>\The <b>[user]</b> поглаживает грудь партнёра, аккуратно хватаясь своими губами за [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
+						"<span class='lewd'>\The <b>[user]</b> в улыбке облизывает [pick("сосок", "соски")] \the <b>[target]</b> и усмехается.</span>"))
 
 	if(user.a_intent == INTENT_HARM)
-		user.visible_message(
-				pick("<span class='lewd'>\The <b>[user]</b> с силой обхватывает грудь партнёра и грубо посасывает [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
-					"<span class='lewd'>\The <b>[user]</b> хватается губами за [pick("сосок", "соски")], касается зубками \the <b>[target]</b>'s и начинает грубо посасывать.</span>"))
 		if(target.has_breasts(REQUIRE_EXPOSED))
-			var/modifier = 1
-			var/obj/item/organ/genital/breasts/B = target.getorganslot(ORGAN_SLOT_BREASTS)
 			if(B.climaxable(target, TRUE))
+				var/datum/reagent/milk = find_reagent_object_from_type(milktype)
+				var/milktext = milk.name //So you know what are you drinking. - Gardelin0
+				user.visible_message(
+					pick("<span class='lewd'>\The <b>[user]</b> с силой обхватывает грудь партнёра и грубо посасывает [pick("сосок", "соски")] \the <b>[target]</b>, орошая своё горло большим количеством большому количеству <b>'[lowertext(milktext)]'</b>.</span>",
+						"<span class='lewd'>\The <b>[user]</b> хватается губами за [pick("сосок", "соски")], касается зубками \the <b>[target]</b>'s и начинает грубо посасывать, выпивая тёплое <b>'[lowertext(milktext)]'</b>.</span>"))
 				switch(B.size)
 					if("c", "d", "e")
 						modifier = 2
@@ -48,18 +55,21 @@
 							modifier = clamp(GLOB.breast_values[B.size] - 5, 0, INFINITY)
 						else
 							modifier = 1
-				if(B.fluid_id)
-					user.reagents.add_reagent(B.fluid_id, rand(1,3 * modifier)) //aggressive sucking leads to high rewards
+				if(milktype)
+					user.reagents.add_reagent(milktype, rand(1,3 * modifier)) //aggressive sucking leads to high rewards
+			else
+				user.visible_message(
+					pick("<span class='lewd'>\The <b>[user]</b> с силой обхватывает грудь партнёра и грубо посасывает [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
+						"<span class='lewd'>\The <b>[user]</b> хватается губами за [pick("сосок", "соски")], касается зубками \the <b>[target]</b>'s и начинает грубо посасывать.</span>"))
 
 	if(user.a_intent == INTENT_GRAB)
-		user.visible_message(
-				pick("<span class='lewd'>\The <b>[user]</b> крепко обхватывает грудь партнёра и активно обсасывает [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
-					"<span class='lewd'>\The <b>[user]</b> поглаживает грудь партнёра и крепко хватается своими губами за [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
-					"<span class='lewd'>\The <b>[user]</b> игриво облизывает [pick("сосок", "соски")] \the <b>[target]</b> и ехидно ухмыляется.</span>"))
 		if(target.has_breasts(REQUIRE_EXPOSED))
-			var/modifier = 1
-			var/obj/item/organ/genital/breasts/B = target.getorganslot(ORGAN_SLOT_BREASTS)
 			if(B.climaxable(target, TRUE))
+				var/datum/reagent/milk = find_reagent_object_from_type(milktype)
+				var/milktext = milk.name //So you know what are you drinking. - Gardelin0
+				user.visible_message(
+					pick("<span class='lewd'>\The <b>[user]</b> крепко обхватывает грудь партнёра и активно обсасывает [pick("сосок", "соски")] \the <b>[target]</b>, чувствуя вкус <b>'[lowertext(milktext)]'</b>.</span>",
+						"<span class='lewd'>\The <b>[user]</b> игриво облизывает [pick("сосок", "соски")] \the <b>[target]</b>, слизывая <b>'[lowertext(milktext)]'</b> и ехидно ухмыляется.</span>"))
 				switch(B.size)
 					if("c", "d", "e")
 						modifier = 2
@@ -70,10 +80,16 @@
 							modifier = clamp(GLOB.breast_values[B.size] - 5, 0, INFINITY)
 						else
 							modifier = 1
-				if(B.fluid_id)
-					user.reagents.add_reagent(B.fluid_id, rand(1,3 * modifier)) //aggressive sucking leads to high rewards
+				if(milktype)
+					user.reagents.add_reagent(milktype, rand(1,3 * modifier)) //aggressive sucking leads to high rewards
+			else
+				user.visible_message(
+					pick("<span class='lewd'>\The <b>[user]</b> крепко обхватывает грудь партнёра и активно обсасывает [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
+						"<span class='lewd'>\The <b>[user]</b> поглаживает грудь партнёра и крепко хватается своими губами за [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
+						"<span class='lewd'>\The <b>[user]</b> игриво облизывает [pick("сосок", "соски")] \the <b>[target]</b> и ехидно ухмыляется.</span>"))
 
-	if(prob(5 + target.get_lust()))
+	if(prob(50 + target.get_lust()))
+		target.handle_post_sex(NORMAL_LUST, null, user, ORGAN_SLOT_BREASTS)
 		if(target.a_intent == INTENT_HELP)
 			user.visible_message(
 				pick("<span class='lewd'>\The <b>[target]</b> дрожит от возбуждения.</span>",
@@ -83,7 +99,6 @@
 					"<span class='lewd'>\The <b>[target]</b> тихонько вздрагивает.</span>",
 					"<span class='lewd'>\The <b>[target]</b> возбуждённо проводит пальцем вдоль своей груди.</span>",
 					"<span class='lewd'>\The <b>[target]</b> дрожит от возбуждения и довольно выдыхает, когда \the <b>[user]</b> наслаждается содержимым грудей.</span>"))
-			target.handle_post_sex(LOW_LUST, null, user, ORGAN_SLOT_BREASTS)
 		if(target.a_intent == INTENT_DISARM)
 			if (target.restrained())
 				if(!target.has_breasts())
@@ -111,7 +126,6 @@
 							"<span class='lewd'>\The <b>[target]</b> хихикает, вырываясь из рук <b>[user]</b>.</span>",
 							"<span class='lewd'>\The <b>[target]</b> нежно проводит рукой <b>[user]</b>'s вдоль обнажённых грудей.</span>",
 							"<span class='lewd'>\The <b>[target]</b> толкает обнажённую грудь вперёд и дразняще проводит несколькими пальцами <b>[user]</b> по своему соску.</span>"))
-			target.handle_post_sex(LOW_LUST, null, user, ORGAN_SLOT_BREASTS)
 	if(target.a_intent == INTENT_GRAB)
 		user.visible_message(
 				pick("<span class='lewd'>\The <b>[target]</b> крепко сжимает запястье <b>[user]</b>.</span>",

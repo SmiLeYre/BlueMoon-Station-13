@@ -50,32 +50,36 @@
 						  	"<span class='userdanger'>[A] slams you into the ground!</span>")
 		playsound(get_turf(A), 'sound/weapons/slam.ogg', 50, 1, -1)
 		D.apply_damage(damage, BRUTE)
-		D.DefaultCombatKnockdown(120)
+		D.Paralyze(12 SECONDS)
 		log_combat(A, D, "slammed (CQC)")
 	return TRUE
+
 
 /datum/martial_art/cqc/proc/Kick(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!can_use(A))
 		return FALSE
 	var/damage = damage_roll(A,D)
-	if(!CHECK_MOBILITY(D, MOBILITY_STAND) && CHECK_MOBILITY(D, MOBILITY_USE))
+	if(D.lying && !D.IsUnconscious() && D.getStaminaLoss() > 100)
 		log_combat(A, D, "knocked out (Head kick)(CQC)")
 		D.visible_message("<span class='warning'>[A] kicks [D]'s head, knocking [D.ru_na()] out!</span>", \
 					  		"<span class='userdanger'>[A] kicks your head, knocking you out!</span>")
 		playsound(get_turf(A), 'sound/weapons/genhit1.ogg', 50, 1, -1)
-		D.SetSleeping(300)
-		D.apply_damage(damage + 5, BRUTE)
-		var/atom/throw_target = get_edge_target_turf(D, A.dir)
-		D.throw_at(throw_target, 1, 14, A)
+		D.Knockdown(20 SECONDS)
+		D.Unconscious(10 SECONDS)
 		D.adjustOrganLoss(ORGAN_SLOT_BRAIN, damage + 10, 150)
 	else
 		D.visible_message("<span class='warning'>[A] kicks [D]!</span>", \
 							"<span class='userdanger'>[A] kicks you!</span>")
 		playsound(get_turf(A), 'sound/weapons/cqchit1.ogg', 50, 1, -1)
-		D.Dizzy(damage)
+		var/atom/throw_target = get_edge_target_turf(D, A.dir)
+		D.throw_at(throw_target, 1, 14, A)
 		D.apply_damage(damage + 15, BRUTE)
+		if(D.lying && !D.IsUnconscious())
+			D.adjustStaminaLoss(45)
 		log_combat(A, D, "kicked (CQC)")
+	
 	return TRUE
+
 
 /datum/martial_art/cqc/proc/Pressure(mob/living/carbon/human/A, mob/living/carbon/human/D)
 	if(!can_use(A))
@@ -98,7 +102,7 @@
 		D.visible_message("<span class='warning'>[A] locks [D] into a restraining position!</span>", \
 							"<span class='userdanger'>[A] locks you into a restraining position!</span>")
 		D.apply_damage(damage, STAMINA)
-		D.Stun(10)
+		D.Stun(10 SECONDS)
 		restraining = TRUE
 		addtimer(VARSET_CALLBACK(src, restraining, FALSE), 50, TIMER_UNIQUE)
 	return TRUE
@@ -197,8 +201,7 @@
 		log_combat(A, D, "knocked out (Chokehold)(CQC)")
 		D.visible_message("<span class='danger'>[A] puts [D] into a chokehold!</span>", \
 							"<span class='userdanger'>[A] puts you into a chokehold!</span>")
-		if(D.silent <= 10)
-			D.silent = clamp(D.silent + 10, 0, 10)
+		D.SetSleeping(40 SECONDS)
 		restraining = FALSE
 		if(A.grab_state < GRAB_NECK)
 			A.setGrabState(GRAB_NECK)

@@ -129,7 +129,8 @@
 /area/hilbertshotel)
 "zD" = (
 /obj/machinery/jukebox{
-	req_one_access = null
+	req_one_access = null;
+	one_area_play = 1
 	},
 /turf/open/indestructible/hotelwood,
 /area/hilbertshotel)
@@ -172,7 +173,9 @@
 /turf/open/space/bluespace,
 /area/hilbertshotel)
 "Ii" = (
-/obj/machinery/vending/kink,
+/obj/machinery/vending/kink{
+	shut_up = 1
+	},
 /turf/open/indestructible/hotelwood,
 /area/hilbertshotel)
 "Ir" = (

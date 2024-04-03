@@ -55,10 +55,13 @@
 /datum/job/hos/New()
 	var/list/extra_titles = list(
 		"Security Commander",
-		"Head of Slutcurity",
 		"Division Leader",
 		"Cerberus Leader",
 		"Syndicate Field Commander",
+		"AC Special Lieutenant",
+		"Head of Slutcurity",
+		"Head of Studcurity",
+		"Big Iron",
 		"Commissar"
 	)
 	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
@@ -71,7 +74,6 @@
 		"Supply Chief",
 		"Cargonia Chief",
 		"Brigadier",
-		"Logistics Syndicate Supervisor",
 		"Manager of Shipping Sex"
 	)
 	LAZYADD(alt_titles, extra_titles)
@@ -95,6 +97,7 @@
 		"Specialist Of Interdyne",
 		"Healing Fleshlight Mistress",
 		"Healing Fleshlight Master",
+		"Chief Heal Stud",
 		"Chief Heal Slut"
 	) // Sandcode do not have alt titles for CMO at the moment.
 
@@ -137,6 +140,8 @@
 		"Tourist",
 		"SolFed Tourist",
 		"NRI Tourist",
+		"USSP Tourist",
+		"Secretary", //I mean, why not? - Gardelin0
 		"Clerk",
 		"Blacksmith",
 		"All-purpose Fleshlight",
@@ -146,12 +151,18 @@
 		"Bard",
 		"Snack",
 		"Stress Relief",
+		"Service Top",
+		"Service Bottom",
+		"Service Pred",
+		"Service Prey",
+		"Belly Massager",
 		"Freeloader",
 		"Syndicate Specialist",
 		"Station Pet",
 		"Whore",
 		"Slut",
-		"Slave"
+		"Slave",
+		"Pet"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
@@ -192,19 +203,20 @@
 		"Priestess",
 		"Prior",
 		"Monk",
+		"Tiger Cooperative Disciple",
 		"Nun",
 		"Tiger Cooperative Disciple",
 		"Keeper of Cum",
+		"Syndicate Techpriest",
 		"Counselor",
 		"Techpriest",
-		"Syndicate Techpriest"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	LAZYREMOVE(alt_titles, rem_titles)
 	. = ..()
 
 /datum/job/clown // Sorry, but no TWO entertainer titles.
-	alt_titles = list("Jester", "Comedian", "Cumedian", "Sexy Clown")
+	alt_titles = list("Jester", "Comedian", "Cumedian", "Sexy Clown", "Performer")	//Just another tittle. - Gardelin0
 
 /datum/job/cook/New()
 	var/list/extra_titles = list(
@@ -213,7 +225,11 @@
 		"Chef De Sexe",
 		"Boss Of This Gym",
 		"Prey Prepper",
+		"Pred Prepper",
 		"Poissonier",
+		"Chef De Sexe",
+		"Boss Of This Gym",
+		"Waffle Co. Specialist",
 		"Baker"
 	)
 	LAZYADD(alt_titles, extra_titles)
@@ -291,6 +307,12 @@
 		"Borgs Slut",
 		"Borgs Raper",
 		"Robo-Slut",
+		"Techpriest Biologis",
+		"MOD Mechanic",
+		"Synth Technician",
+		"Droid Mechanic",
+		"Borgs Slut",
+		"Robo-Slut",
 		"Techpriest Biologis"
 	)
 	LAZYADD(alt_titles, extra_titles)
@@ -305,6 +327,7 @@
 		"Chemical Plumber",
 		"Organomegaly Healer",
 		"Hexocrocin Therapist",
+		"Chemi-Slut",
 		"Chemi-Slut"
 	)
 	LAZYADD(alt_titles, extra_titles)
@@ -318,7 +341,8 @@
 		"Medtech",
 		"Oral Doctor",
 		"Healing Fleshlight",
-		"Medi-Slut"
+		"Medi-Slut",
+		"Medi-Stud"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
@@ -352,11 +376,12 @@
 /datum/job/paramedic/New()
 	var/list/extra_titles = list(
 		"Field Medic Of Interdyne",
+		"Crocin Deliverer",
+		"Para-Slut",
+		"Para-Stud",
 		"Emergency Horny Technical",
 		"Emergency Cum Receiver",
-		"Emergency Condom Team",
-		"Crocin Deliverer",
-		"Para-Slut"
+		"Emergency Condom Team"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
@@ -368,7 +393,8 @@
 		"Syndicate Bioweapon Scientist",
 		"Plague Doctor",
 		"Monkey Destroyer",
-		"Viro-Slut"
+		"Viro-Slut",
+		"Viro-Stud"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
@@ -398,13 +424,15 @@
 		"Guardsman",
 		"Civil Protection",
 		"Police Officer",
-		"Tyranny Lover",
-		"Cerberus",
 		"SAARE Operative",
+		"AC Specialist",
 		"PCRC Operative",
 		"Syndicate Combatant",
 		"Gorlex Marauders Trainee",
-		"Slutcurity Officer"
+		"Tyranny Lover",
+		"Cerberus",
+		"Slutcurity Officer",
+		"Studcurity Officer"
 	)
 	var/list/rem_titles = list(
 		"Peacekeeper"
@@ -423,9 +451,8 @@
 		"Dungeon Master",
 		"Brig Superintendent",
 		"Brig Overwatch",
-		"High-Ranked Security Officer",
+		"AC Sergeant",
 		"Slutcurity Captain",
-		"Syndicate Supervisor",
 		"Voreden"
 	)
 	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
@@ -447,7 +474,15 @@
 		"Disposal Technician",
 		"Donk Co. Specialist",
 		"Logistics Technician",
-		"Cryptocurrency Technician"
+		"Cryptocurrency Technician",
+		"Horny Mailer",
+		"Pleasures Deliverer",
+		"Cock Packager",
+		"Mailroom Technician",
+		"Disposal Technician",
+		"Donk Co. Specialist",
+		"Logistics Technician",
+		"Package Handler"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()

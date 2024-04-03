@@ -8,10 +8,17 @@
 */
 
 /datum/uplink_item/dangerous/pistol
-	name = "Stechkin Pistol"
+	name = "Makarov Pistol"
 	desc = "A sleek box containing a small, easily concealable handgun that uses 10mm auto rounds in 8-round magazines. The handgun is compatible \
 			with suppressors."
 	item = /obj/item/storage/box/syndie_kit/pistol
+	cost = 4
+	purchasable_from = ~UPLINK_CLOWN_OPS
+
+/datum/uplink_item/dangerous/aps_pistol
+	name = "Stechkin Pistol"
+	desc = "The original Russian version of a widely used Syndicate sidearm. Uses 9mm ammo. Has a threaded barrel for suppressors."
+	item = /obj/item/storage/box/syndie_kit/aps_pistol
 	cost = 7
 	purchasable_from = ~UPLINK_CLOWN_OPS
 
@@ -22,7 +29,16 @@
 	cost = 13
 	player_minimum = 15
 	surplus = 50
-	purchasable_from = ~UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/dangerous/revolver_inteq
+	name = "InteQ Revolver Kit"
+	desc = "Простой и брутальный револьвер под патрон .357 Magnum. 7 выстрелов для 7 трупов, скорозарядник с дополнительным боезопасом в комплекте."
+	item = /obj/item/storage/box/inteq_kit/revolver
+	cost = 13
+	player_minimum = 15
+	surplus = 50
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/dangerous/rawketlawnchair
 	name = "84mm Rocket Propelled Grenade Launcher"
@@ -235,16 +251,22 @@
 	with your fists, and be able to slam people through tables with immense force. \
 	Unfortunately, due to the size of the gloves you will be unable to wield firearms with them equipped."
 	item = /obj/item/clothing/gloves/fingerless/pugilist/mauler
-	cost = 8
+	cost = 10
 
 /datum/uplink_item/dangerous/powerfist
 	name = "Power Fist"
 	desc = "The power-fist is a metal gauntlet with a built-in piston-ram powered by an external gas supply.\
-		 Upon hitting a target, the piston-ram will extend forward to make contact for some serious damage. \
-		 Using a wrench on the piston valve will allow you to tweak the amount of gas used per punch to \
-		 deal extra damage and hit targets further. Use a screwdriver to take out any attached tanks."
+		Upon hitting a target, the piston-ram will extend forward to make contact for some serious damage. \
+		Using a wrench on the piston valve will allow you to tweak the amount of gas used per punch to \
+		deal extra damage and hit targets further. Use a screwdriver to take out any attached tanks."
 	item = /obj/item/melee/powerfist
 	cost = 8
+
+/datum/uplink_item/dangerous/death_lipstick
+	name = "Kiss of Death"
+	desc = "An incredibly potent tube of lipstick made from the venom of the dreaded Yellow Spotted Space Lizard, as deadly as it is chic. Try not to smear it!"
+	item = /obj/item/lipstick/black/death
+	cost = 12
 
 /datum/uplink_item/dangerous/sniper
 	name = "Sniper Rifle"
@@ -293,3 +315,10 @@
 	item = /obj/item/gun/magic/staff/motivation
 	cost = 10
 	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
+
+/datum/uplink_item/dangerous/kudzu_seeds
+	name = "Pack of Kudzu Seeds"
+	desc = "These seeds grow into a weed that grows incredibly fast."
+	item = /obj/item/seeds/kudzu
+	cost = 4
+	surplus = 10

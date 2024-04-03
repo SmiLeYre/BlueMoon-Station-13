@@ -10,7 +10,7 @@
 	required_players = 20
 	required_enemies = 1
 	recommended_enemies = 1
-	enemy_minimum_age = 7
+	enemy_minimum_age = 0 // BLUEMOON EDIT - было 7, сделал 0, т.к. на сервере ВЛ и загриферить ролью тяжело
 	round_ends_with_antag_death = 1
 	chaos = 9
 	announce_span = "danger"

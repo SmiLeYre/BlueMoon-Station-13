@@ -96,7 +96,7 @@
 
 /obj/item/gun/magic/contractor_hook
 	name = "SCORPION hook"
-	desc = "A hardlight hook used to non-lethally pull targets much closer to the user."
+	desc = "A hardlight hook used to non-lethally pull targets much closer to the user. You can pull even the heaviest prey when it is active." // BLUEMOON ADD - добавлено про возможность тащить тяжёлую добычу
 	ammo_type = /obj/item/ammo_casing/magic/contractor_hook
 	icon = 'icons/obj/guns/energy.dmi'
 	icon_state = "hook_weapon"

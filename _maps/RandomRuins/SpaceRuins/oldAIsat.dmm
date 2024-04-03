@@ -905,10 +905,6 @@
 /obj/machinery/teleport/hub,
 /turf/open/floor/plating,
 /area/tcommsat/chamber)
-"iO" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/wall/r_wall,
-/area/tcommsat/chamber)
 
 (1,1,1) = {"
 aa
@@ -3065,7 +3061,7 @@ ag
 ag
 ag
 ag
-iO
+ag
 aT
 bc
 bs

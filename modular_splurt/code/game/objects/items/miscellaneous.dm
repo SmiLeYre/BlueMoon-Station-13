@@ -125,9 +125,19 @@
 	desc = "A card indicating that the Head of staff is allowed to carry a weapon."
 	icon_state = "compermit"
 
+/obj/item/clothing/accessory/permit/staff
+	name = "Staff weapon permit"
+	desc = "A card indicating that the staff is allowed to carry a weapon."
+	icon_state = "permit"
+
 /obj/item/clothing/accessory/permit/bar
 	name = "bar weapon permit"
 	desc = "A card indicating that the barkeep is allowed to carry a weapon, most likely their shotgun."
+	icon_state = "permit"
+
+/obj/item/clothing/accessory/permit/guard
+	name = "guard weapon permit"
+	desc = "A card indicating that the department guard is allowed to carry limited list of non-lethal weapons."
 	icon_state = "permit"
 
 //Hyper stuff
@@ -268,3 +278,17 @@
 		replace.uses = uses - 1
 		M.put_in_hands(replace)
 	. = ..()
+
+/obj/item/choice_beacon/ouija
+	name = "spirit board delivery beacon"
+	desc = "Ghost communication on demand! It is unclear how this thing is still operational."
+
+/obj/item/choice_beacon/ouija/generate_display_names()
+	var/static/list/ouija_spaghetti_list
+	if(!ouija_spaghetti_list)
+		ouija_spaghetti_list = list()
+		var/list/templist = list(/obj/structure/spirit_board)
+		for(var/V in templist)
+			var/atom/A = V
+			ouija_spaghetti_list[initial(A.name)] = A
+	return ouija_spaghetti_list

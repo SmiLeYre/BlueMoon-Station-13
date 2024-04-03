@@ -91,6 +91,17 @@
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
+/obj/item/clothing/glasses/meson/night/ert
+	name = "night vision meson scanner"
+	desc = "An optical meson scanner fitted with an amplified visible light spectrum overlay, providing greater visual clarity in darkness."
+	icon_state = "nvgmeson"
+	item_state = "nvgmeson"
+	darkness_view = 8
+	flash_protect = 1
+	vision_correction = 1
+	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
+	glass_colour_type = /datum/client_colour/glass_colour/green
+
 /obj/item/clothing/glasses/meson/gar
 	name = "gar mesons"
 	icon_state = "garm"
@@ -249,7 +260,7 @@
 //Here lies green glasses, so ugly they died. RIP
 
 /obj/item/clothing/glasses/sunglasses
-	name = "sunglasses"
+	name = "Sunglasses"
 	desc = "Strangely ancient technology used to help provide rudimentary eye cover. Enhanced shielding blocks flashes."
 	icon_state = "sun"
 	item_state = "sunglasses"
@@ -258,6 +269,11 @@
 	tint = 1
 	glass_colour_type = /datum/client_colour/glass_colour/gray
 	dog_fashion = /datum/dog_fashion/head
+
+/obj/item/clothing/glasses/sunglasses/fake
+	name = "Cheap Sunglasses"
+	desc = "Cheap, plastic sunglasses. They don't even have UV protection."
+	flash_protect = 0
 
 /obj/item/clothing/glasses/sunglasses/reagent
 	name = "beer goggles"

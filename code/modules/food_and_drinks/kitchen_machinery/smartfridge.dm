@@ -188,7 +188,7 @@
 				listofitems[md5name]["amount"]++	// The good news is, #30519 made smartfridge UIs non-auto-updating
 			else
 				listofitems[md5name] = list("name" = O.name, "type" = O.type, "amount" = 1)
-	sortList(listofitems)
+	sort_list(listofitems)
 
 	.["contents"] = listofitems
 	.["name"] = name
@@ -477,6 +477,7 @@
 	base_build_path = /obj/machinery/smartfridge/organ/preloaded
 	initial_contents = list(
 		/obj/item/reagent_containers/medspray/synthtissue = 1,
+		/obj/item/reagent_containers/glass/bottle/morphine = 1, // BLUEMOON ADD - обезболивающее для операций,
 		/obj/item/reagent_containers/medspray/sterilizine = 1)
 
 /obj/machinery/smartfridge/organ/preloaded/Initialize(mapload)

@@ -6,20 +6,21 @@
 	to_chat(user, "<span class='notice'>Я целюсь в... [hole].</span>")
 
 /obj/item/melee/baseball_bat/attack(mob/living/target, mob/living/user)
+	if(!user.canUseTopic(user, BE_CLOSE))
+		return
 	user.DelayNextAction(CLICK_CD_RANGE)
 	if (user.zone_selected == BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP)
-		//var/possessive_verb = user.ru_ego()
 		var/message = ""
 		var/lust_amt = 0
 		if(ishuman(target) && (target?.client?.prefs?.toggles & VERB_CONSENT))
 			if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
 				switch(hole)
 					if(CUM_TARGET_VAGINA)
-						if(target.has_vagina(REQUIRE_EXPOSED))
+						if(target.has_vagina() == HAS_EXPOSED_GENITAL)
 							message = (user == target) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою киску.", "запихивает '\the [src]' в свою киску", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[target]</b> прямо в киску с помощью '\the [src]'", "засовывает '\the [src]' прямо в киску <b>[target]</b>.")
 							lust_amt = NORMAL_LUST
 					if(CUM_TARGET_ANUS)
-						if(target.has_anus(REQUIRE_EXPOSED))
+						if(target.has_anus() == HAS_EXPOSED_GENITAL)
 							message = (user == target) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою попку.","запихивает '\the [src]' прямо в свою собственную попку.", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[target]</b> прямо в попку '\the [src]'", "активно суёт '\the [src]' прямо в попку <b>[target]</b>.")
 							lust_amt = NORMAL_LUST
 		if(message)
@@ -28,7 +29,8 @@
 			playsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
 								'modular_sand/sound/interactions/bang5.ogg',
 								'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
-
+			if(!HAS_TRAIT(target, TRAIT_LEWD_JOB))
+				new /obj/effect/temp_visual/heart(target.loc)
 	else //Standart code
 		. = ..()
 		if(HAS_TRAIT(user, TRAIT_PACIFISM))

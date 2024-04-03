@@ -25,7 +25,7 @@
 
 						trait_flag = TRAIT_IMPOTENT_ANUS
 					if("Edging-Only")
-						if(!(target.client?.prefs.cit_toggles & EDGING))
+						if(!(target.client?.prefs.cit_toggles & CHASTITY)) // BLUEMOON CHANGES - was if(!(target.client?.prefs.cit_toggles & EDGING))
 							continue
 
 						trait_flag = TRAIT_EDGINGONLY_ANUS
@@ -46,7 +46,7 @@
 						trait_flag = TRAIT_HYPERSENS_ANUS
 
 				ADD_TRAIT(C, trait_flag, ORGAN_TRAIT)
-				to_chat(C, "<span class='hypnophrase'>Your anus is now <i>[lowertext(choices[G])]</i></span>")
+				to_chat(C, span_hypnophrase("Your anus is now <i>[lowertext(choices[G])]</i>."))
 				continue
 
 		var/obj/item/organ/genital/genital = C.getorganslot(lowertext(G))
@@ -65,7 +65,7 @@
 				if(istype(genital, /obj/item/organ/genital/penis))
 					genital.set_aroused_state(0, "impotence") //Pp goes wooon
 			if("Edging-Only")
-				if(!(target.client?.prefs.cit_toggles & EDGING))
+				if(!(target.client?.prefs.cit_toggles & CHASTITY)) // BLUEMOON CHANGES - was if(!(target.client?.prefs.cit_toggles & EDGING))
 					continue
 
 				hypno_flag = GENITAL_EDGINGONLY
@@ -88,7 +88,7 @@
 		if(!hypno_flag)
 			continue
 
-		to_chat(C, "<span class='hypnophrase'>Your [lowertext(G)] is now <i>[lowertext(choices[G])]</i></span>")
+		to_chat(C, span_hypnophrase("Your [lowertext(G)] is now <i>[lowertext(choices[G])]</i>."))
 
 		var/obj/item/organ/genital/genital_organ = genital
 		ENABLE_BITFIELD(genital_organ.genital_flags, hypno_flag)
@@ -188,11 +188,11 @@
 	if(!("hypno" in mood_comp.mood_events))
 		return ..()
 	C.remove_chastity_hypno_effects()
-	to_chat(C, "<span class='warning'>You manage to gain control over your genitals again.</span>")
+	to_chat(C, span_warning("You manage to gain control over your genitals again."))
 	. = ..()
 
 /datum/mood_event/hypnosis
-	description = "<span class='hypnophrase'>Кажется, вы не совсем контроллируете своё тело.</span>"
+	description = span_hypnophrase("Кажется, вы не совсем контроллируете своё тело.\n")
 
 /mob/living/carbon/verb/remove_chastity_hypnosis()
 	set name = "Escape Chastity Hypnosis"

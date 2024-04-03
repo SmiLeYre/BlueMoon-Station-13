@@ -203,6 +203,24 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "AI Sat Ext"
 	icon_state = "ai_sat_west"
 
+//Command - AI Monitored
+
+/area/ai_monitored/command/storage/eva
+	name = "EVA Storage"
+	icon_state = "eva"
+	// ambience_index = AMBIENCE_DANGER
+	clockwork_warp_allowed = FALSE
+	ambientsounds = HIGHSEC
+
+/area/ai_monitored/command/storage/eva/upper
+	name = "Upper EVA Storage"
+
+/area/ai_monitored/command/nuke_storage
+	name = "Vault"
+	icon_state = "nuke_storage"
+	// airlock_wires = /datum/wires/airlock/command
+	ambientsounds = HIGHSEC
+
 //Maintenance
 
 /area/maintenance
@@ -608,25 +626,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	// ambience_index = AMBIENCE_ENGI
 	ambientsounds = ENGINEERING
 
-//Command - AI Monitored
-
-/area/ai_monitored/command/storage/eva
-	name = "EVA Storage"
-	icon_state = "eva"
-	// ambience_index = AMBIENCE_DANGER
-	clockwork_warp_allowed = FALSE
-	ambientsounds = HIGHSEC
-
-/area/ai_monitored/command/storage/eva/upper
-	name = "Upper EVA Storage"
-
-/area/ai_monitored/command/nuke_storage
-	name = "Vault"
-	icon_state = "nuke_storage"
-	// airlock_wires = /datum/wires/airlock/command
-	ambientsounds = HIGHSEC
 //Commons
-
 /area/commons
 	name = "Crew Quarters"
 	sound_environment = SOUND_AREA_STANDARD_STATION
@@ -1282,7 +1282,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/medical/medbay/front_office
 	name = "Medbay Front Office"
 	icon_state = "medbay"
-	music = 'sound/ambience/signal.ogg'
+	music = MEDICAL
 
 /area/medical/medbay/lobby
 	name = "Medbay Lobby"
@@ -1297,7 +1297,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/medical/medbay/zone3
 	name = "Medbay"
 	icon_state = "medbay3"
-	music = 'sound/ambience/signal.ogg'
+	music = MEDICAL
+
+/area/medical/medbay/factory
+	name = "Medbay Factory"
+	icon_state = "medbay_factory"
+	music = MEDICAL
 
 /area/medical/medbay/aft
 	name = "Medbay Aft"
@@ -1419,6 +1424,9 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/security/brig/upper
 	name = "Brig Overlook"
 
+/area/security/brig/brig_medical
+	name = "Brig Medical"
+
 /area/security/courtroom
 	name = "Courtroom"
 	icon_state = "courtroom"
@@ -1485,10 +1493,17 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	min_ambience_cooldown = 90 SECONDS
 	max_ambience_cooldown = 180 SECONDS
 
+/area/security/detectives_office/evidence_room
+	name = "Evidence Room"
+	icon_state = "investigate_office"
+
 /area/security/detectives_office/private_investigators_office
 	name = "Private Investigator's Office"
 	icon_state = "investigate_office"
 	sound_environment = SOUND_AREA_SMALL_SOFTFLOOR
+
+/area/security/detectives_office/private_investigators_office/investigators_room
+	name = "Investigator Room"
 
 /area/security/range
 	name = "Firing Range"

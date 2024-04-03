@@ -81,7 +81,7 @@ GLOBAL_LIST_INIT(turfs_without_ground, typecacheof(list(
 
 #define ismush(A) (is_species(A, /datum/species/mush))
 #define isshadow(A) (is_species(A, /datum/species/shadow))
-#define isrobotic(A) (is_species(A, /datum/species/ipc) || is_species(A, /datum/species/synthliz) || is_species(A, /datum/species/mammal/synthetic))
+#define isrobotic(A) (HAS_TRAIT(A, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON EDIT - уборка хардкода [БЫЛО: #define isrobotic(A) (is_species(A, /datum/species/ipc) || is_species(A, /datum/species/synthliz) || is_species(A, /datum/species/mammal/synthetic))]
 #define isdwarf(A) (is_species(A, /datum/species/dwarf))
 
 // Citadel specific species
@@ -266,4 +266,4 @@ GLOBAL_LIST_INIT(book_types, typecacheof(list(
 	/obj/item/spellbook,
 	/obj/item/storage/book)))
 
-#define isterrorspider(A) (istype((A), /mob/living/simple_animal/hostile/poison/terror_spider))
+#define isterrorspider(A) (istype((A), /mob/living/simple_animal/hostile/retaliate/poison/terror_spider))

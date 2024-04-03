@@ -5,6 +5,7 @@
 	blacklisted_quirks = list(/datum/quirk/nonviolent) // mutes are allowed
 	threat = 1
 	var/greet_message = ""
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/survivalist/proc/forge_objectives()
 	var/datum/objective/survive/survive = new

@@ -411,7 +411,7 @@ Burning extracts:
 		user.emote("scream")
 
 /obj/item/kitchen/knife/rainbowknife
-	name = "rainbow knife"
+	name = "Rainbow Knife"
 	desc = "A strange, transparent knife which constantly shifts color. It hums slightly when moved."
 	icon = 'icons/obj/slimecrossing.dmi'
 	icon_state = "rainbowknife"

@@ -48,6 +48,10 @@
 
 	var/renamedByPlayer = FALSE //set when a player uses a pen on a renamable object
 
+	/// The vertical pixel offset applied when the object is anchored on a tile with table
+	/// Ignored when set to 0 - to avoid shifting directional wall-mounted objects above tables
+	var/anchored_tabletop_offset = 0
+
 /obj/vv_edit_var(vname, vval)
 	switch(vname)
 		if("anchored")

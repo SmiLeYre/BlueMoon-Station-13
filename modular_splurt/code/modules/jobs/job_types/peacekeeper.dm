@@ -20,6 +20,7 @@
 		"Rookie",
 		"Low-Quality Product",
 		"Freak",
+		"AC Recruit",
 		"Russian Officer"
 		)
 	custom_spawn_text = "<font color='black' size='2'><b> Your job is to keep the peace. Conflict de-escalation through diplomacy is your top priority. Only use your baton as a last resort.</b></font><font color='red' size='4'><b>You are NOT a Security Officer.</b></font>"
@@ -35,7 +36,7 @@
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
 
 	display_order = JOB_DISPALY_ORDER_SECPEACE
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/nonviolent, /datum/quirk/blindness, /datum/quirk/monophobia)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/nonviolent, /datum/quirk/blindness, /datum/quirk/monophobia, /datum/quirk/bluemoon_criminal)
 	threat = 2
 
 /datum/outfit/job/peacekeeper
@@ -286,13 +287,6 @@ Peacekeeper Hypospray // BlueMoon 16.08 2023 - передано Вардену. 
 /obj/item/storage/secure/briefcase/pkbaton/prova/PopulateContents()
 	new /obj/item/melee/baton/prova(src)
 	new /obj/item/stock_parts/cell/high/plus(src)
-
-/obj/item/storage/secure/briefcase/pkbaton/tbaton
-	name = "\improper Telescopic Baton box"
-	desc = "Storage box containing a single telescopic baton, just like the big boy riot police get!"
-
-/obj/item/storage/secure/briefcase/pkbaton/tbaton/PopulateContents()
-	new /obj/item/melee/classic_baton/telescopic(src)
 
 // Peacekeeper Locker
 

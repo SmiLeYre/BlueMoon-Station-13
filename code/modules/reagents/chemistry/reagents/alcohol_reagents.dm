@@ -235,12 +235,12 @@ All effects don't start immediately, but rather get worse over time; the rate is
 				eyes.Remove()
 				eyes.forceMove(get_turf(M))
 				to_chat(M, "<span class='userdanger'>You double over in pain as you feel your eyeballs liquify in your head!</span>")
-				M.emote("scream")
+				M.emote("realagony")
 				M.adjustBruteLoss(15)
 		else
 			to_chat(M, "<span class='userdanger'>You scream in terror as you go blind!</span>")
 			eyes?.applyOrganDamage(eyes.maxHealth)
-			M.emote("scream")
+			M.emote("realagony")
 
 	if(prob(3) && iscarbon(M))
 		M.visible_message("<span class='danger'>[M] падает в припадке!</span>", "<span class='userdanger'>У вас начался припадок!</span>")
@@ -1483,15 +1483,15 @@ All effects don't start immediately, but rather get worse over time; the rate is
 	..()
 
 /datum/reagent/consumable/ethanol/eggnog
-	name = "Eggnog"
+	name = "Spiked Eggnog"
 	description = "The traditional way to get absolutely hammered at a Christmas party."
 	color = "#fcfdc6" // rgb: 252, 253, 198
 	nutriment_factor = 2 * REAGENTS_METABOLISM
-	boozepwr = 1
+	boozepwr = 20
 	quality = DRINK_VERYGOOD
 	taste_description = "custard and alcohol"
 	glass_icon_state = "nog3"
-	glass_name = "eggnog"
+	glass_name = "spiked eggnog"
 	glass_desc = "The traditional way to get absolutely hammered at a Christmas party."
 
 /datum/reagent/consumable/ethanol/narsour
@@ -2086,7 +2086,7 @@ All effects don't start immediately, but rather get worse over time; the rate is
 
 /datum/reagent/consumable/ethanol/bug_spray/on_mob_add(mob/living/carbon/M)
 	if(isinsect(M) || isflyperson(M))
-		M.emote("scream")
+		M.emote("realagony")
 	return ..()
 
 /datum/reagent/consumable/ethanol/applejack

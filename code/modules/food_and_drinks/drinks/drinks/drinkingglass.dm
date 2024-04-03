@@ -34,6 +34,8 @@
 		icon = initial(icon)
 		icon_state = "glass_empty"
 		renamedByPlayer = FALSE //so new drinks can rename the glass
+		name = "drinking glass"
+		desc = "Your standard drinking glass."
 
 //Shot glasses!//
 //  This lets us add shots in here instead of lumping them in with drinks because >logic  //

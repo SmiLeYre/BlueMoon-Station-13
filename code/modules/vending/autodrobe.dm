@@ -8,6 +8,7 @@
 	vend_reply = "Thank you for using AutoDrobe!"
 	products = list(/obj/item/clothing/suit/chickensuit = 1,
 					/obj/item/clothing/head/chicken = 1,
+					/obj/item/clothing/head/richard = 3,
 					/obj/item/clothing/under/rank/civilian/clown/blue = 1,
 					/obj/item/clothing/under/rank/civilian/clown/green = 1,
 					/obj/item/clothing/under/rank/civilian/clown/yellow = 1,
@@ -169,6 +170,9 @@
 					/obj/item/clothing/head/HoS/beret/sol/cap/armorless = 2,
 					/obj/item/clothing/head/HoS/beret/nri/cap/armorless = 2,
 					/obj/item/clothing/head/helmet/aviator_helmet/no_armor = 3,
+					/obj/item/clothing/neck/cloak/chronos = 5,
+					/obj/item/clothing/under/chronos = 5,
+					/obj/item/clothing/head/beret/chronos = 5
 					)
 	contraband = list(/obj/item/clothing/suit/judgerobe = 1,
 					/obj/item/clothing/head/powdered_wig = 1,
@@ -194,12 +198,24 @@
 					/obj/item/clothing/suit/drfreeze_coat = 1,
 					/obj/item/clothing/suit/gothcoat = 2,
 					/obj/item/clothing/under/costume/draculass = 1,
+					/obj/item/clothing/accessory/sweater/uglyxmas = 3,
+					/obj/item/clothing/head/beanie/christmas = 3,
+					/obj/item/clothing/neck/scarf/christmas = 3,
 					/obj/item/clothing/under/costume/christmas = 3,
 					/obj/item/clothing/under/costume/christmas/green = 3,
 					/obj/item/clothing/under/costume/christmas/croptop = 3,
 					/obj/item/clothing/under/costume/christmas/croptop/green = 3,
+					/obj/item/clothing/suit/hooded/wintercoat/christmascoatr = 3,
+					/obj/item/clothing/suit/hooded/wintercoat/christmascoatg = 3,
+					/obj/item/clothing/suit/hooded/wintercoat/christmascoatrg = 3,
 					/obj/item/clothing/head/christmashat = 3,
 					/obj/item/clothing/head/christmashatg = 3,
+					/obj/item/clothing/shoes/winterboots/christmasbootsr = 3,
+					/obj/item/clothing/shoes/winterboots/christmasbootsg = 3,
+					/obj/item/clothing/shoes/winterboots/santaboots = 3,
+					/obj/item/clothing/underwear/socks/thigh/christmas = 3,
+					/obj/item/clothing/underwear/socks/christmas = 3,
+					/obj/item/clothing/underwear/socks/knee/christmas = 3,
 					/obj/item/clothing/under/costume/drfreeze = 1)
 	refill_canister = /obj/item/vending_refill/autodrobe
 	default_price = PRICE_ALMOST_CHEAP

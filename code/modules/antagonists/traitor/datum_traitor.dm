@@ -22,7 +22,6 @@
 	var/datum/contractor_hub/contractor_hub
 
 	threat = 5
-	soft_antag = FALSE // BLUEMOON ADDITION
 	reminded_times_left = 2 // BLUEMOON ADD
 
 /datum/antagonist/traitor/New()

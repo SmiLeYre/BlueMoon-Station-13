@@ -9,7 +9,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	minimal_player_age = 35
-	supervisors = "Nanotrasen officials and Space law"
+	supervisors = "Представители Центрального Командования и Космический Закон"
 	selection_color = "#7e3d48"
 	considered_combat_role = FALSE
 	exp_requirements = 180
@@ -23,8 +23,10 @@
 		"Prosecutor",
 		"NanoTrasen Consultant",
 		"Syndicate Advisor",
+		"Netorare",
+		"Commissar",
 		"NanoTrasen Slut",
-		"Netorare"
+		"Syndicate Slut",
 		)
 
 	outfit = /datum/outfit/job/ntr
@@ -36,7 +38,7 @@
 
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
 
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/blindness, /datum/quirk/monophobia)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/blindness, /datum/quirk/monophobia, /datum/quirk/bluemoon_criminal)
 
 	display_order = JOB_DISPLAY_ORDER_NTR
 	threat = 2
@@ -103,7 +105,6 @@
 	suit = /obj/item/clothing/suit/armor/ntr
 	head = /obj/item/clothing/head/beret/sec/ntr
 	shoes = /obj/item/clothing/shoes/laceup/ntr
-	l_pocket = /obj/item/melee/classic_baton/telescopic
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge
 
 	backpack = /obj/item/storage/backpack/security
@@ -113,6 +114,8 @@
 	chameleon_extras = /obj/item/stamp/law
 
 	backpack_contents = list(/obj/item/gun/energy/e_gun=1, /obj/item/stamp/law=1)
+
+	box = /obj/item/storage/box/survival/command
 
 	implants = list(/obj/item/implant/mindshield)
 

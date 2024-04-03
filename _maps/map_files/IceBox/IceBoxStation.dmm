@@ -2004,7 +2004,7 @@
 /area/tcommsat/server)
 "aID" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "aII" = (
 /obj/structure/table,
@@ -2733,7 +2733,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "aZk" = (
 /obj/effect/turf_decal/tile/purple{
@@ -9991,7 +9991,7 @@
 /turf/open/floor/wood/wood_large,
 /area/service/chapel/main)
 "dqd" = (
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "dqr" = (
 /obj/structure/cable{
@@ -12218,7 +12218,7 @@
 "efp" = (
 /obj/structure/table,
 /obj/item/aicard,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -12756,7 +12756,7 @@
 /obj/machinery/pool/filter{
 	pixel_y = -17
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "epj" = (
 /obj/structure/disposalpipe/segment{
@@ -17546,7 +17546,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "fXv" = (
 /obj/structure/girder,
@@ -22363,7 +22363,7 @@
 	dir = 8;
 	pixel_x = 23
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "hHr" = (
 /obj/machinery/button/door{
@@ -22439,7 +22439,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "hJa" = (
 /obj/machinery/door/firedoor,
@@ -24823,7 +24823,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "izq" = (
 /obj/effect/turf_decal/tile/neutral{
@@ -25326,7 +25326,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/auto_name/north,
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "iIg" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
@@ -28125,7 +28125,7 @@
 /area/maintenance/fore)
 "jGw" = (
 /obj/structure/table,
-/obj/item/aiModule/supplied/quarantine,
+/obj/item/ai_module/supplied/quarantine,
 /obj/machinery/camera/motion{
 	c_tag = "AI Upload Chamber - West";
 	dir = 4;
@@ -28937,7 +28937,7 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 1
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "jUk" = (
 /obj/structure/cable{
@@ -30622,7 +30622,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "kAz" = (
 /obj/structure/table/wood,
@@ -34916,7 +34916,7 @@
 /area/security/prison/cells)
 "lYf" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /obj/machinery/light_switch{
 	pixel_y = 28
 	},
@@ -35229,11 +35229,6 @@
 /obj/machinery/teleport/station,
 /turf/open/floor/plating,
 /area/command/teleporter)
-"mdF" = (
-/obj/machinery/computer/libraryconsole,
-/obj/structure/table/wood,
-/turf/open/floor/wood,
-/area/service/library)
 "mdL" = (
 /turf/closed/wall/r_wall,
 /area/security/prison/upper)
@@ -41090,7 +41085,7 @@
 /obj/structure/window/reinforced,
 /obj/structure/rack,
 /obj/item/clothing/head/helmet/brigdoc,
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "omG" = (
@@ -41979,7 +41974,7 @@
 /obj/item/clothing/shoes/sandal,
 /obj/item/clothing/shoes/sandal,
 /obj/item/clothing/shoes/sandal,
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "oCD" = (
 /obj/structure/disposalpipe/segment{
@@ -42489,7 +42484,7 @@
 /obj/structure/bed{
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "oLW" = (
 /obj/structure/cable{
@@ -46232,7 +46227,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "qaG" = (
 /obj/machinery/door/window/eastright{
@@ -48749,7 +48744,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "qQp" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
@@ -49756,7 +49751,7 @@
 	pixel_x = 13;
 	pixel_y = 3
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "rjL" = (
 /obj/machinery/camera{
@@ -51834,7 +51829,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "rUb" = (
 /obj/effect/landmark/event_spawn,
@@ -55724,7 +55719,7 @@
 /area/security/office)
 "tln" = (
 /obj/structure/table,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -57692,7 +57687,7 @@
 /area/medical/virology)
 "tWN" = (
 /obj/machinery/light,
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "tWP" = (
 /obj/effect/spawner/structure/window/reinforced,
@@ -57932,23 +57927,23 @@
 /area/commons/locker)
 "uaT" = (
 /obj/structure/table,
-/obj/item/aiModule/supplied/oxygen,
-/obj/item/aiModule/zeroth/oneHuman,
+/obj/item/ai_module/supplied/oxygen,
+/obj/item/ai_module/zeroth/oneHuman,
 /obj/machinery/door/window{
 	dir = 8;
 	name = "High-Risk Modules";
 	req_access_txt = "20"
 	},
-/obj/item/aiModule/reset/purge,
+/obj/item/ai_module/reset/purge,
 /obj/structure/window/reinforced,
-/obj/effect/spawner/lootdrop/aimodule_harmful,
+/obj/effect/spawner/lootdrop/ai_module_harmful,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/obj/item/aiModule/supplied/protectStation,
+/obj/item/ai_module/supplied/protectStation,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "uaZ" = (
@@ -58490,9 +58485,6 @@
 /obj/machinery/computer/slot_machine,
 /turf/open/floor/wood,
 /area/command/meeting_room)
-"ujO" = (
-/turf/open/floor/festive/wooden/wooden2,
-/area/commons/fitness/recreation)
 "ukr" = (
 /obj/machinery/cryopod/tele,
 /turf/open/floor/carpet,
@@ -62726,7 +62718,7 @@
 /obj/structure/mineral_door/paperframe{
 	name = "Changing Room"
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "vKu" = (
 /obj/effect/turf_decal/tile/red{
@@ -66691,7 +66683,7 @@
 /obj/structure/railing{
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "xfe" = (
 /obj/structure/closet/wardrobe/white,
@@ -67468,7 +67460,7 @@
 /area/hallway/primary/central)
 "xvH" = (
 /obj/structure/table,
-/obj/item/aiModule/supplied/freeform,
+/obj/item/ai_module/supplied/freeform,
 /obj/structure/sign/plaques/kiddie{
 	pixel_x = 32
 	},
@@ -67544,7 +67536,7 @@
 /obj/structure/window/reinforced/tinted{
 	dir = 1
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "xwS" = (
 /obj/structure/chair{
@@ -69143,8 +69135,8 @@
 /area/security/warden)
 "xYh" = (
 /obj/structure/table,
-/obj/item/aiModule/core/full/asimov,
-/obj/item/aiModule/core/freeformcore,
+/obj/item/ai_module/core/full/asimov,
+/obj/item/ai_module/core/freeformcore,
 /obj/machinery/door/window{
 	base_state = "right";
 	dir = 4;
@@ -69153,16 +69145,16 @@
 	req_access_txt = "20"
 	},
 /obj/structure/window/reinforced,
-/obj/effect/spawner/lootdrop/aimodule_harmless,
-/obj/effect/spawner/lootdrop/aimodule_lewd,
-/obj/effect/spawner/lootdrop/aimodule_neutral,
+/obj/effect/spawner/lootdrop/ai_module_harmless,
+/obj/effect/spawner/lootdrop/ai_module_lewd,
+/obj/effect/spawner/lootdrop/ai_module_neutral,
 /obj/structure/window/reinforced{
 	dir = 1
 	},
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/item/aiModule/core/full/custom,
+/obj/item/ai_module/core/full/custom,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "xYt" = (
@@ -69679,7 +69671,7 @@
 	c_tag = "Sauna Room";
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "yhK" = (
 /obj/structure/chair/stool{
@@ -69865,7 +69857,7 @@
 /area/engineering/atmos)
 "ylK" = (
 /obj/structure/closet/athletic_mixed,
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/commons/fitness/recreation)
 "ylL" = (
 /obj/machinery/computer/atmos_alert{
@@ -102404,7 +102396,7 @@ nuh
 nuh
 ndk
 dqd
-ujO
+dqd
 eTv
 ouJ
 ouJ
@@ -102661,7 +102653,7 @@ rTU
 rTU
 rTU
 izm
-ujO
+dqd
 eTv
 eBV
 ouJ
@@ -103175,7 +103167,7 @@ oCx
 yhF
 ylK
 rjz
-ujO
+dqd
 eTv
 jDE
 ouJ
@@ -114230,7 +114222,7 @@ pKm
 plz
 leB
 xQH
-mdF
+cZt
 cnZ
 eGr
 vnf

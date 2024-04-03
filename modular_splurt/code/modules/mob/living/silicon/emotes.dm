@@ -151,65 +151,6 @@
 	message = "squints their eyes." // i dumb
 	emote_type = EMOTE_VISIBLE
 
-/datum/emote/living/fart
-	key = "fart"
-	key_third_person = "farts"
-	message = "farts out shitcode."
-
-/datum/emote/living/fart/run_emote(mob/living/user, params, type_override, intentional)
-	if(TIMER_COOLDOWN_CHECK(user, COOLDOWN_EMOTE_FART))
-		to_chat(user, span_warning("You try your hardest, but no shart comes out."))
-		return
-	var/list/fart_emotes = list( //cope goonies
-		"lets out a girly little 'toot' from [user.p_their()] butt.",
-		"farts loudly!",
-		"lets one rip!",
-		"farts! It sounds wet and smells like rotten eggs.",
-		"farts robustly!",
-		"farted! It smells like something died.",
-		"farts like a muppet!",
-		"defiles the station's air supply.",
-		"farts for a whole ten seconds.",
-		"groans and moans, farting like the world depended on it.",
-		"breaks wind!",
-		"expels intestinal gas through [user.p_their()] anus.",
-		"releases an audible discharge of intestinal gas.",
-		"is a farting motherfucker!!!",
-		"suffers from flatulence!",
-		"releases flatus.",
-		"releases methane.",
-		"farts up a storm.",
-		"farts. It smells like Soylent Surprise!",
-		"farts. It smells like pizza!",
-		"farts. It smells like George Melons' perfume!",
-		"farts. It smells like the kitchen!",
-		"farts. It smells like medbay in here now!",
-		"farts. It smells like the bridge in here now!",
-		"farts like a pubby!",
-		"farts like a goone!",
-		"sharts! That's just nasty.",
-		"farts delicately.",
-		"farts timidly.",
-		"farts very, very quietly. The stench is OVERPOWERING.",
-		"farts egregiously.",
-		"farts voraciously.",
-		"farts cantankerously.",
-		"farts in [user.p_their()] own mouth. A shameful \the <b>[user]</b>.",
-		"breaks wind noisily!",
-		"releases gas with the power of the gods! The very station trembles!!",
-		"<B><span style='color:red'>f</span><span style='color:blue'>a</span>r<span style='color:red'>t</span><span style='color:blue'>s</span>!</B>",
-		"laughs! [user.p_their(TRUE)] breath smells like a fart.",
-		"farts, and as such, blob cannot evoulate.",
-		"farts. It might have been the Citizen Kane of farts."
-	)
-	var/new_message = pick(fart_emotes)
-	//new_message = replacetext(new_message, "%OWNER", "\the [user]")
-	message = new_message
-	. = ..()
-	if(.)
-		playsound(user, pick(GLOB.brap_noises), 50, 1, -1)
-		TIMER_COOLDOWN_START(user, COOLDOWN_EMOTE_FART, 3 SECONDS)
-
 /datum/emote/living/audio/cackle
 	key = "cackle"
 	key_third_person = "cackles"
@@ -759,6 +700,9 @@
 	emote_sound = 'modular_splurt/sound/voice/wolfhowl.ogg'
 	emote_cooldown = 5 SECONDS
 	emote_volume = 100
+	emote_range = MEDIUM_RANGE_SOUND_EXTRARANGE
+	emote_falloff_exponent = 1
+	emote_distance_multiplier_min_range = 12
 
 /datum/emote/living/audio/howl/run_emote(mob/user, params)
 	if (HAS_TRAIT(user, TRAIT_AWOO))

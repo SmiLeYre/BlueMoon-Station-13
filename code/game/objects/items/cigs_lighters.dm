@@ -109,6 +109,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	body_parts_covered = null
 	grind_results = list()
 	slot_flags = ITEM_SLOT_MASK | ITEM_SLOT_EARS
+	throw_verb = "швыряет"
 	var/lit = FALSE
 	var/starts_lit = FALSE
 	var/icon_on = "cigon"  //Note - these are in masks.dmi not in cigarette.dmi
@@ -562,7 +563,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/lighter/ignition_effect(atom/A, mob/user)
 	if(get_temperature())
-		. = "<span class='rose'>Одним плавным движением [user] поджигает [A]. Блин, а ты крутой!</span>"
+		. = "<span class='rose'>Одним плавным движением [user] поджигает [A]. Блин, круто!</span>"
 
 /obj/item/lighter/proc/set_lit(new_lit)
 	lit = new_lit

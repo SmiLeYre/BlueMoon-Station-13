@@ -44,6 +44,7 @@
 		/datum/language/modular_bluemoon/german, // BM German language
 		/datum/language/modular_bluemoon/vox, // BM Vox language
 		/datum/language/modular_bluemoon/felinid, // BM Felinid language
+		/datum/language/modular_splurt/avian, //SPLURT change - peep peep!
 	))
 	healing_factor = STANDARD_ORGAN_HEALING*5 //Fast!!
 	decay_factor = STANDARD_ORGAN_DECAY/2

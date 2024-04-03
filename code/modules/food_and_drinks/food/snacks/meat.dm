@@ -274,7 +274,8 @@
 	tastes = list("meat" = 1)
 	foodtype = RAW | MEAT | TOXIC
 
-/obj/item/reagent_containers/food/snacks/meat/slab/goliath/burn()
+/obj/item/reagent_containers/food/snacks/meat/slab/goliath/fire_act()
+	. = ..()
 	visible_message("[src] finishes cooking!")
 	new /obj/item/reagent_containers/food/snacks/meat/steak/goliath(loc)
 	qdel(src)
@@ -287,7 +288,8 @@
 	tastes = list("meat" = 1)
 	foodtype = RAW | MEAT | TOXIC
 
-/obj/item/reagent_containers/food/snacks/meat/slab/dragon/burn()
+/obj/item/reagent_containers/food/snacks/meat/slab/dragon/fire_act()
+	. = ..()
 	visible_message("[src] finishes cooking!")
 	new /obj/item/reagent_containers/food/snacks/meat/steak/dragon(loc)
 	qdel(src)

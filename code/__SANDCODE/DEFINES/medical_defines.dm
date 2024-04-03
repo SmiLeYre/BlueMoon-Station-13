@@ -8,3 +8,7 @@
 #define PAINKILLER_MINERSSALVE	"PAINKILLER - MINERS SALVE"
 /// Painkiller trait - Morphine version
 #define PAINKILLER_MORPHINE 	"PAINKILLER - MORPHINE"
+// BLUEMOON ADD START
+/// Painkiller trait - Virfruit version
+#define PAINKILLER_VITFRUIT 	"PAINKILLER - FRUIT VITAMINS"
+// BLUEMOON ADD END

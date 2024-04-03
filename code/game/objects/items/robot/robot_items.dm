@@ -6,7 +6,7 @@
 
 
 /obj/item/borg/stun
-	name = "electrically-charged arm"
+	name = "Electrically-Charged Arm"
 	icon_state = "elecarm"
 	var/charge_cost = 30
 
@@ -20,7 +20,7 @@
 			return
 
 	user.do_attack_animation(M)
-	M.DefaultCombatKnockdown(100)
+	M.DefaultCombatKnockdown(60)
 	M.apply_effect(EFFECT_STUTTER, 5)
 
 	M.visible_message("<span class='danger'>[user] has prodded [M] with [src]!</span>", \
@@ -918,11 +918,14 @@
 	. = ..()
 
 /obj/item/gripper/mining
-	name = "shelter capsule deployer"
-	desc = "A simple grasping tool for carrying and deploying shelter capsules."
+	name = "mining gripper" // Original name = "shelter capsule deployer"
+	desc = "A simple grasping tool for carrying and deploying shelter capsules. You can also carry and use regenerative cores and survival medipens on your fellow miners."
 	icon_state = "gripper_mining"
 	can_hold = list(
-		/obj/item/survivalcapsule
+		/obj/item/survivalcapsule,
+		/obj/item/hivelordstabilizer,
+		/obj/item/organ/regenerative_core,
+		/obj/item/reagent_containers/hypospray/medipen/survival
 		)
 
 /obj/item/gripper/medical

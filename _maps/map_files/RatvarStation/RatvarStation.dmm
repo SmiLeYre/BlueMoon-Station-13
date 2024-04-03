@@ -9824,10 +9824,10 @@
 /area/security/prison/cells)
 "aMG" = (
 /obj/structure/table,
-/obj/item/aiModule/core/full/asimov,
-/obj/effect/spawner/lootdrop/aimodule_harmless,
-/obj/effect/spawner/lootdrop/aimodule_lewd,
-/obj/item/aiModule/core/freeformcore,
+/obj/item/ai_module/core/full/asimov,
+/obj/effect/spawner/lootdrop/ai_module_harmless,
+/obj/effect/spawner/lootdrop/ai_module_lewd,
+/obj/item/ai_module/core/freeformcore,
 /obj/machinery/door/window{
 	base_state = "right";
 	dir = 4;
@@ -9836,8 +9836,8 @@
 	req_access_txt = "20"
 	},
 /obj/structure/window/reinforced,
-/obj/effect/spawner/lootdrop/aimodule_neutral,
-/obj/item/aiModule/core/full/custom,
+/obj/effect/spawner/lootdrop/ai_module_neutral,
+/obj/item/ai_module/core/full/custom,
 /obj/machinery/flasher{
 	id = "AI";
 	pixel_y = 24
@@ -9859,11 +9859,11 @@
 	id = "AI";
 	pixel_y = 24
 	},
-/obj/effect/spawner/lootdrop/aimodule_harmful,
-/obj/item/aiModule/supplied/oxygen,
-/obj/item/aiModule/supplied/protectStation,
-/obj/item/aiModule/zeroth/oneHuman,
-/obj/item/aiModule/reset/purge,
+/obj/effect/spawner/lootdrop/ai_module_harmful,
+/obj/item/ai_module/supplied/oxygen,
+/obj/item/ai_module/supplied/protectStation,
+/obj/item/ai_module/zeroth/oneHuman,
+/obj/item/ai_module/reset/purge,
 /turf/open/floor/clockwork/reebe,
 /area/ai_monitored/turret_protected/ai_upload)
 "aMJ" = (
@@ -10206,7 +10206,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/item/aiModule/supplied/quarantine,
+/obj/item/ai_module/supplied/quarantine,
 /turf/open/floor/clockwork/reebe,
 /area/ai_monitored/turret_protected/ai_upload)
 "aPu" = (
@@ -10226,7 +10226,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/item/aiModule/supplied/freeform,
+/obj/item/ai_module/supplied/freeform,
 /turf/open/floor/clockwork/reebe,
 /area/ai_monitored/turret_protected/ai_upload)
 "aPy" = (
@@ -10295,7 +10295,7 @@
 /area/maintenance/starboard/fore)
 "aQz" = (
 /obj/structure/table,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -51994,15 +51994,6 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/clockwork/reebe,
 /area/service/hydroponics/garden)
-"ggh" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/turf/open/floor/clockwork/reebe,
-/area/ai_monitored/security/armory)
 "ggj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/light/small{
@@ -54132,7 +54123,6 @@
 /area/service/bar)
 "hsi" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole,
 /turf/open/floor/wood,
 /area/service/library)
 "hsq" = (
@@ -55795,6 +55785,17 @@
 /obj/machinery/light/small,
 /turf/open/floor/clockwork/reebe,
 /area/engineering/atmos)
+"iiD" = (
+/obj/structure/table/wood,
+/obj/machinery/computer/library/checkout,
+/obj/structure/noticeboard{
+	desc = "A board for pinning important notices upon. Probably helpful for keeping track of requests.";
+	dir = 8;
+	name = "requests board";
+	pixel_x = 32
+	},
+/turf/open/floor/wood,
+/area/service/library)
 "iiE" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -58003,17 +58004,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/clockwork/reebe,
 /area/engineering/break_room)
-"jtX" = (
-/obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement,
-/obj/structure/noticeboard{
-	desc = "A board for pinning important notices upon. Probably helpful for keeping track of requests.";
-	dir = 8;
-	name = "requests board";
-	pixel_x = 32
-	},
-/turf/open/floor/wood,
-/area/service/library)
 "jug" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "kitchenhydro";
@@ -59240,7 +59230,7 @@
 "kbk" = (
 /obj/structure/table,
 /obj/item/aicard,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /turf/open/floor/clockwork/reebe,
 /area/engineering/storage/tech)
 "kbS" = (
@@ -62521,15 +62511,6 @@
 	},
 /turf/open/floor/clockwork/reebe,
 /area/cargo/miningoffice)
-"lQK" = (
-/obj/structure/table,
-/obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/libraryconsole/bookmanagement,
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/turf/open/floor/clockwork/reebe,
-/area/security/prison/upper)
 "lQV" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -66412,7 +66393,7 @@
 /obj/item/clothing/glasses/hud/security/sunglasses,
 /obj/item/clothing/suit/armor/vest/alt,
 /obj/item/clothing/head/helmet/sec,
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/clockwork/reebe,
 /area/security/brig)
 "nZS" = (
@@ -76617,36 +76598,6 @@
 	},
 /turf/open/floor/clockwork/reebe,
 /area/cargo/storage)
-"tqh" = (
-/obj/machinery/newscaster/security_unit{
-	pixel_y = -30
-	},
-/obj/item/folder/red,
-/obj/item/folder/red,
-/obj/structure/table,
-/obj/item/book/manual/splurt_space_law{
-	pixel_x = -3;
-	pixel_y = 5
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/newscaster/security_unit{
-	pixel_y = -30
-	},
-/obj/item/folder/red,
-/obj/item/folder/red,
-/obj/structure/table,
-/obj/item/book/manual/wiki/security_space_law{
-	pixel_x = -3;
-	pixel_y = 5
-	},
-/obj/machinery/light_switch{
-	pixel_x = 16;
-	pixel_y = -26
-	},
-/turf/open/floor/clockwork/reebe,
-/area/security/warden)
 "tqm" = (
 /obj/machinery/photocopier{
 	pixel_y = 3
@@ -78469,6 +78420,15 @@
 	},
 /turf/open/floor/clockwork/reebe,
 /area/construction/storage_wing)
+"uqk" = (
+/obj/structure/table,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/computer/library/checkout,
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/clockwork/reebe,
+/area/security/prison/upper)
 "uqB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/light_switch{
@@ -82271,7 +82231,7 @@
 /obj/item/clothing/glasses/hud/security/sunglasses,
 /obj/item/clothing/suit/armor/vest/alt,
 /obj/item/clothing/head/helmet/sec,
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/clockwork/reebe,
 /area/security/brig)
 "wxA" = (
@@ -85579,12 +85539,9 @@
 	lootcount = 3;
 	name = "3maintenance loot spawner"
 	},
-/obj/effect/spawner/lootdrop/armory_contraband{
-	loot = list(/obj/item/gun/ballistic/automatic/pistol=5,/obj/item/gun/ballistic/shotgun/automatic/combat=5,/obj/item/gun/ballistic/revolver/mateba,/obj/item/gun/ballistic/automatic/pistol/deagle,/obj/item/storage/box/syndie_kit/throwing_weapons=3)
-	},
-/obj/effect/spawner/lootdrop/armory_contraband{
-	loot = list(/obj/item/gun/ballistic/automatic/pistol=5,/obj/item/gun/ballistic/shotgun/automatic/combat=5,/obj/item/gun/ballistic/revolver/mateba,/obj/item/gun/ballistic/automatic/pistol/deagle,/obj/item/storage/box/syndie_kit/throwing_weapons=3)
-	},
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/armory_contraband,
 /turf/open/floor/clockwork/reebe,
 /area/ai_monitored/security/armory)
 "yah" = (
@@ -85940,6 +85897,23 @@
 	},
 /turf/open/floor/wood,
 /area/service/library)
+"yhO" = (
+/obj/machinery/newscaster/security_unit{
+	pixel_y = -30
+	},
+/obj/item/folder/red,
+/obj/item/folder/red,
+/obj/structure/table,
+/obj/item/book/manual/splurt_space_law{
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/machinery/light_switch{
+	pixel_x = 16;
+	pixel_y = -26
+	},
+/turf/open/floor/clockwork/reebe,
+/area/security/warden)
 "yhY" = (
 /turf/open/floor/carpet,
 /area/service/library)
@@ -106170,7 +106144,7 @@ aaa
 aaa
 aaa
 gec
-lQK
+uqk
 oUR
 xDA
 izT
@@ -107536,7 +107510,7 @@ vXp
 yhY
 fEX
 tfM
-jtX
+iiD
 uiQ
 qbu
 dpM
@@ -112630,7 +112604,7 @@ ahB
 ahB
 apL
 dCh
-tqh
+yhO
 ahB
 auW
 awd
@@ -113902,7 +113876,7 @@ aaa
 adD
 aeq
 xZA
-ggh
+afg
 aga
 iJl
 ahH

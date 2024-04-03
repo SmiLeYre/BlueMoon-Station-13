@@ -41,7 +41,7 @@
 
 	if(!is_servant_of_ratvar(owner))
 		owner.visible_message("<span class='warning'>As [owner] blocks the attack with [src], [owner.ru_who()] suddenly drops it, whincing in pain! </span>", "<span class='warning'>As you block the attack with [src], it heats up tremendously, forcing you to drop it from the pain alone! </span>")
-		owner.emote("scream")
+		owner.emote("realagony")
 		playsound(src, 'sound/machines/fryer/deep_fryer_emerge.ogg', 50)
 		if(iscarbon(owner)) //Type safety for if a drone somehow got a shield (ratvar protect us)
 			var/mob/living/carbon/C = owner

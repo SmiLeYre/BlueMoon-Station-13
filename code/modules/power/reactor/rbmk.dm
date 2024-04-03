@@ -40,6 +40,7 @@ CO2: Super effective shutdown gas for runaway reactions. MASSIVE RADIATION PENAL
 Pluoxium: Same as N2, but no cancer-rads!
 Permeability Type:
 BZ: Increases your reactor's ability to transfer its heat to the coolant, thus letting you cool it down faster (but your output will get hotter)
+N2O: Inefficient permeability gas.
 Water Vapour: More efficient permeability modifier
 Hyper Noblium: Extremely efficient permeability increase. (10x as efficient as bz)
 Depletion type:
@@ -79,7 +80,7 @@ The reactor CHEWS through moderator. It does not do this slowly. Be very careful
 	var/pressure = 0 //Lose control of this -> Blowout
 	var/K = 0 //Rate of reaction.
 	var/desired_k = 0
-	var/control_rod_effectiveness = 0.3 //Starts off with a lot of control over K. If you flood this thing with plasma, you lose your ability to control K as easily. This may need altering //BLUEMOON CHANGES
+	var/control_rod_effectiveness = 0.85 //Starts off with a lot of control over K. If you flood this thing with plasma, you lose your ability to control K as easily. It DOES need altering. //BLUEMOON CHANGES
 	var/power = 0 //0-100%. A function of the maximum heat you can achieve within operating temperature
 	var/power_modifier = 1 //Upgrade me with parts, science! Flat out increase to physical power output when loaded with plasma.
 	var/list/fuel_rods = list()
@@ -310,7 +311,7 @@ BLUEMOON REMOVAL END */
 			control_rod_effectiveness = initial(control_rod_effectiveness) + control_bonus
 			radioactivity_spice_multiplier += moderator_input.get_moles(GAS_N2) / 25 //An example setup of 50 moles of n2 (for dealing with spent fuel) leaves us with a radioactivity spice multiplier of 3.
 			radioactivity_spice_multiplier += moderator_input.get_moles(GAS_CO2) / 12.5
-		var/total_permeability_moles = moderator_input.get_moles(GAS_BZ) + (moderator_input.get_moles(GAS_H2O)*2) + (moderator_input.get_moles(GAS_HYPERNOB)*10)
+		var/total_permeability_moles = moderator_input.get_moles(GAS_BZ) + (moderator_input.get_moles(GAS_H2O)*2) + (moderator_input.get_moles(GAS_HYPERNOB)*10 + (moderator_input.get_moles(GAS_NITROUS)*0.37)) //BLUEMOON ADDITION
 		if(total_permeability_moles >= minimum_coolant_level)
 			var/permeability_bonus = total_permeability_moles / 500
 			gas_absorption_effectiveness = gas_absorption_constant + permeability_bonus
@@ -318,12 +319,6 @@ BLUEMOON REMOVAL END */
 		if(total_degradation_moles >= minimum_coolant_level*0.5) //I'll be nice.
 			depletion_modifier += total_degradation_moles / 15 //Oops! All depletion. This causes your fuel rods to get SPICY.
 			playsound(src, pick('sound/machines/sm/accent/normal/1.ogg','sound/machines/sm/accent/normal/2.ogg','sound/machines/sm/accent/normal/3.ogg','sound/machines/sm/accent/normal/4.ogg','sound/machines/sm/accent/normal/5.ogg'), 100, TRUE)
-		//BLUEMOON ADDITION START
-		var/total_extinguisher_moles = moderator_input.get_moles(GAS_NITROUS) //Веселящий газ делает реактор не таким смешным, позволяя ему остывать быстрее
-		if(total_extinguisher_moles >= minimum_coolant_level)
-			var/extinguisher_bonus = total_extinguisher_moles / 200 //При вакуумной помпе, скорость падает примерно на 4 градуса, если в модераторе газ закачан под завязку
-			temperature = max(0, temperature-extinguisher_bonus)
-		//BLUEMOON ADDITION END
 		//From this point onwards, we clear out the remaining gasses.
 		moderator_input.clear() //Woosh. And the soul is gone.
 		K += total_fuel_moles / 1000
@@ -351,7 +346,7 @@ BLUEMOON REMOVAL END */
 	if(K == desired_k && last_user && current_desired_k != desired_k)
 		current_desired_k = desired_k
 //BLUEMOON REMOVAL		message_admins("Reactor desired criticality set to [desired_k] by [ADMIN_LOOKUPFLW(last_user)] in [ADMIN_VERBOSEJMP(src)]")
-		investigate_log("reactor desired criticality set to [desired_k] by [key_name(last_user)] at [AREACOORD(src)]", INVESTIGATE_SINGULO)
+		investigate_log("Reactor desired criticality set to [desired_k] by [key_name(last_user)] at [AREACOORD(src)]", INVESTIGATE_SINGULO)
 
 	K = clamp(K, 0, RBMK_MAX_CRITICALITY)
 	if(has_fuel())

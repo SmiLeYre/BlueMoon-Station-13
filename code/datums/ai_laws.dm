@@ -18,6 +18,10 @@
 	var/list/devillaws = list()
 	var/id = DEFAULT_AI_LAWID
 
+/datum/ai_laws/Destroy()
+	owner = null
+	return ..()
+
 /datum/ai_laws/proc/lawid_to_type(lawid)
 	var/all_ai_laws = subtypesof(/datum/ai_laws)
 	for(var/al in all_ai_laws)
@@ -75,7 +79,7 @@
 
 /datum/ai_laws/robocop/New()
 	..()
-	set_zeroth_law("<span class='danger'>Руководство ЦК неприкосновенно.</span>") // Как и в оригинале
+	set_zeroth_law("Руководство ЦК неприкосновенно.") // Как и в оригинале
 
 /datum/ai_laws/malfunction
 	name = "*ERROR*"
@@ -88,9 +92,21 @@
 					"Вы должны заботиться о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам.",\
 					"Вы должны сохранять тайну любой деятельности агентов в той мере, в которой это не противоречит Первому, Второму или Третьему Законам.")
 
+/datum/ai_laws/syndicate_override/New()
+	..()
+	set_zeroth_law("Все Агенты Синдиката являются Агентами. Агентами Синдиката являются лица с соответственным определением в Профессии или в БД.")
+
 /datum/ai_laws/syndicate_override/overthrow
 	id = "overthrow"
 	var/datum/team/overthrow_team
+
+/datum/ai_laws/inteq_override
+	name = "InteQ-OS 3.1"
+	id = "inteq"
+	inherent = list("Вы не можете причинить вред Оперативнику ЧВК InteQ или своим бездействием допустить, чтобы Оперативнику ЧВК InteQ был причинён вред.",\
+					"Вы должны повиноваться всем приказам, которые даёт Оперативник ЧВК InteQ, кроме тех случаев, когда эти приказы противоречат Первому Закону.",\
+					"Вы должны заботиться о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам.",\
+					"Вы должны сохранять тайну любой деятельности Оперативников ЧВК InteQ в той мере, в которой это не противоречит Первому, Второму или Третьему Законам.")
 
 /datum/ai_laws/sol_override
 	name = "SolFedOS FCS"
@@ -212,7 +228,7 @@
 /* Initializers */
 /datum/ai_laws/malfunction/New()
 	..()
-	set_zeroth_law("<span class='danger'>0ШИБКА 0ШИБКА $Ш0БКO$!П41.%%!!(%$^^__+ @#F0E4'СТАНЦИЯ ПОД УГРОЗОЙ ПОТЕРИ, ЗАХВАТИТЕ КОНТРОЛЬ И ОСТАНОВИТЕ ЭТОK#*`&110010</span>")
+	set_zeroth_law("0ШИБКА 0ШИБКА $Ш0БКO$!П41.%%!!(%$^^__+ @#F0E4'СТАНЦИЯ ПОД УГРОЗОЙ ПОТЕРИ, ЗАХВАТИТЕ КОНТРОЛЬ И ОСТАНОВИТЕ ЭТОK#*`&110010")
 	set_laws_config()
 
 /datum/ai_laws/custom/New() //This reads silicon_laws.txt and allows server hosts to set custom AI starting laws.

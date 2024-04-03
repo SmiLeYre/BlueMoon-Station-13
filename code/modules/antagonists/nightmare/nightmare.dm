@@ -6,4 +6,3 @@
 	show_to_ghosts = TRUE
 	ui_name = "AntagInfoNightmare"
 	suicide_cry = "FOR THE DARKNESS!!"
-	soft_antag = FALSE // BLUEMOON ADDITION

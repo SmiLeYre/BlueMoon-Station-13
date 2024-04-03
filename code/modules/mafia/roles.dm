@@ -413,7 +413,7 @@
 		current_defended = null
 
 /datum/mafia_role/lawyer
-	name = "Lawyer"
+	name = "Internal Affairs Agent"
 	desc = "You can choose a person during the day to provide extensive legal advice to during the night, preventing night actions."
 	revealed_outfit = /datum/outfit/mafia/lawyer
 	role_type = TOWN_SUPPORT

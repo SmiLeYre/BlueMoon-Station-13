@@ -8,7 +8,6 @@
 	var/datum/action/innate/blobpop/pop_action
 	var/starting_points_human_blob = 60
 	var/point_rate_human_blob = 2
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/blob/threat()
 	. = ..()

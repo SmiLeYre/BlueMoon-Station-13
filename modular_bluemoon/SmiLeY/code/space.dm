@@ -23,3 +23,12 @@
 	allow_duplicates = FALSE
 	always_place = TRUE
 	id = "ds2-base"
+
+/datum/map_template/ruin/space/forgottenship
+	name = "SCSBC-12"
+	description = "InteQ хотели бы напомнить своим сотрудникам, что любой линейный крейсер будет обслуживаться соответствующим образом, как и экипаж."
+	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
+	suffix = "forgotten_ship.dmm"
+	allow_duplicates = FALSE
+	always_place = TRUE
+	id = "forgottenship"

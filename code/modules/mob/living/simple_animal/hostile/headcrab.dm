@@ -27,7 +27,7 @@
 	if(..() && !stat)
 		if(!is_zombie && isturf(src.loc))
 			for(var/mob/living/carbon/human/H in oview(src, 1)) //Only for corpse right next to/on same tile
-				if(!H.get_item_by_slot(ITEM_SLOT_HEAD) && prob(50) && Zombify(H))
+				if(!H.get_item_by_slot(ITEM_SLOT_HEAD) && prob(50)) // BLUEMOON EDIT - убрана зомбификация, она идёт дальше
 					visible_message("<span class='danger'>[src] запрыгивает на голову [H], вгрызясь своими лапками в затылок жертвы!</span>", "<span class='danger'>[src] запрыгивает на голову [H], вгрызясь своими лапками в затылок жертвы!</span>")
 					H.death(FALSE)
 					Zombify(H)

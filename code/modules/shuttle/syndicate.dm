@@ -7,7 +7,7 @@
 	icon_screen = "inteqshuttle"
 	icon_keyboard = "inteq_key"
 	light_color = LIGHT_COLOR_ORANGE
-	req_access = list(ACCESS_SYNDICATE)
+	req_access = list(ACCESS_INTEQ)
 	shuttleId = "syndicate"
 	possible_destinations = "inteq_away;syndicate_z5;syndicate_ne;syndicate_nw;syndicate_n;syndicate_se;syndicate_sw;syndicate_s;syndicate_custom"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
@@ -57,7 +57,7 @@
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "dorm_available"
 	light_color = LIGHT_COLOR_BLUE
-	req_access = list(ACCESS_SYNDICATE)
+	req_access = list(ACCESS_INTEQ)
 	shuttleId = "steel_rain"
 	possible_destinations = null
 	clockwork = TRUE //it'd look weird

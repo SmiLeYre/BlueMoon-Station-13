@@ -11,9 +11,9 @@
  */
 
 ///Time in seconds before anomaly spawns
-#define ANOMALY_START_MEDIUM_TIME (2 EVENT_SECONDS)
+#define ANOMALY_START_MEDIUM_TIME (6 EVENT_SECONDS)
 ///Time in seconds before anomaly is announced
-#define ANOMALY_ANNOUNCE_MEDIUM_TIME (15 EVENT_SECONDS)
+#define ANOMALY_ANNOUNCE_MEDIUM_TIME (2 EVENT_SECONDS)
 ///Let them know how far away the anomaly is
 #define ANOMALY_ANNOUNCE_MEDIUM_TEXT "сканерах большой дальности. Ожидаемое место соприкосновения:"
 
@@ -35,7 +35,7 @@
 ///Time in seconds before anomaly spawns
 #define ANOMALY_START_DANGEROUS_TIME (2 EVENT_SECONDS)
 ///Time in seconds before anomaly is announced
-#define ANOMALY_ANNOUNCE_DANGEROUS_TIME (45 EVENT_SECONDS)
+#define ANOMALY_ANNOUNCE_DANGEROUS_TIME (30 EVENT_SECONDS)
 ///Let them know how far away the anomaly is
 #define ANOMALY_ANNOUNCE_DANGEROUS_TEXT "сканерах малой дальности. Ожидаемое место соприкосновения:"
 

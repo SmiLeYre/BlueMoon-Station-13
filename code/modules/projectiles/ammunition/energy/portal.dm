@@ -3,6 +3,7 @@
 	e_cost = 0
 	fire_sound = 'sound/weapons/pulse3.ogg'
 	select_name = "blue"
+	harmful = FALSE //BLUEMOON ADD
 	var/datum/weakref/gun
 
 /obj/item/ammo_casing/energy/wormhole/orange

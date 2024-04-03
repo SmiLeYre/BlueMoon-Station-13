@@ -56,7 +56,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_GLASS_CUT)
 		if(do_after(user,20, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 /obj/item/glasswork/glass_base/dish_part1
@@ -69,7 +69,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_GLASS_CUT)
 		if(do_after(user,20, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 //////////////////////Lens//////////////////////////
@@ -87,7 +87,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_GLASS_CUT)
 		if(do_after(user,20, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 /obj/item/glasswork/glass_base/glass_lens_part1
@@ -100,7 +100,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_WELDER)
 		if(do_after(user,30, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 /obj/item/glasswork/glass_base/glass_lens_part2
@@ -113,7 +113,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_WELDER)
 		if(do_after(user,30, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 /obj/item/glasswork/glass_base/glass_lens_part3
@@ -126,7 +126,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_BLOW)
 		if(do_after(user,5, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 			qdel(I)
 
@@ -140,7 +140,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_GLASS_CUT)
 		if(do_after(user,20, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			new rod(user.loc, 1)
 			qdel(src)
 
@@ -155,7 +155,7 @@
 	..()
 	if(istype(I, /obj/item/stack/sheet/cloth))
 		if(do_after(user,10, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 /obj/item/glasswork/glass_base/glass_lens_part6
@@ -168,7 +168,7 @@
 /obj/item/glasswork/glass_base/glass_lens_part6/attackby(obj/item/I, mob/user, params)
 	..()
 	if(istype(I, /obj/item/stack/sheet/mineral/sandstone))
-		new next_step(user.loc, 1)
+		new next_step(user.loc)
 		qdel(src)
 
 //////////////////////Spouty Flask//////////////////
@@ -186,7 +186,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_GLASS_CUT)
 		if(do_after(user,20, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 /obj/item/glasswork/glass_base/spouty_part2
@@ -199,7 +199,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_WELDER)
 		if(do_after(user,30, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 /obj/item/glasswork/glass_base/spouty_part3
@@ -212,7 +212,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_BLOW)
 		if(do_after(user,5, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 			qdel(I)
 
@@ -226,7 +226,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_GLASS_CUT)
 		if(do_after(user,20, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			new rod(user.loc, 1)
 			qdel(src)
 
@@ -245,7 +245,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_WELDER)
 		if(do_after(user,30, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 /obj/item/glasswork/glass_base/flask_small_part1
@@ -258,7 +258,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_BLOW)
 		if(do_after(user,5, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 			qdel(I)
 
@@ -272,7 +272,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_GLASS_CUT)
 		if(do_after(user,20, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			new rod(user.loc, 1)
 			qdel(src)
 
@@ -291,7 +291,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_WELDER)
 		if(do_after(user,30, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 /obj/item/glasswork/glass_base/flask_large_part1
@@ -304,7 +304,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_BLOW)
 		if(do_after(user,5, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 			qdel(I)
 
@@ -318,9 +318,9 @@
 	..()
 	if(I.tool_behaviour == TOOL_GLASS_CUT)
 		if(do_after(user,20, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			new rod(user.loc, 1)
-			qdel(src)
+			return qdel(src)
 
 //////////////////////Tea Plates////////////////////
 //Three Steps                                     //
@@ -337,7 +337,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_WELDER)
 		if(do_after(user,30, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 /obj/item/glasswork/glass_base/tea_plate1
@@ -350,7 +350,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_BLOW)
 		if(do_after(user,5, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 			qdel(I)
 
@@ -364,7 +364,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_GLASS_CUT)
 		if(do_after(user,20, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			new rod(user.loc, 1)
 			qdel(src)
 
@@ -378,7 +378,7 @@
 	..()
 	if(istype(I, /obj/item/stack/sheet/cloth))
 		if(do_after(user,10, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 //////////////////////Tea Cup///////////////////////
@@ -396,7 +396,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_WELDER)
 		if(do_after(user,30, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 /obj/item/glasswork/glass_base/tea_cup1
@@ -409,7 +409,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_BLOW)
 		if(do_after(user,5, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 			qdel(I)
 
@@ -423,7 +423,7 @@
 	..()
 	if(I.tool_behaviour == TOOL_GLASS_CUT)
 		if(do_after(user,20, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			new rod(user.loc, 1)
 			qdel(src)
 
@@ -437,7 +437,7 @@
 	..()
 	if(istype(I, /obj/item/stack/sheet/cloth))
 		if(do_after(user,10, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)
 
 /obj/item/glasswork/glass_base/tea_cup4
@@ -450,5 +450,5 @@
 	..()
 	if(istype(I, /obj/item/stack/sheet/glass))
 		if(do_after(user,10, target = src))
-			new next_step(user.loc, 1)
+			new next_step(user.loc)
 			qdel(src)

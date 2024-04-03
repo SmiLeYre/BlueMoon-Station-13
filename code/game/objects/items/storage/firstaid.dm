@@ -192,6 +192,39 @@
 	new /obj/item/healthanalyzer/advanced(src)
 	new /obj/item/clothing/glasses/hud/health/night/syndicate(src)
 
+/obj/item/storage/firstaid/tactical/ert_first
+	name = "Advanced tactical first-aid kit c1"
+
+/obj/item/storage/firstaid/tactical/ert_first/PopulateContents()
+	if(empty)
+		return
+	new /obj/item/healthanalyzer/advanced(src)
+	new /obj/item/reagent_containers/syringe/piercing(src)
+	new /obj/item/bonesetter(src)
+	new /obj/item/reagent_containers/medspray/sterilizine(src)
+	new /obj/item/reagent_containers/medspray/sterilizine(src)
+	new /obj/item/reagent_containers/glass/bottle/morphine(src)
+	new /obj/item/reagent_containers/glass/bottle/morphine(src)
+	new /obj/item/hypospray/mkii/CMO/combat/synthflesh(src)
+
+
+/obj/item/storage/firstaid/tactical/ert_second
+	name = "Advanced tactical first-aid kit c2"
+
+/obj/item/storage/firstaid/tactical/ert_second/PopulateContents()
+	if(empty)
+		return
+	new /obj/item/stack/medical/gauze(src)
+	new /obj/item/stack/medical/gauze(src)
+	new /obj/item/reagent_containers/hypospray/medipen/oxandrolone(src)
+	new /obj/item/reagent_containers/hypospray/medipen/salacid(src)
+	new /obj/item/reagent_containers/hypospray/combat/omnizine(src)
+	new /obj/item/reagent_containers/hypospray/combat/omnizine(src)
+	new /obj/item/reagent_containers/hypospray/medipen/penacid(src)
+	new /obj/item/reagent_containers/hypospray/medipen/penacid(src)
+
+
+
 /obj/item/storage/firstaid/radbgone
 	name = "radiation treatment kit"
 	desc = "Used to treat minor toxic blood content and major radiation poisoning."

@@ -52,11 +52,12 @@
 	var/list/alive = list()
 	var/list/antagonists = list()
 	var/list/dead = list()
+	var/list/dead_players = list()
 	var/list/ghosts = list()
 	var/list/misc = list()
 	var/list/npcs = list()
 
-	var/list/pois = getpois(skip_mindless = TRUE, specify_dead_role = FALSE)
+	var/list/pois = getpois(skip_mindless = FALSE, specify_dead_role = FALSE)
 	for (var/name in pois)
 		var/list/serialized = list()
 		serialized["name"] = name
@@ -69,8 +70,10 @@
 		if (istype(M))
 			if (isobserver(M))
 				ghosts += list(serialized)
-			else if (M.stat == DEAD)
+			else if (M.mind == null && M.stat == DEAD)
 				dead += list(serialized)
+			else if (M.mind && M.stat == DEAD)
+				dead_players += list(serialized)
 			else if (M.mind == null)
 				npcs += list(serialized)
 			else
@@ -106,6 +109,7 @@
 	data["alive"] = alive
 	data["antagonists"] = antagonists
 	data["dead"] = dead
+	data["dead_players"] = dead_players
 	data["ghosts"] = ghosts
 	data["misc"] = misc
 	data["npcs"] = npcs

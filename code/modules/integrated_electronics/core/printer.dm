@@ -103,7 +103,15 @@
 
 	return ..()
 
-/obj/item/integrated_circuit_printer/attack_self(mob/user)
+/obj/item/integrated_circuit_printer/attack_self(mob/living/carbon/human/user)
+	var/user_job = user.mind.assigned_role
+	if(upgraded)
+		if(user_job == "Roboticist" || user_job == "Research Director" || user_job == "Scientist" || user.mind?.has_antag_datum(/datum/antagonist/ghost_role))
+			interact(user)
+			return
+		else
+			to_chat(user, "<span class='warning'>Улучшения сделали этот принтер сложным и непонятным для вас!")
+			return
 	interact(user)
 
 /obj/item/integrated_circuit_printer/interact(mob/user)

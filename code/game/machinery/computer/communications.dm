@@ -44,6 +44,8 @@
 	/// Whether syndicate mode is enabled or not.
 	var/syndicate = FALSE
 
+	COOLDOWN_DECLARE(report_print_cooldown)
+
 /obj/machinery/computer/communications/syndicate
 	name = "Syndicate Communications Console"
 	icon_screen = "commsyndie"
@@ -58,6 +60,7 @@
 
 /obj/machinery/computer/communications/syndicate/authenticated_as_silicon_or_captain(mob/user)
 	return FALSE
+	/// Cooldown between printing announcement papers
 
 /obj/machinery/computer/communications/Initialize(mapload)
 	. = ..()
@@ -182,6 +185,14 @@
 			deadchat_broadcast(" сменил уровень угрозы [params["newSecurityLevel"]] с помощью [src] в [span_name("[get_area_name(usr, TRUE)]")].", span_name("[usr.real_name]"), usr, message_type=DEADCHAT_ANNOUNCEMENT)
 
 			alert_level_tick += 1
+		if ("printMessage")
+			if (!authenticated(usr))
+				return
+			var/message_index = text2num(params["message"])
+			if (!message_index)
+				return
+			var/datum/comm_message/message = LAZYACCESS(messages, message_index)
+			print_report(message.content, message.title)
 		if ("deleteMessage")
 			if (!authenticated(usr))
 				return
@@ -211,7 +222,7 @@
 			var/message = trim(html_encode(params["message"]), MAX_MESSAGE_LEN)
 
 			var/emagged = obj_flags & EMAGGED
-			if (emagged && SSticker.mode.name == "Extended")
+			if (emagged && GLOB.master_mode == "Extended")
 				message_syndicate(message, usr)
 				to_chat(usr, span_danger("SYSERR @l(19833)of(transmit.dm): !@$ СООБЩЕНИЕ УСПЕШНО ОТПРАВЛЕНО ПО ПОДПРОСТРАНСТВЕННОЙ СВЯЗИ."))
 			else if (emagged)
@@ -275,6 +286,52 @@
 			priority_announce("Запрос на коды от ядерного заряда станции для активации протокола самоуничтожения были запрошены [usr]. Решение будет отправлено в ближайшее время.", "Запрошены коды для запуска систем ядерного самоуничтожения.", SSstation.announcer.get_rand_report_sound())
 			playsound(src, 'sound/machines/terminal_prompt.ogg', 50, FALSE)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
+		if ("declareTheExistenceOfSyndicate")
+			if (syndicate == TRUE)
+				balloon_alert_to_viewers("ОШИБКА")
+				to_chat(usr, span_danger("ОШИБКА"))
+				return
+			if (!authenticated_as_non_silicon_captain(usr))
+				return
+			if (!(obj_flags & EMAGGED))
+				return
+			to_chat(usr, span_notice("Backup routing data restored."))
+			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+
+			message_admins("[ADMIN_LOOKUPFLW(usr)] toggled Syndicate Displays")
+			priority_announce("Синдикат берёт Космическую Станцию в свою ответственность.", null, 'sound/machines/AISyndiHack.ogg')
+			var/obj/machinery/computer/communications/C = locate() in GLOB.machines
+			if(C)
+				C.post_status("alert", "synd")
+			for(var/mob/living/silicon/silicon as anything in GLOB.silicon_mobs)
+				var/new_board = new /obj/item/ai_module/core/full/syndicate(src)
+				var/obj/item/ai_module/chosenboard = new_board
+				var/mob/living/silicon/beepboop = silicon
+				chosenboard.install(beepboop.laws, usr)
+				qdel(new_board)
+		if ("declareTheExistenceOfInteQ")
+			if (syndicate == TRUE)
+				balloon_alert_to_viewers("ОШИБКА")
+				to_chat(usr, span_danger("ОШИБКА"))
+				return
+			if (!authenticated_as_non_silicon_captain(usr))
+				return
+			if (!(obj_flags & EMAGGED))
+				return
+			to_chat(usr, span_notice("Backup routing data restored."))
+			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+
+			message_admins("[ADMIN_LOOKUPFLW(usr)] toggled InteQ Displays")
+			priority_announce("InteQ открыто объявляет притязание на [station_name()].", null, 'sound/announcer/classic/_admin_war_pizdec.ogg')
+			var/obj/machinery/computer/communications/C = locate() in GLOB.machines
+			if(C)
+				C.post_status("alert", "inteq")
+			for(var/mob/living/silicon/silicon as anything in GLOB.silicon_mobs)
+				var/new_board = new /obj/item/ai_module/core/full/inteq(src)
+				var/obj/item/ai_module/chosenboard = new_board
+				var/mob/living/silicon/beepboop = silicon
+				chosenboard.install(beepboop.laws, usr)
+				qdel(new_board)
 		if ("restoreBackupRoutingData")
 			if (syndicate == TRUE)
 				balloon_alert_to_viewers("ОШИБКА")
@@ -538,6 +595,7 @@
 						data["shuttleLastCalled"] = format_text(SSshuttle.emergencyLastCallLoc.name)
 			if (STATE_MESSAGES)
 				data["messages"] = list()
+				data["printerCooldown"] = report_print_cooldown
 
 				if (messages)
 					for (var/_message in messages)
@@ -580,7 +638,7 @@
 /obj/machinery/computer/communications/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
-		if (EMAGGED && SSticker.mode.name == "Extended" || syndicate == TRUE)
+		if (EMAGGED && GLOB.master_mode == "Extended" || syndicate == TRUE)
 			ui = new(user, src, "CommunicationsConsole")
 			ui.open()
 		else if (EMAGGED)
@@ -678,6 +736,9 @@
 		if("message")
 			status_signal.data["msg1"] = data1
 			status_signal.data["msg2"] = data2
+			if(istype(usr, /mob/living))
+				log_admin("STATUS: [key_name(usr)] set status screen with [src]. Message: [data1] [data2]")
+				message_admins("STATUS: [key_name(usr)] set status screen with [src]. Message: [data1] [data2]")
 		if("alert")
 			status_signal.data["picture_state"] = data1
 
@@ -695,6 +756,17 @@
 
 /obj/machinery/computer/communications/proc/add_message(datum/comm_message/new_message)
 	LAZYADD(messages, new_message)
+
+/obj/machinery/computer/communications/proc/print_report(message, title)
+	if(!COOLDOWN_FINISHED(src, report_print_cooldown))
+		say("Printer on cooldown!")
+		return
+	COOLDOWN_START(src, report_print_cooldown, 30 SECONDS)
+	var/obj/item/paper/P = new /obj/item/paper(loc)
+	P.name = "Бумага - '[title]'"
+	P.add_raw_text(message)
+	P.update_appearance()
+	playsound(src, 'sound/effects/printer.ogg', 50, FALSE)
 
 /datum/comm_message
 	var/title

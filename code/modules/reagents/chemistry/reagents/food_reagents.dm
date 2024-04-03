@@ -98,7 +98,7 @@
 /datum/reagent/consumable/nutriment/vitamin
 	name = "Vitamin"
 	description = "All the best vitamins, minerals, and carbohydrates the body needs in pure form."
-	value = REAGENT_VALUE_COMMON
+	value = REAGENT_VALUE_VERY_COMMON //BLUEMOON CHANGE он есть в чистом виде в овощах
 	nutriment_factor = 15 * REAGENTS_METABOLISM //The are the best food for you!
 	brute_heal = 1
 	burn_heal = 1
@@ -137,7 +137,7 @@
 		if(boiling)
 			M.visible_message("<span class='warning'>The boiling oil sizzles as it covers [M]!</span>", \
 			"<span class='userdanger'>You're covered in boiling oil!</span>")
-			M.emote("scream")
+			M.emote("realagony")
 			playsound(M, 'sound/machines/fryer/deep_fryer_emerge.ogg', 25, TRUE)
 			var/oil_damage = min((holder.chem_temp / fry_temperature) * 0.33,1) //Damage taken per unit
 			M.adjustFireLoss(oil_damage * min(reac_volume,20)) //Damage caps at 20
@@ -159,7 +159,7 @@
 	color = "#FFFFFF" // rgb: 255, 255, 255
 	taste_mult = 1.5 // stop sugar drowning out other flavours
 	nutriment_factor = 3 * REAGENTS_METABOLISM
-	metabolization_rate = 2 * REAGENTS_METABOLISM
+	metabolization_rate = 5 * REAGENTS_METABOLISM
 	overdose_threshold = 200 // Hyperglycaemic shock
 	taste_description = "sweetness"
 	value = REAGENT_VALUE_NONE
@@ -173,7 +173,7 @@
 
 /datum/reagent/consumable/sugar/overdose_start(mob/living/M)
 	to_chat(M, "<span class='userdanger'>You go into hyperglycaemic shock! Lay off the twinkies!</span>")
-	M.AdjustSleeping(600, FALSE)
+	M.AdjustSleeping(20 SECONDS, FALSE)
 	. = 1
 
 /datum/reagent/consumable/sugar/overdose_process(mob/living/M)
@@ -370,7 +370,8 @@
 			return
 		else if ( mouth_covered )	// Reduced effects if partially protected
 			if(prob(50))
-				victim.emote("realagony")
+				if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					victim.emote("realagony")
 			victim.blur_eyes(6)
 			victim.blind_eyes(4)
 			victim.confused = max(M.confused, 6)
@@ -384,7 +385,7 @@
 			victim.damageoverlaytemp = 60
 			return
 		else // Oh dear :D
-			if(prob(5))
+			if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
 				victim.emote("realagony")
 			victim.blur_eyes(10)
 			victim.blind_eyes(6)
@@ -820,6 +821,20 @@
 		M.adjustFireLoss(-1*REM, 0)
 		. = TRUE
 	..()
+
+// BLUEMOON ADD START - кактусы с лаваленда, а также никтотиновые листья дают эффект обезболивающего для операций
+/datum/reagent/consumable/vitfro/on_mob_metabolize(mob/living/M) //modularisation for miners salve painkiller.
+	..()
+	if(iscarbon(M))
+		ADD_TRAIT(M, TRAIT_PAINKILLER, PAINKILLER_VITFRUIT)
+		M.throw_alert("painkiller", /atom/movable/screen/alert/painkiller)
+
+/datum/reagent/consumable/vitfro/on_mob_end_metabolize(mob/living/M)
+	..()
+	if(iscarbon(M))
+		REMOVE_TRAIT(M, TRAIT_PAINKILLER, PAINKILLER_VITFRUIT)
+		M.clear_alert("painkiller", /atom/movable/screen/alert/painkiller)
+// BLUEMOON ADD END
 
 /datum/reagent/consumable/clownstears
 	name = "Clown's Tears"

@@ -4,8 +4,8 @@
 	antag_flag = ROLE_HERETIC
 	false_report_weight = 5
 	chaos = 5
-	restricted_jobs = list("Prisoner", "AI", "Cyborg")
-	protected_jobs = list("Security Officer", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director", "Quartermaster", "Blueshield", "Brig Physician", "Peacekeeper", "NanoTrasen Representative", "Lawyer", "Chaplain")	//citadel change - adds HoP, CE, CMO, and RD to heretic role blacklist
+	restricted_jobs = list("AI", "Cyborg", "Positronic Brain") // BLUEMOON EDIT
+	protected_jobs = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Internal Affairs Agent", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security","Bridge Officer", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director") //BLUEMOON CHANGES
 	required_players = 15
 	required_enemies = 1
 	recommended_enemies = 4

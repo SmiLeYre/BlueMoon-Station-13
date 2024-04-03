@@ -1,8 +1,6 @@
 
 //custom access for some jobs. pasted together from ministation.
 
-#define JOB_MODIFICATION_MAP_NAME "OmegaStation"
-
 /datum/job/New()
 	..()
 	MAP_JOB_CHECK

@@ -24,7 +24,7 @@
  */
 
 /obj/item/storage/box
-	name = "box"
+	name = "Box"
 	desc = "It's just an ordinary box."
 	icon_state = "box"
 	item_state = "syringe_kit"
@@ -105,7 +105,7 @@
 
 // Ordinary survival box
 /obj/item/storage/box/survival
-	name = "survival box"
+	name = "Survival Box"
 	desc = "A box with the bare essentials of ensuring the survival of you and others."
 	icon_state = "internals"
 	illustration = "emergencytank"
@@ -114,7 +114,16 @@
 	var/medipen_type = /obj/item/reagent_containers/hypospray/medipen
 
 /obj/item/storage/box/survival/PopulateContents()
-	new mask_type(src)
+	// BLUEMOON ADD - у робототов особый набор для выживания
+	if(HAS_TRAIT(loc, TRAIT_ROBOTIC_ORGANISM))
+		mask_type = null
+		internal_type = null
+		medipen_type = null
+		new /obj/item/stack/cable_coil/random/five(src)
+		new /obj/item/weldingtool/mini(src)
+	if(!isnull(mask_type))
+	// BLUEMOON ADD END
+		new mask_type(src)
 	if(!isnull(medipen_type))
 		new medipen_type(src)
 
@@ -123,7 +132,8 @@
 	else if (isvox(loc))
 		new /obj/item/tank/internals/emergency_nitrogen(src)
 	else
-		new internal_type(src)
+		if(!isnull(internal_type)) // BLUEMOON ADD
+			new internal_type(src)
 
 	if(HAS_TRAIT(SSstation, STATION_TRAIT_PREMIUM_INTERNALS))
 		new /obj/item/flashlight/flare(src)
@@ -150,8 +160,9 @@
 
 // Engineer survival box
 /obj/item/storage/box/survival/engineer
-	name = "extended-capacity survival box"
+	name = "Extended-Capacity Survival Box"
 	desc = "A box with the bare essentials of ensuring the survival of you and others. This one is labelled to contain an extended-capacity tank."
+	icon_state = "engibox"
 	illustration = "extendedtank"
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
 
@@ -161,7 +172,7 @@
 
 // Syndie survival box
 /obj/item/storage/box/survival/syndie //why is this its own thing if it's just the engi box with a syndie mask and medipen?
-	name = "extended-capacity survival box"
+	name = "Extended-Capacity Survival Box"
 	desc = "A box with the bare essentials of ensuring the survival of you and others. This one is labelled to contain an extended-capacity tank."
 	illustration = "extendedtank"
 	mask_type = /obj/item/clothing/mask/gas/syndicate
@@ -170,6 +181,8 @@
 
 // Security survival box
 /obj/item/storage/box/survival/security
+	name = "Extended-Capacity Survival Box"
+	icon_state = "secbox_xl"
 	mask_type = /obj/item/clothing/mask/gas/sechailer
 	internal_type = /obj/item/tank/internals/emergency_oxygen/engi/sec
 
@@ -181,6 +194,59 @@
 	..() // we want the regular stuff too
 	new /obj/item/radio/off(src)
 	new /obj/item/flashlight/glowstick/red(src)
+
+//Command survival box
+/obj/item/storage/box/survival/command
+	name = "Extended-Capacity Survival Box"
+	icon_state = "ghostcostuming"
+	internal_type = /obj/item/tank/internals/emergency_oxygen/engi
+	medipen_type = /obj/item/reagent_containers/hypospray/medipen/atropine
+
+/obj/item/storage/box/survival/command/PopulateContents()
+	..() // we want the regular stuff too
+	new /obj/item/crowbar/red/sec(src)
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/melee/classic_baton/telescopic(src)
+
+//CentCom survival box
+/obj/item/storage/box/survival/centcom
+	name = "Extended-Capacity Survival Box"
+	icon_state = "ghostcostuming"
+	mask_type = /obj/item/clothing/mask/gas/sechailer
+	internal_type = /obj/item/tank/internals/emergency_oxygen/double
+	medipen_type = /obj/item/reagent_containers/hypospray/medipen/atropine
+
+/obj/item/storage/box/survival/centcom/PopulateContents()
+	..() // we want the regular stuff too
+	new /obj/item/crowbar/power(src)
+	new /obj/item/melee/classic_baton/telescopic(src)
+	new /obj/item/radio/off(src)
+	new /obj/item/extinguisher/mini(src)
+	new /obj/item/flashlight/flare(src)
+	new /obj/item/hypospray/mkii/CMO/combat/synthflesh(src)
+
+//ert ammo boxes
+/obj/item/storage/box/ammo
+	name = "box of ammo"
+	desc = "Contains some extra ammo"
+	var/ammo = /obj/item/ammo_box/magazine/smgm9mm/ap
+
+/obj/item/storage/box/ammo/smgap
+	name = "box of SMG ammo"
+	ammo = /obj/item/ammo_box/magazine/smgm9mm/ap
+
+/obj/item/storage/box/ammo/m556
+	name = "box of M556 ammo"
+	ammo = /obj/item/ammo_box/magazine/m556
+
+/obj/item/storage/box/ammo/wt
+	name = "box of WT ammo"
+	ammo = /obj/item/ammo_box/magazine/wt550m9
+
+/obj/item/storage/box/ammo/PopulateContents()
+	..()
+	for(var/i in 1 to 5)
+		new ammo(src)
 
 /obj/item/storage/box/seclooking
 	icon_state = "secbox"
@@ -911,7 +977,7 @@
 
 /obj/item/storage/box/papersack/Initialize(mapload)
 	. = ..()
-	papersack_designs = sortList(list(
+	papersack_designs = sort_list(list(
 		"None" = image(icon = src.icon, icon_state = "paperbag_None"),
 		"NanotrasenStandard" = image(icon = src.icon, icon_state = "paperbag_NanotrasenStandard"),
 		"SyndiSnacks" = image(icon = src.icon, icon_state = "paperbag_SyndiSnacks"),

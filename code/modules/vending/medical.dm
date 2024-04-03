@@ -42,7 +42,7 @@
 					/obj/item/reagent_containers/pill/charcoal = 6)
 	premium = list(/obj/item/reagent_containers/medspray/synthflesh = 2,
 					/obj/item/storage/box/hug/medical = 1,
-					/obj/item/storage/pill_bottle/psicodine = 2,
+					/obj/item/storage/pill_bottle/psicodine = 3, // SPLURT EDIT 2 -> 3
 					/obj/item/reagent_containers/hypospray/medipen = 3,
 					/obj/item/storage/belt/medical = 3,
 					/obj/item/wrench/medical = 1,
@@ -105,9 +105,10 @@
 					/obj/item/storage/firstaid/o2 = 2,
 					/obj/item/defibrillator/loaded = 1,
 					/obj/item/wallframe/defib_mount = 1,
-					/obj/item/sensor_device = 2,
-					/obj/item/clothing/glasses/hud/health/sunglasses = 4,
-					/obj/item/pinpointer/crew = 2)
+					/obj/item/clothing/glasses/hud/health/sunglasses = 6,
+					/obj/item/sensor_device = 3,
+					/obj/item/reagent_containers/blood/oilblood = 6,
+					/obj/item/pinpointer/crew = 3)
 
 /obj/machinery/vending/medical/syndicate_access/Initialize(mapload)
 	. = ..()

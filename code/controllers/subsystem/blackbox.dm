@@ -154,6 +154,8 @@ SUBSYSTEM_DEF(blackbox)
 			record_feedback("tally", "radio_usage", 1, "CTF red team")
 		if(FREQ_CTF_BLUE)
 			record_feedback("tally", "radio_usage", 1, "CTF blue team")
+		if(FREQ_GHOST_INTEQ)
+			record_feedback("tally", "radio_usage", 1, "Forgotten Ship")
 		else
 			record_feedback("tally", "radio_usage", 1, "other")
 
@@ -302,6 +304,8 @@ Versioning
 	if(sealed)
 		return
 	if(!L || !L.key || !L.mind)
+		return
+	if (L.mind.assigned_role && L.mind.assigned_role == "Ghost Cafe Visitor")
 		return
 	if(!L.suiciding && !first_death.len)
 		first_death["name"] = "[(L.real_name == L.name) ? L.real_name : "[L.real_name] as [L.name]"]"

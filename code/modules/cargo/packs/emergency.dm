@@ -303,7 +303,7 @@
 	contains = list(/obj/item/tank/jetpack/carbondioxide/eva,
 					/obj/item/tank/jetpack/carbondioxide/eva,
 					/obj/item/tank/jetpack/carbondioxide/eva)
-	crate_name = "eva jetpacks crate"
+	crate_name = "EVA Jetpacks Crate"
 	crate_type = /obj/structure/closet/crate/secure
 
 /datum/supply_pack/emergency/specialops

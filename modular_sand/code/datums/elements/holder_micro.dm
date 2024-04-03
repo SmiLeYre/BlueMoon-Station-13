@@ -15,7 +15,10 @@
 	var/obj/item/clothing/head/mob_holder/holder = micro.loc
 	if(istype(holder))
 		var/mob/living/living = get_atom_on_turf(micro.loc, /mob/living)
-		if(living && (COMPARE_SIZES(living, micro)) < (1 / CONFIG_GET(number/max_pick_ratio)))
+		var/compare_size = 1
+		if(HAS_TRAIT(micro, TRAIT_BLUEMOON_LIGHT))
+			compare_size = 0.8
+		if(living && (COMPARE_SIZES(living, micro)) < (compare_size / CONFIG_GET(number/max_pick_ratio)))
 			living.visible_message(span_warning("\The [living] drops [micro] as [micro.p_they()] grow\s too big to carry."),
 								span_warning("You drop \The [living] as [living.p_they()] grow\s too big to carry."),
 								target=micro,
@@ -25,7 +28,10 @@
 			holder.release()
 
 /datum/element/mob_holder/micro/on_examine(mob/living/source, mob/user, list/examine_list)
-	if(ishuman(user) && !istype(source.loc, /obj/item/clothing/head/mob_holder) && (COMPARE_SIZES(user, source)) >= (1 / CONFIG_GET(number/max_pick_ratio)))
+	var/compare_size = 1
+	if(HAS_TRAIT(source, TRAIT_BLUEMOON_LIGHT))
+		compare_size = 0.8
+	if(ishuman(user) && !istype(source.loc, /obj/item/clothing/head/mob_holder) && (COMPARE_SIZES(user, source)) >= (compare_size / CONFIG_GET(number/max_pick_ratio)))
 		examine_list += span_notice("Looks like [source.p_they(FALSE)] can be picked up using <b>Alt+Click and grab intent</b>!")
 
 /// Do not inherit from /mob_holder, interactions are different.
@@ -64,7 +70,12 @@
 		to_chat(user, "<span class='warning'>You can't pick yourself up.</span>")
 		source.balloon_alert(user, "cannot pick yourself!")
 		return FALSE
-	if(COMPARE_SIZES(user, source) < (1 / CONFIG_GET(number/max_pick_ratio)))
+	//BLUEMOON ADD лёгких персонажей легче взять
+	var/compare_size = 1
+	if(HAS_TRAIT(source, TRAIT_BLUEMOON_LIGHT))
+		compare_size = 0.8
+	if(COMPARE_SIZES(user, source) < (compare_size / CONFIG_GET(number/max_pick_ratio)))
+	//BLUEMOON ADD END
 		to_chat(user, span_warning("They're too big to pick up!"))
 		source.balloon_alert(user, "too big to pick up!")
 		return FALSE
@@ -80,6 +91,8 @@
 					"<span class='userdanger'>[user] starts picking you up!</span>")
 	source.balloon_alert(user, "picking up")
 	var/time_required = COMPARE_SIZES(source, user) * 4 SECONDS //Scale how fast the pickup will be depending on size difference
+	if(get_size(source) > 0.5 && HAS_TRAIT(user, TRAIT_BLUEMOON_LIGHT)) //BLUEMOON ADD лёгкие большие персонажи дольше поднимают тех, кто имеет размер больше 50%
+		time_required += 8 SECONDS //BLUEMOON ADD END
 	if(!do_after(user, time_required, source))
 		return FALSE
 
@@ -107,6 +120,7 @@
 	icon_state = ""
 	slot_flags = ITEM_SLOT_FEET | ITEM_SLOT_HEAD | ITEM_SLOT_ID | ITEM_SLOT_BACK | ITEM_SLOT_NECK
 	w_class = null //handled by their size
+	body_parts_covered = FEET // BLUEMOON ADD - чтобы нельзя было брать более 1 персонажа в ноги, TODO - сделать возможность брать несколько маленьких
 
 /obj/item/clothing/head/mob_holder/micro/container_resist(mob/living/user)
 	if(user.incapacitated())
@@ -115,6 +129,8 @@
 	var/mob/living/L = get_atom_on_turf(src, /mob/living)
 	visible_message(span_warning("[src] begins to squirm in [L]'s grasp!"))
 	var/time_required = COMPARE_SIZES(L, user) / 4 SECONDS //Scale how fast the resisting will be depending on size difference
+	if(get_size(user) > 0.5 && HAS_TRAIT(L, TRAIT_BLUEMOON_LIGHT)) //BLUEMOON ADD персонажу размером больше 50% выбраться из хватки лёгкого большого персонажа достаточно просто
+		time_required = abs((1 / get_size(user))) / 4 SECONDS //BLUEMOON ADD END
 	if(!do_after(user, time_required, L, IGNORE_TARGET_LOC_CHANGE|IGNORE_HELD_ITEM))
 		if(!user || user.stat != CONSCIOUS || user.loc != src)
 			return

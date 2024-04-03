@@ -12,7 +12,7 @@
 	selection_color = "#b90000"
 	req_admin_notify = 1
 	minimal_player_age = 35
-	exp_requirements = 300
+	exp_requirements = 5000
 	exp_type = EXP_TYPE_CREW
 	considered_combat_role = TRUE
 	exp_type_department = EXP_TYPE_SECURITY
@@ -36,7 +36,7 @@
 
 
 	display_order = JOB_DISPLAY_ORDER_HEAD_OF_SECURITY
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/nonviolent, /datum/quirk/blindness, /datum/quirk/monophobia, /datum/quirk/insanity)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/nonviolent, /datum/quirk/blindness, /datum/quirk/monophobia, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal)
 	threat = 3
 
 	family_heirlooms = list(
@@ -59,12 +59,12 @@
 	//suit_store = /obj/item/gun/energy/e_gun
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1)
+	box = /obj/item/storage/box/survival/command
 
-	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	box = /obj/item/storage/box/survival/security
+	box = /obj/item/storage/box/survival/command
 
 	implants = list(/obj/item/implant/mindshield)
 
@@ -106,3 +106,12 @@
 	..()
 
 	H.typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/law
+
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/job/hos/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END

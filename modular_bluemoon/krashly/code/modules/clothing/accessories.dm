@@ -61,5 +61,13 @@
 	desc = "Нашивка давно ушедшей ЧВК. На нем вышит череп красным контуром. Надпись гласит: «За кровь и честь!»'"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/patch.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/patch.dmi'
-	icon_state = "patch"
-	item_state = "patch"
+	icon_state = "skull_patch"
+	item_state = "skull_patch"
+
+/obj/item/clothing/accessory/ac_patch
+	name = "PMC AC patch"
+	desc = "Patch that wear every Mercenary  in PMC Adamas Cattus. It looks like a cat... Or dog... in the some sort of diamond.'"
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/patch.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/patch.dmi'
+	icon_state = "ac_patch"
+	item_state = "ac_patch"

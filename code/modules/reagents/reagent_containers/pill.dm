@@ -104,9 +104,9 @@
 
 /obj/item/reagent_containers/pill/morphine
 	name = "morphine pill"
-	desc = "Commonly used to treat insomnia."
+	desc = "Commonly used to treat insomnia. Also, known as a good painkiller." // BLUEMOON EDIT - добавил упоминание эффекта обезболивания
 	icon_state = "pill8"
-	list_reagents = list(/datum/reagent/medicine/morphine = 30)
+	list_reagents = list(/datum/reagent/medicine/morphine = 20) // BLUEMOON EDIT - было 30, стало 20. Какой конченный сделал таблетк с передозом и немедленным эффектом зависимости?
 	roundstart = TRUE
 
 /obj/item/reagent_containers/pill/stimulant

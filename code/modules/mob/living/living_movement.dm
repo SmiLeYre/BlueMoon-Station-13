@@ -7,6 +7,7 @@
 	. = ..()
 	if(ismousemovement)
 		update_pixel_shifting()
+	SEND_SIGNAL(src, COMSIG_ATOM_DIR_AFTER_CHANGE, dir, newdir)
 
 /mob/living/proc/update_pixel_shifting(moved = FALSE)
 	if(combat_flags & COMBAT_FLAG_ACTIVE_BLOCKING)

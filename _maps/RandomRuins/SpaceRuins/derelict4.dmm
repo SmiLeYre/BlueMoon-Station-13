@@ -97,10 +97,6 @@
 /obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/mineral/titanium/blue/airless,
 /area/ruin/unpowered)
-"S" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/mineral,
-/area/ruin/unpowered)
 "W" = (
 /obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating/airless,
@@ -533,7 +529,7 @@ b
 b
 b
 b
-S
+b
 b
 b
 d

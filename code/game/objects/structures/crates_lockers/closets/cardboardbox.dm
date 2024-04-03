@@ -42,7 +42,7 @@
 
 /obj/structure/closet/cardboard/examine(mob/user)
 	. = ..()
-	if(can_sit_inside)
+	if(opened && can_sit_inside)
 		if(!has_buckled_mobs())
 			. += "<span class='notice'>Drag your sprite to sit in it.</span>"
 		else

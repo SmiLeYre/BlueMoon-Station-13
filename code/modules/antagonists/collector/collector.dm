@@ -3,6 +3,7 @@
 	show_in_antagpanel = FALSE
 	show_name_in_check_antagonists = FALSE
 	blacklisted_quirks = list() // no blacklist, these guys are harmless
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/collector/proc/forge_objectives()
 	var/datum/objective/hoard/collector/O = new

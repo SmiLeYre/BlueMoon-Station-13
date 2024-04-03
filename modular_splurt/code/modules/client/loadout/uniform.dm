@@ -40,9 +40,21 @@
 	name = "Performers one piece"
 	path = /obj/item/clothing/under/performer
 
+/datum/gear/uniform/lewdmaid
+	name = "Lewd maid uniform"
+	path = /obj/item/clothing/under/lewdmaid
+
 /datum/gear/uniform/blutigen_undergarment
 	name = "Blutigen Undergarments"
 	path = /obj/item/clothing/under/blutigen_undergarment
+
+/datum/gear/uniform/blackstripper
+	name = "Black stripper outfit"
+	path = /obj/item/clothing/under/misc/stripper/black
+
+/datum/gear/uniform/whitestripper
+	name = "White stripper outfit"
+	path = /obj/item/clothing/under/misc/stripper/white
 
 // Suggestion #151
 /datum/gear/uniform/waiter
@@ -82,7 +94,7 @@
 	restricted_roles = list("Medical Doctor", "Virologist", "Chemist", "Geneticist", "Paramedic", "Brig Physician")
 
 /datum/gear/uniform/grey/com
-	restricted_roles = list("Quartermaster", "Research Director", "Chief Medical Officer", "Head Of Security", "Head Of Personnel", "Captain", "Blueshield", "Bridge Officer")
+	restricted_roles = list("Quartermaster", "Research Director", "Chief Medical Officer", "Head Of Security", "Head Of Personnel","Bridge Officer", "Captain", "Blueshield", "Bridge Officer")
 
 /datum/gear/uniform/trekcmdtos
 	restricted_roles = list("Head of Security","Captain","Head of Personnel","Chief Engineer","Research Director","Chief Medical Officer","Quartermaster","Bridge Officer")
@@ -246,3 +258,10 @@
 /datum/gear/uniform/suit/bm/skirt
 	name = "Black Skirt with Ryodan Spider"
 	path = /obj/item/clothing/under/bm/ryodan
+
+/datum/gear/uniform/suit/clussy_outfit
+	name = "Clussy outfit"
+	path = /obj/item/clothing/under/rank/civilian/clown/clussy_outfit
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
+	restricted_roles = list("Clown")
+	restricted_desc = "Clown"

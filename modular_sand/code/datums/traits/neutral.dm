@@ -30,6 +30,7 @@
 	mob_trait = TRAIT_ESTROUS_DETECT
 	gain_text = span_love("Ваши органы чувств адаптируются, позволяя вам ощущать фертильность окружающих.")
 	lose_text = span_notice("Ваши особые чувства регрессируют и вы больше не ощущаете фертильность окружающих.")
+	human_only = FALSE
 
 /datum/quirk/estrous_active
 	name = "Эстральный Цикл"
@@ -56,7 +57,8 @@
 
 /datum/quirk/estrous_active/remove()
 	// Remove signals
-	UnregisterSignal(quirk_holder, list(COMSIG_MOB_ORGAN_ADD, COMSIG_MOB_ORGAN_REMOVE, COMSIG_PARENT_EXAMINE))
+	if(!QDELETED(quirk_holder))
+		UnregisterSignal(quirk_holder, list(COMSIG_MOB_ORGAN_ADD, COMSIG_MOB_ORGAN_REMOVE, COMSIG_PARENT_EXAMINE))
 
 /datum/quirk/estrous_active/post_add()
 	// Update text used by message
@@ -94,3 +96,10 @@
 
 	// Add quirk message
 	examine_list += span_love("<b>[quirk_holder.ru_who(TRUE)]</b> испытывает [heat_type], однозначно желая [positional_orientation].")
+
+/datum/quirk/dnc_order
+	name = "Приказ Не Клонировать"
+	desc = "На вас записан приказ 'Не клонировать', в котором, как бы это странно не звучало, говорится, что вас нельзя клонировать. Вы все еще можете быть оживлены другими способами."
+	value = 0
+	mob_trait = TRAIT_DNC_ORDER
+	medical_record_text = "Пациент имеет приказ DNC (Не Клонировать), в результате чего попытка воспользоваться клонированием будет отклонена."

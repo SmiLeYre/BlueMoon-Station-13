@@ -241,3 +241,43 @@
 	else
 		message = "издает крайне громкий звук."
 	. = ..()
+
+/datum/emote/living/audio/rawr2
+	key = "rawr2"
+	key_third_person = "rawr2"
+	message = "издаёт звук - <b>RAWR!</b>"
+	message_mime = "строит грозную мину!"
+	emote_sound = 'sound/voice/rawr2.ogg'
+	emote_cooldown = 1 SECONDS
+
+/datum/emote/living/audio/rocking
+	key = "rocking"
+	key_third_person = "rocking"
+	message = "издаёт звук - <b>LIGHT WEIGHT BABY!</b>"
+	message_mime = "строит грозную мину!"
+	emote_sound = 'sound/voice/light_weight_baby.ogg'
+	emote_cooldown = 15 SECONDS
+
+/datum/emote/living/audio/affirmative
+	key = "affirmative"
+	key_third_person = "affirmative"
+	message = "испускает <b>утвердительный</b> сигнал"
+	message_mime = "быстро кивает"
+	emote_sound = 'sound/machines/synth_yes.ogg'
+	emote_cooldown = 1 SECONDS
+
+/datum/emote/living/audio/negative
+	key = "negative"
+	key_third_person = "negative"
+	message = "испускает <b>отрицательный</b> сигнал"
+	message_mime = "быстро мотает головой"
+	emote_sound = 'sound/machines/synth_no.ogg'
+	emote_cooldown = 1 SECONDS
+
+/datum/emote/living/audio/negative
+	key = "snores"
+	key_third_person = "snores"
+	message = "храпит."
+	message_mime = "храпит с необычным звуком."
+	emote_sound = 'sound/voice/snore_mimimimimimi.ogg'
+	emote_cooldown = 1 SECONDS

@@ -33,7 +33,6 @@
 	icon_keyboard = "laptop_key"
 	clockwork = TRUE //it'd look weird
 	pass_flags = PASSTABLE
-	unique_icon = TRUE
 
 //Someone needs to break down the dat += into chunks instead of long ass lines.
 /obj/machinery/computer/secure_data/ui_interact(mob/user)
@@ -130,15 +129,23 @@
 									crimstat = E.fields["criminal"]
 							var/background
 							switch(crimstat)
-								if("*Arrest*")
+								if(SEC_RECORD_STATUS_ARREST)
 									background = "'background-color:#990000;'"
-								if("Incarcerated")
+								if(SEC_RECORD_STATUS_EXECUTE)
+									background = "'background-color:#990000;'"
+								if(SEC_RECORD_STATUS_INCARCERATED)
+									background = "'background-color:#990000;'"
+								if(SEC_RECORD_STATUS_RELEASED)
+									background = "'background-color:#4F7529;'"
+								if(SEC_RECORD_STATUS_PAROLLED)
+									background = "'background-color:#4F7529;'"
+								if(SEC_RECORD_STATUS_DEMOTE)
 									background = "'background-color:#CD6500;'"
-								if("Paroled")
+								if(SEC_RECORD_STATUS_SEARCH)
 									background = "'background-color:#CD6500;'"
-								if("Discharged")
+								if(SEC_RECORD_STATUS_MONITOR)
 									background = "'background-color:#006699;'"
-								if("None")
+								if(SEC_RECORD_STATUS_DISCHARGED)
 									background = "'background-color:#4F7529;'"
 								if("")
 									background = "''" //"'background-color:#FFFFFF;'"
@@ -195,20 +202,22 @@
 						dat += "<br>Criminal Status: <A href='?src=[REF(src)];choice=Edit Field;field=criminal'>[active2.fields["criminal"]]</A>"
 						dat += "<br><br>Minor Crimes: <A href='?src=[REF(src)];choice=Edit Field;field=mi_crim_add'>Add New</A>"
 
-
+						// BLUEMOON EDIT START - возможность пометить правонарушение как обработанное и от имени ЦК
 						dat +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
 						<tr>
 						<th>Crime</th>
 						<th>Details</th>
 						<th>Author</th>
 						<th>Time Added</th>
+						<th>Penalty Incurred</th>
 						<th>Del</th>
 						</tr>"}
 						for(var/datum/data/crime/c in active2.fields["mi_crim"])
 							dat += "<tr><td>[c.crimeName]</td>"
-							dat += "<td>[c.crimeDetails]</td>"
+							dat += "<td>[c.crimeDetails][c.centcom_enforced ? "<br><b style='color:green'>АВТОРИЗОВАНО ЦЕНТРАЛЬНЫМ КОМАНДОВАНИЕМ</b>" : ""]</td>"
 							dat += "<td>[c.author]</td>"
 							dat += "<td>[c.time]</td>"
+							dat += "<td>[c.penalties_incurred ? "<b style='color:green'>ДА</b>" : "<b style='color:red'>НЕТ</b>"]<BR><A href='?src=[REF(src)];choice=Edit Field;field=crim_incur_switch;cdataid=[c.dataId]'>\[Switch\]</A></td>"
 							dat += "<td><A href='?src=[REF(src)];choice=Edit Field;field=mi_crim_delete;cdataid=[c.dataId]'>\[X\]</A></td>"
 							dat += "</tr>"
 						dat += "</table>"
@@ -222,17 +231,19 @@
 						<th>Details</th>
 						<th>Author</th>
 						<th>Time Added</th>
+						<th>Penalty Incurred</th>
 						<th>Del</th>
 						</tr>"}
 						for(var/datum/data/crime/c in active2.fields["ma_crim"])
 							dat += "<tr><td>[c.crimeName]</td>"
-							dat += "<td>[c.crimeDetails]</td>"
+							dat += "<td>[c.crimeDetails][c.centcom_enforced ? "<br><b>[span_green("АВТОРИЗОВАНО ЦЕНТРАЛЬНЫМ КОМАНДОВАНИЕМ")]</b>" : ""]</td>"
 							dat += "<td>[c.author]</td>"
 							dat += "<td>[c.time]</td>"
+							dat += "<td>[c.penalties_incurred ? "<b style='color:green'>ДА</b>" : "<b style='color:red'>НЕТ</b>"]<BR><A href='?src=[REF(src)];choice=Edit Field;field=crim_incur_switch;cdataid=[c.dataId]'>\[Switch\]</A></td>"
 							dat += "<td><A href='?src=[REF(src)];choice=Edit Field;field=ma_crim_delete;cdataid=[c.dataId]'>\[X\]</A></td>"
 							dat += "</tr>"
 						dat += "</table>"
-
+						// BLUEMOON EDIT END
 						dat += "<br>\nImportant Notes:<br>\n\t<A href='?src=[REF(src)];choice=Edit Field;field=notes'>&nbsp;[active2.fields["notes"]]&nbsp;</A>"
 						dat += "<br><br><font size='4'><b>Comments/Log</b></font><br>"
 						var/counter = 1
@@ -246,7 +257,7 @@
 					else
 						dat += "Security Record Lost!<br>"
 						dat += "<A href='?src=[REF(src)];choice=New Record (Security)'>New Security Record</A><br><br>"
-					dat += "<A href='?src=[REF(src)];choice=Delete Record (ALL)'>Delete Record (ALL)</A><br><A href='?src=[REF(src)];choice=Print Record'>Print Record</A><BR><A href='?src=[REF(src)];choice=Print Poster'>Print Wanted Poster</A><BR><A href='?src=[REF(src)];choice=Return'>Back</A><BR><BR>"
+					dat += "<A href='?src=[REF(src)];choice=Delete Record (ALL)'>Delete Record (ALL)</A><br><A href='?src=[REF(src)];choice=Print Record'>Print Record</A><BR><A href='?src=[REF(src)];choice=Print Poster'>Print Wanted Poster</A><BR><A href='?src=[REF(src)];choice=Generate Arrest Warrant'>Generate Arrest Warrant</A><BR><A href='?src=[REF(src)];choice=Return'>Back</A><BR><BR>"
 					dat += "<A href='?src=[REF(src)];choice=Log Out'>{Log Out}</A>"
 				else
 		else
@@ -363,18 +374,18 @@ What a mess.*/
 					playsound(loc, 'sound/items/poster_being_created.ogg', 100, 1)
 					sleep(30)
 					var/obj/item/paper/P = new /obj/item/paper( loc )
-					P.default_raw_text = "<CENTER><B>Security Record - (SR-[GLOB.data_core.securityPrintCount])</B></CENTER><BR>"
+					var/report_text = "<CENTER><B>Security Record - (SR-[GLOB.data_core.securityPrintCount])</B></CENTER><BR>"
 					if((istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1)))
-						P.default_raw_text += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
-						P.default_raw_text += "\nSpecies: [active1.fields["species"]]<BR>"
-						P.default_raw_text += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields["fingerprint"], active1.fields["p_stat"], active1.fields["m_stat"])
+						report_text += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
+						report_text += "\nSpecies: [active1.fields["species"]]<BR>"
+						report_text += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields["fingerprint"], active1.fields["p_stat"], active1.fields["m_stat"])
 					else
-						P.default_raw_text += "<B>General Record Lost!</B><BR>"
+						report_text += "<B>General Record Lost!</B><BR>"
 					if((istype(active2, /datum/data/record) && GLOB.data_core.security.Find(active2)))
-						P.default_raw_text += text("<BR>\n<CENTER><B>Security Data</B></CENTER><BR>\nCriminal Status: []", active2.fields["criminal"])
+						report_text += text("<BR>\n<CENTER><B>Security Data</B></CENTER><BR>\nCriminal Status: []", active2.fields["criminal"])
 
-						P.default_raw_text += "<BR>\n<BR>\nMinor Crimes:<BR>\n"
-						P.default_raw_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
+						report_text += "<BR>\n<BR>\nMinor Crimes:<BR>\n"
+						report_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
 <tr>
 <th>Crime</th>
 <th>Details</th>
@@ -382,15 +393,15 @@ What a mess.*/
 <th>Time Added</th>
 </tr>"}
 						for(var/datum/data/crime/c in active2.fields["mi_crim"])
-							P.default_raw_text += "<tr><td>[c.crimeName]</td>"
-							P.default_raw_text += "<td>[c.crimeDetails]</td>"
-							P.default_raw_text += "<td>[c.author]</td>"
-							P.default_raw_text += "<td>[c.time]</td>"
-							P.default_raw_text += "</tr>"
-						P.default_raw_text += "</table>"
+							report_text += "<tr><td>[c.crimeName]</td>"
+							report_text += "<td>[c.crimeDetails]</td>"
+							report_text += "<td>[c.author]</td>"
+							report_text += "<td>[c.time]</td>"
+							report_text += "</tr>"
+						report_text += "</table>"
 
-						P.default_raw_text += "<BR>\nMajor Crimes: <BR>\n"
-						P.default_raw_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
+						report_text += "<BR>\nMajor Crimes: <BR>\n"
+						report_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
 <tr>
 <th>Crime</th>
 <th>Details</th>
@@ -398,26 +409,85 @@ What a mess.*/
 <th>Time Added</th>
 </tr>"}
 						for(var/datum/data/crime/c in active2.fields["ma_crim"])
-							P.default_raw_text += "<tr><td>[c.crimeName]</td>"
-							P.default_raw_text += "<td>[c.crimeDetails]</td>"
-							P.default_raw_text += "<td>[c.author]</td>"
-							P.default_raw_text += "<td>[c.time]</td>"
-							P.default_raw_text += "</tr>"
-						P.default_raw_text += "</table>"
+							report_text += "<tr><td>[c.crimeName]</td>"
+							report_text += "<td>[c.crimeDetails]</td>"
+							report_text += "<td>[c.author]</td>"
+							report_text += "<td>[c.time]</td>"
+							report_text += "</tr>"
+						report_text += "</table>"
 
 
-						P.default_raw_text += text("<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields["notes"])
+						report_text += text("<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields["notes"])
 						var/counter = 1
 						while(active2.fields[text("com_[]", counter)])
-							P.default_raw_text += text("[]<BR>", active2.fields[text("com_[]", counter)])
+							report_text += text("[]<BR>", active2.fields[text("com_[]", counter)])
 							counter++
 						P.name = text("SR-[] '[]'", GLOB.data_core.securityPrintCount, active1.fields["name"])
 					else
-						P.default_raw_text += "<B>Security Record Lost!</B><BR>"
+						report_text += "<B>Security Record Lost!</B><BR>"
 						P.name = text("SR-[] '[]'", GLOB.data_core.securityPrintCount, "Record Lost")
-					P.default_raw_text += "</TT>"
+					report_text += "</TT>"
+					P.add_raw_text(report_text)
+					P.update_appearance()
 					P.update_icon()
 					printing = null
+			// BLUEMOON ADD START - возможность распечатать автоматически сгенерированный ордер
+			if("Generate Arrest Warrant")
+				if(printing)
+					return
+				if(!canUseSecurityRecordsConsole(usr, "print", active1, active2))
+					return
+				if(!(istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1)) || !(istype(active2, /datum/data/record) && GLOB.data_core.security.Find(active2)))
+					say("Данные повреждены!")
+					return
+				var/list/crimes = active2.fields["ma_crim"] + active2.fields["mi_crim"]
+				if(!crimes.len) // Можно было ещё по c.penalties_incurred отфильтровать, но чёрт с ним
+					say("Правонарушения отсутствуют!")
+					return
+				printing = 1
+				GLOB.data_core.securityPrintCount++
+				playsound(loc, 'sound/items/poster_being_created.ogg', 100, 1)
+				sleep(30)
+				var/obj/item/paper/P = new /obj/item/paper( loc )
+				var/report_text = ""
+				report_text += {"
+					<h1><div align=\"center\">Ордер на арест №[GLOB.data_core.securityPrintCount]</div></h1>
+					<p><strong>Задерживаемый субъект:</strong>  [active1.fields["name"]]</p>
+					<p><strong>Причина задержания:</strong></p>
+					<p>Разыскивается службой безопасности [GLOB.station_name] в связи с нарушением статей Космического Закона::</p>"}
+				for(var/datum/data/crime/c in crimes)
+					if(c.penalties_incurred)
+						continue
+					var/crime_text = "<p>"
+					crime_text += "<b>" + c.crimeName + "</b> - " + c.crimeDetails
+					if(c.centcom_enforced)
+						crime_text += " <i>\[Центкомм\]</i>"
+					crime_text += "</p>"
+					report_text += crime_text
+				report_text += {"
+					<p><strong><div align=\"center\">Подписи и печати</strong></div></p>
+					<p><strong>Подпись составителя:</strong></p>
+					<p>\[________________________________________________________________\]</p>
+					<p><strong>Должность составителя:</strong></p>
+					<p>[rank]</p>
+					<p><strong>Дата:</strong></p>
+					<p>Время: [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]</p>
+					<p>Дата: [time2text(world.realtime, "MMM DD")] [GLOB.year_integer]</p>
+					<p><strong>Место для печатей</strong></p>
+					<hr/>
+					<br>
+					<br>
+					<br>
+					<hr/>
+					<font color=\"grey\"><div align=\"justify\">Основная часть документа сгенерирована автоматически.</div></font></p>
+					<font color=\"grey\"><div align=\"justify\">Данный документ считается действительным только при наличии подписи и печати, если таковая имеется.</div></font></p>
+					<font color=\"grey\"><div align=\"justify\">Данный документ имеет юридическую силу, только если составлен уполномоченным лицом.</div></font></p>"}
+				P.add_raw_text(report_text)
+				P.name = "Ордер на арест - [active1.fields["name"]]"
+				P.update_appearance()
+				P.update_icon()
+				printing = null
+			// BLUEMOON ADD END
 			if("Print Poster")
 				if(!( printing ))
 					var/wanted_name = stripped_input(usr, "Please enter an alias for the criminal:", "Print Wanted Poster", active1.fields["name"])
@@ -496,7 +566,7 @@ What a mess.*/
 					R.fields["name"] = active1.fields["name"]
 					R.fields["id"] = active1.fields["id"]
 					R.name = text("Security Record #[]", R.fields["id"])
-					R.fields["criminal"] = "None"
+					R.fields["criminal"] = SEC_RECORD_STATUS_NONE
 					R.fields["mi_crim"] = list()
 					R.fields["ma_crim"] = list()
 					R.fields["notes"] = "No notes."
@@ -526,7 +596,7 @@ What a mess.*/
 				R.fields["name"] = active1.fields["name"]
 				R.fields["id"] = active1.fields["id"]
 				R.name = text("Security Record #[]", R.fields["id"])
-				R.fields["criminal"] = "None"
+				R.fields["criminal"] = SEC_RECORD_STATUS_NONE
 				R.fields["mi_crim"] = list()
 				R.fields["ma_crim"] = list()
 				R.fields["notes"] = "No notes."
@@ -652,7 +722,8 @@ What a mess.*/
 							var/t2 = stripped_input(usr, "Please input minor crime details:", "Secure. records", "", null)
 							if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
 								return
-							var/crime = GLOB.data_core.createCrimeEntry(t1, t2, authenticated, STATION_TIME_TIMESTAMP("hh:mm:ss", world.time))
+							var/centcom_authority = (ACCESS_CENT_CAPTAIN in logged_access) // BLUEMOON EDIT - авторизация ЦК
+							var/crime = GLOB.data_core.createCrimeEntry(t1, t2, authenticated, STATION_TIME_TIMESTAMP("hh:mm:ss", world.time), centcom_authority)
 							GLOB.data_core.addMinorCrime(active1.fields["id"], crime)
 							investigate_log("New Minor Crime: <strong>[t1]</strong>: [t2] | Added to [active1.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
 					if("mi_crim_delete")
@@ -660,14 +731,16 @@ What a mess.*/
 							if(href_list["cdataid"])
 								if(!canUseSecurityRecordsConsole(usr, "delete", null, a2))
 									return
-								GLOB.data_core.removeMinorCrime(active1.fields["id"], href_list["cdataid"])
+								var/centcom_authority = (ACCESS_CENT_CAPTAIN in logged_access) // BLUEMOON EDIT - авторизация ЦК
+								GLOB.data_core.removeMinorCrime(active1.fields["id"], href_list["cdataid"], centcom_authority)
 					if("ma_crim_add")
 						if(istype(active1, /datum/data/record))
 							var/t1 = stripped_input(usr, "Please input major crime names:", "Secure. records", "", null)
 							var/t2 = stripped_input(usr, "Please input major crime details:", "Secure. records", "", null)
 							if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
 								return
-							var/crime = GLOB.data_core.createCrimeEntry(t1, t2, authenticated, STATION_TIME_TIMESTAMP("hh:mm:ss", world.time))
+							var/centcom_authority = (ACCESS_CENT_CAPTAIN in logged_access) // BLUEMOON EDIT - авторизация ЦК
+							var/crime = GLOB.data_core.createCrimeEntry(t1, t2, authenticated, STATION_TIME_TIMESTAMP("hh:mm:ss", world.time), centcom_authority)
 							GLOB.data_core.addMajorCrime(active1.fields["id"], crime)
 							investigate_log("New Major Crime: <strong>[t1]</strong>: [t2] | Added to [active1.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
 					if("ma_crim_delete")
@@ -675,7 +748,16 @@ What a mess.*/
 							if(href_list["cdataid"])
 								if(!canUseSecurityRecordsConsole(usr, "delete", null, a2))
 									return
-								GLOB.data_core.removeMajorCrime(active1.fields["id"], href_list["cdataid"])
+								var/centcom_authority = (ACCESS_CENT_CAPTAIN in logged_access) // BLUEMOON EDIT - авторизация ЦК
+								GLOB.data_core.removeMajorCrime(active1.fields["id"], href_list["cdataid"], centcom_authority)
+					// BLUEMOON ADD START - возможность пометить правонарушение как обработанное
+					if("crim_incur_switch")
+						if(istype(active1, /datum/data/record))
+							if(href_list["cdataid"])
+								if(!canUseSecurityRecordsConsole(usr, "incur", null, a2))
+									return
+								GLOB.data_core.switch_incur(active1.fields["id"], href_list["cdataid"])
+					// BLUEMOON ADD END
 					if("notes")
 						if(istype(active2, /datum/data/record))
 							var/t1 = stripped_multiline_input(usr, "Please summarize notes:", "Secure records", active2.fields["notes"], 8192)
@@ -686,11 +768,16 @@ What a mess.*/
 						if(istype(active2, /datum/data/record))
 							temp = "<h5>Criminal Status:</h5>"
 							temp += "<ul>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=none'>None</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=arrest'>*Arrest*</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=incarcerated'>Incarcerated</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=paroled'>Paroled</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=released'>Discharged</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=none'>Ничего</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=arrest'>*Арестовать*</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=execute'>*Уничтожить*</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=incarcerated'>Отбывает Срок</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=released'>Выпустили</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=parolled'>УДО</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=demote'>Уволить</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=search'>Искать</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=monitor'>Наблюдать</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=discharged'>Сняты Обвинения</a></li>"
 							temp += "</ul>"
 					if("rank")
 						if(istype(active1, /datum/data/record) && ((ACCESS_CAPTAIN in logged_access) || (ACCESS_HOP in logged_access)))
@@ -716,15 +803,26 @@ What a mess.*/
 							var/old_field = active2.fields["criminal"]
 							switch(href_list["criminal2"])
 								if("none")
-									active2.fields["criminal"] = "None"
+									active2.fields["criminal"] = SEC_RECORD_STATUS_NONE
 								if("arrest")
-									active2.fields["criminal"] = "*Arrest*"
+									active2.fields["criminal"] = SEC_RECORD_STATUS_ARREST
+								if("execute")
+									active2.fields["criminal"] = SEC_RECORD_STATUS_EXECUTE
 								if("incarcerated")
-									active2.fields["criminal"] = "Incarcerated"
-								if("paroled")
-									active2.fields["criminal"] = "Paroled"
+									active2.fields["criminal"] = SEC_RECORD_STATUS_INCARCERATED
 								if("released")
-									active2.fields["criminal"] = "Discharged"
+									active2.fields["criminal"] = SEC_RECORD_STATUS_RELEASED
+								if("parolled")
+									active2.fields["criminal"] = SEC_RECORD_STATUS_PAROLLED
+								if("demote")
+									active2.fields["criminal"] = SEC_RECORD_STATUS_DEMOTE
+								if("search")
+									active2.fields["criminal"] = SEC_RECORD_STATUS_SEARCH
+								if("monitor")
+									active2.fields["criminal"] = SEC_RECORD_STATUS_MONITOR
+								if("discharged")
+									active2.fields["criminal"] = SEC_RECORD_STATUS_DISCHARGED
+
 							investigate_log("[active1.fields["name"]] has been set from [old_field] to [active2.fields["criminal"]] by [key_name(usr)].", INVESTIGATE_RECORDS)
 							for(var/mob/living/carbon/human/H in GLOB.carbon_list)
 								H.sec_hud_set_security_status()

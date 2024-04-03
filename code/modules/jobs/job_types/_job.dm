@@ -115,6 +115,9 @@
 			access -= C.job_access_add[type]
 			minimal_access -= C.job_access_remove[type]
 
+/datum/job/proc/is_position_available()
+	return (current_positions < total_positions) || (total_positions == -1)
+
 //Only override this proc
 //H is usually a human unless an /equip override transformed it
 /datum/job/proc/after_spawn(mob/living/spawned, client/player_client, latejoin = FALSE)

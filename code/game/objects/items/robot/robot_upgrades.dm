@@ -8,31 +8,28 @@
 	icon_state = "cyborg_upgrade"
 	w_class = WEIGHT_CLASS_SMALL
 	var/locked = FALSE
-	var/installed = 0
-	var/require_module = 0
-	var/list/module_type
+	var/installed = FALSE
+	var/require_module = FALSE
+	var/list/module_type = null
 	///	Bitflags listing module compatibility. Used in the exosuit fabricator for creating sub-categories.
 	var/module_flags = NONE
 	// if true, is not stored in the robot to be ejected
 	// if module is reset
 	var/one_use = FALSE
+	/// Means this is a basetype and should not be used
+	var/abstract_type = /obj/item/borg/upgrade
+	/// Show the amount of this module that is installed
+	var/show_amount = FALSE
 
 /obj/item/borg/upgrade/proc/action(mob/living/silicon/robot/R, user = usr)
 	if(R.stat == DEAD)
-		to_chat(user, "<span class='warning'>[src] will not function on a deceased cyborg.</span>")
+		to_chat(user, span_warning("[src] will not function on a deceased cyborg!"))
 		return FALSE
 	if(module_type && !is_type_in_list(R.module, module_type))
-		to_chat(R, "<span class='alert'>Upgrade mounting error! No suitable hardpoint detected.</span>")
-		to_chat(user, "<span class='warning'>There's no mounting point for the module!</span>")
+		to_chat(R, span_alert("Upgrade mounting error! No suitable hardpoint detected."))
+		to_chat(user, span_warning("There's no mounting point for the module!"))
 		return FALSE
 	return TRUE
-
-/*
-This proc gets called by upgrades after installing them. Use this for things that for example need to be moved into a specific borg item,
-as performing this in action() will cause the upgrade to end up in the borg instead of its intended location due to forceMove() being called afterwards..
-*/
-/obj/item/borg/upgrade/proc/afterInstall(mob/living/silicon/robot/R, user = usr)
-	return
 
 /obj/item/borg/upgrade/proc/deactivate(mob/living/silicon/robot/R, user = usr)
 	if (!(src in R.upgrades))
@@ -95,6 +92,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 		VC = new /obj/effect/proc_holder/silicon/cyborg/vtecControl
 		R.AddAbility(VC)
 		R.cansprint = 0
+		R.disable_intentional_sprint_mode()
 
 /obj/item/borg/upgrade/vtec/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
@@ -324,11 +322,13 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 
 /obj/item/borg/upgrade/lavaproof/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	ADD_TRAIT(src, TRAIT_LAVA_IMMUNE, type)
+	if(.)
+		ADD_TRAIT(R, TRAIT_LAVA_IMMUNE, type)
 
 /obj/item/borg/upgrade/lavaproof/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
-	REMOVE_TRAIT(src, TRAIT_LAVA_IMMUNE, type)
+	if (.)
+		REMOVE_TRAIT(R, TRAIT_LAVA_IMMUNE, type)
 
 /obj/item/borg/upgrade/selfrepair
 	name = "self-repair module"
@@ -439,6 +439,7 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 		/obj/item/robot_module/syndicate_medical)
 	var/list/additional_reagents = list()
 	module_flags = BORG_MODULE_MEDICAL
+	abstract_type = /obj/item/borg/upgrade/hypospray
 
 /obj/item/borg/upgrade/hypospray/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
@@ -706,22 +707,53 @@ as performing this in action() will cause the upgrade to end up in the borg inst
 	action_icon_state = "Chevron_State_0"
 
 	var/currentState = 0
-	var/maxReduction = 0.5
 
 
 /obj/effect/proc_holder/silicon/cyborg/vtecControl/Trigger(mob/living/silicon/robot/user)
-	currentState = (currentState + 1) % 3
+	if(!(user.cell?.charge) || (!user.cell?.self_recharge && (user.cell?.charge <= 500)) || (user.cell?.self_recharge && (user.cell?.charge <= max(user.cell?.chargerate, 500))))
+		to_chat(user, "<span class='warning'>Critical cell charge! VTEC is temporarily disabled.</span>")
+		currentState = 0
+	else
+		currentState = (currentState + 1) % 3
 
 	if(istype(user))
 		switch(currentState)
-			if (0)
-				user.vtec = initial(user.vtec)
-			if (1)
-				user.vtec = initial(user.vtec) - maxReduction * 0.5
-			if (2)
-				user.vtec = initial(user.vtec) - maxReduction * 1
+			if (0) //default speed
+				user.vtec = initial(user.vtec) //"vtec" value is negative and the lesser it is the faster we move.
+			if (1) //slightly faster than runnung
+				user.vtec = initial(user.vtec) - 1 //cyborg sprinting is roughly -2. don't forget we can't sprint with vtec.
+			if (2) //overclocking module
+				user.vtec = initial(user.vtec) - 1.5 //while changing this value check /mob/living/silicon/robot/proc/use_power() to maintain proper power drain
 
 	action.button_icon_state = "Chevron_State_[currentState]"
 	action.UpdateButtonIcon()
 
 	return TRUE
+
+/obj/item/borg/upgrade/broomer
+	name = "Experimental Broom"
+	desc = "При активации позволяет толкать предметы перед собой в большой куче."
+	icon_state = "cyborg_upgrade3"
+	require_module = TRUE
+	module_type = list(/obj/item/robot_module/butler)
+	module_flags = BORG_MODULE_JANITOR
+
+/obj/item/borg/upgrade/broomer/action(mob/living/silicon/robot/R, user = usr)
+	. = ..()
+	if (!.)
+		return
+	var/obj/item/broom/cyborg/BR = locate() in R.module.modules
+	if (BR)
+		to_chat(user, span_warning("Этот киборг уже оснащен экспериментальным толкателем!"))
+		return FALSE
+	BR = new(R.module)
+	R.module.basic_modules += BR
+	R.module.add_module(BR, FALSE, TRUE)
+
+/obj/item/borg/upgrade/broomer/deactivate(mob/living/silicon/robot/R, user = usr)
+	. = ..()
+	if (!.)
+		return
+	var/obj/item/broom/cyborg/BR = locate() in R.module.modules
+	if (BR)
+		R.module.remove_module(BR, TRUE)

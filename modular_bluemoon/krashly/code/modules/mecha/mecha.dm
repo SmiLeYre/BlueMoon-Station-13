@@ -4,6 +4,8 @@
 	name = "\improper MIB-02 Ares"
 	icon = 'modular_bluemoon/krashly/icons/obj/mecha/ares.dmi'
 	icon_state = "ares"
+	operation_req_access = list(ACCESS_INTEQ)
+	internals_req_access = list(ACCESS_INTEQ)
 	armor = list(MELEE = 60, BULLET = 65, LASER = 50, ENERGY = 40, BOMB = 50, BIO = 0, RAD = 100, FIRE = 100, ACID = 100)
 	wreckage = /obj/structure/mecha_wreckage/ares
 
@@ -29,6 +31,8 @@
 	name = "\improper MIB-01 Hermes"
 	icon = 'modular_bluemoon/krashly/icons/obj/mecha/hermes.dmi'
 	icon_state = "hermes"
+	operation_req_access = list(ACCESS_INTEQ)
+	internals_req_access = list(ACCESS_INTEQ)
 	armor = list(MELEE = 50, BULLET = 50, LASER = 50, ENERGY = 35, BOMB = 30, BIO = 0, RAD =40, FIRE = 100, ACID = 100)
 	max_temperature = 60000
 	wreckage = /obj/structure/mecha_wreckage/hermes

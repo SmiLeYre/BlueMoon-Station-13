@@ -7,7 +7,6 @@
 	show_in_antagpanel = FALSE /// Not a proper/full antag.
 	should_equip = FALSE /// Don't give them an uplink.
 	var/datum/team/contractor_team/contractor_team
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /// Team for storing both the contractor and their support unit - only really for the HUD and admin logging.
 /datum/team/contractor_team

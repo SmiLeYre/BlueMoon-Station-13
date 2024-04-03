@@ -67,9 +67,14 @@
 	Только ОСОБЫЕ персонажи могут помочь вам встать обратно на ноги.                            \
 	У всех, кто пытается вас переместить, скорее всего, НЕ БУДЕТ нужного снаряжения или особенностей для этого. Будьте готовы, что вас могут убить \
 	из-за невозможности переместить или не станут доставлять в медбей/помогать прямо на месте смерти. \
-	'>сложнее помочь.</font>"
+	'>сложнее помочь.</font> \
+	Оглушающее оружие \
+	<font style='border-bottom:2px dotted white;cursor:help;' title='\
+	Шоковые дубинки, телескопические и т.п. не роняют на пол, а также наносят в два раза меньше урона по стамине. \
+	Оглушающие снаряды (например, лучи дизейблера) наносят в два раза меньше урона по стамине. \
+	'>действует на вас слабее.</font>"
 
-	value = -2
+	value = 0
 	mob_trait = TRAIT_BLUEMOON_HEAVY_SUPER
 	gain_text = span_warning("Плитка под вашими ногами может треснуть от неосторожного шага.")
 	lose_text = span_notice("Вы явно стали весить намного меньше. Сверхтяжёлый танк больше не кузен.")
@@ -93,7 +98,7 @@
 		return
 	var/mob/living/owner = quirk_holder
 	if(get_size(owner) < 0.8) // Самый маленький размер для сверхтяжёлых квирков - это 80%
-		to_chat(world, "Вы поняли, что ваш необъятный вес делает невозможным становление слишком маленьким.")
+		to_chat(owner, "Вы поняли, что ваш необъятный вес делает невозможным становление слишком маленьким.")
 		owner.update_size(0.8)
 
 /datum/quirk/bluemoon_heavy_super/on_spawn()
@@ -104,6 +109,90 @@
 	update_size_movespeed()
 	check_mob_size()
 
+/datum/quirk/bluemoon_devourer
+	name = "Пожиратель"
+	desc = "Ваши размеры огромны, а голод неутолим. Всё, что съедобно, для вас еда, а ожирение не помеха. Особенности вашей физиологии позволяют вам \
+	передвигаться на порядок быстрее, однако тело более восприимчиво к повреждениям. Вы не можете быть лёгким или сверхтяжёлым, а нормалазер на вас не действует."
+	value = 3
+	mob_trait = TRAIT_BLUEMOON_DEVOURER
+	medical_record_text = "Субъект проявляет признаки гигантизма и аномальной прожорливости, а также способность усваивать любую пищу."
+	gain_text = span_notice("Вы чувствуете неумалимый голод.")
+	lose_text = span_notice("Ваш голод проходит.")
+	processing_quirk = TRUE
+
+/datum/quirk/bluemoon_devourer/add()
+	// да, кушать можно всё, но нужно сильно больше
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/species/species = H.dna.species
+	species.disliked_food = null
+	H.physiology.hunger_mod *= 2
+	H.maxHealth *= 0.75 // -50% от доп хп.
+	// Действие на сборс сытости
+	var/datum/action/innate/vomit/act_vomit = new
+	act_vomit.Grant(H)
+
+	var/datum/action/innate/secrete_chemicals/act_secrete_chemicals = new
+	act_secrete_chemicals.Grant(H)
+	// Add examine text
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
+	ADD_TRAIT(H,TRAIT_BLUEMOON_ANTI_NORMALIZER, ROUNDSTART_TRAIT)
+
+
+/datum/quirk/bluemoon_devourer/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		var/datum/species/species = H.dna.species
+
+		species.liked_food = initial(species.liked_food)
+		species.disliked_food = initial(species.disliked_food)
+
+		//удаляем все модификаторы урона и скорости
+		H.remove_movespeed_modifier(/datum/movespeed_modifier/giant_quirk_boost)
+
+		H.physiology.hunger_mod *= 0.5
+		H.maxHealth *= 1.34
+
+		var/datum/action/innate/vomit/act_vomit = locate() in H.actions
+		act_vomit.Remove(H)
+
+		var/datum/action/innate/secrete_chemicals/act_secrete_chemicals = locate() in H.actions
+		act_secrete_chemicals.Remove(H)
+
+		UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
+		REMOVE_TRAIT(H,TRAIT_BLUEMOON_ANTI_NORMALIZER, ROUNDSTART_TRAIT)
+
+// Quirk examine text
+/datum/quirk/bluemoon_devourer/proc/on_examine_holder(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
+	examine_list += "[quirk_holder.ru_ego(TRUE)] явно мучает голод."
+
+
+/datum/quirk/bluemoon_devourer/proc/update_size_modifiers(new_size, cur_size)
+	if (check_mob_size() && new_size != cur_size) // не даём уменьшиться, в т.ч. если мёртв
+		var/mob/living/carbon/human/H= quirk_holder
+
+		var/user_slowdown = (abs(new_size - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
+
+		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/giant_quirk_boost, TRUE, user_slowdown * -0.8) // убираем 80% от замедления
+
+
+/datum/quirk/bluemoon_devourer/proc/check_mob_size()
+	if(!isliving(quirk_holder))
+		return FALSE
+
+	var/mob/living/owner = quirk_holder
+
+	if(get_size(owner) < 2)
+		to_chat(owner, "Ваш размер невозможно изменить")
+		owner.update_size(2)
+		return FALSE
+	return TRUE
+
+/datum/quirk/bluemoon_devourer/on_spawn()
+	. = ..()
+	var/mob/living/H = quirk_holder
+	update_size_modifiers(get_size(H), 1)
+
+
 /*
 ПЕРЕМЕННЫЕ ДЛЯ МОДИФИКАТОРОВ СКОРОСТИ
 */
@@ -113,3 +202,39 @@
 
 /datum/movespeed_modifier/heavy_quirk_slowdown
 	variable = TRUE
+
+/datum/movespeed_modifier/giant_quirk_boost
+	variable = TRUE
+
+
+/*
+Действия
+*/
+
+/datum/action/innate/vomit
+	name = "Vomit"
+	desc = "Vomit some digested food from your body."
+	icon_icon = 'icons/mob/actions/actions_xeno.dmi'
+	button_icon_state = "alien_barf"
+
+/datum/action/innate/vomit/Activate()
+	var/mob/living/carbon/human/H = owner
+	H.vomit(lost_nutrition = 50, stun = FALSE)
+	H.adjustToxLoss(-10)
+
+/datum/action/innate/secrete_chemicals
+	name = "Screte Chemicals"
+	desc = "Screte some chemicals into your blood."
+	icon_icon = 'icons/mob/actions/actions_xeno.dmi'
+	button_icon_state = "alien_acid"
+
+/datum/action/innate/secrete_chemicals/Activate()
+	var/mob/living/carbon/human/H = owner
+	if(H.nutrition >= NUTRITION_LEVEL_WELL_FED)
+		H.reagents.add_reagent(/datum/reagent/medicine/salglu_solution, 10)
+		H.reagents.add_reagent(/datum/reagent/drug/aphrodisiac, 5)
+		H.add_lust(20)
+		H.adjust_nutrition(100)
+		to_chat(owner, "<span class='notice'>Вы разлагаете часть ваших пищевых запасов, выпуская в кровь смесь реагентов.</span>")
+	else
+		to_chat(owner, "<span class='notice'>Вы слишком голодны для этого.</span>")

@@ -149,7 +149,7 @@
 /obj/item/choice_beacon/pet //donator beacon that summons a small friendly animal
 	name = "pet beacon"
 	desc = "Straight from the outerspace pet shop to your feet."
-	var/static/list/pets = list("Crab" = /mob/living/simple_animal/crab,
+	var/list/pets = list("Crab" = /mob/living/simple_animal/crab,
 		"Cat" = /mob/living/simple_animal/pet/cat,
 		"Space cat" = /mob/living/simple_animal/pet/cat/space,
 		"Kitten" = /mob/living/simple_animal/pet/cat/kitten,
@@ -161,6 +161,20 @@
 		"Red Panda" = /mob/living/simple_animal/pet/redpanda,
 		"Possum" = /mob/living/simple_animal/opossum)
 	var/pet_name
+
+/obj/item/choice_beacon/pet/moro
+	pets = list("Crab" = /mob/living/simple_animal/crab,
+		"Cat" = /mob/living/simple_animal/pet/cat,
+		"Space cat" = /mob/living/simple_animal/pet/cat/space,
+		"Kitten" = /mob/living/simple_animal/pet/cat/kitten,
+		"Dog" = /mob/living/simple_animal/pet/dog,
+		"Corgi" = /mob/living/simple_animal/pet/dog/corgi,
+		"Pug" = /mob/living/simple_animal/pet/dog/pug,
+		"Exotic Corgi" = /mob/living/simple_animal/pet/dog/corgi/exoticcorgi,
+		"Fox" = /mob/living/simple_animal/pet/fox,
+		"Red Panda" = /mob/living/simple_animal/pet/redpanda,
+		"Possum" = /mob/living/simple_animal/opossum,
+		"Moro" = /mob/living/simple_animal/pet/cat/moro)
 
 /obj/item/choice_beacon/pet/generate_display_names()
 	return pets
@@ -272,3 +286,4 @@
 	icon_state = "skub"
 	w_class = WEIGHT_CLASS_BULKY
 	attack_verb = list("skubbed")
+

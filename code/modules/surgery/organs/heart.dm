@@ -26,6 +26,15 @@
 	var/operated = FALSE	//whether the heart's been operated on to fix some of its damages
 	var/key_for_dreamer = null
 
+// BLUEMOON ADD START
+/obj/item/organ/heart/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
+	. = ..()
+	if(HAS_TRAIT(organ_mob, TRAIT_ROBOTIC_ORGANISM))
+		low_threshold_passed = span_info("[name]: обнаружены умеренные повреждения. Риск отказа системы. Рекомендуется замена.")
+		high_threshold_passed = span_warning("[name]: обнаружены тяжёлые повреждения. Риск отказа системы. Требуется замена.")
+		now_fixed = span_info("[name]: функционирование системы восстановлено.")
+// BLUEMOON ADD END
+
 /obj/item/organ/heart/update_icon_state()
 	if(beating)
 		icon_state = "[icon_base]-on"
@@ -81,7 +90,12 @@
 		if(owner.health <= owner.crit_threshold && beat != BEAT_SLOW)
 			beat = BEAT_SLOW
 			owner.playsound_local(get_turf(owner), slowbeat,40,0, channel = CHANNEL_HEARTBEAT)
-			to_chat(owner, "<span class = 'notice'>Стук вашего сердца замедляется...</span>")
+			// BLUEMOON ADD START - кастомное описание для роботов
+			if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
+				// TO DO
+			else
+			// BLUEMOON ADD END
+				to_chat(owner, "<span class = 'notice'>Стук вашего сердца замедляется...</span>")
 		if(beat == BEAT_SLOW && owner.health > owner.crit_threshold)
 			owner.stop_sound_channel(CHANNEL_HEARTBEAT)
 			beat = BEAT_NONE
@@ -292,7 +306,7 @@
 	if(prob(10)) //Chance of permanent effects
 		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
 		if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
-			to_chat(owner, span_danger("Fatal failure detected in \the [src] - Emergency mod activated for next 4 minutes - Seek for replace immediately."))
+			to_chat(owner, span_userdanger("Fatal failure detected in \the [src] - Emergency mod activated for next 4 minutes - Seek for replace immediately."))
 // BLUEMOON ADD END
 
 /obj/item/organ/heart/freedom

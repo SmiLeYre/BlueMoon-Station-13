@@ -81,7 +81,10 @@
 		adjusted_climb_time *= 0.25 //aliens are terrifyingly fast
 	if(HAS_TRAIT(user, TRAIT_FREERUNNING)) //do you have any idea how fast I am???
 		adjusted_climb_time *= 0.8
-	// BLUEMOON ADDITION AHEAD - тяжёлые персонажи медленее забираются на преграды
+	// BLUEMOON ADDITION взаимодействия квирков и размеров на скорость залезания на стол
+	if(get_size(user) < 0.8) //BLUEMOON ADD персонажи меньше 0.8 дольше забираются на столы
+		adjusted_climb_time *= 2 - get_size(user) //x1.75 при размере 25%; x1.2 при размере 80%
+	// тяжёлые персонажи медленее забираются на преграды
 	if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY))
 		adjusted_climb_time *= 2
 	// BLUEMOON ADDITION END
@@ -90,7 +93,7 @@
 		if(src.loc) //Checking if structure has been destroyed
 			if(do_climb(user))
 				// BLUEMOON ADDITION AHEAD - сверхтяжёлые персонажи пересекают преграды быстро, но в процессе ломают их
-				if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER))
+				if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER) && !istype(src, /obj/structure/closet/crate))
 					visible_message(span_warning("[src] breaks in half under the weight of [user]!"))
 					playsound(src, 'modular_bluemoon/heavy_and_superheavy_quirks/chair_break.ogg', 70, TRUE)
 					deconstruct(FALSE)

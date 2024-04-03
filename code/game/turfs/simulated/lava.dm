@@ -185,6 +185,9 @@
 #undef LAVA_BE_BURNING
 
 /turf/open/lava/proc/do_burn(atom/movable/burn_target, delta_time = 1)
+	if(QDELETED(burn_target))
+		return FALSE
+
 	. = TRUE
 	if(isobj(burn_target))
 		var/obj/burn_obj = burn_target
@@ -201,14 +204,14 @@
 			var/obj/structure/closet/burn_closet = burn_obj
 			for(var/burn_content in burn_closet.contents)
 				burn_stuff(burn_content)
+		return
 
-	if(ismob(burn_target))
-		var/mob/living/burn_living = burn_target
-		burn_living.update_fire()
-		burn_living.adjustFireLoss(lava_damage * delta_time)
-		if(!QDELETED(burn_living)) //mobs turning into object corpses could get deleted here.
-			burn_living.adjust_fire_stacks(lava_firestacks * delta_time)
-			burn_living.IgniteMob()
+	var/mob/living/burn_living = burn_target
+	burn_living.update_fire()
+	burn_living.adjustFireLoss(lava_damage * delta_time)
+	if(!QDELETED(burn_living)) //mobs turning into object corpses could get deleted here.
+		burn_living.adjust_fire_stacks(lava_firestacks * delta_time)
+		burn_living.IgniteMob()
 
 /turf/open/lava/smooth
 	name = "lava"

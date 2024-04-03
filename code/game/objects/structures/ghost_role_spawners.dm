@@ -7,7 +7,7 @@
 	name = "\improper Ghost Role"
 	job_rank = ROLE_GHOSTROLE
 	show_in_antagpanel = FALSE
-	soft_antag = FALSE
+	soft_antag = TRUE
 	show_name_in_check_antagonists = FALSE
 	show_to_ghosts = TRUE
 	antagpanel_category = "Ghost Role"
@@ -226,10 +226,11 @@
 	var/has_owner = FALSE
 	var/can_transfer = TRUE //if golems can switch bodies to this new shell
 	var/mob/living/owner = null //golem's owner if it has one
-	short_desc = "You are a Free Golem. Your family worships The Liberator."
-	flavour_text = "In his infinite and divine wisdom, he set your clan free to \
-	travel the stars with a single declaration: \"Yeah go do whatever.\" Though you are bound to the one who created you, it is customary in your society to repeat those same words to newborn \
-	golems, so that no golem may ever be forced to serve again."
+	short_desc = "Вы - свободный голем. Ваша семья поклоняется Освободителю."
+	flavour_text = "В своей бесконечной и божественной мудрости Освободитель освободил ваш клан, чтобы \
+	путешествовать по звездам с одним единственным заявлением: \ 'Да, делай что хочешь.'\ Хотя вы связаны с тем, кто вас создал, в вашем обществе принято повторять эти же слова новорожденным \
+	големам, чтобы ни один голем никогда не был вынужден служить снова."
+	important_info = "Вы не Антагонист."
 
 /obj/effect/mob_spawn/human/golem/Initialize(mapload, datum/species/golem/species = null, mob/creator = null)
 	if(species) //spawners list uses object name to register so this goes before ..()
@@ -361,14 +362,15 @@
 
 //Broken rejuvenation pod: Spawns in animal hospitals in lavaland. Ghosts become disoriented interns and are advised to search for help.
 /obj/effect/mob_spawn/human/doctor/alive/lavaland
-	name = "broken rejuvenation pod"
+	name = "Broken Rejuvenation Pod"
 	desc = "A small sleeper typically used to instantly restore minor wounds. This one seems broken, and its occupant is comatose."
 	job_description = "Lavaland Veterinarian"
 	mob_name = "a translocated vet"
-	short_desc = "You are a animal doctor who just woke up in lavaland"
-	flavour_text = "What...? Where are you? Where are the others? This is still the animal hospital - you should know, you've been an intern here for weeks - but \
-	you see them right now. So where is \
-	everyone? Where did they go? What happened to the hospital? And is that <i>smoke</i> you smell? You need to find someone else. Maybe they c	everyone's gone. One of the cats scratched you just a few minutes ago. That's why you were in the pod - to heal the scratch. The scabs are still fresh; an tell you what happened."
+	short_desc = "Вы - врач-животновод, только что проснувшийся в Лаваланде."
+	flavour_text = "Что...? Где вы? Где остальные? Это все еще больница для животных - вы должны знать, вы были здесь интерном в течение нескольких недель - но \
+	вы видите, что очутились где-то в неизвестном месте прямо сейчас. Так где же \
+	все? Куда они делись? Что случилось с больницей? И этот запах дыма? Вам нужно найти кого-нибудь еще. Может быть, они думают, что все ушли. Одна из кошек поцарапала тебя всего несколько минут назад. Поэтому вы и были в капсуле - чтобы залечить царапину. Струпья еще свежие..."
+	important_info = "Вы не Антагонист."
 	assignedrole = "Translocated Vet"
 	canloadappearance = TRUE
 
@@ -426,14 +428,13 @@
 	job_description = "Hotel Staff"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
-	objectives = "Cater to visiting guests with your fellow staff. Do not leave your assigned hotel and always remember: The customer is always right!"
 	death = FALSE
 	roundstart = FALSE
 	random = TRUE
 	outfit = /datum/outfit/hotelstaff
-	short_desc = "You are a staff member of a top-of-the-line space hotel!"
-	flavour_text = "You are a staff member of a top-of-the-line space hotel! Cater to guests and make sure the manager doesn't fire you."
-	important_info = "DON'T leave the hotel"
+	short_desc = "Вы - член обслуживающего персонала космического отеля."
+	flavour_text = "Вы нанялись в качестве персонала общего профиля для уборки, готовки, обслуживания гостей и всего, что прикажет менеджер на время пребывания на борту космического отеля. Ни в коем случае не грубите, не хамите и не ругайтесь с посетителями. Помните, что в вашем случае, клиент всегда прав."
+	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или установки телепада)."
 	assignedrole = "Hotel Staff"
 	canloadappearance = TRUE
 	loadout_enabled = TRUE
@@ -452,11 +453,9 @@
 	mob_name = "hotel security member"
 	job_description = "Hotel Security"
 	outfit = /datum/outfit/hotelstaff/security
-	short_desc = "You are a peacekeeper."
-	flavour_text = "You have been assigned to this hotel to protect the interests of the company while keeping the peace between \
-		guests and the staff."
-	important_info = "Do NOT leave the hotel, as that is grounds for contract termination."
-	objectives = "Do not leave your assigned hotel. Try and keep the peace between staff and guests, non-lethal force heavily advised if possible."
+	short_desc = "Вы - охранник космического отеля."
+	flavour_text = "Вы были назначены в этот отель, чтобы защищать интересы компании Nanotrasen, недавно выкупившей его. Ведите себя вежливо, не размахивайте оружием и бронёй, не грубите посетителям - в первую очередь, вы не должны мешать наслаждаться пребыванием и отпугивать адекватных клиентов."
+	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или установки телепада). Не ведите себя как СБ со станции - вы обычный гражданский и не обучены для борьбы с террористами, предателями, аномалиями и другими неординарными сущностями."
 
 /datum/outfit/hotelstaff/security
 	name = "Hotel Secuirty"
@@ -634,6 +633,15 @@
 	head = /obj/item/clothing/head/HoS/syndicate
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 	glasses = /obj/item/clothing/glasses/thermal/eyepatch
+
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/syndicate_empty/battlecruiser/assault/captain/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
 
 //Ancient cryogenic sleepers. Players become NT crewmen from a hundred year old space station, now on the verge of collapse.
 /obj/effect/mob_spawn/human/oldsec
@@ -820,7 +828,7 @@
 	loadout_enabled = FALSE
 	assignedrole = "Ghost Cafe Visitor"
 	short_desc = "Вы посетитель Призрачного Кафе!"
-	flavour_text = "You know one thing for sure. You arent actually alive. Are you in a simulation?"
+	flavour_text = "Вы совершенно уверены в одном. Вы не живое существо. Вы в симуляции? Заходя за данную роль вы соглашаетесь с тем, что на территории Гост-Кафе полностью отсутствуют какие-либо правила Ролевой Игры. Тем не менее, базовые серверные правила не отменяются. Вы должны вести себя адекватно так, чтобы не мешать другим игрокам и не портить саму локацию. Если в чём-то не уверены или нужна помощь - всегда можете попросить помощи Администратора. Несоблюдение базовых норм поведения повлекут за собой наказание."
 	skip_reentry_check = TRUE
 	banType = ROLE_GHOSTCAFE
 	back = /obj/item/storage/backpack/holding/satchel // BLUEMOON ADD
@@ -921,7 +929,7 @@
 		SSquirks.AssignQuirks(new_spawn, new_spawn.client, TRUE, TRUE, null, FALSE, new_spawn)
 		new_spawn.AddElement(/datum/element/ghost_role_eligibility, free_ghosting = TRUE)
 		new_spawn.AddElement(/datum/element/dusts_on_catatonia)
-		new_spawn.AddElement(/datum/element/dusts_on_leaving_area,list(A.type,/area/hilbertshotel))
+		new_spawn.AddElement(/datum/element/dusts_on_leaving_area,list(A.type, /area/centcom/holding/exterior,  /area/hilbertshotel)) // BLUEMOON EDIT - добавлена внешняя зона ГК
 		ADD_TRAIT(new_spawn, TRAIT_SIXTHSENSE, GHOSTROLE_TRAIT)
 		ADD_TRAIT(new_spawn, TRAIT_EXEMPT_HEALTH_EVENTS, GHOSTROLE_TRAIT)
 		ADD_TRAIT(new_spawn, TRAIT_NO_MIDROUND_ANTAG, GHOSTROLE_TRAIT) //The mob can't be made into a random antag, they are still eligible for ghost roles popups.
@@ -995,7 +1003,7 @@
 	job_description = "Oldstation Crew"
 	canloadappearance = TRUE
 	loadout_enabled = TRUE
-	computer_area = /area/ruin/space/has_grav/port_tarkon/centerhall
+	computer_area = /area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall
 
 	give_cooler_to_mob_if_synth = TRUE
 
@@ -1163,25 +1171,125 @@
 	name = "Tarkov Ensign's Access Card"
 	desc = "An access card designated for \"Tarkov Ensign\". No one has to listen to you... but you're the closest there is for command around here."
 
+// CENTCOM
+
+/obj/effect/mob_spawn/human/centcom_syndicate
+	name = "Special Operations Forces Syndicate Specialist"
+	roundstart = FALSE
+	death = FALSE
+	job_description = "Special Operations Forces Syndicate Specialist"
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper_s"
+	short_desc = "Вы Интерн-Специалист, взятый на работу Центральным Командованием в качестве очередной рабочей единицы."
+	flavour_text = "Не так давно вы были взяты на работу в качестве дежурного на Аванпосту Центрального Командования. Ваша задача проста - следить за факсом и отвечать на сообщения, полученные через факс. Помните, что часть сообщений поступает из иного пласта Вселенной, потому не пугайтесь, если вдруг окажется, что где-то там вызывают Кровавого Бога. Просто выполняйте свою работу и отправляйте инструкции."
+	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей."
+	outfit = /datum/outfit/centcom_syndicate
+	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
+	assignedrole = "Centcom Specialist"
+	canloadappearance = TRUE
+	loadout_enabled = TRUE
+
+/datum/outfit/centcom_syndicate
+	name = "Special Ops Syndicate Officer"
+	head = /obj/item/clothing/head/HoS/beret/syndicate
+	ears = /obj/item/radio/headset/headset_cent/commander
+	mask = /obj/item/clothing/mask/cigarette/cigar/havana
+	glasses = /obj/item/clothing/glasses/aviators
+	suit = /obj/item/clothing/suit/armor/vest/warden/syndicate
+	uniform = /obj/item/clothing/under/syndicate/combat
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	shoes = /obj/item/clothing/shoes/combat/swat
+
+	l_pocket = /obj/item/extinguisher/mini
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+	back = /obj/item/storage/backpack/satchel/sec
+
+	id = /obj/item/card/id
+
+/datum/outfit/centcom_syndicate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	if(visualsOnly)
+		return
+
+	var/obj/item/card/id/W = H.wear_id
+	W.icon_state = "centcom"
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("Special Ops Syndicate Officer")
+	W.assignment = "Special Ops Syndicate Officer"
+	W.registered_name = H.real_name
+	W.update_label()
+
+	var/obj/item/radio/headset/R = H.ears
+	R.set_frequency(FREQ_CENTCOM)
+	R.freqlock = TRUE
+
+/obj/effect/mob_spawn/human/centcom_nanotrasen
+	name = "Special Operations Forces Nanotrasen Specialist"
+	roundstart = FALSE
+	death = FALSE
+	job_description = "Special Operations Forces Nanotrasen Specialist"
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper_s"
+	short_desc = "Вы Интерн-Специалист, взятый на работу Центральным Командованием в качестве очередной рабочей единицы."
+	flavour_text = "Не так давно вы были взяты на работу в качестве дежурного на Аванпосту Центрального Командования. Ваша задача проста - следить за факсом и отвечать на сообщения, полученные через факс. Помните, что часть сообщений поступает из иного пласта Вселенной, потому не пугайтесь, если вдруг окажется, что где-то там вызывают Кровавого Бога. Просто выполняйте свою работу и отправляйте инструкции."
+	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей."
+	outfit = /datum/outfit/centcom_nanotrasen
+	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
+	assignedrole = "Centcom Specialist"
+	canloadappearance = TRUE
+	loadout_enabled = TRUE
+
+/datum/outfit/centcom_nanotrasen
+	name = "Special Ops Nanotrasen Officer"
+	head = /obj/item/clothing/head/beret/black
+	ears = /obj/item/radio/headset/headset_cent/commander
+	glasses = /obj/item/clothing/glasses/aviators
+	suit = /obj/item/clothing/suit/space/officer
+	uniform = /obj/item/clothing/under/syndicate
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	shoes = /obj/item/clothing/shoes/combat/swat
+
+	l_pocket = /obj/item/extinguisher/mini
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+	back = /obj/item/storage/backpack/satchel/leather
+
+	id = /obj/item/card/id
+
+/datum/outfit/centcom_nanotrasen/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	if(visualsOnly)
+		return
+
+	var/obj/item/card/id/W = H.wear_id
+	W.icon_state = "centcom"
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("Special Ops Centcom Officer")
+	W.assignment = "Special Ops Centcom Officer"
+	W.registered_name = H.real_name
+	W.update_label()
+
+	var/obj/item/radio/headset/R = H.ears
+	R.set_frequency(FREQ_CENTCOM)
+	R.freqlock = TRUE
+
 //DS-2.
 /obj/effect/mob_spawn/human/ds2
 	name = "DS-2 personnel"
 	mob_name = "DS-2 personnel"
 	short_desc = "Вы Специалист Синдиката, работающий на Общем Корабле Синдиката из ячейки 'Глубокий Космос Два' под названием 'Благославлённый' под Начальством Адмирала одной из Сторон и изучающий аномальное поле Системы Синих Лун."
 	flavour_text = "Синдикат счел нужным направить передовую оперативную базу в Сектор Тринадцать для наблюдения за операциями NT и Кордоном. Ваш приказ - поддерживать целостность корабля и по возможности не высовываться."
-	important_info = "Вы не Антагонист, но вы можете помогать Станции и тем более с одобрения Администрации."
+	important_info = "Вы не Антагонист. Вы можете отправиться на станцию в Эксту. В Динамик вам следует быть ниже травы и тише воды."
 	roundstart = FALSE
 	death = FALSE
 	random = TRUE
 	canloadappearance = TRUE
 	loadout_enabled = TRUE
+	use_outfit_name = TRUE
 	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
 
 /obj/effect/mob_spawn/human/ds2/prisoner
 	name = "Syndicate Prisoner"
 	mob_name = "a Syndicate prisoner"
 	short_desc = "По какой-то причине вы оказались в тюремной части Корабля 'Благославлённый' с неизвестным сроком."
-	flavour_text = "Не осознавая, где вы находитесь, вы знаете только то, что вы в плену. Что касается того, почему вы здесь? Ваша голова раскалывается и вы просто не помните..."
+	flavour_text = "Не осознавая, где вы находитесь, вы знаете только то, что вы в плену. Вы были высокопоставленным лицом Nanotrasen или же серьёзно нарушили кодекс Синдиката, или являетесь кем бы то не было другим и это единственная информация, которая таится в вашей голове. Что касается того, почему вы здесь? Ваша голова раскалывается и вы просто не помните..."
 	important_info = "Вы все еще подчиняетесь стандартной политике заключенных и должны обратиться к администратору, прежде чем враждовать с DS2."
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
@@ -1194,7 +1302,7 @@
 	icon_state = "sleeper_s"
 	short_desc = "Вы Специалист Синдиката, работающий на Оперативной Базе Синдиката из формирования 'Глубокий Космос Два' под названием 'Благославлённый' под Начальством Адмирала одной из Сторон и изучающий аномальное поле Системы Синих Лун."
 	flavour_text = "Синдикат счел нужным направить передовую оперативную базу в Сектор Тринадцать для наблюдения за операциями NT и Кордоном. Ваш приказ - поддерживать целостность корабля и по возможности не высовываться."
-	important_info = "Вы не Антагонист, но вы можете помогать Станции и тем более с одобрения Администрации."
+	important_info = "Вы не Антагонист. Вы можете отправиться на станцию в Эксту. В Динамик вам следует быть ниже травы и тише воды."
 	outfit = /datum/outfit/ds2/syndicate
 
 /obj/effect/mob_spawn/human/ds2/syndicate_command
@@ -1204,16 +1312,28 @@
 	icon_state = "sleeper_s"
 	short_desc = "Вы Адмирал одной из ячеек Синдиката, работающий на Корабле Синдиката из ячейки 'Глубокий Космос Два' под названием 'Благославлённый'. Приведите Объект под вашей ответственностью к успеху, который планировался, либо умрите - стараясь."
 	flavour_text = "Синдикат счел нужным направить передовую оперативную базу в Сектор Тринадцать для наблюдения за операциями NT и Кордоном. Ваш приказ - поддерживать целостность корабля и по возможности не высовываться."
-	important_info = "Вы не Антагонист, но вы можете помогать Станции и тем более с одобрения Администрации."
+	important_info = "Вы не Антагонист. Вы можете отправиться на станцию в Эксту. В Динамик вам следует быть ниже травы и тише воды."
 	outfit = /datum/outfit/ds2/syndicate_command
 
 /obj/effect/mob_spawn/human/ds2/syndicate/special(mob/living/new_spawn)
 	. = ..()
 	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
+	var/obj/item/implant/anchor/ghost_anchor = new
+	ghost_anchor.allowed_z_levels = list(1, 6, 12, src.z) // dynamic набор: цк, ксено межшатолье, инфдормы, сектор имплантации
+	if(GLOB.master_mode == "Extended")
+		ghost_anchor.allowed_z_levels.Add(2,5) // экстовая добавка: станционный, шахта
+	ghost_anchor.implant(new_spawn, null, TRUE)
+
 /obj/effect/mob_spawn/human/ds2/syndicate_command/special(mob/living/new_spawn)
 	. = ..()
 	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
+
+	var/obj/item/implant/anchor/ghost_anchor = new
+	ghost_anchor.allowed_z_levels = list(1, 6, 12, src.z) // dynamic набор: цк, ксено межшатолье, инфдормы, сектор имплантации
+	if(GLOB.master_mode == "Extended")
+		ghost_anchor.allowed_z_levels.Add(2,5) // экстовая добавка: станционный, шахта
+	ghost_anchor.implant(new_spawn, null, TRUE)
 
 /obj/effect/mob_spawn/human/ds2/syndicate/service
 	outfit = /datum/outfit/ds2/syndicate/service
@@ -1445,11 +1565,10 @@
 	neck = /obj/item/clothing/neck/cloak/syndieadm
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate
 	back = /obj/item/storage/backpack/satchel
-	belt = /obj/item/gun/ballistic/automatic/pistol/aps
+	belt = /obj/item/gun/ballistic/automatic/pistol/APS
 	head = /obj/item/clothing/head/HoS/syndicate
 	id = /obj/item/card/id/syndicate/advanced/black/gold
 	id_trim = /datum/id_trim/syndicom/ds2/stationadmiral
-
 /obj/item/card/id/syndicate/advanced/black/gold
 	assignment = "DS-2 Admiral"
 	icon_state = "gold"
@@ -1533,6 +1652,7 @@
 /obj/item/card/id/syndicate/advanced/black
 	name = "Agent Card"
 	icon_state = "card_black"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE)
 
 //CRYO CONSOLES
 /obj/machinery/computer/cryopod/ds1

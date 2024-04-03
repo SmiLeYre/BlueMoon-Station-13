@@ -482,12 +482,13 @@
 			if(show_message)
 				to_chat(M, "<span class='warning'>Your stomach feels empty and cramps!</span>")
 		else
+			/* BLUEMOON REMOVAL START - шанс на операцию за обезболивающее перенесен
 			var/mob/living/carbon/C = M
 			for(var/s in C.surgeries)
 				var/datum/surgery/S = s
 				S.success_multiplier = max(0.1, S.success_multiplier)
 				// +10% success propability on each step, useful while operating in less-than-perfect conditions
-
+			/ BLUEMOON REMOVAL END */
 			if(show_message)
 				to_chat(M, "<span class='danger'>You feel your injuries fade away to nothing!</span>" )
 	..()
@@ -825,33 +826,35 @@
 	description = "A painkiller that allows the patient to move at full speed even in bulky objects. Causes drowsiness and eventually unconsciousness in high doses. Overdose will cause a variety of effects, ranging from minor to lethal."
 	reagent_state = LIQUID
 	color = "#A9FBFB"
-	metabolization_rate = 0.5 * REAGENTS_METABOLISM
-	overdose_threshold = 30
+	metabolization_rate = 0.1
+	overdose_threshold = 20
 	addiction_threshold = 25
 	pH = 8.96
 
 /datum/reagent/medicine/morphine/on_mob_metabolize(mob/living/L)
 	..()
 	ADD_TRAIT(L, TRAIT_PAINKILLER, PAINKILLER_MORPHINE) //SKYRAT EDIT, Painkiller.
+	L.throw_alert("painkiller", /atom/movable/screen/alert/painkiller) // BLUEMOON ADD
 	L.add_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
 
 /datum/reagent/medicine/morphine/on_mob_end_metabolize(mob/living/L)
 	L.remove_movespeed_mod_immunities(type, list(/datum/movespeed_modifier/damage_slowdown, /datum/movespeed_modifier/damage_slowdown_flying, /datum/movespeed_modifier/monkey_health_speedmod))
 	REMOVE_TRAIT(L, TRAIT_PAINKILLER, PAINKILLER_MORPHINE) //SKYRAT EDIT, Painkiller.
+	L.clear_alert("painkiller", /atom/movable/screen/alert/painkiller) // BLUEMOON ADD
 	..()
 
 /datum/reagent/medicine/morphine/on_mob_life(mob/living/carbon/M)
-	switch(current_cycle)
-		if(11)
-			to_chat(M, "<span class='warning'>You start to feel tired...</span>" )
-		if(12 to 24)
-			M.drowsyness += 1
-		if(24 to INFINITY)
-			M.Sleeping(40, 0)
-			. = 1
 	..()
 
 /datum/reagent/medicine/morphine/overdose_process(mob/living/M)
+	switch(current_cycle)
+		if(12)
+			to_chat(M, "<span class='warning'>Вы чувствуете себя устало...</span>" )
+		if(24 to 48)
+			M.drowsyness += 1
+		if(96 to INFINITY)
+			M.Sleeping(100, 0) // BLUEMOON EDIT - было 40, сделал 100. Морфин по итогу не накладывает сон и человек просыпается быстро.
+			. = 1
 	if(prob(33))
 		M.drop_all_held_items()
 		M.Dizzy(2)
@@ -1149,6 +1152,7 @@
 	metabolization_rate = 0.25 * REAGENTS_METABOLISM
 	overdose_threshold = 60
 	pH = 8.7
+	can_synth = FALSE //BLUEMOON CHANGE ролькоприколы остаются у ролек
 //	chemical_flags = REAGENT_ALL_PROCESS (BLUEMOON REMOVAL - роботы не должны получать эффекты реагента)
 	value = REAGENT_VALUE_GLORIOUS
 
@@ -1343,6 +1347,7 @@
 	pH = 11
 	chemical_flags = REAGENT_ALL_PROCESS
 	value = REAGENT_VALUE_EXCEPTIONAL
+	can_synth = FALSE //BLUEMOON CHANGE ролькоприколы остаются у ролек
 
 /datum/reagent/medicine/syndicate_nanites/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-5*REM, FALSE) //A ton of healing - this is a 50 telecrystal investment.
@@ -1365,6 +1370,7 @@
 	pH = 11
 	chemical_flags = REAGENT_ALL_PROCESS
 	value = REAGENT_VALUE_VERY_RARE
+	can_synth = FALSE //BLUEMOON CHANGE ролькоприколы остаются у ролек
 
 /datum/reagent/medicine/lesser_syndicate_nanites/on_mob_life(mob/living/carbon/M)
 	M.adjustBruteLoss(-4*REM, FALSE)
@@ -1498,6 +1504,7 @@
 	color = "#C1151D"
 	overdose_threshold = 30
 	value = REAGENT_VALUE_VERY_RARE
+	can_synth = FALSE //BLUEMOON CHANGE ролькоприколы остаются у ролек
 //	chemical_flags = REAGENT_ALL_PROCESS (BLUEMOON REMOVAL - роботы не должны получать эффекты реагента)
 
 /datum/reagent/medicine/changelingadrenaline/on_mob_life(mob/living/carbon/metabolizer, delta_time, times_fired)
@@ -1532,6 +1539,7 @@
 	description = "Drastically increases movement speed."
 	color = "#AE151D"
 	metabolization_rate = 2.5 * REAGENTS_METABOLISM
+	can_synth = FALSE //BLUEMOON CHANGE ролькоприколы остаются у ролек
 //	chemical_flags = REAGENT_ALL_PROCESS (BLUEMOON REMOVAL - роботы не должны получать эффекты реагента)
 
 /datum/reagent/medicine/changelinghaste/on_mob_metabolize(mob/living/L)
@@ -1566,6 +1574,7 @@
 	name = "Muscle Stimulant"
 	description = "A potent chemical that allows someone under its influence to be at full physical ability even when under massive amounts of pain."
 	value = REAGENT_VALUE_RARE
+	can_synth = FALSE //BLUEMOON CHANGE смешной картофел только имеет право иметь такой реагент (hot potato)
 
 /datum/reagent/medicine/muscle_stimulant/on_mob_metabolize(mob/living/M)
 	. = ..()

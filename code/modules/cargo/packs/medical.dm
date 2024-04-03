@@ -256,3 +256,11 @@
 					/obj/item/reagent_containers/hypospray/medipen/blood_loss,
 					/obj/item/reagent_containers/hypospray/medipen/blood_loss)
 	crate_name = "medipen crate"
+
+/datum/supply_pack/medical/medbeamgun
+	name = "Two Medbeam Guns"
+	desc = "Содержит два медицинского орудия для лечения при помощи лечебных нанитов."
+	cost = 50000
+	contains = list(/obj/item/gun/medbeam,
+					/obj/item/gun/medbeam)
+	crate_name = "Medbeam Guns Crate"

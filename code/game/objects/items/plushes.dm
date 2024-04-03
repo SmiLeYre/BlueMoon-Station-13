@@ -1006,3 +1006,29 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 	if(!Kisser)
 		return
 	plushie_absorb(Kisser)
+
+/obj/item/toy/plush/therapy
+	name = "Therapy Doll"
+	desc = "A toy for therapeutic and recreational purposes."
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "therapyred"
+	item_state = "egg4"
+	attack_verb = list("thumped", "whomped", "bumped")
+	squeak_override = list('sound/items/squeaktoy.ogg'=1)
+	w_class = WEIGHT_CLASS_TINY
+	var/cooldown = 0
+	resistance_flags = FLAMMABLE
+
+/obj/item/toy/plush/therapy/New()
+	..()
+	var/therapy_color = pick("green","blue","red", "orange", "purple", "yellow")
+	if(therapy_color)
+		desc += " This one is [therapy_color]."
+		icon_state = "therapy[therapy_color]"
+
+/obj/item/toy/plush/therapy/attack_self(mob/user)
+	if(cooldown < world.time - 8)
+		to_chat(user, "<span class='notice'>Вы сжимаете анти-стресс игрушку - [src].</span>")
+		playsound(user, 'sound/items/squeaktoy.ogg', 20, 1)
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "plushpet", /datum/mood_event/plushpet)
+		cooldown = world.time

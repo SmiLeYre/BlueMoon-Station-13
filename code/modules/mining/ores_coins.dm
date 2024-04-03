@@ -149,7 +149,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	C.adjustStaminaLoss(15)//the pain from your eyes burning does stamina damage
 	C.confused += 5
 	to_chat(C, "<span class='userdanger'>\The [src] gets into your eyes! The pain, it burns!</span>")
-	C.forcesay("*scream")
+	C.forcesay("*realagony")
 	qdel(src)
 
 /obj/item/stack/ore/glass/ex_act(severity, target, origin)
@@ -279,7 +279,7 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 /obj/item/gibtonite/attackby(obj/item/I, mob/user, params)
 	if(!wires && istype(I, /obj/item/assembly/igniter))
 		user.visible_message("<span class='notice'>[user] attaches [I] to [src].</span>", "<span class='notice'>You attach [I] to [src].</span>")
-		wires = new /datum/wires/explosive/gibtonite(src)
+		set_wires(new /datum/wires/explosive/gibtonite(src))
 		attacher = key_name(user)
 		qdel(I)
 		add_overlay("Gibtonite_igniter")

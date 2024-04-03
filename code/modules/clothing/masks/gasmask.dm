@@ -44,7 +44,7 @@
 	name = "Glass Gas Mask"
 	desc = "A face-covering mask that can be connected to an air supply. This one doesn't obscure your face however." //More accurate
 	icon_state = "gas_clear"
-	flags_inv = HIDEEYES
+	flags_inv = 0
 	flavor_adjust = FALSE
 
 /obj/item/clothing/mask/gas/glass/alt
@@ -100,6 +100,12 @@
 	strip_delay = 60
 	item_state = "syndicate_gasmask"
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/clothing/mask/gas/syndicate/cool_version
+	name = "Tactical Gasmask"
+	desc = "A mask with a red visor and special filters. It seems to have a kind of cat whiskers on it."
+	icon_state = "syndicate_cool"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/mask/gas/clown_hat
 	name = "Clown Wig and Mask"

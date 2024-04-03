@@ -3,8 +3,8 @@
 /obj/item/device/cooler
 	name = "portable cooling unit"
 	desc = "PCU is a large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
-	It has an internal power unit with power rating of 10 MJ. There is the magnetic charger on top of the PCU for recharging. \
-	System of strapes allows it to be worn <b>as a suit, on your back, strapped to a hazard vest or a hardsuit</b>."
+	It has an internal power unit with power rating of 10 KJ. There is the magnetic charger on top of the PCU for recharging. \
+	System of strapes allows it to be worn <b>as a suit, on your back, strapped to a hazard vest, an armor or a hardsuit</b>."
 	w_class = WEIGHT_CLASS_BULKY // Не лезет в сумку
 	icon = 'modular_bluemoon/cooling_device/cooling_device.dmi'
 	mob_overlay_icon = 'modular_bluemoon/cooling_device/cooling_device_back.dmi'
@@ -24,10 +24,11 @@
 
 	var/on = FALSE					// включено или нет
 	var/max_cooling = 18			// максимальное охлаждение, нужно для борьбы с нагревом в космосе
-	var/charge_consumption = 5.5	// КВт, используемый charge при максимальном охлаждении (около 30 минут при заряде в 10000)
+	var/is_charging = FALSE			// В процессе зарядки
+	var/charge_consumption = 5.5	// Дж, используемый charge при максимальном охлаждении (около 30 минут при заряде в 10000)
 	var/charge = 0					// Мы не используем батарейки, чтобы не было халявных накопителей высокой мощности из любого техфаба
 	var/roundstart_charged = FALSE	// Для размещения на карте с начала раунда, заряженный вариант
-	var/max_charge = 10000			// 10 МВт
+	var/max_charge = 10000			// 10 кДж
 	var/thermostat = T20C			// К какой температуре стремиться
 
 /obj/item/device/cooler/charged // Заряжённый при размещении
@@ -36,12 +37,12 @@
 /obj/item/device/cooler/lavaland // Специальный для шахтёров и планетоидов
 	name = "mining cooling unit"
 	desc = "PCU is a large portable heat sink with liquid cooled radiator packaged into a modified backpack. \
-	It has an internal power unit with rating of 6 MJ, which can be charge with APCs or power cells with the magnetic charger on top of PCU. \
-	System of strapes allows it to be worn <b>as a suit, on your back, on belt, strapped to a hazard vest, an exploration suit or a hardsuit</b>. \
+	It has an internal power unit with rating of 6 KJ, which can be charge with APCs or power cells with the magnetic charger on top of PCU. \
+	System of strapes allows it to be worn <b>as a suit, on your back, on belt, strapped to a hazard vest, an armor an exploration suit or a hardsuit</b>. \
 	Cooling efficient was significantly reduced, but it still can be used for planetary operations."
 	slot_flags = ITEM_SLOT_BELT |  ITEM_SLOT_BACK | ITEM_SLOT_OCLOTHING
 	force = 5 // маленький, но далеко не лёгкий
-	max_cooling = 4 // этого вполне хватает для планетоида
+	max_cooling = 6 // этого вполне хватает для планетоида
 	charge_consumption = 3.3 // 30 минут работы при полном заряде
 	max_charge = 6000
 	custom_materials = list(/datum/material/iron = 22000, /datum/material/glass = 3000)
@@ -139,49 +140,68 @@
 	to_chat(user, span_notice("You switch the PCU [on ? "on" : "off"]."))
 
 /obj/item/device/cooler/proc/drain_power(atom/target, mob/user, var/is_apc = FALSE)
-	var/obj/item/stock_parts/cell/cell = target
 	var/maxcapacity = FALSE // Если достигнут максимальный заряд, прекращаем заряжаться
-	var/maxdrain = is_apc ? cell.maxcharge / 2 : 0 // Нельзя высасывать более половины АПЦ
+	var/drain = 500 // Дж
+	is_charging = TRUE
 
-	if(cell.charge)
-		if(maxdrain > 0 && cell.charge - 500 <= maxdrain) // если сосём из АПЦ и осталось менее половины энергии, заранее не сосём
-			user.visible_message(span_notice("[user] puts the PCU's magnetic charger on the APC, but nothing happens."), span_warning("You hold the magnetic charger over the APC but nothing happens. A safety protocol prevents charge if the APC's power lower than half."))
-			return
+	if(is_apc)
+		var/obj/machinery/power/apc/apc = target
 
 		user.visible_message(span_notice("[user] puts the PCU's magnetic charger on [is_apc ? "the APC" : "\a [target]"]."), span_notice("You hold the magnetic charger over [is_apc ? "the APC" : "\a [target]"]. It's getting hotter."))
-		while(cell.charge > 0 && !maxcapacity) // Если не достигнут максимальный заряд ПОУ и в источник ещё есть заряд, продолжаем заряжаться
-			var/drain = 500
+		while(charge < max_charge) // Если не достигнут максимальный заряд ПОУ и в источник ещё есть заряд, продолжаем заряжаться
 
-			if(cell.charge < drain) // Высасываем оставшийся заряд, а не сверх него
-				drain = cell.charge
-
-			if(maxdrain) // Если высосали половину АПЦ, дальше не сосём
-				if(cell.charge - drain <= maxdrain)
-					user.visible_message(span_notice("[user] takes back the PCU's magnetic charger as it buzzes."), span_warning("The magnetic charger buzzes - the APC cannot give it more charge. You take it back and place it in the socket on the PCU."))
-					break
+			if(apc.surplus() < drain * 20) // Не подключен к сети, в которой есть напряжение, достаточное для зарядки ПОУ
+				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger as it buzzes."), span_warning("The magnetic charger buzzes - the APC isn't connected to a powernet with enough power to charge, as it need at leat 10 KWs due high-speed charge. You take it back and place it in the socket on the PCU."))
+				break
 
 			if(charge + drain > max_charge)
 				drain = max_charge - charge
 				maxcapacity = TRUE
 				playsound(src.loc, 'sound/machines/beep.ogg', 50, 0)
 
-			if(do_after(user, 1.5 SECONDS, target = user))
-				cell.charge -= drain
-				charge += drain
-				target.update_icon()
-				if(maxcapacity || !cell.charge)
-					user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger as it beep and place it in the socket on the PCU."))
-			else
+			if(!do_after(user, 1.5 SECONDS, target = user))
+				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger and place it in the socket on the PCU."))
+				break
+			apc.use_power(drain * 20) // я-забил-хрен-на-подсчёт-кВт*ч-для-работы-этой-штуки, по итогу зарядка через АПЦ просто неэффективна по энергии
+			charge += drain
+			target.update_icon()
+			if(maxcapacity)
+				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger as it beep and place it in the socket on the PCU."))
+	is_charging = FALSE
+
+	if(istype(target, /obj/item/stock_parts/cell))
+		var/obj/item/stock_parts/cell/cell = target
+
+		if(!cell.charge)
+			return
+
+		user.visible_message(span_notice("[user] puts the PCU's magnetic charger on [is_apc ? "the APC" : "\a [target]"]."), span_notice("You hold the magnetic charger over [is_apc ? "the APC" : "\a [target]"]. It's getting hotter."))
+		while(cell.charge > 0 && !maxcapacity)
+
+			if(cell.charge < drain) // Высасываем оставшийся заряд, а не сверх него
+				drain = cell.charge
+
+			if(charge + drain > max_charge)
+				drain = max_charge - charge
+				maxcapacity = TRUE
+				playsound(src.loc, 'sound/machines/beep.ogg', 50, 0)
+
+			if(!do_after(user, 1.5 SECONDS, target = user))
 				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger and place it in the socket on the PCU."))
 				break
 
+			cell.charge -= drain
+			charge += drain
+			target.update_icon()
+			if(maxcapacity || !cell.charge)
+				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger as it beep and place it in the socket on the PCU."))
+
+	charge = clamp(charge, 0, max_charge) // не меньше нуля, не больше максимума
+
 /obj/item/device/cooler/attack_obj(atom/target, mob/user)
 	if(istype(target, /obj/machinery/power/apc))
-		var/obj/machinery/power/apc/apc = target
-		if(apc.cell)
-			target = apc.cell
-		else
-			user.visible_message(span_notice("[user] puts the PCU's magnetic charger on the APC, but nothing happens."), span_warning("You hold the magnetic charger over the APC but nothing happens. Its cell seems to be out of charge."))
+		if(is_charging)
+			to_chat(user, span_warning("You are already charging [src]!"))
 			return
 		drain_power(target, user, is_apc = TRUE)
 		return
@@ -193,6 +213,9 @@
 		return
 
 	if(istype(target, /obj/item/stock_parts/cell))
+		if(is_charging)
+			to_chat(user, span_warning("You are already charging [src]!"))
+			return
 		drain_power(target, user)
 		return
 

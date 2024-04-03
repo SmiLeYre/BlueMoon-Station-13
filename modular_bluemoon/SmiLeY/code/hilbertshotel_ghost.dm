@@ -16,34 +16,38 @@
 			return //you can't enter infinity dormitories if you are a role
 	return promptAndCheckIn(user, user)
 
-/datum/map_template/ghost_cafe_rooms
+/datum/map_template/hilbertshotel/apartment
 	name = "Apartment"
 	mappath = '_maps/templates/apartment.dmm'
 
-/datum/map_template/ghost_cafe_rooms/one
+/datum/map_template/hilbertshotel/apartment/one
 	name = "Apartment_1"
 	mappath = '_maps/templates/apartment_1.dmm'
 
-/datum/map_template/ghost_cafe_rooms/two
+/datum/map_template/hilbertshotel/apartment/two
 	name = "Apartment_2"
 	mappath = '_maps/templates/apartment_2.dmm'
 
-/datum/map_template/ghost_cafe_rooms/three
+/datum/map_template/hilbertshotel/apartment/three
 	name = "Apartment_3"
 	mappath = '_maps/templates/apartment_3.dmm'
 
-/datum/map_template/ghost_cafe_rooms/bar
+/datum/map_template/hilbertshotel/apartment/bar
 	name = "Apartment_bar"
 	mappath = '_maps/templates/apartment_bar.dmm'
 
-/datum/map_template/ghost_cafe_rooms/syndi
+/datum/map_template/hilbertshotel/apartment/syndi
 	name = "Apartment_syndi"
 	mappath = '_maps/templates/apartment_syndi.dmm'
 
-/datum/map_template/ghost_cafe_rooms/dojo
+/datum/map_template/hilbertshotel/apartment/dojo
 	name = "Apartment_dojo"
 	mappath = '_maps/templates/apartment_dojo.dmm'
 
-/datum/map_template/ghost_cafe_rooms/sauna
+/datum/map_template/hilbertshotel/apartment/sauna
 	name = "Apartment_sauna"
 	mappath = '_maps/templates/apartment_sauna.dmm'
+
+/datum/map_template/hilbertshotel/apartment/beach
+	name = "Apartment_beach"
+	mappath = '_maps/templates/apartment_beach.dmm'

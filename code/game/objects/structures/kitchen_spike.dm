@@ -76,7 +76,8 @@
 			playsound(src.loc, 'sound/effects/splat.ogg', 25, 1)
 			L.visible_message("<span class='danger'>[user] slams [L] onto the meat spike!</span>", "<span class='userdanger'>[user] slams you onto the meat spike!</span>", "<span class='italics'>You hear a squishy wet noise.</span>")
 			L.forceMove(drop_location())
-			L.emote("scream")
+			if(!HAS_TRAIT(L, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				L.emote("scream")
 			if(iscarbon(L))
 				var/mob/living/carbon/C = L
 				C.bleed(30)
@@ -97,7 +98,7 @@
 
 
 
-/obj/structure/kitchenspike/user_buckle_mob(mob/living/M, mob/living/user) //Don't want them getting put on the rack other than by spiking
+/obj/structure/kitchenspike/user_buckle_mob(mob/living/M, mob/living/user, check_loc) //Don't want them getting put on the rack other than by spiking
 	return
 
 /obj/structure/kitchenspike/user_unbuckle_mob(mob/living/buckled_mob, mob/living/carbon/human/user)
@@ -137,7 +138,8 @@
 	M.adjustBruteLoss(30)
 	src.visible_message(text("<span class='danger'>[M] falls free of [src]!</span>"))
 	unbuckle_mob(M,force=1)
-	M.emote("scream")
+	if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+		M.emote("scream")
 	M.DefaultCombatKnockdown(20)
 
 /obj/structure/kitchenspike/Destroy()

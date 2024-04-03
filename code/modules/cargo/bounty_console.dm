@@ -19,18 +19,16 @@
 
 /obj/item/paper/bounty_printout
 	name = "paper - Bounties"
+	default_raw_text = "<h2>Nanotrasen Cargo Bounties</h2></br>"
 
 /obj/item/paper/bounty_printout/Initialize(mapload)
-	. = ..()
-	default_raw_text = "<h2>Nanotrasen Cargo Bounties</h2></br>"
-	update_icon()
-
 	for(var/datum/bounty/B in GLOB.bounties_list)
 		if(B.claimed)
 			continue
 		default_raw_text += {"<h3>[B.name]</h3>
 		<ul><li>Reward: [B.reward_string()]</li>
 		<li>Completed: [B.completion_string()]</li></ul>"}
+	. = ..()
 
 /obj/machinery/computer/bounty/ui_interact(mob/user, datum/tgui/ui)
 	if(!GLOB.bounties_list.len)

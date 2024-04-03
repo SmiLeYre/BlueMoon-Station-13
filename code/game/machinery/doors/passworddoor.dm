@@ -16,7 +16,6 @@
 /obj/machinery/door/password/voice
 	voice_activated = TRUE
 
-
 /obj/machinery/door/password/Initialize(mapload)
 	. = ..()
 	if(voice_activated)

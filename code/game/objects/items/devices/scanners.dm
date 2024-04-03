@@ -378,7 +378,7 @@ GENETICS SCANNER
 
 		if(M.radiation)
 			msg += "<span class='alert'>Субъект заражен радиацией.</span>\n"
-			msg += "<span class='info'>Показатели радиоактивного заражения: [M.radiation] rad</span>\n"
+			msg += "<span class='info'>Показатели радиационного заражения: [M.radiation] rad</span>\n"
 
 
 
@@ -387,28 +387,29 @@ GENETICS SCANNER
 	if(ishuman(M))
 		var/datum/species/S = H.dna.species
 		var/mutant = FALSE
+		var/mutated_parts = FALSE // BLUEMOON ADD
 		if (H.dna.check_mutation(HULK))
 			mutant = TRUE
 		else if (S.mutantlungs != initial(S.mutantlungs))
-			mutant = TRUE
+			mutated_parts = TRUE // BLUEMOON EDIT - было mutant
 		else if (S.mutant_brain != initial(S.mutant_brain))
-			mutant = TRUE
+			mutated_parts = TRUE // BLUEMOON EDIT - было mutant
 		else if (S.mutant_heart != initial(S.mutant_heart))
-			mutant = TRUE
+			mutated_parts = TRUE // BLUEMOON EDIT - было mutant
 		else if (S.mutanteyes != initial(S.mutanteyes))
-			mutant = TRUE
+			mutated_parts = TRUE // BLUEMOON EDIT - было mutant
 		else if (S.mutantears != initial(S.mutantears))
-			mutant = TRUE
+			mutated_parts = TRUE // BLUEMOON EDIT - было mutant
 		else if (S.mutanthands != initial(S.mutanthands))
-			mutant = TRUE
+			mutated_parts = TRUE // BLUEMOON EDIT - было mutant
 		else if (S.mutanttongue != initial(S.mutanttongue))
-			mutant = TRUE
+			mutated_parts = TRUE // BLUEMOON EDIT - было mutant
 		else if (S.mutanttail != initial(S.mutanttail))
-			mutant = TRUE
+			mutated_parts = TRUE // BLUEMOON EDIT - было mutant
 		else if (S.mutantliver != initial(S.mutantliver))
-			mutant = TRUE
+			mutated_parts = TRUE // BLUEMOON EDIT - было mutant
 		else if (S.mutantstomach != initial(S.mutantstomach))
-			mutant = TRUE
+			mutated_parts = TRUE // BLUEMOON EDIT - было mutant
 		else if (S.flying_species != initial(S.flying_species))
 			mutant = TRUE
 
@@ -416,6 +417,10 @@ GENETICS SCANNER
 		msg += "<span class='info'>Первоначальная раса: [H.spec_trait_examine_font()][S.name]</font></span>\n"
 		if(mutant)
 			msg += "<span class='info'>У субъекта имеются мутации.</span>\n"
+		// BLUEMOON ADD START - уточнение про неоригинальные органы, а не просто мутации
+		if(mutated_parts)
+			msg += "<span class='info'>У субъекта имеются [HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM) ? "неоригинальные внутренние детали." : "неродные внутренние органы"].</span>\n"
+		// BLUEMOON ADD END
 	msg += "<span class='info'>Температура тела: [round(M.bodytemperature-T0C,0.1)] &deg;C ([round(M.bodytemperature*1.8-459.67,0.1)] &deg;F)</span>\n"
 
 	// Time of death
@@ -472,11 +477,11 @@ GENETICS SCANNER
 
 
 			if((C.scan_blood_volume() + C.integrating_blood) <= (BLOOD_VOLUME_SAFE * C.blood_ratio) && (C.scan_blood_volume() + C.integrating_blood) > (BLOOD_VOLUME_OKAY*C.blood_ratio))
-				msg += "<span class='danger'>НИЗКИЙ УРОВЕНЬ [HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "хладогента" : "крови"] [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", и ещё поступает [integrated_blood_percent] %, [C.integrating_blood] cl " : ""].</span> <span class='info'>type: [blood_type]</span>\n"
+				msg += "<span class='danger'>НИЗКИЙ УРОВЕНЬ [HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "гидравлической жидкости" : "крови"] [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", и ещё поступает [integrated_blood_percent] %, [C.integrating_blood] cl " : ""].</span> <span class='info'>type: [blood_type]</span>\n"
 			else if((C.scan_blood_volume() + C.integrating_blood) <= (BLOOD_VOLUME_OKAY * C.blood_ratio))
-				msg += "<span class='danger'>КРИТИЧЕСКИЙ УРОВЕНЬ [HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "хладогента" : "крови"] [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", и ещё поступает [integrated_blood_percent] %, [C.integrating_blood] cl " : ""].</span> <span class='info'>type: [blood_type]</span>\n"
+				msg += "<span class='danger'>КРИТИЧЕСКИЙ УРОВЕНЬ [HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "гидравлической жидкости" : "крови"] [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", и ещё поступает [integrated_blood_percent] %, [C.integrating_blood] cl " : ""].</span> <span class='info'>type: [blood_type]</span>\n"
 			else
-				msg += "<span class='info'>[HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "Показатель уровня хладогента" : "Показатель уровня крови"] [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", и ещё поступает [integrated_blood_percent] %, [C.integrating_blood] cl " : ""]. type: [blood_type]</span>\n"
+				msg += "<span class='info'>[HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM) ? "Показатель уровня гидравлической жидкости" : "Показатель уровня крови"] [blood_percent] %, [C.scan_blood_volume()] cl[C.integrating_blood? ", и ещё поступает [integrated_blood_percent] %, [C.integrating_blood] cl " : ""]. type: [blood_type]</span>\n"
 
 
 		var/cyberimp_detect
@@ -995,7 +1000,7 @@ GENETICS SCANNER
 	for(var/A in buffer)
 		options += get_display_name(A)
 
-	var/answer = input(user, "Analyze Potential", "Sequence Analyzer")  as null|anything in sortList(options)
+	var/answer = input(user, "Analyze Potential", "Sequence Analyzer")  as null|anything in sort_list(options)
 	if(answer && ready && user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		var/sequence
 		for(var/A in buffer) //this physically hurts but i dont know what anything else short of an assoc list

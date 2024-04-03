@@ -5,7 +5,7 @@
 	icon = 'modular_bluemoon/phenyamomota/icon/obj/clothing/head.dmi'
 	icon_state = "hsc_helmet"
 	item_state = "hsc_helmet"
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	actions_types = null
 
 /obj/item/clothing/suit/space/hardsuit/ert/alert/hsc

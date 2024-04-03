@@ -496,10 +496,11 @@
 	hardsuit_type = "wiz"
 	resistance_flags = FIRE_PROOF | ACID_PROOF //No longer shall our kind be foiled by lone chemists with spray bottles!
 	armor = list(MELEE = 40, BULLET = 40, LASER = 40, ENERGY = 40, BOMB = 35, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 30)
-	heat_protection = HEAD												//Uncomment to enable firesuit protection
-	slowdown = -0.25
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	var/magic_flags = SPELL_WIZARD_HAT|SPELL_CULT_HELMET
+
+	heat_protection = HEAD
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/head/helmet/space/hardsuit/wizard/ComponentInitialize()
 	. = ..()
@@ -512,15 +513,17 @@
 	desc = "A bizarre gem-encrusted suit that radiates magical energies."
 	item_state = "wiz_hardsuit"
 	tail_state = "wizard"
+	slowdown = -0.5
 	w_class = WEIGHT_CLASS_NORMAL
-	resistance_flags = FIRE_PROOF | ACID_PROOF
 	armor = list(MELEE = 40, BULLET = 40, LASER = 40, ENERGY = 40, BOMB = 35, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 30)
 	allowed = list(/obj/item/teleportation_scroll, /obj/item/tank/internals)
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS					//Uncomment to enable firesuit protection
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/wizard
 	mutantrace_variation = STYLE_DIGITIGRADE
 	var/magic_flags = SPELL_WIZARD_ROBE|SPELL_CULT_ARMOR
+
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/suit/space/hardsuit/wizard/ComponentInitialize()
 	. = ..()
@@ -627,6 +630,28 @@
 	armor = list(MELEE = 40, BULLET = 35, LASER = 35, ENERGY = 45, BOMB = 25, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_ALL_TAURIC
+	//BLUEMOON ADD вариация хардсьюта сб
+	unique_reskin = list(
+		"Alt" = list(RESKIN_ICON_STATE = "hardsuit-sec2"),
+		"Blue Variation" = list(RESKIN_ICON_STATE = "hardsuit-sec3")
+	)
+
+/obj/item/clothing/suit/space/hardsuit/security/reskin_obj(mob/user)
+	if(current_skin == "Alt")
+		mutantrace_variation = STYLE_DIGITIGRADE
+		tail_state = "sec2"
+		if(helmet)
+			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
+			Helm.hardsuit_type = "sec2"
+			Helm.update_icon_state()
+	if(current_skin == "Blue Variation")
+		mutantrace_variation = STYLE_DIGITIGRADE
+		tail_state = "ert-commander"
+		if(helmet)
+			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
+			Helm.hardsuit_type = "sec3"
+			Helm.update_icon_state()
+	//BLUEMOON ADD END
 
 /obj/item/clothing/suit/space/hardsuit/security/Initialize(mapload)
 	. = ..()
@@ -634,7 +659,7 @@
 
 	//Head of Security hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/security/hos
-	name = "head of security's hardsuit helmet"
+	name = "Head of Security's Hardsuit Helmet"
 	desc = "A special bulky helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor."
 	icon_state = "hardsuit0-hos"
 	hardsuit_type = "hos"
@@ -642,13 +667,33 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/space/hardsuit/security/hos
+	name = "Head of Security's Hardsuit"
+	desc = "A special bulky suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
 	icon_state = "hardsuit-hos"
 	tail_state = "hos"
-	name = "head of security's hardsuit"
-	desc = "A special bulky suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
 	armor = list(MELEE = 45, BULLET = 50, LASER = 40, ENERGY = 50, BOMB = 25, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 40)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
 	jetpack = /obj/item/tank/jetpack/suit
+	unique_reskin = list(
+		"Standart Variation" = list(RESKIN_ICON_STATE = "hardsuit-hos"),
+		"OTA Variation" = list(RESKIN_ICON_STATE = "hardsuit-alliance")
+	)
+
+/obj/item/clothing/suit/space/hardsuit/security/hos/reskin_obj(mob/user)
+	if(current_skin == "OTA Variation")
+		mutantrace_variation = STYLE_DIGITIGRADE
+		tail_state = "syndicate-winter"
+		if(helmet)
+			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
+			Helm.hardsuit_type = "alliance"
+			Helm.update_icon_state()
+	if(current_skin == "Standart Variation")
+		mutantrace_variation = STYLE_DIGITIGRADE
+		tail_state = "hos"
+		if(helmet)
+			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
+			Helm.hardsuit_type = "hos"
+			Helm.update_icon_state()
 
 	//Captain
 /obj/item/clothing/head/helmet/space/hardsuit/captain
@@ -864,18 +909,6 @@
 /obj/item/clothing/suit/space/hardsuit/shielded/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/shielded, current_charges, max_charges, recharge_delay, recharge_rate, ITEM_SLOT_OCLOTHING, shield_state)
-
-/obj/item/clothing/suit/space/hardsuit/shielded/doStrip()
-	. = ..()
-	var/mob/living/user = usr
-	SSvis_overlays.remove_vis_overlay(user, managed_vis_overlays)
-	cut_overlays()
-
-/obj/item/clothing/suit/space/hardsuit/shielded/dropped()
-	. = ..()
-	var/mob/living/user = usr
-	SSvis_overlays.remove_vis_overlay(user, managed_vis_overlays)
-	cut_overlays()
 
 /obj/item/clothing/head/helmet/space/hardsuit/shielded
 	resistance_flags = FIRE_PROOF | ACID_PROOF

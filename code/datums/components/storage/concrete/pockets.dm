@@ -27,7 +27,8 @@
 	can_hold = typecacheof(list(
 	/obj/item/reagent_containers/food/snacks/cookie,
 	/obj/item/reagent_containers/food/snacks/sugarcookie,
-	/obj/item/card))
+	/obj/item/card,
+	/obj/item/key/collar)) // SPLURT EDIT
 
 /datum/component/storage/concrete/pockets/small/collar/locked/Initialize()
 	. = ..()

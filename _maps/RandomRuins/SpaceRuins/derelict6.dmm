@@ -527,10 +527,6 @@
 	icon_state = "platingdmg3"
 	},
 /area/ruin/unpowered)
-"BF" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/wall,
-/area/ruin/unpowered)
 "KV" = (
 /obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plasteel/airless,
@@ -834,7 +830,7 @@ ag
 ag
 ag
 ag
-BF
+ai
 ai
 aS
 aW

@@ -57,7 +57,6 @@
 	var/encryptmod = FALSE
 	var/holoform = FALSE
 	var/canholo = TRUE
-	var/obj/item/card/id/access_card = null
 	var/chassis = "repairbot"
 	var/dynamic_chassis
 	var/dynamic_chassis_sit = FALSE			//whether we're sitting instead of resting spritewise
@@ -88,13 +87,18 @@
 	QDEL_NULL(signaler)
 	QDEL_NULL(pda)
 	QDEL_NULL(internal_instrument)
+	if(cable)
+		QDEL_NULL(cable)
+	hackdoor = null
 	if (loc != card)
 		card.forceMove(drop_location())
 	card.pai = null
 	card.cut_overlays()
 	card.add_overlay("pai-off")
 	card = null
+	current = null
 	GLOB.pai_list -= src
+	STOP_PROCESSING(SSfastprocess, src)
 	return ..()
 
 /mob/living/silicon/pai/Initialize(mapload)
@@ -210,7 +214,7 @@
 
 // See software.dm for Topic()
 
-/mob/living/silicon/pai/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
+/mob/living/silicon/pai/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE, check_resting=FALSE)
 	if(be_close && !in_range(M, src))
 		to_chat(src, "<span class='warning'>You are too far away!</span>")
 		return FALSE

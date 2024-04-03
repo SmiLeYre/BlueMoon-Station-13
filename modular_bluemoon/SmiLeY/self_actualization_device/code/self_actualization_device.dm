@@ -40,6 +40,7 @@
 	"Before using the Self-Actualization Device, remove any and all metal devices, or you might make the term 'ironman' a bit too literal!" , \
 	"Have more questions about the Self-Actualization Device? Call your nearest Veymed Representative to requisition more information about the Self-Actualization Device!" \
 	)
+	allow_oversized_characters = TRUE // BLUEMOON ADD - т.к. в машину нельзя залезать с нормалайзером, нужно обход
 
 /obj/machinery/self_actualization_device/update_appearance(updates)
 	. = ..()
@@ -54,7 +55,7 @@
 	icon_state = "sad_closed"
 	if(!occupant)
 		return FALSE
-	if(!ishuman(occupant))
+	if(!ishuman(occupant) || !check_for_normalizer(occupant)) // BLUEMOON EDIT - добавлена проверка на нормалайзер
 		occupant.forceMove(drop_location())
 		set_occupant(null)
 		return FALSE
@@ -112,6 +113,14 @@
 		open_machine()
 		return
 
+// BLUEMOON ADD START - если на персонажа надет нормалайзер, он не может залезть внутрь/завершить процедуру (иначе это приводит к ошибкам с выставлением размера)
+/obj/machinery/self_actualization_device/proc/check_for_normalizer(mob/target)
+	if(target.GetComponent(/datum/component/size_normalized))
+		visible_message(span_warning("[src] beeps, as it denies user with normalization devices!"))
+		return FALSE // запрет
+	return TRUE // разрешение
+// BLUEMOON ADD END
+
 /obj/machinery/self_actualization_device/process(delta_time)
 	if(!processing)
 		return
@@ -133,7 +142,7 @@
 		return
 	processing = FALSE
 
-	if(!ishuman(occupant))
+	if(!ishuman(occupant) || !check_for_normalizer(occupant)) // BLUEMOON EDIT - добавлено || !check_for_normalizer(occupant)
 		return FALSE
 
 	var/mob/living/carbon/human/patient = occupant

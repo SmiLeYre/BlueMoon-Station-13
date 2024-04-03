@@ -16,12 +16,14 @@
 	var/datum/track/selectedtrack = null
 	var/list/queuedplaylist = list()
 	var/queuecooldown //This var exists solely to prevent accidental repeats of John Mulaney's 'What's New Pussycat?' incident. Intentional, however......
+	var/repeat = FALSE //BLUEMOON ADD зацикливание плейлистов
+	var/one_area_play = FALSE //BLUEMOON ADD переменная проигрыша джукбокса в одной зоне (для инфдорм)
 
 /obj/machinery/jukebox/disco
 	name = "radiant dance machine mark IV"
 	desc = "The first three prototypes were discontinued after mass casualty incidents."
 	icon_state = "disco"
-	req_one_access = list(ACCESS_ENGINE)
+	// req_one_access = list(ACCESS_ENGINE) SPLURT EDIT
 	anchored = FALSE
 	var/list/spotlights = list()
 	var/list/sparkles = list()
@@ -91,10 +93,12 @@
 /obj/machinery/jukebox/ui_data(mob/user)
 	var/list/data = list()
 	data["active"] = active
-	data["songs"] = list()
-	for(var/datum/track/S in SSjukeboxes.songs)
-		var/list/track_data = list(name = S.song_name)
-		data["songs"] += list(track_data)
+	// BLUEMOON DEL -- ищи в modular_bluemoon/jukebox
+	// data["songs"] = list()
+	// for(var/datum/track/S in SSjukeboxes.songs)
+	// 	var/list/track_data = list(name = S.song_name)
+	// 	data["songs"] += list(track_data)
+	// BLUEMOON DEL END
 	data["queued_tracks"] = list()
 	for(var/datum/track/S in queuedplaylist)
 		var/list/track_data = list(name = S.song_name)
@@ -108,6 +112,7 @@
 	data["is_emagged"] = (obj_flags & EMAGGED)
 	data["cost_for_play"] = queuecost
 	data["has_access"] = allowed(user)
+	data["repeat"] = repeat		//BLUEMOON ADD
 	return data
 
 /obj/machinery/jukebox/ui_act(action, list/params)
@@ -126,6 +131,11 @@
 			else
 				stop = 0
 			return TRUE
+		//BLUEMOON ADD зацикливание плейлистов
+		if("repeat")
+			repeat = !repeat
+			return
+		//BLUEMOON ADD END
 		if("add_to_queue")
 			var/list/available = list()
 			for(var/datum/track/S in SSjukeboxes.songs)
@@ -192,12 +202,16 @@
 	if(playing || !queuedplaylist.len)
 		return FALSE
 	playing = queuedplaylist[1]
-	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, playing, volume/35)
+	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, playing, volume/35, one_area_play) //BLUEMOON EDIT
 	if(jukeboxslottotake)
 		active = TRUE
 		update_icon()
 		START_PROCESSING(SSobj, src)
 		stop = world.time + playing.song_length
+		//BLUEMOON ADD повтор плейлиста (трек добавляется в конец плейлиста)
+		if(repeat)
+			queuedplaylist += queuedplaylist[1]
+		//BLUEMOON ADD END
 		queuedplaylist.Cut(1, 2)
 		say("Сейчас играет: [playing.song_name]")
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, TRUE)

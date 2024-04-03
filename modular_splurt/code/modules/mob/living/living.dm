@@ -36,7 +36,7 @@
 		if("Toggle Penis")
 			has_penis = !has_penis
 		if("Toggle Pussy")
-			has_vagina = !has_vagina 
+			has_vagina = !has_vagina//
 		if("Toggle Balls")
 			has_balls = !has_balls
 

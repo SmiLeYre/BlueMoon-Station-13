@@ -5,7 +5,6 @@
 	antagpanel_category = "ClownOp"
 	threat = 7
 	nukeop_outfit = /datum/outfit/syndicate/clownop
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/nukeop/clownop/on_gain()
 	. = ..()
@@ -13,6 +12,7 @@
 
 /datum/antagonist/nukeop/clownop/on_removal()
 	REMOVE_TRAIT(owner, TRAIT_CLOWN_MENTALITY, CLOWNOP_TRAIT)
+	owner.special_role = null // BLUEMOON ADD
 	return ..()
 
 /datum/antagonist/nukeop/leader/clownop
@@ -20,7 +20,6 @@
 	roundend_category = "clown operatives"
 	antagpanel_category = "ClownOp"
 	nukeop_outfit = /datum/outfit/syndicate/clownop/leader
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/nukeop/leader/clownop/give_alias()
 	title = pick("Head Honker", "Slipmaster", "Clown King", "Honkbearer")

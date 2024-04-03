@@ -41,6 +41,7 @@
 	build_path = /obj/item/circuitboard/mecha/gygax/main
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/board/gygax_peri
 	name = "\"Gygax\" Peripherals Control module"
@@ -49,6 +50,7 @@
 	build_path = /obj/item/circuitboard/mecha/gygax/peripherals
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/board/gygax_targ
 	name = "\"Gygax\" Weapons & Targeting Control module"
@@ -57,6 +59,7 @@
 	build_path = /obj/item/circuitboard/mecha/gygax/targeting
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/board/durand_main
 	name = "\"Durand\" Central Control module"
@@ -65,6 +68,7 @@
 	build_path = /obj/item/circuitboard/mecha/durand/main
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/board/durand_peri
 	name = "\"Durand\" Peripherals Control module"
@@ -73,6 +77,7 @@
 	build_path = /obj/item/circuitboard/mecha/durand/peripherals
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/board/durand_targ
 	name = "\"Durand\" Weapons & Targeting Control module"
@@ -81,6 +86,7 @@
 	build_path = /obj/item/circuitboard/mecha/durand/targeting
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/board/honker_main
 	name = "\"H.O.N.K\" Central Control module"
@@ -114,6 +120,7 @@
 	build_path = /obj/item/circuitboard/mecha/phazon/main
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/board/phazon_peri
 	name = "\"Phazon\" Peripherals Control module"
@@ -123,6 +130,7 @@
 	build_path = /obj/item/circuitboard/mecha/phazon/peripherals
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/board/phazon_targ
 	name = "\"Phazon\" Weapons & Targeting Control module"
@@ -132,6 +140,7 @@
 	build_path = /obj/item/circuitboard/mecha/phazon/targeting
 	category = list("Exosuit Modules")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_RED
 
 ////////////////////////////////////////
 /////////// Mecha Equpment /////////////
@@ -146,6 +155,7 @@
 	materials = list(/datum/material/iron=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mech_seedscatter
 	name = "Exosuit Weapon (Melon Seed \"Scattershot\")"
@@ -156,6 +166,7 @@
 	materials = list(/datum/material/iron=10000, /datum/material/glass = 10000)
 	construction_time = 70
 	category = list("Exosuit Equipment")
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mech_scattershot_ammo
 	name = "Scattershot Ammunition"
@@ -167,6 +178,7 @@
 	construction_time = 20
 	category = list("Exosuit Ammunition", "Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mech_carbine
 	name = "Exosuit Weapon (FNX-99 \"Hades\" Carbine)"
@@ -177,6 +189,7 @@
 	materials = list(/datum/material/iron=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mech_carbine_ammo
 	name = "FNX-99 Carbine Ammunition"
@@ -188,6 +201,7 @@
 	construction_time = 20
 	category = list("Exosuit Ammunition", "Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mech_ion
 	name = "Exosuit Weapon (MKIV Ion Heavy Cannon)"
@@ -198,6 +212,7 @@
 	materials = list(/datum/material/iron=20000,/datum/material/silver=6000,/datum/material/uranium=2000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mech_tesla
 	name = "Exosuit Weapon (MKI Tesla Cannon)"
@@ -208,6 +223,7 @@
 	materials = list(/datum/material/iron=20000,/datum/material/silver=8000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mech_laser
 	name = "Exosuit Weapon (CH-PS \"Immolator\" Laser)"
@@ -218,6 +234,7 @@
 	materials = list(/datum/material/iron=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mech_laser_heavy
 	name = "Exosuit Weapon (CH-LC \"Solaris\" Laser Cannon)"
@@ -228,6 +245,7 @@
 	materials = list(/datum/material/iron=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mech_grenade_launcher
 	name = "Exosuit Weapon (SGL-6 Grenade Launcher)"
@@ -238,6 +256,7 @@
 	materials = list(/datum/material/iron=22000,/datum/material/gold=6000,/datum/material/silver=8000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/mech_grenade_launcher_ammo
 	name = "SGL-6 Grenade Launcher Ammunition"
@@ -249,6 +268,7 @@
 	construction_time = 20
 	category = list("Exosuit Ammunition", "Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/mech_missile_rack
 	name = "Exosuit Weapon (BRM-6 Missile Rack)"
@@ -259,6 +279,7 @@
 	materials = list(/datum/material/iron=22000,/datum/material/gold=6000,/datum/material/silver=8000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mech_missile_rack_ammo
 	name = "BRM-6 Missile Rack Ammunition"
@@ -270,6 +291,7 @@
 	construction_time = 20
 	category = list("Exosuit Ammunition", "Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/clusterbang_launcher
 	name = "Exosuit Module (SOB-3 Clusterbang Launcher)"
@@ -280,6 +302,7 @@
 	materials = list(/datum/material/iron=20000,/datum/material/gold=10000,/datum/material/uranium=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/clusterbang_launcher_ammo
 	name = "SOB-3 Clusterbang Launcher Ammunition"
@@ -291,6 +314,7 @@
 	construction_time = 20
 	category = list("Exosuit Ammunition", "Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/mech_wormhole_gen
 	name = "Exosuit Module (Localized Wormhole Generator)"
@@ -411,6 +435,7 @@
 	materials = list(/datum/material/iron=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/mech_lmg
 	name = "Exosuit Weapon (\"Ultra AC 2\" LMG)"
@@ -421,6 +446,7 @@
 	materials = list(/datum/material/iron=10000)
 	construction_time = 100
 	category = list("Exosuit Equipment")
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mech_lmg_ammo
 	name = "Ultra AC 2 Ammunition"
@@ -432,6 +458,7 @@
 	construction_time = 20
 	category = list("Exosuit Ammunition", "Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mech_sleeper
 	name = "Exosuit Medical Equipment (Mounted Sleeper)"
@@ -462,3 +489,52 @@
 	construction_time = 250
 	build_path = /obj/item/mecha_parts/mecha_equipment/medical/mechmedbeam
 	category = list("Exosuit Equipment")
+
+/datum/design/thrusters
+	name = "Exosuit Thrusters"
+	desc = "Реактивный двигатель для меха."
+	id = "mech_thrusters"
+	build_type = MECHFAB
+	build_path = /obj/item/mecha_parts/mecha_equipment/thrusters
+	materials = list(/datum/material/iron=10000)
+	construction_time = 100
+	category = list("Exosuit Equipment")
+
+/datum/design/combat_mech_beacon
+	name = "Combat Mech Beacon"
+	desc = "Combat Mech Beacon"
+	id = "combat_mech_beacon"
+	build_type = PROTOLATHE
+	build_path = /obj/item/choice_beacon/pact_mecha
+	materials = list(/datum/material/iron=200000,/datum/material/gold=15000,/datum/material/uranium=15000, /datum/material/titanium=15000, /datum/material/diamond=15000)
+	construction_time = 20
+	category = list("Exosuit Modules")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_RED
+
+/datum/design/combat_mech_beacon/medical
+	name = "Medical Mech Beacon"
+	desc = "Medical Mech Beacon"
+	id = "medical_mech_beacon"
+	build_path = /obj/item/choice_beacon/pact_mecha/medical
+	materials = list(/datum/material/iron=200000,/datum/material/glass=25000, /datum/material/silver=25000)
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+	min_security_level = SEC_LEVEL_BLUE
+
+/datum/design/combat_mech_beacon/cargo
+	name = "Cargo Mech Beacon"
+	desc = "Cargo Mech Beacon"
+	id = "cargo_mech_beacon"
+	build_path = /obj/item/choice_beacon/pact_mecha/cargo
+	materials = list(/datum/material/iron=200000,/datum/material/glass=25000, /datum/material/silver=25000)
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
+	min_security_level = SEC_LEVEL_BLUE
+
+/datum/design/combat_mech_beacon/engineer
+	name = "Engineer Mech Beacon"
+	desc = "Engineer Mech Beacon"
+	id = "engineer_mech_beacon"
+	build_path = /obj/item/choice_beacon/pact_mecha/engineer
+	materials = list(/datum/material/iron=200000,/datum/material/glass=25000, /datum/material/silver=25000)
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+	min_security_level = SEC_LEVEL_BLUE

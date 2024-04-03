@@ -56,6 +56,7 @@
 	var/list/extra_premium = list(
 		/obj/item/clothing/gloves/latexsleeves/security = 5,
 		/obj/item/clothing/shoes/jackboots/tall = 5,
+		/obj/item/clothing/shoes/jackboots/alliance = 5,
 		/obj/item/clothing/under/custom/mw2_russian_para = 5,
 		/obj/item/clothing/under/bm/sigu = 5,
 		/obj/item/clothing/head/beret/sec/bitch = 5
@@ -82,9 +83,11 @@
 	new /obj/item/defibrillator(src)
 	new /obj/item/storage/belt/medical(src)
 	new /obj/item/pinpointer/crew(src)
+	new /obj/item/clothing/suit/brigdoc(src)
 	new /obj/item/clothing/suit/armor/brigdoc(src)
 	new /obj/item/clothing/suit/armor/brigdoc/labcoat(src)
 	new /obj/item/mod/module/clamp(src) //BLUEMOOB ADDITION - для перемещения сверхтяжёлых персонажей
+	new /obj/item/reagent_containers/glass/bottle/morphine(src) // BLUEMOON ADD - для операций
 
 /obj/structure/closet/secure_closet/blueshield
 	name = "blueshield's locker"
@@ -264,6 +267,7 @@
 	new /obj/item/clothing/accessory/lawyers_badge(src)
 	new /obj/item/camera/detective(src)
 	new /obj/item/storage/box/evidence(src)
+	new /obj/item/melee/classic_baton/telescopic/centcom(src)
 	new /obj/item/folder(src)
 	new /obj/item/folder(src)
 	new /obj/item/folder(src)

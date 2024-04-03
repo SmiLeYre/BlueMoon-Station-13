@@ -15,6 +15,7 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 	"Research Director" 		= 120000,
 	"Chief Medical Officer" 	= 120000,
 	"Blueshield" 				= 100000,
+	"Bridge Officer" 			= 80000,
 
 	"Warden" 					= 80000,
 	"Brig Physician" 			= 40000,
@@ -33,7 +34,7 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 	"Clown"						= SLAVER_STANDARD_RANSOM,
 	"Mime"						= SLAVER_STANDARD_RANSOM,
 	"Curator"					= SLAVER_STANDARD_RANSOM,
-	"Lawyer"					= SLAVER_STANDARD_RANSOM,
+	"Internal Affairs Agent"	= SLAVER_STANDARD_RANSOM,
 	"Chaplain"					= SLAVER_STANDARD_RANSOM,
 	"Station Engineer"			= SLAVER_STANDARD_RANSOM,
 	"Atmospheric Technician"	= SLAVER_STANDARD_RANSOM,
@@ -47,7 +48,6 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 	"Prisoner"					= SLAVER_STANDARD_RANSOM,
 	"Stowaway"					= SLAVER_STANDARD_RANSOM,
 	"Curator"					= SLAVER_STANDARD_RANSOM,
-	"Lawyer"					= SLAVER_STANDARD_RANSOM,
 	"Chaplain"					= SLAVER_STANDARD_RANSOM,
 	"Bouncer"					= SLAVER_STANDARD_RANSOM,
 ))
@@ -66,7 +66,6 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 	var/slaver_outfit = /datum/outfit/slaver
 	var/send_to_spawnpoint = TRUE //Should the user be moved to default spawnpoint.
 	var/equip_outfit = TRUE
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/slaver/proc/update_slaver_icons_added(mob/living/M)
 	var/datum/atom_hud/antag/slaverhud = GLOB.huds[ANTAG_HUD_SLAVER]
@@ -238,3 +237,9 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 
 /proc/is_slaver(mob/M)
 	return M && istype(M) && M.mind && M.mind.has_antag_datum(/datum/antagonist/slaver)
+
+/obj/item/clothing/glasses/hud/slaver
+	name = "Raper Sunglasses"
+	desc = "Солнцезащитные очки тёмного цвета, дающие способность увидеть, подвергался ли определённый сотрудник сексуальному насилию ранее и каковой была его реакция."
+	icon_state = "bigsunglasses"
+	hud_type = DATA_HUD_ANTAGTARGET

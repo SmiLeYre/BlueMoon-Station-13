@@ -25,7 +25,7 @@
 	else
 		add_control_flags(M, VEHICLE_CONTROL_MELEE|VEHICLE_CONTROL_EQUIPMENT)
 
-/obj/vehicle/sealed/mecha/combat/neovgre/mob_exit(mob/M, silent, forced)
+/obj/vehicle/sealed/mecha/combat/neovgre/mob_exit(mob/M, silent, randomstep, forced)
 	if(forced)
 		..()
 
@@ -53,7 +53,8 @@
 
 /obj/vehicle/sealed/mecha/combat/neovgre/proc/go_critical()
 	explosion(get_turf(loc), 3, 5, 10, 20, 30)
-	Destroy(src)
+	if(!QDELETED(src))
+		qdel(src)
 
 /obj/vehicle/sealed/mecha/combat/neovgre/container_resist(mob/living/user)
 	to_chat(user, "<span class='brass'>Neovgre requires a lifetime commitment friend, no backing out now!</span>")

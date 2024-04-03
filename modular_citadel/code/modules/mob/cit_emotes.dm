@@ -131,7 +131,7 @@
 	. = ..()
 	if(!.)
 		return
-	playsound(user, 'modular_citadel/sound/voice/awoo.ogg', 100, 1, -1)
+	playsound(user, 'modular_citadel/sound/voice/awoo.ogg', 100, 1, extrarange = MEDIUM_RANGE_SOUND_EXTRARANGE, falloff_exponent = 1, distance_multiplier_min_range = 12)
 	if (HAS_TRAIT(user, TRAIT_AWOO))
 		var/datum/quirk/awoo/quirk_target = locate() in user.roundstart_quirks
 		quirk_target.last_awoo = world.time
@@ -154,20 +154,6 @@
 		return
 	playsound(user, 'modular_citadel/sound/voice/hiss.ogg', 50, 1, -1)
 
-/datum/emote/living/meow
-	key = "meow"
-	key_third_person = "mrowls"
-	message = "мяукает!"
-	emote_type = EMOTE_AUDIBLE
-	muzzle_ignore = FALSE
-	restraint_check = FALSE
-
-/datum/emote/living/meow/run_emote(mob/living/user, params)
-	. = ..()
-	if(!.)
-		return
-	playsound(user, 'modular_citadel/sound/voice/meow1.ogg', 50, 1, -1)
-
 /datum/emote/living/purr
 	key = "purr"
 	key_third_person = "purrs softly"
@@ -176,7 +162,7 @@
 	muzzle_ignore = FALSE
 	restraint_check = FALSE
 	stat_allowed = UNCONSCIOUS //cats can purr in their sleep
-	emote_cooldown = 5 SECONDS
+	emote_cooldown = 0.5 SECONDS
 
 /datum/emote/living/purr/run_emote(mob/living/user, params)
 	. = ..()

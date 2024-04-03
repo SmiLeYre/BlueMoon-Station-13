@@ -15,31 +15,31 @@
 
 /datum/bounty/item/mech/ripley
 	name = "APLU \"Ripley\""
-	reward = 13000
+	reward = 28000
 	wanted_types = list(/obj/vehicle/sealed/mecha/working/ripley)
 	exclude_types = list(/obj/vehicle/sealed/mecha/working/ripley/firefighter)
 
 /datum/bounty/item/mech/firefighter
 	name = "APLU \"Firefighter\""
-	reward = 18000
+	reward = 35000
 	wanted_types = list(/obj/vehicle/sealed/mecha/working/ripley/firefighter)
 
 /datum/bounty/item/mech/odysseus
 	name = "Odysseus"
-	reward = 11000
+	reward = 25000
 	wanted_types = list(/obj/vehicle/sealed/mecha/medical/odysseus)
 
 /datum/bounty/item/mech/gygax
 	name = "Gygax"
-	reward = 28000
+	reward = 55000
 	wanted_types = list(/obj/vehicle/sealed/mecha/combat/gygax)
 
 /datum/bounty/item/mech/durand
 	name = "Durand"
-	reward = 20000
+	reward = 53000
 	wanted_types = list(/obj/vehicle/sealed/mecha/combat/durand)
 
 /datum/bounty/item/mech/phazon
 	name = "Phazon"
-	reward = 50000
+	reward = 66600
 	wanted_types = list(/obj/vehicle/sealed/mecha/combat/phazon)
