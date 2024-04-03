@@ -488,19 +488,16 @@
 	id = /obj/item/card/id/ert
 	uniform = /obj/item/clothing/under/rank/civilian/lawyer/black/alt
 	suit = /obj/item/clothing/suit/armor/vest/agent
-	//head = /obj/item/clothing/head/beret/sec/syndicate
+	head = /obj/item/clothing/head/beret/sec/syndicate
 	shoes = /obj/item/clothing/shoes/laceup
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	back = /obj/item/storage/backpack/hipbag
-	belt = /obj/item/storage/belt/security/full
-	r_hand = /obj/item/gun/ballistic/automatic/ar
+	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
+	back = /obj/item/storage/backpack/ert_commander/ert_security
+	belt = /obj/item/storage/belt/military/ert_min
 	l_pocket = /obj/item/clothing/accessory/lawyers_badge
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
 		/obj/item/stamp/syndicate=1,\
-		/obj/item/stamp/ntr=1,\
-		/obj/item/ammo_box/magazine/m556=3,\
-		/obj/item/storage/ifak=1)
-	l_pocket = /obj/item/melee/transforming/energy/sword/saber
+		/obj/item/stamp/ntr=1,
+		/obj/item/storage/firstaid/regular=1,)
 
 // BLUEMOON ADD START - командная коробочка для командира
 /datum/outfit/ert/ntr_ert_leader/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
@@ -527,15 +524,13 @@
 	uniform = /obj/item/clothing/under/syndicate/sniper
 	suit = /obj/item/clothing/suit/armor/vest/agent
 	shoes = /obj/item/clothing/shoes/laceup
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	back = /obj/item/storage/backpack/hipbag
-	belt = /obj/item/storage/belt/security/full
-	r_hand = /obj/item/gun/ballistic/automatic/wt550
+	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
+	back = /obj/item/storage/backpack/ert_commander/ert_security
+	belt = /obj/item/storage/belt/military/ert_min
 	l_pocket = /obj/item/clothing/accessory/lawyers_badge
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/stamp/law=1,\
-		/obj/item/ammo_box/magazine/wt550m9=3,\
-		/obj/item/storage/ifak=1)
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/stamp/law=1,
+		/obj/item/storage/firstaid/regular=1,)
 
 /datum/outfit/ert/ntr_ert_agent/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
