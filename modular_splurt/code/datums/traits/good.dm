@@ -7,13 +7,15 @@
 	gain_text = "<span class='notice'>Вы чувствуете крепость в мышцах.</span>"
 	lose_text = "<span class='notice'>Вы чувствуете себя менее крепким.</span>"
 
-// /datum/quirk/tough/add()
-// 	quirk_holder.maxHealth *= 1.20
+/*
+/datum/quirk/tough/add()
+	quirk_holder.maxHealth *= 1.20
 
-// /datum/quirk/tough/remove()
-// 	if(!quirk_holder)
-// 		return
-// 	quirk_holder.maxHealth *= 0.909 //close enough
+/datum/quirk/tough/remove()
+	if(!quirk_holder)
+		return
+	quirk_holder.maxHealth *= 0.909 //close enough
+*/
 
 /datum/quirk/ashresistance
 	name = "Пепельная Устойчивость"
