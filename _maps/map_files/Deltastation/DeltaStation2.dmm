@@ -113792,6 +113792,15 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/closed/wall/r_wall,
 /area/command/heads_quarters/hop)
+"sqn" = (
+/obj/machinery/smartfridge/food,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "kitchenside";
+	name = "Kitchen Hall Shutters"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/iron,
+/area/service/kitchen)
 "sqS" = (
 /obj/structure/table,
 /obj/item/paper_bin,
@@ -170350,7 +170359,7 @@ wCd
 wCd
 xVl
 eyJ
-jvT
+sqn
 jvT
 jvT
 myH
