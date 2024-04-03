@@ -30,8 +30,8 @@
 /obj/item/melee/transforming/energy/sword/pirate/pact_ninja
 	name = "Pact Ninja Energy Cutlass"
 	desc = "Рар, мяу."
-	icon_state = "cutlass0"
-	icon_state_on = "cutlass1"
+	icon_state = "spear0"
+	icon_state_on = "spear1"
 	icon = 'modular_bluemoon/SmiLeY/icons/obj/obj.dmi'
 	lefthand_file = 'modular_bluemoon/SmiLeY/icons/obj/items_left.dmi'
 	righthand_file = 'modular_bluemoon/SmiLeY/icons/obj/items_right.dmi'
@@ -39,6 +39,8 @@
 /obj/item/clothing/head/helmet/infiltrator/pact_ninja
 	name = "Pact Ninja Helmet"
 	desc = "Лёгкий шлем с панорамным визором. Покрыт защитной плёнкой, спасающей владельца от ярких вспышек, а армированный визор сможет выдержать не одну пулю во время твоей 'скрытной' миссии."
+	icon_state = "infiltrator_h"
+	item_state = "infiltrator_h"
 	icon = 'modular_bluemoon/SmiLeY/icons/mob/pact_ninja.dmi'
 	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/mob/pact_ninja.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/SmiLeY/icons/mob/pact_ninja_digi.dmi'
@@ -46,6 +48,8 @@
 
 /obj/item/clothing/mask/balaclava/breath/pact_ninja
 	name = "Pact Ninja Breathaclava"
+	icon_state = "infiltrator_m"
+	item_state = "infiltrator_m"
 	icon = 'modular_bluemoon/SmiLeY/icons/mob/pact_ninja.dmi'
 	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/mob/pact_ninja.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/SmiLeY/icons/mob/pact_ninja_digi.dmi'
@@ -58,6 +62,7 @@
 	item_state = "infiltrator_a"
 	icon = 'modular_bluemoon/SmiLeY/icons/mob/pact_ninja.dmi'
 	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/mob/pact_ninja.dmi'
+	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 
 /obj/item/clothing/under/pact_ninja/tactical_gorka
 	name = "Pact Ninja Combat Suit"

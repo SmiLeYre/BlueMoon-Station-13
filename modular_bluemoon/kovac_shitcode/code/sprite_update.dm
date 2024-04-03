@@ -670,6 +670,11 @@
 	name = "Tactical Backpack"
 	icon_state = "ert_commander"
 
+/obj/item/storage/backpack/ert_commander/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_volume = STORAGE_VOLUME_BAG_OF_HOLDING
+
 /obj/item/storage/backpack/ert_commander/ert_security
 	icon_state = "ert_security"
 

@@ -55,10 +55,11 @@
 /datum/job/hos/New()
 	var/list/extra_titles = list(
 		"Security Commander",
-		"Head of Slutcurity",
 		"Division Leader",
 		"Cerberus Leader",
 		"Syndicate Field Commander",
+		"AC Special Lieutenant",
+		"Head of Slutcurity",
 		"Head of Studcurity",
 		"Big Iron",
 		"Commissar"
@@ -424,6 +425,7 @@
 		"Civil Protection",
 		"Police Officer",
 		"SAARE Operative",
+		"AC Specialist",
 		"PCRC Operative",
 		"Syndicate Combatant",
 		"Gorlex Marauders Trainee",
@@ -449,6 +451,7 @@
 		"Dungeon Master",
 		"Brig Superintendent",
 		"Brig Overwatch",
+		"AC Sergeant",
 		"Slutcurity Captain",
 		"Voreden"
 	)

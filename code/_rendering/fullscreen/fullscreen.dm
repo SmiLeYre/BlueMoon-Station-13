@@ -252,3 +252,9 @@
 	layer = FLASH_LAYER
 	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 	show_when_dead = TRUE
+
+/atom/movable/screen/fullscreen/depression
+	icon_state = "depression"
+	layer = FLASH_LAYER
+	plane = FULLSCREEN_PLANE
+	blend_mode = 3

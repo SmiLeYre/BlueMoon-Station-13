@@ -117,7 +117,7 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/neck/cloak/syndieadm
-	name = "syndicate admiral's cloak"
+	name = "Syndicate Admiral's Cloak"
 	desc = "A deep red cloak, worn by only the greatest of the Syndicate. If you are looking at this, you probably won't be looking at it for much longer."
 	icon_state = "syndadmiral"
 	item_state = "syndadmiral"

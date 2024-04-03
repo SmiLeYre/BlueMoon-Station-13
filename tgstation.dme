@@ -4393,6 +4393,7 @@
 #include "modular_bluemoon\SmiLeY\code\janitor\cool_broom.dm"
 #include "modular_bluemoon\SmiLeY\code\mob\carps.dm"
 #include "modular_bluemoon\SmiLeY\code\mob\pig\pig.dm"
+#include "modular_bluemoon\SmiLeY\code\modules\client\loadout\ac_clothing.dm"
 #include "modular_bluemoon\SmiLeY\code\nanosuit\nanosuit.dm"
 #include "modular_bluemoon\SmiLeY\code\serverside\emote_panel.dm"
 #include "modular_bluemoon\SmiLeY\code\serverside\fullscreen.dm"

@@ -163,3 +163,56 @@
 				. += "[icon_state]_fail_1"
 			if(151 to INFINITY)
 				. += "[icon_state]_fail_2"
+
+
+/obj/item/gun/energy/e_gun/nuclear/ert
+	name = "ERT energy pistol"
+	desc = "Advanced energy pistol with an experimental miniaturized nuclear reactor that automatically charges the internal power cell."
+	icon_state = "nucgun_ert"
+	item_state = "item_state"
+	charge_delay = 5
+	pin = /obj/item/firing_pin/implant/mindshield
+	cell_type = /obj/item/stock_parts/cell{charge = 6000; maxcharge = 6000}
+	can_charge = 0
+	ammo_x_offset = 1
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
+	selfcharge = EGUN_SELFCHARGE * 5
+	fail_tick = 0
+	fail_chance = 1
+	var/icon_charge = "nucgun"
+
+
+/obj/item/gun/energy/e_gun/nuclear/ert/update_overlays()
+	. = ..()
+	if(QDELETED(src))
+		return
+	if(!automatic_charge_overlays)
+		return
+	var/overlay_icon_state  = "[icon_charge]_charge"
+	var/ratio = get_charge_ratio()
+	if (modifystate)
+		var/obj/item/ammo_casing/energy/shot = ammo_type[current_firemode_index]
+		. += "[icon_charge]_[shot.select_name]"
+		overlay_icon_state += "_[shot.select_name]"
+	if(ratio == 0)
+		. += "[icon_charge]_empty"
+	else
+		if(!shaded_charge)
+			var/mutable_appearance/charge_overlay = mutable_appearance(icon, overlay_icon_state)
+			for(var/i = ratio, i >= 1, i--)
+				charge_overlay.pixel_x = ammo_x_offset * (i - 1)
+				charge_overlay.pixel_y = ammo_y_offset * (i - 1)
+				. += new /mutable_appearance(charge_overlay)
+		else
+			. += "[icon_charge]_charge[ratio]"
+
+	if(crit_fail)
+		. += "[icon_charge]_fail_3"
+	else
+		switch(fail_tick)
+			if(0)
+				. += "[icon_charge]_fail_0"
+			if(1 to 150)
+				. += "[icon_charge]_fail_1"
+			if(151 to INFINITY)
+				. += "[icon_charge]_fail_2"

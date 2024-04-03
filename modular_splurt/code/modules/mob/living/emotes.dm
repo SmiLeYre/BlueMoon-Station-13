@@ -175,7 +175,7 @@
 		return
 	var/turf/open/miasma_turf = deceasedturf
 	var/datum/gas_mixture/stank = new
-	stank.set_moles(GAS_MIASMA,25)
+	stank.set_moles(GAS_MIASMA,0.25)
 	stank.set_temperature(BODYTEMP_NORMAL)
 	miasma_turf.assume_air(stank)
 	miasma_turf.air_update_turf()

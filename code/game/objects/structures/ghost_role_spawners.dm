@@ -1194,7 +1194,7 @@
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	ears = /obj/item/radio/headset/headset_cent/commander
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
-	glasses = /obj/item/clothing/glasses
+	glasses = /obj/item/clothing/glasses/aviators
 	suit = /obj/item/clothing/suit/armor/vest/warden/syndicate
 	uniform = /obj/item/clothing/under/syndicate/combat
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
@@ -1242,7 +1242,7 @@
 	name = "Special Ops Nanotrasen Officer"
 	head = /obj/item/clothing/head/beret/black
 	ears = /obj/item/radio/headset/headset_cent/commander
-	glasses = /obj/item/clothing/glasses
+	glasses = /obj/item/clothing/glasses/aviators
 	suit = /obj/item/clothing/suit/space/officer
 	uniform = /obj/item/clothing/under/syndicate
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated

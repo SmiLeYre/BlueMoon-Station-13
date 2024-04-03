@@ -330,6 +330,7 @@
 		SEND_SIGNAL(prey, COMSIG_CLEAR_MOOD_EVENT, "emptyprey", /datum/mood_event/emptyprey)
 
 	prey.forceMove(src)
+	prey.forceMove(src)
 
 	owner.updateVRPanel()
 
