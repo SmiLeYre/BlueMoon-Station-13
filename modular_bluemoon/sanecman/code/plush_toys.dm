@@ -37,4 +37,6 @@
 	icon_state = "hank"
 	item_state = "hank"
 	squeak_override = list('modular_bluemoon/sanecman/sound/plush/grunt-kill.ogg' = 1)
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 
