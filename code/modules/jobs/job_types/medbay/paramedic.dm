@@ -45,7 +45,7 @@
 	id = /obj/item/card/id
 	r_pocket = /obj/item/pinpointer/crew
 	l_pocket = /obj/item/pda/medical
-	backpack_contents = list(/obj/item/roller=1)
+	backpack_contents = list(/obj/item/roller=1, /obj/item/storage/hypospraykit/regular=1)
 	pda_slot = ITEM_SLOT_LPOCKET
 
 	backpack = /obj/item/storage/backpack/medic
