@@ -33,8 +33,10 @@
 	if(amount)
 		name = "reinforced [initial(name)]"
 		suit_type = "explorer-improved_goliath"
+		item_state = "explorer-improved_goliath"
 		if(amount == maxamount)
 			suit_type = "explorer-improved_goliath_full"
+			item_state = "explorer-improved_goliath_full"
 	icon_state = "[suit_type]"
 	if(ishuman(loc))
 		var/mob/living/carbon/human/wearer = loc
@@ -81,8 +83,10 @@
 	if(amount)
 		name = "reinforced [initial(name)]"
 		suit_type = "explorer-improved_goliath"
+		item_state = "explorer-improved_goliath"
 		if(amount == maxamount)
 			suit_type = "explorer-improved_goliath_full"
+			item_state = "explorer-improved_goliath_full"
 	icon_state = "[suit_type]"
 	if(ishuman(loc))
 		var/mob/living/carbon/human/wearer = loc

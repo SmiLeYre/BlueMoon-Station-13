@@ -290,7 +290,7 @@
 
 /obj/item/spear/electrospear/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=14, force_wielded=24, icon_wielded="[icon_prefix]1")
+	AddComponent(/datum/component/two_handed, force_unwielded=14, force_wielded=22, icon_wielded="[icon_prefix]1")
 
 /datum/crafting_recipe/stopsign
 	name = "Stop sign"

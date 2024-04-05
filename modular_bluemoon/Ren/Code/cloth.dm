@@ -243,6 +243,7 @@
 	item_state = "hank_m"
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEEARS|HIDEEYES|HIDESNOUT
 	mutantrace_variation = NONE
 
 /obj/item/clothing/suit/hank
