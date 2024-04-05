@@ -26,11 +26,11 @@ export const EmotePanel = (props, context) => {
 
   return (
     <Section>
-      <Flex align="center">
+      <Flex align="center" style={{ 'flex-wrap': 'wrap' }}>
         {emoteList
           .sort((a, b) => { return a.name.localeCompare(b.name); })
           .map(emote => (
-            <Flex.Item ml={1} key={emote.key}>
+            <Flex.Item mx={0.5} mt={1} key={emote.key}>
               <Button
                 content={emote.name}
                 onClick={() => emoteExecute(emote.key)}
@@ -42,7 +42,7 @@ export const EmotePanel = (props, context) => {
               />
             </Flex.Item>
           ))}
-        <Flex.Item ml={1}>
+        <Flex.Item mx={0.5} mt={1}>
           <Button
             icon="plus"
             color="green"
