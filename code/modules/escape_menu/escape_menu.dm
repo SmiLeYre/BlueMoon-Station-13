@@ -120,7 +120,6 @@ GLOBAL_LIST_EMPTY(escape_menus)
 		client?.mob.hud_used.plane_masters["[FLOOR_PLANE]"],
 		client?.mob.hud_used.plane_masters["[WALL_PLANE]"],
 		client?.mob.hud_used.plane_masters["[ABOVE_WALL_PLANE]"],
-		client?.mob.hud_used.plane_masters["[FULLSCREEN_PLANE]"],
 	)
 	for(var/A in plane_master_controller)
 		var/atom/movable/screen/plane_master/P = A
@@ -138,7 +137,6 @@ GLOBAL_LIST_EMPTY(escape_menus)
 		client?.mob.hud_used.plane_masters["[FLOOR_PLANE]"],
 		client?.mob.hud_used.plane_masters["[WALL_PLANE]"],
 		client?.mob.hud_used.plane_masters["[ABOVE_WALL_PLANE]"],
-		client?.mob.hud_used.plane_masters["[FULLSCREEN_PLANE]"],
 	)
 	for(var/A in plane_master_controller)
 		var/atom/movable/screen/plane_master/P = A
