@@ -120,7 +120,7 @@
 	alternate_screams = SPASEMAR_SCREAMS
 	armor = list(MELEE = 50, BULLET = 60, LASER = 40, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 20)
 	equip_sound = 'modular_bluemoon/Ren/Sound/equp.ogg'
-	mutantrace_variation = NONE
+	mutantrace_variation = STYLE_SNEK_TAURIC
 	unique_reskin = list("Dark Power Armour holy patern" = list(RESKIN_ICON_STATE = "darktemplar_chaplai"), "Dark Power Armour InteQ patern MKI" = list(RESKIN_ICON_STATE = "darktemplar_inteq"), "Dark Power Armour InteQ patern MKII" = list(RESKIN_ICON_STATE = "darktemplar_inteq_alt") )
 
 /obj/item/clothing/head/helmet/space/syndicate/darktemplar/equipped(mob/living/carbon/human/user, slot)
@@ -336,6 +336,7 @@
 	item_state = "kaminacape"
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	mutantrace_variation = STYLE_SNEK_TAURIC
 
 /obj/item/clothing/neck/cloak/ftu
 	name = "FTU Cape"

@@ -447,6 +447,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | ALLOWINTERNALS
 	alternate_screams = BLOOD_SCREAMS
+	mutantrace_variation = STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/clothing/head/hooded/cult_hoodie
 	name = "\improper Nar'Sien Empowered Helmet"

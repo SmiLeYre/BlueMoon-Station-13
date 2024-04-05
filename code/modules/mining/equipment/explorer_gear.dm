@@ -35,7 +35,7 @@
 		suit_type = "explorer-improved_goliath"
 		if(amount == maxamount)
 			suit_type = "explorer-improved_goliath_full"
-	icon_state = "explorer-improved-[suit_type]"
+	icon_state = "[suit_type]"
 	if(ishuman(loc))
 		var/mob/living/carbon/human/wearer = loc
 		if(wearer.wear_suit == src)
@@ -83,7 +83,7 @@
 		suit_type = "explorer-improved_goliath"
 		if(amount == maxamount)
 			suit_type = "explorer-improved_goliath_full"
-	icon_state = "explorer-improved-[suit_type]"
+	icon_state = "[suit_type]"
 	if(ishuman(loc))
 		var/mob/living/carbon/human/wearer = loc
 		if(wearer.wear_suit == src)

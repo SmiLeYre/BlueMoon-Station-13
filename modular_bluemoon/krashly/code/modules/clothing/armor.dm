@@ -243,7 +243,7 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits_digidrated.dmi'
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/alliance
 
 //////////
@@ -305,3 +305,4 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits_digidrated.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
