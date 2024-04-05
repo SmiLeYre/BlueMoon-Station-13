@@ -77,8 +77,6 @@
 	armor = list(MELEE = 50, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 50, BIO = 100, RAD = 50, FIRE = 100, ACID = 50, WOUND = 10)
 
 /obj/item/clothing/head/hooded/explorer/standard/improved/upgrade_icon(datum/source, amount, maxamount)
-	SIGNAL_HANDLER
-
 	if(amount)
 		name = "reinforced [initial(name)]"
 		suit_type = "explorer-improved_goliath"
@@ -131,8 +129,6 @@
 	RegisterSignal(src, COMSIG_ARMOR_PLATED, .proc/upgrade_icon)
 
 /obj/item/clothing/head/hooded/explorer/standard/proc/upgrade_icon(datum/source, amount, maxamount)
-	SIGNAL_HANDLER
-
 	if(amount)
 		name = "reinforced [initial(name)]"
 		suit_type = "normal_goliath"
