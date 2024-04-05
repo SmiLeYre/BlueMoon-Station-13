@@ -119,7 +119,7 @@
 
 	maptext = MAPTEXT_VCR_OSD_MONO("<span style='font-size: 24px; color: [istype(escape_menu_loc) ? escape_menu_loc.text_color() : "white"]'>[button_text]</span>")
 
-	if (hovered)
+	if (hovered && (!istype(escape_menu_loc) || escape_menu_loc.enabled()))
 		maptext = "<u>[maptext]</u>"
 
 /atom/movable/screen/escape_menu/home_button/leave_body

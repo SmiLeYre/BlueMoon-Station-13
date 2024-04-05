@@ -215,6 +215,8 @@
 /// Plane related to the menu when pressing Escape.
 /// Needed so that we can apply a blur effect to EVERYTHING, and guarantee we are above all UI.
 #define ESCAPE_MENU_PLANE 105
+#define ESCAPE_MENU_DIMMER_LAYER 105.1
+#define ESCAPE_MENU_DEFAULT_LAYER 105.2
 
 #define RENDER_PLANE_MASTER 110
 
