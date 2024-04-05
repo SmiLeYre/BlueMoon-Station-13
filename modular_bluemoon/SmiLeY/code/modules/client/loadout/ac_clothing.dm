@@ -5,23 +5,23 @@
 /obj/item/clothing/head/soft/sec/ac
 	name = "AC Cap"
 	desc = "Special cap for special Mercenaries."
-	icon = 'modular_bluemoon/SmiLeY/icons/mob/clothing/ac_clothing.dmi'
-	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/obj/clothing/ac_clothing.dmi'
+	icon = 'modular_bluemoon/SmiLeY/icons/obj/clothing/ac_clothing.dmi'
+	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/mob/clothing/ac_clothing.dmi'
 	icon_state = "acsoft"
 	soft_type = "ac"
 
 /obj/item/clothing/head/warden/ac
 	name = "AC Officer Cap"
 	desc = "Special cap for special Mercenaries."
-	icon = 'modular_bluemoon/SmiLeY/icons/mob/clothing/ac_clothing.dmi'
-	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/obj/clothing/ac_clothing.dmi'
+	icon = 'modular_bluemoon/SmiLeY/icons/obj/clothing/ac_clothing.dmi'
+	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/mob/clothing/ac_clothing.dmi'
 	icon_state = "ac_officer"
 
 /obj/item/clothing/head/beret/sec/ac
 	name = "AC Beret"
 	desc = "Beret for Mercenaries with special reinforced fabric to offer some protection."
-	icon = 'modular_bluemoon/SmiLeY/icons/mob/clothing/ac_clothing.dmi'
-	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/obj/clothing/ac_clothing.dmi'
+	icon = 'modular_bluemoon/SmiLeY/icons/obj/clothing/ac_clothing.dmi'
+	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/mob/clothing/ac_clothing.dmi'
 	icon_state = "ac_beret"
 
 /datum/gear/head/ac_beret
@@ -52,8 +52,8 @@
 /obj/item/clothing/suit/armor/hos/ac
 	name = "AC Armored Coat"
 	desc = "An coat for a prestigious Mercenaries in the Adamas Cattus PMC."
-	icon = 'modular_bluemoon/SmiLeY/icons/mob/clothing/ac_clothing.dmi'
-	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/obj/clothing/ac_clothing.dmi'
+	icon = 'modular_bluemoon/SmiLeY/icons/obj/clothing/ac_clothing.dmi'
+	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/mob/clothing/ac_clothing.dmi'
 	icon_state = "ac_coat"
 
 /datum/gear/suit/ac_armoredcoat
@@ -70,8 +70,8 @@
 /obj/item/clothing/under/rank/security/officer/ac
 	name = "AC Tanktop Uniform"
 	desc= "An uniform for very special Mercenaries, sometimes they prefer to drink beer more then water."
-	icon = 'modular_bluemoon/SmiLeY/icons/mob/clothing/ac_clothing.dmi'
-	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/obj/clothing/ac_clothing.dmi'
+	icon = 'modular_bluemoon/SmiLeY/icons/obj/clothing/ac_clothing.dmi'
+	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/mob/clothing/ac_clothing.dmi'
 	icon_state = "ac_tanktop"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	can_adjust = FALSE

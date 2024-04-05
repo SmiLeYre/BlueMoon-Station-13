@@ -55,7 +55,7 @@
 				if(T)
 					if(target.Move(T))
 						break
-		REMOVE_TRAIT(target, TRAIT_MOBILITY_NOMOVE, src)
+		REMOVE_TRAIT(target, TRAIT_MOBILITY_NOMOVE, MAGIC_TRAIT)
 		target.update_mobility()
 
 /obj/effect/proc_holder/spell/targeted/ethereal_jaunt/proc/jaunt_steam(mobloc)

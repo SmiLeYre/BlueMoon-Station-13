@@ -163,6 +163,7 @@
 	key = "fart"
 	key_third_person = "farts"
 	message = "farts out shitcode."
+	var/farted_on_something = FALSE // BLUEMOON EDIT // Removed from /run_emote()
 
 /datum/emote/living/fart/run_emote(mob/living/user, params, type_override, intentional)
 	if(TIMER_COOLDOWN_CHECK(user, COOLDOWN_EMOTE_FART))
@@ -225,7 +226,6 @@
 	var/new_message = pick(fart_emotes)
 	//new_message = replacetext(new_message, "%OWNER", "\the [user]")
 	message = new_message
-	var/farted_on_something = FALSE
 	for(var/atom/A in get_turf(user))
 		farted_on_something = A.fart_act(user) || farted_on_something
 	. = ..()

@@ -10,7 +10,7 @@
 /obj/structure/destructible/cult/proc/conceal() //for spells that hide cult presence
 	density = FALSE
 	visible_message("<span class='danger'>[src] fades away.</span>")
-	invisibility = INVISIBILITY_OBSERVER
+	invisibility = INVISIBILITY_HIDDEN_RUNES
 	alpha = 100 //To help ghosts distinguish hidden runes
 	light_range = 0
 	light_power = 0
@@ -277,7 +277,8 @@
 
 	var/static/image/radial_blindfold = image(icon = 'icons/obj/clothing/glasses.dmi', icon_state = "blindfold")
 	var/static/image/radial_curse = image(icon = 'icons/obj/cult.dmi', icon_state ="shuttlecurse")
-	var/static/image/radial_veilwalker = image(icon = 'icons/obj/cult.dmi', icon_state ="shifter")
+	var/static/image/radial_veilshifter = image(icon = 'icons/obj/cult.dmi', icon_state ="shifter")
+	var/static/image/radial_voidtorch = image(icon = 'icons/obj/lighting.dmi', icon_state ="torch")
 
 /obj/structure/destructible/cult/tome/ui_interact(mob/user)
 	. = ..()
@@ -296,7 +297,7 @@
 
 	to_chat(user, "<span class='cultitalic'>You flip through the black pages of the archives...</span>")
 
-	var/list/options = list("Zealot's Blindfold" = radial_blindfold, "Shuttle Curse" = radial_curse, "Veil Walker Set" = radial_veilwalker)
+	var/list/options = list("Zealot's Blindfold" = radial_blindfold, "Shuttle Curse" = radial_curse, "Veil Shifter" = radial_veilshifter, "Void Torch" = radial_voidtorch)
 	var/choice = show_radial_menu(user, src, options, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
 
 	var/reward
@@ -305,15 +306,14 @@
 			reward = /obj/item/clothing/glasses/hud/health/night/cultblind
 		if("Shuttle Curse")
 			reward = /obj/item/shuttle_curse
-		if("Veil Walker Set")
-			reward = /obj/effect/spawner/bundle/veil_walker
+		if("Veil Shifter")
+			reward = /obj/item/cult_shift
+		if("Void Torch")
+			reward = /obj/item/flashlight/flare/culttorch
 	if(!QDELETED(src) && reward && check_menu(user))
 		cooldowntime = world.time + 2400
 		new reward(get_turf(src))
 		to_chat(user, "<span class='cultitalic'>You summon the [choice] from the archives!</span>")
-
-/obj/effect/spawner/bundle/veil_walker
-	items = list(/obj/item/cult_shift, /obj/item/flashlight/flare/culttorch)
 
 /obj/effect/gateway
 	name = "gateway"

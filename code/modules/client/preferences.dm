@@ -1577,6 +1577,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 					dat += "<h2>Citadel Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
 					dat += "<b>Widescreen:</b> <a href='?_src_=prefs;preference=widescreenpref'>[widescreenpref ? "Enabled ([CONFIG_GET(string/default_view)])" : "Disabled (15x15)"]</a><br>"
+					dat += "<b>Fullscreen:</b> <a href='?_src_=prefs;preference=fullscreen'>[fullscreen ? "Enabled" : "Disabled"]</a><br>"
 					dat += "<b>Long strip menu:</b> <a href='?_src_=prefs;preference=long_strip_menu'>[long_strip_menu ? "Enabled" : "Disabled"]</a><br>"
 					dat += "<b>Auto stand:</b> <a href='?_src_=prefs;preference=autostand'>[autostand ? "Enabled" : "Disabled"]</a><br>"
 					dat += "<b>Auto OOC:</b> <a href='?_src_=prefs;preference=auto_ooc'>[auto_ooc ? "Enabled" : "Disabled"]</a><br>"
@@ -3700,6 +3701,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("widescreenpref")
 					widescreenpref = !widescreenpref
 					user.client.view_size.setDefault(getScreenSize(widescreenpref))
+				if("fullscreen")
+					fullscreen = !fullscreen
+					parent.ToggleFullscreen()
 				if("long_strip_menu")
 					long_strip_menu = !long_strip_menu
 				if("cock_stuffing")
@@ -4142,10 +4146,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					auto_fit_viewport = !auto_fit_viewport
 					if(auto_fit_viewport && parent)
 						parent.fit_viewport()
-
-				if("fullscreen")
-					fullscreen = !fullscreen
-					parent.ToggleFullscreen()
 
 				if("hud_toggle_flash")
 					hud_toggle_flash = !hud_toggle_flash

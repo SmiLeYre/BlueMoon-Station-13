@@ -1618,7 +1618,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	else
 		if(HAS_TRAIT(H, TRAIT_INCUBUS || TRAIT_SUCCUBUS))
 			return //SPLURT EDIT: Incubi and succubi don't get fat drawbacks (but can still be seen on examine)
-		if(H.overeatduration >= 100 && !HAS_TRAIT(H, TRAIT_BLUEMOON_GIANT_BODY))
+		if(H.overeatduration >= 100 && !HAS_TRAIT(H, TRAIT_BLUEMOON_DEVOURER))
 			to_chat(H, span_danger("Кажется, вы объелись!"))
 			ADD_TRAIT(H, TRAIT_FAT, OBESITY)
 			H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
@@ -2411,7 +2411,15 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	switch(damagetype)
 		if(BRUTE)
 			H.damageoverlaytemp = 20
-			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
+			var/damage_amount
+			if (HAS_TRAIT(H, TRAIT_TOUGHT) && !forced) // проверка на трейт стойкости
+				if (damage <= 10) //если урон до применения модификаторов не привышает 10, то он не учитывается
+					return 0
+				damage_amount = damage * hit_percent * brutemod * H.physiology.brute_mod
+				if (damage_amount <= 5) //если урон после применения модификаторов не привышает 5, то он не учитывается
+					return 0
+			else
+				damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
 			if(BP)
 				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
@@ -2422,7 +2430,15 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				H.adjustBruteLoss(damage_amount)
 		if(BURN)
 			H.damageoverlaytemp = 20
-			var/damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
+			var/damage_amount
+			if (HAS_TRAIT(H, TRAIT_TOUGHT) && !forced) // проверка на трейт стойкости
+				if (damage <= 10) //если урон до применения модификаторов не привышает 10, то он не учитывается
+					return 0
+				damage_amount = damage * hit_percent * burnmod * H.physiology.burn_mod
+				if (damage_amount <= 5) //если урон после применения модификаторов не привышает 5, то он не учитывается
+					return 0
+			else
+				damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
 			if(BP)
 				if(BP.receive_damage(0, damage_amount, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()

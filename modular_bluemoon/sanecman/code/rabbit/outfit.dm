@@ -51,9 +51,10 @@
 	icon = 'modular_bluemoon/sanecman/icons/lcorp/obj/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/sanecman/icons/lcorp/mob/suit.dmi'
 	icon_state = "rabbit"
+	armor = list(MELEE = 50, BULLET = 50, LASER = 50,ENERGY = 50, BOMB = 50, BIO = 50, RAD = 50, FIRE = 100, ACID = 100)
 
 /obj/item/clothing/suit/armor/ego_gear/rabbit/grunts
 	name = "\improper rabbit suppressive suit"
 	desc = "An armored combat suit worn by R-Corporation light infantry shocktroopers. It's cape is long, but the material catches shrapnel well."
 	icon_state = "rabbit_grunt"
-
+	armor = list(MELEE = 50, BULLET = 50, LASER = 50,ENERGY = 50, BOMB = 50, BIO = 50, RAD = 50, FIRE = 100, ACID = 100)

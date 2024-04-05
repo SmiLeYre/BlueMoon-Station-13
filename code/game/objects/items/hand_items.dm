@@ -246,6 +246,10 @@
 	/// TRUE if the user was aiming anywhere but the mouth when they offer the kiss, if it's offered
 	var/cheek_kiss
 
+/obj/item/hand_item/kisser/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
+
 /obj/item/hand_item/kisser/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
 	// . |= AFTERATTACK_PROCESSED_ITEM

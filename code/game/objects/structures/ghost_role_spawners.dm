@@ -1182,7 +1182,7 @@
 	icon_state = "sleeper_s"
 	short_desc = "Вы Интерн-Специалист, взятый на работу Центральным Командованием в качестве очередной рабочей единицы."
 	flavour_text = "Не так давно вы были взяты на работу в качестве дежурного на Аванпосту Центрального Командования. Ваша задача проста - следить за факсом и отвечать на сообщения, полученные через факс. Помните, что часть сообщений поступает из иного пласта Вселенной, потому не пугайтесь, если вдруг окажется, что где-то там вызывают Кровавого Бога. Просто выполняйте свою работу и отправляйте инструкции."
-	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей."
+	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей. Bы можете выдавать около-шуточные требования и указания в Эксту. Ни в коем случае не оказывайте прямое влияние на станцию в Динамику."
 	outfit = /datum/outfit/centcom_syndicate
 	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
 	assignedrole = "Centcom Specialist"
@@ -1192,7 +1192,7 @@
 /datum/outfit/centcom_syndicate
 	name = "Special Ops Syndicate Officer"
 	head = /obj/item/clothing/head/HoS/beret/syndicate
-	ears = /obj/item/radio/headset/headset_cent/commander
+	ears = /obj/item/radio/headset/syndicate/alt
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 	glasses = /obj/item/clothing/glasses/aviators
 	suit = /obj/item/clothing/suit/armor/vest/warden/syndicate
@@ -1203,7 +1203,12 @@
 	l_pocket = /obj/item/extinguisher/mini
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	back = /obj/item/storage/backpack/satchel/sec
-
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/firstaid/regular=1,
+		/obj/item/stamp/syndicate=1,
+		)
+	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle, /obj/item/implant/weapons_auth)
+	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
 	id = /obj/item/card/id
 
 /datum/outfit/centcom_syndicate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
@@ -1231,7 +1236,7 @@
 	icon_state = "sleeper_s"
 	short_desc = "Вы Интерн-Специалист, взятый на работу Центральным Командованием в качестве очередной рабочей единицы."
 	flavour_text = "Не так давно вы были взяты на работу в качестве дежурного на Аванпосту Центрального Командования. Ваша задача проста - следить за факсом и отвечать на сообщения, полученные через факс. Помните, что часть сообщений поступает из иного пласта Вселенной, потому не пугайтесь, если вдруг окажется, что где-то там вызывают Кровавого Бога. Просто выполняйте свою работу и отправляйте инструкции."
-	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей."
+	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей. Bы можете выдавать около-шуточные требования и указания в Эксту. Ни в коем случае не оказывайте прямое влияние на станцию в Динамику."
 	outfit = /datum/outfit/centcom_nanotrasen
 	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
 	assignedrole = "Centcom Specialist"
@@ -1241,7 +1246,7 @@
 /datum/outfit/centcom_nanotrasen
 	name = "Special Ops Nanotrasen Officer"
 	head = /obj/item/clothing/head/beret/black
-	ears = /obj/item/radio/headset/headset_cent/commander
+	ears = /obj/item/radio/headset/syndicate/alt
 	glasses = /obj/item/clothing/glasses/aviators
 	suit = /obj/item/clothing/suit/space/officer
 	uniform = /obj/item/clothing/under/syndicate
@@ -1251,7 +1256,12 @@
 	l_pocket = /obj/item/extinguisher/mini
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	back = /obj/item/storage/backpack/satchel/leather
-
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/firstaid/regular=1,
+		/obj/item/stamp/centcom=1,
+		)
+	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle, /obj/item/implant/weapons_auth)
+	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
 	id = /obj/item/card/id
 
 /datum/outfit/centcom_nanotrasen/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)

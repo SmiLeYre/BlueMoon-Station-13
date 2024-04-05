@@ -243,6 +243,10 @@
 	name = "box of WT ammo"
 	ammo = /obj/item/ammo_box/magazine/wt550m9
 
+/obj/item/storage/box/ammo/holy
+	name = "some holy water"
+	ammo = /obj/item/reagent_containers/food/drinks/bottle/holywater
+
 /obj/item/storage/box/ammo/PopulateContents()
 	..()
 	for(var/i in 1 to 5)

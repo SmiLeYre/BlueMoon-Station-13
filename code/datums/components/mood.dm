@@ -196,19 +196,19 @@
 			setInsanityEffect(MAJOR_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/insane)
 			master.add_actionspeed_modifier(/datum/actionspeed_modifier/low_sanity)
-			master.overlay_fullscreen("depression", /atom/movable/screen/fullscreen/depression, 3)
+			master.overlay_fullscreen("depression", /atom/movable/screen/fullscreen/scaled/depression, 3)
 			sanity_level = 6
 		if(SANITY_CRAZY to SANITY_UNSTABLE)
 			setInsanityEffect(MINOR_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/crazy)
 			master.add_actionspeed_modifier(/datum/actionspeed_modifier/low_sanity)
-			master.overlay_fullscreen("depression", /atom/movable/screen/fullscreen/depression, 2)
+			master.overlay_fullscreen("depression", /atom/movable/screen/fullscreen/scaled/depression, 2)
 			sanity_level = 5
 		if(SANITY_UNSTABLE to SANITY_DISTURBED)
 			setInsanityEffect(SLIGHT_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/disturbed)
 			master.add_actionspeed_modifier(/datum/actionspeed_modifier/low_sanity)
-			master.overlay_fullscreen("depression", /atom/movable/screen/fullscreen/depression, 1)
+			master.overlay_fullscreen("depression", /atom/movable/screen/fullscreen/scaled/depression, 1)
 			sanity_level = 4
 		if(SANITY_DISTURBED to SANITY_NEUTRAL)
 			setInsanityEffect(0)

@@ -79,8 +79,10 @@
 	machine_name 	= "KinkMate"
 	icon_state 		= "refill_kink"
 
-/obj/item/vending_refill/kink/Initialize(mapload)
+/obj/machinery/vending/kink/Initialize(mapload)
 	. = ..()
-	if(prob(1))
-		qdel(src)
-		new /obj/machinery/vending/sexmachine(src)
+	if(mapload && prob(1))
+		var/turf/T = get_turf(src)
+		if(T)
+			qdel(src)
+			new /obj/machinery/vending/sexmachine(T)

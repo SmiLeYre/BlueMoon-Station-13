@@ -230,6 +230,9 @@
 
 /atom/movable/proc/forceMove(atom/destination)
 	. = FALSE
+	if(destination == null) //destination destroyed due to explosion
+		return
+
 	if(destination)
 		. = doMove(destination)
 	else

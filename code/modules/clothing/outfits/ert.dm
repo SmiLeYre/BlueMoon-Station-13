@@ -1,10 +1,3 @@
-/*
-//Кролики
-1. Нормальные статы для одежды (защита до 5)
-2. Добавить пушке кроликов возможность заряжаться
-3. Убрать мусор из карманов
-
-*/
 /datum/outfit/ert
 	name = "ERT Common"
 
@@ -199,7 +192,6 @@
 	belt = /obj/item/storage/belt/military/ert_max
 
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
-
 		/obj/item/storage/box/handcuffs=1,\
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/storage/box/ammo/smgap=1,)
@@ -248,8 +240,8 @@
 	l_hand = null
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
-		/obj/item/storage/firstaid/regular=1,
-
+		/obj/item/storage/firstaid/tactical/ert_first = 1,
+		/obj/item/storage/firstaid/tactical/ert_second = 1,
 		/obj/item/gun/medbeam=1,
 		/obj/item/roller=1,)
 
@@ -272,6 +264,8 @@
 	internals_slot = ITEM_SLOT_SUITSTORE
 	l_hand = /obj/item/gun/ballistic/automatic/wt550
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/firstaid/tactical/ert_first = 1,
+		/obj/item/storage/firstaid/tactical/ert_second = 1,
 		/obj/item/storage/box/ammo/wt=1,
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1,
@@ -304,6 +298,8 @@
 	internals_slot = ITEM_SLOT_SUITSTORE
 	l_hand = /obj/item/gun/ballistic/automatic/proto/unrestricted
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/firstaid/tactical/ert_first = 1,
+		/obj/item/storage/firstaid/tactical/ert_second = 1,
 		/obj/item/storage/box/ammo/smgap=1,\
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1,\
@@ -325,6 +321,8 @@
 	suit_store = /obj/item/gun/energy/pulse/pistol/loyalpin
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/firstaid/tactical/ert_first = 1,
+		/obj/item/storage/firstaid/tactical/ert_second = 1,
 		/obj/item/storage/box/ammo/m556=1,\
 		/obj/item/reagent_containers/hypospray/combat/nanites=1,\
 		/obj/item/gun/medbeam=1,
@@ -509,18 +507,24 @@
 	name = "CentCom Official"
 
 	uniform = /obj/item/clothing/under/rank/centcom/officer
-	shoes = /obj/item/clothing/shoes/sneakers/black
+	shoes = /obj/item/clothing/shoes/laceup
 	gloves = /obj/item/clothing/gloves/color/black
-	ears = /obj/item/radio/headset/headset_cent
+	ears = /obj/item/radio/headset/headset_cent/alt
+	head = /obj/item/clothing/head/beret/sec/ntr_beret
 	glasses = /obj/item/clothing/glasses/sunglasses
-	belt = /obj/item/gun/energy/e_gun
+	belt = /obj/item/gun/energy/e_gun/nuclear/ert
 	back = /obj/item/storage/backpack/satchel
 	l_hand = /obj/item/clipboard
-	id = /obj/item/card/id
-	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
-
+	id = /obj/item/card/id/ert
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
 		/obj/item/pda/heads=1,
 		/obj/item/pen=1)
+
+	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle, /obj/item/implant/weapons_auth)
+
+	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,
+	/obj/item/organ/cyberimp/chest/nutrimentextreme,
+	/obj/item/organ/cyberimp/chest/chem_implant)
 
 /datum/outfit/centcom_official/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
@@ -529,9 +533,6 @@
 	var/obj/item/radio/R = H.ears
 	R.set_frequency(FREQ_CENTCOM)
 	R.freqlock = TRUE
-
-	var/obj/item/implant/mindshield/L = new //Here you go Deuryn
-	L.implant(H, null, 1)
 
 	var/obj/item/card/id/W = H.wear_id
 	W.icon_state = "centcom"
@@ -543,41 +544,82 @@
 
 /datum/outfit/ert/commander/inquisitor
 	name = "Inquisition Commander"
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	l_hand = /obj/item/nullrod/scythe/talking/chainsword
-	r_hand = /obj/item/gun/ballistic/automatic/laser
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal
-	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
 
+	mask = /obj/item/clothing/mask/gas/sechailer/swat
+	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
+	l_hand = /obj/item/gun/ballistic/automatic/proto/unrestricted
+	r_hand = /obj/item/nullrod/scythe/talking/chainsword
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal
+	belt = /obj/item/storage/belt/military/ert_max
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
 		/obj/item/storage/firstaid/regular=1,\
-		/obj/item/ammo_box/magazine/recharge=4)
+		/obj/item/storage/box/ammo/holy=1,
+		/obj/item/storage/box/ammo/smgap=1,
+		/obj/item/nullrod=1,
+		)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/cyberimp/arm/shield,
+		/obj/item/organ/eyes/robotic/thermals,
+		/obj/item/organ/cyberimp/chest/thrusters,
+	)
+
 
 /datum/outfit/ert/security/inquisitor
 	name = "Inquisition Security"
 
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
+	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
-	r_hand =  /obj/item/gun/ballistic/automatic/laser
+	l_hand = /obj/item/gun/ballistic/automatic/proto/unrestricted
+	r_hand = /obj/item/nullrod/scythe/talking/chainsword
+	belt = /obj/item/storage/belt/military/ert_max
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
-
+		/obj/item/storage/firstaid/regular=1,
+		/obj/item/storage/box/ammo/smgap=1,
+		/obj/item/storage/box/ammo/holy=1,
 		/obj/item/storage/box/handcuffs=1,
-		/obj/item/ammo_box/magazine/recharge=4,\
-		/obj/item/melee/baton/loaded=1,
-		/obj/item/storage/ifak=1)
+		/obj/item/nullrod=1,
+		)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/cyberimp/arm/shield,
+		/obj/item/organ/eyes/robotic/thermals,
+		/obj/item/organ/cyberimp/chest/thrusters,
+	)
+
 
 /datum/outfit/ert/medic/inquisitor
 	name = "Inquisition Medic"
 
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
+	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
-	r_hand = /obj/item/gun/ballistic/automatic/laser
+	l_hand = /obj/item/gun/ballistic/automatic/proto/unrestricted
+	r_hand = /obj/item/nullrod/scythe/talking/chainsword
+	belt = /obj/item/defibrillator/compact/loaded_ert
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/box/ammo/smgap=1,\
+		/obj/item/storage/box/ammo/holy=1,
+		/obj/item/reagent_containers/hypospray/combat=1,\
+		/obj/item/gun/medbeam=1,\
+		/obj/item/roller=1,
+		/obj/item/nullrod=1,
+		)
 
-		/obj/item/melee/baton/loaded=1,
-		/obj/item/ammo_box/magazine/recharge=4,\
-		/obj/item/reagent_containers/hypospray/combat=1,
-		/obj/item/reagent_containers/hypospray/combat/heresypurge=1,
-		/obj/item/gun/medbeam=1)
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant,
+		/obj/item/organ/cyberimp/arm/surgery/advanced,
+		/obj/item/organ/cyberimp/chest/thrusters,
+	)
 
 /datum/outfit/ert/chaplain/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
@@ -600,7 +642,6 @@
 	belt = /obj/item/storage/belt/soulstone
 	r_hand = /obj/item/gun/ballistic/automatic/laser
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
-
 		/obj/item/nullrod=1,
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/ammo_box/magazine/recharge=4)

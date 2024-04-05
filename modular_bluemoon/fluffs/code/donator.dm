@@ -198,7 +198,7 @@
 	ckeywhitelist = list("architect0r", "fanlexa")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
-/datum/gear/donator/bm/syndiecloak
+/datum/gear/donator/bm/admcloak
 	name = "syndicate admiral's cloak"
 	slot = ITEM_SLOT_NECK
 	path = /obj/item/clothing/neck/cloak/syndieadm
