@@ -110,8 +110,6 @@
 	RegisterSignal(src, COMSIG_ARMOR_PLATED, .proc/upgrade_icon)
 
 /obj/item/clothing/suit/hooded/explorer/standard/proc/upgrade_icon(datum/source, amount, maxamount)
-	SIGNAL_HANDLER
-
 	if(amount)
 		name = "reinforced [initial(name)]"
 		suit_type = "normal_goliath"
