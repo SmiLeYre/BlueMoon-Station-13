@@ -209,7 +209,7 @@
 	icon_state = "inteqbox"
 
 /obj/item/nullrod/claymore/chainsaw_sword/real
-	force = 20
+	force = 35
 
 /obj/item/storage/box/syndie_kit/spacehero/PopulateContents()
 	new /obj/item/autosurgeon/syndicate/inteq/astartes(src)
@@ -337,7 +337,6 @@
 	item_state = "kaminacape"
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
-	mutantrace_variation = STYLE_SNEK_TAURIC
 
 /obj/item/clothing/neck/cloak/ftu
 	name = "FTU Cape"

@@ -236,13 +236,10 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/alliance
 	name = "OTA Hardsuit"
 	desc = "OTA Stormtrooper Hardsuit."
-	icon_state = "hardsuit0-alliance"
-	item_state = "hardsuit0-alliance"
+	icon_state = "hardsuit-alliance"
+	item_state = "hardsuit-alliance"
 	tail_state = "hardsuit-winter"
 	hardsuit_type = "alliance"
-	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
-	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits_digidrated.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/alliance
 
