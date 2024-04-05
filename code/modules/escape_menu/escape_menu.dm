@@ -121,7 +121,6 @@ GLOBAL_LIST_EMPTY(escape_menus)
 		client?.mob.hud_used.plane_masters["[WALL_PLANE]"],
 		client?.mob.hud_used.plane_masters["[ABOVE_WALL_PLANE]"],
 		client?.mob.hud_used.plane_masters["[FULLSCREEN_PLANE]"],
-		client?.mob.hud_used.plane_masters["[SPLASHSCREEN_PLANE]"],
 	)
 	for(var/A in plane_master_controller)
 		var/atom/movable/screen/plane_master/P = A
@@ -140,13 +139,13 @@ GLOBAL_LIST_EMPTY(escape_menus)
 		client?.mob.hud_used.plane_masters["[WALL_PLANE]"],
 		client?.mob.hud_used.plane_masters["[ABOVE_WALL_PLANE]"],
 		client?.mob.hud_used.plane_masters["[FULLSCREEN_PLANE]"],
-		client?.mob.hud_used.plane_masters["[SPLASHSCREEN_PLANE]"],
 	)
 	for(var/A in plane_master_controller)
 		var/atom/movable/screen/plane_master/P = A
 		P.remove_filter("escape_menu_blur")
 
 /atom/movable/screen/escape_menu
+	name = "Anything"
 	plane = ESCAPE_MENU_PLANE
 	layer = ESCAPE_MENU_DEFAULT_LAYER
 	clear_with_screen = FALSE
