@@ -63,7 +63,7 @@
 
 	vis_contents += home_button_text
 
-	screen_loc = "NORTH:-[100 + (32 * offset)],WEST:110"
+	screen_loc = "NORTH:-[132 + (32 * offset)],WEST:110"
 	transform = transform.Scale(6, 1)
 
 /atom/movable/screen/escape_menu/home_button/Destroy()
