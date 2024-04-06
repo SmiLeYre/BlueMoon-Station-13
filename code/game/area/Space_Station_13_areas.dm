@@ -1417,8 +1417,16 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "Security Office"
 	icon_state = "security"
 
+/area/security/briefing_room
+	name = "Briefing room"
+	icon_state = "security"
+
 /area/security/brig
 	name = "Brig"
+	icon_state = "brig"
+
+/area/security/brig_cells
+	name = "Brig Cells"
 	icon_state = "brig"
 
 /area/security/brig/upper
