@@ -1,0 +1,1104 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"aD" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/east,
+/obj/effect/mob_spawn/human/corpse/damaged,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"bA" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"cP" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 2
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"da" = (
+/turf/template_noop,
+/area/template_noop)
+"dj" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"dI" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"eC" = (
+/obj/machinery/computer{
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
+	dir = 8;
+	name = "Broken Computer"
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/dark_red/half{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"fg" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"fs" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/burger/fivealarm,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"fV" = (
+/obj/structure/table,
+/obj/machinery/light/small/directional/north,
+/obj/item/reagent_containers/food/snacks/pie/appletart,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"fZ" = (
+/obj/machinery/computer{
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
+	dir = 4;
+	name = "Broken Computer"
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/green/half{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"gl" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/notasandwich,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"hG" = (
+/obj/machinery/computer{
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
+	dir = 4;
+	name = "Broken Computer"
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"io" = (
+/obj/structure/window/shuttle/survival_pod/spawner,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"is" = (
+/obj/structure/rack,
+/obj/item/gun/ballistic/automatic/surplus,
+/obj/item/gun/ballistic/automatic/surplus{
+	pixel_y = -7
+	},
+/obj/item/ammo_box/magazine/m10mm/rifle{
+	pixel_x = 6;
+	pixel_y = 9
+	},
+/obj/item/ammo_box/magazine/m10mm/rifle{
+	pixel_x = 1;
+	pixel_y = 9
+	},
+/obj/item/ammo_box/magazine/m10mm/rifle{
+	pixel_x = -4;
+	pixel_y = 9
+	},
+/obj/item/ammo_box/magazine/m10mm/rifle{
+	pixel_x = -9;
+	pixel_y = 9
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"kx" = (
+/obj/effect/decal/cleanable/blood,
+/mob/living/simple_animal/hostile/russian,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"lk" = (
+/obj/structure/shuttle/engine/huge,
+/turf/open/floor/fakespace,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"lF" = (
+/obj/structure/table,
+/obj/machinery/light/small/directional/south,
+/obj/item/reagent_containers/food/snacks/burger/fivealarm,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"lT" = (
+/turf/open/floor/fakespace,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"ng" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/burger/corgi,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"nr" = (
+/obj/structure/table,
+/obj/machinery/light/small/directional/south,
+/obj/item/reagent_containers/food/snacks/burger/bearger,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"nG" = (
+/turf/open/floor/iron/stairs/left,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"oY" = (
+/obj/structure/chair/office,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"qg" = (
+/obj/machinery/computer{
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
+	dir = 8;
+	name = "Broken Computer"
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 6
+	},
+/obj/effect/turf_decal/tile/purple/half{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"qU" = (
+/mob/living/simple_animal/hostile/russian,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"rO" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/meatloaf_slice,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"rZ" = (
+/obj/effect/turf_decal/tile/green/half{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"ta" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"tm" = (
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"uq" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/bbqribs,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"uU" = (
+/obj/structure/shuttle/engine/large,
+/turf/open/floor/fakespace,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"vq" = (
+/obj/effect/turf_decal/siding/yellow/end{
+	dir = 1
+	},
+/obj/machinery/door/airlock/security/glass,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"vx" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/beans,
+/obj/item/reagent_containers/food/drinks/flask/russian,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"vA" = (
+/obj/structure/table,
+/obj/machinery/light/small/directional/west,
+/obj/item/reagent_containers/food/snacks/burger/bearger,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"vM" = (
+/obj/effect/turf_decal/tile/blue/half{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"wx" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 6;
+	faction = list("russian")
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"wO" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"xb" = (
+/obj/effect/turf_decal/tile/dark_red/half{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"xo" = (
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"xp" = (
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"xI" = (
+/obj/machinery/computer{
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
+	dir = 8;
+	name = "Broken Computer"
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 5
+	},
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"xV" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/burger/bearger,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"ys" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"yE" = (
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"zy" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/bearsteak,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"zC" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/bbqribs,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Bh" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 10;
+	faction = list("russian")
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Bx" = (
+/obj/machinery/computer{
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
+	dir = 4;
+	name = "Broken Computer"
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 9
+	},
+/obj/effect/turf_decal/tile/blue/half{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"BO" = (
+/obj/machinery/light/small/directional/north,
+/obj/structure/closet/gimmick/russian,
+/obj/item/clothing/suit/armor/vest/russian_coat,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"BS" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/burger/empoweredburger,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"BZ" = (
+/obj/machinery/computer{
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
+	name = "Broken Computer"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Cv" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/hammerandsickle,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"CK" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/west,
+/obj/effect/mob_spawn/human/clown/corpse,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"DD" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"DZ" = (
+/obj/effect/turf_decal/tile/purple/half{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"ED" = (
+/mob/living/simple_animal/hostile/russian/ranged/mosin,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"ET" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 8
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Fa" = (
+/obj/effect/turf_decal/stripes/white{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Hc" = (
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Hq" = (
+/obj/machinery/door/airlock/external,
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Hy" = (
+/obj/machinery/door/airlock/security/glass,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"IM" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/west,
+/obj/effect/mob_spawn/human/corpse/cargo_tech,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"IR" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/machinery/light/small/directional/west,
+/obj/effect/mob_spawn/human/corpse/assistant,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"IU" = (
+/obj/machinery/computer{
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
+	dir = 4;
+	name = "Broken Computer"
+	},
+/obj/effect/turf_decal/siding/yellow{
+	dir = 10
+	},
+/obj/effect/turf_decal/tile/yellow/half{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Jn" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/bearsteak,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Jo" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"JG" = (
+/obj/effect/decal/hammerandsickle,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Ku" = (
+/obj/structure/chair/office{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/yellow/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/yellow/corner{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"KJ" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/meat/steak/plain,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Lh" = (
+/obj/structure/table,
+/obj/machinery/light/small/directional/west,
+/obj/item/reagent_containers/food/snacks/burger/crab,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"LM" = (
+/obj/structure/table,
+/obj/machinery/light/small/directional/east,
+/obj/item/reagent_containers/food/snacks/bbqribs,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"LU" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"MR" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/east,
+/obj/effect/mob_spawn/human/corpse/bartender,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"NJ" = (
+/turf/open/floor/iron/stairs/right,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"NS" = (
+/obj/machinery/door/poddoor,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"NZ" = (
+/obj/effect/turf_decal/siding/yellow{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"OX" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Qg" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Rj" = (
+/obj/effect/decal/cleanable/blood,
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Sb" = (
+/obj/machinery/computer{
+	desc = "A computer long since rendered non-functional due to lack of maintenance. Spitting out error messages.";
+	dir = 1;
+	name = "Broken Computer"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"UX" = (
+/obj/effect/turf_decal/siding/yellow{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Vj" = (
+/obj/structure/table,
+/obj/machinery/light/small/directional/north,
+/obj/item/reagent_containers/food/snacks/pie/burek,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Vm" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/machinery/light/small/directional/east,
+/obj/effect/mob_spawn/human/corpse/cook,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Vq" = (
+/obj/effect/turf_decal/tile/dark_green/half{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Vt" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/burger/bigbite,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Vw" = (
+/turf/open/floor/iron/stairs/medium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Vy" = (
+/mob/living/simple_animal/hostile/russian/ranged/space,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"XH" = (
+/obj/structure/table,
+/obj/machinery/light/small/directional/east,
+/obj/item/reagent_containers/food/snacks/burger/fivealarm,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"Yp" = (
+/mob/living/simple_animal/hostile/russian/ranged/officer,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"ZG" = (
+/mob/living/simple_animal/hostile/bear/russian,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+"ZJ" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/snacks/beans,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/prison_shuttle)
+
+(1,1,1) = {"
+da
+da
+da
+da
+da
+da
+da
+da
+da
+da
+da
+da
+ys
+ys
+ys
+ys
+ys
+ys
+ys
+ys
+da
+da
+da
+da
+da
+da
+da
+da
+da
+da
+"}
+(2,1,1) = {"
+da
+da
+da
+da
+da
+da
+da
+Bh
+ys
+ys
+Hq
+ys
+bA
+CK
+bA
+IR
+bA
+IM
+bA
+ys
+ys
+ys
+ys
+ys
+ys
+ys
+ys
+ET
+ys
+da
+"}
+(3,1,1) = {"
+da
+da
+da
+da
+da
+da
+ys
+ys
+bA
+hG
+fg
+Vy
+bA
+Hy
+bA
+Hy
+bA
+Hy
+bA
+ZJ
+vA
+Vt
+tm
+tm
+zy
+nr
+ys
+dI
+dI
+lk
+"}
+(4,1,1) = {"
+ys
+ys
+NS
+NS
+ys
+ys
+bA
+bA
+bA
+Qg
+tm
+Jo
+tm
+vM
+tm
+rZ
+tm
+yE
+tm
+tm
+tm
+tm
+tm
+kx
+tm
+zC
+ys
+dI
+dI
+lT
+"}
+(5,1,1) = {"
+ys
+Lh
+zy
+vx
+tm
+xo
+Jn
+xV
+bA
+zC
+tm
+tm
+tm
+tm
+tm
+Jo
+tm
+ED
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+ZJ
+ys
+dI
+dI
+lT
+"}
+(6,1,1) = {"
+NS
+BZ
+qU
+tm
+tm
+tm
+OX
+ng
+bA
+zy
+tm
+tm
+Rj
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+LU
+tm
+tm
+tm
+bA
+ys
+ys
+da
+"}
+(7,1,1) = {"
+NS
+BZ
+dj
+tm
+tm
+Vy
+OX
+xp
+bA
+fV
+tm
+tm
+ys
+io
+io
+io
+io
+io
+ys
+Hc
+tm
+ys
+ys
+ys
+tm
+oY
+Sb
+ys
+dI
+uU
+"}
+(8,1,1) = {"
+NS
+BZ
+tm
+tm
+tm
+tm
+OX
+tm
+nG
+tm
+tm
+tm
+io
+Bx
+UX
+fZ
+UX
+IU
+io
+tm
+tm
+ys
+ZG
+io
+tm
+tm
+tm
+ys
+dI
+lT
+"}
+(9,1,1) = {"
+NS
+BO
+tm
+Yp
+JG
+tm
+OX
+tm
+Vw
+tm
+Yp
+tm
+vq
+Ku
+tm
+wO
+tm
+cP
+io
+tm
+qU
+ys
+tm
+Hy
+tm
+Cv
+xp
+ys
+ys
+da
+"}
+(10,1,1) = {"
+NS
+BZ
+tm
+tm
+tm
+tm
+OX
+Jo
+NJ
+tm
+tm
+tm
+io
+xI
+NZ
+eC
+NZ
+qg
+io
+tm
+tm
+ys
+is
+io
+tm
+tm
+tm
+ys
+dI
+uU
+"}
+(11,1,1) = {"
+NS
+BZ
+dj
+tm
+tm
+tm
+OX
+xp
+bA
+Vj
+Qg
+tm
+ys
+io
+io
+io
+io
+io
+ys
+Hc
+tm
+ys
+ys
+ys
+tm
+oY
+Sb
+ys
+dI
+lT
+"}
+(12,1,1) = {"
+NS
+BZ
+tm
+tm
+tm
+qU
+OX
+Vt
+bA
+rO
+tm
+tm
+xo
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+xo
+tm
+tm
+tm
+bA
+ys
+ys
+da
+"}
+(13,1,1) = {"
+ys
+XH
+zC
+xV
+tm
+LU
+uq
+xV
+bA
+KJ
+tm
+tm
+tm
+Qg
+tm
+tm
+tm
+ED
+tm
+tm
+tm
+tm
+tm
+tm
+tm
+BS
+ys
+dI
+dI
+lk
+"}
+(14,1,1) = {"
+ys
+ys
+NS
+NS
+ys
+ys
+bA
+bA
+bA
+tm
+tm
+tm
+tm
+Vq
+tm
+xb
+tm
+DZ
+tm
+tm
+tm
+tm
+tm
+qU
+tm
+zy
+ys
+dI
+dI
+lT
+"}
+(15,1,1) = {"
+da
+da
+da
+da
+da
+da
+ys
+bA
+bA
+DD
+Fa
+Vy
+bA
+Hy
+bA
+Hy
+bA
+Hy
+bA
+fs
+LM
+gl
+tm
+tm
+Vt
+lF
+ys
+dI
+dI
+lT
+"}
+(16,1,1) = {"
+da
+da
+da
+da
+da
+da
+da
+wx
+ys
+ys
+Hq
+ys
+bA
+MR
+bA
+Vm
+bA
+aD
+bA
+ys
+ys
+ys
+ys
+ys
+ys
+ys
+ys
+ta
+ys
+da
+"}
+(17,1,1) = {"
+da
+da
+da
+da
+da
+da
+da
+da
+da
+da
+da
+da
+ys
+ys
+ys
+ys
+ys
+ys
+ys
+ys
+da
+da
+da
+da
+da
+da
+da
+da
+da
+da
+"}

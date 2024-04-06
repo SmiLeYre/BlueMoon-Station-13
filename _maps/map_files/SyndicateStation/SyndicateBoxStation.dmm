@@ -19900,12 +19900,12 @@
 /turf/open/floor/mineral/plastitanium,
 /area/service/kitchen)
 "bak" = (
-/obj/structure/table/wood/fancy/blackred,
-/obj/machinery/door/firedoor,
+/obj/machinery/smartfridge/food,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "kitchen";
 	name = "kitchen shutters"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/mineral/plastitanium,
 /area/service/kitchen)
 "bal" = (
@@ -105925,7 +105925,7 @@ aTN
 cCq
 aVz
 cAg
-bak
+qus
 bbz
 bbz
 ugi
@@ -106182,7 +106182,7 @@ aTO
 cCq
 aVz
 aVz
-qus
+bak
 bbz
 bbz
 blg

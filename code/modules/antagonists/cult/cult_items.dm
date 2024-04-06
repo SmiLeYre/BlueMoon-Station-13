@@ -161,9 +161,11 @@
 /obj/item/cult_bastard/attack_self(mob/user)
 	dash_toggled = !dash_toggled
 	if(dash_toggled)
-		to_chat(loc, "<span class='notice'>You raise [src] and prepare to jaunt with it.</span>")
+		to_chat(loc, "<span class='notice'>Ты готовишься к совершению рывка при помощи [src].</span>")
+		balloon_alert_to_viewers("[user] готовится к совершению рывка!")
 	else
-		to_chat(loc, "<span class='notice'>You lower [src] and prepare to swing it normally.</span>")
+		to_chat(loc, "<span class='notice'>Ты больше не готовишься к совершению рывка при помощи [src].</span>")
+		balloon_alert_to_viewers("[user] больше не готовится к совершению рывка!")
 
 /obj/item/cult_bastard/pickup(mob/living/carbon/human/user)
 	. = ..()
@@ -250,7 +252,7 @@
 	phaseout = /obj/effect/temp_visual/dir_setting/cult/phase/out
 
 /datum/action/innate/dash/cult/IsAvailable(silent = FALSE)
-	if(iscultist(holder) && current_charges)
+	if(iscultist(owner) && current_charges)
 		return TRUE
 	else
 		return FALSE
@@ -540,7 +542,7 @@
 	icon_state = "blindfold"
 	item_state = "blindfold"
 	flash_protect = 1
-	invis_override = INVISIBILITY_OBSERVER
+	invis_override = SEE_INVISIBLE_HIDDEN_RUNES
 
 /obj/item/clothing/glasses/hud/health/night/cultblind/equipped(mob/living/user, slot)
 	..()
@@ -652,7 +654,7 @@
 	curselimit++
 
 /obj/item/cult_shift
-	name = "veil shifter"
+	name = "Veil Shifter"
 	desc = "This relic instantly teleports you, and anything you're pulling, forward by a moderate distance."
 	icon = 'icons/obj/cult.dmi'
 	icon_state ="shifter"
@@ -708,7 +710,7 @@
 		to_chat(C, "<span class='danger'>The veil cannot be torn here!</span>")
 
 /obj/item/flashlight/flare/culttorch
-	name = "void torch"
+	name = "Void Torch"
 	desc = "Used by veteran cultists to instantly transport items to their needful brethren."
 	w_class = WEIGHT_CLASS_SMALL
 	brightness_on = 1

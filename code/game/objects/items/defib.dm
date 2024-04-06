@@ -245,6 +245,9 @@
 /obj/item/defibrillator/compact/loaded
 	cell = /obj/item/stock_parts/cell/high
 
+/obj/item/defibrillator/compact/loaded_ert
+	cell = /obj/item/stock_parts/cell/bluespacereactor
+
 /obj/item/defibrillator/compact/combat
 	name = "combat defibrillator"
 	desc = "A belt-equipped blood-red defibrillator that can be rapidly deployed. Does not have the restrictions or safeties of conventional defibrillators and can revive through space suits."

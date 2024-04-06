@@ -208,6 +208,50 @@
 	new /obj/item/reagent_containers/spray/pepper(src)
 	new /obj/item/melee/classic_baton/telescopic(src)
 
+//CentCom survival box
+/obj/item/storage/box/survival/centcom
+	name = "Extended-Capacity Survival Box"
+	icon_state = "ghostcostuming"
+	mask_type = /obj/item/clothing/mask/gas/sechailer
+	internal_type = /obj/item/tank/internals/emergency_oxygen/double
+	medipen_type = /obj/item/reagent_containers/hypospray/medipen/atropine
+
+/obj/item/storage/box/survival/centcom/PopulateContents()
+	..() // we want the regular stuff too
+	new /obj/item/crowbar/power(src)
+	new /obj/item/melee/classic_baton/telescopic(src)
+	new /obj/item/radio/off(src)
+	new /obj/item/extinguisher/mini(src)
+	new /obj/item/flashlight/flare(src)
+	new /obj/item/hypospray/mkii/CMO/combat/synthflesh(src)
+
+//ert ammo boxes
+/obj/item/storage/box/ammo
+	name = "box of ammo"
+	desc = "Contains some extra ammo"
+	var/ammo = /obj/item/ammo_box/magazine/smgm9mm/ap
+
+/obj/item/storage/box/ammo/smgap
+	name = "box of SMG ammo"
+	ammo = /obj/item/ammo_box/magazine/smgm9mm/ap
+
+/obj/item/storage/box/ammo/m556
+	name = "box of M556 ammo"
+	ammo = /obj/item/ammo_box/magazine/m556
+
+/obj/item/storage/box/ammo/wt
+	name = "box of WT ammo"
+	ammo = /obj/item/ammo_box/magazine/wt550m9
+
+/obj/item/storage/box/ammo/holy
+	name = "some holy water"
+	ammo = /obj/item/reagent_containers/food/drinks/bottle/holywater
+
+/obj/item/storage/box/ammo/PopulateContents()
+	..()
+	for(var/i in 1 to 5)
+		new ammo(src)
+
 /obj/item/storage/box/seclooking
 	icon_state = "secbox"
 	illustration = null

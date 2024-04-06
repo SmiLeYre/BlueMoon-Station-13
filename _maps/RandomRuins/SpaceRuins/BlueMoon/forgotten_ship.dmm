@@ -3309,7 +3309,8 @@
 	dir = 1;
 	icon_state = "delivery_red"
 	},
-/obj/item/storage/book/bible/syndicate,
+/obj/item/folder/inteq,
+/obj/item/storage/book/bible/syndicate/inteq,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/inteq_forgotten_vault)
 "zK" = (

@@ -90,9 +90,10 @@
 		M.update_action_buttons()
 	UnregisterSignal(M, COMSIG_MOB_KEYDOWN)
 	owner = null
-	button.moved = FALSE //so the button appears in its normal position when given to another owner.
-	button.locked = FALSE
-	button.id = null
+	if(button)
+		button.moved = FALSE //so the button appears in its normal position when given to another owner.
+		button.locked = FALSE
+		button.id = null
 
 /datum/action/proc/Trigger()
 	if(!IsAvailable())
@@ -457,6 +458,11 @@
 	check_flags = NONE
 	required_mobility_flags = NONE
 	name = "Activate Explosive Implant"
+
+/datum/action/item_action/chem_implant
+	check_flags = NONE
+	required_mobility_flags = NONE
+	name = "Activate Chemical Implant"
 
 /datum/action/item_action/toggle_research_scanner
 	name = "Toggle Research Scanner"

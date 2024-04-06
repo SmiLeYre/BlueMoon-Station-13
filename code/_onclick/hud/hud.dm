@@ -171,7 +171,7 @@ GLOBAL_LIST_INIT(available_ui_styles, list(
 	if(!screenmob.client)
 		return FALSE
 
-	screenmob.client.screen = list()
+	screenmob.client.clear_screen()
 	screenmob.client.update_clickcatcher()
 
 	var/display_hud_version = version

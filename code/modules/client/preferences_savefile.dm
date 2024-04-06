@@ -421,26 +421,27 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	. = TRUE
 
 	//general preferences
-	S["ooccolor"] >> ooccolor
-	S["lastchangelog"] >> lastchangelog
-	S["UI_style"] >> UI_style
-	S["outline_color"] >> outline_color
-	S["outline_enabled"] >> outline_enabled
-	S["screentip_pref"] >> screentip_pref
-	S["screentip_color"] >> screentip_color
-	S["screentip_images"] >> screentip_images
-	S["hotkeys"] >> hotkeys
-	S["chat_on_map"] >> chat_on_map
-	S["max_chat_length"] >> max_chat_length
-	S["see_chat_non_mob"] 	>> see_chat_non_mob
-	S["tgui_fancy"] >> tgui_fancy
-	S["tgui_lock"] >> tgui_lock
+	S["ooccolor"] 				>> ooccolor
+	S["lastchangelog"] 			>> lastchangelog
+	S["UI_style"] 				>> UI_style
+	S["outline_color"] 			>> outline_color
+	S["outline_enabled"] 		>> outline_enabled
+	S["screentip_pref"] 		>> screentip_pref
+	S["screentip_color"] 		>> screentip_color
+	S["screentip_images"] 		>> screentip_images
+	S["hotkeys"] 				>> hotkeys
+	S["chat_on_map"] 			>> chat_on_map
+	S["max_chat_length"] 		>> max_chat_length
+	S["see_chat_non_mob"] 		>> see_chat_non_mob
+	S["tgui_fancy"] 			>> tgui_fancy
+	S["tgui_lock"] 				>> tgui_lock
 	S["tgui_input_mode"]		>> tgui_input_mode
 	S["tgui_large_buttons"]		>> tgui_large_buttons
 	S["tgui_swapped_buttons"]	>> tgui_swapped_buttons
-	S["buttons_locked"] >> buttons_locked
-	S["windowflash"] >> windowflashing
-	S["be_special"] 		>> be_special
+	S["buttons_locked"] 		>> buttons_locked
+	S["windowflash"] 			>> windowflashing
+	S["windownoise"] 			>> windownoise
+	S["be_special"] 			>> be_special
 
 	//SKYRAT CHANGES BEGIN
 	S["see_chat_emotes"] 	>> see_chat_emotes
@@ -464,6 +465,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["ambientocclusion"] >> ambientocclusion
 	S["auto_fit_viewport"] >> auto_fit_viewport
 	S["widescreenpref"] >> widescreenpref
+	S["fullscreen"] >> fullscreen
 	S["long_strip_menu"] >> long_strip_menu
 	S["pixel_size"]	    	>> pixel_size
 	S["scaling_method"]	    >> scaling_method
@@ -529,6 +531,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	tgui_swapped_buttons	= sanitize_integer(tgui_swapped_buttons, 0, 1, initial(tgui_swapped_buttons))
 	buttons_locked = sanitize_integer(buttons_locked, 0, 1, initial(buttons_locked))
 	windowflashing = sanitize_integer(windowflashing, 0, 1, initial(windowflashing))
+	windownoise = sanitize_integer(windownoise, 0, 1, initial(windownoise))
 	default_slot = sanitize_integer(default_slot, 1, max_save_slots, initial(default_slot))
 	toggles = sanitize_integer(toggles, 0, 16777215, initial(toggles))
 	deadmin = sanitize_integer(deadmin, 0, 16777215, initial(deadmin))
@@ -537,6 +540,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	ambientocclusion = sanitize_integer(ambientocclusion, 0, 1, initial(ambientocclusion))
 	auto_fit_viewport = sanitize_integer(auto_fit_viewport, 0, 1, initial(auto_fit_viewport))
 	widescreenpref = sanitize_integer(widescreenpref, 0, 1, initial(widescreenpref))
+	fullscreen = sanitize_integer(fullscreen, 0, 1, initial(fullscreen))
 	long_strip_menu = sanitize_integer(long_strip_menu, 0, 1, initial(long_strip_menu))
 	pixel_size = sanitize_integer(pixel_size, PIXEL_SCALING_AUTO, PIXEL_SCALING_3X, initial(pixel_size))
 	scaling_method = sanitize_text(scaling_method, initial(scaling_method))
@@ -650,6 +654,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["tgui_swapped_buttons"], tgui_swapped_buttons)
 	WRITE_FILE(S["buttons_locked"], buttons_locked)
 	WRITE_FILE(S["windowflash"], windowflashing)
+	WRITE_FILE(S["windownoise"], windownoise)
 	WRITE_FILE(S["be_special"], be_special)
 	WRITE_FILE(S["default_slot"], default_slot)
 	WRITE_FILE(S["toggles"], toggles)
@@ -683,6 +688,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["damagescreenshake"], damagescreenshake)
 	WRITE_FILE(S["arousable"], arousable)
 	WRITE_FILE(S["widescreenpref"], widescreenpref)
+	WRITE_FILE(S["fullscreen"], fullscreen)
 	WRITE_FILE(S["long_strip_menu"], long_strip_menu)
 	WRITE_FILE(S["autostand"], autostand)
 	WRITE_FILE(S["cit_toggles"], cit_toggles)

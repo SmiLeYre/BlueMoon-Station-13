@@ -2786,6 +2786,8 @@
 	},
 /obj/effect/turf_decal/tile/bar,
 /obj/structure/table,
+/obj/item/book/manual/wiki/barman_recipes,
+/obj/item/reagent_containers/rag,
 /turf/open/floor/plasteel,
 /area/service/bar)
 "ann" = (
@@ -40655,17 +40657,13 @@
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/evidence_room)
 "cTl" = (
-/obj/structure/table/reinforced,
+/obj/machinery/smartfridge/food,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "kitchen";
 	name = "kitchen shutters"
 	},
 /obj/machinery/door/firedoor,
-/obj/item/storage/box/donkpockets{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/turf/open/floor/plasteel/cafeteria,
+/turf/open/floor/iron,
 /area/service/kitchen)
 "cTD" = (
 /obj/structure/cable{
@@ -49191,15 +49189,6 @@
 	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
-"iDP" = (
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/item/book/manual/wiki/barman_recipes,
-/obj/item/reagent_containers/rag,
-/turf/open/floor/plasteel,
-/area/hallway/primary/starboard)
 "iEk" = (
 /obj/machinery/light{
 	dir = 4
@@ -51839,6 +51828,10 @@
 	},
 /obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = -9
+	},
+/obj/item/storage/box/donkpockets{
+	pixel_x = 3;
+	pixel_y = 3
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/service/kitchen)
@@ -109204,7 +109197,7 @@ pWy
 aJC
 aYV
 aYV
-iDP
+bet
 bfH
 qTV
 bhh

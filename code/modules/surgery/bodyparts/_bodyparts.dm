@@ -399,10 +399,7 @@
 	if(HAS_TRAIT(owner, TRAIT_EASYLIMBDISABLE))
 		damage *= 1.5
 	else
-		if (HAS_TRAIT(owner, TRAIT_BLUEMOON_GIANT_BODY))
-			damage/= 1.6*get_size(owner)/2 //что б конечности не отвалилвались от простого удара, для этого урон для проверки приводится к нормальному
-		else
-			damage = min(damage, WOUND_MAX_CONSIDERED_DAMAGE)
+		damage = min(damage, WOUND_MAX_CONSIDERED_DAMAGE)
 
 	var/base_roll = rand(max(damage/1.5,25), round(damage ** CONFIG_GET(number/wound_exponent))) + (get_damage()*CONFIG_GET(number/wound_damage_multiplier))
 	var/injury_roll = base_roll

@@ -20,6 +20,7 @@
 	status_flags = CANPUSH
 	attack_sound = 'sound/weapons/punch1.ogg'
 	see_in_dark = 7
+	see_invisible = SEE_INVISIBLE_HIDDEN_RUNES
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	damage_coeff = list(BRUTE = 1, BURN = 1, TOX = 0, CLONE = 0, STAMINA = 0, OXY = 0)
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
@@ -402,22 +403,16 @@
 	buttontooltipstyle = "cult"
 	button_icon_state = "cult_mark"
 	var/tracking = FALSE
-	var/mob/living/simple_animal/hostile/construct/the_construct
-
-
-/datum/action/innate/seek_master/Grant(var/mob/living/C)
-	the_construct = C
-	..()
 
 /datum/action/innate/seek_master/Activate()
 	var/datum/antagonist/cult/C = owner.mind.has_antag_datum(/datum/antagonist/cult)
 	if(!C)
 		return
 	if(!C.cult_team)
-		to_chat(the_construct, "<span class='cult italic'>You are alone, and have no team.</span>")
+		to_chat(owner, "<span class='cult italic'>You are alone, and have no team.</span>")
 		return
 	var/datum/objective/eldergod/summon_objective = locate() in C.cult_team.objectives
-
+	var/mob/living/simple_animal/hostile/construct/the_construct = owner
 	if(summon_objective.check_completion())
 		the_construct.master = C.cult_team.blood_target
 
@@ -443,15 +438,11 @@
 	background_icon_state = "bg_demon"
 	buttontooltipstyle = "cult"
 	button_icon_state = "cult_mark"
-	var/mob/living/simple_animal/hostile/construct/harvester/the_construct
-
-/datum/action/innate/seek_prey/Grant(var/mob/living/C)
-	the_construct = C
-	..()
 
 /datum/action/innate/seek_prey/Activate()
 	if(GLOB.cult_narsie == null)
 		return
+	var/mob/living/simple_animal/hostile/construct/the_construct = owner
 	if(the_construct.seeking)
 		desc = "None can hide from Nar'Sie, activate to track a survivor attempting to flee the red harvest!"
 		button_icon_state = "cult_mark"

@@ -201,13 +201,6 @@
 		update_icon()
 
 ///ГАРАНД
-/obj/item/gun/ballistic/automatic/m1garand/scope
-	name = "Marksmans rifle"
-	desc = "Лёгкая, мобильная винтовка для марксманской стрельбы. Открытые прицельные приспособления не ограничивают обзор, а деревянная фурнитура никогда не перестанет быть классикой. НЕТ, ЭТО НЕ СТАРЬЁ."
-	zoomable = TRUE
-	zoom_amt = 7
-	zoom_out_amt = 5
-
 /obj/item/disk/design_disk/adv/ammo/garand
 	name = "Ammo desine disk"
 	desc = "Вставь в автолат, что-бы печатать крутые патроны"
@@ -238,7 +231,7 @@
 	category = list("Imported")
 
 /obj/item/storage/backpack/guitarbag/sniper/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/m1garand/scope(src)
+	new /obj/item/gun/ballistic/automatic/m1garand(src)
 	new /obj/item/ammo_box/magazine/garand(src)
 	new /obj/item/disk/design_disk/adv/ammo/garand(src)
 
@@ -385,7 +378,7 @@
 	name = "Old, but gold rifle"
 	desc = "Классическая полуавтоматическая винтовка с деревянной фурнитурой под калибр .308 winchester. Мы знаем как трудно достать в наше время сменные клипсы, по этому в комплекте идёт диск с чертежами патронов для автолата."
 	item = /obj/item/storage/backpack/guitarbag/sniper
-	cost = 12
+	cost = 10
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 ///карго приколы

@@ -13,6 +13,7 @@
 #define TRAIT_HYPNOTIC_GAZE				"hypnotic_gaze"
 #define TRAIT_GFLUID_DETECT				"genital_fluid_detect"
 #define TRAIT_ASHRESISTANCE				"ash_resistance"
+#define TRAIT_TOUGHT					"tought"
 
 // Hyperstation traits
 #define TRAIT_PHARMA            		"hepatic_pharmacokinesis"

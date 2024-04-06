@@ -28,7 +28,6 @@
 					/obj/item/clothing/gloves/tackler = 4, //BlueMoon edit
 					/obj/item/grenade/stingbang = 4, //BlueMoon edit
 					/obj/item/ssword_kit = 1,
-					/obj/item/clothing/suit/armor/hos/platecarrier = 1,
 					/obj/item/storage/belt/bandolier = 2,
 					/obj/item/storage/belt/military = 2,
 					/obj/item/storage/belt/military/assault/hecu = 1,

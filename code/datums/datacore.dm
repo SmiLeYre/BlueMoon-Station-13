@@ -34,14 +34,19 @@
 	var/author = ""
 	var/time = ""
 	var/dataId = 0
+	// BLUEMOON ADD START - авторизация ЦК и возможность пометить правонарушение как уже обработанное
+	var/centcom_enforced = FALSE // Создана ли данная запись сотрудниками ЦК
+	var/penalties_incurred = FALSE // Понёс ли субъект наказание за свои преступления
+	// BLUEMOON ADD END
 
-/datum/datacore/proc/createCrimeEntry(cname = "", cdetails = "", author = "", time = "")
+/datum/datacore/proc/createCrimeEntry(cname = "", cdetails = "", author = "", time = "", centcom_enforced = FALSE) // BLUEMOON EDIT - авторизация ЦК
 	var/datum/data/crime/c = new /datum/data/crime
 	c.crimeName = cname
 	c.crimeDetails = cdetails
 	c.author = author
 	c.time = time
 	c.dataId = ++securityCrimeCounter
+	c.centcom_enforced = centcom_enforced // BLUEMOON EDIT - авторизация ЦК
 	return c
 
 /datum/datacore/proc/addMinorCrime(id = "", datum/data/crime/crime)
@@ -51,21 +56,25 @@
 			crimes |= crime
 			return
 
-/datum/datacore/proc/removeMinorCrime(id, cDataId)
+/datum/datacore/proc/removeMinorCrime(id, cDataId, centcom_authority = FALSE) // BLUEMOON EDIT - авторизация ЦК
 	for(var/datum/data/record/R in security)
 		if(R.fields["id"] == id)
 			var/list/crimes = R.fields["mi_crim"]
 			for(var/datum/data/crime/crime in crimes)
 				if(crime.dataId == text2num(cDataId))
+					if(crime.centcom_enforced && !centcom_authority) // BLUEMOON EDIT - авторизация ЦК
+						return
 					crimes -= crime
 					return
 
-/datum/datacore/proc/removeMajorCrime(id, cDataId)
+/datum/datacore/proc/removeMajorCrime(id, cDataId, centcom_authority = FALSE) // BLUEMOON EDIT - авторизация ЦК
 	for(var/datum/data/record/R in security)
 		if(R.fields["id"] == id)
 			var/list/crimes = R.fields["ma_crim"]
 			for(var/datum/data/crime/crime in crimes)
 				if(crime.dataId == text2num(cDataId))
+					if(crime.centcom_enforced && !centcom_authority) // BLUEMOON EDIT - авторизация ЦК
+						return
 					crimes -= crime
 					return
 
@@ -75,6 +84,17 @@
 			var/list/crimes = R.fields["ma_crim"]
 			crimes |= crime
 			return
+
+// BLUEMOON ADD START - возможность пометить правонарушение как обработанное
+/datum/datacore/proc/switch_incur(id, cDataId)
+	for(var/datum/data/record/R in security)
+		if(R.fields["id"] == id)
+			var/list/crimes = R.fields["mi_crim"] + R.fields["ma_crim"]
+			for(var/datum/data/crime/crime in crimes)
+				if(crime.dataId == text2num(cDataId))
+					crime.penalties_incurred = !crime.penalties_incurred
+					return
+// BLUEMOON ADD END
 
 /datum/datacore/proc/manifest()
 	for(var/mob/dead/new_player/N in GLOB.player_list)

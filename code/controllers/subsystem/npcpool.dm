@@ -22,10 +22,15 @@ SUBSYSTEM_DEF(npcpool)
 
 	//cache for sanic speed (lists are references anyways)
 	var/list/currentrun = src.currentrun
-
+	var/removes_nulls = FALSE //BLUEMOON ADD не начинаем убирать нули если мы уже убираем нули (на всякий случай)
 	while(currentrun.len)
 		var/mob/living/simple_animal/SA = currentrun[currentrun.len]
 		--currentrun.len
+		if(QDELETED(SA)) //BLIEMOON ADD убираем нули из списка если мы нашли хоть одного нуля
+			if(!removes_nulls)
+				removeNullsFromList(GLOB.simple_animals[AI_ON])
+				removes_nulls = TRUE
+			continue //BLUEMOON ADD END
 
 		invoking = TRUE
 		invoke_start = world.time
