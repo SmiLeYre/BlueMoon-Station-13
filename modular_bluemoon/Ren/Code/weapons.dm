@@ -276,7 +276,7 @@
 /obj/item/spear/stop
 	name = "Stop sign"
 	desc = "Где вообще посреди космоса ты умудрился найти этот знак?!"
-	icon_state = "stop"
+	icon_state = "stop1"
 	icon_prefix = "stop"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
