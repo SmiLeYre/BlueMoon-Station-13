@@ -67,21 +67,18 @@
 		if(!group)
 			to_chat(target, "<i>Вы слышите странный механический голос в голове...</i> \"<span class='robot'>Внимание: Не выявлены другие подключенные импланты.</span>\"")
 
-
 /obj/item/implantcase/deathrattle
 	name = "implant case - 'Deathrattle'"
 	desc = "A glass case containing a deathrattle implant."
 	imp_type = /obj/item/implant/deathrattle
 
-/datum/deathrattle_group/centcom
-	name = "Centcom Agent"
+GLOBAL_DATUM_INIT(centcom_deathrattle_group, /datum/deathrattle_group, new)
 
 /obj/item/implant/deathrattle/centcom
 	name = "centcom deathrattle implant"
-	desc = "Hope no one else dies, prepare for when they do."
-	group = /datum/deathrattle_group/centcom
+	desc = "Hope no one else dies, prepare for when they do"
 
 /obj/item/implant/deathrattle/centcom/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)
 	. = ..()
+	group = GLOB.centcom_deathrattle_group
 	group.register(src)
-	return .
