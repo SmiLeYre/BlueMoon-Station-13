@@ -1268,6 +1268,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								dat += "</td>"
 								iterated_markings = 0
 						dat += "</tr></table>"
+						// BLUEMOON ADD START - кнопка для удаления всех маркингов на персонаже
+						dat += "<center>"
+						dat += "<h3>Danger Zone</h3>"
+						dat += "<a href='?_src_=prefs;preference=markings_remove;task=input'>Remove All Markings</a>"
+						dat += "</center>"
+						// BLUEMOON ADD END
 
 				if(SPEECH_CHAR_TAB)
 					dat += "<table><tr><td width='340px' height='300px' valign='top'>"
@@ -3588,6 +3594,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										var/limb_value = text2num(GLOB.bodypart_values[limb])
 										features[marking_type] += list(list(limb_value, selected_marking))
 
+				// BLUEMOON ADD START - кнопка для удаления всех маркингов на персонаже
+				if("markings_remove")
+					var/are_you_sure_about_that = tgalert(parent.mob, "Это действие удалит все татуировки с персонажа. Вы уверены, что хотите сделать это?", "Удаление всех маркингов" ,"Да", "Нет")
+					if(are_you_sure_about_that == "Да")
+						clearlist(features["mam_body_markings"])
+				// BLUEMOON ADD END
 				if("marking_color_specific")
 					var/index = text2num(href_list["marking_index"])
 					var/marking_type = href_list["marking_type"]
