@@ -2,7 +2,7 @@
 	name = "\improper Pulse Rifle"
 	desc = "A heavy-duty, multifaceted energy rifle with three modes. Preferred by front-line combat personnel."
 	icon_state = "pulse"
-	item_state = null
+	item_state = "gun"
 	w_class = WEIGHT_CLASS_BULKY
 	force = 10
 	modifystate = TRUE
