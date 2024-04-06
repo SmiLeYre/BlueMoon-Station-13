@@ -707,15 +707,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/vaulttango)
-"Im" = (
-/obj/machinery/door/airlock/hatch,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/vaulttango)
 "IP" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/machinery/door/airlock/hatch,
@@ -3013,7 +3004,7 @@ JF
 nK
 PK
 ai
-Im
+BR
 KW
 Qg
 RR

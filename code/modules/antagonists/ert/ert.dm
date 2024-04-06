@@ -131,17 +131,14 @@
 /datum/antagonist/ert/medic/inquisitor
 	outfit = /datum/outfit/ert/medic/inquisitor
 
+/datum/antagonist/ert/medic/inquisitor/on_gain()
+	. = ..()
+	owner.isholy = TRUE
+
 /datum/antagonist/ert/security/inquisitor
 	outfit = /datum/outfit/ert/security/inquisitor
 
-/datum/antagonist/ert/chaplain
-	role = "Священник"
-	outfit = /datum/outfit/ert/chaplain
-
-/datum/antagonist/ert/chaplain/inquisitor
-	outfit = /datum/outfit/ert/chaplain/inquisitor
-
-/datum/antagonist/ert/chaplain/on_gain()
+/datum/antagonist/ert/security/inquisitor/on_gain()
 	. = ..()
 	owner.isholy = TRUE
 

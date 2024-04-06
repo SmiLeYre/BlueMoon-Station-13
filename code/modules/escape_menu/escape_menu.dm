@@ -115,8 +115,12 @@ GLOBAL_LIST_EMPTY(escape_menus)
 	if (isnull(plane_master_controllers))
 		return
 
-	plane_master_controller = list(client?.mob.hud_used.plane_masters["[GAME_PLANE]"], client?.mob.hud_used.plane_masters["[FLOOR_PLANE]"],
-									client?.mob.hud_used.plane_masters["[WALL_PLANE]"], client?.mob.hud_used.plane_masters["[ABOVE_WALL_PLANE]"])
+	plane_master_controller = list(
+		client?.mob.hud_used.plane_masters["[GAME_PLANE]"],
+		client?.mob.hud_used.plane_masters["[FLOOR_PLANE]"],
+		client?.mob.hud_used.plane_masters["[WALL_PLANE]"],
+		client?.mob.hud_used.plane_masters["[ABOVE_WALL_PLANE]"],
+	)
 	for(var/A in plane_master_controller)
 		var/atom/movable/screen/plane_master/P = A
 		P.add_filter("escape_menu_blur", 1, list("type" = "blur", "size" = 2))
@@ -128,14 +132,20 @@ GLOBAL_LIST_EMPTY(escape_menus)
 	if (isnull(plane_master_controllers))
 		return
 
-	plane_master_controller = list(client?.mob.hud_used.plane_masters["[GAME_PLANE]"], client?.mob.hud_used.plane_masters["[FLOOR_PLANE]"],
-									client?.mob.hud_used.plane_masters["[WALL_PLANE]"], client?.mob.hud_used.plane_masters["[ABOVE_WALL_PLANE]"])
+	plane_master_controller = list(
+		client?.mob.hud_used.plane_masters["[GAME_PLANE]"],
+		client?.mob.hud_used.plane_masters["[FLOOR_PLANE]"],
+		client?.mob.hud_used.plane_masters["[WALL_PLANE]"],
+		client?.mob.hud_used.plane_masters["[ABOVE_WALL_PLANE]"],
+	)
 	for(var/A in plane_master_controller)
 		var/atom/movable/screen/plane_master/P = A
 		P.remove_filter("escape_menu_blur")
 
 /atom/movable/screen/escape_menu
+	name = "Anything"
 	plane = ESCAPE_MENU_PLANE
+	layer = ESCAPE_MENU_DEFAULT_LAYER
 	clear_with_screen = FALSE
 
 // The escape menu can be opened before SSatoms

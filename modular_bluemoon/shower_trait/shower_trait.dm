@@ -7,7 +7,7 @@
 
 /datum/quirk/bluemoon_shower_need
 	name = BLUEMOON_TRAIT_NAME_SHOWER_NEED
-	desc = "Вам нужно периодически ходить в душ. Хотя бы на станции. Из-за особенностей здешних мест, делать это нужно хотя бы раз в час на пару минут. Можно мыться в душевых, сауне и бассейне. Лучше всего подходят душевые в жилых зонах, а также личных каютах."
+	desc = "Вам нужно периодически ходить в душ. Хотя бы на станции. Из-за особенностей здешних мест, делать это нужно раз в час на пару минут. Можно мыться в душевых, сауне и бассейне. Лучше всего подходят душевые в жилых зонах, а также личных каютах."
 	gain_text = span_warning("Чистота - залог хорошего настроения!")
 	lose_text = span_notice("Мне достаточно мыться раз в неделю, ведь в среднем на 10-минутный душ расходуется 60 литров воды. Использование нагревателя повышает расход в три раза, а на ванну нужно как минимум 200 литров. Получается, что семья из четырех человек, которые каждый день принимают 10-минутный душ, расходует 25 куб. м воды каждый год (традиционно в Великобритании установлены отдельные краны с холодной и горячей водой без смесителя, и для теплого душа нужен проточный нагреватель — прим. ред.). Цена электричества повышает стоимость гигиены такой семьи с 400 £ до 1200 £ в год. И это еще не все: любители душа оказываются ответственными за выброс в атмосферу 3,5 тонн углекислого газа. Чтобы остановить глобальное потепление, мы можем позволить себе только 1 тонну СО2 на человека, с учетом всей его жизнедеятельности от еды до транспорта.")
 	value = -2
@@ -20,6 +20,7 @@
 	var/hide_visual_effect = FALSE // если игрок хочет, он может отключить визуальное отображение, но при этом будет сильное падение настроения
 	var/cleaned_times = 0 // счётчик, сколько тиков игрок постоял под душем
 	var/warning_level = 0 // предупреждения для игрока в чат. Обнуляются при достижении чистоты
+	var/image/stink_overlay // оверлей вони
 
 /datum/quirk/bluemoon_shower_need/on_spawn()
 	. = ..()
@@ -31,6 +32,12 @@
 	var/datum/action/cooldown/change_stink_overlay/C = new // выдача способности для изменения оверлея вони
 	C.Grant(H)
 
+	// создание оверлея вони
+	var/matrix/M = matrix()
+	M.Scale(0.6)
+	stink_overlay = image('modular_bluemoon/shower_trait/stink.dmi', "steam_double", pixel_y = 12, layer = -FIRE_LAYER)
+	stink_overlay.transform = M
+
 /datum/quirk/bluemoon_shower_need/remove()
 	UnregisterSignal(quirk_holder, COMSIG_COMPONENT_CLEAN_ACT)
 	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
@@ -38,6 +45,10 @@
 		var/mob/living/carbon/human/H = quirk_holder
 		var/datum/action/cooldown/change_stink_overlay/C = locate() in H.actions
 		C.Remove(H) // забираем способность изменения оверлея вони
+
+	// удаляем оверлей вони
+	quirk_holder.cut_overlay(stink_overlay)
+	stink_overlay = null
 	. = ..()
 
 /datum/quirk/bluemoon_shower_need/process()
@@ -48,13 +59,13 @@
 	if(T.air)
 		var/datum/gas_mixture/G = T.air
 		if(HAS_TRAIT(quirk_holder, TRAIT_SWIMMING) || G.get_moles(GAS_H2O) > 0) // персонаж находится в бассейне или сауне, происходит мытьё
-			cleaning(TRUE)
+			cleaning(10) // при вызове сигнала COMSIG_COMPONENT_CLEAN_ACT этой функции в аргументы присваивается персонаж, что делает невозможным применение TRUE
 
 	switch(cleanse_level)
 		if(-INFINITY to FINE_CLEAN)
-			quirk_holder.remove_status_effect(/datum/status_effect/stink)
 			if(warning_level > 0)
 				to_chat(quirk_holder, span_notice("Моё тело чистое, можно выходить."))
+				quirk_holder.cut_overlay(stink_overlay)
 				doing_shower = FALSE
 				warning_level = 0
 		if(FIRST_WARNING to DIRTY)
@@ -72,8 +83,8 @@
 				SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "need_shower", /datum/mood_event/need_shower/very_dirty_catastrophic)
 			else
 				SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "need_shower", /datum/mood_event/need_shower/very_dirty)
-				quirk_holder.apply_status_effect(STATUS_EFFECT_STINK)
 			if(warning_level < 3)
+				quirk_holder.add_overlay(stink_overlay)
 				to_chat(quirk_holder, span_phobia("Мне ОЧЕНЬ нужно сходить в душ!"))
 				warning_level = 3
 
@@ -100,7 +111,7 @@
 		else
 			examine_list += span_warning("[quirk_holder.p_they_ru(TRUE)] плохо пахнет.")
 
-/datum/quirk/bluemoon_shower_need/proc/cleaning(var/hide_clothing_warning = FALSE)
+/datum/quirk/bluemoon_shower_need/proc/cleaning(var/hide_clothing_warning)
 	SIGNAL_HANDLER
 	var/cleaning_efficiency = 10 // 3.5~ минуты с 1000
 
@@ -109,7 +120,7 @@
 
 	cleaned_times++
 	if(!check_for_clothing())
-		if(!(cleaned_times % 10) && !hide_clothing_warning) // каждые 10 тиков сообщение, если одежда не подходит
+		if(!(cleaned_times % 10) && (hide_clothing_warning != 10))
 			to_chat(quirk_holder, span_warning("Нужно снять одежду, не подходящую для душа! Бюстгалтер и трусы допустимы."))
 		return
 
@@ -206,34 +217,6 @@
 /datum/mood_event/need_shower/very_dirty_catastrophic
 	description = span_phobia("МНЕ КРИТИЧЕСКИ НУЖНО СХОДИТЬ В ДУШ!\n")
 	mood_change = -16 // игрок скрывает визуальный негативный эффект, но от этого персонаж сильно страдает
-
-/*
- * ОВЕРЛЕЙ
- */
-
-/datum/status_effect/stink
-	id = "stink"
-	on_remove_on_mob_delete = TRUE
-	status_type = STATUS_EFFECT_REFRESH // обновлять таймер
-	alert_type = null
-	var/image/overlay // оверлей вони
-	duration = 10 SECONDS
-
-/datum/status_effect/stink/on_apply()
-	. = ..()
-	add_overlay()
-
-/datum/status_effect/stink/proc/add_overlay()
-	var/matrix/M = matrix()
-	M.Scale(0.6)
-	overlay = image('modular_bluemoon/shower_trait/stink.dmi', "steam_double", pixel_y = 12, layer = -FIRE_LAYER)
-	overlay.transform = M
-	owner.add_overlay(overlay)
-
-/datum/status_effect/stink/on_remove()
-	owner.cut_overlay(overlay)
-	overlay = null
-	return ..()
 
 #undef STATUS_EFFECT_STINK
 

@@ -85,7 +85,7 @@
 	mission = "Разберитесь с проблемами на станции [station_name()], а также проведите плановую проверку всех Отделов и Командования."
 
 /datum/ert/inquisition
-	roles = list(/datum/antagonist/ert/chaplain/inquisitor, /datum/antagonist/ert/security/inquisitor, /datum/antagonist/ert/medic/inquisitor)
+	roles = list(/datum/antagonist/ert/security/inquisitor, /datum/antagonist/ert/medic/inquisitor)
 	leader_role = /datum/antagonist/ert/commander/inquisitor
 	rename_team = "Inquisition"
 	mission = "Уничтожьте любые следы паранормальной активности на борту Космической Станции Тринадцатого Сектора."

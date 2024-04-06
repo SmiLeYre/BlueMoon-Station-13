@@ -571,7 +571,7 @@
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	ears = /obj/item/radio/headset/syndicate/alt
 	back = /obj/item/storage/backpack
-	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/deathrattle, /obj/item/implant/explosive, /obj/item/implant/mindshield)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/deathrattle/centcom, /obj/item/implant/explosive, /obj/item/implant/mindshield)
 	id = /obj/item/card/id/syndicate
 
 	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
@@ -1182,7 +1182,7 @@
 	icon_state = "sleeper_s"
 	short_desc = "Вы Интерн-Специалист, взятый на работу Центральным Командованием в качестве очередной рабочей единицы."
 	flavour_text = "Не так давно вы были взяты на работу в качестве дежурного на Аванпосту Центрального Командования. Ваша задача проста - следить за факсом и отвечать на сообщения, полученные через факс. Помните, что часть сообщений поступает из иного пласта Вселенной, потому не пугайтесь, если вдруг окажется, что где-то там вызывают Кровавого Бога. Просто выполняйте свою работу и отправляйте инструкции."
-	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей."
+	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей. Bы можете выдавать около-шуточные требования и указания в Эксту. Ни в коем случае не оказывайте прямое влияние на станцию в Динамику."
 	outfit = /datum/outfit/centcom_syndicate
 	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
 	assignedrole = "Centcom Specialist"
@@ -1192,7 +1192,7 @@
 /datum/outfit/centcom_syndicate
 	name = "Special Ops Syndicate Officer"
 	head = /obj/item/clothing/head/HoS/beret/syndicate
-	ears = /obj/item/radio/headset/headset_cent/commander
+	ears = /obj/item/radio/headset/syndicate/alt
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 	glasses = /obj/item/clothing/glasses/aviators
 	suit = /obj/item/clothing/suit/armor/vest/warden/syndicate
@@ -1207,7 +1207,7 @@
 		/obj/item/storage/firstaid/regular=1,
 		/obj/item/stamp/syndicate=1,
 		)
-	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle, /obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
 	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
 	id = /obj/item/card/id
 
@@ -1236,7 +1236,7 @@
 	icon_state = "sleeper_s"
 	short_desc = "Вы Интерн-Специалист, взятый на работу Центральным Командованием в качестве очередной рабочей единицы."
 	flavour_text = "Не так давно вы были взяты на работу в качестве дежурного на Аванпосту Центрального Командования. Ваша задача проста - следить за факсом и отвечать на сообщения, полученные через факс. Помните, что часть сообщений поступает из иного пласта Вселенной, потому не пугайтесь, если вдруг окажется, что где-то там вызывают Кровавого Бога. Просто выполняйте свою работу и отправляйте инструкции."
-	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей."
+	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей. Bы можете выдавать около-шуточные требования и указания в Эксту. Ни в коем случае не оказывайте прямое влияние на станцию в Динамику."
 	outfit = /datum/outfit/centcom_nanotrasen
 	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
 	assignedrole = "Centcom Specialist"
@@ -1246,7 +1246,7 @@
 /datum/outfit/centcom_nanotrasen
 	name = "Special Ops Nanotrasen Officer"
 	head = /obj/item/clothing/head/beret/black
-	ears = /obj/item/radio/headset/headset_cent/commander
+	ears = /obj/item/radio/headset/syndicate/alt
 	glasses = /obj/item/clothing/glasses/aviators
 	suit = /obj/item/clothing/suit/space/officer
 	uniform = /obj/item/clothing/under/syndicate
@@ -1260,7 +1260,7 @@
 		/obj/item/storage/firstaid/regular=1,
 		/obj/item/stamp/centcom=1,
 		)
-	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle, /obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
 	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
 	id = /obj/item/card/id
 

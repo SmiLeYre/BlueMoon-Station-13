@@ -18788,12 +18788,6 @@
 /area/ai_monitored/turret_protected/ai)
 "bGj" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/apc{
-	areastring = "/area/maintenance/department/medical";
-	dir = 1;
-	name = "Medical Maintenance APC";
-	pixel_y = 23
-	},
 /obj/structure/cable/white{
 	icon_state = "0-2"
 	},
@@ -18804,6 +18798,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/dark,
 /area/medical/paramedic)
 "bGz" = (
@@ -69313,7 +69308,6 @@
 /obj/structure/cable/white{
 	icon_state = "2-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /obj/machinery/door/poddoor/shutters/radiation/preopen{
 	id = "engsm";
@@ -95651,16 +95645,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/machinery/power/apc/highcap/five_k{
-	areastring = "/area/security/prison/upper";
-	damage_deflection = 21;
-	desc = "A control terminal for the area's electrical systems. It's secured with a durable antitampering plasteel cage.";
-	name = "Armored Prison Wing Cells APC";
-	pixel_y = -26
-	},
 /obj/structure/cable/white{
 	icon_state = "0-4"
 	},
+/obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/plasteel,
 /area/security/prison/cells)
 "mFc" = (

@@ -23,7 +23,7 @@
 		new /atom/movable/screen/escape_menu/home_button/leave_body(
 			null,
 			src,
-			"Покинуть",
+			"Покинуть тело",
 			/* offset = */ 3,
 			CALLBACK(src, PROC_REF(open_leave_body)),
 		)
@@ -63,7 +63,7 @@
 
 	vis_contents += home_button_text
 
-	screen_loc = "NORTH:-[100 + (32 * offset)],WEST:110"
+	screen_loc = "NORTH:-[132 + (32 * offset)],WEST:110"
 	transform = transform.Scale(6, 1)
 
 /atom/movable/screen/escape_menu/home_button/Destroy()
@@ -92,6 +92,7 @@
 
 // Needs to be separated so it doesn't scale
 /atom/movable/screen/escape_menu/home_button_text
+	name = "text"
 	maptext_width = 200
 	maptext_height = 50
 	pixel_x = -80
@@ -117,9 +118,9 @@
 /atom/movable/screen/escape_menu/home_button_text/proc/update_text()
 	var/atom/movable/screen/escape_menu/home_button/escape_menu_loc = loc
 
-	maptext = MAPTEXT_VCR_OSD_MONO("<span style='font-size: 24px; color: [istype(escape_menu_loc) ? escape_menu_loc.text_color() : "white"]'>[button_text]</span>")
+	maptext = "<span style='font-size: 16px; color: [istype(escape_menu_loc) ? escape_menu_loc.text_color() : "white"]; font-family: \"Comic Sans MS\"'>[button_text]</span>"
 
-	if (hovered)
+	if (hovered && (!istype(escape_menu_loc) || escape_menu_loc.enabled()))
 		maptext = "<u>[maptext]</u>"
 
 /atom/movable/screen/escape_menu/home_button/leave_body

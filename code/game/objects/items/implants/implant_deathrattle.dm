@@ -72,3 +72,16 @@
 	name = "implant case - 'Deathrattle'"
 	desc = "A glass case containing a deathrattle implant."
 	imp_type = /obj/item/implant/deathrattle
+
+/datum/deathrattle_group/centcom
+	name = "Centcom Agent"
+
+/obj/item/implant/deathrattle/centcom
+	name = "centcom deathrattle implant"
+	desc = "Hope no one else dies, prepare for when they do."
+	group = /datum/deathrattle_group/centcom
+
+/obj/item/implant/deathrattle/centcom/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)
+	. = ..()
+	group.register(src)
+	return .

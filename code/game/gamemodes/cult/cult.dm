@@ -27,6 +27,8 @@
 			return FALSE
 		if(M.mind.unconvertable)
 			return FALSE
+		if(IS_HERETIC(M))
+			return FALSE
 	else
 		return FALSE
 	if(HAS_TRAIT(M, TRAIT_MINDSHIELD) || issilicon(M) || isbot(M) || isdrone(M) || is_servant_of_ratvar(M) || !M.client)

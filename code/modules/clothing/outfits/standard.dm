@@ -405,7 +405,7 @@
 		/obj/item/pinpointer/nuke=1,\
 		/obj/item/grenade/plastic/x4=1)
 
-	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle, /obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
 
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,

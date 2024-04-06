@@ -88,6 +88,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/tgui_large_buttons = TRUE
 	var/tgui_swapped_buttons = FALSE
 	var/windowflashing = TRUE
+	var/windownoise = TRUE
 	var/toggles = TOGGLES_DEFAULT
 	/// A separate variable for deadmin toggles, only deals with those.
 	var/deadmin = NONE
@@ -1105,7 +1106,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "<b>Toys and Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_stuffing'>[features["butt_stuffing"] == TRUE ? "Yes" : "No"]</a>"
 							dat += "<b>Max Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_max_size;task=input'>[features["butt_max_size"] ? features["butt_max_size"] : "Disabled"]</a>"
 							dat += "<b>Min Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_min_size;task=input'>[features["butt_min_size"] ? features["butt_min_size"] : "Disabled"]</a>"
-							dat += "<b>Butthole Sprite:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_anus'>[features["has_anus"] == TRUE ? "Yes" : "No"]</a>"
+							dat += "<b>Has Anus:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_anus'>[features["has_anus"] == TRUE ? "Yes" : "No"]</a>"
 							if(features["has_anus"])
 								dat += "<b>Butthole Color:</b></a><BR>"
 								if(pref_species.use_skintones && features["genitals_use_skintone"] == TRUE)
@@ -1267,6 +1268,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								dat += "</td>"
 								iterated_markings = 0
 						dat += "</tr></table>"
+						// BLUEMOON ADD START - кнопка для удаления всех маркингов на персонаже
+						dat += "<center>"
+						dat += "<h3>Danger Zone</h3>"
+						dat += "<a href='?_src_=prefs;preference=markings_remove;task=input'>Remove All Markings</a>"
+						dat += "</center>"
+						// BLUEMOON ADD END
 
 				if(SPEECH_CHAR_TAB)
 					dat += "<table><tr><td width='340px' height='300px' valign='top'>"
@@ -1523,6 +1530,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<tr><td width='340px' height='300px' valign='top'>"
 					dat += "<h2>OOC Settings</h2>"
 					dat += "<b>Window Flashing:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Enabled":"Disabled"]</a><br>"
+					dat += "<b>Window Noise:</b> <a href='?_src_=prefs;preference=winnoise'>[(windownoise) ? "Enabled":"Disabled"]</a><br>"
 					dat += "<br>"
 					dat += "<b>Play Admin MIDIs:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & SOUND_MIDI) ? "Enabled":"Disabled"]</a><br>"
 					dat += "<b>Play Lobby Music:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
@@ -3586,6 +3594,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										var/limb_value = text2num(GLOB.bodypart_values[limb])
 										features[marking_type] += list(list(limb_value, selected_marking))
 
+				// BLUEMOON ADD START - кнопка для удаления всех маркингов на персонаже
+				if("markings_remove")
+					var/are_you_sure_about_that = tgalert(parent.mob, "Это действие удалит все татуировки с персонажа. Вы уверены, что хотите сделать это?", "Удаление всех маркингов" ,"Да", "Нет")
+					if(are_you_sure_about_that == "Да")
+						clearlist(features["mam_body_markings"])
+				// BLUEMOON ADD END
 				if("marking_color_specific")
 					var/index = text2num(href_list["marking_index"])
 					var/marking_type = href_list["marking_type"]
@@ -3970,6 +3984,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					tgui_lock = !tgui_lock
 				if("winflash")
 					windowflashing = !windowflashing
+				if("winnoise")
+					windownoise = !windownoise
 				if("hear_adminhelps")
 					toggles ^= SOUND_ADMINHELP
 				if("announce_login")

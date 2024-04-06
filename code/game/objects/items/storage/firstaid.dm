@@ -201,9 +201,9 @@
 	new /obj/item/healthanalyzer/advanced(src)
 	new /obj/item/reagent_containers/syringe/piercing(src)
 	new /obj/item/bonesetter(src)
+	new /obj/item/pinpointer/crew(src)
+	new /obj/item/sensor_device(src)
 	new /obj/item/reagent_containers/medspray/sterilizine(src)
-	new /obj/item/reagent_containers/medspray/sterilizine(src)
-	new /obj/item/reagent_containers/glass/bottle/morphine(src)
 	new /obj/item/reagent_containers/glass/bottle/morphine(src)
 	new /obj/item/hypospray/mkii/CMO/combat/synthflesh(src)
 
@@ -215,14 +215,13 @@
 	if(empty)
 		return
 	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/stack/medical/gauze(src)
-	new /obj/item/reagent_containers/hypospray/medipen/oxandrolone(src)
-	new /obj/item/reagent_containers/hypospray/medipen/salacid(src)
-	new /obj/item/reagent_containers/hypospray/combat/omnizine(src)
+	new /obj/item/reagent_containers/medspray/sterilizine(src)
+	new /obj/item/reagent_containers/glass/bottle/morphine(src)
+	new /obj/item/reagent_containers/glass/bottle/morphine(src)
 	new /obj/item/reagent_containers/hypospray/combat/omnizine(src)
 	new /obj/item/reagent_containers/hypospray/medipen/penacid(src)
 	new /obj/item/reagent_containers/hypospray/medipen/penacid(src)
-
+	new /obj/item/reagent_containers/hypospray/medipen/penacid(src)
 
 
 /obj/item/storage/firstaid/radbgone
