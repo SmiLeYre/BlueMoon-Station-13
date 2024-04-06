@@ -460,9 +460,9 @@
 		time--
 
 /obj/machinery/jukebox/disco/proc/dance5(var/mob/living/M)
+	var/matrix/initial_matrix_ = matrix(M.transform)
 	animate(M, transform = matrix(180, MATRIX_ROTATE), time = 1, loop = 0)
 	var/matrix/initial_matrix = matrix(M.transform)
-	var/matrix/initial_matrix_ = matrix(M.transform)
 	for (var/i in 1 to 60)
 		if (!M)
 			return
