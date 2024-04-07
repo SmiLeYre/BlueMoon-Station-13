@@ -474,13 +474,16 @@
 					/obj/item/clothing/neck/epitrachelion = 1, //BlueMoon changes,
 					/obj/item/clothing/neck/cloak/bishop = 1, //BlueMoon changes,
 					/obj/item/clothing/neck/cloak/bishopblack= 1) //BlueMoon changes
+
+	contraband = list (/obj/item/sign/flag/ravenheart = 3, // Bluemoon edition - Флаг Воронье Сердце,
+					   /obj/item/sign/flag/ravenheart/alt = 3, // Bluemoon edition - Флаг-баннер Воронье Сердце,
+					   /obj/item/storage/box/raven_box/posters = 3, // Bluemoon edition - Постеры,
+					  )
 	premium = list(/obj/item/storage/fancy/ringbox/silver = 4, // BLUEMOON ADD - для проведения свадеб,
 					/obj/item/storage/fancy/ringbox = 4, // BLUEMOON ADD - для проведения свадеб,
 					/obj/item/storage/fancy/ringbox/diamond = 4, // BLUEMOON ADD - для проведения свадеб,
-					/obj/item/sign/flag/ravenheart = 3, // Bluemoon edition - Флаг Воронье Сердце,
-					/obj/item/sign/flag/ravenheart/alt = 3, // Bluemoon edition - Флаг-баннер Воронье Сердце,
-					/obj/item/storage/box/raven_box/posters = 3, // Bluemoon edition - Постеры,
 					/obj/item/lighter/black = 1)
+
 	refill_canister = /obj/item/vending_refill/wardrobe/chap_wardrobe
 	extra_price = PRICE_ALMOST_ONE_GRAND * 1.1
 	payment_department = ACCOUNT_SRV

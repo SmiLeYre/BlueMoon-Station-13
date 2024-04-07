@@ -467,7 +467,7 @@
 		return
 	if(linked_extract.get_held_mob() == owner)
 		return
-	owner.balloon_alert(owner, "[colour] extract faded!")
+	owner.balloon_alert(owner, "power faded!") //bluemoon edit
 	if(!QDELETED(linked_extract))
 		linked_extract.linked_effect = null
 		START_PROCESSING(SSobj,linked_extract)
@@ -1030,3 +1030,4 @@
 				qdel(src)
 				qdel(linked_extract)
 	return ..()
+//
