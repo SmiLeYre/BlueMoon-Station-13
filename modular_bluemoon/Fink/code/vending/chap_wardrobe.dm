@@ -3,7 +3,6 @@
 	var/list/extra_contraband = list(
 		/obj/item/choice_beacon/box/creepy_statue_kit = 6,
 		/obj/item/choice_beacon/box/creepy_statue_kit/big = 1,
-		/obj/item/toy/crayon/ritualdagger = 3,
 			)
 
 	var/list/extra_premium = list(
