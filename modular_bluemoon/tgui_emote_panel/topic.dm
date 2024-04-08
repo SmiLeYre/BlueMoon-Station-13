@@ -1,5 +1,16 @@
 #define TGUI_PANEL_MAX_EMOTES 30
 
+/datum/tgui_panel
+	var/static/list/all_emotes
+
+//used for filtering out "key_third_person" and etc.
+/datum/tgui_panel/proc/get_all_emotes()
+	all_emotes = list()
+	for(var/path in subtypesof(/datum/emote))
+		var/datum/emote/E = new path()
+		if(E.key)
+			all_emotes[E.key] = E
+
 /datum/tgui_panel/on_message(type, payload)
 	. = ..()
 
@@ -41,15 +52,15 @@
 				to_chat(client, span_warning("Добавлен максимум эмоций: [TGUI_PANEL_MAX_EMOTES]."))
 				return
 
-			var/datum/emote/EL
-			EL = EL.emote_list
+			if(isnull(all_emotes))
+				get_all_emotes()
 
-			var/emote_key = tgui_input_list(client.mob, "Какую эмоцию добавить в панель?", "Выбор эмоции", EL - client.prefs.custom_emote_panel)
+			var/emote_key = tgui_input_list(client.mob, "Какую эмоцию добавить в панель?", "Выбор эмоции", all_emotes - client.prefs.custom_emote_panel)
 			if (!emote_key)
 				to_chat(client, span_warning("Добавление эмоции отменено."))
 				return
 
-			if (!(emote_key in EL))
+			if (!(emote_key in all_emotes))
 				to_chat(client, span_warning("Эмоция [emote_key] не существует!"))
 				return
 
