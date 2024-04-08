@@ -763,7 +763,7 @@ DEFINE_BITFIELD(turret_flags, list(
 /obj/machinery/porta_turret/syndicate/assess_perp(mob/living/carbon/human/perp)
 	var/obj/item/card/id/target_card = perp.get_idcard(FALSE)
 	if(target_card && (ACCESS_SYNDICATE in target_card?.access) && istype(target_card, /obj/item/card/id/syndicate))
-		if(istype(target_card, /obj/item/card/id/syndicate/inteq) || istype(target_card, /obj/item/card/id/syndicate/inteq/anyone) || istype(target_card, /obj/item/card/id/syndicate/inteq/nuke_leader))
+		if(istype(target_card, /obj/item/card/id/inteq) || istype(target_card, /obj/item/card/id/inteq/anyone) || istype(target_card, /obj/item/card/id/inteq/nuke_leader))
 			return 10	//no InteQ allowed!
 		else
 			return 0

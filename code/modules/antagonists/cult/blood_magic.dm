@@ -498,11 +498,11 @@
 		log_game("Teleport talisman failed - no other teleport runes")
 		return
 
-	// var/turf/T = get_turf(src)
-	// if(is_away_level(T.z))
-	// 	to_chat(user, "<span class='cultitalic'>You are not in the right dimension!</span>")
-	// 	log_game("Teleport spell failed - user in away mission")
-	// 	return
+	var/turf/T = get_turf(src)
+	if(is_away_level(T.z))
+		to_chat(user, "<span class='cultitalic'>Вы находитесь не в том измерении!</span>")
+		log_game("Руна телепортации не сработала - пользователь находится за Вратами.")
+		return
 
 	var/input_rune_key = input(user, "Choose a rune to teleport to.", "Rune to Teleport to") as null|anything in potential_runes //we know what key they picked
 	var/obj/effect/rune/teleport/actual_selected_rune = potential_runes[input_rune_key] //what rune does that key correspond to?

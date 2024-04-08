@@ -18,7 +18,7 @@
 	var/mob/living/carbon/human/H = owner.current
 	if(!istype(H))
 		return
-	H.equipOutfit(/datum/outfit/centcom_official)
+	H.equipOutfit(/datum/outfit/ert/centcom_official)
 
 	if(CONFIG_GET(flag/enforce_human_authority))
 		H.set_species(/datum/species/human)

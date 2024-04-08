@@ -249,15 +249,38 @@
 	suit = /obj/item/clothing/suit/space/officer
 	shoes = /obj/item/clothing/shoes/combat/swat
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	glasses = /obj/item/clothing/glasses/thermal/eyepatch
-	ears = /obj/item/radio/headset/headset_cent/commander
+	glasses = /obj/item/clothing/glasses/hud/security/night/combat
+	ears = /obj/item/radio/headset/headset_cent/commander/alt/generic
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 	head = /obj/item/clothing/head/helmet/space/beret
-	belt = /obj/item/gun/energy/pulse/pistol/m1911
+	belt = /obj/item/gun/energy/pulse/pistol/loyalpin
 	r_pocket = /obj/item/lighter
+	l_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	back = /obj/item/storage/backpack/satchel/leather
-	id = /obj/item/card/id
+	id = /obj/item/card/id/ert
 
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/pda/heads=1,
+		/obj/item/stamp/chameleon=1,
+		/obj/item/melee/classic_baton/telescopic/centcom/plus = 1,
+		)
+
+	implants = list(
+		/obj/item/implant/mindshield,
+		/obj/item/implant/deathrattle/centcom,
+	 	/obj/item/implant/weapons_auth,
+	 	/obj/item/implant/krav_maga,
+	)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/medical,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/cyberimp/arm/combat,
+		/obj/item/organ/eyes/robotic/thermals,
+		/obj/item/organ/cyberimp/mouth/breathing_tube,
+		/obj/item/organ/cyberimp/chest/thrusters,
+	)
 /datum/outfit/spec_ops/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
 		return
@@ -405,7 +428,7 @@
 		/obj/item/pinpointer/nuke=1,\
 		/obj/item/grenade/plastic/x4=1)
 
-	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle, /obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
 
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,

@@ -1,3 +1,8 @@
+
+/obj/item/paper/beamgun_istruction
+	name = "Инструкция по пользованию Medical Beamgun"
+	default_raw_text = "<b>*ПРЕДУПРЕЖДЕНИЕ, НЕ СКРЕЩИВАЙТЕ ДВА ЛУЧА ИЛИ БОЛЕЕ*</b>"
+
 /datum/outfit/ert
 	name = "ERT Common"
 
@@ -13,7 +18,7 @@
 
 	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
-	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle, /obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
 	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
 
 
@@ -243,6 +248,7 @@
 		/obj/item/storage/firstaid/tactical/ert_first = 1,
 		/obj/item/storage/firstaid/tactical/ert_second = 1,
 		/obj/item/gun/medbeam=1,
+		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,)
 
 	cybernetic_implants = list(
@@ -269,6 +275,7 @@
 		/obj/item/storage/box/ammo/wt=1,
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1,
+		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,)
 
 	cybernetic_implants = list(
@@ -302,7 +309,8 @@
 		/obj/item/storage/firstaid/tactical/ert_second = 1,
 		/obj/item/storage/box/ammo/smgap=1,\
 		/obj/item/reagent_containers/hypospray/combat=1,\
-		/obj/item/gun/medbeam=1,\
+		/obj/item/gun/medbeam=1,
+		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,)
 
 	cybernetic_implants = list(
@@ -326,6 +334,7 @@
 		/obj/item/storage/box/ammo/m556=1,\
 		/obj/item/reagent_containers/hypospray/combat/nanites=1,\
 		/obj/item/gun/medbeam=1,
+		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,)
 
 	cybernetic_implants = list(
@@ -503,52 +512,12 @@
 	W.access = list(ACCESS_MAINT_TUNNELS,ACCESS_CENT_GENERAL)
 	W.update_label(W.registered_name, W.assignment)
 
-/datum/outfit/centcom_official
-	name = "CentCom Official"
-
-	uniform = /obj/item/clothing/under/rank/centcom/officer
-	shoes = /obj/item/clothing/shoes/laceup
-	gloves = /obj/item/clothing/gloves/color/black
-	ears = /obj/item/radio/headset/headset_cent/alt
-	head = /obj/item/clothing/head/beret/sec/ntr_beret
-	glasses = /obj/item/clothing/glasses/sunglasses
-	belt = /obj/item/gun/energy/e_gun/nuclear/ert
-	back = /obj/item/storage/backpack/satchel
-	l_hand = /obj/item/clipboard
-	id = /obj/item/card/id/ert
-	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
-		/obj/item/pda/heads=1,
-		/obj/item/pen=1)
-
-	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle, /obj/item/implant/weapons_auth)
-
-	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,
-	/obj/item/organ/cyberimp/chest/nutrimentextreme,
-	/obj/item/organ/cyberimp/chest/chem_implant)
-
-/datum/outfit/centcom_official/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
-	if(visualsOnly)
-		return
-
-	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_CENTCOM)
-	R.freqlock = TRUE
-
-	var/obj/item/card/id/W = H.wear_id
-	W.icon_state = "centcom"
-	W.access = get_all_accesses()//They get full station access.
-	W.access += get_centcom_access("Death Commando")//Let's add their alloted CentCom access.
-	W.assignment = "CentCom Official"
-	W.registered_name = H.real_name
-	W.update_label(W.registered_name, W.assignment)
-
 /datum/outfit/ert/commander/inquisitor
 	name = "Inquisition Commander"
 
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
 	l_hand = /obj/item/gun/ballistic/automatic/proto/unrestricted
-	r_hand = /obj/item/nullrod/scythe/talking/chainsword
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal
 	belt = /obj/item/storage/belt/military/ert_max
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
@@ -575,7 +544,6 @@
 	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
 	l_hand = /obj/item/gun/ballistic/automatic/proto/unrestricted
-	r_hand = /obj/item/nullrod/scythe/talking/chainsword
 	belt = /obj/item/storage/belt/military/ert_max
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
 		/obj/item/storage/firstaid/regular=1,
@@ -602,13 +570,13 @@
 	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
 	l_hand = /obj/item/gun/ballistic/automatic/proto/unrestricted
-	r_hand = /obj/item/nullrod/scythe/talking/chainsword
 	belt = /obj/item/defibrillator/compact/loaded_ert
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
 		/obj/item/storage/box/ammo/smgap=1,\
 		/obj/item/storage/box/ammo/holy=1,
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1,\
+		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,
 		/obj/item/nullrod=1,
 		)
@@ -621,40 +589,51 @@
 		/obj/item/organ/cyberimp/chest/thrusters,
 	)
 
-/datum/outfit/ert/chaplain/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
-	..()
+//Агенты ЦК
 
+/datum/outfit/ert/centcom_official
+	name = "CentCom Official"
+	uniform = /obj/item/clothing/under/syndicate/sniper
+	suit = /obj/item/clothing/suit/armor/vest/agent
+	shoes = /obj/item/clothing/shoes/laceup
+	head = /obj/item/clothing/head/HoS/beret/syndicate
+	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
+	belt = /obj/item/storage/belt/military/ert_max
+	back = /obj/item/storage/backpack/satchel
+	mask = null
+	id = /obj/item/card/id/ert
+
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/pda/heads=1,
+		/obj/item/stamp/chameleon=1,
+		)
+	implants = list(
+		/obj/item/implant/mindshield,
+		/obj/item/implant/deathrattle/centcom,
+	 	/obj/item/implant/weapons_auth,
+	 	/obj/item/implant/krav_maga,
+	)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/eyes/robotic/thermals,
+		/obj/item/organ/cyberimp/mouth/breathing_tube,
+	)
+
+/datum/outfit/ert/centcom_official/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
 		return
 
 	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/heads/hop
-	R.recalculateChannels()
+	R.set_frequency(FREQ_CENTCOM)
+	R.freqlock = TRUE
 
-/datum/outfit/ert/chaplain
-	name = "ERT Chaplain"
-
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor // Chap role always gets this suit
-	id = /obj/item/card/id/ert/chaplain
-	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
-	back = /obj/item/storage/backpack/cultpack
-	belt = /obj/item/storage/belt/soulstone
-	r_hand = /obj/item/gun/ballistic/automatic/laser
-	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
-		/obj/item/nullrod=1,
-		/obj/item/storage/firstaid/regular=1,\
-		/obj/item/ammo_box/magazine/recharge=4)
-
-/datum/outfit/ert/chaplain/inquisitor
-	name = "Inquisition Chaplain"
-
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
-	belt = /obj/item/storage/belt/soulstone/full/chappy
-	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
-
-		/obj/item/grenade/chem_grenade/holy=1,
-		/obj/item/nullrod=1,
-		/obj/item/storage/firstaid/regular=1,\
-		/obj/item/ammo_box/magazine/recharge=4)
+	var/obj/item/card/id/W = H.wear_id
+	W.icon_state = "centcom"
+	W.access = get_all_accesses()//They get full station access.
+	W.access += get_centcom_access("Death Commando")//Let's add their alloted CentCom access.
+	W.assignment = "CentCom Official"
+	W.registered_name = H.real_name
+	W.update_label(W.registered_name, W.assignment)
