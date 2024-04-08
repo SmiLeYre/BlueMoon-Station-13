@@ -11,7 +11,6 @@
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 5
-	custom_materials = list(/datum/material/silver=12000)
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	attack_verb = list("stabbed", "slashed", "cut")
 	resistance_flags = FIRE_PROOF

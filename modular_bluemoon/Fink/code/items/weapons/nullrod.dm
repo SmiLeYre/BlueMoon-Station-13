@@ -11,7 +11,6 @@
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 5
-	throwforce = 20
 	w_class = WEIGHT_CLASS_TINY
 	var/hole = CUM_TARGET_VAGINA
 
@@ -60,7 +59,7 @@
 		target.adjustToxLoss(-1.5)
 		target.adjustCloneLoss(-1.5)
 		// вкусное печенько
-		//if(target.get_lust() >= (target.get_lust_tolerance() * 3))  // проверка на окончание (пока сломано)
+		//if(target.get_lust() >= (target.get_lust_tolerance() * 3))  // проверка на кончание (пока сломано)
 		if(prob(3))
 			new /obj/item/reagent_containers/food/snacks/cookie(target.loc)
 			to_chat(user, "<span class='adminnoticevin'>Your prayers have been answered!! You received the <b>best cookie</b>!</span>")
