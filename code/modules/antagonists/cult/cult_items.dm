@@ -339,7 +339,7 @@
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
 	alternate_screams = BLOOD_SCREAMS
-	mutantrace_variation = STYLE_SNEK_TAURIC //bluemoon add
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/clothing/head/culthood/alt
 	name = "cultist hood"
@@ -450,7 +450,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | ALLOWINTERNALS
 	alternate_screams = BLOOD_SCREAMS
-	mutantrace_variation = STYLE_SNEK_TAURIC //bluemoon add
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/clothing/head/hooded/cult_hoodie
 	name = "\improper Nar'Sien Empowered Helmet"
@@ -512,7 +512,7 @@
 	armor = list(MELEE = -50, BULLET = -50, LASER = -50,ENERGY = -50, BOMB = -50, BIO = -50, RAD = -50, FIRE = 0, ACID = 0)
 	slowdown = -1
 	hoodtype = /obj/item/clothing/head/hooded/berserkerhood
-	mutantrace_variation = STYLE_SNEK_TAURIC //bluemoon add
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/clothing/head/hooded/berserkerhood
 	name = "Flagellant's Robes"
