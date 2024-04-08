@@ -73,6 +73,7 @@
 		/obj/item/clothing/mask/gas/welding/up,\
 		/obj/item/tank/internals/oxygen,\
 		)
+	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
 
 /datum/outfit/debug/bsthardsuit //Debug objs plus hardsuit
 	name = "Bluespace Tech (Hardsuit)"
@@ -101,6 +102,7 @@
 		/obj/item/gun/energy/pulse=1,\
 		/obj/item/gun/energy/taser/debug,\
 		)
+	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
 
 /datum/outfit/chrono_agent
 	name = "Timeline Eradication Agent"

@@ -1,3 +1,8 @@
+
+/obj/item/paper/beamgun_istruction
+	name = "Инструкция по пользованию Medical Beamgun"
+	default_raw_text = "<b>*ПРЕДУПРЕЖДЕНИЕ, НЕ СКРЕЩИВАЙТЕ ДВА ЛУЧА ИЛИ БОЛЕЕ*</b>"
+
 /datum/outfit/ert
 	name = "ERT Common"
 
@@ -243,6 +248,7 @@
 		/obj/item/storage/firstaid/tactical/ert_first = 1,
 		/obj/item/storage/firstaid/tactical/ert_second = 1,
 		/obj/item/gun/medbeam=1,
+		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,)
 
 	cybernetic_implants = list(
@@ -269,6 +275,7 @@
 		/obj/item/storage/box/ammo/wt=1,
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1,
+		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,)
 
 	cybernetic_implants = list(
@@ -302,7 +309,8 @@
 		/obj/item/storage/firstaid/tactical/ert_second = 1,
 		/obj/item/storage/box/ammo/smgap=1,\
 		/obj/item/reagent_containers/hypospray/combat=1,\
-		/obj/item/gun/medbeam=1,\
+		/obj/item/gun/medbeam=1,
+		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,)
 
 	cybernetic_implants = list(
@@ -326,6 +334,7 @@
 		/obj/item/storage/box/ammo/m556=1,\
 		/obj/item/reagent_containers/hypospray/combat/nanites=1,\
 		/obj/item/gun/medbeam=1,
+		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,)
 
 	cybernetic_implants = list(
@@ -567,6 +576,7 @@
 		/obj/item/storage/box/ammo/holy=1,
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1,\
+		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,
 		/obj/item/nullrod=1,
 		)
@@ -595,8 +605,7 @@
 
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
 		/obj/item/pda/heads=1,
-		/obj/item/stamp/centcom=1,
-		/obj/item/stamp/syndicate=1,
+		/obj/item/stamp/chameleon=1,
 		)
 	implants = list(
 		/obj/item/implant/mindshield,
