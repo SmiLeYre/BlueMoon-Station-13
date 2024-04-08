@@ -4435,6 +4435,7 @@
 #include "modular_bluemoon\SmiLeY\code\terror_spiders\widow.dm"
 #include "modular_bluemoon\SmiLeY\hecu\code\hecu_helmet.dm"
 #include "modular_bluemoon\SmiLeY\hecu\code\hecu_suit.dm"
+#include "modular_bluemoon\SmiLeY\hecu\icons\inteq_cards.dm"
 #include "modular_bluemoon\SmiLeY\inteq_ghostrole\cybersun_tech.dm"
 #include "modular_bluemoon\SmiLeY\inteq_ghostrole\forgottenship.dm"
 #include "modular_bluemoon\SmiLeY\mapping\access_helpers.dm"

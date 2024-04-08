@@ -401,7 +401,7 @@
 			var/obj/item/organ/O = V
 			if(O)
 				O.on_life(seconds, times_fired)
-	else
+	else if(!QDELETED(src))
 		if(reagents.has_reagent(/datum/reagent/toxin/formaldehyde, 1) || reagents.has_reagent(/datum/reagent/preservahyde, 1)) // No organ decay if the body contains formaldehyde. Or preservahyde.
 			return
 		for(var/V in internal_organs)

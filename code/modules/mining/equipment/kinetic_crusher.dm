@@ -94,7 +94,7 @@
 		if(!QDELETED(target))
 			var/obj/item/crusher_trophy/T = t
 			T.on_melee_hit(target, user)
-	if(!QDELETED(C) && !QDELETED(target))
+	if(C && !QDELING(C) && !QDELETED(target)) // C can be 0 here, and QDELETED will runtime if that's the case.
 		C.total_damage += target_health - target.health //we did some damage, but let's not assume how much we did
 
 /obj/item/kinetic_crusher/afterattack(atom/target, mob/living/user, proximity_flag, clickparams)
@@ -132,18 +132,18 @@
 			var/obj/item/crusher_trophy/T = t
 			T.on_mark_detonation(target, user)
 		if(!QDELETED(L))
-			if(!QDELETED(C))
+			if(C && !QDELING(C)) // C can be 0 here, and QDELETED will runtime if that's the case.
 				C.total_damage += target_health - L.health //we did some damage, but let's not assume how much we did
 			new /obj/effect/temp_visual/kinetic_blast(get_turf(L))
 			var/backstab_dir = get_dir(user, L)
 			var/def_check = L.getarmor(type = BOMB)
 			if((user.dir & backstab_dir) && (L.dir & backstab_dir))
-				if(!QDELETED(C))
+				if(C && !QDELING(C)) // See above.
 					C.total_damage += detonation_damage + backstab_bonus //cheat a little and add the total before killing it, so certain mobs don't have much lower chances of giving an item
 				L.apply_damage(detonation_damage + backstab_bonus, BRUTE, blocked = def_check)
 				playsound(user, 'sound/weapons/kenetic_accel.ogg', 100, 1) //Seriously who spelled it wrong
 			else
-				if(!QDELETED(C))
+				if(C && !QDELING(C)) // See above.
 					C.total_damage += detonation_damage
 				L.apply_damage(detonation_damage, BRUTE, blocked = def_check)
 

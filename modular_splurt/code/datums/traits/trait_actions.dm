@@ -1484,21 +1484,15 @@
 //Quirk: Cosmetic Glow
 //Copy and pasted. Cry about it.
 /datum/action/cosglow
-	name = "Broken Glow Action"
-	desc = "Report this to a coder."
-	icon_icon = 'icons/effects/effects.dmi'
-	button_icon_state = "static"
-
-/datum/action/cosglow/update_glow
 	name = "Modify Glow"
 	desc = "Change your glow color."
 	button_icon_state = "blank"
 
 	// Glow color to use
-	var/glow_color = "#39ff14" // Neon green
+	var/glow_color
 
 	// Thickness of glow outline
-	var/glow_range = 2
+	var/glow_range
 
 
 /datum/action/cosglow/update_glow/Grant()
@@ -1508,7 +1502,8 @@
 	var/mob/living/carbon/human/action_mob = owner
 
 	// Add outline effect
-	action_mob.add_filter("cos_glow", 1, list("type" = "outline", "color" = glow_color+"30", "size" = glow_range))
+	if(glow_color && glow_range)
+		action_mob.add_filter("rad_fiend_glow", 1, list("type" = "outline", "color" = glow_color+"30", "size" = glow_range))
 
 /datum/action/cosglow/update_glow/Remove()
 	. = ..()
@@ -1517,7 +1512,7 @@
 	var/mob/living/carbon/human/action_mob = owner
 
 	// Remove glow
-	action_mob.remove_filter("cos_glow")
+	action_mob.remove_filter("rad_fiend_glow")
 
 /datum/action/cosglow/update_glow/Trigger()
 	. = ..()
@@ -1533,16 +1528,19 @@
 	glow_color = (input_color ? input_color : glow_color)
 
 	// Ask user for range input
-	var/input_range = input(action_mob, "How much do you glow? Value may range between 1 to 2.", "Select Glow Range", glow_range) as num|null
+	var/input_range = input(action_mob, "How much do you glow? Value may range between 0 to 4. 0 disables glow.", "Select Glow Range", glow_range) as num|null
 
 	// Check if range input was given
-	// Reset to stored color when not given input
-	// Input is clamped in the 1-4 range
-	glow_range = (input_range ? clamp(input_range, 0, 4) : glow_range) //More customisable, so you know when you're looking at someone with Radfiend (doom) or a normal player.
+	// Disable glow if input is 0.
+	// Reset to stored range when input is null.
+	// Input is clamped in the 0-4 range
+	glow_range = isnull(input_range) ? glow_range : clamp(input_range, 0, 4) //More customisable, so you know when you're looking at someone with Radfiend (doom) or a normal player.
 
 	// Update outline effect
-	action_mob.remove_filter("cos_glow")
-	action_mob.add_filter("cos_glow", 1, list("type" = "outline", "color" = glow_color+"30", "size" = glow_range))
+	if(glow_range && glow_color)
+		action_mob.add_filter("rad_fiend_glow", 1, list("type" = "outline", "color" = glow_color+"30", "size" = glow_range))
+	else
+		action_mob.remove_filter("rad_fiend_glow")
 
 //
 // Quirk: Rad Fiend

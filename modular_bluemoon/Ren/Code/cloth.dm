@@ -559,7 +559,7 @@
 	path = /obj/item/clothing/underwear/socks/socks_line
 
 ///Аутфиты
-/obj/item/card/id/syndicate/inteq_fake
+/obj/item/card/id/inteq_fake
 	name = "InteQ Vanguard ID card"
 	id_type_name = "InteQ ID card"
 	desc = "An ID straight from the InteQ."
@@ -577,7 +577,7 @@
 	head = /obj/item/clothing/head/helmet/swat/inteq
 	mask = /obj/item/clothing/mask/balaclava/breath/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
-	id = /obj/item/card/id/syndicate/inteq_fake
+	id = /obj/item/card/id/inteq_fake
 
 /obj/effect/mob_spawn/human/corpse/inteq_dead
 	name = "InteQ Operative"

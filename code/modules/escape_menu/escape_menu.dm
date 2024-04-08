@@ -143,7 +143,6 @@ GLOBAL_LIST_EMPTY(escape_menus)
 		P.remove_filter("escape_menu_blur")
 
 /atom/movable/screen/escape_menu
-	name = "Anything"
 	plane = ESCAPE_MENU_PLANE
 	layer = ESCAPE_MENU_DEFAULT_LAYER
 	clear_with_screen = FALSE

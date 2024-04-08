@@ -623,44 +623,46 @@ Class Procs:
 	if((flags_1 & NODECONSTRUCT_1) && !W.works_from_distance)
 		return FALSE
 	var/shouldplaysound = 0
-	if(component_parts)
-		if(panel_open || W.works_from_distance)
-			var/obj/item/circuitboard/machine/CB = locate(/obj/item/circuitboard/machine) in component_parts
-			var/P
-			if(W.works_from_distance)
-				to_chat(user, display_parts(user))
-			for(var/obj/item/A in component_parts)
-				for(var/D in CB.req_components)
-					if(ispath(A.type, D))
-						P = D
-						break
-				for(var/obj/item/B in W.contents)
-					if(istype(B, P) && istype(A, P))
-						if(B.get_part_rating() > A.get_part_rating())
-							if(istype(B,/obj/item/stack)) //conveniently this will mean A is also a stack and I will kill the first person to prove me wrong
-								var/obj/item/stack/SA = A
-								var/obj/item/stack/SB = B
-								var/used_amt = SA.get_amount()
-								if(!SB.use(used_amt))
-									continue //if we don't have the exact amount to replace we don't
-								var/obj/item/stack/SN = new SB.merge_type(null,used_amt)
-								component_parts += SN
-							else
-								if(SEND_SIGNAL(W, COMSIG_TRY_STORAGE_TAKE, B, src))
-									component_parts += B
-									B.moveToNullspace()
-							SEND_SIGNAL(W, COMSIG_TRY_STORAGE_INSERT, A, null, null, TRUE)
-							component_parts -= A
-							to_chat(user, "<span class='notice'>[capitalize(A.name)] заменил с помощью [B.name].</span>")
-							shouldplaysound = 1 //Only play the sound when parts are actually replaced!
-							break
-			RefreshParts()
-		else
-			to_chat(user, display_parts(user))
-		if(shouldplaysound)
-			W.play_rped_sound()
-		return TRUE
-	return FALSE
+	if(!component_parts)
+		return FALSE
+	if(!panel_open && !W.works_from_distance)
+		to_chat(user, display_parts(user))
+		return FALSE
+	var/obj/item/circuitboard/machine/machine_board = locate(/obj/item/circuitboard/machine) in component_parts
+	if(!machine_board)
+		return FALSE
+	var/P
+	if(W.works_from_distance)
+		to_chat(user, display_parts(user))
+	for(var/obj/item/A in component_parts)
+		for(var/D in machine_board.req_components)
+			if(istype(A, D))
+				P = D
+				break
+		for(var/obj/item/B in W.contents)
+			if(istype(B, P) && istype(A, P))
+				if(B.get_part_rating() > A.get_part_rating())
+					if(istype(B,/obj/item/stack)) //conveniently this will mean A is also a stack and I will kill the first person to prove me wrong
+						var/obj/item/stack/SA = A
+						var/obj/item/stack/SB = B
+						var/used_amt = SA.get_amount()
+						if(!SB.use(used_amt))
+							continue //if we don't have the exact amount to replace we don't
+						var/obj/item/stack/SN = new SB.merge_type(null,used_amt)
+						component_parts += SN
+					else
+						if(SEND_SIGNAL(W, COMSIG_TRY_STORAGE_TAKE, B, src))
+							component_parts += B
+							B.moveToNullspace()
+					SEND_SIGNAL(W, COMSIG_TRY_STORAGE_INSERT, A, null, null, TRUE)
+					component_parts -= A
+					to_chat(user, "<span class='notice'>[capitalize(A.name)] replaced with [B.name].</span>")
+					shouldplaysound = 1 //Only play the sound when parts are actually replaced!
+					break
+	RefreshParts()
+	if(shouldplaysound)
+		W.play_rped_sound()
+	return TRUE
 
 /obj/machinery/proc/display_parts(mob/user)
 	. = list()

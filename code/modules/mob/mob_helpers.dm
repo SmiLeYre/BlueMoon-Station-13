@@ -614,7 +614,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 				H.client.prefs.copy_to(H)
 				H.real_name = H.client.prefs.real_name
 				H.mind.name = H.real_name //Makes sure to change their mind name to their real name.
-				SSquirks.AssignQuirks(H, H.client, TRUE, FALSE, H.job, FALSE)//This Assigns the selected character's quirks
+				SSquirks.AssignQuirks(H, H.client, TRUE, FALSE, SSjob.GetJob(H.job), FALSE)//This Assigns the selected character's quirks
 				SSlanguage.AssignLanguage(H, H.client)
 				H.dna.update_dna_identity() //This makes sure their DNA is updated.
 				var/obj/item/card/id/idCard = H.get_idcard() //Time to change their ID card as well if they have one.

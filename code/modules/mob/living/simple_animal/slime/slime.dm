@@ -353,6 +353,7 @@
 			++Friends[user]
 		else
 			Friends[user] = 1
+		RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(clear_friend))
 		to_chat(user, "<span class='notice'>You feed the slime the plasma. It chirps happily.</span>")
 		var/obj/item/stack/sheet/mineral/plasma/S = W
 		S.use(1)
@@ -415,6 +416,10 @@
 	else
 		visible_message("<span class='warning'>The mutated core shudders, and collapses into a puddle, unable to maintain its form.</span>")
 	qdel(src)
+
+/mob/living/simple_animal/slime/proc/clear_friend(mob/living/friend)
+	UnregisterSignal(friend, COMSIG_PARENT_QDELETING)
+	Friends -= friend
 
 /mob/living/simple_animal/slime/proc/apply_water()
 	adjustBruteLoss(rand(15,20))

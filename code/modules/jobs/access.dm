@@ -386,7 +386,7 @@
 		return "scrambled"
 	if (istype(src, /obj/item/card/id/syndicate))
 		return "syndicate"
-	if (istype(src, /obj/item/card/id/syndicate/inteq))
+	if (istype(src, /obj/item/card/id/inteq))
 		return "inteq"
 	if (istype(src, /obj/item/card/id/nri))
 		return "nri"

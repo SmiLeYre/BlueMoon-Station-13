@@ -183,9 +183,9 @@
 	return TRUE
 
 /obj/item/clothing/head/mob_holder/relaymove(mob/living/user, direction)
-	container_resist()
+	container_resist(user)
 
-/obj/item/clothing/head/mob_holder/container_resist()
+/obj/item/clothing/head/mob_holder/container_resist(mob/living/user)
 	if(isliving(loc))
 		var/mob/living/L = loc
 		L.visible_message("<span class='warning'>[held_mob] escapes from [L]!</span>", "<span class='warning'>[held_mob] escapes your grip!</span>")

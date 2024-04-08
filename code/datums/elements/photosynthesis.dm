@@ -49,8 +49,9 @@
 	return ..()
 
 /datum/element/photosynthesis/process()
-	for(var/A in attached_atoms)
-		var/atom/movable/AM = A
+	for(var/atom/movable/AM as anything in attached_atoms)
+		if(isnull(AM))
+			continue
 		var/light_amount = 0 //how much light there is in the place, affects receiving nutrition and healing
 		if(isturf(AM.loc)) //else, there's considered to be no light
 			var/turf/T = AM.loc

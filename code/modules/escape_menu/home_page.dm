@@ -92,7 +92,6 @@
 
 // Needs to be separated so it doesn't scale
 /atom/movable/screen/escape_menu/home_button_text
-	name = "text"
 	maptext_width = 200
 	maptext_height = 50
 	pixel_x = -80
