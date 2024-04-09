@@ -149,7 +149,10 @@
 		//удаляем все модификаторы урона и скорости
 		H.remove_movespeed_modifier(/datum/movespeed_modifier/giant_quirk_boost)
 
-		H.physiology.hunger_mod *= 0.5
+		var/datum/physiology/P = H.physiology
+		if(P)
+			P.hunger_mod /= 2
+
 		H.maxHealth *= 1.34
 
 		var/datum/action/innate/vomit/act_vomit = locate() in H.actions
