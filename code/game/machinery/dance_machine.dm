@@ -398,7 +398,6 @@
 
 /obj/machinery/jukebox/disco/proc/dance3(var/mob/living/M)
 	var/matrix/initial_matrix = matrix(M.transform)
-	var/matrix/initial_matrix_ = matrix(M.transform)
 	for (var/i in 1 to 75)
 		if (!M)
 			return
@@ -442,7 +441,7 @@
 				initial_matrix.Translate(-3,0)
 				animate(M, transform = initial_matrix, time = 1, loop = 0)
 		sleep(1)
-	M.lying_fix(initial_matrix_)
+	M.lying_fix()
 
 
 /obj/machinery/jukebox/disco/proc/dance4(var/mob/living/M)
@@ -460,7 +459,6 @@
 		time--
 
 /obj/machinery/jukebox/disco/proc/dance5(var/mob/living/M)
-	var/matrix/initial_matrix_ = matrix(M.transform)
 	animate(M, transform = matrix(180, MATRIX_ROTATE), time = 1, loop = 0)
 	var/matrix/initial_matrix = matrix(M.transform)
 	for (var/i in 1 to 60)
@@ -493,10 +491,10 @@
 				initial_matrix.Translate(-3,0)
 				animate(M, transform = initial_matrix, time = 1, loop = 0)
 		sleep(1)
-	M.lying_fix(initial_matrix_)
+	M.lying_fix()
 
-/mob/living/proc/lying_fix(var/matrix/initial_matrix)
-	animate(src, transform = initial_matrix, time = 1, loop = 0)
+/mob/living/proc/lying_fix()
+	animate(src, transform = null, time = 1, loop = 0)
 	lying_prev = 0
 
 /obj/machinery/jukebox/proc/dance_over()

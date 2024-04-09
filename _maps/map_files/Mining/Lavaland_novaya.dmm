@@ -6746,7 +6746,7 @@
 	dir = 9
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/mine/xenoarch_area_a)
 "gBE" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
@@ -15261,7 +15261,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/mine/xenoarch_area_a)
 "oDg" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -22796,7 +22796,7 @@
 "whz" = (
 /obj/machinery/atmospherics/pipe/simple/dark/visible,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/mine/xenoarch_area_a)
 "whP" = (
 /obj/structure/rack,
 /obj/item/clothing/mask/breath,

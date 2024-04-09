@@ -206,7 +206,7 @@
 
 	var/turf/T = get_turf(pick(spawn_locs))
 	var/mob/living/simple_animal/hostile/syndicate/ranged/sniper/S = new(T)
-	playsound(S, 'modular_bluemoon/Ren/Sound/rifle-loading.ogg', 200, 1, 1000)
+	playsound(S, 'modular_bluemoon/Ren/Sound/rifle-loading.ogg', 150, 1, 1000)
 	message_admins("A mad shooter has been spawned at [COORD(T)][ADMIN_JMP(T)]")
 	log_game("A mad shooter has been spawned at [COORD(T)]")
 	return SUCCESSFUL_SPAWN

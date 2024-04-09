@@ -272,55 +272,38 @@
 	new_form = /mob/living/simple_animal/hostile/morph/sandman
 	infectable_biotypes = MOB_ORGANIC|MOB_MINERAL|MOB_UNDEAD
 
-///Электро копьё
-/obj/item/spear/electrospear
-	name = "Electrospear"
-	desc = "Невероятно древнее оружие в современном исполнении."
-	icon_state = "electrospear0"
+///Дорожный знак
+/obj/item/spear/stop
+	name = "Stop sign"
+	desc = "Где вообще посреди космоса ты умудрился найти этот знак?!"
+	icon_state = "stop1"
+	icon_prefix = "stop"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
-	w_class = WEIGHT_CLASS_BULKY
-	slot_flags = ITEM_SLOT_BACK
-	reach = 2
-	damtype = "stamina"
-	throwforce = 45
-	hitsound = 'sound/weapons/staff.ogg'
-	attack_verb = list("attacked", "poked", "jabbed", "torn", "gored")
-	icon_prefix = "electrospear"
+	throwforce = 40
+	block_chance = 50
+	sharpness = SHARP_NONE
+	hitsound = 'modular_bluemoon/Ren/Sound/metal.ogg'
+	attack_verb = list("attacked", "slam", "jabbed", "torn", "gored")
 
 /obj/item/spear/electrospear/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=11, force_wielded=20, icon_wielded="[icon_prefix]1", wieldsound="sparks", unwieldsound="sparks")
+	AddComponent(/datum/component/two_handed, force_unwielded=14, force_wielded=22, icon_wielded="[icon_prefix]1")
 
-/obj/item/spear/electrospear/attack(mob/living/target, mob/living/user)
-	if (!wielded)
-		user.do_attack_animation(target)
-		target.adjustBruteLoss(13)
-		playsound(src, 'sound/weapons/bladeslice.ogg', 50, 1, -1)
-		target.visible_message("<span class='danger'>[user] целится в открытые места [target] и наносит удар с помощью [src]!</span>", \
-								"<span class='userdanger'>[user] has torn you with [src]!</span>")
-		log_combat(user, target, "harm with an electrostaff")
-		return TRUE
-	if(user.a_intent != INTENT_HARM)
-		user.do_attack_animation(target)
-		target.adjustStaminaLoss(30)
-		playsound(src, 'sound/weapons/staff.ogg', 50, 1, -1)
-		target.visible_message("<span class='danger'>[user] целится в уязвимые места [target] с помощью [src] и бьёт электричеством!</span>", \
-								"<span class='userdanger'>[user] has shocked you with [src]!</span>")
-		log_combat(user, target, "stunned with an electrospear")
-		target.apply_effect(EFFECT_STUTTER, 20)
-		SEND_SIGNAL(target, COMSIG_LIVING_MINOR_SHOCK)
-		return TRUE
-	if(user.a_intent == INTENT_HARM)
-		user.do_attack_animation(target)
-		target.adjustFireLoss(20)
-		playsound(src, 'sound/weapons/sear.ogg', 50, 1, -1)
-		target.visible_message("<span class='danger'>[user] целится в уязвимые места и поджаривает [target] с помощью [src]!</span>", \
-								"<span class='userdanger'>[user] has burns you with [src]!</span>")
-		log_combat(user, target, "harm with an electrostaff")
-		return TRUE
+/datum/crafting_recipe/stopsign
+	name = "Stop sign"
+	result = /obj/item/spear/stop
+	reqs = list(/obj/item/stack/cable_coil = 15,
+				/obj/item/stack/sheet/metal = 10,
+				/obj/item/stack/sheet/plasteel = 5,
+				/obj/item/toy/crayon/spraycan = 1,
+				/obj/item/bikehorn = 1)
+	tools = list(TOOL_WELDER, TOOL_SCREWDRIVER, TOOL_WIRECUTTER)
+	time = 100
+	category = CAT_WEAPONRY
+	subcategory = CAT_MELEE
 
 ///Ретекстуры
 /obj/item/melee/baseball_bat/telescopic/inteq
@@ -380,11 +363,3 @@
 	item = /obj/item/storage/backpack/guitarbag/sniper
 	cost = 10
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
-
-///карго приколы
-/datum/supply_pack/security/electrospear
-	name = "Electrospear Crate"
-	desc = "Электро-копьё для сдерживания бунтов. Поможет когда ты очень сильно не хочешь подходить к своему противнику."
-	cost = 2200
-	contains = list(/obj/item/spear/electrospear, /obj/item/spear/electrospear)
-	crate_name = "electrospear crate"
