@@ -559,15 +559,6 @@
 	name = "Polychromic Line Socks"
 	path = /obj/item/clothing/underwear/socks/socks_line
 
-///Аутфиты
-/obj/item/card/id/inteq_fake
-	name = "InteQ Vanguard ID card"
-	id_type_name = "InteQ ID card"
-	desc = "An ID straight from the InteQ."
-	registered_name = "InteQ"
-	assignment = "InteQ Operative"
-	icon_state = "inteq"
-
 /datum/outfit/inteq_dead
 	back = /obj/item/storage/backpack
 	name = "InteQ corps"
@@ -578,7 +569,7 @@
 	head = /obj/item/clothing/head/helmet/swat/inteq
 	mask = /obj/item/clothing/mask/balaclava/breath/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
-	id = /obj/item/card/id/inteq_fake
+	id = /obj/item/card/id/inteq
 
 /obj/effect/mob_spawn/human/corpse/inteq_dead
 	name = "InteQ Operative"
