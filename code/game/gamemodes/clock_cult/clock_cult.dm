@@ -62,6 +62,8 @@ Credit where due:
 			return FALSE
 		if(M.mind.unconvertable)
 			return FALSE
+		if (IS_HERETIC(M))
+			return FALSE
 	else
 		return FALSE
 	if(iscultist(M) || isconstruct(M) || ispAI(M))

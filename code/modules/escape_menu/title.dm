@@ -28,14 +28,23 @@ GLOBAL_DATUM(escape_menu_title, /atom/movable/screen/escape_menu/title)
 	return ..()
 
 /atom/movable/screen/escape_menu/title/proc/update_text()
-	var/subtitle_text = MAPTEXT("<span style='font-size: 8px'>Ещё одна смена на...</span>")
+	var/subtitle_text = MAPTEXT("<span style='font-size: 8px'>Ещё одна смена на станции...</span>")
 	var/title_text = {"
-		<span style='font-weight: bolder; font-size: 24px'>
-			[station_name()]
+		<span style='font-weight: bolder; font-size: 24px; font-family: "Comic Sans MS"; line-height: 0.95;'>
+			[get_filtered_station_name()]
 		</span>
 	"}
 
-	maptext = "<font align='top'>" + subtitle_text + MAPTEXT_VCR_OSD_MONO(title_text) + "</font>"
+	maptext = "<font align='top'>" + subtitle_text + title_text + "</font>"
+
+/atom/movable/screen/escape_menu/title/proc/get_filtered_station_name()
+	var/val = station_name()
+	var/index = findtext_char(val, "| ")
+
+	if (index)
+		val = copytext_char(val, index + 2)
+
+	return val
 
 /atom/movable/screen/escape_menu/title/proc/on_station_name_changed()
 	SIGNAL_HANDLER

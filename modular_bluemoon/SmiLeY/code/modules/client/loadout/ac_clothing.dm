@@ -28,21 +28,21 @@
 	name = "AC Beret"
 	path = /obj/item/clothing/head/beret/sec/ac
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Security"
-	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Blueshield")
+	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
+	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
 
 /datum/gear/head/ac_cap
 	name = "AC Cap"
 	path = /obj/item/clothing/head/soft/sec/ac
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Security"
-	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Blueshield")
+	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
+	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
 
 /datum/gear/head/ac_officercap
 	name = "AC Officer Cap"
 	path = /obj/item/clothing/head/warden/ac
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Security"
+	restricted_desc = "Head of Security, Warden, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Blueshield")
 
 //					КОСТЮМЫ					//
@@ -60,7 +60,7 @@
 	name = "AC Armored Coat"
 	path = /obj/item/clothing/suit/armor/hos/ac
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Security"
+	restricted_desc = "Head of Security, Warden, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Blueshield")
 
 //					УНИФОРМА					//
@@ -100,33 +100,33 @@
 	name = "AC Tanktop Uniform"
 	path = /obj/item/clothing/under/rank/security/officer/ac
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Security"
-	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Blueshield")
+	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
+	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
 
 /datum/gear/uniform/ac_combatuni
 	name = "AC Combat Uniform"
 	path = /obj/item/clothing/under/rank/security/officer/ac/ac_combatuni
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Security"
-	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Blueshield")
+	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
+	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
 
 /datum/gear/uniform/ac_combatski
 	name = "AC Combat Skirt"
 	path = /obj/item/clothing/under/rank/security/officer/ac/ac_combatski
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Security"
-	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Blueshield")
+	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
+	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
 
 /datum/gear/uniform/ac_cassuit
 	name = "AC Casual Uniform"
 	path = /obj/item/clothing/under/rank/security/officer/ac/ac_cassuit
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Security"
-	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Blueshield")
+	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
+	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
 
 /datum/gear/uniform/ac_casski
 	name = "AC Casual Skirt"
 	path = /obj/item/clothing/under/rank/security/officer/ac/ac_casski
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Security"
-	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Blueshield")
+	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
+	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")

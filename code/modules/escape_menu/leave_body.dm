@@ -12,7 +12,7 @@
 		src,
 		"Драма",
 		"Совершить драматический уход",
-		/* pixel_offset = */ -105,
+		/* pixel_offset = */ -115,
 		CALLBACK(src, PROC_REF(leave_suicide)),
 		/* button_overlay = */ dead_clown,
 	))
@@ -32,8 +32,8 @@
 		new /atom/movable/screen/escape_menu/leave_body_button(
 			src,
 			"Назад",
-			/* tooltip_text = */ null,
-			/* pixel_offset = */ 105,
+			"Вернуться в главное меню",
+			/* pixel_offset = */ 115,
 			CALLBACK(src, PROC_REF(open_home_page)),
 			/* button_overlay = */ "back",
 		)
@@ -63,6 +63,7 @@
 	// Not guaranteed to be living. Everything defines verb/ghost separately. Fuck you.
 	var/mob/living/living_user = client?.mob
 	living_user?.ghostize(FALSE)
+	qdel(src)
 
 /datum/escape_menu/proc/leave_suicide()
 	PRIVATE_PROC(TRUE)
@@ -70,6 +71,7 @@
 	// Not guaranteed to be human. Everything defines verb/suicide separately. Fuck you, still.
 	var/mob/living/carbon/human/human_user = client?.mob
 	human_user?.suicide()
+	qdel(src)
 
 /atom/movable/screen/escape_menu/leave_body_button
 	icon = 'icons/hud/escape_menu_leave_body.dmi'
@@ -97,8 +99,9 @@
 
 	add_overlay(button_overlay)
 
-	maptext = MAPTEXT_VCR_OSD_MONO("<b style='font-size: 16px; text-align: center'>[button_text]</b>")
+	maptext = "<b style='font-size: 12px; text-align: center; font-family: \"Comic Sans MS\"'>[button_text]</b>"
 	screen_loc = "CENTER:[pixel_offset],CENTER-1"
+	update_color()
 
 /atom/movable/screen/escape_menu/leave_body_button/Destroy()
 	QDEL_NULL(on_click_callback)
@@ -117,6 +120,7 @@
 	// The UX on this is pretty shit, but it's okay enough for now.
 	// Regularly goes way too far from your cursor. Not designed for large icons.
 	openToolTip(usr, src, params, content = tooltip_text)
+	update_color()
 
 /atom/movable/screen/escape_menu/leave_body_button/MouseExited(location, control, params)
 	if (!hovered)
@@ -124,3 +128,10 @@
 
 	hovered = FALSE
 	closeToolTip(usr)
+	update_color()
+
+/atom/movable/screen/escape_menu/leave_body_button/proc/update_color()
+	if (hovered)
+		color = "#ffffff"
+	else
+		color = "#bbbbbb"

@@ -81,7 +81,7 @@
 
 /obj/machinery/vending/kink/Initialize(mapload)
 	. = ..()
-	if(mapload && prob(1))
+	if(mapload && prob(0.1))
 		var/turf/T = get_turf(src)
 		if(T)
 			qdel(src)

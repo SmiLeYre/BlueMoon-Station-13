@@ -118,9 +118,9 @@
 
 /datum/station_trait/overflow_job_bureaucracy/proc/set_overflow_job_override(datum/source)
 	SIGNAL_HANDLER
-	var/datum/job/picked_job = pick(SSjob.occupations)
-	chosen_job_name = lowertext(picked_job) // like Chief Engineers vs like chief engineers
-	SSjob.set_overflow_role(picked_job.type)
+	var/picked_job_title = SSjob.get_valid_overflow_jobs()
+	chosen_job_name = lowertext(picked_job_title) // like Chief Engineers vs like chief engineers
+	SSjob.set_overflow_role(SSjob.GetJobType(picked_job_title)) // TODO: port a blacklist for this from upstream TG PR
 
 /datum/station_trait/slow_shuttle
 	name = "Slow Shuttle"
