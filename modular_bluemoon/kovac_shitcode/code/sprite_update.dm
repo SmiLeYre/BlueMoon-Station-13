@@ -23,10 +23,11 @@
 	name = "tacticool security jumpsuit"
 	icon_state = "tacticool_sec"
 	item_state = "tacticool_sec"
-	can_adjust = FALSE
 	unique_reskin = list(
-		"Red" = list("icon_state" = "tacticool_sec")
-	)
+		"Blue" = list("icon_state" = "tacticool_sec_blue", "item_state" = "tacticool_sec_blue"),
+		"Black" = list("icon_state" = "tacticool_sec_black", "item_state" = "tacticool_sec_black"),
+		"Pink" = list("icon_state" = "tacticool_sec_pink", "item_state" = "tacticool_sec_pink"),
+	) ///bluemoon add
 
 /obj/item/clothing/suit/armor/vest/agent
 	name = "agent armored vest"
