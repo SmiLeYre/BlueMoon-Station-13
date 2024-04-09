@@ -20,6 +20,26 @@
 	assignment = "Vanguard Mercenary"
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_INTEQ, ACCESS_INTEQ_LEADER)
 
+/obj/item/card/id/inteq/crew_id
+	name = "InteQ Vanguard ID card"
+	id_type_name = "InteQ ID card"
+	desc = "An ID straight from the InteQ."
+	registered_name = "InteQ"
+	assignment = "InteQ Operative"
+	icon_state = "inteq"
+	access = list(ACCESS_INTEQ, ACCESS_ROBOTICS)
+	uses_overlays = FALSE
+
+/obj/item/card/id/inteq/captain_id
+	name = "InteQ Vanguard Leader ID card"
+	id_type_name = "InteQ captain ID card"
+	desc = "An ID straight from the InteQ."
+	registered_name = "InteQ"
+	assignment = "InteQ Ship Captain"
+	icon_state = "inteq"
+	access = list(ACCESS_INTEQ, ACCESS_INTEQ_LEADER, ACCESS_ROBOTICS)
+	uses_overlays = FALSE
+
 /obj/item/card/id/inteq
 	name = "Agent Card"
 	icon_state = "inteq"
@@ -27,7 +47,7 @@
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_INTEQ)
 	var/anyone = FALSE //Can anyone forge the ID or just InteQ?
 	var/forged = FALSE //have we set a custom name and job assignment, or will we use what we're given when we chameleon change?
-	var/uses = 10 // Даём гражданской Синди-Карте одно использование вместо десяти.
+	var/uses = 10
 
 /obj/item/card/id/inteq/advanced
 	name = "Agent Card"
