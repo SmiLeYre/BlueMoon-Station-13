@@ -12,14 +12,14 @@
 	icon = 'modular_bluemoon/Fink/icons/obj/fetish.dmi'
 
 /obj/item/slimecross/stabilized/fetish/grey
-	name = "Плюшевый Слайм-Си"
-	desc = "Очаровательная мягкая игрушка, напоминающая бога всех слаймов."
+	name = "Cтуденистый куб"
+	desc = "Объект обожания среди своих сородичей."
 	icon_state = "grey"
 	colour = "grey"
 
 /obj/item/slimecross/stabilized/fetish/orange
-	name = "Карманный рефрижератор «Благодать»"
-	desc = "Механизм похожий на грелку-охладитель для носков."
+	name = "Загадочный обелиск"
+	desc = "Артефакт из глубин космоса. Всегда одной и той же комнатной температуры."
 	icon_state = "orange"
 	colour = "orange"
 
@@ -30,8 +30,8 @@
 	colour = "silver"
 
 /obj/item/slimecross/stabilized/fetish/blue
-	name = "Парадная трость мима"
-	desc = "Гравировка на ручке: '      ' придаёт уверенности."
+	name = "Манэки-нэко"
+	desc = "Фигурка из фарфора. Считается, что она приносит удачу."
 	icon_state = "blue"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/melee_righthand.dmi'
@@ -51,14 +51,14 @@
 	colour = "darkpurple"
 
 /obj/item/slimecross/stabilized/fetish/darkblue
-	name = "Сердце океана"
-	desc = "Ощущается мокрым, гладким и холодным."
+	name = "Ангел хранитель"
+	desc = "Сделан из мрамора, покрыт конденсатом. На пьедестале надпись:'Exi ignis'."
 	icon_state = "darkblue"
 	colour = "darkblue"
 
 /obj/item/slimecross/stabilized/fetish/sepia
-	name = "Камень неопределенности"
-	desc = "Он ощущается, то довольно тяжелым, то легким. И почему-то хочется, то в бар, то в храм."
+	name = "Камень голубых лун"
+	desc = "Он ощущается, то довольно тяжелым, то легким. Оказывает необычное влияние на владельца."
 	icon_state = "sepia"
 	colour = "sepia"
 
@@ -119,8 +119,8 @@
 
 
 /obj/item/slimecross/stabilized/fetish/green
-	name = "Плоть многоликого"
-	desc = "Живое и пульсирует. Дрожит от слова 'Крематорий'."
+	name = "Череп безымянного демона"
+	desc = "Искажает восприятие, кажется, он не из этого мира..."
 	icon_state = "green"
 	colour = "green"
 
@@ -131,11 +131,11 @@
 	colour = "pink"
 
 /obj/item/slimecross/stabilized/fetish/oil
-	name = "Ядерная бомбочка для ванны «Отец»"
-	desc = "Внизу оболочки гравировка СССП и надпись от руки: 'Сильные душой - достигают небес.'"
+	name = "Боеголовка «Отец»"
+	desc = "Гравировка на оболочке гласит: 'Сильные душой - достигают небес.'"
 	icon_state = "oil"
 	colour = "oil"
-
+/*
 /obj/item/slimecross/stabilized/fetish/lightpink
 	name = "Ангел хранитель"
 	desc = "Сделано из мрамора. На пьедестале написано 'primum non nocere.'"
@@ -147,12 +147,12 @@
 	desc = "'С ним намного безопасней! 100% защиты, 99% прочности.' Даже не открыть."
 	icon_state = "adamantine"
 	colour = "adamantine"
-
+*/
 //////
 
 /obj/item/choice_beacon/box/fetish
 	name = "choice box (fetish)"
-	desc = "Contains 15 of a selected relics inside!"
+	desc = "Contains 13 of a selected relics inside!"
 
 /obj/item/choice_beacon/box/fetish/generate_display_names()
 	var/static/list/fetish_list = list()

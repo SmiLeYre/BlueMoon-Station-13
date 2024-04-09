@@ -1,7 +1,7 @@
 ///////////////
 
 /obj/item/reagent_containers/censer
-	name = "Arthodox Censer"
+	name = "Orthodox Censer"
 	desc = "The golden holy smoking ball."
 	icon = 'modular_bluemoon/Fink/icons/obj/holy.dmi'
 	lefthand_file = 'modular_bluemoon/Fink/icons/mob/inhands/lefthand.dmi'
@@ -14,9 +14,16 @@
 	var/lit = FALSE
 	reagent_flags = OPENCONTAINER
 
-
 //obj/item/reagent_containers/censer/attackby(obj/item/O, mob/user, params)
 //obj/item/clothing/glasses/AltClick(mob/user)
+
+/obj/item/reagent_containers/censer/equipped(mob/user, slot, initial)
+	. = ..()
+	if (slot != ITEM_SLOT_HANDS)
+		lit = FALSE
+		icon_state = "censer"
+		STOP_PROCESSING(SSobj, src)
+		return
 
 /obj/item/reagent_containers/censer/attack_self(mob/user)
 	lit = !lit
@@ -30,6 +37,11 @@
 
 /obj/item/reagent_containers/censer/process()
 	vapetime++
+	if (item_flags & IN_STORAGE)
+		lit = FALSE
+		icon_state = "censer"
+		STOP_PROCESSING(SSobj, src)
+		return
 
 	if(!reagents.total_volume)
 		if(ismob(loc))
