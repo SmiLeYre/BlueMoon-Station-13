@@ -105,11 +105,11 @@
 				return 0
 		for(var/obj/effect/ebeam/medical/B in turf)// Don't cross the str-beams!
 			if(B.owner.origin != current_beam.origin)
-				explosion(user.loc,0,2,4,7) // BLUEMOON CHANGES, WAS - explosion(B.loc,0,3,5,8))
 				// BLUEMOON ADD START - при скрещивании лучей медицинских пушек, взрыв происходит у скрестивших, а не на цели
 				turf.visible_message(span_big_warning("Лучи медицинских пушек скрестились!"))
 				explosion(B.owner.origin,0,2,4,7)
 				// BLUEMOON ADD END
+				explosion(user.loc,0,2,4,7) // BLUEMOON CHANGES, WAS - explosion(B.loc,0,3,5,8))
 				qdel(dummy)
 				return 0
 	qdel(dummy)
