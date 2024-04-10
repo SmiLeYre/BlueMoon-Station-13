@@ -4169,6 +4169,7 @@
 #include "modular_bluemoon\dementia\code\modules\clothing\hats.dm"
 #include "modular_bluemoon\dementia\code\modules\clothing\helmets.dm"
 #include "modular_bluemoon\dementia\code\modules\clothing\under.dm"
+#include "modular_bluemoon\fingerprinter\fingerprinter.dm"
 #include "modular_bluemoon\Fink\code\recipes_weapon_and_ammo.dm"
 #include "modular_bluemoon\Fink\code\uplink.dm"
 #include "modular_bluemoon\Fink\code\clothing\hijabs.dm"
