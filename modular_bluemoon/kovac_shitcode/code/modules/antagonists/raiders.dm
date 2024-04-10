@@ -139,7 +139,7 @@
 	uniform = /obj/item/clothing/under/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/inteq/alt
-	id = /obj/item/card/id/syndicate/inteq
+	id = /obj/item/card/id/inteq
 
 	var/command_radio = FALSE
 
@@ -147,7 +147,7 @@
 
 /datum/outfit/inteq_raider/vanguard
 	name = "InteQ Vanguard"
-	id = /obj/item/card/id/syndicate/inteq/anyone
+	id = /obj/item/card/id/inteq/anyone
 	suit = /obj/item/clothing/suit/armor/inteq/vanguard
 	head = /obj/item/clothing/head/HoS/inteq_vanguard
 	l_pocket = /obj/item/clothing/gloves/krav_maga/combatglovesplus

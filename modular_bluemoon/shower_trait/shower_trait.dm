@@ -39,15 +39,16 @@
 	stink_overlay.transform = M
 
 /datum/quirk/bluemoon_shower_need/remove()
-	UnregisterSignal(quirk_holder, COMSIG_COMPONENT_CLEAN_ACT)
-	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
 	if(quirk_holder)
+		UnregisterSignal(quirk_holder, list(COMSIG_COMPONENT_CLEAN_ACT, COMSIG_PARENT_EXAMINE))
+
+		// забираем способность изменения оверлея вони
 		var/mob/living/carbon/human/H = quirk_holder
 		var/datum/action/cooldown/change_stink_overlay/C = locate() in H.actions
-		C.Remove(H) // забираем способность изменения оверлея вони
+		C.Remove(H)
 
-	// удаляем оверлей вони
-	quirk_holder.cut_overlay(stink_overlay)
+		quirk_holder.cut_overlay(stink_overlay) // удаляем оверлей вони с игрока
+
 	stink_overlay = null
 	. = ..()
 

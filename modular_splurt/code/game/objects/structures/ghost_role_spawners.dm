@@ -116,7 +116,7 @@
 	head = /obj/item/clothing/head/hotel
 	/* BlueMoon Edit Start: Giving hotel staff their own version of bartender PDA - Flauros
 	r_pocket = /obj/item/pda
-	*/ 
+	*/
 	r_pocket = /obj/item/pda/hotelstaff
 	// BlueMoon Edit End
 	back = /obj/item/storage/backpack/satchel
@@ -248,7 +248,7 @@
 	l_pocket = /obj/item/extinguisher/mini
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
-	id = /obj/item/card/id/inteq_command/crew_id
+	id = /obj/item/card/id/inteq/crew_id
 	backpack_contents = list(/obj/item/paper/fluff/ruins/forgottenship/password)
 
 /datum/outfit/inteqspace/inteq_captain
@@ -267,5 +267,5 @@
 	l_pocket = /obj/item/extinguisher/mini
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 
-	id = /obj/item/card/id/inteq_command/captain_id
+	id = /obj/item/card/id/inteq/captain_id
 	backpack_contents = list(/obj/item/documents/syndicate/red, /obj/item/paper/fluff/ruins/forgottenship/password)

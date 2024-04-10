@@ -61648,9 +61648,7 @@
 	name = "EVA Storage";
 	req_access_txt = "18"
 	},
-/turf/closed/wall/r_wall/syndicate{
-	smooth = 2
-	},
+/turf/open/floor/mineral/plastitanium,
 /area/ai_monitored/command/storage/eva)
 "qCR" = (
 /obj/structure/musician/piano,

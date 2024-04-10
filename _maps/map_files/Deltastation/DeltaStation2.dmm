@@ -121251,15 +121251,10 @@
 /area/security/prison/cells)
 "uGE" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/apc{
-	areastring = "/area/maintenance/prison";
-	dir = 4;
-	name = "Prison Central Maintenance APC";
-	pixel_x = 24
-	},
 /obj/structure/cable/white{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/east,
 /turf/open/floor/plating,
 /area/maintenance/prison/aft)
 "uGN" = (

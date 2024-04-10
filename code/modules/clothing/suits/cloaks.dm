@@ -136,6 +136,7 @@
 	armor = list(MELEE = 35, BULLET = 10, LASER = 25, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 60, ACID = 60) //a fair alternative to bone armor, requiring alternative materials and gaining a suit slot
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
 	body_parts_covered = CHEST|ARMS|GROIN|LEGS
+	mutantrace_variation = STYLE_SNEK_TAURIC|STYLE_DIGITIGRADE //bluemoon add
 
 /obj/item/clothing/head/hooded/cloakhood/goliath
 	name = "goliath cloak hood"
@@ -157,6 +158,7 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF | GOLIATH_RESISTANCE
 	flags_inv = HIDETAUR
+	mutantrace_variation = STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/clothing/head/hooded/cloakhood/drake
 	name = "drake helm"

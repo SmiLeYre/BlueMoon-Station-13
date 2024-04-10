@@ -235,7 +235,8 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		var/datum/physiology/P = H.physiology
-		P.hunger_mod /= 2
+		if(P)
+			P.hunger_mod /= 2
 
 /datum/quirk/thirsty
 	name = "Жаждущий"
@@ -254,7 +255,8 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		var/datum/physiology/P = H.physiology
-		P.thirst_mod /= 2
+		if(P)
+			P.thirst_mod /= 2
 
 /datum/quirk/less_nightmare
 	name = "Отпрыск Ночного Кошмара"

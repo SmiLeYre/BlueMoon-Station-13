@@ -24761,6 +24761,22 @@
 	dir = 1
 	},
 /area/centcom/holding)
+"haE" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/structure/sign/poster/official/mothsupermatter{
+	pixel_y = 32
+	},
+/turf/open/floor/plasteel/bluespace,
+/area/centcom)
 "hbd" = (
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood/corner{
@@ -28316,17 +28332,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
-"lry" = (
-/obj/structure/flora/ausbushes/lavendergrass,
-/obj/structure/flora/ausbushes/sparsegrass,
-/obj/structure/flora/ausbushes/fullgrass,
-/obj/structure/flora/ausbushes/brflowers,
-/obj/structure/flora/ausbushes/genericbush,
-/obj/machinery/nuclearbomb/beer{
-	icon_state = "bananiumbomb_base"
-	},
-/turf/open/floor/grass,
-/area/centcom)
 "lrU" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Broadcasting Cell";
@@ -33779,6 +33784,22 @@
 /obj/item/bikehorn/rubberducky,
 /turf/open/floor/wood,
 /area/syndicate_mothership/control)
+"sRe" = (
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/structure/sign/poster/official/mothsupermatter{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/bluespace,
+/area/centcom)
 "sSk" = (
 /obj/effect/turf_decal/bluemoon_decals/enclave/top/left,
 /turf/open/floor/iron/dark,
@@ -36215,7 +36236,7 @@
 /turf/open/floor/iron/dark,
 /area/shuttle/inteq/collosus)
 "wrt" = (
-/obj/effect/immovablerod,
+/obj/machinery/power/supermatter_crystal/shard/hugbox/fakecrystal,
 /turf/open/floor/engine,
 /area/centcom)
 "wso" = (
@@ -36530,6 +36551,9 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/pointybush,
 /obj/item/reagent_containers/pill/adminordrazine,
+/obj/machinery/nuclearbomb/beer{
+	icon_state = "bananiumbomb_base"
+	},
 /turf/open/floor/grass,
 /area/centcom)
 "wPv" = (
@@ -96338,13 +96362,13 @@ dbD
 unK
 unK
 unK
-cbC
+haE
 xdn
 cbC
 bUd
 cbC
 cbC
-cbC
+sRe
 unK
 wPi
 unK
@@ -97117,7 +97141,7 @@ sKx
 fwW
 bUd
 iAf
-lry
+eRp
 awj
 iAf
 eby
@@ -97880,13 +97904,13 @@ dbD
 unK
 unK
 unK
-cbC
+haE
 cbC
 cbC
 bUd
 cbC
 mfZ
-cbC
+sRe
 unK
 lel
 unK

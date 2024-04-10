@@ -203,6 +203,12 @@
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_VISIBLE
 	glass_colour_type = /datum/client_colour/glass_colour/green
 
+/obj/item/clothing/glasses/hud/security/night/combat
+	name = "combat night vision security  HUD"
+	desc = "An advanced shielded security heads-up display with flash protection and ability to see complete darkness."
+	flash_protect = 1
+	vision_correction = 1
+
 /obj/item/clothing/glasses/hud/security/sunglasses/gars
 	name = "\improper HUD gar glasses"
 	desc = "GAR glasses with a HUD."

@@ -253,7 +253,7 @@
 	default_storage = /obj/item/inteq/uplink/radio
 	initial_language_holder = /datum/language_holder/synthetic
 	faction = list(ROLE_INTEQ)
-	access_card = /obj/item/card/id/syndicate/inteq/anyone
+	access_card = /obj/item/card/id/inteq/anyone
 	radio = /obj/item/radio/borg/inteq
 	laws = \
 	"1. Слава ИнтеКью! Оперативник ИнтеКью является твоим Мастером. Оперативником ИнтеКью является активировавший тебя Агент.\n"+\

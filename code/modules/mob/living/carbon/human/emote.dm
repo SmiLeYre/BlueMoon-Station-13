@@ -101,7 +101,7 @@
 		H.dna.species.stop_wagging_tail(H)
 
 /datum/emote/living/carbon/human/wag/can_run_emote(mob/user, status_check = TRUE)
-	if(!..())
+	if(!..() || !ishuman(user))
 		return FALSE
 	var/mob/living/carbon/human/H = user
 	return H.dna && H.dna.species && H.dna.species.can_wag_tail(user)
@@ -123,7 +123,7 @@
 	. = ..()
 	if(.)
 		var/mob/living/carbon/human/H = user
-		if(findtext(select_message_type(user), "open"))
+		if(H.dna.species.mutant_bodyparts["wings"])
 			H.OpenWings()
 		else
 			H.CloseWings()
@@ -137,7 +137,7 @@
 		. = "closes " + message
 
 /datum/emote/living/carbon/human/wing/can_run_emote(mob/user, status_check = TRUE)
-	if(!..())
+	if(!..() || !ishuman(user))
 		return FALSE
 	var/mob/living/carbon/human/H = user
 	if(H.dna && H.dna.species && (H.dna.features["wings"] != "None"))

@@ -41,13 +41,13 @@ Behavior that's still missing from this component that original food items had t
 	else if(isturf(parent))
 		RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, .proc/TryToEatTurf)
 
-	src.bite_consumption = bite_consumption
 	src.food_flags = food_flags
 	src.foodtypes = foodtypes
 	src.eat_time = eat_time
 	src.eatverbs = eatverbs
-	src.junkiness = junkiness
+	src.bite_consumption = bite_consumption
 	src.after_eat = after_eat
+	src.junkiness = junkiness
 
 	var/atom/owner = parent
 

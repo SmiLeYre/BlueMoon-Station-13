@@ -21,18 +21,14 @@
 	var/emulate_door_bumps = TRUE	//when bumping a door try to make occupants bump them to open them.
 	var/default_driver_move = TRUE	//handle driver movement instead of letting something else do it like riding datums.
 	var/enclosed = FALSE	// is the rider protected from bullets? assume no
-	var/list/autogrant_actions_passenger	//plain list of typepaths
-	var/list/autogrant_actions_controller	//assoc list "[bitflag]" = list(typepaths)
-	var/list/mob/occupant_actions			//assoc list mob = list(type = action datum assigned to mob)
+	var/list/autogrant_actions_passenger = list()	//plain list of typepaths
+	var/list/autogrant_actions_controller = list()	//assoc list "[bitflag]" = list(typepaths)
+	var/list/mob/occupant_actions = list()			//assoc list mob = list(type = action datum assigned to mob)
 	var/obj/vehicle/trailer
 	var/mouse_pointer //do we have a special mouse
 
 /obj/vehicle/Initialize(mapload)
 	. = ..()
-	occupants = list()
-	autogrant_actions_passenger = list()
-	autogrant_actions_controller = list()
-	occupant_actions = list()
 	generate_actions()
 
 /obj/vehicle/examine(mob/user)
@@ -80,7 +76,7 @@
 	return is_occupant(M) && occupants[M] & VEHICLE_CONTROL_DRIVE
 
 /obj/vehicle/proc/is_occupant(mob/M)
-	return !isnull(occupants[M])
+	return !isnull(occupants?[M])
 
 /obj/vehicle/proc/add_occupant(mob/M, control_flags)
 	if(!istype(M) || is_occupant(M))
