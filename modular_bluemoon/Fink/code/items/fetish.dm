@@ -18,14 +18,15 @@
 	colour = "grey"
 
 /obj/item/slimecross/stabilized/fetish/orange
-	name = "Загадочный обелиск"
-	desc = "Артефакт из глубин космоса. Всегда одной и той же комнатной температуры."
+	name = "Нерушимый монолит"
+	desc = "О нем слагают легенды. Его материал, не меняет своей температуры."
 	icon_state = "orange"
 	colour = "orange"
+	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF | FREEZE_PROOF
 
 /obj/item/slimecross/stabilized/fetish/silver
 	name = "Чаша изгоя"
-	desc = "Есть поверие, что с ней проще пережидать часы голода."
+	desc = "На вид очень древняя. С ней проще пережидать часы голода."
 	icon_state = "silver"
 	colour = "silver"
 
@@ -46,25 +47,25 @@
 
 /obj/item/slimecross/stabilized/fetish/darkpurple
 	name = "Заводной куб жара"
-	desc = "Латунный куб из множества шестерней, от которого веет теплом прямо в руки."
+	desc = "Латунный куб из множества шестерней. Веет теплом прямо в руки."
 	icon_state = "darkpurple"
 	colour = "darkpurple"
 
 /obj/item/slimecross/stabilized/fetish/darkblue
 	name = "Ангел хранитель"
-	desc = "Сделан из мрамора, покрыт конденсатом. На пьедестале надпись:'Exi ignis'."
+	desc = "Сделан из мрамора, влажный. На пьедестале надпись:'Exi ignis'."
 	icon_state = "darkblue"
 	colour = "darkblue"
 
 /obj/item/slimecross/stabilized/fetish/sepia
 	name = "Камень голубых лун"
-	desc = "Он ощущается, то довольно тяжелым, то легким. Оказывает необычное влияние на владельца."
+	desc = "Оказывает необычное гравитационное воздействие на владельца."
 	icon_state = "sepia"
 	colour = "sepia"
 
 /obj/item/slimecross/stabilized/fetish/gold
-	name = "Ловец снов"
-	desc = "Призывает питомцев из сна. Не использовать, если снятся кошмары!"
+	name = "Запретный бестиарий"
+	desc = "Тайные знания о фантастичных тварях. Восстановленное издание призывающее существ."
 	icon_state = "gold"
 	colour = "gold"
 	var/mob_type
@@ -119,20 +120,20 @@
 
 
 /obj/item/slimecross/stabilized/fetish/green
-	name = "Череп безымянного демона"
-	desc = "Искажает восприятие, кажется, он не из этого мира..."
+	name = "Череп демона"
+	desc = "Кажется неестественным для этого мира. Искажает тела касающихся до неузноваемости."
 	icon_state = "green"
 	colour = "green"
 
 /obj/item/slimecross/stabilized/fetish/pink
 	name = "Винтажный порно журнал «Запретный плод»"
-	desc = "Сами страницы слиплись, открыть не получается."
+	desc = "Страницы слиплись, открыть не получается."
 	icon_state = "pink"
 	colour = "pink"
 
 /obj/item/slimecross/stabilized/fetish/oil
 	name = "Боеголовка «Отец»"
-	desc = "Гравировка на оболочке гласит: 'Сильные душой - достигают небес.'"
+	desc = "Гравировка гласит: `Сильные душой - достигают небес`."
 	icon_state = "oil"
 	colour = "oil"
 /*
