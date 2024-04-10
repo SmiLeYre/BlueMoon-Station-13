@@ -1963,17 +1963,17 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(HAS_TRAIT(target, TRAIT_JIGGLY_ASS))
 			if(!COOLDOWN_FINISHED(src, ass))
 				if(user == target)
-					to_chat(user, span_alert("Your butt is still [pick("rippling","jiggling","sloshing","clapping","wobbling")] about way too much to get a good smack!"))
+					to_chat(user, span_alert("Твоя сочная задница все еще [pick("пульсирует","покачивается","трясётся","хлопает","колеблется")] после хорошего удара!"))
 				else
-					to_chat(user, span_alert("[target]'s big butt is still [pick("rippling","jiggling","sloshing","clapping","wobbling")] about way too much to get a good smack!"))
+					to_chat(user, span_alert("Сочной задница [target] все еще [pick("пульсирует","покачивается","трясётся","хлопает","колеблется")] после хорошего удара!"))
 			else
 				COOLDOWN_START(src, ass, 5 SECONDS)
 				if(user == target)
 					playsound(target.loc, 'sound/weapons/slap.ogg', 50, FALSE, -1) // deep bassy butt
 					user.adjustStaminaLoss(25)
 					user.visible_message(
-						span_notice("[user] gives [user.p_their()] butt a smack!"),
-						span_lewd("You give your big fat butt a smack! It [pick("ripples","jiggles","sloshes","claps","wobbles")] about and throws you off balance!"),
+						span_notice("[user] шлёпает по своей сочной заднице!"),
+						span_lewd("Вы шлёпнули по своей сочной заднице! Она [pick("пульсирует","покачивается","трясётся","хлопает","колеблется","трясётся")] после хорошего удара и мешает вам стоять ровно!"),
 					)
 					return
 				else
@@ -1982,9 +1982,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					playsound(target.loc, 'sound/weapons/slap.ogg', 50, FALSE, -1) // deep bassy butt
 					target.adjustStaminaLoss(25)
 					user.visible_message(
-						span_notice("\The [user] slaps [target]'s butt!"),
+						span_notice("[user] шлёпает по сочной заднице [target]!"),
 						target = target,
-						target_message = span_lewd("[user] smacks your big fat butt and sends it [pick("rippling","jiggling","sloshing","clapping","wobbling")]! It [pick("ripples","jiggles","sloshes","claps","wobbles")] about and throws you off balance!"))
+						target_message = span_lewd("[user] шлёпает по сочной заднице [target]! Она [pick("пульсирует","покачивается","трясётся","хлопает","колеблется","трясётся")] после хорошего удара и мешает вам стоять ровно!"))
 				return FALSE
 		//SPLURT ADDITION END
 		target.adjust_arousal(20,"masochism", maso = TRUE)

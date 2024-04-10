@@ -20,10 +20,20 @@
 	)
 
 	page_holder.give_screen_object(
+		new /atom/movable/screen/escape_menu/home_button(
+			null,
+			src,
+			"Остановить Звуки",
+			/* offset = */ 2,
+			CALLBACK(src, PROC_REF(home_open_settings)),
+		)
+	)
+
+	page_holder.give_screen_object(
 		new /atom/movable/screen/escape_menu/home_button/leave_body(
 			null,
 			src,
-			"Покинуть тело",
+			"Покинуть Тело",
 			/* offset = */ 3,
 			CALLBACK(src, PROC_REF(open_leave_body)),
 		)
@@ -34,6 +44,10 @@
 
 /datum/escape_menu/proc/home_open_settings()
 	client?.prefs.ShowChoices(client?.mob)
+	qdel(src)
+
+/datum/escape_menu/proc/home_stop_sounds()
+	client?.tgui_panel?.stop_music()
 	qdel(src)
 
 /atom/movable/screen/escape_menu/home_button

@@ -12,9 +12,9 @@
 	/// SAME AS ABOVE BUT WITH A HONKING KNIFE ON THE FUCKING THING
 	var/list/messages_pka_bayonet
 	/// Health to give to our executioner
-	var/health_given = 200
+	var/health_given = 300
 	/// With how much health our sate shall be sealed
-	var/threshold = 100
+	var/threshold = 150
 	/// Multiply crusher drop chance by (only for asteroid mobs)
 	var/crusher_drop_mod = 1
 
@@ -77,7 +77,7 @@
 				hostile.ranged_cooldown += 10
 			else
 				hostile.ranged_cooldown = 10 + world.time
-	if(do_mob(slayer, owner, 1 SECONDS) && (owner.stat != DEAD))
+	if(do_mob(slayer, owner, 1 MILLISECONDS) && (owner.stat != DEAD))
 		var/message
 		if(!slayer.get_active_held_item() || (!istype(slayer.get_active_held_item(), /obj/item/kinetic_crusher) && !istype(slayer.get_active_held_item(), /obj/item/gun/energy/kinetic_accelerator)))
 			message = pick(messages_unarmed)

@@ -149,7 +149,7 @@
 	icon_state = "rake"
 	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
-	force = 19
+	force = 9
 	w_class = WEIGHT_CLASS_NORMAL
 	throwforce = 28
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -160,3 +160,7 @@
 	item_flags = ITEM_CAN_PARRY
 	bare_wound_bonus = 5
 	wound_bonus = 8
+
+/obj/item/broom/liquidator/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=9, force_wielded=16, icon_wielded="rake")
