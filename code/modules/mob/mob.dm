@@ -800,7 +800,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		return ghost
 
 /mob/proc/AddSpell(obj/effect/proc_holder/spell/S)
-	if (S?.action?)
+	if (S?.action)
 		mob_spell_list += S
 		S.action.Grant(src)
 
