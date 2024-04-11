@@ -1,0 +1,4612 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/gibs/limb,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"ac" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 1
+	},
+/obj/machinery/vending/cola/red,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"ad" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/obj/effect/turf_decal/loading_area,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"au" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"aw" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/machinery/door/poddoor{
+	id = "abandonedshiphatch"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"az" = (
+/obj/effect/turf_decal/box,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"aH" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/structure/barricade/wooden/crude,
+/obj/machinery/door/poddoor{
+	id = "abandonedshiphatch"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"aL" = (
+/obj/item/chair{
+	pixel_y = -5
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"aM" = (
+/obj/item/chair{
+	dir = 8
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"aQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/glass,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"bo" = (
+/obj/effect/turf_decal/trimline/green/filled/line,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"bp" = (
+/obj/structure/lattice/catwalk,
+/obj/effect/decal/cleanable/cobweb,
+/turf/template_noop,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"bs" = (
+/obj/machinery/porta_turret_cover,
+/turf/open/floor/engine/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"by" = (
+/obj/item/shard,
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"ce" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 4
+	},
+/obj/machinery/light/dim/directional/east,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"cg" = (
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"ch" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"ct" = (
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"cA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"cH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/maintenance_hatch,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"cK" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"cO" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"dc" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"ds" = (
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/machinery/light/dim/directional/east,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"dE" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
+/area/template_noop)
+"dF" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"dH" = (
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/raven{
+	dir = 8
+	},
+/obj/item/ammo_casing/spent{
+	dir = 9
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"dX" = (
+/obj/structure/table/reinforced,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"eb" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"ee" = (
+/obj/effect/turf_decal/box,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"ef" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"eg" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"el" = (
+/obj/machinery/door/airlock/hatch,
+/obj/machinery/door/poddoor{
+	id = "abandonedshiphatch"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"ew" = (
+/turf/closed/wall/r_wall,
+/area/template_noop)
+"eC" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/turf_decal/vg_decals/numbers/five,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"eL" = (
+/obj/item/shard,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"eR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/closet/crate,
+/obj/machinery/light/dim/directional/north,
+/obj/item/screwdriver/power/inteq,
+/obj/item/crowbar/power/inteq,
+/obj/item/weldingtool/experimental/inteq,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"eU" = (
+/obj/item/shard,
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"eV" = (
+/obj/structure/frame/computer{
+	anchored = 1
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"fc" = (
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 4
+	},
+/obj/item/ammo_casing/spent{
+	pixel_x = -7;
+	pixel_y = 4
+	},
+/obj/item/ammo_casing/spent{
+	dir = 9
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"fd" = (
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 9
+	},
+/obj/machinery/computer/operating{
+	dir = 4
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"fn" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/item/stack/medical/gauze/improvised,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"fp" = (
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"fC" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"fU" = (
+/obj/structure/windoor_assembly{
+	dir = 4
+	},
+/obj/effect/turf_decal/vg_decals/department/med{
+	dir = 4
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"fV" = (
+/obj/item/flashlight/glowstick/red,
+/turf/open/floor/plating/airless,
+/area/template_noop)
+"fW" = (
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"gy" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/turf_decal/loading_area{
+	dir = 1
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"gE" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/sheet/plastic/fifty{
+	pixel_y = 5
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"gI" = (
+/obj/effect/mine/explosive,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"gR" = (
+/obj/item/flashlight/glowstick/red,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"ha" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/snack,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"he" = (
+/obj/effect/turf_decal/trimline/neutral/filled/corner,
+/obj/machinery/door/airlock/centcom,
+/obj/machinery/door/poddoor{
+	id = "abandonedshiphatch"
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"hf" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"hh" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"hj" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/airless,
+/area/template_noop)
+"hp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"hD" = (
+/obj/structure/grille,
+/turf/template_noop,
+/area/template_noop)
+"hP" = (
+/obj/structure/shuttle/engine/large,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"id" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"ik" = (
+/obj/item/paper/crumpled/bloody{
+	default_raw_text = "Hey, it's Mark. Can you PLEASE remember to activate the hatches next time we have a drill? The button is ID-locked (At least, it should be. Reminder to check with Miranda on that one.), and you have all the right access. Your defensive response was satisfactory, sure, but when you forget the one thing protecting you from whatever the hell is trying to board the ship, we're going to have a few problems."
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"iy" = (
+/obj/machinery/door/airlock/maintenance_hatch,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/machinery/door/poddoor{
+	id = "abandonedshiphatch"
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"iG" = (
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 8
+	},
+/obj/item/flashlight/glowstick/red,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"iN" = (
+/obj/effect/turf_decal/trimline/green/filled/corner,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"iP" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 4
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"iR" = (
+/obj/effect/turf_decal/vg_decals/radiation,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"jh" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 5
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/vending/cigarette,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"ji" = (
+/obj/structure/table/reinforced,
+/obj/item/soap/deluxe,
+/obj/item/binoculars,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"jm" = (
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"jp" = (
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/gibs/down,
+/obj/effect/turf_decal/vg_decals/numbers/two,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"jH" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"jJ" = (
+/obj/item/paper/crumpled/bloody{
+	default_raw_text = "I loaded those crates into the external maintenance rooms. You know, the old boarded off ones. Why do we keep forgetting we have those? Why DO we have those?"
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"jM" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/light/dim/directional/west,
+/obj/item/stack/medical/mesh/advanced,
+/obj/item/stack/medical/mesh/advanced,
+/obj/item/stack/medical/mesh/advanced,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"jN" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"jQ" = (
+/turf/closed/indestructible/syndicate,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"kp" = (
+/obj/structure/lattice/catwalk,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/template_noop,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"ks" = (
+/obj/effect/turf_decal/trimline/blue/filled/corner,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"kx" = (
+/obj/machinery/light/small/directional{
+	light_color = "#FF0000";
+	nightshift_light_color = "#FF0000";
+	pixel_y = 32
+	},
+/turf/closed/indestructible/syndicate,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"kL" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/rack,
+/obj/item/multitool,
+/obj/machinery/light/dim/directional/east,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"lc" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"lt" = (
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"lv" = (
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"lw" = (
+/obj/structure/table/reinforced,
+/obj/item/ammo_box/c38/lethal,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"lD" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/gibs/core,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/item/flashlight/glowstick/red,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"lS" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"mq" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 10
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"mL" = (
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/turf/template_noop,
+/area/template_noop)
+"mQ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"mS" = (
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/vg_decals/numbers/three,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"nd" = (
+/obj/item/flashlight,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"ne" = (
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 8
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"nx" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/engine/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"oe" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"of" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/cobweb,
+/obj/machinery/power/port_gen/pacman/super,
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/engine/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"ol" = (
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/raven{
+	dir = 8
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"ou" = (
+/obj/structure/lattice/catwalk,
+/turf/template_noop,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"ow" = (
+/turf/closed/mineral/random/high_chance,
+/area/template_noop)
+"oA" = (
+/obj/effect/turf_decal/trimline/neutral/filled/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/machinery/door/airlock/grunge,
+/obj/structure/barricade/wooden/crude,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"oJ" = (
+/obj/structure/rack,
+/obj/item/storage/belt/utility,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"oN" = (
+/obj/structure/lattice,
+/obj/structure/grille,
+/turf/template_noop,
+/area/template_noop)
+"oR" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"pm" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"pq" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"ps" = (
+/obj/effect/turf_decal/trimline/blue/filled/line,
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"pu" = (
+/turf/closed/wall/r_wall/syndicate,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"py" = (
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"pF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mine/explosive,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"pG" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 6
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"pH" = (
+/obj/structure/grille,
+/turf/template_noop,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"qb" = (
+/turf/template_noop,
+/area/template_noop)
+"qc" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/ballistic/shotgun/leveraction,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"qf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"qw" = (
+/obj/structure/windoor_assembly{
+	dir = 8
+	},
+/obj/effect/turf_decal/vg_decals/department/sci{
+	dir = 8
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"qD" = (
+/obj/structure/window/plasma/reinforced/spawner,
+/turf/open/floor/engine/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"qE" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"qK" = (
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"qP" = (
+/obj/effect/turf_decal/trimline/blue/filled/corner{
+	dir = 8
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"re" = (
+/obj/structure/table/reinforced,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/obj/item/ammo_box/c38/lethal,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"ro" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/turf_decal/raven{
+	dir = 4
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"rD" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/turf_decal/loading_area,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"rI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/raven{
+	dir = 8
+	},
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"rR" = (
+/obj/effect/turf_decal/vg_decals/radiation,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"sg" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"sh" = (
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/raven{
+	dir = 4
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"sH" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 1
+	},
+/obj/machinery/vending/coffee,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"sQ" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"tl" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/raven{
+	dir = 8
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"ts" = (
+/turf/open/floor/plating/airless,
+/area/template_noop)
+"tw" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 8
+	},
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"tA" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 6
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"uf" = (
+/obj/effect/turf_decal/vg_decals/numbers/two,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"uh" = (
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"ui" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"uq" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 5
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"ur" = (
+/obj/machinery/power/smes,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"ux" = (
+/obj/item/chair{
+	dir = 1
+	},
+/turf/template_noop,
+/area/template_noop)
+"uG" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"uK" = (
+/obj/structure/chair/greyscale,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"uS" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"uY" = (
+/obj/item/flashlight/glowstick/red,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"uZ" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"vy" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/template_noop,
+/area/template_noop)
+"vC" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"vG" = (
+/obj/item/stack/cable_coil/cut,
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"vK" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"vP" = (
+/obj/effect/decal/cleanable/blood/gibs/up,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"vS" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"wM" = (
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"wP" = (
+/obj/item/flashlight/glowstick/red,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"wQ" = (
+/obj/effect/turf_decal/vg_decals/numbers/five,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"wS" = (
+/obj/item/ammo_casing/spent{
+	dir = 5
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"wX" = (
+/obj/machinery/door/airlock/hatch,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"xj" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/obj/effect/turf_decal/loading_area,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"xp" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/marker_beacon/burgundy,
+/turf/template_noop,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"xF" = (
+/obj/item/stack/rods/ten,
+/turf/template_noop,
+/area/template_noop)
+"xG" = (
+/obj/item/ammo_casing/spent,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"xJ" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"xK" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"xL" = (
+/obj/effect/turf_decal/trimline/blue/filled/corner{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"xO" = (
+/turf/closed/indestructible/syndicate,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"yp" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/loading_area{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"yz" = (
+/obj/item/chair{
+	pixel_y = -5
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"yI" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"yM" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/stack/spacecash/c1000,
+/obj/item/raw_anomaly_core/random,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"yW" = (
+/obj/effect/turf_decal/vg_decals/numbers/eight,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"zg" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"zz" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/closed/indestructible/syndicate,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"zA" = (
+/obj/effect/decal/cleanable/cobweb,
+/obj/structure/frame/computer{
+	anchored = 1
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"zE" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/template_noop,
+/area/template_noop)
+"zG" = (
+/obj/effect/turf_decal/vg_decals/numbers/eight,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"zL" = (
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"zW" = (
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 1
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"zX" = (
+/obj/structure/table/reinforced,
+/obj/item/gun/energy/laser/retro,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"zY" = (
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Av" = (
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"AF" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/obj/structure/mecha_wreckage/hermes,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"AH" = (
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/vg_decals/numbers/five,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Bc" = (
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"Bh" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/mecha_wreckage/hermes,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"Bp" = (
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 8
+	},
+/obj/structure/closet,
+/obj/item/storage/box/beakers/bluespace,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"Bu" = (
+/obj/effect/turf_decal/vg_decals/department/cargo,
+/obj/machinery/button/door{
+	id = "abandonedshiphatch";
+	name = "Crew Quarters Lockdown";
+	pixel_y = 25
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"BA" = (
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"BK" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 8
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"BL" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 9
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"BR" = (
+/obj/item/chair{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"BV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/raven{
+	dir = 4
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"BZ" = (
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/raven{
+	dir = 4
+	},
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"Ci" = (
+/obj/machinery/light/dim/directional/east,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"CH" = (
+/obj/structure/grille/broken,
+/turf/template_noop,
+/area/template_noop)
+"CO" = (
+/obj/item/flashlight/glowstick/red,
+/turf/template_noop,
+/area/template_noop)
+"Di" = (
+/obj/effect/mine/explosive,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"Ds" = (
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Du" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/flashlight/glowstick/red,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"Dx" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 1
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"DJ" = (
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"DP" = (
+/obj/effect/turf_decal/raven{
+	dir = 4
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"DY" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Ei" = (
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/delivery,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"Eq" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/electrical,
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Ex" = (
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/obj/structure/frame/machine,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"EE" = (
+/turf/open/floor/engine/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"EM" = (
+/obj/machinery/light/small/directional{
+	light_color = "#00FF00";
+	nightshift_light_color = "#00FF00";
+	pixel_y = 32
+	},
+/turf/closed/indestructible/syndicate,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"EQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/reinforced,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"ER" = (
+/obj/effect/turf_decal/trimline/blue/filled/line,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"Ff" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/dim/directional/east,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Fn" = (
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Fu" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Gs" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"Gz" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/turf/template_noop,
+/area/template_noop)
+"GX" = (
+/obj/effect/turf_decal/trimline/neutral/filled/corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/machinery/door/airlock/centcom,
+/obj/machinery/door/poddoor{
+	id = "abandonedshiphatch"
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Ha" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/vg_decals/numbers/three,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Hf" = (
+/turf/closed/wall/r_wall,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"Hs" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Hu" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"HD" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"HK" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"HP" = (
+/obj/machinery/door/poddoor{
+	id = "abandonedshipbridgeblast"
+	},
+/obj/structure/window/shuttle/survival_pod/spawner,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"HW" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/structure/closet/crate/engineering,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/item/stack/sheet/mineral/uranium/five,
+/obj/machinery/light/dim/directional/east,
+/turf/open/floor/engine/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Ip" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Iv" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Iy" = (
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"IM" = (
+/obj/effect/turf_decal/trimline/green/filled/corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 6
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Ji" = (
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"Jk" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"JB" = (
+/obj/structure/table/reinforced,
+/obj/item/stack/sheet/glass/fifty,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"JK" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"JP" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/closet/crate/science,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"Kh" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	state_open = 1
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Km" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"KA" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"La" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/machinery/light/dim/directional/west,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Lf" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Ls" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/template_noop,
+/area/template_noop)
+"Lt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Ly" = (
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 9
+	},
+/obj/structure/table/optable,
+/obj/effect/decal/cleanable/cobweb,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/mob_spawn/human/corpse/inteq_dead,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"Lz" = (
+/obj/structure/chair/greyscale{
+	dir = 4
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"LQ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/ammo_casing/spent{
+	dir = 5
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"Mg" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"Mp" = (
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/engine/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"MB" = (
+/obj/effect/decal/cleanable/blood/gibs/core,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"MF" = (
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/engine/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"MM" = (
+/obj/effect/turf_decal/delivery,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/obj/effect/mine/explosive,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"MO" = (
+/obj/effect/turf_decal/trimline/green/filled/corner{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"MV" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"Ni" = (
+/obj/item/shard,
+/turf/template_noop,
+/area/template_noop)
+"NG" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"NO" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"NT" = (
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 1
+	},
+/obj/structure/table/reinforced,
+/obj/item/stack/medical/suture/medicated,
+/obj/item/stack/medical/suture/medicated,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"NU" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/flashlight/glowstick/red,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"NX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/vg_decals/radiation,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Oi" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/engine/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Ov" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Oy" = (
+/obj/effect/mine/explosive,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"OC" = (
+/obj/structure/lattice,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"OG" = (
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"OQ" = (
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"OZ" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/vg_decals/numbers/two,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"Pm" = (
+/obj/effect/turf_decal/trimline/blue/filled/line{
+	dir = 1
+	},
+/obj/structure/closet/crate/medical,
+/obj/item/scalpel,
+/obj/item/hemostat,
+/obj/item/retractor,
+/obj/item/surgical_drapes,
+/obj/item/book/manual/wiki/surgery,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"Ps" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"PI" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/table/reinforced,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"PW" = (
+/obj/item/shard{
+	icon_state = "small"
+	},
+/turf/template_noop,
+/area/template_noop)
+"Qd" = (
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/vg_decals/numbers/eight,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Qi" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/item/switchblade{
+	icon_state = "switchblade_ext";
+	pixel_x = -7;
+	pixel_y = -8
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Qn" = (
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/obj/machinery/light/dim/directional/east,
+/obj/machinery/power/smes{
+	integrity_failure = 1;
+	name = "emergency power storage unit"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"QD" = (
+/obj/item/shard{
+	icon_state = "medium"
+	},
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"QR" = (
+/turf/closed/indestructible/syndicate,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Ra" = (
+/obj/structure/table/reinforced,
+/obj/machinery/button/door{
+	id = "abandonedshipbridgeblast";
+	name = "Bridge Blast Doors"
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"Rb" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"RA" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/turf/template_noop,
+/area/template_noop)
+"RE" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 1
+	},
+/obj/item/kirbyplants/random,
+/obj/machinery/light/dim/directional/north,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"RO" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 5
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"RY" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Se" = (
+/obj/effect/turf_decal/trimline/blue/filled/line,
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"Sg" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/paper/crumpled/bloody{
+	default_raw_text = "That meteor took out our power system- the crew quarters and bridge are running on emergency stores, but everything else is cut. We have no source of power, besides the backup generator. I swear I left it somewhere in the engine room."
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Su" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/raven{
+	dir = 8
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"Sw" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"SJ" = (
+/turf/closed/indestructible/syndicate,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"Tq" = (
+/turf/open/floor/engine/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"TM" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"TO" = (
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood,
+/obj/item/flashlight/glowstick/red,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Ub" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 10
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Ue" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 1
+	},
+/obj/machinery/vending/snack,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Uq" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Uv" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"Ux" = (
+/obj/effect/turf_decal/trimline/blue/filled/line,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"Uy" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"UN" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 1
+	},
+/obj/machinery/airalarm/directional/north,
+/obj/structure/table/reinforced,
+/obj/machinery/microwave,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Vf" = (
+/obj/machinery/light/dim/directional/west,
+/obj/machinery/power/smes{
+	integrity_failure = 1;
+	name = "emergency power storage unit"
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Vi" = (
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"Vj" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/vg_decals/numbers/three,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"VB" = (
+/obj/effect/turf_decal/trimline/green/filled/line{
+	dir = 9
+	},
+/obj/machinery/vending/dinnerware,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"VH" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"VK" = (
+/obj/structure/railing{
+	dir = 9
+	},
+/turf/template_noop,
+/area/template_noop)
+"VM" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"VQ" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Wq" = (
+/obj/structure/chair/office{
+	dir = 1
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"Wt" = (
+/obj/effect/turf_decal/trimline/yellow/filled/line{
+	dir = 8
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"Wz" = (
+/turf/closed/indestructible/syndicate,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"WO" = (
+/obj/structure/grille/broken,
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"WS" = (
+/obj/structure/railing/corner,
+/turf/template_noop,
+/area/template_noop)
+"WT" = (
+/obj/machinery/power/terminal{
+	dir = 8
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/knot,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"WX" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Xa" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Xt" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/machinery/light/floor,
+/obj/effect/turf_decal/delivery,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"Xu" = (
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"XA" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/cobweb,
+/obj/structure/closet/crate,
+/obj/machinery/light/dim/directional/north,
+/obj/item/melee/baseball_bat/telescopic/inteq,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"XC" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"XD" = (
+/obj/item/shard{
+	icon_state = "tiny"
+	},
+/obj/effect/turf_decal/raven{
+	dir = 4
+	},
+/obj/item/ammo_casing/spent,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"XI" = (
+/obj/item/ammo_casing/spent{
+	dir = 5
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"XQ" = (
+/obj/machinery/turretid{
+	lethal = 1;
+	name = "Outer Turret Control";
+	pixel_x = -33
+	},
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"XV" = (
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 8
+	},
+/obj/item/ammo_casing/spent{
+	dir = 9
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Yf" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/template_noop,
+/area/template_noop)
+"Yk" = (
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"Yq" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Yr" = (
+/obj/effect/decal/cleanable/glass,
+/obj/item/shard{
+	icon_state = "small"
+	},
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532researchbay)
+"Yy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/turf_decal/stripes/line,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"Yz" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"YA" = (
+/obj/structure/shuttle/engine/propulsion,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532engineering)
+"YT" = (
+/obj/effect/turf_decal/trimline/neutral/filled/line{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Zi" = (
+/obj/structure/railing{
+	dir = 5
+	},
+/turf/template_noop,
+/area/template_noop)
+"Zj" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"Zq" = (
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532crewquarters)
+"ZK" = (
+/obj/effect/decal/cleanable/cobweb,
+/obj/machinery/light/dim/directional/west,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+"ZL" = (
+/obj/structure/grille,
+/obj/structure/lattice,
+/turf/template_noop,
+/area/template_noop)
+"ZS" = (
+/obj/effect/turf_decal/trimline/neutral/filled/corner{
+	dir = 4
+	},
+/obj/machinery/door/airlock/grunge,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532cargohall)
+"ZU" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/iron/airless,
+/area/ruin/space/has_grav/shuttle8532bridge)
+
+(1,1,1) = {"
+qb
+qb
+kx
+xO
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(2,1,1) = {"
+qb
+by
+ZK
+xO
+jQ
+jQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+OQ
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(3,1,1) = {"
+qb
+OQ
+vK
+xO
+Vf
+jQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+OQ
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(4,1,1) = {"
+qb
+JK
+Xu
+hf
+WT
+jQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+Uv
+OQ
+qb
+qb
+dE
+ts
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(5,1,1) = {"
+qb
+nx
+bs
+xO
+Fu
+jQ
+jQ
+jQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+hD
+ZL
+hD
+ZL
+hD
+qb
+qb
+qb
+qb
+eb
+OQ
+OQ
+OQ
+fV
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+"}
+(6,1,1) = {"
+qb
+xO
+EE
+xO
+Lt
+uS
+La
+jQ
+qb
+WS
+vy
+vy
+vy
+Yf
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+OQ
+qb
+OQ
+qb
+qb
+OQ
+eb
+Uv
+Uv
+Uv
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+"}
+(7,1,1) = {"
+qb
+xO
+xO
+xO
+xO
+xO
+xK
+jQ
+jQ
+jQ
+ou
+ou
+ou
+Zi
+Yf
+qb
+qb
+qb
+qb
+qb
+SJ
+SJ
+SJ
+SJ
+SJ
+SJ
+SJ
+Uv
+Uv
+Uv
+eb
+eb
+Uv
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(8,1,1) = {"
+pu
+Uy
+XQ
+fp
+HK
+xO
+cg
+Hs
+oR
+jQ
+kp
+ou
+ou
+ou
+Ls
+qb
+qb
+qb
+CO
+BL
+SJ
+fd
+Bp
+jM
+Wt
+lc
+yM
+ne
+iG
+Uv
+eb
+eb
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(9,1,1) = {"
+pu
+zA
+ZU
+Gs
+ks
+xO
+jQ
+jQ
+iy
+jQ
+jQ
+el
+jQ
+kp
+Ls
+qb
+qb
+qb
+qb
+SJ
+Ly
+xL
+VH
+ui
+ab
+Av
+aL
+Av
+Uv
+Uv
+Oy
+Uv
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(10,1,1) = {"
+HP
+eV
+Wq
+Vi
+ER
+xO
+VB
+BK
+DY
+id
+tw
+mq
+jQ
+jQ
+Gz
+xp
+ou
+xp
+qb
+SJ
+NT
+Di
+Mg
+Av
+aM
+Av
+Mg
+Av
+Uv
+Uv
+Uv
+Uv
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(11,1,1) = {"
+HP
+eV
+ZU
+Vi
+ER
+xO
+sH
+Ds
+uq
+uZ
+uZ
+IM
+Ub
+jQ
+jQ
+jQ
+aH
+jQ
+jQ
+SJ
+Pm
+Mg
+Av
+Av
+Mg
+lS
+ui
+Av
+Uv
+Uv
+gR
+OQ
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+QR
+QR
+QR
+QR
+QR
+QR
+QR
+QR
+QR
+qb
+"}
+(12,1,1) = {"
+HP
+ji
+Vi
+Vi
+ps
+xO
+ha
+Ds
+Ip
+Ds
+Lz
+Ds
+bo
+jQ
+XA
+Iv
+fC
+fC
+fW
+SJ
+zW
+Av
+fU
+Av
+Av
+Av
+eU
+Uv
+Uv
+Uv
+Uv
+OQ
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+QR
+QR
+pq
+Eq
+Yq
+JB
+zz
+of
+qD
+HD
+hP
+"}
+(13,1,1) = {"
+HP
+Ji
+fn
+zG
+Ux
+xO
+RE
+uK
+Ip
+TM
+jN
+Ds
+MO
+jQ
+jQ
+jQ
+jQ
+jQ
+jQ
+Wz
+rI
+ol
+dH
+ol
+ol
+ol
+ol
+Su
+tl
+mQ
+Uv
+XI
+vG
+OQ
+OQ
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+QR
+wM
+Iy
+NO
+Iy
+Km
+QR
+Tq
+qD
+HD
+HD
+"}
+(14,1,1) = {"
+HP
+eV
+Vi
+eC
+ER
+xO
+UN
+Ds
+re
+EQ
+dX
+Ip
+dc
+GX
+YT
+Qd
+XV
+mS
+py
+oA
+wS
+MV
+MV
+yp
+az
+MM
+az
+MV
+AF
+au
+xj
+cO
+Ei
+Du
+vS
+vS
+dF
+OQ
+OQ
+qb
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+QR
+Iy
+Km
+Iy
+Iy
+Iy
+Kh
+Tq
+qD
+YA
+qb
+"}
+(15,1,1) = {"
+HP
+eV
+sg
+iR
+ER
+wX
+Dx
+uK
+dX
+Zj
+qc
+Ds
+Zq
+jQ
+jm
+Ds
+rR
+yI
+Ds
+Hf
+Bu
+xG
+zL
+jH
+zL
+zL
+jH
+zL
+jH
+zL
+rD
+zL
+zL
+jH
+pF
+dF
+dF
+OC
+mQ
+qb
+OQ
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+QR
+OG
+RY
+Yz
+qE
+Fn
+QR
+Tq
+qD
+YA
+qb
+"}
+(16,1,1) = {"
+HP
+eV
+nd
+Vj
+ER
+xO
+uG
+yz
+dX
+Zj
+lw
+TM
+Ds
+he
+fc
+AH
+uh
+jp
+TO
+ZS
+ik
+zL
+vP
+gy
+ee
+ct
+ee
+MB
+LQ
+gI
+ad
+VM
+Xt
+qf
+lD
+zL
+OQ
+OQ
+OQ
+qb
+ts
+ts
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+QR
+Iy
+WX
+ur
+DJ
+Iy
+QR
+Tq
+qD
+YA
+qb
+"}
+(17,1,1) = {"
+HP
+Ra
+jJ
+OZ
+ER
+xO
+RE
+Ds
+Ip
+Ds
+Ds
+Ds
+iN
+jQ
+jQ
+jQ
+jQ
+jQ
+jQ
+Wz
+BZ
+BV
+sh
+sh
+sh
+sh
+DP
+XD
+ro
+dF
+KA
+OQ
+QD
+OQ
+qb
+qb
+qb
+OQ
+OQ
+OQ
+OQ
+ts
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+QR
+zY
+WX
+Jk
+DJ
+Iy
+QR
+Hu
+qD
+HD
+hP
+"}
+(18,1,1) = {"
+HP
+zX
+Vi
+Vi
+Se
+xO
+Ue
+TM
+Ip
+uZ
+uZ
+BR
+bo
+jQ
+eR
+fC
+Iv
+Iv
+Sw
+SJ
+lv
+Av
+qw
+Yr
+Mg
+Av
+Av
+vC
+BA
+eb
+Uv
+OQ
+qb
+qb
+qb
+qb
+OQ
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+CH
+hD
+pH
+QR
+QR
+QR
+Iy
+WX
+Uq
+DJ
+yW
+QR
+Oi
+qD
+HD
+HD
+"}
+(19,1,1) = {"
+HP
+eV
+Vi
+Gs
+Ux
+xO
+ac
+TM
+Ip
+Ds
+TM
+iN
+tA
+jQ
+jQ
+jQ
+aH
+jQ
+jQ
+SJ
+Ex
+Av
+Mg
+Ps
+Bh
+Mg
+Uv
+Uv
+Uv
+Uv
+Uv
+OQ
+qb
+qb
+qb
+qb
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+OQ
+Ov
+NG
+sQ
+Ov
+HD
+Iy
+Iy
+Km
+Rb
+cK
+DJ
+wQ
+QR
+Tq
+qD
+YA
+qb
+"}
+(20,1,1) = {"
+HP
+eV
+Wq
+Vi
+ER
+xO
+jh
+iP
+ef
+iP
+ce
+pG
+jQ
+jQ
+Yf
+xp
+ou
+xp
+qb
+SJ
+PI
+eb
+Av
+Av
+aM
+Di
+Uv
+eb
+ch
+Uv
+NU
+OQ
+OQ
+OQ
+qb
+qb
+qb
+xF
+qb
+qb
+qb
+qb
+qb
+OQ
+Lf
+Uq
+aQ
+XC
+uY
+xJ
+xJ
+xJ
+hh
+Uq
+DJ
+NX
+QR
+Tq
+qD
+YA
+qb
+"}
+(21,1,1) = {"
+xO
+eV
+Vi
+Vi
+qP
+xO
+jQ
+jQ
+aw
+jQ
+jQ
+el
+jQ
+ou
+Ls
+qb
+qb
+qb
+qb
+SJ
+zg
+Uv
+Uv
+Bc
+Av
+Uv
+Uv
+Uv
+Uv
+Uv
+eb
+OQ
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+xF
+OQ
+ts
+OQ
+oe
+wP
+HD
+NO
+Sg
+pm
+Qi
+Rb
+Uq
+Yy
+Ha
+QR
+Tq
+qD
+YA
+qb
+"}
+(22,1,1) = {"
+xO
+xO
+Yk
+Ci
+HK
+xO
+lt
+Fu
+uS
+jQ
+bp
+ou
+ou
+ou
+Ls
+qb
+qb
+qb
+qb
+RO
+SJ
+Uv
+Uv
+Uv
+JP
+Uv
+eL
+gR
+eb
+OQ
+OQ
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+OQ
+OQ
+OQ
+qb
+qb
+OQ
+WO
+QR
+QR
+QR
+QR
+Iy
+Rb
+Uq
+Yy
+uf
+QR
+MF
+qD
+HD
+hP
+"}
+(23,1,1) = {"
+qb
+xO
+xO
+xO
+xO
+xO
+uS
+jQ
+jQ
+jQ
+ou
+ou
+ou
+VK
+Gz
+qb
+qb
+qb
+qb
+CO
+qb
+qb
+gR
+ch
+eb
+Uv
+OQ
+OQ
+OQ
+OQ
+OQ
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+OQ
+OQ
+qb
+hD
+qb
+OQ
+qb
+qb
+qb
+qb
+QR
+zY
+Rb
+cA
+Yy
+Iy
+QR
+Tq
+qD
+HD
+HD
+"}
+(24,1,1) = {"
+ts
+OQ
+nx
+xO
+lt
+Fu
+Ff
+jQ
+qb
+RA
+zE
+zE
+zE
+Gz
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ux
+qb
+OQ
+OQ
+OQ
+OQ
+OQ
+OQ
+OQ
+ts
+hj
+OQ
+qb
+CH
+qb
+Ni
+qb
+qb
+qb
+OQ
+qb
+qb
+ZL
+OQ
+OQ
+qb
+qb
+qb
+qb
+QR
+Iy
+Rb
+ur
+DJ
+Iy
+QR
+Hu
+qD
+YA
+qb
+"}
+(25,1,1) = {"
+qb
+OQ
+Xu
+xO
+uS
+jQ
+jQ
+jQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ts
+OQ
+OQ
+OQ
+OQ
+OQ
+ts
+dE
+OQ
+OQ
+ZL
+qb
+qb
+qb
+qb
+OQ
+qb
+qb
+qb
+CH
+qb
+qb
+qb
+qb
+qb
+qb
+QR
+Iy
+VQ
+eg
+Xa
+Fn
+QR
+Tq
+qD
+YA
+qb
+"}
+(26,1,1) = {"
+qb
+Mp
+Xu
+hf
+hp
+jQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+OQ
+dE
+hj
+OQ
+OQ
+OQ
+ts
+dE
+qb
+PW
+qb
+CH
+qb
+qb
+qb
+qb
+qb
+qb
+mL
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+QR
+Iy
+Km
+Iy
+Iy
+Iy
+cH
+Tq
+qD
+YA
+qb
+"}
+(27,1,1) = {"
+qb
+EE
+bs
+xO
+Qn
+jQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+OQ
+OQ
+qb
+qb
+OQ
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+QR
+qK
+Iy
+Iy
+Iy
+NO
+QR
+Hu
+qD
+HD
+hP
+"}
+(28,1,1) = {"
+qb
+xO
+ds
+xO
+jQ
+jQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+hD
+qb
+OQ
+OQ
+qb
+qb
+qb
+OQ
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+QR
+QR
+oJ
+kL
+gE
+JB
+QR
+HW
+qD
+HD
+HD
+"}
+(29,1,1) = {"
+qb
+qb
+EM
+xO
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+xF
+CH
+qb
+qb
+qb
+qb
+qb
+qb
+hj
+dE
+OQ
+OQ
+qb
+qb
+qb
+xF
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+QR
+QR
+QR
+QR
+QR
+QR
+QR
+QR
+QR
+qb
+"}
+(30,1,1) = {"
+qb
+qb
+qb
+qb
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+PW
+ts
+fV
+ts
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(31,1,1) = {"
+qb
+qb
+qb
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ts
+dE
+dE
+hj
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(32,1,1) = {"
+qb
+qb
+ew
+ow
+ow
+qb
+qb
+qb
+qb
+CH
+hD
+ow
+ow
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+Ni
+qb
+qb
+qb
+qb
+qb
+OQ
+OQ
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(33,1,1) = {"
+qb
+qb
+qb
+hD
+ow
+qb
+qb
+qb
+qb
+CH
+ow
+ow
+ow
+ow
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+OQ
+OQ
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(34,1,1) = {"
+qb
+qb
+qb
+CH
+hD
+qb
+qb
+qb
+qb
+ow
+ow
+ow
+ow
+ow
+ow
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+hD
+oN
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(35,1,1) = {"
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ew
+ow
+ow
+ow
+ow
+ow
+ow
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+xF
+qb
+qb
+qb
+qb
+ow
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(36,1,1) = {"
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ew
+ow
+ow
+ow
+ow
+ow
+ow
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+CH
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(37,1,1) = {"
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ew
+ow
+ow
+ow
+ow
+ow
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+xF
+qb
+qb
+qb
+CH
+ow
+ow
+ow
+CH
+hD
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(38,1,1) = {"
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ew
+ew
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(39,1,1) = {"
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+CH
+hD
+ew
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+Ni
+qb
+qb
+qb
+qb
+qb
+ew
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(40,1,1) = {"
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ew
+ew
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(41,1,1) = {"
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(42,1,1) = {"
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+ow
+ow
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}
+(43,1,1) = {"
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+ow
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+qb
+"}

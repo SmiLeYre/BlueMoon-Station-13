@@ -4,6 +4,12 @@
 	id = "luger"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 5000)
-	build_path = /obj/item/gun/ballistic/automatic/pistol/luger
+	build_path = /obj/item/storage/lockbox/weapon/luger_pistol
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/obj/item/storage/lockbox/weapon/luger_pistol
+	name = "Lockbox with Luger P08"
+
+/obj/item/storage/lockbox/weapon/luger_pistol/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/luger(src)

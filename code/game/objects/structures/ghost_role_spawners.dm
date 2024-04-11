@@ -571,7 +571,7 @@
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	ears = /obj/item/radio/headset/syndicate/alt
 	back = /obj/item/storage/backpack
-	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/deathrattle, /obj/item/implant/explosive, /obj/item/implant/mindshield)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/deathrattle/centcom, /obj/item/implant/explosive, /obj/item/implant/mindshield)
 	id = /obj/item/card/id/syndicate
 
 	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
@@ -1170,6 +1170,115 @@
 /obj/item/card/id/away/tarkoff/ensign
 	name = "Tarkov Ensign's Access Card"
 	desc = "An access card designated for \"Tarkov Ensign\". No one has to listen to you... but you're the closest there is for command around here."
+
+// CENTCOM
+
+/obj/effect/mob_spawn/human/centcom_syndicate
+	name = "Special Operations Forces Syndicate Specialist"
+	roundstart = FALSE
+	death = FALSE
+	job_description = "Special Operations Forces Syndicate Specialist"
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper_s"
+	short_desc = "Вы Интерн-Специалист, взятый на работу Центральным Командованием в качестве очередной рабочей единицы."
+	flavour_text = "Не так давно вы были взяты на работу в качестве дежурного на Аванпосту Центрального Командования. Ваша задача проста - следить за факсом и отвечать на сообщения, полученные через факс. Помните, что часть сообщений поступает из иного пласта Вселенной, потому не пугайтесь, если вдруг окажется, что где-то там вызывают Кровавого Бога. Просто выполняйте свою работу и отправляйте инструкции."
+	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей. Bы можете выдавать около-шуточные требования и указания в Эксту. Ни в коем случае не оказывайте прямое влияние на станцию в Динамику."
+	outfit = /datum/outfit/centcom_syndicate
+	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
+	assignedrole = "Centcom Specialist"
+	canloadappearance = TRUE
+	loadout_enabled = TRUE
+
+/datum/outfit/centcom_syndicate
+	name = "Special Ops Syndicate Officer"
+	head = /obj/item/clothing/head/HoS/beret/syndicate
+	ears = /obj/item/radio/headset/syndicate/alt
+	mask = /obj/item/clothing/mask/cigarette/cigar/havana
+	glasses = /obj/item/clothing/glasses/aviators
+	suit = /obj/item/clothing/suit/armor/vest/warden/syndicate
+	uniform = /obj/item/clothing/under/syndicate/combat
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	shoes = /obj/item/clothing/shoes/combat/swat
+
+	l_pocket = /obj/item/extinguisher/mini
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+	back = /obj/item/storage/backpack/satchel/sec
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/firstaid/regular=1,
+		/obj/item/stamp/syndicate=1,
+		)
+	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
+	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
+	id = /obj/item/card/id
+
+/datum/outfit/centcom_syndicate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	if(visualsOnly)
+		return
+
+	var/obj/item/card/id/W = H.wear_id
+	W.icon_state = "centcom"
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("Special Ops Syndicate Officer")
+	W.assignment = "Special Ops Syndicate Officer"
+	W.registered_name = H.real_name
+	W.update_label()
+
+	var/obj/item/radio/headset/R = H.ears
+	R.set_frequency(FREQ_CENTCOM)
+	R.freqlock = TRUE
+
+/obj/effect/mob_spawn/human/centcom_nanotrasen
+	name = "Special Operations Forces Nanotrasen Specialist"
+	roundstart = FALSE
+	death = FALSE
+	job_description = "Special Operations Forces Nanotrasen Specialist"
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper_s"
+	short_desc = "Вы Интерн-Специалист, взятый на работу Центральным Командованием в качестве очередной рабочей единицы."
+	flavour_text = "Не так давно вы были взяты на работу в качестве дежурного на Аванпосту Центрального Командования. Ваша задача проста - следить за факсом и отвечать на сообщения, полученные через факс. Помните, что часть сообщений поступает из иного пласта Вселенной, потому не пугайтесь, если вдруг окажется, что где-то там вызывают Кровавого Бога. Просто выполняйте свою работу и отправляйте инструкции."
+	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей. Bы можете выдавать около-шуточные требования и указания в Эксту. Ни в коем случае не оказывайте прямое влияние на станцию в Динамику."
+	outfit = /datum/outfit/centcom_nanotrasen
+	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
+	assignedrole = "Centcom Specialist"
+	canloadappearance = TRUE
+	loadout_enabled = TRUE
+
+/datum/outfit/centcom_nanotrasen
+	name = "Special Ops Nanotrasen Officer"
+	head = /obj/item/clothing/head/beret/black
+	ears = /obj/item/radio/headset/syndicate/alt
+	glasses = /obj/item/clothing/glasses/aviators
+	suit = /obj/item/clothing/suit/space/officer
+	uniform = /obj/item/clothing/under/syndicate
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	shoes = /obj/item/clothing/shoes/combat/swat
+
+	l_pocket = /obj/item/extinguisher/mini
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+	back = /obj/item/storage/backpack/satchel/leather
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/firstaid/regular=1,
+		/obj/item/stamp/centcom=1,
+		)
+	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
+	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
+	id = /obj/item/card/id
+
+/datum/outfit/centcom_nanotrasen/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	if(visualsOnly)
+		return
+
+	var/obj/item/card/id/W = H.wear_id
+	W.icon_state = "centcom"
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("Special Ops Centcom Officer")
+	W.assignment = "Special Ops Centcom Officer"
+	W.registered_name = H.real_name
+	W.update_label()
+
+	var/obj/item/radio/headset/R = H.ears
+	R.set_frequency(FREQ_CENTCOM)
+	R.freqlock = TRUE
 
 //DS-2.
 /obj/effect/mob_spawn/human/ds2

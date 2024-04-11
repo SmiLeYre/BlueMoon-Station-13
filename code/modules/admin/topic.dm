@@ -2275,7 +2275,7 @@
 
 		var/atom/target //Where the object will be spawned
 		var/where = href_list["object_where"]
-		if (!( where in list("onfloor","frompod","inhand","inmarked") ))
+		if (!( where in list("onfloor","frompod","fromquantumspread","inhand","inmarked") ))
 			where = "onfloor"
 
 
@@ -2286,7 +2286,7 @@
 					where = "onfloor"
 				target = usr
 
-			if("onfloor", "frompod")
+			if("onfloor", "frompod", "fromquantumspread")
 				switch(href_list["offset_type"])
 					if ("absolute")
 						target = locate(0 + X,0 + Y,0 + Z)
@@ -2303,9 +2303,12 @@
 					target = marked_datum
 
 		var/obj/structure/closet/supplypod/centcompod/pod
+		var/datum/effect_system/spark_spread/quantum/sparks
 		if(target)
 			if(where == "frompod")
 				pod = new()
+			if(where == "fromquantumspread")
+				sparks = new
 			for (var/path in paths)
 				for (var/i = 0; i < number; i++)
 					if(path in typesof(/turf))
@@ -2340,6 +2343,12 @@
 
 		if(pod)
 			new /obj/effect/pod_landingzone(target, pod)
+
+		if(sparks)
+			playsound(get_turf(target.loc), 'sound/magic/Repulse.ogg', 100, 1)
+			sparks.set_up(10, 1, target)
+			sparks.attach(target.loc)
+			sparks.start()
 
 		if (number == 1)
 			log_admin("[key_name(usr)] created a [english_list(paths)]")

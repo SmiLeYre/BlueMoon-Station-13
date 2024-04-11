@@ -19900,12 +19900,12 @@
 /turf/open/floor/mineral/plastitanium,
 /area/service/kitchen)
 "bak" = (
-/obj/structure/table/wood/fancy/blackred,
-/obj/machinery/door/firedoor,
+/obj/machinery/smartfridge/food,
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "kitchen";
 	name = "kitchen shutters"
 	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/mineral/plastitanium,
 /area/service/kitchen)
 "bal" = (
@@ -53137,7 +53137,7 @@
 	c_tag = "Brig Infirmary";
 	dir = 4
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
 "fFR" = (
@@ -56600,7 +56600,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/mineral/plastitanium/red,
 /area/security/brig)
 "kmw" = (
@@ -105925,7 +105925,7 @@ aTN
 cCq
 aVz
 cAg
-bak
+qus
 bbz
 bbz
 ugi
@@ -106182,7 +106182,7 @@ aTO
 cCq
 aVz
 aVz
-qus
+bak
 bbz
 bbz
 blg

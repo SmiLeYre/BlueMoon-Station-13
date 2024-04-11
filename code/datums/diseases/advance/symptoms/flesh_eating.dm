@@ -85,7 +85,6 @@ Bonus
 */
 
 /datum/symptom/flesh_death
-
 	name = "Autophagocytosis Necrosis"
 	desc = "The virus rapidly consumes infected cells, leading to heavy and widespread damage."
 	stealth = -2

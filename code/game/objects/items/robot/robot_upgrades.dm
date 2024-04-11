@@ -219,20 +219,35 @@
 	name = "mining cyborg premium KA"
 	desc = "A premium kinetic accelerator replacement for the mining module's standard kinetic accelerator."
 	icon_state = "cyborg_upgrade3"
-	require_module = 1
+	require_module = TRUE
 	module_type = list(/obj/item/robot_module/miner)
+	module_flags = BORG_MODULE_MINER // SANDSTORM EDIT
 
 /obj/item/borg/upgrade/premiumka/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
 	if(.)
 		for(var/obj/item/gun/energy/kinetic_accelerator/cyborg/KA in R.module)
 			for(var/obj/item/borg/upgrade/modkit/M in KA.modkits)
-				M.uninstall(src)
+				M.uninstall(KA)
 			R.module.remove_module(KA, TRUE)
 
 		var/obj/item/gun/energy/kinetic_accelerator/premiumka/cyborg/PKA = new /obj/item/gun/energy/kinetic_accelerator/premiumka/cyborg(R.module)
 		R.module.basic_modules += PKA
 		R.module.add_module(PKA, FALSE, TRUE)
+
+// SANDSTORM EDIT START
+/obj/item/borg/upgrade/premiumka/deactivate(mob/living/silicon/robot/R, user = usr)
+	. = ..()
+	if (.)
+		for(var/obj/item/gun/energy/kinetic_accelerator/premiumka/cyborg/PKA in R.module)
+			for(var/obj/item/borg/upgrade/modkit/M in PKA.modkits)
+				M.uninstall(PKA)
+			R.module.remove_module(PKA, TRUE)
+
+		var/obj/item/gun/energy/kinetic_accelerator/cyborg/KA = new (R.module)
+		R.module.basic_modules += KA
+		R.module.add_module(KA, FALSE, TRUE)
+// SANDSTORM EDIT END
 
 /obj/item/borg/upgrade/tboh
 	name = "janitor cyborg trash bag of holding"
@@ -729,3 +744,31 @@
 	action.UpdateButtonIcon()
 
 	return TRUE
+
+/obj/item/borg/upgrade/broomer
+	name = "Experimental Broom"
+	desc = "При активации позволяет толкать предметы перед собой в большой куче."
+	icon_state = "cyborg_upgrade3"
+	require_module = TRUE
+	module_type = list(/obj/item/robot_module/butler)
+	module_flags = BORG_MODULE_JANITOR
+
+/obj/item/borg/upgrade/broomer/action(mob/living/silicon/robot/R, user = usr)
+	. = ..()
+	if (!.)
+		return
+	var/obj/item/broom/cyborg/BR = locate() in R.module.modules
+	if (BR)
+		to_chat(user, span_warning("Этот киборг уже оснащен экспериментальным толкателем!"))
+		return FALSE
+	BR = new(R.module)
+	R.module.basic_modules += BR
+	R.module.add_module(BR, FALSE, TRUE)
+
+/obj/item/borg/upgrade/broomer/deactivate(mob/living/silicon/robot/R, user = usr)
+	. = ..()
+	if (!.)
+		return
+	var/obj/item/broom/cyborg/BR = locate() in R.module.modules
+	if (BR)
+		R.module.remove_module(BR, TRUE)

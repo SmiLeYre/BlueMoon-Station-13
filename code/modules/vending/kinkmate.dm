@@ -32,6 +32,7 @@
 				/obj/item/clothing/neck/stole/black = 2,
 				/obj/item/restraints/handcuffs/fake/kinky = 5,
 				/obj/item/clothing/glasses/sunglasses/blindfold = 4,
+				/obj/item/clothing/glasses/hud/slaver = 8,
 				/obj/item/clothing/mask/muzzle = 4,
 				/obj/item/clothing/mask/gas/sechailer/slut = 4,
 				/obj/item/clothing/shoes/highheels = 3,
@@ -66,7 +67,8 @@
 				/obj/item/clothing/under/pants/chaps = 5,
 				/obj/item/clothing/accessory/skullcodpiece/fake = 3,
 				/obj/item/reagent_containers/glass/bottle/hexacrocin = 10,
-				/obj/item/melee/sizetool = 2
+				/obj/item/melee/sizetool = 2,
+				/obj/item/lewd_spellbook = 1
 				)
 	refill_canister = /obj/item/vending_refill/kink
 	default_price = PRICE_CHEAP
@@ -76,3 +78,11 @@
 /obj/item/vending_refill/kink
 	machine_name 	= "KinkMate"
 	icon_state 		= "refill_kink"
+
+/obj/machinery/vending/kink/Initialize(mapload)
+	. = ..()
+	if(mapload && prob(0.1))
+		var/turf/T = get_turf(src)
+		if(T)
+			qdel(src)
+			new /obj/machinery/vending/sexmachine(T)

@@ -247,6 +247,7 @@
 	automatic_burst_overlay = FALSE
 	can_suppress = FALSE
 	burst_size = 1
+	fire_delay = 5 // BLUEMOON EDIT - was NOTHING
 	pin = /obj/item/firing_pin/implant/pindicate
 	actions_types = list()
 
@@ -447,5 +448,5 @@
 	fire_sound = 'sound/weapons/lasgun.ogg'
 	casing_ejector = FALSE
 
-/obj/item/gun/ballistic/automatic/laser/update_icon_state()
+/obj/item/gun/ballistic/automatic/laser/lasgun/update_icon_state()
 	icon_state = "boarding"

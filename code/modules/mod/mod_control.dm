@@ -6,7 +6,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/modsuit/mod_clothing.dmi'
 	icon_state = "standard-control"
 	item_state = "standard-control"
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/mod/control
 	name = "MOD control unit"
@@ -368,7 +368,7 @@
 	wearer.apply_damage(10 / severity, BURN, spread_damage=TRUE)
 	to_chat(wearer, span_danger("You feel [src] heat up from the EMP, burning you slightly."))
 	if (wearer.stat < UNCONSCIOUS && prob(10))
-		wearer.emote("scream")
+		wearer.emote("realagony")
 
 /obj/item/mod/control/on_outfit_equip(mob/living/carbon/human/outfit_wearer, visuals_only, item_slot)
 	if(visuals_only)

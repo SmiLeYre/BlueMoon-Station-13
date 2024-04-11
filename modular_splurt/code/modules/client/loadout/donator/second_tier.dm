@@ -20,10 +20,25 @@
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 
+// Head
+/datum/gear/donator/head/chameleon
+	name = "Chameleon Hat"
+	path = /obj/item/clothing/head/chameleon
+	cost = 2
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_2
+
 // Mask
 /datum/gear/donator/mask/ninja_replica
 	name = "Replica Ninja Mask"
 	path = /obj/item/clothing/mask/ninja_replica
 	cost = 1
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/mask/chameleon
+	name = "Chameleon Mask"
+	path = /obj/item/clothing/mask/chameleon
+	cost = 2
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1

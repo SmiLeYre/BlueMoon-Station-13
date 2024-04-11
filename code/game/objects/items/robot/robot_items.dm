@@ -6,7 +6,7 @@
 
 
 /obj/item/borg/stun
-	name = "electrically-charged arm"
+	name = "Electrically-Charged Arm"
 	icon_state = "elecarm"
 	var/charge_cost = 30
 
@@ -20,7 +20,7 @@
 			return
 
 	user.do_attack_animation(M)
-	M.DefaultCombatKnockdown(100)
+	M.DefaultCombatKnockdown(60)
 	M.apply_effect(EFFECT_STUTTER, 5)
 
 	M.visible_message("<span class='danger'>[user] has prodded [M] with [src]!</span>", \

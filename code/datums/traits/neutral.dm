@@ -123,24 +123,6 @@
 		return
 	H.arousal_rate = initial(H.arousal_rate)
 
-/datum/quirk/alcohol_intolerance
-	name = "Непереносимость Алкоголя"
-	desc = "Вы получаете урон токсинами вместо того, чтобы пьянеть при употреблении алкоголя."
-	value = 0
-	mob_trait = TRAIT_TOXIC_ALCOHOL
-	medical_record_text = "Организм пациента не усваивает этиловый спирт."
-
-/datum/quirk/alcohol_intolerance/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.disliked_food |= ALCOHOL
-
-/datum/quirk/alcohol_intolerance/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	if(H)
-		var/datum/species/species = H.dna.species
-		species.disliked_food &= ~ALCOHOL
-
 /datum/quirk/longtimer
 	name = "Матёрый Волк"
 	desc = "Вы прошли долгий путь и пережили больше, чем остальные. Вы страдаете от жутких шрамов. Какова бы ни была причина, вы отказались от их удаления или аугментации."
@@ -175,7 +157,7 @@
 	mob_trait = TRAIT_SALT_SENSITIVE
 
 /datum/quirk/dullahan
-	name = "Дюллахан"
+	name = "Дуллахан"
 	desc = "Ваша голова отделена от тела."
 	value = 0
 	medical_record_text = "Пациент имеет неизвестного рода пространственную связь с собственной отделенной головой."

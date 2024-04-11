@@ -26,6 +26,9 @@
 	///List of all mobs that are viewing our action button -> A unique movable for them to view.
 	var/list/viewers = list()
 
+	/// full key we are bound to
+	var/full_key
+
 /datum/action/New(Target)
 	link_to(Target)
 	button = new
@@ -74,6 +77,7 @@
 			M.client.screen += button
 			button.locked = M.client.prefs.buttons_locked || button.id ? M.client.prefs.action_buttons_screen_locs["[name]_[button.id]"] : FALSE //even if it's not defaultly locked we should remember we locked it before
 			button.moved = button.id ? M.client.prefs.action_buttons_screen_locs["[name]_[button.id]"] : FALSE
+			RegisterSignal(M, COMSIG_MOB_KEYDOWN, PROC_REF(keydown), override = TRUE)
 		M.update_action_buttons()
 	else
 		Remove(owner)
@@ -84,10 +88,12 @@
 			M.client.screen -= button
 		M.actions -= src
 		M.update_action_buttons()
+	UnregisterSignal(M, COMSIG_MOB_KEYDOWN)
 	owner = null
-	button.moved = FALSE //so the button appears in its normal position when given to another owner.
-	button.locked = FALSE
-	button.id = null
+	if(button)
+		button.moved = FALSE //so the button appears in its normal position when given to another owner.
+		button.locked = FALSE
+		button.id = null
 
 /datum/action/proc/Trigger()
 	if(!IsAvailable())
@@ -158,12 +164,15 @@
 			button.cut_overlays()
 			button.add_overlay(M)
 			button.appearance_cache = target.appearance
-
+	button.update_keybind_maptext(full_key)
 	if(!IsAvailable(TRUE))
 		button.color = transparent_when_unavailable ? rgb(128,0,0,128) : rgb(128,0,0)
 	else
 		button.color = rgb(255,255,255,255)
 		return 1
+
+/datum/action/proc/update_button_status(atom/movable/screen/movable/action_button/current_button, force = FALSE)
+	current_button.update_keybind_maptext(full_key)
 
 /datum/action/proc/ApplyIcon(atom/movable/screen/movable/action_button/current_button, force = FALSE)
 	if(icon_icon && button_icon_state && ((current_button.button_icon_state != button_icon_state) || force))
@@ -449,6 +458,11 @@
 	check_flags = NONE
 	required_mobility_flags = NONE
 	name = "Activate Explosive Implant"
+
+/datum/action/item_action/chem_implant
+	check_flags = NONE
+	required_mobility_flags = NONE
+	name = "Activate Chemical Implant"
 
 /datum/action/item_action/toggle_research_scanner
 	name = "Toggle Research Scanner"
@@ -1082,3 +1096,14 @@
 //	else
 //		background_icon_state = icon_state_disabled
 //	UpdateButtonIcon()
+
+/datum/action/proc/keydown(mob/source, key, client/client, full_key)
+	SIGNAL_HANDLER
+	if(isnull(full_key) || full_key != src.full_key)
+		return
+	if(istype(source))
+		if(source.next_click > world.time)
+			return
+		else
+			source.next_click = world.time + CLICK_CD_RANGE
+	INVOKE_ASYNC(src, PROC_REF(Trigger))

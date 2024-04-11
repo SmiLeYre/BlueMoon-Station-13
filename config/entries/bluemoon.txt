@@ -37,3 +37,6 @@ CHOOSABLE_LAWS SlutOS 6.9. | /datum/ai_laws/slut
 CHOOSABLE_LAWS SHE-B.A.N.G. | /datum/ai_laws/shebang
 CHOOSABLE_LAWS Fluid Collection System | /datum/ai_laws/milker
 CHOOSABLE_LAWS Sleeper Upgrade TestEnv | /datum/ai_laws/vore_pred
+
+## Ticket ping frequency. Set 0 for disable that subsystem. 3000 - 5 minutes, 600 - 1 minute.
+TICKET_PING_FREQUENCY 600

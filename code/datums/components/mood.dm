@@ -196,21 +196,28 @@
 			setInsanityEffect(MAJOR_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/insane)
 			master.add_actionspeed_modifier(/datum/actionspeed_modifier/low_sanity)
+			if(!master || master.client.prefs.windownoise)
+				master.overlay_fullscreen("depression", /atom/movable/screen/fullscreen/scaled/depression, 3)
 			sanity_level = 6
 		if(SANITY_CRAZY to SANITY_UNSTABLE)
 			setInsanityEffect(MINOR_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/crazy)
 			master.add_actionspeed_modifier(/datum/actionspeed_modifier/low_sanity)
+			if(!master || master.client.prefs?.windownoise)
+				master.overlay_fullscreen("depression", /atom/movable/screen/fullscreen/scaled/depression, 2)
 			sanity_level = 5
 		if(SANITY_UNSTABLE to SANITY_DISTURBED)
 			setInsanityEffect(SLIGHT_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/disturbed)
 			master.add_actionspeed_modifier(/datum/actionspeed_modifier/low_sanity)
+			if(!master || master.client.prefs.windownoise)
+				master.overlay_fullscreen("depression", /atom/movable/screen/fullscreen/scaled/depression, 1)
 			sanity_level = 4
 		if(SANITY_DISTURBED to SANITY_NEUTRAL)
 			setInsanityEffect(0)
 			master.remove_movespeed_modifier(MOVESPEED_ID_SANITY)
 			master.remove_actionspeed_modifier(ACTIONSPEED_ID_SANITY)
+			master.clear_fullscreen("depression")
 			sanity_level = 3
 		if(SANITY_NEUTRAL+1 to SANITY_GREAT+1) //shitty hack but +1 to prevent it from responding to super small differences
 			setInsanityEffect(0)

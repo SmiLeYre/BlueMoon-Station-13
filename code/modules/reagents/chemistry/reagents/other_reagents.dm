@@ -2582,6 +2582,12 @@
 	if(!istype(location))
 		return
 
+	if(istype(src, /datum/reagent/consumable/semen/femcum)) //let it be here
+		var/obj/effect/decal/cleanable/semen/femcum/F = (locate(/obj/effect/decal/cleanable/semen/femcum) in location) || new(location)
+		if(F.reagents.add_reagent(type, volume, data))
+			F.update_icon()
+			return
+
 	var/obj/effect/decal/cleanable/semen/S = locate(/obj/effect/decal/cleanable/semen) in location
 	if(S)
 		if(S.reagents.add_reagent(type, volume, data))
@@ -2627,6 +2633,8 @@
 
 /obj/effect/decal/cleanable/semen/update_icon()
 	. = ..()
+	if(QDELETED(src) || !reagents)
+		return
 	add_atom_colour(mix_color_from_reagents(reagents.reagent_list), FIXED_COLOUR_PRIORITY)
 
 /datum/reagent/consumable/semen/femcum
@@ -2766,7 +2774,7 @@
 /datum/reagent/red_ichor
 	name = "Red Ichor"
 	can_synth = FALSE
-	description = "A unknown red liquid, linked to healing of most moral wounds."
+	description = "An unknown red liquid, linked to healing of most moral wounds."
 	color = "#c10000"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	chemical_flags = REAGENT_ALL_PROCESS
@@ -2784,7 +2792,7 @@
 /datum/reagent/green_ichor
 	name = "Green Ichor"
 	can_synth = FALSE
-	description = "A unknown green liquid, linked to healing of most internal wounds."
+	description = "An unknown green liquid, linked to healing of most internal wounds."
 	color = "#158c00"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	chemical_flags = REAGENT_ALL_PROCESS
@@ -2802,7 +2810,7 @@
 /datum/reagent/blue_ichor
 	name = "Blue Ichor"
 	can_synth = FALSE
-	description = "A unknown blue liquid, linked to healing the mind."
+	description = "An unknown blue liquid, linked to healing the mind."
 	color = "#0914e0"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	chemical_flags = REAGENT_ALL_PROCESS

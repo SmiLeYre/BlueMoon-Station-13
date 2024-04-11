@@ -26,12 +26,10 @@
 		var/mob/living/carbon/human/M = loc
 		if(!ishuman(loc))
 			return
-		var/tauric = M.dna.species.mutant_bodyparts["taur"] && M.dna.features["taur"] && M.dna.features["taur"] != "None"
-		if(istype(M) || M.dna || M.dna.species || M.dna.species.can_wag_tail(M) || !isvox(M))
-			if(M.dna.features["tail_primary"] && M.dna.features["tail_secondary"])
-				if(!(tauric && (mutantrace_variation & STYLE_ALL_TAURIC)))
-					var/tail_under_suit = tail_suit_worn_overlay || 'modular_bluemoon/SmiLeY/icons/mob/clothing/tails_digi.dmi'
-					. += mutable_appearance(tail_under_suit, tail_state)
+		var/datum/dna/D = M.dna
+		if(D.features["hardsuit_with_tail"])
+			var/tail_under_suit = tail_suit_worn_overlay || 'modular_bluemoon/SmiLeY/icons/mob/clothing/tails_digi.dmi'
+			. += mutable_appearance(tail_under_suit, tail_state)
 		var/obj/item/clothing/under/U = M.w_uniform
 			//SANDSTORM EDIT
 		if(ishuman(M) && M.w_uniform)

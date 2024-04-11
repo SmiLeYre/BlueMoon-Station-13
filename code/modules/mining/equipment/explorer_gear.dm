@@ -25,10 +25,30 @@
 	hoodtype = /obj/item/clothing/head/hooded/explorer/standard/improved
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	armor = list(MELEE = 60, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 50, BIO = 100, RAD = 50, FIRE = 100, ACID = 50, WOUND = 15)
+	armor = list(MELEE = 50, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 50, BIO = 100, RAD = 50, FIRE = 100, ACID = 50, WOUND = 15)
 
 /obj/item/clothing/suit/hooded/explorer/standard/improved/upgrade_icon(datum/source, amount, maxamount)
-	return
+	if(amount)
+		name = "reinforced [initial(name)]"
+		suit_type = "explorer-improved_goliath"
+		if(amount == maxamount)
+			suit_type = "explorer-improved_goliath_full"
+	icon_state = "[suit_type]"
+	item_state = "[suit_type]"
+	if(ishuman(loc))
+		var/mob/living/carbon/human/wearer = loc
+		if(wearer.wear_suit == src)
+			wearer.update_inv_wear_suit()
+
+/obj/item/clothing/suit/hooded/explorer/standard/improved/equipped(mob/living/carbon/human/user, slot)
+	..()
+	if (slot == ITEM_SLOT_HEAD)
+		ADD_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "improved_suit")
+
+/obj/item/clothing/suit/hooded/explorer/standard/improved/dropped(mob/living/carbon/human/user)
+	..()
+	if (HAS_TRAIT_FROM(user, TRAIT_ASHSTORM_IMMUNE, "improved_suit"))
+		REMOVE_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "improved_suit")
 
 /obj/item/clothing/head/hooded/explorer
 	name = "Explorer Hood"
@@ -52,20 +72,30 @@
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	actions_types = list(/datum/action/item_action/toggle_helmet_light)
-	armor = list(MELEE = 60, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 50, BIO = 100, RAD = 50, FIRE = 100, ACID = 50, WOUND = 10)
+	armor = list(MELEE = 50, BULLET = 20, LASER = 20, ENERGY = 20, BOMB = 50, BIO = 100, RAD = 50, FIRE = 100, ACID = 50, WOUND = 10)
 
-/obj/item/clothing/suit/hooded/explorer/standard/improved/upgrade_icon(datum/source, amount, maxamount)
-	return
+/obj/item/clothing/head/hooded/explorer/standard/improved/upgrade_icon(datum/source, amount, maxamount)
+	if(amount)
+		name = "reinforced [initial(name)]"
+		suit_type = "explorer-improved_goliath"
+		if(amount == maxamount)
+			suit_type = "explorer-improved_goliath_full"
+	icon_state = "[suit_type]"
+	item_state = "[suit_type]"
+	if(ishuman(loc))
+		var/mob/living/carbon/human/wearer = loc
+		if(wearer.wear_suit == src)
+			wearer.update_inv_wear_suit()
 
-/obj/item/clothing/suit/hooded/explorer/standard/improved/equipped(mob/living/carbon/human/user, slot)
+/obj/item/clothing/head/hooded/explorer/standard/improved/equipped(mob/living/carbon/human/user, slot)
 	..()
 	if (slot == ITEM_SLOT_HEAD)
-		ADD_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "improved_suit")
+		ADD_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "improved_hood")
 
-/obj/item/clothing/suit/hooded/explorer/standard/improved/dropped(mob/living/carbon/human/user)
+/obj/item/clothing/head/hooded/explorer/standard/improved/dropped(mob/living/carbon/human/user)
 	..()
-	if (HAS_TRAIT_FROM(user, TRAIT_ASHSTORM_IMMUNE, "improved_suit"))
-		REMOVE_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "improved_suit")
+	if (HAS_TRAIT_FROM(user, TRAIT_ASHSTORM_IMMUNE, "improved_hood"))
+		REMOVE_TRAIT(user, TRAIT_ASHSTORM_IMMUNE, "improved_hood")
 
 /obj/item/clothing/suit/hooded/explorer/standard
 	hoodtype = /obj/item/clothing/head/hooded/explorer/standard
@@ -78,8 +108,6 @@
 	RegisterSignal(src, COMSIG_ARMOR_PLATED, .proc/upgrade_icon)
 
 /obj/item/clothing/suit/hooded/explorer/standard/proc/upgrade_icon(datum/source, amount, maxamount)
-	SIGNAL_HANDLER
-
 	if(amount)
 		name = "reinforced [initial(name)]"
 		suit_type = "normal_goliath"
@@ -97,8 +125,6 @@
 	RegisterSignal(src, COMSIG_ARMOR_PLATED, .proc/upgrade_icon)
 
 /obj/item/clothing/head/hooded/explorer/standard/proc/upgrade_icon(datum/source, amount, maxamount)
-	SIGNAL_HANDLER
-
 	if(amount)
 		name = "reinforced [initial(name)]"
 		suit_type = "normal_goliath"

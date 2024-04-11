@@ -5,7 +5,7 @@ SUBSYSTEM_DEF(shuttle)
 	wait = 10
 	init_order = INIT_ORDER_SHUTTLE
 	flags = SS_KEEP_TIMING|SS_NO_TICK_CHECK
-	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME
+	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME | RUNLEVEL_POSTGAME // Splurt edit: Add RUNLEVEL_POSTGAME to let shuttles move after round is over.
 
 	var/list/mobile = list()
 	var/list/stationary = list()
@@ -79,6 +79,9 @@ SUBSYSTEM_DEF(shuttle)
 	var/problem_computer_charge_time = 90 SECONDS
 	var/problem_computer_next_charge_time = 0
 	//END SKYRAT CHANGE
+	//SPLURT CHANGE
+	var/list/navigation_locked_traits = list(ZTRAIT_RESERVED, ZTRAIT_CENTCOM, ZTRAIT_AWAY, ZTRAIT_REEBE) //traits forbided for custom docking
+	//END SPLURT CHANGE
 
 /datum/controller/subsystem/shuttle/Initialize(timeofday)
 	ordernum = rand(1, 9000)
@@ -268,6 +271,7 @@ SUBSYSTEM_DEF(shuttle)
 	var/area/A = get_area(user)
 
 	log_shuttle("[key_name(user)] has called the emergency shuttle.")
+	log_game("[key_name(src)] has called the emergency shuttl: [emergency_reason]")
 	deadchat_broadcast(" has called the shuttle at [span_name("[A.name]")].", span_name("[user.real_name]"), user, message_type=DEADCHAT_ANNOUNCEMENT)
 	if(call_reason)
 		SSblackbox.record_feedback("text", "shuttle_reason", 1, "[call_reason]")
@@ -677,7 +681,7 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/autoEnd() //CIT CHANGE - allows shift to end without being a proper shuttle call?
 	if(EMERGENCY_IDLE_OR_RECALLED)
 		SSshuttle.emergency.request(silent = TRUE)
-		priority_announce("Смена подошла к концу, был вызван шаттл эвакации. [GLOB.security_level == SEC_LEVEL_RED ? "Подтверждён код Красный подтверждён: Отправка эвакуационного шаттла. " : "" ]Он прибудет через [emergency.timeLeft(600)] минут.", null, "shuttlecalled", "Priority")
+		priority_announce("Смена подошла к концу, был вызван шаттл эвакуации. [GLOB.security_level == SEC_LEVEL_RED ? "Подтверждён код Красный подтверждён: Отправка эвакуационного шаттла. " : "" ]Он прибудет через [emergency.timeLeft(600)] минут.", null, "shuttlecalled", "Priority")
 		log_game("Round end vote passed. Shuttle has been auto-called.")
 		message_admins("Round end vote passed. Shuttle has been auto-called.")
 	emergencyNoRecall = TRUE

@@ -801,3 +801,31 @@
 
 /// Used by /obj/item/melee/breaching_hammer
 #define COMSIG_BREACHING "breaching_signal_woop_woop"
+
+/// from /mob/proc/key_down(): (key, client/client, full_key)
+#define COMSIG_MOB_KEYDOWN "mob_key_down"
+
+// Instant Summons
+/// Sent from /datum/action/cooldown/spell/summonitem/cast(), to the item being marked for recall: (datum/action/cooldown/spell/spell, mob/user)
+#define COMSIG_ITEM_MARK_RETRIEVAL "item_mark_retrieval"
+	/// Return to stop the cast and prevent the item from being marked
+	#define COMPONENT_BLOCK_MARK_RETRIEVAL (1 << 0)
+
+// from /client/proc/change_view() : (new_size)
+#define COMSIG_VIEW_SET "view_set"
+
+// from /client/proc/handle_popup_close() : (window_id)
+#define COMSIG_POPUP_CLEARED "popup_cleared"
+
+/// Called after one or more verbs are added: (list of verbs added)
+#define COMSIG_CLIENT_VERB_ADDED "client_verb_added"
+
+/// Called after one or more verbs are added: (list of verbs added)
+#define COMSIG_CLIENT_VERB_REMOVED "client_verb_removed"
+
+/// Called after a client logs into a mob: (mob)
+#define COMSIG_CLIENT_MOB_LOGIN "client_mob_changed"
+
+/// Global signal called after the station changes its name.
+/// (new_name, old_name)
+#define COMSIG_GLOB_STATION_NAME_CHANGED "!station_name_changed"

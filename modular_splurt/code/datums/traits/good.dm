@@ -1,11 +1,13 @@
 /datum/quirk/tough
 	name = "Стойкость"
-	desc = "Ваше аномально крепкое тело может вынести на 20% больше урона."
-	value = 3
+	desc = "Ваше аномально крепкое тело не воспринимает физический урон ниже 10 единиц"
+	value = 2
+	mob_trait = TRAIT_TOUGHT
 	medical_record_text = "Пациент продемонстрировал аномально высокую устойчивость к травмам."
 	gain_text = "<span class='notice'>Вы чувствуете крепость в мышцах.</span>"
 	lose_text = "<span class='notice'>Вы чувствуете себя менее крепким.</span>"
 
+/*
 /datum/quirk/tough/add()
 	quirk_holder.maxHealth *= 1.20
 
@@ -13,6 +15,7 @@
 	if(!quirk_holder)
 		return
 	quirk_holder.maxHealth *= 0.909 //close enough
+*/
 
 /datum/quirk/ashresistance
 	name = "Пепельная Устойчивость"
@@ -178,7 +181,7 @@
 	mob_trait = TRAIT_CLOTH_EATER
 
 /datum/quirk/ropebunny
-	name = "Rope Bunny"
+	name = "Верёвочный Кролик"
 	desc = "Вы обучены искусно вязать верёвки любой формы. Вы можете создавать веревку из ткани, а из этой веревки - болы!"
 	value = 2
 
@@ -268,32 +271,29 @@
 	// Apply the augment to the quirk holder
 	put_in.Insert(quirk_holder, null, TRUE, TRUE)
 
-// /datum/quirk/restorative_metabolism
-// 	name = "Восстановительный Метаболизм"
-// 	desc = "Ваше тело обладает дифференцированной способностью к восстановлению, что позволяет вам медленно восстанавливаться после травм. Однако обратите внимание, что критические травмы, ранения или генетические повреждения все равно потребуют медицинской помощи."
-// 	value = 3
-// 	mob_trait = TRAIT_RESTORATIVE_METABOLISM
-// 	gain_text = span_notice("Вы чувствуете прилив жизненной силы, проходящей через ваше тело...")
-// 	lose_text = span_notice("Вы чувствуете, как ваши улучшенные способности к восстановлению исчезают...")
-// 	processing_quirk = TRUE
+/datum/quirk/restorative_metabolism
+	name = "Восстановительный Метаболизм"
+	desc = "Ваше органическое тело обладает дифференцированной способностью к восстановлению, что позволяет вам медленно восстанавливаться после травм. Однако обратите внимание, что критические травмы, ранения или генетические повреждения все равно потребуют медицинской помощи."
+	value = 3
+	mob_trait = TRAIT_RESTORATIVE_METABOLISM
+	gain_text = span_notice("Вы чувствуете прилив жизненной силы, проходящей через ваше тело...")
+	lose_text = span_notice("Вы чувствуете, как ваши улучшенные способности к восстановлению исчезают...")
+	processing_quirk = TRUE
 
-// /datum/quirk/restorative_metabolism/on_process()
-// 	. = ..()
-// 	var/mob/living/carbon/human/H = quirk_holder
-
-// 	// The only_organic flag allows robotic biotypes to not be excluded.
-// 	H.adjustBruteLoss(-0.5, only_organic = FALSE) //The healing factor will only regenerate fully if not burnt beyond a specific threshold.
-// 	H.adjustFireLoss(-0.25,  only_organic = FALSE)
-// 	if(H.getBruteLoss() > 0 && H.getFireLoss() <= 50 || H.getFireLoss() > 0 && H.getFireLoss() <= 50)
-// 		H.adjustBruteLoss(-0.5, forced = TRUE, only_organic = FALSE)
-// 		H.adjustFireLoss(-0.25, forced = TRUE, only_organic = FALSE)
-// 	/* Doesn't heal robotic toxin damage (only_organic = FALSE not needed for tox),
-// 	another adjustToxLoss check with toxins_type = TOX_SYSCORRUPT,
-// 	(or just adding TOX_OMNI to the already existing one) could be added to heal robotic corruption,
-// 	but would make robotic species unbalanced.
-// 	*/
-// 	else if (H.getToxLoss() <= 90)
-// 		H.adjustToxLoss(-0.3, forced = TRUE)
+/datum/quirk/restorative_metabolism/on_process()
+	. = ..()
+	//Works only for organics #biopank_power
+	var/mob/living/carbon/human/H = quirk_holder //person who'll be healed
+	var/consumed_damage = H.getFireLoss() * 2 + H.getBruteLoss() // the damage, the person have. Burn is bad for regeneration, so its multiplied
+	var/heal_multiplier = quirk_holder.getMaxHealth() / 100 // the heal is scaled by persons health, big guys heals faster
+	var/bruteheal = -0.6
+	var/burnheal = -0.2
+	var/toxheal = -0.2
+	if (consumed_damage > 50 * heal_multiplier) // if the damage exceeds the threshold the speed of healing significantly reduse
+		heal_multiplier *= 0.5
+	H.adjustBruteLoss(bruteheal * heal_multiplier, forced = TRUE)
+	H.adjustFireLoss(burnheal * heal_multiplier, forced = TRUE)
+	H.adjustToxLoss(toxheal * heal_multiplier, forced = TRUE)
 
 /datum/quirk/breathless
 	name = "Недышащий"

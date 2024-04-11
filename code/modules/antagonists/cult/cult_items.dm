@@ -72,7 +72,7 @@
 		user.DefaultCombatKnockdown(100)
 		user.dropItemToGround(src, TRUE)
 		user.visible_message("<span class='warning'>A powerful force shoves [user] away from [target]!</span>", \
-							 "<span class='cultlarge'>\"You shouldn't play with sharp things. You'll poke someone's eye out.\"</span>")
+							"<span class='cultlarge'>\"You shouldn't play with sharp things. You'll poke someone's eye out.\"</span>")
 		if(ishuman(user))
 			var/mob/living/carbon/human/H = user
 			H.apply_damage(rand(force/2, force), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
@@ -92,20 +92,21 @@
 	ADD_TRAIT(src, TRAIT_NODROP, CULT_TRAIT)
 
 
-/obj/item/melee/cultblade/pickup(mob/living/user)
+/obj/item/melee/cultblade/pickup(mob/living/carbon/human/user)
 	..()
 	if(!iscultist(user))
 		if(!is_servant_of_ratvar(user))
 			to_chat(user, "<span class='cultlarge'>\"I wouldn't advise that.\"</span>")
+			return
 		else
 			to_chat(user, "<span class='cultlarge'>\"One of Ratvar's toys is trying to play with things [user.ru_who()] shouldn't. Cute.\"</span>")
 			to_chat(user, "<span class='userdanger'>A horrible force yanks at your arm!</span>")
-			user.emote("scream")
+			user.emote("realagony")
 			user.apply_damage(30, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-			user.dropItemToGround(src)
+			user.emote("realagony")
 
 /obj/item/cult_bastard
-	name = "bloody bastard sword"
+	name = "Bloody Bastard Sword"
 	desc = "An enormous sword used by Nar'Sien cultists to rapidly harvest the souls of non-believers."
 	w_class = WEIGHT_CLASS_HUGE
 	block_chance = 50
@@ -160,29 +161,44 @@
 /obj/item/cult_bastard/attack_self(mob/user)
 	dash_toggled = !dash_toggled
 	if(dash_toggled)
-		to_chat(loc, "<span class='notice'>You raise [src] and prepare to jaunt with it.</span>")
+		to_chat(loc, "<span class='notice'>Ты готовишься к совершению рывка при помощи [src].</span>")
+		balloon_alert_to_viewers("[user] готовится к совершению рывка!")
 	else
-		to_chat(loc, "<span class='notice'>You lower [src] and prepare to swing it normally.</span>")
+		to_chat(loc, "<span class='notice'>Ты больше не готовишься к совершению рывка при помощи [src].</span>")
+		balloon_alert_to_viewers("[user] больше не готовится к совершению рывка!")
 
-/obj/item/cult_bastard/pickup(mob/living/user)
+/obj/item/cult_bastard/pickup(mob/living/carbon/human/user)
 	. = ..()
 	if(!iscultist(user))
 		if(!is_servant_of_ratvar(user))
 			to_chat(user, "<span class='cultlarge'>\"I wouldn't advise that.\"</span>")
-			force = 5
 			return
 		else
 			to_chat(user, "<span class='cultlarge'>\"One of Ratvar's toys is trying to play with things [user.ru_who()] shouldn't. Cute.\"</span>")
 			to_chat(user, "<span class='userdanger'>A horrible force yanks at your arm!</span>")
-			user.emote("scream")
 			user.apply_damage(30, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-			user.dropItemToGround(src, TRUE)
+			user.emote("realagony")
 			user.DefaultCombatKnockdown(50)
 			return
 	force = initial(force)
 	jaunt.Grant(user, src)
 	linked_action.Grant(user, src)
 	user.update_icons()
+
+/obj/item/cult_bastard/attack(mob/living/target, mob/living/carbon/human/user)
+	if(!iscultist(user))
+		user.DefaultCombatKnockdown(100)
+		user.dropItemToGround(src, TRUE)
+		user.emote("realagony")
+		user.visible_message("<span class='warning'>A powerful force shoves [user] away from [target]!</span>", \
+							"<span class='cultlarge'>\"You shouldn't play with sharp things. You'll poke someone's eye out.\"</span>")
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			H.apply_damage(rand(force/2, force), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+		else
+			user.adjustBruteLoss(rand(force/2,force))
+		return
+	..()
 
 /obj/item/cult_bastard/dropped(mob/user)
 	. = ..()
@@ -236,7 +252,7 @@
 	phaseout = /obj/effect/temp_visual/dir_setting/cult/phase/out
 
 /datum/action/innate/dash/cult/IsAvailable(silent = FALSE)
-	if(iscultist(holder) && current_charges)
+	if(iscultist(owner) && current_charges)
 		return TRUE
 	else
 		return FALSE
@@ -323,6 +339,7 @@
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
 	alternate_screams = BLOOD_SCREAMS
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/clothing/head/culthood/alt
 	name = "cultist hood"
@@ -433,6 +450,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | ALLOWINTERNALS
 	alternate_screams = BLOOD_SCREAMS
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/clothing/head/hooded/cult_hoodie
 	name = "\improper Nar'Sien Empowered Helmet"
@@ -457,7 +475,7 @@
 		else
 			to_chat(user, "<span class='cultlarge'>\"Trying to use things you don't own is bad, you know.\"</span>")
 			to_chat(user, "<span class='userdanger'>The armor squeezes at your body!</span>")
-			user.emote("scream")
+			user.emote("realagony")
 			user.adjustBruteLoss(25)
 			user.dropItemToGround(src, TRUE)
 
@@ -494,6 +512,7 @@
 	armor = list(MELEE = -50, BULLET = -50, LASER = -50,ENERGY = -50, BOMB = -50, BIO = -50, RAD = -50, FIRE = 0, ACID = 0)
 	slowdown = -1
 	hoodtype = /obj/item/clothing/head/hooded/berserkerhood
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/clothing/head/hooded/berserkerhood
 	name = "Flagellant's Robes"
@@ -516,7 +535,7 @@
 		else
 			to_chat(user, "<span class='cultlarge'>\"Trying to use things you don't own is bad, you know.\"</span>")
 			to_chat(user, "<span class='userdanger'>The robes squeeze at your body!</span>")
-			user.emote("scream")
+			user.emote("realagony")
 			user.adjustBruteLoss(25)
 			user.dropItemToGround(src, TRUE)
 
@@ -526,12 +545,13 @@
 	icon_state = "blindfold"
 	item_state = "blindfold"
 	flash_protect = 1
-	invis_override = INVISIBILITY_OBSERVER
+	invis_override = SEE_INVISIBLE_HIDDEN_RUNES
 
 /obj/item/clothing/glasses/hud/health/night/cultblind/equipped(mob/living/user, slot)
 	..()
 	if(!iscultist(user))
 		to_chat(user, "<span class='cultlarge'>\"You want to be blind, do you?\"</span>")
+		user.emote("realagony")
 		user.dropItemToGround(src, TRUE)
 		user.Dizzy(30)
 		user.DefaultCombatKnockdown(100)
@@ -556,6 +576,7 @@
 	if(!iscultist(user, TRUE))
 		user.dropItemToGround(src, TRUE)
 		user.DefaultCombatKnockdown(100)
+		user.emote("realagony")
 		to_chat(user, "<span class='warning'>Мощная сила отталкивает вас от [src]!</span>")
 		return
 	if(curselimit > 1)
@@ -617,6 +638,7 @@
 	if(!iscultist(user, TRUE))
 		user.dropItemToGround(src, TRUE)
 		user.DefaultCombatKnockdown(100)
+		user.emote("realagony")
 		to_chat(user, "<span class='warning'>Мощная сила отталкивает вас от [src]!</span>")
 		return
 	if(curselimit >= 2)
@@ -635,7 +657,7 @@
 	curselimit++
 
 /obj/item/cult_shift
-	name = "veil shifter"
+	name = "Veil Shifter"
 	desc = "This relic instantly teleports you, and anything you're pulling, forward by a moderate distance."
 	icon = 'icons/obj/cult.dmi'
 	icon_state ="shifter"
@@ -655,19 +677,22 @@
 		do_teleport(pulled, T, channel = TELEPORT_CHANNEL_CULT)
 		. = pulled
 
-/obj/item/cult_shift/attack_self(mob/user)
+/obj/item/cult_shift/attack_self(mob/living/carbon/human/user)
 	if(!uses || !iscarbon(user))
 		to_chat(user, "<span class='warning'>\The [src] is dull and unmoving in your hands.</span>")
 		return
 	if(!iscultist(user))
 		user.dropItemToGround(src, TRUE)
+		user.Dizzy(30)
+		user.DefaultCombatKnockdown(100)
+		user.emote("realagony")
 		step(src, pick(GLOB.alldirs))
 		to_chat(user, "<span class='warning'>\The [src] flickers out of your hands, your connection to this dimension is too strong!</span>")
 		return
 
 	var/mob/living/carbon/C = user
 	var/turf/mobloc = get_turf(C)
-	var/turf/destination = get_teleport_loc(mobloc,C,9,1,3,1,0,1)
+	var/turf/destination = get_teleport_loc(location = mobloc, target = C, distance = 9, density_check = TRUE, errorx = 3, errory = 1, eoffsety = 1)
 
 	if(destination)
 		uses--
@@ -688,7 +713,7 @@
 		to_chat(C, "<span class='danger'>The veil cannot be torn here!</span>")
 
 /obj/item/flashlight/flare/culttorch
-	name = "void torch"
+	name = "Void Torch"
 	desc = "Used by veteran cultists to instantly transport items to their needful brethren."
 	w_class = WEIGHT_CLASS_SMALL
 	brightness_on = 1
@@ -763,7 +788,6 @@
 	var/datum/action/innate/cult/spear/spear_act
 	var/wielded = FALSE // track wielded status on item
 
-
 /obj/item/cult_spear/Initialize(mapload)
 	. = ..()
 	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
@@ -790,14 +814,20 @@
 		qdel(spear_act)
 	return ..()
 
-/obj/item/cult_spear/pickup(mob/living/user)
-	. = ..()
+/obj/item/cult_spear/attack(mob/living/target, mob/living/carbon/human/user)
 	if(!iscultist(user))
-		to_chat(user, "<span class='cultlarge'>\"You want to be blind, do you?\"</span>")
-		user.dropItemToGround(src, TRUE)
-		user.Dizzy(30)
 		user.DefaultCombatKnockdown(100)
-		user.blind_eyes(30)
+		user.dropItemToGround(src, TRUE)
+		user.emote("realagony")
+		user.visible_message("<span class='warning'>A powerful force shoves [user] away from [target]!</span>", \
+							"<span class='cultlarge'>\"You shouldn't play with sharp things. You'll poke someone's eye out.\"</span>")
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			H.apply_damage(rand(force/2, force), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+		else
+			user.adjustBruteLoss(rand(force/2,force))
+		return
+	..()
 
 /obj/item/cult_spear/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/turf/T = get_turf(hit_atom)
@@ -893,14 +923,20 @@
 		qdel(halberd_act)
 	return ..()
 
-/obj/item/cult_halberd/pickup(mob/living/user)
-	. = ..()
+/obj/item/cult_halberd/attack(mob/living/target, mob/living/carbon/human/user)
 	if(!iscultist(user))
-		to_chat(user, "<span class='cultlarge'>\"You want to be blind, do you?\"</span>")
-		user.dropItemToGround(src, TRUE)
-		user.Dizzy(30)
 		user.DefaultCombatKnockdown(100)
-		user.blind_eyes(30)
+		user.dropItemToGround(src, TRUE)
+		user.emote("realagony")
+		user.visible_message("<span class='warning'>A powerful force shoves [user] away from [target]!</span>", \
+							"<span class='cultlarge'>\"You shouldn't play with sharp things. You'll poke someone's eye out.\"</span>")
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			H.apply_damage(rand(force/2, force), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+		else
+			user.adjustBruteLoss(rand(force/2,force))
+		return
+	..()
 
 /obj/item/cult_halberd/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
 	var/turf/T = get_turf(hit_atom)
@@ -1123,7 +1159,7 @@
 						L.DefaultCombatKnockdown(20)
 						L.adjustBruteLoss(45)
 						playsound(L, 'sound/hallucinations/wail.ogg', 50, 1)
-						L.emote("scream")
+						L.emote("realagony")
 		var/datum/beam/current_beam = new(user,temp_target,time=7,beam_icon_state="blood_beam",btype=/obj/effect/ebeam/blood)
 		INVOKE_ASYNC(current_beam, /datum/beam.proc/Start)
 

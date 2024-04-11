@@ -80946,7 +80946,7 @@
 	c_tag = "Security Infirmary";
 	dir = 8
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/white,
 /area/security/warden)
 "cLy" = (
@@ -83454,7 +83454,7 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 24
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/white,
 /area/security/warden)
 "jMz" = (

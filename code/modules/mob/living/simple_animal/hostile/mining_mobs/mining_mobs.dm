@@ -1,6 +1,8 @@
 //the base mining mob
 /mob/living/simple_animal/hostile/asteroid
-	vision_range = 2
+	vision_range = 15
+	aggro_vision_range = 15
+	see_in_dark = 15
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 	faction = list("mining")
 	weather_immunities = list(TRAIT_LAVA_IMMUNE,TRAIT_ASHSTORM_IMMUNE)
@@ -15,7 +17,6 @@
 	var/crusher_loot
 	var/throw_message = "bounces off of"
 	var/fromtendril = FALSE
-	see_in_dark = 8
 	lighting_alpha = LIGHTING_PLANE_ALPHA_MOSTLY_INVISIBLE
 	mob_size = MOB_SIZE_LARGE
 	var/icon_aggro = null

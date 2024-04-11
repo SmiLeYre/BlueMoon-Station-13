@@ -57,6 +57,12 @@
 				cum_in_anus--
 			else if(cum_in_vagina > 0)
 				cum_in_vagina--
+
+			// ДОБАВЛЕНИЕ РЕАГЕНТА В ОБЪЕКТ //
+			S.reagents.add_reagent(/datum/reagent/consumable/semen, 10)
+			if(S.reagents.total_volume > 0)
+				S.reagents.trans_to(S.reagents, S.reagents.total_volume)
+
 			S.blood_DNA |= blood_DNA
 			S.update_icon()
 			return

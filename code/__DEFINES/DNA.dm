@@ -174,6 +174,7 @@
 #define ORGAN_SLOT_VOICE "vocal_cords"
 #define ORGAN_SLOT_ADAMANTINE_RESONATOR "adamantine_resonator"
 #define ORGAN_SLOT_HEART_AID "heartdrive"
+#define INTERNAL_ORGAN_CHEM_IMPLANT "chem_sequencer_implant"
 #define ORGAN_SLOT_BRAIN_ANTIDROP "brain_antidrop"
 #define ORGAN_SLOT_BRAIN_ANTISTUN "brain_antistun"
 #define ORGAN_SLOT_BRAIN_ROBOT_RADSHIELDING "brain_robot_radshielding"

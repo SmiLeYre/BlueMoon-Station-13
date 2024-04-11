@@ -563,7 +563,7 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 
 /obj/item/lighter/ignition_effect(atom/A, mob/user)
 	if(get_temperature())
-		. = "<span class='rose'>Одним плавным движением [user] поджигает [A]. Блин, а ты крутой!</span>"
+		. = "<span class='rose'>Одним плавным движением [user] поджигает [A]. Блин, круто!</span>"
 
 /obj/item/lighter/proc/set_lit(new_lit)
 	lit = new_lit
@@ -736,11 +736,18 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 	item_state = "chapzippo"
 
 /obj/item/lighter/engraved
-	name = "QM Engraved Zippo Lighter"
+	name = "Engraved Zippo Lighter"
 	desc = "A intricately engraved zippo lighter."
 	icon_state = "lighter_overlay_engravedzippo"
 	overlay_state = "engravedzippo"
 	item_state = "engravedzippo"
+
+/obj/item/lighter/qm_engraved
+	name = "QM Engraved Zippo Lighter"
+	desc = "A intricately engraved zippo lighter."
+	icon_state = "lighter_overlay_engravedzippo"
+	overlay_state = "zippo_qm"
+	item_state = "zippo_qm"
 
 /obj/item/lighter/gonzofist
 	name = "Gonzo Fist Zippo"

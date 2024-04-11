@@ -22,6 +22,13 @@
 	cost = 12
 	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
 
+/datum/uplink_item/implants/antistun
+	name = "Anti-Drop Implant"
+	desc = "This cybernetic brain implant will allow you to force your hand muscles to contract, preventing item dropping. Twitch ear to toggle."
+	item = /obj/item/autosurgeon/syndicate/anti_drop
+	cost = 12
+	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
+
 /datum/uplink_item/implants/deathrattle
 	name = "Box of Deathrattle Implants"
 	desc = "A collection of implants (and one reusable implanter) that should be injected into the team. When one of the team \
@@ -84,9 +91,18 @@
 /datum/uplink_item/implants/reviver
 	name = "Reviver Implant"
 	desc = "This implant will attempt to revive and heal you if you lose consciousness. Comes with an autosurgeon."
-	item = /obj/item/autosurgeon/syndicate/reviver
+	item = /obj/item/autosurgeon/syndicate/inteq/reviver
+	cost = 5
+	purchasable_from = (~UPLINK_SYNDICATE)
+	//purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
+
+/datum/uplink_item/implants/revitilzer
+	name = "Revitalizing Cortex Implant"
+	desc = "This attachable to the torso cortex optimizes the body's processes in order to preserve the body. Provides overall basic mending. Comes with an autosurgeon."
+	item = /obj/item/autosurgeon/syndicate/inteq/revitilzer
 	cost = 8
-	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
+	purchasable_from = (~UPLINK_SYNDICATE)
+	//purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
 
 /datum/uplink_item/implants/stealthimplant
 	name = "Stealth Implant"

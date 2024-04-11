@@ -15,9 +15,6 @@ GLOBAL_LIST(topic_status_cache)
 		call(debug_server, "auxtools_init")()
 		enable_debugging()
 	AUXTOOLS_CHECK(AUXMOS)
-#ifdef EXTOOLS_REFERENCE_TRACKING
-	enable_reference_tracking()
-#endif
 	world.Profile(PROFILE_START)
 	log_world("World loaded at [TIME_STAMP("hh:mm:ss", FALSE)]!")
 
@@ -246,18 +243,15 @@ GLOBAL_LIST(topic_status_cache)
 		if (usr)
 			log_admin("[key_name(usr)] Has requested an immediate world restart via client side debugging tools")
 			message_admins("[key_name_admin(usr)] Has requested an immediate world restart via client side debugging tools")
-		to_chat(world, "<span class='boldannounce'>Rebooting World immediately due to host request.</span>")
+		to_chat(world, span_boldannounce("Rebooting World immediately due to host request."))
 	else
-		to_chat(world, "<span class='boldannounce'>Rebooting world...</span>")
-		Master.Shutdown()	//run SS shutdowns
-
-	TgsReboot()
+		to_chat(world, span_boldannounce("Ведётся перезагрузка Игрового Мира..."))
+		Master.Shutdown() //run SS shutdowns
 
 	#ifdef UNIT_TESTS
 	FinishTestRun()
 	return
-	#endif
-
+	#else
 	if(TgsAvailable())
 		var/do_hard_reboot
 		// check the hard reboot counter
@@ -275,23 +269,32 @@ GLOBAL_LIST(topic_status_cache)
 					do_hard_reboot = FALSE
 
 		if(do_hard_reboot)
-			log_world("World hard rebooted at [TIME_STAMP("hh:mm:ss", FALSE)]")
+			log_world("Игровой Мир будет перезагружен в [TIME_STAMP("hh:mm:ss", FALSE)]")
 			shutdown_logging() // See comment below.
+			auxcleanup()
 			TgsEndProcess()
 			return ..()
 
-	log_world("World rebooted at [TIME_STAMP("hh:mm:ss", FALSE)]")
-	shutdown_logging() // Past this point, no logging procs can be used, at risk of data loss.
-	AUXTOOLS_SHUTDOWN(AUXMOS)
-	..()
+	log_world("Игровой Мир будет перезагружен в [TIME_STAMP("hh:mm:ss", FALSE)]")
 
-/world/Del()
-	shutdown_logging() // makes sure the thread is closed before end, else we terminate
+	shutdown_logging() // Past this point, no logging procs can be used, at risk of data loss.
+	auxcleanup()
+
+	TgsReboot() // TGS can decide to kill us right here, so it's important to do it last
+
+	..()
+	#endif
+
+/world/proc/auxcleanup()
 	AUXTOOLS_SHUTDOWN(AUXMOS)
 	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
 	if (debug_server)
 		call(debug_server, "auxtools_shutdown")()
-	..()
+
+/world/Del()
+	shutdown_logging() // makes sure the thread is closed before end, else we terminate
+	auxcleanup()
+	. = ..()
 
 /world/proc/update_status()
 	. = ""
@@ -349,6 +352,7 @@ GLOBAL_LIST(topic_status_cache)
 	maxz++
 	SSmobs.MaxZChanged()
 	SSidlenpcpool.MaxZChanged()
+	SSmachines.MaxZChanged() //BLUEMOON ADD счётчик бс майнеров на z уровне
 	world.refresh_atmos_grid()
 
 /// Auxtools atmos
@@ -376,3 +380,20 @@ GLOBAL_LIST(topic_status_cache)
 
 /world/proc/on_tickrate_change()
 	SStimer?.reset_buckets()
+
+#ifdef TRACY_PROFILING
+/proc/prof_init()
+	var/lib
+
+	switch(world.system_type)
+		if(MS_WINDOWS) lib = "prof.dll"
+		if(UNIX) lib = "libprof.so"
+		else CRASH("unsupported platform")
+
+	var/init = call(lib, "init")()
+	if("0" != init) CRASH("[lib] init error: [init]")
+
+/world/New()
+	prof_init()
+	. = ..()
+#endif

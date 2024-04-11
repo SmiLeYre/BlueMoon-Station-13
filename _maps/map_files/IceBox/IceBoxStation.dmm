@@ -41085,7 +41085,7 @@
 /obj/structure/window/reinforced,
 /obj/structure/rack,
 /obj/item/clothing/head/helmet/brigdoc,
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "omG" = (
@@ -58485,9 +58485,6 @@
 /obj/machinery/computer/slot_machine,
 /turf/open/floor/wood,
 /area/command/meeting_room)
-"ujO" = (
-/turf/open/floor/wood,
-/area/commons/fitness/recreation)
 "ukr" = (
 /obj/machinery/cryopod/tele,
 /turf/open/floor/carpet,
@@ -102399,7 +102396,7 @@ nuh
 nuh
 ndk
 dqd
-ujO
+dqd
 eTv
 ouJ
 ouJ
@@ -102656,7 +102653,7 @@ rTU
 rTU
 rTU
 izm
-ujO
+dqd
 eTv
 eBV
 ouJ
@@ -103170,7 +103167,7 @@ oCx
 yhF
 ylK
 rjz
-ujO
+dqd
 eTv
 jDE
 ouJ

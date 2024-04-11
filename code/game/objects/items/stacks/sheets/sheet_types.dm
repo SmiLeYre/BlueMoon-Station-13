@@ -68,6 +68,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("floor tile", /obj/item/stack/tile/plasteel, 1, 4, 20), \
 	new/datum/stack_recipe("metal rod", /obj/item/stack/rods, 1, 2, 60), \
+
 	null, \
 	new/datum/stack_recipe("wall girders", /obj/structure/girder, 2, time = 40, one_per_turf = TRUE, on_floor = TRUE, trait_booster = TRAIT_QUICK_BUILD, trait_modifier = 0.75), \
 	null, \
@@ -101,6 +102,7 @@ GLOBAL_LIST_INIT(metal_recipes, list ( \
 	new/datum/stack_recipe("reflector frame", /obj/structure/reflector, 5, time = 25, one_per_turf = TRUE, on_floor = TRUE), \
 	null, \
 	new/datum/stack_recipe("grenade casing", /obj/item/grenade/chem_grenade), \
+	new/datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar, 3), \
 	new/datum/stack_recipe("metal baseball bat", /obj/item/melee/baseball_bat/ablative, 25, time = 100), \
 	new/datum/stack_recipe("ashtray", /obj/item/ashtray, 1), \
 	new/datum/stack_recipe("light fixture frame", /obj/item/wallframe/light_fixture, 2), \
@@ -216,6 +218,7 @@ GLOBAL_LIST_INIT(plasteel_recipes, list ( \
 		new/datum/stack_recipe("high security airlock assembly", /obj/structure/door_assembly/door_assembly_highsecurity, 4, time = 50, one_per_turf = 1, on_floor = 1), \
 		new/datum/stack_recipe("vault door assembly", /obj/structure/door_assembly/door_assembly_vault, 6, time = 50, one_per_turf = 1, on_floor = 1), \
 	)), \
+
 ))
 
 /obj/item/stack/sheet/plasteel
@@ -295,7 +298,7 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	null, \
 	new/datum/stack_recipe("picture frame", /obj/item/wallframe/picture, 1, time = 10),\
 	new/datum/stack_recipe("painting frame", /obj/item/wallframe/painting, 1, time = 10),\
-	new/datum/stack_recipe("mortar", /obj/item/reagent_containers/glass/mortar, 3), \
+	new/datum/stack_recipe("urn", /obj/item/reagent_containers/glass/mortar/urn, 3), \
 	new/datum/stack_recipe("honey frame", /obj/item/honey_frame, 5, time = 10),\
 	))
 
@@ -311,7 +314,6 @@ GLOBAL_LIST_INIT(wood_recipes, list ( \
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 0)
 	resistance_flags = FLAMMABLE
 	merge_type = /obj/item/stack/sheet/mineral/wood
-	novariants = FALSE // BM Changes
 	material_type = /datum/material/wood
 	grind_results = list(/datum/reagent/cellulose = 20)
 	walltype = /turf/closed/wall/mineral/wood
@@ -631,6 +633,8 @@ GLOBAL_LIST_INIT(runed_metal_recipes, list ( \
 		return
 	var/turf/T = get_turf(user) //we may have moved. adjust as needed...
 	var/area/A = get_area(user)
+	if(A?.area_flags & CULTMAGIC_BYPASS) //Bypass code so areas that aren't on-station can still use cult magics.
+		return ..()
 	if((!is_station_level(T.z) && !is_mining_level(T.z)) || !(A?.area_flags & CULT_PERMITTED))
 		to_chat(user, "<span class='warning'>The veil is not weak enough here.</span>")
 		return FALSE

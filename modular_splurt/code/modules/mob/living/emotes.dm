@@ -131,6 +131,9 @@
 	// Accepts all possible parameters
 	playsound(user.loc, emote_sound, emote_volume, emote_pitch_variance, emote_range, emote_falloff_exponent, emote_frequency, emote_channel, emote_check_pressure, emote_ignore_walls, emote_falloff_distance, emote_wetness, emote_dryness, emote_distance_multiplier, emote_distance_multiplier_min_range)
 
+ 	// Set cooldown
+	user.nextsoundemote = world.time + emote_cooldown
+
 /datum/emote/living/surrender/run_emote(mob/user, params, type_override, intentional)
 	// Set message with pronouns
 	message = "puts [user.p_their()] hands on [user.p_their()] head and falls to the ground, [user.p_they()] surrender[user.p_s()]!"
@@ -160,11 +163,24 @@
 	key = "fart"
 	key_third_person = "farts"
 	message = "farts out shitcode."
+	var/farted_on_something = FALSE // BLUEMOON EDIT // Removed from /run_emote()
 
 /datum/emote/living/fart/run_emote(mob/living/user, params, type_override, intentional)
 	if(TIMER_COOLDOWN_CHECK(user, COOLDOWN_EMOTE_FART))
 		to_chat(user, span_warning("You try your hardest, but no shart comes out."))
 		return
+
+	var/deceasedturf = get_turf(usr)
+	// Closed turfs don't have any air in them, so no gas building up
+	if(!istype(deceasedturf,/turf/open))
+		return
+	var/turf/open/miasma_turf = deceasedturf
+	var/datum/gas_mixture/stank = new
+	stank.set_moles(GAS_MIASMA,0.25)
+	stank.set_temperature(BODYTEMP_NORMAL)
+	miasma_turf.assume_air(stank)
+	miasma_turf.air_update_turf()
+
 	var/list/fart_emotes = list( //cope goonies
 		"lets out a girly little 'toot' from [user.p_their()] butt.",
 		"farts loudly!",
@@ -210,7 +226,6 @@
 	var/new_message = pick(fart_emotes)
 	//new_message = replacetext(new_message, "%OWNER", "\the [user]")
 	message = new_message
-	var/farted_on_something = FALSE
 	for(var/atom/A in get_turf(user))
 		farted_on_something = A.fart_act(user) || farted_on_something
 	. = ..()
@@ -1444,3 +1459,63 @@
 	emote_sound = 'modular_splurt/sound/voice/canon_event.ogg'
 	emote_cooldown = 5.0 SECONDS
 	emote_volume = 27
+
+/datum/emote/living/audio/meow
+	key = "meow"
+	key_third_person = "mrowls"
+	message = "mrowls!"
+	emote_sound = 'modular_citadel/sound/voice/meow1.ogg'
+	emote_cooldown = 0.6 SECONDS
+	emote_pitch_variance = FALSE
+
+/datum/emote/living/audio/meow2
+	key = "meow2"
+	key_third_person = "meows"
+	message = "meows!"
+	emote_sound = 'modular_splurt/sound/voice/catpeople/cat_meow1.ogg'
+	emote_cooldown = 0.25 // the longest audio is 1 second but who gives a fuck mrrp mrrp meow
+	emote_pitch_variance = FALSE // why would you
+
+/datum/emote/living/audio/meow2/run_emote(mob/user, params)
+	emote_sound = pick('modular_splurt/sound/voice/catpeople/cat_meow1.ogg', 'modular_splurt/sound/voice/catpeople/cat_meow2.ogg', 'modular_splurt/sound/voice/catpeople/cat_meow3.ogg') // Credit to Nyanotrasen (https://github.com/Nyanotrasen/Nyanotrasen)
+	. = ..()
+
+/datum/emote/living/audio/meow3
+	key = "meow3"
+	key_third_person = "mews!"
+	message = "mews!"
+	emote_sound = 'modular_splurt/sound/voice/catpeople/cat_mew1.ogg'
+	emote_cooldown = 0.25 // mrrp mrrp meow
+	emote_pitch_variance = FALSE
+
+/datum/emote/living/audio/meow3/run_emote(mob/user, params)
+	emote_sound = pick('modular_splurt/sound/voice/catpeople/cat_mew1.ogg', 'modular_splurt/sound/voice/catpeople/cat_mew2.ogg') // Credit to Nyanotrasen (https://github.com/Nyanotrasen/Nyanotrasen)
+	. = ..()
+
+/datum/emote/living/audio/meow4
+	key = "meow4"
+	key_third_person = "meows"
+	message = "meows!"
+	emote_sound = 'modular_citadel/sound/voice/meow1.ogg'
+	emote_cooldown = 0.25 // the longest audio is 1 second but who gives a fuck mrrp mrrp meow
+	emote_pitch_variance = FALSE // why would you
+
+/datum/emote/living/audio/mrowl
+	key = "mrowl"
+	key_third_person = "mrowls"
+	message = "mrowls."
+	emote_sound = 'modular_splurt/sound/voice/mrowl.ogg'
+	emote_cooldown = 0.95 SECONDS
+	emote_pitch_variance = FALSE
+
+/datum/emote/living/audio/mrrp
+	key = "mrrp"
+	key_third_person = "mrrps"
+	message = "trills like a cat!"
+	emote_sound = 'modular_splurt/sound/voice/catpeople/cat_mrrp1.ogg'
+	emote_cooldown = 0.25 // mrrp mrrp meow
+	emote_pitch_variance = FALSE
+
+/datum/emote/living/audio/mrrp/run_emote(mob/user, params)
+	emote_sound = pick('modular_splurt/sound/voice/catpeople/cat_mrrp1.ogg', 'modular_splurt/sound/voice/catpeople/cat_mrrp2.ogg')
+	. = ..()

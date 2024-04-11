@@ -129708,7 +129708,7 @@
 /obj/item/clothing/glasses/hud/security/sunglasses,
 /obj/item/clothing/suit/armor/vest/alt,
 /obj/item/clothing/head/helmet/sec,
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
 "sRj" = (

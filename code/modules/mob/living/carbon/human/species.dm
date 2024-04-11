@@ -279,6 +279,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			qdel(S)
 	if(!GLOB.roundstart_races.len)
 		GLOB.roundstart_races += "human"
+	GLOB.roundstart_race_names = sort_list(GLOB.roundstart_race_names) // BLUEMOON ADD - сортировка названий рас для выбора в меню создания персонажа
 
 /**
  * Checks if a species is eligible to be picked at roundstart.
@@ -571,7 +572,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 /datum/species/proc/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	if(C.dna.species.exotic_bloodtype)
-		if(!new_species.exotic_bloodtype)
+		if(!new_species?.exotic_bloodtype)
 			C.dna.blood_type = random_blood_type()
 		else
 			C.dna.blood_type = new_species.exotic_bloodtype
@@ -591,7 +592,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		C.type_of_meat = initial(meat)
 
 	//If their inert mutation is not the same, swap it out
-	if((inert_mutation != new_species.inert_mutation) && LAZYLEN(C.dna.mutation_index) && (inert_mutation in C.dna.mutation_index))
+	if(new_species && (inert_mutation != new_species.inert_mutation) && LAZYLEN(C.dna.mutation_index) && (inert_mutation in C.dna.mutation_index))
 		C.dna.remove_mutation(inert_mutation)
 		//keep it at the right spot, so we can't have people taking shortcuts
 		var/location = C.dna.mutation_index.Find(inert_mutation)
@@ -600,7 +601,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		C.dna.mutation_index[new_species.inert_mutation] = create_sequence(new_species.inert_mutation)
 		C.dna.default_mutation_genes[new_species.inert_mutation] = C.dna.mutation_index[new_species.inert_mutation]
 
-	if(!new_species.has_field_of_vision && has_field_of_vision && ishuman(C) && CONFIG_GET(flag/use_field_of_vision))
+	if(new_species && !new_species.has_field_of_vision && has_field_of_vision && ishuman(C) && CONFIG_GET(flag/use_field_of_vision))
 		var/datum/component/field_of_vision/F = C.GetComponent(/datum/component/field_of_vision)
 		if(F)
 			qdel(F)
@@ -1617,7 +1618,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	else
 		if(HAS_TRAIT(H, TRAIT_INCUBUS || TRAIT_SUCCUBUS))
 			return //SPLURT EDIT: Incubi and succubi don't get fat drawbacks (but can still be seen on examine)
-		if(H.overeatduration >= 100)
+		if(H.overeatduration >= 100 && !HAS_TRAIT(H, TRAIT_BLUEMOON_DEVOURER))
 			to_chat(H, span_danger("Кажется, вы объелись!"))
 			ADD_TRAIT(H, TRAIT_FAT, OBESITY)
 			H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
@@ -1962,17 +1963,17 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(HAS_TRAIT(target, TRAIT_JIGGLY_ASS))
 			if(!COOLDOWN_FINISHED(src, ass))
 				if(user == target)
-					to_chat(user, span_alert("Your butt is still [pick("rippling","jiggling","sloshing","clapping","wobbling")] about way too much to get a good smack!"))
+					to_chat(user, span_alert("Твоя сочная задница все еще [pick("пульсирует","покачивается","трясётся","хлопает","колеблется")] после хорошего удара!"))
 				else
-					to_chat(user, span_alert("[target]'s big butt is still [pick("rippling","jiggling","sloshing","clapping","wobbling")] about way too much to get a good smack!"))
+					to_chat(user, span_alert("Сочной задница [target] все еще [pick("пульсирует","покачивается","трясётся","хлопает","колеблется")] после хорошего удара!"))
 			else
 				COOLDOWN_START(src, ass, 5 SECONDS)
 				if(user == target)
 					playsound(target.loc, 'sound/weapons/slap.ogg', 50, FALSE, -1) // deep bassy butt
 					user.adjustStaminaLoss(25)
 					user.visible_message(
-						span_notice("[user] gives [user.p_their()] butt a smack!"),
-						span_lewd("You give your big fat butt a smack! It [pick("ripples","jiggles","sloshes","claps","wobbles")] about and throws you off balance!"),
+						span_notice("[user] шлёпает по своей сочной заднице!"),
+						span_lewd("Вы шлёпнули по своей сочной заднице! Она [pick("пульсирует","покачивается","трясётся","хлопает","колеблется","трясётся")] после хорошего удара и мешает вам стоять ровно!"),
 					)
 					return
 				else
@@ -1981,9 +1982,9 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 					playsound(target.loc, 'sound/weapons/slap.ogg', 50, FALSE, -1) // deep bassy butt
 					target.adjustStaminaLoss(25)
 					user.visible_message(
-						span_notice("\The [user] slaps [target]'s butt!"),
+						span_notice("[user] шлёпает по сочной заднице [target]!"),
 						target = target,
-						target_message = span_lewd("[user] smacks your big fat butt and sends it [pick("rippling","jiggling","sloshing","clapping","wobbling")]! It [pick("ripples","jiggles","sloshes","claps","wobbles")] about and throws you off balance!"))
+						target_message = span_lewd("[user] шлёпает по сочной заднице [target]! Она [pick("пульсирует","покачивается","трясётся","хлопает","колеблется","трясётся")] после хорошего удара и мешает вам стоять ровно!"))
 				return FALSE
 		//SPLURT ADDITION END
 		target.adjust_arousal(20,"masochism", maso = TRUE)
@@ -2410,7 +2411,15 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	switch(damagetype)
 		if(BRUTE)
 			H.damageoverlaytemp = 20
-			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
+			var/damage_amount
+			if (HAS_TRAIT(H, TRAIT_TOUGHT) && !forced) // проверка на трейт стойкости
+				if (damage <= 10) //если урон до применения модификаторов не привышает 10, то он не учитывается
+					return 0
+				damage_amount = damage * hit_percent * brutemod * H.physiology.brute_mod
+				if (damage_amount <= 5) //если урон после применения модификаторов не привышает 5, то он не учитывается
+					return 0
+			else
+				damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
 			if(BP)
 				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
@@ -2421,7 +2430,15 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				H.adjustBruteLoss(damage_amount)
 		if(BURN)
 			H.damageoverlaytemp = 20
-			var/damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
+			var/damage_amount
+			if (HAS_TRAIT(H, TRAIT_TOUGHT) && !forced) // проверка на трейт стойкости
+				if (damage <= 10) //если урон до применения модификаторов не привышает 10, то он не учитывается
+					return 0
+				damage_amount = damage * hit_percent * burnmod * H.physiology.burn_mod
+				if (damage_amount <= 5) //если урон после применения модификаторов не привышает 5, то он не учитывается
+					return 0
+			else
+				damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
 			if(BP)
 				if(BP.receive_damage(0, damage_amount, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()

@@ -125,7 +125,7 @@
 	if(.)
 		return
 	if(attached_device)
-		attached_device.attack_hand()
+		attached_device.attack_hand(user)
 
 //These keep attached devices synced up, for example a TTV with a mouse trap being found in a bag so it's triggered, or moving the TTV with an infrared beam sensor to update the beam's direction.
 

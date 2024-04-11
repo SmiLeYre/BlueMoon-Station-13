@@ -142,9 +142,9 @@
 //Zombies + Cumplus Fix\\
 
 /datum/quirk/undead
-    name = "Undeath"
-    desc = "Your body, be it anomalous, or just outright refusing to die - has indeed become undead. Due to this you may be hungrier."
-    value = 0
+    name = "Не-мёртвый"
+    desc = "Ваше тело, будь то аномальное или просто отказывающееся умирать, действительно стало нежитью. Из-за этого вы испытываете сильный голод."
+    value = 2
     mob_trait = TRAIT_UNDEAD
     processing_quirk = TRUE
 	// Note: The Undead cannot take advantage of healing viruses and genetic mutations, since they have no DNA.
@@ -167,11 +167,12 @@
         REMOVE_TRAIT(H,zperks[A], null)
 
 /datum/quirk/undead/on_process()
-    . = ..()
-    var/mob/living/carbon/human/H = quirk_holder
-    H.adjust_nutrition(-0.025)//The Undead are Hungry.
-    H.set_screwyhud(SCREWYHUD_HEALTHY)
-    H.adjustOxyLoss(-3) //Stops a defibrilator bug. Note to future self: Fix defib bug.
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.adjust_nutrition(-0.025)
+	H.adjust_thirst(-0.025)
+	H.set_screwyhud(SCREWYHUD_HEALTHY)
+	H.adjustOxyLoss(-3) //Stops a defibrilator bug. Note to future self: Fix defib bug.
 
 /datum/quirk/cum_plus
 	name = "Сверхпродуктивные Гениталии"
@@ -298,6 +299,7 @@
 	gain_text = span_notice("Вы начинаете ощущать специфические запахи, исходящие от чужих промежностей...")
 	lose_text = span_notice("Чужие гениталии начинают пахнуть для вас одинаково...")
 	medical_record_text = "Пациент добивался того, чтобы доктор провёл яйцами по его лицу."
+	human_only = FALSE
 
 /datum/quirk/fluid_infuser
 	name = "Тядзин"
@@ -1022,3 +1024,12 @@ var/static/list/ukraine_replacements = list(
 	else
 		// Add hunger text
 		examine_list += span_warning(examine_hunger_public)
+
+/datum/quirk/kiss_slut
+	name = "Чувствительные Губы"
+	desc = "Одна только мысль о поцелуе заставляет вас краснеть и возбуждаться, эффективно усиляя ваше возбуждение с каждым поцелуем."
+	value = 0
+	mob_trait = TRAIT_KISS_SLUT
+	gain_text = span_lewd("Вам хочется поцеловать кого-нибудь...")
+	lose_text = span_notice("Вас больше не тянет целоваться...")
+	medical_record_text = "Пациент проявляет необычайную симпатию к поцелуям."

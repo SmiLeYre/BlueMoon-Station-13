@@ -14,11 +14,21 @@ SUBSYSTEM_DEF(machines)
 	var/list/currentrun = list()
 	///List of all powernets on the server.
 	var/list/datum/powernet/powernets = list()
+	var/static/list/bluespaceminer_by_zlevel[][] //BLUEMOON ADD счётчик бс майнеров на z уровне
 
 /datum/controller/subsystem/machines/Initialize()
 	makepowernets()
 	fire()
 	return ..()
+
+//BLUEMOON ADD счётчик бс майнеров на z уровне
+/datum/controller/subsystem/machines/proc/MaxZChanged()
+	if (!islist(bluespaceminer_by_zlevel))
+		bluespaceminer_by_zlevel = new /list(world.maxz,0)
+	while (SSmachines.bluespaceminer_by_zlevel.len < world.maxz)
+		SSmachines.bluespaceminer_by_zlevel.len++
+		SSmachines.bluespaceminer_by_zlevel[bluespaceminer_by_zlevel.len] = list()
+//BLUEMOON ADD END
 
 /datum/controller/subsystem/machines/proc/makepowernets()
 	for(var/datum/powernet/power_network as anything in powernets)

@@ -10,6 +10,7 @@
 	emote_hear = list("wails.","screeches.")
 	response_help_continuous = "puts their hand through"
 	response_help_simple = "put your hand through"
+	see_invisible = SEE_INVISIBLE_HIDDEN_RUNES
 	melee_damage_lower = 5
 	melee_damage_upper = 12
 	attack_verb_continuous = "metaphysically strikes"

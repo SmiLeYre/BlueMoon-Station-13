@@ -98,6 +98,7 @@
 				dat += "<b>You are banned from using custom names and appearances. You can continue to adjust your characters, but you will be randomised once you join the game.</b><br>"
 			dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=name;task=random'>Random Name</A> "
 			dat += "<b>Always Random Name:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=name'>[be_random_name ? "Yes" : "No"]</a><BR>"
+			dat += "<b>Hardsuit With Tail:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=hardsuit'>[features["hardsuit_with_tail"] == TRUE ? "Yes" : "No"]</a><BR>"
 
 			dat += "<b>[nameless ? "Default designation" : "Name"]:</b>"
 			dat += "<a href='?_src_=prefs;preference=name;task=input'>[real_name]</a><BR>"
@@ -649,7 +650,7 @@
 					dat += "<b>Butt Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_size;task=input'>[features["butt_size"]]</a>"
 					dat += "<b>Butt Visibility:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=butt_visibility;task=input'>[features["butt_visibility"]]</a>"
 					dat += "<b>Toys and Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_stuffing'>[features["butt_stuffing"] == TRUE ? "Yes" : "No"]</a>"
-					dat += "<b>Butthole Sprite:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_anus'>[features["has_anus"] == TRUE ? "Yes" : "No"]</a>"
+					dat += "<b>Has Anus:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_anus'>[features["has_anus"] == TRUE ? "Yes" : "No"]</a>"
 					if(features["has_anus"])
 						dat += "<b>Butthole Color:</b></a><BR>"
 						if(pref_species.use_skintones && features["genitals_use_skintone"] == TRUE)
@@ -760,6 +761,7 @@
 			dat += "<b>Ghost Whispers:</b> <a href='?_src_=prefs;preference=ghost_whispers'>[(chat_toggles & CHAT_GHOSTWHISPER) ? "All Speech" : "Nearest Creatures"]</a><br>"
 			dat += "<b>Ghost PDA:</b> <a href='?_src_=prefs;preference=ghost_pda'>[(chat_toggles & CHAT_GHOSTPDA) ? "All Messages" : "Nearest Creatures"]</a><br>"
 			dat += "<b>Window Flashing:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Enabled":"Disabled"]</a><br>"
+			dat += "<b>Window Noise:</b> <a href='?_src_=prefs;preference=winnoise'>[(windownoise) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<br>"
 			dat += "<b>Play Admin MIDIs:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & SOUND_MIDI) ? "Enabled":"Disabled"]</a><br>"
 			dat += "<b>Play Lobby Music:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
@@ -850,6 +852,7 @@
 
 			dat += "<h2>Citadel Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
 			dat += "<b>Widescreen:</b> <a href='?_src_=prefs;preference=widescreenpref'>[widescreenpref ? "Enabled ([CONFIG_GET(string/default_view)])" : "Disabled (15x15)"]</a><br>"
+			dat += "<b>Fullscreen:</b> <a href='?_src_=prefs;preference=fullscreen'>[fullscreen ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>Long strip menu:</b> <a href='?_src_=prefs;preference=long_strip_menu'>[long_strip_menu ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>Auto stand:</b> <a href='?_src_=prefs;preference=autostand'>[autostand ? "Enabled" : "Disabled"]</a><br>"
 			dat += "<b>Auto OOC:</b> <a href='?_src_=prefs;preference=auto_ooc'>[auto_ooc ? "Enabled" : "Disabled"]</a><br>"
@@ -1738,7 +1741,7 @@
 		/datum/reagent/fermi/PEsmaller,
 		/datum/reagent/fermi/AEsmaller_hypo,
 		// Code comment here, whoever named the AEsmaller_hypo needs to understand the chem shouldn't be named after the fact it's found in a hypo
-		
+
 		// Causes positive mood bonus
 		// On overdose: Causes negative mood penalty and disgust
 		/datum/reagent/drug/copium/gfluid,

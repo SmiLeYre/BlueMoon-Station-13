@@ -37,17 +37,17 @@
 	L.AdjustSilence(10 SECONDS)
 	if(!poisonable)
 		return ..()
-	if(L.reagents.has_reagent("terror_black_toxin", 100))
+	if(L.reagents.has_reagent(/datum/reagent/terror_black_toxin, 100))
 		return ..()
 	var/inject_target = pick("chest", "head")
 	if(L.IsStun() || L.can_inject(null, FALSE, inject_target, FALSE))
-		L.reagents.add_reagent("terror_black_toxin", 33) // inject our special poison
+		L.reagents.add_reagent(/datum/reagent/terror_black_toxin, 33) // inject our special poison
 		visible_message("<span class='danger'>[src] buries its long fangs deep into the [inject_target] of [target]!</span>")
 	else
-		L.reagents.add_reagent("terror_black_toxin", 20)
+		L.reagents.add_reagent(/datum/reagent/terror_black_toxin, 20)
 		visible_message("<span class='danger'>[src] pierces armour and buries its long fangs deep into the [inject_target] of [target]!</span>")
 	L.attack_animal(src)
-	if(!ckey && (!(target in enemies) || L.reagents.has_reagent("terror_black_toxin", 60)))
+	if(!ckey && (!(target in enemies) || L.reagents.has_reagent(/datum/reagent/terror_black_toxin, 60)))
 		step_away(src, L)
 		step_away(src, L)
 		LoseTarget()

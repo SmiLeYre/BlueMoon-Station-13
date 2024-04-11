@@ -194,13 +194,29 @@
  * * bold - Whether this text should be rendered completely bold.
  * * overwrite - If TRUE, will overwrite existing field ID's data if it exists.
  */
-/obj/item/paper/proc/add_field_input(field_id, text, font, color, bold, signature_name, overwrite = FALSE)
+/obj/item/paper/proc/add_field_input(user, field_id, text, font, color, bold, signature_name, overwrite = FALSE)
 	var/datum/paper_field/field_data_datum = null
 
 	var/is_signature = ((text == "%sign") || (text == "%s"))
+	var/is_time = (text == "%t")
+	var/is_date = (text == "%d")
+	var/is_job = (text == "%j")
 
-	var/field_text = is_signature ? signature_name : text
+
+	var/field_text = text
 	var/field_font = is_signature ? SIGNATURE_FONT : font
+
+	field_text = is_signature ? signature_name : field_text
+	field_text = is_time ? STATION_TIME_TIMESTAMP("hh:mm:ss", world.time) : field_text
+	field_text = is_date ? "[time2text(world.timeofday, "DD Month")] [GLOB.year_integer]" : field_text
+
+	var/mob/living/carbon/human/H = user
+	var/obj/item/card/id/id_card = H.wear_id?.GetID()
+	if(!id_card)
+		id_card = H.wear_neck?.GetID()
+
+	if(istype(id_card))
+		field_text = is_job ? id_card.assignment : field_text
 
 	for(var/datum/paper_field/field_input in raw_field_input_data)
 		if(field_input.field_index == field_id)
@@ -652,7 +668,7 @@
 					log_paper("[key_name(user)] tried to write to invalid field [field_key] (when the paper only has [input_field_count] fields) with the following text: [field_text]")
 					return TRUE
 
-				if(!add_field_input(field_key, field_text, writing_implement_data["font"], writing_implement_data["color"], writing_implement_data["use_bold"], user.real_name))
+				if(!add_field_input(user, field_key, field_text, writing_implement_data["font"], writing_implement_data["color"], writing_implement_data["use_bold"], user.real_name))
 					log_paper("[key_name(user)] tried to write to field [field_key] when it already has data, with the following text: [field_text]")
 
 			update_static_data_for_all_viewers()

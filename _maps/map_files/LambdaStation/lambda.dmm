@@ -10959,7 +10959,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "auo" = (
@@ -11503,7 +11503,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "avj" = (
@@ -50309,13 +50309,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
-"ckK" = (
-/obj/structure/window/reinforced/spawner/north,
-/obj/machinery/atmospherics/pipe/manifold/yellow/visible{
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
-/area/engineering/atmos)
 "ckL" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -61783,9 +61776,7 @@
 /area/engineering/storage/tech)
 "cTG" = (
 /obj/structure/window/reinforced/spawner/north,
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
-	dir = 9
-	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating/airless,
 /area/engineering/atmos)
 "cTH" = (
@@ -69404,6 +69395,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/break_room)
+"oyA" = (
+/obj/machinery/atmospherics/pipe/simple/yellow/visible{
+	dir = 9
+	},
+/obj/structure/grille,
+/turf/closed/wall/r_wall,
+/area/engineering/atmos)
 "oBc" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/green/visible,
@@ -72212,6 +72210,13 @@
 /obj/machinery/meter,
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
+"uox" = (
+/obj/machinery/atmospherics/pipe/manifold/yellow/visible{
+	dir = 8
+	},
+/obj/structure/grille,
+/turf/closed/wall/r_wall,
+/area/engineering/atmos)
 "uoQ" = (
 /obj/structure/closet/firecloset,
 /obj/effect/turf_decal/tile/neutral,
@@ -73888,7 +73893,7 @@
 /area/maintenance/aft)
 "xrA" = (
 /obj/structure/window/reinforced/spawner,
-/obj/machinery/atmospherics/pipe/simple/yellow/visible,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating/airless,
 /area/engineering/atmos)
 "xtx" = (
@@ -125401,8 +125406,8 @@ chB
 cji
 cjk
 cjZ
-ckK
-cUj
+cmv
+uox
 pbg
 cnf
 cpT
@@ -125659,7 +125664,7 @@ ciq
 eVS
 clt
 cTG
-cTH
+oyA
 cTH
 cTH
 cTH
@@ -126429,8 +126434,8 @@ chB
 cjh
 cjp
 ckc
-ckK
-cUj
+cmv
+uox
 iXq
 eQt
 csx
@@ -126687,7 +126692,7 @@ ciq
 twF
 rxJ
 cTG
-cTH
+oyA
 cTH
 cTH
 cTH

@@ -212,10 +212,6 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	#endif
 	/datum/admins/proc/create_or_modify_area,
 	/datum/admins/proc/fixcorruption,
-#ifdef EXTOOLS_REFERENCE_TRACKING
-	/datum/admins/proc/view_refs,
-	/datum/admins/proc/view_del_failures,
-#endif
 	// /client/proc/check_timer_sources,
 	/client/proc/toggle_cdn,
 	/client/proc/discordnulls,
@@ -628,7 +624,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	var/ex_power = input("Explosive Power:") as null|num
 	var/turf/epicenter = mob.loc
 	if(ex_power && epicenter)
-		dyn_explosion(epicenter, ex_power)
+		dyn_explosion(epicenter, ex_power, ignorecap = TRUE)  //BLUEMOON CHANGE нелимитированные взрывы - круто
 		message_admins("[ADMIN_LOOKUPFLW(usr)] creating an admin explosion at [epicenter.loc].")
 		log_admin("[key_name(usr)] created an admin explosion at [epicenter.loc].")
 		SSblackbox.record_feedback("tally", "admin_verb", 1, "Drop Dynamic Bomb") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

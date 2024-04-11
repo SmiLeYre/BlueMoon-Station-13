@@ -218,7 +218,7 @@
 
 /datum/quirk/bloodpressure/add()
 	quirk_holder.blood_ratio = 1.2
-	quirk_holder.blood_volume += 150
+	quirk_holder.blood_volume += BLOOD_VOLUME_NORMAL * (quirk_holder.blood_ratio - 1)
 
 /datum/quirk/bloodpressure/remove()
 	if(quirk_holder)

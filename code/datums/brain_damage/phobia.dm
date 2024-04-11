@@ -118,7 +118,7 @@
 		to_chat(owner, "<span class='userdanger'>Hearing \"[trigger_word]\" [message]!</span>")
 	else
 		to_chat(owner, "<span class='userdanger'>Something [message]!</span>")
-	var/reaction = rand(1,4)
+	var/reaction = rand(1,5)
 	switch(reaction)
 		if(1)
 			to_chat(owner, "<span class='warning'>You are paralyzed with fear!</span>")
@@ -131,10 +131,16 @@
 			if(reason)
 				owner.pointed(reason)
 		if(3)
+			owner.emote("realagony")
+			owner.Jitter(5)
+			owner.say("AAAAH!!", forced = "phobia")
+			if(reason)
+				owner.pointed(reason)
+		if(4)
 			to_chat(owner, "<span class='warning'>You shut your eyes in terror!</span>")
 			owner.Jitter(5)
 			owner.blind_eyes(10)
-		if(4)
+		if(5)
 			owner.dizziness += 10
 			owner.confused += 10
 			owner.Jitter(10)

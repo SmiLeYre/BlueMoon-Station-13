@@ -67,7 +67,7 @@
 	name = "PMC Skull flag"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/sign/flag/skull
-	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob")
+	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob", "vulpshiro", "sodastrike", "lonofera", "mihana964", "hellsinggc")
 	subcategory = LOADOUT_SUBCATEGORIES_DON01
 
 //InteQ
@@ -78,6 +78,65 @@
 	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
 	icon_state = "full"
 	item_flag = /obj/item/sign/flag/inteq
+	var/datum/proximity_monitor/advanced/demoraliser/demotivator
+	var/next_scare = 0
+
+/obj/structure/sign/flag/inteq/Initialize(mapload)
+	demotivator = new(src, 7, TRUE)
+	START_PROCESSING(SSobj,src)
+	return ..()
+
+/obj/structure/sign/flag/inteq/process()
+
+	for(var/mob/living/viewer in view(5, src))
+		if(world.time > next_scare)
+			next_scare = world.time + 120
+			pugach(viewer)
+
+/obj/structure/sign/flag/inteq/proc/pugach(mob/living/viewer)
+	var/message = pick("spooks you to the bone", "shakes you up", "terrifies you", "sends you into a panic", "sends chills down your spine")
+	if (viewer.stat != CONSCIOUS)
+		return
+	if(viewer.is_blind())
+		return
+	if(HAS_TRAIT(viewer, TRAIT_FEARLESS))
+		return
+	if(IS_INTEQ(viewer))
+		return
+	if(viewer.mind && (viewer.mind?.antag_datums)) // все антажки
+		return
+	else
+		to_chat(viewer, "<span class='userdanger'>Seeing propagand of Inteq [message]!</span>")
+		var/reaction = rand(1,5)
+		switch(reaction)
+			if(1)
+				to_chat(viewer, "<span class='warning'>You are paralyzed with fear!</span>")
+				viewer.Stun(70)
+				viewer.Jitter(8)
+			if(2)
+				viewer.emote("scream")
+				viewer.Jitter(5)
+				viewer.say("AAAAH!!", forced = "phobia")
+				viewer.pointed(src)
+			if(3)
+				viewer.emote("realagony")
+				viewer.Jitter(5)
+				viewer.say("AAAAH!!", forced = "phobia")
+				viewer.pointed(src)
+			if(4)
+				to_chat(viewer, "<span class='warning'>You shut your eyes in terror!</span>")
+				viewer.Jitter(5)
+				viewer.blind_eyes(10)
+			if(5)
+				viewer.dizziness += 10
+				viewer.confused += 10
+				viewer.Jitter(10)
+				viewer.stuttering += 10
+
+
+/obj/structure/sign/flag/inteq/Destroy()
+	QDEL_NULL(demotivator)
+	return ..()
 
 /obj/item/sign/flag/inteq
 	name = "folded flag of the PMC InteQ"
@@ -92,6 +151,75 @@
 	poster_type = /obj/structure/sign/poster/contraband/inteq/random
 	icon_state = "rolled_contraband"
 
+///////
+
+/obj/structure/sign/poster/contraband/inteq
+	var/datum/proximity_monitor/advanced/demoraliser/demotivator
+	var/next_scare = 0
+
+/obj/structure/sign/poster/contraband/inteq/Initialize(mapload)
+	demotivator = new(src, 7, TRUE)
+	START_PROCESSING(SSobj,src)
+	return ..()
+
+/obj/structure/sign/poster/contraband/inteq/process()
+	for(var/mob/living/viewer in view(5, src))
+		if(world.time > next_scare)
+			next_scare = world.time + 120
+			pugach(viewer)
+
+/obj/structure/sign/poster/contraband/inteq/proc/pugach(mob/living/viewer)
+	var/message = pick("spooks you to the bone", "shakes you up", "terrifies you", "sends you into a panic", "sends chills down your spine")
+	if (viewer.stat != CONSCIOUS)
+		return
+	if(viewer.is_blind())
+		return
+	if(HAS_TRAIT(viewer, TRAIT_FEARLESS))
+		return
+	if(IS_INTEQ(viewer))
+		return
+	if(viewer.mind && (viewer.mind?.antag_datums)) // все антажки
+		return
+	else
+		to_chat(viewer, "<span class='userdanger'>Seeing propagand of Inteq [message]!</span>")
+		var/reaction = rand(1,5)
+		switch(reaction)
+			if(1)
+				to_chat(viewer, "<span class='warning'>You are paralyzed with fear!</span>")
+				viewer.Stun(70)
+				viewer.Jitter(8)
+			if(2)
+				viewer.emote("scream")
+				viewer.Jitter(5)
+				viewer.say("AAAAH!!", forced = "phobia")
+				viewer.pointed(src)
+			if(3)
+				viewer.emote("realagony")
+				viewer.Jitter(5)
+				viewer.say("AAAAH!!", forced = "phobia")
+				viewer.pointed(src)
+			if(4)
+				to_chat(viewer, "<span class='warning'>You shut your eyes in terror!</span>")
+				viewer.Jitter(5)
+				viewer.blind_eyes(10)
+			if(5)
+				viewer.dizziness += 10
+				viewer.confused += 10
+				viewer.Jitter(10)
+				viewer.stuttering += 10
+
+//////
+
+/obj/structure/sign/poster/contraband/inteq/attackby(obj/item/tool, mob/user, params)
+	if (tool.tool_behaviour == TOOL_WIRECUTTER)
+		QDEL_NULL(demotivator)
+	return ..()
+
+/obj/structure/sign/poster/contraband/inteq/Destroy()
+	QDEL_NULL(demotivator)
+	return ..()
+
+///////
 /obj/structure/sign/poster/contraband/inteq/random
 	name = "random contraband poster"
 	icon_state = "random_contraband"
@@ -278,15 +406,15 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/paper/book_alch
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON01
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/cat_alch
-	name = "Alchemist's Neko Wallet"
+	name = "Neko Wallet"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/storage/wallet/cat_alch
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON01
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/vape
@@ -294,7 +422,7 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/vape
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON01
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/electropack
@@ -302,7 +430,7 @@
 	slot = ITEM_SLOT_HANDS
 	path = /obj/item/electropack
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON01
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/straight_jacket
@@ -310,7 +438,7 @@
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/straight_jacket
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON01
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/boxing
@@ -318,7 +446,7 @@
 	slot = ITEM_SLOT_GLOVES
 	path = /obj/item/clothing/gloves/boxing
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON01
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/coconut_bong
@@ -326,7 +454,7 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/bong/coconut
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON01
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/armyknife
@@ -334,5 +462,5 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/armyknife
 	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON01
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION

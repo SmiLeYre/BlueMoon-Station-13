@@ -21,7 +21,6 @@
 	icon = 'icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/suit.dmi'
 	anthro_mob_worn_overlay = 'icons/mob/clothing/suit_digi.dmi'
-	taur_mob_worn_overlay = 'modular_splurt/icons/mob/clothing/hardsuits_taur.dmi'
 	icon_state = "hardsuit-cybersun"
 	item_state = "syndie_hardsuit"
 	tail_state = "hos"

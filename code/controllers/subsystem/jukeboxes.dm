@@ -17,6 +17,7 @@
 SUBSYSTEM_DEF(jukeboxes)
 	name = "Jukeboxes"
 	wait = 5
+	priority = FIRE_PRIORITY_SOUND_LOOPS
 	var/list/songs = list()
 	var/list/activejukeboxes = list()
 	var/list/freejukeboxchannels = list()

@@ -30,6 +30,7 @@
 	remove_from_dead_mob_list()
 	remove_from_alive_mob_list()
 	QDEL_LIST(mob_spell_list)
+	QDEL_LIST(actions)
 	GLOB.all_clockwork_mobs -= src
 	// remove_from_mob_suicide_list()
 	focus = null
@@ -799,8 +800,9 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		return ghost
 
 /mob/proc/AddSpell(obj/effect/proc_holder/spell/S)
-	mob_spell_list += S
-	S.action.Grant(src)
+	if (S?.action)
+		mob_spell_list += S
+		S.action.Grant(src)
 
 /mob/proc/RemoveSpell(obj/effect/proc_holder/spell/spell)
 	if(!spell)
@@ -1145,6 +1147,13 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	for(var/obj/item/I in held_items)
 		if(I.item_flags & SLOWS_WHILE_IN_HAND)
 			. += I.slowdown
+
+/mob/proc/set_stat(new_stat)
+	if(new_stat == stat)
+		return
+	. = stat
+	stat = new_stat
+	SEND_SIGNAL(src, COMSIG_MOB_STATCHANGE, new_stat, .)
 
 /**
   * Mostly called by doUnEquip()

@@ -127,6 +127,6 @@
 		/turf/closed/mineral/iron/volcanic = 95, /turf/closed/mineral/strange = 15)
 */
 /turf/closed/mineral/random/volcanic/New()
-	mineralSpawnChanceList += list(/turf/closed/mineral/strange = 15)
+	mineralSpawnChanceList += list(/turf/closed/mineral/strange = 30)
 	. = ..()
 

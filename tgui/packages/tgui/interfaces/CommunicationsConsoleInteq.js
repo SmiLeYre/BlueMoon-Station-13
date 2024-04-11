@@ -486,6 +486,12 @@ const PageMain = (props, context) => {
           />}
 
           {!!emagged && <Button
+            icon="bullhorn"
+            content="Заявить о существовании InteQ"
+            onClick={() => act("declareTheExistenceOfInteQ")}
+          />}
+
+          {!!emagged && <Button
             icon="undo"
             content="Восстановить данные маршрутизации"
             onClick={() => act("restoreBackupRoutingData")}

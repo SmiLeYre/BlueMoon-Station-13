@@ -447,7 +447,7 @@
 	card_type = "Unit"
 
 /datum/tcg_card/pack_1/lawyer
-	name = "Lawyer"
+	name = "Internal Affairs Agent"
 	desc = "Nanotrasen knows the value of a good lawyer. That's why they're all working hard at our home offices defending us from frivolous labor suits from lazy no-good employees who should be working hard instead of slacking off reading trading cards."
 	rules = "When an opponent attacks with a creature with 3 or more power this card gains Taunt."
 	icon_state = "lawyer"

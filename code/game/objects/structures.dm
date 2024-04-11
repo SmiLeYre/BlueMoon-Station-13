@@ -81,7 +81,10 @@
 		adjusted_climb_time *= 0.25 //aliens are terrifyingly fast
 	if(HAS_TRAIT(user, TRAIT_FREERUNNING)) //do you have any idea how fast I am???
 		adjusted_climb_time *= 0.8
-	// BLUEMOON ADDITION AHEAD - тяжёлые персонажи медленее забираются на преграды
+	// BLUEMOON ADDITION взаимодействия квирков и размеров на скорость залезания на стол
+	if(get_size(user) < 0.8) //BLUEMOON ADD персонажи меньше 0.8 дольше забираются на столы
+		adjusted_climb_time *= 2 - get_size(user) //x1.75 при размере 25%; x1.2 при размере 80%
+	// тяжёлые персонажи медленее забираются на преграды
 	if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY))
 		adjusted_climb_time *= 2
 	// BLUEMOON ADDITION END

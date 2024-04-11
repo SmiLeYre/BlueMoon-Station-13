@@ -24,3 +24,19 @@
 	icon_state = "ada"
 	item_state = "ada"
 	squeak_override = list('modular_citadel/sound/voice/nya.ogg' = 1)
+
+/obj/item/toy/plush/jay
+	name = "Jay Plushie"
+	desc = "Плюшевая игрушка фиолетовой ящерки."
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	icon_state = "jay"
+	item_state = "jay"
+	squeak_override = list('modular_citadel/sound/voice/nya.ogg' = 1)
+
+/obj/item/toy/plush/kiirava
+	name = "Kiirava Plushie"
+	desc = "Плюшевая игрушка зеленоватой ящерки."
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	icon_state = "kiirava"
+	item_state = "kiirava"
+	squeak_override = list('modular_citadel/sound/voice/nya.ogg' = 1)

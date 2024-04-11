@@ -16,20 +16,23 @@
 	to_chat(user, span_notice("Я целюсь в... [hole]."))
 
 /obj/item/melee/attack(mob/living/target, mob/living/user)
-	user.DelayNextAction()
-	if (user.zone_selected == BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP)
+	if(user.zone_selected == BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP)
 		do_eblya(target, user)
-	return ..()
+	else
+		. = ..()
 
 /obj/item/melee/baton/attack(mob/living/target, mob/living/user)
-	user.DelayNextAction()
-	if (user.zone_selected == BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP)
+	if(user.zone_selected == BODY_ZONE_PRECISE_GROIN && user.a_intent == INTENT_HELP)
 		do_eblya(target, user)
-	return ..()
+	else
+		. = ..()
 
 /obj/item/melee/proc/do_eblya(mob/living/target, mob/living/user)
 	var/message = ""
 	var/lust_amt = 0
+	if(!user.canUseTopic(user, BE_CLOSE))
+		return
+	user.DelayNextAction(CLICK_CD_RANGE)
 	if(ishuman(target) && (target?.client?.prefs?.toggles & VERB_CONSENT))
 		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
 			switch(hole)
@@ -49,7 +52,6 @@
 							'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
 		if(!HAS_TRAIT(target, TRAIT_LEWD_JOB))
 			new /obj/effect/temp_visual/heart(target.loc)
-
 
 /obj/item/melee/chainofcommand
 	name = "Chain Of Command"
@@ -543,6 +545,15 @@
 	off_icon_state = "centcom_bat_0"
 	on_icon_state = "centcom_bat_1"
 	on_item_state = "centcom_bat_1"
+
+/obj/item/melee/classic_baton/telescopic/centcom/plus
+	name = "Tactical Centcom Bat"
+	force = 5
+	throwforce = 20
+	force_on = 50
+	force_off = 10
+	sharpness = 1
+	armour_penetration = 100
 
 /obj/item/melee/classic_baton/telescopic/newspaper
 	name = "The Daily Whiplash"

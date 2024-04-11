@@ -18,7 +18,6 @@
 	QDEL_LIST(internal_organs)
 	QDEL_LIST(stomach_contents)
 	QDEL_LIST(bodyparts)
-	QDEL_LIST(implants)
 	hand_bodyparts = null		//Just references out bodyparts, don't need to delete twice.
 	remove_from_all_data_huds()
 	QDEL_NULL(dna)
@@ -115,7 +114,7 @@
 		damage += 50
 		combat_knockdown += 40
 	// BLUEMOON ADDITION END
-	if(throwingdatum.thrower != src)
+	if(throwingdatum?.thrower != src)
 		extra_speed = min(max(0, throwingdatum.speed - initial(throw_speed)), 3)
 	if(GetComponent(/datum/component/tackler))
 		return

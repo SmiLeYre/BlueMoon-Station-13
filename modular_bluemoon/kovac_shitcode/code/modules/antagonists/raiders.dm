@@ -139,7 +139,7 @@
 	uniform = /obj/item/clothing/under/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/inteq/alt
-	id = /obj/item/card/id/syndicate/inteq
+	id = /obj/item/card/id/inteq
 
 	var/command_radio = FALSE
 
@@ -147,7 +147,7 @@
 
 /datum/outfit/inteq_raider/vanguard
 	name = "InteQ Vanguard"
-	id = /obj/item/card/id/syndicate/anyone/inteq
+	id = /obj/item/card/id/inteq/anyone
 	suit = /obj/item/clothing/suit/armor/inteq/vanguard
 	head = /obj/item/clothing/head/HoS/inteq_vanguard
 	l_pocket = /obj/item/clothing/gloves/krav_maga/combatglovesplus
@@ -196,7 +196,7 @@
 	light_color = LIGHT_COLOR_ORANGE
 	circuit = /obj/item/circuitboard/computer/inteq_collosus
 	shuttleId = "inteq_collosus"
-	possible_destinations = "inteq_collosus_custom;pirateship_home;raiders_away"
+	possible_destinations = "syndicate_z5;syndicate_ne;syndicate_nw;syndicate_n;syndicate_se;syndicate_sw;syndicate_s;inteq_collosus_custom;pirateship_home;raiders_away"
 
 /obj/item/circuitboard/computer/inteq_collosus
 	name = "Collosus Control Console (Computer Board)"

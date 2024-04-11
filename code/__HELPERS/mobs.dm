@@ -189,6 +189,7 @@
 		"xenodorsal" 		= "Standard",
 		"xenohead" 			= "Standard",
 		"xenotail" 			= "Xenomorph Tail",
+		"hardsuit_with_tail" = FALSE,
 		"genitals_use_skintone"	= FALSE,
 		"has_cock"			= FALSE,
 		"cock_shape"		= pick(GLOB.cock_shapes_list),
@@ -271,6 +272,8 @@
 		"custom_deathgasp" = "застывает и падает без сил, глаза мертвы и безжизненны...", // BLUEMOON ADD - пользовательский эмоут смерти
 		"custom_species_lore" = "",
 		"headshot_link"		= "", //SPLURT edit
+		"headshot_link1"		= "", //BLUEMOON edit
+		"headshot_link2"		= "", //BLUEMOON edit
 		"meat_type"			= "Mammalian",
 		"body_model"		= body_model,
 		"body_size"			= RESIZE_DEFAULT_SIZE,

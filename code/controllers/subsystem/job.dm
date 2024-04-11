@@ -26,6 +26,19 @@ SUBSYSTEM_DEF(job)
 	set_overflow_role(CONFIG_GET(string/overflow_job))
 	return ..()
 
+/// Returns a list of jobs that we are allowed to fuck with during random events
+/datum/controller/subsystem/job/proc/get_valid_overflow_jobs()
+	var/static/list/overflow_jobs
+	if (!isnull(overflow_jobs))
+		return overflow_jobs
+
+	overflow_jobs = list()
+	for (var/datum/job/check_job in occupations) // TODO: Port joinable_occupations from upstream TG PR #60578.
+		if (!check_job.allow_bureaucratic_error)
+			continue
+		overflow_jobs += check_job
+	return overflow_jobs
+
 /datum/controller/subsystem/job/proc/set_overflow_role(new_overflow_role)
 	var/datum/job/new_overflow = GetJob(new_overflow_role)
 	var/cap = CONFIG_GET(number/overflow_cap)
@@ -586,7 +599,8 @@ SUBSYSTEM_DEF(job)
 	var/jobstext = file2text("[global.config.directory]/jobs.txt")
 	for(var/datum/job/J in occupations)
 		var/regex/jobs = new("[J.title]=(-1|\\d+),(-1|\\d+)")
-		jobs.Find(jobstext)
+		if(!jobs.Find(jobstext))
+			continue
 		J.total_positions = text2num(jobs.group[1])
 		J.spawn_positions = text2num(jobs.group[2])
 
@@ -717,15 +731,16 @@ SUBSYSTEM_DEF(job)
 		message_admins(msg)
 		CRASH(msg)
 
-/datum/controller/subsystem/job/proc/equip_loadout(mob/dead/new_player/N, mob/living/M, bypass_prereqs = FALSE, can_drop = TRUE)
+/datum/controller/subsystem/job/proc/equip_loadout(mob/dead/new_player/N, mob/living/M, bypass_prereqs = FALSE, can_drop = TRUE, is_dummy = FALSE)
 	var/mob/the_mob = N
 	if(!the_mob)
 		the_mob = M // cause this doesn't get assigned if player is a latejoiner
 	var/list/chosen_gear = the_mob.client.prefs.loadout_data["SAVE_[the_mob.client.prefs.loadout_slot]"]
 	var/heirloomer = FALSE
-	var/list/my_quirks = the_mob.client.prefs.all_quirks.Copy()
-	if("Семейная реликвия" in my_quirks)
-		heirloomer = TRUE
+	if(!is_dummy)
+		var/list/my_quirks = the_mob.client.prefs.all_quirks.Copy()
+		if("Семейная реликвия" in my_quirks)
+			heirloomer = TRUE
 	if(the_mob.client && the_mob.client.prefs && (chosen_gear && chosen_gear.len))
 		if(!ishuman(M))//no silicons allowed
 			return
@@ -802,15 +817,16 @@ SUBSYSTEM_DEF(job)
 			// BLUEMOON ADD END
 
 
-/datum/controller/subsystem/job/proc/post_equip_loadout(mob/dead/new_player/N, mob/living/M, bypass_prereqs = FALSE, can_drop = TRUE)
+/datum/controller/subsystem/job/proc/post_equip_loadout(mob/dead/new_player/N, mob/living/M, bypass_prereqs = FALSE, can_drop = TRUE, is_dummy = FALSE)
 	var/mob/the_mob = N
 	if(!the_mob)
 		the_mob = M // cause this doesn't get assigned if player is a latejoiner
 	var/list/chosen_gear = the_mob.client.prefs.loadout_data["SAVE_[the_mob.client.prefs.loadout_slot]"]
 	var/heirloomer = FALSE
-	var/list/my_quirks = the_mob.client.prefs.all_quirks.Copy()
-	if("Семейная реликвия" in my_quirks)
-		heirloomer = TRUE
+	if(!is_dummy)
+		var/list/my_quirks = the_mob.client.prefs.all_quirks.Copy()
+		if("Семейная реликвия" in my_quirks)
+			heirloomer = TRUE
 	if(the_mob.client && the_mob.client.prefs && (chosen_gear && chosen_gear.len))
 		if(!ishuman(M))//no silicons allowed
 			return

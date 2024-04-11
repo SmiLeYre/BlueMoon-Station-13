@@ -569,18 +569,33 @@
 
 /obj/machinery/status_display/emag_act(mob/user)
 	. = ..()
-	if(obj_flags & EMAGGED)
-		to_chat(user, "<span class='warning'>Ничего интересного не произошло!!</span>")
-		return
-	obj_flags |= EMAGGED
-	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
-	to_chat(user, "<span class='notice'>Вы взломали дисплей. Осуществляется взлом систем...</span>")
-	addtimer(CALLBACK(src, .proc/syndie_display_good), 10 SECONDS)
-	return TRUE
+	if(GLOB.master_mode == "Extended")
+		if(obj_flags & EMAGGED)
+			to_chat(user, "<span class='warning'>Ничего интересного не произошло!!</span>")
+			return
+		obj_flags |= EMAGGED
+		log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
+		to_chat(user, "<span class='notice'>Вы взломали дисплей. Осуществляется взлом систем...</span>")
+		addtimer(CALLBACK(src, .proc/syndie_display_good), 10 SECONDS)
+		return TRUE
+	else
+		if(obj_flags & EMAGGED)
+			to_chat(user, "<span class='warning'>Ничего интересного не произошло!!</span>")
+			return
+		obj_flags |= EMAGGED
+		log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
+		to_chat(user, "<span class='notice'>Вы взломали дисплей. Осуществляется взлом систем...</span>")
+		addtimer(CALLBACK(src, .proc/inteq_display_good), 10 SECONDS)
+		return TRUE
+
 
 /obj/machinery/status_display/proc/syndie_display_good()
 	req_access = list(ACCESS_SYNDICATE)
 	set_picture("synd")
+
+/obj/machinery/status_display/proc/inteq_display_good()
+	req_access = list(ACCESS_INTEQ)
+	set_picture("inteq")
 
 /obj/machinery/status_display/syndie
 	name = "Syndicate Status Display"

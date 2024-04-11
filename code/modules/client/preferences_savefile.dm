@@ -421,26 +421,27 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	. = TRUE
 
 	//general preferences
-	S["ooccolor"] >> ooccolor
-	S["lastchangelog"] >> lastchangelog
-	S["UI_style"] >> UI_style
-	S["outline_color"] >> outline_color
-	S["outline_enabled"] >> outline_enabled
-	S["screentip_pref"] >> screentip_pref
-	S["screentip_color"] >> screentip_color
-	S["screentip_images"] >> screentip_images
-	S["hotkeys"] >> hotkeys
-	S["chat_on_map"] >> chat_on_map
-	S["max_chat_length"] >> max_chat_length
-	S["see_chat_non_mob"] 	>> see_chat_non_mob
-	S["tgui_fancy"] >> tgui_fancy
-	S["tgui_lock"] >> tgui_lock
+	S["ooccolor"] 				>> ooccolor
+	S["lastchangelog"] 			>> lastchangelog
+	S["UI_style"] 				>> UI_style
+	S["outline_color"] 			>> outline_color
+	S["outline_enabled"] 		>> outline_enabled
+	S["screentip_pref"] 		>> screentip_pref
+	S["screentip_color"] 		>> screentip_color
+	S["screentip_images"] 		>> screentip_images
+	S["hotkeys"] 				>> hotkeys
+	S["chat_on_map"] 			>> chat_on_map
+	S["max_chat_length"] 		>> max_chat_length
+	S["see_chat_non_mob"] 		>> see_chat_non_mob
+	S["tgui_fancy"] 			>> tgui_fancy
+	S["tgui_lock"] 				>> tgui_lock
 	S["tgui_input_mode"]		>> tgui_input_mode
 	S["tgui_large_buttons"]		>> tgui_large_buttons
 	S["tgui_swapped_buttons"]	>> tgui_swapped_buttons
-	S["buttons_locked"] >> buttons_locked
-	S["windowflash"] >> windowflashing
-	S["be_special"] 		>> be_special
+	S["buttons_locked"] 		>> buttons_locked
+	S["windowflash"] 			>> windowflashing
+	S["windownoise"] 			>> windownoise
+	S["be_special"] 			>> be_special
 
 	//SKYRAT CHANGES BEGIN
 	S["see_chat_emotes"] 	>> see_chat_emotes
@@ -464,6 +465,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["ambientocclusion"] >> ambientocclusion
 	S["auto_fit_viewport"] >> auto_fit_viewport
 	S["widescreenpref"] >> widescreenpref
+	S["fullscreen"] >> fullscreen
 	S["long_strip_menu"] >> long_strip_menu
 	S["pixel_size"]	    	>> pixel_size
 	S["scaling_method"]	    >> scaling_method
@@ -495,9 +497,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["gfluid_blacklist"]		>> gfluid_blacklist
 	S["new_character_creator"]	>> new_character_creator
 	S["view_pixelshift"]		>> view_pixelshift
-
-	// BlueMoon
-	S["eorg_enabled"]		>> eorg_enabled
 
 	//favorite outfits
 	S["favorite_outfits"] >> favorite_outfits
@@ -532,6 +531,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	tgui_swapped_buttons	= sanitize_integer(tgui_swapped_buttons, 0, 1, initial(tgui_swapped_buttons))
 	buttons_locked = sanitize_integer(buttons_locked, 0, 1, initial(buttons_locked))
 	windowflashing = sanitize_integer(windowflashing, 0, 1, initial(windowflashing))
+	windownoise = sanitize_integer(windownoise, 0, 1, initial(windownoise))
 	default_slot = sanitize_integer(default_slot, 1, max_save_slots, initial(default_slot))
 	toggles = sanitize_integer(toggles, 0, 16777215, initial(toggles))
 	deadmin = sanitize_integer(deadmin, 0, 16777215, initial(deadmin))
@@ -540,6 +540,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	ambientocclusion = sanitize_integer(ambientocclusion, 0, 1, initial(ambientocclusion))
 	auto_fit_viewport = sanitize_integer(auto_fit_viewport, 0, 1, initial(auto_fit_viewport))
 	widescreenpref = sanitize_integer(widescreenpref, 0, 1, initial(widescreenpref))
+	fullscreen = sanitize_integer(fullscreen, 0, 1, initial(fullscreen))
 	long_strip_menu = sanitize_integer(long_strip_menu, 0, 1, initial(long_strip_menu))
 	pixel_size = sanitize_integer(pixel_size, PIXEL_SCALING_AUTO, PIXEL_SCALING_3X, initial(pixel_size))
 	scaling_method = sanitize_text(scaling_method, initial(scaling_method))
@@ -567,9 +568,6 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//SKYRAT CHANGES BEGIN
 	see_chat_emotes	= sanitize_integer(see_chat_emotes, 0, 1, initial(see_chat_emotes))
 	//SKYRAT CHANGES END
-
-	//BlueMoon
-	eorg_enabled = sanitize_integer(eorg_enabled, 0, 1, initial(eorg_enabled))
 
 	//SPLURT CHANGES BEGIN
 	gfluid_blacklist = sanitize_islist(gfluid_blacklist, list())
@@ -656,6 +654,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["tgui_swapped_buttons"], tgui_swapped_buttons)
 	WRITE_FILE(S["buttons_locked"], buttons_locked)
 	WRITE_FILE(S["windowflash"], windowflashing)
+	WRITE_FILE(S["windownoise"], windownoise)
 	WRITE_FILE(S["be_special"], be_special)
 	WRITE_FILE(S["default_slot"], default_slot)
 	WRITE_FILE(S["toggles"], toggles)
@@ -689,6 +688,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["damagescreenshake"], damagescreenshake)
 	WRITE_FILE(S["arousable"], arousable)
 	WRITE_FILE(S["widescreenpref"], widescreenpref)
+	WRITE_FILE(S["fullscreen"], fullscreen)
 	WRITE_FILE(S["long_strip_menu"], long_strip_menu)
 	WRITE_FILE(S["autostand"], autostand)
 	WRITE_FILE(S["cit_toggles"], cit_toggles)
@@ -789,6 +789,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 "xenohead" = "Standard",
 "xenotail" = "Xenomorph Tail",
 "taur" = "None",
+"hardsuit_with_tail" = FALSE,
 "genitals_use_skintone" = FALSE,
 "has_cock" = FALSE,
 "cock_shape" = DEF_COCK_SHAPE,
@@ -880,65 +881,68 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	scars_index = rand(1,5) // WHY
 
 	//Character
-	S["real_name"] >> real_name
-	S["nameless"] >> nameless
-	S["custom_species"] >> custom_species
-	S["name_is_always_random"] >> be_random_name
-	S["body_is_always_random"] >> be_random_body
-	S["gender"] >> gender
-	S["body_model"] >> features["body_model"]
-	S["body_size"] >> features["body_size"]
-	S["feature_fuzzy"] >> features["fuzzy"]
-	S["age"] >> age
-	S["hair_color"] >> hair_color
-	S["facial_hair_color"] >> facial_hair_color
-	S["eye_type"] >> eye_type
-	S["left_eye_color"] >> left_eye_color
-	S["right_eye_color"] >> right_eye_color
-	S["use_custom_skin_tone"] >> use_custom_skin_tone
-	S["skin_tone"] >> skin_tone
-	S["hair_style_name"] >> hair_style
-	S["facial_style_name"] >> facial_hair_style
-	S["grad_style"] >> grad_style
-	S["grad_color"] >> grad_color
-	S["underwear"] >> underwear
-	S["undie_color"] >> undie_color
-	S["undershirt"] >> undershirt
-	S["shirt_color"] >> shirt_color
-	S["socks"] >> socks
-	S["socks_color"] >> socks_color
-	S["backbag"] >> backbag
-	S["jumpsuit_style"] >> jumpsuit_style
-	S["uplink_loc"] >> uplink_spawn_loc
-	S["custom_speech_verb"] >> custom_speech_verb
-	S["custom_tongue"] >> custom_tongue
-	S["feature_mcolor"] >> features["mcolor"]
-	S["feature_lizard_tail"] >> features["tail_lizard"]
-	S["feature_lizard_snout"] >> features["snout"]
-	S["feature_lizard_horns"] >> features["horns"]
-	S["feature_lizard_frills"] >> features["frills"]
-	S["feature_lizard_spines"] >> features["spines"]
-	S["feature_lizard_legs"] >> features["legs"]
-	S["feature_human_tail"] >> features["tail_human"]
-	S["feature_human_ears"] >> features["ears"]
-	S["feature_deco_wings"] >> features["deco_wings"]
-	S["feature_insect_wings"] >> features["insect_wings"]
-	S["feature_insect_fluff"] >> features["insect_fluff"]
-	S["feature_insect_markings"] >> features["insect_markings"]
-	S["feature_arachnid_legs"] >> features["arachnid_legs"]
-	S["feature_arachnid_spinneret"] >> features["arachnid_spinneret"]
-	S["feature_arachnid_mandibles"] >> features["arachnid_mandibles"]
-	S["feature_horns_color"] >> features["horns_color"]
-	S["feature_wings_color"] >> features["wings_color"]
-	S["feature_color_scheme"] >> features["color_scheme"]
-	S["headshot"] >> features["headshot_link"] //SPLURT edit
-	S["shriek_type"] >> shriek_type // BLUEMOON ADD - выбор вида крика для квирка
-	S["persistent_scars"] 				>> persistent_scars
-	S["scars1"] >> scars_list["1"]
-	S["scars2"] >> scars_list["2"]
-	S["scars3"] >> scars_list["3"]
-	S["scars4"] >> scars_list["4"]
-	S["scars5"] >> scars_list["5"]
+	S["real_name"] 							>> real_name
+	S["nameless"] 							>> nameless
+	S["custom_species"] 					>> custom_species
+	S["name_is_always_random"] 				>> be_random_name
+	S["body_is_always_random"] 				>> be_random_body
+	S["gender"] 							>> gender
+	S["body_model"] 						>> features["body_model"]
+	S["body_size"] 							>> features["body_size"]
+	S["feature_fuzzy"] 						>> features["fuzzy"]
+	S["age"] 								>> age
+	S["hair_color"] 						>> hair_color
+	S["facial_hair_color"] 					>> facial_hair_color
+	S["eye_type"] 							>> eye_type
+	S["left_eye_color"] 					>> left_eye_color
+	S["right_eye_color"] 					>> right_eye_color
+	S["use_custom_skin_tone"] 				>> use_custom_skin_tone
+	S["skin_tone"] 							>> skin_tone
+	S["hair_style_name"] 					>> hair_style
+	S["facial_style_name"] 					>> facial_hair_style
+	S["grad_style"] 						>> grad_style
+	S["grad_color"] 						>> grad_color
+	S["underwear"] 							>> underwear
+	S["undie_color"] 						>> undie_color
+	S["undershirt"] 						>> undershirt
+	S["shirt_color"] 						>> shirt_color
+	S["socks"] 								>> socks
+	S["socks_color"] 						>> socks_color
+	S["backbag"] 							>> backbag
+	S["jumpsuit_style"] 					>> jumpsuit_style
+	S["uplink_loc"] 						>> uplink_spawn_loc
+	S["custom_speech_verb"] 				>> custom_speech_verb
+	S["custom_tongue"] 						>> custom_tongue
+	S["feature_mcolor"] 					>> features["mcolor"]
+	S["feature_lizard_tail"] 				>> features["tail_lizard"]
+	S["feature_lizard_snout"] 				>> features["snout"]
+	S["feature_lizard_horns"] 				>> features["horns"]
+	S["feature_lizard_frills"] 				>> features["frills"]
+	S["feature_lizard_spines"] 				>> features["spines"]
+	S["feature_lizard_legs"] 				>> features["legs"]
+	S["feature_human_tail"] 				>> features["tail_human"]
+	S["feature_human_ears"] 				>> features["ears"]
+	S["feature_deco_wings"] 				>> features["deco_wings"]
+	S["feature_insect_wings"] 				>> features["insect_wings"]
+	S["feature_insect_fluff"] 				>> features["insect_fluff"]
+	S["feature_insect_markings"] 			>> features["insect_markings"]
+	S["feature_arachnid_legs"] 				>> features["arachnid_legs"]
+	S["feature_arachnid_spinneret"] 		>> features["arachnid_spinneret"]
+	S["feature_arachnid_mandibles"] 		>> features["arachnid_mandibles"]
+	S["feature_horns_color"] 				>> features["horns_color"]
+	S["feature_wings_color"] 				>> features["wings_color"]
+	S["feature_color_scheme"] 				>> features["color_scheme"]
+	S["headshot"] 							>> features["headshot_link"] //SPLURT edit
+	S["headshot1"] 							>> features["headshot_link1"] //BLUEMOON edit
+	S["headshot2"] 							>> features["headshot_link2"] //BLUEMOON edit
+	S["shriek_type"] 						>> shriek_type // BLUEMOON ADD - выбор вида крика для квирка
+	S["feature_hardsuit_with_tail"] 		>> features["hardsuit_with_tail"]
+	S["persistent_scars"] 					>> persistent_scars
+	S["scars1"] 							>> scars_list["1"]
+	S["scars2"] 							>> scars_list["2"]
+	S["scars3"] 							>> scars_list["3"]
+	S["scars4"] 							>> scars_list["4"]
+	S["scars5"] 							>> scars_list["5"]
 	var/limbmodstr
 	S["modified_limbs"] >> limbmodstr
 	if(length(limbmodstr))
@@ -1390,70 +1394,71 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["version"]			, SAVEFILE_VERSION_MAX)	//load_character will sanitize any bad data, so assume up-to-date.)
 
 	//Character
-	WRITE_FILE(S["real_name"]				, real_name)
-	WRITE_FILE(S["nameless"]				, nameless)
-	WRITE_FILE(S["custom_species"]			, custom_species)
-	WRITE_FILE(S["name_is_always_random"]	, be_random_name)
-	WRITE_FILE(S["body_is_always_random"]	, be_random_body)
-	WRITE_FILE(S["gender"]					, gender)
-	WRITE_FILE(S["body_model"]				, features["body_model"])
-	WRITE_FILE(S["body_size"]				, features["body_size"])
-	WRITE_FILE(S["feature_fuzzy"]			, features["fuzzy"])
-	WRITE_FILE(S["age"]						, age)
-	WRITE_FILE(S["hair_color"]				, hair_color)
-	WRITE_FILE(S["facial_hair_color"]		, facial_hair_color)
-	WRITE_FILE(S["eye_type"]				, eye_type)
-	WRITE_FILE(S["shriek_type"]				, shriek_type) // BLUEMOON AD
-	WRITE_FILE(S["left_eye_color"]			, left_eye_color)
-	WRITE_FILE(S["right_eye_color"]			, right_eye_color)
-	WRITE_FILE(S["use_custom_skin_tone"]	, use_custom_skin_tone)
-	WRITE_FILE(S["skin_tone"]				, skin_tone)
-	WRITE_FILE(S["hair_style_name"]			, hair_style)
-	WRITE_FILE(S["facial_style_name"]		, facial_hair_style)
-	WRITE_FILE(S["grad_style"]				, grad_style)
-	WRITE_FILE(S["grad_color"]				, grad_color)
-	WRITE_FILE(S["underwear"]				, underwear)
-	WRITE_FILE(S["undie_color"]				, undie_color)
-	WRITE_FILE(S["undershirt"]				, undershirt)
-	WRITE_FILE(S["shirt_color"]				, shirt_color)
-	WRITE_FILE(S["socks"]					, socks)
-	WRITE_FILE(S["socks_color"]				, socks_color)
-	WRITE_FILE(S["backbag"]					, backbag)
-	WRITE_FILE(S["jumpsuit_style"]			, jumpsuit_style)
-	WRITE_FILE(S["uplink_loc"]				, uplink_spawn_loc)
-	WRITE_FILE(S["species"]					, pref_species.id)
-	WRITE_FILE(S["custom_speech_verb"]		, custom_speech_verb)
-	WRITE_FILE(S["custom_tongue"]			, custom_tongue)
-	WRITE_FILE(S["bark_id"]					, bark_id)
-	WRITE_FILE(S["bark_speed"]				, bark_speed)
-	WRITE_FILE(S["bark_pitch"]				, bark_pitch)
-	WRITE_FILE(S["bark_variance"]			, bark_variance)
+	WRITE_FILE(S["real_name"]							, real_name)
+	WRITE_FILE(S["nameless"]							, nameless)
+	WRITE_FILE(S["custom_species"]						, custom_species)
+	WRITE_FILE(S["name_is_always_random"]				, be_random_name)
+	WRITE_FILE(S["body_is_always_random"]				, be_random_body)
+	WRITE_FILE(S["gender"]								, gender)
+	WRITE_FILE(S["body_model"]							, features["body_model"])
+	WRITE_FILE(S["body_size"]							, features["body_size"])
+	WRITE_FILE(S["feature_fuzzy"]						, features["fuzzy"])
+	WRITE_FILE(S["age"]									, age)
+	WRITE_FILE(S["hair_color"]							, hair_color)
+	WRITE_FILE(S["facial_hair_color"]					, facial_hair_color)
+	WRITE_FILE(S["eye_type"]							, eye_type)
+	WRITE_FILE(S["shriek_type"]							, shriek_type) // BLUEMOON AD
+	WRITE_FILE(S["feature_hardsuit_with_tail"]			, features["hardsuit_with_tail"])
+	WRITE_FILE(S["left_eye_color"]						, left_eye_color)
+	WRITE_FILE(S["right_eye_color"]						, right_eye_color)
+	WRITE_FILE(S["use_custom_skin_tone"]				, use_custom_skin_tone)
+	WRITE_FILE(S["skin_tone"]							, skin_tone)
+	WRITE_FILE(S["hair_style_name"]						, hair_style)
+	WRITE_FILE(S["facial_style_name"]					, facial_hair_style)
+	WRITE_FILE(S["grad_style"]							, grad_style)
+	WRITE_FILE(S["grad_color"]							, grad_color)
+	WRITE_FILE(S["underwear"]							, underwear)
+	WRITE_FILE(S["undie_color"]							, undie_color)
+	WRITE_FILE(S["undershirt"]							, undershirt)
+	WRITE_FILE(S["shirt_color"]							, shirt_color)
+	WRITE_FILE(S["socks"]								, socks)
+	WRITE_FILE(S["socks_color"]							, socks_color)
+	WRITE_FILE(S["backbag"]								, backbag)
+	WRITE_FILE(S["jumpsuit_style"]						, jumpsuit_style)
+	WRITE_FILE(S["uplink_loc"]							, uplink_spawn_loc)
+	WRITE_FILE(S["species"]								, pref_species.id)
+	WRITE_FILE(S["custom_speech_verb"]					, custom_speech_verb)
+	WRITE_FILE(S["custom_tongue"]						, custom_tongue)
+	WRITE_FILE(S["bark_id"]								, bark_id)
+	WRITE_FILE(S["bark_speed"]							, bark_speed)
+	WRITE_FILE(S["bark_pitch"]							, bark_pitch)
+	WRITE_FILE(S["bark_variance"]						, bark_variance)
 
 	// records
-	WRITE_FILE(S["security_records"]		, security_records)
-	WRITE_FILE(S["medical_records"]			, medical_records)
+	WRITE_FILE(S["security_records"]					, security_records)
+	WRITE_FILE(S["medical_records"]						, medical_records)
 
-	WRITE_FILE(S["feature_custom_deathgasp"]		, features["custom_deathgasp"]) // BLUEMOON ADD - пользовательский эмоут смерти
-	WRITE_FILE(S["feature_custom_deathsound"]		, features["custom_deathsound"]) // BLUEMOON ADD - пользовательский эмоут смерти
-	WRITE_FILE(S["feature_mcolor"]					, features["mcolor"])
-	WRITE_FILE(S["feature_lizard_tail"]				, features["tail_lizard"])
-	WRITE_FILE(S["feature_human_tail"]				, features["tail_human"])
-	WRITE_FILE(S["feature_lizard_snout"]			, features["snout"])
-	WRITE_FILE(S["feature_lizard_horns"]			, features["horns"])
-	WRITE_FILE(S["feature_human_ears"]				, features["ears"])
-	WRITE_FILE(S["feature_lizard_frills"]			, features["frills"])
-	WRITE_FILE(S["feature_lizard_spines"]			, features["spines"])
-	WRITE_FILE(S["feature_lizard_legs"]				, features["legs"])
-	WRITE_FILE(S["feature_deco_wings"]				, features["deco_wings"])
-	WRITE_FILE(S["feature_horns_color"]				, features["horns_color"])
-	WRITE_FILE(S["feature_wings_color"]				, features["wings_color"])
-	WRITE_FILE(S["feature_insect_wings"]			, features["insect_wings"])
-	WRITE_FILE(S["feature_insect_fluff"]			, features["insect_fluff"])
-	WRITE_FILE(S["feature_insect_markings"]			, features["insect_markings"])
-	WRITE_FILE(S["feature_arachnid_legs"]			, features["arachnid_legs"])
-	WRITE_FILE(S["feature_arachnid_spinneret"]		, features["arachnid_spinneret"])
-	WRITE_FILE(S["feature_arachnid_mandibles"]		, features["arachnid_mandibles"])
-	WRITE_FILE(S["feature_meat"]					, features["meat_type"])
+	WRITE_FILE(S["feature_custom_deathgasp"]			, features["custom_deathgasp"]) // BLUEMOON ADD - пользовательский эмоут смерти
+	WRITE_FILE(S["feature_custom_deathsound"]			, features["custom_deathsound"]) // BLUEMOON ADD - пользовательский эмоут смерти
+	WRITE_FILE(S["feature_mcolor"]						, features["mcolor"])
+	WRITE_FILE(S["feature_lizard_tail"]					, features["tail_lizard"])
+	WRITE_FILE(S["feature_human_tail"]					, features["tail_human"])
+	WRITE_FILE(S["feature_lizard_snout"]				, features["snout"])
+	WRITE_FILE(S["feature_lizard_horns"]				, features["horns"])
+	WRITE_FILE(S["feature_human_ears"]					, features["ears"])
+	WRITE_FILE(S["feature_lizard_frills"]				, features["frills"])
+	WRITE_FILE(S["feature_lizard_spines"]				, features["spines"])
+	WRITE_FILE(S["feature_lizard_legs"]					, features["legs"])
+	WRITE_FILE(S["feature_deco_wings"]					, features["deco_wings"])
+	WRITE_FILE(S["feature_horns_color"]					, features["horns_color"])
+	WRITE_FILE(S["feature_wings_color"]					, features["wings_color"])
+	WRITE_FILE(S["feature_insect_wings"]				, features["insect_wings"])
+	WRITE_FILE(S["feature_insect_fluff"]				, features["insect_fluff"])
+	WRITE_FILE(S["feature_insect_markings"]				, features["insect_markings"])
+	WRITE_FILE(S["feature_arachnid_legs"]				, features["arachnid_legs"])
+	WRITE_FILE(S["feature_arachnid_spinneret"]			, features["arachnid_spinneret"])
+	WRITE_FILE(S["feature_arachnid_mandibles"]			, features["arachnid_mandibles"])
+	WRITE_FILE(S["feature_meat"]						, features["meat_type"])
 
 	WRITE_FILE(S["feature_has_cock"], features["has_cock"])
 	WRITE_FILE(S["feature_cock_shape"], features["cock_shape"])
@@ -1614,6 +1619,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["pregnancy_inflation"], pregnancy_inflation)
 	WRITE_FILE(S["pregnancy_breast_growth"], pregnancy_breast_growth)
 	WRITE_FILE(S["headshot"], features["headshot_link"])
+	WRITE_FILE(S["headshot1"], features["headshot_link1"])
+	WRITE_FILE(S["headshot2"], features["headshot_link2"])
 	//SPLURT EDIT END
 
 	//gear loadout

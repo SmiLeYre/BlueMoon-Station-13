@@ -32,7 +32,7 @@
 						/obj/item/surgicaldrill/alien,
 						/obj/item/scalpel/alien,
 						/obj/item/circular_saw/alien,
-						/obj/item/surgical_drapes)
+						/obj/item/surgical_drapes/advanced)
 
 /obj/item/organ/cyberimp/arm/surgery/emag_act()
 	. = ..()

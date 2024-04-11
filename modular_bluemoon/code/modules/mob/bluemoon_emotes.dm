@@ -273,3 +273,19 @@
 	message_mime = "быстро мотает головой"
 	emote_sound = 'sound/machines/synth_no.ogg'
 	emote_cooldown = 1 SECONDS
+
+/datum/emote/living/audio/cat_snores
+	key = "catsnore"
+	key_third_person = "catsnores"
+	message = "храпит."
+	message_mime = "храпит с необычным звуком."
+	emote_sound = 'sound/voice/snore_mimimimimimi.ogg'
+	emote_cooldown = 1 SECONDS
+
+/datum/emote/living/audio/cp_laugh
+	key = "cplaugh"
+	key_third_person = "cplaught"
+	message = "издаёт вокодерский смех."
+	message_mime = "издаёт вокодерский смех."
+	emote_sound = 'sound/voice/cp_laugh.ogg'
+	emote_cooldown = 0.25 SECONDS

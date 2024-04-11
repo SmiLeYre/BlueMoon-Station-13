@@ -38,6 +38,8 @@ GLOBAL_LIST_EMPTY(ghost_records)
 	var/storage_type = "crewmembers"
 	var/storage_name = "Cryogenic/Teleporter Oversight Control"
 
+	COOLDOWN_DECLARE(cooldown)
+
 /obj/machinery/computer/cryopod/deconstruct()
 	. = ..()
 	for(var/i in stored_packages)
@@ -99,7 +101,14 @@ GLOBAL_LIST_EMPTY(ghost_records)
 
 	if(action == "item")
 		if(!allowed(usr) && !(obj_flags & EMAGGED))
-			to_chat(usr, "<span class='warning'>Access Denied.</span>")
+			to_chat(usr, "<span class='warning'>Доступ Запрещён.</span>")
+			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
+			return
+
+		if(COOLDOWN_FINISHED(src, cooldown))
+			COOLDOWN_START(src, cooldown, 120 SECONDS)
+		else
+			to_chat(usr, "<span class='warning'>ОЖИДАЙТЕ В ТЕЧЕНИИ [cooldown] СЕКУНД.</span>")
 			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 			return
 
@@ -499,7 +508,7 @@ GLOBAL_LIST_EMPTY(ghost_records)
 		for(var/i in storing)
 			var/obj/item/I = i
 			I.forceMove(O)
-		O.forceMove(drop_to_ground ? control_computer.drop_location() : control_computer)
+		O.forceMove(drop_to_ground ? mob_occupant.drop_location() : control_computer) //BLUEMOON CHANGE было control_computer.drop_location (не работало при отсутсвии контроль компьютера)
 		if((control_computer == control_computer) && !drop_to_ground)
 			control_computer.stored_packages += O
 	/* ============================= */

@@ -4,7 +4,7 @@
 	antag_flag = ROLE_DEVIL
 	false_report_weight = 1
 	chaos = 3
-	protected_jobs = list("Prisoner", "Lawyer", "NanoTrasen Representative", "Curator", "Chaplain", "Head of Security", "Captain", "AI")
+	protected_jobs = list("Prisoner", "Internal Affairs Agent", "NanoTrasen Representative", "Curator", "Chaplain", "Head of Security","Bridge Officer", "Captain", "AI")
 	required_players = 0
 	required_enemies = 1
 	recommended_enemies = 4

@@ -1,3 +1,4 @@
+/* BLUEMOON CHANGE полное переписывание этого чудовища (modular_bluemoon\code\datums\dna.dm)
 /datum/dna
 	var/last_capped_size //For some reason this feels dirty... I suppose it should go somewhere else
 
@@ -105,6 +106,7 @@
 	#undef MINIMAL_SIZE_HEALTH
 	// BLUEMOON ADDITION END
 
+*/
 #define TRANSFER_RANDOMIZED(destination, source1, source2) \
 	if(prob(50)) { \
 		destination = source1; \
@@ -144,10 +146,12 @@
 		destination.set_species(species.type, FALSE)
 		destination.dna.species.say_mod = species.say_mod
 		destination.dna.custom_species = custom_species
+		destination.dna.custom_species_lore = custom_species_lore
 	else
 		destination.set_species(second_set.species.type, FALSE)
 		destination.dna.species.say_mod = second_set.species.say_mod
 		destination.dna.custom_species = second_set.custom_species
+		destination.dna.custom_species_lore = second_set.custom_species_lore
 
 	destination.update_size(get_size(destination), old_size)
 

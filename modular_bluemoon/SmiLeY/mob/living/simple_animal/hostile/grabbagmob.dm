@@ -325,7 +325,7 @@
 	projectilesound = 'sound/weapons/laser3.ogg'
 	loot = list(/obj/effect/spawner/lootdrop/maintenance/five)
 	casingtype = null
-	projectiletype = /obj/item/projectile/beam/lasertag
+	projectiletype = /obj/item/projectile/beam/laser //bluemoon change
 
 // Damaged Borgs
 
@@ -957,7 +957,7 @@
 	icon_living = "voxspacelaser"
 	icon_dead = "voxspacedead"
 	loot = list(/obj/effect/spawner/lootdrop/high_loot_toilet = 4)
-	projectiletype = /obj/item/projectile/beam/lasertag
+	projectiletype = /obj/item/projectile/beam/laser
 	casingtype = null
 	projectilesound = 'sound/weapons/laser3.ogg'
 

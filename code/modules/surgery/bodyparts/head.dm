@@ -35,6 +35,9 @@
 
 	var/lip_style = null
 	var/lip_color = "white"
+
+	var/stored_lipstick_trait
+
 	//If the head is a special sprite
 	var/custom_head
 
@@ -81,6 +84,7 @@
 		hair_style = "Bald"
 		facial_hair_style = "Shaved"
 		lip_style = null
+		stored_lipstick_trait = null
 
 	else if(!animal_origin)
 		var/mob/living/carbon/human/H = C

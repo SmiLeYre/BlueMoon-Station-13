@@ -27,7 +27,7 @@
 		user.mob_spell_list.Remove(src)
 		user.mind.AddSpell(src)
 	if(user.buckled)
-		user.buckled.unbuckle_mob(src,force=TRUE)
+		user.buckled.unbuckle_mob(user,force=TRUE)
 	for(var/mob/living/M in targets)
 		if(!shapeshift_type)
 			var/list/animal_list = list()
@@ -56,6 +56,10 @@
 		return
 
 	var/mob/living/shape = new shapeshift_type(caster.loc)
+	if(isanimal(shape)) //BLUEMOON ADD шейпы не двигаются и не пытаются кого-то убить если выйти
+		var/mob/living/simple_animal/s_a = shape
+		s_a.AIStatus = AI_OFF
+		s_a.wander = FALSE //BLUEMOON ADD END
 	H = new(shape,src,caster)
 
 	clothes_req = NONE
@@ -97,8 +101,6 @@
 		stack_trace("shapeshift holder created outside mob/living")
 		return INITIALIZE_HINT_QDEL
 	stored = caster
-	if(stored.mind)
-		stored.mind.transfer_to(shape)
 	stored.forceMove(src)
 	stored.mob_transforming = TRUE
 	if(source.convert_damage)
@@ -108,6 +110,8 @@
 		shape.apply_damage(damapply, source.convert_damage_type, forced = TRUE, wound_bonus=CANT_WOUND);
 	slink = soullink(/datum/soullink/shapeshift, stored , shape)
 	slink.source = src
+	if(stored.mind)
+		stored.mind.transfer_to(shape)
 
 /obj/shapeshift_holder/Destroy()
 	if(!restoring)

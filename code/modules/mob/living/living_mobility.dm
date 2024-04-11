@@ -3,6 +3,9 @@
 
 //Force-set resting variable, without needing to resist/etc.
 /mob/living/proc/set_resting(new_resting, silent = FALSE, updating = TRUE)
+	if(SSevents.holidays && SSevents.holidays[APRIL_FOOLS])
+		if(prob(10))
+			emote("fart")
 	if(new_resting != resting)
 		if(resting && HAS_TRAIT(src, TRAIT_MOBILITY_NOREST)) //forcibly block resting from all sources - BE CAREFUL WITH THIS TRAIT
 			return
@@ -19,7 +22,7 @@
 
 	update_icon()
 	update_rest_hud_icon()
-	usr.update_action_buttons()
+	update_action_buttons()
 
 //Force mob to rest, does NOT do stamina damage.
 //It's really not recommended to use this proc to give feedback, hence why silent is defaulting to true.

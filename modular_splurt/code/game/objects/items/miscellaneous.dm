@@ -125,9 +125,19 @@
 	desc = "A card indicating that the Head of staff is allowed to carry a weapon."
 	icon_state = "compermit"
 
+/obj/item/clothing/accessory/permit/staff
+	name = "Staff weapon permit"
+	desc = "A card indicating that the staff is allowed to carry a weapon."
+	icon_state = "permit"
+
 /obj/item/clothing/accessory/permit/bar
 	name = "bar weapon permit"
 	desc = "A card indicating that the barkeep is allowed to carry a weapon, most likely their shotgun."
+	icon_state = "permit"
+
+/obj/item/clothing/accessory/permit/guard
+	name = "guard weapon permit"
+	desc = "A card indicating that the department guard is allowed to carry limited list of non-lethal weapons."
 	icon_state = "permit"
 
 //Hyper stuff

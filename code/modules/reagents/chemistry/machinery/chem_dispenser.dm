@@ -12,7 +12,7 @@
 			return ckey(id)
 
 /obj/machinery/chem_dispenser
-	name = "chem dispenser"
+	name = "Chem Dispenser"
 	desc = "Creates and dispenses chemicals."
 	density = TRUE
 	icon = 'icons/obj/chemical.dmi'
@@ -184,9 +184,10 @@
 		update_icon()
 
 /obj/machinery/chem_dispenser/ui_interact(mob/user, datum/tgui/ui)
-	if(HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, span_notice("Я боюсь использовать [src]... вдруг это приведёт к катастрофическим последствиям?"))
-		return
+	if(name == "Chem Dispenser" || name == "Reagent Synthesizer")
+		if(HAS_TRAIT(user, TRAIT_PACIFISM))
+			to_chat(user, span_notice("Я боюсь использовать [src]... вдруг это приведёт к катастрофическим последствиям?"))
+			return
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "ChemDispenser", name)
@@ -580,7 +581,7 @@
 
 
 /obj/machinery/chem_dispenser/drinks
-	name = "soda dispenser"
+	name = "Soda Dispenser"
 	desc = "Contains a large reservoir of soft drinks."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "soda_dispenser"
@@ -653,7 +654,7 @@
 	dispensable_reagents |= emagged_reagents //adds emagged reagents
 
 /obj/machinery/chem_dispenser/drinks/beer
-	name = "booze dispenser"
+	name = "Booze Dispenser"
 	desc = "Contains a large reservoir of the good stuff."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "booze_dispenser"
@@ -706,7 +707,7 @@
 	dispensable_reagents |= emagged_reagents //adds emagged reagents
 
 /obj/machinery/chem_dispenser/mutagen
-	name = "mutagen dispenser"
+	name = "Mutagen Dispenser"
 	desc = "Creates and dispenses mutagen."
 	dispensable_reagents = list(/datum/reagent/toxin/mutagen)
 	upgrade_reagents = null
@@ -715,7 +716,7 @@
 
 
 /obj/machinery/chem_dispenser/mutagensaltpeter
-	name = "botanical chemical dispenser"
+	name = "Botanical Chemical Dispenser"
 	desc = "Creates and dispenses chemicals useful for botany."
 	flags_1 = NODECONSTRUCT_1
 	canStore = FALSE
@@ -751,7 +752,7 @@
 	dispensable_reagents |= emagged_reagents //adds emagged reagents
 
 /obj/machinery/chem_dispenser/abductor
-	name = "reagent synthesizer"
+	name = "Reagent Synthesizer"
 	desc = "Synthesizes a variety of reagents using proto-matter."
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "chem_dispenser"
@@ -804,7 +805,7 @@
 
 ///An unique, less efficient model found in the medbay apothecary room.
 /obj/machinery/chem_dispenser/apothecary
-	name = "apothecary chem dispenser"
+	name = "Apothecary Chem Dispenser"
 	desc = "A cheaper chem dispenser meant for small scale medicine production."
 	icon_state = "minidispenser"
 	working_state = "minidispenser_working"

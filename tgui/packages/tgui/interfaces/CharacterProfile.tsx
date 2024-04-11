@@ -1,7 +1,6 @@
-import { Section, Flex, Divider, Collapsible, Box, Tooltip, LabeledList, ByondUi, Button } from "../components";
+import { Section, Flex, Collapsible, Box, Tooltip, LabeledList, ByondUi, Button } from "../components";
 import { Window } from "../layouts";
-import { useBackend } from "../backend";
-import { Tabs } from "../components";
+import { useBackend, useLocalState } from "../backend";
 
 const getTagColor = (erptag) => {
   switch (erptag) {
@@ -21,7 +20,7 @@ const getTagColor = (erptag) => {
 interface CharacterProfileContext {
   directory_visible: boolean;
   is_unknown: boolean;
-  headshot_link: string;
+  headshot_links?: (string | null)[];
   character_ref: any,
   flavortext: string;
   flavortext_naked: string;
@@ -29,6 +28,8 @@ interface CharacterProfileContext {
   oocnotes: string;
   species_name: string;
   custom_species_lore: string;
+  security_records?: string;
+  medical_records?: string;
   vore_tag: string;
   erp_tag: string;
   mob_tag: string;
@@ -40,7 +41,7 @@ interface CharacterProfileContext {
 }
 
 export const CharacterProfile = (props, context) => {
-  const { act, data } = useBackend<CharacterProfileContext>(context);
+  const { data } = useBackend<CharacterProfileContext>(context);
 
   const tags = [
     { name: "ERP", title: "Эротический отыгрыш", value: data.erp_tag },
@@ -54,19 +55,14 @@ export const CharacterProfile = (props, context) => {
   ];
 
   return (
-    <Window resizable width={950} height={730}>
+    <Window resizable width={950} height={740}>
       <Window.Content scrollable>
         <Flex>
-          <Flex.Item pl="10px">
-          {
-            // убрал проверку на ношение маски для отображения хеда
-            }
-          { /*  {!data.is_unknown ? (<CharacterProfileImageElement />)
-              : (<Box />)}*/}
+          <Flex.Item>
             <CharacterProfileImageElement />
             <CharacterModelImageElement />
           </Flex.Item>
-          <Flex.Item Flex-direction="column" pl="10px" width="100%">
+          <Flex.Item pl="10px" grow>
             <Collapsible title="Описание Персонажа" open>
               <Section style={{ "white-space": "pre-line" }}>
                 {data.flavortext || "———"}
@@ -77,6 +73,23 @@ export const CharacterProfile = (props, context) => {
                 {data.flavortext_naked || "———"}
               </Section>
             </Collapsible>
+
+            {data.security_records ? (
+              <Collapsible title="База Данных Службы Безопасности" open>
+                <Section style={{ "white-space": "pre-line" }}>
+                  {data.security_records || "———"}
+                </Section>
+              </Collapsible>
+            ) : (<Box />)}
+
+            {data.medical_records ? (
+              <Collapsible title="База Данных Медицинского Отдела" open>
+                <Section style={{ "white-space": "pre-line" }}>
+                  {data.medical_records || "———"}
+                </Section>
+              </Collapsible>
+            ) : (<Box />)}
+
             <Collapsible title={`Раса - ${data.species_name}`} open>
               <Section style={{ "white-space": "pre-line" }}>
                 {data.custom_species_lore || "———"}
@@ -108,7 +121,36 @@ export const CharacterProfile = (props, context) => {
 
 const CharacterProfileImageElement = (props, context) => {
   const { data } = useBackend<CharacterProfileContext>(context);
-  if (data.headshot_link) return (<Section title="Арт персонажа" pb="12" textAlign="center"><img src={data.headshot_link} height="256px" width="256px" /></Section>);
+
+  const headshot_links =
+    data.headshot_links?.filter(link => link?.length) || [];
+
+  const [
+    selectedHeadshot,
+    selectHeadshot
+  ] = useLocalState(context, 'selectedHeadshot', 0);
+
+  const prevHeadshot = () => selectHeadshot(
+    (selectedHeadshot + headshot_links.length - 1) % headshot_links.length
+  );
+  const nextHeadshot = () => selectHeadshot(
+    (selectedHeadshot + 1) % headshot_links.length
+  );
+
+  if (headshot_links.length) return (
+    <Section title="Арт персонажа" pb="12" textAlign="center">
+      <Box mb={1}>
+        <img src={headshot_links[selectedHeadshot]} height="256px" width="256px" />
+      </Box>
+      {headshot_links.length > 1 ? (
+        <Box>
+          <Button onClick={prevHeadshot} icon="arrow-left" />
+          <span style={{margin: "0 8px"}}><b>{selectedHeadshot + 1} / {headshot_links.length}</b></span>
+          <Button onClick={nextHeadshot} icon="arrow-right" />
+        </Box>
+      ) : (<Box />)}
+    </Section>
+  );
   return (<Box />);
 };
 
@@ -117,16 +159,18 @@ const CharacterModelImageElement = (props, context) => {
 
   return (
     <Section title="Модель персонажа" pb="12" textAlign="center">
-      <ByondUi
-        height="256px" width="256px"
-        params={{ id: data.character_ref, type: 'map' }}
-      />
+      <Box mb={1}>
+        <ByondUi
+          height="256px" width="256px"
+          params={{ id: data.character_ref, type: 'map' }}
+        />
+      </Box>
       <Box>
-        <Button onClick={()=>act("char_left")} icon="undo" />
-        <Button onClick={()=>act("change_background")}>Сменить фон</Button>
-        <Button onClick={()=>act("char_right")} icon="redo" />
-        <Button onClick={()=>act("character_directory")}>
-            Библиотека Персонажей
+        <Button onClick={() => act("char_left")} icon="undo" />
+        <Button onClick={() => act("change_background")}>Сменить фон</Button>
+        <Button onClick={() => act("char_right")} icon="redo" />
+        <Button onClick={() => act("character_directory")}>
+          Библиотека Персонажей
         </Button>
       </Box>
     </Section>
