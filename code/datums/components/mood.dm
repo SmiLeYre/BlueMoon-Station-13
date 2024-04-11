@@ -203,7 +203,7 @@
 			setInsanityEffect(MINOR_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/crazy)
 			master.add_actionspeed_modifier(/datum/actionspeed_modifier/low_sanity)
-			if(!master || master.client.prefs.windownoise)
+			if(!master || master.client.prefs?.windownoise)
 				master.overlay_fullscreen("depression", /atom/movable/screen/fullscreen/scaled/depression, 2)
 			sanity_level = 5
 		if(SANITY_UNSTABLE to SANITY_DISTURBED)

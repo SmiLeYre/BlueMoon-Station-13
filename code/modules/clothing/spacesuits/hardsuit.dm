@@ -107,6 +107,8 @@
 	var/helmettype = /obj/item/clothing/head/helmet/space/hardsuit
 	var/obj/item/tank/jetpack/suit/jetpack = null
 	var/hardsuit_type
+	flags_inv = HIDETAUR //bluemood add
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemood add
 
 
 /obj/item/clothing/suit/space/hardsuit/Initialize(mapload)
@@ -518,7 +520,7 @@
 	armor = list(MELEE = 40, BULLET = 40, LASER = 40, ENERGY = 40, BOMB = 35, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 30)
 	allowed = list(/obj/item/teleportation_scroll, /obj/item/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/wizard
-	mutantrace_variation = STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 	var/magic_flags = SPELL_WIZARD_ROBE|SPELL_CULT_ARMOR
 
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -638,14 +640,14 @@
 
 /obj/item/clothing/suit/space/hardsuit/security/reskin_obj(mob/user)
 	if(current_skin == "Alt")
-		mutantrace_variation = STYLE_DIGITIGRADE
+		mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 		tail_state = "sec2"
 		if(helmet)
 			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
 			Helm.hardsuit_type = "sec2"
 			Helm.update_icon_state()
 	if(current_skin == "Blue Variation")
-		mutantrace_variation = STYLE_DIGITIGRADE
+		mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 		tail_state = "ert-commander"
 		if(helmet)
 			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
@@ -681,14 +683,14 @@
 
 /obj/item/clothing/suit/space/hardsuit/security/hos/reskin_obj(mob/user)
 	if(current_skin == "OTA Variation")
-		mutantrace_variation = STYLE_DIGITIGRADE
+		mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 		tail_state = "syndicate-winter"
 		if(helmet)
 			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
 			Helm.hardsuit_type = "alliance"
 			Helm.update_icon_state()
 	if(current_skin == "Standart Variation")
-		mutantrace_variation = STYLE_DIGITIGRADE
+		mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 		tail_state = "hos"
 		if(helmet)
 			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet

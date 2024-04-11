@@ -7,10 +7,8 @@
 			return FALSE
 
 		//Micro is on a table.
-		var/turf/steppyspot = target.loc
-		for(var/thing in steppyspot.contents)
-			if(istype(thing, /obj/structure/table))
-				return TRUE
+		if(locate(/obj/structure/table) in target.loc)
+			return TRUE
 
 		//Both small.
 		if(get_size(user) <= RESIZE_A_TINYMICRO && get_size(target) <= RESIZE_A_TINYMICRO)
@@ -59,10 +57,8 @@
 			return FALSE
 
 	//If on a table, don't
-		var/turf/steppyspot = target.loc
-		for(var/thing in steppyspot.contents)
-			if(istype(thing, /obj/structure/table))
-				return TRUE
+		if(locate(/obj/structure/table) in target.loc)
+			return TRUE
 
 	//Both small
 		if(get_size(user) <= RESIZE_A_TINYMICRO && get_size(target) <= RESIZE_A_TINYMICRO)

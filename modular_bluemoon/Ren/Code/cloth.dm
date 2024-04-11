@@ -120,7 +120,7 @@
 	alternate_screams = SPASEMAR_SCREAMS
 	armor = list(MELEE = 50, BULLET = 60, LASER = 40, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 20)
 	equip_sound = 'modular_bluemoon/Ren/Sound/equp.ogg'
-	mutantrace_variation = NONE
+	mutantrace_variation = STYLE_SNEK_TAURIC
 	unique_reskin = list("Dark Power Armour holy patern" = list(RESKIN_ICON_STATE = "darktemplar_chaplai"), "Dark Power Armour InteQ patern MKI" = list(RESKIN_ICON_STATE = "darktemplar_inteq"), "Dark Power Armour InteQ patern MKII" = list(RESKIN_ICON_STATE = "darktemplar_inteq_alt") )
 
 /obj/item/clothing/head/helmet/space/syndicate/darktemplar/equipped(mob/living/carbon/human/user, slot)
@@ -209,7 +209,7 @@
 	icon_state = "inteqbox"
 
 /obj/item/nullrod/claymore/chainsaw_sword/real
-	force = 20
+	force = 35
 
 /obj/item/storage/box/syndie_kit/spacehero/PopulateContents()
 	new /obj/item/autosurgeon/syndicate/inteq/astartes(src)
@@ -243,6 +243,7 @@
 	item_state = "hank_m"
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEEARS|HIDEEYES|HIDESNOUT
 	mutantrace_variation = NONE
 
 /obj/item/clothing/suit/hank
@@ -558,15 +559,6 @@
 	name = "Polychromic Line Socks"
 	path = /obj/item/clothing/underwear/socks/socks_line
 
-///Аутфиты
-/obj/item/card/id/syndicate/inteq_fake
-	name = "InteQ Vanguard ID card"
-	id_type_name = "InteQ ID card"
-	desc = "An ID straight from the InteQ."
-	registered_name = "InteQ"
-	assignment = "InteQ Operative"
-	icon_state = "inteq"
-
 /datum/outfit/inteq_dead
 	back = /obj/item/storage/backpack
 	name = "InteQ corps"
@@ -577,7 +569,7 @@
 	head = /obj/item/clothing/head/helmet/swat/inteq
 	mask = /obj/item/clothing/mask/balaclava/breath/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
-	id = /obj/item/card/id/syndicate/inteq_fake
+	id = /obj/item/card/id/inteq
 
 /obj/effect/mob_spawn/human/corpse/inteq_dead
 	name = "InteQ Operative"

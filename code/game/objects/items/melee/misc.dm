@@ -546,6 +546,15 @@
 	on_icon_state = "centcom_bat_1"
 	on_item_state = "centcom_bat_1"
 
+/obj/item/melee/classic_baton/telescopic/centcom/plus
+	name = "Tactical Centcom Bat"
+	force = 5
+	throwforce = 20
+	force_on = 50
+	force_off = 10
+	sharpness = 1
+	armour_penetration = 100
+
 /obj/item/melee/classic_baton/telescopic/newspaper
 	name = "The Daily Whiplash"
 	desc = "A newspaper wrapped around a telescopic baton in such a way that it looks like you're beating people with a rolled up newspaper."

@@ -939,11 +939,6 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/shuttle8532cargohall)
-"yv" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
-/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
-/turf/open/floor/iron/airless,
-/area/ruin/space/has_grav/shuttle8532crewquarters)
 "yz" = (
 /obj/item/chair{
 	pixel_y = -5
@@ -1069,7 +1064,8 @@
 /area/ruin/space/has_grav/shuttle8532crewquarters)
 "BL" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 9},
+	dir = 9
+	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/shuttle8532researchbay)
 "BR" = (
@@ -1433,11 +1429,6 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/shuttle8532engineering)
-"NJ" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
-/obj/effect/mapping_helpers/network_builder/power_cable/red/auto,
-/turf/open/floor/plating/airless,
-/area/ruin/space/has_grav/shuttle8532crewquarters)
 "NO" = (
 /obj/effect/decal/cleanable/glass,
 /turf/open/floor/iron/airless,
@@ -1584,7 +1575,8 @@
 /area/ruin/space/has_grav/shuttle8532crewquarters)
 "RO" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 5},
+	dir = 5
+	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/shuttle8532researchbay)
 "RY" = (
@@ -1811,7 +1803,8 @@
 /obj/machinery/turretid{
 	lethal = 1;
 	name = "Outer Turret Control";
-	pixel_x = -33},
+	pixel_x = -33
+	},
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/iron/airless,
 /area/ruin/space/has_grav/shuttle8532bridge)
@@ -3051,7 +3044,7 @@ Ux
 xO
 ac
 TM
-yv
+Ip
 Ds
 TM
 iN
@@ -3240,7 +3233,7 @@ HK
 xO
 lt
 Fu
-NJ
+uS
 jQ
 bp
 ou

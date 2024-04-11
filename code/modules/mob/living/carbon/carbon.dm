@@ -114,7 +114,7 @@
 		damage += 50
 		combat_knockdown += 40
 	// BLUEMOON ADDITION END
-	if(throwingdatum.thrower != src)
+	if(throwingdatum?.thrower != src)
 		extra_speed = min(max(0, throwingdatum.speed - initial(throw_speed)), 3)
 	if(GetComponent(/datum/component/tackler))
 		return

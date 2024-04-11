@@ -119,7 +119,7 @@
 		TR.harvest_dead()
 		return list()
 	else
-		return TR.myseed.harvest_userless()
+		return TR.myseed?.harvest_userless()
 
 /obj/item/integrated_circuit/manipulation/seed_extractor
 	name = "seed extractor module"

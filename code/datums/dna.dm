@@ -24,7 +24,8 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 	// BLUEMOON EDIT START - привязка флавора к ДНК
 	var/flavor_text
 	var/naked_flavor_text
-	var/headshot_link
+	var/ooc_notes // hate this
+	var/list/headshot_links = list()
 	// BLUEMOON EDIT END
 
 /datum/dna/New(mob/living/new_holder)
@@ -79,7 +80,8 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 		// BLUEMOON EDIT START - привязка флавора к ДНК
 		destination.dna.flavor_text = flavor_text
 		destination.dna.naked_flavor_text = naked_flavor_text
-		destination.dna.headshot_link = headshot_link
+		destination.dna.ooc_notes = ooc_notes
+		destination.dna.headshot_links = headshot_links.Copy()
 		// BLUEMOON EDIT END
 	if(transfer_SE)
 		destination.dna.mutation_index = mutation_index
@@ -111,7 +113,8 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 	// BLUEMOON EDIT START - привязка флавора к ДНК
 	new_dna.flavor_text = flavor_text
 	new_dna.naked_flavor_text = naked_flavor_text
-	new_dna.headshot_link = headshot_link
+	new_dna.ooc_notes = ooc_notes
+	new_dna.headshot_links = headshot_links.Copy()
 	// BLUEMOON EDIT END
 
 //See mutation.dm for what 'class' does. 'time' is time till it removes itself in decimals. 0 for no timer
