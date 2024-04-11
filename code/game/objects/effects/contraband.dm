@@ -927,7 +927,7 @@
 	icon_state = "paws"
 
 /obj/structure/sign/poster/contraband/joy //bluemoon add
-	name = "Happiness pill"
+	name = "Happiness Pill"
 	desc = "Погрузизь в мир счастья."
 	icon_state = "joy"
 
