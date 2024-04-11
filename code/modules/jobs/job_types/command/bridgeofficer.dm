@@ -50,7 +50,7 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/clipboard
 	ears = /obj/item/radio/headset/headset_bo/bowman
-	uniform = /obj/item/clothing/under/rank/officer
+	uniform = /obj/item/clothing/under/rank/bridgeofficer
 	suit = /obj/item/clothing/suit/armor/vest/command
 	head = /obj/item/clothing/head/bridgeofficer
 	gloves = /obj/item/clothing/gloves/color/black

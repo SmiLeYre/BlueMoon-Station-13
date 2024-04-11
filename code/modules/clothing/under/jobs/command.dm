@@ -63,11 +63,3 @@
 
 
 //Bridge officer
-/obj/item/clothing/under/rank/officer
-	desc = "It's a blue jumpsuit with some gold markings denoting the rank of \"Command officer\"."
-	name = "offcer's jumpsuit"
-	icon_state = "captain"
-	item_state = "b_suit"
-	armor = list(MELEE = 10, BULLET = 5, LASER = 5,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 30, ACID = 30, WOUND = 10)
-	sensor_mode = SENSOR_COORDS
-	sensor_flags = NONE
