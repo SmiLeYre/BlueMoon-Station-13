@@ -101,6 +101,8 @@
 		return
 	if(HAS_TRAIT(viewer, TRAIT_FEARLESS))
 		return
+	if(IS_INTEQ(user))
+		return
 	if(viewer.mind && (viewer.mind?.antag_datums)) // все антажки
 		return
 	else
@@ -173,6 +175,8 @@
 	if(viewer.is_blind())
 		return
 	if(HAS_TRAIT(viewer, TRAIT_FEARLESS))
+		return
+	if(IS_INTEQ(user))
 		return
 	if(viewer.mind && (viewer.mind?.antag_datums)) // все антажки
 		return
