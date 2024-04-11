@@ -28,6 +28,8 @@
 		return
 	if(HAS_TRAIT(viewer, TRAIT_FEARLESS))
 		return
+	if(IS_INTEQ(viewer))
+		return
 	if(viewer.mind && (viewer.mind?.antag_datums)) // все антажки
 		return
 	else
