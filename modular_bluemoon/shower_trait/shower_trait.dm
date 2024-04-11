@@ -65,7 +65,7 @@
 		if(-INFINITY to FINE_CLEAN)
 			if(warning_level > 0)
 				to_chat(quirk_holder, span_notice("Моё тело чистое, можно выходить."))
-				quirk_holder.cut_overlay(stink_overlay)
+				quirk_holder.remove_overlay(stink_overlay)
 				doing_shower = FALSE
 				warning_level = 0
 		if(FIRST_WARNING to DIRTY)
@@ -84,7 +84,7 @@
 			else
 				SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "need_shower", /datum/mood_event/need_shower/very_dirty)
 			if(warning_level < 3)
-				quirk_holder.add_overlay(stink_overlay)
+				quirk_holder.apply_overlay(stink_overlay)
 				to_chat(quirk_holder, span_phobia("Мне ОЧЕНЬ нужно сходить в душ!"))
 				warning_level = 3
 
