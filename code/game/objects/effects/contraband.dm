@@ -65,6 +65,10 @@
 	. = ..()
 	if(random_basetype)
 		randomise(random_basetype)
+	for(var/R in subtypesof(/obj/structure/sign/poster/contraband/inteq))
+		if(istype(R, random_basetype)) // интек пропаганда сама не заспавниться
+			return
+
 	if(!ruined)
 		original_name = name // can't use initial because of random posters
 		name = "poster - [name]"
@@ -921,5 +925,10 @@
 	name = "Paws"
 	desc = "This lewd poster depicts a vulpkanine preparing to mate."
 	icon_state = "paws"
+
+/obj/structure/sign/poster/contraband/joy //bluemoon add
+	name = "Happiness pill"
+	desc = "Погрузизь в мир счастья."
+	icon_state = "joy"
 
 #undef PLACE_SPEED

@@ -607,7 +607,7 @@
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	gloves = /obj/item/clothing/gloves/fingerless
 	head = /obj/item/clothing/head/soft/orange
-	back = /obj/item/storage/backpack/satchel/inteq
+	back = /obj/item/storage/backpack/satchel
 	l_pocket = /obj/item/choice_beacon/ftu
 	r_pocket = /obj/item/kitchen/knife/combat/survival/knuckledagger
 	id = /obj/item/card/id/away/ftu
@@ -618,7 +618,7 @@
 	uniform = /obj/item/clothing/under/rank/cargo/qm
 	belt = /obj/item/storage/belt/military/assault
 	neck = /obj/item/clothing/neck/cloak
-	back = /obj/item/storage/backpack/satchel/inteq
+	back = /obj/item/storage/backpack/satchel
 	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	suit = /obj/item/clothing/suit/armor/vest
 	head = /obj/item/clothing/head/beret/qm
