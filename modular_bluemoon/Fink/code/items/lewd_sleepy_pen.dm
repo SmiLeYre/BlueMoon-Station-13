@@ -1,7 +1,7 @@
 
 /obj/item/reagent_containers/hypospray/medipen/lewdsleepy
 	name = "Lewd sleepy medipen"
-	desc = "Усыпляющий Автоинъектор. Использовать исключетельно в целях удовлетвориения своих сексуальных фантазий. Вы же не хотите, чтобы нас засудили? С любовью, Silver Love Co."
+	desc = "Усыпляющий Автоинъектор. Использовать исключетельно в целях воплощения своих сексуальных фантазий. Вы же не хотите, чтобы нас засудили? С любовью, Silver Love Co."
 	icon = 'modular_splurt/icons/obj/syringe.dmi'
 	lefthand_file = 'modular_splurt/icons/mob/inhands/equipment/medical_lefthand.dmi'
 	righthand_file = 'modular_splurt/icons/mob/inhands/equipment/medical_righthand.dmi'
