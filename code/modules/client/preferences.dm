@@ -4487,7 +4487,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.custom_species_lore = features["custom_species_lore"]
 	character.dna.flavor_text = features["flavor_text"]
 	character.dna.naked_flavor_text = features["naked_flavor_text"]
-	character.dna.headshot_link = features["headshot_link"]
+	if (features["headshot_link"])
+		character.dna.headshot_links.Add(features["headshot_link"])
+	if (features["headshot_link1"])
+		character.dna.headshot_links.Add(features["headshot_link1"])
+	if (features["headshot_link2"])
+		character.dna.headshot_links.Add(features["headshot_link2"])
+	character.dna.ooc_notes = features["ooc_notes"]
 	character.dna.species.exotic_blood_color = blood_color //а раньше эта строчка была немного выше и всё ломалось, думайте, когда делаете врезки
 	// BLUEMOON EDIT END
 

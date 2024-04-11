@@ -535,6 +535,16 @@
 	playsound(src.loc, on_sound, 50, 1)
 	add_fingerprint(user)
 
+/**
+  * # Fancy Cane
+  */
+/obj/item/melee/classic_baton/ntcane
+	name = "Fancy Cane"
+	desc = "A cane with special engraving on it. It seems well suited for fending off assailants..."
+	icon_state = "cane_nt"
+	item_state = "cane_nt"
+	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
+
 /obj/item/melee/classic_baton/telescopic/centcom
 	name = "Tactical Covenant Bat"
 	desc = "Выдвижная тактическая бита Центрального Командования Nanotrasen. \

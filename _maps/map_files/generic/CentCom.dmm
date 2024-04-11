@@ -3913,7 +3913,7 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "akc" = (
-/obj/structure/sign/flag/inteq,
+/obj/structure/sign/flag/fake_inteq,
 /turf/closed/indestructible/fakeglass,
 /area/tdome/tdomeobserve)
 "akd" = (
@@ -21614,6 +21614,10 @@
 /obj/machinery/chem_master,
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
+"cYd" = (
+/obj/structure/sign/flag/goldring,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeadmin)
 "cZq" = (
 /obj/effect/turf_decal/tile/red/opposingcorners,
 /obj/structure/table/reinforced,
@@ -24463,6 +24467,10 @@
 	},
 /turf/open/floor/iron,
 /area/centcom/holding)
+"gDq" = (
+/obj/structure/sign/flag/humancommonwealth,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeadmin)
 "gDz" = (
 /obj/structure/fluff/metalpole/end/left,
 /obj/structure/fluff/metalpole/end/right,
@@ -26718,9 +26726,17 @@
 /obj/item/gun/ballistic/shotgun/automatic/dual_tube,
 /turf/open/floor/plasteel,
 /area/centcom)
+"jzv" = (
+/obj/structure/sign/flag/skull,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeadmin)
 "jAc" = (
 /turf/closed/indestructible/fakeglass,
 /area/syndicate_mothership/control)
+"jAw" = (
+/obj/structure/sign/flag/vulp,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeadmin)
 "jCR" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -28480,6 +28496,10 @@
 /obj/item/hierophant_club,
 /turf/open/floor/wood,
 /area/centcom)
+"lBo" = (
+/obj/structure/sign/flag/ger_sol,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeadmin)
 "lBu" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
@@ -30235,6 +30255,10 @@
 /obj/item/gun/ballistic/automatic/wt550,
 /turf/open/floor/plasteel,
 /area/centcom)
+"ocG" = (
+/obj/structure/sign/flag/mars_sol,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeadmin)
 "odj" = (
 /obj/structure/closet/syndicate/inteq,
 /obj/effect/turf_decal/siding/wood{
@@ -36130,6 +36154,10 @@
 /obj/effect/turf_decal/caution/stand_clear,
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
+"whB" = (
+/obj/structure/sign/flag/ravenheart,
+/turf/closed/indestructible/fakeglass,
+/area/tdome/tdomeadmin)
 "wic" = (
 /obj/structure/closet,
 /obj/item/assembly/igniter,
@@ -36244,6 +36272,10 @@
 /obj/item/storage/toolbox/emergency,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
+"wsH" = (
+/obj/structure/sign/flag/ravenheart/alt,
+/turf/closed/indestructible/riveted,
+/area/tdome/tdomeadmin)
 "wsJ" = (
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/dark,
@@ -79032,7 +79064,7 @@ aID
 aID
 aID
 aID
-aIv
+wsH
 aIv
 aIv
 aIv
@@ -80318,7 +80350,7 @@ aIH
 aIH
 aIH
 aIt
-aJI
+whB
 aJQ
 aKa
 aJG
@@ -80575,7 +80607,7 @@ aIH
 aIH
 aIH
 aIt
-aJI
+jAw
 aJQ
 aKa
 aJG
@@ -80832,7 +80864,7 @@ aJi
 aIH
 aIH
 aIt
-aJI
+jzv
 aJR
 aJG
 aJG
@@ -81089,7 +81121,7 @@ aJq
 aIH
 aIH
 aIt
-aJI
+gDq
 aJS
 aKb
 aJG
@@ -81346,7 +81378,7 @@ aJi
 aIH
 aIH
 aIt
-aJI
+ocG
 aJT
 aJG
 aJG
@@ -81603,7 +81635,7 @@ aIH
 aIH
 aIH
 aIt
-aJI
+lBo
 aJQ
 aKa
 aJG
@@ -81860,7 +81892,7 @@ aIH
 aIH
 aIH
 aIt
-aJI
+cYd
 aJQ
 aKa
 aJG
@@ -83144,7 +83176,7 @@ aMh
 aMh
 aMh
 aMh
-aIv
+wsH
 aIv
 aIv
 aIv

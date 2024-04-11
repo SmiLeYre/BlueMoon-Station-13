@@ -34,12 +34,19 @@
 	var/obj/item/storage/book/bible/booze/B = new
 
 	if(GLOB.religion)
+		/*
+		/*
 		B.deity_name = GLOB.deity
 		B.name = GLOB.bible_name
 		B.icon_state = GLOB.bible_icon_state
 		B.item_state = GLOB.bible_item_state
 		to_chat(H, "There is already an established religion onboard the station. You are an acolyte of [GLOB.deity]. Defer to the Chaplain.")
-		H.equip_to_slot_or_del(B, ITEM_SLOT_BACKPACK)
+		*/
+		H.equip_to_slot_or_del(/obj/item/storage/book/bible/booze, ITEM_SLOT_BACKPACK) // бибиля + нуллрод вторым и далее священикам
+		H.equip_to_slot_or_del(/obj/item/nullrod, ITEM_SLOT_BACKPACK)
+		*/
+		H.equip_to_slot_or_del(/obj/item/storage/book/bible/booze, ITEM_SLOT_BACKPACK) // бибиля + нуллрод вторым и далее священикам
+		H.equip_to_slot_or_del(/obj/item/nullrod, ITEM_SLOT_BACKPACK)
 		return
 
 	var/new_religion = DEFAULT_RELIGION
@@ -122,9 +129,9 @@
 	belt = /obj/item/pda/chaplain
 	ears = /obj/item/radio/headset/headset_srv
 	uniform = /obj/item/clothing/under/rank/civilian/chaplain
-	backpack_contents = list(/obj/item/camera/spooky = 1,
-							/obj/item/choice_beacon/holy = 1,
-							/obj/item/stamp/chap = 1)
+	backpack_contents = list(/obj/item/storage/briefcase/crafted/chap_stuff = 1,
+							/obj/item/stamp/chap = 1,
+							)
 	backpack = /obj/item/storage/backpack/cultpack
 	satchel = /obj/item/storage/backpack/cultpack
 
@@ -143,6 +150,17 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	box = /obj/item/storage/box/survival/syndie
 	pda_slot = ITEM_SLOT_BELT
-	backpack_contents = list(/obj/item/camera/spooky = 1,
+	backpack_contents = list(/obj/item/storage/briefcase/crafted/chap_stuff = 1,
 							/obj/item/stamp/chap = 1,
-							/obj/item/syndicate_uplink=1)
+							/obj/item/syndicate_uplink=1,
+							)
+/obj/item/storage/briefcase/crafted/chap_stuff
+	name = "\improper Chaplain Case"
+	desc = "A storage case full of holy stuff."
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/storage/briefcase/crafted/chap_stuff/PopulateContents()
+	new /obj/item/camera/spooky(src)
+	new /obj/item/choice_beacon/holy(src)
+	new /obj/item/reagent_containers/censer(src)
+	new /obj/item/choice_beacon/box/fetish(src)

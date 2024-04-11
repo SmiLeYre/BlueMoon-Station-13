@@ -207,10 +207,10 @@
 	new /obj/item/tank/internals/anesthetic(src)
 
 ///FTU наборы
-/obj/item/storage/backpack/satchel/inteq/ftu/shootgun
+/obj/item/storage/backpack/satchel/ftu/shootgun
 	name = "Набор №473. Спецификация: Инженер. Основное оружие: AA12"
 
-/obj/item/storage/backpack/satchel/inteq/ftu/shootgun/PopulateContents()
+/obj/item/storage/backpack/satchel/ftu/shootgun/PopulateContents()
 	new /obj/item/storage/box/survival/security/radio(src)
 	new /obj/item/gun/ballistic/automatic/shotgun/aa12(src)
 	for(var/i in 1 to 3)
@@ -218,10 +218,10 @@
 	new /obj/item/storage/belt/utility/syndicate(src)
 	new /obj/item/clothing/gloves/tackler/combat/insulated(src)
 
-/obj/item/storage/backpack/satchel/inteq/ftu/fire
+/obj/item/storage/backpack/satchel/ftu/fire
 	name = "Набор №343. Спецификация: Чистильщик. Основное оружие: M2a100"
 
-/obj/item/storage/backpack/satchel/inteq/ftu/fire/PopulateContents()
+/obj/item/storage/backpack/satchel/ftu/fire/PopulateContents()
 	new /obj/item/storage/box/survival/security/radio(src)
 	new /obj/item/gun/energy/m2a100(src)
 	for(var/i in 1 to 10)
@@ -230,20 +230,20 @@
 	new /obj/item/grenade/stingbang/shred(src)
 	new /obj/item/grenade/stingbang/shred(src)
 
-/obj/item/storage/backpack/satchel/inteq/ftu/sniper
+/obj/item/storage/backpack/satchel/ftu/sniper
 	name = "Набор №476. Спецификация: Солдат. Основное оружие: FAL"
 
-/obj/item/storage/backpack/satchel/inteq/ftu/sniper/PopulateContents()
+/obj/item/storage/backpack/satchel/ftu/sniper/PopulateContents()
 	new /obj/item/storage/box/survival/security/radio(src)
 	new /obj/item/gun/ballistic/automatic/fal(src)
 	for(var/i in 1 to 3)
 		new /obj/item/ammo_box/magazine/fal(src)
 	new /obj/item/chameleon(src)
 
-/obj/item/storage/backpack/satchel/inteq/ftu/med
+/obj/item/storage/backpack/satchel/ftu/med
 	name = "Набор №678. Спецификация: Медик. Основное оружие: SMG .22"
 
-/obj/item/storage/backpack/satchel/inteq/ftu/med/PopulateContents()
+/obj/item/storage/backpack/satchel/ftu/med/PopulateContents()
 	new /obj/item/storage/box/survival/security/radio(src)
 	new /obj/item/gun/ballistic/automatic/smg22(src)
 	for(var/i in 1 to 5)
@@ -259,7 +259,7 @@
 	var/static/list/ftu_item_list
 	if(!ftu_item_list)
 		ftu_item_list = list()
-		var/list/templist = typesof(/obj/item/storage/backpack/satchel/inteq/ftu)
+		var/list/templist = typesof(/obj/item/storage/backpack/satchel/ftu)
 		for(var/V in templist)
 			var/atom/A = V
 			ftu_item_list[initial(A.name)] = A
@@ -270,10 +270,10 @@
 	if(!ftu_item_list)
 		ftu_item_list = list()
 		var/list/templist = list(
-		/obj/item/storage/backpack/satchel/inteq/ftu/shootgun,
-		/obj/item/storage/backpack/satchel/inteq/ftu/fire,
-		/obj/item/storage/backpack/satchel/inteq/ftu/sniper,
-		/obj/item/storage/backpack/satchel/inteq/ftu/med)
+		/obj/item/storage/backpack/satchel/ftu/shootgun,
+		/obj/item/storage/backpack/satchel/ftu/fire,
+		/obj/item/storage/backpack/satchel/ftu/sniper,
+		/obj/item/storage/backpack/satchel/ftu/med)
 		for(var/V in templist)
 			var/atom/A = V
 			ftu_item_list[initial(A.name)] = A

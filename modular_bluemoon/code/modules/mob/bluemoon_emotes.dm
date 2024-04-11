@@ -275,8 +275,8 @@
 	emote_cooldown = 1 SECONDS
 
 /datum/emote/living/audio/cat_snores
-	key = "cat_snore"
-	key_third_person = "cat_snores"
+	key = "catsnore"
+	key_third_person = "catsnores"
 	message = "храпит."
 	message_mime = "храпит с необычным звуком."
 	emote_sound = 'sound/voice/snore_mimimimimimi.ogg'

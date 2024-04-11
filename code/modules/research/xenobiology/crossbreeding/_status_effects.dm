@@ -467,7 +467,7 @@
 		return
 	if(linked_extract.get_held_mob() == owner)
 		return
-	owner.balloon_alert(owner, "[colour] extract faded!")
+	owner.balloon_alert(owner, "power faded!") //bluemoon edit
 	if(!QDELETED(linked_extract))
 		linked_extract.linked_effect = null
 		START_PROCESSING(SSobj,linked_extract)
@@ -663,13 +663,15 @@
 /datum/status_effect/stabilized/silver/on_apply()
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner
-		H.physiology.hunger_mod *= 0.8 //20% buff
+		H.physiology.hunger_mod *= 0.5 //50% имба бафф. было 20%
+		H.physiology.thirst_mod *= 0.5
 	return ..()
 
 /datum/status_effect/stabilized/silver/on_remove()
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner
-		H.physiology.hunger_mod /= 0.8
+		H.physiology.hunger_mod /= 0.5
+		H.physiology.thirst_mod /= 0.5
 	return ..()
 
 //Bluespace has an icon because it's kinda active.
@@ -906,6 +908,7 @@
 /datum/status_effect/stabilized/oil/tick()
 	if(owner.stat == DEAD)
 		explosion(get_turf(owner),1,2,4,flame_range = 5)
+		owner.gib() // bugfix
 		qdel(linked_extract)
 		return
 	return ..()
@@ -1030,3 +1033,4 @@
 				qdel(src)
 				qdel(linked_extract)
 	return ..()
+//

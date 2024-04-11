@@ -82,7 +82,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	armor = list(MELEE = 35, BULLET = 40, LASER = 25, ENERGY = 10, BOMB = 25, BIO = 20, RAD = 20, FIRE = 60, ACID = 60)
 	body_parts_covered = CHEST|LEGS|ARMS
 	is_edible = 0
-	mutantrace_variation = STYLE_SNEK_TAURIC //bluemoon add
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/storage/belt/esabre_belt
 	name = "Energy Sabre Sheath"
