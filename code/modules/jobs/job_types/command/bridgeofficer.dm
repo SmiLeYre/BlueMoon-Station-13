@@ -50,12 +50,13 @@
 	id = /obj/item/card/id/silver
 	belt = /obj/item/clipboard
 	ears = /obj/item/radio/headset/headset_bo/bowman
-	uniform = /obj/item/clothing/under/rank/bridgeofficer
+	uniform = /obj/item/clothing/under/rank/officer
+	suit = /obj/item/clothing/suit/armor/vest/command
 	head = /obj/item/clothing/head/bridgeofficer
 	gloves = /obj/item/clothing/gloves/color/black
-	glasses = /obj/item/clothing/glasses/sunglasses
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	shoes = /obj/item/clothing/shoes/sneakers/brown
-	l_pocket = /obj/item/pda
+	l_pocket =  /obj/item/pda/heads
 
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/stamp/command=1, /obj/item/gun/energy/civilian=1)
 	box = /obj/item/storage/box/survival/command
