@@ -185,7 +185,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 				our_mob.dna.ooc_notes = new_text
 		if("Хедшоты")
 			var/chosen_headshot_id = tgui_input_list(our_mob, "Выберите номер хедшота, который хотите изменить.", "Управление флавор-текстами", list("1", "2", "3"), "1")
-			var/max_headshots = 3
+			// var/max_headshots = 3
 			if(!chosen_headshot_id || !isnum(text2num(chosen_headshot_id)))
 				return
 			chosen_headshot_id = text2num(chosen_headshot_id)

@@ -328,7 +328,7 @@
 /datum/outfit/sol_diplomacy/consul/admiral
 	name = "SolFed Fleet Admiral"
 
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	head = /obj/item/clothing/head/HoS/beret/sol
 	belt = /obj/item/storage/belt/sabre
 	ears = /obj/item/radio/headset/sol/bowman/command

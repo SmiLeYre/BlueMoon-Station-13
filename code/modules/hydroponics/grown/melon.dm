@@ -60,7 +60,6 @@
 	wine_power = 70 //Water to wine, baby.
 	wine_flavor = "divinity"
 
-/*
 /obj/item/reagent_containers/food/snacks/grown/holymelon/Initialize(mapload)
 	. = ..()
 	var/uses = 1
@@ -76,4 +75,3 @@
 	to_chat(user, "<span class='warning'>[src] rapidly turns into ash!</span>")
 	qdel(src)
 	new /obj/effect/decal/cleanable/ash(drop_location())
-*/

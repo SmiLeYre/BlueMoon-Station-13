@@ -717,6 +717,7 @@
 		/obj/item/lighter/donator = 2,
 		/obj/item/lighter/contractor = 2,
 		/obj/item/lighter/engraved = 2,
+		/obj/item/lighter/qm_engraved = 2,
 		/obj/item/lighter/gold = 2,
 		/obj/item/lighter/gonzofist = 2,
 		/obj/item/storage/fancy/cigarettes/cigars/cohiba = 2,

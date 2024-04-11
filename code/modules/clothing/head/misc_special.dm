@@ -14,25 +14,58 @@
  * Welding mask
  */
 /obj/item/clothing/head/welding
-	name = "welding helmet"
+	name = "Welding Helmet"
 	desc = "A head-mounted face cover designed to protect the wearer completely from space-arc eye."
 	icon_state = "welding"
-	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	item_state = "welding"
+	can_toggle = TRUE
 	custom_materials = list(/datum/material/iron=1750, /datum/material/glass=400)
 	flash_protect = 2
 	tint = 2
 	armor = list(MELEE = 10, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 60)
-	flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
 	actions_types = list(/datum/action/item_action/toggle)
+	flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	visor_flags_inv = HIDEMASK|HIDEEYES|HIDEFACE
 	visor_flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
 	resistance_flags = FIRE_PROOF
 	mutantrace_variation = STYLE_MUZZLE
+	var/paint = null
 
 /obj/item/clothing/head/welding/attack_self(mob/user)
 	weldingvisortoggle(user)
 
+/obj/item/clothing/head/welding/attackby(obj/item/I, mob/living/user, params)
+	if(istype(I, /obj/item/toy/crayon/spraycan))
+		if(paint)
+			to_chat(user, "<span class = 'warning'>Похоже, тут уже есть слой краски!</span>")
+			return
+		var/obj/item/toy/crayon/spraycan/C = I
+		if(C.is_capped)
+			to_chat(user, "<span class = 'warning'>Вы не можете раскрасить [src], пока крышка [C] закрыта!</span>")
+			return
+		var/list/weld_icons = list("Flame" = image(icon = src.icon, icon_state = "welding_redflame"),
+									"Blue Flame" = image(icon = src.icon, icon_state = "welding_blueflame"),
+									"White Flame" = image(icon = src.icon, icon_state = "welding_white"))
+		var/list/weld = list("Flame" = "welding_redflame",
+							"Blue Flame" = "welding_blueflame",
+							"White Flame" = "welding_white")
+		var/choice = show_radial_menu(user, src, weld_icons)
+		if(!choice || I.loc != user || !Adjacent(user))
+			return
+		if(C.charges <= 0)
+			to_chat(user, "<span class = 'warning'>Похоже, краска кончилась.</span>")
+			return
+		icon_state = weld[choice]
+		paint = weld[choice]
+		C.charges--
+		update_icon()
+	if(istype(I, /obj/item/soap) && (icon_state != initial(icon_state)))
+		icon_state = initial(icon_state)
+		paint = null
+		update_icon()
+	else
+		return ..()
 
 /*
  * Cakehat

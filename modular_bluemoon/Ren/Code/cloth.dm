@@ -120,7 +120,7 @@
 	alternate_screams = SPASEMAR_SCREAMS
 	armor = list(MELEE = 50, BULLET = 60, LASER = 40, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 20)
 	equip_sound = 'modular_bluemoon/Ren/Sound/equp.ogg'
-	mutantrace_variation = STYLE_SNEK_TAURIC
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 	unique_reskin = list("Dark Power Armour holy patern" = list(RESKIN_ICON_STATE = "darktemplar_chaplai"), "Dark Power Armour InteQ patern MKI" = list(RESKIN_ICON_STATE = "darktemplar_inteq"), "Dark Power Armour InteQ patern MKII" = list(RESKIN_ICON_STATE = "darktemplar_inteq_alt") )
 
 /obj/item/clothing/head/helmet/space/syndicate/darktemplar/equipped(mob/living/carbon/human/user, slot)
@@ -599,7 +599,7 @@
 	shoes = /obj/item/clothing/shoes/workboots/mining
 	gloves = /obj/item/clothing/gloves/fingerless
 	head = /obj/item/clothing/head/soft/orange
-	back = /obj/item/storage/backpack/satchel/inteq
+	back = /obj/item/storage/backpack/satchel
 	l_pocket = /obj/item/choice_beacon/ftu
 	r_pocket = /obj/item/kitchen/knife/combat/survival/knuckledagger
 	id = /obj/item/card/id/away/ftu
@@ -610,7 +610,7 @@
 	uniform = /obj/item/clothing/under/rank/cargo/qm
 	belt = /obj/item/storage/belt/military/assault
 	neck = /obj/item/clothing/neck/cloak
-	back = /obj/item/storage/backpack/satchel/inteq
+	back = /obj/item/storage/backpack/satchel
 	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	suit = /obj/item/clothing/suit/armor/vest
 	head = /obj/item/clothing/head/beret/qm

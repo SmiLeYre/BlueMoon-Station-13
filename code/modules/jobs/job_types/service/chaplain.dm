@@ -35,11 +35,15 @@
 
 	if(GLOB.religion)
 		/*
+		/*
 		B.deity_name = GLOB.deity
 		B.name = GLOB.bible_name
 		B.icon_state = GLOB.bible_icon_state
 		B.item_state = GLOB.bible_item_state
 		to_chat(H, "There is already an established religion onboard the station. You are an acolyte of [GLOB.deity]. Defer to the Chaplain.")
+		*/
+		H.equip_to_slot_or_del(/obj/item/storage/book/bible/booze, ITEM_SLOT_BACKPACK) // бибиля + нуллрод вторым и далее священикам
+		H.equip_to_slot_or_del(/obj/item/nullrod, ITEM_SLOT_BACKPACK)
 		*/
 		H.equip_to_slot_or_del(/obj/item/storage/book/bible/booze, ITEM_SLOT_BACKPACK) // бибиля + нуллрод вторым и далее священикам
 		H.equip_to_slot_or_del(/obj/item/nullrod, ITEM_SLOT_BACKPACK)

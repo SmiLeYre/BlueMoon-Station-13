@@ -118,7 +118,7 @@
 		to_chat(owner, "<span class='userdanger'>Hearing \"[trigger_word]\" [message]!</span>")
 	else
 		to_chat(owner, "<span class='userdanger'>Something [message]!</span>")
-	var/reaction = rand(1,4)
+	var/reaction = rand(1,5)
 	switch(reaction)
 		if(1)
 			to_chat(owner, "<span class='warning'>You are paralyzed with fear!</span>")
