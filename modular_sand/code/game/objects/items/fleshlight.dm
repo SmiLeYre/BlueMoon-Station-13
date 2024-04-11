@@ -662,7 +662,8 @@
 
 /obj/item/clothing/underwear/briefs/panties/portalpanties/AltClick(mob/user)
 	. = ..()
-	free_use()
+	if(do_mob(user, src, 2 SECONDS))
+		free_use()
 
 /obj/item/clothing/underwear/briefs/panties/portalpanties/attackby(obj/item/I, mob/living/user) //pairing
 	if(istype(I, /obj/item/portallight))
