@@ -7,7 +7,7 @@
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /datum/gear/donator/bm/lewdsleepy
-	name = "Lewd sleepy autoinjector"
+	name = "Lewd sleepy medipen"
 	path = /obj/item/reagent_containers/hypospray/medipen/lewdsleepy
 	cost = 2
 	ckeywhitelist = list()
