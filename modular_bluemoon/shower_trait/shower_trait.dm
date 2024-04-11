@@ -21,9 +21,12 @@
 	var/cleaned_times = 0 // счётчик, сколько тиков игрок постоял под душем
 	var/warning_level = 0 // предупреждения для игрока в чат. Обнуляются при достижении чистоты
 	var/image/stink_overlay // оверлей вони
+	var/mob/living/carbon/human/human_owner // хумановский quirk_holder, т.к. некоторых функций у living нет
 
 /datum/quirk/bluemoon_shower_need/on_spawn()
 	. = ..()
+	if(quirk_holder)
+		human_owner = quirk_holder
 	RegisterSignal(quirk_holder, COMSIG_COMPONENT_CLEAN_ACT, .proc/cleaning) // реакция, когда персонаж встаёт под душ
 	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/examine) // реакция, когда персонажа осматривают
 	var/mob/living/carbon/human/H = quirk_holder
@@ -50,6 +53,7 @@
 		quirk_holder.cut_overlay(stink_overlay) // удаляем оверлей вони с игрока
 
 	stink_overlay = null
+	human_owner = null
 	. = ..()
 
 /datum/quirk/bluemoon_shower_need/process()
@@ -66,7 +70,7 @@
 		if(-INFINITY to FINE_CLEAN)
 			if(warning_level > 0)
 				to_chat(quirk_holder, span_notice("Моё тело чистое, можно выходить."))
-				quirk_holder.cut_overlay(stink_overlay)
+				human_owner.remove_overlay(stink_overlay)
 				doing_shower = FALSE
 				warning_level = 0
 		if(FIRST_WARNING to DIRTY)
@@ -85,7 +89,7 @@
 			else
 				SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "need_shower", /datum/mood_event/need_shower/very_dirty)
 			if(warning_level < 3)
-				quirk_holder.add_overlay(stink_overlay)
+				human_owner.apply_overlay(stink_overlay)
 				to_chat(quirk_holder, span_phobia("Мне ОЧЕНЬ нужно сходить в душ!"))
 				warning_level = 3
 

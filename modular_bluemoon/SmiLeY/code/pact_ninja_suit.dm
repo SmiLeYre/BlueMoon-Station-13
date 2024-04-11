@@ -62,6 +62,8 @@
 	item_state = "infiltrator_a"
 	icon = 'modular_bluemoon/SmiLeY/icons/mob/pact_ninja.dmi'
 	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/mob/pact_ninja.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/SmiLeY/icons/mob/pact_ninja_digi.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 	body_parts_covered = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 
 /obj/item/clothing/under/pact_ninja/tactical_gorka
