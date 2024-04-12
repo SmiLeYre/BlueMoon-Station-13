@@ -150,6 +150,7 @@
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
 		/obj/item/storage/firstaid/regular=1,
 		/obj/item/storage/box/handcuffs=1,\
+		/obj/item/gun/energy/e_gun/dragnet=1,
 		)
 	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
 
@@ -168,7 +169,9 @@
 
 		/obj/item/storage/box/handcuffs=1,\
 		/obj/item/storage/firstaid/regular=1,\
-		/obj/item/storage/box/ammo/wt = 1,)
+		/obj/item/storage/box/ammo/wt = 1,
+		/obj/item/gun/energy/e_gun/dragnet=1,
+		)
 
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,
@@ -199,7 +202,9 @@
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
 		/obj/item/storage/box/handcuffs=1,\
 		/obj/item/storage/firstaid/regular=1,\
-		/obj/item/storage/box/ammo/smgap=1,)
+		/obj/item/storage/box/ammo/smgap=1,
+		/obj/item/gun/energy/e_gun/dragnet=1,
+		)
 
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,
@@ -218,10 +223,11 @@
 	suit_store = /obj/item/gun/energy/pulse/pistol/loyalpin
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
-
 		/obj/item/storage/box/handcuffs=1,\
 		/obj/item/storage/box/ammo/m556=1,\
-		/obj/item/storage/firstaid/regular=1)
+		/obj/item/storage/firstaid/regular=1,
+		/obj/item/gun/energy/e_gun/dragnet=1,
+		)
 
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,

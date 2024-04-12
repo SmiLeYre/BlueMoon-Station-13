@@ -281,6 +281,19 @@
 	chemdesc = "Slowly heals intoxication."
 	quantity = 12
 
+/datum/chem_implant/bicaridine
+	chemname = "Bicaridine"
+	key = /datum/reagent/medicine/bicaridine
+	chemdesc = "Heals brute damage."
+	quantity = 8
+
+
+/datum/chem_implant/kelotane
+	chemname = "Kelotane"
+	key = /datum/reagent/medicine/kelotane
+	chemdesc = "Heals burn damage."
+	quantity = 8
+
 /datum/chem_implant/stimulative_agent
 	chemname = "Stimulants"
 	key = /datum/reagent/medicine/stimulants
