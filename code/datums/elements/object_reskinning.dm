@@ -78,7 +78,6 @@
 		to_reskin.vars[reskin_var] = to_reskin.unique_reskin[pick][reskin_var]
 	to_chat(user, "[to_reskin] is now skinned as '[pick].'")
 	to_reskin.reskin_obj(user)
-	to_reskin.update_icon()
 
 	// Only once or always?
 	if(!to_reskin.always_reskinnable)

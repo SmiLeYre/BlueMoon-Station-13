@@ -28,14 +28,25 @@
 		to_chat(usr, span_warning("You cannot toggle your gender while unconcious!"))
 		return
 
-	var/choice = tgui_alert(usr, "Select Gender.", "Gender", list("Both", "Male", "Female"))
+	var/choice = tgui_alert(usr, "Select Gender.", "Gender", list("Both", "Male", "Female", "None"))
 	switch(choice)
 		if("Both")
 			has_penis = TRUE
+			has_balls = TRUE
 			has_vagina = TRUE
+			gender = PLURAL
 		if("Male")
 			has_penis = TRUE
+			has_balls = TRUE
 			has_vagina = FALSE
+			gender = MALE
 		if("Female")
 			has_penis = FALSE
+			has_balls = FALSE
 			has_vagina = TRUE
+			gender = FEMALE
+		if("None")
+			has_penis = FALSE
+			has_balls = FALSE
+			has_vagina = FALSE
+			gender = NEUTER

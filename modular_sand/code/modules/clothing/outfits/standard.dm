@@ -19,12 +19,18 @@
 	icon_state = "darkcarapace"
 	item_state = "darkcarapace"
 	blood_overlay_type = "armor"
-	armor = list("melee" = 95, "bullet" = 95, "laser" = 95, "energy" = 95, "bomb" = 95, "bio" = 95, "rad" = 100, "fire" = 98, "acid" = 98) // Skyrat edit
+	armor = list("melee" = 95, "bullet" = 95, "laser" = 95, "energy" = 95, "bomb" = 95, "bio" = 95, "rad" = 100, "fire" = 98, "acid" = 98)
+
+/obj/item/clothing/head/helmet/space/hardsuit/ert/alert/debug
+	name = "Bluespace Tech Helmet"
+	desc = "A specialised helmet for Bluespace agents."
+	armor = list("melee" = 99, "bullet" = 99, "laser" = 99, "energy" = 99, "bomb" = 99, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 
 /obj/item/clothing/suit/space/hardsuit/ert/alert/debug
-	name = "Bluespace Tech hardsuit"
+	name = "Bluespace Tech Hardsuit"
 	desc = "A specialised hardsuit for Bluespace agents."
-	armor = list("melee" = 98, "bullet" = 98, "laser" = 98, "energy" = 98, "bomb" = 98, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100) // Skyrat edit
+	armor = list("melee" = 99, "bullet" = 99, "laser" = 99, "energy" = 99, "bomb" = 99, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/debug
 
 /obj/item/storage/backpack/holding/duffel/debug
 	name = "Special Duffel Bag of Holding"
