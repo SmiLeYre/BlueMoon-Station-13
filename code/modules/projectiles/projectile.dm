@@ -548,6 +548,8 @@
 				return FALSE
 			if(L.resting)
 				return TRUE
+		if(L.stat) // если цель лежит, но в крите, то пули без таргета не берут её
+			return FALSE
 		// BLUEMOON ADD END
 		var/stunned = HAS_TRAIT(L, TRAIT_MOBILITY_NOMOVE) && HAS_TRAIT(L, TRAIT_MOBILITY_NOREST) && HAS_TRAIT(L, TRAIT_MOBILITY_NOPICKUP)
 		return !stunned || hit_stunned_targets
