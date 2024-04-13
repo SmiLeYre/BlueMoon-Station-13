@@ -759,6 +759,10 @@
 
 	if(computer) . += span_info("Операционный стол подключен к компьютеру рядом через кабель на полу.")
 
+
+/obj/structure/table/optable/examine_more(mob/user)
+	. = ..()
+	. += span_notice("Убирать кислородный баллон и маску можно через Alt.")
 	if(tank && mask) . += span_info("<br>Можно попробовать включить оборудование для анестезии, если положить кого-то на стол.")
 
 /obj/structure/table/optable/attack_hand(mob/user, act_intent, attackchain_flags)
@@ -813,6 +817,7 @@
 			visible_message(span_notice("[mask] срывается и возвращается на место по втягивающемуся шлангу."))
 			patient.transferItemToLoc(mask, src, TRUE)
 		patient.internal = null
+		patient = null
 		STOP_PROCESSING(SSobj, src)
 
 /obj/structure/table/optable/AltClick(mob/living/user)
@@ -878,9 +883,11 @@
 		if(!CHECK_MOBILITY(H, MOBILITY_STAND))
 			patient = H
 			return TRUE
+	/* BLUEMOON REMOVAL START - patient = null назначается выше
 	else
 		patient = null
 		return FALSE
+	/ BLUEMOON REMOVAL END */
 
 /*
  * Racks
