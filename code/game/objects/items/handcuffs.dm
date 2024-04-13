@@ -353,8 +353,9 @@
 		qdel(src)
 
 /obj/item/restraints/legcuffs/beartrap/energy/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	Crossed(user) //honk
-	. = ..()
+	//Crossed(user) //honk
+	//. = ..()
+	qdel(src)
 
 /obj/item/restraints/legcuffs/beartrap/energy/cyborg
 	breakouttime = 40 // Cyborgs shouldn't have a strong restraint
