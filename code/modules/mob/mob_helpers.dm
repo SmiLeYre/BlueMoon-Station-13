@@ -609,7 +609,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 	if (H.canloadappearance == TRUE)
 		SEND_SOUND(H, 'sound/misc/server-ready.ogg')
 		to_chat(H, "<span class='boldannounce'>Вам разрешено использовать своего персонажа.</span>")
-		if(alert(H, "Желаете текущего своего выбранного персонажа?", "Warning", "Yes", "No") == "Yes")
+		if(alert(H, "Желаете загрузить текущего своего выбранного персонажа?", "Warning", "Yes", "No") == "Yes")
 			if(alert(H, "Вам разрешено использовать персонажей, которые ещё не были в раунде. Вы понимаете это?", "Warning", "Yes", "No") == "Yes")
 				H.client.prefs.copy_to(H)
 				H.real_name = H.client.prefs.real_name

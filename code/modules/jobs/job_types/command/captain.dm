@@ -30,7 +30,7 @@
 
 	display_order = JOB_DISPLAY_ORDER_CAPTAIN
 
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal, /datum/quirk/blindness)
 	threat = 5
 
 	family_heirlooms = list(
