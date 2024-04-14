@@ -230,9 +230,10 @@ const InteractionsTab = (props, context) => {
                 <Button
                   key={interaction.key}
                   content={interaction.desc}
-                  color={interaction.type === INTERACTION_UNHOLY ? "red"
-                    : interaction.type ? "pink"
-                      : "default"}
+                  color={interaction.type === INTERACTION_EXTREME ? "orange"
+                    : interaction.type === INTERACTION_UNHOLY ? "red"
+                      : interaction.type ? "pink"
+                        : "default"}
                   fluid
                   mb={0.3}
                   onClick={() => act('interact', {
@@ -315,11 +316,10 @@ export const sortInteractions = (interactions, searchText = '', data) => {
       (interaction.type === INTERACTION_NORMAL ? true
         // Lewd interaction
         : interaction.type === INTERACTION_LEWD ? verb_consent
-          // Unholy interaction
-          : interaction.type === INTERACTION_UNHOLY
-            ? verb_consent && unholy_pref
-            // Extreme interaction
-            : verb_consent && extreme_pref)),
+        // Extreme interaction
+          : interaction.type === INTERACTION_EXTREME ? (verb_consent && extreme_pref)
+            // Unholy interaction
+            : interaction.type === INTERACTION_UNHOLY ? (verb_consent && unholy_pref) : true)),
 
     // Filter off interactions depending on target's pref
     filter(interaction =>
@@ -329,11 +329,10 @@ export const sortInteractions = (interactions, searchText = '', data) => {
         : interaction.type === INTERACTION_NORMAL ? true
           // Lewd interaction
           : interaction.type === INTERACTION_LEWD ? theyAllowLewd
-            // Unholy interaction
-            : interaction.type === INTERACTION_UNHOLY
-              ? theyAllowLewd && theyAllowUnholy
-              // Extreme interaction
-              : theyAllowLewd && theyAllowExtreme)),
+            // Extreme interaction
+            : interaction.type === INTERACTION_EXTREME ? (theyAllowLewd && theyAllowExtreme)
+              // Unholy interaction
+              : interaction.type === INTERACTION_UNHOLY ? (theyAllowLewd && theyAllowUnholy) : true)),
 
     // Is self
     filter(interaction =>
