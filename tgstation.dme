@@ -4180,7 +4180,7 @@
 #include "modular_bluemoon\Fink\code\datums\interactions\neckkiss.dm"
 #include "modular_bluemoon\Fink\code\datums\loadout\clothing.dm"
 #include "modular_bluemoon\Fink\code\datums\traits\combined.dm"
-#include "modular_bluemoon\Fink\code\datums\traits\dna.dm"
+#include "modular_bluemoon\Fink\code\datums\traits\dna_bm.dm"
 #include "modular_bluemoon\Fink\code\datums\traits\neutral.dm"
 #include "modular_bluemoon\Fink\code\effects\visual.dm"
 #include "modular_bluemoon\Fink\code\items\censer.dm"

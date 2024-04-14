@@ -1731,3 +1731,4 @@
 	if(E.key == "deathgasp")
 		remove_signals()
 		owner.dust(TRUE, TRUE)
+//
