@@ -7,7 +7,10 @@
 	if(..())
 		return
 	if(mob_trait)
-		if(!HAS_TRAIT(owner, mob_trait))
+		if(HAS_TRAIT(owner, mob_trait))
+			instability = 0
+			return
+		else
 			ADD_TRAIT(owner, mob_trait, GENETIC_MUTATION)
 			passtable_on(owner, GENETIC_MUTATION)
 
