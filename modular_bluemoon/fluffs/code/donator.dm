@@ -512,6 +512,13 @@
 	ckeywhitelist = list("ghoststalin", "g3234")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/ntcane
+	name = "Nanotrasen Cane Modification Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/ntcane_kit
+	ckeywhitelist = list("stasdvrz")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
 /datum/gear/donator/bm/money_100k
 	name = "Extra Money"
 	slot = ITEM_SLOT_BACKPACK

@@ -6,7 +6,6 @@
 	body_parts_covered = HEAD
 	slot_flags = ITEM_SLOT_HEAD
 	var/blockTracking = 0 //For AI tracking
-	var/can_toggle = null
 	dynamic_hair_suffix = ""
 	var/datum/beepsky_fashion/beepsky_fashion //the associated datum for applying this to a secbot
 	var/vision_flags = 0

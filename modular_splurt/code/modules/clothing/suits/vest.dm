@@ -69,6 +69,13 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	dog_fashion = null
 
+/obj/item/clothing/suit/armor/vest/command
+	name = "command staff armored vest"
+	desc = "A Type I armored vest that provides decent protection against most types of damage. This one is used by the command officer"
+	icon_state = "press_armor"
+	item_state = "press_armor"
+	dog_fashion = null
+
 /obj/item/clothing/suit/armor/vest/peacekeeper
 	name = "peacekeeper armored vest"
 	desc = "A Type I armored vest that provides decent protection against most types of damage. This one is used by the peace minded officer"

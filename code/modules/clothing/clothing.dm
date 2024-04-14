@@ -8,6 +8,7 @@
 	var/flash_protect = 0		//What level of bright light protection item has. 1 = Flashers, Flashes, & Flashbangs | 2 = Welding | -1 = OH GOD WELDING BURNT OUT MY RETINAS
 	var/tint = 0				//Sets the item's level of visual impairment tint, normally set to the same as flash_protect
 	var/up = 0					//but separated to allow items to protect but not impair vision, like space helmets
+	var/can_toggle = null
 	var/visor_flags = 0			//flags that are added/removed when an item is adjusted up/down
 	var/visor_flags_inv = 0		//same as visor_flags, but for flags_inv
 	var/visor_flags_cover = 0	//same as above, but for flags_cover
@@ -411,16 +412,23 @@ BLIND     // can't see anything
 		A.UpdateButtonIcon()
 	return TRUE
 
+/obj/item/clothing/update_icon_state()
+	if(!can_toggle)
+		return FALSE
+	// Done as such to not break chameleon gear since you can't rely on initial states
+	icon_state = "[replacetext("[icon_state]", "up", "")][up ? "up" : ""]"
+	return TRUE
+
 /obj/item/clothing/proc/visor_toggling() //handles all the actual toggling of flags
 	up = !up
 	clothing_flags ^= visor_flags
 	flags_inv ^= visor_flags_inv
 	flags_cover ^= initial(flags_cover)
-	icon_state = "[initial(icon_state)][up ? "up" : ""]"
 	if(visor_vars_to_toggle & VISOR_FLASHPROTECT)
 		flash_protect ^= initial(flash_protect)
 	if(visor_vars_to_toggle & VISOR_TINT)
 		tint ^= initial(tint)
+	update_icon(UPDATE_ICON_STATE)
 
 
 /obj/item/clothing/proc/can_use(mob/user)

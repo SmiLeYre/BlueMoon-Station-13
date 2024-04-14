@@ -48,14 +48,14 @@
 /obj/item/slimecross/stabilized/fetish/darkpurple
 	name = "Заводной куб жара"
 	desc = "Латунный куб из множества шестерней. Веет теплом прямо в руки."
-	icon_state = "darkpurple"
-	colour = "darkpurple"
+	icon_state = "dark purple"
+	colour = "dark purple"
 
 /obj/item/slimecross/stabilized/fetish/darkblue
 	name = "Ангел хранитель"
 	desc = "Сделан из мрамора, влажный. На пьедестале надпись:'Exi ignis'."
-	icon_state = "darkblue"
-	colour = "darkblue"
+	icon_state = "dark blue"
+	colour = "dark blue"
 
 /obj/item/slimecross/stabilized/fetish/sepia
 	name = "Камень голубых лун"
@@ -127,7 +127,7 @@
 
 /obj/item/slimecross/stabilized/fetish/pink
 	name = "Винтажный порно журнал «Запретный плод»"
-	desc = "Страницы слиплись, открыть не получается."
+	desc = "Страницы слиплись, открыть не получается. Ощутимая похоть заставлет выбросить всю агрессию из головы."
 	icon_state = "pink"
 	colour = "pink"
 
@@ -136,19 +136,7 @@
 	desc = "Гравировка гласит: `Сильные душой - достигают небес`."
 	icon_state = "oil"
 	colour = "oil"
-/*
-/obj/item/slimecross/stabilized/fetish/lightpink
-	name = "Ангел хранитель"
-	desc = "Сделано из мрамора. На пьедестале написано 'primum non nocere.'"
-	icon_state = "lightpink"
-	colour = "lightpink"
 
-/obj/item/slimecross/stabilized/fetish/adamantine
-	name = "Cтальной презерватив"
-	desc = "'С ним намного безопасней! 100% защиты, 99% прочности.' Даже не открыть."
-	icon_state = "adamantine"
-	colour = "adamantine"
-*/
 //////
 
 /obj/item/choice_beacon/box/fetish

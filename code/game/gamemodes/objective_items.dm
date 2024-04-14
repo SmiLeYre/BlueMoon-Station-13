@@ -81,7 +81,7 @@
 
 /datum/objective_item/steal/zippo_qm
 	name = "Зажигалку Завхоза."
-	targetitem = /obj/item/lighter/engraved
+	targetitem = /obj/item/lighter/qm_engraved
 	difficulty = 2
 	excludefromjob = list("Quartermaster")
 

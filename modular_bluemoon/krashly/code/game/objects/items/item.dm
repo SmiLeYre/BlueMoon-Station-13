@@ -72,6 +72,21 @@
 
 //InteQ
 
+/obj/structure/sign/flag/fake_inteq
+	name = "Flag of PMC InteQ"
+	desc = "Коричнево-Оранжевый флаг с щитом по центру. Флаг пахнет кровью."
+	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
+	icon_state = "full"
+	item_flag = /obj/item/sign/flag/fake_inteq
+
+/obj/item/sign/flag/fake_inteq
+	name = "Folded Flag of the PMC InteQ"
+	desc = "Сложенный флаг ЧВК 'InteQ'."
+	flag_type = "inteq"
+	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
+	icon_state = "mini"
+	sign_path = /obj/structure/sign/flag/fake_inteq
+
 /obj/structure/sign/flag/inteq
 	name = "flag of PMC InteQ"
 	desc = "Коричнево-Оранжевый флаг с щитом по центру. Флаг пахнет кровью."

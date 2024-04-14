@@ -149,7 +149,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	box = /obj/item/storage/box/survival/syndie
 	pda_slot = ITEM_SLOT_BELT
-	backpack_contents = list(/obj/item/camera/spooky = 1,
+	backpack_contents = list(/obj/item/storage/briefcase/crafted/chap_stuff = 1,
 							/obj/item/stamp/chap = 1,
 							/obj/item/syndicate_uplink=1,
 							/obj/item/reagent_containers/censer = 1  // BLUEMOON edit

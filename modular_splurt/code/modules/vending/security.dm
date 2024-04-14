@@ -267,7 +267,7 @@
 	new /obj/item/clothing/accessory/lawyers_badge(src)
 	new /obj/item/camera/detective(src)
 	new /obj/item/storage/box/evidence(src)
-	new /obj/item/melee/classic_baton/telescopic/centcom(src)
+	new /obj/item/melee/classic_baton/ntcane(src)
 	new /obj/item/folder(src)
 	new /obj/item/folder(src)
 	new /obj/item/folder(src)

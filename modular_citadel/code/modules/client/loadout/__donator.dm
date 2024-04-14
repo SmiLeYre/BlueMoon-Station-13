@@ -43,7 +43,7 @@
 	ckeywhitelist = list()
 	cost = 4
 	donator_group_id = DONATOR_GROUP_TIER_1
-
+/*
 /datum/gear/donator/summon_pie
 	name = "Book: Summon Pie"
 	slot = ITEM_SLOT_BACKPACK
@@ -51,7 +51,7 @@
 	ckeywhitelist = list()
 	cost = 6
 	donator_group_id = DONATOR_GROUP_TIER_1
-
+*/
 /datum/gear/donator/purple_zippo
 	name = "Purple Zippo"
 	slot = ITEM_SLOT_BACKPACK

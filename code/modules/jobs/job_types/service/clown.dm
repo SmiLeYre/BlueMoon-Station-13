@@ -25,6 +25,13 @@
 	family_heirlooms = list(
 		/obj/item/bikehorn/golden
 	)
+// BLUEMOON ADD START - спелл на вызов пирогов у клоуна раундстартом
+/datum/job/clown/after_spawn(mob/living/H, client/C)
+	. = ..()
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/targeted/conjure_item/summon_pie/S = new
+		H.mind.AddSpell(S)
+// BLUEMOON ADD END
 
 /datum/outfit/job/clown
 	name = "Clown"
