@@ -7,16 +7,18 @@
 	if(..())
 		return
 	if(mob_trait)
-		ADD_TRAIT(owner, mob_trait, GENETIC_MUTATION)
-		passtable_on(owner, GENETIC_MUTATION)
+		if(!HAS_TRAIT(owner, mob_trait))
+			ADD_TRAIT(owner, mob_trait, GENETIC_MUTATION)
+			passtable_on(owner, GENETIC_MUTATION)
 
 
 /datum/mutation/human/bm/on_losing(mob/living/carbon/human/owner)
 	if(..())
 		return
 	if(mob_trait)
-		REMOVE_TRAIT(owner, TRAIT_SPEEDY_STEP, GENETIC_MUTATION)
-		passtable_off(owner, GENETIC_MUTATION)
+		if(HAS_TRAIT(owner, mob_trait))
+			REMOVE_TRAIT(owner, mob_trait, GENETIC_MUTATION)
+			passtable_off(owner, GENETIC_MUTATION)
 
 
 ////////////////
@@ -1526,7 +1528,7 @@
 
 
 	owner.adjust_nutrition(-0.09)//increases their nutrition loss rate to encourage them to gain a partner they can essentially leech off of
-
+/*
 /datum/mutation/human/bm/gargoyle //Mmmm yes stone time
 	name = "Горгулья"
 	desc = "Вы относитесь к какому-то виду горгульи! Вы можете выходить из каменной формы на определенное время, но вам придётся в неё вернуться, чтобы восстановить энергию. С другой стороны, вы лечитесь, будучи в камне!"
@@ -1605,6 +1607,7 @@
 	P?.Remove(owner)
 	. = ..()
 
+*/
 
 /datum/mutation/human/bm/masked_mook
 	name = "Синдром Бейна"
