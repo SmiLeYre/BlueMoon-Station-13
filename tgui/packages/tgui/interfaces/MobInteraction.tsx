@@ -317,9 +317,11 @@ export const sortInteractions = (interactions, searchText = '', data) => {
         // Lewd interaction
         : interaction.type === INTERACTION_LEWD ? verb_consent
         // Extreme interaction
-          : interaction.type === INTERACTION_EXTREME ? (verb_consent && extreme_pref)
+          : interaction.type === INTERACTION_EXTREME
+            ? (verb_consent && extreme_pref)
             // Unholy interaction
-            : interaction.type === INTERACTION_UNHOLY ? (verb_consent && unholy_pref) : true)),
+            : interaction.type === INTERACTION_UNHOLY
+              ? (verb_consent && unholy_pref) : true)),
 
     // Filter off interactions depending on target's pref
     filter(interaction =>
@@ -330,9 +332,11 @@ export const sortInteractions = (interactions, searchText = '', data) => {
           // Lewd interaction
           : interaction.type === INTERACTION_LEWD ? theyAllowLewd
             // Extreme interaction
-            : interaction.type === INTERACTION_EXTREME ? (theyAllowLewd && theyAllowExtreme)
+            : interaction.type === INTERACTION_EXTREME
+              ? (theyAllowLewd && theyAllowExtreme)
               // Unholy interaction
-              : interaction.type === INTERACTION_UNHOLY ? (theyAllowLewd && theyAllowUnholy) : true)),
+              : interaction.type === INTERACTION_UNHOLY
+                ? (theyAllowLewd && theyAllowUnholy) : true)),
 
     // Is self
     filter(interaction =>
