@@ -16,10 +16,10 @@
 
 /datum/proximity_monitor/advanced/demoraliser/proc/on_examine(datum/source, mob/examiner)
 	SIGNAL_HANDLER
-	if (isliving(examiner))
+	if (ishuman(examiner))
 		pugach(examiner)
 
-/datum/proximity_monitor/advanced/demoraliser/proc/pugach(mob/living/viewer)
+/datum/proximity_monitor/advanced/demoraliser/proc/pugach(mob/living/carbon/human/viewer)
 	var/message = pick("spooks you to the bone", "shakes you up", "terrifies you", "sends you into a panic", "sends chills down your spine")
 
 	if (viewer.stat != CONSCIOUS)
