@@ -114,6 +114,8 @@
 		return
 	if(viewer.is_blind())
 		return
+	if(!ishuman(viewer))
+		return
 	if(HAS_TRAIT(viewer, TRAIT_FEARLESS))
 		return
 	if(IS_INTEQ(viewer))
@@ -201,6 +203,8 @@
 	if (viewer.stat != CONSCIOUS)
 		return
 	if(viewer.is_blind())
+		return
+	if(!ishuman(viewer))
 		return
 	if(HAS_TRAIT(viewer, TRAIT_FEARLESS))
 		return
