@@ -168,6 +168,19 @@
 	poster_type = /obj/structure/sign/poster/contraband/inteq/random
 	icon_state = "rolled_contraband"
 
+/obj/item/storage/box/inteq_box/posters
+	name = "InteQ Posters Box"
+	desc = "Каробочка. Крутая."
+
+/obj/item/storage/box/inteq_box/posters/PopulateContents()
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+
 ///////
 
 /obj/structure/sign/poster/contraband/inteq
