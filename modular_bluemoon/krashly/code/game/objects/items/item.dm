@@ -252,6 +252,19 @@
 	QDEL_NULL(demotivator)
 	return ..()
 
+/obj/structure/sign/poster/contraband/inteq/on_attack_hand(mob/living/carbon/human/user)
+	if(istype(user) && user.dna.check_mutation(TK))
+		to_chat(user, "<span class='notice'>You telekinetically remove the [src].</span>")
+	else if(user.gloves)
+		if(istype(user.gloves,/obj/item/clothing/gloves/tackler))
+			to_chat(user, "<span class='warning'>Вы срываете [src], но лезвия на обороте режут вам руку!</span>")
+			user.apply_damage(5, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+	else
+		to_chat(user, "<span class='warning'>Вы пытаетесь сорвать [src], но лезвия на обороте режут вам руку и мешают поддеть [src]!</span>")
+		to_chat(user, "<span class='warning'>Нужны кусачки!</span>")
+		user.apply_damage(5, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+		return
+	.=..()
 ///////
 /obj/structure/sign/poster/contraband/inteq/random
 	name = "random contraband poster"
