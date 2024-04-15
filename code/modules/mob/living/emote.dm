@@ -454,7 +454,7 @@
 
 /datum/emote/living/sigh/run_emote(mob/user, params)
 	. = ..()
-	if(!isliving(user) || !.)
+	if(!iscarbon(user) || !.)
 		return
 	var/mob/living/carbon/C = user
 	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
@@ -488,7 +488,7 @@
 
 /datum/emote/living/sneeze/run_emote(mob/user, params)
 	. = ..()
-	if(!isliving(user) || !.)
+	if(!iscarbon(user) || !.)
 		return
 	var/mob/living/carbon/C = user
 	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
@@ -511,8 +511,6 @@
 
 /datum/emote/living/sniff/run_emote(mob/user, params)
 	. = ..()
-	if(!. || !isliving(user))
-		return
 	var/mob/living/carbon/C = user
 	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 		playsound(C, pick('sound/voice/sniff_f1.ogg'), 50, 1)
