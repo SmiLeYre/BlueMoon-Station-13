@@ -555,10 +555,6 @@
 /obj/structure/sign/poster/contraband/inteq/inteq_no_sex,
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
-"bB" = (
-/obj/structure/sign/poster/contraband/inteq/inteq_vulp,
-/turf/closed/wall/r_wall/syndicate,
-/area/ruin/space/has_grav/inteq_forgotten_ship)
 "bD" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 5
@@ -816,13 +812,6 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/bag/tray,
 /turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/inteq_forgotten_ship)
-"cs" = (
-/obj/structure/sign/poster/contraband/syndicate_pistol{
-	icon_state = "poster_syndicate";
-	name = "poster"
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "ct" = (
 /obj/machinery/light,
@@ -1780,6 +1769,9 @@
 	},
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
+	},
+/obj/structure/sign/poster/contraband/inteq/inteq_sign{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
@@ -4870,7 +4862,7 @@
 /obj/machinery/cryopod{
 	dir = 4
 	},
-/obj/structure/sign/poster/contraband/vulp7{
+/obj/structure/sign/poster/contraband/inteq/inteq_recruitment{
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
@@ -4961,6 +4953,9 @@
 	},
 /obj/machinery/light{
 	dir = 1
+	},
+/obj/structure/sign/poster/contraband/inteq/inteq_sign{
+	pixel_y = 32
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
@@ -8592,7 +8587,7 @@ aa
 cz
 cD
 kG
-cs
+cD
 jm
 BE
 BE
@@ -9414,7 +9409,7 @@ aa
 aa
 aa
 aa
-bB
+th
 SC
 go
 bW

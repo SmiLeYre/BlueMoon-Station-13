@@ -617,3 +617,9 @@
 	ckeywhitelist = list("sanecman")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/emagged_jukebox
+	name = "Emagged Jukebox Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/jukebox/emagged
+	ckeywhitelist = list("smileycom")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
