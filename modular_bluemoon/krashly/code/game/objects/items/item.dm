@@ -141,9 +141,9 @@
 				viewer.say("AAAAH!!", forced = "phobia")
 				viewer.pointed(src)
 			if(4)
-				to_chat(viewer, "<span class='warning'>You shut your eyes in terror!</span>")
+				viewer.emote("chill")
 				viewer.Jitter(5)
-				viewer.blind_eyes(10)
+				viewer.pointed(src)
 			if(5)
 				viewer.dizziness += 10
 				viewer.confused += 10
@@ -231,9 +231,9 @@
 				viewer.say("AAAAH!!", forced = "phobia")
 				viewer.pointed(src)
 			if(4)
-				to_chat(viewer, "<span class='warning'>You shut your eyes in terror!</span>")
+				viewer.emote("chill")
 				viewer.Jitter(5)
-				viewer.blind_eyes(10)
+				viewer.pointed(src)
 			if(5)
 				viewer.dizziness += 10
 				viewer.confused += 10
@@ -241,6 +241,7 @@
 				viewer.stuttering += 10
 
 //////
+
 
 /obj/structure/sign/poster/contraband/inteq/attackby(obj/item/tool, mob/user, params)
 	if (tool.tool_behaviour == TOOL_WIRECUTTER)
