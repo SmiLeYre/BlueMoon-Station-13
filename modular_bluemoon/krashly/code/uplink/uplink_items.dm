@@ -6,7 +6,7 @@
 	name = "Propaganda poster"
 	desc = "Пусть они знают, кто здесь Босс!"
 	item = /obj/item/storage/box/inteq_box/posters
-	cost = 1
+	cost = 5
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/inteq/clothes_box
