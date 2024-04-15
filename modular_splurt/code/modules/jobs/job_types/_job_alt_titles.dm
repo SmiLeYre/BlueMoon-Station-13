@@ -60,8 +60,7 @@
 		"Syndicate Field Commander",
 		"AC Special Lieutenant",
 		"Head of Slutcurity",
-		"Head of Studcurity",
-		"Big Iron"
+		"Head of Studcurity"
 	)
 	if(SSevents.holidays && SSevents.holidays[HALLOWEEN])
 		LAZYADD(extra_titles, "Head of Spookcurity")

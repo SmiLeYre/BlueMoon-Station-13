@@ -4149,6 +4149,7 @@
 #include "modular_bluemoon\code\modules\client\loadout\uniform.dm"
 #include "modular_bluemoon\code\modules\clothing\suits\eyes.dm"
 #include "modular_bluemoon\code\modules\clothing\suits\miscellaneous.dm"
+#include "modular_bluemoon\code\modules\clothing\suits\poly_cape.dm"
 #include "modular_bluemoon\code\modules\jobs\job_types\job.dm"
 #include "modular_bluemoon\code\modules\jobs\job_types\synthetics\ai.dm"
 #include "modular_bluemoon\code\modules\jobs\job_types\synthetics\cyborg.dm"

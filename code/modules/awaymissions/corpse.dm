@@ -149,12 +149,11 @@
 		special(M, name)
 		if (M.client)
 			if (loadout_enabled == TRUE)
-				M.client.prefs.copy_to(M)
 				SSjob.equip_loadout(null, M)
 				SSjob.post_equip_loadout(null, M)
-				to_chat(M,"<span class='boldwarning'>В Эксту посещать станцию допустимо, в Динамику запрещено!</span>")
 		MM.name = M.real_name
 		M.checkloadappearance()
+		to_chat(M,"<span class='boldwarning'>В Эксту посещать станцию допустимо, в Динамику запрещено!</span>")
 		special_post_appearance(M, name) // BLUEMOON ADD
 	if(uses > 0)
 		uses--
