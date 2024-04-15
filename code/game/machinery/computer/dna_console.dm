@@ -283,7 +283,7 @@
 
 	data["view"] = tgui_view_state
 	data["storage"] = list()
-
+	//
 	// This block of code generates the huge data structure passed to the tgui
 	// interface for displaying all the various bits of console/scanner data
 	// Should all be very self-explanatory

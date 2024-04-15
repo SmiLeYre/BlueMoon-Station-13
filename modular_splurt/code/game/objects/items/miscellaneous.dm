@@ -90,7 +90,7 @@
 
 
 /obj/item/disk/data
-	max_mutations = 15
+	max_mutations = 45 // генофонд вырос в трое. вместимость диска тоже.
 
 //This'll be used for gun permits, such as for heads of staff, crew, and bartenders. Sec and the Captain do not require these
 
