@@ -3652,17 +3652,10 @@
 /turf/open/floor/plasteel,
 /area/centcom/control)
 "ajB" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
+/obj/effect/turf_decal/tile/red/half{
+	dir = 8
 	},
-/obj/structure/noticeboard{
-	dir = 8;
-	pixel_x = 32
-	},
-/obj/machinery/light{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "ajC" = (
 /obj/docking_port/stationary{
@@ -12262,6 +12255,9 @@
 /area/syndicate_mothership)
 "aCk" = (
 /obj/effect/turf_decal/tile/red/anticorner,
+/obj/machinery/light{
+	light_color = "#c9d3e8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "aCl" = (
@@ -21699,6 +21695,13 @@
 	},
 /turf/open/indestructible/hoteltile,
 /area/centcom/holding)
+"dbT" = (
+/obj/machinery/light{
+	light_color = "#c9d3e8"
+	},
+/obj/machinery/power/apc/auto_name/south,
+/turf/open/floor/wood/wood_tiled,
+/area/centcom/control)
 "dcj" = (
 /obj/structure/chair/sofa/corp{
 	dir = 8
@@ -30663,12 +30666,6 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/bluespace,
 /area/centcom)
-"oGI" = (
-/obj/effect/turf_decal/tile/red/half{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/centcom/control)
 "oGP" = (
 /obj/structure/closet/wardrobe/miner,
 /obj/effect/turf_decal/tile/brown/fourcorners,
@@ -36462,6 +36459,19 @@
 /obj/machinery/cell_charger,
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
+"wxz" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/noticeboard{
+	dir = 8;
+	pixel_x = 32
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/centcom/control)
 "wxX" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -85046,7 +85056,7 @@ ajj
 aiU
 aiU
 aiU
-ajB
+wxz
 aiU
 ajV
 aiU
@@ -85559,7 +85569,7 @@ chi
 aio
 hsk
 nBV
-oGI
+ajB
 dNn
 aio
 aiH
@@ -89153,7 +89163,7 @@ lmK
 jJM
 xEb
 cLY
-wEr
+dbT
 aio
 xCh
 qxz
