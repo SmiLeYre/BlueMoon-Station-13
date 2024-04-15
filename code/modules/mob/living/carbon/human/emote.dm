@@ -7,6 +7,8 @@
 
 /datum/emote/living/carbon/human/cry/run_emote(mob/user, params)
 	. = ..()
+	if(!. || !iscarbon(user))
+		return
 	var/mob/living/carbon/C = user
 	if(. && isrobotic(user))
 		do_fake_sparks(5,FALSE,user)
