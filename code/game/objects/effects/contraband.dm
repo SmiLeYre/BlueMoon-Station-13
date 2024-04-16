@@ -66,7 +66,7 @@
 	if(random_basetype)
 		randomise(random_basetype)
 		for(var/R in subtypesof(/obj/structure/sign/poster/contraband/inteq))
-			qdel(src)// интек пропаганда сама не заспавниться
+			qdel(R)// интек пропаганда сама не заспавниться
 
 
 	if(!ruined)
