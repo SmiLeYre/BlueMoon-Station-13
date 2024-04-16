@@ -65,9 +65,9 @@
 	. = ..()
 	if(random_basetype)
 		randomise(random_basetype)
-	for(var/R in subtypesof(/obj/structure/sign/poster/contraband/inteq))
-		if(istype(R, random_basetype)) // интек пропаганда сама не заспавниться
-			return
+		for(var/R in subtypesof(/obj/structure/sign/poster/contraband/inteq))
+			qdel(src)// интек пропаганда сама не заспавниться
+
 
 	if(!ruined)
 		original_name = name // can't use initial because of random posters
