@@ -554,6 +554,7 @@
 	belt = /obj/item/storage/belt/military/ert_max
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
 		/obj/item/storage/firstaid/regular=1,
+		/obj/item/gun/energy/e_gun/dragnet=1,
 		/obj/item/storage/box/ammo/smgap=1,
 		/obj/item/storage/box/ammo/holy=1,
 		/obj/item/storage/box/handcuffs=1,
