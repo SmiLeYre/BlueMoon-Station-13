@@ -12,14 +12,18 @@
 
 	if(user.a_intent == INTENT_HARM)
 		user.is_fucking(partner, CUM_TARGET_HAND)
-		partner.adjustBruteLoss(rand(3,6))
+		var/dam_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+		var/obj/item/bodypart/affecting = partner.get_bodypart(ran_zone(dam_zone))
+		partner.apply_damage(rand(3, 6), BRUTE, affecting, partner.run_armor_check(affecting, MELEE))
 		message = "[pick("прижимается к <b>[partner]</b>, раскрывает рот и начинает кусаться.",
 					"резко разрывает контакт своей челюсти с <b>[partner]</b>, тем самым образом отрывая кусок плоти.",
 					"крепко прижимает <b>[partner]</b> к своему телу и одновременно с этим прижимается зубами.",
 					"с силой закрепляется за <b>[partner]</b> своими ногтями и наносит укус за укусом.",
 					"максимально грубым образом закусывает плоть <b>[partner]</b> до самой крови.")]"
 	else
-		partner.adjustBruteLoss(rand(1,3))
+		var/dam_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+		var/obj/item/bodypart/affecting = partner.get_bodypart(ran_zone(dam_zone))
+		partner.apply_damage(rand(1, 3), BRUTE, affecting, partner.run_armor_check(affecting, MELEE))
 		message = "[pick("нежно прижимается к <b>[partner]</b>, раскрывает рот и начинает кусаться.",
 					"медленно разрывает контакт своей челюсти с <b>[partner]</b>, тем самым образом открывая свежую рану.",
 					"нежно прижимает <b>[partner]</b> к своему телу и одновременно с этим прижимается зубами.",
@@ -30,7 +34,7 @@
 		if(cli && istype(C))
 			if(cli.prefs.extremeharm != "No")
 				if(prob(30))
-					C.bleed(1)
+					C.bleed(2)
 					C.add_splatter_floor(get_turf(BLOOD_COLOR_HUMAN), TRUE)
 					new/obj/effect/decal/cleanable/blood
 

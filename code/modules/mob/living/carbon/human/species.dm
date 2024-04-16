@@ -2414,9 +2414,17 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			var/damage_amount
 			if (HAS_TRAIT(H, TRAIT_TOUGHT) && !forced) // проверка на трейт стойкости
 				if (damage <= 10) //если урон до применения модификаторов не привышает 10, то он не учитывается
+					if(HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
+						H.visible_message(span_warning("Корпус [H] слишком прочный, удар не повредил его!"), span_notice("Корпус нивелирует наносимые повреждения."))
+					else
+						H.visible_message("Кожа [H] слишком прочная, удар не повредил её!", span_notice("Кожа даже не повреждается от наносимых повреждений."))
 					return 0
 				damage_amount = damage * hit_percent * brutemod * H.physiology.brute_mod
 				if (damage_amount <= 5) //если урон после применения модификаторов не привышает 5, то он не учитывается
+					if(HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
+						H.visible_message(span_warning("Корпус [H] слишком прочный, удар не повредил его!"), span_notice("Корпус нивелирует наносимые повреждения."))
+					else
+						H.visible_message("Кожа [H] слишком прочная, удар не повредил её!", span_notice("Кожа даже не повреждается от наносимых повреждений."))
 					return 0
 			else
 				damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod

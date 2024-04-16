@@ -470,7 +470,7 @@
 			if(O.interaction_flags & INTERACTION_FLAG_EXTREME_CONTENT)
 				interaction["type"] = INTERACTION_EXTREME
 			//SPLURT EDIT
-			if(O.interaction_flags & INTERACTION_FLAG_UNHOLY_CONTENT)
+			else if(O.interaction_flags & INTERACTION_FLAG_UNHOLY_CONTENT)
 				interaction["type"] = INTERACTION_UNHOLY
 			//SPLURT EDIT END
 			else

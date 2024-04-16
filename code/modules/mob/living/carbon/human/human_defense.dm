@@ -336,7 +336,7 @@
 	show_message("<span class='userdanger'>Блоб атакует вас!</span>")
 	var/dam_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
 	var/obj/item/bodypart/affecting = get_bodypart(ran_zone(dam_zone))
-	apply_damage(5, BRUTE, affecting, run_armor_check(affecting, MELEE))
+	apply_damage(rand(15, 30), BRUTE, affecting, run_armor_check(affecting, MELEE))
 
 
 ///Calculates the siemens coeff based on clothing and species, can also restart hearts.

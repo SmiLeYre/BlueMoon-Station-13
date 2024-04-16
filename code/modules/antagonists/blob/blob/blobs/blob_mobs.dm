@@ -205,8 +205,9 @@
 	maxHealth = 500
 	damage_coeff = list(BRUTE = 0.5, BURN = 1, TOX = 1, CLONE = 1, STAMINA = 0, OXY = 1)
 	melee_damage_lower = 40
-	melee_damage_upper = 40
-	obj_damage = 60
+	melee_damage_upper = 60
+	armour_penetration = 55
+	obj_damage = 120
 	attack_verb_continuous = "slams"
 	attack_verb_simple = "slam"
 	attack_sound = 'sound/effects/blobattack.ogg'
