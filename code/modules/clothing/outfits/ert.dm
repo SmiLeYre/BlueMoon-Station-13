@@ -531,6 +531,7 @@
 		/obj/item/storage/box/ammo/holy=1,
 		/obj/item/storage/box/ammo/smgap=1,
 		/obj/item/nullrod=1,
+		/obj/item/storage/book/bible = 1,
 		)
 
 	cybernetic_implants = list(
@@ -557,6 +558,7 @@
 		/obj/item/storage/box/ammo/holy=1,
 		/obj/item/storage/box/handcuffs=1,
 		/obj/item/nullrod=1,
+		/obj/item/storage/book/bible = 1,
 		)
 
 	cybernetic_implants = list(
@@ -585,12 +587,13 @@
 		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,
 		/obj/item/nullrod=1,
+		/obj/item/storage/book/bible = 1,
 		)
 
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,
 		/obj/item/organ/cyberimp/chest/nutrimentextreme,
-		/obj/item/organ/cyberimp/chest/chem_implant,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
 		/obj/item/organ/cyberimp/arm/surgery/advanced,
 		/obj/item/organ/cyberimp/chest/thrusters,
 	)
