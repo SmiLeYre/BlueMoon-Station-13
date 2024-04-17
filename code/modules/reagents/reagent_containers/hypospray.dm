@@ -135,6 +135,9 @@
 	update_icon()
 	addtimer(CALLBACK(src, .proc/cyborg_recharge, user), 80)
 
+/obj/item/reagent_containers/hypospray/medipen/attack_self()
+	attack(usr, usr)
+
 /obj/item/reagent_containers/hypospray/medipen/proc/cyborg_recharge(mob/living/silicon/robot/user)
 	if(!reagents.total_volume && iscyborg(user))
 		var/mob/living/silicon/robot/R = user

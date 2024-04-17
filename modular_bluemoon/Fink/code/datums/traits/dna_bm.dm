@@ -528,7 +528,7 @@
 /datum/mutation/human/bm/no_smell
 	name = "Аносмия"
 	desc = "Вы не ощущаете запахи! Вы не сможете обнаружать определенные бесцветные газы."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_ANOSMIA
@@ -584,9 +584,9 @@
 /datum/mutation/human/bm/no_taste
 	name = "Агевзия"
 	desc = "Вы не чувствуете вкуса! Ядовитая еда всё ещё будет иметь пагубное воздействие."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
-	instability = 0
+	instability = -10
 	mob_trait = TRAIT_AGEUSIA
 	text_gain_indication = "<span class='notice'>Вы не чувствуете вкуса!</span>"
 	text_lose_indication = "<span class='notice'>Вы снова чувствуете вкус!</span>"
@@ -824,9 +824,9 @@
 /datum/mutation/human/bm/dnc_order
 	name = "Приказ Не Клонировать"
 	desc = "На вас записан приказ 'Не клонировать', в котором, как бы это странно не звучало, говорится, что вас нельзя клонировать. Вы все еще можете быть оживлены другими способами."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
-	instability = 0
+	instability = -20
 	mob_trait = TRAIT_DNC_ORDER
 
 /datum/mutation/human/bm/tough
@@ -1191,9 +1191,9 @@
 /datum/mutation/human/bm/pharmacokinesis //Supposed to prevent unwanted organ additions. But i don't think it's really working rn
 	name = "Острый Печеночный Фармакокинез" //copypasting dumbo
 	desc = "У вас генетическое заболевание, которое заставляет печень усваивать семя инкуба и молоко суккуба при попадании их в организм."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
-	instability = 0
+	instability = -10
 	mob_trait = TRAIT_PHARMA
 	text_lose_indication = "<span class='danger'>Ваша печень ощущается... по-иному.</span>"
 
@@ -1294,10 +1294,10 @@
 
 /datum/mutation/human/bm/overweight
 	name = "Лишний Вес"
-	desc = "Вы обожаете еду и появляетесь на смене с лишним весом."
-	quality = MINOR_NEGATIVE
+	desc = "Вы обожаете еду. Вы с лишним весом."
+	quality = NEGATIVE
 	difficulty = 8
-	instability = 0
+	instability = -10
 	text_gain_indication = "<span class='notice'>Вы чувствуете себя толстым!</span>"
 	mob_trait = TRAIT_FAT
 	//no text_lose_indication cause why would there be?
@@ -1485,9 +1485,9 @@
 /datum/mutation/human/bm/incubus
 	name = "Инкуб"
 	desc = "Ваш голод может быть утолен только молоком. (И семенем, если вы также Суккуб.)"
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
-	instability = 0
+	instability = -20
 	mob_trait = TRAIT_INCUBUS
 
 /datum/mutation/human/bm/incubus/on_acquiring(mob/living/carbon/human/owner)
@@ -1510,9 +1510,9 @@
 /datum/mutation/human/bm/succubus
 	name = "Суккуб"
 	desc = "Ваш голод может быть утолен только семенем. (И молоком, если вы также Инкуб.)"
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
-	instability = 0
+	instability = -20
 	mob_trait = TRAIT_SUCCUBUS
 
 /datum/mutation/human/bm/succubus/on_acquiring(mob/living/carbon/human/owner)
@@ -1634,9 +1634,9 @@
 /datum/mutation/human/bm/body_morpher
 	name = "Изменятель Тела"
 	desc = "Каким-то образом вы развили способность, позволяющую вашему телу морфировать и изменять свои части тела, подобно тому, как это может делать слаймик."
-	quality = MINOR_NEGATIVE
-	difficulty = 8
-	instability = 0
+	quality = POSITIVE
+	difficulty = 14
+	instability = 30
 	mob_trait = TRAIT_BODY_MORPHER
 	text_gain_indication = "<span class='notice'>Ваше тело становится более податливым...</span>"
 	text_lose_indication = "<span class='danger'>Ваше тело более упругое, чем раньше.</span>"
@@ -1664,9 +1664,9 @@
 /datum/mutation/human/bm/modular
 	name = "Модульные Конечности"
 	desc = "Ваши конечности можно легко присоединять и отсоединять... к сожалению, все окружающие тоже могут изменять ваши конечности! Щелкните правой кнопкой мыши на себе, чтобы использовать эту причуду."
-	quality = MINOR_NEGATIVE
-	difficulty = 8
-	instability = 0
+	quality = POSITIVE
+	difficulty = 12
+	instability = 20
 
 /datum/mutation/human/bm/modular/on_acquiring(mob/living/carbon/human/owner)
 	. = ..()

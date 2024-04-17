@@ -879,6 +879,7 @@
 			var/datum/mutation/human/A = new HM.type()
 			A.copy_mutation(HM)
 			diskette.mutations += A
+			diskette.mutations = sort_list(diskette.mutations)
 			to_chat(usr,"<span class='notice'>Mutation successfully stored to disk.</span>")
 			return
 
@@ -2187,3 +2188,4 @@
 #undef SEARCH_STORED
 #undef SEARCH_DISKETTE
 #undef SEARCH_ADV_INJ
+
