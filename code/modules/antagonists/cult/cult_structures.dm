@@ -138,7 +138,6 @@
 	var/static/image/radial_flagellant = image(icon = 'icons/obj/clothing/suits.dmi', icon_state = "cultrobes")
 	var/static/image/radial_shielded = image(icon = 'icons/obj/clothing/suits.dmi', icon_state = "cult_armor")
 	var/static/image/radial_mirror = image(icon = 'icons/obj/items_and_weapons.dmi', icon_state = "mirror_shield")
-	var/static/image/radial_bastard = image(icon = 'icons/obj/items_and_weapons.dmi', icon_state = "cultbastard")
 
 /obj/structure/destructible/cult/forge/ui_interact(mob/user)
 	. = ..()
@@ -158,7 +157,7 @@
 	to_chat(user, "<span class='cultitalic'>You study the schematics etched into the forge...</span>")
 
 
-	var/list/options = list("\improper Nar'Sien Empowered Armor" = radial_shielded, "Flagellant's Robe" = radial_flagellant, "Mirror Shield" = radial_mirror, "Bloody Bastard Sword" = radial_bastard)
+	var/list/options = list("\improper Nar'Sien Empowered Armor" = radial_shielded, "Flagellant's Robe" = radial_flagellant, "Mirror Shield" = radial_mirror)
 	var/choice = show_radial_menu(user, src, options, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
 
 	var/reward
@@ -169,8 +168,6 @@
 			reward = /obj/item/clothing/suit/hooded/cultrobes/berserker
 		if("Mirror Shield")
 			reward = /obj/item/shield/mirror
-		if("Bloody Bastard Sword")
-			reward = /obj/item/cult_bastard
 
 	if(!QDELETED(src) && reward && check_menu(user))
 		cooldowntime = world.time + 2400

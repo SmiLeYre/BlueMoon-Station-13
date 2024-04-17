@@ -982,6 +982,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Load prefs
 	S["job_preferences"] >> job_preferences
 
+	//Custom emote panel
+	S["custom_emote_panel"] >> custom_emote_panel
+
 	//Quirks
 	S["all_quirks"] >> all_quirks
 
@@ -1325,6 +1328,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 		if(job_preferences["[j]"] != JP_LOW && job_preferences["[j]"] != JP_MEDIUM && job_preferences["[j]"] != JP_HIGH)
 			job_preferences -= j
 
+	custom_emote_panel = SANITIZE_LIST(custom_emote_panel)
+
 	all_quirks = SANITIZE_LIST(all_quirks)
 
 	language = SANITIZE_LIST(language)
@@ -1587,6 +1592,9 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//Write prefs
 	WRITE_FILE(S["job_preferences"] , job_preferences)
 	WRITE_FILE(S["hide_ckey"]		, hide_ckey)
+
+	//Custom emote panel
+	WRITE_FILE(S["custom_emote_panel"]	, custom_emote_panel)
 
 	//Quirks
 	WRITE_FILE(S["all_quirks"]			, all_quirks)

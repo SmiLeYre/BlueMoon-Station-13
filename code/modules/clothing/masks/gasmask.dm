@@ -68,6 +68,7 @@
 	visor_flags_cover = MASKCOVERSEYES
 	resistance_flags = FIRE_PROOF
 	flavor_adjust = FALSE
+	can_toggle = TRUE
 
 /obj/item/clothing/mask/gas/welding/attack_self(mob/user)
 	weldingvisortoggle(user)

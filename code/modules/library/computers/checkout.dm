@@ -462,7 +462,7 @@
 			make_external_book(newbook)
 
 	src.add_fingerprint(usr)
-	src.updateUsrDialog()
+	src.interact(usr)
 	return
 
 /*

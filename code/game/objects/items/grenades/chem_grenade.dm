@@ -396,6 +396,7 @@
 
 /obj/item/grenade/chem_grenade/cleaner
 	name = "cleaner grenade"
+	icon_state = "cleaner_grenade"
 	desc = "BLAM!-brand foaming space cleaner. In a special applicator for rapid cleaning of wide areas."
 	stage = READY
 
@@ -414,6 +415,7 @@
 
 /obj/item/grenade/chem_grenade/ez_clean
 	name = "cleaner grenade"
+	icon_state = "cleaner_grenade"
 	desc = "Waffle Co.-brand foaming space cleaner. In a special applicator for rapid cleaning of wide areas."
 	stage = READY
 

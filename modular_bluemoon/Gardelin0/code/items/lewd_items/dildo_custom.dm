@@ -116,7 +116,8 @@
 
 	if(user == G.owner)
 		to_chat(user, span_userlove("[G] чувствует что-то крупное внутри!"))
-		user.handle_post_sex(NORMAL_LUST*2, null, user)
+		user.handle_post_sex(NORMAL_LUST*3, null, user)
+		user.plug13_genital_emote(G, NORMAL_LUST*2)
 		user.Jitter(2)
 		playsound(user, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
 		inside = TRUE
@@ -172,7 +173,8 @@
 
 	if(user == G.owner)
 		to_chat(user, span_userlove("[G] чувствует что-то крупное внутри!"))
-		user.handle_post_sex(NORMAL_LUST*2, null, user)
+		user.handle_post_sex(NORMAL_LUST*3, null, user)
+		user.plug13_genital_emote(G, NORMAL_LUST*2)
 		user.Jitter(2)
 		playsound(user, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
 		inside = TRUE
@@ -211,6 +213,17 @@
 	if(message)
 		user.visible_message("<span class='lewd'><b>[user]</b> [message].</span>")
 		M.handle_post_sex(lust_amt, null, user)
+
+		switch(user.zone_selected)
+			if(BODY_ZONE_PRECISE_GROIN)
+				switch (hole)
+					if (CUM_TARGET_VAGINA)
+						user.client?.plug13.send_emote(PLUG13_EMOTE_VAGINA, min(lust_amt * 3, 100), PLUG13_DURATION_NORMAL)
+					if (CUM_TARGET_ANUS)
+						user.client?.plug13.send_emote(PLUG13_EMOTE_ANUS, min(lust_amt * 3, 100), PLUG13_DURATION_NORMAL)
+			if (BODY_ZONE_PRECISE_MOUTH)
+				user.client?.plug13.send_emote(PLUG13_EMOTE_MOUTH, 35, PLUG13_DURATION_NORMAL)
+
 		playsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
 							'modular_sand/sound/interactions/bang5.ogg',
 							'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)

@@ -57,6 +57,8 @@
 		to_chat(M, span_userdanger(pick("Сильные фрикции внутри сводят меня с ума!", "Вы чувствуете мучительное удовольствие от сильных фрикций внутри своих дырочек!")))
 	M.handle_post_sex(NORMAL_LUST*2, null, M)
 
+	M.client?.plug13.send_emote(PLUG13_EMOTE_GROIN, 60, PLUG13_DURATION_NORMAL)
+
 /obj/structure/closet/crate/open(mob/living/user, force = FALSE)
 	..()
 	if(tentacle_corrupted)
