@@ -22,6 +22,7 @@ import { setupPanelFocusHacks } from './panelFocus';
 import { pingMiddleware, pingReducer } from './ping';
 import { settingsMiddleware, settingsReducer } from './settings';
 import { telemetryMiddleware } from './telemetry';
+import { emotesReducer } from './emotes'; // BLUEMOON ADD
 
 perf.mark('inception', window.performance?.timing?.navigationStart);
 perf.mark('init');
@@ -30,6 +31,7 @@ const store = configureStore({
   reducer: combineReducers({
     audio: audioReducer,
     chat: chatReducer,
+    emotes: emotesReducer, // BLUEMOON ADD
     game: gameReducer,
     ping: pingReducer,
     settings: settingsReducer,
@@ -107,6 +109,7 @@ const setupApp = () => {
     module.hot.accept([
       './audio',
       './chat',
+      './emotes', // BLUEMOON ADD
       './game',
       './Notifications',
       './Panel',

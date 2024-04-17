@@ -333,12 +333,6 @@
 	result_atoms = list(/obj/item/living_heart)
 	route = "Start"
 
-/datum/eldritch_knowledge/living_heart/recreate
-	name = "Recreate Living Heart"
-	desc = "Смочи меня кровью и сбрось свою нынешнюю цель."
-	required_atoms = list(/obj/item/living_heart,/obj/effect/decal/cleanable/blood)
-	result_atoms = list(/obj/item/living_heart)
-
 /datum/eldritch_knowledge/codex_cicatrix
 	name = "Codex Cicatrix"
 	desc = "Allows you to create a spare Codex Cicatrix if you have lost one, using a bible, human skin, a pen and a pair of eyes."

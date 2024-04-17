@@ -286,7 +286,7 @@
 	name = "AC Patch"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/accessory/ac_patch
-	ckeywhitelist = list("romontesque", "smol42", "oni3288", "allazarius")
+	ckeywhitelist = list("romontesque", "smol42", "oni3288", "allazarius", "mihana964")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/SH_jacket
@@ -617,3 +617,9 @@
 	ckeywhitelist = list("sanecman")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/emagged_jukebox
+	name = "Emagged Jukebox Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/jukebox/emagged
+	ckeywhitelist = list("smileycom")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
