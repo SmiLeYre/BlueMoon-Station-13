@@ -112,7 +112,7 @@
 	block_chance = 50
 	throwforce = 20
 	force = 35
-	armour_penetration = 0
+	armour_penetration = 45
 	throw_speed = 1
 	throw_range = 3
 	sharpness = SHARP_EDGED

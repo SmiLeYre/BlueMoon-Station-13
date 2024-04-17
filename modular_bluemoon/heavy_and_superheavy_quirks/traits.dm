@@ -202,12 +202,15 @@
 
 /datum/movespeed_modifier/heavy_mob_drag
 	variable = TRUE
+	blacklisted_movetypes = (FLYING|FLOATING)
 
 /datum/movespeed_modifier/heavy_quirk_slowdown
 	variable = TRUE
+	blacklisted_movetypes = (FLYING|FLOATING)
 
 /datum/movespeed_modifier/giant_quirk_boost
 	variable = TRUE
+	blacklisted_movetypes = (FLYING|FLOATING)
 
 
 /*

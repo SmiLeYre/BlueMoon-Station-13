@@ -1,12 +1,14 @@
 /obj/item/living_heart
 	name = "Living Heart"
-	desc = "Связь с другим миром... смажь меня кровью, если хочешь возобновить биение сердца."
+	desc = "Связь с другим миром... смажь меня кровью, если хочешь возобновить биение сердца. Нажмите АЛЬТ-ЛКМ, чтобы сбросить жертву."
 	icon = 'icons/obj/eldritch.dmi'
 	icon_state = "living_heart"
 	w_class = WEIGHT_CLASS_SMALL
 	///Target
 	var/mob/living/carbon/human/target
 	var/datum/antagonist/heretic/sac_targetter	//The heretic who used this to acquire the current target - gets cleared when target gets sacrificed.
+	var/reset = TRUE
+	COOLDOWN_DECLARE(cooldown)
 
 /obj/item/living_heart/Initialize(mapload)
 	. = ..()
@@ -17,6 +19,23 @@
 	if(sac_targetter && target)
 		sac_targetter.sac_targetted.Remove(target.real_name)
 	return ..()
+
+/obj/item/living_heart/add_context(atom/source, list/context, obj/item/held_item, mob/living/user)
+	. = ..()
+	if(COOLDOWN_FINISHED(src, cooldown))
+		LAZYSET(context[SCREENTIP_CONTEXT_ALT_LMB], INTENT_ANY, reset ? "Restart" : "Restart")
+	return CONTEXTUAL_SCREENTIP_SET
+
+/obj/item/living_heart/process(delta_time)
+	. = ..()
+	if(COOLDOWN_FINISHED(src, cooldown))
+		COOLDOWN_START(src, cooldown, 300 SECONDS)
+		playsound(src, 'sound/misc/bloop.ogg', 50, FALSE)
+		var/mob/living/carbon/human/H = target
+		if(sac_targetter)
+			sac_targetter.sac_targetted.Remove(H.real_name)
+		target = null
+		reset = FALSE
 
 /obj/item/living_heart/attack_self(mob/user)
 	. = ..()

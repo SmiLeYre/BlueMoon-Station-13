@@ -5,6 +5,13 @@
 	interaction_flags = INTERACTION_FLAG_ADJACENT
 	interaction_sound = 'sound/weapons/thudswoosh.ogg'
 
+	p13user_emote = PLUG13_EMOTE_BASIC
+	p13user_strength = PLUG13_STRENGTH_LOW_PLUS
+	p13user_duration = PLUG13_DURATION_SHORT
+	p13target_emote = PLUG13_EMOTE_BASIC
+	p13target_strength = PLUG13_STRENGTH_LOW_PLUS
+	p13target_duration = PLUG13_DURATION_SHORT
+
 /datum/interaction/cuddle/display_interaction(mob/living/user, mob/living/target)
 	var/static/list/possible_messages = list(
 		"<b>USER</b> обнимает <b>TARGET</b>.",

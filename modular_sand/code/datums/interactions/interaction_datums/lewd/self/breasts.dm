@@ -17,6 +17,9 @@
 			)
 	)
 
+	p13user_emote = PLUG13_EMOTE_BREASTS
+	p13user_strength = PLUG13_STRENGTH_NORMAL
+
 /datum/interaction/lewd/titgrope_self/display_interaction(mob/living/user)
 	var/message
 
@@ -75,6 +78,7 @@
 	max_distance = 0
 	write_log_user = "sucked their own nips"
 	write_log_target = null
+	p13user_emote = PLUG13_EMOTE_BREASTS
 
 /datum/interaction/lewd/self_nipsuck/display_interaction(mob/living/user, mob/living/target)
 	var/message

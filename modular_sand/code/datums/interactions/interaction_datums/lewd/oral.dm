@@ -6,11 +6,15 @@
 	write_log_target = "was given head by"
 	interaction_sound = null
 	var/fucktarget = "vagina"
+	p13user_emote = PLUG13_EMOTE_MOUTH
+	p13target_emote = PLUG13_EMOTE_VAGINA
 
 /datum/interaction/lewd/oral/blowjob
 	description = "Член. Отсосать."
 	required_from_target_exposed = INTERACTION_REQUIRE_PENIS
 	fucktarget = "penis"
+	p13user_emote = PLUG13_EMOTE_MOUTH
+	p13target_emote = PLUG13_EMOTE_PENIS
 
 /datum/interaction/lewd/oral/display_interaction(mob/living/user, mob/living/partner)
 	var/message

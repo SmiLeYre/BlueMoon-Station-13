@@ -5,11 +5,11 @@
 	item = /obj/item/assembly/flash/memorizer
 	cost = 2
 
-/datum/uplink_item/stealthy_weapons/garrote
-	name = "Proffesional garrote"
-	desc = "Much more lethal than it seems."
-	item = /obj/item/garrote
-	cost = 6
+// /datum/uplink_item/stealthy_weapons/garrote
+// 	name = "Proffesional garrote"
+// 	desc = "Much more lethal than it seems."
+// 	item = /obj/item/garrote
+// 	cost = 6
 
 /datum/uplink_item/stealthy_weapons/backstabber_kit
 	name = "Backstabber Knife"

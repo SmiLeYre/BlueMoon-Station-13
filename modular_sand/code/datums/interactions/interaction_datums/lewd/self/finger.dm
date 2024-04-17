@@ -7,6 +7,8 @@
 	max_distance = 0
 	write_log_user = "fingered self"
 	write_log_target = null
+	p13user_emote = PLUG13_EMOTE_ANUS
+	p13target_strength = PLUG13_STRENGTH_NORMAL
 
 /datum/interaction/lewd/fingerass_self/display_interaction(mob/living/user)
 
@@ -26,6 +28,7 @@
 	max_distance = 0
 	write_log_user = "fingered own pussy"
 	write_log_target = null
+	p13user_emote = PLUG13_EMOTE_VAGINA
 
 	additional_details = list(
 		list(

@@ -1603,6 +1603,10 @@
 	dir = 6
 	},
 /obj/structure/table/wood/fancy/black,
+/obj/machinery/fax{
+	fax_name = "Unknown Fax";
+	name = "KK-28 Fax Machine"
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
 "iu" = (
@@ -3684,6 +3688,13 @@
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "Do" = (
 /turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/inteq_forgotten_outpost)
+"DC" = (
+/obj/machinery/fax{
+	fax_name = "Unknown Syndicate Fax";
+	name = "DS-2 Fax Machine"
+	},
+/turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
 "DD" = (
 /obj/structure/closet/crate/bin,
@@ -8850,7 +8861,7 @@ dQ
 iZ
 mq
 qV
-VR
+DC
 xV
 nN
 Kl

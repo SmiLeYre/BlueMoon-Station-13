@@ -5,6 +5,8 @@
 	write_log_user = "fucked"
 	write_log_target = "was fucked by"
 	interaction_sound = null
+	p13user_emote = PLUG13_EMOTE_PENIS
+	p13target_emote = PLUG13_EMOTE_VAGINA
 
 /datum/interaction/lewd/fuck/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -32,6 +34,9 @@
 	description = "Член. Проникнуть в задницу."
 	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
 	required_from_target_exposed = INTERACTION_REQUIRE_ANUS
+	p13user_emote = "front"
+	p13target_emote = "back"
+	p13target_emote = PLUG13_EMOTE_ANUS
 
 /datum/interaction/lewd/fuck/anal/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -65,6 +70,9 @@
 	interaction_sound = null
 	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
 	required_from_target_exposed = INTERACTION_REQUIRE_BREASTS
+	p13user_emote = PLUG13_EMOTE_PENIS
+	p13target_emote = PLUG13_EMOTE_BREASTS
+	p13target_strength = PLUG13_STRENGTH_NORMAL
 
 /datum/interaction/lewd/breastfuck/display_interaction(mob/living/user, spillage = TRUE, mob/living/partner)
 	var/message
@@ -96,6 +104,8 @@
 	required_from_target_exposed = INTERACTION_REQUIRE_FEET
 	required_from_target_unexposed = INTERACTION_REQUIRE_FEET
 	require_target_num_feet = 1
+	p13user_emote = PLUG13_EMOTE_PENIS
+	p13user_strength = PLUG13_STRENGTH_NORMAL
 
 /datum/interaction/lewd/footfuck/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -155,6 +165,7 @@
 	required_from_target_exposed = INTERACTION_REQUIRE_FEET
 	required_from_target_unexposed = INTERACTION_REQUIRE_FEET
 	require_target_num_feet = 1
+	p13user_emote = PLUG13_EMOTE_VAGINA
 
 /datum/interaction/lewd/footfuck/vag/display_interaction(mob/living/user, mob/living/partner)
 	var/message
