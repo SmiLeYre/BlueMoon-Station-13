@@ -30,7 +30,7 @@
 	name = "Устойчивость к Алкоголю"
 	desc = "Эффект опьянения наступает медленней, побочные эффекты алкоголя облегчены."
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20
 	mob_trait = TRAIT_ALCOHOL_TOLERANCE
 	text_gain_indication = "<span class='notice'>Вы чувствуете, что могли бы осушить целую бочку спиртного!</span>"
@@ -41,7 +41,7 @@
 	name = "Равнодушный"
 	desc = "Вам на всё наплевать. Круто жить в таком мире, наверное."
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20
 
 /datum/mutation/human/bm/apathetic/on_acquiring(mob/living/carbon/human/owner)
@@ -61,7 +61,7 @@
 	name = "Пьяный Угар"
 	desc = "Пьяному море по колено. В состоянии опьянения вы медленно восстанавливаетесь от полученных травм."
 	quality = POSITIVE
-	difficulty = 34
+	difficulty = 16
 	instability = 30
 	mob_trait = TRAIT_DRUNK_HEALING
 	text_gain_indication = "<span class='notice'>Вы чувствуете, что от выпивки одни только плюсы.</span>"
@@ -71,7 +71,7 @@
 	name = "Эмпат"
 	desc = "Будь то шестое чувство или тщательное изучения языка тела, вы можете с определить настроение цели посмотрев на неё."
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20 // SPLURT EDIT
 	mob_trait = TRAIT_EMPATH
 	text_gain_indication = "<span class='notice'>Вы чувствуете себя в гармонии с другими.</span>"
@@ -81,7 +81,7 @@
 	name = "Паркурщик"
 	desc = "Вы отлично справляетесь с выполнением быстрых движений! Вы сможете залезать на столы гораздо быстрее."
 	quality = POSITIVE
-	difficulty = 34
+	difficulty = 16
 	instability = 30
 	mob_trait = TRAIT_FREERUNNING
 	text_gain_indication = "<span class='notice'>Вы чувствуете легкость в ногах!</span>"
@@ -91,7 +91,7 @@
 	name = "Дружелюбный"
 	desc = "Вы лучше всех обнимаетесь, особенно при правильном настроении."
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20
 	mob_trait = TRAIT_FRIENDLY
 	text_gain_indication = "<span class='notice'>Вы хотите кого-нибудь обнять.</span>"
@@ -102,7 +102,7 @@
 	name = "Жизнерадостный"
 	desc = "Иногда вы просто счастливы."
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20
 	mob_trait = TRAIT_JOLLY
 
@@ -115,7 +115,7 @@
 	name = "Легкая Походка"
 	desc = "Вы ловки, удачливы и всегда осторожны. Хождение по разбитому стеклу и острым предметам менее болезненно и тише в вашем случае, к тому же вы не оставляете за собой следов."
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20
 	mob_trait = TRAIT_LIGHT_STEP
 	text_gain_indication = "<span class='notice'>Вы ступаете с лёгкостью.</span>"
@@ -125,7 +125,7 @@
 	name = "Быстрый Шаг"
 	desc = "Во время ходьбы вы двигаетесь решительно, в своем ритме."
 	quality = POSITIVE
-	difficulty = 34
+	difficulty = 16
 	instability = 30
 	mob_trait = TRAIT_SPEEDY_STEP
 	text_gain_indication = "<span class='notice'>Вы чувствуете себя решительно. Нельзя терять времени.</span>"
@@ -135,7 +135,7 @@
 	name = "Музыкант"
 	desc = "Вы можете настраивать ручные инструменты для игры мелодий, что снимают определенные негативные эффекты и успокаивают душу."
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20
 	mob_trait = TRAIT_MUSICIAN
 	text_gain_indication = "<span class='notice'>Вы знаете всё о музыкальных инструментах.</span>"
@@ -147,7 +147,7 @@
 	name = "Сознательный"
 	desc = "Вы хорошо знаете собственное тело и можете точно оценивать серьёзность ваших ран."
 	quality = POSITIVE
-	difficulty = 34
+	difficulty = 16
 	instability = 30
 	mob_trait = TRAIT_SELF_AWARE
 
@@ -155,7 +155,7 @@
 	name = "Шустрый"
 	desc = "Вы можете прятаться при опасности в шкаф, пока имеется доступ."
 	quality = POSITIVE
-	difficulty = 34
+	difficulty = 16
 	instability = 30
 	mob_trait = TRAIT_SKITTISH
 
@@ -163,7 +163,7 @@
 	name = "Духовный"
 	desc = "Вы в гармонии с богами и ваши молитвы с большей вероятностью будут услышаны. Или нет."
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20
 	mob_trait = TRAIT_SPIRITUAL
 	text_gain_indication = "<span class='notice'>Ваша вера в богов крепнет.</span>"
@@ -173,7 +173,7 @@
 	name = "Граффити-Художник"
 	desc = "Вы - художник с опытом. Рисуя граффити, вы тратите в два раза меньше краски."
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20
 	mob_trait = TRAIT_TAGGER
 	text_gain_indication = "<span class='notice'>Вы знаете, как правильно разрисовывать стены.</span>"
@@ -185,7 +185,7 @@
 	name = "Прожорливый"
 	desc = "Ничто не встанет между вами и вашей едой. Вы едите в два раза быстрее!"
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20
 	mob_trait = TRAIT_VORACIOUS
 	text_gain_indication = "<span class='notice'>Вы преголодны.</span>"
@@ -196,7 +196,7 @@
 	name = "Истинная полицитемия"
 	desc = "У вас Истинная полицитемия в ремиссии, повышающая общее количество крови и скорость её восстановления!"
 	quality = POSITIVE
-	difficulty = 34
+	difficulty = 16
 	instability = 30 //I honeslty dunno if this is a good trait? I just means you use more of medbays blood and make janitors madder, but you also regen blood a lil faster.
 	mob_trait = TRAIT_HIGH_BLOOD
 	text_gain_indication = "<span class='notice'>Вы чувствуете себя полным крови!</span>"
@@ -216,7 +216,7 @@
 	name = "Ночное Зрение"
 	desc = "Вы видите лучше большинства в кромешной тьме."
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20
 	mob_trait = TRAIT_NIGHT_VISION
 	text_gain_indication = "<span class='notice'>Тени кажутся светлее.</span>"
@@ -230,7 +230,7 @@
 	name = "Твёрдые ступни" // BLUEMOON EDIT - typo
 	desc = "Вы привыкли ходить босиком, а потому осколки стекла и мусор никак не вредят вашим ногам."
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20 // BLUEMOON EDIT - было 2
 	mob_trait = TRAIT_HARD_SOLES
 	text_gain_indication = "<span class='notice'>Мусор под ногами теперь вам не помеха.</span>"
@@ -242,7 +242,7 @@
 	name = "Острое Малокровие"
 	desc = "Ваше тело не производит достаточно крови для поддержания себя."
 	quality = NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -20
 	text_gain_indication = "<span class='danger'>Вы чувствуете, как ваши силы угасают.</span>"
 	text_lose_indication = "<span class='notice'>Былые силы возвращаются.</span>"
@@ -259,7 +259,7 @@
 	desc = "Иногда вы просто ненавидите жизнь."
 	mob_trait = TRAIT_DEPRESSION
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 	text_gain_indication = "<span class='danger'>У вас начинается депрессия.</span>"
 	text_lose_indication = "<span class='notice'>У вас больше нет депрессии.</span>" //if only it were that easy!
@@ -274,7 +274,7 @@
 	name = "Крепко спящий"
 	desc = "Вы спите как убитый! Ваш сон длится чуть дольше."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_HEAVY_SLEEPER
 	text_gain_indication = "<span class='danger'>Вы чувствуете сонливость.</span>"
@@ -284,7 +284,7 @@
 	name = "Опухоль головного мозга"
 	desc = "В вашей голове есть маленький друг, который медленно разрушает мозг. Следует прихватить с собой маннитол!"
 	quality = NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -30
 	text_gain_indication = "<span class='danger'>Вы чувствуете, как ваши извилины разглаживаются.</span>"
 	text_lose_indication = "<span class='notice'>Извилины снова появляются на вашем мозгу.</span>"
@@ -300,7 +300,7 @@
 	name = "Никтофобия"
 	desc = "Вы боитесь тьмы и осторожничаете, пребывая в ней."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 
 /datum/mutation/human/bm/nyctophobia/on_acquiring(mob/living/carbon/human/owner)
@@ -342,7 +342,7 @@
 	name = "Светочувствительность"
 	desc = "Яркий свет вызывает у вас раздражение. Глаза начинают слезиться, кожа чешется под действием ионизирующего излучения, а волосы становятся сухими и непослушными. Возможно, это болезнь. Если бы только Nanotrasen учитывали ваши потребности..."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 	text_gain_indication = "<span class='danger'>Яркий свет раздражает вас.</span>"
 	text_lose_indication = "<span class='notice'>Вы не боитесь не бояться света.</span>"
@@ -391,7 +391,7 @@
 	name = "Пацифист"
 	desc = "Насилие противно вам настолько, что вы не можете никому навредить."
 	quality = NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -20
 	mob_trait = TRAIT_PACIFISM
 	text_gain_indication = "<span class='danger'>Вы отвергаете саму мысль о возможном насилии!</span>"
@@ -402,7 +402,7 @@
 	name = "Парализованный"
 	desc = "Ваши ноги не работают. Ничто и никогда не исправит это. Подумайте о хорошем — о бесплатной инвалидной коляске!"
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -40
 	mob_trait = TRAIT_PARA
 	text_gain_indication = null // Handled by trauma.
@@ -419,7 +419,7 @@
 	name = "Ужасный стрелок"
 	desc = "Ваши навыки обращения с оружием не позволяют точно прицелиться даже для того, чтобы спасти свою жизнь. Стрельба с двух рук даже не обсуждается."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_POOR_AIM
 
@@ -427,7 +427,7 @@
 	name = "Прозопагнозия"
 	desc = "Расстройство не позволяет вам различать лица, совсем."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_PROSOPAGNOSIA
 
@@ -435,7 +435,7 @@
 	name = "Диссоциативное расстройство"
 	desc = "Вы страдаете от тяжелого расстройства и видите яркие галлюцинации. ЛСД подавляет болезнь, к побочному эффекту этого вещества у вас невосприимчивость."
 	quality = NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -20
 	//no mob trait because it's handled uniquely
 	text_gain_indication = "<span class='userdanger'>...</span>"
@@ -464,7 +464,7 @@
 	name = "Фобия"
 	desc = "Прошлое нанесло вам травму на всю жизнь и продолжает преследовать, когда вы встречаетесь с величайшими из своих страхов."
 	quality = NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -20 // It can hardstun you. You can be a job that your phobia targets...
 	text_gain_indication = "<span class='danger'>Вы начинаете трястись, когда всепоглощающий страх захватывает ваш разум.</span>"
 	text_lose_indication = "<span class='notice'>Ваша уверенность сметает страх, что терзал вас долгое время.</span>"
@@ -488,7 +488,7 @@
 	name = "Нестабильный"
 	desc = "Душевные раны делают восстановление рассудка после его потери невозможным. Аккуратнее с управлением настроением!"
 	quality = NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -20
 	mob_trait = TRAIT_UNSTABLE
 	text_gain_indication = "<span class='danger'>Слишком многое творится в вашей голове.</span>"
@@ -500,7 +500,7 @@
 	name = "Холоднокровие"
 	desc = "Ваше тело не генерирует тепло, из-за чего требуется внешняя регуляция."
 	quality = NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -20
 	mob_trait = TRAIT_COLDBLOODED
 	text_gain_indication = "<span class='notice'>Вы чувствуете, как кровь стынет в жилах.</span>"
@@ -510,7 +510,7 @@
 	name = "Монофобия"
 	desc = "Вы испытываете стресс, когда не находитесь в компании других, вызывающий реакции от болезненного состояния до инфарктов."
 	quality = NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -30 // Might change it to 4.
 	text_gain_indication = "<span class='danger'>Вы чувствуете себя одиноко...</span>"
 	text_lose_indication = "<span class='notice'>Вы чувствуете, что одному быть не так уж и плохо.</span>"
@@ -529,7 +529,7 @@
 	name = "Аносмия"
 	desc = "Вы не ощущаете запахи! Вы не сможете обнаружать определенные бесцветные газы."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_ANOSMIA
 	text_gain_indication = "<span class='notice'>Вы не чувствуете запахов!</span>"
@@ -539,7 +539,7 @@
 	name = "Бумажная Кожа"
 	desc = "Вы слабы плотью, порезаться становится гораздо легче."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_PAPER_SKIN
 	text_gain_indication = "<span class='notice'>Вы чувствуете, что ваша плоть слаба!</span>"
@@ -549,7 +549,7 @@
 	name = "Хрустальные Кости"
 	desc = "Ваши кости гораздо более хрупкие, потому уязвимы к переломам."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_GLASS_BONES
 	text_gain_indication = "<span class='notice'>Ваши кости ощущаются слабыми!</span>"
@@ -561,7 +561,7 @@
 	name = "Непереносимость Алкоголя"
 	desc = "Вы получаете урон токсинами вместо того, чтобы пьянеть при употреблении алкоголя."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_TOXIC_ALCOHOL
 
@@ -585,7 +585,7 @@
 	name = "Агевзия"
 	desc = "Вы не чувствуете вкуса! Ядовитая еда всё ещё будет иметь пагубное воздействие."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_AGEUSIA
 	text_gain_indication = "<span class='notice'>Вы не чувствуете вкуса!</span>"
@@ -596,7 +596,7 @@
 	name = "Сноб"
 	desc = "Вас волнуют вещи утонченные, если комната выглядит некрасиво, она просто не стоит того, верно?"
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	text_gain_indication = "<span class='notice'>Вы считаете, что знаете, как должны выглядеть вещи.</span>"
 	text_lose_indication = "<span class='notice'>Кого вообще волнует декор?</span>"
@@ -606,7 +606,7 @@
 	name = "Пристрастие к Ананасам"
 	desc = "Вы обожаете плоды ананасового дерева. Вы никак не можете прекратить наслаждаться этим сладким вкусом!"
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	text_gain_indication = "<span class='notice'>У вас появляется сильное желание вкусить мякоти ананаса.</span>"
 	text_lose_indication = "<span class='notice'>По всей видимости, ваше отношение к ананасам возвращается к нейтральному.</span>"
@@ -628,7 +628,7 @@
 	name = "Неприязнь к Ананасам"
 	desc = "Вы испытываете сильнейшее отвращение к плодам ананасового дерева. Серьёзно, кому они нравятся? И какой безумец посмел положить их на пиццу!?"
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	text_gain_indication = "<span class='notice'>Вы задумываетесь над тем, какому идиоту вообще могут понравиться ананасы...</span>"
 	text_lose_indication = "<span class='notice'>По всей видимости, ваше отношение к ананасам возвращается к нейтральному.</span>"
@@ -650,7 +650,7 @@
 	name = "Извращенные Вкусы"
 	desc = "Вам не нравится то, что нравится большинству и наоборот."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	text_gain_indication = "<span class='notice'>Появляется желание съесть чего-нибудь странного.</span>"
 	text_lose_indication = "<span class='notice'>Вам снова нравится есть типичную пищу.</span>"
@@ -676,7 +676,7 @@
 	name = "Мазохизм"
 	desc = "Вас возбуждает боль."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_MASO
 	text_gain_indication = "<span class='notice'>Вы хотите, чтобы вам причинили боль.</span>"
@@ -686,7 +686,7 @@
 	name = "Нимфомания"
 	desc = "Вы быстрее возбуждаетесь."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_NYMPHO
 	text_gain_indication = "<span class='notice'>У вас зудит в промежности.</span>"
@@ -708,7 +708,7 @@
 	name = "Мусорный бак"
 	desc = "Вы можете есть мусор."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	text_gain_indication = "<span class='notice'>В голову приходит мысль пожевать банку из-под содовой.</span>"
 	text_lose_indication = "<span class='notice'>Вы больше не хотите есть мусор.</span>"
@@ -720,7 +720,7 @@
 	name = "Чувствительность к Натрию"
 	desc = "Ваше тело чувствительно к натрию, потому обжигается при контакте с ним. Употребление крайне не рекомендуется."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_SALT_SENSITIVE
 
@@ -730,7 +730,7 @@
 	name = "Фотограф"
 	desc = "Вы знаете как пользоваться фотоаппаратом, сокращая время между фотографией."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_PHOTOGRAPHER
 	text_gain_indication = "<span class='notice'>Вы знаете всё о фотографиях.</span>"
@@ -741,7 +741,7 @@
 	name = "Стальные Булки"
 	desc = "Вы ни разу не пропускали день ягодиц. У вас полный иммунитет ко всем формам ударов по заднице, и любой, кто попытается наградить вас шлепком, как правило, получит перелом кисти."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_STEEL_ASS
 	text_gain_indication = "<span class='notice'>Ваш зад может составить конкуренцию големскому.</span>"
@@ -751,7 +751,7 @@
 	name = "Булки Грома"
 	desc = "Твоя задница, растягивающая штаны, настолько же приятна, насколько трудно удержать равновесие, когда ее шлепают!"
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_JIGGLY_ASS
 	text_gain_indication = "<span class='notice'>Ваш зад кажется очень удобным для шлепков.</span>"
@@ -763,7 +763,7 @@
 	name = "Лёгкий"
 	desc = "Вы в разы легче того, чем вы выглядите! Хотя и размеры теперь не особо помогают в выживании."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_BLUEMOON_LIGHT
 	text_gain_indication = "<span class='notice'>Вы ощущаете себя легче пёрышка!</span>"
@@ -776,7 +776,7 @@
 	desc = "Жизнь, генетика, или что-то ещё научило вас если и не жить, то терпеть физическую боль. \
 	Вы можете выдержать хирургическую операцию без наркоза легче, чем большинство вашего рода. Не повышает шанс при самооперации."
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20
 	mob_trait = TRAIT_BLUEMOON_HIGH_PAIN_THRESHOLD
 	text_gain_indication = "<span class='notice'>Боль - иллюзия чувств. И вы предпочитаете жить не в иллюзиях.</span>"
@@ -787,7 +787,7 @@
 	desc = "Мысль о том, чтобы лечь под скальпель, ввергает вас в тихий ужас. Едва ли вы согласитесь на это без веской необходимости. \
 	Только анастезия поможет вытерпеть операцию, ведь если будете в сознании... Врачам будет сложнее оперировать вас. Самого себя, естественно, невозможно."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_BLUEMOON_FEAR_OF_SURGEONS
 	text_gain_indication = "<span class='warning'>Вид хирургических инструментов вызывает у вас панику, а мысль лечь под нож без анестезии заставляет чаще дышать от страха.</span>"
@@ -798,7 +798,7 @@
 	name = "Гипнотический Ступор"
 	desc = "Вы склонны к приступам крайнего ступора, который делает вас чрезвычайно внушаемым."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	text_gain_indication = null // Handled by trauma.
 	text_lose_indication = null
@@ -815,7 +815,7 @@
 	name = "Обнаружение Эструса"
 	desc = "Вы обладаете особым чувством, чтобы определить, находится ли кто-то в эстральном цикле."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_ESTROUS_DETECT
 	text_gain_indication = "<span class='love'>Ваши органы чувств адаптируются, позволяя вам ощущать фертильность окружающих.</span>"
@@ -825,7 +825,7 @@
 	name = "Приказ Не Клонировать"
 	desc = "На вас записан приказ 'Не клонировать', в котором, как бы это странно не звучало, говорится, что вас нельзя клонировать. Вы все еще можете быть оживлены другими способами."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_DNC_ORDER
 
@@ -833,7 +833,7 @@
 	name = "Стойкость"
 	desc = "Ваше аномально крепкое тело не воспринимает физический урон ниже 10 единиц"
 	quality = POSITIVE
-	difficulty = 24
+	difficulty = 14
 	instability = 30
 	mob_trait = TRAIT_TOUGHT
 	locked = TRUE
@@ -856,7 +856,7 @@
 	name = "Пепельная Устойчивость"
 	desc = "Ваше тело адаптировалось к пылающим покровам пепла, которые застилают вулканические миры, но это не значит, что вы не будете уставать."
 	quality = POSITIVE
-	difficulty = 24
+	difficulty = 14
 	instability = 30 //Is not actually THAT good. Does not grant breathing and does stamina damage to the point you are unable to attack. Crippling on lavaland, but you'll survive. Is not a replacement for SEVA suits for this reason. Can be adjusted.
 	mob_trait = TRAIT_ASHRESISTANCE
 
@@ -879,7 +879,7 @@
 	name = "Рад Фьенд"
 	desc = "Вас благословил согревающий свет Атома, заставляющий вас постоянно излучать едва заметное свечение. Только особо интенсивное излучение способно проникнуть через ваш защитный барьер."
 	quality = POSITIVE
-	difficulty = 24
+	difficulty = 14
 	instability = 30
 	mob_trait = TRAIT_RAD_FIEND
 
@@ -910,7 +910,7 @@
 	name = "Арахнид"
 	desc = "Ваша анатомия позволяет плести паутину и коконы, будучи не арахнидом! (Учтите, что этот навык ничего не даёт расе арахнидов)"
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20
 	mob_trait = TRAIT_ARACHNID
 	text_gain_indication = "<span class='notice'>У вас появляется странное ощущение рядом с анусом...</span>"
@@ -942,7 +942,7 @@
 	name = "Парение"
 	desc = "Вы можете свободно двигаться в герметичной среде с низкой гравитацией при помощи крыльев, магии или другой физиологической чуши."
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20
 	mob_trait = TRAIT_FLUTTER
 
@@ -950,7 +950,7 @@
 	name = "Пожиратель Одежды"
 	desc = "Вы можете съесть большинство одежды, чтобы получить прибавку к настроению и питательные вещества. (Насекомые владеют этим навыком.)"
 	quality = POSITIVE
-	difficulty = 16
+	difficulty = 12
 	instability = 20
 	var/mood_category ="cloth_eaten"
 	mob_trait = TRAIT_CLOTH_EATER
@@ -959,7 +959,7 @@
 	name = "Верёвочный Кролик"
 	desc = "Вы обучены искусно вязать верёвки любой формы. Вы можете создавать веревку из ткани, а из этой веревки - болы!"
 	quality = POSITIVE
-	difficulty = 24
+	difficulty = 14
 	instability = 30
 
 /datum/mutation/human/bm/ropebunny/on_acquiring(mob/living/carbon/human/owner)
@@ -981,7 +981,7 @@
 	name = "Святой Дух"
 	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. Святая вода восстановит ваше здоровье!"
 	quality = POSITIVE
-	difficulty = 24
+	difficulty = 14
 	instability = 30
 	mob_trait = TRAIT_HALLOWED
 	text_gain_indication = "<span class='notice'>Вы чувствуете, как святая энергия начинает течь по вашему телу.</span>"
@@ -991,7 +991,7 @@
 	name = "Русский дух"
 	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. С вами Бог!"
 	quality = POSITIVE
-	difficulty = 24
+	difficulty = 14
 	instability = 30
 	mob_trait = TRAIT_RUSSIAN
 	text_gain_indication = "<span class='notice'>Вы чувствуете, как Бог следит за вами!</span>"
@@ -1047,7 +1047,7 @@
 	name = "Толстые пальцы"
 	desc = "Из-за формы пальцев, ширины или вообще отсутствия - вы не можете стрелять из оружия без особого улучшения."
 	quality = NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -20
 	mob_trait = TRAIT_CHUNKYFINGERS
 	text_gain_indication = "<span class='notice'>Ваши пальцы ощущаются... толстыми.</span>"
@@ -1057,7 +1057,7 @@
 	name = "Неграмотность"
 	desc = "Всё просто - вы не умеете ни писать, ни читать."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_ILLITERATE
 	text_gain_indication = "<span class='notice'>Знание грамоты... ускользает от вас.</span>"
@@ -1067,7 +1067,7 @@
 	name = "Хрупкость"
 	desc = "Ваше тело слабее, чем у большинства, здоровье уменьшено на 20%."
 	quality = NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -20
 
 	text_gain_indication = "<span class='notice'>Вы чувствуете, что вас могли бы снести с одного удара.</span>"
@@ -1087,7 +1087,7 @@
 	name = "Гиперчувствительность"
 	desc = "Всё вокруг влияет на ваше настроение больше, чем должно."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 	text_gain_indication = "<span class='danger'>Вы делаете из мухи слона.</span>"
 	text_lose_indication = "<span class='notice'>Вы больше не преувеличиваете значимость событий вокруг вас.</span>"
@@ -1115,7 +1115,7 @@
 	name = "Бездонный Желудок"
 	desc = "В вас быстрее просыпаются голод и жажда. Необходимо есть и пить в два раза больше."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 	text_gain_indication = "<span class='notice'>Вы хотите есть и пить чаще.</span>"
 	text_lose_indication = "<span class='danger'>Жор идёт на спад.</span>"
@@ -1138,7 +1138,7 @@
 	name = "Жаждущий"
 	desc = "Вам необычайно хочется пить. Приходится пить в два раза больше, чем обычно."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 	text_gain_indication = "<span class='notice'>Вы начинаете испытывать жажду гораздо быстрее.</span>"
 	text_lose_indication = "<span class='danger'>Ваша повышенная тяга к воде начинает угасать.</span>"
@@ -1161,7 +1161,7 @@
 	name = "Отпрыск Ночного Кошмара"
 	desc = "Вы очень схожи с так называемыми Ночными Кошмарами. Каким бы образом это не получилось, теперь всякое свечение вам опасно."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -40
 	mob_trait = TRAIT_LESS_NIGHTMARE
 	text_gain_indication = "<span class='notice'>Ваше тело становится уязвимым к свету...</span>"
@@ -1182,7 +1182,7 @@
 	name = "Асфиксиофилия"
 	desc = "Вас возбуждает удушье."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_CHOKE_SLUT
 	text_gain_indication = "<span class='notice'>Вы хотите ощутить пальцы вокруг шеи, сжимающие её до тех пор, пока не отключитесь или кончите... а может, всё сразу?</span>"
@@ -1192,7 +1192,7 @@
 	name = "Острый Печеночный Фармакокинез" //copypasting dumbo
 	desc = "У вас генетическое заболевание, которое заставляет печень усваивать семя инкуба и молоко суккуба при попадании их в организм."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_PHARMA
 	text_lose_indication = "<span class='danger'>Ваша печень ощущается... по-иному.</span>"
@@ -1202,7 +1202,7 @@
 	name = "Проклятая Кровь"
 	desc = "На вашем роду лежит проклятие бледной крови. Лучше держаться подальше от святой воды... а вот адской воды, напротив..."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_CURSED_BLOOD
 	text_gain_indication = "<span class='notice'>Проклятие с земель, где люди возвращаются зверьми, течёт в вашей крови.</span>"
@@ -1213,7 +1213,7 @@
 	desc = "Вам нет дела до ласки со стороны других. Будь то вследствие сдержанности или самоконтроля, получаемые поглаживания не заставят вилять хвостом, если таковой есть, ласка может даже разгневать."
 	mob_trait = TRAIT_DISTANT
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	text_gain_indication = "<span class='notice'>Чужие прикосновения раздражают вас...</span>"
 	text_lose_indication = "<span class='danger'>Теперь поглаживания не кажутся настолько уж плохими...</span>"
@@ -1240,7 +1240,7 @@
 	desc = "Вам нравится, когда другие прикасаются к вашей голове! Может, даже слишком... когда другие гладят вас по голове, это повышает ваше настроение и возбуждает вас."
 	mob_trait = TRAIT_HEADPAT_SLUT
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	text_gain_indication = "<span class='notice'>Вы жаждете ласки!</span>"
 	text_lose_indication = "<span class='danger'>Ваша зависимость от ласки исчезает.</span>"
@@ -1257,7 +1257,7 @@
 	name = "Гипнотический Взгляд"
 	desc = "Вследствие мистических узоров, мерцающих цветов или какой-нибудь генетической странности, длительный визуальный контакт с вами поместит наблюдателя в легковнушаемый гипнотический транс."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_HYPNOTIC_GAZE
 	text_gain_indication = "<span class='notice'>Ваши глаза завораживающе мерцают...</span>"
@@ -1296,7 +1296,7 @@
 	name = "Лишний Вес"
 	desc = "Вы обожаете еду и появляетесь на смене с лишним весом."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	text_gain_indication = "<span class='notice'>Вы чувствуете себя толстым!</span>"
 	mob_trait = TRAIT_FAT
@@ -1308,7 +1308,7 @@
 	name = "Вегетарианец"
 	desc = "Мысли о поедании мяса для вас отвратительны."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	text_gain_indication = "<span class='notice'>Вы чувствуете отвращение от мысли о поедании мяса.</span>"
 	text_lose_indication = "<span class='danger'>Вы думаете, что поесть мяса не так уж и плохо.</span>"
 
@@ -1335,7 +1335,7 @@
     name = "Не-мёртвый"
     desc = "Ваше тело, будь то аномальное или просто отказывающееся умирать, действительно стало нежитью. Из-за этого вы испытываете сильный голод."
     quality = POSITIVE
-	difficulty = 24
+	difficulty = 14
 	instability = 30
     mob_trait = TRAIT_UNDEAD
 
@@ -1368,7 +1368,7 @@
 	name = "Сверхпродуктивные Гениталии"
 	desc = "Ваши гениталии производят и вмещают больше, чем обычно."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	text_gain_indication = "<span class='notice'>Вы чувствуете давление в паху.</span>"
 	text_lose_indication = "<span class='danger'>Вы чувствуете, как ваш пах стал легче.</span>"
 	var/increasedcum
@@ -1404,7 +1404,7 @@
 	name = "Сверхпродуктивная Грудь"
 	desc = "Ваша грудь производит и вмещает больше, чем обычно."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	text_gain_indication = "<span class='notice'>Вы чувствуете давление в груди.</span>"
 	text_lose_indication = "<span class='danger'>Вы чувствуете, что ваша грудь стала легче.</span>"
 	var/increasedcum
@@ -1441,7 +1441,7 @@
 	name = "Косметическая подсветка"
 	desc = "Ваше тело слегка светится! Что бы это не значило - излучение от радиации или люминисцентных грибов вдоль кожного покрова.."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_COSGLOW
 	text_gain_indication = "<span class='notice'>Вы ощущаете приток света вокруг себя!</span>"
@@ -1474,7 +1474,7 @@
 	name = "Дегустатор Гениталий"
 	desc = "Вы набрались столько опыта, обсасывая чужие гениталии, что с легкостью можете сказать, какая жидкость находится внутри них, исключая реагенты в крови."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_GFLUID_DETECT
 	text_gain_indication = "<span class='notice'>Вы начинаете ощущать специфические запахи, исходящие от чужих промежностей...</span>"
@@ -1486,7 +1486,7 @@
 	name = "Инкуб"
 	desc = "Ваш голод может быть утолен только молоком. (И семенем, если вы также Суккуб.)"
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_INCUBUS
 
@@ -1511,7 +1511,7 @@
 	name = "Суккуб"
 	desc = "Ваш голод может быть утолен только семенем. (И молоком, если вы также Инкуб.)"
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_SUCCUBUS
 
@@ -1536,7 +1536,7 @@
 	name = "Горгулья"
 	desc = "Вы относитесь к какому-то виду горгульи! Вы можете выходить из каменной формы на определенное время, но вам придётся в неё вернуться, чтобы восстановить энергию. С другой стороны, вы лечитесь, будучи в камне!"
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	var/energy = 0
 	var/transformed = 0
@@ -1618,7 +1618,7 @@
 	text_gain_indication = "<span class='notice'>Вы начинаете чувствовать себя нехорошо без противогаза.</span>"
 	text_lose_indication = "<span class='danger'>У вас больше нет нужды в ношении противогаза.</span>"
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -10
 
 
@@ -1635,7 +1635,7 @@
 	name = "Изменятель Тела"
 	desc = "Каким-то образом вы развили способность, позволяющую вашему телу морфировать и изменять свои части тела, подобно тому, как это может делать слаймик."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_BODY_MORPHER
 	text_gain_indication = "<span class='notice'>Ваше тело становится более податливым...</span>"
@@ -1665,7 +1665,7 @@
 	name = "Модульные Конечности"
 	desc = "Ваши конечности можно легко присоединять и отсоединять... к сожалению, все окружающие тоже могут изменять ваши конечности! Щелкните правой кнопкой мыши на себе, чтобы использовать эту причуду."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 
 /datum/mutation/human/bm/modular/on_acquiring(mob/living/carbon/human/owner)
@@ -1682,7 +1682,7 @@
 	name = "Грязнуля"
 	desc = "Из-за биологических особенностей вашего тела или блюспейс аномалии вы всегда устраиваете бардак, когда кончаете. Даже в тех обстоятельствах, когда это казалось бы невозможно."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_MESSY
 	text_gain_indication = "<span class='notice'>Вы хотите покрыть что-то с помощью своих органических жидкостей.</span>"
@@ -1692,7 +1692,7 @@
 	name = "Чувствительные Губы"
 	desc = "Одна только мысль о поцелуе заставляет вас краснеть и возбуждаться, эффективно усиляя ваше возбуждение с каждым поцелуем."
 	quality = MINOR_NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = 0
 	mob_trait = TRAIT_KISS_SLUT
 	text_gain_indication = "<span class='lewd'>Вам хочется поцеловать кого-нибудь....</span>"
@@ -1704,7 +1704,7 @@
 	desc = "С вас буквально сыпется песок. И... кажется если вы погибнете - никто этот песок собрать воедино больше не сможет."
 	mob_trait = TRAIT_ONELIFE
 	quality = NEGATIVE
-	difficulty = 10
+	difficulty = 8
 	instability = -60
 	text_gain_indication = "<span class='danger'>Вы чувствуете, что вам нельзя умирать.</span>"
 	text_lose_indication = "<span class='notice'>Жизнь для вас снова ничто.</span>" //if only it were that easy!
