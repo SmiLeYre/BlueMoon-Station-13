@@ -280,7 +280,7 @@
 				state = STATE_MAIN
 
 				//а тут надо вызывать
-				makeEmergencyresponseteam(data["link"])
+				INVOKE_ASYNC(src, .proc/makeEmergencyresponseteam, data["link"])
 
 		if ("recallShuttle")
 			// AIs cannot recall the shuttle
