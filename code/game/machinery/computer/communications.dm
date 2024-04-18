@@ -849,8 +849,7 @@
 		priority_announce("[station_name()], мы не можем выслать [ertemplate.polldesc] ввиду занятости всех действующих оперативников.", "Отряд Быстрого Реагирования недоступен", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_no.ogg') //BlueMoon sound
 		return FALSE
 
-	return
-
+	return FALSE
 
 /**
  * Call an emergency meeting
