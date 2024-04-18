@@ -1,4 +1,4 @@
-/datum/gear/donator/bm/lewdsleepy
+/datum/gear/donator/lewdsleepy
 	name = "Lewd sleepy medipen"
 	path = /obj/item/reagent_containers/hypospray/medipen/lewdsleepy
 	cost = 2

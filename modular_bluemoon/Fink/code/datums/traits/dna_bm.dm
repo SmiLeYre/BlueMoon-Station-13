@@ -258,7 +258,7 @@
 	name = "Депрессия"
 	desc = "Иногда вы просто ненавидите жизнь."
 	mob_trait = TRAIT_DEPRESSION
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 	text_gain_indication = "<span class='danger'>У вас начинается депрессия.</span>"
@@ -273,7 +273,7 @@
 /datum/mutation/human/bm/heavy_sleeper
 	name = "Крепко спящий"
 	desc = "Вы спите как убитый! Ваш сон длится чуть дольше."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_HEAVY_SLEEPER
@@ -299,7 +299,7 @@
 /datum/mutation/human/bm/nyctophobia
 	name = "Никтофобия"
 	desc = "Вы боитесь тьмы и осторожничаете, пребывая в ней."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 
@@ -341,7 +341,7 @@
 /datum/mutation/human/bm/lightless
 	name = "Светочувствительность"
 	desc = "Яркий свет вызывает у вас раздражение. Глаза начинают слезиться, кожа чешется под действием ионизирующего излучения, а волосы становятся сухими и непослушными. Возможно, это болезнь. Если бы только Nanotrasen учитывали ваши потребности..."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 	text_gain_indication = "<span class='danger'>Яркий свет раздражает вас.</span>"
@@ -418,7 +418,7 @@
 /datum/mutation/human/bm/poor_aim
 	name = "Ужасный стрелок"
 	desc = "Ваши навыки обращения с оружием не позволяют точно прицелиться даже для того, чтобы спасти свою жизнь. Стрельба с двух рук даже не обсуждается."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_POOR_AIM
@@ -426,7 +426,7 @@
 /datum/mutation/human/bm/prosopagnosia
 	name = "Прозопагнозия"
 	desc = "Расстройство не позволяет вам различать лица, совсем."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_PROSOPAGNOSIA
@@ -538,7 +538,7 @@
 /datum/mutation/human/bm/paper_skin
 	name = "Бумажная Кожа"
 	desc = "Вы слабы плотью, порезаться становится гораздо легче."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_PAPER_SKIN
@@ -548,7 +548,7 @@
 /datum/mutation/human/bm/glass_bones
 	name = "Хрустальные Кости"
 	desc = "Ваши кости гораздо более хрупкие, потому уязвимы к переломам."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_GLASS_BONES
@@ -560,7 +560,7 @@
 /datum/mutation/human/bm/alcohol_intolerance
 	name = "Непереносимость Алкоголя"
 	desc = "Вы получаете урон токсинами вместо того, чтобы пьянеть при употреблении алкоголя."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_TOXIC_ALCOHOL
@@ -786,7 +786,7 @@
 	name = "Боязнь хирургов"
 	desc = "Мысль о том, чтобы лечь под скальпель, ввергает вас в тихий ужас. Едва ли вы согласитесь на это без веской необходимости. \
 	Только анастезия поможет вытерпеть операцию, ведь если будете в сознании... Врачам будет сложнее оперировать вас. Самого себя, естественно, невозможно."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_BLUEMOON_FEAR_OF_SURGEONS
@@ -1056,7 +1056,7 @@
 /datum/mutation/human/bm/illiterate
 	name = "Неграмотность"
 	desc = "Всё просто - вы не умеете ни писать, ни читать."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 	mob_trait = TRAIT_ILLITERATE
@@ -1086,7 +1086,7 @@
 /datum/mutation/human/bm/hypersensitive
 	name = "Гиперчувствительность"
 	desc = "Всё вокруг влияет на ваше настроение больше, чем должно."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 	text_gain_indication = "<span class='danger'>Вы делаете из мухи слона.</span>"
@@ -1114,7 +1114,7 @@
 /datum/mutation/human/bm/hungry
 	name = "Бездонный Желудок"
 	desc = "В вас быстрее просыпаются голод и жажда. Необходимо есть и пить в два раза больше."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 	text_gain_indication = "<span class='notice'>Вы хотите есть и пить чаще.</span>"
@@ -1137,7 +1137,7 @@
 /datum/mutation/human/bm/thirsty
 	name = "Жаждущий"
 	desc = "Вам необычайно хочется пить. Приходится пить в два раза больше, чем обычно."
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 	text_gain_indication = "<span class='notice'>Вы начинаете испытывать жажду гораздо быстрее.</span>"
@@ -1617,7 +1617,7 @@
 	desc = "По какой-то причине вам... не по себе без противогаза на лице."
 	text_gain_indication = "<span class='notice'>Вы начинаете чувствовать себя нехорошо без противогаза.</span>"
 	text_lose_indication = "<span class='danger'>У вас больше нет нужды в ношении противогаза.</span>"
-	quality = MINOR_NEGATIVE
+	quality = NEGATIVE
 	difficulty = 8
 	instability = -10
 
