@@ -417,7 +417,7 @@
 	r_pocket = /obj/item/shield/energy
 	suit_store = /obj/item/tank/internals/emergency_oxygen/double
 	belt = /obj/item/storage/belt/grenade/full
-	r_hand = /obj/item/gun/energy/pulse/destroyer/annihilator
+	r_hand = /obj/item/gun/energy/pulse/destroyer
 	id = /obj/item/card/id/death
 	ears = /obj/item/radio/headset/headset_cent/alt
 

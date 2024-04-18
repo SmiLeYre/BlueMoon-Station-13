@@ -39,7 +39,7 @@
 	roles = list(/datum/antagonist/ert/engineer)
 	leader_role = /datum/antagonist/ert/engineer_squadleader
 	rename_team = "Emergency Engineer Squad"
-	code = "Red"
+	code = "Orange"
 	mission = "Окажите поддержку станции по части ремонтных работ."
 	polldesc = "Emergency Engineer Squad"
 	//ertphrase = "modular_bluemoon/kovac_shitcode/sound/ert/sol_send.ogg"
