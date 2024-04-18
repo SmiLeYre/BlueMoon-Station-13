@@ -203,7 +203,7 @@
 			to_chat(owner, "<span class='warning'>A ritual dagger appears in your hand!</span>")
 		else
 			owner.visible_message("<span class='warning'>A ritual dagger appears at [owner]'s feet!</span>", \
-				 "<span class='cultitalic'>A ritual dagger materializes at your feet.</span>")
+					"<span class='cultitalic'>A ritual dagger materializes at your feet.</span>")
 		SEND_SOUND(owner, sound('sound/effects/magic.ogg',0,1,25))
 		charges--
 		desc = base_desc
@@ -879,3 +879,16 @@
 					else
 						to_chat(user, "<span class='cultitalic'>You need a free hand for this rite!</span>")
 						qdel(rite)
+			if("Bloody Bastard Sword (750)")
+				if(uses < 750)
+					to_chat(user, "<span class='cultitalic'>You need 750 charges to perform this rite.</span>")
+				else
+					uses -= 750
+					var/turf/T = get_turf(user)
+					qdel(src)
+					var/obj/item/cult_bastard/rite = new(T)
+					if(user.put_in_hands(rite))
+						to_chat(user, "<span class='cultitalic'>A [rite.name] appears in your hand!</span>")
+					else
+						user.visible_message("<span class='warning'>A [rite.name] appears at [user]'s feet!</span>", \
+							"<span class='cultitalic'>A [rite.name] materializes at your feet.</span>")

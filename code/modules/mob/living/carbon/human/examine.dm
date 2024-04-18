@@ -592,6 +592,9 @@
 	// send signal last so everything else prioritizes above
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .) //This also handles flavor texts now
 
+	if(tempflavor) // BLUEMOON ADD - темпфлавор теперь захардкожен, увы
+		. += span_notice(tempflavor)
+
 /mob/living/proc/status_effect_examines(pronoun_replacement) //You can include this in any mob's examine() to show the examine texts of status effects!
 	var/list/dat = list()
 	if(!pronoun_replacement)

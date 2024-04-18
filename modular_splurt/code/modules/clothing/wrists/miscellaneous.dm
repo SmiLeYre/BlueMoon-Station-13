@@ -41,10 +41,10 @@
 	AddElement(/datum/element/polychromic, poly_colors, 2)
 
 /obj/item/clothing/wrists/helper_bracelet
-	name = "Браслет - Поговорите со мной"
+	name = "Браслет - Давайте общаться"
 	desc = "Относительно новая разработка для поддержки некоторого социального слоя существ."
 	icon = 'modular_splurt/icons/obj/clothing/wrists.dmi'
-	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/wrists.dmi'
+	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/wrists.dmi' // BLUEMOON EDIT - was 'modular_splurt/icons/mob/clothing/wrists.dmi'
 	icon_state = "talk_need"
 
 /obj/item/clothing/wrists/helper_bracelet/love_need_bracelet

@@ -25,7 +25,7 @@
 			src,
 			"Остановить Звуки",
 			/* offset = */ 2,
-			CALLBACK(src, PROC_REF(home_open_settings)),
+			CALLBACK(src, PROC_REF(home_stop_sounds)),
 		)
 	)
 

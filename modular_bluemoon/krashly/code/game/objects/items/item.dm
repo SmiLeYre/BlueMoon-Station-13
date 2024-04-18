@@ -72,12 +72,88 @@
 
 //InteQ
 
+/obj/structure/sign/flag/fake_inteq
+	name = "Flag of PMC InteQ"
+	desc = "Коричнево-Оранжевый флаг с щитом по центру. Флаг пахнет кровью."
+	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
+	icon_state = "full"
+	item_flag = /obj/item/sign/flag/fake_inteq
+
+/obj/item/sign/flag/fake_inteq
+	name = "Folded Flag of the PMC InteQ"
+	desc = "Сложенный флаг ЧВК 'InteQ'."
+	flag_type = "inteq"
+	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
+	icon_state = "mini"
+	sign_path = /obj/structure/sign/flag/fake_inteq
+
 /obj/structure/sign/flag/inteq
 	name = "flag of PMC InteQ"
 	desc = "Коричнево-Оранжевый флаг с щитом по центру. Флаг пахнет кровью."
 	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
 	icon_state = "full"
 	item_flag = /obj/item/sign/flag/inteq
+	var/datum/proximity_monitor/advanced/demoraliser/demotivator
+	var/next_scare = 0
+
+/obj/structure/sign/flag/inteq/Initialize(mapload)
+	demotivator = new(src, 7, TRUE)
+	START_PROCESSING(SSobj,src)
+	return ..()
+
+/obj/structure/sign/flag/inteq/process()
+
+	for(var/mob/living/viewer in view(5, src))
+		if(world.time > next_scare)
+			next_scare = world.time + 120
+			pugach(viewer)
+
+/obj/structure/sign/flag/inteq/proc/pugach(mob/living/viewer)
+	var/message = pick("spooks you to the bone", "shakes you up", "terrifies you", "sends you into a panic", "sends chills down your spine")
+	if (viewer.stat != CONSCIOUS)
+		return
+	if(viewer.is_blind())
+		return
+	if(!ishuman(viewer))
+		return
+	if(HAS_TRAIT(viewer, TRAIT_FEARLESS))
+		return
+	if(IS_INTEQ(viewer))
+		return
+	if(viewer.mind && (viewer.mind?.antag_datums)) // все антажки
+		return
+	else
+		to_chat(viewer, "<span class='userdanger'>Seeing propagand of Inteq [message]!</span>")
+		var/reaction = rand(1,5)
+		switch(reaction)
+			if(1)
+				to_chat(viewer, "<span class='warning'>You are paralyzed with fear!</span>")
+				viewer.Stun(70)
+				viewer.Jitter(8)
+			if(2)
+				viewer.emote("scream")
+				viewer.Jitter(5)
+				viewer.say("AAAAH!!", forced = "phobia")
+				viewer.pointed(src)
+			if(3)
+				viewer.emote("realagony")
+				viewer.Jitter(5)
+				viewer.say("AAAAH!!", forced = "phobia")
+				viewer.pointed(src)
+			if(4)
+				viewer.emote("chill")
+				viewer.Jitter(5)
+				viewer.pointed(src)
+			if(5)
+				viewer.dizziness += 10
+				viewer.confused += 10
+				viewer.Jitter(10)
+				viewer.stuttering += 10
+
+
+/obj/structure/sign/flag/inteq/Destroy()
+	QDEL_NULL(demotivator)
+	return ..()
 
 /obj/item/sign/flag/inteq
 	name = "folded flag of the PMC InteQ"
@@ -92,6 +168,104 @@
 	poster_type = /obj/structure/sign/poster/contraband/inteq/random
 	icon_state = "rolled_contraband"
 
+/obj/item/storage/box/inteq_box/posters
+	name = "InteQ Posters Box"
+	desc = "Каробочка. Крутая."
+
+/obj/item/storage/box/inteq_box/posters/PopulateContents()
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+
+///////
+
+/obj/structure/sign/poster/contraband/inteq
+	var/datum/proximity_monitor/advanced/demoraliser/demotivator
+	var/next_scare = 0
+
+/obj/structure/sign/poster/contraband/inteq/Initialize(mapload)
+	demotivator = new(src, 7, TRUE)
+	START_PROCESSING(SSobj,src)
+	return ..()
+
+/obj/structure/sign/poster/contraband/inteq/process()
+	for(var/mob/living/viewer in view(5, src))
+		if(world.time > next_scare)
+			next_scare = world.time + 120
+			pugach(viewer)
+
+/obj/structure/sign/poster/contraband/inteq/proc/pugach(mob/living/viewer)
+	var/message = pick("spooks you to the bone", "shakes you up", "terrifies you", "sends you into a panic", "sends chills down your spine")
+	if (viewer.stat != CONSCIOUS)
+		return
+	if(viewer.is_blind())
+		return
+	if(!ishuman(viewer))
+		return
+	if(HAS_TRAIT(viewer, TRAIT_FEARLESS))
+		return
+	if(IS_INTEQ(viewer))
+		return
+	if(viewer.mind && (viewer.mind?.antag_datums)) // все антажки
+		return
+	else
+		to_chat(viewer, "<span class='userdanger'>Seeing propagand of Inteq [message]!</span>")
+		var/reaction = rand(1,5)
+		switch(reaction)
+			if(1)
+				to_chat(viewer, "<span class='warning'>You are paralyzed with fear!</span>")
+				viewer.Stun(70)
+				viewer.Jitter(8)
+			if(2)
+				viewer.emote("scream")
+				viewer.Jitter(5)
+				viewer.say("AAAAH!!", forced = "phobia")
+				viewer.pointed(src)
+			if(3)
+				viewer.emote("realagony")
+				viewer.Jitter(5)
+				viewer.say("AAAAH!!", forced = "phobia")
+				viewer.pointed(src)
+			if(4)
+				viewer.emote("chill")
+				viewer.Jitter(5)
+				viewer.pointed(src)
+			if(5)
+				viewer.dizziness += 10
+				viewer.confused += 10
+				viewer.Jitter(10)
+				viewer.stuttering += 10
+
+//////
+
+
+/obj/structure/sign/poster/contraband/inteq/attackby(obj/item/tool, mob/user, params)
+	if (tool.tool_behaviour == TOOL_WIRECUTTER)
+		QDEL_NULL(demotivator)
+	return ..()
+
+/obj/structure/sign/poster/contraband/inteq/Destroy()
+	QDEL_NULL(demotivator)
+	return ..()
+
+/obj/structure/sign/poster/contraband/inteq/on_attack_hand(mob/living/carbon/human/user)
+	if(istype(user) && user.dna.check_mutation(TK))
+		to_chat(user, "<span class='notice'>You telekinetically remove the [src].</span>")
+	else if(user.gloves)
+		if(istype(user.gloves,/obj/item/clothing/gloves/tackler))
+			to_chat(user, "<span class='warning'>Вы срываете [src], но лезвия на обороте режут вам руку!</span>")
+			user.apply_damage(5, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+	else
+		to_chat(user, "<span class='warning'>Вы пытаетесь сорвать [src], но лезвия на обороте режут вам руку и мешают поддеть [src]!</span>")
+		to_chat(user, "<span class='warning'>Нужны кусачки!</span>")
+		user.apply_damage(5, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+		return
+	.=..()
+///////
 /obj/structure/sign/poster/contraband/inteq/random
 	name = "random contraband poster"
 	icon_state = "random_contraband"

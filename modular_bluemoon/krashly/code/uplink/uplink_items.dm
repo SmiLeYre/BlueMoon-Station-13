@@ -5,8 +5,8 @@
 /datum/uplink_item/inteq/poster
 	name = "Propaganda poster"
 	desc = "Пусть они знают, кто здесь Босс!"
-	item = /obj/item/poster/random_inteq
-	cost = 1
+	item = /obj/item/storage/box/inteq_box/posters
+	cost = 5
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/inteq/clothes_box
@@ -68,7 +68,7 @@
 			Additionally the suit is collapsible, making it small enough to fit within a backpack. \
 			Nanotrasen crew who spot these suits are known to panic."
 	item = /obj/item/clothing/suit/space/hardsuit/syndi/inteq
-	cost = 8
+	cost = 6
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE) //you can't buy it in nuke, because the elite hardsuit costs the same while being better
 
 /datum/uplink_item/suits/hardsuit/elite

@@ -12,7 +12,7 @@ export const ChemImplantSec = (props, context) => {
   } = data;
   return (
     <Window resizable>
-      <Window.Content  className="Layout__content--flexColumn">
+      <Window.Content className="Layout__content--flexColumn">
         <Box>
           <LabeledList>
             <LabeledList.Item label="Status">

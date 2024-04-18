@@ -333,7 +333,7 @@
 //	head = /obj/item/clothing/head/helmet/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/solfed_military
 	mask = /obj/item/clothing/mask/gas/syndicate/ds/coif
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/military/inteq
 	ears = /obj/item/radio/headset/sol/bowman
@@ -368,7 +368,7 @@
 //	head = /obj/item/clothing/head/helmet/alt
 	uniform = /obj/item/clothing/under/rank/security/officer/solfed_military
 	mask = /obj/item/clothing/mask/gas/syndicate/ds/coif
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/rucksack
 	belt = /obj/item/storage/belt/military/inteq
 	ears = /obj/item/radio/headset/sol/bowman
@@ -441,7 +441,7 @@
 	head = /obj/item/clothing/head/HoS/beret/sol
 	uniform = /obj/item/clothing/under/rank/captain/sol
 	mask = /obj/item/clothing/mask/gas/syndicate/ds/coif
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	back = /obj/item/storage/backpack/hecu/black
 	belt = /obj/item/storage/belt/military/inteq
 	ears = /obj/item/radio/headset/sol/bowman/command

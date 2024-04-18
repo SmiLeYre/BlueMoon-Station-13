@@ -203,9 +203,9 @@
 /obj/item/organ/tongue/alien/hybrid
 	name = "xenohybrid tongue"
 
-/obj/item/organ/tongue/alien/hybrid/Initialize(mapload)
-	. = ..()
-	languages_possible = languages_possible_base
+// /obj/item/organ/tongue/alien/hybrid/Initialize(mapload)
+// 	. = ..()
+// 	languages_possible = languages_possible_alien
 
 /obj/item/organ/tongue/bone
 	name = "bone \"tongue\""

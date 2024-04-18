@@ -699,7 +699,7 @@
 //Spraycan stuff
 
 /obj/item/toy/crayon/spraycan
-	name = "spray can"
+	name = "Spray Can"
 	icon_state = "spraycan"
 
 	icon_capped = "spraycan_cap"
@@ -849,7 +849,7 @@
 		. += spray_overlay
 
 /obj/item/toy/crayon/spraycan/borg
-	name = "cyborg spraycan"
+	name = "Cyborg Spraycan"
 	desc = "A metallic container containing shiny synthesised paint."
 	charges = -1
 	stun_delay = 5 SECONDS
@@ -874,7 +874,7 @@
 		borgy.cell.use(cost)
 
 /obj/item/toy/crayon/spraycan/hellcan
-	name = "hellcan"
+	name = "Hellcan"
 	desc = "This spraycan doesn't seem to be filled with paint..."
 	icon_state = "deathcan2_cap"
 	icon_capped = "deathcan2_cap"
@@ -888,7 +888,7 @@
 	paint_color = "#000000"
 
 /obj/item/toy/crayon/spraycan/lubecan
-	name = "slippery spraycan"
+	name = "Slippery Spraycan"
 	desc = "You can barely keep hold of this thing."
 	icon_state = "clowncan2_cap"
 	icon_capped = "clowncan2_cap"
@@ -902,7 +902,7 @@
 	return istype(surface, /turf/open/floor)
 
 /obj/item/toy/crayon/spraycan/mimecan
-	name = "silent spraycan"
+	name = "Silent Spraycan"
 	desc = "Art is best seen, not heard."
 	icon_state = "mimecan_cap"
 	icon_capped = "mimecan_cap"
@@ -917,7 +917,7 @@
 	reagent_contents = list(/datum/reagent/consumable/nothing = 1, /datum/reagent/toxin/mutetoxin = 1)
 
 /obj/item/toy/crayon/spraycan/infinite
-	name = "infinite spraycan"
+	name = "Infinite Spraycan"
 	charges = -1
 	desc = "Now with 30% more bluespace technology."
 

@@ -16,7 +16,7 @@
 
 /obj/item/forbidden_book/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/anti_magic, FALSE, FALSE)
+	AddComponent(/datum/component/anti_magic, TRUE, TRUE)
 
 /obj/item/forbidden_book/Destroy()
 	last_user = null

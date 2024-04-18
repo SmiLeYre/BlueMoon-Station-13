@@ -65,6 +65,9 @@
 	. = ..()
 	if(random_basetype)
 		randomise(random_basetype)
+
+
+
 	if(!ruined)
 		original_name = name // can't use initial because of random posters
 		name = "poster - [name]"
@@ -76,9 +79,10 @@
 	var/list/poster_types = subtypesof(base_type)
 	var/list/approved_types = list()
 	for(var/t in poster_types)
-		var/obj/structure/sign/poster/T = t
-		if(initial(T.icon_state) && !initial(T.never_random))
-			approved_types |= T
+		if(!istype(t,/obj/structure/sign/poster/contraband/inteq))// интек пропаганда сама не заспавнитьсяz
+			var/obj/structure/sign/poster/T = t
+			if(initial(T.icon_state) && !initial(T.never_random))
+				approved_types |= T
 
 	var/obj/structure/sign/poster/selected = pick(approved_types)
 
@@ -921,5 +925,10 @@
 	name = "Paws"
 	desc = "This lewd poster depicts a vulpkanine preparing to mate."
 	icon_state = "paws"
+
+/obj/structure/sign/poster/contraband/joy //bluemoon add
+	name = "Happiness Pill"
+	desc = "Погрузизь в мир счастья."
+	icon_state = "joy"
 
 #undef PLACE_SPEED

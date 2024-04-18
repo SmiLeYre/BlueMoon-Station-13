@@ -2137,6 +2137,14 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
+"if" = (
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/machinery/suit_storage_unit/syndicate,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
 "ih" = (
 /obj/effect/turf_decal/trimline/brown/corner{
 	dir = 1
@@ -5234,6 +5242,7 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/eva)
 "vr" = (
 /obj/effect/mob_spawn/human/ds2/syndicate_command/masteratarms,
+/obj/machinery/suit_storage_unit/syndicate/chameleon,
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "vv" = (
@@ -6342,15 +6351,18 @@
 /obj/item/ammo_box/shotgun/loaded/buckshot,
 /obj/item/ammo_box/shotgun/loaded/buckshot,
 /obj/item/ammo_box/shotgun/loaded/buckshot,
-/obj/item/ammo_box/shotgun/loaded/buckshot,
-/obj/item/ammo_box/shotgun/loaded/buckshot,
-/obj/item/ammo_box/shotgun/loaded/buckshot,
 /obj/item/ammo_box/magazine/m16,
 /obj/item/ammo_box/magazine/m16,
 /obj/item/ammo_box/magazine/m16,
 /obj/item/ammo_box/magazine/m16,
 /obj/item/ammo_box/magazine/m16,
 /obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m16/ap,
+/obj/item/ammo_box/magazine/m16/ap,
+/obj/item/ammo_box/magazine/m16/ap,
+/obj/item/ammo_box/magazine/m16/ap,
+/obj/item/ammo_box/magazine/m16/ap,
+/obj/item/ammo_box/magazine/m16/ap,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
 "AI" = (
@@ -8156,17 +8168,6 @@
 "IQ" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
-"IU" = (
-/obj/structure/frame/machine{
-	anchored = 1;
-	icon_state = "box_1";
-	state = 2
-	},
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
 "IV" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/iron/dark,
@@ -9012,7 +9013,7 @@
 "MC" = (
 /obj/structure/table/wood,
 /obj/machinery/fax{
-	fax_name = "Unknown Syndicate Fax";
+	fax_name = "DS-2 Syndicate Fax";
 	name = "DS-2 Fax Machine"
 	},
 /turf/open/floor/wood/wood_large,
@@ -10500,6 +10501,7 @@
 /obj/item/gun/ballistic/automatic/m16a4/tactical{
 	pixel_y = -6
 	},
+/obj/item/gun/ballistic/automatic/m16a4/tactical,
 /obj/item/gun/ballistic/automatic/m16a4/tactical{
 	pixel_y = 4
 	},
@@ -13164,9 +13166,9 @@ Xh
 Xh
 PX
 AG
-IU
 oR
 ac
+if
 Bu
 qw
 gy

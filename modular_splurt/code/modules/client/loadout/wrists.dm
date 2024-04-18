@@ -27,7 +27,7 @@
 	loadout_initial_colors = list("#FFFFFF", "#FFFFFF")
 
 /datum/gear/wrists/talk_need_bracelet
-	name = "Браслет - Поговорите со мной"
+	name = "Браслет - Давайте общаться"
 	subcategory = LOADOUT_SUBCATEGORY_NONE
 	path = /obj/item/clothing/wrists/helper_bracelet
 	cost = 0

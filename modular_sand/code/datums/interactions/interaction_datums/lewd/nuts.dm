@@ -5,6 +5,10 @@
 	required_from_target = INTERACTION_REQUIRE_MOUTH
 	write_log_user = "make-them-suck-their-nuts"
 	write_log_target = "was made to suck nuts by"
+	p13user_emote = PLUG13_EMOTE_GROIN
+	p13user_strength = PLUG13_STRENGTH_NORMAL
+	p13target_emote = PLUG13_EMOTE_FACE
+	p13target_strength = PLUG13_STRENGTH_LOW
 
 /datum/interaction/lewd/nuts/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -37,3 +41,6 @@
 	required_from_target_exposed = INTERACTION_REQUIRE_BALLS
 	write_log_user = "slapped-nuts"
 	write_log_target = "had their nuts slapped by"
+	p13target_emote = "front"
+	p13user_emote = PLUG13_EMOTE_GROIN
+	p13user_strength = PLUG13_STRENGTH_NORMAL

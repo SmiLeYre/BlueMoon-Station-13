@@ -123,13 +123,42 @@
 
 /mob/living/silicon/robot/Topic(href, href_list)
 	. = ..()
-
+	// BLUEMOON ADD START - профиль для боргов
+	if(href_list["cyborg_profile"])
+		ui_interact(usr)
+	// BLUEMOON ADD END
 	if(href_list["character_profile"])
 		if(!profile)
 			profile = new(src)
 		profile.ui_interact(usr)
 
 	return
+
+// BLUEMOON ADD START - профиль для боргов
+// Да, это проклято и должно быть перенесено в отдельный датум, но...
+/mob/living/silicon/robot/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "CyborgProfile", "Профиль юнита [src]")
+		ui.open()
+
+/mob/living/silicon/robot/ui_static_data(mob/user, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	var/data[0]
+	if(!src || !istype(src))
+		return
+	data["silicon_flavor_text"] = mind?.silicon_flavor_text || ""
+	data["oocnotes"] = mind?.ooc_notes || ""
+	data["vore_tag"] = client?.prefs?.vorepref || "No"
+	data["erp_tag"] = client?.prefs?.erppref || "No"
+	data["mob_tag"] = client?.prefs?.mobsexpref || "No"
+	data["nc_tag"] = client?.prefs?.nonconpref || "No"
+	data["unholy_tag"] = client?.prefs?.unholypref || "No"
+	data["extreme_tag"] = client?.prefs?.extremepref || "No"
+	data["very_extreme_tag"] = client?.prefs?.extremeharm || "No"
+
+	return data
+// BLUEMOON ADD END
 
 /mob/living/silicon/robot/proc/pick_module()
 	if(module.type != /obj/item/robot_module)

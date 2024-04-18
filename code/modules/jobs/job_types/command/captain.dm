@@ -30,7 +30,7 @@
 
 	display_order = JOB_DISPLAY_ORDER_CAPTAIN
 
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal, /datum/quirk/blindness)
 	threat = 5
 
 	family_heirlooms = list(
@@ -56,7 +56,7 @@
 	gloves = /obj/item/clothing/gloves/color/captain
 	uniform =  /obj/item/clothing/under/rank/captain
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace
-	shoes = /obj/item/clothing/shoes/sneakers/brown
+	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat
 
 	backpack_contents = list( /obj/item/station_charter=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/stamp/command=1)

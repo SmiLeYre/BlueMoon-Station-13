@@ -63,6 +63,7 @@
 	if(message)
 		user.visible_message(span_lewd("<b>[user]</b> [message]."))
 		M.handle_post_sex(lust_amt, null, user, ORGAN_SLOT_PENIS) //SPLURT edit
+		user.client?.plug13.send_emote(PLUG13_EMOTE_GROIN, min(lust_amt * 3, 100), PLUG13_DURATION_NORMAL)
 		playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
 							'modular_sand/sound/interactions/bang5.ogg',
 							'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
@@ -652,9 +653,18 @@
 /obj/item/clothing/underwear/briefs/panties/portalpanties/examine(mob/user)
 	. = ..()
 	if(!portallight.len)
-		. += "<span class='notice'>Устройство не сопряжено, для сопряжения проведите фонариком по этой паре портальных трусиков (TM). </span>"
+		. += "<span class='notice'>Устройство не сопряжено, для сопряжения проведите фонариком по этой паре портальных трусиков (TM) или переведите устройство в <b>публичный режим</b> и ожидайте. </span>"
 	else
-		. += "<span class='notice'>Устройство сопряжено и ожидает использования по прямому назначению. Количество сопряженных устройств: [portallight.len].</span>"
+		. += "<span class='notice'>Устройство сопряжено и ожидает использования по прямому назначению. Количество сопряженных устройств: <b>[portallight.len]</b>.</span>"
+	if(free_use)
+		. += "<span class='notice'>Публичный доступ к устройству <b>включен</b>. (Alt+Click для смены режима)</span>"
+	else
+		. += "<span class='notice'>Публичный доступ к устройству <b>отключен</b>. (Alt+Click для смены режима)</span>"
+
+/obj/item/clothing/underwear/briefs/panties/portalpanties/AltClick(mob/user)
+	. = ..()
+	if(do_mob(user, src, 2 SECONDS))
+		free_use()
 
 /obj/item/clothing/underwear/briefs/panties/portalpanties/attackby(obj/item/I, mob/living/user) //pairing
 	if(istype(I, /obj/item/portallight))
@@ -737,6 +747,7 @@
 			temp.portalunderwear = null
 			temp.available_panties -= src
 			temp.updatesleeve()
+			temp.icon_state = "unpaired"
 	. = ..()
 
 /obj/item/clothing/underwear/briefs/panties/portalpanties/proc/drop_out()

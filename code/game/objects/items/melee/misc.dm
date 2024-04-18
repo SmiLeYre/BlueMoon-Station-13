@@ -47,6 +47,13 @@
 	if(message)
 		user.visible_message(span_lewd("<b>[user]</b> [message]"))
 		target.handle_post_sex(lust_amt, null, user)
+
+		switch (hole)
+			if (CUM_TARGET_VAGINA)
+				user.client?.plug13.send_emote(PLUG13_EMOTE_VAGINA, min(lust_amt*3, 100), PLUG13_DURATION_NORMAL)
+			if (CUM_TARGET_ANUS)
+				user.client?.plug13.send_emote(PLUG13_EMOTE_ANUS, min(lust_amt*3, 100), PLUG13_DURATION_NORMAL)
+
 		playsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
 							'modular_sand/sound/interactions/bang5.ogg',
 							'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
@@ -534,6 +541,16 @@
 			user?.visible_message("<span class='warning'>[user] collapses [src] back down!</span>")
 	playsound(src.loc, on_sound, 50, 1)
 	add_fingerprint(user)
+
+/**
+  * # Fancy Cane
+  */
+/obj/item/melee/classic_baton/ntcane
+	name = "Fancy Cane"
+	desc = "A cane with special engraving on it. It seems well suited for fending off assailants..."
+	icon_state = "cane_nt"
+	item_state = "cane_nt"
+	item_flags = ITEM_CAN_PARRY | NEEDS_PERMIT
 
 /obj/item/melee/classic_baton/telescopic/centcom
 	name = "Tactical Covenant Bat"

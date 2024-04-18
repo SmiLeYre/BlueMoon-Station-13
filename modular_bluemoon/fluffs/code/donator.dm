@@ -286,7 +286,7 @@
 	name = "AC Patch"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/accessory/ac_patch
-	ckeywhitelist = list("romontesque", "smol42", "oni3288", "allazarius")
+	ckeywhitelist = list("romontesque", "smol42", "oni3288", "allazarius", "mihana964")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/SH_jacket
@@ -512,6 +512,13 @@
 	ckeywhitelist = list("ghoststalin", "g3234")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/ntcane
+	name = "Nanotrasen Cane Modification Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/ntcane_kit
+	ckeywhitelist = list("stasdvrz")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
 /datum/gear/donator/bm/money_100k
 	name = "Extra Money"
 	slot = ITEM_SLOT_BACKPACK
@@ -610,3 +617,9 @@
 	ckeywhitelist = list("sanecman")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/emagged_jukebox
+	name = "Emagged Jukebox Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/jukebox/emagged
+	ckeywhitelist = list("smileycom")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

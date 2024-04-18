@@ -25,6 +25,7 @@
 		"Syndicate Advisor",
 		"Netorare",
 		"Commissar",
+		"Political Officer",
 		"NanoTrasen Slut",
 		"Syndicate Slut",
 		)

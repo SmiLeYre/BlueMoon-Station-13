@@ -36,7 +36,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 	save_key = _save_key
 	examine_no_preview = _examine_no_preview
 
-	RegisterSignal(target, COMSIG_PARENT_EXAMINE, .proc/show_flavor)
+	//RegisterSignal(target, COMSIG_PARENT_EXAMINE, .proc/show_flavor) BLUEMOON EDIT - перенос флаворов на хардкод
 
 	if(can_edit && ismob(target)) //but only mobs receive the proc/verb for the time being
 		var/mob/M = target
@@ -138,67 +138,123 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 			onclose(usr, "[target.name]")
 		return TRUE
 
+// BLUEMOON EDIT START - заменил систему ингейм смены флаворов на более простую и релевантную
 /mob/proc/manage_flavor_tests()
 	set name = "Manage Flavor Texts"
 	set desc = "Used to manage your various flavor texts."
 	set category = "IC"
 
-	var/list/L = GLOB.mobs_with_editable_flavor_text[src]
-
-	if(length(L) == 1)
-		var/datum/element/flavor_text/F = L[1]
-		F.set_flavor(src)
+	if(!isliving(src))
 		return
+	var/list/changeable_texts = list(
+		"OOC-заметки",
+		"Временный Флавор (Поза)"
+	)
+	if(iscarbon(src))
+		var/mob/living/carbon/our_mob = src
+		if(!our_mob.dna)
+			return
+		changeable_texts.Add("Флавор", "Обнажённый Флавор", "Лор Расы", "Хедшоты")
 
-	var/list/choices = list()
+	else if(issilicon(src))
+		if(!src.mind)
+			return
+		changeable_texts.Add("Синтетический флавор")
 
-	for(var/i in L)
-		var/datum/element/flavor_text/F = i
-		choices[F.flavor_name] = F
-
-	var/chosen = input(src, "Which flavor text would you like to modify?") as null|anything in choices
+	var/chosen = tgui_input_list(src, "Выберите параметр, который должен быть изменён. Изменения действуют только в течении раунда и не затрагивают сами преференсы. Если вам нужно ввести многострочный текст с ENTER-ами, то лучше введите его вне игры и скопируйте сюда.", "Управление флавор-текстами", changeable_texts, changeable_texts[1])
 	if(!chosen)
 		return
-	var/datum/element/flavor_text/F = choices[chosen]
-	if(F.flavor_name == "Headshot")
-		handle_headshot_flavor(F) // Directly handle headshot flavor
-	else
-		F.set_flavor(src) // Handle all other flavor texts
+	switch(chosen)
+		if("Флавор")
+			var/mob/living/carbon/our_mob = src
+			var/new_text = tgui_input_text(our_mob, "Введите новый флавор (максимум [MAX_FLAVOR_LEN] символов).", "Новый флавор", our_mob.dna.flavor_text, MAX_FLAVOR_LEN, TRUE, TRUE)
+			if(new_text)
+				our_mob.dna.flavor_text = new_text
+		if("Обнажённый Флавор")
+			var/mob/living/carbon/our_mob = src
+			var/new_text = tgui_input_text(our_mob, "Введите новый флавор обнажённого тела своего персонажа (максимум [MAX_FLAVOR_LEN] символов).", "Новый обнажённый флавор", our_mob.dna.naked_flavor_text, MAX_FLAVOR_LEN, TRUE, TRUE)
+			if(new_text)
+				our_mob.dna.naked_flavor_text = new_text
+		if("Лор Расы")
+			var/mob/living/carbon/our_mob = src
+			var/new_text = tgui_input_text(our_mob, "Введите новый лор биологического (или не совсем биологического) вида своего персонажа (максимум [MAX_FLAVOR_LEN] символов).", "Новый лор расы", our_mob.dna.custom_species_lore, MAX_FLAVOR_LEN, TRUE, TRUE)
+			if(new_text)
+				our_mob.dna.custom_species_lore = new_text
+		if("OOC-заметки")
+			if(iscarbon(src))
+				var/mob/living/carbon/our_mob = src
+				var/new_text = tgui_input_text(our_mob, "Введите новые ООС-заметки своего персонажа (максимум [MAX_FLAVOR_LEN] символов).", "Новые ООС-заметки", our_mob.dna.custom_species_lore, MAX_FLAVOR_LEN, TRUE, TRUE)
+				if(new_text)
+					our_mob.dna.ooc_notes = new_text
+			if(issilicon(src))
+				var/mob/living/silicon/our_borgy = src
+				var/new_text = tgui_input_text(our_borgy, "Введите новые ООС-заметки своего киборга (максимум [MAX_FLAVOR_LEN] символов).", "Новые ООС-заметки", our_borgy.mind.ooc_notes, MAX_FLAVOR_LEN, TRUE, TRUE)
+				if(new_text)
+					our_borgy.mind.ooc_notes = new_text
+		if("Хедшоты")
+			var/mob/living/carbon/our_mob = src
+			var/chosen_headshot_id = tgui_input_list(our_mob, "Выберите номер хедшота, который хотите изменить.", "Управление флавор-текстами", list("1", "2", "3"), "1")
+			// var/max_headshots = 3
+			if(!chosen_headshot_id || !isnum(text2num(chosen_headshot_id)))
+				return
+			chosen_headshot_id = text2num(chosen_headshot_id)
+			if(chosen_headshot_id >= our_mob.dna.headshot_links.len)
+				chosen_headshot_id = our_mob.dna.headshot_links.len || 1
+			var/old_link = our_mob.dna.headshot_links[chosen_headshot_id]
+			var/usr_input = tgui_input_text(our_mob, "Input the image link: (For Discord links, try putting the file's type at the end of the link, after the '&'. for example '&.jpg/.png/.jpeg')", "Headshot Image", old_link, 100, FALSE, FALSE)
+			if(isnull(usr_input))
+				return
 
-// New proc to handle headshot flavor text specifically (In manage-flavour-texts while in-game)
-/mob/proc/handle_headshot_flavor(datum/element/flavor_text/F)
-	var/old_headshot = F.texts_by_atom[src]
-	var/new_headshot = input(src, "Input the image link: (For Discord links, try putting the file's type at the end of the link, after the '&'. For example: '&.jpg/.png/.jpeg')", "Headshot Image", old_headshot) as text|null
-	if(isnull(new_headshot))
-		return
-	if(!new_headshot)
-		F.texts_by_atom[src] = null
-		to_chat(src, "Your headshot has been cleared.")
-		return
+			if(!usr_input)
+				our_mob.dna.headshot_links[chosen_headshot_id] = null
+				listclearnulls(our_mob.dna.headshot_links)
+				return
 
-	// Validate the headshot URL
-	var/static/link_regex = regex("https://i\\.gyazo\\.com|https://media\\.discordapp\\.net|https://cdn\\.discordapp\\.com|https://media\\.discordapp\\.net$|https://static1\\.e621\\.net")
-	var/static/end_regex = regex("\\.jpg|\\.png|\\.jpeg$")
+			var/static/link_regex = regex("^(https://i\\.gyazo\\.com|https://static1\\.e621\\.net|https://i\\.ibb\\.co/)")
+			var/static/end_regex = regex("(\\.jpg|\\.png|\\.jpeg)$")
 
-	if(!findtext(new_headshot, link_regex))
-		to_chat(src, span_warning("The link needs to be an unshortened Gyazo, E621, or Discordapp link!"))
-		return
-	if(!findtext(new_headshot, end_regex))
-		to_chat(src, span_warning("You need either \".png\", \".jpg\", or \".jpeg\" in the link!"))
-		return
+			if(!findtext(usr_input, link_regex))
+				to_chat(our_mob, span_warning("The link needs to be an unshortened Gyazo, iBB, E621 link!"))
+				return
 
-	// Update the headshot URL if it's different
-	if(old_headshot != new_headshot)
-		F.texts_by_atom[src] = new_headshot
-		to_chat(src, span_notice("Your headshot has been updated."))
-		to_chat(src, span_notice("If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser."))
-		to_chat(src, span_notice("Keep in mind that the photo will be downsized to 250x250 pixels, so the more square the photo, the better it will look."))
+			if(!findtext(usr_input, end_regex))
+				to_chat(our_mob, span_warning("You need either \".png\", \".jpg\", or \".jpeg\" in the end of the link!"))
+				return
+
+			var/static/list/repl_chars = list("\n"="#","\t"="#","'"="","\""=""," "="")
+			var/new_link = sanitize(usr_input, repl_chars)
+			if(our_mob.dna.headshot_links[chosen_headshot_id] == new_link)
+				return
+
+			to_chat(our_mob, span_notice("Если картинка не отображается в игре должным образом, убедитесь, что это прямая ссылка на изображение, которая правильно открывается в обычном браузере."))
+			to_chat(our_mob, span_notice("Имейте в виду, что размер фотографии будет уменьшен до 256x256 пикселей, поэтому чем квадратнее фотография, тем лучше она будет выглядеть."))
+
+			our_mob.dna.headshot_links[chosen_headshot_id] = new_link
+		if("Временный Флавор (Поза)")
+			var/mob/living/our_mob = src
+			var/new_text = tgui_input_text(our_mob, "Введите новую позу своего персонажа (максимум 1024 символа).", "Новая поза", our_mob.tempflavor, 1024, TRUE, TRUE)
+			our_mob.tempflavor = new_text
+		if("Синтетический флавор")
+			var/mob/living/silicon/our_borgy = src
+			if(our_borgy.mind)
+				var/new_text = tgui_input_text(our_borgy, "Введите новый синт-флавор (максимум [MAX_FLAVOR_LEN] символов). Изменения действуют только в течении раунда и не затрагивают сами преференсы.", "Новый синт-флавор", our_borgy.mind.silicon_flavor_text, MAX_FLAVOR_LEN, TRUE, TRUE)
+				if(new_text)
+					our_borgy.mind.silicon_flavor_text = new_text
+// BLUEMOON EDIT END
 
 /mob/proc/set_pose()
 	set name = "Set Pose"
 	set desc = "Sets your temporary flavor text"
 	set category = "IC"
+	// BLUEMOON EDIT START - перенос темпфлавора на хардкод
+	var/mob/living/our_mob = src
 
+	if(!istype(our_mob))
+		return
+	var/new_text = tgui_input_text(our_mob, "Введите новую позу своего персонажа (максимум 1024 символа).", "Новая поза", our_mob.tempflavor, 1024, TRUE, TRUE)
+	our_mob.tempflavor = new_text
+
+	/*
 	var/list/L = GLOB.mobs_with_editable_flavor_text[src]
 	var/datum/element/flavor_text/carbon/temporary/T
 	for(var/i in L)
@@ -208,6 +264,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		to_chat(src, "<span class='warning'>Your mob type does not support temporary flavor text.</span>")
 		return
 	T.set_flavor(src)
+	*/
 
 /datum/element/flavor_text/proc/set_flavor(mob/user)
 	if(!(user in texts_by_atom))

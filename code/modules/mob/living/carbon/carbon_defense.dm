@@ -402,11 +402,14 @@
 								target_message = "<span class='boldnotice'><b>[M]</b> гладит вас по голове, чтобы вы почувствовали себя лучше!</span>")
 					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "lewd_headpat", /datum/mood_event/lewd_headpat)
 					H.handle_post_sex(5, null, H) //Headpats are hot af
+					H.client?.plug13.send_emote(PLUG13_EMOTE_BASIC, PLUG13_STRENGTH_MEDIUM, PLUG13_DURATION_SHORT)
 				else
 					M.visible_message("<span class='notice'><b>[M]</b> похлопывает <b>[src]</b> по голове!</span>", \
 								"<span class='notice'>Ты гладишь <b>[src]</b> по голове, чтобы [ru_who()] почувствовал себя лучше!</span>", target = src,
 								target_message = "<span class='boldnotice'><b>[M]</b> гладит вас по голове, чтобы вы почувствовали себя лучше!</span>")
 					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "headpat", /datum/mood_event/headpat)
+					H.client?.plug13.send_emote(PLUG13_EMOTE_BASIC, PLUG13_STRENGTH_LOW_PLUS, PLUG13_DURATION_TINY)
+					// LOW_PLUS потому что длительность TINY и привод не успеет особо разогнаться
 			//SPLURT EDIT END
 
 			if(!(client?.prefs.cit_toggles & NO_AUTO_WAG) && friendly_check)
@@ -433,6 +436,7 @@
 						"<span class='notice'>Ты обнимаешь <b>[src]</b>!</span>", target = src,\
 						target_message = "<span class='notice'><b>[M]</b> обнимает тебя!</span>")
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug)
+			M.client?.plug13.send_emote(PLUG13_EMOTE_BASIC, PLUG13_STRENGTH_LOW_PLUS, PLUG13_DURATION_TINY)
 			friendly_check = TRUE
 
 		if(friendly_check && (HAS_TRAIT(M, TRAIT_FRIENDLY) || HAS_TRAIT(src, TRAIT_FRIENDLY)))

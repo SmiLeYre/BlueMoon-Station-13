@@ -1205,11 +1205,11 @@
 	back = /obj/item/storage/backpack/satchel/sec
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
 		/obj/item/storage/firstaid/regular=1,
-		/obj/item/stamp/syndicate=1,
+		/obj/item/stamp/chameleon=1,
 		)
 	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
 	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
-	id = /obj/item/card/id
+	id = /obj/item/card/id/ert
 
 /datum/outfit/centcom_syndicate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
@@ -1258,11 +1258,11 @@
 	back = /obj/item/storage/backpack/satchel/leather
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
 		/obj/item/storage/firstaid/regular=1,
-		/obj/item/stamp/centcom=1,
+		/obj/item/stamp/chameleon=1,
 		)
 	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
 	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
-	id = /obj/item/card/id
+	id = /obj/item/card/id/ert
 
 /datum/outfit/centcom_nanotrasen/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)

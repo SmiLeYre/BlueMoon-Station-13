@@ -5,6 +5,7 @@
 	write_log_user = "sucked nipples"
 	write_log_target = "had their nipples sucked by"
 	interaction_sound = null
+	p13target_emote = PLUG13_EMOTE_BREASTS
 
 /datum/interaction/lewd/nipsuck/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	var/user_message

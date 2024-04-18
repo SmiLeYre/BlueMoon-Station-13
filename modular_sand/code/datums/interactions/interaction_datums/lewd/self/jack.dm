@@ -7,6 +7,7 @@
 	max_distance = 0
 	write_log_user = "jerked off"
 	write_log_target = null
+	p13user_emote = PLUG13_EMOTE_PENIS
 
 	additional_details = list(
 		list(

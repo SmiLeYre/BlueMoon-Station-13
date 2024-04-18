@@ -255,6 +255,48 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
+/obj/item/modkit/ntcane_kit
+	name = "Harness Armor Kit"
+	desc = "A modkit for making an Fancy Cane into a Old Luxury Cane."
+	product = /obj/item/melee/baton/stunntcane
+	fromitem = list(/obj/item/melee/classic_baton/ntcane)
+
+/obj/item/melee/baton/stunntcane
+	name = "Old Luxury Cane"
+	desc = "На вид потрепанная временем трость которая украшена золотом с не раз отреставрированным деревом и на ручке еле поблескивал алмаз. Такие имеют на некоторых станция Представители НТ как показатель статуса, этот же видимо скорее как память раз уж не заменялся владельцем видимо годами."
+	item_state = "cane_nt"
+	icon_state = "cane_nt"
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+
+/obj/item/melee/baton/stunntcane/switch_status(new_status = FALSE, silent = FALSE)
+	if(turned_on != new_status)
+		turned_on = new_status
+		if(!silent)
+			playsound(loc, 'modular_bluemoon/fluffs/sound/weapon/stunblade.ogg', 75, 1, -1)
+		if(turned_on)
+			START_PROCESSING(SSobj, src)
+		else
+			STOP_PROCESSING(SSobj, src)
+	update_icon()
+
+/obj/item/melee/baton/stunntcane/update_icon_state()
+	if(turned_on)
+		icon_state = "cane_nt_active"
+		item_state = "cane_nt_active"
+	else if(!cell)
+		icon_state = "cane_nt_nocell"
+		item_state = "cane_nt"
+	else
+		icon_state = "cane_nt"
+		item_state = "cane_nt"
+
+/obj/item/melee/baton/stunntcane/get_worn_belt_overlay(icon_file)
+	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "cane_nt")
+
+////////////////////////////////////////////////////////////////////////////////////////
+
 /obj/item/modkit/pf940_kit
 	name = "PF940 Kit"
 	desc = "A modkit for making an Enforcer into a PF940."

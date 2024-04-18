@@ -26,6 +26,13 @@
 		if(message)
 			user.visible_message("<span class='lewd'><b>[user]</b> [message].</span>")
 			target.handle_post_sex(lust_amt, null, user)
+
+			switch (hole)
+				if (CUM_TARGET_VAGINA)
+					user.client?.plug13.send_emote(PLUG13_EMOTE_VAGINA, min(lust_amt * 3, 100), PLUG13_DURATION_NORMAL)
+				if (CUM_TARGET_ANUS)
+					user.client?.plug13.send_emote(PLUG13_EMOTE_ANUS, min(lust_amt * 3, 100), PLUG13_DURATION_NORMAL)
+
 			playsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
 								'modular_sand/sound/interactions/bang5.ogg',
 								'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)

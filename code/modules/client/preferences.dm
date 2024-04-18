@@ -270,6 +270,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 "neckfire_color" = "ffffff"
 )
 
+	var/list/custom_emote_panel = list() //user custom emote panel
 
 	var/custom_speech_verb = "default" //if your say_mod is to be something other than your races
 	var/custom_tongue = "default" //if your tongue is to be something other than your races
@@ -432,7 +433,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(istype(C))
 		if(!IsGuestKey(C.key))
 			load_path(C.ckey)
-			unlock_content = C.IsByondMember()
+			unlock_content = C.IsByondMember() || IS_CKEY_DONATOR_GROUP(C.key, DONATOR_GROUP_TIER_1)
 			if(unlock_content)
 				max_save_slots += 8 //SPLURT EDIT
 	var/loaded_preferences_successfully = load_preferences()
@@ -4196,6 +4197,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						random_character()
 						real_name = random_unique_name(gender)
 						save_character()
+					if(user.client?.prefs) //custom emote panel is attached to the character
+						var/list/payload = user.client.prefs.custom_emote_panel
+						user.client.tgui_panel?.window.send_message("emotes/setList", payload)
 
 				if("tab")
 					if(href_list["tab"])
@@ -4487,7 +4491,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.custom_species_lore = features["custom_species_lore"]
 	character.dna.flavor_text = features["flavor_text"]
 	character.dna.naked_flavor_text = features["naked_flavor_text"]
-	character.dna.headshot_link = features["headshot_link"]
+	if (features["headshot_link"])
+		character.dna.headshot_links.Add(features["headshot_link"])
+	if (features["headshot_link1"])
+		character.dna.headshot_links.Add(features["headshot_link1"])
+	if (features["headshot_link2"])
+		character.dna.headshot_links.Add(features["headshot_link2"])
+	character.dna.ooc_notes = features["ooc_notes"]
 	character.dna.species.exotic_blood_color = blood_color //а раньше эта строчка была немного выше и всё ломалось, думайте, когда делаете врезки
 	// BLUEMOON EDIT END
 

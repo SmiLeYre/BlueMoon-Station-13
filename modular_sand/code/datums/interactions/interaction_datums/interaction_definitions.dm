@@ -30,6 +30,10 @@
 	required_from_user = INTERACTION_REQUIRE_HANDS
 	interaction_sound = 'sound/weapons/thudswoosh.ogg'
 
+	p13target_emote = PLUG13_EMOTE_BASIC
+	p13target_strength = PLUG13_STRENGTH_LOW_PLUS
+	p13target_duration = PLUG13_DURATION_SHORT
+
 /datum/interaction/fistbump
 	description = "Удариться кулачками!"
 	simple_message = "USER бьётся кулачком о кулачком TARGET! О да!"
