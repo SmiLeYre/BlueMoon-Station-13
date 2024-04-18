@@ -292,6 +292,38 @@ GLOBAL_LIST_INIT(pda_reskins, list(
 	PDA_SKIN_MINIMAL = list("icon" = 'icons/obj/pda_minimal.dmi')
 	))
 
+//Payed ERT calls
+GLOBAL_LIST_INIT(payed_ert, list(
+	list(
+		"available" = TRUE,
+		"price" = 100000,
+		"name" = "Развлекательная труппа",
+		"disc" = "Смена стала скучной? -Пора вызывать этих ребят",
+		"link" = /datum/ert/erp,
+	),
+	list(
+		"available" = TRUE,
+		"price" = 80000,
+		"name" = "Отряд зачистки",
+		"disc" = "Вся грязь и вредители на станции будут уничтожены",
+		"link" = /datum/ert/janitor,
+	),
+	list(
+		"available" = TRUE,
+		"price" = 160000,
+		"name" = "Санитарная бригада",
+		"disc" = "Горы трупов и полное отсуствие медиков? Этот вопрос решаем",
+		"link" = /datum/ert/hsc,
+	),
+	list(
+		"available" = TRUE,
+		"price" = 240000,
+		"name" = "Ремонтная бригада",
+		"disc" = "Разгермы, последствия аварий, подача питания - они справятся со всем",
+		"link" = /datum/ert/engineer_ert,
+	),
+))
+
 /////////////////////////////////////
 // atom.appearence_flags shortcuts //
 /////////////////////////////////////
