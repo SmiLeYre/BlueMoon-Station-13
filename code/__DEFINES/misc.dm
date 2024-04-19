@@ -296,14 +296,21 @@ GLOBAL_LIST_INIT(pda_reskins, list(
 GLOBAL_LIST_INIT(payed_ert, list(
 	list(
 		"available" = TRUE,
-		"price" = 100000,
+		"price" = 40000,
+		"name" = "Доставщики питцы",
+		"disc" = "Нечего есть? Поешьте питцы.",
+		"link" = /datum/ert/pizza,
+	),
+	list(
+		"available" = TRUE,
+		"price" = 80000,
 		"name" = "Развлекательная труппа",
 		"disc" = "Смена стала скучной? -Пора вызывать этих ребят",
 		"link" = /datum/ert/erp,
 	),
 	list(
 		"available" = TRUE,
-		"price" = 80000,
+		"price" = 85000,
 		"name" = "Отряд зачистки",
 		"disc" = "Вся грязь и вредители на станции будут уничтожены",
 		"link" = /datum/ert/janitor,
