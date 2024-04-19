@@ -30,7 +30,6 @@
 
 	family_heirlooms = list(
 		/obj/item/gavelhammer,
-		/obj/item/storage/briefcase/lawyer/family,
 		/obj/item/book/manual/wiki/security_space_law
 	)
 
@@ -44,7 +43,6 @@
 	uniform = /obj/item/clothing/under/rank/civilian/lawyer/really_black
 	//suit = /obj/item/clothing/suit/toggle/lawyer/black
 	shoes = /obj/item/clothing/shoes/laceup
-	l_hand = /obj/item/storage/briefcase/lawyer
 	l_pocket = /obj/item/laser_pointer
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge
 
@@ -55,7 +53,7 @@
 	chameleon_extras = /obj/item/stamp/law
 
 	backpack_contents = list(/obj/item/stamp/law=1, /obj/item/gun/energy/civilian=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
-	box = /obj/item/storage/box/survival/security
+	box = /obj/item/storage/box/survival/command
 	accessory = /obj/item/clothing/accessory/permit/staff
 
 	implants = list(/obj/item/implant/mindshield)
@@ -73,7 +71,6 @@
 	uniform = /obj/item/clothing/under/rank/civilian/lawyer/really_black
 	//suit = /obj/item/clothing/suit/toggle/lawyer/black
 	shoes = /obj/item/clothing/shoes/jackboots/tall_default
-	l_hand = /obj/item/storage/briefcase/lawyer
 	l_pocket = /obj/item/laser_pointer
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge
 

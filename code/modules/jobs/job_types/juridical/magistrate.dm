@@ -46,7 +46,6 @@
 
 	family_heirlooms = list(
 		/obj/item/gavelhammer,
-		/obj/item/storage/briefcase/lawyer/family,
 		/obj/item/book/manual/wiki/security_space_law
 	)
 
