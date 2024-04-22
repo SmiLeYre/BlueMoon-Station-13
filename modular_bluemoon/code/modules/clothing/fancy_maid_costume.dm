@@ -11,7 +11,7 @@
 
 /obj/item/clothing/under/costume/fancy_maid/ComponentInitialize()
 	. = ..()
-	AddElement(/datum/element/polychromic, list("#edf9ff", "#333333"), 2)
+	AddElement(/datum/element/polychromic, list("#333333", "#edf9ff"), 2)
 
 /obj/item/clothing/gloves/fancy_maid_arm_covers
 	name = "fancy maid arm covers"
@@ -20,6 +20,7 @@
 	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/fancy_maid_costume_worn.dmi'
 	icon_state = "fancy_maid_arm_covers"
 	item_state = "fancy_maid_arm_covers"
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/gloves/fancy_maid_arm_covers/ComponentInitialize()
 	. = ..()
@@ -32,6 +33,7 @@
 	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/fancy_maid_costume_worn.dmi'
 	icon_state = "fancy_maid_neck_cover"
 	item_state = "fancy_maid_neck_cover"
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/neck/fancy_maid_neck_cover/ComponentInitialize()
 	. = ..()
@@ -44,6 +46,7 @@
 	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/fancy_maid_costume_worn.dmi'
 	icon_state = "fancy_maid_headband"
 	item_state = "fancy_maid_headband"
+	w_class = WEIGHT_CLASS_SMALL
 
 /obj/item/clothing/head/fancy_maid_headband/ComponentInitialize()
 	. = ..()
