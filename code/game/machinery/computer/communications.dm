@@ -280,7 +280,7 @@
 				state = STATE_MAIN
 
 				//а тут надо вызывать
-				INVOKE_ASYNC(src, .proc/makeEmergencyresponseteam, data["link"])
+				INVOKE_ASYNC(src, .proc/makeEmergencyresponseteam, data["link"], id)
 
 		if ("recallShuttle")
 			// AIs cannot recall the shuttle
@@ -744,7 +744,7 @@
 	.["mainsettings"]["ertphrase"]["value"] = newtemplate.ertphrase
 	.["mainsettings"]["open_armory"]["value"] = newtemplate.opendoors ? "Да" : "Нет"
 
-/obj/machinery/computer/communications/proc/makeEmergencyresponseteam(var/datum/ert/ertemplate = null)
+/obj/machinery/computer/communications/proc/makeEmergencyresponseteam(var/datum/ert/ertemplate = null, var/id)
 	if (ertemplate)
 		ertemplate = new ertemplate
 	else
@@ -753,8 +753,8 @@
 	var/list/settings = list(
 		"mainsettings" = list(
 		"template" = list("desc" = "Template", "callback" = CALLBACK(src, .proc/makeERTTemplateModified), "type" = "datum", "path" = "/datum/ert", "subtypesonly" = TRUE, "value" = ertemplate.type),
-		"teamsize" = list("desc" = "Team Size", "type" = "number", "value" = ertemplate.teamsize),
-		"mission" = list("desc" = "Mission", "type" = "string", "value" = ertemplate.mission),
+		"teamsize" = list("desc" = "Team Size", "type" = "number", "value" =  GLOB.payed_ert[id]["teamsize"]),
+		"mission" = list("desc" = "Mission", "type" = "string", "value" = GLOB.payed_ert[id]["mission"]),
 		"polldesc" = list("desc" = "Ghost poll description", "type" = "string", "value" = ertemplate.polldesc),
 		"ertphrase" = list("desc" = "ERT Sending Sound", "type" = "string", "value" = ertemplate.ertphrase),
 		"enforce_human" = list("desc" = "Enforce human authority", "type" = "boolean", "value" = "[(CONFIG_GET(flag/enforce_human_authority) ? "Yes" : "No")]"),
@@ -846,7 +846,10 @@
 				CHECK_TICK
 		return TRUE
 	else
-		priority_announce("[station_name()], мы не можем выслать [ertemplate.polldesc] ввиду занятости всех действующих оперативников.", "Отряд Быстрого Реагирования недоступен", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_no.ogg') //BlueMoon sound
+		priority_announce("[station_name()], мы не можем выслать [ertemplate.polldesc] ввиду занятости всех действующих оперативников. Средства были возвращены.", "Отряд Быстрого Реагирования недоступен", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_no.ogg') //BlueMoon sound
+		var/datum/bank_account/bank_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
+		GLOB.payed_ert[id]["available"] = TRUE
+		bank_account.adjust_money(GLOB.payed_ert[id]["price"])
 		return FALSE
 
 /**

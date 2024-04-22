@@ -40,7 +40,7 @@ export const Folder = (props, context) => {
         ))}
         {contents.length === 0 && (
           <Section>
-            <Box color="lightgrey" align="center">
+            <Box color="grey" align="center">
               This folder is empty!
             </Box>
           </Section>
