@@ -42,7 +42,7 @@
 		A.firer = source // если не отметить стрелка, то мех будет попадать снарядами сам в себя
 		if(source.client && isliving(source)) //dont want it to happen from syndie mecha npc mobs, they do direct fire anyways
 			var/mob/living/shooter = source
-			if(shooter.a_intent != INTENT_HELP)
+			if(shooter.a_intent == INTENT_HARM)
 				A.hit_prone_targets = TRUE
 		// BLUEMOON ADD END
 		A.fire()
