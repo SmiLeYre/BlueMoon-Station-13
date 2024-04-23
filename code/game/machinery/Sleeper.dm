@@ -165,6 +165,8 @@
 /obj/machinery/sleeper/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Alt-click [src] to [state_open ? "close" : "open"] it.</span>"
+	if(in_range(user, src) || isobserver(user))
+		. += "<span class='notice'>The status display reads: Efficiency: <b>[efficiency*100]%</b>.</span>"
 
 /obj/machinery/sleeper/process()
 	..()
