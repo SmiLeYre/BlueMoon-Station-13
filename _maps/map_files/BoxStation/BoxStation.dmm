@@ -70487,9 +70487,6 @@
 	},
 /obj/item/roller,
 /obj/item/roller,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
@@ -70497,13 +70494,6 @@
 /obj/machinery/power/apc/auto_name/south{
 	name = "Brig Infirmary"
 	},
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/table/glass,
 /obj/item/reagent_containers/blood{
 	layer = 4.2
 	},
@@ -70519,14 +70509,10 @@
 /obj/item/roller,
 /obj/item/roller,
 /obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/tile/red,
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/machinery/power/apc/auto_name/south{
-	name = "Brig Infirmary"
 	},
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
