@@ -5,14 +5,6 @@
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 
-/datum/gear/donator/bm/heresy_card
-	name = "Occult Card"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/card/id/heresy
-	ckeywhitelist = list("trollandrew")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
-
 /datum/gear/donator/muck_id
 	name = "Muck ID Card"
 	path = /obj/item/card/id/muck
