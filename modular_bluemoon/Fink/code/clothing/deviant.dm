@@ -45,7 +45,7 @@
 	icon_state = "lust_permit"
 	name = "Horny activity permit"
 	desc = "Вещественное одобрение на проведение извращённой~ деятельности"
-	permitted_weapons = "Holy dildo, BDSM attributes"
+	permitted_weapons = "Holy dildo, BDSM whip, Riding crop "
 	notes = "Носитель имеет право обустраивать бордели и оргии, иметь при себе и использовать афродизиаки, ходить голым, а также имеет права на публичное совокупление и изнасилования без страха преследования со стороны службы безопасности."
 
 /obj/item/clothing/accessory/permit/agony
@@ -53,7 +53,7 @@
 	icon_state = "agony_permit"
 	name = "Agony activity permit"
 	desc = "Вещественное одобрение на проведение жестокой деструктивной деятельности"
-	permitted_weapons = "Armblade,"
+	permitted_weapons = "Bloody Nullrods(Armblade, Darkblade, Red Claymore, Pithfork, Tentacle) Satan Bible"
 	notes = "Носитель имеет право на поклонение любому божеству (Нар`си, Сатана в т.ч.), на проведение пыток, боёв и казней и т.д. без страха преследования со стороны службы безопасности."
 
 /obj/item/clothing/accessory/permit/muck
@@ -80,7 +80,7 @@
 	icon_state = "lust_plus"
 	name = "Horny activity permit"
 	desc = "Вещественное одобрение ЦК на проведение извращённой~ деятельности"
-	permitted_weapons = "Holy dildo, BDSM attributes"
+	permitted_weapons = "Holy dildo, BDSM whip, Riding crop "
 	notes = "Носитель имеет право обустраивать бордели и оргии, иметь при себе и использовать афродизиаки, ходить голым, а также имеет права на публичное совокупление и изнасилования без страха преследования со стороны службы безопасности."
 
 /obj/item/clothing/accessory/permit/special/agony
@@ -88,7 +88,7 @@
 	icon_state = "agony_plus"
 	name = "Agony activity permit"
 	desc = "Вещественное одобрение ЦК на проведение жестокой деструктивной деятельности"
-	permitted_weapons = "Стандартное вооружение офицера мостика, в том числе гражданский энергопистолет"
+	permitted_weapons = "Bloody Nullrods(Armblade, Darkblade, Red Claymore, Pithfork, Tentacle) Satan Bible"
 	notes = "Носитель имеет право на поклонение любому божеству (Нар`си, Сатана в т.ч.), на проведение пыток, боёв и казней и т.д. без страха преследования со стороны службы безопасности."
 
 /obj/item/clothing/accessory/permit/special/muck
@@ -96,7 +96,7 @@
 	icon_state = "muck_plus"
 	name = "Muck activity permit"
 	desc = "Вещественное одобрение ЦК на проведение мерзкой в общем понимании деятельности"
-	permitted_weapons = "Любое неконтрабандное вооружение"
+	permitted_weapons = "N/A"
 	notes = "Носитель имеет право на раскидывание мусора, быть грязным, вонючим и противным без страха преследования со стороны службы безопасности."
 
 // коробка
