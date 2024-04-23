@@ -92,6 +92,7 @@
 				/obj/item/soap/inteq = 4,
 				/obj/item/sign/flag/inteq = 1,
 //				/obj/item/storage/fancy/cigarettes/cigpack_inteq = 1, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
+				/obj/item/storage/backpack/guitarbag/loaded = 1,
 				)
 
 /obj/effect/spawner/lootdrop/prison_contraband
