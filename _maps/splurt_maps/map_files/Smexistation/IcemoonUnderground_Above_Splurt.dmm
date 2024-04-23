@@ -4,6 +4,10 @@
 	icon_state = "platingdmg2"
 	},
 /area/maintenance/department/science)
+"af" = (
+/obj/machinery/vending/kink,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "ag" = (
 /obj/machinery/light/floor,
 /turf/closed/mineral/random/snow,
@@ -55,7 +59,7 @@
 	icon_state = "riveted";
 	name = "hyper-reinforced wall"
 	},
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
 "au" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
@@ -161,6 +165,10 @@
 "aZ" = (
 /turf/closed/indestructible/rock/snow/ice,
 /area/icemoon/underground/unexplored/rivers)
+"bb" = (
+/obj/structure/sign/poster/contraband/ravenheart/random,
+/turf/closed/wall,
+/area/icemoon/surface/outdoors)
 "bc" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -187,6 +195,11 @@
 /obj/item/reagent_containers/glass/beaker/waterbottle/wataur,
 /turf/open/floor/plating,
 /area/maintenance/department/science)
+"bj" = (
+/obj/machinery/research_table,
+/obj/effect/decal/cleanable/semen/femcum,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "bk" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 4
@@ -214,10 +227,22 @@
 "bo" = (
 /turf/closed/wall/r_wall,
 /area/science/misc_lab)
+"br" = (
+/obj/effect/decal/remains/robot,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"bs" = (
+/obj/structure/flora/tree/spookylog{
+	pixel_x = -34;
+	pixel_y = -3
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "bt" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/warning/securearea{
-	pixel_y = 32
+	pixel_y = 32;
+	desc = "A warning sign which reads 'DANGER AREA'."
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/security)
@@ -247,10 +272,20 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/production)
+"bL" = (
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/icemoon/surface/outdoors)
 "bR" = (
 /obj/structure/closet/crate/secure/loot,
 /turf/open/floor/plating,
 /area/mine/living_quarters)
+"bW" = (
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "bZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
@@ -342,12 +377,9 @@
 /turf/open/floor/carpet,
 /area/science)
 "cx" = (
-/obj/structure/table,
-/obj/item/stack/sheet/glass/fifty,
-/obj/item/stack/sheet/glass/fifty,
-/obj/structure/lattice/catwalk,
+/obj/structure/loot_pile/maint,
 /turf/open/floor/plating,
-/area/maintenance/department/science)
+/area/icemoon/surface/outdoors)
 "cA" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 9
@@ -439,6 +471,18 @@
 	},
 /turf/open/floor/circuit/telecomms,
 /area/science/xenobiology)
+"cR" = (
+/obj/structure/loot_pile/maint,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/icemoon/surface/outdoors)
+"cS" = (
+/obj/structure/loot_pile/maint,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/icemoon/surface/outdoors)
 "cT" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "xenobio5";
@@ -463,6 +507,12 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/science)
+"cZ" = (
+/obj/item/trash/cheesie,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/icemoon/surface/outdoors)
 "da" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -531,15 +581,35 @@
 	},
 /turf/open/floor/plasteel,
 /area/science)
+"dr" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "dt" = (
-/obj/structure/cable{
-	icon_state = "0-4"
+/obj/structure/stairs{
+	dir = 4;
+	icon_state = "stairs_t"
 	},
-/obj/machinery/power/apc/auto_name/west,
-/turf/open/floor/plating{
-	icon_state = "platingdmg2"
+/obj/structure/stairs{
+	dir = 4;
+	icon_state = "stairs_t"
 	},
-/area/maintenance/department/science)
+/obj/structure/stairs{
+	dir = 4;
+	icon_state = "stairs_t"
+	},
+/obj/structure/stairs{
+	dir = 4;
+	icon_state = "stairs_t"
+	},
+/turf/open/floor/plasteel,
+/area/icemoon/surface/outdoors)
+"dw" = (
+/obj/machinery/light,
+/obj/effect/landmark/start/stowaway,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "dx" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
@@ -577,6 +647,10 @@
 	},
 /turf/open/floor/wood,
 /area/maintenance/bar)
+"dE" = (
+/obj/effect/decal/cleanable/blood/gibs/slime/limb,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "dF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 1
@@ -586,6 +660,18 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
+"dK" = (
+/obj/item/trash/can,
+/obj/item/reagent_containers/food/snacks/grown/cannabis,
+/obj/item/reagent_containers/food/snacks/grown/cannabis{
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/food/snacks/grown/cannabis{
+	pixel_x = 3;
+	pixel_y = -1
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "dM" = (
 /obj/machinery/button/door{
 	id = "xenobio7";
@@ -840,13 +926,8 @@
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
 "eG" = (
-/obj/item/stack/rods{
-	amount = 2
-	},
-/obj/structure/sign/poster/ripped{
-	pixel_x = 32
-	},
-/turf/open/floor/plating/airless,
+/obj/structure/stairs,
+/turf/open/floor/plasteel/stairs/medium,
 /area/icemoon/surface/outdoors)
 "eH" = (
 /obj/machinery/airalarm{
@@ -937,6 +1018,11 @@
 /obj/effect/turf_decal/stripes/corner,
 /turf/open/floor/plasteel,
 /area/mine/eva)
+"eY" = (
+/obj/effect/decal/cleanable/semen/femcum,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "eZ" = (
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
@@ -1124,6 +1210,16 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/plasteel,
 /area/mine/eva)
+"fn" = (
+/obj/effect/spawner/lootdrop/grille_or_trash{
+	loot = list(/obj/structure/grille = 25, "" = 75);
+	name = "25% grille spawner"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/icemoon/surface/outdoors)
 "fo" = (
 /obj/machinery/disposal/bin,
 /obj/structure/window/reinforced{
@@ -1304,6 +1400,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/science)
+"fT" = (
+/obj/effect/decal/cleanable/ash,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "fU" = (
 /obj/structure/chair/comfy/brown,
 /obj/effect/decal/cleanable/cobweb{
@@ -1315,6 +1416,10 @@
 /obj/machinery/door/airlock/maintenance_hatch/abandoned{
 	use_power = 0
 	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"fZ" = (
+/obj/item/storage/fancy/cigarettes/cigars/havana,
 /turf/open/floor/plating,
 /area/icemoon/surface/outdoors)
 "gb" = (
@@ -1334,6 +1439,10 @@
 	},
 /turf/open/floor/engine,
 /area/science/storage)
+"ge" = (
+/obj/effect/decal/cleanable/ash/large,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "gf" = (
 /obj/structure/sign/warning/biohazard{
 	pixel_x = 32
@@ -1365,6 +1474,12 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/science/xenobiology)
+"gj" = (
+/obj/effect/decal/cleanable/salt,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/icemoon/surface/outdoors)
 "gk" = (
 /obj/machinery/door/airlock/research/glass/incinerator/toxmix_interior,
 /turf/open/floor/engine,
@@ -1381,6 +1496,17 @@
 	},
 /turf/open/floor/plating,
 /area/science/misc_lab)
+"gn" = (
+/obj/effect/decal/cleanable/blood/gibs/limb,
+/obj/structure/rack,
+/obj/item/storage/firstaid/regular,
+/obj/item/stack/medical/suture,
+/obj/item/stack/medical/suture,
+/obj/item/stack/medical/mesh,
+/obj/item/clothing/glasses/hud/health,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "gp" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -1476,7 +1602,7 @@
 /obj/machinery/camera/preset/toxins,
 /obj/item/target/alien/anchored,
 /turf/open/indestructible,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
 "gQ" = (
 /obj/machinery/shower{
 	pixel_y = 20
@@ -1589,6 +1715,11 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/mine/living_quarters)
+"hs" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/mine/maintenance)
 "ht" = (
 /obj/machinery/door/airlock/hatch{
 	use_power = 0
@@ -1621,6 +1752,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/command/bridge)
+"hB" = (
+/obj/effect/spawner/lootdrop/grille_or_trash{
+	loot = list(/obj/structure/grille = 25, "" = 75);
+	name = "25% grille spawner"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "hC" = (
 /obj/machinery/atmospherics/pipe/simple/yellow/visible{
 	dir = 4
@@ -1718,6 +1857,11 @@
 	},
 /turf/open/floor/carpet,
 /area/service/chapel/main/monastery)
+"ij" = (
+/obj/effect/decal/cleanable/insectguts,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "ik" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 9
@@ -1784,6 +1928,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
+"iB" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "iC" = (
 /obj/structure/closet/emcloset,
 /obj/item/tank/internals/emergency_oxygen/empty,
@@ -1818,6 +1967,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
+"iJ" = (
+/obj/structure/grille,
+/obj/item/trash/syndi_cakes,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "iK" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /turf/open/floor/plasteel,
@@ -1874,7 +2028,7 @@
 "jd" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
 "je" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
@@ -1887,6 +2041,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/science)
+"jh" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "jj" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -1963,6 +2121,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/science)
+"jw" = (
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "jy" = (
 /turf/open/openspace,
 /area/mine/eva)
@@ -2039,6 +2202,11 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/circuit)
+"jO" = (
+/obj/machinery/hydroponics/soil,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "jU" = (
 /obj/machinery/door/airlock/external{
 	glass = 1;
@@ -2058,6 +2226,15 @@
 /obj/machinery/light/small,
 /turf/open/floor/plasteel,
 /area/mine/eva)
+"jY" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/maintenance{
+	lootcount = 2;
+	name = "2maintenance loot spawner"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "kb" = (
 /obj/effect/spawner/structure/window/ice,
 /obj/structure/barricade/wooden/crude/snow,
@@ -2074,6 +2251,19 @@
 	},
 /turf/open/floor/plasteel/stairs/left,
 /area/service/chapel/main/monastery)
+"kk" = (
+/obj/effect/turf_decal/vg_decals/radiation,
+/turf/closed/wall,
+/area/icemoon/surface/outdoors)
+"kp" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/cobweb{
+	icon_state = "cobweb2"
+	},
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "ks" = (
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 1
@@ -2104,6 +2294,9 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/auto_name/north,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/maintenance/department/science)
 "kA" = (
@@ -2131,11 +2324,12 @@
 /turf/open/floor/plasteel,
 /area/science/test_area)
 "kI" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
+/obj/effect/spawner/lootdrop/grille_or_trash{
+	loot = list(/obj/structure/grille = 25, "" = 75);
+	name = "25% grille spawner"
 	},
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "kJ" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "xenobio6";
@@ -2145,6 +2339,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/science/xenobiology)
+"kK" = (
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "kM" = (
 /obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic{
 	electrochromatic_id = "xenoarch"
@@ -2188,6 +2386,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
+"kX" = (
+/obj/structure/falsewall,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "la" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
@@ -2235,6 +2437,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/science)
+"ln" = (
+/obj/item/poster/random_inteq,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "lo" = (
 /obj/machinery/door/airlock/research{
 	name = "Toxins Storage";
@@ -2257,6 +2463,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/cafeteria,
 /area/service/chapel/main/monastery)
+"lC" = (
+/obj/structure/loot_pile/maint,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "lF" = (
 /obj/effect/turf_decal/stripes/box,
 /obj/machinery/atmospherics/pipe/simple/multiz,
@@ -2362,6 +2573,12 @@
 /obj/effect/turf_decal/vg_decals/numbers/two,
 /turf/open/floor/engine/airless,
 /area/engineering/atmos)
+"lZ" = (
+/obj/item/seeds/ambrosia,
+/obj/item/seeds/ambrosia,
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "ma" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 5
@@ -2409,6 +2626,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/engine,
 /area/science/xenobiology)
+"mi" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/icemoon/surface/outdoors)
 "ml" = (
 /obj/structure/table,
 /turf/open/floor/plasteel/dark,
@@ -2444,6 +2667,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
+"mr" = (
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/icemoon/surface/outdoors)
 "mt" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/atmos_waste{
 	dir = 1;
@@ -2451,18 +2680,29 @@
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/maintenance/department/science)
+"my" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"mz" = (
+/obj/structure/sign/poster/contraband/random,
+/turf/closed/wall,
+/area/icemoon/surface/outdoors)
 "mA" = (
 /obj/effect/decal/remains/human,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/security/execution/education)
 "mB" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance{
-	lootcount = 3;
-	name = "3maintenance loot spawner"
+/obj/item/clothing/head/cone{
+	pixel_x = 3;
+	pixel_y = -3
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"mE" = (
+/obj/effect/decal/cleanable/greenglow/ecto,
+/turf/open/floor/plating,
 /area/icemoon/surface/outdoors)
 "mG" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -2477,6 +2717,10 @@
 "mH" = (
 /turf/closed/wall/r_wall,
 /area/icemoon/surface/outdoors)
+"mJ" = (
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "mK" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -2489,12 +2733,25 @@
 	dir = 4
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
 "mM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/door_assembly/door_assembly_vault,
 /turf/open/floor/plating,
 /area/command/bridge)
+"mN" = (
+/obj/item/trash/tray,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"mO" = (
+/obj/item/cigbutt/cigarbutt,
+/obj/effect/decal/cleanable/ash,
+/obj/effect/spawner/lootdrop/grille_or_trash{
+	loot = list(/obj/structure/grille = 25, "" = 75);
+	name = "25% grille spawner"
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "mQ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -2533,6 +2790,14 @@
 /obj/machinery/holopad,
 /turf/open/floor/plasteel/white,
 /area/science/xenobiology)
+"mZ" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/maintenance{
+	lootcount = 2;
+	name = "2maintenance loot spawner"
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "nb" = (
 /obj/structure/chair/stool,
 /turf/open/floor/wood,
@@ -2648,6 +2913,12 @@
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/icemoon/surface/outdoors)
+"nG" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors)
 "nI" = (
 /mob/living/simple_animal/hostile/asteroid/wolf{
 	desc = "A captive winter hound with bits of flesh sticking from its jaws, that explains all the remains.";
@@ -2672,6 +2943,10 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/engine,
 /area/science/storage)
+"nR" = (
+/obj/item/trash/candle,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "nT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -2695,6 +2970,10 @@
 	icon_state = "wood-broken3"
 	},
 /area/maintenance/bar)
+"nZ" = (
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "oa" = (
 /obj/machinery/monkey_recycler,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -2732,6 +3011,12 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/command/bridge)
+"og" = (
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/mine/maintenance)
 "oi" = (
 /obj/item/clothing/shoes/winterboots/ice_boots,
 /obj/item/clothing/glasses/meson,
@@ -2778,6 +3063,17 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/mine/living_quarters)
+"ot" = (
+/obj/item/seeds/cannabis/rainbow,
+/obj/item/seeds/cannabis/white,
+/obj/item/seeds/cannabis/ultimate,
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating,
+/area/mine/maintenance)
+"ow" = (
+/obj/effect/decal/cleanable/semen,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "oy" = (
 /obj/machinery/button/door{
 	id = "xenobio6";
@@ -2796,7 +3092,7 @@
 	dir = 6
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
 "oB" = (
 /obj/structure/cable{
 	icon_state = "0-4"
@@ -2852,6 +3148,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
+"oN" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/grille,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/icemoon/surface/outdoors)
 "oO" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
 /obj/structure/cable{
@@ -2922,6 +3225,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/science)
+"pb" = (
+/obj/structure/frame/machine,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "pf" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -3001,10 +3308,10 @@
 	},
 /turf/open/floor/engine,
 /area/science/xenobiology)
-"pu" = (
-/obj/machinery/mineral/mint,
-/turf/open/floor/plasteel,
-/area/mine/production)
+"pz" = (
+/obj/effect/decal/cleanable/glass,
+/turf/closed/mineral/random/snow,
+/area/icemoon/underground/unexplored/rivers)
 "pA" = (
 /obj/machinery/door/window/southleft{
 	name = "Test Chamber";
@@ -3041,6 +3348,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/xenobiology)
+"pG" = (
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "pJ" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -3085,24 +3396,32 @@
 /turf/open/floor/plasteel/white,
 /area/science/xenobiology)
 "pO" = (
-/obj/structure/table,
-/obj/item/stack/sheet/metal/fifty,
-/obj/item/stack/sheet/metal/fifty,
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plating,
-/area/maintenance/department/science)
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/wall,
+/area/mine/maintenance)
 "pP" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
 /area/command/bridge)
+"pQ" = (
+/obj/structure/closet/crate/trashcart,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "pR" = (
-/obj/item/stack/rods{
-	amount = 2
+/obj/structure/table,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating,
+/area/maintenance/department/science)
+"pS" = (
+/obj/structure/closet/crate/trashcart,
+/obj/item/flashlight/lantern{
+	icon_state = "lantern-on"
 	},
-/obj/structure/sign/poster/ripped{
-	pixel_y = -32
-	},
-/turf/open/floor/plating/asteroid/snow/icemoon,
+/turf/open/floor/plating,
 /area/icemoon/surface/outdoors)
 "pU" = (
 /obj/machinery/light/small{
@@ -3122,6 +3441,10 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/mine/production)
+"pZ" = (
+/obj/structure/grille,
+/turf/closed/mineral/random/snow,
+/area/icemoon/surface/outdoors)
 "qa" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -5;
@@ -3180,6 +3503,11 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
+"qi" = (
+/obj/effect/decal/cleanable/semen/femcum,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "qj" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
@@ -3232,6 +3560,10 @@
 	},
 /turf/open/floor/plating,
 /area/science)
+"qz" = (
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "qD" = (
 /obj/structure/railing,
 /turf/open/floor/plating/asteroid/snow/icemoon,
@@ -3269,6 +3601,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/science)
+"qJ" = (
+/obj/structure/table_frame,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "qL" = (
 /obj/machinery/airalarm{
 	pixel_y = 22
@@ -3276,6 +3612,10 @@
 /obj/machinery/processor,
 /turf/open/floor/plasteel/cafeteria,
 /area/service/chapel/main/monastery)
+"qM" = (
+/obj/effect/decal/cleanable/semen,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "qN" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -3327,7 +3667,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
 "qV" = (
 /obj/machinery/sparker/toxmix{
 	pixel_x = 25
@@ -3370,6 +3710,16 @@
 /obj/effect/landmark/xeno_spawn,
 /turf/open/floor/plating,
 /area/maintenance/bar)
+"rd" = (
+/obj/effect/decal/cleanable/ash/large,
+/obj/effect/decal/cleanable/ash,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"rf" = (
+/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "rh" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating,
@@ -3404,6 +3754,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/circuit)
+"ro" = (
+/obj/machinery/chem_heater,
+/turf/open/floor/plating{
+	initial_gas_mix = "o2=0.01;n2=0.01;TEMP=2.7";
+	luminosity = 2
+	},
+/area/mine/maintenance)
 "rp" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
@@ -3428,7 +3785,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
 "rs" = (
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
@@ -3473,6 +3830,15 @@
 	},
 /turf/open/floor/engine,
 /area/science/xenobiology)
+"rJ" = (
+/obj/effect/spawner/lootdrop/grille_or_trash{
+	loot = list(/obj/structure/grille = 25, "" = 75);
+	name = "25% grille spawner"
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/icemoon/surface/outdoors)
 "rK" = (
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
@@ -3518,6 +3884,10 @@
 	},
 /turf/open/floor/carpet,
 /area/service/chapel/main/monastery)
+"rV" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "rX" = (
 /obj/machinery/holopad,
 /turf/open/floor/plasteel/white,
@@ -3546,6 +3916,10 @@
 /obj/item/clothing/head/cone,
 /turf/open/floor/plating,
 /area/maintenance/bar)
+"sg" = (
+/obj/item/trash/cheesie,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "si" = (
 /obj/item/clothing/head/cone,
 /turf/open/floor/plating{
@@ -3659,12 +4033,24 @@
 	},
 /turf/closed/wall/r_wall,
 /area/science/mixing)
+"sx" = (
+/obj/item/trash/can,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "sy" = (
 /obj/item/clothing/head/cone{
 	pixel_x = -10
 	},
 /turf/open/floor/plating,
 /area/icemoon/surface/outdoors)
+"sz" = (
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = "#ffc1c1"
+	},
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "sA" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
@@ -3862,7 +4248,7 @@
 "to" = (
 /obj/item/beacon,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
 "tp" = (
 /obj/machinery/rnd/production/protolathe/department/science,
 /obj/effect/turf_decal/tile/neutral{
@@ -3876,6 +4262,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/science)
+"tq" = (
+/obj/item/trash/raisins,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "tr" = (
 /obj/structure/chair/comfy/black,
 /turf/open/floor/plasteel/dark,
@@ -3904,6 +4294,15 @@
 	},
 /turf/open/floor/plating,
 /area/mine/eva)
+"tw" = (
+/obj/structure/sign/warning/securearea{
+	pixel_y = 32;
+	desc = "A warning sign which reads 'DANGER AREA'."
+	},
+/obj/structure/barricade/wooden/crude,
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "tA" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/plating,
@@ -4020,18 +4419,18 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/misc_lab)
+"uc" = (
+/obj/effect/decal/cleanable/blood/gibs/down,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "ud" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible,
 /turf/open/floor/plasteel/white,
 /area/science/misc_lab)
 "ue" = (
-/obj/structure/closet/crate{
-	icon_state = "crateopen"
-	},
-/turf/open/floor/plating{
-	icon_state = "platingdmg3"
-	},
-/area/maintenance/department/science)
+/obj/structure/stairs,
+/turf/open/floor/plasteel/stairs/left,
+/area/icemoon/surface/outdoors)
 "ui" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
@@ -4068,6 +4467,15 @@
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/icemoon/surface/outdoors)
+"ut" = (
+/obj/structure/sign/warning/securearea{
+	pixel_y = 32;
+	desc = "A warning sign which reads 'DANGER AREA'."
+	},
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "uu" = (
 /obj/effect/spawner/structure/window/ice,
 /obj/machinery/door/poddoor/preopen{
@@ -4094,6 +4502,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/science)
+"ux" = (
+/obj/structure/table/wood,
+/obj/effect/decal/cleanable/cobweb{
+	icon_state = "cobweb2"
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "uB" = (
 /obj/machinery/vending/wardrobe/bridgeofficer_wardrobe,
 /turf/open/floor/plasteel/dark,
@@ -4117,12 +4532,12 @@
 /turf/open/floor/plasteel/grimy,
 /area/service/chapel/main/monastery)
 "uF" = (
-/obj/item/clothing/head/cone{
-	pixel_x = 3;
-	pixel_y = -3
+/obj/structure/stairs{
+	dir = 1;
+	icon_state = "stairs_t"
 	},
-/turf/open/floor/plating,
-/area/maintenance/department/science)
+/turf/open/floor/plasteel/stairs/right,
+/area/icemoon/surface/outdoors)
 "uG" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -4153,6 +4568,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/production)
+"uM" = (
+/obj/item/polepack,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "uN" = (
 /obj/structure/table,
 /obj/machinery/airalarm/directional/north,
@@ -4192,6 +4611,26 @@
 /obj/machinery/vending/wardrobe/science_wardrobe,
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
+"uZ" = (
+/obj/item/reagent_containers/food/drinks/beer/almost_empty,
+/obj/item/reagent_containers/food/drinks/beer/almost_empty{
+	pixel_y = 11
+	},
+/obj/item/reagent_containers/food/drinks/beer/almost_empty{
+	pixel_x = -8
+	},
+/obj/item/reagent_containers/food/drinks/beer/almost_empty{
+	pixel_x = 8
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"va" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lantern{
+	icon_state = "lantern-on"
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "vb" = (
 /obj/machinery/mineral/equipment_vendor,
 /obj/effect/turf_decal/tile/purple,
@@ -4206,6 +4645,12 @@
 "vc" = (
 /turf/open/floor/engine/airless,
 /area/engineering/atmos)
+"ve" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/icemoon/surface/outdoors)
 "vf" = (
 /obj/structure/sign/poster/contraband/random{
 	pixel_y = -32
@@ -4224,7 +4669,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
 "vh" = (
 /obj/structure/table/wood,
 /obj/machinery/light/small{
@@ -4244,13 +4689,17 @@
 /obj/machinery/suit_storage_unit/rd,
 /turf/open/floor/engine,
 /area/science/test_area)
-"vp" = (
-/obj/structure/barricade/wooden/crude,
-/obj/effect/spawner/structure/window/hollow/reinforced/directional{
-	dir = 4
-	},
+"vn" = (
+/obj/machinery/seed_extractor,
 /turf/open/floor/plating,
-/area/maintenance/department/science)
+/area/mine/maintenance)
+"vp" = (
+/obj/structure/stairs{
+	dir = 1;
+	icon_state = "stairs_t"
+	},
+/turf/open/floor/plasteel/stairs/medium,
+/area/icemoon/surface/outdoors)
 "vq" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
@@ -4290,6 +4739,10 @@
 	},
 /turf/open/floor/wood,
 /area/maintenance/bar)
+"vu" = (
+/obj/effect/decal/cleanable/leaper_sludge,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "vv" = (
 /obj/machinery/door/airlock/maintenance{
 	req_access_txt = "47"
@@ -4396,6 +4849,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"vX" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "vY" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/extinguisher_cabinet{
@@ -4416,10 +4873,9 @@
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
 "wc" = (
-/obj/effect/spawner/structure/window/hollow/reinforced/directional,
-/obj/structure/barricade/wooden/crude,
-/turf/open/floor/plating,
-/area/maintenance/department/science)
+/obj/structure/girder,
+/turf/closed/mineral/random/snow,
+/area/icemoon/surface/outdoors)
 "we" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "xenobio7";
@@ -4523,13 +4979,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/maintenance)
+"wt" = (
+/obj/item/trash/energybar,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "wv" = (
-/obj/structure/rack,
-/obj/effect/spawner/lootdrop/maintenance{
-	lootcount = 2;
-	name = "2maintenance loot spawner"
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
 	},
-/turf/open/floor/plating/airless,
 /area/icemoon/surface/outdoors)
 "wx" = (
 /obj/machinery/vending/snack/random,
@@ -4605,10 +5062,23 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
+"wL" = (
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = "#ffc1c1"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/chem_master{
+	pixel_x = -4
+	},
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "wM" = (
-/obj/item/chair,
-/obj/effect/decal/cleanable/glass,
-/turf/open/floor/plating/airless,
+/obj/structure/stairs{
+	dir = 1;
+	icon_state = "stairs_t"
+	},
+/turf/open/floor/plasteel/stairs/left,
 /area/icemoon/surface/outdoors)
 "wN" = (
 /obj/machinery/light_switch{
@@ -4622,6 +5092,12 @@
 "wO" = (
 /turf/open/floor/carpet,
 /area/science)
+"wP" = (
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "wS" = (
 /obj/structure/rack,
 /obj/item/clothing/head/papersack,
@@ -4756,6 +5232,11 @@
 /obj/structure/table/reinforced,
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
+"xu" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "xv" = (
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/plating,
@@ -4780,6 +5261,9 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/science)
+"xD" = (
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "xE" = (
 /obj/machinery/button/door{
 	id = "xenobio1";
@@ -4792,6 +5276,15 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/science/xenobiology)
+"xG" = (
+/obj/structure/frame/machine,
+/turf/open/floor/plating,
+/area/mine/maintenance)
+"xJ" = (
+/obj/item/seeds/cherry,
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "xK" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
 /turf/open/floor/plasteel/dark,
@@ -4849,9 +5342,13 @@
 	},
 /area/maintenance/department/science)
 "yc" = (
-/obj/structure/girder,
-/turf/open/floor/plating/airless,
-/area/icemoon/surface/outdoors)
+/obj/machinery/droneDispenser/preloaded,
+/obj/structure/lattice/catwalk,
+/obj/structure/sign/poster/official/build{
+	pixel_y = -32
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/science)
 "yf" = (
 /obj/structure/table,
 /obj/item/storage/firstaid/regular,
@@ -4920,6 +5417,23 @@
 /obj/item/stack/ore/plasma,
 /turf/open/floor/plating,
 /area/mine/living_quarters)
+"yv" = (
+/obj/effect/turf_decal/vg_decals/numbers/six{
+	pixel_x = -11
+	},
+/obj/effect/turf_decal/vg_decals/numbers/seven,
+/obj/effect/turf_decal/vg_decals/numbers/four{
+	pixel_x = 9
+	},
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"yw" = (
+/obj/item/storage/secure/briefcase,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/icemoon/surface/outdoors)
 "yy" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -5032,6 +5546,17 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/mine/production)
+"yY" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/mineral/random/snow,
+/area/icemoon/underground/unexplored/rivers)
+"za" = (
+/obj/effect/decal/cleanable/vomit/old,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "zb" = (
 /obj/structure/railing{
 	dir = 8
@@ -5066,6 +5591,12 @@
 	},
 /turf/open/floor/carpet,
 /area/service/chapel/main/monastery)
+"zj" = (
+/obj/structure/grille,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/icemoon/surface/outdoors)
 "zk" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/plasteel,
@@ -5144,7 +5675,7 @@
 	},
 /obj/machinery/light,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
 "zv" = (
 /obj/machinery/rnd/bepis,
 /turf/open/floor/plasteel/white,
@@ -5162,6 +5693,11 @@
 /obj/machinery/shieldwallgen/xenobiologyaccess,
 /turf/open/floor/plating,
 /area/science/misc_lab)
+"zz" = (
+/obj/effect/decal/cleanable/ash,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "zE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 4
@@ -5171,6 +5707,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/xenobiology)
+"zF" = (
+/obj/structure/frame/computer,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "zH" = (
 /obj/machinery/power/apc/auto_name/south,
 /obj/machinery/light,
@@ -5179,6 +5719,19 @@
 	},
 /turf/open/floor/engine,
 /area/science/storage)
+"zI" = (
+/mob/living/simple_animal/hostile/tentacles,
+/obj/structure/tentacles/node,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"zK" = (
+/obj/effect/decal/cleanable/glass,
+/obj/effect/spawner/lootdrop/grille_or_trash{
+	loot = list(/obj/structure/grille = 25, "" = 75);
+	name = "25% grille spawner"
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "zL" = (
 /obj/effect/turf_decal/trimline/brown/filled/corner{
 	dir = 4
@@ -5260,6 +5813,10 @@
 	icon_state = "platingdmg1"
 	},
 /area/science/mixing)
+"Ab" = (
+/obj/item/poster/random_contraband,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Ac" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -5269,13 +5826,20 @@
 "Ae" = (
 /obj/effect/landmark/loneopspawn,
 /turf/open/floor/plating/asteroid/snow/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
 "Ag" = (
 /obj/machinery/power/deck_relay,
 /obj/effect/turf_decal/stripes/box,
 /obj/structure/cable,
 /turf/open/floor/plasteel,
 /area/command/bridge)
+"Ah" = (
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12
+	},
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "Al" = (
 /obj/machinery/door/airlock/external{
 	glass = 1;
@@ -5353,6 +5917,15 @@
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
 /area/mine/living_quarters)
+"AE" = (
+/obj/effect/spawner/lootdrop/maintenance{
+	lootcount = 2;
+	name = "2maintenance loot spawner"
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/icemoon/surface/outdoors)
 "AG" = (
 /obj/structure/table/reinforced,
 /obj/structure/window/reinforced{
@@ -5380,6 +5953,13 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/command/bridge)
+"AK" = (
+/obj/item/clothing/head/cone{
+	pixel_x = 3;
+	pixel_y = -3
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/science)
 "AN" = (
 /obj/structure/ladder,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
@@ -5439,6 +6019,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/plasteel/white,
 /area/mine/living_quarters)
+"AX" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/spawner/structure/window,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/icemoon/surface/outdoors)
 "Ba" = (
 /obj/structure/loot_pile/maint,
 /obj/structure/railing,
@@ -5494,6 +6081,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/science)
+"Bj" = (
+/obj/structure/falsewall,
+/obj/structure/falsewall,
+/obj/structure/falsewall,
+/obj/structure/falsewall,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Bk" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
@@ -5512,6 +6106,12 @@
 /obj/structure/table/wood,
 /turf/open/floor/plasteel/dark,
 /area/service/chapel/main/monastery)
+"Bp" = (
+/obj/item/flashlight/lantern{
+	icon_state = "lantern-on"
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Bq" = (
 /obj/machinery/light{
 	dir = 1
@@ -5587,7 +6187,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
 "BI" = (
 /obj/machinery/door/firedoor/border_only{
 	dir = 8;
@@ -5649,6 +6249,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
+"BU" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/mine/maintenance)
 "BW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/closet/cabinet,
@@ -5733,13 +6338,29 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/test_area)
+"Co" = (
+/obj/item/stack/sheet/metal/fifty,
+/obj/effect/spawner/lootdrop/syndicate_present,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Cr" = (
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
 /area/mine/production)
 "Cs" = (
-/obj/structure/table_frame,
-/turf/open/floor/plating/airless,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/auto_name/west,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/maintenance/department/science)
+"Ct" = (
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
 /area/icemoon/surface/outdoors)
 "Cu" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
@@ -5770,6 +6391,10 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/xenobiology)
+"Cx" = (
+/obj/item/trash/chips,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Cy" = (
 /turf/closed/wall,
 /area/science/test_area)
@@ -5810,13 +6435,9 @@
 /turf/open/floor/plasteel,
 /area/science)
 "CE" = (
-/obj/item/stack/rods{
-	amount = 2
-	},
-/obj/structure/sign/warning/nosmoking{
-	pixel_x = 32
-	},
-/turf/open/floor/plating/airless,
+/obj/structure/stairs,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plasteel/stairs/right,
 /area/icemoon/surface/outdoors)
 "CG" = (
 /obj/structure/chair{
@@ -5960,6 +6581,12 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/science)
+"DA" = (
+/obj/structure/frame/computer{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "DB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/tile/brown{
@@ -5986,7 +6613,7 @@
 	dir = 5
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
 "DE" = (
 /obj/effect/turf_decal/trimline/purple/filled/line,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -6008,6 +6635,14 @@
 "DH" = (
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
+"DJ" = (
+/obj/machinery/light/small{
+	dir = 1;
+	light_color = "#ffc1c1"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "DK" = (
 /obj/structure/door_assembly/door_assembly_hatch,
 /turf/open/floor/plating,
@@ -6052,6 +6687,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
+"DQ" = (
+/obj/effect/decal/cleanable/blood/gibs/human/down,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "DR" = (
 /obj/machinery/camera{
 	c_tag = "Crew Area Hallway";
@@ -6082,6 +6721,11 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
+"DV" = (
+/obj/structure/tentacles/node,
+/mob/living/simple_animal/hostile/tentacles,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "DW" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/fancy/donut_box,
@@ -6113,6 +6757,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"Ef" = (
+/obj/structure/loot_pile/maint,
+/obj/effect/decal/cleanable/cobweb{
+	icon_state = "cobweb2"
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/icemoon/surface/outdoors)
 "Eg" = (
 /obj/machinery/door/airlock/maintenance{
 	req_access_txt = "47"
@@ -6139,6 +6792,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"Em" = (
+/obj/effect/turf_decal/vg_decals/numbers/one{
+	pixel_x = -13
+	},
+/obj/effect/turf_decal/vg_decals/numbers/nine,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "En" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable,
@@ -6226,6 +6887,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"EC" = (
+/obj/item/cigbutt/cigarbutt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "EF" = (
 /turf/open/floor/plating,
 /area/engineering/atmos)
@@ -6239,6 +6904,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"EH" = (
+/obj/structure/grille,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/icemoon/surface/outdoors)
 "EJ" = (
 /obj/structure/reagent_dispensers/fueltank,
 /obj/effect/turf_decal/bot,
@@ -6301,10 +6972,17 @@
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/icemoon/surface/outdoors)
-"EY" = (
-/obj/structure/barricade/wooden/snowed,
-/turf/open/floor/plating/airless,
+"EV" = (
+/obj/effect/landmark/start/stowaway,
+/turf/open/floor/plating,
 /area/icemoon/surface/outdoors)
+"EY" = (
+/obj/structure/table,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/metal/fifty,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating,
+/area/maintenance/department/science)
 "EZ" = (
 /obj/structure/table/reinforced,
 /obj/item/storage/toolbox/emergency,
@@ -6375,6 +7053,14 @@
 /obj/structure/chair/wood/normal,
 /turf/open/floor/plasteel/grimy,
 /area/service/chapel/main/monastery)
+"Fg" = (
+/obj/structure/bonfire,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"Fi" = (
+/obj/effect/decal/cleanable/ash,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Fl" = (
 /obj/structure/rack,
 /obj/effect/spawner/lootdrop/maintenance,
@@ -6401,6 +7087,18 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/science)
+"Ft" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/mineral/random/snow,
+/area/icemoon/underground/unexplored/rivers)
 "Fv" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -6524,6 +7222,10 @@
 /obj/machinery/mineral/processing_unit_console,
 /turf/closed/wall,
 /area/mine/production)
+"FZ" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "Gb" = (
 /obj/machinery/door/airlock/hatch{
 	use_power = 0
@@ -6536,11 +7238,13 @@
 /turf/open/floor/plasteel/dark,
 /area/service/chapel/main/monastery)
 "Gd" = (
-/obj/item/stack/rods{
-	amount = 2
+/obj/structure/closet/crate{
+	icon_state = "crateopen"
 	},
-/turf/open/floor/plating/airless,
-/area/icemoon/surface/outdoors)
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/maintenance/department/science)
 "Gf" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/structure/railing,
@@ -6604,11 +7308,14 @@
 "Go" = (
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
 "Gp" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/atmos_waste{
 	dir = 4;
 	piping_layer = 3
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/mine/living_quarters)
@@ -6646,6 +7353,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/mine/living_quarters)
 "Gw" = (
@@ -6653,6 +7363,9 @@
 	dir = 4
 	},
 /obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plating,
 /area/mine/living_quarters)
 "Gx" = (
@@ -6669,6 +7382,10 @@
 /obj/item/book/manual/wiki/experimentor,
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
+"GB" = (
+/obj/effect/spawner/structure/window,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "GD" = (
 /obj/effect/turf_decal/trimline/purple/filled/line,
 /obj/structure/extinguisher_cabinet{
@@ -6686,6 +7403,9 @@
 	dir = 4
 	},
 /obj/structure/chair,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
 "GK" = (
@@ -6712,14 +7432,12 @@
 /turf/open/floor/plasteel/white,
 /area/science/circuit)
 "GN" = (
-/obj/structure/cable{
-	icon_state = "0-4"
+/obj/structure/sign/warning/securearea{
+	pixel_y = 32;
+	desc = "A warning sign which reads 'DANGER AREA'."
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/mine/living_quarters)
+/turf/closed/wall,
+/area/icemoon/surface/outdoors)
 "GQ" = (
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 10
@@ -6739,13 +7457,18 @@
 	dir = 4
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
 "GT" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating/airless,
+/area/icemoon/surface/outdoors)
+"GU" = (
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/obj/item/trash/candle,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "GW" = (
 /obj/machinery/light{
 	dir = 8
@@ -6807,6 +7530,13 @@
 /obj/item/reagent_containers/glass/beaker/waterbottle/wataur,
 /turf/open/floor/plating,
 /area/maintenance/department/science)
+"Hi" = (
+/obj/machinery/door/airlock{
+	id_tag = "Cabin9";
+	name = "Cabin 6"
+	},
+/turf/closed/mineral/random/snow,
+/area/icemoon/underground/unexplored/rivers)
 "Hm" = (
 /obj/structure/table/glass,
 /obj/item/storage/box/syringes{
@@ -6842,6 +7572,16 @@
 /obj/machinery/portable_atmospherics/canister/air,
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
+"Hs" = (
+/obj/item/trash/semki,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"Hv" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/mineral/random/snow,
+/area/icemoon/surface/outdoors)
 "Hw" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/plating,
@@ -6938,6 +7678,18 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/engine,
 /area/science/storage)
+"HQ" = (
+/obj/machinery/power/apc{
+	dir = 1;
+	name = "Mine APC";
+	pixel_x = 1;
+	pixel_y = 23
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "HS" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -6993,6 +7745,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"HZ" = (
+/obj/effect/decal/cleanable/insectguts,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Ib" = (
 /obj/structure/table/glass,
 /obj/machinery/reagentgrinder{
@@ -7109,6 +7865,12 @@
 	},
 /turf/open/floor/engine,
 /area/science/misc_lab)
+"Iy" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/structure/grille,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "IA" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -7207,6 +7969,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/production)
+"IL" = (
+/obj/machinery/door/airlock/maintenance_hatch/abandoned{
+	use_power = 0
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/maintenance/bar)
 "IM" = (
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
@@ -7242,7 +8011,13 @@
 	dir = 8
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
+"IQ" = (
+/obj/structure/grille,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/icemoon/surface/outdoors)
 "IS" = (
 /obj/structure/table,
 /turf/open/floor/plating,
@@ -7266,6 +8041,10 @@
 /obj/effect/turf_decal/stripes/line,
 /turf/open/floor/plasteel,
 /area/science/circuit)
+"IY" = (
+/obj/item/trash/syndi_cakes,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "IZ" = (
 /obj/machinery/suit_storage_unit/mining,
 /obj/effect/turf_decal/tile/neutral{
@@ -7289,15 +8068,35 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
+"Jf" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Ji" = (
-/turf/closed/wall,
-/area/icemoon/underground/unexplored/rivers)
+/obj/machinery/reagentgrinder{
+	desc = "Used to grind things up into raw materials and liquids.";
+	pixel_y = 5
+	},
+/obj/structure/table,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "Jl" = (
 /obj/effect/turf_decal/trimline/brown/filled/corner{
 	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/science)
+"Jm" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance{
+	lootcount = 2;
+	name = "2maintenance loot spawner"
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/icemoon/surface/outdoors)
 "Jo" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
@@ -7558,6 +8357,10 @@
 /obj/structure/table,
 /turf/open/floor/plasteel,
 /area/science)
+"Kr" = (
+/obj/effect/decal/cleanable/vomit/old,
+/turf/closed/wall,
+/area/icemoon/surface/outdoors)
 "Kt" = (
 /turf/closed/wall,
 /area/command/bridge)
@@ -7623,6 +8426,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/plating,
 /area/command/bridge)
+"KL" = (
+/obj/effect/decal/cleanable/glass,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "KN" = (
 /obj/structure/railing{
 	dir = 8
@@ -7665,6 +8473,10 @@
 	dir = 1
 	},
 /area/icemoon/surface/outdoors)
+"KU" = (
+/obj/item/trash/popcorn,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "KV" = (
 /obj/effect/turf_decal/trimline/brown/filled/corner{
 	dir = 4
@@ -7681,6 +8493,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/science)
+"Lb" = (
+/obj/effect/decal/cleanable/glass,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"Lc" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/icemoon/surface/outdoors)
 "Lf" = (
 /obj/machinery/computer/camera_advanced/xenobio{
 	dir = 4
@@ -7736,6 +8559,10 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/science)
+"Lm" = (
+/obj/structure/table/wood,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Lo" = (
 /obj/effect/turf_decal/trimline/purple/filled/corner{
 	dir = 8
@@ -7761,6 +8588,10 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/science/xenobiology)
+"Lr" = (
+/obj/item/trash/boritos,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Ls" = (
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
@@ -7793,6 +8624,12 @@
 	},
 /turf/open/floor/plasteel/stairs/left{
 	dir = 1
+	},
+/area/icemoon/surface/outdoors)
+"LA" = (
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
 	},
 /area/icemoon/surface/outdoors)
 "LB" = (
@@ -7897,14 +8734,9 @@
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
 "LV" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
+/obj/effect/decal/cleanable/oil,
 /turf/open/floor/plating,
-/area/maintenance/department/science)
+/area/icemoon/surface/outdoors)
 "LW" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/visible,
@@ -7957,6 +8789,12 @@
 /obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plating,
 /area/maintenance/department/security)
+"Mg" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/mine/maintenance)
 "Mi" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -7970,6 +8808,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
+"Mk" = (
+/obj/effect/decal/cleanable/blood/gibs/human/core,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Mm" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -8000,6 +8842,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"Mw" = (
+/obj/effect/spawner/lootdrop/grille_or_trash{
+	loot = list(/obj/structure/grille = 25, "" = 75);
+	name = "25% grille spawner"
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/icemoon/surface/outdoors)
 "Mx" = (
 /obj/effect/turf_decal/trimline/brown/filled/corner{
 	dir = 1
@@ -8028,6 +8879,10 @@
 /obj/effect/spawner/structure/window/reinforced/tinted,
 /turf/open/floor/plating,
 /area/mine/living_quarters)
+"MC" = (
+/obj/effect/decal/cleanable/semen/femcum,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "MF" = (
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
@@ -8065,6 +8920,10 @@
 /obj/structure/closet/radiation,
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
+"MO" = (
+/obj/item/trash/intecookies,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "MP" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -8177,6 +9036,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"Nq" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "Nr" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 4
@@ -8231,6 +9094,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/xenobiology)
+"NF" = (
+/obj/effect/turf_decal/vg_decals/numbers/eight{
+	pixel_x = -15
+	},
+/obj/effect/turf_decal/vg_decals/numbers/four,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "NH" = (
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = -30
@@ -8256,8 +9127,23 @@
 	},
 /area/maintenance/bar)
 "NM" = (
-/obj/structure/grille/broken,
-/turf/open/floor/plating/airless,
+/obj/structure/stairs{
+	dir = 4;
+	icon_state = "stairs_t"
+	},
+/obj/structure/stairs{
+	dir = 4;
+	icon_state = "stairs_t"
+	},
+/obj/structure/stairs{
+	dir = 4;
+	icon_state = "stairs_t"
+	},
+/turf/open/floor/plasteel,
+/area/icemoon/surface/outdoors)
+"NN" = (
+/obj/item/reagent_containers/food/drinks/beer/almost_empty,
+/turf/open/floor/plating,
 /area/icemoon/surface/outdoors)
 "NO" = (
 /obj/item/radio/intercom{
@@ -8381,6 +9267,10 @@
 "Oh" = (
 /turf/closed/wall/r_wall,
 /area/science/mixing)
+"Oj" = (
+/obj/structure/falsewall,
+/turf/closed/wall,
+/area/icemoon/surface/outdoors)
 "Ok" = (
 /obj/structure/railing{
 	dir = 4
@@ -8521,6 +9411,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
+"ON" = (
+/obj/effect/spawner/lootdrop/grille_or_trash{
+	loot = list(/obj/structure/grille = 25, "" = 75);
+	name = "25% grille spawner"
+	},
+/obj/effect/spawner/lootdrop/grille_or_trash{
+	loot = list(/obj/structure/grille = 25, "" = 75);
+	name = "25% grille spawner"
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "OO" = (
 /obj/machinery/sparker/toxmix{
 	pixel_x = 25
@@ -8547,6 +9448,17 @@
 "OT" = (
 /obj/structure/fence/post{
 	dir = 4
+	},
+/turf/open/floor/plating/asteroid/snow/icemoon,
+/area/icemoon/surface/outdoors)
+"OV" = (
+/obj/item/trash/popcorn,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"OX" = (
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
@@ -8601,6 +9513,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
+"Pf" = (
+/obj/structure/table,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "Pg" = (
 /obj/structure/frame,
 /obj/item/vending_refill/cigarette,
@@ -8643,6 +9559,12 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/carpet,
 /area/mine/living_quarters)
+"Px" = (
+/obj/structure/chair/comfy/black{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Pz" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/item/kirbyplants/random,
@@ -8708,6 +9630,13 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/misc_lab)
+"PQ" = (
+/obj/effect/spawner/lootdrop/maintenance{
+	lootcount = 2;
+	name = "2maintenance loot spawner"
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "PR" = (
 /turf/open/floor/engine,
 /area/science/misc_lab)
@@ -8741,6 +9670,25 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"PZ" = (
+/obj/item/cigbutt/cigarbutt{
+	pixel_y = 4;
+	pixel_x = -7
+	},
+/obj/item/cigbutt/cigarbutt{
+	pixel_y = -10;
+	pixel_x = 6
+	},
+/obj/item/cigbutt/cigarbutt{
+	pixel_x = 7;
+	pixel_y = 6
+	},
+/obj/item/cigbutt/cigarbutt{
+	pixel_y = -4;
+	pixel_x = -1
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Qb" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -8783,12 +9731,24 @@
 /obj/item/storage/box/flashes,
 /turf/open/floor/plating,
 /area/maintenance/department/security)
+"Qp" = (
+/obj/effect/spawner/lootdrop/maintenance{
+	lootcount = 2;
+	name = "2maintenance loot spawner"
+	},
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Qq" = (
 /obj/machinery/light/small{
 	dir = 4
 	},
 /turf/open/floor/engine/airless,
 /area/engineering/atmos)
+"Qs" = (
+/obj/effect/decal/cleanable/salt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Qv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/table/wood,
@@ -8851,6 +9811,11 @@
 /obj/machinery/processor/slime,
 /turf/open/floor/plasteel/white,
 /area/science/xenobiology)
+"QM" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "QN" = (
 /obj/machinery/vending/snack,
 /obj/effect/turf_decal/tile/bar,
@@ -9035,6 +10000,11 @@
 	},
 /turf/open/floor/plating,
 /area/science/test_area)
+"RO" = (
+/obj/effect/decal/cleanable/oil,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "RP" = (
 /obj/structure/closet/secure_closet/bar{
 	pixel_x = -3;
@@ -9049,6 +10019,16 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/bar)
+"RQ" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/icemoon/surface/outdoors)
+"RR" = (
+/obj/structure/closet/cardboard,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "RS" = (
 /obj/item/assembly/signaler{
 	pixel_y = 8
@@ -9107,6 +10087,28 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/bar)
+"Sm" = (
+/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"So" = (
+/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/icemoon/surface/outdoors)
+"Sq" = (
+/obj/effect/decal/cleanable/vomit/old,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"Sr" = (
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/mine/maintenance)
 "Sv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/closed/wall/mineral/iron,
@@ -9133,6 +10135,11 @@
 "SA" = (
 /turf/open/floor/plating,
 /area/maintenance/bar)
+"SC" = (
+/obj/structure/grille,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "SE" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/sign/poster/contraband/yes_erp{
@@ -9140,9 +10147,20 @@
 	},
 /turf/open/floor/carpet,
 /area/mine/living_quarters)
+"SF" = (
+/obj/item/vending_refill/cigarette,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/icemoon/surface/outdoors)
 "SG" = (
 /turf/closed/wall,
 /area/maintenance/bar)
+"SH" = (
+/obj/item/cigbutt/cigarbutt,
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "SI" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -9207,6 +10225,20 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"SS" = (
+/obj/machinery/light/small{
+	pixel_y = -1
+	},
+/obj/structure/table,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/spawner/lootdrop/syndicate_present,
+/turf/open/floor/plating,
+/area/mine/maintenance)
+"SU" = (
+/obj/structure/barricade/wooden,
+/obj/item/trash/plate,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "SV" = (
 /obj/machinery/camera{
 	c_tag = "Dormitories";
@@ -9291,6 +10323,10 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/security)
+"Tm" = (
+/obj/item/reagent_containers/glass/bottle/ammonia,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "Tn" = (
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
@@ -9341,6 +10377,10 @@
 /area/mine/living_quarters)
 "Tu" = (
 /obj/effect/spawner/structure/window/ice,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"Tv" = (
+/obj/effect/decal/cleanable/semendrip,
 /turf/open/floor/plating,
 /area/icemoon/surface/outdoors)
 "Tx" = (
@@ -9409,6 +10449,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
+"TR" = (
+/obj/structure/loot_pile/maint,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "TS" = (
 /obj/structure/chair/comfy/black{
 	dir = 8
@@ -9431,6 +10475,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/living_quarters)
+"TX" = (
+/obj/item/storage/toolbox/mechanical/old,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Ua" = (
 /obj/machinery/door/poddoor{
 	id = "toxinsdriver";
@@ -9522,6 +10570,15 @@
 /obj/item/shard,
 /turf/open/floor/plating,
 /area/icemoon/surface/outdoors)
+"UB" = (
+/obj/item/seeds/bamboo,
+/obj/item/seeds/apple,
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating{
+	initial_gas_mix = "o2=0.01;n2=0.01;TEMP=2.7";
+	luminosity = 2
+	},
+/area/mine/maintenance)
 "UC" = (
 /obj/machinery/vending/cigarette,
 /obj/structure/window/reinforced,
@@ -9576,14 +10633,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/production)
-"UL" = (
-/obj/machinery/droneDispenser/preloaded,
-/obj/structure/lattice/catwalk,
-/obj/structure/sign/poster/official/build{
-	pixel_y = -32
-	},
+"UK" = (
+/obj/machinery/iv_drip,
 /turf/open/floor/plating,
-/area/maintenance/department/science)
+/area/mine/maintenance)
+"UL" = (
+/obj/structure/closet/secure_closet/freezer/fridge/open,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "UM" = (
 /obj/structure/closet/secure_closet/bridgesec,
 /turf/open/floor/plasteel/dark,
@@ -9753,6 +10810,15 @@
 "Vw" = (
 /turf/open/openspace/icemoon,
 /area/icemoon/surface/outdoors)
+"Vx" = (
+/obj/structure/reagent_dispensers/keg/semen,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"Vz" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "VB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 6
@@ -9790,6 +10856,12 @@
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
 /area/security/execution/education)
+"VG" = (
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/mine/maintenance)
 "VH" = (
 /obj/structure/stairs,
 /obj/structure/railing{
@@ -9836,6 +10908,12 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/engine,
 /area/science/mixing)
+"VU" = (
+/obj/effect/decal/cleanable/dirt,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/icemoon/surface/outdoors)
 "VX" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -9874,6 +10952,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
+"Wc" = (
+/obj/item/trash/rkibble,
+/obj/effect/spawner/lootdrop/syndicate_present,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Wd" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -5;
@@ -9891,6 +10974,10 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating,
 /area/mine/eva)
+"Wf" = (
+/obj/item/reagent_containers/glass/bucket,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "Wg" = (
 /obj/structure/chair{
 	dir = 1
@@ -9900,7 +10987,11 @@
 	},
 /obj/machinery/light,
 /turf/open/floor/plating/snowed/smoothed/icemoon,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
+"Wh" = (
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Wi" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -9932,6 +11023,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
+"Wr" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/icemoon/surface/outdoors)
+"Ws" = (
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Wu" = (
 /obj/structure/table/wood/poker,
 /obj/item/storage/pill_bottle/lsd{
@@ -9962,12 +11063,24 @@
 /obj/structure/flora/rock/pile/icy,
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/icemoon/surface/outdoors)
+"WC" = (
+/obj/item/seeds/aloe,
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/mine/maintenance)
 "WD" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
 /turf/open/floor/plating/asteroid/snow/icemoon,
 /area/mine/production)
+"WE" = (
+/obj/item/seeds/aloe,
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "WF" = (
 /obj/structure/closet/l3closet/scientist{
 	pixel_x = -2
@@ -10024,6 +11137,13 @@
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /turf/open/floor/plating,
 /area/maintenance/department/science)
+"WS" = (
+/obj/structure/sign/warning/securearea{
+	pixel_y = 32;
+	desc = "A warning sign which reads 'DANGER AREA'."
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "WT" = (
 /obj/structure/sign/warning/securearea,
 /turf/closed/wall/r_wall,
@@ -10043,6 +11163,10 @@
 "WX" = (
 /turf/closed/wall/r_wall,
 /area/command/bridge)
+"WY" = (
+/obj/structure/closet/crate/freezer/blood,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "WZ" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -10122,6 +11246,15 @@
 /obj/structure/table,
 /turf/open/floor/carpet,
 /area/mine/living_quarters)
+"Xv" = (
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/maintenance{
+	lootcount = 2;
+	name = "2maintenance loot spawner"
+	},
+/obj/item/poster/random_inteq,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Xw" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/mix_input{
 	dir = 8
@@ -10244,6 +11377,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
+"Ye" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/mineral/random/snow,
+/area/icemoon/surface/outdoors)
 "Yf" = (
 /obj/structure/table,
 /obj/machinery/light/small/broken{
@@ -10424,7 +11566,14 @@
 	name = "BOMB RANGE"
 	},
 /turf/closed/wall,
-/area/icemoon/underground/unexplored/rivers)
+/area/icemoon/surface/outdoors)
+"YR" = (
+/obj/structure/closet/firecloset,
+/turf/open/floor/plating{
+	initial_gas_mix = "o2=0.01;n2=0.01;TEMP=2.7";
+	luminosity = 2
+	},
+/area/mine/maintenance)
 "YS" = (
 /obj/machinery/door/airlock/research{
 	name = "Toxins Storage";
@@ -10442,6 +11591,21 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/mine/living_quarters)
+"YX" = (
+/obj/structure/closet/crate/trashcart,
+/obj/item/stack/tile/carpet/orange/fifty,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"YZ" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/beer/almost_empty{
+	pixel_x = -4
+	},
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_x = 9
+	},
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
 "Zb" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -10504,6 +11668,14 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/mine/living_quarters)
+"Zg" = (
+/obj/structure/reagent_dispensers/keg/catnip,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"Zj" = (
+/obj/effect/spawner/lootdrop/grille_or_trash,
+/turf/open/floor/plating,
+/area/mine/maintenance)
 "Zk" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -10513,6 +11685,12 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/mine/living_quarters)
+"Zl" = (
+/turf/open/floor/plating{
+	initial_gas_mix = "o2=0.01;n2=0.01;TEMP=2.7";
+	luminosity = 2
+	},
+/area/mine/maintenance)
 "Zm" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
 /turf/open/floor/engine,
@@ -10535,10 +11713,19 @@
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
 "Zr" = (
-/obj/machinery/light/broken{
+/obj/structure/barricade/wooden/crude,
+/obj/effect/spawner/structure/window/hollow/reinforced/directional{
 	dir = 4
 	},
-/turf/open/floor/plating/airless,
+/turf/open/floor/plating,
+/area/maintenance/department/science)
+"Zs" = (
+/obj/item/trash/plate,
+/turf/open/floor/plating,
+/area/icemoon/surface/outdoors)
+"Zt" = (
+/obj/structure/sign/poster/contraband/have_a_puff,
+/turf/closed/wall,
 /area/icemoon/surface/outdoors)
 "Zu" = (
 /turf/closed/wall/r_wall,
@@ -10637,6 +11824,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/test_area)
+"ZQ" = (
+/turf/closed/wall,
+/area/mine/maintenance)
 "ZR" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -17676,9 +18866,9 @@ ah
 FK
 FK
 FK
-nw
-nw
-nw
+GT
+GT
+GT
 FK
 FK
 FK
@@ -17933,9 +19123,9 @@ FK
 FK
 FK
 YQ
-nw
+GT
 IP
-nw
+GT
 YQ
 FK
 FK
@@ -18188,12 +19378,12 @@ ah
 ah
 FK
 FK
-nw
-nw
-GS
 GT
+GT
+GS
+DT
 qU
-nw
+GT
 nw
 FK
 FK
@@ -18444,54 +19634,54 @@ ah
 ah
 ah
 FK
-Ji
-Ji
+Uz
+Uz
 BF
-FC
-FC
-FC
+vI
+vI
+vI
 zu
-Ji
-Ji
-FK
-FK
-ah
-ah
-ah
-ah
-ah
-FK
-FK
-FK
-FK
-FK
-FK
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-FK
-FK
-FK
-ah
-ah
-ah
-FK
-FK
-FK
-FK
-FK
-FK
-ah
-ah
-ah
-FK
-FK
-FK
+Uz
+Uz
+hS
+hS
+VE
+VE
+VE
+VE
+VE
+hS
+hS
+hS
+hS
+hS
+hS
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+hS
+hS
+hS
+VE
+VE
+VE
+hS
+hS
+hS
+hS
+hS
+hS
+VE
+VE
+VE
+hS
+hS
+hS
 hS
 VE
 NC
@@ -18701,54 +19891,54 @@ ah
 ah
 ah
 FK
-nw
+GT
 as
 gN
-FC
+vI
 to
-FC
+vI
 Go
-kI
+qN
 Go
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
 hS
 hS
 Ua
@@ -18958,54 +20148,54 @@ ah
 ah
 ah
 FK
-Ji
-Ji
+Uz
+Uz
 vg
-FC
-FC
-FC
+vI
+vI
+vI
 Wg
-Ji
-Ji
-FK
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-FK
-FK
-FK
-FK
-FK
-ah
-ah
-ah
-FK
+Uz
+Uz
+hS
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+hS
+hS
+hS
+hS
+hS
+VE
+VE
+VE
+hS
 Ae
-FK
-ah
-ah
-ah
-ah
-ah
-ah
-FK
-FK
-FK
-FK
-FK
-FK
-FK
-FK
+hS
+VE
+VE
+VE
+VE
+VE
+VE
+hS
+hS
+hS
+hS
+hS
+hS
+hS
+hS
 hS
 hS
 NC
@@ -19216,8 +20406,8 @@ ah
 ah
 FK
 FK
-nw
-nw
+GT
+GT
 DD
 rr
 oA
@@ -19475,9 +20665,9 @@ FK
 FK
 FK
 YQ
-nw
+GT
 mK
-nw
+GT
 YQ
 FK
 FK
@@ -19732,9 +20922,9 @@ ah
 FK
 FK
 FK
-nw
-Ji
-nw
+GT
+Uz
+GT
 FK
 FK
 FK
@@ -28788,21 +29978,21 @@ FR
 AH
 AH
 AH
-AH
-AH
-VE
-VE
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
 ah
 ah
 ah
@@ -29043,23 +30233,23 @@ io
 lJ
 FR
 AH
-dt
-RD
-pO
-AH
-VE
-VE
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+wM
+vN
+FN
+cZ
+vN
+vN
+vN
+Ws
+vN
+Wh
+kI
+tq
+Ws
+mN
+Ws
+Uz
 ah
 ah
 ah
@@ -29298,25 +30488,25 @@ lJ
 lJ
 lJ
 lJ
-LV
-vv
-Eu
-ID
-UL
+FR
 AH
-VE
-VE
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vp
+vN
+vN
+wF
+vN
+Qp
+vN
+wF
+MC
+kI
+vN
+vN
+Ws
+kI
+kI
+Uz
 ah
 ah
 ah
@@ -29557,23 +30747,23 @@ io
 lJ
 FR
 AH
-ue
+Uz
 uF
-cx
-AH
-VE
-VE
-VE
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+FN
+vN
+kI
+vN
+vN
+vN
+kI
+kI
+kI
+Ws
+Bp
+Wh
+vN
+FN
+Uz
 ah
 ah
 ah
@@ -29814,23 +31004,23 @@ dm
 lJ
 Lk
 AH
-AH
-vp
-AH
-AH
-VE
-VE
-VE
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+kI
+kI
+cx
+Uz
 ah
 ah
 ah
@@ -30071,10 +31261,10 @@ io
 lJ
 FR
 AH
-VE
 hS
 hS
 hS
+hS
 VE
 VE
 VE
@@ -30083,11 +31273,11 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+kI
+kI
+vN
+Uz
 ah
 ah
 ah
@@ -30340,11 +31530,11 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+PQ
+vN
+uc
+Uz
 ah
 ah
 ah
@@ -30597,11 +31787,11 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Ws
+iB
+Mk
+Uz
 ah
 ah
 ah
@@ -30854,11 +32044,11 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+mZ
+vN
+vN
+Uz
 ah
 ah
 ah
@@ -31097,25 +32287,25 @@ Lt
 io
 io
 lJ
-ID
+FR
 AH
-Uz
-hS
-NM
-pg
-Uz
+AH
+AH
+AH
+AH
 VE
 VE
+VE
 ah
 ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+EC
+vN
+MC
+Uz
 ah
 ah
 ah
@@ -31354,25 +32544,25 @@ lJ
 lJ
 lJ
 lJ
-ID
+FR
 AH
 Cs
-Cs
+RD
 EY
-Qd
+AH
+VE
+VE
+VE
+ah
+ah
+ah
+ah
+ah
+kk
+vN
+wF
+vN
 Uz
-VE
-VE
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
 ah
 ah
 ah
@@ -31611,13 +32801,13 @@ io
 io
 io
 lJ
+ZR
+vv
+Eu
 ID
+yc
 AH
-hS
-wM
-Qd
-wv
-pg
+wc
 VE
 VE
 ah
@@ -31625,11 +32815,11 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+Ws
+vN
+Uz
 ah
 ah
 ah
@@ -31869,24 +33059,24 @@ rI
 dm
 lJ
 rS
-wc
+AH
 Gd
-mB
-Qd
+AK
 pR
+AH
+VE
+VE
+VE
+VE
+ah
+ah
+ah
+ah
 Uz
-VE
-VE
-VE
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+vN
+vN
+HZ
+Uz
 ah
 ah
 ah
@@ -32125,25 +33315,25 @@ Lt
 io
 io
 lJ
-ID
+Eg
 AH
-eG
+AH
 Zr
-CE
-yc
+AH
+AH
+AH
+VE
+VE
+VE
+ah
+ah
+ah
+ah
 Uz
-VE
-VE
-VE
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+iJ
+vN
+vN
+Uz
 ah
 ah
 ah
@@ -32382,12 +33572,12 @@ lJ
 lJ
 lJ
 lJ
-Eg
-AH
-AH
-AH
-AH
-AH
+ID
+ID
+RD
+ID
+ID
+ID
 AH
 AH
 VE
@@ -32396,11 +33586,11 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+vN
+Uz
 ah
 ah
 ah
@@ -32641,7 +33831,7 @@ ID
 ID
 ID
 ID
-RD
+ID
 ID
 ID
 ID
@@ -32653,11 +33843,11 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+FN
+Uz
 ah
 ah
 ah
@@ -32910,11 +34100,11 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+YX
+EH
+Ws
+Uz
 ah
 ah
 ah
@@ -33167,11 +34357,11 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+wF
+KL
+Uz
 ah
 ah
 ah
@@ -33424,11 +34614,11 @@ hS
 VE
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+wF
+FN
+Uz
 ah
 ah
 ah
@@ -33681,11 +34871,11 @@ hS
 VE
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+Wh
+vN
+Uz
 ah
 ah
 ah
@@ -33938,11 +35128,11 @@ hS
 VE
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+jh
+vN
+Ws
+Uz
 ah
 ah
 ah
@@ -34195,11 +35385,11 @@ VE
 VE
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+Ws
+Uz
 ah
 ah
 ah
@@ -34452,11 +35642,11 @@ VE
 VE
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+GB
+vN
+Ws
+Uz
 ah
 ah
 ah
@@ -34709,11 +35899,11 @@ VE
 VE
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+vN
+Uz
 ah
 ah
 ah
@@ -34966,11 +36156,11 @@ VE
 VE
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Ws
+Iy
+vN
+Uz
 ah
 ah
 ah
@@ -35223,11 +36413,11 @@ VE
 VE
 ah
 ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+FN
+Uz
 ah
 ah
 ah
@@ -35480,21 +36670,21 @@ VE
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+cx
+vN
+vN
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
 ah
 ah
 ah
@@ -35737,21 +36927,21 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+vu
+vN
+vN
+my
+my
+QM
+Ws
+Ws
+vN
+vN
+Jm
+Uz
 ah
 ah
 ah
@@ -35994,21 +37184,21 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+mz
+FN
+LV
+FN
+MC
+Ws
+vN
+vN
+kI
+vN
+kI
+vN
+kI
+vN
+Uz
 ah
 ah
 ah
@@ -36251,21 +37441,21 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+vN
+IY
+Ws
+RR
+vN
+kI
+kI
+mO
+vN
+FN
+fn
+Uz
 ah
 ah
 ah
@@ -36508,21 +37698,21 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+vN
+vN
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+VU
+vN
+cx
+Uz
 ah
 ah
 ah
@@ -36765,21 +37955,21 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Ws
+vN
+Ws
+Ws
+Uz
+VE
+VE
+VE
+VE
+Uz
+Ws
+vN
+vN
+Uz
 ah
 ah
 ah
@@ -37022,21 +38212,21 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+dK
+wF
+PZ
+AE
+Uz
+VE
+VE
+VE
+VE
+Uz
+vN
+vN
+yv
+Uz
 ah
 ah
 ah
@@ -37279,21 +38469,21 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Zt
+vN
+vN
+ge
+UL
+Oj
+VE
+VE
+VE
+VE
+Uz
+vN
+vN
+Ws
+Uz
 ah
 ah
 ah
@@ -37536,21 +38726,21 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Ef
+cR
+uZ
+Jm
+Uz
+VE
+VE
+VE
+VE
+Uz
+vN
+vN
+vN
+Uz
 ah
 ah
 ah
@@ -37792,22 +38982,22 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+VE
+VE
+VE
+VE
+Uz
+vN
+Ws
+Ws
+Uz
 ah
 ah
 ah
@@ -38009,68 +39199,68 @@ ah
 ah
 ah
 ah
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Pf
+xD
+gn
+ZQ
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+vN
+FN
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+ZQ
+ZQ
+ZQ
+ZQ
 ah
 ah
 ah
@@ -38266,68 +39456,68 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-FK
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Sq
+vN
+vN
+pQ
+Ws
+wt
+vN
+vN
+SC
+vN
+jh
+jh
+vN
+Jm
+vN
+Hs
+vN
+Ws
+Ws
+vN
+cx
+wF
+kI
+vN
+vN
+Wh
+kI
+kI
+yw
+cx
+vN
+vN
+vN
+vN
+vu
+jh
+kI
+Hs
+kI
+Uz
+rV
+xD
+mJ
+ZQ
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+Jm
+FN
+Uz
+Uz
+ZQ
+bW
+nR
+af
+ZQ
 ah
 ah
 ah
@@ -38523,68 +39713,68 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-FK
-FK
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+FN
+DV
+wF
+vN
+vN
+vN
+Wh
+wF
+vN
+FN
+FN
+vN
+vN
+Ws
+vN
+vN
+wF
+vN
+vN
+FN
+ON
+vN
+vN
+mi
+kI
+vN
+wv
+vN
+vN
+vN
+vN
+wF
+Ws
+vN
+wv
+vN
+kI
+Wh
+kI
+kX
+mJ
+xD
+UK
+ZQ
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+vN
+vN
+Bj
+vN
+xD
+ow
+Nq
+dw
+ZQ
 ah
 ah
 ah
@@ -38780,68 +39970,68 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-FK
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+FN
+mE
+Ws
+vN
+jh
+vN
+vN
+vN
+vN
+EC
+vX
+Ws
+vN
+vN
+FN
+vN
+Wh
+cx
+FN
+vN
+vN
+wF
+kI
+vN
+kI
+Ws
+vN
+vN
+vX
+vN
+rJ
+HZ
+kI
+kI
+Ws
+vN
+wF
+EH
+Ws
+Uz
+qJ
+xD
+Pf
+ZQ
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+Ws
+vN
+dE
+Uz
+GN
+ZQ
+xD
+Nq
+bj
+ZQ
 ah
 ah
 ah
@@ -39037,68 +40227,68 @@ ah
 ah
 ah
 ah
+Uz
+vN
+vN
+vN
+VE
+VE
+VE
+VE
+Ws
+fT
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+IL
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+vN
+wt
+vN
+Uz
+zF
+rV
+SS
+ZQ
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+wv
+GB
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-FK
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+TR
+ow
+xD
+ZQ
 ah
 ah
 ah
@@ -39294,74 +40484,21 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-FK
-FK
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Ws
+Ws
+FN
+VE
+VE
+VE
+VE
+vN
+vN
+Uz
+VE
+VE
+VE
+VE
 VE
 VE
 VE
@@ -39369,7 +40506,60 @@ VE
 VE
 VE
 hS
+hS
 VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+vN
+cx
+Uz
+ZQ
+ZQ
+ZQ
+ZQ
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+kI
+kI
+jh
+Uz
+ah
+ZQ
+HQ
+kp
+GU
+pO
+Ft
+yY
+yY
+yY
+yY
+yY
+Hv
+Hv
+Ye
+Hv
+Hv
+Hv
+nG
+OX
 VE
 Vw
 Vw
@@ -39551,68 +40741,68 @@ ah
 ah
 ah
 ah
+Uz
+LV
+vN
+FN
+VE
+VE
+VE
+VE
+vN
+EV
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+hS
+hS
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+Ws
+vN
+vN
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+kI
+kI
+wv
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-FK
-FK
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+ZQ
+ZQ
+ZQ
+ZQ
 ah
 ah
 ah
@@ -39622,9 +40812,9 @@ ah
 VE
 VE
 rj
-VE
-VE
-VE
+Hv
+Hv
+Hv
 hS
 Gp
 VE
@@ -39808,62 +40998,62 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-FK
-FK
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Ws
+vN
+Ws
+VE
+VE
+VE
+wF
+FN
+LV
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+hS
+hS
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+Ws
+wv
+Ws
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+wv
+RR
+Uz
 ah
 ah
 ah
@@ -40065,66 +41255,66 @@ ah
 ah
 ah
 ah
+Uz
+vN
+vN
+Ws
+VE
+VE
+wF
+cS
+FN
+LV
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+hS
+hS
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+vN
+vN
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+wv
+vN
+Uz
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-FK
-FK
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Hi
 ah
 ah
 ah
@@ -40322,62 +41512,62 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-FK
-FK
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Ws
+wF
+wF
+Ws
+vN
+wF
+Wh
+vN
+Uz
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+hS
+hS
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+pQ
+gj
+RQ
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+vN
+zj
+Ws
+Uz
 ah
 ah
 ah
@@ -40579,62 +41769,62 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-FK
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+qi
+vN
+Ws
+vN
+cx
+Uz
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+hS
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+vN
+vN
+vN
+vN
+OV
+FN
+vN
+vN
+Ws
+vN
+vN
+Qs
+vN
+Ws
+vN
+wv
+Ws
+Uz
 ah
 ah
 ah
@@ -40654,7 +41844,7 @@ hS
 hS
 op
 sa
-GN
+GY
 sa
 op
 vI
@@ -40836,62 +42026,62 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-FK
-FK
-FK
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+vN
+Uz
+Uz
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+hS
+hS
+hS
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+mZ
+vN
+jh
+vN
+vN
+oN
+vN
+Ws
+zj
+vN
+vN
+DQ
+vN
+zj
+wv
+vN
+fZ
+Uz
 ah
 ah
 ah
@@ -41093,17 +42283,17 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+cx
+Ws
+vN
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
 lL
 lL
 lL
@@ -41115,40 +42305,40 @@ lL
 kb
 lL
 lL
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+cx
+vN
+vN
+vN
+vN
+vN
+Ws
+vN
+vN
+vN
+vN
+Ws
+sg
+vN
+vN
+vN
+cx
+Ws
+Uz
 ah
 ah
 ah
@@ -41350,15 +42540,15 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+EC
+FN
+FN
+Uz
+VE
+VE
+VE
+VE
 ah
 lL
 lL
@@ -41372,40 +42562,40 @@ YC
 MZ
 Ek
 lL
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+Uz
+Uz
+Uz
+ut
+wP
+Uz
+GN
+Uz
+Uz
+Uz
+Uz
+Uz
+kX
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
 ah
 ah
 ah
@@ -41607,15 +42797,15 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+FN
+cx
+Uz
+VE
+VE
+VE
+VE
 ah
 SG
 RP
@@ -41629,35 +42819,35 @@ XC
 pD
 nW
 lL
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+vN
+Uz
 ah
 ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+xD
+ZQ
 ah
 ah
 ah
@@ -41864,15 +43054,15 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+wF
+Uz
+VE
+VE
+VE
+VE
 ah
 SG
 jb
@@ -41887,38 +43077,38 @@ Gq
 ix
 SG
 SG
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+Tv
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+ZQ
+ZQ
+ZQ
+ZQ
+xD
+ZQ
+ZQ
+ZQ
+ZQ
+ZQ
 ah
 ah
 ah
@@ -42121,15 +43311,15 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+wF
+Uz
+VE
+VE
+VE
+VE
 ah
 lL
 SG
@@ -42144,38 +43334,38 @@ si
 qX
 eo
 lL
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+zI
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+og
+Sr
+nZ
+ZQ
+xD
+ZQ
+Vz
+Ah
+WC
+ZQ
 ah
 ah
 ah
@@ -42378,15 +43568,15 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+mi
+vN
+wF
+Uz
+VE
+VE
+VE
+VE
 ah
 ah
 SG
@@ -42401,38 +43591,38 @@ in
 Wu
 qY
 SG
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+kK
+Tv
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+nZ
+Mg
+jO
+ZQ
+xD
+ZQ
+xJ
+Mg
+WE
+ZQ
 ah
 ah
 ah
@@ -42635,15 +43825,15 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+FN
+Em
+Uz
+VE
+VE
+VE
+VE
 ah
 ah
 lL
@@ -42658,38 +43848,38 @@ eo
 Ze
 lv
 SG
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+qM
+Tv
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+nZ
+xD
+nZ
+ZQ
+Nq
+xD
+hs
+Nq
+lZ
+ZQ
 ah
 ah
 ah
@@ -42892,15 +44082,15 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+AX
+rf
+NF
+Uz
+VE
+VE
+VE
+VE
 SG
 SG
 SG
@@ -42915,38 +44105,38 @@ eo
 Qc
 vf
 SG
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+pZ
+Uz
+vN
+Qs
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+sz
+hs
+nZ
+ZQ
+xD
+ZQ
+sz
+Zl
+UB
+ZQ
 ah
 ah
 ah
@@ -43149,15 +44339,15 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+LV
+Ab
+Uz
+VE
+VE
+VE
+VE
 SG
 Ba
 ey
@@ -43172,38 +44362,38 @@ qX
 Yb
 lL
 lL
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+zI
+MC
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+nZ
+xD
+xD
+qz
+xD
+ZQ
+vn
+Wf
+ot
+ZQ
 ah
 ah
 ah
@@ -43406,15 +44596,15 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Lr
+Ws
+jh
+Uz
+VE
+VE
+VE
+VE
 SG
 HB
 pm
@@ -43429,38 +44619,38 @@ zl
 QD
 lL
 hS
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+Uz
+Uz
+Uz
+Uz
+VE
+VE
+VE
+Uz
+MC
+vN
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+VG
+xD
+Tm
+ZQ
+BU
+ZQ
+ZQ
+ZQ
+ZQ
+ZQ
 ah
 ah
 ah
@@ -43663,15 +44853,15 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+FN
+vN
+Ws
+Uz
+VE
+VE
+VE
+VE
 SG
 Rm
 EQ
@@ -43686,34 +44876,34 @@ Vv
 Xg
 lL
 hS
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+Vx
+pb
+DA
+Uz
+VE
+VE
+VE
+Uz
+vN
+kK
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+ZQ
+ZQ
+ZQ
+ZQ
+DJ
+ZQ
 ah
 ah
 ah
@@ -43920,15 +45110,15 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+wF
+vN
+Uz
+VE
+VE
+VE
+VE
 aW
 fO
 SG
@@ -43944,33 +45134,33 @@ dQ
 hS
 hS
 hS
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+vN
+qM
+Uz
+VE
+VE
+VE
+Uz
+FN
+kK
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+xG
+qz
+qz
+ZQ
+Nq
+ZQ
 ah
 ah
 ah
@@ -44151,41 +45341,41 @@ ah
 ah
 ah
 ah
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+za
+cx
+Uz
+VE
+VE
+VE
+VE
 hS
 hS
 SG
@@ -44200,34 +45390,34 @@ vN
 cc
 vN
 hS
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+Wc
+vN
+vN
+Uz
+VE
+VE
+VE
+Uz
+FN
+FN
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+Zj
+Zl
+FZ
+xD
+xD
+ZQ
 ah
 ah
 ah
@@ -44408,40 +45598,40 @@ ah
 ah
 ah
 ah
+Uz
+vN
+vN
+LV
+vN
+kK
+DV
+vN
+vN
+vN
+vN
+fz
+kK
+Wh
+DV
+vN
+vN
+qM
+vN
+mE
+vN
+wF
+Co
+Uz
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+mr
+vN
+vN
+Uz
+VE
+VE
+VE
 hS
 hS
 hS
@@ -44459,32 +45649,32 @@ hS
 hS
 hS
 hS
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+Uz
+Ws
+Ws
+Uz
+VE
+VE
+VE
+Uz
+vN
+qM
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+wL
+jw
+qz
+ZQ
+YR
+ZQ
 ah
 ah
 ah
@@ -44665,39 +45855,39 @@ ah
 ah
 ah
 ah
+Uz
+vN
+vN
+vN
+vN
+kK
+vN
+vN
+vN
+vN
+vN
+vN
+kK
+ln
+qM
+kK
+vN
+vN
+sx
+vN
+vN
+vN
+Ws
+Uz
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+EC
+cx
+Uz
+VE
+VE
 hS
 hS
 hS
@@ -44714,34 +45904,34 @@ ZY
 Uz
 ZY
 Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+pG
+vN
+vN
+EV
+Uz
+Uz
+Uz
+Uz
+Uz
+vX
+zI
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+ro
+Zj
+Ji
+ZQ
+ZQ
+ZQ
 ah
 ah
 ah
@@ -44922,39 +46112,39 @@ ah
 ah
 ah
 ah
+Uz
+Uz
+ut
+dr
+Uz
+GN
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+vN
+PQ
+Uz
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Ws
+FN
+vN
+Uz
+VE
+VE
 hS
 vI
 ZY
@@ -44971,32 +46161,32 @@ VM
 Yf
 IS
 Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+KU
+vN
+vN
+vN
+vX
+vN
+FN
+FN
+vN
+vN
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+ZQ
+ZQ
+ZQ
+ZQ
+ZQ
 ah
 ah
 ah
@@ -45179,39 +46369,39 @@ ah
 ah
 ah
 ah
+Uz
+Bp
+vN
+kI
+vN
+mE
+vN
+rd
+kI
+MO
+kI
+Ws
+Ws
+vN
+Fi
+vN
+vN
+Xv
+Uz
+ah
+Uz
+vN
+kI
+Uz
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Lb
+Ws
+jh
+Uz
+VE
+VE
 vI
 vI
 wF
@@ -45228,26 +46418,26 @@ Gr
 VQ
 ce
 Uz
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
 ah
 ah
 ah
@@ -45436,40 +46626,40 @@ ah
 ah
 ah
 ah
+Uz
+vN
+vN
+fz
+Mw
+vN
+Ws
+Fi
+bL
+Mw
+vN
+vN
+kI
+vN
+wF
+wF
+wF
+vN
+Uz
+ah
+Uz
+Wh
+vN
+Uz
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+mZ
+vN
+vN
+Uz
+VE
+VE
+VE
 vI
 Uz
 ZY
@@ -45485,16 +46675,16 @@ fz
 WV
 IS
 ZY
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+Uz
 ah
 ah
 ah
@@ -45693,40 +46883,40 @@ ah
 ah
 ah
 ah
+Uz
+kI
+pQ
+ij
+kI
+vN
+kI
+Ws
+vN
+vN
+mZ
+FN
+FN
+vN
+cx
+ve
+vN
+Ws
+Uz
+ah
+Uz
+vN
+vN
+Uz
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+Wh
+Uz
+VE
+VE
+VE
 vI
 Uz
 ZY
@@ -45742,24 +46932,24 @@ FN
 eC
 ec
 Uz
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+VE
+VE
+VE
+Uz
+Uz
+Uz
+Uz
+Uz
+tw
+Uz
+Uz
+GN
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
 ah
 ah
 ah
@@ -45950,40 +47140,40 @@ ah
 ah
 ah
 ah
+Uz
+vN
+vN
+vN
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+vN
+vN
+Ws
+Uz
+ah
+Uz
+vN
+RR
+Uz
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+wF
+wF
+Uz
+VE
+VE
+VE
 hS
 Uz
 vN
@@ -45999,24 +47189,24 @@ XE
 CB
 ig
 Uz
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+VE
+VE
+VE
+Uz
+FN
+vN
+FN
+vN
+Qs
+kI
+kI
+kI
+kI
+Ws
+FN
+vN
+ue
+Uz
 ah
 ah
 ah
@@ -46207,6 +47397,11 @@ ah
 ah
 ah
 ah
+Uz
+FN
+FN
+vN
+Uz
 ah
 ah
 ah
@@ -46216,32 +47411,27 @@ ah
 ah
 ah
 ah
+Uz
+LV
+Zs
+kI
+Uz
+ah
+Uz
+kI
+vN
+Uz
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+jh
+vN
+Uz
+VE
+VE
+VE
+VE
 Uz
 Uz
 Uz
@@ -46256,24 +47446,24 @@ ZY
 ZY
 Uz
 Uz
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+VE
+VE
+VE
+Uz
+jh
+wv
+wv
+wv
+wv
+kI
+rJ
+kI
+kI
+vN
+vN
+Zs
+eG
+Uz
 ah
 ah
 ah
@@ -46464,73 +47654,73 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+dt
+dt
+NM
+Uz
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+Uz
+vN
+fz
+kI
+Uz
+ah
+Uz
+Lr
+kI
+Uz
+ah
+ah
+Uz
+Ws
+Ws
+Jf
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+Wh
+vN
+mB
+vN
+kI
+kI
+kI
+kI
+vN
+FN
+FN
+CE
+Uz
 ah
 ah
 ah
@@ -46721,73 +47911,73 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Uz
+Uz
+Uz
+Uz
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+ah
+Uz
+vN
+fz
+vN
+Uz
+ah
+Uz
+vN
+vN
+Uz
+ah
+ah
+Uz
+Ws
+vN
+FN
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+vN
+Qs
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
 ah
 ah
 ah
@@ -46992,49 +48182,49 @@ ah
 ah
 ah
 ah
+Uz
+vN
+lC
+fz
+Uz
+ah
+Uz
+vN
+qM
+Uz
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+vN
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+ge
+vN
+EC
+Uz
 ah
 ah
 ah
@@ -47249,49 +48439,49 @@ ah
 ah
 ah
 ah
+Uz
+PQ
+FN
+fz
+Uz
+ah
+Uz
+DV
+FN
+Uz
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+SF
+FN
+Ws
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+Ws
+Ws
+vN
+Uz
 ah
 ah
 ah
@@ -47506,49 +48696,49 @@ ah
 ah
 ah
 ah
+Uz
+vN
+vN
+FN
+Uz
+ah
+Uz
+vN
+FN
+Uz
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+vN
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+vN
+jh
+bb
 ah
 ah
 ah
@@ -47763,49 +48953,49 @@ ah
 ah
 ah
 ah
+Uz
+vN
+eY
+hB
+Uz
+ah
+Uz
+SU
+vN
+Uz
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Ws
+Ws
+vX
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+vN
+br
+Ws
+Uz
 ah
 ah
 ah
@@ -48020,49 +49210,49 @@ ah
 ah
 ah
 ah
+Uz
+Ws
+vN
+kI
+Uz
+ah
+Uz
+FN
+jY
+Uz
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+wF
+Uz
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+VE
+Uz
+zj
+vN
+SC
+Uz
 ah
 ah
 ah
@@ -48277,55 +49467,55 @@ ah
 ah
 ah
 ah
+Uz
+vN
+vN
+vN
+Uz
+ah
+Uz
+vN
+xu
+Uz
+ah
+ah
+Uz
+vN
+jh
+Ws
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Ws
+vN
+FN
+Uz
 ah
 ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+pz
 ah
 ah
 ah
@@ -48534,49 +49724,49 @@ ah
 ah
 ah
 ah
+Uz
+Ws
+IQ
+Wh
+Uz
+ah
+Uz
+wF
+vN
+Uz
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Ws
+vN
+vN
+Ws
+vN
+vN
+LV
+Ws
+vN
+HZ
+FN
+vN
+PQ
+zj
+jh
+vN
+TX
+Ws
+ln
+jh
+vN
+vN
+WY
+Ws
+vN
+Wh
+Ws
+Ws
+FN
+Uz
 ah
 ah
 ah
@@ -48791,49 +49981,49 @@ ah
 ah
 ah
 ah
+Uz
+vN
+fz
+vN
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+UL
+jh
+Uz
+Uz
+Uz
+Uz
+WS
+SH
+wF
+wF
+wF
+vN
+vN
+vN
+vN
+wv
+vN
+FN
+vN
+vN
+MC
+Ws
+LA
+Ws
+vN
+Ws
+vN
+Ws
+vN
+zj
+vN
+Wh
+Wh
+vN
+vN
+Uz
 ah
 ah
 ah
@@ -49048,49 +50238,49 @@ ah
 ah
 ah
 ah
+Uz
+mZ
+vN
+vN
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+Ct
+vN
+Bp
+dr
+vN
+FN
+vN
+NN
+Ws
+vN
+uM
+Zg
+vN
+Px
+vN
+vN
+Ws
+vN
+Ws
+wv
+Lc
+LV
+LV
+vN
+vN
+Ws
+jh
+vN
+Qs
+vN
+vN
+vN
+pS
+Uz
 ah
 ah
 ah
@@ -49305,49 +50495,49 @@ ah
 ah
 ah
 ah
+Uz
+vN
+zz
+lC
+Uz
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+LV
+LV
+So
+vN
+vN
+dr
+FN
+vN
+Ws
+Uz
+Uz
+Uz
+Uz
+Uz
+Px
+sx
+vN
+Px
+vN
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
 ah
 ah
 ah
@@ -49562,33 +50752,33 @@ ah
 ah
 ah
 ah
+Uz
+vX
+vN
+FN
+Uz
+ah
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+WS
+Ws
+vN
+Uz
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+Px
+vN
+Px
+Uz
 ah
 ah
 ah
@@ -49819,6 +51009,11 @@ ah
 ah
 ah
 ah
+Uz
+Ws
+Ws
+vN
+Uz
 ah
 ah
 ah
@@ -49826,26 +51021,21 @@ ah
 ah
 ah
 ah
+Uz
+vN
+cS
+kI
+Uz
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+va
+YZ
+Lm
+Lm
+va
+Uz
 ah
 ah
 ah
@@ -50076,6 +51266,11 @@ ah
 ah
 ah
 ah
+Uz
+Wh
+vN
+pQ
+Uz
 ah
 ah
 ah
@@ -50083,26 +51278,21 @@ ah
 ah
 ah
 ah
+Uz
+vN
+wF
+UL
+Uz
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+ux
+Lm
+Lm
+Lm
+Lm
+Uz
 ah
 ah
 ah
@@ -50333,6 +51523,11 @@ ah
 ah
 ah
 ah
+Uz
+vN
+vN
+vN
+Uz
 ah
 ah
 ah
@@ -50340,26 +51535,21 @@ ah
 ah
 ah
 ah
+mz
+vN
+wF
+vN
+Uz
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
 ah
 ah
 ah
@@ -50415,7 +51605,7 @@ fI
 dW
 jy
 eq
-pu
+fC
 vw
 yX
 je
@@ -50590,6 +51780,11 @@ ah
 ah
 ah
 ah
+kk
+Ws
+wF
+Ws
+Uz
 ah
 ah
 ah
@@ -50597,16 +51792,11 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Ws
+vN
+HZ
+Uz
 ah
 ah
 ah
@@ -50847,6 +52037,11 @@ ah
 ah
 ah
 ah
+Uz
+vN
+wF
+mB
+Uz
 ah
 ah
 ah
@@ -50854,16 +52049,11 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Ws
+Fi
+vN
+Uz
 ah
 ah
 ah
@@ -51104,6 +52294,11 @@ ah
 ah
 ah
 ah
+Uz
+vN
+kI
+kI
+Uz
 ah
 ah
 ah
@@ -51111,16 +52306,11 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+vN
+vN
+zK
+Uz
 ah
 ah
 ah
@@ -51361,6 +52551,11 @@ ah
 ah
 ah
 ah
+Uz
+jh
+LV
+vN
+Uz
 ah
 ah
 ah
@@ -51368,16 +52563,11 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Cx
+jh
+vN
+Uz
 ah
 ah
 ah
@@ -51618,6 +52808,11 @@ ah
 ah
 ah
 ah
+Uz
+kI
+Wr
+Ws
+Uz
 ah
 ah
 ah
@@ -51625,16 +52820,11 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+kI
+vN
+kI
+Uz
 ah
 ah
 ah
@@ -51875,23 +53065,23 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+kI
+vN
+jh
+Uz
+Uz
+Uz
+bb
+Uz
+Oj
+Uz
+Uz
+Uz
+vN
+mr
+kI
+Uz
 ah
 ah
 ah
@@ -52132,23 +53322,23 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+kI
+vN
+FN
+vN
+rJ
+vN
+vN
+vN
+vN
+jh
+kI
+vN
+cx
+vN
+Ws
+Uz
 ah
 ah
 ah
@@ -52389,23 +53579,23 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Qs
+cx
+vN
+Wh
+vN
+vN
+bs
+LV
+LV
+Ws
+rJ
+wv
+VU
+VU
+ln
+Kr
 ah
 ah
 ah
@@ -52646,23 +53836,23 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+NN
+vN
+FN
+Ws
+Ws
+Cx
+Fg
+Sm
+Ws
+jh
+vN
+mZ
+RO
+kI
+Wh
+Uz
 ah
 ah
 ah
@@ -52903,23 +54093,23 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
-ah
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
+Uz
 ah
 ah
 ah
