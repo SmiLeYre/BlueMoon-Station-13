@@ -5,14 +5,6 @@
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 
-/obj/item/card/id/heresy
-	icon = 'modular_bluemoon/Fink/icons/clothing/Magic_Gang.dmi'
-	name = "Occult Card"
-	desc = "ID for research related to occult activities whose nature of phenomena is poorly supported by scientific evidence."
-	icon_state = "heresy_card"
-	assignment = "Herecit"
-	uses_overlays = FALSE
-
 /datum/gear/donator/bm/heresy_card
 	name = "Occult Card"
 	slot = ITEM_SLOT_BACKPACK
@@ -20,3 +12,10 @@
 	ckeywhitelist = list("trollandrew")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
+
+/datum/gear/donator/muck_id
+	name = "Muck ID Card"
+	path = /obj/item/card/id/muck
+	cost = 1
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1
