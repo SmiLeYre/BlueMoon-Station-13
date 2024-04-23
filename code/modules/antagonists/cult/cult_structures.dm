@@ -199,36 +199,47 @@
 /obj/structure/destructible/cult/pylon/New()
 	START_PROCESSING(SSfastprocess, src)
 	..()
+	AddComponent( \
+		/datum/component/aura_healing, \
+		range = 5, \
+		brute_heal = 0.4, \
+		burn_heal = 0.4, \
+		blood_heal = 0.4, \
+		simple_heal = 1, \
+		requires_visibility = FALSE, \
+		limit_to_trait = TRAIT_HEALS_FROM_CULT_PYLONS, \
+		healing_color = COLOR_CULT_RED, \
+	)
 
 /obj/structure/destructible/cult/pylon/Destroy()
 	STOP_PROCESSING(SSfastprocess, src)
 	return ..()
 
-/obj/structure/destructible/cult/pylon/proc/heal_friends()
-	set waitfor = FALSE
-	for(var/mob/living/L in range(5, src))
-		if(iscultist(L) || isshade(L) || isconstruct(L))
-			if(L.health != L.maxHealth)
-				new /obj/effect/temp_visual/heal(get_turf(src), "#960000")
-				if(ishuman(L))
-					L.adjustBruteLoss(-1, 0, only_organic = FALSE)
-					L.adjustFireLoss(-1, 0, only_organic = FALSE)
-					L.updatehealth()
-				if(isshade(L) || isconstruct(L))
-					var/mob/living/simple_animal/M = L
-					if(M.health < M.maxHealth)
-						M.adjustHealth(-3)
-			if(ishuman(L) && L.blood_volume < (BLOOD_VOLUME_NORMAL * L.blood_ratio))
-				L.adjust_integration_blood(1.0)
-		CHECK_TICK
+// /obj/structure/destructible/cult/pylon/proc/heal_friends()
+// 	set waitfor = FALSE
+// 	for(var/mob/living/L in range(5, src))
+// 		if(iscultist(L) || isshade(L) || isconstruct(L))
+// 			if(L.health != L.maxHealth)
+// 				new /obj/effect/temp_visual/heal(get_turf(src), "#960000")
+// 				if(ishuman(L))
+// 					L.adjustBruteLoss(-1, 0, only_organic = FALSE)
+// 					L.adjustFireLoss(-1, 0, only_organic = FALSE)
+// 					L.updatehealth()
+// 				if(isshade(L) || isconstruct(L))
+// 					var/mob/living/simple_animal/M = L
+// 					if(M.health < M.maxHealth)
+// 						M.adjustHealth(-3)
+// 			if(ishuman(L) && L.blood_volume < (BLOOD_VOLUME_NORMAL * L.blood_ratio))
+// 				L.adjust_integration_blood(1.0)
+// 		CHECK_TICK
 
 
 /obj/structure/destructible/cult/pylon/process()
 	if(!anchored)
 		return
-	if(last_heal <= world.time)
-		last_heal = world.time + heal_delay
-		heal_friends()
+	// if(last_heal <= world.time)
+	// 	last_heal = world.time + heal_delay
+	// 	heal_friends()
 	if(last_corrupt <= world.time)
 		var/list/validturfs = list()
 		var/list/cultturfs = list()

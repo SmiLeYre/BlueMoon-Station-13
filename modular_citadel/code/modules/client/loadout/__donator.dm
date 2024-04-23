@@ -6,6 +6,7 @@
 	path = /obj/item/bikehorn/golden
 	category = LOADOUT_CATEGORY_DONATOR
 	subcategory = LOADOUT_SUBCATEGORIES_DON01
+	donator_group_id = DONATOR_GROUP_TIER_3 // can be accessed by all donators
 	ckeywhitelist = list("This entry should never appear with this variable set.") //If it does, then that means somebody fucked up the whitelist system pretty hard
 
 /datum/gear/donator/pet

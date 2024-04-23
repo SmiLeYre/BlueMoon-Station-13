@@ -132,6 +132,7 @@
 		cult_team.rise(current)
 		if(cult_team.cult_ascendent)
 			cult_team.ascend(current)
+	ADD_TRAIT(current, TRAIT_HEALS_FROM_CULT_PYLONS, INNATE_TRAIT)
 
 /datum/antagonist/cult/remove_innate_effects(mob/living/mob_override)
 	. = ..()
@@ -155,6 +156,7 @@
 		H.update_body()
 		H.cut_overlays()
 		H.regenerate_icons()
+	REMOVE_TRAIT(owner.current, TRAIT_HEALS_FROM_CULT_PYLONS, INNATE_TRAIT)
 
 /datum/antagonist/cult/on_removal()
 	SSticker.mode.cult -= owner

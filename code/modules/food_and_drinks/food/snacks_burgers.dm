@@ -6,6 +6,7 @@
 	list_reagents = list(/datum/reagent/consumable/nutriment = 6, /datum/reagent/consumable/nutriment/vitamin = 1)
 	tastes = list("bun" = 4)
 	foodtype = GRAIN | MEAT
+	grind_results = list(/datum/reagent/consumable/nutriment/liquid_burger = 10)
 
 /obj/item/reagent_containers/food/snacks/burger/plain
 	name = "burger"
