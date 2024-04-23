@@ -335,6 +335,42 @@
 	name = "Slipocalypse"
 	payload = /obj/item/grenade/spawnergrenade/syndiesoap/inteq
 
+/obj/item/storage/belt/sabre/karakurt
+	name = "Karakurt sheath"
+	desc = "Ножны со встроеным отсеком для ядом. Постоянно поддерживают элегантное оружие в подобающем виде."
+	icon_state = "isheath"
+	item_state = "isheath"
+	force = 5
+	throwforce = 15
+	w_class = WEIGHT_CLASS_BULKY
+	attack_verb = list("bashed", "slashes", "prods", "pokes")
+	fitting_swords = list(/obj/item/melee/sabre/karakurt)
+	starting_sword = /obj/item/melee/sabre/karakurt
+
+/obj/item/melee/sabre/karakurt/get_belt_overlay()
+	if(istype(loc, /obj/item/storage/belt/sabre/karakurt))
+		return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "karakurt")
+	return ..()
+
+/obj/item/melee/sabre/karakurt/get_worn_belt_overlay(icon_file)
+	return mutable_appearance(icon_file, "-karakurt")
+
+/obj/item/melee/sabre/karakurt
+	name = "Karakurt"
+	desc = "<span class='nicegreen'>Лучше не трогать это лезвие руками</span>"
+	icon_state = "karakurt"
+	item_state = "karakurt"
+	force = 15
+	throwforce = 12
+	armour_penetration = 50
+	block_parry_data = /datum/block_parry_data/traitor_rapier
+
+/obj/item/melee/sabre/karakurt/attack(mob/living/target, mob/living/user)
+	. = ..()
+	if(iscarbon(target))
+		var/mob/living/carbon/H = target
+		H.reagents.add_reagent(/datum/reagent/toxin/pancuronium, 1)
+
 ///InteQ Uplink additions
 /datum/uplink_item/inteq/angle_grinder
 	name = "USHM"

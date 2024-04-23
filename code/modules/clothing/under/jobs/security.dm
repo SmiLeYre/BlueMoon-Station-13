@@ -46,12 +46,20 @@
 /obj/item/clothing/under/rank/security/officer/skirt
 	name = "security jumpskirt"
 	desc = "A \"tactical\" security jumpsuit with the legs replaced by a skirt."
-	icon_state = "secskirt"
-	item_state = "r_suit"
+	icon_state = "sectac_red" ///bluemoon change
+	item_state = "sectac_red" ///bluemoon change
 	body_parts_covered = CHEST|GROIN|ARMS
 	alt_covers_chest = TRUE
 	fitted = FEMALE_UNIFORM_TOP
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	unique_reskin = list(
+		"Blue" = list("icon_state" = "sectac_blue", "item_state" = "sectac_blue"),
+		"Black" = list("icon_state" = "sectac_black", "item_state" = "sectac_black"),
+		"Pink" = list("icon_state" = "sectac_pink", "item_state" = "sectac_pink"),
+		"Maid red" = list("icon_state" = "secmaid_red", "item_state" = "secmaid_red"),
+		"Maid blue" = list("icon_state" = "secmaid_blue", "item_state" = "secmaid_blue"),
+	) ///bluemoon add
+
 
 /obj/item/clothing/under/rank/security/stripper
 	name = "secukini"

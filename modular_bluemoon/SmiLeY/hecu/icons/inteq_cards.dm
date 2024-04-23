@@ -2,23 +2,17 @@
 	name = "Civilian Mercenary Card"
 	uses = 1
 
-/obj/item/card/id/inteq
-	name = "Mercenary Card"
-	icon_state = "inteq"
-	assignment = "Mercenary"
-	access = list(ACCESS_MAINT_TUNNELS, ACCESS_INTEQ)
-
 /obj/item/card/id/inteq/anyone
 	name = "Vanguard Mercenary Card"
 	icon_state = "inteq"
 	assignment = "Vanguard Mercenary"
-	access = list(ACCESS_MAINT_TUNNELS, ACCESS_INTEQ, ACCESS_INTEQ_LEADER)
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_INTEQ, ACCESS_INTEQ_LEADER, ACCESS_SYNDICATE)
 
 /obj/item/card/id/inteq/nuke_leader
 	name = "Nuclear Vanguard Mercenary Card"
 	icon_state = "inteq"
 	assignment = "Vanguard Mercenary"
-	access = list(ACCESS_MAINT_TUNNELS, ACCESS_INTEQ, ACCESS_INTEQ_LEADER)
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_INTEQ, ACCESS_INTEQ_LEADER, ACCESS_SYNDICATE)
 
 /obj/item/card/id/inteq/crew_id
 	name = "InteQ Vanguard ID card"
@@ -27,7 +21,7 @@
 	registered_name = "InteQ"
 	assignment = "InteQ Operative"
 	icon_state = "inteq"
-	access = list(ACCESS_INTEQ, ACCESS_ROBOTICS)
+	access = list(ACCESS_INTEQ, ACCESS_ROBOTICS, ACCESS_SYNDICATE)
 	uses_overlays = FALSE
 
 /obj/item/card/id/inteq/captain_id
@@ -37,14 +31,14 @@
 	registered_name = "InteQ"
 	assignment = "InteQ Ship Captain"
 	icon_state = "inteq"
-	access = list(ACCESS_INTEQ, ACCESS_INTEQ_LEADER, ACCESS_ROBOTICS)
+	access = list(ACCESS_INTEQ, ACCESS_INTEQ_LEADER, ACCESS_ROBOTICS, ACCESS_SYNDICATE)
 	uses_overlays = FALSE
 
 /obj/item/card/id/inteq
 	name = "Agent Card"
 	icon_state = "inteq"
 	assignment = "Mercenary"
-	access = list(ACCESS_MAINT_TUNNELS, ACCESS_INTEQ)
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_INTEQ, ACCESS_SYNDICATE)
 	var/anyone = FALSE //Can anyone forge the ID or just InteQ?
 	var/forged = FALSE //have we set a custom name and job assignment, or will we use what we're given when we chameleon change?
 	var/uses = 10
