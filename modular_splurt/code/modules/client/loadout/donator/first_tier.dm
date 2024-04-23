@@ -13,11 +13,11 @@
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 
-/datum/gear/donator/uniform/chameleon
-	name = "Chameleon suit"
-	path = /obj/item/clothing/under/chameleon
-	ckeywhitelist = list()
-	donator_group_id = DONATOR_GROUP_TIER_1
+// /datum/gear/donator/uniform/chameleon
+// 	name = "Chameleon suit"
+// 	path = /obj/item/clothing/under/chameleon
+// 	ckeywhitelist = list()
+// 	donator_group_id = DONATOR_GROUP_TIER_1
 
 /datum/gear/donator/uniform/victorian_purple
 	name = "Purple Victorian Suit"

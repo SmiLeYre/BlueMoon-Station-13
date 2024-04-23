@@ -59,6 +59,7 @@
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
 	box = /obj/item/storage/box/survival/security
+	accessory = /obj/item/clothing/accessory/permit/special/security
 
 	implants = list(/obj/item/implant/mindshield)
 
@@ -81,6 +82,7 @@
 	l_pocket = /obj/item/restraints/handcuffs
 	suit_store = /obj/item/gun/energy/pumpaction/defender
 	backpack_contents = list(/obj/item/syndicate_uplink_high=1)
+	accessory = /obj/item/clothing/accessory/permit/special/security
 
 	backpack = /obj/item/storage/backpack/duffelbag/syndie/ammo
 	satchel = /obj/item/storage/backpack/duffelbag/syndie/ammo

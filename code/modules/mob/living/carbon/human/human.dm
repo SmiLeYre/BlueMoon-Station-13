@@ -427,7 +427,16 @@
 
 	//Check for weapons
 	if( (judgement_criteria & JUDGE_WEAPONCHECK) && weaponcheck)
-		if(!idcard || !(ACCESS_WEAPONS in idcard.access))
+	// BLUEMOON EDIT START - пермиты теперь типо работают
+		var/list/accesses = list()
+		if(idcard)
+			accesses += idcard.access
+		var/obj/item/clothing/under/U = w_uniform
+		if(U && U.attached_accessories)
+			for(var/obj/item/clothing/accessory/accs in U.attached_accessories)
+				accesses += accs.access
+	// BLUEMOON EDIT END
+		if(!(ACCESS_WEAPONS in accesses))
 			for(var/obj/item/I in held_items) //if they're holding a gun
 				if(weaponcheck.Invoke(I))
 					threatcount += 4

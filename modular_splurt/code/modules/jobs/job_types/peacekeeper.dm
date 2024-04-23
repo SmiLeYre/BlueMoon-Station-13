@@ -54,7 +54,7 @@
 	l_pocket = /obj/item/storage/bag/security
 	r_pocket = /obj/item/assembly/flash/handheld
 	//suit_store = /obj/item/gun/energy/e_gun/advtaser
-	backpack_contents = list(/obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/deputy, /obj/item/holosign_creator/security, /obj/item/storage/ifak, /obj/item/choice_beacon/pkbaton)
+	backpack_contents = list(/obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/deputy, /obj/item/holosign_creator/security, /obj/item/storage/ifak, /obj/item/choice_beacon/pkbaton, /obj/item/clothing/accessory/permit/special/security = 1)
 
 	backpack = /obj/item/storage/backpack/security/pk
 	satchel = /obj/item/storage/backpack/satchel/sec/pk
@@ -79,7 +79,7 @@
 	l_pocket = /obj/item/storage/bag/security
 	r_pocket = /obj/item/assembly/flash/handheld
 	//suit_store = /obj/item/gun/energy/e_gun/advtaser
-	backpack_contents = list(/obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/deputy, /obj/item/holosign_creator/security, /obj/item/storage/ifak, /obj/item/choice_beacon/pkbaton, /obj/item/syndicate_uplink_high)
+	backpack_contents = list(/obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/deputy, /obj/item/holosign_creator/security, /obj/item/storage/ifak, /obj/item/choice_beacon/pkbaton, /obj/item/syndicate_uplink_high, /obj/item/clothing/accessory/permit/special/security = 1)
 
 	backpack = /obj/item/storage/backpack/duffelbag/syndie/ammo
 	satchel = /obj/item/storage/backpack/duffelbag/syndie/ammo

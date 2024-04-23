@@ -59,7 +59,7 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat
 
-	backpack_contents = list( /obj/item/station_charter=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/stamp/command=1)
+	backpack_contents = list( /obj/item/station_charter=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/stamp/command=1, /obj/item/clothing/accessory/permit/special/captain=1)
 	box = /obj/item/storage/box/survival/command
 
 	backpack = /obj/item/storage/backpack/captain
@@ -91,7 +91,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	box = /obj/item/storage/box/survival/syndie
 	pda_slot = ITEM_SLOT_BELT
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/station_charter=1, /obj/item/syndicate_uplink_high=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/station_charter=1, /obj/item/syndicate_uplink_high=1, /obj/item/clothing/accessory/permit/special/captain=1)
 
 /datum/outfit/job/captain/hardsuit
 	name = "Captain (Hardsuit)"

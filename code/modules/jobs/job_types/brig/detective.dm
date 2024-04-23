@@ -53,7 +53,7 @@
 
 	implants = list(/obj/item/implant/mindshield)
 
-	chameleon_extras = list(/obj/item/gun/ballistic/revolver/detective, /obj/item/clothing/glasses/sunglasses)
+	chameleon_extras = list(/obj/item/gun/ballistic/revolver/detective, /obj/item/clothing/glasses/sunglasses, /obj/item/clothing/accessory/permit/special/security = 1)
 
 /datum/outfit/job/detective/syndicate
 	name = "Syndicate Detective"
@@ -73,7 +73,8 @@
 	backpack_contents = list(/obj/item/storage/box/evidence=1,\
 		/obj/item/detective_scanner=1,\
 		/obj/item/syndicate_uplink_high=1,\
-		/obj/item/melee/classic_baton=1)
+		/obj/item/melee/classic_baton=1,\
+		/obj/item/clothing/accessory/permit/special/security = 1)
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 
 	backpack = /obj/item/storage/backpack/duffelbag/syndie/ammo

@@ -477,7 +477,6 @@
 	belt = /obj/item/storage/belt/janitor/ert_maid
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
 		/obj/item/storage/firstaid/regular=1,\
-
 		/obj/item/bodybag/bluespace=1,
 		/obj/item/mop/advanced=1)
 
@@ -637,8 +636,8 @@
 		return
 
 	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_CENTCOM)
-	R.freqlock = TRUE
+	R.keyslot = new /obj/item/encryptionkey/heads/captain
+	R.recalculateChannels()
 
 	var/obj/item/card/id/W = H.wear_id
 	W.icon_state = "centcom"

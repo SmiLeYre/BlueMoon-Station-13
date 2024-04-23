@@ -1174,10 +1174,10 @@
 // CENTCOM
 
 /obj/effect/mob_spawn/human/centcom_syndicate
-	name = "Special Operations Forces Syndicate Specialist"
+	name = "Special Operations Forces Syndicate Intern"
 	roundstart = FALSE
 	death = FALSE
-	job_description = "Special Operations Forces Syndicate Specialist"
+	job_description = "Special Operations Forces Syndicate Intern"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	short_desc = "Вы Интерн-Специалист, взятый на работу Центральным Командованием в качестве очередной рабочей единицы."
@@ -1185,12 +1185,12 @@
 	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей. Bы можете выдавать около-шуточные требования и указания в Эксту. Ни в коем случае не оказывайте прямое влияние на станцию в Динамику."
 	outfit = /datum/outfit/centcom_syndicate
 	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
-	assignedrole = "Centcom Specialist"
+	assignedrole = "Centcom Intern"
 	canloadappearance = TRUE
 	loadout_enabled = TRUE
 
 /datum/outfit/centcom_syndicate
-	name = "Special Ops Syndicate Officer"
+	name = "Special Ops Syndicate Intern"
 	head = /obj/item/clothing/head/HoS/beret/syndicate
 	ears = /obj/item/radio/headset/syndicate/alt
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
@@ -1218,8 +1218,8 @@
 	var/obj/item/card/id/W = H.wear_id
 	W.icon_state = "centcom"
 	W.access = get_all_accesses()
-	W.access += get_centcom_access("Special Ops Syndicate Officer")
-	W.assignment = "Special Ops Syndicate Officer"
+	W.access += get_centcom_access("Special Ops Syndicate Intern")
+	W.assignment = "Special Ops Syndicate Intern"
 	W.registered_name = H.real_name
 	W.update_label()
 
@@ -1228,10 +1228,10 @@
 	R.freqlock = TRUE
 
 /obj/effect/mob_spawn/human/centcom_nanotrasen
-	name = "Special Operations Forces Nanotrasen Specialist"
+	name = "Special Operations Forces Nanotrasen Intern"
 	roundstart = FALSE
 	death = FALSE
-	job_description = "Special Operations Forces Nanotrasen Specialist"
+	job_description = "Special Operations Forces Nanotrasen Intern"
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	short_desc = "Вы Интерн-Специалист, взятый на работу Центральным Командованием в качестве очередной рабочей единицы."
@@ -1239,12 +1239,12 @@
 	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей. Bы можете выдавать около-шуточные требования и указания в Эксту. Ни в коем случае не оказывайте прямое влияние на станцию в Динамику."
 	outfit = /datum/outfit/centcom_nanotrasen
 	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
-	assignedrole = "Centcom Specialist"
+	assignedrole = "Centcom Intern"
 	canloadappearance = TRUE
 	loadout_enabled = TRUE
 
 /datum/outfit/centcom_nanotrasen
-	name = "Special Ops Nanotrasen Officer"
+	name = "Special Ops Nanotrasen Intern"
 	head = /obj/item/clothing/head/beret/black
 	ears = /obj/item/radio/headset/syndicate/alt
 	glasses = /obj/item/clothing/glasses/aviators
@@ -1271,8 +1271,8 @@
 	var/obj/item/card/id/W = H.wear_id
 	W.icon_state = "centcom"
 	W.access = get_all_accesses()
-	W.access += get_centcom_access("Special Ops Centcom Officer")
-	W.assignment = "Special Ops Centcom Officer"
+	W.access += get_centcom_access("Special Ops Centcom Intern")
+	W.assignment = "Special Ops Centcom Intern"
 	W.registered_name = H.real_name
 	W.update_label()
 
