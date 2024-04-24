@@ -39,10 +39,13 @@ GLOBAL_LIST_EMPTY(monkey_recyclers)
 			break
 
 /obj/machinery/monkey_recycler/RefreshParts()	//Ranges from 1 to 5 per monkey recycled
+/obj/machinery/monkey_recycler/RefreshParts()	//Ranges from 1 to 5 per monkey recycled
 	cube_production = 0
 	for(var/obj/item/stock_parts/manipulator/B in component_parts)
 		cube_production += B.rating * 0.5
+		cube_production += B.rating * 0.5
 	for(var/obj/item/stock_parts/matter_bin/M in component_parts)
+		cube_production += M.rating * 0.5
 		cube_production += M.rating * 0.5
 
 /obj/machinery/monkey_recycler/examine(mob/user)
