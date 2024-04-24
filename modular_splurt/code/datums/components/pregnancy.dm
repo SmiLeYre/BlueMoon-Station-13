@@ -181,10 +181,11 @@
 /datum/component/pregnancy/proc/handle_life(seconds)
 	SIGNAL_HANDLER
 
-	if(oviposition)
-		handle_ovi_preg()
-	else
-		handle_incubation()
+	if(!HAS_TRAIT(carrier,TRAIT_COMMON_PREGNANCY)) //For normal pregnancy - Gardelin0
+		if(oviposition)
+			handle_ovi_preg()
+		else
+			handle_incubation()
 
 	if((stage >= 2) && !revealed)
 		revealed = TRUE
