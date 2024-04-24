@@ -19,7 +19,7 @@
 	if(charging)
 		. += "Current charge: [round(charging.percent(), 1)]%."
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("The status display reads: Charging speed: <b>[recharge_coeff]</b>.")
+		. += span_notice("The status display reads: Charging speed: <b>[recharge_coeff*100]%</b>.")
 
 /obj/machinery/cell_charger/wrench_act(mob/living/user, obj/item/tool)
 	. = ..()

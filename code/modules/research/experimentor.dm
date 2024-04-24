@@ -74,12 +74,13 @@
 	SetTypeReactions()
 
 /obj/machinery/rnd/experimentor/RefreshParts()
-	for(var/obj/item/stock_parts/manipulator/M in component_parts)
-		if(resetTime > 0 && (resetTime - M.rating) >= 1)
-			resetTime -= M.rating
+	resetTime = 20 //17-> 5
+	badThingCoeff = -4 //0 -> 16
+	for(var/obj/item/stock_parts/manipulator/M in component_parts) //X2
+		resetTime -= M.rating*1.5
 	for(var/obj/item/stock_parts/scanning_module/M in component_parts)
 		badThingCoeff += M.rating*2
-	for(var/obj/item/stock_parts/micro_laser/M in component_parts)
+	for(var/obj/item/stock_parts/micro_laser/M in component_parts) //X2
 		badThingCoeff += M.rating
 
 /obj/machinery/rnd/experimentor/examine(mob/user)

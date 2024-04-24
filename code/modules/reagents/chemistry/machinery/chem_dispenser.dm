@@ -479,14 +479,16 @@
 	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		recharge_amount *= C.rating
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
-		if(M.rating > 1)
+		if(M.rating > 1) //T2
 			dispensable_reagents |= upgrade_reagents
-		if(M.rating > 2)
+		if(M.rating > 2) //T3
 			dispensable_reagents |= upgrade_reagents2
-		if(M.rating > 3)
+		if(M.rating > 3) //T4
 			dispensable_reagents |= upgrade_reagents3
-		if(M.rating > 4)
+		if(M.rating > 4) //T5
 			dispensable_reagents |= upgrade_reagents4
+		if(M.rating > 5) //T6
+			dispensable_reagents |= emagged_reagents
 		switch(M.rating)
 			if(-INFINITY to 1)
 				dispenceUnit = 5
