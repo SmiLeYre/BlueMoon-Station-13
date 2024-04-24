@@ -91458,7 +91458,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/bot,
-/obj/item/clothing/suit/armor/laserproof,
+/obj/item/clothing/suit/hooded/ablative,
 /turf/open/floor/plasteel,
 /area/ai_monitored/security/armory)
 "lmg" = (

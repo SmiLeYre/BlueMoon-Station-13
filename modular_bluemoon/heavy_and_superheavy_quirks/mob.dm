@@ -24,7 +24,7 @@
 			var/can_pull = FALSE
 			if(user_mob.can_pull_superheavy_entities) // Моб простой и может тащить такого персонажа
 				can_pull = TRUE
-			if(HAS_TRAIT(user_mob, TRAIT_BLUEMOON_HEAVY_SUPER)) // другие сверхтяжёлые персонажи могут тащить
+			if(HAS_TRAIT(user_mob, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(user_mob, TRAIT_BLUEMOON_HEAVY)) // другие сверхтяжёлые или тяжёлые персонажи могут тащить
 				can_pull = TRUE
 			if(ishuman(user_mob))
 				var/mob/living/carbon/human/human_pulling = user

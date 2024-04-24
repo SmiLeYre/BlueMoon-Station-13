@@ -541,10 +541,16 @@
 		// If target not able to use items, move and stand - or if they're just dead, pass over.
 		if(L.stat == DEAD)
 			return FALSE
-		if(!L.density)
+		// BLUEMOON ADD START - стрельба по лежачим целям в любом режиме, кроме HELP
+		if(!hit_prone_targets)
+			var/mob/living/buckled_to = L.lowest_buckled_mob()
+			if(!buckled_to.density) // Will just be us if we're not buckled to another mob
+				return FALSE
+			if(L.resting)
+				return TRUE
+		if(L.stat) // если цель лежит, но в крите, то пули без таргета не берут её
 			return FALSE
-		if(L.resting)
-			return TRUE
+		// BLUEMOON ADD END
 		var/stunned = HAS_TRAIT(L, TRAIT_MOBILITY_NOMOVE) && HAS_TRAIT(L, TRAIT_MOBILITY_NOREST) && HAS_TRAIT(L, TRAIT_MOBILITY_NOPICKUP)
 		return !stunned || hit_stunned_targets
 	return TRUE

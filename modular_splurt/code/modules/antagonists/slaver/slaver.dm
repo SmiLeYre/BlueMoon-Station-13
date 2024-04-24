@@ -240,6 +240,6 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 
 /obj/item/clothing/glasses/hud/slaver
 	name = "Raper Sunglasses"
-	desc = "Солнцезащитные очки тёмного цвета, дающие способность увидеть, подвергался ли определённый сотрудник сексуальному насилию ранее и каковой была его реакция."
+	desc = "Солнцезащитные очки тёмного цвета, дающие способность увидеть, желает ли член экипажа подвергнуться сексуальному насилию."
 	icon_state = "bigsunglasses"
 	hud_type = DATA_HUD_ANTAGTARGET

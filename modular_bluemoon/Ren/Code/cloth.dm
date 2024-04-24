@@ -24,6 +24,18 @@
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
 
+/obj/item/clothing/head/helmet/infiltrator/inteq/equipped(mob/living/carbon/human/user, slot)
+	..()
+	if (slot == ITEM_SLOT_HEAD)
+		user.digitalcamo = TRUE
+		user.digitalinvis = TRUE
+
+/obj/item/clothing/head/helmet/infiltrator/inteq/dropped(mob/living/carbon/human/user)
+	..()
+	if (user.head == src)
+		user.digitalcamo = FALSE
+		user.digitalinvis = FALSE
+
 /obj/item/clothing/gloves/tackler/combat/insulated/infiltrator/inteq
 	name = "SpecOps Guerrilla Gloves"
 	desc = "Боевые перчатки предназначенные для усиления навыков владельца. Встроенные наночипы напрямую посылают сигналы в нервные окончания рук, доводя движения владельца до идеала, что позволяет укладывать жертв на землю и перетаскивать их с максимальной эффективностью."
@@ -42,6 +54,7 @@
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
 
+
 /obj/item/clothing/suit/armor/vest/infiltrator/inteq
 	name = "SpecOps combat vest"
 	desc = "Качественный бронежилет с бронепластиной из многослойной пластали. Совмещает в себе лёгкость и прочность, имеет буферный подкладки и идеально прилегает к телу, не издавая лишних звуков при ношении."
@@ -49,6 +62,11 @@
 	item_state = "infiltrator_a"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+
+/obj/item/clothing/suit/armor/vest/infiltrator/inteq/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/concrete/storage = AddComponent(/datum/component/storage/concrete)
+	storage.max_items = 5
 
 /obj/item/clothing/under/inteq/tactical_gorka
 	name = "SpecOps gorka"
@@ -113,6 +131,7 @@
 	item_state = "darktemplar"
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	equip_delay_self = 50
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -218,7 +237,7 @@
 	new /obj/item/clothing/suit/space/syndicate/darktemplar(src)
 	new /obj/item/clothing/head/helmet/space/syndicate/darktemplar(src)
 	new /obj/item/clothing/under/syndicate/combat(src)
-	new /obj/item/clothing/gloves/tackler/combat(src)
+	new /obj/item/clothing/gloves/tackler/combat/insulated(src)
 	new	/obj/item/nullrod/claymore/chainsaw_sword/real(src)
 
 //Великий грейтайдер
@@ -243,8 +262,21 @@
 	item_state = "hank_m"
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
-	flags_inv = HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDEEARS|HIDEEYES|HIDESNOUT
+	armor = list(MELEE = 20, BULLET = 20, LASER = 20, ENERGY = 10, BOMB = 0, BIO = 50, RAD = 0, FIRE = 50, ACID = 50, WOUND = 35)
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+	flags_cover = HEADCOVERSEYES | HEADCOVERSMOUTH
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	flash_protect = 2
 	mutantrace_variation = NONE
+
+/obj/item/clothing/head/helmet/hank/equipped(mob/user, slot)
+	..()
+	if(slot == ITEM_SLOT_HEAD)
+		if((!IS_INTEQ(user)) && (user.client))
+			if(!HAS_TRAIT(user, TRAIT_FEARLESS))
+				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "anxiety_head", /datum/mood_event/inteq_habar, src.name)
+	else
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "anxiety_head", /datum/mood_event/inteq_drop)
 
 /obj/item/clothing/suit/hank
 	name = "Old black coat"
@@ -253,15 +285,38 @@
 	item_state = "hank"
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	armor = list(MELEE = 20, BULLET = 20, LASER = 20, ENERGY = 10, BOMB = 0, BIO = 50, RAD = 0, FIRE = 50, ACID = 50, WOUND = 35)
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 	mutantrace_variation = NONE
 
+/obj/item/clothing/suit/hank/equipped(mob/user, slot)
+	..()
+	if(slot == ITEM_SLOT_OCLOTHING)
+		if((!IS_INTEQ(user)) && (user.client))
+			if(!HAS_TRAIT(user, TRAIT_FEARLESS))
+				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "anxiety_upon", /datum/mood_event/inteq_habar, src.name)
+	else
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "anxiety_upon", /datum/mood_event/inteq_drop)
 
 /obj/item/clothing/suit/hank/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	. = ..()
+	if((!IS_INTEQ(owner)) && (owner.client))
+		return BULLET_ACT_HIT
+	if(owner.incapacitated(FALSE, TRUE))
+		return BULLET_ACT_HIT
+	if(!CHECK_ALL_MOBILITY(owner, MOBILITY_USE|MOBILITY_STAND))
+		return BULLET_ACT_HIT
+	if(!isturf(owner.loc))
+		return BULLET_ACT_HIT
 	if((attack_type & ATTACK_TYPE_PROJECTILE) && (rand(5) != 1))
-		owner.visible_message(src, pick("<span class='phobia'>[owner] чудом уворачивается от пули, выгнувшись спиной в последний момент!</span>", "<span class='phobia'>[owner] ловко уходит в сторону, предугадав траекторию выстрела!</span>", "<span class='phobia'>[owner] делает резкий рывок, едва успевая уйти из под огня!</span>"))
+		owner.visible_message(src, pick("<span class='danger'>[owner] чудом уворачивается от пули, выгнувшись спиной в последний момент!</span>", "<span class='danger'>[owner] ловко уходит в сторону, предугадав траекторию выстрела!</span>", "<span class='danger'>[owner] делает резкий рывок, едва успевая уйти из под огня!</span>"))
 		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, 1)
 		return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
 	return ..()
+
+/obj/item/storage/box/inteq_kit/hank/PopulateContents()
+	new /obj/item/clothing/suit/hank (src)
+	new /obj/item/clothing/head/helmet/hank (src)
 
 ///Ошейники для заложников.
 /obj/item/electropack/shockcollar/bomb
@@ -319,6 +374,21 @@
 	cost = 1
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
+/datum/uplink_item/suits/hank
+	name = "AAHW trophey"
+	desc = "Старое и потрёпаное пальто, бандана и красные очки. От всего этого невероятно розит кровию, но если с выкнуться с этим, костюм подарит рефлексы своего прошлого владельца.\
+			Увернуться от пули ещё никогда не было так стильно."
+	item = /obj/item/storage/box/inteq_kit/hank
+	cost = 15
+	purchasable_from = ~(UPLINK_CLOWN_OPS | UPLINK_SYNDICATE)
+
+/datum/uplink_item/suits/quet
+	name = "Quet kid kit"
+	desc = "Тебя выгоняют из дома на самоубийственную миссию, а менять толстовку с кепкой на каску с бронежилетом не хочется? Наборы из гибких пластин помогут с этим и будут отлично сидеть под любой одеждой."
+	item = /obj/item/storage/box/inteq_kit/quetkid
+	cost = 3
+	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE)
+
 ///Чехол гитары
 /obj/item/storage/backpack/guitarbag
 	name = "Guitar bag"
@@ -329,6 +399,15 @@
 	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+
+/obj/item/storage/backpack/guitarbag/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_combined_w_class = INFINITY
+	STR.max_items = 7
+	STR.can_hold = typecacheof(list(/obj/item/storage/box, /obj/item/gun, /obj/item/ammo_box,
+	/obj/item/reagent_containers/food, /obj/item/melee, /obj/item/grenade, /obj/item/reagent_containers/peacehypo, /obj/item/storage/firstaid, /obj/item/card/id, /obj/item/instrument))
 
 /obj/item/clothing/neck/cloak/miner
 	name = "Miner Cape"
@@ -377,6 +456,88 @@
 	desc = "Личная карта каждого члена экипажа карабля"
 	icon_state = "retro"
 	access = list(ACCESS_AWAY_GENERIC4)
+
+///Наборы бронирования
+/obj/item/armorkit/inteq
+	name = "Quiet kid armor kit"
+	desc = "Набор гибких армированых пластин которые будут совершенно незаметно сидеть под твоей толстовкой, с которой ты так не захотел растоваться даже на миссии, нёрд."
+	icon_state = "inteq_armor_kit"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/armorkit/inteq/afterattack(obj/item/target, mob/user, proximity_flag, click_parameters)
+	var/used = FALSE
+	if(!isclothing(target))
+		return
+	if(!(isobj(target) && target.slot_flags & ITEM_SLOT_OCLOTHING))
+		return
+	if(target.type in typesof(/obj/item/clothing/suit/toggle/armor, /obj/item/clothing/suit/space, /obj/item/clothing/suit/armor))
+		to_chat(user, span_danger("You cannot modify [target], as it already has armor or is a part of special equipment."))
+		return
+	var/obj/item/clothing/C = target
+	var/obj/item/clothing/suit/armor/vest/bluesheid/A = new /obj/item/clothing/suit/armor/vest/bluesheid(src)
+	C.set_armor(A.armor)
+	C.body_parts_covered = A.body_parts_covered
+	C.cold_protection = A.cold_protection
+	C.heat_protection = A.heat_protection
+	C.resistance_flags = A.resistance_flags
+	C.clothing_flags = A.clothing_flags
+	C.min_cold_protection_temperature = A.min_cold_protection_temperature
+	C.max_heat_protection_temperature = A.max_heat_protection_temperature
+	used = TRUE
+	if(used)
+		C.allowed = GLOB.security_vest_allowed
+		user.visible_message("<span class = 'notice'>[user] reinforces [C] with [src].</span>", \
+		"<span class = 'notice'>You reinforce [C] with [src], making it as protective as a armored vest.</span>")
+		C.name = "quiet [C.name]"
+		C.upgrade_prefix = "quiet"
+		qdel(src)
+		return
+	else
+		to_chat(user, "<span class = 'notice'>You don't need to reinforce [C] any further.")
+		return
+
+/obj/item/armorkit/helmet/inteq
+	name = "Quiet kid helmet kit"
+	desc = "Набор гибких армированых пластин которые будут совершенно незаметно сидеть под твоей кепкой, с которой ты так не захотел растоваться даже на миссии, нёрд."
+	icon_state = "inteq_helm_kit"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
+	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/armorkit/helmet/afterattack(obj/item/target, mob/user, proximity_flag, click_parameters)
+	var/used = FALSE
+	if(!isclothing(target))
+		return
+	if(!(isobj(target) && target.slot_flags & ITEM_SLOT_HEAD))
+		return
+	if(target.type in typesof(/obj/item/clothing/head/helmet))
+		to_chat(user, span_danger("You cannot modify [target], as it already has armor or is a part of special equipment."))
+		return
+	var/obj/item/clothing/C = target
+	var/obj/item/clothing/head/helmet/sec/blueshield/A = new /obj/item/clothing/head/helmet/sec/blueshield(src)
+	C.set_armor(A.armor)
+	C.body_parts_covered = A.body_parts_covered
+	C.cold_protection = A.cold_protection
+	C.heat_protection = A.heat_protection
+	C.resistance_flags = A.resistance_flags
+	C.clothing_flags = A.clothing_flags
+	C.min_cold_protection_temperature = A.min_cold_protection_temperature
+	C.max_heat_protection_temperature = A.max_heat_protection_temperature
+	used = TRUE
+	if(used)
+		user.visible_message("<span class = 'notice'>[user] reinforces [C] with [src].</span>", \
+		"<span class = 'notice'>You reinforce [C] with [src], making it as protective as a helmet.</span>")
+		C.name = "quiet [C.name]"
+		C.upgrade_prefix = "quiet"
+		qdel(src)
+		return
+	else
+		to_chat(user, "<span class = 'notice'>You don't need to reinforce [C] any further.")
+		return
+
+/obj/item/storage/box/inteq_kit/quetkid/PopulateContents()
+	new /obj/item/armorkit/inteq(src)
+	new /obj/item/armorkit/helmet/inteq(src)
 
 ///Инженерный риг
 /obj/item/clothing/head/helmet/space/hardsuit/engine/ftu

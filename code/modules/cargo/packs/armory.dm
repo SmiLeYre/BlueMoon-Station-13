@@ -121,11 +121,11 @@
 	crate_type = /obj/structure/closet/crate/secure/plasma
 
 /datum/supply_pack/security/armory/laserarmor
-	name = "Reflector Vest Crate"
+	name = "Ablative Trenchcoat crate"
 	desc = "Содержит два жилета из материала с высокой светоотражающей способностью. Каждый элемент брони рассеивает энергию лазера более чем наполовину, а также дает хороший шанс полностью отразить лазер. Для открытия требуется доступ к оружейной."
 	cost = 2000
-	contains = list(/obj/item/clothing/suit/armor/laserproof,
-					/obj/item/clothing/suit/armor/laserproof)
+	contains = list(/obj/item/clothing/suit/hooded/ablative,
+					/obj/item/clothing/suit/hooded/ablative)
 	crate_name = "reflector vest crate"
 	crate_type = /obj/structure/closet/crate/secure/plasma
 

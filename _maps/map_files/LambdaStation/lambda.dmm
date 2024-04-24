@@ -8733,7 +8733,7 @@
 /obj/item/gun/energy/ionrifle,
 /obj/item/gun/energy/e_gun/dragnet,
 /obj/item/gun/energy/e_gun/dragnet,
-/obj/item/clothing/suit/armor/laserproof,
+/obj/item/clothing/suit/hooded/ablative,
 /obj/structure/window/reinforced{
 	dir = 1;
 	layer = 2.9

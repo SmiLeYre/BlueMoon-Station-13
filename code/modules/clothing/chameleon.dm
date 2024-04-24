@@ -632,6 +632,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/stamp/chameleon)
 	chameleon_action = new(src)
 	chameleon_action.chameleon_type = /obj/item/stamp
 	chameleon_action.chameleon_name = "Stamp"
+	chameleon_action.chameleon_blacklist = typecacheof(/obj/item/stamp/machine, ignore_root_path = FALSE) // BLUEMOON EDIT - переработка анализаторов здоровья, новый штамп для автобумажек
 	chameleon_action.initialize_disguises()
 
 /obj/item/stamp/chameleon/broken/Initialize(mapload)

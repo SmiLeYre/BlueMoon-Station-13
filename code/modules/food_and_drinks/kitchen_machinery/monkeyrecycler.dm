@@ -38,17 +38,19 @@ GLOBAL_LIST_EMPTY(monkey_recyclers)
 			connected |= xeno_camera
 			break
 
-/obj/machinery/monkey_recycler/RefreshParts()	//Ranges from 0.2 to 0.8 per monkey recycled
+/obj/machinery/monkey_recycler/RefreshParts()	//Ranges from 1 to 5 per monkey recycled
 	cube_production = 0
 	for(var/obj/item/stock_parts/manipulator/B in component_parts)
-		cube_production += B.rating * 0.1
+		cube_production += B.rating * 0.5
 	for(var/obj/item/stock_parts/matter_bin/M in component_parts)
-		cube_production += M.rating * 0.1
+		cube_production += M.rating * 0.5
 
 /obj/machinery/monkey_recycler/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		to_chat(user, "<span class='notice'>The status display reads: Producing <b>[cube_production]</b> cubes for every monkey inserted.<span>")
+		. += "<span class='notice'>The status display reads: Producing <b>[cube_production]</b> cubes for every monkey inserted.<span>"
+		if(cube_production >= 6)
+			. += "<span class='notice'>This recycler is capable of producing monkey cubes on its own.<span>"
 
 /obj/machinery/monkey_recycler/attackby(obj/item/O, mob/user, params)
 	if(default_deconstruction_screwdriver(user, "grinder_open", "grinder", O))
@@ -96,6 +98,8 @@ GLOBAL_LIST_EMPTY(monkey_recyclers)
 	addtimer(CALLBACK(GLOBAL_PROC, /proc/to_chat, user, "<span class='notice'>The machine now has [stored_matter] monkey\s worth of material stored.</span>"))
 
 /obj/machinery/monkey_recycler/interact(mob/user)
+	if(cube_production >= 6 && stored_matter < 1) //Tier 6
+		stored_matter++
 	if(stored_matter >= 1)
 		to_chat(user, "<span class='notice'>The machine hisses loudly as it condenses the ground monkey meat. After a moment, it dispenses a brand new monkey cube.</span>")
 		playsound(src.loc, 'sound/machines/hiss.ogg', 50, 1)

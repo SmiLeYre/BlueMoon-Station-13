@@ -1249,6 +1249,7 @@
 			cyborg_base_icon = "mmekapeace"
 			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
 			hasrest = TRUE
+		if("Feline")
 			cyborg_base_icon = "vixpk"
 			cyborg_icon_override = 'modular_splurt/icons/mob/widerobot.dmi'
 			sleeper_overlay = "vixpk-sleeper"

@@ -133,7 +133,7 @@
 
 /datum/objective_item/steal/reflector
 	name = "Жилет со Светоотражателями из Арсенала."
-	targetitem = /obj/item/clothing/suit/armor/laserproof
+	targetitem = /obj/item/clothing/suit/hooded/ablative
 	difficulty = 3
 	excludefromjob = list("Head of Security", "Warden")
 

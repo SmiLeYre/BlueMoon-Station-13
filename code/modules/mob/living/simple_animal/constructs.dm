@@ -51,6 +51,7 @@
 	. = ..()
 	update_health_hud()
 	var/spellnum = 1
+	ADD_TRAIT(src, TRAIT_HEALS_FROM_CULT_PYLONS, INNATE_TRAIT)
 	for(var/spell in construct_spells)
 		var/the_spell = new spell(null)
 		AddSpell(the_spell)

@@ -28,6 +28,9 @@
 	if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref == "Yes")
 		wantsNoncon = TRUE
 
+	if(M.client && M.client?.prefs.mobsexpref == "No") //So the new pref checks - Gardelin0
+		return
+
 	switch(deathclaw_mode)
 		if("gentle")
 			if(onLewdCooldown || !wantsNoncon)
@@ -141,7 +144,7 @@
 				handle_post_sex(25, null, M)
 				shake_camera(M, 6, 1)
 			else
-				I = SSinteractions.interactions["/datum/interaction/lewd/throatfuck"]
+				I = SSinteractions.interactions["/datum/interaction/lewd/facefuck"] //Changed so they don't crit you anymore - Gardelin0
 				I.display_interaction(src, M)
 
 /mob/living/simple_animal/hostile/deathclaw/funclaw/cum(mob/living/M)

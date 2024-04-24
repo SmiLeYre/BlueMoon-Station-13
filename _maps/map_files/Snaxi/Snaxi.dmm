@@ -20189,7 +20189,7 @@
 	},
 /obj/structure/rack,
 /obj/item/gun/energy/temperature/security,
-/obj/item/clothing/suit/armor/laserproof,
+/obj/item/clothing/suit/hooded/ablative,
 /obj/item/gun/energy/ionrifle,
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 32
