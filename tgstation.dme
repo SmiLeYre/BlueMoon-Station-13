@@ -5312,6 +5312,7 @@
 #include "modular_splurt\code\modules\clothing\masks\gasmask.dm"
 #include "modular_splurt\code\modules\clothing\masks\hailer.dm"
 #include "modular_splurt\code\modules\clothing\masks\miscellaneous.dm"
+#include "modular_splurt\code\modules\clothing\misc\body_camera.dm"
 #include "modular_splurt\code\modules\clothing\neck\_neck.dm"
 #include "modular_splurt\code\modules\clothing\outfits\ert.dm"
 #include "modular_splurt\code\modules\clothing\shoes\_shoes.dm"
