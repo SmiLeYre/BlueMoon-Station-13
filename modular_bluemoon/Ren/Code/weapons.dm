@@ -176,6 +176,8 @@
 	update_icon()
 
 /obj/item/gun/energy/m2a100/update_icon_state()
+	if(!cell)
+		return
 	if(cell.percent() > 0)
 		icon_state = "m240[cover_open ? "-open" : "-closed"]"
 	else

@@ -9,7 +9,7 @@
 	icon_state = "oldpod"
 	mob_name = "a trader"
 	outfit = /datum/outfit/ftu/crew
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	loadout_enabled = FALSE
 	roundstart = FALSE
 	death = FALSE

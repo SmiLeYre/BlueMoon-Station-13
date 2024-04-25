@@ -30,7 +30,7 @@ GLOBAL_VAR_INIT(bluemoon_criminal_quirk_commander_name, "")
 	var/mob/living/carbon/human/H = quirk_holder
 	var/time_before_creating_crimes = 1 MINUTES
 	H.start_create_security_crime_timer(time_before_creating_crimes)
-	addtimer(CALLBACK(src, .proc/on_crime_creation), time_before_creating_crimes + 10 SECONDS, TIMER_DELETE_ME) // Если вызвать qdel сразу после объявления таймера, будет рантайм
+	addtimer(CALLBACK(src, PROC_REF(on_crime_creation)), time_before_creating_crimes + 10 SECONDS, TIMER_DELETE_ME) // Если вызвать qdel сразу после объявления таймера, будет рантайм
 
 /datum/quirk/bluemoon_criminal/proc/on_crime_creation()
 	qdel(src)

@@ -741,7 +741,7 @@
 				user.vtec = initial(user.vtec) - 1.5 //while changing this value check /mob/living/silicon/robot/proc/use_power() to maintain proper power drain
 
 	action.button_icon_state = "Chevron_State_[currentState]"
-	action.UpdateButtonIcon()
+	action.UpdateButtons()
 
 	return TRUE
 

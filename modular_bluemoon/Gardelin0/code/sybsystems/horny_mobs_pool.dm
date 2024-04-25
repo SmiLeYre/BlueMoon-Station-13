@@ -22,7 +22,7 @@ SUBSYSTEM_DEF(horny_mobs_pool)
 
 		invoking = TRUE
 		invoke_start = world.time
-		INVOKE_ASYNC(src, .proc/invoke_process, T)
+		INVOKE_ASYNC(src, PROC_REF(invoke_process), T)
 		if(invoking)
 			stack_trace("WARNING: [T] ([T.type]) slept during Horny Mobs Pool processing.")
 			invoking = FALSE

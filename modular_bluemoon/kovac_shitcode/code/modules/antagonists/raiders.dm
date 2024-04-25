@@ -80,7 +80,7 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 	mob_name = "an InteQ raider"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	outfit = /datum/outfit/inteq_raider
 	roundstart = FALSE
 	death = FALSE

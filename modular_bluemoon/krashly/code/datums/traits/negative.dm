@@ -9,8 +9,8 @@
 	processing_quirk = TRUE
 
 /datum/quirk/onelife/add()
-	RegisterSignal(quirk_holder, COMSIG_MOB_DEATH, .proc/get_rid_of_them)
-	RegisterSignal(quirk_holder, COMSIG_MOB_EMOTE, .proc/get_rid_of_them_emote)
+	RegisterSignal(quirk_holder, COMSIG_MOB_DEATH, PROC_REF(get_rid_of_them))
+	RegisterSignal(quirk_holder, COMSIG_MOB_EMOTE, PROC_REF(get_rid_of_them_emote))
 
 /datum/quirk/onelife/remove()
 	remove_signals()

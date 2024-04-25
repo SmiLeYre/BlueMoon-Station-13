@@ -57,12 +57,12 @@
 	for (i=1; i<prev_grab_state+1;i++)
 		currently_coiled.grabbedby(owner)
 	// cancel the coiling action if certain things are done
-	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, .proc/cancel_coil)
-	RegisterSignal(owner, COMSIG_LIVING_RESTING, .proc/cancel_coil)
-	RegisterSignal(owner, COMSIG_LIVING_STOPPED_PULLING, .proc/cancel_coil)
+	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(cancel_coil))
+	RegisterSignal(owner, COMSIG_LIVING_RESTING, PROC_REF(cancel_coil))
+	RegisterSignal(owner, COMSIG_LIVING_STOPPED_PULLING, PROC_REF(cancel_coil))
 
 	// update the coil offset, update again if owner changes direction
-	RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE, .proc/update_coil_offset)
+	RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE, PROC_REF(update_coil_offset))
 	update_coil_offset(null, null, owner.dir)
 
 	// set our overlay to new image

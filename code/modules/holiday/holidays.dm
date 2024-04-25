@@ -12,6 +12,9 @@
 	var/year_offset = 0
 	var/obj/item/drone_hat //If this is defined, drones without a default hat will spawn with this one during the holiday; check drones_as_items.dm to see this used
 
+	// Special things to be given during this!
+	var/list/mail_goodies
+
 // This proc gets run before the game starts when the holiday is activated. Do festive shit here.
 /datum/holiday/proc/celebrate()
 	return
@@ -26,7 +29,7 @@
 	var/i = findtext(name, "  Сектор |")
 	return copytext(name, 1, i)
 
-// Return 1 if this holiday should be celebrated today
+// return TRUE if this holiday should be celebrated today
 /datum/holiday/proc/shouldCelebrate(dd, mm, yy, ww, ddd)
 	if(always_celebrate)
 		return TRUE
@@ -461,6 +464,11 @@
 	end_day = 2
 	end_month = NOVEMBER
 
+	mail_goodies = list(
+		/obj/item/reagent_containers/food/snacks/lollipop = 10,
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 10
+	)
+
 /datum/holiday/halloween/greet()
 	return "Жуткий Хэллоуин!"
 
@@ -696,7 +704,7 @@ This used to be a comment about ramadan but it got deleted because we don't prea
 	return "Счастливого Рождества!"
 
 /datum/holiday/xmas/celebrate()
-	SSticker.OnRoundstart(CALLBACK(src, .proc/roundstart_celebrate))
+	SSticker.OnRoundstart(CALLBACK(src, PROC_REF(roundstart_celebrate)))
 
 /datum/holiday/xmas/proc/roundstart_celebrate()
 	for(var/obj/machinery/computer/security/telescreen/entertainment/Monitor in GLOB.machines)

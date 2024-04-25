@@ -24,7 +24,7 @@
 
 /datum/quirk/quirk_shy/add()
 	. = ..()
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
 
 /datum/quirk/quirk_shy/remove()
 	. = ..()

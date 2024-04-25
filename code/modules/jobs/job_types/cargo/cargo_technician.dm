@@ -26,6 +26,13 @@
 		/obj/item/clipboard
 	)
 
+	mail_goodies = list(
+		/obj/item/pizzabox = 10,
+		/obj/item/stack/sheet/mineral/gold = 5,
+		/obj/item/stack/sheet/mineral/uranium = 4,
+		/obj/item/stack/sheet/mineral/diamond = 3,
+		/obj/item/gun/ballistic/shotgun/boltaction = 1
+	)
 /datum/outfit/job/cargo_tech
 	name = "Cargo Technician"
 	jobtype = /datum/job/cargo_tech

@@ -13712,7 +13712,7 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/item/destTagger,
+/obj/item/dest_tagger,
 /obj/item/hand_labeler{
 	pixel_y = 8
 	},

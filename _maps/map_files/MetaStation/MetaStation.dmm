@@ -72050,7 +72050,7 @@
 	},
 /obj/item/stack/wrapping_paper,
 /obj/item/stack/wrapping_paper,
-/obj/item/destTagger{
+/obj/item/dest_tagger{
 	pixel_x = 4;
 	pixel_y = 3
 	},
@@ -88396,7 +88396,7 @@
 /area/medical/treatment_center)
 "wuz" = (
 /obj/structure/table,
-/obj/item/destTagger{
+/obj/item/dest_tagger{
 	pixel_x = 4;
 	pixel_y = 3
 	},

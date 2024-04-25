@@ -114,7 +114,7 @@
 	move_resist = MOVE_FORCE_NORMAL
 	density = FALSE
 	loadout_enabled = FALSE
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	short_desc = "Вы Пеплоход."
 	flavour_text = "Ваше племя поклоняется матери Некрополю, как вашей Спасительнице и Наставнице. Священные стены дворца Некрополя \
 	дали вашему Тендрилу и вашему Роду защиту. Испокон веков, ваша священная обитель дарует вам Дар Перерождения, из цикла в цикл за \
@@ -317,7 +317,7 @@
 	враждебными существами и Пепельными Дрейками, слетающими с безоблачного неба. Все, что вы можете пожелать, это почувствовать мягкую траву между пальцами ног и \
 	свежий воздух Земли. Эти мысли развеиваются очередным воспоминанием о том, как вы сюда попали..."
 	assignedrole = "Hermit"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 
 /obj/effect/mob_spawn/human/hermit/Initialize(mapload)
@@ -372,7 +372,7 @@
 	все? Куда они делись? Что случилось с больницей? И этот запах дыма? Вам нужно найти кого-нибудь еще. Может быть, они думают, что все ушли. Одна из кошек поцарапала тебя всего несколько минут назад. Поэтому вы и были в капсуле - чтобы залечить царапину. Струпья еще свежие..."
 	important_info = "Вы не Антагонист."
 	assignedrole = "Translocated Vet"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/doctor/alive/lavaland/Destroy()
 	var/obj/structure/fluff/empty_sleeper/S = new(drop_location())
@@ -394,7 +394,7 @@
 	though fate has other plans for you."
 	flavour_text = "Good. It seems as though your ship crashed. You remember that you were convicted of "
 	assignedrole = "Escaped Prisoner"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/prisoner_transport/special(mob/living/L)
 	. = ..()
@@ -436,7 +436,7 @@
 	flavour_text = "Вы нанялись в качестве персонала общего профиля для уборки, готовки, обслуживания гостей и всего, что прикажет менеджер на время пребывания на борту космического отеля. Ни в коем случае не грубите, не хамите и не ругайтесь с посетителями. Помните, что в вашем случае, клиент всегда прав."
 	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или установки телепада)."
 	assignedrole = "Hotel Staff"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 
 /datum/outfit/hotelstaff
@@ -455,7 +455,7 @@
 	outfit = /datum/outfit/hotelstaff/security
 	short_desc = "Вы - охранник космического отеля."
 	flavour_text = "Вы были назначены в этот отель, чтобы защищать интересы компании Nanotrasen, недавно выкупившей его. Ведите себя вежливо, не размахивайте оружием и бронёй, не грубите посетителям - в первую очередь, вы не должны мешать наслаждаться пребыванием и отпугивать адекватных клиентов."
-	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или установки телепада). Не ведите себя как СБ со станции - вы обычный гражданский и не обучены для борьбы с террористами, предателями, аномалиями и другими неординарными сущностями."
+	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или для установки телепада). Не ведите себя как СБ со станции - вы обычный гражданский и не обучены для борьбы с террористами, предателями, аномалиями и другими неординарными сущностями."
 
 /datum/outfit/hotelstaff/security
 	name = "Hotel Secuirty"
@@ -490,6 +490,7 @@
 	var/obj/effect/proc_holder/spell/targeted/summon_friend/spell
 	var/datum/mind/owner
 	assignedrole = "SuperFriend"
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/demonic_friend/Initialize(mapload, datum/mind/owner_mind, obj/effect/proc_holder/spell/targeted/summon_friend/summoning_spell)
 	. = ..()
@@ -520,8 +521,8 @@
 		id.registered_name = L.real_name
 		id.update_label()
 	else
-		to_chat(L, "<span class='userdanger'>Your owner is already dead! You will soon perish.</span>")
-		addtimer(CALLBACK(L, /mob.proc/dust, 150)) //Give em a few seconds as a mercy.
+		to_chat(L, "<span class='userdanger'>Your owner is already dead!  You will soon perish.</span>")
+		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, dust), 150)) //Give em a few seconds as a mercy.
 
 /datum/outfit/demonic_friend
 	name = "Demonic Friend"
@@ -539,8 +540,8 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	outfit = /datum/outfit/syndicate_empty
-	assignedrole = "Space Syndicate"
-	canloadappearance = TRUE
+	assignedrole = "Space Syndicate"	//I know this is really dumb, but Syndicate operative is nuke ops
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/solfed
 	name = "Solar Federation Marine"
@@ -550,7 +551,7 @@
 	icon_state = "oldpod"
 	outfit = /datum/outfit/ert/sol_soldier
 	assignedrole = "Solar Federation Operative"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/solfed/demoman
 	name = "Solar Federation Support"
@@ -588,6 +589,7 @@
 	flavour_text = "Your job is to follow your captain's orders, maintain the ship, and keep the engine running. If you are not familiar with how the supermatter engine functions: do not attempt to start it."
 	important_info = "The armory is not a candy store, and your role is not to assault the station directly, leave that work to the assault operatives."
 	outfit = /datum/outfit/syndicate_empty/battlecruiser
+	can_load_appearance = TRUE
 
 /datum/outfit/syndicate_empty/battlecruiser
 	name = "Syndicate Battlecruiser Ship Operative"
@@ -621,7 +623,7 @@
 	important_info = "As the captain, this whole operation falls on your shoulders. You do not need to nuke the station, causing sufficient damage and preventing your ship from being destroyed will be enough."
 	outfit = /datum/outfit/syndicate_empty/battlecruiser/assault/captain
 	id_access_list = list(150,151)
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /datum/outfit/syndicate_empty/battlecruiser/assault/captain
 	name = "Syndicate Battlecruiser Captain"
@@ -666,7 +668,7 @@
 	l_pocket = /obj/item/assembly/flash/handheld
 	job_description = "Oldstation Crew"
 	assignedrole = "Ancient Crew"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/oldsec/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
@@ -694,7 +696,7 @@
 	gloves = /obj/item/clothing/gloves/color/fyellow/old
 	l_pocket = /obj/item/tank/internals/emergency_oxygen
 	assignedrole = "Ancient Crew"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/oldeng/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
@@ -721,7 +723,7 @@
 	l_pocket = /obj/item/stack/medical/suture
 	assignedrole = "Ancient Crew"
 	job_description = "Oldstation Crew"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/oldsci/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
@@ -745,7 +747,8 @@
 	short_desc = "You are a space pirate."
 	flavour_text = "Станция отказалась платить вам за крышу. Похитьте её ресурсы, обнесите хранилище на кредиты. Избегайте ненужных жертв. Не забывайте следить за своим кораблем."
 	assignedrole = "Space Pirate"
-	var/rank = "Матрос"
+	var/rank = "Mate"
+	can_load_appearance = FALSE
 
 /obj/effect/mob_spawn/human/pirate/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
 	. = ..()
@@ -791,7 +794,7 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/pirate/corpse/captain
-	rank = "Капитан"
+	rank = "Captain"
 	mob_name = "Dead Space Pirate Captain"
 	outfit = /datum/outfit/pirate/space/captain
 
@@ -809,11 +812,11 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/pirate/captain
-	rank = "Капитан"
+	rank = "Captain"
 	outfit = /datum/outfit/pirate/space/captain
 
 /obj/effect/mob_spawn/human/pirate/gunner
-	rank = "Канонир"
+	rank = "Gunner"
 
 /obj/effect/mob_spawn/human/ghostcafe
 	name = "Ghost Cafe Sleeper"
@@ -832,6 +835,7 @@
 	skip_reentry_check = TRUE
 	banType = ROLE_GHOSTCAFE
 	back = /obj/item/storage/backpack/holding/satchel // BLUEMOON ADD
+	can_load_appearance = 2
 
 /datum/action/toggle_dead_chat_mob
 	icon_icon = 'icons/mob/mob.dmi'
@@ -841,7 +845,7 @@
 
 /datum/action/toggle_dead_chat_mob/Trigger()
 	if(!..())
-		return 0
+		return FALSE
 	var/mob/M = target
 	if(HAS_TRAIT_FROM(M,TRAIT_SIXTHSENSE,GHOSTROLE_TRAIT))
 		REMOVE_TRAIT(M,TRAIT_SIXTHSENSE,GHOSTROLE_TRAIT)
@@ -1001,7 +1005,7 @@
 	outfit = /datum/outfit/tarkoff
 	assignedrole = "Ancient Crew"
 	job_description = "Oldstation Crew"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 	computer_area = /area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall
 
@@ -1186,7 +1190,7 @@
 	outfit = /datum/outfit/centcom_syndicate
 	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
 	assignedrole = "Centcom Intern"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 
 /datum/outfit/centcom_syndicate
@@ -1240,7 +1244,7 @@
 	outfit = /datum/outfit/centcom_nanotrasen
 	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
 	assignedrole = "Centcom Intern"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 
 /datum/outfit/centcom_nanotrasen
@@ -1290,7 +1294,7 @@
 	roundstart = FALSE
 	death = FALSE
 	random = TRUE
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 	use_outfit_name = TRUE
 	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms

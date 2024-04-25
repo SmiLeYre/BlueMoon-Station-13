@@ -180,7 +180,7 @@
 /// if someone is using ointment on our burns
 /datum/wound/burn/proc/ointment(obj/item/stack/medical/ointment/I, mob/user)
 	user.visible_message("<span class='notice'>[user] начинает применять [I] на конечности [victim]...</span>", "<span class='notice'>Вы начинаете применять [I] на [user == victim ? "вашей конечности" : "конечности персонажа [victim]"]...</span>")
-	if(!do_after(user, (user == victim ? I.self_delay : I.other_delay), extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, (user == victim ? I.self_delay : I.other_delay), extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
 	limb.heal_damage(I.heal_brute, I.heal_burn)
@@ -197,7 +197,7 @@
 /// if someone is using mesh on our burns
 /datum/wound/burn/proc/mesh(obj/item/stack/medical/mesh/I, mob/user)
 	user.visible_message("<span class='notice'>[user] пытается перевязать конечность - [limb.ru_name] - персонажа [victim] с помощью [I]...</span>", "<span class='notice'>Вы пытаетесь перевязать [user == victim ? "вашу [limb.ru_name]" : "конечность персонажа [victim]"] с помощью [I]...</span>")
-	if(!do_after(user, (user == victim ? I.self_delay : I.other_delay), target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, (user == victim ? I.self_delay : I.other_delay), target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
 	limb.heal_damage(I.heal_brute, I.heal_burn)

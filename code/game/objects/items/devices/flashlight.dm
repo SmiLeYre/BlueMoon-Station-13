@@ -42,7 +42,7 @@
 	playsound(src, on ? soundon : soundoff, 40, TRUE) //BM Changes (soundon : soundoff)
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 	return TRUE
 
 /obj/item/flashlight/DoRevenantThrowEffects(atom/target)

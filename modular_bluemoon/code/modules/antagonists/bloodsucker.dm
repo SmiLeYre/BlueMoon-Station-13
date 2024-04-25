@@ -1,21 +1,21 @@
-/datum/action/bloodsucker/tutorial
+/datum/action/cooldown/bloodsucker/tutorial
 	name = "Обратиться к инстинктам"
 	desc = "Прислушаться ко внутренним ощущениям и постараться понять, что нужно делать (обучение)"
 	icon_icon = 'modular_bluemoon/icons/mob/actions/bloodsucker.dmi' //This is the file for the ACTION icon
 	button_icon = 'modular_bluemoon/icons/mob/actions/bloodsucker.dmi' //This is the file for the BACKGROUND icon
 	button_icon_state = "tutorial"
 	bloodcost = 0
-	cooldown = 200
+	cooldown_time = 200
 	bloodsucker_can_buy = TRUE
 
-/datum/action/bloodsucker/tutorial/CheckCanUse(display_error)
+/datum/action/cooldown/bloodsucker/tutorial/CheckCanUse(display_error)
 	. = ..()
 	if(!.)
 		return
 
 	return TRUE
 
-/datum/action/bloodsucker/tutorial/ActivatePower()
+/datum/action/cooldown/bloodsucker/tutorial/ActivatePower()
 	var/bloodsucker_tutorial
 	bloodsucker_tutorial += span_userdanger("<br><center>Добро пожаловать в ночь, неонат</center><br>")
 	bloodsucker_tutorial += span_danger("* Ты - проклятый Богом и обречён на питание кровью живых существ, поглощая их силу, чтобы продлить своё существование.<br>")
@@ -78,10 +78,10 @@
 
 	to_chat(owner, bloodsucker_tutorial)
 
-/datum/action/bloodsucker/tutorial/vassal
+/datum/action/cooldown/bloodsucker/tutorial/vassal
 	bloodsucker_can_buy = FALSE
 
-/datum/action/bloodsucker/tutorial/vassal/ActivatePower()
+/datum/action/cooldown/bloodsucker/tutorial/vassal/ActivatePower()
 	var/bloodsucker_tutorial
 	bloodsucker_tutorial += span_userdanger("<br><center>Добро пожаловать в ночь, слуга</center><br>")
 	bloodsucker_tutorial += span_danger("* Ты - один из слуг своего нового хозяина, могущественного вампира.<br>")

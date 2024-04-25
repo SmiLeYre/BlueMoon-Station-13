@@ -98,7 +98,7 @@
 		if(!IS_INTEQ(user))
 			to_chat(user, "<span class='danger'><B>Запуск проверки генетического кода</B><br> Обнаружены неавторизованные сигнатуры. <B>ПРОИЗВОДИТСЯ ОЧИСТКА</B></span>")
 			playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
-			addtimer(CALLBACK(src, .proc/explode), 3 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(explode)), 3 SECONDS)
 
 /obj/item/clothing/suit/space/syndicate/darktemplar/proc/explode()
 	do_sparks(3, 1, src)
@@ -335,7 +335,7 @@
 
 	if(isliving(loc))
 		playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
-		addtimer(CALLBACK(src, .proc/explode), 3 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(explode)), 3 SECONDS)
 
 	if(master)
 		master.receive_signal()

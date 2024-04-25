@@ -200,7 +200,7 @@ GLOBAL_LIST_EMPTY(movespeed_modification_cache)
 	var/list/read = floating? GLOB.mob_config_movespeed_type_lookup_floating : GLOB.mob_config_movespeed_type_lookup
 	/* BLUEMOON REMOVAL START
 	if(!islist(read) || !read[type])
-		return 0
+		return FALSE
 	else
 		return read[type]
 	/ BLUEMOON REMOVAL END */

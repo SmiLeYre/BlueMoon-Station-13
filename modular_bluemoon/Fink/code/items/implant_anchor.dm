@@ -28,7 +28,7 @@
 
 /obj/item/implant/anchor/implant(mob/living/target, mob/user, silent, force)
 	. = ..()
-	RegisterSignal(imp_in, COMSIG_LIVING_LIFE, .proc/on_life)
+	RegisterSignal(imp_in, COMSIG_LIVING_LIFE, PROC_REF(on_life))
 	ADD_TRAIT(target, TRAIT_ANCHOR, "implant")
 	target.sec_hud_set_implants()
 	return TRUE

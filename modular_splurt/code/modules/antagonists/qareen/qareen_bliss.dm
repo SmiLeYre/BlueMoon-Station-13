@@ -68,7 +68,7 @@
 				new /obj/effect/temp_visual/love_heart(affected_mob.loc)
 				new /obj/effect/temp_visual/revenant(affected_mob.loc)
 				affected_mob.reagents.add_reagent(/datum/reagent/drug/aphrodisiacplus, 10)
-				// addtimer(CALLBACK(src, .proc/blessings), 150)
+				// addtimer(CALLBACK(src, PROC_REF(blessings)), 150)
 		if(7)
 			stage = 6
 			if (ishuman(affected_mob))

@@ -267,7 +267,7 @@
 
 /turf/open/floor/carpet/update_icon()
 	if(!..())
-		return 0
+		return FALSE
 	if(!broken && !burnt)
 		if(smooth)
 			queue_smooth(src)

@@ -76,10 +76,10 @@
 	failure = FALSE // Починил перезагрузкой, и в чём он не прав?
 
 /obj/item/mod/module/springlock/on_suit_activation()
-	RegisterSignal(mod.wearer, COMSIG_ATOM_EXPOSE_REAGENTS, .proc/handle_reagents)
-	RegisterSignal(mod.wearer, COMSIG_MOB_APPLY_DAMAGE, .proc/handle_damage)
-	RegisterSignal(mod.wearer, COMSIG_MOVABLE_MOVED, .proc/handle_move)
-	RegisterSignal(mod, COMSIG_MOD_ACTIVATE, .proc/on_activate_spring_block)
+	RegisterSignal(mod.wearer, COMSIG_ATOM_EXPOSE_REAGENTS, PROC_REF(handle_reagents))
+	RegisterSignal(mod.wearer, COMSIG_MOB_APPLY_DAMAGE, PROC_REF(handle_damage))
+	RegisterSignal(mod.wearer, COMSIG_MOVABLE_MOVED, PROC_REF(handle_move))
+	RegisterSignal(mod, COMSIG_MOD_ACTIVATE, PROC_REF(on_activate_spring_block))
 	mod.slowdown /= speed_move_bonus
 	if(speed_move_bonus > 1)
 		to_chat(mod.wearer, "<span class='nicegreen'>Вы ощущаете, как экзоскелет костюма движется вокруг вас, облегчая тяжесть костюма! </span>")
@@ -199,7 +199,7 @@
 	failure = TRUE
 	mod.wearer.visible_message("<span class='warning'>Внутри [mod], который носит [mod.wearer], что-то еле слышно щёлкает...</span>", "<span class='boldwarning'>Вы слышите тихий звук медленно распрямляющихся пружин из своего [mod]...</span>")
 	playsound(src, 'sound/items/modsuit/springlock.ogg', 75, TRUE)
-	addtimer(CALLBACK(src, .proc/snap_shut), rand(3 SECONDS, 5 SECONDS))
+	addtimer(CALLBACK(src, PROC_REF(snap_shut)), rand(3 SECONDS, 5 SECONDS))
 
 ///Result of springlocks failure, gives award, flashes red screen, plays a sound and launches snap_death_process proc
 /obj/item/mod/module/springlock/proc/snap_shut(silenced = FALSE)
@@ -292,7 +292,7 @@
 	// Наш несчастный оказался антагом, так что man behind the slaughter always come back... наверное
 	if(!QDELETED(springtrapped) && springtrapped.mind?.has_antag_datum(/datum/antagonist, TRUE) && springtrapped.stat == DEAD)
 		to_chat(springtrapped, "<span class='boldwarning'>У меня... остались незаконченные дела... я... ещё... вернусь... </span>")
-		addtimer(CALLBACK(src, .proc/comeback, springtrapped), 30 MINUTES) // 30 YEARS SINCE ALL THIS HAPPENED, 30 YEARS IT TOOK TO RISE
+		addtimer(CALLBACK(src, PROC_REF(comeback), springtrapped), 30 MINUTES) // 30 YEARS SINCE ALL THIS HAPPENED, 30 YEARS IT TOOK TO RISE
 	failure = FALSE
 
 // Будем честны, такая штука будет случаться раз в десять лет, так что это максимум будет маленькой пасхалкой
@@ -427,7 +427,7 @@
 		springtrapped.Stun(120)
 		if(!miming)
 			playsound(springtrapped, 'modular_bluemoon/vlad0s_staff/sound/afton_death_laugh.ogg', 75)
-		addtimer(CALLBACK(spring, /obj/item/mod/module/springlock.proc/snap_shut, TRUE), 3.5 SECONDS)
+		addtimer(CALLBACK(spring, TYPE_PROC_REF(/obj/item/mod/module/springlock, snap_shut), TRUE), 3.5 SECONDS)
 		emote_cooldown = initial(emote_cooldown)
 		message = initial(message)
 		message_mime = initial(message_mime)

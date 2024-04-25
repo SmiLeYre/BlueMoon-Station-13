@@ -31,7 +31,7 @@
 /obj/item/organ/zombie_infection/Remove(mob/living/carbon/M, special = FALSE)
 	. = ..()
 	STOP_PROCESSING(SSobj, src)
-	if(iszombie(M) && old_species && !special)
+	if(!QDELETED(owner) && iszombie(M) && old_species && !special)
 		M.set_species(old_species)
 	if(timer_id)
 		deltimer(timer_id)
@@ -58,7 +58,7 @@
 	if(!owner)
 		return
 	if(!(src in owner.internal_organs))
-		Remove(owner)
+		INVOKE_ASYNC(src,PROC_REF(Remove),owner)
 	if(owner.mob_biotypes & MOB_MINERAL)//does not process in inorganic things
 		return
 	if (causes_damage && !iszombie(owner) && owner.stat != DEAD)

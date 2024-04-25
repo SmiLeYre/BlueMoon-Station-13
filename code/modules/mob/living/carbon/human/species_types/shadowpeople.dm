@@ -131,7 +131,7 @@
 	return ..()
 
 /obj/item/organ/heart/nightmare/Stop()
-	return 0
+	return FALSE
 
 /obj/item/organ/heart/nightmare/on_death()
 	if(!owner)
