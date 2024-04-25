@@ -63,7 +63,7 @@
 /obj/item/implant/deathrattle/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)
 	. = ..()
 	if(.)
-		RegisterSignal(target, COMSIG_LIVING_PREDEATH, .proc/on_predeath)
+		RegisterSignal(target, COMSIG_LIVING_PREDEATH, PROC_REF(on_predeath))
 
 		if(!group)
 			to_chat(target, "<i>Вы слышите странный механический голос в голове...</i> \"<span class='robot'>Внимание: Не выявлены другие подключенные импланты.</span>\"")
@@ -103,7 +103,7 @@ GLOBAL_DATUM_INIT(centcom_deathrattle_group, /datum/deathrattle_group, new)
 	radio.canhear_range = 0
 
 
-	RegisterSignal(target, COMSIG_LIVING_PREDEATH, .proc/on_predeath)
+	RegisterSignal(target, COMSIG_LIVING_PREDEATH, PROC_REF(on_predeath))
 
 /obj/item/implant/death_alert/proc/on_predeath(datum/source, gibbed)
 	SIGNAL_HANDLER
