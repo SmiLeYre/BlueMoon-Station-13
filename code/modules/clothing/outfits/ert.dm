@@ -8,6 +8,7 @@
 
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	uniform = /obj/item/clothing/under/syndicate/combat/ert
+	accessory = /obj/item/clothing/accessory/bodycamera
 	shoes = /obj/item/clothing/shoes/combat/swat/knife
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	ears = /obj/item/radio/headset/headset_cent/alt
@@ -18,8 +19,18 @@
 
 	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
-	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
-	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
+	implants = list(
+		/obj/item/implant/mindshield,
+		/obj/item/implant/deathrattle/centcom,
+		/obj/item/implant/weapons_auth,
+		/obj/item/implant/radio/centcom,
+		)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant
+		)
 
 
 /datum/outfit/ert/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
@@ -51,6 +62,7 @@
 	l_hand = null
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/storage/firstaid/regular=1,\
 		)
 	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
@@ -66,6 +78,7 @@
 	l_hand = /obj/item/gun/ballistic/automatic/wt550
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/storage/box/ammo/wt=1,)
 
@@ -104,6 +117,7 @@
 	l_hand = /obj/item/gun/ballistic/automatic/proto/unrestricted
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/storage/box/ammo/smgap = 1,)
 
@@ -123,6 +137,7 @@
 	suit_store = /obj/item/gun/energy/pulse/pistol/loyalpin
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/storage/box/ammo/m556=1,\
 		/obj/item/storage/firstaid/regular=1,\
 		)
@@ -526,6 +541,7 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal
 	belt = /obj/item/storage/belt/military/ert_max
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/storage/box/ammo/holy=1,
 		/obj/item/storage/box/ammo/smgap=1,
@@ -620,6 +636,7 @@
 		/obj/item/implant/mindshield,
 		/obj/item/implant/deathrattle/centcom,
 	 	/obj/item/implant/weapons_auth,
+		/obj/item/implant/radio/centcom,
 	 	/obj/item/implant/krav_maga,
 	)
 

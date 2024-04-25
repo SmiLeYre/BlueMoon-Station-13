@@ -484,8 +484,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			imp.radio.talk_into(src, message, , spans, language)
 			return ITALICS | REDUCE_RANGE
 		if(message_mode == MODE_DEPARTMENT || (message_mode in GLOB.radiochannels))
-			imp.radio.talk_into(src, message, message_mode, spans, language)
-			return ITALICS | REDUCE_RANGE
+			if (imp.radio.channels[message_mode])
+				imp.radio.talk_into(src, message, message_mode, spans, language)
+				return ITALICS | REDUCE_RANGE
 
 	switch(message_mode)
 		if(MODE_WHISPER)

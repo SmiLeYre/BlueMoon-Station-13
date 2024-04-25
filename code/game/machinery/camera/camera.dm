@@ -85,11 +85,6 @@
 	if(isarea(myarea))
 		myarea.clear_camera(src)
 	QDEL_NULL(assembly)
-	if(bug)
-		bug.bugged_cameras -= c_tag
-		if(bug.current == src)
-			bug.current = null
-		bug = null
 	return ..()
 
 /obj/machinery/camera/emp_act(severity)
@@ -249,20 +244,6 @@
 			else if (O.client && O.client.eye == src)
 				to_chat(O, "[U] holds \a [itemname] up to one of the cameras ...")
 				O << browse(text("<HTML><HEAD<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", itemname, info), text("window=[]", itemname))
-		return
-
-	else if(istype(I, /obj/item/camera_bug))
-		if(!can_use())
-			to_chat(user, "<span class='notice'>Camera non-functional.</span>")
-			return
-		if(bug)
-			to_chat(user, "<span class='notice'>Camera bug removed.</span>")
-			bug.bugged_cameras -= src.c_tag
-			bug = null
-		else
-			to_chat(user, "<span class='notice'>Camera bugged.</span>")
-			bug = I
-			bug.bugged_cameras[src.c_tag] = src
 		return
 
 	else if(istype(I, /obj/item/pai_cable))
