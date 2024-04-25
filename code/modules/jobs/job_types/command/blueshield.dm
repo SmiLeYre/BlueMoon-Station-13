@@ -47,7 +47,7 @@
 	suit_store = /obj/item/kitchen/knife/combat
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
-	backpack_contents = list(/obj/item/storage/firstaid/regular, /obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/holo, /obj/item/choice_beacon/hosgun, /obj/item/choice_beacon/bsbaton, /obj/item/flashlight/seclite)
+	backpack_contents = list(/obj/item/storage/firstaid/regular, /obj/item/sensor_device_command, /obj/item/storage/box/death_alert, /obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/holo, /obj/item/choice_beacon/hosgun, /obj/item/choice_beacon/bsbaton, /obj/item/flashlight/seclite)
 	accessory = /obj/item/clothing/accessory/permit/special/blueshield
 
 	backpack = /obj/item/storage/backpack/blueshield

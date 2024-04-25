@@ -622,6 +622,16 @@
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+/datum/design/body_camera
+	name = "Body Camera"
+	desc = "A specialized camera to carry on your suit"
+	id = "body_camera"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 400, /datum/material/gold = 200)
+	build_path = /obj/item/clothing/accessory/bodycamera
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 /datum/design/zipties
 	name = "Zipties"
 	desc = "Plastic, disposable zipties that can be used to restrain temporarily but are destroyed after use."

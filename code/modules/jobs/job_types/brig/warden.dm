@@ -63,6 +63,9 @@
 	r_pocket = /obj/item/reagent_containers/peacehypo
 	l_pocket = /obj/item/restraints/handcuffs
 	suit_store = /obj/item/gun/energy/pumpaction/defender
+	backpack_contents = list(
+		/obj/item/storage/box/body_camera = 1
+		)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec

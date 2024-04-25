@@ -225,6 +225,37 @@
 	new /obj/item/flashlight/flare(src)
 	new /obj/item/hypospray/mkii/CMO/combat/synthflesh(src)
 
+//body cameras implanters box
+/obj/item/storage/box/body_camera
+	name = "Body cameras kit"
+
+/obj/item/storage/box/body_camera/PopulateContents()
+	..()
+	for(var/i in 1 to 6)
+		new /obj/item/clothing/accessory/bodycamera(src)
+	new /obj/item/camera_bug(src)
+
+//death_alert implanters box
+/obj/item/storage/box/death_alert
+	name = "Death alert implants kit"
+
+/obj/item/storage/box/death_alert/PopulateContents()
+	..()
+	for(var/i in 1 to 6)
+		new /obj/item/implantcase/death_alert(src)
+	new /obj/item/implanter/death_alert(src)
+
+//ert commander box
+/obj/item/storage/box/ert_commander
+	name = "ERT commander kit"
+	icon_state = "ghostcostuming"
+
+/obj/item/storage/box/ert_commander/PopulateContents()
+	..()
+	new /obj/item/camera_bug(src)
+	new /obj/item/door_remote/omni(src)
+	new /obj/item/megaphone/command(src)
+
 //ert ammo boxes
 /obj/item/storage/box/ammo
 	name = "box of ammo"
