@@ -537,7 +537,7 @@ GLOBAL_VAR_INIT(embedpocalypse, FALSE) // if true, all items will be able to emb
 				dat += "[src] is also capable of automatically blocking damage, if you are facing the right direction (usually towards your attacker)!"
 		if(item_flags & ITEM_CAN_PARRY)
 			dat += "[src] can be used to parry damage using active parry. Pressed your active parry keybind to initiate a timed parry sequence."
-			if(data.parry_automatic_enabled)
+			if(data?.parry_automatic_enabled)
 				dat += "[src] is also capable of automatically parrying an incoming attack, if your mouse is over your attacker at the time if you being hit in a direct, melee attack."
 		dat += "Examine [src] to get a full readout of its block/parry stats."
 		to_chat(user, dat.Join("<br>"))

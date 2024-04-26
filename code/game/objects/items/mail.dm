@@ -195,7 +195,7 @@
 
 		// A little boost for the special times!
 		for(var/datum/holiday/holiday as anything in SSevents.holidays)
-			if(LAZYLEN(holiday.mail_goodies))
+			if(istype(holiday) && length(holiday.mail_goodies))
 				var/holiday_goodie = pick(holiday.mail_goodies)
 				goodies[holiday_goodie] = holiday.mail_goodies[holiday_goodie]
 
