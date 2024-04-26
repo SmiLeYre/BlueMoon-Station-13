@@ -452,6 +452,7 @@
 		.["stimulation_pref"] = 	!!CHECK_BITFIELD(prefs.cit_toggles, STIMULATION)
 		.["edging_pref"] =			!!CHECK_BITFIELD(prefs.cit_toggles, EDGING)
 		.["cum_onto_pref"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, CUM_ONTO)
+		.["sex_jitter"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, SEX_JITTER)	//By Gardelin0
 
 /datum/component/interaction_menu_granter/ui_static_data(mob/user)
 	. = ..()
@@ -666,6 +667,8 @@
 					TOGGLE_BITFIELD(prefs.cit_toggles, EDGING)
 				if("cum_onto_pref")
 					TOGGLE_BITFIELD(prefs.cit_toggles, CUM_ONTO)
+				if("sex_jitter") //By Gardelin0
+					TOGGLE_BITFIELD(prefs.cit_toggles, SEX_JITTER)
 				//
 				else
 					return FALSE

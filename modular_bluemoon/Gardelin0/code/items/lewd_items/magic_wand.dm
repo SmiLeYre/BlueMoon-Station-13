@@ -92,7 +92,8 @@
 			if(3)
 				playsound(loc, pick('modular_bluemoon/Gardelin0/sound/effect/lewd/toys/magicwand3.ogg'), 25, 1)
 				to_chat(M, span_userdanger("Вибрация слишком интенсивная!"))
-				M.Jitter(3)
+				if(M.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+					M.Jitter(3)
 				M.Stun(3)
 				if(prob(50))
 					M.emote("moan")
@@ -140,7 +141,8 @@
 			if(3)
 				playsound(loc, pick('modular_bluemoon/Gardelin0/sound/effect/lewd/toys/magicwand3.ogg'), 25, 1)
 				to_chat(M, span_userdanger("Вибрация слишком интенсивная!"))
-				M.Jitter(3)
+				if(M.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+					M.Jitter(3)
 				M.Stun(3)
 				if(prob(50))
 					M.emote("moan")

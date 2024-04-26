@@ -509,7 +509,8 @@
 						switch(target)
 							if(CUM_TARGET_PENIS)
 								to_chat(M, "<span class='userlove'>Из уретры вырывается семя прямо на ваш член!</span>")
-			portal_target.do_jitter_animation() //make your partner shake too!
+			if(portal_target.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+				portal_target.do_jitter_animation() //make your partner shake too!
 		else
 			user.visible_message("<span class='warning'><b>'[src]'</b> подает звуковой сигнал и не позволяет <b>[M]</b> войти.</span>")
 	else if(user.a_intent == INTENT_HARM)
