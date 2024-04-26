@@ -1,6 +1,6 @@
 /obj/item/clothing/accessory/bodycamera
 	name = "body camera"
-	desc = "An armor vest upgrade, there's an instructions tag if you look a little closer..."
+	desc = "Camera to be placed on your jumpsuit. It starts working immediately and stops when removed."
 	icon = 'modular_splurt/icons/obj/clothing/bodycam.dmi'
 	icon_state = "bodycamera"
 	var/obj/machinery/camera/builtInCamera = null
