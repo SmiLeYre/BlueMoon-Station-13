@@ -614,6 +614,29 @@
 	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 100, BIO = 100, RAD = 60, FIRE = 60, ACID = 80, WOUND = 15)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/rd
 
+	//Blue Shield hardsuit
+/obj/item/clothing/head/helmet/space/hardsuit/blue_shield
+	name = "Blue Shield hardsuit helmet"
+	desc = "A special helmet designed for light combat suit."
+	icon_state = "hardsuit0-blueshield"
+	item_state = "hardsuit0-blueshield"
+	hardsuit_type = "blueshield"
+	armor = list(MELEE = 30, BULLET = 30, LASER = 40, ENERGY = 40, BOMB = 20, BIO = 100, RAD = 40, FIRE = 60, ACID = 60, WOUND = 30)
+
+/obj/item/clothing/suit/space/hardsuit/blue_shield
+	name = "Blue Shield hardsuit"
+	desc = "A special suit that protects against hazardous, low pressure environments. Made from light matrials with layer of armor"
+	icon_state = "hardsuit-blueshield"
+	item_state = "hardsuit-blueshield"
+	hardsuit_type = "blueshield"
+	tail_state = "hos"
+	slowdown = 0
+	w_class = WEIGHT_CLASS_NORMAL
+	jetpack = /obj/item/tank/jetpack/suit
+	armor = list(MELEE = 30, BULLET = 30, LASER = 40, ENERGY = 40, BOMB = 20, BIO = 100, RAD = 40, FIRE = 60, ACID = 60, WOUND = 30)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/blue_shield
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
+
 	//Security hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/security
 	name = "security hardsuit helmet"

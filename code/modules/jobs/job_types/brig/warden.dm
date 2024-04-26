@@ -60,11 +60,13 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/warden
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	r_pocket = /obj/item/reagent_containers/peacehypo
-	l_pocket = /obj/item/restraints/handcuffs
+	l_pocket = /obj/item/storage/bag/security
+	r_pocket = /obj/item/clothing/accessory/badge
 	suit_store = /obj/item/gun/energy/pumpaction/defender
 	backpack_contents = list(
-		/obj/item/storage/box/body_camera = 1
+		/obj/item/storage/box/sec_kit,
+		/obj/item/reagent_containers/peacehypo,
+		/obj/item/stamp/security = 1,
 		)
 
 	backpack = /obj/item/storage/backpack/security

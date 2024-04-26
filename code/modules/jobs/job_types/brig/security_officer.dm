@@ -140,9 +140,9 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	head = /obj/item/clothing/head/helmet/sec
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	shoes = /obj/item/clothing/shoes/jackboots/sec
-	l_pocket = /obj/item/restraints/handcuffs
-	r_pocket = /obj/item/assembly/flash/handheld
-	backpack_contents = list(/obj/item/storage/ifak, /obj/item/clothing/accessory/permit/special/security = 1)
+	l_pocket = /obj/item/storage/bag/security
+	r_pocket = /obj/item/clothing/accessory/badge
+	backpack_contents = list(/obj/item/storage/ifak, /obj/item/storage/box/sec_kit, /obj/item/clothing/accessory/permit/special/security = 1)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
