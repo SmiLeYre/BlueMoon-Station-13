@@ -621,7 +621,7 @@
 	icon_state = "hardsuit0-blueshield"
 	item_state = "hardsuit0-blueshield"
 	hardsuit_type = "blueshield"
-	armor = list(MELEE = 30, BULLET = 30, LASER = 40, ENERGY = 40, BOMB = 20, BIO = 100, RAD = 40, FIRE = 60, ACID = 60, WOUND = 30)
+	armor = list(MELEE = 20, BULLET = 20, LASER = 30, ENERGY = 30, BOMB = 20, BIO = 100, RAD = 40, FIRE = 60, ACID = 60, WOUND = 30)
 
 /obj/item/clothing/suit/space/hardsuit/blue_shield
 	name = "Blue Shield hardsuit"
