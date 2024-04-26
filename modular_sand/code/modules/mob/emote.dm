@@ -29,6 +29,9 @@
 /datum/emote/living/peep/run_emote(mob/living/user, params)
 	if(!(. = ..()))
 		return
+	if(user.nextsoundemote >= world.time)
+		return
+	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_sand/sound/voice/peep_once.ogg', 50, 1, -1)
 
 /datum/emote/living/peep2
@@ -43,4 +46,7 @@
 /datum/emote/living/peep2/run_emote(mob/living/user, params)
 	if(!(. = ..()))
 		return
+	if(user.nextsoundemote >= world.time)
+		return
+	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/peep.ogg', 50, 1, -1)

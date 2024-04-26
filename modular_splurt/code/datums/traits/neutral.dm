@@ -742,7 +742,7 @@ var/static/list/ukraine_replacements = list(
 	if (prob(75))
 		for (var/key in ukraine_replacements)
 			var/regex/rg = regex("(\\A|\[\\s|.,\\-!/?~\])([key])(\\Z|\[\\s|.,\\-!/?~\])")
-			message = rg.Replace_char(message, /proc/ukraine_replace)
+			message = rg.Replace(message, GLOBAL_PROC_REF(ukraine_replace))
 
 		message = replacetextEx_char(message, "ы", "и")
 		message = replacetextEx_char(message, "и", "і")

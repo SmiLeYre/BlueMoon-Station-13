@@ -1211,7 +1211,7 @@
 		/obj/item/storage/firstaid/regular=1,
 		/obj/item/stamp/chameleon=1,
 		)
-	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/deathrattle/centcom, /obj/item/implant/explosive, /obj/item/implant/mindshield, /obj/item/implant/radio/centcom)
 	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
 	id = /obj/item/card/id/ert
 
@@ -1264,7 +1264,7 @@
 		/obj/item/storage/firstaid/regular=1,
 		/obj/item/stamp/chameleon=1,
 		)
-	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/deathrattle/centcom, /obj/item/implant/explosive, /obj/item/implant/mindshield, /obj/item/implant/radio/centcom)
 	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
 	id = /obj/item/card/id/ert
 

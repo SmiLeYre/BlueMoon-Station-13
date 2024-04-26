@@ -19,12 +19,15 @@
 	GLOB.crewmonitor.show(user,src)
 
 GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
+GLOBAL_DATUM_INIT(crewmonitor_security, /datum/crewmonitor/security, new)
+GLOBAL_DATUM_INIT(crewmonitor_command, /datum/crewmonitor/command, new)
 
 /datum/crewmonitor
 	var/list/ui_sources = list() //List of user -> ui source
 	var/list/jobs
 	var/list/data_by_z = list()
 	var/list/last_update = list()
+	var/selected_jobs = -1
 
 /datum/crewmonitor/New()
 	. = ..()
@@ -170,6 +173,9 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 					assignment = ""
 					ijob = 80
 
+				if (selected_jobs != -1 && round(ijob / 10) - selected_jobs != 0)
+					continue
+
 				if (nanite_sensors || U.sensor_mode >= SENSOR_LIVING)
 					life_status = (!H.stat ? TRUE : FALSE)
 				else
@@ -229,5 +235,30 @@ GLOBAL_DATUM_INIT(crewmonitor, /datum/crewmonitor, new)
 	switch (action)
 		if ("select_person")
 			AI.ai_camera_track(params["name"])
+
+/datum/crewmonitor/security
+	selected_jobs = 1
+
+/datum/crewmonitor/command
+	selected_jobs = 6
+
+/datum/crewmonitor/command/New()
+	. = ..()
+
+	var/list/jobs = new/list()
+	// Command
+	jobs["Captain"] = 60
+	jobs["NanoTrasen Representative"] = 61
+	jobs["Head of Personnel"] = 62
+	jobs["Bridge Officer"] = 63
+	jobs["Head of Security"] = 64
+	jobs["Chief Medical Officer"] = 65
+	jobs["Research Director"] = 66
+	jobs["Chief Engineer"] = 67
+	jobs["Quartermaster"] = 68
+	jobs["Blueshield"] = 69
+
+	src.jobs = jobs
+
 
 #undef SENSORS_UPDATE_PERIOD
