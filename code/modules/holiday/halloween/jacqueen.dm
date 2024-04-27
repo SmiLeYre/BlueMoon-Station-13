@@ -166,8 +166,8 @@
 		targets = GLOB.generic_event_spawns
 
 	for(var/i in 1 to 6) //Attempts a jump up to 6 times.
-		var/atom/A = pick(targets)
-		if(do_teleport(src, A, channel = TELEPORT_CHANNEL_MAGIC))
+		var/atom/A = safepick(targets)
+		if(A && do_teleport(src, A, channel = TELEPORT_CHANNEL_MAGIC))
 			return TRUE
 		targets -= A
 	return FALSE

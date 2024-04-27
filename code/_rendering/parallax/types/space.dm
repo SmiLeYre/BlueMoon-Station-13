@@ -58,7 +58,7 @@
 /atom/movable/screen/parallax_layer/space/planet
 	icon_state = "planet"
 	blend_mode = BLEND_OVERLAY
-	absolute = TRUE //Status of seperation
+	absolute = FALSE //Status of seperation
 	speed = 3
 	layer = 30
 	dynamic_self_tile = FALSE

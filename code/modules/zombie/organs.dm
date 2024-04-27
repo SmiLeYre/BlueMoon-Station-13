@@ -23,26 +23,22 @@
 	GLOB.zombie_infection_list -= src
 	. = ..()
 
-/obj/item/organ/zombie_infection/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
+/obj/item/organ/zombie_infection/Insert(mob/living/carbon/organ_owner, special, drop_if_replaced)
 	. = ..()
 
+	if(organ_owner)
+		RegisterSignal(organ_owner, COMSIG_LIVING_DEATH, PROC_REF(organ_owner_died))
 	START_PROCESSING(SSobj, src)
 
-/obj/item/organ/zombie_infection/Remove(mob/living/carbon/M, special = FALSE)
+/obj/item/organ/zombie_infection/Remove(special = FALSE)
 	. = ..()
+	if(owner)
+		UnregisterSignal(owner, COMSIG_LIVING_DEATH)
 	STOP_PROCESSING(SSobj, src)
-	if(!QDELETED(owner) && iszombie(M) && old_species && !special)
-		M.set_species(old_species)
+	if(!QDELETED(owner) && iszombie(owner) && old_species && !special)
+		owner.set_species(old_species)
 	if(timer_id)
 		deltimer(timer_id)
-
-/obj/item/organ/zombie_infection/Insert(mob/living/carbon/organ_owner, special)
-	. = ..()
-	RegisterSignal(organ_owner, COMSIG_LIVING_DEATH, PROC_REF(organ_owner_died))
-
-/obj/item/organ/zombie_infection/Remove(mob/living/carbon/organ_owner, special)
-	. = ..()
-	UnregisterSignal(organ_owner, COMSIG_LIVING_DEATH)
 
 /obj/item/organ/zombie_infection/proc/organ_owner_died(mob/living/carbon/source, gibbed)
 	SIGNAL_HANDLER
@@ -58,7 +54,7 @@
 	if(!owner)
 		return
 	if(!(src in owner.internal_organs))
-		INVOKE_ASYNC(src,PROC_REF(Remove),owner)
+		INVOKE_ASYNC(src, PROC_REF(Remove), owner)
 	if(owner.mob_biotypes & MOB_MINERAL)//does not process in inorganic things
 		return
 	if (causes_damage && !iszombie(owner) && owner.stat != DEAD)

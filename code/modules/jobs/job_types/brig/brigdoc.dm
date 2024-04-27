@@ -42,8 +42,6 @@
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	suit = /obj/item/clothing/suit/armor/brigdoc
 	shoes = /obj/item/clothing/shoes/jackboots
-	l_pocket = /obj/item/reagent_containers/spray/pepper
-	r_pocket = /obj/item/assembly/flash/handheld
 	backpack_contents = list(
 		/obj/item/storage/hypospraykit/regular,
 		/obj/item/storage/firstaid/regular,
