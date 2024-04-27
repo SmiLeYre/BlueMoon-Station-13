@@ -25,6 +25,13 @@
 		/obj/item/reagent_containers/food/drinks/bottle/holywater
 	)
 
+	mail_goodies = list(
+		/obj/item/reagent_containers/food/drinks/bottle/holywater = 30,
+		/obj/item/toy/plush/awakenedplushie = 10,
+		/obj/item/grenade/chem_grenade/holy = 5,
+		/obj/item/toy/plush/narplush = 2,
+//		/obj/item/toy/plush/ratplush = 1
+	)
 
 /datum/job/chaplain/after_spawn(mob/living/H, client/C)
 	. = ..()
@@ -133,6 +140,7 @@
 							/obj/item/stamp/chap = 1,
 							)
 	backpack = /obj/item/storage/backpack/cultpack
+	accessory = /obj/item/clothing/accessory/permit/special/chaplain
 	satchel = /obj/item/storage/backpack/cultpack
 
 /datum/outfit/job/chaplain/syndicate
@@ -150,6 +158,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	box = /obj/item/storage/box/survival/syndie
 	pda_slot = ITEM_SLOT_BELT
+	accessory = /obj/item/clothing/accessory/permit/special/chaplain
 	backpack_contents = list(/obj/item/storage/briefcase/crafted/chap_stuff = 1,
 							/obj/item/stamp/chap = 1,
 							/obj/item/syndicate_uplink=1,

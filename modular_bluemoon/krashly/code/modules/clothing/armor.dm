@@ -188,7 +188,7 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 		if(!IS_INTEQ(user))
 			to_chat(user, "<span class='danger'><B>СКАФАНДР МОДЕЛЬ ДВА</B>: Обнаружены неавторизованные сигнатуры. <B>Производится нейтрализация экипировки.</B></span>")
 			playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
-			addtimer(CALLBACK(src, .proc/explode), 3 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(explode)), 3 SECONDS)
 
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq/proc/explode()
 	do_sparks(3, 1, src)
@@ -275,7 +275,7 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 		if(!IS_INTEQ(user))
 			to_chat(user, "<span class='danger'><B>СКАФАНДР МОДЕЛЬ ОДИН - ЩИТ</B>: Обнаружены неавторизованные сигнатуры. <B>Производится нейтрализация экипировки.</B></span>")
 			playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
-			addtimer(CALLBACK(src, .proc/explode), 3 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(explode)), 3 SECONDS)
 
 /obj/item/clothing/suit/space/hardsuit/shielded/syndi/inteq/proc/explode()
 	do_sparks(3, 1, src)

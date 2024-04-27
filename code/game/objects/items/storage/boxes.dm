@@ -75,7 +75,7 @@
 
 /obj/item/storage/box/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stack/packageWrap))
-		return 0
+		return FALSE
 	return ..()
 
 //Disk boxes
@@ -224,6 +224,63 @@
 	new /obj/item/extinguisher/mini(src)
 	new /obj/item/flashlight/flare(src)
 	new /obj/item/hypospray/mkii/CMO/combat/synthflesh(src)
+
+//body cameras implanters box
+/obj/item/storage/box/body_camera
+	name = "Body cameras kit"
+
+/obj/item/storage/box/body_camera/PopulateContents()
+	..()
+	for(var/i in 1 to 6)
+		new /obj/item/clothing/accessory/bodycamera(src)
+	new /obj/item/camera_bug(src)
+
+//death_alert implanters box
+/obj/item/storage/box/death_alert
+	name = "Death alert implants kit"
+
+/obj/item/storage/box/death_alert/PopulateContents()
+	..()
+	for(var/i in 1 to 6)
+		new /obj/item/implantcase/death_alert(src)
+	new /obj/item/implanter/death_alert(src)
+
+//ert commander box
+/obj/item/storage/box/ert_commander
+	name = "ERT commander kit"
+	icon_state = "ghostcostuming"
+
+/obj/item/storage/box/ert_commander/PopulateContents()
+	..()
+	new /obj/item/camera_bug(src)
+	new /obj/item/door_remote/omni(src)
+	new /obj/item/megaphone/command(src)
+
+//blueshield suit box
+/obj/item/storage/box/blue_shield_hs
+	name = "NT flexible suit"
+	icon_state = "ghostcostuming"
+
+/obj/item/storage/box/blue_shield_hs/PopulateContents()
+	..()
+	new /obj/item/clothing/suit/space/hardsuit/blue_shield(src)
+	new /obj/item/clothing/mask/gas/sechailer/swat/blueshield(src)
+	new /obj/item/tank/internals/emergency_oxygen/double(src)
+
+//security kit
+/obj/item/storage/box/sec_kit
+	name = "Security standart kit"
+	icon_state = "secbox_xl"
+
+/obj/item/storage/box/sec_kit/PopulateContents()
+	..()
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/holosign_creator/security(src)
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/restraints/handcuffs(src)
+	new /obj/item/restraints/handcuffs(src)
 
 //ert ammo boxes
 /obj/item/storage/box/ammo
@@ -715,6 +772,7 @@
 	desc = "Eight wrappers of fun! Ages 8 and up. Not suitable for children."
 	icon = 'icons/obj/toy.dmi'
 	icon_state = "spbox"
+	illustration = null
 
 /obj/item/storage/box/snappops/ComponentInitialize()
 	. = ..()
@@ -732,6 +790,7 @@
 	icon = 'icons/obj/cigarettes.dmi'
 	icon_state = "matchbox"
 	item_state = "zippo"
+	illustration = null
 	w_class = WEIGHT_CLASS_TINY
 	slot_flags = ITEM_SLOT_BELT
 	drop_sound = 'sound/items/handling/matchbox_drop.ogg'
@@ -998,7 +1057,7 @@
 
 /obj/item/storage/box/papersack/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/pen))
-		var/choice = show_radial_menu(user, src , papersack_designs, custom_check = CALLBACK(src, .proc/check_menu, user, W), radius = 36, require_near = TRUE)
+		var/choice = show_radial_menu(user, src , papersack_designs, custom_check = CALLBACK(src, PROC_REF(check_menu), user, W), radius = 36, require_near = TRUE)
 		if(!choice)
 			return FALSE
 		if(icon_state == "paperbag_[choice]")
@@ -1615,7 +1674,7 @@
 
 /obj/item/storage/box/shipping/PopulateContents()
 	var/static/items_inside = list(
-		/obj/item/destTagger=1,\
+		/obj/item/dest_tagger=1,\
 		/obj/item/sales_tagger=1,\
 		/obj/item/export_scanner=1,\
 		/obj/item/stack/packageWrap/small=2,\

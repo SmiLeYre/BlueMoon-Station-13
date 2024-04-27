@@ -901,7 +901,7 @@
 /obj/item/gun/grenadelauncher{
 	pixel_y = -3
 	},
-/obj/item/clothing/suit/armor/laserproof,
+/obj/item/clothing/suit/hooded/ablative,
 /turf/open/floor/plasteel,
 /area/ai_monitored/security/armory)
 "acz" = (

@@ -250,7 +250,7 @@
 			var/turf/open/chasm/cloud/M = F
 			M.TerraformTurf(/turf/open/floor/plating/asteroid/layenia, /turf/open/floor/plating/asteroid/layenia)
 	gps = new /obj/item/gps/internal(src)
-	addtimer(CALLBACK(src, .proc/delayedInitialize), 4 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(delayedInitialize)), 4 SECONDS)
 
 /obj/structure/spawner/crystalline/deconstruct(disassembled)
 	new /obj/effect/cloud_collapse(loc)
@@ -289,7 +289,7 @@
 	visible_message("<span class='boldannounce'>The tendril writhes in fury as the earth around it begins to crack and break apart! Get back!</span>")
 	visible_message("<span class='warning'>Something falls free of the tendril!</span>")
 	playsound(loc,'sound/effects/tendril_destroyed.ogg', 200, 0, 50, 1, 1)
-	addtimer(CALLBACK(src, .proc/collapse), 50)
+	addtimer(CALLBACK(src, PROC_REF(collapse)), 50)
 
 /obj/effect/cloud_collapse/Destroy()
 	QDEL_NULL(emitted_light)

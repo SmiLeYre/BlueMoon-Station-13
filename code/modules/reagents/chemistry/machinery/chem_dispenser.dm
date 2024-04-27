@@ -94,18 +94,18 @@
 
 /obj/machinery/chem_dispenser/Initialize(mapload)
 	. = ..()
-	dispensable_reagents = sort_list(dispensable_reagents, /proc/cmp_reagents_asc)
+	dispensable_reagents = sort_list(dispensable_reagents, GLOBAL_PROC_REF(cmp_reagents_asc))
 	if(emagged_reagents)
-		emagged_reagents = sort_list(emagged_reagents, /proc/cmp_reagents_asc)
+		emagged_reagents = sort_list(emagged_reagents, GLOBAL_PROC_REF(cmp_reagents_asc))
 	if(upgrade_reagents)
-		upgrade_reagents = sort_list(upgrade_reagents, /proc/cmp_reagents_asc)
+		upgrade_reagents = sort_list(upgrade_reagents, GLOBAL_PROC_REF(cmp_reagents_asc))
 	if(upgrade_reagents2)
-		upgrade_reagents2 = sort_list(upgrade_reagents2, /proc/cmp_reagents_asc)
+		upgrade_reagents2 = sort_list(upgrade_reagents2, GLOBAL_PROC_REF(cmp_reagents_asc))
 	if(upgrade_reagents3)
-		upgrade_reagents3 = sort_list(upgrade_reagents3, /proc/cmp_reagents_asc)
+		upgrade_reagents3 = sort_list(upgrade_reagents3, GLOBAL_PROC_REF(cmp_reagents_asc))
 	if(upgrade_reagents4)
-		upgrade_reagents4 = sort_list(upgrade_reagents4, /proc/cmp_reagents_asc)
-	dispensable_reagents = sort_list(dispensable_reagents, /proc/cmp_reagents_asc)
+		upgrade_reagents4 = sort_list(upgrade_reagents4, GLOBAL_PROC_REF(cmp_reagents_asc))
+	dispensable_reagents = sort_list(dispensable_reagents, GLOBAL_PROC_REF(cmp_reagents_asc))
 	create_reagents(200, NO_REACT)
 	update_icon()
 
@@ -479,14 +479,16 @@
 	for(var/obj/item/stock_parts/capacitor/C in component_parts)
 		recharge_amount *= C.rating
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
-		if(M.rating > 1)
+		if(M.rating > 1) //T2
 			dispensable_reagents |= upgrade_reagents
-		if(M.rating > 2)
+		if(M.rating > 2) //T3
 			dispensable_reagents |= upgrade_reagents2
-		if(M.rating > 3)
+		if(M.rating > 3) //T4
 			dispensable_reagents |= upgrade_reagents3
-		if(M.rating > 4)
+		if(M.rating > 4) //T5
 			dispensable_reagents |= upgrade_reagents4
+		if(M.rating > 5) //T6
+			dispensable_reagents |= emagged_reagents
 		switch(M.rating)
 			if(-INFINITY to 1)
 				dispenceUnit = 5

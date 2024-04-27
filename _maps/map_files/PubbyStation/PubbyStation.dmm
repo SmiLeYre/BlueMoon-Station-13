@@ -5092,10 +5092,11 @@
 /turf/open/floor/plating,
 /area/maintenance/department/crew_quarters/dorms)
 "aod" = (
-/obj/effect/spawner/lootdrop/syndicate_present,
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/obj/structure/chair/office/dark{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "aoh" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/effect/turf_decal/tile/red,
@@ -9214,10 +9215,10 @@
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
 "ayF" = (
-/obj/structure/disposalpipe/segment{
-	dir = 6
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/disposalpipe/junction{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -9653,7 +9654,7 @@
 /obj/structure/rack,
 /obj/item/gun/energy/ionrifle,
 /obj/item/gun/energy/temperature/security,
-/obj/item/clothing/suit/armor/laserproof,
+/obj/item/clothing/suit/hooded/ablative,
 /obj/machinery/light{
 	dir = 8;
 	light_color = "#e8eaff"
@@ -10550,21 +10551,50 @@
 /turf/open/floor/plasteel/airless/solarpanel,
 /area/solars/port)
 "aCc" = (
-/obj/structure/cable{
-	icon_state = "1-8"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/hallway/primary/fore)
 "aCd" = (
-/obj/machinery/vending/cola/random,
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
-"aCe" = (
-/obj/structure/filingcabinet/employment,
-/turf/open/floor/wood,
+/obj/structure/table/wood,
+/obj/machinery/computer/secure_data/laptop{
+	dir = 4;
+	pixel_y = 5;
+	pixel_x = -4
+	},
+/obj/machinery/light_switch{
+	pixel_x = -25
+	},
+/obj/machinery/camera{
+	c_tag = "Chapel Crematorium";
+	dir = 4
+	},
+/turf/open/floor/carpet/royalblack,
 /area/service/lawoffice)
+"aCe" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/plasteel,
+/area/hallway/primary/fore)
 "aCf" = (
 /obj/machinery/vending/wardrobe/law_wardrobe,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = 24
+	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "aCg" = (
@@ -15321,7 +15351,7 @@
 /area/cargo/sorting)
 "aNK" = (
 /obj/structure/table,
-/obj/item/destTagger,
+/obj/item/dest_tagger,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -35036,6 +35066,9 @@
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/fore)
 "bGH" = (
@@ -38721,6 +38754,9 @@
 "bPm" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 8
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/fore)
@@ -50394,17 +50430,22 @@
 /turf/open/floor/plasteel/dark,
 /area/science/xenobiology)
 "dgI" = (
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/obj/machinery/airalarm{
+	dir = 4;
+	pixel_x = -22
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
+	},
+/turf/open/floor/carpet/royalblack,
+/area/service/lawoffice)
 "dhz" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/chair{
@@ -51093,11 +51134,22 @@
 /obj/effect/spawner/lootdrop/maintenance,
 /turf/open/floor/plating,
 /area/maintenance/department/crew_quarters/dorms)
+"ebx" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/filingcabinet/employment{
+	pixel_x = -10
+	},
+/obj/structure/filingcabinet/security,
+/obj/structure/filingcabinet/medical{
+	pixel_x = 10
+	},
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "ebD" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/shutters/preopen{
-	id = "lawyer_shutters";
-	name = "law office shutters"
+	id = "lawyerprivacy";
+	name = "Lawyer's Privacy Shutter"
 	},
 /turf/open/floor/plating,
 /area/service/lawoffice)
@@ -51228,7 +51280,13 @@
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
 "elk" = (
-/obj/structure/chair/office/dark,
+/obj/machinery/door/airlock/hos{
+	name = "Representative Office";
+	req_access_txt = "38"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "elG" = (
@@ -51352,20 +51410,18 @@
 /turf/open/floor/plating,
 /area/security/brig)
 "ezF" = (
-/obj/structure/table/wood,
-/obj/item/paper_bin,
-/obj/item/pen/red,
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/obj/structure/closet/secure_closet/ntr,
+/obj/effect/turf_decal/siding/wood,
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "ezJ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 6
+/obj/structure/table/wood,
+/obj/item/taperecorder{
+	pixel_y = 5
 	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/obj/item/clipboard,
+/turf/open/floor/carpet/royalblack,
+/area/service/lawoffice)
 "eAp" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -51450,10 +51506,14 @@
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "eEp" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 4
+/obj/structure/table/wood,
+/obj/item/folder/blue{
+	pixel_x = 3;
+	pixel_y = 3
 	},
-/turf/open/floor/wood,
+/obj/item/folder/red,
+/obj/item/clothing/glasses/sunglasses,
+/turf/open/floor/carpet,
 /area/service/lawoffice)
 "eFj" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
@@ -51572,12 +51632,17 @@
 /turf/open/floor/plasteel,
 /area/security/checkpoint/customs)
 "eOZ" = (
-/obj/structure/closet,
-/obj/item/clothing/suit/judgerobe,
-/obj/item/gavelblock,
-/obj/item/gavelhammer,
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
+	},
+/obj/structure/chair/office/dark{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/royalblack,
+/area/service/lawoffice)
 "ePU" = (
 /obj/machinery/computer/security/labor,
 /turf/open/floor/plasteel/dark,
@@ -52022,11 +52087,16 @@
 /turf/open/floor/plasteel/dark,
 /area/service/library)
 "fuP" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+/obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/structure/cable{
-	icon_state = "2-8"
+/obj/structure/table/wood,
+/obj/machinery/chem_dispenser/drinks{
+	dir = 8;
+	pixel_x = 3
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 8
 	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
@@ -52824,8 +52894,9 @@
 	},
 /area/commons/fitness/pool)
 "gAG" = (
-/obj/structure/table/wood,
-/obj/item/flashlight/lamp/green,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
 /turf/open/floor/carpet,
 /area/service/lawoffice)
 "gBb" = (
@@ -53093,10 +53164,14 @@
 /turf/open/floor/plasteel/dark,
 /area/service/library)
 "gPV" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 10
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -12
 	},
-/turf/open/floor/wood,
+/obj/structure/mirror{
+	pixel_x = -26
+	},
+/turf/open/floor/plasteel/freezer,
 /area/service/lawoffice)
 "gQf" = (
 /obj/effect/turf_decal/stripes/line{
@@ -53365,16 +53440,7 @@
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
 "hnu" = (
-/obj/machinery/button/door{
-	id = "lawyer_shutters";
-	name = "law office shutters control";
-	pixel_x = 34;
-	pixel_y = -1;
-	req_access_txt = "38"
-	},
-/obj/machinery/light_switch{
-	pixel_x = 24
-	},
+/obj/machinery/photocopier,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "hon" = (
@@ -53630,11 +53696,25 @@
 /turf/open/floor/grass/grass0,
 /area/medical/genetics)
 "hHr" = (
-/obj/structure/chair/comfy/black{
-	dir = 4
+/obj/structure/table/wood,
+/obj/item/paper_bin{
+	pixel_x = -3;
+	pixel_y = 7
 	},
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/obj/item/pen/fountain{
+	pixel_y = 9;
+	pixel_x = -3
+	},
+/obj/item/stamp/law{
+	pixel_x = 8;
+	pixel_y = 10
+	},
+/obj/machinery/computer/security/telescreen/prison{
+	dir = 4;
+	pixel_x = -28
+	},
+/turf/open/floor/carpet/royalblack,
+/area/service/lawoffice)
 "hIZ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -53910,6 +53990,19 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/service/library)
+"icz" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/table/wood,
+/obj/machinery/fax{
+	fax_name = "NTR Fax";
+	name = "NTR Fax"
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+	dir = 1
+	},
+/obj/structure/cable,
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "iej" = (
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible,
 /obj/structure/cable/yellow{
@@ -54320,6 +54413,15 @@
 /obj/effect/landmark/xmastree,
 /turf/open/floor/grass/grass0,
 /area/service/hydroponics/garden/monastery)
+"iIb" = (
+/obj/machinery/shower{
+	pixel_y = 16
+	},
+/obj/item/soap/deluxe,
+/obj/structure/curtain,
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/turf/open/floor/plasteel/freezer,
+/area/service/lawoffice)
 "iIO" = (
 /obj/item/book/manual/splurt_space_law,
 /obj/item/clothing/ears/earmuffs,
@@ -54659,15 +54761,8 @@
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
 "jjC" = (
-/obj/structure/rack,
-/obj/item/storage/briefcase{
-	pixel_x = -3;
-	pixel_y = 2
-	},
-/obj/item/storage/secure/briefcase{
-	pixel_x = 2;
-	pixel_y = -2
-	},
+/obj/structure/table/wood,
+/obj/item/paper_bin,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "jjD" = (
@@ -55018,9 +55113,11 @@
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "jRr" = (
-/obj/effect/spawner/lootdrop/syndicate_present,
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/turf/open/floor/carpet/royalblack,
+/area/service/lawoffice)
 "jRG" = (
 /obj/structure/disposalpipe/segment{
 	dir = 5
@@ -55055,15 +55152,16 @@
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
 "jTu" = (
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
+/obj/structure/filingcabinet/employment,
 /obj/machinery/airalarm{
 	dir = 8;
 	pixel_x = 24
 	},
-/turf/open/floor/carpet,
+/obj/machinery/camera{
+	c_tag = "Lawyer's Office";
+	dir = 8
+	},
+/turf/open/floor/wood,
 /area/service/lawoffice)
 "jTx" = (
 /turf/open/floor/plasteel,
@@ -55422,17 +55520,25 @@
 /turf/open/floor/plasteel/dark,
 /area/service/chapel/office)
 "kxj" = (
-/obj/structure/chair/office/dark{
-	dir = 1
+/obj/structure/toilet{
+	contents = newlist(/obj/item/toy/snappop/phoenix);
+	dir = 4
 	},
-/turf/open/floor/carpet,
+/turf/open/floor/plasteel/freezer,
 /area/service/lawoffice)
 "kxs" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-22"
+/obj/machinery/holopad,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
 	},
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "kxQ" = (
 /turf/open/floor/carpet,
 /area/medical/psychology)
@@ -55530,12 +55636,11 @@
 /turf/open/floor/plasteel,
 /area/service/hydroponics)
 "kFd" = (
-/obj/effect/turf_decal/tile/red{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
 	},
-/obj/machinery/light,
-/turf/open/floor/plasteel,
-/area/hallway/primary/fore)
+/turf/open/floor/plasteel/freezer,
+/area/service/lawoffice)
 "kFm" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
@@ -55554,18 +55659,15 @@
 	},
 /area/maintenance/department/science)
 "kFx" = (
-/obj/machinery/door/airlock/maintenance{
-	name = "Law Office Maintenance";
-	req_access_txt = "38"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "kFD" = (
 /obj/structure/closet/l3closet,
 /obj/machinery/light{
@@ -55593,6 +55695,29 @@
 	},
 /turf/open/floor/plating,
 /area/hallway/secondary/entry)
+"kHT" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/button/door{
+	pixel_x = -6;
+	pixel_y = -2;
+	name = "Representative Office shutters";
+	id = "representative"
+	},
+/obj/machinery/button/door{
+	pixel_x = 6;
+	pixel_y = -2;
+	id = "lawyerprivacy1";
+	name = "Lawyer office shutters"
+	},
+/obj/machinery/keycard_auth{
+	pixel_y = 8;
+	pixel_x = -7
+	},
+/turf/open/floor/carpet/royalblack,
+/area/service/lawoffice)
 "kIo" = (
 /obj/structure/table,
 /obj/item/paper_bin{
@@ -55718,12 +55843,13 @@
 /turf/open/floor/plasteel/dark,
 /area/service/library)
 "kQZ" = (
-/obj/structure/closet,
-/obj/item/stack/spacecash/c10,
-/obj/item/stack/spacecash/c10,
-/obj/item/stack/spacecash/c10,
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "kRe" = (
 /obj/machinery/computer/med_data{
 	dir = 4
@@ -56286,6 +56412,15 @@
 	},
 /turf/open/floor/plating,
 /area/commons/storage/emergency/starboard)
+"lKR" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "lMU" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
@@ -56681,11 +56816,27 @@
 /turf/open/floor/engine,
 /area/engineering/supermatter)
 "mpy" = (
-/obj/structure/table/wood,
-/obj/machinery/fax{
-	fax_name = "Lawyer Fax";
-	name = "Lawyer Fax"
+/obj/effect/turf_decal/siding/wood{
+	dir = 6
 	},
+/obj/structure/table/wood,
+/obj/machinery/recharger{
+	pixel_y = 4;
+	pixel_x = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/item/folder/documents{
+	pixel_x = -7
+	},
+/obj/item/folder/blue{
+	pixel_x = -4
+	},
+/obj/item/folder/white{
+	pixel_x = -2
+	},
+/obj/item/folder/red,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "mql" = (
@@ -56743,11 +56894,9 @@
 /turf/open/floor/plasteel,
 /area/security/brig)
 "mrk" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable{
-	icon_state = "1-4"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 5
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating{
 	icon_state = "platingdmg1"
@@ -56764,7 +56913,7 @@
 	dir = 4
 	},
 /obj/structure/cable{
-	icon_state = "1-2"
+	icon_state = "1-8"
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
@@ -57030,6 +57179,9 @@
 	codes_txt = "patrol;next_patrol=BrigS2";
 	location = "BrigP"
 	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/fore)
 "mGz" = (
@@ -57216,13 +57368,14 @@
 /turf/open/floor/plasteel/dark,
 /area/service/library/lounge)
 "mXq" = (
-/obj/item/taperecorder,
-/obj/item/cartridge/lawyer,
-/obj/structure/table/wood,
-/obj/item/paper_bin,
-/obj/item/pen/blue,
-/turf/open/floor/wood,
-/area/service/lawoffice)
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 6
+	},
+/turf/open/floor/plasteel,
+/area/hallway/primary/fore)
 "mXJ" = (
 /obj/structure/table/wood/fancy,
 /turf/open/floor/carpet,
@@ -57388,10 +57541,18 @@
 /turf/open/floor/plasteel/damturf,
 /area/maintenance/department/crew_quarters/dorms)
 "nih" = (
-/obj/structure/closet,
-/obj/effect/spawner/lootdrop/costume,
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/rack,
+/obj/item/storage/briefcase{
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/item/storage/secure/briefcase,
+/obj/structure/sign/poster/official/random{
+	pixel_y = -31
+	},
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "nix" = (
 /obj/structure/lattice,
 /obj/structure/lattice,
@@ -57514,6 +57675,13 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/cargo)
+"ntZ" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Law Office Maintenance";
+	req_access_txt = "38"
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/security/brig)
 "nuv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
@@ -57589,14 +57757,10 @@
 /turf/open/floor/plasteel/white/corner,
 /area/hallway/primary/central)
 "nyO" = (
-/obj/item/kirbyplants{
-	icon_state = "plant-22"
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/obj/structure/chair/comfy/black,
+/obj/effect/landmark/start/ntr,
+/turf/open/floor/carpet/royalblack,
+/area/service/lawoffice)
 "nzD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
@@ -57959,11 +58123,8 @@
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
 "nSo" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 9
-	},
-/obj/structure/disposalpipe/segment,
-/turf/open/floor/wood,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/carpet,
 /area/service/lawoffice)
 "nTr" = (
 /obj/effect/turf_decal/tile/blue{
@@ -58461,11 +58622,17 @@
 /turf/closed/wall/r_wall,
 /area/science/xenobiology)
 "oCn" = (
+/obj/effect/landmark/start/lawyer,
 /obj/structure/chair/office/dark{
 	dir = 1
 	},
-/obj/effect/landmark/start/lawyer,
-/turf/open/floor/carpet,
+/obj/machinery/power/apc{
+	areastring = "/area/service/lawoffice";
+	dir = 8;
+	name = "Law Office APC";
+	pixel_y = -24
+	},
+/turf/open/floor/wood,
 /area/service/lawoffice)
 "oCG" = (
 /obj/structure/cable{
@@ -58755,26 +58922,24 @@
 /turf/open/floor/plating,
 /area/maintenance/department/cargo)
 "oTp" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
+/obj/machinery/door/airlock/hos{
+	name = "Representative Office"
 	},
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable{
-	icon_state = "4-8"
+	icon_state = "1-2"
 	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "oTC" = (
-/obj/machinery/vending/cigarette,
-/turf/open/floor/plating{
-	icon_state = "platingdmg3"
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
 	},
-/area/maintenance/department/security/brig)
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "oTF" = (
 /turf/open/floor/circuit/green,
 /area/maintenance/department/security/brig)
@@ -59270,10 +59435,12 @@
 /turf/open/floor/plasteel,
 /area/hallway/secondary/entry)
 "pEL" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	dir = 1
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "lawyerprivacy1";
+	name = "Lawyer's Privacy Shutter"
 	},
-/turf/open/floor/wood,
+/turf/open/floor/plating,
 /area/service/lawoffice)
 "pEM" = (
 /obj/machinery/atmospherics/pipe/manifold/general/visible,
@@ -59583,14 +59750,13 @@
 /turf/open/floor/plasteel/white,
 /area/science/xenobiology)
 "pXT" = (
-/obj/item/kirbyplants,
-/obj/machinery/power/apc{
-	areastring = "/area/service/lawoffice";
-	dir = 8;
-	name = "Law Office APC";
-	pixel_x = -25
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
-/obj/structure/cable,
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "pYh" = (
@@ -60290,14 +60456,13 @@
 /turf/open/floor/plasteel,
 /area/construction/mining/aux_base)
 "qXn" = (
-/obj/machinery/door/firedoor,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/security/glass{
+/obj/effect/landmark/navigate_destination/lawyer,
+/obj/machinery/door/airlock/security{
 	name = "Law Office";
 	req_access_txt = "38"
 	},
-/turf/open/floor/plasteel/dark,
+/obj/machinery/door/firedoor,
+/turf/open/floor/wood,
 /area/service/lawoffice)
 "qXp" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
@@ -60859,6 +61024,9 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
 "rMy" = (
@@ -61027,7 +61195,19 @@
 /turf/open/floor/plating,
 /area/cargo/storage)
 "sbY" = (
-/obj/structure/closet/secure_closet/ntr,
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/machinery/photocopier{
+	pixel_y = 3;
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 27
+	},
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "sci" = (
@@ -61667,6 +61847,10 @@
 /obj/structure/disposalpipe/segment,
 /turf/closed/wall/r_wall,
 /area/science/xenobiology)
+"sYx" = (
+/obj/effect/landmark/start/lawyer,
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "sYQ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -62111,11 +62295,13 @@
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
 "tCN" = (
-/obj/structure/table,
-/obj/item/reagent_containers/food/snacks/donut,
-/obj/item/folder/yellow,
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "representative";
+	name = "Lawyer's Privacy Shutter"
+	},
 /turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/area/service/lawoffice)
 "tCP" = (
 /obj/docking_port/stationary/public_mining_dock,
 /turf/open/floor/plating,
@@ -62695,12 +62881,14 @@
 /turf/open/floor/wood,
 /area/command/blueshieldoffice)
 "uuS" = (
-/obj/structure/chair,
-/obj/structure/disposalpipe/segment{
-	dir = 5
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
-/turf/open/floor/carpet,
-/area/service/lawoffice)
+/turf/open/floor/plating{
+	icon_state = "panelscorched"
+	},
+/area/maintenance/department/security/brig)
 "uvo" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
@@ -62823,10 +63011,12 @@
 /turf/open/floor/plating,
 /area/maintenance/solars/port)
 "uAU" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 9
+	},
 /obj/structure/table/wood,
-/obj/item/folder/blue,
-/obj/item/folder/blue,
-/obj/item/clothing/glasses/sunglasses,
+/obj/item/book/manual/splurt_space_law,
+/obj/item/toy/figure/lawyer,
 /turf/open/floor/carpet,
 /area/service/lawoffice)
 "uAZ" = (
@@ -62987,8 +63177,6 @@
 /area/medical/genetics)
 "uSx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/disposalpipe/segment,
-/obj/effect/landmark/navigate_destination/lawyer,
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "uTZ" = (
@@ -63138,15 +63326,18 @@
 /turf/open/floor/plating,
 /area/maintenance/department/chapel/monastery)
 "vcv" = (
-/obj/structure/cable{
-	icon_state = "1-2"
+/obj/machinery/disposal/bin,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/cable{
-	icon_state = "2-4"
+/obj/machinery/button/door{
+	pixel_y = -22;
+	id = "lawyerprivacy";
+	name = "Lawyer office shutters"
 	},
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "vdd" = (
 /obj/structure/table/reinforced,
 /obj/machinery/button/door{
@@ -63220,7 +63411,7 @@
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
 "vhk" = (
-/obj/structure/chair,
+/obj/effect/landmark/event_spawn,
 /turf/open/floor/carpet,
 /area/service/lawoffice)
 "vik" = (
@@ -64013,9 +64204,8 @@
 	},
 /area/hallway/secondary/entry)
 "wig" = (
-/obj/structure/closet/emcloset,
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/turf/open/floor/plasteel/freezer,
+/area/service/lawoffice)
 "wiB" = (
 /obj/item/shard{
 	icon_state = "small"
@@ -64151,13 +64341,26 @@
 /turf/open/floor/plasteel,
 /area/maintenance/department/crew_quarters/dorms)
 "wrU" = (
-/obj/machinery/photocopier,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = -28
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
 	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
+"wsm" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/security/brig)
 "wta" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -64190,11 +64393,13 @@
 /turf/open/floor/plasteel/dark,
 /area/medical/paramedic)
 "wua" = (
-/obj/structure/table/wood,
-/obj/item/book/manual/splurt_space_law,
-/obj/item/pen/fountain,
-/obj/item/stamp/law,
-/turf/open/floor/carpet,
+/obj/structure/filingcabinet/chestdrawer{
+	pixel_x = 8
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/wood,
 /area/service/lawoffice)
 "wun" = (
 /obj/structure/cable{
@@ -64357,9 +64562,13 @@
 	},
 /area/hallway/secondary/exit/departure_lounge)
 "wFB" = (
-/obj/structure/grille,
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/obj/structure/table,
+/obj/structure/bedsheetbin/towel,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/plasteel/freezer,
+/area/service/lawoffice)
 "wFT" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
@@ -64568,18 +64777,17 @@
 /area/service/hydroponics/garden/monastery)
 "wTD" = (
 /obj/structure/table/wood,
-/obj/item/folder/red,
-/obj/item/folder/red,
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/radio/intercom{
-	name = "Station Intercom (General)";
-	pixel_x = 27
+/obj/item/taperecorder{
+	pixel_x = 3
 	},
-/obj/machinery/camera{
-	c_tag = "Law Office";
-	dir = 8
+/obj/item/storage/briefcase{
+	pixel_x = -3;
+	pixel_y = 3
 	},
-/turf/open/floor/carpet,
+/obj/machinery/status_display/evac{
+	pixel_x = 32
+	},
+/turf/open/floor/wood,
 /area/service/lawoffice)
 "wTH" = (
 /obj/effect/landmark/navigate_destination/hydro,
@@ -64729,6 +64937,15 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/maintenance/solars/port)
+"xdt" = (
+/obj/machinery/door/airlock/silver{
+	name = "Bathroom"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/plasteel/freezer,
+/area/service/lawoffice)
 "xee" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/sign/warning/vacuum/external,
@@ -65095,6 +65312,9 @@
 /obj/structure/sign/warning/vacuum/external{
 	pixel_y = 32
 	},
+/obj/machinery/light{
+	dir = 1
+	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/fore)
 "xBn" = (
@@ -65103,6 +65323,19 @@
 /obj/item/wrench,
 /turf/open/floor/plasteel/dark,
 /area/service/chapel/main/monastery)
+"xBE" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/structure/table/wood,
+/obj/item/phone{
+	desc = "Supposedly a direct line to Nanotrasen Central Command. It's not even plugged in.";
+	pixel_x = -3;
+	pixel_y = 3
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/carpet/royalblack,
+/area/service/lawoffice)
 "xCV" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
@@ -65202,17 +65435,17 @@
 /turf/open/floor/plasteel,
 /area/security/checkpoint/customs)
 "xJy" = (
-/obj/structure/chair/comfy/black,
-/obj/structure/sign/plaques/kiddie{
-	desc = "An embossed piece of paper from the Third University of Harvard.";
-	name = "\improper 'Diploma' frame";
-	pixel_y = 32
+/obj/structure/table/wood,
+/obj/machinery/fax{
+	fax_name = "Lawyer Fax";
+	name = "Lawyer Fax"
 	},
-/obj/machinery/light/small{
-	dir = 1;
-	light_color = "#ffc1c1"
+/obj/machinery/light{
+	dir = 8
 	},
-/obj/effect/landmark/start/lawyer,
+/obj/structure/extinguisher_cabinet{
+	pixel_x = -26
+	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "xKc" = (
@@ -82045,7 +82278,7 @@ aiu
 ait
 ait
 aiu
-aaa
+aiu
 aaa
 aaa
 aaa
@@ -82299,11 +82532,11 @@ aiu
 qGu
 nso
 aiu
-kZk
+kPt
 cFr
-ait
-aaa
-aaa
+azN
+aiu
+aiu
 aaa
 aaa
 aaa
@@ -82554,13 +82787,13 @@ aaa
 aaa
 aiu
 rMb
-vcv
+nKo
 nKo
 mrk
-kPt
-ait
-aaa
-aaa
+uuS
+ujI
+iJi
+aiu
 aaa
 aHA
 aKy
@@ -82810,14 +83043,14 @@ aaa
 aaa
 aaa
 aiu
-wFB
 jsf
-cAT
-aBa
-oTC
-ait
-aaa
-bBW
+aiu
+aiu
+aiu
+aiu
+aiu
+qGu
+aiu
 aaa
 aHA
 aKz
@@ -83067,14 +83300,14 @@ ajM
 fAx
 fAx
 aiu
-tCN
 jsf
+aiu
 wFB
+gPV
+kxj
+aiu
 qGu
 aiu
-aiu
-aaa
-aaa
 aaa
 aHA
 dqG
@@ -83325,13 +83558,13 @@ nwp
 bGG
 nPA
 mtu
-aCc
 aiu
-qGu
+iIb
+kFd
 wig
 aiu
-aht
-aht
+qGu
+aiu
 aht
 aHA
 wqu
@@ -83580,14 +83813,14 @@ rjF
 ajM
 xBh
 bPm
+gSH
+gSH
+gSH
+gSH
+xdt
+gSH
 aiu
-aiu
-aiu
-aiu
-aCg
-aiu
-aiu
-aiu
+qGu
 aiu
 aHz
 xee
@@ -83836,15 +84069,15 @@ puy
 xMk
 tFp
 kKB
-kFd
-aiu
+bPm
+tCN
 aCd
 hHr
-hHr
-aCg
+dgI
+oTC
 ezF
-aod
-aqg
+aiu
+qGu
 aiu
 iab
 aKA
@@ -84094,14 +84327,14 @@ awI
 axL
 bZV
 bPm
-aiu
+tCN
 nyO
 ezJ
-ujI
-dgI
-ujI
-ujI
-iJi
+xBE
+sJr
+ebx
+aiu
+qGu
 aiu
 xaQ
 fmU
@@ -84351,13 +84584,13 @@ xRD
 axL
 bZV
 bPm
-aiu
+tCN
 jRr
-qGu
+kHT
 eOZ
-kQZ
+sJr
 nih
-kxs
+aiu
 qGu
 aiu
 rgs
@@ -84606,14 +84839,14 @@ ajM
 ajM
 rjF
 jHl
-bZV
-bPm
-aiu
-aiu
+mXq
+aCe
+oTp
+kQZ
 kFx
-aiu
-aiu
-aiu
+kxs
+lKR
+icz
 aiu
 gKG
 aiu
@@ -84863,9 +85096,9 @@ eyu
 pmC
 xMk
 axL
-bZV
+aCc
 tMI
-ebD
+tCN
 sbY
 fuP
 pXT
@@ -85121,13 +85354,13 @@ avp
 awI
 axL
 mGa
-pFy
-ebD
-aCe
-gPV
+uMf
+gSH
+gSH
+pEL
 pEL
 elk
-mXq
+gSH
 aiu
 jhk
 aiu
@@ -85377,14 +85610,14 @@ nxf
 avq
 xRD
 axL
-bZV
-uMf
-gSH
+aCc
+pFy
+ebD
 xJy
-sJr
-sJr
-sJr
-sJr
+aod
+sYx
+wrU
+vcv
 aiu
 jhk
 aiu
@@ -85634,16 +85867,16 @@ ajM
 ajM
 rjF
 axL
-bZV
+aCc
 pFy
 ebD
 jjC
 eEp
 vhk
 gAG
-kxj
-aiu
-oTp
+sJr
+ntZ
+jhk
 aiu
 aJF
 aKG
@@ -85896,11 +86129,11 @@ aAc
 qXn
 uSx
 nSo
-uuS
+nSo
 uAU
 oCn
 aiu
-jhk
+wsm
 aiu
 riF
 xhE

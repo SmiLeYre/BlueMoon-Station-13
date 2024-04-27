@@ -7,6 +7,8 @@
 
 /datum/emote/living/carbon/human/cry/run_emote(mob/user, params)
 	. = ..()
+	if(!. || !iscarbon(user))
+		return
 	var/mob/living/carbon/C = user
 	if(. && isrobotic(user))
 		do_fake_sparks(5,FALSE,user)
@@ -220,7 +222,7 @@
 //rock paper scissors emote handling
 /mob/living/carbon/human/proc/beginRockPaperScissors(var/chosen_move)
 	GLOB.rockpaperscissors_players[src] = list(chosen_move, ROCKPAPERSCISSORS_NOT_DECIDED)
-	do_after(src, ROCKPAPERSCISSORS_TIME_LIMIT, src, extra_checks = CALLBACK(src, .proc/rockpaperscissors_tick))
+	do_after(src, ROCKPAPERSCISSORS_TIME_LIMIT, src, extra_checks = CALLBACK(src, PROC_REF(rockpaperscissors_tick)))
 	var/new_entry = GLOB.rockpaperscissors_players[src]
 	if(new_entry[2] == ROCKPAPERSCISSORS_NOT_DECIDED)
 		to_chat(src, "Вы опускаете руку.")

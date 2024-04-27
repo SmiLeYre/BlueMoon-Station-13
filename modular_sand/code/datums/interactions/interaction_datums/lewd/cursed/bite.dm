@@ -7,6 +7,12 @@
 	write_log_user = "bite"
 	write_log_target = "had their body bited by"
 
+	p13user_emote = PLUG13_EMOTE_FACE
+	p13user_strength = PLUG13_STRENGTH_LOW
+	p13user_duration = PLUG13_DURATION_SHORT
+
+	p13target_emote = PLUG13_EMOTE_MASOCHISM
+
 /datum/interaction/lewd/bite/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 

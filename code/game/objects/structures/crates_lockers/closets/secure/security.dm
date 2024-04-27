@@ -38,6 +38,8 @@
 	new /obj/item/clothing/shoes/sneakers/brown(src)
 	new /obj/item/storage/box/ids(src)
 	new /obj/item/storage/box/ids(src)
+	new /obj/item/storage/box/deviants(src) // bluemoon edit
+	new /obj/item/storage/box/deviants(src)
 	new /obj/item/megaphone/command(src)
 	new /obj/item/clothing/suit/armor/vest/alt(src)
 	new /obj/item/assembly/flash/handheld(src)
@@ -111,6 +113,7 @@
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	new /obj/item/holosign_creator/security(src)
 	new /obj/item/clothing/mask/gas/sechailer(src)
+	new /obj/item/storage/box/body_camera(src)
 	new /obj/item/storage/box/zipties(src)
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/storage/belt/security/full(src)
@@ -229,7 +232,7 @@
 	icon_state = "armory"
 /obj/structure/closet/secure_closet/armory1/PopulateContents()
 	..()
-	new /obj/item/clothing/suit/armor/laserproof(src)
+	new /obj/item/clothing/suit/hooded/ablative(src)
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/suit/armor/riot(src)
 	for(var/i in 1 to 3)

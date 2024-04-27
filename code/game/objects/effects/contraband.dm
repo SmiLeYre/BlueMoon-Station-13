@@ -65,24 +65,24 @@
 	. = ..()
 	if(random_basetype)
 		randomise(random_basetype)
-	for(var/R in subtypesof(/obj/structure/sign/poster/contraband/inteq))
-		if(istype(R, random_basetype)) // интек пропаганда сама не заспавниться
-			return
+
+
 
 	if(!ruined)
 		original_name = name // can't use initial because of random posters
 		name = "poster - [name]"
 		desc = "A large piece of space-resistant printed paper. [desc]"
 
-	addtimer(CALLBACK(src, /datum.proc/_AddElement, list(/datum/element/beauty, 300)), 0)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum, _AddElement), list(/datum/element/beauty, 300)), 0)
 
 /obj/structure/sign/poster/proc/randomise(base_type)
 	var/list/poster_types = subtypesof(base_type)
 	var/list/approved_types = list()
 	for(var/t in poster_types)
-		var/obj/structure/sign/poster/T = t
-		if(initial(T.icon_state) && !initial(T.never_random))
-			approved_types |= T
+		if(!istype(t,/obj/structure/sign/poster/contraband/inteq))// интек пропаганда сама не заспавнитьсяz
+			var/obj/structure/sign/poster/T = t
+			if(initial(T.icon_state) && !initial(T.never_random))
+				approved_types |= T
 
 	var/obj/structure/sign/poster/selected = pick(approved_types)
 

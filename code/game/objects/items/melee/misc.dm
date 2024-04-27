@@ -47,6 +47,13 @@
 	if(message)
 		user.visible_message(span_lewd("<b>[user]</b> [message]"))
 		target.handle_post_sex(lust_amt, null, user)
+
+		switch (hole)
+			if (CUM_TARGET_VAGINA)
+				user.client?.plug13.send_emote(PLUG13_EMOTE_VAGINA, min(lust_amt*3, 100), PLUG13_DURATION_NORMAL)
+			if (CUM_TARGET_ANUS)
+				user.client?.plug13.send_emote(PLUG13_EMOTE_ANUS, min(lust_amt*3, 100), PLUG13_DURATION_NORMAL)
+
 		playsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
 							'modular_sand/sound/interactions/bang5.ogg',
 							'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
@@ -211,8 +218,8 @@
 		var/speedbase = abs((4 SECONDS) / limbs_to_dismember.len)
 		for(bodypart in limbs_to_dismember)
 			i++
-			addtimer(CALLBACK(src, .proc/suicide_dismember, user, bodypart), speedbase * i)
-	addtimer(CALLBACK(src, .proc/manual_suicide, user), (5 SECONDS) * i)
+			addtimer(CALLBACK(src, PROC_REF(suicide_dismember), user, bodypart), speedbase * i)
+	addtimer(CALLBACK(src, PROC_REF(manual_suicide), user), (5 SECONDS) * i)
 	return MANUAL_SUICIDE
 
 /obj/item/melee/sabre/proc/suicide_dismember(mob/living/user, obj/item/bodypart/affecting)

@@ -1,4 +1,5 @@
 /datum/proc/key_down(key, client/user, full_key) // Called when a key is pressed down initially
+	SHOULD_CALL_PARENT(TRUE)
 	SEND_SIGNAL(src, COMSIG_MOB_KEYDOWN, key, user, full_key)
 	SHOULD_NOT_SLEEP(TRUE)
 
@@ -59,7 +60,7 @@
 		full_macro_assert(prefs_override)
 
 /client/proc/full_macro_assert(datum/preferences/prefs_override = prefs)
-	INVOKE_ASYNC(src, .proc/do_full_macro_assert, prefs_override)		// winget sleeps.
+	INVOKE_ASYNC(src, PROC_REF(do_full_macro_assert), prefs_override)		// winget sleeps.
 
 // TODO: OVERHAUL ALL OF THIS AGAIN. While this works this is flatout horrid with the "use list but also don't use lists" crap. I hate my life.
 /client/proc/do_full_macro_assert(datum/preferences/prefs_override = prefs)

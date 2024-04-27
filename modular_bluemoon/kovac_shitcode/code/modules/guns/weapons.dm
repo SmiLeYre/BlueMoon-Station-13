@@ -216,8 +216,8 @@
 
 /obj/item/inteq_sledgehammer/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/inteq_sledgehammer/ComponentInitialize()
 	. = ..()
@@ -284,7 +284,7 @@
 		return
 	..()
 	if((wielded) && prob(50))
-		INVOKE_ASYNC(src, .proc/slash, user)
+		INVOKE_ASYNC(src, PROC_REF(slash), user)
 
 /obj/item/inteq_sledgehammer/proc/slash(mob/living/user, mob/living/target)
 		user.do_attack_animation(target, ATTACK_EFFECT_KICK)

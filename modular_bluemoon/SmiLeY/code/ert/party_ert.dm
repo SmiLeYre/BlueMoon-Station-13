@@ -43,6 +43,7 @@
 	suit_store = null
 	back = /obj/item/storage/backpack/captain
 	backpack_contents = list(
+		/obj/item/storage/box/survival/centcom=1,
 		/obj/item/mop/advanced = 1,
 		/obj/item/reagent_containers/glass/bucket = 1,
 		/obj/item/storage/box/lights/mixed = 1,
@@ -59,9 +60,9 @@
 
 	uniform = /obj/item/clothing/under/rank/security/officer/util
 	suit = /obj/item/clothing/suit/armor/vest
-	suit_store = null
 	back = /obj/item/storage/backpack/captain
 	backpack_contents = list(
+		/obj/item/storage/box/survival/centcom=1,
 		/obj/item/clothing/head/helmet/police = 1,
 		/obj/item/storage/box/handcuffs = 1,
 	)
@@ -77,6 +78,7 @@
 	suit_store = null
 	back = /obj/item/storage/backpack/captain
 	backpack_contents = list(
+		/obj/item/storage/box/survival/centcom=1,
 		/obj/item/construction/rcd/loaded = 1,
 		/obj/item/stack/light_w = 30,
 		/obj/item/stack/sheet/glass/fifty = 1,
@@ -95,6 +97,7 @@
 	suit_store = null
 	back = /obj/item/storage/backpack/captain
 	backpack_contents = list(
+		/obj/item/storage/box/survival/centcom=1,
 		/obj/item/instrument/piano_synth = 1,
 		/obj/item/shield/energy/bananium = 1,
 	)
@@ -109,6 +112,7 @@
 	suit_store = null
 	back = /obj/item/storage/backpack/captain
 	backpack_contents = list(
+		/obj/item/storage/box/survival/centcom=1,
 		/obj/item/reagent_containers/food/snacks/store/cake/birthday = 1,
 		/obj/item/storage/box/fireworks = 3,
 	)

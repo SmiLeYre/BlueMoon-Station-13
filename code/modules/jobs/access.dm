@@ -396,6 +396,16 @@
 		return "sol"
 	if (istype(src, /obj/item/card/id/sol_citizen))
 		return "sol"
+	if (istype(src, /obj/item/card/id/heresy))
+		return "heresy"
+	if (istype(src, /obj/item/card/id/lust))
+		return "lust"
+	if (istype(src, /obj/item/card/id/agony))
+		return "agony"
+	if (istype(src, /obj/item/card/id/muck))
+		return "muck"
+	if (istype(src, /obj/item/card/id/blumenland_citizen))
+		return "bmland"
 	if (istype(src, /obj/item/card/id/death))
 		return "deathcommando"
 	var/obj/item/card/id/I = GetID()

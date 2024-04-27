@@ -3,6 +3,7 @@
 	interaction_sound = null
 	required_from_user = INTERACTION_REQUIRE_HANDS
 	required_from_target_exposed = INTERACTION_REQUIRE_PENIS
+	p13target_emote = PLUG13_EMOTE_PENIS
 
 	additional_details = list(
 		list(

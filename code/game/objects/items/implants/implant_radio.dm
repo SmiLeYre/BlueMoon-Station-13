@@ -41,6 +41,11 @@
 /obj/item/implant/radio/mining
 	radio_key = /obj/item/encryptionkey/headset_cargo
 
+/obj/item/implant/radio/centcom
+	desc = "Are you there God? It's me, NanoTrasen SecOps Officer."
+	radio_key = /obj/item/encryptionkey/headset_cent
+	subspace_transmission = TRUE
+
 /obj/item/implant/radio/syndicate
 	desc = "Are you there God? It's me, Syndicate Comms Agent."
 	radio_key = /obj/item/encryptionkey/syndicate
@@ -72,3 +77,7 @@
 /obj/item/implanter/radio/syndicate
 	name = "implanter (internal illegal radio)"
 	imp_type = /obj/item/implant/radio/inteq_subspace
+
+/obj/item/implanter/radio/centcom
+	name = "implanter (centcom NT radio)"
+	imp_type = /obj/item/implant/radio/centcom

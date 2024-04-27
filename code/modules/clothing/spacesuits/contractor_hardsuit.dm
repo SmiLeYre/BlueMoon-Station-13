@@ -59,7 +59,6 @@
 	desc = "A module installed in the wrist of your hardsuit, this highly illegal module uses a hardlight hook to forcefully pull a target towards you at high speed, knocking them down and partially exhausting them."
 	charge_type = ADV_ACTION_TYPE_TOGGLE_RECHARGE
 	charge_max = 6 SECONDS
-	use_target_appearance = FALSE
 	icon_icon = 'icons/mob/actions/actions.dmi'
 	button_icon_state = "hook"
 	button_icon = 'icons/mob/actions/actions.dmi'
@@ -89,10 +88,10 @@
 /datum/action/item_action/advanced/hook_upgrade/toggle_button_on_off()
 	if(action_ready)
 		background_icon_state = icon_state_active
-		UpdateButtonIcon()
+		UpdateButton()
 	else
 		background_icon_state = icon_state_disabled
-		UpdateButtonIcon()
+		UpdateButton()
 
 /obj/item/gun/magic/contractor_hook
 	name = "SCORPION hook"
@@ -188,7 +187,6 @@
 	name = "Advanced hardsuit chameleon module"
 	desc = "An advanced version of chameleon tech, allowing you to disguise your hardsuit, giving you the opportunity to walk in full view of security and personnel without any difficulties."
 	charge_type = ADV_ACTION_TYPE_TOGGLE
-	use_target_appearance = FALSE
 	icon_icon = 'icons/mob/actions/actions.dmi'
 	button_icon_state = "chameleon"
 	button_icon = 'icons/mob/actions/actions.dmi'

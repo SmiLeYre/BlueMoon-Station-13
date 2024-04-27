@@ -68708,7 +68708,7 @@
 /obj/structure/rack,
 /obj/item/gun/energy/ionrifle,
 /obj/item/gun/energy/temperature/security,
-/obj/item/clothing/suit/armor/laserproof,
+/obj/item/clothing/suit/hooded/ablative,
 /obj/item/gun/energy/e_gun/dragnet,
 /obj/item/gun/energy/e_gun/dragnet,
 /obj/effect/turf_decal/tile/neutral{
@@ -72050,7 +72050,7 @@
 	},
 /obj/item/stack/wrapping_paper,
 /obj/item/stack/wrapping_paper,
-/obj/item/destTagger{
+/obj/item/dest_tagger{
 	pixel_x = 4;
 	pixel_y = 3
 	},
@@ -88396,7 +88396,7 @@
 /area/medical/treatment_center)
 "wuz" = (
 /obj/structure/table,
-/obj/item/destTagger{
+/obj/item/dest_tagger{
 	pixel_x = 4;
 	pixel_y = 3
 	},

@@ -8,6 +8,7 @@
 
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	uniform = /obj/item/clothing/under/syndicate/combat/ert
+	accessory = /obj/item/clothing/accessory/bodycamera
 	shoes = /obj/item/clothing/shoes/combat/swat/knife
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	ears = /obj/item/radio/headset/headset_cent/alt
@@ -18,7 +19,12 @@
 
 	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
-	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
+	implants = list(
+		/obj/item/implant/mindshield,
+		/obj/item/implant/deathrattle/centcom,
+		/obj/item/implant/weapons_auth,
+		/obj/item/implant/radio/centcom,
+		)
 	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
 
 
@@ -51,6 +57,7 @@
 	l_hand = null
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/storage/firstaid/regular=1,\
 		)
 	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
@@ -66,6 +73,7 @@
 	l_hand = /obj/item/gun/ballistic/automatic/wt550
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/storage/box/ammo/wt=1,)
 
@@ -104,6 +112,7 @@
 	l_hand = /obj/item/gun/ballistic/automatic/proto/unrestricted
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/storage/box/ammo/smgap = 1,)
 
@@ -123,6 +132,7 @@
 	suit_store = /obj/item/gun/energy/pulse/pistol/loyalpin
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/storage/box/ammo/m556=1,\
 		/obj/item/storage/firstaid/regular=1,\
 		)
@@ -477,7 +487,6 @@
 	belt = /obj/item/storage/belt/janitor/ert_maid
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
 		/obj/item/storage/firstaid/regular=1,\
-
 		/obj/item/bodybag/bluespace=1,
 		/obj/item/mop/advanced=1)
 
@@ -527,10 +536,12 @@
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal
 	belt = /obj/item/storage/belt/military/ert_max
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/storage/box/ammo/holy=1,
 		/obj/item/storage/box/ammo/smgap=1,
 		/obj/item/nullrod=1,
+		/obj/item/storage/book/bible = 1,
 		)
 
 	cybernetic_implants = list(
@@ -553,10 +564,12 @@
 	belt = /obj/item/storage/belt/military/ert_max
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
 		/obj/item/storage/firstaid/regular=1,
+		/obj/item/gun/energy/e_gun/dragnet=1,
 		/obj/item/storage/box/ammo/smgap=1,
 		/obj/item/storage/box/ammo/holy=1,
 		/obj/item/storage/box/handcuffs=1,
 		/obj/item/nullrod=1,
+		/obj/item/storage/book/bible = 1,
 		)
 
 	cybernetic_implants = list(
@@ -585,12 +598,13 @@
 		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,
 		/obj/item/nullrod=1,
+		/obj/item/storage/book/bible = 1,
 		)
 
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,
 		/obj/item/organ/cyberimp/chest/nutrimentextreme,
-		/obj/item/organ/cyberimp/chest/chem_implant,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
 		/obj/item/organ/cyberimp/arm/surgery/advanced,
 		/obj/item/organ/cyberimp/chest/thrusters,
 	)
@@ -610,6 +624,7 @@
 	id = /obj/item/card/id/ert
 
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/pda/heads=1,
 		/obj/item/stamp/chameleon=1,
 		)
@@ -617,6 +632,7 @@
 		/obj/item/implant/mindshield,
 		/obj/item/implant/deathrattle/centcom,
 	 	/obj/item/implant/weapons_auth,
+		/obj/item/implant/radio/centcom,
 	 	/obj/item/implant/krav_maga,
 	)
 
@@ -633,8 +649,8 @@
 		return
 
 	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_CENTCOM)
-	R.freqlock = TRUE
+	R.keyslot = new /obj/item/encryptionkey/heads/captain
+	R.recalculateChannels()
 
 	var/obj/item/card/id/W = H.wear_id
 	W.icon_state = "centcom"

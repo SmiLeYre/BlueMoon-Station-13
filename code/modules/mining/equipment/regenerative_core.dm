@@ -31,7 +31,7 @@
 
 /obj/item/organ/regenerative_core/Initialize(mapload)
 	. = ..()
-	addtimer(CALLBACK(src, .proc/inert_check), 2400)
+	addtimer(CALLBACK(src, PROC_REF(inert_check)), 2400)
 
 /obj/item/organ/regenerative_core/proc/inert_check()
 	if(!preserved)
@@ -94,10 +94,11 @@
 	qdel(src)
 	user.log_message("[user] used [src] to heal [H == user ? "[H.p_them()]self" : H]! Wake the fuck up, Samurai!", LOG_ATTACK, color="green") //Logging for 'old' style legion core use, when clicking on a sprite of yourself or another.
 
+
+*/
 /obj/item/organ/regenerative_core/attack_self(mob/user) //Knouli's first hack! Allows for the use of the core in hand rather than needing to click on the target, yourself, to selfheal. Its a rip of the proc just above - but skips on distance check and only uses 'user' rather than 'target'
 	. = ..()
 	apply_healing_core(user, user)
-*/
 
 /obj/item/organ/regenerative_core/Insert(mob/living/carbon/M, special = 0, drop_if_replaced = TRUE)
 	. = ..()

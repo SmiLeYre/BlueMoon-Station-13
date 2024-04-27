@@ -38,12 +38,18 @@
 		/obj/item/toy/figure/captain
 	)
 
+	mail_goodies = list(
+		/obj/item/clothing/mask/cigarette/cigar/havana = 20,
+		/obj/item/storage/fancy/cigarettes/cigars/havana = 15,
+		/obj/item/reagent_containers/food/drinks/bottle/champagne = 10
+	)
+
 /datum/job/captain/get_access()
 	return get_all_accesses()
 
 /datum/job/captain/announce(mob/living/carbon/human/H)
 	..()
-	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Капитан [H.nameless ? "" : "[H.real_name] "] прибывает на станцию [station_name()]!"))
+	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(minor_announce), "Капитан [H.nameless ? "" : "[H.real_name] "] прибывает на [station_name()]!"))
 
 /datum/outfit/job/captain
 	name = "Captain"
@@ -59,7 +65,7 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat
 
-	backpack_contents = list( /obj/item/station_charter=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/stamp/command=1)
+	backpack_contents = list( /obj/item/station_charter=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/stamp/command=1, /obj/item/clothing/accessory/permit/special/captain=1)
 	box = /obj/item/storage/box/survival/command
 
 	backpack = /obj/item/storage/backpack/captain
@@ -91,7 +97,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	box = /obj/item/storage/box/survival/syndie
 	pda_slot = ITEM_SLOT_BELT
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/station_charter=1, /obj/item/syndicate_uplink_high=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/station_charter=1, /obj/item/syndicate_uplink_high=1, /obj/item/clothing/accessory/permit/special/captain=1)
 
 /datum/outfit/job/captain/hardsuit
 	name = "Captain (Hardsuit)"

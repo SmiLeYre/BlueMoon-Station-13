@@ -27,8 +27,8 @@
 	. = ..()
 	if(quirk_holder)
 		human_owner = quirk_holder
-	RegisterSignal(quirk_holder, COMSIG_COMPONENT_CLEAN_ACT, .proc/cleaning) // реакция, когда персонаж встаёт под душ
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/examine) // реакция, когда персонажа осматривают
+	RegisterSignal(quirk_holder, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(cleaning)) // реакция, когда персонаж встаёт под душ
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(examine)) // реакция, когда персонажа осматривают
 	var/mob/living/carbon/human/H = quirk_holder
 	if(!H)
 		return

@@ -112,7 +112,7 @@
 	obj_flags |= EMAGGED
 	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
 	to_chat(user, "<span class='notice'>Вы взломали дисплей. Осуществляется взлом систем...</span>")
-	addtimer(CALLBACK(src, .proc/syndie_bar_good), 10 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(syndie_bar_good)), 10 SECONDS)
 	return TRUE
 
 /obj/structure/sign/barsign/proc/syndie_bar_good()

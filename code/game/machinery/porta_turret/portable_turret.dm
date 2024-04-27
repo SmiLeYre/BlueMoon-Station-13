@@ -127,7 +127,7 @@ DEFINE_BITFIELD(turret_flags, list(
 		base.layer = NOT_HIGH_OBJ_LAYER
 		underlays += base
 	if(!has_cover)
-		INVOKE_ASYNC(src, .proc/popUp)
+		INVOKE_ASYNC(src, PROC_REF(popUp))
 
 /obj/machinery/porta_turret/proc/toggle_on(var/set_to)
 	var/current = on
@@ -359,7 +359,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	toggle_on(FALSE) //turns off the turret temporarily
 	update_icon()
 	//6 seconds for the traitor to gtfo of the area before the turret decides to ruin his shit
-	addtimer(CALLBACK(src, .proc/toggle_on, TRUE), 6 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(toggle_on), TRUE), 6 SECONDS)
 	//turns it back on. The cover popUp() popDown() are automatically called in process(), no need to define it here
 
 /obj/machinery/porta_turret/emp_act(severity)
@@ -379,7 +379,7 @@ DEFINE_BITFIELD(turret_flags, list(
 		toggle_on(FALSE)
 		remove_control()
 
-		addtimer(CALLBACK(src, .proc/toggle_on, TRUE), rand(60,600))
+		addtimer(CALLBACK(src, PROC_REF(toggle_on), TRUE), rand(60,600))
 
 /obj/machinery/porta_turret/take_damage(damage, damage_type = BRUTE, damage_flag = 0, sound_effect = 1)
 	. = ..()
@@ -388,7 +388,7 @@ DEFINE_BITFIELD(turret_flags, list(
 			spark_system.start()
 		if(on && !(turret_flags & TURRET_FLAG_SHOOT_ALL_REACT) && !(obj_flags & EMAGGED))
 			turret_flags |= TURRET_FLAG_SHOOT_ALL_REACT
-			addtimer(CALLBACK(src, .proc/reset_attacked), 60)
+			addtimer(CALLBACK(src, PROC_REF(reset_attacked)), 60)
 
 /obj/machinery/porta_turret/proc/reset_attacked()
 	turret_flags &= ~TURRET_FLAG_SHOOT_ALL_REACT
@@ -514,7 +514,7 @@ DEFINE_BITFIELD(turret_flags, list(
 		var/atom/movable/M = pick(targets)
 		targets -= M
 		if(target(M))
-			return 1
+			return TRUE
 
 /obj/machinery/porta_turret/proc/popUp()	//pops the turret up
 	set waitfor = FALSE
@@ -567,8 +567,8 @@ DEFINE_BITFIELD(turret_flags, list(
 	if(turret_flags & TURRET_FLAG_AUTH_WEAPONS)	//check for weapon authorization
 		if((isnull(perp.wear_id) || istype(perp.wear_id?.GetID(), /obj/item/card/id/syndicate)) && (isnull(perp.wear_neck) || istype(perp.wear_neck?.GetID(), /obj/item/card/id/syndicate)))
 
-			if(allowed(perp)) //if the perp has security access, return 0
-				return 0
+			if(allowed(perp)) //if the perp has security access, return FALSE
+				return FALSE
 			if(perp.is_holding_item_of_type(/obj/item/gun) ||  perp.is_holding_item_of_type(/obj/item/melee/baton))
 				threatcount += 4
 
@@ -586,7 +586,7 @@ DEFINE_BITFIELD(turret_flags, list(
 
 	// If we aren't shooting heads then return a threatcount of 0
 	if (!(turret_flags & TURRET_FLAG_SHOOT_HEADS) && (GetJobName(perp.get_assignment()) in GLOB.command_positions))
-		return 0
+		return FALSE
 
 	return threatcount
 
@@ -600,8 +600,8 @@ DEFINE_BITFIELD(turret_flags, list(
 	if(target)
 		popUp()				//pop the turret up if it's not already up.
 		setDir(get_dir(base, target))//even if you can't shoot, follow the target
-		INVOKE_ASYNC(src, .proc/shootAt, target)
-		return 1
+		INVOKE_ASYNC(src, PROC_REF(shootAt), target)
+		return TRUE
 	return
 
 /obj/machinery/porta_turret/proc/shootAt(atom/movable/target, stagger_enabled = FALSE)
@@ -837,9 +837,9 @@ DEFINE_BITFIELD(turret_flags, list(
 	if(target)
 		setDir(get_dir(base, target))//even if you can't shoot, follow the target
 		shootAt(target)
-		addtimer(CALLBACK(src, .proc/shootAt, target), 5)
-		addtimer(CALLBACK(src, .proc/shootAt, target), 10)
-		addtimer(CALLBACK(src, .proc/shootAt, target), 15)
+		addtimer(CALLBACK(src, PROC_REF(shootAt), target), 5)
+		addtimer(CALLBACK(src, PROC_REF(shootAt), target), 10)
+		addtimer(CALLBACK(src, PROC_REF(shootAt), target), 15)
 		return TRUE
 
 /obj/machinery/porta_turret/ai
@@ -861,7 +861,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	faction = list("neutral","silicon","turret") //Minebots, medibots, etc that should not be shot.
 
 /obj/machinery/porta_turret/aux_base/assess_perp(mob/living/carbon/human/perp)
-	return 0 //Never shoot humanoids. You are on your own if Ashwalkers or the like attack!
+	return FALSE //Never shoot humanoids. You are on your own if Ashwalkers or the like attack!
 
 /obj/machinery/porta_turret/aux_base/setup()
 	return
@@ -895,7 +895,7 @@ DEFINE_BITFIELD(turret_flags, list(
 	AddElement(/datum/element/empprotection, EMP_PROTECT_SELF | EMP_PROTECT_WIRES)
 
 /obj/machinery/porta_turret/centcom_shuttle/assess_perp(mob/living/carbon/human/perp)
-	return 0
+	return FALSE
 
 /obj/machinery/porta_turret/centcom_shuttle/setup()
 	return
@@ -1216,8 +1216,8 @@ DEFINE_BITFIELD(turret_flags, list(
 		if(team_color == "blue")
 			if(istype(P, /obj/item/projectile/beam/lasertag/redtag))
 				toggle_on(FALSE)
-				addtimer(CALLBACK(src, .proc/toggle_on, TRUE), 10 SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(toggle_on), TRUE), 10 SECONDS)
 		else if(team_color == "red")
 			if(istype(P, /obj/item/projectile/beam/lasertag/bluetag))
 				toggle_on(FALSE)
-				addtimer(CALLBACK(src, .proc/toggle_on, TRUE), 10 SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(toggle_on), TRUE), 10 SECONDS)

@@ -41,6 +41,16 @@
 	var/regen_cooldown = 0 //Used for how long it takes before a healing will take place default in 60 seconds
 	var/regen_amount = 0 //How much is healed pre regen cooldown
 
+	/// Ability which lets carp teleport around
+	var/datum/action/innate/lesser_carp_rift/teleport
+
+/mob/living/simple_animal/hostile/carp/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_HEALS_FROM_CARP_RIFTS, INNATE_TRAIT)
+	teleport = new(src)
+	teleport.Grant(src)
+	AddSpell(new /obj/effect/proc_holder/spell/targeted/night_vision(src))
+
 /mob/living/simple_animal/hostile/carp/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
 	if(regen_amount)

@@ -50,7 +50,7 @@
 		return
 
 	ADD_TRAIT(user, TRAIT_TONGUELESS_SPEECH, CLOTHING_TRAIT)
-	RegisterSignal(src, COMSIG_MOB_ITEM_DROPPING, .proc/unequipping)
+	RegisterSignal(src, COMSIG_MOB_ITEM_DROPPING, PROC_REF(unequipping))
 
 /obj/item/toy/fluff/tennis_poly/proc/unequipping()
 	SIGNAL_HANDLER
@@ -101,7 +101,7 @@
 	poly_colors = list("#8FED56", "#51cfde", "#FFFFFF")
 
 /obj/item/toy/fluff/tennis_poly/tri/squeak/rainbow
-	name = "pseudo-euclidean interdimensional tennis sphere"
+	name = "Pseudo-Euclidean Interdimensional Tennis Sphere"
 	desc = "A tennis ball from another plane of existance. Really groovy."
 	icon_state = "tennis_rainbow"
 	item_state = "tennis_rainbow"
@@ -118,7 +118,7 @@
 		return
 
 	do_squeak(user)
-	RegisterSignal(user, COMSIG_MOB_SAY, .proc/do_squeak)
+	RegisterSignal(user, COMSIG_MOB_SAY, PROC_REF(do_squeak))
 
 /obj/item/toy/fluff/tennis_poly/tri/squeak/proc/do_squeak(mob/user)
 	var/datum/component/squeak/squeaker = GetComponent(/datum/component/squeak)

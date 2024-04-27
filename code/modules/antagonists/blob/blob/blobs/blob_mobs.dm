@@ -54,7 +54,7 @@
 
 /mob/living/simple_animal/hostile/blob/Process_Spacemove(movement_dir = 0)
 	for(var/obj/structure/blob/B in range(1, src))
-		return 1
+		return TRUE
 	return ..()
 
 /mob/living/simple_animal/hostile/blob/proc/blob_chat(msg)
@@ -287,8 +287,8 @@
 /mob/living/simple_animal/hostile/blob/blobbernaut/update_icons()
 	..()
 	if(overmind) //if we have an overmind, we're doing chemical reactions instead of pure damage
-		melee_damage_lower = 4
-		melee_damage_upper = 4
+		melee_damage_lower = initial(melee_damage_lower) * 0.5
+		melee_damage_upper = initial(melee_damage_lower) * 0.5
 		attack_verb_continuous = overmind.blobstrain.blobbernaut_message
 	else
 		melee_damage_lower = initial(melee_damage_lower)

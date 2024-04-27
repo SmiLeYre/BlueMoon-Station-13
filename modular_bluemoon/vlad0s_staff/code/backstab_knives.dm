@@ -105,7 +105,7 @@
 		icon_state = cooldown_icon_state
 	is_on_cooldown = TRUE
 	// Возвращаем в исходное положение по окончанию кулдауна с учётом мультипликатора
-	addtimer(CALLBACK(src, .proc/end_stab_cooldown), cooldown_time * cooldown_multiplier)
+	addtimer(CALLBACK(src, PROC_REF(end_stab_cooldown)), cooldown_time * cooldown_multiplier)
 
 // Окончание кулдауна
 /obj/item/kitchen/knife/backstabber/proc/end_stab_cooldown()
@@ -364,7 +364,7 @@ proc/victim_fade_in(mob/target, required_alpha, fade_time)
 
 /obj/structure/statue/custom/icicle_knife_statue/Initialize(mapload)
 	. = ..()
-	addtimer(CALLBACK(src, .proc/eject_victim), 1 MINUTES) // Плавится через одну минуту
+	addtimer(CALLBACK(src, PROC_REF(eject_victim)), 1 MINUTES) // Плавится через одну минуту
 
 /obj/structure/statue/custom/icicle_knife_statue/proc/eject_victim(delete_statue = TRUE)
 	if(victim && !QDELETED(victim))

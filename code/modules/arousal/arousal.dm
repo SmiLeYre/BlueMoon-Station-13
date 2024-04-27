@@ -85,6 +85,9 @@
 		condomning = locate(/obj/item/genital_equipment/condom) in P.contents
 	sender.generate_fluid(R)
 	log_message("Кончает [sender] благодаря [target]", LOG_EMOTE)
+
+	client?.plug13.send_emote(PLUG13_EMOTE_GROIN, PLUG13_STRENGTH_MAX, PLUG13_DURATION_ORGASM)
+
 	if(condomning)
 		to_chat(src, "<span class='userlove'>Ты чувствуешь, как презерватив наполняется изнутри твоей спермой!</span>")
 		R.trans_to(condomning, R.total_volume)

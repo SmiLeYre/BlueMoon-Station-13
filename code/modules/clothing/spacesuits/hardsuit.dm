@@ -51,7 +51,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/item_action_slot_check(slot, mob/user, datum/action/A)
 	if(slot == ITEM_SLOT_HEAD)
-		return 1
+		return TRUE
 
 /obj/item/clothing/head/helmet/space/hardsuit/equipped(mob/user, slot)
 	..()
@@ -163,7 +163,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/item_action_slot_check(slot, mob/user, datum/action/A)
 	if(slot == ITEM_SLOT_OCLOTHING) //we only give the mob the ability to toggle the helmet if he's wearing the hardsuit.
-		return 1
+		return TRUE
 
 	//Engineering
 /obj/item/clothing/head/helmet/space/hardsuit/engine
@@ -248,7 +248,7 @@
 /obj/item/clothing/head/helmet/space/hardsuit/mining/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
-	RegisterSignal(src, COMSIG_ARMOR_PLATED, .proc/upgrade_icon)
+	RegisterSignal(src, COMSIG_ARMOR_PLATED, PROC_REF(upgrade_icon))
 
 /obj/item/clothing/head/helmet/space/hardsuit/mining/proc/upgrade_icon(datum/source, amount, maxamount)
 	SIGNAL_HANDLER
@@ -283,7 +283,7 @@
 /obj/item/clothing/suit/space/hardsuit/mining/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
-	RegisterSignal(src, COMSIG_ARMOR_PLATED, .proc/upgrade_icon)
+	RegisterSignal(src, COMSIG_ARMOR_PLATED, PROC_REF(upgrade_icon))
 
 /obj/item/clothing/suit/space/hardsuit/mining/proc/upgrade_icon(datum/source, amount, maxamount)
 	SIGNAL_HANDLER
@@ -360,7 +360,7 @@
 		C.head_update(src, forced = 1)
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/proc/toggle_hardsuit_mode(mob/user) //Helmet Toggles Suit Mode
 	if(linkedsuit)
@@ -614,6 +614,29 @@
 	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 100, BIO = 100, RAD = 60, FIRE = 60, ACID = 80, WOUND = 15)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/rd
 
+	//Blue Shield hardsuit
+/obj/item/clothing/head/helmet/space/hardsuit/blue_shield
+	name = "Blue Shield hardsuit helmet"
+	desc = "A special helmet designed for light combat suit."
+	icon_state = "hardsuit0-blueshield"
+	item_state = "hardsuit0-blueshield"
+	hardsuit_type = "blueshield"
+	armor = list(MELEE = 20, BULLET = 20, LASER = 30, ENERGY = 30, BOMB = 20, BIO = 100, RAD = 40, FIRE = 60, ACID = 60, WOUND = 30)
+
+/obj/item/clothing/suit/space/hardsuit/blue_shield
+	name = "Blue Shield hardsuit"
+	desc = "A special suit that protects against hazardous, low pressure environments. Made from light matrials with layer of armor"
+	icon_state = "hardsuit-blueshield"
+	item_state = "hardsuit-blueshield"
+	hardsuit_type = "blueshield"
+	tail_state = "hos"
+	slowdown = 0
+	w_class = WEIGHT_CLASS_NORMAL
+	jetpack = /obj/item/tank/jetpack/suit
+	armor = list(MELEE = 30, BULLET = 30, LASER = 40, ENERGY = 40, BOMB = 20, BIO = 100, RAD = 40, FIRE = 60, ACID = 60, WOUND = 30)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/blue_shield
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
+
 	//Security hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/security
 	name = "security hardsuit helmet"
@@ -851,7 +874,7 @@
 		return
 	if(listeningTo)
 		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/on_mob_move)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
 	listeningTo = user
 
 /obj/item/clothing/suit/space/hardsuit/ancient/dropped(mob/user)
@@ -1061,7 +1084,7 @@
 		set_light(0)
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 
 /obj/item/clothing/head/helmet/space/hardsuit/lavaknight/update_overlays()
 	. = ..()

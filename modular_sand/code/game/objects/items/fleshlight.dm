@@ -63,6 +63,7 @@
 	if(message)
 		user.visible_message(span_lewd("<b>[user]</b> [message]."))
 		M.handle_post_sex(lust_amt, null, user, ORGAN_SLOT_PENIS) //SPLURT edit
+		user.client?.plug13.send_emote(PLUG13_EMOTE_GROIN, min(lust_amt * 3, 100), PLUG13_DURATION_NORMAL)
 		playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
 							'modular_sand/sound/interactions/bang5.ogg',
 							'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
@@ -508,7 +509,8 @@
 						switch(target)
 							if(CUM_TARGET_PENIS)
 								to_chat(M, "<span class='userlove'>Из уретры вырывается семя прямо на ваш член!</span>")
-			portal_target.do_jitter_animation() //make your partner shake too!
+			if(portal_target.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+				portal_target.do_jitter_animation() //make your partner shake too!
 		else
 			user.visible_message("<span class='warning'><b>'[src]'</b> подает звуковой сигнал и не позволяет <b>[M]</b> войти.</span>")
 	else if(user.a_intent == INTENT_HARM)
@@ -670,7 +672,7 @@
 		var/obj/item/portallight/P = I
 		if(!(P in portallight))
 			if(!portallight.len)
-				RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/drop_out)
+				RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(drop_out))
 			portallight += P //pair the fleshlight
 			P.available_panties += src
 			P.portalunderwear = src
@@ -729,7 +731,7 @@
 				to_chat(user, "<span class='notice'>Трусики не связаны с Портальным Фонариком.</span>")
 			else
 				update_portal()
-				RegisterSignal(user, COMSIG_PARENT_QDELETING, .proc/drop_out)
+				RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(drop_out))
 		else
 			update_portal()
 			UnregisterSignal(user, COMSIG_PARENT_QDELETING)
@@ -775,6 +777,7 @@
 	desc = "Маленькая серебряная шкатулка с тиснением Silver Love Co."
 	icon_state = "box"
 	custom_price = 15
+	illustration = null
 
 // portal fleshlight box
 /obj/item/storage/box/portallight/PopulateContents()

@@ -15,6 +15,7 @@
 	var/datum/component/storage/detached_pockets
 	//skyrat edit
 	var/current_uniform = null
+	var/list/access = list() // BLUEMOON EDIT - у некоторых акссессуаров теперь типо будет доступ. Костыль, да.
 	//
 
 /obj/item/clothing/accessory/proc/attach(obj/item/clothing/under/U, user)

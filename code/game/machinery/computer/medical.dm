@@ -29,7 +29,7 @@
 	icon_keyboard = "syndie_key"
 
 /obj/machinery/computer/med_data/Initialize()
-	..()
+	. = ..()
 	field_edit_questions = list(
 		// General
 		"gender" = "Please select new gender:",

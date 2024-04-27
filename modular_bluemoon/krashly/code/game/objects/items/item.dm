@@ -114,6 +114,8 @@
 		return
 	if(viewer.is_blind())
 		return
+	if(!ishuman(viewer))
+		return
 	if(HAS_TRAIT(viewer, TRAIT_FEARLESS))
 		return
 	if(IS_INTEQ(viewer))
@@ -139,9 +141,9 @@
 				viewer.say("AAAAH!!", forced = "phobia")
 				viewer.pointed(src)
 			if(4)
-				to_chat(viewer, "<span class='warning'>You shut your eyes in terror!</span>")
+				viewer.emote("chill")
 				viewer.Jitter(5)
-				viewer.blind_eyes(10)
+				viewer.pointed(src)
 			if(5)
 				viewer.dizziness += 10
 				viewer.confused += 10
@@ -202,6 +204,8 @@
 		return
 	if(viewer.is_blind())
 		return
+	if(!ishuman(viewer))
+		return
 	if(HAS_TRAIT(viewer, TRAIT_FEARLESS))
 		return
 	if(IS_INTEQ(viewer))
@@ -227,9 +231,9 @@
 				viewer.say("AAAAH!!", forced = "phobia")
 				viewer.pointed(src)
 			if(4)
-				to_chat(viewer, "<span class='warning'>You shut your eyes in terror!</span>")
+				viewer.emote("chill")
 				viewer.Jitter(5)
-				viewer.blind_eyes(10)
+				viewer.pointed(src)
 			if(5)
 				viewer.dizziness += 10
 				viewer.confused += 10
@@ -237,6 +241,7 @@
 				viewer.stuttering += 10
 
 //////
+
 
 /obj/structure/sign/poster/contraband/inteq/attackby(obj/item/tool, mob/user, params)
 	if (tool.tool_behaviour == TOOL_WIRECUTTER)
@@ -247,6 +252,19 @@
 	QDEL_NULL(demotivator)
 	return ..()
 
+/obj/structure/sign/poster/contraband/inteq/on_attack_hand(mob/living/carbon/human/user)
+	if(istype(user) && user.dna.check_mutation(TK))
+		to_chat(user, "<span class='notice'>You telekinetically remove the [src].</span>")
+	else if(user.gloves)
+		if(istype(user.gloves,/obj/item/clothing/gloves/tackler))
+			to_chat(user, "<span class='warning'>Вы срываете [src], но лезвия на обороте режут вам руку!</span>")
+			user.apply_damage(5, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+	else
+		to_chat(user, "<span class='warning'>Вы пытаетесь сорвать [src], но лезвия на обороте режут вам руку и мешают поддеть [src]!</span>")
+		to_chat(user, "<span class='warning'>Нужны кусачки!</span>")
+		user.apply_damage(5, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+		return
+	.=..()
 ///////
 /obj/structure/sign/poster/contraband/inteq/random
 	name = "random contraband poster"

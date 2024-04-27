@@ -195,6 +195,12 @@ GLOBAL_LIST_INIT(plasma_recipes, list ( \
 	atmos_spawn_air("plasma=[amount*10];TEMP=[exposed_temperature]")
 	qdel(src)
 
+/obj/item/stack/sheet/mineral/plasma/five
+	amount = 5
+
+/obj/item/stack/sheet/mineral/plasma/thirty
+	amount = 30
+
 /*
  * Gold
  */

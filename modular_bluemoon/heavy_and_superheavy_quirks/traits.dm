@@ -134,7 +134,7 @@
 	var/datum/action/innate/secrete_chemicals/act_secrete_chemicals = new
 	act_secrete_chemicals.Grant(H)
 	// Add examine text
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
 	ADD_TRAIT(H,TRAIT_BLUEMOON_ANTI_NORMALIZER, ROUNDSTART_TRAIT)
 
 
@@ -202,12 +202,15 @@
 
 /datum/movespeed_modifier/heavy_mob_drag
 	variable = TRUE
+	blacklisted_movetypes = (FLYING|FLOATING)
 
 /datum/movespeed_modifier/heavy_quirk_slowdown
 	variable = TRUE
+	blacklisted_movetypes = (FLYING|FLOATING)
 
 /datum/movespeed_modifier/giant_quirk_boost
 	variable = TRUE
+	blacklisted_movetypes = (FLYING|FLOATING)
 
 
 /*

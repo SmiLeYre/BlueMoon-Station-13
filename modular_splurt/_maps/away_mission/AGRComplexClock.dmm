@@ -11826,6 +11826,10 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/item/key{
+	desc = "A small grey key meant to be placed inside a vehicle. There is nothing special about this key at all besides that.";
+	name = "ATV key"
+	},
 /turf/open/floor/plating,
 /area/awaymission/complex/research)
 "kgE" = (
@@ -12238,6 +12242,10 @@
 	},
 /obj/structure/railing{
 	dir = 4
+	},
+/obj/item/key{
+	desc = "A small grey key meant to be placed inside a vehicle. There is nothing special about this key at all besides that.";
+	name = "ATV key"
 	},
 /turf/open/floor/plating,
 /area/awaymission/complex/research)
@@ -24357,6 +24365,10 @@
 	},
 /obj/structure/railing{
 	dir = 4
+	},
+/obj/item/key{
+	desc = "A small grey key meant to be placed inside a vehicle. There is nothing special about this key at all besides that.";
+	name = "ATV key"
 	},
 /turf/open/floor/plating,
 /area/awaymission/complex/research)

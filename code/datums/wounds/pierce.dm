@@ -132,7 +132,7 @@
 	// BLUEMOON ADD END
 	var/self_penalty_mult = (user == victim ? 1.4 : 1)
 	user.visible_message("<span class='notice'>[user] пытается зашить увечия на [limb.ru_name_v] персонажа [victim] с помощью [I]...</span>", "<span class='notice'>Вы начинаете зашивать [user == victim ? "свои увечия" : "увечия персонажа [victim]"] с помощью [I]...</span>")
-	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 	user.visible_message("<span class='green'>[user] зашивает увечия персонажа [victim].</span>", "<span class='green'>Вы зашиваете увечия на [user == victim ? "своей конечности" : "конечности персонажа [victim]"].</span>")
 	var/blood_sutured = I.stop_bleeding / self_penalty_mult * 0.5
@@ -148,7 +148,7 @@
 /datum/wound/pierce/proc/tool_cauterize(obj/item/I, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.5 : 1)
 	user.visible_message("<span class='danger'>[user] пытается прижечь увечие на [limb.ru_name_v] персонажа [victim] с помощью [I]...</span>", "<span class='danger'>Вы пытаетесь прижечь [user == victim ? "свою конечность" : "конечность персонажа [victim]"] с помощью [I]...</span>")
-	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
 	user.visible_message("<span class='green'>[user] прижигает увечия персонажа [victim].</span>", "<span class='green'>Вы прижигаете увечия персонажа [victim].</span>")

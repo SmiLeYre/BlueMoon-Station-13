@@ -255,7 +255,7 @@
 		return
 				// Disable Powers: Masquerade	* NOTE * This should happen as a FLAW!
 				//if (stat >= UNCONSCIOUS)
-				//	for (var/datum/action/bloodsucker/masquerade/P in powers)
+				//	for (var/datum/action/cooldown/bloodsucker/masquerade/P in powers)
 				//		P.Deactivate()
 		//	TEMP DEATH
 	var/total_brute = owner.current.getBruteLoss_nonProsthetic()
@@ -280,7 +280,7 @@
 			owner.current.Unconscious(20, 1)
 
 /datum/antagonist/bloodsucker/proc/Torpor_Begin(amInCoffin = FALSE)
-	owner.current.stat = UNCONSCIOUS
+	owner.current.set_stat(UNCONSCIOUS)
 //	owner.current.apply_status_effect(STATUS_EFFECT_UNCONSCIOUS) // BLUEMOON REMOVAL - само собой пропадает при попытке перехода в состояние маскарада. Заменено на смертельную кому
 	ADD_TRAIT(owner.current, TRAIT_DEATHCOMA, "bloodsucker") // BLUEMOON ADD - фиксит возможность вампира ползать, ходить, драться и делать другие действия, если он прожмёт и отключит маскарад в торпоре
 	ADD_TRAIT(owner.current, TRAIT_FAKEDEATH, "bloodsucker") // Come after UNCONSCIOUS or else it fails
@@ -292,7 +292,7 @@
 	owner.current.update_sight()
 	owner.current.reload_fullscreen()
 	// Disable ALL Powers
-	for(var/datum/action/bloodsucker/power in powers)
+	for(var/datum/action/cooldown/bloodsucker/power in powers)
 		if(power.active && !power.can_use_in_torpor)
 			power.DeactivatePower()
 	if(owner.current.suiciding)
@@ -300,7 +300,7 @@
 		to_chat(owner.current, "<span class='cult'>Ваше тело еще держится, вопреки попытке покончить с собой.</span>")
 
 /datum/antagonist/bloodsucker/proc/Torpor_End()
-	owner.current.stat = SOFT_CRIT
+	owner.current.set_stat(SOFT_CRIT)
 //	owner.current.remove_status_effect(STATUS_EFFECT_UNCONSCIOUS) // BLUEMOON REMOVAL
 	REMOVE_TRAIT(owner.current, TRAIT_DEATHCOMA, "bloodsucker") // BLUEMOON ADD
 	REMOVE_TRAIT(owner.current, TRAIT_FAKEDEATH, "bloodsucker")

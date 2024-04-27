@@ -43,7 +43,7 @@
 		if(M.id == src.id)
 			if(openclose == null)
 				openclose = M.density
-			INVOKE_ASYNC(M, openclose ? /obj/machinery/door/poddoor.proc/open : /obj/machinery/door/poddoor.proc/close)
+			INVOKE_ASYNC(M, openclose ? TYPE_PROC_REF(/obj/machinery/door/poddoor, open) : TYPE_PROC_REF(/obj/machinery/door/poddoor, close))
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 10)
 
 /obj/item/assembly/control/airlock
@@ -86,7 +86,7 @@
 				D.safe = !D.safe
 
 	for(var/D in open_or_close)
-		INVOKE_ASYNC(D, doors_need_closing ? /obj/machinery/door/airlock.proc/close : /obj/machinery/door/airlock.proc/open)
+		INVOKE_ASYNC(D, doors_need_closing ? TYPE_PROC_REF(/obj/machinery/door/airlock, close) : TYPE_PROC_REF(/obj/machinery/door/airlock, open))
 
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 10)
 
@@ -99,7 +99,7 @@
 	cooldown = TRUE
 	for(var/obj/machinery/door/poddoor/M in GLOB.machines)
 		if (M.id == src.id)
-			INVOKE_ASYNC(M, /obj/machinery/door/poddoor.proc/open)
+			INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/machinery/door/poddoor, open))
 
 	sleep(10)
 
@@ -111,7 +111,7 @@
 
 	for(var/obj/machinery/door/poddoor/M in GLOB.machines)
 		if (M.id == src.id)
-			INVOKE_ASYNC(M, /obj/machinery/door/poddoor.proc/close)
+			INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/machinery/door/poddoor, close))
 
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 10)
 
@@ -124,7 +124,7 @@
 	cooldown = TRUE
 	for(var/obj/machinery/sparker/M in GLOB.machines)
 		if (M.id == src.id)
-			INVOKE_ASYNC(M, /obj/machinery/sparker.proc/ignite)
+			INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/machinery/sparker, ignite))
 
 	for(var/obj/machinery/igniter/M in GLOB.machines)
 		if(M.id == src.id)
@@ -142,7 +142,7 @@
 	cooldown = TRUE
 	for(var/obj/machinery/flasher/M in GLOB.machines)
 		if(M.id == src.id)
-			INVOKE_ASYNC(M, /obj/machinery/flasher.proc/flash)
+			INVOKE_ASYNC(M, TYPE_PROC_REF(/obj/machinery/flasher, flash))
 
 	addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 50)
 

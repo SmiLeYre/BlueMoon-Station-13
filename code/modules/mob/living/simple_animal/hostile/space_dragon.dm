@@ -63,6 +63,7 @@
 	maxbodytemp = 1500
 	faction = list("carp")
 	pressure_resistance = 200
+	pass_flags = PASSTABLE
 	/// Current time since the the last rift was activated.  If set to -1, does not increment.
 	var/riftTimer = 0
 	/// Maximum amount of time which can pass without a rift before Space Dragon despawns.
@@ -93,8 +94,10 @@
 /mob/living/simple_animal/hostile/space_dragon/Initialize(mapload)
 	. = ..()
 	ADD_TRAIT(src, TRAIT_SPACEWALK, INNATE_TRAIT)
+	ADD_TRAIT(src, TRAIT_HEALS_FROM_CARP_RIFTS, INNATE_TRAIT)
 	rift = new
 	rift.Grant(src)
+	AddSpell(new /obj/effect/proc_holder/spell/targeted/night_vision(src))
 
 /mob/living/simple_animal/hostile/space_dragon/Login()
 	. = ..()
@@ -301,7 +304,7 @@
 			if(D.density)
 				return
 		delayFire += 1.0
-		addtimer(CALLBACK(src, .proc/dragon_fire_line, T), delayFire)
+		addtimer(CALLBACK(src, PROC_REF(dragon_fire_line), T), delayFire)
 
 /**
   * What occurs on each tile to actually create the fire.
@@ -381,7 +384,7 @@
 	fully_heal()
 	add_filter("anger_glow", 3, list("type" = "outline", "color" = "#ff330030", "size" = 5))
 	add_movespeed_modifier(/datum/movespeed_modifier/dragon_rage)
-	addtimer(CALLBACK(src, .proc/rift_depower), 30 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(rift_depower)), 30 SECONDS)
 
 /**
  * Gives Space Dragon their the rift speed buff permanantly.
@@ -437,7 +440,7 @@
 /mob/living/simple_animal/hostile/space_dragon/proc/useGust(timer)
 	if(timer != 10)
 		pixel_y = pixel_y + 2;
-		addtimer(CALLBACK(src, .proc/useGust, timer + 1), 1.5)
+		addtimer(CALLBACK(src, PROC_REF(useGust), timer + 1), 1.5)
 		return
 	pixel_y = 0
 	icon_state = "spacedragon_gust_2"
@@ -459,7 +462,7 @@
 			var/throwtarget = get_edge_target_turf(target, dir_to_target)
 			L.safe_throw_at(throwtarget, 10, 1, src)
 			L.drop_all_held_items()
-	addtimer(CALLBACK(src, .proc/reset_status), 4 + ((tiredness * tiredness_mult) / 10))
+	addtimer(CALLBACK(src, PROC_REF(reset_status)), 4 + ((tiredness * tiredness_mult) / 10))
 	tiredness = tiredness + (gust_tiredness * tiredness_mult)
 
 /**
@@ -532,7 +535,7 @@
 /obj/structure/carp_rift
 	name = "carp rift"
 	desc = "A rift akin to the ones space carp use to travel long distances."
-	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 100, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100)
+	armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 100, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100)
 	max_integrity = 300
 	icon = 'icons/obj/carp_rift.dmi'
 	icon_state = "carp_rift_carpspawn"
@@ -546,7 +549,7 @@
 	/// The maximum charge the rift can have.
 	var/max_charge = 300
 	/// How many carp spawns it has available.
-	var/carp_stored = 1
+	var/carp_stored = 2
 	/// A reference to the Space Dragon that created it.
 	var/mob/living/simple_animal/hostile/space_dragon/dragon
 	/// Current charge state of the rift.
@@ -559,6 +562,14 @@
 /obj/structure/carp_rift/Initialize(mapload)
 	. = ..()
 	START_PROCESSING(SSobj, src)
+	AddComponent( \
+		/datum/component/aura_healing, \
+		range = 3, \
+		simple_heal = 4, \
+		limit_to_trait = TRAIT_HEALS_FROM_CARP_RIFTS, \
+		healing_color = COLOR_BLUE, \
+	)
+
 
 /obj/structure/carp_rift/examine(mob/user)
 	. = ..()
@@ -582,12 +593,6 @@
 	return ..()
 
 /obj/structure/carp_rift/process(delta_time)
-	// Heal carp on our loc.
-	for(var/mob/living/simple_animal/hostile/hostilehere in loc)
-		if("carp" in hostilehere.faction)
-			hostilehere.adjustHealth(-5 * delta_time)
-			var/obj/effect/temp_visual/heal/H = new /obj/effect/temp_visual/heal(get_turf(hostilehere))
-			H.color = "#0000FF"
 
 	// If we're fully charged, just start mass spawning carp and move around.
 	if(charge_state == CHARGE_COMPLETED)
@@ -622,7 +627,7 @@
 
 	// Can we increase the carp spawn pool size?
 	if(last_carp_inc >= carp_interval)
-		carp_stored++
+		carp_stored += 2
 		icon_state = "carp_rift_carpspawn"
 		if(light_color != LIGHT_COLOR_PURPLE)
 			light_color = LIGHT_COLOR_PURPLE
@@ -648,6 +653,7 @@
 			dragon.riftTimer = 0
 			dragon.rift_empower()
 		// Early return, nothing to do after this point.
+		carp_stored += 5
 		return
 
 	// Do we need to give a final warning to the station at the halfway mark?

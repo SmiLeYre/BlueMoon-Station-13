@@ -39,7 +39,7 @@
 			/obj/item/clothing/suit/armor/abductor/vest,
 			/obj/item/clothing/suit/armor/bulletproof = 1.5,
 			/obj/item/clothing/suit/armor/vest/leather,
-			/obj/item/clothing/suit/armor/laserproof = 1.5,
+			/obj/item/clothing/suit/hooded/ablative = 1.5,
 			/obj/item/clothing/suit/armor/riot/chaplain/teutonic/alt,
 			/obj/item/clothing/suit/armor/vest/infiltrator/inteq,
 			/obj/item/clothing/suit/armor/vest/infiltrator/gorlex_harness ,

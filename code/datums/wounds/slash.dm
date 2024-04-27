@@ -47,7 +47,7 @@
 	if(highest_scar)
 		UnregisterSignal(highest_scar, COMSIG_PARENT_QDELETING)
 	if(new_scar)
-		RegisterSignal(new_scar, COMSIG_PARENT_QDELETING, .proc/clear_highest_scar)
+		RegisterSignal(new_scar, COMSIG_PARENT_QDELETING, PROC_REF(clear_highest_scar))
 	highest_scar = new_scar
 
 /datum/wound/slash/proc/clear_highest_scar(datum/source)
@@ -180,7 +180,7 @@
 
 	user.visible_message("<span class='notice'>[user] пытается зализать раны на [limb.ru_name_v] персонажа [victim].</span>", "<span class='notice'>Вы пытаетесь зализать раны на [limb.ru_name_v] персонажа [victim]....</span>", ignored_mobs=victim)
 	to_chat(victim, "<span class='notice'>[user] пытается зализать раны на вашей конечности - [limb.ru_name].</span")
-	if(!do_after(user, base_treat_time, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, base_treat_time, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
 	// BLUEMOON ADD START - попытка зализать языком рану с маслом выглядит ужасно
@@ -215,7 +215,7 @@
 /datum/wound/slash/proc/las_cauterize(obj/item/gun/energy/laser/lasgun, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.25 : 1)
 	user.visible_message("<span class='warning'>[user] пытается нацелить [lasgun] на рану на [limb.ru_name_v] персонажа [victim]....</span>", "<span class='userdanger'>Вы пытаетесь нацелить [lasgun] на рану на [user == victim ? "вашей конечности" : "конечности персонажа [victim]"]...</span>")
-	if(!do_after(user, base_treat_time  * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, base_treat_time  * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 	var/damage = lasgun.chambered.BB.damage
 	lasgun.chambered.BB.wound_bonus -= 30
@@ -231,7 +231,7 @@
 /datum/wound/slash/proc/tool_cauterize(obj/item/I, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.5 : 1)
 	user.visible_message("<span class='danger'>[user] пытается прижечь раны на [limb.ru_name_v] персонажа [victim] с помощью [I]...</span>", "<span class='danger'>Вы пытаетесь прижечь рану [user == victim ? "своей конечности" : "конечности персонажа [victim]"] с помощью [I]...</span>")
-	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
 	user.visible_message("<span class='green'>[user] прижигает увечия персонажа [victim].</span>", "<span class='green'Вы прижагаете увечия персонажа [victim].</span>")
@@ -258,7 +258,7 @@
 	var/self_penalty_mult = (user == victim ? 1.4 : 1)
 	user.visible_message("<span class='notice'>[user] пытается зашить увечия на [limb.ru_name_v] персонажа [victim] с помощью [I]...</span>", "<span class='notice'>Вы пытаетесь зашить [user == victim ? "увечия на вашей [limb.ru_name_v]" : "увечия на [limb.ru_name_v] персонажа [victim]"] с помощью [I]...</span>")
 
-	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 	user.visible_message("<span class='green'>[user] зашивает увечия персонажа [victim].</span>", "<span class='green'>Вы зашиваете некоторые увечия [user == victim ? "на вашей конечности" : "на конечности персонажа [victim]"].</span>")
 	var/blood_sutured = I.stop_bleeding / self_penalty_mult

@@ -6,7 +6,7 @@
 	k_elasticity = 0
 	unit_name = "crate"
 	export_types = list(/obj/structure/closet/crate)
-	exclude_types = list(/obj/structure/closet/crate/large, /obj/structure/closet/crate/wooden, /obj/structure/closet/crate/bin, /obj/structure/closet/crate/coffin) //BLUEMOON CHANGE фикс засчитывания гробов как ящик
+	exclude_types = list(/obj/structure/closet/crate/large, /obj/structure/closet/crate/wooden, /obj/structure/closet/crate/bin, /obj/structure/closet/crate/mail, /obj/structure/closet/crate/coffin)
 
 /datum/export/large/crate/total_printout(datum/export_report/ex, notes = TRUE) // That's why a goddamn metal crate costs that much.
 	. = ..()

@@ -170,7 +170,15 @@
 			However, due to the size of the blade and obvious nature of the sheath, the weapon stands out as being obviously nefarious."
 	item = /obj/item/storage/belt/sabre/rapier
 	cost = 8
-	purchasable_from = ~UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/dangerous/karakurt
+	name = "Karakurt"
+	desc = "Некогда элегантная рапира из пластитаниума. После даработки воронёное лезвие было пропитано сильнейшим нейротоксином, парализующим дыхательную и нервную систему, \
+			а в ножнах встроено хранилище яда, не дающее лезвию высохнуть. Если цель не умрёт от потери крови, то неожиданно забудет как дышать, разве не идеальное оружие для дуэли?"
+	item = /obj/item/storage/belt/sabre/karakurt
+	cost = 8
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/dangerous/flamethrower
 	name = "Flamethrower"

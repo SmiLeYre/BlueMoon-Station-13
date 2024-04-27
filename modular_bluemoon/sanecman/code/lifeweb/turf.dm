@@ -52,7 +52,7 @@
 
 // Рандомизация спрайта пола как на старых билдах
 /turf/open/indestructible/lfwb/no_smooth/Initialize(mapload)
-	..()
+	. = ..()
 	dir = rand(0,8)
 
 // Пол душеломов

@@ -64,8 +64,8 @@
 			L.sec_hud_set_implants()
 		if(target.stat != DEAD && !silent)
 			to_chat(target, "<span class='boldnotice'>Вы ощущаете чувство покоя и безопасности. Теперь вы защищены от промывания мозгов.</span>")
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
 /obj/item/implanter/mindshield
 	name = "Implanter (Mindshield)"

@@ -86,7 +86,7 @@
 	act_hypno.Grant(quirk_mob)
 
 	// Add examine text
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
 
 /datum/quirk/Hypnotic_gaze/remove()
 	// Define quirk mob
@@ -518,8 +518,8 @@
 
 /datum/quirk/nudist/add()
 	// Register signal handlers
-	RegisterSignal(quirk_holder, COMSIG_MOB_UPDATE_GENITALS, .proc/check_outfit)
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/quirk_examine_nudist)
+	RegisterSignal(quirk_holder, COMSIG_MOB_UPDATE_GENITALS, PROC_REF(check_outfit))
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(quirk_examine_nudist))
 
 /datum/quirk/nudist/remove()
 	// Remove mood event
@@ -742,7 +742,7 @@ var/static/list/ukraine_replacements = list(
 	if (prob(75))
 		for (var/key in ukraine_replacements)
 			var/regex/rg = regex("(\\A|\[\\s|.,\\-!/?~\])([key])(\\Z|\[\\s|.,\\-!/?~\])")
-			message = rg.Replace_char(message, /proc/ukraine_replace)
+			message = rg.Replace(message, GLOBAL_PROC_REF(ukraine_replace))
 
 		message = replacetextEx_char(message, "ы", "и")
 		message = replacetextEx_char(message, "и", "і")
@@ -820,14 +820,14 @@ var/static/list/ukraine_replacements = list(
 	ADD_TRAIT(quirk_mob,TRAIT_NOTHIRST,ROUNDSTART_TRAIT)
 
 	// Set skin tone, if possible
-	// if(!quirk_mob.dna.skin_tone_override)
-	// 	quirk_mob.skin_tone = "albino"
+	if(!quirk_mob.dna.skin_tone_override)
+		quirk_mob.skin_tone = "albino"
 
 	// Add quirk language
 	quirk_mob.grant_language(/datum/language/vampiric, TRUE, TRUE, LANGUAGE_BLOODSUCKER)
 
 	// Register examine text
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/quirk_examine_bloodfledge)
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(quirk_examine_bloodfledge))
 
 /datum/quirk/bloodfledge/post_add()
 	// Define quirk mob

@@ -39,6 +39,10 @@
 		/obj/item/stamp/denied
 	)
 
+	mail_goodies = list(
+		/obj/item/circuitboard/machine/emitter = 3
+	)
+
 /datum/outfit/job/quartermaster
 	name = "Quartermaster"
 	jobtype = /datum/job/qm
@@ -53,6 +57,7 @@
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1)
 	box = /obj/item/storage/box/survival/command
 	chameleon_extras = /obj/item/stamp/qm
+	accessory = /obj/item/clothing/accessory/permit/special/quartermaster
 
 /datum/outfit/job/quartermaster/syndicate
 	name = "Syndicate Quartermaster"
@@ -70,6 +75,7 @@
 	satchel = /obj/item/storage/backpack/duffelbag/syndie/ammo
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie/ammo
 	box = /obj/item/storage/box/survival/syndie
+	accessory = /obj/item/clothing/accessory/permit/special/quartermaster
 	pda_slot = ITEM_SLOT_BELT
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic = 1, /obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/syndicate_uplink_high=1)
 

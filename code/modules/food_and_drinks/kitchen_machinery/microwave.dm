@@ -26,6 +26,7 @@
 	pass_flags = PASSTABLE
 	light_color = LIGHT_COLOR_YELLOW
 	light_power = 3
+	active_power_usage = 500
 	var/wire_disabled = FALSE // is its internal wire cut?
 	var/operating = FALSE
 	/// How dirty is it?

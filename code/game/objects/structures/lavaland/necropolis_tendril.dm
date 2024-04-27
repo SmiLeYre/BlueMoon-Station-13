@@ -84,7 +84,7 @@ GLOBAL_LIST_INIT(tendrils, list())
 	visible_message("<span class='boldannounce'>Тендрил корчится от ярости, а земля вокруг него начинает трескаться и распадаться на части! Назад!</span>")
 	visible_message("<span class='warning'>Тендрил выпускает что-то ценное из своих усиков!</span>")
 	playsound(loc,'sound/effects/tendril_destroyed.ogg', 200, 0, 50, 1, 1)
-	addtimer(CALLBACK(src, .proc/collapse), 50)
+	addtimer(CALLBACK(src, PROC_REF(collapse)), 50)
 
 /obj/effect/collapse/Destroy()
 	QDEL_NULL(emitted_light)

@@ -3689,13 +3689,6 @@
 "Do" = (
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
-"DC" = (
-/obj/machinery/fax{
-	fax_name = "Unknown Syndicate Fax";
-	name = "DS-2 Fax Machine"
-	},
-/turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
 "DD" = (
 /obj/structure/closet/crate/bin,
 /turf/open/floor/mineral/plastitanium,
@@ -8861,7 +8854,7 @@ dQ
 iZ
 mq
 qV
-DC
+VR
 xV
 nN
 Kl

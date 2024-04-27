@@ -424,15 +424,17 @@ Contains:
 	icon_state = "hardsuit0-prt"
 	item_state = "hardsuit0-prt"
 	hardsuit_type = "knight_grey"
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	actions_types = list()
-	resistance_flags = FIRE_PROOF
+	armor = list(MELEE = 70, BULLET = 55, LASER = 50, ENERGY = 50, BOMB = 65, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 50)
 	mutantrace_variation = STYLE_MUZZLE
+	heat_protection = HEAD
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 	var/charges = INFINITY
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_HEAD, charges, TRUE, null, CALLBACK(src, .proc/anti_magic_gone))
+	AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_HEAD, charges, TRUE, null, CALLBACK(src, PROC_REF(anti_magic_gone)))
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/proc/anti_magic_gone()
 	var/mob/M = loc
@@ -448,13 +450,17 @@ Contains:
 	item_state = "knight_grey"
 	tail_state = "syndicate-winter"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal
+	armor = list(MELEE = 70, BULLET = 55, LASER = 50, ENERGY = 50, BOMB = 65, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 50)
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
+
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	resistance_flags = FIRE_PROOF
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 	var/charges = INFINITY
 
 /obj/item/clothing/suit/space/hardsuit/ert/paranormal/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, ITEM_SLOT_OCLOTHING, charges, TRUE, null, CALLBACK(src, .proc/anti_magic_gone))
+	AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, ITEM_SLOT_OCLOTHING, charges, TRUE, null, CALLBACK(src, PROC_REF(anti_magic_gone)))
 
 /obj/item/clothing/suit/space/hardsuit/ert/paranormal/proc/anti_magic_gone()
 	var/mob/M = loc

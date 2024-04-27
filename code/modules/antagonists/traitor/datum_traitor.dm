@@ -149,7 +149,7 @@
 			if(!silent)
 				to_chat(H, "Тренировки позволили вам отринуть клоунскую натуру, теперь вы можете использовать оружие без риска ранить себя.")
 			H.dna.remove_mutation(CLOWNMUT)
-	RegisterSignal(M, COMSIG_MOVABLE_HEAR, .proc/handle_hearing)
+	RegisterSignal(M, COMSIG_MOVABLE_HEAR, PROC_REF(handle_hearing))
 
 /datum/antagonist/traitor/remove_innate_effects(mob/living/mob_override)
 	. = ..()

@@ -215,7 +215,7 @@
 	if(accessory)
 		var/obj/item/clothing/under/U = H.w_uniform
 		if(U)
-			U.attach_accessory(new accessory(H))
+			U.attach_accessory(new accessory(H), H)
 		else
 			WARNING("Unable to equip accessory [accessory] in outfit [name]. No uniform present!")
 

@@ -38,7 +38,7 @@
 		/obj/item/stack/sheet/rglass/cyborg,
 		/obj/item/stack/rods/cyborg,
 		/obj/item/stack/tile/plasteel/cyborg,
-		/obj/item/destTagger/borg,
+		/obj/item/dest_tagger/borg,
 		/obj/item/stack/cable_coil/cyborg,
 		/obj/item/restraints/handcuffs/cable/zipties,
 		/obj/item/stack/medical/gauze/cyborg,
@@ -88,7 +88,7 @@
 		"K4 Syndie" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tsyndi"), // Lyoll Request (Skyrat Port)
 		"MMeka Syndie" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekasyndi") // Lyoll Request (Skyrat Port)
 		))
-	var/syndiejack_icon = show_radial_menu(R, R , syndicatejack_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+	var/syndiejack_icon = show_radial_menu(R, R , syndicatejack_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 	switch(syndiejack_icon)
 		if("Saboteur")
 			cyborg_base_icon = "synd_engi"

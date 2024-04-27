@@ -253,7 +253,7 @@ SUBSYSTEM_DEF(ticker)
 		mode = null
 		SSjob.ResetOccupations()
 		emergency_swap++
-		return 0
+		return FALSE
 
 	CHECK_TICK
 	//Configure mode and assign player to special mode stuff
@@ -272,7 +272,7 @@ SUBSYSTEM_DEF(ticker)
 			to_chat(world, "<B>Error setting up [GLOB.master_mode].</B> Reverting to pre-game lobby.")
 			SSjob.ResetOccupations()
 			emergency_swap++
-			return 0
+			return FALSE
 	else
 		message_admins("<span class='notice'>DEBUG: Bypassing prestart checks...</span>")
 
@@ -454,7 +454,7 @@ SUBSYSTEM_DEF(ticker)
 				living.client.init_verbs()
 			livings += living
 	if(livings.len)
-		addtimer(CALLBACK(src, .proc/release_characters, livings), 30, TIMER_CLIENT_TIME)
+		addtimer(CALLBACK(src, PROC_REF(release_characters), livings), 30, TIMER_CLIENT_TIME)
 
 /datum/controller/subsystem/ticker/proc/release_characters(list/livings)
 	for(var/I in livings)
@@ -513,7 +513,7 @@ SUBSYSTEM_DEF(ticker)
 	if (!prob((world.time/600)*CONFIG_GET(number/maprotatechancedelta)) && CONFIG_GET(flag/tgstyle_maprotation))
 		return
 	if(CONFIG_GET(flag/tgstyle_maprotation))
-		INVOKE_ASYNC(SSmapping, /datum/controller/subsystem/mapping/.proc/maprotate)
+		INVOKE_ASYNC(SSmapping, TYPE_PROC_REF(/datum/controller/subsystem/mapping, maprotate))
 	else
 		var/vote_type = CONFIG_GET(string/map_vote_type)
 		SSvote.initiate_vote("map","server", display = SHOW_RESULTS, votesystem = vote_type)

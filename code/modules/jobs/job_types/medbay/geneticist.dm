@@ -29,6 +29,10 @@
 		/obj/item/clothing/under/shorts/purple
 	)
 
+	mail_goodies = list(
+		/obj/item/storage/box/monkeycubes = 10
+	)
+
 /datum/outfit/job/geneticist
 	name = "Geneticist"
 	jobtype = /datum/job/geneticist

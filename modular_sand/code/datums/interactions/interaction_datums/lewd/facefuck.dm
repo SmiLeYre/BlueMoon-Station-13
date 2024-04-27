@@ -4,6 +4,8 @@
 	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
 	required_from_target = INTERACTION_REQUIRE_MOUTH
 	var/fucktarget = "penis"
+	p13user_emote = PLUG13_EMOTE_PENIS
+	p13target_emote = PLUG13_EMOTE_FACE
 
 /datum/interaction/lewd/facefuck/vag
 	description = "Вагина. Потереться об рот."
@@ -111,6 +113,14 @@
 	interaction_sound = null
 	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
 	required_from_target = INTERACTION_REQUIRE_MOUTH
+	p13user_emote = PLUG13_EMOTE_PENIS
+	p13target_emote = PLUG13_EMOTE_FACE
+	p13user_duration = PLUG13_DURATION_MEDIUM
+	p13target_duration = PLUG13_DURATION_MEDIUM
+	p13user_strength = PLUG13_STRENGTH_DEFAULT_PLUS
+	p13target_strength = PLUG13_STRENGTH_DEFAULT_PLUS
+
+	interaction_flags = INTERACTION_FLAG_ADJACENT | INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_EXTREME_CONTENT //What I a person doesn't want to get killed? - Gardelin0
 
 /datum/interaction/lewd/throatfuck/display_interaction(mob/living/user, mob/living/partner)
 	var/message

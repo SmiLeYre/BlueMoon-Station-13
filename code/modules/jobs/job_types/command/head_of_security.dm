@@ -59,8 +59,9 @@
 	//suit_store = /obj/item/gun/energy/e_gun
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1)
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/choice_beacon/hos_new_weapon = 1)
 	box = /obj/item/storage/box/survival/command
+	accessory = /obj/item/clothing/accessory/permit/special/head_of_sec
 
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
@@ -91,6 +92,7 @@
 	satchel = /obj/item/storage/backpack/duffelbag/syndie/ammo
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie/ammo
 	box = /obj/item/storage/box/survival/syndie
+	accessory = /obj/item/clothing/accessory/permit/special/head_of_sec
 	pda_slot = ITEM_SLOT_BELT
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/syndicate_uplink_high=1)
 
