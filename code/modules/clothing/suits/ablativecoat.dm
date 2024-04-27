@@ -24,6 +24,7 @@
     strip_delay = 30
     equip_delay_other = 40
     var/hit_reflect_chance = 60
+    mutantrace_variation = STYLE_ALL_TAURIC
 
 /obj/item/clothing/suit/hooded/ablative/Initialize(mapload)
     . = ..()

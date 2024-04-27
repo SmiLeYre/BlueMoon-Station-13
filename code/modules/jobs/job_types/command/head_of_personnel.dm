@@ -52,7 +52,7 @@
 /datum/outfit/job/hop
 	name = "Head of Personnel"
 	jobtype = /datum/job/hop
-
+	glasses = /obj/item/clothing/glasses/hud/skills
 	id = /obj/item/card/id/silver
 	belt = /obj/item/pda/heads/hop
 	ears = /obj/item/radio/headset/heads/hop
@@ -76,7 +76,7 @@
 	uniform = /obj/item/clothing/under/rank/captain/util
 	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	head = /obj/item/clothing/head/hopcap
-
+	glasses = /obj/item/clothing/glasses/hud/skills
 	backpack = /obj/item/storage/backpack/duffelbag/syndie
 	satchel = /obj/item/storage/backpack/duffelbag/syndie
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie

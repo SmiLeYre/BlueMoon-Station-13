@@ -1706,6 +1706,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>Hypno:</b> <a href='?_src_=prefs;preference=never_hypno'>[(cit_toggles & NEVER_HYPNO) ? "Disallowed" : "Allowed"]</a><br>"
 					dat += "<b>Aphrodisiacs:</b> <a href='?_src_=prefs;preference=aphro'>[(cit_toggles & NO_APHRO) ? "Disallowed" : "Allowed"]</a><br>"
 					dat += "<b>Ass Slapping:</b> <a href='?_src_=prefs;preference=ass_slap'>[(cit_toggles & NO_ASS_SLAP) ? "Disallowed" : "Allowed"]</a><br>"
+					//Gardelin0 EDIT
+					dat += "<b>Sex Jitter:</b> <a href='?_src_=prefs;preference=sex_jitter'>[(cit_toggles & SEX_JITTER) ? "Allowed" : "Disallowed"]</a><br>"
 					//SPLURT EDIT
 					dat += "<b>Chastity Interactions :</b> <a href='?_src_=prefs;preference=chastitypref'>[(cit_toggles & CHASTITY) ? "Allowed" : "Disallowed"]</a><br>"
 					dat += "<b>Genital Stimulation Modifiers :</b> <a href='?_src_=prefs;preference=stimulationpref'>[(cit_toggles & STIMULATION) ? "Allowed" : "Disallowed"]</a><br>"
@@ -4146,6 +4148,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					cit_toggles ^= NO_DISCO_DANCE
 
 				//END CITADEL EDIT
+
+				if("sex_jitter") //By Gardelin0
+					cit_toggles ^= SEX_JITTER
 
 				if("ambientocclusion")
 					ambientocclusion = !ambientocclusion

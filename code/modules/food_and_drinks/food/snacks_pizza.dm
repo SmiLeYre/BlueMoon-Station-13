@@ -36,7 +36,7 @@
 	foodtype = GRAIN | VEGETABLES
 
 /obj/item/reagent_containers/food/snacks/pizza/margherita/robo/Initialize(mapload)
-	bonus_reagents += list("nanomachines" = 70)
+	bonus_reagents += list(/datum/reagent/nanomachines = 70)
 	return ..()
 
 /obj/item/reagent_containers/food/snacks/pizzaslice/margherita

@@ -40,7 +40,7 @@
 
 	belt = /obj/item/pda/lawyer
 	ears = /obj/item/radio/headset/headset_sec
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	glasses = /obj/item/clothing/glasses/hud/skills
 	uniform = /obj/item/clothing/under/rank/civilian/lawyer/really_black
 	//suit = /obj/item/clothing/suit/toggle/lawyer/black
 	shoes = /obj/item/clothing/shoes/laceup
@@ -54,7 +54,7 @@
 	chameleon_extras = /obj/item/stamp/law
 
 	backpack_contents = list(/obj/item/stamp/law=1, /obj/item/gun/energy/civilian=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
-  
+
 	box = /obj/item/storage/box/survival/command
 	accessory = /obj/item/clothing/accessory/permit/special/lawyer
 
@@ -69,7 +69,7 @@
 	belt = /obj/item/pda/lawyer
 	ears = /obj/item/radio/headset/headset_sec
 	gloves = /obj/item/clothing/gloves/combat
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	glasses = /obj/item/clothing/glasses/hud/skills
 	uniform = /obj/item/clothing/under/rank/civilian/lawyer/really_black
 	//suit = /obj/item/clothing/suit/toggle/lawyer/black
 	shoes = /obj/item/clothing/shoes/jackboots/tall_default

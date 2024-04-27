@@ -256,6 +256,32 @@
 	new /obj/item/door_remote/omni(src)
 	new /obj/item/megaphone/command(src)
 
+//blueshield suit box
+/obj/item/storage/box/blue_shield_hs
+	name = "NT flexible suit"
+	icon_state = "ghostcostuming"
+
+/obj/item/storage/box/blue_shield_hs/PopulateContents()
+	..()
+	new /obj/item/clothing/suit/space/hardsuit/blue_shield(src)
+	new /obj/item/clothing/mask/gas/sechailer/swat/blueshield(src)
+	new /obj/item/tank/internals/emergency_oxygen/double(src)
+
+//security kit
+/obj/item/storage/box/sec_kit
+	name = "Security standart kit"
+	icon_state = "secbox_xl"
+
+/obj/item/storage/box/sec_kit/PopulateContents()
+	..()
+	new /obj/item/flashlight/seclite(src)
+	new /obj/item/holosign_creator/security(src)
+	new /obj/item/reagent_containers/spray/pepper(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/restraints/handcuffs(src)
+	new /obj/item/restraints/handcuffs(src)
+
 //ert ammo boxes
 /obj/item/storage/box/ammo
 	name = "box of ammo"
