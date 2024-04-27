@@ -45,9 +45,9 @@
 	suit = /obj/item/clothing/suit/armor/vest/bluesheid
 	shoes = /obj/item/clothing/shoes/jackboots
 	suit_store = /obj/item/kitchen/knife/combat
-	l_pocket = /obj/item/restraints/handcuffs
-	r_pocket = /obj/item/assembly/flash/handheld
-	backpack_contents = list(/obj/item/storage/firstaid/regular, /obj/item/sensor_device_command, /obj/item/storage/box/death_alert, /obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/holo, /obj/item/choice_beacon/hosgun, /obj/item/choice_beacon/bsbaton, /obj/item/flashlight/seclite)
+	l_pocket = /obj/item/clothing/accessory/badge/holo
+	r_pocket = /obj/item/sensor_device_command
+	backpack_contents = list(/obj/item/storage/firstaid/regular, /obj/item/storage/box/death_alert, /obj/item/storage/box/blue_shield_hs, /obj/item/storage/box/sec_kit,  /obj/item/choice_beacon/hosgun, /obj/item/choice_beacon/bsbaton)
 	accessory = /obj/item/clothing/accessory/permit/special/blueshield
 
 	backpack = /obj/item/storage/backpack/blueshield
@@ -72,10 +72,9 @@
 	suit = /obj/item/clothing/suit/armor/vest/bluesheid
 	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	suit_store = /obj/item/kitchen/knife/combat
-	l_pocket = /obj/item/restraints/handcuffs
-	r_pocket = /obj/item/assembly/flash/handheld
-
-	backpack_contents = list(/obj/item/storage/firstaid/regular, /obj/item/reagent_containers/spray/pepper, /obj/item/clothing/accessory/badge/holo, /obj/item/choice_beacon/hosgun, /obj/item/choice_beacon/bsbaton, /obj/item/flashlight/seclite, /obj/item/syndicate_uplink_high=1)
+	l_pocket = /obj/item/sensor_device_command
+	r_pocket = /obj/item/clothing/accessory/badge/holo
+	backpack_contents = list(/obj/item/storage/firstaid/regular, /obj/item/storage/box/death_alert, /obj/item/storage/box/blue_shield_hs, /obj/item/storage/box/sec_kit,  /obj/item/choice_beacon/hosgun, /obj/item/choice_beacon/bsbaton, /obj/item/syndicate_uplink_high)
 	backpack = /obj/item/storage/backpack/duffelbag/syndie
 	satchel = /obj/item/storage/backpack/duffelbag/syndie
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie

@@ -59,7 +59,7 @@
 	//suit_store = /obj/item/gun/energy/e_gun
 	r_pocket = /obj/item/assembly/flash/handheld
 	l_pocket = /obj/item/restraints/handcuffs
-	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/gun/energy/e_gun/mini = 1)
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/choice_beacon/hos_new_weapon = 1)
 	box = /obj/item/storage/box/survival/command
 	accessory = /obj/item/clothing/accessory/permit/special/head_of_sec
 

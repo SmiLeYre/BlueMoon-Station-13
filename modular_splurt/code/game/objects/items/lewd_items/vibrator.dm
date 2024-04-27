@@ -156,13 +156,16 @@ Code:
 			switch(mode)
 				if(1) //low, setting for RP, it wont force your character to do anything.
 					to_chat(U, span_love("You feel pleasure surge through your [G.name]"))
-					U.do_jitter_animation() //do animation without heartbeat
+					if(U.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+						U.do_jitter_animation() //do animation without heartbeat
 				if(2) //med, can make you cum
 					to_chat(U, span_love("You feel intense pleasure surge through your [G.name]"))
-					U.do_jitter_animation()
+					if(U.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+						U.do_jitter_animation()
 				if(3) //high, makes you stun
 					to_chat(U, span_userdanger("You feel overpowering pleasure surge through your [G.name]"))
-					U.Jitter(3)
+					if(U.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+						U.Jitter(3)
 					U.Stun(30)
 					if(prob(50))
 						U.emote("moan")
@@ -207,13 +210,16 @@ Code:
 					switch(mode)
 						if(1) //low, setting for RP, it wont force your character to do anything.
 							to_chat(U, span_love("You feel pleasure surge through your [G.name]"))
-							U.do_jitter_animation() //do animation without heartbeat
+							if(U.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+								U.do_jitter_animation() //do animation without heartbeat
 						if(2) //med, can make you cum
 							to_chat(U, span_love("You feel intense pleasure surge through your [G.name]"))
-							U.do_jitter_animation()
+							if(U.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+								U.do_jitter_animation()
 						if(3) //high, makes you stun
 							to_chat(U, span_userdanger("You feel overpowering pleasure surge through your [G.name]"))
-							U.Jitter(3)
+							if(U.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+								U.Jitter(3)
 							U.Stun(30)
 							if(prob(50))
 								U.emote("moan")

@@ -145,6 +145,9 @@ GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)
 	ignore += typesof(/mob/living/simple_animal/hostile/swarmer)
 	// Some stack objects can't be initialized outside a borg module
 	ignore += typesof(/obj/item/stack)
+	// Fix of some mess with globals
+	ignore += typesof(/datum/controller/subsystem/lighting)
+	ignore += typesof(/datum/light_source)
 
 	var/list/cached_contents = spawn_at.contents.Copy()
 	var/original_turf_type = spawn_at.type
