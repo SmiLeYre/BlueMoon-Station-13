@@ -60,6 +60,7 @@ GLOBAL_LIST_INIT(arcade_prize_pool, list(
 		/obj/item/grenade/chem_grenade/glitter/pink = ARCADE_WEIGHT_TRICK,
 		/obj/item/grenade/chem_grenade/glitter/blue = ARCADE_WEIGHT_TRICK,
 		/obj/item/grenade/chem_grenade/glitter/white = ARCADE_WEIGHT_TRICK,
+		/obj/item/grenade/confetti = ARCADE_WEIGHT_TRICK,
 
 		/obj/item/extendohand/acme = ARCADE_WEIGHT_TRICK,
 		/obj/item/card/emagfake	= ARCADE_WEIGHT_TRICK,

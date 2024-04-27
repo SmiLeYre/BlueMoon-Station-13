@@ -126,12 +126,12 @@
 
 /obj/item/projectile/beam/pulse/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure/)))
+	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure)))
 		target.ex_act(EXPLODE_HEAVY)
 
 /obj/item/projectile/beam/pulse/danger/on_hit(atom/target, blocked = FALSE) //bluemoon add
 	. = ..()
-	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure/)))
+	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure)))
 		target.ex_act(EXPLODE_HEAVY)
 	var/turf/open/target_turf = get_turf(target)
 	if(istype(target_turf))

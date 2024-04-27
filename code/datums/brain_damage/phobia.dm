@@ -90,7 +90,7 @@
 		var/regex/reg = regex("(\\b|\\A)[REGEX_QUOTE(word)]'?s*(\\b|\\Z)", "ig")
 
 		if(findtext(hearing_args[HEARING_RAW_MESSAGE], reg))
-			hearing_args[HEARING_RAW_MESSAGE] = reg.Replace_char(hearing_args[HEARING_RAW_MESSAGE], "<span class='phobia'>$0</span>")
+			hearing_args[HEARING_RAW_MESSAGE] = reg.Replace(hearing_args[HEARING_RAW_MESSAGE], "<span class='phobia'>$0</span>")
 			matches = TRUE
 			mainsource = word
 

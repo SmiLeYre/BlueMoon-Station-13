@@ -75,7 +75,7 @@
 
 /obj/effect/abstract/turf_fire/Initialize(mapload, power, fire_color)
 	. = ..()
-	if(!isturf(loc)) // guh
+	if(!isturf(loc) || !isopenturf(loc)) // guh
 		return INITIALIZE_HINT_QDEL
 	open_turf = get_turf(src)
 	if(isgroundlessturf(open_turf))
@@ -100,9 +100,10 @@
 	//process() // process once instantly, helps prevent weird fire behavior
 
 /obj/effect/abstract/turf_fire/Destroy()
-	open_turf.turf_fire = null
+	if(open_turf)
+		open_turf.turf_fire = null
+		UnregisterSignal(open_turf, COMSIG_ATOM_ENTERED)
 	STOP_PROCESSING(SSturf_fire, src)
-	UnregisterSignal(open_turf, COMSIG_ATOM_ENTERED)
 	return ..()
 
 /obj/effect/abstract/turf_fire/proc/process_waste()

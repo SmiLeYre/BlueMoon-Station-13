@@ -58,7 +58,7 @@
 	// so that our button icon updates when relevant
 	if(check_flags & AB_CHECK_CONSCIOUS)
 		RegisterSignal(owner, COMSIG_MOB_STATCHANGE, PROC_REF(update_status_on_signal))
-
+	RegisterSignal(owner, COMSIG_MOB_KEYDOWN, PROC_REF(keydown), override = TRUE)
 	GiveAction(M)
 
 /datum/action/proc/clear_ref(datum/ref)
@@ -144,18 +144,20 @@
 				button.icon_state = background_icon_state
 
 		ApplyIcon(button, force)
-
-	if(!IsAvailable(TRUE))
-		button.color = transparent_when_unavailable ? rgb(128,0,0,128) : rgb(128,0,0)
-	else
-		button.color = rgb(255,255,255,255)
-		return TRUE
+		update_button_status(button)
 
 /datum/action/proc/ApplyIcon(atom/movable/screen/movable/action_button/current_button, force = FALSE)
 	if(icon_icon && button_icon_state && ((current_button.button_icon_state != button_icon_state) || force))
 		current_button.cut_overlays()
 		current_button.add_overlay(mutable_appearance(icon_icon, button_icon_state))
 		current_button.button_icon_state = button_icon_state
+
+/datum/action/proc/update_button_status(atom/movable/screen/movable/action_button/current_button, force = FALSE)
+	current_button.update_keybind_maptext(full_key)
+	if(IsAvailable())
+		current_button.color = rgb(255,255,255,255)
+	else
+		current_button.color = transparent_when_unavailable ? rgb(128,0,0,128) : rgb(128,0,0)
 
 /datum/action/ghost
 	icon_icon = 'icons/mob/mob.dmi'
