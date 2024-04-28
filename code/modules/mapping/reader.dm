@@ -482,9 +482,9 @@
 //optionally removes quotes before and after the text (for variable name)
 /datum/parsed_map/proc/trim_text(what as text,trim_quotes=0)
 	if(trim_quotes)
-		return trimQuotesRegex.Replace_char(what, "")
+		return trimQuotesRegex.Replace(what, "")
 	else
-		return trimRegex.Replace_char(what, "")
+		return trimRegex.Replace(what, "")
 
 
 //find the position of the next delimiter,skipping whatever is comprised between opening_escape and closing_escape
