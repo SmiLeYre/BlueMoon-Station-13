@@ -4212,6 +4212,7 @@
 #include "modular_bluemoon\Fink\code\items\memorizer.dm"
 #include "modular_bluemoon\Fink\code\items\shieldbelt.dm"
 #include "modular_bluemoon\Fink\code\items\urn.dm"
+#include "modular_bluemoon\Fink\code\items\weapons\emittergun.dm"
 #include "modular_bluemoon\Fink\code\items\weapons\garrote.dm"
 #include "modular_bluemoon\Fink\code\items\weapons\nullrod.dm"
 #include "modular_bluemoon\Fink\code\items\weapons\ritualdagger.dm"

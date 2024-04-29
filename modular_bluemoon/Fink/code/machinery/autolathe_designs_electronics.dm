@@ -6,3 +6,12 @@
 	build_path = /obj/item/assembly/control
 	category = list("initial", "Electronics")
 	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+
+/datum/design/sticky_tape
+	name = "Tape Roll"
+	id = "tape"
+	build_type = AUTOLATHE
+	materials = list(/datum/material/plastic = 500)
+	build_path = /obj/item/stack/sticky_tape
+	category = list("initial","Misc")
+
