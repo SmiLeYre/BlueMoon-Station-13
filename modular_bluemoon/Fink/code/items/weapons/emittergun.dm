@@ -24,7 +24,7 @@
 	weapon_weight = WEAPON_HEAVY
 	slot_flags = ITEM_SLOT_BACK
 	w_class = WEIGHT_CLASS_BULKY
-	cell_type = /obj/item/stock_parts/cell{charge = 3500; maxcharge = 3500}
+	cell_type = /obj/item/stock_parts/cell{charge = 2200; maxcharge = 2200}
 	ammo_type = list(/obj/item/ammo_casing/energy/emittergun)
 	can_charge = TRUE
 
