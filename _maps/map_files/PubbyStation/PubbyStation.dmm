@@ -57681,7 +57681,7 @@
 	req_access_txt = "38"
 	},
 /turf/open/floor/plating,
-/area/maintenance/department/security/brig)
+/area/service/lawoffice)
 "nuv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
@@ -58625,12 +58625,6 @@
 /obj/effect/landmark/start/lawyer,
 /obj/structure/chair/office/dark{
 	dir = 1
-	},
-/obj/machinery/power/apc{
-	areastring = "/area/service/lawoffice";
-	dir = 8;
-	name = "Law Office APC";
-	pixel_y = -24
 	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
@@ -64358,6 +64352,12 @@
 	},
 /obj/machinery/light/small{
 	dir = 1
+	},
+/obj/machinery/power/apc{
+	areastring = "/area/service/lawoffice";
+	dir = 1;
+	name = "Law Office APC";
+	pixel_y = 23
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
@@ -85361,7 +85361,7 @@ pEL
 pEL
 elk
 gSH
-aiu
+gSH
 jhk
 aiu
 gxq
@@ -85618,7 +85618,7 @@ aod
 sYx
 wrU
 vcv
-aiu
+gSH
 jhk
 aiu
 niy
@@ -86132,7 +86132,7 @@ nSo
 nSo
 uAU
 oCn
-aiu
+gSH
 wsm
 aiu
 riF
@@ -86389,7 +86389,7 @@ hnu
 jTu
 wTD
 wua
-aiu
+gSH
 jhk
 aiu
 aiu

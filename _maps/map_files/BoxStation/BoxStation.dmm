@@ -28747,6 +28747,7 @@
 	pixel_x = -27
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/computer/security/telescreen/circuitry,
 /turf/closed/wall,
 /area/science/circuit)
 "bUq" = (
