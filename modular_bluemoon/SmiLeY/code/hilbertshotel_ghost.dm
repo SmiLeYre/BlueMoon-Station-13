@@ -51,3 +51,7 @@
 /datum/map_template/hilbertshotel/apartment/beach
 	name = "Apartment_beach"
 	mappath = '_maps/templates/apartment_beach.dmm'
+
+/datum/map_template/hilbertshotel/apartment/forest
+	name = "Apartment_forest"
+	mappath = '_maps/templates/apartment_forest.dmm'

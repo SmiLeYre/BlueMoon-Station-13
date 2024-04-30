@@ -347,14 +347,12 @@
 	ready_for_reboot = TRUE
 	standard_reboot()
 
-	sleep(5 SECONDS)
-
 /datum/controller/subsystem/ticker/proc/standard_reboot()
 	if(ready_for_reboot)
 		if(mode.station_was_nuked)
 			Reboot("Станция уничтожена Ядерной бомбой.", "nuke")
 		else
-			Reboot("КОНЕЦ РАУНДА! ЕОРГ ТОЛЬКО НА ЕОРГ-АРЕНЕ!!", "proper completion", 240 SECONDS)
+			Reboot("КОНЕЦ РАУНДА! ЕОРГ ТОЛЬКО НА ЕОРГ-АРЕНЕ!!", "proper completion")
 	else
 		CRASH("Attempted standard reboot without ticker roundend completion")
 

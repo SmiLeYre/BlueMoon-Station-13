@@ -2432,17 +2432,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				H.adjustBruteLoss(damage_amount)
 		if(BURN)
 			H.damageoverlaytemp = 20
-			var/damage_amount
-			if (HAS_TRAIT(H, TRAIT_TOUGHT) && !forced) // проверка на трейт стойкости
-				if (damage <= 10) //если урон до применения модификаторов не привышает 10, то он не учитывается
-					if(HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
-						H.visible_message(span_warning("Корпус [H] слишком прочный, огонь не повредил его!"), span_notice("Корпус нивелирует наносимые повреждения."))
-					else
-						H.visible_message("Кожа [H] слишком прочная, огонь не повредил её!", span_notice("Кожа даже не повреждается от наносимых повреждений."))
-					return 0
-				damage_amount = damage * hit_percent * burnmod * H.physiology.burn_mod
-			else
-				damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
+			var/damage_amount = forced ? damage : damage * hit_percent * burnmod * H.physiology.burn_mod
 			if(BP)
 				if(BP.receive_damage(0, damage_amount, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
