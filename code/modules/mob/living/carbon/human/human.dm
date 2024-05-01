@@ -855,7 +855,7 @@
 	if(HAS_TRAIT(src, TRAIT_QUICKER_CARRY))
 		carrydelay = 20
 		skills_space = "профессионально "
-	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY))
+	else if(HAS_TRAIT(src, TRAIT_QUICK_CARRY) || HAS_TRAIT(target, TRAIT_BLUEMOON_LIGHT))
 		carrydelay = 30
 		skills_space = "быстро "
 	// BLUEMOON ADDITION AHEAD - тяжёлых и сверхтяжёлых персонажей нельзя нести на плече
