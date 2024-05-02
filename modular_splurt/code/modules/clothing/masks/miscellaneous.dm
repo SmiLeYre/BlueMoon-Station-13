@@ -47,6 +47,7 @@
 	item_state = "gas_mopp"
 	icon_state = "gas_mopp"
 	armor = list("melee" = 10, "bullet" = 5, "laser" = 10,"energy" = 10, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 40, "acid" = 100)
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
 
 /obj/item/clothing/mask/gas/cbrn/mopp/advance
 	name = "advance MOPP gas mask"
