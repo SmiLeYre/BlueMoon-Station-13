@@ -123,9 +123,10 @@
 	pda.name = pda.owner + " (" + pda.ownjob + ")"
 
 	possible_chassis = typelist(NAMEOF(src, possible_chassis), list("cat" = TRUE, "mouse" = TRUE, "monkey" = TRUE, "corgi" = FALSE,
-									"fox" = FALSE, "repairbot" = TRUE, "rabbit" = TRUE, "borgi" = FALSE ,
-									"parrot" = FALSE, "bear" = FALSE , "mushroom" = FALSE, "crow" = FALSE ,
-									"fairy" = FALSE , "spiderbot" = FALSE))		//assoc value is whether it can be picked up.
+									"fox" = TRUE, "repairbot" = TRUE, "rabbit" = TRUE, "borgi" = TRUE ,
+									"parrot" = TRUE, "bear" = FALSE , "mushroom" = TRUE, "crow" = TRUE ,
+									"fairy" = TRUE , "spiderbot" = TRUE, "snake" = FALSE, "pAIkemon_Espeon" = TRUE,
+									"Syndicat" = FALSE, "Syndifox" = FALSE))		//assoc value is whether it can be picked up.
 	dynamic_chassis_icons = typelist(NAMEOF(src, dynamic_chassis_icons), initialize_dynamic_chassis_icons())
 	chassis_pixel_offsets_x = typelist(NAMEOF(src, chassis_pixel_offsets_x), default_chassis_pixel_offsets_x())
 
