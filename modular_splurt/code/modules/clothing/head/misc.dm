@@ -76,6 +76,10 @@
 	can_flashlight = 1
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 30,"energy" = 10, "bomb" = 25, "bio" = 100, "rad" = 100, "fire" = 40, "acid" = 100)
 	is_edible = 0
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
+	max_heat_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	cold_protection = HEAD
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 
 /obj/item/clothing/head/helmet/cbrn/mopp/advance
 	name = "advance MOPP hood"

@@ -6,7 +6,7 @@
 	. = ..()
 	if(.)
 		return
-	if(user.mind?.antag_datums)
+	if(((GLOB.master_mode != "Extended"))&&(user.mind?.antag_datums))
 		if(user.mind?.has_antag_datum(/datum/antagonist/ghost_role))
 			return promptAndCheckIn(user, user)
 		if(user.mind?.has_antag_datum(/datum/antagonist/ashwalker))
@@ -51,3 +51,7 @@
 /datum/map_template/hilbertshotel/apartment/beach
 	name = "Apartment_beach"
 	mappath = '_maps/templates/apartment_beach.dmm'
+
+/datum/map_template/hilbertshotel/apartment/forest
+	name = "Apartment_forest"
+	mappath = '_maps/templates/apartment_forest.dmm'

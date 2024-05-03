@@ -541,10 +541,16 @@
 		// If target not able to use items, move and stand - or if they're just dead, pass over.
 		if(L.stat == DEAD)
 			return FALSE
-		if(!L.density)
+		// BLUEMOON ADD START - стрельба по лежачим целям в любом режиме, кроме HELP
+		if(!hit_prone_targets)
+			var/mob/living/buckled_to = L.lowest_buckled_mob()
+			if(!buckled_to.density) // Will just be us if we're not buckled to another mob
+				return FALSE
+			if(L.resting)
+				return TRUE
+		if(L.stat) // если цель лежит, но в крите, то пули без таргета не берут её
 			return FALSE
-		if(L.resting)
-			return TRUE
+		// BLUEMOON ADD END
 		var/stunned = HAS_TRAIT(L, TRAIT_MOBILITY_NOMOVE) && HAS_TRAIT(L, TRAIT_MOBILITY_NOREST) && HAS_TRAIT(L, TRAIT_MOBILITY_NOPICKUP)
 		return !stunned || hit_stunned_targets
 	return TRUE
@@ -732,7 +738,7 @@
 	trajectory = new(starting.x, starting.y, starting.z, pixel_x, pixel_y, Angle, pixel_increment_amount)
 	fired = TRUE
 	if(hitscan)
-		INVOKE_ASYNC(src, .proc/process_hitscan)
+		INVOKE_ASYNC(src, PROC_REF(process_hitscan))
 		return
 	if(!(datum_flags & DF_ISPROCESSING))
 		START_PROCESSING(SSprojectiles, src)
@@ -948,12 +954,10 @@
 		var/y = text2num(screen_loc_Y[1]) * 32 + text2num(screen_loc_Y[2]) - 32
 
 		//Calculate the "resolution" of screen based on client's view and world's icon size. This will work if the user can view more tiles than average.
-		var/list/screenview = getviewsize(user.client.view)
-		var/screenviewX = screenview[1] * world.icon_size
-		var/screenviewY = screenview[2] * world.icon_size
+		var/list/screenview = view_to_pixels(user.client.view)
 
-		var/ox = round(screenviewX/2) - user.client.pixel_x //"origin" x
-		var/oy = round(screenviewY/2) - user.client.pixel_y //"origin" y
+		var/ox = round(screenview[1] / 2) - user.client.pixel_x //"origin" x
+		var/oy = round(screenview[2] / 2) - user.client.pixel_y //"origin" y
 		angle = arctan(y - oy, x - ox)
 	return list(angle, p_x, p_y)
 

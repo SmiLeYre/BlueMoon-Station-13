@@ -268,8 +268,8 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 		var/speedbase = abs((4 SECONDS) / limbs_to_dismember.len)
 		for(bodypart in limbs_to_dismember)
 			i++
-			addtimer(CALLBACK(src, .proc/suicide_dismember, user, bodypart), speedbase * i)
-	addtimer(CALLBACK(src, .proc/manual_suicide, user), (5 SECONDS) * i)
+			addtimer(CALLBACK(src, PROC_REF(suicide_dismember), user, bodypart), speedbase * i)
+	addtimer(CALLBACK(src, PROC_REF(manual_suicide), user), (5 SECONDS) * i)
 	return MANUAL_SUICIDE
 
 /obj/item/melee/transforming/energy/sword/energy_sabre/proc/suicide_dismember(mob/living/user, obj/item/bodypart/affecting)
@@ -323,6 +323,30 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 
 /area/ruin/space/has_grav/powered/inteq_forgotten_vault
 	name = "InteQ Forgotten Vault"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+/area/ruin/space/has_grav/powered/inteq_forgotten_bar
+	name = "InteQ Forgotten Bar"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/powered/inteq_forgotten_bridge
+	name = "InteQ Forgotten Bridge"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/powered/inteq_forgotten_medbay
+	name = "InteQ Forgotten Medical Bay"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/powered/inteq_forgotten_atmos
+	name = "InteQ Forgotten Turbine Control"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/powered/inteq_forgotten_rnd
+	name = "InteQ Forgotten Research and Development"
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
 

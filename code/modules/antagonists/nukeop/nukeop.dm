@@ -35,11 +35,10 @@
 	REMOVE_TRAIT(owner, TRAIT_DISK_VERIFIER, NUKEOP_TRAIT)
 
 /datum/antagonist/nukeop/proc/equip_op()
+	var/mob/living/carbon/human/H = owner.current
 	title = pick("Царь", "Босс", "Лидер", "Шеф", "Король", "Пингвин", "Директор", "Лорд", "Оверлорд", "Глав", "Альфа", "Первый", "Bождь", "Бонза", "Айко", "Русич", "Сек", "Мёртвый")
 	if(!ishuman(owner.current))
 		return
-	var/mob/living/carbon/human/H = owner.current
-
 	if(!istype(H))
 		return
 	if(GLOB.master_mode == "Extended")
@@ -49,8 +48,9 @@
 		H.equipOutfit(nukeop_outfit)
 
 	if(name == "Lone Operative")
-		H.canloadappearance = TRUE
-		H.checkloadappearance()
+		var/load_character = alert(H.client, "Желаете загрузить текущего своего выбранного персонажа?", "Играть своим персонажем!", "Да", "Нет")
+		if(load_character == "Да")
+			H.load_client_appearance(H.client)
 
 	give_alias()
 
@@ -140,8 +140,8 @@
 
 /datum/antagonist/nukeop/get_admin_commands()
 	. = ..()
-	.["Send to base"] = CALLBACK(src,.proc/admin_send_to_base)
-	.["Tell code"] = CALLBACK(src,.proc/admin_tell_code)
+	.["Send to base"] = CALLBACK(src,PROC_REF(admin_send_to_base))
+	.["Tell code"] = CALLBACK(src,PROC_REF(admin_tell_code))
 
 /datum/antagonist/nukeop/proc/admin_send_to_base(mob/admin)
 	owner.current.forceMove(pick(GLOB.nukeop_start))
@@ -188,7 +188,7 @@
 	to_chat(owner, "<B>If you feel you are not up to this task, give your ID to another operative.</B>")
 	to_chat(owner, "<B>In your hand you will find a special item capable of triggering a greater challenge for your team. Examine it carefully and consult with your fellow operatives before activating it.</B>")
 	owner.announce_objectives()
-	addtimer(CALLBACK(src, .proc/nuketeam_name_assign), 1)
+	addtimer(CALLBACK(src, PROC_REF(nuketeam_name_assign)), 1)
 
 
 /datum/antagonist/nukeop/leader/proc/nuketeam_name_assign()

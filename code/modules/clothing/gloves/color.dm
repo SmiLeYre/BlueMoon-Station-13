@@ -3,15 +3,25 @@
 
 /obj/item/clothing/gloves/color/yellow
 	desc = "These gloves will protect the wearer from electric shock."
-	name = "insulated gloves"
+	name = "Insulated Gloves"
 	icon_state = "yellow"
 	item_state = "ygloves"
 	siemens_coefficient = 0
 	permeability_coefficient = 0.05
 	resistance_flags = NONE
-	var/can_be_cut = 1
 	custom_price = PRICE_EXPENSIVE
 	custom_premium_price = PRICE_ALMOST_ONE_GRAND
+	var/can_be_cut = 1
+	var/fingerstrait = TRAIT_CHUNKYFINGERS
+
+/obj/item/clothing/gloves/color/yellow/equipped(mob/user, slot)
+	..()
+	if(slot == ITEM_SLOT_GLOVES)
+		ADD_TRAIT(user, fingerstrait, GLOVE_TRAIT)
+
+/obj/item/clothing/gloves/color/yellow/dropped(mob/user)
+	..()
+	REMOVE_TRAIT(user, fingerstrait, GLOVE_TRAIT)
 
 /obj/item/toy/sprayoncan
 	name = "spray-on insulation applicator"
@@ -42,6 +52,7 @@
 	item_state = "sprayon"
 	permeability_coefficient = 0
 	resistance_flags = ACID_PROOF
+	fingerstrait = null
 	var/shocks_remaining = 10
 
 /obj/item/clothing/gloves/color/yellow/sprayon/Initialize(mapload)
@@ -50,7 +61,7 @@
 
 /obj/item/clothing/gloves/color/yellow/sprayon/equipped(mob/user, slot)
 	. = ..()
-	RegisterSignal(user, COMSIG_LIVING_SHOCK_PREVENTED, .proc/Shocked)
+	RegisterSignal(user, COMSIG_LIVING_SHOCK_PREVENTED, PROC_REF(Shocked))
 
 /obj/item/clothing/gloves/color/yellow/sprayon/proc/Shocked()
 	shocks_remaining--
@@ -214,7 +225,7 @@
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 70, ACID = 50)
 
 /obj/item/clothing/gloves/color/latex
-	name = "latex gloves"
+	name = "Latex Gloves"
 	desc = "Cheap sterile gloves made from latex. Transfers basic paramedical knowledge to the wearer via the use of nanochips."
 	icon_state = "latex"
 	item_state = "lgloves"

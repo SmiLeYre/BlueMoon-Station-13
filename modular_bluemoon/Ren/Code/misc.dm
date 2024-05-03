@@ -207,6 +207,10 @@
 	new /obj/item/tank/internals/anesthetic(src)
 
 ///FTU наборы
+/obj/item/storage/backpack/satchel/ftu
+	name = "Trading Looking Satchel Bag"
+	desc = "A large satchel bag for holding extra tactical supplies."
+
 /obj/item/storage/backpack/satchel/ftu/shootgun
 	name = "Набор №473. Спецификация: Инженер. Основное оружие: AA12"
 

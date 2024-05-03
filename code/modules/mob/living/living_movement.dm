@@ -106,7 +106,7 @@
 		if (!buckled.anchored)
 			return buckled.Move(newloc, direct)
 		else
-			return 0
+			return FALSE
 
 	var/old_direction = dir
 	var/turf/T = loc

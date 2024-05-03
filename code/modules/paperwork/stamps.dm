@@ -109,5 +109,18 @@
 	icon_state = "stamp-warden"
 	dye_color = DYE_RED
 
+/obj/item/stamp/security
+	name = "security rubber stamp"
+	icon_state = "stamp-security"
+	dye_color = DYE_RED
+
+// BLUEMOON ADD START - новый штамп для автоматически сгененированных документов
+/obj/item/stamp/machine
+	name = "Machinery stamping module"
+	desc = "И откуда ты это достал, мясной мешок? Положи обратно!"
+	icon_state = "stamp-machine"
+	dye_color = DYE_BLUE
+// BLUEMOON ADD END
+
 /obj/item/stamp/attack_paw(mob/user)
 	return attack_hand(user)

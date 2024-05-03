@@ -255,7 +255,7 @@
 	if(!IS_SPACE_NINJA(ninja))
 		to_chat(ninja, "<span class='danger'><B>fÄTaL ÈÈRRoR</B>: 382200-*#00CÖDE <B>RED</B>\nUNAUHORIZED USÈ DETÈCeD\nCoMMÈNCING SUB-R0UIN3 13...\nTÈRMInATING U-U-USÈR...</span>")
 		playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
-		addtimer(CALLBACK(src, .proc/explode), 3 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(explode)), 3 SECONDS)
 
 /obj/item/energy_naginata/proc/explode()
 	do_sparks(3, 1, src)

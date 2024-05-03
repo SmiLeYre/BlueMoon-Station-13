@@ -122,6 +122,11 @@
 
 #define SECHUD_NRI "hudnri"
 #define SECHUD_SOL "hudsol"
+#define SECHUD_BM  "hudbmland"
+#define SECHUD_HERESY  "hudheresy"
+#define SECHUD_LUST  "hudlust"
+#define SECHUD_AGONY  "hudagony"
+#define SECHUD_MUCK  "hudmuck"
 
 #define SECHUD_EMERGENCY_RESPONSE_TEAM_COMMANDER "hudemergencyresponseteamcommander"
 #define SECHUD_SECURITY_RESPONSE_OFFICER "hudsecurityresponseofficer"

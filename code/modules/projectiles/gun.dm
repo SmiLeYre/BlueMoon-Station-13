@@ -140,12 +140,12 @@
 
 	burst_size = 1
 
-	sort_list(fire_select_modes, /proc/cmp_numeric_asc)
+	sort_list(fire_select_modes, GLOBAL_PROC_REF(cmp_numeric_asc))
 
 	if(fire_select_modes.len > 1)
 		firemode_action = new(src)
 		firemode_action.button_icon_state = "fireselect_[fire_select]"
-		firemode_action.UpdateButtonIcon()
+		firemode_action.UpdateButtons()
 
 /obj/item/gun/ComponentInitialize()
 	. = ..()
@@ -225,7 +225,7 @@
 	playsound(user, 'sound/weapons/empty.ogg', 100, TRUE)
 	update_appearance()
 	firemode_action.button_icon_state = "fireselect_[fire_select]"
-	firemode_action.UpdateButtonIcon()
+	firemode_action.UpdateButtons()
 	return TRUE
 
 /obj/item/gun/equipped(mob/living/user, slot)
@@ -300,18 +300,18 @@
 	var/message = ""
 	var/lust_amt = 0
 	var/mob/living/living_target = target
-	if(!user.canUseTopic(user, BE_CLOSE))
+	if(!user.canUseTopic(target, BE_CLOSE))
 		return
-	user.DelayNextAction(CLICK_CD_RANGE)
+	user.DelayNextAction(CLICK_CD_MELEE)
 	if(ishuman(living_target) && (living_target?.client?.prefs?.toggles & VERB_CONSENT))
 		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
 			switch(hole)
 				if(CUM_TARGET_VAGINA)
-					if(living_target.has_vagina(REQUIRE_EXPOSED))
+					if(living_target.has_vagina() == HAS_EXPOSED_GENITAL)
 						message = (user == living_target) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою киску.", "запихивает '\the [src]' в свою киску", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[target]</b> прямо в киску с помощью '\the [src]'.", "засовывает '\the [src]' прямо в киску <b>[target]</b>.")
 						lust_amt = NORMAL_LUST
 				if(CUM_TARGET_ANUS)
-					if(living_target.has_anus(REQUIRE_EXPOSED))
+					if(living_target.has_anus() == HAS_EXPOSED_GENITAL)
 						message = (user == living_target) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою попку.","запихивает '\the [src]' прямо в свою собственную попку.", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[target]</b> прямо в попку '\the [src]'.", "активно суёт '\the [src]' прямо в попку <b>[target]</b>.")
 						lust_amt = NORMAL_LUST
 	if(message)
@@ -399,7 +399,7 @@
 				bonus_spread += 24 * G.weapon_weight * G.dualwield_spread_mult
 				loop_counter++
 				var/stam_cost = G.getstamcost(user)
-				addtimer(CALLBACK(G, /obj/item/gun.proc/process_fire, target, user, TRUE, params, null, bonus_spread, stam_cost), loop_counter)
+				addtimer(CALLBACK(G, TYPE_PROC_REF(/obj/item/gun, process_fire), target, user, TRUE, params, null, bonus_spread, stam_cost), loop_counter)
 
 	var/stam_cost = getstamcost(user)
 	process_fire(target, user, TRUE, params, null, bonus_spread, stam_cost)
@@ -721,7 +721,7 @@
 	update_icon()
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 
 /obj/item/gun/update_overlays()
 	. = ..()
@@ -846,7 +846,7 @@
 		zoomed = !zoomed
 
 	if(zoomed)
-		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, .proc/rotate)
+		RegisterSignal(user, COMSIG_ATOM_DIR_CHANGE, PROC_REF(rotate))
 		user.client.view_size.zoomOut(zoom_out_amt, zoom_amt, direct)
 	else
 		UnregisterSignal(user, COMSIG_ATOM_DIR_CHANGE)
@@ -865,7 +865,7 @@
 	return ..()
 
 /obj/item/gun/proc/getinaccuracy(mob/living/user, bonus_spread, stamloss)
-	return 0		// Replacement TBD: Exponential curved aim instability system.
+	return FALSE		// Replacement TBD: Exponential curved aim instability system.
 
 /*
 	if(inaccuracy_modifier == 0)

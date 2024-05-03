@@ -48,19 +48,30 @@
 	var/dir = get_dir(user.loc,target.loc)
 
 	if(user.z != target.z)
+		user.balloon_alert(user,"<span class='warning'>[target.real_name] is on another plane of existance!</span>")
 		to_chat(user,"<span class='warning'>[target.real_name] is on another plane of existance!</span>")
 	else
 		switch(dist)
 			if(0 to 15)
+				user.balloon_alert(user,"<span class='warning'>[target.real_name] is near you. They are to the [dir2text(dir)] of you!</span>")
+
 				to_chat(user,"<span class='warning'>[target.real_name] is near you. They are to the [dir2text(dir)] of you!</span>")
 			if(16 to 31)
+				user.balloon_alert(user,"<span class='warning'>[target.real_name] is somewhere in your vicinity. They are to the [dir2text(dir)] of you!</span>")
+
 				to_chat(user,"<span class='warning'>[target.real_name] is somewhere in your vicinity. They are to the [dir2text(dir)] of you!</span>")
 			if(32 to 127)
+				user.balloon_alert(user,"<span class='warning'>[target.real_name] is far away from you. They are to the [dir2text(dir)] of you!</span>")
+
 				to_chat(user,"<span class='warning'>[target.real_name] is far away from you. They are to the [dir2text(dir)] of you!</span>")
 			else
+				user.balloon_alert(user,"<span class='warning'>[target.real_name] is beyond our reach.</span>")
+
 				to_chat(user,"<span class='warning'>[target.real_name] is beyond our reach.</span>")
 
 	if(target.stat == DEAD)
+		user.balloon_alert(user,"<span class='warning'>[target.real_name] is dead. Bring them onto a transmutation rune!</span>")
+
 		to_chat(user,"<span class='warning'>[target.real_name] is dead. Bring them onto a transmutation rune!</span>")
 
 /obj/item/melee/sickly_blade

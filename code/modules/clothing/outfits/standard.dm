@@ -260,6 +260,7 @@
 	id = /obj/item/card/id/ert
 
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/pda/heads=1,
 		/obj/item/stamp/chameleon=1,
 		/obj/item/melee/classic_baton/telescopic/centcom/plus = 1,
@@ -269,6 +270,7 @@
 		/obj/item/implant/mindshield,
 		/obj/item/implant/deathrattle/centcom,
 	 	/obj/item/implant/weapons_auth,
+		/obj/item/implant/radio/centcom,
 	 	/obj/item/implant/krav_maga,
 	)
 
@@ -428,7 +430,7 @@
 		/obj/item/pinpointer/nuke=1,\
 		/obj/item/grenade/plastic/x4=1)
 
-	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth, /obj/item/implant/radio/centcom)
 
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,
@@ -459,6 +461,13 @@
 	name = "Death Commando Officer"
 	head = /obj/item/clothing/head/helmet/space/beret
 
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/box/ert_commander=1,
+		/obj/item/storage/box/syndie_kit/revolver=1,\
+		/obj/item/storage/firstaid/tactical/slaver=1,\
+		/obj/item/storage/box/flashbangs/super=1,\
+		/obj/item/pinpointer/nuke=1,\
+		/obj/item/grenade/plastic/x4=1)
 // BLUEMOON ADD START - командная коробочка для командира
 /datum/outfit/death_commando/officer/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
 	. = ..()

@@ -19,7 +19,7 @@
 	to_chat(user, span_notice("Я целюсь в... [hole]."))
 
 /obj/item/nullrod/holydildo/attack(mob/living/target, mob/living/user)
-	user.DelayNextAction()
+	user.DelayNextAction(CLICK_CD_MELEE)
 	if (user.a_intent == INTENT_HELP)
 		do_eblya(target, user)
 	else
@@ -33,15 +33,17 @@
 /obj/item/nullrod/holydildo/proc/do_eblya(mob/living/target, mob/living/user)
 	var/message = ""
 	var/lust_amt = 0
+	if(!user.canUseTopic(target, BE_CLOSE))
+		return
 	if(ishuman(target) && (target?.client?.prefs?.toggles & VERB_CONSENT))
 		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
 			switch(hole)
 				if(CUM_TARGET_VAGINA)
-					if(target.has_vagina(REQUIRE_EXPOSED))
+					if(target.has_vagina() == HAS_EXPOSED_GENITAL)
 						message = (user == target) ? pick("Мысленно устремив взгляд в бесконечность, она крепко обхватывает '\the [src]' и начинает погружать это в свою глубину.", "С величественным постоянством она наполняет свою киску '\the [src]' во имя своей веры.", "Смиренно постанывая, она садится на '\the [src]' в акте предания и самоотдачи.") : pick("Свершая акт святой любви, она проникает внутрь <b>[target]</b> с использованием '\the [src]' в своем стремлении к блаженству.", "В торжественном ритуале она внедряет '\the [src]' прямо в киску <b>[target]</b>.")
 						lust_amt = NORMAL_LUST
 				if(CUM_TARGET_ANUS)
-					if(target.has_anus(REQUIRE_EXPOSED))
+					if(target.has_anus() == HAS_EXPOSED_GENITAL)
 						message = (user == target) ? pick("С верой в душе, она крепко обхватывает '\the [src]' и начинает внедрять это в свою попку.", "С величественным постоянством она наполняет свою попку '\the [src]' во имя своей веры.", "Смиренно постанывая, она садится на '\the [src]' в акте ритуала святой любви.") : pick("С величием души, она трахает <b>[target]</b> прямо в попку с помощью '\the [src]'.", "В сакральном обряде она активно суёт '\the [src]' прямо в попку <b>[target]</b>, совершая акт любви.")
 						lust_amt = NORMAL_LUST
 	if(message)

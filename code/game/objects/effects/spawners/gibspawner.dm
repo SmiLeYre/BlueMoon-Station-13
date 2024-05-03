@@ -73,7 +73,7 @@
 					var/mob/living/carbon/digester = loc
 					digester.stomach_contents += gib
 
-				if(dna_to_add && dna_to_add.len)
+				if(dna_to_add && dna_to_add.len && istype(gib))
 					gib.add_blood_DNA(dna_to_add)
 					gib.body_colors = body_coloring
 					gib.update_icon()

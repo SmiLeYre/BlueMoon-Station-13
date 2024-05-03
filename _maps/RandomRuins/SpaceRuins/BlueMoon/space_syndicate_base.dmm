@@ -2519,6 +2519,16 @@
 "jJ" = (
 /obj/effect/turf_decal/trimline/dark_red/filled/line,
 /obj/structure/table,
+/obj/item/robot_module/syndicate_medical,
+/obj/item/robot_module/saboteur{
+	pixel_y = 8
+	},
+/obj/item/robot_module/syndicate{
+	pixel_y = 5
+	},
+/obj/item/borg/upgrade/transform/syndicatejack,
+/obj/item/borg/upgrade/transform/syndicatejack,
+/obj/item/borg/upgrade/transform/syndicatejack,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "jK" = (
@@ -7805,6 +7815,9 @@
 	pixel_x = -5;
 	pixel_y = -3
 	},
+/obj/item/gun/energy/lasercannon{
+	pixel_y = 6
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
 "Hh" = (
@@ -10149,6 +10162,10 @@
 	},
 /obj/machinery/light/dim/directional/west,
 /obj/structure/bed/roller,
+/obj/item/gun/medbeam{
+	pixel_y = -8
+	},
+/obj/item/gun/medbeam,
 /turf/open/floor/iron/white/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "Ra" = (

@@ -9650,22 +9650,6 @@
 /obj/effect/landmark/start/assistant,
 /turf/open/floor/plasteel,
 /area/commons/fitness/recreation)
-"azG" = (
-/obj/structure/rack,
-/obj/item/gun/energy/ionrifle,
-/obj/item/gun/energy/temperature/security,
-/obj/item/clothing/suit/armor/laserproof,
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
-/obj/machinery/airalarm{
-	dir = 4;
-	pixel_x = -23
-	},
-/obj/effect/turf_decal/bot,
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/security/armory)
 "azH" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/cable{
@@ -15344,14 +15328,6 @@
 /obj/machinery/conveyor_switch/oneway{
 	id = "packageSort2"
 	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/turf/open/floor/plasteel,
-/area/cargo/sorting)
-"aNK" = (
-/obj/structure/table,
-/obj/item/destTagger,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -50825,6 +50801,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/engineering/main)
+"dED" = (
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Law Office Maintenance";
+	req_access_txt = "38"
+	},
+/turf/open/floor/plating,
+/area/service/lawoffice)
 "dET" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden{
 	dir = 4
@@ -53439,6 +53422,13 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/security/brig)
+"hlY" = (
+/obj/effect/landmark/start/lawyer,
+/obj/structure/chair/office/dark{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/service/lawoffice)
 "hnu" = (
 /obj/machinery/photocopier,
 /turf/open/floor/wood,
@@ -57257,6 +57247,14 @@
 	},
 /turf/open/floor/plating,
 /area/science/xenobiology)
+"mOV" = (
+/obj/structure/table,
+/obj/item/dest_tagger,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/plasteel,
+/area/cargo/sorting)
 "mOX" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -57675,13 +57673,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/cargo)
-"ntZ" = (
-/obj/machinery/door/airlock/maintenance_hatch{
-	name = "Law Office Maintenance";
-	req_access_txt = "38"
-	},
-/turf/open/floor/plating,
-/area/service/lawoffice)
 "nuv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
@@ -58621,13 +58612,6 @@
 	},
 /turf/closed/wall/r_wall,
 /area/science/xenobiology)
-"oCn" = (
-/obj/effect/landmark/start/lawyer,
-/obj/structure/chair/office/dark{
-	dir = 1
-	},
-/turf/open/floor/wood,
-/area/service/lawoffice)
 "oCG" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -64340,27 +64324,6 @@
 	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
-"wsm" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/machinery/power/apc{
-	areastring = "/area/service/lawoffice";
-	dir = 1;
-	name = "Law Office APC";
-	pixel_y = 23
-	},
-/turf/open/floor/plating,
-/area/maintenance/department/security/brig)
 "wta" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -64630,6 +64593,22 @@
 	},
 /turf/open/floor/plating,
 /area/command/heads_quarters/cmo)
+"wLr" = (
+/obj/structure/rack,
+/obj/item/gun/energy/ionrifle,
+/obj/item/gun/energy/temperature/security,
+/obj/item/clothing/suit/hooded/ablative,
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
+/obj/machinery/airalarm{
+	dir = 4;
+	pixel_x = -23
+	},
+/obj/effect/turf_decal/bot,
+/turf/open/floor/plasteel/dark,
+/area/ai_monitored/security/armory)
 "wMu" = (
 /obj/structure/filingcabinet,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -65553,6 +65532,27 @@
 	},
 /turf/open/floor/engine,
 /area/science/explab)
+"xPf" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/machinery/power/apc{
+	areastring = "/area/service/lawoffice";
+	dir = 1;
+	name = "Law Office APC";
+	pixel_y = 23
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/security/brig)
 "xPU" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -85849,7 +85849,7 @@ alx
 aib
 ncY
 aiD
-azG
+wLr
 okS
 oPT
 fav
@@ -85875,7 +85875,7 @@ eEp
 vhk
 gAG
 sJr
-ntZ
+dED
 jhk
 aiu
 aJF
@@ -86131,9 +86131,9 @@ uSx
 nSo
 nSo
 uAU
-oCn
+hlY
 gSH
-wsm
+xPf
 aiu
 riF
 xhE
@@ -103871,7 +103871,7 @@ aIU
 aJI
 lAs
 aMj
-aNK
+mOV
 fwl
 dMB
 dMB

@@ -305,7 +305,7 @@
 
 /datum/mutation/human/bm/nyctophobia/on_acquiring(mob/living/carbon/human/owner)
 	. = ..()
-	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, .proc/on_holder_moved)
+	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(on_holder_moved))
 
 /datum/mutation/human/bm/nyctophobia/on_losing(mob/living/carbon/human/owner)
 	. = ..()
@@ -349,7 +349,7 @@
 
 /datum/mutation/human/bm/lightless/on_acquiring(mob/living/carbon/human/owner)
 	. = ..()
-	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, .proc/on_holder_moved)
+	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, PROC_REF(on_holder_moved))
 
 /datum/mutation/human/bm/lightless/on_losing(mob/living/carbon/human/owner)
 	. = ..()
@@ -1021,7 +1021,9 @@
 		heal_multiplier *= 0.5
 	owner.adjustBruteLoss(bruteheal * heal_multiplier, forced = TRUE)
 	owner.adjustFireLoss(burnheal * heal_multiplier, forced = TRUE)
-	owner.adjustToxLoss(toxheal * heal_multiplier, forced = TRUE)
+
+	if (!HAS_TRAIT(owner, TRAIT_TOXINLOVER)) // спасаем слаймов
+		owner.adjustToxLoss(toxheal * heal_multiplier, forced = TRUE)
 
 /datum/mutation/human/bm/breathless
 	name = "Недышащий"
@@ -1274,7 +1276,7 @@
 	act_hypno.Grant(quirk_mob)
 
 	// Add examine text
-	RegisterSignal(owner, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
+	RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
 
 /datum/mutation/human/bm/Hypnotic_gaze/on_losing(mob/living/carbon/human/owner)
 	. = ..()
@@ -1712,8 +1714,8 @@
 
 /datum/mutation/human/bm/onelife/on_acquiring(mob/living/carbon/human/owner)
 	. = ..()
-	RegisterSignal(owner, COMSIG_MOB_DEATH, .proc/get_rid_of_them)
-	RegisterSignal(owner, COMSIG_MOB_EMOTE, .proc/get_rid_of_them_emote)
+	RegisterSignal(owner, COMSIG_MOB_DEATH, PROC_REF(get_rid_of_them))
+	RegisterSignal(owner, COMSIG_MOB_EMOTE, PROC_REF(get_rid_of_them_emote))
 
 /datum/mutation/human/bm/onelife/on_losing(mob/living/carbon/human/owner)
 	. = ..()

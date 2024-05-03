@@ -143,6 +143,9 @@ SUBSYSTEM_DEF(jukeboxes)
 			stack_trace("Nonexistant or invalid object associated with jukebox.")
 			continue
 
+		if(!jukebox_loc)
+			return
+
 		var/list/audible_zlevels = get_multiz_accessible_levels(jukebox_loc.z) //TODO - for multiz refresh, this should use the cached zlevel connections var in SSMapping. For now this is fine!
 
 		var/sound/song_played = jukeinfo[JUKE_SOUND]

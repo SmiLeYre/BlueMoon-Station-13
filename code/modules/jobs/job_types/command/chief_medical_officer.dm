@@ -45,6 +45,13 @@
 		/obj/item/cautery
 	)
 
+	mail_goodies = list(
+		/obj/effect/spawner/lootdrop/organ_spawner = 10,
+//		/obj/effect/spawner/lootdrop/memeorgans = 8,
+		/obj/effect/spawner/lootdrop/space/fancytool/advmedicalonly = 4,
+		/obj/effect/spawner/lootdrop/space/fancytool/raremedicalonly = 1
+	)
+
 /datum/outfit/job/cmo
 	name = "Chief Medical Officer"
 	jobtype = /datum/job/cmo

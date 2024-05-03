@@ -54,7 +54,7 @@
 	suit = /obj/item/clothing/suit/armor/vest/command
 	head = /obj/item/clothing/head/bridgeofficer
 	gloves = /obj/item/clothing/gloves/color/black
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
+	glasses = /obj/item/clothing/glasses/hud/skills
 	shoes = /obj/item/clothing/shoes/laceup
 	l_pocket =  /obj/item/pda/heads
 
@@ -72,7 +72,7 @@
 	ears = /obj/item/radio/headset/headset_bo/bowman
 	uniform = /obj/item/clothing/under/rank/bridgeofficer
 	head = /obj/item/clothing/head/bridgeofficer
-	glasses = /obj/item/clothing/glasses/sunglasses
+	glasses = /obj/item/clothing/glasses/hud/skills
 	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 
 	backpack = /obj/item/storage/backpack/duffelbag/syndie

@@ -247,8 +247,8 @@
 	name = "Medipen Variety-Pak"
 	desc = "Содержит восемь различных медикаментов в трех различных вариантах, чтобы помочь в быстром лечении пациентов с серьезными травмами."
 	cost = 2000
-	contains = list(/obj/item/reagent_containers/hypospray/medipen/,
-					/obj/item/reagent_containers/hypospray/medipen/,
+	contains = list(/obj/item/reagent_containers/hypospray/medipen,
+					/obj/item/reagent_containers/hypospray/medipen,
 					/obj/item/reagent_containers/hypospray/medipen/ekit,
 					/obj/item/reagent_containers/hypospray/medipen/ekit,
 					/obj/item/reagent_containers/hypospray/medipen/ekit,

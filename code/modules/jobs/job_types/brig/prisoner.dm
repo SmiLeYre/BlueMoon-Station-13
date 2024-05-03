@@ -26,6 +26,11 @@
 		/obj/item/pen/blue
 	)
 
+	exclusive_mail_goodies = TRUE
+	mail_goodies = list(
+		/obj/effect/spawner/lootdrop/prison_contraband = 1
+	)
+
 /datum/job/prisoner/get_roundstart_spawn_point()
 	return get_latejoin_spawn_point()
 

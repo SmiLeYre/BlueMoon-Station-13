@@ -38,12 +38,18 @@
 		/obj/item/toy/figure/captain
 	)
 
+	mail_goodies = list(
+		/obj/item/clothing/mask/cigarette/cigar/havana = 20,
+		/obj/item/storage/fancy/cigarettes/cigars/havana = 15,
+		/obj/item/reagent_containers/food/drinks/bottle/champagne = 10
+	)
+
 /datum/job/captain/get_access()
 	return get_all_accesses()
 
 /datum/job/captain/announce(mob/living/carbon/human/H)
 	..()
-	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Капитан [H.nameless ? "" : "[H.real_name] "] прибывает на станцию [station_name()]!"))
+	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(minor_announce), "Капитан [H.nameless ? "" : "[H.real_name] "] прибывает на [station_name()]!"))
 
 /datum/outfit/job/captain
 	name = "Captain"
@@ -77,7 +83,7 @@
 
 	//belt = /obj/item/pda/syndicate/no_deto
 
-	glasses = /obj/item/clothing/glasses/sunglasses
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	ears = /obj/item/radio/headset/heads/captain/alt
 	neck = /obj/item/clothing/neck/cloak/syndieadm
 	gloves = /obj/item/clothing/gloves/color/captain

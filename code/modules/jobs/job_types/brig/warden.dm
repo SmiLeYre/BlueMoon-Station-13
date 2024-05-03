@@ -34,6 +34,15 @@
 		/obj/item/book/manual/wiki/security_space_law
 	)
 
+	mail_goodies = list(
+		/obj/item/storage/fancy/cigarettes = 15,
+		/obj/item/storage/box/handcuffs = 10,
+		/obj/item/storage/box/teargas = 10,
+		/obj/item/storage/box/flashbangs = 10,
+		/obj/item/storage/box/rubbershot = 10,
+		/obj/item/storage/box/lethalshot = 5
+	)
+
 /datum/job/warden/get_access()
 	var/list/L = list()
 	L = ..() | check_config_for_sec_maint()
@@ -51,9 +60,10 @@
 	gloves = /obj/item/clothing/gloves/color/black
 	head = /obj/item/clothing/head/warden
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
-	r_pocket = /obj/item/reagent_containers/peacehypo
-	l_pocket = /obj/item/restraints/handcuffs
+	l_pocket = /obj/item/storage/bag/security
+	r_pocket = /obj/item/clothing/accessory/badge
 	suit_store = /obj/item/gun/energy/pumpaction/defender
+	backpack_contents = list(/obj/item/reagent_containers/peacehypo, /obj/item/storage/box/sec_kit, /obj/item/stamp/security)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec

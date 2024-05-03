@@ -280,7 +280,7 @@
 				state = STATE_MAIN
 
 				//а тут надо вызывать
-				INVOKE_ASYNC(src, .proc/makeEmergencyresponseteam, data["link"], id)
+				INVOKE_ASYNC(src, PROC_REF(makeEmergencyresponseteam), data["link"], id)
 
 		if ("recallShuttle")
 			// AIs cannot recall the shuttle
@@ -752,7 +752,7 @@
 
 	var/list/settings = list(
 		"mainsettings" = list(
-		"template" = list("desc" = "Template", "callback" = CALLBACK(src, .proc/makeERTTemplateModified), "type" = "datum", "path" = "/datum/ert", "subtypesonly" = TRUE, "value" = ertemplate.type),
+		"template" = list("desc" = "Template", "callback" = CALLBACK(src, PROC_REF(makeERTTemplateModified)), "type" = "datum", "path" = "/datum/ert", "subtypesonly" = TRUE, "value" = ertemplate.type),
 		"teamsize" = list("desc" = "Team Size", "type" = "number", "value" =  GLOB.payed_ert[id]["teamsize"]),
 		"mission" = list("desc" = "Mission", "type" = "string", "value" = GLOB.payed_ert[id]["mission"]),
 		"polldesc" = list("desc" = "Ghost poll description", "type" = "string", "value" = ertemplate.polldesc),

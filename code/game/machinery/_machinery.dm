@@ -150,6 +150,8 @@ Class Procs:
 
 	///A combination of factors such as having power, not being broken and so on. Boolean.
 	var/is_operational = TRUE
+	///Boolean on whether this machines interact with atmos
+	var/atmos_processing = FALSE
 
 /obj/machinery/Initialize(mapload)
 	if(!armor)
@@ -169,7 +171,7 @@ Class Procs:
 			START_PROCESSING(SSfastprocess, src)
 		else
 			START_PROCESSING(SSmachines, src)
-	RegisterSignal(src, COMSIG_ENTER_AREA, .proc/power_change)
+	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(power_change))
 
 	if (occupant_typecache)
 		occupant_typecache = typecacheof(occupant_typecache)
@@ -581,8 +583,8 @@ Class Procs:
 		I.play_tool_sound(src, 50)
 		setDir(turn(dir,-90))
 		to_chat(user, "<span class='notice'>Вы поворачиваете [src].</span>")
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
 /obj/proc/can_be_unfasten_wrench(mob/user, silent) //if we can unwrench this object; returns SUCCESSFUL_UNFASTEN and FAILED_UNFASTEN, which are both TRUE, or CANT_UNFASTEN, which isn't.
 	if(!(isfloorturf(loc) || istype(loc, /turf/open/indestructible)) && !anchored)
@@ -600,7 +602,7 @@ Class Procs:
 		I.play_tool_sound(src, 50)
 		var/prev_anchored = anchored
 		//as long as we're the same anchored state and we're either on a floor or are anchored, toggle our anchored state
-		if(I.use_tool(src, user, time, extra_checks = CALLBACK(src, .proc/unfasten_wrench_check, prev_anchored, user)))
+		if(I.use_tool(src, user, time, extra_checks = CALLBACK(src, PROC_REF(unfasten_wrench_check), prev_anchored, user)))
 			to_chat(user, "<span class='notice'>Вы начинаете [anchored ? "откручивать" : "вкручивать"] [src].</span>")
 			setAnchored(!anchored)
 			check_on_table()

@@ -46,7 +46,7 @@
 
 /datum/station_trait/hangover/New()
 	. = ..()
-	RegisterSignal(SSdcs, COMSIG_GLOB_JOB_AFTER_LATEJOIN_SPAWN, .proc/on_job_after_spawn)
+	RegisterSignal(SSdcs, COMSIG_GLOB_JOB_AFTER_LATEJOIN_SPAWN, PROC_REF(on_job_after_spawn))
 
 /datum/station_trait/hangover/revert()
 	for (var/obj/effect/landmark/start/hangover/hangover_spot in GLOB.start_landmarks_list)
@@ -179,7 +179,7 @@
 			/obj/item/gun/ballistic/automatic/pistol = 10,
 		)
 
-	RegisterSignal(SSatoms, COMSIG_SUBSYSTEM_POST_INITIALIZE, .proc/arm_monke)
+	RegisterSignal(SSatoms, COMSIG_SUBSYSTEM_POST_INITIALIZE, PROC_REF(arm_monke))
 
 /datum/station_trait/revenge_of_pun_pun/proc/arm_monke()
 	SIGNAL_HANDLER

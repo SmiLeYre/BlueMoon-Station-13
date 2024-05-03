@@ -39,6 +39,10 @@
 		/obj/item/stamp/denied
 	)
 
+	mail_goodies = list(
+		/obj/item/circuitboard/machine/emitter = 3
+	)
+
 /datum/outfit/job/quartermaster
 	name = "Quartermaster"
 	jobtype = /datum/job/qm

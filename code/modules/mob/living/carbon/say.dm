@@ -3,15 +3,15 @@
 	var/static/regex/tongueless_lower = new("\[gdntke]+", "g")
 	var/static/regex/tongueless_upper = new("\[GDNTKE]+", "g")
 	if(message[1] != "*")
-		message = tongueless_lower.Replace_char(message, pick("aa","oo","'"))
-		message = tongueless_upper.Replace_char(message, pick("AA","OO","'"))
+		message = tongueless_lower.Replace(message, pick("aa","oo","'"))
+		message = tongueless_upper.Replace(message, pick("AA","OO","'"))
 		speech_args[SPEECH_MESSAGE] = message
 
 /mob/living/carbon/can_speak_vocal(message)
 	if(silent)
-		return 0
+		return FALSE
 	if(get_selected_language() == /datum/language/signlanguage && handcuffed)
-		return 0
+		return FALSE
 	return ..()
 
 /mob/living/carbon/could_speak_language(datum/language/language)

@@ -131,7 +131,7 @@
 
 		weights[haystack[i]] = val
 
-	sortTim(weights, /proc/cmp_numeric_asc, TRUE)
+	sortTim(weights, GLOBAL_PROC_REF(cmp_numeric_asc), TRUE)
 
 	var/list/winners = list()
 	for (var/winner in weights)

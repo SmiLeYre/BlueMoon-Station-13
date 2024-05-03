@@ -88,6 +88,7 @@
 		/obj/item/stack/sheet/mineral/abductor/fifty = 20,
 		/obj/item/sord = 20,
 		/obj/item/toy/syndicateballoon = 15,
+		/obj/item/grenade/confetti = 5,
 		/obj/item/lighter/gonzofist = 5,
 		/obj/item/lighter/engraved = 5,
 		/obj/item/lighter/nt_rep = 5,

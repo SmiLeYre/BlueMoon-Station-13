@@ -577,7 +577,7 @@ GLOBAL_LIST_EMPTY(species_datums)
 				message_admins("[ADMIN_FULLMONTY(usr)] authorized <span class='warning'>EXECUTION</span> for [their_rank] [their_name], with comment: [comment]")
 				usr.investigate_log("[key_name(usr)] authorized <span class='warning'>EXECUTION</span> for [their_rank] [their_name], with comment: [comment]", INVESTIGATE_RECORDS)
 			else
-				return 0
+				return FALSE
 		if("search", SEC_RECORD_STATUS_SEARCH)
 			status = SEC_RECORD_STATUS_SEARCH
 		if("monitor", SEC_RECORD_STATUS_MONITOR)
@@ -598,4 +598,4 @@ GLOBAL_LIST_EMPTY(species_datums)
 	log_admin("[key_name_admin(user)] set secstatus of [their_rank] [their_name] to [status], comment: [comment]")
 	target_records.fields["comments"] += "Set to [status] by [user_name || user.name] ([user_rank]) on [GLOB.current_date_string] [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)], comment: [comment]"
 	update_all_mob_security_hud()
-	return 1
+	return TRUE

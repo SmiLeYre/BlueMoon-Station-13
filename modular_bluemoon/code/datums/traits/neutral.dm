@@ -15,7 +15,7 @@
 
 /datum/quirk/awoo/add()
 	// Set timer
-	//timer = addtimer(CALLBACK(src, .proc/do_awoo), timer_trigger, TIMER_STOPPABLE)
+	//timer = addtimer(CALLBACK(src, PROC_REF(do_awoo), timer_trigger, TIMER_STOPPABLE)
 	last_awoo = world.time
 	chance = default_chance
 
@@ -53,7 +53,7 @@
 	//deltimer(timer)
 	//timer = null
 	// Add new timer
-	//timer = addtimer(CALLBACK(src, .proc/do_awoo), timer_trigger, TIMER_STOPPABLE)
+	//timer = addtimer(CALLBACK(src, PROC_REF(do_awoo), timer_trigger, TIMER_STOPPABLE)
 
 /datum/quirk/light
 	name = "Лёгкий"
