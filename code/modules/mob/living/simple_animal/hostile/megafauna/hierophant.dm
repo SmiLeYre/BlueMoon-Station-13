@@ -50,8 +50,8 @@ Difficulty: Normal
 	faction = list("boss") //asteroid mobs? get that shit out of my beautiful square house
 	speak_emote = list("preaches")
 	armour_penetration = 75
-	melee_damage_lower = 15
-	melee_damage_upper = 20
+	melee_damage_lower = 25
+	melee_damage_upper = 50
 	blood_volume = 0
 	speed = 1
 	move_to_delay = 11

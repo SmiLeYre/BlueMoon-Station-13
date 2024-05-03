@@ -194,8 +194,9 @@
 				goodies[quirk_goodie] = 5
 
 		// A little boost for the special times!
-		for(var/datum/holiday/holiday in SSevents.holidays) // typecheck is back, rollback to as anything when somebody fix fact, that this list can contain string
-			if(length(holiday.mail_goodies))
+		for(var/holiday_name in SSevents.holidays)
+			var/datum/holiday/holiday = SSevents.holidays[holiday_name]
+			if(LAZYLEN(holiday.mail_goodies))
 				var/holiday_goodie = pick(holiday.mail_goodies)
 				goodies[holiday_goodie] = holiday.mail_goodies[holiday_goodie]
 

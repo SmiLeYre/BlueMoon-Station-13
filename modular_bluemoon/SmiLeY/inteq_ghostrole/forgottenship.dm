@@ -325,6 +325,30 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	name = "InteQ Forgotten Vault"
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+/area/ruin/space/has_grav/powered/inteq_forgotten_bar
+	name = "InteQ Forgotten Bar"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/powered/inteq_forgotten_bridge
+	name = "InteQ Forgotten Bridge"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/powered/inteq_forgotten_medbay
+	name = "InteQ Forgotten Medical Bay"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/powered/inteq_forgotten_atmos
+	name = "InteQ Forgotten Turbine Control"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/powered/inteq_forgotten_rnd
+	name = "InteQ Forgotten Research and Development"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
 
 //Special NT NPCs
 

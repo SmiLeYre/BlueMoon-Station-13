@@ -57,7 +57,7 @@
 
 	id = /obj/item/card/id/gold
 	belt = /obj/item/pda/captain
-	glasses = /obj/item/clothing/glasses/hud/skills
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	ears = /obj/item/radio/headset/heads/captain/alt
 	gloves = /obj/item/clothing/gloves/color/captain
 	uniform =  /obj/item/clothing/under/rank/captain
@@ -83,7 +83,7 @@
 
 	//belt = /obj/item/pda/syndicate/no_deto
 
-	glasses = /obj/item/clothing/glasses/hud/skills
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	ears = /obj/item/radio/headset/heads/captain/alt
 	neck = /obj/item/clothing/neck/cloak/syndieadm
 	gloves = /obj/item/clothing/gloves/color/captain

@@ -5,7 +5,6 @@ GLOBAL_VAR(restart_counter)
 GLOBAL_VAR(topic_status_lastcache)
 GLOBAL_LIST(topic_status_cache)
 
-
 //This happens after the Master subsystem new(s) (it's a global datum)
 //So subsystems globals exist, but are not initialised
 
@@ -355,7 +354,7 @@ GLOBAL_LIST(topic_status_cache)
 /// Auxtools atmos
 /world/proc/refresh_atmos_grid()
 
-/world/proc/change_fps(new_value = 60)
+/world/proc/change_fps(new_value = 20)
 	if(new_value <= 0)
 		CRASH("change_fps() called with [new_value] new_value.")
 	if(fps == new_value)

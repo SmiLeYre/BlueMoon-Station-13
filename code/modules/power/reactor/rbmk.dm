@@ -533,6 +533,7 @@ BLUEMOON REMOVAL END */
 				WS.fire()
 
 /obj/machinery/atmospherics/components/trinary/nuclear_reactor/update_icon()
+	. = ..()
 	icon_state = "reactor_off"
 	switch(temperature)
 		if(0 to 200)
