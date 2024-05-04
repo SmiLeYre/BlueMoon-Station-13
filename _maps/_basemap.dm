@@ -23,6 +23,7 @@
 		#include "map_files\RatvarStation\RatvarStation.dmm"
 		#include "map_files\ArmyStation\ArmyStation.dmm"
 		#include "map_files\PrisonStation\PrisonStation.dmm"
+		#include "map_files\CampKanship\CampKanship.dmm"
 
 		#ifdef CIBUILDING
 			#include "templates.dm"

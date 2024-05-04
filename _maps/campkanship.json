@@ -1,0 +1,11 @@
+{
+    "map_name": "CampKanship",
+    "map_path": "map_files/CampKanship",
+    "map_file": "CampKanship.dmm",
+    "shuttles": {
+	    "emergency": "emergency_pubby",
+	    "whiteship": "whiteship_pubby",
+	    "ferry": "ferry_fancy"
+    },
+	"minetype":"none"
+}

@@ -90,5 +90,9 @@ map syndicatestation
 	voteweight 2
 endmap
 
+map campkanship
+	minplayers 120
+endmap
+
 #map boxedinstation
 	endmap
