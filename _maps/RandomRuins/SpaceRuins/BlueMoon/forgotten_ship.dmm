@@ -557,8 +557,11 @@
 	pixel_x = -33;
 	pixel_y = -1
 	},
-/obj/machinery/power/apc/auto_name{
-	pixel_y = 29
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/inteq_forgotten_bar)
@@ -2711,12 +2714,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
-/obj/machinery/power/apc/syndicate{
-	dir = 4;
-	name = "InteQ Listening Post APC";
-	pixel_x = -32;
-	start_charge = 45
-	},
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/inteq_forgotten_atmos)
 "pI" = (
@@ -3416,20 +3413,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/chair/office/light{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/brown/half{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/apc/auto_name{
-	pixel_y = 29
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
@@ -5485,19 +5473,8 @@
 	pixel_y = 32;
 	start_charge = 35
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/table/glass,
-/obj/machinery/reagentgrinder{
-	pixel_y = 10
-	},
-/obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/auto_name{
-	pixel_y = 29
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/inteq_forgotten_medbay)
