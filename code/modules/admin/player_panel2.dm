@@ -28,6 +28,8 @@ GLOBAL_LIST_INIT(pp_limbs, list(
 		to_chat(owner, "Error: you are not an admin!")
 		return
 
+	log_admin("[key_name(usr)] checked the individual player panel for [key_name(M)][isobserver(usr)?"":" while in game"].")
+
 	if(!M.mob_panel)
 		M.create_player_panel()
 

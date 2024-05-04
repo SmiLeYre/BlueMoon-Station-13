@@ -612,3 +612,11 @@
 	new /obj/item/clothing/suit/space/hardsuit/contractor(src)
 	new /obj/item/clothing/mask/gas/syndicate(src)
 	new /obj/item/tank/internals/emergency_oxygen/engi/syndi(src)
+
+/obj/item/storage/box/inteq_kit/conversion_kit
+	name = "InteQ Conversion Kit"
+	desc = "Коробка с набором конвертации наушника в bowman headset и ключом-шифратором InteQ. Набор конвертации, после использования на наушнике обеспечивает пользователю защиту от звука светошумовой гранаты. Вставьте в наушник чтобы получить доступ к каналу InteQ (говорить и слышать) и остальным каналам на станции (только слышать)."
+
+/obj/item/storage/box/inteq_kit/conversion_kit/PopulateContents()
+	new /obj/item/headsetupgrader(src)
+	new /obj/item/encryptionkey/inteq(src)

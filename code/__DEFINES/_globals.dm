@@ -58,3 +58,5 @@
 
 //Create an typed null global
 #define GLOBAL_DATUM(X, Typepath) GLOBAL_RAW(Typepath/##X); GLOBAL_UNMANAGED(X)
+
+GLOBAL_VAR_INIT(running_create_and_destroy, FALSE)

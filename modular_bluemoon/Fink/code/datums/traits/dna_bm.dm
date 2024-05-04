@@ -1021,7 +1021,9 @@
 		heal_multiplier *= 0.5
 	owner.adjustBruteLoss(bruteheal * heal_multiplier, forced = TRUE)
 	owner.adjustFireLoss(burnheal * heal_multiplier, forced = TRUE)
-	owner.adjustToxLoss(toxheal * heal_multiplier, forced = TRUE)
+
+	if (!HAS_TRAIT(owner, TRAIT_TOXINLOVER)) // спасаем слаймов
+		owner.adjustToxLoss(toxheal * heal_multiplier, forced = TRUE)
 
 /datum/mutation/human/bm/breathless
 	name = "Недышащий"
