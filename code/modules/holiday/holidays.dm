@@ -13,7 +13,7 @@
 	var/obj/item/drone_hat //If this is defined, drones without a default hat will spawn with this one during the holiday; check drones_as_items.dm to see this used
 
 	// Special things to be given during this!
-	var/list/mail_goodies
+	var/list/mail_goodies = list()
 
 // This proc gets run before the game starts when the holiday is activated. Do festive shit here.
 /datum/holiday/proc/celebrate()

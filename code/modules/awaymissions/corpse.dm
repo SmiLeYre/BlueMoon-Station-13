@@ -128,6 +128,7 @@
 	if(ishuman(M) && load_character)
 		var/mob/living/carbon/human/H = M
 		var/mob/grab = get_mob_by_ckey(ckey)
+		grab.mind.transfer_to(H)
 		H.load_client_appearance(grab.client)
 	equip(M, load_character)
 

@@ -52,7 +52,8 @@
 	if(detached_pockets && detached_pockets.parent == U)
 		TakeComponent(detached_pockets)
 
-	U.armor = U.armor.detachArmor(armor)
+	if(U.armor && armor)
+		U.armor = U.armor.detachArmor(armor)
 	//SANDSTORM EDIT
 	current_uniform = null
 	//SANDSTORM EDIT END
