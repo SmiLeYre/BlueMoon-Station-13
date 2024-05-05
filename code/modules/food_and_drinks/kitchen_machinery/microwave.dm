@@ -160,6 +160,10 @@
 	var/ingredient_count = 0
 
 	for (var/atom/movable/ingredient as anything in ingredients)
+		//BLUEMOON FIX
+		if(ingredient_count > 90)// don't fuck around with byond overlays for too long, or byond overlays fuck you around.
+			break
+		//BLUEMOON FIX
 		var/image/ingredient_overlay = image(ingredient, src)
 
 		var/icon/ingredient_icon = icon(ingredient.icon, ingredient.icon_state)
