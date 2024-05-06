@@ -105,6 +105,11 @@
 	for(var/V in user.chameleon_item_actions)
 		var/datum/action/item_action/chameleon/change/A = V
 		var/done = FALSE
+		if(istype(A.target, /obj/item/card/id/))
+			var/obj/item/card/id/ID = A.target
+			ID.assignment = selected
+			ID.update_label()
+			break
 		for(var/T in outfit_types)
 			for(var/name in A.chameleon_list)
 				if(A.chameleon_list[name] == T)
