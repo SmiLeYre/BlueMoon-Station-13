@@ -35,12 +35,14 @@
 				#undef ALLOWED_MARTIAL_ARTS
 			if(ishuman(user_mob))
 				var/mob/living/carbon/human/human_pulling = user
+				if(user_mob.mind?.antag_datums)
+					can_pull = TRUE
+				if(user_mob.mind?.has_antag_datum(/datum/antagonist/ghost_role))
+					can_pull = FALSE
+				if(HAS_TRAIT(user_mob, TRAIT_PUGILIST))
+					can_pull = TRUE
 				if(human_pulling.dna.check_mutation(HULK)) // халки могут тащить
 					can_pull = TRUE
-				for(var/datum/antagonist/antagonist_role in human_pulling.mind?.antag_datums) // некоторые антагонисты могут тащить
-					if(antagonist_role.type in list(/datum/antagonist/heretic, /datum/antagonist/abductor/agent, /datum/antagonist/abductor/scientist))
-						can_pull = TRUE
-						break
 				if(istype(human_pulling.back, /obj/item/mod/control)) // обычные персонажи с активированными клешнями из МОДа на спине могут тащить
 					var/obj/item/mod/control/MOD = human_pulling.back
 					if(MOD.active && istype(MOD.selected_module, /obj/item/mod/module/clamp))
@@ -51,7 +53,7 @@
 					can_pull = TRUE
 				*/
 			if(!can_pull)
-				user_mob.visible_message("[user] tried to pull [src], but [p_they()] are too heavy for them!", span_warning("[src] is too heavy, you cannot move them around!"))
+				user_mob.visible_message("[user] пробует потянуть [src] за собой, но это безуспешно!", span_warning("[src] ощущается слишком грузно, переместить в таком виде будет невозможно!"))
 				to_chat(user, span_warning(span_small("Вы можете перемещать сверхтяжёлый персонажей: будучи чужим-антагонистом, еретиком-антагонистом, абдуктором-антагонистом. \
 				Также, будучи халком, сверхтяжёлым персонажем или киборгом. Ещё можно использовать толчок на мехе и МОД с гидравлической клешней или обладать боевым искусством."))) //красный текст + маленький размер
 				playsound(src.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)

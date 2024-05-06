@@ -325,7 +325,7 @@
 	new /obj/item/storage/belt/military/inteq(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses/inteq(src)
 	new /obj/item/clothing/head/helmet/swat/inteq(src)
-	new /obj/item/clothing/mask/balaclava/breath/inteq(src)
+	new /obj/item/clothing/mask/gas/inteq(src)
 	new /obj/item/storage/backpack/security/inteq(src)
 
 /obj/item/soap/inteq

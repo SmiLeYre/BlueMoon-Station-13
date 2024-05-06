@@ -593,7 +593,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<center><h2>Occupation Choices</h2>"
 					dat += "<a href='?_src_=prefs;preference=job;task=menu'>Set Occupation Preferences</a><br></center>"
 					if(CONFIG_GET(flag/roundstart_traits))
-						dat += "<center><h2>Quirk Setup</h2>"
+						dat += "<center><h2>Quirk Setup ([GetQuirkBalance(user)] points left)</h2>"
 						dat += "<a href='?_src_=prefs;preference=trait;task=menu'>Configure Quirks</a><br></center>"
 						dat += "<center><b>Current Quirks:</b> [english_list(all_quirks, "None")]</center>"
 					dat += "<h2>Identity</h2>"
@@ -2082,7 +2082,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		dat += "<hr>"
 		dat += "<center><b>Current quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
 		dat += "<center>[GetPositiveQuirkCount()] / [MAX_QUIRKS] max positive quirks<br>\
-		<b>Quirk balance remaining:</b> [GetQuirkBalance()]<br>"
+		<b>Quirk balance remaining:</b> [GetQuirkBalance(user)]<br>"
 		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_POSITIVE]' [quirk_category == QUIRK_POSITIVE ? "class='linkOn'" : ""]>[QUIRK_POSITIVE]</a> "
 		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_NEUTRAL]' [quirk_category == QUIRK_NEUTRAL ? "class='linkOn'" : ""]>[QUIRK_NEUTRAL]</a> "
 		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_NEGATIVE]' [quirk_category == QUIRK_NEGATIVE ? "class='linkOn'" : ""]>[QUIRK_NEGATIVE]</a> "
@@ -2132,7 +2132,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
 
-/datum/preferences/proc/GetQuirkBalance()
+/datum/preferences/proc/GetQuirkBalance(mob/user)
 	var/bal = 0
 	for(var/V in all_quirks)
 		var/datum/quirk/T = SSquirks.quirks[V]
@@ -2140,6 +2140,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	for(var/modification in modified_limbs)
 		if(modified_limbs[modification][1] == LOADOUT_LIMB_PROSTHETIC)
 			return bal + 1 //max 1 point regardless of how many prosthetics
+	if(bal < 0)
+		all_quirks = list()
+		return FALSE
 	return bal
 
 /datum/preferences/proc/GetPositiveQuirkCount()
@@ -2239,7 +2242,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							to_chat(user, "<span class='danger'>[quirk] имеет несовместимость с квирком [Q].</span>") //BLUEMOON EDIT перевод
 							return
 				var/value = SSquirks.quirk_points[quirk]
-				var/balance = GetQuirkBalance()
+				var/balance = GetQuirkBalance(user)
 				if(quirk in all_quirks)
 					if(balance + value < 0)
 						to_chat(user, "<span class='warning'>Refunding this would cause you to go below your balance!</span>")

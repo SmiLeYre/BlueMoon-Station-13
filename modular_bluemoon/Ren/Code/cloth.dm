@@ -63,17 +63,12 @@
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 
-/obj/item/clothing/suit/armor/vest/infiltrator/inteq/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/concrete/storage = AddComponent(/datum/component/storage/concrete)
-	storage.max_items = 5
-
 /obj/item/clothing/under/inteq/tactical_gorka
 	name = "SpecOps gorka"
 	desc = "Костюм данной модели, выполнен на основе классической модели Горка. Изготавливается из особо прочной ткани Рип Стоп с водоотталкивающей пропиткой и высоким содержанием хлопка и полиэфирных нитей. Идеально подогнан под пропорции клиента и прекрасно подходит для грязной работы."
 	icon_state = "infiltrator_u"
 	item_state = "infiltrator_u"
-	armor = list(MELEE = 10, BULLET = 10, LASER = 10,ENERGY = 10, BOMB = 0, BIO = 0, RAD = 10, FIRE = 100, ACID = 100, WOUND = 10)
+	armor = list(MELEE = 10, BULLET = 10, LASER = 10,ENERGY = 10, BOMB = 0, BIO = 0, RAD = 10, FIRE = 50, ACID = 20, WOUND = 5)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	can_adjust = FALSE
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
@@ -88,6 +83,59 @@
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
+
+//тихоходка
+/obj/item/clothing/suit/hooded/iron_tombstone
+	name = "Iron tombstone armor"
+	desc = "Ты чувствуешь тяжесть просто смотря на эту броню."
+	icon_state = "iron_tombstone_suit"
+	item_state = "iron_tombstone_suit"
+	equip_delay_self = 10
+	flash_protect = 2
+	armor = list(MELEE = 30, BULLET = 60, LASER = 30,ENERGY = 30, BOMB = 40, BIO = 0, RAD = 0, FIRE = 40, ACID = 40, WOUND = 30)
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
+	hoodtype = /obj/item/clothing/head/hooded/iron_tombstone
+	mutantrace_variation = STYLE_DIGITIGRADE
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
+
+/obj/item/clothing/suit/hooded/iron_tombstone/Initialize(mapload)
+	. = ..()
+	if(!allowed)
+		allowed = GLOB.security_vest_allowed
+
+/obj/item/clothing/head/hooded/iron_tombstone
+	name = "Iron tombstone helmet"
+	desc = "Ты чувствуешь тяжесть  просто смотря на эту броню."
+	item_state = "iron_tombstone_helmet"
+	icon_state = "iron_tombstone_helmet"
+	equip_delay_self = 10
+	armor = list(MELEE = 30, BULLET = 70, LASER = 30,ENERGY = 30, BOMB = 40, BIO = 0, RAD = 0, FIRE = 40, ACID = 40, WOUND = 30)
+	body_parts_covered = HEAD
+	mutantrace_variation = STYLE_MUZZLE
+	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACIALHAIR|HIDEFACE|HIDEMASK|HIDESNOUT
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
+
+/obj/item/clothing/mask/gas/inteq
+	name = "Ballistic mask"
+	desc = "Чёрная маска из кевлара. Защитит тебя от пуль и опознания."
+	icon_state = "ballistic"
+	item_state = "ballistic"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
+	flags_inv = HIDEFACE|HIDEFACIALHAIR
+	mutantrace_variation = STYLE_MUZZLE
+	unique_reskin = list("With balaclava" = list(RESKIN_ICON_STATE = "ballistic_balaclava"))
+
+/obj/item/clothing/mask/gas/inteq/reskin_obj(mob/user)
+	if(current_skin == "With balaclava")
+		mutantrace_variation = STYLE_MUZZLE
+		flags_inv = HIDEMASK|HIDEEYES|HIDEFACE|HIDEHAIR|HIDESNOUT
+
 
 ///Космодесантские приколы
 
@@ -119,7 +167,7 @@
 	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	alternate_screams = SPASEMAR_SCREAMS
-	armor = list(MELEE = 50, BULLET = 60, LASER = 40, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 20)
+	armor = list(MELEE = 50, BULLET = 50, LASER = 35, ENERGY = 30, BOMB = 60, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 20)
 	equip_sound = 'modular_bluemoon/Ren/Sound/equp1.ogg'
 	mutantrace_variation = NONE
 	unique_reskin = list("Dark Power Armour helmet holy patern" = list(RESKIN_ICON_STATE = "darktemplar_chaplai_helm"), "Dark Power Armour helmet InteQ patern MKI" = list(RESKIN_ICON_STATE = "darktemplar_helm_inteq"), "Dark Power Armour helmet InteQ patern MKII" = list(RESKIN_ICON_STATE = "darktemplar_helm_inteq_alt"))
@@ -137,9 +185,10 @@
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	alternate_screams = SPASEMAR_SCREAMS
-	armor = list(MELEE = 50, BULLET = 60, LASER = 40, ENERGY = 30, BOMB = 50, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 20)
+	armor = list(MELEE = 50, BULLET = 50, LASER = 35, ENERGY = 30, BOMB = 60, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 20)
 	equip_sound = 'modular_bluemoon/Ren/Sound/equp.ogg'
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
 	unique_reskin = list("Dark Power Armour holy patern" = list(RESKIN_ICON_STATE = "darktemplar_chaplai"), "Dark Power Armour InteQ patern MKI" = list(RESKIN_ICON_STATE = "darktemplar_inteq"), "Dark Power Armour InteQ patern MKII" = list(RESKIN_ICON_STATE = "darktemplar_inteq_alt") )
 
 /obj/item/clothing/head/helmet/space/syndicate/darktemplar/equipped(mob/living/carbon/human/user, slot)
@@ -278,7 +327,7 @@
 	else
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "anxiety_head", /datum/mood_event/inteq_drop)
 
-/obj/item/clothing/suit/hank
+/obj/item/clothing/suit/armor/hank
 	name = "Old black coat"
 	desc = "Поношеный временем костюм. Его чернота отдаёт красным оттенком, а сам он удивительно хорошо прилегает к телу."
 	icon_state = "hank"
@@ -289,7 +338,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	mutantrace_variation = NONE
 
-/obj/item/clothing/suit/hank/equipped(mob/user, slot)
+/obj/item/clothing/suit/armor/hank/equipped(mob/user, slot)
 	..()
 	if(slot == ITEM_SLOT_OCLOTHING)
 		if((!IS_INTEQ(user)) && (user.client))
@@ -298,7 +347,7 @@
 	else
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "anxiety_upon", /datum/mood_event/inteq_drop)
 
-/obj/item/clothing/suit/hank/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+/obj/item/clothing/suit/armor/hank/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	. = ..()
 	if((!IS_INTEQ(owner)) && (owner.client))
 		return BULLET_ACT_HIT
@@ -308,14 +357,14 @@
 		return BULLET_ACT_HIT
 	if(!isturf(owner.loc))
 		return BULLET_ACT_HIT
-	if((attack_type & ATTACK_TYPE_PROJECTILE) && (rand(5) != 1))
+	if((attack_type & ATTACK_TYPE_PROJECTILE) && (rand(3) != 1))
 		owner.visible_message(src, pick("<span class='danger'>[owner] чудом уворачивается от пули, выгнувшись спиной в последний момент!</span>", "<span class='danger'>[owner] ловко уходит в сторону, предугадав траекторию выстрела!</span>", "<span class='danger'>[owner] делает резкий рывок, едва успевая уйти из под огня!</span>"))
 		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, 1)
 		return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
 	return ..()
 
 /obj/item/storage/box/inteq_kit/hank/PopulateContents()
-	new /obj/item/clothing/suit/hank (src)
+	new /obj/item/clothing/suit/armor/hank (src)
 	new /obj/item/clothing/head/helmet/hank (src)
 
 ///Ошейники для заложников.
@@ -357,7 +406,7 @@
 	name = "Angel of death"
 	desc = "Набор очень древней брони, использовавшейся в первых космических войнах Солнечной федерацией. Для полного раскрытия потенциала этого полутонного куска керамита необходимо вживить специальный орган, значительно увеличивающий выживаемость и силу владельца. Пришло время доказать, что ты достоин зваться 'Ангелом смерти'."
 	item = /obj/item/storage/box/syndie_kit/spacehero
-	cost = 20
+	cost = 26
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/bundles_tc/grey
@@ -379,7 +428,15 @@
 	desc = "Старое и потрёпаное пальто, бандана и красные очки. От всего этого невероятно розит кровию, но если с выкнуться с этим, костюм подарит рефлексы своего прошлого владельца.\
 			Увернуться от пули ещё никогда не было так стильно."
 	item = /obj/item/storage/box/inteq_kit/hank
-	cost = 15
+	cost = 13
+	purchasable_from = ~(UPLINK_CLOWN_OPS | UPLINK_SYNDICATE)
+
+/datum/uplink_item/suits/iron_tombstone
+	name = "Iron tombstone"
+	desc = "Древний, но от этого не менее грозный броне костюм. Предоставляет невероятную защиту от пуль и осколков, но сковывает движения. Или так было до того, как технический отдел не приделал под основу пассивный экзоскелет.\
+			Теперь та пятнадцати килограммовая пластина сбережёт твоё личико от недружественного огня. Не предусматривает защиты от космоса."
+	item = /obj/item/clothing/suit/hooded/iron_tombstone
+	cost = 10
 	purchasable_from = ~(UPLINK_CLOWN_OPS | UPLINK_SYNDICATE)
 
 /datum/uplink_item/suits/quet
@@ -423,6 +480,25 @@
 	icon_state = "ftu_cape"
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+
+/obj/item/clothing/neck/cloak/inteq
+	name = "Inteq cloak"
+	desc = "Плащ членов группировки InteQ."
+	icon_state = "inteq_cape"
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+
+/obj/item/clothing/neck/cloak/diver
+	name = "Diver cloak"
+	desc = "Солидный плащ, который отлично подошёл бы настоящему герою"
+	icon_state = "mittle_brown"
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	unique_reskin = list(
+		"Red" = list("icon_state" = "mittle_red"),
+		"Black" = list("icon_state" = "mittle_black"),
+		"Blank" = list("icon_state" = "mittle_blank"),
+	)
 
 /obj/item/clothing/suit/armor/vest/ftu
 	name = "FTU Security Armor"
@@ -728,7 +804,7 @@
 	shoes = /obj/item/clothing/shoes/combat/swat/knife
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/helmet/swat/inteq
-	mask = /obj/item/clothing/mask/balaclava/breath/inteq
+	mask = /obj/item/clothing/mask/gas/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	id = /obj/item/card/id/inteq
 
