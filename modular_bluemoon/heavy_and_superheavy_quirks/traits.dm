@@ -219,7 +219,7 @@
 */
 
 /mob
-	var/movespeed_override = 3
+	var/movespeed_override = 0
 
 /*
 Действия
