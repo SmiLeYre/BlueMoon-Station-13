@@ -3,7 +3,7 @@
 /datum/element/mob_holder/micro/Attach(datum/target, worn_state, alt_worn, right_hand, left_hand, inv_slots = NONE, proctype, escape_on_find)
 	. = ..()
 
-	RegisterSignal(target, COMSIG_CLICK_ALT, PROC_REF(mob_try_pickup_micro), TRUE)
+	RegisterSignal(target, COMSIG_CLICK_ALT, PROC_REF(mob_try_alt_action), TRUE) // BLUEMOON EDIT, WAS mob_try_pickup_micro - для распределения на alt действий по давке, подбирании
 	RegisterSignal(target, COMSIG_MICRO_PICKUP_FEET, PROC_REF(mob_pickup_micro_feet))
 	RegisterSignal(target, COMSIG_MOB_RESIZED, PROC_REF(on_resize))
 
