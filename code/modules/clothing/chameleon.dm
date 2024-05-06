@@ -227,13 +227,6 @@
 		CL.mob_overlay_icon = PCL.mob_overlay_icon
 		qdel(PCL)
 	target.icon = initial(picked_item.icon)
-	to_chat(world, target)
-	if(istype(target, /obj/item/card/id/))
-		to_chat(world, "ok its card")
-		var/obj/item/card/id/id = target
-		var/obj/item/card/id/picked_id = picked_item
-		id.assignment = picked_id.assignment
-		target.update_label()
 
 /datum/action/item_action/chameleon/change/pda/update_item(obj/item/pda/picked_item)
 	if(!istype(target, /obj/item/pda))
