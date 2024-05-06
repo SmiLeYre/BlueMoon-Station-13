@@ -453,7 +453,7 @@
 
 /obj/item/card/id/syndicate
 	name = "Agent Card"
-	icon_state = "syndie"
+	icon_state = "card_black"
 	assignment = "Syndicate Operative"
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE)
 	var/anyone = FALSE //Can anyone forge the ID or just syndicate?

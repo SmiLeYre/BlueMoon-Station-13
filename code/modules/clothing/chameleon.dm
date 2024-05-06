@@ -109,6 +109,8 @@
 			var/obj/item/card/id/ID = A.target
 			ID.assignment = selected
 			ID.update_label()
+			var/mob/living/carbon/human/H = user
+			H.sec_hud_set_ID()
 			break
 		for(var/T in outfit_types)
 			for(var/name in A.chameleon_list)

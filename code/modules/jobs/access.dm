@@ -384,10 +384,6 @@
 /obj/item/proc/get_job_name() //Used in secHUD icon generation
 	if (istype(src, /obj/item/card/id/debug/bst))
 		return "scrambled"
-	// if (istype(src, /obj/item/card/id/syndicate))
-	// 	return "syndicate"
-	// if (istype(src, /obj/item/card/id/inteq))
-	// 	return "inteq"
 	if (istype(src, /obj/item/card/id/nri))
 		return "nri"
 	if (istype(src, /obj/item/card/id/nri_citizen))
@@ -408,6 +404,14 @@
 		return "bmland"
 	if (istype(src, /obj/item/card/id/death))
 		return "deathcommando"
+	if (istype(src, /obj/item/card/id/syndicate) & src.icon_state == "card_black")
+		var/obj/item/card/id/card = src
+		if (card.assignment == initial(card.assignment))
+			return "syndicate"
+	if (istype(src, /obj/item/card/id/inteq) & src.icon_state == "inteq")
+		var/obj/item/card/id/card = src
+		if (card.assignment == initial(card.assignment))
+			return "inteq"
 	var/obj/item/card/id/I = GetID()
 	if(!I)
 		return
