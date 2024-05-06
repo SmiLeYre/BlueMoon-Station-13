@@ -237,6 +237,10 @@ GLOBAL_LIST_EMPTY(movespeed_modification_cache)
 	cached_multiplicative_slowdown = .
 	if(!client)
 		return
+	// BLUEMOON ADD START - ограничение максимальной скорости для персонажа
+	if(movespeed_override)
+		cached_multiplicative_slowdown = max(cached_multiplicative_slowdown, movespeed_override)
+	// BLUEMOON ADD END
 	var/diff = (client.last_move - client.move_delay) - cached_multiplicative_slowdown
 	if(diff > 0)
 		if(client.move_delay > world.time + 1.5)
