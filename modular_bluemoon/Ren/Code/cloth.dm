@@ -85,39 +85,42 @@
 	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
 
 //тихоходка
-/obj/item/clothing/suit/hooded/iron_tombstone
+
+/obj/item/clothing/head/helmet/space/hardsuit/iron_tombstone
+	name = "Cybersun Hardsuit Helmet"
+	name = "Iron tombstone helmet"
+	desc = "Ты чувствуешь тяжесть  просто смотря на эту броню."
+	item_state = "hardsuit0-iron_tombstone"
+	icon_state = "hardsuit0-iron_tombstone"
+	hardsuit_type = "iron_tombstone"
+	armor = list(MELEE = 50, BULLET = 70, LASER = 30,ENERGY = 30, BOMB = 40, BIO = 100, RAD = 30, FIRE = 40, ACID = 40, WOUND = 30)
+	strip_delay = 600
+	actions_types = list()
+	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACIALHAIR|HIDEFACE|HIDEMASK|HIDESNOUT
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
+
+/obj/item/clothing/suit/space/hardsuit/iron_tombstone
 	name = "Iron tombstone armor"
 	desc = "Ты чувствуешь тяжесть просто смотря на эту броню."
-	icon_state = "iron_tombstone_suit"
-	item_state = "iron_tombstone_suit"
+	icon = 'icons/obj/clothing/suits.dmi'
+	item_state = "hardsuit-iron_tombstone"
+	icon_state = "hardsuit-iron_tombstone"
+	tail_state = "hos"
+	hardsuit_type = "iron_tombstone"
 	equip_delay_self = 10
-	flash_protect = 2
-	armor = list(MELEE = 30, BULLET = 60, LASER = 30,ENERGY = 30, BOMB = 40, BIO = 0, RAD = 0, FIRE = 40, ACID = 40, WOUND = 30)
-	body_parts_covered = CHEST|GROIN|LEGS|ARMS
-	hoodtype = /obj/item/clothing/head/hooded/iron_tombstone
+	armor = list(MELEE = 50, BULLET = 70, LASER = 30,ENERGY = 30, BOMB = 40, BIO = 100, RAD = 30, FIRE = 40, ACID = 40, WOUND = 30)
+	strip_delay = 600
+	slowdown = 0
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/iron_tombstone
+	actions_types = list(/datum/action/item_action/toggle_helmet)
+	jetpack = /obj/item/tank/jetpack/suit
 	mutantrace_variation = STYLE_DIGITIGRADE
 	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
 
-/obj/item/clothing/suit/hooded/iron_tombstone/Initialize(mapload)
-	. = ..()
-	if(!allowed)
-		allowed = GLOB.security_vest_allowed
-
-/obj/item/clothing/head/hooded/iron_tombstone
-	name = "Iron tombstone helmet"
-	desc = "Ты чувствуешь тяжесть  просто смотря на эту броню."
-	item_state = "iron_tombstone_helmet"
-	icon_state = "iron_tombstone_helmet"
-	equip_delay_self = 10
-	armor = list(MELEE = 30, BULLET = 70, LASER = 30,ENERGY = 30, BOMB = 40, BIO = 0, RAD = 0, FIRE = 40, ACID = 40, WOUND = 30)
-	body_parts_covered = HEAD
-	mutantrace_variation = STYLE_MUZZLE
-	flags_inv = HIDEHAIR|HIDEEARS|HIDEFACIALHAIR|HIDEFACE|HIDEMASK|HIDESNOUT
-	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
-	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
-	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
 
 /obj/item/clothing/mask/gas/inteq
 	name = "Ballistic mask"
@@ -434,8 +437,8 @@
 /datum/uplink_item/suits/iron_tombstone
 	name = "Iron tombstone"
 	desc = "Древний, но от этого не менее грозный броне костюм. Предоставляет невероятную защиту от пуль и осколков, но сковывает движения. Или так было до того, как технический отдел не приделал под основу пассивный экзоскелет.\
-			Теперь та пятнадцати килограммовая пластина сбережёт твоё личико от недружественного огня. Не предусматривает защиты от космоса."
-	item = /obj/item/clothing/suit/hooded/iron_tombstone
+			Теперь та пятнадцати килограммовая пластина сбережёт твоё личико от недружественного огня."
+	item = /obj/item/clothing/suit/space/hardsuit/iron_tombstone
 	cost = 10
 	purchasable_from = ~(UPLINK_CLOWN_OPS | UPLINK_SYNDICATE)
 
