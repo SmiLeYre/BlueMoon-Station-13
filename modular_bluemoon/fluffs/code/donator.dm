@@ -502,7 +502,7 @@
 	name = "Stunblade Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/stunblade_kit
-	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "leony24", "stgs", "lonofera", "z67")
+	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "leony24", "stgs", "lonofera", "z67", "oni3288")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/harness
