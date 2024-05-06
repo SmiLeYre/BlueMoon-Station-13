@@ -4301,6 +4301,7 @@
 #include "modular_bluemoon\Gardelin0\code\vending\kinkmate.dm"
 #include "modular_bluemoon\Gran\code\kalifa\Anabel.dm"
 #include "modular_bluemoon\Gran\code\kalifa\lightweight_armored_suit.dm"
+#include "modular_bluemoon\heavy_and_superheavy_quirks\alt_actions.dm"
 #include "modular_bluemoon\heavy_and_superheavy_quirks\mob.dm"
 #include "modular_bluemoon\heavy_and_superheavy_quirks\traits.dm"
 #include "modular_bluemoon\icons\code\under.dm"
