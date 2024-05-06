@@ -7,7 +7,7 @@
 	suit_store = /obj/item/tank/internals/doubleoxygen
 	head = /obj/item/clothing/head/helmet/cbrn/mopp/advance
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/clothing/mask/gas/cbrn/mopp/advance,\
+		/obj/item/clothing/mask/gas/sechailer/mopp/advance,\
 		/obj/item/device/hailer,\
 		/obj/item/gun/energy/e_gun=1)
 
@@ -20,7 +20,7 @@
 	suit_store = /obj/item/tank/internals/doubleoxygen
 	head = /obj/item/clothing/head/helmet/cbrn/mopp/advance
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/clothing/mask/gas/cbrn/mopp/advance,\
+		/obj/item/clothing/mask/gas/sechailer/mopp/advance,\
 		/obj/item/device/hailer,\
 		/obj/item/storage/box/handcuffs=1,\
 		/obj/item/gun/energy/e_gun/stun=1)
@@ -34,7 +34,7 @@
 	suit_store = /obj/item/tank/internals/doubleoxygen
 	head = /obj/item/clothing/head/helmet/cbrn/mopp/advance
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/clothing/mask/gas/cbrn/mopp/advance,\
+		/obj/item/clothing/mask/gas/sechailer/mopp/advance,\
 		/obj/item/device/hailer,\
 		/obj/item/reagent_containers/hypospray/combat/nanites=1,\
 		/obj/item/gun/medbeam=1)
@@ -48,6 +48,6 @@
 	suit_store = /obj/item/tank/internals/doubleoxygen
 	head = /obj/item/clothing/head/helmet/cbrn/mopp/advance
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
-		/obj/item/clothing/mask/gas/cbrn/mopp/advance,\
+		/obj/item/clothing/mask/gas/sechailer/mopp/advance,\
 		/obj/item/device/hailer,\
 		/obj/item/construction/rcd/combat=1)

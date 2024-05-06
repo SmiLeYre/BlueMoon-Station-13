@@ -242,7 +242,7 @@
 	gloves = /obj/item/clothing/gloves/combat
 
 	head = /obj/item/clothing/head/helmet/swat/inteq
-	mask = /obj/item/clothing/mask/balaclava/breath/inteq
+	mask = /obj/item/clothing/mask/gas/inteq
 	ears = /obj/item/radio/headset/ghost_inteq
 	belt = /obj/item/storage/belt/military/assault/inteq_crew
 
@@ -261,7 +261,7 @@
 	gloves = /obj/item/clothing/gloves/combat
 
 	head = /obj/item/clothing/head/HoS/pmc_leader_beret
-	mask = /obj/item/clothing/mask/balaclava/breath/inteq
+	mask = /obj/item/clothing/mask/gas/inteq
 	ears = /obj/item/radio/headset/ghost_inteq/leader
 	belt = /obj/item/storage/belt/military/assault/inteq_captain
 
