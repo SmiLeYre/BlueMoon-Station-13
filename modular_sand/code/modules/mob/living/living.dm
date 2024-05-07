@@ -82,7 +82,7 @@
 		simple_animal.toggle_ai(AI_OFF)
 	AllImmobility(INFINITY, TRUE, TRUE)
 	playsound(src, "modular_sand/sound/effects/admin_punish/oblja.ogg", 100, FALSE)
-	say("Change the world")
+	say("Oooooo Bljaaaa")
 	sleep(20)
 	playsound(src, "modular_sand/sound/effects/admin_punish/myfinalmessage.ogg", 100, FALSE)
 	say("My final message")
