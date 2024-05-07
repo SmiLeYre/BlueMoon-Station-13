@@ -87,25 +87,28 @@
 	if(!do_mob(user, target, STOMP_DELAY))
 		return FALSE
 
-	if(COMPARE_SIZES(user, target) >= 1.6)
+	if(!(COMPARE_SIZES(user, target) >= 1.6))
+		to_chat(user, span_warning("Разницы в росте недостаточно, чтобы раздавить!"))
+		return FALSE
 
-		if(HAS_TRAIT(user, TRAIT_BLUEMOON_LIGHT) && get_size(user) > 1 && get_size(target) > 0.6) //Лёгкие большие персонажи не могут навредить кому-либо больше 60
-			to_chat(user, span_warning("Я вешу слишком мало, чтобы наступить на [target]!"))
+	if(HAS_TRAIT(user, TRAIT_BLUEMOON_LIGHT) && get_size(user) > 1 && get_size(target) > 0.6) //Лёгкие большие персонажи не могут навредить кому-либо больше 60
+		to_chat(user, span_warning("Я вешу слишком мало, чтобы наступить на [target]!"))
+		return FALSE
+
+	if(target.mind?.martial_art?.id && target.mind.martial_art.can_use(target)) // нельзя давить тех, кто обучен и может применять боевые искусства
+	// У людей по умолчанию есть плейсходерное боевое искусство, но у него нет ID. Потому проверка на него, т.к. любое другое ID изменяет
+		if(target.a_intent != INTENT_HELP)
+			user.now_pushing = 0
+			user.micro_move_to_target_turf(target)
+			log_combat(user, target, "failed (martial art) to step on", addition="[user.a_intent] trample")
+			target.visible_message(\
+				span_danger("[target] уворачивается от попытки [user] наступить на не[target.gender == MALE ? "го" : "ё"]!"),\
+				span_danger("Вы уворачиваетесь от попытки [user] наступить на вас благодаря своему боевому искусству!"),
+				vision_distance = 3,
+				target = user, target_message = span_danger("[target] умело уворачивается от вашей попытки наступить на него!"))
+			playsound(user.loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
 			return FALSE
 
-		if(target.mind?.martial_art?.id && target.mind.martial_art.can_use(target)) // нельзя давить тех, кто обучен и может применять боевые искусства
-		// У людей по умолчанию есть плейсходерное боевое искусство, но у него нет ID. Потому проверка на него, т.к. любое другое ID изменяет
-			if(target.a_intent != INTENT_HELP)
-				user.now_pushing = 0
-				user.micro_move_to_target_turf(target)
-				log_combat(user, target, "failed (martial art) to step on", addition="[user.a_intent] trample")
-				target.visible_message(\
-					span_danger("[target] уворачивается от попытки [user] наступить на не[target.gender == MALE ? "го" : "ё"]!"),\
-					span_danger("Вы уворачиваетесь от попытки [user] наступить на вас благодаря своему боевому искусству!"),
-					vision_distance = 3,
-					target = user, target_message = span_danger("[target] умело уворачивается от вашей попытки наступить на него!"))
-				playsound(user.loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
-				return FALSE
 	return TRUE
 
 #undef STOMP_DELAY
