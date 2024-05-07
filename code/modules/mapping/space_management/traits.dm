@@ -49,6 +49,18 @@
 				. += S.z_value
 				break
 
+// Get a list of all z which have any of the specified traits
+/datum/controller/subsystem/mapping/proc/levels_by_all_trait(list/traits)
+	. = list()
+	var/list/_z_list = z_list
+	for(var/A in _z_list)
+		var/datum/space_level/S = A
+		. += S.z_value
+		for (var/trait in traits)
+			if (!S.traits[trait])
+				. -= S.z_value
+				break
+
 // Attempt to get the turf below the provided one according to Z traits
 /datum/controller/subsystem/mapping/proc/get_turf_below(turf/T)
 	if (!T)

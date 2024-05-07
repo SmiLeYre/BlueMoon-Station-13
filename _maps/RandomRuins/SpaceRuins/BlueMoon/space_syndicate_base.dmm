@@ -6751,7 +6751,7 @@
 	},
 /obj/structure/rack/shelf,
 /obj/item/clothing/suit/cbrn/mopp/advance/security,
-/obj/item/clothing/mask/gas/cbrn/mopp/advance,
+/obj/item/clothing/mask/gas/sechailer/mopp/advance,
 /obj/item/clothing/head/helmet/cbrn/mopp/advance,
 /obj/item/clothing/gloves/cbrn/mopp/advance,
 /turf/open/floor/iron/dark/small,

@@ -38,9 +38,9 @@
 	/// Another associated list for hit bodyparts on carbons so we can track how much wounding potential we have for each bodypart
 	var/list/wound_info_by_part = list()
 	/// For grenades, any /mob/living's the grenade is moved onto, see [/datum/component/pellet_cloud/proc/handle_martyrs]
-	var/list/bodies
+	var/list/bodies = list()
 	/// For grenades, tracking people who die covering a grenade for achievement purposes, see [/datum/component/pellet_cloud/proc/handle_martyrs()]
-	var/list/purple_hearts
+	var/list/purple_hearts = list()
 
 	/// For grenades, tracking how many pellets are removed due to martyrs and how many pellets are added due to the last person to touch it being on top of it
 	var/pellet_delta = 0

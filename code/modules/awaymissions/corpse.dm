@@ -43,9 +43,6 @@
 /obj/effect/mob_spawn/attack_ghost(mob/user, latejoinercalling)
 	if(!SSticker.HasRoundStarted() || !loc || !ghost_usable)
 		return
-	if(!uses)
-		to_chat(user, "<span class='warning'>This spawner is out of charges!</span>")
-		return
 	if(jobban_isbanned(user, banType))
 		to_chat(user, "<span class='warning'>You are jobanned!</span>")
 		return
@@ -67,6 +64,9 @@
 				requested_char = TRUE
 			if("Actually nevermind")
 				return
+	if(!uses)
+		to_chat(user, "<span class='warning'>This spawner is out of charges!</span>")
+		return
 	if(QDELETED(src) || QDELETED(user))
 		return
 	if(latejoinercalling)
@@ -125,14 +125,13 @@
 	M.adjustBruteLoss(brute_damage)
 	M.adjustFireLoss(burn_damage)
 	M.color = mob_color
-	if(ishuman(M) && load_character)
-		var/mob/living/carbon/human/H = M
-		var/mob/grab = get_mob_by_ckey(ckey)
-		H.load_client_appearance(grab.client)
 	equip(M, load_character)
 
 	if(ckey)
 		M.ckey = ckey
+		if(ishuman(M) && load_character)
+			var/mob/living/carbon/human/H = M
+			H.load_client_appearance(H.client)
 		//splurt change
 		if(jobban_isbanned(M, "pacifist")) //do you love repeat code? i sure do
 			to_chat(M, "<span class='cult'>You are pacification banned. Pacifist has been force applied.</span>")

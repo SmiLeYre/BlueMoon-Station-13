@@ -2210,7 +2210,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 						H.w_socks.add_mob_blood(H)
 						H.update_inv_w_socks()
 					if(H.w_shirt)
-						H.w_underwear.add_mob_blood(H)
+						H.w_shirt.add_mob_blood(H)
 						H.update_inv_w_shirt()
 					//
 

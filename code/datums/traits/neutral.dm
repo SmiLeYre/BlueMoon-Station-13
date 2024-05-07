@@ -181,8 +181,9 @@
 	H.equip_to_slot(photo_album, ITEM_SLOT_BACKPACK)
 	photo_album.persistence_id = "personal_[H.mind.key]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
 	photo_album.persistence_load()
-	photo_album.name = "[H.real_name]'s Photo Album"
+	photo_album.name = "[H.real_name] Photo Album"
 	var/obj/item/camera/camera = new(get_turf(H))
+	camera.name = "[H.real_name] Camera"
 	H.put_in_hands(camera)
 	H.equip_to_slot(camera, ITEM_SLOT_BACKPACK) //SPLURT Edit
 	H.regenerate_icons()

@@ -63,6 +63,22 @@
 	if(istype(target_turf))
 		new /obj/effect/decal/cleanable/plasma(drop_location(target_turf))
 
+/obj/item/gun/energy/laser/canceller
+	name = "Canceller"
+	desc = "Энергетический пистолет довольно старого образца. Создан для использования спецслужбами Солнечной Федерации, но со временем был замещён более удачными образцами. Выглядит сильно модернезированым."
+	icon_state = "canceller"
+	item_state = "canceller"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler)
+	fire_select_modes = list(SELECT_SEMI_AUTOMATIC, SELECT_BURST_SHOT)
+	selfcharge = EGUN_SELFCHARGE
+	fire_delay = 3
+	burst_size = 2
+	burst_spread = 20
+	burst_shot_delay = 2
+
 /// AA12
 /obj/item/ammo_box/magazine/aa12/small
 	name = "AA12 magazine (12g buckshot)"
@@ -386,6 +402,13 @@
 	desc = "Генератор высокотемпературной плазмы, предназначенный для производственных нужд, но внедрения технологий NT получил возможность отправлять сгусток плазмы во полёт."
 	item = /obj/item/gun/energy/pulse/pistol/inteq
 	cost = 13
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+
+/datum/uplink_item/inteq/canceller
+	name = "Canceller"
+	desc = "Старый пистолет для нелетальных задержаний использовавшийся спецслужбами Солнечной федерации. Вместо батареи был поставлен РИТЭГ, благадаря чему заряд постепенно восполняется, а рукам становится тепло в этом холодном космосе."
+	item = /obj/item/gun/energy/laser/canceller
+	cost = 6
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/inteq/sand_parasite

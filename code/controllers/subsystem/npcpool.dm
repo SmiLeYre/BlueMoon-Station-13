@@ -46,6 +46,9 @@ SUBSYSTEM_DEF(npcpool)
 	if(!SA.ckey && !SA.mob_transforming)
 		if(SA.stat != DEAD)
 			SA.handle_automated_movement()
+			if(QDELETED(SA))
+				invoking = FALSE
+				return
 		if(SA.stat != DEAD)
 			SA.handle_automated_action()
 		if(SA.stat != DEAD)

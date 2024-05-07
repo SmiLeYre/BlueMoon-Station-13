@@ -507,8 +507,7 @@
 
 	var/obj/item/card/id/syndicate/W = H.wear_id
 	W.icon_state = "syndie"
-	W.access = get_all_accesses()//They get full station access.
-	W.access += get_centcom_access("Death Commando")//Let's add their alloted CentCom access.
+	W.access = get_all_accesses()+get_centcom_access("Death Commando")+get_all_syndicate_access()//They get full station access.
 	W.assignment = "Syndicate Special Forces"
 	W.registered_name = H.real_name
 	W.update_label(W.registered_name, W.assignment)
