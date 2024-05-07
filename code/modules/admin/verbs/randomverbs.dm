@@ -1451,6 +1451,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		ADMIN_PUNISHMENT_SCARIFY,
 		ADMIN_PUNISHMENT_CLUWNE,
 		ADMIN_PUNISHMENT_GOODBYE,
+		ADMIN_PUNISHMENT_GOODBYEBLJA,
 		ADMIN_PUNISHMENT_TABLETIDESTATIONWIDE,
 		ADMIN_PUNISHMENT_FAKEBWOINK,
 		ADMIN_PUNISHMENT_NUGGET,
@@ -1672,6 +1673,13 @@ Traitors and the like can also be revived with the previous role mostly intact.
 				return
 			else
 				C.goodbye() //sandstorm punish and ends here.
+		if(ADMIN_PUNISHMENT_GOODBYEBLJA)
+			var/mob/living/C = target
+			if(C.stat == DEAD)
+				to_chat(usr, "<span class='warning'>[C] is dead!")
+				return
+			else
+				C.goodbyeblja()
 		if(ADMIN_PUNISHMENT_TABLETIDESTATIONWIDE) //SPLURT punishments start here
 			priority_announce(html_decode("[target] has brought the wrath of the gods upon themselves and is now being tableslammed across the station. Please stand by."), null, 'sound/misc/announce.ogg', "CentCom")
 			var/list/areas = list()
