@@ -74,3 +74,22 @@
 	playsound(src, "modular_sand/sound/effects/admin_punish/endjingle.ogg", 100, FALSE)
 	animate(src, alpha = 10, 3.5 SECONDS)
 	QDEL_IN(src, 2)
+
+/mob/living/proc/goodbyeblja()
+	set waitfor = FALSE
+	if(isanimal(src))
+		var/mob/living/simple_animal/simple_animal = src
+		simple_animal.toggle_ai(AI_OFF)
+	AllImmobility(INFINITY, TRUE, TRUE)
+	playsound(src, "modular_sand/sound/effects/admin_punish/oblja.ogg", 100, FALSE)
+	say("Oooooo Bljaaaa")
+	sleep(20)
+	playsound(src, "modular_sand/sound/effects/admin_punish/myfinalmessage.ogg", 100, FALSE)
+	say("My final message")
+	sleep(20)
+	playsound(src, "modular_sand/sound/effects/admin_punish/goodbye.ogg", 100, FALSE)
+	say("Goodbye.")
+	sleep(20)
+	playsound(src, "modular_sand/sound/effects/admin_punish/endjingle.ogg", 100, FALSE)
+	animate(src, alpha = 10, 3.5 SECONDS)
+	QDEL_IN(src, 2)
