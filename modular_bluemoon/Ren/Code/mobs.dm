@@ -37,7 +37,7 @@
 	possible_a_intents = list(INTENT_HELP, INTENT_GRAB, INTENT_DISARM, INTENT_HARM,)
 	healable = 1
 	has_penis = TRUE
-	as_balls = TRUE
+	has_balls = TRUE
 	has_tentacles = TRUE
 	dextrous = TRUE
 	has_vagina = TRUE
