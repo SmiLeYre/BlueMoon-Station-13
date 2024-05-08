@@ -3,8 +3,8 @@
  */
 /datum/controller/subsystem/persistence
 	var/list/saved_modes = list(1,2)
-	var/list/saved_chaos = list(5,5,5)
-	var/list/saved_dynamic_rules = list(list(),list(),list())
+	var/list/saved_chaos = list(5,5)
+	var/list/saved_dynamic_rules = list(list(),list())
 	var/average_threat = 50
 	var/list/saved_maps
 	var/last_dynamic_gamemode = "" //BLUEMOON ADDITION
