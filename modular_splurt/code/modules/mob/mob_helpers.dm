@@ -16,7 +16,7 @@
 	else if (HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
 		. += span_warning("Выглядит грузно. Тащить будет сложно.\n")
 	else if (HAS_TRAIT(src, TRAIT_BLUEMOON_LIGHT))
-		. += span_warning("С виду [t_He] весит весьма немного.\n")
+		. += span_info("С виду [t_He] весит весьма немного.\n")
 	// BLUEMOON ADDITION END
 
 	// Empathy abilities escape clause
