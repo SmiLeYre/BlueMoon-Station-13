@@ -386,8 +386,18 @@
 /obj/item/melee/sabre/karakurt/attack(mob/living/target, mob/living/user)
 	. = ..()
 	if(iscarbon(target))
+		if(HAS_TRAIT(user, TRAIT_PACIFISM))
+			visible_message("<span class='warning'>[user] gently taps [target] with [src].</span>",null,null,COMBAT_MESSAGE_RANGE)
+		log_combat(user, target, "slept", src)
 		var/mob/living/carbon/H = target
-		H.reagents.add_reagent(/datum/reagent/toxin/pancuronium, 1)
+		H.Dizzy(10)
+		H.adjustStaminaLoss(30)
+		if(CHECK_STAMCRIT(H) != NOT_STAMCRIT)
+			H.Sleeping(180)
+	else
+		if(iscarbon(target))
+			var/mob/living/carbon/H = target
+			H.reagents.add_reagent(/datum/reagent/toxin/lexorin, 5)
 
 ///InteQ Uplink additions
 /datum/uplink_item/inteq/angle_grinder

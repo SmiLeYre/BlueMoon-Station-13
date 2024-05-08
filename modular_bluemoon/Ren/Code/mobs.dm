@@ -36,15 +36,16 @@
 	attack_sound = 'sound/creatures/zombie_attack.ogg'
 	possible_a_intents = list(INTENT_HELP, INTENT_GRAB, INTENT_DISARM, INTENT_HARM,)
 	healable = 1
+	has_penis = TRUE
+	as_balls = TRUE
+	has_tentacles = TRUE
 	dextrous = TRUE
+	has_vagina = TRUE
 	dextrous_hud_type = /datum/hud/dextrous/sandman
 	var/list/sandman_overlays[SANDMAN_TOTAL_LAYERS]
 	var/obj/item/internal_storage
-	var/obj/item/wear_id
 	held_items = list(null, null)
-
 	vocal_bark_id = "bump"
-
 
 /mob/living/simple_animal/hostile/morph/sandman/mob_has_gravity()
 	return ..() || mob_negates_gravity()
@@ -168,7 +169,7 @@
 	name = "Mad shooter"
 	typepath = /datum/round_event/sniper
 	max_occurrences = 2
-	weight = 5
+	weight = 10
 	category = EVENT_CATEGORY_ENTITIES
 
 /datum/round_event/sniper/announce(fake)
