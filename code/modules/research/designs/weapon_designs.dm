@@ -318,7 +318,7 @@
 	build_path = /obj/item/storage/lockbox/weapon/nuclear_gun
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_RED
 
 /obj/item/storage/lockbox/weapon/nuclear_gun
 	name = "Lockbox with Advanced Energy Gun"
