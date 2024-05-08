@@ -86,13 +86,6 @@
 	cost = 15 // normally 20
 	purchasable_from = UPLINK_NUKE_OPS
 
-/datum/uplink_item/bundles_tc/modular
-	name = "Modular Pistol Kit"
-	desc = "A heavy briefcase containing one modular pistol (chambered in 10mm), one supressor, and spare ammunition, including a box of soporific ammo. \
-		Includes a suit jacket that is padded with a robust liner."
-	item = /obj/item/storage/briefcase/modularbundle
-	cost = 12
-
 /datum/uplink_item/bundles_tc/shredderbundle
 	name = "Shredder bundle"
 	desc = "A truly horrific weapon designed simply to maim its victim, the CX Shredder is banned by several intergalactic treaties. \

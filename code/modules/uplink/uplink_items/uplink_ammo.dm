@@ -70,19 +70,6 @@
 	item = /obj/item/ammo_box/magazine/m10mm/fire
 	illegal_tech = FALSE
 
-/datum/uplink_item/ammo/pistolzzz
-	name = "10mm Soporific Magazine"
-	desc = "An additional 8-round 10mm magazine; compatible with the Stechkin Pistol. Loaded with soporific rounds that put the target to sleep. \
-			NOTE: Soporific is not instant acting due to the constraints of the round's scale. Will usually require three shots to take effect."
-	item = /obj/item/ammo_box/magazine/m10mm/soporific
-	cost = 2
-
-/datum/uplink_item/ammo/pistolzzz/box
-	name = "Ammo Box - 10mm Soporific"
-	desc = "An additional box of 10mm Soporific ammo. The box has 20 cases inside, does not come with a magazine."
-	item = /obj/item/ammo_box/c10mm/soporific
-	illegal_tech = FALSE
-
 /datum/uplink_item/ammo/shotgun
 	cost = 2
 	purchasable_from = UPLINK_NUKE_OPS

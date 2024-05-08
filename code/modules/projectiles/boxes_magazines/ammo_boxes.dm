@@ -104,9 +104,9 @@
 	ammo_type = /obj/item/ammo_casing/c10mm/ap
 	max_ammo = 20
 
-/obj/item/ammo_box/c10mm/soporific
-	name = "ammo box (10mm Soporific)"
-	ammo_type = /obj/item/ammo_casing/c10mm/soporific
+/obj/item/ammo_box/c10mm/rubber
+	name = "ammo box (10mm Rubber)"
+	ammo_type = /obj/item/ammo_casing/c10mm/rubber
 	max_ammo = 20
 
 /obj/item/ammo_box/c45

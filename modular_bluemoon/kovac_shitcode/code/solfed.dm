@@ -321,7 +321,7 @@
 	neck = /obj/item/clothing/neck/cloak/cape
 	head = /obj/item/clothing/head/HoS/beret/sol/plain
 	r_hand = /obj/item/gun/ballistic/automatic/pistol/g22
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/poster/sol=5, /obj/item/ammo_box/magazine/m10mm_large/soporific=2)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/poster/sol=5, /obj/item/ammo_box/magazine/m10mm_large/rubber=2)
 
 	implants = list(/obj/item/implant/mindshield)
 

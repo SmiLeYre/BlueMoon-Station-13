@@ -110,17 +110,17 @@
 	caliber = "10mm"
 	max_ammo = 12
 
-/obj/item/ammo_box/magazine/m10mm_large/soporific
-	name = "enlarged pistol magazine (10mm soporific)"
-	desc = "An extra ammo gun magazine. Loaded with rounds which inject the target with a variety of substances to induce sleep in the target."
+/obj/item/ammo_box/magazine/m10mm_large/rubber
+	name = "enlarged pistol magazine (10mm rubber)"
+	desc = "An extra ammo gun magazine. Loaded with rounds strong enough to knock out target fast."
 	icon_state = "c20r46-16"
-	ammo_type = /obj/item/ammo_casing/c10mm/soporific
+	ammo_type = /obj/item/ammo_casing/c10mm/rubber
 
 /obj/item/ammo_box/magazine/m10mm_large/update_icon()
 	..()
 	icon_state = "c20r45-[round(ammo_count(),2)]"
 
-/obj/item/ammo_box/magazine/m10mm_large/soporific/update_icon()
+/obj/item/ammo_box/magazine/m10mm_large/rubber/update_icon()
 	..()
 	icon_state = "c20r46-[round(ammo_count(),2)]"
 ///
@@ -135,13 +135,13 @@
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
-/datum/design/m10mm_large_soporific
-	name = "enlarged pistol magazine (10mm soporific)"
-	desc = "An extra ammo gun magazine. Loaded with rounds which inject the target with a variety of substances to induce sleep."
-	id = "10mm_large_soporific"
+/datum/design/m10mm_large_rubber
+	name = "enlarged pistol magazine (10mm rubber)"
+	desc = "An extra ammo gun magazine. Loaded with rounds strong enough to knock out target fast."
+	id = "10mm_large_rubber"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 10000, /datum/material/glass=3000)
-	build_path = /obj/item/ammo_box/magazine/m10mm_large/soporific
+	build_path = /obj/item/ammo_box/magazine/m10mm_large/rubber
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
@@ -168,9 +168,9 @@
 	new /obj/item/ammo_box/magazine/m10mm_large(src)
 	new /obj/item/ammo_box/magazine/m10mm_large(src)
 	new /obj/item/ammo_box/magazine/m10mm_large(src)
-	new /obj/item/ammo_box/magazine/m10mm_large/soporific(src)
-	new /obj/item/ammo_box/magazine/m10mm_large/soporific(src)
-	new /obj/item/ammo_box/magazine/m10mm_large/soporific(src)
+	new /obj/item/ammo_box/magazine/m10mm_large/rubber(src)
+	new /obj/item/ammo_box/magazine/m10mm_large/rubber(src)
+	new /obj/item/ammo_box/magazine/m10mm_large/rubber(src)
 
 /obj/item/choice_beacon/hos_new_weapon
 	name = "personal weapon beacon"
