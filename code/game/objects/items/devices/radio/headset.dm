@@ -6,6 +6,7 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	RADIO_CHANNEL_MEDICAL = RADIO_TOKEN_MEDICAL,
 	RADIO_CHANNEL_ENGINEERING = RADIO_TOKEN_ENGINEERING,
 	RADIO_CHANNEL_SECURITY = RADIO_TOKEN_SECURITY,
+	RADIO_CHANNEL_LAW = RADIO_TOKEN_LAW,
 	RADIO_CHANNEL_CENTCOM = RADIO_TOKEN_CENTCOM,
 	RADIO_CHANNEL_SYNDICATE = RADIO_TOKEN_SYNDICATE,
 	RADIO_CHANNEL_DS1 = RADIO_TOKEN_DS1,
@@ -161,12 +162,20 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 	icon_state = "sec_headset"
 	keyslot = new /obj/item/encryptionkey/headset_sec
 
+
 /obj/item/radio/headset/headset_sec/alt
 	name = "security bowman headset"
 	desc = "This is used by your elite security force. Protects ears from flashbangs."
 	icon_state = "sec_headset_alt"
 	item_state = "sec_headset_alt"
 	bowman = TRUE
+
+/obj/item/radio/headset/headset_law
+	name = "law radio headset"
+	desc = "This is used by your local budget lawyer."
+	icon = 'modular_bluemoon/Fink/icons/clothing/radio.dmi'
+	icon_state = "law_headset"
+	keyslot = new /obj/item/encryptionkey/headset_law
 
 /obj/item/radio/headset/headset_eng
 	name = "engineering radio headset"
