@@ -311,21 +311,25 @@
 		else
 			temp = getBruteLoss()
 		if(temp)
-			if(temp < 25)
+			if(temp < maxHealth*0.25) // BLUEMOON CHANGES, was if(temp < 25) - добавляем скаллирование от максимального ХП
 				msg += "[t_on] имеет незначительные ушибы.\n"
-			else if(temp < 50)
+			else if(temp < maxHealth*0.5) // BLUEMOON CHANGES, was if(temp < 50) - добавляем скаллирование от максимального ХП
 				msg += "[t_on] <b>тяжело</b> ранен[t_a]!\n"
+			else if(temp < maxHealth*0.75) // BLUEMOON ADD START
+				msg += "[t_on] <b>очень тяжело</b> ранен[t_a]!\n" // BLUEMOON ADD END
 			else
 				msg += "<B>[t_on] смертельно ранен[t_a]!</B>\n"
 
 		temp = getFireLoss()
 		if(temp)
-			if(temp < 25)
+			if(temp < maxHealth*0.25) // BLUEMOON CHANGES, was if(temp < 25) - добавляем скаллирование от максимального ХП
 				msg += "[t_on] немного подгорел[t_a].\n"
-			else if (temp < 50)
+			else if(temp < maxHealth*0.5) // BLUEMOON CHANGES, was if(temp < 50) - добавляем скаллирование от максимального ХП
 				msg += "[t_on] имеет <b>серьёзные</b> ожоги!\n"
+			else if(temp < maxHealth*0.75) // BLUEMOON ADD START
+				msg += "[t_on] имеет <b>очень серьёзные</b> ожоги!\n" // BLUEMOON ADD END
 			else
-				msg += "<B>[t_on] имеет смертельные ожоги!</B>\n"
+				msg += "<B>[t_on] имеет смертельно опасные ожоги!</B>\n"
 
 		temp = getCloneLoss()
 		if(temp)
