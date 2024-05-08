@@ -82,9 +82,9 @@
 	if(!json)
 		return
 	saved_chaos = json["data"]
-	if(saved_chaos.len > 3)
-		average_threat = saved_chaos[4]
-	saved_chaos.len = 3
+	if(saved_chaos.len > 2)
+		average_threat = saved_chaos[3]
+	saved_chaos.len = 2
 
 /datum/controller/subsystem/persistence/proc/LoadRecentRulesets()
 	var/json_file = file("data/RecentRulesets.json")
