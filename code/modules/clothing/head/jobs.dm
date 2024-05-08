@@ -171,7 +171,7 @@
 	icon_state = "hosberetblack"
 
 /obj/item/clothing/head/HoS/beret/officer
-	name = "head of security officer beret"
+	name = "Head of Security Officer Beret"
 	desc = "A robust beret for the Head of Security, for looking stylish while not sacrificing protection."
 	icon_state = "beret_centcom_officer"
 

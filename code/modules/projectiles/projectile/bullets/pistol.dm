@@ -40,6 +40,7 @@
 /obj/item/projectile/bullet/c10mm/soporific
 	name ="10mm soporific bullet"
 	nodamage = TRUE
+	stamina = 25
 	armour_penetration = -50
 
 /obj/item/projectile/bullet/c10mm/soporific/on_hit(atom/target, blocked = FALSE)
@@ -49,7 +50,4 @@
 		L.blur_eyes(6)
 		if(L.getStaminaLoss() >= 80)
 			L.Sleeping(300)
-		else
-			var/obj/item/bodypart/affecting = L.get_bodypart(def_zone)
-			var/armor_block = L.run_armor_check(affecting, BULLET, armour_penetration=armour_penetration)
-			L.apply_damage(25, STAMINA, affecting, armor_block)
+

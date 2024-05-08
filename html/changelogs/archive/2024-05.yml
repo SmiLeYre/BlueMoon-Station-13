@@ -1,0 +1,4 @@
+2024-05-06:
+  SandPoot:
+  - tweak: Mobs that can push structures off the floor will no longer do so unless
+      it blocks path to a target.

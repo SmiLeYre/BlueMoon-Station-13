@@ -453,7 +453,7 @@
 			// BLUEMOON ADD START - больших и тяжёлых существ проблематично нормально оглушить
 			var/final_stun_damage = stam_dmg
 			if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
-				final_stun_damage *= 0.5
+				final_stun_damage *= 0.75
 				countered = 1
 			// BLUEMOON ADD END
 			target.DefaultCombatKnockdown(softstun_ds, TRUE, FALSE, countered? 0 : hardstun_ds, final_stun_damage, !countered) // BLUEMOON EDIT - заменено stam_dmg на final_stun_damage

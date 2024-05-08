@@ -89,7 +89,7 @@
 	// BLUEMOON ADD START - больших и тяжёлых существ проблематично нормально оглушить
 	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
 		if(P.damage_type == STAMINA)
-			totaldamage *= 0.5
+			totaldamage *= 0.75
 	// BLUEMOON ADD END
 
 	if(!P.nodamage)

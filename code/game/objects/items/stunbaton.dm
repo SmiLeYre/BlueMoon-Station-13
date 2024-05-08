@@ -218,7 +218,7 @@
 
 	// BLUEMOON ADD START - больших и тяжёлых существ проблематично нормально оглушить
 	if(HAS_TRAIT(L, TRAIT_BLUEMOON_HEAVY_SUPER))
-		final_stamina_loss_amount *= 0.5
+		final_stamina_loss_amount *= 0.75
 	// BLUEMOON ADD END
 
 	var/obj/item/stock_parts/cell/our_cell = get_cell()

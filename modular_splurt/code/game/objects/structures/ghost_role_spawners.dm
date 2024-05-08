@@ -204,9 +204,6 @@
 	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
 	var/obj/item/implant/anchor/ghost_anchor = new
-	ghost_anchor.allowed_z_levels = list(1, 6, 12, src.z) // dynamic набор: цк, ксено межшатолье, инфдормы, сектор имплантации
-	if(GLOB.master_mode == "Extended")
-		ghost_anchor.allowed_z_levels.Add(2,5) // экстовая добавка: станционный, шахта
 	ghost_anchor.implant(new_spawn, null, TRUE)
 
 /obj/effect/mob_spawn/human/inteqspace/captain

@@ -145,7 +145,7 @@
 	new /obj/item/clothing/suit/cbrn/mopp/advance(src)
 	new /obj/item/clothing/gloves/cbrn/mopp/advance(src)
 	new /obj/item/clothing/shoes/jackboots/cbrn/mopp/advance (src)
-	new /obj/item/clothing/mask/gas/cbrn/mopp/advance(src)
+	new /obj/item/clothing/mask/gas/sechailer/mopp/advance(src)
 
 /obj/structure/closet/secure_closet/commandmopp
 	name = "advance MOPP locker 'Commander'"
@@ -161,7 +161,7 @@
 	new /obj/item/clothing/suit/cbrn/mopp/advance/commander(src)
 	new /obj/item/clothing/gloves/cbrn/mopp/advance(src)
 	new /obj/item/clothing/shoes/jackboots/cbrn/mopp/advance (src)
-	new /obj/item/clothing/mask/gas/cbrn/mopp/advance(src)
+	new /obj/item/clothing/mask/gas/sechailer/mopp/advance(src)
 
 /obj/structure/closet/secure_closet/secmopp
 	name = "advance MOPP locker 'secuirity'"
@@ -177,7 +177,7 @@
 	new /obj/item/clothing/suit/cbrn/mopp/advance/security(src)
 	new /obj/item/clothing/gloves/cbrn/mopp/advance(src)
 	new /obj/item/clothing/shoes/jackboots/cbrn/mopp/advance (src)
-	new /obj/item/clothing/mask/gas/cbrn/mopp/advance(src)
+	new /obj/item/clothing/mask/gas/sechailer/mopp/advance(src)
 
 /obj/structure/closet/secure_closet/medmopp
 	name = "advance MOPP locker 'medical'"
@@ -193,7 +193,7 @@
 	new /obj/item/clothing/suit/cbrn/mopp/advance/medical(src)
 	new /obj/item/clothing/gloves/cbrn/mopp/advance(src)
 	new /obj/item/clothing/shoes/jackboots/cbrn/mopp/advance (src)
-	new /obj/item/clothing/mask/gas/cbrn/mopp/advance(src)
+	new /obj/item/clothing/mask/gas/sechailer/mopp/advance(src)
 
 /obj/structure/closet/secure_closet/engimopp
 	name = "advance MOPP locker 'engineering'"
@@ -209,7 +209,7 @@
 	new /obj/item/clothing/suit/cbrn/mopp/advance/engi(src)
 	new /obj/item/clothing/gloves/cbrn/mopp/advance(src)
 	new /obj/item/clothing/shoes/jackboots/cbrn/mopp/advance (src)
-	new /obj/item/clothing/mask/gas/cbrn/mopp/advance(src)
+	new /obj/item/clothing/mask/gas/sechailer/mopp/advance(src)
 
 
 /obj/structure/closet/secure_closet/hosnew //ITS LOCKER CLEAN OUT DAY! -Radar

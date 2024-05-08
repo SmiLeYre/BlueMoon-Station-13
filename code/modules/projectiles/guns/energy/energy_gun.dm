@@ -184,6 +184,11 @@
 	selfcharge = EGUN_SELFCHARGE * 5
 	fail_tick = 0
 	fail_chance = 1
+	fire_select_modes = list(SELECT_SEMI_AUTOMATIC, SELECT_BURST_SHOT)
+	fire_delay = 2
+	burst_size = 2
+	burst_spread = 16
+	burst_shot_delay = 2
 	var/icon_charge = "nucgun"
 
 
