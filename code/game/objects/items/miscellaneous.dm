@@ -180,7 +180,7 @@
 	return pets
 
 /obj/item/choice_beacon/pet/create_choice_atom(atom/choice, mob/owner)
-	var/obj/item/pet_carrier/donator/carrier = new() //a donator pet carrier is just a carrier that can't be shoved in an autolathe for metal
+	var/obj/item/pet_carrier/carrier = new()
 	var/mob/living/simple_animal/new_choice = new choice(carrier)
 	carrier.add_occupant(new_choice)
 	new_choice.mob_size = MOB_SIZE_TINY //yeah we're not letting you use this roundstart pet to hurt people / knock them down
