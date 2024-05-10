@@ -108,7 +108,7 @@
 /obj/item/encryptionkey/headset_bo
 	name = "bridge officer radio encryption key"
 	icon_state = "com_cypherkey"
-	channels = list(RADIO_CHANNEL_COMMAND = 1, RADIO_CHANNEL_LAW = 1)
+	channels = list(RADIO_CHANNEL_COMMAND = 1)
 
 /obj/effect/landmark/start/bridgeofficer
 	name = "Bridge Officer"
