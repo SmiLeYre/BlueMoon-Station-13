@@ -201,3 +201,7 @@
 				update_icon()
 				playing = null
 				stop = 0
+
+/obj/item/jukebox/Destroy(mob/user)
+	SSjukeboxes.removejukebox(SSjukeboxes.findjukeboxindex(src))
+	. = ..()

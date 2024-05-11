@@ -189,6 +189,10 @@
 		/obj/item/gun/ballistic/automatic/pistol=1,\
 		/obj/item/kitchen/knife/combat/survival)
 
+/datum/outfit/inteq/full/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	. = ..()
+	H.mind.make_Traitor()
+
 /datum/outfit/inteq/lone/inteq
 	name = "InteQ Lone Operative"
 

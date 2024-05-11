@@ -742,7 +742,7 @@
 	.["mainsettings"]["mission"]["value"] = newtemplate.mission
 	.["mainsettings"]["polldesc"]["value"] = newtemplate.polldesc
 	.["mainsettings"]["ertphrase"]["value"] = newtemplate.ertphrase
-	.["mainsettings"]["open_armory"]["value"] = newtemplate.opendoors ? "Да" : "Нет"
+	.["mainsettings"]["open_armory"]["value"] = newtemplate.opendoors ? "Yes" : "No"
 
 /obj/machinery/computer/communications/proc/makeEmergencyresponseteam(var/datum/ert/ertemplate = null, var/id)
 	if (ertemplate)

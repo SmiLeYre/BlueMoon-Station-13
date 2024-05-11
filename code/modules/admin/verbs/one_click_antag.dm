@@ -371,8 +371,8 @@
 	.["mainsettings"]["mission"]["value"] = newtemplate.mission
 	.["mainsettings"]["polldesc"]["value"] = newtemplate.polldesc
 	.["mainsettings"]["ertphrase"]["value"] = newtemplate.ertphrase
-	.["mainsettings"]["open_armory"]["value"] = newtemplate.opendoors ? "Да" : "Нет"
-
+	.["mainsettings"]["open_armory"]["value"] = newtemplate.opendoors ? "Yes" : "No"
+	.["mainsettings"]["spawn_admin"]["value"] = newtemplate.spawn_admin ? "Yes" : "No"
 
 /datum/admins/proc/equipAntagOnDummy(mob/living/carbon/human/dummy/mannequin, datum/antagonist/antag)
 	for(var/I in mannequin.get_equipped_items(TRUE))
@@ -439,6 +439,8 @@
 		"ertphrase" = list("desc" = "ERT Sending Sound", "type" = "string", "value" = ertemplate.ertphrase),
 		"enforce_human" = list("desc" = "Enforce human authority", "type" = "boolean", "value" = "[(CONFIG_GET(flag/enforce_human_authority) ? "Yes" : "No")]"),
 		"open_armory" = list("desc" = "Open armory doors", "type" = "boolean", "value" = "[(ertemplate.opendoors ? "Yes" : "No")]"),
+		"notify_players" = list("desc" = "Notify players that you have sent an ERT", "type" = "boolean", "value" = "[(ertemplate.notify_players ? "Yes" : "No")]"),
+		"spawn_admin" = list("desc" = "Spawn yourself as briefing officer", "type" = "boolean", "value" = "[(ertemplate.spawn_admin ? "Yes" : "No")]"),
 		)
 	)
 
@@ -463,7 +465,10 @@
 		ertemplate.ertphrase = prefs["ertphrase"]["value"]
 		ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Yes" ? TRUE : FALSE
 		ertemplate.opendoors = prefs["open_armory"]["value"] == "Yes" ? TRUE : FALSE
-		priority_announce("Внимание, [station_name()]. Мы формируем [ertemplate.polldesc] для отправки на станцию. Ожидайте.", "Инициализирован протокол ОБР", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_send.ogg') //BlueMoon sound
+		ertemplate.notify_players = prefs["notify_players"]["value"] == "Yes"
+		ertemplate.spawn_admin = prefs["spawn_admin"]["value"] == "Yes"
+		if(ertemplate.notify_players)
+			priority_announce("Внимание, [station_name()]. Мы формируем [ertemplate.polldesc] для отправки на станцию. Ожидайте.", "Инициализирован протокол ОБР", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_send.ogg') //BlueMoon sound
 
 		var/list/mob/candidates = pollGhostCandidates("Do you wish to be considered for [ertemplate.polldesc]?", "Deathsquad", null)
 		var/teamSpawned = FALSE
@@ -484,6 +489,21 @@
 			missionobj.completed = TRUE
 			ert_team.objectives += missionobj
 			ert_team.mission = missionobj
+
+			var/list/brief_spawn = list()
+			for(var/obj/effect/landmark/ert_shuttle_brief_spawn/L in GLOB.landmarks_list)
+				brief_spawn += L.loc
+			if(!brief_spawn)
+				message_admins("No valid spawn locations found, aborting...")
+				return MAP_ERROR
+			if(ertemplate.spawn_admin)
+				if(isobserver(usr))
+					var/mob/living/carbon/human/admin_officer = new (pick(brief_spawn))
+					usr.client.prefs.copy_to(admin_officer)
+					admin_officer.equipOutfit(/datum/outfit/spec_ops)
+					admin_officer.key = usr.key
+				else
+					to_chat(usr, span_warning("Could not spawn you in as briefing officer as you are not a ghost!"))
 
 			var/list/spawnpoints = GLOB.emergencyresponseteamspawn
 			while(numagents && candidates.len)
@@ -523,7 +543,8 @@
 
 			if (teamSpawned)
 				message_admins("[ertemplate.polldesc] были отправлены на станцию со следующей миссией: [ertemplate.mission]")
-				priority_announce("Внимание, [station_name()]. Мы отправляем поздразделение - [ertemplate.polldesc]. Вам следует приготовиться.", "Подготовка Отряда Быстрого Реагирования", ertemplate.ertphrase) //BlueMoon sound
+				if(ertemplate.notify_players)
+					priority_announce("Внимание, [station_name()]. Мы отправляем поздразделение - [ertemplate.polldesc]. Вам следует приготовиться.", "Подготовка Отряда Быстрого Реагирования", ertemplate.ertphrase) //BlueMoon sound
 
 			//Open the Armory doors
 			if(ertemplate.opendoors)
@@ -532,7 +553,8 @@
 					CHECK_TICK
 			return TRUE
 		else
-			priority_announce("[station_name()], мы не можем выслать [ertemplate.polldesc] ввиду занятости всех действующих оперативников.", "Отряд Быстрого Реагирования недоступен", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_no.ogg') //BlueMoon sound
+			if(ertemplate.notify_players)
+				priority_announce("[station_name()], мы не можем выслать [ertemplate.polldesc] ввиду занятости всех действующих оперативников.", "Отряд Быстрого Реагирования недоступен", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_no.ogg') //BlueMoon sound
 			return FALSE
 
 	return

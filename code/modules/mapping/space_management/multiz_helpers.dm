@@ -12,12 +12,16 @@
 	var/other_z = center_z
 	var/offset
 	while((offset = SSmapping.level_trait(other_z, ZTRAIT_DOWN)))
+		if(length(offset))
+			break
 		other_z += offset
 		if(other_z in .)
 			break	// no infinite loops
 		. += other_z
 	other_z = center_z
 	while((offset = SSmapping.level_trait(other_z, ZTRAIT_UP)))
+		if(length(offset))
+			break
 		other_z += offset
 		if(other_z in .)
 			break	// no infinite loops

@@ -314,19 +314,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/inteq_forgotten_rnd)
-"bC" = (
-/obj/structure/rack{
-	dir = 8
-	},
-/obj/effect/turf_decal/stripes{
-	dir = 1;
-	icon_state = "delivery_red"
-	},
-/obj/item/clothing/suit/space/hardsuit/iron_tombstone,
-/obj/item/clothing/suit/space/hardsuit/iron_tombstone,
-/obj/item/clothing/suit/space/hardsuit/iron_tombstone,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault)
 "bD" = (
 /obj/machinery/suit_storage_unit/inteq_spacesuit,
 /turf/open/floor/plating,
@@ -535,21 +522,6 @@
 /obj/machinery/light{
 	dir = 4;
 	light_color = "#c1caff"
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_bar)
-"dq" = (
-/obj/effect/turf_decal/tile/brown/opposingcorners,
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/obj/item/ammo_box/magazine/wt550m9,
-/obj/item/clothing/head/helmet/sec{
-	pixel_x = -33;
-	pixel_y = -1
-	},
-/obj/machinery/power/apc/auto_name{
-	pixel_y = 29
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/inteq_forgotten_bar)
@@ -1620,6 +1592,19 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
+"ke" = (
+/obj/structure/rack{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes{
+	dir = 1;
+	icon_state = "delivery_red"
+	},
+/obj/item/clothing/suit/space/hardsuit/iron_tombstone,
+/obj/item/clothing/suit/space/hardsuit/iron_tombstone,
+/obj/item/clothing/suit/space/hardsuit/iron_tombstone,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/powered/inteq_forgotten_vault)
 "kj" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -1920,6 +1905,24 @@
 	anchored = 1
 	},
 /obj/effect/turf_decal/tile/brown/full,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/inteq_forgotten_outpost)
+"me" = (
+/obj/structure/chair/office/light{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/brown/half{
+	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
 "mf" = (
@@ -2689,27 +2692,37 @@
 /obj/effect/decal/cleanable/robot_debris,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
+"pt" = (
+/obj/structure/safe,
+/obj/item/storage/bag/money/c5000,
+/obj/effect/decal/cleanable/dirt,
+/obj/item/stack/sheet/bluespace_crystal{
+	amount = 10
+	},
+/obj/item/stack/ore/diamond{
+	amount = 10
+	},
+/obj/item/slimecross/industrial/silver,
+/obj/item/areaeditor/blueprints{
+	desc = "Use to build new structures in the wastes.";
+	name = "outpost blueprints"
+	},
+/obj/item/card/emag,
+/obj/item/storage/box/firingpins/syndicate,
+/obj/effect/turf_decal/stripes{
+	dir = 1;
+	icon_state = "delivery_red"
+	},
+/obj/item/storage/book/bible/syndicate/inteq,
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/item/folder/inteq,
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/inteq_forgotten_vault)
 "pw" = (
 /turf/closed/mineral/random/high_chance,
 /area/space)
-"pF" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "4-8"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
-/obj/machinery/power/apc/syndicate{
-	dir = 4;
-	name = "InteQ Listening Post APC";
-	pixel_x = -32;
-	start_charge = 45
-	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/powered/inteq_forgotten_atmos)
 "pI" = (
 /obj/machinery/porta_turret{
 	icon_state = "turretCover_broken";
@@ -2734,6 +2747,18 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/inteq_forgotten_rnd)
+"pT" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/powered/inteq_forgotten_atmos)
 "pU" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -3265,6 +3290,24 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/inteq_forgotten_bar)
+"sD" = (
+/obj/effect/turf_decal/tile/brown/opposingcorners,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/item/ammo_box/magazine/wt550m9,
+/obj/item/clothing/head/helmet/sec{
+	pixel_x = -33;
+	pixel_y = -1
+	},
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/inteq_forgotten_bar)
 "sE" = (
 /obj/effect/turf_decal/siding/yellow{
 	dir = 1
@@ -3397,33 +3440,6 @@
 /obj/structure/reagent_dispensers/peppertank,
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
-"uq" = (
-/obj/structure/chair/office/light{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/brown/half{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/chair/office/light{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/brown/half{
-	dir = 1
-	},
-/obj/structure/cable/yellow{
-	icon_state = "0-4"
-	},
-/obj/machinery/power/apc/auto_name{
-	pixel_y = 29
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
 "ur" = (
 /obj/machinery/light{
 	dir = 1
@@ -5461,37 +5477,6 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
-"Hr" = (
-/obj/structure/table/glass,
-/obj/machinery/reagentgrinder{
-	pixel_y = 10
-	},
-/obj/effect/turf_decal/tile/brown/fourcorners,
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/syndicate{
-	dir = 1;
-	name = "InteQ Post APC";
-	pixel_y = 32;
-	start_charge = 35
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/table/glass,
-/obj/machinery/reagentgrinder{
-	pixel_y = 10
-	},
-/obj/effect/turf_decal/tile/brown/fourcorners,
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/obj/machinery/power/apc/auto_name{
-	pixel_y = 29
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_medbay)
 "Hs" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden{
@@ -6668,6 +6653,26 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
+"OY" = (
+/obj/structure/table/glass,
+/obj/machinery/reagentgrinder{
+	pixel_y = 10
+	},
+/obj/effect/turf_decal/tile/brown/fourcorners,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/ruin/space/has_grav/powered/inteq_forgotten_medbay)
 "Pb" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -7977,34 +7982,6 @@
 /obj/machinery/aug_manipulator,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/inteq_forgotten_rnd)
-"XF" = (
-/obj/structure/safe,
-/obj/item/storage/bag/money/c5000,
-/obj/effect/decal/cleanable/dirt,
-/obj/item/stack/sheet/bluespace_crystal{
-	amount = 10
-	},
-/obj/item/stack/ore/diamond{
-	amount = 10
-	},
-/obj/item/slimecross/industrial/silver,
-/obj/item/areaeditor/blueprints{
-	desc = "Use to build new structures in the wastes.";
-	name = "outpost blueprints"
-	},
-/obj/item/card/emag,
-/obj/item/storage/box/firingpins/syndicate,
-/obj/effect/turf_decal/stripes{
-	dir = 1;
-	icon_state = "delivery_red"
-	},
-/obj/item/storage/book/bible/syndicate/inteq,
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/item/folder/inteq,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault)
 "XJ" = (
 /obj/structure/sink{
 	pixel_y = 28
@@ -10988,12 +10965,12 @@ Nk
 Nk
 Jc
 Oh
-dq
+sD
 tn
 Cu
 XB
 Oh
-Hr
+OY
 mQ
 bO
 qO
@@ -11808,7 +11785,7 @@ sz
 sz
 Jc
 kw
-uq
+me
 Bz
 IS
 kw
@@ -11892,7 +11869,7 @@ Vr
 xS
 Ai
 Tw
-bC
+ke
 My
 GT
 xS
@@ -11977,7 +11954,7 @@ lK
 od
 Gf
 Im
-pF
+pT
 Kb
 NL
 SX
@@ -12040,7 +12017,7 @@ kw
 kw
 kw
 xS
-XF
+pt
 lb
 aO
 hL

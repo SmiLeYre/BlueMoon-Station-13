@@ -5649,18 +5649,13 @@
 	dir = 4
 	},
 /obj/effect/landmark/xeno_spawn,
-/obj/machinery/power/apc{
-	areastring = "/obj/item/paper/fluff/cogstation/eva";
-	dir = 1;
-	name = "EVA Storage APC";
-	pixel_y = 24
-	},
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/storage/eva)
 "akx" = (
@@ -48058,6 +48053,7 @@
 	dir = 1;
 	pixel_y = -22
 	},
+/obj/effect/landmark/xeno_spawn,
 /turf/open/floor/plasteel/white,
 /area/medical/virology)
 "xKv" = (

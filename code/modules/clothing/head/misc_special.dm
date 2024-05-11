@@ -183,11 +183,11 @@
 
 /obj/item/clothing/head/kitty/equipped(mob/living/carbon/human/user, slot)
 	if(ishuman(user) && slot == ITEM_SLOT_HEAD)
-		update_icon(user)
+		update_icon(ALL, user)
 		user.update_inv_head() //Color might have been changed by update_icon.
 	..()
 
-/obj/item/clothing/head/kitty/update_icon(mob/living/carbon/human/user)
+/obj/item/clothing/head/kitty/update_icon(updates, mob/living/carbon/human/user)
 	. = ..()
 	if(ishuman(user))
 		add_atom_colour("#[user.hair_color]", FIXED_COLOUR_PRIORITY)

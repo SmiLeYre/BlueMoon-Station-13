@@ -100,7 +100,7 @@
 		user.visible_message("<span class='warning'>[user] starts wriggling off of [src]!</span>", \
 		"<span class='danger'>You start agonizingly working your way off of [src]...</span>")
 		wiggle_wiggle = TRUE
-		if(!do_after(user, 300, target = user))
+		if(!do_after(user, 3 SECONDS, target = user))
 			user.visible_message("<span class='warning'>[user] slides back down [src]!</span>")
 			user.emote("realagony")
 			user.apply_damage(10, BRUTE, BODY_ZONE_CHEST)

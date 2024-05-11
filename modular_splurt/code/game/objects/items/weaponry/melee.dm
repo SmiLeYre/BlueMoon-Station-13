@@ -6,6 +6,7 @@
 	to_chat(user, "<span class='notice'>Я целюсь в... [hole].</span>")
 
 /obj/item/melee/baseball_bat/attack(mob/living/target, mob/living/user)
+	. = ..()
 	if(homerun_ready && !HAS_TRAIT(user, TRAIT_PACIFISM))
 		if(!user.canUseTopic(target, BE_CLOSE))
 			return
@@ -29,7 +30,6 @@
 		var/whack_speed = (prob(60) ? 1 : 4)
 		target.throw_at(throw_target, rand(1, 2), whack_speed, user) // sorry friends, 7 speed batting caused wounds to absolutely delete whoever you knocked your target into (and said target)
 		return
-	. = ..()
 
 // Prova, cause I can
 
