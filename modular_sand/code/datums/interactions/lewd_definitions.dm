@@ -49,7 +49,7 @@
 /mob/living/Initialize(mapload)
 	. = ..()
 	sexual_potency = rand(10,25)
-	lust_tolerance = rand(75,200)
+	lust_tolerance = rand(25,200)
 
 /mob/living/proc/get_lust_tolerance()
 	. = lust_tolerance
