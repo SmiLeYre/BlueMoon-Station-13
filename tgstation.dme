@@ -4455,6 +4455,7 @@
 #include "modular_bluemoon\SmiLeY\code\game\objects\structures\signs\signs_flags.dm"
 #include "modular_bluemoon\SmiLeY\code\game\turfs\open\floor\iron_floor.dm"
 #include "modular_bluemoon\SmiLeY\code\janitor\cool_broom.dm"
+#include "modular_bluemoon\SmiLeY\code\medals.dm"
 #include "modular_bluemoon\SmiLeY\code\mob\carps.dm"
 #include "modular_bluemoon\SmiLeY\code\mob\pig\pig.dm"
 #include "modular_bluemoon\SmiLeY\code\modules\client\loadout\ac_clothing.dm"

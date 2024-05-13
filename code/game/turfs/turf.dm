@@ -242,10 +242,24 @@ GLOBAL_LIST_EMPTY(station_turfs)
 		return FALSE
 	if(!force && (!can_zFall(A, levels, target) || !A.can_zFall(src, levels, target, DOWN)))
 		return FALSE
-	A.zfalling = TRUE
-	A.forceMove(target)
-	A.zfalling = FALSE
-	target.zImpact(A, levels, src)
+	if(isliving(A))
+		var/mob/living/falling_mob = A
+		var/atom/movable/pulling = falling_mob.pulling
+		falling_mob.zfalling = TRUE
+		falling_mob.forceMove(target)
+		falling_mob.zfalling = FALSE
+		target.zImpact(falling_mob, levels, src)
+		if(pulling)
+			pulling.zfalling = TRUE
+			pulling.forceMove(target)
+			pulling.zfalling = FALSE
+			target.zImpact(pulling, levels, src)
+			INVOKE_ASYNC(falling_mob, TYPE_PROC_REF(/atom/movable, start_pulling), pulling)
+	else
+		A.zfalling = TRUE
+		A.forceMove(target)
+		A.zfalling = FALSE
+		target.zImpact(A, levels, src)
 	return TRUE
 
 /turf/proc/handleRCL(obj/item/rcl/C, mob/user)

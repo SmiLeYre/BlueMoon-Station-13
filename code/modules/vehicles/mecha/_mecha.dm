@@ -718,8 +718,11 @@
 
 	set_glide_size(DELAY_TO_GLIDE_SIZE(movedelay))
 	use_power(step_energy_drain)
-	//Otherwise just walk normally
-	. = step(src,direction, dir)
+
+	var/turf/current_loc = get_turf(src)
+	if(!current_loc.zFall(src))
+		//Otherwise just walk normally
+		. = step(src,direction, dir)
 
 	if(strafe && !no_strafe)
 		setDir(olddir)
