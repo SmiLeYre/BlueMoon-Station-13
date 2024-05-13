@@ -74,13 +74,16 @@
 /datum/round_event_control/ftu_trader
 	name = "Trade ship"
 	typepath = /datum/round_event/ftu_trader
-	weight = 5
+	weight = 10
 	max_occurrences = 1
 	min_players = 15
-	earliest_start = 40 MINUTES
 	category = EVENT_CATEGORY_FRIENDLY
 	description = "A trader ship full of goodys."
 	var/ship_template
+
+/datum/round_event/ftu_trader
+	announce_when = 1
+	start_when = 1
 
 /datum/round_event/ftu_trader/announce(fake)
 	priority_announce("Корабль Свободного торгового объединения получил разрешение на стыковку и пересёк границы сектора. Можете потратить свои честно заработанные деньги на их товары.","Бюрократический отдел ЦК", 'sound/announcer/classic/traider_announce.ogg')

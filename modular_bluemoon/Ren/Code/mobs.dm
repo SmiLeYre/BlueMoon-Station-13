@@ -105,7 +105,6 @@
 	update_inv_internal_storage()
 
 ///inteq mobs
-
 /mob/living/simple_animal/hostile/syndicate/ranged/sniper
 	name = "InteQ Mad Shooter"
 	desc = "Ему очень нравится звук выстрела его винтовки"
@@ -146,6 +145,7 @@
 	attack_sound = 'modular_bluemoon/Ren/Sound/USHM_hit.ogg'
 	status_flags = 0
 
+//Рандомные мобы
 /mob/living/simple_animal/hostile/skeleton/meatguy
 	name = "Living meat"
 	desc = "Отвратительная пародия на человека из мяса и костей"
@@ -164,13 +164,39 @@
 	icon_state = "fleshling[number]"
 	icon_living = "fleshling[number]"
 
-///безумный стрелок.
+/mob/living/simple_animal/hostile/russian/ranged/space
+	name = "Red alert"
+	icon_state = "komunist"
+	icon_living = "komunist"
+	icon = 'modular_bluemoon/Ren/Icons/Mob/mobs.dmi'
+	maxHealth = 180
+	health = 180
+	casingtype = /obj/item/ammo_casing/a9x39
+	projectilesound = 'modular_bluemoon/kovac_shitcode/sound/weapons/vss_shoot.ogg'
+	loot = list(/obj/effect/gibspawner/human)
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
+	minbodytemp = 0
+	speed = 1
+	ranged = 1
+	retreat_distance = 5
+	minimum_distance = 5
+	rapid_melee = 1
+	speak_chance = 20
+	spacewalk = TRUE
+	dodging = TRUE
+	speak = list("Сдохни, проклятый капиталист!")
+
+///безумный стрелок. Ивент
 /datum/round_event_control/sniper
 	name = "Mad shooter"
 	typepath = /datum/round_event/sniper
 	max_occurrences = 2
 	weight = 10
 	category = EVENT_CATEGORY_ENTITIES
+
+/datum/round_event/sniper
+	announce_when = 1
+	start_when = 1
 
 /datum/round_event/sniper/announce(fake)
 	priority_announce("Один из наших... кхм... особых заключённых сбежал. Так получилось, что его последнее известное местонахождение до того, как их маячок заглох, - это ваша станция, так что будьте осторожней и остерегайтесь Технических Тоннелей. И еще... никто не знает, куда подевались ключи от оружейного сейфа?",
@@ -212,24 +238,10 @@
 	log_game("A mad shooter has been spawned at [COORD(T)]")
 	return SUCCESSFUL_SPAWN
 
-/mob/living/simple_animal/hostile/russian/ranged/space
-	name = "Red alert"
-	icon_state = "komunist"
-	icon_living = "komunist"
-	icon = 'modular_bluemoon/Ren/Icons/Mob/mobs.dmi'
-	maxHealth = 180
-	health = 180
-	casingtype = /obj/item/ammo_casing/a9x39
-	projectilesound = 'modular_bluemoon/kovac_shitcode/sound/weapons/vss_shoot.ogg'
-	loot = list(/obj/effect/gibspawner/human)
-	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
-	minbodytemp = 0
-	speed = 1
-	ranged = 1
-	retreat_distance = 5
-	minimum_distance = 5
-	rapid_melee = 1
-	speak_chance = 20
-	spacewalk = TRUE
-	dodging = TRUE
-	speak = list("Сдохни, проклятый капиталист!")
+//спавн трупа
+/obj/effect/mob_spawn/human/corpse/inteq_dead
+	name = "InteQ Operative"
+	id_job = "Operative"
+	hair_style = "Bald"
+	facial_hair_style = "Shaved"
+	outfit = /datum/outfit/inteq_dead
