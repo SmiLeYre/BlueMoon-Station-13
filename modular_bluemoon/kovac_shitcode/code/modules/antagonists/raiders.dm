@@ -168,7 +168,7 @@
 		B.registered_name = H.real_name
 		B.update_label(H.real_name)
 
-	H.grant_language(/datum/language/codespeak, TRUE, TRUE)
+	H.grant_language(/datum/language/old_codes, TRUE, TRUE)
 	H.faction |= ROLE_INTEQ
 	H.update_icons()
 
@@ -176,7 +176,7 @@
 	name = "InteQ Honorable Vanguard"
 	suit = /obj/item/clothing/suit/armor/inteq/honorable_vanguard
 	head = /obj/item/clothing/head/HoS/inteq_honorable_vanguard
-	uniform = /obj/item/clothing/under/inteq_honorable_vanguard
+	uniform = /obj/item/clothing/under/inteq/honorable_vanguard
 	r_hand = /obj/item/gun/ballistic/revolver/inteq
 	r_pocket = /obj/item/ammo_box/a357
 

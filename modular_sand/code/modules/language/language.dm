@@ -14,7 +14,7 @@
 	space_chance = 40
 	syllables = list("grr", "gah", "woof", "arf", "arra", "rah", "wor", "sarg")
 	icon_state = "cheese"
-	flags = TONGUELESS_SPEECH
+	// flags = TONGUELESS_SPEECH bluemoon change
 	restricted = FALSE
 
 /datum/language/modular_sand/buggy
@@ -64,7 +64,7 @@
 	whisper_verb = "hushes"
 	key = "v"
 	space_chance = 30
-	flags = TONGUELESS_SPEECH
+	// flags = TONGUELESS_SPEECH bluemoon change
 	syllables = list(
 		"sid", "n'", "wah", "shad", "i'ag", "ald", "alt",
 		"bal", "mora", "chap'", "druhn", "aka", "vehk", "ur",
@@ -105,7 +105,7 @@
 	ask_verb = "growls"
 	exclaim_verb = "roars"
 	key = "x"
-	flags = TONGUELESS_SPEECH
+	// flags = TONGUELESS_SPEECH bluemoon change
 	space_chance = 50
 	syllables = list(
 		"er", "sint", "en", "et", "nor", "bahr", "sint", "un", "ku'elm", "lakor", "eri",
@@ -130,7 +130,7 @@
 	key = "p"
 	space_chance = 30
 	default_priority = 96
-	flags = TONGUELESS_SPEECH
+	// flags = TONGUELESS_SPEECH bluemoon change
 	syllables = list(
 		"sed", "ut", "unde", "omnis", "iste", "natus", "sit", "vol", "totam", "rem", "eaque", "ipsa", "quae", "ab", "illo",
 		"et", "quasi", "dicta", "sunt", "enim", "ipsam", "aut", "odit", "qui", "porro", "amet", "que",
@@ -149,7 +149,7 @@
 	key = "2"
 	space_chance = 70
 	default_priority = 98
-	flags = TONGUELESS_SPEECH
+	// flags = TONGUELESS_SPEECH bluemoon change
 	syllables = list("zhena", "reb", "kot", "tvoy", "vodka", "blyad", "verbovka", "ponimat", "zhit", "kley", "sto", "yat", "si", "det", \
 					 "re", "be", "nok", "chto", "techno", "kak", "govor", "navernoe", "da", "net", "horosho", "pochemu", "privet","lubov", \
 					 "ebat", "krovat", "stol", "za", "ryad", "ka", "voyna", "dumat", "patroni", "tarakanu", "zdorovie", "day", "dengi", \

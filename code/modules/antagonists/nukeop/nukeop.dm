@@ -46,6 +46,7 @@
 		priority_announce("Приветствую, Станция. Мы отправляем к вам Специалиста по Защите Ядерного Диска ввиду того, что заметили недостаточную его безопасность. Bстречайте.", "Фрегат [title] ССО Синдиката")
 	else
 		H.equipOutfit(nukeop_outfit)
+		H.grant_language(/datum/language/old_codes, TRUE, TRUE)
 
 	if(name == "Lone Operative")
 		var/load_character = alert(H.client, "Желаете загрузить текущего своего выбранного персонажа?", "Играть своим персонажем!", "Да", "Нет")
