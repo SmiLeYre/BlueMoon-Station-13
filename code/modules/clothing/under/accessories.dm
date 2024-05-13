@@ -352,7 +352,7 @@
 				delay = 0
 			else
 				user.visible_message("[user] is trying to pin [src] on [M]'s chest.", \
-									 "<span class='notice'>You try to pin [src] on [M]'s chest.</span>")
+									"<span class='notice'>You try to pin [src] on [M]'s chest.</span>")
 			var/input
 			if(!commended && user != M)
 				input = stripped_input(user,"Please input a reason for this commendation, it will be recorded by Nanotrasen.", ,"", 140)
@@ -362,7 +362,7 @@
 						to_chat(user, "<span class='notice'>You attach [src] to [U].</span>")
 					else
 						user.visible_message("[user] pins \the [src] on [M]'s chest.", \
-											 "<span class='notice'>You pin \the [src] on [M]'s chest.</span>")
+											"<span class='notice'>You pin \the [src] on [M]'s chest.</span>")
 						if(input)
 							SSblackbox.record_feedback("associative", "commendation", 1, list("commender" = "[user.real_name]", "commendee" = "[M.real_name]", "medal" = "[src]", "reason" = input))
 							GLOB.commendations += "[user.real_name] awarded <b>[M.real_name]</b> the <span class='medaltext'>[name]</span>! \n- [input]"
@@ -370,6 +370,16 @@
 							desc += "<br>The inscription reads: [input] - [user.real_name]"
 							log_game("<b>[key_name(M)]</b> was given the following commendation by <b>[key_name(user)]</b>: [input]")
 							message_admins("<b>[key_name(M)]</b> was given the following commendation by <b>[key_name(user)]</b>: [input]")
+							SSpersistence.medals += list(list(
+								"ckey" = M.ckey,
+								"round_id" = GLOB.round_id,
+								"medal_type" = type,
+								"medal_icon" = replacetext(type, " ", "-"),
+								"recipient_name" = M.real_name,
+								"recipient_role" = M.job,
+								"giver_name" = user.real_name,
+								"citation" = input
+							))
 
 		else
 			to_chat(user, "<span class='warning'>Medals can only be pinned on jumpsuits!</span>")
