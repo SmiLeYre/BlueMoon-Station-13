@@ -64,15 +64,6 @@
 
 //InteQ
 
-/obj/item/clothing/under/inteq_honorable_vanguard
-	name = "black combat turtleneck"
-	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish."
-	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
-	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
-	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/under_digidrated.dmi'
-	icon_state = "inteq_honorable"
-	item_state = "inteq_honorable"
-
 /obj/item/clothing/under/inteq
 	name = "brown combat turtleneck"
 	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish."
@@ -81,8 +72,19 @@
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/under_digidrated.dmi'
 	icon_state = "inteq"
 	item_state = "inteq"
+	armor = list(MELEE = 10, BULLET = 10, LASER = 10,ENERGY = 10, BOMB = 0, BIO = 0, RAD = 10, FIRE = 50, ACID = 40, WOUND = 10)
+	has_sensor = NO_SENSORS
 
-/obj/item/clothing/under/inteq_skirt
+/obj/item/clothing/under/inteq/honorable_vanguard
+	name = "black combat turtleneck"
+	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/under.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/under_digidrated.dmi'
+	icon_state = "inteq_honorable"
+	item_state = "inteq_honorable"
+
+/obj/item/clothing/under/inteq/skirt
 	name = "brown combat skirtleneck"
 	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish."
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
@@ -91,7 +93,7 @@
 	icon_state = "inteq_skirt"
 	item_state = "inteq_skirt"
 
-/obj/item/clothing/under/inteq_eng
+/obj/item/clothing/under/inteq/eng
 	name = "brown engineering turtleneck"
 	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish."
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
@@ -100,7 +102,7 @@
 	icon_state = "inteqeng"
 	item_state = "inteqeng"
 
-/obj/item/clothing/under/inteq_eng_skirt
+/obj/item/clothing/under/inteq/eng_skirt
 	name = "brown engineering skirtleneck"
 	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish."
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
@@ -109,7 +111,7 @@
 	icon_state = "inteqeng_skirt"
 	item_state = "inteqeng_skirt"
 
-/obj/item/clothing/under/inteq_maid
+/obj/item/clothing/under/inteq/maid
 	name = "brown combat maidsuit"
 	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish. Battle maids!"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
@@ -122,7 +124,7 @@
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
-/obj/item/clothing/under/inteq_maid/Initialize(mapload)
+/obj/item/clothing/under/inteq/maid/Initialize(mapload)
 	. = ..()
 	var/obj/item/clothing/accessory/maidapron/inteq/A = new (src)
 	attach_accessory(A)
@@ -135,7 +137,7 @@
 	icon_state = "maidapron"
 	item_state = "maidapron"
 
-/obj/item/clothing/under/inteq_med
+/obj/item/clothing/under/inteq/med
 	name = "white combat turtleneck"
 	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish. Designed for field medics."
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'
@@ -144,7 +146,7 @@
 	icon_state = "inteqmed"
 	item_state = "inteqmed"
 
-/obj/item/clothing/under/inteq_med_skirt
+/obj/item/clothing/under/inteq/med_skirt
 	name = "white combat skirtleneck"
 	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish. Designed for field medics."
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/under.dmi'

@@ -2930,7 +2930,7 @@
 /obj/item/clothing/glasses/hud/health/night/syndicate,
 /obj/item/clothing/neck/cloak/healer,
 /obj/item/clothing/head/soft/inteq_med,
-/obj/item/clothing/under/inteq_med,
+/obj/item/clothing/under/inteq/med,
 /turf/open/floor/padded,
 /area/awaymission/Killthemall/Level)
 "UB" = (
