@@ -2139,7 +2139,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		bal -= initial(T.value)
 	for(var/modification in modified_limbs)
 		if(modified_limbs[modification][1] == LOADOUT_LIMB_PROSTHETIC)
-			return bal + 1 //max 1 point regardless of how many prosthetics
+			bal += 1 //max 1 point regardless of how many prosthetics
 	if(bal < 0)
 		all_quirks = list()
 		return FALSE
