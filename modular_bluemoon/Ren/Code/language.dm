@@ -11,7 +11,7 @@
 /datum/language/old_codes/scramble(var/input)
 	var/fastcode = ""
 	while(length_char(fastcode) < length_char(input))
-		fastcode += pickweight(list( "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "red", "green", "yellow", "white", "black", "-" = 4, " " = 7))
+		fastcode += pickweight(list( "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "red", "green", "yellow", "white", "black", "-", " "))
 	input = fastcode // bluemoon change end
 	. = input
 
