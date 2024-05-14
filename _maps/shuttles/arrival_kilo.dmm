@@ -475,6 +475,14 @@
 /obj/machinery/light,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/arrival)
+"U" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/blue,
+/obj/structure/cloth_drive,
+/turf/open/floor/mineral/titanium/white,
+/area/shuttle/arrival)
 
 (1,1,1) = {"
 a
@@ -552,7 +560,7 @@ f
 c
 m
 s
-B
+U
 J
 Q
 c

@@ -133,10 +133,7 @@
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/arrival)
 "x" = (
-/obj/machinery/computer{
-	dir = 1;
-	name = "Shuttle computer"
-	},
+/obj/structure/cloth_drive,
 /turf/open/floor/mineral/titanium/blue,
 /area/shuttle/arrival)
 "y" = (
