@@ -49,7 +49,7 @@
 	if(is_station_level(src.z))
 		return
 	z_times_changed++
-	if(z_times_changed % 1 != 0)
+	if(z_times_changed % 10 != 0)
 		return
 
 	var/area/area_to_check = get_area(src)
