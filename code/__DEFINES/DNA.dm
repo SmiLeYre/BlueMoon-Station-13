@@ -187,6 +187,7 @@
 #define ORGAN_SLOT_BUTT "butt"
 #define ORGAN_SLOT_BELLY "belly"
 #define ORGAN_SLOT_ANUS "anus"
+#define ORGAN_SLOT_ORGANIC_IMPLANT "osmodula" //bluemoon add
 
 ////organ defines
 #define STANDARD_ORGAN_THRESHOLD 	100

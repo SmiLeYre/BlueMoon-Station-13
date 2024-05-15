@@ -30,6 +30,7 @@
 		var/obj/structure/grille/G = A
 		G.take_damage(40, BRUTE, MELEE, 0)
 
+
 /obj/item/pickaxe/drill/jackhammer/angle_grinder/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
@@ -116,7 +117,7 @@
 	icon = 'modular_bluemoon/Ren/Icons/Obj/guns.dmi'
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	recoil = 5
+	recoil = 2
 	mag_type = /obj/item/ammo_box/magazine/aa12
 	fire_sound = 'sound/weapons/gunshotshotgunshot.ogg'
 	automatic_burst_overlay = FALSE
@@ -199,7 +200,7 @@
 	else
 		icon_state = "m240[cover_open ? "-open" : "-closed"]-empty"
 
-/obj/item/gun/energy/m2a100/attackby(obj/item/I, mob/user)
+/obj/item/gun/energy/m2a100/attackby(obj/item/I, mob/user)  //перезарядка работает как у резака. Можно изменять, сколько требуется плазмы для полного заряда
 	if(istype(I, /obj/item/stack/sheet/mineral/plasma) && cover_open == TRUE)
 		I.use(1)
 		cell.give(500)
@@ -218,7 +219,7 @@
 		. = ..()
 		update_icon()
 
-///ГАРАНД
+///Диск с чертежами патрон для автолата
 /obj/item/disk/design_disk/adv/ammo/garand
 	name = "Ammo desine disk"
 	desc = "Вставь в автолат, что-бы печатать крутые патроны"
@@ -247,48 +248,6 @@
 	materials = list(/datum/material/iron = 28000)
 	build_path = /obj/item/ammo_box/magazine/garand/rubber
 	category = list("Imported")
-
-/obj/item/storage/backpack/guitarbag/sniper/PopulateContents()
-	new /obj/item/gun/ballistic/automatic/m1garand(src)
-	new /obj/item/ammo_box/magazine/garand(src)
-	new /obj/item/disk/design_disk/adv/ammo/garand(src)
-
-///Sandman
-/obj/item/reagent_containers/syringe/sand
-	name = "Sand parasite"
-	desc = "Шприц со странной чёрной жидкостью, находящейся постоянно в движении."
-	amount_per_transfer_from_this = 1
-	volume = 1
-	list_reagents = list(/datum/reagent/sandparasite = 1)
-
-/datum/reagent/sandparasite
-	name = "Sand parasite"
-	description = "Миллионы маленьких паразитов готовых съесть любую органику, до которой смогут добраться."
-	color = "#000000"
-	chemical_flags = REAGENT_ALL_PROCESS
-	can_synth = FALSE
-	taste_description = "hopelessness"
-	value = REAGENT_VALUE_GLORIOUS
-
-/datum/reagent/sandparasite/reaction_mob(mob/living/L, method=TOUCH, reac_volume)
-	L.ForceContractDisease(new /datum/disease/transformation/sand(), FALSE, TRUE)
-
-/datum/disease/transformation/sand
-	name = "Sand parasite"
-	cure_text = "nothing"
-	cures = list(/datum/reagent/medicine/adminordrazine)
-	agent = "Sand parasite"
-	desc = "Рой из десятка миллионов паразитов в одной маленькой капле, готовых сожрать любую попавшуюся им органику"
-	stage_prob = 20
-	severity = DISEASE_SEVERITY_BIOHAZARD
-	visibility_flags = 0
-	stage1	= list("<span class='danger'>Ваши мышцы горят огнём.</span>")
-	stage2	= list("<span class='danger'>Ваша кожа чернеет и болит так, словно её сдирают заживо.</span>")
-	stage3	= list("<span class='danger'>Твой позвоночник воет от боли словно его пытаются растянуть на дыбе</span>", "<span class='danger'>похоже ты становишься выше.</span>")
-	stage4	= list("<span class='danger'>Что то разрывает твою кожу на спине.</span>")
-	stage5	= list("<span class='danger'>Трансформация завершается. Паразиты глубоко укоренились в теле и теперь не отделимы от него. Вы чувствуете невероятную боль, получив взамен новые возможности.<br><br>Используй Shift+Click, что бы принять вид обьекта или существа.<br>Alt+Click по вентиляции или скраберу, что бы залезть в систему труб.<br>Поедай трупы или используй медицинские нитки для востановления здоровья.<br>Ты можешь выдержать много физических повреждений, но огонь и лазеры для тебя смертельно опасны.</span>")
-	new_form = /mob/living/simple_animal/hostile/morph/sandman
-	infectable_biotypes = MOB_ORGANIC|MOB_MINERAL|MOB_UNDEAD
 
 ///Дорожный знак
 /obj/item/spear/stop
@@ -329,22 +288,6 @@
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
 
-/obj/item/storage/box/inteq_kit/revolver/PopulateContents()
-	new /obj/item/gun/ballistic/revolver/inteq(src)
-	new /obj/item/ammo_box/a357(src)
-
-/obj/item/storage/box/inteq_kit/doorgoboom/PopulateContents()
-	for(var/i in 1 to 5)
-		new /obj/item/doorCharge(src)
-
-/obj/item/storage/backpack/duffelbag/syndie/inteq/c4/PopulateContents()
-	for(var/i in 1 to 10)
-		new /obj/item/grenade/plastic/c4(src)
-
-/obj/item/storage/backpack/duffelbag/syndie/inteq/x4/PopulateContents()
-	for(var/i in 1 to 3)
-		new /obj/item/grenade/plastic/x4(src)
-
 /obj/item/grenade/spawnergrenade/syndiesoap/inteq
 	name = "Mister Scrubby"
 	spawner_type = /obj/item/soap/inteq
@@ -352,7 +295,7 @@
 /obj/item/grenade/clusterbuster/soap/inteq
 	name = "Slipocalypse"
 	payload = /obj/item/grenade/spawnergrenade/syndiesoap/inteq
-
+// Сабля Каракурт
 /obj/item/storage/belt/sabre/karakurt
 	name = "Karakurt sheath"
 	desc = "Ножны со встроеным отсеком для ядом. Постоянно поддерживают элегантное оружие в подобающем виде."
@@ -388,49 +331,20 @@
 	if(iscarbon(target))
 		if(HAS_TRAIT(user, TRAIT_PACIFISM))
 			visible_message("<span class='warning'>[user] gently taps [target] with [src].</span>",null,null,COMBAT_MESSAGE_RANGE)
-		log_combat(user, target, "slept", src)
-		var/mob/living/carbon/H = target
-		H.Dizzy(10)
-		H.adjustStaminaLoss(30)
-		if(CHECK_STAMCRIT(H) != NOT_STAMCRIT)
-			H.Sleeping(180)
-	else
-		if(iscarbon(target))
+			log_combat(user, target, "slept", src)
 			var/mob/living/carbon/H = target
-			H.reagents.add_reagent(/datum/reagent/toxin/lexorin, 5)
+			H.Dizzy(10)
+			H.adjustStaminaLoss(30)
+			if(CHECK_STAMCRIT(H) != NOT_STAMCRIT)
+				H.Sleeping(180)
+		else
+			if(iscarbon(target))
+				visible_message("<span class='warning'>Из свежей раны [target] начинает сочиться яд вместе с свежей кровью. [src] отравил его!</span>",null,null,COMBAT_MESSAGE_RANGE)
+				var/mob/living/carbon/H = target
+				H.reagents.add_reagent(/datum/reagent/toxin/lexorin, 3)
 
-///InteQ Uplink additions
-/datum/uplink_item/inteq/angle_grinder
-	name = "USHM"
-	desc = "Индустриальный инструмент, предназначенный для резки армированного бетона и металлических стен. Так же отлично прорезает и “живые преграды”."
-	item = /obj/item/pickaxe/drill/jackhammer/angle_grinder
-	cost = 8
-	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
-
-/datum/uplink_item/inteq/pulse_pistol
-	name = "Melter"
-	desc = "Генератор высокотемпературной плазмы, предназначенный для производственных нужд, но внедрения технологий NT получил возможность отправлять сгусток плазмы во полёт."
-	item = /obj/item/gun/energy/pulse/pistol/inteq
-	cost = 13
-	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
-
-/datum/uplink_item/inteq/canceller
-	name = "Canceller"
-	desc = "Старый пистолет для нелетальных задержаний использовавшийся спецслужбами Солнечной федерации. Вместо батареи был поставлен РИТЭГ, благадаря чему заряд постепенно восполняется, а рукам становится тепло в этом холодном космосе."
-	item = /obj/item/gun/energy/laser/canceller
-	cost = 6
-	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
-
-/datum/uplink_item/inteq/sand_parasite
-	name = "Sand parasite"
-	desc = "Искусственно выращенный паразит, пожирающий тело носителя и перестраивающий его в более пластичную форму. Необратимо лишает носителя человечности в обмен даруя способности к мимикрии, при этом не мешая взаимодействовать с окружением."
-	item = /obj/item/reagent_containers/syringe/sand
-	cost = 15
-	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
-
-/datum/uplink_item/dangerous/garand
-	name = "Old, but gold rifle"
-	desc = "Классическая полуавтоматическая винтовка с деревянной фурнитурой под калибр .308 winchester. Мы знаем как трудно достать в наше время сменные клипсы, по этому в комплекте идёт диск с чертежами патронов для автолата."
-	item = /obj/item/storage/backpack/guitarbag/sniper
-	cost = 10
-	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+/obj/item/melee/baseball_bat/ablative/inteq
+	name = "Iron will"
+	desc = "A metal bat. Very robust"
+	force = 26
+	throwforce = 30

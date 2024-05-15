@@ -673,16 +673,14 @@
 /obj/machinery/computer/communications/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
-		// if ((obj_flags && EMAGGED && GLOB.master_mode == "Extended") || syndicate == TRUE)
-		// 	ui = new(user, src, "CommunicationsConsole")
-		// 	ui.open()
-		// else
-		// 	if (obj_flags && EMAGGED)
-		// 		ui = new(user, src, "CommunicationsConsoleInteq")
-		// 		ui.open()
-		// 	else
-		ui = new(user, src, "CommunicationsConsole")
-		ui.open()
+		if ((obj_flags && EMAGGED && GLOB.master_mode == "Extended") || syndicate == TRUE)
+			ui = new(user, src, "CommunicationsConsole")
+			ui.open()
+		else
+			if (obj_flags && EMAGGED)
+				ui = new(user, src, "CommunicationsConsoleInteq")
+				ui.open()
+			else
 
 /obj/machinery/computer/communications/ui_static_data(mob/user)
 	return list(

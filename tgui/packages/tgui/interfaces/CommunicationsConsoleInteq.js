@@ -7,6 +7,7 @@ import { sanitizeText } from "../sanitize";
 import { formatMoney } from '../format';
 
 const STATE_BUYING_SHUTTLE = "buying_shuttle";
+const STATE_CALLING_ERT = "calling_ert";
 const STATE_CHANGING_STATUS = "changing_status";
 const STATE_MAIN = "main";
 const STATE_MESSAGES = "messages";
@@ -197,6 +198,56 @@ const PageBuyingShuttle = (props, context) => {
   );
 };
 
+const PageCallingERT = (props, context) => {
+  const { act, data } = useBackend(context);
+
+  return (
+    <Box>
+      <Section>
+        <Button
+          icon="chevron-left"
+          content="Назад"
+          onClick={() => act("setState", { state: STATE_MAIN })}
+        />
+      </Section>
+
+      <Section>
+        Бюджет: <b>{data.budget.toLocaleString()}</b> кредитов
+      </Section>
+      {sortByCreditCostERT(data.ert).map(ert => (
+        <Section
+          title={(
+            <span
+              style={{
+                display: "inline-block",
+                width: "70%",
+              }}>
+              {ert.name}
+            </span>
+          )}
+          key={ert.ref}
+          buttons={(
+            <Button
+              content={`${ert.creditCost.toLocaleString()} кредитов`}
+              disabled={data.budget < ert.creditCost || !ert.available}
+              onClick={() => act("purchaseERT", {
+                ert: ert.ref,
+              })}
+              tooltip={
+                data.budget < ert.creditCost
+                  ? `Требуется ещё ${ert.creditCost - data.budget} кредитов`
+                  : undefined
+              }
+              tooltipPosition="left"
+            />
+          )}>
+          <Box>{ert.description}</Box>
+        </Section>
+      ))}
+    </Box>
+  );
+};
+
 const PageChangingStatus = (props, context) => {
   const { act, data } = useBackend(context);
   const { maxStatusLineLength } = data;
@@ -303,6 +354,7 @@ const PageMain = (props, context) => {
     aprilFools,
     callShuttleReasonMinLength,
     canBuyShuttles,
+    canCallERT,
     canMakeAnnouncement,
     canMessageAssociates,
     canRecallShuttles,
@@ -469,6 +521,15 @@ const PageMain = (props, context) => {
             tooltip={canBuyShuttles !== 1 ? canBuyShuttles : undefined}
             tooltipPosition="right"
             onClick={() => act("setState", { state: STATE_BUYING_SHUTTLE })}
+          />}
+
+          {(canCallERT !== 0) && <Button
+            icon="shopping-cart"
+            content="Вызвать платное ОБР"
+            disabled={canCallERT !== 1}
+            tooltip={canCallERT !== 1 ? canCallERT : undefined}
+            tooltipPosition="right"
+            onClick={() => act("setState", { state: STATE_CALLING_ERT })}
           />}
 
           {!!canMessageAssociates && <Button
@@ -813,6 +874,7 @@ export const CommunicationsConsoleInteq = (props, context) => {
 
         {!!authenticated && (
           page === STATE_BUYING_SHUTTLE && <PageBuyingShuttle />
+          || page === STATE_CALLING_ERT && <PageCallingERT />
           || page === STATE_CHANGING_STATUS && <PageChangingStatus />
           || page === STATE_MAIN && <PageMain />
           || page === STATE_MESSAGES && <PageMessages />

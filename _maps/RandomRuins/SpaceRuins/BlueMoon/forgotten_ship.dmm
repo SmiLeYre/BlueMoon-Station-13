@@ -49,10 +49,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/item/clothing/under/inteq_eng_skirt,
-/obj/item/clothing/under/inteq_maid,
-/obj/item/clothing/under/inteq_med_skirt,
-/obj/item/clothing/under/inteq_skirt,
+/obj/item/clothing/under/inteq/eng_skirt,
+/obj/item/clothing/under/inteq/maid,
+/obj/item/clothing/under/inteq/med_skirt,
+/obj/item/clothing/under/inteq/skirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "ap" = (
@@ -565,9 +565,9 @@
 	icon_state = "4-8"
 	},
 /obj/item/clothing/under/inteq,
-/obj/item/clothing/under/inteq_eng,
-/obj/item/clothing/under/inteq_honorable_vanguard,
-/obj/item/clothing/under/inteq_med,
+/obj/item/clothing/under/inteq/eng,
+/obj/item/clothing/under/inteq/honorable_vanguard,
+/obj/item/clothing/under/inteq/med,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "dL" = (
