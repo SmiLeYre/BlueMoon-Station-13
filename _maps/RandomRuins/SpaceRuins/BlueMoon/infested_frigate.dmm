@@ -673,7 +673,7 @@
 	},
 /obj/structure/closet/syndicate,
 /obj/item/gun/syringe,
-/obj/item/clothing/under/inteq_med,
+/obj/item/clothing/under/inteq/med,
 /obj/item/storage/firstaid/brute,
 /obj/item/storage/firstaid/fire,
 /obj/item/storage/firstaid/regular,
@@ -1479,11 +1479,11 @@
 	},
 /obj/item/clothing/shoes/combat,
 /obj/item/clothing/shoes/combat,
-/obj/item/clothing/under/inteq_honorable_vanguard,
+/obj/item/clothing/under/inteq/honorable_vanguard,
 /obj/item/clothing/under/inteq,
 /obj/item/clothing/under/inteq,
-/obj/item/clothing/under/inteq_skirt,
-/obj/item/clothing/under/inteq_skirt,
+/obj/item/clothing/under/inteq/skirt,
+/obj/item/clothing/under/inteq/skirt,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/infestedship)
 "CE" = (

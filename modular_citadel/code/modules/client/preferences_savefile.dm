@@ -40,7 +40,7 @@
 		extremeharm = "No"
 	enable_personal_chat_color	= sanitize_integer(enable_personal_chat_color, 0, 1, initial(enable_personal_chat_color))
 	personal_chat_color	= sanitize_hexcolor(personal_chat_color, 6, 1, "#FFFFFF")
-	lust_tolerance = sanitize_integer(lust_tolerance, 75, 200, initial(lust_tolerance))
+	lust_tolerance = sanitize_integer(lust_tolerance, 25, 200, initial(lust_tolerance))
 	sexual_potency = sanitize_integer(sexual_potency, -1, 25, initial(sexual_potency))
 
 	S["silicon_lawset"] >> silicon_lawset

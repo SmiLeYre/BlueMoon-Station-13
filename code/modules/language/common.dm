@@ -5,7 +5,7 @@
 	speech_verb = "says"
 	whisper_verb = "whispers"
 	key = "0"
-	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_UNDERSTOOD
+	flags = LANGUAGE_HIDE_ICON_IF_UNDERSTOOD // bluemoon change  flags = TONGUELESS_SPEECH
 	default_priority = 100
 
 	icon_state = "galcom"

@@ -22,6 +22,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	"[FREQ_GHOST_INTEQ]" = "inteqradio", //BLUEMOON EDIT ADDITION - MAPPING
 	"[FREQ_TARKOFF]" = "engradio", //BLUEMOON EDIT ADDITION - MAPPING
 	"[FREQ_SOL]" = "blueteamradio", //BlueMoon Kovac Added
+	"[FREQ_LAW]" = "lawradio", //BlueMoon Fink Added
 	"[FREQ_NRI]" = "redteamradio",
 	"[FREQ_CTF_RED]" = "redteamradio",
 	"[FREQ_CTF_BLUE]" = "blueteamradio"

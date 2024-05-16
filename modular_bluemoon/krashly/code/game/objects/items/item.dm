@@ -212,6 +212,10 @@
 		return
 	if(viewer.mind && (viewer.mind?.antag_datums)) // все антажки
 		return
+	else if(HAS_TRAIT(viewer, TRAIT_MINDSHIELD))
+		viewer.emote("chill")
+		viewer.Jitter(5)
+		viewer.pointed(src)
 	else
 		to_chat(viewer, "<span class='userdanger'>Seeing propagand of Inteq [message]!</span>")
 		var/reaction = rand(1,5)

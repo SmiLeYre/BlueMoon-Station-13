@@ -16,7 +16,7 @@
 /obj/item/storage/box/donator/bm/case_ds/PopulateContents()
 	. = ..()
 	new /obj/item/clothing/under/syndicate/camo(src)
-	new /obj/item/clothing/accessory/medal/donator/bm/delta(src)
+	new /obj/item/clothing/accessory/medal/delta(src)
 	new /obj/item/clothing/mask/bandana/skull(src)
 	new /obj/item/lighter/donator/bm/militaryzippo(src)
 	new /obj/item/storage/fancy/cigarettes/cigars/cohiba(src)

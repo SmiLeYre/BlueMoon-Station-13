@@ -39,4 +39,3 @@ GLOBAL_DATUM_INIT(medals_view_tgui, /datum/medals_view_tgui, new)
 
 		Insert(imgid, current_icon)
 	return ..()
-
