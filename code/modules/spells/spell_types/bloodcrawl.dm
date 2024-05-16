@@ -13,7 +13,6 @@
 	action_background_icon_state = "bg_demon"
 	var/phased = 0
 	recharging = 1 //BLUEMOON CHANGE баланс под реалии возможностей игроков
-	charge_max = 1
 	charge_max = 60 //BLUEMOON CHANGE END
 
 /obj/effect/proc_holder/spell/bloodcrawl/choose_targets(mob/user = usr)
