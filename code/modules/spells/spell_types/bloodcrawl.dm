@@ -1,7 +1,6 @@
 /obj/effect/proc_holder/spell/bloodcrawl
 	name = "Blood Crawl"
 	desc = "Use pools of blood to phase out of existence."
-	charge_max = 0
 	clothes_req = NONE
 	//If you couldn't cast this while phased, you'd have a problem
 	phase_allowed = 1
@@ -13,7 +12,9 @@
 	action_icon_state = "bloodcrawl"
 	action_background_icon_state = "bg_demon"
 	var/phased = 0
-	charge_max = 6
+	recharging = 1 //BLUEMOON CHANGE баланс под реалии возможностей игроков
+	charge_max = 1
+	charge_max = 60 //BLUEMOON CHANGE END
 
 /obj/effect/proc_holder/spell/bloodcrawl/choose_targets(mob/user = usr)
 	for(var/obj/effect/decal/cleanable/target in range(range, get_turf(user)))
