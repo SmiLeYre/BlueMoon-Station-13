@@ -17,7 +17,7 @@
 /datum/uplink_item/suits/turtlenck_skirt
 	name = "Brown Tactical Skirtleneck"
 	desc = "A slightly armored conspicious jumpsuit that has no suit sensors attached to them, if someone sees you in this hope they think its a fake."
-	item = /obj/item/clothing/under/inteq_skirt
+	item = /obj/item/clothing/under/inteq/skirt
 	cost = 1
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE)
 

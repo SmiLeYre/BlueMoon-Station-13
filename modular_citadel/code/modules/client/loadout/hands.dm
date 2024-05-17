@@ -38,6 +38,14 @@
 	name = "Wallet"
 	path = /obj/item/storage/wallet
 
+/datum/gear/hands/cushion
+	name = "Basic Cushion"
+	path = /obj/item/cushion
+
+/datum/gear/hands/silk_cushion
+	name = "Silk Cushion"
+	path = /obj/item/cushion/silk
+
 /datum/gear/hands/flask
 	name = "Flask"
 	path = /obj/item/reagent_containers/food/drinks/flask

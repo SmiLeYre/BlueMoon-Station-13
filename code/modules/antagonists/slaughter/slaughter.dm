@@ -30,8 +30,8 @@
 	faction = list("slaughter")
 	attack_verb_continuous = "wildly tears into"
 	attack_verb_simple = "wildly tear into"
-	maxHealth = 333
-	health = 333
+	maxHealth = 200
+	health = 200
 	healable = 0
 	environment_smash = ENVIRONMENT_SMASH_STRUCTURES
 	obj_damage = 50

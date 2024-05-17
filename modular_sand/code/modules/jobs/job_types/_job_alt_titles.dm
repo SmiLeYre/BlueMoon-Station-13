@@ -76,7 +76,6 @@
 		"Pope",
 		"Voodo Sorcerer",
 		"Ritualist",
-		"Bishop", // How about you actually say something about it instead of crying on a downstream's comments i won't read.
 		"Pontiff",
 		"Theologist", // - add nta_of
 		"Psychic" // Это экстрасен! - add nta_of
@@ -123,8 +122,7 @@
 
 /datum/job/lawyer
 	alt_titles = list(
-		"Human Resources Agent",
-		"Internal Affairs Agent"
+		"Human Resources Agent"
 		)
 
 /datum/job/mime
@@ -147,7 +145,7 @@
 		"Circuitry Designer",
 		"Xenobiologist",
 		"Xenobotanist",
-		"Chemical Researcher", 
+		"Chemical Researcher",
 		"Thaumaturge", // Да, Тауматург, вопросы? - add nta_of
 		"Anomalist" // - add nta_of
 		)

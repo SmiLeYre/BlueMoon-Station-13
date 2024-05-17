@@ -405,14 +405,14 @@
 		if("stop")
 			if(timing)
 				timer_end()
-				var/stoptext = isobserver(usr) ? "from cell control." : "by [usr.name]."
-				Radio.talk_into(src, "Timer stopped manually [stoptext]", RADIO_CHANNEL_SECURITY, list(z))
+				var/stoptext = isobserver(usr) ? "удалённо при помощи специализированной консоли." : "со стороны [usr.name]."
+				Radio.talk_into(src, "Таймер был остановлен [stoptext]", RADIO_CHANNEL_SECURITY, list(z))
 			else
 				. = FALSE
 		if("flash")
 			for(var/obj/machinery/flasher/F in targets)
 				if(F.last_flash && (F.last_flash + 150) > world.time)
-					to_chat(usr, span_warning("Flash still charging."))
+					to_chat(usr, span_warning("Флешер находится в состоянии перезарядки."))
 				else
 					F.flash()
 		else

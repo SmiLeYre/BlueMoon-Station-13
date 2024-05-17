@@ -108,6 +108,12 @@
 	icon_state = "syndicate_cool"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
+/obj/item/clothing/mask/gas/syndicate/blackcool_version
+	name = "CFIS Gasmask"
+	desc = "Tactical gasmask for Catcrin Foreign Intelligence Service operatives. The compact mask has dark glass and small filters in the front part of the mask with breath venting."
+	icon_state = "syndicate_blackcool"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
 /obj/item/clothing/mask/gas/clown_hat
 	name = "Clown Wig and Mask"
 	desc = "A true prankster's facial attire. A clown is incomplete without his wig and mask."

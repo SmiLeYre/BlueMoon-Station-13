@@ -37,3 +37,21 @@
 	. = ..()
 	opened = !opened
 	update_icon()
+
+/obj/item/storage/backpack/martian
+	name = "Martian Backpack"
+	desc = "Некий Марсианский Артефакт, использующийся в качестве рюкзака. Ткань ощущается довольно прочной. Это точно можно использовать в качестве оружия!"
+	icon_state = "martian-backpack"
+	item_state = "backpack"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+	force = 5
+
+/obj/item/storage/backpack/satchel/cheese
+	name = "Cheese Backpack"
+	desc = "Некий Мышиный Артефакт, использующийся в качестве рюкзака. Ткань ощущается довольно прочной. Это точно можно использовать в качестве оружия!"
+	icon_state = "cheese-satchel"
+	item_state = "satchel"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+	force = 5
