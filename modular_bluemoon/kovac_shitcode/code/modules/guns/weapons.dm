@@ -59,7 +59,7 @@
 	ammo_type = /obj/item/ammo_casing/shotgun/rubbershot
 	max_ammo = 6
 
-/obj/item/gun/ballistic/shotgun/rsh12
+/obj/item/gun/ballistic/shotgun/automatic/rsh12
 	name = "RSH-15"
 	desc = "A moden Russian-made semi-automatic revolver, intended to used with 12 gauge."
 	icon_state = "rsh12"
@@ -69,7 +69,7 @@
 	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/mob/weapons/weapons_r.dmi'
 	fire_sound = 'modular_bluemoon/kovac_shitcode/sound/weapons/rsh12.ogg'
 	pumpsound = 'modular_bluemoon/kovac_shitcode/sound/weapons/rsh12_drum.ogg'
-	fire_delay = 5
+	fire_delay = 7
 	recoil = 5
 	spread = 3
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/rsh12
@@ -154,7 +154,7 @@
 	desc = "A storage case for a heavy revolver."
 
 /obj/item/storage/secure/briefcase/rsh12_box/PopulateContents()
-	new /obj/item/gun/ballistic/shotgun/rsh12(src)
+	new /obj/item/gun/ballistic/shotgun/automatic/rsh12(src)
 	new /obj/item/ammo_box/shotgun/loaded/rubbershot(src)
 	new /obj/item/ammo_box/shotgun/loaded/rubbershot(src)
 	new /obj/item/ammo_box/shotgun/loaded/buckshot(src)
