@@ -38,6 +38,7 @@ GLOBAL_LIST_EMPTY(typing_indicator_overlays)
 		var/state_of_bubble = "emotetyping"
 		var/mutable_appearance/bubble_overlay = mutable_appearance('icons/mob/talk.dmi', state_of_bubble, plane = RUNECHAT_PLANE)
 		typing_indicator_current = bubble_overlay
+		bubble_overlay.appearance_flags = RESET_COLOR | RESET_TRANSFORM | TILE_BOUND | PIXEL_SCALE
 		add_overlay(bubble_overlay)
 	if(isSay)
 		typing_indicator_current = state_override
