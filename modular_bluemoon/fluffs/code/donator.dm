@@ -415,6 +415,13 @@
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/silky_body
+	name = "Silky Body"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/silky_body
+	ckeywhitelist = list("architect0r")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
 /datum/gear/donator/bm/vance_plush
 	name = "Vance Plush"
 	slot = ITEM_SLOT_BACKPACK
@@ -490,6 +497,20 @@
 	path = /obj/item/modkit/pomogator_kit
 	ckeywhitelist = list("danik10p")
 	subcategory = LOADOUT_SUBCATEGORIES_DON04
+
+/datum/gear/donator/bm/martian
+	name = "Martian Backpack"
+	slot = ITEM_SLOT_HANDS
+	path = /obj/item/storage/backpack/martian
+	ckeywhitelist = list("ingvarr3313")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/cheesesatchel
+	name = "Cheese Satchel"
+	slot = ITEM_SLOT_HANDS
+	path = /obj/item/storage/backpack/satchel/cheese
+	ckeywhitelist = list("littlemouse2729")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/sponge
 	name = "Sponge Modification Kit"

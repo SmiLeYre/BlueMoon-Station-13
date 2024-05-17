@@ -714,8 +714,8 @@
 		var/has_functional_wings = (C.dna.species.mutant_bodyparts["wings"] != null)
 		to_chat(C, "<span class='userdanger'>A terrible pain travels down your back as [has_wings || has_functional_wings ? "your wings transform" : "wings burst out"]!</span>")
 		C.dna.species.GiveSpeciesFlight(C, has_functional_wings ? TRUE : FALSE) //give them the full list of wing choices if this is their second flight potion
-		to_chat(C, "<span class='notice'>You feel blessed!</span>")
-		ADD_TRAIT(C, TRAIT_HOLY, SPECIES_TRAIT) //implying anyone is truly holy in a setting where people throw tantrums when things aren't violent
+		// to_chat(C, "<span class='notice'>You feel blessed!</span>")
+		// ADD_TRAIT(C, TRAIT_HOLY, SPECIES_TRAIT) //implying anyone is truly holy in a setting where people throw tantrums when things aren't violent
 		playsound(C.loc, 'sound/items/poster_ripped.ogg', 50, TRUE, -1)
 		C.adjustBruteLoss(20)
 		if(!HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли

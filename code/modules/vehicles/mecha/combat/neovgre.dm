@@ -7,7 +7,7 @@
 	armor = list(MELEE = 60, BULLET = 70, LASER = 65, ENERGY = 65, BOMB = 60, BIO = 100, RAD = 100, FIRE = 100, ACID = 100) //Its similar to the clockwork armour albeit with a few buffs becuase RATVARIAN SUPERWEAPON!!
 	force = 50 //SMASHY SMASHY!!
 	movedelay = 4
-	internal_damage_threshold = 500
+	internal_damage_threshold = 100
 	pixel_x = -16
 	layer = ABOVE_MOB_LAYER
 	var/breach_time = 100 //ten seconds till all goes to shit
