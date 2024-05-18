@@ -90,7 +90,7 @@
 			to_chat(user, span_warning("You trying to adapt [src] to yourself."))
 			if(do_after(user, 5 SECONDS, target = target))
 				HC.body_size_max = max_size
-				to_chat(user, span_warning("You feel more freedom and can change body size to [body_size_max * 100]%"))
+				to_chat(user, span_warning("You feel more freedom and can change body size to [HC.body_size_max * 100]%"))
 				qdel(src)
 				return
 
