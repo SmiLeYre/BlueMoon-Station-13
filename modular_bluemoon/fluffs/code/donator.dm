@@ -623,3 +623,10 @@
 	path = /obj/item/jukebox/emagged
 	ckeywhitelist = list("smileycom")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/upgraded_size_tool
+	name = "Upgraded Size Tool"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/melee/sizetool/upgraded
+	ckeywhitelist = list("enotzlodey")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
