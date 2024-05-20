@@ -91,5 +91,17 @@
 	prefix = "black"
 	desc = "Идеальна для закрытия протечек."
 	icon_state = "tape_b"
-	slot_flags = ITEM_SLOT_SHIRT
+
+GLOBAL_LIST_INIT(tape_recipes, list ( \
+	new/datum/stack_recipe("Black Sticky Tape Top", /obj/item/clothing/underwear/shirt/top/black_tape, 1), \
+	))
+
+/obj/item/stack/sticky_tape/black/get_main_recipes()
+	. = ..()
+	. += GLOB.tape_recipes
+
+/obj/item/clothing/underwear/shirt/top/black_tape
+	name = "Black Sticky Tape"
+	desc = "Идеальна для закрытия протечек."
+	icon_state = "tape_b"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
