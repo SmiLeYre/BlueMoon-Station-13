@@ -69,7 +69,7 @@
 	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/mob/weapons/weapons_r.dmi'
 	fire_sound = 'modular_bluemoon/kovac_shitcode/sound/weapons/rsh12.ogg'
 	pumpsound = 'modular_bluemoon/kovac_shitcode/sound/weapons/rsh12_drum.ogg'
-	fire_delay = 7
+	fire_delay = 4
 	recoil = 5
 	spread = 3
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/com/rsh12
