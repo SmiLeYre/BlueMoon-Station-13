@@ -49,10 +49,10 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/item/clothing/under/inteq/eng_skirt,
-/obj/item/clothing/under/inteq/maid,
-/obj/item/clothing/under/inteq/med_skirt,
-/obj/item/clothing/under/inteq/skirt,
+/obj/item/clothing/under/inteq_eng_skirt,
+/obj/item/clothing/under/inteq_maid,
+/obj/item/clothing/under/inteq_med_skirt,
+/obj/item/clothing/under/inteq_skirt,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "ap" = (
@@ -565,9 +565,9 @@
 	icon_state = "4-8"
 	},
 /obj/item/clothing/under/inteq,
-/obj/item/clothing/under/inteq/eng,
-/obj/item/clothing/under/inteq/honorable_vanguard,
-/obj/item/clothing/under/inteq/med,
+/obj/item/clothing/under/inteq_eng,
+/obj/item/clothing/under/inteq_honorable_vanguard,
+/obj/item/clothing/under/inteq_med,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "dL" = (
@@ -1407,12 +1407,6 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/syndicate{
-	dir = 1;
-	name = "InteQ Post APC";
-	pixel_y = 32;
-	start_charge = 35
-	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
 "jp" = (
@@ -2155,6 +2149,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/inteq_forgotten_medbay)
+"mR" = (
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/inteq_forgotten_outpost)
 "mS" = (
 /obj/effect/turf_decal/tile/brown/half,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -3482,6 +3485,12 @@
 	pixel_x = -32;
 	specialfunctions = 4
 	},
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
+	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
 "uC" = (
@@ -3776,12 +3785,28 @@
 	fax_name = "Unknown Fax";
 	name = "KK-28 Fax Machine"
 	},
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/inteq_forgotten_bridge)
 "wx" = (
 /obj/structure/closet/cabinet,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/inteq_forgotten_outpost)
+"wD" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
@@ -3867,6 +3892,12 @@
 	normaldoorcontrol = 1;
 	pixel_x = -32;
 	specialfunctions = 4
+	},
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
@@ -4262,6 +4293,12 @@
 /obj/machinery/airalarm/syndicate{
 	pixel_y = 24
 	},
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
+	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
 "zk" = (
@@ -4594,6 +4631,12 @@
 /area/ruin/space/has_grav/powered/inteq_forgotten_bar)
 "Be" = (
 /obj/machinery/computer/rdconsole/core,
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/inteq_forgotten_rnd)
 "Bf" = (
@@ -5433,6 +5476,12 @@
 /area/ruin/space/has_grav/powered/inteq_forgotten_bridge)
 "Hb" = (
 /obj/structure/deployable_barricade/metal,
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
+	},
 /turf/open/floor/mineral/plastitanium{
 	icon_state = "plastitanium_dam4"
 	},
@@ -6779,6 +6828,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/powered/inteq_forgotten_medbay)
+"PW" = (
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
+	},
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/powered/inteq_forgotten_atmos)
 "PY" = (
 /obj/structure/table/reinforced,
 /obj/item/wrench/medical,
@@ -7875,6 +7933,12 @@
 	icon_state = "1-2"
 	},
 /mob/living/simple_animal/hostile/nanotrasen/ranged/assault,
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
 "WX" = (
@@ -8326,6 +8390,12 @@
 	pixel_x = 3;
 	pixel_y = -7;
 	random_icon_states = list("gibleg")
+	},
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "InteQ Post APC";
+	pixel_y = 32;
+	start_charge = 35
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/powered/inteq_forgotten_bridge)
@@ -10460,7 +10530,7 @@ ah
 gt
 kw
 wY
-Rj
+wD
 Ml
 JP
 Nf
@@ -10759,7 +10829,7 @@ MD
 qR
 gt
 kw
-kw
+mR
 Rf
 Pl
 kw
@@ -12250,8 +12320,8 @@ sy
 zk
 JZ
 Xw
-lK
-lK
+PW
+PW
 dt
 Cl
 JQ
