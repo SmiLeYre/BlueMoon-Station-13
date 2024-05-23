@@ -807,6 +807,7 @@
 				patient.transferItemToLoc(mask, src, TRUE)
 			patient.internal = null
 			patient = null
+			STOP_PROCESSING(SSobj, src)
 	else
 		to_chat(user, span_warning("[src] не имеет прикрепленного к нему баллона или маски!"))
 		return
