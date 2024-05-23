@@ -301,7 +301,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 ///////////	forgottenship areas
 
 //InteQ, Forgotten Ship
-/area/ruin/space/has_grav/inteqы
+/area/ruin/space/has_grav/inteq
 	name = "InteQ"
 	icon_state = "spacecontent1"
 	ambientsounds = list('sound/ambience/ambidanger.ogg', 'sound/ambience/ambidanger2.ogg', 'sound/ambience/ambigen9.ogg', 'sound/ambience/ambigen10.ogg')
