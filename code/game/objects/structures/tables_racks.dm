@@ -772,6 +772,9 @@
 		check_patient()
 		if(!patient)
 			return
+		if(patient.internal != tank)
+			to_chat(patient, span_danger("Сначала нужно отключить собственный баллон у [patient]!"))
+			return
 		if(!patient.internal) // у пациента не включена подача воздуха
 			to_chat(user, span_notice("Вы начинаете включать подачу анестетика."))
 			if(patient.stat != UNCONSCIOUS) // пациент без сознания не видит сообщение ниже
@@ -803,6 +806,7 @@
 			if(patient.wear_mask == mask)
 				patient.transferItemToLoc(mask, src, TRUE)
 			patient.internal = null
+			patient = null
 	else
 		to_chat(user, span_warning("[src] не имеет прикрепленного к нему баллона или маски!"))
 		return
@@ -812,9 +816,8 @@
 		return attack_hand(user)
 
 /obj/structure/table/optable/process()
-	var/turf/T = get_turf(src)
-	if(!mask || !tank || (mask && get_turf(mask) != T) || (tank && get_turf(tank) != T))
-		if(mask && get_turf(mask) != T)
+	if(mask?.loc != patient || tank?.loc != src || patient.loc != loc)
+		if(mask && mask.loc != src)
 			visible_message(span_notice("[mask] срывается и возвращается на место по втягивающемуся шлангу."))
 			patient.transferItemToLoc(mask, src, TRUE)
 		patient.internal = null
@@ -825,6 +828,9 @@
 	..()
 	if(!ishuman(user))
 		to_chat(user, span_warning("Это слишком сложно для вас!"))
+		return
+	if(patient)
+		to_chat(user, span_warning("Сначала нужно убрать пациента!"))
 		return
 	if(tank && !patient?.internal)
 		to_chat(user, span_notice("Вы убираете [tank] с бока операционного стола."))
@@ -879,6 +885,7 @@
 	check_patient()
 
 /obj/structure/table/optable/proc/check_patient()
+	patient = null
 	var/mob/living/carbon/human/H = locate() in loc
 	if(H)
 		if(!CHECK_MOBILITY(H, MOBILITY_STAND))
