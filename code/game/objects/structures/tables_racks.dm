@@ -816,13 +816,13 @@
 		return attack_hand(user)
 
 /obj/structure/table/optable/process()
-	if(mask?.loc != patient || tank?.loc != src || patient.loc != loc)
+	if(mask?.loc != patient || tank?.loc != src || patient?.loc != loc)
+		STOP_PROCESSING(SSobj, src)
 		if(mask && mask.loc != src)
 			visible_message(span_notice("[mask] срывается и возвращается на место по втягивающемуся шлангу."))
 			patient.transferItemToLoc(mask, src, TRUE)
 		patient.internal = null
 		patient = null
-		STOP_PROCESSING(SSobj, src)
 
 /obj/structure/table/optable/AltClick(mob/living/user)
 	..()
