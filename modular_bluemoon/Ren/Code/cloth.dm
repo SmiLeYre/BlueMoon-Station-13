@@ -95,6 +95,7 @@
 	tail_state = "syndicate-elite"
 	hardsuit_type = "iron_tombstone"
 	armor = list(MELEE = 50, BULLET = 70, LASER = 10,ENERGY = 10, BOMB = 40, BIO = 70, RAD = 10, FIRE = 10, ACID = 10, WOUND = 30)
+	allowed = list(/obj/item/gun, /obj/item/ammo_box,/obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/melee/transforming/energy/sword/saber, /obj/item/restraints/handcuffs, /obj/item/tank/internals)
 	strip_delay = 120
 	equip_delay_self = 20
 	slowdown = 0.3
@@ -435,7 +436,7 @@
 	name = "Baseball cap"
 	desc = "Soft, cozy, grim."
 	icon_state = "baseballsoft"
-	soft_type = "baseballsoft"
+	soft_type = "baseball"
 	item_state = "baseballsoft"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
 	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'

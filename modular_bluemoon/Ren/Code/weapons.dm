@@ -219,6 +219,58 @@
 		. = ..()
 		update_icon()
 
+//// Омни винтовка
+/obj/item/gun/energy/laser/sniper
+
+	name = "Omni rifle"
+	desc = ""
+	icon = 'modular_bluemoon/Ren/Icons/Obj/40x32.dmi'
+	icon_state = "railgun"
+	item_state = "railgun"
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file =  'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/omni)
+	cell_type = /obj/item/stock_parts/cell/beam_rifle
+	slot_flags = ITEM_SLOT_BACK
+	fire_delay = 20
+	force = 15
+	custom_materials = null
+	recoil = 1
+	ammo_x_offset = 3
+	ammo_y_offset = 3
+
+
+/obj/item/ammo_casing/energy/laser/omni
+	projectile_type = /obj/item/projectile/beam/hitscan
+	e_cost = 5000
+	select_name = "Omni charge"
+	fire_sound = 'sound/weapons/beam_sniper.ogg'
+
+/obj/item/projectile/beam/hitscan
+	hitscan = TRUE
+	muzzle_type = /obj/effect/projectile/muzzle/laser/omni
+	tracer_type = /obj/effect/projectile/tracer/laser/omni
+	impact_type = /obj/effect/projectile/impact/laser/omni
+	name = "omni beam"
+	damage = 35
+	wound_bonus = 20
+	bare_wound_bonus = 10
+	armour_penetration = -10
+	projectile_piercing = PASSMOB
+	impact_effect_type = /obj/effect/temp_visual/bluespace_fissure
+
+/obj/effect/projectile/muzzle/laser/omni
+	name = "omni flash"
+	icon_state = "muzzle_omni"
+
+/obj/effect/projectile/tracer/laser/omni
+	name = "omni beam"
+	icon_state = "beam_omni"
+
+/obj/effect/projectile/impact/laser/omni
+	name = "omni impact"
+	icon_state = "impact_omni"
+
 ///Диск с чертежами патрон для автолата
 /obj/item/disk/design_disk/adv/ammo/garand
 	name = "Ammo desine disk"

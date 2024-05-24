@@ -246,6 +246,62 @@
 			var/atom/A = V
 			ftu_item_list[initial(A.name)] = A
 	return ftu_item_list
+
+//Энергетический балистический щит
+/obj/item/shield/inteq_energy
+	name = "Еnergy ballistic shield"
+	desc = "A shield that reflects almost all ballistic projectiles, but is useless against energy attacks. It can be retracted, expanded, and stored anywhere."
+	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+	w_class = WEIGHT_CLASS_TINY
+	base_icon_state = "shield"
+	var/on_force = 10
+	var/on_throwforce = 8
+	var/on_throw_speed = 2
+	var/active = 0
+	var/clumsy_check = TRUE
+
+/obj/item/shield/inteq_energy/Initialize(mapload)
+	. = ..()
+	icon_state = "[base_icon_state]0"
+
+/obj/item/shield/inteq_energy/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if((attack_type & ATTACK_TYPE_PROJECTILE) && !is_energy_reflectable_projectile(object))
+		playsound(src, 'sound/weapons/parry.ogg', 75, 1)
+		block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+		return BLOCK_SUCCESS | BLOCK_REDIRECTED | BLOCK_SHOULD_REDIRECT
+	return ..()
+
+/obj/item/shield/inteq_energy/directional_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return, override_direction)
+	if((attack_type & ATTACK_TYPE_PROJECTILE) && !is_energy_reflectable_projectile(object))
+		block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+		return BLOCK_SUCCESS | BLOCK_REDIRECTED | BLOCK_SHOULD_REDIRECT
+	return ..()
+
+/obj/item/shield/inteq_energy/attack_self(mob/living/carbon/human/user)
+	if(clumsy_check && HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))
+		to_chat(user, "<span class='userdanger'>You beat yourself in the head with [src]!</span>")
+		user.take_bodypart_damage(5)
+	active = !active
+	icon_state = "[base_icon_state][active]"
+
+	if(active)
+		force = on_force
+		throwforce = on_throwforce
+		throw_speed = on_throw_speed
+		w_class = WEIGHT_CLASS_BULKY
+		playsound(user, 'sound/weapons/saberon.ogg', 35, TRUE)
+		to_chat(user, "<span class='notice'>[src] is now active.</span>")
+	else
+		force = initial(force)
+		throwforce = initial(throwforce)
+		throw_speed = initial(throw_speed)
+		w_class = WEIGHT_CLASS_TINY
+		playsound(user, 'sound/weapons/saberoff.ogg', 35, TRUE)
+		to_chat(user, "<span class='notice'>[src] can now be concealed.</span>")
+	add_fingerprint(user)
+
 //--------------------------------------------------------------------------------[Ящики карго]------------------------------------------------------------------
 /datum/supply_pack/goody/guitarbag
 	name = "Guitar bag"
