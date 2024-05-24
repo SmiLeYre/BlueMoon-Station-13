@@ -79,7 +79,7 @@
 	icon_state = "plasma_scythe"
 	var/icon_state_on = "plasma_scythe_on"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
-	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/64_64_r.dmi'
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/64_64_l.dmi'
 	righthand_file =  'modular_bluemoon/Ren/Icons/Mob/64_64_r.dmi'
 	inhand_x_dimension = -2
 	inhand_y_dimension = -2
