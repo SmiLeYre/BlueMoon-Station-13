@@ -4421,6 +4421,7 @@
 #include "modular_bluemoon\SmiLeY\aesthetics\apc\code\apc.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\barsign\barsigns.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\connecting_computer\code\_computer.dm"
+#include "modular_bluemoon\SmiLeY\self_actualization_device\code\self_actualization_device.dm
 #include "modular_bluemoon\SmiLeY\aesthetics\connecting_computer\code\connectable_component.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\connecting_computer\code\non_connecting_computers.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\flag\code\signs_flags.dm"
@@ -4503,7 +4504,6 @@
 #include "modular_bluemoon\SmiLeY\mapping\code\turf_decals.dm"
 #include "modular_bluemoon\SmiLeY\mapping\code\items\papers.dm"
 #include "modular_bluemoon\SmiLeY\mob\living\simple_animal\hostile\grabbagmob.dm"
-#include "modular_bluemoon\SmiLeY\self_actualization_device\code\self_actualization_device.dm"
 #include "modular_bluemoon\SmiLeY\Syndie_edits\code\syndie_edits.dm"
 #include "modular_bluemoon\SmiLeY\Syndie_edits\code\syndie_edits_civil-version.dm"
 #include "modular_bluemoon\SmiLeY\venicle\tank.dm"
