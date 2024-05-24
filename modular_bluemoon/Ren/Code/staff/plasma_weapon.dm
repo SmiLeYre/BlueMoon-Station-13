@@ -6,7 +6,7 @@
 	icon_state_on = "psword_2k_on"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
-	righthand_file =  'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 	force_on = 35
 	damtype = "fire"
 	throwforce_on = 20
