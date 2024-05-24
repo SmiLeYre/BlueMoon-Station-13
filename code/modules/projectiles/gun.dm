@@ -208,7 +208,7 @@
 	switch(fire_select)
 		if(SELECT_SEMI_AUTOMATIC)
 			burst_size = 1
-			fire_delay = 0
+			fire_delay = initial(fire_delay) // BLUEMOON ADD - ранее был ноль. При смене режима у всех пушек в одиночке задержка между выстрелами была ноль
 			SEND_SIGNAL(src, COMSIG_GUN_AUTOFIRE_DESELECTED, user)
 			to_chat(user, "<span class='notice'>You switch [src] to semi-automatic.</span>")
 		if(SELECT_BURST_SHOT)

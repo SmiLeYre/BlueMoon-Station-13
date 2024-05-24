@@ -175,7 +175,7 @@
 	var/obj/item/ammo_casing/energy/C = ammo_type[index]		//energy weapons should not have no casings, if it does you deserve the runtime.
 	current_firemode_index = index
 	fire_sound = C.fire_sound
-	fire_delay = C.delay
+	//fire_delay = C.delay сука, ни у одного патрона не прописано КД на выстрелы, всё на пушках.
 	if(user_for_feedback)
 		to_chat(user_for_feedback, "<span class='notice'>[src] is now set to [C.select_name || C].</span>")
 	post_set_firemode()

@@ -79,7 +79,9 @@
 	name = "THE GREAT COMMUNICATOR"
 	desc = "<span class='warning'>VRRRRRRR!!!</span>"
 	armour_penetration = 100
+	block_chance = 100 //bluemoon add
 	force_on = 30
+	var/laser_defl = 1 //bluemoon add
 
 /obj/item/chainsaw/doomslayer/check_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	block_return[BLOCK_RETURN_REFLECT_PROJECTILE_CHANCE] = 100
@@ -106,7 +108,10 @@
 			playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, 1)
 			return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
 		else
-			playsound(src, 'sound/weapons/parry.ogg', 100, 1)
-			owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
-			return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
+			if(laser_defl == 1) //bluemoon add
+				playsound(src, 'sound/weapons/parry.ogg', 100, 1)
+				owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
+				return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
+			else
+				return
 	return ..()
