@@ -418,6 +418,10 @@ SUBSYSTEM_DEF(vote)
 				log_admin("The map has been voted for and will change to: [VM.map_name]")
 				if(SSmapping.changemap(config.maplist[.]))
 					to_chat(world, "<span class='boldannounce'>The map vote has chosen [VM.map_name] for next round!</span>")
+				// BLUEMOON ADD START - перезагрузка сервера с ротацией карты в случае краша прошлого раунда
+				if(SSticker.mapvote_restarter_in_progress)
+					SSticker.Reboot("Map rotation was requested due to ungraceful ending of the last round.", null, 10)
+				// BLUEMOON ADD END
 			if("transfer") // austation begin -- Crew autotransfer vote
 				if(. == VOTE_TRANSFER)
 					SSshuttle.autoEnd()
@@ -771,6 +775,12 @@ SUBSYSTEM_DEF(vote)
 			return
 		if("cancel")
 			if(usr.client.holder)
+				if(SSticker.mapvote_restarter_in_progress)
+					SSticker.mapvote_restarter_in_progress = FALSE
+					SSpersistence.RecordGracefulEnding()
+					SSticker.start_immediately = FALSE
+					SSticker.SetTimeLeft(6000)
+					to_chat(world, span_boldwarning("Автоматическая ротация карты была отменена администрацией"))
 				reset()
 		if("toggle_restart")
 			if(usr.client.holder)

@@ -13,7 +13,7 @@
 		)
 	category_text = "Lists"
 	power_draw_per_use = 20
-	cooldown_per_use = 10
+	cooldown_per_use = 1
 
 /obj/item/integrated_circuit/lists/pick
 	name = "pick circuit"

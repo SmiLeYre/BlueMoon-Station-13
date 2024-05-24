@@ -10,9 +10,8 @@
 		"Station Master",
 		"Cockpitain",
 		"Cuntpitain",
-		"Senator",
-		"Consul",
 		"Cap-Slut",
+		"Grey Cardinals",
 		"Condom"
 	)
 	LAZYADD(alt_titles, extra_titles)
@@ -72,6 +71,7 @@
 		"Supply Chief",
 		"Cargonia Chief",
 		"Brigadier",
+		"Logistics Syndicate Supervisor",
 		"Manager of Shipping Sex"
 	)
 	LAZYADD(alt_titles, extra_titles)
@@ -81,6 +81,7 @@
 	var/list/extra_titles = list(
 		"Science Administrator",
 		"Cybersun Lead Specialist",
+		"Donk Co. Lead Specialist",
 		"CEO of Sex",
 		"Sex Research Director",
 		"Research Manager"
@@ -203,7 +204,6 @@
 		"Monk",
 		"Tiger Cooperative Disciple",
 		"Nun",
-		"Tiger Cooperative Disciple",
 		"Keeper of Cum",
 		"Syndicate Techpriest",
 		"Counselor",
@@ -220,14 +220,10 @@
 	var/list/extra_titles = list(
 		"Waffle Co. Specialist",
 		"Chef De Partie",
-		"Chef De Sexe",
 		"Boss Of This Gym",
 		"Prey Prepper",
-		"Pred Prepper",
 		"Poissonier",
 		"Chef De Sexe",
-		"Boss Of This Gym",
-		"Waffle Co. Specialist",
 		"Baker"
 	)
 	LAZYADD(alt_titles, extra_titles)
@@ -263,7 +259,6 @@
 	var/list/extra_titles = list(
 		"Syndicate Attorney",
 		"Law-Slut",
-		"Internal Affairs Agent",
 		"Attorney"
 	)
 	LAZYADD(alt_titles, extra_titles)
@@ -292,6 +287,7 @@
 		"Rack Researcher",
 		"Nanite Programmer",
 		"Tetromino Researcher",
+		"Donk Co. Specialist",
 		"Xenoarchaeologist"
 	)
 	LAZYADD(alt_titles, extra_titles)
@@ -302,16 +298,12 @@
 		"Cybersun Specialist",
 		"Ripperdoc",
 		"Droid Mechanic",
-		"Borgs Slut",
 		"Borgs Raper",
 		"Robo-Slut",
 		"Techpriest Biologis",
 		"MOD Mechanic",
 		"Synth Technician",
-		"Droid Mechanic",
-		"Borgs Slut",
-		"Robo-Slut",
-		"Techpriest Biologis"
+		"Borgs Slut"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
@@ -325,7 +317,6 @@
 		"Chemical Plumber",
 		"Organomegaly Healer",
 		"Hexocrocin Therapist",
-		"Chemi-Slut",
 		"Chemi-Slut"
 	)
 	LAZYADD(alt_titles, extra_titles)
@@ -473,13 +464,6 @@
 		"Donk Co. Specialist",
 		"Logistics Technician",
 		"Cryptocurrency Technician",
-		"Horny Mailer",
-		"Pleasures Deliverer",
-		"Cock Packager",
-		"Mailroom Technician",
-		"Disposal Technician",
-		"Donk Co. Specialist",
-		"Logistics Technician",
 		"Package Handler"
 	)
 	LAZYADD(alt_titles, extra_titles)

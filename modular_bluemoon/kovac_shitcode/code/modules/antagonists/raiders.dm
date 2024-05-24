@@ -87,6 +87,7 @@
 	anchored = TRUE
 	density = FALSE
 	show_flavour = FALSE //Flavour only exists for spawners menu
+	can_load_appearance = TRUE
 	short_desc = "You are an InteQ raider."
 	flavour_text = "Капитан станции отказался платить в ответ на требование наёмников InteQ. Атакуйте её: похищайте ресурсы, берите заложников. Избегайте ненужных жертв. Не забывайте следить за своим корабль."
 	assignedrole = "InteQ Raider"

@@ -35,6 +35,7 @@
 	maxbodytemp = 1500
 	faction = list("carp")
 	movement_type = FLYING
+	pass_flags = PASSTABLE
 	pressure_resistance = 200
 	gold_core_spawnable = HOSTILE_SPAWN
 	//some carps heal over time

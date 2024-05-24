@@ -153,6 +153,7 @@ Class Procs:
 	///Boolean on whether this machines interact with atmos
 	var/atmos_processing = FALSE
 
+
 /obj/machinery/Initialize(mapload)
 	if(!armor)
 		armor = list(MELEE = 25, BULLET = 10, LASER = 10, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 70)

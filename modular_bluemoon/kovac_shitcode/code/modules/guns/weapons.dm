@@ -108,7 +108,7 @@
 	icon_state = "c20r45-16"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
-	max_ammo = 12
+	max_ammo = 21
 
 /obj/item/ammo_box/magazine/m10mm_large/soporific
 	name = "enlarged pistol magazine (10mm soporific)"

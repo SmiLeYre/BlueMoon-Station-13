@@ -4,6 +4,8 @@
 	button_icon_state = "alter_form" //placeholder
 	icon_icon = 'modular_citadel/icons/mob/actions/actions_slime.dmi'
 	background_icon_state = "bg_alien"
+	var/body_size_max
+	var/body_size_min
 
 /datum/action/innate/ability/humanoid_customization/Activate()
 	if(owner.get_ability_property(INNATE_ABILITY_HUMANOID_CUSTOMIZATION, PROPERTY_CUSTOMIZATION_SILENT))
@@ -279,10 +281,12 @@
 			to_chat(owner, "<span class='warning'>The normalizer prevents you from adjusting your entire body's size.</span>")
 			return
 		else
+			if(!body_size_max) body_size_max = CONFIG_GET(number/body_size_max)
+			if(!body_size_min) body_size_min = CONFIG_GET(number/body_size_min)
 			var/owner_size = get_size(H)
-			var/new_body_size = input(owner, "Choose your desired sprite size: ([CONFIG_GET(number/body_size_min)*100]-[CONFIG_GET(number/body_size_max)*100]%)\nWarning: This may make your character look distorted. Additionally, any size under 100% takes a 10% maximum health penalty", "Character Preference", H.dna.features["body_size"]*100) as num|null
+			var/new_body_size = input(owner, "Choose your desired sprite size: ([body_size_min * 100]-[body_size_max * 100]%)\nWarning: This may make your character look distorted. Additionally, any size affects speed and max health", "Character Preference", H.dna.features["body_size"]*100) as num|null
 			if(new_body_size)
-				var/chosen_size = clamp(new_body_size * 0.01, CONFIG_GET(number/body_size_min), CONFIG_GET(number/body_size_max))
+				var/chosen_size = clamp(new_body_size * 0.01, body_size_min, body_size_max)
 				var/diff = abs(chosen_size - owner_size)
 				if(diff)
 					var/time_to_use = diff * 40 //10 секунд на 25% размера

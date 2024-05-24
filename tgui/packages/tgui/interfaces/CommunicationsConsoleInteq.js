@@ -1,12 +1,14 @@
 import { sortBy } from "common/collections";
 import { capitalize } from "common/string";
+
 import { useBackend, useLocalState } from "../backend";
-import { Blink, Box, Button, Dimmer, Flex, Icon, Input, Modal, Section, TextArea, LabeledList } from "../components";
+import { Blink, Box, Button, Dimmer, Flex, Icon, Input, LabeledList, Modal, Section, TextArea } from "../components";
+import { formatMoney } from '../format';
 import { Window } from "../layouts";
 import { sanitizeText } from "../sanitize";
-import { formatMoney } from '../format';
 
 const STATE_BUYING_SHUTTLE = "buying_shuttle";
+const STATE_CALLING_ERT = "calling_ert";
 const STATE_CHANGING_STATUS = "changing_status";
 const STATE_MAIN = "main";
 const STATE_MESSAGES = "messages";
@@ -15,6 +17,7 @@ const STATE_MESSAGES = "messages";
 const SWIPE_NEEDED = "SWIPE_NEEDED";
 
 const sortByCreditCost = sortBy(shuttle => shuttle.creditCost);
+const sortByCreditCostERT = sortBy(ert => ert.creditCost);
 
 const AlertButton = (props, context) => {
   const { act, data } = useBackend(context);
@@ -197,6 +200,57 @@ const PageBuyingShuttle = (props, context) => {
   );
 };
 
+const PageCallingERT = (props, context) => {
+  const { act, data } = useBackend(context);
+
+  return (
+    <Box>
+      <Section>
+        <Button
+          icon="chevron-left"
+          content="Назад"
+          onClick={() => act("setState", { state: STATE_MAIN })}
+        />
+      </Section>
+
+      <Section>
+        Бюджет: <b>{data.budget.toLocaleString()}</b> кредитов
+      </Section>
+      {sortByCreditCostERT(data.ert).map(ert => (
+        <Section
+          title={(
+            <span
+              style={{
+                display: "inline-block",
+                width: "70%",
+              }}>
+              {ert.name}
+            </span>
+          )}
+          key={ert.ref}
+          buttons={(
+            <Button
+              content={`${ert.creditCost.toLocaleString()} кредитов`}
+              disabled={data.budget < ert.creditCost || !ert.available}
+              onClick={() => act("purchaseERT", {
+                ert: ert.ref,
+              })}
+              tooltip={
+                data.budget < ert.creditCost
+                  ? `Требуется ещё ${ert.creditCost - data.budget} кредитов`
+                  : undefined
+              }
+              tooltipPosition="left"
+            />
+          )}>
+          <Box>{ert.description}</Box>
+        </Section>
+      ))}
+    </Box>
+  );
+};
+
+
 const PageChangingStatus = (props, context) => {
   const { act, data } = useBackend(context);
   const { maxStatusLineLength } = data;
@@ -303,6 +357,7 @@ const PageMain = (props, context) => {
     aprilFools,
     callShuttleReasonMinLength,
     canBuyShuttles,
+    canCallERT,
     canMakeAnnouncement,
     canMessageAssociates,
     canRecallShuttles,
@@ -469,6 +524,15 @@ const PageMain = (props, context) => {
             tooltip={canBuyShuttles !== 1 ? canBuyShuttles : undefined}
             tooltipPosition="right"
             onClick={() => act("setState", { state: STATE_BUYING_SHUTTLE })}
+          />}
+
+          {(canCallERT !== 0) && <Button
+            icon="shopping-cart"
+            content="Вызвать платное ОБР"
+            disabled={canCallERT !== 1}
+            tooltip={canCallERT !== 1 ? canCallERT : undefined}
+            tooltipPosition="right"
+            onClick={() => act("setState", { state: STATE_CALLING_ERT })}
           />}
 
           {!!canMessageAssociates && <Button
@@ -696,6 +760,7 @@ const PageMain = (props, context) => {
 const PageMessages = (props, context) => {
   const { act, data } = useBackend(context);
   const messages = data.messages || [];
+  const { printerCooldown } = data;
 
   const children = [];
 
@@ -722,10 +787,15 @@ const PageMessages = (props, context) => {
               content={answer}
               color={message.answered === answerIndex + 1 ? "good" : undefined}
               key={answerIndex}
-              onClick={message.answered ? undefined : () => act("answerMessage", {
-                message: parseInt(messageIndex, 10) + 1,
-                answer: answerIndex + 1,
-              })}
+              onClick={
+                message.answered
+                  ? undefined
+                  : () =>
+                    act("answerMessage", {
+                      message: parseInt(messageIndex, 10) + 1,
+                      answer: answerIndex + 1,
+                    })
+              }
             />
           ))}
         </Box>
@@ -741,14 +811,24 @@ const PageMessages = (props, context) => {
         title={message.title}
         key={messageIndex}
         buttons={(
-          <Button.Confirm
-            icon="trash"
-            content="Удалить"
-            color="red"
-            onClick={() => act("deleteMessage", {
-              message: messageIndex + 1,
-            })}
-          />
+          <>
+            <Button
+              icon="print"
+              content="Распечатать"
+              disabled={printerCooldown}
+              onClick={() => act("printMessage", {
+                message: parseInt(messageIndex, 10) + 1,
+              })}
+            />
+            <Button.Confirm
+              icon="trash"
+              content="Удалить"
+              color="red"
+              onClick={() => act("deleteMessage", {
+                message: parseInt(messageIndex, 10) + 1,
+              })}
+            />
+          </>
         )}>
         <Box
           dangerouslySetInnerHTML={textHtml} />
@@ -779,7 +859,7 @@ export const CommunicationsConsoleInteq = (props, context) => {
 
   return (
     <Window
-      width={400}
+      width={450}
       height={650}
       theme={emagged ? "inteq" : undefined}>
       <Window.Content overflow="auto">
@@ -813,6 +893,7 @@ export const CommunicationsConsoleInteq = (props, context) => {
 
         {!!authenticated && (
           page === STATE_BUYING_SHUTTLE && <PageBuyingShuttle />
+          || page === STATE_CALLING_ERT && <PageCallingERT />
           || page === STATE_CHANGING_STATUS && <PageChangingStatus />
           || page === STATE_MAIN && <PageMain />
           || page === STATE_MESSAGES && <PageMessages />

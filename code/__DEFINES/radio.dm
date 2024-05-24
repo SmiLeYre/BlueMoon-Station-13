@@ -153,4 +153,4 @@
 #define RADIO_CHANNEL_LAW "Law"
 #define RADIO_KEY_LAW "l"
 #define RADIO_TOKEN_LAW ":l"
-#define FREQ_LAW 1414
+#define FREQ_LAW 1415

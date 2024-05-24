@@ -321,31 +321,31 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambigen4.ogg', 'sound/ambience/signal.ogg')
 
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault
+/area/ruin/space/has_grav/inteq_forgotten_vault
 	name = "InteQ Forgotten Vault"
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
-/area/ruin/space/has_grav/powered/inteq_forgotten_bar
+/area/ruin/space/has_grav/inteq_forgotten_bar
 	name = "InteQ Forgotten Bar"
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
 
-/area/ruin/space/has_grav/powered/inteq_forgotten_bridge
+/area/ruin/space/has_grav/inteq_forgotten_bridge
 	name = "InteQ Forgotten Bridge"
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
 
-/area/ruin/space/has_grav/powered/inteq_forgotten_medbay
+/area/ruin/space/has_grav/inteq_forgotten_medbay
 	name = "InteQ Forgotten Medical Bay"
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
 
-/area/ruin/space/has_grav/powered/inteq_forgotten_atmos
+/area/ruin/space/has_grav/inteq_forgotten_atmos
 	name = "InteQ Forgotten Turbine Control"
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
 
-/area/ruin/space/has_grav/powered/inteq_forgotten_rnd
+/area/ruin/space/has_grav/inteq_forgotten_rnd
 	name = "InteQ Forgotten Research and Development"
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')

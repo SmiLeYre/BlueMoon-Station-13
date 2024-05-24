@@ -131,6 +131,11 @@
 		M.ckey = ckey
 		if(ishuman(M) && load_character)
 			var/mob/living/carbon/human/H = M
+			if (H.client)
+				SSlanguage.AssignLanguage(H, H.client)
+				if (loadout_enabled == TRUE)
+					SSjob.equip_loadout(null, H)
+					SSjob.post_equip_loadout(null, H)
 			H.load_client_appearance(H.client)
 		//splurt change
 		if(jobban_isbanned(M, "pacifist")) //do you love repeat code? i sure do
@@ -158,10 +163,6 @@
 		if(assignedrole)
 			M.mind.assigned_role = assignedrole
 		special(M, name)
-		if (M.client)
-			if (loadout_enabled == TRUE)
-				SSjob.equip_loadout(null, M)
-				SSjob.post_equip_loadout(null, M)
 		MM.name = M.real_name
 		to_chat(M,"<span class='boldwarning'>В Эксту посещать станцию допустимо, в Динамику запрещено!</span>")
 		special_post_appearance(M, name) // BLUEMOON ADD
