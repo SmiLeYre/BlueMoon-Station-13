@@ -110,8 +110,17 @@
 	else
 		color = "#[D.features["breasts_color"]]"
 	size = GLOB.breast_values[D.features["breasts_size"]]
-	max_size = D.features["breasts_max_size"]
-	min_size = D.features["breasts_min_size"]
+
+	//Runtime in code/modules/arousal/organs/breasts.dm, line 73: type mismatch: cannot compare 1e+31 to "g"
+	//В преференсах выставляется буква, тип строка. А при проверке нужна цифра.
+
+	//max_size = D.features["breasts_max_size"]
+	//min_size = D.features["breasts_min_size"]
+
+	//BLUEMOON ADD Start
+	max_size = GLOB.alphabet.Find(D.features["breasts_max_size"]) //a = 1, b = 2...
+	min_size = GLOB.alphabet.Find(D.features["breasts_min_size"])
+	//BLUEMOON ADD End
 	shape = D.features["breasts_shape"]
 	if(!D.features["breasts_producing"])
 		genital_flags &= ~ (GENITAL_FUID_PRODUCTION|CAN_CLIMAX_WITH|CAN_MASTURBATE_WITH)
