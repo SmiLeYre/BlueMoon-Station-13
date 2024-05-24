@@ -129,10 +129,21 @@
 	item = /obj/item/dualsaber
 	player_minimum = 25
 	cost = 16
-	purchasable_from = ~UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_SYNDICATE
 
 /datum/uplink_item/dangerous/doublesword/get_discount()
 	return pick(4;0.8,2;0.65,1;0.5)
+
+/datum/uplink_item/dangerous/plasmascythe
+	name = "Plasma scythe"
+	desc = "Надеюсь ты достаточно ловкий, что бы не перерезать себя пополам. Огромное лезвие этой косы при должном мастерстве позволит сжигать что угодно на своём пути, даже пули."
+	item = /obj/item/plasmascythe
+	player_minimum = 25
+	cost = 16
+	purchasable_from = ~(UPLINK_SYNDICATE | UPLINK_CLOWN_OPS)
+
+/datum/uplink_item/dangerous/plasmascythe/get_discount()
+	return pick(4;0.8,2;0.65,1;0.4)
 
 /datum/uplink_item/dangerous/hyperblade
 	name = "Hypereutactic Blade"
@@ -141,7 +152,7 @@
 	item = /obj/item/dualsaber/hypereutactic
 	player_minimum = 25
 	cost = 16
-	purchasable_from = ~UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_SYNDICATE
 
 /datum/uplink_item/dangerous/hyperblade/get_discount()
 	return pick(4;0.8,2;0.65,1;0.5)
@@ -152,13 +163,30 @@
 			pocketed when inactive. Activating it produces a loud, distinctive noise."
 	item = /obj/item/melee/transforming/energy/sword/saber
 	cost = 8
-	purchasable_from = ~UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/dangerous/sword ///Bluemoon add
+	name = "Plasma Sword"
+	desc = "Смертоностное оружие как для врага, так и для владельца. Лезвие из раскалённой плазмы с лёгкостью\
+			прорезает броню и плоть, а достаточно ловкие оперативники могут сжечь им пулю на лету."
+	item = /obj/item/melee/transforming/plasmasword
+	cost = 8
+	purchasable_from = ~(UPLINK_SYNDICATE | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/dangerous/shield
 	name = "Energy Shield"
 	desc = "An incredibly useful personal shield projector, capable of reflecting energy projectiles and defending \
 			against other attacks. Pair with an Energy Sword for a killer combination."
 	item = /obj/item/shield/energy
+	cost = 16
+	surplus = 20
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/dangerous/shield
+	name = "Ballistic Shield"
+	desc = "An incredibly useful personal shield projector, capable of reflecting ballistic projectiles and defending \
+			against other attacks. Pair with an Plasma Sword for a killer combination."
+	item = /obj/item/shield/inteq_energy
 	cost = 16
 	surplus = 20
 	purchasable_from = UPLINK_NUKE_OPS
@@ -172,7 +200,7 @@
 	cost = 8
 	purchasable_from = UPLINK_SYNDICATE
 
-/datum/uplink_item/dangerous/karakurt
+/datum/uplink_item/dangerous/karakurt //bluemoon add
 	name = "Karakurt"
 	desc = "Некогда элегантная рапира из пластитаниума. После даработки воронёное лезвие было пропитано сильнейшим нейротоксином, парализующим дыхательную и нервную систему, \
 			а в ножнах встроено хранилище яда, не дающее лезвию высохнуть. Если цель не умрёт от потери крови, то неожиданно забудет как дышать, разве не идеальное оружие для дуэли?"

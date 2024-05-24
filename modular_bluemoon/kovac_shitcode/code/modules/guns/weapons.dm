@@ -245,9 +245,8 @@
 	return (BRUTELOSS)
 
 /obj/item/inteq_sledgehammer/directional_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return, override_direction)
-	if((attack_type & ATTACK_TYPE_PROJECTILE) && !is_energy_reflectable_projectile(object))
-		block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_RETURN_TO_SENDER
-		return BLOCK_SUCCESS | BLOCK_REDIRECTED | BLOCK_SHOULD_REDIRECT
+	if(wielded & attack_type & ATTACK_TYPE_PROJECTILE & prob(55))
+		return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
 	return ..()
 
 /obj/item/inteq_sledgehammer/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
@@ -341,9 +340,11 @@
 /obj/item/chainsaw/doomslayer/inteq_chainsaw
 	name = "Chainsaw"
 	desc = "<span class='warning'>VRRRRRRR!!!</span>"
-	armour_penetration = 100
 	force_on = 55
+	laser_defl = 0
 	block_parry_data = /datum/block_parry_data/inteq_sledgehammer
+
+
 
 ///InteQ Uplink additions
 
@@ -355,12 +356,13 @@
 	cost = 10
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
+/*
 /datum/uplink_item/dangerous/inteq_chainsaw
 	name = "High Powered Chainsaw"
 	desc = "A high powered chainsaw for cutting up ...you know...."
 	item = /obj/item/chainsaw/doomslayer/inteq_chainsaw
 	cost = 16
-	purchasable_from = ~(UPLINK_SYNDICATE)
+	purchasable_from = ~(UPLINK_SYNDICATE) */
 
 /// Clown Ops Uplink additions
 /datum/uplink_item/suits/hardsuit/elite_clown
