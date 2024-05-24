@@ -4421,7 +4421,7 @@
 #include "modular_bluemoon\SmiLeY\aesthetics\apc\code\apc.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\barsign\barsigns.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\connecting_computer\code\_computer.dm"
-#include "modular_bluemoon\SmiLeY\self_actualization_device\code\self_actualization_device.dm
+#include "modular_bluemoon\SmiLeY\self_actualization_device\code\self_actualization_device.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\connecting_computer\code\connectable_component.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\connecting_computer\code\non_connecting_computers.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\flag\code\signs_flags.dm"
