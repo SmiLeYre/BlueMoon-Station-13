@@ -633,7 +633,7 @@
 	slowdown = 0
 	w_class = WEIGHT_CLASS_NORMAL
 	jetpack = /obj/item/tank/jetpack/suit
-	armor = list(MELEE = 30, BULLET = 30, LASER = 40, ENERGY = 40, BOMB = 20, BIO = 100, RAD = 40, FIRE = 60, ACID = 60, WOUND = 30)
+	armor = list(MELEE = 20, BULLET = 20, LASER = 30, ENERGY = 30, BOMB = 20, BIO = 100, RAD = 40, FIRE = 60, ACID = 60, WOUND = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/blue_shield
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 
