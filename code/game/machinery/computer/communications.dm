@@ -673,16 +673,14 @@
 /obj/machinery/computer/communications/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
-		// if ((obj_flags && EMAGGED && GLOB.master_mode == "Extended") || syndicate == TRUE)
-		// 	ui = new(user, src, "CommunicationsConsole")
-		// 	ui.open()
-		// else
-		// 	if (obj_flags && EMAGGED)
-		// 		ui = new(user, src, "CommunicationsConsoleInteq")
-		// 		ui.open()
-		// 	else
-		ui = new(user, src, "CommunicationsConsole")
-		ui.open()
+		if ((obj_flags && EMAGGED && GLOB.master_mode == "Extended") || syndicate == TRUE)
+			ui = new(user, src, "CommunicationsConsole")
+			ui.open()
+		else
+			if (obj_flags && EMAGGED)
+				ui = new(user, src, "CommunicationsConsoleInteq")
+				ui.open()
+			else
 
 /obj/machinery/computer/communications/ui_static_data(mob/user)
 	return list(
@@ -742,7 +740,7 @@
 	.["mainsettings"]["mission"]["value"] = newtemplate.mission
 	.["mainsettings"]["polldesc"]["value"] = newtemplate.polldesc
 	.["mainsettings"]["ertphrase"]["value"] = newtemplate.ertphrase
-	.["mainsettings"]["open_armory"]["value"] = newtemplate.opendoors ? "Да" : "Нет"
+	.["mainsettings"]["open_armory"]["value"] = newtemplate.opendoors ? "Yes" : "No"
 
 /obj/machinery/computer/communications/proc/makeEmergencyresponseteam(var/datum/ert/ertemplate = null, var/id)
 	if (ertemplate)

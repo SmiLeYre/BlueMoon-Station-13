@@ -50,6 +50,7 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 	melee_damage_upper = 20
 
 	//MOVEMENT
+	movement_type = GROUND
 	pass_flags = PASSTABLE
 	turns_per_move = 3 // number of turns before AI-controlled spiders wander around. No effect on actual player or AI movement speed!
 	move_to_delay = 6

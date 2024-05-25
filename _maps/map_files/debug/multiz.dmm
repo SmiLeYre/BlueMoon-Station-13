@@ -1704,6 +1704,13 @@
 	},
 /turf/open/floor/plating,
 /area/engineering/storage)
+"vd" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plasteel,
+/area/commons/storage/primary)
 "vt" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 1
@@ -1727,6 +1734,11 @@
 /obj/item/construction/rcd/combat/admin,
 /turf/open/floor/plasteel,
 /area/construction)
+"xe" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/landmark/blobstart,
+/turf/open/floor/plasteel,
+/area/commons/storage/primary)
 "xr" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -3799,10 +3811,10 @@ dJ
 dJ
 dB
 dl
-dE
+vd
 dH
 dI
-dB
+xe
 dl
 dE
 dJ

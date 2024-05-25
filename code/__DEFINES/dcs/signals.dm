@@ -751,9 +751,6 @@
 #define COMSIG_HUD_OFFSET_CHANGED "hud_offset_changed"
 ///from base of mob/set_sight(): (new_sight, old_sight)
 #define COMSIG_MOB_SIGHT_CHANGE "mob_sight_changed"
-
-///from /obj/machinery/set_occupant(atom/movable/O): (new_occupant)
-#define COMSIG_MACHINERY_SET_OCCUPANT "machinery_set_occupant"
 ///from base of mob/living/death(): (gibbed)
 #define COMSIG_LIVING_DEATH "living_death"
 ///from base of /mob/Login(): ()

@@ -93,3 +93,11 @@
 	icon_state = "booma"
 	item_state = "booma"
 	can_adjust = TRUE
+
+/obj/item/clothing/under/donator/bm/silky_body
+	name = "Silky Body"
+	desc = "A perfectly tailored bodysuit that fits the body and does not constrain you in any movements. Ties are visible on the sides so that you can adjust the force with which it fits your body."
+	icon_state = "silky_body"
+	item_state = "bl_suit"
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	can_adjust = FALSE

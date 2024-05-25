@@ -1,3 +1,14 @@
+//--------------------------------------------------------[хранилища]----------------------------------------------------------------------------------------------
+//коробка инфильтратора
+/obj/item/storage/toolbox/infiltrator/inteq
+	name = "SpecOps case"
+	desc = "Элегантный кейс с отделкой из кожи и эмблемой золотого щита. Содержит внутри костюм, разработанный для понижения заметности пользователя в условиях тесных пространств замкнутых помещений. Сам кейс же отлично подходит для переноса всего того арсенала оружия, что ты взял с собой на 'тихую' миссию."
+	icon_state = "infiltrator_case"
+	item_state = "infiltrator_case"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+//тулбокс интека
 /obj/item/storage/toolbox/inteq
 	name = "Brown toolbox"
 	icon_state = "toolbox_inteq"
@@ -8,7 +19,26 @@
 	desc = "Элегантный ящик с инструментами. Ярко оранжевая полоса проходит вдоль стыка крышки, а в центре виднеется галографическая наклейка в виде жёлтого щита."
 	force = 18
 	throwforce = 20
+///Чехол гитары
+/obj/item/storage/backpack/guitarbag
+	name = "Guitar bag"
+	desc = "Обычный чехол от гитары. В него поместится много всего."
+	icon_state = "guitarbag"
+	item_state = "guitarbag"
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 
+/obj/item/storage/backpack/guitarbag/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.max_combined_w_class = INFINITY
+	STR.max_items = 7
+	STR.can_hold = typecacheof(list(/obj/item/storage/box, /obj/item/gun, /obj/item/ammo_box,
+	/obj/item/reagent_containers/food, /obj/item/melee, /obj/item/grenade, /obj/item/reagent_containers/peacehypo, /obj/item/storage/firstaid, /obj/item/card/id, /obj/item/instrument))
+//--------------------------------------------------------[Инструменты]----------------------------------------------------------------------------------------------
 /obj/item/screwdriver/nuke/inteq
 	icon_state = "screwdriver_caravan"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
@@ -94,21 +124,21 @@
 	to_chat(user, "<span class='notice'>You attach the pry jaws to [src].</span>")
 	qdel(src)
 	user.put_in_active_hand(pryjaws)
-
+//сварка
 /obj/item/weldingtool/experimental/inteq
 	name = "Brown Welder"
 	icon_state = "exwelder"
 	item_state = "brasswelder"
 	desc = "Небольшой сварочный аппарат с самовостанавливающимся топливным блоком. Выглядит довольно нелегально."
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
-
+//боевой ключ
 /obj/item/wrench/combat/inteq
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
 	desc = "Перекраска твёрдого света повысила уровень военных преступлений на 20%"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
-
+//индуктор
 /obj/item/inducer/inteq
 	icon_state = "inducer"
 	item_state = "inducer"
@@ -117,7 +147,8 @@
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 	powertransfer = 2000
 	cell_type = /obj/item/stock_parts/cell/super
-
+//---------------------------------------------------------------------[хлам]--------------------------------------------------------------------------------
+//Шарик интека
 /obj/item/toy/inteqballoon
 	name = "InteQ balloon"
 	desc = "Сзади видна странная бирка \"НАХУЙ ПАКТ!!1111\"."
@@ -127,16 +158,52 @@
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 	w_class = WEIGHT_CLASS_BULKY
+///Sandman - превращает тебя в симпл моба с руками и механикой морфа. Уязвим к лазерам.
+/obj/item/reagent_containers/syringe/sand
+	name = "Sand parasite"
+	desc = "Шприц со странной чёрной жидкостью, находящейся постоянно в движении."
+	amount_per_transfer_from_this = 1
+	volume = 1
+	list_reagents = list(/datum/reagent/sandparasite = 1)
 
+/datum/reagent/sandparasite
+	name = "Sand parasite"
+	description = "Миллионы маленьких паразитов готовых съесть любую органику, до которой смогут добраться."
+	color = "#000000"
+	chemical_flags = REAGENT_ALL_PROCESS
+	can_synth = FALSE
+	taste_description = "hopelessness"
+	value = REAGENT_VALUE_GLORIOUS
+
+/datum/reagent/sandparasite/reaction_mob(mob/living/L, method=TOUCH, reac_volume)
+	L.ForceContractDisease(new /datum/disease/transformation/sand(), FALSE, TRUE)
+
+/datum/disease/transformation/sand
+	name = "Sand parasite"
+	cure_text = "nothing"
+	cures = list(/datum/reagent/medicine/adminordrazine)
+	agent = "Sand parasite"
+	desc = "Рой из десятка миллионов паразитов в одной маленькой капле, готовых сожрать любую попавшуюся им органику"
+	stage_prob = 20
+	severity = DISEASE_SEVERITY_BIOHAZARD
+	visibility_flags = 0
+	stage1	= list("<span class='danger'>Ваши мышцы горят огнём.</span>")
+	stage2	= list("<span class='danger'>Ваша кожа чернеет и болит так, словно её сдирают заживо.</span>")
+	stage3	= list("<span class='danger'>Твой позвоночник воет от боли словно его пытаются растянуть на дыбе</span>", "<span class='danger'>похоже ты становишься выше.</span>")
+	stage4	= list("<span class='danger'>Что то разрывает твою кожу на спине.</span>")
+	stage5	= list("<span class='danger'>Трансформация завершается. Паразиты глубоко укоренились в теле и теперь не отделимы от него. Вы чувствуете невероятную боль, получив взамен новые возможности.<br><br>Используй Shift+Click, что бы принять вид обьекта или существа.<br>Alt+Click по вентиляции или скраберу, что бы залезть в систему труб.<br>Поедай трупы или используй медицинские нитки для востановления здоровья.<br>Ты можешь выдержать много физических повреждений, но огонь и лазеры для тебя смертельно опасны.</span>")
+	new_form = /mob/living/simple_animal/hostile/morph/sandman
+	infectable_biotypes = MOB_ORGANIC|MOB_MINERAL|MOB_UNDEAD
+//Автохирург
 /obj/item/autosurgeon/syndicate/inteq
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
-
+//Библия интека
 /obj/item/storage/book/bible/syndicate/inteq
 	name = "InteQ Tome"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/infiltrator.dmi'
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
-
+//Секретные документы
 /obj/item/documents/inteq
 	name = "orange secret documents"
 	desc = "\"Совершенно Секретно\". Документы, содержащие разрозненые координаты, имена, наборы шифров и схем. Эти документы заверены оранжевой сургучной печатью."
@@ -151,110 +218,7 @@
 	. = ..()
 	new /obj/item/documents/inteq(src)
 	update_icon()
-
-///inteq наборы
-/obj/item/storage/toolbox/syndicate/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.silent = TRUE
-
-/obj/item/storage/toolbox/inteq/PopulateContents()
-	new /obj/item/screwdriver/nuke/inteq(src)
-	new /obj/item/wrench/combat/inteq(src)
-	new /obj/item/weldingtool/largetank(src)
-	new /obj/item/crowbar/brown(src)
-	new /obj/item/wirecutters/brown(src)
-	new /obj/item/multitool(src)
-	new /obj/item/clothing/gloves/tackler/combat/insulated(src)
-
-/obj/item/storage/toolbox/inteq/cooler/PopulateContents()
-	new /obj/item/screwdriver/power/inteq(src)
-	new /obj/item/crowbar/power/inteq(src)
-	new /obj/item/weldingtool/experimental/inteq(src)
-	new /obj/item/multitool/tricorder(src)
-	new /obj/item/inducer/inteq(src)
-	new /obj/item/clothing/gloves/tackler/combat/insulated(src)
-
-/obj/item/storage/backpack/duffelbag/syndie/inteq/surgery/PopulateContents()
-	new /obj/item/scalpel(src)
-	new /obj/item/hemostat(src)
-	new /obj/item/retractor(src)
-	new /obj/item/circular_saw(src)
-	new /obj/item/surgicaldrill(src)
-	new /obj/item/cautery(src)
-	new /obj/item/bonesetter(src)
-	new /obj/item/surgical_drapes(src)
-	new /obj/item/clothing/suit/straight_jacket(src)
-	new /obj/item/clothing/mask/muzzle(src)
-	new /obj/item/mmi/syndie(src)
-	new /obj/item/implantcase(src)
-	new /obj/item/implanter(src)
-	new /obj/item/reagent_containers/medspray/sterilizine(src)
-	new /obj/item/tank/internals/anesthetic(src)
-
-/obj/item/storage/backpack/duffelbag/syndie/inteq/surgery_adv/PopulateContents()
-	new /obj/item/scalpel/advanced(src)
-	new /obj/item/retractor/advanced(src)
-	new /obj/item/surgicaldrill/advanced(src)
-	new /obj/item/bonesetter(src)
-	new /obj/item/surgical_drapes(src)
-	new /obj/item/clothing/suit/straight_jacket(src)
-	new /obj/item/clothing/mask/muzzle(src)
-	new /obj/item/mmi/syndie(src)
-	new /obj/item/implantcase(src)
-	new /obj/item/implanter(src)
-	new /obj/item/reagent_containers/medspray/sterilizine(src)
-	new /obj/item/tank/internals/anesthetic(src)
-
-///FTU наборы
-/obj/item/storage/backpack/satchel/ftu
-	name = "Trading Looking Satchel Bag"
-	desc = "A large satchel bag for holding extra tactical supplies."
-
-/obj/item/storage/backpack/satchel/ftu/shootgun
-	name = "Набор №473. Спецификация: Инженер. Основное оружие: AA12"
-
-/obj/item/storage/backpack/satchel/ftu/shootgun/PopulateContents()
-	new /obj/item/storage/box/survival/security/radio(src)
-	new /obj/item/gun/ballistic/automatic/shotgun/aa12(src)
-	for(var/i in 1 to 3)
-		new /obj/item/ammo_box/magazine/aa12/small(src)
-	new /obj/item/storage/belt/utility/syndicate(src)
-	new /obj/item/clothing/gloves/tackler/combat/insulated(src)
-
-/obj/item/storage/backpack/satchel/ftu/fire
-	name = "Набор №343. Спецификация: Чистильщик. Основное оружие: M2a100"
-
-/obj/item/storage/backpack/satchel/ftu/fire/PopulateContents()
-	new /obj/item/storage/box/survival/security/radio(src)
-	new /obj/item/gun/energy/m2a100(src)
-	for(var/i in 1 to 10)
-		new /obj/item/stack/sheet/mineral/plasma(src)
-	new /obj/item/extinguisher (src)
-	new /obj/item/grenade/stingbang/shred(src)
-	new /obj/item/grenade/stingbang/shred(src)
-
-/obj/item/storage/backpack/satchel/ftu/sniper
-	name = "Набор №476. Спецификация: Солдат. Основное оружие: FAL"
-
-/obj/item/storage/backpack/satchel/ftu/sniper/PopulateContents()
-	new /obj/item/storage/box/survival/security/radio(src)
-	new /obj/item/gun/ballistic/automatic/fal(src)
-	for(var/i in 1 to 3)
-		new /obj/item/ammo_box/magazine/fal(src)
-	new /obj/item/chameleon(src)
-
-/obj/item/storage/backpack/satchel/ftu/med
-	name = "Набор №678. Спецификация: Медик. Основное оружие: SMG .22"
-
-/obj/item/storage/backpack/satchel/ftu/med/PopulateContents()
-	new /obj/item/storage/box/survival/security/radio(src)
-	new /obj/item/gun/ballistic/automatic/smg22(src)
-	for(var/i in 1 to 5)
-		new/obj/item/ammo_box/magazine/smg22(src)
-	new /obj/item/storage/belt/medical/surgery_belt_adv(src)
-	new /obj/item/storage/firstaid/tactical(src)
-
+//маяк выбора оружия для FTU
 /obj/item/choice_beacon/ftu
 	name = "FTU sec kit"
 	desc = "Маяк для выбора снаряжения охраниками торговых кораблей"
@@ -282,10 +246,7 @@
 			var/atom/A = V
 			ftu_item_list[initial(A.name)] = A
 	return ftu_item_list
-
-/obj/item/storage/backpack/guitarbag/loaded/PopulateContents()
-	new /obj/item/instrument/guitar(src)
-
+//--------------------------------------------------------------------------------[Ящики карго]------------------------------------------------------------------
 /datum/supply_pack/goody/guitarbag
 	name = "Guitar bag"
 	desc = "Гитара вместе с чехлом. Очень быстро окупит вложеные в неё кредиты."

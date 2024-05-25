@@ -79,8 +79,29 @@
 	name = "surgical tape"
 	singular_name = "surgical tape"
 	desc = "Made for patching broken bones back together alongside bone gel, not for playing pranks."
-	//icon_state = "tape_spikes"
+	icon_state = "tape_spikes"
 	prefix = "surgical"
 	conferred_embed = list("embed_chance" = 30, "pain_mult" = 0, "jostle_pain_mult" = 0, "ignore_throwspeed_threshold" = TRUE)
 	splint_factor = 0.4
 	custom_price = 500
+
+/obj/item/stack/sticky_tape/black
+	name = "black sticky tape"
+	singular_name = "black sticky tape"
+	prefix = "black"
+	desc = "Идеальна для закрытия протечек."
+	icon_state = "tape_b"
+
+GLOBAL_LIST_INIT(tape_recipes, list ( \
+	new/datum/stack_recipe("Black Sticky Tape Top", /obj/item/clothing/underwear/shirt/top/black_tape, 1), \
+	))
+
+/obj/item/stack/sticky_tape/black/get_main_recipes()
+	. = ..()
+	. += GLOB.tape_recipes
+
+/obj/item/clothing/underwear/shirt/top/black_tape
+	name = "Black Sticky Tape"
+	desc = "Идеальна для закрытия протечек."
+	icon_state = "tape_b"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

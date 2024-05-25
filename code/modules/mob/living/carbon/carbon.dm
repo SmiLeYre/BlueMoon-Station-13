@@ -320,10 +320,7 @@
 	if(I.item_flags & BEING_REMOVED)
 		to_chat(src, "<span class='warning'>Вы уже пытаетесь сбросить [I]!</span>")
 		return
-	var/obj/item/restraints/R = istype(I, /obj/item/restraints) ? I : null
 	var/allow_breakout_movement = IGNORE_INCAPACITATED
-	if(R?.allow_breakout_movement)
-		allow_breakout_movement = (IGNORE_INCAPACITATED|IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE)
 	I.item_flags |= BEING_REMOVED
 	breakouttime = I.breakouttime
 	if(!cuff_break)

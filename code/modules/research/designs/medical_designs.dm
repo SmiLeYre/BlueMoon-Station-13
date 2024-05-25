@@ -473,7 +473,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/cyberimp_shield
-	name = "Chemical sequencer implant"
+	name = "Riot shieldimplant"
 	desc = "An implanted riot shield, designed to be installed on subject's arm."
 	id = "ci-shield"
 	build_type = PROTOLATHE

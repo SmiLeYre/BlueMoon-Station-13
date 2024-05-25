@@ -380,16 +380,22 @@ SUBSYSTEM_DEF(vote)
 				// BLUEMOON CHANGES START - если не экста, то берётся случайная вариация динамика
 				if(. != ROUNDTYPE_EXTENDED)
 					var/list/dynamic_pick = list()
+
+					// Если прошлой вариацией была тимбаза или хард, то они не могут выпасть повторно
+					var/last_dynamic_type = SSpersistence.last_dynamic_gamemode
+					if(SSpersistence.last_dynamic_gamemode in list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD))
+						last_dynamic_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD)
+
 					switch(length(GLOB.clients))
 
 						if(ROUNDTYPE_PLAYERCOUNT_DYNAMIC_LOWPOP_MIN to ROUNDTYPE_PLAYERCOUNT_DYNAMIC_LOWPOP_MAX)
 							dynamic_pick = list(ROUNDTYPE_DYNAMIC_LIGHT)
 
 						if(ROUNDTYPE_PLAYERCOUNT_DYNAMIC_MEDIUMPOP_MIN to ROUNDTYPE_PLAYERCOUNT_DYNAMIC_MEDIUMPOP_MAX)
-							dynamic_pick = list(ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) - SSpersistence.last_dynamic_gamemode
+							dynamic_pick = list(ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) - last_dynamic_type
 
 						if(ROUNDTYPE_PLAYERCOUNT_DYNAMIC_HIGHPOP_MIN to INFINITY)
-							dynamic_pick = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) - SSpersistence.last_dynamic_gamemode
+							dynamic_pick = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) - last_dynamic_type
 
 					if(dynamic_pick.len > 0)
 						. = pick(dynamic_pick)
@@ -412,6 +418,10 @@ SUBSYSTEM_DEF(vote)
 				log_admin("The map has been voted for and will change to: [VM.map_name]")
 				if(SSmapping.changemap(config.maplist[.]))
 					to_chat(world, "<span class='boldannounce'>The map vote has chosen [VM.map_name] for next round!</span>")
+				// BLUEMOON ADD START - перезагрузка сервера с ротацией карты в случае краша прошлого раунда
+				if(SSticker.mapvote_restarter_in_progress)
+					SSticker.Reboot("Map rotation was requested due to ungraceful ending of the last round.", null, 10)
+				// BLUEMOON ADD END
 			if("transfer") // austation begin -- Crew autotransfer vote
 				if(. == VOTE_TRANSFER)
 					SSshuttle.autoEnd()
@@ -659,7 +669,10 @@ SUBSYSTEM_DEF(vote)
 			. += "<br><font size=1><small><b>[ROUNDTYPE_EXTENDED]</b> (угрозы не спавнятся сами, только администрация может создавать их).</font></small>"
 			. += "<br>Вариация [ROUNDTYPE_DYNAMIC] из прошлого раунда в новом выпасть не может (кроме эксты)."
 			if(SSpersistence.last_dynamic_gamemode)
-				. += "<br>Последняя вариация: <b>[SSpersistence.last_dynamic_gamemode]</b>."
+				if(SSpersistence.last_dynamic_gamemode in list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD))
+					. += "<br>Последняя вариация: <b>ТИМБАЗА ИЛИ ХАРД</b>."
+				else
+					. += "<br>Последняя вариация: <b>[SSpersistence.last_dynamic_gamemode]</b>."
 			. += "<h4>Если Режим выпадает три раза подряд - форсится обратный.</h4>"
 			if (length(SSpersistence.saved_modes))
 				. += "<br>Последние режимы: <b>[jointext(SSpersistence.saved_modes, ", ")]</b>."
@@ -762,6 +775,12 @@ SUBSYSTEM_DEF(vote)
 			return
 		if("cancel")
 			if(usr.client.holder)
+				if(SSticker.mapvote_restarter_in_progress)
+					SSticker.mapvote_restarter_in_progress = FALSE
+					SSpersistence.RecordGracefulEnding()
+					SSticker.start_immediately = FALSE
+					SSticker.SetTimeLeft(6000)
+					to_chat(world, span_boldwarning("Автоматическая ротация карты была отменена администрацией"))
 				reset()
 		if("toggle_restart")
 			if(usr.client.holder)

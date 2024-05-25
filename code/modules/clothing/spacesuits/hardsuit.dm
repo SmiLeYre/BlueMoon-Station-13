@@ -633,7 +633,7 @@
 	slowdown = 0
 	w_class = WEIGHT_CLASS_NORMAL
 	jetpack = /obj/item/tank/jetpack/suit
-	armor = list(MELEE = 30, BULLET = 30, LASER = 40, ENERGY = 40, BOMB = 20, BIO = 100, RAD = 40, FIRE = 60, ACID = 60, WOUND = 30)
+	armor = list(MELEE = 20, BULLET = 20, LASER = 30, ENERGY = 30, BOMB = 20, BIO = 100, RAD = 40, FIRE = 60, ACID = 60, WOUND = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/blue_shield
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 
@@ -644,7 +644,7 @@
 	icon_state = "hardsuit0-sec"
 	item_state = "sec_helm"
 	hardsuit_type = "sec"
-	armor = list(MELEE = 40, BULLET = 35, LASER = 35, ENERGY = 45, BOMB = 25, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 30)
+	armor = list(MELEE = 35, BULLET = 15, LASER = 30,ENERGY = 20, BOMB = 10, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 30)
 
 /obj/item/clothing/suit/space/hardsuit/security
 	icon_state = "hardsuit-sec"
@@ -652,7 +652,7 @@
 	desc = "A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
 	item_state = "sec_hardsuit"
 	tail_state = "sec"
-	armor = list(MELEE = 40, BULLET = 35, LASER = 35, ENERGY = 45, BOMB = 25, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 30)
+	armor = list(MELEE = 35, BULLET = 15, LASER = 30,ENERGY = 20, BOMB = 10, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_ALL_TAURIC
 	//BLUEMOON ADD вариация хардсьюта сб
@@ -688,7 +688,7 @@
 	desc = "A special bulky helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor."
 	icon_state = "hardsuit0-hos"
 	hardsuit_type = "hos"
-	armor = list(MELEE = 45, BULLET = 50, LASER = 40, ENERGY = 50, BOMB = 25, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 40)
+	armor = list(MELEE = 45, BULLET = 25, LASER = 30, ENERGY = 30, BOMB = 25, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 40)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/space/hardsuit/security/hos
@@ -696,7 +696,7 @@
 	desc = "A special bulky suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
 	icon_state = "hardsuit-hos"
 	tail_state = "hos"
-	armor = list(MELEE = 45, BULLET = 50, LASER = 40, ENERGY = 50, BOMB = 25, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 40)
+	armor = list(MELEE = 45, BULLET = 25, LASER = 30, ENERGY = 30, BOMB = 25, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 40)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
 	jetpack = /obj/item/tank/jetpack/suit
 	unique_reskin = list(

@@ -19,7 +19,7 @@
 	Just slap 'em in the SAD and turn it on! Their frown will turn upside down as they're reconstituted as their ideal self \
 	via the magic technology of brain scanning! Within a few short moments, they'll be popped out as their ideal self, \
 	ready to continue on with their day lawsuit-free!"
-	icon = 'modular_bluemoon/smiley/self_actualization_device/icons/self_actualization_device.dmi'
+	icon = 'modular_splurt/icons/obj/machinery/self_actualization_device.dmi'
 	icon_state = "sad_open"
 	circuit = /obj/item/circuitboard/machine/self_actualization_device
 	state_open = FALSE
@@ -40,7 +40,7 @@
 	"Before using the Self-Actualization Device, remove any and all metal devices, or you might make the term 'ironman' a bit too literal!" , \
 	"Have more questions about the Self-Actualization Device? Call your nearest Veymed Representative to requisition more information about the Self-Actualization Device!" \
 	)
-	allow_oversized_characters = TRUE // BLUEMOON ADD - т.к. в машину нельзя залезать с нормалайзером, нужно обход
+	allow_oversized_characters = TRUE
 
 /obj/machinery/self_actualization_device/update_appearance(updates)
 	. = ..()
@@ -55,12 +55,13 @@
 	icon_state = "sad_closed"
 	if(!occupant)
 		return FALSE
-	if(!ishuman(occupant) || !check_for_normalizer(occupant)) // BLUEMOON EDIT - добавлена проверка на нормалайзер
+	if(!ishuman(occupant) || !check_for_normalizer(occupant)) // BLUEMOON EDIT - normalizer check added
 		occupant.forceMove(drop_location())
 		set_occupant(null)
 		return FALSE
 	to_chat(occupant, span_notice("You enter [src]."))
 	update_appearance()
+
 
 /obj/machinery/self_actualization_device/examine(mob/user)
 	. = ..()
@@ -85,25 +86,6 @@
 	processing = TRUE
 	update_appearance()
 
-/obj/machinery/self_actualization_device/container_resist_act(mob/living/user)
-	if(state_open)
-		open_machine()
-		return FALSE
-
-	to_chat(user, span_notice("The emergency release is not responding! You start pushing against the hull!"))
-	user.changeNext_move(CLICK_CD_BREAKOUT)
-	user.last_special = world.time + CLICK_CD_BREAKOUT
-	user.visible_message(span_notice("You see [user] kicking against the door of [src]!"), \
-		span_notice("You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)"), \
-		span_hear("You hear a metallic creaking from [src]."))
-
-	if(do_after(user, breakout_time, target = src))
-		if(!user || user.stat != CONSCIOUS || user.loc != src || state_open)
-			return
-		user.visible_message(span_warning("[user] successfully broke out of [src]!"), \
-			span_notice("You successfully break out of [src]!"))
-		open_machine()
-
 /obj/machinery/self_actualization_device/interact(mob/user)
 	if(state_open)
 		close_machine()
@@ -113,13 +95,13 @@
 		open_machine()
 		return
 
-// BLUEMOON ADD START - если на персонажа надет нормалайзер, он не может залезть внутрь/завершить процедуру (иначе это приводит к ошибкам с выставлением размера)
+// SPLURT ADD - if a character is wearing a normalizer, he cannot get inside/complete the procedure (otherwise it leads to errors with setting the size)
 /obj/machinery/self_actualization_device/proc/check_for_normalizer(mob/target)
 	if(target.GetComponent(/datum/component/size_normalized))
 		visible_message(span_warning("[src] beeps, as it denies user with normalization devices!"))
-		return FALSE // запрет
-	return TRUE // разрешение
-// BLUEMOON ADD END
+		return FALSE // prohibition
+	return TRUE // permission
+// SPLURT ADD END
 
 /obj/machinery/self_actualization_device/process(delta_time)
 	if(!processing)
@@ -142,7 +124,7 @@
 		return
 	processing = FALSE
 
-	if(!ishuman(occupant) || !check_for_normalizer(occupant)) // BLUEMOON EDIT - добавлено || !check_for_normalizer(occupant)
+	if(!ishuman(occupant) || !check_for_normalizer(occupant)) // BLUEMOON EDIT - added || !check_for_normalizer(occupant)
 		return FALSE
 
 	var/mob/living/carbon/human/patient = occupant
@@ -231,4 +213,3 @@
 
 	if(default_deconstruction_crowbar(used_item))
 		return TRUE
-

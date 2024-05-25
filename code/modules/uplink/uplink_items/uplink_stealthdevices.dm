@@ -59,6 +59,14 @@
 			This manual teaches you this Codespeak. You can also hit someone else with the manual in order to teach them. This is the deluxe edition, which has unlimited uses."
 	item = /obj/item/codespeak_manual/unlimited
 	cost = 3
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/stealthy_tools/codespeak_manual //bluemoon add
+	name = "Fast codes guide"
+	desc = "Толстый мануал, описывающий краткие коды для обозначения любой ситуации. Эти коды использовались военными ещё в ранних космических войнах, но со временем стали заменяться на более простые вариации."
+	item = /obj/item/fastcodes_guide/inf
+	cost = 3
+	purchasable_from = UPLINK_TRAITORS
 
 /datum/uplink_item/stealthy_tools/combatbananashoes
 	name = "Combat Banana Shoes"
