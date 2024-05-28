@@ -114,7 +114,8 @@
 	var/slowdown_wielded = 0
 	unique_reskin = list(
 		"12000 kelvin" = list(icon_state_on = "plasma_scythe_blue_on", light_color = "#20214f" ),
-		"30000 kelvin" = list(icon_state_on = "plasma_scythe_green_on", light_color = "#1c542d" )
+		"30000 kelvin" = list(icon_state_on = "plasma_scythe_green_on", light_color = "#1c542d" ),
+		"axe" = list(icon_state_on = "plasma_axe_on", light_color = "#e49b0f", icon_state = "plasma_axe" )
 	)
 
 /obj/effect/temp_visual/scythe_block
@@ -162,7 +163,7 @@
 		owner.visible_message("<span class='danger'>[owner] just melted bullet in air!</span>")
 		playsound(src, pick('modular_bluemoon/Ren/Sound/plasma_hit.ogg'), 75, 1)
 		var/turf/owner_turf = get_turf(owner)
-		if(icon_state == "plasma_scythe_on")
+		if(icon_state == "plasma_scythe_on" || icon_state == "plasma_axe_on" )
 			new /obj/effect/temp_visual/scythe_block(owner_turf)
 		if(icon_state == "plasma_scythe_blue_on")
 			new /obj/effect/temp_visual/scythe_block/blue(owner_turf)
@@ -217,6 +218,8 @@
 	set_light(0)
 	RemoveElement(/datum/element/sword_point)
 	item_flags &= ~(ITEM_CAN_BLOCK|ITEM_CAN_PARRY)
+	if(icon_state_on == "plasma_axe_on")
+		icon_state = "plasma_axe"
 
 /obj/item/plasmascythe/Destroy()
 	STOP_PROCESSING(SSobj, src)
