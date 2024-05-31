@@ -198,6 +198,7 @@
 	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/mob/weapons/weapons_l.dmi'
 	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/mob/weapons/weapons_r.dmi'
 	force = 10
+	block_chance = 30
 	throwforce = 5
 	throw_speed = 2
 	throw_range = 3
@@ -245,7 +246,7 @@
 	return (BRUTELOSS)
 
 /obj/item/inteq_sledgehammer/directional_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return, override_direction)
-	if(wielded & attack_type & ATTACK_TYPE_PROJECTILE & prob(55))
+	if(wielded & attack_type & ATTACK_TYPE_PROJECTILE & prob(70))
 		return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
 	return ..()
 
