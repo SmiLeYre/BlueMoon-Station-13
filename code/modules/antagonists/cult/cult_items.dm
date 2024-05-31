@@ -1177,6 +1177,7 @@
 	throwforce = 15
 	throw_speed = 1
 	throw_range = 4
+	block_chance = 20 //bluemoon shange
 	w_class = WEIGHT_CLASS_BULKY
 	attack_verb = list("bumped", "prodded")
 	hitsound = 'sound/weapons/smash.ogg'
@@ -1190,7 +1191,10 @@
 	if(iscultist(owner))
 		if(istype(object, /obj/item/projectile) && (attack_type == ATTACK_TYPE_PROJECTILE))
 			if(is_energy_reflectable_projectile(object))
+				block_chance += 70 //bluemoon shange
 				if(prob(final_block_chance))
+					block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_RETURN_TO_SENDER //bluemoon shange
+					block_chance = initial(block_chance) //bluemoon shange
 					return BLOCK_SUCCESS | BLOCK_SHOULD_REDIRECT | BLOCK_PHYSICAL_EXTERNAL | BLOCK_REDIRECTED
 				return BLOCK_NONE	//To avoid reflection chance double-dipping with block chance
 			var/obj/item/projectile/P = object

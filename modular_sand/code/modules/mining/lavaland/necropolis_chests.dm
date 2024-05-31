@@ -34,7 +34,7 @@
 	shieldbash_stagger_duration = 4.5 SECONDS
 	shieldbash_push_distance = 2
 	max_integrity = 350
-	block_chance = 50
+	block_chance = 0
 	can_shatter = FALSE
 	repair_material = /obj/item/stack/sheet/animalhide/goliath_hide
 	w_class = WEIGHT_CLASS_BULKY

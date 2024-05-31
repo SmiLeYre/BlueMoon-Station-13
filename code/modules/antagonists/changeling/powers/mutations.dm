@@ -442,6 +442,9 @@
 	lefthand_file = 'icons/mob/inhands/antag/changeling_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/antag/changeling_righthand.dmi'
 	block_parry_data = /datum/block_parry_data/shield/changeling
+	melee_block = 60 //bluemoon shange start
+	bullet_block = 60
+	laser_block = 60 //bluemoon shange end
 
 	var/remaining_uses //Set by the changeling ability.
 

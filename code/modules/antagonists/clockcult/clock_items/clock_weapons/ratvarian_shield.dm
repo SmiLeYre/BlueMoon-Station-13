@@ -11,6 +11,9 @@
 	shield_flags = SHIELD_FLAGS_DEFAULT | SHIELD_KINETIC_STRONG | SHIELD_ENERGY_WEAK
 	max_integrity = 300 //High integrity, extremely strong against melee / bullets, but still quite easy to destroy with lasers and energy
 	repair_material = /obj/item/stack/tile/brass
+	melee_block = 50 //bluemoon shange start
+	bullet_block = 60
+	laser_block = 20 //bluemoon shange end
 	var/dam_absorbed = 0
 	var/bash_mult_steps = 30
 	var/max_bash_mult = 4

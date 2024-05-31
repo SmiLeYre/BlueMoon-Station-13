@@ -56,13 +56,14 @@
 /obj/item/melee/transforming/plasmasword/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(!active)
 		return NONE
-	if(!is_energy_reflectable_projectile(object) && (attack_type & ATTACK_TYPE_PROJECTILE) && prob(50))
+	if(is_energy_reflectable_projectile(object) && (attack_type & ATTACK_TYPE_PROJECTILE) && prob(50))
 		owner.visible_message("<span class='danger'>[owner] just melted bullet in air!</span>")
 		playsound(src, pick('modular_bluemoon/Ren/Sound/plasma_hit.ogg'), 75, 1)
 		var/turf/owner_turf = get_turf(owner)
 		new /obj/effect/decal/cleanable/plasma(drop_location(owner_turf))
 		new /obj/effect/temp_visual/scythe_block(owner_turf)
-		return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
+		block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_RETURN_TO_SENDER
+		return BLOCK_SUCCESS | BLOCK_REDIRECTED | BLOCK_SHOULD_REDIRECT
 	return ..()
 
 /obj/item/melee/transforming/energy/sword/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
@@ -145,9 +146,9 @@
 
 
 /obj/item/plasmascythe/directional_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return, override_direction)
-	if((attack_type & ATTACK_TYPE_PROJECTILE))
-		owner.adjustStaminaLoss(30)
-		return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
+	if((attack_type & ATTACK_TYPE_PROJECTILE) && is_energy_reflectable_projectile(object))
+		block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_RETURN_TO_SENDER
+		return BLOCK_SHOULD_REDIRECT | BLOCK_SUCCESS | BLOCK_REDIRECTED
 	return ..()
 
 /obj/item/plasmascythe/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
@@ -159,8 +160,9 @@
 /obj/item/plasmascythe/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(!wielded)
 		return NONE
-	if((attack_type & ATTACK_TYPE_PROJECTILE) && !is_energy_reflectable_projectile(object))
-		owner.visible_message("<span class='danger'>[owner] just melted bullet in air!</span>")
+	if((attack_type & ATTACK_TYPE_PROJECTILE) && is_energy_reflectable_projectile(object))
+		block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_RETURN_TO_SENDER
+		owner.visible_message("<span class='danger'>[owner] just reflected the beam in air!</span>")
 		playsound(src, pick('modular_bluemoon/Ren/Sound/plasma_hit.ogg'), 75, 1)
 		var/turf/owner_turf = get_turf(owner)
 		if(icon_state == "plasma_scythe_on" || icon_state == "plasma_axe_on" )
@@ -170,7 +172,9 @@
 		if(icon_state == "plasma_scythe_green_on")
 			new /obj/effect/temp_visual/scythe_block/green(owner_turf)
 		new /obj/effect/decal/cleanable/plasma((owner_turf))
-		return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
+		return BLOCK_SHOULD_REDIRECT | BLOCK_SUCCESS | BLOCK_REDIRECTED
+	if((attack_type & ATTACK_TYPE_PROJECTILE) && !is_energy_reflectable_projectile(object))
+		return BLOCK_NONE
 	return ..()
 
 /obj/item/plasmascythe/Initialize(mapload)
