@@ -75,6 +75,11 @@
 	armor = list(MELEE = 10, BULLET = 10, LASER = 10,ENERGY = 10, BOMB = 0, BIO = 0, RAD = 10, FIRE = 50, ACID = 40, WOUND = 10)
 	has_sensor = NO_SENSORS
 
+/obj/item/clothing/under/inteq/Initialize(mapload)
+	. = ..()
+	var/obj/item/clothing/accessory/indiv_number/A = new (src)
+	attach_accessory(A)
+
 /obj/item/clothing/under/inteq/honorable_vanguard
 	name = "black combat turtleneck"
 	desc = "It sits comfortably, does not hinder movement, and most importantly, it is very stylish."
