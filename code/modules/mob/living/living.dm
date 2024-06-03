@@ -205,8 +205,10 @@
 	//not if he's not CANPUSH of course
 	if(!(M.status_flags & CANPUSH))
 		return TRUE
+	/* BLUEMOON REMOVAL START - убираем давку через перемещение
 	if(handle_micro_bump_other(M))
 		return TRUE
+	/ BLUEMOON REMOVAL END*/
 	if(isliving(M))
 		var/mob/living/L = M
 		if(HAS_TRAIT(L, TRAIT_PUSHIMMUNE))

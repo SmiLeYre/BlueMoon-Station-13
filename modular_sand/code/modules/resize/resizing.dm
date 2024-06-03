@@ -189,9 +189,8 @@
 		S *= 2 // Если 100% наступает на 50% или 200% наступает на 100%, то наносится 20 (у станбатона 35)
 	target.apply_damage(S, STAMINA, BODY_ZONE_CHEST) // дополнительный урон по стамине за нерф опрокидывания на пол, т.к. чрезвычайно сильное в оригинале
 	target.Dizzy(5)
-	if(!target.IsKnockdown())
 	// BLUEMOON ADDITION END
-		target.Knockdown(S/2) //final result in stamina knockdown // BLUEMOON CHANGES
+	target.Knockdown(S/2) //final result in stamina knockdown // BLUEMOON CHANGES
 
 
 //Proc for scaling stuns on size difference (for grab intent)

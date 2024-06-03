@@ -189,19 +189,12 @@
 	cooldown_time = 15 SECONDS // чтобы игрок не кликал изменение оверлея туда-сюда без понимания, почему он не исчезает
 	transparent_when_unavailable = TRUE
 
-/datum/action/cooldown/change_stink_overlay/Trigger()
-	if(!..()) // Что-то мешает, например персонаж без сознания
-		return FALSE
-
-	if(!IsAvailable()) // КД не прошёл
-		return FALSE
-
-	if(ishuman(owner)) //roundstart_quirks только у хуманов
-		var/mob/living/carbon/human/action_holder = owner
-		for(var/datum/quirk/bluemoon_shower_need/quirk in action_holder.roundstart_quirks)
-			quirk.hide_visual_effect = !quirk.hide_visual_effect // скрываем визуальный эффект
-			to_chat(owner, span_notice("Теперь окружающие [quirk.hide_visual_effect ? "не будут" : "будут"] замечать плохой запах. [quirk.hide_visual_effect ? "Однако, настроение будет контролировать намного сложнее, если долго не ходить в душ..." : ""]"))
-			StartCooldown() // начала отчёта для КД на способность
+/datum/action/cooldown/change_stink_overlay/Activate()
+	var/mob/living/carbon/human/action_holder = owner
+	for(var/datum/quirk/bluemoon_shower_need/quirk in action_holder.roundstart_quirks)
+		quirk.hide_visual_effect = !quirk.hide_visual_effect // скрываем визуальный эффект
+		to_chat(owner, span_notice("Теперь окружающие [quirk.hide_visual_effect ? "не будут" : "будут"] замечать плохой запах. [quirk.hide_visual_effect ? "Однако, настроение будет контролировать намного сложнее, если долго не ходить в душ..." : ""]"))
+		StartCooldown() // начала отчёта для КД на способность
 
 /*
  * ИВЕНТЫ НАСТРОЕНИЯ

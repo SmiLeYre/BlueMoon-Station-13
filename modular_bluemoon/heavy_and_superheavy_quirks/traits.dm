@@ -46,7 +46,7 @@
 	desc = "Ваш вес можно сравнивать с \
 	<font style='border-bottom:2px dotted white;cursor:help;' title='\
 	Ослабление скорости до уровня, как будто персонаж ростом 170% (если рост уже не 170% или больше). \
-	Вас могут тянуть только киборги, мехи (толкать), такие же сверхтяжёлые персонажи и экипаж в МОДах, оснащённых гидравлическими клешнями (в дальнейшем - \"ОСОБЫЕ\"). \
+	Вас могут тянуть только киборги, мехи (толкать), персонажи с некоторыми боевыми искусствами, такие же сверхтяжёлые персонажи и экипаж в МОДах, оснащённых гидравлическими клешнями (в дальнейшем - \"ОСОБЫЕ\"). \
 	Даже шагом, вы перемещаетесь громко. \
 	Предметы (и персонажи) при попытке сесть на них будут ломаться. \
 	Другие не могут по своей инициативе поменяться с вами местами. \
@@ -90,8 +90,10 @@
 
 	if(searched_slowdown - user_slowdown > 0) //подсчёт наличия разницы в росте с искомой и её начисление для замедления персонажа
 		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown, TRUE, searched_slowdown - user_slowdown)
+		H.movespeed_override = 3 - (searched_slowdown - user_slowdown)
 	else
-		H.remove_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown)
+		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown, TRUE, 0)
+		H.movespeed_override = 3
 
 /datum/quirk/bluemoon_heavy_super/proc/check_mob_size()
 	if(!isliving(quirk_holder))
@@ -108,6 +110,7 @@
 	H.throw_speed = 0.5
 	update_size_movespeed()
 	check_mob_size()
+	H.movespeed_override = 3 // Персонаж не может иметь замедление ниже этого значения (только быть ещё сильнее замедленным)
 
 /datum/quirk/bluemoon_devourer
 	name = "Пожиратель"
@@ -206,12 +209,17 @@
 
 /datum/movespeed_modifier/heavy_quirk_slowdown
 	variable = TRUE
-	blacklisted_movetypes = (FLYING|FLOATING)
 
 /datum/movespeed_modifier/giant_quirk_boost
 	variable = TRUE
 	blacklisted_movetypes = (FLYING|FLOATING)
 
+/*
+ПЕРЕМЕННАЯ ДЛЯ ОГРАНИЧЕНИЯ МАКСИМАЛЬНОЙ СКОРОСТИ
+*/
+
+/mob
+	var/movespeed_override = 0
 
 /*
 Действия

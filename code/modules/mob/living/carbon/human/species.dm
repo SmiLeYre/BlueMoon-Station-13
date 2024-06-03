@@ -1871,6 +1871,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				target.visible_message(span_warning("Корпус [target] слишком прочный, удар не повредил его!"), span_notice("Корпус нивелирует наносимые повреждения."))
 			else
 				target.visible_message("Кожа [target] слишком прочная, удар не повредил её!", span_notice("Кожа даже не повреждается от наносимых повреждений."))
+		damage *= get_size(user) // в зависимости от размера персонажа, урон становится больше, или меньше
 		// BLUEMOON ADD END
 
 		if(user.limb_destroyer)

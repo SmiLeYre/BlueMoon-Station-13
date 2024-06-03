@@ -3,7 +3,7 @@
 /datum/element/mob_holder/micro/Attach(datum/target, worn_state, alt_worn, right_hand, left_hand, inv_slots = NONE, proctype, escape_on_find)
 	. = ..()
 
-	RegisterSignal(target, COMSIG_CLICK_ALT, PROC_REF(mob_try_pickup_micro), TRUE)
+	RegisterSignal(target, COMSIG_CLICK_ALT, PROC_REF(mob_try_alt_action), TRUE) // BLUEMOON EDIT, WAS mob_try_pickup_micro - для распределения на alt действий по давке, подбирании
 	RegisterSignal(target, COMSIG_MICRO_PICKUP_FEET, PROC_REF(mob_pickup_micro_feet))
 	RegisterSignal(target, COMSIG_MOB_RESIZED, PROC_REF(on_resize))
 
@@ -32,7 +32,7 @@
 	if(HAS_TRAIT(source, TRAIT_BLUEMOON_LIGHT))
 		compare_size = 0.8
 	if(ishuman(user) && !istype(source.loc, /obj/item/clothing/head/mob_holder) && (COMPARE_SIZES(user, source)) >= (compare_size / CONFIG_GET(number/max_pick_ratio)))
-		examine_list += span_notice("Looks like [source.p_they(FALSE)] can be picked up using <b>Alt+Click and grab intent</b>!")
+		examine_list += span_notice("Похоже [source.ru_ego(FALSE)] можно взять в руки через <b>Alt+Click</b> (grab) или раздавить (disarm/harm).")
 
 /// Do not inherit from /mob_holder, interactions are different.
 /datum/element/mob_holder/micro/on_requesting_context_from_item(

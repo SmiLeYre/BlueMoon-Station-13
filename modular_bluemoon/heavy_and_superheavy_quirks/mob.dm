@@ -26,14 +26,18 @@
 				can_pull = TRUE
 			if(HAS_TRAIT(user_mob, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(user_mob, TRAIT_BLUEMOON_HEAVY)) // другие сверхтяжёлые или тяжёлые персонажи могут тащить
 				can_pull = TRUE
+			if(user_mob.mind.martial_art?.id) // обладатели некоторых боевых искусств могут хватать и тащить сверхтяжелых персонажей
+				#define ALLOWED_MARTIAL_ARTS list(MARTIALART_SLEEPINGCARP, MARTIALART_CQC, MARTIALART_PLASMAFIST, MARTIALART_BOUNCER, MARTIALART_RISINGBASS)
+				var/datum/martial_art/puller_martial_art = user_mob.mind.martial_art
+				if(puller_martial_art.id in ALLOWED_MARTIAL_ARTS)
+					if(puller_martial_art.can_use(user))
+						can_pull = TRUE
+				#undef ALLOWED_MARTIAL_ARTS
 			if(ishuman(user_mob))
 				var/mob/living/carbon/human/human_pulling = user
-				if(user_mob.mind?.antag_datums)
-					can_pull = TRUE
-				if(user_mob.mind?.has_antag_datum(/datum/antagonist/ghost_role))
-					can_pull = FALSE
-				if(HAS_TRAIT(user_mob, TRAIT_PUGILIST))
-					can_pull = TRUE
+				if(user_mob.mind?.antag_datums) // антагонисты могут тащить сверхтяжёлых персонажей
+					if(!user_mob.mind?.has_antag_datum(/datum/antagonist/ghost_role))
+						can_pull = TRUE
 				if(human_pulling.dna.check_mutation(HULK)) // халки могут тащить
 					can_pull = TRUE
 				if(istype(human_pulling.back, /obj/item/mod/control)) // обычные персонажи с активированными клешнями из МОДа на спине могут тащить
@@ -47,8 +51,8 @@
 				*/
 			if(!can_pull)
 				user_mob.visible_message("[user] пробует потянуть [src] за собой, но это безуспешно!", span_warning("[src] ощущается слишком грузно, переместить в таком виде будет невозможно!"))
-				to_chat(user, span_warning(span_small("Вы можете перемещать сверхтяжёлый персонажей: будучи чужим-антагонистом, еретиком-антагонистом, абдуктором-антагонистом. \
-				Также, будучи халком, сверхтяжёлым персонажем или киборгом. Ещё можно использовать толчок на мехе и МОД с гидравлической клешней."))) //красный текст + маленький размер
+				to_chat(user, span_warning(span_small("Вы можете перемещать сверхтяжёлый персонажей при одном из следующих условий: будучи антагонистом, \
+				имея ген халка, играя сверхтяжёлым персонажем или киборгом, используя толчок на мехе, используя МОД с гидравлической клешней или обладать боевым искусством (CQC, Sleeping Carp, Rising Bass, Plasma Fist, Bouncer)."))) //красный текст + маленький размер
 				playsound(src.loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
 				stop_pulling()
 				return

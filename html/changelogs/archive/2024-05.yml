@@ -20,3 +20,6 @@
   BongaTheProto:
   - code_imp: updates auxmos
   - code_imp: updates rust-g
+2024-05-24:
+  Anonymous:
+  - rscadd: Added new raptor-borg variant known as "SmollRaptor".

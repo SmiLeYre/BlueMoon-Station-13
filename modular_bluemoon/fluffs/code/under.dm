@@ -99,5 +99,5 @@
 	desc = "A perfectly tailored bodysuit that fits the body and does not constrain you in any movements. Ties are visible on the sides so that you can adjust the force with which it fits your body."
 	icon_state = "silky_body"
 	item_state = "bl_suit"
-	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE
 	can_adjust = FALSE

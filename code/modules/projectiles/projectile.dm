@@ -273,10 +273,13 @@
 
 	// BLUEMOON ADD START - больших и тяжёлых существ проблематично нормально оглушить
 	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
-		stamina *= 0.5
-		knockdown *= 0.5
-		knockdown_stamoverride *= 0.5
-		knockdown_stam_max *= 0.5
+		var/target_size_mod = 1
+		if(get_size(target) > 1)
+			target_size_mod = 1 / get_size(target) // я за час не придумал, как из 1 получить 1 и из 2 получить 0.5 - сделайте вы
+		stamina *= target_size_mod
+		knockdown *= target_size_mod
+		knockdown_stamoverride *= target_size_mod
+		knockdown_stam_max *= target_size_mod
 	// BLUEMOON ADD END
 
 	if(blocked != 100) // not completely blocked
