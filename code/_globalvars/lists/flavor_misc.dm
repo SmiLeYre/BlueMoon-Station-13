@@ -181,7 +181,15 @@ GLOBAL_LIST_INIT(ai_core_display_screens, list(
 	"Wasp",
 	"Weird",
 	"Xerxes",
-	"Yes-Man"
+	"Yes-Man",
+	"Anon",
+	"Cheese",
+	"Voiddonut",
+	"Darkmatrer",
+	"Nadburn",
+	"Rainbowslime",
+	"Catamari",
+	"Hippy"
 	))
 
 /proc/resolve_ai_icon(input, radial_preview = FALSE)
