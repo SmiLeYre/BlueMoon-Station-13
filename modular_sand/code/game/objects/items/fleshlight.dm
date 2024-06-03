@@ -80,7 +80,7 @@
 		return ..()
 
 /obj/item/fleshlight/attackby(obj/item/I, mob/user)
-	if(istype(I, /obj/item/toy/plush))
+	if(istype(I, /obj/item/toy/plush) || istype(I, /obj/item/storage/daki))
 		lefthand_file = I.lefthand_file
 		righthand_file = I.righthand_file
 		item_state = I.item_state
@@ -635,7 +635,7 @@
 		useable = FALSE
 
 /obj/item/portallight/attackby(obj/item/I, mob/user)  //перезарядка работает как у резака. Можно изменять, сколько требуется плазмы для полного заряда
-	if(istype(I, /obj/item/toy/plush))
+	if(istype(I, /obj/item/toy/plush) || istype(I, /obj/item/storage/daki))
 		lefthand_file = I.lefthand_file
 		righthand_file = I.righthand_file
 		item_state = I.item_state
