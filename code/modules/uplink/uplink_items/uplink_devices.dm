@@ -338,7 +338,7 @@
 	cost = 7
 	restricted = TRUE
 	limited_stock = 1
-	purchasable_from = ~(UPLINK_SYNDICATE)
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS) //bluemoon change никакого краба через ВР
 
 /datum/uplink_item/device_tools/syndicate_teleporter
 	name = "Experimental Syndicate Teleporter"

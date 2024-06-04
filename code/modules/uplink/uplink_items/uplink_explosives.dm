@@ -95,6 +95,7 @@
 	item = /obj/item/cartridge/virus/syndicate
 	cost = 5
 	restricted = TRUE
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS) //bluemoon change никаких подрывов через ВР
 	limited_stock = 1
 
 /datum/uplink_item/explosives/emp
