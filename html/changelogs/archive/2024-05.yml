@@ -23,3 +23,9 @@
 2024-05-24:
   Anonymous:
   - rscadd: Added new raptor-borg variant known as "SmollRaptor".
+2024-05-29:
+  TGstation:
+  - imageadd: Updates Security's core uniforms with the updated TG versions.
+2024-05-30:
+  SandPoot:
+  - refactor: Overhauls code for the interactions ui.

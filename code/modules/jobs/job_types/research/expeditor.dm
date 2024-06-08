@@ -22,6 +22,7 @@
 	paycheck_department = ACCOUNT_SCI
 	alt_titles = list("Space Expeditor", "Gateway Explorer", "Space Explorer", "Sexplorer", "Sexpeditor", "Exploration Field Medic", "Exploration Engineer", "Exploration Mercenary", "Exploration Operative")
 	display_order = JOB_DISPLAY_ORDER_EXPEDITOR
+	departments = DEPARTMENT_BITFLAG_SCIENCE
 	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/prosopagnosia, /datum/quirk/insanity)
 	threat = 2
 

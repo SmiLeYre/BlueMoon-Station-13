@@ -665,3 +665,9 @@
 	path = /obj/item/melee/sizetool/upgraded
 	ckeywhitelist = list("enotzlodey")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/pet_alta
+	name = "Alta Cat"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/choice_beacon/pet/alta
+	ckeywhitelist = list("oni3288")

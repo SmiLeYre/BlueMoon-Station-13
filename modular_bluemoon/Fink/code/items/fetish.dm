@@ -48,13 +48,13 @@
 /obj/item/slimecross/stabilized/fetish/darkpurple
 	name = "Заводной куб жара"
 	desc = "Латунный куб из множества шестерней. Веет теплом прямо в руки."
-	icon_state = "dark purple"
+	icon_state = "darkpurple"
 	colour = "dark purple"
 
 /obj/item/slimecross/stabilized/fetish/darkblue
 	name = "Ангел хранитель"
 	desc = "Сделан из мрамора, влажный. На пьедестале надпись:'Exi ignis'."
-	icon_state = "dark blue"
+	icon_state = "darkblue"
 	colour = "dark blue"
 
 /obj/item/slimecross/stabilized/fetish/sepia

@@ -555,6 +555,17 @@
 	gender = FEMALE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
+/mob/living/simple_animal/pet/cat/space/alta
+	name = "Space Alta"
+	desc = "An ordinary Alta, except that she is wearing a special elite modsuit from a Cybersun to protect herself in space."
+	icon_state = "spacealta"
+	icon_living = "spacealta"
+	icon_dead = "spacealta_dead"
+	held_icon = "spacealta"
+	unique_pet = TRUE
+	gender = FEMALE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
+
 /mob/living/simple_animal/pet/dog/corgi/Lisa/ada
 	name = "Ada"
 	real_name = "Ada"

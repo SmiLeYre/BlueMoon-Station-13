@@ -227,7 +227,7 @@
 	icon_state = "cyborg_upgrade3"
 	require_module = TRUE
 	module_type = list(/obj/item/robot_module/miner)
-	module_flags = BORG_MODULE_MINER // SANDSTORM EDIT
+	module_flags = BORG_MODULE_MINER
 
 /obj/item/borg/upgrade/premiumka/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()

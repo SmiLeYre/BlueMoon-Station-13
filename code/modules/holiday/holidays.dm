@@ -613,19 +613,22 @@
 		return TRUE //the end of next week falls on a different month, meaning that the current week is the last full week
 
 /datum/holiday/mother
-	name = "Mother's Day"
+	name = "День Матери"
 	begin_week = 2
 	begin_month = MAY
 	begin_weekday = SUNDAY
 
 /datum/holiday/mother/greet()
-	return "Happy Mother's Day in most of the Americas, Asia, and Oceania!"
+	return "Счастливого дня Матери!"
 
 /datum/holiday/father
-	name = "Father's Day"
+	name = "День Отца"
 	begin_week = 3
 	begin_month = JUNE
 	begin_weekday = SUNDAY
+
+/datum/holiday/father/greet()
+	return "Счастливого дня Отца!"
 
 /datum/holiday/pride //Won't be typing this as /lgbt/ because the typing is meant for LGBT holidays that will change the station's decals. Having a full month of pride decals seems a bit long.
 	name = PRIDE_MONTH
@@ -634,7 +637,7 @@
 	end_day = 30
 
 /datum/holiday/pride/getStationPrefix()
-	return pick("Pride", "Gay", "Bi", "Trans", "Lesbian", "Ace", "Aro", "Agender", pick("Enby", "Enbie"), "Pan", "Intersex", "Demi", "Poly", "Closeted", "Genderfluid")
+	return pick("Сектор Прайд |", "Сектор Гей |", "Сектор Би |", "Сектор Транс |", "Сектор Лесби |", "Сектор Эйс |", "Сектор Эро |", "Сектор Неопределившийся |", pick("Сектор Энби |", "Сектор Энбис |"), "Сектор Пан |", "Сектор Фута |", "Сектор Деми |", "Сектор Поли |", "Сектор Закрытости |", "Сектор Гендерфлюида |")
 
 /datum/holiday/stonewall //decal patterns covered in "Pride Week"
 	name = "Stonewall Riots Anniversary"
@@ -659,7 +662,7 @@
 	return "Today is Pansexual and Panromantic Awareness Day!"
 
 /datum/holiday/lgbt/pan/getStationPrefix()
-	return pick("Pansexual","Panromantic")
+	return pick("Пансексуальный Сектор |","Панромантичный Сектор |")
 
 /datum/holiday/moth
 	name = "Moth Week"
@@ -679,7 +682,7 @@
 		return TRUE //the end of next week falls on a different month, meaning that the current week is the last full week
 
 /datum/holiday/moth/getStationPrefix()
-	return pick("Mothball","Lepidopteran","Lightbulb","Moth","Giant Atlas","Twin-spotted Sphynx","Madagascan Sunset","Luna","Death's Head","Emperor Gum","Polyphenus","Oleander Hawk","Io","Rosy Maple","Cecropia","Noctuidae","Giant Leopard","Dysphania Militaris","Garden Tiger")
+	return pick("Mothball |","Lepidopteran |","Lightbulb |","Moth |","Giant Atlas |","Twin-spotted Sphynx |","Madagascan Sunset |","Luna |","Death's Head |","Emperor Gum |","Polyphenus |","Oleander Hawk |","Io |","Rosy Maple |","Cecropia |","Noctuidae |","Giant Leopard |","Dysphania Militaris |","Garden Tiger |")
 
 /*
 

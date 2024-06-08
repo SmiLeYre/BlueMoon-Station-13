@@ -26,6 +26,7 @@
 	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/blindness, /datum/quirk/monophobia, /datum/quirk/bluemoon_criminal)
 
 	display_order = JOB_DISPLAY_ORDER_LAWYER
+	departments = DEPARTMENT_BITFLAG_LAW
 	threat = 0.3
 
 	family_heirlooms = list(

@@ -176,6 +176,21 @@
 		"Possum" = /mob/living/simple_animal/opossum,
 		"Moro" = /mob/living/simple_animal/pet/cat/moro)
 
+/obj/item/choice_beacon/pet/alta
+	pets = list("Crab" = /mob/living/simple_animal/crab,
+		"Cat" = /mob/living/simple_animal/pet/cat,
+		"Space cat" = /mob/living/simple_animal/pet/cat/space,
+		"Kitten" = /mob/living/simple_animal/pet/cat/kitten,
+		"Dog" = /mob/living/simple_animal/pet/dog,
+		"Corgi" = /mob/living/simple_animal/pet/dog/corgi,
+		"Pug" = /mob/living/simple_animal/pet/dog/pug,
+		"Exotic Corgi" = /mob/living/simple_animal/pet/dog/corgi/exoticcorgi,
+		"Fox" = /mob/living/simple_animal/pet/fox,
+		"Red Panda" = /mob/living/simple_animal/pet/redpanda,
+		"Possum" = /mob/living/simple_animal/opossum,
+		"Alta" = /mob/living/simple_animal/pet/cat/alta,
+		"Space Alta" = /mob/living/simple_animal/pet/cat/space/alta)
+
 /obj/item/choice_beacon/pet/generate_display_names()
 	return pets
 

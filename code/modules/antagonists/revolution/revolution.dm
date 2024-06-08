@@ -55,7 +55,7 @@
 
 /datum/antagonist/rev/greet()
 	SEND_SOUND(owner.current, sound('sound/ambience/antag/revolution.ogg'))
-	to_chat(owner, "<span class='userdanger'>Вы - революционер! Помогайте всем, чем можете. Не атакуйте своих товарищей. Вы можете опознать их с помощью красных \"R\" на интерфейсе, а лидеров - с помощью синих \"R\". Ведите революцию к победе, помогая убивать глав станции!</span>")
+	to_chat(owner, "<span class='userdanger'>Вы - революционер! Помогайте всем, чем можете. Не атакуйте своих товарищей. Вы можете опознать их с помощью красных \"R\" на интерфейсе, а лидеров - с помощью синих \"R\". Лидерам предоставляется скидка 99% на товары с черного рынка. Ведите революцию к победе, помогая убивать глав станции!</span>")
 	owner.announce_objectives()
 
 /datum/antagonist/rev/create_team(datum/team/revolution/new_team)
@@ -276,6 +276,7 @@
 
 	if(give_flash)
 		var/obj/item/assembly/flash/T = new(H)
+		var/obj/item/blackmarket_uplink/TT = new(H)
 		var/list/slots = list (
 			"backpack" = ITEM_SLOT_BACKPACK,
 			"left pocket" = ITEM_SLOT_LPOCKET,
@@ -286,7 +287,11 @@
 			to_chat(H, "We are unfortunately unable to get you a flash.")
 		else
 			to_chat(H, "The flash in your [where] will help you to persuade the crew to join your cause.")
-
+		var/where2 = H.equip_in_one_of_slots(TT, slots, critical = TRUE)
+		if (!where2)
+			to_chat(H, "We are unfortunately unable to get you a black market uplink.")
+		else
+			to_chat(H, "The black market uplink in your [where2].")
 	if(give_hud)
 		var/obj/item/organ/cyberimp/eyes/hud/security/syndicate/S = new(H)
 		S.Insert(H, special = FALSE, drop_if_replaced = FALSE)
