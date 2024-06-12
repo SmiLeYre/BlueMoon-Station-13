@@ -1032,8 +1032,3 @@ GLOBAL_LIST_INIT(valid_plushie_paths, valid_plushie_paths())
 		playsound(user, 'sound/items/squeaktoy.ogg', 20, 1)
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "plushpet", /datum/mood_event/plushpet)
 		cooldown = world.time
-/obj/item/toy/plush/bao
-	name = "Bao plushe"
-	desc = "Игрушка чудаковатой таярки"
-	icon_state = "bao"
-	attack_verb = list("yipped", "geckered", "yapped")
