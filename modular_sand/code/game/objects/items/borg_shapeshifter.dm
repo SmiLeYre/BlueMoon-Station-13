@@ -22,6 +22,7 @@
 	var/disguise_icon_override = null
 	var/disguise_pixel_offset = null
 	var/disguise_dogborg = FALSE
+	var/disguise_drakerest = FALSE	//DarkSer request by Gardelin0
 	var/mob/listeningTo
 	var/list/signalCache = list( // list here all signals that should break the camouflage
 			COMSIG_PARENT_ATTACKBY,
@@ -215,6 +216,7 @@
 						disguise_icon_override = 'modular_sand/icons/mob/cyborg/drakemech.dmi'
 						disguise_pixel_offset = -16
 						disguise_dogborg = TRUE
+						disguise_drakerest = TRUE
 					if("Fembot") // //Gardelin0 Addon
 						disguise = "fembot-medic"
 						disguise_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi'
@@ -296,6 +298,7 @@
 						disguise_icon_override = 'modular_sand/icons/mob/cyborg/drakemech.dmi'
 						disguise_pixel_offset = -16
 						disguise_dogborg = TRUE
+						disguise_drakerest = TRUE
 					if("Fembot") // //Gardelin0 Addon
 						disguise = "fembot-engineering"
 						disguise_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi'
@@ -372,6 +375,7 @@
 						disguise_icon_override = 'modular_sand/icons/mob/cyborg/drakemech.dmi'
 						disguise_pixel_offset = -16
 						disguise_dogborg = TRUE
+						disguise_drakerest = TRUE
 					if("Fembot") // //Gardelin0 Addon
 						disguise = "fembot-security"
 						disguise_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi'
@@ -476,6 +480,7 @@
 						disguise_icon_override = 'modular_sand/icons/mob/cyborg/drakemech.dmi'
 						disguise_pixel_offset = -16
 						disguise_dogborg = TRUE
+						disguise_drakerest = TRUE
 					if("(Janitor) Fembot") // //Gardelin0 Addon
 						disguise = "fembot-janitor"
 						disguise_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi'
@@ -549,6 +554,7 @@
 						disguise_icon_override = 'modular_sand/icons/mob/cyborg/drakemech.dmi'
 						disguise_pixel_offset = -16
 						disguise_dogborg = TRUE
+						disguise_drakerest = TRUE
 					if("Fembot") // //Gardelin0 Addon
 						disguise = "fembot-miner"
 						disguise_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi'
@@ -584,6 +590,7 @@
 						disguise_icon_override = 'modular_sand/icons/mob/cyborg/drakemech.dmi'
 						disguise_pixel_offset = -16
 						disguise_dogborg = TRUE
+						disguise_drakerest = TRUE
 					if("Fembot") // //Gardelin0 Addon
 						disguise = "fembot-peace"
 						disguise_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi'
@@ -688,6 +695,7 @@
 	user.module.cyborg_icon_override = disguise_icon_override
 	user.module.cyborg_pixel_offset = disguise_pixel_offset
 	user.module.dogborg = disguise_dogborg
+	user.module.drakerest = disguise_drakerest		//DarkSer request by Gardelin0
 	user.bubble_icon = "robot"
 	active = TRUE
 	user.update_icons()
@@ -711,11 +719,13 @@
 	user.module.cyborg_icon_override = savedOverride
 	user.module.cyborg_pixel_offset = 0
 	user.module.dogborg = FALSE
+	user.module.drakerest = FALSE		//DarkSer request by Gardelin0
 	user.bubble_icon = savedBubbleIcon
 	active = FALSE
 	user.update_icons()
 	disguise_pixel_offset = 0
 	disguise_dogborg = FALSE
+	disguise_drakerest = FALSE		//DarkSer request by Gardelin0
 	src.user = user
 
 /obj/item/borg_shapeshifter/proc/disrupt(mob/living/silicon/robot/user)

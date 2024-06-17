@@ -1331,8 +1331,8 @@
 	wag_sit = 0			//DarkSer request by Gardelin0
 
 	if(module.drakerest == TRUE)	//DarkSer request by Gardelin0
-		var/input = input(usr, "Select resting pose", "Pose") as null|anything in list("Resting", "Sitting", "Belly up", "Napping", "Resting Wag", "Sitting Wag")
-		switch(input)
+		var/choice_drake = tgui_alert(usr, "Select resting pose", "Pose", list("Resting", "Sitting", "Belly up", "Napping", "Resting Wag", "Sitting Wag"))
+		switch(choice_drake)
 			if("Resting")
 				update_icons()
 				return FALSE
@@ -1347,8 +1347,8 @@
 			if("Sitting Wag")
 				wag_sit = 1
 		update_icons()
-	else
-		var/choice = alert(src, "Select resting pose", "Resting", "Sitting", "Belly up")
+	if(module.drakerest == FALSE)
+		var/choice = tgui_alert(usr, "Select resting pose", "Pose", list("Resting", "Sitting", "Belly up"))
 		switch(choice)
 			if("Resting")
 				update_icons()
