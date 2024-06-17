@@ -24,8 +24,13 @@
 	if(partner.is_fucking(user, CUM_TARGET_MOUTH))
 		if(prob(partner.get_sexual_potency()))
 			user.adjustOxyLoss(1)
-			message = "становится всё проворней и проворней в случае с членом \the <b>[partner]</b>."
-			lust_increase += 5
+			switch(fucktarget)
+				if("vagina")
+					message = "становится всё проворней и проворней в случае с киской \the <b>[partner]</b>."
+					lust_increase += 5
+				if("penis")
+					message = "становится всё проворней и проворней в случае с членом \the <b>[partner]</b>."
+					lust_increase += 5
 		else
 			var/improv = FALSE
 			switch(fucktarget)

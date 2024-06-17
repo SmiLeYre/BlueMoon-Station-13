@@ -116,6 +116,9 @@
 	// cit specific vars //
 	var/sitting = 0
 	var/bellyup = 0
+	var/deep_rest = 0		//DarkSer request by Gardelin0
+	var/wag_rest = 0		//DarkSer request by Gardelin0
+	var/wag_sit = 0			//DarkSer request by Gardelin0
 	var/dogborg = FALSE
 
 	var/cansprint = 1

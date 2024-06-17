@@ -21,7 +21,8 @@
 
 /datum/status_effect/lactation
 	id = "lactation"
-	duration = 20 MINUTES
+	duration = -1 //Make Lactation permanent - Gardelin0
+	tick = FALSE
 	alert_type = /atom/movable/screen/alert/status_effect/lactation
 	var/noapply
 

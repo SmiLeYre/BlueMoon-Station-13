@@ -86,7 +86,8 @@
 		"MMeka Ninja" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekaninja"), // Lyoll Request (Skyrat Port)
 		"FMeka Syndie" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "fmekasyndi"), // Lyoll Request (Skyrat Port)
 		"K4 Syndie" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tsyndi"), // Lyoll Request (Skyrat Port)
-		"MMeka Syndie" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekasyndi") // Lyoll Request (Skyrat Port)
+		"MMeka Syndie" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekasyndi"), // Lyoll Request (Skyrat Port)
+		"Drakemech" = image(icon = 'modular_sand/icons/mob/cyborg/drakemech.dmi', icon_state = "drakebox")	//DarkSer request by Gardelin0
 		))
 	var/syndiejack_icon = show_radial_menu(R, R , syndicatejack_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 	switch(syndiejack_icon)
@@ -152,6 +153,12 @@
 			cyborg_base_icon = "mmekasyndi"
 			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
 			hasrest = TRUE
+		if("Drakemech") //DarkSer request by Gardelin0
+			cyborg_base_icon = "drake"
+			cyborg_icon_override = 'modular_sand/icons/mob/cyborg/drakemech.dmi'
+			sleeper_overlay = "drakesecsleeper"
+			dogborg = TRUE
+			drakerest = TRUE
 		else
 			return FALSE
 	return ..()

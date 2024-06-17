@@ -1326,16 +1326,38 @@
 	set desc = "Select your resting pose."
 	sitting = 0
 	bellyup = 0
-	var/choice = alert(src, "Select resting pose", "", "Resting", "Sitting", "Belly up")
-	switch(choice)
-		if("Resting")
-			update_icons()
-			return FALSE
-		if("Sitting")
-			sitting = 1
-		if("Belly up")
-			bellyup = 1
-	update_icons()
+	deep_rest = 0		//DarkSer request by Gardelin0
+	wag_rest = 0		//DarkSer request by Gardelin0
+	wag_sit = 0			//DarkSer request by Gardelin0
+
+	if(module.drakerest == TRUE)	//DarkSer request by Gardelin0
+		var/input = input(usr, "Select resting pose", "Pose") as null|anything in list("Resting", "Sitting", "Belly up", "Napping", "Resting Wag", "Sitting Wag")
+		switch(input)
+			if("Resting")
+				update_icons()
+				return FALSE
+			if("Sitting")
+				sitting = 1
+			if("Belly up")
+				bellyup = 1
+			if("Napping")
+				deep_rest = 1
+			if("Resting Wag")
+				wag_rest = 1
+			if("Sitting Wag")
+				wag_sit = 1
+		update_icons()
+	else
+		var/choice = alert(src, "Select resting pose", "Resting", "Sitting", "Belly up")
+		switch(choice)
+			if("Resting")
+				update_icons()
+				return FALSE
+			if("Sitting")
+				sitting = 1
+			if("Belly up")
+				bellyup = 1
+		update_icons()
 
 /mob/living/silicon/robot/verb/viewmanifest()
 	set category = "Robot Commands"
