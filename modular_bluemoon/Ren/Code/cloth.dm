@@ -595,7 +595,7 @@
 		"Black" = list("icon_state" = "mittle_black"),
 		"Blank" = list("icon_state" = "mittle_blank"),
 	)
-
+///Баллистическая маска
 /obj/item/clothing/mask/gas/inteq
 	name = "Ballistic mask"
 	desc = "Чёрная маска из кевлара. Защитит тебя от осколков и опознания."
@@ -612,6 +612,31 @@
 	if(current_skin == "With balaclava")
 		mutantrace_variation = STYLE_MUZZLE
 		flags_inv = HIDEMASK|HIDEEYES|HIDEFACE|HIDEHAIR|HIDESNOUT
+///Личный жетон
+/obj/item/clothing/accessory/indiv_number
+	desc = "Небольшой металлический жетон. На нём виднеется цифровой код, плата микрочипа с данными о владельце и немного свободного места для гравировки."
+	icon = 'modular_bluemoon/Ren/Icons/Obj/cloth.dmi'
+	mob_overlay_icon = 'modular_bluemoon/Ren/Icons/Mob/clothing.dmi'
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+	icon_state = "tag"
+	item_state = "tag"
+	obj_flags = UNIQUE_RENAME
+
+/obj/item/clothing/accessory/indiv_number/Initialize(mapload)
+	. = ..()
+	var/class = pickweight(list("<span class='danger'>ALEPH</span>" = 1, "<span class='hierophant_warning'>WAW</span>" = 2, "<span class='engradio'>HE</span>" = 6, "<span class='binarysay'>TETH</span>" = 12, "<span class='nicegreen'>ZAIN</span>" = 25))
+	name = "[rand(999)]-[class]/[rand(99)]"
+	if(class == "<span class='danger'>ALEPH</span>")
+		custom_price = 10000
+	if(class == "<span class='hierophant_warning'>WAW</span>")
+		custom_price = 5000
+	if(class == "<span class='engradio'>HE</span>")
+		custom_price = 3000
+	if(class == "<span class='binarysay'>TETH</span>")
+		custom_price = 1000
+	if(class == "<span class='nicegreen'>ZAIN</span>")
+		custom_price = 500
 
 ///Чулки чулки чулки блять
 /obj/item/clothing/underwear/socks/thigh/stockings/socks_garterbelt

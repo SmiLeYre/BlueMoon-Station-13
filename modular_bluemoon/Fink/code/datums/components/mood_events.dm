@@ -9,6 +9,8 @@
 /datum/mood_event/inteq_drop
 	mood_change = 0
 
+/* Всё это лишь вредит. Одежду интекью носят только интекью, а другие физически не могут этого сделать. Это сто процентный способ вычисления антага что не круто
+
 // шея
 /obj/item/bedsheet/inteq/equipped(mob/user, slot)
 	..()
@@ -255,3 +257,4 @@
 				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "anxiety_belt", /datum/mood_event/inteq_habar, src.name)
 	else
 		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "anxiety_belt", /datum/mood_event/inteq_drop)
+		*/

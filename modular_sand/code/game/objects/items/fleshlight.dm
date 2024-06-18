@@ -16,6 +16,9 @@
 	var/sleevecolor 	= "#ffcbd4" //pink
 	custom_price 		= 8
 	var/mutable_appearance/sleeve
+	var/mutable_appearance/plushe
+	var/plush_icon 		= NONE
+	var/plush_iconstate = NONE
 	var/inuse 			= 0
 
 /obj/item/fleshlight/examine(mob/user)
@@ -24,7 +27,7 @@
 
 /obj/item/fleshlight/update_appearance(updates)
 	. = ..()
-	cut_overlays()
+	cut_overlay(sleeve)
 	sleeve = mutable_appearance(icon, style) // Inherits icon for if an admin wants to var edit it, thank me later.
 	sleeve.color = sleevecolor
 	add_overlay(sleeve)
@@ -53,6 +56,8 @@
 	var/possessive_verb = user.ru_ego()
 	var/message = ""
 	var/lust_amt = 0
+	if(plush_icon != NONE)
+		playsound(user, 'sound/items/squeaktoy.ogg', 30, 1)
 	if(ishuman(M) && (M?.client?.prefs?.toggles & VERB_CONSENT))
 		switch(user.zone_selected)
 			if(BODY_ZONE_PRECISE_GROIN)
@@ -74,6 +79,27 @@
 	else if(user.a_intent == INTENT_HARM)
 		return ..()
 
+/obj/item/fleshlight/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/toy/plush) || istype(I, /obj/item/storage/daki))
+		lefthand_file = I.lefthand_file
+		righthand_file = I.righthand_file
+		item_state = I.item_state
+		plush_icon = I.icon
+		plush_iconstate = I.icon_state
+		qdel(I)
+		to_chat(user, "<span class='notice'>Ты натягиваешь [I] поверх 'фонарика'.</span>")
+		updateplushe()
+	else
+		. = ..()
+
+/obj/item/fleshlight/proc/updateplushe()
+	cut_overlay(plushe)
+	plushe = mutable_appearance(plush_icon, plush_iconstate)
+	plushe.pixel_y = 6
+	plushe.pixel_x = -3
+	plushe.layer = 33
+	add_overlay(plushe)
+
 /**
  * # Hyperstation 13 portal fleshlight
  * kinky!
@@ -92,7 +118,10 @@
 	custom_price 		= 20
 	var/mutable_appearance/sleeve
 	var/mutable_appearance/organ
+	var/mutable_appearance/plushe
 	var/obj/item/clothing/underwear/briefs/panties/portalpanties/portalunderwear
+	var/plush_icon 		= NONE
+	var/plush_iconstate = NONE
 	var/targetting      = CUM_TARGET_PENIS
 	var/useable 		= FALSE
 	var/list/available_panties = list()
@@ -138,6 +167,7 @@
 /obj/item/portallight/update_appearance(updates)
 	. = ..()
 	updatesleeve()
+	updateplushe()
 
 /obj/item/portallight/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
 	if(portalunderwear == null)
@@ -151,6 +181,8 @@
 
 	// This list is structured as [M's longname, M's shortname, wearer's longname, wearer's shortname]
 	var/penis_names = list()
+	if(plush_icon != NONE)
+		playsound(user, 'sound/items/squeaktoy.ogg', 30, 1)
 	for(var/mob/living/carbon/human/person in list(M, portal_target))
 		if(person.has_penis())
 			var/obj/item/organ/genital/penis/person_penis = person.getorganslot(ORGAN_SLOT_PENIS)
@@ -518,7 +550,8 @@
 
 /obj/item/portallight/proc/updatesleeve()
 	//get their looks and vagina colour!
-	cut_overlays()//remove current overlays
+	cut_overlay(sleeve)//remove current overlays
+	cut_overlay(organ)
 
 	var/mob/living/carbon/human/H = null
 	if(portalunderwear && ishuman(portalunderwear.loc))
@@ -600,6 +633,29 @@
 		add_overlay(organ)
 	else
 		useable = FALSE
+
+/obj/item/portallight/attackby(obj/item/I, mob/user)  //перезарядка работает как у резака. Можно изменять, сколько требуется плазмы для полного заряда
+	if(istype(I, /obj/item/toy/plush) || istype(I, /obj/item/storage/daki))
+		lefthand_file = I.lefthand_file
+		righthand_file = I.righthand_file
+		item_state = I.item_state
+		plush_icon = I.icon
+		plush_iconstate = I.icon_state
+		qdel(I)
+		to_chat(user, "<span class='notice'>Ты натягиваешь [I] поверх портального фонарика.</span>")
+		updateplushe()
+	else
+		. = ..()
+
+/obj/item/portallight/proc/updateplushe()
+	cut_overlay(plushe)
+	plushe = mutable_appearance(plush_icon, plush_iconstate)
+	plushe.pixel_y = 6
+	plushe.pixel_x = -3
+	plushe.layer = 33
+	add_overlay(plushe)
+
+
 
 /obj/item/portallight/Destroy()
 	if(available_panties.len)
@@ -686,6 +742,7 @@
 			if(P.portalunderwear == src || !P.available_panties.len)
 				P.portalunderwear = null
 				P.updatesleeve()
+				P.updateplushe()
 				P.icon_state = "unpaired"
 			to_chat(user, "<span class='notice'>[P] был успешно отвязан.</span>")
 			if(!portallight.len)

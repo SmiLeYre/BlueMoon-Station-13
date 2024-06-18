@@ -74,6 +74,8 @@ SUBSYSTEM_DEF(jukeboxes)
 	for(var/mob/M in GLOB.player_list)
 		if(!M.client)
 			continue
+		if(!M.client.prefs)
+			continue
 		if(!(M.client.prefs.toggles & SOUND_JUKEBOXES))
 			continue
 		//BLUEMOON ADD START
@@ -220,6 +222,8 @@ SUBSYSTEM_DEF(jukeboxes)
 
 		for(var/mob/M in GLOB.player_list)
 			if(!M.client)
+				continue
+			if(!M.client.prefs)
 				continue
 			if(!(M.client.prefs.toggles & SOUND_JUKEBOXES))
 				M.stop_sound_channel(jukeinfo[JUKE_CHANNEL])

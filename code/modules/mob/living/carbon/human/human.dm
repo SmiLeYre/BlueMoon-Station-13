@@ -98,12 +98,10 @@
 	if(istype(MB))
 		MB.RunOver(src)
 
-	/* BLUEMOON REMOVAL START - убираем давежку через перемещение
 	//Hyper Change - Step on people
 	var/mob/living/carbon/human/H = AM
 	if(istype(H) && lying && H.a_intent != INTENT_HELP)
 		H.handle_micro_bump_other(src)
-	/ BLUEMOON REMOVAL END */
 
 	spreadFire(AM)
 
