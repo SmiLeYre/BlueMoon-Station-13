@@ -31436,12 +31436,12 @@
 "cbZ" = (
 /obj/structure/table/reinforced,
 /obj/item/integrated_circuit_printer,
+/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/cell/high,
 /obj/machinery/computer/security/telescreen/circuitry{
 	dir = 1;
 	pixel_y = -30
 	},
-/obj/item/stock_parts/cell/high,
-/obj/item/stock_parts/cell/high,
 /turf/open/floor/plasteel/white,
 /area/science/circuit)
 "cca" = (
@@ -41167,6 +41167,10 @@
 	dir = 8;
 	pixel_x = 24
 	},
+/obj/machinery/camera{
+	c_tag = "sec office";
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "dhH" = (
@@ -46921,6 +46925,10 @@
 	pixel_x = 2;
 	pixel_y = -33
 	},
+/obj/machinery/camera{
+	c_tag = "Evidence room";
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/evidence_room)
 "gUf" = (
@@ -50506,6 +50514,9 @@
 /obj/structure/table/reinforced,
 /obj/item/multitool,
 /obj/item/screwdriver,
+/obj/machinery/computer/security/telescreen/circuitry{
+	pixel_y = 31
+	},
 /turf/open/floor/plasteel/white,
 /area/science/circuit)
 "jzk" = (
@@ -51009,10 +51020,6 @@
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 8
-	},
-/obj/machinery/camera{
-	c_tag = "Brig Equipment Room";
-	dir = 4
 	},
 /obj/vehicle/ridden/secway,
 /obj/item/key/security,
@@ -58049,7 +58056,6 @@
 	pixel_x = -27
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/computer/security/telescreen/circuitry,
 /turf/closed/wall,
 /area/science/circuit)
 "owT" = (
@@ -58543,6 +58549,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
 	},
+/obj/machinery/camera{
+	c_tag = "Brig Equipment Room";
+	dir = 4
+	},
 /turf/open/floor/plasteel/dark,
 /area/security/office)
 "oMb" = (
@@ -58690,6 +58700,10 @@
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 8
+	},
+/obj/machinery/camera{
+	c_tag = "interrogation room 1";
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/private_investigators_office)
@@ -71245,6 +71259,10 @@
 /obj/machinery/firealarm{
 	dir = 8;
 	pixel_x = 24
+	},
+/obj/machinery/camera{
+	c_tag = "nterrogation room 2";
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/private_investigators_office)
