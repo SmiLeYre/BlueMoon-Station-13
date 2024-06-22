@@ -2,7 +2,7 @@
 /datum/language/voltaic
 	name = "Voltaic"
 	desc = "A sparky language made by manipulating electrical discharge."
-	key = "v"
+	key = "x" // BLUEMOON CHANGES - WAS "v" - уже используется нашим воксовским
 	space_chance = 20
 	syllables = list(
 		"bzzt", "skrrt", "zzp", "mmm", "hzz", "tk", "shz", "k", "z",

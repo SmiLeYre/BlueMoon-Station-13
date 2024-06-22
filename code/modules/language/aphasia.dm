@@ -6,7 +6,7 @@
 	whisper_verb = "mutters"
 	exclaim_verb = "screams incoherently"
 	flags = LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD
-	key = "i"
+//	key = "i" // BLUEMOON REMOVAL - освобождаем место для других языков (для LANGUAGE_ACRATARIAN)
 	syllables = list("m","n","gh","h","l","s","r","a","e","i","o","u")
 	space_chance = 20
 	default_priority = 10

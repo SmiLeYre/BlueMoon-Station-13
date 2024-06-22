@@ -62,7 +62,7 @@
 	ask_verb = "queries"
 	exclaim_verb = "declares"
 	whisper_verb = "hushes"
-	key = "v"
+	key = "u" // BLUEMOON CHANES - WAS "v" - "v" уже занято для воксовского
 	space_chance = 30
 	// flags = TONGUELESS_SPEECH bluemoon change
 	syllables = list(
@@ -104,7 +104,7 @@
 	speech_verb = "growls"
 	ask_verb = "growls"
 	exclaim_verb = "roars"
-	key = "x"
+//	key = "x" // BLUEMOON REMOVAL - освобождаем место для других языков (для voltaic)
 	// flags = TONGUELESS_SPEECH bluemoon change
 	space_chance = 50
 	syllables = list(
