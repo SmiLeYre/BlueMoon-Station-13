@@ -197,7 +197,6 @@
 	cost = 8  //BLUEMOON CHANGES
 	requirements = list(101,40,30,20,10,10,10,10,10,10)
 	repeatable = TRUE
-
 	/// Whether or not this instance of sleeper agent should be randomly acceptable.
 	/// If TRUE, then this has a threat level% chance to succeed.
 	var/has_failure_chance = TRUE
