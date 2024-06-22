@@ -8,7 +8,7 @@
 	exclaim_verb = "declares"
 	whisper_verb = "hushes"
 	key = "д"
-	space_chance = 30
+	space_chance = 65
 	syllables = list( // буквально латинские корни
 		"ann", "acu", "audi", "bene", "bi", "bibl", "cent", "circum", "civ",
 		"clar", "cred", "dict", "ex", "fract", "inter", "jur", "lax", "liber",

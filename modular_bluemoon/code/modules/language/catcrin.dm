@@ -7,14 +7,14 @@
 	ask_verb = "snarls"
 	exclaim_verb = "growls"
 	key = "к"
-	space_chance = 45
+	space_chance = 65
 	syllables = list(
-	"Mr", "Mrps", "Mrrm", "Rrrs", "Mreow", "Mrreow", "Hiss", "Mgrr", "Mrrgrr", "Occder", "'re", "tön",
-	"'net", "Shprr", "'räha", "Sarv", "'rrare", "Lum", "'met", "Wa", "'rrfe", "'rieg", "'er", "'rum",
-	"Xs", "'somis", "'ieda", "rriniep", "Mrühd", "'ier", "Catr", "'reïch", "Lar", "'ren", "Of", "'hïzierr",
-	"Ei", "'na'ss", "Ma", "'ache", "'en", "Air", "'rbein", "'ieten", "Dier", "'r", "Mrdi", "'ich", "Nigh",
-	"'ht", "Zu", "'u", "Bh", "'eï", ", Nad", "'nk", "Hür", "Hie", "'ntier", "Nu", "'ter", "'ion", "Ki", "'rrs",
-	"Pi", "'ierran", "Miët", "'tarr"
+	"mr", "mrps", "mrrm", "rrrs", "mreow", "mrreow", "hiss", "mgrr", "mrrgrr", "oc'de", "rre", "t'ön",
+	"net", "shprr", "rä'ha", "sarv", "rrare", "lum", "met", "wa", "rr'fe", "rieg", "er", "rum",
+	"xs", "somis", "ieda", "rriniep", "mrühd", "ier", "catr", "reïch", "lar", "ren", "of", "hïzierr",
+	"ei", "nass", "ma", "ache", "en", "air", "rbein", "iet'en", "die'r", "r", "mrdi", "ich", "ni'gh",
+	"ht", "zu", "u'", "bh", "eï", ", nad", "nk", "hür", "hie", "ntier", "nu", "ter", "ion", "ki", "rrs",
+	"pi", "ierran", "miët", "tarr"
 	)
 	default_priority = 90
 	restricted = FALSE
