@@ -15,7 +15,11 @@
 		"lumin", "magn", "mal", "migr", "multi", "neg", "non", "nov", "ov",
 		"pre", "prim", "proxim", "ques", "re", "retro", "san", "sci", "scrib",
 		"semi", "sens", "soci", "sol", "sub", "surg", "temp", "tes", "trans",
-		"vac", "vag", "ver", "vid", "uni"
+		"vac", "vag", "ver", "vid", "uni", "entia"
+	)
+	syllables_endings_chance = 80
+	syllables_endings = list(
+		"us", "um", "u", "uum", "ibus", "ua", "es", "a", "is", "em", "e", "orum", "erum", "i", "arum", "ae"
 	)
 	default_priority = 92
 	restricted = FALSE

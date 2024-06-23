@@ -9,12 +9,23 @@
 	key = "к"
 	space_chance = 65
 	syllables = list(
-	"mr", "mrps", "mrrm", "rrrs", "mreow", "mrreow", "hiss", "mgrr", "mrrgrr", "oc'de", "rre", "t'ön",
-	"net", "shprr", "rä'ha", "sarv", "rrare", "lum", "met", "wa", "rr'fe", "rieg", "er", "rum",
-	"xs", "somis", "ieda", "rriniep", "mrühd", "ier", "catr", "reïch", "lar", "ren", "of", "hïzierr",
-	"ei", "nass", "ma", "ache", "en", "air", "rbein", "iet'en", "die'r", "r", "mrdi", "ich", "ni'gh",
-	"ht", "zu", "u'", "bh", "eï", ", nad", "nk", "hür", "hie", "ntier", "nu", "ter", "ion", "ki", "rrs",
-	"pi", "ierran", "miët", "tarr"
+	"äurr", "öii", "ëirr",
+	"mrps", "mreow", "hiss", "mgrr", "ocde", "tön",
+	"net", "shprr", "räha", "sarv", "lum", "met", "rum",
+	"somis", "ieda","mrühd", "catr", "reïch", "lar", "ren", "of",
+	"ache", "air", "ieten", "dier", "mrdi", "ich", "nigh",
+	"ntier", "ter", "ion", "tarr"
+	)
+	apostrophe_chance = 55
+	apostrophe_list = list(
+	"ïch","düir","wïrr","nad", "ki", "pi"
+	)
+	apostrophe_list_endings = list(
+	"grr","ië","ür", "u", "hür", "hie","gr", "hi"
+	)
+	syllables_endings_chance = 80
+	syllables_endings = list(
+	"wiss","hïess","rrïa","ht", "zu", "bh","nk","wi"
 	)
 	default_priority = 90
 	restricted = FALSE
