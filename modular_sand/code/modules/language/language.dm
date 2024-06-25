@@ -62,7 +62,7 @@
 	ask_verb = "queries"
 	exclaim_verb = "declares"
 	whisper_verb = "hushes"
-	key = "u" // BLUEMOON CHANES - WAS "v" - "v" уже занято для воксовского
+	key = "д" // BLUEMOON CHANES - WAS "v" - "v" уже занято для воксовского
 	space_chance = 30
 	// flags = TONGUELESS_SPEECH bluemoon change
 	syllables = list(
@@ -100,11 +100,11 @@
 
 /datum/language/modular_sand/shadowtongue
 	name = "Shadowtongue"
-	desc = "What a grand and intoxicating innocence."
+	desc = "What a grand and intoxicating innocence. (Используйте русскую раскладку для префикса)"
 	speech_verb = "growls"
 	ask_verb = "growls"
 	exclaim_verb = "roars"
-//	key = "x" // BLUEMOON REMOVAL - освобождаем место для других языков (для voltaic)
+	key = "x"
 	// flags = TONGUELESS_SPEECH bluemoon change
 	space_chance = 50
 	syllables = list(

@@ -4,7 +4,7 @@
 	speech_verb = "mumbles"
 	ask_verb = "grills"
 	exclaim_verb = "hollers"
-//	key = "u" // BLUEMOON REMOVAL - освобожаем место для других языков (для дунмерского)
+	key = "u"
 	space_chance = 85
 	default_priority = 90
 	syllables = list("cowabunga", "rad", "radical", "dudes", "bogus", "weeed", "every",
