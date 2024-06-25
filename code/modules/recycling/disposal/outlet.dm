@@ -36,12 +36,15 @@
 	QDEL_NULL(stored)
 	return ..()
 
+//BLUEMOON ADD START
+//При смещении мусорного выхода разъединяет связь с трубой под ним
 /obj/structure/disposaloutlet/Move()
 	if(trunk)
 		trunk.linked = null
 		trunk = null
 	QDEL_NULL(stored)
 	return ..()
+//BLUEMOON ADD END
 
 // expel the contents of the holder object, then delete it
 // called when the holder exits the outlet
