@@ -62,6 +62,13 @@
 		trunk.linked = null
 	return ..()
 
+/obj/machinery/disposal/Move()
+	eject()
+	if(trunk)
+		trunk.linked = null
+		trunk = null
+	return ..()
+
 /obj/machinery/disposal/singularity_pull(S, current_size)
 	..()
 	if(current_size >= STAGE_FIVE)

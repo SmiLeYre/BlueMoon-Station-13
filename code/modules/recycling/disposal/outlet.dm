@@ -36,6 +36,13 @@
 	QDEL_NULL(stored)
 	return ..()
 
+/obj/structure/disposaloutlet/Move()
+	if(trunk)
+		trunk.linked = null
+		trunk = null
+	QDEL_NULL(stored)
+	return ..()
+
 // expel the contents of the holder object, then delete it
 // called when the holder exits the outlet
 /obj/structure/disposaloutlet/proc/expel(obj/structure/disposalholder/H)
