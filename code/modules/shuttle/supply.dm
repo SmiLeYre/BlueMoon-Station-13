@@ -29,8 +29,7 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		/obj/machinery/launchpad,
 		/obj/machinery/disposal,
 		/obj/structure/disposalpipe,
-		//BLUEMOON ADD Добавлен запрет на отправку мусорного выхода наравне с другими мусорными трубами и входами
-		/obj/structure/disposaloutlet,
+		/obj/structure/disposaloutlet, //BLUEMOON ADD Добавлен запрет на отправку мусорного выхода наравне с другими мусорными трубами и входами
 		/obj/item/mail,
 		/obj/item/hilbertshotel,
 		/obj/machinery/camera,
