@@ -413,12 +413,22 @@ SUBSYSTEM_DEF(vote)
 				if(. == "Restart Round")
 					restart = 1
 			if("map")
+				// BLUEMOON ADD START - перезагрузка сервера с ротацией карты в случае краша прошлого раунда
+				if(. == "Не менять карту") // Вариант доступен только если воут выскочил в результате краша
+					message_admins("Смена карты была отменена игроками.")
+					log_admin("Смена карты была отменена игроками.")
+					if(SSticker.mapvote_restarter_in_progress)
+						to_chat(world, "<span class='boldannounce'>Смена карты была отменена игроками.</span>")
+						SSticker.mapvote_restarter_in_progress = FALSE
+						SSpersistence.RecordGracefulEnding()
+						SSticker.start_immediately = FALSE
+						SSticker.SetTimeLeft(2400)
+					return .
 				var/datum/map_config/VM = config.maplist[.]
 				message_admins("The map has been voted for and will change to: [VM.map_name]")
 				log_admin("The map has been voted for and will change to: [VM.map_name]")
 				if(SSmapping.changemap(config.maplist[.]))
 					to_chat(world, "<span class='boldannounce'>The map vote has chosen [VM.map_name] for next round!</span>")
-				// BLUEMOON ADD START - перезагрузка сервера с ротацией карты в случае краша прошлого раунда
 				if(SSticker.mapvote_restarter_in_progress)
 					SSticker.Reboot("Map rotation was requested due to ungraceful ending of the last round.", null, 10)
 				// BLUEMOON ADD END
@@ -428,6 +438,17 @@ SUBSYSTEM_DEF(vote)
 					var/obj/machinery/computer/communications/C = locate() in GLOB.machines
 					if(C)
 						C.post_status("shuttle") // austation end
+	// BLUEMOON ADD START - воут на карту провалился из-за отсутствия голосов
+	else if (mode == "map")
+		message_admins("Голосование за карту провалилось из-за отсутствия голосов.")
+		log_admin("Голосование за карту провалилось из-за отсутствия голосов.")
+		if(SSticker.mapvote_restarter_in_progress)
+			to_chat(world, "<span class='boldannounce'>Перезагрузка отменена в связи с отсутствием голосов. Очередное поражение демократии...</span>")
+			SSticker.mapvote_restarter_in_progress = FALSE
+			SSpersistence.RecordGracefulEnding()
+			SSticker.start_immediately = FALSE
+			SSticker.SetTimeLeft(2400)
+	// BLUEMOON ADD END
 	if(restart)
 		var/active_admins = 0
 		for(var/client/C in GLOB.admins)
@@ -518,6 +539,8 @@ SUBSYSTEM_DEF(vote)
 			if("map")
 				var/players = GLOB.clients.len
 				var/list/lastmaps = SSpersistence.saved_maps?.len ? list("[SSmapping.config.map_name]") | SSpersistence.saved_maps : list("[SSmapping.config.map_name]")
+				if(SSticker.mapvote_restarter_in_progress)
+					choices |= "Не менять карту"
 				for(var/M in config.maplist) //This is a typeless loop due to the finnicky nature of keyed lists in this kind of context
 					var/datum/map_config/targetmap = config.maplist[M]
 					if(!istype(targetmap))
@@ -779,7 +802,7 @@ SUBSYSTEM_DEF(vote)
 					SSticker.mapvote_restarter_in_progress = FALSE
 					SSpersistence.RecordGracefulEnding()
 					SSticker.start_immediately = FALSE
-					SSticker.SetTimeLeft(6000)
+					SSticker.SetTimeLeft(2400)
 					to_chat(world, span_boldwarning("Автоматическая ротация карты была отменена администрацией"))
 				reset()
 		if("toggle_restart")

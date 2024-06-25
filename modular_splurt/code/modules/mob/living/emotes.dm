@@ -1508,6 +1508,7 @@
 	emote_cooldown = 0.95 SECONDS
 	emote_pitch_variance = FALSE
 
+// BLUEMOON CHANGE START divide mrrp by 2 emotes
 /datum/emote/living/audio/mrrp
 	key = "mrrp"
 	key_third_person = "mrrps"
@@ -1516,9 +1517,14 @@
 	emote_cooldown = 0.25 // mrrp mrrp meow
 	emote_pitch_variance = FALSE
 
-/datum/emote/living/audio/mrrp/run_emote(mob/user, params)
-	emote_sound = pick('modular_splurt/sound/voice/catpeople/cat_mrrp1.ogg', 'modular_splurt/sound/voice/catpeople/cat_mrrp2.ogg')
-	. = ..()
+/datum/emote/living/audio/mrrp2
+	key = "mrrp2"
+	key_third_person = "mrrps"
+	message = "trills like a cat!"
+	emote_sound = 'modular_splurt/sound/voice/catpeople/cat_mrrp2.ogg'
+	emote_cooldown = 0.25 // mrrp mrrp meow
+	emote_pitch_variance = FALSE
+//BLUEMOON CHANGE END mrrp mrrp meow
 
 /datum/emote/living/audio/gay
 	key = "gay"
