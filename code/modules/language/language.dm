@@ -31,11 +31,16 @@
 	var/icon_state = "popcorn"
 
 	// BLUEMOON ADD START - наши добавления к языкам. Старайтесь держать здесь для упрощения отслеживания переменных
-	var/list/apostrophe_list = list("a") // после этих слогов, начинается апостроф. Вставляется в начале предложения
-	var/list/apostrophe_list_endings = list("a") // после этих слогов, начинается апостроф. Вставляется в конце предложения
+	var/complex_language = FALSE // если положительно, то у языка появляются приставки, окончания, апострофы (их нужно ещё записать)
+
 	var/apostrophe_chance = 0 // шанс на появление апостровоф
-	var/list/syllables_endings = list("a") // окончания. Сразу дают пробел после себя. Не идут без корней
-	var/syllables_endings_chance = 0 // шанс на появление окончания
+	var/list/apostrophe_prefix = list("a") // ПОСЛЕ этих слогов идёт апостроф. Вставляется в начале предложения
+	var/list/apostrophe_ending = list("a") // ПЕРЕД этими слогами идёт апостроф. Вставляется в конце предложения. Вставляют пробел после себя
+
+	var/syllables_additions_chance = 0 // шанс на появление окончания
+	var/list/syllables_prefix = list("a") // приставка.
+	var/list/syllables_endings = list("a") // окончания. Вставляют пробел после себя
+
 	// BLUEMOON ADD END
 
 /datum/language/proc/display_icon(atom/movable/hearer)
@@ -96,37 +101,53 @@
 	var/scrambled_text = ""
 	var/capitalize = TRUE
 
-	while(length_char(scrambled_text) < input_size)
-		var/next = pick(syllables)
-		if(capitalize)
-			next = capitalize(next)
-			capitalize = FALSE
-		scrambled_text += next
-		var/chance = rand(100)
-		if(chance <= sentence_chance)
-			scrambled_text += ". "
-			capitalize = TRUE
-		// BLUEMOON ADD START
-			if(prob(apostrophe_chance)) // Большая буква для апострова в новом предложении
-				var/first_apostrophe = capitalize(pick(apostrophe_list))
+	// BLUEMOON ADD START
+	if(complex_language) // более 90% языков базовые и не обладают такими усложнениями, чтобы проводить с каждым слогом новые проверки
+		while(length_char(scrambled_text) < input_size) // копирование базового, но с дополнительными prob
+			var/next = pick(syllables)
+			if(capitalize)
+				next = capitalize(next)
 				capitalize = FALSE
-				scrambled_text += first_apostrophe
+			scrambled_text += next
+			var/chance = rand(100)
+			if(chance <= sentence_chance)
+				scrambled_text += ". "
+				capitalize = TRUE
+				if(prob(apostrophe_chance)) // Большая буква для апострова в новом предложении
+					scrambled_text += capitalize(pick(apostrophe_prefix))
+					scrambled_text += "'"
+					capitalize = FALSE
+				else if(prob(syllables_additions_chance)) // Большая буква для приставки в новом предложении
+					scrambled_text += capitalize(pick(syllables_prefix))
+					capitalize = FALSE
+			else if(chance > sentence_chance && chance <= space_chance)
+				scrambled_text += " "
+				if(prob(apostrophe_chance)) /// обычный апостров в начале слова
+					scrambled_text += pick(apostrophe_prefix)
+					scrambled_text += "'"
+				else if(prob(syllables_additions_chance)) /// приставка
+					scrambled_text += pick(syllables_prefix)
+			else if(prob(apostrophe_chance)) // апостров в конце слова
 				scrambled_text += "'"
-		// BLUEMOON ADD END
-		else if(chance > sentence_chance && chance <= space_chance)
-			scrambled_text += " "
-		//BLUEMOON ADD START
-			if(prob(apostrophe_chance)) /// обычный апостров в начале слова
-				scrambled_text += pick(apostrophe_list)
-				scrambled_text += "'"
-		else if(prob(apostrophe_chance)) // апостров в конце слова
-			scrambled_text += "'"
-			scrambled_text += pick(apostrophe_list_endings)
-			scrambled_text += " "
-		else if(prob(syllables_endings_chance)) // окончание
-			scrambled_text += pick(syllables_endings)
-			scrambled_text += " "
-		// BLUEMOON ADD END
+				scrambled_text += pick(apostrophe_ending)
+				scrambled_text += " "
+			else if(prob(syllables_additions_chance)) // окончание
+				scrambled_text += pick(syllables_endings)
+				scrambled_text += " "
+	else
+	// BLUEMOON ADD END
+		while(length_char(scrambled_text) < input_size)
+			var/next = pick(syllables)
+			if(capitalize)
+				next = capitalize(next)
+				capitalize = FALSE
+			scrambled_text += next
+			var/chance = rand(100)
+			if(chance <= sentence_chance)
+				scrambled_text += ". "
+				capitalize = TRUE
+			else if(chance > sentence_chance && chance <= space_chance)
+				scrambled_text += " "
 
 	scrambled_text = trim(scrambled_text)
 	var/ending = copytext_char(scrambled_text, -1)

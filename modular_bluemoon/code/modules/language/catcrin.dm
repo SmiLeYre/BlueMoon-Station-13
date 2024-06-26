@@ -8,6 +8,12 @@
 	exclaim_verb = "growls"
 	key = "к"
 	space_chance = 65
+	default_priority = 90
+	restricted = FALSE
+
+
+	complex_language = TRUE
+
 	syllables = list(
 	"äurr", "öii", "ëirr",
 	"mrps", "mreow", "hiss", "mgrr", "ocde", "tön",
@@ -17,15 +23,14 @@
 	"ntier", "ter", "ion", "tarr"
 	)
 	apostrophe_chance = 55
-	apostrophe_list = list(
+	apostrophe_prefix = list(
 	"ïch","düir","wïrr","nad", "ki", "pi"
 	)
-	apostrophe_list_endings = list(
+	apostrophe_ending = list(
 	"grr","ië","ür", "u", "hür", "hie","gr", "hi"
 	)
-	syllables_endings_chance = 80
+	syllables_additions_chance = 80
 	syllables_endings = list(
 	"wiss","hïess","rrïa","ht", "zu", "bh","nk","wi"
 	)
-	default_priority = 90
-	restricted = FALSE
+
