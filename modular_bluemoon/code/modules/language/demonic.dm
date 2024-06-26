@@ -28,5 +28,5 @@
 	)
 	syllables_endings = list( // буквально латинские окончания
 		"us", "um", "u", "uum", "libus", "ua", "es", "a", "is", "em", "e",
-		"orum", "erum", "li", "arum", "ae", "lius"
+		"orum", "erum", "li", "arum", "ae", "lius", "pio"
 	)
