@@ -620,3 +620,19 @@
 /obj/item/storage/box/inteq_kit/conversion_kit/PopulateContents()
 	new /obj/item/headsetupgrader(src)
 	new /obj/item/encryptionkey/inteq(src)
+
+//Bluemoon ADD Добавил бандл с оригами + книгу + бумажки туда же.
+
+/obj/item/storage/box/inteq_kit/origami_bundle
+	name = "Origami Bundle"
+	desc = "Box with book, that will teach you how to use origami to kill your enemies"
+
+/obj/item/storage/box/inteq_kit/origami_bundle/PopulateContents()
+	new /obj/item/book/granter/action/origami(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+
+//Bluemoon ADD end
