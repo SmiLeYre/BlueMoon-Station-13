@@ -15,7 +15,8 @@
 	restricted_roles = list("AI", "Cyborg", "Positronic Brain") //BLUEMOON CHANGES
 	required_candidates = 1
 	weight = 999 //BLUEMOON CHANGES - автотрейтор практически гарантирован в каждый динамик. Стоит мало очков, даёт движ и бесконечных антагонистов
-	scaling_cost = 1 // Avoid raising traitor threat above 10, as it is the default low cost ruleset.
+	cost = 1 // Avoid raising traitor threat above 10, as it is the default low cost ruleset.
+	flags = LONE_RULESET // BLUEMOON ADD
 	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
 	requirements = list(101,10,10,10,10,10,10,10,10,10) //BLUEMOON CHANGES
 	antag_cap = list("denominator" = 8, "offset" = 1) //BLUEMOON CHANGES - реди жмёт малое количество людей
