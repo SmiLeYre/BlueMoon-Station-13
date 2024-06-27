@@ -15,7 +15,7 @@
 
 	// SKYRAT EDIT START - Better paper planes
 	/// How long does getting shot in the eyes knock you down for?
-	var/paralyze_duration = 4 SECONDS //BLUEMOON CHANGE Сменил стан на паралич.
+	var/paralyze_duration = 4 SECONDS //BLUEMOON CHANGE Сменил нокдаун на паралич.
 	/// How much eye damage does it deal at minimum on eye impact?
 	var/impact_eye_damage_lower = 6
 	/// How much eye damage does it deal at maximum on eye impact?
