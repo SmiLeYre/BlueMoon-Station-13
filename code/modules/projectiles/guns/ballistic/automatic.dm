@@ -107,14 +107,11 @@
 	w_class = WEIGHT_CLASS_BULKY
 	burst_size = 2
 	burst_shot_delay = 1
+	fire_delay = 3 //BLUEMOON ADD Снижаем скорострельность втшки в автоматическом режиме
 	can_bayonet = TRUE
 	knife_x_offset = 25
 	knife_y_offset = 12
 	automatic_burst_overlay = FALSE
-
-/obj/item/gun/ballistic/automatic/wt550/Initialize(mapload)
-	..()
-	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
 
 /obj/item/gun/ballistic/automatic/wt550/afterattack()
 	. = ..()
@@ -452,16 +449,12 @@
 	automatic_burst_overlay = FALSE
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
-	fire_delay = 2
+	fire_delay = 3 // BLUEMOON CHANGE Снижаем скорострельность лазгана в автоматическом режиме
 	can_suppress = FALSE
 	burst_size = 1
 	actions_types = list()
 	fire_sound = 'sound/weapons/lasgun.ogg'
 	casing_ejector = FALSE
-
-/obj/item/gun/ballistic/automatic/laser/lasgun/Initialize(mapload)
-	..()
-	AddComponent(/datum/component/automatic_fire, 0.3 SECONDS)
 
 /obj/item/gun/ballistic/automatic/laser/lasgun/update_icon_state()
 	icon_state = "boarding"

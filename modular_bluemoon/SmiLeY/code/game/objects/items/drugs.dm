@@ -454,7 +454,7 @@
 	icon_state = ""
 
 /obj/item/reagent_containers/pill/labebium
-	name = "Лабебиум"
+	name = "Весёлая Таблетка"
 	desc = "Выпей меня."
 	icon_state = "pill5"
 	list_reagents = list(/datum/reagent/drug/labebium = 10)

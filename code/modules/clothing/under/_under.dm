@@ -23,7 +23,7 @@
 	var/alt_covers_chest = FALSE // for adjusted/rolled-down jumpsuits, FALSE = exposes chest and arms, TRUE = exposes arms only
 	var/dummy_thick = FALSE // is able to hold accessories on its item
 	//SANDSTORM EDIT - Removed the old attached accessory system. We use a list of accessories instead.
-	var/max_accessories = 3
+	var/max_accessories = 7 // BLUEMOON EDIT - расширено возможное количество аксессуаров с 3 до 7
 	var/list/obj/item/clothing/accessory/attached_accessories = list()
 	var/list/mutable_appearance/accessory_overlays = list()
 	//SANDSTORM EDIT END

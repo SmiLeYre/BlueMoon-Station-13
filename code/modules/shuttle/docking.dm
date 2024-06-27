@@ -3,7 +3,7 @@
 	// Crashing this ship with NO SURVIVORS
 
 	if(!new_dock)
-		message_admins("Порт стыковки для [src] отсутствует. Воспользуйтесь Shuttle Manipulator в группе Admin>Events.")
+		message_admins("Порт стыковки для [src] отсутствует. Воспользуйтесь Shuttle Manipulator в категории Admin>Events.")
 		return
 
 	if(new_dock.get_docked() == src)

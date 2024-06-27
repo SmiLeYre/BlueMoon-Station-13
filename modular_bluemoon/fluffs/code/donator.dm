@@ -679,3 +679,24 @@
 	path = /obj/item/clothing/neck/tie/dogtag
 	ckeywhitelist = list("oni3288")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/gewehr550_kit
+	name = "Gewehr-550 Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/gewehr550
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "adro244", "smol42")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/hwal2572_kit
+	name = "H-Wal-2572 Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/hwal2572
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "adro244", "smol42")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/karabiner_kit
+	name = "Karabiner-M13 Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/karabiner_kit
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "adro244", "smol42")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

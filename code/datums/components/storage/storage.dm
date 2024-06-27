@@ -70,6 +70,8 @@
 	var/limited_random_access_stack_position = 0					//If >0, can only access top <x> items
 	var/limited_random_access_stack_bottom_up = FALSE				//If TRUE, above becomes bottom <x> items
 
+	var/quick_gather_storages = FALSE // BLUEMOON ADD - позволяет быстро собирать предметы, также содержащие storage. Для почты.
+
 /datum/component/storage/Initialize(datum/component/storage/concrete/master)
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
@@ -190,7 +192,7 @@
 		quick_empty(M)
 
 /datum/component/storage/proc/preattack_intercept(datum/source, obj/O, mob/M, params)
-	if(!isitem(O) || !click_gather || SEND_SIGNAL(O, COMSIG_CONTAINS_STORAGE))
+	if(!isitem(O) || !click_gather || (SEND_SIGNAL(O, COMSIG_CONTAINS_STORAGE) && !quick_gather_storages))
 		return FALSE
 	. = COMPONENT_NO_ATTACK
 	if(check_locked(source, M, TRUE))

@@ -197,28 +197,13 @@ GLOBAL_VAR_INIT(weapon_permits_issued, 0)
 	special = TRUE
 	var/first_inited = FALSE // Карточку нужно использовать в руке, чтобы она записалась. Как со старыми пермитами
 
-/*
+
 /obj/item/clothing/accessory/permit/special/Initialize(mapload)
 	. = ..()
-	if(istype(loc, /obj/item/storage/backpack))
-		var/obj/item/storage/backpack/B = loc
-		if(ishuman(B.loc))
-			var/mob/living/carbon/human/wearer = B.loc
-			var/obj/item/card/id/wearer_card = wearer.get_id_card()
-			if(wearer_card && wearer_card.registered_name && wearer_card.assignment)
-				owner_name = wearer_card.registered_name
-				owner_assignment = wearer_card.assignment
-				first_inited = TRUE
-	if(current_uniform && istype(current_uniform, /obj/item/clothing/under))
-		var/obj/item/clothing/under/U = loc
-		if(ishuman(U.loc))
-			var/mob/living/carbon/human/wearer = U.loc
-			var/obj/item/card/id/wearer_card = wearer.get_id_card()
-			if(wearer_card && wearer_card.registered_name && wearer_card.assignment)
-				owner_name = wearer_card.registered_name
-				owner_assignment = wearer_card.assignment
-				first_inited = TRUE
-*/
+	if(ishuman(loc))
+		// Пермит инициализируется перед картой, нужно её подождать. Костыли люблю пиздец.
+		addtimer(CALLBACK(src, PROC_REF(bind_to_user), loc, TRUE), 5 SECONDS)
+
 
 /obj/item/clothing/accessory/permit/special/examine(mob/user)
 	. = ..()
@@ -229,24 +214,32 @@ GLOBAL_VAR_INIT(weapon_permits_issued, 0)
 	if(!can_redact_permit(user))
 		return
 	if(!first_inited)
-		if(ishuman(user))
-			var/mob/living/carbon/human/man_behind_the_permit = user
-			var/obj/item/card/id/man_card = man_behind_the_permit.get_id_card()
-			if(!man_card || !man_card.registered_name || !man_card.assignment)
-				balloon_alert(man_behind_the_permit, "Наденьте ID-карту в специальный слот, чтобы привязать данное разрешение.")
-				return
-			if(man_card.registered_name == man_behind_the_permit.real_name)
-				owner_name = man_card.registered_name
-				owner_assignment = man_card.assignment
-				first_inited = TRUE
-				playsound(src, 'sound/machines/chime.ogg', 20)
-				balloon_alert(man_behind_the_permit, "Привязка успешна.")
-				return
-		balloon_alert(user, "Привязка не удалась. Проверьте, чтобы ваша ID-карта была на нужном месте и имена совпадали.")
-		return
+		bind_to_user(user, FALSE)
 	else
 		. = ..()
 
+/obj/item/clothing/accessory/permit/special/proc/bind_to_user(mob/user, silent)
+	if(!ishuman(user))
+		if(!silent && ismob(user))
+			balloon_alert(user, "Пользователь не распознан. Обратитесь к станционному генетику для проверки своего генома.")
+		return
+	var/mob/living/carbon/human/man_behind_the_permit = user
+	var/obj/item/card/id/man_card = man_behind_the_permit.get_id_card()
+	if(!man_card || !man_card.registered_name || !man_card.assignment)
+		if(!silent)
+			balloon_alert(man_behind_the_permit, "Наденьте ID-карту в специальный слот, чтобы привязать данное разрешение.")
+		return
+	if(man_card.registered_name == man_behind_the_permit.dna?.real_name)
+		owner_name = man_card.registered_name
+		owner_assignment = man_card.assignment
+		first_inited = TRUE
+		if(!silent)
+			playsound(src, 'sound/machines/chime.ogg', 20)
+			balloon_alert(man_behind_the_permit, "Привязка успешна.")
+		return
+	else
+		balloon_alert(user, "Привязка не удалась. Проверьте, чтобы ваша ID-карта была на нужном месте и имена совпадали.")
+		return
 
 // Заранее созданные пермиты, выдающиеся разным ролям при спавне.
 // Было бы классно, если бы кто-то правил список оружия и примечания после правок КЗ и НРП, да?
@@ -309,7 +302,7 @@ GLOBAL_VAR_INIT(weapon_permits_issued, 0)
 	name = "Pact Representative's weapons permit"
 	desc = "Нет гаранта соблюдения процедур лучше, чем энергокарабин у виска."
 	permitted_weapons = "Стандартное вооружение командного состава, а также тактическую дубинку, роскошную трость и энергетический карабин"
-	notes = "Представитель Пакта имеет право пользоваться своей тандартной экипировкой и вооружением, в том числе энергокарабином, роскошной тростью и тактической дубинкой, а также применять всё это в рамках самозащиты."
+	notes = "Представитель Пакта имеет право пользоваться своей стандартной экипировкой и вооружением, в том числе энергокарабином, роскошной тростью и тактической дубинкой, а также применять всё это в рамках самозащиты."
 
 /obj/item/clothing/accessory/permit/special/lawyer
 	name = "Lawyer's weapons permit"
