@@ -15,9 +15,7 @@
 
 	// SKYRAT EDIT START - Better paper planes
 	/// How long does getting shot in the eyes knock you down for?
-	//BLUEMOON ADD смена стана на паралич
-	var/paralyze_duration = 4 SECONDS
-	//BlUEMOON ADD END
+	var/paralyze_duration = 4 SECONDS //BLUEMOON CHANGE
 	/// How much eye damage does it deal at minimum on eye impact?
 	var/impact_eye_damage_lower = 6
 	/// How much eye damage does it deal at maximum on eye impact?
@@ -129,9 +127,7 @@
 		visible_message(span_danger("\The [src] hits [H] in the eye[eyes ? "" : " socket"]!"))
 		H.adjust_blurriness(12 SECONDS)
 		eyes?.applyOrganDamage(rand(impact_eye_damage_lower, impact_eye_damage_higher))
-		//BLUEMOON ADD смена на паралич.
-		H.Paralyze(paralyze_duration)
-		//BLUEMOON ADD END
+		H.Paralyze(paralyze_duration) //BLUEMOON CHANGE
 		H.emote("realagony")
 
 	if(delete_on_impact)
