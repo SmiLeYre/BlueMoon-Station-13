@@ -39,8 +39,9 @@
 					visible_message(message = span_lewd("<B>[src]</B> [pick("постанывает", "стонет в удовольствии")]."))
 				if(M.is_muzzled())
 					audible_message(span_lewd("<B>[src]</B> [pick("имитирует приятный стон", "бесшумно постанывает")]."))
-			if((lastlusttime < (world.time + 60)) || IS_STAMCRIT(M))
-				M.cum()
+			if(IS_STAMCRIT(M))
+				if(lastlusttime < (world.time + 60))
+					M.cum()
 
 
 
