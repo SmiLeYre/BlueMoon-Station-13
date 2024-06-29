@@ -196,8 +196,12 @@
 /datum/quirk/bluemoon_devourer/on_spawn()
 	. = ..()
 	var/mob/living/H = quirk_holder
+	// Этот участок фиксит проблемы, когда надевается нормалайзер раундстартом (из лодаута) и перк пожирателя. Они наслаиваются и по итогу ломается скорость и размер
+	var/datum/component/size_normalized/comp = H.GetComponent(/datum/component/size_normalized)
+	if(comp)
+		qdel(comp)
+	// конец участка
 	update_size_modifiers(get_size(H), 1)
-
 
 /*
 ПЕРЕМЕННЫЕ ДЛЯ МОДИФИКАТОРОВ СКОРОСТИ
