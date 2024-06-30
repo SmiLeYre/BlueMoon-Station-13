@@ -17,13 +17,15 @@
 	impact_type = /obj/effect/projectile/impact/disabler
 	var/message = ""
 
-
 /obj/item/projectile/beam/erodisabler/on_hit(atom/target, blocked = FALSE)
 	. = ..()
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
 		var/wantsNoncon = FALSE
-		var/lastlusttime = M.lastlusttime
+		var/lastlusttimee = M.lastlusttime + 600
+		var/lastlusttimecooldown = world.time
+		var/gender = M.gender
+		var/loc = M.loc
 
 		if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref == "Yes")
 			wantsNoncon = TRUE
@@ -35,12 +37,18 @@
 			if(prob(50))
 				var/aroused_message = pick("Вам немного жарко.", "Вы испытываете сильное сексуальное влечение.", "Вы чувствуете себя в хорошем настроении.", "Вы готовы напрыгнуть на кого-то.")
 				to_chat(M, "<span class='userlove'>[aroused_message]</span>")
-				if(!M.is_muzzled())
-					visible_message(message = span_lewd("<B>[src]</B> [pick("постанывает", "стонет в удовольствии")]."))
-				if(M.is_muzzled())
-					audible_message(span_lewd("<B>[src]</B> [pick("имитирует приятный стон", "бесшумно постанывает")]."))
+				if(gender == MALE || (gender == PLURAL && ismasculine(M)))
+					playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/final_m1.ogg',
+					'modular_sand/sound/interactions/final_m2.ogg',
+					'modular_sand/sound/interactions/final_m3.ogg',
+					'modular_sand/sound/interactions/final_m4.ogg',
+					'modular_sand/sound/interactions/final_m5.ogg'), 90, 1, 0)
+				else if(gender != MALE || (gender == PLURAL && isfeminine(M)))
+					playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/final_f1.ogg',
+					'modular_sand/sound/interactions/final_f2.ogg',
+					'modular_sand/sound/interactions/final_f3.ogg'), 70, 1, 0)
 			if(IS_STAMCRIT(M))
-				if(lastlusttime < (world.time + 60))
+				if(lastlusttimee < lastlusttimecooldown)
 					M.cum()
 
 
