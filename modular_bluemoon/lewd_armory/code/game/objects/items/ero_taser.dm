@@ -6,5 +6,3 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/erodisabler)
 	ammo_x_offset = 2
 	// Not enough guns have altfire systems like this yet for this to be a universal framework.
-	var/last_altfire = 0
-	var/altfire_delay = CLICK_CD_RANGE
