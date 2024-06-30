@@ -1,14 +1,15 @@
 ///Плазме меч
 /obj/item/melee/transforming/plasmasword
-	name = "Plasma sword"
+	name = "Plasma Sword"
 	desc = "Клинок из чистой плазмы разогретой от двух до девяти тысяч градусов по желанию владельца. Силовой модуль выполненый в виде рукояти разогревает газ и поддерживает его форму сильнейшим магнитным полем. Кажется таких клинков не выпускали со времён открытия световых мечей."
 	icon_state = "psword_2k"
 	icon_state_on = "psword_2k_on"
 	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
 	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+	armour_penetration = 35
 	force_on = 35
-	damtype = "fire"
+	damtype = "brute"
 	throwforce_on = 20
 	force = 3
 	throwforce = 5
@@ -85,7 +86,7 @@
 	inhand_x_dimension = -2
 	inhand_y_dimension = -2
 	force = 3
-	damtype = "fire"
+	damtype = "brute"
 	throwforce = 5
 	throw_speed = 3
 	throw_range = 5
@@ -184,7 +185,7 @@
 
 /obj/item/plasmascythe/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=3, force_wielded=40, \
+	AddComponent(/datum/component/two_handed, force_unwielded=3, force_wielded=45, \
 					wieldsound='modular_bluemoon/Ren/Sound/2.1.ogg', unwieldsound='modular_bluemoon/Ren/Sound/2.1.ogg')
 
 /// Triggered on wield of two handed item

@@ -78,14 +78,10 @@
 /obj/item/chainsaw/doomslayer
 	name = "THE GREAT COMMUNICATOR"
 	desc = "<span class='warning'>VRRRRRRR!!!</span>"
-	armour_penetration = 100
-	block_chance = 100 //bluemoon add
-	force_on = 30
+	armour_penetration = 75
+	block_chance = 60 //bluemoon add
+	force_on = 45
 	var/laser_defl = 1 //bluemoon add
-
-/obj/item/chainsaw/doomslayer/check_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
-	block_return[BLOCK_RETURN_REFLECT_PROJECTILE_CHANCE] = 100
-	return ..()
 
 /obj/item/chainsaw/doomslayer/directional_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return, override_direction)
 	if((attack_type & ATTACK_TYPE_PROJECTILE) && !is_energy_reflectable_projectile(object))

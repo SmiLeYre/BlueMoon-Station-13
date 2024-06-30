@@ -50,7 +50,7 @@ GLOBAL_LIST_EMPTY(loadout_whitelist_ids)
 	var/subcategory = LOADOUT_SUBCATEGORY_NONE
 	var/slot
 	var/description
-	var/path //item-to-spawn path
+	var/atom/path //item-to-spawn path // BLUEMOON EDIT - превращено в атом чтобы адекватнее работать с иконками
 	var/cost = 1 //normally, each loadout costs a single point.
 	var/geargroupID //defines the ID that the gear inherits from the config
 	var/loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
@@ -70,13 +70,27 @@ GLOBAL_LIST_EMPTY(loadout_whitelist_ids)
 
 	var/restricted_desc
 
+	// BLUEMOON EDIT START - превью для вещей в лодауте
+	// Автоматически гененерируемая base64 иконка для превью в лодауте
+	var/base64icon
+	// Возможный оверрайд иконки
+	var/item_icon = null
+	// Возможный оверрайд стейта иконки
+	var/item_icon_state = null
+	// BLUEMOON EDIT END
+
 /datum/gear/New()
 	if(isnull(donoritem))
 		if(donator_group_id || ckeywhitelist)
 			donoritem = TRUE
+	// BLUEMOON EDIT START - превью для вещей в лодауте
 	if(!description && path)
-		var/obj/O = path
-		description = initial(O.desc)
+		description = initial(path.desc)
+	var/init_icon = item_icon ? item_icon : initial(path.icon)
+	var/init_icon_state = item_icon_state ? item_icon_state : initial(path.icon_state)
+	base64icon = icon2base64(icon(init_icon, init_icon_state, SOUTH, 1, FALSE))
+	// BLUEMOON EDIT END
+
 
 //a comprehensive donator check proc is intentionally not implemented due to the fact that we (((might))) have job-whitelists for donator items in the future and I like to stay on the safe side.
 

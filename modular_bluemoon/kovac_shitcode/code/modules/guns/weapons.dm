@@ -346,8 +346,6 @@
 	laser_defl = 0
 	block_parry_data = /datum/block_parry_data/inteq_sledgehammer
 
-
-
 ///InteQ Uplink additions
 
 /datum/uplink_item/inteq/inteq_sledgehammer
@@ -358,13 +356,12 @@
 	cost = 10
 	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
-/*
 /datum/uplink_item/dangerous/inteq_chainsaw
 	name = "High Powered Chainsaw"
 	desc = "A high powered chainsaw for cutting up ...you know...."
 	item = /obj/item/chainsaw/doomslayer/inteq_chainsaw
 	cost = 16
-	purchasable_from = ~(UPLINK_SYNDICATE) */
+	purchasable_from = ~(UPLINK_SYNDICATE)
 
 /// Clown Ops Uplink additions
 /datum/uplink_item/suits/hardsuit/elite_clown

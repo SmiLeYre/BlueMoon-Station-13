@@ -1372,6 +1372,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 									var/class_link = ""
 									var/list/loadout_item = has_loadout_gear(loadout_slot, "[gear.type]")
 									var/extra_loadout_data = ""
+									if(gear.base64icon)
+										extra_loadout_data += "<center><img src=data:image/jpeg;base64,[gear.base64icon]></center>"
 									if(loadout_item)
 										class_link = "style='white-space:normal;' class='linkOn' href='?_src_=prefs;preference=gear;toggle_gear_path=[html_encode(name)];toggle_gear=0'"
 										if(gear.loadout_flags & LOADOUT_CAN_COLOR_POLYCHROMIC)

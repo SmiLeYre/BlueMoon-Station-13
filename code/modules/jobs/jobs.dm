@@ -55,6 +55,7 @@ GLOBAL_LIST_INIT(civilian_positions, list(
 	"Chaplain",
 	"Clown",
 	"Mime",
+	"Bridge Officer", // BLUEMOON EDIT
 	"Prisoner",
 	"Assistant",
 	"Stowaway"))

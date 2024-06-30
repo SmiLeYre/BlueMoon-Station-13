@@ -63,6 +63,7 @@
 	path= /obj/item/clothing/head/maid/polychromic
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
 	loadout_initial_colors = list("#333333", "#FFFFFF")
+	item_icon_state = "maid" // BLUEMOON EDIT - багованная иконка
 
 /datum/gear/head/bunnyears
 	name = "Bunny Ears"
@@ -195,6 +196,7 @@
 	path = /obj/item/clothing/head/cowboyhat/polychromic
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
 	loadout_initial_colors = list("#5F5F5F", "#DDDDDD")
+	item_icon_state = "cowboyhat" // BLUEMOON EDIT - багованная иконка
 
 /datum/gear/head/wkepi
 	name = "white kepi"

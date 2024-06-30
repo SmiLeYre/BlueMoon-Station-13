@@ -28,7 +28,7 @@
 
 /obj/item/projectile/beam/laser/lasgun
 	damage = 12.5
-	armour_penetration = 25
+	armour_penetration = 10
 
 //overclocked laser, does a bit more damage but has much higher wound power (-0 vs -20)
 /obj/item/projectile/beam/laser/hellfire

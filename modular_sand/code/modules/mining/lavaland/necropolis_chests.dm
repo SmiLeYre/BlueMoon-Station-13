@@ -616,6 +616,7 @@
 	var/stored_resistance_flags = 0
 	var/stored_heat_protection = 0
 	var/stored_max_heat_protection_temperature = 0
+	max_stack = 1 // BLUEMOON EDIT - изменение аксессуаров
 
 /obj/item/clothing/accessory/fireresist/attach(obj/item/clothing/under/U, user)
 	. = ..()
@@ -645,6 +646,7 @@
 	var/datum/action/cooldown/lavawalk/lavawalk
 	var/effectduration = 10 SECONDS
 	var/timer
+	max_stack = 1 // BLUEMOON EDIT - изменение аксессуаров
 
 /obj/item/clothing/accessory/lavawalk/ComponentInitialize()
 	. = ..()

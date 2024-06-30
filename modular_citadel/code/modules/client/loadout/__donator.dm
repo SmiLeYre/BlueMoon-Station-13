@@ -427,6 +427,10 @@
 	path = /obj/item/clothing/head/paperhat
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
+	// BLUEMOON EDIT START - иконки лодаута
+	item_icon = 'icons/obj/clothing/hats.dmi'
+	item_icon_state = "paper"
+	// BLUEMOON EDIT END
 
 /datum/gear/donator/cloakce
 	name = "Polychromic CE Cloak"

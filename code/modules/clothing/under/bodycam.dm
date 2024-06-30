@@ -4,6 +4,7 @@
 	icon = 'modular_splurt/icons/obj/clothing/bodycam.dmi'
 	icon_state = "bodycamera"
 	var/obj/machinery/camera/builtInCamera = null
+	max_stack = 1 // BLUEMOON EDIT - изменение аксессуаров
 
 /obj/item/clothing/accessory/bodycamera/attach(obj/item/clothing/under/U, user)
 	. = ..()

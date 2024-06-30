@@ -70,8 +70,6 @@ SUBSYSTEM_DEF(economy)
 	var/export_total = 0
 	/// Total value of imported goods.
 	var/import_total = 0
-	/// Number of mail items generated.
-	var/mail_waiting = 0
 
 /datum/controller/subsystem/economy/Initialize(timeofday)
 	var/budget_to_hand_out = round(budget_pool / department_accounts.len)
@@ -85,7 +83,6 @@ SUBSYSTEM_DEF(economy)
 	dep_cards = SSeconomy.dep_cards
 
 /datum/controller/subsystem/economy/fire(resumed = 0)
-	var/delta_time = wait * 0.2
 	eng_payout()  // Payout based on nothing. What will replace it? Surplus power, powered APC's, air alarms? Who knows.
 	sci_payout() // Payout based on slimes.
 	secmedsrv_payout() // Payout based on crew safety, health, and mood.
@@ -107,8 +104,6 @@ SUBSYSTEM_DEF(economy)
 
 	// if(!market_crashing)
 		// price_update()
-	var/effective_mailcount = round(living_player_count() / (rand(1, 5) - 0.5)) // fake inflation // (inflation_value - 0.5)) //More mail at low inflation, and vis versa.
-	mail_waiting += clamp(effective_mailcount, 1, MAX_MAIL_PER_MINUTE * delta_time)
 
 /datum/controller/subsystem/economy/proc/get_dep_account(dep_id)
 	for(var/datum/bank_account/department/D in generated_accounts)

@@ -1,3 +1,6 @@
+// BLUEMOON REMOVAL - был произведён полный реворк писем, файлы перемещены в modular_bluemoon/vlad0s_staff/code/mail/
+
+/*
 /// Mail is tamper-evident and unresealable, postmarked by CentCom for an individual recepient.
 /obj/item/mail
 	name = "mail"
@@ -477,4 +480,5 @@
 	. = ..()
 	color = pick(COLOR_SILVER, COLOR_DARK, COLOR_DRIED_TAN, COLOR_ORANGE_BROWN, COLOR_BROWN, COLOR_SYNDIE_RED)
 	new /obj/effect/spawner/random/contraband/grenades/dangerous(src)
+*/
 */

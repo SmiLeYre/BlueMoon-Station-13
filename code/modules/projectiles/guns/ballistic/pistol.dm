@@ -113,8 +113,8 @@
 	icon_state = "aps"
 	w_class = WEIGHT_CLASS_SMALL
 	mag_type = /obj/item/ammo_box/magazine/pistolm9mm
-	burst_size = 3
-	fire_delay = 2
+	burst_size = 4
+	fire_delay = 3
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC, SELECT_BURST_SHOT, SELECT_FULLY_AUTOMATIC)
 
 /obj/item/gun/ballistic/automatic/pistol/stickman

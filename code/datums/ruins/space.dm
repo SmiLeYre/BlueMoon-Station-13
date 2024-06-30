@@ -352,6 +352,15 @@
 	description = "A late awakening cryo pod in a crashed escape pod wakes up to find what befell of his fellow survivors. Contains all the necessary resources to actually make it out alive. Good luck."
 	always_place = TRUE
 
+/datum/map_template/ruin/space/hermit/New()
+	var/num = rand(0, 1)
+	switch(num)
+		if(0)
+			suffix = "spacehermit.dmm"
+		if(1)
+			suffix = "spacehermit1.dmm"
+	. = ..()
+
 /datum/map_template/ruin/space/clericden
 	id = "clericden"
 	suffix = "clericden.dmm"

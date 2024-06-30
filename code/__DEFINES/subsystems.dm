@@ -165,6 +165,7 @@
 #define INIT_ORDER_ASSETS			-4
 #define INIT_ORDER_ICON_SMOOTHING	-5
 #define INIT_ORDER_OVERLAY			-6
+#define INIT_ORDER_MAIL				-7 // BLUEMOON ADD - переработка писем
 #define INIT_ORDER_XKEYSCORE		-10
 #define INIT_ORDER_STICKY_BAN		-10
 #define INIT_ORDER_LIGHTING			-20
@@ -182,6 +183,7 @@
 // If the subsystem isn't listed here it's either DEFAULT or PROCESS (if it's a processing subsystem child)
 
 #define FIRE_PRIORITY_VORE			5
+#define FIRE_PRIORITY_MAIL			7 // BLUEMOON ADD
 #define FIRE_PRIORITY_ACTIVITY		10
 #define FIRE_PRIORITY_IDLE_NPC		10
 #define FIRE_PRIORITY_SERVER_MAINT	10

@@ -409,7 +409,7 @@
 	icon = 'modular_bluemoon/smiley/icons/mob/newmobs.dmi'
 	icon_state = "evilbotsec"
 	icon_living = "evilbotsec"
-	casingtype = /obj/item/ammo_casing/c45
+	casingtype = /obj/item/ammo_casing/c45/lethal
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 	health = 300
 	maxHealth = 300
@@ -468,7 +468,7 @@
 	icon = 'modular_bluemoon/smiley/icons/mob/newmobs.dmi'
 	icon_state = "sentrybot"
 	icon_living = "sentrybot"
-	casingtype = /obj/item/ammo_casing/c45
+	casingtype = /obj/item/ammo_casing/c45/lethal
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 	health = 250
 	maxHealth = 250
