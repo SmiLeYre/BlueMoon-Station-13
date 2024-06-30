@@ -302,9 +302,6 @@
 		to_chat(user, "<span class='notice'>[src] can now be concealed.</span>")
 	add_fingerprint(user)
 
-
-
-
 //--------------------------------------------------------------------------------[Ящики карго]------------------------------------------------------------------
 /datum/supply_pack/goody/guitarbag
 	name = "Guitar bag"
@@ -434,6 +431,8 @@
 	name = "Strange floor"
 	desc = "Я бы на него не наступал."
 	icon_state = "spike_trap"
+	max_integrity = 200
+	var/screwd = 0
 
 /obj/structure/oldtrap/floor_spike/Initialize(mapload)
 	. = ..()
@@ -442,9 +441,40 @@
 /obj/structure/oldtrap/floor_spike/CanAllowThrough(atom/movable/mover, turf/target)
 	. = ..()
 	if(istype(mover, /mob/living))
-		mover.visible_message("<span class='danger'>Ловушка активируется, выбрасывая свои шипы вверх!</span>", "<span class='notice'>Ты активируешь ловушку, заставляя шипы устремиться вверх!</span>")
-		icon_state = "spike_trap"
+		mover.visible_message("<span class='danger'>Ловушка активируется, выбрасывая свои шипы вверх!</span>", "<span class='danger'>Ты активируешь ловушку, заставляя шипы устремиться вверх!</span>")
 		icon_state = "spike_trap-1"
+		update_icon()
+		icon_state = "spike_trap-2"
+		update_icon()
+
+/obj/structure/oldtrap/floor_spike/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/screwdriver))
+		if(screwd == 0)
+			to_chat(user, "<span class='notice'>Ты раскручиваешь винты креплений ловушки с шипами [I].</span>")
+			if(I.use_tool(src, user, 16 SECONDS, volume=50))
+				screwd = !screwd
+		else
+			to_chat(user, "<span class='notice'>Ты закручиваешь винты креплений ловушки с шипами [I].</span>")
+			if(I.use_tool(src, user, 16 SECONDS, volume=50))
+				screwd = !screwd
+	if(istype(I, /obj/item/crowbar))
+		if(screwd == 1)
+			to_chat(user, "<span class='notice'>Ты приподнимаешь пластину, удерживающую пружины ловушки.</span>")
+			if(I.use_tool(src, user, 30 SECONDS, volume=50))
+				deconstruct()
+	else
+		. = ..()
+
+/obj/structure/oldtrap/floor_spike/deconstruct(disassembled = TRUE)
+	if(!loc)
+		return
+	if(!(flags_1&NODECONSTRUCT_1))
+		var/amount = rand(1,5)
+		var/obj/R = new /obj/item/stack/sheet/plasteel(drop_location(), amount)
+		var/obj/D = new /obj/item/stake/hardened/silver(drop_location(), 3)
+		transfer_fingerprints_to(R,D)
+		qdel(src)
+	..()
 
 /obj/structure/oldtrap/string_trap
 	name = "Piano wire"
