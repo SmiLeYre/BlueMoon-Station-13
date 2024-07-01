@@ -21,32 +21,31 @@
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target // Присваиваем переменную цели
 		var/wantsNoncon = FALSE //Переменная для префчека
-		var/lastlusttimee = M.lastlusttime + 600 // Накидываем 60 секунд на время последнего пошлого действия жертвы.
-		var/gender = M.gender //Переменная для звуков
-		var/loc = M.loc //Переменная для звуков
+		var/cooldown = M.lastlusttime + 600
 
 		if(M.client && M.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(M.client?.prefs.toggles, VERB_CONSENT) && M.client?.prefs.nonconpref == "Yes")
 			wantsNoncon = TRUE //Назначаем переменную для префчека
 
 		if((!wantsNoncon) || (HAS_TRAIT(M, TRAIT_NEVERBONER))) //Префчек
-			M.apply_damage_type(-30, STAMINA) //Отнимаем нанесенный дизейблером урон, если вдруг человек не хочет, чтобы его нонконили.
 			return
 		else
-			if(prob(50)) //Сообщения цели в чат
-				var/aroused_message = pick("Вам немного жарко.", "Вы испытываете сильное сексуальное влечение.", "Вы чувствуете себя в хорошем настроении.", "Вы готовы напрыгнуть на кого-то.")
+			if(prob(30)) //Сообщения цели в чат
+				var/aroused_message = pick("Ваши бедра непроизвольно сомкнулись.", "Приятное покалывание ощущется в вашем паху.", "Вы чувствуете, как ток стимулирует вашу грудь.", "Мурашки пробегают по вашей коже.")
 				to_chat(M, "<span class='userlove'>[aroused_message]</span>")
-			if(prob(50)) //Стоны
-				if(gender == MALE || (gender == PLURAL && ismasculine(M)))
-					playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/final_m1.ogg',
-					'modular_sand/sound/interactions/final_m2.ogg',
-					'modular_sand/sound/interactions/final_m3.ogg',
-					'modular_sand/sound/interactions/final_m4.ogg',
-					'modular_sand/sound/interactions/final_m5.ogg'), 90, 1, 0)
-				else if(gender != MALE || (gender == PLURAL && isfeminine(M)))
-					playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/final_f1.ogg',
-					'modular_sand/sound/interactions/final_f2.ogg',
-					'modular_sand/sound/interactions/final_f3.ogg'), 70, 1, 0)
-			if(IS_STAMCRIT(M) && lastlusttimee < world.time) // Если человек в крите...
+			if(prob(30)) //Стоны
+				M.emote("moan")
+			if(prob(20)) //Выбрасываем предмет из руки
+				var/obj/item/I = M.get_active_held_item()
+				if(!I)
+					return
+				else
+					var/aroused_message = pick("Вы роняете предметы из рук, забывая о чем либо кроме своего тела", "Вы трогаете своё тело, в попытках унять возбуждение.")
+					to_chat(M, "<span class='userlove'>[aroused_message]</span>")
+					M.dropItemToGround(I)
+			if(IS_STAMCRIT(M) && cooldown < world.time) // Если человек в крите и кд не прошло
+				M.reagents.add_reagent(/datum/reagent/drug/aphrodisiac, 15)
+				M.Jitter(25)
+				M.Dizzy(25)
 				M.cum() // Без таймера - жертва в стамкрите, будет возвращаться на эту строчку после каждого попадания.
 
 
