@@ -475,7 +475,7 @@
 		transfer_fingerprints_to(R,D)
 		qdel(src)
 	..()
-
+// Ловушка струна
 /obj/structure/oldtrap/string_trap
 	name = "Piano wire"
 	desc = "Струна натянутая на высоте шеи существа среднего роста. Будет очень неприятно нарваться на неё со всей скорости в темноте"
