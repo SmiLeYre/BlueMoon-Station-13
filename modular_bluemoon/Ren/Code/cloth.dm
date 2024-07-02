@@ -685,6 +685,7 @@
 	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
 	icon_state = "SATT_AT41_ammo"
 	item_state = "SATT_AT41"
+	fire_sound = "modular_bluemoon/Ren/Sound/AT41_fire.ogg"
 
 /obj/item/gun/ballistic/automatic/wt550/at41/update_icon_state()
 	..()

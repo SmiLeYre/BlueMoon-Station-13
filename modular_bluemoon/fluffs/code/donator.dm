@@ -712,26 +712,26 @@
 	name = "Skull half mask"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/gas/sechailer/syndicate/skull
-	ckeywhitelist = list("Allazarius")
+	ckeywhitelist = list("allazarius")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
-/datum/gear/donator/mask/satt
+/datum/gear/donator/accessory/satt
 	name = "SATT dogtag"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/accessory/dogtag
-	ckeywhitelist = list("Allazarius")
+	ckeywhitelist = list("allazarius")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
-/datum/gear/donator/mask/satt
+/datum/gear/donator/kit/at41
 	name = "AT41 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/at41
-	ckeywhitelist = list("Allazarius")
+	ckeywhitelist = list("allazarius")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/backpack/satt
 	name = "SATT backpack"
 	slot = ITEM_SLOT_HANDS
 	path = /obj/item/storage/backpack/satt
-	ckeywhitelist = list("Allazarius")
+	ckeywhitelist = list("allazarius")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
