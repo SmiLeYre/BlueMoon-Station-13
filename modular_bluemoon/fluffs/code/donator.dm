@@ -705,7 +705,7 @@
 	name = "SATT combat uniform"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/syndicate/tacticool/satt
-	ckeywhitelist = list("Allazarius")
+	ckeywhitelist = list("allazarius")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/mask/satt
@@ -726,7 +726,7 @@
 	name = "AT41 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/at41
-	ckeywhitelist = list("allazarius")
+	ckeywhitelist = list("allazarius", "oni3288", "enigma418")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/backpack/satt
