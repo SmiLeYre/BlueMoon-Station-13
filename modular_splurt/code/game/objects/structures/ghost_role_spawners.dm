@@ -206,6 +206,14 @@
 	var/obj/item/implant/anchor/ghost_anchor = new
 	ghost_anchor.implant(new_spawn, null, TRUE)
 
+/obj/effect/mob_spawn/human/inteqspace/hostage
+	name = "InteQ Hostage"
+	short_desc = "Вы - оказались в больших неприятностях в плену."
+	flavour_text = "Вы плохо помните как вы тут оказались, возможно вас накачали чем то. Вы до конца не уверены, продали ли вас в рабство либо похитили, в любом случае у вас большие неприятности. Люди с оружием которые пришли сюда вряд ли собираются вас спасти, возможно это отряд головорезов, что избавляется от свидетелей, по всей видимости те выполняют приказ, им лучше не попадаться на глаза. Если вы находитесь тут то вряд ли похитители хотят вас убить, если дать им повод то вы пополните ряды ваших коллег по несчастью."
+	important_info = "Запрещено пытаться сбежать и сопротивляться без веских причин как серьёзная угроза жизни от агентов InteQ. Побег только с разрешения администрации."
+	can_load_appearance = TRUE
+	outfit = /datum/outfit/inteqspace/inteq_hostage
+
 /obj/effect/mob_spawn/human/inteqspace/captain
 	name = "InteQ Ship Captain"
 	short_desc = "Вы - Лидер Авангарда ИнтеКью на старом корабле, застрявшем во враждебном космосе."
@@ -248,6 +256,14 @@
 
 	id = /obj/item/card/id/inteq/crew_id
 	backpack_contents = list(/obj/item/paper/fluff/ruins/forgottenship/password)
+
+/datum/outfit/inteqspace/inteq_hostage
+	name = "InteQ Hostage"
+
+	uniform = /obj/item/clothing/under/rank/prisoner
+	shoes = /obj/item/clothing/shoes/sneakers/orange
+	id = /obj/item/card/id/prisoner
+	ears = /obj/item/radio/headset/ghost_inteq
 
 /datum/outfit/inteqspace/inteq_captain
 	name = "InteQ Ship Captain"

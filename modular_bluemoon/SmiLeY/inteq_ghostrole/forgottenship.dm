@@ -350,6 +350,15 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
 
+/area/ruin/space/has_grav/inteq_forgotten_permabrig
+	name = "InteQ Forgotten Permanent Brig"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/inteq_forgotten_inspection
+	name = "InteQ Forgotten Inspection room"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
 //Special NT NPCs
 
 /mob/living/simple_animal/hostile/nanotrasen/ranged/assault
