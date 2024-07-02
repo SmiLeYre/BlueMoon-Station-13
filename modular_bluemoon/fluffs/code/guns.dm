@@ -78,13 +78,12 @@
 	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/G-550shot1.ogg'
 	pickup_sound = "modular_bluemoon/fluffs/sound/weapon/g-550grab.ogg"
 	can_suppress = FALSE
-	can_bayonet = FALSE
+	can_bayonet = TRUE
+	knife_x_offset = 30
+	knife_y_offset = 7
 
 /obj/item/gun/ballistic/automatic/wt550/gewehr550/update_icon_state()
-	if(magazine)
-		icon_state = "gewehr550_20"
-	else
-		icon_state = "gewehr550"
+	icon_state = "gewehr550[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
 
 /obj/item/modkit/m240_kit
 	name = "M240 Kit"
@@ -174,6 +173,7 @@
 	name = "\improper H-Wal-2572"
 	desc = "A hybrid taser made by Catcrin's waffenschmied that combines electric and energy shots. There is a small circle on the handle showing the charging level."
 	icon_state = "hwal"
+	item_state = "hwal"
 	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
 	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
 	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
