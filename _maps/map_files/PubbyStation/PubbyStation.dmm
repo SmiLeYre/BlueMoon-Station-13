@@ -54250,6 +54250,9 @@
 /area/service/library/lounge)
 "iyP" = (
 /obj/structure/disposaloutlet,
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
 /turf/open/floor/plating,
 /area/space/nearstation)
 "izB" = (

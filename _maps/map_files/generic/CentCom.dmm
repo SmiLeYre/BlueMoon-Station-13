@@ -9794,6 +9794,7 @@
 	req_access_txt = "101";
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	},
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "bhl" = (
@@ -27939,6 +27940,7 @@
 	name = "Administrative Office";
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	},
+/obj/effect/mapping_helpers/airlock/locked,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "rFz" = (
@@ -66863,8 +66865,8 @@ oom
 oom
 iqg
 plw
+plw
 dEw
-aFe
 aFe
 vMa
 hIC
@@ -67120,8 +67122,8 @@ eQG
 oom
 kiC
 uDO
+uDO
 vzo
-aFe
 aFe
 hQW
 qUn
@@ -67378,7 +67380,7 @@ oom
 uDO
 uDO
 gHu
-aFe
+uDO
 aFe
 hQW
 viE
@@ -67634,8 +67636,8 @@ uDO
 oom
 eBG
 gpm
+gpm
 tZc
-aFe
 aFe
 eMS
 syk
