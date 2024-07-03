@@ -442,8 +442,6 @@
 	. = ..()
 	if(istype(mover, /mob/living))
 		mover.visible_message("<span class='danger'>Ловушка активируется, выбрасывая свои шипы вверх!</span>", "<span class='danger'>Ты активируешь ловушку, заставляя шипы устремиться вверх!</span>")
-		icon_state = "spike_trap-1"
-		update_icon()
 		icon_state = "spike_trap-2"
 		update_icon()
 
