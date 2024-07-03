@@ -208,6 +208,35 @@
 			T.fluid_max_volume *= 1.75
 			increasedcum = TRUE
 
+/datum/quirk/balls_plus
+	name = "Сверхрепродуктивные Гениталии"
+	desc = "Ваши гениталии производят гораздо больше чем обычно."
+	value = 0
+	gain_text = span_notice("Вы чувствуете, как ваши генеталии распирает от количества жидкости.")
+	lose_text = span_notice("Вы чувствуете, как ваши генеталии приходят в норму.")
+	medical_record_text = "Гениталии пациента демонстрируют высокую репродуктивность."
+
+/datum/quirk/balls_plus/add()
+	var/mob/living/carbon/M = quirk_holder
+	if(M.getorganslot(ORGAN_SLOT_TESTICLES))
+		var/obj/item/organ/genital/testicles/T = M.getorganslot(ORGAN_SLOT_TESTICLES)
+		T.fluid_mult += 3 //Base is 1.
+
+/datum/quirk/balls_plus/remove()
+	var/mob/living/carbon/M = quirk_holder
+	if(!M)
+		return
+	if(quirk_holder.getorganslot(ORGAN_SLOT_TESTICLES))
+		var/obj/item/organ/genital/testicles/T = M.getorganslot(ORGAN_SLOT_TESTICLES)
+		T.fluid_mult -= 3 //Base is 1
+
+/datum/quirk/cum_plus/on_process()
+	var/mob/living/carbon/M = quirk_holder //If you get balls later, then this will still proc
+	if(M.getorganslot(ORGAN_SLOT_TESTICLES))
+		var/obj/item/organ/genital/testicles/T = M.getorganslot(ORGAN_SLOT_TESTICLES)
+		if(!increasedcum)
+			T.fluid_mult = 4 //Base is 0.133
+
 /datum/quirk/milk_plus
 	name = "Сверхпродуктивная Грудь"
 	desc = "Ваша грудь производит и вмещает больше, чем обычно."
