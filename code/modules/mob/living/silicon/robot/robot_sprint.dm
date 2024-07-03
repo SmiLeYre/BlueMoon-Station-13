@@ -3,7 +3,7 @@
 		disable_intentional_sprint_mode()
 		return
 	var/current = (combat_flags & COMBAT_FLAG_SPRINT_ACTIVE)
-	if(current || shutdown || !cell || (cell.charge < 25) || !cansprint)
+	if(current || shutdown || !cell || (cell.charge < 15) || !cansprint) //BLUEMOON EDIT Снижение порога проверки заряда батареи со стандартных 25 до 15
 		disable_intentional_sprint_mode()
 		if(CHECK_MULTIPLE_BITFIELDS(mobility_flags, MOBILITY_STAND|MOBILITY_MOVE))
 			if(shutdown)
