@@ -246,9 +246,7 @@
 /area/ruin/space/has_grav/powered/drugpost)
 "H" = (
 /obj/structure/closet/secure_closet/freezer,
-/obj/effect/spawner/lootdrop/mre{
-	amount = 15
-	},
+/obj/effect/spawner/lootdrop/mre,
 /turf/open/floor/pod/dark,
 /area/ruin/space/has_grav/powered/drugpost)
 "I" = (
