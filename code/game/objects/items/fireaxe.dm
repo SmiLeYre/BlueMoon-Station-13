@@ -7,8 +7,9 @@
 	righthand_file = 'icons/mob/inhands/weapons/axes_righthand.dmi'
 	name = "fire axe"
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
-	force = 5
+	force = 15
 	throwforce = 15
+	armour_penetration = 25
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
@@ -76,7 +77,7 @@
 
 /obj/item/fireaxe/energized
 	desc = "Someone with a love for fire axes decided to turn this one into a high-powered energy weapon. Seems excessive."
-	armour_penetration = 30
+	armour_penetration = 50
 	var/charge = 90
 	var/max_charge = 90
 
