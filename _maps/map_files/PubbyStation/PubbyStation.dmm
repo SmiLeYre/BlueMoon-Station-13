@@ -5551,9 +5551,6 @@
 	name = "Reception Desk";
 	req_access_txt = "63"
 	},
-/obj/item/paper_bin{
-	layer = 2.9
-	},
 /obj/item/pen{
 	pixel_x = 4;
 	pixel_y = 4
@@ -5576,11 +5573,20 @@
 /turf/open/floor/plating,
 /area/security/warden)
 "apH" = (
-/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/rnd/production/techfab/department/security,
 /obj/structure/cable{
 	icon_state = "0-2"
 	},
 /obj/structure/cable,
+/obj/machinery/door/window/southleft{
+	name = "Reception Desk";
+	req_access_txt = "63"
+	},
+/obj/machinery/door/window/brigdoor{
+	dir = 1;
+	name = "Armory Desk";
+	req_access_txt = "3"
+	},
 /turf/open/floor/plating,
 /area/security/warden)
 "apN" = (
@@ -57420,10 +57426,6 @@
 /obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/grass/grass0,
 /area/service/hydroponics/garden/monastery)
-"ncY" = (
-/obj/machinery/rnd/production/techfab/department/security,
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/security/armory)
 "ndg" = (
 /obj/effect/landmark/navigate_destination/tools,
 /turf/open/floor/plasteel,
@@ -85850,7 +85852,7 @@ abI
 abI
 alx
 aib
-ncY
+aiF
 aiD
 wLr
 okS

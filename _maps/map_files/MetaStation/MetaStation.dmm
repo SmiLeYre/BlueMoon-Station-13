@@ -45609,7 +45609,6 @@
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
 "dhv" = (
-/obj/structure/table/reinforced,
 /obj/machinery/door/window/westleft{
 	base_state = "right";
 	dir = 4;
@@ -45621,12 +45620,7 @@
 	name = "Brig Control Desk";
 	req_access_txt = "3"
 	},
-/obj/structure/cable/yellow{
-	icon_state = "2-8"
-	},
-/obj/item/folder/red,
-/obj/item/folder/red,
-/obj/item/poster/random_official,
+/obj/machinery/rnd/production/techfab/department/security,
 /turf/open/floor/plasteel/showroomfloor,
 /area/security/warden)
 "dhw" = (
@@ -71915,10 +71909,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/service/chapel/main)
-"oPH" = (
-/obj/machinery/rnd/production/techfab/department/security,
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/security/armory)
 "oPO" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -121466,7 +121456,7 @@ aaf
 aeq
 aeq
 uey
-oPH
+agc
 mfU
 byt
 aeq

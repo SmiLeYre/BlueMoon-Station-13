@@ -57612,7 +57612,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/rnd/production/techfab/department/security,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "oir" = (
@@ -61011,16 +61010,13 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/port)
 "qBv" = (
-/obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor{
 	dir = 1;
 	name = "Reception Desk";
 	req_access_txt = "3"
 	},
 /obj/machinery/door/window/brigdoor,
-/obj/machinery/door/poddoor/shutters{
-	id = "armorywindow"
-	},
+/obj/machinery/rnd/production/techfab/department/security,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "qBx" = (
@@ -67315,13 +67311,6 @@
 /obj/machinery/camera/motion{
 	c_tag = "Armory South";
 	dir = 1
-	},
-/obj/machinery/button/door{
-	id = "armorywindow";
-	name = "Armory Shutters";
-	pixel_y = -23;
-	req_access_txt = "3";
-	pixel_x = -8
 	},
 /obj/machinery/button/door{
 	id = "armory3";

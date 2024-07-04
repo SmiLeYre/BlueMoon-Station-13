@@ -26254,7 +26254,6 @@
 /turf/open/floor/plasteel,
 /area/ai_monitored/security/armory)
 "cds" = (
-/obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/window/brigdoor/northright{
 	name = "Armoury Desk";
@@ -26266,6 +26265,7 @@
 	name = "Armoury Desk"
 	},
 /obj/effect/turf_decal/delivery,
+/obj/machinery/rnd/production/techfab/department/security,
 /turf/open/floor/plasteel,
 /area/ai_monitored/security/armory)
 "cdt" = (
@@ -117750,7 +117750,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/rnd/production/techfab/department/security,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "tya" = (
