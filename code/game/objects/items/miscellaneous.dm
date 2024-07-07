@@ -189,7 +189,8 @@
 		"Red Panda" = /mob/living/simple_animal/pet/redpanda,
 		"Possum" = /mob/living/simple_animal/opossum,
 		"Alta" = /mob/living/simple_animal/pet/cat/alta,
-		"Space Alta" = /mob/living/simple_animal/pet/cat/space/alta)
+		"Space Alta" = /mob/living/simple_animal/pet/cat/space/alta,
+		"Zlat" = /mob/living/simple_animal/pet/dog/corgi/Lisa/zlatchek,)
 
 /obj/item/choice_beacon/pet/generate_display_names()
 	return pets
