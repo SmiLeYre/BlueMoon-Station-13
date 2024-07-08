@@ -483,15 +483,32 @@
 	var/hand
 	var/deathTick = 0
 
+	var/datum/component/aura_healing/aura_healing //BLUEMOON ADD aura healing to Rod of Asclepius
+
 /datum/status_effect/hippocraticOath/on_apply()
 	//Makes the user passive, it's in their oath not to harm!
 	ADD_TRAIT(owner, TRAIT_PACIFISM, "hippocraticOath")
 	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
 	H.add_hud_to(owner)
+	// BLUEMOON ADD START - refactor Rod of Asclepius to aura of healing
+	aura_healing = owner.AddComponent( \
+			/datum/component/aura_healing, \
+			range = 7, \
+			brute_heal = 3.5, \
+			burn_heal = 3.5, \
+			toxin_heal = 3.5, \
+			suffocation_heal = 3.5, \
+			stamina_heal = 3.5, \
+			organ_healing = list(ORGAN_SLOT_BRAIN = 3.5), \
+			simple_heal = 3.5, \
+			healing_color = "#375637", \
+	)
+	// BLUEMOON ADD END
 	return ..()
 
 /datum/status_effect/hippocraticOath/on_remove()
 	. = ..()
+	QDEL_NULL(aura_healing) //BLUEMOON ADD removes aura healing on status effect removal
 	REMOVE_TRAIT(owner, TRAIT_PACIFISM, "hippocraticOath")
 	var/datum/atom_hud/H = GLOB.huds[DATA_HUD_MEDICAL_ADVANCED]
 	H.remove_hud_from(owner)
@@ -543,19 +560,6 @@
 			itemUser.adjustStaminaLoss(-1.5)
 			itemUser.adjustOrganLoss(ORGAN_SLOT_BRAIN, -1.5)
 			itemUser.adjustCloneLoss(-0.5) //Becasue apparently clone damage is the bastion of all health
-		//Heal all those around you, unbiased
-		owner.AddComponent( \
-			/datum/component/aura_healing, \
-			range = 7, \
-			brute_heal = 3.5, \
-			burn_heal = 3.5, \
-			toxin_heal = 3.5, \
-			suffocation_heal = 3.5, \
-			stamina_heal = 3.5, \
-			organ_healing = list(ORGAN_SLOT_BRAIN = 3.5), \
-			simple_heal = 3.5, \
-			healing_color = "#375637", \
-			)
 
 /atom/movable/screen/alert/status_effect/regenerative_core
 	name = "Reinforcing Tendrils"
