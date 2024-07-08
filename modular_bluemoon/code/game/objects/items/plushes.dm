@@ -89,3 +89,10 @@
 	'modular_bluemoon/SmiLeY/sounds/allta_mew2.ogg' = 1,
 	'modular_bluemoon/SmiLeY/sounds/allta_mew3.ogg' = 1
 	)
+
+/obj/item/toy/plush/mammal/fox/emma/zlatchek
+	name = "Zlat plushie"
+	desc = "Прапорщик - Ебучий койот. Примечание: Не доверяйте ему огнестрельное оружие."
+	icon_state = "zlat"
+	item_state = "zlat"
+	squeak_override = list('modular_bluemoon/SmiLeY/sounds/zlatchek.ogg' = 1)
