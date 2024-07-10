@@ -69,11 +69,6 @@
 			if ((exclusive_roles.len > 0) && !(M.mind.assigned_role in exclusive_roles)) // Is the rule exclusive to their job?
 				trimmed_list.Remove(M)
 				continue
-			// BLUEMOON ADD START
-			if(!(M.client.prefs.toggles & MIDROUND_ANTAG) && required_type != /mob/dead/observer) // У игрока отключен преф "быть антагонистом посреди раунда" и это не запрос для гостов
-				trimmed_list.Remove(M)
-				continue
-			// BLUEMOON ADD END
 	return trimmed_list
 
 // You can then for example prompt dead players in execute() to join as strike teams or whatever
@@ -189,11 +184,12 @@
 	name = "InteQ Sleeper Agent"
 	antag_datum = /datum/antagonist/traitor
 	antag_flag = "traitor mid"
+	antag_flag_override = ROLE_TRAITOR // BLUEMOON ADD
 	protected_roles = list("Expeditor", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Internal Affairs Agent", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security","Bridge Officer", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")  //BLUEMOON CHANGES
 	restricted_roles = list("Cyborg", "AI", "Positronic Brain")
 	required_candidates = 1
 	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
-	weight = 0  //BLUEMOON CHANGES - это автр-трейтор, его не должен выбирать режим сам по себе
+	weight = 0.001 //BLUEMOON CHANGES. Такое значнеие нужно, чтобы опцию возможно было форсануть админскими кнопками
 	cost = 0  //BLUEMOON CHANGES - бесконечные трейторы
 	requirements = list(101,40,30,20,10,10,10,10,10,10)
 	repeatable = TRUE
@@ -209,11 +205,11 @@
 	// adding traitors if the antag population is getting low
 	var/too_little_antags = antag_count < max_traitors
 	if (!too_little_antags)
-		log_game("DYNAMIC: Too many living antags compared to living players ([antag_count] living antags, [player_count] living players, [max_traitors] max traitors)")
+		message_admins("DYNAMIC: Too many living antags compared to living players ([antag_count] living antags, [player_count] living players, [max_traitors] max traitors)")
 		return FALSE
 
 	if (has_failure_chance && !prob(mode.threat_level))
-		log_game("DYNAMIC: Random chance to roll autotraitor failed, it was a [mode.threat_level]% chance.")
+		message_admins("DYNAMIC: Random chance to roll autotraitor failed, it was a [mode.threat_level]% chance.")
 		return FALSE
 
 	..()

@@ -43,11 +43,14 @@
 /datum/dynamic_ruleset/roundstart/traitor/rule_process()
 	if (COOLDOWN_FINISHED(src, autotraitor_cooldown_check))
 		COOLDOWN_START(src, autotraitor_cooldown_check, autotraitor_cooldown)
-		log_game("DYNAMIC: Checking if we can turn someone into a traitor.")
-		if(prob(50)) // BLUEMOON ADD
-			mode.picking_specific_rule(/datum/dynamic_ruleset/midround/autotraitor)
-		else // BLUEMOON ADD
-			mode.picking_specific_rule(/datum/dynamic_ruleset/latejoin/infiltrator) // BLUEMOON ADD
+		message_admins("DYNAMIC: Проверка возможности добавить в раунд автотрейтор.")
+		if(!mode.forced_latejoin_rule)
+			if(prob(50))
+				mode.forced_latejoin_rule = /datum/dynamic_ruleset/latejoin/infiltrator
+			else
+				mode.picking_specific_rule(/datum/dynamic_ruleset/midround/autotraitor, TRUE)
+		else
+			mode.picking_specific_rule(/datum/dynamic_ruleset/midround/autotraitor, TRUE)
 
 //////////////////////////////////////////
 //                                      //
