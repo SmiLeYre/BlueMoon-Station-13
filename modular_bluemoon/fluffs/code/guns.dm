@@ -469,6 +469,6 @@
 
 /obj/item/modkit/karabiner_kit
 	name = "Karabiner-M13 Kit"
-	desc = "A modkit for making a Miniature Energy Gun into Karabiner-M13."
+	desc = "A modkit for making a MultiPhase Energy Gun into Karabiner-M13."
 	product = /obj/item/gun/energy/e_gun/hos/karabiner_m13
 	fromitem = list(/obj/item/gun/energy/e_gun/hos)

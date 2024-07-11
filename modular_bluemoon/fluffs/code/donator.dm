@@ -314,7 +314,7 @@
 	name = "AC Patch"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/accessory/ac_patch
-	ckeywhitelist = list("romontesque", "smol42", "oni3288", "allazarius", "mihana964", "hazzi", "discord980", "zetneskov")
+	ckeywhitelist = list("romontesque", "smol42", "oni3288", "allazarius", "mihana964", "hazzi", "discord980", "zetneskov", "NotLikeLuls")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/SH_jacket
@@ -698,21 +698,21 @@
 	name = "Gewehr-550 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/gewehr550
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "NotLikeLuls")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/hwal2572_kit
 	name = "H-Wal-2572 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/hwal2572
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "NotLikeLuls")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/karabiner_kit
 	name = "Karabiner-M13 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/karabiner_kit
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "NotLikeLuls")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/tacticool/satt

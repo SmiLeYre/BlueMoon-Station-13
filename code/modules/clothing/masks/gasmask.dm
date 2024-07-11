@@ -118,13 +118,12 @@
 	name = "M1062"
 	desc = "Standard military issue gas mask, it replaced the previous M55 gas mask series in Yekitezh Army."
 	icon_state = "m1062"
-	mutantrace_variation = STYLE_MUZZLE|STYLE_NO_ANTHRO_ICON
-
+	mutantrace_variation = STYLE_MUZZLE
 /obj/item/clothing/mask/gas/syndicate/yekitezh_red
 	name = "M1062-B"
 	desc = "Standard military gas mask of the Yekitezh Army, except this one optimized with glowing red lenses and black coverage for 'tactical' issues."
 	icon_state = "m1062b"
-	mutantrace_variation = STYLE_MUZZLE|STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/mask/gas/clown_hat
 	name = "Clown Wig and Mask"
