@@ -698,22 +698,21 @@
 	name = "Gewehr-550 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/gewehr550
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "NotLikeLuls", "Kladmenuwu")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/hwal2572_kit
 	name = "H-Wal-2572 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/hwal2572
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "NotLikeLuls", "Kladmenuwu")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/karabiner_kit
 	name = "Karabiner-M13 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/karabiner_kit
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "NotLikeLuls", "Kladmenuwu")
 
 /datum/gear/donator/tacticool/satt
 	name = "SATT combat uniform"
