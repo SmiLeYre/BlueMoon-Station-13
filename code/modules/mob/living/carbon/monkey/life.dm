@@ -151,6 +151,10 @@
 			head_clothes = wear_mask
 		if(wear_neck)
 			head_clothes = wear_neck
+		//BLUEMOON EDIT ADDITION BEGIN
+		if(wear_shoulders)
+			head_clothes = wear_shoulders
+		//BLUEMOON EDIT ADDITION END
 		if(head)
 			head_clothes = head
 		if(head_clothes)

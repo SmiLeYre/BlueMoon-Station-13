@@ -24,7 +24,11 @@
 	if(!d_type || !def_zone)
 		return FALSE
 	var/protection = 0
-	var/list/body_parts = list(head, wear_mask, wear_suit, w_uniform, w_underwear, w_socks, w_shirt, back, gloves, wrists, shoes, belt, s_store, glasses, ears, ears_extra, wear_id, wear_neck) //Everything but pockets. Pockets are l_store and r_store. (if pockets were allowed, putting something armored, gloves or hats for example, would double up on the armor) //skyrat edit
+
+	//BLUEMOON EDIT CHANGE BEGIN
+	//var/list/body_parts = list(head, wear_mask, wear_suit, w_uniform, w_underwear, w_socks, w_shirt, back, gloves, wrists, shoes, belt, s_store, glasses, ears, ears_extra, wear_id, wear_neck) //Everything but pockets. Pockets are l_store and r_store. (if pockets were allowed, putting something armored, gloves or hats for example, would double up on the armor) //skyrat edit - BLUEMOON EDIT - ORIGINAL
+	var/list/body_parts = list(head, wear_mask, wear_suit, w_uniform, w_underwear, w_socks, w_shirt, back, gloves, wrists, shoes, belt, s_store, glasses, ears, ears_extra, wear_id, wear_neck, wear_shoulders) //Everything but pockets. Pockets are l_store and r_store. (if pockets were allowed, putting something armored, gloves or hats for example, would double up on the armor) - BLUEMOON EDIT
+	//BLUEMOON EDIT CHANGE END
 	for(var/bp in body_parts)
 		if(!bp)
 			continue
@@ -38,7 +42,11 @@
 ///Get all the clothing on a specific body part
 /mob/living/carbon/human/proc/clothingonpart(obj/item/bodypart/def_zone)
 	var/list/covering_part = list()
-	var/list/body_parts = list(head, wear_mask, wear_suit, w_uniform, back, gloves, shoes, belt, s_store, glasses, ears, wear_id, wear_neck) //Everything but pockets. Pockets are l_store and r_store. (if pockets were allowed, putting something armored, gloves or hats for example, would double up on the armor)
+
+	//BLUEMOON EDIT CHANGE BEGIN
+	//var/list/body_parts = list(head, wear_mask, wear_suit, w_uniform, back, gloves, shoes, belt, s_store, glasses, ears, wear_id, wear_neck) //Everything but pockets. Pockets are l_store and r_store. (if pockets were allowed, putting something armored, gloves or hats for example, would double up on the armor) - BLUEMOON EDIT - ORIGINAL
+	var/list/body_parts = list(head, wear_mask, wear_suit, w_uniform, back, gloves, shoes, belt, s_store, glasses, ears, wear_id, wear_neck, wear_shoulders) //Everything but pockets. Pockets are l_store and r_store. (if pockets were allowed, putting something armored, gloves or hats for example, would double up on the armor) - BLUEMOON EDIT
+	//BLUEMOON EDIT CHANGE END
 	for(var/bp in body_parts)
 		if(!bp)
 			continue
@@ -408,6 +416,10 @@
 			head_clothes = wear_mask
 		if(wear_neck)
 			head_clothes = wear_neck
+		//BLUEMOON EDIT ADDITION BEGIN
+		if(wear_shoulders)
+			head_clothes = wear_shoulders
+		//BLUEMOON EDIT ADDITION END
 		if(head)
 			head_clothes = head
 		if(head_clothes)
@@ -888,6 +900,10 @@
 			head_clothes = wear_mask
 		if(wear_neck)
 			head_clothes = wear_neck
+		//BLUEMOON EDIT ADDITION BEGIN
+		if(wear_shoulders)
+			head_clothes = wear_shoulders
+		//BLUEMOON EDIT ADDITION END
 		if(head)
 			head_clothes = head
 		if(head_clothes)
