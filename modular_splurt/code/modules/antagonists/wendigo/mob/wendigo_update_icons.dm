@@ -85,6 +85,7 @@
 		update_inv_belt()
 		update_inv_back()
 		update_inv_neck()
+		update_inv_shoulders()
 		update_transform()
 
 /mob/living/carbon/wendigo/update_inv_gloves()

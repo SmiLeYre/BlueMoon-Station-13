@@ -16,6 +16,14 @@
 			if(!(I.slot_flags & ITEM_SLOT_NECK))
 				return FALSE
 			return TRUE
+		//BLUEMOON EDIT ADDITION BEGIN
+		if(ITEM_SLOT_SHOULDERS)
+			if(wear_shoulders)
+				return FALSE
+			if(!(I.slot_flags & ITEM_SLOT_SHOULDERS))
+				return FALSE
+			return TRUE
+		//BLUEMOON EDIT ADDITION BEGIN
 		if(ITEM_SLOT_EARS_LEFT)
 			if(ears)
 				return FALSE
