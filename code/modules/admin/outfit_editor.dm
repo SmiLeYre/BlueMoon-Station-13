@@ -152,6 +152,10 @@
 
 		if("neck")
 			options = typesof(/obj/item/clothing/neck)
+		//BLUEMOON EDIT ADDITION BEGIN
+		if("shoulders")
+			options = typesof(/obj/item/clothing/neck)
+		//BLUEMOON EDIT ADDITION END
 		if("mask")
 			options = typesof(/obj/item/clothing/mask)
 

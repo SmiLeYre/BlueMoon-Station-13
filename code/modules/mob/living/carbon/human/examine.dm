@@ -118,6 +118,11 @@
 	if(wear_neck && !(ITEM_SLOT_NECK in obscured))
 		. += "[t_on] носит на своей шее [wear_neck.get_examine_string(user)]."
 
+	//BLUEMOON EDIT ADDITION BEGIN
+	if(wear_shoulders && !(ITEM_SLOT_SHOULDERS in obscured))
+		. += "[t_on] носит на своих плечах [wear_shoulders.get_examine_string(user)]."
+	//BLUEMOON EDIT ADDITION END
+
 	//belt
 	if(belt && !(belt.item_flags & EXAMINE_SKIP))
 		. += "[t_on] носит на своём поясе [belt.get_examine_string(user)]."

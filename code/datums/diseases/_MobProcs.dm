@@ -71,6 +71,10 @@
 				if(passed && isobj(H.wear_neck))
 					Cl = H.wear_neck
 					passed = prob((Cl.permeability_coefficient*100) - 1)
+				//BLUEMOON EDIT ADDITION BEGIN
+					Cl = H.wear_shoulders
+					passed = prob((Cl.permeability_coefficient*100) - 1)
+				//BLUEMOON EDIT ADDITION END
 			if(BODY_ZONE_CHEST)
 				if(isobj(H.wear_suit))
 					Cl = H.wear_suit

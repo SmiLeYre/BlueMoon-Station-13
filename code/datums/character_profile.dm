@@ -88,7 +88,8 @@ GLOBAL_LIST_EMPTY(cached_previews)
 				H.w_socks,
 				H.w_shirt,
 				H.wrists,
-				H.wear_neck
+				H.wear_neck,
+				H.wear_shoulders
 			)
 			removeNullsFromList(clothings)
 			for (var/obj/item/clothing/clothpiece in clothings)

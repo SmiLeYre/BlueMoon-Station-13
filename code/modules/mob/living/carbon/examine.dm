@@ -16,6 +16,10 @@
 		. += "[t_He] носит [wear_mask.get_examine_string(user)] на [t_his] лице."
 	if (wear_neck)
 		. += "[t_He] носит [wear_neck.get_examine_string(user)] вокруг [t_his] шеи.\n"
+	//BLUEMOON EDIT ADDITION BEGIN
+	if(wear_shoulders)
+		. += "[t_He] носит [wear_shoulders.get_examine_string(user)] на [t_his] плечах.\n"
+	//BLUEMOON EDIT ADDITION END
 
 	for(var/obj/item/I in held_items)
 		if(!(I.item_flags & ABSTRACT))

@@ -185,6 +185,10 @@
 		H.equip_to_slot_or_del(new mask(H), ITEM_SLOT_MASK, TRUE)
 	if(neck)
 		H.equip_to_slot_or_del(new neck(H), ITEM_SLOT_NECK, TRUE)
+	//BLUEMOON EDIT ADDITION BEGIN
+	if(shoulders)
+		H.equip_to_slot_or_del(new shoulders(H), ITEM_SLOT_SHOULDERS, TRUE)
+	//BLUEMOON EDIT ADDITION END
 	if(ears)
 		H.equip_to_slot_or_del(new ears(H), ITEM_SLOT_EARS_LEFT, TRUE) // Sandstorm edit
 	if(glasses)
@@ -304,6 +308,10 @@
 		H.wear_mask.add_fingerprint(H, ignoregloves = TRUE)
 	if(H.wear_neck)
 		H.wear_neck.add_fingerprint(H, ignoregloves = TRUE)
+	//BLUEMOON EDIT ADDITION BEGIN
+	if(H.wear_shoulders)
+		H.wear_shoulders.add_fingerprint(H, ignoregloves = TRUE)
+	//BLUEMOON EDIT ADDITION END
 	if(H.head)
 		H.head.add_fingerprint(H, ignoregloves = TRUE)
 	if(H.shoes)
@@ -341,7 +349,10 @@
 
 /// Return a list of all the types that are required to disguise as this outfit type
 /datum/outfit/proc/get_chameleon_disguise_info()
-	var/list/types = list(uniform, underwear, socks, shirt, ears_extra, suit, back, belt, gloves, wrists, shoes, head, mask, neck, ears, glasses, id, l_pocket, r_pocket, suit_store, r_hand, l_hand) //skyrat edit
+	//BLUEMOON EDIT CHANGE BEGIN
+	//var/list/types = list(uniform, underwear, socks, shirt, ears_extra, suit, back, belt, gloves, wrists, shoes, head, mask, shoulders, neck, ears, glasses, id, l_pocket, r_pocket, suit_store, r_hand, l_hand) //skyrat edit - BLUEMOON EDIT - ORIGINAL
+	//BLUEMOON EDIT CHANGE END
+	var/list/types = list(uniform, underwear, socks, shirt, ears_extra, suit, back, belt, gloves, wrists, shoes, head, mask, neck, shoulders, ears, glasses, id, l_pocket, r_pocket, suit_store, r_hand, l_hand)
 	types += chameleon_extras
 	listclearnulls(types)
 	return types
@@ -361,6 +372,9 @@
 	.["head"] = head
 	.["mask"] = mask
 	.["neck"] = neck
+	//BLUEMOON EDIT ADDITION BEGIN
+	.["shoulders"] = shoulders
+	//BLUEMOON EDIT ADDITION END
 	.["ears"] = ears
 	.["glasses"] = glasses
 	.["id"] = id
@@ -393,6 +407,9 @@
 	head = target.head
 	mask = target.mask
 	neck = target.neck
+	//BLUEMOON EDIT ADDITION BEGIN
+	shoulders = target.shoulders
+	//BLUEMOON EDIT ADDITION END
 	ears = target.ears
 	glasses = target.glasses
 	id = target.id
@@ -436,6 +453,9 @@
 	head = text2path(outfit_data["head"])
 	mask = text2path(outfit_data["mask"])
 	neck = text2path(outfit_data["neck"])
+	//BLUEMOON EDIT ADDITION BEGIN
+	shoulders = text2path(outfit_data["shoulders"])
+	//BLUEMOON EDIT ADDITION END
 	ears = text2path(outfit_data["ears"])
 	glasses = text2path(outfit_data["glasses"])
 	id = text2path(outfit_data["id"])

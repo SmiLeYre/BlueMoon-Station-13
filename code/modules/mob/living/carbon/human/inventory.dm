@@ -23,6 +23,10 @@
 			return wear_mask
 		if(ITEM_SLOT_NECK)
 			return wear_neck
+		//BLUEMOON EDIT ADDITION BEGIN
+		if(ITEM_SLOT_SHOULDERS)
+			return wear_shoulders
+		//BLUEMOON EDIT ADDITION END
 		if(ITEM_SLOT_HANDCUFFED)
 			return handcuffed
 		if(ITEM_SLOT_LEGCUFFED)
@@ -97,6 +101,9 @@
 		head,
 		wear_mask,
 		wear_neck,
+		//BLUEMOON EDIT ADDITION BEGIN
+		wear_shoulders,
+		//BLUEMOON EDIT ADDITION END
 		glasses,
 		ears,
 		ears_extra,
@@ -130,6 +137,11 @@
 			wear_neck = I
 			sec_hud_set_ID()
 			update_inv_neck()
+		//BLUEMOON EDIT ADDITION BEGIN
+		if(ITEM_SLOT_SHOULDERS)
+			wear_shoulders = I
+			update_inv_shoulders()
+		//BLUEMOON EDIT ADDITION END
 		// Sandstorm edit
 		if(ITEM_SLOT_EARS_LEFT)
 			ears = I
@@ -325,6 +337,12 @@
 		sec_hud_set_ID()
 		if(!QDELETED(src))
 			update_inv_neck()
+	//BLUEMOON EDIT ADDITION BEGIN
+	else if(I == wear_shoulders)
+		wear_shoulders = null
+		if(!QDELETED(src))
+			update_inv_shoulders()
+	//BLUEMOON EDIT ADDITION END
 	else if(I == r_store)
 		r_store = null
 		if(!QDELETED(src))

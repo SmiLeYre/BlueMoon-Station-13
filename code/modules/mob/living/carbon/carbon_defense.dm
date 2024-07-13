@@ -104,6 +104,11 @@
 					if(wear_neck && prob(basebloodychance))
 						wear_neck.add_mob_blood(src)
 						update_inv_neck()
+					//BLUEMOON EDIT ADDITION BEGIN
+					if(wear_shoulders && prob(basebloodychance))
+						wear_shoulders.add_mob_blood(src)
+						update_inv_neck()
+					//BLUEMOON EDIT ADDITION END
 					if(head && prob(basebloodychance))
 						head.add_mob_blood(src)
 						update_inv_head()
@@ -614,6 +619,10 @@
 			hit_clothes = wear_mask
 		if(wear_neck)
 			hit_clothes = wear_neck
+		//BLUEMOON EDIT ADDITION BEGIN
+		if(wear_shoulders)
+			hit_clothes = wear_shoulders
+		//BLUEMOON EDIT ADDITION END
 		if(head)
 			hit_clothes = head
 		if(hit_clothes)

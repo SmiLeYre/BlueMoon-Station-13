@@ -23,3 +23,8 @@
 	if(wear_neck)
 		if(!.[wear_neck])
 			.[wear_neck] = wear_neck.block_priority
+	//BLUEMOON EDIT ADDITION BEGIN
+	if(wear_shoulders)
+		if(!.[wear_shoulders])
+			.[wear_shoulders] = wear_shoulders.block_priority
+	//BLUEMOON EDIT ADDITION END

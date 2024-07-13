@@ -892,6 +892,11 @@
 	if(wear_neck)
 		wear_neck.add_blood_DNA(blood_dna, diseases)
 		update_inv_neck()
+	//BLUEMOON EDIT ADDITION BEGIN
+	if(wear_shoulders)
+		wear_shoulders.add_blood_DNA(blood_dna, diseases)
+		update_inv_shoulders()
+	//BLUEMOON EDIT ADDITION END
 	if(wear_suit)
 		wear_suit.add_blood_DNA(blood_dna, diseases)
 		update_inv_wear_suit()

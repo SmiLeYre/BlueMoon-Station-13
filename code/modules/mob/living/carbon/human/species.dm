@@ -1342,6 +1342,14 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			if( !(I.slot_flags & ITEM_SLOT_NECK) )
 				return FALSE
 			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+		//BLUEMOON EDIT ADDITION BEGIN
+		if(ITEM_SLOT_SHOULDERS)
+			if(H.wear_shoulders)
+				return FALSE
+			if( !(I.slot_flags & ITEM_SLOT_SHOULDERS) )
+				return FALSE
+			return equip_delay_self_check(I, H, bypass_equip_delay_self)
+		//BLUEMOON EDIT ADDITION END
 		if(ITEM_SLOT_BACK)
 			if(H.back)
 				return FALSE
@@ -2649,6 +2657,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			head_clothes = H.wear_mask
 		if(H.wear_neck)
 			head_clothes = H.wear_neck
+		//BLUEMOON EDIT ADDITION BEGIN
+		if(H.wear_shoulders)
+			head_clothes = H.wear_shoulders
+		//BLUEMOON EDIT ADDITION END
 		if(H.head)
 			head_clothes = H.head
 		if(head_clothes)

@@ -32,37 +32,42 @@
 #define ITEM_SLOT_DEX_STORAGE (1<<11)
 /// Neck slot (ties, bedsheets, scarves)
 #define ITEM_SLOT_NECK (1<<12)
+//BLUEMOON EDIT ADDITION BEGIN
+/// Shoulders slot
+#define ITEM_SLOT_SHOULDERS (1<<13)
+//BLUEMOON EDIT ADDITION END
 /// A character's hand slots
-#define ITEM_SLOT_HANDS (1<<13)
+#define ITEM_SLOT_HANDS (1<<14)
 /// Inside of a character's backpack
-#define ITEM_SLOT_BACKPACK (1<<14)
+#define ITEM_SLOT_BACKPACK (1<<15)
 /// Suit Storage slot
-#define ITEM_SLOT_SUITSTORE (1<<15)
+#define ITEM_SLOT_SUITSTORE (1<<16)
 /// Left Pocket slot
-#define ITEM_SLOT_LPOCKET (1<<16)
+#define ITEM_SLOT_LPOCKET (1<<17)
 /// Right Pocket slot
-#define ITEM_SLOT_RPOCKET (1<<17)
+#define ITEM_SLOT_RPOCKET (1<<18)
 // -- Sandstorm edit --
 /// Underwear slot
-#define ITEM_SLOT_UNDERWEAR (1<<18)
+#define ITEM_SLOT_UNDERWEAR (1<<19)
 /// Socks slot
-#define ITEM_SLOT_SOCKS (1<<19)
+#define ITEM_SLOT_SOCKS (1<<20)
 /// Shirt slot
-#define ITEM_SLOT_SHIRT (1<<20)
+#define ITEM_SLOT_SHIRT (1<<21)
 /// Right ear slot
-#define ITEM_SLOT_EARS_RIGHT (1<<21)
+#define ITEM_SLOT_EARS_RIGHT (1<<22)
 /// Wrist slot
-#define ITEM_SLOT_WRISTS (1<<22)
+#define ITEM_SLOT_WRISTS (1<<23)
 // -- End edit --
 /// Handcuff slot
-#define ITEM_SLOT_HANDCUFFED (1<<23)
+#define ITEM_SLOT_HANDCUFFED (1<<24)
 /// Legcuff slot (bolas, beartraps)
-#define ITEM_SLOT_LEGCUFFED (1<<24)
+#define ITEM_SLOT_LEGCUFFED (1<<25)
 /// To attach to a jumpsuit
-#define ITEM_SLOT_ACCESSORY (1<<25)
+#define ITEM_SLOT_ACCESSORY (1<<26)
+
 
 /// Total amount of slots
-#define SLOTS_AMT 26 // Keep this up to date!
+#define SLOTS_AMT 27 // Keep this up to date!
 
 //SLOT GROUP HELPERS
 #define ITEM_SLOT_POCKETS (ITEM_SLOT_LPOCKET|ITEM_SLOT_RPOCKET)
@@ -82,12 +87,15 @@
 #define HIDEHAIR		(1<<8)
 #define HIDEFACIALHAIR	(1<<9)
 #define HIDENECK		(1<<10)
-#define HIDETAUR		(1<<11) //gotta hide that snowflake
-#define HIDESNOUT		(1<<12) //or do we actually hide our snoots
-#define HIDEACCESSORY	(1<<13) //hides the jumpsuit accessory.
+//BLUEMOON EDIT ADDITION BEGIN
+#define HIDESHOULDERS	(1<<11)
+//BLUEMOON EDIT ADDITION END
+#define HIDETAUR		(1<<12) //gotta hide that snowflake
+#define HIDESNOUT		(1<<13) //or do we actually hide our snoots
+#define HIDEACCESSORY	(1<<14) //hides the jumpsuit accessory.
 //sandstorm edit
-#define HIDEUNDERWEAR	(1<<14) //hides underwear, socks and shirt
-#define HIDEWRISTS		(1<<15) //hides wrists
+#define HIDEUNDERWEAR	(1<<15) //hides underwear, socks and shirt
+#define HIDEWRISTS		(1<<16) //hides wrists
 //
 
 //bitflags for clothing coverage - also used for limbs
@@ -107,6 +115,9 @@
 #define HAND_RIGHT	(1<<10)
 #define HANDS		(HAND_LEFT | HAND_RIGHT)
 #define NECK		(1<<11)
+//BLUEMOON EDIT ADDITION BEGIN
+#define SHOULDERS		(1<<12)
+//BLUEMOON EDIT ADDITION END
 #define FULL_BODY	(~0)
 
 //flags for alternate styles: These are hard sprited so don't set this if you didn't put the effort in

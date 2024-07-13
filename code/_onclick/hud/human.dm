@@ -483,6 +483,17 @@
 	inv_box.slot_id = ITEM_SLOT_WRISTS
 	extra_inventory += inv_box
 
+	//BLUEMOON EDIT ADDITION BEGIN
+	inv_box = new /atom/movable/screen/inventory()
+	inv_box.name = "shoulders"
+	inv_box.icon = ui_style_modular(ui_style)
+	inv_box.icon_state = "template" // need neck icon
+	inv_box.icon_full = "template"
+	inv_box.screen_loc = ui_shoulders
+	inv_box.slot_id = ITEM_SLOT_SHOULDERS
+	extra_inventory += inv_box
+	//BLUEMOON EDIT ADDITION END
+
 	inv_box = new /atom/movable/screen/inventory()
 	inv_box.name = "belt"
 	inv_box.icon = ui_style
@@ -719,6 +730,11 @@
 		if(H.wrists)
 			H.wrists.screen_loc = ui_wrists
 			screenmob.client.screen += H.wrists
+		//BLUEMOON EDIT ADDITION BEGIN
+		if(H.wear_shoulders)
+			H.wear_shoulders.screen_loc = ui_shoulders
+			screenmob.client.screen += H.wear_shoulders
+		//BLUEMOON EDIT ADDITION END
 	else
 		if(H.ears_extra)
 			screenmob.client.screen -= H.ears_extra
@@ -730,6 +746,10 @@
 			screenmob.client.screen -= H.w_shirt
 		if(H.wrists)
 			screenmob.client.screen -= H.wrists
+		//BLUEMOON EDIT ADDITION BEGIN
+		if(H.wear_shoulders)
+			screenmob.client.screen -= H.wear_shoulders
+		//BLUEMOON EDIT ADDITION END
 //
 
 /datum/hud/human/persistent_inventory_update(mob/viewer)
