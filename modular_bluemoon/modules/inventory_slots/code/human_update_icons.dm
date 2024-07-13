@@ -1,4 +1,4 @@
-/mob/living/carbon/human/update_inv_shoulders()
+/mob/living/carbon/update_inv_shoulders()
 	remove_overlay(SHOULDERS_LAYER)
 
 	if(client && hud_used && hud_used.inv_slots[TOBITSHIFT(ITEM_SLOT_SHOULDERS) + 1])
@@ -15,6 +15,5 @@
 		wear_shoulders.screen_loc = ui_shoulders
 		if(client && hud_used && hud_used.hud_shown && hud_used.extra_shown)
 			client.screen += wear_shoulders
-		update_observer_view(wear_shoulders)
 
 		apply_overlay(SHOULDERS_LAYER)

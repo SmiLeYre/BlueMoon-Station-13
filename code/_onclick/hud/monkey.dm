@@ -53,6 +53,17 @@
 	inv_box.slot_id = ITEM_SLOT_MASK
 	static_inventory += inv_box
 
+	//BLUEMOON EDIT ADDITION BEGIN
+	inv_box = new /atom/movable/screen/inventory()
+	inv_box.name = "shoulders"
+	inv_box.icon = ui_style
+	inv_box.icon_state = "template" // need neck icon
+	inv_box.icon_full = "template"
+	inv_box.screen_loc = ui_monkey_shoulders
+	inv_box.slot_id = ITEM_SLOT_SHOULDERS
+	static_inventory += inv_box
+	//BLUEMOON EDIT ADDITION END
+
 	inv_box = new /atom/movable/screen/inventory()
 	inv_box.name = "neck"
 	inv_box.icon = ui_style
@@ -147,6 +158,11 @@
 		if(M.head)
 			M.head.screen_loc = ui_monkey_head
 			M.client.screen += M.head
+		//BLUEMOON EDIT ADDITION BEGIN
+		if(M.wear_shoulders)
+			M.wear_shoulders.screen_loc = ui_monkey_shoulders
+			M.client.screen += M.wear_shoulders
+		//BLUEMOON EDIT ADDITION END
 	else
 		if(M.back)
 			M.back.screen_loc = null
@@ -154,6 +170,10 @@
 			M.wear_mask.screen_loc = null
 		if(M.head)
 			M.head.screen_loc = null
+		//BLUEMOON EDIT ADDITION BEGIN
+		if(M.wear_shoulders)
+			M.wear_shoulders.screen_loc = null
+		//BLUEMOON EDIT ADDITION END
 
 	if(hud_version != HUD_STYLE_NOHUD)
 		for(var/obj/item/I in M.held_items)

@@ -25,6 +25,9 @@ GLOBAL_LIST_INIT(strippable_monkey_items, create_strippable_list(list(
 	/datum/strippable_item/hand/right,
 	/datum/strippable_item/mob_item_slot/handcuffs,
 	/datum/strippable_item/mob_item_slot/legcuffs,
+	//BLUEMOON EDIT ADDITION BEGIN
+	/datum/strippable_item/mob_item_slot/shoulders,
+	//BLUEMOON EDIT ADDITION END
 )))
 
 /mob/living/carbon/monkey/Initialize(mapload, cubespawned=FALSE, mob/spawner)

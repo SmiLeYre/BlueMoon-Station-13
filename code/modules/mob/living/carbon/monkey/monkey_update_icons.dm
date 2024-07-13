@@ -6,6 +6,9 @@
 		update_inv_wear_mask()
 		update_inv_head()
 		update_inv_back()
+		//BLUEMOON EDIT ADDITION BEGIN
+		update_inv_shoulders()
+		//BLUEMOON EDIT ADDITION END
 		update_transform()
 
 
