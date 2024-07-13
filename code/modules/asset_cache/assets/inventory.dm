@@ -2,7 +2,10 @@
 	assets = list(
 		"inventory-glasses.png" = 'icons/ui_icons/inventory/glasses.png',
 		"inventory-head.png" = 'icons/ui_icons/inventory/head.png',
-		"inventory-neck.png" = 'icons/ui_icons/inventory/neck.png',
+		//BLUEMOON EDIT CHANGE BEGIN
+		// "inventory-neck.png" = 'icons/ui_icons/inventory/neck.png', //BLUEMOON EDIT - ORIGINAL
+		"inventory-neck.png" = 'icons/ui_icons/inventory/collar.png',
+		//BLUEMOON EDIT CHANGE END
 		"inventory-mask.png" = 'icons/ui_icons/inventory/mask.png',
 		"inventory-ears.png" = 'icons/ui_icons/inventory/ears.png',
 		"inventory-uniform.png" = 'icons/ui_icons/inventory/uniform.png',
@@ -24,4 +27,7 @@
 		"inventory-socks.png" = 'modular_sand/icons/ui_icons/inventory/socks.png',
 		"inventory-undershirt.png" = 'modular_sand/icons/ui_icons/inventory/undershirt.png',
 		"inventory-wrists.png" = 'modular_sand/icons/ui_icons/inventory/wrists.png',
+		//BLUEMOON EDIT ADDITION BEGIN
+		"inventory-shoulders.png" = 'icons/ui_icons/inventory/neck.png',
+		//BLUEMOON EDIT ADDITION END
 	)

@@ -6,6 +6,10 @@
 			return wear_mask
 		if(ITEM_SLOT_NECK)
 			return wear_neck
+		//BLUEMOON EDIT ADDITION BEGIN
+		if(ITEM_SLOT_SHOULDERS)
+			return wear_shoulders
+		//BLUEMOON EDIT ADDITION END
 		if(ITEM_SLOT_HEAD)
 			return head
 		if(ITEM_SLOT_HANDCUFFED)
@@ -84,6 +88,11 @@
 			else
 				wear_neck = I
 				update_inv_neck(I)
+		//BLUEMOON EDIT ADDITION BEGIN
+		if(ITEM_SLOT_SHOULDERS)
+			wear_shoulders = I
+			update_inv_shoulders(I)
+		//BLUEMOON EDIT ADDITION END
 		if(ITEM_SLOT_HANDCUFFED)
 			handcuffed = I
 			update_handcuffed()
@@ -130,6 +139,14 @@
 		wear_neck = null
 		if(!QDELETED(src))
 			update_inv_neck(I)
+	//BLUEMOON EDIT ADDITION BEGIN
+	if(I == wear_shoulders)
+		if(ishuman(src))
+			return TRUE
+		wear_shoulders = null
+		if(!QDELETED(src))
+			update_inv_shoulders(I)
+	//BLUEMOON EDIT ADDITION END
 	else if(I == handcuffed)
 		handcuffed = null
 		if(buckled && buckled.buckle_requires_restraints)

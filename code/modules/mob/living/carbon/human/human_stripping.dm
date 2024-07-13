@@ -28,6 +28,9 @@ GLOBAL_LIST_INIT(strippable_human_items, create_strippable_list(list(
 	/datum/strippable_item/mob_item_slot/socks,
 	/datum/strippable_item/mob_item_slot/underwear,
 	/datum/strippable_item/mob_item_slot/undershirt,
+	//BLUEMOON EDIT ADDITION BEGIN
+	/datum/strippable_item/mob_item_slot/shoulders,
+	//BLUEMOON EDIT ADDITION END
 )))
 
 /mob/living/carbon/human/proc/should_strip(mob/user)

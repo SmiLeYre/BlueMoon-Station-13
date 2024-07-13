@@ -251,6 +251,13 @@ const SLOTS: Record<
     image: "inventory-pocket.png",
   },
 
+  //BLUEMOON EDIT ADDITION BEGIN
+  shoulders: {
+    displayName: "shoulders",
+    gridSpot: getGridSpotKey([0, 4]),
+    image: "inventory-shoulders.png",
+  },
+  //BLUEMOON EDIT ADDITION END
 };
 
 const SLOTS_LONG: Record<
@@ -419,6 +426,13 @@ const SLOTS_LONG: Record<
     image: "inventory-pocket.png",
   },
 
+    //BLUEMOON EDIT ADDITION BEGIN
+    shoulders: {
+      displayName: "shoulders",
+      gridSpot: getGridSpotKey([4, 3]),
+      image: "inventory-shoulders.png",
+    },
+    //BLUEMOON EDIT ADDITION END
 };
 
 enum ObscuringLevel {

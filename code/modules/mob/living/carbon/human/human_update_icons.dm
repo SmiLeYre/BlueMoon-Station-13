@@ -102,6 +102,9 @@ There are several things that need to be remembered:
 			update_inv_wear_suit(block_recursive_calls)
 			update_inv_pockets()
 			update_inv_neck()
+			//BLUEMOON EDIT ADDITION BEGIN
+			update_inv_shoulders()
+			//BLUEMOON EDIT ADDITION END
 			update_transform()
 			//mutations
 			update_mutations_overlay()
