@@ -713,6 +713,7 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/karabiner_kit
 	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls", "kladmenuwu")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/tacticool/satt
 	name = "SATT combat uniform"
