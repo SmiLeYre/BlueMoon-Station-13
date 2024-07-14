@@ -562,7 +562,7 @@
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/ntcane
-	name = "Narasen Cane Modification Kit"
+	name = "Nanorasen Cane Modification Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/ntcane_kit
 	ckeywhitelist = list("stasdvrz")
@@ -677,7 +677,7 @@
 	name = "Upgraded Size Tool"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/melee/sizetool/upgraded
-	ckeywhitelist = list("ezlodey")
+	ckeywhitelist = list("enotzlodey")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/pet_alta
