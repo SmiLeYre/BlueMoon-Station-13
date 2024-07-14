@@ -101,3 +101,9 @@
 	item_state = "bl_suit"
 	mutantrace_variation = STYLE_DIGITIGRADE
 	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/Frieren_skirt
+    name = "Frieren skirt"
+    desc = "Изысканный эльфийский наряд, что выполнен из нежной ткани и украшен золотыми нитями."
+    icon_state = "Elf_skirt"
+    item_state = "Elf_skirt"

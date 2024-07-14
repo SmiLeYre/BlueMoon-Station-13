@@ -749,3 +749,10 @@
 	path = /obj/item/storage/backpack/satt
 	ckeywhitelist = list("allazarius")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/Frieren_skirt
+    name = "Frieren skirt"
+    slot = ITEM_SLOT_ICLOTHING
+    path = /obj/item/clothing/under/donator/bm/Frieren_skirt
+    ckeywhitelist = list("fedor1545")
+    subcategory = LOADOUT_SUBCATEGORIES_DON04
