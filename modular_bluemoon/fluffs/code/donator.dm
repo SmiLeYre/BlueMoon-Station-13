@@ -562,7 +562,7 @@
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/ntcane
-	name = "Nanotrasen Cane Modification Kit"
+	name = "Narasen Cane Modification Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/ntcane_kit
 	ckeywhitelist = list("stasdvrz")
@@ -677,7 +677,7 @@
 	name = "Upgraded Size Tool"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/melee/sizetool/upgraded
-	ckeywhitelist = list("enotzlodey")
+	ckeywhitelist = list("ezlodey")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/pet_alta
@@ -698,21 +698,21 @@
 	name = "Gewehr-550 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/gewehr550
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "NotLikeLuls", "Kladmenuwu")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls", "kladmenuwu")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/hwal2572_kit
 	name = "H-Wal-2572 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/hwal2572
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "NotLikeLuls", "Kladmenuwu")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls", "kladmenuwu")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/karabiner_kit
 	name = "Karabiner-M13 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/karabiner_kit
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "NotLikeLuls", "Kladmenuwu")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls", "kladmenuwu")
 
 /datum/gear/donator/tacticool/satt
 	name = "SATT combat uniform"
