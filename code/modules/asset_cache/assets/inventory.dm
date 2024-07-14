@@ -28,6 +28,6 @@
 		"inventory-undershirt.png" = 'modular_sand/icons/ui_icons/inventory/undershirt.png',
 		"inventory-wrists.png" = 'modular_sand/icons/ui_icons/inventory/wrists.png',
 		//BLUEMOON EDIT ADDITION BEGIN
-		"inventory-shoulders.png" = 'icons/ui_icons/inventory/neck.png',
+		"inventory-shoulders.png" = 'modular_bluemoon/modules/inventory_slots/icons/shoulders.png',
 		//BLUEMOON EDIT ADDITION END
 	)
