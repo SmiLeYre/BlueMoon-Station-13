@@ -56,7 +56,7 @@
 //////////////////////////////////////////////
 
 /datum/dynamic_ruleset/latejoin/infiltrator
-	name = "InteQ Infiltrator"
+	name = "InteQ Infiltrator (Late-Join Autotraitor)"
 	antag_datum = /datum/antagonist/traitor
 	antag_flag = "traitor late"
 	antag_flag_override = ROLE_TRAITOR

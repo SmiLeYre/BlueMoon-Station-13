@@ -181,7 +181,7 @@
 //////////////////////////////////////////////
 
 /datum/dynamic_ruleset/midround/autotraitor
-	name = "InteQ Sleeper Agent"
+	name = "InteQ Sleeper Agent (Autotraitor)"
 	antag_datum = /datum/antagonist/traitor
 	antag_flag = "traitor mid"
 	antag_flag_override = ROLE_TRAITOR // BLUEMOON ADD
@@ -200,12 +200,16 @@
 /datum/dynamic_ruleset/midround/autotraitor/acceptable(population = 0, threat = 0)
 	var/player_count = mode.current_players[CURRENT_LIVING_PLAYERS].len
 	var/antag_count = mode.current_players[CURRENT_LIVING_ANTAGS].len
-	var/max_traitors = round(player_count / 15) + 1 //BLUEMOON CNANGES - 1 предатель на каждые 15 играющих персонажей
+	var/max_antagonists = round(player_count / 15) + 1 // BLUEMOON EDIT - 1 антагонист на каждые 15 играющих персонажей + 1
+	// BLUEMOON ADD START
+	if(GLOB.master_mode == ROUNDTYPE_DYNAMIC_LIGHT)
+		max_antagonists = clamp(round(player_count / 13), 0, 5) // 1 антагонист на каждые 15 играющих персонажей с округлением вниз
+	// BLUEMOON ADD END
 
 	// adding traitors if the antag population is getting low
-	var/too_little_antags = antag_count < max_traitors
+	var/too_little_antags = antag_count < max_antagonists
 	if (!too_little_antags)
-		message_admins("DYNAMIC: Too many living antags compared to living players ([antag_count] living antags, [player_count] living players, [max_traitors] max traitors)")
+		message_admins("DYNAMIC: Too many living antags compared to living players ([antag_count] living antags, [player_count] living players, [max_antagonists] max traitors)")
 		return FALSE
 
 	if (has_failure_chance && !prob(mode.threat_level))
