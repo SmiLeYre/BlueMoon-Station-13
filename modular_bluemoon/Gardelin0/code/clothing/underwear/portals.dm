@@ -71,3 +71,10 @@
 		var/input = (input("How do you wish to name it?") as text)
 		if(input)
 			src.name = input
+
+/obj/item/clothing/underwear/briefs/panties/portalpanties/Initialize(mapload)
+	. = ..()
+	var/datum/action/item_action/chameleon/change/chameleon_action = new(src)
+	chameleon_action.chameleon_type = /obj/item/clothing/underwear/briefs
+	chameleon_action.chameleon_name = "Panties"
+	chameleon_action.initialize_disguises()
