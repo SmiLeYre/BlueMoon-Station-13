@@ -774,6 +774,6 @@
 /datum/gear/donator/bm/rune_jacket
     name = "Rune Jacket"
     slot = ITEM_SLOT_OCLOTHING
-	path = /obj/item/clothing/suit/donator/bm/rune_jacket
+    path = /obj/item/clothing/suit/donator/bm/rune_jacket
     ckeywhitelist = list("D0NALD")
     subcategory = LOADOUT_SUBCATEGORIES_DON02
