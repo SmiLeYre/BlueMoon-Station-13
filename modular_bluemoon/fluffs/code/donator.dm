@@ -149,6 +149,13 @@
 	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob", "snacksman")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/atam
+	name = "Atam"
+	slot = ITEM_SLOT_RPOCKET
+	path = /obj/item/toy/crayon/atam
+	ckeywhitelist = list("FoxedHuman")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
 /datum/gear/donator/bm/Friskis_Mask
 	name = "Magic Kitsune Mask"
 	slot = ITEM_SLOT_MASK
