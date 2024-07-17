@@ -771,7 +771,7 @@
     ckeywhitelist = list("fedor1545", "berly12")
     subcategory = LOADOUT_SUBCATEGORIES_DON04
 
-/datum/gear/donator/bm/Prosecutor
+/datum/gear/donator/bm/rune_jacket
     name = "Rune Jacket"
     slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/rune_jacket
