@@ -2024,6 +2024,7 @@
 /area/awaymission/complex/engineering)
 "bSL" = (
 /obj/structure/table,
+/obj/item/toy/plush/plushvar,
 /turf/open/floor/plasteel,
 /area/awaymission/complex/research)
 "bSO" = (
@@ -11817,6 +11818,20 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plating,
 /area/awaymission/complex/engineering)
+"kgy" = (
+/obj/vehicle/ridden/atv/snowmobile,
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/item/key{
+	desc = "A small grey key meant to be placed inside a vehicle. There is nothing special about this key at all besides that.";
+	name = "ATV key"
+	},
+/turf/open/floor/plating,
+/area/awaymission/complex/research)
 "kgE" = (
 /obj/structure/railing{
 	dir = 1
@@ -12220,6 +12235,20 @@
 /obj/structure/filingcabinet/chestdrawer/wheeled,
 /turf/open/floor/wood/damturf/broken7,
 /area/awaymission/complex/facilityresearch)
+"kwH" = (
+/obj/vehicle/ridden/atv/snowmobile,
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/item/key{
+	desc = "A small grey key meant to be placed inside a vehicle. There is nothing special about this key at all besides that.";
+	name = "ATV key"
+	},
+/turf/open/floor/plating,
+/area/awaymission/complex/research)
 "kxm" = (
 /obj/machinery/light/small,
 /turf/open/floor/plating,
@@ -22308,6 +22337,7 @@
 	dir = 1
 	},
 /obj/effect/decal/cleanable/dirt/dust,
+/obj/item/toy/plush/plushvar,
 /turf/open/floor/plasteel,
 /area/awaymission/complex/research)
 "tvG" = (
@@ -24328,6 +24358,20 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/complex/security)
+"vaS" = (
+/obj/vehicle/ridden/atv/snowmobile,
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/item/key{
+	desc = "A small grey key meant to be placed inside a vehicle. There is nothing special about this key at all besides that.";
+	name = "ATV key"
+	},
+/turf/open/floor/plating,
+/area/awaymission/complex/research)
 "vaV" = (
 /obj/structure/closet/secure_closet/security/sec,
 /obj/effect/turf_decal/tile/red{
@@ -25224,6 +25268,7 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
 	},
+/obj/item/toy/plush/plushvar,
 /turf/open/floor/plasteel,
 /area/awaymission/complex/research)
 "vLI" = (
@@ -89422,7 +89467,7 @@ dfP
 dfP
 dfP
 dfP
-swG
+dfP
 swG
 sFr
 sFr
@@ -89677,9 +89722,9 @@ hDO
 sWv
 kgM
 swG
-swG
-swG
-swG
+hDO
+sWv
+kgM
 swG
 sFr
 sFr
@@ -89934,9 +89979,9 @@ edC
 iTF
 rkI
 swG
-swG
-swG
-swG
+kgy
+vaS
+kwH
 sFr
 sFr
 sFr

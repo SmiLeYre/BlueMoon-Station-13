@@ -1,6 +1,7 @@
 import { decodeHtmlEntities } from 'common/string';
+
 import { useBackend } from '../backend';
-import { Box, Button, NoticeBox, Section, LabeledList } from '../components';
+import { Box, Button, LabeledList, NoticeBox, Section } from '../components';
 import { Window } from '../layouts';
 
 export const RemoteRobotControl = (props, context) => {
@@ -20,6 +21,7 @@ export const RemoteRobotControlContent = (props, context) => {
   const { act, data } = useBackend(context);
   const {
     robots = [],
+    commandeering,
   } = data;
   if (!robots.length) {
     return (
@@ -46,6 +48,7 @@ export const RemoteRobotControlContent = (props, context) => {
             <Button
               icon="phone-alt"
               content="Call"
+              selected={robot.ref === commandeering}
               onClick={() => act('callbot', {
                 ref: robot.ref,
               })} />

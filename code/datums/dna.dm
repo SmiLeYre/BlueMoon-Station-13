@@ -24,7 +24,8 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 	// BLUEMOON EDIT START - привязка флавора к ДНК
 	var/flavor_text
 	var/naked_flavor_text
-	var/headshot_link
+	var/ooc_notes // hate this
+	var/list/headshot_links = list()
 	// BLUEMOON EDIT END
 
 /datum/dna/New(mob/living/new_holder)
@@ -79,7 +80,8 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 		// BLUEMOON EDIT START - привязка флавора к ДНК
 		destination.dna.flavor_text = flavor_text
 		destination.dna.naked_flavor_text = naked_flavor_text
-		destination.dna.headshot_link = headshot_link
+		destination.dna.ooc_notes = ooc_notes
+		destination.dna.headshot_links = headshot_links.Copy()
 		// BLUEMOON EDIT END
 	if(transfer_SE)
 		destination.dna.mutation_index = mutation_index
@@ -111,7 +113,8 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 	// BLUEMOON EDIT START - привязка флавора к ДНК
 	new_dna.flavor_text = flavor_text
 	new_dna.naked_flavor_text = naked_flavor_text
-	new_dna.headshot_link = headshot_link
+	new_dna.ooc_notes = ooc_notes
+	new_dna.headshot_links = headshot_links.Copy()
 	// BLUEMOON EDIT END
 
 //See mutation.dm for what 'class' does. 'time' is time till it removes itself in decimals. 0 for no timer
@@ -559,7 +562,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 
 /datum/dna/proc/check_block_string(mutation)
 	if((LAZYLEN(mutation_index) > DNA_MUTATION_BLOCKS) || !(mutation in mutation_index))
-		return 0
+		return FALSE
 	return is_gene_active(mutation)
 
 /datum/dna/proc/is_gene_active(mutation)
@@ -606,7 +609,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 
 /proc/setblock(istring, blocknumber, replacement, blocksize=DNA_BLOCK_SIZE)
 	if(!istring || !blocknumber || !replacement || !blocksize)
-		return 0
+		return FALSE
 	return getleftblocks(istring, blocknumber, blocksize) + replacement + getrightblocks(istring, blocknumber, blocksize)
 
 /datum/dna/proc/mutation_in_sequence(mutation)
@@ -682,7 +685,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 
 /proc/scramble_dna(mob/living/carbon/M, ui=FALSE, se=FALSE, probability)
 	if(!M.has_dna())
-		return 0
+		return FALSE
 	// BLUEMOON ADD START - гены роботов не должны изменяться
 	if(HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM))
 		return
@@ -697,7 +700,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 			if(prob(probability))
 				M.dna.uni_identity = setblock(M.dna.uni_identity, i, random_string(DNA_BLOCK_SIZE, GLOB.hex_characters))
 		M.updateappearance(mutations_overlay_update=1)
-	return 1
+	return TRUE
 
 //value in range 1 to values. values must be greater than 0
 //all arguments assumed to be positive integers

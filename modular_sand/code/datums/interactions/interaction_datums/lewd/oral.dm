@@ -6,11 +6,15 @@
 	write_log_target = "was given head by"
 	interaction_sound = null
 	var/fucktarget = "vagina"
+	p13user_emote = PLUG13_EMOTE_MOUTH
+	p13target_emote = PLUG13_EMOTE_VAGINA
 
 /datum/interaction/lewd/oral/blowjob
 	description = "Член. Отсосать."
 	required_from_target_exposed = INTERACTION_REQUIRE_PENIS
 	fucktarget = "penis"
+	p13user_emote = PLUG13_EMOTE_MOUTH
+	p13target_emote = PLUG13_EMOTE_PENIS
 
 /datum/interaction/lewd/oral/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -20,8 +24,13 @@
 	if(partner.is_fucking(user, CUM_TARGET_MOUTH))
 		if(prob(partner.get_sexual_potency()))
 			user.adjustOxyLoss(1)
-			message = "становится всё проворней и проворней в случае с членом \the <b>[partner]</b>."
-			lust_increase += 5
+			switch(fucktarget)
+				if("vagina")
+					message = "становится всё проворней и проворней в случае с киской \the <b>[partner]</b>."
+					lust_increase += 5
+				if("penis")
+					message = "становится всё проворней и проворней в случае с членом \the <b>[partner]</b>."
+					lust_increase += 5
 		else
 			var/improv = FALSE
 			switch(fucktarget)

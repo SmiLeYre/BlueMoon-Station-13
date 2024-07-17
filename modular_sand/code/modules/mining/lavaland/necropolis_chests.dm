@@ -34,7 +34,7 @@
 	shieldbash_stagger_duration = 4.5 SECONDS
 	shieldbash_push_distance = 2
 	max_integrity = 350
-	block_chance = 50
+	block_chance = 0
 	can_shatter = FALSE
 	repair_material = /obj/item/stack/sheet/animalhide/goliath_hide
 	w_class = WEIGHT_CLASS_BULKY
@@ -113,7 +113,7 @@
 
 /obj/item/gun/ballistic/revolver/doublebarrel/super/attack_self(mob/living/user)
 	if(toggled)
-		return 0
+		return FALSE
 	else
 		..()
 
@@ -121,10 +121,10 @@
 	if(toggled)
 		charge_tick++
 		if(charge_tick < recharge_rate)
-			return 0
+			return FALSE
 		charge_tick = 0
 		chambered.newshot()
-		return 1
+		return TRUE
 	else
 		..()
 
@@ -225,8 +225,8 @@
 
 /obj/item/crucible/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(unwield))
 
 /obj/item/crucible/ComponentInitialize()
 	. = ..()
@@ -616,6 +616,7 @@
 	var/stored_resistance_flags = 0
 	var/stored_heat_protection = 0
 	var/stored_max_heat_protection_temperature = 0
+	max_stack = 1 // BLUEMOON EDIT - изменение аксессуаров
 
 /obj/item/clothing/accessory/fireresist/attach(obj/item/clothing/under/U, user)
 	. = ..()
@@ -645,11 +646,12 @@
 	var/datum/action/cooldown/lavawalk/lavawalk
 	var/effectduration = 10 SECONDS
 	var/timer
+	max_stack = 1 // BLUEMOON EDIT - изменение аксессуаров
 
 /obj/item/clothing/accessory/lavawalk/ComponentInitialize()
 	. = ..()
 	lavawalk = new(src)
-	RegisterSignal(lavawalk, COMSIG_ACTION_TRIGGER, .proc/activate)
+	RegisterSignal(lavawalk, COMSIG_ACTION_TRIGGER, PROC_REF(activate))
 
 /obj/item/clothing/accessory/lavawalk/Destroy()
 	. = ..()
@@ -676,7 +678,8 @@
 	desc = "Become immune to lava for a brief period of time."
 	check_flags = AB_CHECK_RESTRAINED|AB_CHECK_STUN|AB_CHECK_CONSCIOUS
 	cooldown_time = 2 MINUTES //two full minutes
-	use_target_appearance = TRUE
+	icon_icon = 'icons/obj/clothing/accessories.dmi'
+	button_icon_state = "gold"
 
 /obj/item/clothing/accessory/lavawalk/proc/activate(datum/action/cooldown/lavawalk/action, obj/item/clothing/accessory/lavawalk/item)
 	var/mob/living/L = usr
@@ -685,7 +688,7 @@
 		L.balloon_alert(L, "activated")
 		ADD_TRAIT(L, TRAIT_ASHSTORM_IMMUNE, src)
 		ADD_TRAIT(L, TRAIT_LAVA_IMMUNE, src)
-		timer = addtimer(CALLBACK(src, .proc/reset_user, L), effectduration)
+		timer = addtimer(CALLBACK(src, PROC_REF(reset_user), L), effectduration, TIMER_STOPPABLE)
 		action.StartCooldown()
 
 /obj/item/clothing/accessory/lavawalk/proc/reset_user(mob/living/user)
@@ -693,7 +696,7 @@
 	REMOVE_TRAIT(user, TRAIT_LAVA_IMMUNE, src)
 	to_chat(user, span_boldwarning("\The [src]'s glow dims."))
 	user.balloon_alert(user, "wore off")
-	QDEL_NULL(timer)
+	deltimer(timer)
 
 //Nerfing those on the chest because too OP yada yada
 /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor/damaged

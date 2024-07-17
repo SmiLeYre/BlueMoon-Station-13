@@ -109,6 +109,9 @@ GLOBAL_LIST_EMPTY(bodycontainers) //Let them act as spawnpoints for revenants an
 	user.visible_message(null, \
 		"<span class='notice'>You lean on the back of [src] and start pushing the tray open... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
 		"<span class='italics'>You hear a metallic creaking from [src].</span>")
+	if(INTERACTING_WITH(user, src))
+		to_chat(user, span_warning("You're already interacting with [src]!"))
+		return
 	if(do_after(user,(breakout_time), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src )
 			return
@@ -222,6 +225,7 @@ GLOBAL_LIST_EMPTY(crematoriums)
 	id = "[idnum][id]"
 
 /obj/structure/bodycontainer/crematorium/update_icon()
+	. = ..()
 	if(!connected || connected.loc != src)
 		icon_state = "crema0"
 	else
@@ -382,9 +386,9 @@ GLOBAL_LIST_EMPTY(crematoriums)
 	if(.)
 		return
 	if(locate(/obj/structure/table) in get_turf(mover))
-		return 1
+		return TRUE
 	else
-		return 0
+		return FALSE
 
 /obj/structure/tray/m_tray/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/caller)
 	. = !density

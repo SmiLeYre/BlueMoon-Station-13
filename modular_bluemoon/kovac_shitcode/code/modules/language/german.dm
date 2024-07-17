@@ -10,7 +10,7 @@
 	key = "g"
 	space_chance = 70
 	default_priority = 98
-	flags = TONGUELESS_SPEECH
+	// flags = TONGUELESS_SPEECH bluemoon change
 	syllables = list("das leben", "warten", "die frau", "das jahr", "weit", "alles", "platz", "du", "aus", "uber", "aber", "yat", "übrigens", "hier", \
 					 "durch", "neu", "luftkuss", "freudentränen", "frühlingsgefühle", "verzehren", "geborgenheit", "sonne", "mutter", "engel", "tier", "mein", "herz", "brennt", \
 					 "zeit", "gut", "eins", "rosenrot", "ausländer", "angst", "haifisch", "bück", "dich", "adieu", "onhe", "reise", "herzeleid", \

@@ -22,6 +22,7 @@
 	icon_state = "advtaser"
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/electrode/security = FALSE)
 	ammo_x_offset = 2
+	w_class = WEIGHT_CLASS_NORMAL
 	// Not enough guns have altfire systems like this yet for this to be a universal framework.
 	var/last_altfire = 0
 	var/altfire_delay = CLICK_CD_RANGE
@@ -57,6 +58,7 @@
 	desc = "A self-defense weapon that exhausts organic targets, weakening them until they collapse."
 	icon_state = "disabler"
 	item_state = null
+	w_class = WEIGHT_CLASS_NORMAL
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler)
 	ammo_x_offset = 3
 

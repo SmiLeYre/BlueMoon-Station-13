@@ -8,6 +8,14 @@
 			to_chat(src, "<font color='red'> You are now [W]'s slave! Serve your master properly! </font>")
 
 /mob/living/proc/receive_climax(mob/living/partner, obj/item/organ/genital/receiver, obj/item/organ/genital/source, spill, forced)
+
+	if (istype(receiver, /obj/item/organ/genital/penis) || istype(receiver, /obj/item/organ/genital/vagina))
+		partner.client?.plug13.send_emote(PLUG13_EMOTE_GROIN, PLUG13_STRENGTH_LOW, PLUG13_DURATION_MEDIUM)
+	else if (istype(receiver, /obj/item/organ/genital/anus))
+		partner.client?.plug13.send_emote(PLUG13_EMOTE_ASS, PLUG13_STRENGTH_LOW, PLUG13_DURATION_MEDIUM)
+	else if (istype(receiver, /obj/item/organ/stomach))
+		partner.client?.plug13.send_emote(PLUG13_EMOTE_MOUTH, PLUG13_STRENGTH_LOW, PLUG13_DURATION_MEDIUM)
+
 	//gregnancy...
 	if(!spill && istype(source, /obj/item/organ/genital/penis) && \
 		istype(receiver, /obj/item/organ/genital/vagina) && getorganslot(ORGAN_SLOT_WOMB))
@@ -164,7 +172,7 @@
 	. = ..()
 	if(!istype(owner))
 		return INITIALIZE_HINT_QDEL
-	RegisterSignal(owner, COMSIG_MOB_LUST_UPDATED, .proc/update_lust)
+	RegisterSignal(owner, COMSIG_MOB_LUST_UPDATED, PROC_REF(update_lust))
 
 /atom/movable/screen/arousal/Click()
 	if(!ishuman(usr))

@@ -180,7 +180,7 @@
 				H.CloseWings()
 			else
 				H.OpenWings()
-			addtimer(CALLBACK(H, open ? /mob/living/carbon/human.proc/OpenWings : /mob/living/carbon/human.proc/CloseWings), wing_time)
+			addtimer(CALLBACK(H, open ? TYPE_PROC_REF(/mob/living/carbon/human, OpenWings) : TYPE_PROC_REF(/mob/living/carbon/human, CloseWings)), wing_time)
 
 /datum/emote/living/flap/aflap
 	key = "aflap"
@@ -454,7 +454,7 @@
 
 /datum/emote/living/sigh/run_emote(mob/user, params)
 	. = ..()
-	if(!iscarbon(user) || !.)
+	if(!. || !isliving(user))
 		return
 	var/mob/living/carbon/C = user
 	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
@@ -488,7 +488,7 @@
 
 /datum/emote/living/sneeze/run_emote(mob/user, params)
 	. = ..()
-	if(!iscarbon(user) || !.)
+	if(!isliving(user) || !.)
 		return
 	var/mob/living/carbon/C = user
 	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
@@ -511,6 +511,8 @@
 
 /datum/emote/living/sniff/run_emote(mob/user, params)
 	. = ..()
+	if(!. || !isliving(user))
+		return
 	var/mob/living/carbon/C = user
 	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 		playsound(C, pick('sound/voice/sniff_f1.ogg'), 50, 1)

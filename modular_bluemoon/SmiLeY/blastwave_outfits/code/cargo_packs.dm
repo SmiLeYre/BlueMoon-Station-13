@@ -47,25 +47,6 @@
 					/obj/item/broom/liquidator)
 	crate_name = "Liquidator's Kit"
 
-/datum/supply_pack/security/lasguns
-	name = "Lasgun's Kit"
-	desc = "Коробочка с автоматическими лазерными винтовками."
-	cost = 16000
-	contains = list(/obj/item/gun/ballistic/automatic/laser/lasgun,
-					/obj/item/gun/ballistic/automatic/laser/lasgun,
-					/obj/item/gun/ballistic/automatic/laser/lasgun,
-					/obj/item/ammo_box/magazine/recharge/lasgun,
-					/obj/item/ammo_box/magazine/recharge/lasgun,
-					/obj/item/ammo_box/magazine/recharge/lasgun,
-					/obj/item/ammo_box/magazine/recharge/lasgun,
-					/obj/item/ammo_box/magazine/recharge/lasgun,
-					/obj/item/ammo_box/magazine/recharge/lasgun,
-					/obj/item/ammo_box/magazine/recharge/lasgun,
-					/obj/item/ammo_box/magazine/recharge/lasgun,
-					/obj/item/ammo_box/magazine/recharge/lasgun,
-					/obj/item/ammo_box/magazine/recharge/lasgun)
-	crate_name = "Lasgun's Kit"
-
 /datum/supply_pack/security/armor
 	name = "C.U.C.K.S Deployable Barricades"
 	desc = "Four cases of deployable barricades, for all your fortification needs."

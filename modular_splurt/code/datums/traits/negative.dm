@@ -6,7 +6,7 @@
 
 /datum/quirk/social_anxiety/add()
 	. = ..()
-	RegisterSignal(quirk_holder, COMSIG_MOB_SAY, .proc/handle_speech)
+	RegisterSignal(quirk_holder, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 
 /datum/quirk/social_anxiety/remove()
 	. = ..()
@@ -150,7 +150,7 @@
 /datum/quirk/dumb4cum/add()
 	// Set timer
 	timer_trigger = rand(9000, 18000)
-	timer = addtimer(CALLBACK(src, .proc/crave), timer_trigger, TIMER_STOPPABLE)
+	timer = addtimer(CALLBACK(src, PROC_REF(crave)), timer_trigger, TIMER_STOPPABLE)
 
 /datum/quirk/dumb4cum/remove()
 	// Remove status trait
@@ -174,7 +174,7 @@
 		to_chat(quirk_holder, span_love("[pick(trigger_phrases)]"))
 
 	reminder_trigger = rand(3000, 9000)
-	reminder_timer = addtimer(CALLBACK(src, .proc/reminder), reminder_trigger, TIMER_STOPPABLE)
+	reminder_timer = addtimer(CALLBACK(src, PROC_REF(reminder)), reminder_trigger, TIMER_STOPPABLE)
 
 	// Add active status trait
 	ADD_TRAIT(quirk_holder, TRAIT_DUMB_CUM_CRAVE, DUMB_CUM_TRAIT)
@@ -191,7 +191,7 @@
 	deltimer(reminder_timer)
 	reminder_timer = null
 	reminder_trigger = rand(3000, 9000)
-	reminder_timer = addtimer(CALLBACK(src, .proc/reminder), reminder_trigger, TIMER_STOPPABLE)
+	reminder_timer = addtimer(CALLBACK(src, PROC_REF(reminder)), reminder_trigger, TIMER_STOPPABLE)
 
 /datum/quirk/dumb4cum/proc/uncrave(print_text = FALSE)
 	// Remove active status trait
@@ -211,7 +211,7 @@
 	reminder_timer = null
 	timer_trigger = rand(9000, 18000)
 	// Add new timer
-	timer = addtimer(CALLBACK(src, .proc/crave), timer_trigger, TIMER_STOPPABLE)
+	timer = addtimer(CALLBACK(src, PROC_REF(crave)), timer_trigger, TIMER_STOPPABLE)
 
 	if(print_text)
 		to_chat(quirk_holder, span_love("[pick(uncrave_phrases)]"))
@@ -235,7 +235,8 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		var/datum/physiology/P = H.physiology
-		P.hunger_mod /= 2
+		if(P)
+			P.hunger_mod /= 2
 
 /datum/quirk/thirsty
 	name = "Жаждущий"
@@ -254,7 +255,8 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		var/datum/physiology/P = H.physiology
-		P.thirst_mod /= 2
+		if(P)
+			P.thirst_mod /= 2
 
 /datum/quirk/less_nightmare
 	name = "Отпрыск Ночного Кошмара"
@@ -286,7 +288,7 @@
 
 /datum/quirk/well_trained/add()
 	. = ..()
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
 
 /datum/quirk/well_trained/remove()
 	. = ..()

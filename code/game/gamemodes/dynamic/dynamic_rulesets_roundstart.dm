@@ -317,7 +317,7 @@
 	weight = 3 //BLUEMOON CHANGES
 	cost = 20
 	requirements = list(101,101,101,101,101,101,60,40,30,10) //BLUEMOON CHANGES
-	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD) // BLUEMOON ADD
 	flags = HIGH_IMPACT_RULESET
 	antag_cap = list("denominator" = 18, "offset" = 1)
 	var/datum/team/nuclear/nuke_team
@@ -552,7 +552,7 @@
 	protected_roles = list("NanoTrasen Representative", "Internal Affairs Agent", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security","Bridge Officer", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")  //BLUEMOON CHANGES
 	restricted_roles = list("Cyborg", "AI", "Positronic Brain")
 	required_candidates = 3 //BLUEMOON CHANGES
-	weight = 3
+	weight = 20
 	cost = 15
 	required_round_type = list(ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
 	requirements = list(0,101,101,101,40,20,20,10,10,10) //BLUEMOON CHANGES
@@ -746,52 +746,52 @@ BLUEMOON REMOVAL END*/
 //                                          //
 //////////////////////////////////////////////
 
-/datum/dynamic_ruleset/roundstart/space_ninja
-	name = "Space Ninja"
-	antag_datum = /datum/antagonist/ninja
-	antag_flag = "shiftstart space ninja"
-	antag_flag_override = ROLE_NINJA
-	flags = LONE_RULESET
-	required_candidates = 1
-	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
-	weight = 6 //BLUEMOON CHANGES
-	cost = 20
-	requirements = list(101,101,101,60,40,20,20,20,10,10)
-	var/list/spawn_locs = list()
+// /datum/dynamic_ruleset/roundstart/space_ninja
+// 	name = "Space Ninja"
+// 	antag_datum = /datum/antagonist/ninja
+// 	antag_flag = "shiftstart space ninja"
+// 	antag_flag_override = ROLE_NINJA
+// 	flags = LONE_RULESET
+// 	required_candidates = 1
+// 	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM) // BLUEMOON ADD
+// 	weight = 6 //BLUEMOON CHANGES
+// 	cost = 20
+// 	requirements = list(101,101,101,60,40,20,20,20,10,10)
+// 	var/list/spawn_locs = list()
 
-/datum/dynamic_ruleset/roundstart/space_ninja/pre_execute()
-	. = ..()
+// /datum/dynamic_ruleset/roundstart/space_ninja/pre_execute()
+// 	. = ..()
 
-	for(var/obj/effect/landmark/carpspawn/carp_spawn in GLOB.landmarks_list)
-		if(!isturf(carp_spawn.loc))
-			stack_trace("Carp spawn found not on a turf: [carp_spawn.type] on [isnull(carp_spawn.loc) ? "null" : carp_spawn.loc.type]")
-			continue
-		spawn_locs += carp_spawn.loc
-	if(!spawn_locs.len)
-		log_game("No valid spawn locations for [name], found, aborting...")
-		message_admins("No valid spawn locations for [name] found, aborting...")
-		return MAP_ERROR
+// 	for(var/obj/effect/landmark/carpspawn/carp_spawn in GLOB.landmarks_list)
+// 		if(!isturf(carp_spawn.loc))
+// 			stack_trace("Carp spawn found not on a turf: [carp_spawn.type] on [isnull(carp_spawn.loc) ? "null" : carp_spawn.loc.type]")
+// 			continue
+// 		spawn_locs += carp_spawn.loc
+// 	if(!spawn_locs.len)
+// 		log_game("No valid spawn locations for [name], found, aborting...")
+// 		message_admins("No valid spawn locations for [name] found, aborting...")
+// 		return MAP_ERROR
 
-	return TRUE
+// 	return TRUE
 
-/datum/dynamic_ruleset/roundstart/space_ninja/execute()
-	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
-	if(candidates.len <= 0)
-		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
-		return FALSE
-	// BLUEMOON ADD END
-	var/mob/candidate = pick_n_take(candidates)
-	assigned += candidate.mind
+// /datum/dynamic_ruleset/roundstart/space_ninja/execute()
+// 	// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
+// 	if(candidates.len <= 0)
+// 		message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
+// 		return FALSE
+// 	// BLUEMOON ADD END
+// 	var/mob/candidate = pick_n_take(candidates)
+// 	assigned += candidate.mind
 
-	for(var/datum/mind/M in assigned)
+// 	for(var/datum/mind/M in assigned)
 
-		var/mob/living/carbon/human/ninja = create_space_ninja(pick(spawn_locs))
-		var/current_key = M.current.key
-		qdel(M.current)
-		ninja.key = current_key
+// 		var/mob/living/carbon/human/ninja = create_space_ninja(pick(spawn_locs))
+// 		var/current_key = M.current.key
+// 		qdel(M.current)
+// 		ninja.key = current_key
 
-		ninja.mind.add_antag_datum(/datum/antagonist/ninja)
-		return ninja
+// 		ninja.mind.add_antag_datum(/datum/antagonist/ninja)
+// 		return ninja
 
 //////////////////////////////////////////////
 //                                          //
@@ -865,10 +865,10 @@ BLUEMOON REMOVAL END*/
 	antag_datum = /datum/antagonist/bloodsucker
 	protected_roles = list("Expeditor", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Internal Affairs Agent", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security","Bridge Officer", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")  //BLUEMOON CHANGES
 	restricted_roles = list("Cyborg", "AI", "Positronic Brain")
-	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
+	required_round_type = list(ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
 	required_candidates = 1
 	weight = 6
-	cost = 15
+	cost = 5
 	scaling_cost = 10
 	requirements = list(101,101,60,50,40,30,20,15,10,10)
 	antag_cap = list("denominator" = 39, "offset" = 1)
@@ -1008,29 +1008,29 @@ BLUEMOON REMOVAL END*/
 //           ABDUCTORS                      //
 //                                          //
 //////////////////////////////////////////////
-#define ABDUCTOR_MAX_TEAMS 4
+// #define ABDUCTOR_MAX_TEAMS 4
 
-/datum/dynamic_ruleset/roundstart/abductors
-	name = "Abductors"
-	antag_flag = "Abductor"
-	antag_flag_override = ROLE_ABDUCTOR
-	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_TEAMBASED) // BLUEMOON ADD
-	required_candidates = 2
-	weight = 3
-	cost = 2
-	scaling_cost = 9
-	requirements = list(0,101,101,60,40,20,20,20,10,10)
-	var/datum/team/abductor_team/new_team
+// /datum/dynamic_ruleset/roundstart/abductors
+// 	name = "Abductors"
+// 	antag_flag = "Abductor"
+// 	antag_flag_override = ROLE_ABDUCTOR
+// 	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_TEAMBASED) // BLUEMOON ADD
+// 	required_candidates = 2
+// 	weight = 3
+// 	cost = 2
+// 	scaling_cost = 9
+// 	requirements = list(0,101,101,60,40,20,20,20,10,10)
+// 	var/datum/team/abductor_team/new_team
 
-/datum/dynamic_ruleset/roundstart/abductors/execute(mob/new_character, index)
-	if (index == 1) // Our first guy is the scientist.  We also initialize the team here as well since this should only happen once per pair of abductors.
-		new_team = new
-		if(new_team.team_number > ABDUCTOR_MAX_TEAMS)
-			return MAP_ERROR
-		var/datum/antagonist/abductor/scientist/new_role = new
-		new_character.mind.add_antag_datum(new_role, new_team)
-	else // Our second guy is the agent, team is already created, don't need to make another one.
-		var/datum/antagonist/abductor/agent/new_role = new
-		new_character.mind.add_antag_datum(new_role, new_team)
+// /datum/dynamic_ruleset/roundstart/abductors/execute(mob/new_character, index)
+// 	if (index == 1) // Our first guy is the scientist.  We also initialize the team here as well since this should only happen once per pair of abductors.
+// 		new_team = new
+// 		if(new_team.team_number > ABDUCTOR_MAX_TEAMS)
+// 			return MAP_ERROR
+// 		var/datum/antagonist/abductor/scientist/new_role = new
+// 		new_character.mind.add_antag_datum(new_role, new_team)
+// 	else // Our second guy is the agent, team is already created, don't need to make another one.
+// 		var/datum/antagonist/abductor/agent/new_role = new
+// 		new_character.mind.add_antag_datum(new_role, new_team)
 
-#undef ABDUCTOR_MAX_TEAMS
+// #undef ABDUCTOR_MAX_TEAMS

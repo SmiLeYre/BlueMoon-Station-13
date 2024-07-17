@@ -453,7 +453,7 @@
 
 /obj/item/card/id/syndicate
 	name = "Agent Card"
-	icon_state = "syndie"
+	icon_state = "card_black"
 	assignment = "Syndicate Operative"
 	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE)
 	var/anyone = FALSE //Can anyone forge the ID or just syndicate?
@@ -585,24 +585,6 @@
 	icon_state = "retro"
 	assignment = "Trader"
 	access = list(ACCESS_SYNDICATE)
-
-/obj/item/card/id/syndicate/inteq
-	name = "Mercenary Card"
-	icon_state = "inteq"
-	assignment = "Mercenary"
-	access = list(ACCESS_MAINT_TUNNELS, ACCESS_INTEQ)
-
-/obj/item/card/id/syndicate/inteq/anyone
-	name = "Vanguard Mercenary Card"
-	icon_state = "inteq"
-	assignment = "Vanguard Mercenary"
-	access = list(ACCESS_MAINT_TUNNELS, ACCESS_INTEQ, ACCESS_INTEQ_LEADER)
-
-/obj/item/card/id/syndicate/inteq/nuke_leader
-	name = "Nuclear Vanguard Mercenary Card"
-	icon_state = "inteq"
-	assignment = "Vanguard Mercenary"
-	access = list(ACCESS_MAINT_TUNNELS, ACCESS_INTEQ, ACCESS_INTEQ_LEADER)
 
 /obj/item/card/id/captains_spare
 	name = "captain's spare ID"

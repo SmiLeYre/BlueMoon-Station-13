@@ -289,7 +289,7 @@
 	key = "v"
 	space_chance = 75
 	default_priority = 99
-	flags = TONGUELESS_SPEECH
+	// flags = TONGUELESS_SPEECH bluemoon change
 	syllables = list("ti","ti","ti","hi","hi","ki","ki","ki","ki","ya","ta","ha","ka","ya", "yi", "chi","cha","kah","SKRE","AHK","EHK","RAWK","KRA","AAA","EEE","KI","II","KRI","KA")
 	icon_state = "vox"
 	restricted = TRUE

@@ -27,6 +27,8 @@
 			return FALSE
 		if(M.mind.unconvertable)
 			return FALSE
+		if(IS_HERETIC(M))
+			return FALSE
 	else
 		return FALSE
 	if(HAS_TRAIT(M, TRAIT_MINDSHIELD) || issilicon(M) || isbot(M) || isdrone(M) || is_servant_of_ratvar(M) || !M.client)
@@ -154,9 +156,9 @@
 			if(cult_mind.current.onCentCom() || cult_mind.current.onSyndieBase())
 				acolytes_survived++
 	if(acolytes_survived>=acolytes_needed)
-		return 0
+		return FALSE
 	else
-		return 1
+		return TRUE
 
 
 /datum/game_mode/cult/generate_report()

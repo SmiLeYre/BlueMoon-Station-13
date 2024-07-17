@@ -1,2 +1,2 @@
 /datum/outfit/job/bartender
-	accessory = /obj/item/clothing/accessory/permit/bar
+	accessory = /obj/item/clothing/accessory/permit/special/bartender // BLUEMOON EDIT - реворк пермитов

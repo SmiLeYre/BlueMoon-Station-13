@@ -24,6 +24,10 @@
 
 //! SubSystem flags (Please design any new flags so that the default is off, to make adding flags to subsystems easier)
 
+/// Returns true if the MC is initialized and running.
+/// Optional argument init_stage controls what stage the mc must have initializted to count as initialized. Defaults to INITSTAGE_MAX if not specified.
+#define MC_RUNNING(INIT_STAGE...) (Master && Master.processing > 0 && Master.current_runlevel)
+
 /// subsystem does not initialize.
 #define SS_NO_INIT 1
 

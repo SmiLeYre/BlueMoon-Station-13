@@ -332,6 +332,7 @@
 	icon_state = "cutlass0"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	force_on = 20
 	icon_state_on = "cutlass1"
 	light_color = "#ff0000"
 	possible_colors = null

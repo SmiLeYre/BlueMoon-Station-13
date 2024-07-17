@@ -36,6 +36,16 @@
 	QDEL_NULL(stored)
 	return ..()
 
+//BLUEMOON ADD START
+//При смещении мусорного выхода разъединяет связь с трубой под ним
+/obj/structure/disposaloutlet/Move()
+	if(trunk)
+		trunk.linked = null
+		trunk = null
+	QDEL_NULL(stored)
+	return ..()
+//BLUEMOON ADD END
+
 // expel the contents of the holder object, then delete it
 // called when the holder exits the outlet
 /obj/structure/disposaloutlet/proc/expel(obj/structure/disposalholder/H)
@@ -44,9 +54,9 @@
 	if((start_eject + 30) < world.time)
 		start_eject = world.time
 		playsound(src, 'sound/machines/warning-buzzer.ogg', 50, 0, 0)
-		addtimer(CALLBACK(src, .proc/expel_holder, H, TRUE), 20)
+		addtimer(CALLBACK(src, PROC_REF(expel_holder), H, TRUE), 20)
 	else
-		addtimer(CALLBACK(src, .proc/expel_holder, H), 20)
+		addtimer(CALLBACK(src, PROC_REF(expel_holder), H), 20)
 
 /obj/structure/disposaloutlet/proc/expel_holder(obj/structure/disposalholder/H, playsound=FALSE)
 	if(playsound)

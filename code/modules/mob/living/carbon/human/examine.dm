@@ -49,24 +49,30 @@
 
 	//uniform
 	if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured))
-		//accessory
-		var/accessory_msg
+		// BLUEMOON EDIT START - тут нагородили какую-то херобору, поэтому я это переписал
 		if(istype(w_uniform, /obj/item/clothing/under))
 			var/obj/item/clothing/under/U = w_uniform
+			// Аксессуары
+			var/accessory_msg
 			if(length(U.attached_accessories) && !(U.flags_inv & HIDEACCESSORY))
-				var/list/weehoo = list()
-				var/dumb_icons = ""
+				var/list/metioned_accessories_list = list()
+				// Фильтруем неспрятанные аксессуары
 				for(var/obj/item/clothing/accessory/attached_accessory in U.attached_accessories)
-					if(!(attached_accessory.flags_inv & HIDEACCESSORY))
-						weehoo += "\a [attached_accessory]"
-						dumb_icons = "[dumb_icons][icon2html(attached_accessory, user)]"
-				if(length(weehoo))
-					accessory_msg += " с [dumb_icons]"
-					if(length(U.attached_accessories) >= 2)
-						accessory_msg += jointext(weehoo, ", ", 1, length(weehoo) - 1)
-						accessory_msg += " и [weehoo[length(weehoo)]]"
+					if(attached_accessory.flags_inv & HIDEACCESSORY)
+						continue
+					metioned_accessories_list += attached_accessory
+				// Собираем строку из аксессуаров
+				var/metioned_accessories_count = 0
+				for(var/obj/item/clothing/accessory/mentioned_accessory in metioned_accessories_list)
+					metioned_accessories_count++
+					if(metioned_accessories_count == 1)
+						accessory_msg += " с "
+					else if(metioned_accessories_count < metioned_accessories_list.len)
+						accessory_msg += ", "
 					else
-						accessory_msg += weehoo[1]
+						accessory_msg += " и "
+					accessory_msg += mentioned_accessory.get_examine_string(user)
+				// BLUEMOON EDIT END
 			. += "[t_on] одет[t_a] в [w_uniform.get_examine_string(user)][accessory_msg]."
 
 	//head
@@ -305,21 +311,25 @@
 		else
 			temp = getBruteLoss()
 		if(temp)
-			if(temp < 25)
+			if(temp < maxHealth*0.25) // BLUEMOON CHANGES, was if(temp < 25) - добавляем скаллирование от максимального ХП
 				msg += "[t_on] имеет незначительные ушибы.\n"
-			else if(temp < 50)
+			else if(temp < maxHealth*0.5) // BLUEMOON CHANGES, was if(temp < 50) - добавляем скаллирование от максимального ХП
 				msg += "[t_on] <b>тяжело</b> ранен[t_a]!\n"
+			else if(temp < maxHealth*0.75) // BLUEMOON ADD START
+				msg += "[t_on] <b>очень тяжело</b> ранен[t_a]!\n" // BLUEMOON ADD END
 			else
 				msg += "<B>[t_on] смертельно ранен[t_a]!</B>\n"
 
 		temp = getFireLoss()
 		if(temp)
-			if(temp < 25)
+			if(temp < maxHealth*0.25) // BLUEMOON CHANGES, was if(temp < 25) - добавляем скаллирование от максимального ХП
 				msg += "[t_on] немного подгорел[t_a].\n"
-			else if (temp < 50)
+			else if(temp < maxHealth*0.5) // BLUEMOON CHANGES, was if(temp < 50) - добавляем скаллирование от максимального ХП
 				msg += "[t_on] имеет <b>серьёзные</b> ожоги!\n"
+			else if(temp < maxHealth*0.75) // BLUEMOON ADD START
+				msg += "[t_on] имеет <b>очень серьёзные</b> ожоги!\n" // BLUEMOON ADD END
 			else
-				msg += "<B>[t_on] имеет смертельные ожоги!</B>\n"
+				msg += "<B>[t_on] имеет смертельно опасные ожоги!</B>\n"
 
 		temp = getCloneLoss()
 		if(temp)
@@ -591,6 +601,9 @@
 
 	// send signal last so everything else prioritizes above
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .) //This also handles flavor texts now
+
+	if(tempflavor) // BLUEMOON ADD - темпфлавор теперь захардкожен, увы
+		. += span_notice(tempflavor)
 
 /mob/living/proc/status_effect_examines(pronoun_replacement) //You can include this in any mob's examine() to show the examine texts of status effects!
 	var/list/dat = list()

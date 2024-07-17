@@ -9,7 +9,7 @@
 /// Helper to get a specific rating for the atom's armor
 /obj/proc/get_armor_rating(damage_type)
 	var/datum/armor/armor = get_armor()
-	return armor.get_rating(damage_type)
+	return armor?.get_rating(damage_type)
 
 /// Sets the armor of this atom to the specified armor
 /obj/proc/set_armor(datum/armor/armor)

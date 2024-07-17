@@ -172,10 +172,10 @@
 
 /mob/dead/new_player/Topic(href, href_list[])
 	if(src != usr)
-		return 0
+		return FALSE
 
 	if(!client)
-		return 0
+		return FALSE
 
 	//don't let people get to this unless they are specifically not verified
 	if(href_list["Month"] && (CONFIG_GET(flag/age_verification) && !check_rights_for(client, R_ADMIN) && !(client.ckey in GLOB.bunker_passthrough)))
@@ -754,14 +754,13 @@
 		return
 	client.crew_manifest_delay = world.time + (1 SECONDS)
 
-	var/dat = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'></head><body>"
-	dat += "<h4>Crew Manifest</h4>"
-	dat += GLOB.data_core.get_manifest(OOC = 1)
+	if(!GLOB.crew_manifest_tgui)
+		GLOB.crew_manifest_tgui = new /datum/crew_manifest(src)
 
-	src << browse(dat, "window=manifest;size=387x420;can_close=1")
+	GLOB.crew_manifest_tgui.ui_interact(src)
 
 /mob/dead/new_player/Move()
-	return 0
+	return FALSE
 
 
 /mob/dead/new_player/proc/close_spawn_windows()

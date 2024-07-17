@@ -93,6 +93,9 @@
 		R.AddAbility(VC)
 		R.cansprint = 0
 		R.disable_intentional_sprint_mode()
+		var/datum/hud/robot/robohud = R.hud_used
+		if(istype(robohud))
+			robohud.assert_move_intent_ui()
 
 /obj/item/borg/upgrade/vtec/deactivate(mob/living/silicon/robot/R, user = usr)
 	. = ..()
@@ -100,6 +103,9 @@
 		R.RemoveAbility(VC)
 		R.vtec = initial(R.vtec)
 		R.cansprint = 1
+		var/datum/hud/robot/robohud = R.hud_used
+		if(istype(robohud))
+			robohud.assert_move_intent_ui()
 
 /obj/item/borg/upgrade/disablercooler
 	name = "cyborg rapid energy blaster cooling module"
@@ -219,20 +225,35 @@
 	name = "mining cyborg premium KA"
 	desc = "A premium kinetic accelerator replacement for the mining module's standard kinetic accelerator."
 	icon_state = "cyborg_upgrade3"
-	require_module = 1
+	require_module = TRUE
 	module_type = list(/obj/item/robot_module/miner)
+	module_flags = BORG_MODULE_MINER
 
 /obj/item/borg/upgrade/premiumka/action(mob/living/silicon/robot/R, user = usr)
 	. = ..()
 	if(.)
 		for(var/obj/item/gun/energy/kinetic_accelerator/cyborg/KA in R.module)
 			for(var/obj/item/borg/upgrade/modkit/M in KA.modkits)
-				M.uninstall(src)
+				M.uninstall(KA)
 			R.module.remove_module(KA, TRUE)
 
 		var/obj/item/gun/energy/kinetic_accelerator/premiumka/cyborg/PKA = new /obj/item/gun/energy/kinetic_accelerator/premiumka/cyborg(R.module)
 		R.module.basic_modules += PKA
 		R.module.add_module(PKA, FALSE, TRUE)
+
+// SANDSTORM EDIT START
+/obj/item/borg/upgrade/premiumka/deactivate(mob/living/silicon/robot/R, user = usr)
+	. = ..()
+	if (.)
+		for(var/obj/item/gun/energy/kinetic_accelerator/premiumka/cyborg/PKA in R.module)
+			for(var/obj/item/borg/upgrade/modkit/M in PKA.modkits)
+				M.uninstall(PKA)
+			R.module.remove_module(PKA, TRUE)
+
+		var/obj/item/gun/energy/kinetic_accelerator/cyborg/KA = new (R.module)
+		R.module.basic_modules += KA
+		R.module.add_module(KA, FALSE, TRUE)
+// SANDSTORM EDIT END
 
 /obj/item/borg/upgrade/tboh
 	name = "janitor cyborg trash bag of holding"
@@ -721,12 +742,12 @@
 			if (0) //default speed
 				user.vtec = initial(user.vtec) //"vtec" value is negative and the lesser it is the faster we move.
 			if (1) //slightly faster than runnung
-				user.vtec = initial(user.vtec) - 1 //cyborg sprinting is roughly -2. don't forget we can't sprint with vtec.
+				user.vtec = initial(user.vtec) - 1.25 //cyborg sprinting is roughly -2. don't forget we can't sprint with vtec.
 			if (2) //overclocking module
-				user.vtec = initial(user.vtec) - 1.5 //while changing this value check /mob/living/silicon/robot/proc/use_power() to maintain proper power drain
+				user.vtec = initial(user.vtec) - 1.75 //while changing this value check /mob/living/silicon/robot/proc/use_power() to maintain proper power drain
 
 	action.button_icon_state = "Chevron_State_[currentState]"
-	action.UpdateButtonIcon()
+	action.UpdateButtons()
 
 	return TRUE
 

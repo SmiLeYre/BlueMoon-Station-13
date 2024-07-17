@@ -11,6 +11,7 @@ SUBSYSTEM_DEF(persistence)
 	/// Marks if persistence save should be disabled
 	var/station_persistence_save_disabled = FALSE
 
+	var/list/medals = list()
 	var/list/obj/structure/chisel_message/chisel_messages = list()
 	var/list/saved_messages = list()
 	var/list/spawned_objects = list()
@@ -74,6 +75,7 @@ SUBSYSTEM_DEF(persistence)
  * Legacy map persistence systems also use this.
  */
 /datum/controller/subsystem/persistence/proc/LoadGamePersistence()
+	LoadMedals()
 	LoadChiselMessages()
 	LoadPhotoPersistence()
 	LoadPaintings()
@@ -84,6 +86,7 @@ SUBSYSTEM_DEF(persistence)
  * Legacy map persistence systems also use this.
  */
 /datum/controller/subsystem/persistence/proc/SaveGamePersistence()
+	CollectMedals()
 	CollectChiselMessages()
 	SavePhotoPersistence()						//THIS IS PERSISTENCE, NOT THE LOGGING PORTION.
 	SavePaintings()
@@ -100,6 +103,12 @@ SUBSYSTEM_DEF(persistence)
  */
 /datum/controller/subsystem/persistence/proc/SaveMapPersistence()
 	return
+
+/datum/controller/subsystem/persistence/proc/LoadMedals()
+	var/json_file = file("data/Medals.json")
+	if(!fexists(json_file))
+		return
+	medals = json_decode(file2text(json_file))
 
 /datum/controller/subsystem/persistence/proc/LoadChiselMessages()
 	var/list/saved_messages = list()
@@ -234,6 +243,11 @@ SUBSYSTEM_DEF(persistence)
 	frame_json = json_encode(frame_json)
 
 	WRITE_FILE(frame_path, frame_json)
+
+/datum/controller/subsystem/persistence/proc/CollectMedals()
+	var/json_file = file("data/Medals.json")
+	fdel(json_file)
+	WRITE_FILE(json_file, json_encode(medals))
 
 /datum/controller/subsystem/persistence/proc/CollectChiselMessages()
 	var/json_file = file("data/npc_saves/ChiselMessages[SSmapping.config.map_name].json")

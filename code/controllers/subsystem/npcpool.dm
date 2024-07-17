@@ -34,7 +34,7 @@ SUBSYSTEM_DEF(npcpool)
 
 		invoking = TRUE
 		invoke_start = world.time
-		INVOKE_ASYNC(src, .proc/invoke_process, SA)
+		INVOKE_ASYNC(src, PROC_REF(invoke_process), SA)
 		if(invoking)
 			stack_trace("WARNING: [SA] ([SA.type]) slept during NPCPool processing.")
 			invoking = FALSE
@@ -46,6 +46,9 @@ SUBSYSTEM_DEF(npcpool)
 	if(!SA.ckey && !SA.mob_transforming)
 		if(SA.stat != DEAD)
 			SA.handle_automated_movement()
+			if(QDELETED(SA))
+				invoking = FALSE
+				return
 		if(SA.stat != DEAD)
 			SA.handle_automated_action()
 		if(SA.stat != DEAD)

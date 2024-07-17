@@ -172,7 +172,7 @@ GLOBAL_LIST_EMPTY(sechailers)
 	var/phrase = 0	//selects which phrase to use
 	var/phrase_text = null
 	var/phrase_sound = null
-	var/phrase_path = "sound/voice/complionator/"  // BLUEMOON ADD
+
 
 	if(cooldown < world.time - 30) // A cooldown, to stop people being jerks
 		recent_uses++
@@ -202,9 +202,9 @@ GLOBAL_LIST_EMPTY(sechailers)
 				phrase = rand(1,18)	// user has unlocked all phrases, set upper limit to last phrase. The mask will play all phrases
 			if(4)
 				phrase = rand(12,18)	// user has broke the restrictor, it will now only play shitcurity phrases
-			if(999)  	 				// BLUEMOON ADD START
-				phrase_path = "modular_bluemoon/ren/sound/spacemarin/"
-				phrase = rand(35,41)	// BLUEMOON ADD END
+			if(999)
+				phrase = rand(35,41)	// BLUEMOON CHANGE
+
 		if(!safety)
 			phrase_text = "ТЫ, СУКА, ОХУЕЛ? ДУМАЕШЬ САМЫЙ КРУТОЙ? Я ТЕБЕ СЕЙЧАС ЕБАЛО НАБЬЮ!!"
 			phrase_sound = "emag"
@@ -315,31 +315,31 @@ GLOBAL_LIST_EMPTY(sechailers)
 					phrase_sound = "serve"
 				if(35) // BLUEMOON CHANGE start
 					phrase_text = "Космодесантники, в атаку!"
-					phrase_sound = "atack"
+					phrase_sound = "bluemoon_atack"
 				if(36)
 					phrase_text = "Очистить! Искоренить! Убить!"
-					phrase_sound = "clean_purges"
+					phrase_sound = "bluemoon_clean_purges"
 				if(37)
 					phrase_text = "Сдохни отброс!"
-					phrase_sound = "die_scum"
+					phrase_sound = "bluemoon_die_scum"
 				if(38)
 					phrase_text = "За императора!"
-					phrase_sound = "for_the_emperor"
+					phrase_sound = "bluemoon_for_the_emperor"
 				if(39)
 					phrase_text = "Еретики."
-					phrase_sound = "heretic"
+					phrase_sound = "bluemoon_heretic"
 				if(40)
 					phrase_text = "Исколечить, убить, сжечь!"
-					phrase_sound = "maim_kill_burn"
+					phrase_sound = "bluemoon_maim_kill_burn"
 				if(41)
 					phrase_text = "Смерть всем ксеносам."
-					phrase_sound = "death_to_alien" // BLUEMOON CHANGE end
+					phrase_sound = "bluemoon_death_to_alien" // BLUEMOON CHANGE end
 
 		if(aggressiveness <= 0)
 			usr.audible_message("[usr]'s Slut-o-Nator: <font color=#D45592 size='2'><b>[phrase_text]</b></font>")
 		else
 			usr.audible_message("[usr]'s Compli-o-Nator: <font color='red' size='4'><b>[phrase_text]</b></font>")
-		playsound(src.loc, "[phrase_path][phrase_sound].ogg", 100, 0, 4) // BLUEMOON CHANGES - WAS playsound(src.loc, "[sound/voice/complionator/][phrase_sound].ogg", 100, 0, 4)
+		playsound(src.loc, "sound/voice/complionator/[phrase_sound].ogg", 100, 0, 4)
 		cooldown = world.time
 		cooldown_special = world.time
 
@@ -348,6 +348,6 @@ GLOBAL_LIST_EMPTY(sechailers)
 	desc = "A close-fitting tactical mask created in cooperation with a certain megacorporation, comes with an especially aggressive Compli-o-nator 3000."
 	icon_state = "spacepol"
 	item_state = "spacepol"
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_NO_ANTHRO_ICON
 	flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES
 	visor_flags_cover = MASKCOVERSMOUTH | MASKCOVERSEYES

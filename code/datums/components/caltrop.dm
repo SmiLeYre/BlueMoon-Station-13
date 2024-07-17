@@ -12,7 +12,7 @@
 	probability = _probability
 	flags = _flags
 
-	RegisterSignal(parent, list(COMSIG_MOVABLE_CROSSED), .proc/Crossed)
+	RegisterSignal(parent, list(COMSIG_MOVABLE_CROSSED), PROC_REF(Crossed))
 
 /datum/component/caltrop/proc/Crossed(datum/source, atom/movable/AM)
 	var/atom/A = parent
@@ -53,7 +53,7 @@
 			damage *= 0.75
 		//skyrat edit
 		if(H.w_socks)
-			if(H.w_socks.body_parts_covered & FEET)
+			if(H.w_socks.body_parts_covered & FEET & !(flags & CALTROP_BYPASS_SHOES)) //bluemoon change носки не должны резать урон пунжи и шипов
 				damage *= 0.75
 		//
 		H.apply_damage(damage, BRUTE, picked_def_zone, wound_bonus = 5)

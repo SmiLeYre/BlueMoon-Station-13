@@ -62,6 +62,16 @@
 		trunk.linked = null
 	return ..()
 
+//BLUEMOON ADD START
+//При смещении мусорного бака и мусорного входа разъединяет связь с трубой под ним
+/obj/machinery/disposal/Move()
+	eject()
+	if(trunk)
+		trunk.linked = null
+		trunk = null
+	return ..()
+//BLUEMOON ADD END
+
 /obj/machinery/disposal/singularity_pull(S, current_size)
 	..()
 	if(current_size >= STAGE_FIVE)
@@ -210,7 +220,7 @@
 	flush = FALSE
 
 /obj/machinery/disposal/proc/newHolderDestination(obj/structure/disposalholder/H)
-	for(var/obj/item/smallDelivery/O in src)
+	for(var/obj/item/small_delivery/O in src)
 		H.tomail = TRUE
 		return
 

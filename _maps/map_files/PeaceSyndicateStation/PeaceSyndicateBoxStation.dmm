@@ -2065,7 +2065,7 @@
 /obj/structure/rack,
 /obj/item/gun/energy/ionrifle,
 /obj/item/gun/energy/temperature/security,
-/obj/item/clothing/suit/armor/laserproof,
+/obj/item/clothing/suit/hooded/ablative,
 /obj/machinery/camera/motion{
 	c_tag = "Brig Armory North";
 	dir = 9
@@ -26485,8 +26485,8 @@
 	layer = 2.9
 	},
 /obj/structure/table/reinforced,
-/obj/item/destTagger,
-/obj/item/destTagger,
+/obj/item/dest_tagger,
+/obj/item/dest_tagger,
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
@@ -61648,9 +61648,7 @@
 	name = "EVA Storage";
 	req_access_txt = "18"
 	},
-/turf/closed/wall/r_wall/syndicate{
-	smooth = 2
-	},
+/turf/open/floor/mineral/plastitanium,
 /area/ai_monitored/command/storage/eva)
 "qCR" = (
 /obj/structure/musician/piano,

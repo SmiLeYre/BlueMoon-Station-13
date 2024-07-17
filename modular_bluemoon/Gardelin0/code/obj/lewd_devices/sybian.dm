@@ -51,6 +51,7 @@
 		for(var/m in buckled_mobs)
 			var/mob/living/carbon/human/M = m
 			M.handle_post_sex(intencity, null, src)
+			M.client?.plug13.send_emote(pick(PLUG13_EMOTE_GROIN, PLUG13_EMOTE_ANUS), min(intencity * 5, 100), PLUG13_DURATION_NORMAL)
 			switch(mode)
 				if("low")
 					playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/lewd/toys/devicevibrator[rand(1, 3)].ogg", 30, 1)

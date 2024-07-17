@@ -10,7 +10,7 @@
 /// Usage for eyestabbing with a screwdriver
 #define STAMINA_COST_ITEM_EYESTAB		7.5
 /// Usage for shoving yourself off the ground instantly
-#define STAMINA_COST_SHOVE_UP			15
+//#define STAMINA_COST_SHOVE_UP			15 //BLUEMOON REMOVAL
 
 //items total mass, used to calculate their attacks' stamina costs. If not defined, the cost will be (w_class * 1.25)
 #define TOTAL_MASS_TINY_ITEM		1.25
@@ -33,3 +33,6 @@
 
 /// Damage penalty when fighting prone.
 #define LYING_DAMAGE_PENALTY			0.7
+
+ // Maximum stamina health of body
+#define MAX_STAMINA_HEALTH 200

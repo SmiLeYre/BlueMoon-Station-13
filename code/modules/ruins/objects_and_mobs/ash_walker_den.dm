@@ -62,7 +62,7 @@
 					deadmind = H.get_ghost(FALSE, TRUE)
 				to_chat(deadmind, "Your body has been returned to the nest. You are being remade anew, and will awaken shortly. </br><b>Your memories will remain intact in your new body, as your soul is being salvaged</b>")
 				SEND_SOUND(deadmind, sound('sound/magic/enter_blood.ogg',volume=100))
-				addtimer(CALLBACK(src, .proc/remake_walker, H.mind, H.real_name), 20 SECONDS)
+				addtimer(CALLBACK(src, PROC_REF(remake_walker), H.mind, H.real_name, H.gender), 20 SECONDS) // SPLURT edit, adds H.gender as an argument.
 				new /obj/effect/gibspawner/generic(get_turf(H))
 				qdel(H)
 				return
@@ -89,7 +89,7 @@
 
 /obj/structure/lavaland/ash_walker/proc/remake_walker(datum/mind/oldmind, oldname)
 	var/mob/living/carbon/human/M = new /mob/living/carbon/human(get_step(loc, pick(GLOB.alldirs)))
-	M.set_species(/datum/species/lizard/ashwalker)
+	M.set_species(src.species)
 	M.real_name = oldname
 	M.underwear = "Nude"
 	M.undershirt = "Nude"
@@ -98,8 +98,12 @@
 	M.remove_language(/datum/language/common)
 	oldmind.transfer_to(M)
 	M.mind.grab_ghost()
-	to_chat(M, "<b>You have been pulled back from beyond the grave, with a new body and renewed purpose. Glory to the Necropolis!</b>")
+	to_chat(M, "<b>Вы вернулись из могилы и обрели новое тело. Слава Некрополису!</b>")
 	playsound(get_turf(M),'sound/magic/exit_blood.ogg', 100, TRUE)
+
+	var/load_character = alert(M.client, "Желаете загрузить текущего своего выбранного персонажа?", "Играть своим персонажем!", "Да", "Нет")
+	if(load_character == "Да")
+		M.load_client_appearance(M.client)
 
 /obj/structure/lavaland/ash_walker/proc/spawn_mob()
 	if(meat_counter >= ASH_WALKER_SPAWN_THRESHOLD)

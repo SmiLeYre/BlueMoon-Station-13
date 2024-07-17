@@ -376,6 +376,10 @@ em {
   color: #dd3535;
 }
 
+.lawradio {
+  color: #ff69d7;
+}
+
 .medradio {
   color: #57b8f0;
 }
@@ -1190,4 +1194,19 @@ blockquote.brass {
 // для больших персонажей
 .bigtalk {
   font-size: 110%;
+}
+
+.mail_info_box {
+  background: rgba(60, 56, 56, 0.2);
+  border: 1px solid rgba(255, 0, 0, 0.3);
+  margin: 3px 2px;
+  padding: 4px 8px;
+  max-width: 550px;
+}
+
+.mail_info_box hr {
+  border: none;
+  background: rgb(225, 255, 0);
+  height: 1px;
+  margin: 8px 16px 8px 16px;
 }

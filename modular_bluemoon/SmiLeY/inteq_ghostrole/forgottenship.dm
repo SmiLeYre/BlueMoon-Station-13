@@ -82,6 +82,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	armor = list(MELEE = 35, BULLET = 40, LASER = 25, ENERGY = 10, BOMB = 25, BIO = 20, RAD = 20, FIRE = 60, ACID = 60)
 	body_parts_covered = CHEST|LEGS|ARMS
 	is_edible = 0
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/storage/belt/esabre_belt
 	name = "Energy Sabre Sheath"
@@ -267,8 +268,8 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 		var/speedbase = abs((4 SECONDS) / limbs_to_dismember.len)
 		for(bodypart in limbs_to_dismember)
 			i++
-			addtimer(CALLBACK(src, .proc/suicide_dismember, user, bodypart), speedbase * i)
-	addtimer(CALLBACK(src, .proc/manual_suicide, user), (5 SECONDS) * i)
+			addtimer(CALLBACK(src, PROC_REF(suicide_dismember), user, bodypart), speedbase * i)
+	addtimer(CALLBACK(src, PROC_REF(manual_suicide), user), (5 SECONDS) * i)
 	return MANUAL_SUICIDE
 
 /obj/item/melee/transforming/energy/sword/energy_sabre/proc/suicide_dismember(mob/living/user, obj/item/bodypart/affecting)
@@ -320,11 +321,44 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambigen4.ogg', 'sound/ambience/signal.ogg')
 
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault
+/area/ruin/space/has_grav/inteq_forgotten_vault
 	name = "InteQ Forgotten Vault"
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+/area/ruin/space/has_grav/inteq_forgotten_bar
+	name = "InteQ Forgotten Bar"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
 
+/area/ruin/space/has_grav/inteq_forgotten_bridge
+	name = "InteQ Forgotten Bridge"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/inteq_forgotten_medbay
+	name = "InteQ Forgotten Medical Bay"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/inteq_forgotten_atmos
+	name = "InteQ Forgotten Turbine Control"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/inteq_forgotten_rnd
+	name = "InteQ Forgotten Research and Development"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/inteq_forgotten_permabrig
+	name = "InteQ Forgotten Permanent Brig"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/inteq_forgotten_inspection
+	name = "InteQ Forgotten Inspection room"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
 //Special NT NPCs
 
 /mob/living/simple_animal/hostile/nanotrasen/ranged/assault

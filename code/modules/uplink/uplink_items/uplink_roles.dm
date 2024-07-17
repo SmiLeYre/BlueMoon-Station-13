@@ -87,7 +87,7 @@
 	To activate His Grace, simply unlatch Him."
 	item = /obj/item/his_grace
 	cost = 20
-	restricted_roles = list("Chaplain")
+	restricted_roles = list("Chaplain", "Assistant")
 	hijack_only = TRUE //This is a murderbone weapon, as such, it should only be available in those scenarios.
 	surplus = 5 //Very low chance to get it in a surplus crate even without being the chaplain
 

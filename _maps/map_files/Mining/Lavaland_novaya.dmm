@@ -6746,7 +6746,7 @@
 	dir = 9
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/mine/xenoarch_area_a)
 "gBE" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
@@ -7331,7 +7331,6 @@
 "hbE" = (
 /obj/structure/stone_tile/slab,
 /obj/item/toy/cards/deck/syndicate,
-/obj/item/construction/rcd/loaded/upgraded,
 /obj/structure/table/wood/mushroom,
 /turf/open/indestructible/boss,
 /area/ruin/lavaland/unpowered/ash_walkers)
@@ -7879,7 +7878,7 @@
 /turf/open/floor/plasteel,
 /area/mine/storage)
 "hFe" = (
-/obj/structure/lavaland/ash_walker,
+/obj/structure/lavaland/ash_walker/eastern,
 /turf/open/lava/smooth{
 	initial_gas_mix = "o2=14;n2=23;TEMP=300"
 	},
@@ -11534,12 +11533,6 @@
 /mob/living/simple_animal/hostile/asteroid/basilisk/watcher/magmawing,
 /turf/open/indestructible/boss,
 /area/lavaland/surface/outdoors)
-"lhq" = (
-/obj/effect/mob_spawn/human/ash_walkers_slave{
-	dir = 1
-	},
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/lavaland/unpowered/ash_walkers)
 "lhK" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
@@ -15261,7 +15254,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/mine/xenoarch_area_a)
 "oDg" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -20367,6 +20360,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
+"tKf" = (
+/obj/item/flashlight/lantern,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/lavaland/unpowered/ash_walkers)
 "tKh" = (
 /obj/structure/stone_tile/surrounding_tile{
 	dir = 8
@@ -22796,7 +22793,7 @@
 "whz" = (
 /obj/machinery/atmospherics/pipe/simple/dark/visible,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/mine/xenoarch_area_a)
 "whP" = (
 /obj/structure/rack,
 /obj/item/clothing/mask/breath,
@@ -27900,8 +27897,8 @@ nBA
 hvb
 hvb
 guC
-lhq
-lhq
+tKf
+tKf
 lzC
 lzC
 llq
@@ -28159,7 +28156,7 @@ hvb
 nBA
 nBA
 nBA
-nBA
+tKf
 hvb
 llq
 llq
@@ -28416,7 +28413,7 @@ pDe
 nBA
 nBA
 nBA
-nBA
+tKf
 lzC
 lzC
 llq
@@ -81824,7 +81821,7 @@ klq
 vbl
 vbl
 vbl
-tiV
+vbl
 tiV
 klq
 klq
@@ -83366,7 +83363,7 @@ klq
 vbl
 vbl
 vbl
-aJs
+vbl
 aJs
 klq
 klq

@@ -14,7 +14,7 @@
 	'>заметно больше в сравнении со среднестатистическим космонавтом.</font> \
 	(Не берите вместе с особенностью \"Сверхтяжёлый\", может привести к настакиванию замедления)."
 
-	value = 0
+	value = 1
 	mob_trait = TRAIT_BLUEMOON_HEAVY
 	gain_text = span_notice("Вы явно набрали в весе... Не то, чтобы это сильно мешало.")
 	lose_text = span_danger("Сбросить 3-4 десятка киллограмм за одну смену - это достижение. И вы его открыли.")
@@ -46,7 +46,7 @@
 	desc = "Ваш вес можно сравнивать с \
 	<font style='border-bottom:2px dotted white;cursor:help;' title='\
 	Ослабление скорости до уровня, как будто персонаж ростом 170% (если рост уже не 170% или больше). \
-	Вас могут тянуть только киборги, мехи (толкать), такие же сверхтяжёлые персонажи и экипаж в МОДах, оснащённых гидравлическими клешнями (в дальнейшем - \"ОСОБЫЕ\"). \
+	Вас могут тянуть только киборги, мехи (толкать), персонажи с некоторыми боевыми искусствами, такие же сверхтяжёлые персонажи и экипаж в МОДах, оснащённых гидравлическими клешнями (в дальнейшем - \"ОСОБЫЕ\"). \
 	Даже шагом, вы перемещаетесь громко. \
 	Предметы (и персонажи) при попытке сесть на них будут ломаться. \
 	Другие не могут по своей инициативе поменяться с вами местами. \
@@ -74,7 +74,7 @@
 	Оглушающие снаряды (например, лучи дизейблера) наносят в два раза меньше урона по стамине. \
 	'>действует на вас слабее.</font>"
 
-	value = 0
+	value = 2
 	mob_trait = TRAIT_BLUEMOON_HEAVY_SUPER
 	gain_text = span_warning("Плитка под вашими ногами может треснуть от неосторожного шага.")
 	lose_text = span_notice("Вы явно стали весить намного меньше. Сверхтяжёлый танк больше не кузен.")
@@ -90,8 +90,10 @@
 
 	if(searched_slowdown - user_slowdown > 0) //подсчёт наличия разницы в росте с искомой и её начисление для замедления персонажа
 		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown, TRUE, searched_slowdown - user_slowdown)
+		H.movespeed_override = 3 - (searched_slowdown - user_slowdown)
 	else
-		H.remove_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown)
+		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown, TRUE, 0)
+		H.movespeed_override = 3
 
 /datum/quirk/bluemoon_heavy_super/proc/check_mob_size()
 	if(!isliving(quirk_holder))
@@ -108,6 +110,7 @@
 	H.throw_speed = 0.5
 	update_size_movespeed()
 	check_mob_size()
+	H.movespeed_override = 3 // Персонаж не может иметь замедление ниже этого значения (только быть ещё сильнее замедленным)
 
 /datum/quirk/bluemoon_devourer
 	name = "Пожиратель"
@@ -134,7 +137,7 @@
 	var/datum/action/innate/secrete_chemicals/act_secrete_chemicals = new
 	act_secrete_chemicals.Grant(H)
 	// Add examine text
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
 	ADD_TRAIT(H,TRAIT_BLUEMOON_ANTI_NORMALIZER, ROUNDSTART_TRAIT)
 
 
@@ -149,7 +152,10 @@
 		//удаляем все модификаторы урона и скорости
 		H.remove_movespeed_modifier(/datum/movespeed_modifier/giant_quirk_boost)
 
-		H.physiology.hunger_mod *= 0.5
+		var/datum/physiology/P = H.physiology
+		if(P)
+			P.hunger_mod /= 2
+
 		H.maxHealth *= 1.34
 
 		var/datum/action/innate/vomit/act_vomit = locate() in H.actions
@@ -190,8 +196,12 @@
 /datum/quirk/bluemoon_devourer/on_spawn()
 	. = ..()
 	var/mob/living/H = quirk_holder
+	// Этот участок фиксит проблемы, когда надевается нормалайзер раундстартом (из лодаута) и перк пожирателя. Они наслаиваются и по итогу ломается скорость и размер
+	var/datum/component/size_normalized/comp = H.GetComponent(/datum/component/size_normalized)
+	if(comp)
+		qdel(comp)
+	// конец участка
 	update_size_modifiers(get_size(H), 1)
-
 
 /*
 ПЕРЕМЕННЫЕ ДЛЯ МОДИФИКАТОРОВ СКОРОСТИ
@@ -199,13 +209,21 @@
 
 /datum/movespeed_modifier/heavy_mob_drag
 	variable = TRUE
+	blacklisted_movetypes = (FLYING|FLOATING)
 
 /datum/movespeed_modifier/heavy_quirk_slowdown
 	variable = TRUE
 
 /datum/movespeed_modifier/giant_quirk_boost
 	variable = TRUE
+	blacklisted_movetypes = (FLYING|FLOATING)
 
+/*
+ПЕРЕМЕННАЯ ДЛЯ ОГРАНИЧЕНИЯ МАКСИМАЛЬНОЙ СКОРОСТИ
+*/
+
+/mob
+	var/movespeed_override = 0
 
 /*
 Действия

@@ -279,7 +279,7 @@
 	icon_state = "beartrap"
 	desc = "A trap used to catch bears and other legged creatures."
 	var/armed = FALSE
-	var/trap_damage = 60
+	var/trap_damage = 20
 	var/ignore_weight = FALSE //BLUEMOON ADD капканы реагируют на вес карбонов
 
 /obj/item/restraints/legcuffs/beartrap/prearmed
@@ -345,7 +345,7 @@
 
 /obj/item/restraints/legcuffs/beartrap/energy/New()
 	..()
-	addtimer(CALLBACK(src, .proc/dissipate), 100)
+	addtimer(CALLBACK(src, PROC_REF(dissipate)), 100)
 
 /obj/item/restraints/legcuffs/beartrap/energy/proc/dissipate()
 	if(!ismob(loc))
@@ -353,8 +353,9 @@
 		qdel(src)
 
 /obj/item/restraints/legcuffs/beartrap/energy/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	Crossed(user) //honk
-	. = ..()
+	//Crossed(user) //honk
+	//. = ..()
+	qdel(src)
 
 /obj/item/restraints/legcuffs/beartrap/energy/cyborg
 	breakouttime = 40 // Cyborgs shouldn't have a strong restraint

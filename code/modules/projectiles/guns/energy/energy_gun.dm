@@ -4,6 +4,7 @@
 	icon_state = "energy"
 	item_state = null	//so the human update icon uses the icon_state instead.
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser)
+	w_class = WEIGHT_CLASS_NORMAL
 	modifystate = 1
 	can_flashlight = 1
 	ammo_x_offset = 3
@@ -21,6 +22,7 @@
 	charge_sections = 3
 	gunlight_state = "mini-light"
 	can_flashlight = 0 // Can't attach or detach the flashlight, and override it's icon update
+	shot_type_overlay = FALSE
 
 /obj/item/gun/energy/e_gun/mini/Initialize(mapload)
 	gun_light = new /obj/item/flashlight/seclite(src)
@@ -46,6 +48,8 @@
 	desc = "A modified version of the basic phaser gun, this one fires less concentrated energy bolts designed for target practice."
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/practice)
 	icon_state = "decloner"
+	//You have no icons for energy types, you're a decloner
+	modifystate = FALSE
 
 /obj/item/gun/energy/e_gun/hos
 	name = "\improper X-01 MultiPhase Energy Gun"
@@ -55,6 +59,7 @@
 	force = 10
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler, /obj/item/ammo_casing/energy/laser/hos, /obj/item/ammo_casing/energy/ion/hos, /obj/item/ammo_casing/energy/electrode/hos)
 	ammo_x_offset = 4
+	w_class = WEIGHT_CLASS_NORMAL
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	var/last_altfire = 0
 	var/altfire_delay = CLICK_CD_RANGE // BLUEMOON EDIT - WAS 0 (фикс отсутствия КД при стрельбе оружия ГСБ)
@@ -80,6 +85,8 @@
 	lefthand_file = 'icons/mob/inhands/weapons/guns_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/guns_righthand.dmi'
 	ammo_type = list(/obj/item/ammo_casing/energy/net, /obj/item/ammo_casing/energy/trap)
+	w_class = WEIGHT_CLASS_NORMAL
+	modifystate = FALSE
 	can_flashlight = 0
 	ammo_x_offset = 1
 
@@ -180,6 +187,11 @@
 	selfcharge = EGUN_SELFCHARGE * 5
 	fail_tick = 0
 	fail_chance = 1
+	fire_select_modes = list(SELECT_SEMI_AUTOMATIC, SELECT_BURST_SHOT)
+	fire_delay = 2
+	burst_size = 2
+	burst_spread = 16
+	burst_shot_delay = 2
 	var/icon_charge = "nucgun"
 
 

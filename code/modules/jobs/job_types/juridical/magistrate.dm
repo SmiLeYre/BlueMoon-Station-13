@@ -25,6 +25,7 @@
 		"Syndicate Advisor",
 		"Netorare",
 		"Commissar",
+		"Political Officer",
 		"NanoTrasen Slut",
 		"Syndicate Slut",
 		)
@@ -41,11 +42,11 @@
 	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/blindness, /datum/quirk/monophobia, /datum/quirk/bluemoon_criminal)
 
 	display_order = JOB_DISPLAY_ORDER_NTR
+	departments = DEPARTMENT_BITFLAG_LAW
 	threat = 2
 
 	family_heirlooms = list(
 		/obj/item/gavelhammer,
-		/obj/item/storage/briefcase/lawyer/family,
 		/obj/item/book/manual/wiki/security_space_law
 	)
 
@@ -53,7 +54,7 @@
 	name = "\proper the NanoTrasen Representative headset"
 	desc = "The headset of the lead station's judge."
 	icon_state = "com_headset"
-	keyslot = new /obj/item/encryptionkey/heads/hos
+	keyslot = new /obj/item/encryptionkey/headset_ntr
 
 /obj/item/pda/heads/ntr
 	name = "NanoTrasen Representative PDA"
@@ -119,7 +120,7 @@
 
 	implants = list(/obj/item/implant/mindshield)
 
-	accessory = /obj/item/clothing/accessory/permit/head
+	accessory = /obj/item/clothing/accessory/permit/special/representative
 
 /datum/outfit/job/ntr/syndicate
 	name = "Syndicate Representative"
@@ -141,6 +142,8 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	box = /obj/item/storage/box/survival/syndie
 	pda_slot = ITEM_SLOT_BELT
+	accessory = /obj/item/clothing/accessory/permit/special/representative
+
 	backpack_contents = list(/obj/item/gun/energy/e_gun=1, /obj/item/stamp/law=1, /obj/item/syndicate_uplink=1)
 
 /datum/outfit/job/ntr/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)

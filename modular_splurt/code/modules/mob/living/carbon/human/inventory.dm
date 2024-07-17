@@ -16,6 +16,9 @@
 		else
 			to_chat(src, "<span class='warning'>You can't fit anything in!</span>")
 		return
+	if(SEND_SIGNAL(equipped_suitstorage, COMSIG_IS_STORAGE_LOCKED))
+		to_chat(src, "<span class='warning'>Storage is locked!</span>")
+		return
 	if(thing) // put thing in suit storage
 		if(!SEND_SIGNAL(equipped_suitstorage, COMSIG_TRY_STORAGE_INSERT, thing, src))
 			to_chat(src, "<span class='warning'>You can't fit anything in!</span>")
@@ -47,6 +50,9 @@
 		else
 			to_chat(src, "<span class='warning'>You can't fit anything in!</span>")
 		return
+	if(SEND_SIGNAL(equipped_rpocket, COMSIG_IS_STORAGE_LOCKED))
+		to_chat(src, "<span class='warning'>Storage is locked!</span>")
+		return
 	if(thing) // put thing in suit storage
 		if(!SEND_SIGNAL(equipped_rpocket, COMSIG_TRY_STORAGE_INSERT, thing, src))
 			to_chat(src, "<span class='warning'>You can't fit anything in!</span>")
@@ -77,6 +83,9 @@
 			equipped_lpocket.attack_hand(src)
 		else
 			to_chat(src, "<span class='warning'>You can't fit anything in!</span>")
+		return
+	if(SEND_SIGNAL(equipped_lpocket, COMSIG_IS_STORAGE_LOCKED))
+		to_chat(src, "<span class='warning'>Storage is locked!</span>")
 		return
 	if(thing) // put thing in
 		if(!SEND_SIGNAL(equipped_lpocket, COMSIG_TRY_STORAGE_INSERT, thing, src))

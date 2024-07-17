@@ -31,3 +31,8 @@
 	default = 1.5
 
 /datum/config_entry/flag/disable_stambuffer
+
+// Staminacost for shoving yourself off the ground instantly
+/datum/config_entry/number/percent_stamina_cost_shove_up
+    default = 0.2
+    integer = FALSE

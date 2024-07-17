@@ -163,6 +163,7 @@
 	key = "fart"
 	key_third_person = "farts"
 	message = "farts out shitcode."
+	var/farted_on_something = FALSE // BLUEMOON EDIT // Removed from /run_emote()
 
 /datum/emote/living/fart/run_emote(mob/living/user, params, type_override, intentional)
 	if(TIMER_COOLDOWN_CHECK(user, COOLDOWN_EMOTE_FART))
@@ -225,7 +226,6 @@
 	var/new_message = pick(fart_emotes)
 	//new_message = replacetext(new_message, "%OWNER", "\the [user]")
 	message = new_message
-	var/farted_on_something = FALSE
 	for(var/atom/A in get_turf(user))
 		farted_on_something = A.fart_act(user) || farted_on_something
 	. = ..()
@@ -1508,6 +1508,7 @@
 	emote_cooldown = 0.95 SECONDS
 	emote_pitch_variance = FALSE
 
+// BLUEMOON CHANGE START divide mrrp by 2 emotes
 /datum/emote/living/audio/mrrp
 	key = "mrrp"
 	key_third_person = "mrrps"
@@ -1516,6 +1517,37 @@
 	emote_cooldown = 0.25 // mrrp mrrp meow
 	emote_pitch_variance = FALSE
 
-/datum/emote/living/audio/mrrp/run_emote(mob/user, params)
-	emote_sound = pick('modular_splurt/sound/voice/catpeople/cat_mrrp1.ogg', 'modular_splurt/sound/voice/catpeople/cat_mrrp2.ogg')
-	. = ..()
+/datum/emote/living/audio/mrrp2
+	key = "mrrp2"
+	key_third_person = "mrrps"
+	message = "trills like a cat!"
+	emote_sound = 'modular_splurt/sound/voice/catpeople/cat_mrrp2.ogg'
+	emote_cooldown = 0.25 // mrrp mrrp meow
+	emote_pitch_variance = FALSE
+//BLUEMOON CHANGE END mrrp mrrp meow
+
+/datum/emote/living/audio/gay
+	key = "gay"
+	key_third_person = "points at a player"
+	message = "saw something gay."
+	emote_sound = 'modular_splurt/sound/voice/gay-echo.ogg'
+	emote_cooldown = 0.95 SECONDS
+	emote_pitch_variance = FALSE
+
+/datum/emote/living/audio/flabbergast
+	key = "flabbergast"
+	key_third_person = "is flabbergasted"
+	message = "looks flabbergasted!"
+	emote_sound = 'modular_splurt/sound/voice/flabbergasted.ogg'
+	emote_cooldown = 3.0 SECONDS
+	emote_pitch_variance = FALSE
+	emote_volume = 70
+
+/datum/emote/living/audio/sadness
+	key = "sadness"
+	key_third_person = "feels sadness"
+	message = "is experiencing <b><i>Profound Sadness</i></b>!"
+	emote_sound = 'modular_splurt/sound/voice/sadness.ogg'
+	emote_cooldown = 4.0 SECONDS
+	emote_pitch_variance = FALSE
+	emote_volume = 30

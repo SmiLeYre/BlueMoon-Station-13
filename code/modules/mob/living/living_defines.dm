@@ -197,3 +197,4 @@
 
 	//for set_activity
 	var/activity = ""
+	var/tempflavor = "" // BLUEMOON ADD - перенос темпфлавора на хардкод (увы)

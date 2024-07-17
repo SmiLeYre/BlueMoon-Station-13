@@ -9,7 +9,7 @@
 	var/list/special_equipment = list()
 
 /datum/objective_item/proc/check_special_completion() //for objectives with special checks (is that slime extract unused? does that intellicard have an ai in it? etcetc)
-	return 1
+	return TRUE
 
 /datum/objective_item/proc/TargetExists()
 	return TRUE
@@ -81,7 +81,7 @@
 
 /datum/objective_item/steal/zippo_qm
 	name = "Зажигалку Завхоза."
-	targetitem = /obj/item/lighter/engraved
+	targetitem = /obj/item/lighter/qm_engraved
 	difficulty = 2
 	excludefromjob = list("Quartermaster")
 
@@ -133,7 +133,7 @@
 
 /datum/objective_item/steal/reflector
 	name = "Жилет со Светоотражателями из Арсенала."
-	targetitem = /obj/item/clothing/suit/armor/laserproof
+	targetitem = /obj/item/clothing/suit/hooded/ablative
 	difficulty = 3
 	excludefromjob = list("Head of Security", "Warden")
 
@@ -208,8 +208,8 @@
 /datum/objective_item/steal/functionalai/check_special_completion(obj/item/aicard/C)
 	for(var/mob/living/silicon/ai/A in C)
 		if(isAI(A) && A.stat != DEAD) //See if any AI's are alive inside that card.
-			return 1
-	return 0
+			return TRUE
+	return FALSE
 
 /datum/objective_item/steal/blueprints
 	name = "Чертежи Станции."
@@ -235,8 +235,8 @@
 
 /datum/objective_item/steal/slime/check_special_completion(obj/item/slime_extract/E)
 	if(E.Uses > 0)
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
 //Unique Objectives
 /datum/objective_item/unique/docs_red

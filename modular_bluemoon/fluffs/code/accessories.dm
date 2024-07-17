@@ -1,10 +1,3 @@
-/obj/item/clothing/accessory/medal/donator/bm/delta
-	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
-	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
-	icon_state = "medal_delta"
-	name = "Delta squad medal"
-	desc = "Proof of belonging to the \"Delta Squad\", as well as the strength and leadership in it."
-
 /obj/item/clothing/neck/cloak/coopie_cloak
 	name = "Coopie's cloak"
 	desc = "Именной плащ слаймика. Виднеется большая буква 'С'. Ниже, мелким шрифтом, написано: 'если вы нашли его, значит я его потеряла. Верните, пожалуйста. Владелец: Coopie'"
@@ -12,7 +5,6 @@
 	item_state = "coopie_cloak"
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
-
 
 /////
 
@@ -91,3 +83,12 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
 	icon_state = "booma"
 	item_state = "booma"
+
+////////////////////////
+/obj/item/clothing/neck/tie/dogtag
+	name = "Dog tag"
+	desc = "The first tag indicates personal number - AG-003288 and affiliation with the AC mercenaries.  The second tag contains the first and last name - Althea Gantia, along with the blood type."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+	icon_state = "dogtag"
+	item_state = "dogtag"

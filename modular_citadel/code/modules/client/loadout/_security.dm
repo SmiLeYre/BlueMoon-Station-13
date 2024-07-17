@@ -67,4 +67,4 @@
 /datum/gear/glasses/sechud
 	name = "Security Hud"
 	path = /obj/item/clothing/glasses/hud/security
-	restricted_roles = list("Security Officer", "Warden", "Head of Security")
+	restricted_roles = list("Peacekeeper", "Security Officer", "Warden", "Head of Security")

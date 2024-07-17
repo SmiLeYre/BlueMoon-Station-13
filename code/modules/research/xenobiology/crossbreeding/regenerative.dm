@@ -21,6 +21,11 @@ Regenerative extracts:
 			to_chat(user, "<span class='warning'>[src] will not work on the dead!</span>")
 			return TRUE //returning TRUE preemptively ends the attack chain and thus doesn't call afterattack, this is noteworthy for below as well
 		//inform the target that they're about to have a regenerative extract used on them
+		//BLUEMOON ADD START Чиним абуз аплинков из дронов при помощи регенеративных экстрактов.
+		if(isdrone(A))
+			to_chat(user, "<span class='warning'>[src] will not work on this type of creatures!</span>")
+			return TRUE
+		//BLUEMOON ADD END
 		if(M != user) //targeting someone else
 			M.visible_message("<span class='notice'>[user] readies [src], holding it steady near [M] and guiding it to the center of [M.ru_ego()] mass...</span>",
 				"<span class='notice'>[user] readies [src], holding it steady near you and guiding it to the center of your mass...</span>")
@@ -37,6 +42,10 @@ Regenerative extracts:
 
 /obj/item/slimecross/regenerative/afterattack(atom/target,mob/user,prox)
 	. = ..()
+	//BLUEMOON ADD START Чиним абуз аплинков из дронов при помощи регенеративных экстрактов.
+	if(isdrone(target))
+		return
+	//BLUEMOON ADD END
 	if(!prox || !isliving(target))
 		return
 	var/mob/living/M = target

@@ -1,4 +1,3 @@
-
 //the essential proc to call when an obj must receive damage of any kind.
 /obj/proc/take_damage(damage_amount, damage_type = BRUTE, damage_flag = 0, sound_effect = 1, attack_dir, armour_penetration = 0)
 	if(QDELETED(src))
@@ -26,15 +25,15 @@
 //returns the damage value of the attack after processing the obj's various armor protections
 /obj/proc/run_obj_armor(damage_amount, damage_type, damage_flag = 0, attack_dir, armour_penetration = 0)
 	if(damage_flag == MELEE && damage_amount < damage_deflection)		// TODO: Refactor armor datums and types entirely jfc
-		return 0
+		return FALSE
 	switch(damage_type)
 		if(BRUTE)
 		if(BURN)
 		else
-			return 0
+			return FALSE
 	var/armor_protection = 0
 	if(damage_flag)
-		armor_protection = armor.getRating(damage_flag)
+		armor_protection = armor?.getRating(damage_flag)
 	if(armor_protection)		//Only apply weak-against-armor/hollowpoint effects if there actually IS armor.
 		armor_protection = clamp(armor_protection - armour_penetration, 0, 100)
 	return round(damage_amount * (100 - armor_protection)*0.01, DAMAGE_PRECISION)
@@ -110,8 +109,8 @@
 		else
 			playsound(src, 'sound/effects/bang.ogg', 50, 1)
 		take_damage(hulk_damage(), BRUTE, MELEE, 0, get_dir(src, user))
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
 /obj/blob_act(obj/structure/blob/B)
 	if(isturf(loc))
@@ -138,7 +137,7 @@
 		return
 	if(!M.melee_damage_upper && !M.obj_damage)
 		M.emote("custom", message = "[M.friendly_verb_continuous] [src].")
-		return 0
+		return FALSE
 	else
 		var/play_soundeffect = 1
 		if(M.environment_smash)
@@ -190,7 +189,7 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 /obj/acid_act(acidpwr, acid_volume)
 	if(!(resistance_flags & UNACIDABLE) && acid_volume)
 		AddComponent(/datum/component/acid, acidpwr, acid_volume)
-		return 1
+		return TRUE
 
 //called when the obj is destroyed by acid.
 /obj/proc/acid_melt()
@@ -204,7 +203,7 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 	if(acid)
 		return acid.level
 	else
-		return 0
+		return FALSE
 
 //// FIRE
 
@@ -219,7 +218,7 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 		resistance_flags |= ON_FIRE
 		SSfire_burning.processing[src] = src
 		update_icon()
-		return 1
+		return TRUE
 
 //called when the obj is destroyed by fire
 /obj/proc/burn()
@@ -235,9 +234,9 @@ GLOBAL_DATUM_INIT(acid_overlay, /mutable_appearance, mutable_appearance('icons/e
 
 /obj/zap_act(power, zap_flags, shocked_targets)
 	if(QDELETED(src))
-		return 0
+		return FALSE
 	obj_flags |= BEING_SHOCKED
-	addtimer(CALLBACK(src, .proc/reset_shocked), 10)
+	addtimer(CALLBACK(src, PROC_REF(reset_shocked)), 10)
 	return power / 2
 
 //The surgeon general warns that being buckled to certain objects receiving powerful shocks is greatly hazardous to your health

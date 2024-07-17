@@ -51,15 +51,16 @@
 	belt = /obj/item/clipboard
 	ears = /obj/item/radio/headset/headset_bo/bowman
 	uniform = /obj/item/clothing/under/rank/bridgeofficer
+	suit = /obj/item/clothing/suit/armor/vest/command
 	head = /obj/item/clothing/head/bridgeofficer
 	gloves = /obj/item/clothing/gloves/color/black
-	glasses = /obj/item/clothing/glasses/sunglasses
-	shoes = /obj/item/clothing/shoes/sneakers/brown
-	l_pocket = /obj/item/pda
+	glasses = /obj/item/clothing/glasses/hud/skills
+	shoes = /obj/item/clothing/shoes/laceup
+	l_pocket =  /obj/item/pda/heads
 
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/stamp/command=1, /obj/item/gun/energy/civilian=1)
 	box = /obj/item/storage/box/survival/command
-	accessory = /obj/item/clothing/accessory/permit/head
+	accessory = /obj/item/clothing/accessory/permit/special/bridge_officer
 
 /datum/outfit/job/bridgeofficer/syndicate
 	name = "Syndicate Bridge Officer"
@@ -71,7 +72,7 @@
 	ears = /obj/item/radio/headset/headset_bo/bowman
 	uniform = /obj/item/clothing/under/rank/bridgeofficer
 	head = /obj/item/clothing/head/bridgeofficer
-	glasses = /obj/item/clothing/glasses/sunglasses
+	glasses = /obj/item/clothing/glasses/hud/skills
 	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 
 	backpack = /obj/item/storage/backpack/duffelbag/syndie
@@ -79,6 +80,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	box = /obj/item/storage/box/survival/syndie
 	pda_slot = ITEM_SLOT_BELT
+	accessory = /obj/item/clothing/accessory/permit/special/bridge_officer
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/gun/energy/e_gun=1, /obj/item/stamp/command=1, /obj/item/syndicate_uplink=1)
 
 /datum/outfit/plasmaman/bridgeofficer

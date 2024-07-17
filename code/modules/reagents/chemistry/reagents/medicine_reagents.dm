@@ -1020,8 +1020,8 @@
 			M.visible_message("<span class='warning'>[M]'s body starts convulsing!</span>")
 			M.notify_ghost_cloning(source = M)
 			M.do_jitter_animation(10)
-			addtimer(CALLBACK(M, /mob/living/carbon.proc/do_jitter_animation, 10), 40) //jitter immediately, then again after 4 and 8 seconds
-			addtimer(CALLBACK(M, /mob/living/carbon.proc/do_jitter_animation, 10), 80)
+			addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living/carbon, do_jitter_animation), 10), 40) //jitter immediately, then again after 4 and 8 seconds
+			addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living/carbon, do_jitter_animation), 10), 80)
 
 			spawn(100) //so the ghost has time to re-enter
 				if(iscarbon(M))
@@ -1149,7 +1149,7 @@
 	name = "Stimulants"
 	description = "Increases stun resistance and movement speed in addition to restoring minor damage and weakness. Overdose causes weakness and toxin damage."
 	color = "#78008C"
-	metabolization_rate = 0.25 * REAGENTS_METABOLISM
+	metabolization_rate = 0.5 * REAGENTS_METABOLISM
 	overdose_threshold = 60
 	pH = 8.7
 	can_synth = FALSE //BLUEMOON CHANGE ролькоприколы остаются у ролек
@@ -1160,24 +1160,22 @@
 	..()
 	L.add_movespeed_modifier(/datum/movespeed_modifier/reagent/stimulants)
 	ADD_TRAIT(L, TRAIT_TASED_RESISTANCE, type)
-	ADD_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 
 /datum/reagent/medicine/stimulants/on_mob_end_metabolize(mob/living/L)
 	L.remove_movespeed_modifier(/datum/movespeed_modifier/reagent/stimulants)
 	REMOVE_TRAIT(L, TRAIT_TASED_RESISTANCE, type)
-	REMOVE_TRAIT(L, TRAIT_SLEEPIMMUNE, type)
 	..()
 
 /datum/reagent/medicine/stimulants/on_mob_life(mob/living/carbon/M)
-	M.adjustOxyLoss(-8*REM, FALSE)
-	M.adjustToxLoss(-4*REM, FALSE)
-	M.adjustBruteLoss(-4*REM, FALSE)
-	M.adjustFireLoss(-4*REM, FALSE)
-	if(M.blood_volume < (BLOOD_VOLUME_NORMAL*M.blood_ratio))
-		M.adjust_integration_blood(40) // blood fall out man bad
-	M.AdjustAllImmobility(-60, FALSE)
-	M.AdjustUnconscious(-60, FALSE)
+	if(M.health < 50 && M.health > 0)
+		M.adjustOxyLoss(-1 * REM, FALSE)
+		M.adjustToxLoss(-1 * REM, FALSE)
+		M.adjustBruteLoss(-1 * REM, FALSE)
+		M.adjustFireLoss(-1 * REM, FALSE)
+	M.AdjustAllImmobility(-80, FALSE)
+	M.AdjustParalyzed(-40, FALSE)
 	M.AdjustKnockdown(-40, FALSE)
+	M.AdjustImmobilized(-40, FALSE)
 	M.adjustStaminaLoss(-40*REM, FALSE)
 	..()
 	. = 1
@@ -1441,7 +1439,7 @@
 	M.adjustToxLoss(-3 * REM, FALSE, TRUE) //Heals TOXINLOVERS
 	M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 2 * REM, 150) //This does, after all, come from ambrosia, and the most powerful ambrosia in existence, at that!
 	M.adjustCloneLoss(-1 * REM, FALSE)
-	M.adjustStaminaLoss(-13 * REM, FALSE)
+	M.adjustStaminaLoss(-1 * REM, FALSE)
 	M.jitteriness = min(max(0, M.jitteriness + 3), 30)
 	M.druggy = min(max(0, M.druggy + 10), 15) //See above
 	..()

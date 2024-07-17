@@ -23,7 +23,8 @@
 	var/alt_covers_chest = FALSE // for adjusted/rolled-down jumpsuits, FALSE = exposes chest and arms, TRUE = exposes arms only
 	var/dummy_thick = FALSE // is able to hold accessories on its item
 	//SANDSTORM EDIT - Removed the old attached accessory system. We use a list of accessories instead.
-	var/max_accessories = 3
+	var/max_accessories = 7 // BLUEMOON EDIT - расширено возможное количество аксессуаров с 3 до 7
+	var/max_restricted_accessories = 3 // BLUEMOON ADD - максимальное количество особых (боевых) аксессуаров
 	var/list/obj/item/clothing/accessory/attached_accessories = list()
 	var/list/mutable_appearance/accessory_overlays = list()
 	//SANDSTORM EDIT END
@@ -43,14 +44,14 @@
 	if((sensordamage || (has_sensor < HAS_SENSORS && has_sensor != NO_SENSORS)) && istype(I, /obj/item/stack/cable_coil))
 		if(damaged_clothes == CLOTHING_SHREDDED)
 			to_chat(user,"<span class='warning'>[src] is too damaged to have its suit sensors repaired! Repair it first.</span>")
-			return 0
+			return FALSE
 		var/obj/item/stack/cable_coil/C = I
 		I.use_tool(src, user, 0, 1)
 		has_sensor = HAS_SENSORS
 		sensordamage = 0
 		sensor_mode = sensor_mode_intended
 		to_chat(user,"<span class='notice'>You repair the suit sensors on [src] with [C].</span>")
-		return 1
+		return TRUE
 
 	if(!attach_accessory(I, user))
 		return ..()
@@ -144,14 +145,47 @@
 	//
 	..()
 
+
 /obj/item/clothing/under/proc/attach_accessory(obj/item/I, mob/user, notifyAttach = 1)
 	. = FALSE
 	if(istype(I, /obj/item/clothing/accessory) && !istype(I, /obj/item/clothing/accessory/ring))
 		var/obj/item/clothing/accessory/A = I
+		// BLUEMOON EDIT START - изменение аксессуаров
+		// Проверка на общее количество
 		if(length(attached_accessories) >= max_accessories)
 			if(user)
 				to_chat(user, "<span class='warning'>[src] already has [length(attached_accessories)] accessories.</span>")
 			return
+		// Проверка на количество особых / боевых
+		if(A.restricted_accessory && length(attached_accessories))
+			var/restricted_accesories_count = 0
+			for(var/obj/item/clothing/accessory/already_attached in attached_accessories)
+				if(already_attached.restricted_accessory)
+					restricted_accesories_count++
+			if(restricted_accesories_count >= max_restricted_accessories)
+				if(user)
+					to_chat(user, "<span class='warning'> К [src] некуда прикреплять очередной боевой аксессуар, на ней их уже [restricted_accesories_count]</span>")
+				return
+		// Проверка на максимальное количество аксессуаров одного вида
+		if(A.max_stack != -1 && length(attached_accessories))
+			var/similar_accessory_count = 0
+			for(var/obj/item/clothing/accessory/already_attached in attached_accessories)
+				if(already_attached.max_stack == -1)
+					continue
+				// У обоих аксессуаров может быть указан родительский класс, все дочерние классы которого не могут стакаться
+				// друг с другом без ограничений
+				if(already_attached.max_stack_path && A.max_stack_path)
+					if(already_attached.max_stack_path == A.max_stack_path)
+						similar_accessory_count++
+				// Если не указан, проверяем, чтобы оба предмета не были дочерними классами друг друга
+				else if(istype(A, already_attached.type) || istype(already_attached.type, A))
+					similar_accessory_count++
+			if(similar_accessory_count >= A.max_stack)
+				if(user)
+					to_chat(user, "<span class='warning'> На [src] уже слишком много похожих на [A] аксессуаров!</span>")
+				return
+		// BLUEMOON EDIT END
+
 		if(dummy_thick)
 			if(user)
 				to_chat(user, "<span class='warning'>[src] is too bulky and cannot have accessories attached to it!</span>")
@@ -250,13 +284,13 @@
 		return
 	if(src.has_sensor == BROKEN_SENSORS)
 		to_chat(usr, "The sensors have shorted out!")
-		return 0
+		return FALSE
 	if(src.sensor_flags & SENSOR_LOCKED)
 		to_chat(usr, "The controls are locked.")
-		return 0
+		return FALSE
 	if(src.has_sensor <= NO_SENSORS)
 		to_chat(usr, "This suit does not have any sensors.")
-		return 0
+		return FALSE
 
 	var/list/modes = list("Off", "Binary vitals", "Exact vitals", "Tracking beacon")
 	var/switchMode = input("Select a sensor mode:", "Suit Sensor Mode", modes[sensor_mode + 1]) in modes
@@ -309,10 +343,10 @@
 
 	if(src.has_sensor == BROKEN_SENSORS)
 		to_chat(usr, "The sensors have shorted out!")
-		return 0
+		return FALSE
 	if(src.sensor_flags & SENSOR_LOCKED)
 		to_chat(usr, "The controls are locked.")
-		return 0
+		return FALSE
 	if(has_sensor <= NO_SENSORS)
 		to_chat(user, "This suit does not have any sensors.")
 		return

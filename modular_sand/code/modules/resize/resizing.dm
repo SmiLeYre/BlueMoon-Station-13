@@ -7,10 +7,8 @@
 			return FALSE
 
 		//Micro is on a table.
-		var/turf/steppyspot = target.loc
-		for(var/thing in steppyspot.contents)
-			if(istype(thing, /obj/structure/table))
-				return TRUE
+		if(locate(/obj/structure/table) in target.loc)
+			return TRUE
 
 		//Both small.
 		if(get_size(user) <= RESIZE_A_TINYMICRO && get_size(target) <= RESIZE_A_TINYMICRO)
@@ -59,10 +57,8 @@
 			return FALSE
 
 	//If on a table, don't
-		var/turf/steppyspot = target.loc
-		for(var/thing in steppyspot.contents)
-			if(istype(thing, /obj/structure/table))
-				return TRUE
+		if(locate(/obj/structure/table) in target.loc)
+			return TRUE
 
 	//Both small
 		if(get_size(user) <= RESIZE_A_TINYMICRO && get_size(target) <= RESIZE_A_TINYMICRO)
@@ -98,7 +94,7 @@
 				micro_move_to_target_turf(target) // BLUEMOON ADD
 				user.sizediffStamLoss(target)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE) //Full stop
-				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 3) //0.3 seconds
+				addtimer(CALLBACK(user, TYPE_PROC_REF(/mob, remove_movespeed_modifier), MOVESPEED_ID_STOMP, TRUE), 3) //0.3 seconds
 				if(iscarbon(user))
 					if(istype(user) && user.dna.features["taur"] == "Naga" || user.dna.features["taur"] == "Tentacle")
 						target.visible_message("<span class='danger'>[src] carefully rolls their tail over [target]!</span>", "<span class='danger'>[src]'s huge tail rolls over you!</span>")
@@ -114,7 +110,7 @@
 				user.sizediffBruteloss(target)
 				playsound(loc, 'sound/misc/splort.ogg', 50, 1)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE)
-				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 10) //1 second
+				addtimer(CALLBACK(user, TYPE_PROC_REF(/mob, remove_movespeed_modifier), MOVESPEED_ID_STOMP, TRUE), 10) //1 second
 				//user.Stun(20)
 				// BLUEMOON ADDITION START - персонажи с тяжёлыми квирками наносят больше урона и на дольше станят, но сами получают стан
 				if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY))
@@ -136,7 +132,7 @@
 				user.sizediffStamLoss(target)
 				user.sizediffStun(target)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE)
-				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 7)//About 3/4th a second
+				addtimer(CALLBACK(user, TYPE_PROC_REF(/mob, remove_movespeed_modifier), MOVESPEED_ID_STOMP, TRUE), 7)//About 3/4th a second
 				if(iscarbon(user))
 					var/feetCover = (user.wear_suit && (user.wear_suit.body_parts_covered & FEET)) || (user.w_uniform && (user.w_uniform.body_parts_covered & FEET) || (user.shoes && (user.shoes.body_parts_covered & FEET)))
 					if(feetCover)
@@ -193,9 +189,8 @@
 		S *= 2 // Если 100% наступает на 50% или 200% наступает на 100%, то наносится 20 (у станбатона 35)
 	target.apply_damage(S, STAMINA, BODY_ZONE_CHEST) // дополнительный урон по стамине за нерф опрокидывания на пол, т.к. чрезвычайно сильное в оригинале
 	target.Dizzy(5)
-	if(!target.IsKnockdown())
 	// BLUEMOON ADDITION END
-		target.Knockdown(S/2) //final result in stamina knockdown // BLUEMOON CHANGES
+	target.Knockdown(S/2) //final result in stamina knockdown // BLUEMOON CHANGES
 
 
 //Proc for scaling stuns on size difference (for grab intent)
@@ -230,8 +225,8 @@
 /*
 /mob/living/proc/sizeinteractioncheck(mob/living/target)
 	if(abs(get_effective_size()/target.get_effective_size())>=2.0 && get_effective_size()>target.get_effective_size())
-		return 0
+		return FALSE
 	else
-		return 1
+		return TRUE
 */
 //Clothes coming off at different sizes, and health/speed/stam changes as well

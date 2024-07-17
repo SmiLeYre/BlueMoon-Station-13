@@ -90,12 +90,12 @@
 		var/regex/reg = regex("(\\b|\\A)[REGEX_QUOTE(word)]'?s*(\\b|\\Z)", "ig")
 
 		if(findtext(hearing_args[HEARING_RAW_MESSAGE], reg))
-			hearing_args[HEARING_RAW_MESSAGE] = reg.Replace_char(hearing_args[HEARING_RAW_MESSAGE], "<span class='phobia'>$0</span>")
+			hearing_args[HEARING_RAW_MESSAGE] = reg.Replace(hearing_args[HEARING_RAW_MESSAGE], "<span class='phobia'>$0</span>")
 			matches = TRUE
 			mainsource = word
 
 	if(matches)
-		addtimer(CALLBACK(src, .proc/freak_out, null, mainsource), 10) //to react AFTER the chat message
+		addtimer(CALLBACK(src, PROC_REF(freak_out), null, mainsource), 10) //to react AFTER the chat message
 
 /datum/brain_trauma/mild/phobia/handle_speech(datum/source, list/speech_args)
 	if(HAS_TRAIT(owner, TRAIT_FEARLESS))
@@ -118,7 +118,7 @@
 		to_chat(owner, "<span class='userdanger'>Hearing \"[trigger_word]\" [message]!</span>")
 	else
 		to_chat(owner, "<span class='userdanger'>Something [message]!</span>")
-	var/reaction = rand(1,4)
+	var/reaction = rand(1,5)
 	switch(reaction)
 		if(1)
 			to_chat(owner, "<span class='warning'>You are paralyzed with fear!</span>")

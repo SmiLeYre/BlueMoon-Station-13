@@ -406,6 +406,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.emergencyresponseteamspawn += get_turf(src)
 	return INITIALIZE_HINT_QDEL
 
+/obj/effect/landmark/ert_shuttle_brief_spawn
+	name = "ertshuttlebriefspawn"
+	icon_state = "ert_brief_spawn"
+
 /obj/effect/landmark/holding_facility
 	name = "Holding Facility"
 	icon_state = "holding_facility"

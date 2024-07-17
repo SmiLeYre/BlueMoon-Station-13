@@ -7,18 +7,28 @@
 	set category = "Object"
 	set src in usr
 
+	if(!isliving(usr))
+		return FALSE
+
 	if(iscarbon(usr) && (usr.get_item_by_slot(ITEM_SLOT_UNDERWEAR) == src))
-		to_chat(span_purple("You must take them off first!"))
+		to_chat(usr, span_purple("You must take them off first!"))
 		return FALSE
 
 	free_use = !free_use
-	for(var/obj/item/portallight/P in world)
-		if(free_use)
-			to_chat(usr, "[src] are now public!")
+	if(free_use)
+		to_chat(usr, "[src] are now public!")
+		for(var/obj/item/portallight/P in world)
+			audible_message("[icon2html(P, hearers(P))] *beep* *beep* *beep* - New public device is found!")
+			playsound(P, 'sound/machines/triple_beep.ogg', ASSEMBLY_BEEP_VOLUME, TRUE)
 			P.available_panties += src
-		else
-			to_chat(usr, "[src] are no longer public!")
+	else
+		to_chat(usr, "[src] are no longer public. All connected devices have been disconnected.")
+		for(var/obj/item/portallight/P in world)
 			P.available_panties -= src
+			if(P.portalunderwear == src)
+				P.portalunderwear = null
+				P.updatesleeve()
+				P.icon_state = "unpaired"
 
 //So the new portal lights will check it.
 /obj/item/portallight/New()

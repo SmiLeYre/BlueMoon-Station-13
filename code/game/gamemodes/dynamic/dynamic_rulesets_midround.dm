@@ -263,7 +263,7 @@
 	restricted_roles = list("AI", "Cyborg", "Prisoner", "Shaft Miner", "NanoTrasen Representative", "Internal Affairs Agent", "Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security","Bridge Officer", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")  //BLUEMOON CHANGES
 	required_candidates = 9
 	required_round_type = list(ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
-	weight = 4 //BLUEMOON CHANGES
+	weight = 16 //BLUEMOON CHANGES
 	cost = 10 //BLUEMOON CHANGES - низкая цена, т.к. надо в соло поднять семью
 	requirements = list(101,101,101,50,30,20,10,10,10,10)
 	flags = HIGH_IMPACT_RULESET
@@ -1046,7 +1046,7 @@
 /datum/dynamic_ruleset/midround/from_ghosts/sentient_disease/generate_ruleset_body(mob/applicant)
 	var/mob/camera/disease/virus = new /mob/camera/disease(SSmapping.get_station_center())
 	virus.key = applicant.key
-	INVOKE_ASYNC(virus, /mob/camera/disease/proc/pick_name)
+	INVOKE_ASYNC(virus, TYPE_PROC_REF(/mob/camera/disease, pick_name))
 	message_admins("[ADMIN_LOOKUPFLW(virus)] has been made into a sentient disease by the midround ruleset.")
 	log_game("[key_name(virus)] was spawned as a sentient disease by the midround ruleset.")
 	return virus
@@ -1119,9 +1119,9 @@
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security","Bridge Officer", "Captain") //BLUEMOON CHANGES
 	required_enemies = 3
 	required_candidates = 1
-	required_round_type = list(ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
+	required_round_type = list(ROUNDTYPE_DYNAMIC_LIGHT) // BLUEMOON ADD
 	weight = 6
-	cost = 15
+	cost = 5
 	scaling_cost = 10
 	requirements = list(101,101,60,50,40,30,20,15,10,10)
 	antag_cap = list("denominator" = 39, "offset" = 1)

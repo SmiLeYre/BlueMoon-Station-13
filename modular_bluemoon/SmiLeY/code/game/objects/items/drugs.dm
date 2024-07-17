@@ -95,7 +95,7 @@
 	name = "Liquid Burger"
 	id = /datum/reagent/consumable/nutriment/liquid_burger
 	results = list(/datum/reagent/consumable/nutriment/liquid_burger = 5)
-	required_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/medicine/synthflesh = 1, /datum/reagent/blood = 1)
+	required_reagents = list(/datum/reagent/medicine/synthflesh = 1, /datum/reagent/consumable/space_cola = 1)
 	mix_message = "Смесь бурно реагирует, оставляя после себя огромную кучу микро-мини-нано бургеров."
 
 /datum/chemical_reaction/solid_burger
@@ -454,7 +454,7 @@
 	icon_state = ""
 
 /obj/item/reagent_containers/pill/labebium
-	name = "Лабебиум"
+	name = "Весёлая Таблетка"
 	desc = "Выпей меня."
 	icon_state = "pill5"
 	list_reagents = list(/datum/reagent/drug/labebium = 10)

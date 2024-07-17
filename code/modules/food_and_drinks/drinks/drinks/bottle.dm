@@ -60,20 +60,29 @@
 /obj/item/reagent_containers/food/drinks/bottle/proc/do_eblya(mob/living/target, mob/living/user)
 	var/message = ""
 	var/lust_amt = 0
+	if(!user.canUseTopic(target, BE_CLOSE))
+		return
 	if(ishuman(target) && (target?.client?.prefs?.toggles & VERB_CONSENT))
 		if(user.zone_selected == BODY_ZONE_PRECISE_GROIN)
 			switch(hole)
 				if(CUM_TARGET_VAGINA)
-					if(target.has_vagina(REQUIRE_EXPOSED))
+					if(target.has_vagina() == HAS_EXPOSED_GENITAL)
 						message = (user == target) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою киску.", "запихивает '\the [src]' в свою киску", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[target]</b> прямо в киску с помощью '\the [src]'", "засовывает '\the [src]' прямо в киску <b>[target]</b>.")
 						lust_amt = NORMAL_LUST
 				if(CUM_TARGET_ANUS)
-					if(target.has_anus(REQUIRE_EXPOSED))
+					if(target.has_anus() == HAS_EXPOSED_GENITAL)
 						message = (user == target) ? pick("крепко обхватывает '\the [src]' и начинает пихать это прямо в свою попку.","запихивает '\the [src]' прямо в свою собственную попку.", "постанывает и садится на '\the [src]'.") : pick("трахает <b>[target]</b> прямо в попку '\the [src]'", "активно суёт '\the [src]' прямо в попку <b>[target]</b>.")
 						lust_amt = NORMAL_LUST
 	if(message)
 		user.visible_message("<span class='lewd'><b>[user]</b> [message].</span>")
 		target.handle_post_sex(lust_amt, null, user)
+
+		switch (hole)
+			if (CUM_TARGET_VAGINA)
+				user.client?.plug13.send_emote(PLUG13_EMOTE_VAGINA, min(lust_amt*3, 100), PLUG13_DURATION_NORMAL)
+			if (CUM_TARGET_ANUS)
+				user.client?.plug13.send_emote(PLUG13_EMOTE_ANUS, min(lust_amt*3, 100), PLUG13_DURATION_NORMAL)
+
 		playsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
 							'modular_sand/sound/interactions/bang5.ogg',
 							'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)

@@ -70,7 +70,7 @@
 //this is far too lewd wah
 
 /obj/item/organ/genital/breasts/modify_size(modifier, min = -INFINITY, max = INFINITY)
-	var/new_value =  clamp(size + modifier, max(min, min_size ? GLOB.breast_values[min_size] : -INFINITY), min(max_size ? GLOB.breast_values[max_size] : INFINITY, max))
+	var/new_value =  clamp(size + modifier, max(min, min_size || -INFINITY), min(max_size || INFINITY, max))
 	if(new_value == size)
 		return
 	prev_size = size
@@ -79,24 +79,12 @@
 	..()
 
 /obj/item/organ/genital/breasts/size_to_state()
-	var/rounded = round(size)
-	var/str_size
-	switch(rounded)
-		if(0) //flatchested
-			str_size = "плоского"
-		if(1 to 8) //modest
-			str_size = GLOB.breast_values[rounded]
-		if(9 to 15) //massive
-			str_size = GLOB.breast_values[rounded]
-		if(16 to 17) //ridiculous
-			str_size = GLOB.breast_values[rounded]
-		if(18 to 24) //AWOOOOGAAAAAAA
-			str_size = "массивного"
-		if(25 to 29) //AWOOOOOOGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-			str_size = "гигантского"
-		if(30 to INFINITY) //AWWWWWWWWWWWWWOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOGGGGGAAAAAAAAAAAAAAAAAAAAAA
-			str_size = "неимоверно огромного"
-	return str_size
+	var/rounded = clamp(round(size), 0, INFINITY)
+	for(var/size_index in length(GLOB.breast_values) to 1 step -1) // This should go in the reverse of the defined order (i.e. greatest-to-least).
+		var/size_state = GLOB.breast_values[size_index]
+		if(GLOB.breast_values[size_state] <= rounded) // Return the greatest (last) size value that's less than or equal to our numerical size.
+			return size_state
+	return "плоского" // Even flat was too large for you, I guess...? This should never happen.
 
 /obj/item/organ/genital/breasts/update_size()//wah
 	var/rounded_size = round(size)
@@ -122,8 +110,17 @@
 	else
 		color = "#[D.features["breasts_color"]]"
 	size = GLOB.breast_values[D.features["breasts_size"]]
-	max_size = D.features["breasts_max_size"]
-	min_size = D.features["breasts_min_size"]
+
+	//Runtime in code/modules/arousal/organs/breasts.dm, line 73: type mismatch: cannot compare 1e+31 to "g"
+	//В преференсах выставляется буква, тип строка. А при проверке нужна цифра.
+
+	//max_size = D.features["breasts_max_size"]
+	//min_size = D.features["breasts_min_size"]
+
+	//BLUEMOON ADD Start
+	max_size = GLOB.alphabet.Find(D.features["breasts_max_size"]) //a = 1, b = 2...
+	min_size = GLOB.alphabet.Find(D.features["breasts_min_size"])
+	//BLUEMOON ADD End
 	shape = D.features["breasts_shape"]
 	if(!D.features["breasts_producing"])
 		genital_flags &= ~ (GENITAL_FUID_PRODUCTION|CAN_CLIMAX_WITH|CAN_MASTURBATE_WITH)
@@ -133,6 +130,17 @@
 		toggle_visibility(GEN_ALLOW_EGG_STUFFING, FALSE)
 	if(D.features["breasts_accessible"])
 		toggle_accessibility(TRUE)
+
+/obj/item/organ/genital/breasts/proc/get_lactation_amount_modifier()
+	switch(size)
+		if(-INFINITY to 3)
+			return 1
+		if(3 to 5)
+			return 2
+		if(5 to 8)
+			return 3
+		else
+			return clamp(size - 5, 0, INFINITY)
 
 #undef BREASTS_ICON_MIN_SIZE
 #undef BREASTS_ICON_MAX_SIZE

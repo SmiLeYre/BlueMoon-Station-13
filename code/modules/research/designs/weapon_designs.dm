@@ -350,7 +350,7 @@
 	build_type = PROTOLATHE
 	materials = list(/datum/material/gold = 5000,/datum/material/uranium = 10000)
 	reagents_list = list(/datum/reagent/toxin/mutagen = 40)
-	build_path = /obj/item/storage/lockbox/weapon/beamrifle
+	build_path = /obj/item/storage/lockbox/weapon/decloner
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 	min_security_level = SEC_LEVEL_RED
@@ -373,7 +373,7 @@
 	min_security_level = SEC_LEVEL_RED
 
 /obj/item/storage/lockbox/weapon/rapidsyringe
-	name = "Lockbox with Decloner"
+	name = "Lockbox with Rapid Syringe Gun"
 
 /obj/item/storage/lockbox/weapon/rapidsyringe/PopulateContents()
 	new /obj/item/gun/syringe/rapidsyringe(src)
@@ -390,7 +390,7 @@
 	min_security_level = SEC_LEVEL_RED
 
 /obj/item/storage/lockbox/weapon/temp_gun
-	name = "Lockbox with Decloner"
+	name = "Lockbox with Temperature Gun"
 
 /obj/item/storage/lockbox/weapon/temp_gun/PopulateContents()
 	new /obj/item/gun/energy/temperature(src)

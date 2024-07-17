@@ -84,6 +84,6 @@
 	dream_fragments.Cut(1,2)
 	to_chat(src, "<span class='notice'><i>... [next_message] ...</i></span>")
 	if(LAZYLEN(dream_fragments))
-		addtimer(CALLBACK(src, .proc/dream_sequence, dream_fragments, dreaming_in_shower), rand(10,30)) // BLUEMOON EDIT - добавлено dreaming_in_shower, чтобы во время мытья в душе персонаж находился "в размышлениях"
+		addtimer(CALLBACK(src, PROC_REF(dream_sequence), dream_fragments, dreaming_in_shower), rand(10,30))
 	else
 		dreaming = FALSE

@@ -1,0 +1,861 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"c" = (
+/obj/structure/rack/shelf,
+/obj/item/reagent_containers/pill/stimulant,
+/obj/item/reagent_containers/pill/stimulant,
+/obj/item/reagent_containers/pill/pendosovka,
+/obj/item/reagent_containers/pill/pendosovka,
+/obj/item/reagent_containers/pill/mutarad{
+	pixel_y = 5;
+	pixel_x = -6
+	},
+/obj/item/reagent_containers/pill/aranesp,
+/obj/item/reagent_containers/pill/happiness,
+/obj/item/reagent_containers/pill/happinesspsych,
+/obj/item/reagent_containers/pill/labebium,
+/obj/item/reagent_containers/pill/mannitol,
+/obj/item/reagent_containers/pill/planz,
+/obj/item/reagent_containers/pill/salicyclic,
+/obj/item/reagent_containers/pill/zoom,
+/obj/item/storage/pill_bottle/lsd{
+	pixel_y = 5;
+	pixel_x = 4
+	},
+/obj/item/reagent_containers/pill/morphine,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = 5;
+	pixel_y = -6
+	},
+/obj/item/reagent_containers/pill/antirad_plus{
+	pixel_x = -5;
+	pixel_y = -7
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"d" = (
+/obj/item/chair,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"f" = (
+/obj/machinery/chem_dispenser/fullupgrade,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"g" = (
+/mob/living/simple_animal/hostile/pirate/ranged/space,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"h" = (
+/obj/structure/reagent_dispensers/beerkeg,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"i" = (
+/turf/closed/wall/mineral/titanium/spaceship/interior,
+/area/ruin/space/has_grav/powered/drugpost)
+"j" = (
+/turf/closed/mineral,
+/area/ruin/space/has_grav/powered/drugpost)
+"k" = (
+/obj/machinery/chem_master,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"l" = (
+/obj/structure/table/wood,
+/obj/machinery/microwave{
+	pixel_y = 7
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"m" = (
+/obj/machinery/chem_heater,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
+/obj/machinery/light/dim/directional{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"n" = (
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"p" = (
+/mob/living/simple_animal/hostile/carp,
+/turf/open/space/basic,
+/area/template_noop)
+"s" = (
+/obj/structure/rack/shelf,
+/obj/item/reagent_containers/pill/stimulant,
+/obj/item/reagent_containers/pill/stimulant,
+/obj/item/reagent_containers/pill/shadowtoxin,
+/obj/item/reagent_containers/pill/shadowtoxin,
+/obj/item/reagent_containers/pill/zvezdochka{
+	pixel_y = -10
+	},
+/obj/item/reagent_containers/pill/lsdpsych{
+	pixel_y = 11;
+	pixel_x = -10
+	},
+/obj/item/reagent_containers/pill/lsdpsych{
+	pixel_y = 12;
+	pixel_x = 6
+	},
+/obj/item/reagent_containers/pill/happiness{
+	pixel_x = -4;
+	pixel_y = 11
+	},
+/obj/item/reagent_containers/pill/labebium,
+/obj/item/reagent_containers/pill/labebium,
+/obj/item/reagent_containers/pill/planz,
+/obj/item/reagent_containers/pill/zoom,
+/obj/item/storage/pill_bottle/neurine{
+	pixel_x = -8;
+	pixel_y = -5
+	},
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = 9;
+	pixel_y = -10
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"t" = (
+/mob/living/simple_animal/hostile/pirate/ranged/space,
+/turf/open/floor/holofloor/asteroid,
+/area/ruin/space/has_grav/powered/drugpost)
+"u" = (
+/turf/closed/wall/mineral/titanium/survival/nodiagonal,
+/area/ruin/space/has_grav/powered/drugpost)
+"v" = (
+/obj/machinery/light/dim/directional{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/pirate/ranged/space,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"z" = (
+/obj/structure/rack/shelf,
+/obj/item/reagent_containers/pill/stimulant,
+/obj/item/reagent_containers/pill/stimulant,
+/obj/item/reagent_containers/pill/stimulant,
+/obj/item/reagent_containers/pill/stimulant,
+/obj/item/reagent_containers/pill/pendosovka,
+/obj/item/reagent_containers/pill/pendosovka,
+/obj/item/reagent_containers/pill/shadowtoxin,
+/obj/item/reagent_containers/pill/shadowtoxin,
+/obj/item/reagent_containers/pill/mutarad,
+/obj/item/reagent_containers/pill/lsdpsych,
+/obj/item/reagent_containers/pill/aranesp,
+/obj/item/reagent_containers/pill/anal_allure,
+/obj/item/reagent_containers/pill/happiness,
+/obj/item/reagent_containers/pill/happinesspsych,
+/obj/item/reagent_containers/pill/labebium,
+/obj/item/reagent_containers/pill/mannitol,
+/obj/item/reagent_containers/pill/planz,
+/obj/item/reagent_containers/pill/salicyclic,
+/obj/item/reagent_containers/pill/zoom,
+/obj/item/storage/pill_bottle/lsd{
+	pixel_x = -7;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/pill/morphine,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = 2;
+	pixel_y = 6
+	},
+/obj/item/reagent_containers/pill/antirad_plus{
+	pixel_x = 3;
+	pixel_y = -6
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"C" = (
+/obj/structure/rack/shelf,
+/obj/effect/decal/cleanable/cobweb,
+/obj/item/reagent_containers/pill/stimulant,
+/obj/item/reagent_containers/pill/stimulant,
+/obj/item/reagent_containers/pill/pendosovka,
+/obj/item/reagent_containers/pill/mutarad,
+/obj/item/reagent_containers/pill/aranesp,
+/obj/item/reagent_containers/pill/happinesspsych,
+/obj/item/reagent_containers/pill/zoom,
+/obj/item/storage/pill_bottle/paxpsych{
+	pixel_x = -6;
+	pixel_y = -4
+	},
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = 7;
+	pixel_y = -8
+	},
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = -4;
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/pill/antirad_plus{
+	pixel_x = 3;
+	pixel_y = 6
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"D" = (
+/obj/structure/chair/office{
+	dir = 1;
+	pixel_x = 5;
+	pixel_y = 9
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"E" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_x = -6;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/food/drinks/beer{
+	pixel_y = 7;
+	pixel_x = 3
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"G" = (
+/obj/structure/table/wood,
+/obj/machinery/light/dim/directional,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"H" = (
+/obj/structure/closet/secure_closet/freezer,
+/obj/effect/spawner/lootdrop/mre,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"I" = (
+/obj/machinery/door/airlock/hatch,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"J" = (
+/obj/machinery/suit_storage_unit,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"L" = (
+/obj/machinery/door/airlock/external/abandoned_brown,
+/obj/structure/fans/tiny,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"M" = (
+/turf/open/floor/holofloor/asteroid,
+/area/ruin/space/has_grav/powered/drugpost)
+"Q" = (
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/glass/beaker/meta{
+	pixel_x = -6;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/glass/beaker/noreact{
+	pixel_y = 8
+	},
+/obj/item/reagent_containers/glass/beaker/large/silver_sulfadiazine{
+	pixel_y = -3;
+	pixel_x = 3
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"S" = (
+/obj/machinery/suit_storage_unit,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"T" = (
+/turf/open/space/basic,
+/area/template_noop)
+"U" = (
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"V" = (
+/obj/machinery/suit_storage_unit/pirate,
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"W" = (
+/obj/machinery/light/small/red/dim{
+	dir = 8
+	},
+/turf/open/floor/holofloor/asteroid,
+/area/ruin/space/has_grav/powered/drugpost)
+"X" = (
+/obj/structure/rack/shelf,
+/obj/item/reagent_containers/pill/stimulant,
+/obj/item/reagent_containers/pill/stimulant,
+/obj/item/reagent_containers/pill/pendosovka,
+/obj/item/reagent_containers/pill/shadowtoxin,
+/obj/item/reagent_containers/pill/shadowtoxin,
+/obj/item/reagent_containers/pill/zvezdochka,
+/obj/item/reagent_containers/pill/mutarad{
+	pixel_y = 6;
+	pixel_x = 2
+	},
+/obj/item/reagent_containers/pill/lsdpsych,
+/obj/item/reagent_containers/pill/lsdpsych,
+/obj/item/reagent_containers/pill/anal_allure,
+/obj/item/reagent_containers/pill/happiness,
+/obj/item/reagent_containers/pill/labebium,
+/obj/item/reagent_containers/pill/labebium,
+/obj/item/reagent_containers/pill/mannitol,
+/obj/item/reagent_containers/pill/planz,
+/obj/item/reagent_containers/pill/salicyclic{
+	pixel_x = 5;
+	pixel_y = -7
+	},
+/obj/item/reagent_containers/pill/zoom,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill,
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = -8;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = -6;
+	pixel_y = 3
+	},
+/obj/item/reagent_containers/pill/floorpill{
+	pixel_x = -7;
+	pixel_y = -8
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+"Z" = (
+/obj/structure/chair/office{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/ruin/space/has_grav/powered/drugpost)
+
+(1,1,1) = {"
+T
+T
+T
+T
+T
+T
+T
+T
+T
+T
+T
+T
+j
+j
+j
+j
+T
+T
+T
+T
+"}
+(2,1,1) = {"
+T
+T
+T
+T
+T
+T
+T
+T
+T
+j
+j
+j
+j
+j
+j
+j
+j
+M
+T
+T
+"}
+(3,1,1) = {"
+T
+T
+T
+T
+T
+T
+p
+j
+j
+j
+j
+j
+j
+u
+u
+u
+j
+j
+j
+p
+"}
+(4,1,1) = {"
+T
+T
+T
+T
+T
+T
+j
+j
+j
+j
+j
+u
+i
+i
+i
+i
+i
+u
+j
+T
+"}
+(5,1,1) = {"
+T
+T
+T
+T
+T
+M
+M
+M
+j
+j
+j
+i
+C
+c
+z
+X
+s
+i
+j
+M
+"}
+(6,1,1) = {"
+T
+T
+T
+T
+M
+M
+j
+j
+j
+j
+j
+i
+U
+U
+U
+U
+U
+i
+j
+j
+"}
+(7,1,1) = {"
+T
+T
+T
+M
+j
+j
+j
+j
+j
+u
+j
+i
+U
+U
+v
+U
+U
+i
+j
+T
+"}
+(8,1,1) = {"
+T
+T
+T
+j
+j
+j
+j
+u
+i
+i
+i
+i
+I
+i
+i
+i
+i
+u
+j
+T
+"}
+(9,1,1) = {"
+T
+T
+M
+M
+j
+j
+j
+u
+k
+U
+U
+U
+U
+U
+i
+j
+j
+j
+j
+T
+"}
+(10,1,1) = {"
+T
+T
+j
+M
+j
+j
+j
+i
+f
+d
+U
+U
+Z
+Z
+i
+j
+j
+j
+T
+T
+"}
+(11,1,1) = {"
+T
+j
+j
+M
+M
+j
+u
+i
+m
+n
+Q
+U
+E
+G
+i
+u
+j
+M
+T
+T
+"}
+(12,1,1) = {"
+T
+j
+j
+j
+M
+j
+u
+i
+V
+U
+U
+U
+g
+D
+i
+u
+j
+M
+T
+T
+"}
+(13,1,1) = {"
+T
+j
+j
+M
+M
+j
+j
+i
+J
+U
+U
+U
+U
+U
+i
+j
+M
+T
+T
+T
+"}
+(14,1,1) = {"
+T
+j
+j
+M
+j
+j
+j
+i
+S
+U
+U
+h
+l
+H
+i
+j
+M
+T
+T
+T
+"}
+(15,1,1) = {"
+T
+j
+j
+M
+j
+j
+j
+u
+u
+L
+i
+i
+i
+i
+u
+j
+T
+T
+T
+T
+"}
+(16,1,1) = {"
+T
+j
+j
+M
+j
+j
+j
+M
+W
+M
+j
+u
+j
+j
+j
+j
+T
+T
+T
+T
+"}
+(17,1,1) = {"
+T
+T
+j
+M
+M
+j
+M
+M
+M
+t
+j
+j
+j
+j
+j
+M
+T
+T
+T
+T
+"}
+(18,1,1) = {"
+T
+T
+j
+j
+M
+M
+M
+M
+M
+j
+j
+j
+j
+j
+M
+T
+T
+T
+T
+T
+"}
+(19,1,1) = {"
+T
+T
+T
+j
+j
+j
+j
+j
+j
+j
+j
+j
+j
+M
+T
+T
+T
+T
+T
+T
+"}
+(20,1,1) = {"
+T
+T
+T
+T
+j
+j
+j
+j
+j
+j
+j
+M
+M
+T
+T
+T
+T
+T
+T
+T
+"}
+(21,1,1) = {"
+T
+T
+T
+T
+j
+j
+j
+j
+j
+j
+M
+T
+T
+T
+T
+T
+T
+T
+T
+T
+"}
+(22,1,1) = {"
+T
+T
+T
+T
+p
+T
+j
+j
+j
+j
+T
+T
+T
+T
+T
+T
+T
+T
+T
+T
+"}
+(23,1,1) = {"
+T
+T
+T
+T
+T
+T
+T
+j
+T
+T
+T
+T
+T
+T
+T
+T
+T
+T
+T
+T
+"}

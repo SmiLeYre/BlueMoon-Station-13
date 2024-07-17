@@ -154,7 +154,7 @@
 //Shove knockdown lengths (deciseconds)
 #define SHOVE_KNOCKDOWN_SOLID 30
 #define SHOVE_KNOCKDOWN_HUMAN 30
-#define SHOVE_KNOCKDOWN_TABLE 30
+#define SHOVE_KNOCKDOWN_TABLE 60
 #define SHOVE_KNOCKDOWN_COLLATERAL 10
 /// how long they're staggered for
 #define SHOVE_STAGGER_DURATION 35

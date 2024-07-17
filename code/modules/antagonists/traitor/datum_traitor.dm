@@ -149,7 +149,7 @@
 			if(!silent)
 				to_chat(H, "Тренировки позволили вам отринуть клоунскую натуру, теперь вы можете использовать оружие без риска ранить себя.")
 			H.dna.remove_mutation(CLOWNMUT)
-	RegisterSignal(M, COMSIG_MOVABLE_HEAR, .proc/handle_hearing)
+	RegisterSignal(M, COMSIG_MOVABLE_HEAR, PROC_REF(handle_hearing))
 
 /datum/antagonist/traitor/remove_innate_effects(mob/living/mob_override)
 	. = ..()
@@ -168,7 +168,8 @@
 	data["phrases"] = jointext(GLOB.syndicate_code_phrase, ", ")
 	data["responses"] = jointext(GLOB.syndicate_code_response, ", ")
 	data["theme"] = traitor_kind.tgui_theme //traitor_flavor["ui_theme"]
-	data["code"] = uplink.unlock_code
+	if(uplink.unlock_code)
+		data["code"] = uplink.unlock_code
 	data["intro"] = "You are from [traitor_kind.employer]." //traitor_flavor["introduction"]
 	data["allies"] = "Most other InteQ operatives are not to be trusted (but try not to rat them out), as they might have been assigned opposing objectives." //traitor_flavor["allies"]
 	data["goal"] = "We do not approve of mindless killing of innocent workers; \"get in, get done, get out\" is our motto." //traitor_flavor["goal"]

@@ -115,7 +115,7 @@
 	zone_select.update_icon()
 	static_inventory += zone_select
 
-	mymob.client.screen = list()
+	mymob.client.clear_screen()
 
 	using = new /atom/movable/screen/resist()
 	using.icon = ui_style

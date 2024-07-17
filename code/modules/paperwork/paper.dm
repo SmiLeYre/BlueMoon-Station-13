@@ -75,6 +75,26 @@
 	camera_holder = null
 	clear_paper()
 
+/obj/item/paper/get_examine_string(mob/user, thats)
+	. = ..()
+	if(user == loc || !ismob(loc))
+		return
+	. += span_notice(" <a href='?src=[REF(src)];peek=1'>\[Подсмотреть\]</a>")
+
+/obj/item/paper/Topic(href, href_list)
+	..()
+	if (href_list["peek"])
+		var/mob/user = usr
+		if(!user || !istype(user))
+			return
+		if(!in_range(user, loc) && !isobserver(user))
+			to_chat(user, span_warning("Вы слишком далеко!"))
+			return
+		if(istype(user, /mob/living))
+			user.visible_message("[user] подходит [ismob(loc) ? "к [loc]" : "чуть ближе"] и заглядывает в [src]", "Вы заглядываете в [src]")
+		examine(user)
+	return
+
 /// Determines whether this paper has been written or stamped to.
 /obj/item/paper/proc/is_empty()
 	return !(LAZYLEN(raw_text_inputs) || LAZYLEN(raw_stamp_data))

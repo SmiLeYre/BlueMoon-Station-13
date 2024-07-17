@@ -171,7 +171,7 @@
 	icon_state = "hosberetblack"
 
 /obj/item/clothing/head/HoS/beret/officer
-	name = "head of security officer beret"
+	name = "Head of Security Officer Beret"
 	desc = "A robust beret for the Head of Security, for looking stylish while not sacrificing protection."
 	icon_state = "beret_centcom_officer"
 
@@ -221,7 +221,7 @@
 /obj/item/clothing/head/warden/drill/equipped(mob/M, slot)
 	. = ..()
 	if (slot == ITEM_SLOT_HEAD)
-		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
+		RegisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 	else
 		UnregisterSignal(M, COMSIG_MOB_SAY)
 

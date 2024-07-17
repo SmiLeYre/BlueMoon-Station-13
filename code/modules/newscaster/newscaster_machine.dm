@@ -690,7 +690,7 @@ GLOBAL_LIST_EMPTY(allCasters)
 		say("<b>Свежие новости от [channel]</b>!")
 		alert = TRUE
 		update_icon()
-		addtimer(CALLBACK(src,.proc/remove_alert),alert_delay,TIMER_UNIQUE|TIMER_OVERRIDE)
+		addtimer(CALLBACK(src,PROC_REF(remove_alert)),alert_delay,TIMER_UNIQUE|TIMER_OVERRIDE)
 		playsound(loc, 'sound/machines/twobeep.ogg', 75, 1)
 	else
 		say("Attention! Wanted issue distributed!")

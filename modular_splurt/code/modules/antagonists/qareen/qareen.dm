@@ -114,7 +114,7 @@
 	if(stasis)
 		return
 	if(revealed && essence <= 0)
-		INVOKE_ASYNC(src, .proc/death)
+		INVOKE_ASYNC(src, PROC_REF(death))
 	if(unreveal_time && world.time >= unreveal_time)
 		unreveal_time = 0
 		revealed = FALSE
@@ -196,7 +196,7 @@
 		adjustBruteLoss(25) //hella effective
 		inhibited = TRUE
 		update_action_buttons_icon()
-		addtimer(CALLBACK(src, .proc/reset_inhibit), 30)
+		addtimer(CALLBACK(src, PROC_REF(reset_inhibit)), 30)
 
 /datum/reagent/toxin/on_mob_life(mob/living/simple_animal/qareen/Q) //So the holy water will damage it! - Gardelin0
 	if(istype(Q))
@@ -370,7 +370,7 @@
 
 /obj/item/ectoplasm/qareen/New()
 	..()
-	addtimer(CALLBACK(src, .proc/try_reform), 600)
+	addtimer(CALLBACK(src, PROC_REF(try_reform)), 600)
 
 /obj/item/ectoplasm/qareen/proc/scatter()
 	qdel(src)
@@ -483,7 +483,7 @@
 		log_combat(throwable, over, "spooky telekinesised at", throwable)
 		var/obj/effect/temp_visual/telekinesis/T = new(get_turf(throwable))
 		T.color = "#8715b4"
-		addtimer(CALLBACK(spooker, /mob/living/simple_animal/qareen.proc/telekinesis_cooldown_end), 50)
+		addtimer(CALLBACK(spooker, TYPE_PROC_REF(/mob/living/simple_animal/qareen, telekinesis_cooldown_end)), 50)
 		sleep(5)
 		throwable.float(FALSE, TRUE)
 

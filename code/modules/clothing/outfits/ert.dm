@@ -1,8 +1,14 @@
+
+/obj/item/paper/beamgun_istruction
+	name = "Инструкция по пользованию Medical Beamgun"
+	default_raw_text = "<b>*ПРЕДУПРЕЖДЕНИЕ, НЕ СКРЕЩИВАЙТЕ ДВА ЛУЧА ИЛИ БОЛЕЕ*</b>"
+
 /datum/outfit/ert
 	name = "ERT Common"
 
 	mask = /obj/item/clothing/mask/gas/sechailer/swat
 	uniform = /obj/item/clothing/under/syndicate/combat/ert
+	accessory = /obj/item/clothing/accessory/bodycamera
 	shoes = /obj/item/clothing/shoes/combat/swat/knife
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	ears = /obj/item/radio/headset/headset_cent/alt
@@ -13,7 +19,12 @@
 
 	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
-	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle, /obj/item/implant/weapons_auth)
+	implants = list(
+		/obj/item/implant/mindshield,
+		/obj/item/implant/deathrattle/centcom,
+		/obj/item/implant/weapons_auth,
+		/obj/item/implant/radio/centcom,
+		)
 	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
 
 
@@ -46,6 +57,7 @@
 	l_hand = null
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/storage/firstaid/regular=1,\
 		)
 	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
@@ -61,6 +73,7 @@
 	l_hand = /obj/item/gun/ballistic/automatic/wt550
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/storage/box/ammo/wt=1,)
 
@@ -99,6 +112,7 @@
 	l_hand = /obj/item/gun/ballistic/automatic/proto/unrestricted
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/storage/firstaid/regular=1,\
 		/obj/item/storage/box/ammo/smgap = 1,)
 
@@ -118,6 +132,7 @@
 	suit_store = /obj/item/gun/energy/pulse/pistol/loyalpin
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/storage/box/ammo/m556=1,\
 		/obj/item/storage/firstaid/regular=1,\
 		)
@@ -145,6 +160,7 @@
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
 		/obj/item/storage/firstaid/regular=1,
 		/obj/item/storage/box/handcuffs=1,\
+		/obj/item/gun/energy/e_gun/dragnet=1,
 		)
 	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
 
@@ -163,7 +179,9 @@
 
 		/obj/item/storage/box/handcuffs=1,\
 		/obj/item/storage/firstaid/regular=1,\
-		/obj/item/storage/box/ammo/wt = 1,)
+		/obj/item/storage/box/ammo/wt = 1,
+		/obj/item/gun/energy/e_gun/dragnet=1,
+		)
 
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,
@@ -194,7 +212,9 @@
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
 		/obj/item/storage/box/handcuffs=1,\
 		/obj/item/storage/firstaid/regular=1,\
-		/obj/item/storage/box/ammo/smgap=1,)
+		/obj/item/storage/box/ammo/smgap=1,
+		/obj/item/gun/energy/e_gun/dragnet=1,
+		)
 
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,
@@ -213,10 +233,11 @@
 	suit_store = /obj/item/gun/energy/pulse/pistol/loyalpin
 	internals_slot = ITEM_SLOT_SUITSTORE
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
-
 		/obj/item/storage/box/handcuffs=1,\
 		/obj/item/storage/box/ammo/m556=1,\
-		/obj/item/storage/firstaid/regular=1)
+		/obj/item/storage/firstaid/regular=1,
+		/obj/item/gun/energy/e_gun/dragnet=1,
+		)
 
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,
@@ -243,6 +264,7 @@
 		/obj/item/storage/firstaid/tactical/ert_first = 1,
 		/obj/item/storage/firstaid/tactical/ert_second = 1,
 		/obj/item/gun/medbeam=1,
+		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,)
 
 	cybernetic_implants = list(
@@ -269,6 +291,7 @@
 		/obj/item/storage/box/ammo/wt=1,
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1,
+		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,)
 
 	cybernetic_implants = list(
@@ -302,7 +325,8 @@
 		/obj/item/storage/firstaid/tactical/ert_second = 1,
 		/obj/item/storage/box/ammo/smgap=1,\
 		/obj/item/reagent_containers/hypospray/combat=1,\
-		/obj/item/gun/medbeam=1,\
+		/obj/item/gun/medbeam=1,
+		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,)
 
 	cybernetic_implants = list(
@@ -326,6 +350,7 @@
 		/obj/item/storage/box/ammo/m556=1,\
 		/obj/item/reagent_containers/hypospray/combat/nanites=1,\
 		/obj/item/gun/medbeam=1,
+		/obj/item/paper/beamgun_istruction=1,
 		/obj/item/roller=1,)
 
 	cybernetic_implants = list(
@@ -462,7 +487,6 @@
 	belt = /obj/item/storage/belt/janitor/ert_maid
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
 		/obj/item/storage/firstaid/regular=1,\
-
 		/obj/item/bodybag/bluespace=1,
 		/obj/item/mop/advanced=1)
 
@@ -503,33 +527,130 @@
 	W.access = list(ACCESS_MAINT_TUNNELS,ACCESS_CENT_GENERAL)
 	W.update_label(W.registered_name, W.assignment)
 
-/datum/outfit/centcom_official
+/datum/outfit/ert/commander/inquisitor
+	name = "Inquisition Commander"
+
+	mask = /obj/item/clothing/mask/gas/sechailer/swat
+	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
+	l_hand = /obj/item/gun/ballistic/automatic/proto/unrestricted
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal
+	belt = /obj/item/storage/belt/military/ert_max
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/box/ert_commander=1,
+		/obj/item/storage/firstaid/regular=1,\
+		/obj/item/storage/box/ammo/holy=1,
+		/obj/item/storage/box/ammo/smgap=1,
+		/obj/item/nullrod=1,
+		/obj/item/storage/book/bible = 1,
+		)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/cyberimp/arm/shield,
+		/obj/item/organ/eyes/robotic/thermals,
+		/obj/item/organ/cyberimp/chest/thrusters,
+	)
+
+
+/datum/outfit/ert/security/inquisitor
+	name = "Inquisition Security"
+
+	mask = /obj/item/clothing/mask/gas/sechailer/swat
+	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
+	l_hand = /obj/item/gun/ballistic/automatic/proto/unrestricted
+	belt = /obj/item/storage/belt/military/ert_max
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/firstaid/regular=1,
+		/obj/item/gun/energy/e_gun/dragnet=1,
+		/obj/item/storage/box/ammo/smgap=1,
+		/obj/item/storage/box/ammo/holy=1,
+		/obj/item/storage/box/handcuffs=1,
+		/obj/item/nullrod=1,
+		/obj/item/storage/book/bible = 1,
+		)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/cyberimp/arm/shield,
+		/obj/item/organ/eyes/robotic/thermals,
+		/obj/item/organ/cyberimp/chest/thrusters,
+	)
+
+
+/datum/outfit/ert/medic/inquisitor
+	name = "Inquisition Medic"
+
+	mask = /obj/item/clothing/mask/gas/sechailer/swat
+	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
+	l_hand = /obj/item/gun/ballistic/automatic/proto/unrestricted
+	belt = /obj/item/defibrillator/compact/loaded_ert
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/box/ammo/smgap=1,\
+		/obj/item/storage/box/ammo/holy=1,
+		/obj/item/reagent_containers/hypospray/combat=1,\
+		/obj/item/gun/medbeam=1,\
+		/obj/item/paper/beamgun_istruction=1,
+		/obj/item/roller=1,
+		/obj/item/nullrod=1,
+		/obj/item/storage/book/bible = 1,
+		)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/cyberimp/arm/surgery/advanced,
+		/obj/item/organ/cyberimp/chest/thrusters,
+	)
+
+//Агенты ЦК
+
+/datum/outfit/ert/centcom_official
 	name = "CentCom Official"
-
-	uniform = /obj/item/clothing/under/rank/centcom/officer
-	shoes = /obj/item/clothing/shoes/sneakers/black
-	gloves = /obj/item/clothing/gloves/color/black
-	ears = /obj/item/radio/headset/headset_cent
-	glasses = /obj/item/clothing/glasses/sunglasses
-	belt = /obj/item/gun/energy/e_gun
+	uniform = /obj/item/clothing/under/syndicate/sniper
+	suit = /obj/item/clothing/suit/armor/vest/agent
+	shoes = /obj/item/clothing/shoes/laceup
+	head = /obj/item/clothing/head/HoS/beret/syndicate
+	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
+	belt = /obj/item/storage/belt/military/ert_max
 	back = /obj/item/storage/backpack/satchel
-	l_hand = /obj/item/clipboard
-	id = /obj/item/card/id
-	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+	mask = null
+	id = /obj/item/card/id/ert
 
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/box/ert_commander=1,
 		/obj/item/pda/heads=1,
-		/obj/item/pen=1)
+		/obj/item/stamp/chameleon=1,
+		)
+	implants = list(
+		/obj/item/implant/mindshield,
+		/obj/item/implant/deathrattle/centcom,
+	 	/obj/item/implant/weapons_auth,
+		/obj/item/implant/radio/centcom,
+	 	/obj/item/implant/krav_maga,
+	)
 
-/datum/outfit/centcom_official/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/eyes/robotic/thermals,
+		/obj/item/organ/cyberimp/mouth/breathing_tube,
+	)
+
+/datum/outfit/ert/centcom_official/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	if(visualsOnly)
 		return
 
 	var/obj/item/radio/R = H.ears
-	R.set_frequency(FREQ_CENTCOM)
-	R.freqlock = TRUE
-
-	var/obj/item/implant/mindshield/L = new //Here you go Deuryn
-	L.implant(H, null, 1)
+	R.keyslot = new /obj/item/encryptionkey/heads/captain
+	R.recalculateChannels()
 
 	var/obj/item/card/id/W = H.wear_id
 	W.icon_state = "centcom"
@@ -538,80 +659,3 @@
 	W.assignment = "CentCom Official"
 	W.registered_name = H.real_name
 	W.update_label(W.registered_name, W.assignment)
-
-/datum/outfit/ert/commander/inquisitor
-	name = "Inquisition Commander"
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	l_hand = /obj/item/nullrod/scythe/talking/chainsword
-	r_hand = /obj/item/gun/ballistic/automatic/laser
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal
-	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
-
-		/obj/item/storage/firstaid/regular=1,\
-		/obj/item/ammo_box/magazine/recharge=4)
-
-/datum/outfit/ert/security/inquisitor
-	name = "Inquisition Security"
-
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
-	r_hand =  /obj/item/gun/ballistic/automatic/laser
-	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
-
-		/obj/item/storage/box/handcuffs=1,
-		/obj/item/ammo_box/magazine/recharge=4,\
-		/obj/item/melee/baton/loaded=1,
-		/obj/item/storage/ifak=1)
-
-/datum/outfit/ert/medic/inquisitor
-	name = "Inquisition Medic"
-
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
-	r_hand = /obj/item/gun/ballistic/automatic/laser
-	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
-
-		/obj/item/melee/baton/loaded=1,
-		/obj/item/ammo_box/magazine/recharge=4,\
-		/obj/item/reagent_containers/hypospray/combat=1,
-		/obj/item/reagent_containers/hypospray/combat/heresypurge=1,
-		/obj/item/gun/medbeam=1)
-
-/datum/outfit/ert/chaplain/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
-	..()
-
-	if(visualsOnly)
-		return
-
-	var/obj/item/radio/R = H.ears
-	R.keyslot = new /obj/item/encryptionkey/heads/hop
-	R.recalculateChannels()
-
-/datum/outfit/ert/chaplain
-	name = "ERT Chaplain"
-
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor // Chap role always gets this suit
-	id = /obj/item/card/id/ert/chaplain
-	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
-	back = /obj/item/storage/backpack/cultpack
-	belt = /obj/item/storage/belt/soulstone
-	r_hand = /obj/item/gun/ballistic/automatic/laser
-	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
-
-		/obj/item/nullrod=1,
-		/obj/item/storage/firstaid/regular=1,\
-		/obj/item/ammo_box/magazine/recharge=4)
-
-/datum/outfit/ert/chaplain/inquisitor
-	name = "Inquisition Chaplain"
-
-	mask = /obj/item/clothing/mask/gas/sechailer/swat
-	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor
-	belt = /obj/item/storage/belt/soulstone/full/chappy
-	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
-
-		/obj/item/grenade/chem_grenade/holy=1,
-		/obj/item/nullrod=1,
-		/obj/item/storage/firstaid/regular=1,\
-		/obj/item/ammo_box/magazine/recharge=4)

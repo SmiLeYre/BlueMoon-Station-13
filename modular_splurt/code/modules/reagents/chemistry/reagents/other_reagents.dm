@@ -170,24 +170,15 @@
 		// Reduce disgust.
 		M.adjust_disgust(-3)
 
-		// Restore stamina.
-		M.adjustStaminaLoss(1)
+		if(prob(2))
+			M.mob_light(_color = LIGHT_COLOR_HOLY_MAGIC, _range = 2, _duration = 100)
+			var/mutable_appearance/forbearance = mutable_appearance('icons/effects/genetics.dmi', "servitude", -MUTATIONS_LAYER)
+			M.add_overlay(forbearance)
+			addtimer(CALLBACK(M, TYPE_PROC_REF(/atom, cut_overlay), forbearance), 100)
 
-		// Reduce hunger and thirst.
-		// M.adjust_nutrition(1)
-		// M.adjust_thirst(1)
+			M.gain_trauma(/datum/brain_trauma/special/godwoken, TRAUMA_RESILIENCE_ABSOLUTE)
+			addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living/carbon, cure_trauma_type)), 6000)
 
-		// Heal brute and burn.
-		// Accounts for robotic limbs.
-		M.heal_overall_damage(1,1)
-		// Heal oxygen.
-		M.adjustOxyLoss(-1)
-		// Heal clone.
-		M.adjustCloneLoss(-1)
-
-		holder.remove_reagent(type, 0.2)
-
-		// Negate all other holy water effects.
 		return
 
 	// Return normally.

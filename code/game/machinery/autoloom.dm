@@ -20,9 +20,9 @@
 	for(var/obj/item/stock_parts/manipulator/M in component_parts)
 		process_efficiency = M.rating
 
-/obj/machinery/recycler/examine(mob/user)
+/obj/machinery/autoloom/examine(mob/user)
 	. = ..()
-	. += "<span class='notice'>Biomatter processing efficiency at <b>[amount_produced*100]%</b>.</span>"
+	. += "<span class='notice'>Biomatter processing efficiency at <b>[process_efficiency*100]%</b>.</span>"
 
 /obj/machinery/autoloom/power_change()
 	..()

@@ -1383,7 +1383,7 @@
 	circuit = null
 
 /obj/effect/mob_spawn/human/clockremnant
-	name = "frozen cryogenics pod"
+	name = "Frozen Cryogenics Pod"
 	desc = "A humming cryo pod. You can barely recognise an occupant underneath the built up ice. The machine is attempting to wake them up."
 	mob_name = "a clockwork cultist"
 	icon = 'icons/obj/machines/sleeper.dmi'
@@ -1392,23 +1392,20 @@
 	death = FALSE
 	random = TRUE
 	mob_species = /datum/species/human
-	short_desc = "You were a member of a nanotrasen mining facility, turned by the occult."
-	flavour_text = "It's been months since the dust settled. \
-	What remains of our members are scattered across the mountainside, disconnected from the Almighty Engine's embrace \
-	by the heretics that tried to steal what was rightfully yours. This stagnation cannot last forever, \
-	whether it be your hand or another, someone will try to reclaim what's left of this complex. As the cold sets in, the thought of sacrificing these relics \
-	seems more and more appealing..."
-	important_info = "Work alongside your brothers and sisters. Do not attack others without good reason, as there is no way to ressurect Ratvar in this state. You cannot enter the station without prior approval."
+	short_desc = "Вы были сотрудником горнодобывающего предприятия Nanotrasen, но оказались обращены Культом Ратвара."
+	flavour_text = "Прошло несколько месяцев с тех пор, как осела пыль. \
+	То, что осталось от наших когда-то коллег, разбросано по склону горы, оторванное от объятий Всемогущего Двигателя \
+	из-за еретиков, которые пытались украсть то, что принадлежит вам по праву. Этот застой не может длиться вечно, \
+	будь то ваша рука или другая. Кто-то попытается вернуть себе то, что осталось от этого комплекса. С наступлением холодов мысль о том, чтобы пожертвовать этими реликвиями,\
+	кажется все более и более привлекательной..."
+	important_info = "Bы Малый Антагонист. Не покидайте Гейт. Не враждуйте с персонажами других игроков в Гейте по факту их существования."
 	uniform = /obj/item/clothing/under/rank/civilian/util
 	shoes = /obj/item/clothing/shoes/laceup
 	id = /obj/item/card/id/away/mountain
 	l_pocket = /obj/item/clockwork/slab
 	assignedrole = "Cultist Remnant"
 	job_description = "Cultist Survivor"
-	canloadappearance = TRUE
-	//var/load_character = alert(H.client, "Load currently selected slot?", "Play as your character!", "Yes", "No") Was told 'canloadappearance' was removed in PR 1098, but until that's been merged I don't think it's an issue?
-	//if(load_character == "Yes")
-		//H.load_client_appearance(H.client)
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/clockremnant/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
@@ -1420,7 +1417,7 @@
 	E.implant(new_spawn)
 
 /obj/effect/mob_spawn/human/bloodremnant
-	name = "frozen cryogenics pod"
+	name = "Frozen Cryogenics Pod"
 	desc = "A humming cryo pod. You can barely recognise an occupant underneath the built up ice. The machine is attempting to wake them up."
 	mob_name = "a blood cultist"
 	icon = 'icons/obj/machines/sleeper.dmi'
@@ -1429,23 +1426,20 @@
 	death = FALSE
 	random = TRUE
 	mob_species = /datum/species/human
-	short_desc = "You were a member of a nanotrasen mining facility, turned by the occult."
-	flavour_text = "It's been months since the dust settled. \
-	What remains of our members are scattered across the mountainside, disconnected from the Unholy Geometer's embrace \
-	by the heretics that tried to steal what was rightfully yours. This stagnation cannot last forever, \
-	whether it be your hand or another, someone will try to reclaim what's left of this complex. As the cold sets in, the thought of sacrificing these relics \
-	seems more and more appealing..."
-	important_info = "Work alongside your brothers and sisters. Do not attack others without good reason, as the veil is too strong to summon Nar'sie. You cannot enter the station without prior approval."
+	short_desc = "Вы были сотрудником горнодобывающего предприятия Nanotrasen, но оказались обращены Культом Нар'Си."
+	flavour_text = "Прошло несколько месяцев с тех пор, как осела пыль. \
+	То, что осталось от наших когда-то коллег, разбросано по склону горы, оторванное от объятий Кровавого Геометра \
+	из-за еретиков, которые пытались украсть то, что принадлежит вам по праву. Этот застой не может длиться вечно, \
+	будь то ваша рука или другая. Кто-то попытается вернуть себе то, что осталось от этого комплекса. С наступлением холодов мысль о том, чтобы пожертвовать этими реликвиями,\
+	кажется все более и более привлекательной..."
+	important_info = "Bы Малый Антагонист. Не покидайте Гейт. Не враждуйте с персонажами других игроков в Гейте по факту их существования. Защитите особые предметы на своей Базе."
 	uniform = /obj/item/clothing/under/rank/civilian/util
 	shoes = /obj/item/clothing/shoes/laceup
 	id = /obj/item/card/id/away/mountain
 	l_pocket = /obj/item/kitchen/knife/ritual
 	assignedrole = "Cultist Remnant"
 	job_description = "Cultist Survivor"
-	canloadappearance = TRUE
-	//var/load_character = alert(H.client, "Load currently selected slot?", "Play as your character!", "Yes", "No")
-	//if(load_character == "Yes")
-		//H.load_client_appearance(H.client)
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/bloodremnant/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())

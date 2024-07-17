@@ -45,6 +45,10 @@
 		src.say("Вам необходимо провести картой по терминалу")
 		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 		return
+	if (fee_value<1)
+		src.say("Сумма штрафа должна быть положительной")
+		playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
+		return
 	var/datum/bank_account/account = id_card.registered_account
 	if (!account)
 		src.say("К карте не привязан аккаунт")

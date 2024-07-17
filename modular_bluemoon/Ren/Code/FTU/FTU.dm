@@ -9,7 +9,7 @@
 	icon_state = "oldpod"
 	mob_name = "a trader"
 	outfit = /datum/outfit/ftu/crew
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	loadout_enabled = FALSE
 	roundstart = FALSE
 	death = FALSE
@@ -74,13 +74,16 @@
 /datum/round_event_control/ftu_trader
 	name = "Trade ship"
 	typepath = /datum/round_event/ftu_trader
-	weight = 5
+	weight = 10
 	max_occurrences = 1
 	min_players = 15
-	earliest_start = 40 MINUTES
 	category = EVENT_CATEGORY_FRIENDLY
 	description = "A trader ship full of goodys."
 	var/ship_template
+
+/datum/round_event/ftu_trader
+	announce_when = 1
+	start_when = 1
 
 /datum/round_event/ftu_trader/announce(fake)
 	priority_announce("Корабль Свободного торгового объединения получил разрешение на стыковку и пересёк границы сектора. Можете потратить свои честно заработанные деньги на их товары.","Бюрократический отдел ЦК", 'sound/announcer/classic/traider_announce.ogg')
@@ -175,6 +178,15 @@
 /area/ruin/space/has_grav/powered/infestedship
 	name = "Warbringer"
 
+/area/ruin/space/has_grav/droneship
+	name = "NT drone ship"
+
+/area/ruin/space/has_grav/powered/drugpost
+	name = "Pirat secret post"
+
+/area/ruin/space/has_grav/powered/clockworkhaven
+	name = "Ratvar citadel"
+
 /datum/map_template/ruin/space/ftuship
 	name = "Cargo ship"
 	description = "Захваченый пиратами корабль."
@@ -205,8 +217,29 @@ datum/map_template/ruin/space/vaulttango
 	id = "infested_frigate"
 
 /datum/map_template/ruin/space/shuttle8532
-	name = "shuttle8532"
+	name = "Shuttle 8532"
 	description = "Обломки корабля"
 	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
 	suffix = "shuttle8532.dmm"
 	id = "shuttle8532"
+
+/datum/map_template/ruin/space/droneship
+	name = "Droneship"
+	description = "Рядовой корабль Нанотранзен, вооружённый боевыми дронами"
+	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
+	suffix = "droneship.dmm"
+	id = "droneship"
+
+/datum/map_template/ruin/space/drugpost
+	name = "Drugpost"
+	description = "Небольшой пост пиратов по производству наркотиков"
+	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
+	suffix = "drugpost.dmm"
+	id = "drugpost"
+
+/datum/map_template/ruin/space/clockworkhaven
+	name = "Clockworkhaven"
+	description = "Цитадель ратвара посреди космоса"
+	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
+	suffix = "clockworkhaven.dmm"
+	id = "clockworkhaven"

@@ -180,11 +180,11 @@
 	item = /obj/item/ai_module/core/full/damaged
 	cost = 5
 
-/datum/uplink_item/device_tools/headsetupgrade
-	name = "Headset Upgrader"
-	desc = "A device that can be used to make one headset immune to flashbangs."
-	item = /obj/item/headsetupgrader
-	cost = 1
+///datum/uplink_item/device_tools/headsetupgrade
+// 	name = "Headset Upgrader"
+// 	desc = "A device that can be used to make one headset immune to flashbangs."
+// 	item = /obj/item/headsetupgrader
+// 	cost = 1
 
 /datum/uplink_item/device_tools/medgun
 	name = "Medbeam Gun"
@@ -283,15 +283,15 @@
 	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/surgery_adv
 	purchasable_from = ~UPLINK_SYNDICATE
 
-/datum/uplink_item/device_tools/encryptionkey
-	name = "InteQ Encryption Key"
-	desc = "A key that, when inserted into a radio headset, allows you to listen to all station department channels \
-			as well as talk on an encrypted InteQ channel with other agents that have the same key, and even communicate with raiders and nukies teams."
-	item = /obj/item/encryptionkey/inteq
-	cost = 2
-	surplus = 75
-	restricted = TRUE
-	purchasable_from = ~(UPLINK_SYNDICATE)
+///datum/uplink_item/device_tools/encryptionkey
+// 	name = "InteQ Encryption Key"
+// 	desc = "A key that, when inserted into a radio headset, allows you to listen to all station department channels
+// 			as well as talk on an encrypted InteQ channel with other agents that have the same key, and even communicate with raiders and nukies teams."
+// 	item = /obj/item/encryptionkey/inteq
+// 	cost = 2
+// 	surplus = 75
+// 	restricted = TRUE
+// 	purchasable_from = ~(UPLINK_SYNDICATE)
 
 /datum/uplink_item/device_tools/syndietome
 	name = "Syndicate Tome"
@@ -338,7 +338,7 @@
 	cost = 7
 	restricted = TRUE
 	limited_stock = 1
-	purchasable_from = ~(UPLINK_SYNDICATE)
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS) //bluemoon change никакого краба через ВР
 
 /datum/uplink_item/device_tools/syndicate_teleporter
 	name = "Experimental Syndicate Teleporter"

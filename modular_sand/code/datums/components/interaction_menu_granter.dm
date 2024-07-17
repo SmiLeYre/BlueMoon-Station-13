@@ -34,7 +34,7 @@
 
 /datum/component/interaction_menu_granter/RegisterWithParent()
 	. = ..()
-	RegisterSignal(parent, COMSIG_MOB_CTRLSHIFTCLICKON, .proc/open_menu)
+	RegisterSignal(parent, COMSIG_MOB_CTRLSHIFTCLICKON, PROC_REF(open_menu))
 
 /datum/component/interaction_menu_granter/Destroy(force, ...)
 	target = null
@@ -58,7 +58,7 @@
 	if(target)
 		UnregisterSignal(target, COMSIG_PARENT_QDELETING)
 	target = clicked
-	RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/on_target_deleted)
+	RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(on_target_deleted))
 	ui_interact(clicker)
 	return COMSIG_MOB_CANCEL_CLICKON
 
@@ -452,6 +452,7 @@
 		.["stimulation_pref"] = 	!!CHECK_BITFIELD(prefs.cit_toggles, STIMULATION)
 		.["edging_pref"] =			!!CHECK_BITFIELD(prefs.cit_toggles, EDGING)
 		.["cum_onto_pref"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, CUM_ONTO)
+		.["sex_jitter"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, SEX_JITTER)	//By Gardelin0
 
 /datum/component/interaction_menu_granter/ui_static_data(mob/user)
 	. = ..()
@@ -470,7 +471,7 @@
 			if(O.interaction_flags & INTERACTION_FLAG_EXTREME_CONTENT)
 				interaction["type"] = INTERACTION_EXTREME
 			//SPLURT EDIT
-			if(O.interaction_flags & INTERACTION_FLAG_UNHOLY_CONTENT)
+			else if(O.interaction_flags & INTERACTION_FLAG_UNHOLY_CONTENT)
 				interaction["type"] = INTERACTION_UNHOLY
 			//SPLURT EDIT END
 			else
@@ -666,6 +667,8 @@
 					TOGGLE_BITFIELD(prefs.cit_toggles, EDGING)
 				if("cum_onto_pref")
 					TOGGLE_BITFIELD(prefs.cit_toggles, CUM_ONTO)
+				if("sex_jitter") //By Gardelin0
+					TOGGLE_BITFIELD(prefs.cit_toggles, SEX_JITTER)
 				//
 				else
 					return FALSE

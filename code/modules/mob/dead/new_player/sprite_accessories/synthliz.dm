@@ -1,28 +1,28 @@
 //Synth snouts (This is the most important part)
 /datum/sprite_accessory/snouts/mam_snouts/synthliz
 	recommended_species = list("synthliz")
-	icon = 'modular_citadel/icons/mob/synthliz_snouts.dmi'
+	icon = 'modular_bluemoon/icons/mob/synthliz_snouts.dmi' // BLUEMOON CHANGES - WAS 'modular_citadel/icons/mob/synthliz_snouts.dmi'  (фиксим белую точку на визоре)
 	color_src = MUTCOLORS
 	name = "Synthetic Lizard - Snout"
 	icon_state = "synthliz_basic"
 	mutable_category = "HEAD"
 
 /datum/sprite_accessory/snouts/mam_snouts/synthliz/synthliz_under
-	icon = 'modular_citadel/icons/mob/synthliz_snouts.dmi'
+	icon = 'modular_bluemoon/icons/mob/synthliz_snouts.dmi' // BLUEMOON CHANGES - WAS 'modular_citadel/icons/mob/synthliz_snouts.dmi'  (фиксим белую точку на визоре)
 	color_src = MATRIXED
 	name = "Synthetic Lizard - Snout Under"
 	icon_state = "synthliz_under"
 	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/snouts/mam_snouts/synthliz/synthliz_tert
-	icon = 'modular_citadel/icons/mob/synthliz_snouts.dmi'
+	icon = 'modular_bluemoon/icons/mob/synthliz_snouts.dmi' // BLUEMOON CHANGES - WAS 'modular_citadel/icons/mob/synthliz_snouts.dmi'  (фиксим белую точку на визоре)
 	color_src = MATRIXED
 	name = "Synthetic Lizard - Snout Tertiary"
 	icon_state = "synthliz_tert"
 	matrixed_sections = MATRIX_RED_BLUE
 
 /datum/sprite_accessory/snouts/mam_snouts/synthliz/synthliz_tertunder
-	icon = 'modular_citadel/icons/mob/synthliz_snouts.dmi'
+	icon = 'modular_bluemoon/icons/mob/synthliz_snouts.dmi' // BLUEMOON CHANGES - WAS 'modular_citadel/icons/mob/synthliz_snouts.dmi'  (фиксим белую точку на визоре)
 	color_src = MATRIXED
 	name = "Synthetic Lizard - Snout Tertiary Under"
 	icon_state = "synthliz_tertunder"

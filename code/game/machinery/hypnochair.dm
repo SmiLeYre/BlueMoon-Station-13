@@ -95,7 +95,7 @@
 	START_PROCESSING(SSobj, src)
 	start_time = world.time
 	update_icon()
-	timerid = addtimer(CALLBACK(src, .proc/finish_interrogation), 450, TIMER_STOPPABLE)
+	timerid = addtimer(CALLBACK(src, PROC_REF(finish_interrogation)), 450, TIMER_STOPPABLE)
 
 /obj/machinery/hypnochair/process()
 	var/mob/living/carbon/C = occupant
@@ -179,6 +179,9 @@
 	user.visible_message("<span class='notice'>You see [user] kicking against the door of [src]!</span>", \
 		"<span class='notice'>You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(600)].)</span>", \
 		"<span class='hear'>You hear a metallic creaking from [src].</span>")
+	if(INTERACTING_WITH(user, src))
+		to_chat(user, span_warning("You're already interacting with [src]!"))
+		return
 	if(do_after(user,(600), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src || state_open)
 			return

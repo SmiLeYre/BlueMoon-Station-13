@@ -17,7 +17,7 @@
 	armor = list(MELEE = 40, BULLET = 50, LASER = 30, ENERGY = 30, BOMB = 35, BIO = 100, RAD = 75, FIRE = 75, ACID = 90, WOUND = 40)
 	slowdown = 0
 	w_class = WEIGHT_CLASS_NORMAL
-	mutantrace_variation = STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 	flags_inv = HIDEGLOVES | HIDEJUMPSUIT | HIDESHOES | HIDETAUR
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/contractor
 	jetpack = /obj/item/tank/jetpack/suit
@@ -59,21 +59,20 @@
 	desc = "A module installed in the wrist of your hardsuit, this highly illegal module uses a hardlight hook to forcefully pull a target towards you at high speed, knocking them down and partially exhausting them."
 	charge_type = ADV_ACTION_TYPE_TOGGLE_RECHARGE
 	charge_max = 6 SECONDS
-	use_target_appearance = FALSE
 	icon_icon = 'icons/mob/actions/actions.dmi'
 	button_icon_state = "hook"
 	button_icon = 'icons/mob/actions/actions.dmi'
 
 /obj/item/clothing/suit/space/hardsuit/contractor/proc/toggle_hook()
-	if(scorpion)
-		qdel(scorpion)
-		scorpion = null
-		for(var/datum/action/item_action/advanced/hook_upgrade/hook in actions)
+	if(scorpion)  //BLUEMOON EDIT START Обнуление переменной было перенесено в конец, поскольку в прошлом прочие переменные ссылались на пустую переменную, вызывая runtime ошибки
+		playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, 1)
+		to_chat(usr, "<span class='notice'>Вы возвращаете [scorpion] обратно под кисть бронекостюма.</span>")
+		for (var/datum/action/item_action/advanced/hook_upgrade/hook in actions)
 			scorpion.hook_action = hook
 			hook.action_ready = FALSE
 			hook.toggle_button_on_off()
-		playsound(src.loc, 'sound/mecha/mechmove03.ogg', 50, 1)
-		to_chat(usr, "<span class='notice'>Вы возвращаете [scorpion] обратно под кисть бронекостюма.</span>")
+		qdel(scorpion)
+		scorpion = null //BLUEMOON EDIT END
 	else
 		scorpion = new
 		scorpion.suit = src
@@ -89,10 +88,10 @@
 /datum/action/item_action/advanced/hook_upgrade/toggle_button_on_off()
 	if(action_ready)
 		background_icon_state = icon_state_active
-		UpdateButtonIcon()
+		UpdateButton()
 	else
 		background_icon_state = icon_state_disabled
-		UpdateButtonIcon()
+		UpdateButton()
 
 /obj/item/gun/magic/contractor_hook
 	name = "SCORPION hook"
@@ -128,6 +127,14 @@
 /obj/item/gun/magic/contractor_hook/equip_to_best_slot(mob/M)
 	qdel(src)
 
+/obj/item/gun/magic/contractor_hook/Destroy() //BLUEMOON ADD START Правильно отвязывает крюк от костюма при сбросе или выпадении самого крюка
+	.=..()
+	suit.scorpion = null
+	suit = null
+	hook_action.action_ready = FALSE
+	hook_action.toggle_button_on_off()
+	hook_action = null //BLUEMOON ADD END
+
 /obj/item/ammo_casing/magic/contractor_hook
 	name = "Hardlight hook"
 	desc = "a hardlight hook."
@@ -154,7 +161,7 @@
 		chain = firer.Beam(src, icon_state = "hard_chain", time = INFINITY, maxdistance = INFINITY, beam_sleep_time = 1)
 	..()
 
-/obj/item/projectile/contractor_hook/on_hit(atom/target, blocked = 0)
+/obj/item/projectile/contractor_hook/on_hit(atom/target, blocked = 0) //BLUEMOON EDIT START Исправление бага при котором агрессивный захват работал только при выстреле в упор
 	. = ..()
 	if(blocked >= 100)
 		return 0
@@ -167,14 +174,19 @@
 			L.density = FALSE // Ensures the hook does not hit the target multiple times
 			L.density = old_density
 			firer.dropItemToGround(src)
-			L.throw_at(get_step_towards(firer,L), 8, 2)
-			if(firer.Adjacent(L))
-				if(firer.get_active_held_item() && !firer.get_inactive_held_item())
-					firer.swap_hand()
-				if(firer.get_active_held_item())
-					return
-				L.grabbedby(firer)
-				L.grippedby(firer, instant = TRUE) //instant aggro grab
+			if (iscarbon(L))
+				L.throw_at(get_step_towards(firer,L), 8, 2, firer, TRUE, TRUE, callback=CALLBACK(src, PROC_REF(contractor_hook_grab), firer, L))
+			else
+				L.throw_at(get_step_towards(firer,L), 8, 2)
+
+/obj/item/projectile/contractor_hook/proc/contractor_hook_grab(mob/living/carbon/human/firer, mob/living/carbon/L)
+	if(firer.Adjacent(L))
+		if(firer.get_active_held_item() && !firer.get_inactive_held_item())
+			firer.swap_hand()
+		if(firer.get_active_held_item())
+			return
+		L.grabbedby(firer)
+		L.grippedby(firer, instant = TRUE) //instant aggro grab //BLUEMOON EDIT END
 
 /obj/item/projectile/contractor_hook/Destroy()
 	QDEL_NULL(chain)
@@ -188,7 +200,6 @@
 	name = "Advanced hardsuit chameleon module"
 	desc = "An advanced version of chameleon tech, allowing you to disguise your hardsuit, giving you the opportunity to walk in full view of security and personnel without any difficulties."
 	charge_type = ADV_ACTION_TYPE_TOGGLE
-	use_target_appearance = FALSE
 	icon_icon = 'icons/mob/actions/actions.dmi'
 	button_icon_state = "chameleon"
 	button_icon = 'icons/mob/actions/actions.dmi'

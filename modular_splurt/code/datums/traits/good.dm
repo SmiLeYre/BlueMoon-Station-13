@@ -1,11 +1,13 @@
 /datum/quirk/tough
 	name = "Стойкость"
-	desc = "Ваше аномально крепкое тело может вынести на 20% больше урона."
-	value = 3
+	desc = "Ваше аномально крепкое тело не воспринимает физический урон ниже десяти условных единиц."
+	value = 2
+	mob_trait = TRAIT_TOUGHT
 	medical_record_text = "Пациент продемонстрировал аномально высокую устойчивость к травмам."
 	gain_text = "<span class='notice'>Вы чувствуете крепость в мышцах.</span>"
 	lose_text = "<span class='notice'>Вы чувствуете себя менее крепким.</span>"
 
+/*
 /datum/quirk/tough/add()
 	quirk_holder.maxHealth *= 1.20
 
@@ -13,6 +15,7 @@
 	if(!quirk_holder)
 		return
 	quirk_holder.maxHealth *= 0.909 //close enough
+*/
 
 /datum/quirk/ashresistance
 	name = "Пепельная Устойчивость"
@@ -68,8 +71,8 @@
 
 /datum/quirk/dominant_aura/add()
 	. = ..()
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
-	RegisterSignal(quirk_holder, COMSIG_MOB_EMOTE, .proc/handle_snap)
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
+	RegisterSignal(quirk_holder, COMSIG_MOB_EMOTE, PROC_REF(handle_snap))
 
 /datum/quirk/dominant_aura/remove()
 	. = ..()
@@ -207,7 +210,7 @@
 
 /datum/quirk/hallowed/add()
 	// Add examine text.
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
 
 /datum/quirk/hallowed/remove()
 	// Remove examine text
@@ -216,27 +219,6 @@
 // Quirk examine text.
 /datum/quirk/hallowed/proc/on_examine_holder(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
 	examine_list += "[quirk_holder.p_they(TRUE)] излучает священную силу..."
-
-/datum/quirk/russian
-	name = "Русский дух"
-	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. С вами Бог!"
-	value = 2
-	mob_trait = TRAIT_RUSSIAN
-	gain_text = span_notice("Вы чувствуете, как Бог следит за вами!")
-	lose_text = span_notice("Вы чувствуете, как угасает ваша вера в Бога...")
-	medical_record_text = "У пациента обнаружен Ангел-Хранитель."
-
-/datum/quirk/russian/add()
-	// Add examine text.
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/quirk_examine_russian)
-
-/datum/quirk/russian/remove()
-	// Remove examine text
-	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
-
-// Quirk examine text.
-/datum/quirk/russian/proc/quirk_examine_russian(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
-	examine_list += "[quirk_holder.ru_who(TRUE)] излучает русский дух..."
 
 ///datum/quirk/bomber
 //	name = "Подрывник-Самоубийца"

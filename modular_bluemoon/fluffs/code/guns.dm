@@ -61,6 +61,30 @@
 	else
 		icon_state = "auto9-e"
 
+/obj/item/modkit/gewehr550
+	name = "Gewehr-550 Kit"
+	desc = "A modkit for making a WT-550 Gun into a Gewehr-550 Gun."
+	product = /obj/item/gun/ballistic/automatic/wt550/gewehr550
+	fromitem = list(/obj/item/gun/ballistic/automatic/wt550)
+
+/obj/item/gun/ballistic/automatic/wt550/gewehr550
+	name = "\improper Gewehr-550"
+	desc = "A regular shortened assault rifle made in the Catcrin Empire for fighting in narrow spaces in the likeness of stations and shuttles."
+	icon = 'modular_bluemoon/fluffs/icons/obj/aa_gewehr550.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "gewehr550"
+	item_state = "gewehr550"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/G-550shot1.ogg'
+	pickup_sound = "modular_bluemoon/fluffs/sound/weapon/g-550grab.ogg"
+	can_suppress = FALSE
+	can_bayonet = TRUE
+	knife_x_offset = 30
+	knife_y_offset = 7
+
+/obj/item/gun/ballistic/automatic/wt550/gewehr550/update_icon_state()
+	icon_state = "gewehr550[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
+
 /obj/item/modkit/m240_kit
 	name = "M240 Kit"
 	desc = "A modkit for making a Flamethrower into a M240."
@@ -136,6 +160,46 @@
 	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
 	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
 	ammo_x_offset = 0
+
+/////////////////
+
+/obj/item/modkit/hwal2572
+	name = " H-Wal-2572 Kit"
+	desc = "A modkit for making a hybrid taser into a H-Wal-2572."
+	product = /obj/item/gun/energy/laser/hwal2572
+	fromitem = list(/obj/item/gun/energy/e_gun/advtaser)
+
+/obj/item/gun/energy/laser/hwal2572
+	name = "\improper H-Wal-2572"
+	desc = "A hybrid taser made by Catcrin's waffenschmied that combines electric and energy shots. There is a small circle on the handle showing the charging level."
+	icon_state = "hwal"
+	item_state = "hwal"
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	ammo_x_offset = 0
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/hwal2572, /obj/item/ammo_casing/energy/electrode/security/hwal2572 = FALSE)
+	pickup_sound = 'modular_bluemoon/fluffs/sound/weapon/H-Wal-2572/DisablerGrab.ogg'
+	var/last_altfire = 0
+	var/altfire_delay = CLICK_CD_RANGE
+	shot_type_overlay = FALSE
+	can_flashlight = 1
+
+/obj/item/gun/energy/laser/hwal2572/altafterattack(atom/target, mob/user, proximity_flag, params)
+	. = TRUE
+	if(last_altfire + altfire_delay > world.time)
+		return
+	var/current_index = current_firemode_index
+	set_firemode_to_type(/obj/item/ammo_casing/energy/electrode)
+	process_afterattack(target, user, proximity_flag, params)
+	set_firemode_index(current_index)
+	last_altfire = world.time
+
+/obj/item/ammo_casing/energy/disabler/hwal2572
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/H-Wal-2572/DisablerOni.ogg'
+
+/obj/item/ammo_casing/energy/electrode/security/hwal2572
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/H-Wal-2572/TaserOni.ogg'
 
 /////////////////
 
@@ -253,6 +317,91 @@
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "-stunblade")
 
 
+/////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/modkit/stunspear_kit
+	name = "Stunspear Kit"
+	desc = "A modkit for making an stunbaton into a stunspear."
+	product = /obj/item/melee/baton/stunspear
+	fromitem = list(/obj/item/melee/baton, /obj/item/melee/baton/loaded)
+
+/obj/item/melee/baton/stunspear
+	name = "One-handed stun spear"
+	desc = "A standard non-lethal spear used by Catcrin's law enforcement agencies."
+	item_state = "stunspear"
+	icon_state = "stunspear"
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+
+/obj/item/melee/baton/stunspear/switch_status(new_status = FALSE, silent = FALSE)
+	if(turned_on != new_status)
+		turned_on = new_status
+		if(!silent)
+			playsound(loc, 'modular_bluemoon/fluffs/sound/weapon/stunspear.ogg', 75, 1, -1)
+		if(turned_on)
+			START_PROCESSING(SSobj, src)
+		else
+			STOP_PROCESSING(SSobj, src)
+	update_icon()
+
+/obj/item/melee/baton/stunspear/update_icon_state()
+	if(turned_on)
+		icon_state = "stunspear_active"
+		item_state = "stunspear_active"
+	else if(!cell)
+		icon_state = "stunspear_nocell"
+		item_state = "stunspear"
+	else
+		icon_state = "stunspear"
+		item_state = "stunspear"
+
+/obj/item/melee/baton/stunspear/get_worn_belt_overlay(icon_file)
+	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "-stunspear")
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/modkit/ntcane_kit
+	name = "Harness Armor Kit"
+	desc = "A modkit for making an Fancy Cane into a Old Luxury Cane."
+	product = /obj/item/melee/baton/stunntcane
+	fromitem = list(/obj/item/melee/classic_baton/ntcane)
+
+/obj/item/melee/baton/stunntcane
+	name = "Old Luxury Cane"
+	desc = "На вид потрепанная временем трость которая украшена золотом с не раз отреставрированным деревом и на ручке еле поблескивал алмаз. Такие имеют на некоторых станция Представители НТ как показатель статуса, этот же видимо скорее как память раз уж не заменялся владельцем видимо годами."
+	item_state = "cane_nt"
+	icon_state = "cane_nt"
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+
+/obj/item/melee/baton/stunntcane/switch_status(new_status = FALSE, silent = FALSE)
+	if(turned_on != new_status)
+		turned_on = new_status
+		if(!silent)
+			playsound(loc, 'modular_bluemoon/fluffs/sound/weapon/stunblade.ogg', 75, 1, -1)
+		if(turned_on)
+			START_PROCESSING(SSobj, src)
+		else
+			STOP_PROCESSING(SSobj, src)
+	update_icon()
+
+/obj/item/melee/baton/stunntcane/update_icon_state()
+	if(turned_on)
+		icon_state = "cane_nt_active"
+		item_state = "cane_nt_active"
+	else if(!cell)
+		icon_state = "cane_nt_nocell"
+		item_state = "cane_nt"
+	else
+		icon_state = "cane_nt"
+		item_state = "cane_nt"
+
+/obj/item/melee/baton/stunntcane/get_worn_belt_overlay(icon_file)
+	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "cane_nt")
+
 ////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/item/modkit/pf940_kit
@@ -335,3 +484,34 @@
 	desc = "Модифицирует стандартную лазерную винтовку в эксперментальный гравпульсер."
 	product = /obj/item/gun/energy/taser/legax
 	fromitem = list(/obj/item/gun/energy/laser)
+
+//////////////////////////Модкиты на мультифазку
+
+/obj/item/gun/energy/e_gun/hos/karabiner_m13
+	name = "\improper Karabiner-M13"
+	desc = "The development of the Catcrin army. It is used extremely rarely and only by the highest ranks. It has several different shooting modes."
+	icon = 'modular_bluemoon/fluffs/icons/obj/aa_multiphasecarabinb.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "multiphasecarabin"
+	ammo_type = list(/obj/item/ammo_casing/energy/disabler/karabiner_m13, /obj/item/ammo_casing/energy/laser/hos/karabiner_m13, /obj/item/ammo_casing/energy/ion/hos/karabiner_m13, /obj/item/ammo_casing/energy/electrode/hos/karabiner_m13)
+	ammo_x_offset = 0
+	pickup_sound = "modular_bluemoon/flaffs/sound/weapon/Karabiner-M13/GrabCarabine.ogg"
+
+/obj/item/ammo_casing/energy/disabler/karabiner_m13
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/Karabiner-M13/DisablerOni.ogg'
+
+/obj/item/ammo_casing/energy/laser/hos/karabiner_m13
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/Karabiner-M13/LaserOni.ogg'
+
+/obj/item/ammo_casing/energy/ion/hos/karabiner_m13
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/Karabiner-M13/IonOni.ogg'
+
+/obj/item/ammo_casing/energy/electrode/hos/karabiner_m13
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/Karabiner-M13/TaserOni.ogg'
+
+/obj/item/modkit/karabiner_kit
+	name = "Karabiner-M13 Kit"
+	desc = "A modkit for making a MultiPhase Energy Gun into Karabiner-M13."
+	product = /obj/item/gun/energy/e_gun/hos/karabiner_m13
+	fromitem = list(/obj/item/gun/energy/e_gun/hos)

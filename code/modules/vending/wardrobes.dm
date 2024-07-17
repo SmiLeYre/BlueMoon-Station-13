@@ -197,18 +197,26 @@
 	icon_state = "cargodrobe"
 	product_slogans = "Обновленный стиль Техника Склада!;Выбери свой стиль сегодня!;Эти шорты удобны и просты в носке, получи свои сейчас!"
 	vend_reply = "Спасибо за использование CargoDrobe!"
-	products = list(/obj/item/clothing/accessory/armband/cargo = 5,
-					/obj/item/clothing/suit/hooded/wintercoat/cargo = 3,
-					/obj/item/clothing/under/rank/cargo/tech = 5,
-					/obj/item/clothing/under/rank/cargo/tech/skirt = 5,
-					/obj/item/clothing/under/rank/cargo/util = 5,
-					/obj/item/clothing/suit/toggle/labcoat/depjacket/sup = 5,
-					/obj/item/clothing/under/rank/cargo/tech/long = 5,
-					/obj/item/clothing/shoes/sneakers/black = 5,
-					/obj/item/clothing/gloves/fingerless = 5,
-					/obj/item/clothing/head/soft = 5,
-					/obj/item/clothing/mask/balaclava/breath/redscarf/yellowscarf = 4,
-					/obj/item/radio/headset/headset_cargo = 3)
+	products = list(
+		/obj/item/clothing/accessory/armband/cargo = 5,
+		/obj/item/storage/bag/mail = 3,
+		/obj/item/clothing/suit/hooded/wintercoat/cargo = 3,
+		/obj/item/clothing/under/rank/cargo/tech = 3,
+		/obj/item/clothing/under/rank/cargo/tech/skirt = 3,
+		/obj/item/clothing/under/rank/cargo/util = 3,
+		/obj/item/clothing/suit/toggle/labcoat/depjacket/sup = 3,
+		/obj/item/clothing/under/rank/cargo/tech/long = 3,
+		/obj/item/clothing/shoes/sneakers/black = 3,
+		/obj/item/clothing/gloves/fingerless = 3,
+		/obj/item/clothing/head/soft = 3,
+		/obj/item/clothing/mask/balaclava/breath/redscarf/yellowscarf = 4,
+		/obj/item/radio/headset/headset_cargo = 3
+	)
+	premium = list(
+		/obj/item/clothing/under/rank/cargo/miner = 3,
+		/obj/item/clothing/head/mailman = 1,
+		/obj/item/clothing/under/misc/mailman = 1
+	)
 	refill_canister = /obj/item/vending_refill/wardrobe/cargo_wardrobe
 	payment_department = ACCOUNT_CAR
 
@@ -474,13 +482,16 @@
 					/obj/item/clothing/neck/epitrachelion = 1, //BlueMoon changes,
 					/obj/item/clothing/neck/cloak/bishop = 1, //BlueMoon changes,
 					/obj/item/clothing/neck/cloak/bishopblack= 1) //BlueMoon changes
+
+	contraband = list (/obj/item/sign/flag/ravenheart = 3, // Bluemoon edition - Флаг Воронье Сердце,
+					   /obj/item/sign/flag/ravenheart/alt = 3, // Bluemoon edition - Флаг-баннер Воронье Сердце,
+					   /obj/item/storage/box/raven_box/posters = 3, // Bluemoon edition - Постеры,
+					  )
 	premium = list(/obj/item/storage/fancy/ringbox/silver = 4, // BLUEMOON ADD - для проведения свадеб,
 					/obj/item/storage/fancy/ringbox = 4, // BLUEMOON ADD - для проведения свадеб,
 					/obj/item/storage/fancy/ringbox/diamond = 4, // BLUEMOON ADD - для проведения свадеб,
-					/obj/item/sign/flag/ravenheart = 3, // Bluemoon edition - Флаг Воронье Сердце,
-					/obj/item/sign/flag/ravenheart/alt = 3, // Bluemoon edition - Флаг-баннер Воронье Сердце,
-					/obj/item/storage/box/raven_box/posters = 3, // Bluemoon edition - Постеры,
 					/obj/item/lighter/black = 1)
+
 	refill_canister = /obj/item/vending_refill/wardrobe/chap_wardrobe
 	extra_price = PRICE_ALMOST_ONE_GRAND * 1.1
 	payment_department = ACCOUNT_SRV
@@ -714,6 +725,7 @@
 		/obj/item/lighter/donator = 2,
 		/obj/item/lighter/contractor = 2,
 		/obj/item/lighter/engraved = 2,
+		/obj/item/lighter/qm_engraved = 2,
 		/obj/item/lighter/gold = 2,
 		/obj/item/lighter/gonzofist = 2,
 		/obj/item/storage/fancy/cigarettes/cigars/cohiba = 2,

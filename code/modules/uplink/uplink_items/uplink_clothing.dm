@@ -17,7 +17,7 @@
 /datum/uplink_item/suits/turtlenck_skirt
 	name = "Brown Tactical Skirtleneck"
 	desc = "A slightly armored conspicious jumpsuit that has no suit sensors attached to them, if someone sees you in this hope they think its a fake."
-	item = /obj/item/clothing/under/inteq_skirt
+	item = /obj/item/clothing/under/inteq/skirt
 	cost = 1
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE)
 
@@ -25,21 +25,21 @@
 	name = "Soft Padding"
 	desc = "An inconspicious soft padding meant to be worn underneath jumpsuits, will cushion the user from melee harm."
 	item = /obj/item/clothing/accessory/padding
-	cost = 2
+	cost = 1
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/suits/kevlar
 	name = "Kevlar Padding"
 	desc = "An inconspicious kevlar padding meant to be worn underneath jumpsuits, will cushion the wearer from ballistic harm."
 	item = /obj/item/clothing/accessory/kevlar
-	cost = 2
+	cost = 1
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/suits/plastic
 	name = "Ablative Padding"
 	desc = "An inconspicious ablative padding meant to be worn underneath jumpsuits, will cushion the wearer from energy lasers harm."
 	item = /obj/item/clothing/accessory/plastics
-	cost = 2
+	cost = 1
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/suits/space_suit

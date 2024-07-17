@@ -253,7 +253,7 @@ namespace UnstandardnessTestForDM
                     if( line.ToLower().IndexOf("#define") >= 0 )
                     {
                         line = line.Trim();
-                        line = line.Replace_char('\t', ' ');
+                        line = line.Replace('\t', ' ');
                         //Console.WriteLine("LINE = "+line);
                         String[] slist = line.Split(' ');
                         if(slist.Length >= 3){

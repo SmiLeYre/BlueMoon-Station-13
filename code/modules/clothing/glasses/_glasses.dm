@@ -132,7 +132,7 @@
 
 /obj/item/clothing/glasses/science/item_action_slot_check(slot, mob/user, datum/action/A)
 	if(slot == ITEM_SLOT_EYES)
-		return 1
+		return TRUE
 
 /obj/item/clothing/glasses/night
 	name = "night vision goggles"
@@ -361,14 +361,15 @@
 	custom_materials = list(/datum/material/iron = 250)
 	flash_protect = 2
 	tint = 2
+	can_toggle = TRUE
 	visor_vars_to_toggle = VISOR_FLASHPROTECT | VISOR_TINT
 	flags_cover = GLASSESCOVERSEYES
 	visor_flags_inv = HIDEEYES
+	can_toggle = TRUE
 	glass_colour_type = /datum/client_colour/glass_colour/gray
 
 /obj/item/clothing/glasses/welding/attack_self(mob/user)
 	weldingvisortoggle(user)
-
 
 /obj/item/clothing/glasses/sunglasses/blindfold
 	name = "blindfold"
@@ -407,6 +408,7 @@
 	..()
 
 /obj/item/clothing/glasses/sunglasses/blindfold/white/update_icon(mob/living/carbon/human/user)
+	. = ..()
 	if(ishuman(user) && !colored_before)
 		add_atom_colour("#[user.left_eye_color]", FIXED_COLOUR_PRIORITY)
 		colored_before = TRUE
