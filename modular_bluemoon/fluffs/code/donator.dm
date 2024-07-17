@@ -132,21 +132,21 @@
 	name = "cerberus helmet"
 	slot = ITEM_SLOT_HEAD
 	path = /obj/item/clothing/head/donator/bm/cerberus_helmet
-	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob", "snacksman")
+	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/cerberus_suit
 	name = "cerberus suit"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/cerberus_suit
-	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob", "snacksman")
+	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/censor_fem_suit
 	name = "censor suit"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/censor_fem_suit
-	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob", "snacksman")
+	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/Friskis_Mask
@@ -770,3 +770,10 @@
     path = /obj/item/clothing/under/donator/bm/Prosecutor_suit
     ckeywhitelist = list("fedor1545", "berly12")
     subcategory = LOADOUT_SUBCATEGORIES_DON04
+
+/datum/gear/donator/bm/Prosecutor
+    name = "Rune Jacket"
+    slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/suit/donator/bm/rune_jacket
+    ckeywhitelist = list("D0NALD")
+    subcategory = LOADOUT_SUBCATEGORIES_DON02
