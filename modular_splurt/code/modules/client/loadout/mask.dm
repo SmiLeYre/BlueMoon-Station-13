@@ -10,3 +10,15 @@
 	name = "Trencher Gas Mask"
 	path = /obj/item/clothing/mask/gas/goner/basic
 	cost = 2
+
+//BM add
+/datum/gear/mask/syndicate_gasmask
+    name = "Syndicate Mask"
+    path = /obj/item/clothing/mask/gas/syndicate
+    cost = 2
+
+/datum/gear/mask/neck_gaither
+    name="Neck Gaiter"
+    path=/obj/item/clothing/mask/gas/sechailer/syndicate
+    cost=2
+//BM add end
