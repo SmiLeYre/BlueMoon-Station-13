@@ -151,7 +151,7 @@
 
 /datum/gear/donator/bm/atam
 	name = "Atam"
-	slot = ITEM_SLOT_RPOCKET
+	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/toy/crayon/atam
 	ckeywhitelist = list("FoxedHuman")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
