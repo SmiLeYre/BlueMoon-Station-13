@@ -85,6 +85,54 @@
 /obj/item/gun/ballistic/automatic/wt550/gewehr550/update_icon_state()
 	icon_state = "gewehr550[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
 
+/obj/item/modkit/a46
+	name = "A46 Kit"
+	desc = "A modkit for making a WT-550 Gun into a A46 Gun."
+	product = /obj/item/gun/ballistic/automatic/wt550/a46
+	fromitem = list(/obj/item/gun/ballistic/automatic/wt550)
+
+/obj/item/gun/ballistic/automatic/wt550/a46
+	name = "\improper A46-Cord"
+	desc = "Сбалансированная и простая в использовании автоматическая винтовка, сделанная на базе АЕК-971 и хоть придумана она была давно, но не получила такую популярность как её аналог AK-12."
+	icon = 'modular_bluemoon/fluffs/icons/obj/a46.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "a46"
+	item_state = "a46"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/a46shot1.ogg'
+	pickup_sound = "modular_bluemoon/fluffs/sound/weapon/a46grab.ogg"
+	can_suppress = FALSE
+	can_bayonet = TRUE
+	knife_x_offset = 42
+	knife_y_offset = 12
+
+/obj/item/gun/ballistic/automatic/wt550/a46/update_icon_state()
+	icon_state = "a46[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
+
+/obj/item/modkit/ots18
+	name = "OTs-18 Kit"
+	desc = "A modkit for making a WT-550 Gun into a OTs-18 Groza Gun."
+	product = /obj/item/gun/ballistic/automatic/wt550/ots18
+	fromitem = list(/obj/item/gun/ballistic/automatic/wt550)
+
+/obj/item/gun/ballistic/automatic/wt550/ots18
+	name = "\improper OTs-18 Groza"
+	desc = "Компактный штурмовой стрелково-гранатометный комплекс, сделанный на базе калашникова и переделанный под калибр 4.6x30."
+	icon = 'modular_bluemoon/fluffs/icons/obj/groza.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "groza"
+	item_state = "groza"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/groza-shot1.ogg'
+	pickup_sound = "modular_bluemoon/fluffs/sound/weapon/groza-grab.ogg"
+	can_suppress = FALSE
+	can_bayonet = TRUE
+	knife_x_offset = 40
+	knife_y_offset = 17
+
+/obj/item/gun/ballistic/automatic/wt550/ots18/update_icon_state()
+	icon_state = "groza[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
+
 /obj/item/modkit/m240_kit
 	name = "M240 Kit"
 	desc = "A modkit for making a Flamethrower into a M240."

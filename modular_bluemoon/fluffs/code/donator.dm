@@ -132,21 +132,28 @@
 	name = "cerberus helmet"
 	slot = ITEM_SLOT_HEAD
 	path = /obj/item/clothing/head/donator/bm/cerberus_helmet
-	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob", "snacksman")
+	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/cerberus_suit
 	name = "cerberus suit"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/cerberus_suit
-	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob", "snacksman")
+	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/censor_fem_suit
 	name = "censor suit"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/censor_fem_suit
-	ckeywhitelist = list("krashly", "stgs", "dedmodo", "hazzi", "dolbajob", "snacksman")
+	ckeywhitelist = list("krashly", "stgs", "hazzi", "dolbajob")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/atam
+	name = "Atam"
+	slot = ITEM_SLOT_RPOCKET
+	path = /obj/item/toy/crayon/atam
+	ckeywhitelist = list("FoxedHuman")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/Friskis_Mask
@@ -770,3 +777,26 @@
     path = /obj/item/clothing/under/donator/bm/Prosecutor_suit
     ckeywhitelist = list("fedor1545", "berly12")
     subcategory = LOADOUT_SUBCATEGORIES_DON04
+
+
+/datum/gear/donator/bm/a46_kit
+	name = "A46 Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/a46
+	ckeywhitelist = list("nai1ten")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/ots18_kit
+	name = "OTs-18 Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/ots18
+	ckeywhitelist = list("nai1ten")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/rune_jacket
+    name = "Rune Jacket"
+    slot = ITEM_SLOT_OCLOTHING
+    path = /obj/item/clothing/suit/donator/bm/rune_jacket
+    ckeywhitelist = list("d0nald")
+    subcategory = LOADOUT_SUBCATEGORIES_DON02
+

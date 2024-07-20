@@ -84,3 +84,9 @@
 /datum/gear/neck/teshari/black_glow
 	name = "Teshari Cloak Dark Black Glow"
 	path = /obj/item/clothing/neck/cloak/teshari/standard/black_glow
+
+//BM add
+/datum/gear/neck/syndiecap
+    name="Syndicate Officer's Cloak"
+    path=/obj/item/clothing/neck/cloak/syndiecap
+//BM add end
