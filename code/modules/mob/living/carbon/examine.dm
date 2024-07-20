@@ -138,16 +138,6 @@
 		. += trait_exam
 
 	var/datum/component/mood/mood = src.GetComponent(/datum/component/mood)
-
-	if(/datum/mood_event/fluid_overcharged in mood.mood_events)
-		. += "[t_He] выглядит довольно мокренькой в интимных местах!"
-
-	if(/datum/mood_event/fluid_imeetsya in mood.mood_events)
-		. += "[t_He] выглядит слегка мокренькой в интимных местах."
-
-	if(/datum/mood_event/fluid_spustil in mood.mood_events)
-		. += "[t_He] выглядит облегченно."
-
 	if(mood)
 		switch(mood.shown_mood)
 			if(-INFINITY to MOOD_LEVEL_SAD4)

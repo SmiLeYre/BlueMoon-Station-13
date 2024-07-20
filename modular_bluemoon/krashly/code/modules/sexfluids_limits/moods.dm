@@ -84,6 +84,11 @@
 	var/spawned = FALSE // pohuy, kostil
 	var/imeetsya = FALSE
 
+/mob/living/carbon
+	var/breasts_protechka_examine = null
+	var/penis_protechka_examine = null
+	var/womb_protechka_examine = null
+
 /obj/item/organ/genital/proc/fluid_add()
 	if(!owner)
 		return
@@ -108,35 +113,89 @@
 			return NETU
 
 /proc/overlay_fluid(mob/living/carbon/owner, obj/item/organ/genital/organ)
-	if(istype(organ, /obj/item/organ/genital/breasts))
-		var/obj/item/organ/genital/breasts/siski = organ
-		switch(siski.fluid_volume)
-			if(OCHEN_BLIZKO_FLUID to INFINITY)
-				siski.icon_state_organ = "breasts_overfluid"
-			if(BLIZKO_TO_MAX_FLUID to OCHEN_BLIZKO_FLUID)
-				siski.icon_state_organ = "breasts_fluid"
-			else
-				siski.icon_state_organ = "blank"
+	if(HAS_TRAIT(owner, TRAIT_FLUID_TITS))
+		if(istype(organ, /obj/item/organ/genital/breasts))
+			var/obj/item/organ/genital/breasts/siski = organ
+			switch(siski.fluid_volume)
+				if(OCHEN_BLIZKO_FLUID to INFINITY)
+					siski.icon_state_organ = "breasts_overfluid"
+					if(owner.is_chest_exposed())
+						owner.breasts_protechka_examine = "<span class='notice'>Грудь <b>[owner]</b> выглядит <b>крайне</b> мокрой!</span>"
+						if(prob(20))
+							var/obj/effect/decal/cleanable/fluidrip/drip = new(owner.loc)
+							drip.color = siski.fluid_color
+							drip.reagents.add_reagent(siski.fluid_id, 1)
+					else
+						owner.breasts_protechka_examine = "<span class='notice'>Одежда <b>[owner]</b> в районе груди выглядит <b>крайне</b> мокрой!</span>"
+				if(BLIZKO_TO_MAX_FLUID to OCHEN_BLIZKO_FLUID)
+					siski.icon_state_organ = "breasts_fluid"
+					if(owner.is_chest_exposed())
+						owner.breasts_protechka_examine = "<span class='notice'>Грудь <b>[owner]</b> выглядит чутка мокрой.</span>"
+						if(prob(5))
+							var/obj/effect/decal/cleanable/fluidrip/drip = new(owner.loc)
+							drip.color = siski.fluid_color
+							drip.reagents.add_reagent(siski.fluid_id, 1)
+					else
+						owner.breasts_protechka_examine = "<span class='notice'>Одежда <b>[owner]</b> в районе груди выглядит чутка мокрой.</span>"
+				else
+					siski.icon_state_organ = "blank"
+					owner.breasts_protechka_examine = null
 
-	else if(istype(organ, /obj/item/organ/genital/testicles))
-		var/obj/item/organ/genital/testicles/yayca = organ
-		switch(yayca.fluid_volume)
-			if(OCHEN_BLIZKO_FLUID to INFINITY)
-				yayca.icon_state_organ = "penis_overfluid"
-			if(BLIZKO_TO_MAX_FLUID to OCHEN_BLIZKO_FLUID)
-				yayca.icon_state_organ = "penis_fluid"
-			else
-				yayca.icon_state_organ = "blank"
+	else if(HAS_TRAIT(owner, TRAIT_FLUID_PENIS))
+		if(istype(organ, /obj/item/organ/genital/testicles))
+			var/obj/item/organ/genital/testicles/yayca = organ
+			switch(yayca.fluid_volume)
+				if(OCHEN_BLIZKO_FLUID to INFINITY)
+					yayca.icon_state_organ = "penis_overfluid"
+					if(owner.is_groin_exposed())
+						owner.penis_protechka_examine = "<span class='notice'>Пенис <b>[owner]</b> выглядит <b>крайне</b> мокрым!</span>"
+						if(prob(20))
+							var/obj/effect/decal/cleanable/fluidrip/drip = new(owner.loc)
+							drip.color = yayca.fluid_color
+							drip.reagents.add_reagent(yayca.fluid_id, 1)
+					else
+						owner.penis_protechka_examine = "<span class='notice'>Одежда <b>[owner]</b> в районе паха выглядит <b>крайне</b> мокрой!</span>"
+				if(BLIZKO_TO_MAX_FLUID to OCHEN_BLIZKO_FLUID)
+					yayca.icon_state_organ = "penis_fluid"
+					if(owner.is_chest_exposed())
+						owner.penis_protechka_examine = "<span class='notice'>Пенис <b>[owner]</b> выглядит чутка мокрым.</span>"
+						if(prob(5))
+							var/obj/effect/decal/cleanable/fluidrip/drip = new(owner.loc)
+							drip.color = yayca.fluid_color
+							drip.reagents.add_reagent(yayca.fluid_id, 1)
+					else
+						owner.penis_protechka_examine = "<span class='notice'>Одежда <b>[owner]</b> в районе паха выглядит чутка мокрой.</span>"
+				else
+					yayca.icon_state_organ = "blank"
+					owner.penis_protechka_examine = null
 
-	else if(istype(organ, /obj/item/organ/genital/womb))
-		var/obj/item/organ/genital/womb/pizda = organ
-		switch(pizda.fluid_volume)
-			if(OCHEN_BLIZKO_FLUID to INFINITY)
-				pizda.icon_state_organ = "vagina_overfluid"
-			if(BLIZKO_TO_MAX_FLUID to OCHEN_BLIZKO_FLUID)
-				pizda.icon_state_organ = "vagina_fluid"
-			else
-				pizda.icon_state_organ = "blank"
+	else if(HAS_TRAIT(owner, TRAIT_FLUID_WOMB))
+		if(istype(organ, /obj/item/organ/genital/womb))
+			var/obj/item/organ/genital/womb/pizda = organ
+			switch(pizda.fluid_volume)
+				if(OCHEN_BLIZKO_FLUID to INFINITY)
+					pizda.icon_state_organ = "vagina_overfluid"
+					if(owner.is_groin_exposed())
+						owner.womb_protechka_examine = "<span class='notice'>Киска <b>[owner]</b> выглядит <b>крайне</b> мокрой!</span>"
+						if(prob(20))
+							var/obj/effect/decal/cleanable/fluidrip/drip = new(owner.loc)
+							drip.color = pizda.fluid_color
+							drip.reagents.add_reagent(pizda.fluid_id, 1)
+					else
+						owner.womb_protechka_examine = "<span class='notice'>Одежда <b>[owner]</b> в районе паха выглядит <b>крайне</b> мокрой!</span>"
+				if(BLIZKO_TO_MAX_FLUID to OCHEN_BLIZKO_FLUID)
+					pizda.icon_state_organ = "vagina_fluid"
+					if(owner.is_chest_exposed())
+						owner.womb_protechka_examine = "<span class='notice'>Киска <b>[owner]</b> выглядит чутка мокрой.</span>"
+						if(prob(5))
+							var/obj/effect/decal/cleanable/fluidrip/drip = new(owner.loc)
+							drip.color = pizda.fluid_color
+							drip.reagents.add_reagent(pizda.fluid_id, 1)
+					else
+						owner.womb_protechka_examine = "<span class='notice'>Одежда <b>[owner]</b> в районе паха выглядит чутка мокрой.</span>"
+				else
+					pizda.icon_state_organ = "blank"
+					owner.womb_protechka_examine = null
 	organ.update_icon_blyat()
 
 /obj/item/organ/genital/proc/update_icon_blyat()

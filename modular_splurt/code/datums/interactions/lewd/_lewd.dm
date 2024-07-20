@@ -224,8 +224,10 @@
 				H.mob_climax(TRUE, "sex", partner, !cumin, target_gen)
 	set_lust(0)
 
-	if(HAS_TRAIT(src, TRAIT_FLUID)) // BLUEMOON ADDITION
-		last_genital.fluid_volume = 0 // BLUEMOON ADDITION
+	if(istype(last_genital, /obj/item/organ/genital))
+		var/obj/item/organ/genital/P = last_genital
+		if(HAS_TRAIT(src, TRAIT_FLUID)) // BLUEMOON ADDITION
+			P.fluid_volume = 0 // BLUEMOON ADDITION
 
 	SEND_SIGNAL(src, COMSIG_MOB_POST_CAME, target_orifice, partner, cumin, last_genital)
 
