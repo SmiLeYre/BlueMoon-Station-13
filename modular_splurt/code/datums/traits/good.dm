@@ -220,27 +220,6 @@
 /datum/quirk/hallowed/proc/on_examine_holder(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
 	examine_list += "[quirk_holder.p_they(TRUE)] излучает священную силу..."
 
-/datum/quirk/russian
-	name = "Русский дух"
-	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. С вами Бог!"
-	value = 2
-	mob_trait = TRAIT_RUSSIAN
-	gain_text = span_notice("Вы чувствуете, как Бог следит за вами!")
-	lose_text = span_notice("Вы чувствуете, как угасает ваша вера в Бога...")
-	medical_record_text = "У пациента обнаружен Ангел-Хранитель."
-
-/datum/quirk/russian/add()
-	// Add examine text.
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(quirk_examine_russian))
-
-/datum/quirk/russian/remove()
-	// Remove examine text
-	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
-
-// Quirk examine text.
-/datum/quirk/russian/proc/quirk_examine_russian(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
-	examine_list += "[quirk_holder.ru_who(TRUE)] излучает русский дух..."
-
 ///datum/quirk/bomber
 //	name = "Подрывник-Самоубийца"
 //	desc = "Благодаря своим связям с Красной Бригадой вы получили специальный имплант для самоуничтожения! Ну или почему-то вы решили ввести себе какую-то зелёную штуку из имплантера с мусорки и теперь вы научились делать что-то потрясное..."

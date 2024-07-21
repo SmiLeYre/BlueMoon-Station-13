@@ -1,0 +1,15 @@
+2024-07-01:
+  Anonymous:
+  - rscadd: 'Mememotes: *flabbergast, *sadness.'
+  - rscadd: Added custom holographic pin with basic selection, available in loadout
+      - accessories and at clothesmate.
+2024-07-03:
+  Anonymous:
+  - bugfix: "I forgot to include purple pin into code \U0001F480"
+  - rscadd: Added MEKA variants.
+  - rscadd: Added K4T cyborgs. I think it's just tall, buff cat?
+  - tweak: Changes some default MEKA sprites. Few were kept with ported ones being
+      alternative.
+2024-07-05:
+  SandPoot:
+  - bugfix: Fixed runtimes on hugbot.

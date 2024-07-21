@@ -991,8 +991,8 @@
 	name = "Русский дух"
 	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. С вами Бог!"
 	quality = POSITIVE
-	difficulty = 14
-	instability = 30
+	difficulty = 3
+	instability = 5
 	mob_trait = TRAIT_RUSSIAN
 	text_gain_indication = "<span class='notice'>Вы чувствуете, как Бог следит за вами!</span>"
 	text_lose_indication = "<span class='danger'>Вы чувствуете, как угасает ваша вера в Бога...</span>"

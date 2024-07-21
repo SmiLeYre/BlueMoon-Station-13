@@ -106,7 +106,7 @@
 /obj/item/integrated_circuit_printer/attack_self(mob/living/carbon/human/user)
 	var/user_job = user.mind.assigned_role
 	if(upgraded)
-		if(user_job == "Roboticist" || user_job == "Research Director" || user_job == "Scientist" || user.mind?.has_antag_datum(/datum/antagonist/ghost_role))
+		if(user_job == "Roboticist" || user_job == "Research Director" || user_job == "Scientist" || user_job == "Expeditor" || user.mind?.has_antag_datum(/datum/antagonist))
 			interact(user)
 			return
 		else

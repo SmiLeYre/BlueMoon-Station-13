@@ -76,10 +76,6 @@
 "dt" = (
 /turf/closed/wall/mineral/titanium/interior,
 /area/ruin/powered)
-"du" = (
-/obj/effect/spawner/lootdrop/hostile/inteq,
-/turf/open/floor/wood/damturf/broken3,
-/area/ruin/powered)
 "dF" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -149,6 +145,22 @@
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered)
+"gc" = (
+/obj/structure/fans/tiny,
+/obj/docking_port/mobile{
+	dir = 4;
+	dwidth = 3;
+	height = 12;
+	id = "syndicate_dropship";
+	name = "Syndicate Drop Ship";
+	width = 7
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12345;
+	name = "Poddoor"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/powered)
 "gm" = (
 /obj/structure/chair/comfy/black{
 	dir = 8
@@ -178,10 +190,9 @@
 /obj/machinery/light/directional/south,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered)
-"gz" = (
-/obj/structure/sign/poster/official/hydro_ad,
-/turf/closed/wall/mineral/titanium,
-/area/ruin/powered)
+"gD" = (
+/turf/closed/mineral/random,
+/area/survivalpod/nonpowered)
 "gH" = (
 /obj/machinery/hydroponics/constructable/automagic,
 /turf/open/floor/wood/damturf/broken3,
@@ -292,7 +303,10 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered)
 "mr" = (
-/obj/effect/mob_spawn/human/hermit,
+/obj/effect/mob_spawn/human/hermit{
+	flavour_text = "Твоя крио-капсула на спасательном судне вышла из строя и ты пробудился от своего долгого сна! Проклятая машина, ты должна была пробудить меня через десять дней, а не десять недель! Куда делись остальные, пока нас не было? Удалось ли им выжить? Эти мысли развеиваются еще одним воспоминанием о том, как вы сюда попали... ";
+	job_description = "Space Hermit"
+	},
 /turf/open/floor/pod/dark,
 /area/survivalpod/nonpowered)
 "mE" = (
@@ -338,7 +352,7 @@
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/powered)
 "pJ" = (
-/obj/machinery/vending/wardrobe/syndie_wardrobe/civil,
+/obj/machinery/vending/wardrobe/syndie_wardrobe,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered)
 "pT" = (
@@ -451,12 +465,19 @@
 "tY" = (
 /obj/effect/turf_decal/box,
 /obj/machinery/light/directional/east,
-/obj/item/gun/ballistic/automatic/ak47,
-/obj/item/gun/ballistic/automatic/ak47,
-/obj/item/ammo_box/magazine/ak47,
+/obj/effect/spawner/lootdrop/syndicate_present,
+/obj/effect/spawner/lootdrop/syndicate_present,
+/obj/item/gun/ballistic/automatic/ak47/akm,
+/obj/item/gun/ballistic/automatic/ak47/akm,
 /obj/item/ammo_box/magazine/ak47/ap,
-/obj/item/ammo_box/magazine/ak47,
 /obj/item/ammo_box/magazine/ak47/ap,
+/obj/item/ammo_box/magazine/ak47/ap,
+/obj/item/ammo_box/magazine/ak47/ap,
+/obj/item/ammo_box/magazine/ak47/ap,
+/obj/item/ammo_box/magazine/ak47/ap,
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/random,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/powered)
 "uf" = (
@@ -591,10 +612,6 @@
 	},
 /turf/open/floor/grass,
 /area/ruin/powered)
-"Az" = (
-/mob/living/simple_animal/hostile/carp/ranged/xenobiology,
-/turf/open/floor/plating/asteroid/airless,
-/area/ruin/powered)
 "AD" = (
 /obj/machinery/light,
 /turf/open/floor/pod/dark,
@@ -720,6 +737,9 @@
 /area/ruin/powered)
 "Hb" = (
 /obj/structure/closet/crate/trashcart,
+/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/lootdrop/cig_packs,
+/obj/effect/spawner/lootdrop/armory_contraband,
 /turf/open/floor/wood/damturf/broken1,
 /area/ruin/powered)
 "Hd" = (
@@ -734,6 +754,7 @@
 /area/survivalpod/nonpowered)
 "HO" = (
 /obj/structure/closet/crate/trashcart,
+/obj/effect/spawner/lootdrop/seed_vault,
 /turf/open/floor/wood/damturf/broken3,
 /area/ruin/powered)
 "HT" = (
@@ -814,6 +835,8 @@
 /obj/item/clothing/accessory/armband/hydro,
 /obj/item/clothing/accessory/armband/hydro,
 /obj/item/seeds/matrigrass,
+/obj/effect/spawner/lootdrop/druggie_pill,
+/obj/effect/spawner/lootdrop/druggie_pill,
 /turf/open/floor/grass,
 /area/ruin/powered)
 "Kf" = (
@@ -837,6 +860,7 @@
 /obj/machinery/door/airlock/titanium{
 	name = "Escape Pod Airlock"
 	},
+/obj/structure/fans/tiny,
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/powered)
 "KI" = (
@@ -1027,6 +1051,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/spawner/lootdrop/healing_kits,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered)
 "Si" = (
@@ -1141,9 +1166,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/powered)
 "Xu" = (
-/mob/living/simple_animal/hostile/shark/kawaii{
-	faction = list("carp")
-	},
+/mob/living/simple_animal/hostile/shark/kawaii,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/powered)
 "Xy" = (
@@ -1224,6 +1247,7 @@
 	},
 /obj/structure/closet/crate/internals,
 /obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/melee,
 /turf/open/floor/pod/dark,
 /area/survivalpod/nonpowered)
 "Yh" = (
@@ -1985,7 +2009,7 @@ fc
 fc
 kE
 fg
-fg
+gc
 fg
 kE
 lX
@@ -2458,10 +2482,10 @@ Jw
 uY
 lX
 wx
+gD
+gD
 wx
-wx
-wx
-wx
+gD
 wx
 wx
 Hp
@@ -2511,10 +2535,10 @@ Ak
 bO
 fc
 wx
-wx
-wx
-wx
-wx
+gD
+gD
+gD
+gD
 wx
 AE
 AE
@@ -2606,13 +2630,13 @@ nm
 nm
 nm
 pf
-gz
+pf
 KI
 cW
 tD
 xz
 tF
-gz
+pf
 pf
 hA
 lX
@@ -2719,7 +2743,7 @@ qt
 BU
 qO
 fc
-Az
+fc
 fc
 fc
 fc
@@ -2814,13 +2838,13 @@ nm
 nm
 nm
 pf
-gz
+pf
 OP
 dT
 Qk
 yS
 BU
-gz
+pf
 pf
 fc
 BI
@@ -2921,7 +2945,7 @@ nm
 pf
 pf
 wc
-du
+dT
 wc
 pf
 pf

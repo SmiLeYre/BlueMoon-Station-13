@@ -45,6 +45,20 @@
 
 	. = ..()
 
+/obj/machinery/chem_master/Initialize(mapload)
+	create_reagents(100)
+
+	//Calculate the span tags and ids fo all the available pill icons
+	var/datum/asset/spritesheet/simple/assets = get_asset_datum(/datum/asset/spritesheet/simple/patches)
+	patchStyles = list()
+	for (var/x in 1 to PATCH_STYLE_COUNT)
+		var/list/SL = list()
+		SL["id"] = x
+		SL["className"] = assets.icon_class_name("patch[x]")
+		patchStyles += list(SL)
+
+	. = ..()
+
 /obj/machinery/chem_master/Destroy()
 	QDEL_NULL(beaker)
 	QDEL_NULL(bottle)

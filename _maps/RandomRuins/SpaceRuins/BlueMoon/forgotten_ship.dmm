@@ -3426,9 +3426,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_rnd)
-"qv" = (
-/turf/template_noop,
-/area/space)
 "qz" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 6
@@ -6843,12 +6840,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_vault)
-"HU" = (
-/obj/structure/shuttle/engine/propulsion/burst{
-	dir = 8;
-	pixel_x = 14
-	},
-/turf/template_noop)
 "HV" = (
 /obj/machinery/vending/dinnerware,
 /turf/open/floor/wood,
@@ -12793,12 +12784,12 @@ kw
 dU
 ay
 kw
-HU
+sz
 Jb
 kn
 kn
 Jb
-HU
+sz
 "}
 (34,1,1) = {"
 sz
@@ -13017,7 +13008,7 @@ Hb
 Rw
 rP
 za
-qv
+lO
 Yy
 wR
 wR

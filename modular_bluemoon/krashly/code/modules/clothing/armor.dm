@@ -69,6 +69,17 @@
 	icon_state = "monk_robe_hood"
 	item_state = "monk_robe_hood"
 	flags_inv = HIDEHAIR|HIDEEARS
+
+/obj/item/clothing/suit/donator/bm/rune_jacket
+	name = "rune jacket"
+	desc = "Темное пальто исписанное странного вида рунами неизвестного значения. Она чертовски неудобная, как будто шили под кого то."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
+	icon_state = "deepcoat"
+	item_state = "deepcoat"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 ////////////////////////////////////////////////
 /obj/item/clothing/suit/hooded/plaguedoc_new
 	name = "plague doctor robe"

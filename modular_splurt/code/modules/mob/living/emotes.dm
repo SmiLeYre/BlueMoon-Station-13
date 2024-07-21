@@ -1534,3 +1534,20 @@
 	emote_cooldown = 0.95 SECONDS
 	emote_pitch_variance = FALSE
 
+/datum/emote/living/audio/flabbergast
+	key = "flabbergast"
+	key_third_person = "is flabbergasted"
+	message = "looks flabbergasted!"
+	emote_sound = 'modular_splurt/sound/voice/flabbergasted.ogg'
+	emote_cooldown = 3.0 SECONDS
+	emote_pitch_variance = FALSE
+	emote_volume = 70
+
+/datum/emote/living/audio/sadness
+	key = "sadness"
+	key_third_person = "feels sadness"
+	message = "is experiencing <b><i>Profound Sadness</i></b>!"
+	emote_sound = 'modular_splurt/sound/voice/sadness.ogg'
+	emote_cooldown = 4.0 SECONDS
+	emote_pitch_variance = FALSE
+	emote_volume = 30
