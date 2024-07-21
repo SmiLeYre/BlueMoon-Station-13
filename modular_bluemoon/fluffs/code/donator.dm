@@ -324,6 +324,13 @@
 	ckeywhitelist = list("romontesque", "smol42", "oni3288", "allazarius", "mihana964", "hazzi", "discord980", "zetneskov", "NotLikeLuls")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/monolith_patch
+	name = "Monolith Patch"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/accessory/monolith_patch
+	ckeywhitelist = list("irfish", "devildeadspace")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
 /datum/gear/donator/bm/SH_jacket
 	name = "Shiro Silverhand Jacket"
 	slot = ITEM_SLOT_OCLOTHING
@@ -596,6 +603,27 @@
 	ckeywhitelist = list("n1ght1ngale")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/monolith_gloves
+	name = "Monolith Gloves"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/gloves/fingerless/monolith_gloves
+	ckeywhitelist = list("irfish", "devildeadspace")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/monolith_armor
+	name = "Granite M1 Vest"
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/suit/bm/monolith_armor
+	ckeywhitelist = list("irfish", "devildeadspace")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/monolith_uniform
+	name = " Granite M1 ''Monolith'' Uniform"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/monolith_uniform
+	ckeywhitelist = list("vulpshiro", "dolbajob", "stgs", "leony24", "sodastrike", "lonofera", "hellsinggc", "devildeadspace", "enigma418")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
 /datum/gear/donator/commissar_hat
 	name = "Commissar Hat"
 	slot = ITEM_SLOT_HEAD
@@ -727,6 +755,13 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/karabiner_kit
 	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/rt46
+	name = "RT-46 The Tempest Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/rt46
+	ckeywhitelist = list("kladmenuwu")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/tacticool/satt

@@ -92,3 +92,13 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
 	icon_state = "dogtag"
 	item_state = "dogtag"
+
+////////////////////////
+
+/obj/item/clothing/gloves/fingerless/monolith_gloves
+	name = "Monolith gloves"
+	desc = "The gloves of the jumpsuit Granite M1 from the Monolith group, the manufacturer is unknown."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/gloves.dmi'
+	icon_state = "monolithgloves"
+	item_state = "monolithgloves"

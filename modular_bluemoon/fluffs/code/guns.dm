@@ -305,6 +305,23 @@
 	new /obj/item/modkit/malorian_mag_kit(src)
 	new /obj/item/modkit/malorian_mag_kit(src)
 
+/////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/gun/ballistic/revolver/r45l/rt46
+	name = "\improper RT-46 The Tempest"
+	desc = "The Tempest belongs to the museum as a benchmark of Soviet design. Is it beautiful to look at? No. Comfortable to use? No. Safe? No. But effective? Damn effective."
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	icon_state = "rt46"
+	item_state = "rt46"
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+
+/obj/item/modkit/rt46
+	name = "RT-46 The Tempest Kit"
+	desc = "A modkit for making a Revolver into a RT-46."
+	product = /obj/item/gun/ballistic/revolver/r45l/rt46
+	fromitem = list (/obj/item/gun/ballistic/revolver/r45l)
+
 //////////////////// AM4 уже есть в лодауте донатеров. Это лишь его рескин.
 
 /obj/item/gun/ballistic/automatic/AM4B_pchelik
