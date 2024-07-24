@@ -90,7 +90,7 @@
 
 
 /obj/item/disk/data
-	max_mutations = 45 // генофонд вырос в трое. вместимость диска тоже.
+	max_mutations = 15
 
 /**
  * BLUEMOON REMOVAL - weapon permits перенесены в отдельный файл
