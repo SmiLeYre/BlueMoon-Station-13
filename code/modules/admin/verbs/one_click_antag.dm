@@ -506,12 +506,35 @@
 					to_chat(usr, span_warning("Could not spawn you in as briefing officer as you are not a ghost!"))
 
 			var/list/spawnpoints = GLOB.emergencyresponseteamspawn
+
+			var/list/sorted_candidates = candidates.Copy()
+
+
+			var/mob/living/carbon/human/candidate0
+			var/mob/living/carbon/human/candidate1
+			var/exp0
+			var/exp1
+			for (var/i in 0 to sorted_candidates.len)
+				candidate0 = sorted_candidates[i]
+				exp0 = candidate0.client.prefs.exp[EXP_TYPE_ANTAG] * 10 + candidate0.client.prefs.exp[EXP_TYPE_SECURITY]
+				for (var/j in i to sorted_candidates.len)
+					candidate1 = sorted_candidates[j]
+					exp1 = candidate1.client.prefs.exp[EXP_TYPE_ANTAG] * 10 + candidate1.client.prefs.exp[EXP_TYPE_SECURITY]
+					if (exp0 > exp1)
+						sorted_candidates[i] = candidate1
+						sorted_candidates[j] = candidate0
+
+			var/candidate_id = 0
 			while(numagents && candidates.len)
 				if (numagents > spawnpoints.len)
 					numagents--
 					continue // This guy's unlucky, not enough spawn points, we skip him.
 				var/spawnloc = spawnpoints[numagents]
-				var/mob/chosen_candidate = pick(candidates)
+
+				// выбираем кандидата ?
+				//var/mob/chosen_candidate = pick(candidates)
+				var/mob/chosen_candidate = sorted_candidates[candidate_id]
+
 				candidates -= chosen_candidate
 				if(!chosen_candidate.key)
 					continue
@@ -540,6 +563,7 @@
 				log_game("[key_name(ERTOperative)] has been selected as an [ert_antag.name]")
 				numagents--
 				teamSpawned++
+				candidate_id++
 
 			if (teamSpawned)
 				message_admins("[ertemplate.polldesc] были отправлены на станцию со следующей миссией: [ertemplate.mission]")
