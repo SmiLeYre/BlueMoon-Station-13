@@ -1228,8 +1228,14 @@
 /turf/open/floor/plating,
 /area/construction/mining/aux_base)
 "aeI" = (
-/turf/open/floor/wood,
-/area/command/heads_quarters/hos)
+/obj/machinery/door/airlock/security/glass{
+	name = "Security Desk";
+	req_access_txt = "63"
+	},
+/obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
+/turf/open/floor/plasteel/dark,
+/area/security/brig_cells)
 "aeJ" = (
 /obj/machinery/computer/slot_machine,
 /obj/effect/decal/cleanable/dirt,
@@ -9824,14 +9830,6 @@
 "aKZ" = (
 /turf/closed/wall/r_wall,
 /area/security/execution/education)
-"aLa" = (
-/obj/effect/turf_decal/tile/red/half{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark/side{
-	dir = 4
-	},
-/area/security/execution/education)
 "aLb" = (
 /obj/structure/lattice/catwalk,
 /obj/item/wrench,
@@ -10179,12 +10177,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "aMr" = (
 /obj/effect/turf_decal/tile/red/half/contrasted,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "aMs" = (
@@ -10516,7 +10514,7 @@
 	dir = 1
 	},
 /obj/effect/landmark/start/head_of_security,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/grimy,
 /area/command/heads_quarters/hos)
 "aNL" = (
@@ -10529,10 +10527,10 @@
 /obj/machinery/light{
 	light_color = "#cee5d2"
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/sign/poster/official/obey{
 	pixel_y = -32
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/office)
 "aNM" = (
@@ -10658,13 +10656,13 @@
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
 "aOe" = (
-/obj/effect/turf_decal/tile/dark_red/half{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/iron/dark,
-/area/security/detectives_office/private_investigators_office/investigators_room)
+/obj/effect/turf_decal/tile/red/half,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
+/turf/open/floor/plasteel/dark,
+/area/security/prison)
 "aOi" = (
 /obj/structure/cable/white{
 	icon_state = "4-8"
@@ -10833,7 +10831,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark/side{
 	dir = 4
 	},
@@ -10842,7 +10840,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/evidence_room)
 "aPx" = (
@@ -11246,7 +11244,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/grimy,
 /area/command/heads_quarters/hos)
 "aRm" = (
@@ -11467,6 +11465,7 @@
 	pixel_y = 30;
 	pixel_x = -4
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark/textured,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "aSL" = (
@@ -11680,7 +11679,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red/fourcorners,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/briefing_room)
 "aVm" = (
@@ -11863,7 +11862,7 @@
 /area/security/briefing_room)
 "aWn" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/execution/education)
 "aWo" = (
@@ -11871,7 +11870,7 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/north,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/evidence_room)
 "aWp" = (
@@ -11944,7 +11943,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "aXM" = (
@@ -12019,7 +12018,7 @@
 	pixel_y = 25;
 	req_access_txt = "2"
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/execution/education)
 "aYb" = (
@@ -12372,7 +12371,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/bot,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/office)
 "aZE" = (
@@ -12417,7 +12416,7 @@
 /area/security/briefing_room)
 "aZU" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/briefing_room)
 "ban" = (
@@ -12542,6 +12541,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "bbe" = (
@@ -12555,6 +12555,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "bbk" = (
@@ -12664,7 +12665,7 @@
 	pixel_x = 6
 	},
 /obj/effect/turf_decal/tile/red/fourcorners,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "bcm" = (
@@ -12744,7 +12745,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "bcO" = (
@@ -12752,7 +12753,6 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/red/half,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "bcP" = (
@@ -12761,7 +12761,6 @@
 	},
 /obj/machinery/light,
 /obj/effect/turf_decal/tile/red/half,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "bcQ" = (
@@ -13825,7 +13824,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "bmh" = (
@@ -14022,25 +14021,15 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/brig_cells)
-"bnH" = (
-/obj/effect/turf_decal/tile/dark_red/half{
-	dir = 1
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/iron/dark,
-/area/security/detectives_office/private_investigators_office/investigators_room)
 "bnJ" = (
 /obj/effect/turf_decal/tile/red/half{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "boe" = (
@@ -14327,7 +14316,7 @@
 /turf/closed/wall/r_wall,
 /area/ai_monitored/security/armory)
 "bpj" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "bpk" = (
@@ -14928,7 +14917,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hos)
 "brL" = (
@@ -15005,7 +14993,7 @@
 "brW" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "bse" = (
@@ -15381,7 +15369,7 @@
 /area/hallway/primary/central)
 "bsX" = (
 /obj/machinery/holopad,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "btd" = (
@@ -15394,14 +15382,14 @@
 	name = "Cell 5";
 	pixel_y = -32
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "btf" = (
 /obj/effect/turf_decal/tile/dark_red/half{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "btl" = (
@@ -15418,7 +15406,6 @@
 /obj/structure/sign/poster/official/ion_rifle{
 	pixel_y = 33
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel,
 /area/security/briefing_room)
 "btF" = (
@@ -15539,7 +15526,7 @@
 	id = "Cell 4";
 	name = "Cell 4"
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "buA" = (
@@ -15559,7 +15546,7 @@
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/evidence_room)
 "buD" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/processing)
 "buF" = (
@@ -15585,7 +15572,7 @@
 "buH" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/brig_cells)
 "buJ" = (
@@ -15594,6 +15581,7 @@
 	id = "Cell 6";
 	pixel_y = -32
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "bvs" = (
@@ -15734,7 +15722,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/airalarm/directional/west,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "bwc" = (
@@ -15763,6 +15751,7 @@
 	pixel_y = 2
 	},
 /obj/item/storage/box/deputy,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hos)
 "bwn" = (
@@ -16562,7 +16551,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "bAg" = (
@@ -16572,18 +16561,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
-"bAh" = (
-/obj/machinery/door/airlock/security{
-	name = "Interrogation";
-	req_access_txt = "2"
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/iron/dark/textured_half,
-/area/security/detectives_office/private_investigators_office)
 "bAj" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 4
@@ -16609,7 +16589,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hos)
 "bAn" = (
@@ -16911,7 +16891,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "bCq" = (
@@ -17035,7 +17015,7 @@
 /area/hallway/primary/central)
 "bDO" = (
 /obj/effect/turf_decal/tile/blue/fourcorners,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "bDR" = (
@@ -17087,13 +17067,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "bDZ" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "bEa" = (
@@ -17104,7 +17083,7 @@
 /area/security/brig)
 "bEe" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/brig_cells)
 "bEf" = (
@@ -17381,24 +17360,17 @@
 /turf/closed/wall/r_wall,
 /area/security/detectives_office/evidence_room)
 "bFK" = (
-/obj/effect/turf_decal/tile/red/half{
-	dir = 8
-	},
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/turf_decal/tile/red/half,
+/obj/machinery/airalarm/directional/south,
 /turf/open/floor/plasteel,
-/area/security/brig)
+/area/security/processing)
 "bFL" = (
 /turf/closed/wall/r_wall,
 /area/security/warden)
 "bFN" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/execution/education)
 "bFO" = (
@@ -17599,6 +17571,7 @@
 /area/security/detectives_office)
 "bHt" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hos)
 "bHu" = (
@@ -17610,7 +17583,7 @@
 "bHv" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "bHw" = (
@@ -17640,7 +17613,7 @@
 /obj/effect/turf_decal/tile/dark_red/half{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "bHC" = (
@@ -17664,7 +17637,7 @@
 "bHG" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
 "bHH" = (
@@ -17943,20 +17916,10 @@
 /obj/machinery/vending/wardrobe/det_wardrobe,
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office)
-"bJr" = (
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 8
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/plasteel/dark,
-/area/ai_monitored/security/armory)
 "bJu" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/briefing_room)
 "bJv" = (
@@ -17979,7 +17942,7 @@
 "bJA" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "bJB" = (
@@ -18205,7 +18168,6 @@
 	},
 /obj/structure/table/reinforced,
 /obj/item/flashlight/lamp,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark/textured_large,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "bKU" = (
@@ -18639,7 +18601,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/briefing_room)
 "bNp" = (
@@ -18650,7 +18612,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/red,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "bNq" = (
@@ -18666,7 +18628,6 @@
 	dir = 8;
 	light_color = "#e8eaff"
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "bNr" = (
@@ -19015,7 +18976,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "bPx" = (
@@ -19070,7 +19031,6 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/sign/poster/official/twelve_gauge{
 	pixel_x = -31
 	},
@@ -19374,13 +19334,13 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hos)
 "bRt" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/warden)
 "bRv" = (
@@ -19388,7 +19348,6 @@
 	dir = 4;
 	pixel_x = -23
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "bRx" = (
@@ -19636,7 +19595,7 @@
 	id = "Cell 3";
 	name = "Cell 3"
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "bSm" = (
@@ -20019,7 +19978,7 @@
 	id = "Cell 5";
 	name = "Cell 5 Locker"
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "bUe" = (
@@ -20631,7 +20590,7 @@
 	name = "Labor Shuttle";
 	req_access_txt = "2"
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "bVj" = (
@@ -21775,7 +21734,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
 "bXI" = (
@@ -21788,7 +21747,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "bXJ" = (
@@ -22621,7 +22580,7 @@
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
 "bZN" = (
@@ -22737,7 +22696,6 @@
 	pixel_x = -6;
 	pixel_y = 3
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark/textured_large,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "bZZ" = (
@@ -23310,7 +23268,6 @@
 /obj/item/taperecorder{
 	pixel_x = 8
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark/textured,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "cbz" = (
@@ -23337,7 +23294,7 @@
 	},
 /obj/effect/turf_decal/tile/red,
 /obj/machinery/power/apc/auto_name/east,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
 "cbA" = (
@@ -23369,7 +23326,7 @@
 /obj/structure/chair{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark/textured_large,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "cbD" = (
@@ -23378,7 +23335,6 @@
 	req_one_access_txt = "1;4"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel,
 /area/security/office)
 "cbE" = (
@@ -23403,7 +23359,7 @@
 	icon_state = "1-2"
 	},
 /obj/effect/spawner/structure/window/reinforced,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/brig/brig_medical)
 "cbM" = (
@@ -23814,7 +23770,6 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "cdo" = (
@@ -24435,7 +24390,7 @@
 	dir = 8
 	},
 /obj/effect/landmark/start/warden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "cfg" = (
@@ -24487,7 +24442,7 @@
 /obj/machinery/door/morgue,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "cfk" = (
@@ -24531,14 +24486,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/iron/dark/textured_large,
 /area/security/detectives_office/private_investigators_office/investigators_room)
-"cfp" = (
-/obj/effect/turf_decal/tile/dark_red/half,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/iron/dark,
-/area/security/detectives_office/private_investigators_office/investigators_room)
 "cfq" = (
 /obj/machinery/door/airlock/security/glass{
 	id_tag = "outerbrig";
@@ -24546,7 +24493,7 @@
 	req_access_txt = "63"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "cfr" = (
@@ -24966,7 +24913,6 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "cgQ" = (
@@ -24978,7 +24924,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
 "cgS" = (
@@ -25002,7 +24948,7 @@
 /area/security/detectives_office/evidence_room)
 "cgV" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/briefing_room)
 "cgW" = (
@@ -25027,7 +24973,7 @@
 /obj/item/key/security{
 	pixel_y = 9
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "cgY" = (
@@ -25040,7 +24986,7 @@
 	name = "Brig Control Desk";
 	req_access_txt = "3"
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/evidence_room)
 "cha" = (
@@ -25052,7 +24998,7 @@
 	req_access_txt = "2"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/detectives_office/evidence_room)
 "chc" = (
@@ -25652,7 +25598,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
 "ciF" = (
@@ -25698,7 +25644,6 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "ciG" = (
@@ -25762,6 +25707,7 @@
 /obj/effect/turf_decal/tile/red/half{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/office)
 "ciN" = (
@@ -25775,6 +25721,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/north,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/office)
 "ciO" = (
@@ -26181,7 +26128,7 @@
 "ckj" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/brig/brig_medical)
 "ckk" = (
@@ -30224,6 +30171,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark/textured,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "cwp" = (
@@ -31371,7 +31319,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/execution/education)
 "cGA" = (
@@ -50107,11 +50055,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/mixing)
-"dwp" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/firedoor,
-/turf/open/floor/plating,
-/area/security/brig_cells)
 "dwt" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/white{
@@ -51604,6 +51547,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "dzF" = (
@@ -58316,7 +58260,7 @@
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 29
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/execution/education)
 "dNo" = (
@@ -65947,7 +65891,7 @@
 	pixel_y = 3
 	},
 /obj/effect/turf_decal/tile/red/fourcorners,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/briefing_room)
 "egW" = (
@@ -66104,7 +66048,7 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "eiy" = (
@@ -66677,7 +66621,7 @@
 "eqV" = (
 /obj/effect/turf_decal/tile/dark_red/half,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "erf" = (
@@ -66799,7 +66743,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "esz" = (
@@ -67546,11 +67490,11 @@
 /area/security/prison/upper)
 "eGS" = (
 /obj/effect/turf_decal/tile/purple/fourcorners,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/flasher{
 	id = "Cell 5";
 	pixel_y = -32
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "eHc" = (
@@ -68324,7 +68268,7 @@
 	},
 /area/service/chapel/main)
 "eUq" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/carpet/red,
 /area/command/heads_quarters/hos)
 "eUs" = (
@@ -68462,7 +68406,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/camera{
 	c_tag = "Security - Interrogation2";
 	dir = 1
@@ -68672,7 +68615,7 @@
 "fac" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/brig)
 "fap" = (
@@ -69178,7 +69121,7 @@
 	light_color = "#e8eaff"
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "fhT" = (
@@ -69282,7 +69225,7 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark/side{
 	dir = 4
 	},
@@ -69480,7 +69423,7 @@
 /obj/structure/sign/poster/official/no_erp{
 	pixel_y = -1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/closed/wall/r_wall,
 /area/security/brig)
 "fng" = (
@@ -69818,7 +69761,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
 "ftk" = (
@@ -70431,6 +70374,7 @@
 /obj/item/taperecorder{
 	pixel_x = 8
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark/textured,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "fEh" = (
@@ -71112,6 +71056,7 @@
 	pixel_y = 30;
 	pixel_x = 4
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark/textured,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "fOe" = (
@@ -71368,7 +71313,7 @@
 	req_access_txt = "3"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/execution/education)
 "fSZ" = (
@@ -71847,7 +71792,7 @@
 	id = "Cell 4";
 	name = "Cell 4 Locker"
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "fZk" = (
@@ -72170,7 +72115,7 @@
 /obj/machinery/computer/security/hos{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hos)
 "geS" = (
@@ -72705,7 +72650,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "glG" = (
@@ -72971,7 +72916,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "gpE" = (
@@ -73058,7 +73003,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/office)
 "gru" = (
@@ -73194,7 +73139,7 @@
 	id = "Evidence"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/detectives_office/evidence_room)
 "gup" = (
@@ -73367,7 +73312,6 @@
 	pixel_y = -32
 	},
 /obj/item/kirbyplants/random,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hos)
 "gxq" = (
@@ -73383,7 +73327,7 @@
 /turf/open/floor/plasteel/grimy,
 /area/service/chapel/office)
 "gyj" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/briefing_room)
 "gyo" = (
@@ -73493,7 +73437,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "gAP" = (
@@ -73510,16 +73453,6 @@
 	icon_state = "wood-broken3"
 	},
 /area/service/abandoned_gambling_den)
-"gAX" = (
-/obj/effect/turf_decal/tile/red/half{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/plasteel,
-/area/security/brig)
 "gBm" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -73872,6 +73805,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/red/half,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/brig_cells)
 "gGl" = (
@@ -73935,7 +73869,6 @@
 /area/cargo/warehouse)
 "gHA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/office)
 "gHC" = (
@@ -73991,7 +73924,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/processing)
 "gIH" = (
@@ -74207,10 +74140,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
-"gLC" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/closed/wall/r_wall,
-/area/ai_monitored/security/armory)
 "gLG" = (
 /obj/structure/cable/white{
 	icon_state = "1-2"
@@ -74899,6 +74828,7 @@
 "gWq" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "gWt" = (
@@ -75021,7 +74951,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "gYU" = (
@@ -75491,7 +75421,6 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "hfQ" = (
@@ -75628,7 +75557,6 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "hiL" = (
@@ -75800,7 +75728,7 @@
 	name = "Cell 6";
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "hlF" = (
@@ -76340,14 +76268,11 @@
 /turf/open/floor/plasteel/grimy,
 /area/service/chapel/office)
 "hsG" = (
-/obj/structure/chair/comfy/black{
-	pixel_y = 2;
+/obj/effect/turf_decal/tile/red/half{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red/fourcorners,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel,
-/area/security/briefing_room)
+/area/security/processing)
 "hsL" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -76962,7 +76887,7 @@
 	id = "executionfireblast"
 	},
 /obj/effect/spawner/structure/window/reinforced,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/execution/education)
 "hDD" = (
@@ -77095,7 +77020,7 @@
 /area/solars/port/fore)
 "hFC" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "hFP" = (
@@ -77426,7 +77351,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "hIu" = (
@@ -77557,7 +77482,7 @@
 /area/commons/storage/primary)
 "hKp" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/prison)
 "hKt" = (
@@ -77917,7 +77842,7 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hos)
 "hQb" = (
@@ -78068,6 +77993,7 @@
 "hTe" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/structure/disposalpipe/segment,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "hTl" = (
@@ -78527,7 +78453,6 @@
 /area/commons/toilet/auxiliary)
 "hYq" = (
 /obj/effect/turf_decal/tile/dark_red/anticorner,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "hYy" = (
@@ -79120,7 +79045,6 @@
 /obj/effect/turf_decal/tile/red/half{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/office)
 "ijQ" = (
@@ -79575,7 +79499,7 @@
 	id = "Cell 2";
 	name = "Cell 2"
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "ipS" = (
@@ -79910,7 +79834,7 @@
 /obj/structure/disposalpipe/sorting{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
 "iui" = (
@@ -79965,7 +79889,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hos)
 "ivk" = (
@@ -80377,7 +80301,7 @@
 /area/security/prison/upper)
 "iBA" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/brig/brig_medical)
 "iBD" = (
@@ -80836,7 +80760,7 @@
 	name = "Cell 5";
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "iIs" = (
@@ -81190,11 +81114,6 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/tcommsat/computer)
-"iNI" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/firedoor,
-/turf/open/floor/plating,
-/area/security/brig)
 "iOa" = (
 /obj/item/clothing/suit/hazardvest{
 	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
@@ -81628,6 +81547,7 @@
 "iTB" = (
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "iTU" = (
@@ -81727,6 +81647,7 @@
 	req_access_txt = "63"
 	},
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/brig_cells)
 "iVS" = (
@@ -82426,7 +82347,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "jgV" = (
@@ -82653,6 +82573,7 @@
 	pixel_x = -1;
 	pixel_y = 32
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "jkP" = (
@@ -82853,6 +82774,7 @@
 /obj/effect/turf_decal/tile/red/half{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/brig_cells)
 "jpC" = (
@@ -83358,7 +83280,7 @@
 /area/service/kitchen)
 "jvU" = (
 /obj/structure/chair/office/dark,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "jwb" = (
@@ -83456,7 +83378,6 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "jxc" = (
@@ -83798,7 +83719,6 @@
 /obj/effect/turf_decal/tile/dark_red/half{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "jCz" = (
@@ -83847,7 +83767,7 @@
 /area/commons/fitness/pool)
 "jCQ" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/processing)
 "jCR" = (
@@ -84074,7 +83994,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "jFM" = (
@@ -84116,7 +84035,6 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "jGB" = (
@@ -84515,6 +84433,7 @@
 /obj/effect/turf_decal/tile/red/full,
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark/textured_large,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "jLH" = (
@@ -85480,7 +85399,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "kas" = (
@@ -86310,7 +86229,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "klB" = (
@@ -86474,14 +86393,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/white,
 /area/security/prison)
-"kof" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/structure/disposalpipe/segment,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
-/area/security/brig)
 "koj" = (
 /turf/closed/wall/r_wall,
 /area/engineering/break_room)
@@ -86889,7 +86800,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "kuP" = (
@@ -87446,7 +87357,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "kDj" = (
@@ -87544,7 +87455,7 @@
 "kFb" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "kFk" = (
@@ -88150,6 +88061,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/red/fourcorners,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/brig_cells)
 "kRu" = (
@@ -88758,7 +88670,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/neutral,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "laZ" = (
@@ -89247,7 +89159,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "llA" = (
@@ -89405,6 +89317,7 @@
 	c_tag = "Security - Evidence Storage";
 	dir = 4
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/evidence_room)
 "lnO" = (
@@ -89717,7 +89630,6 @@
 	pixel_x = -4
 	},
 /obj/effect/turf_decal/tile/red/fourcorners,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel,
 /area/security/briefing_room)
 "lti" = (
@@ -90346,7 +90258,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "lDD" = (
@@ -90522,7 +90434,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "lGZ" = (
@@ -91219,7 +91131,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark/side{
 	dir = 4
 	},
@@ -92401,7 +92313,7 @@
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/south,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "mjH" = (
@@ -92552,15 +92464,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison/cells)
-"mmP" = (
-/obj/machinery/door/airlock/security/glass{
-	name = "Security Desk";
-	req_access_txt = "63"
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/plasteel/dark,
-/area/security/brig_cells)
 "mmR" = (
 /obj/machinery/button/door{
 	id = "cargounload";
@@ -92652,7 +92555,7 @@
 	dir = 4
 	},
 /obj/structure/disposalpipe/segment,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "mnY" = (
@@ -92952,6 +92855,7 @@
 "msU" = (
 /obj/effect/turf_decal/tile/red/full,
 /obj/structure/table/reinforced,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark/textured_large,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "mti" = (
@@ -93127,7 +93031,7 @@
 "mwI" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/briefing_room)
 "mwJ" = (
@@ -93673,7 +93577,7 @@
 "mFQ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/effect/spawner/structure/window/reinforced,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/space/basic,
 /area/security/prison)
 "mFS" = (
@@ -93932,7 +93836,7 @@
 /area/engineering/transit_tube)
 "mIQ" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "mIT" = (
@@ -95026,7 +94930,6 @@
 /obj/machinery/atmospherics/pipe/simple/general/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/execution/education)
 "mXr" = (
@@ -95457,7 +95360,6 @@
 /area/engineering/atmos)
 "ndQ" = (
 /obj/structure/disposalpipe/segment,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/red/half{
 	dir = 4
 	},
@@ -95640,14 +95542,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/briefing_room)
-"ngG" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/plasteel,
-/area/security/brig_cells)
 "ngU" = (
 /obj/structure/cable/white{
 	icon_state = "4-8"
@@ -95802,6 +95696,7 @@
 /obj/machinery/door/poddoor/preopen{
 	id = "ntr"
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/service/lawoffice)
 "njZ" = (
@@ -95820,7 +95715,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/brig_cells)
 "nkA" = (
@@ -97101,7 +96996,7 @@
 /turf/open/floor/plasteel/dark,
 /area/engineering/storage/tech)
 "nEL" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
 "nEM" = (
@@ -97117,7 +97012,6 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/item/folder/red,
 /obj/item/pen,
 /turf/open/floor/plasteel/dark,
@@ -97384,7 +97278,7 @@
 "nIy" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/office)
 "nIO" = (
@@ -97997,7 +97891,7 @@
 	pixel_y = 4;
 	pixel_x = -14
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/grimy,
 /area/command/heads_quarters/hos)
 "nSy" = (
@@ -98237,7 +98131,6 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "nWP" = (
@@ -98452,7 +98345,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
 "nZT" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/office)
 "oab" = (
@@ -98514,7 +98407,6 @@
 /obj/structure/chair/office/dark{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/red/half{
 	dir = 8
 	},
@@ -98584,6 +98476,7 @@
 	pixel_y = 5
 	},
 /obj/item/pen,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
 "oco" = (
@@ -98705,7 +98598,7 @@
 /turf/open/floor/engine,
 /area/engineering/supermatter)
 "odZ" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/dark/textured_large,
 /area/security/brig)
 "oee" = (
@@ -99137,7 +99030,7 @@
 "olB" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/briefing_room)
 "omb" = (
@@ -99232,6 +99125,7 @@
 /obj/effect/turf_decal/tile/red/half{
 	dir = 1
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/brig_cells)
 "ony" = (
@@ -99445,6 +99339,7 @@
 /obj/effect/turf_decal/tile/red/half{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/brig_cells)
 "oqY" = (
@@ -100223,7 +100118,7 @@
 "oEu" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "oEv" = (
@@ -100311,7 +100206,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
 "oFV" = (
@@ -100562,7 +100457,7 @@
 /area/service/chapel/office)
 "oJz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "oJA" = (
@@ -102319,6 +102214,7 @@
 "pmB" = (
 /obj/effect/turf_decal/tile/green/fourcorners,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "pmC" = (
@@ -102609,7 +102505,7 @@
 /obj/effect/turf_decal/tile/red/half{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/processing)
 "ppV" = (
@@ -102828,6 +102724,7 @@
 /area/cargo/sorting)
 "puG" = (
 /obj/effect/spawner/structure/window/reinforced,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/brig)
 "puH" = (
@@ -103407,7 +103304,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/brig_cells)
 "pDz" = (
@@ -103520,10 +103417,6 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/engineering/main)
-"pFc" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/iron/dark/textured_large,
-/area/security/detectives_office/private_investigators_office/investigators_room)
 "pFC" = (
 /obj/structure/plasticflaps/opaque,
 /obj/effect/decal/cleanable/dirt,
@@ -103694,7 +103587,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/carpet/red,
 /area/command/heads_quarters/hos)
 "pIV" = (
@@ -104173,16 +104066,6 @@
 	},
 /turf/open/floor/plasteel/freezer,
 /area/security/prison/upper)
-"pOn" = (
-/obj/effect/turf_decal/tile/red/half{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/plasteel,
-/area/security/brig)
 "pOq" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
@@ -104419,7 +104302,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark/textured,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "pRH" = (
@@ -104456,7 +104338,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plating,
 /area/security/brig_cells)
 "pRT" = (
@@ -105047,7 +104928,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/closed/wall/r_wall,
 /area/security/brig)
 "qcj" = (
@@ -105223,7 +105104,7 @@
 /area/command/heads_quarters/cmo)
 "qfG" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/processing)
 "qgh" = (
@@ -105573,7 +105454,7 @@
 	id = "Cell 4";
 	name = "Cell 4"
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "qlX" = (
@@ -106189,7 +106070,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/dark/textured_half{
 	dir = 8
 	},
@@ -106385,7 +106265,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "qyp" = (
@@ -106618,7 +106498,6 @@
 	},
 /obj/effect/turf_decal/tile/red/half,
 /obj/machinery/light,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "qDE" = (
@@ -106666,6 +106545,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "qEo" = (
@@ -106945,7 +106825,7 @@
 /area/service/abandoned_gambling_den)
 "qJI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
 "qJW" = (
@@ -107244,7 +107124,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 6
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
 "qSQ" = (
@@ -107568,12 +107448,12 @@
 /turf/open/floor/wood,
 /area/command/blueshieldoffice)
 "qWP" = (
-/obj/effect/turf_decal/tile/dark_red/half,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
+/obj/effect/turf_decal/tile/red/half{
+	dir = 1
 	},
-/turf/open/floor/iron/dark,
-/area/security/detectives_office/private_investigators_office/investigators_room)
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
+/turf/open/floor/plasteel/dark,
+/area/security/brig_cells)
 "qWS" = (
 /obj/item/radio/intercom{
 	name = "Station Intercom";
@@ -108737,7 +108617,7 @@
 "rpM" = (
 /obj/machinery/door/airlock/hos,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hos)
 "rpO" = (
@@ -108935,7 +108815,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "rsA" = (
@@ -109509,6 +109389,7 @@
 "rAz" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "rAC" = (
@@ -109788,6 +109669,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile/red/fourcorners,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/brig_cells)
 "rGo" = (
@@ -110388,7 +110270,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "rMZ" = (
@@ -110424,7 +110306,7 @@
 /obj/effect/turf_decal/tile/red/half{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark/side{
 	dir = 4
 	},
@@ -110939,7 +110821,7 @@
 	name = "Defense"
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/processing)
 "rWm" = (
@@ -111546,7 +111428,7 @@
 /area/engineering/main)
 "sfW" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
 "sgf" = (
@@ -111592,7 +111474,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "shq" = (
@@ -111820,6 +111702,7 @@
 "skB" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/structure/disposalpipe/junction/flip,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "skS" = (
@@ -112017,7 +111900,7 @@
 /turf/open/floor/plasteel/dark,
 /area/service/library/abandoned)
 "snD" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/evidence_room)
 "snY" = (
@@ -112543,13 +112426,6 @@
 	},
 /turf/open/floor/engine/n2o,
 /area/engineering/atmos)
-"swA" = (
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/plasteel,
-/area/hallway/primary/starboard)
 "swG" = (
 /obj/structure/cable/white{
 	icon_state = "1-2"
@@ -113545,7 +113421,7 @@
 "sOn" = (
 /obj/effect/turf_decal/tile/red/half,
 /obj/machinery/light,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/briefing_room)
 "sOo" = (
@@ -113822,7 +113698,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/brig_cells)
 "sTP" = (
@@ -113873,10 +113749,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/commons/dorms)
-"sUp" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/iron/dark/textured_half,
-/area/security/detectives_office/private_investigators_office)
 "sUr" = (
 /obj/machinery/light{
 	dir = 4;
@@ -113938,13 +113810,13 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "sUT" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
 "sUW" = (
@@ -113988,7 +113860,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hos)
 "sUZ" = (
@@ -114181,7 +114052,7 @@
 /obj/structure/chair,
 /obj/effect/turf_decal/bot_red,
 /obj/effect/landmark/start/security_officer,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/briefing_room)
 "sXv" = (
@@ -114490,7 +114361,7 @@
 "taA" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "tbw" = (
@@ -114658,7 +114529,7 @@
 	pixel_y = 17
 	},
 /obj/effect/turf_decal/bot_red,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "teb" = (
@@ -115152,6 +115023,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hos)
 "tlR" = (
@@ -115160,7 +115032,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plating,
 /area/security/brig_cells)
 "tlV" = (
@@ -115188,7 +115059,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "tmi" = (
@@ -115655,7 +115526,7 @@
 	name = "Private Study Privacy Shutters"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hos)
 "tsZ" = (
@@ -115802,7 +115673,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "tuF" = (
@@ -115867,7 +115738,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 10
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "tvp" = (
@@ -116367,12 +116238,16 @@
 /turf/open/floor/plasteel/dark,
 /area/service/chapel/office)
 "tCR" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
+/obj/effect/turf_decal/tile/red/half,
+/obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red/half,
-/turf/open/floor/plasteel/dark,
-/area/security/brig_cells)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
+/turf/open/floor/plasteel,
+/area/security/brig)
 "tCX" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
@@ -116539,7 +116414,7 @@
 	name = "Private Study Privacy Shutters"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hos)
 "tHc" = (
@@ -116901,7 +116776,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hos)
 "tNe" = (
@@ -117066,7 +116940,7 @@
 "tOM" = (
 /obj/effect/turf_decal/tile/red/half,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "tOP" = (
@@ -117119,11 +116993,11 @@
 /area/engineering/storage)
 "tQa" = (
 /obj/effect/turf_decal/tile/red/fourcorners,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "tQd" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/grimy,
 /area/command/heads_quarters/hos)
 "tQh" = (
@@ -117270,7 +117144,6 @@
 "tRX" = (
 /obj/effect/turf_decal/tile/blue/fourcorners,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "tSa" = (
@@ -117786,10 +117659,16 @@
 /turf/open/floor/plasteel/dark,
 /area/service/bar)
 "tZy" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/plasteel,
-/area/security/briefing_room)
+/obj/effect/turf_decal/tile/red/half,
+/obj/structure/chair{
+	name = "Prosecution"
+	},
+/obj/effect/turf_decal/tile/dark_red/half{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
+/turf/open/floor/iron/dark,
+/area/security/detectives_office/private_investigators_office/investigators_room)
 "tZP" = (
 /obj/structure/sign/warning/securearea,
 /turf/closed/wall/r_wall,
@@ -117989,7 +117868,7 @@
 "ucr" = (
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/tile/red/fourcorners,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "ucE" = (
@@ -118103,7 +117982,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel,
 /area/security/briefing_room)
 "udU" = (
@@ -118485,7 +118363,7 @@
 /turf/open/floor/plasteel,
 /area/commons/toilet/restrooms)
 "uiS" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
 "uiV" = (
@@ -119058,11 +118936,11 @@
 	name = "Cell 6";
 	pixel_y = -32
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/camera{
 	c_tag = "Security - Brig Cells";
 	dir = 1
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "usp" = (
@@ -119301,7 +119179,7 @@
 /obj/structure/table/wood,
 /obj/machinery/computer/med_data/laptop,
 /obj/item/paper/fluff/ruins/security_arsenal,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/grimy,
 /area/command/heads_quarters/hos)
 "uxB" = (
@@ -119592,8 +119470,8 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/red/half,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/brig_cells)
 "uBS" = (
@@ -120064,7 +119942,6 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/red,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "uKi" = (
@@ -120806,10 +120683,10 @@
 /turf/open/floor/plasteel,
 /area/command/teleporter)
 "uXv" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/obj/effect/turf_decal/tile/red/half,
+/obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/plasteel,
-/area/security/brig)
+/area/security/processing)
 "uXE" = (
 /turf/open/floor/wood,
 /area/command/blueshieldoffice)
@@ -121814,7 +121691,6 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/plasteel,
 /area/security/briefing_room)
 "vqX" = (
@@ -121839,7 +121715,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/processing)
 "vrn" = (
@@ -122097,15 +121973,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/gravity_generator)
-"vvL" = (
-/obj/machinery/door/airlock/security/glass{
-	name = "Gear Room";
-	req_one_access_txt = "1;4"
-	},
-/obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/plasteel/dark,
-/area/security/office)
 "vvQ" = (
 /obj/structure/table/wood,
 /obj/machinery/light{
@@ -122807,17 +122674,6 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/cargo/storage)
-"vGQ" = (
-/obj/effect/turf_decal/tile/red/half,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/plasteel,
-/area/security/brig)
 "vHl" = (
 /obj/structure/table/wood,
 /obj/machinery/light_switch{
@@ -122887,7 +122743,7 @@
 /obj/structure/disposalpipe/junction/yjunction{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "vJj" = (
@@ -123564,7 +123420,7 @@
 /area/engineering/main)
 "vXa" = (
 /obj/effect/spawner/structure/window/reinforced,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/processing)
 "vXc" = (
@@ -123951,7 +123807,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
 "wcm" = (
@@ -124667,7 +124523,7 @@
 /area/service/electronic_marketing_den)
 "wnv" = (
 /obj/effect/turf_decal/tile/yellow/fourcorners,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "wnx" = (
@@ -124783,6 +124639,7 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/security/brig_cells)
 "wpa" = (
@@ -125093,10 +124950,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
-"wwP" = (
-/obj/structure/grille,
-/turf/open/space/basic,
-/area/space/nearstation)
 "wwX" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/cable{
@@ -125438,6 +125291,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "wAv" = (
@@ -125923,7 +125777,7 @@
 /area/cargo/office)
 "wHU" = (
 /obj/effect/landmark/event_spawn,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/iron/grimy,
 /area/command/heads_quarters/hos)
 "wIi" = (
@@ -126131,7 +125985,7 @@
 /area/service/theater/abandoned)
 "wMo" = (
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "wMq" = (
@@ -126590,7 +126444,7 @@
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "wTS" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hos)
 "wTX" = (
@@ -127040,7 +126894,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
 "xdD" = (
@@ -128445,7 +128299,6 @@
 /area/security/detectives_office)
 "xCw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/carpet/red,
 /area/security/brig_cells)
 "xCx" = (
@@ -128507,7 +128360,7 @@
 "xDJ" = (
 /obj/effect/turf_decal/tile/red/half,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel,
 /area/security/brig_cells)
 "xDZ" = (
@@ -128666,7 +128519,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hos)
 "xGZ" = (
@@ -128984,7 +128837,6 @@
 /area/science/circuit)
 "xMo" = (
 /obj/structure/disposalpipe/segment,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/closed/wall/r_wall,
 /area/command/heads_quarters/hos)
 "xMq" = (
@@ -129102,7 +128954,7 @@
 	name = "Private Study Privacy Shutters"
 	},
 /obj/machinery/door/firedoor,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plating,
 /area/command/heads_quarters/hos)
 "xOY" = (
@@ -129549,7 +129401,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
 "xVD" = (
@@ -129577,6 +129429,7 @@
 /area/cargo/warehouse)
 "xVP" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/brig_cells)
 "xVU" = (
@@ -129589,8 +129442,8 @@
 /turf/open/floor/plating,
 /area/security/prison)
 "xWr" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/tile/red/fourcorners,
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
 /turf/open/floor/plasteel/dark,
 /area/security/brig_cells)
 "xWy" = (
@@ -129832,11 +129685,19 @@
 	},
 /area/commons/fitness/pool)
 "ybM" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/structure/disposalpipe/segment,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/plasteel,
-/area/security/brig)
+/obj/effect/turf_decal/tile/red/half{
+	dir = 1
+	},
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/dark_red/half,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/white/auto,
+/turf/open/floor/iron/dark,
+/area/security/detectives_office/private_investigators_office/investigators_room)
 "ycb" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/airalarm{
@@ -178710,7 +178571,7 @@ aaa
 aaa
 cbE
 cbE
-bEe
+cbG
 cbE
 iTn
 btd
@@ -179227,7 +179088,7 @@ bDO
 bDO
 bSk
 glw
-ngG
+kCV
 hlC
 xVP
 buJ
@@ -179738,7 +179599,7 @@ aaa
 aaa
 cbE
 cbE
-cbG
+bEe
 cbE
 bmh
 uso
@@ -180263,7 +180124,7 @@ rQz
 aXR
 aXR
 aXR
-sUT
+aXR
 aXR
 aXR
 hCG
@@ -180520,7 +180381,7 @@ cbE
 bJv
 bLn
 biy
-swA
+bAj
 bAj
 bHC
 lAE
@@ -181032,7 +180893,7 @@ vrs
 cgW
 xfZ
 jQg
-dwp
+buH
 jpu
 obE
 gFY
@@ -181285,11 +181146,11 @@ buz
 glw
 kCV
 iVz
-vrs
+qWP
 kRs
-nYy
-tCR
-cbF
+xWr
+uBP
+aeI
 onx
 xWr
 uBP
@@ -181546,9 +181407,9 @@ vrs
 rGn
 ueA
 mlR
-dwp
+buH
 nOl
-xWr
+nYy
 ill
 buH
 lvt
@@ -182046,9 +181907,9 @@ xim
 cha
 buG
 cbC
-pFc
-cfp
-bnH
+cha
+bTg
+lcI
 aMp
 cbE
 cbE
@@ -182062,7 +181923,7 @@ bEe
 fxo
 cbE
 tlR
-mmP
+cbF
 pRS
 cbE
 ovW
@@ -182299,7 +182160,7 @@ qJI
 bZM
 ciE
 eqV
-bHz
+xim
 bXE
 bbt
 fEf
@@ -182313,8 +182174,8 @@ hRq
 bXF
 rsw
 bwa
-bFK
-pOn
+qgR
+bXF
 hRq
 bHx
 iwe
@@ -182555,7 +182416,7 @@ cdo
 ciP
 ciP
 ckj
-qWP
+bDV
 jCv
 eiy
 aZF
@@ -182571,20 +182432,20 @@ skB
 bmc
 hTe
 hTe
-ybM
-hTe
-kof
 hTe
 hTe
+bmc
 hTe
-kof
+hTe
+hTe
+bmc
 skB
 qEm
 mIQ
-vGQ
+oeS
 cbD
-nZT
-nZT
+pbJ
+pbJ
 pbJ
 ngm
 osW
@@ -182813,19 +182674,19 @@ pCd
 pCd
 pCd
 jkI
-jCv
+tZy
 msU
 cwh
 aSK
 jLG
-ciH
+ybM
 bHz
 oEu
 bAg
 mIQ
 gAB
 nWz
-gAX
+lmk
 uSX
 hti
 bnJ
@@ -182841,7 +182702,7 @@ mIQ
 oeS
 osW
 hZM
-nZT
+pbJ
 pbJ
 aZC
 osW
@@ -183070,13 +182931,13 @@ bZQ
 chg
 aMp
 aMq
-bHz
+xim
 bZX
 pRF
 cby
 bKR
-cfp
-bHz
+bTg
+xim
 bVm
 bVk
 mIQ
@@ -183094,7 +182955,7 @@ bRt
 bFL
 hrv
 jrz
-bDZ
+gWq
 foK
 gro
 eBW
@@ -183336,7 +183197,7 @@ hiv
 bXC
 gzY
 neO
-bDZ
+gWq
 iCy
 txB
 bRt
@@ -183352,10 +183213,10 @@ bRt
 nrV
 jrz
 gpA
-oeS
+tCR
 nIy
 ijt
-nZT
+pbJ
 pbJ
 ciL
 osW
@@ -183612,7 +183473,7 @@ brW
 jGP
 nIy
 ciM
-nZT
+pbJ
 pbJ
 myb
 osW
@@ -183846,7 +183707,7 @@ cbB
 aPN
 uhD
 jtd
-aOe
+kFk
 gkf
 lkB
 uYR
@@ -183869,7 +183730,7 @@ mIQ
 fiq
 osW
 aZD
-nZT
+pbJ
 pbJ
 bpv
 osW
@@ -184103,7 +183964,7 @@ fRM
 tsD
 tsD
 wTL
-bAh
+bXL
 fRM
 tsD
 bRo
@@ -184360,7 +184221,7 @@ bNn
 tsD
 tsD
 bZT
-sUp
+vXD
 eWb
 tsD
 bVk
@@ -184383,7 +184244,7 @@ cgV
 bZV
 osW
 nIy
-vvL
+che
 che
 nIy
 osW
@@ -184628,19 +184489,19 @@ ciF
 jGy
 cdn
 bNq
-bJr
-bJr
+cbA
+cbA
 cgP
 hfF
 bPz
 bRv
-gLC
+bLs
 btm
 aZU
 mXH
 aRj
 xBT
-gyj
+lws
 lws
 sFj
 wVa
@@ -184897,7 +184758,7 @@ mwI
 bfO
 brl
 brl
-tZy
+brl
 oOR
 sFj
 aMs
@@ -185154,7 +185015,7 @@ bJu
 oyR
 rbi
 rbi
-gyj
+lws
 aZK
 qnG
 cCW
@@ -185411,7 +185272,7 @@ aZU
 kVf
 rbi
 rbi
-gyj
+lws
 rJw
 lws
 sFj
@@ -186163,7 +186024,7 @@ bVo
 bVo
 kAW
 neO
-bDZ
+gWq
 iIe
 bLs
 rMa
@@ -186183,7 +186044,7 @@ kVf
 rbi
 rbi
 lws
-hsG
+aZK
 wqu
 azE
 olB
@@ -186697,7 +186558,7 @@ kVf
 wku
 mxl
 uaH
-gyj
+lws
 sFj
 aSL
 aUJ
@@ -187206,7 +187067,7 @@ qxP
 scd
 roy
 bkm
-bDZ
+gWq
 foK
 bRq
 euP
@@ -187214,7 +187075,7 @@ bHt
 tNb
 gyo
 wDP
-wwP
+wDP
 poc
 aaa
 aaa
@@ -187435,7 +187296,7 @@ iip
 nai
 aXS
 bbi
-bcO
+aOe
 mFQ
 qgU
 qgU
@@ -187445,7 +187306,7 @@ aaa
 vXa
 hJX
 nCC
-bZp
+bFK
 bgZ
 bvX
 mIQ
@@ -187454,7 +187315,7 @@ fSY
 aPu
 lQE
 rNm
-aLa
+rNm
 vIY
 aKZ
 btl
@@ -187467,7 +187328,7 @@ taA
 jGP
 tGM
 tlM
-aeI
+wTS
 wTS
 bwh
 wDP
@@ -187957,7 +187818,7 @@ aaa
 aaa
 aaa
 vXa
-ppS
+hsG
 buD
 buD
 bVi
@@ -188219,7 +188080,7 @@ jCQ
 xyZ
 bHw
 fUX
-uXv
+bHv
 iIe
 aKZ
 cGk
@@ -188491,7 +188352,7 @@ kmN
 uRF
 bHw
 wdB
-taA
+bDZ
 jxa
 hPD
 brm
@@ -188730,11 +188591,11 @@ aaa
 vXa
 fsM
 vqZ
-bZp
+uXv
 bgZ
-iNI
-iNI
-iNI
+fac
+fac
+fac
 aKZ
 aKZ
 bFN
