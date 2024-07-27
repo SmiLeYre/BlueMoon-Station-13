@@ -139,3 +139,14 @@
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	icon_state = "ellys_hoodie"
 	item_state = "hostrench"
+
+/obj/item/clothing/suit/bm/monolith_armor
+	name = "Granite M1"
+	desc = "The vest of the jumpsuit Granite M1 from the Monolith group, the manufacturer is unknown. "
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	icon_state = "monolith_armor"
+	item_state = "monolith_armor"
+	blood_overlay_type = "armor"
+	body_parts_covered = CHEST
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

@@ -17,3 +17,26 @@
 			DISABLE_BITFIELD(toggles, SOUND_BARK)
 			ENABLE_BITFIELD(toggles, VERB_CONSENT)
 	. = ..()
+
+/datum/preferences/save_preferences(bypass_cooldown, silent)
+	. = ..()
+	if(!istype(., /savefile))
+		return FALSE
+	WRITE_FILE(.["favorite_interactions"], favorite_interactions)
+
+/datum/preferences/load_preferences(bypass_cooldown)
+	. = ..()
+	if(!istype(., /savefile))
+		return FALSE
+	.["favorite_interactions"] >> favorite_interactions
+
+	favorite_interactions = SANITIZE_LIST(favorite_interactions)
+
+	for(var/interaction in favorite_interactions)
+		var/datum/interaction/interaction_path = ispath(interaction) ? interaction : text2path(interaction)
+		if(!interaction_path)
+			LAZYREMOVE(favorite_interactions, interaction)
+			continue
+		if(!initial(interaction_path.description))
+			LAZYREMOVE(favorite_interactions, interaction)
+			continue

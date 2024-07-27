@@ -1,3 +1,6 @@
+/datum/preferences
+	var/list/favorite_interactions
+
 //SANDSTORM EDIT - extra language
 /datum/preferences/proc/SetLanguage(mob/user)
 	var/list/dat = list()

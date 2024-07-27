@@ -85,6 +85,54 @@
 /obj/item/gun/ballistic/automatic/wt550/gewehr550/update_icon_state()
 	icon_state = "gewehr550[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
 
+/obj/item/modkit/a46
+	name = "A46 Kit"
+	desc = "A modkit for making a WT-550 Gun into a A46 Gun."
+	product = /obj/item/gun/ballistic/automatic/wt550/a46
+	fromitem = list(/obj/item/gun/ballistic/automatic/wt550)
+
+/obj/item/gun/ballistic/automatic/wt550/a46
+	name = "\improper A46-Cord"
+	desc = "Сбалансированная и простая в использовании автоматическая винтовка, сделанная на базе АЕК-971 и хоть придумана она была давно, но не получила такую популярность как её аналог AK-12."
+	icon = 'modular_bluemoon/fluffs/icons/obj/a46.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "a46"
+	item_state = "a46"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/a46shot1.ogg'
+	pickup_sound = "modular_bluemoon/fluffs/sound/weapon/a46grab.ogg"
+	can_suppress = FALSE
+	can_bayonet = TRUE
+	knife_x_offset = 42
+	knife_y_offset = 12
+
+/obj/item/gun/ballistic/automatic/wt550/a46/update_icon_state()
+	icon_state = "a46[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
+
+/obj/item/modkit/ots18
+	name = "OTs-18 Kit"
+	desc = "A modkit for making a WT-550 Gun into a OTs-18 Groza Gun."
+	product = /obj/item/gun/ballistic/automatic/wt550/ots18
+	fromitem = list(/obj/item/gun/ballistic/automatic/wt550)
+
+/obj/item/gun/ballistic/automatic/wt550/ots18
+	name = "\improper OTs-18 Groza"
+	desc = "Компактный штурмовой стрелково-гранатометный комплекс, сделанный на базе калашникова и переделанный под калибр 4.6x30."
+	icon = 'modular_bluemoon/fluffs/icons/obj/groza.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "groza"
+	item_state = "groza"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/groza-shot1.ogg'
+	pickup_sound = "modular_bluemoon/fluffs/sound/weapon/groza-grab.ogg"
+	can_suppress = FALSE
+	can_bayonet = TRUE
+	knife_x_offset = 40
+	knife_y_offset = 17
+
+/obj/item/gun/ballistic/automatic/wt550/ots18/update_icon_state()
+	icon_state = "groza[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
+
 /obj/item/modkit/m240_kit
 	name = "M240 Kit"
 	desc = "A modkit for making a Flamethrower into a M240."
@@ -257,6 +305,23 @@
 	new /obj/item/modkit/malorian_mag_kit(src)
 	new /obj/item/modkit/malorian_mag_kit(src)
 
+/////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/gun/ballistic/revolver/r45l/rt46
+	name = "\improper RT-46 The Tempest"
+	desc = "The Tempest belongs to the museum as a benchmark of Soviet design. Is it beautiful to look at? No. Comfortable to use? No. Safe? No. But effective? Damn effective."
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	icon_state = "rt46"
+	item_state = "rt46"
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+
+/obj/item/modkit/rt46
+	name = "RT-46 The Tempest Kit"
+	desc = "A modkit for making a Revolver into a RT-46."
+	product = /obj/item/gun/ballistic/revolver/r45l/rt46
+	fromitem = list (/obj/item/gun/ballistic/revolver/r45l)
+
 //////////////////// AM4 уже есть в лодауте донатеров. Это лишь его рескин.
 
 /obj/item/gun/ballistic/automatic/AM4B_pchelik
@@ -315,6 +380,49 @@
 
 /obj/item/melee/baton/stunblade/get_worn_belt_overlay(icon_file)
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "-stunblade")
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/modkit/stunspear_kit
+	name = "Stunspear Kit"
+	desc = "A modkit for making an stunbaton into a stunspear."
+	product = /obj/item/melee/baton/stunspear
+	fromitem = list(/obj/item/melee/baton, /obj/item/melee/baton/loaded)
+
+/obj/item/melee/baton/stunspear
+	name = "One-handed stun spear"
+	desc = "A standard non-lethal spear used by Catcrin's law enforcement agencies."
+	item_state = "stunspear"
+	icon_state = "stunspear"
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+
+/obj/item/melee/baton/stunspear/switch_status(new_status = FALSE, silent = FALSE)
+	if(turned_on != new_status)
+		turned_on = new_status
+		if(!silent)
+			playsound(loc, 'modular_bluemoon/fluffs/sound/weapon/stunspear.ogg', 75, 1, -1)
+		if(turned_on)
+			START_PROCESSING(SSobj, src)
+		else
+			STOP_PROCESSING(SSobj, src)
+	update_icon()
+
+/obj/item/melee/baton/stunspear/update_icon_state()
+	if(turned_on)
+		icon_state = "stunspear_active"
+		item_state = "stunspear_active"
+	else if(!cell)
+		icon_state = "stunspear_nocell"
+		item_state = "stunspear"
+	else
+		icon_state = "stunspear"
+		item_state = "stunspear"
+
+/obj/item/melee/baton/stunspear/get_worn_belt_overlay(icon_file)
+	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "-stunspear")
 
 
 ////////////////////////////////////////////////////////////////////////////////////////
@@ -469,6 +577,6 @@
 
 /obj/item/modkit/karabiner_kit
 	name = "Karabiner-M13 Kit"
-	desc = "A modkit for making a Miniature Energy Gun into Karabiner-M13."
+	desc = "A modkit for making a MultiPhase Energy Gun into Karabiner-M13."
 	product = /obj/item/gun/energy/e_gun/hos/karabiner_m13
 	fromitem = list(/obj/item/gun/energy/e_gun/hos)

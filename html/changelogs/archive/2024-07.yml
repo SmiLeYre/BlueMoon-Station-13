@@ -13,3 +13,10 @@
 2024-07-05:
   SandPoot:
   - bugfix: Fixed runtimes on hugbot.
+2024-07-19:
+  SandPoot:
+  - rscadd: Added favorite interactions to the interaction menu, those persist between
+      rounds and between characters.
+2024-07-22:
+  Fabian272:
+  - tweak: Fixed digilegs on polychromic workout shorts.

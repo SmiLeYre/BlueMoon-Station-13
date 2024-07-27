@@ -564,6 +564,7 @@ GLOBAL_LIST_EMPTY(species_datums)
 
 /proc/set_criminal_status(mob/living/user, datum/data/record/target_records , criminal_status, comment, user_rank, list/authcard_access = list(), user_name)
 	var/status = criminal_status
+	var/old_status = target_records.fields["criminal"] // BLUEMOON ADD - логгирование
 	var/their_name = target_records.fields["name"]
 	var/their_rank = target_records.fields["rank"]
 	switch(criminal_status)
@@ -597,5 +598,13 @@ GLOBAL_LIST_EMPTY(species_datums)
 	target_records.fields["criminal"] = status
 	log_admin("[key_name_admin(user)] set secstatus of [their_rank] [their_name] to [status], comment: [comment]")
 	target_records.fields["comments"] += "Set to [status] by [user_name || user.name] ([user_rank]) on [GLOB.current_date_string] [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)], comment: [comment]"
+	// BLUEMOON EDIT - логгирование
+	GLOB.data_core.append_sec_logs(
+		target_records.fields["id"],
+		"%%GEN_AUTH%% изменил статус с [old_status] на [target_records.fields["criminal"]]. Причина: [comment]",
+		user_name || user.name,
+		user_rank
+	)
+	// BLUEMOON EDIT END
 	update_all_mob_security_hud()
 	return TRUE

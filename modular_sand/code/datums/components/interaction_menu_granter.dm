@@ -415,6 +415,9 @@
 
 	var/datum/preferences/prefs = self?.client.prefs
 	if(prefs)
+	//Let's get their favorites!
+		.["favorite_interactions"] = SANITIZE_LIST(prefs.favorite_interactions)
+
 	//Getting char prefs
 		.["erp_pref"] = 			pref_to_num(prefs.erppref)
 		.["noncon_pref"] = 			pref_to_num(prefs.nonconpref)
@@ -513,6 +516,17 @@
 			var/datum/interaction/o = SSinteractions.interactions[params["interaction"]]
 			if(o)
 				o.do_action(parent_mob, target)
+				return TRUE
+			return FALSE
+		if("favorite")
+			var/datum/interaction/interaction = SSinteractions.interactions[params["interaction"]]
+			if(interaction)
+				var/datum/preferences/prefs = parent_mob.client.prefs
+				if(interaction.type in prefs.favorite_interactions)
+					LAZYREMOVE(prefs.favorite_interactions, interaction.type)
+				else
+					LAZYADD(prefs.favorite_interactions, interaction.type)
+				prefs.save_preferences()
 				return TRUE
 			return FALSE
 		if("genital")

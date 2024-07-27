@@ -76,6 +76,9 @@
 	var/pre_noise = FALSE
 	var/post_noise = FALSE
 
+	var/pre_noise_sound = 'sound/effects/spray.ogg' // BLUEMOON EDIT || MODULARIZE
+	var/post_noise_sound = 'sound/effects/spray.ogg' // BLUEMOON EDIT || MODULARIZE
+
 	var/datum/team/gang/gang //For marking territory.
 	var/gang_tag_delay = 30 //this is the delay for gang mode tag applications on anything that gang = true on.
 
@@ -420,8 +423,8 @@
 		to_chat(user, "<span class='notice'>You start drawing a [temp] on the [target.name]...</span>")
 
 	if(pre_noise)
-		audible_message("<span class='notice'>You hear spraying.</span>")
-		playsound(user.loc, 'sound/effects/spray.ogg', 5, 1, 5)
+		audible_message("<span class='notice'>You can hear something.</span>") // BLUEMOON EDIT
+		playsound(user.loc, pre_noise_sound, 5, 1, 5) // BLUEMOON EDIT || MODULARIZE
 
 	var/wait_time = 50
 	if(paint_mode == PAINT_LARGE_HORIZONTAL)
@@ -483,8 +486,8 @@
 		SStgui.update_uis(src)
 
 	if(post_noise)
-		audible_message("<span class='notice'>You hear spraying.</span>")
-		playsound(user.loc, 'sound/effects/spray.ogg', 5, 1, 5)
+		audible_message("<span class='notice'>You can hear something.</span>") // BLUEMOON EDIT
+		playsound(user.loc, post_noise_sound, 5, 1, 5) // BLUEMOON EDIT || MODULARIZE
 
 	var/fraction = min(1, . / reagents.maximum_volume)
 	if(affected_turfs.len)
