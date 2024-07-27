@@ -23590,7 +23590,7 @@
 /area/security/office)
 "cbE" = (
 /turf/closed/wall/r_wall,
-/area/security/brig_briefing)
+/area/security/brig_cells)
 "cbF" = (
 /obj/machinery/door/airlock/security/glass{
 	name = "Security Desk";
@@ -29505,6 +29505,15 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/maintenance/starboard)
+"ctk" = (
+/obj/structure/chair,
+/obj/effect/turf_decal/bot_red,
+/obj/effect/landmark/start/security_officer,
+/obj/structure/cable/white{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/security/brig_briefing)
 "ctm" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
@@ -76525,6 +76534,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/closed/wall,
 /area/service/library)
+"hpj" = (
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/cable/white{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel,
+/area/security/brig_briefing)
 "hpI" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/landmark/event_spawn,
@@ -78421,15 +78438,6 @@
 /obj/item/canvas/twentythreeXtwentythree,
 /turf/open/floor/plasteel/grimy,
 /area/service/bar/atrium)
-"hQk" = (
-/obj/structure/chair{
-	dir = 1
-	},
-/obj/machinery/light,
-/obj/effect/turf_decal/bot,
-/obj/effect/landmark/start/assistant,
-/turf/open/floor/plasteel,
-/area/hallway/secondary/exit/departure_lounge)
 "hQA" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -83102,6 +83110,15 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/engineering/storage)
+"jjv" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/machinery/light,
+/obj/effect/turf_decal/bot,
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/plasteel,
+/area/hallway/secondary/exit/departure_lounge)
 "jjw" = (
 /obj/structure/cable/white,
 /obj/structure/cable/white{
@@ -86762,7 +86779,7 @@
 "kjW" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/closed/wall/r_wall,
-/area/security/brig_cells)
+/area/security/brig_briefing)
 "kjZ" = (
 /obj/structure/cable/white{
 	icon_state = "4-8"
@@ -88167,7 +88184,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel,
-/area/security/brig_briefing)
+/area/security/brig_cells)
 "kFk" = (
 /obj/effect/turf_decal/tile/dark_red/half{
 	dir = 8
@@ -98858,6 +98875,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
+"nTY" = (
+/obj/structure/chair/wood,
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/plasteel{
+	dir = 8;
+	icon_state = "chapel"
+	},
+/area/service/chapel/main)
 "nUc" = (
 /obj/structure/sign/directions/command{
 	dir = 1
@@ -103301,7 +103326,7 @@
 /area/command/heads_quarters/hop)
 "poc" = (
 /turf/closed/wall/r_wall,
-/area/security/brig_cells)
+/area/security/brig_briefing)
 "por" = (
 /obj/effect/landmark/event_spawn,
 /obj/effect/turf_decal/tile/neutral{
@@ -107774,14 +107799,6 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel,
 /area/engineering/gravity_generator)
-"qHP" = (
-/obj/structure/chair/wood,
-/obj/effect/landmark/start/assistant,
-/turf/open/floor/plasteel{
-	dir = 8;
-	icon_state = "chapel"
-	},
-/area/service/chapel/main)
 "qIf" = (
 /obj/structure/table/wood,
 /obj/machinery/computer/library/checkout,
@@ -108401,14 +108418,6 @@
 	name = "Cell 1 Locker"
 	},
 /turf/open/floor/carpet/red,
-/area/security/brig_cells)
-"qWc" = (
-/obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/cable/white{
-	icon_state = "4-8"
-	},
-/turf/open/floor/plasteel,
 /area/security/brig_cells)
 "qWl" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
@@ -115163,7 +115172,6 @@
 "sXg" = (
 /obj/structure/chair,
 /obj/effect/turf_decal/bot_red,
-/obj/effect/landmark/start/security_officer,
 /obj/structure/cable/white{
 	icon_state = "1-2"
 	},
@@ -121572,6 +121580,11 @@
 /obj/item/clipboard,
 /turf/open/floor/wood,
 /area/command/blueshieldoffice)
+"uRT" = (
+/obj/effect/turf_decal/delivery,
+/obj/effect/landmark/start/assistant,
+/turf/open/floor/plasteel,
+/area/hallway/primary/fore)
 "uSd" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -122659,6 +122672,10 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/service/lawoffice)
+"vlF" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/closed/wall/r_wall,
+/area/security/brig_cells)
 "vlI" = (
 /obj/machinery/door/airlock/security/glass{
 	id_tag = "outerbrig";
@@ -128217,11 +128234,6 @@
 	icon_state = "chapel"
 	},
 /area/service/chapel/main)
-"xda" = (
-/obj/effect/turf_decal/delivery,
-/obj/effect/landmark/start/assistant,
-/turf/open/floor/plasteel,
-/area/hallway/primary/fore)
 "xdi" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
@@ -129614,6 +129626,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 1
 	},
+/obj/effect/landmark/start/security_officer,
 /turf/open/floor/plasteel,
 /area/security/brig_briefing)
 "xCj" = (
@@ -129925,10 +129938,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
-"xIf" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/closed/wall/r_wall,
-/area/security/brig_briefing)
 "xIj" = (
 /obj/structure/table,
 /obj/item/toy/cards/deck,
@@ -166170,7 +166179,7 @@ hpU
 gbQ
 qpx
 xcZ
-qHP
+nTY
 oVC
 xAL
 kAP
@@ -169509,7 +169518,7 @@ dUx
 dUx
 dWa
 dUx
-hQk
+jjv
 dYF
 dZo
 dZZ
@@ -173521,7 +173530,7 @@ ucp
 wkm
 eqC
 fcS
-xda
+uRT
 bfo
 bgC
 bib
@@ -178927,14 +178936,14 @@ wmt
 wmt
 wmt
 wmt
-poc
+cbE
 bFK
-poc
-poc
+cbE
+cbE
 mmP
 mmP
-poc
-poc
+cbE
+cbE
 bFK
 bHr
 tup
@@ -179184,7 +179193,7 @@ wmt
 wmt
 wmt
 wmt
-poc
+cbE
 fZg
 fmn
 mmP
@@ -179698,7 +179707,7 @@ wmt
 wmt
 wmt
 wmt
-poc
+cbE
 knF
 geo
 aOe
@@ -179955,15 +179964,15 @@ wmt
 wmt
 wmt
 wmt
-poc
-poc
+cbE
+cbE
 cbG
-poc
+cbE
 iTn
 btd
-poc
+cbE
 woP
-poc
+cbE
 jAM
 naJ
 wyx
@@ -180212,7 +180221,7 @@ wmt
 wmt
 wmt
 wmt
-poc
+cbE
 jeQ
 tRX
 nkb
@@ -180726,7 +180735,7 @@ wmt
 wmt
 wmt
 wmt
-poc
+cbE
 ffK
 iTB
 aOe
@@ -180983,16 +180992,16 @@ wmt
 wmt
 wmt
 wmt
-poc
-poc
+cbE
+cbE
 cbG
-poc
+cbE
 bmh
 uso
-poc
+cbE
 mmP
 mmP
-poc
+cbE
 bLo
 ock
 ttg
@@ -181240,15 +181249,15 @@ wmt
 wmt
 wmt
 wmt
-poc
+cbE
 fDl
 uTh
 nkb
 uQF
 wMo
 cfq
-qWc
-qWc
+kFb
+kFb
 cfq
 bHG
 bHG
@@ -181497,7 +181506,7 @@ cFr
 cFr
 cFr
 cFr
-poc
+cbE
 vbe
 bdB
 ipp
@@ -181754,16 +181763,16 @@ lnJ
 rSi
 nSD
 jvb
-poc
+cbE
 naI
 pmB
 bnG
 fHM
 mjk
-poc
+cbE
 dwp
 dwp
-poc
+cbE
 bJv
 bLn
 biy
@@ -182011,22 +182020,22 @@ snD
 uTc
 gSq
 tWj
-poc
-poc
+cbE
+cbE
 cbG
-poc
+cbE
 ocY
 lGK
-poc
+cbE
 euH
 lUd
-poc
-poc
-poc
+cbE
+cbE
+cbE
 mmP
 nEM
 mmP
-poc
+cbE
 mrX
 itT
 hBk
@@ -182268,7 +182277,7 @@ eMA
 cgU
 buB
 jvb
-poc
+cbE
 qVY
 xCw
 nkb
@@ -182283,7 +182292,7 @@ mmP
 jpu
 obE
 gFY
-poc
+cbE
 spF
 qce
 mSS
@@ -182525,7 +182534,7 @@ chb
 cFr
 bFG
 cFr
-poc
+cbE
 inI
 afO
 buz
@@ -183042,15 +183051,15 @@ lcI
 aMp
 wcm
 bXh
-kjW
+vlF
 qqy
 tmh
-poc
+cbE
 fAF
 oqS
 myP
 juT
-poc
+cbE
 mTV
 ndQ
 vay
@@ -183297,21 +183306,21 @@ cha
 bTg
 lcI
 aMp
-poc
-poc
-poc
+cbE
+cbE
+cbE
 vlI
 hIr
-poc
-poc
+cbE
+cbE
 pDy
 cbG
 fxo
-poc
+cbE
 tlR
 cbF
 pRS
-poc
+cbE
 ovW
 fhR
 rQf
@@ -185891,7 +185900,7 @@ lws
 lws
 sFj
 wVa
-cbE
+poc
 aad
 wmt
 wmt
@@ -186140,7 +186149,7 @@ bwd
 bFO
 bpg
 qEH
-kFb
+hpj
 bfO
 brl
 brl
@@ -186148,7 +186157,7 @@ brl
 oOR
 sFj
 aMs
-cbE
+poc
 aad
 aad
 ajr
@@ -186914,7 +186923,7 @@ gBG
 mbb
 bNo
 sXg
-sXg
+ctk
 gyj
 egV
 aUU
@@ -187690,7 +187699,7 @@ cfe
 vqQ
 sFj
 aWm
-cbE
+poc
 wmt
 wmt
 wmt
@@ -187947,7 +187956,7 @@ uaH
 lws
 sFj
 aSL
-cbE
+poc
 wmt
 wmt
 wmt
@@ -188191,10 +188200,10 @@ aZG
 gXF
 aKZ
 tYS
-cbE
+poc
 xoL
 flB
-cbE
+poc
 xJm
 cgV
 bZV
@@ -188204,7 +188213,7 @@ bnH
 rpM
 bnH
 wDP
-cbE
+poc
 qgU
 qgU
 qgU
@@ -188453,7 +188462,7 @@ qxP
 scd
 pFp
 bkm
-kFb
+hpj
 bfO
 bRq
 euP
@@ -188705,10 +188714,10 @@ aLa
 vIY
 aKZ
 btl
-cbE
+poc
 kmN
 uRF
-xIf
+kjW
 qTo
 bJu
 oyR
@@ -188961,11 +188970,11 @@ aWn
 hDB
 mXm
 aKZ
-cbE
-cbE
-cbE
-cbE
-cbE
+poc
+poc
+poc
+poc
+poc
 agv
 aZU
 umu
@@ -189219,10 +189228,10 @@ lqb
 gjQ
 aKZ
 biE
-cbE
+poc
 lih
 flB
-cbE
+poc
 gBG
 brW
 vLA
@@ -189733,10 +189742,10 @@ bTj
 vhM
 aKZ
 btl
-cbE
+poc
 kmN
 uRF
-xIf
+kjW
 wdB
 pcV
 jxa
@@ -189989,14 +189998,14 @@ bFN
 bFN
 aKZ
 aKZ
-cbE
-cbE
-cbE
-cbE
-cbE
-cbE
+poc
+poc
+poc
+poc
+poc
+poc
 qAI
-cbE
+poc
 wDP
 sUX
 qgL
@@ -190251,9 +190260,9 @@ wmt
 wmt
 wmt
 wmt
-cbE
+poc
 cgS
-cbE
+poc
 wDP
 iuR
 xGX
@@ -190508,9 +190517,9 @@ wmt
 wmt
 wmt
 wmt
-cbE
+poc
 ngg
-cbE
+poc
 wDP
 bNj
 bAm
