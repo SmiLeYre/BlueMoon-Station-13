@@ -125710,7 +125710,6 @@
 /area/hallway/secondary/entry)
 "wmt" = (
 /turf/open/space/basic,
-/area/space,
 /area/space)
 "wmz" = (
 /obj/structure/sign/nanotrasen{
