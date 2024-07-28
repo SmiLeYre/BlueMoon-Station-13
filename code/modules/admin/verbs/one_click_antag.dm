@@ -514,10 +514,10 @@
 			var/mob/living/carbon/human/candidate1
 			var/exp0
 			var/exp1
-			for (var/i in 0 to sorted_candidates.len)
+			for (var/i in 0 to sorted_candidates.len - 1)
 				candidate0 = sorted_candidates[i]
 				exp0 = candidate0.client.prefs.exp[EXP_TYPE_ANTAG] * 10 + candidate0.client.prefs.exp[EXP_TYPE_SECURITY]
-				for (var/j in i to sorted_candidates.len)
+				for (var/j in i to sorted_candidates.len - 1)
 					candidate1 = sorted_candidates[j]
 					exp1 = candidate1.client.prefs.exp[EXP_TYPE_ANTAG] * 10 + candidate1.client.prefs.exp[EXP_TYPE_SECURITY]
 					if (exp0 > exp1)
