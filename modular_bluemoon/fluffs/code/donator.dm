@@ -153,7 +153,7 @@
 	name = "Atam"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/toy/crayon/atam
-	ckeywhitelist = list("FoxedHuman")
+	ckeywhitelist = list("foxedhuman")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/Friskis_Mask

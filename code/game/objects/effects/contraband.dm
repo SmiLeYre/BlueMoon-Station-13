@@ -126,11 +126,21 @@
 	forceMove(P)
 	return P
 
+// BLUEMOON EDIT START - проверка, можно ли повесить постер, зависящая от самого постера. Для пропаганды InteQ
+/obj/item/poster/proc/poster_place_check(mob/user, turf/closed/wall)
+	return TRUE
+// BLUEMOON EDIT END
+
 //separated to reduce code duplication. Moved here for ease of reference and to unclutter r_wall/attackby()
 /turf/closed/wall/proc/place_poster(obj/item/poster/P, mob/user)
 	if(!P.poster_structure)
 		to_chat(user, "<span class='warning'>[P] has no poster... inside it? Inform a coder!</span>")
 		return
+
+	// BLUEMOON EDIT START - проверка, можно ли повесить постер, зависящая от самого постера. Для пропаганды InteQ
+	if(!P.poster_place_check(user, src))
+		return
+	// BLUEMOON EDIT END
 
 	// Deny placing posters on currently-diagonal walls, although the wall may change in the future.
 	if (smooth & SMOOTH_DIAGONAL)

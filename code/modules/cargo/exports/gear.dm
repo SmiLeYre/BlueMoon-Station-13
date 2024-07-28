@@ -1,6 +1,6 @@
 /datum/export/gear
 	include_subtypes = FALSE
-	k_elasticity = 0 //We always want clothing/gear
+	k_elasticity = 1/100 //BLUEMOON CHANGE
 
 //blanket
 /datum/export/gear/hat
