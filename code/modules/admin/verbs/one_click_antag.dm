@@ -472,7 +472,6 @@
 
 		var/list/mob/candidates = pollGhostCandidates("Do you wish to be considered for [ertemplate.polldesc]?", "Deathsquad", null)
 		var/teamSpawned = FALSE
-
 		if(candidates.len > 0)
 			//Pick the (un)lucky players
 			var/numagents = min(ertemplate.teamsize,candidates.len)
@@ -514,17 +513,17 @@
 			var/mob/living/carbon/human/candidate1
 			var/exp0
 			var/exp1
-			for (var/i in 0 to sorted_candidates.len - 1)
+			for (var/i = 1, i <= sorted_candidates.len, i++)
 				candidate0 = sorted_candidates[i]
 				exp0 = candidate0.client.prefs.exp[EXP_TYPE_ANTAG] * 10 + candidate0.client.prefs.exp[EXP_TYPE_SECURITY]
-				for (var/j in i to sorted_candidates.len - 1)
+				for (var/j = i, j <= sorted_candidates.len, j++)
 					candidate1 = sorted_candidates[j]
 					exp1 = candidate1.client.prefs.exp[EXP_TYPE_ANTAG] * 10 + candidate1.client.prefs.exp[EXP_TYPE_SECURITY]
 					if (exp0 > exp1)
 						sorted_candidates[i] = candidate1
 						sorted_candidates[j] = candidate0
 
-			var/candidate_id = 0
+			var/candidate_id = 1
 			while(numagents && candidates.len)
 				if (numagents > spawnpoints.len)
 					numagents--
