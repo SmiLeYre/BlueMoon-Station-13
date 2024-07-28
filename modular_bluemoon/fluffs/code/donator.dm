@@ -568,13 +568,6 @@
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "leony24", "stgs", "lonofera", "z67", "oni3288", "allazarius", "devildeadspace", "enigma418")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
-/datum/gear/donator/bm/stunspear
-	name = "Stunspear Kit"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/modkit/stunspear_kit
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
 /datum/gear/donator/bm/harness
 	name = "Harness Armor Modification Kit"
 	slot = ITEM_SLOT_BACKPACK
@@ -736,27 +729,6 @@
 	ckeywhitelist = list("oni3288")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
-/datum/gear/donator/bm/gewehr550_kit
-	name = "Gewehr-550 Kit"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/modkit/gewehr550
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
-/datum/gear/donator/bm/hwal2572_kit
-	name = "H-Wal-2572 Kit"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/modkit/hwal2572
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
-/datum/gear/donator/bm/karabiner_kit
-	name = "Karabiner-M13 Kit"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/modkit/karabiner_kit
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
 /datum/gear/donator/bm/rt46
 	name = "RT-46 The Tempest Kit"
 	slot = ITEM_SLOT_BACKPACK
@@ -835,3 +807,9 @@
     ckeywhitelist = list("d0nald")
     subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/catcrin_kit
+	name = "Catcrin kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/storage/box/catcrin_kit
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

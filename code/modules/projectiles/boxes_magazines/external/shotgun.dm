@@ -39,3 +39,16 @@
 	name = "shotgun magazine (12g scatter laser shot slugs)"
 	icon_state = "m12gb"
 	ammo_type = /obj/item/ammo_casing/shotgun/laserslug
+
+/obj/item/ammo_box/magazine/m12g/frontline
+	name = "shotgun magazine for CS-Frotline-2534"
+	desc = "A magazine for 12g."
+	icon_state = "cs2534"
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	ammo_type = /obj/item/ammo_casing/shotgun/buckshot
+	caliber = "shotgun"
+	max_ammo = 7
+
+/obj/item/ammo_box/magazine/m12g/frontline/update_icon()
+	..()
+	icon_state = "[initial(icon_state)]-[CEILING(ammo_count(0)/7, 1)*7]"

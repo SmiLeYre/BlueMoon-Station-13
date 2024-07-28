@@ -294,3 +294,11 @@
 					/obj/item/ammo_box/a543/lethal,
 					/obj/item/ammo_box/a543/lethal)
 	crate_name = ".5x43mm ammunition crate"
+
+/datum/design/frontline
+	name = "Magazine for Frontline shotgun"
+	id = "g12"
+	build_type = AUTOLATHE | NO_PUBLIC_LATHE
+	materials = list(/datum/material/iron = 28000)
+	build_path = /obj/item/ammo_box/magazine/m12g/frontline
+	category = list("hacked", "Security")

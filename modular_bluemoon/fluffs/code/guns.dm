@@ -580,3 +580,69 @@
 	desc = "A modkit for making a MultiPhase Energy Gun into Karabiner-M13."
 	product = /obj/item/gun/energy/e_gun/hos/karabiner_m13
 	fromitem = list(/obj/item/gun/energy/e_gun/hos)
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/modkit/frontline
+	name = " CS-Frontline-2534 Kit"
+	desc = "A modkit for making a combat shotgun into a CS-Frontline-2534."
+	product = /obj/item/gun/ballistic/automatic/shotgun/bulldog/frontline
+	fromitem = list(/obj/item/gun/ballistic/shotgun/automatic/combat)
+
+/obj/item/gun/ballistic/automatic/shotgun/bulldog/frontline
+	name = "CS-Frontline-2534"
+	desc = "A standard assault automatic shotgun with a 7-shot magazine used by the Catcrin Empire army"
+	icon = 'modular_bluemoon/fluffs/icons/obj/csfrontline.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "csfrontline"
+	item_state = "csfrontline"
+	fire_sound = "modular_bluemoon/fluffs/sound/weapon/frontlineshot.ogg"
+	fire_delay = 5
+	mag_type = /obj/item/ammo_box/magazine/m12g/frontline
+	w_class = WEIGHT_CLASS_NORMAL
+	var/stock = FALSE
+	var/extend_sound = 'sound/weapons/batonextend.ogg'
+	pin = /obj/item/firing_pin
+
+/obj/item/gun/ballistic/automatic/shotgun/bulldog/frontline/update_icon_state()
+	icon_state = "csfrontline[stock ? "" : "c"]-[magazine ? "[get_ammo(FALSE)]" : "nomag"]"
+	item_state = "csfrontline[stock ? "" : "c"]-[magazine ? "[get_ammo(FALSE)]" : "nomag"]"
+
+/obj/item/gun/ballistic/automatic/shotgun/bulldog/frontline/AltClick(mob/living/user)
+	if(!istype(user) || !user.canUseTopic(src, BE_CLOSE, ismonkey(user)) || item_flags & IN_STORAGE)
+		return
+	toggle_stock(user)
+	. = ..()
+
+/obj/item/gun/ballistic/automatic/shotgun/bulldog/frontline/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>Alt-click to toggle the stock.</span>"
+
+/obj/item/gun/ballistic/automatic/shotgun/bulldog/frontline/proc/toggle_stock(mob/living/user)
+	stock = !stock
+	if(stock)
+		w_class = WEIGHT_CLASS_HUGE
+		to_chat(user, "You unfold the stock.")
+		recoil = 1
+		spread = 0
+	else
+		w_class = WEIGHT_CLASS_NORMAL
+		to_chat(user, "You fold the stock.")
+		recoil = 5
+		spread = 2
+	playsound(src.loc, extend_sound, 50, 1)
+	update_icon()
+
+/obj/item/gun/ballistic/automatic/shotgun/bulldog/frontline/afterattack(atom/target, mob/living/user, flag, params)
+	if(!stock)
+		shoot_with_empty_chamber(user)
+		to_chat(user, "<span class='warning'>[src] won't fire with a folded stock!</span>")
+	else
+		. = ..()
+		update_icon()
+
+/obj/item/gun/ballistic/automatic/shotgun/bulldog/frontline/update_overlays()
+	. = ..()
+	icon_state = "csfrontline[stock ? "" : "c"]-[magazine ? "[get_ammo(FALSE)]" : "nomag"]"
+	item_state = "csfrontline[stock ? "" : "c"]-[magazine ? "[get_ammo(FALSE)]" : "nomag"]"
