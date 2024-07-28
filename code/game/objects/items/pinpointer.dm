@@ -181,7 +181,7 @@
 	desc = "A handheld tracking device that locks onto certain signals. Ignores suit sensors, but is much less accurate."
 	icon_state = "pinpointer_centcom"
 	item_state = "pinpointer_black"
-	minimum_range = 15
+	minimum_range = 12
 	ignore_suit_sensor_level = TRUE
 
 /obj/item/pinpointer/pair
