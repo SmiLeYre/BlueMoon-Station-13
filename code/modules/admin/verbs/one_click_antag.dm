@@ -511,17 +511,23 @@
 
 			var/mob/living/carbon/human/candidate0
 			var/mob/living/carbon/human/candidate1
+			var/mob/living/carbon/human/candidate_max
+			var/imax
 			var/exp0
 			var/exp1
 			for (var/i = 1, i <= sorted_candidates.len, i++)
 				candidate0 = sorted_candidates[i]
 				exp0 = candidate0.client.prefs.exp[EXP_TYPE_ANTAG] * 10 + candidate0.client.prefs.exp[EXP_TYPE_SECURITY]
+				imax = i
 				for (var/j = i, j <= sorted_candidates.len, j++)
 					candidate1 = sorted_candidates[j]
 					exp1 = candidate1.client.prefs.exp[EXP_TYPE_ANTAG] * 10 + candidate1.client.prefs.exp[EXP_TYPE_SECURITY]
-					if (exp0 > exp1)
-						sorted_candidates[i] = candidate1
-						sorted_candidates[j] = candidate0
+					if (exp0 < exp1)
+						imax = j
+						candidate_max = candidate1
+				if (imax != i)
+					sorted_candidates[imax] = candidate0
+					sorted_candidates[i] = candidate_max
 
 			var/candidate_id = 1
 			while(numagents && candidates.len)
