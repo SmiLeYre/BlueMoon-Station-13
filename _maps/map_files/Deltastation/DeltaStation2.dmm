@@ -18795,6 +18795,7 @@
 	c_tag = "Security - Interrogation";
 	dir = 1
 	},
+/obj/effect/turf_decal/tile/red/half,
 /turf/open/floor/iron/dark/textured_large,
 /area/security/detectives_office/private_investigators_office)
 "bNo" = (
@@ -22809,9 +22810,6 @@
 /area/hallway/primary/starboard)
 "bZH" = (
 /obj/structure/chair,
-/obj/effect/turf_decal/tile/red/anticorner{
-	dir = 1
-	},
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/private_investigators_office)
 "bZI" = (
@@ -25835,9 +25833,7 @@
 /obj/structure/chair{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red/anticorner{
-	dir = 8
-	},
+/obj/effect/turf_decal/tile/red/half,
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office/private_investigators_office)
 "ciA" = (
@@ -25978,10 +25974,6 @@
 /turf/open/floor/iron/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "ciI" = (
-/obj/effect/turf_decal/tile/red/half,
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 30
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
@@ -26458,6 +26450,9 @@
 	pixel_x = 27
 	},
 /obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/red/half{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -67536,6 +67531,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/cargo/storage)
+"eBN" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/obj/effect/turf_decal/tile/red/half{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/security/detectives_office/private_investigators_office)
 "eBO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -68684,6 +68688,13 @@
 	icon_state = "chapel"
 	},
 /area/service/chapel/main)
+"eUi" = (
+/obj/effect/turf_decal/tile/red/anticorner{
+	dir = 4
+	},
+/obj/item/kirbyplants/random,
+/turf/open/floor/iron/dark/textured_large,
+/area/security/detectives_office/private_investigators_office)
 "eUq" = (
 /obj/structure/cable/white{
 	icon_state = "4-8"
@@ -68832,6 +68843,7 @@
 /obj/structure/cable/white{
 	icon_state = "4-8"
 	},
+/obj/effect/turf_decal/tile/red/half,
 /turf/open/floor/iron/dark/textured_large,
 /area/security/detectives_office/private_investigators_office)
 "eWn" = (
@@ -75315,12 +75327,10 @@
 /turf/open/floor/carpet,
 /area/service/library/abandoned)
 "gVJ" = (
-/obj/effect/turf_decal/tile/red/half{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
 	},
+/obj/effect/turf_decal/tile/red/half,
 /turf/open/floor/iron/dark/textured_half{
 	dir = 8
 	},
@@ -95258,6 +95268,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/engineering/transit_tube)
+"mQl" = (
+/obj/machinery/camera{
+	c_tag = "Prison Isolation Cell";
+	network = list("ss13","isolation");
+	view_range = 5
+	},
+/turf/open/floor/padded,
+/area/security/prison)
 "mQs" = (
 /obj/machinery/space_heater,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -95481,6 +95499,9 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/security/brig)
 "mTn" = (
@@ -95759,6 +95780,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/entry)
+"mWn" = (
+/obj/effect/turf_decal/tile/red/half{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured_large,
+/area/security/detectives_office/private_investigators_office)
 "mWo" = (
 /obj/structure/chair/office/light{
 	dir = 1
@@ -100558,6 +100585,9 @@
 	heat_capacity = 1e+006
 	},
 /area/commons/toilet/auxiliary)
+"ouC" = (
+/turf/open/floor/padded,
+/area/security/prison)
 "ouL" = (
 /obj/machinery/status_display/evac,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -100908,6 +100938,9 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/security/brig)
 "ozV" = (
@@ -104355,7 +104388,7 @@
 /area/engineering/atmos)
 "pDu" = (
 /obj/structure/chair,
-/obj/effect/turf_decal/tile/red/anticorner{
+/obj/effect/turf_decal/tile/red/half{
 	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
@@ -107199,9 +107232,6 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard)
 "qvC" = (
-/obj/effect/turf_decal/tile/red/half{
-	dir = 1
-	},
 /obj/machinery/power/apc/auto_name/south,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
@@ -107209,6 +107239,7 @@
 /obj/structure/cable/white{
 	icon_state = "0-8"
 	},
+/obj/effect/turf_decal/tile/red/half,
 /turf/open/floor/iron/dark/textured_half{
 	dir = 8
 	},
@@ -113247,6 +113278,9 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
 /turf/open/floor/plasteel,
@@ -124158,6 +124192,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/security/brig)
 "vJj" = (
@@ -124935,11 +124972,6 @@
 /area/security/detectives_office/private_investigators_office)
 "vXN" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/machinery/camera{
-	c_tag = "Prison Isolation Cell";
-	network = list("ss13","isolation");
-	view_range = 5
-	},
 /turf/open/floor/padded,
 /area/security/prison)
 "vXT" = (
@@ -185779,12 +185811,12 @@ xVU
 jwx
 gHq
 aFm
-tsD
+mWn
 bZT
 vXD
 bNn
 tsD
-tsD
+mWn
 bZT
 vXD
 eWb
@@ -186036,12 +186068,12 @@ pAN
 aIc
 iix
 aFm
-tsD
+eBN
 ciI
 bVj
 gVJ
 tsD
-tsD
+eBN
 ciI
 bVj
 qvC
@@ -186293,12 +186325,12 @@ aZk
 baZ
 bcJ
 aFm
-tsD
+mWn
 bZH
 cfc
 ciz
 tsD
-tsD
+mWn
 bZH
 cfc
 ciz
@@ -186550,12 +186582,12 @@ aZl
 bba
 bcK
 aFm
-tsD
+eUi
 pDu
 ckk
 bXK
 tsD
-tsD
+eUi
 pDu
 cdp
 bXK
@@ -192448,7 +192480,7 @@ gbz
 tsO
 gbz
 aFm
-aFm
+mQl
 vXN
 oNI
 aFm
@@ -192705,8 +192737,8 @@ mYP
 txq
 lfm
 aFm
-aFm
 tQq
+ouC
 mEf
 uwb
 jFX
@@ -192962,7 +192994,7 @@ jwp
 jwp
 jwp
 aFm
-aFm
+ouC
 dXP
 psg
 aFm
