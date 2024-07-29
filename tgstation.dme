@@ -4810,6 +4810,7 @@
 #include "modular_sand\code\modules\client\client_procs.dm"
 #include "modular_sand\code\modules\client\preferences.dm"
 #include "modular_sand\code\modules\client\preferences_savefile.dm"
+#include "modular_sand\code\modules\client\preferences_toggles.dm"
 #include "modular_sand\code\modules\client\loadout\accessories.dm"
 #include "modular_sand\code\modules\client\loadout\backpack.dm"
 #include "modular_sand\code\modules\client\loadout\boxers.dm"

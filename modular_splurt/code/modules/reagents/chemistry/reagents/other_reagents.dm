@@ -170,16 +170,28 @@
 		// Reduce disgust.
 		M.adjust_disgust(-3)
 
-		if(prob(2))
-			M.mob_light(_color = LIGHT_COLOR_HOLY_MAGIC, _range = 2, _duration = 100)
-			var/mutable_appearance/forbearance = mutable_appearance('icons/effects/genetics.dmi', "servitude", -MUTATIONS_LAYER)
-			M.add_overlay(forbearance)
-			addtimer(CALLBACK(M, TYPE_PROC_REF(/atom, cut_overlay), forbearance), 100)
-
-			M.gain_trauma(/datum/brain_trauma/special/godwoken, TRAUMA_RESILIENCE_ABSOLUTE)
-			addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living/carbon, cure_trauma_type)), 6000)
-
 		return
 
 	// Return normally.
 	. = ..()
+
+/datum/reagent/consumable/ethanol/vodka/on_mob_metabolize(mob/living/L)
+	. = ..()
+
+	var/mob/living/carbon/human/M = L
+	if(HAS_TRAIT(M,TRAIT_RUSSIAN))
+		M.mob_light(_color = LIGHT_COLOR_HOLY_MAGIC, _range = 2, _duration = 100)
+		var/mutable_appearance/forbearance = mutable_appearance('icons/effects/genetics.dmi', "servitude", -MUTATIONS_LAYER)
+		M.add_overlay(forbearance)
+
+		M.gain_trauma(/datum/brain_trauma/special/godwoken, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/reagent/consumable/ethanol/vodka/on_mob_end_metabolize(mob/living/L)
+	. = ..()
+
+	var/mob/living/carbon/human/M = L
+	if(HAS_TRAIT(L, TRAIT_RUSSIAN))
+		var/mutable_appearance/forbearance = mutable_appearance('icons/effects/genetics.dmi', "servitude", -MUTATIONS_LAYER)
+		M.cut_overlay(forbearance)
+
+		M.cure_trauma_type(/datum/brain_trauma/special/godwoken)
