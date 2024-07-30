@@ -555,7 +555,7 @@
 				//Give antag datum
 				var/datum/antagonist/ert/ert_antag
 
-				if(numagents == 1)
+				if(candidate_id == 1)
 					ert_antag = new ertemplate.leader_role
 				else
 					ert_antag = ertemplate.roles[WRAP(numagents,1,length(ertemplate.roles) + 1)]
