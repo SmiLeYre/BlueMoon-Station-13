@@ -1782,6 +1782,11 @@
 			cyborg_base_icon = "smolraptor_sci"
 			cyborg_icon_override = 'modular_zubbers/icons/mob/smolraptor.dmi'
 			dogborg = TRUE
+		if("(Service) Meka") //ADD BLUEMOON Note: Был забыт для добавления в список
+			cyborg_base_icon = "mekaserve"
+			cyborg_icon_override = 'modular_splurt/icons/mob/robots_32x64.dmi'
+			hat_offset = 3
+			hasrest = TRUE
 		if("(Waiter) Meka")
 			cyborg_base_icon = "mekaserve_alt"
 			cyborg_icon_override = 'modular_splurt/icons/mob/robots_32x64.dmi'
