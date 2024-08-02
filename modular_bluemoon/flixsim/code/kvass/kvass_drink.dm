@@ -13,6 +13,7 @@
 	foodtype = GRAIN | SUGAR | ALCOHOL
 	spillable = FALSE
 	isGlass = FALSE
+	custom_price = PRICE_PRETTY_CHEAP
 	list_reagents = list(/datum/reagent/consumable/kvass = 30)
 	custom_materials = list(/datum/material/plastic = 200)
 
