@@ -195,10 +195,10 @@
 
 		else
 			if(holder)	//sender is an admin but recipient is not. Do BIG RED TEXT
-				//var/already_logged = FALSE
+				var/already_logged = FALSE //BLUEMOON EDIT, enable ticket logging
 				if(!recipient.current_ticket)
 					new /datum/admin_help(msg, recipient, TRUE)
-					//already_logged = TRUE
+					already_logged = TRUE //BLUEMOON EDIT, enable ticket logging
 					SSblackbox.LogAhelp(recipient.current_ticket.id, "Ticket Opened", msg, recipient.ckey, src.ckey)
 
 				to_chat(recipient, "<font color='red' size='4'><b>-- Administrator private message --</b></font>", confidential = TRUE)
@@ -208,8 +208,8 @@
 
 				admin_ticket_log(recipient, "<font color='purple'>PM From [key_name_admin(src)]: [keywordparsedmsg]</font>")
 
-				//if(!already_logged) //Reply to an existing ticket
-					//SSblackbox.LogAhelp(recipient.current_ticket.id, "Reply", msg, recipient.ckey, src.ckey)
+				if(!already_logged) //Reply to an existing ticket   //BLUEMOON EDIT, enable ticket logging
+					SSblackbox.LogAhelp(recipient.current_ticket.id, "Reply", msg, recipient.ckey, src.ckey) //BLUEMOON EDIT, enable ticket logging
 
 
 				//always play non-admin recipients the adminhelp sound
