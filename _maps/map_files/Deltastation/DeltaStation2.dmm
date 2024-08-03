@@ -15489,6 +15489,9 @@
 /obj/structure/cable/white{
 	icon_state = "0-4"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "WardenWin"
+	},
 /turf/open/floor/plating,
 /area/security/warden)
 "btl" = (
@@ -19570,6 +19573,9 @@
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/firedoor,
 /obj/structure/cable/white,
+/obj/machinery/door/poddoor/shutters{
+	id = "WardenWin"
+	},
 /turf/open/floor/plating,
 /area/security/warden)
 "bRv" = (
@@ -100512,6 +100518,9 @@
 /obj/structure/cable/white{
 	icon_state = "0-2"
 	},
+/obj/machinery/door/poddoor/shutters{
+	id = "WardenWin"
+	},
 /turf/open/floor/plating,
 /area/security/warden)
 "osM" = (
@@ -115122,10 +115131,11 @@
 "sUO" = (
 /obj/structure/table,
 /obj/machinery/button/door{
-	id = "armory3";
+	id = "WardenWin";
 	name = "Armory Shutters";
 	req_access_txt = "3";
-	pixel_x = 6
+	pixel_x = -7;
+	pixel_y = 9
 	},
 /obj/machinery/button/door{
 	id = "armorywindow";
@@ -115151,6 +115161,12 @@
 	},
 /obj/structure/cable/white{
 	icon_state = "4-8"
+	},
+/obj/machinery/button/door{
+	id = "armory3";
+	name = "Armory Shutters";
+	req_access_txt = "3";
+	pixel_x = 6
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/warden)
@@ -128223,6 +128239,9 @@
 	},
 /obj/structure/cable/white{
 	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/shutters{
+	id = "WardenWin"
 	},
 /turf/open/floor/plating,
 /area/security/warden)
