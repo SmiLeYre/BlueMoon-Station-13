@@ -96981,7 +96981,6 @@
 /turf/open/floor/plasteel,
 /area/cargo/sorting)
 "noR" = (
-/obj/machinery/disposal/bin,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -96992,6 +96991,8 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/structure/disposalpipe/trunk,
+/obj/machinery/disposal/bin,
 /turf/open/floor/plasteel/dark,
 /area/service/bar)
 "nph" = (
@@ -115128,13 +115129,13 @@
 	},
 /obj/machinery/button/door{
 	id = "armorywindow";
-	name = "Armory Shutters";
+	name = "Armory Window";
 	req_access_txt = "3";
 	pixel_x = -7
 	},
 /obj/machinery/button/door{
 	id = "armoryblast";
-	name = "Armory Shutters";
+	name = "Armory Blast";
 	req_access_txt = "3";
 	pixel_x = 6;
 	pixel_y = 9
