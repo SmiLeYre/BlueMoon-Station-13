@@ -771,3 +771,10 @@
 	path = /obj/item/storage/box/catcrin_kit
 	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/goal
+	name = "Goal mask"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/mask/balaclava/breath/goal
+	ckeywhitelist = list("hazzi")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
