@@ -30108,13 +30108,13 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/structure/cable/yellow{
 	icon_state = "2-8"
 	},
 /obj/structure/disposalpipe/junction/flip{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
 /turf/open/floor/plasteel/white,
 /area/science/research)
 "cpv" = (
@@ -30138,10 +30138,10 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
-	dir = 1
-	},
 /obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
@@ -30774,7 +30774,6 @@
 /obj/effect/turf_decal/tile/purple{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
 	},
@@ -31172,6 +31171,7 @@
 	name = "biohazard containment shutters"
 	},
 /obj/effect/turf_decal/delivery,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel,
 /area/science/storage)
 "crU" = (
@@ -31717,6 +31717,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
 /turf/open/floor/plasteel,
 /area/science/storage)
 "cth" = (
@@ -31729,7 +31732,9 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
+	},
 /turf/open/floor/plasteel,
 /area/science/storage)
 "ctj" = (
@@ -54601,11 +54606,8 @@
 /turf/open/space/basic,
 /area/space/nearstation)
 "gIO" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 6
-	},
-/turf/closed/wall/r_wall,
-/area/science/storage)
+/turf/closed/wall,
+/area/command/heads_quarters/ntr)
 "gJm" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/door/poddoor/preopen{
@@ -57934,12 +57936,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/research)
-"ikg" = (
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/turf/open/floor/wood,
-/area/command/heads_quarters/ntr)
 "ikj" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -80388,6 +80384,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/white,
 /area/science/research)
 "sDh" = (
@@ -81776,11 +81773,11 @@
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "tlb" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 9
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
-/turf/closed/wall/r_wall,
-/area/science/storage)
+/turf/open/floor/wood,
+/area/command/heads_quarters/ntr)
 "tlc" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
@@ -89441,9 +89438,6 @@
 	},
 /turf/open/floor/carpet,
 /area/service/library)
-"wPf" = (
-/turf/closed/wall,
-/area/command/heads_quarters/ntr)
 "wPk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -123065,11 +123059,11 @@ ayF
 ayF
 ayF
 pvk
-wPf
-wPf
-wPf
+gIO
+gIO
+gIO
 tMl
-wPf
+gIO
 aHD
 aHD
 sEX
@@ -123322,11 +123316,11 @@ ayF
 azQ
 aBk
 svB
-wPf
+gIO
 gTH
 wIv
 heo
-wPf
+gIO
 atX
 gas
 sPC
@@ -123583,7 +123577,7 @@ kOm
 pkh
 snZ
 tHB
-wPf
+gIO
 kdv
 chM
 inx
@@ -124353,7 +124347,7 @@ hqQ
 kpk
 xzh
 amK
-ikg
+tlb
 kzf
 xEu
 vGM
@@ -124607,11 +124601,11 @@ ayF
 azV
 aBp
 aCx
-wPf
+gIO
 bCV
 aNq
 fmK
-wPf
+gIO
 wrQ
 dKg
 bWV
@@ -124864,11 +124858,11 @@ ayJ
 ayJ
 ayJ
 ayJ
-wPf
-wPf
-wPf
-wPf
-wPf
+gIO
+gIO
+gIO
+gIO
+gIO
 lNc
 lNc
 lNc
@@ -126725,7 +126719,7 @@ bZn
 ccd
 cpv
 cqN
-gIO
+crR
 cth
 ctY
 cuU
@@ -126982,7 +126976,7 @@ bZn
 coj
 cpw
 cqO
-tlb
+crR
 wmB
 ctZ
 cuV
