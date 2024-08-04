@@ -729,41 +729,6 @@
 	ckeywhitelist = list("kladmenuwu")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
-/datum/gear/donator/tacticool/satt
-	name = "SATT combat uniform"
-	slot = ITEM_SLOT_ICLOTHING
-	path = /obj/item/clothing/under/syndicate/tacticool/satt
-	ckeywhitelist = list("allazarius")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
-/datum/gear/donator/mask/satt
-	name = "Skull half mask"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/clothing/mask/gas/sechailer/syndicate/skull
-	ckeywhitelist = list("allazarius")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
-/datum/gear/donator/accessory/satt
-	name = "SATT dogtag"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/clothing/accessory/dogtag
-	ckeywhitelist = list("allazarius")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
-/datum/gear/donator/kit/at41
-	name = "AT41 Kit"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/modkit/at41
-	ckeywhitelist = list("allazarius", "oni3288", "enigma418")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
-/datum/gear/donator/backpack/satt
-	name = "SATT backpack"
-	slot = ITEM_SLOT_HANDS
-	path = /obj/item/storage/backpack/satt
-	ckeywhitelist = list("allazarius")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
 /datum/gear/donator/bm/Frieren_skirt
     name = "Frieren skirt"
     slot = ITEM_SLOT_ICLOTHING
