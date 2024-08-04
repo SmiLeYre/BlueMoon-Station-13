@@ -2204,9 +2204,6 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
@@ -25817,9 +25814,6 @@
 	name = "Permabrig Transfer";
 	req_access_txt = "2"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
@@ -30386,7 +30380,7 @@
 	dir = 8
 	},
 /obj/structure/disposalpipe/segment{
-	dir = 4
+	dir = 9
 	},
 /turf/open/floor/plasteel,
 /area/security/prison)
@@ -31225,7 +31219,6 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
-/obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -32218,7 +32211,6 @@
 	name = "Permabrig Transfer";
 	req_access_txt = "2"
 	},
-/obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -33643,6 +33635,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel,
 /area/security/prison)
 "lzG" = (
@@ -37816,7 +37809,7 @@
 	dir = 8
 	},
 /obj/structure/cable{
-	icon_state = "2-4"
+	icon_state = "4-8"
 	},
 /turf/open/floor/plating,
 /area/security/execution/transfer)
@@ -43539,6 +43532,18 @@
 /obj/machinery/status_display/evac,
 /turf/closed/wall/r_wall,
 /area/ai_monitored/turret_protected/ai_upload)
+"pfU" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/turf/open/floor/plasteel/dark,
+/area/security/prison)
 "pga" = (
 /obj/structure/chair/stool/bar,
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
@@ -45673,9 +45678,6 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
@@ -46416,9 +46418,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
 	},
 /turf/closed/wall/mineral/wood,
 /area/commons/fitness/recreation)
@@ -64896,7 +64895,6 @@
 /area/hallway/secondary/entry)
 "wAz" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
-/obj/structure/disposalpipe/segment,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -67522,9 +67520,6 @@
 	},
 /obj/structure/cable{
 	icon_state = "2-4"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
 	},
 /turf/open/floor/plasteel,
 /area/security/prison)
@@ -94137,7 +94132,7 @@ rLo
 rLo
 rLo
 pVh
-wvn
+pfU
 igR
 nxc
 nHS

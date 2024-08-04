@@ -37981,6 +37981,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/medical/virology)
 "blp" = (
@@ -46362,9 +46365,6 @@
 /obj/machinery/door/airlock/maintenance{
 	name = "security maintenance";
 	req_access_txt = "63"
-	},
-/obj/structure/cable{
-	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/dark,
 /area/maintenance/aft)
@@ -55287,6 +55287,9 @@
 /obj/item/pickaxe,
 /obj/item/pickaxe,
 /obj/item/multitool,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/storage/eva)
 "bNZ" = (
@@ -56092,6 +56095,9 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/dark,
 /area/maintenance/port/aft)
@@ -61405,6 +61411,9 @@
 /obj/machinery/door/window/southleft{
 	name = "Security Desk";
 	req_one_access_txt = "63"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
 	},
 /turf/open/floor/plating,
 /area/hallway/primary/aft)
@@ -76022,7 +76031,6 @@
 "cxu" = (
 /obj/structure/grille,
 /obj/structure/cable,
-/obj/structure/disposalpipe/segment,
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
 "cxv" = (
@@ -79038,9 +79046,6 @@
 /obj/machinery/door/airlock/maintenance{
 	req_access_txt = "12"
 	},
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plasteel/dark,
 /area/hallway/primary/fore)
@@ -81820,8 +81825,8 @@
 	},
 /obj/item/melee/breaching_hammer,
 /obj/item/melee/breaching_hammer{
-	pixel_y = -3;
-	pixel_x = 3
+	pixel_x = 3;
+	pixel_y = -3
 	},
 /obj/item/melee/breaching_hammer{
 	pixel_x = 6;
@@ -83852,12 +83857,12 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/barricade,
 /obj/item/storage/barricade{
-	pixel_y = -10;
-	pixel_x = -10
+	pixel_x = -10;
+	pixel_y = -10
 	},
 /obj/item/storage/barricade{
-	pixel_y = -10;
-	pixel_x = 10
+	pixel_x = 10;
+	pixel_y = -10
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
@@ -85636,6 +85641,23 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass/grass0,
 /area/medical/genetics)
+"vhO" = (
+/obj/effect/turf_decal/tile/red,
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/neutral,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/hallway/primary/aft)
 "vjT" = (
 /obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic{
 	electrochromatic_id = "!interrogation_room"
@@ -85672,12 +85694,12 @@
 /area/security/prison)
 "vGL" = (
 /obj/docking_port/stationary{
+	dheight = 5;
+	dwidth = 5;
+	height = 10;
 	id = "lambda_station";
 	name = "Lambda Shuttle Dock";
-	dwidth = 5;
-	width = 10;
-	dheight = 5;
-	height = 10
+	width = 10
 	},
 /turf/open/space/basic,
 /area/space)
@@ -111169,7 +111191,7 @@ bWc
 aaY
 bHk
 bYZ
-bVd
+vhO
 bXV
 ccj
 cdd
@@ -119088,7 +119110,7 @@ cvW
 cFH
 cwn
 aUa
-aHq
+aBO
 aNq
 aZO
 aGh
