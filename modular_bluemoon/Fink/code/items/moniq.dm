@@ -415,7 +415,7 @@
 	if(over_object == usr && Adjacent(usr))
 		if(!usr.canUseTopic(src, be_close = TRUE, no_dextery = TRUE))
 			return
-		usr.visible_message(span_notice("[usr] grabs and folds \the [src.name]."), span_notice("You grab and take \the [src.name]."))
+		usr.visible_message(span_notice("[usr] grabs and takes \the [src.name]."), span_notice("You grab and take \the [src.name]."))
 		var/obj/item/moniq_item = new /obj/item/sign/moniq(loc)
 		TransferComponents(moniq_item)
 		usr.put_in_hands(moniq_item)
