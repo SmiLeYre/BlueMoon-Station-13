@@ -11,3 +11,22 @@
 	cost = 1
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/bm/lotos_skirt
+	name = "Lotos Skort"
+	path = /obj/item/clothing/suit/donator/bm/lotos_skirt
+	ckeywhitelist = list("AngryLaska")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/copium
+	name = "Copium Bottle"
+	path = /obj/item/reagent_containers/glass/bottle/copium
+	ckeywhitelist = list("AngryLaska")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/moniq
+	name = "Muz-TV"
+	cost = 6
+	path = /obj/item/reagent_containers/glass/bottle/copium
+	ckeywhitelist = list("Finkrld")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
