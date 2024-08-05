@@ -319,7 +319,7 @@
 
 /datum/supply_pack/misc/moniq // BLUEMOON FINK ADD
 	name = "Jukebox (Muz-TV)"
-	desc = "Это не достойно пояснения"
+	desc = "Туц туц туц туц"
 	cost = 15000
 	contains = list(/obj/item/sign/moniq)
 	crate_name = "Jukebox (Muz-TV)"
