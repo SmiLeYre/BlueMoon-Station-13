@@ -21,9 +21,8 @@
 	var/repeat = FALSE //BLUEMOON ADD зацикливание плейлистов
 	var/one_area_play = FALSE //BLUEMOON ADD переменная проигрыша джукбокса в одной зоне (для инфдорм)
 	pixel_x = -8
+
 /obj/item/sign/moniq/emagged
-	name = "Handled Jukebox"
-	desc = "Переносная колонка для крутых. ТЕПЕРЬ ВЗЛОМАННАЯ."
 	obj_flags = EMAGGED
 	queuecost = PRICE_FREE
 
