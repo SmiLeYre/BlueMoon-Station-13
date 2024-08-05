@@ -27,6 +27,6 @@
 /datum/gear/donator/bm/moniq
 	name = "Muz-TV"
 	cost = 6
-	path = /obj/item/reagent_containers/glass/bottle/copium
+	path = /obj/item/sign/moniq
 	ckeywhitelist = list("Finkrld")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
