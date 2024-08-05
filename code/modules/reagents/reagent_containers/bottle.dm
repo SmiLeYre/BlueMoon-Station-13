@@ -457,7 +457,7 @@
 	desc = "A bottle of strong anaphrodisiac. Reduces libido."
 	list_reagents = list(/datum/reagent/drug/anaphrodisiacplus = 30)
 
-/obj/item/reagent_containers/glass/bottle/copium // BLUEMOON ADD
+/obj/item/reagent_containers/glass/bottle/copium // BLUEMOON FINK ADD
 	name = "Copium bottle"
 	desc = "A bottle of strong anaphrodisiac. Reduces libido."
 	list_reagents = list(/datum/reagent/drug/copium = 30)
