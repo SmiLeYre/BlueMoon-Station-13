@@ -150,3 +150,33 @@
 	blood_overlay_type = "armor"
 	body_parts_covered = CHEST
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/suit/armor/rsa12
+	name = "R-SA-12"
+	desc = "The saboteur's lightweight armor is designed to provide sufficient protection while maintaining a high degree of freedom of movement and stealth, which is important for missions involving subversion, espionage, or stealthy infiltration. Once owned by the Asmalgan Church, but now bears the Rohai emblem on the chest."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	icon_state = "rsa12"
+	item_state = "rsa12"
+	blood_overlay_type = "armor"
+	body_parts_covered = CHEST
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/head/helmet/sec/rhsa12
+	name = "R-HSA-12"
+	desc = "A helmet from a saboteur light armor. Has a semi-transparent visor to conceal the identity of the saboteur with almost no loss in protective properties. It has a flashlight mount on the side."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/acrador_helmet_32x48.dmi'
+	icon_state = "rhsa12"
+	item_state = "rhsa12"
+
+/obj/item/clothing/under/rank/security/officer/acradorsuit
+	name = "Underarmor suit"
+	desc= "A dark, tight suit for wearing underneath hard plates. It does not restrict movement and protects the body from rubbing by armor plates."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/under.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/under.dmi'
+	icon_state = "acradorsuit"
+	item_state = "acradorsuit"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	can_adjust = FALSE
+
