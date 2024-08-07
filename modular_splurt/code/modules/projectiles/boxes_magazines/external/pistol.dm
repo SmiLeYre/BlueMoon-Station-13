@@ -22,6 +22,23 @@
 	..()
 	icon_state = "enforcer-[round(ammo_count())]"
 
+//BLUEMOON ADD Добавление увеличенного магазина на инфорсер в билд.
+
+/obj/item/ammo_box/magazine/e45/e45_extended
+	name = "Extended Enforcer magazine"
+	icon = 'modular_splurt/icons/obj/ammo.dmi'
+	icon_state = "enforcer-ext"
+	ammo_type = /obj/item/ammo_casing/c45
+	caliber = ".45"
+	desc = "An extended Mk. 58 magazine."
+	max_ammo = 12
+
+/obj/item/ammo_box/magazine/e45/e45_extended/update_icon()
+	..()
+	icon_state = "enforcer-ext-[round(ammo_count())]"
+
+//BLUEMOON ADD END Добавление увеличенного магазина на инфорсер в билд.
+
 /obj/item/ammo_box/magazine/e45/lethal
 	name = "Enforcer magazine (.45 Lethal)"
 	desc = "A Mk. 58 magazine. Loaded with lethal rounds."

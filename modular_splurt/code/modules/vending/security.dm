@@ -88,6 +88,7 @@
 	new /obj/item/clothing/suit/armor/brigdoc/labcoat(src)
 	new /obj/item/mod/module/clamp(src) //BLUEMOOB ADDITION - для перемещения сверхтяжёлых персонажей
 	new /obj/item/reagent_containers/glass/bottle/morphine(src) // BLUEMOON ADD - для операций
+	new /obj/item/roller/heavy(src) // BLUEMOON - HEAVY_QUIRKS - ADD - каталка для сверхтяжей
 
 /obj/structure/closet/secure_closet/blueshield
 	name = "blueshield's locker"

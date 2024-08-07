@@ -580,3 +580,47 @@
 	desc = "A modkit for making a MultiPhase Energy Gun into Karabiner-M13."
 	product = /obj/item/gun/energy/e_gun/hos/karabiner_m13
 	fromitem = list(/obj/item/gun/energy/e_gun/hos)
+
+//////////////////////////Модкиты на дробовик
+
+/obj/item/modkit/frontline
+	name = " CS-Frontline-2534 Kit"
+	desc = "A modkit for making a combat shotgun into a CS-Frontline-2534."
+	product = /obj/item/gun/ballistic/shotgun/automatic/combat/frontline
+	fromitem = list(/obj/item/gun/ballistic/shotgun/automatic/combat)
+
+/obj/item/gun/ballistic/shotgun/automatic/combat/frontline
+	name = "CS-Frontline-2534"
+	desc = "A standard assault automatic shotgun with a 7-shot magazine used by the Catcrin Empire army"
+	icon = 'modular_bluemoon/fluffs/icons/obj/csfrontline.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "csfrontline"
+	item_state = "csfrontline"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/frontlineshot.ogg'
+
+/obj/item/gun/ballistic/shotgun/automatic/combat/frontline/update_overlays()
+	. = ..()
+	icon_state = "csfrontline[stock ? "" : "c"]"
+	item_state = "csfrontline[stock ? "" : "c"]"
+
+/obj/item/gun/ballistic/shotgun/automatic/combat/frontline
+	name = "CS-Frontline-2534"
+	desc = "A standard assault automatic shotgun with a 7-shot magazine used by the Catcrin Empire army"
+	icon = 'modular_bluemoon/fluffs/icons/obj/csfrontline.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "csfrontline"
+	item_state = "csfrontline"
+	fire_sound = "modular_bluemoon/fluffs/sound/weapon/frontlineshot.ogg"
+	stock = FALSE
+	extend_sound = 'sound/weapons/batonextend.ogg'
+
+/obj/item/gun/ballistic/shotgun/automatic/combat/frontline/update_icon_state()
+	icon_state = "csfrontline[stock ? "" : "c"]-[get_ammo(FALSE)]"
+	item_state = "csfrontline[stock ? "" : "c"]-[get_ammo(FALSE)]"
+
+/obj/item/gun/ballistic/shotgun/automatic/combat/frontline/update_overlays()
+	. = ..()
+	icon_state = "csfrontline[stock ? "" : "c"]-[get_ammo(FALSE)]"
+	item_state = "csfrontline[stock ? "" : "c"]-[get_ammo(FALSE)]"

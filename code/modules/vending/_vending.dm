@@ -169,6 +169,14 @@
 	/// used for narcing on underages
 	var/obj/item/radio/Radio
 
+	// BLUEMOON EDIT START - возможность кастомных звуков покупки
+	/// Custom vending sound
+	var/vending_sound = 'sound/machines/machine_vend.ogg'
+
+	/// Will vending sound vary
+	var/vending_sound_vary = TRUE
+	// BLUEMOON EDIT END
+
 
 /**
  * Initialize the vending machine
@@ -503,7 +511,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	visible_message(span_notice("[src] yields [freebies > 1 ? "several free goodies" : "a free goody"]!"))
 
 	for(var/i in 1 to freebies)
-		playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
+		playsound(src, vending_sound, 50, vending_sound_vary, extrarange = -3) // BLUEMOON EDIT - возможность кастомных звуков покупки
 		for(var/datum/data/vending_product/R in shuffle(product_records))
 
 			if(R.amount <= 0) //Try to use a record that actually has something to dump.
@@ -956,7 +964,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	use_power(5)
 	if(icon_vend) //Show the vending animation if needed
 		flick(icon_vend,src)
-	playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
+	playsound(src, vending_sound, 50, vending_sound_vary, extrarange = -3) // BLUEMOON EDIT - возможность кастомных звуков покупки
 	var/obj/item/vended_item = new R.product_path(get_turf(src))
 	// if(greyscale_colors)
 	// 	vended_item.set_greyscale(colors=greyscale_colors)

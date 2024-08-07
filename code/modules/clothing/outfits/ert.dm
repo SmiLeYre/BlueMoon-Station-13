@@ -542,6 +542,8 @@
 		/obj/item/storage/box/ammo/smgap=1,
 		/obj/item/nullrod=1,
 		/obj/item/storage/book/bible = 1,
+		/obj/item/aspergillum/ert = 1, // BLUEMOON EDIT - кропило ЕРТ
+		/obj/item/reagent_containers/food/drinks/bottle/holywater = 1 // BLUEMOON EDIT - кропило ЕРТ
 		)
 
 	cybernetic_implants = list(
@@ -570,6 +572,8 @@
 		/obj/item/storage/box/handcuffs=1,
 		/obj/item/nullrod=1,
 		/obj/item/storage/book/bible = 1,
+		/obj/item/aspergillum/ert = 1, // BLUEMOON EDIT - кропило ЕРТ
+		/obj/item/reagent_containers/food/drinks/bottle/holywater = 1 // BLUEMOON EDIT - кропило ЕРТ
 		)
 
 	cybernetic_implants = list(
@@ -599,6 +603,8 @@
 		/obj/item/roller=1,
 		/obj/item/nullrod=1,
 		/obj/item/storage/book/bible = 1,
+		/obj/item/aspergillum/ert = 1, // BLUEMOON EDIT - кропило ЕРТ
+		/obj/item/reagent_containers/food/drinks/bottle/holywater = 1 // BLUEMOON EDIT - кропило ЕРТ
 		)
 
 	cybernetic_implants = list(

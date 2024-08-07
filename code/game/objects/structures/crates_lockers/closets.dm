@@ -140,6 +140,14 @@
 			if(user)
 				to_chat(user, "<span class='danger'>There's something too large in [src], preventing it from closing.</span>")
 			return FALSE
+	// BLUEMOON ADD START - крутое ЕРТ кропило против сатанистов
+	for(var/obj/item/aspergillum/ert/holy_thing)
+		if(iscultist(user) || is_servant_of_ratvar(user) || isclockmob(user) || isconstruct(user) || isvampire(user))
+			to_chat(user, span_cultbold("Священная энергия [holy_thing] не позволяет [src] закрыться!"))
+			return FALSE
+		else
+			break
+	// BLUEMOON ADD END
 	return TRUE
 
 /obj/structure/closet/proc/dump_contents(override = TRUE) //Override is for not revealing the locker electronics when you open the locker, for example

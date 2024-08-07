@@ -225,6 +225,17 @@
 	build_path = /obj/item/ammo_box/c45/lethal
 	category = list("hacked", "Security")
 
+//BLUEMOON ADD
+/datum/design/e45/e45_extended
+	name = "Extended Enforcer magazine"
+	id = "c45lethal"
+	build_type = AUTOLATHE | NO_PUBLIC_LATHE
+	materials = list(/datum/material/iron = 8000)
+	build_path = /obj/item/ammo_box/magazine/e45/e45_extended
+	category = list("hacked", "Security")
+//BLUEMOON ADD END
+
+
 /datum/design/c22
 	name = "Ammo Box (.22)"
 	id = "c22"

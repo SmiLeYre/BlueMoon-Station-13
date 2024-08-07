@@ -41,7 +41,7 @@
 	},
 /area/hilbertshotel)
 "cp" = (
-/obj/structure/chair/pew/left,
+/obj/structure/chair/pew,
 /turf/open/floor/plating/smooth/grass/lavaland_jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
@@ -79,12 +79,6 @@
 /area/hilbertshotel)
 "dl" = (
 /turf/open/floor/wood,
-/area/hilbertshotel)
-"dI" = (
-/obj/structure/flora/rock/pile,
-/turf/open/floor/plating/smooth/grass/lavaland_jungle{
-	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
-	},
 /area/hilbertshotel)
 "dQ" = (
 /obj/structure/chair/sofa/corp{
@@ -137,6 +131,14 @@
 /obj/structure/bed/double,
 /obj/item/bedsheet/random/double,
 /turf/open/floor/carpet/royalblue,
+/area/hilbertshotel)
+"hR" = (
+/obj/structure/curtain/goliath,
+/obj/structure/table/wood,
+/obj/structure/window/reinforced,
+/obj/item/paper_bin,
+/obj/item/pen/fountain,
+/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "hT" = (
 /obj/structure/flora/grass/jungle/b,
@@ -266,7 +268,6 @@
 /area/hilbertshotel)
 "sg" = (
 /obj/structure/table/glass,
-/obj/effect/spawner/lootdrop/three_course_meal,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -337,6 +338,7 @@
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "wQ" = (
+/obj/structure/flora/grass/jungle/b,
 /obj/structure/chair/pew/right,
 /obj/item/instrument/banjo,
 /turf/open/floor/plating/smooth/grass/lavaland_jungle{
@@ -366,8 +368,8 @@
 	},
 /area/hilbertshotel)
 "yQ" = (
-/obj/structure/flora/rock/pile,
-/obj/structure/flora/junglebush/c,
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/chair/pew/left,
 /turf/open/floor/plating/smooth/grass/lavaland_jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
@@ -467,9 +469,11 @@
 /area/hilbertshotel)
 "Fg" = (
 /obj/structure/closet/crate/wooden,
-/obj/machinery/light,
-/obj/item/lighter/engraved,
+/obj/item/lighter/gold,
 /obj/item/stack/sheet/mineral/wood/fifty,
+/obj/machinery/light,
+/obj/item/reagent_containers/rag/towel,
+/obj/item/reagent_containers/rag/towel,
 /turf/open/floor/wood,
 /area/hilbertshotel)
 "Ft" = (
@@ -591,7 +595,6 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/obj/structure/flora/tree/spookylog,
 /turf/open/floor/plating/smooth/grass/lavaland_jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
@@ -665,14 +668,16 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/jukebox,
+/obj/machinery/jukebox{
+	req_one_access = null;
+	set_obj_flags = "EMAGGED"
+	},
 /turf/open/floor/wood,
 /area/hilbertshotel)
 "Sm" = (
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/flora/rock/pile,
 /turf/open/floor/plating/smooth/grass/lavaland_jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
@@ -724,6 +729,9 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
+/obj/structure/closet/crate/bin{
+	pixel_x = -6
+	},
 /turf/open/floor/carpet/royalblue,
 /area/hilbertshotel)
 
@@ -756,7 +764,7 @@ NJ
 Sm
 ng
 jh
-dI
+Ao
 bn
 od
 fN
@@ -810,7 +818,7 @@ Ml
 iO
 aV
 hT
-dI
+Ao
 GS
 Vt
 CR
@@ -844,9 +852,9 @@ pH
 Pq
 Wh
 pH
-LZ
-aV
 yQ
+aV
+bn
 QY
 fN
 fN
@@ -880,7 +888,7 @@ pH
 RF
 Qs
 JM
-wQ
+cp
 BA
 Xm
 kS
@@ -898,7 +906,7 @@ pH
 iS
 pH
 pH
-hT
+wQ
 aV
 tX
 fN
@@ -917,7 +925,7 @@ dl
 Fg
 pH
 Oq
-dI
+iL
 Wg
 sx
 fN
@@ -952,7 +960,7 @@ pH
 qP
 ZM
 OG
-dI
+iL
 JE
 Ex
 fN
@@ -969,7 +977,7 @@ sd
 pH
 Eh
 qa
-vy
+hR
 BA
 tX
 kS
