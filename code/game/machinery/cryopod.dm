@@ -554,7 +554,16 @@ GLOBAL_LIST_EMPTY(ghost_records)
 	. = ..()
 	if(ishuman(spawned_mob))
 		if(ghost_team)
-			spawned_mob.mind.add_antag_datum(/datum/antagonist/ghost_role, ghost_team)
+			var/datum/antagonist/antag_type = null
+			if(antagonist_type)
+				antag_type = spawned_mob.mind.add_antag_datum(antagonist_type, ghost_team)
+			else
+				antag_type = spawned_mob.mind.add_antag_datum(/datum/antagonist/ghost_role, ghost_team)
+			if(objectives)
+				for(var/objective in objectives)
+					var/datum/objective/O = new/datum/objective(objective)
+					O.owner = spawned_mob.mind
+					antag_type.objectives += O
 			ghost_team.players_spawned += (spawned_mob.key)
 
 	var/obj/machinery/computer/cryopod/control_computer = find_control_computer()
@@ -586,3 +595,4 @@ GLOBAL_LIST_EMPTY(ghost_records)
 
 /obj/effect/mob_spawn/human/lavaland_syndicate
 	computer_area = /area/ruin/lavaland/unpowered/deepspaceone/dormitories
+	antagonist_type = /datum/antagonist/ghost_role/lavaland_syndicate

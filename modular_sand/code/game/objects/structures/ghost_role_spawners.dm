@@ -25,6 +25,7 @@
 	banType = ROLE_GHOSTCAFE
 	mob_type = /mob/living/silicon/robot/modules/roleplay
 	can_load_appearance = 2
+	antagonist_type = /datum/antagonist/ghost_role/ghost_cafe
 
 /obj/effect/mob_spawn/robot/ghostcafe/special(mob/living/silicon/robot/new_spawn)
 	if(new_spawn.client)

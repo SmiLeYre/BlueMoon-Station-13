@@ -1729,3 +1729,16 @@
 	desc = "A bag containing fresh, dry coffee robusta beans. Ethically sourced and packaged by Waffle Corp."
 	icon_state = "robusta_beans"
 	beantype = /obj/item/reagent_containers/food/snacks/grown/coffee/robusta
+
+/obj/item/storage/box/catcrin_kit
+	name = "Catcrin kit"
+	desc = "Contains a full kit of Catcrin equipment."
+	icon_state = "box"
+
+/obj/item/storage/box/catcrin_kit/PopulateContents()
+	new /obj/item/modkit/gewehr550(src)
+	new /obj/item/modkit/hwal2572(src)
+	new /obj/item/modkit/karabiner_kit(src)
+	new /obj/item/modkit/stunspear_kit(src)
+	new /obj/item/modkit/frontline(src)
+	new /obj/item/clothing/accessory/ac_patch(src)

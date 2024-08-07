@@ -371,15 +371,17 @@
 
 	if(is_servant_of_ratvar(L))
 		to_chat(L, "<span class='userdanger'>Священный Туман распространяется по вашему сознанию, ослабляя связь с Жёлтым Измерением и очищая вас от влияния Юстициара Ратвара!</span>")
-	else if(iscultist(L))
+		return
+	if(iscultist(L))
 		to_chat(L, "<span class='userdanger'>Священный Туман распространяется по вашему сознанию, ослабляя связь с Красным Измерением и очищая вас от влияния Нар-Си</span>")
-	else if(HAS_TRAIT(L,TRAIT_RUSSIAN))
+		return
+	if(HAS_TRAIT(L,TRAIT_RUSSIAN))
 		// Alert user of holy water effect.
 		to_chat(L, span_nicegreen("Святая водица питает и заряжает энергией!"))
 	else
 		to_chat(L, span_nicegreen("Священный Туман распространяется по вашему сознанию."))
 
-	if(HAS_TRAIT(L, TRAIT_HALLOWED) || usr.job == "Chaplain")
+	if(HAS_TRAIT(L, TRAIT_HALLOWED) || L.mind?.isholy)
 		L.drowsyness = max(L.drowsyness-5, 0)
 		L.AdjustUnconscious(-20, FALSE)
 		L.AdjustAllImmobility(-40, FALSE)
@@ -407,7 +409,8 @@
 	if(!data)
 		data = list("misc" = 1)
 	data["misc"]++
-	M.jitteriness = min(M.jitteriness+4,10)
+	if(HAS_TRAIT(M, TRAIT_HALLOWED) || M.mind?.isholy)
+		return
 	if(iscultist(M, FALSE, TRUE))
 		for(var/datum/action/innate/cult/blood_magic/BM in M.actions)
 			if(!BM.holy_dispel)
