@@ -51366,9 +51366,7 @@
 	name = "Nanotrasen Representative APC";
 	pixel_y = -23
 	},
-/obj/structure/cable{
-	dir = 1
-	},
+/obj/structure/cable,
 /turf/open/floor/wood,
 /area/command/heads_quarters/ntr)
 "ezJ" = (
@@ -61932,11 +61930,10 @@
 /turf/closed/wall/r_wall,
 /area/engineering/supermatter)
 "tfw" = (
-/obj/structure/cable{
-	icon_state = "0-2";
-	pixel_y = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating/airless,
 /area/space/nearstation)
 "tfx" = (
@@ -63097,11 +63094,10 @@
 /turf/open/floor/engine,
 /area/science/xenobiology)
 "uMe" = (
-/obj/structure/cable{
-	icon_state = "0-2";
-	pixel_y = 1
-	},
 /obj/structure/grille,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
 /turf/open/floor/plating,
 /area/maintenance/department/engine)
 "uMf" = (
