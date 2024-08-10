@@ -1,4 +1,4 @@
-/obj/item/clothing/suit/donator/bm/lotos_skirt
+/obj/item/clothing/under/donator/bm/lotos_skirt
 	name = "Lotos skirt"
 	desc = "Black kitten`s black dress"
 	icon = 'modular_bluemoon/Fink/icons/clothing/Lotos_Avi.dmi'
