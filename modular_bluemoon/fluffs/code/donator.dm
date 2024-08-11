@@ -769,7 +769,7 @@
 	name = "Catcrin kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/storage/box/catcrin_kit
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/goal
