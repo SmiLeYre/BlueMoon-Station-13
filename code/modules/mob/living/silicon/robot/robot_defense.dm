@@ -120,17 +120,20 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 
 /mob/living/silicon/robot/crowbar_act(mob/living/user, obj/item/tool)
 	. = TRUE
-	if(opened)
-		to_chat(user, span_notice("You close the cover."))
-		opened = FALSE
-		update_icons()
-	else
-		if(locked)
-			to_chat(user, span_warning("The cover is locked and cannot be opened!"))
-		else
-			to_chat(user, span_notice("You open the cover."))
-			opened = TRUE
+	if (user.a_intent != INTENT_HARM)
+		if(opened)
+			to_chat(user, span_notice("You close the cover."))
+			opened = FALSE
 			update_icons()
+		else
+			if(locked)
+				to_chat(user, span_warning("The cover is locked and cannot be opened!"))
+			else
+				to_chat(user, span_notice("You open the cover."))
+				opened = TRUE
+				update_icons()
+	else
+		return ..()
 
 	return TRUE
 
