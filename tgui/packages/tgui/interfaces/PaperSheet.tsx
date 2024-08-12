@@ -959,7 +959,7 @@ export class PreviewView extends Component<PreviewViewProps> {
         fill
         fitted
         scrollable
-        ref={scrollableRef}
+        scrollableRef={scrollableRef}
         onScroll={handleOnScroll}>
         <Box
           fillPositionedParent
