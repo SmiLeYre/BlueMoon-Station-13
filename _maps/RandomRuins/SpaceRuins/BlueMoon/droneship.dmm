@@ -35,8 +35,8 @@
 /area/ruin/space/has_grav/droneship)
 "dr" = (
 /obj/item/shard{
-	pixel_y = 3;
-	pixel_x = -6
+	pixel_x = -6;
+	pixel_y = 3
 	},
 /obj/item/shard{
 	pixel_x = 4;
@@ -49,7 +49,7 @@
 	id = "droneshipu";
 	name = "containment blast door"
 	},
-/turf/open/floor/mineral/titanium,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/droneship)
 "dw" = (
 /obj/machinery/porta_turret/syndicate/energy/heavy{
@@ -64,8 +64,8 @@
 	},
 /obj/machinery/button/door{
 	id = "droneship1";
-	pixel_y = 8;
-	pixel_x = 5
+	pixel_x = 5;
+	pixel_y = 8
 	},
 /obj/machinery/button/door{
 	id = "droneship2";
@@ -74,6 +74,8 @@
 	},
 /obj/machinery/button/door{
 	id = "droneshipu";
+	name = "window blast door";
+	pixel_x = -1;
 	pixel_y = -1
 	},
 /obj/machinery/turretid{
@@ -307,12 +309,12 @@
 /area/ruin/space/has_grav/droneship)
 "Dq" = (
 /obj/effect/decal/cleanable/blood/drip{
-	pixel_y = -2;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = -2
 	},
 /obj/effect/decal/cleanable/blood/drip{
-	pixel_y = 1;
-	pixel_x = -1
+	pixel_x = -1;
+	pixel_y = 1
 	},
 /turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/droneship)
@@ -348,24 +350,24 @@
 /area/ruin/space/has_grav/droneship)
 "HU" = (
 /obj/effect/decal/cleanable/blood/drip{
-	pixel_y = -2;
-	pixel_x = 8
+	pixel_x = 8;
+	pixel_y = -2
 	},
 /turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/droneship)
 "Jg" = (
-/obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic,
 /obj/machinery/door/poddoor/preopen{
 	id = "droneshipu";
 	name = "containment blast door"
 	},
-/turf/open/floor/mineral/titanium,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/droneship)
 "Jv" = (
 /obj/machinery/button/door{
 	id = "exit35";
-	pixel_y = 7;
-	pixel_x = 7
+	pixel_x = 7;
+	pixel_y = 7
 	},
 /turf/closed/wall/mineral/titanium,
 /area/ruin/space/has_grav/droneship)
@@ -512,8 +514,8 @@
 /area/ruin/space/has_grav/droneship)
 "WR" = (
 /mob/living/simple_animal/hostile/malf_drone{
-	maxHealth = 60;
-	health = 60
+	health = 60;
+	maxHealth = 60
 	},
 /turf/open/floor/iron/recharge_floor,
 /area/ruin/space/has_grav/droneship)
