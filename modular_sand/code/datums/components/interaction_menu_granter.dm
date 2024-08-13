@@ -78,7 +78,7 @@
 		return GLOB.conscious_state
 	return GLOB.never_state
 
-/datum/component/interaction_menu_granter/ui_interact(mob/living/ser, datum/tgui/ui)
+/datum/component/interaction_menu_granter/ui_interact(mob/living/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "MobInteraction", "Interactions")
