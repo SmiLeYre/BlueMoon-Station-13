@@ -483,6 +483,7 @@
 		adjustOxyLoss(health - HEALTH_THRESHOLD_DEAD)
 		updatehealth()
 		to_chat(src, "<span class='notice'>You have given up life and succumbed to death.</span>")
+		visible_message(span_boldnotice("Кажется, [src] [gender == MALE ? "сдался" : "сдалась"].")) // BLUEMOON - SUCCUMB_MESSAGE - ADD
 		death()
 
 /mob/living/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE, ignore_stasis = FALSE)
