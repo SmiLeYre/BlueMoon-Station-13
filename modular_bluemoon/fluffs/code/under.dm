@@ -122,3 +122,24 @@
 	can_adjust = FALSE
 	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
 	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+
+/obj/item/clothing/under/donator/bm/SATT_combat_uniform
+	name = "SATT combat uniform"
+	desc = "High-quality clothes made of a mixture of fleece and cotton. The logo in the form of an eagle and the caption of the Strategic Assault Tactical Team are visible on the tag. If you inhale the smell, you can smell the slices of a war crime."
+	icon_state = "SATTcombat"
+	item_state = "SATTcombat"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/SATT_turtleneck
+	name = "SATT turtleneck"
+	desc = "High-quality clothes made of a mixture of fleece and cotton. The logo in the form of an eagle and the caption of the Strategic Assault Tactical Team are visible on the tag. If you inhale the smell, you can smell the slices of a war crime."
+	icon_state = "SATTturtleneck"
+	item_state = "SATTturtleneck"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/SATT_vdv
+	name = "SATT VDV uniform"
+	desc = "High-quality clothes made of a mixture of fleece and cotton. The logo in the form of an eagle and the caption of the Strategic Assault Tactical Team are visible on the tag. If you inhale the smell, you can smell the slices of a war crime."
+	icon_state = "SATTvdv"
+	item_state = "SATTvdv"
+	can_adjust = FALSE

@@ -769,7 +769,7 @@
 	name = "Catcrin kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/storage/box/catcrin_kit
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/goal
@@ -812,3 +812,45 @@
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
+
+/datum/gear/donator/bm/at41_kit
+	name = "AT-41 Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/at41_kit
+	ckeywhitelist = list("allazarius", "flippingtable")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/SATT_combat_uniform
+	name = "SATT combat uniform"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/under/donator/bm/SATT_combat_uniform
+	ckeywhitelist = list("allazarius", "flippingtable")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/SATT_turtleneck
+	name = "SATT turtleneck"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/under/donator/bm/SATT_turtleneck
+	ckeywhitelist = list("allazarius", "flippingtable")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/SATT_vdv
+	name = "SATT vdv uniform"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/SATT_vdv
+	ckeywhitelist = list("allazarius", "flippingtable")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/SATT_jackboots
+	name = "SATT jackboots"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/shoes/jackboots/SATT_jackboots
+	ckeywhitelist = list("allazarius", "flippingtable")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/SATTdogtag
+	name = "SATT dogtag"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/accessory/SATTdogtag
+	ckeywhitelist = list("allazarius", "flippingtable")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
