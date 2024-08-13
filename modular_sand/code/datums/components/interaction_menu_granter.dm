@@ -47,7 +47,9 @@
 	. = ..()
 
 /// The one interacting is clicker, the interacted is clicked.
-/datum/component/interaction_menu_granter/proc/open_menu(mob/clicker, mob/clicked)
+/datum/component/interaction_menu_granter/proc/open_menu(mob/living/clicker, mob/living/clicked)
+	if(!isliving(clicker))
+		return
 	// COMSIG_MOB_CTRLSHIFTCLICKON accepts `atom`s, prevent it
 	if(!istype(clicked))
 		return FALSE
@@ -68,7 +70,7 @@
 	target = null
 	SStgui.close_user_uis(parent, src)
 
-/datum/component/interaction_menu_granter/ui_state(mob/user)
+/datum/component/interaction_menu_granter/ui_state(mob/living/user)
 	// Funny admin, don't you dare be the extra funny now.
 	if(user.client.holder && !user.client.holder.deadmined)
 		return GLOB.always_state
@@ -76,7 +78,7 @@
 		return GLOB.conscious_state
 	return GLOB.never_state
 
-/datum/component/interaction_menu_granter/ui_interact(mob/user, datum/tgui/ui)
+/datum/component/interaction_menu_granter/ui_interact(mob/living/ser, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "MobInteraction", "Interactions")
@@ -91,7 +93,7 @@
 		else
 			return 0
 
-/datum/component/interaction_menu_granter/ui_data(mob/user)
+/datum/component/interaction_menu_granter/ui_data(mob/living/user)
 	. = ..()
 	//Getting player
 	var/mob/living/self = parent
@@ -457,7 +459,7 @@
 		.["cum_onto_pref"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, CUM_ONTO)
 		.["sex_jitter"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, SEX_JITTER)	//By Gardelin0
 
-/datum/component/interaction_menu_granter/ui_static_data(mob/user)
+/datum/component/interaction_menu_granter/ui_static_data(mob/living/user)
 	. = ..()
 	//Getting interactions
 	var/list/sent_interactions = list()
