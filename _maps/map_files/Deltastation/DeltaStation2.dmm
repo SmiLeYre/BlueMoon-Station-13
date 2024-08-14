@@ -46727,7 +46727,6 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/obj/structure/table/optable,
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "dnJ" = (
@@ -46768,6 +46767,9 @@
 	dir = 4
 	},
 /obj/machinery/computer/operating,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "dnL" = (
@@ -48785,10 +48787,6 @@
 	light_color = "#c1caff"
 	},
 /obj/structure/table,
-/obj/item/storage/backpack/duffelbag/med/surgery{
-	pixel_y = 8;
-	pixel_x = -8
-	},
 /obj/machinery/vending/wallmed/directional/north,
 /obj/machinery/button/electrochromatic{
 	id = "operating_room2";
@@ -48803,8 +48801,7 @@
 	name = "Surgery Window"
 	},
 /obj/item/storage/backpack/duffelbag/med/surgery{
-	pixel_y = 8;
-	pixel_x = 10
+	pixel_y = 8
 	},
 /turf/open/floor/plasteel,
 /area/medical/surgery)
@@ -49187,6 +49184,16 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/structure/table,
+/obj/item/storage/box/gloves{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/masks,
+/obj/item/storage/box/bodybags{
+	pixel_x = -5;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "dtS" = (
@@ -49231,6 +49238,9 @@
 	},
 /obj/structure/table,
 /obj/item/reagent_containers/spray/cleaner,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "dtV" = (
@@ -50697,9 +50707,6 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/structure/frame/computer{
-	dir = 1
-	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "dxm" = (
@@ -50713,7 +50720,6 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/blue,
-/obj/structure/table/optable,
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "dxn" = (
@@ -50733,9 +50739,7 @@
 /obj/machinery/light{
 	light_color = "#c9d3e8"
 	},
-/obj/item/storage/backpack/duffelbag/med/surgery{
-	pixel_x = 10
-	},
+/obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/structure/table,
 /obj/machinery/button/electrochromatic{
 	id = "operating_room3";
@@ -50749,13 +50753,20 @@
 	pixel_y = 11;
 	name = "Window from the operating"
 	},
-/obj/item/storage/backpack/duffelbag/med/surgery{
-	pixel_x = -7
-	},
 /turf/open/floor/plasteel,
 /area/medical/surgery)
 "dxo" = (
 /obj/effect/turf_decal/tile/blue,
+/obj/structure/table,
+/obj/item/storage/box/gloves{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/storage/box/masks,
+/obj/item/storage/box/bodybags{
+	pixel_x = -5;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "dxp" = (
@@ -50781,6 +50792,9 @@
 /obj/machinery/computer/operating{
 	dir = 1;
 	name = "Robotics Operating Computer"
+	},
+/obj/machinery/light{
+	dir = 4
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
@@ -104543,7 +104557,6 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
-/obj/structure/frame/computer,
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "pCo" = (
