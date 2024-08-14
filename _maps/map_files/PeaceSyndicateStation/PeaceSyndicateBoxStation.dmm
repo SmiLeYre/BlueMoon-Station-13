@@ -2942,10 +2942,8 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/obj/structure/cable{
-	dir = 1
-	},
 /obj/effect/spawner/structure/window/plastitanium,
+/obj/structure/cable,
 /turf/open/floor/plating,
 /area/security/brig)
 "agP" = (
@@ -60157,11 +60155,9 @@
 /turf/open/floor/mineral/plastitanium,
 /area/security/prison)
 "oqn" = (
-/obj/structure/cable{
-	dir = 1
-	},
 /obj/structure/closet/secure_closet/medical2,
 /obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/surgery)
 "oqO" = (

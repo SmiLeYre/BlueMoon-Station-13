@@ -37,7 +37,17 @@
 	..()
 	icon_state = "enforcer-ext-[round(ammo_count())]"
 
+/obj/item/ammo_box/magazine/e45/e45_extended/empty
+	name = "Extended Enforcer magazine"
+	desc = "An extended Mk. 58 magazine."
+	start_empty = 1
+
 //BLUEMOON ADD END Добавление увеличенного магазина на инфорсер в билд.
+
+/obj/item/ammo_box/magazine/e45/empty
+	name = "Enforcer magazine"
+	desc = "A Mk. 58 magazine."
+	start_empty = 1
 
 /obj/item/ammo_box/magazine/e45/lethal
 	name = "Enforcer magazine (.45 Lethal)"

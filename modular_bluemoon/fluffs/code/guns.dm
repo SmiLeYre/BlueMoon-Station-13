@@ -61,6 +61,27 @@
 	else
 		icon_state = "auto9-e"
 
+/obj/item/modkit/at41_kit
+	name = "AT-41 Kit"
+	desc = "A modkit for making a WT-550 Gun into a AT-41 Gun."
+	product = /obj/item/gun/ballistic/automatic/wt550/at41
+	fromitem = list(/obj/item/gun/ballistic/automatic/wt550)
+
+/obj/item/gun/ballistic/automatic/wt550/at41
+	name = "\improper AT-41"
+	desc = "Старый кусок металла, который работает по принципу - и палка стреляет раз в год"
+	icon = 'modular_bluemoon/fluffs/icons/obj/at41.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "at41"
+	item_state = "at41"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/at41_fire.ogg'
+	can_suppress = FALSE
+	can_bayonet = TRUE
+
+/obj/item/gun/ballistic/automatic/wt550/at41/update_icon_state()
+	icon_state = "at41[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
+
 /obj/item/modkit/gewehr550
 	name = "Gewehr-550 Kit"
 	desc = "A modkit for making a WT-550 Gun into a Gewehr-550 Gun."
@@ -624,3 +645,20 @@
 	. = ..()
 	icon_state = "csfrontline[stock ? "" : "c"]-[get_ammo(FALSE)]"
 	item_state = "csfrontline[stock ? "" : "c"]-[get_ammo(FALSE)]"
+
+
+/obj/item/modkit/cmg_kit
+	name = "Combat MG Kit"
+	desc = "A modkit for making an combat knife into a Combat MG."
+	product = /obj/item/kitchen/knife/combat/cmg
+	fromitem = list(/obj/item/kitchen/knife/combat)
+
+/obj/item/kitchen/knife/combat/cmg
+	name = "Combat MG"
+	desc = "It is a straight sword with blade made of iron and plasteel alloy. Its handle is covered with cloth for better grip as a sort of field modification, with the emblem of Rohai engraved under it. It doesn't feel well balanced or sharp enough, but at least may look stylish"
+	item_state = "cmg"
+	icon_state = "cmg"
+	icon = 'modular_bluemoon/fluffs/icons/obj/cmg.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/back.dmi'
