@@ -36582,6 +36582,7 @@
 /area/medical/storage)
 "cSX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/sign/warning/nosmoking,
 /turf/closed/wall,
 /area/medical/medbay/central)
 "cSY" = (
@@ -46071,7 +46072,6 @@
 /area/medical/surgery)
 "dmc" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/sign/warning/nosmoking,
 /turf/closed/wall,
 /area/medical/surgery)
 "dmd" = (
@@ -46677,6 +46677,10 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
+/obj/machinery/light{
+	dir = 1;
+	light_color = "#c1caff"
+	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "dnJ" = (
@@ -46719,6 +46723,10 @@
 /obj/machinery/computer/operating,
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/item/radio/intercom{
+	name = "Station Intercom";
+	pixel_y = 24
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
@@ -48732,10 +48740,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/light{
-	dir = 1;
-	light_color = "#c1caff"
-	},
 /obj/structure/table,
 /obj/machinery/vending/wallmed/directional/north,
 /obj/machinery/button/electrochromatic{
@@ -49087,9 +49091,6 @@
 	dir = 1
 	},
 /obj/machinery/limbgrower,
-/obj/structure/sign/poster/official/cleanliness{
-	pixel_y = 33
-	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "dtR" = (
@@ -49142,12 +49143,6 @@
 	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
-	},
-/obj/machinery/firealarm/directional/north,
-/obj/item/radio/intercom{
-	name = "Station Intercom";
-	pixel_x = 27;
-	pixel_y = 22
 	},
 /obj/structure/table,
 /obj/item/reagent_containers/spray/cleaner,
@@ -50601,12 +50596,10 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/status_display/ai{
-	pixel_y = -32
-	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "dxm" = (
@@ -50620,6 +50613,9 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/tile/blue,
+/obj/machinery/light{
+	light_color = "#c9d3e8"
+	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "dxn" = (
@@ -50636,9 +50632,6 @@
 	network = list("ss13","medbay")
 	},
 /obj/effect/turf_decal/tile/neutral/fourcorners,
-/obj/machinery/light{
-	light_color = "#c9d3e8"
-	},
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/structure/table,
 /obj/machinery/button/electrochromatic{
@@ -50685,9 +50678,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/obj/machinery/status_display/evac{
-	pixel_y = -32
-	},
 /obj/effect/turf_decal/tile/blue,
 /obj/machinery/computer/operating{
 	dir = 1;
@@ -50695,6 +50685,10 @@
 	},
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/item/radio/intercom{
+	name = "Station Intercom";
+	pixel_y = -32
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
@@ -82575,6 +82569,10 @@
 /obj/effect/spawner/lootdrop/techstorage/command,
 /turf/open/floor/plasteel,
 /area/engineering/storage/tech)
+"jdL" = (
+/obj/structure/sign/warning/nosmoking,
+/turf/closed/wall,
+/area/medical/medbay/zone2)
 "jdO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -100725,7 +100723,6 @@
 /obj/machinery/airalarm/directional/east,
 /obj/structure/table,
 /obj/item/reagent_containers/spray/cleaner,
-/obj/machinery/firealarm/directional/south,
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "oAZ" = (
@@ -104054,6 +104051,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
+/obj/machinery/firealarm/directional/north,
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "pCo" = (
@@ -111457,6 +111455,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/brig)
+"rQg" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/sign/warning/nosmoking,
+/turf/closed/wall,
+/area/medical/surgery)
 "rQi" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -179855,7 +179860,7 @@ dma
 pCg
 ttT
 rNk
-dsM
+rQg
 dtQ
 dvE
 dxl
@@ -180875,7 +180880,7 @@ cZP
 dbz
 ddk
 deK
-iLg
+jdL
 dhj
 diN
 dkv
