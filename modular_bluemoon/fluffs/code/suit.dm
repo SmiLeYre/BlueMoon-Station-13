@@ -180,3 +180,12 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	can_adjust = FALSE
 
+/obj/item/clothing/suit/bm/syndie_jacket
+	name = "Cybertechnical Jacket"
+	desc = "A cybernetic jacket for civilians from a certain circle of the De'Sante family. Convenience, luxury, technology, brutality."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	icon_state = "syndie_jacket"
+	item_state = "syndie_jacket"
+	body_parts_covered = CHEST
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
