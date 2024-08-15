@@ -3012,7 +3012,6 @@
 /area/awaymission/wildwest/mines)
 "tB" = (
 /obj/effect/mob_spawn/human/corpse/inteq_dead,
-/obj/item/pickaxe/drill/jackhammer/angle_grinder,
 /turf/open/floor/circuit/green/off,
 /area/awaymission/wildwest/vault)
 "tH" = (
