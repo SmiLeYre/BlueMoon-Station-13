@@ -61,6 +61,10 @@
 	pixel_y = 10
 	},
 /obj/item/shovel,
+/obj/machinery/light/floor{
+	light_color = "#f27d0c";
+	color = "FFB43A"
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "cN" = (
@@ -116,7 +120,7 @@
 "iJ" = (
 /obj/structure/mineral_door/woodrustic,
 /obj/structure/fans/tiny/invisible,
-/turf/open/floor/wood,
+/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "jc" = (
 /obj/machinery/vending/games{
@@ -214,7 +218,7 @@
 "nH" = (
 /obj/structure/mineral_door/wood,
 /obj/structure/fans/tiny/invisible,
-/turf/open/floor/wood,
+/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "nY" = (
 /obj/structure/chair/pew/left{
@@ -344,9 +348,10 @@
 /turf/open/floor/carpet/royalblack,
 /area/hilbertshotel)
 "we" = (
-/obj/structure/bonfire{
-	burning = 1;
-	icon_state = "bonfire_warm"
+/obj/structure/bonfire,
+/obj/machinery/light/floor{
+	light_color = "#f27d0c";
+	color = "FFB43A"
 	},
 /turf/open/floor/plating/asteroid/snow{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=290"
@@ -544,6 +549,10 @@
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
+"HN" = (
+/obj/structure/mineral_door/wood,
+/turf/open/floor/wood/wood_tiled,
+/area/hilbertshotel)
 "Iy" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -676,10 +685,6 @@
 	},
 /obj/structure/table/wood,
 /obj/structure/reagent_dispensers/keg/mead,
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
-	},
 /turf/open/floor/carpet,
 /area/hilbertshotel)
 "QO" = (
@@ -751,6 +756,10 @@
 /area/hilbertshotel)
 "TX" = (
 /obj/structure/chair/pew,
+/obj/machinery/light/floor{
+	light_color = "#f27d0c";
+	color = "FFB43A"
+	},
 /turf/open/floor/plating/asteroid/snow{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=275"
 	},
@@ -929,10 +938,10 @@ BZ
 BZ
 QR
 mz
-hD
+HN
 Ah
 hA
-hD
+HN
 Ah
 aO
 As
