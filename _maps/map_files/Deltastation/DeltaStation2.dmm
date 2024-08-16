@@ -46639,7 +46639,8 @@
 /area/medical/surgery)
 "dnF" = (
 /obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic{
-	electrochromatic_id = "operating_room"
+	electrochromatic_id = "operating_room";
+	electrochromatic = 0
 	},
 /turf/open/floor/plating,
 /area/medical/surgery)
@@ -48762,7 +48763,8 @@
 	dir = 4
 	},
 /obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic{
-	electrochromatic_id = "operating_room3"
+	electrochromatic_id = "operating_room3";
+	electrochromatic = 0
 	},
 /turf/open/floor/plating,
 /area/medical/surgery)
@@ -105873,7 +105875,8 @@
 /area/command/heads_quarters/captain)
 "qcZ" = (
 /obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic{
-	electrochromatic_id = "operating_room2"
+	electrochromatic_id = "operating_room2";
+	electrochromatic = 0
 	},
 /turf/open/floor/plating,
 /area/medical/surgery)
