@@ -867,6 +867,15 @@
 /obj/machinery/light,
 /turf/open/floor/engine,
 /area/science/xenobiology)
+"do" = (
+/obj/structure/railing{
+	dir = 2
+	},
+/turf/open/floor/plasteel/stairs/left{
+	dir = 4;
+	color = "#66686e"
+	},
+/area/icemoon/underground/unexplored/rivers)
 "dp" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1282,19 +1291,8 @@
 /turf/open/floor/plasteel/stairs/medium,
 /area/icemoon/surface/outdoors)
 "eH" = (
-/obj/machinery/airalarm{
-	pixel_y = 23
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/structure/closet/crate,
-/obj/item/dice/d4,
-/turf/open/floor/plasteel,
-/area/mine/production)
+/turf/open/floor/iron/dark/textured,
+/area/icemoon/surface/outdoors)
 "eI" = (
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
@@ -1312,6 +1310,9 @@
 "eJ" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/effect/turf_decal/tile/purple,
+/obj/machinery/airalarm{
+	pixel_y = 23
+	},
 /turf/open/floor/plasteel,
 /area/mine/production)
 "eK" = (
@@ -1383,28 +1384,20 @@
 /turf/open/floor/plating,
 /area/icemoon/surface/outdoors)
 "eZ" = (
-/obj/effect/turf_decal/tile/brown{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/brown{
+/obj/structure/fluff/railing/corner{
 	dir = 8
 	},
-/obj/structure/stairs{
-	dir = 8;
-	icon_state = "stairs_t"
-	},
-/turf/open/floor/plasteel,
-/area/mine/production)
+/turf/open/floor/iron/dark/textured,
+/area/icemoon/surface/outdoors)
 "fa" = (
-/obj/item/beacon,
-/turf/open/floor/plasteel,
-/area/mine/production)
-"fb" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
-	dir = 4
+/obj/structure/fluff/railing/corner{
+	dir = 8
 	},
-/turf/open/floor/plasteel,
-/area/mine/production)
+/turf/open/floor/iron/dark/textured,
+/area/icemoon/underground/unexplored/rivers)
+"fb" = (
+/turf/closed/wall,
+/area/icemoon/underground/unexplored/rivers)
 "fc" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
@@ -3732,6 +3725,15 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/engineering/atmos)
+"ni" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plasteel/stairs/right{
+	dir = 4;
+	color = "#66686e"
+	},
+/area/icemoon/underground/unexplored/rivers)
 "nk" = (
 /obj/structure/stairs{
 	dir = 1;
@@ -5482,6 +5484,9 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/mine/living_quarters)
+"sP" = (
+/turf/open/floor/iron/dark/textured,
+/area/icemoon/underground/unexplored/rivers)
 "sR" = (
 /obj/structure/chair/comfy/black{
 	dir = 8
@@ -7637,6 +7642,13 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/mixing)
+"An" = (
+/obj/structure/railing,
+/turf/open/floor/plasteel/stairs/left{
+	dir = 4;
+	color = "#66686e"
+	},
+/area/icemoon/surface/outdoors)
 "Ao" = (
 /obj/structure/light_construct/small{
 	dir = 1
@@ -7672,6 +7684,12 @@
 	},
 /turf/open/floor/wood/wood_large,
 /area/command/bridge)
+"At" = (
+/obj/structure/fluff/railing/corner{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured,
+/area/icemoon/underground/unexplored/rivers)
 "Aw" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Mining Station Communications";
@@ -8345,6 +8363,13 @@
 /obj/machinery/power/apc/auto_name/east,
 /turf/open/floor/plasteel,
 /area/science)
+"CJ" = (
+/obj/structure/fluff/railing/corner{
+	dir = 1;
+	pixel_y = 0
+	},
+/turf/open/floor/iron/dark/textured,
+/area/icemoon/surface/outdoors)
 "CK" = (
 /obj/machinery/conveyor{
 	id = "mining_internal"
@@ -11794,6 +11819,15 @@
 	},
 /turf/open/floor/wood/wood_large,
 /area/command/heads_quarters/hos)
+"Os" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/plasteel/stairs/right{
+	dir = 4;
+	color = "#66686e"
+	},
+/area/icemoon/surface/outdoors)
 "Ot" = (
 /obj/effect/turf_decal/trimline/red/filled/line{
 	dir = 1
@@ -13101,6 +13135,12 @@
 	},
 /turf/open/floor/plasteel/grimy,
 /area/service/chapel/main/monastery)
+"Tr" = (
+/obj/structure/fluff/railing/corner{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured,
+/area/mine/production)
 "Ts" = (
 /obj/effect/turf_decal/bot_white/right,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
@@ -13839,6 +13879,13 @@
 /obj/structure/chair/office,
 /turf/open/floor/plating,
 /area/icemoon/surface/outdoors)
+"VR" = (
+/obj/effect/turf_decal/tile/purple{
+	dir = 4
+	},
+/obj/item/beacon,
+/turf/open/floor/plasteel,
+/area/mine/production)
 "VS" = (
 /obj/structure/sign/warning/fire{
 	pixel_y = -32
@@ -13855,6 +13902,9 @@
 	icon_state = "platingdmg1"
 	},
 /area/icemoon/surface/outdoors)
+"VV" = (
+/turf/open/floor/iron/dark/textured,
+/area/mine/production)
 "VX" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -52475,18 +52525,18 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
+fb
+fb
+fb
+fb
 VE
 VE
 VE
 VE
-VE
-VE
-VE
-VE
+Uz
+Uz
+Uz
+Uz
 VE
 VE
 oW
@@ -52732,18 +52782,18 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-VE
-VE
-VE
-VE
-VE
-VE
-VE
-VE
+fb
+ni
+do
+fb
+Uz
+Uz
+Uz
+Uz
+Uz
+Os
+An
+Uz
 VE
 VE
 eq
@@ -52989,17 +53039,17 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-VE
-VE
-VE
-VE
-VE
-VE
-eq
+fb
+At
+fa
+At
+eH
+eH
+eH
+eH
+eZ
+CJ
+Tr
 eq
 eq
 eq
@@ -53246,18 +53296,18 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-VE
-VE
-VE
-VE
+fb
+sP
+sP
+sP
+eH
+eH
+eH
+eH
+VV
+VV
+VV
 eq
-eq
-eq
-eZ
 fB
 eq
 eq
@@ -53503,18 +53553,18 @@ ah
 ah
 ah
 ah
-ah
-ah
-ah
-ah
-VE
-VE
-VE
-VE
-eq
-eH
 fb
-fa
+fb
+fb
+fb
+Uz
+Uz
+Uz
+Uz
+eq
+eq
+eq
+eq
 fC
 fD
 nm
@@ -54028,7 +54078,7 @@ VE
 er
 eJ
 fd
-fG
+VR
 hk
 jo
 nq
