@@ -1,8 +1,9 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "ag" = (
-/obj/effect/turf_decal/siding/wood{
+/obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
+/obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/carpet,
 /area/hilbertshotel)
 "aO" = (
@@ -56,11 +57,19 @@
 	dir = 5
 	},
 /obj/structure/table/wood,
-/obj/item/flashlight/lantern{
-	pixel_x = -6;
-	pixel_y = 10
-	},
 /obj/item/shovel,
+/obj/machinery/light/floor{
+	light_color = "#f27d0c";
+	color = "FFB43A"
+	},
+/obj/item/wrench{
+	pixel_x = 6
+	},
+/obj/item/flashlight/lantern{
+	icon_state = "lantern-on";
+	pixel_x = -8;
+	pixel_y = 13
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "cN" = (
@@ -90,19 +99,32 @@
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=275"
 	},
 /area/hilbertshotel)
+"gq" = (
+/obj/structure/chair/wood{
+	dir = 1
+	},
+/turf/open/floor/plating/asteroid/snow{
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=275"
+	},
+/area/hilbertshotel)
 "gX" = (
 /obj/structure/bookcase/random/fiction,
 /turf/closed/indestructible/wood,
 /area/hilbertshotel)
 "hA" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 10
+	dir = 8
 	},
+/obj/effect/turf_decal/siding/wood/corner,
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "hD" = (
+/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /obj/structure/mineral_door/wood,
-/turf/open/floor/wood,
+/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "iB" = (
 /obj/effect/turf_decal/siding/wood/corner{
@@ -114,9 +136,12 @@
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "iJ" = (
-/obj/structure/mineral_door/woodrustic,
 /obj/structure/fans/tiny/invisible,
-/turf/open/floor/wood,
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 1
+	},
+/obj/structure/mineral_door/woodrustic,
+/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "jc" = (
 /obj/machinery/vending/games{
@@ -212,9 +237,12 @@
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "nH" = (
-/obj/structure/mineral_door/wood,
 /obj/structure/fans/tiny/invisible,
-/turf/open/floor/wood,
+/obj/effect/turf_decal/siding/wood/end{
+	dir = 4
+	},
+/obj/structure/mineral_door/wood,
+/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "nY" = (
 /obj/structure/chair/pew/left{
@@ -243,9 +271,11 @@
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "pd" = (
-/obj/structure/flora/grass/green,
+/obj/structure/chair/wood{
+	dir = 8
+	},
 /turf/open/floor/plating/asteroid/snow{
-	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=290"
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=275"
 	},
 /area/hilbertshotel)
 "pH" = (
@@ -310,31 +340,29 @@
 	},
 /area/hilbertshotel)
 "tg" = (
-/obj/structure/toilet{
-	dir = 8
+/obj/structure/sink/directional/west{
+	pixel_x = 13
 	},
-/obj/effect/turf_decal/siding{
-	dir = 6
-	},
+/obj/structure/mirror/directional/east,
 /turf/open/floor/iron/white/small,
 /area/hilbertshotel)
 "tX" = (
-/obj/structure/chair/wood,
-/turf/open/floor/plating/asteroid/snow{
-	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=290"
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
+/obj/machinery/light_switch/directional/east,
+/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "uz" = (
 /obj/structure/sink/kitchen/directional/east,
 /turf/open/floor/plasteel/cafeteria,
 /area/hilbertshotel)
 "uD" = (
-/obj/structure/chair/wood{
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/turf_decal/siding/wood/corner{
 	dir = 8
 	},
-/turf/open/floor/plating/asteroid/snow{
-	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=290"
-	},
+/turf/open/floor/carpet/royalblue,
 /area/hilbertshotel)
 "vx" = (
 /obj/effect/turf_decal/siding/wood{
@@ -344,12 +372,9 @@
 /turf/open/floor/carpet/royalblack,
 /area/hilbertshotel)
 "we" = (
-/obj/structure/bonfire{
-	burning = 1;
-	icon_state = "bonfire_warm"
-	},
+/obj/structure/chair/wood,
 /turf/open/floor/plating/asteroid/snow{
-	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=290"
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=275"
 	},
 /area/hilbertshotel)
 "xr" = (
@@ -479,11 +504,9 @@
 /turf/closed/indestructible/rock/snow,
 /area/hilbertshotel)
 "DA" = (
-/obj/structure/chair/wood{
-	dir = 1
-	},
+/obj/structure/bonfire,
 /turf/open/floor/plating/asteroid/snow{
-	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=290"
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=275"
 	},
 /area/hilbertshotel)
 "DX" = (
@@ -518,9 +541,13 @@
 /turf/closed/indestructible/rock/snow,
 /area/hilbertshotel)
 "Fu" = (
-/turf/open/floor/plating/ice/smooth{
-	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=275"
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "GU" = (
 /obj/effect/turf_decal/siding/wood{
@@ -529,12 +556,12 @@
 /turf/open/floor/carpet/royalblack,
 /area/hilbertshotel)
 "Hw" = (
-/obj/structure/mineral_door/woodrustic,
 /obj/structure/fans/tiny/invisible,
 /obj/effect/turf_decal/siding/wood,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/obj/structure/mineral_door/woodrustic,
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "HM" = (
@@ -542,6 +569,16 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
+/turf/open/floor/wood/wood_tiled,
+/area/hilbertshotel)
+"HN" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
+	},
+/obj/structure/mineral_door/wood,
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "Iy" = (
@@ -597,12 +634,11 @@
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "MC" = (
-/obj/structure/chair/wood{
-	dir = 4
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
 	},
-/turf/open/floor/plating/asteroid/snow{
-	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=290"
-	},
+/obj/effect/turf_decal/siding/wood/corner,
+/turf/open/floor/carpet/royalblue,
 /area/hilbertshotel)
 "Ng" = (
 /obj/structure/table/reinforced,
@@ -637,6 +673,15 @@
 	pixel_x = -5
 	},
 /turf/open/floor/plasteel/cafeteria,
+/area/hilbertshotel)
+"Pm" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "Po" = (
 /obj/effect/turf_decal/siding/wood,
@@ -676,16 +721,14 @@
 	},
 /obj/structure/table/wood,
 /obj/structure/reagent_dispensers/keg/mead,
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
-	},
 /turf/open/floor/carpet,
 /area/hilbertshotel)
 "QO" = (
-/obj/structure/flora/grass/both,
+/obj/structure/chair/wood{
+	dir = 4
+	},
 /turf/open/floor/plating/asteroid/snow{
-	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=290"
+	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=275"
 	},
 /area/hilbertshotel)
 "QR" = (
@@ -736,21 +779,17 @@
 /turf/closed/indestructible/wood,
 /area/hilbertshotel)
 "TO" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -12;
-	pixel_y = 2
-	},
-/obj/structure/mirror{
-	pixel_x = -32
-	},
-/obj/effect/turf_decal/siding{
-	dir = 10
+/obj/structure/toilet{
+	dir = 4
 	},
 /turf/open/floor/iron/white/small,
 /area/hilbertshotel)
 "TX" = (
 /obj/structure/chair/pew,
+/obj/machinery/light/floor{
+	light_color = "#f27d0c";
+	color = "FFB43A"
+	},
 /turf/open/floor/plating/asteroid/snow{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=275"
 	},
@@ -767,30 +806,28 @@
 	dir = 4
 	},
 /obj/item/soap/deluxe,
-/obj/effect/turf_decal/siding{
-	dir = 9
-	},
 /turf/open/floor/iron/white/small,
 /area/hilbertshotel)
 "Vt" = (
 /turf/open/floor/wood/wood_large,
 /area/hilbertshotel)
 "We" = (
-/obj/effect/turf_decal/siding/wood{
+/obj/effect/turf_decal/siding/wood/corner,
+/obj/effect/turf_decal/siding/wood/corner{
 	dir = 4
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "Wx" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 5
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "WD" = (
-/obj/effect/turf_decal/siding{
-	dir = 5
-	},
 /obj/machinery/light/small{
 	dir = 4
 	},
@@ -850,6 +887,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
+/obj/item/instrument/guitar,
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 
@@ -892,7 +930,7 @@ BZ
 (3,1,1) = {"
 BZ
 Iy
-mz
+MC
 Uq
 WD
 tg
@@ -928,13 +966,13 @@ BZ
 (5,1,1) = {"
 BZ
 QR
-mz
-hD
-Ah
+uD
+HN
+Fu
 hA
-hD
-Ah
-aO
+HN
+Fu
+Pm
 As
 BZ
 RW
@@ -1010,7 +1048,7 @@ yU
 yU
 iJ
 Wx
-We
+tX
 YH
 Ex
 BZ
@@ -1079,8 +1117,8 @@ Po
 BZ
 kY
 xv
-pd
-MC
+fN
+sx
 QO
 fN
 xv
@@ -1097,12 +1135,12 @@ dl
 BZ
 xv
 nb
-tX
+xv
 we
 DA
+gq
+Og
 xv
-Fu
-Fu
 Fs
 "}
 (15,1,1) = {"
@@ -1115,11 +1153,11 @@ bH
 BZ
 xv
 Og
-QO
-uD
+sx
+Og
 pd
-Fu
-Fu
+xv
+xv
 yr
 Dx
 "}
