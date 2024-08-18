@@ -108,6 +108,16 @@
 	item_state = "noonar"
 	togglename = "buttons"
 
+/obj/item/clothing/suit/toggle/noonarlong
+	name = "Syndicate Jacket"
+	desc = "A syndicate jacket."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	icon_state = "noonarlong"
+	item_state = "noonarlong"
+	togglename = "buttons"
+
 /obj/item/clothing/suit/donator/bm/sports_jacket
 	name = "Sports Jacket"
 	desc = "It's yellow."

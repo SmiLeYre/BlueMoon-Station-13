@@ -373,6 +373,14 @@
 	ckeywhitelist = list("noonar", "dasani2879")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/noonarlong
+	name = "Syndicate jacket"
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/suit/toggle/noonarlong
+	ckeywhitelist = list("noonar", "dasani2879")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+
 /datum/gear/donator/bm/pchelik
 	name = "GFYS"
 	slot = ITEM_SLOT_BACKPACK
@@ -873,5 +881,5 @@
 	name = "Cybertechnical Jacket"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/suit/bm/syndie_jacket
-	ckeywhitelist = list("xaeshkavd")
+	ckeywhitelist = list("xaeshkavd", "ghos7ik")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
