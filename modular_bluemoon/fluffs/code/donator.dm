@@ -374,7 +374,7 @@
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/noonarlong
-	name = "Syndicate jacket"
+	name = "A long syndicate jacket."
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/toggle/noonarlong
 	ckeywhitelist = list("noonar", "dasani2879")

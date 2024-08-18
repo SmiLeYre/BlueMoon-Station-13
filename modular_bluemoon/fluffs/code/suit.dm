@@ -100,7 +100,7 @@
 
 /obj/item/clothing/suit/toggle/noonar // Наследуем от suit/toggle, чтобы можно было переключать состояние
 	name = "Syndicate Jacket"
-	desc = "A syndicate jacket."
+	desc = "A syndicate jacket"
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
@@ -109,8 +109,8 @@
 	togglename = "buttons"
 
 /obj/item/clothing/suit/toggle/noonarlong
-	name = "Syndicate Jacket"
-	desc = "A syndicate jacket."
+	name = "A longer version of syndicate Jacket"
+	desc = "A long syndicate jacket"
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
