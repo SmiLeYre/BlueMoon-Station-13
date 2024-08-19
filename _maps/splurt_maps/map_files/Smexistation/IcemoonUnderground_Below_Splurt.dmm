@@ -46,6 +46,14 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/plating,
 /area/command/bridge)
+"ec" = (
+/obj/machinery/power/deck_relay,
+/obj/structure/cable{
+	dir = 1
+	},
+/obj/effect/turf_decal/bot,
+/turf/open/floor/plating,
+/area/maintenance/department/security)
 "en" = (
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
@@ -53,6 +61,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/eva)
+"eu" = (
+/obj/structure/cable{
+	icon_state = "1-2";
+	color = "#9e1515"
+	},
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating,
+/area/maintenance/department/security)
 "eA" = (
 /obj/machinery/light{
 	dir = 1
@@ -89,6 +105,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/eva)
+"hh" = (
+/obj/structure/ladder{
+	pixel_y = 8
+	},
+/obj/effect/turf_decal/bot_white,
+/turf/open/floor/plating,
+/area/maintenance/department/security)
 "hG" = (
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
@@ -119,6 +142,21 @@
 /obj/structure/closet/emcloset,
 /turf/open/floor/plasteel,
 /area/mine/eva)
+"kI" = (
+/obj/structure/cable{
+	icon_state = "2-8";
+	color = "#771515"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating,
+/area/maintenance/department/security)
+"lM" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/maintenance/department/security)
 "lP" = (
 /turf/closed/mineral/random/snow/underground,
 /area/icemoon/underground/explored)
@@ -161,6 +199,12 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/command/bridge)
+"oL" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/open/floor/plating,
+/area/maintenance/department/security)
 "oY" = (
 /obj/item/storage/firstaid/regular,
 /obj/structure/table,
@@ -278,6 +322,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/eva)
+"uI" = (
+/obj/machinery/power/deck_relay,
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/effect/turf_decal/bot,
+/turf/open/floor/plating,
+/area/maintenance/department/security)
 "uT" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -299,6 +351,18 @@
 	},
 /turf/open/floor/plating,
 /area/command/bridge)
+"xg" = (
+/obj/structure/cable{
+	icon_state = "1-2";
+	color = "#771515"
+	},
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/obj/structure/lattice/catwalk,
+/turf/open/floor/plating,
+/area/maintenance/department/security)
 "yK" = (
 /obj/machinery/light,
 /obj/effect/turf_decal/tile/brown,
@@ -396,6 +460,14 @@
 "Es" = (
 /turf/closed/mineral/random/snow/underground,
 /area/icemoon/underground/unexplored/rivers)
+"EQ" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/lattice/catwalk,
+/obj/machinery/space_heater,
+/turf/open/floor/plating,
+/area/maintenance/department/security)
 "Fb" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/icemoon/surface/outdoors)
@@ -467,6 +539,14 @@
 "Ok" = (
 /turf/closed/wall/mineral/snow,
 /area/icemoon/underground/explored)
+"OG" = (
+/obj/structure/cable{
+	icon_state = "2-4";
+	color = "#9e1515"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/maintenance/department/security)
 "Pj" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 10
@@ -502,9 +582,17 @@
 	},
 /turf/open/floor/plating,
 /area/mine/eva)
+"SM" = (
+/turf/closed/wall,
+/area/maintenance/department/security)
 "Tf" = (
 /turf/open/floor/engine,
 /area/science/mixing)
+"UO" = (
+/obj/structure/grille,
+/obj/effect/spawner/structure/window/reinforced,
+/turf/open/floor/plating,
+/area/maintenance/department/security)
 "Vq" = (
 /obj/machinery/door/airlock/external{
 	name = "Mining Dock Airlock";
@@ -25603,14 +25691,14 @@ Es
 Es
 Es
 Es
-Es
-Es
-Es
-Es
-Es
-Es
-Es
-Es
+SM
+SM
+SM
+UO
+UO
+SM
+SM
+SM
 Es
 Es
 Es
@@ -25860,14 +25948,14 @@ Es
 Es
 Es
 Es
-Es
-Es
-Es
-Es
-Es
-Es
-Es
-Es
+SM
+hh
+lM
+OG
+oL
+lM
+hh
+SM
 Es
 Es
 Es
@@ -26117,14 +26205,14 @@ Es
 Es
 Es
 Es
-Es
-Es
-Es
-Es
-Es
-Es
-Es
-Es
+SM
+uI
+EQ
+kI
+xg
+eu
+ec
+SM
 Es
 Es
 Es
@@ -26374,14 +26462,14 @@ Es
 Es
 Es
 Es
-Es
-Es
-Es
-Es
-Es
-Es
-Es
-Es
+SM
+SM
+SM
+SM
+SM
+SM
+SM
+SM
 Es
 Es
 Es
