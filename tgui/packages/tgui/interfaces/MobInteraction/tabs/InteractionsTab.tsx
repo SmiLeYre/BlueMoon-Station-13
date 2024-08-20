@@ -8,6 +8,7 @@ import { Box } from '../../../components';
 
 type ContentInfo = {
   interactions: InteractionData[];
+  favorite_interactions: string[];
   user_is_blacklisted: boolean;
   target_is_blacklisted: boolean;
 }
@@ -44,33 +45,56 @@ export const InteractionsTab = (props, context) => {
     searchText,
     data)
     || [];
+
+  const favorite_interactions = data.favorite_interactions || [];
+  const [inFavorites, setInFavorites] = useLocalState(context, 'inFavorites', false);
+  const valid_favorites = interactions.filter(interaction => favorite_interactions.includes(interaction.key));
+  const interactions_to_display = inFavorites
+    ? valid_favorites
+    : interactions;
+
   const { user_is_blacklisted, target_is_blacklisted } = data;
+
   return (
     <Stack vertical>
       {
-        interactions.length ? (
-          interactions.map((interaction) => (
+        interactions_to_display.length ? (
+          interactions_to_display.map((interaction) => (
             <Stack.Item key={interaction.key}>
-              <Button
-                key={interaction.key}
-                content={interaction.desc}
-                color={interaction.type === INTERACTION_EXTREME ? "red"
-                  : interaction.type ? "pink"
-                    : "default"}
-                fluid
-                mb={-0.7}
-                onClick={() => act('interact', {
-                  interaction: interaction.key,
-                })}>
-                <Box textAlign="right" fillPositionedParent>
-                  {interaction.additionalDetails && (
-                    interaction.additionalDetails.map(detail => (
-                      <Tooltip content={detail.info} key={detail}>
-                        <Icon name={detail.icon} key={detail} />
-                      </Tooltip>
-                    )))}
-                </Box>
-              </Button>
+              <Stack fill>
+                <Stack.Item grow>
+                  <Button
+                    key={interaction.key}
+                    content={interaction.desc}
+                    color={interaction.type === INTERACTION_EXTREME ? "red"
+                      : interaction.type ? "pink"
+                        : "default"}
+                    fluid
+                    mb={-0.7}
+                    onClick={() => act('interact', {
+                      interaction: interaction.key,
+                    })}>
+                    <Box textAlign="right" fillPositionedParent>
+                      {interaction.additionalDetails && (
+                        interaction.additionalDetails.map(detail => (
+                          <Tooltip content={detail.info} key={detail}>
+                            <Icon name={detail.icon} key={detail} />
+                          </Tooltip>
+                        )))}
+                    </Box>
+                  </Button>
+                </Stack.Item>
+                <Stack.Item>
+                  <Button
+                    icon="star"
+                    tooltip={`${favorite_interactions.includes(interaction.key) ? "Remove from" : "Add to"} favorites`}
+                    onClick={() => act('favorite', {
+                      interaction: interaction.key,
+                    })}
+                    selected={favorite_interactions.includes(interaction.key)}
+                  />
+                </Stack.Item>
+              </Stack>
             </Stack.Item>
           ))
         ) : (
@@ -79,7 +103,8 @@ export const InteractionsTab = (props, context) => {
               user_is_blacklisted || target_is_blacklisted
                 ? `${user_is_blacklisted ? "Your" : "Their"} mob type is blacklisted from interactions`
                 : searchText ? "No matching results."
-                  : "No interactions available."
+                  : inFavorites ? favorite_interactions.length ? "No favorites available. Maybe you or your partner lack something your favorites require." : "You have no favorites! Choose some by clicking the star to the right of any interactions!"
+                    : "No interactions available."
             }
           </Section>
         )

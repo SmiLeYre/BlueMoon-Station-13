@@ -371,15 +371,17 @@
 
 	if(is_servant_of_ratvar(L))
 		to_chat(L, "<span class='userdanger'>Священный Туман распространяется по вашему сознанию, ослабляя связь с Жёлтым Измерением и очищая вас от влияния Юстициара Ратвара!</span>")
-	else if(iscultist(L))
+		return
+	if(iscultist(L))
 		to_chat(L, "<span class='userdanger'>Священный Туман распространяется по вашему сознанию, ослабляя связь с Красным Измерением и очищая вас от влияния Нар-Си</span>")
-	else if(HAS_TRAIT(L,TRAIT_RUSSIAN))
+		return
+	if(HAS_TRAIT(L,TRAIT_RUSSIAN))
 		// Alert user of holy water effect.
 		to_chat(L, span_nicegreen("Святая водица питает и заряжает энергией!"))
 	else
 		to_chat(L, span_nicegreen("Священный Туман распространяется по вашему сознанию."))
 
-	if(HAS_TRAIT(L, TRAIT_HALLOWED) || usr.job == "Chaplain")
+	if(HAS_TRAIT(L, TRAIT_HALLOWED) || L.mind?.isholy)
 		L.drowsyness = max(L.drowsyness-5, 0)
 		L.AdjustUnconscious(-20, FALSE)
 		L.AdjustAllImmobility(-40, FALSE)
@@ -407,7 +409,8 @@
 	if(!data)
 		data = list("misc" = 1)
 	data["misc"]++
-	M.jitteriness = min(M.jitteriness+4,10)
+	if(HAS_TRAIT(M, TRAIT_HALLOWED) || M.mind?.isholy)
+		return
 	if(iscultist(M, FALSE, TRUE))
 		for(var/datum/action/innate/cult/blood_magic/BM in M.actions)
 			if(!BM.holy_dispel)
@@ -426,7 +429,7 @@
 				M.visible_message("<span class='danger'>[M] падает в припадке!</span>", "<span class='userdanger'>У вас начался припадок!</span>")
 				M.Unconscious(120)
 				to_chat(M, "<span class='cultlarge'>[pick("Ваша кровь - это ваша связь. Без нее вы никто!", "Не забывай своё место, дитя.", \
-				"Столько сил, а вы все равно не справляетесь?", "Если ты не сможешь очистить себя от этой отраву, я очищу твою скудную жизнь!")].</span>")
+				"Столько сил, а вы все равно не справляетесь?", "Если ты не сможешь очистить себя от этой отраву, я очищу твою скудную жизнь!")]</span>")
 		else if(is_servant_of_ratvar(M) && prob(8))
 			switch(pick("speech", "message", "emote"))
 				if("speech")
@@ -437,15 +440,14 @@
 				if("emote")
 					M.visible_message("<span class='warning'>[M] [pick("whimpers quietly", "shivers as though cold", "glances around in paranoia")].</span>")
 	if(data["misc"] >= 60)	// 30 units, 135 seconds
-		if(iscultist(M, FALSE, TRUE) || is_servant_of_ratvar(M, FALSE, TRUE))
-			if(iscultist(M))
-				SSticker.mode.remove_cultist(M.mind, FALSE, TRUE)
-			else if(is_servant_of_ratvar(M))
-				remove_servant_of_ratvar(M)
-			M.jitteriness = 0
-			M.stuttering = 0
-			holder.del_reagent(type)	// maybe this is a little too perfect and a max() cap on the statuses would be better??
-			return
+		if(iscultist(M))
+			SSticker.mode.remove_cultist(M.mind, FALSE, TRUE)
+		if(is_servant_of_ratvar(M))
+			remove_servant_of_ratvar(M)
+		M.jitteriness = 0
+		M.stuttering = 0
+		holder.del_reagent(type)	// maybe this is a little too perfect and a max() cap on the statuses would be better??
+		return
 	holder.remove_reagent(type, 0.4)	//fixed consumption to prevent balancing going out of whack
 
 /datum/reagent/water/holywater/reaction_turf(turf/T, reac_volume)

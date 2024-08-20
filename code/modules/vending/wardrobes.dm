@@ -476,6 +476,7 @@
 					/obj/item/clothing/head/pharaoh = 2,
 					/obj/item/clothing/neck/tie/cross = 7,
 					/obj/item/storage/fancy/candle_box = 3,
+					/obj/item/aspergillum = 3, // BLUEMOON ADD - инструмент для окропления святой водой
 					/obj/item/toy/plush/plushvar = 1, // BLUEMOON ADD - перенесено из категории примиума,
 					/obj/item/toy/plush/narplush = 1, // BLUEMOON ADD - перенесено из категории примиума,
 					/obj/item/clothing/head/clownmitre = 3, //BlueMoon changes,
@@ -499,6 +500,9 @@
 	refill_canister = /obj/item/vending_refill/wardrobe/chap_wardrobe
 	extra_price = PRICE_ALMOST_ONE_GRAND * 1.1
 	payment_department = ACCOUNT_SRV
+	vending_sound = 'sound/effects/pray.ogg' // BLUEMOON EDIT - особый звук для вендомата священника
+	vending_sound_vary = FALSE // BLUEMOON EDIT - особый звук для вендомата священника
+
 /obj/item/vending_refill/wardrobe/chap_wardrobe
 	machine_name = "DeusVend"
 

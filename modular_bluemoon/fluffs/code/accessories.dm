@@ -85,6 +85,7 @@
 	item_state = "booma"
 
 ////////////////////////
+
 /obj/item/clothing/neck/tie/dogtag
 	name = "Dog tag"
 	desc = "The first tag indicates personal number - AG-003288 and affiliation with the AC mercenaries.  The second tag contains the first and last name - Althea Gantia, along with the blood type."
@@ -92,3 +93,37 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
 	icon_state = "dogtag"
 	item_state = "dogtag"
+
+////////////////////////
+
+/obj/item/clothing/gloves/fingerless/monolith_gloves
+	name = "Monolith gloves"
+	desc = "The gloves of the jumpsuit Granite M1 from the Monolith group, the manufacturer is unknown."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/gloves.dmi'
+	icon_state = "monolithgloves"
+	item_state = "monolithgloves"
+
+/obj/item/clothing/gloves/SATT_gloves
+	name = "SATT gloves"
+	desc = "High-quality clothes made of a mixture of fleece and cotton. The logo in the form of an eagle and the caption of the Strategic Assault Tactical Team are visible on the tag. If you inhale the smell, you can smell the slices of a war crime."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/gloves.dmi'
+	icon_state = "SATTgloves"
+	item_state = "SATTgloves"
+
+/obj/item/clothing/gloves/fingerless/SATT_gloves_finger
+	name = "Fingerless SATT gloves"
+	desc = "High-quality clothes made of a mixture of fleece and cotton. The logo in the form of an eagle and the caption of the Strategic Assault Tactical Team are visible on the tag. If you inhale the smell, you can smell the slices of a war crime."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/gloves.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/gloves.dmi'
+	icon_state = "SATTgloves_fingerless"
+	item_state = "SATTgloves_fingerless"
+
+/obj/item/clothing/shoes/jackboots/SATT_jackboots
+	name = "SATT jackboots"
+	desc = "High-quality clothes made of a mixture of fleece and cotton. The logo in the form of an eagle and the caption of the Strategic Assault Tactical Team are visible on the tag. If you inhale the smell, you can smell the slices of a war crime."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/shoes.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/shoes.dmi'
+	icon_state = "SATTjackboots"
+	item_state = "SATTjackboots"

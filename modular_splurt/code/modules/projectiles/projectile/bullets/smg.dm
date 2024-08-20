@@ -8,8 +8,8 @@
 
 /obj/item/projectile/bullet/c45/lethal
 	name = ".45 bullet"
-	damage = 20 // 30 before
-	wound_bonus = 4 // 6 before
+	damage = 25 // 30 before
+	wound_bonus = 6 // 6 before
 	stamina = 0
 	wound_falloff_tile = -10
 	sharpness = NONE // AHUY
@@ -29,7 +29,7 @@
 
 /obj/item/projectile/bullet/c45/trac
 	name = ".45 TRAC bullet"
-	damage = 10 // 15 before
+	damage = 15 // 15 before
 	stamina = 0
 
 /obj/item/projectile/bullet/c45/ion
@@ -48,7 +48,7 @@
 
 /obj/item/projectile/bullet/c45/hotshot //similar to incendiary bullets, but do not leave a flaming trail
 	name = ".45 Hot Shot bullet"
-	damage = 15 // 20 before
+	damage = 20 // 20 before
 	stamina = 0
 	sharpness = SHARP_EDGED
 

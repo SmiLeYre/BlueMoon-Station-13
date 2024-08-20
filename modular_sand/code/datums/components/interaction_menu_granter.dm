@@ -47,7 +47,9 @@
 	. = ..()
 
 /// The one interacting is clicker, the interacted is clicked.
-/datum/component/interaction_menu_granter/proc/open_menu(mob/clicker, mob/clicked)
+/datum/component/interaction_menu_granter/proc/open_menu(mob/living/clicker, mob/living/clicked)
+	if(!isliving(clicker))
+		return
 	// COMSIG_MOB_CTRLSHIFTCLICKON accepts `atom`s, prevent it
 	if(!istype(clicked))
 		return FALSE
@@ -68,7 +70,7 @@
 	target = null
 	SStgui.close_user_uis(parent, src)
 
-/datum/component/interaction_menu_granter/ui_state(mob/user)
+/datum/component/interaction_menu_granter/ui_state(mob/living/user)
 	// Funny admin, don't you dare be the extra funny now.
 	if(user.client.holder && !user.client.holder.deadmined)
 		return GLOB.always_state
@@ -76,7 +78,7 @@
 		return GLOB.conscious_state
 	return GLOB.never_state
 
-/datum/component/interaction_menu_granter/ui_interact(mob/user, datum/tgui/ui)
+/datum/component/interaction_menu_granter/ui_interact(mob/living/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
 		ui = new(user, src, "MobInteraction", "Interactions")
@@ -91,7 +93,7 @@
 		else
 			return 0
 
-/datum/component/interaction_menu_granter/ui_data(mob/user)
+/datum/component/interaction_menu_granter/ui_data(mob/living/user)
 	. = ..()
 	//Getting player
 	var/mob/living/self = parent
@@ -415,46 +417,55 @@
 
 	var/datum/preferences/prefs = self?.client.prefs
 	if(prefs)
+	//Lust stuff, appears at the very top
+		.["use_arousal_multiplier"] = 	prefs.use_arousal_multiplier
+		.["arousal_multiplier"] =		prefs.arousal_multiplier
+		.["use_moaning_multiplier"] = 	prefs.use_moaning_multiplier
+		.["moaning_multiplier"] = 		prefs.moaning_multiplier
+
+	//Let's get their favorites!
+		.["favorite_interactions"] = 	SANITIZE_LIST(prefs.favorite_interactions)
+
 	//Getting char prefs
-		.["erp_pref"] = 			pref_to_num(prefs.erppref)
-		.["noncon_pref"] = 			pref_to_num(prefs.nonconpref)
-		.["vore_pref"] = 			pref_to_num(prefs.vorepref)
-		.["mobsex_pref"] = 			pref_to_num(prefs.mobsexpref)	//Hentai
-		.["hornyantags_pref"] = 			pref_to_num(prefs.hornyantagspref)	//Hentai
-		.["extreme_pref"] = 		pref_to_num(prefs.extremepref)
-		.["extreme_harm"] = 		pref_to_num(prefs.extremeharm)
-		.["unholy_pref"] =		pref_to_num(prefs.unholypref)
+		.["erp_pref"] = 				pref_to_num(prefs.erppref)
+		.["noncon_pref"] = 				pref_to_num(prefs.nonconpref)
+		.["vore_pref"] = 				pref_to_num(prefs.vorepref)
+		.["mobsex_pref"] = 				pref_to_num(prefs.mobsexpref)	//Hentai
+		.["hornyantags_pref"] = 		pref_to_num(prefs.hornyantagspref)	//Hentai
+		.["extreme_pref"] = 			pref_to_num(prefs.extremepref)
+		.["extreme_harm"] = 			pref_to_num(prefs.extremeharm)
+		.["unholy_pref"] =				pref_to_num(prefs.unholypref)
 
 	//Getting preferences
-		.["verb_consent"] = 		!!CHECK_BITFIELD(prefs.toggles, VERB_CONSENT)
-		.["lewd_verb_sounds"] = 	!CHECK_BITFIELD(prefs.toggles, LEWD_VERB_SOUNDS)
-		.["arousable"] = 			prefs.arousable
-		.["genital_examine"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, GENITAL_EXAMINE)
-		.["vore_examine"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, VORE_EXAMINE)
-		.["medihound_sleeper"] =	!!CHECK_BITFIELD(prefs.cit_toggles, MEDIHOUND_SLEEPER)
-		.["eating_noises"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, EATING_NOISES)
-		.["digestion_noises"] =		!!CHECK_BITFIELD(prefs.cit_toggles, DIGESTION_NOISES)
-		.["trash_forcefeed"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, TRASH_FORCEFEED)
-		.["forced_fem"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, FORCED_FEM)
-		.["forced_masc"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, FORCED_MASC)
-		.["hypno"] = 				!!CHECK_BITFIELD(prefs.cit_toggles, HYPNO)
-		.["bimbofication"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, BIMBOFICATION)
-		.["breast_enlargement"] = 	!!CHECK_BITFIELD(prefs.cit_toggles, BREAST_ENLARGEMENT)
-		.["penis_enlargement"] =	!!CHECK_BITFIELD(prefs.cit_toggles, PENIS_ENLARGEMENT)
-		.["butt_enlargement"] =		!!CHECK_BITFIELD(prefs.cit_toggles, BUTT_ENLARGEMENT)
-		.["belly_inflation"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, BELLY_INFLATION)
-		.["never_hypno"] = 			!CHECK_BITFIELD(prefs.cit_toggles, NEVER_HYPNO)
-		.["no_aphro"] = 			!CHECK_BITFIELD(prefs.cit_toggles, NO_APHRO)
-		.["no_ass_slap"] = 			!CHECK_BITFIELD(prefs.cit_toggles, NO_ASS_SLAP)
-		.["no_auto_wag"] = 			!CHECK_BITFIELD(prefs.cit_toggles, NO_AUTO_WAG)
-		.["no_disco_dance"] = 		!CHECK_BITFIELD(prefs.cit_toggles, NO_DISCO_DANCE)
-		.["chastity_pref"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, CHASTITY)
-		.["stimulation_pref"] = 	!!CHECK_BITFIELD(prefs.cit_toggles, STIMULATION)
-		.["edging_pref"] =			!!CHECK_BITFIELD(prefs.cit_toggles, EDGING)
-		.["cum_onto_pref"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, CUM_ONTO)
-		.["sex_jitter"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, SEX_JITTER)	//By Gardelin0
+		.["verb_consent"] = 			!!CHECK_BITFIELD(prefs.toggles, VERB_CONSENT)
+		.["lewd_verb_sounds"] = 		!!CHECK_BITFIELD(prefs.toggles, LEWD_VERB_SOUNDS)
+		.["arousable"] = 				prefs.arousable
+		.["genital_examine"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, GENITAL_EXAMINE)
+		.["vore_examine"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, VORE_EXAMINE)
+		.["medihound_sleeper"] =		!!CHECK_BITFIELD(prefs.cit_toggles, MEDIHOUND_SLEEPER)
+		.["eating_noises"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, EATING_NOISES)
+		.["digestion_noises"] =			!!CHECK_BITFIELD(prefs.cit_toggles, DIGESTION_NOISES)
+		.["trash_forcefeed"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, TRASH_FORCEFEED)
+		.["forced_fem"] = 				!!CHECK_BITFIELD(prefs.cit_toggles, FORCED_FEM)
+		.["forced_masc"] = 				!!CHECK_BITFIELD(prefs.cit_toggles, FORCED_MASC)
+		.["hypno"] = 					!!CHECK_BITFIELD(prefs.cit_toggles, HYPNO)
+		.["bimbofication"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, BIMBOFICATION)
+		.["breast_enlargement"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, BREAST_ENLARGEMENT)
+		.["penis_enlargement"] =		!!CHECK_BITFIELD(prefs.cit_toggles, PENIS_ENLARGEMENT)
+		.["butt_enlargement"] =			!!CHECK_BITFIELD(prefs.cit_toggles, BUTT_ENLARGEMENT)
+		.["belly_inflation"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, BELLY_INFLATION)
+		.["never_hypno"] = 				!CHECK_BITFIELD(prefs.cit_toggles, NEVER_HYPNO)
+		.["no_aphro"] = 				!CHECK_BITFIELD(prefs.cit_toggles, NO_APHRO)
+		.["no_ass_slap"] = 				!CHECK_BITFIELD(prefs.cit_toggles, NO_ASS_SLAP)
+		.["no_auto_wag"] = 				!CHECK_BITFIELD(prefs.cit_toggles, NO_AUTO_WAG)
+		.["chastity_pref"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, CHASTITY)
+		.["stimulation_pref"] = 		!!CHECK_BITFIELD(prefs.cit_toggles, STIMULATION)
+		.["edging_pref"] =				!!CHECK_BITFIELD(prefs.cit_toggles, EDGING)
+		.["cum_onto_pref"] = 			!!CHECK_BITFIELD(prefs.cit_toggles, CUM_ONTO)
+		.["sex_jitter"] = 				!!CHECK_BITFIELD(prefs.cit_toggles, SEX_JITTER)	//By Gardelin0
+		.["no_disco_dance"] = 			!CHECK_BITFIELD(prefs.cit_toggles, NO_DISCO_DANCE) //By SmiLeY
 
-/datum/component/interaction_menu_granter/ui_static_data(mob/user)
+/datum/component/interaction_menu_granter/ui_static_data(mob/living/user)
 	. = ..()
 	//Getting interactions
 	var/list/sent_interactions = list()
@@ -513,6 +524,17 @@
 			var/datum/interaction/o = SSinteractions.interactions[params["interaction"]]
 			if(o)
 				o.do_action(parent_mob, target)
+				return TRUE
+			return FALSE
+		if("favorite")
+			var/datum/interaction/interaction = SSinteractions.interactions[params["interaction"]]
+			if(interaction)
+				var/datum/preferences/prefs = parent_mob.client.prefs
+				if(interaction.type in prefs.favorite_interactions)
+					LAZYREMOVE(prefs.favorite_interactions, interaction.type)
+				else
+					LAZYADD(prefs.favorite_interactions, interaction.type)
+				prefs.save_preferences()
 				return TRUE
 			return FALSE
 		if("genital")
@@ -614,6 +636,15 @@
 		if("pref")
 			var/datum/preferences/prefs = parent_mob.client.prefs
 			switch(params["pref"])
+				if("use_arousal_multiplier")
+					prefs.use_arousal_multiplier = !prefs.use_arousal_multiplier
+				if("arousal_multiplier")
+					prefs.arousal_multiplier = params["amount"]
+				if("use_moaning_multiplier")
+					prefs.use_moaning_multiplier = !prefs.use_moaning_multiplier
+				if("moaning_multiplier")
+					prefs.moaning_multiplier = params["amount"]
+
 				if("verb_consent")
 					TOGGLE_BITFIELD(prefs.toggles, VERB_CONSENT)
 				if("lewd_verb_sounds")

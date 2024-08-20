@@ -13,3 +13,28 @@
 2024-07-05:
   SandPoot:
   - bugfix: Fixed runtimes on hugbot.
+2024-07-19:
+  SandPoot:
+  - rscadd: Added favorite interactions to the interaction menu, those persist between
+      rounds and between characters.
+2024-07-21:
+  SandPoot:
+  - tweak: The healthdoll was made more responsive, for example, it will show screentips
+      correctly.
+2024-07-22:
+  Fabian272:
+  - tweak: Fixed digilegs on polychromic workout shorts.
+2024-07-24:
+  SandPoot:
+  - rscadd: Top-left menu now has lewd sounds toggle.
+  - tweak: The preference for lewd sounds is now about activating them, not muting.
+      (your preferences have been automatically flipped to account for this)
+  - tweak: Long strip menu is meant to be default on for sandstorm, and so it has
+      been set so.
+2024-07-27:
+  Flvffi:
+  - imageadd: New Haydee Sprite for Service Job and fixes to mining, Engineering,
+      and Janitorial ones
+2024-07-28:
+  MosleyTheMalO:
+  - rscadd: Adds the Riding crop  in the donator tier 1 loadout
