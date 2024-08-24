@@ -1734,6 +1734,8 @@
 	icon_state = "robusta_beans"
 	beantype = /obj/item/reagent_containers/food/snacks/grown/coffee/robusta
 
+//BLUEMOON ADD
+
 /obj/item/storage/box/catcrin_kit
 	name = "Catcrin kit"
 	desc = "Contains a full kit of Catcrin equipment."
@@ -1746,3 +1748,18 @@
 	new /obj/item/modkit/stunspear_kit(src)
 	new /obj/item/modkit/frontline(src)
 	new /obj/item/clothing/accessory/ac_patch(src)
+
+/obj/item/storage/box/acrador_kit
+	name = "Acrador kit"
+	desc = "Contains a full kit of Acrador equipment."
+	icon_state = "box"
+
+/obj/item/storage/box/acrador_kit/PopulateContents()
+	new /obj/item/modkit/rshield_kit(src)
+	new /obj/item/modkit/anstrum_kit(src)
+	new /obj/item/modkit/rs14_kit(src)
+	new /obj/item/modkit/cmg_kit(src)
+	new /obj/item/modkit/tonfa_kit(src)
+	new /obj/item/modkit/rs9(src)
+
+//BLUEMOON ADD END
