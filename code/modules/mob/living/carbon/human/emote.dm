@@ -175,6 +175,7 @@
 	message_param = "исполняет воинское приветствие при виде %t."
 	sound = 'sound/voice/salute.ogg'
 	restraint_check = TRUE
+	muzzle_ignore = TRUE
 
 /datum/emote/sound/human/buzz
 	key = "buzz"
