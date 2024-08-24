@@ -284,16 +284,33 @@
 	return TRUE
 
 /mob/living/proc/moan()
-	if(!(prob(get_lust() / get_lust_tolerance() * 65)))
+	if(is_muzzled() || (mind?.miming))
+		var/message_to_display = pick("mime%S% a pleasured moan","moan%S% in silence")
+		visible_message(span_lewd("<b>\The [src]</b> [replacetext(message_to_display, "%S%", "s")]."),
+			span_lewd("You [replacetext(message_to_display, "%S%", "")]."))
 		return
-	var/moan = rand(1, 7)
-	if(moan == lastmoan)
-		moan--
-	if(!is_muzzled())
-		visible_message(message = span_lewd("<B>[src]</B> [pick("постанывает", "стонет в удовольствии")]."), ignored_mobs = get_unconsenting())
-	if(is_muzzled())//immursion
-		audible_message(span_lewd("<B>[src]</B> [pick("имитирует приятный стон", "бесшумно постанывает")]."))
-	lastmoan = moan
+	var/message_to_display = pick("moan%S%", "moan%S% in pleasure")
+	visible_message(span_lewd("<b>\The [src]</b> [replacetext(message_to_display, "%S%", "s")]."),
+		span_lewd("You [replacetext(message_to_display, "%S%", "")]."),
+		span_lewd("Вы слышите наполненный удовольствием стон."),
+		ignored_mobs = get_unconsenting(), omni = TRUE)
+
+	// Get reference of the list we're using based on gender.
+	var/list/moans
+	if (gender == FEMALE)
+		moans = GLOB.lewd_moans_female
+	else
+		moans = GLOB.lewd_moans_male
+
+	// Pick a sound from the list.
+	var/sound = pick(moans)
+
+	// If the sound is repeated, get a new from a list without it.
+	if (lastmoan == sound)
+		sound = pick(LAZYCOPY(moans) - lastmoan)
+
+	playlewdinteractionsound(loc, sound, 80, 0, 0)
+	lastmoan = sound
 
 /mob/living/proc/cum(mob/living/partner, target_orifice, cum_inside = FALSE, anonymous = FALSE)
 	if(HAS_TRAIT(src, TRAIT_NEVERBONER))
@@ -782,17 +799,48 @@
 	if(stat != CONSCIOUS)
 		return FALSE
 
+	var/datum/preferences/prefs = client?.prefs
+	var/use_arousal_multiplier = NULL_COALESCE(prefs?.use_arousal_multiplier, FALSE)
+	var/arousal_multiplier = NULL_COALESCE(prefs?.arousal_multiplier, 100)
+	var/use_moaning_multiplier = NULL_COALESCE(prefs?.use_moaning_multiplier, FALSE)
+	var/moaning_multiplier = NULL_COALESCE(prefs?.moaning_multiplier, 25)
+
 	if(amount)
-		add_lust(amount)
-	var/lust = get_lust()
-	var/lust_tolerance = get_lust_tolerance()
-	if(lust >= lust_tolerance)
-		if(prob(10))
-			to_chat(src, "<b>Вам трудно удержаться от оргазма!</b>")
+		if (use_arousal_multiplier)
+			add_lust(amount * (arousal_multiplier/100))
+		else
+			add_lust(amount)
+
+	if (use_moaning_multiplier)
+		if(prob(moaning_multiplier))
 			moan()
-			return FALSE
-		if(lust >= (lust_tolerance * 3))
-			if(cum(partner, orifice, cum_inside, anonymous))
+
+	// Below is an overengineered bezier curve based chance of moaning.
+	/// The current lust (arousal) amount.
+	var/lust = get_lust()
+	/// The lust tolerance as defined in preferences.
+	var/lust_tolerance = get_lust_tolerance()
+	/// The arousal limit upon which you climax.
+	var/climax = lust_tolerance * 3
+	/// Threshold where you start moaning.
+	var/threshold = climax/2
+	///Calculation of 't' in bezier quadratic curve. It's a 0 to 1 version of threshold to climax.
+	var/t = percentage_between(lust, threshold, climax, FALSE)
+	// The Y axis value of the point in the bezier curve.
+	var/bezier = 2 * (1 - t) * t * 13.8 + ((t*t) * 100)
+	/// Probability chance resulting from bezier curve.
+	var/chance = clamp(round(bezier),0,100)
+
+	if (lust >= threshold)
+		if(prob(30))
+			to_chat(src, "<b>Вам трудно удержаться от оргазма!</b>")
+
+		if (!use_moaning_multiplier)
+			if(prob(chance))
+				moan()
+
+		if (lust > climax)
+			if (cum(partner, orifice, cum_inside, anonymous)) //SPLURT EDIT - extra argument `cum_inside` and `anonymous`
 				return TRUE
 	return FALSE
 

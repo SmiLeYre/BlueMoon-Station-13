@@ -100,12 +100,22 @@
 
 /obj/item/clothing/suit/toggle/noonar // Наследуем от suit/toggle, чтобы можно было переключать состояние
 	name = "Syndicate Jacket"
-	desc = "A syndicate jacket."
+	desc = "A syndicate jacket"
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
 	icon_state = "noonar"
 	item_state = "noonar"
+	togglename = "buttons"
+
+/obj/item/clothing/suit/toggle/noonarlong
+	name = "A longer version of syndicate Jacket"
+	desc = "A long syndicate jacket"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+	icon_state = "noonarlong"
+	item_state = "noonarlong"
 	togglename = "buttons"
 
 /obj/item/clothing/suit/donator/bm/sports_jacket
@@ -180,3 +190,12 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	can_adjust = FALSE
 
+/obj/item/clothing/suit/bm/syndie_jacket
+	name = "Cybertechnical Jacket"
+	desc = "A cybernetic jacket for civilians from a certain circle of the De'Sante family. Convenience, luxury, technology, brutality."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	icon_state = "syndie_jacket"
+	item_state = "syndie_jacket"
+	body_parts_covered = CHEST
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

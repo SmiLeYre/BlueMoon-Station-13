@@ -224,6 +224,7 @@ CREATE TABLE `library` (
   `content` text NOT NULL,
   `category` enum('Any','Fiction','Non-Fiction','Adult','Reference','Religion') NOT NULL,
   `ckey` varchar(32) NOT NULL DEFAULT 'LEGACY',
+  `flagged` tinyint(1) NOT NULL,
   `datetime` datetime NOT NULL,
   `deleted` tinyint(1) unsigned DEFAULT NULL,
   `round_id_created` int(11) unsigned NOT NULL,

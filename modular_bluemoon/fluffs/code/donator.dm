@@ -373,6 +373,14 @@
 	ckeywhitelist = list("noonar", "dasani2879")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/noonarlong
+	name = "A long syndicate jacket."
+	slot = ITEM_SLOT_OCLOTHING
+	path = /obj/item/clothing/suit/toggle/noonarlong
+	ckeywhitelist = list("noonar", "dasani2879")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+
 /datum/gear/donator/bm/pchelik
 	name = "GFYS"
 	slot = ITEM_SLOT_BACKPACK
@@ -783,14 +791,14 @@
 	name = "Combat MG Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/cmg_kit
-	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable")
+	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/rhsa12
 	name = "R-HSA-12"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/head/helmet/sec/rhsa12
-	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable")
+	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
@@ -799,7 +807,7 @@
 	name = "R-SA-12"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/suit/armor/rsa12
-	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable")
+	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
@@ -808,7 +816,7 @@
 	name = "Underarmor suit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/under/rank/security/officer/acradorsuit
-	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable")
+	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
@@ -853,4 +861,25 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/accessory/SATTdogtag
 	ckeywhitelist = list("allazarius", "flippingtable")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/SATT_gloves
+	name = "SATT gloves"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/gloves/SATT_gloves
+	ckeywhitelist = list("allazarius", "flippingtable")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/SATT_gloves_finger
+	name = "Fingerless SATT gloves"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/gloves/fingerless/SATT_gloves_finger
+	ckeywhitelist = list("allazarius", "flippingtable")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/syndie_jacket
+	name = "Cybertechnical Jacket"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/suit/bm/syndie_jacket
+	ckeywhitelist = list("xaeshkavd", "ghos7ik")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02

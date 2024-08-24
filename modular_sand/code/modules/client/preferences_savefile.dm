@@ -29,13 +29,23 @@
 	. = ..()
 	if(!istype(., /savefile))
 		return FALSE
-	WRITE_FILE(.["favorite_interactions"], favorite_interactions)
+	WRITE_FILE(.["favorite_interactions"],	favorite_interactions)
+
+	WRITE_FILE(.["use_arousal_multiplier"],	use_arousal_multiplier)
+	WRITE_FILE(.["arousal_multiplier"],		arousal_multiplier)
+	WRITE_FILE(.["use_moaning_multiplier"],	use_moaning_multiplier)
+	WRITE_FILE(.["moaning_multiplier"],		moaning_multiplier)
 
 /datum/preferences/load_preferences(bypass_cooldown)
 	. = ..()
 	if(!istype(., /savefile))
 		return FALSE
-	.["favorite_interactions"] >> favorite_interactions
+	.["favorite_interactions"] >>	favorite_interactions
+
+	.["use_arousal_multiplier"] >>	use_arousal_multiplier
+	.["arousal_multiplier"] >>		arousal_multiplier
+	.["use_moaning_multiplier"] >>	use_moaning_multiplier
+	.["moaning_multiplier"] >>		moaning_multiplier
 
 	favorite_interactions = SANITIZE_LIST(favorite_interactions)
 
@@ -47,3 +57,8 @@
 		if(!initial(interaction_path.description))
 			LAZYREMOVE(favorite_interactions, interaction)
 			continue
+
+	use_arousal_multiplier = sanitize_integer(use_arousal_multiplier, 0, 1, initial(use_arousal_multiplier))
+	arousal_multiplier = sanitize_integer(arousal_multiplier, 0, 300, initial(arousal_multiplier))
+	use_moaning_multiplier = sanitize_integer(use_moaning_multiplier, 0, 1, initial(use_moaning_multiplier))
+	moaning_multiplier = sanitize_integer(moaning_multiplier, 0, 100, initial(moaning_multiplier))

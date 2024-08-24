@@ -8,7 +8,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	w_class = WEIGHT_CLASS_SMALL
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	//SPLURT EDIT START
-	var/list/static/hotel_maps = list("Hotel Room", "Apartment-1","Apartment-2", "Apartment-3", "Apartment-4", "Apartment-Syndi", "Apartment-Bar", "Apartment-dojo", "Apartment-Sauna", "Apartment-Beach", "Apartment-Forest", "Apartment-Jungle")
+	var/list/static/hotel_maps = list("Hotel Room", "Apartment-1","Apartment-2", "Apartment-3", "Apartment-4", "Apartment-Syndi", "Apartment-Bar", "Apartment-dojo", "Apartment-Sauna", "Apartment-Beach", "Apartment-Forest", "Apartment-Jungle", "Apartment-Winter")
 	var/datum/map_template/hilbertshotel/apartment/hilberts_hotel_rooms_apartment_one
 	var/datum/map_template/hilbertshotel/apartment/one/hilberts_hotel_rooms_apartment_two
 	var/datum/map_template/hilbertshotel/apartment/two/hilberts_hotel_rooms_apartment_three
@@ -20,6 +20,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	var/datum/map_template/hilbertshotel/apartment/beach/hilberts_hotel_rooms_apartment_beach
 	var/datum/map_template/hilbertshotel/apartment/forest/hilberts_hotel_rooms_apartment_forest
 	var/datum/map_template/hilbertshotel/apartment/jungle/hilberts_hotel_rooms_apartment_jungle
+	var/datum/map_template/hilbertshotel/apartment/winter/hilberts_hotel_rooms_apartment_winter
 	//SPLURT EDIT END
 	var/datum/map_template/hilbertshotel/hotelRoomTemp
 	var/datum/map_template/hilbertshotel/empty/hotelRoomTempEmpty
@@ -53,6 +54,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	hilberts_hotel_rooms_apartment_beach = new()
 	hilberts_hotel_rooms_apartment_forest = new()
 	hilberts_hotel_rooms_apartment_jungle = new()
+	hilberts_hotel_rooms_apartment_winter = new()
 
 	var/area/currentArea = get_area(src)
 	if(currentArea.type == /area/ruin/space/has_grav/hilbertresearchfacility)
@@ -247,6 +249,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 		if("Apartment-Beach") return hilberts_hotel_rooms_apartment_beach
 		if("Apartment-Forest") return hilberts_hotel_rooms_apartment_forest
 		if("Apartment-Jungle") return hilberts_hotel_rooms_apartment_jungle
+		if("Apartment-Winter") return hilberts_hotel_rooms_apartment_winter
 		if("Mystery Room") return hotelRoomTempLore
 	return hotelRoomTemp // Default to Hotel Room if no match is found
 
@@ -274,6 +277,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 			if("Apartment-Beach") mapTemplate = hilberts_hotel_rooms_apartment_beach
 			if("Apartment-Forest") mapTemplate = hilberts_hotel_rooms_apartment_forest
 			if("Apartment-Jungle") mapTemplate = hilberts_hotel_rooms_apartment_jungle
+			if("Apartment-Winter") mapTemplate = hilberts_hotel_rooms_apartment_winter
 	if(!mapTemplate)
 		mapTemplate = hotelRoomTemp //Default Hotel Room
 

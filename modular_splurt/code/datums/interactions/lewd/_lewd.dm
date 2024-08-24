@@ -20,20 +20,20 @@
 		return donut.toggle_accessibility(accessibility)
 	. = ..()
 
-/mob/living/moan()
-	var/moaned = lastmoan
-	var/miming = mind ? mind?.miming : FALSE
-	. = ..()
-	if((moaned == lastmoan) || is_muzzled() || miming || !prob(50))
-		return
-	var/list/moans
-	if(isalien(src))
-		moans = list('sound/voice/hiss6.ogg')
-	else if(gender == FEMALE || (gender == PLURAL && isfeminine(src)))
-		moans = list('modular_splurt/sound/voice/moan_f1.ogg', 'modular_splurt/sound/voice/moan_f2.ogg', 'modular_splurt/sound/voice/moan_f3.ogg', 'modular_splurt/sound/voice/moan_f4.ogg', 'modular_splurt/sound/voice/moan_f5.ogg', 'modular_splurt/sound/voice/moan_f6.ogg', 'modular_splurt/sound/voice/moan_f7.ogg')
-	else if(gender != FEMALE || (gender == PLURAL && ismasculine(src)))
-		moans = list('modular_splurt/sound/voice/moan_m1.ogg', 'modular_splurt/sound/voice/moan_m2.ogg', 'modular_splurt/sound/voice/moan_m3.ogg')
-	playlewdinteractionsound(src, pick(moans), 50, 1, 4, 1.2, ignored_mobs = get_unconsenting())
+// /mob/living/moan()
+// 	var/moaned = lastmoan
+// 	var/miming = mind ? mind?.miming : FALSE
+// 	. = ..()
+// 	if((moaned == lastmoan) || is_muzzled() || miming || !prob(50))
+// 		return
+// 	var/list/moans
+// 	if(isalien(src))
+// 		moans = list('sound/voice/hiss6.ogg')
+// 	else if(gender == FEMALE || (gender == PLURAL && isfeminine(src)))
+// 		moans = list('modular_splurt/sound/voice/moan_f1.ogg', 'modular_splurt/sound/voice/moan_f2.ogg', 'modular_splurt/sound/voice/moan_f3.ogg', 'modular_splurt/sound/voice/moan_f4.ogg', 'modular_splurt/sound/voice/moan_f5.ogg', 'modular_splurt/sound/voice/moan_f6.ogg', 'modular_splurt/sound/voice/moan_f7.ogg')
+// 	else if(gender != FEMALE || (gender == PLURAL && ismasculine(src)))
+// 		moans = list('modular_splurt/sound/voice/moan_m1.ogg', 'modular_splurt/sound/voice/moan_m2.ogg', 'modular_splurt/sound/voice/moan_m3.ogg')
+// 	playlewdinteractionsound(src, pick(moans), 50, 1, 4, 1.2, ignored_mobs = get_unconsenting())
 
 /mob/living/proc/get_refraction_dif() //Got snapped in upstream, may delete later when I figure something out
 	var/dif = (refractory_period - world.time)

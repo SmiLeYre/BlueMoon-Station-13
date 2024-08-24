@@ -46,11 +46,6 @@
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
 /area/hilbertshotel)
-"cq" = (
-/obj/structure/mineral_door/paperframe,
-/obj/machinery/door/morgue,
-/turf/open/floor/wood/wood_tiled,
-/area/hilbertshotel)
 "cA" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -939,7 +934,7 @@ Ah
 Hz
 Hz
 pH
-cq
+iS
 pH
 pH
 hT

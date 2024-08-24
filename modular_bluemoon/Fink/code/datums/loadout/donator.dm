@@ -16,7 +16,7 @@
 	name = "Lotos Skort"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/under/donator/bm/lotos_skirt
-	ckeywhitelist = list("angryLaska")
+	ckeywhitelist = list("angrylaska")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
@@ -24,7 +24,7 @@
 	name = "Copium Bottle"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/reagent_containers/glass/bottle/copium
-	ckeywhitelist = list("angryLaska")
+	ckeywhitelist = list("angrylaska")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
