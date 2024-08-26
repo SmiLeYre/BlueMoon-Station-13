@@ -203,3 +203,67 @@ Difficulty: Hard
 	convert_damage = FALSE
 
 	shapeshift_type = /mob/living/simple_animal/hostile/asteroid/polarbear
+
+
+//// ERP Vendiga (👁,‿,👁)
+
+/mob/living/simple_animal/wendigo
+	name = "wendigo"
+	desc = "A mythological man-eating legendary creature, you probably aren't going to survive this."
+	health = 2500
+	maxHealth = 2500
+	icon_state = "wendigo_noblood"
+	icon_living = "wendigo_noblood"
+	icon_dead = "wendigo_dead"
+	icon = 'icons/mob/icemoon/64x64megafauna.dmi'
+	attack_verb_continuous = "claws"
+	attack_verb_simple = "claw"
+	attack_sound = 'sound/magic/demon_attack1.ogg'
+	weather_immunities = list(TRAIT_SNOWSTORM_IMMUNE) // to ADD: Trait lewd summon
+	speak_emote = list("roars")
+	pixel_x = -16
+	loot = list(/obj/item/wendigo_blood)
+	blood_volume = BLOOD_VOLUME_NORMAL
+	deathmessage = "falls, shaking the ground around it"
+	deathsound = 'sound/effects/gravhit.ogg'
+	/// Saves the turf the megafauna was created at (spawns exit portal here)
+	var/turf/starting
+	/// Range for wendigo stomping when it moves
+	var/stomp_range = 1
+	/// Stores directions the mob is moving, then calls that a move has fully ended when these directions are removed in moved
+	var/stored_move_dirs = 0
+	/// If the wendigo is allowed to move
+	var/can_move = TRUE
+
+/mob/living/simple_animal/wendigo/verb/switch_gender()
+	set name = "Switch Gender"
+	set desc = "Allows you to set your gender."
+	set category = "Wendigo"
+
+	if(stat != CONSCIOUS)
+		to_chat(usr, span_warning("You cannot toggle your gender while unconcious!"))
+		return
+
+	var/choice = tgui_alert(usr, "Select Gender.", "Gender", list("Both", "Male", "Female", "None"))
+
+	switch(choice)
+		if("Both")
+			has_penis = TRUE
+			has_balls = TRUE
+			has_vagina = TRUE
+			gender = PLURAL
+		if("Male")
+			has_penis = TRUE
+			has_balls = TRUE
+			has_vagina = FALSE
+			gender = MALE
+		if("Female")
+			has_penis = FALSE
+			has_balls = FALSE
+			has_vagina = TRUE
+			gender = FEMALE
+		if("None")
+			has_penis = FALSE
+			has_balls = FALSE
+			has_vagina = FALSE
+			gender = NEUTER

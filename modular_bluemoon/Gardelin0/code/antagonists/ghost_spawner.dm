@@ -36,3 +36,12 @@
 	mob_name = "Wendigo-Man"
 	mob_type = /mob/living/carbon/wendigo/man
 	flavour_text = "Вы Вендиго-Мужчина."
+
+/obj/effect/mob_spawn/qareen/wendigo_lore //not grief antag u little shits
+	name = "Wendigo - The Horny Creature"
+	short_desc = "Вы таинственное нечто необъятных размеров, редкие свидетели прозвали вас Вендиго!"
+	desc = "Вендиго. Огромный, рогатый, четвероногий, озабоченный монстр."
+	icon_state = "sleeper_clockwork"
+	mob_name = "Wendigo"
+	mob_type = /mob/living/simple_animal/wendigo
+	flavour_text = "Вы Вендиго."
