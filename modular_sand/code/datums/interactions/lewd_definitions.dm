@@ -722,6 +722,17 @@
 	if(!message)
 		message = pick("оргазмирует!", "трясётся в оргазме.", "дрожит от оргазма!", "кончает на себя!")
 	visible_message(message = span_userlove("<b>\The [src]</b> [message]"), ignored_mobs = get_unconsenting(ignored_mobs = obscure_to))
+// BM ADDITION START - Krashly New Fluid Trait
+	if(istype(last_genital, /obj/item/organ/genital))
+		var/obj/item/organ/genital/P = last_genital
+		if(HAS_TRAIT(src, TRAIT_FLUID))
+			if(istype(P, /obj/item/organ/genital/vagina))
+				var/mob/living/carbon/O = src
+				var/obj/item/organ/genital/womb/J = locate() in O.internal_organs
+				J.fluid_volume = 0
+			else
+				P.fluid_volume = 0
+// BM ADDITION END
 	multiorgasms += 1
 
 	COOLDOWN_START(src, refractory_period, (rand(300, 900) - get_sexual_potency()))//sex cooldown
@@ -735,15 +746,6 @@
 			else
 				H.mob_climax(TRUE, "sex", partner, !cumin, target_gen, anonymous)
 	set_lust(0)
-	if(istype(last_genital, /obj/item/organ/genital))
-		var/obj/item/organ/genital/P = last_genital
-		if(HAS_TRAIT(src, TRAIT_FLUID)) // BLUEMOON ADDITION
-			if(istype(P, /obj/item/organ/genital/vagina))
-				var/mob/living/carbon/O = src
-				var/obj/item/organ/genital/womb/J = locate() in O.internal_organs
-				J.fluid_volume = 0
-			else
-				P.fluid_volume = 0 // BLUEMOON ADDITION
 
 	SEND_SIGNAL(src, COMSIG_MOB_POST_CAME, target_orifice, partner, cumin, last_genital)
 
