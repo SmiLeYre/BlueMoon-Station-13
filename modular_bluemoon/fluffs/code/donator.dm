@@ -720,7 +720,7 @@
 	name = "Alta Cat"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/choice_beacon/pet/alta
-	ckeywhitelist = list("oni3288", "discord980")
+	ckeywhitelist = list("oni3288", "discord980", "xaeshkavd")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/dogtag
