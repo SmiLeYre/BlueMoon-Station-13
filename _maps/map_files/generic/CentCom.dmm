@@ -35222,6 +35222,10 @@
 /mob/living/simple_animal/deer,
 /turf/open/floor/grass/grass2,
 /area/centcom/control)
+"ylX" = (
+/obj/effect/mob_spawn/qareen/wendigo_lore,
+/turf/open/indestructible/boss,
+/area/horny_antags/qareen)
 "yma" = (
 /obj/structure/grille,
 /turf/open/space/basic,
@@ -50095,11 +50099,11 @@ aaa
 aaa
 aaa
 wIy
-qWG
+ylX
 pha
 qWG
 qWG
-qWG
+ylX
 wIy
 aaa
 aaa
