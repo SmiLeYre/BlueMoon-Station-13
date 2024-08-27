@@ -44,4 +44,4 @@
 	icon_state = "sleeper_clockwork"
 	mob_name = "Wendigo"
 	mob_type = /mob/living/simple_animal/wendigo
-	flavour_text = "Вы Вендиго."
+	flavour_text = "Вы Вендиго. Огромный, рогатый, четвероногий, озабоченный монстр."
