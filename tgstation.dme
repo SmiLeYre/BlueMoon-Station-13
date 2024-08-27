@@ -4250,6 +4250,7 @@
 #include "modular_bluemoon\Fink\code\machinery\autolathe_designs_electronics.dm"
 #include "modular_bluemoon\Fink\code\mob\snouts.dm"
 #include "modular_bluemoon\Fink\code\mob\spines.dm"
+#include "modular_bluemoon\Fink\code\mob\wendigo.dm"
 #include "modular_bluemoon\Fink\code\recipes\recipes_primal.dm"
 #include "modular_bluemoon\Fink\code\recipes\recipes_weapon_and_ammo.dm"
 #include "modular_bluemoon\Fink\code\structures\lfwb_statues.dm"

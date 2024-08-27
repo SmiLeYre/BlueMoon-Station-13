@@ -29,9 +29,9 @@
 	flavour_text = "Вы Вендиго-Женщина."
 
 /obj/effect/mob_spawn/qareen/wendigo_man //not grief antag u little shits
-	name = "Man Wendigo - The Horny Creature"
-	short_desc = "Вы Вендиго!"
-	desc = "Вендиго. Озабоченный монстр-мужчина."
+	name = "Man Werefox - The Horny Creature"
+	short_desc = "Вы Лисоборотень!"
+	desc = "Озабоченный монстр-мужчина."
 	icon_state = "sleeper_clockwork"
 	mob_name = "Wendigo-Man"
 	mob_type = /mob/living/carbon/wendigo/man
