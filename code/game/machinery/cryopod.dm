@@ -420,7 +420,7 @@ GLOBAL_LIST_EMPTY(ghost_records)
 	if(!control_computer)
 		control_computer_weakref = null
 	else
-		if(control_computer.z != pod ? pod.z : mob_occupant.z) // BLUEMOON - CRYO_ITEMS_AND_MESSAGES_FIX - ADD - в консоли не будет имени ушедшего в крио, если телепортированный не на её уровне
+		if(control_computer.z != pod?.z || control_computer.z == mob_occupant.z) // BLUEMOON - CRYO_ITEMS_AND_MESSAGES_FIX - ADD - в консоли не будет имени ушедшего в крио, если телепортированный не на её уровне
 			control_computer.frozen_crew += list(crew_member)
 
 	// Make an announcement and log the person entering storage.
@@ -485,24 +485,24 @@ GLOBAL_LIST_EMPTY(ghost_records)
 			if(pod)
 				item_content.forceMove(pod)
 
-			// WEE WOO SNOWFLAKE TIME
-			if(control_computer.z != pod ? pod.z : mob_occupant.z) // BLUEMOON - CRYO_ITEMS_AND_MESSAGES_FIX - ADD - вещи не будут уходить в крио-хранилище, если оно не на одном уровне с уходящим в крио персонажем
-				if(istype(item_content, /obj/item/pda))
-					var/obj/item/pda/P = item_content
-					if((P.owner == mind_identity) || (P.owner == occupant_identity))
-						destroying += P
+				// WEE WOO SNOWFLAKE TIME
+				if(control_computer?.z != pod ? pod.z : mob_occupant.z) // BLUEMOON - CRYO_ITEMS_AND_MESSAGES_FIX - ADD - вещи не будут уходить в крио-хранилище, если оно не на одном уровне с уходящим в крио персонажем
+					if(istype(item_content, /obj/item/pda))
+						var/obj/item/pda/P = item_content
+						if((P.owner == mind_identity) || (P.owner == occupant_identity))
+							destroying += P
+						else
+							storing += P
+					else if(istype(item_content, /obj/item/card/id))
+						var/obj/item/card/id/idcard = item_content
+						if((idcard.registered_name == mind_identity) || (idcard.registered_name == occupant_identity))
+							destroying += idcard
+						else
+							storing += idcard
 					else
-						storing += P
-				else if(istype(item_content, /obj/item/card/id))
-					var/obj/item/card/id/idcard = item_content
-					if((idcard.registered_name == mind_identity) || (idcard.registered_name == occupant_identity))
-						destroying += idcard
-					else
-						storing += idcard
-				else
-					storing += item_content
-			else  // BLUEMOON - CRYO_ITEMS_AND_MESSAGES_FIX - ADD
-				destroying += item_content  // BLUEMOON - CRYO_ITEMS_AND_MESSAGES_FIX - ADD
+						storing += item_content
+				else  // BLUEMOON - CRYO_ITEMS_AND_MESSAGES_FIX - ADD
+					destroying += item_content  // BLUEMOON - CRYO_ITEMS_AND_MESSAGES_FIX - ADD
 	if (pod)
 		for(var/mob/living/L in mob_occupant.GetAllContents() - mob_occupant)
 			L.forceMove(pod.drop_location())
