@@ -49,6 +49,12 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	if(iscarbon(M))
 		var/mob/living/carbon/H = M
 		data["oocnotes"] = H.dna?.ooc_notes || ""
+		// mechanical_erp_verbs_examine AHEAD
+		if(H.client.prefs.toggles & VERB_CONSENT)
+			data["erp_verbs"] = "Allowed"
+		else
+			data["erp_verbs"] = "Text Only"
+		// mechanical_erp_verbs_examine END
 	if (isobserver(user))
 		data["security_records"] = M?.client?.prefs.security_records || "" //BLUEMOON ADD - призраки видят базы данных в описании персонажей
 		data["medical_records"] = M?.client?.prefs.medical_records || "" //BLUEMOON ADD - призраки видят базы данных в описании персонажей

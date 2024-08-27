@@ -6,6 +6,10 @@ const getTagColor = (erptag) => {
   switch (erptag) {
     case "Yes":
       return "green";
+    case "Allowed": // BLUEMOON - mechanical_erp_verbs_examine
+      return "green"; // BLUEMOON - mechanical_erp_verbs_examine
+    case "Text Only": // BLUEMOON - mechanical_erp_verbs_examine
+      return "blue"; // BLUEMOON - mechanical_erp_verbs_examine
     case "Ask":
       return "blue";
     case "No":
@@ -25,6 +29,7 @@ interface CharacterProfileContext {
   flavortext: string;
   flavortext_naked: string;
   silicon_flavor_text: string;
+  erp_verbs: string; // BLUEMOON - mechanical_erp_verbs_examine
   oocnotes: string;
   species_name: string;
   custom_species_lore: string;
@@ -44,6 +49,7 @@ export const CharacterProfile = (props, context) => {
   const { data } = useBackend<CharacterProfileContext>(context);
 
   const tags = [
+    { name: "ERP Verbs", title: "ЕРП механики", value: data.erp_verbs },  // BLUEMOON - mechanical_erp_verbs_examine
     { name: "ERP", title: "Эротический отыгрыш", value: data.erp_tag },
     { name: "Non-Con", title: "Изнасилование", value: data.nc_tag },
     { name: "Vore", title: "Поедание/Проглатывание", value: data.vore_tag },

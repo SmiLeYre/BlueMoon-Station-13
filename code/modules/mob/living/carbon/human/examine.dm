@@ -205,12 +205,13 @@
 
 	var/list/msg = list()
 
+/* BLUEMOON - mechanical_erp_verbs_examine - REMOVAL START
 	if(client && client.prefs)
 		if(client.prefs.toggles & VERB_CONSENT)
 			. += "<b>Игрок разрешил непристойные действия по отношению к его персонажу.</b>"
 		else
 			. += "<b>Игрок НЕ разрешил непристойные действия по отношению к его персонажу.</b>"
-
+BLUEMOON - mechanical_erp_verbs_examine - REMOVAL END*/
 	//SPLURT edit
 	for(var/obj/item/organ/genital/G in internal_organs)
 		if(istype(G) && G.is_exposed())
