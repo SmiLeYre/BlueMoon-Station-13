@@ -420,7 +420,7 @@ GLOBAL_LIST_EMPTY(ghost_records)
 	if(!control_computer)
 		control_computer_weakref = null
 	else
-		if(control_computer.z != pod?.z || control_computer.z == mob_occupant.z) // BLUEMOON - CRYO_ITEMS_AND_MESSAGES_FIX - ADD - в консоли не будет имени ушедшего в крио, если телепортированный не на её уровне
+		if(control_computer.z == (pod ? pod.z : mob_occupant.z)) // BLUEMOON - CRYO_ITEMS_AND_MESSAGES_FIX - ADD - в консоли не будет имени ушедшего в крио, если телепортированный не на её уровне
 			control_computer.frozen_crew += list(crew_member)
 
 	// Make an announcement and log the person entering storage.
