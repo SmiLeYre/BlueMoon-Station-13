@@ -557,8 +557,12 @@
 	set desc = "Описывает то, что вы сейчас делаете."
 	set category = "IC"
 
+	var/mutable_appearance/activity_indicator = mutable_appearance('modular_bluemoon/icons/mob/activity_indicator.dmi', "tea", FLY_LAYER, appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | KEEP_APART)
+	activity_indicator.pixel_y = 10
+
 	if(activity)
 		activity = ""
+		cut_overlay(activity_indicator)
 		to_chat(src, "<span class='notice'>Деятельность сброшена.</span>")
 		return
 	if(stat == CONSCIOUS)
@@ -567,13 +571,14 @@
 		clear_typing_indicator()
 		if(activity)
 			activity = capitalize(activity)
+			add_overlay(activity_indicator)
 			return me_verb(activity)
 	else
 		to_chat(src, "<span class='warning'>Недоступно в твоем нынешнем состоянии.</span>")
 
 /mob/living/update_stat()
-	if(stat != CONSCIOUS)
-		activity = ""
+	if(activity && stat != CONSCIOUS)
+		set_activity()
 
 /mob/living/get_tooltip_data()
 	if(activity)
