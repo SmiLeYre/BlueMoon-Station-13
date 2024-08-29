@@ -1,5 +1,5 @@
 //SET_ACTIVITY START
-
+/// Continuous and static "/me"
 /mob/living/verb/set_activity()
 	set name = "Деятельность"
 	set desc = "Описывает то, что вы сейчас делаете."
