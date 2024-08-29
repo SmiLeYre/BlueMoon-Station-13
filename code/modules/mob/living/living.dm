@@ -557,12 +557,9 @@
 	set desc = "Описывает то, что вы сейчас делаете."
 	set category = "IC"
 
-	var/mutable_appearance/activity_indicator = mutable_appearance('modular_bluemoon/icons/mob/activity_indicator.dmi', "tea", FLY_LAYER, appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | KEEP_APART)
-	activity_indicator.pixel_y = 10
-
 	if(activity)
 		activity = ""
-		cut_overlay(activity_indicator)
+		set_activity_indicator(FALSE)
 		to_chat(src, "<span class='notice'>Деятельность сброшена.</span>")
 		return
 	if(stat == CONSCIOUS)
@@ -571,14 +568,24 @@
 		clear_typing_indicator()
 		if(activity)
 			activity = capitalize(activity)
-			add_overlay(activity_indicator)
+			set_activity_indicator(TRUE)
 			return me_verb(activity)
 	else
 		to_chat(src, "<span class='warning'>Недоступно в твоем нынешнем состоянии.</span>")
 
+/mob/living/proc/set_activity_indicator(state)
+	var/mutable_appearance/activity_indicator = mutable_appearance('modular_bluemoon/icons/mob/activity_indicator.dmi', "tea", FLY_LAYER, appearance_flags = APPEARANCE_UI_IGNORE_ALPHA | KEEP_APART)
+	activity_indicator.pixel_y = 10
+	if(state)
+		add_overlay(activity_indicator)
+	else
+		cut_overlay(activity_indicator)
+
 /mob/living/update_stat()
 	if(activity && stat != CONSCIOUS)
-		set_activity()
+		activity = ""
+		set_activity_indicator(FALSE)
+		to_chat(src, "<span class='notice'>Деятельность сброшена.</span>")
 
 /mob/living/get_tooltip_data()
 	if(activity)
@@ -586,7 +593,6 @@
 		. += activity
 
 //SET_ACTIVITY END
-
 
 /mob/proc/get_contents()
 
