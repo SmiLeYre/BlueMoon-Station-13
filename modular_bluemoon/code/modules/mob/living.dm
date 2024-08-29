@@ -35,6 +35,7 @@
 /mob/living/update_stat()
 	if(activity && stat != CONSCIOUS)
 		reset_activity()
+	. = ..()
 
 /mob/living/death(gibbed)
 	. = ..()
