@@ -84,7 +84,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	fire_sound = 'sound/weapons/magpistol.ogg'
 	mag_type = /obj/item/ammo_box/magazine/mmag/small
-	fire_delay = 2
+	fire_delay = 4.5 //BLUEMOON REBALANCE 2 ----> 4.5
 	inaccuracy_modifier = 0.25
 	cell_type = /obj/item/stock_parts/cell/magnetic/pistol
 	automatic_burst_overlay = FALSE
