@@ -10166,11 +10166,6 @@
 /obj/machinery/light/warm/directional/west,
 /turf/open/floor/plating/beach/sand,
 /area/centcom/holding)
-"byP" = (
-/obj/effect/decal/cleanable/ash,
-/obj/effect/mob_spawn/qareen/wendigo,
-/turf/open/indestructible/boss,
-/area/horny_antags/qareen)
 "bAf" = (
 /obj/effect/turf_decal/tile/dark_blue/half{
 	dir = 1
@@ -17216,10 +17211,6 @@
 /obj/item/clothing/gloves/combat,
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
-"hPX" = (
-/obj/effect/mob_spawn/qareen/wendigo_man,
-/turf/open/indestructible/boss,
-/area/horny_antags/qareen)
 "hPY" = (
 /turf/open/floor/iron/dark/smooth_large,
 /area/centcom/holding)
@@ -49585,11 +49576,11 @@ aaa
 aaa
 aaa
 wIy
-byP
+eyk
 qWG
 qWG
 tzG
-hPX
+qWG
 wIy
 aaa
 aaa
