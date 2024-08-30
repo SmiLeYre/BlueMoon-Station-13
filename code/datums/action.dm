@@ -145,8 +145,8 @@
 			return FALSE
 	if(check_flags & AB_CHECK_LYING)
 		if(istype(L) && !CHECK_MOBILITY(L, MOBILITY_STAND))
-			if (!silent)
-				owner.balloon_alert(owner, "must stand up!")
+			// if (!silent)
+			// 	owner.balloon_alert(owner, "must stand up!")
 			return FALSE
 	if(check_flags & AB_CHECK_CONSCIOUS)
 		if(owner.stat)

@@ -231,6 +231,14 @@
 	icon = 'modular_splurt/icons/mob/hair.dmi'
 	icon_state = "hair_phoebe"
 
+//BLUEMOON ADD
+
+/datum/sprite_accessory/hair/dave2
+	name = "Dave 2"
+	icon = 'modular_splurt/icons/mob/hair.dmi'
+	icon_state = "hair_dave2"
+
+//BLUEMOON ADD END
 
 /datum/sprite_accessory/hair/teshari
 	name = "Teshari Default"

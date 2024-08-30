@@ -53,6 +53,7 @@
 /obj/item/toy/mecha/Initialize(mapload)
 	. = ..()
 	AddElement(/datum/element/series, /obj/item/toy/mecha, "Mini-Mecha action figures")
+	//AddElement(/datum/element/toy_talk)
 	combat_health = max_combat_health
 	switch(special_attack_type)
 		if(SPECIAL_ATTACK_DAMAGE)
@@ -156,7 +157,7 @@
 	if(target == user)
 		to_chat(user, span_notice("Target another toy mech if you want to start a battle with yourself."))
 		return
-	else if(!user.combat_mode)
+	else if(user.a_intent != INTENT_HARM)
 		if(wants_to_battle) //prevent spamming someone with offers
 			to_chat(user, span_notice("You already are offering battle to someone!"))
 			return
@@ -177,7 +178,7 @@
 
 		//extend the offer of battle to the other mech
 		to_chat(user, span_notice("You offer battle to [target.name]!"))
-		to_chat(target, span_notice("<b>[user.name] wants to battle with [user.ru_ego()] [name]!</b> <i>Attack them with a toy mech to initiate combat.</i>"))
+		to_chat(target, span_notice("<b>[user.name] wants to battle with [user.p_their()] [name]!</b> <i>Attack them with a toy mech to initiate combat.</i>"))
 		wants_to_battle = TRUE
 		addtimer(CALLBACK(src, PROC_REF(withdraw_offer), user), 6 SECONDS)
 		return
@@ -193,7 +194,7 @@
 		timer = world.time + cooldown
 		if(!quiet)
 			playsound(user, 'sound/mecha/mechstep.ogg', 20, TRUE)
-	return COMPONENT_CANCEL_ATTACK_CHAIN
+	return STOP_ATTACK_PROC_CHAIN
 
 
 /**
@@ -215,7 +216,7 @@
 		to_chat(user, span_notice("[src] is in battle, let it finish first."))
 		return
 
-	user.visible_message(span_suicide("[user] begins a fight [user.ru_who()] can't win with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
+	user.visible_message(span_suicide("[user] begins a fight [user.p_they()] can't win with [src]! It looks like [user.p_theyre()] trying to commit suicide!"))
 
 	in_combat = TRUE
 	sleep(1.5 SECONDS)
@@ -263,12 +264,8 @@
 	if(wins || losses)
 		. += span_notice("This toy has [wins] wins, and [losses] losses.")
 
-/**
- * Override the say proc if they're mute
- */
-/obj/item/toy/mecha/say(message, bubble_type, list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null, filterproof = null, message_range = 7, datum/saymode/saymode = null)
-	if(!quiet)
-		. = ..()
+/obj/item/toy/mecha/can_speak(allow_mimes)
+	return !quiet && ..()
 
 /**
  * The 'master' proc of the mech battle. Processes the entire battle's events and makes sure it start and finishes correctly.
@@ -445,20 +442,20 @@
  */
 /obj/item/toy/mecha/proc/check_battle_start(mob/living/carbon/user, obj/item/toy/mecha/attacker, mob/living/carbon/target)
 	if(attacker?.in_combat)
-		to_chat(user, span_notice("[target?target.ru_ego() : "Your" ] [attacker.name] is in combat."))
+		to_chat(user, span_notice("[target?target.p_their() : "Your" ] [attacker.name] is in combat."))
 		to_chat(target, span_notice("Your [attacker.name] is in combat."))
 		return FALSE
 	if(in_combat)
 		to_chat(user, span_notice("Your [name] is in combat."))
-		to_chat(target, span_notice("[user.ru_ego()] [name] is in combat."))
+		to_chat(target, span_notice("[user.p_their()] [name] is in combat."))
 		return FALSE
 	if(attacker && attacker.timer > world.time)
-		to_chat(user, span_notice("[target?target.ru_ego() : "Your" ] [attacker.name] isn't ready for battle."))
+		to_chat(user, span_notice("[target?target.p_their() : "Your" ] [attacker.name] isn't ready for battle."))
 		to_chat(target, span_notice("Your [attacker.name] isn't ready for battle."))
 		return FALSE
 	if(timer > world.time)
 		to_chat(user, span_notice("Your [name] isn't ready for battle."))
-		to_chat(target, span_notice("[user.ru_ego()] [name] isn't ready for battle."))
+		to_chat(target, span_notice("[user.p_their()] [name] isn't ready for battle."))
 		return FALSE
 
 	return TRUE

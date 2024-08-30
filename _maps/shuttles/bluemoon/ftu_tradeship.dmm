@@ -71,7 +71,7 @@
 /obj/docking_port/stationary{
 	dwidth = 8;
 	height = 16;
-	id = "ftu_tradeship_home";
+	shuttle_id = "ftu_tradeship_home";
 	name = "Deep space";
 	width = 30
 	},
@@ -80,7 +80,7 @@
 	dheight = 0;
 	dwidth = 8;
 	height = 26;
-	id = "ftu";
+	shuttle_id = "ftu";
 	launch_status = 0;
 	name = "ftu trade";
 	port_direction = 8;

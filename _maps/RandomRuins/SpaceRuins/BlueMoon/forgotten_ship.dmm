@@ -3298,7 +3298,7 @@
 /obj/machinery/porta_turret{
 	icon_state = "turretCover_broken";
 	on = 0;
-	stat = 1
+	machine_stat = 1
 	},
 /obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
@@ -3653,7 +3653,7 @@
 /obj/machinery/porta_turret{
 	icon_state = "turretCover_broken";
 	on = 0;
-	stat = 1
+	machine_stat = 1
 	},
 /obj/effect/turf_decal/stripes/box,
 /obj/machinery/light{

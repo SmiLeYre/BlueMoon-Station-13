@@ -297,7 +297,7 @@
 
 	// Get reference of the list we're using based on gender.
 	var/list/moans
-	if (gender == FEMALE)
+	if (gender == FEMALE || (gender == PLURAL && isfeminine(src)))
 		moans = GLOB.lewd_moans_female
 	else
 		moans = GLOB.lewd_moans_male
@@ -308,6 +308,9 @@
 	// If the sound is repeated, get a new from a list without it.
 	if (lastmoan == sound)
 		sound = pick(LAZYCOPY(moans) - lastmoan)
+
+	if(isalien(src))
+		sound = 'sound/voice/hiss6.ogg'
 
 	playlewdinteractionsound(loc, sound, 80, 0, 0)
 	lastmoan = sound

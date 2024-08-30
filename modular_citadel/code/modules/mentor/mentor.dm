@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT: MENTORS! SEE IN MODULAR modular_bluemoon\phoenix404\modules\mentor\code\mentor.dm
 GLOBAL_LIST_EMPTY(mentor_datums)
 GLOBAL_PROTECT(mentor_datums)
 
@@ -90,3 +91,4 @@ GLOBAL_PROTECT(mentor_href_token)
 // new client var: mentor_datum. Acts the same way holder does towards admin: it holds the mentor datum. if set, the guy's a mentor.
 /client
 	var/datum/mentors/mentor_datum
+*/

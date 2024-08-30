@@ -68,7 +68,7 @@
 	req_access_txt = "1"
 	},
 /obj/docking_port/mobile{
-	id = "lambda";
+	shuttle_id = "lambda";
 	name = "Lambda Shuttle";
 	port_direction = 4;
 	dwidth = 3;

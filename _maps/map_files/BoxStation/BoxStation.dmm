@@ -2881,18 +2881,6 @@
 /obj/effect/turf_decal/tile/yellow/half/contrasted,
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/factory)
-"anO" = (
-/obj/docking_port/stationary{
-	dir = 8;
-	dwidth = 2;
-	height = 5;
-	id = "laborcamp_home";
-	name = "fore bay 1";
-	roundstart_template = /datum/map_template/shuttle/labour/box;
-	width = 9
-	},
-/turf/open/space/basic,
-/area/space)
 "anQ" = (
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
@@ -5153,18 +5141,6 @@
 /obj/machinery/door/airlock/ce,
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/ce)
-"avT" = (
-/obj/docking_port/stationary{
-	dheight = 1;
-	dir = 8;
-	dwidth = 12;
-	height = 17;
-	id = "syndicate_ne";
-	name = "northeast of station";
-	width = 23
-	},
-/turf/open/space,
-/area/space/nearstation)
 "avU" = (
 /obj/structure/chair/comfy/plywood{
 	dir = 8
@@ -10497,6 +10473,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/fore)
+"aVl" = (
+/obj/docking_port/stationary/random{
+	dir = 4;
+	shuttle_id = "pod_lavaland3";
+	name = "lavaland"
+	},
+/turf/open/space,
+/area/space)
 "aVn" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -24695,18 +24679,6 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/cargo/miningdock)
-"bJc" = (
-/obj/docking_port/stationary{
-	dir = 8;
-	dwidth = 3;
-	height = 5;
-	id = "mining_home";
-	name = "mining shuttle bay";
-	roundstart_template = /datum/map_template/shuttle/mining/box;
-	width = 7
-	},
-/turf/open/space/basic,
-/area/space)
 "bJd" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
@@ -35969,14 +35941,6 @@
 	},
 /turf/open/floor/plating,
 /area/engineering/main)
-"cpe" = (
-/obj/docking_port/stationary/random{
-	dir = 8;
-	id = "pod_lavaland2";
-	name = "lavaland"
-	},
-/turf/open/space,
-/area/space/nearstation)
 "cpg" = (
 /obj/effect/turf_decal/tile/green,
 /obj/effect/turf_decal/tile/green{
@@ -38299,14 +38263,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/robotics/lab)
-"cwV" = (
-/obj/docking_port/stationary/random{
-	dir = 8;
-	id = "pod_lavaland1";
-	name = "lavaland"
-	},
-/turf/open/space,
-/area/space/nearstation)
 "cxn" = (
 /obj/structure/lattice,
 /obj/effect/landmark/carpspawn,
@@ -38329,17 +38285,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison/upper)
-"cxE" = (
-/obj/docking_port/stationary{
-	dir = 8;
-	dwidth = 2;
-	height = 13;
-	id = "ferry_home";
-	name = "port bay 2";
-	width = 5
-	},
-/turf/open/space/basic,
-/area/space)
 "cxF" = (
 /obj/machinery/requests_console{
 	department = "Kitchen";
@@ -38389,17 +38334,6 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/hallway/secondary/entry)
-"cyd" = (
-/obj/docking_port/stationary{
-	dir = 2;
-	dwidth = 11;
-	height = 22;
-	id = "whiteship_home";
-	name = "SS13: Auxiliary Dock, Station-Port";
-	width = 35
-	},
-/turf/open/space/basic,
-/area/space)
 "cyh" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
@@ -38515,17 +38449,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel,
 /area/engineering/main)
-"cyT" = (
-/obj/docking_port/stationary{
-	dir = 8;
-	dwidth = 5;
-	height = 7;
-	id = "supply_home";
-	name = "Cargo Bay";
-	width = 12
-	},
-/turf/open/space/basic,
-/area/space)
 "cyU" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
@@ -38603,14 +38526,6 @@
 "czK" = (
 /turf/closed/wall,
 /area/commons/vacant_room/office)
-"czN" = (
-/obj/docking_port/stationary/random{
-	dir = 4;
-	id = "pod_lavaland4";
-	name = "lavaland"
-	},
-/turf/open/space,
-/area/space/nearstation)
 "czR" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -39786,18 +39701,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/science/robotics/lab)
-"cIg" = (
-/obj/docking_port/stationary{
-	dir = 8;
-	dwidth = 3;
-	height = 15;
-	id = "arrivals_stationary";
-	name = "arrivals";
-	roundstart_template = /datum/map_template/shuttle/arrival/box;
-	width = 7
-	},
-/turf/open/space/basic,
-/area/space)
 "cIh" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
@@ -41144,6 +41047,18 @@
 	},
 /turf/open/floor/plating,
 /area/security/prison/upper)
+"dhn" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 2;
+	height = 5;
+	shuttle_id = "laborcamp_home";
+	name = "fore bay 1";
+	roundstart_template = /datum/map_template/shuttle/labour/box;
+	width = 9
+	},
+/turf/open/space/basic,
+/area/space)
 "dhz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/rack,
@@ -41936,6 +41851,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
+"dFg" = (
+/obj/structure/sign/poster/official/random{
+	pixel_y = 32
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/dark,
+/area/science/circuit)
 "dFD" = (
 /obj/effect/turf_decal/tile/brown/opposingcorners,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -42079,6 +42002,14 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/carpet/red,
 /area/medical/psychology)
+"dLG" = (
+/obj/docking_port/stationary/random{
+	dir = 8;
+	shuttle_id = "pod_lavaland2";
+	name = "lavaland"
+	},
+/turf/open/space,
+/area/space/nearstation)
 "dMg" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin{
@@ -43708,6 +43639,13 @@
 "eQb" = (
 /turf/open/floor/carpet,
 /area/commons/dorms)
+"eQB" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/dark,
+/area/science/circuit)
 "eQH" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1
@@ -45172,11 +45110,6 @@
 /obj/effect/landmark/navigate_destination/incinerator,
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
-"fOy" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/frame/machine,
-/turf/open/floor/plasteel/dark,
-/area/science/circuit)
 "fOA" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
@@ -45218,6 +45151,17 @@
 /obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/plasteel/dark,
 /area/hallway/primary/central)
+"fPP" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 2;
+	height = 13;
+	shuttle_id = "ferry_home";
+	name = "port bay 2";
+	width = 5
+	},
+/turf/open/space/basic,
+/area/space)
 "fPX" = (
 /obj/structure/table/glass,
 /obj/machinery/computer/med_data/laptop{
@@ -45730,15 +45674,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison/upper)
-"gfj" = (
-/obj/machinery/camera{
-	c_tag = "Circuitry Lab North";
-	network = list("ss13","rd")
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
-/obj/structure/frame/machine,
-/turf/open/floor/plasteel/dark,
-/area/science/circuit)
 "gft" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/machinery/light/small{
@@ -48179,6 +48114,17 @@
 /obj/effect/spawner/structure/window/hollow/reinforced/directional,
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
+"hTD" = (
+/obj/docking_port/stationary{
+	dir = 4;
+	dwidth = 12;
+	height = 18;
+	shuttle_id = "emergency_home";
+	name = "BoxStation emergency evac bay";
+	width = 32
+	},
+/turf/open/space/basic,
+/area/space)
 "hTH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -48542,6 +48488,20 @@
 /obj/machinery/vending/wardrobe/syndie_wardrobe/civil,
 /turf/open/floor/plasteel,
 /area/commons/locker)
+"ijt" = (
+/obj/docking_port/stationary{
+	area_type = /area/construction/mining/aux_base;
+	dheight = 4;
+	dir = 8;
+	dwidth = 4;
+	height = 9;
+	shuttle_id = "aux_base_zone";
+	name = "aux base zone";
+	roundstart_template = /datum/map_template/shuttle/aux_base/default;
+	width = 9
+	},
+/turf/open/floor/plating,
+/area/construction/mining/aux_base)
 "ijG" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
@@ -49499,6 +49459,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/service/hydroponics)
+"iRR" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 5;
+	height = 7;
+	shuttle_id = "supply_home";
+	name = "Cargo Bay";
+	width = 12
+	},
+/turf/open/space/basic,
+/area/space)
 "iSq" = (
 /obj/structure/lattice,
 /obj/structure/grille/broken,
@@ -49859,14 +49830,6 @@
 /obj/structure/flora/grass/jungle/b,
 /turf/open/misc/grass,
 /area/service/park)
-"jdj" = (
-/obj/docking_port/stationary/random{
-	dir = 4;
-	id = "pod_lavaland3";
-	name = "lavaland"
-	},
-/turf/open/space,
-/area/space)
 "jdu" = (
 /obj/structure/table,
 /obj/machinery/light/floor,
@@ -50341,6 +50304,18 @@
 /obj/structure/closet/secure_closet/personal,
 /turf/open/floor/plasteel,
 /area/service/sauna)
+"jqr" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 3;
+	height = 5;
+	shuttle_id = "mining_home";
+	name = "mining shuttle bay";
+	roundstart_template = /datum/map_template/shuttle/mining/box;
+	width = 7
+	},
+/turf/open/space/basic,
+/area/space)
 "jqv" = (
 /obj/structure/chair/wood/normal{
 	dir = 1
@@ -51508,17 +51483,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/factory)
-"khD" = (
-/obj/docking_port/stationary{
-	dheight = 5;
-	dwidth = 5;
-	height = 10;
-	id = "lambda_station";
-	name = "Lambda Shuttle Dock";
-	width = 10
-	},
-/turf/open/space/basic,
-/area/space)
 "khO" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/security{
@@ -51583,6 +51547,14 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
+"kiI" = (
+/obj/docking_port/stationary/random{
+	dir = 8;
+	shuttle_id = "pod_lavaland1";
+	name = "lavaland"
+	},
+/turf/open/space,
+/area/space/nearstation)
 "kiL" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 8
@@ -52162,6 +52134,14 @@
 	},
 /turf/open/floor/wood,
 /area/service/sauna)
+"kCZ" = (
+/obj/docking_port/stationary/random{
+	dir = 4;
+	shuttle_id = "pod_lavaland4";
+	name = "lavaland"
+	},
+/turf/open/space,
+/area/space/nearstation)
 "kDd" = (
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance,
@@ -52213,6 +52193,18 @@
 "kFy" = (
 /turf/open/floor/plasteel/shuttle,
 /area/maintenance/port/aft)
+"kFF" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 3;
+	height = 5;
+	shuttle_id = "commonmining_home";
+	name = "SS13: Common Mining Dock";
+	roundstart_template = /datum/map_template/shuttle/mining_common/meta;
+	width = 7
+	},
+/turf/open/space/basic,
+/area/space)
 "kFG" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -52758,6 +52750,17 @@
 	},
 /turf/closed/wall,
 /area/medical/morgue)
+"kVz" = (
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 11;
+	height = 22;
+	shuttle_id = "whiteship_home";
+	name = "SS13: Auxiliary Dock, Station-Port";
+	width = 35
+	},
+/turf/open/space/basic,
+/area/space)
 "kVZ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -54052,6 +54055,17 @@
 /obj/effect/spawner/structure/window,
 /turf/open/floor/plating,
 /area/science/circuit)
+"lQM" = (
+/obj/docking_port/stationary{
+	dheight = 5;
+	dwidth = 5;
+	height = 10;
+	shuttle_id = "lambda_station";
+	name = "Lambda Shuttle Dock";
+	width = 10
+	},
+/turf/open/space/basic,
+/area/space)
 "lQN" = (
 /obj/machinery/light,
 /turf/open/floor/wood/wood_large,
@@ -55627,6 +55641,18 @@
 /obj/effect/spawner/lootdrop/bedsheet,
 /turf/open/floor/wood,
 /area/commons/dorms)
+"mPl" = (
+/obj/docking_port/stationary{
+	dir = 8;
+	dwidth = 3;
+	height = 15;
+	shuttle_id = "arrivals_stationary";
+	name = "arrivals";
+	roundstart_template = /datum/map_template/shuttle/arrival/box;
+	width = 7
+	},
+/turf/open/space/basic,
+/area/space)
 "mPr" = (
 /obj/structure/rack,
 /obj/item/tank/internals/emergency_oxygen,
@@ -55908,13 +55934,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/office)
-"mYi" = (
-/obj/machinery/light{
-	dir = 1
-	},
-/obj/structure/frame/machine,
-/turf/open/floor/plasteel/dark,
-/area/science/circuit)
 "mYJ" = (
 /obj/effect/turf_decal/stripes/corner{
 	dir = 1
@@ -56310,6 +56329,15 @@
 	},
 /turf/open/floor/glass/reinforced,
 /area/commons/dorms)
+"nrg" = (
+/obj/machinery/camera{
+	c_tag = "Circuitry Lab North";
+	network = list("ss13","rd")
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on,
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/dark,
+/area/science/circuit)
 "nrJ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -58516,17 +58544,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
-"oLt" = (
-/obj/docking_port/stationary{
-	dir = 4;
-	dwidth = 12;
-	height = 18;
-	id = "emergency_home";
-	name = "BoxStation emergency evac bay";
-	width = 32
-	},
-/turf/open/space/basic,
-/area/space)
 "oLH" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 8
@@ -63262,18 +63279,6 @@
 /obj/item/integrated_electronics/wirer,
 /turf/open/floor/plasteel/white,
 /area/science/circuit)
-"rZQ" = (
-/obj/docking_port/stationary{
-	dir = 8;
-	dwidth = 3;
-	height = 5;
-	id = "commonmining_home";
-	name = "SS13: Common Mining Dock";
-	roundstart_template = /datum/map_template/shuttle/mining_common/meta;
-	width = 7
-	},
-/turf/open/space/basic,
-/area/space)
 "rZY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable{
@@ -64097,6 +64102,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/medical/medbay/zone2)
+"sFG" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/structure/frame/machine,
+/turf/open/floor/plasteel/dark,
+/area/science/circuit)
 "sGd" = (
 /obj/machinery/computer/holodeck{
 	dir = 4
@@ -65769,6 +65779,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/prison/upper)
+"tJr" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 8;
+	dwidth = 12;
+	height = 17;
+	shuttle_id = "syndicate_ne";
+	name = "northeast of station";
+	width = 23
+	},
+/turf/open/space,
+/area/space/nearstation)
 "tJK" = (
 /obj/machinery/door/airlock/engineering{
 	name = "Gravity Generator";
@@ -66543,14 +66565,6 @@
 	},
 /turf/open/floor/plating,
 /area/security/brig/brig_medical)
-"ukX" = (
-/obj/structure/sign/poster/official/random{
-	pixel_y = 32
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/structure/frame/machine,
-/turf/open/floor/plasteel/dark,
-/area/science/circuit)
 "ulr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/closed/wall,
@@ -69664,20 +69678,6 @@
 /obj/machinery/cryopod/tele,
 /turf/open/floor/carpet,
 /area/commons/cryopod)
-"wph" = (
-/obj/docking_port/stationary{
-	area_type = /area/construction/mining/aux_base;
-	dheight = 4;
-	dir = 8;
-	dwidth = 4;
-	height = 9;
-	id = "aux_base_zone";
-	name = "aux base zone";
-	roundstart_template = /datum/map_template/shuttle/aux_base/default;
-	width = 9
-	},
-/turf/open/floor/plating,
-/area/construction/mining/aux_base)
 "wpG" = (
 /obj/machinery/light,
 /obj/machinery/button/door{
@@ -79625,7 +79625,7 @@ aaa
 aaa
 bvG
 aaa
-cpe
+dLG
 aaa
 oyN
 aaa
@@ -79639,7 +79639,7 @@ aaa
 aaa
 bvG
 aaa
-cwV
+kiI
 aaa
 oyN
 aaa
@@ -79649,7 +79649,7 @@ aaa
 aaa
 aaa
 aaa
-rZQ
+kFF
 aaa
 aaa
 aoV
@@ -81931,7 +81931,7 @@ apN
 apN
 apN
 apN
-wph
+ijt
 apN
 apN
 apN
@@ -81966,7 +81966,7 @@ ayl
 beK
 auP
 cyu
-cyd
+kVz
 aaa
 aaa
 aaa
@@ -83756,7 +83756,7 @@ aRY
 awW
 aaa
 aaa
-cxE
+fPP
 aaa
 aaa
 awW
@@ -84258,7 +84258,7 @@ aaa
 aaa
 aaa
 aaa
-cIg
+mPl
 aaa
 aaa
 aaa
@@ -89684,7 +89684,7 @@ aaa
 aaa
 aaa
 aaa
-cyT
+iRR
 aaa
 aaa
 aaa
@@ -92779,7 +92779,7 @@ aaa
 aaa
 aaa
 aaa
-bJc
+jqr
 aaa
 aaa
 aaa
@@ -94520,7 +94520,7 @@ aaa
 aaa
 aaa
 aaa
-anO
+dhn
 aaa
 aaa
 arP
@@ -106947,7 +106947,7 @@ cmW
 bOh
 aaa
 aaa
-czN
+kCZ
 aaa
 cCQ
 aaf
@@ -107087,7 +107087,7 @@ aaa
 aaa
 aaa
 aaa
-khD
+lQM
 xcL
 vCV
 vCV
@@ -108636,7 +108636,7 @@ aaa
 aaa
 bvG
 ktS
-jdj
+aVl
 ktS
 oyN
 aaa
@@ -121055,7 +121055,7 @@ bMz
 bNy
 bOH
 dvO
-fOy
+sFG
 vzp
 miJ
 owK
@@ -121312,7 +121312,7 @@ bMy
 bNx
 bOG
 wkN
-gfj
+nrg
 bSk
 ksC
 wkN
@@ -121569,7 +121569,7 @@ bMA
 bNz
 bOI
 wkN
-mYi
+eQB
 bTp
 bTp
 vCt
@@ -121826,7 +121826,7 @@ bEC
 bEC
 bEC
 bSl
-ukX
+dFg
 akK
 tjB
 tsu
@@ -123264,7 +123264,7 @@ cNd
 cNd
 cNd
 cNd
-avT
+tJr
 cNd
 cNd
 cNd
@@ -124358,7 +124358,7 @@ aaa
 aaa
 aaa
 aaa
-oLt
+hTD
 aaa
 aaa
 aaa

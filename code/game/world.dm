@@ -33,7 +33,7 @@ GLOBAL_LIST(topic_status_cache)
 	config.Load(params[OVERRIDE_CONFIG_DIRECTORY_PARAMETER])
 
 	load_admins()
-	load_mentors()
+	//load_mentors() BLUEMOON EDIT
 
 	//SetupLogs depends on the RoundID, so lets check
 	//DB schema and set RoundID if we can

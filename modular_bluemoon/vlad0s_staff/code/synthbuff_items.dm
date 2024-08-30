@@ -229,7 +229,7 @@
 
 // Прок, проверяющий возможность производства и останавливающий его. Если не остановил - выдаёт коллбэки на себя и dispose_reagent()
 /obj/machinery/robo_liquid_generator/proc/produce_reagent()
-	if(panel_open || stat & (BROKEN|NOPOWER))
+	if(panel_open || machine_stat & (BROKEN|NOPOWER))
 		in_progress = FALSE
 		updateUsrDialog()
 		return
@@ -264,7 +264,7 @@
 
 // Прок, выплёвывающий реагент
 /obj/machinery/robo_liquid_generator/proc/dispose_reagent(reagent_type)
-	if(panel_open || stat & (BROKEN|NOPOWER))
+	if(panel_open || machine_stat & (BROKEN|NOPOWER))
 		return
 	if(!selected_production)
 		return

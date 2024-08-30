@@ -283,7 +283,7 @@
 /obj/docking_port/mobile{
 	name = "InteQ Collosus";
 	preferred_direction = 4;
-	id = "inteq_collosus";
+	shuttle_id = "inteq_collosus";
 	height = 19;
 	width = 35;
 	dir = 2;

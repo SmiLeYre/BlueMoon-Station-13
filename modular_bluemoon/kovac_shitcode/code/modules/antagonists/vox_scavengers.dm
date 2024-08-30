@@ -171,7 +171,7 @@
 	shuttleId = "vox_raiders"
 	lock_override = NONE
 	shuttlePortId = "vox_raiders_custom"
-	jumpto_ports = list("whiteship_away" = 1, "whiteship_home" = 1)
+	jump_to_ports = list("whiteship_away" = 1, "whiteship_home" = 1)
 	view_range = 7
 	x_offset = 0
 	y_offset = 0
