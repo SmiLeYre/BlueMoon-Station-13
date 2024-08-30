@@ -6587,9 +6587,6 @@
 /turf/open/floor/plasteel/white,
 /area/mine/xenoarch_area_c)
 "gry" = (
-/obj/structure/mirror{
-	pixel_x = 28
-	},
 /obj/item/soap/nanotrasen,
 /obj/machinery/shower{
 	dir = 8
@@ -19368,6 +19365,9 @@
 /obj/structure/sink{
 	dir = 4;
 	pixel_x = 11
+	},
+/obj/structure/mirror{
+	pixel_x = 28
 	},
 /turf/open/floor/plasteel/freezer,
 /area/mine/living_quarters)
