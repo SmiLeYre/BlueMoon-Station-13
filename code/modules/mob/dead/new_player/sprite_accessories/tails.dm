@@ -336,19 +336,19 @@
 	name = "Light Tiger"
 	icon_state = "ltiger"
 
-/datum/sprite_accessory/tails/human/murid
+/datum/sprite_accessory/tails/human/murid // BLUEMOON Fink edited
 	name = "Murid"
 	icon_state = "murid"
-	color_src = MATRIXED
-	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
-	matrixed_sections = MATRIX_GREEN
+	color_src = MUTCOLORS
+	icon = 'modular_bluemoon/Fink/icons/mob/tails.dmi'
+	matrixed_sections = MATRIX_NONE
 
-/datum/sprite_accessory/tails_animated/human/murid
+/datum/sprite_accessory/tails_animated/human/murid // BLUEMOON Fink edited
 	name = "Murid"
 	icon_state = "murid"
-	color_src = MATRIXED
-	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
-	matrixed_sections = MATRIX_GREEN
+	color_src = MUTCOLORS
+	icon = 'modular_bluemoon/Fink/icons/mob/tails.dmi'
+	matrixed_sections = MATRIX_NONE
 
 /datum/sprite_accessory/tails/orca
 	name = "Orca"
