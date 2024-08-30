@@ -735,13 +735,17 @@
 	dir = 4
 	},
 /obj/machinery/camera{
-	c_tag = mainroom;
 	dir = 9;
-	network = list("prison-dorm")
+	network = list("prison-dorm");
+	c_tag = sec room
 	},
 /obj/item/leash,
 /obj/item/electropack/shockcollar/security,
 /obj/item/clothing/neck/petcollar/locked/security,
+/obj/machinery/camera{
+	c_tag = main room;
+	network = list("prison-dorm")
+	},
 /turf/open/floor/plasteel/dark/side{
 	dir = 1
 	},
@@ -1256,7 +1260,7 @@
 	dir = 9
 	},
 /obj/machinery/camera{
-	c_tag = re-education room 2;
+	c_tag = re-educationroom2;
 	dir = 6;
 	network = list("prison-dorm")
 	},
@@ -1290,7 +1294,7 @@
 	pixel_y = 11
 	},
 /obj/machinery/camera{
-	c_tag = re-education room 1;
+	c_tag = re-educationroom1;
 	dir = 4;
 	network = list("prison-dorm")
 	},
