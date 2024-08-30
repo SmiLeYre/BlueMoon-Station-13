@@ -6050,7 +6050,7 @@
 /obj/docking_port/stationary{
 	dwidth = 2;
 	height = 6;
-	id = "monastery_shuttle_station";
+	shuttle_id = "monastery_shuttle_station";
 	name = "Station";
 	roundstart_template = /datum/map_template/shuttle/escape_pod/large;
 	width = 5
@@ -34984,7 +34984,7 @@
 /obj/docking_port/stationary{
 	dwidth = 2;
 	height = 6;
-	id = "monastery_shuttle_asteroid";
+	shuttle_id = "monastery_shuttle_asteroid";
 	name = "monastery";
 	width = 5
 	},
