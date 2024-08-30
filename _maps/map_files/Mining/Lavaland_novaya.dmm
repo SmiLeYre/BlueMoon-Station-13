@@ -6601,17 +6601,6 @@
 "gsb" = (
 /obj/docking_port/stationary{
 	dir = 4;
-	dwidth = 6;
-	height = 16;
-	id = "ds1_syndicate";
-	name = "DS-1 Parking Spot";
-	width = 16
-	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/docking_port/stationary{
-	dir = 4;
 	height = 16;
 	name = "DS-1 Parking Spot";
 	width = 16;

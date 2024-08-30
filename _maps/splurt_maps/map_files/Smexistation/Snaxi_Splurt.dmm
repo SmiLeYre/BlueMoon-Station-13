@@ -27982,12 +27982,8 @@
 /turf/open/floor/plasteel,
 /area/maintenance/aft)
 "kGT" = (
-/obj/effect/landmark/start/ntr,
 /obj/structure/sign/painting/library{
 	pixel_y = 32
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/effect/landmark/start/ntr,
 /turf/open/floor/wood,
@@ -54047,32 +54043,17 @@
 /turf/open/floor/plasteel/cult,
 /area/service/library)
 "vRn" = (
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 4
-	},
 /obj/structure/table/wood,
 /obj/item/flashlight/seclite,
 /obj/machinery/fax{
 	fax_name = "South Bridge Fax";
 	name = "South Bridge Fax"
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
-	},
-/obj/structure/table/wood,
-/obj/item/flashlight/seclite,
-/obj/machinery/fax{
-	fax_name = "Bridge Fax";
-	name = "Bridge Fax"
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
