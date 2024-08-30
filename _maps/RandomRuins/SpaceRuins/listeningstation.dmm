@@ -858,7 +858,7 @@
 	dir = 4;
 	dwidth = 6;
 	height = 16;
-	id = "caravansyndicate1_listeningpost";
+	shuttle_id = "caravansyndicate1_listeningpost";
 	name = "Syndicate Listening Post";
 	width = 16
 	},

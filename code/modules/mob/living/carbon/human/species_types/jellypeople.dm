@@ -414,7 +414,7 @@
 
 ////////////////////////////////////////////////////////Round Start Slimes///////////////////////////////////////////////////////////////////
 
-/datum/species/jelly/slime/roundstartslime
+/datum/species/jelly/roundstartslime
 	name = "Xenobiological Slime Hybrid"
 	id = SPECIES_SLIME_HYBRID
 	limbs_id = SPECIES_SLIME

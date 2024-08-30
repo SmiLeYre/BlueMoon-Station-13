@@ -103,7 +103,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/preferred_map = null
 	var/preferred_chaos = null
 	var/be_victim = null
-	var/use_new_playerpanel = FALSE
+	var/use_new_playerpanel = TRUE // BLUEMOON - ENABELING-MODERN-PLAYER-PANEL-AS-DEFAULT
 	var/disable_combat_cursor = FALSE
 	var/tg_playerpanel = "TG"
 	var/pda_style = MONO

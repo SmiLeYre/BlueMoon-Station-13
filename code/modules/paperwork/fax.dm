@@ -103,7 +103,7 @@ GLOBAL_VAR_INIT(nt_fax_department, pick("NT HR Department", "NT Legal Department
 		seconds_electrified -= seconds_per_tick
 
 /obj/machinery/fax/attack_hand(mob/user, list/modifiers)
-	if(seconds_electrified && !(stat & NOPOWER))
+	if(seconds_electrified && !(machine_stat & NOPOWER))
 		if(shock(user, 100))
 			return
 	return ..()
@@ -468,7 +468,7 @@ GLOBAL_VAR_INIT(nt_fax_department, pick("NT HR Department", "NT Legal Department
  * * chance - probability the shock happens
  */
 /obj/machinery/fax/proc/shock(mob/living/user, chance)
-	if(!istype(user) || stat & (BROKEN|NOPOWER))
+	if(!istype(user) || machine_stat & (BROKEN|NOPOWER))
 		return FALSE
 	if(!prob(chance))
 		return FALSE

@@ -1324,7 +1324,7 @@
 /area/security/detectives_office)
 "acy" = (
 /obj/docking_port/stationary/random{
-	id = "pod_lavaland3";
+	shuttle_id = "pod_lavaland3";
 	name = "lavaland"
 	},
 /turf/open/space,
@@ -38019,7 +38019,7 @@
 	dir = 4;
 	dwidth = 3;
 	height = 10;
-	id = "mining_home";
+	shuttle_id = "mining_home";
 	name = "mining shuttle bay";
 	roundstart_template = /datum/map_template/shuttle/mining/kilo;
 	width = 7
@@ -39031,7 +39031,7 @@
 	dir = 4;
 	dwidth = 4;
 	height = 7;
-	id = "supply_home";
+	shuttle_id = "supply_home";
 	name = "Cargo Bay";
 	width = 12
 	},
@@ -40363,7 +40363,7 @@
 	dir = 8;
 	dwidth = 2;
 	height = 11;
-	id = "ferry_home";
+	shuttle_id = "ferry_home";
 	name = "port bay 2";
 	width = 5
 	},
@@ -55552,7 +55552,7 @@
 	dir = 2;
 	dwidth = 2;
 	height = 5;
-	id = "laborcamp_home";
+	shuttle_id = "laborcamp_home";
 	name = "fore bay 1";
 	roundstart_template = /datum/map_template/shuttle/labour/kilo;
 	width = 9
@@ -57747,7 +57747,7 @@
 	dir = 4;
 	dwidth = 11;
 	height = 18;
-	id = "emergency_home";
+	shuttle_id = "emergency_home";
 	name = "KiloStation emergency evac bay";
 	width = 30
 	},
@@ -64051,7 +64051,7 @@
 "ccg" = (
 /obj/docking_port/stationary/random{
 	dir = 8;
-	id = "pod_lavaland2";
+	shuttle_id = "pod_lavaland2";
 	name = "lavaland"
 	},
 /turf/open/space,
@@ -77298,7 +77298,7 @@
 	dir = 8;
 	dwidth = 12;
 	height = 17;
-	id = "syndicate_nw";
+	shuttle_id = "syndicate_nw";
 	name = "northwest of station";
 	width = 23
 	},
@@ -79196,7 +79196,7 @@
 "cGA" = (
 /obj/docking_port/stationary/random{
 	dir = 2;
-	id = "pod_lavaland1";
+	shuttle_id = "pod_lavaland1";
 	name = "lavaland"
 	},
 /turf/open/space,
@@ -80141,7 +80141,7 @@
 	dir = 8;
 	dwidth = 4;
 	height = 9;
-	id = "aux_base_zone";
+	shuttle_id = "aux_base_zone";
 	name = "aux base zone";
 	roundstart_template = /datum/map_template/shuttle/aux_base/default;
 	width = 9
@@ -81719,7 +81719,7 @@
 "cOd" = (
 /obj/docking_port/stationary/random{
 	dir = 4;
-	id = "pod_lavaland4";
+	shuttle_id = "pod_lavaland4";
 	name = "lavaland"
 	},
 /turf/open/space,
@@ -84470,7 +84470,7 @@
 	dir = 4;
 	dwidth = 3;
 	height = 14;
-	id = "arrivals_stationary";
+	shuttle_id = "arrivals_stationary";
 	name = "kilo arrivals";
 	roundstart_template = /datum/map_template/shuttle/arrival/kilo;
 	width = 7
@@ -85697,7 +85697,7 @@
 	dheight = 5;
 	dwidth = 5;
 	height = 10;
-	id = "lambda_station";
+	shuttle_id = "lambda_station";
 	name = "Lambda Shuttle Dock";
 	width = 10
 	},

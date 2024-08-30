@@ -127,12 +127,12 @@
 		// Do nothing
 		return
 
+	if(user?.is_muzzled() && !muzzle_ignore)
+		return
+
 	// Play sound
 	// Accepts all possible parameters
 	playsound(user.loc, emote_sound, emote_volume, emote_pitch_variance, emote_range, emote_falloff_exponent, emote_frequency, emote_channel, emote_check_pressure, emote_ignore_walls, emote_falloff_distance, emote_wetness, emote_dryness, emote_distance_multiplier, emote_distance_multiplier_min_range)
-
- 	// Set cooldown
-	user.nextsoundemote = world.time + emote_cooldown
 
 /datum/emote/living/surrender/run_emote(mob/user, params, type_override, intentional)
 	// Set message with pronouns
@@ -336,14 +336,16 @@
 	emote_sound = 'modular_splurt/sound/voice/bleat.ogg'
 	emote_cooldown = 3 SECONDS
 
+/*
+SPLURT теперь обрабатывают все это дело в /mob/living/proc/moan() -> весь код снизу теперь не имеет смысла.
+
 /datum/emote/living/carbon/moan/run_emote(mob/user, params, type_override, intentional) //I can't not port this shit, come on.
 	if(user.stat != CONSCIOUS)
 		return
 	var/sound
 	var/miming = user.mind ? user.mind.miming : 0
 	if(!user.is_muzzled() && !miming)
-		if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
-			sound = pick('modular_splurt/sound/voice/moan_m1.ogg', 'modular_splurt/sound/voice/moan_m2.ogg', 'modular_splurt/sound/voice/moan_m3.ogg')
+		sound = pick('modular_splurt/sound/voice/moan_m1.ogg', 'modular_splurt/sound/voice/moan_m2.ogg', 'modular_splurt/sound/voice/moan_m3.ogg')
 		if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 			sound = pick('modular_splurt/sound/voice/moan_f1.ogg', 'modular_splurt/sound/voice/moan_f2.ogg', 'modular_splurt/sound/voice/moan_f3.ogg', 'modular_splurt/sound/voice/moan_f4.ogg', 'modular_splurt/sound/voice/moan_f5.ogg', 'modular_splurt/sound/voice/moan_f6.ogg', 'modular_splurt/sound/voice/moan_f7.ogg')
 		if(isalien(user))
@@ -355,6 +357,7 @@
 	else
 		message = "makes a very loud noise."
 	. = ..()
+*/
 
 /datum/emote/living/audio/chitter2
 	key = "chitter2"

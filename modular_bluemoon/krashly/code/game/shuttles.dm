@@ -27,7 +27,7 @@
 	shuttleId = "lf_haron"
 	lock_override = NONE
 	shuttlePortId = "lf_haron_custom"
-	jumpto_ports = list("whiteship_away" = 1, "whiteship_home" = 1)
+	jump_to_ports = list("whiteship_away" = 1, "whiteship_home" = 1)
 	view_range = 7
 	x_offset = 0
 	y_offset = 0
@@ -64,7 +64,7 @@
 	shuttleId = "golems"
 	lock_override = NONE
 	shuttlePortId = "golems_custom"
-	jumpto_ports = list("whiteship_away" = 1, "whiteship_home" = 1)
+	jump_to_ports = list("whiteship_away" = 1, "whiteship_home" = 1)
 	view_range = 7
 	x_offset = 0
 	y_offset = 0

@@ -17,7 +17,7 @@
 	death = FALSE
 	roundstart = FALSE
 	random = FALSE
-	uses = 2
+	uses = 1
 
 /obj/effect/mob_spawn/qareen/wendigo //not grief antag u little shits
 	name = "Woman Wendigo - The Horny Creature"
@@ -29,10 +29,20 @@
 	flavour_text = "Вы Вендиго-Женщина."
 
 /obj/effect/mob_spawn/qareen/wendigo_man //not grief antag u little shits
-	name = "Man Wendigo - The Horny Creature"
-	short_desc = "Вы Вендиго!"
-	desc = "Вендиго. Озабоченный монстр-мужчина."
+	name = "Man Werefox - The Horny Creature"
+	short_desc = "Вы Лисоборотень!"
+	desc = "Озабоченный монстр-мужчина."
 	icon_state = "sleeper_clockwork"
 	mob_name = "Wendigo-Man"
 	mob_type = /mob/living/carbon/wendigo/man
 	flavour_text = "Вы Вендиго-Мужчина."
+
+/obj/effect/mob_spawn/qareen/wendigo_lore //not grief antag u little shits
+	name = "Wendigo - The Horny Creature"
+	short_desc = "Вы таинственное нечто необъятных размеров, редкие свидетели прозвали вас Вендиго!"
+	desc = "Вендиго. Огромный, рогатый, четвероногий, озабоченный монстр."
+	icon_state = "sleeper_clockwork"
+	mob_name = "Wendigo"
+	mob_type = /mob/living/simple_animal/wendigo
+	flavour_text = "Вы Вендиго. Огромный, рогатый, четвероногий, озабоченный монстр."
+

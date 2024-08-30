@@ -105,7 +105,7 @@
 		if(!terminal)
 			to_chat(user, "<span class='alert'>No power terminal found.</span>")
 			return
-		set_machine_stat(stat & ~BROKEN)
+		set_machine_stat(machine_stat & ~BROKEN)
 		update_icon()
 		return
 
@@ -202,7 +202,7 @@
 	terminal = new/obj/machinery/power/terminal(T)
 	terminal.setDir(get_dir(T,src))
 	terminal.master = src
-	set_machine_stat(stat & ~BROKEN)
+	set_machine_stat(machine_stat & ~BROKEN)
 
 /obj/machinery/power/smes/disconnect_terminal()
 	if(terminal)
@@ -219,7 +219,7 @@
 		. += "panel"
 		return
 
-	if(stat & BROKEN)
+	if(machine_stat & BROKEN)
 		return
 
 	var/clevel = chargedisplay()
@@ -269,7 +269,7 @@
 	return clamp(round(5.5*charge/capacity),0,5)
 
 /obj/machinery/power/smes/process()
-	if(stat & BROKEN)
+	if(machine_stat & BROKEN)
 		return
 
 	//store machine state to see if we need to update the icon overlays
@@ -328,7 +328,7 @@
 // called after all power processes are finished
 // restores charge level to smes if there was excess this ptick
 /obj/machinery/power/smes/proc/restore()
-	if(stat & BROKEN)
+	if(machine_stat & BROKEN)
 		return
 
 	if(!outputting)

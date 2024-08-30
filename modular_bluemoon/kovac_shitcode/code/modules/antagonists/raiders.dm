@@ -212,7 +212,7 @@
 	shuttleId = "inteq_collosus"
 	lock_override = NONE
 	shuttlePortId = "inteq_collosus_custom"
-	jumpto_ports = list("whiteship_away" = 1, "whiteship_home" = 1)
+	jump_to_ports = list("whiteship_away" = 1, "whiteship_home" = 1)
 	view_range = 14
 	x_offset = -7
 	y_offset = -7

@@ -89,7 +89,7 @@
 		return
 	add_fingerprint(user)
 
-	if(stat & (BROKEN|NOPOWER))
+	if(machine_stat & (BROKEN|NOPOWER))
 		return
 
 	if(user.client)

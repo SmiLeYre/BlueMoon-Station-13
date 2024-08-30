@@ -101,7 +101,7 @@
 	can_suppress = FALSE
 	can_bayonet = TRUE
 	knife_x_offset = 30
-	knife_y_offset = 7
+	knife_y_offset = 10
 
 /obj/item/gun/ballistic/automatic/wt550/gewehr550/update_icon_state()
 	icon_state = "gewehr550[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
@@ -153,6 +153,29 @@
 
 /obj/item/gun/ballistic/automatic/wt550/ots18/update_icon_state()
 	icon_state = "groza[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
+
+/obj/item/modkit/rs9
+	name = "RS9 Kit"
+	desc = "A modkit for making a WT-550 Gun into a RS9 Gun."
+	product = /obj/item/gun/ballistic/automatic/wt550/rs9
+	fromitem = list(/obj/item/gun/ballistic/automatic/wt550)
+
+/obj/item/gun/ballistic/automatic/wt550/rs9
+	name = "\improper RS9"
+	desc = "The RS9 is an assault rifle designed for combat in narrow street areas. It has bayonet mount and is relatively lightweight. This model uses 4.6x30mm caliber."
+	icon = 'modular_bluemoon/fluffs/icons/obj/acrador_guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "rs9"
+	item_state = "rs9"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/rs9shot.ogg'
+	can_suppress = FALSE
+	can_bayonet = TRUE
+	knife_x_offset = 40
+	knife_y_offset = 10
+
+/obj/item/gun/ballistic/automatic/wt550/rs9/update_icon_state()
+	icon_state = "rs9[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
 
 /obj/item/modkit/m240_kit
 	name = "M240 Kit"
@@ -445,6 +468,47 @@
 /obj/item/melee/baton/stunspear/get_worn_belt_overlay(icon_file)
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "-stunspear")
 
+/////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/modkit/tonfa_kit
+	name = "Ton-Fa Kit"
+	desc = "A modkit for making an stunbaton into a ton-Fa."
+	product = /obj/item/melee/baton/tonfa
+	fromitem = list(/obj/item/melee/baton, /obj/item/melee/baton/loaded)
+
+/obj/item/melee/baton/tonfa
+	name = "Stun Ton-Fa"
+	desc = "A non-lethal baton for suppressing manpower. Developed during the riots when the existence of the rifters was confirmed."
+	item_state = "tonfa"
+	icon_state = "tonfa"
+	icon = 'modular_bluemoon/fluffs/icons/obj/acrador_guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+
+/obj/item/melee/baton/tonfa/switch_status(new_status = FALSE, silent = FALSE)
+	if(turned_on != new_status)
+		turned_on = new_status
+		if(!silent)
+			playsound(loc, 'modular_bluemoon/fluffs/sound/weapon/tonfa.ogg', 75, 1, -1)
+		if(turned_on)
+			START_PROCESSING(SSobj, src)
+		else
+			STOP_PROCESSING(SSobj, src)
+	update_icon()
+
+/obj/item/melee/baton/tonfa/update_icon_state()
+	if(turned_on)
+		icon_state = "tonfa_active"
+		item_state = "tonfa_active"
+	else if(!cell)
+		icon_state = "tonfa_nocell"
+		item_state = "tonfa"
+	else
+		icon_state = "tonfa"
+		item_state = "tonfa"
+
+/obj/item/melee/baton/tonfa/get_worn_belt_overlay(icon_file)
+	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "-tonfa")
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -583,6 +647,8 @@
 	ammo_type = list(/obj/item/ammo_casing/energy/disabler/karabiner_m13, /obj/item/ammo_casing/energy/laser/hos/karabiner_m13, /obj/item/ammo_casing/energy/ion/hos/karabiner_m13, /obj/item/ammo_casing/energy/electrode/hos/karabiner_m13)
 	ammo_x_offset = 0
 	pickup_sound = "modular_bluemoon/flaffs/sound/weapon/Karabiner-M13/GrabCarabine.ogg"
+	flight_x_offset = 25
+	flight_y_offset = 5
 
 /obj/item/ammo_casing/energy/disabler/karabiner_m13
 	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/Karabiner-M13/DisablerOni.ogg'
@@ -662,3 +728,82 @@
 	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
 	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/back.dmi'
+
+/obj/item/modkit/rs14_kit
+	name = "RS14 Kit"
+	desc = "A modkit for making an Rsha12 into a RS14."
+	product = /obj/item/gun/ballistic/shotgun/rsh12/rs14
+	fromitem = list(/obj/item/gun/ballistic/shotgun/rsh12)
+
+/obj/item/gun/ballistic/shotgun/rsh12/rs14
+	name = "RS14"
+	desc = "Shotgun revolver. It was formerly a hunting weapon, but has since been adopted by the Rohai armies because of its ease of use, effectiveness and cheapness. This model uses 12 gauge."
+	item_state = "rs14"
+	icon_state = "rs14"
+	icon = 'modular_bluemoon/fluffs/icons/obj/acrador_guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/rs14shot.ogg'
+
+/obj/item/modkit/rshield_kit
+	name = "Telescopic riot shield Kit"
+	desc = "A modkit for making an telescopic riot shield into a Acrador telescopic riot shield."
+	product = /obj/item/shield/riot/rshield
+	fromitem = list(/obj/item/shield/riot/tele)
+
+/obj/item/shield/riot/rshield
+	name = "Telescopic riot shield"
+	desc = "A shield used to quell civil unrest in the cities of Irelia. It is easy to use and can be folded into a more compact form for carrying."
+	icon_state = "rshield0"
+	icon = 'modular_bluemoon/fluffs/icons/obj/acrador_guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	slot_flags = null
+	force = 3
+	throwforce = 3
+	throw_speed = 3
+	throw_range = 4
+	w_class = WEIGHT_CLASS_NORMAL
+	var/active = FALSE
+
+/obj/item/shield/riot/rshield/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(!active)
+		return BLOCK_NONE
+	return ..()
+
+/obj/item/shield/riot/rshield/can_active_block()
+	return ..() && active
+
+/obj/item/shield/riot/rshield/attack_self(mob/living/user)
+	active = !active
+	icon_state = "rshield[active]"
+	playsound(src.loc, 'sound/weapons/batonextend.ogg', 50, TRUE)
+
+	if(active)
+		force = 8
+		throwforce = 5
+		throw_speed = 2
+		w_class = WEIGHT_CLASS_BULKY
+		slot_flags = ITEM_SLOT_BACK
+		to_chat(user, "<span class='notice'>You extend \the [src].</span>")
+	else
+		force = 3
+		throwforce = 3
+		throw_speed = 3
+		w_class = WEIGHT_CLASS_NORMAL
+		slot_flags = null
+		to_chat(user, "<span class='notice'>[src] can now be concealed.</span>")
+	add_fingerprint(user)
+
+/obj/item/modkit/anstrum_kit
+	name = "SP 488 Anstrum Kit"
+	desc = "A modkit for making an Enforcer into a SP 488 Anstrum."
+	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/anstrum
+	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold)
+
+/obj/item/gun/ballistic/automatic/pistol/enforcer/anstrum
+	name = "\improper SP 488 Anstrum"
+	desc = "A series of semi-automatic pistols designed and manufactured specifically for the Rohai Law Enforcement Units and as personal weapons for the senior army officers. The design is old but reliable, combining compactness with sufficient combat power for everyday tasks."
+	icon = 'modular_bluemoon/fluffs/icons/obj/acrador_guns.dmi'
+	icon_state = "anstrum"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/anstrumshot.ogg'
