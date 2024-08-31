@@ -102,17 +102,17 @@
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED
 	sound_environment = SOUND_AREA_LAVALAND
 	shipambience = 'sound/ambience/zone/magma.ogg'
+	ambientsounds = MINING
+
+	always_unpowered = TRUE
+	requires_power = TRUE
+	power_environ = FALSE
+	power_equip = FALSE
+	power_light = FALSE
 
 /area/lavaland/surface
 	name = "Lavaland"
 	icon_state = "explored"
-	always_unpowered = TRUE
-	power_environ = FALSE
-	power_equip = FALSE
-	power_light = FALSE
-	requires_power = TRUE
-	// ambience_index = AMBIENCE_MINING
-	ambientsounds = MINING
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED | NO_ALERTS
 	min_ambience_cooldown = 70 SECONDS
 	max_ambience_cooldown = 220 SECONDS
@@ -120,16 +120,17 @@
 /area/lavaland/underground
 	name = "Lavaland Caves"
 	icon_state = "unexplored"
-	always_unpowered = TRUE
-	requires_power = TRUE
-	power_environ = FALSE
-	power_equip = FALSE
-	power_light = FALSE
-	// ambience_index = AMBIENCE_MINING
-	ambientsounds = MINING
 	area_flags = VALID_TERRITORY | UNIQUE_AREA | FLORA_ALLOWED | NO_ALERTS
 	min_ambience_cooldown = 70 SECONDS
 	max_ambience_cooldown = 220 SECONDS
+
+/area/lavaland/necropolis
+	name = "Necropolis Dungeon"
+	icon_state = "necropolis_dungeon"
+	sound_environment = SOUND_AREA_LARGE_SOFTFLOOR
+	area_flags = UNIQUE_AREA | NO_ALERTS | NOTELEPORT
+	min_ambience_cooldown = 60 SECONDS
+	max_ambience_cooldown = 120 SECONDS
 
 /area/lavaland/surface/outdoors
 	name = "Lavaland Wastes"

@@ -17,7 +17,7 @@
 	death = FALSE
 	roundstart = FALSE
 	random = FALSE
-	uses = 2
+	uses = 1
 
 /obj/effect/mob_spawn/qareen/wendigo //not grief antag u little shits
 	name = "Woman Wendigo - The Horny Creature"
@@ -45,3 +45,4 @@
 	mob_name = "Wendigo"
 	mob_type = /mob/living/simple_animal/wendigo
 	flavour_text = "Вы Вендиго. Огромный, рогатый, четвероногий, озабоченный монстр."
+
