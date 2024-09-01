@@ -143,3 +143,10 @@
 	icon_state = "SATTvdv"
 	item_state = "SATTvdv"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/aki_camo
+	name = "Adler Peacekeeper uniform"
+	desc = "Peacekeeper uniforms are custom-made for corporations in the Taywar sector. Simulates all the features of Merenid biology to perfectly match any personality, as well as some types of low-quality races."
+	icon_state = "adlercamo"
+	item_state = "adlercamo"
+	can_adjust = FALSE
