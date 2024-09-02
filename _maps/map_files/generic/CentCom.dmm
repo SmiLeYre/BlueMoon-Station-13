@@ -29043,7 +29043,6 @@
 /area/centcom)
 "sCg" = (
 /obj/machinery/jukebox/disco{
-	set_obj_flags = "EMAGGED";
 	anchored = 1;
 	one_area_play = 1;
 	req_one_access = null
