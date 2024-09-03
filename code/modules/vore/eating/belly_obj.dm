@@ -478,6 +478,11 @@
 	//Incase they have the loop going, let's double check to stop it.
 	M.stop_sound_channel(CHANNEL_PREYLOOP)
 
+	// BLUEMOON ADD START - vore-digestion-hp-buff - повышение ХП за успешное пожирание
+	if(owner.maxHealth < 300 && get_size(owner) >= 1 && M.ckey) // если ХП не более 300, размер нормальный, чтобы не абузить снижение размера и был игрок в персонаже...
+		owner.maxHealth += 10 // повышение ХП за успешное пожирание
+	// BLUEMOON ADD END
+
 	// Delete the digested mob
 	qdel(M)
 
