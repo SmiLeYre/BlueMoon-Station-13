@@ -1,5 +1,5 @@
 /obj/item/summon_chalk
-	name = "qareen enchanted chalk"
+	name = "Summon chalk"
 	desc = "A weird chalk covered in ectoplasm."
 	icon = 'modular_bluemoon/Gardelin0/icons/items/qareen_chalk.dmi'
 	icon_state = "chalk_pink"
