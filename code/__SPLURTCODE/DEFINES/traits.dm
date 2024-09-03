@@ -47,6 +47,8 @@
 #define TRAIT_MESSY						"messy"
 #define TRAIT_RESTORATIVE_METABOLISM	"restorative_metabolism"
 #define TRAIT_LEWD_JOB					"lewd_job"
+#define TRAIT_LEWD_SUMMON				"lewd_summon"
+#define TRAIT_LEWD_SUMMONED				"lewd_summoned"
 #define TRAIT_KISS_SLUT			"kiss_slut"
 
 // Chastity traits
