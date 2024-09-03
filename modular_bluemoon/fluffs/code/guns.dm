@@ -106,6 +106,29 @@
 /obj/item/gun/ballistic/automatic/wt550/gewehr550/update_icon_state()
 	icon_state = "gewehr550[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
 
+/obj/item/modkit/wtadler
+	name = "WT-550 Adler Kit"
+	desc = "A modkit for making a WT-550 Gun into a WT-550 Adler Gun."
+	product = /obj/item/gun/ballistic/automatic/wt550/wtadler
+	fromitem = list(/obj/item/gun/ballistic/automatic/wt550)
+
+/obj/item/gun/ballistic/automatic/wt550/wtadler
+	name = "\improper Adler assault rifle"
+	desc = "A assault rifle manufactured by the military industrial complex Adler. Manufactured for use by militarized law enforcement security services."
+	icon = 'modular_bluemoon/fluffs/icons/obj/wtadler.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "wtadler"
+	item_state = "wtadler"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/adlershot.ogg'
+	can_suppress = FALSE
+	can_bayonet = TRUE
+	knife_x_offset = 25
+	knife_y_offset = 7
+
+/obj/item/gun/ballistic/automatic/wt550/wtadler/update_icon_state()
+	icon_state = "wtadler[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
+
 /obj/item/modkit/a46
 	name = "A46 Kit"
 	desc = "A modkit for making a WT-550 Gun into a A46 Gun."
