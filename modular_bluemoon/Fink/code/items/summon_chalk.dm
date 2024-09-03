@@ -60,6 +60,7 @@
 
 						to_chat(M, span_lewd("Something is happening!"))
 						var/old_pos = target.loc
+						target.clothing_burst(FALSE)
 						do_teleport(target, src.loc, channel = TELEPORT_CHANNEL_MAGIC)
 						//target.forceMove(src.loc)
 						to_chat(target, span_hypnophrase("You are turning on!"))
@@ -68,24 +69,16 @@
 						var/obj/effect/summon_rune/return_rune/R = new(src.loc)
 						R.return_pos = old_pos
 						qdel(src)
-/*
-/obj/effect/summon_rune/proc/generate_display_names()
-	var/list/applicants = list()
-	var/static/list/applicants_result = list()
-	for(var/mob/living/carbon/human/H in GLOB.carbon_list)
-		if(HAS_TRAIT(H, TRAIT_LEWD_SUMMON))
-			applicants += H
-	for(var/mob/living/carbon/human/V in applicants)
-		var/mob/living/carbon/human/A = V
-		//var/atom/A = V
-		var/player_info = "[A.dna.species.name], [A.gender]"
-		applicants_result[initial(player_info)] = A
-	return applicants_result
-*/
+
 
 /obj/effect/summon_rune/return_rune/attack_hand(mob/living/carbon/M)
-
 	if(HAS_TRAIT(M, TRAIT_LEWD_SUMMONED))
-		REMOVE_TRAIT(M, TRAIT_LEWD_SUMMONED, src)
-		do_teleport(M, return_pos, channel = TELEPORT_CHANNEL_MAGIC)
-		qdel(src)
+		var/choice = tgui_alert(usr, "Do you want to attempt to return?", "Attempt to return?", list("Yes", "No"))
+		switch(choice)
+			if("No")
+				return
+			if("Yes")
+				playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/spook.ogg", 50, 1)
+				REMOVE_TRAIT(M, TRAIT_LEWD_SUMMONED, src)
+				do_teleport(M, return_pos, channel = TELEPORT_CHANNEL_MAGIC)
+				qdel(src)
