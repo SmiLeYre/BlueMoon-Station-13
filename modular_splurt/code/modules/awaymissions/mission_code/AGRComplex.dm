@@ -337,7 +337,7 @@
 	attack_sound = 'sound/weapons/bladeslice.ogg'
 	aggro_vision_range = 9
 	turns_per_move = 5
-	gold_core_spawnable = HOSTILE_SPAWN
+//	gold_core_spawnable = HOSTILE_SPAWN // BLUEMOON REMOVAL
 	faction = null
 	footstep_type = FOOTSTEP_MOB_SHOE
 	weather_immunities = list("ash")
