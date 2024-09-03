@@ -2,23 +2,36 @@
 #define CHANNEL_LOBBYMUSIC 1024
 #define CHANNEL_ADMIN 1023
 #define CHANNEL_VOX 1022
+// BLUEMOON REMOVAL BEGIN - Increasing amount of jukebox channels
+/*
 #define CHANNEL_JUKEBOX 1021
 
 #define CHANNEL_JUKEBOX_START 1016 //The gap between this and CHANNEL_JUKEBOX determines the amount of free jukebox channels. This currently allows 6 jukebox channels to exist.
-#define CHANNEL_JUSTICAR_ARK 1015
-#define CHANNEL_HEARTBEAT 1014 //sound channel for heartbeats
-#define CHANNEL_AMBIENCE 1013
-#define CHANNEL_BUZZ 1012
-#define CHANNEL_BICYCLE 1011
-
+// BLUEMOON REMOVAL END
+*/
+// BLUEMOON EDIT - Jukebox channels
+#define CHANNEL_JUSTICAR_ARK 1021
+#define CHANNEL_HEARTBEAT 1020 //sound channel for heartbeats
+#define CHANNEL_AMBIENCE 1019
+#define CHANNEL_BUZZ 1018
+#define CHANNEL_BICYCLE 1017
 //CIT CHANNELS - TRY NOT TO REGRESS
-#define CHANNEL_PRED 1010
-#define CHANNEL_DIGEST 1009
-#define CHANNEL_PREYLOOP 1008
-
-
+#define CHANNEL_PRED 1016
+#define CHANNEL_DIGEST 1015
+#define CHANNEL_PREYLOOP 1014
 //Reactor Channel
-#define CHANNEL_REACTOR_ALERT 1007 // Is that radiation I hear? (ported from hyper)
+#define CHANNEL_REACTOR_ALERT 1013 // Is that radiation I hear? (ported from hyper)
+#define CHANNEL_JUKEBOX 1012
+#define CHANNEL_JUKEBOX_START 993
+
+//THIS SHOULD ALWAYS BE THE LOWEST ONE!
+//KEEP IT UPDATED
+
+#define CHANNEL_HIGHEST_AVAILABLE 992 //CIT CHANGE - COMPENSATES FOR VORESOUND CHANNELS
+
+// BLUEMOON EDIT END
+
+#define MAX_INSTRUMENT_CHANNELS (128 * 6)
 
 ///Default range of a sound.
 #define SOUND_RANGE 17
@@ -36,12 +49,6 @@
 /// Default range at which sound distance multiplier applies
 #define SOUND_DEFAULT_MULTIPLIER_EFFECT_RANGE 7
 
-//THIS SHOULD ALWAYS BE THE LOWEST ONE!
-//KEEP IT UPDATED
-
-#define CHANNEL_HIGHEST_AVAILABLE 1007 //CIT CHANGE - COMPENSATES FOR VORESOUND CHANNELS
-
-#define MAX_INSTRUMENT_CHANNELS (128 * 6)
 
 #define SOUND_MINIMUM_PRESSURE 10
 /// remove

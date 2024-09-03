@@ -372,14 +372,6 @@
 	name = "containment blast door"
 	},
 /obj/effect/spawner/structure/window/reinforced/tinted,
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/machinery/door/poddoor/preopen{
-	id = "droneshipu";
-	name = "containment blast door"
-	},
-/obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/droneship)
 "Mc" = (

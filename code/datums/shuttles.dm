@@ -774,7 +774,7 @@
 	shuttleId = "tarkoff_driver"
 	lock_override = NONE
 	shuttlePortId = "tarkoff_driver_custom"
-	jumpto_ports = list("port_tarkoff" = 1, "whiteship_away" = 1, "whiteship_home" = 1)
+	jump_to_ports = list("port_tarkoff" = 1, "whiteship_away" = 1, "whiteship_home" = 1)
 	view_range = 5.5
 	x_offset = 7
 	y_offset = 1
@@ -813,7 +813,7 @@
 	shuttleId = "lf_haron"
 	lock_override = NONE
 	shuttlePortId = "lf_haron_custom"
-	jumpto_ports = list("whiteship_away" = 1, "whiteship_home" = 1)
+	jump_to_ports = list("whiteship_away" = 1, "whiteship_home" = 1)
 	view_range = 5.5
 	x_offset = 7
 	y_offset = 1

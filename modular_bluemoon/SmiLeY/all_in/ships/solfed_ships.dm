@@ -19,7 +19,7 @@
 	shuttleId = "solfed_corvette"
 	lock_override = NONE
 	shuttlePortId = "solfed_corvette_custom"
-	jumpto_ports = list("ds2_syndicate" = 1, "whiteship_home" = 1)
+	jump_to_ports = list("ds2_syndicate" = 1, "whiteship_home" = 1)
 	view_range = 5.5
 	x_offset = 7
 	y_offset = 1
@@ -46,7 +46,7 @@
 	shuttleId = "solfed_destroyer"
 	lock_override = NONE
 	shuttlePortId = "solfed_destroyer_custom"
-	jumpto_ports = list("ds2_syndicate" = 1, "whiteship_home" = 1)
+	jump_to_ports = list("ds2_syndicate" = 1, "whiteship_home" = 1)
 	view_range = 5.5
 	x_offset = 7
 	y_offset = 1
@@ -73,7 +73,7 @@
 	shuttleId = "solfed_frigate"
 	lock_override = NONE
 	shuttlePortId = "solfed_frigate_custom"
-	jumpto_ports = list("ds2_syndicate" = 1, "whiteship_home" = 1)
+	jump_to_ports = list("ds2_syndicate" = 1, "whiteship_home" = 1)
 	view_range = 5.5
 	x_offset = 7
 	y_offset = 1

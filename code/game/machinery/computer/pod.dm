@@ -36,7 +36,7 @@
  */
 /obj/machinery/computer/pod/proc/alarm()
 	set waitfor = FALSE
-	if(stat & (NOPOWER|BROKEN))
+	if(machine_stat & (NOPOWER|BROKEN))
 		return
 
 	if(!connected)

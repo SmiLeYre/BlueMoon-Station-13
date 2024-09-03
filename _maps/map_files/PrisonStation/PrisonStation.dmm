@@ -5244,7 +5244,7 @@
 	dir = 4;
 	dwidth = 5;
 	height = 7;
-	id = "supply_home";
+	shuttle_id = "supply_home";
 	name = "Cargo Bay";
 	width = 12
 	},
@@ -8227,7 +8227,7 @@
 	dir = 8;
 	dwidth = 2;
 	height = 13;
-	id = "ferry_home";
+	shuttle_id = "ferry_home";
 	name = "port bay 2";
 	width = 5
 	},
@@ -14359,7 +14359,7 @@
 	dir = 4;
 	dwidth = 12;
 	height = 18;
-	id = "emergency_home";
+	shuttle_id = "emergency_home";
 	name = "BoxStation emergency evac bay";
 	width = 32
 	},

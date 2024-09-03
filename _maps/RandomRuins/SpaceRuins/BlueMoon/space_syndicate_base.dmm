@@ -5873,7 +5873,7 @@
 	dir = 4;
 	dwidth = 6;
 	height = 16;
-	id = "ds2_syndicate";
+	shuttle_id = "ds2_syndicate";
 	name = "DS-2 Hangar";
 	roundstart_template = /datum/map_template/shuttle/ruin/ds_shuttle;
 	width = 16

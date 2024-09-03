@@ -60,14 +60,14 @@ GLOBAL_LIST_EMPTY(ghost_records)
 	return ..()
 
 /obj/machinery/computer/cryopod/update_icon_state()
-	if(stat & (NOPOWER|BROKEN))
+	if(machine_stat & (NOPOWER|BROKEN))
 		icon_state = "cellconsole"
 		return ..()
 	icon_state = "cellconsole_1"
 	return ..()
 
 /obj/machinery/computer/cryopod/ui_interact(mob/user, datum/tgui/ui)
-	if(stat & (NOPOWER|BROKEN))
+	if(machine_stat & (NOPOWER|BROKEN))
 		return
 
 	add_fingerprint(user)

@@ -98,7 +98,7 @@
 	name = "Tarkoff Driver";
 	port_direction = 2;
 	preferred_direction = 8;
-	id = "tarkoff_driver";
+	shuttle_id = "tarkoff_driver";
 	height = 16;
 	width = 12
 	},

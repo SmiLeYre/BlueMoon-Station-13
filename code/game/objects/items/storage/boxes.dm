@@ -774,7 +774,7 @@
 /obj/item/storage/box/snappops
 	name = "snap pop box"
 	desc = "Eight wrappers of fun! Ages 8 and up. Not suitable for children."
-	icon = 'icons/obj/toy.dmi'
+	icon = 'icons/obj/toys/toy.dmi'
 	icon_state = "spbox"
 	illustration = null
 
@@ -1029,7 +1029,7 @@
 
 /obj/item/storage/box/mechfigures/PopulateContents()
 	for(var/i in 1 to 4)
-		var/randomFigure = pick(subtypesof(/obj/item/toy/prize/))
+		var/randomFigure = pick(subtypesof(/obj/item/toy/mecha))
 		new randomFigure(src)
 
 /obj/item/storage/box/papersack
