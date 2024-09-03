@@ -10,9 +10,14 @@
 /obj/item/summon_chalk/afterattack(atom/target, mob/user as mob, proximity)
 	if(!proximity)
 		return
-	if(istype(target, /turf/open/floor))
-		if(do_after(user, 5))
-			new /obj/effect/summon_rune(target)
+	if(GLOB.master_mode != "Extended")
+		to_chat(user, "<span class='warning'>Unfortunately, magic does not work.</span>")
+		return
+	else
+		if(istype(target, /turf/open/floor))
+			if(do_after(user, 5))
+				new /obj/effect/summon_rune(target)
+				qdel(src)
 
 
 /obj/effect/summon_rune
@@ -60,9 +65,18 @@
 
 						to_chat(M, span_lewd("Something is happening!"))
 						var/old_pos = target.loc
-						target.clothing_burst(FALSE)
+						/// раздевалка
+						var/items = target.get_contents()
+						for(var/obj/item/item_worn in items)
+							if(istype(item_worn,/obj/item/clothing/underwear)) // оставляем только трусняк
+								continue
+							else
+								target.dropItemToGround(item_worn, TRUE)
+						///
+						new /obj/effect/temp_visual/yellowsparkles(target.loc)
 						do_teleport(target, src.loc, channel = TELEPORT_CHANNEL_MAGIC)
-						//target.forceMove(src.loc)
+						new /obj/effect/temp_visual/yellowsparkles(target.loc)
+
 						to_chat(target, span_hypnophrase("You are turning on!"))
 						ADD_TRAIT(target, TRAIT_LEWD_SUMMONED, src)
 						playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/spook.ogg", 50, 1)
@@ -80,5 +94,7 @@
 			if("Yes")
 				playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/spook.ogg", 50, 1)
 				REMOVE_TRAIT(M, TRAIT_LEWD_SUMMONED, src)
+				new /obj/effect/temp_visual/yellowsparkles(M.loc)
 				do_teleport(M, return_pos, channel = TELEPORT_CHANNEL_MAGIC)
+				new /obj/effect/temp_visual/yellowsparkles(M.loc)
 				qdel(src)
