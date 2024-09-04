@@ -118,7 +118,7 @@
 			playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/spook.ogg", 50, 1)
 			new /obj/effect/temp_visual/yellowsparkles(returner.loc)
 			do_teleport(returner, src.loc, channel = TELEPORT_CHANNEL_MAGIC)
-
+			to_chat(target, span_hypnophrase("I need to satisfy my summoner!"))
 	//spawn_atom_to_turf(/obj/effect/temp_visual/hierophant/telegraph/edge, src, 1, FALSE) // красивое
 	//sleep(80)
 	//if(QDELETED(src))
