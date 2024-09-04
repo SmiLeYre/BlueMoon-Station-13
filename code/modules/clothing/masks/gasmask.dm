@@ -102,10 +102,34 @@
 	item_state = "syndicate_gasmask"
 	w_class = WEIGHT_CLASS_SMALL
 
+/obj/item/clothing/mask/gas/syndicate/mihana_mask
+	name = "Andromeda Mask"
+	desc = "A close-fitting tactical mask that can be connected to an air supply."
+	icon_state = "mihana_mask"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
 /obj/item/clothing/mask/gas/syndicate/cool_version
-	name = "Tactical Gasmask"
+	name = "Tactical Catcrin Gasmask"
 	desc = "A mask with a red visor and special filters. It seems to have a kind of cat whiskers on it."
 	icon_state = "syndicate_cool"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/mask/gas/syndicate/catcrin_combatmask_one
+	name = "Tactical combat Catcrin gasmask"
+	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
+	icon_state = "catcrin_one"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/mask/gas/syndicate/catcrin_combatmask_two
+	name = "Tactical combat Catcrin gasmask"
+	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
+	icon_state = "catcrin_two"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/mask/gas/syndicate/catcrin_combatmask_three
+	name = "Tactical combat Catcrin gasmask"
+	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
+	icon_state = "catcrin_three"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/mask/gas/syndicate/blackcool_version

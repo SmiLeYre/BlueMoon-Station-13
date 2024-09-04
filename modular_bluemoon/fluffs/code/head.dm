@@ -75,3 +75,17 @@
 		"Ushanka" = list("icon_state" = "nri_drg_ushanka"),
 		"Beret" = list("icon_state" = "nri_drg_beret")
 	)
+
+/obj/item/modkit/tagilla
+	name = "Tagilla Kit"
+	desc = "A modkit for making a Welding helmet into a Tagilla welding helmet."
+	product = /obj/item/clothing/head/welding/tagilla
+	fromitem = list(/obj/item/clothing/head/welding)
+
+/obj/item/clothing/head/welding/tagilla
+	name = "Provocateur welding Helmet"
+	desc = "На вид обычная сварочная маска разрисованная с лицевой стороны,особенно выделяется надпись «Убей» под визором."
+	icon_state = "provocateur"
+	item_state = "provocateur"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
