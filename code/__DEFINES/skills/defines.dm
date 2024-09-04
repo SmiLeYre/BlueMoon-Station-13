@@ -113,3 +113,4 @@
 #define RESKIN_ITEM_STATE "item_state"
 #define RESKIN_ICON_STATE_FILE "icon" // BLUEMOON ADD - RESKINS-ICON-FILE-ADDITION - добавляем возможность для рескина выставлять необычный файл, откуда берется иконка
 #define RESKIN_WORN_STATE_FILE "mob_overlay_icon" // BLUEMOON ADD - RESKINS-ICON-FILE-ADDITION - добавляем возможность для рескина выставлять необычный файл, откуда берется иконка
+#define RESKIN_ANTHRO_WORN_STATE_FILE "anthro_mob_worn_overlay" // BLUEMOON ADD - RESKINS-ICON-FILE-ADDITION - добавляем возможность для рескина выставлять необычный файл, откуда берется иконка
