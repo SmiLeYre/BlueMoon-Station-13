@@ -61,7 +61,6 @@
 		H.handle_post_sex(5, null, H)
 		H.moan()
 
-/*
 /obj/item/clothing/underwear/briefs/black_tape
 	name = "Black Sticky Tape Groin"
 	desc = "Идеальна для закрытия протечек."
@@ -71,17 +70,39 @@
 	body_parts_covered = 0
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
-/obj/item/clothing/underwear/shirt/top/black_tape/equipped(mob/user, slot)
+/obj/item/clothing/underwear/briefs/black_tape/update_icon_state()
 	. = ..()
-	if(slot == ITEM_SLOT_SHIRT)
+	if(current_equipped_slot == ITEM_SLOT_UNDERWEAR && istype(loc, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = loc
+		icon_state = "[initial(icon_state)][H.has_penis() ? "_buldge" : ""]"
+		H.update_inv_w_underwear()
+	else
+		icon_state = "[initial(icon_state)]"
+
+/obj/item/clothing/underwear/briefs/black_tape/equipped(mob/user, slot)
+	. = ..()
+	if(slot == ITEM_SLOT_UNDERWEAR)
+		update_icon()
 		var/mob/living/carbon/human/H = user
 		H.handle_post_sex(5, null, H)
+		var/obj/item/organ/genital/penis/P = H.getorganslot(ORGAN_SLOT_PENIS)
+		P?.toggle_visibility(GEN_VISIBLE_NEVER)
+		var/obj/item/organ/genital/testicles/T = H.getorganslot(ORGAN_SLOT_TESTICLES)
+		T?.toggle_visibility(GEN_VISIBLE_NEVER)
+		var/obj/item/organ/genital/anus/A = H.getorganslot(ORGAN_SLOT_ANUS)
+		A?.toggle_visibility(GEN_VISIBLE_NEVER)
 
 /obj/item/clothing/underwear/briefs/black_tape/dropped(mob/user)
 	. = ..()
 	if(current_equipped_slot == ITEM_SLOT_UNDERWEAR)
+		update_icon()
 		var/mob/living/carbon/human/H = user
 		playsound(loc, 'sound/items/poster_ripped.ogg', 20, 1)
 		H.handle_post_sex(5, null, H)
 		H.moan()
-*/
+		var/obj/item/organ/genital/penis/P = H.getorganslot(ORGAN_SLOT_PENIS)
+		P?.toggle_visibility(GEN_VISIBLE_NO_UNDIES)
+		var/obj/item/organ/genital/testicles/T = H.getorganslot(ORGAN_SLOT_TESTICLES)
+		T?.toggle_visibility(GEN_VISIBLE_NO_UNDIES)
+		var/obj/item/organ/genital/anus/A = H.getorganslot(ORGAN_SLOT_ANUS)
+		A?.toggle_visibility(GEN_VISIBLE_NO_UNDIES)
