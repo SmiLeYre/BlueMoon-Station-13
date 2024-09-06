@@ -94,7 +94,7 @@
 
 GLOBAL_LIST_INIT(tape_recipes, list ( \
 	new/datum/stack_recipe("Black Sticky Tape Top", /obj/item/clothing/underwear/shirt/top/black_tape, 1), \
-	new/datum/stack_recipe("Black Sticky Tape Groin", /obj/item/clothing/underwear/briefs/black_tape, 1), \
+	/*new/datum/stack_recipe("Black Sticky Tape Groin", /obj/item/clothing/underwear/briefs/black_tape, 1), \*/
 	))
 
 /obj/item/stack/sticky_tape/black/get_main_recipes()

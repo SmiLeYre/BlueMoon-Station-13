@@ -61,12 +61,14 @@
 		H.handle_post_sex(5, null, H)
 		H.moan()
 
+/*
 /obj/item/clothing/underwear/briefs/black_tape
 	name = "Black Sticky Tape Groin"
 	desc = "Идеальна для закрытия протечек."
 	icon = 'modular_bluemoon/icons/obj/clothing/tape_underwear.dmi'
 	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/tape_underwear.dmi'
 	icon_state = "tape_groin"
+	body_parts_covered = 0
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/underwear/shirt/top/black_tape/equipped(mob/user, slot)
@@ -82,3 +84,4 @@
 		playsound(loc, 'sound/items/poster_ripped.ogg', 20, 1)
 		H.handle_post_sex(5, null, H)
 		H.moan()
+*/
