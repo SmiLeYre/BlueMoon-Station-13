@@ -74,7 +74,7 @@ GLOBAL_LIST_EMPTY(cached_previews)
 		var/mob/living/carbon/C = M
 		unknown = (C.wear_mask && (C.wear_mask.flags_inv & HIDEEYES) && !isobserver(user)) || (C.head && (C.head.flags_inv & HIDEEYES) && !isobserver(user))
 		data["flavortext"] = (!unknown) ? (C.dna?.flavor_text || "") : "Скрыто"
-		data["headshot_links"] = (!unknown) ? (C.dna.headshot_links.Copy() || "") : ""
+		data["headshot_links"] = (!unknown) ? (C.dna.headshot_links.Copy() || "") : list()
 		data["species_name"] = (!unknown) ? (C.dna?.custom_species || C.dna?.species) : "????"
 		data["custom_species_lore"] = (!unknown) ? (C.dna?.custom_species_lore || "")  : ""
 		if (istype(M, /mob/living/carbon/human))
