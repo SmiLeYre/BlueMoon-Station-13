@@ -89,6 +89,7 @@
 	key = "wag"
 	key_third_person = "wags"
 	message = "начинает вилять своим хвостом."
+	emote_cooldown = 0 //autowag for felinids won't work properly, because they purr right before it
 
 /datum/emote/living/carbon/human/wag/run_emote(mob/user, params)
 	. = ..()

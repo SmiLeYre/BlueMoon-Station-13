@@ -216,7 +216,7 @@ BLUEMOON - mechanical_erp_verbs_examine - REMOVAL END*/
 	for(var/obj/item/organ/genital/G in internal_organs)
 		if(istype(G) && G.is_exposed())
 			if(CHECK_BITFIELD(G.genital_flags, GENITAL_CHASTENED))
-				. += "[t_on] носит БДСМ-клетку. БДСМ-клетка покрывает [G.name]."
+				. += span_lewd("[t_on] носит БДСМ-клетку. БДСМ-клетка покрывает [G.name].")
 	//
 	if(covered_in_cum)
 		. += "<span style='color:["#FFFFFF"]';>[t_on] измазан[t_a] свежими половыми выделениями...</span>\n" //"Вы чувствуете, как от [t_ego] тела пахнет <b>'<span style='color:[cummies.color]';>[cummies.name]</span>'</b>..."
