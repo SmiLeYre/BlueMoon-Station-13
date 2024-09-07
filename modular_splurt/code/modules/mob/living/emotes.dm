@@ -159,79 +159,81 @@
 	key_third_person = "ruffles"
 	message = "ruffles their wings for a moment."
 
-/datum/emote/living/fart
-	key = "fart"
-	key_third_person = "farts"
-	message = "farts out shitcode."
-	var/farted_on_something = FALSE // BLUEMOON EDIT // Removed from /run_emote()
-
-/datum/emote/living/fart/run_emote(mob/living/user, params, type_override, intentional)
-	if(TIMER_COOLDOWN_CHECK(user, COOLDOWN_EMOTE_FART))
-		to_chat(user, span_warning("You try your hardest, but no shart comes out."))
-		return
-
-	var/deceasedturf = get_turf(usr)
-	// Closed turfs don't have any air in them, so no gas building up
-	if(!istype(deceasedturf,/turf/open))
-		return
-	var/turf/open/miasma_turf = deceasedturf
-	var/datum/gas_mixture/stank = new
-	stank.set_moles(GAS_MIASMA,0.25)
-	stank.set_temperature(BODYTEMP_NORMAL)
-	miasma_turf.assume_air(stank)
-	miasma_turf.air_update_turf()
-
-	var/list/fart_emotes = list( //cope goonies
-		"lets out a girly little 'toot' from [user.p_their()] butt.",
-		"farts loudly!",
-		"lets one rip!",
-		"farts! It sounds wet and smells like rotten eggs.",
-		"farts robustly!",
-		"farted! It smells like something died.",
-		"farts like a muppet!",
-		"defiles the station's air supply.",
-		"farts for a whole ten seconds.",
-		"groans and moans, farting like the world depended on it.",
-		"breaks wind!",
-		"expels intestinal gas through [user.p_their()] anus.",
-		"releases an audible discharge of intestinal gas.",
-		"is a farting motherfucker!!!",
-		"suffers from flatulence!",
-		"releases flatus.",
-		"releases methane.",
-		"farts up a storm.",
-		"farts. It smells like Soylent Surprise!",
-		"farts. It smells like pizza!",
-		"farts. It smells like George Melons' perfume!",
-		"farts. It smells like the kitchen!",
-		"farts. It smells like medbay in here now!",
-		"farts. It smells like the bridge in here now!",
-		"farts like a pubby!",
-		"farts like a goone!",
-		"sharts! That's just nasty.",
-		"farts delicately.",
-		"farts timidly.",
-		"farts very, very quietly. The stench is OVERPOWERING.",
-		"farts egregiously.",
-		"farts voraciously.",
-		"farts cantankerously.",
-		"farts in [user.p_their()] own mouth. A shameful \the <b>[user]</b>.",
-		"breaks wind noisily!",
-		"releases gas with the power of the gods! The very station trembles!!",
-		"<B><span style='color:red'>f</span><span style='color:blue'>a</span>r<span style='color:red'>t</span><span style='color:blue'>s</span>!</B>",
-		"laughs! [user.p_their(TRUE)] breath smells like a fart.",
-		"farts, and as such, blob cannot evoulate.",
-		"farts. It might have been the Citizen Kane of farts."
-	)
-	var/new_message = pick(fart_emotes)
-	//new_message = replacetext(new_message, "%OWNER", "\the [user]")
-	message = new_message
-	for(var/atom/A in get_turf(user))
-		farted_on_something = A.fart_act(user) || farted_on_something
-	. = ..()
-	if(.)
-		playsound(user, pick(GLOB.brap_noises), 50, 1, -1)
-		TIMER_COOLDOWN_START(user, COOLDOWN_EMOTE_FART, 3 SECONDS)
+// BLUEMOON REMOVE Убираем Фарт.
+//datum/emote/living/fart
+//	key = "fart"
+//	key_third_person = "farts"
+//	message = "farts out shitcode."
+//	var/farted_on_something = FALSE // BLUEMOON EDIT // Removed from /run_emote()
+//
+//datum/emote/living/fart/run_emote(mob/living/user, params, type_override, intentional)
+//	if(TIMER_COOLDOWN_CHECK(user, COOLDOWN_EMOTE_FART))
+//		to_chat(user, span_warning("You try your hardest, but no shart comes out."))
+//		return
+//
+//	var/deceasedturf = get_turf(usr)
+//	// Closed turfs don't have any air in them, so no gas building up
+//	if(!istype(deceasedturf,/turf/open))
+//		return
+//	var/turf/open/miasma_turf = deceasedturf
+//	var/datum/gas_mixture/stank = new
+//	stank.set_moles(GAS_MIASMA,0.25)
+//	stank.set_temperature(BODYTEMP_NORMAL)
+//	miasma_turf.assume_air(stank)
+//	miasma_turf.air_update_turf()
+//
+//	var/list/fart_emotes = list( //cope goonies
+//		"lets out a girly little 'toot' from [user.p_their()] butt.",
+//		"farts loudly!",
+//		"lets one rip!",
+//		"farts! It sounds wet and smells like rotten eggs.",
+//		"farts robustly!",
+//		"farted! It smells like something died.",
+//		"farts like a muppet!",
+//		"defiles the station's air supply.",
+//		"farts for a whole ten seconds.",
+//		"groans and moans, farting like the world depended on it.",
+//		"breaks wind!",
+//		"expels intestinal gas through [user.p_their()] anus.",
+//		"releases an audible discharge of intestinal gas.",
+//		"is a farting motherfucker!!!",
+//		"suffers from flatulence!",
+//		"releases flatus.",
+//		"releases methane.",
+//		"farts up a storm.",
+//		"farts. It smells like Soylent Surprise!",
+//		"farts. It smells like pizza!",
+//		"farts. It smells like George Melons' perfume!",
+//		"farts. It smells like the kitchen!",
+//		"farts. It smells like medbay in here now!",
+//		"farts. It smells like the bridge in here now!",
+//		"farts like a pubby!",
+//		"farts like a goone!",
+//		"sharts! That's just nasty.",
+//		"farts delicately.",
+//		"farts timidly.",
+//		"farts very, very quietly. The stench is OVERPOWERING.",
+//		"farts egregiously.",
+//		"farts voraciously.",
+//		"farts cantankerously.",
+//		"farts in [user.p_their()] own mouth. A shameful \the <b>[user]</b>.",
+//		"breaks wind noisily!",
+//		"releases gas with the power of the gods! The very station trembles!!",
+//		"<B><span style='color:red'>f</span><span style='color:blue'>a</span>r<span style='color:red'>t</span><span style='color:blue'>s</span>!</B>",
+//		"laughs! [user.p_their(TRUE)] breath smells like a fart.",
+//		"farts, and as such, blob cannot evoulate.",
+//		"farts. It might have been the Citizen Kane of farts."
+//	)
+//	var/new_message = pick(fart_emotes)
+//	//new_message = replacetext(new_message, "%OWNER", "\the [user]")
+//	message = new_message
+//	for(var/atom/A in get_turf(user))
+//		farted_on_something = A.fart_act(user) || farted_on_something
+//	. = ..()
+//	if(.)
+//		playsound(user, pick(GLOB.brap_noises), 50, 1, -1)
+//		TIMER_COOLDOWN_START(user, COOLDOWN_EMOTE_FART, 3 SECONDS)
+// BLUEMOON REMOVE END.
 
 /datum/emote/living/audio/cackle
 	key = "cackle"
@@ -366,12 +368,14 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 	message_mime = "chitters silently!"
 	emote_sound = 'modular_splurt/sound/voice/moth/mothchitter2.ogg'
 
-/datum/emote/living/audio/monkeytwerk
-	key = "twerk"
-	key_third_person = "twerks"
-	message = "shakes it harder than James Russle himself!"
-	emote_sound = 'modular_splurt/sound/misc/monkey_twerk.ogg'
-	emote_cooldown = 13.2 SECONDS
+//BLUEMOON REMOVE Убираем тверк.
+//datum/emote/living/audio/monkeytwerk
+//	key = "twerk"
+//	key_third_person = "twerks"
+//	message = "shakes it harder than James Russle himself!"
+//	emote_sound = 'modular_splurt/sound/misc/monkey_twerk.ogg'
+//	emote_cooldown = 13.2 SECONDS
+//BLUEMOON REMOVE END
 
 /datum/emote/living/audio/bruh
 	key = "bruh"
