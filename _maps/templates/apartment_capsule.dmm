@@ -57,6 +57,7 @@
 "EA" = (/obj/machinery/light_switch/directional/north,/turf/open/floor/carpet/royalblack,/area/hilbertshotel)
 "EL" = (/obj/item/storage/box/marshmallow,/turf/open/floor/plating/smooth/grass/lavaland_jungle,/area/hilbertshotel)
 "EU" = (/obj/structure/fluff/railing/corner{dir = 8; pixel_x = -2},/obj/structure/fluff/railing/corner{pixel_x = 2; pixel_y = 0},/turf/open/floor/pod/dark,/area/hilbertshotel)
+"Fu" = (/turf/closed/wall/mineral/titanium/survival/nodiagonal,/area/hilbertshotel)
 "Gf" = (/obj/structure/sign/poster/contraband/random{pixel_x = 0; pixel_y = 0},/turf/closed/wall/mineral/titanium/survival/pod,/area/hilbertshotel)
 "GI" = (/obj/structure/mecha_wreckage/ripley,/turf/open/floor/plating/asteroid/basalt,/area/hilbertshotel)
 "GU" = (/obj/structure/flora/tree/shadow,/turf/open/floor/plating/asteroid/basalt,/area/hilbertshotel)
@@ -93,15 +94,15 @@ JyODjgrKjgfPAlfPfXfPMAzHjvmolnJy
 JyjgfjODjgfPmoyPjvzHfPfPMAfPfPJy
 JyjgsXjEjgjgfPjvfPzHapauwOfPhjJy
 JyjgjgjgjgrKNFfPhjhjzWYbELhjClJy
-cAcAcAeHGfcAcAQihjhjoPhjfPhjhjJy
+FucAcAeHGfcAFuQihjhjoPhjfPhjhjJy
 cACyYNbLIMQJyqKWohhjhjhjhjhjhjJy
 JLLnLnLnLnLnuDKewDGUkehjsfhjhjJy
 cACCLnZrLnLnlwBokdhjhjhjhjRcRcJy
 cAKZLnLnblTMyqLnwDhjhjhjRcRcRcJy
 cAoswCEUaKoOyqjyWGhjlnRcRcRcRcJy
-cAcAegLSrScAcAcAcARcRcRcRcRcRcJy
+cAcAegLSrScAcAcAFuRcRcRcRcRcRcJy
 cAAdEABPPlmCcAOxcARcRcRcRchjRcJy
-cALzVdCdbDvatURlcAcAcARcRchjGIJy
+cALzVdCdbDvatURlcAcAFuRcRchjGIJy
 cAnsPFnlbPswcAxocAtqcARcCQhjHDJy
-cAcAcAcAcAcAcAcAcAcAcAJyJyJyJyJy
+cAcAcAcAcAcAcAcAcAcAFuJyJyJyJyJy
 "}
