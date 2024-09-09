@@ -96,3 +96,21 @@
 	icon_state = "zlat"
 	item_state = "zlat"
 	squeak_override = list('modular_bluemoon/SmiLeY/sounds/zlatchek.ogg' = 1)
+
+/obj/item/toy/plush/mammal/tiamat
+	name = "Tiamat plushie"
+	desc = "Some cat-like plushie. Oh, his eyes shining!"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
+	icon_state = "tiamat"
+	item_state = "tiamat"
+	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
+	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
+	squeak_override = list(
+	'modular_splurt/sound/voice/mrowl.ogg' = 1,
+	'modular_splurt/sound/voice/meow_meme.ogg' = 1,
+	'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp1.ogg' = 1,
+	'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp2.ogg' = 1,
+	'modular_bluemoon/SmiLeY/sounds/tiamat_meow1.ogg' = 1,
+	'modular_bluemoon/SmiLeY/sounds/tiamat_meow2.ogg' = 1,
+	'modular_bluemoon/SmiLeY/sounds/tiamat_meow3.ogg' = 1
+	)
