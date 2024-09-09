@@ -6,4 +6,4 @@
 	anthro_mob_worn_overlay = 'modular_bluemoon/Fink/icons/mob/mouthring.dmi'
 	icon_state = "mouthring"
 	item_state = "mouthring"
-	flags_cover = null // рот открыт
+	flags_cover = null // рот открыл и молчит
