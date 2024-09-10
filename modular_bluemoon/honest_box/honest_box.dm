@@ -22,8 +22,8 @@
 		var/obj/item/clothing/gloves/boxing/modern/victim_gloves = D.gloves
 		var/atk_verb = pick("джеб","кросс","хук", "апперкот", "аперкот", "свинг", "оверхенд")
 
-		D.visible_message(span_warning("[A] [pick("проводит", "выдаёт", "выносит", "заряжает", "отправляет", "заносит")] [atk_verb] [D]!"), \
-			span_danger("[A] [pick("проводит", "выдаёт", "выносит", "заряжает", "отправляет", "заносит")] [atk_verb] [D]!"), null, COMBAT_MESSAGE_RANGE)
+		D.visible_message(span_warning("<b>[A]</b> [pick("проводит", "выдаёт", "выносит", "заряжает", "отправляет", "заносит")] [atk_verb] [D]!"), \
+			span_danger("<b>[A]</b> [pick("проводит", "выдаёт", "выносит", "заряжает", "отправляет", "заносит")] [atk_verb] [D]!"), null, COMBAT_MESSAGE_RANGE)
 
 		attacker_gloves.hits_done++
 
