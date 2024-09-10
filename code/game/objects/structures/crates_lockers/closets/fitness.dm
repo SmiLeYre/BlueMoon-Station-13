@@ -27,7 +27,10 @@
 	new /obj/item/clothing/gloves/boxing/green(src)
 	new /obj/item/clothing/gloves/boxing/yellow(src)
 	new /obj/item/clothing/gloves/boxing(src)
-
+	new /obj/item/clothing/gloves/boxing/moden(src) // BLUEMOON ADD
+	new /obj/item/clothing/gloves/boxing/moden(src) // BLUEMOON ADD
+	new /obj/item/clothing/gloves/boxing/moden(src) // BLUEMOON ADD
+	new /obj/item/clothing/gloves/boxing/moden(src) // BLUEMOON ADD
 
 /obj/structure/closet/masks
 	name = "mask closet"
