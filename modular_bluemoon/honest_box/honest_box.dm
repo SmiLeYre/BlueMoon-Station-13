@@ -4,14 +4,6 @@
 	pacifism_check = FALSE
 	pugilist = TRUE
 
-/datum/martial_art/modern_boxing/disarm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
-	to_chat(A, "<span class='warning'>Can't disarm while boxing!</span>")
-	return TRUE
-
-/datum/martial_art/modern_boxing/grab_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
-	to_chat(A, "<span class='warning'>Can't grab while boxing!</span>")
-	return TRUE
-
 /datum/martial_art/modern_boxing/harm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
 
 	A.do_attack_animation(D, ATTACK_EFFECT_PUNCH)
