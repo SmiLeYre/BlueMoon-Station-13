@@ -11,14 +11,13 @@
 "fj" = (/obj/item/bikehorn/rubberducky{pixel_y = -7},/turf/open/water/jungle,/area/hilbertshotel)
 "fP" = (/turf/open/floor/plating/smooth/grass/lavaland_jungle,/area/hilbertshotel)
 "fX" = (/obj/structure/flora/rock/jungle,/turf/open/floor/plating/smooth/grass/lavaland_jungle,/area/hilbertshotel)
-"hj" = (/turf/open/floor/plating/asteroid/basalt,/area/hilbertshotel)
+"hj" = (/turf/open/floor/plating/asteroid/basalt{initial_gas_mix = "LAVALAND_ATMOS"},/area/hilbertshotel)
 "jg" = (/turf/open/water/jungle,/area/hilbertshotel)
 "jv" = (/obj/structure/flora/grass/jungle,/turf/open/floor/plating/smooth/grass/lavaland_jungle,/area/hilbertshotel)
 "jy" = (/obj/structure/ore_box{layer = 2.1},/obj/effect/turf_decal/box{layer = 2},/turf/open/floor/pod/dark,/area/hilbertshotel)
 "jE" = (/obj/item/toy/beach_ball,/turf/open/water/jungle,/area/hilbertshotel)
 "kd" = (/obj/effect/turf_decal{dir = 4},/obj/effect/turf_decal/vg_decals/numbers/six,/turf/open/floor/pod/dark{pixel_x = 0; pixel_y = 0},/area/hilbertshotel)
-"ke" = (/turf/open/floor/grass/snow/basalt,/area/hilbertshotel)
-"ln" = (/obj/structure/flora/rock/pile,/turf/open/floor/plating/asteroid/basalt,/area/hilbertshotel)
+"ln" = (/obj/structure/flora/rock/pile,/turf/open/floor/plating/asteroid/basalt{initial_gas_mix = "LAVALAND_ATMOS"},/area/hilbertshotel)
 "lw" = (/obj/structure/fans/tiny,/obj/structure/window/shuttle/survival_pod,/turf/open/floor/pod/dark,/area/hilbertshotel)
 "mo" = (/obj/structure/flora/ausbushes/lavendergrass,/turf/open/floor/plating/smooth/grass/lavaland_jungle,/area/hilbertshotel)
 "mC" = (/obj/effect/turf_decal/siding/wood{dir = 5},/obj/machinery/vending/kink{onstation = 0; shut_up = 1},/turf/open/floor/wood/wood_tiled,/area/hilbertshotel)
@@ -27,10 +26,10 @@
 "oh" = (/obj/structure/rack,/obj/item/shovel{pixel_x = 2; pixel_y = -4},/obj/item/pickaxe{pixel_x = 1; pixel_y = 2},/obj/item/pickaxe{pixel_x = -4; pixel_y = 2},/obj/effect/turf_decal/bot_white,/obj/effect/turf_decal{dir = 1},/obj/effect/turf_decal{dir = 4},/turf/open/floor/pod/dark,/area/hilbertshotel)
 "os" = (/obj/item/storage/box/donkpockets{pixel_y = 7; pixel_x = 0},/obj/structure/table/wood/fancy/monochrome,/obj/machinery/light/directional,/turf/open/floor/pod/dark,/area/hilbertshotel)
 "oO" = (/obj/structure/table/wood/fancy/monochrome,/obj/item/reagent_containers/food/drinks/beer{pixel_x = -5; pixel_y = 11},/obj/item/reagent_containers/food/drinks/beer{pixel_x = 6; pixel_y = 10},/obj/item/reagent_containers/food/drinks/beer{pixel_x = 0; pixel_y = 7},/obj/machinery/light/directional,/turf/open/floor/pod/dark,/area/hilbertshotel)
-"oP" = (/obj/structure/flora/spookyrock,/turf/open/floor/plating/asteroid/basalt,/area/hilbertshotel)
+"oP" = (/obj/structure/flora/spookyrock,/turf/open/floor/plating/asteroid/basalt{initial_gas_mix = "LAVALAND_ATMOS"},/area/hilbertshotel)
 "rK" = (/obj/structure/flora/junglebush,/turf/open/water/jungle,/area/hilbertshotel)
 "rS" = (/obj/structure/fluff/railing{dir = 4; pixel_y = 0; pixel_x = -29},/turf/closed/wall/mineral/titanium/survival/pod,/area/hilbertshotel)
-"sf" = (/obj/structure/flora/rock/pile/icy,/turf/open/floor/plating/asteroid/basalt,/area/hilbertshotel)
+"sf" = (/obj/structure/flora/rock/pile/icy,/turf/open/floor/plating/asteroid/basalt{initial_gas_mix = "LAVALAND_ATMOS"},/area/hilbertshotel)
 "sw" = (/obj/effect/turf_decal/siding/wood{dir = 6},/obj/item/kirbyplants,/turf/open/floor/wood/wood_tiled,/area/hilbertshotel)
 "sX" = (/obj/structure/flora/junglebush/large,/turf/open/water/jungle,/area/hilbertshotel)
 "tq" = (/obj/machinery/telecomms/relay/preset/auto,/turf/open/floor/pod/dark,/area/hilbertshotel)
@@ -50,18 +49,18 @@
 "Bo" = (/obj/effect/turf_decal/vg_decals/department/mining,/turf/open/floor/pod/dark,/area/hilbertshotel)
 "BP" = (/obj/effect/turf_decal/siding/wood{dir = 8},/obj/effect/turf_decal/siding/wood{dir = 9},/obj/structure/fluff/railing/corner{dir = 1; pixel_x = -2},/obj/structure/fluff/railing/corner{dir = 4; pixel_x = 2; pixel_y = 0},/turf/open/floor/wood/wood_tiled,/area/hilbertshotel)
 "Cd" = (/obj/effect/turf_decal/siding/wood{dir = 8},/turf/open/floor/wood/wood_tiled,/area/hilbertshotel)
-"Cl" = (/obj/structure/flora/tree/mushroom,/turf/open/floor/plating/asteroid/basalt,/area/hilbertshotel)
+"Cl" = (/obj/structure/flora/tree/mushroom,/turf/open/floor/plating/asteroid/basalt{initial_gas_mix = "LAVALAND_ATMOS"},/area/hilbertshotel)
 "Cy" = (/obj/effect/turf_decal/bot_white,/obj/machinery/light/directional{dir = 1},/obj/structure/rack{pixel_x = 0; pixel_y = 0},/turf/open/floor/pod/dark,/area/hilbertshotel)
 "CC" = (/obj/machinery/light_switch/directional/west,/turf/open/floor/pod/dark,/area/hilbertshotel)
-"CQ" = (/obj/item/toy/plush/bubbleplush,/turf/open/floor/plating/asteroid/basalt,/area/hilbertshotel)
+"CQ" = (/obj/item/toy/plush/bubbleplush,/turf/open/floor/plating/asteroid/basalt{initial_gas_mix = "LAVALAND_ATMOS"},/area/hilbertshotel)
+"Eg" = (/turf/closed/wall/mineral/titanium/survival/nodiagonal,/area/hilbertshotel)
 "EA" = (/obj/machinery/light_switch/directional/north,/turf/open/floor/carpet/royalblack,/area/hilbertshotel)
 "EL" = (/obj/item/storage/box/marshmallow,/turf/open/floor/plating/smooth/grass/lavaland_jungle,/area/hilbertshotel)
 "EU" = (/obj/structure/fluff/railing/corner{dir = 8; pixel_x = -2},/obj/structure/fluff/railing/corner{pixel_x = 2; pixel_y = 0},/turf/open/floor/pod/dark,/area/hilbertshotel)
-"Fu" = (/turf/closed/wall/mineral/titanium/survival/nodiagonal,/area/hilbertshotel)
 "Gf" = (/obj/structure/sign/poster/contraband/random{pixel_x = 0; pixel_y = 0},/turf/closed/wall/mineral/titanium/survival/pod,/area/hilbertshotel)
-"GI" = (/obj/structure/mecha_wreckage/ripley,/turf/open/floor/plating/asteroid/basalt,/area/hilbertshotel)
-"GU" = (/obj/structure/flora/tree/shadow,/turf/open/floor/plating/asteroid/basalt,/area/hilbertshotel)
-"HD" = (/obj/item/toy/plush/miner,/turf/open/floor/plating/asteroid/basalt,/area/hilbertshotel)
+"GI" = (/obj/structure/mecha_wreckage/ripley,/turf/open/floor/plating/asteroid/basalt{initial_gas_mix = "LAVALAND_ATMOS"},/area/hilbertshotel)
+"GU" = (/obj/structure/flora/tree/shadow,/turf/open/floor/plating/asteroid/basalt{initial_gas_mix = "LAVALAND_ATMOS"},/area/hilbertshotel)
+"HD" = (/obj/item/toy/plush/miner,/turf/open/floor/plating/asteroid/basalt{initial_gas_mix = "LAVALAND_ATMOS"},/area/hilbertshotel)
 "IM" = (/obj/machinery/smartfridge/survival_pod,/turf/open/floor/pod/dark,/area/hilbertshotel)
 "Jy" = (/turf/closed/indestructible/rock,/area/hilbertshotel)
 "JL" = (/turf/closed/indestructible/hoteldoor{icon_state = "door_closed"; icon = 'icons/obj/doors/puzzledoor/default.dmi'},/area/hilbertshotel)
@@ -77,7 +76,7 @@
 "OD" = (/obj/structure/flora/biolumi/mine,/turf/open/water/jungle,/area/hilbertshotel)
 "Pl" = (/obj/effect/turf_decal/siding/wood{dir = 1},/obj/structure/closet/crate/bin{pixel_x = 12; pixel_y = 9},/obj/machinery/light/directional{dir = 1},/turf/open/floor/wood/wood_tiled,/area/hilbertshotel)
 "PF" = (/obj/machinery/light/directional,/obj/structure/table/wood,/obj/item/blackcomb,/turf/open/floor/carpet/royalblack,/area/hilbertshotel)
-"Qi" = (/obj/machinery/light/small/blacklight/directional/west,/obj/machinery/portable_atmospherics/canister/air{layer = 1},/turf/open/floor/plating/asteroid/basalt,/area/hilbertshotel)
+"Qi" = (/obj/machinery/light/small/blacklight/directional/west,/obj/machinery/portable_atmospherics/canister/air{layer = 1},/turf/open/floor/plating/asteroid/basalt{initial_gas_mix = "LAVALAND_ATMOS"},/area/hilbertshotel)
 "QJ" = (/obj/item/gps/computer,/turf/open/floor/pod/dark,/area/hilbertshotel)
 "Rc" = (/turf/closed/mineral/volcanic,/area/hilbertshotel)
 "Rl" = (/obj/structure/mirror/directional/east,/turf/open/floor/pod/dark,/area/hilbertshotel)
@@ -94,15 +93,15 @@ JyODjgrKjgfPAlfPfXfPMAzHjvmolnJy
 JyjgfjODjgfPmoyPjvzHfPfPMAfPfPJy
 JyjgsXjEjgjgfPjvfPzHapauwOfPhjJy
 JyjgjgjgjgrKNFfPhjhjzWYbELhjClJy
-FucAcAeHGfcAFuQihjhjoPhjfPhjhjJy
+EgcAcAeHGfcAEgQihjhjoPhjfPhjhjJy
 cACyYNbLIMQJyqKWohhjhjhjhjhjhjJy
-JLLnLnLnLnLnuDKewDGUkehjsfhjhjJy
+JLLnLnLnLnLnuDKewDGUhjhjsfhjhjJy
 cACCLnZrLnLnlwBokdhjhjhjhjRcRcJy
 cAKZLnLnblTMyqLnwDhjhjhjRcRcRcJy
 cAoswCEUaKoOyqjyWGhjlnRcRcRcRcJy
-cAcAegLSrScAcAcAFuRcRcRcRcRcRcJy
+cAcAegLSrScAcAcAEgRcRcRcRcRcRcJy
 cAAdEABPPlmCcAOxcARcRcRcRchjRcJy
-cALzVdCdbDvatURlcAcAFuRcRchjGIJy
+cALzVdCdbDvatURlcAcAEgRcRchjGIJy
 cAnsPFnlbPswcAxocAtqcARcCQhjHDJy
-cAcAcAcAcAcAcAcAcAcAFuJyJyJyJyJy
+cAcAcAcAcAcAcAcAcAcAEgJyJyJyJyJy
 "}
