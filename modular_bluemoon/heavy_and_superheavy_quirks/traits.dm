@@ -21,23 +21,23 @@
 	medical_record_text = "Вес пациента выше среднего для космонавтов."
 
 /datum/quirk/bluemoon_heavy/proc/update_size_movespeed()
-	if(!isliving(quirk_holder))
-		return
-	var/mob/living/H = quirk_holder
-
 	var/searched_slowdown = 0.2 * CONFIG_GET(number/body_size_slowdown_multiplier) // проверка как для размера в 120%
-	var/user_slowdown = (abs(get_size(H) - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
+	var/user_slowdown = (abs(get_size(quirk_holder) - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
 
 	if(searched_slowdown - user_slowdown > 0) //подсчёт наличия разницы в росте с искомой и её начисление для замедления персонажа
-		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown, TRUE, searched_slowdown - user_slowdown)
+		quirk_holder.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown, TRUE, searched_slowdown - user_slowdown)
 	else
-		H.remove_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown)
+		quirk_holder.remove_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown)
 
 /datum/quirk/bluemoon_heavy/on_spawn()
 	. = ..()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.throw_range = 4
-	H.throw_speed = 1
+	quirk_holder.throw_range = 4
+	quirk_holder.throw_speed = 1
+	update_size_movespeed()
+
+/datum/quirk/bluemoon_heavy/remove()
+	quirk_holder.throw_range = initial(quirk_holder.throw_range)
+	quirk_holder.throw_speed = initial(quirk_holder.throw_speed)
 	update_size_movespeed()
 
 /datum/quirk/bluemoon_heavy_super
@@ -81,27 +81,20 @@
 	medical_record_text = "Вес пациента намного выше среднестастистической для космонавтов. Перемещение привычными средствами посторонними лицами невозможно."
 
 /datum/quirk/bluemoon_heavy_super/proc/update_size_movespeed()
-	if(!isliving(quirk_holder))
-		return
-	var/mob/living/H = quirk_holder
-
 	var/searched_slowdown = 0.7 * CONFIG_GET(number/body_size_slowdown_multiplier) // проверка как для размера в 170%
-	var/user_slowdown = (abs(get_size(H) - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
+	var/user_slowdown = (abs(get_size(quirk_holder) - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
 
 	if(searched_slowdown - user_slowdown > 0) //подсчёт наличия разницы в росте с искомой и её начисление для замедления персонажа
-		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown, TRUE, searched_slowdown - user_slowdown)
-		H.movespeed_override = 3 - (searched_slowdown - user_slowdown)
+		quirk_holder.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown, TRUE, searched_slowdown - user_slowdown)
+		quirk_holder.movespeed_override = 3 - (searched_slowdown - user_slowdown)
 	else
-		H.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown, TRUE, 0)
-		H.movespeed_override = 3
+		quirk_holder.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_quirk_slowdown, TRUE, 0)
+		quirk_holder.movespeed_override = 3
 
 /datum/quirk/bluemoon_heavy_super/proc/check_mob_size()
-	if(!isliving(quirk_holder))
-		return
-	var/mob/living/owner = quirk_holder
-	if(get_size(owner) < 0.8) // Самый маленький размер для сверхтяжёлых квирков - это 80%
-		to_chat(owner, "Вы поняли, что ваш необъятный вес делает невозможным становление слишком маленьким.")
-		owner.update_size(0.8)
+	if(get_size(quirk_holder) < 0.8) // Самый маленький размер для сверхтяжёлых квирков - это 80%
+		to_chat(quirk_holder, "Вы поняли, что ваш необъятный вес делает невозможным становление слишком маленьким.")
+		quirk_holder.update_size(0.8)
 
 /datum/quirk/bluemoon_heavy_super/on_spawn()
 	. = ..()
