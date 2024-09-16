@@ -354,6 +354,8 @@
 	var/weight_class_on // What is the new size class when turned on
 	var/sword_point = TRUE
 
+	var/full_effect_on_superheavy_characters = FALSE // BLUEMOON ADD - если включено, то оглушение и падение от удара этим оружием работает в полную силу.
+
 	wound_bonus = 5
 
 /obj/item/melee/classic_baton/Initialize(mapload)
@@ -453,11 +455,12 @@
 			// BLUEMOON ADD START - больших и тяжёлых существ проблематично нормально оглушить
 			var/final_stun_damage = stam_dmg
 			if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
-				var/target_size_mod = 1
-				if(get_size(target) > 1)
-					target_size_mod = 1 / get_size(target) // я за час не придумал, как из 1 получить 1 и из 2 получить 0.5 - сделайте вы
-				final_stun_damage *= target_size_mod
-				countered = target_size_mod <= 0.6 ? 1 : 0 // если модификатор стана 0.6 или менее, то считается законтренным от падения
+				if(!full_effect_on_superheavy_characters)
+					var/target_size_mod = 1
+					if(get_size(target) > 1)
+						target_size_mod = 1 / get_size(target) // я за час не придумал, как из 1 получить 1 и из 2 получить 0.5 - сделайте вы
+					final_stun_damage *= target_size_mod
+					countered = target_size_mod <= 0.6 ? 1 : 0 // если модификатор стана 0.6 или менее, то считается законтренным от падения
 			// BLUEMOON ADD END
 			target.DefaultCombatKnockdown(softstun_ds, TRUE, FALSE, countered? 0 : hardstun_ds, final_stun_damage, !countered) // BLUEMOON EDIT - заменено stam_dmg на final_stun_damage
 			additional_effects_carbon(target, user)
@@ -611,6 +614,7 @@
 	force_off = 5
 	weight_class_on = WEIGHT_CLASS_NORMAL
 	silent = TRUE
+	full_effect_on_superheavy_characters = TRUE // BLUEMOON ADD - дубинка контрактника работает на сверхтяжей в полную силу
 
 /obj/item/melee/classic_baton/telescopic/contractor_baton/get_wait_description()
 	return "<span class='danger'>The baton is still charging!</span>"
