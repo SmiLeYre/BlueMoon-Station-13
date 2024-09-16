@@ -380,13 +380,18 @@
 								message = "кончает на руку <b>[partner_name]</b> семенем."
 							else
 								message = "кончает на [partner_name]."
-						if(CUM_TARGET_BREASTS)
+						if(CUM_TARGET_BREASTS) //BLUEMOON EDIT добавлено взаимодействие с боргами
 							var/mob/living/carbon/human/sex
-							for(var/obj/item/organ/genital/G in sex.internal_organs)
-								var/datum/reagents/fluid_source = G.climaxable(partner)
-								if(!fluid_source)
-									continue
-								sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+							var/mob/living/silicon/robot/silicon_sex
+							if (!iscyborg(src))
+								for(var/obj/item/organ/genital/G in sex.internal_organs)
+									var/datum/reagents/fluid_source = G.climaxable(partner)
+									if(!fluid_source)
+										continue
+									sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+							else
+								silicon_sex = src
+								silicon_sex.do_climax_silicon(silicon_sex, src, TRUE)
 							if(partner.has_breasts(REQUIRE_EXPOSED))
 								message = "кончает на грудь [partner_name]."
 							else
@@ -394,13 +399,18 @@
 						if(NUTS_TO_FACE)
 							if(partner.has_mouth() && partner.mouth_is_free())
 								message = "энергично засовывает свои яйца в рот партнёра перед тем, как выпустить густое, липкое семя в глаза и волосы [partner_name]."
-						if(THIGH_SMOTHERING)
+						if(THIGH_SMOTHERING) //BLUEMOON EDIT добавлено взаимодействие с боргами
 							var/mob/living/carbon/human/sex
-							for(var/obj/item/organ/genital/G in sex.internal_organs)
-								var/datum/reagents/fluid_source = G.climaxable(partner)
-								if(!fluid_source)
-									continue
-								sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+							var/mob/living/silicon/robot/silicon_sex
+							if (!iscyborg(src))
+								for(var/obj/item/organ/genital/G in sex.internal_organs)
+									var/datum/reagents/fluid_source = G.climaxable(partner)
+									if(!fluid_source)
+										continue
+									sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+							else
+								silicon_sex = src
+								silicon_sex.do_climax_silicon(silicon_sex, src, TRUE)
 							if(has_penis(REQUIRE_EXPOSED)) //it already checks for the cock before, why the hell would you do this redundant shit
 								message = "держит [partner_name] между бёдрами, пока член пульсирует, по итогу сливая пульсирующую нагрузку в лицо и волосы жертвы."
 							else
@@ -563,13 +573,18 @@
 									message = "кончает на руку [partner_name] семенем."
 								else
 									message = "кончает на [partner_name]."
-							if(CUM_TARGET_BREASTS)
+							if(CUM_TARGET_BREASTS) //BLUEMOON EDIT добавлено взаимодействие с боргами
 								var/mob/living/carbon/human/sex
-								for(var/obj/item/organ/genital/G in sex.internal_organs)
-									var/datum/reagents/fluid_source = G.climaxable(partner)
-									if(!fluid_source)
-										continue
-									sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+								var/mob/living/silicon/robot/silicon_sex
+								if (!iscyborg(src))
+									for(var/obj/item/organ/genital/G in sex.internal_organs)
+										var/datum/reagents/fluid_source = G.climaxable(partner)
+										if(!fluid_source)
+											continue
+										sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+								else
+									silicon_sex = src
+									silicon_sex.do_climax_silicon(silicon_sex, src, TRUE)
 								if(partner.is_topless() && partner.has_breasts())
 									message = "кончает на грудь [partner_name]."
 								else
@@ -577,13 +592,18 @@
 							if(NUTS_TO_FACE)
 								if(partner.has_mouth() && partner.mouth_is_free())
 									message = "энергично засовывает свои яйца в рот партнёра перед тем, как выпустить густое, липкое семя в глаза и волосы [partner_name]."
-							if(THIGH_SMOTHERING)
+							if(THIGH_SMOTHERING) //BLUEMOON EDIT добавлено взаимодействие с боргами
 								var/mob/living/carbon/human/sex
-								for(var/obj/item/organ/genital/G in sex.internal_organs)
-									var/datum/reagents/fluid_source = G.climaxable(partner)
-									if(!fluid_source)
-										continue
-									sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+								var/mob/living/silicon/robot/silicon_sex
+								if (!iscyborg(src))
+									for(var/obj/item/organ/genital/G in sex.internal_organs)
+										var/datum/reagents/fluid_source = G.climaxable(partner)
+										if(!fluid_source)
+											continue
+										sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+								else
+									silicon_sex = src
+									silicon_sex.do_climax_silicon(silicon_sex, src, TRUE)
 								if(has_penis())
 									message = "держит [partner_name] между бёдрами, пока член пульсирует, по итогу сливая пульсирующую нагрузку в лицо и волосы жертвы."
 								else
@@ -754,6 +774,14 @@
 				H.mob_fill_container(last_genital, partner, 0)
 			else
 				H.mob_climax(TRUE, "sex", partner, !cumin, target_gen, anonymous)
+		if(iscyborg(src)) //BLUEMOON ADD добавлено взаимодействие с боргами
+			var/mob/living/silicon/robot/R = src
+			if(!partner)
+				R.mob_climax_silicon(TRUE, "masturbation", "none")
+			else if(istype(partner, /obj/item/reagent_containers))
+				R.mob_fill_container_silicon(R, partner, 0)
+			else
+				R.mob_climax_silicon(TRUE, "sex", partner, !cumin, target_gen, anonymous)
 	set_lust(0)
 
 	SEND_SIGNAL(src, COMSIG_MOB_POST_CAME, target_orifice, partner, cumin, last_genital)

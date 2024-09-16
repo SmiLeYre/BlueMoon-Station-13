@@ -225,6 +225,12 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 				H.mob_climax(TRUE, "masturbation", "none")
 			else
 				H.mob_climax(TRUE, "sex", partner, !cumin, target_gen)
+		if(iscyborg(src)) //BLUEMOON ADD Также добавлено взаимодействие с боргами
+			var/mob/living/silicon/robot/R = src
+			if(!partner)
+				R.mob_climax_silicon(TRUE, "masturbation", "none")
+			else
+				R.mob_climax_silicon(TRUE, "sex", partner, !cumin, target_gen)
 	set_lust(0)
 
 	SEND_SIGNAL(src, COMSIG_MOB_POST_CAME, target_orifice, partner, cumin, last_genital)
