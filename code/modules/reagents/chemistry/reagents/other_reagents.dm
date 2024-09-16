@@ -2232,7 +2232,24 @@
 	taste_description = "bitterness" // apparently what viagra tastes like
 
 /datum/reagent/growthserum/on_mob_life(mob/living/carbon/H)
+	// BLUEMOON ADD START - нормализаторы не дружат с изменениями размера во время их ношения
+	if(H.GetComponent(/datum/component/size_normalized))
+		to_chat(H, span_warning("You normalization device fights any changes in size!"))
+		return
 	var/newsize = current_size
+	switch(volume)
+		if(0 to 19)
+			newsize = 1.25*RESIZE_DEFAULT_SIZE
+		if(20 to 49)
+			newsize = 1.5*RESIZE_DEFAULT_SIZE
+		if(50 to 99)
+			newsize = 2*RESIZE_DEFAULT_SIZE
+		if(100 to 199)
+			newsize = 2.5*RESIZE_DEFAULT_SIZE
+		if(200 to INFINITY)
+			newsize = 3*RESIZE_DEFAULT_SIZE
+	H.update_size(newsize)
+	/* BLUEMOON REMOVAL START
 	switch(volume)
 		if(0 to 19)
 			newsize = 1.25*RESIZE_DEFAULT_SIZE
@@ -2248,12 +2265,16 @@
 	H.resize = newsize/current_size
 	current_size = newsize
 	H.update_transform()
+	/ BLUEMOON REMOVAL END */
 	..()
 
 /datum/reagent/growthserum/on_mob_end_metabolize(mob/living/M)
+	/* BLUEMOON REMOVAL START
 	M.resize = RESIZE_DEFAULT_SIZE/current_size
 	current_size = RESIZE_DEFAULT_SIZE
 	M.update_transform()
+	/ BLUEMOON REMOVAL END */
+	M.update_size(RESIZE_DEFAULT_SIZE) // BLUEMOON ADD
 	..()
 
 /datum/reagent/plastic_polymers
