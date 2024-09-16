@@ -35,17 +35,22 @@
 	set_light(2)
 
 /obj/effect/summon_rune/attack_hand(mob/living/carbon/M)
-	if(cooldown < world.time - 400)// ~
-		cooldown = world.time
+	//if(cooldown < world.time - 400)// ~
+	//	cooldown = world.time
+	if (TRUE)
 		var/list/applicants = list()
-		var/static/list/applicants_result = list()
+		var/list/applicants_result = list()
 		for(var/mob/living/carbon/human/H in GLOB.carbon_list)
 			if(HAS_TRAIT(H, TRAIT_LEWD_SUMMON))
 				applicants += H
 		for(var/mob/living/carbon/human/V in applicants)
 			var/mob/living/carbon/human/A = V
 			//var/atom/A = V
-			var/player_info = "[A.dna.species.name], [A.gender]"
+
+			var/species = "[A.dna.species]"
+			if (A.dna.custom_species)
+				species = "[A.dna.custom_species]"
+			var/player_info = "[species], [A.gender]"
 			applicants_result[initial(player_info)] = A
 
 		var/choice = tgui_alert(usr, "Do you want to attempt to summon?", "Attempt to summon?", list("Yes", "No"))
@@ -54,7 +59,7 @@
 				return
 			if("Yes")
 				var/target_info = input("Please, select a person to summon!", "Select", null, null) as null|anything in applicants_result
-				var/target_id= applicants.Find(target_info)+1
+				var/target_id= applicants_result.Find(target_info)
 				var/mob/living/carbon/human/target = applicants[target_id]
 				if(isnull(target))
 					to_chat(M, span_userdanger("Nobody to summon!"))
