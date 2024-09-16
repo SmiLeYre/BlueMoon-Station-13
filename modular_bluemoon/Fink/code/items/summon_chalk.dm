@@ -35,9 +35,8 @@
 	set_light(2)
 
 /obj/effect/summon_rune/attack_hand(mob/living/carbon/M)
-	//if(cooldown < world.time - 400)// ~
-	//	cooldown = world.time
-	if (TRUE)
+	if(cooldown < world.time - 400)// ~
+		cooldown = world.time
 		var/list/applicants = list()
 		var/list/applicants_result = list()
 		for(var/mob/living/carbon/human/H in GLOB.carbon_list)
