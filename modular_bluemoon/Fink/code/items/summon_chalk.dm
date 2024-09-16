@@ -81,6 +81,7 @@
 
 							to_chat(target, span_hypnophrase("You are turning on!"))
 							ADD_TRAIT(target, TRAIT_LEWD_SUMMONED, src)
+							REMOVE_TRAIT(target, TRAIT_LEWD_SUMMON, src)
 							playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/spook.ogg", 50, 1)
 							var/obj/effect/summon_rune/return_rune/R = new(src.loc)
 							R.return_pos = old_pos
@@ -96,6 +97,7 @@
 			if("Yes")
 				playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/spook.ogg", 50, 1)
 				REMOVE_TRAIT(M, TRAIT_LEWD_SUMMONED, src)
+				ADD_TRAIT(M, TRAIT_LEWD_SUMMON, src)
 				new /obj/effect/temp_visual/yellowsparkles(M.loc)
 				nuding(M)
 				do_teleport(M, return_pos, channel = TELEPORT_CHANNEL_MAGIC)
@@ -134,6 +136,10 @@
 	var/items = target.get_contents()
 	for(var/obj/item/item_worn in items)
 		if(istype(item_worn,/obj/item/clothing/underwear)) // оставляем только трусняк
+			continue
+		if(istype(item_worn,/obj/item/clothing/glasses)) // очечки
+			continue
+		if(istype(item_worn,/obj/item/radio/headset)) // и ухо
 			continue
 		else
 			target.dropItemToGround(item_worn, TRUE)
