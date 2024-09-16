@@ -2656,14 +2656,14 @@
 
 //BLUEMOON ADD START
 /datum/reagent/consumable/semen/siliconcum
-	name = "Synthetic Semen"
+	name = "SynthCum"
 	description = "Synthetic lubricant designed for cyborgs."
 	taste_description = "something with a silicone"
 	color = "#5cb2cc"
 	decal_path = /obj/effect/decal/cleanable/semen/siliconcum
 
 /obj/effect/decal/cleanable/semen/siliconcum
-	name = "synthetic semen"
+	name = "synthetic cum"
 	my_liquid_type = /datum/reagent/consumable/semen/siliconcum
 //BLUEMOON ADD END
 
