@@ -105,12 +105,17 @@
 
 /datum/quirk/bluemoon_heavy_super/on_spawn()
 	. = ..()
-	var/mob/living/carbon/human/H = quirk_holder
-	H.throw_range = 1
-	H.throw_speed = 0.5
+	quirk_holder.throw_range = 1
+	quirk_holder.throw_speed = 0.5
 	update_size_movespeed()
 	check_mob_size()
-	H.movespeed_override = 3 // Персонаж не может иметь замедление ниже этого значения (только быть ещё сильнее замедленным)
+	quirk_holder.movespeed_override = 3 // Персонаж не может иметь замедление ниже этого значения (только быть ещё сильнее замедленным)
+
+/datum/quirk/bluemoon_heavy_super/remove()
+	quirk_holder.throw_range = initial(quirk_holder.throw_range)
+	quirk_holder.throw_speed = initial(quirk_holder.throw_speed)
+	update_size_movespeed()
+	quirk_holder.movespeed_override = initial(quirk_holder.movespeed_override)
 
 /datum/quirk/bluemoon_devourer
 	name = "Пожиратель"
