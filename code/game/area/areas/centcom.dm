@@ -7,6 +7,7 @@
 
 /area/centcom
 	name = "CentCom"
+	icon = 'icons/area/areas_centcom.dmi'
 	icon_state = "centcom"
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	requires_power = FALSE
@@ -127,7 +128,137 @@
 /area/tdome/tdomeobserve
 	name = "Thunderdome (Observer.)"
 	icon_state = "purple"
+	
+//EVENT
 
+/area/eventcontent1
+	name = "EventArea1"
+	icon_state = "eventcontent1"
+	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
+	requires_power = FALSE
+	has_gravity = STANDARD_GRAVITY
+	area_flags = UNIQUE_AREA | NOTELEPORT 
+	flags_1 = NONE
+	
+/area/eventcontent2
+	name = "EventArea2"
+	icon_state = "eventcontent2"
+	
+/area/eventcontent2
+	name = "EventArea2"
+	icon_state = "eventcontent2"
+	
+/area/eventcontent3
+	name = "EventArea3"
+	icon_state = "eventcontent3"
+	
+/area/eventcontent4
+	name = "EventArea4"
+	icon_state = "eventcontent4"
+	
+/area/eventcontent5
+	name = "EventArea5"
+	icon_state = "eventcontent5"
+	
+/area/eventcontent6
+	name = "EventArea6"
+	icon_state = "eventcontent6"
+	
+/area/eventcontent7
+	name = "EventArea7"
+	icon_state = "eventcontent7"
+	
+/area/eventcontent8
+	name = "EventArea8"
+	icon_state = "eventcontent8"
+	
+/area/eventcontent9
+	name = "EventArea9"
+	icon_state = "eventcontent9"
+	
+/area/eventcontent10
+	name = "EventArea10"
+	icon_state = "eventcontent10"
+	
+/area/eventcontent11
+	name = "EventArea11"
+	icon_state = "eventcontent11"
+	
+/area/eventcontent12
+	name = "EventArea12"
+	icon_state = "eventcontent12"
+	
+/area/eventcontent13
+	name = "EventArea13"
+	icon_state = "eventcontent13"
+	
+/area/eventcontent14
+	name = "EventArea14"
+	icon_state = "eventcontent14"
+	
+/area/eventcontent15
+	name = "EventArea15"
+	icon_state = "eventcontent15"
+	
+/area/eventcontent16
+	name = "EventArea16"
+	icon_state = "eventcontent16"
+	
+/area/eventcontent17
+	name = "EventArea17"
+	icon_state = "eventcontent17"
+	
+/area/eventcontent18
+	name = "EventArea18"
+	icon_state = "eventcontent18"
+	
+/area/eventcontent19
+	name = "EventArea19"
+	icon_state = "eventcontent19"
+	
+/area/eventcontent20
+	name = "EventArea20"
+	icon_state = "eventcontent20"
+	
+/area/eventcontent21
+	name = "EventArea21"
+	icon_state = "eventcontent21"
+	
+/area/eventcontent22
+	name = "EventArea22"
+	icon_state = "eventcontent22"
+	
+/area/eventcontent23
+	name = "EventArea23"
+	icon_state = "eventcontent23"
+
+/area/eventcontent24
+	name = "EventArea24"
+	icon_state = "eventcontent24"
+
+/area/eventcontent25
+	name = "EventArea25"
+	icon_state = "eventcontent25"
+
+/area/eventcontent26
+	name = "EventArea26"
+	icon_state = "eventcontent26"
+
+/area/eventcontent27
+	name = "EventArea27"
+	icon_state = "eventcontent27"
+
+/area/eventcontent28
+	name = "EventArea28"
+	icon_state = "eventcontent28"
+
+/area/eventcontent29
+	name = "EventArea29"
+	icon_state = "eventcontent29"
+
+/area/eventcontent30
+	name = "EventArea30"
+	icon_state = "eventcontent30"
 
 //ENEMY
 

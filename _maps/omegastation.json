@@ -3,8 +3,13 @@
     "map_path": "map_files/OmegaStation",
     "map_file": "OmegaStation.dmm",
     "shuttles": {
-	    "emergency": "emergency_omega",
-	    "ferry": "ferry_fancy",
-	    "cargo": "cargo_delta"
-    }
+		"emergency": "emergency_omega",
+		"ferry": "ferry_fancy",
+		"cargo": "cargo_delta"
+    },
+    "traits": [
+        {"Up" : 1, "Linkage" : "Cross"},
+        {"Up" : 1, "Down" : -1, "Baseturf" : "/turf/open/openspace", "Linkage" : "Cross"},
+        {"Down" : -1, "Baseturf" : "/turf/open/openspace", "Linkage" : "Cross"}
+    ]
 }
