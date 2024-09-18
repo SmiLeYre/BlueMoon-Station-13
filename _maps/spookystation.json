@@ -3,15 +3,12 @@
     "map_path": "map_files/SpookyStation",
     "map_file": "SpookyStation.dmm",
     "shuttles": {
-		"emergency": "emergency_pubby",
-		"whiteship": "whiteship_pubby",
-		"ferry": "ferry_fancy",
-		"cargo": "cargo_box"
+	    "emergency": "emergency_pubby",
+	    "whiteship": "whiteship_pubby",
+	    "ferry": "ferry_fancy",
+	    "cargo": "cargo_box"
     },
 	"traits": [
-		{ "Weather_Longrain":true },
-		{"Up" : 1, "Linkage" : "Cross"},
-		{"Up" : 1, "Down" : -1, "Baseturf" : "/turf/open/openspace", "Linkage" : "Cross"},
-		{"Down" : -1, "Baseturf" : "/turf/open/openspace", "Linkage" : "Cross"}
+		{ "Weather_Longrain":true }
 	]
 }

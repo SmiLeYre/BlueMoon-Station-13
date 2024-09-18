@@ -70,7 +70,28 @@ require only minor tweaks.
 #define ZTRAIT_BASETURF "Baseturf"
 
 // default trait definitions, used by SSmapping
-#define ZTRAITS_CENTCOM list(ZTRAIT_CENTCOM = TRUE)
+#define ZTRAITS_CENTCOM list(\
+	ZTRAIT_CENTCOM = TRUE, \
+	ZTRAIT_DOWN = -3, \
+	ZTRAIT_UP = 0, \
+#define ZTRAITS_CENTCOMEVENT1 list(\
+	ZTRAIT_CENTCOM = TRUE, \
+	ZTRAIT_LINKAGE = SELFLOOPING, \
+	ZTRAIT_DOWN = -2, \
+	ZTRAIT_UP = 1, \
+	ZTRAIT_BASETURF = /turf/open/openspace)
+#define ZTRAITS_CENTCOMEVENT2 list(\
+	ZTRAIT_CENTCOM = TRUE, \
+	ZTRAIT_LINKAGE = SELFLOOPING, \
+	ZTRAIT_DOWN = -1, \
+	ZTRAIT_UP = 2, \
+	ZTRAIT_BASETURF = /turf/open/openspace)
+#define ZTRAITS_CENTCOMEVENT3 list(\
+	ZTRAIT_CENTCOM = TRUE, \
+	ZTRAIT_LINKAGE = SELFLOOPING, \
+	ZTRAIT_DOWN = 0, \
+	ZTRAIT_UP = 3, \
+	ZTRAIT_BASETURF = /turf/open/openspace)
 #define ZTRAITS_STATION list(ZTRAIT_LINKAGE = CROSSLINKED, ZTRAIT_STATION = TRUE)
 #define ZTRAITS_SPACE list(ZTRAIT_LINKAGE = CROSSLINKED, ZTRAIT_SPACE_RUINS = TRUE)
 #define ZTRAITS_LAVALAND list(\
@@ -99,6 +120,9 @@ require only minor tweaks.
 // must correspond to _basemap.dm for things to work correctly
 #define DEFAULT_MAP_TRAITS list(\
 	DECLARE_LEVEL("CentCom", ZTRAITS_CENTCOM),\
+	DECLARE_LEVEL("CentComEvent1", ZTRAITS_CENTCOMEVENT1),\
+	DECLARE_LEVEL("CentComEvent2", ZTRAITS_CENTCOMEVENT2),\
+	DECLARE_LEVEL("CentComEvent3", ZTRAITS_CENTCOMEVENT3),\	
 )
 
 // Camera lock flags
