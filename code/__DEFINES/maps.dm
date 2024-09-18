@@ -73,7 +73,7 @@ require only minor tweaks.
 #define ZTRAITS_CENTCOM list(\
 	ZTRAIT_CENTCOM = TRUE, \
 	ZTRAIT_DOWN = -3, \
-	ZTRAIT_UP = 0, \
+	ZTRAIT_UP = 0)
 #define ZTRAITS_CENTCOMEVENT1 list(\
 	ZTRAIT_CENTCOM = TRUE, \
 	ZTRAIT_LINKAGE = SELFLOOPING, \
