@@ -2506,9 +2506,6 @@
 "agu" = (
 /turf/closed/indestructible/splashscreen,
 /area/start)
-"agv" = (
-/turf/open/indestructible/gold,
-/area/space)
 "agw" = (
 /obj/structure/flora/ausbushes/reedbush,
 /turf/open/floor/grass/grass0,
@@ -264604,7 +264601,7 @@ aaa
 aaa
 aaa
 aaa
-agv
+aaa
 aaa
 aaa
 aaa
