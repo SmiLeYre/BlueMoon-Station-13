@@ -79,3 +79,4 @@
 
 /datum/element/decal/proc/examine(datum/source, mob/user, list/examine_list)
 	examine_list += description
+	
