@@ -128,135 +128,131 @@
 /area/tdome/tdomeobserve
 	name = "Thunderdome (Observer.)"
 	icon_state = "purple"
-	
+
 //EVENT
 
-/area/eventcontent1
+/area/eventcontent
 	name = "EventArea1"
 	icon_state = "eventcontent1"
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	requires_power = FALSE
 	has_gravity = STANDARD_GRAVITY
-	area_flags = UNIQUE_AREA | NOTELEPORT 
+	area_flags = UNIQUE_AREA | NOTELEPORT
 	flags_1 = NONE
-	
-/area/eventcontent2
+
+/area/eventcontent/a02
 	name = "EventArea2"
 	icon_state = "eventcontent2"
-	
-/area/eventcontent2
-	name = "EventArea2"
-	icon_state = "eventcontent2"
-	
-/area/eventcontent3
+
+/area/eventcontent/a03
 	name = "EventArea3"
 	icon_state = "eventcontent3"
-	
-/area/eventcontent4
+
+/area/eventcontent/a04
 	name = "EventArea4"
 	icon_state = "eventcontent4"
-	
-/area/eventcontent5
+
+/area/eventcontent/a05
 	name = "EventArea5"
 	icon_state = "eventcontent5"
-	
-/area/eventcontent6
+
+/area/eventcontent/a06
 	name = "EventArea6"
 	icon_state = "eventcontent6"
-	
-/area/eventcontent7
+
+/area/eventcontent/a07
 	name = "EventArea7"
 	icon_state = "eventcontent7"
-	
-/area/eventcontent8
+
+/area/eventcontent/a08
 	name = "EventArea8"
 	icon_state = "eventcontent8"
-	
-/area/eventcontent9
+
+/area/eventcontent/a09
 	name = "EventArea9"
 	icon_state = "eventcontent9"
-	
-/area/eventcontent10
+
+/area/eventcontent/a10
 	name = "EventArea10"
 	icon_state = "eventcontent10"
-	
-/area/eventcontent11
+
+/area/eventcontent/a11
 	name = "EventArea11"
 	icon_state = "eventcontent11"
-	
-/area/eventcontent12
+
+/area/eventcontent/a12
 	name = "EventArea12"
 	icon_state = "eventcontent12"
-	
-/area/eventcontent13
+
+/area/eventcontent/a13
 	name = "EventArea13"
 	icon_state = "eventcontent13"
-	
-/area/eventcontent14
+
+/area/eventcontent/a14
 	name = "EventArea14"
 	icon_state = "eventcontent14"
-	
-/area/eventcontent15
+
+/area/eventcontent/a15
 	name = "EventArea15"
 	icon_state = "eventcontent15"
-	
-/area/eventcontent16
+
+/area/eventcontent/a16
 	name = "EventArea16"
 	icon_state = "eventcontent16"
-	
-/area/eventcontent17
+
+/area/eventcontent/a17
 	name = "EventArea17"
 	icon_state = "eventcontent17"
-	
-/area/eventcontent18
+
+/area/eventcontent/a18
 	name = "EventArea18"
 	icon_state = "eventcontent18"
-	
-/area/eventcontent19
+
+/area/eventcontent/a19
 	name = "EventArea19"
 	icon_state = "eventcontent19"
-	
-/area/eventcontent20
+
+/area/eventcontent/a20
 	name = "EventArea20"
 	icon_state = "eventcontent20"
-	
-/area/eventcontent21
+
+/area/eventcontent/a21
 	name = "EventArea21"
 	icon_state = "eventcontent21"
-	
-/area/eventcontent22
+
+/area/eventcontent/a22
 	name = "EventArea22"
 	icon_state = "eventcontent22"
-	
-/area/eventcontent23
+
+/area/eventcontent/a23
 	name = "EventArea23"
 	icon_state = "eventcontent23"
 
-/area/eventcontent24
+/area/eventcontent/a24
 	name = "EventArea24"
 	icon_state = "eventcontent24"
 
-/area/eventcontent25
+/area/eventcontent/a25
 	name = "EventArea25"
 	icon_state = "eventcontent25"
 
-/area/eventcontent26
+/area/eventcontent/a26
 	name = "EventArea26"
 	icon_state = "eventcontent26"
 
-/area/eventcontent27
+/area/eventcontent/a27
 	name = "EventArea27"
 	icon_state = "eventcontent27"
 
-/area/eventcontent28
+/area/eventcontent/a28
 	name = "EventArea28"
 	icon_state = "eventcontent28"
 
-/area/eventcontent29
+/area/eventcontent/a29
 	name = "EventArea29"
 	icon_state = "eventcontent29"
 
-/area/eventcontent30
+/area/eventcontent/a30
 	name = "EventArea30"
 	icon_state = "eventcontent30"
 
