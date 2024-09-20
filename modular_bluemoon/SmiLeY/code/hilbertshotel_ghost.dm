@@ -67,3 +67,7 @@
 /datum/map_template/hilbertshotel/apartment/winter
 	name = "Apartment_winter"
 	mappath = '_maps/templates/apartment_winter.dmm'
+
+/datum/map_template/hilbertshotel/apartment/sport
+	name = "Apartment_GYM"
+	mappath = '_maps/templates/apartment_sportzone.dmm'
