@@ -21526,7 +21526,10 @@
 /turf/open/floor/plating,
 /area/syndicate_mothership/control)
 "lCL" = (
-/obj/machinery/jukebox,
+/obj/machinery/jukebox{
+	req_one_access = null;
+	one_area_play = 1
+	},
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
 "lCM" = (
@@ -29040,7 +29043,9 @@
 /area/centcom)
 "sCg" = (
 /obj/machinery/jukebox/disco{
-	set_obj_flags = "EMAGGED"
+	anchored = 1;
+	one_area_play = 1;
+	req_one_access = null
 	},
 /turf/open/floor/light/colour_cycle/dancefloor_a,
 /area/centcom/holding)
@@ -30875,7 +30880,10 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "usu" = (
-/obj/machinery/jukebox,
+/obj/machinery/jukebox{
+	req_one_access = null;
+	one_area_play = 1
+	},
 /turf/open/floor/carpet/red,
 /area/centcom/holding)
 "usy" = (
@@ -33536,7 +33544,7 @@
 /obj/effect/turf_decal/tile/red/opposingcorners,
 /obj/machinery/jukebox{
 	req_one_access = null;
-	set_obj_flags = "EMAGGED"
+	one_area_play = 1
 	},
 /obj/structure/sign/poster/contraband/bountyhunters{
 	pixel_y = 32
@@ -33595,7 +33603,11 @@
 /turf/open/floor/iron/white,
 /area/centcom/holding)
 "wQH" = (
-/obj/machinery/jukebox/disco,
+/obj/machinery/jukebox/disco{
+	req_one_access = null;
+	anchored = 1;
+	one_area_play = 1
+	},
 /turf/open/floor/light/colour_cycle/dancefloor_a,
 /area/centcom/holding)
 "wQW" = (

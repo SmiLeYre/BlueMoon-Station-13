@@ -1298,7 +1298,7 @@
 /obj/item/toy/figure
 	name = "Non-Specific Action Figure action figure"
 	desc = null
-	icon = 'icons/obj/toys/toy.dmi'
+	icon = 'icons/obj/toy.dmi'
 	icon_state = "nuketoy"
 	w_class = WEIGHT_CLASS_SMALL
 	var/cooldown = 0

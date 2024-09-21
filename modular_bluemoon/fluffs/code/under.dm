@@ -143,3 +143,17 @@
 	icon_state = "SATTvdv"
 	item_state = "SATTvdv"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/aki_camo
+	name = "Old Guard NRI uniform"
+	desc = "A sample of the old uniform of the border special forces-troops of the NRI Guard. This one is adapted for anthropomorphs."
+	icon_state = "adlercamo"
+	item_state = "adlercamo"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/aki_adler_camo
+	name = "Adler Peacekeeper uniform"
+	desc = "Peacekeeper uniforms are custom-made for corporations in the Taywar sector. Simulates all the features of Merenid biology to perfectly match any personality, as well as some types of low-quality races."
+	icon_state = "adlerpk"
+	item_state = "adlerpk"
+	can_adjust = FALSE

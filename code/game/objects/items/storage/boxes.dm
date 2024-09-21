@@ -1747,7 +1747,11 @@
 	new /obj/item/modkit/karabiner_kit(src)
 	new /obj/item/modkit/stunspear_kit(src)
 	new /obj/item/modkit/frontline(src)
+	new /obj/item/modkit/yernela(src)
 	new /obj/item/clothing/accessory/ac_patch(src)
+	new /obj/item/modkit/ffshield(src)
+	new /obj/item/modkit/bwal2572_kit(src)
+
 
 /obj/item/storage/box/acrador_kit
 	name = "Acrador kit"

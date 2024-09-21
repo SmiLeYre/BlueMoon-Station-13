@@ -713,7 +713,6 @@
 	},
 /obj/machinery/jukebox{
 	req_one_access = null;
-	set_obj_flags = "EMAGGED"
 	},
 /turf/open/floor/plasteel,
 /area/hilbertshotel)
@@ -1437,6 +1436,7 @@
 "SW" = (
 /obj/structure/railing{
 	dir = 8
+  
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating/dirt/dark/jungle{

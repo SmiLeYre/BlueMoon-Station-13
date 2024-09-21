@@ -7945,9 +7945,9 @@
 	dir = 8;
 	dwidth = 3;
 	height = 5;
-	shuttle_id = "mining_home";
 	name = "mining shuttle bay";
 	roundstart_template = /datum/map_template/shuttle/mining/box;
+	shuttle_id = "mining_home";
 	width = 7
 	},
 /turf/open/space/basic,
@@ -7963,9 +7963,9 @@
 	dir = 8;
 	dwidth = 2;
 	height = 5;
-	shuttle_id = "laborcamp_home";
 	name = "fore bay 1";
 	roundstart_template = /datum/map_template/shuttle/labour/box;
+	shuttle_id = "laborcamp_home";
 	width = 9
 	},
 /turf/open/space/basic,
@@ -43210,8 +43210,8 @@
 /area/science/xenobiology)
 "cSP" = (
 /obj/docking_port/stationary/random{
-	shuttle_id = "pod_lavaland1";
-	name = "lavaland"
+	name = "lavaland";
+	shuttle_id = "pod_lavaland1"
 	},
 /turf/open/space,
 /area/space/nearstation)
@@ -43542,8 +43542,8 @@
 "cUL" = (
 /obj/docking_port/stationary/random{
 	dir = 4;
-	shuttle_id = "pod_lavaland4";
-	name = "lavaland"
+	name = "lavaland";
+	shuttle_id = "pod_lavaland4"
 	},
 /turf/open/space,
 /area/space/nearstation)
@@ -43608,8 +43608,8 @@
 	dir = 8;
 	dwidth = 5;
 	height = 7;
-	shuttle_id = "supply_home";
 	name = "Cargo Bay";
+	shuttle_id = "supply_home";
 	width = 12
 	},
 /turf/open/space/basic,
@@ -43668,8 +43668,8 @@
 	dir = 8;
 	dwidth = 2;
 	height = 13;
-	shuttle_id = "ferry_home";
 	name = "port bay 2";
+	shuttle_id = "ferry_home";
 	width = 5
 	},
 /turf/open/space/basic,
@@ -43901,8 +43901,8 @@
 	dir = 2;
 	dwidth = 9;
 	height = 25;
-	shuttle_id = "emergency_home";
 	name = "MetaStation emergency evac bay";
+	shuttle_id = "emergency_home";
 	width = 29
 	},
 /turf/open/space/basic,
@@ -46243,9 +46243,9 @@
 	dir = 8;
 	dwidth = 3;
 	height = 15;
-	shuttle_id = "arrivals_stationary";
 	name = "arrivals";
 	roundstart_template = /datum/map_template/shuttle/arrival/box;
+	shuttle_id = "arrivals_stationary";
 	width = 7
 	},
 /turf/open/space/basic,
@@ -52725,15 +52725,15 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/obj/structure/window/reinforced{
-	dir = 1
-	},
 /obj/structure/closet/crate,
 /obj/effect/spawner/lootdrop/maintenance{
 	lootcount = 3;
 	name = "3maintenance loot spawner"
 	},
 /obj/effect/spawner/lootdrop/syndicate_present,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "fQx" = (
@@ -55307,7 +55307,7 @@
 /area/commons/dorms)
 "heo" = (
 /obj/machinery/camera{
-	c_tag = "Cryo Chambers";
+	c_tag = "NTR Office";
 	dir = 5
 	},
 /obj/structure/table/wood,
@@ -63300,8 +63300,8 @@
 	dir = 4;
 	dwidth = 5;
 	height = 10;
-	shuttle_id = "lambda_station";
 	name = "Lambda Shuttle Dock";
+	shuttle_id = "lambda_station";
 	width = 10
 	},
 /turf/open/space/basic,
@@ -65615,8 +65615,8 @@
 /area/hallway/primary/port)
 "lSH" = (
 /obj/docking_port/stationary/random{
-	shuttle_id = "pod_2_lavaland";
-	name = "lavaland"
+	name = "lavaland";
+	shuttle_id = "pod_2_lavaland"
 	},
 /turf/open/space,
 /area/space)
@@ -66715,9 +66715,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/storage/satellite)
 "mqC" = (
+/obj/machinery/atmospherics/pipe/simple/orange/visible{
+	dir = 4
+	},
 /obj/structure/lattice,
-/turf/closed/wall,
-/area/maintenance/port/aft)
+/turf/open/space,
+/area/space/nearstation)
 "mqX" = (
 /obj/effect/turf_decal/tile/green,
 /mob/living/simple_animal/pet/bumbles,
@@ -67389,13 +67392,6 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /turf/open/floor/plasteel,
 /area/engineering/main)
-"mFH" = (
-/obj/structure/lattice,
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 4
-	},
-/turf/closed/wall/r_wall,
-/area/engineering/break_room)
 "mGK" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/curtain{
@@ -70303,9 +70299,9 @@
 	dheight = 4;
 	dwidth = 4;
 	height = 9;
-	shuttle_id = "aux_base_zone";
 	name = "aux base zone";
 	roundstart_template = /datum/map_template/shuttle/aux_base/default;
+	shuttle_id = "aux_base_zone";
 	width = 9
 	},
 /turf/open/floor/plating,
@@ -72027,8 +72023,8 @@
 	dir = 2;
 	dwidth = 11;
 	height = 22;
-	shuttle_id = "whiteship_home";
 	name = "SS13: Auxiliary Dock, Station-Port";
+	shuttle_id = "whiteship_home";
 	width = 35
 	},
 /turf/open/space/basic,
@@ -73686,9 +73682,9 @@
 	dir = 8;
 	dwidth = 3;
 	height = 5;
-	shuttle_id = "commonmining_home";
 	name = "SS13: Common Mining Dock";
 	roundstart_template = /datum/map_template/shuttle/mining_common/meta;
+	shuttle_id = "commonmining_home";
 	width = 7
 	},
 /turf/open/space,
@@ -79052,10 +79048,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/commons/fitness/recreation)
-"rZv" = (
-/obj/structure/lattice,
-/turf/closed/wall,
-/area/maintenance/port/fore)
 "saf" = (
 /obj/structure/table,
 /obj/item/paper_bin{
@@ -79843,10 +79835,6 @@
 /obj/structure/chair/stool,
 /turf/open/floor/plasteel/chapel,
 /area/service/chapel/main)
-"sqe" = (
-/obj/machinery/atmospherics/pipe/heat_exchanging/simple,
-/turf/open/space/basic,
-/area/space/nearstation)
 "sqh" = (
 /turf/closed/wall/r_wall,
 /area/ai_monitored/command/storage/eva)
@@ -90949,8 +90937,8 @@
 	dir = 8;
 	dwidth = 12;
 	height = 17;
-	shuttle_id = "syndicate_nw";
 	name = "northwest of station";
+	shuttle_id = "syndicate_nw";
 	width = 23
 	},
 /turf/open/space/basic,
@@ -103521,7 +103509,7 @@ anS
 apq
 anS
 dne
-rZv
+dne
 dne
 dne
 sqA
@@ -103747,7 +103735,7 @@ oRp
 oRp
 oRp
 oRp
-aaa
+oRp
 oRp
 oRp
 oRp
@@ -105066,7 +105054,7 @@ dne
 cfA
 dne
 aaf
-rZv
+dne
 ogs
 paJ
 aDb
@@ -105324,7 +105312,7 @@ avL
 dne
 aaf
 dne
-rZv
+dne
 paJ
 aDb
 aDa
@@ -110794,7 +110782,7 @@ vVO
 aoH
 ceu
 dux
-mqC
+dux
 aaa
 aaa
 cBR
@@ -118909,7 +118897,7 @@ oRp
 aaa
 aaa
 aaa
-vLD
+lMJ
 aaa
 aaa
 aaa
@@ -119166,13 +119154,13 @@ oRp
 aaa
 aaa
 aaa
-vLD
-vLD
-vLD
-vLD
-vLD
+lMJ
+lMJ
+lMJ
+lMJ
+lMJ
 aaa
-vLD
+lMJ
 aax
 xhP
 abe
@@ -119423,13 +119411,13 @@ oRp
 aaa
 aaa
 aaa
-vLD
+lMJ
 aaa
 aaa
 aaa
-vLD
+lMJ
 aaa
-vLD
+lMJ
 aax
 wiZ
 aax
@@ -119680,13 +119668,13 @@ oRp
 aaa
 aaa
 aaa
-vLD
-vLD
-vLD
-vLD
-vLD
-vLD
-vLD
+lMJ
+lMJ
+lMJ
+lMJ
+lMJ
+lMJ
+lMJ
 ngt
 kMS
 ngt
@@ -132378,8 +132366,8 @@ ack
 aaf
 ykE
 idz
-sqe
-sqe
+idz
+idz
 idz
 idz
 idz
@@ -137984,7 +137972,7 @@ azd
 azd
 azd
 dgv
-mFH
+rEb
 iYP
 qiA
 osB
@@ -138498,7 +138486,7 @@ dgk
 dgk
 dgk
 dgv
-mFH
+rEb
 eTD
 jcA
 jDz
@@ -139012,7 +139000,7 @@ aye
 dgv
 aye
 dgv
-dgJ
+mqC
 aaa
 aaa
 aaa

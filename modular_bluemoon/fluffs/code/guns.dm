@@ -106,6 +106,29 @@
 /obj/item/gun/ballistic/automatic/wt550/gewehr550/update_icon_state()
 	icon_state = "gewehr550[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
 
+/obj/item/modkit/wtadler
+	name = "WT-550 Adler Kit"
+	desc = "A modkit for making a WT-550 Gun into a WT-550 Adler Gun."
+	product = /obj/item/gun/ballistic/automatic/wt550/wtadler
+	fromitem = list(/obj/item/gun/ballistic/automatic/wt550)
+
+/obj/item/gun/ballistic/automatic/wt550/wtadler
+	name = "\improper Adler assault rifle"
+	desc = "A assault rifle manufactured by the military industrial complex Adler. Manufactured for use by militarized law enforcement security services."
+	icon = 'modular_bluemoon/fluffs/icons/obj/wtadler.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "wtadler"
+	item_state = "wtadler"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/adlershot.ogg'
+	can_suppress = FALSE
+	can_bayonet = TRUE
+	knife_x_offset = 25
+	knife_y_offset = 7
+
+/obj/item/gun/ballistic/automatic/wt550/wtadler/update_icon_state()
+	icon_state = "wtadler[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
+
 /obj/item/modkit/a46
 	name = "A46 Kit"
 	desc = "A modkit for making a WT-550 Gun into a A46 Gun."
@@ -668,7 +691,7 @@
 	product = /obj/item/gun/energy/e_gun/hos/karabiner_m13
 	fromitem = list(/obj/item/gun/energy/e_gun/hos)
 
-//////////////////////////Модкиты на дробовик
+////////////////////////////////////////////////////////////////////////////////////Модкиты на дробовик
 
 /obj/item/modkit/frontline
 	name = " CS-Frontline-2534 Kit"
@@ -712,6 +735,23 @@
 	icon_state = "csfrontline[stock ? "" : "c"]-[get_ammo(FALSE)]"
 	item_state = "csfrontline[stock ? "" : "c"]-[get_ammo(FALSE)]"
 
+/obj/item/modkit/yernela
+	name = " PS-Yernela-2525 Kit"
+	desc = "A modkit for making a riot shotgun into a PS-Yernela-2525."
+	product = /obj/item/gun/ballistic/shotgun/riot/yernela
+	fromitem = list(/obj/item/gun/ballistic/shotgun/riot)
+
+/obj/item/gun/ballistic/shotgun/riot/yernela
+	name = "PS-Yernela-2525"
+	desc = "A standard assault pump-action shotgun with a 7-shot magazine used by the Catcrin Empire army, was developed on planet Yernela."
+	icon = 'modular_bluemoon/fluffs/icons/obj/yernela.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "yernela"
+	item_state = "yernela"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/yernelashot.ogg'
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/item/modkit/cmg_kit
 	name = "Combat MG Kit"
@@ -807,3 +847,66 @@
 	icon = 'modular_bluemoon/fluffs/icons/obj/acrador_guns.dmi'
 	icon_state = "anstrum"
 	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/anstrumshot.ogg'
+
+/obj/item/modkit/ffshield
+	name = "Force-field riot shield Kit"
+	desc = "A modkit for making an telescopic riot shield into a Catcrin force-field riot shield."
+	product = /obj/item/shield/riot/ffshield
+	fromitem = list(/obj/item/shield/riot/tele)
+
+/obj/item/shield/riot/ffshield
+	name = "Force-field riot shield"
+	desc = "A small special shield developed in the Catcrin Empire that uses a force field charge to block physical influences."
+	icon_state = "ffshield0"
+	icon = 'modular_bluemoon/fluffs/icons/obj/ffshield.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	slot_flags = null
+	force = 3
+	throwforce = 3
+	throw_speed = 3
+	throw_range = 4
+	w_class = WEIGHT_CLASS_NORMAL
+	var/active = FALSE
+
+/obj/item/shield/riot/ffshield/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(!active)
+		return BLOCK_NONE
+	return ..()
+
+/obj/item/shield/riot/ffshield/can_active_block()
+	return ..() && active
+
+/obj/item/shield/riot/ffshield/attack_self(mob/living/user)
+	active = !active
+	icon_state = "ffshield[active]"
+	playsound(src.loc, 'modular_bluemoon/fluffs/sound/weapon/ffshield.ogg', 50, TRUE)
+
+	if(active)
+		force = 8
+		throwforce = 5
+		throw_speed = 2
+		w_class = WEIGHT_CLASS_BULKY
+		slot_flags = ITEM_SLOT_BACK
+		to_chat(user, "<span class='notice'>You extend \the [src].</span>")
+	else
+		force = 3
+		throwforce = 3
+		throw_speed = 3
+		w_class = WEIGHT_CLASS_NORMAL
+		slot_flags = null
+		to_chat(user, "<span class='notice'>[src] can now be concealed.</span>")
+	add_fingerprint(user)
+
+/obj/item/modkit/bwal2572_kit
+	name = "B-Wal-2572"
+	desc = "A modkit for making an Enforcer into a B-Wal-2572."
+	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/bwal2572
+	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold)
+
+/obj/item/gun/ballistic/automatic/pistol/enforcer/bwal2572
+	name = "\improper B-Wal-2572"
+	desc = "A one-handed pistol used in the regular Catcrin Army."
+	icon = 'modular_bluemoon/fluffs/icons/obj/bwal.dmi'
+	icon_state = "bwal"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/bwalshot.ogg'

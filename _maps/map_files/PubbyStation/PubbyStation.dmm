@@ -3434,8 +3434,8 @@
 	dir = 8;
 	dwidth = 12;
 	height = 17;
-	shuttle_id = "syndicate_ne";
 	name = "northeast of station";
+	shuttle_id = "syndicate_ne";
 	width = 23
 	},
 /turf/open/space,
@@ -6050,9 +6050,9 @@
 /obj/docking_port/stationary{
 	dwidth = 2;
 	height = 6;
-	shuttle_id = "monastery_shuttle_station";
 	name = "Station";
 	roundstart_template = /datum/map_template/shuttle/escape_pod/large;
+	shuttle_id = "monastery_shuttle_station";
 	width = 5
 	},
 /turf/open/space/basic,
@@ -10557,7 +10557,7 @@
 	pixel_x = -25
 	},
 /obj/machinery/camera{
-	c_tag = "Chapel Crematorium";
+	c_tag = "NTR Office";
 	dir = 4
 	},
 /turf/open/floor/carpet/royalblack,
@@ -17599,8 +17599,8 @@
 	dir = 8;
 	dwidth = 4;
 	height = 15;
-	shuttle_id = "emergency_home";
 	name = "PubbyStation emergency evac bay";
+	shuttle_id = "emergency_home";
 	width = 20
 	},
 /turf/open/space/basic,
@@ -17906,8 +17906,8 @@
 	dir = 4;
 	dwidth = 5;
 	height = 7;
-	shuttle_id = "supply_home";
 	name = "Cargo Bay";
+	shuttle_id = "supply_home";
 	width = 12
 	},
 /turf/open/space/basic,
@@ -22929,9 +22929,9 @@
 	dir = 4;
 	dwidth = 3;
 	height = 5;
-	shuttle_id = "mining_home";
 	name = "mining shuttle bay";
 	roundstart_template = /datum/map_template/shuttle/mining/delta;
+	shuttle_id = "mining_home";
 	width = 7
 	},
 /turf/open/space/basic,
@@ -23307,9 +23307,9 @@
 	dir = 8;
 	dwidth = 3;
 	height = 13;
-	shuttle_id = "arrivals_stationary";
 	name = "pubby arrivals";
 	roundstart_template = /datum/map_template/shuttle/arrival/pubby;
+	shuttle_id = "arrivals_stationary";
 	width = 6
 	},
 /turf/open/space/basic,
@@ -28776,8 +28776,8 @@
 	dir = 8;
 	dwidth = 2;
 	height = 13;
-	shuttle_id = "ferry_home";
 	name = "port bay 2";
+	shuttle_id = "ferry_home";
 	width = 5
 	},
 /turf/open/space/basic,
@@ -34984,8 +34984,8 @@
 /obj/docking_port/stationary{
 	dwidth = 2;
 	height = 6;
-	shuttle_id = "monastery_shuttle_asteroid";
 	name = "monastery";
+	shuttle_id = "monastery_shuttle_asteroid";
 	width = 5
 	},
 /turf/open/space,
@@ -43757,8 +43757,12 @@
 /turf/open/floor/plasteel,
 /area/engineering/main)
 "cbl" = (
-/obj/machinery/light/small{
-	dir = 4
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 11
+	},
+/obj/structure/mirror{
+	pixel_x = 28
 	},
 /turf/open/floor/plasteel/white,
 /area/command/blueshielquarters)
@@ -44083,10 +44087,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/maintenance/disposal/incinerator)
-"ccs" = (
-/obj/structure/lattice,
-/turf/closed/wall,
-/area/maintenance/department/cargo)
 "ccu" = (
 /obj/structure/flora/ausbushes/leafybush,
 /turf/open/floor/plating/asteroid,
@@ -45644,8 +45644,8 @@
 	dir = 8;
 	dwidth = 11;
 	height = 22;
-	shuttle_id = "whiteship_home";
 	name = "monastery";
+	shuttle_id = "whiteship_home";
 	width = 35
 	},
 /turf/open/space/basic,
@@ -54253,14 +54253,11 @@
 /turf/open/floor/plasteel/dark,
 /area/service/chapel/main/monastery)
 "izQ" = (
-/obj/structure/sink{
-	pixel_y = 25
-	},
-/obj/structure/mirror{
-	pixel_y = 32
+/obj/machinery/light/small{
+	dir = 8
 	},
 /obj/structure/toilet/secret/low_loot{
-	dir = 8
+	pixel_y = 13
 	},
 /turf/open/floor/plasteel/white,
 /area/command/blueshielquarters)
@@ -56121,9 +56118,9 @@
 	dir = 8;
 	dwidth = 2;
 	height = 5;
-	shuttle_id = "laborcamp_home";
 	name = "fore bay 1";
 	roundstart_template = /datum/map_template/shuttle/labour/box;
+	shuttle_id = "laborcamp_home";
 	width = 9
 	},
 /turf/open/space/basic,
@@ -57533,11 +57530,6 @@
 	},
 /turf/open/floor/wood,
 /area/command/heads_quarters/ntr)
-"nix" = (
-/obj/structure/lattice,
-/obj/structure/lattice,
-/turf/closed/mineral,
-/area/service/chapel/asteroid/monastery)
 "niy" = (
 /obj/structure/table,
 /obj/item/reagent_containers/food/snacks/cookie,
@@ -58833,9 +58825,9 @@
 	dir = 8;
 	dwidth = 3;
 	height = 5;
-	shuttle_id = "commonmining_home";
 	name = "SS13: Common Mining Dock";
 	roundstart_template = /datum/map_template/shuttle/mining_common/meta;
+	shuttle_id = "commonmining_home";
 	width = 7
 	},
 /turf/open/space/basic,
@@ -60025,10 +60017,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/main)
-"quc" = (
-/obj/structure/disposalpipe/segment,
-/turf/open/space/basic,
-/area/space/nearstation)
 "quS" = (
 /obj/machinery/light,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -60946,9 +60934,9 @@
 	dheight = 4;
 	dwidth = 4;
 	height = 9;
-	shuttle_id = "aux_base_zone";
 	name = "aux base zone";
 	roundstart_template = /datum/map_template/shuttle/aux_base/small;
+	shuttle_id = "aux_base_zone";
 	width = 9
 	},
 /turf/open/floor/plating,
@@ -63786,10 +63774,6 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/maintenance/department/science)
-"vHh" = (
-/obj/structure/lattice,
-/turf/closed/mineral,
-/area/service/chapel/asteroid/monastery)
 "vHL" = (
 /obj/structure/closet/secure_closet/hop,
 /obj/machinery/computer/security/telescreen{
@@ -81372,7 +81356,7 @@ cfN
 cfN
 cfN
 cfN
-vHh
+cfN
 aaa
 aaa
 aaa
@@ -81634,7 +81618,7 @@ aaa
 aaa
 aaa
 cfN
-vHh
+cfN
 cfN
 cfN
 cfN
@@ -81882,9 +81866,9 @@ aaa
 cfN
 cfN
 cfN
-vHh
 cfN
-vHh
+cfN
+cfN
 aaa
 aht
 aaa
@@ -82152,7 +82136,7 @@ aht
 aaa
 cfN
 cfN
-vHh
+cfN
 cfN
 cfN
 cfN
@@ -83956,7 +83940,7 @@ cyU
 aht
 aht
 aht
-vHh
+cfN
 cfN
 cfN
 aaa
@@ -85240,7 +85224,7 @@ cjp
 aht
 aht
 aht
-vHh
+cfN
 cfN
 cfN
 cfN
@@ -86009,7 +85993,7 @@ aht
 aht
 aht
 aht
-vHh
+cfN
 cfN
 cfN
 cfN
@@ -86770,7 +86754,7 @@ aaa
 aht
 cfN
 cfN
-vHh
+cfN
 cfN
 aht
 aaa
@@ -87024,14 +87008,14 @@ aaa
 aht
 aaa
 cfN
-vHh
 cfN
 cfN
 cfN
 cfN
-vHh
 cfN
-vHh
+cfN
+cfN
+cfN
 cfN
 cfN
 cfN
@@ -87278,7 +87262,7 @@ aaa
 aaa
 aaa
 aaa
-nix
+cfN
 cfN
 cfN
 cfN
@@ -88550,9 +88534,9 @@ aaa
 cAH
 lac
 tRZ
-quc
+cqX
 tRZ
-quc
+cqX
 iyP
 aaa
 aaa
@@ -88806,11 +88790,11 @@ aaa
 aaa
 aaa
 aaa
-mZE
 aaa
-mZE
 aaa
-mZE
+aaa
+aaa
+aaa
 aaa
 aaa
 aaa
@@ -91622,7 +91606,7 @@ aaa
 aaa
 aaa
 aaa
-eNF
+afI
 aaa
 aaa
 aaa
@@ -91879,7 +91863,7 @@ aaa
 aaa
 aaa
 aaa
-eNF
+afI
 aaa
 aaa
 aaa
@@ -92136,7 +92120,7 @@ aaa
 aaa
 aaa
 aaa
-eNF
+afI
 aaa
 aaa
 aaa
@@ -110319,7 +110303,7 @@ aEl
 aEj
 aEj
 aht
-ccs
+aEj
 aEj
 aEl
 aEl

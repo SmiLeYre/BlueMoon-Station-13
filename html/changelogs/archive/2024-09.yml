@@ -1,0 +1,14 @@
+2024-09-07:
+  MosleyTheMalO:
+  - bugfix: Fixes the overall sprite
+  - rscadd: adds a new polychromic sprite
+  - rscadd: donator item
+  SandPoot:
+  - rscadd: Added Character offering system, exchange characters with people you want
+      to!
+2024-09-15:
+  SaraSayomi:
+  - bugfix: remove doubled up shuttle markers, causing shuttles to love up on the
+      station with murder
+  - bugfix: several spacelaw merge conflicts
+  - bugfix: Not sanity

@@ -5,8 +5,9 @@
 	var/description
 	var/mutable_appearance/pic
 	var/list/num_decals_per_atom
-
 	var/first_dir // This stores the direction of the decal compared to the parent facing NORTH
+	// BLUEMOON EDIT
+	var/initial_dir // Stores the initial direction of the decal
 
 /datum/element/decal/Attach(datum/target, _icon, _icon_state, _dir, _cleanable=CLEAN_GOD, _color, _layer=TURF_LAYER, _description, _alpha=255)
 	. = ..()
@@ -20,6 +21,8 @@
 		pic.color = _color
 		pic.alpha = _alpha
 	first_dir = _dir
+	// BLUEMOON EDIT
+	initial_dir = _dir // Store the initial direction
 	description = _description
 	cleanable = _cleanable
 
@@ -60,8 +63,8 @@
 	UnregisterSignal(source,COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZE)
 
 /datum/element/decal/proc/apply_overlay(atom/source, list/overlay_list)
-	if(first_dir)
-		pic.dir = first_dir == SOUTH ? source.dir : turn(first_dir, dir2angle(source.dir)-180) //Never turn a dir by 0.
+	// BLUEMOON EDIT
+	pic.dir = initial_dir // Use the initial direction instead of the turf's direction
 	for(var/i in 1 to num_decals_per_atom[source])
 		overlay_list += pic
 
