@@ -133,6 +133,7 @@
 
 /area/eventcontent
 	name = "EventArea1"
+	icon = 'modular_bluemoon/icons/turf/event_areas.dmi'
 	icon_state = "eventcontent1"
 	dynamic_lighting = DYNAMIC_LIGHTING_FORCED
 	requires_power = FALSE
