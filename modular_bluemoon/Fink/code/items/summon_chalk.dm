@@ -135,12 +135,22 @@
 	/// раздевалка
 	var/items = target.get_contents()
 	for(var/obj/item/item_worn in items)
-		if(istype(item_worn,/obj/item/clothing/underwear)) // оставляем только трусняк
-			continue
-		if(istype(item_worn,/obj/item/clothing/glasses)) // очечки
-			continue
-		if(istype(item_worn,/obj/item/radio/headset)) // и ухо
-			continue
-		else
+		if(istype(item_worn,/obj/item/clothing/head))
 			target.dropItemToGround(item_worn, TRUE)
+		if(istype(item_worn,/obj/item/clothing/shoes))
+			target.dropItemToGround(item_worn, TRUE)
+		if(istype(item_worn,/obj/item/clothing/gloves))
+			target.dropItemToGround(item_worn, TRUE)
+		if(istype(item_worn,/obj/item/clothing/under))
+			target.dropItemToGround(item_worn, TRUE)
+		if(istype(item_worn,/obj/item/clothing/under))
+			target.dropItemToGround(item_worn, TRUE)
+		if(istype(item_worn,/obj/item/clothing/suit))
+			target.dropItemToGround(item_worn, TRUE)
+		if(istype(item_worn,/obj/item/clothing/neck))
+			target.dropItemToGround(item_worn, TRUE)
+		if(istype(item_worn,/obj/item/storage/backpack))
+			target.dropItemToGround(item_worn, TRUE)
+		else
+			continue // оставляем только трусняк, очки и ухо
 
