@@ -313,3 +313,11 @@
 	message_mime = "кажется, хрюкает."
 	emote_sound = 'modular_bluemoon/sound/emotes/oink3.ogg'
 	emote_cooldown = 1 SECONDS
+
+/datum/emote/living/audio/mrrps3
+	key = "mrrps3"
+	key_third_person = "mrrps3"
+	message = "Кратко муркает."
+	message_mime = "Тихо муркает."
+	emote_sound = 'modular_bluemoon/sound/emotes/mrrps3.ogg'
+	emote_cooldown = 0.5 SECONDS
