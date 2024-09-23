@@ -1436,7 +1436,6 @@
 "SW" = (
 /obj/structure/railing{
 	dir = 8
-  
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating/dirt/dark/jungle{
