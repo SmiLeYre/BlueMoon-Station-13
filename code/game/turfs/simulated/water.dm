@@ -16,6 +16,16 @@
 	clawfootstep = FOOTSTEP_WATER
 	heavyfootstep = FOOTSTEP_WATER
 
+//BLUEMOON ADD - Water turf now extinguishes people
+/turf/open/water/Entered(atom/movable/A)
+	. = ..()
+	if(istype(A, /mob/living/carbon/human))
+		var/mob/living/carbon/human/H = A
+		if(H.fire_stacks)
+			H.fire_stacks = 0
+			H.ExtinguishMob()
+//BLUEMOON ADD END
+
 /turf/open/water/safe
 	initial_gas_mix = OPENTURF_DEFAULT_ATMOS
 	planetary_atmos = FALSE
