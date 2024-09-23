@@ -929,7 +929,7 @@
 	name = "HOS cosplay skirt."
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/laskahosskirt
-	ckeywhitelist = list("akinight")
+	ckeywhitelist = list("angrylaska")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/mihana_mask
