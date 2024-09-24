@@ -19,7 +19,7 @@
 //BLUEMOON ADD - Water turf now extinguishes people
 /turf/open/water/Entered(atom/movable/A)
 	. = ..()
-	if(istype(A, /mob/living))
+	if(isliving(A))
 		var/mob/living/L = A
 		if(L.fire_stacks)
 			L.fire_stacks = 0
