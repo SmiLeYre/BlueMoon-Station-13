@@ -611,6 +611,15 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/command/heads_quarters/rd/private
 	name = "Research Director's Private Quarters"
 	icon_state = "rd_private"
+// BLUEMOON ADD START
+/area/command/heads_quarters/ntr
+	name = "Nanotrasen's Representative Office"
+	icon_state = "ntr_office"
+
+/area/command/heads_quarters/ntr/private
+	name = "Nanotrasen's Representative Private Quarters"
+	icon_state = "ntr_private"
+// BLUEMOON ADD END
 
 //Command - Teleporters
 
@@ -1419,6 +1428,14 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/security/brig
 	name = "Brig"
+	icon_state = "brig"
+
+/area/security/brig_cells
+	name = "Brig Cells"
+	icon_state = "brig"
+
+/area/security/brig_briefing
+	name = "Brig Briefing room"
 	icon_state = "brig"
 
 /area/security/brig/upper

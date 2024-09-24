@@ -8,7 +8,7 @@
 /proc/playlewdinteractionsound(turf/turf_source, soundin, vol as num, vary, extrarange as num, frequency, falloff, channel = 0, pressure_affected = TRUE, sound/S, envwet = -10000, envdry = 0, manual_x, manual_y, list/ignored_mobs)
 	var/list/hearing_mobs
 	for(var/mob/H in get_hearers_in_view(4, turf_source))
-		if(!H.client || (H.client.prefs.toggles & LEWD_VERB_SOUNDS))
+		if(!H.client || !(H.client.prefs.toggles & LEWD_VERB_SOUNDS))
 			continue
 		LAZYADD(hearing_mobs, H)
 	if(ignored_mobs?.len)
@@ -284,16 +284,36 @@
 	return TRUE
 
 /mob/living/proc/moan()
-	if(!(prob(get_lust() / get_lust_tolerance() * 65)))
+	if(is_muzzled() || (mind?.miming))
+		var/message_to_display = pick("mime%S% a pleasured moan","moan%S% in silence")
+		visible_message(span_lewd("<b>\The [src]</b> [replacetext(message_to_display, "%S%", "s")]."),
+			span_lewd("You [replacetext(message_to_display, "%S%", "")]."))
 		return
-	var/moan = rand(1, 7)
-	if(moan == lastmoan)
-		moan--
-	if(!is_muzzled())
-		visible_message(message = span_lewd("<B>[src]</B> [pick("постанывает", "стонет в удовольствии")]."), ignored_mobs = get_unconsenting())
-	if(is_muzzled())//immursion
-		audible_message(span_lewd("<B>[src]</B> [pick("имитирует приятный стон", "бесшумно постанывает")]."))
-	lastmoan = moan
+	var/message_to_display = pick("moan%S%", "moan%S% in pleasure")
+	visible_message(span_lewd("<b>\The [src]</b> [replacetext(message_to_display, "%S%", "s")]."),
+		span_lewd("You [replacetext(message_to_display, "%S%", "")]."),
+		span_lewd("Вы слышите наполненный удовольствием стон."),
+		ignored_mobs = get_unconsenting(), omni = TRUE)
+
+	// Get reference of the list we're using based on gender.
+	var/list/moans
+	if (gender == FEMALE || (gender == PLURAL && isfeminine(src)))
+		moans = GLOB.lewd_moans_female
+	else
+		moans = GLOB.lewd_moans_male
+
+	// Pick a sound from the list.
+	var/sound = pick(moans)
+
+	// If the sound is repeated, get a new from a list without it.
+	if (lastmoan == sound)
+		sound = pick(LAZYCOPY(moans) - lastmoan)
+
+	if(isalien(src))
+		sound = 'sound/voice/hiss6.ogg'
+
+	playlewdinteractionsound(loc, sound, 80, 0, 0)
+	lastmoan = sound
 
 /mob/living/proc/cum(mob/living/partner, target_orifice, cum_inside = FALSE, anonymous = FALSE)
 	if(HAS_TRAIT(src, TRAIT_NEVERBONER))
@@ -360,13 +380,21 @@
 								message = "кончает на руку <b>[partner_name]</b> семенем."
 							else
 								message = "кончает на [partner_name]."
-						if(CUM_TARGET_BREASTS)
+						if(CUM_TARGET_BREASTS) //BLUEMOON EDIT добавлено взаимодействие с боргами
+							// BLUEMOON EDIT START - я НЕ ПРЕДСТАВЛЯЮ, чего эти гиганты мысли добивались тут, используя
+							// не инициализированные переменные.
 							var/mob/living/carbon/human/sex
-							for(var/obj/item/organ/genital/G in sex.internal_organs)
-								var/datum/reagents/fluid_source = G.climaxable(partner)
-								if(!fluid_source)
-									continue
-								sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+							var/mob/living/silicon/robot/silicon_sex
+							if (istype(sex))
+								for(var/obj/item/organ/genital/G in sex.internal_organs)
+									var/datum/reagents/fluid_source = G.climaxable(partner)
+									if(!fluid_source)
+										continue
+									sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+							else
+								silicon_sex = src
+								silicon_sex.do_climax_silicon(silicon_sex, src, TRUE) // BLUEMOON EDIT END
+
 							if(partner.has_breasts(REQUIRE_EXPOSED))
 								message = "кончает на грудь [partner_name]."
 							else
@@ -374,13 +402,21 @@
 						if(NUTS_TO_FACE)
 							if(partner.has_mouth() && partner.mouth_is_free())
 								message = "энергично засовывает свои яйца в рот партнёра перед тем, как выпустить густое, липкое семя в глаза и волосы [partner_name]."
-						if(THIGH_SMOTHERING)
-							var/mob/living/carbon/human/sex
-							for(var/obj/item/organ/genital/G in sex.internal_organs)
-								var/datum/reagents/fluid_source = G.climaxable(partner)
-								if(!fluid_source)
-									continue
-								sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+						if(THIGH_SMOTHERING) //BLUEMOON EDIT добавлено взаимодействие с боргами
+							// BLUEMOON EDIT START - я НЕ ПРЕДСТАВЛЯЮ, чего эти гиганты мысли добивались тут, используя
+							// не инициализированные переменные.
+							var/mob/living/carbon/human/sex = src
+							var/mob/living/silicon/robot/silicon_sex
+							if (istype(sex))
+								for(var/obj/item/organ/genital/G in sex.internal_organs)
+									var/datum/reagents/fluid_source = G.climaxable(partner)
+									if(!fluid_source)
+										continue
+									sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+							else
+								silicon_sex = src
+								silicon_sex.do_climax_silicon(silicon_sex, src, TRUE) // BLUEMOON EDIT END
+
 							if(has_penis(REQUIRE_EXPOSED)) //it already checks for the cock before, why the hell would you do this redundant shit
 								message = "держит [partner_name] между бёдрами, пока член пульсирует, по итогу сливая пульсирующую нагрузку в лицо и волосы жертвы."
 							else
@@ -543,13 +579,21 @@
 									message = "кончает на руку [partner_name] семенем."
 								else
 									message = "кончает на [partner_name]."
-							if(CUM_TARGET_BREASTS)
-								var/mob/living/carbon/human/sex
-								for(var/obj/item/organ/genital/G in sex.internal_organs)
-									var/datum/reagents/fluid_source = G.climaxable(partner)
-									if(!fluid_source)
-										continue
-									sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+							if(CUM_TARGET_BREASTS) //BLUEMOON EDIT добавлено взаимодействие с боргами
+								// BLUEMOON EDIT START - я НЕ ПРЕДСТАВЛЯЮ, чего эти гиганты мысли добивались тут, используя
+								// не инициализированные переменные.
+								var/mob/living/carbon/human/sex = src
+								var/mob/living/silicon/robot/silicon_sex
+								if (istype(sex))
+									for(var/obj/item/organ/genital/G in sex.internal_organs)
+										var/datum/reagents/fluid_source = G.climaxable(partner)
+										if(!fluid_source)
+											continue
+										sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+								else
+									silicon_sex = src
+									silicon_sex.do_climax_silicon(silicon_sex, src, TRUE) // BLUEMOON EDIT END
+
 								if(partner.is_topless() && partner.has_breasts())
 									message = "кончает на грудь [partner_name]."
 								else
@@ -557,13 +601,21 @@
 							if(NUTS_TO_FACE)
 								if(partner.has_mouth() && partner.mouth_is_free())
 									message = "энергично засовывает свои яйца в рот партнёра перед тем, как выпустить густое, липкое семя в глаза и волосы [partner_name]."
-							if(THIGH_SMOTHERING)
-								var/mob/living/carbon/human/sex
-								for(var/obj/item/organ/genital/G in sex.internal_organs)
-									var/datum/reagents/fluid_source = G.climaxable(partner)
-									if(!fluid_source)
-										continue
-									sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+							if(THIGH_SMOTHERING) //BLUEMOON EDIT добавлено взаимодействие с боргами
+								// BLUEMOON EDIT START - я НЕ ПРЕДСТАВЛЯЮ, чего эти гиганты мысли добивались тут, используя
+								// не инициализированные переменные.
+								var/mob/living/carbon/human/sex = src
+								var/mob/living/silicon/robot/silicon_sex
+								if (istype(sex))
+									for(var/obj/item/organ/genital/G in sex.internal_organs)
+										var/datum/reagents/fluid_source = G.climaxable(partner)
+										if(!fluid_source)
+											continue
+										sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+								else
+									silicon_sex = src
+									silicon_sex.do_climax_silicon(silicon_sex, src, TRUE) // BLUEMOON EDIT END
+
 								if(has_penis())
 									message = "держит [partner_name] между бёдрами, пока член пульсирует, по итогу сливая пульсирующую нагрузку в лицо и волосы жертвы."
 								else
@@ -745,6 +797,14 @@
 				H.mob_fill_container(last_genital, partner, 0)
 			else
 				H.mob_climax(TRUE, "sex", partner, !cumin, target_gen, anonymous)
+		if(iscyborg(src)) //BLUEMOON ADD добавлено взаимодействие с боргами
+			var/mob/living/silicon/robot/R = src
+			if(!partner)
+				R.mob_climax_silicon(TRUE, "masturbation", "none")
+			else if(istype(partner, /obj/item/reagent_containers))
+				R.mob_fill_container_silicon(R, partner, 0)
+			else
+				R.mob_climax_silicon(TRUE, "sex", partner, !cumin, target_gen, anonymous)
 	set_lust(0)
 
 	SEND_SIGNAL(src, COMSIG_MOB_POST_CAME, target_orifice, partner, cumin, last_genital)
@@ -793,17 +853,48 @@
 	if(stat != CONSCIOUS)
 		return FALSE
 
+	var/datum/preferences/prefs = client?.prefs
+	var/use_arousal_multiplier = NULL_COALESCE(prefs?.use_arousal_multiplier, FALSE)
+	var/arousal_multiplier = NULL_COALESCE(prefs?.arousal_multiplier, 100)
+	var/use_moaning_multiplier = NULL_COALESCE(prefs?.use_moaning_multiplier, FALSE)
+	var/moaning_multiplier = NULL_COALESCE(prefs?.moaning_multiplier, 25)
+
 	if(amount)
-		add_lust(amount)
-	var/lust = get_lust()
-	var/lust_tolerance = get_lust_tolerance()
-	if(lust >= lust_tolerance)
-		if(prob(10))
-			to_chat(src, "<b>Вам трудно удержаться от оргазма!</b>")
+		if (use_arousal_multiplier)
+			add_lust(amount * (arousal_multiplier/100))
+		else
+			add_lust(amount)
+
+	if (use_moaning_multiplier)
+		if(prob(moaning_multiplier))
 			moan()
-			return FALSE
-		if(lust >= (lust_tolerance * 3))
-			if(cum(partner, orifice, cum_inside, anonymous))
+
+	// Below is an overengineered bezier curve based chance of moaning.
+	/// The current lust (arousal) amount.
+	var/lust = get_lust()
+	/// The lust tolerance as defined in preferences.
+	var/lust_tolerance = get_lust_tolerance()
+	/// The arousal limit upon which you climax.
+	var/climax = lust_tolerance * 3
+	/// Threshold where you start moaning.
+	var/threshold = climax/2
+	///Calculation of 't' in bezier quadratic curve. It's a 0 to 1 version of threshold to climax.
+	var/t = percentage_between(lust, threshold, climax, FALSE)
+	// The Y axis value of the point in the bezier curve.
+	var/bezier = 2 * (1 - t) * t * 13.8 + ((t*t) * 100)
+	/// Probability chance resulting from bezier curve.
+	var/chance = clamp(round(bezier),0,100)
+
+	if (lust >= threshold)
+		if(prob(30))
+			to_chat(src, "<b>Вам трудно удержаться от оргазма!</b>")
+
+		if (!use_moaning_multiplier)
+			if(prob(chance))
+				moan()
+
+		if (lust > climax)
+			if (cum(partner, orifice, cum_inside, anonymous)) //SPLURT EDIT - extra argument `cum_inside` and `anonymous`
 				return TRUE
 	return FALSE
 

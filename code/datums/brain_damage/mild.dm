@@ -51,7 +51,8 @@
 	if(prob(3))
 		owner.emote("drool")
 	else if(owner.stat == CONSCIOUS && prob(3))
-		owner.say(pick_list_replacements(BRAIN_DAMAGE_FILE, "brain_damage"), forced = "brain damage")
+		var/braindamage_variant = isrobotic(owner) ? "synth_brain_damage" : "brain_damage"
+		owner.say(pick_list_replacements(BRAIN_DAMAGE_FILE, braindamage_variant), forced = "brain damage")
 	..()
 
 /datum/brain_trauma/mild/dumbness/on_lose()

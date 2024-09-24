@@ -284,7 +284,7 @@
 
 /obj/docking_port/mobile/emergency
 	name = "emergency shuttle"
-	id = "emergency"
+	shuttle_id = "emergency"
 
 	dwidth = 9
 	width = 22
@@ -514,7 +514,7 @@
 
 /obj/docking_port/mobile/pod
 	name = "escape pod"
-	id = "pod"
+	shuttle_id = "pod"
 	dwidth = 1
 	width = 3
 	height = 4
@@ -584,7 +584,7 @@
 
 /obj/docking_port/stationary/random
 	name = "escape pod"
-	id = "pod"
+	shuttle_id = "pod"
 	dwidth = 1
 	width = 3
 	height = 4
@@ -609,7 +609,7 @@
 			return
 
 	// Fallback: couldn't find anything
-	WARNING("docking port '[id]' could not be randomly placed in [target_area]: of [original_len] turfs, none were suitable")
+	WARNING("docking port '[shuttle_id]' could not be randomly placed in [target_area]: of [original_len] turfs, none were suitable")
 	return INITIALIZE_HINT_QDEL
 
 /obj/docking_port/stationary/random/icemoon
@@ -657,7 +657,7 @@
 
 /obj/docking_port/mobile/emergency/backup
 	name = "backup shuttle"
-	id = "backup"
+	shuttle_id = "backup"
 	dwidth = 2
 	width = 8
 	height = 8

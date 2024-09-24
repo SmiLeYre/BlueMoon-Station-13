@@ -62,6 +62,12 @@
 			RESKIN_ICON_STATE = "helmetold",
 			RESKIN_ITEM_STATE = "helmetold"
 		),
+		// BLUEMOON ADD START - RESKINS-ICON-FILE-ADDITION - ACRADORS - версия шлема для ушей акрадоров
+		"Acrador/Long-Eared" = list(
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets.dmi',
+			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets_onmob.dmi'
+		),
+		// BLUEMOON ADD END
 	)
 
 /obj/item/clothing/head/helmet/sec/attackby(obj/item/I, mob/user, params)
@@ -161,6 +167,12 @@
 			RESKIN_ICON_STATE = "helmetold",
 			RESKIN_ITEM_STATE = "helmetold"
 		),
+		// BLUEMOON ADD START - RESKINS-ICON-FILE-ADDITION - ACRADORS - версия шлема для ушей акрадоров
+		"Acrador/Long-Eared" = list(
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets.dmi',
+			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets_onmob.dmi'
+		),
+		// BLUEMOON ADD END
 	)
 
 /obj/item/clothing/head/helmet/old

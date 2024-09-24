@@ -1,9 +1,9 @@
 /datum/export/large
-	k_elasticity = 0
+	k_elasticity = 1/50 //BLUEMOON CHANGE
 
 /datum/export/large/crate
 	cost = 500
-	k_elasticity = 0
+	k_elasticity = 1/50 //BLUEMOON CHANGE
 	unit_name = "crate"
 	export_types = list(/obj/structure/closet/crate)
 	exclude_types = list(/obj/structure/closet/crate/large, /obj/structure/closet/crate/wooden, /obj/structure/closet/crate/bin, /obj/structure/closet/crate/mail, /obj/structure/closet/crate/coffin)

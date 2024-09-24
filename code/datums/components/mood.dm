@@ -56,13 +56,13 @@
 	msg += "<span class='notice'>Ментальное состояние: </span>" //Long term
 	switch(sanity)
 		if(SANITY_GREAT to INFINITY)
-			msg += "<span class='nicegreen'>Мой разум - словно чистеший храм!<span>\n"
+			msg += "<span class='nicegreen'>Мой разум - словно чистейший храм!<span>\n"
 		if(SANITY_NEUTRAL to SANITY_GREAT)
 			msg += "<span class='nicegreen'>Чувствую себя отлично!<span>\n"
 		if(SANITY_DISTURBED to SANITY_NEUTRAL)
 			msg += "<span class='nicegreen'>В последнее время чувствую себя нормально.<span>\n"
 		if(SANITY_UNSTABLE to SANITY_DISTURBED)
-			msg += "<span class='warning'>Чувствую себя растроенно...</span>\n"
+			msg += "<span class='warning'>Чувствую себя расстроенно...</span>\n"
 		if(SANITY_CRAZY to SANITY_UNSTABLE)
 			msg += "<span class='boldwarning'>У меня крыша едет!!</span>\n"
 		if(SANITY_INSANE to SANITY_CRAZY)

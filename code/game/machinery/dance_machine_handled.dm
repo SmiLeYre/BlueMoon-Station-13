@@ -162,6 +162,11 @@
 /obj/item/jukebox/proc/activate_music()
 	if(playing || !queuedplaylist.len)
 		return FALSE
+	// BLUEMOON ADD - Making sure not to play track if all jukebox channels are busy. That shouldn't happen.
+	if(!SSjukeboxes.freejukeboxchannels.len)
+		say("Cannot play song: limit of currently playing tracks has been exceeded.")
+		return FALSE
+	// BLUEMOON ADD END
 	playing = queuedplaylist[1]
 	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, playing, volume/35, one_area_play) //BLUEMOON EDIT
 	if(jukeboxslottotake)

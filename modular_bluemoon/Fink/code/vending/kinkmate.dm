@@ -1,5 +1,6 @@
 /obj/machinery/vending/kink/Initialize()
 	var/list/extra_products = list(
+		/obj/item/summon_chalk = 5,
 		/obj/item/card/id/lust = 5,
 	)
 	var/list/extra_contraband = list(

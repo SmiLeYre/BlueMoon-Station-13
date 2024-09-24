@@ -108,24 +108,24 @@
 	SHOULD_NOT_SLEEP(TRUE)
 	//SHOULD_CALL_PARENT(TRUE)
 
-	if(stat & BROKEN)
+	if(machine_stat & BROKEN)
 		return
 	if(powered(power_channel))
-		if(stat & NOPOWER)
+		if(machine_stat & NOPOWER)
 			SEND_SIGNAL(src, COMSIG_MACHINERY_POWER_RESTORED)
 			. = TRUE
-		set_machine_stat(stat & ~NOPOWER)
+		set_machine_stat(machine_stat & ~NOPOWER)
 	else
-		if(!(stat & NOPOWER))
+		if(!(machine_stat & NOPOWER))
 			SEND_SIGNAL(src, COMSIG_MACHINERY_POWER_LOST)
 			. = TRUE
-		set_machine_stat(stat | NOPOWER)
+		set_machine_stat(machine_stat | NOPOWER)
 	update_appearance()
 
 // Saves like 300ms of init by not duping calls in the above proc
 /obj/machinery/update_appearance(updates)
 	. = ..()
-	appearance_power_state = stat & NOPOWER
+	appearance_power_state = machine_stat & NOPOWER
 
 // connect the machine to a powernet if a node cable is present on the turf
 /obj/machinery/power/proc/connect_to_network()

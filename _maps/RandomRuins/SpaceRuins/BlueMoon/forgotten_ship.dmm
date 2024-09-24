@@ -3298,7 +3298,7 @@
 /obj/machinery/porta_turret{
 	icon_state = "turretCover_broken";
 	on = 0;
-	stat = 1
+	machine_stat = 1
 	},
 /obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
@@ -3653,7 +3653,7 @@
 /obj/machinery/porta_turret{
 	icon_state = "turretCover_broken";
 	on = 0;
-	stat = 1
+	machine_stat = 1
 	},
 /obj/effect/turf_decal/stripes/box,
 /obj/machinery/light{
@@ -6441,10 +6441,6 @@
 	dir = 1
 	},
 /obj/structure/table/reinforced/plastitaniumglass,
-/obj/machinery/camera/xray/directional/south{
-	c_tag = "DS-2 Long-Term Brig Access";
-	network = list("ds2")
-	},
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/item/card/id/prisoner,
 /obj/item/card/id/prisoner{

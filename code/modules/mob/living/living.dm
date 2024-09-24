@@ -483,6 +483,7 @@
 		adjustOxyLoss(health - HEALTH_THRESHOLD_DEAD)
 		updatehealth()
 		to_chat(src, "<span class='notice'>You have given up life and succumbed to death.</span>")
+		visible_message(span_boldnotice("Кажется, [src] [gender == MALE ? "сдался" : "сдалась"].")) // BLUEMOON - SUCCUMB_MESSAGE - ADD
 		death()
 
 /mob/living/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE, ignore_stasis = FALSE)
@@ -549,38 +550,6 @@
 	else
 		if(alert(src, "You sure you want to sleep for a while?", "Sleep", "Yes", "No") == "Yes")
 			SetSleeping(400) //Short nap
-
-//SET_ACTIVITY START
-/mob/living/verb/set_activity()
-	set name = "Деятельность"
-	set desc = "Описывает то, что вы сейчас делаете."
-	set category = "IC"
-
-	if(activity)
-		activity = ""
-		to_chat(src, "<span class='notice'>Деятельность сброшена.</span>")
-		return
-	if(stat == CONSCIOUS)
-		display_typing_indicator()
-		activity = stripped_input(src, "Здесь можно описать продолжительную (долго длящуюся) деятельность, которая будет отображаться столько, сколько тебе нужно.", "Опиши свою деятельность", "", MAX_MESSAGE_LEN)
-		clear_typing_indicator()
-		if(activity)
-			activity = capitalize(activity)
-			return me_verb(activity)
-	else
-		to_chat(src, "<span class='warning'>Недоступно в твоем нынешнем состоянии.</span>")
-
-/mob/living/update_stat()
-	if(stat != CONSCIOUS)
-		activity = ""
-
-/mob/living/get_tooltip_data()
-	if(activity)
-		. = list()
-		. += activity
-
-//SET_ACTIVITY END
-
 
 /mob/proc/get_contents()
 
@@ -1389,10 +1358,10 @@
 			return FALSE
 		if(NAMEOF(src, resize))
 			update_size(var_value)
-			return FALSE
+			return TRUE
 		if(NAMEOF(src, size_multiplier))
 			update_size(var_value)
-			return FALSE
+			return TRUE
 	. = ..()
 	switch(var_name)
 		if(NAMEOF(src, eye_blind))

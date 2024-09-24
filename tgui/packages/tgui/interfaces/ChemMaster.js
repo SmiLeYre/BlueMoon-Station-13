@@ -249,22 +249,37 @@ const PackagingControls = (props, context) => {
     condi,
     chosenPillStyle,
     pillStyles = [],
+    chosenPatchStyle,
+    patchStyles = [],
   } = data;
   return (
     <LabeledList>
-      {!condi && (
-        <LabeledList.Item label="Pill type">
-          {pillStyles.map(pill => (
-            <Button
-              key={pill.id}
-              width="30px"
-              selected={pill.id === chosenPillStyle}
-              textAlign="center"
-              color="transparent"
-              onClick={() => act('pillStyle', { id: pill.id })}>
-              <Box mx={-1} className={pill.className} />
-            </Button>
-          ))}
+      {!condi && (<LabeledList.Item label="Pill type">
+        {pillStyles.map(pill => (
+          <Button
+            key={pill.id}
+            width="30px"
+            selected={pill.id === chosenPillStyle}
+            textAlign="center"
+            color="transparent"
+            onClick={() => act('pillStyle', { id: pill.id })}>
+            <Box mx={-1} className={pill.className} />
+          </Button>
+        ))}
+        </LabeledList.Item>
+      )}
+      {!condi && (<LabeledList.Item label="Patch type">
+        {patchStyles.map(patch => (
+          <Button
+            key={patch.id}
+            width="30px"
+            selected={patch.id === chosenPatchStyle}
+            textAlign="center"
+            color="transparent"
+            onClick={() => act('patchStyle', { id: patch.id })}>
+            <Box mx={-1} className={patch.className} />
+          </Button>
+        ))}
         </LabeledList.Item>
       )}
       {!condi && (

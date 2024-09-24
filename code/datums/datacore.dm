@@ -85,7 +85,7 @@
 			crimes |= crime
 			return
 
-// BLUEMOON ADD START - возможность пометить правонарушение как обработанное
+// BLUEMOON ADD START - возможность пометить правонарушение как обработанное | Логи
 /datum/datacore/proc/switch_incur(id, cDataId)
 	for(var/datum/data/record/R in security)
 		if(R.fields["id"] == id)
@@ -94,6 +94,22 @@
 				if(crime.dataId == text2num(cDataId))
 					crime.penalties_incurred = !crime.penalties_incurred
 					return
+
+/datum/datacore/proc/get_actions_logs(id)
+	for(var/datum/data/record/R in security)
+		if(R.fields["id"] == id)
+			var/list/logs = R.fields["actions_logs"]
+			return logs
+
+/datum/datacore/proc/append_sec_logs(id, log, auth_name, auth_rank)
+	for(var/datum/data/record/R in security)
+		if(R.fields["id"] == id)
+			var/timestamp = "\[[STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]\]"
+			var/log_text = "<b>[timestamp]</b> [log]"
+			log_text = replacetext(log_text, "%%RANK%%", "<u>[auth_rank]</u>")
+			log_text = replacetext(log_text, "%%AUTH%%", "<u>[auth_name]</u>")
+			log_text = replacetext(log_text, "%%GEN_AUTH%%", "<u>[auth_name] ([auth_rank])</u>")
+			R.fields["actions_logs"] += log_text
 // BLUEMOON ADD END
 
 /datum/datacore/proc/manifest()
@@ -355,6 +371,11 @@
 		S.fields["ma_crim"]		= list()
 		S.fields["ma_crim_d"]	= "No major crime convictions."
 		S.fields["notes"]		= prefs.security_records || "No notes."
+		// BLUEMOON ADD START - логи
+		S.fields["actions_logs"] = list(
+			"<u>[GLOB.current_date_string] | [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)] ЗАПИСЬ НАЧАТА. СУБЪЕКТ - [H.real_name] | [assignment] | [id];</u><br>"
+			)
+		// BLUEMOON ADD END
 		LAZYINITLIST(S.fields["comments"])
 		security += S
 

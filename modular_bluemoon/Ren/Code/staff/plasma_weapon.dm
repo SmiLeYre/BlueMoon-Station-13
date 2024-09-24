@@ -25,7 +25,7 @@
 	armour_penetration = 35
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/energy_sword
-	light_color = "#e49b0f"
+	light_color = "#FF3900"
 	var/safe = 0
 
 	unique_reskin = list(
@@ -97,7 +97,7 @@
 	hitsound = "swing_hit"
 	var/hitsound_on = 'modular_bluemoon/Ren/Sound/4.111.ogg'
 	armour_penetration = 70
-	light_color = "#e49b0f"
+	light_color = "#FF3900"
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	max_integrity = 200
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 70)
@@ -117,7 +117,7 @@
 	unique_reskin = list(
 		"12000 kelvin" = list(icon_state_on = "plasma_scythe_blue_on", light_color = "#20214f" ),
 		"30000 kelvin" = list(icon_state_on = "plasma_scythe_green_on", light_color = "#1c542d" ),
-		"axe" = list(icon_state_on = "plasma_axe_on", light_color = "#e49b0f", icon_state = "plasma_axe" )
+		"axe" = list(icon_state_on = "plasma_axe_on", light_color = "#FF3900", icon_state = "plasma_axe" )
 	)
 
 /obj/effect/temp_visual/scythe_block

@@ -493,7 +493,7 @@
 	if(I.tool_behaviour == TOOL_WRENCH)
 		if(!user.canUseTopic(src, BE_CLOSE))
 			return
-		if(stat & BROKEN)
+		if(machine_stat & BROKEN)
 			to_chat(user, span_warning("Механизмы сборки-разборки критически повреждены! Остаётся только доломать..."))
 			return
 		var/turf/deconstruct_turf = get_turf(src)
@@ -556,13 +556,13 @@
 
 /obj/machinery/mailmat/update_appearance(updates=ALL)
 	. = ..()
-	if(stat & BROKEN)
+	if(machine_stat & BROKEN)
 		set_light(0)
 		return
 	set_light(powered() ? MINIMUM_USEFUL_LIGHT_RANGE : 0)
 
 /obj/machinery/mailmat/update_icon_state()
-	if(stat & BROKEN)
+	if(machine_stat & BROKEN)
 		icon_state = "[initial(icon_state)]-broken"
 		return ..()
 	icon_state = "[initial(icon_state)][powered() ? null : "-off"]"

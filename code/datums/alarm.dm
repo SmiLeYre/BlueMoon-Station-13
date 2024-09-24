@@ -77,7 +77,7 @@
 
 ///Exists so we can request that the alarms from an area are cleared, even if our source atom is no longer in that area
 /datum/alarm_handler/proc/clear_alarm_from_area(alarm_type, area/our_area)
-	if (our_area.area_flags & NO_ALERTS)
+	if (!our_area || our_area.area_flags & NO_ALERTS) // BLUEMOON EDIT - рантаймы
 		return FALSE
 
 	var/list/existing_alarms = sent_alarms[alarm_type]

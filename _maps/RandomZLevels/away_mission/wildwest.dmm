@@ -56,13 +56,24 @@
 /turf/open/floor/circuit/green/off,
 /area/awaymission/wildwest/vault)
 "ap" = (
-/obj/item/nullrod/claymore/glowing,
+/obj/item/singularityhammer,
 /turf/open/floor/circuit/green/off,
 /area/awaymission/wildwest/vault)
 "aq" = (
 /obj/structure/destructible/cult/pylon,
 /turf/open/floor/circuit/green/off,
 /area/awaymission/wildwest/vault)
+"au" = (
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"ay" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/ammo_box/g45l,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
 "az" = (
 /turf/open/floor/plating/ironsand{
 	icon_state = "ironsand1"
@@ -139,6 +150,14 @@
 	icon_state = "ironsand1"
 	},
 /area/awaymission/wildwest/mines)
+"aT" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "fwindow"
+	},
+/obj/structure/flora/ausbushes/palebush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
 "aV" = (
 /turf/closed/indestructible/rock,
 /area/awaymission/wildwest/refine)
@@ -199,6 +218,8 @@
 "bi" = (
 /obj/effect/mob_spawn/human/miner/rig,
 /obj/effect/mine/sound/bwoink,
+/obj/effect/mine/sound/bwoink,
+/obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/ironsand{
 	icon_state = "ironsand1"
 	},
@@ -287,10 +308,6 @@
 /obj/structure/closet/cabinet,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
-"bB" = (
-/obj/structure/bed,
-/turf/open/floor/wood,
-/area/awaymission/wildwest/mines)
 "bD" = (
 /obj/structure/table/wood,
 /turf/open/floor/wood,
@@ -317,6 +334,7 @@
 /area/awaymission/wildwest/mines)
 "bJ" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
+/obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/flour,
 /obj/item/reagent_containers/food/condiment/flour,
@@ -351,6 +369,11 @@
 /obj/item/reagent_containers/food/snacks/meat/slab/synthmeat,
 /obj/item/reagent_containers/food/snacks/meat/slab/synthmeat,
 /obj/item/reagent_containers/food/snacks/meat/slab/synthmeat,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/snacks/meat/slab/synthmeat,
+/obj/item/reagent_containers/food/snacks/meat/slab/synthmeat,
+/obj/item/reagent_containers/food/snacks/meat/slab/synthmeat,
 /turf/open/floor/plasteel/cafeteria{
 	dir = 5
 	},
@@ -377,9 +400,7 @@
 /obj/effect/spawner/structure/window/hollow/reinforced/directional{
 	dir = 8
 	},
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "bR" = (
 /obj/structure/window/reinforced{
@@ -390,9 +411,7 @@
 	icon_state = "fwindow"
 	},
 /obj/structure/grille,
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "bS" = (
 /obj/structure/window/reinforced{
@@ -407,9 +426,7 @@
 	dir = 4;
 	icon_state = "fwindow"
 	},
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "bT" = (
 /obj/structure/window/reinforced{
@@ -455,19 +472,11 @@
 	dir = 1;
 	icon_state = "fwindow"
 	},
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "bY" = (
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
-/area/awaymission/wildwest/gov)
-"bZ" = (
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand2"
-	},
+/obj/structure/flora/ausbushes,
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "ca" = (
 /obj/structure/window/reinforced{
@@ -481,14 +490,17 @@
 /obj/effect/spawner/structure/window/hollow/reinforced/directional{
 	dir = 1
 	},
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "cb" = (
 /obj/machinery/door/window,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
+"cc" = (
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/titanium/fifty,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
 "cd" = (
 /obj/effect/mob_spawn/human/cook{
 	mob_name = "Chef"
@@ -507,9 +519,7 @@
 	icon_state = "fwindow"
 	},
 /obj/structure/grille,
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "cf" = (
 /obj/structure/window/reinforced{
@@ -521,9 +531,7 @@
 	icon_state = "fwindow"
 	},
 /obj/structure/grille,
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "cg" = (
 /obj/structure/table/wood,
@@ -541,7 +549,7 @@
 /turf/open/floor/carpet,
 /area/awaymission/wildwest/mines)
 "ck" = (
-/obj/item/ammo_box/c10mm,
+/obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/carpet,
 /area/awaymission/wildwest/mines)
 "cl" = (
@@ -563,12 +571,21 @@
 /area/awaymission/wildwest/gov)
 "cp" = (
 /obj/structure/closet/secure_closet/freezer/kitchen,
+/obj/item/reagent_containers/food/snacks/breadslice/meat,
+/obj/item/reagent_containers/food/snacks/breadslice/meat,
+/obj/item/reagent_containers/food/snacks/breadslice/meat,
+/obj/item/reagent_containers/food/snacks/breadslice/meat,
+/obj/item/reagent_containers/food/snacks/breadslice/meat,
+/obj/item/reagent_containers/food/snacks/burger/fivealarm,
+/obj/item/reagent_containers/food/snacks/burger/plain,
+/obj/item/reagent_containers/food/snacks/burger/superbite,
 /turf/open/floor/plasteel/cafeteria{
 	dir = 5
 	},
 /area/awaymission/wildwest/gov)
 "cq" = (
 /obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/burger/plain,
 /turf/open/floor/plasteel/cafeteria{
 	dir = 5
 	},
@@ -582,6 +599,9 @@
 /area/awaymission/wildwest/gov)
 "cs" = (
 /obj/structure/closet/secure_closet/freezer/fridge,
+/obj/item/reagent_containers/food/drinks/bottle/strawberryjuice,
+/obj/item/reagent_containers/food/drinks/bottle/strawberryjuice,
+/obj/item/reagent_containers/food/drinks/bottle/strawberryjuice,
 /turf/open/floor/plasteel/cafeteria{
 	dir = 5
 	},
@@ -608,11 +628,11 @@
 /area/awaymission/wildwest/gov)
 "cx" = (
 /obj/item/storage/bag/money,
-/turf/open/floor/carpet,
+/turf/open/floor/carpet/royalblack,
 /area/awaymission/wildwest/gov)
 "cy" = (
 /obj/structure/chair/wood/wings,
-/turf/open/floor/wood,
+/turf/open/floor/carpet/royalblack,
 /area/awaymission/wildwest/gov)
 "cz" = (
 /turf/open/floor/plasteel/cafeteria{
@@ -624,32 +644,32 @@
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
 "cB" = (
-/obj/effect/mine/gas/plasma,
-/obj/item/ammo_box/c10mm,
+/obj/effect/mob_spawn/human/corpse/inteq_dead,
+/obj/effect/decal/cleanable/blood,
 /turf/open/floor/plating/ironsand{
 	icon_state = "ironsand1"
 	},
 /area/awaymission/wildwest/mines)
 "cC" = (
 /obj/structure/table/wood,
-/obj/item/storage/toolbox/electrical,
-/turf/open/floor/wood,
+/obj/item/storage/toolbox/plastitanium/gold_real,
+/turf/open/indestructible/gold,
 /area/awaymission/wildwest/gov)
 "cD" = (
 /obj/structure/table/wood,
-/obj/item/clothing/gloves/color/yellow,
-/obj/item/multitool,
-/turf/open/floor/wood,
+/obj/item/reagent_containers/food/drinks/trophy/gold_cup,
+/turf/open/indestructible/gold,
 /area/awaymission/wildwest/gov)
 "cE" = (
 /obj/structure/chair/wood/normal{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/royalblack,
 /area/awaymission/wildwest/gov)
 "cF" = (
 /obj/structure/table/wood,
-/turf/open/floor/wood,
+/obj/item/reagent_containers/food/snacks/burger/fivealarm,
+/turf/open/floor/carpet/royalblack,
 /area/awaymission/wildwest/gov)
 "cG" = (
 /mob/living/simple_animal/hostile/netherworld,
@@ -683,24 +703,14 @@
 /area/awaymission/wildwest/mines)
 "cL" = (
 /obj/structure/table/wood,
-/obj/item/dualsaber,
-/turf/open/floor/wood,
+/turf/open/indestructible/gold,
 /area/awaymission/wildwest/gov)
 "cM" = (
-/obj/effect/mob_spawn/human/miner/rig,
-/turf/open/floor/wood,
+/turf/open/indestructible/gold,
 /area/awaymission/wildwest/gov)
 "cN" = (
 /mob/living/simple_animal/hostile/netherworld,
 /turf/open/floor/wood,
-/area/awaymission/wildwest/gov)
-"cO" = (
-/obj/structure/mineral_door/wood,
-/turf/open/floor/wood,
-/area/awaymission/wildwest/gov)
-"cP" = (
-/mob/living/simple_animal/hostile/netherworld,
-/turf/open/floor/carpet,
 /area/awaymission/wildwest/gov)
 "cQ" = (
 /obj/structure/window/reinforced{
@@ -715,15 +725,13 @@
 /obj/structure/window/reinforced{
 	icon_state = "fwindow"
 	},
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "cR" = (
 /obj/structure/chair/wood/wings{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/royalblack,
 /area/awaymission/wildwest/gov)
 "cS" = (
 /obj/structure/window/reinforced{
@@ -738,9 +746,7 @@
 /obj/structure/window/reinforced{
 	icon_state = "fwindow"
 	},
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "cT" = (
 /obj/effect/decal/remains/human,
@@ -749,7 +755,7 @@
 /area/awaymission/wildwest/refine)
 "cU" = (
 /obj/item/paper/fluff/awaymissions/wildwest/journal/page1,
-/turf/open/floor/carpet,
+/turf/open/floor/carpet/royalblack,
 /area/awaymission/wildwest/gov)
 "cV" = (
 /obj/structure/table/wood,
@@ -808,9 +814,8 @@
 /obj/effect/spawner/structure/window/hollow/reinforced/directional{
 	dir = 1
 	},
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/obj/structure/grille,
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "dd" = (
 /obj/structure/table/wood,
@@ -847,15 +852,14 @@
 	dir = 1;
 	icon_state = "fwindow"
 	},
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "dh" = (
 /obj/effect/mob_spawn/human/corpse/syndicatecommando{
 	mob_name = "InteQ Commando"
 	},
-/turf/open/floor/carpet,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/carpet/royalblack,
 /area/awaymission/wildwest/gov)
 "dj" = (
 /obj/effect/spawner/structure/window,
@@ -866,6 +870,12 @@
 	dir = 4
 	},
 /turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"dl" = (
+/obj/structure/streetdecor/lamp,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
 /area/awaymission/wildwest/mines)
 "dm" = (
 /obj/structure/mineral_door/wood,
@@ -886,11 +896,6 @@
 	},
 /turf/open/space,
 /area/space/nearstation)
-"dp" = (
-/obj/structure/bed,
-/obj/item/bedsheet/brown,
-/turf/open/floor/wood,
-/area/awaymission/wildwest/gov)
 "dq" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/bottle/wine,
@@ -899,11 +904,7 @@
 	},
 /area/awaymission/wildwest/gov)
 "dr" = (
-/obj/structure/table/wood,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
-/obj/item/reagent_containers/food/drinks/drinkingglass,
+/obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel/cafeteria{
 	dir = 5
 	},
@@ -925,61 +926,26 @@
 /obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
-"dv" = (
-/obj/effect/mine/gas/plasma,
-/obj/item/ammo_box/c10mm,
-/turf/open/floor/wood,
-/area/awaymission/wildwest/mines)
 "dw" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/open/floor/plating/ironsand{
 	icon_state = "ironsand1"
 	},
 /area/awaymission/wildwest/mines)
-"dx" = (
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand4"
-	},
-/area/awaymission/wildwest/gov)
 "dy" = (
 /obj/effect/mob_spawn/human/miner/rig,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
-"dz" = (
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand12"
-	},
-/area/awaymission/wildwest/gov)
-"dA" = (
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand14"
-	},
-/area/awaymission/wildwest/gov)
 "dB" = (
-/obj/structure/toilet,
-/mob/living/simple_animal/hostile/netherworld,
-/turf/open/floor/plasteel/white,
-/area/awaymission/wildwest/gov)
-"dC" = (
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand9"
+/obj/structure/bookcase{
+	icon_state = "book-5"
 	},
-/area/awaymission/wildwest/gov)
-"dD" = (
-/obj/structure/mineral_door/wood,
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/turf/open/floor/carpet/royalblack,
 /area/awaymission/wildwest/gov)
 "dE" = (
 /obj/structure/closet/crate/large,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
-"dF" = (
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand7"
-	},
-/area/awaymission/wildwest/gov)
 "dG" = (
 /obj/machinery/washing_machine,
 /turf/open/floor/plasteel/cafeteria{
@@ -988,8 +954,9 @@
 /area/awaymission/wildwest/mines)
 "dH" = (
 /obj/structure/bed,
-/obj/item/bedsheet/blue,
-/turf/open/floor/wood,
+/obj/effect/spawner/lootdrop/bedsheet,
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/carpet/purple,
 /area/awaymission/wildwest/mines)
 "dI" = (
 /obj/effect/decal/cleanable/blood/gibs/body{
@@ -1011,7 +978,7 @@
 /area/awaymission/wildwest/mines)
 "dM" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/security/telescreen/entertainment,
+/obj/item/reagent_containers/food/drinks/coffee,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
 "dN" = (
@@ -1049,9 +1016,7 @@
 	dir = 8;
 	icon_state = "fwindow"
 	},
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "dS" = (
 /obj/structure/window/reinforced{
@@ -1062,9 +1027,7 @@
 	icon_state = "fwindow"
 	},
 /obj/structure/grille,
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "dT" = (
 /obj/structure/window/reinforced{
@@ -1079,16 +1042,12 @@
 	dir = 4;
 	icon_state = "fwindow"
 	},
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "dU" = (
 /obj/machinery/door/airlock/sandstone,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
+/turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "dV" = (
 /obj/machinery/shower{
@@ -1198,7 +1157,8 @@
 	},
 /area/awaymission/wildwest/mines)
 "ek" = (
-/obj/effect/mine/gas/plasma,
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/decal/cleanable/blood/tracks,
 /turf/open/floor/plasteel/cafeteria{
 	dir = 5
 	},
@@ -1222,6 +1182,7 @@
 /area/awaymission/wildwest/mines)
 "eq" = (
 /obj/item/gun/ballistic/shotgun,
+/obj/structure/closet/crate/large,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
 "er" = (
@@ -1275,21 +1236,14 @@
 	},
 /area/awaymission/wildwest/gov)
 "eC" = (
-/obj/structure/chair/comfy/brown,
+/obj/structure/chair/sofa/right/brown,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
-"eE" = (
-/obj/structure/bed,
-/obj/item/bedsheet/blue,
-/obj/item/gun/ballistic,
-/turf/open/floor/wood,
-/area/awaymission/wildwest/mines)
-"eF" = (
-/obj/effect/decal/cleanable/blood,
-/obj/structure/bed,
-/obj/item/bedsheet/blue,
-/turf/open/floor/wood,
-/area/awaymission/wildwest/mines)
+"eD" = (
+/obj/structure/closet/crate,
+/obj/item/ammo_box/g45l,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
 "eG" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/drinks/coffee,
@@ -1325,6 +1279,10 @@
 "eM" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /turf/closed/wall/mineral/sandstone,
+/area/awaymission/wildwest/mines)
+"eN" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/carpet/royalblack,
 /area/awaymission/wildwest/mines)
 "eO" = (
 /obj/structure/window/reinforced,
@@ -1394,6 +1352,9 @@
 /obj/effect/decal/cleanable/blood/gibs/body{
 	icon_state = "gibup1"
 	},
+/obj/structure/chair/comfy/beige{
+	dir = 1
+	},
 /turf/open/floor/carpet,
 /area/awaymission/wildwest/mines)
 "eX" = (
@@ -1445,6 +1406,10 @@
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/awaymission/wildwest/mines)
+"fc" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/turf/open/floor/carpet/purple,
+/area/awaymission/wildwest/mines)
 "fd" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -1452,10 +1417,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/wildwest/refine)
-"fe" = (
-/obj/structure/sink,
-/turf/open/floor/wood,
-/area/awaymission/wildwest/mines)
 "ff" = (
 /obj/structure/mecha_wreckage/durand{
 	anchored = 1
@@ -1516,11 +1477,15 @@
 	icon_state = "ironsand1"
 	},
 /area/awaymission/wildwest/mines)
-"fl" = (
-/obj/structure/mecha_wreckage/ripley/deathripley{
-	anchored = 1
+"fm" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
 	},
-/turf/open/floor/wood,
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel/cafeteria,
 /area/awaymission/wildwest/mines)
 "fn" = (
 /obj/effect/decal/cleanable/blood/splatter,
@@ -1639,12 +1604,6 @@
 /obj/effect/spawner/structure/window/hollow/reinforced/directional,
 /turf/open/floor/plasteel,
 /area/awaymission/wildwest/refine)
-"fB" = (
-/obj/effect/mine/gas/plasma,
-/turf/open/floor/plating/ironsand{
-	icon_state = "ironsand1"
-	},
-/area/awaymission/wildwest/mines)
 "fC" = (
 /obj/effect/decal/cleanable/blood/gibs/body{
 	icon_state = "gibdown1"
@@ -1671,19 +1630,21 @@
 /obj/structure/chair/office/dark{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/turf/open/floor/carpet/royalblack,
 /area/awaymission/wildwest/mines)
 "fG" = (
 /obj/structure/chair/office/light{
 	dir = 4
 	},
-/turf/open/floor/wood,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/turf/open/floor/carpet/purple,
 /area/awaymission/wildwest/mines)
 "fH" = (
 /obj/structure/chair/office/light{
 	dir = 8
 	},
-/turf/open/floor/wood,
+/obj/effect/mob_spawn/human/corpse/inteq_dead,
+/turf/open/floor/carpet/purple,
 /area/awaymission/wildwest/mines)
 "fI" = (
 /obj/effect/decal/cleanable/blood/gibs/body{
@@ -1706,6 +1667,7 @@
 	dir = 8;
 	icon_state = "fwindow"
 	},
+/obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "fK" = (
@@ -1726,6 +1688,7 @@
 	dir = 1;
 	icon_state = "fwindow"
 	},
+/obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "fN" = (
@@ -1737,7 +1700,7 @@
 /turf/open/space,
 /area/space/nearstation)
 "fO" = (
-/mob/living/simple_animal/hostile/syndicate,
+/mob/living/simple_animal/hostile/syndicate/ranged/space/anthro/cat,
 /turf/open/floor/plasteel,
 /area/awaymission/wildwest/refine)
 "fP" = (
@@ -1758,12 +1721,14 @@
 "fR" = (
 /obj/effect/mine/sound/bwoink,
 /obj/effect/mob_spawn/human/miner/rig,
-/turf/open/floor/wood,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
 /area/awaymission/wildwest/mines)
 "fS" = (
 /obj/structure/table/wood,
 /obj/item/gun/ballistic/shotgun,
-/turf/open/floor/wood,
+/turf/open/floor/carpet/royalblack,
 /area/awaymission/wildwest/mines)
 "fT" = (
 /obj/structure/chair/wood/normal,
@@ -1811,6 +1776,7 @@
 "fY" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/effect/decal/cleanable/blood,
+/obj/structure/closet/crate/bin,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
 "fZ" = (
@@ -1848,12 +1814,13 @@
 /area/awaymission/wildwest/refine)
 "gf" = (
 /obj/effect/decal/cleanable/cobweb,
+/obj/item/ammo_box/c38/lethal,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
 "gg" = (
 /obj/structure/table/wood,
 /obj/item/gun/ballistic/revolver/russian,
-/turf/open/floor/wood,
+/turf/open/floor/carpet/purple,
 /area/awaymission/wildwest/mines)
 "gh" = (
 /obj/structure/chair/wood/normal{
@@ -1876,6 +1843,7 @@
 /area/awaymission/wildwest/gov)
 "gj" = (
 /obj/effect/decal/cleanable/blood/gibs/core,
+/obj/item/ammo_casing/c9mm,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
 "gk" = (
@@ -1884,6 +1852,12 @@
 /area/awaymission/wildwest/mines)
 "gl" = (
 /obj/machinery/photocopier,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"gm" = (
+/obj/structure/table,
+/obj/item/poster/random_contraband,
+/obj/item/ammo_box/shotgun/loaded/buckshot,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
 "gn" = (
@@ -1897,14 +1871,23 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
+/obj/structure/flora/ausbushes/pointybush,
 /turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
+"gp" = (
+/obj/structure/toilet,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
 "gq" = (
 /obj/effect/decal/cleanable/blood/gibs/up,
+/obj/item/ammo_box/c38/lethal,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
 "gr" = (
 /obj/effect/decal/cleanable/blood/gibs/down,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
 "gs" = (
@@ -1935,10 +1918,7 @@
 /area/awaymission/wildwest/mines)
 "gv" = (
 /obj/item/hatchet,
-/turf/open/floor/wood,
-/area/awaymission/wildwest/mines)
-"gw" = (
-/obj/item/gun/ballistic/automatic/pistol,
+/obj/item/ammo_casing/c9mm,
 /turf/open/floor/wood,
 /area/awaymission/wildwest/mines)
 "gx" = (
@@ -2010,6 +1990,7 @@
 	icon_state = "fwindow"
 	},
 /obj/structure/window/reinforced,
+/obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "gE" = (
@@ -2021,6 +2002,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced,
+/obj/structure/flora/ausbushes/sparsegrass,
 /turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
 "gG" = (
@@ -2051,12 +2033,19 @@
 /turf/open/floor/mineral/titanium/yellow,
 /area/awaymission/wildwest/refine)
 "gP" = (
-/obj/structure/chair,
+/obj/structure/chair/comfy/shuttle,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
 /turf/open/floor/mineral/titanium/yellow,
 /area/awaymission/wildwest/refine)
 "gQ" = (
 /turf/open/floor/mineral/titanium/yellow,
 /area/awaymission/wildwest/refine)
+"gR" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/donut,
+/obj/item/reagent_containers/food/snacks/pie/baklava,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
 "gS" = (
 /turf/closed/wall/mineral/titanium/nodiagonal,
 /area/awaymission/wildwest/refine)
@@ -2088,18 +2077,1395 @@
 	icon_state = "ironsand1"
 	},
 /area/awaymission/wildwest/mines)
+"hd" = (
+/obj/machinery/computer/security/wooden_tv,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"he" = (
+/obj/effect/mine/sound/bwoink,
+/obj/structure/mecha_wreckage/gygax{
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"hg" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/baconlettucetomato,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"hh" = (
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"ho" = (
+/obj/structure/flora/ausbushes/pointybush,
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"hw" = (
+/obj/effect/decal/remains/human,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"hy" = (
+/obj/item/pickaxe/plasteel,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"hA" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/ammo_box/g45l,
+/obj/item/clothing/head/cowboyhat,
+/obj/item/clothing/neck/mantle/cowboy,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"hE" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/space/anthro/cat,
+/turf/open/floor/plasteel/cult,
+/area/awaymission/wildwest/vault)
+"hI" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/clothing/head/cowboyhat,
+/obj/item/clothing/neck/mantle/cowboy,
+/obj/item/ammo_box/a357,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"hJ" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"hK" = (
+/obj/structure/mineral_door/gold,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"hO" = (
+/obj/structure/table,
+/obj/item/flashlight/lamp/green,
+/turf/open/floor/carpet/green,
+/area/awaymission/wildwest/mines)
+"hP" = (
+/obj/machinery/vending/snack,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"hU" = (
+/obj/effect/decal/cleanable/supplypod_rubble,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"hW" = (
+/obj/structure/closet/crate/bin,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"hX" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand7"
+	},
+/area/awaymission/wildwest/mines)
+"if" = (
+/obj/item/ammo_box/c10mm,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"ij" = (
+/obj/structure/table/wood,
+/obj/machinery/microwave,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"io" = (
+/obj/structure/closet/crate/large,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"ip" = (
+/obj/effect/mine/sound/bwoink,
+/obj/structure/mineral_door/wood,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"iy" = (
+/obj/structure/holosign/barrier/atmos,
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"iD" = (
+/obj/structure/table/wood,
+/obj/item/slime_cookie/gold,
+/obj/item/reagent_containers/food/drinks/bottle/wine,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"iF" = (
+/obj/structure/rack/shelf,
+/obj/item/flashlight/flare,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"iM" = (
+/obj/effect/decal/cleanable/supplypod_rubble,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"iN" = (
+/obj/structure/closet/crate/critter,
+/mob/living/simple_animal/cow,
+/mob/living/simple_animal/cow,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"iT" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/head/cowboyhat,
+/obj/item/clothing/shoes/cowboyboots,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"iW" = (
+/obj/structure/flora/ausbushes/sunnybush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"iZ" = (
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/mines)
+"ja" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/sake,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"je" = (
+/obj/structure/closet/crate{
+	icon_state = "crateopen"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"jh" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/hcider,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"ji" = (
+/obj/structure/closet/crate/large,
+/obj/item/taperecorder,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"jj" = (
+/obj/structure/bed,
+/obj/effect/spawner/lootdrop/bedsheet,
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/carpet/green,
+/area/awaymission/wildwest/mines)
+"jl" = (
+/obj/structure/chair/wood/wings{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"jo" = (
+/obj/structure/closet/crate/grave,
+/obj/item/clothing/head/helmet/skull,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"jr" = (
+/obj/structure/table/wood,
+/obj/machinery/reagentgrinder,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"jw" = (
+/obj/structure/table/wood,
+/obj/item/phone,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"jx" = (
+/obj/effect/spawner/structure/window,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/gov)
+"jF" = (
+/obj/item/seeds/eggplant,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"jL" = (
+/obj/structure/closet/body_bag,
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand2"
+	},
+/area/awaymission/wildwest/mines)
+"jO" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/beer,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/mines)
+"jP" = (
+/obj/structure/flora/ausbushes/grassybush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"jV" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"jW" = (
+/obj/effect/decal/remains/xeno,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"kb" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibup1"
+	},
+/obj/structure/closet/cardboard,
+/obj/item/reagent_containers/food/snacks/beans,
+/obj/item/flashlight/flare,
+/obj/item/reagent_containers/food/snacks/beans,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"km" = (
+/obj/structure/closet/crate/grave,
+/obj/item/clothing/neck/mantle/cowboy,
+/obj/item/ammo_box/g45l,
+/obj/item/clothing/head/cowboyhat,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand4"
+	},
+/area/awaymission/wildwest/mines)
+"kp" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"kv" = (
+/obj/structure/chair/stool,
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"kz" = (
+/obj/effect/decal/remains/human,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"kC" = (
+/obj/structure/flora/rock,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"kN" = (
+/obj/structure/closet/crate/grave,
+/obj/item/clothing/accessory/skull_patch,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"kR" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/structure/chair/wood/normal{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/corpse/russian/ranged,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"kV" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"li" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"ls" = (
+/obj/machinery/washing_machine,
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"lu" = (
+/obj/item/instrument/violin/golden,
+/obj/structure/table/wood,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"lz" = (
+/obj/structure/sign/poster/contraband/random,
+/turf/closed/wall/mineral/sandstone,
+/area/awaymission/wildwest/mines)
+"lF" = (
+/obj/structure/table/wood,
+/obj/item/book/manual/wiki/medicine,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"lH" = (
+/obj/structure/table/wood,
+/obj/item/ammo_box/c38,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"lL" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"lN" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/amaretto,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"lR" = (
+/obj/structure/window/reinforced{
+	icon_state = "fwindow"
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"lS" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/blazaam,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"lU" = (
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/metal,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"mc" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"mi" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/structure/barricade/sandbags,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"ml" = (
+/obj/structure/fans/tiny,
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/awaymission/wildwest/refine)
+"mm" = (
+/obj/structure/closet/body_bag,
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand9"
+	},
+/area/awaymission/wildwest/mines)
+"mn" = (
+/obj/structure/rack/shelf,
+/obj/item/storage/toolbox/mechanical/old,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"mo" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"mu" = (
+/obj/item/dualsaber,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/gov)
+"mx" = (
+/obj/structure/closet/crate/large,
+/obj/item/target/syndicate,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"my" = (
+/turf/open/floor/carpet/green,
+/area/awaymission/wildwest/mines)
+"mz" = (
+/obj/structure/mecha_wreckage/durand{
+	anchored = 1
+	},
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"mC" = (
+/obj/effect/mob_spawn/human/corpse/inteq_dead,
+/turf/open/floor/circuit/green/off,
+/area/awaymission/wildwest/vault)
+"mE" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/structure/mineral_door/wood,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"mH" = (
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/titanium,
+/obj/item/stack/sheet/mineral/titanium,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"mI" = (
+/obj/item/gun/ballistic/automatic/pistol,
+/obj/effect/mob_spawn/human/corpse/inteq_dead,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"mK" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"mV" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"nc" = (
+/obj/effect/mob_spawn/human/miner/rig,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"nh" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"nj" = (
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"nk" = (
+/obj/structure/closet/body_bag,
+/obj/effect/mob_spawn/human/corpse/inteq_dead,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand4"
+	},
+/area/awaymission/wildwest/mines)
+"nl" = (
+/obj/item/instrument/harmonica,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"nn" = (
+/obj/structure/closet/crate/trashcart,
+/obj/item/trash/chips,
+/obj/item/trash/can,
+/obj/item/trash/candy,
+/obj/item/trash/pistachios,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"no" = (
+/obj/item/instrument/banjo,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"nt" = (
+/obj/structure/bed,
+/obj/effect/spawner/lootdrop/bedsheet,
+/turf/open/floor/carpet/green,
+/area/awaymission/wildwest/mines)
+"nx" = (
+/obj/structure/rack/shelf,
+/obj/item/gunpart/shotgunbarrel,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"nz" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"nB" = (
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/bananium,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"nD" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"nG" = (
+/obj/structure/closet/crate/large,
+/obj/item/wirecutters,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"nJ" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/wildwest/mines)
+"nM" = (
+/obj/structure/oldtrap/razor_wire/industrial,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"nQ" = (
+/obj/structure/closet/crate{
+	icon_state = "crateopen"
+	},
+/turf/open/floor/wood,
+/area/awaymission/wildwest/gov)
+"nR" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/grenadine,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"nS" = (
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"nU" = (
+/obj/structure/oldtrap/razor_wire/industrial,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"nX" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "fwindow"
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/awaymission/wildwest/refine)
+"oa" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibdown1"
+	},
+/obj/structure/rack/shelf,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"oe" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/store/bread/meat,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"og" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/ammo_box/c10mm,
+/turf/open/floor/carpet/green,
+/area/awaymission/wildwest/mines)
+"oh" = (
+/obj/machinery/computer{
+	dir = 1
+	},
+/turf/open/floor/mineral/titanium/yellow,
+/area/awaymission/wildwest/refine)
+"ol" = (
+/obj/structure/closet/crate/grave,
+/obj/item/clothing/mask/bandana/skull,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"oo" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/beer/almost_empty,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"or" = (
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/wood/mushroom,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"ou" = (
+/obj/item/gun/ballistic/revolver/detective,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
 "ov" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/space/anthro/cat,
 /turf/open/space,
 /area/space)
+"oA" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/structure/chair/wood/normal{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/wildwest/mines)
+"oK" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/item/reagent_containers/food/drinks/beer,
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/wildwest/mines)
+"oM" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/ammo_box/g45l/lethal,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"pb" = (
+/obj/structure/table,
+/turf/open/floor/carpet/green,
+/area/awaymission/wildwest/mines)
+"pf" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/patron,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"pj" = (
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/machinery/door/airlock/vault,
+/obj/structure/barricade/wooden/crude,
+/turf/open/floor/engine/cult,
+/area/awaymission/wildwest/vaultdoors)
+"pp" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/gov)
+"pq" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/mob_spawn/human/doctor{
+	mob_name = "Doctor Mugabee"
+	},
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/wildwest/mines)
+"ps" = (
+/mob/living/simple_animal/hostile/gigachad_inteq,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"pv" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/beer,
+/turf/open/floor/carpet/purple,
+/area/awaymission/wildwest/mines)
+"pw" = (
+/obj/structure/window/reinforced,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"py" = (
+/obj/structure/rack/shelf,
+/obj/item/ammo_box/c38/lethal,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"pz" = (
+/mob/living/simple_animal/hostile/syndicate/melee,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"pB" = (
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand14"
+	},
+/area/awaymission/wildwest/mines)
 "pD" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /turf/open/floor/plasteel,
 /area/awaymission/wildwest/refine)
+"pF" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/rock,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
 "pR" = (
 /turf/open/space/basic,
 /area/space)
+"pX" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"qd" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"qk" = (
+/obj/structure/bed,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/spawner/lootdrop/bedsheet,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"ql" = (
+/turf/open/floor/carpet/purple,
+/area/awaymission/wildwest/mines)
+"qx" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/pointybush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"qA" = (
+/obj/structure/mirror,
+/turf/closed/wall/mineral/sandstone,
+/area/awaymission/wildwest/mines)
+"qF" = (
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"qH" = (
+/obj/effect/decal/cleanable/vomit,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"qN" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibup1"
+	},
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/gov)
+"qQ" = (
+/obj/structure/closet/crate/large,
+/obj/item/storage/fancy/ringbox,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"qY" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"rg" = (
+/obj/structure/streetdecor/lamp,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"ri" = (
+/obj/structure/mopbucket,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"rl" = (
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand4"
+	},
+/area/awaymission/wildwest/mines)
+"rm" = (
+/obj/structure/flora/ausbushes/palebush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"rn" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"rp" = (
+/obj/machinery/vending/dinnerware,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"rq" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/structure/barricade/sandbags,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"ru" = (
+/obj/structure/closet/crate/large,
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/gold,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"ry" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/strawberryjuice,
+/obj/item/reagent_containers/food/snacks/burger/superbite,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/gov)
+"rM" = (
+/obj/structure/window/reinforced{
+	dir = 8;
+	icon_state = "fwindow"
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"rQ" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/suit/blackredgold,
+/obj/item/clothing/mask/bandana/gold,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"rS" = (
+/obj/structure/closet/crate/large,
+/obj/item/soap,
+/obj/item/soap,
+/obj/item/soap,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"rT" = (
+/obj/item/gun/ballistic/revolver/russian,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"sa" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"sk" = (
+/obj/item/clothing/shoes/cowboyboots,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"sn" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/ausbushes/reedbush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"sy" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/gun/ballistic/revolver/golden,
+/obj/item/clothing/neck/mantle/cowboy,
+/obj/item/gun/ballistic/derringer/gold,
+/obj/item/clothing/accessory/medal/gold,
+/obj/item/lighter/gold,
+/obj/item/ammo_box/c38,
+/obj/item/ammo_box/a357,
+/obj/item/ammo_box/a357,
+/turf/open/indestructible/gold,
+/area/awaymission/wildwest/mines)
+"sz" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/structure/mecha_wreckage/ripley/deathripley{
+	anchored = 1
+	},
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"sA" = (
+/obj/structure/rack/shelf,
+/obj/item/ammo_box/c38,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"sE" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibup1"
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/structure/mineral_door/wood,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"sU" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/structure/rack/shelf,
+/obj/item/ammo_box/g45l/lethal,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"sW" = (
+/obj/structure/ore_box,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand2"
+	},
+/area/awaymission/wildwest/mines)
+"sX" = (
+/obj/structure/closet/crate{
+	icon_state = "crateopen"
+	},
+/obj/item/storage/bag/money,
+/obj/item/storage/bag/money,
+/obj/item/storage/bag/money,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"tf" = (
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"tg" = (
+/obj/structure/fans/tiny,
+/turf/open/floor/plating{
+	icon_state = "platingdmg1"
+	},
+/area/awaymission/wildwest/refine)
+"tl" = (
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"tm" = (
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/bamboo,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"tn" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibdown1"
+	},
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"tq" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibup1"
+	},
+/obj/structure/ore_box,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand9"
+	},
+/area/awaymission/wildwest/mines)
+"tr" = (
+/mob/living/simple_animal/hostile/syndicate/ranged,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"tx" = (
+/obj/structure/rack/shelf,
+/obj/item/gunpart/shotgunbarrelsawn,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"tz" = (
+/obj/structure/closet/cabinet,
+/obj/item/gun/ballistic/revolver/nagant,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"tA" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/breadslice/meat,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"tB" = (
+/obj/structure/rack/shelf,
+/obj/item/gunpart/shotgunhutningstock,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"tD" = (
+/obj/effect/mob_spawn/human/miner/rig,
+/obj/structure/chair/stool,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"tG" = (
+/obj/effect/decal/cleanable/cobweb,
+/obj/structure/rack/shelf,
+/obj/item/stack/sheet/mineral/plastitanium,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"tH" = (
+/obj/structure/table/wood,
+/obj/item/ammo_box/g45l/lethal,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/mines)
+"tK" = (
+/obj/item/ammo_box/c10mm,
+/obj/effect/mine/sound/bwoink,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"tN" = (
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"tR" = (
+/obj/item/clothing/underwear/shirt/cowboy,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"tS" = (
+/obj/structure/table/wood,
+/obj/item/stack/medical/suture/one,
+/obj/item/stack/medical/gauze,
+/obj/item/stack/medical/ointment,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"tU" = (
+/obj/effect/decal/cleanable/blood,
+/obj/machinery/vending/cigarette,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"tY" = (
+/obj/effect/mine/shrapnel,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"ua" = (
+/obj/item/ammo_casing/shotgun/buckshot,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"uf" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibdown1"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"ui" = (
+/obj/effect/decal/cleanable/ash,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"um" = (
+/obj/structure/closet/crate,
+/obj/item/storage/lockbox/loyalty,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"ut" = (
+/mob/living/simple_animal/hostile/syndicate/melee,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"uu" = (
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/titanium,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"uA" = (
+/obj/structure/table/wood,
+/obj/item/book/granter/crafting_recipe/coldcooking,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"uG" = (
+/obj/item/stack/medical/suture/one,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"uI" = (
+/obj/structure/reagent_dispensers/beerkeg,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"uQ" = (
+/obj/structure/closet/body_bag,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"uT" = (
+/obj/structure/closet/cabinet,
+/obj/item/book/manual/wiki/engineering_hacking,
+/obj/item/ammo_box/g45l,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"uU" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibdown1"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/mines)
+"uX" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibup1"
+	},
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"ve" = (
+/obj/structure/closet/crate,
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/mineral/sandstone/thirty,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"vl" = (
+/obj/effect/mob_spawn/human/doctor{
+	mob_name = "Doctor Mugabee"
+	},
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"vn" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/chilicheesefries,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"vr" = (
+/obj/structure/sink/kitchen/directional/south,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"vy" = (
+/obj/structure/chair/sofa/middle/brown,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"vA" = (
+/obj/structure/chair/sofa/middle/brown{
+	dir = 1
+	},
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"vB" = (
+/obj/structure/rack/shelf,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"vO" = (
+/obj/structure/closet/crate/large,
+/obj/item/tcgcard_binder,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"vR" = (
+/obj/structure/table,
+/obj/item/gun/ballistic,
+/turf/open/floor/carpet/green,
+/area/awaymission/wildwest/mines)
+"vU" = (
+/obj/item/seeds/ambrosia/gaia,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"vV" = (
+/obj/item/reagent_containers/food/snacks/spiderling,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"vZ" = (
+/obj/structure/closet/body_bag,
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"wb" = (
+/mob/living/simple_animal/hostile/scorpion,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"we" = (
+/obj/item/shard,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"wj" = (
+/obj/structure/flora/ausbushes/pointybush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"wl" = (
+/obj/structure/table/wood,
+/obj/item/phone,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/mines)
+"wm" = (
+/obj/structure/closet/body_bag,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand7"
+	},
+/area/awaymission/wildwest/mines)
+"wn" = (
+/obj/structure/rack/shelf,
+/obj/item/defibrillator,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"wE" = (
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"wI" = (
+/obj/structure/chair/wood/normal,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"wY" = (
+/obj/structure/bed,
+/obj/item/bedsheet/brown,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"xl" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"xv" = (
+/obj/structure/bed,
+/obj/effect/spawner/lootdrop/bedsheet,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"xw" = (
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/sandstone/thirty,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"xx" = (
+/obj/structure/closet/crate,
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/rglass,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"xA" = (
+/obj/item/hatchet,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"xF" = (
+/obj/structure/closet/crate/grave,
+/obj/item/gun/ballistic/revolver/nagant,
+/obj/item/sign/flag/ravenheart,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"xH" = (
+/obj/structure/rack/shelf,
+/obj/item/storage/toolbox/plastitanium/gold_real,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"xK" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"xL" = (
+/mob/living/simple_animal/hostile/scorpion,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand4"
+	},
+/area/awaymission/wildwest/mines)
+"xU" = (
+/obj/effect/decal/cleanable/cobweb,
+/obj/structure/rack/shelf,
+/obj/item/stack/sheet/mineral/wood/mushroom,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"yb" = (
+/obj/item/soap,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"yf" = (
+/obj/structure/window/reinforced,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/pointybush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"yg" = (
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"yi" = (
+/obj/effect/decal/cleanable/blood,
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"yj" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/flora/ausbushes/pointybush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"yk" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"ym" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/donut/jelly,
+/obj/item/reagent_containers/food/snacks/pie/pumpkinpie,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"yw" = (
+/obj/structure/ore_box,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand7"
+	},
+/area/awaymission/wildwest/mines)
+"yx" = (
+/obj/structure/chair/office/dark{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/mines)
+"yA" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/ale,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"yC" = (
+/obj/structure/table/wood,
+/obj/item/phone,
+/turf/open/floor/carpet/purple,
+/area/awaymission/wildwest/mines)
+"yG" = (
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/uranium/five,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"yK" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"yN" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/effect/spawner/lootdrop/hostile/inteq,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"yU" = (
+/obj/structure/rack/shelf,
+/obj/item/storage/toolbox/emergency/old/ancientbundle,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"yV" = (
+/obj/structure/closet/crate,
+/obj/item/storage/bag/money,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"za" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/pie/burek,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"zb" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/donut/jelly,
+/obj/item/reagent_containers/food/snacks/pie/meatpie,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"ze" = (
+/obj/structure/flora/ausbushes/reedbush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
 "zg" = (
 /obj/structure/window/reinforced{
 	icon_state = "fwindow"
@@ -2107,10 +3473,564 @@
 /obj/structure/lattice,
 /turf/open/space,
 /area/space/nearstation)
+"zh" = (
+/obj/structure/bed,
+/obj/effect/spawner/lootdrop/bedsheet,
+/obj/effect/mob_spawn/human/corpse/assistant/brainrot_infection,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"zl" = (
+/obj/structure/toilet{
+	dir = 1
+	},
+/obj/effect/mob_spawn/human/miner/rig,
+/obj/effect/decal/cleanable/blood/splats,
+/obj/effect/decal/cleanable/blood/gibs,
+/obj/effect/decal/cleanable/blood/drip,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"zq" = (
+/obj/structure/window/reinforced,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"zt" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/coffee_cup,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"zu" = (
+/obj/structure/closet/crate/trashcart,
+/obj/item/trash/chips,
+/obj/item/trash/candy,
+/obj/item/trash/chips,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"zv" = (
+/obj/item/stack/medical/bruise_pack,
+/obj/structure/table/wood,
+/obj/item/stack/medical/gauze/improvised,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"zw" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/drinks/beer,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"zI" = (
+/obj/structure/closet/crate{
+	icon_state = "crateopen"
+	},
+/obj/item/storage/bag/money,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"zN" = (
+/obj/structure/closet/secure_closet/wall,
+/obj/item/clothing/neck/mantle/cowboy,
+/obj/item/ammo_box/shotgun/loaded/buckshot,
+/turf/closed/wall/mineral/sandstone,
+/area/awaymission/wildwest/mines)
+"zP" = (
+/obj/item/flashlight/flare/torch,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"zS" = (
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/mineral/titanium/fifty,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"Ad" = (
+/obj/effect/mob_spawn/human/miner/rig,
+/obj/item/stack/medical/suture/one,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Ai" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Au" = (
+/obj/item/shovel,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Aw" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/turf/open/floor/mineral/titanium/yellow,
+/area/awaymission/wildwest/refine)
+"AF" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/obj/structure/chair/wood/normal,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"AH" = (
+/obj/effect/decal/cleanable/blood,
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"AO" = (
+/obj/structure/table/wood,
+/obj/machinery/computer/security/wooden_tv,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"AP" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/gibs,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"AT" = (
+/obj/structure/table/wood,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/mines)
+"AU" = (
+/obj/structure/table/reinforced,
+/obj/item/clothing/head/helmet/space/syndicate/blue,
+/obj/item/clothing/suit/space/syndicate/blue,
+/obj/item/tank/internals/oxygen,
+/turf/open/floor/mineral/titanium/yellow,
+/area/awaymission/wildwest/refine)
+"Bi" = (
+/obj/effect/decal/remains/xeno/larva,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Bn" = (
+/obj/structure/closet/crate/trashcart,
+/obj/item/trash/chips,
+/obj/item/trash/can,
+/obj/item/trash/intecookies,
+/obj/item/trash/pistachios,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Bp" = (
+/obj/structure/closet/crate/critter,
+/mob/living/simple_animal/cow/wisdom,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Bq" = (
+/obj/structure/rack/shelf,
+/obj/item/ammo_box/g45l/lethal,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Bx" = (
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"BC" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/effect/mob_spawn/human/corpse/damaged,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
 "BK" = (
 /obj/machinery/gateway/away,
 /turf/open/floor/circuit/green/off,
 /area/awaymission/wildwest/vault)
+"BO" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"BS" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"BV" = (
+/obj/structure/flora/ausbushes/stalkybush,
+/obj/structure/flora/tree/jungle,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"BX" = (
+/obj/structure/closet/crate/large,
+/obj/structure/closet/crate/large,
+/obj/item/storage/fancy/ringbox/diamond,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"BZ" = (
+/obj/structure/table/wood,
+/obj/item/pen/edagger,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Cc" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibup1"
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"Cd" = (
+/obj/item/clothing/underwear/shirt/cowboy/white,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Cf" = (
+/obj/structure/closet/crate,
+/obj/item/storage/secure/briefcase/cop/advtaser_box,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"Cm" = (
+/obj/structure/mineral_door/wood,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"Cr" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/mines)
+"Ct" = (
+/obj/item/clothing/underwear/shirt/cowboy/short/white,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Cw" = (
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand7"
+	},
+/area/awaymission/wildwest/mines)
+"Cx" = (
+/obj/structure/sign/plaques/golden,
+/turf/closed/wall/mineral/sandstone,
+/area/awaymission/wildwest/gov)
+"CC" = (
+/obj/structure/closet/secure_closet/freezer/meat,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"CI" = (
+/obj/item/seeds/apple,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"CK" = (
+/obj/structure/closet/cabinet,
+/obj/item/reagent_containers/food/drinks/beer,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"CL" = (
+/obj/structure/closet/crate/large,
+/obj/structure/closet/crate/large,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"CM" = (
+/obj/structure/closet/cabinet,
+/obj/item/clothing/head/cowboyhat,
+/obj/item/clothing/neck/mantle/cowboy,
+/obj/item/clothing/shoes/cowboyboots,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"CN" = (
+/obj/structure/table/wood,
+/obj/structure/desk_bell,
+/obj/machinery/door/window/brigdoor/eastright,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"CS" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibup1"
+	},
+/obj/structure/mineral_door/wood,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Dc" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibdown1"
+	},
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/gov)
+"Dj" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/turf/open/floor/circuit/green/off,
+/area/awaymission/wildwest/vault)
+"Dl" = (
+/obj/effect/decal/cleanable/blood,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Dn" = (
+/obj/structure/mineral_door/iron,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Dq" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/mineral/titanium/yellow,
+/area/awaymission/wildwest/refine)
+"Ds" = (
+/obj/structure/rack/shelf,
+/obj/item/flashlight/flare,
+/obj/item/ammo_box/c45/lethal,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Dw" = (
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/plasmaglass,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"Dz" = (
+/obj/structure/closet/crate,
+/obj/item/storage/lockbox,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"DI" = (
+/obj/structure/table,
+/obj/item/flashlight/lamp/green,
+/turf/open/floor/carpet/purple,
+/area/awaymission/wildwest/mines)
+"DT" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg2"
+	},
+/area/awaymission/wildwest/refine)
+"DY" = (
+/obj/structure/bed,
+/obj/effect/spawner/lootdrop/bedsheet,
+/obj/effect/mob_spawn/human/corpse/damaged,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Ea" = (
+/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"Eb" = (
+/obj/structure/table/wood,
+/obj/machinery/coffeemaker/impressa,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Ec" = (
+/obj/item/holosign_creator/combifan,
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"Eh" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/turf/open/floor/carpet/green,
+/area/awaymission/wildwest/mines)
+"El" = (
+/obj/structure/closet/crate/large,
+/obj/item/weldingtool,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"En" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/wine,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Eu" = (
+/obj/structure/table/wood,
+/obj/item/book/codex_gigas,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Ez" = (
+/obj/structure/closet/body_bag,
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand14"
+	},
+/area/awaymission/wildwest/mines)
+"EA" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/ammo_box/c38/lethal,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"EB" = (
+/obj/structure/rack/shelf,
+/obj/item/ammo_box/g45l,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"EF" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"EH" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/titanium/yellow,
+/area/awaymission/wildwest/refine)
+"EK" = (
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/mines)
+"EO" = (
+/obj/structure/closet/cabinet,
+/obj/item/ammo_box/c45/lethal,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"ER" = (
+/obj/structure/mineral_door/wood,
+/obj/effect/mine/sound/bwoink,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"ES" = (
+/obj/structure/rack/shelf,
+/obj/item/storage/toolbox/emergency/old,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"EY" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"EZ" = (
+/obj/structure/table/wood,
+/obj/machinery/chem_dispenser/drinks/beer/fullupgrade,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Fa" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/structure/chair/wood/normal{
+	dir = 8
+	},
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/wildwest/mines)
+"Fb" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/rum,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Ff" = (
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/abductor,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"Fh" = (
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/mineral/sandstone/thirty,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"Fm" = (
+/obj/effect/mine/sound/bwoink,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/mob_spawn/human/corpse/inteq_dead,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Fo" = (
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Fr" = (
+/obj/machinery/vending/cola/sodie,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"FB" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/benedict,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"FC" = (
+/obj/structure/rack/shelf,
+/obj/item/ammo_box/c45/lethal,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"FD" = (
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"FG" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"FR" = (
+/obj/item/ammo_box/c38,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"FS" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "fwindow"
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"FU" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/donut,
+/obj/item/reagent_containers/food/snacks/pie/cream,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"FV" = (
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/coal,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"FW" = (
+/obj/structure/chair/office/light{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/turf/open/floor/carpet/purple,
+/area/awaymission/wildwest/mines)
+"Gf" = (
+/obj/structure/rack/shelf,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"Gg" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/structure/chair/wood/normal{
+	dir = 4
+	},
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/wildwest/mines)
 "Gh" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -2118,6 +4038,318 @@
 	},
 /turf/open/floor/grass/grass0,
 /area/awaymission/wildwest/gov)
+"Gm" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibup1"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"Gn" = (
+/obj/effect/spawner/structure/window,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"Gp" = (
+/obj/structure/table,
+/obj/effect/spawner/lootdrop/space_cash,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Gy" = (
+/obj/effect/spawner/lootdrop/space_cash,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"GE" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibdown1"
+	},
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"GF" = (
+/obj/structure/window/reinforced{
+	dir = 8;
+	icon_state = "fwindow"
+	},
+/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"GG" = (
+/obj/structure/rack/shelf,
+/obj/item/gunpart/shotgunstock,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"GQ" = (
+/obj/item/crusher_trophy/golden_skull,
+/obj/structure/guncase,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"GT" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/closed/wall/mineral/sandstone,
+/area/awaymission/wildwest/mines)
+"Hi" = (
+/obj/structure/table/wood,
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/item/reagent_containers/food/snacks/meatballsub,
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/wildwest/mines)
+"Hj" = (
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Hn" = (
+/obj/structure/closet/crate/large,
+/obj/item/ammo_box/g45l,
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"Ho" = (
+/obj/structure/spider/stickyweb,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Hq" = (
+/obj/machinery/vending/cigarette,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"Hs" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibup1"
+	},
+/obj/structure/rack/shelf,
+/obj/item/flashlight/flare,
+/obj/item/gunpart/shotgunstock,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Hu" = (
+/obj/structure/flora/ausbushes/stalkybush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"Hz" = (
+/obj/structure/closet/cardboard,
+/obj/item/reagent_containers/food/snacks/beans,
+/obj/item/reagent_containers/food/snacks/beans,
+/obj/item/flashlight/flare,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"HH" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"HT" = (
+/obj/structure/chair/office/light{
+	dir = 8
+	},
+/turf/open/floor/carpet/purple,
+/area/awaymission/wildwest/mines)
+"HV" = (
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"HX" = (
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/gold,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"HY" = (
+/obj/structure/closet/cardboard,
+/obj/item/reagent_containers/food/snacks/beans,
+/obj/item/reagent_containers/food/snacks/beans,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"If" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/space/nearstation)
+"Iq" = (
+/obj/structure/closet/crate/large,
+/obj/item/fireaxe,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Ix" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/donut/jelly/slimejelly,
+/obj/item/reagent_containers/food/snacks/pie/pumpkinpie,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"IA" = (
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"IB" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/lizardwine,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"IF" = (
+/obj/machinery/vending/cola/buzz_fuzz,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"IG" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/ammo_box/a308,
+/obj/item/clothing/head/cowboyhat,
+/obj/item/clothing/neck/mantle/cowboy,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"IP" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/wildwest/mines)
+"IV" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/blood/gibs/body,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"IW" = (
+/obj/structure/table,
+/obj/item/ammo_box/c38,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"IY" = (
+/mob/living/simple_animal/banana_spider,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"IZ" = (
+/obj/structure/closet/cardboard,
+/obj/item/reagent_containers/food/snacks/beans,
+/obj/item/flashlight/flare,
+/obj/item/reagent_containers/food/snacks/beans,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Jd" = (
+/obj/structure/chair/wood/normal{
+	dir = 8
+	},
+/obj/effect/mob_spawn/human/miner/rig,
+/obj/item/ammo_casing/c9mm,
+/obj/item/gun/ballistic/revolver/russian,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Je" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Jf" = (
+/obj/structure/closet/crate/critter,
+/mob/living/simple_animal/cow,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Jg" = (
+/obj/structure/rack/shelf,
+/obj/item/gunpart/shotgunstock,
+/obj/item/ammo_box/g45l/lethal,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Jj" = (
+/obj/structure/window/reinforced{
+	dir = 4;
+	icon_state = "fwindow"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"Jo" = (
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"Jr" = (
+/obj/structure/urinal,
+/turf/closed/wall/mineral/sandstone,
+/area/awaymission/wildwest/mines)
+"Ju" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Jv" = (
+/obj/structure/chair/comfy/brown,
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"Jw" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/pie/baklava,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"JH" = (
+/obj/structure/lattice,
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/awaymission/wildwest/refine)
+"JI" = (
+/obj/structure/flora/ausbushes/fernybush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"JJ" = (
+/obj/machinery/newscaster,
+/turf/closed/wall/mineral/sandstone,
+/area/awaymission/wildwest/mines)
+"JO" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"JW" = (
+/obj/structure/closet/cabinet,
+/obj/item/gun/ballistic/shotgun,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"JY" = (
+/obj/structure/rack/shelf,
+/obj/item/gun/ballistic/revolver/r45l,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Kb" = (
+/obj/structure/closet/crate/grave,
+/obj/item/clothing/suit/armor/vest/russian_coat,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Kc" = (
+/obj/structure/mineral_door/gold,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/gov)
+"Kd" = (
+/obj/structure/rack/shelf,
+/obj/item/stack/sheet/mineral/plastitanium,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
 "Kh" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -2125,10 +4357,509 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/wildwest/refine)
-"Md" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/anthro,
+"Kl" = (
+/obj/structure/closet/body_bag,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand9"
+	},
+/area/awaymission/wildwest/mines)
+"Ko" = (
+/obj/structure/fans/tiny,
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/awaymission/wildwest/refine)
+"Kq" = (
+/obj/effect/mob_spawn/human/miner/rig,
+/obj/effect/mine/shrapnel,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Ks" = (
+/obj/structure/bed,
+/obj/effect/spawner/lootdrop/bedsheet,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Kx" = (
+/obj/structure/closet/crate/large,
+/obj/item/ammo_casing/c9mm,
 /turf/open/floor/plasteel,
 /area/awaymission/wildwest/refine)
+"Ky" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/gov)
+"KG" = (
+/obj/structure/closet/secure_closet/wall,
+/obj/item/clothing/head/cowboyhat,
+/obj/item/storage/belt/fannypack/black,
+/obj/item/ammo_box/shotgun/loaded/buckshot,
+/turf/closed/wall/mineral/sandstone,
+/area/awaymission/wildwest/mines)
+"KK" = (
+/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"KM" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/mob/living/simple_animal/hostile/syndicate,
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/wildwest/mines)
+"KN" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/effect/mine/sound/bwoink,
+/obj/structure/mineral_door/wood,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"KW" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/carrotfries,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"La" = (
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Lb" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/bottle/wine/empty,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Lc" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/donut/jelly,
+/obj/item/reagent_containers/food/snacks/pie/cream,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"Lo" = (
+/mob/living/simple_animal/hostile/netherworld,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"Lw" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/pie/blumpkinpie,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"LG" = (
+/obj/item/ammo_casing/c9mm,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"LH" = (
+/obj/structure/chair/comfy/beige{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood,
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"LI" = (
+/obj/structure/flora/ausbushes/fullgrass,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"LO" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/pie/cherrypie,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"LP" = (
+/mob/living/simple_animal/hostile/netherworld,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"LT" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/breadslice/plain,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"LU" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/coffee/type2,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"LW" = (
+/obj/item/reagent_containers/food/drinks/trophy/gold_cup,
+/obj/structure/guncase,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"LX" = (
+/obj/effect/mine/shrapnel,
+/obj/structure/mecha_wreckage/durand{
+	anchored = 1
+	},
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Mh" = (
+/obj/structure/chair/sofa/left/brown,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Mj" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibup1"
+	},
+/obj/structure/table/wood,
+/obj/item/stack/medical/suture/one,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Mt" = (
+/obj/item/clothing/head/cowboyhat,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Mu" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/breadslice/creamcheese,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Mv" = (
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand2"
+	},
+/area/awaymission/wildwest/mines)
+"Mz" = (
+/obj/structure/table/wood,
+/obj/machinery/coffeemaker/impressa,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"MB" = (
+/obj/structure/table,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"MG" = (
+/obj/structure/ore_box,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand14"
+	},
+/area/awaymission/wildwest/mines)
+"MT" = (
+/obj/structure/closet/crate,
+/obj/item/storage/toolbox/inteq/cooler,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"MU" = (
+/obj/structure/rack/shelf,
+/obj/item/stack/sheet/rglass,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"MV" = (
+/obj/machinery/vending/cola,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"MX" = (
+/obj/machinery/hydroponics/soil,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand2"
+	},
+/area/awaymission/wildwest/mines)
+"Nh" = (
+/obj/effect/mob_spawn/human/bartender,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Ni" = (
+/obj/structure/rack/shelf,
+/obj/item/gunpart/rifle308sotck,
+/obj/item/gunpart/rifle308barrel,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Nv" = (
+/obj/structure/table/wood,
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"NA" = (
+/obj/structure/rack/shelf,
+/obj/item/stack/sheet/mineral/plastitanium/fifty,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"NG" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibup1"
+	},
+/obj/effect/mob_spawn/human/corpse/assistant/brainrot_infection,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"NQ" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"NR" = (
+/obj/structure/closet/cabinet,
+/obj/item/gun/ballistic/revolver/detective,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"NT" = (
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/plasma,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"NZ" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibup1"
+	},
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Od" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"Og" = (
+/obj/structure/rack/shelf,
+/obj/item/storage/toolbox/plastitanium,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"Oi" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"Om" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/palebush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"OA" = (
+/obj/item/stack/medical/ointment,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"OC" = (
+/obj/structure/table/wood,
+/obj/item/stack/medical/suture/five,
+/obj/item/stack/medical/gauze,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"OD" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibup1"
+	},
+/turf/closed/wall/mineral/sandstone,
+/area/awaymission/wildwest/mines)
+"OF" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"OJ" = (
+/obj/item/seeds/bamboo/plasboo,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"OO" = (
+/obj/machinery/jukebox,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"OS" = (
+/obj/structure/closet/crate,
+/obj/item/storage/lockbox/weapon/temp_gun,
+/obj/item/stack/sheet/mineral/coal,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"OY" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibdown1"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"OZ" = (
+/obj/structure/chair/stool,
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Pe" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Pq" = (
+/obj/structure/rack/shelf,
+/obj/item/gun/ballistic/revolver/r45l,
+/obj/item/gunpart/shotgunstock,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Pv" = (
+/obj/structure/bed,
+/obj/effect/spawner/lootdrop/bedsheet,
+/obj/effect/mob_spawn/human/miner/rig,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Pw" = (
+/obj/structure/closet/crate/trashcart,
+/obj/item/trash/chips,
+/obj/item/trash/can,
+/obj/item/trash/candy,
+/obj/item/trash/intecookies,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Pz" = (
+/obj/structure/rack/shelf,
+/obj/item/flashlight/flare,
+/obj/item/gun/ballistic/revolver/r45l,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"PC" = (
+/mob/living/simple_animal/hostile/gigachad_inteq,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"PJ" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/structure/closet/crate/bin,
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/wildwest/mines)
+"PL" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/grassybush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"PT" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibup1"
+	},
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/wildwest/mines)
+"PU" = (
+/obj/structure/table/wood,
+/obj/item/ammo_box/g45l,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"PW" = (
+/obj/item/storage/bag/plants,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Qh" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Qi" = (
+/obj/machinery/vending/games,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Qj" = (
+/obj/machinery/vending/cola,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Qk" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/store/bread/tofu,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Ql" = (
+/obj/structure/chair/sofa/right/brown{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Qm" = (
+/obj/structure/closet/crate/large,
+/obj/item/storage/fancy/ringbox/silver,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"Qp" = (
+/obj/effect/mine/sound/bwoink,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand2"
+	},
+/area/awaymission/wildwest/mines)
+"Qt" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/gun/ballistic/revolver/r45l,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Qx" = (
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/carpet/purple,
+/area/awaymission/wildwest/mines)
+"QA" = (
+/obj/item/ammo_box/c10mm,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"QV" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"QY" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Rk" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Rm" = (
+/obj/structure/fans/tiny,
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"Rn" = (
+/obj/machinery/shower{
+	dir = 8
+	},
+/obj/item/soap/inteq,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"Rq" = (
+/obj/item/stack/medical/bruise_pack,
+/obj/structure/table/wood,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"RC" = (
+/obj/effect/mob_spawn/human/corpse/german,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"RE" = (
+/obj/structure/closet/body_bag,
+/obj/effect/mob_spawn/human/corpse/inteq_dead,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"RJ" = (
+/obj/structure/bed,
+/obj/effect/decal/cleanable/blood,
+/obj/effect/spawner/lootdrop/bedsheet,
+/obj/effect/mob_spawn/human/corpse/damaged,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
 "RN" = (
 /obj/machinery/door/airlock/external,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -2136,6 +4867,178 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/wildwest/refine)
+"Sb" = (
+/obj/structure/urinal/shit,
+/turf/closed/wall/mineral/sandstone,
+/area/awaymission/wildwest/mines)
+"Sh" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "fwindow"
+	},
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/ausbushes/grassybush,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"Sl" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/carpet/purple,
+/area/awaymission/wildwest/mines)
+"Sm" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/item/ammo_casing/shotgun/buckshot,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"So" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"Sq" = (
+/obj/structure/closet/crate/large,
+/obj/item/inducer/inteq,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Sr" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"Ss" = (
+/obj/structure/table/wood,
+/obj/machinery/door/window/brigdoor/eastright,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Sv" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibup1"
+	},
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"Sy" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"SF" = (
+/obj/structure/chair/sofa/left/brown{
+	dir = 1
+	},
+/obj/effect/decal/cleanable/blood/gibs/core,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"SG" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/structure/chair/wood/normal{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/wildwest/mines)
+"SK" = (
+/obj/effect/decal/cleanable/blood,
+/obj/structure/bed,
+/obj/effect/spawner/lootdrop/bedsheet,
+/obj/effect/mob_spawn/human/miner/rig,
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"SL" = (
+/obj/structure/table/wood,
+/obj/item/book/manual/wiki/engineering_hacking,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"SM" = (
+/obj/structure/chair/office/light{
+	dir = 4
+	},
+/mob/living/simple_animal/hostile/syndicate,
+/turf/open/floor/carpet/purple,
+/area/awaymission/wildwest/mines)
+"SO" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"Tb" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/fries,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Tj" = (
+/obj/structure/fence{
+	dir = 1
+	},
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Tk" = (
+/obj/structure/closet/secure_closet/personal/cabinet,
+/obj/item/clothing/neck/mantle/cowboy,
+/obj/item/clothing/head/cowboyhat,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Tl" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Tq" = (
+/obj/structure/closet/crate/grave,
+/obj/item/reagent_containers/food/drinks/flask/russian,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Tt" = (
+/obj/structure/rack/shelf,
+/obj/item/storage/toolbox/mechanical/old/clean,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"Tu" = (
+/obj/machinery/vending/coffee,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"TM" = (
+/obj/structure/table/wood,
+/obj/machinery/chem_dispenser/drinks/beer/fullupgrade,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"TN" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"TT" = (
+/obj/effect/mob_spawn/human/miner/rig,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"TU" = (
+/obj/item/clockwork/alloy_shards/clockgolem_remains,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"TW" = (
+/obj/item/storage/bag/plants/portaseeder,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"TY" = (
+/obj/structure/closet/crate/large,
+/obj/item/target,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
 "Ua" = (
 /obj/machinery/door/airlock/sandstone,
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
@@ -2145,6 +5048,346 @@
 	icon_state = "ironsand1"
 	},
 /area/awaymission/wildwest/gov)
+"Ud" = (
+/obj/structure/closet/crate/large,
+/obj/item/target/alien,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Ue" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/structure/chair/wood/normal,
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/wildwest/mines)
+"Uj" = (
+/obj/structure/flora/ausbushes/grassybush,
+/obj/structure/flora/rock/pile,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"Um" = (
+/obj/item/ammo_casing/c38,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Un" = (
+/obj/structure/table,
+/obj/item/flashlight/lamp/green,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Ut" = (
+/obj/structure/lattice,
+/mob/living/simple_animal/hostile/syndicate/ranged/space/anthro/cat,
+/turf/open/space/basic,
+/area/awaymission/wildwest/refine)
+"Uy" = (
+/obj/item/ammo_casing/c9mm,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"UE" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green,
+/obj/item/book/manual/wiki/cit/chem_recipies,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"UL" = (
+/obj/structure/ore_box,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand4"
+	},
+/area/awaymission/wildwest/mines)
+"UO" = (
+/obj/structure/closet/crate/bin,
+/obj/item/ammo_box/g45l/lethal,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"UU" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space/stormtrooper,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Vb" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/turf/open/floor/carpet/green,
+/area/awaymission/wildwest/mines)
+"Vc" = (
+/obj/structure/closet/cabinet,
+/obj/item/ammo_box/g45l/lethal,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Vd" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/meat/steak/fish,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Vp" = (
+/obj/structure/closet/crate,
+/obj/item/stack/sheet/rglass,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"Vu" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/snacks/donut,
+/obj/item/reagent_containers/food/snacks/pie/cherrypie,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"Vy" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/structure/chair/wood/normal{
+	dir = 1
+	},
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/wildwest/mines)
+"VA" = (
+/obj/structure/chair/office/light{
+	dir = 4
+	},
+/turf/open/floor/carpet/purple,
+/area/awaymission/wildwest/mines)
+"VI" = (
+/obj/structure/bed,
+/obj/effect/spawner/lootdrop/bedsheet,
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"VR" = (
+/obj/structure/mineral_door/wood,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Wf" = (
+/obj/structure/closet/crate,
+/obj/structure/closet/crate,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"Wi" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand9"
+	},
+/area/awaymission/wildwest/mines)
+"Wk" = (
+/obj/structure/ore_box,
+/turf/closed/wall/mineral/sandstone,
+/area/awaymission/wildwest/mines)
+"WD" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/coffee,
+/obj/item/reagent_containers/food/snacks/pie/cherrypie,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"WK" = (
+/obj/structure/closet/crate,
+/obj/item/storage/secure/briefcase/cop/e45_box,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"WL" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/awaymission/wildwest/refine)
+"WP" = (
+/obj/structure/sign/plaques/golden,
+/turf/closed/wall/mineral/sandstone,
+/area/awaymission/wildwest/mines)
+"WQ" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/drinks/ice/sustanance,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"WR" = (
+/obj/structure/closet/crate/large,
+/obj/item/broom,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"WT" = (
+/obj/structure/closet/crate/grave,
+/obj/item/clothing/suit/armor/vest/russian,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand7"
+	},
+/area/awaymission/wildwest/mines)
+"WY" = (
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/carpet,
+/area/awaymission/wildwest/mines)
+"Xb" = (
+/obj/effect/mob_spawn/human/miner/rig,
+/obj/item/gun/ballistic/shotgun/doublebarrel,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Xf" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/smg/space,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"Xh" = (
+/obj/structure/closet/crate,
+/obj/item/storage/lockbox/dueling,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"Xi" = (
+/obj/structure/rack/shelf,
+/obj/item/defibrillator/compact,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"Xk" = (
+/obj/structure/table/wood,
+/obj/item/ammo_box/a308,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Xn" = (
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand9"
+	},
+/area/awaymission/wildwest/mines)
+"Xp" = (
+/obj/item/stack/medical/suture,
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/structure/chair/wood/normal,
+/turf/open/floor/plasteel/cafeteria,
+/area/awaymission/wildwest/mines)
+"Xq" = (
+/obj/structure/closet/crate/large,
+/obj/structure/closet/crate/large,
+/obj/item/stack/sheet/mineral/plasma,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"Xt" = (
+/obj/effect/decal/cleanable/blood/gibs/body{
+	icon_state = "gibdown1"
+	},
+/obj/effect/decal/cleanable/blood/tracks,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Xy" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "fwindow"
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
+"XB" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/structure/mineral_door/wood,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"XD" = (
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"XI" = (
+/obj/machinery/vending/coffee,
+/obj/effect/decal/cleanable/cobweb,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"XN" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/structure/mineral_door/wood,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"XQ" = (
+/obj/item/banner/medical,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"XS" = (
+/obj/structure/mecha_wreckage/ripley/deathripley{
+	anchored = 1
+	},
+/obj/effect/decal/cleanable/supplypod_rubble,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"XX" = (
+/obj/structure/barricade/sandbags,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"XZ" = (
+/obj/item/instrument/violin/golden,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/gov)
+"Yf" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	icon_state = "fwindow"
+	},
+/obj/structure/flora/ausbushes/fernybush,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"Yh" = (
+/obj/item/reagent_containers/glass/bucket,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Yi" = (
+/obj/structure/barricade/sandbags,
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"Yo" = (
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/plating/ironsand{
+	icon_state = "ironsand1"
+	},
+/area/awaymission/wildwest/mines)
+"Yr" = (
+/obj/effect/decal/cleanable/blood/gibs/body,
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/gov)
+"Ys" = (
+/obj/structure/lattice,
+/turf/open/space/basic,
+/area/awaymission/wildwest/refine)
+"Yv" = (
+/obj/effect/mine/shrapnel,
+/obj/effect/mob_spawn/human/corpse/inteq_dead,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Yw" = (
+/obj/structure/chair/office/dark,
+/mob/living/simple_animal/hostile/syndicate/ranged/smg,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Yz" = (
+/obj/structure/bed,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/spawner/lootdrop/bedsheet,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"YJ" = (
+/obj/structure/rack/shelf,
+/obj/item/storage/toolbox/inteq,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"YQ" = (
+/obj/machinery/door/airlock/sandstone,
+/obj/effect/mine/shrapnel,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
 "YW" = (
 /obj/structure/closet/crate/large,
 /turf/open/floor/plasteel,
@@ -2153,6 +5396,80 @@
 /obj/machinery/wish_granter,
 /turf/open/floor/circuit/green/off,
 /area/awaymission/wildwest/vault)
+"Ze" = (
+/obj/machinery/vending/cola/buzz_fuzz,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Zm" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Zs" = (
+/obj/effect/decal/cleanable/blood,
+/obj/effect/mob_spawn/human/miner/rig,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"Zt" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/wildwest/gov)
+"Zz" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/glass/coffeepot,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"ZA" = (
+/obj/structure/chair/office/dark,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
+"ZB" = (
+/obj/structure/rack/shelf,
+/obj/item/defibrillator/loaded,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"ZD" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"ZF" = (
+/obj/structure/chair/wood/normal{
+	dir = 1
+	},
+/turf/open/floor/plasteel/cafeteria{
+	dir = 5
+	},
+/area/awaymission/wildwest/mines)
+"ZI" = (
+/obj/structure/holosign/barrier/atmos,
+/turf/open/floor/plasteel,
+/area/awaymission/wildwest/refine)
+"ZK" = (
+/obj/structure/rack/shelf,
+/obj/item/storage/toolbox/rubber,
+/turf/open/floor/plating,
+/area/awaymission/wildwest/refine)
+"ZP" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/flora/ausbushes/stalkybush,
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass0,
+/area/awaymission/wildwest/gov)
+"ZQ" = (
+/obj/structure/table/wood,
+/turf/open/floor/carpet/purple,
+/area/awaymission/wildwest/mines)
+"ZY" = (
+/obj/structure/closet/crate/bin,
+/turf/open/floor/wood,
+/area/awaymission/wildwest/mines)
 
 (1,1,1) = {"
 aa
@@ -12084,34 +15401,34 @@ aa
 aa
 aa
 aa
+pR
+pR
+pR
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -12324,54 +15641,54 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -12581,54 +15898,54 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -12839,53 +16156,53 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -13096,53 +16413,53 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -13353,53 +16670,53 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -13609,54 +16926,54 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -13867,53 +17184,53 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -14124,53 +17441,53 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -14381,53 +17698,53 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -14638,53 +17955,53 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -14895,53 +18212,53 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -15152,53 +18469,53 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -15409,53 +18726,53 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -15666,53 +18983,53 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -15923,53 +19240,53 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -16180,53 +19497,53 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -16437,53 +19754,53 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -16694,53 +20011,53 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -16951,8 +20268,8 @@ aa
 aa
 aa
 aa
-aa
-aa
+pR
+pR
 br
 br
 br
@@ -16961,43 +20278,43 @@ br
 br
 br
 br
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -17211,50 +20528,50 @@ br
 br
 cu
 br
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
 br
 br
-aa
+pR
 br
 br
-aa
-aa
+pR
+pR
 bW
 bW
 bW
 bW
 bW
 bW
+Jj
 bW
 bW
+Jj
 bW
-bW
-bW
-bW
-aa
+Jj
 pR
 pR
 pR
-aa
-aa
 pR
 pR
 pR
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -17467,14 +20784,14 @@ aa
 aa
 aa
 br
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 br
 br
 br
@@ -17482,36 +20799,36 @@ br
 br
 bv
 fJ
+rM
+rM
+rM
+rM
+rM
+rM
 fU
 fU
-fU
-fU
-fU
-fU
-fU
-fU
-fU
-fU
+rM
+GF
 gD
 ed
 pR
 pR
 pR
-aa
-aa
 pR
 pR
 pR
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -17725,50 +21042,50 @@ bW
 bO
 bO
 bW
+Sr
+Sr
+do
+Sr
+Sr
 do
 do
 do
-do
-do
-do
-do
-do
-do
-aa
-aa
+If
+pR
+pR
 br
 bv
-fK
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-gE
-ed
+FS
+Oi
+NQ
+Oi
+SO
+gn
+Ea
+Ea
+Oi
+Oi
+SO
+zq
+Xy
 pR
 pR
 pR
-aa
-aa
 pR
 pR
 pR
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -17992,40 +21309,40 @@ ce
 cQ
 bP
 ed
-aa
+pR
 br
 zg
-fK
+FS
+fV
+qx
+fV
+Oi
 fV
 fL
 fV
 fL
 fV
-fL
-fV
-fL
-fV
-fL
-gE
+Oi
+zq
 ed
 pR
 pR
 pR
-aa
-aa
 pR
 pR
 pR
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -18229,61 +21546,61 @@ aa
 br
 bw
 bQ
+fL
 bY
+NQ
+fL
+LI
+fL
+fL
 bY
+fL
+NQ
+NQ
+LI
+JI
 bY
+NQ
+LI
 bY
-bY
-bY
-bY
-bY
-bY
-bY
-bY
-bY
-bY
-bY
-bY
-bY
-dA
 bY
 dR
 ed
-aa
-aa
+pR
+pR
 zg
 fK
-fV
+fL
 fL
 fV
-gn
+Lo
 fV
-fL
+Od
+XD
+wj
 fV
-fL
-fV
-fL
-gE
+Oi
+zq
 ed
 pR
 pR
 pR
-aa
-aa
 pR
 pR
 pR
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -18486,60 +21803,60 @@ aa
 aa
 bw
 bR
-bY
+fL
+bP
+bP
+bP
+bP
+Cx
 bP
 bP
 bP
 bP
 bP
 bP
+jx
+jx
+jx
+jx
 bP
-bP
-bP
-bP
-bP
-bY
-dx
-bY
-bY
-bY
-bY
+fL
 dS
 ed
-aa
-aa
+pR
+pR
 zg
-fK
+FS
+fV
+Oi
+fV
+Oi
+fL
+Oi
 fV
 fL
 fV
-fL
-fV
-fL
-fV
-fL
-fV
-fL
-gE
+qx
+zq
 ed
 pR
 pR
 pR
-aa
-aa
 pR
 pR
 pR
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -18743,60 +22060,60 @@ aa
 aa
 bw
 bR
-bY
+fL
 bP
 cm
-cn
+XZ
 cC
 cL
 cC
-cn
-cn
+XZ
+Ky
 cn
 cn
 bP
-bY
-bY
-bY
-bY
-bY
-bY
+wY
+RC
+LP
+Zt
+bP
+NQ
 dS
 ed
-aa
-aa
+pR
+pR
 zg
-fK
+FS
+fV
+XD
+fV
+Oi
 fV
 fL
 fV
-fL
+SO
 fV
-fL
-fV
-fL
-fV
-fL
-gE
+Oi
+zq
 ed
 pR
 pR
 pR
-aa
-aa
 pR
 pR
 pR
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -19000,61 +22317,61 @@ aa
 aa
 bw
 bR
-bY
+fL
 bP
 cm
-cn
+XZ
 cD
 cM
 cD
+XZ
 cn
 cn
 cn
-dp
+Kc
+HV
+HV
+HV
+rQ
 bP
-bY
-bY
-bP
-bP
-bP
-bY
+fL
 dS
 ed
-aa
-aa
+pR
+pR
 zg
-fK
+FS
 fV
+Oi
 fL
+Oi
 fV
-fL
+yK
 fV
-fL
+Oi
 fV
-fL
-fV
-fL
-gE
+Oi
+zq
 ed
 pR
 pR
 pR
-aa
-aa
 pR
 pR
 pR
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -19261,56 +22578,56 @@ bY
 bP
 cm
 cn
-cn
+Ky
 cn
 cn
 cn
 cN
 cn
-co
-bP
-bY
-bY
+cn
 bP
 dB
-dD
-bY
+Uy
+nz
+dB
+bP
+JI
 dS
 ed
-aa
-aa
+pR
+pR
 zg
-fK
+Yf
+Oi
+Oi
+PL
+wj
 fL
+Hu
 fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-gE
+Oi
+Uj
+Oi
+zq
 ed
 pR
 pR
 pR
-aa
-aa
 pR
 pR
 pR
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -19514,7 +22831,7 @@ aa
 br
 bw
 bR
-bY
+fL
 bP
 cm
 co
@@ -19523,52 +22840,52 @@ cn
 cn
 cn
 cn
-cn
-cn
+Ky
+cm
 bP
-bY
-bY
-bP
-bP
+dB
+HV
+yV
+yV
 bP
 bY
 dS
 ed
-aa
-aa
+pR
+pR
 zg
-fK
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-gn
-gE
+FS
+Oi
+Hu
+Oi
+Ea
+rm
+Oi
+Oi
+Oi
+XD
+Lo
+zq
 ed
 pR
 pR
 pR
-aa
-aa
 pR
 pR
 pR
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -19771,41 +23088,41 @@ aa
 br
 bv
 bR
-bY
+NQ
 bP
 cm
 cn
 cn
 cN
 cn
+Ky
 cn
-co
 cn
-cn
+cm
 bP
-bY
-bY
-bY
-bY
-bY
-bY
+dB
+hW
+yV
+yV
+bP
+fL
 dS
 ed
 aa
 br
 zg
 fK
+Oi
 fL
+ze
+wj
 fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-gE
+wj
+NQ
+Oi
+nh
+Oi
+zq
 ed
 pR
 pR
@@ -19821,11 +23138,11 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
+pR
+pR
+pR
+pR
+pR
 aa
 aa
 aa
@@ -20028,7 +23345,7 @@ aa
 br
 bv
 bR
-bY
+fL
 bP
 cm
 cn
@@ -20038,31 +23355,31 @@ cn
 cn
 cn
 co
-cn
+cm
 bP
-dx
-bY
-bY
-bY
-bY
-bY
+bP
+bP
+bP
+bP
+bP
+fL
 dS
 ed
 br
 br
 bv
-fK
+FS
+wj
+rm
+XD
+Od
+sn
+Oi
 fL
+Oi
 fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-gE
+wj
+zq
 ed
 pR
 pR
@@ -20079,8 +23396,8 @@ aa
 aa
 aa
 aa
-aa
-aa
+pR
+pR
 aa
 aa
 aa
@@ -20290,36 +23607,36 @@ bP
 bP
 bP
 bP
-cO
+Kc
 bP
 bP
 bP
 bP
 bP
 bP
+fL
+fL
 bY
-bY
-bY
-bY
-bY
-bY
+fL
+Od
+LI
 dS
 pR
 br
 aa
 bv
-fK
+FS
+fV
+Oi
+fV
+Oi
 fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-gE
+Oi
+XD
+rm
+fV
+Hu
+pw
 ed
 pR
 pR
@@ -20337,7 +23654,7 @@ aa
 aa
 aa
 aa
-aa
+pR
 aa
 aa
 aa
@@ -20542,11 +23859,11 @@ aa
 br
 bv
 bR
-bZ
+LI
 bP
+cm
 cn
-cn
-cn
+mu
 cn
 cn
 cn
@@ -20555,28 +23872,28 @@ cn
 cn
 bP
 bY
-bY
-bY
-dA
-bY
-bY
+JI
+fL
+NQ
+fL
+iW
 dS
 ed
 br
 aa
 bv
-fK
+FS
 fL
+Oi
+fV
+Oi
 fL
+Oi
+Hu
+yj
 fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-gE
+Oi
+zq
 ed
 pR
 pR
@@ -20799,41 +24116,41 @@ aa
 br
 bv
 bR
-bY
+LI
 bP
-co
-cw
-cx
-cw
-cw
-cw
-cw
+cm
+HV
+HV
+yg
+HV
+HV
+HV
 cx
 cn
 bP
+fL
+iW
+Od
+iW
 bY
-bY
-bY
-bY
-bY
-bY
+fL
 dS
 ee
 br
 aa
 bv
-fK
+FS
+fV
+Oi
 fL
 fL
+XD
+Oi
 fL
-fL
-fL
-fL
-fL
-gy
-fL
-fL
-gE
+ze
+fV
+Oi
+yf
 ed
 pR
 pR
@@ -21056,41 +24373,41 @@ aa
 br
 bw
 bR
-bY
+JI
 bP
-cn
-cw
-cw
-cw
-cw
-cw
-cw
-cw
+cm
+HV
+HV
+hJ
+HV
+nz
+HV
+HV
 cn
 bP
-bY
-bY
-bY
-bY
-bY
-bY
+iW
+rg
+iW
+rg
+iW
+rg
 dT
 ef
 do
 do
 fy
-fK
+FS
+fV
+Od
 fL
+Oi
 fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-gE
+Oi
+wj
+Oi
+fV
+Oi
+zq
 ed
 pR
 pR
@@ -21313,41 +24630,41 @@ aa
 br
 bw
 bR
-bY
+fL
 bP
-co
-cw
-cw
-cw
-cw
+cm
+HV
+HV
+HV
+HV
 cU
-cw
+HV
 dh
 cn
-cO
-bY
-bY
-bY
-bY
-bY
-bY
+Kc
+cw
+cw
+cw
+cw
+cw
+cw
 dU
 eg
 er
 ex
 Ua
+Oi
+Oi
 fL
+fV
+Oi
+Hu
 fL
+nh
+Oi
+ho
 fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-gE
+zq
 ed
 pR
 pR
@@ -21572,39 +24889,39 @@ bv
 bR
 bY
 bP
-co
-cw
-cw
-cw
-cw
-cw
-cw
-cw
+cm
+HV
+cx
+HV
+HV
+cx
+HV
+HV
 cn
-cO
-bY
-dz
-bZ
-bY
-bY
-bY
+Kc
+cw
+cw
+cw
+cw
+cw
+cw
 dU
 eh
 es
 ey
 Ua
+Oi
+Ea
+Oi
+Oi
+mK
+Oi
 fL
 fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-gE
+jP
+Ea
+qx
+zq
 ed
 pR
 pR
@@ -21827,41 +25144,41 @@ br
 br
 bv
 bR
-bY
+fL
 bP
-cn
+cm
+HV
+PC
+HV
+nz
+zI
+uX
 cx
-cw
-cP
-cw
-cw
-cw
-cw
 cn
 bP
-bY
-bY
-bY
-bY
-bY
-bY
+iW
+rg
+iW
+rg
+iW
+rg
 dR
 ei
 bT
 bT
 fz
-fK
+FS
 fL
+XD
 fL
+Oi
+Ea
+Om
+ze
 fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-gE
+kC
+Oi
+zq
 ed
 pR
 pR
@@ -22084,41 +25401,41 @@ br
 aa
 bv
 bR
-bY
+fL
 bP
-co
-cw
-cw
-cw
-cw
-cw
-cw
-cw
+cm
+HV
+cx
+HV
+HV
+cx
+HV
+HV
 cn
 bP
-bY
-bY
-bY
-bY
-bY
-bY
+fL
+NQ
+Od
+fL
+fL
+LI
 dS
 ed
 aa
 aa
 bv
-fK
+FS
 fL
+Oi
+pF
+Oi
+Oi
 fL
+jP
+NQ
 fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-gE
+Oi
+zq
 ed
 pR
 pR
@@ -22341,41 +25658,41 @@ br
 br
 bw
 bR
-bY
+fL
 bP
-co
-cx
-cw
-cw
-cw
-cw
-cw
-cw
-cN
+cm
+HV
+HV
+HV
+sX
+HV
+je
+uf
+cn
 bP
+LI
 bY
+fL
+fL
 bY
-bY
-bY
-bY
-bY
+fL
 dS
 ed
 aa
 aa
 bv
-fK
+FS
+KK
+Oi
+Oi
+Oi
+Oi
 fL
 fL
 fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-gE
+XD
+mK
+zq
 ed
 pR
 pR
@@ -22598,40 +25915,40 @@ br
 aa
 bv
 bR
-bY
+fL
 bP
-cn
-cn
+cm
+cx
 cE
 cE
 cR
 cR
 cR
-cn
+HV
 cn
 bP
+fL
+fL
 bY
-bY
-bY
-bY
-bY
-dF
+NQ
+fL
+NQ
 dS
 ed
 aa
 aa
 bv
-fK
+Sh
+Oi
 fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
-fL
+Oi
+Oi
+Oi
+Oi
+Oi
+Oi
+Oi
+wj
 gE
 ed
 pR
@@ -22855,41 +26172,41 @@ br
 br
 bv
 bR
-bY
+LI
 bP
-cn
+cm
 cy
 cF
+FB
+iD
+hg
 cF
-cF
-cF
-cF
-cn
+HV
 cn
 bP
-bY
-bY
-bY
-bY
-bY
-bY
+Od
+iW
+fL
+fL
+iW
+LI
 dS
 ed
 aa
 aa
 bv
-fK
-fL
+FS
+wj
 ga
 gi
-fK
+FS
 fL
+rm
+gy
+JI
 fL
-fL
-fL
-fL
-fL
-gE
+Oi
+zq
 ed
 pR
 pR
@@ -23078,7 +26395,7 @@ ac
 ah
 ac
 ah
-af
+ac
 ac
 ah
 ac
@@ -23114,38 +26431,38 @@ bv
 bR
 bY
 bP
-cn
+cm
 cy
-cF
-cF
-cF
-cF
-cF
-cn
+yA
+hg
+FB
+lN
+lS
+HV
 cn
 bP
+JI
+fL
+fL
+fL
 bY
-bY
-bY
-bY
-bY
-bY
+Od
 dS
 ed
 aa
 aa
 bv
-fK
+aT
 fL
-ga
+lR
 fL
-fK
+FS
+wj
+NQ
+Oi
+ze
 fL
-fL
-fL
-fL
-fL
-fL
+BV
 gE
 ed
 pR
@@ -23369,24 +26686,24 @@ aa
 br
 bv
 bR
-bZ
+fL
 bP
-cn
-co
-cn
-cn
-cn
-cn
-cn
-cn
+cm
+HV
+jl
+jl
+jl
+jl
+jl
+HV
 cn
 bP
+fL
 bY
-dx
-dz
-bY
-bY
-bY
+LI
+fL
+JI
+fL
 dS
 ed
 aa
@@ -23397,9 +26714,9 @@ fW
 gb
 Gh
 go
+ZP
 fW
-fW
-fW
+sa
 fW
 fW
 fW
@@ -23626,9 +26943,9 @@ aa
 br
 bw
 bR
-bY
+JI
 bP
-co
+cm
 cn
 cn
 cn
@@ -23638,12 +26955,12 @@ cn
 cn
 cn
 bP
-bY
-bY
-bY
-bY
-bY
-bY
+fL
+fL
+fL
+fL
+fL
+fL
 dS
 ee
 br
@@ -23883,24 +27200,24 @@ aa
 aa
 bw
 bR
-bY
+NQ
 bP
 bP
 bP
 bP
 bP
-cO
+Kc
 bP
 bP
 bP
 bP
 bP
-bY
-bY
-dA
-bY
-dx
-bY
+bP
+jx
+jx
+bP
+bP
+fL
 dS
 ed
 br
@@ -24140,24 +27457,24 @@ aa
 aa
 bw
 bR
-bY
+fL
 bP
 cp
+pp
 cz
 cz
 cz
-cz
-cz
+Dc
 cG
 cz
 dq
 bP
-bY
-bY
-bY
-bY
-bY
-bY
+nQ
+cn
+nQ
+nQ
+bP
+fL
 dS
 ed
 br
@@ -24397,24 +27714,24 @@ aa
 aa
 bw
 bR
-bY
+fL
 bP
 cq
 cz
+dr
 cz
-cz
-cz
+cH
 cV
 dd
-cz
+dr
 dq
 bP
-bY
-dA
-bY
-bY
-bY
-bY
+nQ
+nQ
+cn
+nQ
+jx
+fL
 dS
 ed
 br
@@ -24621,13 +27938,13 @@ ah
 ac
 ac
 ac
-ac
+af
 ac
 ad
 ac
 ah
 ac
-ac
+af
 ac
 ah
 ac
@@ -24659,18 +27976,18 @@ bP
 cr
 cz
 cG
-cz
+qN
 cz
 cW
 de
 cz
 dr
-bP
-bY
-bY
-bY
-bY
-dA
+Kc
+cn
+cn
+cn
+cn
+jx
 bY
 dS
 ed
@@ -24877,7 +28194,7 @@ ac
 ah
 ah
 ah
-af
+ac
 ac
 ac
 ac
@@ -24911,24 +28228,24 @@ aa
 br
 bv
 bR
-bY
+fL
 bP
-cq
+ry
 cz
 cH
 cz
-cz
+dr
 cX
 df
 cz
 ds
 bP
-bY
-bY
-bY
-dC
-bY
-bY
+cn
+nQ
+cn
+nQ
+jx
+JI
 dS
 ed
 br
@@ -24937,7 +28254,7 @@ br
 br
 aa
 br
-ov
+aa
 aa
 aa
 aa
@@ -25168,24 +28485,24 @@ aa
 br
 bv
 bR
-bY
+LI
 bP
 cs
 cz
 cz
+cG
 cz
-cz
-cz
-cz
+dr
+Yr
 cz
 ds
 bP
-bY
-bY
-bZ
-bY
-bY
-bY
+nQ
+cN
+nQ
+nQ
+bP
+fL
 dS
 ed
 br
@@ -25398,7 +28715,7 @@ ac
 ac
 ah
 ac
-af
+ac
 ac
 aJ
 ac
@@ -25425,7 +28742,7 @@ aa
 br
 bv
 bR
-bY
+fL
 bP
 bP
 bP
@@ -25437,12 +28754,12 @@ bP
 bP
 bP
 bP
-bY
-bY
-bY
-bY
-bZ
-bY
+bP
+jx
+jx
+bP
+bP
+LI
 dS
 ee
 br
@@ -25682,24 +28999,24 @@ aa
 br
 bv
 bS
+fL
+fL
+fL
+LI
+fL
 bY
-bY
-bY
-bZ
-bY
-bZ
-bY
-bY
-bY
-bY
-bY
-bY
-dx
-bY
-bY
-bY
-bY
-bY
+fL
+fL
+NQ
+fL
+JI
+fL
+LI
+fL
+fL
+LI
+fL
+NQ
 dT
 ed
 br
@@ -26217,7 +29534,7 @@ bT
 bT
 br
 br
-ov
+aa
 aa
 aa
 aa
@@ -26694,7 +30011,7 @@ ac
 ac
 ab
 an
-an
+hE
 an
 an
 an
@@ -27202,7 +30519,7 @@ ac
 ah
 ac
 ac
-af
+ac
 ac
 ac
 ac
@@ -27514,7 +30831,7 @@ aa
 aa
 aa
 aa
-aa
+ov
 aa
 aa
 aa
@@ -27777,7 +31094,7 @@ aa
 aa
 aa
 aa
-aa
+ov
 aa
 aa
 aa
@@ -28025,9 +31342,9 @@ fj
 fo
 fA
 et
-fX
-fo
-fA
+nX
+Ut
+WL
 et
 fX
 fo
@@ -28234,7 +31551,7 @@ ac
 ac
 ac
 ac
-aF
+pj
 aL
 aO
 an
@@ -28281,13 +31598,13 @@ eu
 eu
 eu
 eu
-Md
-eu
-eu
-eu
-eu
-eu
-eu
+Rm
+Ys
+DT
+OY
+JH
+tg
+DT
 eu
 gz
 aa
@@ -28491,7 +31808,7 @@ ac
 ac
 ac
 ac
-aF
+pj
 an
 an
 an
@@ -28536,32 +31853,32 @@ eu
 fO
 eu
 eu
-eu
-eu
-eu
-eu
-eu
-eu
-eu
-eu
-eu
+ZI
+li
+Rm
+Rm
+Rm
+ml
+Ko
+Rm
+li
 eu
 eP
 aa
 aa
 aa
 gJ
-gP
-gP
-gP
+Dq
+Dq
+Dq
 gS
 gJ
 gJ
 gJ
+gJ
+gJ
+gJ
 gI
-aa
-aa
-aa
 aa
 aa
 aa
@@ -28792,11 +32109,11 @@ eu
 eu
 eu
 eu
+fO
 eu
+ZD
 eu
-eu
-eu
-eu
+iy
 YW
 YW
 YW
@@ -28808,17 +32125,17 @@ fo
 fo
 gG
 gJ
-gP
-gP
-gP
+Dq
+Dq
+Dq
 gQ
-gQ
+Aw
 gQ
 gW
+AU
+EH
+EH
 gJ
-aa
-aa
-aa
 aa
 aa
 aa
@@ -29046,19 +32363,19 @@ aG
 et
 eu
 YW
+Kx
+YW
+eu
+ge
+Gm
+nj
+WL
+OY
 YW
 YW
-eu
-eu
-eu
-eu
-eu
-eu
-eu
-eu
-eu
-eu
-eu
+YW
+YW
+OF
 eu
 pD
 eu
@@ -29070,12 +32387,12 @@ gQ
 gQ
 gQ
 gQ
-gP
-gW
+gQ
+gQ
+gQ
+Dq
+oh
 gX
-aa
-aa
-aa
 aa
 aa
 aa
@@ -29302,37 +32619,37 @@ aW
 aW
 et
 eu
+OY
 eu
 eu
 eu
 eu
+ge
+So
+So
+So
 eu
 eu
 eu
 eu
-eu
-eu
-eu
-eu
-eu
-eu
+nj
 eu
 gA
 fo
 fo
 gG
 gJ
-gP
-gP
-gP
+Dq
+Dq
+Dq
 gQ
 gQ
 gQ
 gW
+AU
+EH
+EH
 gJ
-aa
-aa
-aa
 aa
 aa
 aa
@@ -29550,28 +32867,28 @@ aG
 aG
 aG
 aW
-bb
-bc
-bc
-bc
+xU
+bh
+or
+bh
 bo
 bc
 bd
-eu
-eu
-eu
+Yi
 eu
 eu
 eu
 YW
+YW
+YW
+OF
 eu
+fO
 eu
-eu
-eu
-eu
-eu
-eu
-eu
+YW
+YW
+YW
+YW
 YW
 eu
 gB
@@ -29579,17 +32896,17 @@ aa
 aa
 aa
 gJ
-gP
-gP
+Dq
+Dq
 gP
 gS
 gJ
 gJ
 gJ
+gJ
+gJ
+gJ
 gI
-aa
-aa
-aa
 aa
 aa
 aa
@@ -29807,30 +33124,30 @@ aG
 aG
 aG
 aW
-bc
-bc
-bh
-bc
-bc
+Gf
+or
+CL
+or
+bo
 bc
 bd
+Yi
 eu
+OY
 eu
+YW
+YW
+YW
 eu
 eu
 eu
 eu
 YW
-eu
-eu
-fO
-eu
-ge
-eu
-eu
-eu
 YW
-eu
+YW
+YW
+YW
+OY
 eJ
 aa
 aa
@@ -30064,7 +33381,7 @@ aG
 aG
 aG
 aW
-bc
+Xf
 bc
 bc
 bc
@@ -30075,18 +33392,18 @@ et
 eu
 eu
 eu
-eu
-eu
+YW
+YW
 YW
 eu
 eu
+xK
 eu
 eu
 eu
 eu
 eu
-eu
-eu
+fO
 eu
 gz
 aa
@@ -30322,28 +33639,28 @@ aG
 aG
 aW
 bc
-bc
-bc
-bc
-bc
+yG
+bh
+nB
+bh
 bc
 aW
 et
 eu
-eu
-eu
-eu
+Gm
 eu
 YW
+YW
+Hn
+eu
+Ec
+xK
+ge
 eu
 eu
-eu
-eu
-eu
-eu
-eu
-eu
-eu
+yi
+Gm
+Gm
 eu
 eP
 aa
@@ -30579,28 +33896,28 @@ aG
 aG
 aW
 bc
-bc
-bc
-bc
 bh
+bh
+yG
+nB
 bc
 aW
 et
 et
 eu
 eu
-eu
-eu
-YW
-Md
-eu
-eu
-eu
-eu
 YW
 YW
 YW
+fO
 eu
+xK
+eu
+eu
+YW
+YW
+YW
+nj
 eu
 gC
 aa
@@ -30845,18 +34162,18 @@ aW
 aW
 et
 eu
+li
 eu
 eu
 eu
 eu
 eu
-eu
-eu
-eu
-eu
-eu
-eu
-eu
+Cc
+nj
+qF
+YW
+YW
+YW
 eu
 eu
 et
@@ -31098,23 +34415,23 @@ bc
 bc
 bc
 bo
-bc
+Dw
 aW
 et
 eu
 eu
+eu
+eu
+nj
+eu
+nj
+eu
 fO
 eu
 eu
-eu
-eu
-eu
-eu
-eu
-eu
-eu
-eu
-eu
+li
+So
+So
 eu
 et
 aG
@@ -31354,7 +34671,7 @@ bc
 bc
 bc
 bc
-bc
+Dw
 bo
 aW
 et
@@ -31606,12 +34923,12 @@ aW
 aW
 bb
 bc
-bc
-bo
-bc
-bc
+WK
+Wf
 bc
 bc
+Xf
+Gf
 aW
 aW
 aN
@@ -31860,13 +35177,13 @@ aW
 aW
 aW
 aW
+or
+bc
+bc
+bo
+bo
+bc
 bh
-bc
-bc
-bc
-bc
-bc
-bh
 aW
 aW
 aW
@@ -31884,7 +35201,7 @@ aN
 aN
 aN
 aN
-aR
+az
 aN
 aN
 aN
@@ -31897,8 +35214,8 @@ aN
 aN
 aN
 az
-az
-az
+Ho
+Ho
 aN
 aN
 aG
@@ -32105,25 +35422,25 @@ aW
 aW
 aW
 bt
-bc
-bc
+zS
+cc
+Xq
+uu
+Xi
+ZB
+yU
+Ff
 bh
-bc
-bc
-bc
-bc
-bh
-bc
-bc
-bc
-bc
-bo
+MU
+ES
+um
+xx
 bc
 bc
 bc
 bc
 bc
-bc
+yG
 aW
 aN
 aN
@@ -32138,8 +35455,8 @@ aN
 aN
 aN
 az
-az
-az
+aR
+aR
 az
 az
 aN
@@ -32358,9 +35675,9 @@ bg
 bg
 aW
 bh
-bc
-bc
-bc
+mn
+Tt
+mn
 bc
 bc
 bc
@@ -32368,19 +35685,19 @@ bc
 bc
 bc
 bo
+bo
+nB
+tm
 bc
 bc
+Vp
+Xh
+bc
+bc
+bn
+yG
 bh
-bc
-bc
-bc
-bc
-bc
-bc
-bc
 bh
-bc
-bc
 aW
 aN
 aN
@@ -32393,12 +35710,12 @@ aN
 aN
 aN
 aN
+az
+az
+aR
 aR
 az
 az
-az
-az
-az
 aN
 aN
 aN
@@ -32413,7 +35730,7 @@ az
 az
 az
 aN
-az
+Ho
 aN
 aG
 aG
@@ -32612,6 +35929,20 @@ aW
 aW
 aW
 aW
+bh
+bc
+NT
+bc
+bh
+bh
+bh
+bc
+bc
+bn
+bc
+bc
+Fh
+bo
 bc
 bc
 bc
@@ -32621,21 +35952,7 @@ bc
 bc
 bc
 bc
-bc
-bc
-bc
-bc
-bc
-bc
-bc
-bc
-bc
-bc
-bc
-bc
-bc
-bc
-bc
+Gf
 aW
 aW
 aW
@@ -32648,7 +35965,7 @@ az
 az
 az
 az
-az
+Cw
 az
 az
 az
@@ -32663,7 +35980,7 @@ az
 az
 aN
 aN
-az
+hh
 az
 az
 az
@@ -32866,32 +36183,32 @@ aG
 aG
 aG
 aW
-bb
+tG
 bc
+bc
+CL
 bc
 bh
-bc
-bc
 bc
 bq
 bc
 bc
 bc
-bh
-bc
-bc
+xw
+HX
+NT
 bc
 bo
-bc
+eD
 bc
 cT
+lU
+Qm
 bc
+Dz
 bc
-bc
-bc
-bc
-bh
-bo
+FV
+Cf
 aW
 aW
 aN
@@ -32922,11 +36239,11 @@ aN
 aN
 az
 az
+Xn
 az
 az
-az
-az
-az
+Um
+Xn
 az
 aN
 aN
@@ -33123,15 +36440,16 @@ aG
 aG
 aG
 aW
+NA
 bc
 bc
-bc
-bc
+NT
 bc
 bn
 bc
-bc
 bh
+ru
+HX
 bc
 bc
 bc
@@ -33141,14 +36459,13 @@ bc
 bc
 bc
 bc
+qQ
+BX
 bc
+MT
 bc
-bh
-bc
+HX
 bo
-bc
-bc
-bc
 aW
 aN
 aN
@@ -33158,19 +36475,19 @@ az
 az
 az
 az
-az
-az
-az
-az
-az
-az
-az
-az
+ej
+Cw
+Cw
+HH
+HH
+HH
+HH
+HH
 az
 az
 aN
 aN
-az
+hh
 az
 az
 az
@@ -33380,6 +36697,8 @@ aG
 aG
 aV
 aW
+Kd
+Xf
 bc
 bc
 bc
@@ -33389,21 +36708,19 @@ bc
 bc
 bc
 bc
+mH
+ru
+xw
+bo
+bo
+Xf
 bc
+ut
+lU
+qQ
 bc
-bc
-bh
-bc
-bc
-bc
-bc
-bc
-bc
-bc
-bc
-bc
-bc
-bc
+OS
+HX
 aW
 aW
 aW
@@ -33413,21 +36730,14 @@ aN
 aN
 az
 az
+Cw
 az
 az
 az
 az
+HH
 az
-az
-az
-az
-az
-az
-az
-az
-aN
-aN
-az
+bf
 az
 az
 az
@@ -33436,9 +36746,16 @@ aN
 aN
 az
 az
+IY
 az
 az
+aN
+aN
 az
+Mv
+az
+az
+zP
 gV
 gV
 gV
@@ -33645,22 +36962,22 @@ bc
 bo
 bc
 bh
-bc
-bc
-bc
-bc
-bc
-bc
-bo
-bc
-bc
-bc
-bc
-bc
-bc
-bc
-bc
+NT
 bh
+ZK
+wn
+xH
+Og
+ve
+bo
+Og
+YJ
+bc
+bc
+bc
+bc
+FV
+nB
 aW
 aN
 aN
@@ -33670,21 +36987,12 @@ az
 az
 az
 az
-az
-az
+aZ
+pB
 az
 az
 aZ
-az
-az
-az
-az
-az
-az
-aN
-aN
-az
-az
+HH
 az
 az
 az
@@ -33695,6 +37003,15 @@ aN
 az
 az
 az
+az
+Cw
+az
+az
+aN
+aN
+az
+az
+Cw
 az
 gV
 gV
@@ -33932,7 +37249,7 @@ az
 az
 az
 az
-az
+HH
 az
 az
 az
@@ -33950,7 +37267,7 @@ az
 aP
 aN
 aN
-az
+IY
 az
 az
 gV
@@ -34151,8 +37468,8 @@ aN
 aN
 bu
 aW
-bd
-bd
+YQ
+YQ
 aW
 aN
 aN
@@ -34179,38 +37496,38 @@ aN
 aN
 az
 az
-az
+pB
 az
 az
 aZ
 az
+ej
 az
 az
 az
 az
+HH
 az
-az
-az
-az
-az
-az
-az
-aN
-aN
+Cw
+bf
 az
 az
 aN
 aN
-az
-az
-az
-aN
-aN
+wE
+wE
 aN
 aN
 az
 az
 az
+aN
+aN
+aN
+aN
+az
+az
+Mt
 az
 az
 aN
@@ -34413,6 +37730,27 @@ az
 az
 az
 az
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+az
+Cw
 az
 az
 az
@@ -34423,30 +37761,9 @@ az
 az
 az
 az
+aZ
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
+HH
 az
 az
 az
@@ -34458,7 +37775,7 @@ az
 az
 aN
 aN
-az
+Xn
 az
 az
 aN
@@ -34467,8 +37784,8 @@ aN
 aN
 az
 az
-az
-az
+rT
+Qh
 az
 aN
 aG
@@ -34661,61 +37978,61 @@ aG
 aG
 aN
 aN
-aR
 az
 az
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
+Xn
+Qp
+rl
+Cw
+Qp
+pB
+ci
+bj
+bj
+bu
+bj
+bu
+Pv
+bl
+bu
+Ks
+bj
+bu
+bj
+Ks
+bu
+bj
+OA
+SK
+bu
 az
 az
 aY
 az
+bf
 az
-az
-az
-az
-ba
-az
-az
-az
-az
-az
-az
-az
-aY
+Cw
 az
 az
 az
 az
 az
+Cw
 az
-az
-az
-az
-az
-az
-az
+HH
 bf
 az
 az
 az
-aR
+az
 aN
 aN
 az
 gx
 aN
 aN
-az
+Ho
 az
 az
 az
@@ -34725,8 +38042,8 @@ aN
 aN
 aN
 az
-az
-az
+BS
+Um
 aP
 aG
 aG
@@ -34924,65 +38241,65 @@ az
 az
 az
 az
+nM
+nM
+nM
+bu
+bm
+bj
+ci
+bk
+bu
+bu
+ci
+bu
+bu
+ci
+bu
+ci
+bu
+bu
+ci
+bu
+bu
+bu
+az
+az
+HH
+az
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+az
+az
+HH
 az
 az
 az
-az
-aZ
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
+Cw
 az
 aN
 aN
-az
+nc
 az
 aP
 aN
+Ho
 az
 az
-az
-az
+vV
 az
 aN
 aN
 aN
 aP
 aN
-az
+BS
 az
 aN
 aG
@@ -35177,61 +38494,49 @@ aH
 az
 aI
 az
+nM
+nM
+nM
 az
 az
+aZ
+az
+bu
+bj
+bj
+bu
+vl
+bj
+bj
+bj
+bj
+vl
+bk
+bj
+bj
+bE
+bj
+vl
+bk
+bj
+bu
 az
 az
+HH
+az
+bu
+bj
+bj
+lH
+bj
+ps
+bp
+bu
 az
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-aN
-aN
-aN
-az
-az
-az
-aN
-aN
-az
-az
+HH
+bf
+Cw
 az
 az
 aN
@@ -35239,7 +38544,19 @@ aN
 aN
 az
 az
+aY
+aN
+aN
 az
+rl
+IY
+az
+aN
+aN
+aN
+az
+az
+BS
 az
 aN
 aG
@@ -35433,27 +38750,6 @@ aG
 aM
 az
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-bf
-az
-az
-az
-az
-az
 aZ
 az
 az
@@ -35462,41 +38758,62 @@ az
 az
 az
 az
+bu
+bj
+bj
+bu
+bj
+bk
+bj
+nD
+du
+du
+du
+zv
+OC
+Rq
+tS
+Rq
+Mj
+Rq
+bu
+az
+ej
 az
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
+bu
+bj
+bj
+bD
+bj
+bj
+bj
+bu
+Tj
 aN
 aN
 az
 az
-az
-az
+io
+io
 aN
 aN
 aN
 az
-az
-az
-aN
-aN
-az
-az
-az
-az
+kp
 az
 aN
 aN
 az
+pB
 az
+Xn
 az
+aN
+aN
+La
+pB
+BS
 gY
 aN
 aN
@@ -35690,70 +39007,70 @@ aG
 aI
 az
 az
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+Tj
+bu
+bu
+bu
+bu
+ip
+bu
+bu
+bu
+ip
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+az
+Dl
 az
 az
-az
-aZ
-az
-az
-az
+CS
+cI
 bj
-bl
+bD
+LH
 bj
 bj
-bj
-bm
-bj
-bj
-bj
-bj
-bk
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bk
-bs
-az
-aY
-az
-az
-ej
-az
-az
-az
-az
+bu
 az
 aN
 aN
 aN
 az
-az
-az
+io
+io
 aN
 aN
 aN
 dw
+kp
+az
+aN
+aN
+Ho
+az
+az
+az
 az
 az
 aN
 aN
 az
-az
-az
-az
-az
-az
-aN
-aN
-az
-az
+BS
 az
 az
 aN
@@ -35945,15 +39262,16 @@ aG
 aG
 aN
 aI
+nM
+nM
+bu
+HY
+Hz
+bu
+bj
+bj
+bu
 az
-az
-az
-az
-az
-az
-az
-az
-az
 bj
 bj
 bj
@@ -35961,10 +39279,9 @@ bj
 bj
 bj
 bj
+XQ
 bj
-bj
-bj
-bj
+XQ
 bj
 bj
 bk
@@ -35973,36 +39290,36 @@ bj
 bj
 bj
 bj
+bm
 bj
+TN
+az
+az
+bu
+bp
 bj
+bD
 bj
+bl
 bj
-az
-az
-az
-az
-az
-az
-az
-az
-az
+bu
 az
 az
 aN
 aN
 aN
-az
-az
+io
+io
 aN
 aN
 aN
 az
-az
-az
+kp
+vV
 az
 aN
 aP
-az
+Mv
 az
 az
 az
@@ -36010,9 +39327,9 @@ az
 az
 aN
 aN
+BS
 az
-az
-az
+sk
 aN
 aG
 aG
@@ -36201,30 +39518,30 @@ aG
 aG
 aG
 aN
-aR
 az
 az
+Cw
+bu
+IZ
+IZ
+bu
+tK
+bj
+bu
 az
-az
-az
-az
-be
-az
-az
 bj
 bj
 bj
 bj
 bj
 bj
-bj
-bj
-bj
+du
+du
 bm
 bj
 bj
 bj
-bj
+bE
 bj
 bj
 bm
@@ -36232,42 +39549,42 @@ bj
 bj
 bk
 dy
+TN
+az
+az
+bu
 bj
 bj
+cb
+bj
+bj
+bj
+bu
+az
+Ct
+az
+aN
+aN
+aN
+be
+aN
+aN
+aN
+az
+kp
 az
 az
-az
-az
-az
-az
-az
-aZ
+aN
+aN
+aN
+Ho
 az
 az
 az
 az
 aN
 aN
-aN
-az
-aN
-aN
-aN
-az
-az
-az
-az
-aN
-aN
-aN
-az
-az
-az
-az
-az
-aN
-aN
-az
+BC
 az
 az
 aN
@@ -36461,18 +39778,19 @@ aN
 aM
 az
 az
-az
-az
-az
-az
-az
-az
-az
+bu
+HY
+HY
+bu
 bj
+bj
+ci
+az
 bj
 bp
 bj
 bj
+vl
 bj
 bj
 bj
@@ -36481,6 +39799,7 @@ bj
 bj
 bj
 bj
+bm
 bj
 bj
 bj
@@ -36488,18 +39807,16 @@ bj
 bj
 bj
 bj
-bj
-bj
-bj
+ej
 az
-az
-az
-az
-aZ
-az
-az
-az
-az
+bu
+bj
+bu
+bu
+bu
+bu
+hK
+bu
 az
 az
 az
@@ -36510,22 +39827,22 @@ aN
 aN
 aN
 aP
-az
+NZ
 ej
 az
 az
 aN
 aN
 aN
+Ho
+Ho
 az
 az
-az
-az
-az
+Cw
 aN
 aN
 az
-az
+tR
 az
 aN
 aG
@@ -36718,49 +40035,49 @@ aM
 aM
 az
 az
-az
-az
-aY
-az
-az
-az
-az
+bu
+Hz
+kb
+bu
 bj
 bj
-bj
-bj
+bu
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-bj
 bj
 bj
 bj
 az
 az
 az
+Cw
+Cw
+az
+az
+Mv
+az
+az
+Xn
 az
 az
 az
 az
+bj
+bj
+bE
 az
 az
+bu
+bj
+bu
+cI
+cI
+lu
+bj
+bu
 az
+hy
 az
-az
-az
+sk
 az
 aN
 aN
@@ -36775,7 +40092,7 @@ az
 aN
 aN
 aN
-az
+Ho
 az
 az
 az
@@ -36975,50 +40292,50 @@ aG
 aH
 az
 az
-az
-az
-az
-az
-az
-az
-az
+bu
+HY
+HY
+bu
 bj
 bj
-bj
-bj
-az
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
 bu
 az
 bj
 bj
 bj
+az
+bu
+Gn
+Gn
+Gn
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+Cw
+bj
+bj
+bj
+az
+az
+bu
+bj
+WP
+OO
+bj
+bj
 bj
 az
 az
 az
+Cw
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
+wb
 az
 az
 az
@@ -37035,7 +40352,7 @@ aN
 aN
 aN
 az
-az
+rl
 aN
 aN
 az
@@ -37231,25 +40548,25 @@ aG
 aG
 aN
 aH
-az
-az
-az
-az
-az
-az
-az
+Tj
+bu
+IZ
+HY
+bu
+TN
+TN
+bu
 az
 bj
-bj
-bj
+Bx
 bj
 az
 bu
 bx
 by
 by
-by
-by
+EF
+rp
 bu
 cI
 cI
@@ -37260,25 +40577,25 @@ bu
 az
 bj
 bj
+bl
+az
+az
+bu
 bj
-bj
+bu
+sy
+Ks
+GQ
+LW
+bu
+az
+Mt
+az
+hw
 az
 az
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
+rl
 az
 az
 aN
@@ -37297,7 +40614,7 @@ aP
 aN
 az
 az
-az
+IY
 aN
 aG
 aG
@@ -37488,23 +40805,23 @@ aG
 aG
 aN
 aH
-az
-az
-az
-az
-az
-az
-az
-az
-bj
-bj
-bj
-bj
-az
+xL
 bu
-by
+IZ
+Hz
+bu
+bj
+bE
+bu
+az
+bj
+bj
+bj
+Mv
+bu
+au
 bU
-by
+bU
 bU
 by
 bu
@@ -37513,12 +40830,12 @@ bj
 bE
 bj
 bj
-bu
+dj
 az
 bj
+bm
 bj
-bj
-bp
+fQ
 az
 bu
 bu
@@ -37537,18 +40854,18 @@ az
 az
 az
 az
-az
-az
-aN
-aN
-az
-az
-az
+pB
 az
 aN
 aN
-aN
 az
+az
+az
+mc
+aN
+aN
+aN
+Xn
 az
 aN
 aN
@@ -37746,54 +41063,54 @@ aG
 aN
 aH
 az
-az
-az
-az
-az
-az
-az
-az
-bj
-bj
-bj
-bj
-az
 bu
-by
+bj
+bj
+bu
+Bx
+bj
+bu
+az
+bj
+bj
+bj
+Cw
+bu
+wI
 bM
 bM
 cg
-by
+ZF
 bu
 bj
 bj
 bj
 bj
 bj
-bu
+dj
+Mv
+TN
+TN
+mi
 az
-bj
-bj
-bj
-bj
 az
 bu
-by
+yb
 dV
 dV
 dV
-dV
+Jo
 bu
 bj
-bj
+ci
 bj
 bj
 fp
 bu
 az
+Cd
 az
-az
-az
+xL
 az
 az
 az
@@ -37801,7 +41118,7 @@ aN
 aN
 az
 ej
-az
+BS
 az
 aN
 aN
@@ -38003,26 +41320,26 @@ aG
 aG
 aM
 az
-az
-az
-az
-az
-az
-az
-az
+bu
 bj
+bj
+ci
+bj
+bm
+bu
+az
 bj
 bj
 bj
 az
 bu
-bz
+AF
 bM
 bM
 bM
-by
+ZF
 bu
-bj
+ci
 bu
 cI
 cI
@@ -38031,34 +41348,34 @@ bu
 az
 bj
 bj
-bj
-bj
+QY
+az
 az
 bu
-by
-by
-bz
-by
-by
-bu
-bj
-bj
-bj
-bj
+tN
 bu
 bu
+bu
+ev
+bu
+bj
+qA
+vr
+bj
+bu
+bu
 az
 az
 az
 az
-az
-az
-az
-az
+aR
+aR
+aR
+aR
 aN
 aP
 az
-az
+BS
 az
 az
 aN
@@ -38068,7 +41385,7 @@ az
 az
 az
 az
-az
+Ho
 aN
 aG
 aG
@@ -38260,58 +41577,58 @@ aG
 aN
 aH
 az
-az
-az
-az
-az
-az
-az
-az
+bu
+bj
+bj
+bu
+bj
+Bx
+bu
+ej
 bk
-bk
 bj
 bj
+Xn
+bu
+wI
+bM
+bM
+bM
+ZF
+bu
+bj
+bu
+bu
+bu
+bu
+bu
 az
-bu
-by
-bM
-bM
-bM
-by
-bu
-bj
-bu
-bu
-bu
-bu
-bu
-az
-bj
 bj
 bj
 bj
 az
+az
 bu
+qd
+Jo
+bz
 by
-by
-ek
-by
-by
-by
-bj
+tf
+Cm
 eS
-bj
-bj
+qA
+vr
+TT
 fp
 bu
+pB
 az
 az
 az
-az
-az
-az
-az
-az
+aR
+aR
+aR
+aR
 aN
 aN
 az
@@ -38325,7 +41642,7 @@ aN
 az
 az
 az
-az
+Ho
 aN
 aG
 aG
@@ -38515,24 +41832,24 @@ aG
 aG
 aG
 aM
+Bi
 az
-az
-az
-az
-az
-az
-az
-az
-az
+bu
 bj
+bj
+bu
+bj
+bj
+bu
+az
 bm
 bj
 bj
 az
 bu
-by
+Hq
 bV
-by
+bV
 bV
 by
 bu
@@ -38546,27 +41863,27 @@ dt
 du
 du
 bj
-bj
+az
 az
 bu
+AP
 by
+tf
+AH
 by
-by
-ev
-by
-by
+bu
 bj
+qA
+vr
 bj
-bj
-bj
 bu
 bu
-az
-bu
+Tj
 bu
 bu
 bu
 bu
+lz
 bu
 bu
 bu
@@ -38581,8 +41898,8 @@ aN
 aN
 aN
 aP
-az
-az
+Ho
+Ho
 aN
 aG
 aG
@@ -38772,23 +42089,23 @@ aG
 aG
 aG
 aM
-az
-az
-az
-az
-az
-az
-az
-az
-az
+wb
+kz
+bu
+Jf
+Jf
+bu
 bj
+bj
+bu
+az
 bj
 bj
 bj
 az
 bu
-by
-by
+Tu
+MV
 by
 by
 by
@@ -38802,30 +42119,30 @@ ci
 az
 bm
 bj
-bj
-bj
+ff
+az
 az
 bu
 by
-by
-by
-by
+bu
+bu
+bu
 by
 bu
 bj
-bu
+Jr
 bj
-dy
+QA
 fp
 bu
 az
 bu
 gf
 bj
+uI
 bj
 bj
-bj
-bj
+Hj
 bu
 az
 az
@@ -39031,14 +42348,14 @@ aG
 aN
 az
 az
-az
-az
-az
-az
-az
-az
-az
+bu
+iN
+Jf
+bu
 bj
+bj
+bu
+az
 bj
 bj
 bj
@@ -39056,22 +42373,22 @@ bu
 bu
 bu
 bu
+Cw
+bj
+QY
+bj
 az
-bj
-bj
-bj
-bj
 az
 bu
+Jo
+dW
+yN
+Rn
 by
-dW
-dW
-dW
-dW
 bu
 bj
-bu
-fe
+qA
+vr
 bk
 bu
 bu
@@ -39079,10 +42396,10 @@ az
 bu
 bj
 bj
-bj
+oo
 dy
-bj
-bj
+xA
+tr
 bu
 az
 az
@@ -39286,38 +42603,38 @@ aG
 aG
 aG
 aN
-aR
+TU
 az
-az
-az
-az
-az
-bf
-az
-az
+bu
+Jf
+Bp
+bu
+bE
 bj
+bu
+az
 bj
 bj
 bj
 az
 bu
-bA
-bj
-bj
+uT
+Sy
+ZY
 bu
 bj
 bj
 bj
 bu
-bj
+Sy
 cY
 cY
 bu
 az
 bj
+QY
 bj
-bj
-bj
+az
 az
 bu
 bu
@@ -39327,20 +42644,20 @@ bu
 bu
 bu
 bj
-bu
-fe
+qA
+vr
 bj
 fp
 bu
 az
 bu
-bj
-bj
-bj
+Sy
+ou
+SF
 bj
 bl
 bj
-bu
+en
 az
 ej
 az
@@ -39522,10 +42839,10 @@ ac
 ac
 ac
 ac
-aD
-aD
-aD
-aD
+ac
+ac
+ac
+ac
 ac
 ac
 ac
@@ -39544,62 +42861,62 @@ aG
 aG
 aN
 aN
-az
-az
-az
-az
-az
-az
-az
-az
-bj
-bj
-bj
-bj
-az
+rl
 bu
-bB
+bu
+bu
+bu
+ci
+bu
+bu
+az
 bj
+bj
+bj
+Mv
+bu
+Ks
+bE
 bj
 bu
 bj
 bj
+bE
+ci
 bj
-bj
-bj
-bj
-bj
+Eu
+SL
 dj
 az
 bj
-bj
+QY
 bk
-du
+dt
 dt
 ci
 bj
 bj
-bj
+eS
 bj
 bj
 ci
 bj
-bu
-fe
+qA
+vr
 bj
 bu
 bu
 az
 bu
+hd
 bj
+vA
 bj
-bj
-bj
-bj
-bj
-bu
+lL
+we
+en
 az
-az
+xl
 az
 az
 aN
@@ -39779,10 +43096,10 @@ ac
 ac
 ac
 ac
-aD
-aD
-aD
-aD
+ac
+ac
+ac
+ac
 ac
 ac
 ac
@@ -39801,37 +43118,37 @@ aa
 aG
 aN
 aN
-az
-az
-az
-az
-az
-az
-az
-az
+jW
+bu
 bj
+bj
+bl
+bj
+bk
+bu
+az
 bj
 bj
 bj
 az
 bu
-bD
+UE
 bj
 bj
 bu
 bj
 bj
 bj
-bj
-bj
-bj
-bj
+ci
+bE
+QV
+lF
 dj
 az
 bj
 bj
 bj
-bj
+az
 az
 bu
 bu
@@ -39840,21 +43157,21 @@ bu
 bu
 bu
 bu
+eS
+Sb
 bj
-bu
-fe
 bj
-bu
+fp
 bu
 az
-bu
-bj
+lz
+Sy
 bl
+Ql
 bj
+mo
 bj
-bp
-bj
-fs
+xl
 az
 aN
 aP
@@ -40036,10 +43353,10 @@ ac
 ac
 ac
 ad
-aD
-aD
-aD
-aD
+ac
+ac
+ac
+ac
 ad
 ac
 ac
@@ -40059,24 +43376,20 @@ aG
 aG
 aN
 az
-az
-az
-az
-az
-az
-aY
-az
+bu
+JY
+Bx
+Ds
 bj
+Hs
+bu
+az
 bj
 bj
 bj
 az
 bu
-bB
-bj
-bj
-bu
-bj
+Ks
 bj
 bj
 bu
@@ -40084,32 +43397,36 @@ bj
 bj
 bj
 bu
-az
+bj
+uA
+bD
+bu
+Mv
 bj
 bj
 bj
-bm
+fR
 az
 bu
 dG
-dG
+ls
 el
 dG
 dG
 bu
 bj
+qA
+vr
+bj
 bu
-bj
-bj
-fp
 bu
 az
 bu
 bj
 bj
-gk
+ZY
 bj
-bj
+Hj
 bj
 en
 az
@@ -40293,10 +43610,10 @@ ac
 ac
 ac
 ac
-aD
-aD
-aD
-aD
+ac
+ac
+ac
+ac
 ac
 ac
 ac
@@ -40316,60 +43633,60 @@ aG
 aN
 aN
 az
-az
-az
-az
-az
-az
-az
-az
+bu
+iF
 bj
+Bq
+bj
+vB
+bu
+az
 bj
 bj
 bj
 az
 bu
-bD
+QV
 bj
 bj
 ci
 bj
-bj
-bj
+Qi
+Ze
 bu
-bj
+Sy
 cZ
 cZ
 bu
+Cw
+bj
+bj
+bj
 az
-bj
-bj
-bj
-bj
 az
 bu
 by
 by
 by
+Jo
 by
-by
-by
-bj
-bj
-bj
-bj
 bu
+Bx
+qA
+vr
+bj
+zl
 fs
 az
 bu
 bj
 gj
 gq
+tr
+Bx
 bj
-bj
-bj
-bu
-fs
+lz
+ej
 aN
 aN
 aG
@@ -40550,10 +43867,10 @@ af
 ac
 ac
 ac
-aE
-aD
-aD
-aD
+af
+ac
+ac
+ac
 ac
 ac
 ac
@@ -40571,51 +43888,51 @@ aa
 aa
 aG
 aN
-az
-az
-az
-az
-aZ
-az
-az
-az
-az
-bj
-bj
-bj
-bj
-az
+kz
+Mv
 bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
+iF
+bm
+Pq
+Bx
+Pz
 bu
 az
 bj
 bj
 bj
-bj
 az
 bu
-by
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+az
+TN
+TN
+TN
+az
+az
+bu
+el
 by
 ek
-by
-by
-by
-bj
-bj
-bj
-bj
-fp
+kV
+kV
+mE
+BO
+qA
+vr
+LG
+bu
 bu
 az
 bu
@@ -40623,10 +43940,10 @@ bj
 bj
 dy
 bj
-dy
+bj
 bj
 bu
-bu
+HH
 aN
 aN
 aG
@@ -40807,10 +44124,10 @@ ac
 ac
 ac
 ac
-aD
-aD
-aD
-aD
+ac
+ac
+ac
+ac
 ac
 ac
 ac
@@ -40830,8 +44147,27 @@ aG
 aN
 aN
 az
+bu
+bk
+bj
+bl
+bj
+bj
+bu
+az
+bj
+bj
+bj
+Cw
 az
 az
+Xn
+az
+az
+Fo
+az
+az
+Mv
 az
 az
 az
@@ -40840,50 +44176,31 @@ az
 bj
 bj
 bj
-bj
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-bj
-bj
-bj
-bj
 az
 bu
-by
+dG
 by
 by
 bz
 by
 bu
+Zs
+KG
+ZY
 bj
-bj
-bj
-bj
-bu
+fp
 bu
 az
 bu
-bj
+zw
 bl
-bj
+lL
 gv
 bj
 dP
 bu
-bu
+az
 aN
 aN
 aG
@@ -41064,10 +44381,10 @@ ac
 ac
 ac
 ac
-aD
-aD
-aD
-aD
+ac
+ac
+ac
+ac
 ac
 ac
 ac
@@ -41086,15 +44403,15 @@ aa
 aG
 aG
 aN
+Tj
+bu
+bu
+bu
+bu
+bu
+bu
+bu
 az
-az
-az
-az
-az
-az
-az
-az
-bj
 bj
 bj
 bj
@@ -41105,8 +44422,8 @@ bj
 bj
 bj
 bj
-bj
-bj
+tY
+TN
 bj
 bj
 bj
@@ -41116,29 +44433,29 @@ bj
 bj
 bj
 bj
-bj
+az
 az
 bu
 by
+ev
+if
 by
-by
-by
-by
+tl
 bu
 bj
+zN
+ZY
 bj
-bj
-bj
-fp
+bu
 bu
 az
 bu
-bj
+IW
 dP
 gr
 bj
 bj
-bj
+iT
 bu
 az
 aN
@@ -41321,10 +44638,10 @@ ac
 ac
 ac
 ad
-aD
-aD
-aD
-aD
+ac
+ac
+ac
+ac
 ad
 ac
 ac
@@ -41344,58 +44661,58 @@ aG
 aG
 az
 az
-az
-az
-aY
-az
-az
-az
+aR
+aR
+tq
+aR
+aR
+aR
 bi
-bl
+aY
 bj
 bj
 bj
 bj
 bj
 bj
+Bx
 bj
-bm
-bp
-bj
-cA
-bj
-bj
-bj
-bj
-bj
-bj
+mV
+du
+Ai
+Rk
+du
+Pe
+du
 bj
 bj
 bj
+ff
 bj
 bj
 az
+az
 bu
+dG
+dG
+dG
+dG
+dG
 bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
+bj
+ci
+bj
+bj
+fp
 bu
 fP
 bu
+gm
+Gp
+lL
 bj
 bj
-bj
-bj
-bj
-bj
+CM
 bu
 az
 aN
@@ -41601,14 +44918,14 @@ aG
 aG
 aN
 az
+aR
+aR
+aR
+aR
+aR
+sW
 az
 az
-az
-az
-az
-az
-az
-bj
 bj
 bj
 bj
@@ -41620,7 +44937,7 @@ bj
 bj
 bj
 bj
-bj
+TN
 bj
 bj
 bj
@@ -41630,26 +44947,26 @@ bj
 bj
 bj
 bj
-bj
 az
 az
-az
-az
-az
-az
-az
-aY
-dt
-dt
-dt
-dt
-fr
-az
+bu
+bu
+bu
+bu
+bu
+bu
+OD
+GT
+GT
+GT
+GT
+bu
+bu
 aY
 fs
 bu
 bu
-ci
+VR
 eM
 bu
 bu
@@ -41858,13 +45175,14 @@ aG
 aN
 aN
 az
+Wk
+sW
+aR
+aR
+MG
+MG
 az
 az
-az
-az
-az
-az
-az
 bj
 bj
 bj
@@ -41875,8 +45193,7 @@ bj
 bj
 bj
 bj
-bj
-bj
+Bx
 bj
 bj
 bj
@@ -41886,10 +45203,10 @@ bj
 bj
 bj
 cA
-bj
-bj
+QY
 az
 az
+jV
 az
 az
 az
@@ -41902,7 +45219,7 @@ az
 fk
 aZ
 az
-fQ
+sz
 dt
 dt
 fC
@@ -41910,7 +45227,7 @@ az
 az
 aY
 az
-az
+HH
 az
 az
 aN
@@ -42115,6 +45432,25 @@ aG
 aN
 az
 az
+yw
+sW
+aR
+UL
+aR
+aR
+az
+az
+bj
+bj
+bj
+az
+az
+az
+az
+az
+bf
+az
+az
 az
 az
 az
@@ -42124,27 +45460,8 @@ az
 az
 bj
 bj
-bj
-bj
+QY
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-bj
-bj
-bj
-bj
 az
 bu
 bu
@@ -42158,12 +45475,12 @@ bu
 bu
 bu
 fs
-fB
+az
 fs
 bu
 eM
 bu
-bu
+lz
 bu
 bu
 bu
@@ -42352,7 +45669,7 @@ ac
 ac
 ac
 ac
-al
+ac
 ac
 ab
 aa
@@ -42372,17 +45689,17 @@ aG
 aN
 az
 az
+aR
+aR
+aR
+aR
+aR
+aR
 az
 az
-az
-az
-az
-az
-az
 bj
 bj
-bj
-bj
+tY
 az
 bu
 bu
@@ -42398,22 +45715,22 @@ bu
 bu
 bu
 az
-bj
-bj
-bj
+TN
+TN
 bj
 az
+HH
+bu
+gp
+ZY
 bu
 bj
+uG
 bj
 bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
+bu
+nt
+hO
 bu
 az
 bu
@@ -42421,9 +45738,9 @@ fY
 bj
 bj
 bj
-bj
-bj
-bj
+ua
+Xb
+ZY
 bu
 az
 aN
@@ -42605,12 +45922,12 @@ ac
 ac
 ac
 ac
+ad
 ac
 ac
 ac
 ac
-ac
-ac
+ad
 ab
 ab
 aa
@@ -42636,51 +45953,51 @@ az
 aZ
 az
 az
+az
 bj
 bj
-bj
-bj
+QY
 az
 bu
 bF
 bF
 bF
 bF
+no
 bF
-bF
-bD
+nR
 bj
 bj
 da
-bj
+ZY
 bu
 az
 bj
 bj
 bj
-bj
+az
 az
 bu
-dH
+vr
 bj
-dH
-bj
-bj
-eE
-bj
-dH
+ci
+dy
 bj
 bj
+bj
+ci
+my
+og
 bu
 aY
 bu
+vB
 bj
+GG
 bj
+tB
 bj
-bj
-bj
-bj
-bj
+JY
 bu
 az
 aN
@@ -42867,7 +46184,7 @@ ac
 ac
 ac
 ac
-ac
+al
 ac
 ab
 aa
@@ -42891,20 +46208,20 @@ az
 az
 az
 az
+Mv
 az
 az
-bj
 bm
 bj
-bj
+QY
 az
 bu
 bF
+dI
 bF
+kv
 bF
-cj
-bF
-bF
+Gy
 bD
 cl
 bj
@@ -42915,29 +46232,29 @@ az
 bj
 bj
 bj
-bj
+az
 az
 bu
-bj
-bj
-bj
+bu
+bu
+bu
 bk
 bj
 bj
-bj
-bj
-bj
-bj
+bk
+bu
+nt
+pb
 bu
 az
 bu
+nx
 bj
+oa
 bj
-dP
-bj
-bj
-cA
-bj
+FC
+Sm
+vB
 bu
 az
 aN
@@ -43145,25 +46462,25 @@ aN
 az
 az
 az
+Xn
+vU
 az
-az
-az
+vU
 az
 az
 bj
 bj
-bj
-bj
+QY
 az
 bu
 bF
 bF
 bF
 bF
-bF
+ew
 bF
 bD
-cl
+OZ
 bj
 db
 bj
@@ -43171,30 +46488,30 @@ bu
 az
 bj
 bj
-bm
-bj
+TN
+HH
 az
 bu
 dH
-bj
-dH
-bj
-bj
-dH
-bj
-eF
+DI
+bu
 bj
 bj
+dy
+bj
+bu
+bu
+bu
 eM
 az
 bu
+Bq
 bj
+tx
 bj
-bj
-bj
-bj
-bj
-bj
+sA
+Bx
+JY
 eM
 az
 aN
@@ -43369,10 +46686,10 @@ aB
 ac
 ag
 ag
+ag
 ac
 ac
-ac
-ac
+ak
 ac
 ac
 ac
@@ -43401,13 +46718,13 @@ aG
 aN
 az
 az
+IA
+IA
+IA
+IA
+IA
 az
 az
-az
-az
-az
-az
-bj
 bj
 bj
 bj
@@ -43416,12 +46733,12 @@ bu
 bF
 bF
 bF
-bF
+Gy
 cv
-bF
-bD
+dI
+jh
 cl
-bj
+dP
 bj
 bj
 dj
@@ -43429,30 +46746,30 @@ az
 bj
 bj
 bj
-bj
+az
 az
 bu
+ql
+fc
+bu
 bj
 bj
 bj
 bj
-bj
-bj
-bj
-bj
-bj
-bj
+bu
+VI
+MB
 bu
 az
 bu
-bj
+vB
 dy
+FC
 bj
-bj
-gw
-bj
-bj
-dj
+vB
+mI
+vB
+bu
 az
 aN
 aN
@@ -43626,19 +46943,19 @@ ac
 ag
 ag
 ac
+ag
+ag
+ag
 ac
 ac
 ac
 ac
-ac
-ac
-ac
-ak
-ac
+ad
 ac
 ac
 ac
 ac
+ad
 ac
 ac
 ab
@@ -43661,20 +46978,20 @@ az
 az
 az
 aZ
+CI
 az
 az
 az
-bj
 bj
 bj
 bj
 az
 bu
 bF
-bF
-bF
+WY
 ck
-bF
+ck
+tn
 bF
 bD
 cl
@@ -43683,35 +47000,35 @@ da
 bj
 dj
 az
-bj
-bj
-bj
-bj
+gk
+TN
+TN
+az
 az
 bu
-dH
-bj
-dH
+Qx
+ql
+ci
 bj
 bE
-dH
 bj
-dH
-bj
-bj
+LG
+ci
+Bx
+EA
 bu
 az
 eM
-bj
+sA
 cA
+tB
 bj
+Jg
 bj
-bj
-bj
-bj
-dj
+vB
+bu
 az
-az
+Bn
 aN
 aG
 aG
@@ -43883,10 +47200,10 @@ ag
 ag
 ac
 ac
-ag
-ag
 ac
 ac
+ag
+ag
 ac
 ac
 ac
@@ -43914,61 +47231,61 @@ aG
 aG
 aN
 az
+Mv
 az
 az
 az
 az
 az
+rl
 az
-az
-bj
 bj
 bj
 bj
 az
 bu
 bF
-bF
+ew
 bF
 cj
-bF
-bF
-bD
+Gy
+FD
+jw
 cl
 bj
-bD
+Vd
 bj
 dj
 az
 bj
 bj
 bj
-bj
 az
+az
+bu
+bu
+bu
 bu
 bj
 bj
 bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
+ZY
+bu
+Ks
+Un
 bu
 fC
 bu
+py
 bj
-bj
-bj
-bj
-dy
+vB
+pz
+py
 bk
-bj
+JY
 bu
 az
-az
+Pw
 aN
 aG
 aG
@@ -44172,57 +47489,57 @@ aG
 aN
 az
 az
+TW
 az
 az
 az
+jF
+rl
 az
-az
-az
+bE
 bj
 bj
-bj
-bm
 az
 bu
 bF
 bF
+FD
+dI
 bF
 bF
-bF
-bF
-bD
+nR
 cl
 bj
 db
-bj
+cA
 bu
 az
 bj
 bj
 bj
-bj
-az
+HH
+HH
 bu
-dH
+nt
+vR
+bu
+Bx
 bj
-dH
+bk
 bj
-bj
-eF
-bj
-dH
-bj
-bj
+bu
+bu
+bu
 bu
 fD
 bu
+EB
 bj
+nx
 bj
-bj
-bj
-bj
-bj
-bj
+nx
+UU
+JY
 bu
 az
 aN
@@ -44428,58 +47745,58 @@ aG
 aG
 aN
 aN
+pB
+az
+PW
+az
+Yh
 az
 az
 az
-az
-az
-az
-az
-bj
-bj
-bj
-bj
-az
-bu
-bD
-bj
-bD
-bD
-bD
-bD
-bD
-bj
-bj
-bj
-bj
-bu
-az
-bj
 bj
 bj
 bj
 az
 bu
+bD
+bj
+bD
+bD
+bD
+jh
+bD
 bj
 bj
+cA
+Bx
+bu
+az
+bj
+dP
+bj
+LX
+az
+bu
+my
+my
+ci
+bj
+Ad
 bj
 bj
-bj
-bj
-bj
-bj
-bj
-bj
+bu
+Ks
+Un
 bu
 aY
 bu
+tx
 bj
+vB
 bj
-bj
-bj
-bj
-bj
-bj
+vB
+dy
+vB
 bu
 az
 aN
@@ -44654,8 +47971,8 @@ ag
 ag
 ac
 ac
-ac
-ac
+ag
+ag
 ac
 ac
 ac
@@ -44685,22 +48002,22 @@ aG
 aG
 aN
 az
+OJ
+IA
+IA
+IA
+IA
+MX
 az
 az
-az
-az
-az
-az
-az
-bj
 bj
 bj
 bj
 az
 gH
-bD
+ja
 bj
-bD
+En
 cl
 bj
 bj
@@ -44711,35 +48028,35 @@ da
 bj
 bu
 az
-dv
 bj
 bj
 bj
 az
+az
 bu
-dH
-bj
-dH
-bj
-bj
-dH
-bj
-dH
+Vb
+Eh
+bu
+bk
 bj
 bj
+Bx
+bu
+bj
+ay
 bu
 az
 bu
+vB
 bj
+sU
 bj
-cA
+oa
 bj
-dP
-bj
-bj
+JY
 bu
-az
-az
+wb
+nn
 aN
 aN
 aG
@@ -44944,12 +48261,12 @@ aN
 az
 az
 az
+Xn
 az
 az
 az
-az
-az
-bk
+pB
+ej
 bj
 bj
 bj
@@ -44957,46 +48274,46 @@ az
 bu
 bD
 bj
-bD
+WQ
 cl
 bj
 bj
+OO
+dy
 bj
-bj
-bj
-bD
+Mu
 bj
 bu
 az
 bj
 bk
 bj
-bj
 az
+az
+bu
+jj
+hO
 bu
 bj
 bj
 bj
 bj
+ci
 bj
-bj
-bj
-bj
-bj
-bj
+ZY
 bu
 az
 bu
+ZY
+UU
 bj
 bj
 bj
 bj
-bj
-bj
-bj
+ZY
 bu
 az
-az
+zu
 aN
 aN
 aG
@@ -45202,11 +48519,11 @@ aN
 az
 az
 az
+rl
 az
 az
 az
 az
-bj
 bj
 bj
 bj
@@ -45216,19 +48533,19 @@ bG
 bj
 bD
 cl
+FG
 bj
+Bx
 bj
-bj
-bj
-bj
+dP
 db
 bj
 gH
+HH
+TN
+bj
+bj
 az
-bj
-bj
-bj
-bj
 az
 bu
 bu
@@ -45252,7 +48569,7 @@ eM
 bu
 fs
 bu
-fr
+Tj
 aN
 aN
 aN
@@ -45461,21 +48778,21 @@ az
 ba
 az
 az
-bf
+hX
+az
 az
 bj
-bj
-bj
+QY
 bj
 az
 bu
-bD
+TM
 bj
-bD
+pf
 cl
+dy
 bj
-bj
-cA
+kR
 bj
 bj
 bj
@@ -45484,16 +48801,16 @@ bu
 az
 bj
 bj
-bj
-bj
+TN
 az
+dl
 az
+nM
 az
+nM
+jV
 az
-az
-az
-az
-az
+nS
 eK
 az
 az
@@ -45501,11 +48818,11 @@ az
 fr
 az
 az
-az
+nS
 az
 az
 dw
-az
+iM
 az
 az
 az
@@ -45720,48 +49037,48 @@ az
 az
 az
 az
+az
 bj
-bj
-bj
+QY
 bj
 az
 bu
 bH
-bj
-bD
+Nh
+Lb
 cl
 bj
-bj
-bj
-bj
-bj
+bD
+bD
+bD
+dP
 da
-bj
+Sy
 bu
 az
 bj
 bj
-bj
+TN
 bj
 bj
 bl
+nU
+dy
+nU
+EY
 bj
-bm
-bj
-bj
-bj
-bj
+bl
 bj
 eT
-bj
+uG
 bj
 bj
 bj
 bl
 bj
 bj
-bj
-bj
+du
+du
 bj
 az
 aZ
@@ -45970,45 +49287,45 @@ aN
 aN
 aN
 az
-az
-az
-az
-az
-az
-az
+bu
+bu
+bu
+bu
+bu
+bu
+bu
 az
 bj
-bj
-bj
+QY
 bk
 az
 bu
 bI
 bj
-bD
+IB
 cl
 bj
-bj
-bj
-bj
-bj
+bD
+bD
 bD
 bj
-dm
-aZ
+Jw
+bj
+dn
+Fm
+GE
+bj
+TN
 bj
 bj
 bj
+TN
 bj
 bj
+EY
 bj
 bj
-bj
-bj
-bj
-bj
-bj
-dy
+Kq
 bj
 ff
 bj
@@ -46017,12 +49334,12 @@ bj
 bj
 fZ
 bl
-gk
 bj
 bj
+bj
 az
 az
-az
+XS
 az
 az
 aN
@@ -46227,56 +49544,56 @@ aG
 aN
 aN
 az
-az
-az
-az
-az
-az
-az
+bu
+DY
+Qt
+qk
+QV
+zh
+bu
 az
 bj
-bj
-bj
+QY
 bj
 az
 bu
-bD
-bj
-bD
+En
+cA
+En
 cl
-bj
-bj
-bj
-bj
+qH
+oe
+bD
+bD
 bj
 db
 bj
 dn
 dt
 du
-du
-du
+IV
+rq
 du
 dy
 bj
-bj
-bj
-bj
-bj
-bp
-bj
-bj
+TN
+nU
+du
+Ju
+mV
+du
+du
 bj
 ff
 bj
 cA
+hU
+gk
 bj
 bj
 bj
 bj
-bj
-bj
-bj
+ui
 az
 az
 az
@@ -46484,56 +49801,56 @@ aG
 aN
 az
 az
-az
-az
-az
-az
-az
-az
-az
+bu
 bj
+bj
+bE
+bj
+bj
+bu
+az
 bj
 bj
 bj
 az
 bu
-bD
+Fb
 bj
-bD
+Mu
 cl
 bj
 bj
+Jd
+pz
 bj
-bj
-bj
-bj
-bj
+cA
+Sy
 bu
 az
 bj
 bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-fl
-bj
-bj
+TN
+az
+dl
+az
+HH
+nM
+az
+jV
+az
+fQ
+az
+az
+az
+fr
+az
+az
 fR
-bj
-bj
-bj
-bj
-bj
+az
+az
+iM
+az
+az
 az
 az
 az
@@ -46741,15 +50058,15 @@ aG
 aN
 aN
 az
+bu
+bu
+bu
+XN
+bu
+bu
+bu
 az
-az
-az
-az
-az
-az
-az
-bj
-bp
+pX
 bj
 bj
 az
@@ -46758,7 +50075,7 @@ bj
 bj
 cb
 bj
-bj
+dP
 bj
 bj
 bj
@@ -46769,8 +50086,8 @@ bu
 az
 bj
 bj
-bj
-bj
+TN
+az
 bu
 bu
 bu
@@ -46784,10 +50101,10 @@ bu
 bu
 bu
 ft
-bu
+lz
 ci
 ci
-bu
+lz
 bu
 eM
 bu
@@ -46998,47 +50315,47 @@ aG
 aN
 aN
 aN
-az
-az
-az
-az
-az
-az
+bu
+Sy
+bj
+Je
+NG
+bj
+ci
 az
 bj
-bj
-bj
+tY
 bj
 az
 bu
 bj
 bj
 bD
+tD
 bj
 bj
+OO
+dy
 bj
-bj
-bj
-bj
-bD
-bj
-bu
-az
-bj
-bj
-bj
+KW
 bj
 bu
+bf
+bp
 bj
 bj
+aY
+bu
+XI
 bj
 bj
-bj
+dy
+gk
 bj
 dP
 bj
 bj
-bj
+ZY
 bu
 fu
 fu
@@ -47048,7 +50365,7 @@ fu
 fu
 gs
 fu
-bj
+bu
 bj
 bu
 aN
@@ -47255,14 +50572,14 @@ aG
 aN
 aN
 az
-az
-az
-az
-az
-az
-az
-az
+bu
+Sy
+bk
+QY
 bj
+bj
+ci
+az
 bj
 bj
 bj
@@ -47270,31 +50587,31 @@ az
 bu
 bj
 bj
-bD
+jh
+cl
 bj
 bj
-bj
-bj
-bj
-bj
+du
+du
+du
 db
 bj
 bu
 az
-bm
 bj
 bj
-bj
+Bx
+az
 bu
-bj
+Qj
+bF
+FD
 bF
 bF
 bF
 bF
-bF
-bF
-bF
-bF
+FD
+WY
 bj
 bu
 bj
@@ -47302,11 +50619,11 @@ bj
 bj
 bj
 bl
+gk
 bj
 bj
-bj
-bj
-bj
+ci
+bm
 bu
 aN
 aN
@@ -47512,38 +50829,38 @@ aG
 aN
 aN
 az
+bu
+bu
+bu
+sE
+bu
+bu
+bu
 az
-az
-az
-aY
-az
-az
-az
-bj
 bj
 bj
 bj
 az
 bu
-bj
-bj
-bD
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
+ci
 bu
-az
+bu
+bj
+dP
+bj
+cA
+bj
 bj
 bj
 bl
-bj
 bu
+mz
 bj
+gk
+bl
+az
+bu
+rn
 dI
 dX
 dk
@@ -47552,18 +50869,18 @@ dk
 dX
 dk
 bF
-bj
+dP
 bu
 bj
 bj
+du
+du
 bj
 bj
 bj
 bj
-bj
-bj
+XB
 cA
-bj
 bu
 aN
 aN
@@ -47769,28 +51086,28 @@ aG
 aN
 az
 az
-az
-az
-az
-az
-az
-az
+bu
+hI
+bk
+bj
+dP
+QV
+bu
 az
 bj
 bj
-bj
-bj
+QY
 az
 bu
-bj
-bj
+by
+by
+bu
+bu
 bD
-bD
-bD
-bD
-bD
-bj
-bj
+Tb
+tA
+cA
+cA
 da
 bj
 bu
@@ -47798,29 +51115,29 @@ az
 bj
 bj
 bj
-bj
+az
 bu
 bj
-bF
-dY
+dK
+Ix
+dZ
+FU
+zb
 dZ
 eb
-ea
-dZ
-eb
-bF
+eV
 bj
 bu
-bD
-bD
-bD
-bD
-bD
-bD
-bD
-bD
-bD
-bj
+Ss
+Ss
+Ss
+Ss
+CN
+Ss
+Ss
+Ss
+bu
+bm
 bu
 aN
 aN
@@ -48026,57 +51343,57 @@ aG
 aN
 aN
 aN
-az
-az
-az
-az
-az
-az
+bu
+VI
+Xt
+Yz
+oM
+RJ
+bu
 az
 bj
 bj
-bj
-bj
+QY
 az
 bu
 by
+qY
 by
 by
 by
-by
-by
-bD
+Sv
+LT
 cl
 bj
-bD
-bj
+tA
+dy
 bu
 az
 bj
 bj
 bj
-bj
+az
 bu
 bj
 dJ
 dZ
-eo
-eo
-eo
-eo
-dZ
+Mz
+Lw
+za
+LO
+WD
 dO
 bj
+JJ
+ZY
+fE
+bj
+fE
+bj
+UU
+fE
+Sy
 bu
-bj
-fE
-bj
-fE
-bj
-bj
-fE
-bj
-bD
 bj
 bu
 aN
@@ -48240,12 +51557,12 @@ ab
 ao
 ao
 ao
+mC
 ao
+Dj
 ao
 ab
 ab
-ab
-ab
 ac
 ac
 ac
@@ -48283,57 +51600,57 @@ aG
 aN
 aN
 aN
-az
-az
-az
-az
-az
-az
-az
-bm
-bj
-bj
-bj
-az
 bu
+bu
+bu
+bu
+bu
+bu
+bu
+aZ
+bj
+bj
+QY
+bf
+bu
+CC
 by
 by
 by
-by
-by
-by
+cd
+qY
 bD
 cl
 bj
 db
 bj
 dj
-az
-bj
-bj
-cA
-bj
+HH
+TN
+TN
+JO
+XX
 bu
 bj
 dK
-ea
+Lc
 eo
-eo
-eo
-eo
+Lw
+za
+LO
 dY
 eV
 bj
 bu
+jw
+bj
+gk
 bj
 bj
+cA
 bj
 bj
-bj
-bj
-bj
-bj
-bj
+ci
 cA
 bu
 aN
@@ -48498,8 +51815,8 @@ ao
 ao
 ao
 ao
-ab
-ab
+ao
+ao
 ab
 ab
 ab
@@ -48544,20 +51861,20 @@ az
 az
 az
 az
+Mv
 az
 az
 az
-bm
 bj
 bj
-bj
+QY
 az
 bu
 bJ
 by
-by
-by
-by
+bz
+bM
+bM
 by
 cJ
 cl
@@ -48568,24 +51885,24 @@ dj
 az
 bj
 bj
-bj
-bj
+QY
+az
 bu
 bj
-bF
-eb
+Jv
+Vu
 dZ
-eb
+gR
 ea
 eG
-ea
+ym
 eW
 bj
 bu
 bu
 bu
 bu
-bu
+lz
 bu
 bu
 bu
@@ -48754,8 +52071,8 @@ ab
 ao
 ap
 ao
-ab
-ab
+ao
+ao
 ab
 ab
 aa
@@ -48798,23 +52115,23 @@ aN
 aN
 az
 az
+Cw
 az
 az
-az
+ej
 az
 az
 az
 bj
 bj
-bj
-bj
+QY
 az
 bu
 bK
 by
 by
-by
-by
+bM
+bM
 by
 cK
 cl
@@ -48825,10 +52142,10 @@ dj
 az
 bj
 bj
-bm
-bj
+he
+az
 bu
-bk
+tU
 bF
 ec
 dN
@@ -48837,18 +52154,18 @@ dN
 eH
 dN
 bF
+dy
+bu
+ZY
 bj
+bj
+bj
+bj
+bj
+Sy
 bu
 bj
-bj
-bj
-bj
-bj
-bj
-bj
-bu
-bj
-bj
+cA
 bu
 aN
 aN
@@ -49055,14 +52372,14 @@ aN
 aN
 az
 az
+Cw
+Yo
+fQ
+Cw
 az
 az
 az
-az
-az
-az
-bj
-bj
+QY
 bj
 bj
 az
@@ -49070,23 +52387,23 @@ bu
 bL
 by
 cd
+bM
+bM
 by
-by
-by
-bD
+vn
 cl
 bj
-bD
+Mu
 bj
 bu
 az
 bj
 bj
-bj
-bj
+QY
+az
 bu
-bj
-bF
+Qj
+dI
 bF
 dI
 ew
@@ -49098,11 +52415,11 @@ bj
 bu
 bj
 fF
-bj
+iZ
 fF
-bj
+Cr
 fF
-bj
+TN
 bu
 bj
 bj
@@ -49313,13 +52630,13 @@ aN
 az
 az
 az
+ej
 az
 az
 az
+Mv
 az
-az
-bj
-bj
+QY
 bj
 bj
 az
@@ -49327,39 +52644,39 @@ bu
 bM
 by
 by
+qY
 by
-by
-by
-bD
+qY
+Mu
 cl
-bj
+bl
 db
-bj
+Tl
 bu
 az
 bj
 bj
 bj
+az
+bu
+yk
 bj
+bj
+bj
+bj
+bj
+Bx
+bj
+bj
+ZY
 bu
 bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bu
-bj
-bD
+AT
 fS
-bD
-bD
-bD
-bj
+wl
+jO
+tH
+TN
 ci
 bl
 bj
@@ -49569,40 +52886,40 @@ aN
 aN
 az
 az
+bu
+bu
+bu
+bu
+bu
+bu
 az
-az
-az
-az
-az
-az
-bj
-bj
+QY
 bj
 bj
 az
 bu
 bN
+Sv
+Fr
+rp
+IF
 by
-by
-by
-by
-by
-bD
+Qk
+qH
 bj
 bj
-bj
-bj
+ZY
 bu
+HH
+TN
+Bx
+bj
 az
-bj
-bj
-bj
-bj
 bu
 bu
 dL
 bu
-bu
+lz
 bu
 bu
 bu
@@ -49611,12 +52928,12 @@ dL
 bu
 bu
 bj
-fE
-bj
-fE
-bj
-fE
-bj
+yx
+iZ
+yx
+iZ
+yx
+TN
 bu
 bj
 bj
@@ -49826,37 +53143,37 @@ aN
 az
 az
 az
-az
-az
-az
-az
-az
-az
+bu
+Tk
 bj
 bj
 bj
-bj
-az
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
-bu
 bu
 az
 bj
 bj
 bj
-bj
+az
 bu
-dE
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+az
+bj
+bj
+bj
+az
+bu
+Ud
 bj
 bj
 dE
@@ -49865,15 +53182,15 @@ bu
 bA
 bj
 bj
-bj
+bA
 bu
-bj
+ZY
 bj
 bE
 bl
 bj
 bj
-bj
+Sy
 eM
 bj
 dP
@@ -50083,51 +53400,51 @@ aN
 az
 az
 az
-az
-az
-az
-az
-az
-az
-bj
-bj
-bj
-bj
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-bj
-bj
-bj
-bp
 bu
-dE
+bj
+bj
+bD
+bj
+bu
+az
+bj
+bj
+Yv
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+TN
+TN
+TN
+fQ
+bu
+Ud
 bj
 bj
 eq
 dE
 bu
-bA
+JW
 bj
 cA
-bj
+Vc
 bu
 bu
 bu
 bu
-bu
+lz
 bu
 bu
 bu
@@ -50340,12 +53657,13 @@ aN
 az
 az
 az
+bu
+bE
+ZA
+bD
+bj
+KN
 az
-az
-az
-az
-az
-az
 bj
 bj
 bj
@@ -50358,30 +53676,29 @@ bj
 bj
 bj
 bj
-bm
 bj
 bj
 bj
-bj
-cA
+Bx
+Zm
 bj
 bl
 bj
 bj
-bj
+az
 bu
+Ud
+bj
+dP
+gk
 dE
-bj
-bj
-bj
-bj
 bu
+EO
+bj
+bj
 bA
-bj
-bj
-bj
 bu
-bj
+ZY
 bj
 bl
 bj
@@ -50595,54 +53912,54 @@ aG
 aG
 aN
 aN
-az
-az
-az
-az
-aZ
-az
-az
-az
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bu
-dE
-bj
-bj
-bj
-bj
-bu
-bA
-bj
-bj
-bj
+Tj
+Tj
 bu
 bj
-fG
 bj
-fG
-cA
+bD
+bj
+bu
+az
+bj
+bj
+bj
+bj
+bj
+bj
+bj
+bj
+bj
+bj
+bj
+bj
+bj
+bj
+bj
+bj
+QY
+bj
+bj
+bj
+bj
+az
+bu
+Ud
+ji
+ji
+bj
+El
+bu
+Vc
+bj
+bE
+CK
+bu
+bj
+VA
+ql
+SM
+Sl
 fG
 bj
 bu
@@ -50852,15 +54169,15 @@ aG
 aG
 aN
 aN
+fQ
 az
-az
-az
-az
-az
-az
-az
-az
+bu
+Ks
 bj
+bj
+bj
+bu
+ej
 bj
 bm
 bj
@@ -50873,34 +54190,34 @@ bE
 bj
 bj
 bp
-bj
-bj
-bj
-bj
-bm
+bE
 bj
 bj
 bj
 bm
 bj
+bj
+bj
+bj
+az
 bu
+rS
+TY
 dE
 bj
 dP
-bj
-bj
 bu
-bA
+CK
 bj
 bl
-bj
+NR
 bu
 bj
-bD
-bD
-bD
+yC
+ZQ
+pv
 gg
-bD
+pv
 bj
 ci
 bj
@@ -51111,57 +54428,57 @@ aN
 aN
 az
 az
-az
-az
-az
-az
-az
-az
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
-bj
 bu
-bj
-bj
-bj
-bj
+bu
+ci
+bu
+bu
+bu
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+az
+bu
+mx
+Iq
+nG
+bE
 cA
 bu
+tz
+gk
+bj
 bA
-bj
-bj
-bj
 bu
 bj
-fH
-bj
-fH
-bj
+HT
+ql
+FW
+ql
 fH
 bj
 bu
 bj
-bj
+cA
 bu
 aN
 aN
@@ -51366,6 +54683,19 @@ aG
 aG
 aN
 az
+ej
+az
+ej
+fQ
+Cw
+az
+jV
+az
+az
+az
+az
+az
+pB
 az
 az
 az
@@ -51381,35 +54711,22 @@ az
 az
 az
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
+Fo
 az
 az
 bu
-dE
-bj
-bj
-bj
+Sq
+WR
+vO
+ri
 bj
 bu
 bA
 bj
 bj
-bj
+EO
 bu
-bj
+UO
 bj
 bj
 bj
@@ -51623,13 +54940,24 @@ aG
 aG
 aN
 az
+fQ
+kp
+Xn
 az
 az
 az
+jV
+az
+bf
+az
+az
+Mv
+az
+Cw
 az
 az
 az
-az
+ej
 az
 bf
 az
@@ -51638,17 +54966,6 @@ az
 az
 az
 az
-aZ
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
 az
 az
 az
@@ -51657,7 +54974,7 @@ az
 bu
 bu
 bu
-bu
+lz
 bu
 dL
 bu
@@ -51674,8 +54991,8 @@ bu
 bu
 bu
 bu
+bE
 bj
-gk
 bu
 aN
 aN
@@ -51881,12 +55198,12 @@ aG
 aN
 aN
 aN
+Wi
+jo
+ej
+kN
 az
-az
-az
-az
-az
-az
+jV
 az
 az
 aY
@@ -51897,7 +55214,7 @@ az
 az
 az
 az
-az
+Xn
 az
 cB
 az
@@ -51908,17 +55225,17 @@ az
 az
 az
 az
-az
+bf
 az
 az
 bu
-bj
-dM
-bD
-dM
+EZ
 bj
 bj
+ZY
 bj
+bj
+hP
 bu
 eX
 eX
@@ -52139,53 +55456,53 @@ aN
 aN
 aN
 az
+Tq
+Cw
+km
 az
+bu
+bu
+bu
+bu
+bu
+bu
+ER
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+Mv
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-aZ
 az
 az
 ba
+Xn
 az
-az
-az
+rl
 az
 az
 bu
-bj
+AO
 cA
-bj
-bj
-bj
+iZ
+iZ
+iZ
 eC
 dM
-bu
-eX
-eX
-eX
+JJ
+PJ
+KM
+Ue
 fw
-eX
+Vy
 dj
 bj
 bu
-bj
+UO
 bj
 eM
 bj
@@ -52396,26 +55713,26 @@ aN
 aN
 aN
 az
+ol
 az
+WT
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
+bu
+IG
+bj
+Xk
+bj
+bj
+bj
+bu
+xv
+nl
+bu
+bj
+FR
+xv
+bu
+Au
 az
 az
 az
@@ -52426,13 +55743,13 @@ az
 az
 az
 bu
+dM
 bj
-bj
-bj
-bj
-bj
-eC
-bD
+iZ
+iZ
+iZ
+vy
+zt
 bu
 eY
 eX
@@ -52653,54 +55970,54 @@ aN
 aN
 aN
 az
+Kb
 az
+ol
 az
+bu
+hA
+bj
+cb
+bj
+bj
+bj
+bu
+dj
+Dn
+bu
+dj
+Dn
+bu
+bu
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
+uQ
+vZ
+uQ
+uQ
+vZ
+pB
 az
 az
 az
 dj
 bj
 bj
-bj
-bj
-dP
-eC
-bD
+EK
+iZ
+uU
+vy
+LU
 bu
 eZ
 fg
 eX
 eX
 fI
-bu
+lz
 bj
 bj
 dP
-bj
+gk
 bj
 bl
 bj
@@ -52909,44 +56226,44 @@ aG
 aG
 aN
 aN
+Cw
 az
 az
+Xn
+az
+bu
+Ni
+bj
+bD
+bm
+bj
+bj
+cb
+bj
+bj
+nU
+bj
+bj
+FR
+bu
+az
+Kl
+uQ
+vZ
+uQ
+wm
 az
 az
-az
-az
-az
-az
-az
-aZ
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
+HH
 az
 dj
 bj
 bl
-bj
-bj
-bj
-eC
-dM
+iZ
+iZ
+iZ
+Mh
+Zz
 bu
 fa
 fh
@@ -53171,46 +56488,46 @@ aN
 aN
 az
 az
+bu
+Sy
+Yw
+bD
+bj
+bj
+bj
+cb
+bj
+bj
+nU
+bj
+bj
+bj
+bu
 az
-az
-az
-az
-az
-az
-az
-az
-az
+RE
+RE
+uQ
+uQ
+vZ
 az
 aZ
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-aZ
-az
+HH
 az
 bu
+Eb
 bj
+iZ
+eN
+iZ
 bj
-bj
-cA
-bj
-bj
-bj
+hP
 eM
 fa
 fi
-fi
-fw
-eX
-bu
+Xp
+oK
+Vy
+lz
 dj
 dj
 dj
@@ -53428,53 +56745,53 @@ aN
 aN
 az
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-aY
-az
-az
-az
-az
-az
-az
-az
-az
-az
 bu
 bj
+ZA
+bD
 bj
 bj
 bj
+bu
+dj
+Dn
+bu
+dj
+Dn
+bu
+bu
+aY
+uQ
+uQ
+az
+jL
+uQ
+az
+az
+HH
+az
+bu
+jr
 bj
+iZ
+iZ
+Cr
 bj
-bj
+rn
 bu
 fb
 eX
 eX
 fx
 eX
+IP
+Gg
 eX
-eX
-eX
-eX
-eX
-eX
-eX
-eX
+PT
+fm
+oA
+fm
+pq
 bu
 aN
 aG
@@ -53685,53 +57002,53 @@ aN
 az
 az
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
 bu
 bj
+bj
+PU
+bj
+bj
+bj
+bu
+xv
+bj
+bu
+nl
+QA
+xv
+bu
+az
+vZ
+uQ
+uQ
+uQ
+vZ
+az
+az
+HH
+az
+JJ
+ij
 dP
 bj
 bj
 bj
 bj
-bj
+yk
 bu
 fb
 eX
-eX
+nJ
 eX
 fI
 fT
-fw
+Hi
 gh
 eX
 gu
 fw
 gh
-eX
+PJ
 bu
 aN
 aG
@@ -53940,55 +57257,55 @@ aN
 aN
 aN
 az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
-az
+xF
+Cw
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+bu
+Cw
+uQ
+uQ
+Ez
+nk
+uQ
 az
 az
 az
 az
 bu
-bj
-bj
-bj
-bj
-bj
-bj
-bj
+bD
+bD
+bD
+Nv
+bD
+BZ
+bD
 bu
+PJ
 eX
 eX
+IP
+fm
+fm
+SG
 eX
 eX
+pq
+Fa
 eX
-eX
-eX
-eX
-eX
-eX
-eX
-eX
-eX
+PT
 bu
 aN
 aG
@@ -54199,6 +57516,7 @@ aN
 az
 az
 az
+jV
 az
 az
 az
@@ -54207,22 +57525,21 @@ az
 az
 az
 az
-az
-az
+Mv
 az
 az
 aN
 aN
 az
 az
+uQ
+az
+uQ
 az
 az
 az
-az
-az
-az
-az
-az
+bf
+pB
 az
 bu
 bu
@@ -54456,27 +57773,27 @@ aG
 aG
 aN
 aN
+jV
+az
+az
+aN
+aN
+az
+az
+az
+pB
 az
 az
 az
 aN
 aN
-az
-az
-az
-az
-az
-az
-az
-aN
-aN
 aN
 az
-az
-az
-az
-az
-az
+Xn
+uQ
+uQ
+mm
+uQ
 az
 az
 az

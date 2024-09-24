@@ -125,7 +125,7 @@ There are several things that need to be remembered:
 	if(C)
 		var/obj/structure/destructible/clockwork/massive/celestial_gateway/G = GLOB.ark_of_the_clockwork_justiciar
 		if(G && G.active && ishuman(src))
-			var/mutable_appearance/new_cult_overlay = mutable_appearance('icons/effects/genetics.dmi', "servitude", -ANTAG_LAYER)
+			var/mutable_appearance/new_cult_overlay = mutable_appearance('icons/effects/genetics.dmi', "servitude", -MUTATIONS_LAYER)
 			overlays_standing[ANTAG_LAYER] = new_cult_overlay
 	apply_overlay(ANTAG_LAYER)
 

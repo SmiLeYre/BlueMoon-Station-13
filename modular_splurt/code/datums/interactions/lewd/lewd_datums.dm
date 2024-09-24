@@ -534,12 +534,7 @@
 	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))
 		new /obj/effect/temp_visual/heart(partner.loc)
 	. = ..()
-	playlewdinteractionsound(partner, pick(
-		'modular_splurt/sound/interactions/kiss/kiss1.ogg',
-		'modular_splurt/sound/interactions/kiss/kiss2.ogg',
-		'modular_splurt/sound/interactions/kiss/kiss3.ogg',
-		'modular_splurt/sound/interactions/kiss/kiss4.ogg',
-		'modular_splurt/sound/interactions/kiss/kiss5.ogg'), 50, 1, -1, ignored_mobs = user.get_unconsenting())
+	playlewdinteractionsound(user.loc, pick(GLOB.lewd_kiss_sounds), 90, 1, -1)
 
 //Own stuff
 /datum/interaction/lewd/oral/selfsuck

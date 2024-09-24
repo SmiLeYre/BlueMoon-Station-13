@@ -317,6 +317,14 @@
 	contains = list(/obj/machinery/jukebox)
 	crate_name = "Jukebox"
 
+/datum/supply_pack/misc/moniq // BLUEMOON FINK ADD
+	name = "Jukebox (Muz-TV)"
+	desc = "Туц туц туц туц"
+	cost = 15000
+	contains = list(/obj/item/sign/moniq)
+	crate_name = "Jukebox (Muz-TV)"
+
+
 /datum/supply_pack/misc/abandonedcrate
 	name = "Loot Box"
 	desc = "Испытайте свою удачу с этими высокозащищенными ящиками с добычей! Разгадайте замок, выиграйте отличные призы! ПРЕДУПРЕЖДЕНИЕ: ВЗРЫВООПАСНЫЙ ПРОВАЛ."

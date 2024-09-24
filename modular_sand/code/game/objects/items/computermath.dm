@@ -48,84 +48,51 @@
 		if("Hard")
 			operator = pick("2nd polynomial", "algebra", "line intersection")
 
-	var/correct = FALSE
+	var/question
+	var/solution
+	var/solution2 = null
 	switch(operator)
 		// Easy problems. The numbers need to be so it's doable without a calculator, yet not easy.
 		if("add")
 			var/addnum_1 = rand(1, 500)
 			var/addnum_2 = rand(1, 500)
-			var/question = "What is [addnum_1] + [addnum_2]?"
-			var/solution = addnum_1 + addnum_2
-			var/answer = input(user, question, "Math Problem") as null|num
-			if(isnull(answer)) // User hit the cancel button
-				return
-			if(answer == solution)
-				correct = TRUE
+			question = "What is [addnum_1] + [addnum_2]?"
+			solution = addnum_1 + addnum_2
 		if("subtract")
 			var/subnum_1 = rand(-100, 100)
 			var/subnum_2 = rand(-100, 200)
-			var/question = "What is [subnum_1] - [subnum_2]?"
-			var/solution = subnum_1 - subnum_2
-			var/answer = input(user, question, "Math Problem") as null|num
-			if(isnull(answer)) // User hit the cancel button
-				return
-			if(answer == solution)
-				correct = TRUE
+			question = "What is [subnum_1] - [subnum_2]?"
+			solution = subnum_1 - subnum_2
 		if("multiply")
 			var/multnum_1 = rand(-50, 50)
 			var/multnum_2 = rand(-250, 500)
-			var/question = "What is [multnum_1] * [multnum_2]?"
-			var/solution = multnum_1 * multnum_2
-			var/answer = input(user, question, "Math Problem") as null|num
-			if(isnull(answer)) // User hit the cancel button
-				return
-			if(answer == solution)
-				correct = TRUE
+			question = "What is [multnum_1] * [multnum_2]?"
+			solution = multnum_1 * multnum_2
 
 		// Medium problems
 		if("division")
 			var/divnum_2 = rand(3, 12)
 			var/divnum_1 = rand(-50, 50) * divnum_2 // Nice numbers only.
-			var/question = "What is [divnum_1] / [divnum_2]? Rounded the answer down if applicable."
-			var/solution = round(divnum_1 / divnum_2)
-			var/answer = input(user, question, "Math Problem") as null|num
-			if(isnull(answer)) // User hit the cancel button
-				return
-			if(answer == solution)
-				correct = TRUE
-
+			question = "What is [divnum_1] / [divnum_2]? Rounded the answer down if applicable."
+			solution = round(divnum_1 / divnum_2)
 		if("exponent")
 			var/expnum_1 = rand(-50, 50)
 			var/expnum_2 = pick(list(2, 3, 1/2)) // Also square root!
-			var/question = "What is ([expnum_1]) ^ [expnum_2]? Answer is rounded down if applicable."
-			var/solution
+			question = "What is ([expnum_1]) ^ [expnum_2]? Answer is rounded down if applicable."
 			if(expnum_2 == 1/2) // For some reason, a ** 1/2 throws a runtime error, so just use sqrt()
 				solution = round(sqrt(abs(expnum_1)))
 			else
 				solution = round(expnum_1 ** expnum_2)
-			var/answer = input(user, question, "Math Problem") as null|num
-			if(isnull(answer)) // User hit the cancel button
-				return
-			if(answer == solution)
-				correct = TRUE
-
 		if("easy algebra")
 			// ax + b = c ----> x = (c-b)/a
 			var/num_a = rand(1,5)
 			var/num_b = rand(-5,10)
 			var/num_c = rand(-10, 10)
-			var/question = "[num_a]x + [num_b] = [num_c]. Solve for x."
-			var/solution = (num_c - num_b)/num_a
-			var/answer = input(user, question, "Math Problem") as null|num
-			if(isnull(answer)) // User hit the cancel button
-				return
-			if(answer == solution)
-				correct = TRUE
+			question = "[num_a]x + [num_b] = [num_c]. Solve for x."
+			solution = round((num_c - num_b)/num_a)
 
 		// Hard problems, where 'hard' is high school maths
 		if("algebra") // everyone's favorite :)
-			var/answer
-			var/solution
 			if(prob(50)) // 2 variants of the question
 				// a/bx = c  --->  x = a/bc. b and c may not be 0.
 				var/num_a = rand(-100, 100)
@@ -133,72 +100,59 @@
 				if(num_b == 0)
 					num_b = 12
 				var/num_c = rand(1, 10)
-				var/question = "[num_a]/([num_b]x) = [num_c]. Solve for x. Round down if applicable."
+				question = "[num_a]/([num_b]x) = [num_c]. Solve for x. Round down if applicable."
 				solution = round(num_a / (num_b * num_c))
-				answer = input(user, question, "Math Problem") as null|num
 			else
 				// (a-x)/b = x/c ----> x=ac/(b+c), b+c and b*c may not be 0
 				var/num_a = rand(-50, 50)
 				var/num_b = rand(1, 5)
 				var/num_c = rand(1, 10)
-				var/question = "([num_a]-x)/[num_b] = x/[num_c]. Solve for x. Round down if applicable."
+				question = "([num_a]-x)/[num_b] = x/[num_c]. Solve for x. Round down if applicable."
 				solution = round((num_a * num_c)/(num_b + num_c))
-				answer = input(user, question, "Math Problem") as null|num
-			if(isnull(answer)) // User hit the cancel button
-				return
-			if(answer == solution)
-				correct = TRUE
-
-
 		if("2nd polynomial")
 			// Math part
 			var/num_a = rand(1, 2)
 			var/num_b = rand(-5, 5)
 			var/num_c = rand(-25, 25)
 			var/discriminant = num_b**2 - 4 * num_a * num_c
-			var/solution1
-			var/solution2
 			if(discriminant >= 0) // positive gives 2 solutions, if D=0 then sol1=sol2 anyway
 				// Quadratic formula
-				solution1 = round((-num_b+sqrt(discriminant))/(2*num_a))
+				solution = round((-num_b+sqrt(discriminant))/(2*num_a))
 				solution2 = round((-num_b-sqrt(discriminant))/(2*num_a))
 			else
-				solution1 = 0
+				solution = 0
 				solution2 = 0
-
-			// Answering part
-			var/question = "[num_a]x^2 + [num_b]x + [num_c] = 0. Solve for x, give any real solution. Fill in 0 for no real solutions. Answers are rounded down. (-0.25 becomes -1)"
-			var/answer = input(user, question, "Math Problem") as null|num
-			if(isnull(answer)) // User hit the cancel button
-				return
-			if(answer == solution1 || answer == solution2)
-				correct = TRUE
-
+			question = "[num_a]x^2 + [num_b]x + [num_c] = 0. Solve for x, give any real solution. Fill in 0 for no real solutions. Answers are rounded down. (-0.25 becomes -1)"
 		if("line intersection")
 			// y1=ax+b
 			// y2=cx+d
-			// intersect: x=(d-c)/(a-b), y=a(d-c)/(a-b)+c. So a-b or c-d may never be 0.
-			var/num_a = rand(1,5)
-			var/num_b = rand(-10,-1)
-			var/num_c = rand(1, 10)
-			var/num_d = rand(-10, -1)
-			var/x_intersect = round((num_d-num_c)/(num_a-num_b))
-			var/y_intersect = round(num_a * (num_d - num_c)/(num_a - num_b) + num_c)
-			var/question
-			var/answer
-			if(prob(50)) // 50% chance to ask for x, or y
-				question = "Given the lines y=[num_a]x+[num_b] and y=[num_c]x+[num_d], what is the x-value of their intersection point? Rounded down if applicable."
-				answer = input(user, question, "Math Problem") as null|num
-				if(answer == x_intersect)
-					correct = TRUE
+			// intersect: x=(d-b)/(a-c), y=a(d-b)/(a-c)+b. If a-c is 0, there is no answer.
+			var/num_a = rand(-5,5)
+			var/num_b = rand(-5,5)
+			var/num_c = rand(-5, 5)
+			var/num_d = rand(-5, 5)
+			var/x_intersect
+			var/y_intersect
+			if (num_a - num_c != 0)
+				x_intersect = round((num_d - num_b) / (num_a - num_c))
+				y_intersect = round(num_a * (num_d - num_b) / (num_a - num_c) + num_b)
 			else
-				question = "Given the lines y=[num_a]x+[num_b] and y=[num_c]x+[num_d], what is the y-value of their intersection point? Rounded down if applicable."
-				answer = input(user, question, "Math Problem") as null|num
-				if(answer == y_intersect)
-					correct = TRUE
-			if(isnull(answer)) // User hit the cancel button
-				return
+				x_intersect = 0
+				y_intersect = 0
+			var/expected_variable
+			if(prob(50))
+				solution = x_intersect
+				expected_variable = "x"
+			else
+				solution = y_intersect
+				expected_variable = "y"
+			question = "Given the lines y=[num_a]x+[num_b] and y=[num_c]x+[num_d], what is the [expected_variable]-value of their intersection point? Fill in 0 for no intersection. Rounded down if applicable."
 
+	var/answer = input(user, question, "Math Problem") as null|num
+	if (isnull(answer))
+		return
+	answer = round(answer)
+	var/correct = answer == solution || answer == solution2
 	// An answer has been submitted, remove a charge and check if it's correct!
 	if(consume_charges())
 		handle_reward(user, reward_type, correct, difficulty)

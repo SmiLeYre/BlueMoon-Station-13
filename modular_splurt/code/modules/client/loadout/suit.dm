@@ -120,3 +120,28 @@
 	path = /obj/item/clothing/suit/invisijacket
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
+
+//BM add
+/datum/gear/suit/syndiewintercoat/civil
+    name = "syndicate winter coat"
+    path = /obj/item/clothing/suit/hooded/wintercoat/syndicate/civil
+    subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
+
+/datum/gear/suit/syndieharness/civil
+    name = "Engine Technician Harness"
+    path = /obj/item/clothing/suit/armor/vest/infiltrator/gorlex_harness/civil
+
+/datum/gear/suit/vest/civil
+    name = "Armor vest"
+    path = /obj/item/clothing/suit/armor/vest/fake
+
+/datum/gear/suit/capcarapace/winter/civil
+    name = "syndicate captain's winter vest"
+    path = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate/winter/civil
+    subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
+/datum/gear/suit/capcarapace/civil
+    name = "syndicate captain's vest"
+    path = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate/civil
+    subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+//BM add end

@@ -109,6 +109,45 @@
 	lefthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/lefthand.dmi'
 	righthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/righthand.dmi'
 
+/obj/item/toy/crayon/atam
+	name = "\improper Atam"
+	desc = "Ритуальный кинжал, сделанный из странного сплава железа и серебра. Обычно используется для оккультных ритуалов, но дожил до наших дней, и сейчас находится в твоём поле зрения. Рукоять подозрительно тяжёлая и на ней выгравированна слегка затёртая фраза, которая читается как 'О Калфу!' и цифра 3. Клинок слишком тупой, что бы кого то им поранить, и слишком острый, что бы не пораниться самому."
+	icon = 'modular_bluemoon/krashly/icons/obj/weapons/weapons.dmi'
+	icon_state = "knife"
+	item_state = "switchblade_ext"
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	w_class = WEIGHT_CLASS_NORMAL
+
+	reagent_contents = list(/datum/reagent/blood = 1)
+
+	attack_verb = list("attacked")
+	grind_results = list()
+	paint_color = "#a10e0e"
+
+	charges = -1
+
+	edible = FALSE
+
+	pre_noise = TRUE
+	post_noise = TRUE
+
+	pre_noise_sound = 'sound/items/sheath.ogg'
+	post_noise_sound = 'sound/weapons/slice.ogg'
+
+/obj/item/toy/crayon/atam/draw_on(atom/target, mob/living/carbon/human/user, proximity, params)
+	. = ..()
+	if(user.blood_volume)
+		user.apply_damage(0.5, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+		user.bleed(10)
+		transfer_mob_blood_dna(user)
+		user.do_attack_animation(user)
+		user.visible_message("<span class='warning'>[user] [user.blood_volume ? "cuts open [user.ru_ego()] arm and begins writing in [user.ru_ego()] own blood":"begins sketching out a strange design"]!</span>", \
+					"<span class='cult'>You [user.blood_volume ? "slice open your arm and ":""]begin drawing a sigil.</span>")
+	else
+		to_chat(user, "<span class='warning'>You don't have blood!")
+		return
+
 //Ballistic
 
 /obj/item/gun/ballistic/automatic/ak12

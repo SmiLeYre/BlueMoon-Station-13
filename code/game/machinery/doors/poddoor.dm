@@ -48,7 +48,7 @@
 
 /obj/machinery/door/poddoor/crowbar_act(mob/living/user, obj/item/tool)
 	. = ..()
-	if(stat & NOPOWER)
+	if(machine_stat & NOPOWER)
 		open(TRUE)
 		return TOOL_ACT_TOOLTYPE_SUCCESS
 	if (density)
@@ -186,5 +186,5 @@
 	return
 
 /obj/machinery/door/poddoor/try_to_crowbar(obj/item/I, mob/user)
-	if(stat & NOPOWER)
+	if(machine_stat & NOPOWER)
 		open(1)

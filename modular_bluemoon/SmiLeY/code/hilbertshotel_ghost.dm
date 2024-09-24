@@ -55,3 +55,24 @@
 /datum/map_template/hilbertshotel/apartment/forest
 	name = "Apartment_forest"
 	mappath = '_maps/templates/apartment_forest.dmm'
+
+/datum/map_template/hilbertshotel/apartment/jungle
+	name = "Apartment_jungle"
+	mappath = '_maps/templates/apartment_jungle.dmm'
+
+/datum/map_template/hilbertshotel/apartment/prison
+	name = "Apartment_prison"
+	mappath = '_maps/templates/apartment_prison.dmm'
+
+/datum/map_template/hilbertshotel/apartment/winter
+	name = "Apartment_winter"
+	mappath = '_maps/templates/apartment_winter.dmm'
+
+/datum/map_template/hilbertshotel/apartment/sport
+	name = "Apartment_GYM"
+	mappath = '_maps/templates/apartment_sportzone.dmm'
+
+/datum/map_template/hilbertshotel/apartment/capsule
+	name = "Apartment_winter"
+	mappath = '_maps/templates/apartment_capsule.dmm'
+  

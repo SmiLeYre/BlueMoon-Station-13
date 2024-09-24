@@ -3707,7 +3707,7 @@
 	height = 16;
 	name = "DS-1 Parking Spot";
 	width = 16;
-	id = "ds1_syndicate";
+	shuttle_id = "ds1_syndicate";
 	dwidth = 6
 	},
 /turf/open/lava/smooth/lava_land_surface,

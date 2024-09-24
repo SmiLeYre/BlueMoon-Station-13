@@ -151,7 +151,7 @@
 	dir = 4;
 	dwidth = 3;
 	height = 12;
-	id = "syndicate_dropship";
+	shuttle_id = "syndicate_dropship";
 	name = "Syndicate Drop Ship";
 	width = 7
 	},

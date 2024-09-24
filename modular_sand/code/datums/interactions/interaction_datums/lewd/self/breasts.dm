@@ -10,11 +10,7 @@
 	write_log_target = null
 
 	additional_details = list(
-		list(
-			"info" = "You can fill a container if you hold it in your hand or pull it",
-			"icon" = "flask",
-			"color" = "transparent"
-			)
+		INTERACTION_FILLS_CONTAINERS
 	)
 
 	p13user_emote = PLUG13_EMOTE_BREASTS

@@ -113,3 +113,47 @@
     desc = "Невероятный фиолетовый костюм, что бросается в ваши глаза выглядит довольно качественным, на него явно было потрачено не одна сотня тысяч кредитов, присмотревшись вы видите на кайме пиджака аккуратно пришита именная бирка 'Berly Blight'."
     icon_state = "Prosecutor_suit"
     item_state = "Prosecutor_suit"
+
+/obj/item/clothing/under/donator/bm/monolith_uniform
+	name = "Granite M1 ''Monolith'' uniform"
+	desc = "The jumpsuit of the stalker from the Monolith group, the manufacturer is unknown. We thank you for the boon bestowed upon your servants. The monolith has shown us the sacred path, the path of unity with the monolith. We are all united in our faith. As long as we are united, we are invincible, damn the infidels who reject his path, for they are blind in their desires. Strength is in the unity of our brothers, blessed be the eternal strength given to us by the monolith in fulfillment of his will. Let's establish eternal order in the zone, brothers and sisters, and may eternal unity with the monolith come. GLORY TO THE MONOLITH."
+	icon_state = "monolith"
+	item_state = "monolith"
+	can_adjust = FALSE
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+
+/obj/item/clothing/under/donator/bm/SATT_combat_uniform
+	name = "SATT combat uniform"
+	desc = "High-quality clothes made of a mixture of fleece and cotton. The logo in the form of an eagle and the caption of the Strategic Assault Tactical Team are visible on the tag. If you inhale the smell, you can smell the slices of a war crime."
+	icon_state = "SATTcombat"
+	item_state = "SATTcombat"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/SATT_turtleneck
+	name = "SATT turtleneck"
+	desc = "High-quality clothes made of a mixture of fleece and cotton. The logo in the form of an eagle and the caption of the Strategic Assault Tactical Team are visible on the tag. If you inhale the smell, you can smell the slices of a war crime."
+	icon_state = "SATTturtleneck"
+	item_state = "SATTturtleneck"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/SATT_vdv
+	name = "SATT VDV uniform"
+	desc = "High-quality clothes made of a mixture of fleece and cotton. The logo in the form of an eagle and the caption of the Strategic Assault Tactical Team are visible on the tag. If you inhale the smell, you can smell the slices of a war crime."
+	icon_state = "SATTvdv"
+	item_state = "SATTvdv"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/aki_camo
+	name = "Old Guard NRI uniform"
+	desc = "A sample of the old uniform of the border special forces-troops of the NRI Guard. This one is adapted for anthropomorphs."
+	icon_state = "adlercamo"
+	item_state = "adlercamo"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/aki_adler_camo
+	name = "Adler Peacekeeper uniform"
+	desc = "Peacekeeper uniforms are custom-made for corporations in the Taywar sector. Simulates all the features of Merenid biology to perfectly match any personality, as well as some types of low-quality races."
+	icon_state = "adlerpk"
+	item_state = "adlerpk"
+	can_adjust = FALSE

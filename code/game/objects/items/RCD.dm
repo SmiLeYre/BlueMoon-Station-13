@@ -447,21 +447,22 @@ RLD
 	var/list/rcd_results = A.rcd_vals(user, src)
 	if(!rcd_results)
 		return FALSE
+	if(!checkResource(rcd_results["cost"], user))
+		return FALSE
 	var/delay = rcd_results["delay"] * delay_mod
 	var/obj/effect/constructing_effect/rcd_effect = new(get_turf(A), delay, src.mode)
 	var/turf/the_turf = get_turf(A)
 	var/turf_coords = "[COORD(the_turf)]"
 	investigate_log("[user] is attempting to use [src] on [A] (loc [turf_coords] at [the_turf]) with cost [rcd_results["cost"]], delay [rcd_results["delay"]], mode [rcd_results["mode"]].", INVESTIGATE_RCD)
 	if(do_after(user, delay, target = A))
-		if(checkResource(rcd_results["cost"], user))
-			var/atom/cached = A
-			if(A.rcd_act(user, src, rcd_results["mode"]))
-				rcd_effect.end_animation()
-				useResource(rcd_results["cost"], user)
-				activate()
-				investigate_log("[user] used [src] on [cached] (loc [turf_coords] at [the_turf]) with cost [rcd_results["cost"]], delay [rcd_results["delay"]], mode [rcd_results["mode"]].", INVESTIGATE_RCD)
-				playsound(src, 'sound/machines/click.ogg', 50, 1)
-				return TRUE
+		var/atom/cached = A
+		if(A.rcd_act(user, src, rcd_results["mode"]))
+			rcd_effect.end_animation()
+			useResource(rcd_results["cost"], user)
+			activate()
+			investigate_log("[user] used [src] on [cached] (loc [turf_coords] at [the_turf]) with cost [rcd_results["cost"]], delay [rcd_results["delay"]], mode [rcd_results["mode"]].", INVESTIGATE_RCD)
+			playsound(src, 'sound/machines/click.ogg', 50, 1)
+			return TRUE
 	qdel(rcd_effect)
 
 /obj/item/construction/rcd/Initialize(mapload)
@@ -613,14 +614,18 @@ RLD
 	upgrade = TRUE
 
 /obj/item/construction/rcd/combat
-	name = "Combat RCD"
-	desc = "A device used to rapidly build and deconstruct. Reload with metal, plasteel, glass or compressed matter cartridges. This RCD has been upgraded to be able to remove Rwalls!"
+	name = "combat RCD"
+	desc = "A device used to rapidly build and deconstruct. Reload with metal, plasteel, glass or compressed matter cartridges."
 	icon_state = "ircd"
 	item_state = "ircd"
 	max_matter = 500
 	matter = 500
 	canRturf = TRUE
 	upgrade = TRUE
+
+/obj/item/construction/rcd/combat/examine(mob/user)
+	. = ..()
+	. += "The [name] has a wavelength penetrator installed, allowing it to deconstruct reinforced walls."
 
 /obj/item/construction/rcd/industrial
 	name = "industrial RCD"

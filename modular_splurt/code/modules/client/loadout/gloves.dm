@@ -16,3 +16,13 @@
 	path = /obj/item/clothing/gloves/clussy_gloves
 	restricted_roles = list("Clown")
 	restricted_desc = "Clown"
+
+//BM add
+/datum/gear/gloves/combat/civil
+    name = "Combat gloves"
+    path = /obj/item/clothing/gloves/combat/fake
+
+/datum/gear/gloves/combatmaid/civil
+    name = "Combat Maid Sleeves"
+    path = /obj/item/clothing/gloves/combat/maid/civil
+//BM add end

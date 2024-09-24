@@ -82,7 +82,7 @@
 
 	var/turf/T = get_turf(patient)
 	var/obj/structure/table/optable/table = locate(/obj/structure/table/optable, T)
-	if(table?.computer && !(table.computer.stat & (NOPOWER|BROKEN)))
+	if(table?.computer && !(table.computer.machine_stat & (NOPOWER|BROKEN)))
 		advanced_surgeries |= table.computer.advanced_surgeries
 
 	if(istype(tool, /obj/item/surgical_drapes/advanced))
@@ -145,7 +145,7 @@
 
 	// BLUEMOON ADDITION AHEAD - сверх-большие персонажи ломают собой столы. Поблажка, дабы с ними всё ещё можно было проводить нормально операции
 	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
-		propability -= 0.3
+		propability = 0.8
 
 	// Шансы на операции в зависимости от состояния пациента
 	var/check_for_painkillers = FALSE

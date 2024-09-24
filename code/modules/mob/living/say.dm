@@ -454,17 +454,26 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(HAS_TRAIT(src, TRAIT_KARTAVII))
 		message = kartavo(message)
 
+	// BLUEMOON EDIT START - теперь синтетики заикаются более с%инт$тич!ески
 	if(derpspeech)
-		message = derpspeech(message, stuttering)
+		if (isrobotic(src))
+			message = machine_slur(message, FALSE, stuttering)
+		else
+			message = derpspeech(message, stuttering)
 
 	if(stuttering)
-		message = stutter(message)
+		if (isrobotic(src))
+			message = machine_slur(message, FALSE, 30)
+		else
+			message = stutter(message)
 
 	if(slurring)
 		if (isrobotic(src))
-			message = Gibberish(message, FALSE, round(slurring / 2)) // BLUEMOON ADD - теперь синтетики заикаются более с%инт$тич!ески
+			var/replace_characters = (slurring > 65)
+			message = machine_slur(message, replace_characters, slurring * 1.5)
 		else
 			message = slur(message,slurring)
+	// BLUEMOON EDIT END
 
 	if(cultslurring)
 		message = cultslur(message)

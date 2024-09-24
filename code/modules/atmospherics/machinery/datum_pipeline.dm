@@ -1,3 +1,6 @@
+/// BLUEMOON ADDED. Uncomment when "smth has one or more null gas mixtures" shit appears
+#define ATMOS_DEBUG_MIXTURES 1
+
 /datum/pipeline
 	var/datum/gas_mixture/air
 	var/list/datum/gas_mixture/other_airs
@@ -204,9 +207,27 @@
 
 /datum/pipeline/proc/return_air()
 	. = other_airs + air
+// BLUEMOON EDIT START - additional debug info
+#ifdef ATMOS_DEBUG_MIXTURES
 	if(null in .)
-		stack_trace("[src]([REF(src)]) has one or more null gas mixtures, which may cause bugs. Null mixtures will not be considered in reconcile_air().")
 		listclearnulls(.)
+		var/debug_info = "Members: "
+		for(var/obj/machinery/atmospherics/pipe/member in members)
+			debug_info += "[member.name]([REF(member)]), "
+		debug_info += " || Other Atmos Machinery: "
+		for(var/obj/machinery/atmospherics/components/atmosmch in other_atmosmch)
+			debug_info += "[atmosmch.name]([REF(atmosmch)]), "
+		if(null in other_airs)
+			debug_info += "|| NULL WAS IN OTHER_AIRS "
+		if(null in air)
+			debug_info += "|| NULL WAS IN AIR"
+		stack_trace("[src]([REF(src)]) has one or more null gas mixtures, which may cause bugs. Null mixtures will not be considered in reconcile_air(). | DEBUG INFO: [debug_info]")
+#else
+	if(null in .)
+		listclearnulls(.)
+		stack_trace("[src]([REF(src)]) has one or more null gas mixtures, which may cause bugs. Null mixtures will not be considered in reconcile_air(). | Enable ATMOS_DEBUG_MIXTURES in code/modules/atmospherics/machinery/datum_pipeline.dm if more debug info is required.")
+#endif
+// BLUEMOON EDIT END
 
 /datum/pipeline/proc/empty()
 	for(var/datum/gas_mixture/GM in get_all_connected_airs())

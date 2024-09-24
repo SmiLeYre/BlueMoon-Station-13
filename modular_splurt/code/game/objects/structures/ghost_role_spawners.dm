@@ -80,6 +80,7 @@
 	flavour_text = "You've survived weeks in this hellish place. Maybe you want to live here with ash tribe or return to civilisation. \
 	Only you know how you got to this planetoid, whether this place in which you woke up was one of your shelters, or you just stumbled upon it."
 	can_load_appearance = TRUE
+	antagonist_type = /datum/antagonist/ghost_role/hermit
 
 /obj/effect/mob_spawn/human/wandering_hermit/Destroy()
 	var/obj/structure/fluff/empty_sleeper/S = new(drop_location())
@@ -190,6 +191,7 @@
 	can_load_appearance = TRUE
 	outfit = /datum/outfit/inteqspace/inteq_crew
 	assignedrole = ROLE_GHOSTROLE_INTEQ
+	antagonist_type = /datum/antagonist/ghost_role/inteq
 
 /datum/outfit/inteqspace/inteq_crew/post_equip(mob/living/carbon/human/H)
 	H.faction |= ROLE_INTEQ
@@ -302,6 +304,7 @@
 	skip_reentry_check = TRUE
 	banType = ROLE_GHOSTCAFE
 	can_load_appearance = 2 //(Forces player to load character appearance)
+	antagonist_type = /datum/antagonist/ghost_role/ghost_cafe
 
 /obj/effect/mob_spawn/human/ghostcafeVR/special(mob/living/carbon/human/new_spawn)
 	if(new_spawn.client)

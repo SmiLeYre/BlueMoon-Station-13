@@ -93,6 +93,8 @@
 				/obj/item/sign/flag/inteq = 1,
 //				/obj/item/storage/fancy/cigarettes/cigpack_inteq = 1, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
 				/obj/item/storage/backpack/guitarbag/loaded = 1,
+				/obj/structure/reagent_dispensers/kvass_barrel = 1, // BLUEMOON ADD
+				/obj/structure/reagent_dispensers/beerkeg = 2,
 				)
 
 /obj/effect/spawner/lootdrop/prison_contraband

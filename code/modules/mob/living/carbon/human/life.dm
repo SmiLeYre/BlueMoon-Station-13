@@ -61,11 +61,17 @@
 
 	if (getOrganLoss(ORGAN_SLOT_BRAIN) >= 30) //Citadel change to make memes more often.
 		SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "brain_damage", /datum/mood_event/brain_damage)
+		// BLUEMOON EDIT START - свой брейнрот для синтов
 		if(prob(3))
 			if(prob(25))
-				emote("drool")
+				if(isrobotic(src))
+					emote("malf")
+				else
+					emote("drool")
 			else
-				say(pick_list_replacements(BRAIN_DAMAGE_FILE, "brain_damage"))
+				var/braindamage_variant = isrobotic(src) ? "synth_brain_damage" : "brain_damage"
+				say(pick_list_replacements(BRAIN_DAMAGE_FILE, braindamage_variant), forced = "brain damage")
+				// BLUEMOON EDIT END
 	else
 		SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "brain_damage")
 

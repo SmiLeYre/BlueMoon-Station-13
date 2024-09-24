@@ -4,7 +4,7 @@
 	return GLOB.always_state
 
 /datum/crew_manifest/ui_status(mob/user, datum/ui_state/state)
-	return (isnewplayer(user) || isobserver(user) || isAI(user) || ispAI(user)) ? UI_INTERACTIVE : UI_CLOSE
+	return (isnewplayer(user) || isobserver(user) || isAI(user) || ispAI(user) || iscyborg(user)) ? UI_INTERACTIVE : UI_CLOSE //BLUEMOON EDIT: В список были добавлены киборги для возможности отобразить им манифест
 
 /datum/crew_manifest/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)

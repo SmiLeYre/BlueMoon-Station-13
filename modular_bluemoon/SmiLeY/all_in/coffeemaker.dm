@@ -105,7 +105,7 @@
 			. += span_notice("- \A [cartridge].")
 		return
 
-	if(!(stat & (NOPOWER|BROKEN)))
+	if(!(machine_stat & (NOPOWER|BROKEN)))
 		. += "[span_notice("The status display reads:")]\n"+\
 		span_notice("- Brewing coffee at <b>[speed*100]%</b>.")
 		if(coffeepot)
@@ -279,7 +279,7 @@
 	if(!coffeepot)
 		balloon_alert(usr, "no coffeepot inside!")
 		return FALSE
-	if(stat & (NOPOWER|BROKEN))
+	if(machine_stat & (NOPOWER|BROKEN))
 		balloon_alert(usr, "machine unpowered!")
 		return FALSE
 	if(coffeepot.reagents.total_volume >= coffeepot.reagents.maximum_volume)
@@ -316,7 +316,7 @@
 		options["Take Creamer"] = radial_take_creamer
 
 	if(isAI(user))
-		if(stat & NOPOWER)
+		if(machine_stat & NOPOWER)
 			return
 		options["Examine"] = radial_examine
 
@@ -330,7 +330,7 @@
 		choice = show_radial_menu(user, src, options, require_near = !issilicon(user))
 
 	// post choice verification
-	if(brewing || (isAI(user) && stat & NOPOWER) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
+	if(brewing || (isAI(user) && machine_stat & NOPOWER) || !user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
 
 	switch(choice)
@@ -574,7 +574,7 @@
 	if(!coffeepot)
 		balloon_alert_to_viewers("no coffeepot inside!")
 		return FALSE
-	if(stat & (NOPOWER|BROKEN) )
+	if(machine_stat & (NOPOWER|BROKEN) )
 		balloon_alert_to_viewers("machine unpowered!")
 		return FALSE
 	if(coffeepot.reagents.total_volume >= coffeepot.reagents.maximum_volume)

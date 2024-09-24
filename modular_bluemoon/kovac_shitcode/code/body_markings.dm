@@ -72,14 +72,14 @@
 /datum/sprite_accessory/tails/mam_tails/teshari/teshari_thin
 	name = "Teshari thin"
 	icon_state = "teshari2"
-
+/*
 /datum/sprite_accessory/tails/mam_tails/murid_two
 	name = "Murid II"
 	icon_state = "murid_two"
 	color_src = MATRIXED
 	icon = 'modular_bluemoon/kovac_shitcode/icons/tails.dmi'
 	matrixed_sections = MATRIX_ALL
-
+*/
 /datum/sprite_accessory/tails/mam_tails/leopard
 	name = "Leopard Tail"
 	icon_state = "leopard"

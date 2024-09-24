@@ -659,7 +659,7 @@
 	name = "Port Tarkoff";
 	roundstart_template = /datum/map_template/shuttle/ruin/tarkon_driver/defcon3;
 	width = 14;
-	id = "port_tarkoff"
+	shuttle_id = "port_tarkoff"
 	},
 /turf/open/space/basic,
 /area/template_noop)

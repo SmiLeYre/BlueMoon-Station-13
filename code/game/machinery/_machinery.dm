@@ -108,7 +108,7 @@ Class Procs:
 	vocal_pitch = 0.6
 	vocal_volume = 40
 
-	var/stat = 0
+	var/machine_stat = 0
 	var/use_power = IDLE_POWER_USE
 		//0 = dont run the auto
 		//1 = run auto, use idle
@@ -209,25 +209,25 @@ Class Procs:
 
 ///Called when we want to change the value of the stat variable. Holds bitflags.
 /obj/machinery/proc/set_machine_stat(new_value)
-	if(new_value == stat)
+	if(new_value == machine_stat)
 		return
-	. = stat
-	stat = new_value
-	on_stat_update(.)
+	. = machine_stat
+	machine_stat = new_value
+	on_stat_update(machine_stat)
 
 ///Called when the value of `stat` changes, so we can react to it.
 /obj/machinery/proc/on_stat_update(old_value)
 	//From off to on.
-	if((old_value & (NOPOWER|BROKEN|MAINT)) && !(stat & (NOPOWER|BROKEN|MAINT)))
+	if((old_value & (NOPOWER|BROKEN|MAINT)) && !(machine_stat & (NOPOWER|BROKEN|MAINT)))
 		set_is_operational(TRUE)
 		return
 	//From on to off.
-	if(stat & (NOPOWER|BROKEN|MAINT))
+	if(machine_stat & (NOPOWER|BROKEN|MAINT))
 		set_is_operational(FALSE)
 
 /obj/machinery/emp_act(severity)
 	. = ..()
-	if(use_power && !stat && !(. & EMP_PROTECT_SELF))
+	if(use_power && !machine_stat && !(. & EMP_PROTECT_SELF))
 		use_power(1000 + severity*65)
 		new /obj/effect/temp_visual/emp(loc)
 
@@ -311,10 +311,10 @@ Class Procs:
 		object.forceMove(drop_location())
 
 /obj/machinery/proc/is_operational()
-	return !(stat & (NOPOWER|BROKEN|MAINT))
+	return !(machine_stat & (NOPOWER|BROKEN|MAINT))
 
 /obj/machinery/can_interact(mob/user)
-	if((stat & (NOPOWER|BROKEN)) && !(interaction_flags_machine & INTERACT_MACHINE_OFFLINE)) // Check if the machine is broken, and if we can still interact with it if so
+	if((machine_stat & (NOPOWER|BROKEN)) && !(interaction_flags_machine & INTERACT_MACHINE_OFFLINE)) // Check if the machine is broken, and if we can still interact with it if so
 		return FALSE
 
 	if(IsAdminGhost(user))
@@ -543,8 +543,8 @@ Class Procs:
 
 /obj/machinery/obj_break(damage_flag)
 	. = ..()
-	if(!(stat & BROKEN) && !(flags_1 & NODECONSTRUCT_1))
-		stat |= BROKEN
+	if(!(machine_stat & BROKEN) && !(flags_1 & NODECONSTRUCT_1))
+		machine_stat |= BROKEN
 		SEND_SIGNAL(src, COMSIG_MACHINERY_BROKEN, damage_flag)
 		update_appearance()
 		return TRUE
@@ -676,7 +676,7 @@ Class Procs:
 
 /obj/machinery/examine(mob/user)
 	. = ..()
-	if(stat & BROKEN)
+	if(machine_stat & BROKEN)
 		. += "<span class='notice'>Выглядит сломанным и не рабочим.</span>"
 	if(!(resistance_flags & INDESTRUCTIBLE))
 		if(resistance_flags & ON_FIRE)

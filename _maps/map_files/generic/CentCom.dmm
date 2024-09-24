@@ -2343,7 +2343,7 @@
 /obj/docking_port/stationary{
 	dwidth = 2;
 	height = 7;
-	id = "pod_away";
+	shuttle_id = "pod_away";
 	name = "recovery ship";
 	width = 5
 	},
@@ -2430,7 +2430,7 @@
 /obj/docking_port/stationary{
 	dwidth = 1;
 	height = 4;
-	id = "pod_3_away";
+	shuttle_id = "pod_3_away";
 	name = "recovery ship";
 	width = 3
 	},
@@ -2715,7 +2715,7 @@
 	dir = 8;
 	dwidth = 8;
 	height = 7;
-	id = "supply_away";
+	shuttle_id = "supply_away";
 	json_key = "cargo";
 	name = "CentCom";
 	width = 20
@@ -3102,7 +3102,7 @@
 /obj/docking_port/stationary{
 	dwidth = 1;
 	height = 4;
-	id = "pod_2_away";
+	shuttle_id = "pod_2_away";
 	name = "recovery ship";
 	width = 3
 	},
@@ -3633,7 +3633,7 @@
 	dheight = 5;
 	dwidth = 5;
 	height = 10;
-	id = "lambda_away";
+	shuttle_id = "lambda_away";
 	name = "Lambda Shuttle Dock";
 	roundstart_template = /datum/map_template/shuttle/lambda/code;
 	width = 10;
@@ -4633,7 +4633,7 @@
 /obj/docking_port/stationary{
 	dwidth = 1;
 	height = 4;
-	id = "pod_4_away";
+	shuttle_id = "pod_4_away";
 	name = "recovery ship";
 	width = 3
 	},
@@ -4860,7 +4860,7 @@
 	dir = 8;
 	dwidth = 2;
 	height = 13;
-	id = "ferry_away";
+	shuttle_id = "ferry_away";
 	json_key = "ferry";
 	name = "CentCom Ferry Dock";
 	width = 5
@@ -7682,6 +7682,8 @@
 /obj/item/clothing/gloves/boxing/blue,
 /obj/item/clothing/gloves/boxing/green,
 /obj/item/clothing/gloves/boxing/yellow,
+/obj/item/clothing/gloves/boxing/modern,
+/obj/item/clothing/gloves/boxing/modern,
 /turf/open/floor/holofloor/wood,
 /area/holodeck/rec_center/wrestlingarena)
 "aQx" = (
@@ -7939,7 +7941,7 @@
 	dir = 8;
 	dwidth = 12;
 	height = 17;
-	id = "syndicate_away";
+	shuttle_id = "syndicate_away";
 	name = "Syndicate Recon Outpost";
 	roundstart_template = /datum/map_template/shuttle/infiltrator/syndicate_basic;
 	width = 23
@@ -8113,7 +8115,7 @@
 	dir = 8;
 	dwidth = 10;
 	height = 15;
-	id = "slaver_away";
+	shuttle_id = "slaver_away";
 	name = "slave trader hideout";
 	roundstart_template = /datum/map_template/shuttle/slaveship/basic;
 	width = 22
@@ -10166,11 +10168,6 @@
 /obj/machinery/light/warm/directional/west,
 /turf/open/floor/plating/beach/sand,
 /area/centcom/holding)
-"byP" = (
-/obj/effect/decal/cleanable/ash,
-/obj/effect/mob_spawn/qareen/wendigo,
-/turf/open/indestructible/boss,
-/area/horny_antags/qareen)
 "bAf" = (
 /obj/effect/turf_decal/tile/dark_blue/half{
 	dir = 1
@@ -11231,7 +11228,7 @@
 	dir = 8;
 	dwidth = 12;
 	height = 17;
-	id = "inteq_away";
+	shuttle_id = "inteq_away";
 	name = "InteQ Recon Outpost";
 	roundstart_template = /datum/map_template/shuttle/infiltrator/basic;
 	width = 23
@@ -11320,7 +11317,7 @@
 	area_type = /area/syndicate_mothership;
 	dwidth = 25;
 	height = 50;
-	id = "emergency_syndicate";
+	shuttle_id = "emergency_syndicate";
 	name = "InteQ Auxillary Shuttle Dock";
 	width = 50
 	},
@@ -12841,7 +12838,7 @@
 /obj/docking_port/stationary{
 	dwidth = 2;
 	height = 8;
-	id = "backup_away";
+	shuttle_id = "backup_away";
 	name = "Backup Shuttle Dock";
 	roundstart_template = /datum/map_template/shuttle/emergency/backup;
 	width = 8;
@@ -17216,10 +17213,6 @@
 /obj/item/clothing/gloves/combat,
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
-"hPX" = (
-/obj/effect/mob_spawn/qareen/wendigo_man,
-/turf/open/indestructible/boss,
-/area/horny_antags/qareen)
 "hPY" = (
 /turf/open/floor/iron/dark/smooth_large,
 /area/centcom/holding)
@@ -17804,7 +17797,7 @@
 	dir = 2;
 	dwidth = 7;
 	height = 19;
-	id = "raiders_away";
+	shuttle_id = "raiders_away";
 	name = "InteQ raiders port";
 	width = 35
 	},
@@ -20495,7 +20488,7 @@
 	area_type = /area/syndicate_mothership;
 	dwidth = 25;
 	height = 50;
-	id = "emergency_real_syndicate";
+	shuttle_id = "emergency_real_syndicate";
 	name = "Syndicate Auxillary Shuttle Dock";
 	width = 50
 	},
@@ -21535,7 +21528,10 @@
 /turf/open/floor/plating,
 /area/syndicate_mothership/control)
 "lCL" = (
-/obj/machinery/jukebox,
+/obj/machinery/jukebox{
+	req_one_access = null;
+	one_area_play = 1
+	},
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
 "lCM" = (
@@ -23140,7 +23136,7 @@
 	dir = 4;
 	dwidth = 25;
 	height = 50;
-	id = "emergency_away";
+	shuttle_id = "emergency_away";
 	json_key = "emergency";
 	name = "CentCom Emergency Shuttle Dock";
 	width = 50
@@ -29049,7 +29045,9 @@
 /area/centcom)
 "sCg" = (
 /obj/machinery/jukebox/disco{
-	set_obj_flags = "EMAGGED"
+	anchored = 1;
+	one_area_play = 1;
+	req_one_access = null
 	},
 /turf/open/floor/light/colour_cycle/dancefloor_a,
 /area/centcom/holding)
@@ -30884,7 +30882,10 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "usu" = (
-/obj/machinery/jukebox,
+/obj/machinery/jukebox{
+	req_one_access = null;
+	one_area_play = 1
+	},
 /turf/open/floor/carpet/red,
 /area/centcom/holding)
 "usy" = (
@@ -33545,7 +33546,7 @@
 /obj/effect/turf_decal/tile/red/opposingcorners,
 /obj/machinery/jukebox{
 	req_one_access = null;
-	set_obj_flags = "EMAGGED"
+	one_area_play = 1
 	},
 /obj/structure/sign/poster/contraband/bountyhunters{
 	pixel_y = 32
@@ -33604,7 +33605,11 @@
 /turf/open/floor/iron/white,
 /area/centcom/holding)
 "wQH" = (
-/obj/machinery/jukebox/disco,
+/obj/machinery/jukebox/disco{
+	req_one_access = null;
+	anchored = 1;
+	one_area_play = 1
+	},
 /turf/open/floor/light/colour_cycle/dancefloor_a,
 /area/centcom/holding)
 "wQW" = (
@@ -35222,6 +35227,10 @@
 /mob/living/simple_animal/deer,
 /turf/open/floor/grass/grass2,
 /area/centcom/control)
+"ylX" = (
+/obj/effect/mob_spawn/qareen/wendigo_lore,
+/turf/open/indestructible/boss,
+/area/horny_antags/qareen)
 "yma" = (
 /obj/structure/grille,
 /turf/open/space/basic,
@@ -49581,11 +49590,11 @@ aaa
 aaa
 aaa
 wIy
-byP
+eyk
 qWG
 qWG
 tzG
-hPX
+qWG
 wIy
 aaa
 aaa
@@ -50095,11 +50104,11 @@ aaa
 aaa
 aaa
 wIy
-qWG
+ylX
 pha
 qWG
 qWG
-qWG
+ylX
 wIy
 aaa
 aaa

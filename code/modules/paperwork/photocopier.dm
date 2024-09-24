@@ -174,7 +174,7 @@ GLOBAL_LIST_INIT(paper_blanks, init_paper_blanks())
 	if(.)
 		return
 
-	if(stat & (BROKEN|NOPOWER))
+	if(machine_stat & (BROKEN|NOPOWER))
 		return
 
 	switch(action)
@@ -309,7 +309,7 @@ GLOBAL_LIST_INIT(paper_blanks, init_paper_blanks())
 
 	// if you managed to cancel the copy operation, tough luck. you aren't getting your money back.
 	for(var/i in 1 to copies_amount)
-		if(stat & (BROKEN|NOPOWER))
+		if(machine_stat & (BROKEN|NOPOWER))
 			break
 
 		if(!toner_cartridge)

@@ -11,7 +11,7 @@ export const MobInteraction = () => {
       resizable>
       <Window.Content>
         <Stack vertical fill>
-          <Stack.Item grow basis={0}>
+          <Stack.Item grow basis={5}>
             <InfoSection />
           </Stack.Item>
           <Stack.Item grow basis={"40%"}>

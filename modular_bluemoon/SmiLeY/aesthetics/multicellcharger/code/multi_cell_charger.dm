@@ -60,7 +60,7 @@
 
 /obj/machinery/cell_charger_multi/attackby(obj/item/tool, mob/user, params)
 	if(istype(tool, /obj/item/stock_parts/cell) && !panel_open)
-		if(stat & BROKEN)
+		if(machine_stat & BROKEN)
 			to_chat(user, span_warning("[src] is broken!"))
 			return
 		if(!anchored)
@@ -108,7 +108,7 @@
 		recharge_coeff = C.rating
 
 /obj/machinery/cell_charger_multi/process()
-	if(!charging_batteries.len || !anchored || (stat & (BROKEN|NOPOWER)))
+	if(!charging_batteries.len || !anchored || (machine_stat & (BROKEN|NOPOWER)))
 		return
 
 	for(var/obj/item/stock_parts/cell/charging in charging_batteries)
@@ -124,7 +124,7 @@
 /obj/machinery/cell_charger_multi/emp_act(severity)
 	. = ..()
 
-	if(stat & (BROKEN|NOPOWER) || . & EMP_PROTECT_CONTENTS)
+	if(machine_stat & (BROKEN|NOPOWER) || . & EMP_PROTECT_CONTENTS)
 		return
 
 	for(var/obj/item/stock_parts/cell/charging in charging_batteries)

@@ -267,6 +267,13 @@ DEFINE_BITFIELD(item_flags, list(
 	"FAMILY_HEIRLOOM" = FAMILY_HEIRLOOM // BLUEMOON ADD - выбор вещей из лодаута как family heirloom
 ))
 
+DEFINE_BITFIELD(machine_stat, list(
+	"BROKEN" = BROKEN,
+	"EMPED" = EMPED,
+	"MAINT" = MAINT,
+	"NOPOWER" = NOPOWER,
+))
+
 DEFINE_BITFIELD(material_flags, list(
 	"MATERIAL_ADD_PREFIX" = MATERIAL_ADD_PREFIX,
 	"MATERIAL_AFFECT_STATISTICS" = MATERIAL_AFFECT_STATISTICS,
@@ -481,6 +488,19 @@ DEFINE_BITFIELD(storage_flags, list(
 ))
 
 DEFINE_BITFIELD(vis_flags, list(
+	"VIS_HIDE" = VIS_HIDE,
+	"VIS_INHERIT_DIR" = VIS_INHERIT_DIR,
+	"VIS_INHERIT_ICON" = VIS_INHERIT_ICON,
+	"VIS_INHERIT_ICON_STATE" = VIS_INHERIT_ICON_STATE,
+	"VIS_INHERIT_ID" = VIS_INHERIT_ID,
+	"VIS_INHERIT_LAYER" = VIS_INHERIT_LAYER,
+	"VIS_INHERIT_PLANE" = VIS_INHERIT_PLANE,
+	"VIS_UNDERLAY" = VIS_UNDERLAY,
+))
+
+// I am so sorry. Required because vis_flags is both undefinable and unreadable on mutable_appearance
+// But we need to display them anyway. See /mutable_appearance/appearance_mirror
+DEFINE_BITFIELD(_vis_flags, list(
 	"VIS_HIDE" = VIS_HIDE,
 	"VIS_INHERIT_DIR" = VIS_INHERIT_DIR,
 	"VIS_INHERIT_ICON" = VIS_INHERIT_ICON,

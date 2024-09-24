@@ -107,9 +107,7 @@
 	var/helmettype = /obj/item/clothing/head/helmet/space/hardsuit
 	var/obj/item/tank/jetpack/suit/jetpack = null
 	var/hardsuit_type
-	flags_inv = HIDETAUR //bluemood add
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemood add
-
 
 /obj/item/clothing/suit/space/hardsuit/Initialize(mapload)
 	if(jetpack && ispath(jetpack))
@@ -645,6 +643,15 @@
 	item_state = "sec_helm"
 	hardsuit_type = "sec"
 	armor = list(MELEE = 35, BULLET = 15, LASER = 30,ENERGY = 20, BOMB = 10, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 30)
+	// BLUEMOON ADD START - RESKINS-ICON-FILE-ADDITION - ACRADORS - версия шлема для ушей акрадоров
+	unique_reskin = list(
+		"Acrador/Long-Eared" = list(
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets.dmi',
+			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets_onmob.dmi',
+			RESKIN_ANTHRO_WORN_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets_onmob.dmi'
+		)
+	)
+	// BLUEMOON ADD END
 
 /obj/item/clothing/suit/space/hardsuit/security
 	icon_state = "hardsuit-sec"

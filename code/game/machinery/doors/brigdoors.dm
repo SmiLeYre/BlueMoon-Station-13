@@ -146,7 +146,7 @@
 				targets += T
 
 		if(targets.len==0)
-			stat |= BROKEN
+			machine_stat |= BROKEN
 		update_icon()
 
 /obj/machinery/door_timer/Destroy()
@@ -159,7 +159,7 @@
 // if it's less than 0, open door, reset timer
 // update the door_timer window and the icon
 /obj/machinery/door_timer/process()
-	if(stat & (NOPOWER|BROKEN))
+	if(machine_stat & (NOPOWER|BROKEN))
 		return
 	if(timing)
 		if(timeleft() <= 0)
@@ -184,8 +184,7 @@
 
 // Closes and locks doors, power check
 /obj/machinery/door_timer/proc/timer_start()
-
-	if(stat & (NOPOWER|BROKEN))
+	if(machine_stat & (NOPOWER|BROKEN))
 		return FALSE
 
 	if(!printed)
@@ -217,9 +216,9 @@
 
 	return TRUE
 
-// Opens and unlocks doors, power check
-/obj/machinery/door_timer/proc/timer_end()
-	if(stat & (NOPOWER|BROKEN))
+/obj/machinery/door_timer/proc/timer_end(forced = FALSE)
+
+	if(machine_stat & (NOPOWER|BROKEN))
 		return FALSE
 
 	// Reset vars
@@ -249,7 +248,7 @@
 		C.update_icon()
 
 	for(var/obj/machinery/treadmill_monitor/T in targets)
-		if(!T.stat)
+		if(!T.machine_stat)
 			T.redeem()
 		T.on = 0
 
@@ -425,10 +424,11 @@
 // if timing=true, run update display function
 /obj/machinery/door_timer/update_icon()
 	. = ..()
-	if(stat & (NOPOWER))
+	if(machine_stat & (NOPOWER))
 		icon_state = "frame"
 		return
-	if(stat & (BROKEN))
+
+	if(machine_stat & (BROKEN))
 		set_picture("ai_bsod")
 		return
 	if(timing)

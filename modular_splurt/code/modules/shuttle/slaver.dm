@@ -22,7 +22,7 @@
 	shuttleId = "slaver"
 	lock_override = CAMERA_LOCK_STATION
 	shuttlePortId = "slaver_custom"
-	jumpto_ports = list("slaver_custom" = 1)
+	jump_to_ports = list("slaver_custom" = 1)
 	view_range = 5.5
 	x_offset = -7
 	y_offset = -1

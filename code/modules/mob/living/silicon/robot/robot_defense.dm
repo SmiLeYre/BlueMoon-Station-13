@@ -120,6 +120,8 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 
 /mob/living/silicon/robot/crowbar_act(mob/living/user, obj/item/tool)
 	. = TRUE
+	if (user.a_intent == INTENT_HARM) //BLUEMOON ADD: Добавлена возможность атаковать киборгов с помощью лома при проверке харм интента
+		return ..()
 	if(opened)
 		to_chat(user, span_notice("You close the cover."))
 		opened = FALSE

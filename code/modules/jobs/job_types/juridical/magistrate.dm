@@ -56,6 +56,13 @@
 	icon_state = "com_headset"
 	keyslot = new /obj/item/encryptionkey/headset_ntr
 
+/obj/item/radio/headset/heads/ntr/equipped(mob/user, slot)
+	..()
+	if((slot == ITEM_SLOT_EARS_LEFT) || (slot == ITEM_SLOT_EARS_RIGHT))
+		user.typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/law
+	else
+		user.typing_indicator_state = /obj/effect/overlay/typing_indicator
+
 /obj/item/pda/heads/ntr
 	name = "NanoTrasen Representative PDA"
 	default_cartridge = /obj/item/cartridge/hos

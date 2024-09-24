@@ -105,6 +105,8 @@ GLOBAL_LIST_INIT(shriek_types, list(\
 
 /datum/quirk/shriek/remove()
 	var/mob/living/carbon/human/H = quirk_holder
+	if(!H)
+		return
 	var/datum/action/cooldown/shriek/C = locate() in H.actions
 	C.Remove(H)
 	. = ..()

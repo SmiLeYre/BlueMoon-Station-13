@@ -1079,12 +1079,12 @@
 	name = "Aegis Ship";
 	port_direction = 2;
 	width = 23;
-	id = "vox_raiders"
+	shuttle_id = "vox_raiders"
 	},
 /obj/docking_port/stationary{
 	dwidth = 11;
 	height = 16;
-	id = "whiteship_home";
+	shuttle_id = "whiteship_home";
 	name = "Deep Space";
 	width = 17
 	},

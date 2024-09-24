@@ -1490,6 +1490,11 @@
 	// Define user mob
 	var/mob/living/carbon/human/action_mob = owner
 
+	// BLUEMOON EDIT START - sanity check
+	if(!action_mob)
+		return
+	// BLUEMOON EDIT END
+
 	// Remove glow
 	action_mob.remove_filter("rad_fiend_glow")
 
@@ -1567,6 +1572,11 @@
 
 	// Define user mob
 	var/mob/living/carbon/human/action_mob = owner
+
+	// BLUEMOON EDIT START - sanity check
+	if(!action_mob)
+		return
+	// BLUEMOON EDIT END
 
 	// Remove glow
 	action_mob.remove_filter("rad_fiend_glow")

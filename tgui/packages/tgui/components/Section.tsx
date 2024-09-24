@@ -11,16 +11,14 @@ import { addScrollableNode, removeScrollableNode } from '../events';
 import { BoxProps, computeBoxClassName, computeBoxProps } from './Box';
 
 interface SectionProps extends BoxProps {
-  readonly className?: string;
-  readonly title?: string;
-  readonly buttons?: InfernoNode;
-  readonly fill?: boolean;
-  readonly fitted?: boolean;
-  readonly scrollable?: boolean;
-  /** @deprecated This property no longer works, please remove it. */
-  readonly level?: boolean;
+  className?: string;
+  title?: string;
+  buttons?: InfernoNode;
+  fill?: boolean;
+  fitted?: boolean;
+  scrollable?: boolean;
   /** @deprecated Please use `scrollable` property */
-  readonly overflowY?: any;
+  overflowY?: any;
 }
 
 export class Section extends Component<SectionProps> {
@@ -29,19 +27,19 @@ export class Section extends Component<SectionProps> {
 
   constructor(props) {
     super(props);
-    this.scrollableRef = createRef();
+    this.scrollableRef = props.scrollableRef || createRef();
     this.scrollable = props.scrollable;
   }
 
   componentDidMount() {
     if (this.scrollable) {
-      addScrollableNode(this.scrollableRef.current);
+      addScrollableNode(this.scrollableRef.current as HTMLElement);
     }
   }
 
   componentWillUnmount() {
     if (this.scrollable) {
-      removeScrollableNode(this.scrollableRef.current);
+      removeScrollableNode(this.scrollableRef.current as HTMLElement);
     }
   }
 

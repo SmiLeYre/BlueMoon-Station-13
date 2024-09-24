@@ -313,8 +313,14 @@
 	var/total_damage = brute + burn
 
 	if(total_damage > can_inflict && total_damage > 0) // TODO: the second part of this check should be removed once disabling is all done
-		brute = round(brute * (max_damage / total_damage),DAMAGE_PRECISION)
-		burn = round(burn * (max_damage / total_damage),DAMAGE_PRECISION)
+		// BLUEMOON ADD START - добавляем перенос урона в грудь, если урон по конечности дальше уже не может проходить
+		if(can_inflict <= 5)
+			if(body_zone != BODY_ZONE_CHEST)
+				var/obj/item/bodypart/chest/chest = owner.get_bodypart(BODY_ZONE_CHEST)
+				chest.receive_damage(max(0,(brute-can_inflict)*0.65), max(0,(burn-can_inflict)*0.65), stamina, blocked, updating_health, required_status, wound_bonus, bare_wound_bonus, sharpness) // наносится 65% урона. Оно не проверяет броню повторно, иначе нужно было бы перелопачивать весь код
+		// BLUEMOON ADD END
+		brute = round(brute * (can_inflict/total_damage), DAMAGE_PRECISION) // BLUEMOON EDIT - фикс нанесения единовременного увеличенного в N раз урона после достижения конечности максимального урона - WAS brute = round(brute * (max_damage / total_damage),DAMAGE_PRECISION)
+		burn = round(burn * (can_inflict/total_damage), DAMAGE_PRECISION) // BLUEMOON EDIT - фикс нанесения единовременного увеличенного в N раз урона после достижения конечности максимального урона - WAS burn = round(burn * (max_damage / total_damage),DAMAGE_PRECISION)
 
 	if(can_inflict <= 0)
 		return FALSE

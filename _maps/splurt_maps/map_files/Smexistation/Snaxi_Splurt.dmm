@@ -4470,7 +4470,7 @@
 	dir = 2;
 	dwidth = 5;
 	height = 7;
-	id = "supply_home";
+	shuttle_id = "supply_home";
 	name = "Cargo Bay";
 	width = 12
 	},
@@ -8589,7 +8589,7 @@
 	dir = 8;
 	dwidth = 12;
 	height = 17;
-	id = "syndicate_ne";
+	shuttle_id = "syndicate_ne";
 	name = "northeast of station";
 	width = 23
 	},
@@ -11221,7 +11221,7 @@
 /obj/docking_port/stationary{
 	dwidth = 3;
 	height = 4;
-	id = "snaxi_ne";
+	shuttle_id = "snaxi_ne";
 	name = "Northeast Taxi Port";
 	width = 6
 	},
@@ -26553,7 +26553,7 @@
 	dir = 2;
 	dwidth = 2;
 	height = 13;
-	id = "ferry_home";
+	shuttle_id = "ferry_home";
 	name = "port bay 2";
 	width = 5
 	},
@@ -27424,7 +27424,7 @@
 /obj/docking_port/stationary{
 	dwidth = 3;
 	height = 4;
-	id = "snaxi_s";
+	shuttle_id = "snaxi_s";
 	name = "South Taxi Port";
 	roundstart_template = /datum/map_template/shuttle/snow_taxi;
 	width = 6
@@ -27982,12 +27982,8 @@
 /turf/open/floor/plasteel,
 /area/maintenance/aft)
 "kGT" = (
-/obj/effect/landmark/start/ntr,
 /obj/structure/sign/painting/library{
 	pixel_y = 32
-	},
-/obj{
-	name = "---Merge conflict marker---"
 	},
 /obj/effect/landmark/start/ntr,
 /turf/open/floor/wood,
@@ -34690,7 +34686,7 @@
 	dir = 4;
 	dwidth = 12;
 	height = 18;
-	id = "emergency_home";
+	shuttle_id = "emergency_home";
 	name = "BoxStation emergency evac bay";
 	width = 32
 	},
@@ -42768,7 +42764,7 @@
 /area/engineering/main)
 "qWC" = (
 /obj/docking_port/stationary/random{
-	id = "pod_lavaland2";
+	shuttle_id = "pod_lavaland2";
 	name = "lavaland"
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
@@ -46824,7 +46820,7 @@
 "sLO" = (
 /obj/docking_port/stationary/random{
 	dir = 2;
-	id = "pod_lavaland2";
+	shuttle_id = "pod_lavaland2";
 	name = "lavaland"
 	},
 /turf/open/floor/plating/snowed/smoothed/icemoon,
@@ -49470,7 +49466,7 @@
 /obj/docking_port/stationary{
 	dwidth = 3;
 	height = 4;
-	id = "snaxi_nw";
+	shuttle_id = "snaxi_nw";
 	name = "Northwest Taxi Port";
 	width = 6
 	},
@@ -54047,32 +54043,17 @@
 /turf/open/floor/plasteel/cult,
 /area/service/library)
 "vRn" = (
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 4
-	},
 /obj/structure/table/wood,
 /obj/item/flashlight/seclite,
 /obj/machinery/fax{
 	fax_name = "South Bridge Fax";
 	name = "South Bridge Fax"
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
-	},
-/obj/structure/table/wood,
-/obj/item/flashlight/seclite,
-/obj/machinery/fax{
-	fax_name = "Bridge Fax";
-	name = "Bridge Fax"
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
@@ -56599,7 +56580,7 @@
 /obj/docking_port/stationary{
 	dwidth = 3;
 	height = 15;
-	id = "arrivals_stationary";
+	shuttle_id = "arrivals_stationary";
 	name = "arrivals";
 	roundstart_template = /datum/map_template/shuttle/arrival/snaxi;
 	width = 7

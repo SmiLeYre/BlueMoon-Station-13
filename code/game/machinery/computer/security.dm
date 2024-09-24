@@ -202,7 +202,7 @@
 						dat += "<br>Criminal Status: <A href='?src=[REF(src)];choice=Edit Field;field=criminal'>[active2.fields["criminal"]]</A>"
 						dat += "<br><br>Minor Crimes: <A href='?src=[REF(src)];choice=Edit Field;field=mi_crim_add'>Add New</A>"
 
-						// BLUEMOON EDIT START - возможность пометить правонарушение как обработанное и от имени ЦК
+						// BLUEMOON EDIT START - возможность пометить правонарушение как обработанное и от имени ЦК | Логи у рекордса
 						dat +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
 						<tr>
 						<th>Crime</th>
@@ -243,9 +243,16 @@
 							dat += "<td><A href='?src=[REF(src)];choice=Edit Field;field=ma_crim_delete;cdataid=[c.dataId]'>\[X\]</A></td>"
 							dat += "</tr>"
 						dat += "</table>"
-						// BLUEMOON EDIT END
+
 						dat += "<br>\nImportant Notes:<br>\n\t<A href='?src=[REF(src)];choice=Edit Field;field=notes'>&nbsp;[active2.fields["notes"]]&nbsp;</A>"
 						dat += "<br><br><font size='4'><b>Comments/Log</b></font><br>"
+						var/list/logs = active2.fields["actions_logs"]
+						var/log_string = logs.Join("<br>")
+						dat += "<br>\n<b>Actions Logs</b>:<br>[log_string]\n\t"
+						dat += "<br><A href='?src=[REF(src)];choice=Print Logs;'>Print Logs</A>"
+						dat += "<A href='?src=[REF(src)];choice=Delete Logs;'>Delete Logs</A>"
+						dat += "<br><br><b>Comments</b><br>"
+						// BLUEMOON EDIT END
 						var/counter = 1
 						while(active2.fields[text("com_[]", counter)])
 							dat += (active2.fields[text("com_[]", counter)] + "<BR>")
@@ -270,6 +277,7 @@
 /*Revised /N
 I can't be bothered to look more of the actual code outside of switch but that probably needs revising too.
 What a mess.*/
+// BLUEMOON EDIT START - (((нанорефактор))) этого говна, когда-то понадобится реальный рефактор, но мне за это не платят.
 /obj/machinery/computer/secure_data/Topic(href, href_list)
 	. = ..()
 	if(.)
@@ -280,318 +288,293 @@ What a mess.*/
 		active2 = null
 	if(!authenticated && href_list["choice"] != "Log In") // logging in is the only action you can do if not logged in
 		return
-	if(usr.contents.Find(src) || (in_range(src, usr) && isturf(loc)) || hasSiliconAccessInArea(usr) || IsAdminGhost(usr))
-		usr.set_machine(src)
-		switch(href_list["choice"])
-// SORTING!
-			if("Sorting")
-				// Reverse the order if clicked twice
-				if(sortBy == href_list["sort"])
-					if(order == 1)
-						order = -1
-					else
-						order = 1
+	if(!(usr.contents.Find(src) || (in_range(src, usr) && isturf(loc)) || hasSiliconAccessInArea(usr) || IsAdminGhost(usr)))
+		to_chat(usr, span_warning("Вы не можете взаимодействовать с [src]!"))
+		return
+	if(printing)
+		to_chat(usr, span_warning("Вы не можете взаимодействовать с [src], пока устройство занято печатью."))
+		return
+	usr.set_machine(src)
+	switch(href_list["choice"])
+		// SORTING!
+		if("Sorting")
+			// Reverse the order if clicked twice
+			if(sortBy == href_list["sort"])
+				if(order == 1)
+					order = -1
 				else
-				// New sorting order!
-					sortBy = href_list["sort"]
-					order = initial(order)
-//BASIC FUNCTIONS
-			if("Clear Screen")
-				temp = null
+					order = 1
+			else
+			// New sorting order!
+				sortBy = href_list["sort"]
+				order = initial(order)
+		//BASIC FUNCTIONS
+		if("Clear Screen")
+			temp = null
 
-			if("Return")
+		if("Return")
+			screen = 1
+			active1 = null
+			active2 = null
+
+		if("Log Out")
+			authenticated = null
+			screen = null
+			active1 = null
+			active2 = null
+
+			logged_access = null
+
+			playsound(src, 'sound/machines/terminal_off.ogg', 50, FALSE)
+
+		if("Log In")
+			var/mob/M = usr
+			var/obj/item/card/id/I = M.get_idcard(TRUE)
+			if(hasSiliconAccessInArea(M))
+				var/mob/living/silicon/borg = M
+				active1 = null
+				active2 = null
+				authenticated = borg.name
+				rank = "AI"
 				screen = 1
+
+				logged_access = get_all_accesses()
+
+			else if(IsAdminGhost(M))
 				active1 = null
 				active2 = null
+				authenticated = M.client.holder.admin_signature
+				rank = "Central Command"
+				screen = 1
 
-			if("Log Out")
-				authenticated = null
-				screen = null
+				logged_access = get_centcom_access("CentCom Commander")
+
+			else if(I && check_access(I))
 				active1 = null
 				active2 = null
+				authenticated = I.registered_name
+				rank = I.assignment
+				screen = 1
 
-				logged_access = null
+				logged_access = I.access
 
-				playsound(src, 'sound/machines/terminal_off.ogg', 50, FALSE)
+			else
+				to_chat(usr, "<span class='danger'>Unauthorized Access.</span>")
+			playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)
 
-			if("Log In")
-				var/mob/M = usr
-				var/obj/item/card/id/I = M.get_idcard(TRUE)
-				if(hasSiliconAccessInArea(M))
-					var/mob/living/silicon/borg = M
-					active1 = null
-					active2 = null
-					authenticated = borg.name
-					rank = "AI"
-					screen = 1
+		//RECORD FUNCTIONS
+		if("Record Maintenance")
+			screen = 2
+			active1 = null
+			active2 = null
 
-					logged_access = get_all_accesses()
-
-				else if(IsAdminGhost(M))
-					active1 = null
-					active2 = null
-					authenticated = M.client.holder.admin_signature
-					rank = "Central Command"
-					screen = 1
-
-					logged_access = get_centcom_access("CentCom Commander")
-
-				else if(I && check_access(I))
-					active1 = null
-					active2 = null
-					authenticated = I.registered_name
-					rank = I.assignment
-					screen = 1
-
-					logged_access = I.access
-
-				else
-					to_chat(usr, "<span class='danger'>Unauthorized Access.</span>")
-				playsound(src, 'sound/machines/terminal_on.ogg', 50, FALSE)
-
-//RECORD FUNCTIONS
-			if("Record Maintenance")
-				screen = 2
-				active1 = null
-				active2 = null
-
-			if("Browse Record")
-				var/datum/data/record/R = locate(href_list["d_rec"]) in GLOB.data_core.general
-				if(!R)
-					temp = "Record Not Found!"
-				else
-					active1 = active2 = R
-					for(var/datum/data/record/E in GLOB.data_core.security)
-						if((E.fields["name"] == R.fields["name"] || E.fields["id"] == R.fields["id"]))
-							active2 = E
-					screen = 3
+		if("Browse Record")
+			var/datum/data/record/R = locate(href_list["d_rec"]) in GLOB.data_core.general
+			if(!R)
+				temp = "Record Not Found!"
+			else
+				active1 = active2 = R
+				for(var/datum/data/record/E in GLOB.data_core.security)
+					if((E.fields["name"] == R.fields["name"] || E.fields["id"] == R.fields["id"]))
+						active2 = E
+				screen = 3
 
 
-			if("Print Record")
-				if(!( printing ))
-					printing = 1
-					GLOB.data_core.securityPrintCount++
-					playsound(loc, 'sound/items/poster_being_created.ogg', 100, 1)
-					sleep(30)
-					var/obj/item/paper/P = new /obj/item/paper( loc )
-					var/report_text = "<CENTER><B>Security Record - (SR-[GLOB.data_core.securityPrintCount])</B></CENTER><BR>"
-					if((istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1)))
-						report_text += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
-						report_text += "\nSpecies: [active1.fields["species"]]<BR>"
-						report_text += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields["fingerprint"], active1.fields["p_stat"], active1.fields["m_stat"])
-					else
-						report_text += "<B>General Record Lost!</B><BR>"
-					if((istype(active2, /datum/data/record) && GLOB.data_core.security.Find(active2)))
-						report_text += text("<BR>\n<CENTER><B>Security Data</B></CENTER><BR>\nCriminal Status: []", active2.fields["criminal"])
-
-						report_text += "<BR>\n<BR>\nMinor Crimes:<BR>\n"
-						report_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
-<tr>
-<th>Crime</th>
-<th>Details</th>
-<th>Author</th>
-<th>Time Added</th>
-</tr>"}
-						for(var/datum/data/crime/c in active2.fields["mi_crim"])
-							report_text += "<tr><td>[c.crimeName]</td>"
-							report_text += "<td>[c.crimeDetails]</td>"
-							report_text += "<td>[c.author]</td>"
-							report_text += "<td>[c.time]</td>"
-							report_text += "</tr>"
-						report_text += "</table>"
-
-						report_text += "<BR>\nMajor Crimes: <BR>\n"
-						report_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
-<tr>
-<th>Crime</th>
-<th>Details</th>
-<th>Author</th>
-<th>Time Added</th>
-</tr>"}
-						for(var/datum/data/crime/c in active2.fields["ma_crim"])
-							report_text += "<tr><td>[c.crimeName]</td>"
-							report_text += "<td>[c.crimeDetails]</td>"
-							report_text += "<td>[c.author]</td>"
-							report_text += "<td>[c.time]</td>"
-							report_text += "</tr>"
-						report_text += "</table>"
-
-
-						report_text += text("<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields["notes"])
-						var/counter = 1
-						while(active2.fields[text("com_[]", counter)])
-							report_text += text("[]<BR>", active2.fields[text("com_[]", counter)])
-							counter++
-						P.name = text("SR-[] '[]'", GLOB.data_core.securityPrintCount, active1.fields["name"])
-					else
-						report_text += "<B>Security Record Lost!</B><BR>"
-						P.name = text("SR-[] '[]'", GLOB.data_core.securityPrintCount, "Record Lost")
-					report_text += "</TT>"
-					P.add_raw_text(report_text)
-					P.update_appearance()
-					P.update_icon()
-					printing = null
-			// BLUEMOON ADD START - возможность распечатать автоматически сгенерированный ордер
-			if("Generate Arrest Warrant")
-				if(printing)
-					return
-				if(!canUseSecurityRecordsConsole(usr, "print", active1, active2))
-					return
-				if(!(istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1)) || !(istype(active2, /datum/data/record) && GLOB.data_core.security.Find(active2)))
-					say("Данные повреждены!")
-					return
-				var/list/crimes = active2.fields["ma_crim"] + active2.fields["mi_crim"]
-				if(!crimes.len) // Можно было ещё по c.penalties_incurred отфильтровать, но чёрт с ним
-					say("Правонарушения отсутствуют!")
-					return
+		if("Print Record")
+			if(!( printing ))
 				printing = 1
 				GLOB.data_core.securityPrintCount++
 				playsound(loc, 'sound/items/poster_being_created.ogg', 100, 1)
 				sleep(30)
 				var/obj/item/paper/P = new /obj/item/paper( loc )
-				var/report_text = ""
-				report_text += {"
-					<h1><div align=\"center\">Ордер на арест №[GLOB.data_core.securityPrintCount]</div></h1>
-					<p><strong>Задерживаемый субъект:</strong>  [active1.fields["name"]]</p>
-					<p><strong>Причина задержания:</strong></p>
-					<p>Разыскивается службой безопасности [GLOB.station_name] в связи с нарушением статей Космического Закона::</p>"}
-				for(var/datum/data/crime/c in crimes)
-					if(c.penalties_incurred)
-						continue
-					var/crime_text = "<p>"
-					crime_text += "<b>" + c.crimeName + "</b> - " + c.crimeDetails
-					if(c.centcom_enforced)
-						crime_text += " <i>\[Центкомм\]</i>"
-					crime_text += "</p>"
-					report_text += crime_text
-				report_text += {"
-					<p><strong><div align=\"center\">Подписи и печати</strong></div></p>
-					<p><strong>Подпись составителя:</strong></p>
-					<p>\[________________________________________________________________\]</p>
-					<p><strong>Должность составителя:</strong></p>
-					<p>[rank]</p>
-					<p><strong>Дата:</strong></p>
-					<p>Время: [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]</p>
-					<p>Дата: [time2text(world.realtime, "MMM DD")] [GLOB.year_integer]</p>
-					<p><strong>Место для печатей</strong></p>
-					<hr/>
-					<br>
-					<br>
-					<br>
-					<hr/>
-					<font color=\"grey\"><div align=\"justify\">Основная часть документа сгенерирована автоматически.</div></font></p>
-					<font color=\"grey\"><div align=\"justify\">Данный документ считается действительным только при наличии подписи и печати, если таковая имеется.</div></font></p>
-					<font color=\"grey\"><div align=\"justify\">Данный документ имеет юридическую силу, только если составлен уполномоченным лицом.</div></font></p>"}
+				var/report_text = "<CENTER><B>Security Record - (SR-[GLOB.data_core.securityPrintCount])</B></CENTER><BR>"
+				if((istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1)))
+					report_text += text("Name: [] ID: []<BR>\nGender: []<BR>\nAge: []<BR>", active1.fields["name"], active1.fields["id"], active1.fields["gender"], active1.fields["age"])
+					report_text += "\nSpecies: [active1.fields["species"]]<BR>"
+					report_text += text("\nFingerprint: []<BR>\nPhysical Status: []<BR>\nMental Status: []<BR>", active1.fields["fingerprint"], active1.fields["p_stat"], active1.fields["m_stat"])
+				else
+					report_text += "<B>General Record Lost!</B><BR>"
+				if((istype(active2, /datum/data/record) && GLOB.data_core.security.Find(active2)))
+					report_text += text("<BR>\n<CENTER><B>Security Data</B></CENTER><BR>\nCriminal Status: []", active2.fields["criminal"])
+
+					report_text += "<BR>\n<BR>\nMinor Crimes:<BR>\n"
+					report_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
+<tr>
+<th>Crime</th>
+<th>Details</th>
+<th>Author</th>
+<th>Time Added</th>
+</tr>"}
+					for(var/datum/data/crime/c in active2.fields["mi_crim"])
+						report_text += "<tr><td>[c.crimeName]</td>"
+						report_text += "<td>[c.crimeDetails]</td>"
+						report_text += "<td>[c.author]</td>"
+						report_text += "<td>[c.time]</td>"
+						report_text += "</tr>"
+					report_text += "</table>"
+
+					report_text += "<BR>\nMajor Crimes: <BR>\n"
+					report_text +={"<table style="text-align:center;" border="1" cellspacing="0" width="100%">
+<tr>
+<th>Crime</th>
+<th>Details</th>
+<th>Author</th>
+<th>Time Added</th>
+</tr>"}
+					for(var/datum/data/crime/c in active2.fields["ma_crim"])
+						report_text += "<tr><td>[c.crimeName]</td>"
+						report_text += "<td>[c.crimeDetails]</td>"
+						report_text += "<td>[c.author]</td>"
+						report_text += "<td>[c.time]</td>"
+						report_text += "</tr>"
+					report_text += "</table>"
+
+
+					report_text += text("<BR>\nImportant Notes:<BR>\n\t[]<BR>\n<BR>\n<CENTER><B>Comments/Log</B></CENTER><BR>", active2.fields["notes"])
+					var/counter = 1
+					while(active2.fields[text("com_[]", counter)])
+						report_text += text("[]<BR>", active2.fields[text("com_[]", counter)])
+						counter++
+					P.name = text("SR-[] '[]'", GLOB.data_core.securityPrintCount, active1.fields["name"])
+				else
+					report_text += "<B>Security Record Lost!</B><BR>"
+					P.name = text("SR-[] '[]'", GLOB.data_core.securityPrintCount, "Record Lost")
+				report_text += "</TT>"
 				P.add_raw_text(report_text)
-				P.name = "Ордер на арест - [active1.fields["name"]]"
 				P.update_appearance()
 				P.update_icon()
 				printing = null
-			// BLUEMOON ADD END
-			if("Print Poster")
-				if(!( printing ))
-					var/wanted_name = stripped_input(usr, "Please enter an alias for the criminal:", "Print Wanted Poster", active1.fields["name"])
-					if(wanted_name)
-						var/default_description = "A poster declaring [wanted_name] to be a dangerous individual, wanted by Nanotrasen. Report any sightings to security immediately."
-						var/list/major_crimes = active2.fields["ma_crim"]
-						var/list/minor_crimes = active2.fields["mi_crim"]
-						if(major_crimes.len + minor_crimes.len)
-							default_description += "\n[wanted_name] is wanted for the following crimes:\n"
-						if(minor_crimes.len)
-							default_description += "\nMinor Crimes:"
-							for(var/datum/data/crime/c in active2.fields["mi_crim"])
-								default_description += "\n[c.crimeName]\n"
-								default_description += "[c.crimeDetails]\n"
-						if(major_crimes.len)
-							default_description += "\nMajor Crimes:"
-							for(var/datum/data/crime/c in active2.fields["ma_crim"])
-								default_description += "\n[c.crimeName]\n"
-								default_description += "[c.crimeDetails]\n"
+		// BLUEMOON ADD START - возможность распечатать автоматически сгенерированный ордер
+		if("Generate Arrest Warrant")
+			if(printing)
+				return
+			if(!canUseSecurityRecordsConsole(usr, "print", active1, active2))
+				return
+			if(!(istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1)) || !(istype(active2, /datum/data/record) && GLOB.data_core.security.Find(active2)))
+				say("Данные повреждены!")
+				return
+			var/list/crimes = active2.fields["ma_crim"] + active2.fields["mi_crim"]
+			if(!crimes.len) // Можно было ещё по c.penalties_incurred отфильтровать, но чёрт с ним
+				say("Правонарушения отсутствуют!")
+				return
+			printing = 1
+			GLOB.data_core.securityPrintCount++
+			playsound(loc, 'sound/items/poster_being_created.ogg', 100, 1)
+			sleep(30)
+			var/obj/item/paper/P = new /obj/item/paper( loc )
+			var/report_text = ""
+			report_text += {"
+				<h1><div align=\"center\">Ордер на арест №[GLOB.data_core.securityPrintCount]</div></h1>
+				<p><strong>Задерживаемый субъект:</strong>  [active1.fields["name"]]</p>
+				<p><strong>Причина задержания:</strong></p>
+				<p>Разыскивается службой безопасности [GLOB.station_name] в связи с нарушением статей Космического Закона::</p>"}
+			for(var/datum/data/crime/c in crimes)
+				if(c.penalties_incurred)
+					continue
+				var/crime_text = "<p>"
+				crime_text += "<b>" + c.crimeName + "</b> - " + c.crimeDetails
+				if(c.centcom_enforced)
+					crime_text += " <i>\[Центкомм\]</i>"
+				crime_text += "</p>"
+				report_text += crime_text
+			report_text += {"
+				<p><strong><div align=\"center\">Подписи и печати</strong></div></p>
+				<p><strong>Подпись составителя:</strong></p>
+				<p>\[________________________________________________________________\]</p>
+				<p><strong>Должность составителя:</strong></p>
+				<p>[rank]</p>
+				<p><strong>Дата:</strong></p>
+				<p>Время: [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]</p>
+				<p>Дата: [time2text(world.realtime, "MMM DD")] [GLOB.year_integer]</p>
+				<p><strong>Место для печатей</strong></p>
+				<hr/>
+				<br>
+				<br>
+				<br>
+				<hr/>
+				<font color=\"grey\"><div align=\"justify\">Основная часть документа сгенерирована автоматически.</div></font></p>
+				<font color=\"grey\"><div align=\"justify\">Данный документ считается действительным только при наличии подписи и печати, если таковая имеется.</div></font></p>
+				<font color=\"grey\"><div align=\"justify\">Данный документ имеет юридическую силу, только если составлен уполномоченным лицом.</div></font></p>"}
+			P.add_raw_text(report_text)
+			P.name = "Ордер на арест - [active1.fields["name"]]"
+			P.update_appearance()
+			P.update_icon()
+			printing = null
+		// BLUEMOON ADD END
+		if("Print Poster")
+			if(!( printing ))
+				var/wanted_name = stripped_input(usr, "Please enter an alias for the criminal:", "Print Wanted Poster", active1.fields["name"])
+				if(wanted_name)
+					var/default_description = "A poster declaring [wanted_name] to be a dangerous individual, wanted by Nanotrasen. Report any sightings to security immediately."
+					var/list/major_crimes = active2.fields["ma_crim"]
+					var/list/minor_crimes = active2.fields["mi_crim"]
+					if(major_crimes.len + minor_crimes.len)
+						default_description += "\n[wanted_name] is wanted for the following crimes:\n"
+					if(minor_crimes.len)
+						default_description += "\nMinor Crimes:"
+						for(var/datum/data/crime/c in active2.fields["mi_crim"])
+							default_description += "\n[c.crimeName]\n"
+							default_description += "[c.crimeDetails]\n"
+					if(major_crimes.len)
+						default_description += "\nMajor Crimes:"
+						for(var/datum/data/crime/c in active2.fields["ma_crim"])
+							default_description += "\n[c.crimeName]\n"
+							default_description += "[c.crimeDetails]\n"
 
-						var/info = stripped_multiline_input(usr, "Please input a description for the poster:", "Print Wanted Poster", default_description, null)
-						if(info)
-							playsound(loc, 'sound/items/poster_being_created.ogg', 100, 1)
-							printing = 1
-							sleep(30)
-							if((istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1)))//make sure the record still exists.
-								var/obj/item/photo/photo = active1.fields["photo_front"]
-								new /obj/item/poster/wanted(loc, photo.picture.picture_image, wanted_name, info)
-							printing = 0
+					var/info = stripped_multiline_input(usr, "Please input a description for the poster:", "Print Wanted Poster", default_description, null)
+					if(info)
+						playsound(loc, 'sound/items/poster_being_created.ogg', 100, 1)
+						printing = 1
+						sleep(30)
+						if((istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1)))//make sure the record still exists.
+							var/obj/item/photo/photo = active1.fields["photo_front"]
+							new /obj/item/poster/wanted(loc, photo.picture.picture_image, wanted_name, info)
+						printing = 0
 
-//RECORD DELETE
-			if("Delete All Records")
-				temp = ""
-				temp += "Are you sure you wish to delete all Security records?<br>"
-				temp += "<a href='?src=[REF(src)];choice=Purge All Records'>Yes</a><br>"
+		//RECORD DELETE
+		if("Delete All Records")
+			temp = ""
+			temp += "Are you sure you wish to delete all Security records?<br>"
+			temp += "<a href='?src=[REF(src)];choice=Purge All Records'>Yes</a><br>"
+			temp += "<a href='?src=[REF(src)];choice=Clear Screen'>No</a>"
+
+		if("Purge All Records")
+			investigate_log("[key_name(usr)] has purged all the security records.", INVESTIGATE_RECORDS)
+			for(var/datum/data/record/R in GLOB.data_core.security)
+				qdel(R)
+			GLOB.data_core.security.Cut()
+			temp = "All Security records deleted."
+
+		if("Add Entry")
+			if(!( istype(active2, /datum/data/record) ))
+				return
+			var/a2 = active2
+			var/t1 = stripped_multiline_input("Add Comment:", "Secure. records", null, null)
+			if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
+				return
+			var/counter = 1
+			while(active2.fields[text("com_[]", counter)])
+				counter++
+			active2.fields[text("com_[]", counter)] = text("Made by [] ([]) on [] [], []<BR>[]", src.authenticated, src.rank, STATION_TIME_TIMESTAMP("hh:mm:ss", world.time), time2text(world.realtime, "MMM DD"), GLOB.year_integer, t1)
+
+		if("Delete Record (ALL)")
+			if(active1)
+				temp = "<h5>Are you sure you wish to delete the record (ALL)?</h5>"
+				temp += "<a href='?src=[REF(src)];choice=Delete Record (ALL) Execute'>Yes</a><br>"
 				temp += "<a href='?src=[REF(src)];choice=Clear Screen'>No</a>"
 
-			if("Purge All Records")
-				investigate_log("[key_name(usr)] has purged all the security records.", INVESTIGATE_RECORDS)
-				for(var/datum/data/record/R in GLOB.data_core.security)
-					qdel(R)
-				GLOB.data_core.security.Cut()
-				temp = "All Security records deleted."
+		if("Delete Record (Security)")
+			if(active2)
+				temp = "<h5>Are you sure you wish to delete the record (Security Portion Only)?</h5>"
+				temp += "<a href='?src=[REF(src)];choice=Delete Record (Security) Execute'>Yes</a><br>"
+				temp += "<a href='?src=[REF(src)];choice=Clear Screen'>No</a>"
 
-			if("Add Entry")
-				if(!( istype(active2, /datum/data/record) ))
-					return
-				var/a2 = active2
-				var/t1 = stripped_multiline_input("Add Comment:", "Secure. records", null, null)
-				if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
-					return
-				var/counter = 1
-				while(active2.fields[text("com_[]", counter)])
-					counter++
-				active2.fields[text("com_[]", counter)] = text("Made by [] ([]) on [] [], []<BR>[]", src.authenticated, src.rank, STATION_TIME_TIMESTAMP("hh:mm:ss", world.time), time2text(world.realtime, "MMM DD"), GLOB.year_integer, t1)
-
-			if("Delete Record (ALL)")
-				if(active1)
-					temp = "<h5>Are you sure you wish to delete the record (ALL)?</h5>"
-					temp += "<a href='?src=[REF(src)];choice=Delete Record (ALL) Execute'>Yes</a><br>"
-					temp += "<a href='?src=[REF(src)];choice=Clear Screen'>No</a>"
-
-			if("Delete Record (Security)")
-				if(active2)
-					temp = "<h5>Are you sure you wish to delete the record (Security Portion Only)?</h5>"
-					temp += "<a href='?src=[REF(src)];choice=Delete Record (Security) Execute'>Yes</a><br>"
-					temp += "<a href='?src=[REF(src)];choice=Clear Screen'>No</a>"
-
-			if("Delete Entry")
-				if((istype(active2, /datum/data/record) && active2.fields[text("com_[]", href_list["del_c"])]))
-					active2.fields[text("com_[]", href_list["del_c"])] = "<B>Deleted</B>"
-//RECORD CREATE
-			if("New Record (Security)")
-				if((istype(active1, /datum/data/record) && !( istype(active2, /datum/data/record) )))
-					var/datum/data/record/R = new /datum/data/record()
-					R.fields["name"] = active1.fields["name"]
-					R.fields["id"] = active1.fields["id"]
-					R.name = text("Security Record #[]", R.fields["id"])
-					R.fields["criminal"] = SEC_RECORD_STATUS_NONE
-					R.fields["mi_crim"] = list()
-					R.fields["ma_crim"] = list()
-					R.fields["notes"] = "No notes."
-					GLOB.data_core.security += R
-					active2 = R
-					screen = 3
-
-			if("New Record (General)")
-				//General Record
-				var/datum/data/record/G = new /datum/data/record()
-				G.fields["name"] = "New Record"
-				G.fields["id"] = "[num2hex(rand(1, 1.6777215E7), 6)]"
-				G.fields["rank"] = "Unassigned"
-				G.fields["gender"] = "Male"
-				G.fields["age"] = "Unknown"
-				G.fields["species"] = "Human"
-				G.fields["photo_front"] = new /icon()
-				G.fields["photo_side"] = new /icon()
-				G.fields["fingerprint"] = "?????"
-				G.fields["p_stat"] = "Active"
-				G.fields["m_stat"] = "Stable"
-				GLOB.data_core.general += G
-				active1 = G
-
-				//Security Record
+		if("Delete Entry")
+			if((istype(active2, /datum/data/record) && active2.fields[text("com_[]", href_list["del_c"])]))
+				active2.fields[text("com_[]", href_list["del_c"])] = "<B>Deleted</B>"
+		//RECORD CREATE
+		if("New Record (Security)")
+			if((istype(active1, /datum/data/record) && !( istype(active2, /datum/data/record) )))
 				var/datum/data/record/R = new /datum/data/record()
 				R.fields["name"] = active1.fields["name"]
 				R.fields["id"] = active1.fields["id"]
@@ -602,255 +585,440 @@ What a mess.*/
 				R.fields["notes"] = "No notes."
 				GLOB.data_core.security += R
 				active2 = R
+				screen = 3
 
-				//Medical Record
-				var/datum/data/record/M = new /datum/data/record()
-				M.fields["id"]			= active1.fields["id"]
-				M.fields["name"]		= active1.fields["name"]
-				M.fields["blood_type"]	= "?"
-				M.fields["b_dna"]		= "?????"
-				M.fields["mi_dis"]		= "None"
-				M.fields["mi_dis_d"]	= "No minor disabilities have been declared."
-				M.fields["ma_dis"]		= "None"
-				M.fields["ma_dis_d"]	= "No major disabilities have been diagnosed."
-				M.fields["alg"]			= "None"
-				M.fields["alg_d"]		= "No allergies have been detected in this patient."
-				M.fields["cdi"]			= "None"
-				M.fields["cdi_d"]		= "No diseases have been diagnosed at the moment."
-				M.fields["notes"]		= "No notes."
-				GLOB.data_core.medical += M
+		if("New Record (General)")
+			//General Record
+			var/datum/data/record/G = new /datum/data/record()
+			G.fields["name"] = "New Record"
+			G.fields["id"] = "[num2hex(rand(1, 1.6777215E7), 6)]"
+			G.fields["rank"] = "Unassigned"
+			G.fields["gender"] = "Male"
+			G.fields["age"] = "Unknown"
+			G.fields["species"] = "Human"
+			G.fields["photo_front"] = new /icon()
+			G.fields["photo_side"] = new /icon()
+			G.fields["fingerprint"] = "?????"
+			G.fields["p_stat"] = "Active"
+			G.fields["m_stat"] = "Stable"
+			GLOB.data_core.general += G
+			active1 = G
+
+			//Security Record
+			var/datum/data/record/R = new /datum/data/record()
+			R.fields["name"] = active1.fields["name"]
+			R.fields["id"] = active1.fields["id"]
+			R.name = text("Security Record #[]", R.fields["id"])
+			R.fields["criminal"] = SEC_RECORD_STATUS_NONE
+			R.fields["mi_crim"] = list()
+			R.fields["ma_crim"] = list()
+			R.fields["notes"] = "No notes."
+			R.fields["actions_logs"] = list(
+				"<u>[GLOB.current_date_string] | [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)] ЗАПИСЬ НАЧАТА. СУБЪЕКТ - [active1.fields["name"]] | N/A | [active1.fields["id"]] -- ИНИЦИАТОР: [authenticated] ([rank]);</u><br>"
+				)
+			GLOB.data_core.security += R
+			active2 = R
+
+			//Medical Record
+			var/datum/data/record/M = new /datum/data/record()
+			M.fields["id"]			= active1.fields["id"]
+			M.fields["name"]		= active1.fields["name"]
+			M.fields["blood_type"]	= "?"
+			M.fields["b_dna"]		= "?????"
+			M.fields["mi_dis"]		= "None"
+			M.fields["mi_dis_d"]	= "No minor disabilities have been declared."
+			M.fields["ma_dis"]		= "None"
+			M.fields["ma_dis_d"]	= "No major disabilities have been diagnosed."
+			M.fields["alg"]			= "None"
+			M.fields["alg_d"]		= "No allergies have been detected in this patient."
+			M.fields["cdi"]			= "None"
+			M.fields["cdi_d"]		= "No diseases have been diagnosed at the moment."
+			M.fields["notes"]		= "No notes."
+			GLOB.data_core.medical += M
 
 
+		// Возможность распечатать логи
+		if("Print Logs")
+			if(!istype(active2, /datum/data/record))
+				return
+			if(printing)
+				return
+			if(!canUseSecurityRecordsConsole(usr, "print", active1, active2))
+				return
+			if(!(istype(active1, /datum/data/record) && GLOB.data_core.general.Find(active1)) || !(istype(active2, /datum/data/record) && GLOB.data_core.security.Find(active2)))
+				say("Данные повреждены!")
+				return
+			var/list/logs = active2.fields["actions_logs"]
+			printing = 1
+			GLOB.data_core.securityPrintCount++
+			playsound(loc, 'sound/items/poster_being_created.ogg', 100, 1)
+			sleep(30)
+			var/obj/item/paper/P = new /obj/item/paper( loc )
+			var/log_text = ""
+			log_text += {"
+				<h1><div align=\"center\">ЛОГИ ЗАПИСЕЙ | СЛУЖБА БЕЗОПАСНОСТИ</div></h1>
+				<p><strong>ОБЪЕКТ:</strong>  [GLOB.station_name]</p>
+				<p><strong>ДАТА ЗАПРОСА:</strong>  [GLOB.current_date_string]</p>
+				<p><strong>ВРЕМЯ ЗАПРОСА:</strong>  [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]</p>
+				<p><strong>ЗАПИСЬ:</strong>  [active1.fields["id"]]</p>
+				<p><strong>ИМЯ СУБЪЕКТА:</strong> [active1.fields["name"]]</p>
+				<hr><br><center><div align=\"center\"><b>НАЧАЛО ЗАПИСИ</b></center></div>
+				"}
+			for(var/log in logs)
+				log_text += "<br>[log]"
+			log_text += "<br><br><div align=\"center\"><b>КОНЕЦ ЗАПИСИ</b></div><hr><br>"
+			P.add_raw_text(log_text)
+			P.name = "Database Logs - [active1.fields["name"]] - [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]"
+			var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/simple/paper)
+			P.add_stamp(sheet.icon_class_name("stamp-machine"), 400, 50, 1, "stamp-machine")
+			P.update_appearance()
+			P.update_icon()
+			printing = null
 
-//FIELD FUNCTIONS
-			if("Edit Field")
-				var/a1 = active1
-				var/a2 = active2
+		if("Delete Logs")
+			if(!istype(active2, /datum/data/record))
+				return
+			if(!(ACCESS_HOS in logged_access))
+				to_chat(usr, span_warning("У вас нет полномочий для данного действия: необходим доступ не ниже Главы Службы Безопасности."))
+				return
+			active2.fields["actions_logs"] = list(
+				"<u>[GLOB.current_date_string] | [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)] ЛОГИ ОЧИЩЕНЫ УПРАВЛЯЮЩИМ [authenticated] | [rank];</u><br>"
+			)
 
-				switch(href_list["field"])
-					if("name")
-						if(istype(active1, /datum/data/record) || istype(active2, /datum/data/record))
-							var/t1 = stripped_input(usr, "Please input name:", "Secure. records", active1.fields["name"], MAX_MESSAGE_LEN)
-							if(!canUseSecurityRecordsConsole(usr, t1, a1))
-								return
-							if(istype(active1, /datum/data/record))
-								active1.fields["name"] = t1
-							if(istype(active2, /datum/data/record))
-								active2.fields["name"] = t1
-					if("id")
-						if(istype(active2, /datum/data/record) || istype(active1, /datum/data/record))
-							var/t1 = stripped_input(usr, "Please input id:", "Secure. records", active1.fields["id"], null)
-							if(!canUseSecurityRecordsConsole(usr, t1, a1))
-								return
-							if(istype(active1, /datum/data/record))
-								active1.fields["id"] = t1
-							if(istype(active2, /datum/data/record))
-								active2.fields["id"] = t1
-					if("fingerprint")
+		//FIELD FUNCTIONS
+		if("Edit Field")
+			var/a1 = active1
+			var/a2 = active2
+
+			switch(href_list["field"])
+				if("name")
+					if(istype(active1, /datum/data/record) || istype(active2, /datum/data/record))
+						var/t1 = stripped_input(usr, "Please input name:", "Secure. records", active1.fields["name"], MAX_MESSAGE_LEN)
+						if(!canUseSecurityRecordsConsole(usr, t1, a1))
+							return
 						if(istype(active1, /datum/data/record))
-							var/t1 = stripped_input(usr, "Please input fingerprint hash:", "Secure. records", active1.fields["fingerprint"], null)
-							if(!canUseSecurityRecordsConsole(usr, t1, a1))
-								return
-							active1.fields["fingerprint"] = t1
-					if("gender")
-						if(istype(active1, /datum/data/record))
-							if(active1.fields["gender"] == "Male")
-								active1.fields["gender"] = "Female"
-							else if(active1.fields["gender"] == "Female")
-								active1.fields["gender"] = "Other"
-							else
-								active1.fields["gender"] = "Male"
-					if("age")
-						if(istype(active1, /datum/data/record))
-							var/t1 = input("Please input age:", "Secure. records", active1.fields["age"], null) as num
-							if(!canUseSecurityRecordsConsole(usr, "age", a1))
-								return
-							active1.fields["age"] = t1
-					if("species")
-						if(istype(active1, /datum/data/record))
-							var/t1 = stripped_input("Please input species name", "Sec. records", active1.fields["species"], null)
-							if(!canUseSecurityRecordsConsole(usr, t1, a1))
-								return
-							active1.fields["species"] = t1
-					if("show_photo_front")
-						if(active1.fields["photo_front"])
-							if(istype(active1.fields["photo_front"], /obj/item/photo))
-								var/obj/item/photo/P = active1.fields["photo_front"]
-								P.show(usr)
-					if("upd_photo_front")
-						var/obj/item/photo/photo = get_photo(usr)
-						if(photo)
-							qdel(active1.fields["photo_front"])
-							//Lets center it to a 32x32.
-							var/icon/I = photo.picture.picture_image
-							var/w = I.Width()
-							var/h = I.Height()
-							var/dw = w - 32
-							var/dh = w - 32
-							I.Crop(dw/2, dh/2, w - dw/2, h - dh/2)
-							active1.fields["photo_front"] = photo
-					if("print_photo_front")
-						if(active1.fields["photo_front"])
-							if(istype(active1.fields["photo_front"], /obj/item/photo))
-								var/obj/item/photo/P = active1.fields["photo_front"]
-								print_photo(P.picture.picture_image, active1.fields["name"])
-					if("show_photo_side")
-						if(active1.fields["photo_side"])
-							if(istype(active1.fields["photo_side"], /obj/item/photo))
-								var/obj/item/photo/P = active1.fields["photo_side"]
-								P.show(usr)
-					if("upd_photo_side")
-						var/obj/item/photo/photo = get_photo(usr)
-						if(photo)
-							qdel(active1.fields["photo_side"])
-							//Lets center it to a 32x32.
-							var/icon/I = photo.picture.picture_image
-							var/w = I.Width()
-							var/h = I.Height()
-							var/dw = w - 32
-							var/dh = w - 32
-							I.Crop(dw/2, dh/2, w - dw/2, h - dh/2)
-							active1.fields["photo_side"] = photo
-					if("print_photo_side")
-						if(active1.fields["photo_side"])
-							if(istype(active1.fields["photo_side"], /obj/item/photo))
-								var/obj/item/photo/P = active1.fields["photo_side"]
-								print_photo(P.picture.picture_image, active1.fields["name"])
-					if("mi_crim_add")
-						if(istype(active1, /datum/data/record))
-							var/t1 = stripped_input(usr, "Please input minor crime names:", "Secure. records", "", null)
-							var/t2 = stripped_input(usr, "Please input minor crime details:", "Secure. records", "", null)
-							if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
-								return
-							var/centcom_authority = (ACCESS_CENT_CAPTAIN in logged_access) // BLUEMOON EDIT - авторизация ЦК
-							var/crime = GLOB.data_core.createCrimeEntry(t1, t2, authenticated, STATION_TIME_TIMESTAMP("hh:mm:ss", world.time), centcom_authority)
-							GLOB.data_core.addMinorCrime(active1.fields["id"], crime)
-							investigate_log("New Minor Crime: <strong>[t1]</strong>: [t2] | Added to [active1.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
-					if("mi_crim_delete")
-						if(istype(active1, /datum/data/record))
-							if(href_list["cdataid"])
-								if(!canUseSecurityRecordsConsole(usr, "delete", null, a2))
-									return
-								var/centcom_authority = (ACCESS_CENT_CAPTAIN in logged_access) // BLUEMOON EDIT - авторизация ЦК
-								GLOB.data_core.removeMinorCrime(active1.fields["id"], href_list["cdataid"], centcom_authority)
-					if("ma_crim_add")
-						if(istype(active1, /datum/data/record))
-							var/t1 = stripped_input(usr, "Please input major crime names:", "Secure. records", "", null)
-							var/t2 = stripped_input(usr, "Please input major crime details:", "Secure. records", "", null)
-							if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
-								return
-							var/centcom_authority = (ACCESS_CENT_CAPTAIN in logged_access) // BLUEMOON EDIT - авторизация ЦК
-							var/crime = GLOB.data_core.createCrimeEntry(t1, t2, authenticated, STATION_TIME_TIMESTAMP("hh:mm:ss", world.time), centcom_authority)
-							GLOB.data_core.addMajorCrime(active1.fields["id"], crime)
-							investigate_log("New Major Crime: <strong>[t1]</strong>: [t2] | Added to [active1.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
-					if("ma_crim_delete")
-						if(istype(active1, /datum/data/record))
-							if(href_list["cdataid"])
-								if(!canUseSecurityRecordsConsole(usr, "delete", null, a2))
-									return
-								var/centcom_authority = (ACCESS_CENT_CAPTAIN in logged_access) // BLUEMOON EDIT - авторизация ЦК
-								GLOB.data_core.removeMajorCrime(active1.fields["id"], href_list["cdataid"], centcom_authority)
-					// BLUEMOON ADD START - возможность пометить правонарушение как обработанное
-					if("crim_incur_switch")
-						if(istype(active1, /datum/data/record))
-							if(href_list["cdataid"])
-								if(!canUseSecurityRecordsConsole(usr, "incur", null, a2))
-									return
-								GLOB.data_core.switch_incur(active1.fields["id"], href_list["cdataid"])
-					// BLUEMOON ADD END
-					if("notes")
+							GLOB.data_core.append_sec_logs(
+								active1.fields["id"],
+								"%%GEN_AUTH%% сменил поле \"имя\" с [active1.fields["name"]] на [t1] | ОБЩИЕ ЗАПИСИ",
+								authenticated,
+								rank
+							)
+							active1.fields["name"] = t1
 						if(istype(active2, /datum/data/record))
-							var/t1 = stripped_multiline_input(usr, "Please summarize notes:", "Secure records", active2.fields["notes"], 8192)
-							if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
-								return
-							active2.fields["notes"] = t1
-					if("criminal")
+							GLOB.data_core.append_sec_logs(
+								active1.fields["id"],
+								"%%GEN_AUTH%% сменил поле \"имя\" с [active2.fields["name"]] на [t1] | ЗАПИСИ БЕЗОПАСНОСТИ",
+								authenticated,
+								rank
+							)
+							active2.fields["name"] = t1
+				if("id")
+					if(istype(active2, /datum/data/record) || istype(active1, /datum/data/record))
+						var/t1 = stripped_input(usr, "Please input id:", "Secure. records", active1.fields["id"], null)
+						if(!canUseSecurityRecordsConsole(usr, t1, a1))
+							return
+						if(istype(active1, /datum/data/record))
+							GLOB.data_core.append_sec_logs(
+								active1.fields["id"],
+								"%%GEN_AUTH%% сменил поле \"ID\" с [active1.fields["id"]] на [t1] | ОБЩИЕ ЗАПИСИ",
+								authenticated,
+								rank
+							)
+							active1.fields["id"] = t1
 						if(istype(active2, /datum/data/record))
-							temp = "<h5>Criminal Status:</h5>"
-							temp += "<ul>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=none'>Ничего</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=arrest'>*Арестовать*</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=execute'>*Уничтожить*</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=incarcerated'>Отбывает Срок</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=released'>Выпустили</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=parolled'>УДО</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=demote'>Уволить</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=search'>Искать</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=monitor'>Наблюдать</a></li>"
-							temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=discharged'>Сняты Обвинения</a></li>"
-							temp += "</ul>"
-					if("rank")
-						if(istype(active1, /datum/data/record) && ((ACCESS_CAPTAIN in logged_access) || (ACCESS_HOP in logged_access)))
-							temp = "<h5>Rank:</h5>"
-							temp += "<ul>"
-							for(var/rank in get_all_jobs())
-								temp += "<li><a href='?src=[REF(src)];choice=Change Rank;rank=[rank]'>[rank]</a></li>"
-							temp += "</ul>"
+							GLOB.data_core.append_sec_logs(
+								active1.fields["id"],
+								"%%GEN_AUTH%% сменил поле \"ID\" с [active2.fields["id"]] на [t1] | ЗАПИСИ БЕЗОПАСНОСТИ",
+								authenticated,
+								rank
+							)
+							active2.fields["id"] = t1
+				if("fingerprint")
+					if(istype(active1, /datum/data/record))
+						var/t1 = stripped_input(usr, "Please input fingerprint hash:", "Secure. records", active1.fields["fingerprint"], null)
+						if(!canUseSecurityRecordsConsole(usr, t1, a1))
+							return
+						GLOB.data_core.append_sec_logs(
+							active1.fields["id"],
+							"%%GEN_AUTH%% сменил поле \"отпечаток\" с [active1.fields["fingerprint"]] на [t1]",
+							authenticated,
+							rank
+						)
+						active1.fields["fingerprint"] = t1
+				if("gender")
+					if(istype(active1, /datum/data/record))
+						var/old_gender = active1.fields["gender"]
+						if(active1.fields["gender"] == "Male")
+							active1.fields["gender"] = "Female"
+						else if(active1.fields["gender"] == "Female")
+							active1.fields["gender"] = "Other"
 						else
-							alert(usr, "You do not have the required rank to do this!")
-//TEMPORARY MENU FUNCTIONS
-			else//To properly clear as per clear screen.
-				temp=null
-				switch(href_list["choice"])
-					if("Change Rank")
-						if(active1)
-							active1.fields["rank"] = href_list["rank"]
-							if(href_list["rank"] in get_all_jobs())
-								active1.fields["real_rank"] = href_list["real_rank"]
+							active1.fields["gender"] = "Male"
+						GLOB.data_core.append_sec_logs(
+							active1.fields["id"],
+							"%%GEN_AUTH%% сменил поле \"гендер\" с [old_gender] на [active1.fields["gender"]]",
+							authenticated,
+							rank
+						)
+				if("age")
+					if(istype(active1, /datum/data/record))
+						var/t1 = input("Please input age:", "Secure. records", active1.fields["age"], null) as num
+						if(!canUseSecurityRecordsConsole(usr, "age", a1))
+							return
+						GLOB.data_core.append_sec_logs(
+							active1.fields["id"],
+							"%%GEN_AUTH%% сменил поле \"возраст\" с [active1.fields["age"]] на [t1]",
+							authenticated,
+							rank
+						)
+						active1.fields["age"] = t1
+				if("species")
+					if(istype(active1, /datum/data/record))
+						var/t1 = stripped_input("Please input species name", "Sec. records", active1.fields["species"], null)
+						if(!canUseSecurityRecordsConsole(usr, t1, a1))
+							return
+						GLOB.data_core.append_sec_logs(
+							active1.fields["id"],
+							"%%GEN_AUTH%% сменил поле \"вид\" с [active1.fields["species"]] на [t1]",
+							authenticated,
+							rank
+						)
+						active1.fields["species"] = t1
+				if("show_photo_front")
+					if(active1.fields["photo_front"])
+						if(istype(active1.fields["photo_front"], /obj/item/photo))
+							var/obj/item/photo/P = active1.fields["photo_front"]
+							P.show(usr)
+				if("upd_photo_front")
+					var/obj/item/photo/photo = get_photo(usr)
+					if(photo)
+						qdel(active1.fields["photo_front"])
+						//Lets center it to a 32x32.
+						var/icon/I = photo.picture.picture_image
+						var/w = I.Width()
+						var/h = I.Height()
+						var/dw = w - 32
+						var/dh = w - 32
+						I.Crop(dw/2, dh/2, w - dw/2, h - dh/2)
+						active1.fields["photo_front"] = photo
+						GLOB.data_core.append_sec_logs(
+							active1.fields["id"],
+							"%%GEN_AUTH%% отредактировал фотографию №1",
+							authenticated,
+							rank
+						)
+				if("print_photo_front")
+					if(active1.fields["photo_front"])
+						if(istype(active1.fields["photo_front"], /obj/item/photo))
+							var/obj/item/photo/P = active1.fields["photo_front"]
+							print_photo(P.picture.picture_image, active1.fields["name"])
+				if("show_photo_side")
+					if(active1.fields["photo_side"])
+						if(istype(active1.fields["photo_side"], /obj/item/photo))
+							var/obj/item/photo/P = active1.fields["photo_side"]
+							P.show(usr)
+				if("upd_photo_side")
+					var/obj/item/photo/photo = get_photo(usr)
+					if(photo)
+						qdel(active1.fields["photo_side"])
+						//Lets center it to a 32x32.
+						var/icon/I = photo.picture.picture_image
+						var/w = I.Width()
+						var/h = I.Height()
+						var/dw = w - 32
+						var/dh = w - 32
+						I.Crop(dw/2, dh/2, w - dw/2, h - dh/2)
+						active1.fields["photo_side"] = photo
+						GLOB.data_core.append_sec_logs(
+							active1.fields["id"],
+							"%%GEN_AUTH%% отредактировал фотографию №2",
+							authenticated,
+							rank
+						)
+				if("print_photo_side")
+					if(active1.fields["photo_side"])
+						if(istype(active1.fields["photo_side"], /obj/item/photo))
+							var/obj/item/photo/P = active1.fields["photo_side"]
+							print_photo(P.picture.picture_image, active1.fields["name"])
 
-					if("Change Criminal Status")
-						if(active2)
-							var/old_field = active2.fields["criminal"]
-							switch(href_list["criminal2"])
-								if("none")
-									active2.fields["criminal"] = SEC_RECORD_STATUS_NONE
-								if("arrest")
-									active2.fields["criminal"] = SEC_RECORD_STATUS_ARREST
-								if("execute")
-									active2.fields["criminal"] = SEC_RECORD_STATUS_EXECUTE
-								if("incarcerated")
-									active2.fields["criminal"] = SEC_RECORD_STATUS_INCARCERATED
-								if("released")
-									active2.fields["criminal"] = SEC_RECORD_STATUS_RELEASED
-								if("parolled")
-									active2.fields["criminal"] = SEC_RECORD_STATUS_PAROLLED
-								if("demote")
-									active2.fields["criminal"] = SEC_RECORD_STATUS_DEMOTE
-								if("search")
-									active2.fields["criminal"] = SEC_RECORD_STATUS_SEARCH
-								if("monitor")
-									active2.fields["criminal"] = SEC_RECORD_STATUS_MONITOR
-								if("discharged")
-									active2.fields["criminal"] = SEC_RECORD_STATUS_DISCHARGED
-
-							investigate_log("[active1.fields["name"]] has been set from [old_field] to [active2.fields["criminal"]] by [key_name(usr)].", INVESTIGATE_RECORDS)
-							for(var/mob/living/carbon/human/H in GLOB.carbon_list)
-								H.sec_hud_set_security_status()
-					if("Delete Record (Security) Execute")
-						investigate_log("[key_name(usr)] has deleted the security records for [active1.fields["name"]].", INVESTIGATE_RECORDS)
-						if(active2)
-							qdel(active2)
-							active2 = null
-
-					if("Delete Record (ALL) Execute")
-						if(active1)
-							investigate_log("[key_name(usr)] has deleted all records for [active1.fields["name"]].", INVESTIGATE_RECORDS)
-							for(var/datum/data/record/R in GLOB.data_core.medical)
-								if((R.fields["name"] == active1.fields["name"] || R.fields["id"] == active1.fields["id"]))
-									qdel(R)
-									break
-							qdel(active1)
-							active1 = null
-
-						if(active2)
-							qdel(active2)
-							active2 = null
+				if("mi_crim_add")
+					if(istype(active1, /datum/data/record))
+						var/t1 = stripped_input(usr, "Please input minor crime names:", "Secure. records", "", null)
+						var/t2 = stripped_input(usr, "Please input minor crime details:", "Secure. records", "", null)
+						if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
+							return
+						var/centcom_authority = (ACCESS_CENT_CAPTAIN in logged_access) // BLUEMOON EDIT - авторизация ЦК
+						var/crime = GLOB.data_core.createCrimeEntry(t1, t2, authenticated, STATION_TIME_TIMESTAMP("hh:mm:ss", world.time), centcom_authority)
+						GLOB.data_core.addMinorCrime(active1.fields["id"], crime)
+						GLOB.data_core.append_sec_logs(
+							active1.fields["id"],
+							"%%GEN_AUTH%% записал некрупное преступление: <b>[t1]</b>, [t2]",
+							authenticated,
+							rank
+						)
+						investigate_log("New Minor Crime: <strong>[t1]</strong>: [t2] | Added to [active1.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
+				if("mi_crim_delete")
+					if(istype(active1, /datum/data/record))
+						if(href_list["cdataid"])
+							if(!canUseSecurityRecordsConsole(usr, "delete", null, a2))
+								return
+							var/centcom_authority = (ACCESS_CENT_CAPTAIN in logged_access) // BLUEMOON EDIT - авторизация ЦК
+							GLOB.data_core.removeMinorCrime(active1.fields["id"], href_list["cdataid"], centcom_authority)
+							GLOB.data_core.append_sec_logs(
+								active1.fields["id"],
+								"%%GEN_AUTH%% удалил некрупное преступление №[href_list["cdataid"]]",
+								authenticated,
+								rank
+							)
+				if("ma_crim_add")
+					if(istype(active1, /datum/data/record))
+						var/t1 = stripped_input(usr, "Please input major crime names:", "Secure. records", "", null)
+						var/t2 = stripped_input(usr, "Please input major crime details:", "Secure. records", "", null)
+						if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
+							return
+						var/centcom_authority = (ACCESS_CENT_CAPTAIN in logged_access) // BLUEMOON EDIT - авторизация ЦК
+						var/crime = GLOB.data_core.createCrimeEntry(t1, t2, authenticated, STATION_TIME_TIMESTAMP("hh:mm:ss", world.time), centcom_authority)
+						GLOB.data_core.addMajorCrime(active1.fields["id"], crime)
+						GLOB.data_core.append_sec_logs(
+							active1.fields["id"],
+							"%%GEN_AUTH%% записал крупное преступление: <b>[t1]</b>, [t2]",
+							authenticated,
+							rank
+						)
+						investigate_log("New Major Crime: <strong>[t1]</strong>: [t2] | Added to [active1.fields["name"]] by [key_name(usr)]", INVESTIGATE_RECORDS)
+				if("ma_crim_delete")
+					if(istype(active1, /datum/data/record))
+						if(href_list["cdataid"])
+							if(!canUseSecurityRecordsConsole(usr, "delete", null, a2))
+								return
+							var/centcom_authority = (ACCESS_CENT_CAPTAIN in logged_access) // BLUEMOON EDIT - авторизация ЦК
+							GLOB.data_core.removeMajorCrime(active1.fields["id"], href_list["cdataid"], centcom_authority)
+							GLOB.data_core.append_sec_logs(
+								active1.fields["id"],
+								"%%GEN_AUTH%% удалил крупное преступление №[href_list["cdataid"]]",
+								authenticated,
+								rank
+							)
+				// BLUEMOON ADD START - возможность пометить правонарушение как обработанное
+				if("crim_incur_switch")
+					if(istype(active1, /datum/data/record))
+						if(href_list["cdataid"])
+							if(!canUseSecurityRecordsConsole(usr, "incur", null, a2))
+								return
+							GLOB.data_core.switch_incur(active1.fields["id"], href_list["cdataid"])
+							GLOB.data_core.append_sec_logs(
+								active1.fields["id"],
+								"%%GEN_AUTH%% изменил пометку \"НАКАЗАНИЕ ПОНЕСЕНО\" у преступления №[href_list["cdataid"]]",
+								authenticated,
+								rank
+							)
+				// BLUEMOON ADD END
+				if("notes")
+					if(istype(active2, /datum/data/record))
+						var/t1 = stripped_multiline_input(usr, "Please summarize notes:", "Secure records", active2.fields["notes"], 8192)
+						if(!canUseSecurityRecordsConsole(usr, t1, null, a2))
+							return
+						active2.fields["notes"] = t1
+						GLOB.data_core.append_sec_logs(
+							active1.fields["id"],
+							"%%GEN_AUTH%% изменил служебные заметки субъекта",
+							authenticated,
+							rank
+						)
+				if("criminal")
+					if(istype(active2, /datum/data/record))
+						temp = "<h5>Criminal Status:</h5>"
+						temp += "<ul>"
+						temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=none'>Ничего</a></li>"
+						temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=arrest'>*Арестовать*</a></li>"
+						temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=execute'>*Уничтожить*</a></li>"
+						temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=incarcerated'>Отбывает Срок</a></li>"
+						temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=released'>Выпустили</a></li>"
+						temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=parolled'>УДО</a></li>"
+						temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=demote'>Уволить</a></li>"
+						temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=search'>Искать</a></li>"
+						temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=monitor'>Наблюдать</a></li>"
+						temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=discharged'>Сняты Обвинения</a></li>"
+						temp += "</ul>"
+				if("rank")
+					if(istype(active1, /datum/data/record) && ((ACCESS_CAPTAIN in logged_access) || (ACCESS_HOP in logged_access)))
+						temp = "<h5>Rank:</h5>"
+						temp += "<ul>"
+						for(var/rank in get_all_jobs())
+							temp += "<li><a href='?src=[REF(src)];choice=Change Rank;rank=[rank]'>[rank]</a></li>"
+						temp += "</ul>"
 					else
-						temp = "This function does not appear to be working at the moment. Our apologies."
+						alert(usr, "You do not have the required rank to do this!")
+		//TEMPORARY MENU FUNCTIONS
+		else//To properly clear as per clear screen.
+			temp=null
+			switch(href_list["choice"])
+				if("Change Rank")
+					if(active1)
+						active1.fields["rank"] = href_list["rank"]
+						if(href_list["rank"] in get_all_jobs())
+							active1.fields["real_rank"] = href_list["real_rank"]
+
+				if("Change Criminal Status")
+					if(active2)
+						var/old_field = active2.fields["criminal"]
+						switch(href_list["criminal2"])
+							if("none")
+								active2.fields["criminal"] = SEC_RECORD_STATUS_NONE
+							if("arrest")
+								active2.fields["criminal"] = SEC_RECORD_STATUS_ARREST
+							if("execute")
+								active2.fields["criminal"] = SEC_RECORD_STATUS_EXECUTE
+							if("incarcerated")
+								active2.fields["criminal"] = SEC_RECORD_STATUS_INCARCERATED
+							if("released")
+								active2.fields["criminal"] = SEC_RECORD_STATUS_RELEASED
+							if("parolled")
+								active2.fields["criminal"] = SEC_RECORD_STATUS_PAROLLED
+							if("demote")
+								active2.fields["criminal"] = SEC_RECORD_STATUS_DEMOTE
+							if("search")
+								active2.fields["criminal"] = SEC_RECORD_STATUS_SEARCH
+							if("monitor")
+								active2.fields["criminal"] = SEC_RECORD_STATUS_MONITOR
+							if("discharged")
+								active2.fields["criminal"] = SEC_RECORD_STATUS_DISCHARGED
+
+						investigate_log("[active1.fields["name"]] has been set from [old_field] to [active2.fields["criminal"]] by [key_name(usr)].", INVESTIGATE_RECORDS)
+						for(var/mob/living/carbon/human/H in GLOB.carbon_list)
+							H.sec_hud_set_security_status()
+						GLOB.data_core.append_sec_logs(
+							active1.fields["id"],
+							"%%GEN_AUTH%% изменил статус с <b>[old_field]</b> на <b>[active2.fields["criminal"]]</b>.",
+							authenticated,
+							rank
+						)
+				if("Delete Record (Security) Execute")
+					investigate_log("[key_name(usr)] has deleted the security records for [active1.fields["name"]].", INVESTIGATE_RECORDS)
+					if(active2)
+						qdel(active2)
+						active2 = null
+
+				if("Delete Record (ALL) Execute")
+					if(active1)
+						investigate_log("[key_name(usr)] has deleted all records for [active1.fields["name"]].", INVESTIGATE_RECORDS)
+						for(var/datum/data/record/R in GLOB.data_core.medical)
+							if((R.fields["name"] == active1.fields["name"] || R.fields["id"] == active1.fields["id"]))
+								qdel(R)
+								break
+						qdel(active1)
+						active1 = null
+
+					if(active2)
+						qdel(active2)
+						active2 = null
+				else
+					temp = "This function does not appear to be working at the moment. Our apologies."
 
 	add_fingerprint(usr)
 	updateUsrDialog()
 	return
+// BLUEMOON EDIT END
 
 /obj/machinery/computer/secure_data/proc/get_photo(mob/user)
 	var/obj/item/photo/P = null
@@ -878,7 +1046,7 @@ What a mess.*/
 /obj/machinery/computer/secure_data/emp_act(severity)
 	. = ..()
 
-	if(stat & (BROKEN|NOPOWER) || . & EMP_PROTECT_SELF)
+	if(machine_stat & (BROKEN|NOPOWER) || . & EMP_PROTECT_SELF)
 		return
 
 	for(var/datum/data/record/R in GLOB.data_core.security)

@@ -205,17 +205,18 @@
 
 	var/list/msg = list()
 
+/* BLUEMOON - mechanical_erp_verbs_examine - REMOVAL START
 	if(client && client.prefs)
 		if(client.prefs.toggles & VERB_CONSENT)
 			. += "<b>Игрок разрешил непристойные действия по отношению к его персонажу.</b>"
 		else
 			. += "<b>Игрок НЕ разрешил непристойные действия по отношению к его персонажу.</b>"
-
+BLUEMOON - mechanical_erp_verbs_examine - REMOVAL END*/
 	//SPLURT edit
 	for(var/obj/item/organ/genital/G in internal_organs)
 		if(istype(G) && G.is_exposed())
 			if(CHECK_BITFIELD(G.genital_flags, GENITAL_CHASTENED))
-				. += "[t_on] носит БДСМ-клетку. БДСМ-клетка покрывает [G.name]."
+				. += span_lewd("[t_on] носит БДСМ-клетку. БДСМ-клетка покрывает [G.name].")
 	//
 	if(covered_in_cum)
 		. += "<span style='color:["#FFFFFF"]';>[t_on] измазан[t_a] свежими половыми выделениями...</span>\n" //"Вы чувствуете, как от [t_ego] тела пахнет <b>'<span style='color:[cummies.color]';>[cummies.name]</span>'</b>..."
@@ -604,8 +605,7 @@
 	if(LAZYLEN(.) > 2) //Want this to appear after species text
 		.[2] += "<hr>"
 
-	if(!(ITEM_SLOT_EYES in obscured))
-		. += span_boldnotice("Профиль персонажа: <a href='?src=\ref[src];character_profile=1'>\[Осмотреть\]</a>")
+	. += span_boldnotice("Профиль персонажа: <a href='?src=\ref[src];character_profile=1'>\[Осмотреть\]</a>")
 
 	if(activity)
 		. += "Деятельность: [activity]"

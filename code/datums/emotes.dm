@@ -175,7 +175,7 @@
 
 /datum/emote/sound/run_emote(mob/user, params)
 	. = ..()
-	if(.)
+	if(. && !(user?.is_muzzled() && !muzzle_ignore))
 		playsound(user.loc, sound, volume, vary)
 
 /**

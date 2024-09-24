@@ -3,7 +3,7 @@
 	desc = "A chemical patch for touch based applications."
 	icon = 'icons/obj/chemical.dmi'
 	icon_state = "bandaid"
-	item_state = "bandaid"
+	item_state = "patch1" //bandaid replaced by BM
 	possible_transfer_amounts = list()
 	volume = 40
 	apply_type = PATCH
@@ -35,13 +35,13 @@
 	name = "brute patch"
 	desc = "Helps with brute injuries."
 	list_reagents = list(/datum/reagent/medicine/styptic_powder = 20)
-	icon_state = "bandaid_brute"
+	icon_state = "patch2" //bandaid_brute replaced by BM
 
 /obj/item/reagent_containers/pill/patch/silver_sulf
 	name = "burn patch"
 	desc = "Helps with burn injuries."
 	list_reagents = list(/datum/reagent/medicine/silver_sulfadiazine = 20)
-	icon_state = "bandaid_burn"
+	icon_state = "patch3" //bandaid_burn replaced by BM
 
 /obj/item/reagent_containers/pill/patch/get_belt_overlay()
 	return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "pouch")

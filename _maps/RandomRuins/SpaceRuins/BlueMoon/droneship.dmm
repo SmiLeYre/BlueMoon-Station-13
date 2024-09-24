@@ -33,58 +33,11 @@
 	},
 /turf/open/floor/mineral/titanium/blue,
 /area/ruin/space/has_grav/droneship)
-"dr" = (
-/obj/item/shard{
-	pixel_y = 3;
-	pixel_x = -6
-	},
-/obj/item/shard{
-	pixel_x = 4;
-	pixel_y = -6
-	},
-/obj/item/stack/rods/ten,
-/obj/effect/decal/cleanable/glass,
-/obj/structure/grille/broken,
-/obj/machinery/door/poddoor/preopen{
-	id = "droneshipu";
-	name = "containment blast door"
-	},
-/turf/open/floor/mineral/titanium,
-/area/ruin/space/has_grav/droneship)
 "dw" = (
 /obj/machinery/porta_turret/syndicate/energy/heavy{
 	faction = list("malf_drone")
 	},
 /turf/closed/wall/mineral/titanium/nodiagonal,
-/area/ruin/space/has_grav/droneship)
-"dH" = (
-/obj/structure/table/reinforced,
-/obj/machinery/light/small/red/dim/directional{
-	dir = 8
-	},
-/obj/machinery/button/door{
-	id = "droneship1";
-	pixel_y = 8;
-	pixel_x = 5
-	},
-/obj/machinery/button/door{
-	id = "droneship2";
-	pixel_x = -6;
-	pixel_y = 8
-	},
-/obj/machinery/button/door{
-	id = "droneshipu";
-	pixel_y = -1
-	},
-/obj/machinery/turretid{
-	control_area = "/area/ruin/space/has_grav/droneship";
-	name = "Chamber Hallway Turret Control";
-	pixel_x = 30;
-	pixel_y = 4;
-	req_access = null;
-	req_access_txt = null
-	},
-/turf/open/floor/mineral/titanium/yellow/airless,
 /area/ruin/space/has_grav/droneship)
 "dL" = (
 /obj/structure/salvage/server,
@@ -240,6 +193,24 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/mineral/titanium/yellow/airless,
 /area/ruin/space/has_grav/droneship)
+"tp" = (
+/obj/item/shard{
+	pixel_x = -6;
+	pixel_y = 3
+	},
+/obj/item/shard{
+	pixel_x = 4;
+	pixel_y = -6
+	},
+/obj/item/stack/rods/ten,
+/obj/effect/decal/cleanable/glass,
+/obj/structure/grille/broken,
+/obj/machinery/door/poddoor/preopen{
+	id = "droneshipu";
+	name = "containment blast door"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/droneship)
 "tI" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "droneship2";
@@ -266,6 +237,37 @@
 	},
 /turf/open/space/basic,
 /area/ruin/space/has_grav/droneship)
+"wT" = (
+/obj/structure/table/reinforced,
+/obj/machinery/light/small/red/dim/directional{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "droneship1";
+	pixel_x = 5;
+	pixel_y = 8
+	},
+/obj/machinery/button/door{
+	id = "droneship2";
+	pixel_x = -6;
+	pixel_y = 8
+	},
+/obj/machinery/button/door{
+	id = "droneshipu";
+	name = "window blast door";
+	pixel_x = -1;
+	pixel_y = -1
+	},
+/obj/machinery/turretid{
+	control_area = "/area/ruin/space/has_grav/droneship";
+	name = "Chamber Hallway Turret Control";
+	pixel_x = 30;
+	pixel_y = 4;
+	req_access = null;
+	req_access_txt = null
+	},
+/turf/open/floor/mineral/titanium/yellow/airless,
+/area/ruin/space/has_grav/droneship)
 "wV" = (
 /obj/effect/decal/cleanable/blood/drip{
 	pixel_x = 8;
@@ -278,6 +280,13 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/mineral/titanium/yellow/airless,
 /area/ruin/space/has_grav/droneship)
+"yr" = (
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/turf/open/floor/mineral/titanium,
+/area/ruin/space/has_grav/droneship)
 "yE" = (
 /obj/structure/table/reinforced,
 /obj/machinery/computer/med_data/laptop{
@@ -286,6 +295,13 @@
 	pixel_y = 7
 	},
 /turf/open/floor/mineral/titanium/yellow/airless,
+/area/ruin/space/has_grav/droneship)
+"Am" = (
+/mob/living/simple_animal/hostile/malf_drone{
+	health = 60;
+	maxHealth = 60
+	},
+/turf/open/floor/iron/recharge_floor,
 /area/ruin/space/has_grav/droneship)
 "Be" = (
 /obj/machinery/door/poddoor/preopen{
@@ -304,17 +320,6 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/titanium/blue,
-/area/ruin/space/has_grav/droneship)
-"Dq" = (
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_y = -2;
-	pixel_x = 8
-	},
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_y = 1;
-	pixel_x = -1
-	},
-/turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/droneship)
 "DC" = (
 /obj/machinery/door/airlock/command,
@@ -346,29 +351,6 @@
 /obj/machinery/light/small/red/dim/directional,
 /turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/droneship)
-"HU" = (
-/obj/effect/decal/cleanable/blood/drip{
-	pixel_y = -2;
-	pixel_x = 8
-	},
-/turf/open/floor/mineral/titanium,
-/area/ruin/space/has_grav/droneship)
-"Jg" = (
-/obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic,
-/obj/machinery/door/poddoor/preopen{
-	id = "droneshipu";
-	name = "containment blast door"
-	},
-/turf/open/floor/mineral/titanium,
-/area/ruin/space/has_grav/droneship)
-"Jv" = (
-/obj/machinery/button/door{
-	id = "exit35";
-	pixel_y = 7;
-	pixel_x = 7
-	},
-/turf/closed/wall/mineral/titanium,
-/area/ruin/space/has_grav/droneship)
 "Kv" = (
 /obj/machinery/door/airlock/external{
 	id_tag = "exit35"
@@ -383,6 +365,14 @@
 "Ld" = (
 /obj/machinery/door/airlock/titanium,
 /turf/open/floor/mineral/titanium,
+/area/ruin/space/has_grav/droneship)
+"Lp" = (
+/obj/machinery/door/poddoor/preopen{
+	id = "droneshipu";
+	name = "containment blast door"
+	},
+/obj/effect/spawner/structure/window/reinforced/tinted,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/droneship)
 "Mc" = (
 /obj/structure/shuttle/engine/heater{
@@ -478,6 +468,14 @@
 /obj/machinery/door/airlock/external,
 /turf/open/floor/noslip,
 /area/ruin/space/has_grav/droneship)
+"SC" = (
+/obj/machinery/button/door{
+	id = "exit35";
+	pixel_x = 7;
+	pixel_y = 7
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ruin/space/has_grav/droneship)
 "SP" = (
 /turf/open/floor/noslip,
 /area/ruin/space/has_grav/droneship)
@@ -510,13 +508,6 @@
 /obj/structure/tank_dispenser/oxygen,
 /turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/droneship)
-"WR" = (
-/mob/living/simple_animal/hostile/malf_drone{
-	maxHealth = 60;
-	health = 60
-	},
-/turf/open/floor/iron/recharge_floor,
-/area/ruin/space/has_grav/droneship)
 "WX" = (
 /obj/structure/chair/comfy/shuttle{
 	dir = 4
@@ -526,6 +517,17 @@
 	},
 /obj/effect/decal/cleanable/blood/gibs/human/body,
 /turf/open/floor/mineral/titanium/yellow/airless,
+/area/ruin/space/has_grav/droneship)
+"Xt" = (
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_x = 8;
+	pixel_y = -2
+	},
+/obj/effect/decal/cleanable/blood/drip{
+	pixel_x = -1;
+	pixel_y = 1
+	},
+/turf/open/floor/mineral/titanium,
 /area/ruin/space/has_grav/droneship)
 "Zx" = (
 /obj/structure/fans,
@@ -619,7 +621,7 @@ bv
 (6,1,1) = {"
 bv
 UL
-WR
+Am
 GZ
 pS
 Pb
@@ -628,7 +630,7 @@ bG
 wZ
 pS
 sD
-WR
+Am
 Np
 bv
 "}
@@ -651,7 +653,7 @@ bv
 (8,1,1) = {"
 bv
 Qw
-WR
+Am
 GZ
 pS
 Un
@@ -660,7 +662,7 @@ Un
 Py
 pS
 sD
-WR
+Am
 ka
 bv
 "}
@@ -683,7 +685,7 @@ bv
 (10,1,1) = {"
 bv
 lL
-WR
+Am
 GZ
 pS
 Rs
@@ -692,7 +694,7 @@ oZ
 er
 pS
 sD
-WR
+Am
 Be
 bv
 "}
@@ -702,7 +704,7 @@ pS
 pS
 pS
 pS
-HU
+yr
 dh
 VA
 VA
@@ -715,7 +717,7 @@ bv
 (12,1,1) = {"
 bv
 ny
-WR
+Am
 GZ
 pS
 qj
@@ -724,7 +726,7 @@ kZ
 kZ
 pS
 sD
-WR
+Am
 ry
 bv
 "}
@@ -747,7 +749,7 @@ bv
 (14,1,1) = {"
 bv
 vP
-WR
+Am
 GZ
 pS
 VS
@@ -756,7 +758,7 @@ OE
 Zx
 pS
 sD
-WR
+Am
 tI
 bv
 "}
@@ -800,7 +802,7 @@ SP
 RB
 Un
 Un
-Dq
+Xt
 Un
 RB
 SP
@@ -811,7 +813,7 @@ bv
 (18,1,1) = {"
 bv
 pS
-Jv
+SC
 Wn
 pS
 pS
@@ -830,7 +832,7 @@ bv
 dw
 pS
 pS
-dH
+wT
 rX
 qm
 WX
@@ -862,10 +864,10 @@ bv
 bv
 bv
 pS
-Jg
-Jg
-Jg
-dr
+Lp
+Lp
+Lp
+tp
 pS
 bv
 bv

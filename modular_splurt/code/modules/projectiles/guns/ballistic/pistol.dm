@@ -28,11 +28,11 @@
 		"USP Enforcer" = list("icon_state" = "usp-m")
 	)
 
-/obj/item/gun/ballistic/automatic/pistol/enforcer/update_icon_state()
+/obj/item/gun/ballistic/automatic/pistol/enforcer/update_icon_state() //BLUEMOOD EDIT: Визуально добавлены статусы оружия при наличии глушителя и расширенного магазина
 	if(current_skin)
-		icon_state = "[unique_reskin[current_skin]["icon_state"]][chambered ? "" : "-e"]"
+		icon_state = "[unique_reskin[current_skin]["icon_state"]][chambered ? "" : "-e"][suppressed ? "-suppressed" : "" ][magazine && istype(magazine, /obj/item/ammo_box/magazine/e45/e45_extended) ? "-expended" : ""]"
 	else
-		icon_state = "[initial(icon_state)][chambered ? "" : "-e"]"
+		icon_state = "[initial(icon_state)][chambered ? "" : "-e"][suppressed ? "-suppressed" : "" ][magazine && istype(magazine, /obj/item/ammo_box/magazine/e45/e45_extended) ? "-expended" : ""]"
 
 /obj/item/gun/ballistic/automatic/pistol/enforcer/nomag
 	spawnwithmagazine = FALSE
@@ -49,8 +49,8 @@
 	flight_x_offset = 18
 	flight_y_offset = 14
 
-/obj/item/gun/ballistic/automatic/pistol/enforcerred/update_icon_state()
-	icon_state = "[initial(icon_state)][chambered ? "" : "-e"]"
+/obj/item/gun/ballistic/automatic/pistol/enforcerred/update_icon_state() //BLUEMOOD EDIT: Визуально добавлены статусы оружия при наличии глушителя и расширенного магазина
+	icon_state = "[initial(icon_state)][chambered ? "" : "-e"][suppressed ? "-suppressed" : "" ][magazine && istype(magazine, /obj/item/ammo_box/magazine/e45/e45_extended) ? "-expended" : ""]"
 
 
 /obj/item/gun/ballistic/automatic/pistol/enforcergold
@@ -65,8 +65,8 @@
 	flight_x_offset = 18
 	flight_y_offset = 14
 
-/obj/item/gun/ballistic/automatic/pistol/enforcergold/update_icon_state()
-	icon_state = "[initial(icon_state)][chambered ? "" : "-e"]"
+/obj/item/gun/ballistic/automatic/pistol/enforcergold/update_icon_state() //BLUEMOOD EDIT: Визуально добавлены статусы оружия при наличии глушителя и расширенного магазина
+	icon_state = "[initial(icon_state)][chambered ? "" : "-e"][suppressed ? "-suppressed" : "" ][magazine && istype(magazine, /obj/item/ammo_box/magazine/e45/e45_extended) ? "-expended" : ""]"
 
 /obj/item/gun/ballistic/automatic/pistol/m9mmpistol
 	name = "\improper Cheap 9mm Handgun"
