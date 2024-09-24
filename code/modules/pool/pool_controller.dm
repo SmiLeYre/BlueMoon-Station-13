@@ -244,16 +244,14 @@
 				M.adjust_bodytemperature(-60) //cool mob at -35k per cycle, less would not affect the mob enough.
 				if(M.bodytemperature <= 50 && !M.stat)
 					M.apply_status_effect(/datum/status_effect/freon)
+		//BLUEMOON ADD - Water at pool should extinguish people
+		if(M.fire_stacks)
+			M.fire_stacks = 0
+			M.ExtinguishMob()
+		//BLUEMOON ADD END
 		if(ishuman(M))
 			var/mob/living/carbon/human/drownee = M
-			if(!drownee)
-				return
-			//BLUEMOON ADD - Water at pool should extinguish people
-			if(drownee.fire_stacks)
-				drownee.fire_stacks = 0
-				drownee.ExtinguishMob()
-			//BLUEMOON ADD END
-			if(drownee.stat == DEAD)
+			if(!drownee || drownee.stat == DEAD)
 				return
 			if(drownee.resting && !drownee.internal)
 				if(drownee.stat != CONSCIOUS)

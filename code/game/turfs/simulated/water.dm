@@ -19,11 +19,11 @@
 //BLUEMOON ADD - Water turf now extinguishes people
 /turf/open/water/Entered(atom/movable/A)
 	. = ..()
-	if(istype(A, /mob/living/carbon/human))
-		var/mob/living/carbon/human/H = A
-		if(H.fire_stacks)
-			H.fire_stacks = 0
-			H.ExtinguishMob()
+	if(istype(A, /mob/living))
+		var/mob/living/L = A
+		if(L.fire_stacks)
+			L.fire_stacks = 0
+			L.ExtinguishMob()
 //BLUEMOON ADD END
 
 /turf/open/water/safe
