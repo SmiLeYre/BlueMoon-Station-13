@@ -7,7 +7,7 @@
 	body_parts_covered = 0
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	can_toggle = TRUE
-	var/alt_pos = 0
+	var/alt_pos = 0 //"cross" and "plus" styles
 
 /obj/item/clothing/underwear/shirt/top/black_tape/examine(mob/user)
 	. = ..()
@@ -21,6 +21,10 @@
 	update_icon()
 
 /obj/item/clothing/underwear/shirt/top/black_tape/proc/update_sprite_visibility(datum/source, obj/item/I)
+	/*
+	Breasts tape underwear has a unique variable set of sprites depending on user's breast size and visibility.
+	Its sprite layer must be completely cut when breasts are hidden, otherwise unwanted sprite elements will be visible.
+	*/
 	var/mob/living/carbon/human/H = source
 	//var/obj/item/organ/genital/breasts/B = locate(/obj/item/organ/genital/breasts) in H.internal_organs
 	var/obj/item/organ/genital/breasts/B = H.getorganslot(ORGAN_SLOT_BREASTS)
@@ -67,7 +71,7 @@
 	icon = 'modular_bluemoon/icons/obj/clothing/tape_underwear.dmi'
 	mob_overlay_icon = 'modular_bluemoon/icons/mob/clothing/tape_underwear.dmi'
 	icon_state = "tape_groin"
-	body_parts_covered = 0
+	body_parts_covered = 0 //thicc thigs and ass must not be hidden.
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/underwear/briefs/black_tape/update_icon_state()
@@ -85,10 +89,13 @@
 		update_icon()
 		var/mob/living/carbon/human/H = user
 		H.handle_post_sex(5, null, H)
+		//Imitating genital coverage. Thigs and ass will still be visible. Exactly what we need.
 		var/obj/item/organ/genital/penis/P = H.getorganslot(ORGAN_SLOT_PENIS)
-		P?.toggle_visibility(GEN_VISIBLE_NEVER)
+		P?.toggle_visibility(GEN_VISIBLE_NEVER) //How 100+ penis can be hidden with a piece of tape? Bluespace anomaly. Like all other underwear.
 		var/obj/item/organ/genital/testicles/T = H.getorganslot(ORGAN_SLOT_TESTICLES)
 		T?.toggle_visibility(GEN_VISIBLE_NEVER)
+		var/obj/item/organ/genital/vagina/V = H.getorganslot(ORGAN_SLOT_VAGINA)
+		V?.toggle_visibility(GEN_VISIBLE_NEVER)
 		var/obj/item/organ/genital/anus/A = H.getorganslot(ORGAN_SLOT_ANUS)
 		A?.toggle_visibility(GEN_VISIBLE_NEVER)
 
@@ -100,9 +107,12 @@
 		playsound(loc, 'sound/items/poster_ripped.ogg', 20, 1)
 		H.handle_post_sex(5, null, H)
 		H.moan()
+		//Uncovering things.
 		var/obj/item/organ/genital/penis/P = H.getorganslot(ORGAN_SLOT_PENIS)
 		P?.toggle_visibility(GEN_VISIBLE_NO_UNDIES)
 		var/obj/item/organ/genital/testicles/T = H.getorganslot(ORGAN_SLOT_TESTICLES)
 		T?.toggle_visibility(GEN_VISIBLE_NO_UNDIES)
+		var/obj/item/organ/genital/vagina/V = H.getorganslot(ORGAN_SLOT_VAGINA)
+		V?.toggle_visibility(GEN_VISIBLE_NO_UNDIES)
 		var/obj/item/organ/genital/anus/A = H.getorganslot(ORGAN_SLOT_ANUS)
 		A?.toggle_visibility(GEN_VISIBLE_NO_UNDIES)
