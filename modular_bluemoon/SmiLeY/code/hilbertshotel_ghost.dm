@@ -75,4 +75,3 @@
 /datum/map_template/hilbertshotel/apartment/capsule
 	name = "Apartment_winter"
 	mappath = '_maps/templates/apartment_capsule.dmm'
-  

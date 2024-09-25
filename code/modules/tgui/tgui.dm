@@ -35,6 +35,8 @@
 	var/refreshing = FALSE
 	/// Topic state used to determine status/interactability.
 	var/datum/ui_state/state = null
+	/// If the window should update
+	var/needs_update = FALSE
 	/// Rate limit client refreshes to prevent DoS.
 	COOLDOWN_DECLARE(refresh_cooldown)
 	/// The Parent UI

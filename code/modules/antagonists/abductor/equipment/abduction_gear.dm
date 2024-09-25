@@ -825,6 +825,7 @@
 	icon_state = "abductor"
 	icon_door = "abductor"
 	can_weld_shut = FALSE
+	door_anim_time = 0
 	material_drop = /obj/item/stack/sheet/mineral/abductor
 
 /obj/structure/door_assembly/door_assembly_abductor

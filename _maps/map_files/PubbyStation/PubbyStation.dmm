@@ -596,9 +596,9 @@
 "abx" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/structure/closet/athletic_mixed,
-/obj/item/toy/poolnoodle/blue,
-/obj/item/toy/poolnoodle/red,
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle/blue,
+/obj/item/pool/pool_noodle/red,
+/obj/item/pool/pool_noodle/yellow,
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
@@ -50303,7 +50303,7 @@
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/hallway/secondary/entry)
 "daY" = (
 /obj/structure/disposalpipe/segment,
@@ -57190,7 +57190,7 @@
 /turf/open/space/basic,
 /area/space/nearstation)
 "mJR" = (
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/hallway/secondary/entry)
 "mKc" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -58445,7 +58445,7 @@
 	pixel_x = -2;
 	pixel_y = 13
 	},
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/hallway/secondary/entry)
 "otX" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -60355,7 +60355,7 @@
 	pixel_x = -60;
 	pixel_y = -60
 	},
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/hallway/secondary/entry)
 "qVk" = (
 /obj/machinery/door/poddoor/incinerator_atmos_aux,
@@ -62773,7 +62773,7 @@
 /area/hallway/secondary/entry)
 "upX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/hallway/secondary/entry)
 "uqJ" = (
 /obj/structure/cable{
@@ -64740,7 +64740,7 @@
 	pixel_y = -4
 	},
 /obj/structure/flora/rock/pile,
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/hallway/secondary/entry)
 "wTo" = (
 /obj/structure/flora/ausbushes/ywflowers,

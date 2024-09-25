@@ -123,8 +123,11 @@ SUBSYSTEM_DEF(ticker)
 			if(2) //rare+sound.ogg or MAP+sound.ogg -- Rare sounds or Map-specific sounds
 				if((use_rare_music && L[1] == "rare") || (L[1] == SSmapping.config.map_name))
 					music += S
+				else if(findtext(S, "{") && findtext(S, "}")) // Include songs with curly braces if they are part of a specific category
+					music += S
 			if(1) //sound.ogg -- common sound
-				music += S
+				if(!findtext(S, "{") && !findtext(S, "}")) // Exclude songs surrounded by curly braces
+					music += S
 
 	var/old_login_music = trim(file2text("data/last_round_lobby_music.txt"))
 	if(music.len > 1)
@@ -142,7 +145,11 @@ SUBSYSTEM_DEF(ticker)
 		music = world.file2list(ROUND_START_MUSIC_LIST, "\n")
 		login_music = pick(music)
 	else
-		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
+		// Use the sound path from the title subsystem if it exists
+		if(SStitle.sound_path)
+			login_music = SStitle.sound_path
+		else
+			login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
 
 	if(!GLOB.syndicate_code_phrase)
 		GLOB.syndicate_code_phrase	= generate_code_phrase(return_list=TRUE)

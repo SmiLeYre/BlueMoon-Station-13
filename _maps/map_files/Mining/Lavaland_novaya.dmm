@@ -4186,7 +4186,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "dOV" = (
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "dPj" = (
 /obj/structure/table,
@@ -4931,7 +4931,7 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "eHd" = (
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/mine/xenoarch_area_c)
 "eHe" = (
 /obj/structure/easel,
@@ -4980,7 +4980,7 @@
 /obj/structure/flora/rock/pile/largejungle{
 	light_range = null
 	},
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "eJf" = (
 /turf/open/floor/plasteel,
@@ -7534,7 +7534,7 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "hrM" = (
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/mine/xenoarch_area_b)
 "hst" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -15734,7 +15734,7 @@
 /area/mine/storage)
 "pab" = (
 /obj/machinery/light/small,
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/mine/xenoarch_area_b)
 "pau" = (
 /obj/machinery/light{
@@ -22223,7 +22223,7 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/mine/xenoarch_area_b)
 "vIO" = (
 /obj/machinery/light/small{

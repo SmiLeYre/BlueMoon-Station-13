@@ -10321,7 +10321,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
-/obj/item/toy/poolnoodle/red,
+/obj/item/pool/pool_noodle/red,
 /turf/open/floor/plasteel/white,
 /area/commons/fitness/cogpool)
 "aBN" = (
@@ -10555,7 +10555,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
-/obj/item/toy/poolnoodle/blue,
+/obj/item/pool/pool_noodle/blue,
 /turf/open/floor/plasteel/white,
 /area/commons/fitness/cogpool)
 "aCr" = (
@@ -10899,7 +10899,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle/yellow,
 /turf/open/floor/plasteel/white,
 /area/commons/fitness/cogpool)
 "aDa" = (

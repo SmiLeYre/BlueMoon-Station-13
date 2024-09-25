@@ -20,6 +20,17 @@
 /**
  * public
  *
+ * Causes the UI to update to viewers on the next process.
+ * Better than calling SStgui.update if this is callable by the user,
+ * since it calls on process rather than instantly which handles spamming.
+ */
+/datum/proc/ui_update()
+	for(var/datum/tgui/ui as() in SStgui.get_all_open_uis(src))
+		ui.needs_update = TRUE
+
+/**
+ * public
+ *
  * Data to be sent to the UI.
  * This must be implemented for a UI to work.
  *

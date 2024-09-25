@@ -891,7 +891,7 @@
 	name = "hand of cards"
 	desc = "A number of cards not in a deck, customarily held in ones hand."
 	icon = 'icons/obj/toys/toy.dmi'
-	icon_state = "none"
+	icon_state = "nanotrasen_hand2"
 	w_class = WEIGHT_CLASS_TINY
 	var/list/currenthand = list()
 	var/choice = null
@@ -1624,3 +1624,76 @@
 	name = "Therapy Doll Capsule"
 	desc = "Contains one squishy therapy doll."
 	possible_contents = list(/obj/effect/spawner/lootdrop/therapy)
+
+////////////////////
+//money eater/maker//
+////////////////////
+
+/obj/item/gobbler
+	name = "Coin Gobbler"
+	desc = "Feed it credits, and activate it, with a chance to spit out DOUBLE the amount!"
+	icon = 'icons/obj/plushes.dmi'
+	icon_state = "debug"
+	var/money = 0
+	var/moneyeaten = 0
+	var/cooldown = 0
+	var/cooldowndelay = 20
+	w_class = WEIGHT_CLASS_NORMAL
+
+/obj/item/gobbler/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>The Coin Gobbler holds [money] credits.</span>"
+
+/obj/item/gobbler/attackby()
+	return
+
+/obj/item/gobbler/attack_self(mob/user)
+	if(cooldown > world.time)
+		return
+	cooldown = world.time + cooldowndelay
+	if (money<=0)
+		to_chat(user, "<span class='notice'>The [src] has no money stored.</span>")
+		return
+
+	playsound(src.loc, 'sound/creatures/rattle.ogg', 10, 1)
+	user.visible_message("<span class='notice'>[src]'s eyes start spinning! What will happen?</span>", \
+		"<span class='notice'>You activate [src].</span>")
+	sleep(10)
+
+	if(prob(33*(777+moneyeaten-money)/777))
+		playsound(src.loc, 'sound/arcade/win.ogg', 10, 1)
+		user.visible_message("<span class='warning'>[src] cashes out! [user] starts spitting credits!</span>", \
+		"<span class='notice'>[src] cashes out!</span>")
+		var/obj/item/holochip/payout = new (user.drop_location(), money*2)
+		payout.throw_at( get_step(loc,user.dir) ,3,1,user)
+		moneyeaten-=money
+		money=0
+	else
+		user.visible_message("<span class='notice'>[src] gobbles up all the money!</span>", \
+		"<span class='notice'>[src] gobbles up all the money!</span>")
+		moneyeaten+=money
+		money=0
+		playsound(src.loc, 'sound/machines/buzz-sigh.ogg', 10, 1)
+
+/obj/item/gobbler/afterattack(atom/A, mob/user, proximity)
+	. = ..()
+	if(!proximity)
+		return
+	var/cash_money = 0
+
+	if(istype(A, /obj/item/holochip))
+		var/obj/item/holochip/HC = A
+		cash_money = HC.get_item_credit_value()
+	else if(istype(A, /obj/item/stack/spacecash))
+		var/obj/item/stack/spacecash/SC = A
+		cash_money = SC.get_item_credit_value()
+	else if(istype(A, /obj/item/coin))
+		var/obj/item/coin/CN = A
+		cash_money = CN.get_item_credit_value()
+
+	if (!cash_money)
+		to_chat(user, "<span class='warning'>[src] spits out [A] as it is not worth anything!</span>")
+		return
+	money+=cash_money
+	to_chat(user, "<span class='notice'>[src] quicky gobbles up [A], and the value goes up by [cash_money].</span>")
+	qdel(A)

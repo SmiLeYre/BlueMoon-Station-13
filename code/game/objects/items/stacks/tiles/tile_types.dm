@@ -350,6 +350,14 @@
 	turf_type = /turf/open/floor/carpet/royalblue
 	tableVariant = /obj/structure/table/wood/fancy/royalblue
 
+/obj/item/stack/tile/eighties
+	name = "retro tile"
+	singular_name = "retro floor tile"
+	desc = "A stack of floor tiles that remind you of simpler times.."
+	icon_state = "tile_eighties"
+	merge_type = /obj/item/stack/tile/eighties
+	turf_type = /turf/open/floor/eighties
+
 /obj/item/stack/tile/carpet/ten
 	amount = 10
 

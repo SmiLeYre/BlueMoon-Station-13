@@ -6,6 +6,7 @@
  * Bamboo
  * Cloth
  * Durathread
+ * Wax
  * Cardboard
  * Runed Metal (cult)
  * Brass (clockwork cult)
@@ -493,6 +494,24 @@ GLOBAL_LIST_INIT(durathread_recipes, list ( \
 /obj/item/stack/sheet/durathread/get_main_recipes()
 	. = ..()
 	. += GLOB.durathread_recipes
+
+/* Wax */
+
+GLOBAL_LIST_INIT(wax_recipes, list (new/datum/stack_recipe("Wax tile", /obj/item/stack/tile/mineral/wax, 1, 4, 20)))
+
+/obj/item/stack/sheet/wax
+	name = "wax"
+	icon_state = "sheet-wax"
+	item_state = "sheet-wax"
+	singular_name = "wax block"
+	force = 1
+	throwforce = 2
+	grind_results = list(/datum/reagent/consumable/honey = 20)
+	merge_type = /obj/item/stack/sheet/wax
+
+/obj/item/stack/sheet/wax/get_main_recipes()
+	. = ..()
+	. += GLOB.wax_recipes
 
 /*
  * Cardboard

@@ -44767,7 +44767,7 @@
 	dir = 4
 	},
 /obj/structure/closet/athletic_mixed,
-/obj/item/toy/poolnoodle/blue,
+/obj/item/pool/pool_noodle/blue,
 /obj/effect/decal/festive/fairylights{
 	pixel_y = 32
 	},
@@ -44781,7 +44781,7 @@
 	dir = 4
 	},
 /obj/structure/closet/athletic_mixed,
-/obj/item/toy/poolnoodle/red,
+/obj/item/pool/pool_noodle/red,
 /obj/effect/decal/festive/christmas_ivy_string{
 	pixel_y = 32
 	},
@@ -44799,7 +44799,7 @@
 	light_color = "#d1dfff"
 	},
 /obj/structure/closet/athletic_mixed,
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle/yellow,
 /obj/effect/decal/festive/fairylights{
 	pixel_y = 32
 	},
@@ -44813,7 +44813,7 @@
 	dir = 4
 	},
 /obj/structure/closet/athletic_mixed,
-/obj/item/toy/poolnoodle/blue,
+/obj/item/pool/pool_noodle/blue,
 /obj/effect/decal/festive/christmas_ivy_string{
 	pixel_y = 32
 	},
@@ -45253,7 +45253,7 @@
 	dir = 1
 	},
 /obj/structure/closet/athletic_mixed,
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle/yellow,
 /obj/effect/decal/festive/fairylights{
 	pixel_y = 32
 	},
@@ -68855,7 +68855,7 @@
 	dir = 4
 	},
 /obj/structure/closet/athletic_mixed,
-/obj/item/toy/poolnoodle/red,
+/obj/item/pool/pool_noodle/red,
 /obj/effect/decal/festive/christmas_ivy_string{
 	pixel_y = 32
 	},

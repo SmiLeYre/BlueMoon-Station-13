@@ -144,4 +144,8 @@
     name = "syndicate captain's vest"
     path = /obj/item/clothing/suit/armor/vest/capcarapace/syndicate/civil
     subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
+
 //BM add end
+/datum/gear/suit/suspenders
+	name = "Suspenders"
+	path = /obj/item/clothing/suit/suspenders
