@@ -911,6 +911,27 @@
 	ckeywhitelist = list("akinight")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/aki_seu
+	name = "Corporate S.E.U."
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/aki_seu
+	ckeywhitelist = list("akinight")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/aki_les
+	name = "L.E.S."
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/aki_les
+	ckeywhitelist = list("akinight")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/laskaskirt
+	name = "HoS cosplay skirt"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/laskaskirt
+	ckeywhitelist = list("angrylaska")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
 /datum/gear/donator/bm/mihana_mask
 	name = "Andromeda mask"
 	slot = ITEM_SLOT_BACKPACK

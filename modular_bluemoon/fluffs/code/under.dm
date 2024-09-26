@@ -157,3 +157,24 @@
 	icon_state = "adlerpk"
 	item_state = "adlerpk"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/aki_seu
+	name = "Corporate S.E.U."
+	desc = "Corporate Standardized Engineering Uniforms. The uniform of engineering workers used by several large corporations on Tayvar. It is equipped with additional gaskets to reduce the risk of injury and special signs to indicate the engineering level of access."
+	icon_state = "seu"
+	item_state = "seu"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/aki_les
+	name = "L.E.S."
+	desc = "Lightweight Exo Skeleton. An exoskeleton for performing simple jobs using pneumatic amplifiers and engineering magic. No, it does not connect to your spine, but it is also adapted to this. It is sometimes used for medical purposes after spinal or lower limb injuries. It can completely replace your old piece of meat with a modern equivalent."
+	icon_state = "les"
+	item_state = "les"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/laskaskirt
+	name = "HoS cosplay skirt"
+	desc = "Skirt that looks like HoS one, but without any armor."
+	icon_state = "laskaskirt"
+	item_state = "laskaskirt"
+	can_adjust = TRUE

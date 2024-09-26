@@ -321,3 +321,11 @@
 	message_mime = "silently mrrp's."
 	emote_sound = 'modular_bluemoon/sound/emotes/mrrps3.ogg'
 	emote_cooldown = 0.5 SECONDS
+
+/datum/emote/living/audio/squeal
+	key = "squeal"
+	key_third_person = "squeal"
+	message = "squeals."
+	message_mime = "silently squeals."
+	emote_sound = 'modular_bluemoon/sound/emotes/squeal.ogg'
+	emote_cooldown = 0.75 SECONDS
