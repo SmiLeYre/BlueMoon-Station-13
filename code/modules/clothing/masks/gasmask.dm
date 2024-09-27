@@ -344,68 +344,11 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	item_state = "driscoll_mask"
 
-/obj/item/clothing/mask/gas/syndicate/cool_version
-	name = "Tactical Catcrin Gasmask"
-	desc = "A mask with a red visor and special filters. It seems to have a kind of cat whiskers on it."
-	icon_state = "syndicate_cool"
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	actions_types = list(/datum/action/item_action/maskhalt)
-
-/datum/action/item_action/maskhalt
-	name = "HALT!"
-
-/obj/item/clothing/mask/gas/syndicate/cool_version/verb/maskhalt()
-	set category = "Object"
-	set name = "HALT!"
-	set src in usr
-	if(!isliving(usr))
-		return
-	if(!can_use(usr))
-		return
-
-	var/frase
-	frase = input("Какую фразу вы хотите сказать через преобразователь в маске?","") as text
-
-	if(frase)
-		usr.audible_message("[usr] exclaims, <font color='red' size='4'><b>[frase]</b></font>")
-		switch(rand(0,3))
-			if(0)
-				playsound(src.loc, 'modular_bluemoon/fluffs/sound/catcrin_halt0.ogg', 100, 1)
-			if(1)
-				playsound(src.loc, 'modular_bluemoon/fluffs/sound/catcrin_halt1.ogg', 100, 1)
-			if(2)
-				playsound(src.loc, 'modular_bluemoon/fluffs/sound/catcrin_halt2.ogg', 100, 1)
-			if(3)
-				playsound(src.loc, 'modular_bluemoon/fluffs/sound/catcrin_halt3.ogg', 100, 1)
-
-/obj/item/clothing/mask/gas/syndicate/cool_version/ui_action_click(mob/user, action)
-	if(istype(action, /datum/action/item_action/maskhalt))
-		maskhalt()
-
-/obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_one
-	name = "Tactical combat Catcrin gasmask"
-	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
-	icon_state = "catcrin_one"
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-
-/obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_two
-	name = "Tactical combat Catcrin gasmask"
-	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
-	icon_state = "catcrin_two"
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-
-/obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_three
-	name = "Tactical combat Catcrin gasmask"
-	desc = "Gasmask with special visor and filters that typicaly used in the Catcrin army."
-	icon_state = "catcrin_three"
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-
 /obj/item/clothing/mask/gas/syndicate/blackcool_version
 	name = "CFIS Gasmask"
 	desc = "Tactical gasmask for Catcrin Foreign Intelligence Service operatives. The compact mask has dark glass and small filters in the front part of the mask with breath venting."
 	icon_state = "syndicate_blackcool"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-
 
 /obj/item/clothing/mask/gas/syndicate/cool_version/mihana_mask
 	name = "Andromeda Mask"
