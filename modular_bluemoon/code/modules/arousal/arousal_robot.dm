@@ -42,7 +42,7 @@
 	if(amount > 300)
 		to_chat(src, "<span class='danger'>Ваше хранилище не вмещает более 300 юнитов за раз!</span>")
 		return
-	if(amount <= 5)
+	if(amount < 5)
 		to_chat(src, "<span class='danger'>Нельзя установить значение ниже 5!</span>")
 		return
 	if(iscyborg(src))
