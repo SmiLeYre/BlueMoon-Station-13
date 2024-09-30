@@ -776,7 +776,7 @@
 	name = "Acrador kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/storage/box/acrador_kit
-	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant")
+	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/goal
@@ -790,7 +790,7 @@
 	name = "R-HSA-12"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/head/helmet/sec/rhsa12
-	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant")
+	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
@@ -799,7 +799,7 @@
 	name = "R-SA-12"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/suit/armor/rsa12
-	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant")
+	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
@@ -808,7 +808,7 @@
 	name = "Underarmor suit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/under/rank/security/officer/acradorsuit
-	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant")
+	ckeywhitelist = list("someoldvg", "enigma418", "flippingtable", "allazarius", "trora", "siamant", "mihana964")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")

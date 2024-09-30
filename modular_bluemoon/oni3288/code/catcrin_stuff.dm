@@ -178,7 +178,7 @@
 	righthand_file = 'modular_bluemoon/oni3288/icons/weapons/hands/guns_right.dmi'
 	icon_state = "csfrontline"
 	item_state = "csfrontline"
-	fire_sound = "modular_bluemoon/fluffs/sound/weapon/frontlineshot.ogg"
+	fire_sound = "modular_bluemoon/oni3288/sounds/weapons/frontlineshot.ogg"
 	stock = FALSE
 	extend_sound = 'sound/weapons/batonextend.ogg'
 
@@ -550,26 +550,26 @@
 	name = "First Catcrin's tactical gasmask"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_one
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/catcrin_combatmask_two
 	name = "Second Catcrin's tactical gasmask"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_two
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/catcrin_combatmask_tree
 	name = "Thrid Catcrin's tactical gasmask"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_three
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/catcrin_kit
 	name = "Catcrin kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/storage/box/catcrin_kit
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
