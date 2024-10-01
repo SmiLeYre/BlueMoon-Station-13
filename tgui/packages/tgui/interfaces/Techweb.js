@@ -1,10 +1,8 @@
 import { filter, map, sortBy } from 'common/collections';
 import { flow } from 'common/fp';
-
 import { useBackend, useLocalState } from '../backend';
-import { Box, Button, Collapsible, Divider, Dropdown, Flex, Icon, Input, Modal, ProgressBar, Section, Tabs } from '../components';
-import { NtosWindow, Window } from '../layouts';
-import { Experiment } from './ExperimentConfigure';
+import { Button, Section, Modal, Dropdown, Tabs, Box, Input, Flex, ProgressBar, Collapsible, Icon, Divider } from '../components';
+import { Window, NtosWindow } from '../layouts';
 
 // Data reshaping / ingestion (thanks stylemistake for the help, very cool!)
 // This is primarily necessary due to measures that are taken to reduce the size
@@ -20,19 +18,12 @@ const selectRemappedStaticData = data => {
   const node_cache = {};
   for (let id of Object.keys(data.static_data.node_cache)) {
     const node = data.static_data.node_cache[id];
-    const costs = Object.keys(node.costs || {}).map(x => ({
-      type: remapId(x),
-      value: node.costs[x],
-    }));
     node_cache[remapId(id)] = {
       ...node,
       id: remapId(id),
-      costs,
       prereq_ids: map(remapId)(node.prereq_ids || []),
       design_ids: map(remapId)(node.design_ids || []),
       unlock_ids: map(remapId)(node.unlock_ids || []),
-      required_experiments: node.required_experiments || [],
-      discount_experiments: node.discount_experiments || [],
     };
   }
 
@@ -78,6 +69,7 @@ const useRemappedBackend = context => {
 const abbreviations = {
   "General Research": "Gen. Res.",
   "Nanite Research": "Nanite Res.",
+  "Discovery Research": "Disc. Res.",
 };
 const abbreviateName = name => abbreviations[name] ?? name;
 
@@ -90,9 +82,9 @@ export const Techweb = (props, context) => {
   } = data;
   return (
     <Window
-      width={640}
+      width={947}
       height={735}>
-      <Window.Content overflow="auto">
+      <Window.Content>
         {!!locked && (
           <Modal width="15em" align="center" className="Techweb__LockedModal">
             <div><b>Console Locked</b></div>
@@ -118,7 +110,7 @@ export const AppTechweb = (props, context) => {
     <NtosWindow
       width={640}
       height={735}>
-      <NtosWindow.Content overflow="auto">
+      <NtosWindow.Content scrollable>
         {!!locked && (
           <Modal width="15em" align="center" className="Techweb__LockedModal">
             <div><b>Console Locked</b></div>
@@ -145,6 +137,8 @@ export const TechwebContent = (props, context) => {
     t_disk,
     d_disk,
     locked,
+    linkedanalyzer,
+    compact,
   } = data;
   const [
     techwebRoute,
@@ -179,6 +173,25 @@ export const TechwebContent = (props, context) => {
                 className={`Techweb__SecProtocol ${!!sec_protocols && "engaged"}`}>
                 {sec_protocols ? "Engaged" : "Disengaged"}
               </span>
+            </Box>
+            <Box>
+              <Button.Checkbox
+                color="default"
+                onClick={() => { act("compactify"); }}
+                checked={!compact}>
+                Compactify
+              </Button.Checkbox>
+              <Button
+                icon="link"
+                onClick={() => { act("linkmachines"); }} >
+                Link
+              </Button>
+              <Button
+                icon="trash"
+                disabled={!linkedanalyzer}
+                onClick={() => setTechwebRoute({ route: "analyzer" })}>
+                Analyzer
+              </Button>
             </Box>
           </Flex.Item>
           <Flex.Item grow={1} />
@@ -223,6 +236,7 @@ const TechwebRouter = (props, context) => {
   const RoutedComponent = (
     route === "details" && TechwebNodeDetail
     || route === "disk" && TechwebDiskMenu
+    || route === "analyzer" && Techwebanalyzer
     || TechwebOverview
   );
 
@@ -247,6 +261,8 @@ const TechwebOverview = (props, context) => {
   const searching = searchText && searchText.trim().length > 1;
 
   let displayedNodes = nodes;
+  let researchednodes = nodes;
+  let futurenodes = nodes;
   if (searching) {
     displayedNodes = displayedNodes.filter(x => {
       const n = node_cache[x.id];
@@ -256,9 +272,12 @@ const TechwebOverview = (props, context) => {
           design_cache[e].name.toLowerCase().includes(searchText));
     });
   } else {
-    displayedNodes = sortBy(x => node_cache[x.id].name)(tabIndex < 2
-      ? nodes.filter(x => x.tier === tabIndex)
-      : nodes.filter(x => x.tier >= tabIndex));
+    displayedNodes = sortBy(x => node_cache[x.id].name)(
+      nodes.filter(x => x.tier === 0));
+    researchednodes = sortBy(x => node_cache[x.id].name)(
+      nodes.filter(x => x.tier === 1));
+    futurenodes = sortBy(x => node_cache[x.id].name)(
+      nodes.filter(x => x.tier === 2));
   }
 
   const switchTab = tab => {
@@ -275,21 +294,6 @@ const TechwebOverview = (props, context) => {
           </Flex.Item>
           <Flex.Item grow={1}>
             <Tabs>
-              <Tabs.Tab
-                selected={!searching && tabIndex === 0}
-                onClick={() => switchTab(0)}>
-                Researched
-              </Tabs.Tab>
-              <Tabs.Tab
-                selected={!searching && tabIndex === 1}
-                onClick={() => switchTab(1)}>
-                Available
-              </Tabs.Tab>
-              <Tabs.Tab
-                selected={!searching && tabIndex === 2}
-                onClick={() => switchTab(2)}>
-                Future
-              </Tabs.Tab>
               {!!searching && (
                 <Tabs.Tab
                   selected>
@@ -307,11 +311,42 @@ const TechwebOverview = (props, context) => {
         </Flex>
       </Flex.Item>
       <Flex.Item className={"Techweb__OverviewNodes"} height="100%">
-        {displayedNodes.map(n => {
-          return (
-            <TechNode node={n} key={n.id} />
-          );
-        })}
+        <Flex height="100%">
+          {!searching && (
+            <>
+              <Flex.Item mr={1}>
+                {displayedNodes.map(n => {
+                  return (
+                    <TechNode node={n} key={n.id} />
+                  );
+                })}
+              </Flex.Item>
+              <Flex.Item mr={1}>
+                {researchednodes.map(n => {
+                  return (
+                    <TechNode node={n} key={n.id} />
+                  );
+                })}
+              </Flex.Item>
+              <Flex.Item mr={1}>
+                {futurenodes.map(n => {
+                  return (
+                    <TechNode node={n} key={n.id} />
+                  );
+                })}
+              </Flex.Item>
+            </>
+          )}
+          {!!searching && (
+            <Flex.Item mr={1}>
+              {displayedNodes.map(n => {
+                return (
+                  <TechNode node={n} key={n.id} />
+                );
+              })}
+            </Flex.Item>
+          )}
+        </Flex>
       </Flex.Item>
     </Flex>
   );
@@ -397,6 +432,107 @@ const TechwebDiskMenu = (props, context) => {
         <DiskContent />
       </Flex.Item>
     </Flex>
+  );
+};
+
+const Techwebanalyzer = (props, context) => {
+  const { act, data } = useRemappedBackend(context);
+  const { linkedanalyzer, analyzertechs, analyzeritem } = data;
+  const [
+    techwebRoute,
+    setTechwebRoute,
+  ] = useLocalState(context, 'techwebRoute', null);
+
+  return (
+    <Flex direction="column" height="100%">
+      <Flex.Item>
+        <Flex justify="space-between" className="Techweb__HeaderSectionTabs">
+          <Flex.Item align="center" className="Techweb__HeaderTabTitle">
+            Destructive Analyzer
+          </Flex.Item>
+          <Flex.Item align="center">
+            {analyzeritem ? analyzeritem : ""}
+          </Flex.Item>
+          <Flex.Item align="center">
+            <Button
+              icon="trash"
+              color="red"
+              disabled={analyzeritem === null}
+              onClick={() => act("destroyitem")}>
+              Destroy item(Material Reclaim)
+            </Button>
+            <Button
+              icon="eject"
+              disabled={analyzeritem === null}
+              onClick={() => act("ejectitem")}>
+              Eject
+            </Button>
+            <Button
+              icon="home"
+              onClick={() => setTechwebRoute(null)}>
+              Home
+            </Button>
+          </Flex.Item>
+        </Flex>
+      </Flex.Item>
+      {!!linkedanalyzer &&(
+        <>
+          <Flex.Item>
+            {analyzeritem ? <TechwebItemmaterials /> : ""}
+          </Flex.Item>
+          <Flex.Item grow={1} className="Techweb__OverviewNodes">
+            {analyzeritem ? (analyzertechs ? <TechwebItemtechs /> : "Item has no new researchable nodes") : "No inserted items!"}
+          </Flex.Item>
+        </>
+      )}
+    </Flex>
+  );
+};
+
+const TechwebItemmaterials = (props, context) => {
+  const { act, data } = useRemappedBackend(context);
+  const { itemmats, itempoints } = data;
+
+  return (itempoints || itemmats) && (
+    <Section mt={1} className="Techweb__NodeContainer">
+      {!!itempoints && (
+        <>
+          <Flex direction="column">
+            {itempoints.map(mats => {
+              return (
+                <Flex.Item key={mats}>
+                  {mats}
+                </Flex.Item>
+              );
+            })}
+          </Flex>
+          <Divider />
+        </>
+      )}
+      {!!itemmats && (
+        <Flex direction="column">
+          Reclaimable materials:
+          {itemmats.map(mats => {
+            return (
+              <Flex.Item key={mats}>
+                {mats}
+              </Flex.Item>
+            );
+          })}
+        </Flex>
+      )}
+    </Section>
+  );
+};
+
+const TechwebItemtechs = (props, context) => {
+  const { act, data } = useRemappedBackend(context);
+  const { analyzertechs } = data;
+
+  return (
+    Object.keys(analyzertechs).map(x => ({ id: x })).map(n => (
+      <TechNode key={n.id} nodetails destructive node={n} />
+    ))
   );
 };
 
@@ -531,31 +667,14 @@ const TechNodeDetail = (props, context) => {
   ] = useLocalState(context, 'techwebRoute', null);
 
   const prereqNodes = nodes.filter(x => prereq_ids.includes(x.id));
-  const complPrereq = prereq_ids
-    .filter(x => nodes.find(y => y.id === x)?.tier === 0).length;
   const unlockedNodes = nodes.filter(x => unlock_ids.includes(x.id));
 
   return (
     <Flex direction="column" height="100%">
-      <Flex.Item shrink={1}>
+      <Flex.Item>
         <Flex justify="space-between" className="Techweb__HeaderSectionTabs">
           <Flex.Item align="center" className="Techweb__HeaderTabTitle">
             Node
-          </Flex.Item>
-          <Flex.Item grow={1}>
-            <Tabs>
-              <Tabs.Tab
-                selected={tabIndex === 0}
-                onClick={() => setTabIndex(0)}>
-                Required ({complPrereq}/{prereqNodes.length})
-              </Tabs.Tab>
-              <Tabs.Tab
-                selected={tabIndex === 1}
-                disabled={unlockedNodes.length === 0}
-                onClick={() => setTabIndex(1)}>
-                Unlocks ({unlockedNodes.length})
-              </Tabs.Tab>
-            </Tabs>
           </Flex.Item>
           <Flex.Item align="center">
             <Button
@@ -566,24 +685,23 @@ const TechNodeDetail = (props, context) => {
           </Flex.Item>
         </Flex>
       </Flex.Item>
-      <Flex.Item className="Techweb__OverviewNodes" shrink={0}>
-        <TechNode node={node} nodetails />
-        <Divider />
+      <Flex.Item className={"Techweb__OverviewNodes"} height="100%">
+        <Flex>
+          <Flex.Item mr={1}>
+            {prereqNodes.map(n => (
+              <TechNode key={n.id} node={n} />
+            ))}
+          </Flex.Item>
+          <Flex.Item mr={1}>
+            <TechNode node={node} nodetails />
+          </Flex.Item>
+          <Flex.Item mr={1}>
+            {unlockedNodes.map(n => (
+              <TechNode key={n.id} node={n} />
+            ))}
+          </Flex.Item>
+        </Flex>
       </Flex.Item>
-      {tabIndex === 0 && (
-        <Flex.Item className="Techweb__OverviewNodes" grow={1}>
-          {prereqNodes.map(n => (
-            <TechNode key={n.id} node={n} />
-          ))}
-        </Flex.Item>
-      )}
-      {tabIndex === 1 && (
-        <Flex.Item className="Techweb__OverviewNodes" grow={1}>
-          {unlockedNodes.map(n => (
-            <TechNode key={n.id} node={n} />
-          ))}
-        </Flex.Item>
-      )}
     </Flex>
   );
 };
@@ -593,20 +711,18 @@ const TechNode = (props, context) => {
   const {
     node_cache,
     design_cache,
-    experiments,
     points,
     nodes,
+    compact,
+    researchable,
   } = data;
-  const { node, nodetails, nocontrols } = props;
-  const { id, can_unlock, tier } = node;
+  const { node, nodetails, nocontrols, destructive } = props;
+  const { id, can_unlock, tier, costs } = node;
   const {
     name,
     description,
-    costs,
     design_ids,
     prereq_ids,
-    required_experiments,
-    discount_experiments,
   } = node_cache[id];
   const [
     techwebRoute,
@@ -617,49 +733,12 @@ const TechNode = (props, context) => {
     setTabIndex,
   ] = useLocalState(context, 'nodeDetailTabIndex', 0);
 
-  const expcompl = required_experiments
-    .filter(x => experiments[x]?.completed)
-    .length;
-  const experimentProgress = (
-    <ProgressBar
-      ranges={{
-        good: [0.5, Infinity],
-        average: [0.25, 0.5],
-        bad: [-Infinity, 0.25],
-      }}
-      value={expcompl / required_experiments.length}>
-      Experiments ({expcompl}/{required_experiments.length})
-    </ProgressBar>
-  );
-
-  const techcompl = prereq_ids
-    .filter(x => nodes.find(y => y.id === x)?.tier === 0)
-    .length;
-  const techProgress = (
-    <ProgressBar
-      ranges={{
-        good: [0.5, Infinity],
-        average: [0.25, 0.5],
-        bad: [-Infinity, 0.25],
-      }}
-      value={techcompl / prereq_ids.length}>
-      Tech ({techcompl}/{prereq_ids.length})
-    </ProgressBar>
-  );
-
-  // Notice this logic will have te be changed if we make the discounts
-  // pool-specific
-  const nodeDiscount = Object.keys(discount_experiments)
-    .filter(x => experiments[x]?.completed)
-    .reduce((tot, curr) => {
-      return tot + discount_experiments[curr];
-    }, 0);
-
   return (
     <Section
       className="Techweb__NodeContainer"
       title={name}
-      buttons={!nocontrols && (
+      width={25}>
+      {!nocontrols && (
         <>
           {!nodetails && (
             <Button
@@ -671,7 +750,7 @@ const TechNode = (props, context) => {
               Details
             </Button>
           )}
-          {tier > 0 && (
+          {((tier > 0) && (!destructive)) && (!!researchable) && (
             <Button
               icon="lightbulb"
               disabled={!can_unlock || tier > 1}
@@ -679,15 +758,23 @@ const TechNode = (props, context) => {
               Research
             </Button>
           )}
-        </>
-      )}>
-      {tier !== 0 && (
+          {destructive && (
+            <Button
+              icon="trash"
+              color="red"
+              onClick={() => act("destroyfortech", { node_id: id })}>
+              Destroy item for node
+            </Button>
+          )}
+        </>)}
+      {tier !== 0 && !!compact && !destructive && (
         <Flex className="Techweb__NodeProgress">
-          {costs.map(k => {
-            const reqPts = Math.max(0, k.value - nodeDiscount);
-            const nodeProg = Math.min(reqPts, points[k.type]) || 0;
+          {!!costs && Object.keys(costs).map(key => {
+            const cost = costs[key]
+            const reqPts = Math.max(0, cost);
+            const nodeProg = Math.min(reqPts, points[key]) || 0;
             return (
-              <Flex.Item key={k.type} grow={1} basis={0}>
+              <Flex.Item key={key} grow={1} basis={0}>
                 <ProgressBar
                   ranges={{
                     good: [0.5, Infinity],
@@ -696,105 +783,34 @@ const TechNode = (props, context) => {
                   }}
                   value={reqPts === 0
                     ? 1
-                    : Math.min(1, (points[k.type]||0) / reqPts)}>
-                  {abbreviateName(k.type)} ({nodeProg}/{reqPts})
+                    : Math.min(1, (points[key]||0) / reqPts)}>
+                  {abbreviateName(key)} ({nodeProg}/{reqPts})
                 </ProgressBar>
               </Flex.Item>
             );
           })}
-          {prereq_ids.length > 0 && (
-            <Flex.Item grow={1} basis={0}>
-              {techProgress}
-            </Flex.Item>
-          )}
-          {required_experiments?.length > 0 && (
-            <Flex.Item grow={1} basis={0}>
-              {experimentProgress}
-            </Flex.Item>
-          )}
         </Flex>
       )}
-      <Box className="Techweb__NodeDescription" mb={2}>
+      <Box className="Techweb__NodeDescription">
         {description}
       </Box>
-      <Box className="Techweb__NodeUnlockedDesigns" mb={2}>
-        {design_ids.map((k, i) => (
-          <Button
-            key={id}
-            className={`${design_cache[k].class} Techweb__DesignIcon`}
-            // Uncomment these only when tooltip performance is improved.
-            // Reason for removal: Causes massive performance decreases
-            // tooltip={design_cache[k].name}
-            // tooltipPosition={i % 15 < 7 ? "right" : "left"}
-          />
-        ))}
-      </Box>
-      {required_experiments?.length > 0 && (
-        <Collapsible
-          className="Techweb__NodeExperimentsRequired"
-          title="Required Experiments">
-          {required_experiments.map((k, index) => {
-            const thisExp = experiments[k];
-            if (thisExp === null || thisExp === undefined) {
-              return (
-                <LockedExperiment key={index} />
-              );
-            }
-            return (
-              <Experiment key={thisExp} exp={thisExp} />
-            );
-          })}
-        </Collapsible>
-      )}
-      {Object.keys(discount_experiments).length > 0 && (
-        <Collapsible
-          className="TechwebNodeExperimentsRequired"
-          title="Discount-Eligible Experiments">
-          {Object.keys(discount_experiments).map((k, index) => {
-            const thisExp = experiments[k];
-            if (thisExp === null || thisExp === undefined) {
-              return (
-                <LockedExperiment key={index} />
-              );
-            }
-            return (
-              <Experiment key={thisExp} exp={thisExp}>
-                <Box className="Techweb__ExperimentDiscount">
-                  Provides a discount of {discount_experiments[k]} points
-                  to all required point pools.
-                </Box>
-              </Experiment>
-            );
-          })}
-        </Collapsible>
+      {!!compact && (
+        <Box className="Techweb__NodeUnlockedDesigns" mt={1}>
+          {design_ids.map((k, i) => (
+            <Box
+              key={id}
+              className={`${design_cache[k].class} Techweb__DesignIcon`}
+              // Tooltips are disabled due to performance issues
+              // The interace stutters every time it updates
+              // Those can be uncommented and the Box can be swapped for a
+              //  Button when the issues are resolved. Make sure to test
+              //  that they don't lag and *actually work*.
+              // tooltip={design_cache[k].name}
+              // tooltipPosition={i % 15 < 7 ? "right" : "left"}
+            />
+          ))}
+        </Box>
       )}
     </Section>
-  );
-};
-
-const LockedExperiment = (props, context) => {
-  return (
-    <Box m={1} className="ExperimentConfigure__ExperimentPanel">
-      <Button fluid
-        backgroundColor="#40628a"
-        className="ExperimentConfigure__ExperimentName"
-        disabled>
-        <Flex align="center" justify="space-between">
-          <Flex.Item
-            color="rgba(0, 0, 0, 0.6)">
-            <Icon name="lock" />
-            Undiscovered Experiment
-          </Flex.Item>
-          <Flex.Item
-            color="rgba(0, 0, 0, 0.5)">
-            ???
-          </Flex.Item>
-        </Flex>
-      </Button>
-      <Box className={"ExperimentConfigure__ExperimentContent"}>
-        This experiment has not been discovered yet, continue researching
-        nodes in the tree to discover the contents of this experiment.
-      </Box>
-    </Box>
   );
 };

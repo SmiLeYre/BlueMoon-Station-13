@@ -1052,7 +1052,7 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel)
 "eX" = (
-/obj/item/toy/poolnoodle,
+/obj/item/pool/pool_noodle,
 /turf/open/pool,
 /area/ruin/space/has_grav/bluemoon/hotel)
 "eY" = (
@@ -7285,7 +7285,7 @@
 /obj/effect/turf_decal/trimline/brown/filled/line{
 	dir = 4
 	},
-/obj/item/toy/poolnoodle,
+/obj/item/pool/pool_noodle,
 /turf/open/pool,
 /area/ruin/space/has_grav/bluemoon/hotel)
 "Iv" = (

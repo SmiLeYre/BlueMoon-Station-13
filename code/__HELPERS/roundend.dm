@@ -298,7 +298,7 @@
 			broadcastmessage += "[GLOB.round_end_notifiees.Join(", ")], "
 
 
-		broadcastmessage += "[((broadcastmessage == "") ? "the" : "The")] current round has ended. Please standby for your shift interlude Nanotrasen News Network's report!\n"
+		broadcastmessage += "[((broadcastmessage == "") ? "The" : "the")] current round has ended. Please standby for your shift interlude Nanotrasen News Network's report!\n"
 		broadcastmessage += "```\n[send_news_report()]\n```"
 
 		if(CONFIG_GET(string/chat_reboot_role))

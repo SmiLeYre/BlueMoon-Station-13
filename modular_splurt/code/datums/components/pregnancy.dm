@@ -181,7 +181,7 @@
 /datum/component/pregnancy/proc/handle_life(seconds)
 	SIGNAL_HANDLER
 
-	if(!HAS_TRAIT(carrier,TRAIT_COMMON_PREGNANCY)) //For normal pregnancy - Gardelin0
+	if(!HAS_TRAIT(carrier, TRAIT_COMMON_PREGNANCY)) //For normal pregnancy - Gardelin0
 		if(oviposition)
 			handle_ovi_preg()
 		else
@@ -192,7 +192,7 @@
 		carrier.apply_status_effect(/datum/status_effect/pregnancy)
 		carrier.apply_status_effect(/datum/status_effect/lactation)
 
-	if(!HAS_TRAIT(carrier,TRAIT_COMMON_PREGNANCY)) //For normal pregnancy - Gardelin0
+	if(!HAS_TRAIT(carrier, TRAIT_COMMON_PREGNANCY)) //For normal pregnancy - Gardelin0
 		if(stage > 3 && ishuman(carrier) && oviposition)
 			SEND_SIGNAL(carrier, COMSIG_ADD_MOOD_EVENT, "pregnancy", /datum/mood_event/pregnant_negative)
 
@@ -302,6 +302,9 @@
 	lay_eg(get_turf(carrier))
 
 /datum/component/pregnancy/proc/lay_eg(atom/location, datum/reagents/senders_cum)
+	if(HAS_TRAIT(carrier, TRAIT_COMMON_PREGNANCY)) //For normal pregnancy - Gardelin0
+		return
+
 	to_chat(carrier, span_userlove("You feel your egg sliding slowly inside!"))
 
 	if(prob(60))

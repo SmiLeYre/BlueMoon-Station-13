@@ -313,3 +313,19 @@
 	message_mime = "кажется, хрюкает."
 	emote_sound = 'modular_bluemoon/sound/emotes/oink3.ogg'
 	emote_cooldown = 1 SECONDS
+
+/datum/emote/living/audio/mrrp3
+	key = "mrrp3"
+	key_third_person = "mrrp3"
+	message = "mrrp's."
+	message_mime = "silently mrrp's."
+	emote_sound = 'modular_bluemoon/sound/emotes/mrrps3.ogg'
+	emote_cooldown = 0.5 SECONDS
+
+/datum/emote/living/audio/squeal
+	key = "squeal"
+	key_third_person = "squeal"
+	message = "squeals."
+	message_mime = "silently squeals."
+	emote_sound = 'modular_bluemoon/sound/emotes/squeal.ogg'
+	emote_cooldown = 0.75 SECONDS

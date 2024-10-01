@@ -772,13 +772,6 @@
     ckeywhitelist = list("d0nald")
     subcategory = LOADOUT_SUBCATEGORIES_DON02
 
-/datum/gear/donator/bm/catcrin_kit
-	name = "Catcrin kit"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/storage/box/catcrin_kit
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws")
-	subcategory = LOADOUT_SUBCATEGORIES_DON02
-
 /datum/gear/donator/bm/acrador_kit
 	name = "Acrador kit"
 	slot = ITEM_SLOT_BACKPACK
@@ -881,4 +874,67 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/suit/bm/syndie_jacket
 	ckeywhitelist = list("xaeshkavd", "ghos7ik")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/wtadler
+	name = "WT-550 Adler Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/wtadler
+	ckeywhitelist = list("akinight")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/aki_camo
+	name = "Old Guard NRI uniform"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/aki_camo
+	ckeywhitelist = list("akinight")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/aki_adler_camo
+	name = "Adler Peacekeeper uniform"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/aki_adler_camo
+	ckeywhitelist = list("akinight")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/nri_mundir
+	name = "Old mundir NRI"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/suit/bm/nri_mundir
+	ckeywhitelist = list("akinight")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/aki_seu
+	name = "Corporate S.E.U."
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/aki_seu
+	ckeywhitelist = list("akinight")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/aki_les
+	name = "L.E.S."
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/aki_les
+	ckeywhitelist = list("akinight")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/laskaskirt
+	name = "HoS cosplay skirt"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/laskaskirt
+	ckeywhitelist = list("angrylaska")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/mihana_mask
+	name = "Andromeda mask"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/mask/gas/syndicate/cool_version/mihana_mask
+	ckeywhitelist = list("mihana964")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/tagilla_modkit
+	name = "Tagilla modkit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/tagilla
+	ckeywhitelist = list("tequilasunset228")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02

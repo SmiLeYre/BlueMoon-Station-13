@@ -55,6 +55,11 @@
 	// Define quirk holder mob
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
 
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_mob)
+		return
+	// BLUEMOON EDIT END
+
 	// Remove glow control action
 	var/datum/action/rad_fiend/update_glow/quirk_action = locate() in quirk_mob.actions
 	quirk_action.Remove(quirk_mob)
@@ -160,6 +165,10 @@
 /datum/quirk/arachnid/remove()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!H)
+		return
+	// BLUEMOON EDIT END
 	if(is_species(H,/datum/species/arachnid))
 		return
 	var/datum/action/innate/spin_web/SW = locate(/datum/action/innate/spin_web) in H.actions
@@ -195,6 +204,10 @@
 
 /datum/quirk/ropebunny/remove()
 	var/mob/living/carbon/human/H = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!H)
+		return
+	// BLUEMOON EDIT END
 	var/datum/action/ropebunny/conversion/C = locate() in H.actions
 	C.Remove(H)
 	. = ..()
@@ -291,6 +304,10 @@
 /datum/quirk/breathless/remove()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!H)
+		return
+	// BLUEMOON EDIT END
 	REMOVE_TRAIT(H,TRAIT_NOBREATH, ROUNDSTART_TRAIT)
 
 /datum/quirk/breathless/on_process()

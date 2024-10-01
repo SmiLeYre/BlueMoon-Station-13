@@ -4603,7 +4603,7 @@
 /area/syndicate_mothership)
 "axD" = (
 /obj/structure/lattice/catwalk,
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/slavers)
 "axK" = (
 /obj/effect/decal/remains/xeno/larva,
@@ -4666,7 +4666,7 @@
 	dir = 1
 	},
 /obj/structure/fans/tiny/invisible,
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/slavers)
 "ayh" = (
 /obj/structure/table/wood,
@@ -6907,7 +6907,7 @@
 	dir = 4
 	},
 /obj/structure/fans/tiny/invisible,
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/slavers)
 "aMs" = (
 /obj/effect/turf_decal/tile/red{
@@ -6918,7 +6918,7 @@
 /area/syndicate_mothership)
 "aMu" = (
 /obj/structure/railing,
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/slavers)
 "aMz" = (
 /obj/structure/flora/ausbushes/fullgrass,
@@ -7682,6 +7682,8 @@
 /obj/item/clothing/gloves/boxing/blue,
 /obj/item/clothing/gloves/boxing/green,
 /obj/item/clothing/gloves/boxing/yellow,
+/obj/item/clothing/gloves/boxing/modern,
+/obj/item/clothing/gloves/boxing/modern,
 /turf/open/floor/holofloor/wood,
 /area/holodeck/rec_center/wrestlingarena)
 "aQx" = (
@@ -8004,7 +8006,7 @@
 /obj/structure/window/reinforced{
 	dir = 4
 	},
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/slavers)
 "aRV" = (
 /obj/effect/turf_decal/stripes/line{
@@ -8777,7 +8779,7 @@
 "aVZ" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/railing,
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/slavers)
 "aWa" = (
 /obj/effect/turf_decal/tile/red{
@@ -8947,7 +8949,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/slavers)
 "aWG" = (
 /obj/effect/decal/cleanable/dirt,
@@ -8955,7 +8957,7 @@
 /area/slavers)
 "aWI" = (
 /obj/structure/lattice,
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/slavers)
 "aWJ" = (
 /obj/structure/railing{
@@ -9121,7 +9123,7 @@
 /obj/structure/window/reinforced{
 	dir = 1
 	},
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/slavers)
 "aXJ" = (
 /obj/structure/flora/rock/jungle{
@@ -9517,7 +9519,7 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership)
 "aZp" = (
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/slavers)
 "aZq" = (
 /mob/living/simple_animal/bot/medbot{
@@ -13935,7 +13937,7 @@
 /obj/structure/railing/corner{
 	dir = 1
 	},
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/slavers)
 "eXp" = (
 /obj/effect/turf_decal/tile/neutral,
@@ -17412,7 +17414,7 @@
 /obj/structure/railing/corner{
 	dir = 8
 	},
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/slavers)
 "iad" = (
 /obj/structure/table,
@@ -21526,7 +21528,10 @@
 /turf/open/floor/plating,
 /area/syndicate_mothership/control)
 "lCL" = (
-/obj/machinery/jukebox,
+/obj/machinery/jukebox{
+	req_one_access = null;
+	one_area_play = 1
+	},
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
 "lCM" = (
@@ -22587,7 +22592,7 @@
 "mGN" = (
 /obj/structure/railing,
 /obj/structure/window/reinforced,
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/slavers)
 "mGQ" = (
 /obj/machinery/light{
@@ -26517,7 +26522,7 @@
 /area/centcom/control)
 "qrw" = (
 /obj/structure/light_prism,
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/centcom/holding)
 "qrx" = (
 /obj/structure/table/reinforced,
@@ -29040,7 +29045,9 @@
 /area/centcom)
 "sCg" = (
 /obj/machinery/jukebox/disco{
-	set_obj_flags = "EMAGGED"
+	anchored = 1;
+	one_area_play = 1;
+	req_one_access = null
 	},
 /turf/open/floor/light/colour_cycle/dancefloor_a,
 /area/centcom/holding)
@@ -29250,7 +29257,7 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/slavers)
 "sKx" = (
 /turf/open/floor/plasteel/bluespace,
@@ -30835,7 +30842,7 @@
 "urG" = (
 /obj/structure/lattice,
 /obj/structure/lattice/catwalk,
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/slavers)
 "urN" = (
 /obj/structure/table/wood,
@@ -30875,7 +30882,10 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "usu" = (
-/obj/machinery/jukebox,
+/obj/machinery/jukebox{
+	req_one_access = null;
+	one_area_play = 1
+	},
 /turf/open/floor/carpet/red,
 /area/centcom/holding)
 "usy" = (
@@ -31523,7 +31533,7 @@
 /turf/open/floor/iron/smooth,
 /area/centcom/evac)
 "uUD" = (
-/turf/open/water/decorative,
+/turf/open/water/safe,
 /area/centcom/holding)
 "uUM" = (
 /obj/effect/turf_decal/tile/neutral{
@@ -31638,15 +31648,15 @@
 /turf/open/floor/grass,
 /area/centcom/control)
 "vaV" = (
-/obj/item/toy/poolnoodle,
-/obj/item/toy/poolnoodle,
-/obj/item/toy/poolnoodle,
-/obj/item/toy/poolnoodle/red,
-/obj/item/toy/poolnoodle/red,
-/obj/item/toy/poolnoodle/red,
-/obj/item/toy/poolnoodle/yellow,
-/obj/item/toy/poolnoodle/yellow,
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle,
+/obj/item/pool/pool_noodle,
+/obj/item/pool/pool_noodle,
+/obj/item/pool/pool_noodle/red,
+/obj/item/pool/pool_noodle/red,
+/obj/item/pool/pool_noodle/red,
+/obj/item/pool/pool_noodle/yellow,
+/obj/item/pool/pool_noodle/yellow,
+/obj/item/pool/pool_noodle/yellow,
 /obj/machinery/pool/controller,
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
@@ -33536,7 +33546,7 @@
 /obj/effect/turf_decal/tile/red/opposingcorners,
 /obj/machinery/jukebox{
 	req_one_access = null;
-	set_obj_flags = "EMAGGED"
+	one_area_play = 1
 	},
 /obj/structure/sign/poster/contraband/bountyhunters{
 	pixel_y = 32
@@ -33595,7 +33605,11 @@
 /turf/open/floor/iron/white,
 /area/centcom/holding)
 "wQH" = (
-/obj/machinery/jukebox/disco,
+/obj/machinery/jukebox/disco{
+	req_one_access = null;
+	anchored = 1;
+	one_area_play = 1
+	},
 /turf/open/floor/light/colour_cycle/dancefloor_a,
 /area/centcom/holding)
 "wQW" = (

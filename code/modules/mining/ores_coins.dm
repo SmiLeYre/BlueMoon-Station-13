@@ -526,6 +526,12 @@ GLOBAL_LIST_INIT(sand_recipes, list(\
 	sideslist = list("valid", "salad")
 	material_flags = NONE
 
+/obj/item/coin/arcade_token
+	name = "arcade token"
+	custom_materials = list(/datum/material/bananium = 400)
+	desc = "A coin that allows you to redeem a prize from an arcade machine."
+	value = 0
+
 /obj/item/coin/iron
 
 /obj/item/coin/gold/debug

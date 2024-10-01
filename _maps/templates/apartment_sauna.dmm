@@ -493,9 +493,9 @@
 /area/hilbertshotel)
 "Kz" = (
 /obj/structure/rack,
-/obj/item/toy/poolnoodle/blue,
-/obj/item/toy/poolnoodle/blue,
-/obj/item/toy/poolnoodle/blue,
+/obj/item/pool/pool_noodle/blue,
+/obj/item/pool/pool_noodle/blue,
+/obj/item/pool/pool_noodle/blue,
 /turf/open/floor/wood,
 /area/hilbertshotel)
 "KG" = (

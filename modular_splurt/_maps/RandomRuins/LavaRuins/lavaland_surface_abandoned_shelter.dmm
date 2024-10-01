@@ -2,7 +2,7 @@
 "aj" = (
 /obj/item/wallframe/airalarm,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "bp" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -14,7 +14,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "ch" = (
 /turf/closed/wall,
 /area/lavaland/surface/outdoors)
@@ -24,10 +24,9 @@
 	},
 /obj/machinery/door/airlock/atmos/glass,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "cZ" = (
-/obj/item/tank/internals/oxygen,
-/obj/item/clothing/mask/breath,
+/obj/item/storage/bag/ore,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "dw" = (
@@ -41,29 +40,37 @@
 	icon_state = "0-4"
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "dV" = (
 /obj/item/wallframe/apc,
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "eP" = (
 /obj/item/stack/cable_coil/cut,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "fi" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /obj/item/stock_parts/cell,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "gd" = (
 /obj/structure/frame/machine,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
+"gy" = (
+/obj/item/tank/internals/oxygen,
+/obj/item/clothing/mask/breath,
+/turf/open/floor/plasteel/airless{
+	icon_state = "damaged5"
+	},
+/area/awaymission/challenge)
 "ha" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -74,35 +81,54 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
-/turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/turf/open/floor/plasteel/airless{
+	icon_state = "damaged1"
+	},
+/area/awaymission/challenge)
 "ir" = (
-/obj/item/stock_parts/cell,
+/obj/effect/mob_spawn/human/wandering_hermit,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
+"iS" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/airless{
+	icon_state = "damaged2"
+	},
+/area/awaymission/challenge)
+"jK" = (
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/airless,
+/area/awaymission/challenge)
 "jO" = (
 /obj/structure/window/reinforced/spawner/west,
 /obj/structure/window/reinforced/spawner,
 /obj/effect/mapping_helpers/no_lava,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "kA" = (
 /obj/machinery/computer/rdconsole/production{
 	dir = 4
 	},
 /obj/item/stack/sheet/mineral/plasma,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
+"lA" = (
+/turf/open/floor/plasteel/airless{
+	icon_state = "damaged1"
+	},
+/area/awaymission/challenge)
 "lC" = (
 /obj/item/stock_parts/cell,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "mp" = (
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "nu" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -110,50 +136,67 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "nz" = (
 /obj/structure/grille,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "oN" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "pE" = (
 /obj/item/vending_refill/kink,
 /obj/effect/decal/cleanable/semen,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "rp" = (
 /obj/machinery/door/airlock/research/glass,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "rR" = (
 /obj/item/storage/toolbox/mechanical,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
+"ss" = (
+/obj/item/stock_parts/cell,
+/turf/open/floor/plasteel/airless,
+/area/awaymission/challenge)
 "ue" = (
 /obj/machinery/ore_silo,
 /obj/item/stack/sheet/mineral/diamond{
 	amount = 5
 	},
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "uP" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced/fulltile,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
+"vj" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plasteel/airless,
+/area/awaymission/challenge)
+"vC" = (
+/turf/open/floor/plasteel/airless{
+	icon_state = "damaged2"
+	},
+/area/awaymission/challenge)
 "wd" = (
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "wj" = (
 /obj/structure/cable{
 	icon_state = "0-8"
@@ -161,46 +204,55 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/item/clothing/mask/breath,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "wk" = (
 /obj/item/stack/sheet/metal/ten,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "wF" = (
 /obj/item/circuitboard/machine/mining_equipment_vendor/golem,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "yv" = (
 /obj/structure/window/reinforced/spawner,
 /obj/machinery/atmospherics/components/unary/outlet_injector/layer1,
 /obj/effect/mapping_helpers/no_lava,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
+"zr" = (
+/turf/closed/wall,
+/area/awaymission/challenge)
 "zu" = (
 /obj/structure/cable,
 /obj/item/stack/sheet/metal/ten,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "AW" = (
 /obj/structure/window/reinforced/spawner,
 /obj/structure/window/reinforced/spawner/east,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer3,
 /obj/effect/mapping_helpers/no_lava,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "Br" = (
 /obj/item/stack/cable_coil/cut,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "BX" = (
 /obj/item/wallframe/airalarm,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "Cj" = (
 /obj/machinery/mineral/ore_redemption,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"CD" = (
+/obj/item/card/id/mining,
+/turf/open/floor/plasteel/airless,
+/area/awaymission/challenge)
 "CL" = (
 /obj/structure/cable,
 /obj/effect/mapping_helpers/no_lava,
@@ -213,12 +265,13 @@
 "CX" = (
 /obj/effect/mob_spawn/human/wandering_hermit,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "Dr" = (
-/obj/structure/girder,
-/obj/effect/mapping_helpers/no_lava,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/obj/item/tank/internals/oxygen,
+/turf/open/floor/plasteel/airless{
+	icon_state = "damaged2"
+	},
+/area/awaymission/challenge)
 "Dz" = (
 /obj/effect/mapping_helpers/no_lava,
 /obj/effect/mapping_helpers/no_lava,
@@ -234,38 +287,53 @@
 /obj/effect/mapping_helpers/no_lava,
 /obj/item/pipe_dispenser,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/awaymission/challenge)
+"FA" = (
+/obj/item/stack/sheet/mineral/plasma,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/awaymission/challenge)
+"FM" = (
+/obj/item/stack/rods,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "FZ" = (
 /obj/item/stack/cable_coil/red,
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "GU" = (
 /obj/structure/cable,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "HK" = (
 /obj/structure/frame/machine,
 /obj/item/circuitboard/machine/autolathe,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "II" = (
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "IK" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "Jb" = (
 /obj/machinery/atmospherics/pipe/simple/brown/visible/layer1{
 	dir = 5
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
+"Jt" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/awaymission/challenge)
 "Kl" = (
 /obj/item/circuitboard/machine/pacman,
 /obj/structure/cable{
@@ -275,32 +343,40 @@
 /obj/item/stock_parts/micro_laser/high,
 /obj/item/stock_parts/matter_bin/adv,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "Ku" = (
 /obj/item/wallframe/apc,
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "KS" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "Le" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /obj/item/crowbar,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
+"LC" = (
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/awaymission/challenge)
 "Nq" = (
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "Pm" = (
 /obj/structure/girder,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"PW" = (
+/turf/open/floor/plasteel/airless{
+	icon_state = "damaged3"
+	},
+/area/awaymission/challenge)
 "Qn" = (
 /obj/effect/mapping_helpers/no_lava,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -310,7 +386,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "QQ" = (
 /turf/closed/mineral/volcanic/lava_land_surface,
 /area/lavaland/surface/outdoors)
@@ -330,49 +406,62 @@
 /obj/structure/closet/crate,
 /obj/item/circuitboard/machine/vendor,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
+"QT" = (
+/turf/open/floor/plasteel/airless{
+	icon_state = "damaged4"
+	},
+/area/awaymission/challenge)
 "SS" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/visible/layer1{
 	dir = 9
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "SU" = (
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
 /obj/item/stack/cable_coil/cut,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
+"Ta" = (
+/obj/item/stack/rods,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/awaymission/challenge)
 "Tu" = (
 /obj/structure/cable,
 /obj/item/stock_parts/capacitor/adv,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "Tz" = (
 /turf/template_noop,
 /area/template_noop)
+"UA" = (
+/obj/structure/girder,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/awaymission/challenge)
 "UD" = (
 /obj/structure/cable{
 	icon_state = "0-8"
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "UE" = (
 /obj/machinery/door/airlock/glass,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "UK" = (
 /obj/machinery/door/airlock/public/glass,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "VT" = (
 /obj/item/card/id/mining,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "We" = (
 /obj/machinery/atmospherics/components/trinary/mixer/flipped/layer1{
 	dir = 8
@@ -382,23 +471,24 @@
 	dir = 4
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "Yl" = (
 /obj/effect/decal/cleanable/semendrip,
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "Yt" = (
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 "ZP" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/airless,
-/area/lavaland/surface/outdoors)
+/area/awaymission/challenge)
 
 (1,1,1) = {"
 Tz
@@ -440,11 +530,11 @@ Tz
 Tz
 QQ
 QQ
-Pm
-Pm
-ch
-ch
-ch
+UA
+UA
+zr
+zr
+zr
 Qn
 QQ
 QQ
@@ -458,11 +548,11 @@ Tz
 QQ
 QQ
 ha
-Pm
-ha
+UA
+LC
 II
 QR
-Pm
+UA
 Qn
 Qn
 Qn
@@ -476,11 +566,11 @@ Tz
 QQ
 QQ
 Qn
-ch
+zr
 BX
-ZP
+iS
 BX
-Pm
+UA
 Qn
 Qn
 Qn
@@ -494,11 +584,11 @@ Tz
 QQ
 Qn
 Qn
-ch
+zr
 ir
 QN
 CX
-Pm
+UA
 Qn
 Qn
 Qn
@@ -512,11 +602,11 @@ Tz
 QQ
 Qn
 Qn
-ch
-Nq
+zr
+ss
 Le
-ha
-ch
+Ta
+zr
 Qn
 Qn
 Qn
@@ -531,7 +621,7 @@ QQ
 Qn
 Qn
 UE
-ha
+FA
 wj
 oN
 UK
@@ -548,11 +638,11 @@ QQ
 ha
 Qn
 Dz
-ch
-Nq
+zr
+Dr
 SU
 wk
-ch
+zr
 Qn
 Qn
 Qn
@@ -564,17 +654,17 @@ QQ
 "}
 (10,1,1) = {"
 ha
-ha
+FM
 Qn
-Pm
-Pm
+UA
+UA
 cj
-ch
-ch
-ch
-ch
-ch
-Pm
+zr
+zr
+zr
+zr
+zr
+UA
 Qn
 Qn
 ha
@@ -584,15 +674,15 @@ QQ
 QQ
 ha
 Qn
-Pm
-cZ
+UA
+LC
 QN
-Nq
-ch
+gy
+zr
 Kl
 zu
 dA
-ch
+zr
 Qn
 Qn
 Qn
@@ -602,15 +692,15 @@ QQ
 QQ
 ha
 Qn
-ch
-ha
+zr
+LC
 mp
 nu
 KS
 fi
 Tu
 dV
-ch
+zr
 Qn
 Qn
 Qn
@@ -624,14 +714,14 @@ uP
 jO
 Jb
 UD
-ch
-ch
-Pm
-ch
-ch
-ch
-ch
-ch
+zr
+zr
+UA
+zr
+zr
+zr
+zr
+zr
 Qn
 "}
 (14,1,1) = {"
@@ -641,33 +731,33 @@ Qn
 nz
 ER
 We
-ha
-ch
+Br
+zr
 gd
 kA
 FZ
-ch
-Nq
+zr
+lA
 ue
-ch
+zr
 Qn
 "}
 (15,1,1) = {"
 QQ
 Qn
 Qn
-ch
+zr
 aj
 bv
 Yt
-Pm
+UA
 rR
 VT
 pE
-Pm
+UA
 Br
 Nq
-Pm
+UA
 Qn
 "}
 (16,1,1) = {"
@@ -678,14 +768,14 @@ uP
 yv
 SS
 QN
-ch
-ch
+zr
+zr
 Yl
-ch
-Pm
+zr
+UA
 lC
-Nq
-Pm
+lA
+UA
 Qn
 "}
 (17,1,1) = {"
@@ -701,63 +791,63 @@ GU
 Br
 HK
 gd
-ha
-ha
-ch
+LC
+LC
+zr
 Qn
 "}
 (18,1,1) = {"
 QQ
 QQ
 Qn
-ch
-ha
-Yt
+zr
+LC
+Jt
+CD
+UA
+jK
+QT
+jK
 Nq
-Pm
-Nq
-Nq
-Nq
-Nq
-ha
+LC
 Ku
-ch
+zr
 Qn
 "}
 (19,1,1) = {"
 QQ
 QQ
 QQ
-ch
+zr
 wF
-ZP
-Nq
-ch
+vj
+PW
+zr
 aj
 wd
-Nq
-ha
+vC
+LC
 Br
 eP
-ch
+zr
 Qn
 "}
 (20,1,1) = {"
 Tz
 QQ
 QQ
-ch
-ch
+zr
+zr
 ZP
-ch
-ch
-ch
-ch
-ch
-Pm
-Pm
-ch
-ch
+zr
+zr
+zr
+zr
+zr
+UA
+UA
+zr
+zr
 Qn
 "}
 (21,1,1) = {"
@@ -767,9 +857,9 @@ QQ
 ch
 dw
 bp
+cZ
 ha
-Qn
-Qn
+ha
 Qn
 Qn
 Qn
@@ -785,9 +875,9 @@ ha
 ha
 Cj
 ha
-Dr
-Qn
-Qn
+Pm
+ha
+ha
 Qn
 Qn
 QQ
@@ -803,7 +893,7 @@ Qn
 Pm
 ha
 ha
-Dr
+Pm
 Qn
 Qn
 Qn

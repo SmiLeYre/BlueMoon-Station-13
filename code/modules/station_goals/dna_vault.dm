@@ -143,7 +143,7 @@
 	var/list/dna = list()
 
 	var/completed = FALSE
-	var/list/power_lottery = list()
+	var/static/list/power_lottery = list()	// BLUEMOON EDIT - Статичный выбор генов.
 
 	var/list/obj/structure/fillers = list()
 

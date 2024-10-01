@@ -1,0 +1,34 @@
+2024-09-07:
+  MosleyTheMalO:
+  - bugfix: Fixes the overall sprite
+  - rscadd: adds a new polychromic sprite
+  - rscadd: donator item
+  SandPoot:
+  - rscadd: Added Character offering system, exchange characters with people you want
+      to!
+2024-09-15:
+  SaraSayomi:
+  - bugfix: remove doubled up shuttle markers, causing shuttles to love up on the
+      station with murder
+  - bugfix: several spacelaw merge conflicts
+  - bugfix: Not sanity
+2024-09-20:
+  Sara:
+  - bugfix: Revert lambda to our old one with my fixes
+  - bugfix: Remove airlock errors from meta whiteship
+  - bugfix: Fix meta pipenet errors
+  - bugfix: Fix Lambda pipenets
+  - bugfix: Fix lambda double turf
+  - rscadd: Lambda now has a psychology office near the park
+  - rscdel: Remove merge conflict that is over 2 years old from upstream (because
+      it's clearly not missed)
+  - rscadd: Annoyance at upstream
+  - bugfix: rearrange Lambda medical, add a limb grower and paramed locker
+  - bugfix: lambda is no longer affected by upstream
+2024-09-21:
+  MosleyTheMalO:
+  - rscadd: New infinidorm rooms
+  - rscadd: New random templates for boxtation's maints
+  - rscadd: New space ruins
+  - tweak: several edits to simplemobs such as seeing their health
+  - imageadd: TG sprites for doors, floors and other items

@@ -199,3 +199,13 @@
 	item_state = "syndie_jacket"
 	body_parts_covered = CHEST
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/suit/bm/nri_mundir
+	name = "Old mundir NRI"
+	desc = "Desc: Old mundir of the New Russian Empire. Worn out but still ready for battle just like in the old days... The name is embroidered on it - Zlatchek."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	icon_state = "nrimundir"
+	item_state = "nrimundir"
+	body_parts_covered = CHEST
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

@@ -319,9 +319,6 @@
 				unbuilt_lock.constructionStep = CONSTRUCTION_WIRES_EXPOSED
 				unbuilt_lock.obj_integrity = unbuilt_lock.max_integrity * 0.5
 			unbuilt_lock.update_appearance()
-		else
-			new /obj/item/electronics/firelock (targetloc)
-			new /obj/item/stack/sheet/metal/five (targetloc)
 	qdel(src)
 
 /obj/machinery/door/firedoor/proc/latetoggle()
@@ -467,6 +464,16 @@
 			. += "<span class='notice'>The maintenance panel is missing <i>wires</i> and the circuit board is <b>loosely connected</b>.</span>"
 		if(CONSTRUCTION_NOCIRCUIT)
 			. += "<span class='notice'>There are no <i>firelock electronics</i> in the frame. The frame could be <b>cut</b> apart.</span>"
+
+/obj/structure/firelock_frame/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		if(reinforced)
+			new /obj/item/stack/sheet/plasteel(loc, 5)
+			new /obj/item/electronics/firelock(loc)
+		else
+			new /obj/item/stack/sheet/metal(loc, 5)
+			new /obj/item/electronics/firelock(loc)
+	qdel(src)
 
 /obj/structure/firelock_frame/update_icon_state()
 	icon_state = "frame[constructionStep]"

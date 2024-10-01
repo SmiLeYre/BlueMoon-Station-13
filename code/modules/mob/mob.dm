@@ -376,7 +376,7 @@
 	else
 		result = A.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
 
-	if(result.len)
+	if(result && result.len) // BLUEMOON EDIT - sanity check
 		for(var/i = 1, i <= result.len, i++)
 			if(!findtext(result[i], "<hr>"))
 				result[i] += "\n"

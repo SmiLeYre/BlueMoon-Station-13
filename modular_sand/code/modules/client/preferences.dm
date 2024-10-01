@@ -11,6 +11,8 @@
 	/// Chance of moaning during an interaction
 	var/moaning_multiplier = 65
 
+	var/datum/character_offer_instance/offer
+
 //SANDSTORM EDIT - extra language
 /datum/preferences/proc/SetLanguage(mob/user)
 	var/list/dat = list()

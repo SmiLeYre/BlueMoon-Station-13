@@ -93,3 +93,10 @@
 	path = /obj/item/clothing/shoes/clown_shoes/jester
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
+
+//Shoes
+/datum/gear/donator/shoes/chameleon_suits
+	name = "Chameleon Shoes"
+	path = /obj/item/clothing/shoes/chameleon
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1

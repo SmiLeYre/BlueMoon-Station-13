@@ -38,9 +38,10 @@
 
 //Procs called while dead
 /mob/living/carbon/proc/handle_death()
-	for(var/datum/reagent/R in reagents.reagent_list)
-		if(R.chemical_flags & REAGENT_DEAD_PROCESS && !is_reagent_processing_invalid(R, src))
-			R.on_mob_dead(src)
+	if(reagents) // BLUEMOON EDIT - sanity check
+		for(var/datum/reagent/R in reagents.reagent_list)
+			if(R.chemical_flags & REAGENT_DEAD_PROCESS && !is_reagent_processing_invalid(R, src))
+				R.on_mob_dead(src)
 
 ///////////////
 // BREATHING //
