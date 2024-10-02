@@ -20,6 +20,36 @@
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
 
+/obj/item/clothing/head/helmet/sec/mark45_anomalist
+	name = "Mk. 45 Anomalist helmet"
+	desc = "Helmet of the anomalist of the Catcrin army with additional decoration in the form of light armored fabric on it. It also provides protection from small shrapnel and shows the status of the wearer. The personal code of the person who wears this helmet is written on the outside. This one looks worn out, most likely the helmet was removed from the corpse."
+	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
+	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
+	icon_state = "mark45_helmet_anomalist"
+	item_state = "mark45_helmet_anomalist"
+	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+
+/obj/item/clothing/head/helmet/sec/mark45_combatengineer
+	name = "Mk. 45 Combat engineer helmet"
+	desc = "Helmet of a combat engineer of the Catcrin army with a slight tinting on the visor to protect the eyes while working. The personal code of the person who wears this helmet is written on the outside. This one looks worn out, most likely the helmet was removed from the corpse."
+	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
+	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
+	icon_state = "mark45_helmet_combatengineer"
+	item_state = "mark45_helmet_combatengineer"
+	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+
+/obj/item/clothing/head/helmet/sec/mark45_support
+	name = "Mk. 45 Support helmet"
+	desc = "Helmet of a Catcrin army support trooper with a white cross on it for identification purposes. The personal code of the person who wears this helmet is written on the outside. This one looks worn out, most likely the helmet was removed from the corpse."
+	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
+	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
+	icon_state = "mark45_helmet_support"
+	item_state = "mark45_helmet_support"
+	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+
 /obj/item/clothing/head/helmet/sec/mark45_snow
 	name = "Mk. 45 Snow Cover helmet"
 	desc = "A modified Catcrin helmet optimized for cold-weather operations, differing wildly in appearance from its original form. An additional light plate is attached to the top of the helmet to deflect snow, and the visor itself has been made smaller. The inside of the helmet is lined with wool, with only the ears having been left unaffected. The personal code of the person who wears this helmet is written on the outside. This one looks worn out, most likely the helmet was removed from the corpse."
@@ -75,6 +105,37 @@
 	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
 	icon_state = "mark45_armor_snow"
 	item_state = "mark45_armor_snow"
+	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+
+/obj/item/clothing/suit/armor/mark45_armor_anomalist
+	name = "Mk. 45 Anomalist Аrmor"
+	desc = "Armor made on the basis of Mk. 45. This armor is worn by Catcrin anomalists, those who study the otherworldly world of ghosts, as well as associated with the elimination of various kinds of hostile anomalies. It is also decorated with special light armored fabric, showing the status of the carrier, and also protects it from potential shrapnel. The personal code of the person who wears this armor is written on the outside. This one looks worn out, most likely the armor was removed from the corpse."
+	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
+	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
+	icon_state = "mark45_armor_anomalist"
+	item_state = "mark45_armor_anomalist"
+	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+
+/obj/item/clothing/suit/armor/mark45_armor_combatengineer
+	name = "Mk. 45 Combat engineer Аrmor"
+	desc = "A modified version of the armor created for combat engineers in the Catcrin army, with a special auxiliary manipulator. The personal code of the person who wears this armor is written on the outside. This one looks worn out, most likely the armor was removed from the corpse."
+	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
+	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
+	icon_state = "mark45_armor_combatengineer"
+	item_state = "mark45_armor_combatengineer"
+	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	alternate_worn_layer = "31" //чтобы клешня инженерная была видна поверх шлема
+
+/obj/item/clothing/suit/armor/mark45_armor_support
+	name = "Mk. 45 Support Аrmor"
+	desc = "A lighter version of the Mk armor. 45 with additional pouches and a support mark on the shoulder pad. It is used by auxiliary fighters in the Catcrin army. The personal code of the person who wears this armor is written on the outside. This one looks worn out, most likely the armor was removed from the corpse."
+	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
+	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
+	icon_state = "mark45_armor_support"
+	item_state = "mark45_armor_support"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
 
@@ -476,6 +537,27 @@
 	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Peacekeeper, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Peacekeeper", "Blueshield")
 
+/datum/gear/suit/mark45_armor_anomalist
+	name = "Mk. 45 Anomalist Аrmor set"
+	path = /obj/item/clothing/suit/armor/mark45_armor_anomalist
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
+	restricted_desc = "Security Officer, Peacekeeper."
+	restricted_roles = list("Security Officer", "Peacekeeper")
+
+/datum/gear/suit/mark45_armor_combatengineer
+	name = "Mk. 45 Combat engineer Аrmor set"
+	path = /obj/item/clothing/suit/armor/mark45_armor_combatengineer
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
+	restricted_desc = "Security Officer, Peacekeeper."
+	restricted_roles = list("Security Officer", "Peacekeeper")
+
+/datum/gear/suit/mark45_armor_support
+	name = "Mk. 45 Support Аrmor set"
+	path = /obj/item/clothing/suit/armor/mark45_armor_support
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
+	restricted_desc = "Security Officer, Peacekeeper."
+	restricted_roles = list("Security Officer", "Peacekeeper")
+
 /datum/gear/suit/mark45_armor_desert
 	name = "Mk. 45 Desert Hunter Armor"
 	path = /obj/item/clothing/suit/armor/mark45_armor_desert
@@ -517,6 +599,27 @@
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
 	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Peacekeeper, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Peacekeeper", "Blueshield")
+
+/datum/gear/head/helmet/mark45_anomalist
+	name = "Mk. 45 Anomalist helmet"
+	path = /obj/item/clothing/head/helmet/sec/mark45_anomalist
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
+	restricted_desc = "Security Officer, Peacekeeper."
+	restricted_roles = list("Security Officer", "Peacekeeper")
+
+/datum/gear/head/helmet/mark45_combatengineer
+	name = "Mk. 45 Combat engineer helmet"
+	path = /obj/item/clothing/head/helmet/sec/mark45_combatengineer
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
+	restricted_desc = "Security Officer, Peacekeeper."
+	restricted_roles = list("Security Officer", "Peacekeeper")
+
+/datum/gear/head/helmet/mark45_support
+	name = "Mk. 45 Support helmet"
+	path = /obj/item/clothing/head/helmet/sec/mark45_support
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
+	restricted_desc = "Security Officer, Peacekeeper."
+	restricted_roles = list("Security Officer", "Peacekeeper")
 
 /datum/gear/head/helmet/brigdoc/mark45_medic_l
 	name = "Mk. 45 light medic helmet"
