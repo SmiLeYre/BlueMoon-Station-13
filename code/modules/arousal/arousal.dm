@@ -97,7 +97,7 @@
 			var/obj/effect/decal/cleanable/semen/S = locate(/obj/effect/decal/cleanable/semen) in location
 			var/obj/effect/decal/cleanable/semen/femcum/F = locate(/obj/effect/decal/cleanable/semen/femcum) in location
 			if(istype(sender, /obj/item/organ/genital/penis))
-				if(S)
+				if(S && !istype(S, /obj/effect/decal/cleanable/semen/femcum))
 					if(R.trans_to(S, R.total_volume))
 						S.blood_DNA |= get_blood_dna_list()
 						S.update_icon()
