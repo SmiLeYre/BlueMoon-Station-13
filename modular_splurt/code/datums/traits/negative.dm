@@ -273,6 +273,10 @@
 
 /datum/quirk/less_nightmare/remove()
 	var/mob/living/carbon/human/C = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!C)
+		return
+	// BLUEMOON EDIT END
 	C.RemoveElement(/datum/element/photosynthesis, 1, 1, 0, 0, 0, 0, SHADOW_SPECIES_LIGHT_THRESHOLD, SHADOW_SPECIES_LIGHT_THRESHOLD)
 
 //well-trained moved to neutral to stop the awkward situation of a dom snapping and the 30 trait powergamers fall to the floor.
@@ -283,6 +287,8 @@
 	gain_text = span_notice("Вы хотите подчиниться кому-нибудь...")
 	lose_text = span_notice("Вы больше не хотите подчиняться...")
 	processing_quirk = TRUE
+	/// BLUEMOON ADDED - optimization
+	var/check_delay = 0
 	var/notice_delay = 0
 	var/mob/living/carbon/human/last_dom
 
@@ -307,6 +313,12 @@
 	. = ..()
 	if(!quirk_holder)
 		return
+	// BLUEMOON EDIT START - оптимизация
+	if(check_delay > world.time)
+		return
+
+	check_delay = world.time + 5 SECONDS
+	// BLUEMOON EDIT END
 
 	var/good_x = "хорошим питомцем"
 	switch(quirk_holder.gender)
@@ -330,12 +342,14 @@
 		last_dom = null
 		return
 
+	// BLUEMOON EDIT START - теперь негативный мудлет убирается при появлении позитивного
 	//Handle the mood
 	var/datum/component/mood/mood = quirk_holder.GetComponent(/datum/component/mood)
-	if(istype(mood.mood_events[QMOOD_WELL_TRAINED], /datum/mood_event/dominant/good_boy))
+	if(!isnull(mood.mood_events[QMOOD_WELL_TRAINED]))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_WELL_TRAINED, /datum/mood_event/dominant/good_boy)
 	else
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_WELL_TRAINED, /datum/mood_event/dominant/need)
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_BAD_TRAINED, /datum/mood_event/dominant/need)
+	// BLUEMOON EDIT END
 
 	//Don't do anything if a previous dom was found
 	if(last_dom)

@@ -250,7 +250,9 @@
 /obj/item/clothing/under/rank/security/skirt/slut/pink,
 /obj/item/clothing/shoes/jackboots,
 /obj/item/storage/belt/slut,
-/obj/structure/closet/secure_closet/personal,
+/obj/structure/closet/secure_closet/personal{
+	req_access = list(12)
+	},
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -477,7 +479,8 @@
 /area/hilbertshotel)
 "ot" = (
 /obj/structure/closet/secure_closet/personal{
-	name = "prisoner closet"
+	name = "prisoner closet";
+	req_access = list(12)
 	},
 /obj/effect/turf_decal/bot_white,
 /obj/effect/turf_decal/tile/red{
@@ -708,7 +711,9 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/machinery/jukebox,
+/obj/machinery/jukebox{
+	req_one_access = null;
+	},
 /turf/open/floor/plasteel,
 /area/hilbertshotel)
 "wT" = (
@@ -1058,7 +1063,8 @@
 /area/hilbertshotel)
 "Kh" = (
 /obj/structure/closet/secure_closet/personal{
-	name = "prisoner closet"
+	name = "prisoner closet";
+	req_access = list(12)
 	},
 /obj/effect/turf_decal/bot_white,
 /obj/effect/turf_decal/tile/red{

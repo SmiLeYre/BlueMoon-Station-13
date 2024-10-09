@@ -84,7 +84,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 	name = "supermatter crystal"
 	desc = "A strangely translucent and iridescent crystal."
 	icon = 'icons/obj/supermatter.dmi'
-	icon_state = "darkmatter"
+	icon_state = "sm"
 	density = TRUE
 	anchored = TRUE
 	flags_1 = PREVENT_CONTENTS_EXPLOSION_1
@@ -101,7 +101,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 	///The portion of the gasmix we're on that we should remove
 	var/gasefficency = 0.15
 	///Used for changing icon states for diff base sprites
-	base_icon_state = "darkmatter"
+	base_icon_state = "sm"
 
 	///Are we exploding?
 	var/final_countdown = FALSE
@@ -577,7 +577,7 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 	var/temp_factor = 50
 	if(gasmix_power_ratio > 0.8)
 		//with a perfect gas mix, make the power more based on heat
-		icon_state = "[base_icon_state]_glow"
+		icon_state = "[base_icon_state]-glow"
 	else
 		//in normal mode, power is less effected by heat
 		temp_factor = 30
@@ -965,8 +965,8 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 /obj/machinery/power/supermatter_crystal/shard
 	name = "supermatter shard"
 	desc = "A strangely translucent and iridescent crystal that looks like it used to be part of a larger structure."
-	base_icon_state = "darkmatter_shard"
-	icon_state = "darkmatter_shard"
+	base_icon_state = "sm_shard"
+	icon_state = "sm_shard"
 	anchored = FALSE
 	gasefficency = 0.125
 	explosion_power = 12
@@ -999,8 +999,8 @@ GLOBAL_DATUM(main_supermatter_engine, /obj/machinery/power/supermatter_crystal)
 
 /obj/machinery/power/supermatter_crystal/shard/hugbox/fakecrystal //Hugbox shard with crystal visuals, used in the Supermatter/Hyperfractal shuttle
 	name = "supermatter crystal"
-	base_icon_state = "darkmatter"
-	icon_state = "darkmatter"
+	base_icon_state = "sm"
+	icon_state = "sm"
 
 /obj/machinery/power/supermatter_crystal/proc/supermatter_pull(turf/center, pull_range = 3)
 	playsound(center, 'sound/weapons/marauder.ogg', 100, TRUE, extrarange = pull_range - world.view)

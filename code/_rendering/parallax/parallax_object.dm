@@ -1,6 +1,6 @@
 
 /atom/movable/screen/parallax_layer
-	icon = 'icons/screen/parallax.dmi'
+	icon = 'icons/effects/parallax.dmi'
 	blend_mode = BLEND_ADD
 	plane = PLANE_SPACE_PARALLAX
 	screen_loc = "CENTER-7,CENTER-7"

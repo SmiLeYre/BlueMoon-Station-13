@@ -14,4 +14,8 @@
 
 /datum/quirk/sheltered/remove() //i mean, the lose text explains it, so i'm making it actually work
 	var/mob/living/carbon/human/H = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!H)
+		return
+	// BLUEMOON EDIT END
 	H.grant_language(/datum/language/common)

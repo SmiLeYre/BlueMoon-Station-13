@@ -292,7 +292,6 @@
 /datum/job/scientist/New()
 	var/list/extra_titles = list(
 		"NT Scientist",
-		"Donk Co. Specialist",
 		"Researcher",
 		"Toxins Researcher",
 		"Research Intern",
@@ -356,7 +355,7 @@
 /datum/job/psychologist/New()
 	var/list/extra_titles = list(
 		"NT Psychiatrist",
-		"Sydicate Psychiatrist",
+		"Syndicate Psychiatrist",
 		"Therapist",
 		"Psychiatrist",
 		"Hypnotist",
@@ -375,7 +374,7 @@
 /datum/job/geneticist/New()
 	var/list/extra_titles = list(
 		"NT Genetist",
-		"Sydicate Genetist",
+		"Syndicate Genetist",
 		"Genetics Researcher",
 		"Gene-Slut",
 		"Gene-Stud"
@@ -415,7 +414,7 @@
 // Security
 /datum/job/detective/New()
 	var/list/extra_titles = list(
-		"NT Sefeguard Investigator",
+		"NT Safeguard Investigator",
 		"Syndicate Survey Specialist",
 		"Gumshoe",
 		"Slutective",
@@ -460,7 +459,7 @@
 /datum/job/warden/New()
 	var/list/extra_titles = list(
 		"NT Safeguard Sergeant",
-		"Sydicate Warden",
+		"Syndicate Warden",
 		"Prison Chief",
 		"Armory Manager",
 		"Prison Administrator",

@@ -746,6 +746,10 @@
 /datum/dynamic_ruleset/midround/from_ghosts/xenomorph/execute()
 	// 50% chance of being incremented by one
 	required_candidates += prob(50)
+	// 50% chance of being incremented by one
+	required_candidates += prob(50)
+	// 50% chance of being incremented by one
+	required_candidates += prob(50)
 	for(var/obj/machinery/atmospherics/components/unary/vent_pump/temp_vent in GLOB.machines)
 		if(QDELETED(temp_vent))
 			continue

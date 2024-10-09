@@ -1,0 +1,70 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"g" = (
+/turf/open/floor/plasteel/showroomfloor,
+/area/template_noop)
+"w" = (
+/obj/structure/table/wood,
+/obj/item/clothing/shoes/winterboots{
+	pixel_y = 3
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/template_noop)
+"y" = (
+/obj/structure/table/wood,
+/obj/item/clothing/shoes/jackboots,
+/turf/open/floor/plasteel/showroomfloor,
+/area/template_noop)
+"B" = (
+/obj/structure/table/wood,
+/obj/item/clothing/shoes/workboots,
+/turf/open/floor/plasteel/showroomfloor,
+/area/template_noop)
+"C" = (
+/obj/structure/table/wood,
+/obj/item/clothing/shoes/sneakers/rainbow,
+/turf/open/floor/plasteel/showroomfloor,
+/area/template_noop)
+"G" = (
+/obj/structure/table/wood,
+/obj/item/clothing/shoes/sneakers/white,
+/turf/open/floor/plasteel/showroomfloor,
+/area/template_noop)
+"R" = (
+/obj/structure/table/wood,
+/obj/item/clothing/shoes/sneakers/yellow{
+	pixel_x = -9;
+	pixel_y = -1
+	},
+/turf/open/floor/plasteel/showroomfloor,
+/area/template_noop)
+
+(1,1,1) = {"
+g
+g
+g
+g
+"}
+(2,1,1) = {"
+g
+y
+G
+g
+"}
+(3,1,1) = {"
+g
+R
+B
+g
+"}
+(4,1,1) = {"
+g
+C
+w
+g
+"}
+(5,1,1) = {"
+g
+g
+g
+g
+"}

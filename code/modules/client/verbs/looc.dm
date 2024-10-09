@@ -40,9 +40,9 @@ GLOBAL_VAR_INIT(normal_looc_colour, "#6699CC")
 		//if(mob.stat) # Suggestion 3611, add LOOC for unconscious and dead | SPLURT 10.12.2022
 		//	to_chat(src, "<span class='danger'>You cannot use LOOC while unconscious or dead.</span>")
 		//	return
-		//if(isdead(mob))
-		//	to_chat(src, "<span class='danger'>You cannot use LOOC while ghosting.</span>")
-		//	return
+		if(isobserver(mob) && !(src in GLOB.admins))
+			to_chat(src, "<span class='danger'>You cannot use LOOC while ghosting.</span>")
+			return
 		if(HAS_TRAIT(mob, TRAIT_LOOC_MUTE))
 			to_chat(src, "<span class='danger'>You cannot use LOOC right now.</span>")
 			return

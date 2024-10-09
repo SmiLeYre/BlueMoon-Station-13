@@ -1,4 +1,4 @@
-This file contains a list of maps for use in map rotation.
+1This file contains a list of maps for use in map rotation.
 This feature requires you are running a Windows OS (or can other wise run .bat files) and that you are using the tgstation-server toolset in tools/
 #Lines starting with # are ignored.
 Lines not inside map blocks are also ignored
@@ -6,89 +6,110 @@ Duplicated entries use the latter one.
 All whitespace at the start and end of lines is ignored. (including indentation, thats just for show)
 Format:
 #map [map name] (name of .json file in _maps folder without the .json part)
-	minplayers [number] (0 or less disables this requirement)
-	maxplayers [number] (0 or less disables this requirement)
-	default (The last map with this defined will get all votes of players who have not explicitly voted for a map)
-	voteweight [number] (How much to count each player vote as, defaults to 1, setting to 0.5 counts each vote as half a vote, 2 as double, etc, Setting to 0 disables the map but allows players to still pick it)
-	max_round_search_span [number] (If this is nonzero, then if this map has been played more than a specified amount of times within this number of rounds, the map won't show up in votes. Max for this value determined by a define in persistence.dm)
-	max_rounds_played [number] (This determines how many times a map can be played within the above number of rounds before it's forbidden from votes.)
-	disabled (disables the map)
+minplayers [number] (0 or less disables this requirement)
+maxplayers [number] (0 or less disables this requirement)
+default (The last map with this defined will get all votes of players who have not explicitly voted for a map)
+voteweight [number] (How much to count each player vote as, defaults to 1, setting to 0.5 counts each vote as half a vote, 2 as double, etc, Setting to 0 disables the map but allows players to still pick it)
+max_round_search_span [number] (If this is nonzero, then if this map has been played more than a specified amount of times within this number of rounds, the map won't show up in votes. Max for this value determined by a define in persistence.dm)
+max_rounds_played [number] (This determines how many times a map can be played within the above number of rounds before it's forbidden from votes.)
+disabled (disables the map)
 endmap
 
 map boxstation
-	default
-	#voteweight 1.5
-endmap
-
-map layeniastation
-	minplayers 50
-	#voteweight 0.5
+maxplayers 70
+max_round_search_span 6
+max_rounds_played 2
 endmap
 
 map metastation
-	minplayers 25
-	#voteweight 0.5
+maxplayers 70
+max_round_search_span 6
+max_rounds_played 2
 endmap
 
-map ratvarstation
-	minplayers 120
+map syndicatestation
+voteweight 2
+disabled
+max_round_search_span 6
+max_rounds_played 2
 endmap
 
-map armystation
-	minplayers 120
+map peacesyndicatestation
+maxplayers 70
+voteweight 2
+max_round_search_span 6
+max_rounds_played 2
 endmap
 
 map pubbystation
+minplayers 70
+max_round_search_span 6
+max_rounds_played 2
 endmap
 
 map omegastation
-	maxplayers 35
+maxplayers 70
+max_round_search_span 6
+max_rounds_played 2
 endmap
 
 map deltastation
-	minplayers 50
+default
+minplayers 70
+max_round_search_span 6
+max_rounds_played 2
 endmap
 
 map smexistation
-	minplayers 25
+minplayers 70
+max_round_search_span 6
+max_rounds_played 2
 endmap
 
-map runtimestation
-endmap
-
-map spookystation
-	minplayers 15
-endmap
+#map runtimestation
+#endmap
 
 map festivestation
-	minplayers 15
+minplayers 70
 endmap
 
-map multiz_debug
+map prisonstation
+minplayers 50
 endmap
+
+#map multiz_debug
+#endmap
 
 map kilostation
+maxplayers 70
+max_round_search_span 6
+max_rounds_played 2
 endmap
 
-map syndicatestation
-	disabled
-endmap
-
-map smolstation
-endmap
-
-map smolstation
-endmap
+#map smolstation
+#endmap
 
 map taustation
+minplayers 70
+max_round_search_span 6
+max_rounds_played 2
 endmap
 
 map cogstation
+minplayers 70
+max_round_search_span 6
+max_rounds_played 2
 endmap
 
-map syndicatestation
-	voteweight 2
+map layeniastation
+minplayers 70
+voteweight 4
+max_round_search_span 6
+max_rounds_played 2
 endmap
 
-#map boxedinstation
-	endmap
+map lambdastation
+minplayers 70
+max_round_search_span 6
+max_rounds_played 2
+endmap

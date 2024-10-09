@@ -143,6 +143,16 @@
 	hitsound = 'sound/weapons/bladeslice.ogg'
 	var/swiping = FALSE
 
+/obj/item/scythe/stick
+	name = "Stick For Angry Plants"
+	desc = "A stick with a sharp piece of metal attached to the end of it. It's not much, but it'll do."
+	icon_state = "bokken"
+	item_state = "bokken"
+	icon = 'icons/obj/items_and_weapons.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	force = 5
+
 /obj/item/scythe/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/butchering, 90, 105)

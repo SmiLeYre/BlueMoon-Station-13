@@ -6516,6 +6516,11 @@
 	dir = 1;
 	layer = 2.9
 	},
+/obj{
+	name = "---Merge conflict marker---"
+	},
+/obj/structure/destructible/cult/tome,
+/obj/item/dice/d20/fate/one_use,
 /turf/open/floor/carpet/royalblack,
 /area/awaymission/academy/headmaster)
 "EP" = (

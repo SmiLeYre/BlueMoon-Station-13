@@ -8,7 +8,9 @@
 #define TRAIT_BLUEMOON_SHRIEK				"shriek"
 #define TRAIT_BLUEMOON_SHOWER_NEED			"shower_need"
 #define TRAIT_BLUEMOON_COMPLEX_MAINTENANCE	"high_quality_maintenance"
-
+#define TRAIT_LEWD_JOB						"lewd_job"
+#define TRAIT_LEWD_SUMMON					"lewd_summon"
+#define TRAIT_LEWD_SUMMONED					"lewd_summoned"
 // Отдельные наименования для квирков, чтобы не повторять их в настройках
 #define BLUEMOON_TRAIT_NAME_SHRIEK				"Крикун"
 

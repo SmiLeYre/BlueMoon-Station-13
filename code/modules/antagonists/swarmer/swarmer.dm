@@ -633,6 +633,7 @@
 	light_color = LIGHT_COLOR_CYAN
 	max_integrity = 30
 	anchored = TRUE
+	density = TRUE
 	var/lon_range = 1
 
 /obj/structure/swarmer/Initialize(mapload)

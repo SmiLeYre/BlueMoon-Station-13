@@ -377,7 +377,8 @@
 					H.remove_quirk(/datum/quirk/headpat_hater)
 				if(!H.has_quirk(/datum/quirk/headpat_slut))
 					H.add_quirk(/datum/quirk/headpat_slut)
-				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "dom_trained", /datum/mood_event/dominant/good_boy)
+				// BLUEMOON EDITED - I want to kill the guy behind it
+				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, QMOOD_WELL_TRAINED, /datum/mood_event/dominant/good_boy)
 
 			// BLUEMOON ADD START - Если персонажи слишком сильно различаются в росте, гладить по голове не получится
 			if(COMPARE_SIZES(src, M) >= 1.75)

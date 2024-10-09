@@ -7,6 +7,7 @@ SUBSYSTEM_DEF(title)
 	var/icon/icon
 	var/icon/previous_icon
 	var/turf/closed/indestructible/splashscreen/splash_turf
+	var/sound_path
 
 /datum/controller/subsystem/title/Initialize()
 	if(file_path && icon)
@@ -25,8 +26,13 @@ SUBSYSTEM_DEF(title)
 	SSmapping.HACK_LoadMapConfig()
 	for(var/S in provisional_title_screens)
 		var/list/L = splittext(S,"+")
-		if((L.len == 1 && (L[1] != "exclude" && L[1] != "blank.png"))|| (L.len > 1 && ((use_rare_screens && lowertext(L[1]) == "rare") || (lowertext(L[1]) == lowertext(SSmapping.config.map_name)))))
+		if(L.len == 1 && L[1] != "exclude" && L[1] != "blank.png")
 			title_screens += S
+		else if(L.len > 1)
+			if((use_rare_screens && lowertext(L[1]) == "rare") || (lowertext(L[1]) == lowertext(SSmapping.config.map_name)))
+				title_screens += S
+			else if(findtext(L[2], "{") && findtext(L[2], "}"))
+				title_screens += S
 
 	if(length(title_screens))
 		file_path = "[global.config.directory]/title_screens/images/[pick(title_screens)]"
@@ -37,6 +43,16 @@ SUBSYSTEM_DEF(title)
 	ASSERT(fexists(file_path))
 
 	icon = new(fcopy_rsc(file_path))
+
+	// Check for a corresponding sound file
+	var/list/L = splittext(file_path, "+")
+	if(L.len > 1)
+		var/sound_suffix = replacetext(L[2], ".dmi", "")
+		var/sound_file = "[global.config.directory]/title_music/sounds/[sound_suffix].ogg"
+		if(fexists(sound_file))
+			sound_path = sound_file
+	else
+		sound_path = null
 
 	if(splash_turf)
 		splash_turf.icon = icon
@@ -63,8 +79,17 @@ SUBSYSTEM_DEF(title)
 		var/atom/movable/screen/splash/S = new(thing, FALSE)
 		S.Fade(FALSE,FALSE)
 
+	// Save the sound path
+	if(sound_path)
+		var/F = file("data/previous_title_sound.dat")
+		WRITE_FILE(F, sound_path)
+
 /datum/controller/subsystem/title/Recover()
 	icon = SStitle.icon
 	splash_turf = SStitle.splash_turf
 	file_path = SStitle.file_path
 	previous_icon = SStitle.previous_icon
+
+	// Recover the sound path
+	if(fexists("data/previous_title_sound.dat"))
+		sound_path = file2text("data/previous_title_sound.dat")

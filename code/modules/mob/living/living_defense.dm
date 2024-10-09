@@ -2,6 +2,13 @@
 /mob/living/proc/run_armor_check(def_zone = null, attack_flag = MELEE, absorb_text = "Your armor absorbs the blow!", soften_text = "Your armor softens the blow!", armour_penetration, penetrated_text = "Your armor was penetrated!", silent=FALSE)
 	var/armor = getarmor(def_zone, attack_flag)
 
+	// BLUEMOON ADD START - characters_size_changes - броня хуже работает на персонажей большого размера
+	if(get_size(src) > 1)
+		if(attack_flag in list(MELEE, BULLET, LASER)) // было бы смешно, если бы защита от размера не работала бы от радиации, потому что вы порвали рад костюм . . .
+			if(!HAS_TRAIT(src, TRAIT_BLUEMOON_DEVOURER)) // у пожирателей уже дебаф к ХП, для них исключение
+				armor = max(0, armor * (2 - get_size(src))) // За каждый % увеличения размера, броня работает на % хуже. Вплоть до того, что персонажи с размером +200% не получают бонусов от брони. Сделано для компенсации факта, что от увеличения размера уже повышается ХП, которое сродни наличию брони
+	// BLUEMOON ADD END
+
 	if(silent)
 		return max(0, armor - armour_penetration)
 

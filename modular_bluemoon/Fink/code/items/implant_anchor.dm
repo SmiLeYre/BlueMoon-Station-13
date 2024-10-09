@@ -44,7 +44,7 @@
 	var/turf/my_location = get_turf(owner)
 	if(!(my_location.z in allowed_z_levels))
 		to_chat(owner, "<span class='warning'>Больно!</span>")
-		owner.adjustBruteLoss(2.5, FALSE) //Provides slow harassing for both brute and burn damage.
-		owner.adjustFireLoss(2.5, FALSE)
-		owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5) // BLUEMOON ADD ебём мозг гостролькам любителям лутать космос и ходить на станцию
+		owner.adjustBruteLoss(5, FALSE) //Provides slow harassing for both brute and burn damage.
+		owner.adjustFireLoss(5, FALSE)
+		owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10) // BLUEMOON ADD ебём мозг гостролькам любителям лутать космос и ходить на станцию
 		to_chat(owner, "<span class='warning'>Мне становится плохо при отдалении от своего родного сектора....</span>")

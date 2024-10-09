@@ -57,7 +57,7 @@
 * **Cog Station**
 * **Smexi Station**
 
-Если вы желаете заняться маппингом, настоятельно рекомендуем использовать инструмент [StrongDMM](https://github.com/SpaiR/StrongDMM).
+Если вы желаете заняться маппингом, настоятельно рекомендуем использовать инструмент [StrongDMM](https://github.com/SpaiR/StrongDMM), и ознакомиться с [Map Merging tools](http://tgstation13.org/wiki/Map_Merger).
 
 *Если вы занимаетесь разработкой и часто тестируете свои изменения на локальном сервере, задумайтесь о включении Low Memory Mode, раскомментировав ``//#define LOWMEMORYMODE`` в [_maps/_basemap.dm](_maps/_basemap.dm). Это отключит загрузку секторов космоса помимо ЦК и станции, а также заменит карту на легковесную RuntimeStation, что значительно ускорит загрузку подсистем.*
 
