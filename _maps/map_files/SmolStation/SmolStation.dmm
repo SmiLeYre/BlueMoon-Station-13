@@ -7984,13 +7984,13 @@
 /turf/open/floor/carpet,
 /area/commons/dorms)
 "fOe" = (
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle/yellow,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 10
 	},
 /obj/structure/closet/athletic_mixed,
-/obj/item/toy/poolnoodle/blue,
-/obj/item/toy/poolnoodle/red,
+/obj/item/pool/pool_noodle/blue,
+/obj/item/pool/pool_noodle/red,
 /turf/open/floor/plasteel,
 /area/commons/dorms)
 "fOl" = (
@@ -9913,7 +9913,7 @@
 /area/science/xenobiology)
 "hgN" = (
 /obj/structure/closet/secure_closet/personal,
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle/yellow,
 /turf/open/floor/plasteel,
 /area/commons/dorms)
 "hgO" = (
@@ -17646,13 +17646,13 @@
 /turf/open/floor/plating,
 /area/cargo/qm)
 "mLC" = (
-/obj/item/toy/poolnoodle/blue,
+/obj/item/pool/pool_noodle/blue,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
 /obj/structure/closet/athletic_mixed,
-/obj/item/toy/poolnoodle/red,
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle/red,
+/obj/item/pool/pool_noodle/yellow,
 /turf/open/floor/plasteel,
 /area/commons/dorms)
 "mMI" = (
@@ -25092,7 +25092,7 @@
 /area/maintenance/central)
 "sFX" = (
 /obj/structure/closet/secure_closet/personal,
-/obj/item/toy/poolnoodle/red,
+/obj/item/pool/pool_noodle/red,
 /turf/open/floor/plasteel,
 /area/commons/dorms)
 "sGy" = (
@@ -31790,7 +31790,7 @@
 /area/engineering/main)
 "xva" = (
 /obj/structure/closet/secure_closet/personal,
-/obj/item/toy/poolnoodle/blue,
+/obj/item/pool/pool_noodle/blue,
 /turf/open/floor/plasteel,
 /area/commons/dorms)
 "xvw" = (

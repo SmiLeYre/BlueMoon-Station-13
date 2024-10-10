@@ -250,3 +250,9 @@
 	name = "thigh-high rainbow stirrups"
 	icon_state = "rainbow_thigh-stir"
 	polychromic = FALSE
+
+/obj/item/clothing/underwear/socks/thigh/l_stockings
+	name = "Latex stockings"
+	desc = "A pair of stockings."
+	body_parts_covered = LEGS | FEET
+	icon_state = "stockings_latex"

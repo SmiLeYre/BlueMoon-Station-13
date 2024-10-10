@@ -67,6 +67,14 @@
 // 	layer = ATMOS_GROUP_LAYER
 // 	plane = ATMOS_GROUP_PLANE
 
+/// Door overlay for animating closets
+/obj/effect/overlay/closet_door
+	anchored = TRUE
+	plane = FLOAT_PLANE
+	layer = FLOAT_LAYER
+	vis_flags = VIS_INHERIT_ID
+	appearance_flags = KEEP_TOGETHER | LONG_GLIDE | PIXEL_SCALE
+
 // /obj/effect/overlay/light_visible
 // 	name = ""
 // 	icon = 'icons/effects/light_overlays/light_32.dmi'

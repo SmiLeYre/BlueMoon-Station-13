@@ -175,6 +175,11 @@
 
 	// Translate any existing messages upwards, apply exponential decay factors to timers
 	message_loc = isturf(target) ? target : get_atom_on_turf(target)
+	// BLUEMOON EDIT START - sanity check
+	// Я БЕЗ ПОНЯТИЯ, как owned_by исчезает в процессе вызова прока и проходит проверку на строке 104
+	if(isnull(owned_by) || QDELETED(owned_by))
+		return
+	// BLUEMOON EDIT END
 	if (owned_by.seen_messages)
 		var/idx = 1
 		var/combined_height = approx_lines

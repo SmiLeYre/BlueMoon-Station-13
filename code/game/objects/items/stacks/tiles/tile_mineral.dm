@@ -78,3 +78,13 @@
 	turf_type = /turf/open/floor/mineral/plastitanium
 	mineralType = "plastitanium"
 	custom_materials = list(/datum/material/titanium=250, /datum/material/plasma=250)
+
+/obj/item/stack/tile/mineral/wax
+	name = "wax tile"
+	singular_name = "wax tile"
+	desc = "A large, flat sheet of wax."
+	icon_state = "tile_wax"
+	item_state = "tile-wax"
+	turf_type = /turf/open/floor/wax
+	mineralType = "wax"
+	merge_type = /obj/item/stack/tile/mineral/wax

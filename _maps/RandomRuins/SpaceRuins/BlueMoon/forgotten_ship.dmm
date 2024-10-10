@@ -4,7 +4,7 @@
 	anchored = 1
 	},
 /obj/effect/turf_decal/tile/brown/full,
-/obj/machinery/power/apc/syndicate{
+/obj/machinery/power/apc/inteq{
 	dir = 4;
 	name = "InteQ Listening Post APC";
 	pixel_y = 32;
@@ -72,7 +72,7 @@
 	name = "Connector Port (Air Supply)"
 	},
 /obj/effect/turf_decal/box,
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = 24
 	},
 /turf/open/floor/plasteel,
@@ -167,7 +167,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = 24
 	},
 /obj/structure/cable/yellow{
@@ -266,7 +266,7 @@
 "ba" = (
 /obj/machinery/porta_turret/syndicate{
 	dir = 5;
-	faction = list("150","neutral");
+	faction = list("152","neutral");
 	pixel_y = -31
 	},
 /turf/template_noop,
@@ -1042,7 +1042,7 @@
 /obj/structure/table/reinforced,
 /obj/item/storage/box/donkpockets,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = 24
 	},
 /obj/machinery/light{
@@ -1560,7 +1560,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = 24
 	},
 /obj/structure/cable/yellow{
@@ -1734,7 +1734,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/syndicate{
+/obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "InteQ Post APC";
 	pixel_y = 32;
@@ -1930,7 +1930,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
 "jN" = (
 /obj/effect/turf_decal/tile/brown/opposingcorners,
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = 24
 	},
 /obj/effect/mob_spawn/human/corpse/damaged,
@@ -2023,7 +2023,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
 	},
-/obj/machinery/power/apc/syndicate{
+/obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "InteQ Post APC";
 	pixel_y = 32;
@@ -2047,7 +2047,7 @@
 /obj/structure/table/optable,
 /obj/effect/turf_decal/bot,
 /obj/effect/turf_decal/tile/brown/fourcorners,
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	dir = 1;
 	pixel_y = -32
 	},
@@ -2359,7 +2359,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/obj/machinery/power/apc/syndicate{
+/obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "InteQ Post APC";
 	pixel_y = 32;
@@ -2460,7 +2460,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "mv" = (
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = 24
 	},
 /obj/structure/cable/yellow{
@@ -3149,11 +3149,11 @@
 /obj/effect/turf_decal/tile/brown/anticorner{
 	dir = 1
 	},
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	dir = 4;
 	pixel_x = -32
 	},
-/obj/machinery/power/apc/syndicate{
+/obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "InteQ Post APC";
 	pixel_y = 32;
@@ -3295,11 +3295,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_permabrig)
 "pI" = (
-/obj/machinery/porta_turret{
-	icon_state = "turretCover_broken";
-	on = 0;
-	machine_stat = 1
-	},
 /obj/effect/turf_decal/stripes/box,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
@@ -3650,11 +3645,6 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "rH" = (
-/obj/machinery/porta_turret{
-	icon_state = "turretCover_broken";
-	on = 0;
-	machine_stat = 1
-	},
 /obj/effect/turf_decal/stripes/box,
 /obj/machinery/light{
 	dir = 4;
@@ -3692,7 +3682,7 @@
 	dir = 4;
 	light_color = "#c1caff"
 	},
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = 24
 	},
 /turf/open/floor/plasteel/dark,
@@ -3963,7 +3953,7 @@
 	pixel_x = -33;
 	pixel_y = -1
 	},
-/obj/machinery/power/apc/syndicate{
+/obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "InteQ Post APC";
 	pixel_y = 32;
@@ -3982,7 +3972,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_rnd)
 "sG" = (
 /obj/structure/closet/cabinet,
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = 24
 	},
 /turf/open/floor/carpet/royalblack,
@@ -4770,7 +4760,7 @@
 /obj/item/stack/ore/plasma{
 	amount = 19
 	},
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_x = 30;
 	pixel_y = 1
 	},
@@ -4864,7 +4854,7 @@
 /obj/machinery/light/dim/directional/west,
 /obj/machinery/power/apc/auto_name/west{
 	req_access = null;
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /obj/effect/turf_decal/tile/brown/anticorner{
 	dir = 1
@@ -4976,7 +4966,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	dir = 4;
 	pixel_x = -32
 	},
@@ -5064,7 +5054,7 @@
 "yF" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/item/trash/semki,
-/obj/machinery/power/apc/syndicate{
+/obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "InteQ Post APC";
 	start_charge = 35;
@@ -5169,7 +5159,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = 24
 	},
 /turf/open/floor/carpet/royalblack,
@@ -5303,7 +5293,7 @@
 /obj/item/mop,
 /obj/item/reagent_containers/glass/bucket,
 /obj/structure/closet/crate/trashcart,
-/obj/machinery/power/apc/syndicate{
+/obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "InteQ Forgotten Ship APC";
 	pixel_x = 27;
@@ -5430,7 +5420,7 @@
 	dir = 1;
 	icon_state = "delivery_red"
 	},
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = 24
 	},
 /obj/item/card/id/inteq,
@@ -5758,7 +5748,7 @@
 /obj/item/stack/ore/plasma{
 	amount = 19
 	},
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = 24
 	},
 /obj/item/stack/sheet/plastic/five,
@@ -6239,7 +6229,7 @@
 /obj/structure/chair/comfy/black{
 	dir = 4
 	},
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = 24
 	},
 /turf/open/floor/carpet/royalblack,
@@ -6308,7 +6298,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "Fc" = (
 /obj/structure/chair/sofa/corp/left,
-/obj/machinery/power/apc/syndicate{
+/obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "InteQ Post APC";
 	pixel_y = 32;
@@ -6566,7 +6556,7 @@
 "GE" = (
 /obj/machinery/porta_turret/syndicate{
 	dir = 5;
-	faction = list("150","neutral");
+	faction = list("152","neutral");
 	pixel_y = -31
 	},
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
@@ -6828,7 +6818,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/syndicate{
+/obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "InteQ Post APC";
 	pixel_y = 32;
@@ -7973,7 +7963,7 @@
 "Nm" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/tile/brown/fourcorners,
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	dir = 1;
 	pixel_y = -32
 	},
@@ -8008,7 +7998,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	dir = 1;
 	pixel_y = -32
 	},
@@ -8140,7 +8130,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	dir = 4;
 	pixel_x = -32
 	},
@@ -8201,7 +8191,7 @@
 "Os" = (
 /obj/machinery/porta_turret/syndicate{
 	dir = 5;
-	faction = list("150","neutral");
+	faction = list("152","neutral");
 	pixel_y = -31
 	},
 /turf/closed/mineral/random/high_chance,
@@ -8252,7 +8242,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "OR" = (
 /obj/item/trash/intecookies,
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	dir = 4;
 	pixel_x = -32
 	},
@@ -8291,7 +8281,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/syndicate{
+/obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "InteQ Post APC";
 	pixel_y = 32;
@@ -8739,7 +8729,7 @@
 	anchored = 1
 	},
 /obj/effect/turf_decal/tile/brown/full,
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = -11
 	},
 /obj/structure/cable/yellow{
@@ -8812,7 +8802,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_inspection)
 "Sv" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = 24
 	},
 /obj/effect/decal/cleanable/blood,
@@ -8882,7 +8872,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
 "SH" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = 24
 	},
 /turf/open/floor/plasteel/dark,
@@ -9072,7 +9062,7 @@
 "TL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/airalarm/syndicate{
+/obj/machinery/airalarm/inteq{
 	pixel_y = 24
 	},
 /turf/open/floor/mineral/plastitanium,
@@ -9238,7 +9228,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "UX" = (
-/obj/machinery/power/apc/syndicate{
+/obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "InteQ Forgotten Ship APC";
 	pixel_y = 32;
@@ -9382,7 +9372,7 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
-/obj/machinery/power/apc/syndicate{
+/obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "InteQ Post APC";
 	pixel_y = 32;
@@ -9993,7 +9983,7 @@
 "YG" = (
 /obj/machinery/porta_turret/syndicate{
 	dir = 5;
-	faction = list("150","neutral");
+	faction = list("152","neutral");
 	pixel_y = -31
 	},
 /turf/template_noop,
@@ -10002,7 +9992,7 @@
 /obj/effect/turf_decal/tile/brown/anticorner{
 	dir = 4
 	},
-/obj/machinery/power/apc/syndicate{
+/obj/machinery/power/apc/inteq{
 	dir = 1;
 	name = "InteQ Post APC";
 	pixel_y = 32;
@@ -13127,7 +13117,7 @@ pI
 yw
 lH
 yD
-jY
+kw
 Pk
 WT
 Gj

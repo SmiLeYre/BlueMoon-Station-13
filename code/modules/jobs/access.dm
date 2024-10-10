@@ -156,6 +156,9 @@
 /proc/get_all_syndicate_access()
 	return list(ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER, ACCESS_SLAVER, ACCESS_BLOODCULT, ACCESS_CLOCKCULT, ACCESS_INTEQ, ACCESS_INTEQ_LEADER)
 
+/proc/get_all_inteq_access()
+	return list(ACCESS_INTEQ, ACCESS_INTEQ_LEADER)
+
 /proc/get_region_accesses(code)
 	switch(code)
 		if(0)

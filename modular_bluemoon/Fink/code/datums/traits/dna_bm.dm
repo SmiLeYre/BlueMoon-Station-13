@@ -1699,7 +1699,16 @@
 	mob_trait = TRAIT_KISS_SLUT
 	text_gain_indication = "<span class='lewd'>Вам хочется поцеловать кого-нибудь....</span>"
 	text_lose_indication = "<span class='danger'>Вас больше не тянет целоваться....</span>"
-
+//////
+/datum/mutation/human/bm/lewd_summon
+	name = "Призываемый"
+	desc = "Вы были одарены силой демонов похоти или же сами являлись её источником, что давала возможность осмелившимся безумцам призывать вас при помощи рун. Сможете ли вы исполнить их фантазии?."
+	quality = MINOR_NEGATIVE
+	difficulty = 8
+	instability = 0
+	mob_trait = TRAIT_LEWD_SUMMON
+	text_gain_indication = "<span class='lewd'>Вас наполняет демоническая похоть....</span>"
+	text_lose_indication = "<span class='danger'>Вас больше не наполняет демоническая похоть....</span>"
 //////
 /datum/mutation/human/bm/onelife
 	name = "Одна Жизнь"

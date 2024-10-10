@@ -123,6 +123,7 @@
 	I.layer = FLOAT_LAYER //So it doesn't get screwed up by layer overrides.
 	I.plane = FLOAT_PLANE //Same as above but for planes.
 	I.override = TRUE
+	I.transform = null
 	add_overlay(I)
 	name = target.name
 	desc = target.desc

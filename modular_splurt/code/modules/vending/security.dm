@@ -135,7 +135,7 @@
 /obj/structure/closet/secure_closet/mopp
 	name = "advance MOPP locker"
 	req_access = list(ACCESS_CENT_GENERAL)
-	icon_state = "goodies"
+	icon_state = "secure"
 
 /obj/structure/closet/secure_closet/mopp/PopulateContents()
 	..()
@@ -151,7 +151,7 @@
 /obj/structure/closet/secure_closet/commandmopp
 	name = "advance MOPP locker 'Commander'"
 	req_access = list(ACCESS_CENT_GENERAL)
-	icon_state = "goodies"
+	icon_state = "secure"
 
 /obj/structure/closet/secure_closet/commandmopp/PopulateContents()
 	..()
@@ -167,7 +167,7 @@
 /obj/structure/closet/secure_closet/secmopp
 	name = "advance MOPP locker 'secuirity'"
 	req_access = list(ACCESS_CENT_GENERAL)
-	icon_state = "goodies"
+	icon_state = "secure"
 
 /obj/structure/closet/secure_closet/secmopp/PopulateContents()
 	..()
@@ -183,7 +183,7 @@
 /obj/structure/closet/secure_closet/medmopp
 	name = "advance MOPP locker 'medical'"
 	req_access = list(ACCESS_CENT_GENERAL)
-	icon_state = "goodies"
+	icon_state = "secure"
 
 /obj/structure/closet/secure_closet/medmopp/PopulateContents()
 	..()
@@ -199,7 +199,7 @@
 /obj/structure/closet/secure_closet/engimopp
 	name = "advance MOPP locker 'engineering'"
 	req_access = list(ACCESS_CENT_GENERAL)
-	icon_state = "goodies"
+	icon_state = "secure"
 
 /obj/structure/closet/secure_closet/engimopp/PopulateContents()
 	..()

@@ -21628,9 +21628,9 @@
 	name = "drain"
 	},
 /obj/structure/closet/secure_closet/personal,
-/obj/item/toy/poolnoodle/blue,
-/obj/item/toy/poolnoodle/red,
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle/blue,
+/obj/item/pool/pool_noodle/red,
+/obj/item/pool/pool_noodle/yellow,
 /obj/machinery/airalarm{
 	pixel_y = 22
 	},
@@ -24741,7 +24741,7 @@
 	},
 /area/hallway/secondary/entry)
 "dHQ" = (
-/obj/item/toy/poolnoodle/blue,
+/obj/item/pool/pool_noodle/blue,
 /turf/open/pool,
 /area/commons/fitness/pool)
 "dHR" = (
@@ -55063,9 +55063,9 @@
 	name = "drain"
 	},
 /obj/structure/closet/secure_closet/personal,
-/obj/item/toy/poolnoodle/blue,
-/obj/item/toy/poolnoodle/red,
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle/blue,
+/obj/item/pool/pool_noodle/red,
+/obj/item/pool/pool_noodle/yellow,
 /turf/open/floor/plasteel{
 	icon_state = "hallway_floor"
 	},
@@ -163070,9 +163070,9 @@
 	name = "drain"
 	},
 /obj/structure/closet/secure_closet/personal,
-/obj/item/toy/poolnoodle/blue,
-/obj/item/toy/poolnoodle/red,
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle/blue,
+/obj/item/pool/pool_noodle/red,
+/obj/item/pool/pool_noodle/yellow,
 /turf/open/floor/plasteel{
 	icon_state = "hallway_floor"
 	},

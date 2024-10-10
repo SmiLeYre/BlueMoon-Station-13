@@ -16,7 +16,7 @@
 // Exists to work around the minimum 700 cr price for goodies / small items / materials
 /obj/structure/closet/secure_closet/cargo
 	name = "cargo locker"
-	icon_state = "goodies"
+	icon_state = "cargo"
 	desc = "A sturdier card-locked storage unit used for bulky shipments."
 	max_integrity = 500 // Same as crates.
 	melee_min_damage = 25 // Idem.

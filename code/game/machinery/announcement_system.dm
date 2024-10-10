@@ -82,6 +82,10 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 
 	var/message
 
+	// Assign unknown rank if rank is empty
+	if (isnull(rank) || trim(rank) == "")
+		rank = "Unknown"
+
 	if(message_type == "ARRIVAL" && arrivalToggle)
 		message = CompileText(arrival, user, rank)
 	else if(message_type == "NEWHEAD" && newheadToggle)

@@ -119,6 +119,13 @@
 
 /datum/chemical_reaction/slime/slimemobspawn/on_reaction(datum/reagents/holder)
 	var/turf/T = get_turf(holder.my_atom)
+	var/lastkey = holder.my_atom.fingerprintslast
+	var/touch_msg = "N/A"
+	if(lastkey)
+		var/mob/toucher = get_mob_by_key(lastkey)
+		touch_msg = "[ADMIN_LOOKUPFLW(toucher)]."
+	message_admins("Реакция Золотого Слайма (наплыв мобов) началась в [ADMIN_VERBOSEJMP(T)]. Последний отпечаток: [touch_msg]")
+	log_game("Реакция Золотого Слайма (наплыв мобов) началась в [AREACOORD(T)]. Последний отпечаток: [lastkey ? lastkey : "N/A"].")
 	summon_mobs(holder, T)
 	var/obj/item/slime_extract/M = holder.my_atom
 	deltimer(M.qdel_timer)

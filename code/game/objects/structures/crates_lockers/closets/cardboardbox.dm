@@ -2,6 +2,7 @@
 /obj/structure/closet/cardboard
 	name = "large cardboard box"
 	desc = "Just a box..."
+	icon = 'modular_bluemoon/icons/obj/cardboardbox.dmi'
 	icon_state = "cardboard"
 	has_door_icon = FALSE
 	mob_storage_capacity = 1
@@ -14,6 +15,7 @@
 	material_drop = /obj/item/stack/sheet/cardboard
 	delivery_icon = "deliverybox"
 	anchorable = FALSE
+	door_anim_time = 0 // no animation
 	var/move_speed_multiplier = 1
 	var/move_delay = FALSE
 	var/egged = 0
@@ -51,7 +53,7 @@
 			. += "<span class='notice'>Alt-click to take creatures out of it.</span>"
 
 /obj/structure/closet/cardboard/proc/GetFront()
-	return mutable_appearance('icons/obj/closet.dmi', "cardboard_front")
+	return mutable_appearance(icon, "cardboard_front")
 
 /obj/structure/closet/cardboard/proc/update_front()
 	if(has_buckled_mobs())
@@ -193,6 +195,6 @@
 	material_drop = /obj/item/stack/sheet/plasteel
 
 /obj/structure/closet/cardboard/metal/GetFront()
-	return mutable_appearance('icons/obj/closet.dmi', "metalbox_front")
+	return mutable_appearance(icon, "metalbox_front")
 
 #undef SNAKE_SPAM_TICKS

@@ -380,6 +380,12 @@
 /turf/open/floor/carpet/royalblue/airless
 	initial_gas_mix = AIRLESS_ATMOS
 
+/turf/open/floor/eighties
+	name = "retro floor"
+	desc = "This one takes you back."
+	icon_state = "eighties"
+	floor_tile = /obj/item/stack/tile/eighties
+
 /turf/open/floor/carpet/narsie_act(force, ignore_mobs, probability = 20)
 	. = (prob(probability) || force)
 	for(var/I in src)
@@ -465,3 +471,17 @@
 	desc = "A stack of REDICAL floor tiles! Use in your hand to pick between a black or red pattern!" //i am so sorry
 	icon_state = "tile_eightiesred"
 	turf_type = /turf/open/floor/eighties/red
+
+/turf/open/floor/wax
+	name = "wax"
+	icon_state = "honeyfloor"
+	desc = "Hard wax. Makes you feel like part of a hive."
+	floor_tile = /obj/item/stack/tile/mineral/wax
+	footstep = FOOTSTEP_WOOD
+	barefootstep = FOOTSTEP_WOOD_BAREFOOT
+	clawfootstep = FOOTSTEP_WOOD_CLAW
+	heavyfootstep = FOOTSTEP_GENERIC_HEAVY
+	tiled_dirt = FALSE
+
+/turf/open/floor/wax/airless
+	initial_gas_mix = AIRLESS_ATMOS

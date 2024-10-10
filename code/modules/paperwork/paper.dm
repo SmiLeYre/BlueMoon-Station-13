@@ -218,9 +218,9 @@
 	var/datum/paper_field/field_data_datum = null
 
 	var/is_signature = ((text == "%sign") || (text == "%s"))
-	var/is_time = (text == "%t")
-	var/is_date = (text == "%d")
-	var/is_job = (text == "%j")
+	var/is_time = ((text == "%time") || (text == "%t"))
+	var/is_date = ((text == "%data") ||(text == "%d"))
+	var/is_job = ((text == "%job") ||(text == "%j"))
 
 
 	var/field_text = text

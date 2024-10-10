@@ -85,6 +85,7 @@
 	var/obj/item/card/id/W = H.wear_id
 	W.assignment = "Police Officer"
 	W.registered_name = H.real_name
+	W.access = get_all_accesses()+get_all_inteq_access() // I have a warrant.
 	W.update_label()
 
 /datum/outfit/russiancorpse/hunter

@@ -127,7 +127,17 @@
 	if(msg)
 		to_chat(user, "<span class='notice'>[msg]</span>")
 
-
+/obj/item/energy_katana/attack(mob/living/target, mob/living/carbon/human/user)
+	if(user.mind && !(user.mind.has_antag_datum(/datum/antagonist/ninja)))
+		user.DefaultCombatKnockdown(100)
+		user.dropItemToGround(src, TRUE)
+		to_chat(user, "<span class='danger'><B>fÄTaL ÈÈRRoR</B>: 382200-*#00CÖDE <B>RED</B>\nUNAUHORIZED USÈ DETÈCeD\nCoMMÈNCING SUB-R0UIN3 13...\nTÈRMInATING U-U-USÈR...</span>")
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			H.apply_damage(rand(force/2, force), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+		else
+			user.adjustBruteLoss(rand(force/2,force))
+	..()
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -250,12 +260,17 @@
 	if(msg)
 		to_chat(user, "<span class='notice'>[msg]</span>")
 
-/obj/item/energy_naginata/equipped(mob/living/carbon/human/ninja, slot)
+/obj/item/energy_naginata/attack(mob/living/target, mob/living/carbon/human/user)
+	if(user.mind && !(user.mind.has_antag_datum(/datum/antagonist/ninja)))
+		user.DefaultCombatKnockdown(100)
+		user.dropItemToGround(src, TRUE)
+		to_chat(user, "<span class='danger'><B>fÄTaL ÈÈRRoR</B>: 382200-*#00CÖDE <B>RED</B>\nUNAUHORIZED USÈ DETÈCeD\nCoMMÈNCING SUB-R0UIN3 13...\nTÈRMInATING U-U-USÈR...</span>")
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			H.apply_damage(rand(force/2, force), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+		else
+			user.adjustBruteLoss(rand(force/2,force))
 	..()
-	if(!IS_SPACE_NINJA(ninja))
-		to_chat(ninja, "<span class='danger'><B>fÄTaL ÈÈRRoR</B>: 382200-*#00CÖDE <B>RED</B>\nUNAUHORIZED USÈ DETÈCeD\nCoMMÈNCING SUB-R0UIN3 13...\nTÈRMInATING U-U-USÈR...</span>")
-		playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
-		addtimer(CALLBACK(src, PROC_REF(explode)), 3 SECONDS)
 
 /obj/item/energy_naginata/proc/explode()
 	do_sparks(3, 1, src)

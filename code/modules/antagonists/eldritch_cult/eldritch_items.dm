@@ -7,7 +7,6 @@
 	///Target
 	var/mob/living/carbon/human/target
 	var/datum/antagonist/heretic/sac_targetter	//The heretic who used this to acquire the current target - gets cleared when target gets sacrificed.
-	var/reset = TRUE
 	COOLDOWN_DECLARE(cooldown)
 
 /obj/item/living_heart/Initialize(mapload)
@@ -23,19 +22,20 @@
 /obj/item/living_heart/add_context(atom/source, list/context, obj/item/held_item, mob/living/user)
 	. = ..()
 	if(COOLDOWN_FINISHED(src, cooldown))
-		LAZYSET(context[SCREENTIP_CONTEXT_ALT_LMB], INTENT_ANY, reset ? "Restart" : "Restart")
+		LAZYSET(context[SCREENTIP_CONTEXT_ALT_LMB], INTENT_ANY, "Restart")
 	return CONTEXTUAL_SCREENTIP_SET
 
-/obj/item/living_heart/process(delta_time)
+/obj/item/living_heart/AltClick(mob/user)
 	. = ..()
 	if(COOLDOWN_FINISHED(src, cooldown))
 		COOLDOWN_START(src, cooldown, 300 SECONDS)
 		playsound(src, 'sound/misc/bloop.ogg', 50, FALSE)
-		var/mob/living/carbon/human/H = target
+		GLOB.living_heart_cache.Remove(src)
 		if(sac_targetter)
-			sac_targetter.sac_targetted.Remove(H.real_name)
+			sac_targetter.sac_targetted.Remove(target.real_name)
 		target = null
-		reset = FALSE
+	else
+		to_chat(user, "<span class='warning'>The heart is still recovering from the last use.</span>")
 
 /obj/item/living_heart/attack_self(mob/user)
 	. = ..()

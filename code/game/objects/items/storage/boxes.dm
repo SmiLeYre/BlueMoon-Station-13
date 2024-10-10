@@ -1736,19 +1736,6 @@
 
 //BLUEMOON ADD
 
-/obj/item/storage/box/catcrin_kit
-	name = "Catcrin kit"
-	desc = "Contains a full kit of Catcrin equipment."
-	icon_state = "box"
-
-/obj/item/storage/box/catcrin_kit/PopulateContents()
-	new /obj/item/modkit/gewehr550(src)
-	new /obj/item/modkit/hwal2572(src)
-	new /obj/item/modkit/karabiner_kit(src)
-	new /obj/item/modkit/stunspear_kit(src)
-	new /obj/item/modkit/frontline(src)
-	new /obj/item/clothing/accessory/ac_patch(src)
-
 /obj/item/storage/box/acrador_kit
 	name = "Acrador kit"
 	desc = "Contains a full kit of Acrador equipment."

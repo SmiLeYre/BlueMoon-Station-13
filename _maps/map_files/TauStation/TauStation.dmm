@@ -37700,7 +37700,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/item/toy/poolnoodle/red,
+/obj/item/pool/pool_noodle/red,
 /obj/structure/closet{
 	name = "pool toys"
 	},
@@ -37752,7 +37752,7 @@
 /obj/structure/closet{
 	name = "pool toys"
 	},
-/obj/item/toy/poolnoodle/blue,
+/obj/item/pool/pool_noodle/blue,
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
@@ -37784,7 +37784,7 @@
 /obj/structure/closet{
 	name = "pool toys"
 	},
-/obj/item/toy/poolnoodle,
+/obj/item/pool/pool_noodle,
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
@@ -37857,7 +37857,7 @@
 /obj/structure/closet{
 	name = "pool toys"
 	},
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle/yellow,
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},

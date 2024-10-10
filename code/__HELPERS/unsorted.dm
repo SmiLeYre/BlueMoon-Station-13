@@ -1176,6 +1176,7 @@ GLOBAL_REAL_VAR(list/stack_trace_storage)
 		str = "0" + str
 	. = str
 
+/// Perform a shake on an atom, resets its position afterwards
 /atom/proc/Shake(pixelshiftx = 15, pixelshifty = 15, duration = 250)
 	var/initialpixelx = pixel_x
 	var/initialpixely = pixel_y

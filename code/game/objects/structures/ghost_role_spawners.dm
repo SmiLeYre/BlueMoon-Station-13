@@ -132,19 +132,21 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/ash_walker/allow_spawn(mob/user, silent = FALSE)
-	if(!(user.key in team.players_spawned) || spawnOverride)//one per person unless you get a bonus spawn
+	if(!(user.ckey in team.players_spawned) || spawnOverride)//one per person unless you get a bonus spawn
 		return TRUE
 	to_chat(user, span_warning("<b>You have exhausted your usefulness to the Necropolis</b>."))
 	return FALSE
 
 /obj/effect/mob_spawn/human/ash_walker/special(mob/living/new_spawn)
 	// new_spawn.real_name = random_unique_lizard_name(gender)
-	if(is_mining_level(z))
-		to_chat(new_spawn, "<b>Drag the corpses of men and beasts to your nest. It will absorb them to create more of your kind. Glory to the Necropolis!</b>")
+	if(is_mining_level(new_spawn.z))
+		to_chat(new_spawn, "<b>Drag the corpses of beasts to your nest. It will absorb them to create more of your kind. Glory to the Necropolis!</b>")
 		to_chat(new_spawn, "<b>You can expand the weather proof area provided by your shelters by using the 'New Area' key near the bottom right of your HUD.</b>")
 		to_chat(new_spawn, "<b>Dragging injured ashwalkers to the tentacle or using the sleep verb next to it youself causes the body to remade whole after a short delay!</b>")
 	else
 		to_chat(new_spawn, "<span class='userdanger'>You have been born outside of your natural home! Whether you decide to return home, or make due with your new home is your own decision.</span>")
+
+	new_spawn.add_quirk(/datum/quirk/body_morpher, TRUE)
 
 //Ash walkers on birth understand how to make bone bows, bone arrows and ashen arrows
 
@@ -156,7 +158,7 @@
 		H.update_body()
 		if(team)
 			new_spawn.mind.add_antag_datum(/datum/antagonist/ashwalker, team)
-			team.players_spawned += (new_spawn.key)
+			team.players_spawned += (new_spawn.ckey)
 		eggshell.egg = null
 		QDEL_NULL(eggshell)
 
@@ -563,8 +565,22 @@
 	name = "Solar Federation Field Officer"
 	outfit = /datum/outfit/ert/sol_soldier_leader
 
-/obj/effect/mob_spawn/human/solfed/admiral
+/obj/effect/mob_spawn/human/solfed/diplomacy
+	name = "Solar Federation Diplomacy Worker"
+	short_desc = "Вы - дипломат Солнечной Федерации."
+	flavour_text = "Вы - дипломат, который должен обеспечить мирное сосуществование с другими расами. Вы - не боец, но вы должны быть готовы защищать себя и своих коллег."
+	important_info = "Защитите корабль и Адмирала ценой своей жизни."
+	outfit = /datum/outfit/sol_diplomacy
+
+/obj/effect/mob_spawn/human/solfed/diplomacy/slut
+	name = "Solar Federation Secretary (SLUT)"
+	outfit = /datum/outfit/sol_diplomacy/slut
+
+/obj/effect/mob_spawn/human/solfed/diplomacy/admiral
 	name = "Solar Federation Battle Admiral"
+	short_desc = "Вы - Адмирал Солнечной Федерации."
+	flavour_text = "Вы - Адмирал. Вы - лидер экипажа и ответственный за его безопасность. Вам нужно найти способ обеспечить корабль энергией."
+	important_info = "Защитите корабль и секретные документы ценой своей жизни."
 	outfit = /datum/outfit/sol_diplomacy/consul/admiral
 
 /datum/outfit/syndicate_empty
@@ -1027,6 +1043,8 @@
 	l_pocket = /obj/item/card/mining_point_card
 	r_pocket = /obj/item/mining_voucher
 	ears = /obj/item/radio/headset/tarkoff
+
+	implants = list(/obj/item/implant/anchor)
 
 /datum/outfit/tarkoff/post_equip(mob/living/carbon/human/tarkoff, visualsOnly = FALSE)
 	var/obj/item/card/id/id_card = tarkoff.wear_id

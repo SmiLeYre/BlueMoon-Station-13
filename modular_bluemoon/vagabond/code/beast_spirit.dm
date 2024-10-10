@@ -168,6 +168,8 @@
 	change.owner = quirk_holder
 
 /datum/quirk/beastspirit/remove()
+	if(!quirk_holder)
+		return
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/beast/B = locate() in quirk_holder.mob_spell_list
 	quirk_holder.RemoveSpell(B)
 

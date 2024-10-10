@@ -11,6 +11,11 @@
 	restricted_desc = "Heads of Staff"
 	restricted_roles = list("Head of Security","Captain","Head of Personnel","Chief Engineer","Research Director","Chief Medical Officer","Quartermaster","Blueshield","Bridge Officer")
 
+/datum/gear/neck/polycloak/alt
+	name = "Polychromatic Alternate Cloak"
+	path = /obj/item/clothing/neck/cloak/altpolychromic
+	loadout_initial_colors = list("#FFFFFF", "#808080")
+
 /datum/gear/neck/spikedcollar
 	name = "Spiked Pet Collar"
 	path = /obj/item/clothing/neck/petcollar/spike
