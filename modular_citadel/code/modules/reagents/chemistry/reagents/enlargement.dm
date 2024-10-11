@@ -74,6 +74,7 @@
 		H.reagents.remove_reagent(type, 5)
 		B.Insert(H)
 
+	
 	B.modify_size(0.1)
 	return ..()
 
@@ -90,7 +91,7 @@
 		M.set_gender(FEMALE)
 
 	if(P)
-		P.modify_size(-0.05)
+		qdel(P) // BLUEMOON CHANGE P.modify_size(-0.05)
 	if(T && (!P || P.size <= 0))
 		qdel(T)
 	if(!V)
