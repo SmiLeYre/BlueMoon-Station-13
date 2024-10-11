@@ -12,8 +12,10 @@
 #define PLANE_SPACE_PARALLAX_RENDER_TARGET "PLANE_SPACE_PARALLAX"
 
 #define OPENSPACE_LAYER 17 //Openspace layer over all
+
 #define GRAVITY_PULSE_PLANE -12
 #define GRAVITY_PULSE_RENDER_TARGET "*GRAVPULSE_RENDER_TARGET"
+
 #define OPENSPACE_PLANE -10 //Openspace plane below all turfs
 #define OPENSPACE_BACKDROP_PLANE -9 //Black square just over openspace plane to guaranteed cover all in openspace turf
 

@@ -106,6 +106,7 @@
 
 /atom/movable/screen/plane_master/game_world/Initialize(mapload)
 	. = ..()
+	add_filter("displacer", 1, displacement_map_filter(render_source = GRAVITY_PULSE_RENDER_TARGET, size = 10))
 	add_filter("vision_cone", 100, list(type="alpha", render_source=FIELD_OF_VISION_RENDER_TARGET, flags=MASK_INVERSE))
 
 /atom/movable/screen/plane_master/game_world/backdrop(mob/mymob)
@@ -206,3 +207,12 @@
 	plane = CHAT_PLANE
 	appearance_flags = PLANE_MASTER
 	blend_mode = BLEND_OVERLAY
+
+/atom/movable/screen/plane_master/gravpulse
+	name = "gravpulse plane"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	plane = GRAVITY_PULSE_PLANE
+	render_target = GRAVITY_PULSE_RENDER_TARGET
+	blend_mode = BLEND_ADD
+	blend_mode_override = BLEND_ADD
+	render_relay_plane = null
