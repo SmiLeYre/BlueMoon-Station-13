@@ -1,7 +1,7 @@
 /datum/ert
 	var/mobtype = /mob/living/carbon/human
 	var/team = /datum/team/ert
-	var/opendoors = TRUE
+	var/opendoors = FALSE
 	/// If TRUE, the admin who created the response team will be spawned in the briefing room in their preferred briefing outfit (assuming they're a ghost)
 	var/spawn_admin = FALSE
 	///Do we want to notify the players of this ERT?

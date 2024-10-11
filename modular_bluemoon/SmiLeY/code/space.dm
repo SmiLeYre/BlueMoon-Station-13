@@ -35,3 +35,10 @@
 	allow_duplicates = FALSE
 	always_place = TRUE
 	id = "forgottenship"
+
+/datum/map_template/ruin/space/forgottenship/New()
+	if(GLOB.master_mode == "Extended")
+		suffix = "sol_ship.dmm"
+	else
+		suffix = "forgotten_ship.dmm"
+	. = ..()

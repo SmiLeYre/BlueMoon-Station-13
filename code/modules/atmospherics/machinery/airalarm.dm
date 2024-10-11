@@ -193,6 +193,9 @@
 /obj/machinery/airalarm/syndicate //general syndicate access
 	req_access = list(ACCESS_SYNDICATE)
 
+/obj/machinery/airalarm/inteq //general inteq access
+	req_access = list(ACCESS_INTEQ)
+
 /obj/machinery/airalarm/directional/north //Pixel offsets get overwritten on New()
 	dir = SOUTH
 	pixel_y = 24

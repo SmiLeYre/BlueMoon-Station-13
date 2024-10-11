@@ -9551,6 +9551,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
+"aJV" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = 32
+	},
+/turf/open/floor/plating,
+/area/maintenance/starboard/aft)
 "aKg" = (
 /obj/structure/closet/emcloset,
 /obj/effect/turf_decal/tile/neutral{
@@ -31329,6 +31337,9 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = 32
+	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "cOj" = (
@@ -32143,6 +32154,9 @@
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
+	},
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = 32
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
@@ -35402,6 +35416,9 @@
 "cWB" = (
 /obj/structure/girder,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = 32
+	},
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "cWH" = (
@@ -52858,6 +52875,9 @@
 	dir = 4
 	},
 /obj/structure/loot_pile/maint,
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = 32
+	},
 /turf/open/floor/plasteel,
 /area/maintenance/aft)
 "dLj" = (
@@ -55555,6 +55575,9 @@
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
+	},
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = 32
 	},
 /turf/open/floor/plasteel,
 /area/maintenance/port/aft)
@@ -66729,6 +66752,21 @@
 /obj/machinery/atmospherics/pipe/simple/general/visible,
 /turf/open/floor/plasteel/dark,
 /area/engineering/atmos)
+"fIM" = (
+/obj/structure/cable/white{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel,
+/area/maintenance/starboard/aft)
 "fIO" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -67154,6 +67192,16 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/command/heads_quarters/cmo)
+"fOR" = (
+/obj/effect/turf_decal/tile/neutral/fourcorners,
+/obj/structure/cable/white{
+	icon_state = "4-8"
+	},
+/obj/structure/sign/poster/contraband/vulp7{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel,
+/area/hallway/primary/starboard)
 "fOT" = (
 /obj/structure/sign/directions/evac{
 	pixel_y = -8
@@ -70043,6 +70091,21 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/processing)
+"gHi" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/sign/poster/contraband/random{
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel,
+/area/hallway/primary/starboard)
 "gHo" = (
 /obj/effect/turf_decal/tile/red/half{
 	dir = 1
@@ -70555,18 +70618,10 @@
 	dir = 4
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/apc/highcap/five_k{
-	areastring = "/area/security/prison/upper";
-	armor = list("melee"=50,"bullet"=20,"laser"=20,"energy"=20,"bomb"=0,"bio"=0,"rad"=0,"fire"=90,"acid"=50);
-	damage_deflection = 21;
-	desc = "A control terminal for the area's electrical systems. It's secured with a durable antitampering plasteel cage.";
-	dir = 1;
-	name = "Armored Upper Prison Wing APC";
-	pixel_y = 23
-	},
 /obj/structure/cable/white{
 	icon_state = "0-4"
 	},
+/obj/machinery/power/apc/auto_name/north,
 /turf/open/floor/plasteel/dark/side{
 	dir = 8
 	},
@@ -74953,7 +75008,7 @@
 	dir = 4
 	},
 /obj/machinery/camera{
-	c_tag = "Chapel Crematorium";
+	c_tag = "Representative Office";
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -116733,6 +116788,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
+"tSq" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = 32
+	},
+/turf/open/floor/plating,
+/area/maintenance/starboard/aft)
 "tSt" = (
 /obj/structure/table/wood,
 /obj/item/cigbutt/cigarbutt{
@@ -122955,6 +123019,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/service/chapel/office)
+"vEM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
+	},
+/obj/structure/sign/poster/contraband/random{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel,
+/area/maintenance/starboard/aft)
 "vFc" = (
 /obj/structure/cable/white{
 	icon_state = "1-2"
@@ -123797,15 +123872,10 @@
 /area/security/brig_cells)
 "vTp" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/power/apc{
-	areastring = "/area/maintenance/prison";
-	dir = 4;
-	name = "Prison Central Maintenance APC";
-	pixel_x = 24
-	},
 /obj/structure/cable/white{
 	icon_state = "0-2"
 	},
+/obj/machinery/power/apc/auto_name/east,
 /turf/open/floor/plating,
 /area/maintenance/prison/aft)
 "vTr" = (
@@ -177692,7 +177762,7 @@ jYo
 jYo
 jYo
 cKH
-cMg
+tSq
 cHW
 cHW
 cPy
@@ -180552,7 +180622,7 @@ dmg
 dGC
 dhu
 dJq
-dmg
+fIM
 dbB
 dMY
 cHU
@@ -181565,12 +181635,12 @@ diQ
 dkH
 dmg
 dnM
-cRr
+aJV
 dhB
 dfW
 dtW
 dvL
-dfW
+vEM
 tdx
 dbE
 dBy
@@ -181779,7 +181849,7 @@ vBA
 tMR
 itJ
 jow
-bnz
+gHi
 bHq
 mpP
 mpP
@@ -182035,7 +182105,7 @@ yiW
 htm
 uIW
 rMm
-jow
+fOR
 bnz
 bHq
 mpP

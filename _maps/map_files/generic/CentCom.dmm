@@ -2695,13 +2695,13 @@
 /turf/open/floor/grass/grass0,
 /area/centcom/control)
 "ajw" = (
-/obj/machinery/door/poddoor/ert{
+/obj/effect/turf_decal/delivery,
+/obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor{
 	id = "EnterBD1";
 	damage_deflection = 700;
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	},
-/obj/effect/turf_decal/delivery,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "ajB" = (
@@ -4125,13 +4125,12 @@
 	},
 /area/slavers)
 "atR" = (
-/obj/machinery/door/poddoor/ert{
-	name = "Armory Green Team";
+/obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor{
 	id = "ERTArmory1";
-	damage_deflection = 709;
+	damage_deflection = 700;
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	},
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "atX" = (
@@ -12890,13 +12889,12 @@
 /turf/open/indestructible/hoteltile,
 /area/centcom/holding)
 "dVH" = (
-/obj/machinery/door/poddoor/ert{
-	name = "Armory Red Team";
+/obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor{
 	id = "ERTArmory4";
 	damage_deflection = 700;
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	},
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "dWc" = (
@@ -14503,12 +14501,13 @@
 /turf/open/floor/grass/grass0,
 /area/centcom/holding)
 "fvW" = (
-/obj/machinery/door/poddoor/ert{
-	id = "EnterBD2";
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
-	},
 /obj/effect/turf_decal/tile/dark_blue/half,
 /obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor{
+	id = "EnterBD2";
+	damage_deflection = 700;
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "fwu" = (
@@ -15027,13 +15026,12 @@
 /turf/closed/indestructible/syndicate,
 /area/syndicate_mothership)
 "fSU" = (
-/obj/machinery/door/poddoor/ert{
-	name = "Armory Blue Team";
+/obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor{
 	id = "ERTArmory2";
 	damage_deflection = 700;
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	},
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "fSW" = (
@@ -21913,12 +21911,13 @@
 /turf/open/floor/carpet/red,
 /area/centcom/control)
 "lXb" = (
-/obj/machinery/door/poddoor/ert{
-	id = "EnterBD2";
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
-	},
 /obj/effect/turf_decal/tile/dark_blue/half,
 /obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor{
+	id = "EnterBD2";
+	damage_deflection = 700;
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
 "lXj" = (
@@ -22429,13 +22428,13 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "mys" = (
-/obj/machinery/door/poddoor/ert{
+/obj/effect/turf_decal/tile/red/anticorner,
+/obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor{
 	id = "EnterBD4";
 	damage_deflection = 700;
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	},
-/obj/effect/turf_decal/tile/red/anticorner,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
 "myw" = (
@@ -26069,13 +26068,13 @@
 /turf/closed/indestructible/rock,
 /area/centcom/holding)
 "pSg" = (
-/obj/machinery/door/poddoor/ert{
+/obj/effect/turf_decal/tile/red/half,
+/obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor{
 	id = "EnterBD3";
 	damage_deflection = 700;
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	},
-/obj/effect/turf_decal/tile/red/half,
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "pSx" = (
@@ -26803,14 +26802,15 @@
 /turf/open/floor/grass/grass0,
 /area/centcom/control)
 "qDb" = (
-/obj/machinery/door/poddoor/ert{
-	id = "EnterBD2";
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
-	},
 /obj/effect/turf_decal/tile/red/half{
 	dir = 1
 	},
 /obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor{
+	id = "EnterBD2";
+	damage_deflection = 700;
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
 "qDp" = (
@@ -27806,15 +27806,15 @@
 /turf/open/indestructible/hotelwood,
 /area/centcom/holding)
 "rCd" = (
-/obj/machinery/door/poddoor/ert{
-	id = "EnterBD3";
-	damage_deflection = 700;
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
-	},
 /obj/effect/turf_decal/tile/dark_blue/half{
 	dir = 1
 	},
 /obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor{
+	id = "EnterBD3";
+	damage_deflection = 700;
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "rCq" = (
@@ -28204,16 +28204,16 @@
 /turf/closed/wall/mineral/snow,
 /area/centcom/holding)
 "rSg" = (
-/obj/machinery/door/poddoor/ert{
-	id = "EnterBD1";
-	damage_deflection = 700;
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
-	},
 /obj/effect/turf_decal/tile/red/anticorner{
 	dir = 4
 	},
 /obj/effect/turf_decal/delivery,
 /obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor{
+	id = "EnterBD1";
+	damage_deflection = 700;
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "rSq" = (
@@ -29216,8 +29216,7 @@
 /area/centcom/holding)
 "sJx" = (
 /obj/effect/turf_decal/delivery,
-/obj/machinery/door/poddoor/ert{
-	name = "Armory Other Team";
+/obj/machinery/door/poddoor{
 	id = "ERTArmory0";
 	damage_deflection = 700;
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
@@ -29272,12 +29271,12 @@
 /turf/open/indestructible/hoteltile,
 /area/centcom/holding)
 "sKU" = (
-/obj/machinery/door/poddoor/ert{
+/obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor{
 	id = "EnterBD4";
 	damage_deflection = 700;
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	},
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark,
 /area/tdome/tdomeobserve)
 "sKZ" = (
@@ -33016,13 +33015,12 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/centcom/holding)
 "wjF" = (
-/obj/machinery/door/poddoor/ert{
-	name = "Armory Amber Team";
+/obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor{
 	id = "ERTArmory3";
 	damage_deflection = 700;
 	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
 	},
-/obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "wkB" = (
@@ -33916,14 +33914,15 @@
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
 "xde" = (
-/obj/machinery/door/poddoor/ert{
-	id = "EnterBD2";
-	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
-	},
 /obj/effect/turf_decal/tile/red/anticorner{
 	dir = 1
 	},
 /obj/effect/turf_decal/delivery,
+/obj/machinery/door/poddoor{
+	id = "EnterBD2";
+	damage_deflection = 700;
+	armor = list("melee" = 100, "bullet" = 100, "laser" = 100, "energy" = 100, "bomb" = 100, "bio" = 100, "rad" = 100, "fire" = 100, "acid" = 100)
+	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "xdk" = (

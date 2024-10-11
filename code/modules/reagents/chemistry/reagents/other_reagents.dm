@@ -2649,7 +2649,7 @@
 			return
 
 	var/obj/effect/decal/cleanable/semen/S = locate(/obj/effect/decal/cleanable/semen) in location
-	if(S)
+	if(S && !istype(S, /obj/effect/decal/cleanable/semen/femcum))
 		if(S.reagents.add_reagent(type, volume, data))
 			S.update_icon()
 			return

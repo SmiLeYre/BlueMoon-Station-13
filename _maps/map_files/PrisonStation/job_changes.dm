@@ -240,7 +240,7 @@
 
 /datum/job/assistant/New()
 	. = ..()
-	if(SSmapping.config?.map_name == "PrisonStation" && SSticker.HasRoundStarted())
+	if(SSmapping.config?.map_name == "PrisonStation")
 		total_positions = 0
 		spawn_positions = 0
 

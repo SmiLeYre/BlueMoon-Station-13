@@ -193,18 +193,16 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits_digidrated.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/inteq
 
-/obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq/equipped(mob/user, slot)
+/obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq/equipped(mob/living/user, slot)
 	..()
 	if(slot == ITEM_SLOT_OCLOTHING)
 		if(!IS_INTEQ(user))
-			to_chat(user, "<span class='danger'><B>СКАФАНДР МОДЕЛЬ ДВА</B>: Обнаружены неавторизованные сигнатуры. <B>Производится нейтрализация экипировки.</B></span>")
+			to_chat(user, "<span class='danger'><B>СКАФАНДР МОДЕЛЬ ОДИН - ЩИТ</B>: Обнаружены неавторизованные сигнатуры. <B>Производится нейтрализация пользователя.</B></span>")
 			playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
-			addtimer(CALLBACK(src, PROC_REF(explode)), 3 SECONDS)
-
-/obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq/proc/explode()
-	do_sparks(3, 1, src)
-	explosion(src.loc,0,1,1,1)
-	qdel(src)
+			do_sparks(3, 1, src)
+			user.dropItemToGround(src, TRUE)
+			user.emote("realagony")
+			user.adjustFireLoss(50)
 
 //////////
 
@@ -280,13 +278,16 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi/inteq
 	shield_state = "shield-yellow"
 
-/obj/item/clothing/suit/space/hardsuit/shielded/syndi/inteq/equipped(mob/user, slot)
+/obj/item/clothing/suit/space/hardsuit/shielded/syndi/inteq/equipped(mob/living/user, slot)
 	..()
 	if(slot == ITEM_SLOT_OCLOTHING)
 		if(!IS_INTEQ(user))
-			to_chat(user, "<span class='danger'><B>СКАФАНДР МОДЕЛЬ ОДИН - ЩИТ</B>: Обнаружены неавторизованные сигнатуры. <B>Производится нейтрализация экипировки.</B></span>")
+			to_chat(user, "<span class='danger'><B>СКАФАНДР МОДЕЛЬ ОДИН - ЩИТ</B>: Обнаружены неавторизованные сигнатуры. <B>Производится нейтрализация пользователя.</B></span>")
 			playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
-			addtimer(CALLBACK(src, PROC_REF(explode)), 3 SECONDS)
+			do_sparks(3, 1, src)
+			user.dropItemToGround(src, TRUE)
+			user.emote("realagony")
+			user.adjustFireLoss(50)
 
 /obj/item/clothing/suit/space/hardsuit/shielded/syndi/inteq/proc/explode()
 	do_sparks(3, 1, src)
