@@ -21,20 +21,18 @@
 	///The admin-set number of ghosts, for use in calculating impact size.
 	var/orbit_override
 
-/datum/round_event/anomaly/anomaly_ectoplasm/start()
+/datum/round_event/anomaly/anomaly_ectoplasm/apply_anomaly_properties(obj/effect/anomaly/ectoplasm/created_anomaly)
 	if(!effect_override || !orbit_override)
-		return ..() //If we provide no override, just run the usual startup.
+		return
 
-	var/turf/anomaly_turf = placer.findValidTurf(impact_area)
-	var/obj/effect/anomaly/ectoplasm/newAnomaly
-	if(anomaly_turf)
-		newAnomaly = new anomaly_path(anomaly_turf)
-		newAnomaly.override_ghosts = TRUE
-		newAnomaly.effect_power = effect_override
-		newAnomaly.ghosts_orbiting = orbit_override
-		newAnomaly.intensity_update()
-	if(newAnomaly)
-		announce_to_ghosts(newAnomaly)
+	created_anomaly.override_ghosts = TRUE
+	if(effect_override)
+		created_anomaly.effect_power = effect_override
+
+	if(orbit_override)
+		created_anomaly.ghosts_orbiting = orbit_override
+
+	created_anomaly.intensity_update()
 
 /datum/round_event/anomaly/anomaly_ectoplasm/announce(fake)
 	priority_announce("Паранормальная эктоплазменная вспышка зафиксирована на [ANOMALY_ANNOUNCE_HARMFUL_TEXT] [impact_area.name].", "ВНИМАНИЕ: АНОМАЛИЯ", 'sound/announcer/classic/anomaly/anomaly_ectoplasm.ogg')

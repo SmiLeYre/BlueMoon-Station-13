@@ -18,30 +18,27 @@
 	///The admin-chosen spawn location.
 	var/turf/spawn_location
 
-/datum/round_event/anomaly/setup()
-
-	if(spawn_location)
-		impact_area = get_area(spawn_location)
-	else
-		impact_area = placer.findValidArea()
-
 /datum/round_event/anomaly/announce(fake)
 	priority_announce("Обнаружен гипер-энергетический поток на [ANOMALY_ANNOUNCE_DANGEROUS_TEXT] [impact_area.name].", "ВНИМАНИЕ: АНОМАЛИЯ", 'sound/announcer/classic/anomaly/anomaly_flux.ogg')
 
 /datum/round_event/anomaly/start()
 	var/turf/anomaly_turf
-
 	if(spawn_location)
 		anomaly_turf = spawn_location
+		impact_area = get_area(spawn_location)
 	else
 		anomaly_turf = placer.findValidTurf(impact_area)
+		impact_area = placer.findValidArea()
 
-	var/newAnomaly
 	if(anomaly_turf)
-		newAnomaly = new anomaly_path(anomaly_turf)
-	if (newAnomaly)
-		apply_anomaly_properties(newAnomaly)
-		announce_to_ghosts(newAnomaly)
+		return FALSE
+
+	. = new anomaly_path(anomaly_turf)
+	if(.)
+		apply_anomaly_properties(.)
+		announce_to_ghosts(.)
+
+/datum/round_event/anomaly/proc/start()
 
 /// Make any further post-creation modifications to the anomaly
 /datum/round_event/anomaly/proc/apply_anomaly_properties(obj/effect/anomaly/new_anomaly)
