@@ -71,6 +71,10 @@
 	appearance_flags = PLANE_MASTER
 	blend_mode = BLEND_OVERLAY
 
+/atom/movable/screen/plane_master/floor/Initialize(mapload)
+	. = ..()
+	add_filter("displacer", 1, displacement_map_filter(render_source = GRAVITY_PULSE_RENDER_TARGET, size = 10))
+
 /atom/movable/screen/plane_master/wall
 	name = "wall plane master"
 	plane = WALL_PLANE
@@ -89,6 +93,7 @@
 
 /atom/movable/screen/plane_master/above_wall/Initialize(mapload)
 	. = ..()
+	add_filter("displacer", 1, displacement_map_filter(render_source = GRAVITY_PULSE_RENDER_TARGET, size = 10))
 	add_filter("vision_cone", 100, list(type="alpha", render_source=FIELD_OF_VISION_RENDER_TARGET, flags=MASK_INVERSE))
 
 /atom/movable/screen/plane_master/above_wall/backdrop(mob/mymob)
