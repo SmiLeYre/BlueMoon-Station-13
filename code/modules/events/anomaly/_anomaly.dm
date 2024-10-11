@@ -38,8 +38,6 @@
 		apply_anomaly_properties(.)
 		announce_to_ghosts(.)
 
-/datum/round_event/anomaly/proc/start()
-
 /// Make any further post-creation modifications to the anomaly
 /datum/round_event/anomaly/proc/apply_anomaly_properties(obj/effect/anomaly/new_anomaly)
 	return

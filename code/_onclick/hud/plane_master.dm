@@ -214,5 +214,3 @@
 	plane = GRAVITY_PULSE_PLANE
 	render_target = GRAVITY_PULSE_RENDER_TARGET
 	blend_mode = BLEND_ADD
-	blend_mode_override = BLEND_ADD
-	render_relay_plane = null
