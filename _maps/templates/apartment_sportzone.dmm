@@ -100,9 +100,7 @@
 /turf/open/floor/iron/white/small,
 /area/hilbertshotel)
 "gP" = (
-/obj/structure/weightmachine/weightlifter{
-	icon_state = "stacklifter"
-	},
+/obj/structure/weightmachine/stacklifter,
 /turf/open/floor/carpet/black,
 /area/hilbertshotel)
 "gV" = (
@@ -124,6 +122,7 @@
 /obj/structure/stone_tile{
 	dir = 4
 	},
+/obj/item/stack/sheet/mineral/wood/fifty,
 /turf/open/floor/wood/wood_tiled,
 /area/hilbertshotel)
 "ix" = (
@@ -377,10 +376,10 @@
 /turf/open/floor/carpet/royalblack,
 /area/hilbertshotel)
 "uh" = (
-/obj/structure/weightmachine/weightlifter,
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
 	},
+/obj/structure/weightmachine/weightlifter,
 /turf/open/floor/carpet/black,
 /area/hilbertshotel)
 "ut" = (
@@ -434,9 +433,7 @@
 /turf/open/floor/iron/white/small,
 /area/hilbertshotel)
 "wy" = (
-/obj/structure/weightmachine/weightlifter{
-	icon_state = "punchingbag"
-	},
+/obj/structure/punching_bag,
 /turf/open/floor/carpet/black,
 /area/hilbertshotel)
 "wD" = (
@@ -589,6 +586,10 @@
 	pixel_y = 17
 	},
 /obj/structure/rack/shelf,
+/obj/item/clothing/gloves/boxing/modern,
+/obj/item/clothing/gloves/boxing/modern{
+	pixel_y = -13
+	},
 /turf/open/floor/plasteel/dark,
 /area/hilbertshotel)
 "CG" = (
@@ -720,12 +721,10 @@
 /turf/open/floor/iron/white/small,
 /area/hilbertshotel)
 "Gy" = (
-/obj/structure/weightmachine/weightlifter{
-	icon_state = "stacklifter"
-	},
 /obj/effect/turf_decal/siding/dark{
 	dir = 10
 	},
+/obj/structure/weightmachine/stacklifter,
 /turf/open/floor/carpet/black,
 /area/hilbertshotel)
 "GJ" = (
