@@ -1481,7 +1481,7 @@
 	dir = 8
 	},
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
-/area/ruin/lavaland/unpowered/deepspaceone/main)
+/area/ruin/lavaland/unpowered/deepspaceone/engineering)
 "je" = (
 /obj/effect/turf_decal/tile/dark{
 	dir = 1
@@ -1907,25 +1907,8 @@
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
 "ml" = (
-/obj/effect/turf_decal/siding/thinplating/dark/end{
-	dir = 4
-	},
-/obj/structure/table/reinforced,
+/obj/machinery/smartfridge/drinks,
 /obj/machinery/door/firedoor,
-/obj/effect/turf_decal/tile{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile{
-	dir = 8
-	},
-/obj/machinery/door/window/survival_pod{
-	dir = 8;
-	req_access_txt = "150"
-	},
-/obj/machinery/door/window/survival_pod{
-	dir = 4;
-	req_access_txt = "150"
-	},
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "mm" = (
@@ -3769,7 +3752,7 @@
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
 /obj/item/reagent_containers/food/drinks/beer,
-/turf/open/floor/plasteel,
+/turf/open/floor/iron,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "Ak" = (
 /obj/machinery/power/rtg/advanced,
@@ -4404,7 +4387,7 @@
 "DJ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/firedoor,
-/turf/open/floor/plasteel,
+/turf/open/floor/iron,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "DP" = (
 /obj/effect/turf_decal/stripes/line{
@@ -4881,7 +4864,10 @@
 "Ht" = (
 /obj/structure/table/glass,
 /obj/item/stack/cable_coil,
-/obj/item/mmi/posibrain/syndie,
+/obj/item/mmi/posibrain/syndie{
+	pixel_x = 0;
+	pixel_y = 6
+	},
 /turf/open/floor/iron/dark/side{
 	dir = 6
 	},
@@ -6209,11 +6195,11 @@
 /turf/open/floor/iron,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "Qm" = (
+/obj/effect/turf_decal/bot,
 /obj/structure/frame/computer{
 	dir = 4;
 	anchored = 1
 	},
-/obj/effect/turf_decal/bot,
 /turf/open/floor/iron/dark/side{
 	dir = 9
 	},
@@ -6303,7 +6289,7 @@
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "QN" = (
 /obj/machinery/smartfridge/drinks,
-/turf/open/floor/plasteel,
+/turf/open/floor/iron,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "QQ" = (
 /obj/structure/chair/office/light{
@@ -6961,8 +6947,9 @@
 	},
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "Vi" = (
-/obj/machinery/smartfridge/food,
-/turf/open/floor/plasteel,
+/obj/machinery/door/firedoor,
+/obj/structure/table/reinforced,
+/turf/open/floor/iron,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "Vj" = (
 /obj/machinery/power/rtg/advanced,
@@ -7313,12 +7300,6 @@
 	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
-"Xd" = (
-/obj/machinery/porta_turret/syndicate{
-	dir = 5
-	},
-/turf/closed/wall/mineral/plastitanium/nodiagonal,
-/area/ruin/lavaland/unpowered/deepspaceone/engineering)
 "Xf" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
@@ -7517,7 +7498,8 @@
 "Yk" = (
 /obj/structure/table/glass,
 /obj/machinery/reagentgrinder{
-	pixel_y = 6
+	pixel_y = 12;
+	pixel_x = 0
 	},
 /obj/item/stack/sheet/mineral/plasma{
 	amount = 5
@@ -8077,7 +8059,7 @@ aa
 aa
 aa
 aa
-aa
+ag
 aa
 ag
 ag
@@ -8137,9 +8119,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
 ag
 ag
 ab
@@ -8155,25 +8150,12 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+ag
+ag
+ag
+ag
+ag
+ag
 ag
 ag
 ag
@@ -8196,13 +8178,23 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
 ag
 ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
 ab
 ab
 ab
@@ -8223,22 +8215,12 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+ag
+ag
+ag
+ag
+ag
+ag
 ag
 ag
 ag
@@ -8255,24 +8237,24 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
 ag
 ag
 ag
 ag
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
 ab
 ab
 ab
@@ -8296,15 +8278,15 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
 ag
 ag
 ag
@@ -8315,26 +8297,26 @@ aa
 (6,1,1) = {"
 aa
 aa
-aa
-aa
-ag
-aa
-aa
-aa
 ag
 ag
 ag
 ag
 ag
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
 ab
 ab
 ab
@@ -8359,15 +8341,15 @@ ab
 ab
 ab
 ab
+ag
+ag
+ag
+ag
+ag
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+ag
+ag
 ag
 ag
 aa
@@ -8376,8 +8358,6 @@ aa
 "}
 (7,1,1) = {"
 aa
-aa
-aa
 ag
 ag
 ag
@@ -8385,18 +8365,20 @@ ag
 ag
 ag
 ag
+ag
+ag
 ab
 ag
 ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
+ag
+ag
+ag
+ag
+ag
+ag
 ab
 ab
 ab
@@ -8423,14 +8405,14 @@ ab
 ab
 ab
 ab
+ag
+ag
 ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
+ag
+ag
 ag
 ag
 aa
@@ -8438,14 +8420,13 @@ aa
 "}
 (8,1,1) = {"
 aa
-aa
-ag
-ag
-ab
 ag
 ag
 ag
 ab
+ag
+ag
+ag
 ab
 ab
 ab
@@ -8456,8 +8437,9 @@ ab
 ab
 ab
 ab
-ab
-ab
+ag
+ag
+ag
 ab
 ab
 ab
@@ -8554,7 +8536,7 @@ ab
 ab
 ab
 ab
-ab
+ag
 ag
 ag
 aa
@@ -9413,7 +9395,7 @@ Pt
 YB
 lS
 wo
-Cd
+oB
 Vi
 YN
 zu
@@ -10894,7 +10876,7 @@ ab
 ab
 ab
 ab
-Xd
+KY
 aX
 aX
 aX
@@ -11078,11 +11060,11 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
+ag
+ag
+ag
+ag
+ag
 ab
 ab
 ab
@@ -11139,14 +11121,14 @@ ab
 ab
 ab
 ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
-ab
+ag
+ag
+ag
+ag
+ag
+ag
+ag
+ag
 ab
 ab
 ab
