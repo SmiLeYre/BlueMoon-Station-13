@@ -1202,7 +1202,7 @@
 				T.visible_message("<span class='warning'>The sheer force from [P] shatters the mirror shield!</span>")
 				new /obj/effect/temp_visual/cult/sparks(T)
 				playsound(T, 'sound/effects/glassbr3.ogg', 100)
-				owner.DefaultCombatKnockdown(25)
+				owner.Paralyze(25) //BULEMOON REBALANCE Смена обычного падения на паралич.
 				qdel(src)
 				return BLOCK_NONE
 		. = ..()
