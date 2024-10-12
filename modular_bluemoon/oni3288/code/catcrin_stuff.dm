@@ -60,6 +60,18 @@
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
 
+/obj/item/clothing/head/HoS/mark45_officer
+	name = "Mk. 45 officer helmet"
+	desc = "An Catcrins officer's helmet with special distinguishing marks on it. The personal code of the person who wears this helmet is written on the outside. This one looks worn out, most likely the helmet was removed from the corpse."
+	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
+	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
+	icon_state = "mark45_helmet_officer"
+	item_state = "mark45_helmet_officer"
+	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	flags_cover = HEADCOVERSEYES
+	flags_inv = HIDEHAIR|HIDEEARS
+
 /obj/item/clothing/head/helmet/brigdoc/mark45_medic_l
 	name = "Mk. 45 light medic helmet"
 	desc = "A modified lightweight helmet of Catcrin Army medics to assist in combat encounters. The personal code of the person who wears this helmet is written on the outside. This one looks worn out, most likely the helmet was removed from the corpse."
@@ -136,6 +148,16 @@
 	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
 	icon_state = "mark45_armor_support"
 	item_state = "mark45_armor_support"
+	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+
+/obj/item/clothing/suit/armor/hos/mark45_armor_officer
+	name = "Mk. 45 Officer Аrmor"
+	desc = "Slightly more reinforced armor worn by officers in the Catcrin army with special cape on it's left shoulder. The personal code of the person who wears this armor is written on the outside. This one looks worn out, most likely the armor was removed from the corpse."
+	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
+	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
+	icon_state = "mark45_armor_officer"
+	item_state = "mark45_armor_officer"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
 
@@ -558,6 +580,13 @@
 	restricted_desc = "Security Officer, Peacekeeper."
 	restricted_roles = list("Security Officer", "Peacekeeper")
 
+/datum/gear/suit/mark45_armor_officer
+	name = "Mk. 45 Officer Аrmor set"
+	path = /obj/item/clothing/suit/armor/hos/mark45_armor_officer
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
+	restricted_desc = "Head of Security, Blueshield."
+	restricted_roles = list("Head of Security", "Blueshield")
+
 /datum/gear/suit/mark45_armor_desert
 	name = "Mk. 45 Desert Hunter Armor"
 	path = /obj/item/clothing/suit/armor/mark45_armor_desert
@@ -621,6 +650,13 @@
 	restricted_desc = "Security Officer, Peacekeeper."
 	restricted_roles = list("Security Officer", "Peacekeeper")
 
+/datum/gear/head/HoS/mark45_officer
+	name = "Mk. 45 Officer helmet"
+	path = /obj/item/clothing/head/HoS/mark45_officer
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
+	restricted_desc = "Head of Security, Blueshield."
+	restricted_roles = list("Head of Security", "Blueshield")
+
 /datum/gear/head/helmet/brigdoc/mark45_medic_l
 	name = "Mk. 45 light medic helmet"
 	path = /obj/item/clothing/head/helmet/brigdoc/mark45_medic_l
@@ -653,26 +689,26 @@
 	name = "First Catcrin's tactical gasmask"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_one
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/catcrin_combatmask_two
 	name = "Second Catcrin's tactical gasmask"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_two
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/catcrin_combatmask_tree
 	name = "Thrid Catcrin's tactical gasmask"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_three
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/catcrin_kit
 	name = "Catcrin kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/storage/box/catcrin_kit
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
