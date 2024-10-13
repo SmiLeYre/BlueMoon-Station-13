@@ -676,7 +676,7 @@
 	icon_state = "box_1"
 	},
 /obj/item/circuitboard/machine/stacking_machine,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "aJb" = (
 /obj/structure/stone_tile/surrounding_tile,
@@ -1579,6 +1579,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
+"bxf" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
+	},
+/turf/open/floor/iron/white,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "bxk" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -1762,7 +1768,9 @@
 /turf/open/floor/plasteel,
 /area/mine/laborcamp)
 "bFW" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
 "bGB" = (
@@ -2353,6 +2361,10 @@
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "cgV" = (
@@ -2857,7 +2869,7 @@
 	name = "disposal conveyor"
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "cKK" = (
 /obj/effect/turf_decal/stripes/line,
@@ -2888,8 +2900,8 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/laborcamp)
 "cMr" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/iron/dark/side{
 	dir = 6
 	},
@@ -3197,6 +3209,12 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
+"cZM" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 8
+	},
+/turf/open/floor/iron/white,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "cZW" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 1
@@ -4498,6 +4516,10 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
+"esA" = (
+/obj/machinery/defibrillator_mount/loaded,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "esP" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -4517,9 +4539,8 @@
 /area/ruin/lavaland/unpowered/ash_walkers)
 "etw" = (
 /obj/structure/railing,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 5;
-	level = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
 	},
 /turf/open/floor/iron,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
@@ -4659,9 +4680,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 5;
-	level = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
 	},
 /turf/open/floor/wood,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -5079,9 +5099,8 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "eYf" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 5;
-	level = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
@@ -5678,7 +5697,7 @@
 	dir = 5;
 	id = "interdynedisp"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "fDH" = (
 /obj/structure/railing{
@@ -5787,9 +5806,8 @@
 /turf/open/floor/plasteel/dark,
 /area/mine/production)
 "fKz" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 5;
-	level = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
@@ -6066,12 +6084,8 @@
 /turf/open/floor/engine,
 /area/mine/xenoarch_area_a)
 "fVT" = (
-/obj/machinery/door/airlock/medical/glass{
-	name = "Medbay";
-	req_access_txt = "150"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "fWb" = (
@@ -6200,11 +6214,29 @@
 /turf/open/floor/wood,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "gdj" = (
-/obj/structure/table/optable,
-/obj/effect/turf_decal/stripes/white/line{
-	dir = 4
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/blood/APlus,
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/blood/random,
+/obj/item/reagent_containers/blood/OPlus{
+	pixel_x = -2;
+	pixel_y = -1
 	},
-/obj/effect/turf_decal/bot,
+/obj/item/reagent_containers/blood/OMinus,
+/obj/item/reagent_containers/blood/BPlus{
+	pixel_x = 1;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/blood/BMinus{
+	pixel_x = -4;
+	pixel_y = 4
+	},
+/obj/item/reagent_containers/blood/AMinus,
+/obj/item/reagent_containers/blood,
+/obj/item/reagent_containers/blood,
+/obj/machinery/iv_drip,
+/obj/effect/turf_decal/bot_white,
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "gdn" = (
@@ -6220,6 +6252,9 @@
 "gdV" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -6795,7 +6830,7 @@
 /obj/machinery/conveyor{
 	id = "interdynedisp"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "gIR" = (
 /obj/machinery/door/firedoor,
@@ -6920,9 +6955,8 @@
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 5;
-	level = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
@@ -7489,12 +7523,20 @@
 "hyK" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
-"hzD" = (
-/obj/machinery/smartfridge/organ,
-/obj/effect/turf_decal/stripes/white/line{
-	dir = 9
+"hzt" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
 	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/iron/dark,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
+"hzD" = (
 /obj/effect/turf_decal/bot,
+/obj/machinery/smartfridge/organ,
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "hzH" = (
@@ -7937,6 +7979,13 @@
 /obj/structure/chair/stool,
 /turf/open/floor/plasteel/checker,
 /area/mine/living_quarters)
+"hSw" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/turf/open/floor/iron/dark,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "hTa" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
@@ -8915,6 +8964,10 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 2
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "iYz" = (
@@ -9865,7 +9918,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/obj/machinery/door/airlock/hatch,
 /obj/effect/turf_decal/delivery/white,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
@@ -10676,11 +10728,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/door/airlock/medical/glass{
-	name = "Medbay";
-	req_access_txt = "150"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "kGh" = (
@@ -11080,6 +11128,9 @@
 /area/mine/xenoarch_area_c)
 "kUN" = (
 /obj/effect/turf_decal/siding/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "kVs" = (
@@ -11183,9 +11234,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 5;
-	level = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
@@ -11504,6 +11554,10 @@
 /obj/item/storage/backpack/duffelbag/cursed,
 /turf/open/indestructible/boss,
 /area/ruin/lavaland/unpowered/ash_walkers)
+"lnk" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
+/turf/open/floor/iron/white,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "lon" = (
 /obj/structure/stone_tile/cracked,
 /obj/structure/stone_tile/cracked{
@@ -11568,9 +11622,11 @@
 /area/mine/laborcamp)
 "lro" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
 	},
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
@@ -12163,9 +12219,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 5;
-	level = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
 	},
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
@@ -12613,7 +12668,7 @@
 /area/ruin/lavaland/unpowered/ash_walkers)
 "miz" = (
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "miP" = (
 /obj/machinery/computer/camera_advanced/xenobio{
@@ -13054,9 +13109,8 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 5;
-	level = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
 	},
 /turf/open/floor/wood,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -13495,6 +13549,12 @@
 	name = "Bar";
 	req_access_txt = "150"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "mVD" = (
@@ -13725,9 +13785,6 @@
 /turf/open/floor/clockwork/reebe,
 /area/lavaland/necropolis)
 "nel" = (
-/obj/effect/turf_decal/stripes/end{
-	dir = 4
-	},
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer3{
 	dir = 8
 	},
@@ -13938,9 +13995,8 @@
 "npA" = (
 /obj/structure/fans/tiny,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
-/obj/machinery/door/airlock/hatch,
 /obj/effect/turf_decal/delivery/white,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "npX" = (
@@ -14014,6 +14070,9 @@
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 9
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -14345,7 +14404,7 @@
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "nHd" = (
 /obj/structure/stone_tile{
@@ -14957,7 +15016,7 @@
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 9
 	},
-/obj/effect/turf_decal/bot_white,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "ola" = (
@@ -15065,6 +15124,7 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "oqT" = (
@@ -16204,7 +16264,7 @@
 	dir = 6;
 	id = "interdynedisp"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "pHL" = (
 /obj/structure/disposalpipe/segment{
@@ -16358,9 +16418,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 5;
-	level = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
 	},
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
@@ -16442,7 +16501,7 @@
 /obj/machinery/airalarm/directional/north{
 	req_access_txt = "150"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "pSY" = (
 /obj/structure/stone_tile,
@@ -16458,6 +16517,15 @@
 /obj/item/flashlight/lantern,
 /turf/open/indestructible/boss,
 /area/ruin/lavaland/unpowered/ash_walkers)
+"pTx" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/iron/cafeteria,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "pUS" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
@@ -16497,6 +16565,8 @@
 "pVK" = (
 /obj/structure/disposalpipe/segment,
 /obj/effect/turf_decal/tile/dark,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/iron,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "pVO" = (
@@ -16571,7 +16641,7 @@
 	id = "interdynedisp";
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "qaf" = (
 /obj/structure/stone_tile/surrounding/cracked,
@@ -16707,6 +16777,10 @@
 	},
 /turf/closed/mineral/random/volcanic,
 /area/ruin/lavaland/unpowered/ash_walkers)
+"qeC" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/turf/open/floor/iron/white,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "qfS" = (
 /obj/structure/stone_tile,
 /obj/structure/stone_tile{
@@ -18062,6 +18136,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/xenoarch_area_a)
+"rlU" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 6
+	},
+/turf/open/floor/iron/white,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "rlZ" = (
 /obj/structure/table/wood/mushroom,
 /obj/item/clothing/under/costume/gladiator/ash_walker{
@@ -19332,6 +19415,10 @@
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "sEf" = (
@@ -19357,7 +19444,7 @@
 	dir = 4
 	},
 /obj/machinery/light,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "sER" = (
 /obj/structure/stone_tile/block{
@@ -19531,7 +19618,7 @@
 	req_access_txt = "150"
 	},
 /obj/structure/disposalpipe/segment,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "sPu" = (
 /obj/structure/table/wood/mushroom,
@@ -19561,14 +19648,14 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 8
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 10
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 8
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden{
+	dir = 1
 	},
 /turf/open/floor/iron/large,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -19899,9 +19986,8 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 5;
-	level = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/iron/dark/side{
@@ -20500,6 +20586,12 @@
 /obj/item/toy/figure/syndie,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered)
+"tOy" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on{
+	dir = 2
+	},
+/turf/open/floor/iron/white,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "tPn" = (
 /obj/structure/stone_tile/block{
 	dir = 1
@@ -22086,6 +22178,9 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/dark/corner,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 6
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "vrB" = (
@@ -22523,6 +22618,15 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
+"vSP" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "vTT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
@@ -23560,9 +23664,8 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 5;
-	level = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
 	},
 /turf/open/floor/engine,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
@@ -23928,6 +24031,12 @@
 /obj/machinery/air_sensor/atmos/oxygen_tank,
 /turf/open/floor/engine/o2,
 /area/mine/xenoarch_area_a)
+"xgp" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
+/turf/open/floor/iron/white,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "xgW" = (
 /obj/machinery/light,
 /obj/effect/turf_decal/tile/red,
@@ -24311,7 +24420,7 @@
 	dir = 10
 	},
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "xyb" = (
 /obj/structure/stone_tile/block{
@@ -24727,6 +24836,8 @@
 	name = "Bar";
 	req_access_txt = "150"
 	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "xQm" = (
@@ -25056,35 +25167,12 @@
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
 "ylx" = (
-/obj/structure/closet/crate/freezer,
-/obj/item/reagent_containers/blood/random,
-/obj/item/reagent_containers/blood/APlus,
-/obj/item/reagent_containers/blood/random,
-/obj/item/reagent_containers/blood/random,
-/obj/item/reagent_containers/blood/OPlus{
-	pixel_x = -2;
-	pixel_y = -1
-	},
-/obj/item/reagent_containers/blood/OMinus,
-/obj/item/reagent_containers/blood/BPlus{
-	pixel_x = 1;
-	pixel_y = 2
-	},
-/obj/item/reagent_containers/blood/BMinus{
-	pixel_x = -4;
-	pixel_y = 4
-	},
-/obj/item/reagent_containers/blood/AMinus,
-/obj/item/reagent_containers/blood,
-/obj/item/reagent_containers/blood,
-/obj/machinery/iv_drip,
-/obj/machinery/defibrillator_mount/loaded{
-	pixel_x = 28
-	},
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 5
 	},
-/obj/effect/turf_decal/bot_white,
+/obj/structure/table/optable,
+/obj/structure/table/optable,
+/obj/effect/turf_decal/bot,
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 
@@ -101555,8 +101643,8 @@ cpr
 nBi
 nBi
 nBi
-nBi
-nBi
+tOy
+xgp
 qyq
 biw
 hyK
@@ -101813,7 +101901,7 @@ nBi
 oKu
 tte
 xbq
-nBi
+cZM
 qyq
 ohc
 hyK
@@ -102067,10 +102155,10 @@ nXf
 hyK
 qNx
 nBi
-nBi
-nBi
-nBi
-nBi
+lnk
+qeC
+rlU
+bxf
 qyq
 jwZ
 hyK
@@ -102326,7 +102414,7 @@ aOt
 qyq
 acX
 mEH
-qyq
+pTx
 qyq
 dPC
 dtU
@@ -102840,7 +102928,7 @@ mLb
 hXt
 lkl
 qkc
-hXt
+vSP
 lkl
 hyK
 tfw
@@ -103094,8 +103182,8 @@ mUY
 nXf
 bey
 vrw
-iYv
-iYv
+hSw
+hSw
 iYv
 sDX
 lkl
@@ -103865,7 +103953,7 @@ sSA
 pVK
 xPl
 cgC
-oqi
+hzt
 oqi
 oqi
 nsP
@@ -105910,7 +105998,7 @@ wLK
 vFB
 rAz
 gvi
-wLK
+esA
 tfw
 tfw
 tfw
