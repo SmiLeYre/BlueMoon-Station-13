@@ -1433,7 +1433,6 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		ADMIN_PUNISHMENT_PIE,
 		ADMIN_PUNISHMENT_CUSTOM_PIE,
 		ADMIN_PUNISHMENT_AIKO,
-		ADMIN_PUNISHMENT_CUM_JAR,
 		ADMIN_PUNISHMENT_FIREBALL,
 		ADMIN_PUNISHMENT_LIGHTNING,
 		ADMIN_PUNISHMENT_BRAINDAMAGE,
@@ -1560,18 +1559,6 @@ Traitors and the like can also be revived with the previous role mostly intact.
 					human_target.visible_message("[old_name] transforms into [human_target.real_name]")
 					message_admins("[key_name(human_target)]'s dna has been loaded from the punishment buffer.")
 
-		if(ADMIN_PUNISHMENT_CUM_JAR)
-			var/ass = tgui_alert(usr, "Ты уверен?","SECURE. CONTAIN. PROTECT.", list("Да.","Нет."))
-			if(ass=="Нет.")
-				return
-
-			log_admin("[usr.ckey] enforced containment protocols after [target.ckey].")
-			to_chat(usr, span_notice("Preparing containment protocols..."))
-			sleep(10 SECONDS)
-			to_chat(usr, span_alert("Enforcing containment protocols..."))
-			new /obj/item/cum_jar(get_turf(target))
-			to_chat(usr, span_alert("Containment protocols enforced."))
-			return
 		if(ADMIN_PUNISHMENT_CRACK)
 			if(!iscarbon(target))
 				to_chat(usr,"<span class='warning'>This must be used on a carbon mob.</span>", confidential = TRUE)

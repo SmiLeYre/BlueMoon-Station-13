@@ -52,6 +52,7 @@
 /obj/item/storage/belt/utility/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	var/static/list/can_hold = typecacheof(list(
 		/obj/item/crowbar,
 		/obj/item/screwdriver,
@@ -78,7 +79,10 @@
 		/obj/item/inducer,
 		/obj/item/lightreplacer,
 		/obj/item/healthanalyzer, /// Для робототехников
-		/obj/item/surgical_drapes ///
+		/obj/item/surgical_drapes, ///
+        /obj/item/construction/rcd,
+        /obj/item/construction/rld,
+        /obj/item/pipe_dispenser,
 		))
 	STR.can_hold = can_hold
 

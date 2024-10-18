@@ -4489,7 +4489,6 @@
 #include "modular_bluemoon\SmiLeY\aesthetics\sauna\sauna_oven.dm"
 #include "modular_bluemoon\SmiLeY\aesthetics\sign\_signs.dm"
 #include "modular_bluemoon\SmiLeY\all_in\coffeemaker.dm"
-#include "modular_bluemoon\SmiLeY\all_in\cum_jar.dm"
 #include "modular_bluemoon\SmiLeY\all_in\landmarks.dm"
 #include "modular_bluemoon\SmiLeY\all_in\wallmount.dm"
 #include "modular_bluemoon\SmiLeY\all_in\security\barricades\barricades.dm"

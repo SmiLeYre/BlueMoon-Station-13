@@ -76,7 +76,7 @@
 	name = "horns of blue flame"
 	slot = ITEM_SLOT_HEAD
 	path = /obj/item/clothing/head/donator/bm/blueflame
-	ckeywhitelist = list("weirdbutton")
+	ckeywhitelist = list("weirdbutton", "xaeshkavd")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/gorka
@@ -97,7 +97,7 @@
 	name = "lightning holo-cloak"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/donator/bm/lightning_holocloak
-	ckeywhitelist = list("weirdbutton")
+	ckeywhitelist = list("weirdbutton", "xaeshkavd")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/modern_suit
@@ -810,56 +810,56 @@
 	name = "AT-41 Kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/at41_kit
-	ckeywhitelist = list("allazarius", "flippingtable")
+	ckeywhitelist = list("allazarius", "flippingtable", "mihana964")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/SATT_combat_uniform
 	name = "SATT combat uniform"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/under/donator/bm/SATT_combat_uniform
-	ckeywhitelist = list("allazarius", "flippingtable")
+	ckeywhitelist = list("allazarius", "flippingtable", "mihana964")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/SATT_turtleneck
 	name = "SATT turtleneck"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/under/donator/bm/SATT_turtleneck
-	ckeywhitelist = list("allazarius", "flippingtable")
+	ckeywhitelist = list("allazarius", "flippingtable", "mihana964")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/SATT_vdv
 	name = "SATT vdv uniform"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/SATT_vdv
-	ckeywhitelist = list("allazarius", "flippingtable")
+	ckeywhitelist = list("allazarius", "flippingtable", "mihana964")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/SATT_jackboots
 	name = "SATT jackboots"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/shoes/jackboots/SATT_jackboots
-	ckeywhitelist = list("allazarius", "flippingtable")
+	ckeywhitelist = list("allazarius", "flippingtable", "mihana964")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/SATTdogtag
 	name = "SATT dogtag"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/accessory/SATTdogtag
-	ckeywhitelist = list("allazarius", "flippingtable")
+	ckeywhitelist = list("allazarius", "flippingtable", "mihana964")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/SATT_gloves
 	name = "SATT gloves"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/gloves/SATT_gloves
-	ckeywhitelist = list("allazarius", "flippingtable")
+	ckeywhitelist = list("allazarius", "flippingtable", "mihana964")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/SATT_gloves_finger
 	name = "Fingerless SATT gloves"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/gloves/fingerless/SATT_gloves_finger
-	ckeywhitelist = list("allazarius", "flippingtable")
+	ckeywhitelist = list("allazarius", "flippingtable", "mihana964")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/syndie_jacket
@@ -930,4 +930,11 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/modkit/tagilla
 	ckeywhitelist = list("tequilasunset228")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/warai_kimono
+	name = "Warai Kimono"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/suit/kimono/warai
+	ckeywhitelist =	list("germanrus")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02

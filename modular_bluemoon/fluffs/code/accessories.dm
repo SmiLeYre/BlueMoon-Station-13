@@ -127,3 +127,13 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/shoes.dmi'
 	icon_state = "SATTjackboots"
 	item_state = "SATTjackboots"
+
+////////////////////////
+
+/obj/item/clothing/suit/kimono/warai
+	name = "Кимоно 笑い"
+	desc = "Дорогая одежда на восточный мотив. Слишком большая для ношения существами без дополнительных пар лап. При детальном осмотре выясняется что соткана она из необычного материала, а именно сушеных сухожилий и чьей то шерсти. Вдоль всего кимоно виднеются позвонки и выпирающие ребра, что улучшают прочность одеяния. Так же имеется что то типа самурайской пластинчатой брони под кимоно, состоящих из плоских костей. А еще местами виднеется орнамент в виде странных цветов... вам показалось или они моргают?"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_ALL_TAURIC
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/uniform_digi.dmi'
+	taur_mob_worn_overlay = 'modular_sand/icons/mob/suits_taur.dmi'

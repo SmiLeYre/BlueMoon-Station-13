@@ -1121,3 +1121,7 @@
 /datum/sprite_accessory/hair_gradient/wavy_spike
 	name = "Spiked Wavy"
 	icon_state = "wavy_spiked"
+
+/datum/sprite_accessory/hair/s_longfringe
+    name = "Smooth Long Fringe"
+    icon_state = "s_hair_longfringe"
