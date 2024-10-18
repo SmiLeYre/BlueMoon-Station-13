@@ -344,3 +344,21 @@
 		while(exp_read.NextRow())
 			play_records[exp_read.item[1]] = text2num(exp_read.item[2])
 	qdel(exp_read)
+
+GLOBAL_LIST_EMPTY(bot_event_sending_que)
+
+/datum/world_topic/recieve_info
+	key = "recieve_info"
+
+/datum/world_topic/recieve_info/Run(list/input)
+	data = list()
+
+	if(!length(GLOB.bot_event_sending_que))
+		statuscode = 501
+		response = "No events pool."
+		return
+
+	data["events"] = GLOB.bot_event_sending_que
+	GLOB.bot_event_sending_que = list()
+	statuscode = 200
+	response = "Events sended."
