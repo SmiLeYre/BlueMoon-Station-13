@@ -34,7 +34,7 @@ SUBSYSTEM_DEF(topic)
 			keys |= anonymous_functions
 		GLOB.topic_tokens[token] = keys
 
-	return SS_INIT_SUCCESS
+	return ..()
 
 /datum/config_entry/keyed_list/topic_tokens
 	key_mode = KEY_MODE_TEXT
