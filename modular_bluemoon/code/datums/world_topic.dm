@@ -254,8 +254,13 @@
 		response = "No linked Discord."
 		return
 
+	statuscode = 500
+	response = "Something went wrong in generation, address issues."
+
 	data["ckey"] = player_link.ckey
 	data["discord_id"] = player_link.discord_id
+	if(input["additional"])
+		request_additional_data(data)
 	statuscode = 200
 	response = "Lookup successful."
 
@@ -272,7 +277,70 @@
 		response = "Database lookup failed."
 		return
 
+	statuscode = 500
+	response = "Something went wrong in generation, address issues."
+
 	data["ckey"] = player_link.ckey
 	data["discord_id"] = player_link.discord_id
+	if(input["additional"])
+		request_additional_data(data)
 	statuscode = 200
 	response = "Lookup successful."
+
+/proc/request_additional_data(list/data)
+	//BANS
+	var/datum/db_query/query_search_bans = SSdbcore.NewQuery({"
+		SELECT id, bantime, bantype, reason, job, duration, expiration_time, IFNULL((SELECT byond_key FROM [format_table_name("player")] WHERE [format_table_name("player")].ckey = [format_table_name("ban")].ckey), ckey), IFNULL((SELECT byond_key FROM [format_table_name("player")] WHERE [format_table_name("player")].ckey = [format_table_name("ban")].a_ckey), a_ckey), unbanned, IFNULL((SELECT byond_key FROM [format_table_name("player")] WHERE [format_table_name("player")].ckey = [format_table_name("ban")].unbanned_ckey), unbanned_ckey), unbanned_datetime, edits, round_id
+		FROM [format_table_name("ban")]
+		WHERE ckey = :ckey ORDER BY bantime"}, list("ckey" = data["ckey"]))
+	if(query_search_bans.Execute())
+		data["bans"] = list()
+		while(query_search_bans.NextRow())
+			if(query_search_bans.item[10])
+				continue
+
+			data["bans"] += list(list(
+				"bantime" = query_search_bans.item[2],
+				"bantype"  = query_search_bans.item[3],
+				"reason" = query_search_bans.item[4],
+				"job" = query_search_bans.item[5],
+				"duration" = query_search_bans.item[6],
+				"expiration" = query_search_bans.item[7],
+				"round_id" = query_search_bans.item[14]
+			))
+	qdel(query_search_bans)
+
+	//NOTES
+	var/datum/db_query/query_get_messages = SSdbcore.NewQuery({"
+		SELECT
+			IFNULL((SELECT byond_key FROM [format_table_name("player")] WHERE ckey = adminckey), adminckey),
+			text,
+			timestamp,
+			IFNULL((SELECT byond_key FROM [format_table_name("player")] WHERE ckey = lasteditor), lasteditor)
+		FROM [format_table_name("messages")]
+		WHERE type = :type
+		AND deleted = 0
+		AND (expire_timestamp > NOW() OR expire_timestamp IS NULL)
+		AND targetckey = :targetckey)
+	"}, list("targetckey" = data["ckey"]))
+	if(query_get_messages.Execute())
+		data["notes"] = list()
+		while(query_get_messages.NextRow())
+			data["notes"] += list(list(
+				"admin_key" = query_get_messages.item[1],
+				"text" = query_get_messages.item[2],
+				"timestamp" = query_get_messages.item[3],
+				"editor_key" = query_get_messages.item[4]
+			))
+	qdel(query_get_messages)
+
+	var/datum/db_query/exp_read = SSdbcore.NewQuery(
+		"SELECT job, minutes FROM [format_table_name("role_time")] WHERE ckey = :ckey",
+		list("ckey" = data["ckey"])
+	)
+	if(exp_read.Execute())
+		var/list/play_records = list()
+		data["playtimes"] = play_records
+		while(exp_read.NextRow())
+			play_records[exp_read.item[1]] = text2num(exp_read.item[2])
+	qdel(exp_read)
