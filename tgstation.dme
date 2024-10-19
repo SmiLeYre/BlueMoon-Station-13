@@ -4174,6 +4174,7 @@
 #include "modular_bluemoon\code\game\objects\effects\decals\cleanable\misc.dm"
 #include "modular_bluemoon\code\game\objects\items\pinpointer.dm"
 #include "modular_bluemoon\code\game\objects\items\plushes.dm"
+#include "modular_bluemoon\code\game\objects\items\lewd_items\genital_equipment\chastity\flat_chastity_cage.dm"
 #include "modular_bluemoon\code\modules\admin\verbs\one_click_antag.dm"
 #include "modular_bluemoon\code\modules\antagonists\bloodsucker.dm"
 #include "modular_bluemoon\code\modules\antagonists\bloodsucker_crypt.dm"

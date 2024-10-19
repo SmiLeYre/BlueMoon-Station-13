@@ -66,7 +66,7 @@
 /obj/item/genital_equipment/chastity_cage/item_inserted(datum/source, obj/item/organ/genital/G, mob/user)
 	. = TRUE
 
-	RegisterSignal(equipment.get_wearer(), COMSIG_MOB_GENITAL_TRY_INSERTING)
+	//RegisterSignal(equipment.get_wearer(), COMSIG_MOB_GENITAL_TRY_INSERTING)
 
 	if(belt)
 		return belt.handle_cage_equipping(source, G, user)
@@ -144,7 +144,7 @@
 /obj/item/genital_equipment/chastity_cage/item_removed(datum/source, obj/item/organ/genital/G, mob/user)
 	. = TRUE
 
-	UnregisterSignal(equipment.get_wearer(), COMSIG_MOB_GENITAL_TRY_INSERTING)
+	//UnregisterSignal(equipment.get_wearer(), COMSIG_MOB_GENITAL_TRY_INSERTING)
 	if(belt)
 		return belt.handle_cage_dropping(source, G, user)
 
