@@ -100,6 +100,7 @@
 			"player" = target_ckey,
 			"admin_ckey" = admin_ckey,
 			"text" = text,
+			"timestamp" = timestamp,
 			"round" = GLOB.round_id
 		))
 
