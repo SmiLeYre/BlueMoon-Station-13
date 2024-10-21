@@ -177,7 +177,7 @@
 		qdel(query)
 	else
 		var/datum/db_query/query = SSdbcore.NewQuery(
-			"INSERT INTO [format_table_name("discord_link")] (ckey, discord_id, valid) VALUES (:ckey, :discord_id, 1)",
+			"INSERT INTO [format_table_name("discord_links")] (ckey, discord_id, valid) VALUES (:ckey, :discord_id, 1)",
 			list("ckey" = input["ckey"], "discord_id" = input["discord_id"])
 		)
 		query.Execute()
