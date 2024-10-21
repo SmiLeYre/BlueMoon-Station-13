@@ -76,7 +76,7 @@
 
 	data["map_name"] = null
 	if(SSmapping.config)
-		.["map_name"] = SSmapping.config.map_name
+		data["map_name"] = SSmapping.config.map_name
 
 	data["players"] = length(GLOB.clients)
 
