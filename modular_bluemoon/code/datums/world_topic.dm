@@ -116,6 +116,7 @@
 
 /datum/world_topic/certify/Run(list/input)
 	data = list()
+	var/discord_id = text2num(input["discord_id"])
 
 	var/datum/discord_link_record/player_link = SSdiscord.find_discord_link_by_token(input["identifier"])
 	if(!player_link)
@@ -133,7 +134,7 @@
 		response = "Player already authenticated."
 		return
 
-	var/datum/discord_link_record/id_player_link = SSdiscord.find_discord_link_by_discord_id(input["discord_id"])
+	var/datum/discord_link_record/id_player_link = SSdiscord.find_discord_link_by_discord_id(discord_id)
 	if(id_player_link)
 		statuscode = 504
 		response = "Discord ID already verified."
@@ -141,7 +142,7 @@
 
 	var/datum/db_query/query = SSdbcore.NewQuery(
 		"UPDATE [format_table_name("discord_links")] SET valid = 1, discord_id = :discord_id WHERE token = :token",
-		list("discord_id" = input["discord_id"], "token" = input["identifier"])
+		list("discord_id" = discord_id, "token" = input["identifier"])
 	)
 	query.Execute()
 	qdel(query)
@@ -155,6 +156,7 @@
 
 /datum/world_topic/certify_by_ckey/Run(list/input)
 	data = list()
+	var/discord_id = text2num(input["discord_id"])
 
 	var/datum/discord_link_record/player_link = SSdiscord.find_discord_link_by_token(input["ckey"])
 	if(player_link && player_link.discord_id)
@@ -162,7 +164,7 @@
 		response = "Player already authenticated."
 		return
 
-	var/datum/discord_link_record/id_player_link = SSdiscord.find_discord_link_by_discord_id(input["discord_id"])
+	var/datum/discord_link_record/id_player_link = SSdiscord.find_discord_link_by_discord_id(discord_id)
 	if(id_player_link)
 		statuscode = 504
 		response = "Discord ID already verified."
@@ -171,14 +173,14 @@
 	if(player_link)
 		var/datum/db_query/query = SSdbcore.NewQuery(
 			"UPDATE [format_table_name("discord_links")] SET valid = 1, discord_id = :discord_id WHERE ckey = :ckey",
-			list("discord_id" = input["discord_id"], "ckey" = input["ckey"])
+			list("discord_id" = discord_id, "ckey" = input["ckey"])
 		)
 		query.Execute()
 		qdel(query)
 	else
 		var/datum/db_query/query = SSdbcore.NewQuery(
 			"INSERT INTO [format_table_name("discord_links")] (ckey, discord_id, valid) VALUES (:ckey, :discord_id, 1)",
-			list("ckey" = input["ckey"], "discord_id" = input["discord_id"])
+			list("ckey" = input["ckey"], "discord_id" = discord_id)
 		)
 		query.Execute()
 		qdel(query)
@@ -222,8 +224,9 @@
 
 /datum/world_topic/decertify_by_discord_id/Run(list/input)
 	data = list()
+	var/discord_id = text2num(input["discord_id"])
 
-	var/datum/discord_link_record/player_link = SSdiscord.find_discord_link_by_discord_id(input["discord_id"])
+	var/datum/discord_link_record/player_link = SSdiscord.find_discord_link_by_discord_id(discord_id)
 	if(!player_link)
 		statuscode = 500
 		response = "Database lookup failed."
@@ -247,8 +250,9 @@
 
 /datum/world_topic/lookup_discord_id/Run(list/input)
 	data = list()
+	var/discord_id = text2num(input["discord_id"])
 
-	var/datum/discord_link_record/player_link = SSdiscord.find_discord_link_by_discord_id(input["discord_id"])
+	var/datum/discord_link_record/player_link = SSdiscord.find_discord_link_by_discord_id(discord_id)
 	if(!player_link)
 		statuscode = 501
 		response = "No linked Discord."
