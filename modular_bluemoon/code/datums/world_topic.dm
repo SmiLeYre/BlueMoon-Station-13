@@ -124,7 +124,8 @@
 		response = "Database query failed"
 		return
 
-	if(player_link.timestamp < world.realtime - 4 HOURS)
+	var/datum/discord_link_record/player_link_timebound = SSdiscord.find_discord_link_by_token(input["identifier"], TRUE)
+	if(!player_link_timebound)
 		statuscode = 501
 		response = "Authentication timed out."
 		return
@@ -170,20 +171,20 @@
 		response = "Discord ID already verified."
 		return
 
+	var/datum/db_query/query
 	if(player_link)
-		var/datum/db_query/query = SSdbcore.NewQuery(
+		query = SSdbcore.NewQuery(
 			"UPDATE [format_table_name("discord_links")] SET valid = 1, discord_id = :discord_id WHERE ckey = :ckey",
 			list("discord_id" = discord_id, "ckey" = input["ckey"])
 		)
-		query.Execute()
-		qdel(query)
 	else
-		var/datum/db_query/query = SSdbcore.NewQuery(
+		query = SSdbcore.NewQuery(
 			"INSERT INTO [format_table_name("discord_links")] (ckey, discord_id, valid) VALUES (:ckey, :discord_id, 1)",
 			list("ckey" = input["ckey"], "discord_id" = discord_id)
 		)
-		query.Execute()
-		qdel(query)
+
+	query.Execute()
+	qdel(query)
 
 	statuscode = 200
 	response = "Successfully certified."
