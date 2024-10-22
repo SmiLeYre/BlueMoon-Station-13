@@ -52,6 +52,7 @@
 /obj/item/storage/belt/utility/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	var/static/list/can_hold = typecacheof(list(
 		/obj/item/crowbar,
 		/obj/item/screwdriver,
@@ -78,7 +79,10 @@
 		/obj/item/inducer,
 		/obj/item/lightreplacer,
 		/obj/item/healthanalyzer, /// Для робототехников
-		/obj/item/surgical_drapes ///
+		/obj/item/surgical_drapes, ///
+        /obj/item/construction/rcd,
+        /obj/item/construction/rld,
+        /obj/item/pipe_dispenser,
 		))
 	STR.can_hold = can_hold
 
@@ -103,7 +107,7 @@
 	new /obj/item/screwdriver/power(src)
 	new /obj/item/crowbar/power(src)
 	new /obj/item/weldingtool/experimental(src)//This can be changed if this is too much
-	new /obj/item/multitool(src)
+	new /obj/item/multitool/tricorder(src)
 	new /obj/item/stack/cable_coil(src,30,pick("red","yellow","orange"))
 	new /obj/item/extinguisher/mini(src)
 	new /obj/item/analyzer/ranged(src)
@@ -176,7 +180,7 @@
 		/obj/item/hypospray/mkii,
 		/obj/item/sensor_device,
 		/obj/item/radio,
-		/obj/item/clothing/gloves/,
+		/obj/item/clothing/gloves,
 		/obj/item/lazarus_injector,
 		/obj/item/bikehorn/rubberducky,
 		/obj/item/clothing/mask/surgical,
@@ -266,6 +270,24 @@
 	new /obj/item/assembly/flash/handheld(src)
 	new /obj/item/melee/baton/loaded(src)
 	update_icon()
+
+/obj/item/storage/belt/military/ert_min/PopulateContents()
+	new /obj/item/melee/transforming/energy/sword/ert_min(src)
+	new /obj/item/restraints/handcuffs(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/restraints/legcuffs/bola/energy(src)
+	new /obj/item/restraints/legcuffs/bola/energy(src)
+
+/obj/item/storage/belt/military/ert_max/PopulateContents()
+	new /obj/item/melee/transforming/energy/sword/ert_max(src)
+	new /obj/item/restraints/handcuffs(src)
+	new /obj/item/assembly/flash/handheld(src)
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/grenade/flashbang(src)
+	new /obj/item/restraints/legcuffs/bola/energy(src)
+	new /obj/item/restraints/legcuffs/bola/energy(src)
 
 /obj/item/storage/belt/mining
 	name = "explorer's webbing"
@@ -877,6 +899,19 @@
 	attack_verb = list("bashed", "slashes", "prods", "pokes")
 	fitting_swords = list(/obj/item/melee/rapier)
 	starting_sword = /obj/item/melee/rapier
+
+/obj/item/storage/belt/sabre/civil
+	name = "Civil Sabre Sheath"
+	fitting_swords = list(/obj/item/melee/sabre, /obj/item/melee/sabre/civil, /obj/item/melee/baton/stunsword)
+	starting_sword = /obj/item/melee/sabre/civil
+
+/obj/item/melee/sabre/civil
+	name = "Off-duty Officer's Sabre"
+	desc = "Изящное оружие."
+	force = 8
+	throwforce = 12
+	armour_penetration = 50
+	block_parry_data = null
 
 /obj/item/storage/belt/sabre/secbelt
 	name = "security sheath"

@@ -56,7 +56,7 @@
 	return ..(NORTH)
 
 /obj/structure/reflector/proc/dir_map_to_angle(dir)
-	return 0
+	return FALSE
 
 /obj/structure/reflector/bullet_act(obj/item/projectile/P)
 	var/pdir = P.dir
@@ -101,7 +101,7 @@
 				return
 
 			user.visible_message("[user] starts to repair [src].",
-								"<span class='notice'>You begin repairing [src]...</span>",
+								"<span class='notice'>Вы начинаете чинить [src]...</span>",
 								"<span class='italics'>You hear welding.</span>")
 			if(W.use_tool(src, user, 40, volume=40))
 				obj_integrity = max_integrity

@@ -50,6 +50,10 @@
 				return TRUE
 			else
 				surgery.status--
+	// BLUEMOON ADD START - перенесено сюда оповещение о неправильном инструменте для предотвращения лишнего дубля
+	if(!success && !tool?.tool_behaviour == TOOL_CAUTERY) // каутеры for some reason вызывают ошибки, более красивого фикса не придумал
+		to_chat(user, "<span class='warning'>This step requires a different tool!</span>")
+	// BLUEMOON ADD END
 	return FALSE
 
 /datum/surgery_step/proc/initiate(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery, try_to_fail = FALSE)
@@ -66,8 +70,12 @@
 		speed_mod = tool.toolspeed //faster tools mean faster surgeries, but also less experience.
 	if(user.mind)
 		speed_mod = user.mind.action_skill_mod(/datum/skill/numerical/surgery, speed_mod, THRESHOLD_UNTRAINED, FALSE)
+	// BLUEMOON ADD START - если операцию умышленно пытаются провалить, игроку стоит знать об этом
+	if(try_to_fail)
+		to_chat(user, span_warning("Вы действуете так, что незаметно провалите этот этап!"))
+	// BLUEMOON ADD END
 	var/delay = time * speed_mod
-	if(target == user)
+	if(target == user && !HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON EDIT - добавлена проверка на роботизированный организм
 		if(HAS_TRAIT(target, TRAIT_PAINKILLER))
 			display_results(user, self_message = "<span class='notice'>You begin performing a surgery on yourself with painkillers, you'll be able to do it faster than without it.</span>")
 			delay = delay * 7
@@ -79,6 +87,24 @@
 		if(implement_type)	//this means it isn't a require hand or any item step.
 			prob_chance = implements[implement_type]
 		prob_chance *= surgery.get_propability_multiplier()
+		// BLUEMOON ADD START - самооперирование - чертовски сложное дело
+		if(HAS_TRAIT(target, TRAIT_BLUEMOON_COMPLEX_MAINTENANCE)) // только роботехники, РД и борги могут ремонтировать таких роботов
+			if(HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM))
+				if(!HAS_TRAIT(user.mind, QUALIFIED_ROBOTIC_MAINTER) && !user.mind.antag_datums) // гост роли и обученный персонал могут оперировать таких синтов
+					to_chat(user, span_warning("Этот протез выглядит слишком сложно... Здесь необходим специалист!"))
+					prob_chance = 0
+		if(target == user)
+			if(HAS_TRAIT(target, CAN_BE_OPERATED_WITHOUT_PAIN)) // Роботам и некоторым другим расам даётся проще. Они не чувствуют боли
+				display_results(target, self_message = "<span class='notice'>Вы пытаетесь [HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM) ? "отремонтироваться" : "вылечитья"] самостоятельно. Это не так сложно, как было бы [HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM) ? "органикам" : "другим расам"], но неудобно.</span>")
+				prob_chance = min(prob_chance, 80)
+			else if(HAS_TRAIT(target, TRAIT_BLUEMOON_FEAR_OF_SURGEONS))
+				to_chat(target, span_danger("Я НЕ СПРАВЛЮСЬ! Я НЕ СМОГУ! Я НЕ СПРАВЛЮСЬ!"))
+				prob_chance = 0
+			else
+				prob_chance = min(prob_chance, 20)
+		if(prob_chance <= 0 && !try_to_fail)
+			to_chat(user, span_warning("Условия операции слишком ужасны, ничего не выйдет!"))
+		// BLUEMOON ADD END
 
 		if((prob(prob_chance) || (iscyborg(user) && !silicons_obey_prob)) && chem_check(target) && !try_to_fail)
 			if(success(user, target, target_zone, tool, surgery))
@@ -89,6 +115,11 @@
 				user.mind?.auto_gain_experience(/datum/skill/numerical/surgery, SKILL_GAIN_SURGERY_PER_STEP * multi)
 				advance = TRUE
 		else
+			// BLUEMOON ADD START - небольшое количество урон за провал этапа для избежания лёгкого брутфорса низкого шанса операций
+			if(tool)
+				var/obj/item/bodypart/affecting = target.get_bodypart(check_zone(user.zone_selected))
+				target.apply_damage(tool.force / 2, tool.damtype, affecting, wound_bonus = tool.wound_bonus, bare_wound_bonus = tool.bare_wound_bonus, sharpness = tool.sharpness)
+			// BLUEMOON ADD END
 			if(failure(user, target, target_zone, tool, surgery))
 				play_failure_sound(user, target, target_zone, tool, surgery)
 				advance = TRUE
@@ -130,7 +161,7 @@
 	playsound(get_turf(target), success_sound, 75, TRUE, falloff_exponent = 12, falloff_distance = 1)
 
 /datum/surgery_step/proc/failure(mob/user, mob/living/target, target_zone, obj/item/tool, datum/surgery/surgery)
-	display_results(user, target, "<span class='warning'>You screw up!</span>",
+	display_results(user, target, "<span class='warning'>You screw up! Repeat the step!</span>", // BLUEMOON EDIT - добавлено про повтор
 		"<span class='warning'>[user] screws up!</span>",
 		"[user] finishes.", TRUE) //By default the patient will notice if the wrong thing has been cut
 	return FALSE

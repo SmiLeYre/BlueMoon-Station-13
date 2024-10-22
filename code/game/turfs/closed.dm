@@ -37,7 +37,7 @@
 	return
 
 /turf/closed/indestructible/acid_act(acidpwr, acid_volume, acid_id)
-	return 0
+	return FALSE
 
 /turf/closed/indestructible/Melt()
 	to_be_destroyed = FALSE
@@ -48,10 +48,12 @@
 
 /turf/closed/indestructible/wall
 	name = "Wall"
-	desc = "A huge chunk of metal used to separate rooms."
+	desc = "A wall with metal plating. Tough."
 	icon = 'icons/turf/walls/wall.dmi'
 	icon_state = "wall"
+	baseturfs = /turf/closed/indestructible/wall
 	smooth = SMOOTH_TRUE
+	canSmoothWith = list(/obj/structure/falsewall, /turf/closed/wall, /turf/closed/indestructible/wall)
 
 /turf/closed/indestructible/oldshuttle
 	name = "strange shuttle wall"

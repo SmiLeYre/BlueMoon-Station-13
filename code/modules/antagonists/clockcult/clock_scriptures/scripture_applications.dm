@@ -213,7 +213,7 @@
 	quickbind = TRUE
 	quickbind_desc = "Creates a clockwork tank, used for frontline combat."
 	object_path = /obj/item/clockwork/construct_chassis/clocktank
-	construct_type = /mob/living/simple_animal/hostile/clocktank
+	construct_type = /mob/living/simple_animal/hostile/clockwork/clocktank
 
 //Summon Neovgre: Summon a very powerful combat mech that explodes when destroyed for massive damage.
 /datum/clockwork_scripture/create_object/summon_arbiter

@@ -163,13 +163,13 @@
 /area/awaymission/vr/murderdome)
 "s" = (
 /obj/structure/rack,
-/obj/item/gun/energy/e_gun/nuclear,
-/obj/item/gun/energy/e_gun/nuclear,
-/obj/item/gun/energy/e_gun/nuclear,
-/obj/item/gun/energy/e_gun/nuclear,
-/obj/item/gun/energy/e_gun/nuclear,
-/obj/item/gun/energy/e_gun/nuclear,
-/obj/item/gun/energy/e_gun/nuclear,
+/obj/item/gun/energy/e_gun/nuclear/pin,
+/obj/item/gun/energy/e_gun/nuclear/pin,
+/obj/item/gun/energy/e_gun/nuclear/pin,
+/obj/item/gun/energy/e_gun/nuclear/pin,
+/obj/item/gun/energy/e_gun/nuclear/pin,
+/obj/item/gun/energy/e_gun/nuclear/pin,
+/obj/item/gun/energy/e_gun/nuclear/pin,
 /turf/open/indestructible,
 /area/awaymission/vr/murderdome)
 "t" = (

@@ -8,17 +8,17 @@
 // -------------: TO FIGHT IT: a squad of at least 4 people with laser rifles.
 // -------------: SPRITES FROM: Travelling Merchant, https://www.paradisestation.org/forum/profile/2715-travelling-merchant/
 
-/mob/living/simple_animal/hostile/poison/terror_spider/prince
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/prince
 	name = "Prince of Terror"
 	desc = "An enormous, terrifying spider. It looks like it is judging everything it sees. Its hide seems armored, and it bears the scars of many battles."
 	ai_target_method = TS_DAMAGE_BRUTE
 	icon_state = "terror_allblack"
 	icon_living = "terror_allblack"
 	icon_dead = "terror_allblack_dead"
-	maxHealth = 1600
-	health = 1600
+	maxHealth = 600
+	health = 600
 	speed = 1.2
-	damage_coeff = list(BRUTE = 0.3, BURN = 0.6, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0.2)
+	damage_coeff = list(BRUTE = 0.3, BURN = 0.6, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 1)
 	deathmessage =  "morbidly growls, flailing and crumbling as death finally washes away the burning hatred in it's eyes."
 	death_sound = 'sound/creatures/terrorspiders/prince_dead.ogg'
 	regeneration = 0 //no healing on life, prince should play agressive
@@ -41,12 +41,12 @@
 	gender = MALE
 	move_resist = MOVE_FORCE_STRONG // no more pushing a several hundred if not thousand pound spider
 
-/mob/living/simple_animal/hostile/poison/terror_spider/prince/death(gibbed)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/prince/death(gibbed)
 	if(can_die() && !hasdied && spider_uo71)
 		UnlockBlastDoors("UO71_SciStorage")
 	return ..()
 
-/mob/living/simple_animal/hostile/poison/terror_spider/prince/spider_specialattack(mob/living/carbon/human/L)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/prince/spider_specialattack(mob/living/carbon/human/L)
 	L.adjustStaminaLoss(35) //3 hits for stam crit
 	if(prob(delimb_chance))
 		if(L.stat != DEAD) //no dismemberment for dead carbons, less griefy

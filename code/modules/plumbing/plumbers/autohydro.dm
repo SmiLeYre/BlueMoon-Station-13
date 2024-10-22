@@ -14,6 +14,8 @@
 	START_PROCESSING(SSobj, src)
 
 /obj/machinery/hydroponics/constructable/automagic/process()
+	if(!myseed)
+		return
 	if(dead)
 		dead = 0
 		qdel(myseed)

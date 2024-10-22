@@ -67,3 +67,12 @@
 	gloves = /obj/item/clothing/gloves/krav_maga/combatglovesplus
 	r_hand = /obj/item/nuclear_challenge/clownops
 	command_radio = TRUE
+
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/syndicate/clownop/leader/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END

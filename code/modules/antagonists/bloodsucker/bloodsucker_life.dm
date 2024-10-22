@@ -17,7 +17,7 @@
 		AddBloodVolume(passive_blood_drain) // -.1 currently
 	if(HandleHealing(1)) 		// Heal
 		if(!notice_healing && owner.current.blood_volume > 0)
-			to_chat(owner, "<span class='notice'>The power of your blood begins knitting your wounds...</span>")
+			to_chat(owner, "<span class='cult'>Сила крови начинает затягивать ваши раны...</span>")
 			notice_healing = TRUE
 	else if(notice_healing)
 		notice_healing = FALSE 	// Apply Low Blood Effects
@@ -147,7 +147,7 @@
 		AddBloodVolume(50)
 		var/obj/item/bodypart/L = C.get_bodypart(targetLimbZone) // 2) Limb returns Damaged
 		L.brute_dam = 60
-		to_chat(C, "<span class='notice'>Your flesh knits as it regrows your [L]!</span>")
+		to_chat(C, "<span class='cult'>Ваша плоть срастается, [L] снова на месте!</span>")
 		playsound(C, 'sound/magic/demon_consume.ogg', 50, TRUE)
 		return TRUE
 
@@ -166,7 +166,7 @@
 
 // I am thirsty for blud!
 /datum/antagonist/bloodsucker/proc/HandleStarving()
-
+/* BLUEMOON REMOVAL - старая механика голода
 	// High: 	Faster Healing
 	// Med: 	Pale
 	// Low: 	Twitch
@@ -190,6 +190,45 @@
 		additional_regen = 0.2
 	else if(owner.current.blood_volume < BLOOD_VOLUME_BAD)
 		additional_regen  = 0.1
+/ BLUEMOON REMOVAL END */
+// BLUEMOON ADD START - новая механика голода
+	// Nutrition - The amount of blood is how full we are.
+	owner.current.set_nutrition(min(owner.current.blood_volume, NUTRITION_LEVEL_FED))
+
+	// BLOOD_VOLUME_GOOD: [336] - Pale
+	//handled in bloodsucker_integration.dm
+
+	// BLOOD_VOLUME_EXIT: [250] - Exit Frenzy (If in one) This is high because we want enough to kill the poor soul they feed off of.
+	if(owner.current.blood_volume >= FRENZY_THRESHOLD_EXIT + (bloodsucker_level * 10) && frenzied)
+		owner.current.remove_status_effect(STATUS_EFFECT_FRENZY)
+	// BLOOD_VOLUME_BAD: [224] - Jitter
+	if(owner.current.blood_volume < BLOOD_VOLUME_BAD && !prob(0.5 && HAS_TRAIT(owner, TRAIT_FAKEDEATH)) && !poweron_masquerade)
+		owner.current.Jitter(4)
+	// BLOOD_VOLUME_SURVIVE: [122] - Blur Vision
+	if(owner.current.blood_volume < BLOOD_VOLUME_SURVIVE)
+		owner.current.blur_eyes(20 - 20 * (owner.current.blood_volume / BLOOD_VOLUME_SURVIVE))
+
+
+
+	// The more blood, the better the Regeneration, get too low blood, and you enter Frenzy.
+	if(owner.current.blood_volume < (FRENZY_THRESHOLD_ENTER + (bloodsucker_level * 10)) && !frenzied) // if(owner.current.blood_volume < (FRENZY_THRESHOLD_ENTER + (bloodsucker_level * 10)) && !frenzied)
+		owner.current.apply_status_effect(STATUS_EFFECT_FRENZY)
+	else if(owner.current.blood_volume < BLOOD_VOLUME_BAD)
+		additional_regen = 0.1
+	else if(owner.current.blood_volume < BLOOD_VOLUME_OKAY)
+		additional_regen = 0.2
+	else if(owner.current.blood_volume < BLOOD_VOLUME_NORMAL)
+		additional_regen = 0.3
+	else if(owner.current.blood_volume < 700)
+		additional_regen = 0.4
+	else
+		additional_regen = 0.5
+
+	if(owner.current.blood_volume <= 0)
+		owner.current.adjustFireLoss(1 * (bloodsucker_level))
+
+// BLUEMOON ADD END
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //			DEATH
@@ -216,7 +255,7 @@
 		return
 				// Disable Powers: Masquerade	* NOTE * This should happen as a FLAW!
 				//if (stat >= UNCONSCIOUS)
-				//	for (var/datum/action/bloodsucker/masquerade/P in powers)
+				//	for (var/datum/action/cooldown/bloodsucker/masquerade/P in powers)
 				//		P.Deactivate()
 		//	TEMP DEATH
 	var/total_brute = owner.current.getBruteLoss_nonProsthetic()
@@ -226,13 +265,13 @@
 	// Died? Convert to Torpor (fake death)
 	if(owner.current.stat >= DEAD)
 		Torpor_Begin()
-		to_chat(owner, "<span class='danger'>Your immortal body will not yet relinquish your soul to the abyss. You enter Torpor.</span>")
+		to_chat(owner, "<span class='cult'>Ваше бессмертное тело еще не отпускает вашу душу бездне. Вы впадаете в Торпор.</span>")
 		sleep(30) //To avoid spam
 		if(poweron_masquerade)
-			to_chat(owner, "<span class='warning'>Your wounds will not heal until you disable the <span class='boldnotice'>Masquerade</span> power.</span>")
+			to_chat(owner, "<span class='cult'>Ваши раны не начнут исцеляться пока <span class='boldnotice'>Маскарад</span> активен.</span>")
 	// End Torpor:
 	else	// No damage, OR toxin healed AND brute healed and NOT in coffin (since you cannot heal burn)
-		if(total_damage <= 0 || total_toxloss <= 0 && total_brute <= 0 && !istype(owner.current.loc, /obj/structure/closet/crate/coffin))
+		if(total_damage <= 0 || total_toxloss <= 0 && total_brute <= 0 /* BLUEMOON REMOVAL START && !istype(owner.current.loc, /obj/structure/closet/crate/coffin) BLUEMOON REMOVAL END*/)
 			// Not Daytime, Not in Torpor, enough health to not die the moment you end torpor
 			if(!SSticker.mode.is_daylight() && HAS_TRAIT_FROM(owner.current, TRAIT_FAKEDEATH, "bloodsucker") && total_damage < owner.current.getMaxHealth())
 				Torpor_End()
@@ -241,8 +280,9 @@
 			owner.current.Unconscious(20, 1)
 
 /datum/antagonist/bloodsucker/proc/Torpor_Begin(amInCoffin = FALSE)
-	owner.current.stat = UNCONSCIOUS
-	owner.current.apply_status_effect(STATUS_EFFECT_UNCONSCIOUS)
+	owner.current.set_stat(UNCONSCIOUS)
+//	owner.current.apply_status_effect(STATUS_EFFECT_UNCONSCIOUS) // BLUEMOON REMOVAL - само собой пропадает при попытке перехода в состояние маскарада. Заменено на смертельную кому
+	ADD_TRAIT(owner.current, TRAIT_DEATHCOMA, "bloodsucker") // BLUEMOON ADD - фиксит возможность вампира ползать, ходить, драться и делать другие действия, если он прожмёт и отключит маскарад в торпоре
 	ADD_TRAIT(owner.current, TRAIT_FAKEDEATH, "bloodsucker") // Come after UNCONSCIOUS or else it fails
 	ADD_TRAIT(owner.current, TRAIT_NODEATH, "bloodsucker")	// Without this, you'll just keep dying while you recover.
 	ADD_TRAIT(owner.current, TRAIT_RESISTHIGHPRESSURE, "bloodsucker")	// So you can heal in space. Otherwise you just...heal forever.
@@ -252,21 +292,22 @@
 	owner.current.update_sight()
 	owner.current.reload_fullscreen()
 	// Disable ALL Powers
-	for(var/datum/action/bloodsucker/power in powers)
+	for(var/datum/action/cooldown/bloodsucker/power in powers)
 		if(power.active && !power.can_use_in_torpor)
 			power.DeactivatePower()
 	if(owner.current.suiciding)
 		owner.current.suiciding = FALSE //Youll die but not for long.
-		to_chat(owner.current, "<span class='warning'>Your body keeps you going, even as you try to end yourself.</span>")
+		to_chat(owner.current, "<span class='cult'>Ваше тело еще держится, вопреки попытке покончить с собой.</span>")
 
 /datum/antagonist/bloodsucker/proc/Torpor_End()
-	owner.current.stat = SOFT_CRIT
-	owner.current.remove_status_effect(STATUS_EFFECT_UNCONSCIOUS)
+	owner.current.set_stat(SOFT_CRIT)
+//	owner.current.remove_status_effect(STATUS_EFFECT_UNCONSCIOUS) // BLUEMOON REMOVAL
+	REMOVE_TRAIT(owner.current, TRAIT_DEATHCOMA, "bloodsucker") // BLUEMOON ADD
 	REMOVE_TRAIT(owner.current, TRAIT_FAKEDEATH, "bloodsucker")
 	REMOVE_TRAIT(owner.current, TRAIT_NODEATH, "bloodsucker")
 	REMOVE_TRAIT(owner.current, TRAIT_RESISTHIGHPRESSURE, "bloodsucker")
 	REMOVE_TRAIT(owner.current, TRAIT_RESISTLOWPRESSURE, "bloodsucker")
-	to_chat(owner, "<span class='warning'>You have recovered from Torpor.</span>")
+	to_chat(owner, "<span class='cult'>Вы пробудились от Торпора.</span>")
 
 
 /datum/antagonist/proc/AmFinalDeath()
@@ -298,16 +339,16 @@
 	FreeAllVassals()
 	// Elders get Dusted
 	if(bloodsucker_level >= 4) // (bloodsucker_title)
-		owner.current.visible_message("<span class='warning'>[owner.current]'s skin crackles and dries, their skin and bones withering to dust. A hollow cry whips from what is now a sandy pile of remains.</span>", \
-			 "<span class='userdanger'>Your soul escapes your withering body as the abyss welcomes you to your Final Death.</span>", \
-			 "<span class='italics'>You hear a dry, crackling sound.</span>")
+		owner.current.visible_message("<span class='warning'>Кожа [owner.current] сохнет и трескается, плоть и кости увядают в пыль. Пустой крик вырывается из того, что теперь всего лишь горстка песчаных останков.</span>", \
+			 "<span class='cult'>Ваша душа покидает увядающее тело, бездна зовёт вас к Окончательной Смерти.</span>", \
+			 "<span class='italics'>Вы слышите сухой, трескающийся звук.</span>")
 		sleep(50)
 		owner.current.dust()
 	// Fledglings get Gibbed
 	else
-		owner.current.visible_message("<span class='warning'>[owner.current]'s skin bursts forth in a spray of gore and detritus. A horrible cry echoes from what is now a wet pile of decaying meat.</span>", \
-			 "<span class='userdanger'>Your soul escapes your withering body as the abyss welcomes you to your Final Death.</span>", \
-			 "<span class='italics'>You hear a wet, bursting sound.</span>")
+		owner.current.visible_message("<span class='warning'> Кожа [owner.current] разрывается каскадом крови и внутренностей. Ужасающий крик доносится из того, что теперь всего лишь влажная горстка разлагающейся плоти.</span>", \
+			 "<span class='cult'>Ваша душа покидает увядающее тело, бездна зовёт вас к Окончательной Смерти.</span>", \
+			 "<span class='italics'>Вы слышите мокрый, разрвающийся звук.</span>")
 		owner.current.gib(TRUE, FALSE, FALSE) //Brain cloning is wierd and allows hellbounds. Lets destroy the brain for safety.
 	playsound(owner.current, 'sound/effects/tendril_destroyed.ogg', 40, TRUE)
 
@@ -344,7 +385,7 @@
 		return
 	// Haven't eaten, but I'm in a Human Disguise.
 	else if(poweron_masquerade && !masquerade_override)
-		to_chat(C, "<span class='notice'>Your stomach turns, but your \"human disguise\" keeps the food down...for now.</span>")
+		to_chat(C, "<span class='cult'>Ваш желудок скрутило, но \"маскировка\" не даёт еде вырваться... пока что.</span>")
 	// Keep looping until we purge. If we have activated our Human Disguise, we ignore the food. But it'll come up eventually...
 	var/sickphase = 0
 	while(foodInGut)
@@ -358,19 +399,19 @@
 		// Put up disguise? Then hold off the vomit.
 		if(poweron_masquerade && !masquerade_override)
 			if(sickphase > 0)
-				to_chat(C, "<span class='notice'>Your stomach settles temporarily. You regain your composure...for now.</span>")
+				to_chat(C, "<span class='cult'>Ваш желудок временно успокаивается. Вы взяли себя в руки... пока что.</span>")
 			sickphase = 0
 			continue
 		switch(sickphase)
 			if(1)
-				to_chat(C, "<span class='warning'>You feel unwell. You can taste ash on your tongue.</span>")
+				to_chat(C, "<span class='cult'>Вы ощущаете себя скудно. На языке появился привкус пепла.</span>")
 				C.Stun(10)
 			if(2)
-				to_chat(C, "<span class='warning'>Your stomach turns. Whatever you ate tastes of grave dirt and brimstone.</span>")
+				to_chat(C, "<span class='cult'>Ваш желудок скрутило. Что бы вы не съели, по вкусу как могильная грязь и сера.</span>")
 				C.Dizzy(15)
 				C.Stun(13)
 			if(3)
-				to_chat(C, "<span class='warning'>You purge the food of the living from your viscera! You've never felt worse.</span>")
+				to_chat(C, "<span class='cult'>Вы изрыгаете пищу Живых из своих внутренностей. Никогда себя хуже не ощущали.</span>")
 				 //Puke blood only if puke_blood is true, and loose some blood, else just puke normally.
 				if(puke_blood)
 					C.blood_volume = max(0, C.blood_volume - foodInGut * 2)

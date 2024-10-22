@@ -157,10 +157,6 @@
 /obj/item/shovel,
 /turf/open/floor/mineral/bananium/airless,
 /area/ruin/unpowered)
-"I" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/mineral/random,
-/area/ruin/unpowered/no_grav)
 
 (1,1,1) = {"
 a
@@ -417,7 +413,7 @@ b
 c
 b
 b
-I
+b
 b
 b
 b

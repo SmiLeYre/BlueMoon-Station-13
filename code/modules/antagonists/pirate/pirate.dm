@@ -6,7 +6,6 @@
 	threat = 5
 	show_to_ghosts = TRUE
 	var/datum/team/pirate/crew
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/pirate/greet()
 	SEND_SOUND(owner.current, sound('sound/ambience/antag/pirate.ogg'))
@@ -71,7 +70,7 @@
 	//Lists notable loot.
 	if(!cargo_hold || !cargo_hold.total_report)
 		return "Свободная задача"
-	cargo_hold.total_report.total_value = sortTim(cargo_hold.total_report.total_value, cmp = /proc/cmp_numeric_dsc, associative = TRUE)
+	cargo_hold.total_report.total_value = sortTim(cargo_hold.total_report.total_value, cmp = GLOBAL_PROC_REF(cmp_numeric_dsc), associative = TRUE)
 	var/count = 0
 	var/list/loot_texts = list()
 	for(var/datum/export/E in cargo_hold.total_report.total_value)

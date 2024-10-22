@@ -93,10 +93,8 @@
 /turf/closed/wall/mineral/titanium/survival/pod,
 /area/survivalpod)
 "p" = (
-/obj/machinery/door/airlock/survival_pod/glass{
-	req_access_txt = "25"
-	},
 /obj/structure/fans/tiny,
+/obj/machinery/door/airlock/survival_pod/glass,
 /turf/open/floor/pod/dark,
 /area/survivalpod)
 "q" = (
@@ -128,9 +126,7 @@
 /turf/open/floor/pod/dark,
 /area/survivalpod)
 "v" = (
-/obj/machinery/door/window/survival_pod{
-	req_access_txt = "25"
-	},
+/obj/machinery/door/window/survival_pod,
 /turf/open/floor/pod/dark,
 /area/survivalpod)
 "w" = (

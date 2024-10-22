@@ -63,7 +63,7 @@
 	dir = 2;
 	dwidth = 6;
 	height = 7;
-	id = "sbc_corvette";
+	shuttle_id = "sbc_corvette";
 	name = "SBC Drop Ship";
 	port_direction = 8;
 	preferred_direction = 4;
@@ -152,12 +152,13 @@
 	},
 /obj/machinery/turretid{
 	ailock = 1;
-	desc = "A specially designed set of turret controls. Looks to be covered in protective casing to prevent AI interfacing.";
+	dir = 1;
 	icon_state = "control_kill";
 	lethal = 1;
-	name = "Ship Turret Control";
-	pixel_x = -29;
-	pixel_y = -3
+	name = "Base turret controls";
+	req_access = null;
+	req_access_txt = "151";
+	pixel_x = -30
 	},
 /turf/open/floor/iron/dark,
 /area/shuttle/sbc_corvette)

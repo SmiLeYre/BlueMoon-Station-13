@@ -16,7 +16,6 @@
 /obj/machinery/door/password/voice
 	voice_activated = TRUE
 
-
 /obj/machinery/door/password/Initialize(mapload)
 	. = ..()
 	if(voice_activated)
@@ -73,4 +72,4 @@
 	return
 
 /obj/machinery/door/password/wave_ex_act(power, datum/wave_explosion/explosion, dir)
-	return 0		//no.
+	return FALSE		//no.

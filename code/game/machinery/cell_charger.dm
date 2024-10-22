@@ -13,13 +13,27 @@
 	var/charge_rate = 250
 	var/recharge_coeff = 1
 
+/obj/machinery/cell_charger/update_overlays()
+	. = ..()
+
+	if(!charging)
+		return
+
+	if(!(machine_stat & (BROKEN|NOPOWER)))
+		var/newlevel = round(charging.percent() * 4 / 100)
+		. += "ccharger-o[newlevel]"
+	if(!charging.charging_icon)
+		. += image(charging.icon, charging.icon_state)
+	else
+		.+= image('icons/obj/power.dmi', charging.charging_icon)
+
 /obj/machinery/cell_charger/examine(mob/user)
 	. = ..()
 	. += "There's [charging ? "\a [charging]" : "no cell"] in the charger."
 	if(charging)
 		. += "Current charge: [round(charging.percent(), 1)]%."
 	if(in_range(user, src) || isobserver(user))
-		. += span_notice("The status display reads: Charging power: <b>[charge_rate]W</b>.")
+		. += span_notice("The status display reads: Charging speed: <b>[recharge_coeff*100]%</b>.")
 
 /obj/machinery/cell_charger/wrench_act(mob/living/user, obj/item/tool)
 	. = ..()
@@ -31,8 +45,8 @@
 
 /obj/machinery/cell_charger/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/stock_parts/cell) && !panel_open)
-		if(stat & BROKEN)
-			to_chat(user, span_warning("[src] is broken!"))
+		if(machine_stat & BROKEN)
+			to_chat(user, "<span class='warning'>[src] is broken!</span>")
 			return
 		if(!anchored)
 			to_chat(user, span_warning("[src] isn't attached to the ground!"))
@@ -112,7 +126,7 @@
 /obj/machinery/cell_charger/emp_act(severity)
 	. = ..()
 
-	if(stat & (BROKEN|NOPOWER) || . & EMP_PROTECT_CONTENTS)
+	if(machine_stat & (BROKEN|NOPOWER) || . & EMP_PROTECT_CONTENTS)
 		return
 
 	if(charging)
@@ -123,7 +137,7 @@
 		recharge_coeff = C.rating
 
 /obj/machinery/cell_charger/process()
-	if(!charging || !anchored || (stat & (BROKEN|NOPOWER)))
+	if(!charging || !anchored || (machine_stat & (BROKEN|NOPOWER)))
 		return
 
 	if(charging)
@@ -134,56 +148,3 @@
 				use_power(250 * recharge_coeff)
 
 	update_icon()
-
-/obj/item/stock_parts/cell
-	icon = 'icons/obj/power.dmi'
-	/// The charge overlay icon file for the cell charge lights
-	var/charging_icon = "cell_in"
-	var/connector_type = null
-
-/obj/item/stock_parts/cell/super
-	charging_icon = "scell_in"
-
-/obj/item/stock_parts/cell/hyper
-	charging_icon = "hpcell_in"
-
-/obj/item/stock_parts/cell/high
-	charging_icon = "hcell_in"
-
-/obj/item/stock_parts/cell/high/plus
-	charging_icon = "hpcell_in"
-
-/obj/item/stock_parts/cell/emproof
-	charging_icon = "hpcell_in"
-
-/obj/item/stock_parts/cell/bluespace
-	charging_icon = "bscell_in"
-
-/obj/item/stock_parts/cell/infinite
-	charging_icon = "icell_in"
-
-/obj/item/stock_parts/cell/potato
-	charging_icon = "potato_in"
-
-/obj/item/stock_parts/cell/high/slime
-	charging_icon = "slime_in"
-
-/obj/item/stock_parts/cell/high/slime
-	charging_icon = "slime_in"
-
-/obj/item/stock_parts/cell/lead
-	charging_icon = "lead_in"
-
-/obj/machinery/cell_charger/update_overlays()
-	. = ..()
-
-	if(!charging)
-		return
-
-	if(!(stat & (BROKEN|NOPOWER)))
-		var/newlevel = round(charging.percent() * 4 / 100)
-		. += "ccharger-o[newlevel]"
-	if(!charging.charging_icon)
-		. += image(charging.icon, charging.icon_state)
-	else
-		.+= image('icons/obj/power.dmi', charging.charging_icon)\

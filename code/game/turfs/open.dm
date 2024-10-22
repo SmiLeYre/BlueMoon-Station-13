@@ -249,7 +249,7 @@
 		if(L.bodytemperature <= 50)
 			L.apply_status_effect(/datum/status_effect/freon)
 	MakeSlippery(TURF_WET_PERMAFROST, 50)
-	return 1
+	return TRUE
 
 /turf/open/proc/water_vapor_gas_act()
 	MakeSlippery(TURF_WET_WATER, min_wet_time = 100, wet_time_to_add = 50)
@@ -311,7 +311,7 @@
 		lube |= SLIDE_ICE
 
 	if(lube&SLIDE)
-		new /datum/forced_movement(C, get_ranged_target_turf(C, olddir, 4), 1, FALSE, CALLBACK(C, /mob/living/carbon/.proc/spin, 1, 1))
+		new /datum/forced_movement(C, get_ranged_target_turf(C, olddir, 4), 1, FALSE, CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon, spin), 1, 1))
 	else if(lube&SLIDE_ICE)
 		new /datum/forced_movement(C, get_ranged_target_turf(C, olddir, 1), 1, FALSE)	//spinning would be bad for ice, fucks up the next dir
 	return TRUE
@@ -330,7 +330,7 @@
 
 /turf/open/rad_act(pulse_strength)
 	. = ..()
-	if (air.get_moles(GAS_CO2) && air.get_moles(GAS_O2))
+	if (air && air.get_moles(GAS_CO2) && air.get_moles(GAS_O2))
 		pulse_strength = min(pulse_strength,air.get_moles(GAS_CO2)*1000,air.get_moles(GAS_O2)*2000) //Ensures matter is conserved properly
 		air.set_moles(GAS_CO2, max(air.get_moles(GAS_CO2)-(pulse_strength/1000),0))
 		air.set_moles(GAS_O2, max(air.get_moles(GAS_O2)-(pulse_strength/2000),0))

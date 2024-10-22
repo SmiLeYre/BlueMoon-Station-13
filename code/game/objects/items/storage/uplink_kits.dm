@@ -85,10 +85,10 @@
 			new /obj/item/implanter/stealth(src)
 
 		if("hacker") // 30 tc
-			new /obj/item/aiModule/syndicate(src)
+			new /obj/item/ai_module/syndicate(src)
 			new /obj/item/card/emag(src)
 			new /obj/item/encryptionkey/binary(src)
-			new /obj/item/aiModule/toyAI(src)
+			new /obj/item/ai_module/toyAI(src)
 			new /obj/item/multitool/ai_detect(src)
 			new /obj/item/flashlight/emp(src)
 			new /obj/item/emagrecharge(src)
@@ -268,12 +268,12 @@
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
 	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/syndicate/inteq, /obj/item/clothing/head/helmet/space/syndicate/inteq))
+	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/syndicate/inteq, /obj/item/clothing/head/helmet/space/syndicate/inteq, /obj/item/tank/internals/emergency_oxygen/double))
 
 /obj/item/storage/box/syndie_kit/space/inteq/PopulateContents()
 	new /obj/item/clothing/suit/space/syndicate/inteq(src) // Black and red is so in right now
 	new /obj/item/clothing/head/helmet/space/syndicate/inteq(src)
-	new /obj/item/tank/internals/emergency_oxygen/engi/syndi(src)
+	new /obj/item/tank/internals/emergency_oxygen/double(src)
 
 /obj/item/storage/box/syndie_kit/emp
 	name = "boxed EMP kit"
@@ -461,6 +461,14 @@
 /obj/item/storage/box/syndie_kit/pistol/PopulateContents()
 	new /obj/item/gun/ballistic/automatic/pistol(src)
 	new /obj/item/ammo_box/magazine/m10mm(src)
+	new /obj/item/ammo_box/magazine/m10mm(src)
+
+/obj/item/storage/box/syndie_kit/aps_pistol
+
+/obj/item/storage/box/syndie_kit/aps_pistol/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/pistol/APS(src)
+	new /obj/item/ammo_box/magazine/pistolm9mm(src)
+	new /obj/item/ammo_box/magazine/pistolm9mm(src)
 
 /obj/item/storage/box/syndie_kit/contract_kit
 	name = "contractor kit"
@@ -544,7 +552,7 @@
 		/obj/item/gun/ballistic/automatic/c20r/toy/unrestricted/riot,
 		/obj/item/reagent_containers/syringe/stimulants,
 		/obj/item/storage/box/syndie_kit/imp_freedom,
-		/obj/item/storage/toolbox/infiltrator
+		/obj/item/storage/toolbox/infiltrator/inteq   ///bluemoon change
 	)
 	var/obj/item1 = pick_n_take(item_list)
 	var/obj/item2 = pick_n_take(item_list)
@@ -600,13 +608,31 @@
 	icon_state = "firstaid-o2"
 	item_state = "firstaid-o2"
 
-/obj/item/storage/box/syndie_kit/space/inteq/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/hardsuit/contractor, /obj/item/tank/internals/emergency_oxygen, /obj/item/clothing/mask/gas))
-
 /obj/item/storage/box/inteq_kit/chameleon_hardsuit/PopulateContents()
 	new /obj/item/clothing/suit/space/hardsuit/contractor(src)
 	new /obj/item/clothing/mask/gas/syndicate(src)
 	new /obj/item/tank/internals/emergency_oxygen/engi/syndi(src)
+
+/obj/item/storage/box/inteq_kit/conversion_kit
+	name = "InteQ Conversion Kit"
+	desc = "Коробка с набором конвертации наушника в bowman headset и ключом-шифратором InteQ. Набор конвертации, после использования на наушнике обеспечивает пользователю защиту от звука светошумовой гранаты. Вставьте в наушник чтобы получить доступ к каналу InteQ (говорить и слышать) и остальным каналам на станции (только слышать)."
+
+/obj/item/storage/box/inteq_kit/conversion_kit/PopulateContents()
+	new /obj/item/headsetupgrader(src)
+	new /obj/item/encryptionkey/inteq(src)
+
+//Bluemoon ADD Добавил бандл с оригами + книгу + бумажки туда же.
+
+/obj/item/storage/box/inteq_kit/origami_bundle
+	name = "Origami Bundle"
+	desc = "Box with book, that will teach you how to use origami to kill your enemies"
+
+/obj/item/storage/box/inteq_kit/origami_bundle/PopulateContents()
+	new /obj/item/book/granter/action/origami(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+
+//Bluemoon ADD end

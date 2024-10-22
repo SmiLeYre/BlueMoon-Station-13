@@ -66,61 +66,61 @@
 
 //Ruin of Hotel
 
-/area/ruin/space/has_grav/hotel
+/area/ruin/space/has_grav/bluemoon/hotel
 	name = "Hotel"
 
-/area/ruin/space/has_grav/hotel/guestroom
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom
 	name = "Hotel Guest Room"
 	icon_state = "Sleep"
 
-/area/ruin/space/has_grav/hotel/guestroom/room_1
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom/room_1
 	name = "Hotel Guest Room 1"
 
-/area/ruin/space/has_grav/hotel/guestroom/room_2
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom/room_2
 	name = "Hotel Guest Room 2"
 
-/area/ruin/space/has_grav/hotel/guestroom/room_3
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom/room_3
 	name = "Hotel Guest Room 3"
 
-/area/ruin/space/has_grav/hotel/guestroom/room_4
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom/room_4
 	name = "Hotel Guest Room 4"
 
-/area/ruin/space/has_grav/hotel/guestroom/room_5
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom/room_5
 	name = "Hotel Guest Room 5"
 
-/area/ruin/space/has_grav/hotel/guestroom/room_6
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom/room_6
 	name = "Hotel Guest Room 6"
 
-/area/ruin/space/has_grav/hotel/security
+/area/ruin/space/has_grav/bluemoon/hotel/security
 	name = "Hotel Security Post"
 	icon_state = "security"
 
-/area/ruin/space/has_grav/hotel/pool
+/area/ruin/space/has_grav/bluemoon/hotel/pool
 	name = "Hotel Pool Room"
 	icon_state = "fitness"
 
-/area/ruin/space/has_grav/hotel/bar
+/area/ruin/space/has_grav/bluemoon/hotel/bar
 	name = "Hotel Bar"
 	icon_state = "cafeteria"
 
-/area/ruin/space/has_grav/hotel/power
+/area/ruin/space/has_grav/bluemoon/hotel/power
 	name = "Hotel Power Room"
 	icon_state = "engine_smes"
 
-/area/ruin/space/has_grav/hotel/custodial
+/area/ruin/space/has_grav/bluemoon/hotel/custodial
 	name = "Hotel Custodial Closet"
 	icon_state = "janitor"
 
-/area/ruin/space/has_grav/hotel/shuttle
+/area/ruin/space/has_grav/bluemoon/hotel/shuttle
 	name = "Hotel Shuttle"
 	icon_state = "shuttle"
 	requires_power = FALSE
 
-/area/ruin/space/has_grav/hotel/dock
+/area/ruin/space/has_grav/bluemoon/hotel/dock
 	name = "Hotel Shuttle Dock"
 	icon_state = "start"
 
-/area/ruin/space/has_grav/hotel/workroom
+/area/ruin/space/has_grav/bluemoon/hotel/workroom
 	name = "Hotel Staff Room"
 	icon_state = "crew_quarters"
 
@@ -521,80 +521,80 @@
 
 //Port Tarkon
 
-/area/ruin/space/has_grav/port_tarkon
+/area/ruin/space/has_grav/bluemoon/port_tarkon
 	name = "P-T Cryo-Storage"
 	always_unpowered = FALSE
 	ambientsounds = HIGHSEC
 
-/area/ruin/space/has_grav/port_tarkon/afthall
+/area/ruin/space/has_grav/bluemoon/port_tarkon/afthall
 	name = "P-T Aft Hallway"
 
-/area/ruin/space/has_grav/port_tarkon/forehall
+/area/ruin/space/has_grav/bluemoon/port_tarkon/forehall
 	name = "P-T Fore Hallway"
 
-/area/ruin/space/has_grav/port_tarkon/starboardhall
+/area/ruin/space/has_grav/bluemoon/port_tarkon/starboardhall
 	name = "P-T Starboard Hallway"
 
-/area/ruin/space/has_grav/port_tarkon/porthall
+/area/ruin/space/has_grav/bluemoon/port_tarkon/porthall
 	name = "P-T Port Hallway"
 
-/area/ruin/space/has_grav/port_tarkon/trauma
+/area/ruin/space/has_grav/bluemoon/port_tarkon/trauma
 	name = "P-T Trauma Center"
 	icon_state = "medbay1"
 
-/area/ruin/space/has_grav/port_tarkon/developement
+/area/ruin/space/has_grav/bluemoon/port_tarkon/developement
 	name = "P-T Developement Center"
 	icon_state = "research"
 
-/area/ruin/space/has_grav/port_tarkon/comms
+/area/ruin/space/has_grav/bluemoon/port_tarkon/comms
 	name = "P-T Communication Center"
 	icon_state = "captain"
 
-/area/ruin/space/has_grav/port_tarkon/power1
+/area/ruin/space/has_grav/bluemoon/port_tarkon/power1
 	name = "P-T Solar Control"
 	icon_state = "engine"
 
-/area/ruin/space/has_grav/port_tarkon/centerhall
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall
 	name = "P-T Central Hallway"
 	icon_state = "hallC"
 
-/area/ruin/space/has_grav/port_tarkon/secoff
+/area/ruin/space/has_grav/bluemoon/port_tarkon/secoff
 	name = "P-T Security Office"
 	icon_state = "security"
 
-/area/ruin/space/has_grav/port_tarkon/atmos
+/area/ruin/space/has_grav/bluemoon/port_tarkon/atmos
 	name = "P-T Atmospheric Center"
 	icon_state = "engine"
 
-/area/ruin/space/has_grav/port_tarkon/kitchen
+/area/ruin/space/has_grav/bluemoon/port_tarkon/kitchen
 	name = "P-T Kitchen"
 	icon_state = "cafeteria"
 
-/area/ruin/space/has_grav/port_tarkon/garden
+/area/ruin/space/has_grav/bluemoon/port_tarkon/garden
 	name = "P-T Garden"
 	icon_state = "garden"
 
-/area/ruin/space/has_grav/port_tarkon/cargo
+/area/ruin/space/has_grav/bluemoon/port_tarkon/cargo
 	name = "P-T Cargo Center"
 	icon_state = "cargo"
 
-/area/ruin/space/has_grav/port_tarkon/mining
+/area/ruin/space/has_grav/bluemoon/port_tarkon/mining
 	name = "P-T Mining Office"
 	icon_state = "cargo"
 
-/area/ruin/space/has_grav/port_tarkon/storage
+/area/ruin/space/has_grav/bluemoon/port_tarkon/storage
 	name = "P-T Warehouse"
 	icon_state = "cargo"
 
-/area/ruin/space/has_grav/port_tarkon/toolstorage
+/area/ruin/space/has_grav/bluemoon/port_tarkon/toolstorage
 	name = "P-T Tool Storage"
 	icon_state = "tool_storage"
 
-/area/ruin/space/has_grav/port_tarkon/observ
+/area/ruin/space/has_grav/bluemoon/port_tarkon/observ
 	name = "P-T Observatory"
 	icon_state = "crew_quarters"
 
-/area/ruin/space/has_grav/port_tarkon/dorms
+/area/ruin/space/has_grav/bluemoon/port_tarkon/dorms
 	name = "P-T Dorms"
 	icon_state = "crew_quarters"
 
@@ -766,7 +766,7 @@
 
 //SYNDICATE LISTENING POST STATION
 
-/area/ruin/space/has_grav/listeningstation
+/area/ruin/space/has_grav/bluemoon/listeningstation
 	name = "Listening Post"
 	icon_state = "yellow"
 

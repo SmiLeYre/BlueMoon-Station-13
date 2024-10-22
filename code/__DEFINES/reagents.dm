@@ -57,6 +57,7 @@
 #define ADD_REAGENT		2	// reagent added
 #define REM_REAGENT		3	// reagent removed (may still exist)
 
+#define PATCH_STYLE_COUNT 12 // BM add
 
 #define PILL_STYLE_COUNT 22 //Update this if you add more pill icons or you die (literally, we'll toss a nuke at whever your ip turns up)
 #define RANDOM_PILL_STYLE 22 //Dont change this one though

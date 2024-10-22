@@ -84,7 +84,11 @@
 					/obj/item/clothing/mask/balaclava/pmc_leader_balaclava = 2,
 					/obj/item/clothing/head/HoS/pmc_leader_cap = 2,
 					/obj/item/clothing/head/HoS/pmc_leader_beret = 2,
-					/obj/item/clothing/suit/armor/hos/pmc_leader_armor = 2)
+					/obj/item/clothing/suit/armor/hos/pmc_leader_armor = 2,
+					/obj/item/clothing/under/syndicate/maid = 2,
+					/obj/item/clothing/under/syndicate/maid_revealing = 2,
+					/obj/item/clothing/gloves/combat/maid = 2,
+					/obj/item/clothing/head/maid/syndicate = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/blueshield_wardrobe
 	payment_department = ACCOUNT_SEC
 	light_color = COLOR_STRONG_BLUE
@@ -165,3 +169,10 @@
 
 /obj/item/vending_refill/wardrobe/hos_wardrobe
 	machine_name = "HOSDrobe"
+
+/obj/machinery/vending/wardrobe/chap_wardrobe/Initialize(mapload)
+	var/list/extra_premium = list(
+		/obj/item/choice_beacon/ouija = 1
+	)
+	LAZYADD(products, extra_premium)
+	. = ..()

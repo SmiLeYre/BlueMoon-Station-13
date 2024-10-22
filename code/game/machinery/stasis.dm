@@ -1,6 +1,6 @@
 #define STASIS_TOGGLE_COOLDOWN 50
 /obj/machinery/stasis
-	name = "lifeform stasis unit"
+	name = "Lifeform Stasis Unit"
 	desc = "A not so comfortable looking bed with some nozzles at the top and bottom. It will keep someone in stasis."
 	icon = 'icons/obj/machines/stasis.dmi'
 	icon_state = "stasis"
@@ -59,10 +59,10 @@
 	return stasis_enabled && is_operational()
 
 /obj/machinery/stasis/update_icon_state()
-	if(stat & BROKEN)
+	if(machine_stat & BROKEN)
 		icon_state = "[base_icon_state]_broken"
 		return ..()
-	if(panel_open || stat & MAINT)
+	if(panel_open || machine_stat & MAINT)
 		icon_state = "[base_icon_state]_maintenance"
 		return ..()
 	icon_state = base_icon_state
@@ -103,13 +103,15 @@
 	var/freq = rand(24750, 26550)
 	playsound(src, 'sound/effects/spray.ogg', 5, TRUE, 2, frequency = freq)
 	target.apply_status_effect(/datum/status_effect/grouped/stasis, STASIS_MACHINE_EFFECT)
-	// ADD_TRAIT(target, TRAIT_TUMOR_SUPPRESSED, TRAIT_GENERIC)
+	ADD_TRAIT(target, TRAIT_PAINKILLER, PAINKILLER_MORPHINE) //SKYRAT EDIT, Painkiller.
+	target.throw_alert("painkiller", /atom/movable/screen/alert/painkiller) // BLUEMOON ADD
 	target.ExtinguishMob()
 	use_power = ACTIVE_POWER_USE
 
 /obj/machinery/stasis/proc/thaw_them(mob/living/target)
 	target.remove_status_effect(/datum/status_effect/grouped/stasis, STASIS_MACHINE_EFFECT)
-	// REMOVE_TRAIT(target, TRAIT_TUMOR_SUPPRESSED, TRAIT_GENERIC)
+	REMOVE_TRAIT(target, TRAIT_PAINKILLER, PAINKILLER_MORPHINE) //SKYRAT EDIT, Painkiller.
+	target.clear_alert("painkiller", /atom/movable/screen/alert/painkiller) // BLUEMOON ADD
 	if(target == occupant)
 		use_power = IDLE_POWER_USE
 

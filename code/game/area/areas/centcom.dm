@@ -32,6 +32,12 @@
 /area/centcom/holding
 	name = "Holding Facility"
 
+// BLUEMOON ADD START - размещаю здесь для удобства чтения
+/area/centcom/holding/exterior // зона со светом
+	name = "Holding Facility Exterior"
+	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED
+// BLUEMOON ADD END
+
 /area/centcom/vip
 	name = "VIP Zone"
 	dynamic_lighting = DYNAMIC_LIGHTING_DISABLED

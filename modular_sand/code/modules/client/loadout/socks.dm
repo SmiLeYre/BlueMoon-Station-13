@@ -199,3 +199,7 @@
 /datum/gear/socks/thigh/usa
 	name = "Thigh High USA Stockings"
 	path = /obj/item/clothing/underwear/socks/thigh/usa
+
+/datum/gear/socks/thigh/l_stockings
+	name = "A pair of latex stockings."
+	path = /obj/item/clothing/underwear/socks/thigh/l_stockings

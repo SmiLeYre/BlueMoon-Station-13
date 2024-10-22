@@ -1,0 +1,229 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/turf/template_noop,
+/area/template_noop)
+"c" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/fighter)
+"e" = (
+/obj/machinery/porta_turret/centcom_shuttle/ballistic{
+	dir = 5;
+	name = "ship turret";
+	on = 0
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/fighter)
+"k" = (
+/obj/machinery/porta_turret/centcom_shuttle/ballistic{
+	dir = 9
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/fighter)
+"l" = (
+/obj/structure/shuttle/engine/propulsion/burst/left{
+	dir = 8
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/syndicate/fighter)
+"m" = (
+/obj/machinery/camera/xray{
+	c_tag = "External View";
+	dir = 4;
+	network = list("syndicate_fighter");
+	pixel_x = 32
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/fighter)
+"s" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/computer/crew/syndie,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/fighter)
+"t" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/turretid{
+	desc = "Used to control the Inteceptor's automated defenses.";
+	pixel_y = 30;
+	req_access = list(150)
+	},
+/obj/machinery/button/door{
+	id = "caravansyndicate1_bolt";
+	name = "External Bolt Control";
+	normaldoorcontrol = 1;
+	pixel_x = -25;
+	req_access_txt = "150";
+	specialfunctions = 4
+	},
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/assault,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/fighter)
+"w" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/melee/transforming/energy/sword/saber/red{
+	name = "energy saber"
+	},
+/obj/item/clothing/suit/space/hardsuit/syndi,
+/obj/item/storage/backpack/duffelbag/syndie/c20rbundle,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/structure/closet/wall/red{
+	dir = 1;
+	pixel_x = 30
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/fighter)
+"y" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/fighter)
+"A" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	id_tag = "syndicatefighter";
+	max_integrity = 600;
+	normal_integrity = 600
+	},
+/obj/structure/fans/tiny,
+/obj/docking_port/mobile{
+	callTime = 50;
+	dir = 4;
+	dwidth = 4;
+	height = 6;
+	shuttle_id = "caravansyndicate1";
+	ignitionTime = 25;
+	name = "Syndicate Fighter";
+	port_direction = 2;
+	preferred_direction = 4;
+	width = 9
+	},
+/obj/effect/mapping_helpers/airlock/locked,
+/turf/open/floor/plating,
+/area/shuttle/syndicate/fighter)
+"D" = (
+/obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/fighter{
+	dir = 8;
+	pixel_x = 8;
+	pixel_y = 10
+	},
+/obj/machinery/computer/shuttle/syndicate/fighter{
+	pixel_x = 8;
+	dir = 8;
+	pixel_y = -10
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/fighter)
+"F" = (
+/obj/machinery/porta_turret/centcom_shuttle/ballistic{
+	dir = 10
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/fighter)
+"G" = (
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/assault{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/fighter)
+"H" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/item/melee/transforming/energy/sword/saber/red{
+	name = "energy saber"
+	},
+/obj/item/tank/internals/emergency_oxygen/double,
+/obj/item/clothing/suit/space/hardsuit/syndi,
+/obj/item/storage/backpack/duffelbag/syndie/c20rbundle,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/item/ammo_box/magazine/smgm45,
+/obj/structure/closet/wall/red{
+	dir = 1;
+	pixel_x = 30
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/fighter)
+"K" = (
+/obj/effect/decal/cleanable/dirt,
+/obj/machinery/light/directional/south,
+/obj/machinery/computer/security{
+	dir = 1;
+	network = list("syndicate_fighter")
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/fighter)
+"U" = (
+/obj/machinery/porta_turret/centcom_shuttle/ballistic{
+	dir = 6;
+	name = "ship turret";
+	on = 0
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/fighter)
+
+(1,1,1) = {"
+a
+l
+c
+c
+A
+c
+c
+l
+a
+"}
+(2,1,1) = {"
+a
+c
+c
+t
+y
+G
+c
+c
+a
+"}
+(3,1,1) = {"
+k
+c
+s
+w
+D
+H
+K
+c
+F
+"}
+(4,1,1) = {"
+c
+c
+c
+c
+m
+c
+c
+c
+c
+"}
+(5,1,1) = {"
+c
+c
+a
+a
+a
+a
+a
+c
+c
+"}
+(6,1,1) = {"
+e
+a
+a
+a
+a
+a
+a
+a
+U
+"}

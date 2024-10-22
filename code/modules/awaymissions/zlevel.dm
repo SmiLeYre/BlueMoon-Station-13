@@ -15,6 +15,18 @@
 	INIT_ANNOUNCE("Loaded [name] in [(REALTIMEOFDAY - start_time)/10]s!")
 	GLOB.random_zlevels_generated[name] = TRUE
 
+/proc/load_away_mission(mission_file, existing_z = null)
+	var/datum/map_template/away_mission = new(mission_file)
+	var/list/traits = list(ZTRAIT_AWAY = TRUE)
+	var/z
+	if(existing_z)
+		z = existing_z
+		traits[ZTRAIT_REEBE] = TRUE  // This will prevent the z-level from being reset
+	else
+		z = createRandomZlevel(traits = traits)
+	away_mission.load(locate(1, 1, z), centered = FALSE)
+	return z
+
 /obj/effect/landmark/awaystart
 	name = "away mission spawn"
 	desc = "Randomly picked away mission spawn points."

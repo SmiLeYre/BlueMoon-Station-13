@@ -43,7 +43,7 @@
 /datum/species/arachnid/check_weakness(obj/item/weapon, mob/living/attacker)
 	if(istype(weapon, /obj/item/melee/flyswatter))
 		return 9 //flyswatters deal 10x damage to arachnids
-	return 0
+	return FALSE
 
 /datum/species/arachnid/on_species_gain(mob/living/carbon/human/H, datum/species/old_species)
 	. = ..()
@@ -84,7 +84,7 @@
 		to_chat(H, "<span class='warning'>There's no room to spin your web here!</span>")
 		return
 	var/obj/structure/spider/stickyweb/W = locate() in T
-	var/obj/structure/arachnid/W2 = locate() in T
+	var/obj/structure/spider/stickyweb/arachnid/W2 = locate() in T
 	if(W || W2)
 		to_chat(H, "<span class='warning'>There's already a web here!</span>")
 		return
@@ -98,7 +98,7 @@
 		H.adjust_nutrition(-E.spinner_rate)
 		addtimer(VARSET_CALLBACK(E, web_ready, TRUE), E.web_cooldown)
 		to_chat(H, "<i>You use up a fair amount of energy weaving a web on the ground with your spinneret!</i>")
-		new /obj/structure/arachnid(T, owner)
+		new /obj/structure/spider/stickyweb/arachnid(T, owner)
 
 	else
 		to_chat(H, "<span class='warning'>You're too hungry to spin web right now, eat something first!</span>")
@@ -125,7 +125,7 @@
 		 (Press ALT+CLICK on the target to start wrapping.)</span>")
 		H.adjust_nutrition(E.spinner_rate * -0.5)
 		addtimer(VARSET_CALLBACK(E, web_ready, TRUE), E.web_cooldown)
-		RegisterSignal(H, list(COMSIG_MOB_ALTCLICKON), .proc/cocoonAtom)
+		RegisterSignal(H, list(COMSIG_MOB_ALTCLICKON), PROC_REF(cocoonAtom))
 		return
 	else
 		to_chat(H, "<span class='warning'>You're too hungry to spin web right now, eat something first!</span>")
@@ -145,7 +145,7 @@
 		if(!isliving(A) && A.anchored)
 			to_chat(H, "<span class='warning'>[A] is bolted to the floor!</span>")
 			return
-		if(istype(A, /obj/structure/arachnid))
+		if(istype(A, /obj/structure/spider/stickyweb/arachnid))
 			to_chat(H, "<span class='warning'>No double wrapping.</span>")
 			return
 		if(istype(A, /obj/effect))
@@ -156,7 +156,7 @@
 			to_chat(H, "<span class='warning'>Your web spinning was interrupted!</span>")
 			return
 		H.adjust_nutrition(E.spinner_rate * -3)
-		var/obj/structure/arachnid/cocoon/C = new(A.loc)
+		var/obj/structure/spider/stickyweb/arachnid/cocoon/C = new(A.loc)
 		if(isliving(A))
 			C.icon_state = pick("cocoon_large1","cocoon_large2","cocoon_large3")
 			A.forceMove(C)

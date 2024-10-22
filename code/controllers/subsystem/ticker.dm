@@ -78,6 +78,16 @@ SUBSYSTEM_DEF(ticker)
 	/// People who have been commended and will receive a heart
 	var/list/hearts
 
+	// BLUEMOON ADD START - воут за карту и перезагрузка сервера, если прошлый раунд окончился крашем
+
+	/// Was already launched map vote, after which server will be restarted?
+	var/mapvote_restarter_in_progress
+
+	/// Was SSPersistence GracefulEnding mark unrecorded due to roundstart?
+	var/graceful_ending_unrecoreded = FALSE
+
+	// BLUEMOON ADD END
+
 /datum/controller/subsystem/ticker/Initialize(timeofday)
 	load_mode()
 
@@ -113,8 +123,11 @@ SUBSYSTEM_DEF(ticker)
 			if(2) //rare+sound.ogg or MAP+sound.ogg -- Rare sounds or Map-specific sounds
 				if((use_rare_music && L[1] == "rare") || (L[1] == SSmapping.config.map_name))
 					music += S
+				else if(findtext(S, "{") && findtext(S, "}")) // Include songs with curly braces if they are part of a specific category
+					music += S
 			if(1) //sound.ogg -- common sound
-				music += S
+				if(!findtext(S, "{") && !findtext(S, "}")) // Exclude songs surrounded by curly braces
+					music += S
 
 	var/old_login_music = trim(file2text("data/last_round_lobby_music.txt"))
 	if(music.len > 1)
@@ -132,8 +145,11 @@ SUBSYSTEM_DEF(ticker)
 		music = world.file2list(ROUND_START_MUSIC_LIST, "\n")
 		login_music = pick(music)
 	else
-		login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
-
+		// Use the sound path from the title subsystem if it exists
+		if(SStitle.sound_path)
+			login_music = SStitle.sound_path
+		else
+			login_music = "[global.config.directory]/title_music/sounds/[pick(music)]"
 
 	if(!GLOB.syndicate_code_phrase)
 		GLOB.syndicate_code_phrase	= generate_code_phrase(return_list=TRUE)
@@ -165,8 +181,11 @@ SUBSYSTEM_DEF(ticker)
 				start_at = world.time + (CONFIG_GET(number/lobby_countdown) * 10)
 			for(var/client/C in GLOB.clients)
 				window_flash(C, ignorepref = TRUE) //let them know lobby has opened up.
-			to_chat(world, "<span class='boldnotice'>Welcome to [station_name()]!</span>")
-			send2chat(new /datum/tgs_message_content("Новый раунд начинается на [SSmapping.config.map_name], голосование за режим полным ходом!"), CONFIG_GET(string/chat_announce_new_game))
+			to_chat(world, "<span class='boldnotice'>Добро пожаловать на [station_name()]!</span>")
+			if(!SSpersistence.CheckGracefulEnding())
+				send2chat(new /datum/tgs_message_content("Производится реролл карты в связи с крашем сервера..."), CONFIG_GET(string/chat_announce_new_game))
+			else
+				send2chat(new /datum/tgs_message_content("Новый раунд начинается на [SSmapping.config.map_name], голосование за режим полным ходом!"), CONFIG_GET(string/chat_announce_new_game))
 			current_state = GAME_STATE_PREGAME
 			//SPLURT EDIT - Bring back old panel
 			//Everyone who wants to be an observer is now spawned
@@ -176,7 +195,21 @@ SUBSYSTEM_DEF(ticker)
 
 			fire()
 		if(GAME_STATE_PREGAME)
-				//lobby stats for statpanels
+
+			// BLUEMOON ADD START - воут за карту и перезагрузка сервера, если прошлый раунд окончился крашем
+			if(mapvote_restarter_in_progress)
+				return
+			if(!SSpersistence.CheckGracefulEnding())
+				SetTimeLeft(-1)
+				start_immediately = FALSE
+				mapvote_restarter_in_progress = TRUE
+				var/vote_type = CONFIG_GET(string/map_vote_type)
+				SSvote.initiate_vote("map","server", display = SHOW_RESULTS, votesystem = vote_type)
+				to_chat(world, span_boldwarning("Активировано голосование за смену карты из-за неудачного завершения прошлого раунда. После его окончания сервер будет перезапущен."))
+				return
+			// BLUEMOON ADD END
+
+			//lobby stats for statpanels
 			if(isnull(timeLeft))
 				timeLeft = max(0,start_at - world.time)
 			totalPlayers = 0
@@ -188,7 +221,6 @@ SUBSYSTEM_DEF(ticker)
 
 			if(start_immediately)
 				timeLeft = 0
-
 			if(!modevoted)
 				var/forcemode = CONFIG_GET(string/force_gamemode)
 				if(forcemode)
@@ -225,6 +257,11 @@ SUBSYSTEM_DEF(ticker)
 				timeLeft = null
 				Master.SetRunLevel(RUNLEVEL_LOBBY)
 				SEND_SIGNAL(src, COMSIG_TICKER_ERROR_SETTING_UP)
+			// BLUEMOON ADD START - пометка раунда, как ещё не завершившегося удачно
+			else if(!graceful_ending_unrecoreded)
+				SSpersistence.UnrecordGracefulEnding()
+				graceful_ending_unrecoreded = TRUE
+			// BLUEMOON ADD END
 
 		if(GAME_STATE_PLAYING)
 			mode.process(wait * 0.1)
@@ -254,7 +291,7 @@ SUBSYSTEM_DEF(ticker)
 		mode = null
 		SSjob.ResetOccupations()
 		emergency_swap++
-		return 0
+		return FALSE
 
 	CHECK_TICK
 	//Configure mode and assign player to special mode stuff
@@ -273,7 +310,7 @@ SUBSYSTEM_DEF(ticker)
 			to_chat(world, "<B>Error setting up [GLOB.master_mode].</B> Reverting to pre-game lobby.")
 			SSjob.ResetOccupations()
 			emergency_swap++
-			return 0
+			return FALSE
 	else
 		message_admins("<span class='notice'>DEBUG: Bypassing prestart checks...</span>")
 
@@ -282,7 +319,7 @@ SUBSYSTEM_DEF(ticker)
 		var/list/modes = new
 		for (var/datum/game_mode/M in runnable_modes)
 			modes += M.name
-		modes = sortList(modes)
+		modes = sort_list(modes)
 		to_chat(world, "<b>The gamemode is: secret!\nPossibilities:</B> [english_list(modes)]")
 	else
 		mode.announce()*/
@@ -308,6 +345,7 @@ SUBSYSTEM_DEF(ticker)
 
 	SEND_SIGNAL(src, COMSIG_TICKER_ROUND_STARTING)
 	real_round_start_time = world.timeofday
+	// SSautotransfer.new_shift(real_round_start_time) // BLUEMOON ADD
 
 	log_world("Game start took [(world.timeofday - init_start)/10]s")
 	round_start_time = world.time
@@ -454,7 +492,7 @@ SUBSYSTEM_DEF(ticker)
 				living.client.init_verbs()
 			livings += living
 	if(livings.len)
-		addtimer(CALLBACK(src, .proc/release_characters, livings), 30, TIMER_CLIENT_TIME)
+		addtimer(CALLBACK(src, PROC_REF(release_characters), livings), 30, TIMER_CLIENT_TIME)
 
 /datum/controller/subsystem/ticker/proc/release_characters(list/livings)
 	for(var/I in livings)
@@ -513,7 +551,7 @@ SUBSYSTEM_DEF(ticker)
 	if (!prob((world.time/600)*CONFIG_GET(number/maprotatechancedelta)) && CONFIG_GET(flag/tgstyle_maprotation))
 		return
 	if(CONFIG_GET(flag/tgstyle_maprotation))
-		INVOKE_ASYNC(SSmapping, /datum/controller/subsystem/mapping/.proc/maprotate)
+		INVOKE_ASYNC(SSmapping, TYPE_PROC_REF(/datum/controller/subsystem/mapping, maprotate))
 	else
 		var/vote_type = CONFIG_GET(string/map_vote_type)
 		SSvote.initiate_vote("map","server", display = SHOW_RESULTS, votesystem = vote_type)
@@ -567,7 +605,7 @@ SUBSYSTEM_DEF(ticker)
 	queue_delay = SSticker.queue_delay
 	queued_players = SSticker.queued_players
 	maprotatechecked = SSticker.maprotatechecked
-	round_start_time = SSticker.round_start_time
+	// round_start_time = SSticker.round_start_time
 
 	queue_delay = SSticker.queue_delay
 	queued_players = SSticker.queued_players
@@ -747,6 +785,14 @@ SUBSYSTEM_DEF(ticker)
 		'sound/roundend/gondolabridge.ogg',
 		'sound/roundend/haveabeautifultime.ogg',
 		'sound/roundend/CitadelStationHasSeenBetterDays.ogg',
+		'sound/roundend/not_working.ogg',
+		'sound/roundend/lovko_pridumal.ogg',
+		'sound/roundend/punk.ogg',
+		'sound/roundend/tupye.ogg',
+		'sound/roundend/get_up.ogg',
+		'sound/roundend/phonk_cats.ogg',
+		'sound/roundend/russian_fear.ogg',
+		'sound/roundend/gandon.ogg',
 		'sound/roundend/approachingbaystation.ogg'\
 		)
 

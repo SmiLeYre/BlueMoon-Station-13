@@ -23,6 +23,7 @@ CHOOSABLE_LAWS H.O.G.A.N. | /datum/ai_laws/hulkamania
 
 ## Bad idea laws. Probably shouldn't enable these
 CHOOSABLE_LAWS Syndicate MOV | /datum/ai_laws/syndicate_override
+CHOOSABLE_LAWS NT MOV | /datum/ai_laws/nt_override
 CHOOSABLE_LAWS Solar Federation MOV | /datum/ai_laws/sol_override
 CHOOSABLE_LAWS Space Ninja MOV | /datum/ai_laws/ninja_override
 #CHOOSABLE_LAWS Antimov | /datum/ai_laws/antimov
@@ -37,3 +38,10 @@ CHOOSABLE_LAWS SlutOS 6.9. | /datum/ai_laws/slut
 CHOOSABLE_LAWS SHE-B.A.N.G. | /datum/ai_laws/shebang
 CHOOSABLE_LAWS Fluid Collection System | /datum/ai_laws/milker
 CHOOSABLE_LAWS Sleeper Upgrade TestEnv | /datum/ai_laws/vore_pred
+
+## Ticket ping frequency. Set 0 for disable that subsystem. 3000 - 5 minutes, 600 - 1 minute.
+TICKET_PING_FREQUENCY 600
+
+## Plug13 sex toys integration
+PLUG13_URL http://localhost:3000
+PLUG13_SECRET VerySecretString

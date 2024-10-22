@@ -115,6 +115,23 @@
 
 	triggersound = 'sound/announcer/classic/_admin_horror_music.ogg'
 
+/datum/round_event_control/portal_storm_skibidi
+	name = "Portal Storm: Skibidi"
+	typepath = /datum/round_event/portal_storm/portal_storm_skibidi
+	weight = 5
+	min_players = 75
+	earliest_start = 60 MINUTES
+	max_occurrences = 1
+	category = EVENT_CATEGORY_INVASION
+
+/datum/round_event/portal_storm/portal_storm_skibidi
+	boss_types = list(/mob/living/simple_animal/hostile/skibidi_toilet = 2,\
+					/mob/living/simple_animal/hostile/skibidi_toilet/vulp = 2)
+	hostile_types = list(/mob/living/simple_animal/hostile/skibidi_toilet = 6,\
+						/mob/living/simple_animal/hostile/skibidi_toilet/vulp = 6)
+
+	triggersound = "modular_bluemoon/kovac_shitcode/sound/skibidi_toilets.ogg"
+
 /datum/round_event_control/portal_storm_clock
 	name = "Portal Storm: Clock Cult"
 	typepath = /datum/round_event/portal_storm/portal_storm_clock
@@ -128,8 +145,8 @@
 	boss_types = list(/mob/living/simple_animal/hostile/boss/clockcultistboss = 1)
 	hostile_types = list(/mob/living/simple_animal/hostile/clockcultistmelee = 8,\
 						/mob/living/simple_animal/hostile/clockcultistranged = 5,\
-						/mob/living/simple_animal/hostile/clocktank/weak = 3,\
-						/mob/living/simple_animal/hostile/clocktank = 2)
+						/mob/living/simple_animal/hostile/clockwork/clocktank/weak = 3,\
+						/mob/living/simple_animal/hostile/clockwork/clocktank = 2)
 	triggersound = 'modular_bluemoon/kovac_shitcode/sound/clock_storm.ogg'
 
 /datum/round_event/portal_storm
@@ -216,16 +233,16 @@
 
 /datum/round_event/portal_storm/proc/spawn_hostile()
 	if(!hostile_types || !hostile_types.len)
-		return 0
+		return FALSE
 	return ISMULTIPLE(activeFor, 2)
 
 /datum/round_event/portal_storm/proc/spawn_boss()
 	if(!boss_types || !boss_types.len)
-		return 0
+		return FALSE
 
 	if(activeFor == next_boss_spawn)
 		next_boss_spawn += CEILING(number_of_hostiles / number_of_bosses, 1)
-		return 1
+		return TRUE
 
 /datum/round_event/portal_storm/proc/time_to_end()
 	if(!hostile_types.len && !boss_types.len)

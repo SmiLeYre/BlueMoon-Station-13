@@ -13,6 +13,7 @@
 	var/cooldown = 300
 	var/next_use = 0
 	var/obj/item/swapper/linked_swapper
+	verb_say = "states" //BLUEMOON ADD
 
 /obj/item/swapper/Destroy()
 	if(linked_swapper)
@@ -56,7 +57,7 @@
 		var/mob/holder = linked_swapper.loc
 		to_chat(holder, span_notice("[linked_swapper] starts buzzing."))
 	next_use = world.time + cooldown //only the one used goes on cooldown
-	addtimer(CALLBACK(src, .proc/swap, user), 25)
+	addtimer(CALLBACK(src, PROC_REF(swap), user), 25)
 
 /obj/item/swapper/examine(mob/user)
 	. = ..()
@@ -70,6 +71,13 @@
 /obj/item/swapper/AltClick(mob/living/user)
 	if(!user.canUseTopic(src, BE_CLOSE, NO_DEXTERY,, FALSE, !iscyborg(user))) //someone mispelled dexterity
 		return
+	//BLUEMOON ADD ха-ха отвязка только после того, как инвертер перезарядится
+	if(!linked_swapper)
+		return
+	if(world.time < next_use || world.time < linked_swapper.next_use)
+		say("Разрыв квантовой связи невозможен. Одно из устройств перезаряжается.")
+		return
+	//BLUEMOON ADD END
 	to_chat(user, span_notice("You break the current quantum link."))
 	if(!QDELETED(linked_swapper))
 		linked_swapper.linked_swapper = null

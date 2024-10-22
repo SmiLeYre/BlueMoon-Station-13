@@ -10,10 +10,11 @@
 	supervisors = "the head of security"
 	selection_color = "#c02f2f"
 	minimal_player_age = 7
-	exp_requirements = 300
+	exp_requirements = 3000
 	exp_type = EXP_TYPE_CREW
 
 	outfit = /datum/outfit/job/detective
+	departments = DEPARTMENT_BITFLAG_SECURITY
 	plasma_outfit = /datum/outfit/plasmaman/detective
 	considered_combat_role = TRUE
 
@@ -25,11 +26,22 @@
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
 
 	display_order = JOB_DISPLAY_ORDER_DETECTIVE
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/nonviolent, /datum/quirk/monophobia)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/nonviolent, /datum/quirk/monophobia, /datum/quirk/bluemoon_criminal)
 	threat = 1
 
 	family_heirlooms = list(
 		/obj/item/reagent_containers/food/drinks/flask/det
+	)
+
+	mail_goodies = list(
+		/obj/item/storage/fancy/cigarettes = 25,
+		/obj/item/ammo_box/c38 = 25,
+		/obj/item/ammo_box/c38/dumdum = 5,
+		/obj/item/ammo_box/c38/hotshot = 5,
+		/obj/item/ammo_box/c38/iceblox = 5,
+		/obj/item/ammo_box/c38/match = 5,
+		/obj/item/ammo_box/c38/trac = 5,
+		/obj/item/storage/belt/holster/full = 1 // detective/full
 	)
 
 /datum/outfit/job/detective
@@ -48,12 +60,13 @@
 	r_pocket = /obj/item/lighter
 	backpack_contents = list(/obj/item/storage/box/evidence=1,\
 		/obj/item/detective_scanner=1,\
-		/obj/item/melee/classic_baton=1)
+		/obj/item/melee/classic_baton=1,
+		/obj/item/stamp/security = 1)
 	mask = /obj/item/clothing/mask/cigarette
 
 	implants = list(/obj/item/implant/mindshield)
 
-	chameleon_extras = list(/obj/item/gun/ballistic/revolver/detective, /obj/item/clothing/glasses/sunglasses)
+	chameleon_extras = list(/obj/item/gun/ballistic/revolver/detective, /obj/item/clothing/glasses/sunglasses, /obj/item/clothing/accessory/permit/special/security = 1)
 
 /datum/outfit/job/detective/syndicate
 	name = "Syndicate Detective"
@@ -73,7 +86,8 @@
 	backpack_contents = list(/obj/item/storage/box/evidence=1,\
 		/obj/item/detective_scanner=1,\
 		/obj/item/syndicate_uplink_high=1,\
-		/obj/item/melee/classic_baton=1)
+		/obj/item/melee/classic_baton=1,\
+		/obj/item/clothing/accessory/permit/special/security = 1)
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 
 	backpack = /obj/item/storage/backpack/duffelbag/syndie/ammo

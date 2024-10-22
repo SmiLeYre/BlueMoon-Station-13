@@ -761,7 +761,7 @@
 	icon_state = "siding_wood_line";
 	name = "wood"
 	},
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
 /turf/open/floor/wood{
@@ -831,6 +831,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/science)
+"ahF" = (
+/obj/structure/table/wood,
+/obj/machinery/door/window/northright{
+	dir = 2;
+	name = "Library Desk Door";
+	req_access_txt = "37"
+	},
+/turf/open/floor/carpet,
+/area/service/library)
 "ahM" = (
 /obj/effect/turf_decal/delivery,
 /obj/machinery/door/poddoor/preopen{
@@ -4911,7 +4920,7 @@
 	dir = 2;
 	dwidth = 3;
 	height = 5;
-	id = "commonmining_home";
+	shuttle_id = "commonmining_home";
 	name = "SS13: Common Mining Dock";
 	roundstart_template = /datum/map_template/shuttle/mining_common/meta;
 	width = 7
@@ -8382,7 +8391,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
 /turf/open/floor/carpet,
@@ -10977,7 +10986,7 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -11183,12 +11192,13 @@
 /area/ai_monitored/command/storage/eva)
 "bIT" = (
 /obj/structure/table/wood,
-/obj/structure/window,
-/obj/structure/window{
-	dir = 4
-	},
 /obj/item/flashlight/lamp/green{
 	pixel_y = 3
+	},
+/obj/structure/window/reinforced,
+/obj/structure/window/reinforced{
+	dir = 4;
+	layer = 2.9
 	},
 /turf/open/floor/carpet,
 /area/service/library)
@@ -13746,8 +13756,8 @@
 /area/service/library)
 "cef" = (
 /obj/structure/table,
-/obj/item/aiModule/reset,
-/obj/item/aiModule/supplied/quarantine,
+/obj/item/ai_module/reset,
+/obj/item/ai_module/supplied/quarantine,
 /obj/machinery/flasher{
 	id = "brigentry";
 	pixel_x = -28
@@ -18624,7 +18634,7 @@
 /turf/open/floor/plasteel/dark,
 /area/service/theater)
 "cQG" = (
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 8
 	},
 /turf/open/floor/carpet,
@@ -19526,7 +19536,7 @@
 /area/ai_monitored/command/storage/eva)
 "cWZ" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement{
+/obj/machinery/computer/library/checkout{
 	layer = 4;
 	pixel_y = 7
 	},
@@ -21167,7 +21177,7 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/docking_port/stationary/random{
 	dir = 2;
-	id = "pod_lavaland4";
+	shuttle_id = "pod_lavaland4";
 	name = "lavaland"
 	},
 /turf/open/floor/plating,
@@ -21618,9 +21628,9 @@
 	name = "drain"
 	},
 /obj/structure/closet/secure_closet/personal,
-/obj/item/toy/poolnoodle/blue,
-/obj/item/toy/poolnoodle/red,
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle/blue,
+/obj/item/pool/pool_noodle/red,
+/obj/item/pool/pool_noodle/yellow,
 /obj/machinery/airalarm{
 	pixel_y = 22
 	},
@@ -24731,7 +24741,7 @@
 	},
 /area/hallway/secondary/entry)
 "dHQ" = (
-/obj/item/toy/poolnoodle/blue,
+/obj/item/pool/pool_noodle/blue,
 /turf/open/pool,
 /area/commons/fitness/pool)
 "dHR" = (
@@ -27100,7 +27110,7 @@
 /obj/machinery/firealarm{
 	pixel_y = -28
 	},
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 1
 	},
 /turf/open/floor/carpet,
@@ -29713,8 +29723,8 @@
 	dir = 8
 	},
 /obj/structure/table/reinforced,
-/obj/item/destTagger,
-/obj/item/destTagger,
+/obj/item/dest_tagger,
+/obj/item/dest_tagger,
 /turf/open/floor/plasteel{
 	icon_state = "floor_plate"
 	},
@@ -30565,6 +30575,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	name = "scrubbers pipe"
 	},
+/obj/structure/window/reinforced,
 /turf/open/floor/carpet,
 /area/service/library)
 "eyq" = (
@@ -41553,7 +41564,7 @@
 	dir = 8;
 	dwidth = 3;
 	height = 15;
-	id = "arrivals_stationary";
+	shuttle_id = "arrivals_stationary";
 	name = "arrivals";
 	roundstart_template = /datum/map_template/shuttle/arrival/box;
 	width = 7
@@ -49443,8 +49454,13 @@
 /area/ruin/unpowered/no_grav)
 "hpx" = (
 /obj/structure/table/wood,
-/obj/structure/window{
-	dir = 4
+/obj/structure/window/reinforced{
+	dir = 4;
+	layer = 2.9
+	},
+/obj/machinery/fax{
+	fax_name = "General Fax";
+	name = "General Fax"
 	},
 /turf/open/floor/carpet,
 /area/service/library)
@@ -55047,9 +55063,9 @@
 	name = "drain"
 	},
 /obj/structure/closet/secure_closet/personal,
-/obj/item/toy/poolnoodle/blue,
-/obj/item/toy/poolnoodle/red,
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle/blue,
+/obj/item/pool/pool_noodle/red,
+/obj/item/pool/pool_noodle/yellow,
 /turf/open/floor/plasteel{
 	icon_state = "hallway_floor"
 	},
@@ -57374,6 +57390,10 @@
 /area/science/server)
 "iwZ" = (
 /obj/structure/table/wood,
+/obj/machinery/fax{
+	fax_name = "Prison Fax";
+	name = "Prison Fax"
+	},
 /turf/open/floor/wood,
 /area/security/prison)
 "ixf" = (
@@ -57712,7 +57732,7 @@
 	dir = 2;
 	dwidth = 3;
 	height = 5;
-	id = "mining_home";
+	shuttle_id = "mining_home";
 	name = "mining shuttle bay";
 	roundstart_template = /datum/map_template/shuttle/mining/box;
 	width = 7
@@ -58121,6 +58141,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/recharger,
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
 "iBN" = (
@@ -64218,13 +64239,13 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
-/obj/machinery/washing_machine,
 /obj/machinery/light{
 	dir = 1
 	},
 /obj/structure/window{
 	dir = 8
 	},
+/obj/machinery/gear_painter,
 /turf/open/floor/plasteel/cafeteria,
 /area/commons/fitness)
 "jvA" = (
@@ -64604,7 +64625,7 @@
 	dir = 4
 	},
 /obj/structure/table/reinforced,
-/obj/item/destTagger,
+/obj/item/dest_tagger,
 /obj/item/hand_labeler{
 	pixel_y = 8
 	},
@@ -69722,7 +69743,7 @@
 /turf/open/floor/plasteel,
 /area/command/bridge)
 "kjs" = (
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
 /obj/effect/turf_decal/loading_area{
@@ -70277,11 +70298,11 @@
 /area/security/brig)
 "kmt" = (
 /obj/structure/table,
-/obj/item/aiModule/supplied/oxygen,
-/obj/item/aiModule/zeroth/oneHuman,
-/obj/item/aiModule/reset/purge,
-/obj/effect/spawner/lootdrop/aimodule_harmful,
-/obj/item/aiModule/supplied/protectStation,
+/obj/item/ai_module/supplied/oxygen,
+/obj/item/ai_module/zeroth/oneHuman,
+/obj/item/ai_module/reset/purge,
+/obj/effect/spawner/lootdrop/ai_module_harmful,
+/obj/item/ai_module/supplied/protectStation,
 /obj/machinery/flasher{
 	id = "brigentry";
 	pixel_x = 28
@@ -80339,7 +80360,7 @@
 	icon_state = "ledge_short";
 	name = "short ledge"
 	},
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
 /turf/open/floor/wood{
@@ -81248,7 +81269,7 @@
 /turf/open/space/basic,
 /area/space)
 "lND" = (
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -82453,7 +82474,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/fore)
 "lVy" = (
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
 /turf/open/floor/plating,
@@ -82862,6 +82883,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/unpowered/no_grav)
+"lYB" = (
+/obj/machinery/computer/account_database,
+/turf/open/floor/plasteel,
+/area/command/bridge)
 "lYD" = (
 /obj/effect/turf_decal/tile/brown{
 	dir = 6
@@ -91304,11 +91329,11 @@
 /area/ai_monitored/turret_protected/aisat/hallway)
 "njK" = (
 /obj/structure/table,
-/obj/item/aiModule/core/full/asimov,
-/obj/effect/spawner/lootdrop/aimodule_harmless,
-/obj/item/aiModule/core/freeformcore,
-/obj/effect/spawner/lootdrop/aimodule_neutral,
-/obj/item/aiModule/core/full/custom,
+/obj/item/ai_module/core/full/asimov,
+/obj/effect/spawner/lootdrop/ai_module_harmless,
+/obj/item/ai_module/core/freeformcore,
+/obj/effect/spawner/lootdrop/ai_module_neutral,
+/obj/item/ai_module/core/full/custom,
 /obj/machinery/flasher{
 	id = "brigentry";
 	pixel_x = -28
@@ -91581,7 +91606,7 @@
 /area/construction/mining/aux_base)
 "nlx" = (
 /obj/structure/table,
-/obj/item/aiModule/supplied/freeform,
+/obj/item/ai_module/supplied/freeform,
 /obj/machinery/flasher{
 	id = "brigentry";
 	pixel_x = 28
@@ -99469,7 +99494,7 @@
 	},
 /obj/docking_port/stationary/random{
 	dir = 8;
-	id = "pod_lavaland2";
+	shuttle_id = "pod_lavaland2";
 	name = "lavaland"
 	},
 /turf/open/floor/plating/layeniaredder{
@@ -100699,6 +100724,11 @@
 /obj/machinery/airalarm{
 	dir = 1;
 	pixel_y = -22
+	},
+/obj/structure/table/wood,
+/obj/machinery/fax{
+	fax_name = "Lawyer Fax";
+	name = "Lawyer Fax"
 	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
@@ -112646,7 +112676,7 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
 "qvn" = (
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 1
 	},
 /turf/open/floor/wood,
@@ -113818,7 +113848,7 @@
 	icon_state = "drain_corner";
 	name = "drain"
 	},
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 1
 	},
 /turf/open/floor/plasteel/grimy{
@@ -114390,6 +114420,7 @@
 	dir = 4
 	},
 /obj/structure/table,
+/obj/machinery/recharger,
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
 "qHT" = (
@@ -117008,7 +117039,7 @@
 	dir = 4;
 	dwidth = 12;
 	height = 18;
-	id = "emergency_home";
+	shuttle_id = "emergency_home";
 	name = "BoxStation emergency evac bay";
 	width = 32
 	},
@@ -117108,7 +117139,7 @@
 /turf/open/floor/plasteel/white,
 /area/science/circuit)
 "rcH" = (
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 4
 	},
 /turf/open/floor/carpet,
@@ -119407,7 +119438,7 @@
 /area/cargo/miningdock)
 "ruW" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement{
+/obj/machinery/computer/library/checkout{
 	pixel_y = 7
 	},
 /turf/open/floor/carpet,
@@ -120477,7 +120508,7 @@
 	pixel_x = 2;
 	pixel_y = -2
 	},
-/obj/item/clothing/suit/armor/laserproof,
+/obj/item/clothing/suit/hooded/ablative,
 /obj/effect/turf_decal/bot,
 /obj/structure/window/reinforced{
 	dir = 1
@@ -123314,6 +123345,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/mixing)
+"rYI" = (
+/obj/structure/table/reinforced,
+/obj/machinery/status_display/ai{
+	pixel_y = 26
+	},
+/obj/machinery/fax{
+	fax_name = "Bridge Fax";
+	name = "Bridge Fax"
+	},
+/turf/open/floor/plasteel,
+/area/command/bridge)
 "rYT" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -127344,7 +127386,7 @@
 	dheight = 4;
 	dwidth = 4;
 	height = 9;
-	id = "aux_base_zone";
+	shuttle_id = "aux_base_zone";
 	name = "aux base zone";
 	roundstart_template = /datum/map_template/shuttle/aux_base/small;
 	width = 9
@@ -129666,7 +129708,7 @@
 /obj/item/clothing/glasses/hud/security/sunglasses,
 /obj/item/clothing/suit/armor/vest/alt,
 /obj/item/clothing/head/helmet/sec,
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
 "sRj" = (
@@ -130913,7 +130955,7 @@
 	dir = 2;
 	dwidth = 5;
 	height = 7;
-	id = "supply_home";
+	shuttle_id = "supply_home";
 	name = "Cargo Bay";
 	width = 12
 	},
@@ -131428,7 +131470,7 @@
 	},
 /obj/docking_port/stationary/random{
 	dir = 8;
-	id = "pod_lavaland1";
+	shuttle_id = "pod_lavaland1";
 	name = "lavaland"
 	},
 /turf/open/floor/plating/layeniaredder{
@@ -132039,7 +132081,7 @@
 	},
 /area/security/brig)
 "tiv" = (
-/obj/structure/chair/sofa/corner{
+/obj/structure/chair/sofa/corner/brown{
 	dir = 1
 	},
 /turf/open/floor/carpet,
@@ -144580,7 +144622,7 @@
 /obj/docking_port/stationary{
 	dwidth = 3;
 	height = 13;
-	id = "ferry_home";
+	shuttle_id = "ferry_home";
 	name = "port bay 2";
 	width = 7
 	},
@@ -145742,6 +145784,10 @@
 	icon_state = "darkfull_plate"
 	},
 /area/hallway/primary/port)
+"vlJ" = (
+/obj/machinery/photocopier,
+/turf/open/floor/wood,
+/area/security/prison)
 "vlO" = (
 /obj/machinery/light{
 	dir = 1
@@ -149832,12 +149878,13 @@
 /area/engineering/lobby)
 "vOg" = (
 /obj/structure/table/wood,
-/obj/structure/window{
-	dir = 4
-	},
 /obj/item/paper_bin{
 	pixel_x = 1;
 	pixel_y = 9
+	},
+/obj/structure/window/reinforced{
+	dir = 4;
+	layer = 2.9
 	},
 /turf/open/floor/carpet,
 /area/service/library)
@@ -153570,7 +153617,7 @@
 /area/engineering/break_room)
 "woC" = (
 /obj/structure/table,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /turf/open/floor/plasteel/dark,
 /area/engineering/storage/tech)
 "woF" = (
@@ -154726,7 +154773,7 @@
 	dir = 2;
 	dwidth = 11;
 	height = 22;
-	id = "whiteship_home";
+	shuttle_id = "whiteship_home";
 	name = "SS13: Auxiliary Dock, Station-Port";
 	width = 35
 	},
@@ -158841,7 +158888,7 @@
 	dir = 8;
 	dwidth = 2;
 	height = 5;
-	id = "laborcamp_home";
+	shuttle_id = "laborcamp_home";
 	name = "fore bay 1";
 	roundstart_template = /datum/map_template/shuttle/labour/box;
 	width = 9
@@ -161551,7 +161598,7 @@
 	},
 /obj/docking_port/stationary/random{
 	dir = 8;
-	id = "pod_lavaland3";
+	shuttle_id = "pod_lavaland3";
 	name = "lavaland"
 	},
 /turf/open/floor/plating/layeniaredder{
@@ -162410,9 +162457,9 @@
 /area/science/robotics/lab)
 "xDf" = (
 /obj/structure/table/wood,
-/obj/structure/window,
 /obj/item/camera_film,
 /obj/item/camera_film,
+/obj/structure/window/reinforced,
 /turf/open/floor/carpet,
 /area/service/library)
 "xDp" = (
@@ -163023,9 +163070,9 @@
 	name = "drain"
 	},
 /obj/structure/closet/secure_closet/personal,
-/obj/item/toy/poolnoodle/blue,
-/obj/item/toy/poolnoodle/red,
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle/blue,
+/obj/item/pool/pool_noodle/red,
+/obj/item/pool/pool_noodle/yellow,
 /turf/open/floor/plasteel{
 	icon_state = "hallway_floor"
 	},
@@ -163308,7 +163355,7 @@
 /area/hallway/primary/central)
 "xLe" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement{
+/obj/machinery/computer/library/checkout{
 	pixel_y = 7
 	},
 /obj/machinery/light{
@@ -165120,6 +165167,11 @@
 	dir = 1;
 	icon_state = "ledge_short";
 	name = "short ledge"
+	},
+/obj/structure/table,
+/obj/machinery/fax{
+	fax_name = "Security Fax";
+	name = "Security Fax"
 	},
 /turf/open/floor/plasteel/dark{
 	dir = 1;
@@ -203796,7 +203848,7 @@ pZH
 mbB
 oYa
 pdf
-fvJ
+vlJ
 fvU
 kji
 rNU
@@ -260613,7 +260665,7 @@ rob
 eFA
 ruW
 cDE
-eZg
+ahF
 sWb
 ldH
 tJx
@@ -264772,7 +264824,7 @@ nLS
 nLS
 nLS
 myp
-eMD
+rYI
 bFp
 oKH
 tYg
@@ -266312,7 +266364,7 @@ hfE
 cEa
 xZg
 ueb
-xsu
+lYB
 tsq
 bqA
 tgJ
@@ -267340,7 +267392,7 @@ hfE
 cEa
 xZg
 ueb
-xsu
+lYB
 tsq
 bqA
 rcD

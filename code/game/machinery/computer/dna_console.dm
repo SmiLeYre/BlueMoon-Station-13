@@ -283,7 +283,7 @@
 
 	data["view"] = tgui_view_state
 	data["storage"] = list()
-
+	//
 	// This block of code generates the huge data structure passed to the tgui
 	// interface for displaying all the various bits of console/scanner data
 	// Should all be very self-explanatory
@@ -504,6 +504,8 @@
 			var/sequence = GET_GENE_STRING(path, scanner_occupant.dna)
 
 			var/newgene = params["gene"]
+			if(length(newgene) > 1)
+				return
 			var/genepos = text2num(params["pos"])
 
 			// If the new gene is J, this means we're dealing with a JOKER
@@ -877,6 +879,7 @@
 			var/datum/mutation/human/A = new HM.type()
 			A.copy_mutation(HM)
 			diskette.mutations += A
+			diskette.mutations = sort_list(diskette.mutations)
 			to_chat(usr,"<span class='notice'>Mutation successfully stored to disk.</span>")
 			return
 
@@ -2185,3 +2188,4 @@
 #undef SEARCH_STORED
 #undef SEARCH_DISKETTE
 #undef SEARCH_ADV_INJ
+

@@ -2,6 +2,7 @@
 	description = span_nicegreen("Я так люблю поглаживания!\n")
 	mood_change = 3
 	timeout = 2 MINUTES
+
 /datum/mood_event/qareen_bliss
 	description = span_umbra("Все вокруг такие пошлые...\n")
 	mood_change = 5
@@ -14,12 +15,12 @@
 	mood_change = 1
 
 /datum/mood_event/cloth_eaten
-	description = "<span class='nicegreen'>Этот костюм определенно был вкусным!\n"
+	description = span_nicegreen("Этот костюм определенно был вкусным!\n")
 	mood_change = 3
-	timeout = 2400
+	timeout = 4 MINUTES
 
 /datum/mood_event/cloth_eaten/add_effects(obj/item/clothing/eaten)
-	description = "<span class='nicegreen'>Определенно это был [pick("вкусный","хороший","ворсистый","чудесный")] [eaten.name]!\n"
+	description = span_nicegreen("Определенно, это был [pick("вкусный","хороший","ворсистый","чудесный")] [eaten.name]!\n")
 
 /datum/mood_event/nudist_positive
 	description = span_nicegreen("Чудесно, что меня не сковывает одежда.\n")
@@ -43,3 +44,15 @@
 	description = span_mind_control("Путь для меня был предначертан, и ему необходимо следовать!\n")
 	mood_change = 1
 	hidden = TRUE
+
+//BUTT SLAP - TRAIT_JIGGLY_ASS
+
+/datum/mood_event/butt_slap
+	description = span_love("Smacking that butt felt extremely satisfying!\n")
+	mood_change = 3
+	timeout = 2 MINUTES
+
+/datum/mood_event/butt_slapped
+	description = span_love("My jiggly butt was finally smacked, so satisfying!\n")
+	mood_change = 3
+	timeout = 2 MINUTES

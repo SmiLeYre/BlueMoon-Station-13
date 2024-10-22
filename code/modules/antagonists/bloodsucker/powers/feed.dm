@@ -1,12 +1,12 @@
 
 
-/datum/action/bloodsucker/feed
+/datum/action/cooldown/bloodsucker/feed
 	name = "Feed"
 	desc = "Draw the heartsblood of living victims in your grasp.<br><b>None/Passive:</b> Feed silently and unnoticed by your victim.<br><b>Aggressive: </b>Subdue your target quickly."
 	button_icon_state = "power_feed"
 
 	bloodcost = 0
-	cooldown = 30
+	cooldown_time = 30
 	amToggle = TRUE
 	bloodsucker_can_buy = TRUE
 	can_be_staked = TRUE
@@ -16,7 +16,7 @@
 	var/mob/living/feed_target 	// So we can validate more than just the guy we're grappling.
 	var/target_grappled = FALSE // If you started grappled, then ending it will end your Feed.
 
-/datum/action/bloodsucker/feed/CheckCanUse(display_error)
+/datum/action/cooldown/bloodsucker/feed/CheckCanUse(display_error)
 	. = ..()
 	if(!.)
 		return
@@ -33,7 +33,7 @@
 	// DONE!
 	return TRUE
 
-/datum/action/bloodsucker/feed/proc/ValidateTarget(mob/living/target, display_error) // Called twice: validating a subtle victim, or validating your grapple victim.
+/datum/action/cooldown/bloodsucker/feed/proc/ValidateTarget(mob/living/target, display_error) // Called twice: validating a subtle victim, or validating your grapple victim.
 	// Bloodsuckers + Animals MUST be grabbed aggressively!
 	if(!owner.pulling || target == owner.pulling && owner.grab_state < GRAB_AGGRESSIVE)
 		// NOTE: It's OKAY that we are checking if(!target) below, AFTER animals here. We want passive check vs animal to warn you first, THEN the standard warning.
@@ -84,7 +84,7 @@
 	return TRUE
 
 // If I'm not grabbing someone, find me someone nearby.
-/datum/action/bloodsucker/feed/proc/FindMyTarget(display_error)
+/datum/action/cooldown/bloodsucker/feed/proc/FindMyTarget(display_error)
 	// Default
 	feed_target = null
 	target_grappled = FALSE
@@ -140,7 +140,7 @@
 		feed_target = pick(targets_valid)//targets[1]
 		return TRUE
 
-/datum/action/bloodsucker/feed/ActivatePower()
+/datum/action/cooldown/bloodsucker/feed/ActivatePower()
 	// set waitfor = FALSE   <---- DONT DO THIS!We WANT this power to hold up Activate(), so Deactivate() can happen after.
 	var/mob/living/target = feed_target // Stored during CheckCanUse(). Can be a grabbed OR adjecent character.
 	var/mob/living/user = owner
@@ -154,7 +154,7 @@
 		to_chat(user, "<span class='notice'>You lean quietly toward [target] and secretly draw out your fangs...</span>")
 	else
 		to_chat(user, "<span class='warning'>You pull [target] close to you and draw out your fangs...</span>")
-	if(!do_mob(user, target, feed_time, NONE, extra_checks = CALLBACK(src, .proc/ContinueActive, user, target)))//sleep(10)
+	if(!do_mob(user, target, feed_time, NONE, extra_checks = CALLBACK(src, PROC_REF(ContinueActive), user, target)))//sleep(10)
 		to_chat(user, "<span class='warning'>Your feeding was interrupted.</span>")
 		//DeactivatePower(user,target)
 		return
@@ -195,8 +195,18 @@
 	else						 // /atom/proc/visible_message(message, self_message, blind_message, vision_distance, ignored_mobs)
 		user.visible_message("<span class='warning'>[user] closes [user.ru_ego()] mouth around [target]'s neck!</span>", \
 						 "<span class='warning'>You sink your fangs into [target]'s neck.</span>")
+		tgui_alert_async(target, "Ты не сможешь детально вспомнить обстоятельства, которые привели происходящему, как и саму ситуацию... Тем не менее, в шее ощущается приятное покалывание, а ощущения сравнимы с соитием.", "Что произошло?") // BLUEMOON ADD
+
 	// My mouth is full!
 	ADD_TRAIT(user, TRAIT_MUTE, "bloodsucker_feed")
+
+	// BLUEMOON ADD - жертве приятен укус вампира
+	var/datum/antagonist/vassal/V = target.mind?.has_antag_datum(ANTAG_DATUM_VASSAL)
+	if(V)
+		SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "gave_blood_to_bloodsucker", /datum/mood_event/gave_blood_to_bloodsucker/vassal) // вассал получает меньший баф, чем обычный смертный
+	else
+		SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "gave_blood_to_bloodsucker", /datum/mood_event/gave_blood_to_bloodsucker)
+	// BLUEMOON ADD END
 
 	// Begin Feed Loop
 	var/warning_target_inhuman = FALSE
@@ -215,7 +225,7 @@
 	//user.mobility_flags &= ~MOBILITY_MOVE // user.canmove = 0 // Prevents spilling blood accidentally.
 
 		// Abort? A bloody mistake.
-		if(!do_mob(user, target, 2 SECONDS, NONE, extra_checks=CALLBACK(src, .proc/ContinueActive, user, target)))
+		if(!do_mob(user, target, 2 SECONDS, NONE, extra_checks=CALLBACK(src, PROC_REF(ContinueActive), user, target)))
 			// May have disabled Feed during do_mob
 			if(!active || !ContinueActive(user, target))
 				break
@@ -241,7 +251,8 @@
 				user.add_mob_blood(target) // Put target's blood on us. The donor goes in the ( )
 				target.add_mob_blood(target)
 				target.take_overall_damage(10,0)
-				target.emote("scream")
+				if(!HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					target.emote("scream")
 
 			// Killed Target?
 			if(was_alive)
@@ -310,16 +321,27 @@
 		CheckKilledTarget(user,target)
 
 
-/datum/action/bloodsucker/feed/proc/CheckKilledTarget(mob/living/user, mob/living/target)
+/datum/action/cooldown/bloodsucker/feed/proc/CheckKilledTarget(mob/living/user, mob/living/target)
 	// Bad Bloodsucker. You shouldn't do that.
 	if(target && target.stat >= DEAD && ishuman(target))
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drankkilled", /datum/mood_event/drankkilled) // BAD // in bloodsucker_life.dm
+		// BLUEMOON ADD START
+		var/datum/antagonist/bloodsucker/bloodsuckerdatum = user.mind.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
+		switch(bloodsuckerdatum.bloodsucker_level)
+			if(-INFINITY to 2)
+				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drankkilled", /datum/mood_event/drankkilled) // BAD // in bloodsucker_life.dm
+			if(3 to 4)
+				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drankkilled", /datum/mood_event/drankkilled/lesser)
+			if(5 to 6)
+				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drankkilled", /datum/mood_event/drankkilled/minimal)
+			if(7 to INFINITY)
+				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "drankkilled", /datum/mood_event/drankkilled/positive) // где-от здесь человечность на 1-3
+		// BLUEMOON ADD END
 
-/datum/action/bloodsucker/feed/ContinueActive(mob/living/user, mob/living/target)
+/datum/action/cooldown/bloodsucker/feed/ContinueActive(mob/living/user, mob/living/target)
 	return ..()  && target && (!target_grappled || user.pulling == target) && blood_sucking_checks(target, TRUE, TRUE) // Active, and still antag,
 	// NOTE: We only care about pulling if target started off that way. Mostly only important for Aggressive feed.
 
-/datum/action/bloodsucker/feed/proc/ApplyVictimEffects(mob/living/target)
+/datum/action/cooldown/bloodsucker/feed/proc/ApplyVictimEffects(mob/living/target)
 	// Bloodsuckers not affected by "the Kiss" of another vampire
 	if(!target.mind || !target.mind.has_antag_datum(ANTAG_DATUM_BLOODSUCKER))
 		target.Unconscious(50,0)
@@ -328,7 +350,7 @@
 		if(ishuman(target))
 			target.adjustStaminaLoss(5, forced = TRUE)// Base Stamina Damage
 
-/datum/action/bloodsucker/feed/DeactivatePower(mob/living/user = owner, mob/living/target)
+/datum/action/cooldown/bloodsucker/feed/DeactivatePower(mob/living/user = owner, mob/living/target)
 	..() // activate = FALSE
 	var/datum/antagonist/bloodsucker/bloodsuckerdatum = user.mind.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
 	// No longer Feeding

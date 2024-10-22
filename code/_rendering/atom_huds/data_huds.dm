@@ -24,13 +24,13 @@
 
 /datum/atom_hud/data/human/medical/basic/proc/check_sensors(mob/living/carbon/human/H)
 	if(!istype(H))
-		return 0
+		return FALSE
 	var/obj/item/clothing/under/U = H.w_uniform
 	if(!istype(U))
-		return 0
+		return FALSE
 	if(U.sensor_mode <= SENSOR_VITALS)
-		return 0
-	return 1
+		return FALSE
+	return TRUE
 
 /datum/atom_hud/data/human/medical/basic/add_to_single_hud(mob/M, mob/living/carbon/H)
 	if(check_sensors(H))
@@ -155,6 +155,20 @@
 	var/datum/atom_hud/data/human/medical/basic/B = GLOB.huds[DATA_HUD_MEDICAL_BASIC]
 	B.update_suit_sensors(src)
 
+/mob/living/carbon/human/update_suit_sensors()
+	. = ..()
+	update_sensor_list()
+
+/mob/living/carbon/human/proc/update_sensor_list()
+	var/obj/item/clothing/under/U = w_uniform
+	if(istype(U) && U.has_sensor > NO_SENSORS && U.sensor_mode)
+		GLOB.suit_sensors_list |= src
+	else
+		GLOB.suit_sensors_list -= src
+
+/mob/living/carbon/human/dummy/update_sensor_list()
+	return
+
 //called when a living mob changes health
 /mob/living/proc/med_hud_set_health()
 	var/image/holder = hud_list[HEALTH_HUD]
@@ -187,7 +201,7 @@
 	else if(stat == DEAD || (HAS_TRAIT(src, TRAIT_FAKEDEATH)))
 		if(tod)
 			var/tdelta = round(world.time - timeofdeath)
-			if(tdelta < (DEFIB_TIME_LIMIT * 10))
+			if(tdelta < (DEFIB_TIME_LIMIT * 100))
 				var/obj/item/organ/heart/He = getorgan(/obj/item/organ/heart)
 				if(He)
 					holder.icon_state = "huddefib"
@@ -271,6 +285,11 @@
 		var/icon/IC = icon(icon, icon_state, dir)
 		holder.pixel_y = IC.Height() - world.icon_size
 		holder.icon_state = "hud_imp_loyal"
+	if(HAS_TRAIT(src, TRAIT_ANCHOR))
+		holder = hud_list[IMPLOYAL_HUD]
+		var/icon/IC = icon(icon, icon_state, dir)
+		holder.pixel_y = IC.Height() - world.icon_size
+		holder.icon_state = "hud_imp_anchor"
 
 /mob/living/carbon/human/proc/sec_hud_set_security_status()
 	var/image/holder = hud_list[WANTED_HUD]
@@ -281,16 +300,31 @@
 		var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.security)
 		if(R)
 			switch(R.fields["criminal"])
-				if("*Arrest*")
+				if(SEC_RECORD_STATUS_EXECUTE)
+					holder.icon_state = "hudexecute"
+					return
+				if(SEC_RECORD_STATUS_ARREST)
 					holder.icon_state = "hudwanted"
 					return
-				if("Incarcerated")
-					holder.icon_state = "hudincarcerated"
+				if(SEC_RECORD_STATUS_SEARCH)
+					holder.icon_state = "hudsearch"
 					return
-				if("Paroled")
+				if(SEC_RECORD_STATUS_MONITOR)
+					holder.icon_state = "hudmonitor"
+					return
+				if(SEC_RECORD_STATUS_DEMOTE)
+					holder.icon_state = "huddemote"
+					return
+				if(SEC_RECORD_STATUS_INCARCERATED)
+					holder.icon_state = "hudcarcerated"
+					return
+				if(SEC_RECORD_STATUS_PAROLLED)
 					holder.icon_state = "hudparolled"
 					return
-				if("Discharged")
+				if(SEC_RECORD_STATUS_RELEASED)
+					holder.icon_state = "hudreleased"
+					return
+				if(SEC_RECORD_STATUS_DISCHARGED)
 					holder.icon_state = "huddischarged"
 					return
 	holder.icon_state = null
@@ -523,3 +557,37 @@
 		holder.icon_state = "electrified"
 	else
 		holder.icon_state = ""
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	I'll just put this somewhere near the end...
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+/// Helper function to add a "comment" to a data record. Used for medical or security records.
+/mob/living/carbon/human/proc/add_comment(mob/commenter, comment_kind, comment_text)
+	var/perpname = get_visible_name(TRUE) //gets the name of the perp, works if they have an id or if their face is uncovered
+	if(!perpname)
+		return
+	var/datum/data/record/R
+	switch(comment_kind)
+		if("security")
+			R = find_record("name", perpname, GLOB.data_core.security)
+		if("medical")
+			R = find_record("name", perpname, GLOB.data_core.medical)
+	if(!R)
+		return
+
+	var/commenter_display = "Something(???)"
+	if(ishuman(commenter))
+		var/mob/living/carbon/human/U = commenter
+		commenter_display = "[U.get_authentification_name()] ([U.get_assignment()])"
+	else if(iscyborg(commenter))
+		var/mob/living/silicon/robot/U = commenter
+		commenter_display = "[U.name] ([U.designation] [U.braintype])"
+	else if(isAI(commenter))
+		var/mob/living/silicon/ai/U = commenter
+		commenter_display = "[U.name] (artificial intelligence)"
+	comment_text = "Made by [commenter_display] on [GLOB.current_date_string] [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]:<br>[comment_text]"
+
+	if(!R.fields["comments"])
+		R.fields["comments"] = list()
+	R.fields["comments"] += list(comment_text)

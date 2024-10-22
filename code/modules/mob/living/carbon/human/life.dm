@@ -61,11 +61,17 @@
 
 	if (getOrganLoss(ORGAN_SLOT_BRAIN) >= 30) //Citadel change to make memes more often.
 		SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "brain_damage", /datum/mood_event/brain_damage)
+		// BLUEMOON EDIT START - свой брейнрот для синтов
 		if(prob(3))
 			if(prob(25))
-				emote("drool")
+				if(isrobotic(src))
+					emote("malf")
+				else
+					emote("drool")
 			else
-				say(pick_list_replacements(BRAIN_DAMAGE_FILE, "brain_damage"))
+				var/braindamage_variant = isrobotic(src) ? "synth_brain_damage" : "brain_damage"
+				say(pick_list_replacements(BRAIN_DAMAGE_FILE, braindamage_variant), forced = "brain damage")
+				// BLUEMOON EDIT END
 	else
 		SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "brain_damage")
 
@@ -238,7 +244,7 @@
 	if(cold)
 		//CITADEL EDIT Mandatory for vore code.
 		if(istype(loc, /obj/item/dogborg/sleeper) || isbelly(loc) || ismob(loc))
-			return 1 //freezing to death in sleepers ruins fun.
+			return TRUE //freezing to death in sleepers ruins fun.
 		//END EDIT
 		temperature = max(temperature, 2.7) //There is an occasional bug where the temperature is miscalculated in ares with a small amount of gas on them, so this is necessary to ensure that that bug does not affect this calculation. Space's temperature is 2.7K and most suits that are intended to protect against any cold, protect down to 2.0K.
 	var/thermal_protection_flags = cold ? get_cold_protection_flags(temperature) : get_heat_protection_flags(temperature)
@@ -269,7 +275,7 @@
 		if(missing_body_parts_flags & HAND_RIGHT)
 			max_protection -= THERMAL_PROTECTION_HAND_RIGHT
 		if(max_protection == 0) //Is it even a man if it doesn't have a body at all? Early return to avoid division by zero.
-			return 1
+			return TRUE
 
 	var/thermal_protection = 0
 	if(thermal_protection_flags)

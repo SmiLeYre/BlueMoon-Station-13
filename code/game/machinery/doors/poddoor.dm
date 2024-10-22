@@ -48,7 +48,7 @@
 
 /obj/machinery/door/poddoor/crowbar_act(mob/living/user, obj/item/tool)
 	. = ..()
-	if(stat & NOPOWER)
+	if(machine_stat & NOPOWER)
 		open(TRUE)
 		return TOOL_ACT_TOOLTYPE_SUCCESS
 	if (density)
@@ -131,9 +131,9 @@
 /obj/machinery/door/poddoor/shuttledock/proc/check()
 	var/turf/T = get_step(src, checkdir)
 	if(!istype(T, turftype))
-		INVOKE_ASYNC(src, .proc/open)
+		INVOKE_ASYNC(src, PROC_REF(open))
 	else
-		INVOKE_ASYNC(src, .proc/close)
+		INVOKE_ASYNC(src, PROC_REF(close))
 
 /obj/machinery/door/poddoor/incinerator_toxmix
 	name = "combustion chamber vent"
@@ -157,7 +157,7 @@
 
 /obj/machinery/door/poddoor/Bumped(atom/movable/AM)
 	if(density)
-		return 0
+		return FALSE
 	else
 		return ..()
 
@@ -186,5 +186,5 @@
 	return
 
 /obj/machinery/door/poddoor/try_to_crowbar(obj/item/I, mob/user)
-	if(stat & NOPOWER)
+	if(machine_stat & NOPOWER)
 		open(1)

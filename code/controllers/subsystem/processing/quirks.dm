@@ -17,12 +17,34 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 /datum/controller/subsystem/processing/quirks/Initialize(timeofday)
 	if(!quirks.len)
 		SetupQuirks()
-		quirk_blacklist = list(list("Blind","Nearsighted"),list("Jolly","Depression","Apathetic"),list("Ageusia","Deviant Tastes"),list("Ananas Affinity","Ananas Aversion"),list("Alcohol Tolerance","Alcohol Intolerance"),list("Alcohol Intolerance","Drunken Resilience"))
+		//BLUEMOON ADD чиним под русский текст и добавляем всё в одном листе
+		quirk_blacklist = list(
+						  list("Слепота","Близорукость"),
+						  list("Жизнерадостный","Депрессия","Равнодушный"),
+						  list("Агевзия","Извращенные Вкусы"),
+						  list("Пристрастие к Ананасам","Неприязнь к Ананасам"),
+						  list("Устойчивость к Алкоголю","Непереносимость Алкоголя"),
+						  list("Непереносимость Алкоголя","Пьяный Угар"),
+						  list("Сверхтяжёлый", "Тяжёлый", "Лёгкий"),
+						  list("Азиат", "Украиновый"),
+						  list("Толстые пальцы","Ужасный стрелок"),
+						  list("Отпрыск Ночного Кошмара", "Светочувствительность"),
+						  list("Святой Дух","Проклятая Кровь"),
+						  list("Святой Дух","Отпрыск Кровопийцы"),
+						  list("Жаждущий","Отпрыск Кровопийцы"),
+						  list("Жаждущий","Инкуб"),
+						  list("Жаждущий","Суккуб"),
+						  list("Булки Грома","Стальные Булки"),
+						  list("Сверхтяжёлый","Пожиратель", "Лёгкий"),
+						  list("Звериный Дух", "Дуллахан"),
+						  list("Сотрудник НаноТрейзен", "Сотрудник Синдиката")
+						  )
+		//BLUEMOON ADD END
 	return ..()
 
 /datum/controller/subsystem/processing/quirks/proc/SetupQuirks()
 // Sort by Positive, Negative, Neutral; and then by name
-	var/list/quirk_list = sortList(subtypesof(/datum/quirk), /proc/cmp_quirk_asc)
+	var/list/quirk_list = sort_list(subtypesof(/datum/quirk), GLOBAL_PROC_REF(cmp_quirk_asc))
 
 	for(var/V in quirk_list)
 		var/datum/quirk/T = V
@@ -36,6 +58,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 	var/list/cut
 	if(job?.blacklisted_quirks)
 		cut = filter_quirks(my_quirks, job.blacklisted_quirks)
+		if(LAZYLEN(cut))
+			log_admin("Quirks cut from [key_name(user)] due to job blacklist: [english_list(cut)]")
 	for(var/V in my_quirks)
 		if(V in quirks)
 			var/datum/quirk/Q = quirks[V]
@@ -54,7 +78,8 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 		var/datum/species/S = H.dna.species
 		if(S.remove_blacklisted_quirks(H))
 			to_chat(to_chat_target || user, "<span class='boldwarning'>Some quirks have been cut from your character due to them conflicting with your species: [english_list(S.removed_quirks)]</span>")
-
+			if(LAZYLEN(S.removed_quirks))
+				log_admin("Quirks cut from [key_name(user)] due to species blacklist: [english_list(S.removed_quirks)]")
 
 /datum/controller/subsystem/processing/quirks/proc/quirk_path_by_name(name)
 	return quirks[name]
@@ -106,14 +131,14 @@ PROCESSING_SUBSYSTEM_DEF(quirks)
 				points_used -= points
 			if(points_used <= 0)
 				break
-	*/
 
-	//Nah, let's null all non-neutrals out.
+	 //Nah, let's null all non-neutrals out.
 	if (pointscut < 0)// only if the pointscutting didn't work.
 		if(cut.len)
 			for(var/i in our_quirks)
 				if(quirk_points_by_name(i) != 0)
 					//cut += i		-- Commented out: Only show the ones that triggered the quirk purge.
 					our_quirks -= i
+	*/
 
 	return cut

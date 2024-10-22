@@ -3,11 +3,14 @@ on:
   push:
     branches:
     - master
+permissions:
+  contents: read
 jobs:
   generate_documentation:
-    if: "!contains(github.event.head_commit.message, '[ci skip]')"
+    permissions:
+      contents: write  # for JamesIves/github-pages-deploy-action to push changes in repo
+    if: ( !contains(github.event.head_commit.message, '[ci skip]') )
     runs-on: ubuntu-20.04
-    permissions: read-all|write-all
     steps:
       - uses: actions/checkout@v3
       - name: Setup cache

@@ -7,8 +7,6 @@
 	density = FALSE
 	max_integrity = 15
 
-
-
 /obj/structure/spider/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	if(damage_type == BURN)//the stickiness of the web mutes all attack sounds except fire damage type
 		playsound(loc, 'sound/items/welder.ogg', 100, 1)
@@ -40,6 +38,8 @@
 	. = ..()
 	if (genetic)
 		return
+	if(isarachnid(mover))
+		return TRUE
 	if(istype(mover, /mob/living/simple_animal/hostile/poison/giant_spider))
 		return TRUE
 	else if(isliving(mover))
@@ -125,7 +125,7 @@
 	attack_hand_is_action = TRUE
 
 /obj/structure/spider/spiderling/Destroy()
-	new/obj/effect/decal/cleanable/blood/xeno(get_turf(src))
+	new/obj/effect/decal/cleanable/insectguts(get_turf(src))
 	new/obj/item/reagent_containers/food/snacks/spiderling(get_turf(src))
 	. = ..()
 

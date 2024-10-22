@@ -1,7 +1,11 @@
 /datum/ert
 	var/mobtype = /mob/living/carbon/human
 	var/team = /datum/team/ert
-	var/opendoors = TRUE
+	var/opendoors = FALSE
+	/// If TRUE, the admin who created the response team will be spawned in the briefing room in their preferred briefing outfit (assuming they're a ghost)
+	var/spawn_admin = FALSE
+	///Do we want to notify the players of this ERT?
+	var/notify_players = TRUE
 	var/leader_role = /datum/antagonist/ert/commander
 	var/enforce_human = TRUE
 	var/roles = list(/datum/antagonist/ert/security, /datum/antagonist/ert/medic, /datum/antagonist/ert/engineer) //List of possible roles to be assigned to ERT members.
@@ -85,7 +89,7 @@
 	mission = "Разберитесь с проблемами на станции [station_name()], а также проведите плановую проверку всех Отделов и Командования."
 
 /datum/ert/inquisition
-	roles = list(/datum/antagonist/ert/chaplain/inquisitor, /datum/antagonist/ert/security/inquisitor, /datum/antagonist/ert/medic/inquisitor)
+	roles = list(/datum/antagonist/ert/security/inquisitor, /datum/antagonist/ert/medic/inquisitor)
 	leader_role = /datum/antagonist/ert/commander/inquisitor
 	rename_team = "Inquisition"
 	mission = "Уничтожьте любые следы паранормальной активности на борту Космической Станции Тринадцатого Сектора."

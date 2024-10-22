@@ -10,6 +10,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 	var/real_name //Stores the real name of the person who originally got this dna datum. Used primarely for changelings,
 	var/nameless = FALSE
 	var/custom_species	//siiiiigh I guess this is important
+	var/custom_species_lore // BLUEMOON EDIT - привязка лора кастомных рас к ДНК
 	var/list/mutations = list()   //All mutations are from now on here
 	var/list/temporary_mutations = list() //Temporary changes to the UE
 	var/list/previous = list() //For temporary name/ui/ue/blood_type modifications
@@ -20,6 +21,12 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 	var/stability = 100
 	var/scrambled = FALSE //Did we take something like mutagen? In that case we cant get our genes scanned to instantly cheese all the powers.
 	var/skin_tone_override //because custom skin tones are not found in the skin_tones global list.
+	// BLUEMOON EDIT START - привязка флавора к ДНК
+	var/flavor_text
+	var/naked_flavor_text
+	var/ooc_notes // hate this
+	var/list/headshot_links = list()
+	// BLUEMOON EDIT END
 
 /datum/dna/New(mob/living/new_holder)
 	if(istype(new_holder))
@@ -28,12 +35,16 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 /datum/dna/Destroy()
 	if(iscarbon(holder))
 		var/mob/living/carbon/cholder = holder
+		// We do this because a lot of stuff keeps references on species, for some reason.
+		species.on_species_loss(holder)
 		if(cholder.dna == src)
 			cholder.dna = null
 	holder = null
 
 	if(delete_species)
 		QDEL_NULL(species)
+	else
+		species = null
 
 	mutations.Cut()					//This only references mutations, just dereference.
 	temporary_mutations.Cut()		//^
@@ -52,16 +63,26 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 	destination.dna.features = features.Copy()
 	destination.set_species(species.type, icon_update=0)
 	destination.dna.species.say_mod = species.say_mod
+	destination.dna.species.exotic_blood_color = species.exotic_blood_color //it can change from the default value
+	destination.dna.species.exotic_blood_blend_mode = species.exotic_blood_blend_mode
 	destination.dna.real_name = real_name
 	destination.dna.nameless = nameless
 	destination.dna.custom_species = custom_species
+	destination.dna.custom_species_lore = custom_species_lore // BLUEMOON EDIT - привязка лора рас к ДНК
 	destination.dna.temporary_mutations = temporary_mutations.Copy()
-	SSquirks.AssignQuirks(destination, destination.client, TRUE, TRUE, null, FALSE, destination)
+	if(destination.client)
+		SSquirks.AssignQuirks(destination, destination.client, TRUE, TRUE, null, FALSE, destination)
 	if(ishuman(destination))
 		var/mob/living/carbon/human/H = destination
 		H.give_genitals(TRUE)//This gives the body the genitals of this DNA. Used for any transformations based on DNA
 		H.grad_style = H.grad_style
 		H.grad_color = H.grad_color
+		// BLUEMOON EDIT START - привязка флавора к ДНК
+		destination.dna.flavor_text = flavor_text
+		destination.dna.naked_flavor_text = naked_flavor_text
+		destination.dna.ooc_notes = ooc_notes
+		destination.dna.headshot_links = headshot_links.Copy()
+		// BLUEMOON EDIT END
 	if(transfer_SE)
 		destination.dna.mutation_index = mutation_index
 		destination.dna.default_mutation_genes = default_mutation_genes
@@ -87,7 +108,14 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 	new_dna.real_name = real_name
 	new_dna.nameless = nameless
 	new_dna.custom_species = custom_species
+	new_dna.custom_species_lore = custom_species_lore // BLUEMOON EDIT - привязка лора рас к ДНК
 	new_dna.mutations = mutations.Copy()
+	// BLUEMOON EDIT START - привязка флавора к ДНК
+	new_dna.flavor_text = flavor_text
+	new_dna.naked_flavor_text = naked_flavor_text
+	new_dna.ooc_notes = ooc_notes
+	new_dna.headshot_links = headshot_links.Copy()
+	// BLUEMOON EDIT END
 
 //See mutation.dm for what 'class' does. 'time' is time till it removes itself in decimals. 0 for no timer
 /datum/dna/proc/add_mutation(mutation, class = MUT_OTHER, time)
@@ -534,7 +562,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 
 /datum/dna/proc/check_block_string(mutation)
 	if((LAZYLEN(mutation_index) > DNA_MUTATION_BLOCKS) || !(mutation in mutation_index))
-		return 0
+		return FALSE
 	return is_gene_active(mutation)
 
 /datum/dna/proc/is_gene_active(mutation)
@@ -581,7 +609,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 
 /proc/setblock(istring, blocknumber, replacement, blocksize=DNA_BLOCK_SIZE)
 	if(!istring || !blocknumber || !replacement || !blocksize)
-		return 0
+		return FALSE
 	return getleftblocks(istring, blocknumber, blocksize) + replacement + getrightblocks(istring, blocknumber, blocksize)
 
 /datum/dna/proc/mutation_in_sequence(mutation)
@@ -657,7 +685,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 
 /proc/scramble_dna(mob/living/carbon/M, ui=FALSE, se=FALSE, probability)
 	if(!M.has_dna())
-		return 0
+		return FALSE
 	// BLUEMOON ADD START - гены роботов не должны изменяться
 	if(HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM))
 		return
@@ -672,7 +700,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 			if(prob(probability))
 				M.dna.uni_identity = setblock(M.dna.uni_identity, i, random_string(DNA_BLOCK_SIZE, GLOB.hex_characters))
 		M.updateappearance(mutations_overlay_update=1)
-	return 1
+	return TRUE
 
 //value in range 1 to values. values must be greater than 0
 //all arguments assumed to be positive integers
@@ -740,7 +768,7 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 					unequip_everything()
 					drop_all_held_items()
 					gib()
-
+/* BLUEMOON CHANGE полное переписывание этого чудовища (modular_bluemoon\code\datums\dna.dm)
 /datum/dna/proc/update_body_size(old_size)
 	if(!holder || features["body_size"] == old_size)
 		return
@@ -759,5 +787,5 @@ GLOBAL_DATUM(dna_for_copying, /datum/dna)
 			if(old_size < penalty_threshold && features["body_size"] >= penalty_threshold)
 				C.maxHealth  += 10 //give the maxhealth back
 				holder.remove_movespeed_modifier(/datum/movespeed_modifier/small_stride) //remove the slowdown
-
+*/
 

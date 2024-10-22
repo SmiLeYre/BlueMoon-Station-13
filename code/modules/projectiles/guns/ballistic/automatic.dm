@@ -52,7 +52,7 @@
 				chamber_round()
 				A.update_icon()
 				update_icon()
-				return 1
+				return TRUE
 			else
 				to_chat(user, "<span class='warning'>You cannot seem to get \the [src] out of your hands!</span>")
 
@@ -75,6 +75,7 @@
 	fire_sound = 'sound/weapons/gunshot_smg.ogg'
 	burst_shot_delay = 2
 	burst_size = 2
+	w_class = WEIGHT_CLASS_NORMAL
 	pin = /obj/item/firing_pin/implant/pindicate
 	can_bayonet = TRUE
 	knife_x_offset = 26
@@ -103,8 +104,10 @@
 	mag_type = /obj/item/ammo_box/magazine/wt550m9
 	can_suppress = FALSE
 	weapon_weight = WEAPON_HEAVY
+	w_class = WEIGHT_CLASS_BULKY
 	burst_size = 2
 	burst_shot_delay = 1
+	fire_delay = 2.5 //BLUEMOON ADD Снижаем скорострельность втшки в автоматическом режиме (Новый ребеланс, смена 3 на 2.5)
 	can_bayonet = TRUE
 	knife_x_offset = 25
 	knife_y_offset = 12
@@ -124,6 +127,7 @@
 	item_state = "arg"
 	mag_type = /obj/item/ammo_box/magazine/uzim9mm
 	burst_size = 2
+	automatic_burst_overlay = FALSE
 
 /obj/item/gun/ballistic/automatic/m90
 	name = "\improper M-90gl Carbine"
@@ -232,6 +236,7 @@
 	weapon_weight = WEAPON_HEAVY
 	burst_size = 3
 	burst_shot_delay = 1
+	automatic_burst_overlay = FALSE
 
 // Bulldog shotgun //
 
@@ -247,6 +252,7 @@
 	automatic_burst_overlay = FALSE
 	can_suppress = FALSE
 	burst_size = 1
+	fire_delay = 5 // BLUEMOON EDIT - was NOTHING
 	pin = /obj/item/firing_pin/implant/pindicate
 	actions_types = list()
 
@@ -288,6 +294,7 @@
 	actions_types = list()
 	spread = 7
 	pin = /obj/item/firing_pin/implant/pindicate
+	automatic_burst_overlay = FALSE
 	var/cover_open = FALSE
 
 /obj/item/gun/ballistic/automatic/l6_saw/Initialize()
@@ -440,12 +447,14 @@
 	item_state = "laser-wielded"
 	mag_type = /obj/item/ammo_box/magazine/recharge/lasgun
 	automatic_burst_overlay = FALSE
-	fire_delay = 2
+	w_class = WEIGHT_CLASS_BULKY
+	weapon_weight = WEAPON_HEAVY
+	fire_delay = 3 // BLUEMOON CHANGE Снижаем скорострельность лазгана в автоматическом режиме
 	can_suppress = FALSE
 	burst_size = 1
 	actions_types = list()
 	fire_sound = 'sound/weapons/lasgun.ogg'
 	casing_ejector = FALSE
 
-/obj/item/gun/ballistic/automatic/laser/update_icon_state()
+/obj/item/gun/ballistic/automatic/laser/lasgun/update_icon_state()
 	icon_state = "boarding"

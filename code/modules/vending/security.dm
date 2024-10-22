@@ -10,13 +10,14 @@
 					/obj/item/restraints/handcuffs/kinky = 6,
 					/obj/item/restraints/handcuffs/cable/zipties = 6,
 					/obj/item/grenade/flashbang = 4,
-					/obj/item/assembly/flash/handheld = 4,
-					/obj/item/reagent_containers/food/snacks/donut = 3,
-					/obj/item/storage/box/evidence = 3,
-					/obj/item/flashlight/seclite = 3,
-					/obj/item/restraints/legcuffs/bola/energy = 10,
+					/obj/item/assembly/flash/handheld = 5,
+					/obj/item/reagent_containers/food/snacks/donut = 12,
+					/obj/item/storage/box/evidence = 6,
+					/obj/item/flashlight/seclite = 4,
+					/obj/item/restraints/legcuffs/bola/energy = 12,
 					/obj/item/evidencebag = 20,
-					/obj/item/secbat = 5)
+					/obj/item/secbat = 5,
+					/obj/item/fee_terminal = 10)
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,
 					/obj/item/storage/fancy/donut_box = 2,
 					/obj/item/storage/belt/sabre/secbelt = 1)
@@ -27,7 +28,6 @@
 					/obj/item/clothing/gloves/tackler = 4, //BlueMoon edit
 					/obj/item/grenade/stingbang = 4, //BlueMoon edit
 					/obj/item/ssword_kit = 1,
-					/obj/item/clothing/suit/armor/hos/platecarrier = 1,
 					/obj/item/storage/belt/bandolier = 2,
 					/obj/item/storage/belt/military = 2,
 					/obj/item/storage/belt/military/assault/hecu = 1,

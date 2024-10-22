@@ -17,7 +17,7 @@
 	restricted_roles = list("Head of Security","Captain","Head of Personnel","Chief Engineer","Research Director","Chief Medical Officer","Quartermaster","Warden","Detective","Security Officer","Brig Physician","Blueshield","Bridge Officer")
 
 /datum/gear/head/orvkepicom
-	restricted_roles = list("Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Research Director", "Chief Medical Officer", "Quartermaster", "Bridge Officer")
+	restricted_roles = list("Head of Security","Bridge Officer", "Captain", "Head of Personnel", "Chief Engineer", "Research Director", "Chief Medical Officer", "Quartermaster", "Bridge Officer")
 
 /datum/gear/head/orvkepisec
 	restricted_roles = list("Warden", "Detective", "Security Officer", "Head of Security", "Brig Physician", "Blueshield")
@@ -42,6 +42,10 @@
 	path = /obj/item/clothing/head/helmet/goner/officer/fake/poly
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
 	loadout_initial_colors = list("#F2F2F2")
+
+/datum/gear/head/goneroffcap/classic
+	name = "polychromic trencher officer cap (classic)"
+	path = /obj/item/clothing/head/helmet/goner/officer/fake/poly/classic
 
 //Adds bowler hats
 /datum/gear/head/bowler
@@ -90,3 +94,32 @@
 	description = "A hat made of transparent fibers, often used with reinforcement kits."
 	path = /obj/item/clothing/head/invisihat
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
+
+/datum/gear/head/clussy_wig
+	name = "Clussy wig"
+	path = /obj/item/clothing/head/clussy_wig
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_JOBS
+	restricted_roles = list("Clown")
+	restricted_desc = "Clown"
+
+/datum/gear/head/hoodcowl
+	name = "Hood cowl"
+	path= /obj/item/clothing/head/hoodcowl
+
+// BM add
+/datum/gear/head/syndiewarden/civilian
+    name = "Master At Arms' Police Hat"
+    path = /obj/item/clothing/head/hats/warden/syndicate/civil
+
+/datum/gear/head/syndieberet/civil
+    name = "brig officer's beret"
+    path = /obj/item/clothing/head/beret/sec/syndicate/civil
+
+/datum/gear/head/syndieutility/civil
+    name = "engine tech utility cover"
+    path = /obj/item/clothing/head/soft/sec/syndicate/civil
+
+/datum/gear/head/swatds/civilian
+    name = "SWAT helmet"
+    path = /obj/item/clothing/head/helmet/swat/ds/civil
+//BM add end

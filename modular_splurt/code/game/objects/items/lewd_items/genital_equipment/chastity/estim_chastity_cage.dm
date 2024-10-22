@@ -25,7 +25,7 @@
 		return
 	if(!COOLDOWN_FINISHED(src, last_activation))
 		return
-	var/mob/living/carbon/human/H = estim_cage.equipment.get_wearer()
+	var/mob/living/carbon/human/H = estim_cage.equipment.holder_genital.owner
 
 	switch(estim_cage.mode)
 		if("shock")
@@ -115,9 +115,11 @@
 /obj/item/genital_equipment/chastity_cage/estim/Initialize(mapload, obj/item/key/chastity_key/estim/newkey = null)
 	. = ..()
 	var/obj/item/key/chastity_key/estim/estim_key = key
-	if(!estim_key.estim_cage)
-		estim_key.estim_cage = src
-	if(!estim_key && newkey)
-		estim_key = newkey
-	else
-		return
+	if(estim_key)
+		if(!estim_key.estim_cage)
+			estim_key.estim_cage = src
+		if(!estim_key && newkey)
+			estim_key = newkey
+		if(estim_key)
+			if(!estim_key.estim_cage)
+				estim_key.estim_cage = src

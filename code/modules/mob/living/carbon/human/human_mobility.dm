@@ -28,13 +28,12 @@
 			if(10 to 35)
 				standupwarning = "[src] встаёт."
 			if(35 to 60)
-				standupwarning = "[src] медленно встаёт."
+				standupwarning = "[src] медленно поднимается."
 			if(60 to 80)
-				standupwarning = "[src] вяло встаёт."
+				standupwarning = "[src] вяло поднимается."
 			if(80 to INFINITY)
-				standupwarning = "[src] с трудом встает."
+				standupwarning = "[src] с трудом поднимается."
 		var/usernotice = automatic ? "<span class='notice'>Вы сейчас встаете. (Автоматически)</span>" : "<span class='notice'>Вы сейчас встаете.</span>"
-		update_icon()
 		visible_message("<span class='notice'>[standupwarning]</span>", usernotice, vision_distance = 5)
 		if(do_after(src, totaldelay, target = src, timed_action_flags = (IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE|IGNORE_HELD_ITEM|IGNORE_INCAPACITATED), extra_checks = CALLBACK(src, PROC_REF(cuff_resist_check))))
 			set_resting(FALSE, TRUE)

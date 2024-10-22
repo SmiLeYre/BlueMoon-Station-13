@@ -9,7 +9,7 @@
 	total_positions = 1
 	spawn_positions = 1
 	minimal_player_age = 35
-	supervisors = "Nanotrasen officials and Space law"
+	supervisors = "Представители Центрального Командования и Космический Закон"
 	selection_color = "#7e3d48"
 	considered_combat_role = FALSE
 	exp_requirements = 180
@@ -23,8 +23,11 @@
 		"Prosecutor",
 		"NanoTrasen Consultant",
 		"Syndicate Advisor",
+		"Netorare",
+		"Commissar",
+		"Political Officer",
 		"NanoTrasen Slut",
-		"Netorare"
+		"Syndicate Slut",
 		)
 
 	outfit = /datum/outfit/job/ntr
@@ -36,14 +39,14 @@
 
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
 
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/blindness, /datum/quirk/monophobia)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/blindness, /datum/quirk/monophobia, /datum/quirk/bluemoon_criminal)
 
 	display_order = JOB_DISPLAY_ORDER_NTR
+	departments = DEPARTMENT_BITFLAG_LAW
 	threat = 2
 
 	family_heirlooms = list(
 		/obj/item/gavelhammer,
-		/obj/item/storage/briefcase/lawyer/family,
 		/obj/item/book/manual/wiki/security_space_law
 	)
 
@@ -51,7 +54,14 @@
 	name = "\proper the NanoTrasen Representative headset"
 	desc = "The headset of the lead station's judge."
 	icon_state = "com_headset"
-	keyslot = new /obj/item/encryptionkey/heads/hos
+	keyslot = new /obj/item/encryptionkey/headset_ntr
+
+/obj/item/radio/headset/heads/ntr/equipped(mob/user, slot)
+	..()
+	if((slot == ITEM_SLOT_EARS_LEFT) || (slot == ITEM_SLOT_EARS_RIGHT))
+		user.typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/law
+	else
+		user.typing_indicator_state = /obj/effect/overlay/typing_indicator
 
 /obj/item/pda/heads/ntr
 	name = "NanoTrasen Representative PDA"
@@ -103,7 +113,6 @@
 	suit = /obj/item/clothing/suit/armor/ntr
 	head = /obj/item/clothing/head/beret/sec/ntr
 	shoes = /obj/item/clothing/shoes/laceup/ntr
-	l_pocket = /obj/item/melee/classic_baton/telescopic
 	r_pocket = /obj/item/clothing/accessory/lawyers_badge
 
 	backpack = /obj/item/storage/backpack/security
@@ -114,9 +123,11 @@
 
 	backpack_contents = list(/obj/item/gun/energy/e_gun=1, /obj/item/stamp/law=1)
 
+	box = /obj/item/storage/box/survival/command
+
 	implants = list(/obj/item/implant/mindshield)
 
-	accessory = /obj/item/clothing/accessory/permit/head
+	accessory = /obj/item/clothing/accessory/permit/special/representative
 
 /datum/outfit/job/ntr/syndicate
 	name = "Syndicate Representative"
@@ -138,6 +149,8 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	box = /obj/item/storage/box/survival/syndie
 	pda_slot = ITEM_SLOT_BELT
+	accessory = /obj/item/clothing/accessory/permit/special/representative
+
 	backpack_contents = list(/obj/item/gun/energy/e_gun=1, /obj/item/stamp/law=1, /obj/item/syndicate_uplink=1)
 
 /datum/outfit/job/ntr/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)

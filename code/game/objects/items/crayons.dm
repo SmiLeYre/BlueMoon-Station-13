@@ -63,11 +63,21 @@
 	// If the user can toggle the colour, a la vanilla spraycan
 	var/can_change_colour = FALSE
 
+	//SPLURT EDIT START
+
+	var/can_change_light_color = FALSE // If item can change light color of target item
+	var/toggle_change_light_color = FALSE // Toggled by user on item that CAN change light color
+
+	//SPLURT EDIT END
+
 	var/has_cap = FALSE
 	var/is_capped = FALSE
 
 	var/pre_noise = FALSE
 	var/post_noise = FALSE
+
+	var/pre_noise_sound = 'sound/effects/spray.ogg' // BLUEMOON EDIT || MODULARIZE
+	var/post_noise_sound = 'sound/effects/spray.ogg' // BLUEMOON EDIT || MODULARIZE
 
 	var/datum/team/gang/gang //For marking territory.
 	var/gang_tag_delay = 30 //this is the delay for gang mode tag applications on anything that gang = true on.
@@ -127,7 +137,7 @@
 		refill()
 	else
 		if(check_empty(user, amount, requires_full))
-			return 0
+			return FALSE
 		else
 			. = min(charges_left, amount)
 			charges_left -= .
@@ -238,6 +248,9 @@
 	.["min_offset"] = -world.icon_size/2
 	.["max_offset"] = world.icon_size/2
 
+	.["can_change_light_color"] = can_change_light_color //SPLURT EDIT
+	.["toggle_change_light_color"] = toggle_change_light_color //SPLURT EDIT
+
 /obj/item/toy/crayon/ui_act(action, list/params)
 	if(..())
 		return
@@ -259,6 +272,11 @@
 				paint_mode = PAINT_NORMAL
 		if("select_colour")
 			. = can_change_colour && select_colour(usr)
+		//SPLURT EDIT START
+		if("toggle_change_light_color")
+			toggle_change_light_color = !toggle_change_light_color
+			. = TRUE
+		//SPLURT EDIT END
 		if("enter_text")
 			var/txt = stripped_input(usr,"Choose what to write.",
 				"Scribbles",default = text_buffer)
@@ -294,6 +312,24 @@
 	. = ..()
 	if(!proximity || !check_allowed_items(target))
 		return
+	// SPLURT EDIT START
+	// Check if we should only change the light color
+	if(toggle_change_light_color && can_change_light_color && !istype(target, /turf))
+		// First, check if the crayon is empty or doesn't have enough charges
+		if(check_empty(user, 2)) // We're checking for 2 charges here
+			return // Skip the light color change because it's out of charges
+
+		// If we have enough charges, change the light color
+		target.set_light_color(paint_color)
+		target.update_light()
+		to_chat(user, span_notice("You have successfully changed the innate light color of [target]."))
+
+		// Decrease the charges by 2
+		use_charges(user, 2)
+		return // Skip the normal drawing behavior
+
+	//Continue with normal drawing behavior if toggle_change_light_color is not true
+	//SPLURT EDIT END
 	draw_on(target, user, proximity, params)
 
 /obj/item/toy/crayon/proc/draw_on(atom/target, mob/user, proximity, params)
@@ -387,8 +423,8 @@
 		to_chat(user, "<span class='notice'>You start drawing a [temp] on the [target.name]...</span>")
 
 	if(pre_noise)
-		audible_message("<span class='notice'>You hear spraying.</span>")
-		playsound(user.loc, 'sound/effects/spray.ogg', 5, 1, 5)
+		audible_message("<span class='notice'>You can hear something.</span>") // BLUEMOON EDIT
+		playsound(user.loc, pre_noise_sound, 5, 1, 5) // BLUEMOON EDIT || MODULARIZE
 
 	var/wait_time = 50
 	if(paint_mode == PAINT_LARGE_HORIZONTAL)
@@ -450,8 +486,8 @@
 		SStgui.update_uis(src)
 
 	if(post_noise)
-		audible_message("<span class='notice'>You hear spraying.</span>")
-		playsound(user.loc, 'sound/effects/spray.ogg', 5, 1, 5)
+		audible_message("<span class='notice'>You can hear something.</span>") // BLUEMOON EDIT
+		playsound(user.loc, post_noise_sound, 5, 1, 5) // BLUEMOON EDIT || MODULARIZE
 
 	var/fraction = min(1, . / reagents.maximum_volume)
 	if(affected_turfs.len)
@@ -633,7 +669,7 @@
 /obj/item/storage/crayons/update_overlays()
 	. = ..()
 	for(var/obj/item/toy/crayon/crayon in contents)
-		add_overlay(mutable_appearance('icons/obj/crayons.dmi', crayon.crayon_color))
+		. += mutable_appearance('icons/obj/crayons.dmi', crayon.crayon_color)
 
 /obj/item/storage/crayons/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/toy/crayon))
@@ -666,7 +702,7 @@
 //Spraycan stuff
 
 /obj/item/toy/crayon/spraycan
-	name = "spray can"
+	name = "Spray Can"
 	icon_state = "spraycan"
 
 	icon_capped = "spraycan_cap"
@@ -816,7 +852,7 @@
 		. += spray_overlay
 
 /obj/item/toy/crayon/spraycan/borg
-	name = "cyborg spraycan"
+	name = "Cyborg Spraycan"
 	desc = "A metallic container containing shiny synthesised paint."
 	charges = -1
 	stun_delay = 5 SECONDS
@@ -841,7 +877,7 @@
 		borgy.cell.use(cost)
 
 /obj/item/toy/crayon/spraycan/hellcan
-	name = "hellcan"
+	name = "Hellcan"
 	desc = "This spraycan doesn't seem to be filled with paint..."
 	icon_state = "deathcan2_cap"
 	icon_capped = "deathcan2_cap"
@@ -855,7 +891,7 @@
 	paint_color = "#000000"
 
 /obj/item/toy/crayon/spraycan/lubecan
-	name = "slippery spraycan"
+	name = "Slippery Spraycan"
 	desc = "You can barely keep hold of this thing."
 	icon_state = "clowncan2_cap"
 	icon_capped = "clowncan2_cap"
@@ -869,7 +905,7 @@
 	return istype(surface, /turf/open/floor)
 
 /obj/item/toy/crayon/spraycan/mimecan
-	name = "silent spraycan"
+	name = "Silent Spraycan"
 	desc = "Art is best seen, not heard."
 	icon_state = "mimecan_cap"
 	icon_capped = "mimecan_cap"
@@ -884,7 +920,7 @@
 	reagent_contents = list(/datum/reagent/consumable/nothing = 1, /datum/reagent/toxin/mutetoxin = 1)
 
 /obj/item/toy/crayon/spraycan/infinite
-	name = "infinite spraycan"
+	name = "Infinite Spraycan"
 	charges = -1
 	desc = "Now with 30% more bluespace technology."
 

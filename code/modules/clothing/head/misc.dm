@@ -174,6 +174,13 @@
 	item_state = "chickensuit"
 	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
 
+/obj/item/clothing/head/richard
+	name = "Richard Head"
+	desc = "Bkaw!"
+	icon_state = "richard"
+	item_state = "chickensuit"
+	flags_inv = HIDEMASK|HIDEEARS|HIDEEYES|HIDEFACE|HIDEHAIR|HIDEFACIALHAIR|HIDESNOUT
+
 /obj/item/clothing/head/griffin
 	name = "griffon head"
 	desc = "Why not 'eagle head'? Who knows."
@@ -207,7 +214,7 @@
 
 /obj/item/clothing/head/fedora/suicide_act(mob/user)
 	if(user.gender == FEMALE)
-		return 0
+		return FALSE
 	var/mob/living/carbon/human/H = user
 	user.visible_message("<span class='suicide'>[user] is donning [src]! It looks like [user.ru_who()] trying to be nice to girls.</span>")
 	user.say("M'lady.", forced = "fedora suicide")
@@ -360,7 +367,7 @@
 /obj/item/clothing/head/frenchberet/equipped(mob/M, slot)
 	. = ..()
 	if (slot == ITEM_SLOT_HEAD)
-		RegisterSignal(M, COMSIG_MOB_SAY, .proc/handle_speech)
+		RegisterSignal(M, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 	else
 		UnregisterSignal(M, COMSIG_MOB_SAY)
 
@@ -447,7 +454,7 @@
 	resistance_flags = FIRE_PROOF
 
 /obj/item/clothing/head/cowboyhat/polychromic
-	name = "polychromic cowboy hat"
+	name = "Polychromic Cowboy Hat"
 	desc = "A polychromic cowboy hat, perfect for your indecisive rancher"
 	icon_state = "cowboyhat_poly"
 	item_state= "cowboyhat_poly"

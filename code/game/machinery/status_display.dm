@@ -14,6 +14,8 @@
 #define SD_MESSAGE 2  // 2 = Arbitrary message(s)
 #define SD_PICTURE 3  // 3 = alert picture
 
+#define MAX_SPEED		2
+
 /// Status display which can show images and scrolling text.
 /obj/machinery/status_display
 	name = "status display"
@@ -35,6 +37,14 @@
 	var/message1 = ""
 	var/message2 = ""
 	var/mob/living/silicon/ai/master
+	var/id = null			// for linking to monitor
+	var/speed = 0
+	var/power_gen = 4000	// amount of power output at max speed
+
+/obj/machinery/status_display/proc/get_power_output()
+	if(speed && !machine_stat && anchored)
+		return power_gen * speed / MAX_SPEED
+	return 0
 
 /obj/item/wallframe/status_display
 	name = "status display frame"
@@ -65,7 +75,7 @@
 		return TRUE
 	balloon_alert(user, "repaired")
 	obj_integrity = max_integrity
-	set_machine_stat(stat & ~BROKEN)
+	set_machine_stat(machine_stat & ~BROKEN)
 	update_appearance()
 	return TRUE
 
@@ -138,7 +148,7 @@
 /obj/machinery/status_display/update_appearance(updates=ALL)
 	. = ..()
 	if( \
-		(stat & (NOPOWER|BROKEN)) || \
+		(machine_stat & (NOPOWER|BROKEN)) || \
 		(current_mode == SD_BLANK) || \
 		(current_mode != SD_PICTURE && message1 == "" && message2 == "") \
 	)
@@ -149,7 +159,7 @@
 /obj/machinery/status_display/update_overlays()
 	. = ..()
 
-	if(stat & (NOPOWER|BROKEN))
+	if(machine_stat & (NOPOWER|BROKEN))
 		remove_messages()
 		return
 
@@ -181,7 +191,7 @@
 
 // Timed process - performs nothing in the base class
 /obj/machinery/status_display/process()
-	if(stat & NOPOWER)
+	if(machine_stat & NOPOWER)
 		// No power, no processing.
 		update_appearance()
 
@@ -198,7 +208,7 @@
 
 /obj/machinery/status_display/emp_act(severity)
 	. = ..()
-	if(stat & (NOPOWER|BROKEN) || . & EMP_PROTECT_SELF)
+	if(machine_stat & (NOPOWER|BROKEN) || . & EMP_PROTECT_SELF)
 		return
 	current_mode = SD_PICTURE
 	set_picture("ai_bsod")
@@ -324,7 +334,7 @@
 	return ..()
 
 /obj/machinery/status_display/evac/process()
-	if(stat & NOPOWER)
+	if(machine_stat & NOPOWER)
 		// No power, no processing.
 		update_appearance()
 		return PROCESS_KILL
@@ -381,7 +391,7 @@
 	current_mode = SD_MESSAGE
 
 /obj/machinery/status_display/supply/process()
-	if(stat & NOPOWER)
+	if(machine_stat & NOPOWER)
 		// No power, no processing.
 		update_appearance()
 		return PROCESS_KILL
@@ -429,7 +439,7 @@
 	var/shuttle_id
 
 /obj/machinery/status_display/shuttle/process()
-	if(!shuttle_id || (stat & NOPOWER))
+	if(!shuttle_id || (machine_stat & NOPOWER))
 		// No power, no processing.
 		update_appearance()
 		return PROCESS_KILL
@@ -453,7 +463,7 @@
 
 /obj/machinery/status_display/shuttle/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
 	if(port && (shuttle_id == initial(shuttle_id) || override))
-		shuttle_id = port.id
+		shuttle_id = port.shuttle_id
 	update()
 
 
@@ -550,7 +560,7 @@
 		master.relay_speech(message, speaker, message_language, raw_message, radio_freq, spans, message_mods)
 
 /obj/machinery/status_display/ai/process()
-	if(stat & NOPOWER)
+	if(machine_stat & NOPOWER)
 		update_appearance()
 		return PROCESS_KILL
 
@@ -559,18 +569,33 @@
 
 /obj/machinery/status_display/emag_act(mob/user)
 	. = ..()
-	if(obj_flags & EMAGGED)
-		to_chat(user, "<span class='warning'>Ничего интересного не произошло!!</span>")
-		return
-	obj_flags |= EMAGGED
-	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
-	to_chat(user, "<span class='notice'>Вы взломали дисплей. Осуществляется взлом систем...</span>")
-	addtimer(CALLBACK(src, .proc/syndie_display_good), 10 SECONDS)
-	return TRUE
+	if(GLOB.master_mode == "Extended")
+		if(obj_flags & EMAGGED)
+			to_chat(user, "<span class='warning'>Ничего интересного не произошло!!</span>")
+			return
+		obj_flags |= EMAGGED
+		log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
+		to_chat(user, "<span class='notice'>Вы взломали дисплей. Осуществляется взлом систем...</span>")
+		addtimer(CALLBACK(src, PROC_REF(syndie_display_good)), 10 SECONDS)
+		return TRUE
+	else
+		if(obj_flags & EMAGGED)
+			to_chat(user, "<span class='warning'>Ничего интересного не произошло!!</span>")
+			return
+		obj_flags |= EMAGGED
+		log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
+		to_chat(user, "<span class='notice'>Вы взломали дисплей. Осуществляется взлом систем...</span>")
+		addtimer(CALLBACK(src, PROC_REF(inteq_display_good)), 10 SECONDS)
+		return TRUE
+
 
 /obj/machinery/status_display/proc/syndie_display_good()
 	req_access = list(ACCESS_SYNDICATE)
 	set_picture("synd")
+
+/obj/machinery/status_display/proc/inteq_display_good()
+	req_access = list(ACCESS_INTEQ)
+	set_picture("inteq")
 
 /obj/machinery/status_display/syndie
 	name = "Syndicate Status Display"
@@ -656,6 +681,112 @@
 	connected_display.receive_signal(status_signal)
 */
 
+/obj/machinery/treadmill_monitor
+	name = "Treadmill Monitor"
+	icon = 'icons/obj/status_display.dmi'
+	icon_state = "frame"
+	desc = "Monitors treadmill use."
+	anchored = 1
+	density = 0
+	maptext_height = 26
+	maptext_width = 32
+	maptext_y = -1
+
+	var/on = 0					// if we should be metering or not
+	var/id = null				// id of treadmill
+	var/obj/machinery/status_display/treadmill = null
+	var/total_joules = 0		// total power from prisoner
+	var/J_per_ticket = 45000	// amt of power charged for a ticket
+	var/line1 = ""
+	var/line2 = ""
+	var/frame = 0				// on 0, show labels, on 1 show numbers
+	var/redeem_immediately = 0	// redeem immediately for holding cell
+
+/obj/machinery/treadmill_monitor/Initialize(mapload)
+	. = ..()
+	if(id)
+		for(var/obj/machinery/status_display/T in GLOB.machines)
+			if(T.id == id)
+				treadmill = T
+				break
+	if(!treadmill)
+		// also simply check if treadmill at loc
+		for(var/obj/machinery/status_display/T in loc)
+			treadmill = T
+			break
+
+/obj/machinery/treadmill_monitor/process()
+	if(machine_stat & (NOPOWER|BROKEN))
+		return
+	if(treadmill && on)
+		var/output = treadmill.get_power_output()
+		if(output)
+			total_joules += output
+		if(redeem_immediately && total_joules > J_per_ticket)
+			redeem()
+			total_joules = 1
+	update_icon()
+	frame = !frame
+
+/obj/machinery/treadmill_monitor/power_change()
+	..()
+	update_icon()
+
+/obj/machinery/treadmill_monitor/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>The display reads:<div style='text-align: center'>[line1]<br>[line2]</div></span>"
+
+/obj/machinery/treadmill_monitor/update_icon()
+	overlays.Cut()
+	if(machine_stat & NOPOWER || !total_joules || !on)
+		line1 = ""
+		line2 = ""
+	else if(machine_stat & BROKEN)
+		overlays += image('icons/obj/status_display.dmi', icon_state = "ai_bsod")
+		line1 = "A@#$A"
+		line2 = "729%!"
+	else
+		if(!frame)
+			line1 = "-W/S-"
+			line2 = "-TIX-"
+		else
+			if(!treadmill || treadmill.machine_stat)
+				line1 = "???"
+			else
+				line1 = "[add_zero(num2text(round(treadmill.get_power_output())), 4)]"
+			if(length(line1) > CHARS_PER_LINE)
+				line1 = "Error"
+			if(J_per_ticket)
+				line2 = "[round(total_joules / J_per_ticket)]"
+			if(length(line2) > CHARS_PER_LINE)
+				line2 = "Error"
+	update_display(line1, line2)
+
+//Checks to see if there's 1 line or 2, adds text-icons-numbers/letters over display
+// Stolen from status_display
+/obj/machinery/treadmill_monitor/proc/update_display(var/line1, var/line2)
+	line1 = uppertext(line1)
+	line2 = uppertext(line2)
+	var/new_text = {"<div style="font-size:[FONT_SIZE];color:[FONT_COLOR];font:'[FONT_STYLE]';text-align:center;" valign="top">[line1]<br>[line2]</div>"}
+	if(maptext != new_text)
+		maptext = new_text
+
+// called by brig timer when prisoner released
+/obj/machinery/treadmill_monitor/proc/redeem()
+	if(total_joules >= J_per_ticket && J_per_ticket)
+		playsound(loc, 'sound/machines/chime.ogg', 50, 1)
+		new /obj/item/stack/arcadeticket(get_turf(src), round(total_joules / J_per_ticket))
+		total_joules = 0
+
+/obj/machinery/treadmill_monitor/emp_act(severity)
+	..()
+	if(!(machine_stat & BROKEN))
+		machine_stat |= BROKEN
+		update_icon()
+		spawn(100)
+			machine_stat &= ~BROKEN
+			update_icon()
+
 #undef CHARS_PER_LINE
 #undef FONT_SIZE
 #undef FONT_COLOR
@@ -663,3 +794,4 @@
 #undef SCROLL_RATE
 #undef LINE1_Y
 #undef LINE2_Y
+#undef MAX_SPEED

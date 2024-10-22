@@ -1,193 +1,97 @@
-## S.P.L.U.R.T. Station 13
-Based and maintained from Sandstorm Station 13, which is based and maintained from Citadel, which is based and mantained from /tg/station. (yup)
+# BlueMoon Station
+[![CI Suite](https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/workflows/CI%20Suite/badge.svg)](https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station//actions?query=workflow%3A%22CI+Suite%22) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/BlueMoon-Labs/MOLOT-BlueMoon-Station/pulls) [![HitCount](https://hits.dwyl.com/BlueMoon-Labs/MOLOT-BlueMoon-Station.svg)](https://hits.dwyl.com/BlueMoon-Labs/MOLOT-BlueMoon-Station) [![Одумайся](https://camo.githubusercontent.com/557504a5326b02363676cd365a4ec29e50199149db8e9d5afed26e2b99c7dc26/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7374617274253230776974682d7768792533462d627269676874677265656e2e7376673f7374796c653d666c6174)](https://www.youtube.com/watch?v=doA9R9k4C9s)
 
-[![CI Suite](https://github.com/SPLURT-Station/S.P.L.U.R.T-Station-13/workflows/CI%20Suite/badge.svg)](https://github.com/SPLURT-Station/S.P.L.U.R.T-Station-13//actions?query=workflow%3A%22CI+Suite%22)
-[![Percentage of issues still open](http://isitmaintained.com/badge/open/SPLURT-Station/S.P.L.U.R.T-Station-13.svg)](http://isitmaintained.com/project/SPLURT-Station/S.P.L.U.R.T-Station-13 "Percentage of issues still open")
-[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/SPLURT-Station/S.P.L.U.R.T-Station-13.svg)](http://isitmaintained.com/project/SPLURT-Station/S.P.L.U.R.T-Station-13 "Average time to resolve an issue")
+[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/e6pRWzMVMA) [![Boosty](https://img.shields.io/badge/sponsor-30363D?style=for-the-badge&logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://boosty.to/bluemoon-ss13) [![Wiki](https://img.shields.io/badge/Wikipedia-%23000000.svg?style=for-the-badge&logo=wikipedia&logoColor=white)](https://wiki.ss13-bluemoon.ru/wiki/Заглавная_страница)
 
-[![forthebadge](http://forthebadge.com/images/badges/60-percent-of-the-time-works-every-time.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/pretty-risque.svg)](https://forthebadge.com) [![forthebadge](http://forthebadge.com/images/badges/you-didnt-ask-for-this.svg)](http://forthebadge.com) [![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a)
+[![forinfinityandbyond](https://user-images.githubusercontent.com/5211576/29499758-4efff304-85e6-11e7-8267-62919c3688a9.gif)](https://www.reddit.com/r/SS13/comments/5oplxp/what_is_the_main_problem_with_byond_as_an_engine/dclbu1a) [![forthebadge](https://forthebadge.com/images/badges/ctrl-c-ctrl-v.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/works-on-my-machine.svg)](https://forthebadge.com)
 
-**/tg/station Information**
-* **Website:** <https://www.tgstation13.org>
-* **Code:** <https://github.com/tgstation/tgstation>
-* **Wiki:** <https://tgstation13.org/wiki/Main_Page>
-* **Codedocs:** <https://codedocs.tgstation13.org>
-* **/tg/station Discord:** <https://tgstation13.org/phpBB/viewforum.php?f=60>
-* **Coderbus Discord:** <https://discord.gg/Vh8TJp9>
-* ~~**IRC:** <irc://irc.rizon.net/coderbus>~~ (dead)
+**BlueMoon** - русскоязычный сервер по нишевой игре **[Space Station 13](https://ru.wikipedia.org/wiki/Space_Station_13)**. Основное внимание на нашем сервере уделяется свободе самовыражения, а также веселой, расслабленной и дружелюбной атмосфере.
 
-**Citadel Station (upstream) Information**
-* **Website:** <http://citadel-station.net>
-* **Code:** <https://github.com/Citadel-Station-13/Citadel-Station-13>
-* **Wiki:** <https://citadel-station.net/wiki/index.php?title=Main_Page>
-* **Forums:** <http://citadel-station.net/forum>
-* **Ban Appeals:** <http://citadel-station.net/forum/forumdisplay.php?fid=8>
-* **Discord:**  <https://discord.gg/E6SQuhz>
+Лидер и главный мейнтейнер проекта - **[SmiLeY](https://github.com/SmiLeYre)**.
 
-**Sandstorm Station (upstream) Information**
-* **Code:** <https://github.com/SandPoot/Sandstorm-Station-13>
-* **Discord:**  <https://discord.gg/quXTqa6cp9> (updated 19/01/2022)
+**BlueMoon** является форком **[S.P.L.U.R.T. Station](https://github.com/SPLURT-Station/S.P.L.U.R.T-Station-13)**, который является форком **[Sandstorm Station](https://github.com/SandPoot/Sandstorm-Station-13)**, который является форком **[Citadel Station](https://github.com/Citadel-Station-13/Citadel-Station-13)**, который является форком **[/tg/station](https://tgstation13.org/phpBB/viewforum.php?f=60)**. Забавно, да?
 
-**S.P.L.U.R.T. Station Information**
-* **Code:** https://github.com/SPLURT-Station/S.P.L.U.R.T-Station-13
-* **Discord:** https://discord.gg/wynHVMzHzC
-* **Patreon:** https://www.patreon.com/SPLURTstation13
-* **Ko-fi:** https://ko-fi.com/splurt
+* **Наш Discord** - <https://discord.gg/e6pRWzMVMA>
+* **Наше Wiki** - <https://wiki.ss13-bluemoon.ru/wiki/Заглавная_страница>
+* **Поддержать Проект** - <https://boosty.to/bluemoon-ss13>
 
-## DOWNLOADING
+> [!CAUTION]
+> Сервер, как и репозиторий, могут содержать материалы, не подходящие для всех возрастов. Просматривая любую часть репозитория, предлагая правки или заходя на наши веб-ресурсы, вы подтверждаете, что вам **минимум 18 лет**.
 
-There are a number of ways to download the source code. Some are described here, an alternative all-inclusive guide is also located at http://www.tgstation13.org/wiki/Downloading_the_source_code
+## СКАЧИВАНИЕ
 
-Option 1:
-Follow this: http://www.tgstation13.org/wiki/Setting_up_git
+Для установки кодовой базы сервера вы можете воспользоваться достаточно подробным [руководством от разработчиков /tg/station](http://www.tgstation13.org/wiki/Downloading_the_source_code), с поправкой на скачивание из нашего репозитория.
 
-Option 2: Download the source code as a zip by clicking the ZIP button in the
-code tab of https://github.com/tgstation/tgstation
-(note: this will use a lot of bandwidth if you wish to update and is a lot of
-hassle if you want to make any changes at all, so it's not recommended.)
+Самым простым путём скачивания, не требующим сторонних программ, является скачивание ZIP-архива. Нажмите вверху на кнопку **<> Code**, после чего выберите опцию **Download ZIP**. После этого архив нужно будет распаковать, используя любой доступный архиватор.
 
-Option 3: Download a pre-compiled nightly at https://tgstation13.download/nightlies/ (same caveats as option 2)
+Для более продвинутой работы с репозиторием настоятельно рекомендуется установить **[Git](https://git-scm.com/)** и использовать его функционал.
 
-## INSTALLATION
+## РАЗВЁРТЫВАНИЕ СЕРВЕРА
+**На данный момент стабильной является работа сервера лишь на платформе Microsoft Windows. На платформе GNU/Linux возможны серьёзные проблемы и баги.**
 
-First-time installation should be fairly straightforward. First, you'll need
-BYOND installed. You can get it from https://www.byond.com/download. Once you've done
-that, extract the game files to wherever you want to keep them. This is a
-sourcecode-only release, so the next step is to compile the server files.
-Open tgstation.dme by double-clicking it, open the Build menu, and click
-compile. This'll take a little while, and if everything's done right you'll get
-a message like this:
+Установите  [BYOND](https://www.byond.com/download). Если вы уже скачали кодовую базу, как указано выше, используйте [Build.bat](Build.bat) в корне репозитория, чтобы скомпилировать его в **tgstation.dmb**. После этого, скомпилированный **tgstation.dmb** может быть запущен через **DreamDaemon**.
 
-```
-saving tgstation.dmb (DEBUG mode)
-tgstation.dmb - 0 errors, 0 warnings
-```
+Также теоретически возможна компиляция через обычный **DreamMaker**, однако это может вызвать ошибки, преимущественно с TGUI.
 
-If you see any errors or warnings, something has gone wrong - possibly a corrupt
-download or the files extracted wrong. If problems persist, ask for assistance
-in irc://irc.rizon.net/coderbus
+Помните, что, в соответствии с [лицензией GNU AGPL v3](#лицензия) вы должны выложить свой код в открытый доступ, если хостите сервер для кого-то, кроме ограниченной группы друзей. Подробнее можете прочитать в файле [LICENSE](LICENSE) в корне репозитория.
 
-Once that's done, open up the config folder. You'll want to edit config.txt to
-set the probabilities for different gamemodes in Secret and to set your server
-location so that all your players don't get disconnected at the end of each
-round. It's recommended you don't turn on the gamemodes with probability 0,
-except Extended, as they have various issues and aren't currently being tested,
-so they may have unknown and bizarre bugs. Extended is essentially no mode, and
-isn't in the Secret rotation by default as it's just not very fun.
+Будет хорошей идеей настроить конфиги в соответствии с вашими требованиями, особенно [config/admins.txt](config/admins.txt), [config/admin_ranks.txt](config/admin_ranks.txt) и некоторые другие файлы в папках [config/](config) и [data/](data).
 
-You'll also want to edit config/admins.txt to remove the default admins and add
-your own. "Game Master" is the highest level of access, and probably the one
-you'll want to use for now. You can set up your own ranks and find out more in
-config/admin_ranks.txt
+Также, если вашей целью является хостинг достаточно крупного сервера, обратите внимание на технологию [TGS (/tg/station Server)](https://github.com/tgstation/tgstation-server), а также не забудьте [развернуть базу данных](#база-данных).
 
-The format is
+## КАРТЫ
 
-```
-byondkey = Rank
-```
+Система ротации карт добавляет разнообразия в игровой процесс, включается она в [config.txt](config/config.txt), а находящиеся в ней карты определяются в [maps.txt](config/maps.txt). Загрузка карт происходит динамически во время загрузки сервера. Сами карты находятся в папке [_maps](_maps).
 
-where the admin rank must be properly capitalised.
+В настоящий момент в ротации находятся:
+* **BoxStation**
+* **MetaStation**
+* **DeltaStation**
+* **Peace Syndicate Station**
+* **Festive Station**
+* **Kilo Station**
+* **OmegaStation**
+* **PubbyStation**
+* **LayeniaStation**
+* **Tau Station**
+* **Cog Station**
+* **Smexi Station**
 
-This codebase also depends on a native library called rust-g. A precompiled
-Windows DLL is included in this repository, but Linux users will need to build
-and install it themselves. Directions can be found at the [rust-g
-repo](https://github.com/tgstation13/rust-g).
+Если вы желаете заняться маппингом, настоятельно рекомендуем использовать инструмент [StrongDMM](https://github.com/SpaiR/StrongDMM), и ознакомиться с [Map Merging tools](http://tgstation13.org/wiki/Map_Merger).
 
-Finally, to start the server, run Dream Daemon and enter the path to your
-compiled tgstation.dmb file. Make sure to set the port to the one you
-specified in the config.txt, and set the Security box to 'Safe'. Then press GO
-and the server should start up and be ready to join. It is also recommended that
-you set up the SQL backend (see below).
+*Если вы занимаетесь разработкой и часто тестируете свои изменения на локальном сервере, задумайтесь о включении Low Memory Mode, раскомментировав ``//#define LOWMEMORYMODE`` в [_maps/_basemap.dm](_maps/_basemap.dm). Это отключит загрузку секторов космоса помимо ЦК и станции, а также заменит карту на легковесную RuntimeStation, что значительно ускорит загрузку подсистем.*
 
-## UPDATING
+## БАЗА ДАННЫХ
 
-To update an existing installation, first back up your /config and /data folders
-as these store your server configuration, player preferences and banlist.
+Для корректной работы базы данных необходим [Mariadb Server 10.2 и выше](https://mariadb.org/). Использование других СУБД (таких как SQLite, например) может вызвать ошибки.
 
-Then, extract the new files (preferably into a clean directory, but updating in
-place should work fine), copy your /config and /data folders back into the new
-install, overwriting when prompted except if we've specified otherwise, and
-recompile the game.  Once you start the server up again, you should be running
-the new version.
+База данных необходима для корректной работы библиотеки, статистики, админских нотесов, банов и многого другого, особенно - связанного с администрированием. Отредактируйте [/config/dbconfig.txt](/config/dbconfig.txt), и воспользуйтесь SQL-схемами в [/SQL/tgstation_schema.sql](/SQL/tgstation_schema.sql) (или [/SQL/tgstation_schema_prefix.sql](/SQL/tgstation_schema_prefix.sql), если вам нужны таблицы с префиксами).
 
-## :exclamation: How to compile :exclamation:
+Рекомендуем воспользоваться более подробными [инструкциями от разработчиков /tg/station](https://www.tgstation13.org/wiki/Downloading_the_source_code#Setting_up_the_database).
 
-On **2021-01-04** we have changed the way to compile the codebase.
+## IRC-БОТ
 
-Find `Build.cmd` in this folder, and double click it to initiate the build. It consists of multiple steps and might take around 1-5 minutes to compile. If it closes, it means it has finished its job. You can then setup the server normally by opening `tgstation.dmb` in DreamDaemon.
+В репозиторий включен python3 IRC-бот, который может отправлять админхелпы на определённый IRC-канал/сервер, подробнее в папке [/tools/minibot](/tools/minibot).
 
-**Building tgstation in DreamMaker directly is now deprecated and might produce errors**, such as `'tgui.bundle.js': cannot find file`.
+## РАЗРАБОТКА
 
-## HOSTING
+Ознакомьтесь с [CONTRIBUTING.md](.github/CONTRIBUTING.md).
 
-If you'd like a more robust server hosting option for tgstation and its
-derivatives. Check out our server tools suite at
-https://github.com/tgstation/tgstation-server
+## ЛИЦЕНЗИЯ
 
-## MAPS
+Весь код после коммита [commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12 at 4:38 PM PST](https://github.com/tgstation/tgstation/commit/333c566b88108de218d882840e61928a9b759d8f) лицензирован под [GNU AGPL v3](http://www.gnu.org/licenses/agpl-3.0.html).
 
-/tg/station currently comes equipped with five maps.
+Весь код перед коммитом [commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12 at 4:38 PM PST](https://github.com/tgstation/tgstation/commit/333c566b88108de218d882840e61928a9b759d8f) лицензирован под [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.html).
+*(Так же, как и различные инструменты, если в их README не указано другое.)*
 
-* [BoxStation (default)](http://tgstation13.org/wiki/Boxstation)
-* [MetaStation](https://tgstation13.org/wiki/MetaStation)
-* [DeltaStation](https://tgstation13.org/wiki/DeltaStation)
-* [OmegaStation](https://tgstation13.org/wiki/OmegaStation)
-* [PubbyStation](https://tgstation13.org/wiki/PubbyStation)
+Ознакомьтесь с файлами [LICENSE](LICENSE) и [GPLv3.txt](GPLv3.txt), если вам нужно больше информации.
 
+**TGS3 API** лицензирован в качестве подпроекта под лицензией [MIT](https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_MIT).
 
-All maps have their own code file that is in the base of the _maps directory. Maps are loaded dynamically when the game starts. Follow this guideline when adding your own map, to your fork, for easy compatibility.
+**TGUI-клиент** лицензирован в качестве подпроекта под лицензией [MIT](https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%86%D0%B5%D0%BD%D0%B7%D0%B8%D1%8F_MIT).
 
-The map that will be loaded for the upcoming round is determined by reading data/next_map.json, which is a copy of the json files found in the _maps tree. If this file does not exist, the default map from config/maps.txt will be loaded. Failing that, BoxStation will be loaded. If you want to set a specific map to load next round you can use the Change Map verb in game before restarting the server or copy a json from _maps to data/next_map.json before starting the server. Also, for debugging purposes, ticking a corresponding map's code file in Dream Maker will force that map to load every round.
+Шрифт **Font Awesome**, используемый в TGUI, лицензирован под [SIL Open Font License v1.1](https://ru.wikipedia.org/wiki/SIL_Open_Font_License).
 
-If you are hosting a server, and want randomly picked maps to be played each round, you can enable map rotation in [config.txt](config/config.txt) and then set the maps to be picked in the [maps.txt](config/maps.txt) file.
+**Ассеты TGUI** лицензированы под [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
 
-Anytime you want to make changes to a map it's imperative you use the [Map Merging tools](http://tgstation13.org/wiki/Map_Merger)
-
-## AWAY MISSIONS
-
-/tg/station supports loading away missions however they are disabled by default.
-
-Map files for away missions are located in the _maps/RandomZLevels directory. Each away mission includes it's own code definitions located in /code/modules/awaymissions/mission_code. These files must be included and compiled with the server beforehand otherwise the server will crash upon trying to load away missions that lack their code.
-
-To enable an away mission open `config/awaymissionconfig.txt` and uncomment one of the .dmm lines by removing the #. If more than one away mission is uncommented then the away mission loader will randomly select one the enabled ones to load.
-
-## SQL SETUP
-
-The SQL backend requires a Mariadb server running 10.2 or later. Mysql is not supported but Mariadb is a drop in replacement for mysql. SQL is required for the library, stats tracking, admin notes, and job-only bans, among other features, mostly related to server administration. Your server details go in /config/dbconfig.txt, and the SQL schema is in /SQL/tgstation_schema.sql and /SQL/tgstation_schema_prefix.sql depending on if you want table prefixes.  More detailed setup instructions are located here: https://www.tgstation13.org/wiki/Downloading_the_source_code#Setting_up_the_database
-
-## WEB/CDN RESOURCE DELIVERY
-
-Web delivery of game resources makes it quicker for players to join and reduces some of the stress on the game server.
-
-1. Edit compile_options.dm to set the `PRELOAD_RSC` define to `0`
-1. Add a url to config/external_rsc_urls pointing to a .zip file containing the .rsc.
-    * If you keep up to date with /tg/ you could reuse /tg/'s rsc cdn at http://tgstation13.download/byond/tgstation.zip. Otherwise you can use cdn services like CDN77 or cloudflare (requires adding a page rule to enable caching of the zip), or roll your own cdn using route 53 and vps providers.
-	* Regardless even offloading the rsc to a website without a CDN will be a massive improvement over the in game system for transferring files.
-
-## IRC BOT SETUP
-
-Included in the repository is a python3 compatible IRC bot capable of relaying adminhelps to a specified
-IRC channel/server, see the /tools/minibot folder for more
-
-## CONTRIBUTING
-
-Please see [CONTRIBUTING.md](.github/CONTRIBUTING.md)
-
-## LICENSE
-
-All code after [commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12 at 4:38 PM PST](https://github.com/tgstation/tgstation/commit/333c566b88108de218d882840e61928a9b759d8f) is licensed under [GNU AGPL v3](http://www.gnu.org/licenses/agpl-3.0.html).
-
-All code before [commit 333c566b88108de218d882840e61928a9b759d8f on 2014/31/12 at 4:38 PM PST](https://github.com/tgstation/tgstation/commit/333c566b88108de218d882840e61928a9b759d8f) is licensed under [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.html).
-(Including tools unless their readme specifies otherwise.)
-
-See LICENSE and GPLv3.txt for more details.
-
-The TGS3 API is licensed as a subproject under the MIT license.
-
-See the footers of code/\_\_DEFINES/server\_tools.dm, code/modules/server\_tools/st\_commands.dm, and code/modules/server\_tools/st\_inteface.dm for the MIT license.
-
-tgui clientside is licensed as a subproject under the MIT license.
-Font Awesome font files, used by tgui, are licensed under the SIL Open Font License v1.1
-tgui assets are licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
-
-All assets including icons and sound are under a [Creative Commons 3.0 BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/) unless otherwise indicated.
+**Все иконки, изображения и звуки** лицензированы под [Creative Commons 3.0 BY-SA license](https://creativecommons.org/licenses/by-sa/3.0/), в случае, если не указано другое.

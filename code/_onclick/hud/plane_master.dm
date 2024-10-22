@@ -52,6 +52,7 @@
 
 /atom/movable/screen/plane_master/openspace/Initialize(mapload)
 	. = ..()
+	add_filter("displacer", 1, displacement_map_filter(render_source = GRAVITY_PULSE_RENDER_TARGET, size = 10))
 	filters += filter(type="alpha", render_source=FIELD_OF_VISION_RENDER_TARGET, flags=MASK_INVERSE)
 	filters += filter(type="alpha", render_source = LIGHTING_RENDER_TARGET, flags = MASK_INVERSE)
 	filters += filter(type = "drop_shadow", color = "#04080FAA", size = -10)
@@ -71,6 +72,10 @@
 	appearance_flags = PLANE_MASTER
 	blend_mode = BLEND_OVERLAY
 
+/atom/movable/screen/plane_master/floor/Initialize(mapload)
+	. = ..()
+	add_filter("displacer", 1, displacement_map_filter(render_source = GRAVITY_PULSE_RENDER_TARGET, size = 10))
+
 /atom/movable/screen/plane_master/wall
 	name = "wall plane master"
 	plane = WALL_PLANE
@@ -89,6 +94,7 @@
 
 /atom/movable/screen/plane_master/above_wall/Initialize(mapload)
 	. = ..()
+	add_filter("displacer", 1, displacement_map_filter(render_source = GRAVITY_PULSE_RENDER_TARGET, size = 10))
 	add_filter("vision_cone", 100, list(type="alpha", render_source=FIELD_OF_VISION_RENDER_TARGET, flags=MASK_INVERSE))
 
 /atom/movable/screen/plane_master/above_wall/backdrop(mob/mymob)
@@ -106,6 +112,7 @@
 
 /atom/movable/screen/plane_master/game_world/Initialize(mapload)
 	. = ..()
+	add_filter("displacer", 1, displacement_map_filter(render_source = GRAVITY_PULSE_RENDER_TARGET, size = 10))
 	add_filter("vision_cone", 100, list(type="alpha", render_source=FIELD_OF_VISION_RENDER_TARGET, flags=MASK_INVERSE))
 
 /atom/movable/screen/plane_master/game_world/backdrop(mob/mymob)
@@ -168,6 +175,7 @@
 	. = ..()
 	add_filter("emissives", 1, alpha_mask_filter(render_source = EMISSIVE_RENDER_TARGET, flags = MASK_INVERSE))
 	add_filter("object_lighting", 2, alpha_mask_filter(render_source = O_LIGHTING_VISUAL_RENDER_TARGET, flags = MASK_INVERSE))
+	add_filter("displacer", 3, displacement_map_filter(render_source = GRAVITY_PULSE_RENDER_TARGET, size = 10))
 
 /**
  * Handles emissive overlays and emissive blockers.
@@ -194,6 +202,10 @@
 	name = "parallax backdrop/space turf plane master"
 	plane = PLANE_SPACE
 
+/atom/movable/screen/plane_master/parallax_white/Initialize(mapload)
+	. = ..()
+	add_filter("displacer", 3, displacement_map_filter(render_source = GRAVITY_PULSE_RENDER_TARGET, size = 10))
+
 /atom/movable/screen/plane_master/camera_static
 	name = "camera static plane master"
 	plane = CAMERA_STATIC_PLANE
@@ -206,3 +218,10 @@
 	plane = CHAT_PLANE
 	appearance_flags = PLANE_MASTER
 	blend_mode = BLEND_OVERLAY
+
+/atom/movable/screen/plane_master/gravpulse
+	name = "gravpulse plane"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	plane = GRAVITY_PULSE_PLANE
+	render_target = GRAVITY_PULSE_RENDER_TARGET
+	blend_mode = BLEND_ADD

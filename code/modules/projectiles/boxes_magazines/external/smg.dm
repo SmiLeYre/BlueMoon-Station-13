@@ -43,7 +43,7 @@
 	icon_state = "smg9mm-42"
 	ammo_type = /obj/item/ammo_casing/c9mm
 	caliber = "9mm"
-	max_ammo = 21
+	max_ammo = 42  //bluemoon change
 
 /obj/item/ammo_box/magazine/smgm9mm/update_icon()
 	..()

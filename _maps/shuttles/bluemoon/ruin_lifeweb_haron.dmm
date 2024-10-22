@@ -250,7 +250,7 @@
 /obj/docking_port/mobile{
 	name = "Haron";
 	preferred_direction = 4;
-	id = "lf_haron";
+	shuttle_id = "lf_haron";
 	height = 15;
 	width = 13;
 	dir = 2;

@@ -8,7 +8,7 @@
 // -------------: TO FIGHT IT: if bitten once, retreat, get charcoal/etc treatment, and come back with a gun.
 // -------------: SPRITES FROM: FoS, https://www.paradisestation.org/forum/profile/335-fos
 
-/mob/living/simple_animal/hostile/poison/terror_spider/widow
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow
 	name = "Widow of Terror"
 	desc = "An ominous-looking spider, black as the darkest night. It has merciless eyes, and a blood-red hourglass pattern on its back."
 	ai_target_method = TS_DAMAGE_POISON
@@ -33,21 +33,21 @@
 	spider_tier = TS_TIER_2
 	spider_intro_text = "Будучи Вдовой Ужаса, ваша цель - внести хаос на поле боя при помощи своих плевков, вы также смертоносны вблизи и с каждым укусом вводите в противников опасный яд. Несмотря на скорость и смертоносность, вы довольно хрупки, поэтому не стоит атаковать тяжело вооружённых противников!"
 
-/mob/living/simple_animal/hostile/poison/terror_spider/widow/spider_specialattack(mob/living/carbon/human/L, poisonable)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow/spider_specialattack(mob/living/carbon/human/L, poisonable)
 	L.AdjustSilence(10 SECONDS)
 	if(!poisonable)
 		return ..()
-	if(L.reagents.has_reagent("terror_black_toxin", 100))
+	if(L.reagents.has_reagent(/datum/reagent/terror_black_toxin, 100))
 		return ..()
 	var/inject_target = pick("chest", "head")
 	if(L.IsStun() || L.can_inject(null, FALSE, inject_target, FALSE))
-		L.reagents.add_reagent("terror_black_toxin", 33) // inject our special poison
+		L.reagents.add_reagent(/datum/reagent/terror_black_toxin, 33) // inject our special poison
 		visible_message("<span class='danger'>[src] buries its long fangs deep into the [inject_target] of [target]!</span>")
 	else
-		L.reagents.add_reagent("terror_black_toxin", 20)
+		L.reagents.add_reagent(/datum/reagent/terror_black_toxin, 20)
 		visible_message("<span class='danger'>[src] pierces armour and buries its long fangs deep into the [inject_target] of [target]!</span>")
 	L.attack_animal(src)
-	if(!ckey && (!(target in enemies) || L.reagents.has_reagent("terror_black_toxin", 60)))
+	if(!ckey && (!(target in enemies) || L.reagents.has_reagent(/datum/reagent/terror_black_toxin, 60)))
 		step_away(src, L)
 		step_away(src, L)
 		LoseTarget()

@@ -45,18 +45,18 @@
 						affected_mob.vomit(95)
 					H.emote("cough")
 					H.DefaultCombatKnockdown(40)
-					H.losebreath += 4
+					H.losebreath += 12
 				if(prob(3))
 					to_chat(H, "<span class='danger'>You feel very weak and dizzy...</span>")
-					H.confused += 8
-					H.adjustStaminaLoss(40)
+					H.confused += 16
+					H.adjustStaminaLoss(80)
 					H.emote("cough")
 			if(5)
 				H.stop_sound_channel(CHANNEL_HEARTBEAT)
 				H.playsound_local(H, 'sound/effects/singlebeat.ogg', 100, FALSE)
 				if(H.stat == CONSCIOUS)
 					H.visible_message("<span class='userdanger'>[H] clutches at [H.ru_ego()] chest as if [H.ru_ego()] heart is stopping!</span>")
-				H.adjustStaminaLoss(60)
+				H.adjustStaminaLoss(120)
 				H.set_heartattack(TRUE)
 				H.reagents.add_reagent(/datum/reagent/medicine/corazone, 3) // To give the victim a final chance to shock their heart before losing consciousness
 				cure()

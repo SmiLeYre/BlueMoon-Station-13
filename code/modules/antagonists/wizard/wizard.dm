@@ -1,3 +1,7 @@
+#define WIZARD_DO_NOTHING 0
+#define WIZARD_QDEL_INVENTORY 1
+#define WIZARD_DROP_INVENTORY 2
+
 /datum/antagonist/wizard
 	name = "Space Wizard"
 	roundend_category = "wizards/witches"
@@ -10,14 +14,14 @@
 	ui_name = "AntagInfoWizard"
 	suicide_cry = "FOR THE FEDERATION!!"
 	var/give_objectives = TRUE
-	var/strip = TRUE //strip before equipping
+	var/inventory_mode = WIZARD_QDEL_INVENTORY
+	var/change_species = TRUE
 	var/allow_rename = TRUE
 	var/datum/team/wizard/wiz_team //Only created if wizard summons apprentices
 	var/move_to_lair = TRUE
 	var/outfit_type = /datum/outfit/wizard
 	var/wiz_age = WIZARD_AGE_MIN /* Wizards by nature cannot be too young. */
 	show_to_ghosts = TRUE
-	soft_antag = FALSE // BLUEMOON ADDITION
 	reminded_times_left = 1 // BLUEMOON ADD - 1 напоминания достаточно, чтобы не играли в мирномага
 	time_needed_to_remind = 5 MINUTES // BLUEMOON ADD
 
@@ -29,8 +33,9 @@
 	if(move_to_lair)
 		send_to_lair()
 	var/mob/living/carbon/human/H = owner.current
-	H.canloadappearance = TRUE
-	H.checkloadappearance()
+	var/load_character = alert(H.client, "Желаете загрузить текущего своего выбранного персонажа?", "Играть своим персонажем!", "Да", "Нет")
+	if(load_character == "Да")
+		H.load_client_appearance(H.client)
 	. = ..()
 	if(allow_rename)
 		rename_wizard()
@@ -85,6 +90,7 @@
 /datum/antagonist/wizard/on_removal()
 	unregister()
 	owner.RemoveAllSpells() // TODO keep track which spells are wizard spells which innate stuff
+	owner.special_role = null // BLUEMOON ADD
 	return ..()
 
 /datum/antagonist/wizard/proc/equip_wizard()
@@ -93,10 +99,14 @@
 	var/mob/living/carbon/human/H = owner.current
 	if(!istype(H))
 		return
-	if(strip)
-		H.delete_equipment()
+	switch(inventory_mode)
+		if(WIZARD_QDEL_INVENTORY)
+			H.delete_equipment()
+		if(WIZARD_DROP_INVENTORY)
+			H.unequip_everything()
 	//Wizards are human by default. Use the mirror if you want something else.
-	H.set_species(/datum/species/human)
+	if(change_species)
+		H.set_species(/datum/species/human)
 	if(H.age < wiz_age)
 		H.age = wiz_age
 	H.equipOutfit(outfit_type)
@@ -137,7 +147,7 @@
 
 /datum/antagonist/wizard/get_admin_commands()
 	. = ..()
-	.["Send to Lair"] = CALLBACK(src,.proc/admin_send_to_lair)
+	.["Send to Lair"] = CALLBACK(src,PROC_REF(admin_send_to_lair))
 
 /datum/antagonist/wizard/proc/admin_send_to_lair(mob/admin)
 	owner.current.forceMove(pick(GLOB.wizardstart))
@@ -255,6 +265,17 @@
 	var/datum/objective/new_objective = new("Protect Wizard Academy from the intruders")
 	new_objective.owner = owner
 	objectives += new_objective
+
+/datum/antagonist/wizard/on_station
+	inventory_mode = WIZARD_DROP_INVENTORY
+	change_species = FALSE
+
+/datum/antagonist/wizard/on_station/on_gain()
+	var/datum/effect_system/smoke_spread/smoke = new
+	smoke.start()
+	smoke.set_up(2, get_turf(owner))
+	owner.current.visible_message("<span class='danger'>[owner] suddenly disappears in a puff of smoke, leaving [owner.p_their()] clothes behind!</span>", "<span class='userdanger'>You feel yourself being pulled away...</span>")
+	return ..()
 
 //Solo wizard report
 /datum/antagonist/wizard/roundend_report()

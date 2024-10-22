@@ -127,7 +127,17 @@
 	if(msg)
 		to_chat(user, "<span class='notice'>[msg]</span>")
 
-
+/obj/item/energy_katana/attack(mob/living/target, mob/living/carbon/human/user)
+	if(user.mind && !(user.mind.has_antag_datum(/datum/antagonist/ninja)))
+		user.DefaultCombatKnockdown(100)
+		user.dropItemToGround(src, TRUE)
+		to_chat(user, "<span class='danger'><B>fÄTaL ÈÈRRoR</B>: 382200-*#00CÖDE <B>RED</B>\nUNAUHORIZED USÈ DETÈCeD\nCoMMÈNCING SUB-R0UIN3 13...\nTÈRMInATING U-U-USÈR...</span>")
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			H.apply_damage(rand(force/2, force), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+		else
+			user.adjustBruteLoss(rand(force/2,force))
+	..()
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -152,9 +162,22 @@
 	obj_flags = UNIQUE_RENAME
 	max_integrity = 200
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+	block_parry_data = /datum/block_parry_data/dual_esword
 	var/datum/effect_system/spark_spread/spark_system
 	var/datum/action/innate/dash/ninja/ronin/jaunt_ronin
 	var/dash_toggled = TRUE
+
+/obj/item/energy_naginata/check_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	block_return[BLOCK_RETURN_REFLECT_PROJECTILE_CHANCE] = 100
+	return ..()
+
+/obj/item/energy_naginata/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if((is_energy_reflectable_projectile(object) ||  !is_energy_reflectable_projectile(object)) && (attack_type & ATTACK_TYPE_PROJECTILE) && prob(75))
+		block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_RETURN_TO_SENDER			//no you
+		owner.visible_message("<span class='danger'>Ranged attacks just make [owner] angrier!</span>")
+		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, 1)
+		return BLOCK_SHOULD_REDIRECT | BLOCK_SUCCESS | BLOCK_REDIRECTED
+	return ..()
 
 /obj/item/energy_naginata/Initialize(mapload)
 	. = ..()
@@ -237,12 +260,17 @@
 	if(msg)
 		to_chat(user, "<span class='notice'>[msg]</span>")
 
-/obj/item/energy_naginata/equipped(mob/living/carbon/human/ninja, slot)
+/obj/item/energy_naginata/attack(mob/living/target, mob/living/carbon/human/user)
+	if(user.mind && !(user.mind.has_antag_datum(/datum/antagonist/ninja)))
+		user.DefaultCombatKnockdown(100)
+		user.dropItemToGround(src, TRUE)
+		to_chat(user, "<span class='danger'><B>fÄTaL ÈÈRRoR</B>: 382200-*#00CÖDE <B>RED</B>\nUNAUHORIZED USÈ DETÈCeD\nCoMMÈNCING SUB-R0UIN3 13...\nTÈRMInATING U-U-USÈR...</span>")
+		if(ishuman(user))
+			var/mob/living/carbon/human/H = user
+			H.apply_damage(rand(force/2, force), BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+		else
+			user.adjustBruteLoss(rand(force/2,force))
 	..()
-	if(!IS_SPACE_NINJA(ninja))
-		to_chat(ninja, "<span class='danger'><B>fÄTaL ÈÈRRoR</B>: 382200-*#00CÖDE <B>RED</B>\nUNAUHORIZED USÈ DETÈCeD\nCoMMÈNCING SUB-R0UIN3 13...\nTÈRMInATING U-U-USÈR...</span>")
-		playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
-		addtimer(CALLBACK(src, .proc/explode), 3 SECONDS)
 
 /obj/item/energy_naginata/proc/explode()
 	do_sparks(3, 1, src)

@@ -50,6 +50,7 @@
 #define COLOR_TEAL "#008080"
 #define COLOR_BLUE "#0000FF"
 #define LIGHT_COLOR_FAINT_BLUE "#DEEFFF"
+#define LIGHT_COLOR_DARKBLUE	"#315AB4"
 #define COLOR_STRONG_BLUE "#1919c8"
 #define COLOR_BRIGHT_BLUE "#2CB2E8"
 #define COLOR_MODERATE_BLUE "#555CC2"
@@ -131,6 +132,8 @@
 #define COLOR_THEME_OPERATIVE "#B8221F"
 #define COLOR_THEME_GLASS "#75A4C4"
 #define COLOR_THEME_CLOCKWORK "#CFBA47"
+#define COLOR_THEME_TRASENKNOX "#3ce375"
+#define COLOR_THEME_DETECTIVE "#c7b08b"
 #define COLOR_THEME_LITEWEB "#226611"
 
 ///Colors for eigenstates
@@ -202,7 +205,9 @@
 #define CIRCUIT_COLOR_ENGINEERING "#F8D700"
 #define CIRCUIT_COLOR_SUPPLY "#C47749"
 
-/// Colors for pride week
+/// === LGBT Colors Start ===
+/// Black and white colors will not be covered for the flags that do have them. We'll just use COLOR_WHITE and COLOR_BLACK.
+/// Colors for pride
 #define COLOR_PRIDE_RED "#FF6666"
 #define COLOR_PRIDE_ORANGE "#FC9F3C"
 #define COLOR_PRIDE_YELLOW "#EAFF51"
@@ -215,3 +220,33 @@
 #define SOFA_MAROON "#830000"
 
 GLOBAL_LIST_INIT(random_color_list, list("#00aedb","#a200ff","#f47835","#d41243","#d11141","#00b159","#00aedb","#f37735","#ffc425","#008744","#0057e7","#d62d20","#ffa700"))
+
+/// Colors for transgender flag
+#define COLOR_TRANS_BLUE "#5ACFFA"
+#define COLOR_TRANS_PINK "#F5ABB9"
+
+/// Colors for lesbian flag
+#define COLOR_LESBIAN_ORANGERED "#D62900"
+#define COLOR_LESBIAN_SANDYBROWN "#FF9B55"
+#define COLOR_LESBIAN_PALEVIOLETRED "#D462A5"
+#define COLOR_LESBIAN_DARKMAGENTA "#A50062"
+
+/// Colors for bisexual flag
+#define COLOR_BISEXUAL_MEDIUMVIOLETRED "#D70071"
+#define COLOR_BISEXUAL_DARKORCHID "#9C4E97"
+#define COLOR_BISEXUAL_DARKBLUE "#0035A9"
+
+/// Colors for intersex flag
+#define COLOR_INTERSEX_GOLD "#FFD900"
+#define COLOR_INTERSEX_DARKMAGENTA "#7A00AB"
+
+/// Colors for asexual flag
+#define COLOR_ACE_DARKGRAY "#A4A5A4"
+#define COLOR_ACE_PURPLE "#810081"
+
+/// Colors for pansexual flag
+#define COLOR_PAN_DEEPPINK "#FF1B8D"
+#define COLOR_PAN_GOLD "#FFD900"
+#define COLOR_PAN_DODGERBLUE "#1BB3FF"
+
+/// === LGBT Colors End ===

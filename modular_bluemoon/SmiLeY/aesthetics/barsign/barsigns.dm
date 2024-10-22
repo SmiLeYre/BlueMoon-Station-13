@@ -1,4 +1,4 @@
-/obj/machinery/barsign
+/obj/structure/sign/barsign
     icon = 'modular_bluemoon/SmiLeY/aesthetics/barsign/barsigns.dmi'
 
 /datum/barsign/maltesefalcon
@@ -377,11 +377,6 @@
 	name = "Space Daddy's Cafe"
 	icon = "papacafe"
 	desc = "Уважай своего Космического Папу!"
-
-/datum/barsign/wycctide
-	name = "Wycctide"
-	icon = "wycctide"
-	desc = "О нет, он близится!"
 
 /datum/barsign/shitcur
 	name = "Shitcur"

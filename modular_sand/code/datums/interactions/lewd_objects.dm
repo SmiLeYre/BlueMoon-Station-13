@@ -3,11 +3,13 @@
 	var/hole = CUM_TARGET_VAGINA
 
 /obj/item/dildo/attack(mob/living/carbon/human/M, mob/living/carbon/human/user)
-	//var/possessive_verb = user.ru_ego()
-	user.DelayNextAction(CLICK_CD_RANGE)
 	var/message = ""
 	var/lust_amt = 0
 	var/organ //SPLURT edit
+
+	if(!user.canUseTopic(user, BE_CLOSE))
+		return
+	user.DelayNextAction(CLICK_CD_RANGE)
 
 	if(ishuman(M) && (M?.client?.prefs?.toggles & VERB_CONSENT))
 		switch(user.zone_selected)
@@ -29,9 +31,24 @@
 	if(message)
 		user.visible_message(span_lewd("<b>[user]</b> [message]."))
 		M.handle_post_sex(lust_amt, null, user, organ) //SPLURT edit
+
+		switch(user.zone_selected)
+			if(BODY_ZONE_PRECISE_GROIN)
+				switch (hole)
+					if (CUM_TARGET_VAGINA)
+						user.client?.plug13.send_emote(PLUG13_EMOTE_VAGINA, min(lust_amt * 3, 100), PLUG13_DURATION_NORMAL)
+					if (CUM_TARGET_ANUS)
+						user.client?.plug13.send_emote(PLUG13_EMOTE_ANUS, min(lust_amt * 3, 100), PLUG13_DURATION_NORMAL)
+			if (BODY_ZONE_PRECISE_MOUTH)
+				user.client?.plug13.send_emote(PLUG13_EMOTE_MOUTH, 35, PLUG13_DURATION_NORMAL)
+
 		playsound(loc, pick('modular_sand/sound/interactions/bang4.ogg',
 							'modular_sand/sound/interactions/bang5.ogg',
 							'modular_sand/sound/interactions/bang6.ogg'), 70, 1, -1)
+		if(!HAS_TRAIT(M, TRAIT_LEWD_JOB))
+			new /obj/effect/temp_visual/heart(M.loc)
+
+
 	else if(user.a_intent == INTENT_HARM)
 		return ..()
 

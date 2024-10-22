@@ -65,7 +65,7 @@
 		stack_trace("/datum/chatmessage created with [isnull(owner) ? "null" : "invalid"] mob owner")
 		qdel(src)
 		return
-	INVOKE_ASYNC(src, .proc/generate_image, text, target, owner, language, extra_classes, lifespan)
+	INVOKE_ASYNC(src, PROC_REF(generate_image), text, target, owner, language, extra_classes, lifespan)
 
 /datum/chatmessage/Destroy()
 	if (owned_by)
@@ -103,7 +103,7 @@
 	owned_by = owner.client
 	if(!owned_by)
 		return
-	RegisterSignal(owned_by, COMSIG_PARENT_QDELETING, .proc/on_parent_qdel)
+	RegisterSignal(owned_by, COMSIG_PARENT_QDELETING, PROC_REF(on_parent_qdel))
 
 	// Clip message
 	var/maxlen = owned_by.prefs.max_chat_length
@@ -168,11 +168,18 @@
 
 	// Approximate text height
 	var/complete_text = "<span class='center maptext [extra_classes.Join(" ")]' style='color: [tgt_color]'>[owner.say_emphasis(text)]</span>"
-	var/mheight = WXH_TO_HEIGHT(owned_by.MeasureText(complete_text, null, CHAT_MESSAGE_WIDTH))
+
+	var/mheight
+	WXH_TO_HEIGHT(owned_by.MeasureText(complete_text, null, CHAT_MESSAGE_WIDTH), mheight)
 	approx_lines = max(1, mheight / CHAT_MESSAGE_APPROX_LHEIGHT)
 
 	// Translate any existing messages upwards, apply exponential decay factors to timers
 	message_loc = isturf(target) ? target : get_atom_on_turf(target)
+	// BLUEMOON EDIT START - sanity check
+	// Я БЕЗ ПОНЯТИЯ, как owned_by исчезает в процессе вызова прока и проходит проверку на строке 104
+	if(isnull(owned_by) || QDELETED(owned_by))
+		return
+	// BLUEMOON EDIT END
 	if (owned_by.seen_messages)
 		var/idx = 1
 		var/combined_height = approx_lines

@@ -5,7 +5,7 @@
 	icon_state = "slouch"
 	item_state = "slouch"
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/head.dmi'
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/head/lawdog
 	name = "Law dog"
@@ -14,7 +14,7 @@
 	icon_state = "lawdog"
 	item_state = "lawdog"
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/head.dmi'
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/head/gunfighter
 	name = "Gun fighter"
@@ -23,4 +23,4 @@
 	icon_state = "gunfighter"
 	item_state = "gunfighter"
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/head.dmi'
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

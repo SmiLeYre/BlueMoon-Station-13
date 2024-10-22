@@ -4,7 +4,7 @@
 	icon = 'modular_bluemoon/smiley/syndie_edits/icons/obj.dmi'
 	mob_overlay_icon = 'modular_bluemoon/smiley/syndie_edits/icons/worn.dmi'
 	icon_state = "syndievest_t"
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON|DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/armor/vest/capcarapace/syndicate/winter
 	name = "syndicate captain's winter vest"
@@ -46,7 +46,7 @@
 	flags_inv = HIDEHAIR|HIDEFACE|HIDEEARS|HIDEFACIALHAIR
 
 /obj/item/clothing/mask/gas/sechailer/syndicate
-	name = "neck gaiter"
+	name = "Neck Gaiter"
 	desc = "For the agent wanting to keep a low profile whilst concealing their identity. Has a small respirator to be used with internals."
 	actions_types = list(/datum/action/item_action/adjust)
 	icon_state = "half_mask"
@@ -106,7 +106,7 @@
 	desc = "A pair of spiffy overalls with a turtleneck underneath, this one is a skirt instead, breezy."
 	icon_state = "syndicate_overallskirt"
 	dying_key = DYE_REGISTRY_JUMPSKIRT
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON|DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/head/maid/syndicate
 	name = "Tactical Maid Headband"
@@ -121,10 +121,10 @@
 	icon_state = "syndimaid_arms"
 
 /obj/item/clothing/under/syndicate/maid
-	name = "Tactical Maid outfit"
+	name = "Tactical Maid Outfit"
 	desc = "A 'tactical' skirtleneck fashioned to the likeness of a maid outfit. Why the Syndicate has these, you'll never know."
 	icon_state = "syndimaid"
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON|DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	can_adjust = FALSE
 
@@ -134,19 +134,19 @@
 	attach_accessory(A)
 
 /obj/item/clothing/under/syndicate/maid_revealing
-	name = "Revealing Tactical Maid outfit"
+	name = "Revealing Tactical Maid Outfit"
 	desc = "A 'tactical' skirtleneck fashioned to the likeness of a maid outfit. Why the Syndicate has these, you'll never know."
 	icon = 'modular_bluemoon/Gardelin0/icons/clothing/object/uniforms.dmi'
 	mob_overlay_icon = 'modular_bluemoon/Gardelin0/icons/clothing/worn/uniform.dmi'
 	icon_state = "maid_revealing"
 	item_state = "maid_revealing"
 	fitted = NO_FEMALE_UNIFORM
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON|DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	dying_key = DYE_REGISTRY_JUMPSKIRT
 	can_adjust = FALSE
 
 /obj/item/clothing/accessory/maidcorset/syndicate
-	name = "syndicate maid apron"
+	name = "Syndicate Maid Apron"
 	desc = "Practical? No. Tactical? Also no. Cute? Most definitely yes."
 	icon = 'icons/obj/clothing/accessories.dmi'
 	mob_overlay_icon = 'icons/mob/clothing/accessories.dmi'

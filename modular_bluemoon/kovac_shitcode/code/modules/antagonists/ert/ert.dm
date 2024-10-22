@@ -23,6 +23,16 @@
 	outfit = /datum/outfit/ert/heavysquad_commander
 	role = "Командир"
 ///////////////////////////
+/datum/antagonist/ert/zeal_team
+	name = "Zeal Team Squad"
+	outfit = /datum/outfit/zeal_team
+	role = "Коммандос"
+
+/datum/antagonist/ert/zeal_team/leader
+	name = "Zeal Team Squad"
+	outfit = /datum/outfit/zeal_team/officer
+	role = "Командир"
+///////////////////////////
 /datum/antagonist/ert/russian_ert
 	name = "NRI Spetsnaz Squad"
 	outfit = /datum/outfit/ert/ert_russian_soldier
@@ -61,7 +71,7 @@
 /////////////////////////////////////////
 /datum/antagonist/ert/engineer_squadleader
 	role = "Бригадир"
-	outfit = /datum/outfit/ert/engineer/alert/red
+	outfit = /datum/outfit/ert/engineer/alert
 	skill_modifiers = list(/datum/skill_modifier/job/level/wiring)
 /////////////////////////////////////////
 /datum/antagonist/ert/ntr_ert_agent

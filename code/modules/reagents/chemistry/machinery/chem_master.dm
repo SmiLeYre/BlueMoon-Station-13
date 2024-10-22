@@ -15,10 +15,12 @@
 	var/mode = 1
 	var/condi = FALSE
 	var/chosenPillStyle = 1
+	var/chosenPatchStyle = 1 //BM add
 	var/screen = "home"
 	var/analyzeVars[0]
 	var/useramount = 30 // Last used amount
 	var/list/pillStyles
+	var/list/patchStyles //BM add
 	var/fermianalyze //Give more detail on fermireactions on analysis
 
 /obj/machinery/chem_master/Initialize(mapload)
@@ -32,6 +34,28 @@
 		SL["id"] = x
 		SL["className"] = assets.icon_class_name("pill[x]")
 		pillStyles += list(SL)
+
+	assets = get_asset_datum(/datum/asset/spritesheet/simple/patches)
+	patchStyles = list()
+	for (var/x in 1 to PATCH_STYLE_COUNT)
+		var/list/SL = list()
+		SL["id"] = x
+		SL["className"] = assets.icon_class_name("patch[x]")
+		patchStyles += list(SL)
+
+	. = ..()
+
+/obj/machinery/chem_master/Initialize(mapload)
+	create_reagents(100)
+
+	//Calculate the span tags and ids fo all the available pill icons
+	var/datum/asset/spritesheet/simple/assets = get_asset_datum(/datum/asset/spritesheet/simple/patches)
+	patchStyles = list()
+	for (var/x in 1 to PATCH_STYLE_COUNT)
+		var/list/SL = list()
+		SL["id"] = x
+		SL["className"] = assets.icon_class_name("patch[x]")
+		patchStyles += list(SL)
 
 	. = ..()
 
@@ -73,7 +97,7 @@
 
 /obj/machinery/chem_master/update_overlays()
 	. = ..()
-	if (stat & BROKEN)
+	if (machine_stat & BROKEN)
 		. += "waitlight"
 
 /obj/machinery/chem_master/blob_act(obj/structure/blob/B)
@@ -155,6 +179,7 @@
 /obj/machinery/chem_master/ui_assets(mob/user)
 	return list(
 		get_asset_datum(/datum/asset/spritesheet/simple/pills),
+		get_asset_datum(/datum/asset/spritesheet/simple/patches), //BM add
 	)
 
 /obj/machinery/chem_master/ui_interact(mob/user, datum/tgui/ui)
@@ -174,6 +199,7 @@
 	data["analyzeVars"] = analyzeVars
 	data["fermianalyze"] = fermianalyze
 	data["chosenPillStyle"] = chosenPillStyle
+	data["chosenPatchStyle"] = chosenPatchStyle //BM add
 	data["isPillBottleLoaded"] = bottle ? 1 : 0
 	if(bottle)
 		var/datum/component/storage/STRB = bottle.GetComponent(/datum/component/storage)
@@ -194,6 +220,7 @@
 
 	//Calculated at init time as it never changes
 	data["pillStyles"] = pillStyles
+	data["patchStyles"] = patchStyles //BM add
 	return data
 
 /obj/machinery/chem_master/ui_act(action, params)
@@ -246,6 +273,11 @@
 	if(action == "pillStyle")
 		var/id = text2num(params["id"])
 		chosenPillStyle = id
+		return TRUE
+
+	if(action == "patchStyle")             //BM add
+		var/id = text2num(params["id"])
+		chosenPatchStyle = id
 		return TRUE
 
 	if(action == "create")
@@ -334,6 +366,7 @@
 			var/obj/item/reagent_containers/pill/patch/P
 			for(var/i = 0; i < amount; i++)
 				P = new/obj/item/reagent_containers/pill/patch(drop_location())
+				P.icon_state = "patch[chosenPatchStyle]" //BM add
 				P.name = trim("[name] patch")
 				adjust_item_drop_location(P)
 				reagents.trans_to(P, vol_each)//, transfered_by = usr)
@@ -439,7 +472,7 @@
 			num = round(num)
 		return num
 	else
-		return 0
+		return FALSE
 
 
 /obj/machinery/chem_master/adjust_item_drop_location(atom/movable/AM) // Special version for chemmasters and condimasters

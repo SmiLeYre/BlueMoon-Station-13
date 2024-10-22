@@ -18,6 +18,7 @@ GLOBAL_PROTECT(admin_verbs_default)
 	/client/proc/cmd_admin_pm_panel,		/*admin-pm list*/
 	/client/proc/stop_sounds,
 	/client/proc/mark_datum_mapview,
+	/client/proc/tag_datum_mapview,
 	/client/proc/debugstatpanel,
 	/client/proc/fix_air				/*resets air in designated radius to its default atmos composition*/
 	)
@@ -29,7 +30,6 @@ GLOBAL_PROTECT(admin_verbs_admin)
 //	/datum/admins/proc/show_traitor_panel,	/*interface which shows a mob's mind*/ -Removed due to rare practical use. Moved to debug verbs ~Errorage
 	/datum/admins/proc/show_player_panel,	/*shows an interface for individual players, with various links (links require additional flags*/
 	/datum/verbs/menu/Admin/verb/playerpanel,
-	/client/proc/game_panel,			/*game panel, allows to change game-mode etc*/
 	/client/proc/check_ai_laws,			/*shows AI and borg laws*/
 	// /client/proc/ghost_pool_protection,	/*opens a menu for toggling ghost roles*/
 	/datum/admins/proc/toggleooc,		/*toggles ooc on/off for everyone*/
@@ -41,6 +41,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/datum/admins/proc/announce,		/*priority announce something to all clients.*/
 	/datum/admins/proc/set_admin_notice, /*announcement all clients see when joining the server.*/
 	/client/proc/admin_ghost,			/*allows us to ghost/reenter body at will*/
+	/client/proc/admin_hostile_environment, /*Allows admins to prevent the emergency shuttle from leaving, also lets admins clear hostile environments if theres one stuck*/
 	/client/proc/toggle_view_range,		/*changes how far we can see*/
 	/client/proc/getserverlogs,		/*for accessing server logs*/
 	/client/proc/getcurrentlogs,		/*for accessing server logs for the current round*/
@@ -53,6 +54,9 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/jumptocoord,			/*we ghost and jump to a coordinate*/
 	/client/proc/Getmob,				/*teleports a mob to our location*/
 	/client/proc/Getkey,				/*teleports a mob with a certain ckey to our location*/
+	/client/proc/game_panel,			/*game panel, allows to change game-mode etc*/
+	/client/proc/mail_panel,			/*BLUEMOON ADD - панель управления почтой*/
+	/client/proc/fax_panel, /*send a paper to fax*/
 //	/client/proc/sendmob,				/*sends a mob somewhere*/ -Removed due to it needing two sorting procs to work, which were executed every time an admin right-clicked. ~Errorage
 	/client/proc/jumptoarea,
 	/client/proc/jumptokey,				/*allows us to jump to the location of a mob with a certain ckey*/
@@ -92,7 +96,8 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/addvpnbypass, //SPLURT
 	/client/proc/revokevpnbypass, //SPLURT
 	/datum/admins/proc/open_borgopanel,
-	/datum/admins/proc/change_laws	//change AI laws
+	/datum/admins/proc/change_laws,	//change AI laws
+	/datum/admins/proc/display_tags,
 	)
 GLOBAL_LIST_INIT(admin_verbs_ban, list(/client/proc/unban_panel, /client/proc/DB_ban_panel, /client/proc/stickybanpanel))
 GLOBAL_PROTECT(admin_verbs_ban)
@@ -124,7 +129,9 @@ GLOBAL_LIST_INIT(admin_verbs_fun, list(
 	/client/proc/admin_away,
 	/client/proc/spawn_floor_cluwne,
 	/client/proc/cmd_admin_toggle_fov,		//CIT CHANGE - FOV
-	/client/proc/roll_dices					//CIT CHANGE - Adds dice verb
+	/client/proc/roll_dices,					//CIT CHANGE - Adds dice verb
+	/client/proc/override_sm_delam, //SPLURT change - Adds SM toggle
+	/client/proc/thunderome,		//BLUEMOON ADD thunderome for ghosts
 	))
 GLOBAL_PROTECT(admin_verbs_fun)
 GLOBAL_LIST_INIT(admin_verbs_spawn, list(/datum/admins/proc/spawn_atom, /datum/admins/proc/podspawn_atom, /datum/admins/proc/spawn_cargo, /datum/admins/proc/spawn_objasmob, /client/proc/respawn_character))
@@ -208,10 +215,6 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	#endif
 	/datum/admins/proc/create_or_modify_area,
 	/datum/admins/proc/fixcorruption,
-#ifdef EXTOOLS_REFERENCE_TRACKING
-	/datum/admins/proc/view_refs,
-	/datum/admins/proc/view_del_failures,
-#endif
 	// /client/proc/check_timer_sources,
 	/client/proc/toggle_cdn,
 	/client/proc/discordnulls,
@@ -219,7 +222,13 @@ GLOBAL_PROTECT(admin_verbs_debug)
 	)
 GLOBAL_LIST_INIT(admin_verbs_possess, list(/proc/possess, /proc/release))
 GLOBAL_PROTECT(admin_verbs_possess)
-GLOBAL_LIST_INIT(admin_verbs_permissions, list(/client/proc/edit_admin_permissions))
+/// BLUEMOON EDIT BEGIN - Player Rank Manager - ORIGINAL: GLOBAL_LIST_INIT(admin_verbs_permissions, list(/client/proc/edit_admin_permissions))
+GLOBAL_LIST_INIT(admin_verbs_permissions, list(
+	/client/proc/edit_admin_permissions,
+	/client/proc/manage_player_ranks,
+	/client/proc/migrate_player_ranks,
+	))
+/// BLUEMOON EDIT END
 GLOBAL_PROTECT(admin_verbs_permissions)
 GLOBAL_LIST_INIT(admin_verbs_poll, list(/client/proc/create_poll))
 GLOBAL_PROTECT(admin_verbs_poll)
@@ -390,9 +399,6 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 
 	to_chat(src, "<span class='interface'>All of your adminverbs are now visible.</span>", confidential = TRUE)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Show Adminverbs") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
-
-
-
 
 /client/proc/admin_ghost()
 	set category = "Admin.Game"
@@ -627,7 +633,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	var/ex_power = input("Explosive Power:") as null|num
 	var/turf/epicenter = mob.loc
 	if(ex_power && epicenter)
-		dyn_explosion(epicenter, ex_power)
+		dyn_explosion(epicenter, ex_power, ignorecap = TRUE)  //BLUEMOON CHANGE нелимитированные взрывы - круто
 		message_admins("[ADMIN_LOOKUPFLW(usr)] creating an admin explosion at [epicenter.loc].")
 		log_admin("[key_name(usr)] created an admin explosion at [epicenter.loc].")
 		SSblackbox.record_feedback("tally", "admin_verb", 1, "Drop Dynamic Bomb") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -704,7 +710,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 // 	if(!SStrading_card_game.loaded)
 // 		message_admins("The card subsystem is not currently loaded")
 // 		return
-// 	var/pack = input("Which pack should we test?", "You fucked it didn't you") as null|anything in sortList(SStrading_card_game.card_packs)
+// 	var/pack = input("Which pack should we test?", "You fucked it didn't you") as null|anything in sort_list(SStrading_card_game.card_packs)
 // 	var/batchCount = input("How many times should we open it?", "Don't worry, I understand") as null|num
 // 	var/batchSize = input("How many cards per batch?", "I hope you remember to check the validation") as null|num
 // 	var/guar = input("Should we use the pack's guaranteed rarity? If so, how many?", "We've all been there. Man you should have seen the old system") as null|num
@@ -724,7 +730,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	var/type_length = length_char("/obj/effect/proc_holder/spell") + 2
 	for(var/A in GLOB.spells)
 		spell_list[copytext_char("[A]", type_length)] = A
-	var/obj/effect/proc_holder/spell/S = tgui_input_list(usr, "Choose a spell to give", "ABRAKADABRA", sortList(spell_list)) //input("Choose the spell to give to that guy", "ABRAKADABRA") as null|anything in sortList(spell_list)
+	var/obj/effect/proc_holder/spell/S = tgui_input_list(usr, "Choose a spell to give", "ABRAKADABRA", sort_list(spell_list)) //input("Choose the spell to give to that guy", "ABRAKADABRA") as null|anything in sort_list(spell_list)
 
 	if(!S)
 		return
@@ -746,7 +752,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	set desc = "Remove a spell from the selected mob."
 
 	if(T?.mind)
-		var/obj/effect/proc_holder/spell/S = tgui_input_list(usr, "Choose the spell to remove", "NO ABRAKADABRA", sortList(T.mind.spell_list)) // input("Choose the spell to remove", "NO ABRAKADABRA") as null|anything in sortList(T.mind.spell_list)
+		var/obj/effect/proc_holder/spell/S = tgui_input_list(usr, "Choose the spell to remove", "NO ABRAKADABRA", sort_list(T.mind.spell_list)) // input("Choose the spell to remove", "NO ABRAKADABRA") as null|anything in sort_list(T.mind.spell_list)
 		if(S)
 			T.mind.RemoveSpell(S)
 			log_admin("[key_name(usr)] removed the spell [S] from [key_name(T)].")
@@ -760,7 +766,7 @@ GLOBAL_PROTECT(admin_verbs_hideable)
 	if(!istype(T))
 		to_chat(src, "<span class='notice'>You can only give a disease to a mob of type /mob/living.</span>", confidential = TRUE)
 		return
-	var/datum/disease/D = input("Choose the disease to give to that guy", "ACHOO") as null|anything in sortList(SSdisease.diseases, /proc/cmp_typepaths_asc)
+	var/datum/disease/D = input("Choose the disease to give to that guy", "ACHOO") as null|anything in sort_list(SSdisease.diseases, GLOBAL_PROC_REF(cmp_typepaths_asc))
 	if(!D)
 		return
 	T.ForceContractDisease(new D, FALSE, TRUE)

@@ -6,21 +6,21 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "cc" = (
 /obj/machinery/vending/games{
 	pixel_y = 29;
 	density = 0
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "dH" = (
 /obj/machinery/chem_dispenser/drinks/beer{
 	pixel_y = 30;
 	density = 0
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "fp" = (
 /obj/structure/chair/office/dark{
@@ -33,7 +33,7 @@
 	pixel_y = 32;
 	density = 0
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "fM" = (
 /obj/machinery/recharge_station/fullupgrade,
@@ -57,13 +57,13 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "gG" = (
 /obj/structure/chair/comfy/black{
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "hr" = (
 /obj/machinery/door/airlock/survival_pod/glass,
@@ -95,7 +95,7 @@
 	dir = 1
 	},
 /obj/item/toy/plush/mothplushie,
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "jA" = (
 /obj/structure/cable{
@@ -104,14 +104,14 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "ko" = (
 /obj/machinery/vending/boozeomat{
 	density = 0;
 	pixel_y = 32
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "lO" = (
 /obj/machinery/poweredfans,
@@ -125,13 +125,13 @@
 /obj/structure/chair/sofa/corp{
 	dir = 1
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "mC" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "mN" = (
 /obj/machinery/power/rtg/advanced/fullupgrade,
@@ -144,7 +144,7 @@
 /obj/structure/table/plasmaglass{
 	density = 1
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "pg" = (
 /obj/structure/chair/comfy/black,
@@ -153,7 +153,7 @@
 "pF" = (
 /obj/structure/closet/cabinet,
 /obj/item/clothing/under/misc/bathrobe,
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "qE" = (
 /obj/structure/sink{
@@ -168,7 +168,7 @@
 /obj/structure/chair/sofa/corp/corner{
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "rZ" = (
 /obj/machinery/washing_machine,
@@ -178,7 +178,7 @@
 /obj/machinery/camera{
 	dir = 5
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "td" = (
 /obj/machinery/light{
@@ -187,7 +187,7 @@
 /obj/structure/easel,
 /obj/item/canvas/twentythreeXtwentythree,
 /obj/item/storage/crayons,
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "um" = (
 /obj/structure/table/wood/fancy/royalblack,
@@ -196,7 +196,7 @@
 /area/survivalpod/nonpowered)
 "uR" = (
 /obj/machinery/light,
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "vU" = (
 /obj/machinery/sleeper/survival_pod,
@@ -213,7 +213,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "xC" = (
 /obj/machinery/light{
@@ -241,10 +241,10 @@
 /obj/machinery/chem_dispenser/drinks{
 	pixel_y = 30
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "Cj" = (
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "Cq" = (
 /obj/machinery/poweredfans,
@@ -255,12 +255,12 @@
 /obj/structure/closet/cabinet,
 /obj/item/clothing/under/misc/bathrobe,
 /obj/machinery/airalarm/directional/north,
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "EV" = (
 /obj/structure/table/plasmaglass,
 /obj/item/modular_computer/laptop/preset/civilian,
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "Fo" = (
 /obj/machinery/smartfridge/survival_pod,
@@ -270,7 +270,7 @@
 /obj/structure/chair/sofa/corp/right{
 	dir = 4
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "FE" = (
 /obj/machinery/light,
@@ -281,7 +281,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "FZ" = (
 /turf/closed/wall/mineral/titanium/survival/pod,
@@ -293,7 +293,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "JE" = (
 /obj/structure/table/wood/fancy/royalblack,
@@ -311,7 +311,7 @@
 /obj/machinery/modular_computer/console/preset/civilian{
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "Qr" = (
 /obj/structure/window/shuttle/survival_pod,
@@ -322,24 +322,24 @@
 /obj/structure/rack,
 /obj/item/clothing/shoes/sandal,
 /obj/machinery/light,
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "Ro" = (
 /obj/structure/chair/comfy/black{
 	dir = 4
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "Ry" = (
 /obj/structure/fireplace,
 /obj/item/stack/sheet/mineral/wood/fifty,
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "RD" = (
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "RH" = (
 /obj/machinery/shower{
@@ -364,7 +364,7 @@
 /obj/structure/chair/sofa/corp/corner{
 	dir = 1
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "Vp" = (
 /turf/open/floor/carpet/royalblue,
@@ -376,7 +376,7 @@
 	},
 /obj/item/paper_bin,
 /obj/item/pen/fountain,
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "VJ" = (
 /obj/structure/cable{
@@ -388,13 +388,13 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "Ws" = (
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "Xh" = (
 /obj/machinery/door/airlock/survival_pod/glass,
@@ -424,7 +424,7 @@
 	},
 /obj/machinery/telecomms/relay/preset/station,
 /obj/item/multitool,
-/turf/open/floor/festive/wooden/wooden1,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "YH" = (
 /obj/machinery/mineral/equipment_vendor,

@@ -6,7 +6,7 @@
 	extended_desc = " use &lt;br&gt; to start a new line"
 	desc = "Takes any data type as an input, and displays it to the user upon examining."
 	icon_state = "screen"
-	inputs = list("displayed data" = IC_PINTYPE_ANY)
+	inputs = list("displayed data" = IC_PINTYPE_STRING)
 	outputs = list()
 	activators = list("load data" = IC_PINTYPE_PULSE_IN)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
@@ -18,12 +18,16 @@
 	..()
 	stuff_to_display = null
 
+/obj/item/integrated_circuit/output/screen/power_fail()
+	. = ..()
+	stuff_to_display = null
+
 /obj/item/integrated_circuit/output/screen/any_examine(mob/user)
 	var/shown_label = ""
 	if(displayed_name && displayed_name != name)
 		shown_label = " labeled '[displayed_name]'"
 
-	return "There is \a [src][shown_label], which displays [!isnull(stuff_to_display) ? "'[stuff_to_display]'" : "nothing"]."
+	return "There is \a [src][shown_label], which displays [stuff_to_display ? "'[stuff_to_display]'" : "nothing"]."
 
 /obj/item/integrated_circuit/output/screen/do_work()
 	var/datum/integrated_io/I = inputs[1]
@@ -36,32 +40,23 @@
 
 /obj/item/integrated_circuit/output/screen/large
 	name = "medium screen"
-	desc = "Takes any data type as an input and displays it to anybody near the device when pulsed. \
-	It can also be examined to see the last thing it displayed."
+	desc = "Takes string data type as an input and displays it to the user upon examining, and to all nearby beings in a small area when pulsed."
 	icon_state = "screen_medium"
 	power_draw_per_use = 20
 
 /obj/item/integrated_circuit/output/screen/large/do_work()
 	..()
 
-	var/list/mobs = list()
-	if(isliving(assembly.loc))
-		mobs += assembly.loc
-		var/mob/living/L = assembly.loc
-		if(L.is_holding(src))
-			for(var/mob/M in range(1, get_turf(src)))
-				mobs += M
-	else
-		for(var/mob/M in range(2, get_turf(src)))
-			mobs += M
-
 	var/atom/host = assembly || src
+	var/list/mobs = list()
+	for(var/mob/M in viewers(2, host.loc))
+		mobs += M
 	to_chat(mobs, "<span class='notice'>[icon2html(host.icon, world, host.icon_state)] flashes a message: [stuff_to_display]</span>")
 	host.investigate_log("displayed \"[html_encode(stuff_to_display)]\" as [type].", INVESTIGATE_CIRCUIT)
 
 /obj/item/integrated_circuit/output/screen/extralarge // the subtype is called "extralarge" because tg brought back medium screens and they named the subtype /screen/large
 	name = "large screen"
-	desc = "Takes any data type as an input and displays it to the user upon examining, and to all nearby beings when pulsed."
+	desc = "Takes string data type as an input and displays it to the user upon examining, and to all nearby beings when pulsed."
 	icon_state = "screen_large"
 	power_draw_per_use = 40
 	cooldown_per_use = 10
@@ -70,7 +65,7 @@
 	..()
 	var/atom/host = assembly || src
 	var/list/mobs = list()
-	for(var/mob/M in viewers(7, get_turf(src)))
+	for(var/mob/M in viewers(7, host.loc))
 		mobs += M
 	to_chat(mobs, "<span class='notice'>[icon2html(host.icon, world, host.icon_state)] flashes a message: [stuff_to_display]</span>")
 	host.investigate_log("displayed \"[html_encode(stuff_to_display)]\" as [type].", INVESTIGATE_CIRCUIT)
@@ -105,6 +100,11 @@
 /obj/item/integrated_circuit/output/light/power_fail() // Turns off the flashlight if there's no power left.
 	light_toggled = FALSE
 	update_lighting()
+
+/obj/item/integrated_circuit/output/light/disconnect_all()
+	light_toggled = FALSE
+	update_lighting()
+	. = ..()
 
 /obj/item/integrated_circuit/output/light/advanced
 	name = "advanced light"
@@ -226,14 +226,27 @@
 	spawn_flags = IC_SPAWN_RESEARCH
 
 /obj/item/integrated_circuit/output/sound/vox
-	name = "ai vox sound circuit"
+	name = "Female ai vox sound circuit"
 	desc = "Takes a sound name as an input, and will play said sound when pulsed. This circuit is often found in AI announcement systems."
 	spawn_flags = IC_SPAWN_RESEARCH
+	var/voice_type = "Female"
 
 /obj/item/integrated_circuit/output/sound/vox/Initialize(mapload)
-	.= ..()
-	sounds = GLOB.vox_sounds
+	sounds = GLOB.vox_types[voice_type]
+	. = ..()
 	extended_desc = "The first input pin determines which sound is used. It uses the AI Vox Broadcast word list. So either experiment to find words that work, or ask the AI to help in figuring them out. The second pin determines the volume of sound that is played, and the third determines if the frequency of the sound will vary with each activation."
+
+/obj/item/integrated_circuit/output/sound/vox/male
+	name = "Male ai vox sound circuit"
+	desc = "Takes a sound name as an input, and will play said sound when pulsed. This circuit is often found in AI announcement systems."
+	spawn_flags = IC_SPAWN_RESEARCH
+	voice_type = "Male"
+
+/obj/item/integrated_circuit/output/sound/vox/military
+	name = "Military ai vox sound circuit"
+	desc = "Takes a sound name as an input, and will play said sound when pulsed. This circuit is often found in AI announcement systems."
+	spawn_flags = IC_SPAWN_RESEARCH
+	voice_type = "Military"
 
 /obj/item/integrated_circuit/output/text_to_speech
 	name = "text-to-speech circuit"
@@ -269,9 +282,10 @@
 	inputs = list(
 		"camera name" = IC_PINTYPE_STRING,
 		"camera active" = IC_PINTYPE_BOOLEAN,
+		"camera fast mode" = IC_PINTYPE_BOOLEAN,
 		"camera network" = IC_PINTYPE_LIST
 		)
-	inputs_default = list("1" = "video camera circuit", "3" = list("rd"))
+	inputs_default = list("1" = "video camera circuit", "4" = list("rd"))
 	outputs = list()
 	activators = list()
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
@@ -279,6 +293,8 @@
 	power_draw_idle = 0 // Raises to 20 when on.
 	var/obj/machinery/camera/camera
 	var/updating = FALSE
+
+	var/update_speed = 10 // How often to update the camera
 
 /obj/item/integrated_circuit/output/video_camera/New()
 	..()
@@ -290,11 +306,11 @@
 	QDEL_NULL(camera)
 	return ..()
 
-/obj/item/integrated_circuit/output/video_camera/proc/set_camera_status(var/status)
+/obj/item/integrated_circuit/output/video_camera/proc/set_camera_status(status)
 	if(camera)
 		camera.status = status
 		GLOB.cameranet.updatePortableCamera(camera)
-		power_draw_idle = camera.status ? 20 : 0
+		power_draw_idle = camera.status ? (20 / (update_speed * 0.1)) : 0
 		if(camera.status) // Ensure that there's actually power.
 			if(!draw_idle_power())
 				power_fail()
@@ -303,7 +319,8 @@
 	if(camera)
 		var/cam_name = get_pin_data(IC_INPUT, 1)
 		var/cam_active = get_pin_data(IC_INPUT, 2)
-		var/list/new_network = get_pin_data(IC_INPUT, 3)
+		update_speed = get_pin_data(IC_INPUT, 3) ? 5 : 10
+		var/list/new_network = get_pin_data(IC_INPUT, 4)
 		if(!isnull(cam_name))
 			camera.c_tag = cam_name
 		if(!isnull(new_network))
@@ -315,17 +332,21 @@
 		set_camera_status(0)
 		set_pin_data(IC_INPUT, 2, FALSE)
 
+/obj/item/integrated_circuit/output/video_camera/disconnect_all()
+	if(camera)
+		set_camera_status(0)
+		set_pin_data(IC_INPUT, 2, FALSE)
+	. = ..()
+
 /obj/item/integrated_circuit/output/video_camera/ext_moved(oldLoc, dir)
 	. = ..()
 	update_camera_location(oldLoc)
 
-#define VIDEO_CAMERA_BUFFER 10
 /obj/item/integrated_circuit/output/video_camera/proc/update_camera_location(oldLoc)
 	oldLoc = get_turf(oldLoc)
 	if(!QDELETED(camera) && !updating && oldLoc != get_turf(src))
 		updating = TRUE
-		addtimer(CALLBACK(src, .proc/do_camera_update, oldLoc), VIDEO_CAMERA_BUFFER)
-#undef VIDEO_CAMERA_BUFFER
+		addtimer(CALLBACK(src, PROC_REF(do_camera_update), oldLoc), update_speed)
 
 /obj/item/integrated_circuit/output/video_camera/proc/do_camera_update(oldLoc)
 	if(!QDELETED(camera) && oldLoc != get_turf(src))
@@ -357,6 +378,10 @@
 
 /obj/item/integrated_circuit/output/led/power_fail()
 	set_pin_data(IC_INPUT, 1, FALSE)
+
+/obj/item/integrated_circuit/output/led/disconnect_all()
+	set_pin_data(IC_INPUT, 1, FALSE)
+	. = ..()
 
 /obj/item/integrated_circuit/output/led/external_examine(mob/user)
 	. = "There is "

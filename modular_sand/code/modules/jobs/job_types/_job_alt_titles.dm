@@ -48,7 +48,8 @@
 	alt_titles = list(
 		"Maintenance Technician",
 		"Engine Technician",
-		"Electrician"
+		"Electrician",
+		"GEC Engineer" // - add nta_of
 		)
 
 //Service
@@ -59,7 +60,8 @@
 		"Businessman",
 		"Trader",
 		"Intern",
-		"Off-Duty Civilian"
+		"Off-Duty Civilian",
+		"Fraudster" // - add nta_of
 		)
 
 /datum/job/bartender
@@ -74,8 +76,9 @@
 		"Pope",
 		"Voodo Sorcerer",
 		"Ritualist",
-		"Bishop", // How about you actually say something about it instead of crying on a downstream's comments i won't read.
-		"Pontiff"
+		"Pontiff",
+		"Theologist", // - add nta_of
+		"Psychic" // Это экстрасен! - add nta_of
 		)
 /* BLUEMOON REMOVAL - развлекатель теперь отдельная профессия
 /datum/job/clown //The most useless role in the game, delet this
@@ -119,8 +122,7 @@
 
 /datum/job/lawyer
 	alt_titles = list(
-		"Human Resources Agent",
-		"Internal Affairs Agent"
+		"Human Resources Agent"
 		)
 
 /datum/job/mime
@@ -143,7 +145,9 @@
 		"Circuitry Designer",
 		"Xenobiologist",
 		"Xenobotanist",
-		"Chemical Researcher"
+		"Chemical Researcher",
+		"Thaumaturge", // Да, Тауматург, вопросы? - add nta_of
+		"Anomalist" // - add nta_of
 		)
 
 //Medical

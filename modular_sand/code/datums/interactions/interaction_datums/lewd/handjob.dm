@@ -1,16 +1,12 @@
 /datum/interaction/lewd/handjob
 	description = "Рука. Подрочить."
 	interaction_sound = null
-	require_user_hands = TRUE
-	require_target_penis = REQUIRE_EXPOSED
-	max_distance = 1
+	required_from_user = INTERACTION_REQUIRE_HANDS
+	required_from_target_exposed = INTERACTION_REQUIRE_PENIS
+	p13target_emote = PLUG13_EMOTE_PENIS
 
 	additional_details = list(
-		list(
-			"info" = "You can fill a container if you hold it in your hand or pull it",
-			"icon" = "flask",
-			"color" = "transparent"
-			)
+		INTERACTION_FILLS_CONTAINERS
 	)
 
 /datum/interaction/lewd/handjob/display_interaction(mob/living/user, mob/living/partner)

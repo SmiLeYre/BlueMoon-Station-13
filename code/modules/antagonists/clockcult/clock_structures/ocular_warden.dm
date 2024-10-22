@@ -118,7 +118,7 @@
 				continue
 		if(ishostile(L))
 			var/mob/living/simple_animal/hostile/H = L
-			if(("ratvar" in H.faction) || (!H.mind && ("neutral" in H.faction)))
+			if(("ratvar" in H.faction) || (!H.mind && ("neutral" in H.faction)) || (!H.mind && ("skeleton" in H.faction)))
 				continue
 			if(ismegafauna(H) || (!H.mind && H.AIStatus == AI_OFF))
 				continue
@@ -144,10 +144,10 @@
 
 /obj/structure/destructible/clockwork/ocular_warden/proc/lose_target()
 	if(!target)
-		return 0
+		return FALSE
 	target = null
 	visible_message("<span class='warning'>[src] settles and seems almost disappointed.</span>")
-	return 1
+	return TRUE
 
 /obj/structure/destructible/clockwork/ocular_warden/get_efficiency_mod()
 	if(GLOB.ratvar_awakens)

@@ -149,7 +149,7 @@
 /obj/item/choice_beacon/pet //donator beacon that summons a small friendly animal
 	name = "pet beacon"
 	desc = "Straight from the outerspace pet shop to your feet."
-	var/static/list/pets = list("Crab" = /mob/living/simple_animal/crab,
+	var/list/pets = list("Crab" = /mob/living/simple_animal/crab,
 		"Cat" = /mob/living/simple_animal/pet/cat,
 		"Space cat" = /mob/living/simple_animal/pet/cat/space,
 		"Kitten" = /mob/living/simple_animal/pet/cat/kitten,
@@ -162,13 +162,42 @@
 		"Possum" = /mob/living/simple_animal/opossum)
 	var/pet_name
 
+/obj/item/choice_beacon/pet/moro
+	pets = list("Crab" = /mob/living/simple_animal/crab,
+		"Cat" = /mob/living/simple_animal/pet/cat,
+		"Space cat" = /mob/living/simple_animal/pet/cat/space,
+		"Kitten" = /mob/living/simple_animal/pet/cat/kitten,
+		"Dog" = /mob/living/simple_animal/pet/dog,
+		"Corgi" = /mob/living/simple_animal/pet/dog/corgi,
+		"Pug" = /mob/living/simple_animal/pet/dog/pug,
+		"Exotic Corgi" = /mob/living/simple_animal/pet/dog/corgi/exoticcorgi,
+		"Fox" = /mob/living/simple_animal/pet/fox,
+		"Red Panda" = /mob/living/simple_animal/pet/redpanda,
+		"Possum" = /mob/living/simple_animal/opossum,
+		"Moro" = /mob/living/simple_animal/pet/cat/moro)
+
+/obj/item/choice_beacon/pet/alta
+	pets = list("Crab" = /mob/living/simple_animal/crab,
+		"Cat" = /mob/living/simple_animal/pet/cat,
+		"Space cat" = /mob/living/simple_animal/pet/cat/space,
+		"Kitten" = /mob/living/simple_animal/pet/cat/kitten,
+		"Dog" = /mob/living/simple_animal/pet/dog,
+		"Corgi" = /mob/living/simple_animal/pet/dog/corgi,
+		"Pug" = /mob/living/simple_animal/pet/dog/pug,
+		"Exotic Corgi" = /mob/living/simple_animal/pet/dog/corgi/exoticcorgi,
+		"Fox" = /mob/living/simple_animal/pet/fox,
+		"Red Panda" = /mob/living/simple_animal/pet/redpanda,
+		"Possum" = /mob/living/simple_animal/opossum,
+		"Alta" = /mob/living/simple_animal/pet/cat/alta,
+		"Space Alta" = /mob/living/simple_animal/pet/cat/space/alta,
+		"Zlat" = /mob/living/simple_animal/pet/dog/corgi/Lisa/zlatchek,)
+
 /obj/item/choice_beacon/pet/generate_display_names()
 	return pets
 
 /obj/item/choice_beacon/pet/create_choice_atom(atom/choice, mob/owner)
-	var/mob/living/simple_animal/new_choice = new choice()
-	new_choice.butcher_results = null //please don't eat your pet, chef
-	var/obj/item/pet_carrier/donator/carrier = new() //a donator pet carrier is just a carrier that can't be shoved in an autolathe for metal
+	var/obj/item/pet_carrier/carrier = new()
+	var/mob/living/simple_animal/new_choice = new choice(carrier)
 	carrier.add_occupant(new_choice)
 	new_choice.mob_size = MOB_SIZE_TINY //yeah we're not letting you use this roundstart pet to hurt people / knock them down
 	new_choice.pass_flags = PASSTABLE | PASSMOB //your pet is not a bullet/person shield
@@ -272,3 +301,4 @@
 	icon_state = "skub"
 	w_class = WEIGHT_CLASS_BULKY
 	attack_verb = list("skubbed")
+

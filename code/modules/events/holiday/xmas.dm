@@ -29,7 +29,7 @@
 		other_half.icon_state = "cracker2"
 		target.put_in_active_hand(other_half)
 		playsound(user, 'sound/effects/snap.ogg', 50, 1)
-		return 1
+		return TRUE
 	return ..()
 
 /obj/item/clothing/head/festive
@@ -48,6 +48,8 @@
 /obj/effect/landmark/xmastree/Initialize(mapload)
 	..()
 	if((NEW_YEAR in SSevents.holidays) && christmas_tree) // Я запрещаю вам отмену Нового Года.
+		new christmas_tree(get_turf(src))
+	if((CHRISTMAS in SSevents.holidays)  && christmas_tree) // Я запрещаю вам отмену Нового Года.
 		new christmas_tree(get_turf(src))
 	else if((FESTIVE_SEASON in SSevents.holidays) && festive_tree)
 		new festive_tree(get_turf(src))

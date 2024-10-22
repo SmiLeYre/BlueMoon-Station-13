@@ -3257,7 +3257,7 @@
 	},
 /obj/structure/closet,
 /obj/effect/turf_decal/bot,
-/obj/item/circlegame,
+/obj/item/hand_item/circlegame,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/skelter/storage)
 "hE" = (
@@ -4193,10 +4193,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/skelter/sec)
-"GU" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/wall/mineral/titanium,
-/area/ruin/space/has_grav/skelter)
 "JR" = (
 /obj/effect/turf_decal/weather,
 /turf/open/floor/plating/airless{
@@ -4496,7 +4492,7 @@ hu
 hS
 ip
 gg
-GU
+ae
 ae
 ae
 ah

@@ -8,7 +8,7 @@
 	button_icon_state = "stickyweb1"
 
 /datum/action/innate/terrorspider/web/Activate()
-	var/mob/living/simple_animal/hostile/poison/terror_spider/user = owner
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/user = owner
 	user.Web()
 
 /datum/action/innate/terrorspider/wrap
@@ -17,7 +17,7 @@
 	button_icon_state = "cocoon_large1"
 
 /datum/action/innate/terrorspider/wrap/Activate()
-	var/mob/living/simple_animal/hostile/poison/terror_spider/user = owner
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/user = owner
 	user.FindWrapTarget()
 	user.DoWrap()
 
@@ -29,7 +29,7 @@
 	button_icon_state = "eggs"
 
 /datum/action/innate/terrorspider/greeneggs/Activate()
-	var/mob/living/simple_animal/hostile/poison/terror_spider/healer/user = owner
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer/user = owner
 	user.DoLayGreenEggs()
 
 // ---------- KNIGHT ACTIONS
@@ -39,7 +39,7 @@
 	button_icon_state = "terror_princess1"
 
 /datum/action/innate/terrorspider/knight/defaultm/Activate()
-	var/mob/living/simple_animal/hostile/poison/terror_spider/knight/user = owner
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight/user = owner
 	user.activate_mode(0)
 
 /datum/action/innate/terrorspider/knight/attackm
@@ -48,7 +48,7 @@
 	button_icon_state = "attack"
 
 /datum/action/innate/terrorspider/knight/attackm/Activate()
-	var/mob/living/simple_animal/hostile/poison/terror_spider/knight/user = owner
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight/user = owner
 	user.activate_mode(1)
 
 /datum/action/innate/terrorspider/knight/defencem
@@ -57,7 +57,7 @@
 	button_icon_state = "defence"
 
 /datum/action/innate/terrorspider/knight/defencem/Activate()
-	var/mob/living/simple_animal/hostile/poison/terror_spider/knight/user = owner
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight/user = owner
 	user.activate_mode(2)
 
 // ---------- BOSS ACTIONS
@@ -68,7 +68,7 @@
 	button_icon_state = "map_vent"
 
 /datum/action/innate/terrorspider/ventsmash/Activate()
-	var/mob/living/simple_animal/hostile/poison/terror_spider/user = owner
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/user = owner
 	user.DoVentSmash()
 
 /datum/action/innate/terrorspider/remoteview
@@ -77,7 +77,7 @@
 	button_icon_state = "heye"
 
 /datum/action/innate/terrorspider/remoteview/Activate()
-	var/mob/living/simple_animal/hostile/poison/terror_spider/user = owner
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/user = owner
 	user.DoRemoteView()
 
 // ---------- QUEEN ACTIONS
@@ -88,7 +88,7 @@
 	button_icon_state = "terror_queen"
 
 /datum/action/innate/terrorspider/queen/queennest/Activate()
-	var/mob/living/simple_animal/hostile/poison/terror_spider/queen/user = owner
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/user = owner
 	user.NestPrompt()
 
 /datum/action/innate/terrorspider/queen/queensense
@@ -97,7 +97,7 @@
 	button_icon_state = "mindswap"
 
 /datum/action/innate/terrorspider/queen/queensense/Activate()
-	var/mob/living/simple_animal/hostile/poison/terror_spider/queen/user = owner
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/user = owner
 	user.DoHiveSense()
 
 /datum/action/innate/terrorspider/queen/queeneggs
@@ -106,7 +106,7 @@
 	button_icon_state = "eggs"
 
 /datum/action/innate/terrorspider/queen/queeneggs/Activate()
-	var/mob/living/simple_animal/hostile/poison/terror_spider/queen/user = owner
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/user = owner
 	user.LayQueenEggs()
 
 
@@ -118,7 +118,7 @@
 	button_icon_state = "mgibbl1"
 
 /datum/action/innate/terrorspider/queen/empress/empresserase/Activate()
-	var/mob/living/simple_animal/hostile/poison/terror_spider/queen/empress/user = owner
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/empress/user = owner
 	user.EraseBrood()
 
 /datum/action/innate/terrorspider/queen/empress/empresslings
@@ -127,13 +127,13 @@
 	button_icon_state = "spiderling"
 
 /datum/action/innate/terrorspider/queen/empress/empresslings/Activate()
-	var/mob/living/simple_animal/hostile/poison/terror_spider/queen/empress/user = owner
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/empress/user = owner
 	user.EmpressLings()
 
 
 // ---------- WEB
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/Web()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/Web()
 	if(!web_type)
 		return
 	if(!isturf(loc))
@@ -171,7 +171,7 @@
 		icon_state = "stickyweb2"
 
 /obj/structure/spider/terrorweb/CanPass(atom/movable/mover, turf/target)
-	if(istype(mover, /mob/living/simple_animal/hostile/poison/terror_spider))
+	if(istype(mover, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider))
 		return 1
 	if(istype(mover, /obj/item/projectile/terrorspider))
 		return 1
@@ -182,6 +182,7 @@
 		if(prob(80))
 			to_chat(mover, "<span class='danger'>You get stuck in [src] for a moment.</span>")
 			M.Slowed(10 SECONDS)
+			M.Paralyze(2 SECONDS)
 			if(iscarbon(mover))
 				var/mob/living/carbon/C = mover
 				web_special_ability(C)
@@ -204,7 +205,7 @@
 
 // ---------- WRAP
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/mobIsWrappable(mob/living/M)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/mobIsWrappable(mob/living/M)
 	if(!istype(M))
 		return FALSE
 	if(M.stat != DEAD)
@@ -217,7 +218,7 @@
 		return FALSE
 	return TRUE
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/FindWrapTarget()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/FindWrapTarget()
 	if(!cocoon_target)
 		var/list/choices = list()
 		for(var/mob/living/L in oview(1,src))
@@ -233,7 +234,7 @@
 		else
 			to_chat(src, "<span class='danger'>There is nothing nearby you can wrap.</span>")
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/DoWrap()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/DoWrap()
 	if(cocoon_target && busy != SPINNING_COCOON)
 		if(cocoon_target.anchored)
 			cocoon_target = null
@@ -282,7 +283,7 @@
 		busy = 0
 		stop_automated_movement = 0
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/DoVentSmash()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/DoVentSmash()
 	var/valid_target = FALSE
 	for(var/obj/machinery/atmospherics/components/unary/vent_pump/P in range(1, get_turf(src)))
 		if(P.welded)
@@ -310,4 +311,3 @@
 				C.visible_message("<span class='danger'>[src] smashes the welded cover off [C]!</span>")
 				return
 		to_chat(src, "<span class='danger'>There is no welded vent or scrubber close enough to do this.</span>")
-

@@ -1,71 +1,36 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "a" = (
-/turf/closed/wall/mineral/plastitanium,
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/pod/dark,
 /area/shuttle/lambda)
-"g" = (
+"c" = (
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/open/floor/pod/light,
-/area/shuttle/lambda)
-"p" = (
-/turf/open/floor/pod/light,
-/area/shuttle/lambda)
-"q" = (
-/obj/machinery/light/small,
-/turf/open/floor/pod/light,
-/area/shuttle/lambda)
-"r" = (
-/obj/vehicle/sealed/mecha/combat/marauder/loaded,
-/turf/open/floor/pod/dark,
-/area/shuttle/lambda)
-"u" = (
-/turf/open/floor/pod/dark,
-/area/shuttle/lambda)
-"v" = (
 /obj/structure/closet/crate,
-/obj/item/storage/box/mre/menu2/safe,
-/obj/item/storage/box/mre/menu4/safe,
-/obj/item/storage/box/mre/menu4/safe,
-/obj/item/storage/box/mre/menu2/safe,
-/obj/item/storage/box/mre/menu1/safe,
-/obj/item/storage/box/mre/menu1/safe,
-/turf/open/floor/pod/light,
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/head/helmet/aviator_helmet,
+/obj/item/weldingtool/largetank,
+/obj/item/card/id/centcom,
+/turf/open/floor/pod/dark,
 /area/shuttle/lambda)
-"w" = (
+"g" = (
 /obj/structure/shuttle/engine/propulsion/burst{
 	dir = 8
 	},
 /turf/open/floor/pod/light,
 /area/shuttle/lambda)
-"x" = (
-/obj/structure/closet,
-/obj/item/ammo_box/magazine/m16,
-/obj/item/ammo_box/magazine/m16,
-/obj/item/ammo_box/magazine/m16,
-/obj/item/ammo_box/magazine/m16/ap,
-/obj/item/ammo_box/magazine/m16/ap,
-/obj/item/ammo_box/magazine/m16/ap,
-/obj/item/ammo_box/magazine/m16,
-/obj/item/ammo_box/magazine/m16,
-/obj/item/ammo_box/magazine/m16,
-/obj/item/ammo_box/magazine/m16,
-/obj/item/ammo_box/magazine/m556,
-/obj/item/ammo_box/magazine/m556,
-/obj/item/ammo_box/magazine/m556,
-/obj/item/ammo_box/magazine/m556,
-/obj/item/ammo_box/magazine/m556,
-/obj/item/ammo_box/magazine/m556,
-/turf/open/floor/pod/dark,
-/area/shuttle/lambda)
-"C" = (
-/obj/machinery/door/airlock/external{
-	name = "Space";
-	req_access_txt = "1"
-	},
+"h" = (
+/obj/machinery/light/small/red/directional/north,
+/obj/machinery/vending/wallmed/directional/north,
 /turf/open/floor/pod/light,
 /area/shuttle/lambda)
-"D" = (
+"i" = (
+/obj/machinery/light/small/red/directional/south,
+/obj/machinery/vending/wallmed/directional/south,
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"k" = (
 /obj/structure/shuttle/engine/heater{
 	dir = 8
 	},
@@ -78,29 +43,46 @@
 	},
 /turf/open/floor/pod/light,
 /area/shuttle/lambda)
-"F" = (
-/obj/structure/closet,
+"o" = (
 /obj/item/clothing/suit/armor/heavy/juggernaut,
 /obj/item/clothing/head/helmet/juggernaut,
 /obj/item/clothing/suit/armor/heavy/juggernaut,
 /obj/item/clothing/head/helmet/juggernaut,
 /obj/item/clothing/suit/space/hardsuit/syndi,
 /obj/item/clothing/suit/space/hardsuit/syndi,
+/obj/structure/closet/wall/blue{
+	dir = 8;
+	pixel_x = 30
+	},
+/obj/item/tank/jetpack/oxygen/harness,
+/obj/item/tank/jetpack/oxygen/harness,
 /turf/open/floor/pod/light,
 /area/shuttle/lambda)
-"K" = (
-/obj/machinery/light/small{
-	dir = 1
-	},
-/obj/structure/closet/crate,
-/obj/item/clothing/gloves/combat,
-/obj/item/clothing/head/helmet/aviator_helmet,
-/obj/item/weldingtool/largetank,
-/obj/item/card/id/centcom,
-/turf/open/floor/pod/dark,
+"p" = (
+/obj/machinery/light/small/red/directional/south,
+/turf/open/floor/pod/light,
 /area/shuttle/lambda)
-"O" = (
-/obj/structure/closet,
+"q" = (
+/obj/machinery/door/airlock/centcom{
+	name = "CentCom Security";
+	req_access_txt = "1"
+	},
+/obj/docking_port/mobile{
+	shuttle_id = "lambda";
+	name = "Lambda Shuttle";
+	port_direction = 4;
+	dwidth = 3;
+	width = 7;
+	dheight = 3;
+	height = 5
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"v" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/lambda)
+"E" = (
 /obj/item/gun/energy/laser/hellgun,
 /obj/item/gun/energy/laser/hellgun,
 /obj/item/gun/energy/laser/hellgun,
@@ -109,9 +91,57 @@
 /obj/item/gun/ballistic/automatic/m16a4,
 /obj/item/gun/ballistic/automatic/ar,
 /obj/item/gun/ballistic/automatic/ar,
+/obj/structure/closet/wall/red{
+	dir = 8;
+	pixel_x = 30
+	},
 /turf/open/floor/pod/light,
 /area/shuttle/lambda)
-"Q" = (
+"F" = (
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"G" = (
+/turf/open/floor/pod/dark,
+/area/shuttle/lambda)
+"L" = (
+/obj/machinery/light/small/red/directional/north,
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"N" = (
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m16/ap,
+/obj/item/ammo_box/magazine/m16/ap,
+/obj/item/ammo_box/magazine/m16/ap,
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m16,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/item/ammo_box/magazine/m556,
+/obj/structure/closet/wall/red{
+	dir = 8;
+	pixel_x = 30
+	},
+/turf/open/floor/pod/dark,
+/area/shuttle/lambda)
+"U" = (
+/obj/machinery/door/airlock/external{
+	name = "Space";
+	req_access_txt = "1"
+	},
+/turf/open/floor/pod/light,
+/area/shuttle/lambda)
+"V" = (
+/obj/vehicle/sealed/mecha/combat/marauder/loaded,
+/turf/open/floor/pod/dark,
+/area/shuttle/lambda)
+"Z" = (
 /obj/structure/closet/crate,
 /obj/item/storage/firstaid/tactical,
 /obj/item/gun/medbeam,
@@ -123,77 +153,53 @@
 /obj/item/grenade/frag,
 /turf/open/floor/pod/dark,
 /area/shuttle/lambda)
-"Y" = (
-/obj/docking_port/mobile{
-	id = "lambda";
-	name = "Lambda Shuttle";
-	port_direction = 4;
-	dwidth = 3;
-	width = 8;
-	dheight = 3;
-	height = 8
-	},
-/obj/structure/fans/tiny,
-/obj/machinery/door/airlock/centcom{
-	name = "CentCom Security";
-	req_access_txt = "1"
-	},
-/turf/open/floor/pod/light,
-/area/shuttle/lambda)
 
 (1,1,1) = {"
-a
-a
-w
-a
-a
+v
+v
+g
+v
+v
 "}
 (2,1,1) = {"
-a
-Q
-D
-K
-a
+v
+Z
+k
+c
+v
 "}
 (3,1,1) = {"
-C
-g
-r
-q
-a
+v
+h
+V
+i
+v
 "}
 (4,1,1) = {"
-a
-u
-p
-u
-a
+U
+G
+F
+G
+q
 "}
 (5,1,1) = {"
+v
+L
 a
-F
-u
 p
-a
+v
 "}
 (6,1,1) = {"
-a
-x
-p
-u
-Y
+v
+N
+E
+o
+v
 "}
 (7,1,1) = {"
-a
-O
-u
 v
-a
-"}
-(8,1,1) = {"
-a
-a
-a
-a
-a
+v
+v
+v
+v
 "}

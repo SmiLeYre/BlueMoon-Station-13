@@ -14,14 +14,24 @@
 
 /mob/living/silicon/robot/proc/use_power()
 	if(cell?.charge)
+		if((cell.charge <= 500) && (vtec != initial(vtec)))
+			to_chat(src, "<span class='warning'>Critical cell charge! VTEC is temporarily disabled.</span>")
+			vtec = initial(vtec)
 		if(cell.charge <= 100)
 			uneq_all()
 		var/amt = clamp((lamp_enabled * lamp_intensity),1,cell.charge) //Lamp will use a max of 5 charge, depending on brightness of lamp. If lamp is off, borg systems consume 1 point of charge, or the rest of the cell if it's lower than that.
 		cell.use(amt) //Usage table: 1/tick if off/lowest setting, 4 = 4/tick, 6 = 8/tick, 8 = 12/tick, 10 = 16/tick
 	else
 		uneq_all()
+		vtec = initial(vtec)
 		low_power_mode = TRUE
 		toggle_headlamp(TRUE)
+	//VTEC power drain
+	if((vtec <= -3) && (!vtec_disabled))	//"vtec" is a negative value and the lesser it is the faster we move.
+		if(cell?.charge)
+			if((!cell.self_recharge && !cell.use(500)) || (cell.self_recharge && !cell.use(max(cell.chargerate, 500)))) //default cell maxcharge is 10.000. 1/2 per 10 seconds of superspeed
+				to_chat(src, "<span class='warning'>Critical cell charge! VTEC is temporarily disabled.</span>")
+				vtec = initial(vtec)
 	diag_hud_set_borgcell()
 
 /mob/living/silicon/robot/proc/handle_robot_hud_updates()

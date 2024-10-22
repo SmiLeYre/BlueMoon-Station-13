@@ -153,7 +153,7 @@
 
 	D.Stun(80)
 	A.visible_message("<span class = 'danger'><B>[A] starts spinning around with [D]!</B></span>")
-	A.emote("scream")
+	A.emote("realagony")
 
 	for (var/i = 0, i < 20, i++)
 		var/delay = 5
@@ -208,8 +208,8 @@
 		var/turf/T = get_edge_target_turf(A, A.dir)
 		if (T && isturf(T))
 			if (!D.stat)
-				D.emote("scream")
-			D.throw_at(T, 10, 4, A, TRUE, TRUE, callback = CALLBACK(D, /mob/living/carbon/human.proc/DefaultCombatKnockdown, 20))
+				D.emote("realagony")
+			D.throw_at(T, 10, 4, A, TRUE, TRUE, callback = CALLBACK(D, TYPE_PROC_REF(/mob/living/carbon/human, DefaultCombatKnockdown), 20))
 	log_combat(A, D, "has thrown with wrestling")
 	return FALSE
 
@@ -311,7 +311,7 @@
 		A.visible_message("<span class = 'danger'><B>[A] [fluff] [D]!</B></span>")
 		playsound(A.loc, "swing_hit", 50, 1)
 		if (!D.stat)
-			D.emote("scream")
+			D.emote("realagony")
 			D.DefaultCombatKnockdown(40)
 
 			switch(rand(1,3))
@@ -350,7 +350,7 @@
 			A.setDir(turn(A.dir, 90))
 
 		A.forceMove(D.loc)
-		addtimer(CALLBACK(src, .proc/CheckStrikeTurf, A, T), 4)
+		addtimer(CALLBACK(src, PROC_REF(CheckStrikeTurf), A, T), 4)
 
 		A.visible_message("<span class = 'danger'><b>[A] headbutts [D]!</b></span>")
 		D.apply_damage(damage + 15, BRUTE)
@@ -362,7 +362,7 @@
 	if(!D)
 		return
 	var/damage = damage_roll(A,D)
-	A.emote("scream")
+	A.emote("realagony")
 	A.emote("flip")
 	A.setDir(turn(A.dir, 90))
 
@@ -437,7 +437,7 @@
 
 		A.visible_message("<span class = 'danger'><B>[A] leg-drops [D]!</B></span>")
 		playsound(A.loc, "swing_hit", 50, 1)
-		A.emote("scream")
+		A.emote("realagony")
 
 		if (falling == 1)
 			if (prob(33) || D.stat)

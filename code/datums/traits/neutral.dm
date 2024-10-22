@@ -123,24 +123,6 @@
 		return
 	H.arousal_rate = initial(H.arousal_rate)
 
-/datum/quirk/alcohol_intolerance
-	name = "Непереносимость Алкоголя"
-	desc = "Вы получаете урон токсинами вместо того, чтобы пьянеть при употреблении алкоголя."
-	value = 0
-	mob_trait = TRAIT_TOXIC_ALCOHOL
-	medical_record_text = "Организм пациента не усваивает этиловый спирт."
-
-/datum/quirk/alcohol_intolerance/add()
-	var/mob/living/carbon/human/H = quirk_holder
-	var/datum/species/species = H.dna.species
-	species.disliked_food |= ALCOHOL
-
-/datum/quirk/alcohol_intolerance/remove()
-	var/mob/living/carbon/human/H = quirk_holder
-	if(H)
-		var/datum/species/species = H.dna.species
-		species.disliked_food &= ~ALCOHOL
-
 /datum/quirk/longtimer
 	name = "Матёрый Волк"
 	desc = "Вы прошли долгий путь и пережили больше, чем остальные. Вы страдаете от жутких шрамов. Какова бы ни была причина, вы отказались от их удаления или аугментации."
@@ -175,7 +157,7 @@
 	mob_trait = TRAIT_SALT_SENSITIVE
 
 /datum/quirk/dullahan
-	name = "Дюллахан"
+	name = "Дуллахан"
 	desc = "Ваша голова отделена от тела."
 	value = 0
 	medical_record_text = "Пациент имеет неизвестного рода пространственную связь с собственной отделенной головой."
@@ -199,8 +181,37 @@
 	H.equip_to_slot(photo_album, ITEM_SLOT_BACKPACK)
 	photo_album.persistence_id = "personal_[H.mind.key]" // this is a persistent album, the ID is tied to the account's key to avoid tampering
 	photo_album.persistence_load()
-	photo_album.name = "[H.real_name]'s Photo Album"
+	photo_album.name = "[H.real_name] Photo Album"
 	var/obj/item/camera/camera = new(get_turf(H))
+	camera.name = "[H.real_name] Camera"
 	H.put_in_hands(camera)
 	H.equip_to_slot(camera, ITEM_SLOT_BACKPACK) //SPLURT Edit
 	H.regenerate_icons()
+
+/datum/quirk/steel_ass
+	name = "Стальные Булки"
+	desc = "Вы ни разу не пропускали день ягодиц. У вас полный иммунитет ко всем формам ударов по заднице, и любой, кто попытается наградить вас шлепком, как правило, получит перелом кисти."
+	value = 0
+	mob_trait = TRAIT_STEEL_ASS
+	gain_text = span_notice("Ваш зад может составить конкуренцию големскому.")
+	lose_text = span_notice("Ваш зад ощущается более мягким и уязвимым к шлепкам.")
+
+/datum/quirk/jiggly_ass
+	name = "Булки Грома"
+	desc = "Твоя задница, растягивающая штаны, настолько же приятна, насколько трудно удержать равновесие, когда ее шлепают!"
+	value = 0
+	mob_trait = TRAIT_JIGGLY_ASS
+	gain_text = span_notice("Ваш зад кажется очень удобным для шлепков.")
+	lose_text = span_notice("Ваша задница снова чувствует себя нормально.")
+
+/datum/quirk/jiggly_ass/add()
+	// Add examine text
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
+
+/datum/quirk/jiggly_ass/remove()
+	// Remove examine text
+	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
+
+// Quirk examine text
+/datum/quirk/jiggly_ass/proc/on_examine_holder(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
+	examine_list += span_lewd("[quirk_holder.ru_ego(TRUE)] заднице не помешает крепкий шлепок.")

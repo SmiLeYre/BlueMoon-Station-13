@@ -76,10 +76,10 @@
 		ready_implants--
 		if(!replenishing && auto_replenish)
 			replenishing = TRUE
-			addtimer(CALLBACK(src,"replenish"),replenish_cooldown)
+			addtimer(CALLBACK(src, PROC_REF(replenish)),replenish_cooldown)
 		if(injection_cooldown > 0)
 			ready = FALSE
-			addtimer(CALLBACK(src,"set_ready"),injection_cooldown)
+			addtimer(CALLBACK(src, PROC_REF(set_ready)),injection_cooldown)
 	else
 		playsound(get_turf(src), 'sound/machines/buzz-sigh.ogg', 25, 1)
 	update_icon()
@@ -113,7 +113,7 @@
 	if(ready_implants < max_implants)
 		ready_implants++
 	if(ready_implants < max_implants)
-		addtimer(CALLBACK(src,"replenish"),replenish_cooldown)
+		addtimer(CALLBACK(src, PROC_REF(replenish)), replenish_cooldown)
 	else
 		replenishing = FALSE
 
@@ -125,6 +125,9 @@
 	user.visible_message("<span class='notice'>You see [user] kicking against the door of [src]!</span>", \
 		"<span class='notice'>You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
 		"<span class='italics'>You hear a metallic creaking from [src].</span>")
+	if(INTERACTING_WITH(user, src))
+		to_chat(user, span_warning("You're already interacting with [src]!"))
+		return
 	if(do_after(user,(breakout_time), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src || state_open)
 			return
@@ -158,11 +161,11 @@
 
 /obj/machinery/implantchair/genepurge/implant_action(mob/living/carbon/human/H,mob/user)
 	if(!istype(H))
-		return 0
+		return FALSE
 	H.set_species(/datum/species/human, 1)//lizards go home
 	purrbation_remove(H)//remove cats
 	H.dna.remove_all_mutations()//hulks out
-	return 1
+	return TRUE
 
 
 /obj/machinery/implantchair/brainwash

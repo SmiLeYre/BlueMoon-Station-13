@@ -33,7 +33,7 @@
 	return ..()
 
 /obj/machinery/aug_manipulator/update_icon_state()
-	if(stat & BROKEN)
+	if(machine_stat & BROKEN)
 		icon_state = "[initial_icon_state]-broken"
 		return
 
@@ -92,14 +92,14 @@
 				return
 
 			user.visible_message("[user] begins repairing [src].", \
-				"<span class='notice'>You begin repairing [src]...</span>", \
+				"<span class='notice'>Вы начинаете чинить [src]...</span>", \
 				"<span class='italics'>You hear welding.</span>")
 
 			if(O.use_tool(src, user, 40, volume=50))
-				if(!(stat & BROKEN))
+				if(!(machine_stat & BROKEN))
 					return
-				to_chat(user, "<span class='notice'>You repair [src].</span>")
-				stat &= ~BROKEN
+				to_chat(user, "<span class='notice'>Вы починили [src].</span>")
+				machine_stat &= ~BROKEN
 				obj_integrity = max(obj_integrity, max_integrity)
 				update_icon()
 		else
@@ -109,8 +109,8 @@
 
 /obj/machinery/aug_manipulator/obj_break(damage_flag)
 	if(!(flags_1 & NODECONSTRUCT_1))
-		if(!(stat & BROKEN))
-			stat |= BROKEN
+		if(!(machine_stat & BROKEN))
+			machine_stat |= BROKEN
 			update_icon()
 
 /obj/machinery/aug_manipulator/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)

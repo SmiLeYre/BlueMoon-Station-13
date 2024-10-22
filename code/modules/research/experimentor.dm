@@ -74,12 +74,13 @@
 	SetTypeReactions()
 
 /obj/machinery/rnd/experimentor/RefreshParts()
-	for(var/obj/item/stock_parts/manipulator/M in component_parts)
-		if(resetTime > 0 && (resetTime - M.rating) >= 1)
-			resetTime -= M.rating
+	resetTime = 20 //17-> 5
+	badThingCoeff = -4 //0 -> 16
+	for(var/obj/item/stock_parts/manipulator/M in component_parts) //X2
+		resetTime -= M.rating*1.5
 	for(var/obj/item/stock_parts/scanning_module/M in component_parts)
 		badThingCoeff += M.rating*2
-	for(var/obj/item/stock_parts/micro_laser/M in component_parts)
+	for(var/obj/item/stock_parts/micro_laser/M in component_parts) //X2
 		badThingCoeff += M.rating
 
 /obj/machinery/rnd/experimentor/examine(mob/user)
@@ -143,6 +144,7 @@
 					output += str
 			output += boosted + res
 			dat += output
+		dat += "<b><a href='byond://?src=[REF(src)];function=recalibrate'>Recalibrate Algorithm</A></b>"
 	else
 		dat += "<b>Nothing loaded.</b>"
 	dat += "<a href='byond://?src=[REF(src)];function=refresh'>Refresh</A>"
@@ -169,6 +171,9 @@
 			linked_console = D
 	else if(scantype == "eject")
 		ejectItem()
+	else if(scantype == "recalibrate") //SPLURT EDIT - RECALIBRATE SCAN TYPES
+		SetTypeReactions()
+		to_chat(usr, "<span class='notice'>[src] has been recalibrated and new possible scan type algorithms have been selected.</span>")
 	else if(scantype == "refresh")
 		updateUsrDialog()
 	else
@@ -494,7 +499,7 @@
 			use_power(500000)
 			investigate_log("Experimentor has drained power from its APC", INVESTIGATE_EXPERIMENTOR)
 
-	addtimer(CALLBACK(src, .proc/reset_exp), resetTime)
+	addtimer(CALLBACK(src, PROC_REF(reset_exp)), resetTime)
 
 /obj/machinery/rnd/experimentor/proc/reset_exp()
 	update_icon()
@@ -560,7 +565,7 @@
 			cooldown = TRUE
 			call(src,realProc)(user)
 			if(!QDELETED(src))
-				addtimer(CALLBACK(src, .proc/cd), cooldownMax)
+				addtimer(CALLBACK(src, PROC_REF(cd)), cooldownMax)
 	else
 		to_chat(user, "<span class='notice'>You aren't quite sure what to do with this yet.</span>")
 
@@ -577,7 +582,7 @@
 /obj/item/relic/proc/corgicannon(mob/user)
 	playsound(src, "sparks", rand(25,50), 1)
 	var/mob/living/simple_animal/pet/dog/corgi/C = new/mob/living/simple_animal/pet/dog/corgi(get_turf(user))
-	C.throw_at(pick(oview(10,user)), 10, rand(3,8), callback = CALLBACK(src, .proc/throwSmoke, C))
+	C.throw_at(pick(oview(10,user)), 10, rand(3,8), callback = CALLBACK(src, PROC_REF(throwSmoke), C))
 	warn_admins(user, "Corgi Cannon", 0)
 
 /obj/item/relic/proc/clean(mob/user)
@@ -627,7 +632,7 @@
 
 /obj/item/relic/proc/explode(mob/user)
 	to_chat(user, "<span class='danger'>[src] begins to heat up!</span>")
-	addtimer(CALLBACK(src, .proc/do_explode, user), rand(35, 100))
+	addtimer(CALLBACK(src, PROC_REF(do_explode), user), rand(35, 100))
 
 /obj/item/relic/proc/do_explode(mob/user)
 	if(loc == user)
@@ -638,7 +643,7 @@
 
 /obj/item/relic/proc/teleport(mob/user)
 	to_chat(user, "<span class='notice'>[src] begins to vibrate!</span>")
-	addtimer(CALLBACK(src, .proc/do_the_teleport, user), rand(10, 30))
+	addtimer(CALLBACK(src, PROC_REF(do_the_teleport), user), rand(10, 30))
 
 /obj/item/relic/proc/do_the_teleport(mob/user)
 	var/turf/userturf = get_turf(user)

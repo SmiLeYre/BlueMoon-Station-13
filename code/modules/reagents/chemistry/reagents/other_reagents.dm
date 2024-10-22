@@ -63,10 +63,7 @@
 	// BLUEMOON ADD START - синтетики могут пить свою же "кровь" (гидравлическую жидкость), чтобы восполнять её запасы
 	if(HAS_TRAIT(C, TRAIT_ROBOTIC_ORGANISM))
 		if(data && (data["blood_type"] in get_safe_blood(C.dna.blood_type)))
-			if(C.blood_volume > BLOOD_VOLUME_NORMAL) // если крови слишком много, она не восполняет запасы в организме
-				to_chat(C, span_warning("[C] leaks out with hydraulic fluid! It streams from holes in hull parts."))
-			else //восполнение крови в соотношении 1 к 1
-				C.blood_volume = max(C.blood_volume + round(metabolization_rate, 0.1), 0)
+			C.blood_volume = C.blood_volume + clamp(volume, 0, metabolization_rate) //восполнение крови в соотношении 1 к 1
 	// BLUEMOON ADD END
 	..()
 
@@ -249,6 +246,43 @@
 	if(istype(data))
 		src.data |= data.Copy()
 
+/datum/reagent/corgium
+	name = "Corgium"
+	description = "A happy looking liquid that you feel compelled to consume if you want a better life."
+	color = "#ecca7f"
+	taste_description = "dog treats"
+	var/mob/living/simple_animal/pet/dog/corgi/new_corgi
+
+/datum/reagent/corgium/on_mob_metabolize(mob/living/L)
+	. = ..()
+	var/obj/shapeshift_holder/H = locate() in L
+	if(H)
+		to_chat(L, "<span class='warning'>You're already corgified!</span>")
+		return
+	new_corgi = new(L.loc)
+	//hat check
+	var/mob/living/carbon/C = L
+	if(istype(C))
+		var/obj/item/hat = C.get_item_by_slot(ITEM_SLOT_HEAD)
+		if(hat?.dog_fashion)
+			new_corgi.place_on_head(hat,null,FALSE)
+	H = new(new_corgi,src,L)
+	//Restore after this time
+	addtimer(CALLBACK(src, PROC_REF(restore), L), 5 * (volume / metabolization_rate))
+
+/datum/reagent/corgium/proc/restore(mob/living/L)
+	//The mob was qdeleted by an explosion or something
+	if(QDELETED(L))
+		return
+	//Remove all the corgium from the person
+	L.reagents?.remove_reagent(/datum/reagent/corgium, INFINITY)
+	if(QDELETED(new_corgi))
+		return
+	var/obj/shapeshift_holder/H = locate() in new_corgi
+	if(!H)
+		return
+	H.restore()
+
 /datum/reagent/water
 	name = "Water"
 	description = "An ubiquitous chemical substance that is composed of hydrogen and oxygen."
@@ -374,15 +408,17 @@
 
 	if(is_servant_of_ratvar(L))
 		to_chat(L, "<span class='userdanger'>Священный Туман распространяется по вашему сознанию, ослабляя связь с Жёлтым Измерением и очищая вас от влияния Юстициара Ратвара!</span>")
-	else if(iscultist(L))
+		return
+	if(iscultist(L))
 		to_chat(L, "<span class='userdanger'>Священный Туман распространяется по вашему сознанию, ослабляя связь с Красным Измерением и очищая вас от влияния Нар-Си</span>")
-	else if(HAS_TRAIT(L,TRAIT_RUSSIAN))
+		return
+	if(HAS_TRAIT(L,TRAIT_RUSSIAN))
 		// Alert user of holy water effect.
-		to_chat(L, span_nicegreen("Святая вода питает и заряжает энергией!"))
+		to_chat(L, span_nicegreen("Святая водица питает и заряжает энергией!"))
 	else
 		to_chat(L, span_nicegreen("Священный Туман распространяется по вашему сознанию."))
 
-	if(HAS_TRAIT(L, TRAIT_HALLOWED) || usr.job == "Chaplain")
+	if(HAS_TRAIT(L, TRAIT_HALLOWED) || L.mind?.isholy)
 		L.drowsyness = max(L.drowsyness-5, 0)
 		L.AdjustUnconscious(-20, FALSE)
 		L.AdjustAllImmobility(-40, FALSE)
@@ -410,7 +446,8 @@
 	if(!data)
 		data = list("misc" = 1)
 	data["misc"]++
-	M.jitteriness = min(M.jitteriness+4,10)
+	if(HAS_TRAIT(M, TRAIT_HALLOWED) || M.mind?.isholy)
+		return
 	if(iscultist(M, FALSE, TRUE))
 		for(var/datum/action/innate/cult/blood_magic/BM in M.actions)
 			if(!BM.holy_dispel)
@@ -429,7 +466,7 @@
 				M.visible_message("<span class='danger'>[M] падает в припадке!</span>", "<span class='userdanger'>У вас начался припадок!</span>")
 				M.Unconscious(120)
 				to_chat(M, "<span class='cultlarge'>[pick("Ваша кровь - это ваша связь. Без нее вы никто!", "Не забывай своё место, дитя.", \
-				"Столько сил, а вы все равно не справляетесь?", "Если ты не сможешь очистить себя от этой отраву, я очищу твою скудную жизнь!")].</span>")
+				"Столько сил, а вы все равно не справляетесь?", "Если ты не сможешь очистить себя от этой отраву, я очищу твою скудную жизнь!")]</span>")
 		else if(is_servant_of_ratvar(M) && prob(8))
 			switch(pick("speech", "message", "emote"))
 				if("speech")
@@ -440,15 +477,14 @@
 				if("emote")
 					M.visible_message("<span class='warning'>[M] [pick("whimpers quietly", "shivers as though cold", "glances around in paranoia")].</span>")
 	if(data["misc"] >= 60)	// 30 units, 135 seconds
-		if(iscultist(M, FALSE, TRUE) || is_servant_of_ratvar(M, FALSE, TRUE))
-			if(iscultist(M))
-				SSticker.mode.remove_cultist(M.mind, FALSE, TRUE)
-			else if(is_servant_of_ratvar(M))
-				remove_servant_of_ratvar(M)
-			M.jitteriness = 0
-			M.stuttering = 0
-			holder.del_reagent(type)	// maybe this is a little too perfect and a max() cap on the statuses would be better??
-			return
+		if(iscultist(M))
+			SSticker.mode.remove_cultist(M.mind, FALSE, TRUE)
+		if(is_servant_of_ratvar(M))
+			remove_servant_of_ratvar(M)
+		M.jitteriness = 0
+		M.stuttering = 0
+		holder.del_reagent(type)	// maybe this is a little too perfect and a max() cap on the statuses would be better??
+		return
 	holder.remove_reagent(type, 0.4)	//fixed consumption to prevent balancing going out of whack
 
 /datum/reagent/water/holywater/reaction_turf(turf/T, reac_volume)
@@ -710,7 +746,7 @@
 	to_chat(H, "<span class='warning'><b>You crumple in agony as your flesh wildly morphs into new forms!</b></span>")
 	H.visible_message("<b>[H]</b> falls to the ground and screams as [H.ru_ego()] skin bubbles and froths!") //'froths' sounds painful when used with SKIN.
 	H.DefaultCombatKnockdown(60)
-	addtimer(CALLBACK(src, .proc/mutate, H), 30)
+	addtimer(CALLBACK(src, PROC_REF(mutate), H), 30)
 	return
 
 /datum/reagent/mutationtoxin/proc/mutate(mob/living/carbon/human/H)
@@ -1276,7 +1312,7 @@
 		to_chat(M, "<span class='warning'>You feel unstable...</span>")
 		M.Jitter(2)
 		current_cycle = 1
-		addtimer(CALLBACK(M, /mob/living/proc/bluespace_shuffle), 30)
+		addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living, bluespace_shuffle)), 30)
 	..()
 
 /mob/living/proc/bluespace_shuffle()
@@ -2205,7 +2241,7 @@
 
 /datum/reagent/romerol/reaction_mob(mob/living/carbon/human/H, method=TOUCH, reac_volume)
 	// Silently add the zombie infection organ to be activated upon death
-	if(!H.getorganslot(ORGAN_SLOT_ZOMBIE))
+	if(!H.getorganslot(ORGAN_SLOT_ZOMBIE) && !HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - добавлена проверка для роботов
 		var/obj/item/organ/zombie_infection/nodamage/ZI = new()
 		ZI.Insert(H)
 	..()
@@ -2233,7 +2269,24 @@
 	taste_description = "bitterness" // apparently what viagra tastes like
 
 /datum/reagent/growthserum/on_mob_life(mob/living/carbon/H)
+	// BLUEMOON ADD START - нормализаторы не дружат с изменениями размера во время их ношения
+	if(H.GetComponent(/datum/component/size_normalized))
+		to_chat(H, span_warning("You normalization device fights any changes in size!"))
+		return
 	var/newsize = current_size
+	switch(volume)
+		if(0 to 19)
+			newsize = 1.25*RESIZE_DEFAULT_SIZE
+		if(20 to 49)
+			newsize = 1.5*RESIZE_DEFAULT_SIZE
+		if(50 to 99)
+			newsize = 2*RESIZE_DEFAULT_SIZE
+		if(100 to 199)
+			newsize = 2.5*RESIZE_DEFAULT_SIZE
+		if(200 to INFINITY)
+			newsize = 3*RESIZE_DEFAULT_SIZE
+	H.update_size(newsize)
+	/* BLUEMOON REMOVAL START
 	switch(volume)
 		if(0 to 19)
 			newsize = 1.25*RESIZE_DEFAULT_SIZE
@@ -2249,12 +2302,16 @@
 	H.resize = newsize/current_size
 	current_size = newsize
 	H.update_transform()
+	/ BLUEMOON REMOVAL END */
 	..()
 
 /datum/reagent/growthserum/on_mob_end_metabolize(mob/living/M)
+	/* BLUEMOON REMOVAL START
 	M.resize = RESIZE_DEFAULT_SIZE/current_size
 	current_size = RESIZE_DEFAULT_SIZE
 	M.update_transform()
+	/ BLUEMOON REMOVAL END */
+	M.update_size(RESIZE_DEFAULT_SIZE) // BLUEMOON ADD
 	..()
 
 /datum/reagent/plastic_polymers
@@ -2556,7 +2613,7 @@
 /datum/reagent/gravitum/reaction_obj(obj/O, volume)
 	O.AddElement(/datum/element/forced_gravity, 0)
 
-	addtimer(CALLBACK(O, .proc/_RemoveElement, /datum/element/forced_gravity, 0), volume * time_multiplier)
+	addtimer(CALLBACK(O, PROC_REF(_RemoveElement), /datum/element/forced_gravity, 0), volume * time_multiplier)
 
 /datum/reagent/gravitum/on_mob_add(mob/living/L)
 	L.AddElement(/datum/element/forced_gravity, 0) //0 is the gravity, and in this case weightless
@@ -2585,8 +2642,14 @@
 	if(!istype(location))
 		return
 
+	if(istype(src, /datum/reagent/consumable/semen/femcum)) //let it be here
+		var/obj/effect/decal/cleanable/semen/femcum/F = (locate(/obj/effect/decal/cleanable/semen/femcum) in location) || new(location)
+		if(F.reagents.add_reagent(type, volume, data))
+			F.update_icon()
+			return
+
 	var/obj/effect/decal/cleanable/semen/S = locate(/obj/effect/decal/cleanable/semen) in location
-	if(S)
+	if(S && !istype(S, /obj/effect/decal/cleanable/semen/femcum))
 		if(S.reagents.add_reagent(type, volume, data))
 			S.update_icon()
 			return
@@ -2630,6 +2693,8 @@
 
 /obj/effect/decal/cleanable/semen/update_icon()
 	. = ..()
+	if(QDELETED(src) || !reagents)
+		return
 	add_atom_colour(mix_color_from_reagents(reagents.reagent_list), FIXED_COLOUR_PRIORITY)
 
 /datum/reagent/consumable/semen/femcum
@@ -2646,6 +2711,19 @@
 	blood_state = null
 	bloodiness = null
 	my_liquid_type = /datum/reagent/consumable/semen/femcum
+
+//BLUEMOON ADD START
+/datum/reagent/consumable/semen/siliconcum
+	name = "SynthCum"
+	description = "Synthetic lubricant designed for cyborgs."
+	taste_description = "something with a silicone"
+	color = "#5cb2cc"
+	decal_path = /obj/effect/decal/cleanable/semen/siliconcum
+
+/obj/effect/decal/cleanable/semen/siliconcum
+	name = "synthetic cum"
+	my_liquid_type = /datum/reagent/consumable/semen/siliconcum
+//BLUEMOON ADD END
 
 /datum/reagent/determination
 	name = "Determination"
@@ -2692,21 +2770,21 @@
 
 /datum/reagent/eldritch/on_mob_life(mob/living/carbon/M)
 	if(IS_HERETIC(M))
-		M.drowsyness = max(M.drowsyness-5, 0)
-		M.AdjustAllImmobility(-40, FALSE)
-		M.adjustStaminaLoss(-15, FALSE)
-		M.adjustToxLoss(-3, FALSE, TRUE)
-		M.adjustOxyLoss(-3, FALSE)
-		M.adjustBruteLoss(-3, FALSE)
-		M.adjustFireLoss(-3, FALSE)
+		M.drowsyness = max(M.drowsyness-10, 0)
+		M.AdjustAllImmobility(-80, FALSE)
+		M.adjustStaminaLoss(-30, FALSE)
+		M.adjustToxLoss(-6, FALSE, TRUE)
+		M.adjustOxyLoss(-6, FALSE)
+		M.adjustBruteLoss(-6, FALSE)
+		M.adjustFireLoss(-6, FALSE)
 		if(ishuman(M) && M.blood_volume < BLOOD_VOLUME_NORMAL)
-			M.adjust_integration_blood(3)
+			M.adjust_integration_blood(6)
 	else
-		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 3, 150)
-		M.adjustToxLoss(2, FALSE)
-		M.adjustFireLoss(2, FALSE)
-		M.adjustOxyLoss(2, FALSE)
-		M.adjustBruteLoss(2, FALSE)
+		M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 6, 150)
+		M.adjustToxLoss(4, FALSE)
+		M.adjustFireLoss(4, FALSE)
+		M.adjustOxyLoss(4, FALSE)
+		M.adjustBruteLoss(4, FALSE)
 	holder.remove_reagent(type, 1)
 	return TRUE
 
@@ -2769,7 +2847,7 @@
 /datum/reagent/red_ichor
 	name = "Red Ichor"
 	can_synth = FALSE
-	description = "A unknown red liquid, linked to healing of most moral wounds."
+	description = "An unknown red liquid, linked to healing of most moral wounds."
 	color = "#c10000"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	chemical_flags = REAGENT_ALL_PROCESS
@@ -2787,7 +2865,7 @@
 /datum/reagent/green_ichor
 	name = "Green Ichor"
 	can_synth = FALSE
-	description = "A unknown green liquid, linked to healing of most internal wounds."
+	description = "An unknown green liquid, linked to healing of most internal wounds."
 	color = "#158c00"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	chemical_flags = REAGENT_ALL_PROCESS
@@ -2805,7 +2883,7 @@
 /datum/reagent/blue_ichor
 	name = "Blue Ichor"
 	can_synth = FALSE
-	description = "A unknown blue liquid, linked to healing the mind."
+	description = "An unknown blue liquid, linked to healing the mind."
 	color = "#0914e0"
 	metabolization_rate = REAGENTS_METABOLISM * 2.5
 	chemical_flags = REAGENT_ALL_PROCESS

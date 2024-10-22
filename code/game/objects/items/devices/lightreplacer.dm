@@ -173,7 +173,7 @@
 /obj/item/lightreplacer/proc/Use(mob/user)
 	playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 	AddUses(-1)
-	return 1
+	return TRUE
 
 // Negative numbers will subtract
 /obj/item/lightreplacer/proc/AddUses(amount = 1)
@@ -196,36 +196,33 @@
 		AddUses(1)
 		charge = 1
 
-/obj/item/lightreplacer/proc/ReplaceLight(obj/machinery/light/target, mob/living/U)
-
+/obj/item/lightreplacer/proc/ReplaceLight(obj/machinery/light/target, mob/living/U, proximity)
 	if(target.status != LIGHT_OK)
-		if(CanUse(U))
-			if(!Use(U))
-				return
-			to_chat(U, "<span class='notice'>You replace the [target.fitting] with \the [src].</span>")
+		if(!Use(U))
+			return
+		to_chat(U, "<span class='notice'>You replace the [target.fitting] with \the [src].</span>")
 
-			if(target.status != LIGHT_EMPTY)
-				AddShards(1, U)
-				target.status = LIGHT_EMPTY
-				INVOKE_ASYNC(target, TYPE_PROC_REF(/obj/machinery/light, update))
+		if(!proximity && bluespace_toggle)
+			// Display RPED beam
+			U.Beam(target, icon_state = "rped_upgrade", time = 1 SECONDS)
+			// Play RPED sound
+			playsound(src, 'sound/items/pshoom.ogg', 40, 1)
 
-			var/obj/item/light/L2 = new target.light_type()
-
-			target.status = L2.status
-			target.switchcount = L2.switchcount
-			target.rigged = (obj_flags & EMAGGED ? 1 : 0)
-			target.brightness = L2.brightness
-			target.on = target.has_power()
+		if(target.status != LIGHT_EMPTY)
+			AddShards(1, U)
+			target.status = LIGHT_EMPTY
 			INVOKE_ASYNC(target, TYPE_PROC_REF(/obj/machinery/light, update))
-			qdel(L2)
-
-			if(target.on && target.rigged)
-				target.explode()
-			return
-
-		else
-			to_chat(U, failmsg)
-			return
+		var/obj/item/light/L2 = new target.light_type()
+		target.status = L2.status
+		target.switchcount = L2.switchcount
+		target.rigged = (obj_flags & EMAGGED ? 1 : 0)
+		target.brightness = L2.brightness
+		target.on = target.has_power()
+		INVOKE_ASYNC(target, TYPE_PROC_REF(/obj/machinery/light, update))
+		qdel(L2)
+		if(target.on && target.rigged)
+			target.explode()
+		return
 	else
 		to_chat(U, "<span class='warning'>There is a working [target.fitting] already inserted!</span>")
 		return
@@ -242,39 +239,24 @@
 /obj/item/lightreplacer/proc/CanUse(mob/living/user)
 	src.add_fingerprint(user)
 	if(uses > 0)
-		return 1
+		return TRUE
 	else
-		return 0
+		return FALSE
 
 /obj/item/lightreplacer/afterattack(atom/T, mob/U, proximity)
 	. = ..()
+	if(!CanUse(U))
+		to_chat(U, failmsg)
+		return
 	if(!proximity && !bluespace_toggle)
 		return
-	if(!isturf(T))
-		return
-
-	var/used = FALSE
-	for(var/atom/A in T)
-		if(!CanUse(U))
-			break
-		used = TRUE
-		if(istype(A, /obj/machinery/light))
-			if(!proximity && bluespace_toggle)
-				// Set variable for target light
-				var/obj/machinery/light/target = A
-
-				// Check light status before playing effects
-				if(target.status != LIGHT_OK)
-					// Display RPED beam
-					U.Beam(A, icon_state = "rped_upgrade", time = 1 SECONDS)
-
-					// Play RPED sound
-					playsound(src, 'sound/items/pshoom.ogg', 40, 1)
-
-			ReplaceLight(A, U)
-
-	if(!used)
-		to_chat(U, failmsg)
+	if(istype(T, /obj/machinery/light))
+		ReplaceLight(T, U, proximity)
+	else if(isturf(T))
+		for(var/atom/A in T)
+			if(istype(A, /obj/machinery/light))
+				ReplaceLight(A, U, proximity)
+				break
 
 /obj/item/lightreplacer/proc/janicart_insert(mob/user, obj/structure/janitorialcart/J)
 	J.put_in_cart(src, user)

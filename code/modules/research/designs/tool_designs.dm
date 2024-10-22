@@ -82,6 +82,16 @@
 	category = list("Tool Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
+/datum/design/tricorder
+	name = "Tricorder"
+	desc = "Многофункциональное устройство, которое может выполнять огромный спектр задач."
+	id = "tricorder"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 500, /datum/material/silver = 300, /datum/material/gold = 300)
+	build_path = /obj/item/multitool/tricorder
+	category = list("Tool Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+
 /datum/design/rld_mini
 	name = "Mini Rapid Light Device (MRLD)"
 	desc = "A tool that can portable and standing lighting orbs and glowsticks."

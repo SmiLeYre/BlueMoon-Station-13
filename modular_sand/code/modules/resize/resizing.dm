@@ -7,21 +7,29 @@
 			return FALSE
 
 		//Micro is on a table.
-		var/turf/steppyspot = target.loc
-		for(var/thing in steppyspot.contents)
-			if(istype(thing, /obj/structure/table))
-				return TRUE
+		if(locate(/obj/structure/table) in target.loc)
+			return TRUE
 
 		//Both small.
 		if(get_size(user) <= RESIZE_A_TINYMICRO && get_size(target) <= RESIZE_A_TINYMICRO)
 			now_pushing = 0
-			user.forceMove(target.loc)
+			//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+			micro_move_to_target_turf(target) // BLUEMOON ADD
 			return TRUE
 
 		//Doing messages
-		if(COMPARE_SIZES(user, target) >= 2) //if the initiator is twice the size of the micro
+		if(COMPARE_SIZES(user, target) >= 1.9) //if the initiator is twice the size of the micro // BLUEMOON EDIT - было >= 2
+			// BLUEMOON ADD START - небольшие персонажи мешают крупному тянуть за собой кого-либо
+			if(pulling)
+				if(COMPARE_SIZES(user, target) < 2.2) // Разница слишком велика, чтобы мешать тянуть
+					if(!(world.time % 3))
+						to_chat(src, span_warning("[target] слишком высокий - его нужно раздавить, чтобы протащить [pulling]."))
+					return TRUE
+			// BLUEMOON ADD END
 			now_pushing = 0
-			user.forceMove(target.loc)
+
+			//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+			micro_move_to_target_turf(target) // BLUEMOON ADD
 
 			//Smaller person being stepped on
 			if(iscarbon(src))
@@ -32,8 +40,9 @@
 				return TRUE
 
 		//Smaller person stepping under a larger person
-		if(COMPARE_SIZES(target, user) >= 2)
-			user.forceMove(target.loc)
+		if(COMPARE_SIZES(target, user) >= 1.85 && target.a_intent == INTENT_HELP) // BLUEMOON EDIT - добавлена проверка на интент и изменена проверка на размер, было >= 2
+			//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+			micro_move_to_target_turf(target) // BLUEMOON ADD
 			now_pushing = 0
 			micro_step_under(target)
 			return TRUE
@@ -48,25 +57,44 @@
 			return FALSE
 
 	//If on a table, don't
-		var/turf/steppyspot = target.loc
-		for(var/thing in steppyspot.contents)
-			if(istype(thing, /obj/structure/table))
-				return TRUE
+		if(locate(/obj/structure/table) in target.loc)
+			return TRUE
 
 	//Both small
 		if(get_size(user) <= RESIZE_A_TINYMICRO && get_size(target) <= RESIZE_A_TINYMICRO)
 			now_pushing = 0
-			user.forceMove(target.loc)
+			//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+			micro_move_to_target_turf(target) // BLUEMOON ADD
 			return TRUE
 
 		if(COMPARE_SIZES(user, target) >= 1.6) // BLUEMOON CHANGES
+			// BLUEMOON ADD START
+			var/can_harm = TRUE
+			if(HAS_TRAIT(user, TRAIT_BLUEMOON_LIGHT) && get_size(user) > 1 && get_size(target) > 0.6) //Лёгкие большие персонажи не могут навредить кому-либо больше 60%
+				can_harm = FALSE
+			if(target.mind?.martial_art?.id && target.mind.martial_art.can_use(target) && can_harm) // нельзя давить тех, кто обучен и может применять боевые искусства
+			// У людей по умолчанию есть плейсходерное боевое искусство, но у него нет ID. Потому проверка на него, т.к. любое другое ID изменяет
+				if(target.a_intent != INTENT_HELP)
+					now_pushing = 0
+					micro_move_to_target_turf(target)
+					log_combat(user, target, "failed (martial art) to step on", addition="[user.a_intent] trample")
+					target.visible_message(\
+						span_danger("[target] уворачивается от попытки [src] наступить на не[target.gender == MALE ? "го" : "ё"]!"),\
+						span_danger("Вы уворачиваетесь от попытки [src] наступить на вас благодаря своему боевому искусству!"),
+						vision_distance = 3,
+						target = user, target_message = span_danger("[target] умело уворачивается от вашей попытки наступить на него!"))
+					playsound(loc, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+					return TRUE
+			// BLUEMOON ADD END
+
 			log_combat(user, target, "stepped on", addition="[user.a_intent] trample")
-			if(user.a_intent == "disarm" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled)
+			if(user.a_intent == "disarm" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled && can_harm)
 				now_pushing = 0
-				user.forceMove(target.loc)
+				//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+				micro_move_to_target_turf(target) // BLUEMOON ADD
 				user.sizediffStamLoss(target)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE) //Full stop
-				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 3) //0.3 seconds
+				addtimer(CALLBACK(user, TYPE_PROC_REF(/mob, remove_movespeed_modifier), MOVESPEED_ID_STOMP, TRUE), 3) //0.3 seconds
 				if(iscarbon(user))
 					if(istype(user) && user.dna.features["taur"] == "Naga" || user.dna.features["taur"] == "Tentacle")
 						target.visible_message("<span class='danger'>[src] carefully rolls their tail over [target]!</span>", "<span class='danger'>[src]'s huge tail rolls over you!</span>")
@@ -74,20 +102,21 @@
 						target.visible_message("<span class='danger'>[src] carefully steps on [target]!</span>", "<span class='danger'>[src] steps onto you with force!</span>")
 					return TRUE
 
-			if(user.a_intent == "harm" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled)
+			if(user.a_intent == "harm" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled && can_harm)
 				now_pushing = 0
-				user.forceMove(target.loc)
+				//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+				micro_move_to_target_turf(target) // BLUEMOON ADD
 				user.sizediffStamLoss(target)
 				user.sizediffBruteloss(target)
 				playsound(loc, 'sound/misc/splort.ogg', 50, 1)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE)
-				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 10) //1 second
+				addtimer(CALLBACK(user, TYPE_PROC_REF(/mob, remove_movespeed_modifier), MOVESPEED_ID_STOMP, TRUE), 10) //1 second
 				//user.Stun(20)
 				// BLUEMOON ADDITION START - персонажи с тяжёлыми квирками наносят больше урона и на дольше станят, но сами получают стан
 				if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY))
-					user.Stun(0.5 SECONDS)
+					user.Immobilize(0.5 SECONDS)
 				else if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER))
-					user.Stun(1 SECONDS)
+					user.Immobilize(1 SECONDS)
 				// BLUEMOON ADDITION END
 				if(iscarbon(user))
 					if(istype(user) && (user.dna.features["taur"] == "Naga" || user.dna.features["taur"] == "Tentacle"))
@@ -96,13 +125,14 @@
 						target.visible_message("<span class='danger'>[src] slams their foot down on [target], crushing them!</span>", "<span class='userdanger'>[src] crushes you under their foot!</span>")
 					return TRUE
 
-			if(user.a_intent == "grab" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled)
+			if(user.a_intent == "grab" && CHECK_MOBILITY(user, MOBILITY_MOVE) && !user.buckled && can_harm)
 				now_pushing = 0
-				user.forceMove(target.loc)
+				//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+				micro_move_to_target_turf(target) // BLUEMOON ADD
 				user.sizediffStamLoss(target)
 				user.sizediffStun(target)
 				user.add_movespeed_modifier(/datum/movespeed_modifier/stomp, TRUE)
-				addtimer(CALLBACK(user, /mob/.proc/remove_movespeed_modifier, MOVESPEED_ID_STOMP, TRUE), 7)//About 3/4th a second
+				addtimer(CALLBACK(user, TYPE_PROC_REF(/mob, remove_movespeed_modifier), MOVESPEED_ID_STOMP, TRUE), 7)//About 3/4th a second
 				if(iscarbon(user))
 					var/feetCover = (user.wear_suit && (user.wear_suit.body_parts_covered & FEET)) || (user.w_uniform && (user.w_uniform.body_parts_covered & FEET) || (user.shoes && (user.shoes.body_parts_covered & FEET)))
 					if(feetCover)
@@ -122,8 +152,9 @@
 							SEND_SIGNAL(target, COMSIG_MICRO_PICKUP_FEET, user)
 						return TRUE
 
-		if(COMPARE_SIZES(target, user) >= 2)
-			user.forceMove(target.loc)
+		if(COMPARE_SIZES(target, user) >= 1.85 && target.a_intent == INTENT_HELP) // BLUEMOON EDIT - добавлена проверка на интент и изменена проверка на размер, было >= 2
+			//user.forceMove(target.loc) BLUEMOON REMOVAL - пересено в micro_move_to_target_turf
+			micro_move_to_target_turf(target) // BLUEMOON ADD
 			now_pushing = 0
 			micro_step_under(target)
 			return TRUE
@@ -148,7 +179,10 @@
 //Proc for scaling stamina damage on size difference
 /mob/living/carbon/proc/sizediffStamLoss(mob/living/carbon/target)
 	var/S = COMPARE_SIZES(src, target) * 5 //macro divided by micro, times 25 // BLUEMOON CHANGES - было 25, стало 5
-	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверхтяжесть
+	// BLUEMOON ADDITION AHEAD
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_LIGHT) && get_size(src) > 1) //лёгкие большие персонажи считаются по размеру за 1
+		S = abs((1 / get_size(target))) * 5
+	//усиление конечного результата за наличие квирка на тяжесть или сверхтяжесть
 	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
 		S *= 1.5 // Если 100% наступает на 50% или 200% наступает на 100%, то наносится 15
 	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
@@ -162,7 +196,10 @@
 //Proc for scaling stuns on size difference (for grab intent)
 /mob/living/carbon/proc/sizediffStun(mob/living/carbon/target)
 	var/T = COMPARE_SIZES(src, target) * 2 //Macro divided by micro, times 2
-	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверхтяжесть
+	// BLUEMOON ADDITION AHEAD
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_LIGHT) && get_size(src) > 1) //лёгкие большие персонажи считаются по размеру за 1
+		T = abs((1 / get_size(target))) * 2
+	//усиление конечного результата за наличие квирка на тяжесть или сверхтяжесть
 	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
 		T *= 1.5
 	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
@@ -173,7 +210,10 @@
 //Proc for scaling brute damage on size difference
 /mob/living/carbon/proc/sizediffBruteloss(mob/living/carbon/target)
 	var/B = COMPARE_SIZES(src, target) * 3 //macro divided by micro, times 3
-	// BLUEMOON ADDITION AHEAD - усиление конечно результата за наличие квирка на тяжесть или сверхтяжесть
+	// BLUEMOON ADDITION AHEAD
+	if(HAS_TRAIT(src, TRAIT_BLUEMOON_LIGHT) && get_size(src) > 1) //лёгкие большие персонажи считаются по размеру за 1
+		B = abs((1 / get_size(target))) * 3
+	//усиление конечного результата за наличие квирка на тяжесть или сверхтяжесть
 	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
 		B *= 2
 	else if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
@@ -185,8 +225,8 @@
 /*
 /mob/living/proc/sizeinteractioncheck(mob/living/target)
 	if(abs(get_effective_size()/target.get_effective_size())>=2.0 && get_effective_size()>target.get_effective_size())
-		return 0
+		return FALSE
 	else
-		return 1
+		return TRUE
 */
 //Clothes coming off at different sizes, and health/speed/stam changes as well

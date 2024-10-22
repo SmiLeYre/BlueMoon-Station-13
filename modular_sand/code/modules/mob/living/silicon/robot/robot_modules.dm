@@ -1,78 +1,3 @@
-/obj/item/robot_module/proc/add_module(obj/item/I, nonstandard, requires_rebuild)
-	rad_flags |= RAD_NO_CONTAMINATE
-	if(istype(I, /obj/item/stack))
-		var/obj/item/stack/S = I
-
-		if(is_type_in_list(S, list(/obj/item/stack/sheet/metal, /obj/item/stack/rods, /obj/item/stack/tile/plasteel)))
-			if(S.custom_materials?.len && S.custom_materials[SSmaterials.GetMaterialRef(/datum/material/iron)])
-				S.cost = S.custom_materials[SSmaterials.GetMaterialRef(/datum/material/iron)] * 0.25
-			S.source = get_or_create_estorage(/datum/robot_energy_storage/metal)
-
-		else if(istype(S, /obj/item/stack/sheet/glass))
-			S.cost = 500
-			S.source = get_or_create_estorage(/datum/robot_energy_storage/glass)
-
-		else if(istype(S, /obj/item/stack/sheet/rglass/cyborg))
-			var/obj/item/stack/sheet/rglass/cyborg/G = S
-			G.source = get_or_create_estorage(/datum/robot_energy_storage/metal)
-			G.glasource = get_or_create_estorage(/datum/robot_energy_storage/glass)
-
-		else if(istype(S, /obj/item/stack/sheet/plasmaglass/cyborg))
-			//var/obj/item/stack/sheet/plasmaglass/cyborg/G = S
-			//G.plasource = get_or_create_estorage(/datum/robot_energy_storage/plasma)
-			//G.glasource = get_or_create_estorage(/datum/robot_energy_storage/glass)
-			S.cost = 500
-			S.source = get_or_create_estorage(/datum/robot_energy_storage/plasma)
-
-		else if(istype(S, /obj/item/stack/sheet/plasmarglass/cyborg))
-			//var/obj/item/stack/sheet/plasmarglass/cyborg/G = S
-			//G.plasource = get_or_create_estorage(/datum/robot_energy_storage/plasma)
-			//G.glasource = get_or_create_estorage(/datum/robot_energy_storage/glass)
-			S.cost = 1000
-			S.source = get_or_create_estorage(/datum/robot_energy_storage/plasma)
-
-		else if(istype(S, /obj/item/stack/sheet/plasteel/cyborg))
-			//var/obj/item/stack/sheet/plasteel/cyborg/G = S
-			//G.source = get_or_create_estorage(/datum/robot_energy_storage/metal)
-			//G.plasource = get_or_create_estorage(/datum/robot_energy_storage/plasma)
-			S.cost = 500
-			S.source = get_or_create_estorage(/datum/robot_energy_storage/plasma)
-
-		else if(istype(S, /obj/item/stack/sheet/mineral/plasma/cyborg))
-			S.cost = 500
-			S.source = get_or_create_estorage(/datum/robot_energy_storage/plasma)
-
-		else if(istype(S, /obj/item/stack/medical))
-			S.cost = 250
-			S.source = get_or_create_estorage(/datum/robot_energy_storage/medical)
-
-		else if(istype(S, /obj/item/stack/cable_coil))
-			S.cost = 1
-			S.source = get_or_create_estorage(/datum/robot_energy_storage/wire)
-
-		else if(istype(S, /obj/item/stack/marker_beacon))
-			S.cost = 1
-			S.source = get_or_create_estorage(/datum/robot_energy_storage/beacon)
-
-		else if(istype(S, /obj/item/stack/packageWrap))
-			S.cost = 1
-			S.source = get_or_create_estorage(/datum/robot_energy_storage/wrapping_paper)
-
-		if(S && S.source)
-			S.custom_materials = null
-			S.is_cyborg = 1
-
-	if(I.loc != src)
-		I.forceMove(src)
-	modules += I
-	ADD_TRAIT(I, TRAIT_NODROP, CYBORG_ITEM_TRAIT)
-	I.mouse_opacity = MOUSE_OPACITY_OPAQUE
-	if(nonstandard)
-		added_modules += I
-	if(requires_rebuild)
-		rebuild_modules()
-	return I
-
 /obj/item/robot_module/engineering/Initialize(mapload)
 	basic_modules += /obj/item/pen
 	basic_modules += /obj/item/stack/sheet/plasmaglass/cyborg
@@ -113,7 +38,7 @@
 		/obj/item/stack/sheet/rglass/cyborg,
 		/obj/item/stack/rods/cyborg,
 		/obj/item/stack/tile/plasteel/cyborg,
-		/obj/item/destTagger/borg,
+		/obj/item/dest_tagger/borg,
 		/obj/item/stack/cable_coil/cyborg,
 		/obj/item/restraints/handcuffs/cable/zipties,
 		/obj/item/stack/medical/gauze/cyborg,
@@ -144,7 +69,7 @@
 
 /obj/item/robot_module/syndicatejack/be_transformed_to(obj/item/robot_module/old_module)
 	var/mob/living/silicon/robot/R = loc
-	var/static/list/syndicatejack_icons = sortList(list(
+	var/static/list/syndicatejack_icons = sort_list(list(
 		"Saboteur" = image(icon = 'icons/mob/robots.dmi', icon_state = "synd_engi"),
 		"Medical" = image(icon = 'icons/mob/robots.dmi', icon_state = "synd_medical"),
 		"Assault" = image(icon = 'icons/mob/robots.dmi', icon_state = "synd_sec"),
@@ -154,16 +79,18 @@
 		"Chesty" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "chesty"), // SPLURT Addon (Skyrat Port)
 		"RoboMaid" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "robomaid_synd"), // SPLURT Addon (Old Skyrat Port)
 		"BootyNukie" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "bootynukie"), // SPLURT Addon (Hyper Port)
-		"Meka Syndie" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mekasyndi"), //Krashly Request
 		"Meka Ninja" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mekaninja"), //Krashly Request
 		"FMeka Ninja" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "fmekaninja"), // Lyoll Request (Skyrat Port)
 		"K4 Ninja" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tninja"), // Lyoll Request (Skyrat Port)
 		"MMeka Ninja" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekaninja"), // Lyoll Request (Skyrat Port)
-		"FMeka Syndie" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "fmekasyndi"), // Lyoll Request (Skyrat Port)
-		"K4 Syndie" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "k4tsyndi"), // Lyoll Request (Skyrat Port)
-		"MMeka Syndie" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mmekasyndi") // Lyoll Request (Skyrat Port)
+		"Drakemech" = image(icon = 'modular_sand/icons/mob/cyborg/drakemech.dmi', icon_state = "drakebox"),	//DarkSer request by Gardelin0
+		"BootyGorlex" = image(icon = 'modular_splurt/icons/mob/robots.dmi', icon_state = "bootygorlex"), // SPLURT Addon (Hyper Port)
+		"Meka" = image(icon = 'modular_splurt/icons/mob/robots_32x64.dmi', icon_state = "mekasyndi"), // SPLURT Addon (Bubbers Port)
+		"M-Meka" = image(icon = 'modular_splurt/icons/mob/robots_32x64.dmi', icon_state = "mmekasyndi"), // SPLURT Addon (Bubbers Port)
+		"F-Meka" = image(icon = 'modular_splurt/icons/mob/robots_32x64.dmi', icon_state = "fmekasyndi"), // SPLURT Addon (Bubbers Port)
+		"K4T" = image(icon = 'modular_splurt/icons/mob/robots_32x64.dmi', icon_state = "k4tsyndi") // SPLURT Addon (Bubbers Port)
 		))
-	var/syndiejack_icon = show_radial_menu(R, R , syndicatejack_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+	var/syndiejack_icon = show_radial_menu(R, R , syndicatejack_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 	switch(syndiejack_icon)
 		if("Saboteur")
 			cyborg_base_icon = "synd_engi"
@@ -195,38 +122,48 @@
 		if("BootyGorlex") // SPLURT Addon (Hyper Port)
 			cyborg_base_icon = "bootygorlex"
 			cyborg_icon_override = 'modular_splurt/icons/mob/robots.dmi'
-		if("Meka Syndie") //Krashly Request
-			cyborg_base_icon = "mekasyndi"
-			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
-			canrest = TRUE
 		if("Meka Ninja") //Krashly Request
 			cyborg_base_icon = "mekaninja"
 			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
-			canrest = TRUE
+			hasrest = TRUE
 		if("FMeka Ninja") //Lyoll Request (Skyrat Port)
 			cyborg_base_icon = "fmekaninja"
 			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
-			canrest = TRUE
+			hasrest = TRUE
 		if("K4 Ninja") //Lyoll Request (Skyrat Port)
 			cyborg_base_icon = "k4tninja"
 			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
-			canrest = TRUE
+			hasrest = TRUE
 		if("MMeka Ninja") //Lyoll Request (Skyrat Port)
 			cyborg_base_icon = "mmekaninja"
 			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
-			canrest = TRUE
-		if("FMeka Syndie") //Lyoll Request (Skyrat Port)
-			cyborg_base_icon = "fmekasyndi"
-			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
-			canrest = TRUE
-		if("K4 Syndie") //Lyoll Request (Skyrat Port)
-			cyborg_base_icon = "k4tsyndi"
-			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
-			canrest = TRUE
-		if("MMeka Syndie") //Lyoll Request (Skyrat Port)
+			hasrest = TRUE
+		if("Drakemech") //DarkSer request by Gardelin0
+			cyborg_base_icon = "drake"
+			cyborg_icon_override = 'modular_sand/icons/mob/cyborg/drakemech.dmi'
+			sleeper_overlay = "drakesecsleeper"
+			dogborg = TRUE
+			drakerest = TRUE
+		if("Meka")
+			cyborg_base_icon = "mekasyndi"
+			cyborg_icon_override = 'modular_splurt/icons/mob/robots_32x64.dmi'
+			hat_offset = 3
+			hasrest = TRUE
+		if("M-Meka")
 			cyborg_base_icon = "mmekasyndi"
-			cyborg_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi'
-			canrest = TRUE
+			cyborg_icon_override = 'modular_splurt/icons/mob/robots_32x64.dmi'
+			hat_offset = 3
+			hasrest = TRUE
+		if("F-Meka")
+			cyborg_base_icon = "fmekasyndi"
+			cyborg_icon_override = 'modular_splurt/icons/mob/robots_32x64.dmi'
+			hat_offset = 3
+			hasrest = TRUE
+		if("K4T")
+			cyborg_base_icon = "k4tsyndi"
+			cyborg_icon_override = 'modular_splurt/icons/mob/robots_32x64.dmi'
+			hat_offset = 3
+			hasrest = TRUE
 		else
 			return FALSE
 	return ..()

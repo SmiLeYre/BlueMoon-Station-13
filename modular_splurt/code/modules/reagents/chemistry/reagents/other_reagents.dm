@@ -61,7 +61,7 @@
 	// Check for Bloodfledge quirk
 	if(HAS_TRAIT(M,TRAIT_BLOODFLEDGE))
 		// Check for own blood
-		if(data["donor"] == M)
+		if(data["donor"] == WEAKREF(M))
 			// Warn user and return
 			to_chat(M, span_warning("You gain no nourishment from the familiar blood..."))
 			return
@@ -170,25 +170,28 @@
 		// Reduce disgust.
 		M.adjust_disgust(-3)
 
-		// Restore stamina.
-		M.adjustStaminaLoss(1)
-
-		// Reduce hunger and thirst.
-		M.adjust_nutrition(1)
-		M.adjust_thirst(1)
-
-		// Heal brute and burn.
-		// Accounts for robotic limbs.
-		M.heal_overall_damage(1,1)
-		// Heal oxygen.
-		M.adjustOxyLoss(-1)
-		// Heal clone.
-		M.adjustCloneLoss(-1)
-
-		holder.remove_reagent(type, 0.2)
-
-		// Negate all other holy water effects.
 		return
 
 	// Return normally.
 	. = ..()
+
+/datum/reagent/consumable/ethanol/vodka/on_mob_metabolize(mob/living/L)
+	. = ..()
+
+	var/mob/living/carbon/human/M = L
+	if(HAS_TRAIT(M,TRAIT_RUSSIAN))
+		M.mob_light(_color = LIGHT_COLOR_HOLY_MAGIC, _range = 2, _duration = 100)
+		var/mutable_appearance/forbearance = mutable_appearance('icons/effects/genetics.dmi', "servitude", -MUTATIONS_LAYER)
+		M.add_overlay(forbearance)
+
+		M.gain_trauma(/datum/brain_trauma/special/godwoken, TRAUMA_RESILIENCE_ABSOLUTE)
+
+/datum/reagent/consumable/ethanol/vodka/on_mob_end_metabolize(mob/living/L)
+	. = ..()
+
+	var/mob/living/carbon/human/M = L
+	if(HAS_TRAIT(L, TRAIT_RUSSIAN))
+		var/mutable_appearance/forbearance = mutable_appearance('icons/effects/genetics.dmi', "servitude", -MUTATIONS_LAYER)
+		M.cut_overlay(forbearance)
+
+		M.cure_trauma_type(/datum/brain_trauma/special/godwoken)

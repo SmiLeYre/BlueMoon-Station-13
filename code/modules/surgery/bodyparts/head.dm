@@ -2,6 +2,7 @@
 	name = BODY_ZONE_HEAD
 	ru_name = "голова"
 	ru_name_v = "голове"
+	ru_name_y = "голову"
 	ru_name_capital = "Голова"
 	desc = "Didn't make sense not to live for fun, your brain gets smart but your head gets dumb."
 	icon = 'icons/mob/human_parts.dmi'
@@ -35,6 +36,9 @@
 
 	var/lip_style = null
 	var/lip_color = "white"
+
+	var/stored_lipstick_trait
+
 	//If the head is a special sprite
 	var/custom_head
 
@@ -81,6 +85,7 @@
 		hair_style = "Bald"
 		facial_hair_style = "Shaved"
 		lip_style = null
+		stored_lipstick_trait = null
 
 	else if(!animal_origin)
 		var/mob/living/carbon/human/H = C

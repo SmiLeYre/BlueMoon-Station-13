@@ -8,10 +8,17 @@
 */
 
 /datum/uplink_item/dangerous/pistol
-	name = "Stechkin Pistol"
+	name = "Makarov Pistol"
 	desc = "A sleek box containing a small, easily concealable handgun that uses 10mm auto rounds in 8-round magazines. The handgun is compatible \
 			with suppressors."
 	item = /obj/item/storage/box/syndie_kit/pistol
+	cost = 4
+	purchasable_from = ~UPLINK_CLOWN_OPS
+
+/datum/uplink_item/dangerous/aps_pistol
+	name = "Stechkin Pistol"
+	desc = "The original Russian version of a widely used Syndicate sidearm. Uses 9mm ammo. Has a threaded barrel for suppressors."
+	item = /obj/item/storage/box/syndie_kit/aps_pistol
 	cost = 7
 	purchasable_from = ~UPLINK_CLOWN_OPS
 
@@ -22,7 +29,16 @@
 	cost = 13
 	player_minimum = 15
 	surplus = 50
-	purchasable_from = ~UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/dangerous/revolver_inteq
+	name = "InteQ Revolver Kit"
+	desc = "Простой и брутальный револьвер под патрон .357 Magnum. 7 выстрелов для 7 трупов, скорозарядник с дополнительным боезопасом в комплекте."
+	item = /obj/item/storage/box/inteq_kit/revolver
+	cost = 13
+	player_minimum = 15
+	surplus = 50
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/dangerous/rawketlawnchair
 	name = "84mm Rocket Propelled Grenade Launcher"
@@ -113,10 +129,21 @@
 	item = /obj/item/dualsaber
 	player_minimum = 25
 	cost = 16
-	purchasable_from = ~UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_SYNDICATE
 
 /datum/uplink_item/dangerous/doublesword/get_discount()
 	return pick(4;0.8,2;0.65,1;0.5)
+
+/datum/uplink_item/dangerous/plasmascythe
+	name = "Plasma scythe"
+	desc = "Надеюсь ты достаточно ловкий, что бы не перерезать себя пополам. Огромное лезвие этой косы при должном мастерстве позволит сжигать что угодно на своём пути, даже пули."
+	item = /obj/item/plasmascythe
+	player_minimum = 25
+	cost = 16
+	purchasable_from = ~(UPLINK_SYNDICATE | UPLINK_CLOWN_OPS)
+
+/datum/uplink_item/dangerous/plasmascythe/get_discount()
+	return pick(4;0.8,2;0.65,1;0.4)
 
 /datum/uplink_item/dangerous/hyperblade
 	name = "Hypereutactic Blade"
@@ -125,7 +152,7 @@
 	item = /obj/item/dualsaber/hypereutactic
 	player_minimum = 25
 	cost = 16
-	purchasable_from = ~UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_SYNDICATE
 
 /datum/uplink_item/dangerous/hyperblade/get_discount()
 	return pick(4;0.8,2;0.65,1;0.5)
@@ -136,13 +163,30 @@
 			pocketed when inactive. Activating it produces a loud, distinctive noise."
 	item = /obj/item/melee/transforming/energy/sword/saber
 	cost = 8
-	purchasable_from = ~UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/dangerous/sword ///Bluemoon add
+	name = "Plasma Sword"
+	desc = "Смертоностное оружие как для врага, так и для владельца. Лезвие из раскалённой плазмы с лёгкостью\
+			прорезает броню и плоть, а достаточно ловкие оперативники могут сжечь им пулю на лету."
+	item = /obj/item/melee/transforming/plasmasword
+	cost = 8
+	purchasable_from = ~(UPLINK_SYNDICATE | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/dangerous/shield
 	name = "Energy Shield"
 	desc = "An incredibly useful personal shield projector, capable of reflecting energy projectiles and defending \
 			against other attacks. Pair with an Energy Sword for a killer combination."
 	item = /obj/item/shield/energy
+	cost = 16
+	surplus = 20
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/dangerous/shield
+	name = "Ballistic Shield"
+	desc = "An incredibly useful personal shield projector, capable of reflecting ballistic projectiles and defending \
+			against other attacks. Pair with an Plasma Sword for a killer combination."
+	item = /obj/item/shield/inteq_energy
 	cost = 16
 	surplus = 20
 	purchasable_from = UPLINK_NUKE_OPS
@@ -154,7 +198,15 @@
 			However, due to the size of the blade and obvious nature of the sheath, the weapon stands out as being obviously nefarious."
 	item = /obj/item/storage/belt/sabre/rapier
 	cost = 8
-	purchasable_from = ~UPLINK_CLOWN_OPS
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/dangerous/karakurt //bluemoon add
+	name = "Karakurt"
+	desc = "Некогда элегантная рапира из пластитаниума. После даработки воронёное лезвие было пропитано сильнейшим нейротоксином, парализующим дыхательную и нервную систему, \
+			а в ножнах встроено хранилище яда, не дающее лезвию высохнуть. Если цель не умрёт от потери крови, то неожиданно забудет как дышать, разве не идеальное оружие для дуэли?"
+	item = /obj/item/storage/belt/sabre/karakurt
+	cost = 8
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/dangerous/flamethrower
 	name = "Flamethrower"
@@ -235,16 +287,22 @@
 	with your fists, and be able to slam people through tables with immense force. \
 	Unfortunately, due to the size of the gloves you will be unable to wield firearms with them equipped."
 	item = /obj/item/clothing/gloves/fingerless/pugilist/mauler
-	cost = 8
+	cost = 10
 
 /datum/uplink_item/dangerous/powerfist
 	name = "Power Fist"
 	desc = "The power-fist is a metal gauntlet with a built-in piston-ram powered by an external gas supply.\
-		 Upon hitting a target, the piston-ram will extend forward to make contact for some serious damage. \
-		 Using a wrench on the piston valve will allow you to tweak the amount of gas used per punch to \
-		 deal extra damage and hit targets further. Use a screwdriver to take out any attached tanks."
+		Upon hitting a target, the piston-ram will extend forward to make contact for some serious damage. \
+		Using a wrench on the piston valve will allow you to tweak the amount of gas used per punch to \
+		deal extra damage and hit targets further. Use a screwdriver to take out any attached tanks."
 	item = /obj/item/melee/powerfist
 	cost = 8
+
+/datum/uplink_item/dangerous/death_lipstick
+	name = "Kiss of Death"
+	desc = "An incredibly potent tube of lipstick made from the venom of the dreaded Yellow Spotted Space Lizard, as deadly as it is chic. Try not to smear it!"
+	item = /obj/item/lipstick/black/death
+	cost = 12
 
 /datum/uplink_item/dangerous/sniper
 	name = "Sniper Rifle"
@@ -293,3 +351,10 @@
 	item = /obj/item/gun/magic/staff/motivation
 	cost = 10
 	purchasable_from = UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS | UPLINK_SYNDICATE
+
+/datum/uplink_item/dangerous/kudzu_seeds
+	name = "Pack of Kudzu Seeds"
+	desc = "These seeds grow into a weed that grows incredibly fast."
+	item = /obj/item/seeds/kudzu
+	cost = 4
+	surplus = 10

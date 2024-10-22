@@ -12,6 +12,14 @@
 		)
 	)
 
+/obj/item/clothing/shoes/clown_shoes/clussy_heels
+	name = "Clussy heels"
+	desc = "The silliest footjob of all time."
+	icon = 'modular_splurt/icons/obj/clothing/shoes.dmi'
+	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/shoes.dmi'
+	anthro_mob_worn_overlay = 'modular_splurt/icons/mob/clothing/shoes_digi.dmi'
+	icon_state = "clussy_heels"
+
 /obj/item/clothing/shoes/footwraps
 	name = "cloth footwraps"
 	desc = "A roll of treated canvas used for wrapping claws or paws."
@@ -79,12 +87,16 @@
 	name = "MOPP boots"
 	desc = "Mission Oriented Protective Posture. Thick black boots design for working in hazardous combat environments."
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 10,"energy" = 10, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 40, "acid" = 100)
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
+	max_heat_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	cold_protection = FEET
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 
 /obj/item/clothing/shoes/jackboots/cbrn/mopp/advance
 	name = "advance MOPP boots"
 	desc = "Mission Oriented Protective Posture. Thick black boots design for working in hazardous combat environments. Used by CentCom Officer and ERT staff."
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 10,"energy" = 10, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 40, "acid" = 100)
-	clothing_flags = NOSLIP
+	clothing_flags = NOSLIP | STOPSPRESSUREDAMAGE | THICKMATERIAL
 
 //research nods
 /datum/design/cbrn/cbrnboots

@@ -136,10 +136,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/abandoned_tele)
-"R" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/wall/r_wall,
-/area/ruin/space/abandoned_tele)
 
 (1,1,1) = {"
 a
@@ -314,7 +310,7 @@ a
 a
 b
 b
-R
+b
 b
 b
 a

@@ -2,6 +2,7 @@
 	name = BODY_ZONE_CHEST
 	ru_name = "грудь"
 	ru_name_v = "груди"
+	ru_name_y = "грудь"
 	ru_name_capital = "Грудь"
 	desc = "It's impolite to stare at a person's chest."
 	icon_state = "default_human_chest"
@@ -58,6 +59,7 @@
 	name = "left arm"
 	ru_name = "левая рука"
 	ru_name_v = "левой руке"
+	ru_name_y = "левую руку"
 	ru_name_capital = "Левая рука"
 	desc = "Did you know that the word 'sinister' stems originally from the \
 		Latin 'sinestra' (left hand), because the left hand was supposed to \
@@ -89,7 +91,8 @@
 	if(owner.stat < UNCONSCIOUS && !silent)
 		switch(disabled)
 			if(BODYPART_DISABLED_DAMAGE)
-				owner.emote("scream")
+				if(!HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					owner.emote("scream")
 				to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
 			if(BODYPART_DISABLED_PARALYSIS)
 				to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
@@ -125,6 +128,7 @@
 	name = "right arm"
 	ru_name = "правая рука"
 	ru_name_v = "правой руке"
+	ru_name_y = "правую руку"
 	ru_name_capital = "Правая рука"
 	desc = "Over 87% of humans are right handed. That figure is much lower \
 		among humans missing their right arm."
@@ -154,7 +158,8 @@
 	if(owner.stat < UNCONSCIOUS && !silent)
 		switch(disabled)
 			if(BODYPART_DISABLED_DAMAGE)
-				owner.emote("scream")
+				if(!HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					owner.emote("scream")
 				to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
 			if(BODYPART_DISABLED_PARALYSIS)
 				to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
@@ -191,6 +196,7 @@
 	name = "left leg"
 	ru_name = "левая нога"
 	ru_name_v = "левой ноге"
+	ru_name_y = "левую ногу"
 	ru_name_capital = "Левая нога"
 	desc = "Some athletes prefer to tie their left shoelaces first for good \
 		luck. In this instance, it probably would not have helped."
@@ -218,7 +224,8 @@
 	if(!silent)
 		switch(disabled)
 			if(BODYPART_DISABLED_DAMAGE)
-				owner.emote("scream")
+				if(!HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					owner.emote("scream")
 				to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
 			if(BODYPART_DISABLED_PARALYSIS)
 				to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")
@@ -251,6 +258,7 @@
 	name = "right leg"
 	ru_name = "правая нога"
 	ru_name_v = "правой ноге"
+	ru_name_y = "правую ногу"
 	ru_name_capital = "Правая нога"
 	desc = "You put your right leg in, your right leg out. In, out, in, out, \
 		shake it all about. And apparently then it detaches.\n\
@@ -279,7 +287,8 @@
 	if(!silent)
 		switch(disabled)
 			if(BODYPART_DISABLED_DAMAGE)
-				owner.emote("scream")
+				if(!HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+					owner.emote("scream")
 				to_chat(owner, "<span class='userdanger'>Your [name] is too damaged to function!</span>")
 			if(BODYPART_DISABLED_PARALYSIS)
 				to_chat(owner, "<span class='userdanger'>You can't feel your [name]!</span>")

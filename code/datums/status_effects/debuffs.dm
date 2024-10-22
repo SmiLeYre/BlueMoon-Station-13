@@ -1,3 +1,6 @@
+/// The damage healed per tick while sleeping without any modifiers
+#define HEALING_SLEEP_DEFAULT -0.005
+
 //Largely negative status effects go here, even if they have small benificial effects
 //STUN EFFECTS
 /datum/status_effect/incapacitating
@@ -26,9 +29,33 @@
 /datum/status_effect/incapacitating/stun
 	id = "stun"
 
+/datum/status_effect/incapacitating/stun/on_apply()
+	. = ..()
+	if(!.)
+		return
+	ADD_TRAIT(owner, TRAIT_INCAPACITATED, id)
+	ADD_TRAIT(owner, TRAIT_IMMOBILIZED, id)
+	ADD_TRAIT(owner, TRAIT_HANDS_BLOCKED, id)
+
+/datum/status_effect/incapacitating/stun/on_remove()
+	REMOVE_TRAIT(owner, TRAIT_INCAPACITATED, id)
+	REMOVE_TRAIT(owner, TRAIT_IMMOBILIZED, id)
+	REMOVE_TRAIT(owner, TRAIT_HANDS_BLOCKED, id)
+	return ..()
+
 //KNOCKDOWN
 /datum/status_effect/incapacitating/knockdown
 	id = "knockdown"
+
+/datum/status_effect/incapacitating/knockdown/on_apply()
+	. = ..()
+	if(!.)
+		return
+	ADD_TRAIT(owner, TRAIT_FLOORED, id)
+
+/datum/status_effect/incapacitating/knockdown/on_remove()
+	REMOVE_TRAIT(owner, TRAIT_FLOORED, id)
+	return ..()
 
 //IMMOBILIZED
 /datum/status_effect/incapacitating/immobilized
@@ -77,10 +104,24 @@
 	return ..()
 
 /datum/status_effect/incapacitating/sleeping/tick()
-	if(owner.getStaminaLoss())
-		owner.adjustStaminaLoss(-0.5) //reduce stamina loss by 0.5 per tick, 10 per 2 seconds
+	if(owner.maxHealth)
+		var/health_ratio = owner.health / owner.maxHealth
+		var/healing = HEALING_SLEEP_DEFAULT
+		if((locate(/obj/structure/bed) in owner.loc))
+			healing += -0.005
+		else if((locate(/obj/structure/table) in owner.loc))
+			healing += -0.0025
+		else if((locate(/obj/structure/chair) in owner.loc))
+			healing += -0.0025
+		if(locate(/obj/item/bedsheet) in owner.loc)
+			healing += -0.005
+		if(health_ratio > 0.75) // Only heal when above 75% health
+			owner.adjustBruteLoss(healing)
+			owner.adjustFireLoss(healing)
+			owner.adjustToxLoss(healing * 0.5, forced = TRUE)
+		owner.adjustStaminaLoss(healing)
 	if(human_owner && human_owner.drunkenness)
-		human_owner.drunkenness *= 0.997 //reduce drunkenness by 0.3% per tick, 6% per 2 seconds
+		human_owner.drunkenness *= -0.997 //reduce drunkenness by 0.3% per tick, 6% per 2 seconds
 	if(carbon_owner && !carbon_owner.dreaming && prob(2))
 		carbon_owner.dream()
 	// 2% per second, tick interval is in deciseconds
@@ -178,6 +219,11 @@
 	overlay = null
 	return ..()
 
+/atom/movable/screen/alert/status_effect/asleep
+	name = "Asleep"
+	desc = "You've fallen asleep. Wait a bit and you should wake up. Unless you don't, considering how helpless you are."
+	icon_state = "asleep"
+
 /datum/status_effect/staggered
 	id = "staggered"
 	blocks_sprint = TRUE
@@ -213,11 +259,6 @@
 	owner.remove_movespeed_modifier(/datum/movespeed_modifier/status_effect/off_balance)
 	return ..()
 
-/atom/movable/screen/alert/status_effect/asleep
-	name = "Asleep"
-	desc = "You've fallen asleep. Wait a bit and you should wake up. Unless you don't, considering how helpless you are."
-	icon_state = "asleep"
-
 /datum/status_effect/grouped/stasis
 	id = "stasis"
 	duration = -1
@@ -245,7 +286,7 @@
 	. = ..()
 	if(!.)
 		return
-	RegisterSignal(owner, COMSIG_LIVING_LIFE, .proc/InterruptBiologicalLife)
+	RegisterSignal(owner, COMSIG_LIVING_LIFE, PROC_REF(InterruptBiologicalLife))
 	owner.mobility_flags &= ~(MOBILITY_USE | MOBILITY_PICKUP | MOBILITY_PULL | MOBILITY_HOLD)
 	owner.update_mobility()
 	owner.add_filter("stasis_status_ripple", 2, list("type" = "ripple", "flags" = WAVE_BOUNDED, "radius" = 0, "size" = 2))
@@ -583,7 +624,7 @@
 /datum/status_effect/eldritch/on_apply()
 	. = ..()
 	if(owner.mob_size >= MOB_SIZE_HUMAN)
-		RegisterSignal(owner,COMSIG_ATOM_UPDATE_OVERLAYS,.proc/update_owner_underlay)
+		RegisterSignal(owner,COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(update_owner_underlay))
 		owner.update_icon()
 		return TRUE
 	return FALSE
@@ -1120,7 +1161,7 @@
 	. = ..()
 	if(!iscarbon(owner))
 		return FALSE
-	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, .proc/hypnotize)
+	RegisterSignal(owner, COMSIG_MOVABLE_HEAR, PROC_REF(hypnotize))
 	ADD_TRAIT(owner, TRAIT_MUTE, "trance")
 	owner.add_client_colour(/datum/client_colour/monochrome/trance)
 	owner.visible_message("[stun ? "<span class='warning'>[owner] stands still as [owner.ru_ego()] eyes seem to focus on a distant point.</span>" : ""]", \
@@ -1161,8 +1202,8 @@
 	// The brain trauma itself does its own set of logging, but this is the only place the source of the hypnosis phrase can be found.
 	hearing_speaker.log_message("has hypnotised [key_name(C)] with the phrase '[hypnomsg]'", LOG_ATTACK)
 	C.log_message("has been hypnotised by the phrase '[hypnomsg]' spoken by [key_name(hearing_speaker)]", LOG_VICTIM, log_globally = FALSE)
-	addtimer(CALLBACK(C, /mob/living/carbon.proc/gain_trauma, /datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY, hypnomsg), 10)
-	addtimer(CALLBACK(C, /mob/living.proc/Stun, 60, TRUE, TRUE), 15) //Take some time to think about it
+	addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living/carbon, gain_trauma), /datum/brain_trauma/hypnosis, TRAUMA_RESILIENCE_SURGERY, hypnomsg), 10)
+	addtimer(CALLBACK(C, TYPE_PROC_REF(/mob/living, Stun), 60, TRUE, TRUE), 15) //Take some time to think about it
 	qdel(src)
 
 /datum/status_effect/spasms
@@ -1314,3 +1355,5 @@
 
 /datum/status_effect/teleport_madness/tick(seconds_between_ticks)
 	dump_in_space(owner)
+
+#undef HEALING_SLEEP_DEFAULT

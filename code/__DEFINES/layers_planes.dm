@@ -12,18 +12,20 @@
 #define PLANE_SPACE_PARALLAX_RENDER_TARGET "PLANE_SPACE_PARALLAX"
 
 #define OPENSPACE_LAYER 17 //Openspace layer over all
+
 #define GRAVITY_PULSE_PLANE -12
 #define GRAVITY_PULSE_RENDER_TARGET "*GRAVPULSE_RENDER_TARGET"
+
 #define OPENSPACE_PLANE -10 //Openspace plane below all turfs
 #define OPENSPACE_BACKDROP_PLANE -9 //Black square just over openspace plane to guaranteed cover all in openspace turf
 
 #define FLOOR_PLANE -8
 #define FLOOR_PLANE_RENDER_TARGET "FLOOR_PLANE"
 
-#define WALL_PLANE -7
+#define WALL_PLANE -3
 #define WALL_PLANE_RENDER_TARGET "WALL_PLANE"
 
-#define ABOVE_WALL_PLANE -6
+#define ABOVE_WALL_PLANE -3
 #define ABOVE_WALL_PLANE_RENDER_TARGET "ABOVE_WALL_PLANE"
 
 #define FIELD_OF_VISION_BLOCKER_PLANE -5
@@ -86,9 +88,9 @@
 #define BELOW_OBJ_LAYER 2.9
 #define LOW_ITEM_LAYER 2.95
 //#define OBJ_LAYER 3 //For easy recordkeeping; this is a byond define
-#define CLOSED_BLASTDOOR_LAYER 3.05
 #define CLOSED_DOOR_LAYER 3.1
 #define CLOSED_FIREDOOR_LAYER 3.11
+#define CLOSED_BLASTDOOR_LAYER 3.115 // BLUEMOON EDIT, WAS 3.05
 #define SHUTTER_LAYER 3.12 // HERE BE DRAGONS
 #define ABOVE_OBJ_LAYER 3.2
 #define ABOVE_WINDOW_LAYER 3.3
@@ -209,7 +211,16 @@
 //-------------------- Rendering ---------------------
 #define RENDER_PLANE_GAME 100
 #define RENDER_PLANE_NON_GAME 101
-#define RENDER_PLANE_MASTER 102
+
+// Only VERY special planes should be here, as they are above not just the game, but the UI planes as well.
+
+/// Plane related to the menu when pressing Escape.
+/// Needed so that we can apply a blur effect to EVERYTHING, and guarantee we are above all UI.
+#define ESCAPE_MENU_PLANE 105
+#define ESCAPE_MENU_DIMMER_LAYER 105.1
+#define ESCAPE_MENU_DEFAULT_LAYER 105.2
+
+#define RENDER_PLANE_MASTER 110
 
 // Lummox I swear to god I will find you
 // NOTE! You can only ever have planes greater then -10000, if you add too many with large offsets you will brick multiz

@@ -5,7 +5,7 @@ SUBSYSTEM_DEF(shuttle)
 	wait = 10
 	init_order = INIT_ORDER_SHUTTLE
 	flags = SS_KEEP_TIMING|SS_NO_TICK_CHECK
-	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME
+	runlevels = RUNLEVEL_SETUP | RUNLEVEL_GAME | RUNLEVEL_POSTGAME // Splurt edit: Add RUNLEVEL_POSTGAME to let shuttles move after round is over.
 
 	var/list/mobile = list()
 	var/list/stationary = list()
@@ -79,6 +79,9 @@ SUBSYSTEM_DEF(shuttle)
 	var/problem_computer_charge_time = 90 SECONDS
 	var/problem_computer_next_charge_time = 0
 	//END SKYRAT CHANGE
+	//SPLURT CHANGE
+	var/list/navigation_locked_traits = list(ZTRAIT_RESERVED, ZTRAIT_CENTCOM, ZTRAIT_AWAY, ZTRAIT_REEBE) //traits forbided for custom docking
+	//END SPLURT CHANGE
 
 /datum/controller/subsystem/shuttle/Initialize(timeofday)
 	ordernum = rand(1, 9000)
@@ -183,20 +186,20 @@ SUBSYSTEM_DEF(shuttle)
 
 /datum/controller/subsystem/shuttle/proc/block_recall(lockout_timer)
 	emergencyNoRecall = TRUE
-	addtimer(CALLBACK(src, .proc/unblock_recall), lockout_timer)
+	addtimer(CALLBACK(src, PROC_REF(unblock_recall)), lockout_timer)
 
 /datum/controller/subsystem/shuttle/proc/unblock_recall()
 	emergencyNoRecall = FALSE
 
 /datum/controller/subsystem/shuttle/proc/getShuttle(id)
 	for(var/obj/docking_port/mobile/M in mobile)
-		if(M.id == id)
+		if(M.shuttle_id == id)
 			return M
 	WARNING("couldn't find shuttle with id: [id]")
 
 /datum/controller/subsystem/shuttle/proc/getDock(id)
 	for(var/obj/docking_port/stationary/S in stationary)
-		if(S.id == id)
+		if(S.shuttle_id == id)
 			return S
 	WARNING("couldn't find dock with id: [id]")
 
@@ -268,6 +271,7 @@ SUBSYSTEM_DEF(shuttle)
 	var/area/A = get_area(user)
 
 	log_shuttle("[key_name(user)] has called the emergency shuttle.")
+	log_game("[key_name(src)] has called the emergency shuttl: [emergency_reason]")
 	deadchat_broadcast(" has called the shuttle at [span_name("[A.name]")].", span_name("[user.real_name]"), user, message_type=DEADCHAT_ANNOUNCEMENT)
 	if(call_reason)
 		SSblackbox.record_feedback("text", "shuttle_reason", 1, "[call_reason]")
@@ -308,7 +312,7 @@ SUBSYSTEM_DEF(shuttle)
 		log_shuttle("[key_name(user)] has recalled the shuttle.")
 		message_admins("[ADMIN_LOOKUPFLW(user)] has recalled the shuttle.")
 		deadchat_broadcast(" has recalled the shuttle from [span_name("[get_area_name(user, TRUE)]")].", span_name("[user.real_name]"), user, message_type=DEADCHAT_ANNOUNCEMENT)
-		return 1
+		return TRUE
 
 /datum/controller/subsystem/shuttle/proc/canRecall()
 	if(!emergency || emergency.mode != SHUTTLE_CALL || emergencyNoRecall || SSticker.mode.name == "meteor")
@@ -344,7 +348,7 @@ SUBSYSTEM_DEF(shuttle)
 				continue
 		else if(istype(thing, /obj/machinery/computer/communications))
 			var/obj/machinery/computer/communications/C = thing
-			if(C.stat & BROKEN)
+			if(C.machine_stat & BROKEN)
 				continue
 
 		var/turf/T = get_turf(thing)
@@ -412,10 +416,10 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/toggleShuttle(shuttleId, dockHome, dockAway, timed)
 	var/obj/docking_port/mobile/M = getShuttle(shuttleId)
 	if(!M)
-		return 1
+		return TRUE
 	var/obj/docking_port/stationary/dockedAt = M.get_docked()
 	var/destination = dockHome
-	if(dockedAt && dockedAt.id == dockHome)
+	if(dockedAt && dockedAt.shuttle_id == dockHome)
 		destination = dockAway
 	if(timed)
 		if(M.request(getDock(destination)))
@@ -423,7 +427,7 @@ SUBSYSTEM_DEF(shuttle)
 	else
 		if(M.initiate_docking(getDock(destination)) != DOCKING_SUCCESS)
 			return 2
-	return 0 //dock successful
+	return FALSE //dock successful
 
 
 /datum/controller/subsystem/shuttle/proc/moveShuttle(shuttleId, dockId, timed)
@@ -431,14 +435,14 @@ SUBSYSTEM_DEF(shuttle)
 	var/obj/docking_port/stationary/D = getDock(dockId)
 
 	if(!M)
-		return 1
+		return TRUE
 	if(timed)
 		if(M.request(D))
 			return 2
 	else
 		if(M.initiate_docking(D) != DOCKING_SUCCESS)
 			return 2
-	return 0	//dock successful
+	return FALSE	//dock successful
 
 /datum/controller/subsystem/shuttle/proc/request_transit_dock(obj/docking_port/mobile/M)
 	if(!istype(M))
@@ -531,7 +535,7 @@ SUBSYSTEM_DEF(shuttle)
 	A.contents = proposal.reserved_turfs
 	var/obj/docking_port/stationary/transit/new_transit_dock = new(midpoint)
 	new_transit_dock.reserved_area = proposal
-	new_transit_dock.name = "Transit for [M.id]/[M.name]"
+	new_transit_dock.name = "Transit for [M.shuttle_id]/[M.name]"
 	new_transit_dock.owner = M
 	new_transit_dock.assigned_area = A
 
@@ -677,7 +681,7 @@ SUBSYSTEM_DEF(shuttle)
 /datum/controller/subsystem/shuttle/proc/autoEnd() //CIT CHANGE - allows shift to end without being a proper shuttle call?
 	if(EMERGENCY_IDLE_OR_RECALLED)
 		SSshuttle.emergency.request(silent = TRUE)
-		priority_announce("Смена подошла к концу, был вызван шаттл эвакации. [GLOB.security_level == SEC_LEVEL_RED ? "Подтверждён код Красный подтверждён: Отправка эвакуационного шаттла. " : "" ]Он прибудет через [emergency.timeLeft(600)] минут.", null, "shuttlecalled", "Priority")
+		priority_announce("Смена подошла к концу, был вызван шаттл эвакуации. [GLOB.security_level == SEC_LEVEL_RED ? "Подтверждён код Красный подтверждён: Отправка эвакуационного шаттла. " : "" ]Он прибудет через [emergency.timeLeft(600)] минут.", null, "shuttlecalled", "Priority")
 		log_game("Round end vote passed. Shuttle has been auto-called.")
 		message_admins("Round end vote passed. Shuttle has been auto-called.")
 	emergencyNoRecall = TRUE
@@ -836,7 +840,7 @@ SUBSYSTEM_DEF(shuttle)
 
 		templates[S.port_id]["templates"] += list(L)
 
-	data["templates_tabs"] = sortList(data["templates_tabs"])
+	data["templates_tabs"] = sort_list(data["templates_tabs"])
 
 	data["existing_shuttle"] = null
 
@@ -847,7 +851,7 @@ SUBSYSTEM_DEF(shuttle)
 		var/timeleft = M.timeLeft(1)
 		var/list/L = list()
 		L["name"] = M.name
-		L["id"] = M.id
+		L["shuttle_id"] = M.shuttle_id
 		L["timer"] = M.timer
 		L["timeleft"] = M.getTimerStr()
 		if (timeleft > 1 HOURS)
@@ -889,7 +893,7 @@ SUBSYSTEM_DEF(shuttle)
 			if(params["type"] == "mobile")
 				for(var/i in mobile)
 					var/obj/docking_port/mobile/M = i
-					if(M.id == params["id"])
+					if(M.shuttle_id == params["shuttle_id"])
 						user.forceMove(get_turf(M))
 						. = TRUE
 						break
@@ -897,7 +901,7 @@ SUBSYSTEM_DEF(shuttle)
 		if("fly")
 			for(var/i in mobile)
 				var/obj/docking_port/mobile/M = i
-				if(M.id == params["id"])
+				if(M.shuttle_id == params["shuttle_id"])
 					. = TRUE
 					M.admin_fly_shuttle(user)
 					break
@@ -905,7 +909,7 @@ SUBSYSTEM_DEF(shuttle)
 		if("fast_travel")
 			for(var/i in mobile)
 				var/obj/docking_port/mobile/M = i
-				if(M.id == params["id"] && M.timer && M.timeLeft(1) >= 50)
+				if(M.shuttle_id == params["shuttle_id"] && M.timer && M.timeLeft(1) >= 50)
 					M.setTimer(50)
 					. = TRUE
 					message_admins("[key_name_admin(usr)] fast travelled [M]")

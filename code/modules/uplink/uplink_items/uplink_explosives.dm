@@ -43,12 +43,23 @@
 	item = /obj/item/grenade/plastic/c4
 	cost = 1
 
+/datum/uplink_item/explosives/doorboom
+	name = "Door Charge"
+	desc = "Небольшое взрывное устройство, которое можно поместить посреди электроники шлюза. Любой, кто рискнёт открыть такой шлюз ощутит на себе прелести взрывной химической реакции. Поставляется комплектом из пяти штук."
+	item = /obj/item/storage/box/inteq_kit/doorgoboom
+	cost = 3
+
 /datum/uplink_item/explosives/c4bag
 	name = "Bag of C-4 explosives"
 	desc = "Because sometimes quantity is quality. Contains 10 C-4 plastic explosives."
 	item = /obj/item/storage/backpack/duffelbag/syndie/c4
 	cost = 9 //10% discount!
 	cant_discount = TRUE
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/explosives/c4bag/inteq
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/c4
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/explosives/x4bag
 	name = "Bag of X-4 explosives"
@@ -56,8 +67,13 @@
 			X-4 can be placed on a solid surface, such as a wall or window, and it will blast through the wall, injuring anything on the opposite side, while being safer to the user. \
 			For when you want a controlled explosion that leaves a wider, deeper, hole."
 	item = /obj/item/storage/backpack/duffelbag/syndie/x4
-	cost = 4 //
+	cost = 4
 	cant_discount = TRUE
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/explosives/x4bag/inteq
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/x4
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/explosives/clown_bomb_clownops
 	name = "Clown Bomb"
@@ -79,6 +95,7 @@
 	item = /obj/item/cartridge/virus/syndicate
 	cost = 5
 	restricted = TRUE
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS) //bluemoon change никаких подрывов через ВР
 	limited_stock = 1
 
 /datum/uplink_item/explosives/emp

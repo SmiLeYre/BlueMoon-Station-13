@@ -54,18 +54,18 @@
 `ys:oss++/-syhhhhhhhhhhyyhyyoshhhs+/oo:.o/:/-./+/+ysy+/yoso/o/o///-/oooss+::++:..-.`:-.`.``.``````:shhhhhhhhhy:+ossss/ho
 `yo-y+hy/s-syhhhyhhyyyyhyysoosyhdhy+::.`//+-.-o+++sos/:s+o+:+:+:/::+/+o+//+o+:-:-.`..:...`.-.``````.+yhhhhhhhy-y+hyoh:h+
 `ys-s/o++o-syhhhhhhyyhyyyo++osyhhhy+-.`-++-.-/o+++oos:-s+++:+:/::-//::/+oso/://-.`.``-..`..:.````.```ohhhhhhhy-y+ssoh-h+
-`hs:++os/::syhhyhyhyyhyy+//+o+hdhs+:.`.+/--::++/+++o+::+sdhyhhhyyhhyyhdddho/+///ooo+++++/++o+////...`-hhhhhhhy-/ooso+:ho
+`hs:++os/::syhhyhyhyyhyy+//+o+hdhs+:.`.+/--::++/+++o+::+sdhyhhhyyhhyyhdddho/+///ooo+++++/++o+///...`-hhhhhhhy-/ooso+:ho+
 `ho+/syy/o:syhhyhhhyyys/:/o+/oddhy+.``-:.-/-/+//++/o/:oyymd+ydyhhmhhdddmmho:::mNmmmmddddhdddddmmd:/:`.yhhhhhhy:osyhoo+ho
 `yo+/+yy:o:syhhhyhhyyo:/+o/:/sdhhs/.``..-:::+///+//+/-oyymdoydssshyydhhhmo/-::NNyhhmssss+soyysdmd://``+hhhhhhy:oohyoo+ho
 `yo++//+/o/syhyyyyyy+:/o:/:/+/hhyo:``--.-/:/+:/+//:+:-oyymdyyhdhdyhdmdmmmy+::/NNhhhdhhsyyhhddhdmh://```shhhhhy:s+o++s+ho
 `hsyoshh+ossyhhyyys/:/:--+//+:+yy+-``.:-::-//:/+/::/--oyymmdsyhhddhdddmddy+::/NNmdddmyshhhdhhhdmh-+/```-yhhhhss+ohhyyyho
 `yo-oo+oo:/syhhyy+::-.--//++++-/+:.```/-:-:/::++/:::.-syymmhsossydohhsmdh+:--/Nmhydymyoyyshyssdmh.//````/yhhyy//sosy//h+
 `yo.oo//o+:syhhy/------://o++o-.-.``` /:-.:/:/://::-.-yyhmdhdhdhhdydddmmds/--/mmmdmddhhddddhhhdmy-++`````+yhyy-so/oss-ho
-`yo`/+yy/.:shhy+:--:-:////oo+o+`````  ::--::::::/---.:yhhmmmhhhhhhhydddddy+:-/mNmmmdddddddhdhdddy/oo`````.yhhy..+yss-.ho
+`yo`/+yy/.:shhy+:--:-:///oo+o+`````  ::--::::::/---.:yhhmmmhhhhhhhydddddy+:-/mNmmmdddddddhdhdddy/oo`````.yhhy..+yss-.ho+
 `yo/ssyho//syhs:--:/:/++//+o/+o:  ``  -:.-:::::::---.:yyymmhsyoos+s+yyhsdo::-/mNhyhyyyhohsoysssds/oo``````/yyy-+shhss:h+
-.yo:/syyy+/yyy:---/:/+o/////++o+. `   ./.--::--::--..:yyymmhhhhhhysyhdhyds/:-/mNhddyhhdhdyyyhhyds/oo```````yys/oyyhss/y+
+.yo:/syyy+/yyy:---/:/+o///++o+. `   ./.--::--::--..:yyymmhhhhhhysyhdhyds/:-/mNhddyhhdhdyyyhhyds/oo```````yys/oyyhss/y+++
 .yo-+++ooo/yyo.:--//++/:://://++/``  ``+-----.:-:--..-syymmdhhhyhhhdddddhs+:-:mmdmmmmmdhhdhhdddds/oo```````:yy-++oo+o-y+
-.yo./+o/o:/so:-::--////::::::+/+o-   `.+----..----..-:syymmhyohosysoyyohs+/:-:mmhyhyhsdosdssosyds+oo````````oy-:+ooo/-h+
+.yo./+o/o:/so:-::--///::::::+/+o-   `.+----..----..-:syymmhyohosysoyyohs+/:-:mmhyhyhsdosdssosyds+oo````````oy-:+ooo/-h++
 .yo./+///::so--:--.-://:::::/+//o/   `./-.-.`----...-:syymmdhhyhhyyhhdhdyo/:-/mNdmdhysdhhhyyyshmo++o````````oy-//+o+/-ho
 .y+`.+/+/`:s/--:-:.--::/:::://++s+  ``./-...`..-....::syymmddhhddddddmmmdy+:-/mNNmmmmddddddddddmso:o````````+h..+/+o..y+
 .ho`:://:.:o/-:-.:---::///:://s/o+ ```-/-..`-.....-:::yyymmyyhsyshdsyhhsh+:--/NNdhyyhyhssyshsdymss.o````````oy.-/+++/.y+
@@ -76,7 +76,7 @@
 `y+-+yyy+--o:.```.-.`...--::--/:::. `.-.````....````.-/-..``````.`.```-o+yoos/y+.```.`........-----+````````+y-/syyss-s+
 `yo-:+ys/:-o:````....````..--:/:::` `.-.````.``   ````.....`` ...--.`  `-oo/y+oo-```-:--.`.-.`````..````````+s:/+yy++:s/
 `s++-/so///s/.....--....```..::::-```.-```..```````...-----``...---.``````:.::-:.```-::-.``..```````....````+s+:/ss/:/s/
-`o+oy+/:+h/+o+/++++/+++//+///++++++//+++/++++++++++++++oo++++/++o++++////+//+////+//+++++++//++//++//+++/++/o+sy//+sy+s/
+`o+oy+/:+h/+o+/++++/+++//+///++++++//+++/++++++++++++++oo++++/++o++++///+//+///+//+++++++//++//++//+++/++/o+sy//+sy+s/++
 `o+:/-/:-+/+:..-..--..-``````-.`-.``..```.`````````````````.``.`..............-```.....--..-``.``.-.-:------/+//-//-s:s/
 `+/-/:--:::/:/+ss:-:..-....-....---oys+:-.`````````````.``````.`````.`````````-.::+yy+---.:---.-.-:.-::/so+::+-:-:/-/-s:
 `o/-/:---/-:/+osy+--....:--/-..`.-+ssyyo:.`````````.`.`````..`.`.`.`..`````````.osyyys+-....-/:/:-...-/syss//::/:::+/-s:
@@ -171,7 +171,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 			//Code used for first master on game boot or if existing master got deleted
 			Master = src
 			var/list/subsytem_types = subtypesof(/datum/controller/subsystem)
-			sortTim(subsytem_types, /proc/cmp_subsystem_init)
+			sortTim(subsytem_types, GLOBAL_PROC_REF(cmp_subsystem_init))
 			//Find any abandoned subsystem from the previous master (if there was any)
 			var/list/existing_subsystems = list()
 			for(var/global_var in global.vars)
@@ -195,7 +195,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 
 /datum/controller/master/Shutdown()
 	processing = FALSE
-	sortTim(subsystems, /proc/cmp_subsystem_init)
+	sortTim(subsystems, GLOBAL_PROC_REF(cmp_subsystem_init))
 	reverseRange(subsystems)
 	for(var/datum/controller/subsystem/ss in subsystems)
 		log_world("Shutting down [ss.name] subsystem...")
@@ -207,7 +207,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 /proc/Recreate_MC()
 	. = -1 //so if we runtime, things know we failed
 	if (world.time < Master.restart_timeout)
-		return 0
+		return FALSE
 	if (world.time < Master.restart_clear)
 		Master.restart_count *= 0.5
 
@@ -220,7 +220,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		new/datum/controller/master()
 	catch
 		return -1
-	return 1
+	return TRUE
 
 
 /datum/controller/master/Recover()
@@ -279,7 +279,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	to_chat(world, span_boldannounce("Initializing subsystems..."))
 
 	// Sort subsystems by init_order, so they initialize in the correct order.
-	sortTim(subsystems, /proc/cmp_subsystem_init)
+	sortTim(subsystems, GLOBAL_PROC_REF(cmp_subsystem_init))
 
 	var/start_timeofday = REALTIMEOFDAY
 	// Initialize subsystems.
@@ -300,7 +300,7 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 		SetRunLevel(1)
 
 	// Sort subsystems by display setting for easy access.
-	sortTim(subsystems, /proc/cmp_subsystem_display)
+	sortTim(subsystems, GLOBAL_PROC_REF(cmp_subsystem_display))
 	// Set world options.
 	world.change_fps(CONFIG_GET(number/fps))
 	var/initialized_tod = REALTIMEOFDAY
@@ -385,9 +385,9 @@ GLOBAL_REAL(Master, /datum/controller/master) = new
 	queue_tail = null
 	//these sort by lower priorities first to reduce the number of loops needed to add subsequent SS's to the queue
 	//(higher subsystems will be sooner in the queue, adding them later in the loop means we don't have to loop thru them next queue add)
-	sortTim(tickersubsystems, /proc/cmp_subsystem_priority)
+	sortTim(tickersubsystems, GLOBAL_PROC_REF(cmp_subsystem_priority))
 	for(var/I in runlevel_sorted_subsystems)
-		sortTim(runlevel_sorted_subsystems, /proc/cmp_subsystem_priority)
+		sortTim(I, GLOBAL_PROC_REF(cmp_subsystem_priority))
 		I += tickersubsystems
 
 	var/cached_runlevel = current_runlevel

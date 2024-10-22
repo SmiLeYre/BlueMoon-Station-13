@@ -43,17 +43,26 @@ GLOBAL_LIST_EMPTY(cached_previews)
 
 	data["character_ref"] = examine_panel_screen.assigned_map
 	data["directory_visible"] = M?.client?.prefs?.show_in_directory
-	data["headshot_link"] = M?.client?.prefs?.features["headshot_link"]
 
-	if (istype(M, /mob/living/silicon))
-		data["flavortext"] = M?.client?.prefs.features["silicon_flavor_text"] || ""
+	// BLUEMOON EDIT START - перепривязка к ДНК и майнду флаворов
 
-	data["oocnotes"] = M?.client?.prefs?.features["ooc_notes"] || ""
-	data["species_name"] = M?.client?.prefs?.custom_species || "Космонавтик"
-	data["custom_species_lore"] = M?.client?.prefs.features["custom_species_lore"] || "Не имеющий описания своей расы космонавтик. Просто космонавтик!"
+	if(iscarbon(M))
+		var/mob/living/carbon/H = M
+		data["oocnotes"] = H.dna?.ooc_notes || ""
+		// mechanical_erp_verbs_examine AHEAD
+		if(H.client.prefs.toggles & VERB_CONSENT)
+			data["erp_verbs"] = "Allowed"
+		else
+			data["erp_verbs"] = "Text Only"
+		// mechanical_erp_verbs_examine END
+	if (isobserver(user))
+		data["security_records"] = M?.client?.prefs.security_records || "" //BLUEMOON ADD - призраки видят базы данных в описании персонажей
+		data["medical_records"] = M?.client?.prefs.medical_records || "" //BLUEMOON ADD - призраки видят базы данных в описании персонажей
+	// BLUEMOON EDIT END
 	data["vore_tag"] = M?.client?.prefs?.vorepref || "No"
 	data["erp_tag"] = M?.client?.prefs?.erppref || "No"
 	data["mob_tag"] = M?.client?.prefs?.mobsexpref || "No"
+	data["hornyantags_tag"] = M?.client?.prefs?.hornyantagspref || "No"
 	data["nc_tag"] = M?.client?.prefs?.nonconpref || "No"
 	data["unholy_tag"] = M?.client?.prefs?.unholypref || "No"
 	data["extreme_tag"] = M?.client?.prefs?.extremepref || "No"
@@ -66,14 +75,34 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	var/data[0]
 	var/mob/living/M = host.resolve()
 	var/unknown = FALSE
+	// BLUEMOON EDIT START - правка видимости текстов персонажа и привязка их к ДНК
 	if (iscarbon(M))
 		var/mob/living/carbon/C = M
 		unknown = (C.wear_mask && (C.wear_mask.flags_inv & HIDEEYES) && !isobserver(user)) || (C.head && (C.head.flags_inv & HIDEEYES) && !isobserver(user))
-		data["flavortext"] = (!unknown) ? (M?.client?.prefs?.features["flavor_text"] || "") : "Скрыто"
+		data["flavortext"] = (!unknown) ? (C.dna?.flavor_text || "") : "Скрыто"
+		data["headshot_links"] = (!unknown) ? (C.dna.headshot_links.Copy() || "") : list()
+		data["species_name"] = (!unknown) ? (C.dna?.custom_species || C.dna?.species) : "????"
+		data["custom_species_lore"] = (!unknown) ? (C.dna?.custom_species_lore || "")  : ""
 		if (istype(M, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = C
-			var/can_see_naked = !(unknown || (H.w_uniform || H.wear_suit))
-			data["flavortext_naked"] = (can_see_naked && M?.client?.prefs?.features["naked_flavor_text"]) || ""
+			var/can_see_naked = TRUE
+			var/list/obj/item/clothings = list(
+				H.wear_suit,
+				H.w_uniform,
+				H.belt,
+				H.w_underwear,
+				H.w_socks,
+				H.w_shirt,
+				H.wrists,
+				H.wear_neck
+			)
+			removeNullsFromList(clothings)
+			for (var/obj/item/clothing/clothpiece in clothings)
+				if(clothpiece.body_parts_covered & GROIN || clothpiece.body_parts_covered & CHEST)
+					can_see_naked = FALSE
+					break
+			data["flavortext_naked"] = can_see_naked ? (C.dna?.naked_flavor_text || "") : ""
+	// BLUEMOON EDIT END
 
 	data["is_unknown"] = unknown
 

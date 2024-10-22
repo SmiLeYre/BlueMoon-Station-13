@@ -23,8 +23,9 @@
 /obj/item/electropack/vibrator/ComponentInitialize()
 	. = ..()
 	var/list/procs_list = list(
-		"before_inserting" = CALLBACK(src, .proc/item_inserting),
-		"after_inserting" = CALLBACK(src, .proc/item_inserted),
+		"before_inserting" = CALLBACK(src, PROC_REF(item_inserting)),
+		"after_inserting" = CALLBACK(src, PROC_REF(item_inserted)),
+		"after_removing" = CALLBACK(src, PROC_REF(item_removed)),
 	)
 	AddComponent(/datum/component/genital_equipment, list(ORGAN_SLOT_VAGINA, ORGAN_SLOT_ANUS, ORGAN_SLOT_PENIS, ORGAN_SLOT_BREASTS, ORGAN_SLOT_BUTT, ORGAN_SLOT_BELLY), procs_list)
 
@@ -56,6 +57,12 @@
 	to_chat(user, span_userlove("You attach [src] to <b>\The [G.owner]</b>'s [G]."))
 	playsound(G.owner, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
 	inside = TRUE
+
+/obj/item/electropack/vibrator/proc/item_removed(datum/source, obj/item/organ/genital/G, mob/user)
+	. = TRUE
+	to_chat(user, span_userlove("You retrieve [src] from <b>\The [G.owner]</b>'s [G]."))
+	playsound(G.owner, 'modular_sand/sound/lewd/champ_fingering.ogg', 50, 1, -1)
+	inside = FALSE
 
 /obj/item/electropack/vibrator/small //can go anywhere
 	name = "small remote vibrator"
@@ -143,18 +150,22 @@ Code:
 
 			var/intensity = 6*mode
 			U.handle_post_sex(intensity, null, src, G) //give pleasure
+			U.plug13_genital_emote(G, intensity * 5)
 			playsound(U.loc, 'modular_splurt/sound/lewd/vibrate.ogg', (intensity+5), 1, -1) //vibe intensity scaled up abit for sound
 
 			switch(mode)
 				if(1) //low, setting for RP, it wont force your character to do anything.
 					to_chat(U, span_love("You feel pleasure surge through your [G.name]"))
-					U.do_jitter_animation() //do animation without heartbeat
+					if(U.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+						U.do_jitter_animation() //do animation without heartbeat
 				if(2) //med, can make you cum
 					to_chat(U, span_love("You feel intense pleasure surge through your [G.name]"))
-					U.do_jitter_animation()
+					if(U.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+						U.do_jitter_animation()
 				if(3) //high, makes you stun
 					to_chat(U, span_userdanger("You feel overpowering pleasure surge through your [G.name]"))
-					U.Jitter(3)
+					if(U.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+						U.Jitter(3)
 					U.Stun(30)
 					if(prob(50))
 						U.emote("moan")
@@ -192,19 +203,23 @@ Code:
 								to_chat(U, span_love("[src] vibrates against your [G.name]!"))
 
 					U.handle_post_sex(intencity, null, src) //give pleasure
+					U.plug13_genital_emote(G, intencity * 5)
 					playsound(U.loc, 'modular_splurt/sound/lewd/vibrate.ogg', (intencity+5), 1, -1) //vibe intencity scaled up abit for sound
 
 
 					switch(mode)
 						if(1) //low, setting for RP, it wont force your character to do anything.
 							to_chat(U, span_love("You feel pleasure surge through your [G.name]"))
-							U.do_jitter_animation() //do animation without heartbeat
+							if(U.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+								U.do_jitter_animation() //do animation without heartbeat
 						if(2) //med, can make you cum
 							to_chat(U, span_love("You feel intense pleasure surge through your [G.name]"))
-							U.do_jitter_animation()
+							if(U.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+								U.do_jitter_animation()
 						if(3) //high, makes you stun
 							to_chat(U, span_userdanger("You feel overpowering pleasure surge through your [G.name]"))
-							U.Jitter(3)
+							if(U.client?.prefs.cit_toggles & SEX_JITTER) //By Gardelin0
+								U.Jitter(3)
 							U.Stun(30)
 							if(prob(50))
 								U.emote("moan")

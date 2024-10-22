@@ -8,6 +8,8 @@
 
 	typing_indicator_enabled = TRUE
 
+	tooltips = TRUE
+
 	var/last_click_move = 0 // Stores the previous next_move value.
 
 	var/resize = 1 //Badminnery resize
@@ -192,3 +194,7 @@
 	var/body_position_pixel_y_offset = 0
 	///The height offset of a mob's maptext due to their current size.
 	var/body_maptext_height_offset = 0
+
+	//for set_activity
+	var/activity = ""
+	var/tempflavor = "" // BLUEMOON ADD - перенос темпфлавора на хардкод (увы)

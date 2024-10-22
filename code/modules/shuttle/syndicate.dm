@@ -7,7 +7,7 @@
 	icon_screen = "inteqshuttle"
 	icon_keyboard = "inteq_key"
 	light_color = LIGHT_COLOR_ORANGE
-	req_access = list(ACCESS_SYNDICATE)
+	req_access = list(ACCESS_INTEQ)
 	shuttleId = "syndicate"
 	possible_destinations = "inteq_away;syndicate_z5;syndicate_ne;syndicate_nw;syndicate_n;syndicate_se;syndicate_sw;syndicate_s;syndicate_custom"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
@@ -56,8 +56,9 @@
 	desc = "Controls the drop pod's launch system."
 	icon = 'icons/obj/terminals.dmi'
 	icon_state = "dorm_available"
+	icon_keyboard = null
 	light_color = LIGHT_COLOR_BLUE
-	req_access = list(ACCESS_SYNDICATE)
+	req_access = list(ACCESS_INTEQ)
 	shuttleId = "steel_rain"
 	possible_destinations = null
 	clockwork = TRUE //it'd look weird
@@ -70,7 +71,7 @@
 	shuttleId = "syndicate"
 	lock_override = CAMERA_LOCK_STATION
 	shuttlePortId = "syndicate_custom"
-	jumpto_ports = list("syndicate_ne" = 1, "syndicate_nw" = 1, "syndicate_n" = 1, "syndicate_se" = 1, "syndicate_sw" = 1, "syndicate_s" = 1)
+	jump_to_ports = list("syndicate_ne" = 1, "syndicate_nw" = 1, "syndicate_n" = 1, "syndicate_se" = 1, "syndicate_sw" = 1, "syndicate_s" = 1)
 	view_range = 5.5
 	x_offset = -7
 	y_offset = -1

@@ -26,6 +26,7 @@
 	pass_flags = PASSTABLE
 	light_color = LIGHT_COLOR_YELLOW
 	light_power = 3
+	active_power_usage = 500
 	var/wire_disabled = FALSE // is its internal wire cut?
 	var/operating = FALSE
 	/// How dirty is it?
@@ -52,7 +53,7 @@
 /obj/machinery/microwave/Initialize(mapload)
 	. = ..()
 
-	wires = new /datum/wires/microwave(src)
+	set_wires(new /datum/wires/microwave(src))
 	create_reagents(100)
 	soundloop = new(src, FALSE)
 	set_on_table()
@@ -129,7 +130,7 @@
 	else
 		. += span_notice("\The [src] is empty.")
 
-	if(!(stat & (NOPOWER|BROKEN)))
+	if(!(machine_stat & (NOPOWER|BROKEN)))
 		. += "[span_notice("The status display reads:")]\n"+\
 		"[span_notice("- Capacity: <b>[max_n_of_items]</b> items.")]\n"+\
 		span_notice("- Cook time reduced by <b>[(efficiency - 1) * 25]%</b>.")
@@ -159,6 +160,10 @@
 	var/ingredient_count = 0
 
 	for (var/atom/movable/ingredient as anything in ingredients)
+		//BLUEMOON FIX
+		if(ingredient_count > 90)// don't fuck around with byond overlays for too long, or byond overlays fuck you around.
+			break
+		//BLUEMOON FIX
 		var/image/ingredient_overlay = image(ingredient, src)
 
 		var/icon/ingredient_icon = icon(ingredient.icon, ingredient.icon_state)
@@ -310,7 +315,10 @@
 		for(var/obj/S in T.contents)
 			if(ingredients.len >= max_n_of_items)
 				balloon_alert(user, "it's full!")
-				return TRUE
+				//BLUEMOON CHANGE ранее был return, но там столько важного кода дальше
+				if(loaded)
+					break
+				//BLUEMOON CHANGE END
 			if(SEND_SIGNAL(T, COMSIG_TRY_STORAGE_TAKE, S, src))
 				loaded++
 				ingredients += S
@@ -339,7 +347,7 @@
 
 	if(operating || panel_open || !anchored || !user.canUseTopic(src, !issilicon(user)))
 		return
-	if(isAI(user) && (stat & NOPOWER))
+	if(isAI(user) && (machine_stat & NOPOWER))
 		return
 
 	if(!length(ingredients))
@@ -354,7 +362,7 @@
 	// post choice verification
 	if(operating || panel_open || !anchored || !user.canUseTopic(src, !issilicon(user)))
 		return
-	if(isAI(user) && (stat & NOPOWER))
+	if(isAI(user) && (machine_stat & NOPOWER))
 		return
 
 	usr.set_machine(src)
@@ -375,7 +383,7 @@
 
 
 /obj/machinery/microwave/proc/cook(mob/cooker)
-	if(stat & (NOPOWER|BROKEN))
+	if(machine_stat & (NOPOWER|BROKEN))
 		return
 	if(operating || broken > 0 || panel_open || !anchored || dirty >= MAX_MICROWAVE_DIRTINESS)
 		return
@@ -435,7 +443,7 @@
 	loop(MICROWAVE_MUCK, 4)
 
 /obj/machinery/microwave/proc/loop(type, time, wait = max(12 - 2 * efficiency, 2), mob/cooker) // standard wait is 10
-	if((stat & BROKEN) && type == MICROWAVE_PRE)
+	if((machine_stat & BROKEN) && type == MICROWAVE_PRE)
 		pre_fail()
 		return
 
@@ -454,7 +462,7 @@
 
 /obj/machinery/microwave/power_change()
 	. = ..()
-	if((stat & NOPOWER) && operating)
+	if((machine_stat & NOPOWER) && operating)
 		pre_fail()
 		eject()
 
@@ -504,6 +512,7 @@
 	dirty_anim_playing = FALSE
 	operating = FALSE
 
+	dump_inventory_contents() //BlUEMOON ADD грязная микроволновка выкидывает из себя вещи
 	after_finish_loop()
 
 /obj/machinery/microwave/proc/after_finish_loop()

@@ -68,8 +68,8 @@
 	. = ..()
 	if(ispath(cell))
 		cell = new cell
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/turn_on)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/turn_off)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(turn_on))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(turn_off))
 
 /obj/item/electrostaff/ComponentInitialize()
 	. = ..()
@@ -167,6 +167,16 @@
 		return FALSE
 	if(C.charge < min_hit_cost())
 		turn_off()
+
+/obj/item/electrostaff/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(wielded)
+		final_block_chance *= 2
+	if(prob(final_block_chance))
+		if(attack_type & ATTACK_TYPE_MELEE)
+			playsound(src, 'sound/weapons/parry.ogg', 100, 1)
+			owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
+			return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
+	return BLOCK_NONE
 
 /obj/item/electrostaff/attack(mob/living/target, mob/living/user)
 	if(IS_STAMCRIT(user) || !user.UseStaminaBuffer(stam_cost))//CIT CHANGE - makes it impossible to baton in stamina softcrit

@@ -13,7 +13,8 @@ SUBSYSTEM_DEF(statpanels)
 	if (!resumed)
 		var/datum/map_config/cached = SSmapping.next_map_config
 		var/round_time = world.time - SSticker.round_start_time
-		//var/real_round_time = world.timeofday - SSticker.real_round_start_time
+		var/real_round_time = world.timeofday - SSticker.real_round_start_time
+		/* BLUEMOON REMOVAL START
 		var/list/global_data = list(
 			"Map: [SSmapping.config?.map_name || "Loading..."]",
 			cached ? "Next Map: [cached.map_name]" : null,
@@ -25,12 +26,30 @@ SUBSYSTEM_DEF(statpanels)
 			" ",
 			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
 			"Round Time: [GAMETIMESTAMP("hh:mm:ss", round_time)]",
-			//"Actual Round Timer: [time2text(real_round_time, "hh:mm:ss", 0)]", //A back up control to check the round time to see if round time has descyed as well as properly track round time
+			"Actual Round Timer: [time2text(real_round_time, "hh:mm:ss", 0)]", //A back up control to check the round time to see if round time has descyed as well as properly track round time
 			"Station Time: [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]",
-			"[time2text(world.realtime, "MMM DD")] [GLOB.year_integer]",
-			"Sol System Time: [SOLAR_TIME_TIMESTAMP("hh:mm:ss", world.time)]", //bluemoon add,
 			"Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)"
 		)
+		/ BLUEMOON REMOVAL END */
+		// BLUEMOON ADD START - наша версия стат-панели
+		var/list/global_data = list(
+			"Карта: [SSmapping.config?.map_name || "Loading..."]",
+			cached ? "Следующая карта: [cached.map_name]" : null,
+			"ID раунда: [GLOB.round_id ? GLOB.round_id : "NULL"]",
+			"Игровой Режим: [GLOB.master_mode]",
+			"Предыдущие Режимы: [jointext(SSpersistence.saved_modes, ", ")]", // Because some of us want to know when our favorite mode becomes forced - Flauros
+			"Подключено Игроков: [GLOB.clients.len]",
+			"Отклонения Во Времени: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)",
+			"Время Сервера: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
+			" ",
+			"Время Раунда: [time2text(round_time, "hh:mm:ss", 0)]",
+			"Настоящее Время Раунда: [time2text(real_round_time, "hh:mm:ss", 0)]", //A back up control to check the round time to see if round time has descyed as well as properly track round time
+			" ",
+			"Дата: [time2text(world.realtime, "MMM DD")] [GLOB.year_integer]",
+			"Время: [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]",
+			"Время в Солнечной Системе: [SOLAR_TIME_TIMESTAMP("hh:mm:ss", world.time)]"
+		)
+		// BLUEMOON ADD END
 
 		if(SSshuttle.emergency)
 			var/ETA = SSshuttle.emergency.getModeStr()
@@ -151,7 +170,7 @@ SUBSYSTEM_DEF(statpanels)
 						if(length(turfitems) < 30) // only create images for the first 30 items on the turf, for performance reasons
 							if(!(REF(turf_content) in cached_images))
 								cached_images += REF(turf_content)
-								turf_content.RegisterSignal(turf_content, COMSIG_PARENT_QDELETING, /atom/.proc/remove_from_cache) // we reset cache if anything in it gets deleted
+								turf_content.RegisterSignal(turf_content, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/atom, remove_from_cache)) // we reset cache if anything in it gets deleted
 								if(ismob(turf_content) || length(turf_content.overlays) > 2)
 									turfitems[++turfitems.len] = list("[turf_content.name]", REF(turf_content), costly_icon2html(turf_content, target, sourceonly=TRUE))
 								else

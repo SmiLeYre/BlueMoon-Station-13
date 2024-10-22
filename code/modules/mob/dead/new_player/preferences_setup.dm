@@ -54,8 +54,8 @@
 				mannequin.job = previewJob.title
 				previewJob.equip(mannequin, TRUE, preference_source = parent)
 		if(PREVIEW_PREF_LOADOUT)
-			SSjob.equip_loadout(parent.mob, mannequin, bypass_prereqs = TRUE, can_drop = FALSE)
-			SSjob.post_equip_loadout(parent.mob, mannequin, bypass_prereqs = TRUE, can_drop = FALSE)
+			SSjob.equip_loadout(parent.mob, mannequin, bypass_prereqs = TRUE, can_drop = FALSE, is_dummy = TRUE)
+			SSjob.post_equip_loadout(parent.mob, mannequin, bypass_prereqs = TRUE, can_drop = FALSE, is_dummy = TRUE)
 		if(PREVIEW_PREF_NAKED)
 			mannequin.hidden_underwear = TRUE
 			mannequin.hidden_undershirt = TRUE
@@ -70,7 +70,6 @@
 
 	mannequin.regenerate_icons()
 
-	COMPILE_OVERLAYS(mannequin)
 	parent.show_character_previews(new /mutable_appearance(mannequin))
 	unset_busy_human_dummy(DUMMY_HUMAN_SLOT_PREFERENCES)
 

@@ -47,10 +47,10 @@
 
 
 /obj/machinery/button/update_icon()
-	cut_overlays()
+	. = ..()
 	if(panel_open)
 		icon_state = "button-open"
-	else if(stat & (NOPOWER|BROKEN))
+	else if(machine_stat & (NOPOWER|BROKEN))
 		icon_state = "[skin]-p"
 	else
 		icon_state = skin
@@ -128,14 +128,20 @@
 /obj/machinery/button/attack_robot(mob/user)
 	return attack_ai(user)
 
-/obj/machinery/button/proc/setup_device()
-	if(id && istype(device, /obj/item/assembly/control))
-		var/obj/item/assembly/control/A = device
+/obj/machinery/button/proc/setup_device() // для раундстарта
+	var/obj/item/assembly/control/A = device
+	if(istype(device, /obj/item/assembly/control))
 		A.id = id
-	initialized_button = 1
+		initialized_button = 1
 
-/obj/machinery/button/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
-	if(id && istype(device, /obj/item/assembly/control))
+/obj/machinery/button/proc/setup_button() // для самостроя
+	var/obj/item/assembly/control/A = device
+	if(istype(device, /obj/item/assembly/control))
+		id = A.id
+
+
+/obj/machinery/button/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=TRUE)
+	if(istype(device, /obj/item/assembly/control))
 		var/obj/item/assembly/control/A = device
 		A.id = "[idnum][id]"
 
@@ -143,8 +149,8 @@
 	. = ..()
 	if(.)
 		return
-	if(!initialized_button)
-		setup_device()
+
+	setup_button()
 	add_fingerprint(user)
 	if(panel_open)
 		if(device || board)
@@ -167,7 +173,7 @@
 			to_chat(user, "<span class='notice'>You change the button frame's front panel.</span>")
 		return
 
-	if((stat & (NOPOWER|BROKEN)))
+	if((machine_stat & (NOPOWER|BROKEN)))
 		return
 
 	if(device && device.next_activate > world.time)
@@ -184,12 +190,18 @@
 	if(device)
 		device.pulsed()
 
-	addtimer(CALLBACK(src, /atom/.proc/update_icon), 15)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_icon)), 15)
 
 /obj/machinery/button/power_change()
 	..()
 	update_icon()
 
+/obj/machinery/button/vv_edit_var(vname, vval)
+	. = ..()
+	if(vname == NAMEOF(src, id))
+		var/obj/item/assembly/control/controller = device
+		if(istype(controller))
+			controller.id = vval
 
 /obj/machinery/button/door
 	name = "door button"
@@ -302,3 +314,17 @@
 	icon_state = "button"
 	result_path = /obj/machinery/button
 	custom_materials = list(/datum/material/iron = MINERAL_MATERIAL_AMOUNT)
+
+/obj/machinery/button/elevator
+	name = "elevator button"
+	desc = "Go back. Go back. Go back. Can you operate the elevator."
+	icon_state = "launcher"
+	skin = "launcher"
+	device_type = /obj/item/assembly/control/elevator
+	req_access = list()
+	id = 1
+
+/obj/machinery/button/elevator/examine(mob/user)
+	. = ..()
+	. += "<span class='notice'>There's a small inscription on the button...</span>"
+	. += "<span class='notice'>THIS CALLS THE ELEVATOR! IT DOES NOT OPERATE IT! Interact with the elevator itself to use it!</span>"

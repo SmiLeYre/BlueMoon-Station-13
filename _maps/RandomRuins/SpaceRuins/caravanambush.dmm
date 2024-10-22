@@ -51,7 +51,7 @@
 	dir = 2;
 	dwidth = 14;
 	height = 13;
-	id = "caravanpirate_ambush";
+	shuttle_id = "caravanpirate_ambush";
 	name = "Trade Route";
 	roundstart_template = /datum/map_template/shuttle/ruin/pirate_cutter;
 	width = 22
@@ -1051,7 +1051,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/closet/crate/secure/weapon,
-/obj/item/gun/ballistic/automatic/pistol/aps,
+/obj/item/gun/ballistic/automatic/pistol/APS,
 /obj/item/tcg_card/special/spess_pirate,
 /turf/open/floor/plasteel/airless/dark,
 /area/shuttle/caravan/freighter2)
@@ -1258,7 +1258,7 @@
 	dir = 2;
 	dwidth = 6;
 	height = 7;
-	id = "caravansyndicate3_ambush";
+	shuttle_id = "caravansyndicate3_ambush";
 	name = "Trade Route";
 	roundstart_template = /datum/map_template/shuttle/ruin/syndicate_dropship;
 	width = 15
@@ -1270,7 +1270,7 @@
 	dir = 4;
 	dwidth = 4;
 	height = 5;
-	id = "caravansyndicate1_ambush";
+	shuttle_id = "caravansyndicate1_ambush";
 	name = "Trade Route";
 	roundstart_template = /datum/map_template/shuttle/ruin/syndicate_fighter_shiv;
 	width = 9
@@ -1282,7 +1282,7 @@
 	dir = 2;
 	dwidth = 11;
 	height = 11;
-	id = "caravantrade1_ambush";
+	shuttle_id = "caravantrade1_ambush";
 	name = "Trade Route";
 	roundstart_template = /datum/map_template/shuttle/ruin/caravan_victim;
 	width = 27
@@ -1327,10 +1327,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/shuttle/caravan/freighter2)
-"IG" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/mineral/random,
-/area/ruin/unpowered)
 
 (1,1,1) = {"
 aa
@@ -5242,7 +5238,7 @@ aa
 bt
 bt
 bt
-IG
+bt
 bt
 aa
 aa

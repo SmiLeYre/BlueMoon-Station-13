@@ -112,7 +112,7 @@
 	return ..()
 
 /obj/item/radio/Initialize(mapload)
-	wires = new /datum/wires/radio(src)
+	set_wires(new /datum/wires/radio(src))
 	if(prison_radio)
 		wires.cut(WIRE_TX) // OH GOD WHY
 	secure_radio_connections = new
@@ -223,7 +223,7 @@
 		spans = list(M.speech_span)
 	if(!language)
 		language = M.get_selected_language()
-	INVOKE_ASYNC(src, .proc/talk_into_impl, M, message, channel, spans.Copy(), language)
+	INVOKE_ASYNC(src, PROC_REF(talk_into_impl), M, message, channel, spans.Copy(), language)
 	return ITALICS | REDUCE_RANGE
 
 /obj/item/radio/proc/talk_into_impl(atom/movable/M, message, channel, list/spans, datum/language/language)
@@ -284,7 +284,7 @@
 	var/datum/signal/subspace/vocal/signal = new(src, freq, speaker, language, message, spans)
 
 	// Independent radios, on the CentCom frequency, reach all independent radios
-	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE || freq == FREQ_DS1 || freq == FREQ_DS2 || freq == FREQ_TARKOFF || freq == FREQ_SOL || freq == FREQ_NRI || freq == FREQ_HOTEL))
+	if (independent && (freq == FREQ_CENTCOM || freq == FREQ_CTF_RED || freq == FREQ_CTF_BLUE || freq == FREQ_DS1 || freq == FREQ_DS2 || freq == FREQ_GHOST_INTEQ || freq == FREQ_TARKOFF || freq == FREQ_SOL || freq == FREQ_NRI || freq == FREQ_HOTEL))
 		signal.data["compression"] = 0
 		signal.transmission_method = TRANSMISSION_SUPERSPACE
 		signal.levels = list(0)  // reaches all Z-levels
@@ -300,7 +300,7 @@
 
 	// Non-subspace radios will check in a couple of seconds, and if the signal
 	// was never received, send a mundane broadcast (no headsets).
-	addtimer(CALLBACK(src, .proc/backup_transmission, signal), 20)
+	addtimer(CALLBACK(src, PROC_REF(backup_transmission), signal), 20)
 
 /obj/item/radio/proc/backup_transmission(datum/signal/subspace/vocal/signal)
 	var/turf/T = get_turf(src)

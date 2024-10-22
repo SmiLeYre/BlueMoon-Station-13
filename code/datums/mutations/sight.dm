@@ -42,7 +42,7 @@
 	difficulty = 18
 	text_gain_indication = "<span class='notice'>You can see the heat rising off of your skin...</span>"
 	time_coeff = 2
-	instability = 75
+	instability = 40
 	locked = TRUE
 	var/visionflag = TRAIT_THERMAL_VISION
 
@@ -61,12 +61,12 @@
 
 ///X-ray Vision lets you see through walls. BlueMoon 03.07-23 - removed prior the rework
 /datum/mutation/human/thermal/x_ray
-	name = "Degraded X Ray Vision"
-	desc = "An unstable former X Ray genome, now simply applying the thermal vision for user." //actual x-ray would mean you'd constantly be blasting rads, wich might be fun for later //hmb
+	name = "X-Ray Vision"
+	desc = "An unstable former X-Ray genome, now simply applying the thermal vision for user." //actual x-ray would mean you'd constantly be blasting rads, wich might be fun for later //hmb
 	text_gain_indication = "<span class='notice'>The walls suddenly disappear!</span>"
-	instability = 75
+	instability = 50
 	locked = TRUE
-	visionflag = TRAIT_THERMAL_VISION
+	visionflag = TRAIT_XRAY_VISION // BLUEMOON CHANGE
 
 
 //Laser Eyes lets you shoot lasers from your eyes!

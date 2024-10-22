@@ -5057,10 +5057,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/ancientstation)
-"TY" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/template_noop,
-/area/template_noop)
 "Un" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -7911,7 +7907,7 @@ cX
 bD
 aa
 aa
-TY
+aa
 bD
 fQ
 gI

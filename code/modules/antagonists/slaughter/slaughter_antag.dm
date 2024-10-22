@@ -7,7 +7,6 @@
 	job_rank = ROLE_ALIEN
 	show_in_antagpanel = FALSE
 	show_to_ghosts = TRUE
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/slaughter/on_gain()
 	forge_objectives()

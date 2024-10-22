@@ -26,3 +26,17 @@
 	icon_neck = 'modular_splurt/icons/mob/clothing/species/teshari/neck.dmi'
 	icon_uniform = 'modular_splurt/icons/mob/clothing/species/teshari/uniform.dmi'
 	icon_suit = 'modular_splurt/icons/mob/clothing/species/teshari/suit.dmi'
+
+/datum/species/vox
+	limbs_id = SPECIES_VOX
+	icon_limbs = 'modular_splurt/icons/mob/vox.dmi'
+	icon_back = 'modular_splurt/icons/mob/clothing/species/vox/back.dmi'
+	icon_ears = 'modular_splurt/icons/mob/clothing/species/vox/ears.dmi'
+	icon_eyes = 'modular_splurt/icons/mob/clothing/species/vox/eyes.dmi'
+	icon_feet = 'modular_splurt/icons/mob/clothing/species/vox/feet.dmi'
+	icon_feet64 = 'modular_splurt/icons/mob/clothing/species/vox/feet.dmi'
+	icon_hands = 'modular_splurt/icons/mob/clothing/species/vox/hands.dmi'
+	icon_head = 'modular_splurt/icons/mob/clothing/species/vox/head.dmi'
+	icon_mask = 'modular_splurt/icons/mob/clothing/species/vox/face.dmi'
+	icon_uniform = 'modular_splurt/icons/mob/clothing/species/vox/uniform.dmi'
+	icon_suit = 'modular_splurt/icons/mob/clothing/species/vox/suit.dmi'

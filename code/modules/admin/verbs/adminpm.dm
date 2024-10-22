@@ -30,7 +30,7 @@
 				targets["[T.mob.real_name](as [T.mob.name]) - [T]"] = T
 		else
 			targets["(No Mob) - [T]"] = T
-	var/target = input(src,"To whom shall we send a message?","Admin PM",null) as null|anything in sortList(targets)
+	var/target = input(src,"To whom shall we send a message?","Admin PM",null) as null|anything in sort_list(targets)
 	cmd_admin_pm(targets[target],null)
 	SSblackbox.record_feedback("tally", "admin_verb", 1, "Admin PM") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -195,10 +195,10 @@
 
 		else
 			if(holder)	//sender is an admin but recipient is not. Do BIG RED TEXT
-				//var/already_logged = FALSE
+				var/already_logged = FALSE //BLUEMOON EDIT, enable ticket logging
 				if(!recipient.current_ticket)
 					new /datum/admin_help(msg, recipient, TRUE)
-					//already_logged = TRUE
+					already_logged = TRUE //BLUEMOON EDIT, enable ticket logging
 					SSblackbox.LogAhelp(recipient.current_ticket.id, "Ticket Opened", msg, recipient.ckey, src.ckey)
 
 				to_chat(recipient, "<font color='red' size='4'><b>-- Administrator private message --</b></font>", confidential = TRUE)
@@ -208,8 +208,8 @@
 
 				admin_ticket_log(recipient, "<font color='purple'>PM From [key_name_admin(src)]: [keywordparsedmsg]</font>")
 
-				//if(!already_logged) //Reply to an existing ticket
-					//SSblackbox.LogAhelp(recipient.current_ticket.id, "Reply", msg, recipient.ckey, src.ckey)
+				if(!already_logged) //Reply to an existing ticket   //BLUEMOON EDIT, enable ticket logging
+					SSblackbox.LogAhelp(recipient.current_ticket.id, "Reply", msg, recipient.ckey, src.ckey) //BLUEMOON EDIT, enable ticket logging
 
 
 				//always play non-admin recipients the adminhelp sound
@@ -217,7 +217,7 @@
 
 				//AdminPM popup for ApocStation and anybody else who wants to use it. Set it with POPUP_ADMIN_PM in config.txt ~Carn
 				if(CONFIG_GET(flag/popup_admin_pm))
-					INVOKE_ASYNC(src, .proc/popup_admin_pm, recipient, msg)
+					INVOKE_ASYNC(src, PROC_REF(popup_admin_pm), recipient, msg)
 
 			else		//neither are admins
 				to_chat(src, "<span class='danger'>Error: Admin-PM: Non-admin to non-admin PM communication is forbidden.</span>", confidential = TRUE)

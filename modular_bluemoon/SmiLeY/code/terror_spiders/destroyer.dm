@@ -7,7 +7,7 @@
 // -------------: TO FIGHT IT: blast it before it can get away!
 // -------------: SPRITES FROM: IK3I
 
-/mob/living/simple_animal/hostile/poison/terror_spider/destroyer
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/destroyer
 	name = "Destroyer of Terror"
 	desc = "An ominous-looking spider, colored brown like the dirt it crawled out of. Its forearms have sharp digging claws."
 	ai_target_method = TS_DAMAGE_BRUTE
@@ -30,17 +30,17 @@
 	freq_ventcrawl_idle =  1800
 	can_wrap = FALSE
 	web_type = null
-	special_abillity = list(/obj/effect/proc_holder/spell/targeted/emplosion/terror_emp,
-							/obj/effect/proc_holder/spell/aoe_turf/terror_burn)
+	special_abillity = list(/obj/effect/proc_holder/spell/self/terror_emp,
+							/obj/effect/proc_holder/spell/self/explosion/terror_burn)
 	spider_intro_text = "Будучи Разрушителем Ужаса, ваша цель - саботировать станцию. Выбивайте заваренную вентиляцию, ломайте канистры с опасными газами, уничтожайте АПЦ и любое оборудование, до которого доберётесь. Помните, вы - не боевой паук, хоть вы и можете справиться с небольшой угрозой, убийства это не ваша забота!"
 	var/datum/action/innate/terrorspider/ventsmash/ventsmash_action
 
-/mob/living/simple_animal/hostile/poison/terror_spider/destroyer/New()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/destroyer/New()
 	..()
 	ventsmash_action = new()
 	ventsmash_action.Grant(src)
 
-/mob/living/simple_animal/hostile/poison/terror_spider/destroyer/death(gibbed)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/destroyer/death(gibbed)
 	if(can_die())
 		if(!gibbed)
 			empulse(src.loc, 6, 3, 0)

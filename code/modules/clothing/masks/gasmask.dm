@@ -44,7 +44,7 @@
 	name = "Glass Gas Mask"
 	desc = "A face-covering mask that can be connected to an air supply. This one doesn't obscure your face however." //More accurate
 	icon_state = "gas_clear"
-	flags_inv = HIDEEYES
+	flags_inv = 0
 	flavor_adjust = FALSE
 
 /obj/item/clothing/mask/gas/glass/alt
@@ -68,6 +68,7 @@
 	visor_flags_cover = MASKCOVERSEYES
 	resistance_flags = FIRE_PROOF
 	flavor_adjust = FALSE
+	can_toggle = TRUE
 
 /obj/item/clothing/mask/gas/welding/attack_self(mob/user)
 	weldingvisortoggle(user)
@@ -100,6 +101,23 @@
 	strip_delay = 60
 	item_state = "syndicate_gasmask"
 	w_class = WEIGHT_CLASS_SMALL
+
+/obj/item/clothing/mask/gas/syndicate/blackcool_version
+	name = "CFIS Gasmask"
+	desc = "Tactical gasmask for Catcrin Foreign Intelligence Service operatives. The compact mask has dark glass and small filters in the front part of the mask with breath venting."
+	icon_state = "syndicate_blackcool"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/mask/gas/syndicate/yekitezh
+	name = "M1062"
+	desc = "Standard military issue gas mask, it replaced the previous M55 gas mask series in Yekitezh Army."
+	icon_state = "m1062"
+	mutantrace_variation = STYLE_MUZZLE
+/obj/item/clothing/mask/gas/syndicate/yekitezh_red
+	name = "M1062-B"
+	desc = "Standard military gas mask of the Yekitezh Army, except this one optimized with glowing red lenses and black coverage for 'tactical' issues."
+	icon_state = "m1062b"
+	mutantrace_variation = STYLE_MUZZLE
 
 /obj/item/clothing/mask/gas/clown_hat
 	name = "Clown Wig and Mask"
@@ -141,7 +159,7 @@
 		user.update_inv_wear_mask()
 		for(var/X in actions)
 			var/datum/action/A = X
-			A.UpdateButtonIcon()
+			A.UpdateButtons()
 		to_chat(user, "<span class='notice'>Your Clown Mask has now morphed into [choice], all praise the Honkmother!</span>")
 		return TRUE
 
@@ -207,7 +225,7 @@
 		user.update_inv_wear_mask()
 		for(var/X in actions)
 			var/datum/action/A = X
-			A.UpdateButtonIcon()
+			A.UpdateButtons()
 		to_chat(user, "<span class='notice'>Your Mime Mask has now morphed into [choice]!</span>")
 		return TRUE
 
@@ -300,7 +318,7 @@
 		user.update_inv_wear_mask()
 		for(var/X in actions)
 			var/datum/action/A = X
-			A.UpdateButtonIcon()
+			A.UpdateButtons()
 		to_chat(M, "The Tiki Mask has now changed into the [choice] Mask!")
 		return TRUE
 
@@ -325,3 +343,15 @@
 	flags_inv = HIDEFACIALHAIR
 	w_class = WEIGHT_CLASS_NORMAL
 	item_state = "driscoll_mask"
+
+/obj/item/clothing/mask/gas/syndicate/blackcool_version
+	name = "CFIS Gasmask"
+	desc = "Tactical gasmask for Catcrin Foreign Intelligence Service operatives. The compact mask has dark glass and small filters in the front part of the mask with breath venting."
+	icon_state = "syndicate_blackcool"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/mask/gas/syndicate/cool_version/mihana_mask
+	name = "Andromeda Mask"
+	desc = "A close-fitting tactical mask that can be connected to an air supply."
+	icon_state = "mihana_mask"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

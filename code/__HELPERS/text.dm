@@ -23,11 +23,11 @@
 //Simply removes < and > and limits the length of the message
 /proc/strip_html_simple(t,limit=MAX_MESSAGE_LEN)
 	var/list/strip_chars = list("<",">")
-	t = copytext_char(t,1,limit)
+	t = copytext(t,1,limit)
 	for(var/char in strip_chars)
 		var/index = findtext(t, char)
 		while(index)
-			t = copytext_char(t, 1, index) + copytext_char(t, index+1)
+			t = copytext(t, 1, index) + copytext(t, index+1)
 			index = findtext(t, char)
 	return t
 
@@ -245,15 +245,15 @@
 /proc/text_in_list(haystack, list/needle_list, start=1, end=0)
 	for(var/needle in needle_list)
 		if(findtext(haystack, needle, start, end))
-			return 1
-	return 0
+			return TRUE
+	return FALSE
 
 //Like above, but case sensitive
 /proc/text_in_list_case(haystack, list/needle_list, start=1, end=0)
 	for(var/needle in needle_list)
 		if(findtextEx(haystack, needle, start, end))
-			return 1
-	return 0
+			return TRUE
+	return FALSE
 
 //Adds 'char' ahead of 'text' until there are 'count' characters total
 /proc/add_leading(text, count, char = " ")
@@ -335,7 +335,7 @@
 			else if(b == replace) //if B is the replacement char
 				newtext = copytext(newtext, 1, newtext_it) + a + copytext(newtext, newtext_it + length(newtext[newtext_it]))
 			else //The lists disagree, Uh-oh!
-				return 0
+				return FALSE
 		text_it += length(a)
 		comp_it += length(b)
 		newtext_it += length(newtext[newtext_it])
@@ -345,7 +345,7 @@
 //This proc returns the number of chars of the string that is the character
 //This is used for detective work to determine fingerprint completion.
 	if(!text || !character)
-		return 0
+		return FALSE
 	var/count = 0
 	var/lentext = length(text)
 	var/a = ""
@@ -437,7 +437,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 		. = findtextEx(haystack, char, start, end)
 		if(.)
 			return
-	return 0
+	return FALSE
 
 /proc/parsemarkdown_basic_step1(t, limited=FALSE)
 	if(length(t) <= 0)
@@ -863,6 +863,9 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 		corrupted_text += pick(corruption_options)
 	return corrupted_text
 
+/proc/format_text(text)
+	return replacetext(replacetext(text,"\proper ",""),"\improper ","")
+
 /// Removes all non-alphanumerics from the text, keep in mind this can lead to id conflicts
 /proc/sanitize_css_class_name(name)
 	var/static/regex/regex = new(@"[^a-zA-Z0-9]","g")
@@ -1143,3 +1146,9 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 	for(var/s in GLOB.rus_unicode_conversion_hex)
 		text = replacetext(text, "\\u[GLOB.rus_unicode_conversion_hex[s]]", s)
 	return json_decode(text)
+
+//Adds 'u' number of zeros ahead of the text 't'
+/proc/add_zero(t, u)
+	while(length(t) < u)
+		t = "0[t]"
+	return t

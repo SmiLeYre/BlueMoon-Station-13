@@ -46,6 +46,9 @@
 	src.icon_wielded = icon_wielded
 
 // Inherit the new values passed to the component
+#define ISWIELDED(O) (SEND_SIGNAL(O, COMSIG_ITEM_CHECK_WIELDED) & COMPONENT_IS_WIELDED)
+
+// Inherit the new values passed to the component
 /datum/component/two_handed/InheritComponent(datum/component/two_handed/new_comp, original, require_twohands, wieldsound, unwieldsound, \
 											force_multiplier, force_wielded, force_unwielded, icon_wielded)
 	if(!original)
@@ -69,13 +72,14 @@
 
 // register signals withthe parent item
 /datum/component/two_handed/RegisterWithParent()
-	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, .proc/on_equip)
-	RegisterSignal(parent, COMSIG_ITEM_DROPPED, .proc/on_drop)
-	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, .proc/on_attack_self)
-	RegisterSignal(parent, COMSIG_ITEM_ATTACK, .proc/on_attack)
-	RegisterSignal(parent, COMSIG_ATOM_UPDATE_ICON, .proc/on_update_icon)
-	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, .proc/on_moved)
-	RegisterSignal(parent, COMSIG_ITEM_SHARPEN_ACT, .proc/on_sharpen)
+	RegisterSignal(parent, COMSIG_ITEM_EQUIPPED, PROC_REF(on_equip))
+	RegisterSignal(parent, COMSIG_ITEM_DROPPED, PROC_REF(on_drop))
+	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(on_attack_self))
+	RegisterSignal(parent, COMSIG_ITEM_ATTACK, PROC_REF(on_attack))
+	RegisterSignal(parent, COMSIG_ATOM_UPDATE_ICON, PROC_REF(on_update_icon))
+	RegisterSignal(parent, COMSIG_MOVABLE_MOVED, PROC_REF(on_moved))
+	RegisterSignal(parent, COMSIG_ITEM_SHARPEN_ACT, PROC_REF(on_sharpen))
+	RegisterSignal(parent, COMSIG_ITEM_CHECK_WIELDED, PROC_REF(get_wielded))
 
 // Remove all siginals registered to the parent item
 /datum/component/two_handed/UnregisterFromParent()
@@ -85,7 +89,8 @@
 								COMSIG_ITEM_ATTACK,
 								COMSIG_ATOM_UPDATE_ICON,
 								COMSIG_MOVABLE_MOVED,
-								COMSIG_ITEM_SHARPEN_ACT))
+								COMSIG_ITEM_SHARPEN_ACT,
+								COMSIG_ITEM_CHECK_WIELDED))
 
 /// Triggered on equip of the item containing the component
 /datum/component/two_handed/proc/on_equip(datum/source, mob/user, slot)
@@ -141,7 +146,7 @@
 	if(SEND_SIGNAL(parent, COMSIG_TWOHANDED_WIELD, user) & COMPONENT_TWOHANDED_BLOCK_WIELD)
 		return // blocked wield from item
 	wielded = TRUE
-	RegisterSignal(user, COMSIG_MOB_SWAP_HANDS, .proc/on_swap_hands)
+	RegisterSignal(user, COMSIG_MOB_SWAP_HANDS, PROC_REF(on_swap_hands))
 
 	// update item stats and name
 	var/obj/item/parent_item = parent
@@ -168,7 +173,7 @@
 	offhand_item.name = "[parent_item.name] - offhand"
 	offhand_item.desc = "Your second grip on [parent_item]."
 	offhand_item.wielded = TRUE
-	RegisterSignal(offhand_item, COMSIG_ITEM_DROPPED, .proc/on_drop)
+	RegisterSignal(offhand_item, COMSIG_ITEM_DROPPED, PROC_REF(on_drop))
 	user.put_in_inactive_hand(offhand_item)
 
 /**
@@ -291,6 +296,15 @@
 	sharpened_increase = min(amount, (max_amount - wielded_val))
 	return COMPONENT_BLOCK_SHARPEN_APPLIED
 
+/datum/component/two_handed/proc/get_wielded(obj/item/source)
+	SIGNAL_HANDLER
+
+	if(wielded)
+		return COMPONENT_IS_WIELDED
+	else
+		return 0
+
+
 /**
  * The offhand dummy item for two handed items
  *
@@ -299,7 +313,7 @@
 	name = "offhand"
 	icon_state = "offhand"
 	w_class = WEIGHT_CLASS_HUGE
-	item_flags = ABSTRACT
+	item_flags = ABSTRACT | DROPDEL //BLUEMOON CHANGE взрыв мог выбить двуручник из рук и удалить его, а offhand оставался
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
 	var/wielded = FALSE // Off Hand tracking of wielded status
 

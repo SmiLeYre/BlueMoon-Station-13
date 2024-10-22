@@ -36,7 +36,7 @@
 /obj/structure/chair/bronze{
 	dir = 4
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "eS" = (
 /obj/structure/cable{
@@ -95,7 +95,7 @@
 /obj/structure/chair/comfy/black{
 	dir = 4
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "no" = (
 /obj/structure/cable{
@@ -148,7 +148,7 @@
 /obj/structure/chair/comfy/black{
 	dir = 8
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "zq" = (
 /obj/structure/table/reinforced,
@@ -252,7 +252,7 @@
 /obj/machinery/computer/arcade/orion_trail{
 	dir = 4
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "Ma" = (
 /obj/structure/table/reinforced,
@@ -263,11 +263,11 @@
 /obj/machinery/computer/arcade/battle{
 	dir = 4
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "Nl" = (
 /obj/structure/table/wood/fancy/black,
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "Oi" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -317,7 +317,7 @@
 "Ss" = (
 /obj/machinery/telecomms/relay/preset/station,
 /obj/item/multitool,
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "Tl" = (
 /obj/machinery/door/airlock/survival_pod,
@@ -377,7 +377,7 @@
 /turf/open/floor/pod/dark,
 /area/survivalpod/nonpowered)
 "WU" = (
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 "XT" = (
 /obj/item/book/manual/chef_recipes,
@@ -395,7 +395,7 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/festive/wooden/wooden2,
+/turf/open/floor/wood,
 /area/survivalpod/nonpowered)
 
 (1,1,1) = {"

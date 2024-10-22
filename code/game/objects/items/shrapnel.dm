@@ -40,6 +40,7 @@
 	ricochet_incidence_leeway = 60
 	sharpness = SHARP_EDGED
 	wound_bonus = 40
+	hit_prone_targets = TRUE // BLUEMOON ADD START - гранаты со шрапнелью ранят даже лежачих (чтобы их применение вообще имело смысл при сомнительном уроне)
 
 /obj/item/projectile/bullet/shrapnel/mega
 	name = "flying shrapnel hunk"

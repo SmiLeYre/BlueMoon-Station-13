@@ -18,7 +18,7 @@
 
 /obj/machinery/computer/arcade/tetris/Topic(href, href_list)
 	if(..())
-		return 1
+		return TRUE
 	else
 		usr.set_machine(src)
 		if(href_list["tetrisScore"])
@@ -89,7 +89,7 @@
 		return
 	add_fingerprint(user)
 
-	if(stat & (BROKEN|NOPOWER))
+	if(machine_stat & (BROKEN|NOPOWER))
 		return
 
 	if(user.client)

@@ -1,5 +1,7 @@
+//BLUEMOON DELETE из-за нужды в переводе это всё в основе проке
 // Add incompatible quirks.
 // Inspired from LeDrascol's code. Thank you.
+/*
 /datum/controller/subsystem/processing/quirks/Initialize(timeofday)
 	. = ..()
 
@@ -13,4 +15,13 @@
 		// BLOCKED: Thematic, mechanic, game lore.
 		// Bloodsuckers cannot interact with Hallowed users.
 		list("Hallowed","Bloodsucker Fledgling"),
+
+		// BLOCKED: Thematic, mechanic.
+		// Explains itself∼!
+		list("Buns of Steel","Buns of Thunder"),
+
+		// BLOCKED: Mechanic
+		// Bloodsuckers have NO_THIRST trait.
+		list("Thirsty","Bloodsucker Fledgling"),
 		))
+*/

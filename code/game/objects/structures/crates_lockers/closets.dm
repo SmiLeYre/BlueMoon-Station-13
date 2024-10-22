@@ -8,8 +8,21 @@
 	integrity_failure = 0.25
 	armor = list(MELEE = 20, BULLET = 10, LASER = 10, ENERGY = 0, BOMB = 10, BIO = 0, RAD = 0, FIRE = 70, ACID = 60)
 
+	/// The overlay for the closet's door
+	var/obj/effect/overlay/closet_door/door_obj
+	/// Whether or not this door is being animated
+	var/is_animating_door = FALSE
+	/// Vertical squish of the door
+	var/door_anim_squish = 0.12
+	/// The maximum angle the door will be drawn at
+	var/door_anim_angle = 136
+	/// X position of the closet door hinge
+	var/door_hinge_x = -6.5
+	/// Amount of time it takes for the door animation to play
+	var/door_anim_time = 1.5 // set to 0 to make the door not animate at all
+
 	var/icon_door = null
-	var/icon_door_override = FALSE //override to have open overlay use icon different to its base's
+	var/has_door_icon = TRUE // Set to false to skip trying to draw a door icon.
 	var/secure = FALSE //secure locker or not, also used if overriding a non-secure locker with a secure door overlay to add fancy lights
 	var/opened = FALSE
 	var/welded = FALSE
@@ -17,6 +30,12 @@
 	var/large = TRUE
 	var/wall_mounted = 0 //never solid (You can always pass over it)
 	var/breakout_time = 1200
+
+	/// How many pixels the closet can shift on the x axis when shaking
+	var/x_shake_pixel_shift = 2
+	/// How many pixels the closet can shift on the y axes when shaking
+	var/y_shake_pixel_shift = 1
+
 	var/message_cooldown
 	var/can_weld_shut = TRUE
 	var/horizontal = FALSE
@@ -27,8 +46,8 @@
 	var/mob_storage_capacity = 3 // how many human sized mob/living can fit together inside a closet.
 	var/storage_capacity = 30 //This is so that someone can't pack hundreds of items in a locker/crate then open it in a populated area to crash clients.
 	var/cutting_tool = TOOL_WELDER
-	var/open_sound = 'sound/machines/click.ogg'
-	var/close_sound = 'sound/machines/click.ogg'
+	var/open_sound = 'sound/machines/closet_open.ogg'
+	var/close_sound = 'sound/machines/closet_close.ogg'
 	var/material_drop = /obj/item/stack/sheet/metal
 	var/material_drop_amount = 2
 	var/delivery_icon = "deliverycloset" //which icon to use when packagewrapped. null to be unwrappable.
@@ -42,7 +61,7 @@
 
 /obj/structure/closet/Initialize(mapload)
 	if(mapload && !opened) // if closed, any item at the crate's loc is put in the contents
-		addtimer(CALLBACK(src, .proc/take_contents), 0)
+		addtimer(CALLBACK(src, PROC_REF(take_contents)), 0)
 	. = ..()
 	update_icon()
 	if(should_populate_contents)
@@ -57,6 +76,7 @@
 
 /obj/structure/closet/Destroy()
 	dump_contents(override = FALSE)
+	QDEL_NULL(door_obj)
 	return ..()
 
 /obj/structure/closet/update_icon()
@@ -72,23 +92,75 @@
 
 /obj/structure/closet/proc/closet_update_overlays(list/new_overlays)
 	. = new_overlays
-	if(opened)
-		. += "[icon_door_override ? icon_door : icon_state]_open"
+	if(!is_animating_door)
+		if(opened)
+			. += "[icon_state]_open"
+			return
+
+		if(has_door_icon)
+			. += "[icon_door || icon_state]_door"
+
+		if(welded)
+			. += icon_welded
+
+		if(!secure)
+			return
+		if(broken)
+			. += "off"
+			. += "sparking"
+		//Overlay is similar enough for both that we can use the same mask for both
+		. += emissive_appearance(icon, "locked", alpha = src.alpha)
+		. += locked ? "locked" : "unlocked"
+
+/// Animates the closet door opening and closing
+/obj/structure/closet/proc/animate_door(closing = FALSE)
+	if(!door_anim_time)
 		return
+	if(!door_obj)
+		door_obj = new
+	var/default_door_icon = "[icon_door || icon_state]_door"
+	vis_contents += door_obj
+	door_obj.icon = icon
+	door_obj.icon_state = default_door_icon
+	is_animating_door = TRUE
+	var/num_steps = door_anim_time / world.tick_lag
 
-	. += "[icon_door || icon_state]_door"
-	if(welded)
-		. += icon_welded
+	for(var/step in 0 to num_steps)
+		var/angle = door_anim_angle * (closing ? 1 - (step/num_steps) : (step/num_steps))
+		var/matrix/door_transform = get_door_transform(angle)
+		var/door_state
+		var/door_layer
 
-	if(!secure)
-		return
-	if(broken)
-		. += "off"
-		. += "sparking"
-	//Overlay is similar enough for both that we can use the same mask for both
-	. += emissive_appearance(icon, "locked", alpha = src.alpha)
-	. += locked ? "locked" : "unlocked"
+		if (angle >= 90)
+			door_state = "[icon_state]_back"
+			door_layer = FLOAT_LAYER
+		else
+			door_state = default_door_icon
+			door_layer = ABOVE_MOB_LAYER
 
+		if(step == 0)
+			door_obj.transform = door_transform
+			door_obj.icon_state = door_state
+			door_obj.layer = door_layer
+		else if(step == 1)
+			animate(door_obj, transform = door_transform, icon_state = door_state, layer = door_layer, time = world.tick_lag, flags = ANIMATION_END_NOW)
+		else
+			animate(transform = door_transform, icon_state = door_state, layer = door_layer, time = world.tick_lag)
+	addtimer(CALLBACK(src, PROC_REF(end_door_animation)), door_anim_time, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_CLIENT_TIME)
+
+/// Ends the door animation and removes the animated overlay
+/obj/structure/closet/proc/end_door_animation()
+	is_animating_door = FALSE
+	vis_contents -= door_obj
+	update_icon()
+
+/// Calculates the matrix to be applied to the animated door overlay
+/obj/structure/closet/proc/get_door_transform(angle)
+	var/matrix/door_matrix = matrix()
+	door_matrix.Translate(-door_hinge_x, 0)
+	door_matrix.Multiply(matrix(cos(angle), 0, 0, -sin(angle) * door_anim_squish, 1, 0))
+	door_matrix.Translate(door_hinge_x, 0)
+	return door_matrix
 
 /obj/structure/closet/examine(mob/user)
 	. = ..()
@@ -108,7 +180,7 @@
 		investigate_log("had its contents examined by [user] as a ghost.", INVESTIGATE_GHOST)
 
 	if(HAS_TRAIT(user, TRAIT_SKITTISH))
-		. += "<span class='notice'>If you bump into [ru_na()] while running, you will jump inside.</span>"
+		. += "<span class='notice'>If you bump into [p_them()] while running, you will jump inside.</span>"
 
 /obj/structure/closet/CanAllowThrough(atom/movable/mover, turf/target)
 	. = ..()
@@ -138,6 +210,14 @@
 			if(user)
 				to_chat(user, "<span class='danger'>There's something too large in [src], preventing it from closing.</span>")
 			return FALSE
+	// BLUEMOON ADD START - крутое ЕРТ кропило против сатанистов
+	for(var/obj/item/aspergillum/ert/holy_thing)
+		if(iscultist(user) || is_servant_of_ratvar(user) || isclockmob(user) || isconstruct(user) || isvampire(user))
+			to_chat(user, span_cultbold("Священная энергия [holy_thing] не позволяет [src] закрыться!"))
+			return FALSE
+		else
+			break
+	// BLUEMOON ADD END
 	return TRUE
 
 /obj/structure/closet/proc/dump_contents(override = TRUE) //Override is for not revealing the locker electronics when you open the locker, for example
@@ -174,6 +254,7 @@
 		density = FALSE
 	climb_time *= 0.5 //it's faster to climb onto an open thing
 	dump_contents()
+	animate_door(FALSE)
 	update_icon()
 	after_open(user, force)
 	return TRUE
@@ -244,6 +325,7 @@
 	playsound(loc, close_sound, 15, TRUE, -3)
 	opened = FALSE
 	density = TRUE
+	animate_door(TRUE)
 	update_icon()
 	after_close(user)
 	return TRUE
@@ -273,7 +355,7 @@
 	if(user in src)
 		return
 	if(src.tool_interact(W,user))
-		return 1 // No afterattack
+		return TRUE // No afterattack
 	else
 		return ..()
 
@@ -380,12 +462,13 @@
 	else if(!isitem(O))
 		return
 	var/turf/T = get_turf(src)
+	var/list/targets = list(O, src)
 	add_fingerprint(user)
 	user.visible_message("<span class='warning'>[user] [actuallyismob ? "tries to ":""]stuff [O] into [src].</span>", \
 		"<span class='warning'>You [actuallyismob ? "try to ":""]stuff [O] into [src].</span>", \
 		"<span class='hear'>You hear clanging.</span>")
 	if(actuallyismob)
-		if(do_after(user, 4 SECONDS, O))
+		if(do_after_mob(user, targets, 40))
 			user.visible_message("<span class='notice'>[user] stuffs [O] into [src].</span>", \
 				"<span class='notice'>You stuff [O] into [src].</span>", \
 				"<span class='hear'>You hear a loud metal bang.</span>")
@@ -399,7 +482,7 @@
 				close()
 	else
 		O.forceMove(T)
-	return 1
+	return TRUE
 
 /obj/structure/closet/relaymove(mob/living/user, direction)
 	if(user.stat || !isturf(loc))
@@ -453,40 +536,65 @@
 	return TRUE
 
 /obj/structure/closet/container_resist(mob/living/user)
+	if(isstructure(loc))
+		relay_container_resist(user, loc)
 	if(opened)
 		return
 	if(ismovable(loc))
-		// user.changeNext_move(CLICK_CD_BREAKOUT)
-		// user.last_special = world.time + CLICK_CD_BREAKOUT
+		user.changeNext_move(CLICK_CD_BREAKOUT)
+		user.last_special = world.time + CLICK_CD_BREAKOUT
 		var/atom/movable/AM = loc
 		AM.relay_container_resist(user, src)
 		return
 	if(!welded && !locked)
 		open()
 		return
-
 	//okay, so the closet is either welded or locked... resist!!!
-	// user.changeNext_move(CLICK_CD_BREAKOUT)
-	// user.last_special = world.time + CLICK_CD_BREAKOUT
-	user.visible_message("<span class='warning'>[src] begins to shake violently!</span>", \
-		"<span class='notice'>You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)</span>", \
-		"<span class='hear'>You hear banging from [src].</span>")
-	if(do_after(user, breakout_time, src, IGNORE_TARGET_LOC_CHANGE|IGNORE_HELD_ITEM))
+	user.changeNext_move(CLICK_CD_BREAKOUT)
+	user.last_special = world.time + CLICK_CD_BREAKOUT
+	user.visible_message(span_warning("[src] begins to shake violently!"), \
+		span_notice("You lean on the back of [src] and start pushing the door open... (this will take about [DisplayTimeText(breakout_time)].)"), \
+		span_hear("You hear banging from [src]."))
+
+	addtimer(CALLBACK(src, PROC_REF(check_if_shake)), 1 SECONDS)
+
+	if(do_after(user,(breakout_time), target = src))
 		if(!user || user.stat != CONSCIOUS || user.loc != src || opened || (!locked && !welded) )
 			return
 		//we check after a while whether there is a point of resisting anymore and whether the user is capable of resisting
-		user.visible_message("<span class='danger'>[user] successfully broke out of [src]!</span>",
-							"<span class='notice'>You successfully break out of [src]!</span>")
+		user.visible_message(span_danger("[user] successfully broke out of [src]!"),
+							span_notice("You successfully break out of [src]!"))
 		bust_open()
 	else
 		if(user.loc == src) //so we don't get the message if we resisted multiple times and succeeded.
-			to_chat(user, "<span class='warning'>You fail to break out of [src]!</span>")
+			to_chat(user, span_warning("You fail to break out of [src]!"))
 
 /obj/structure/closet/proc/bust_open()
 	welded = FALSE //applies to all lockers
 	locked = FALSE //applies to critter crates and secure lockers only
 	broken = TRUE //applies to secure lockers only
 	open()
+
+/// Check if someone is still resisting inside, and choose to either keep shaking or stop shaking the closet
+/obj/structure/closet/proc/check_if_shake()
+	// Assuming we decide to shake again, how long until we check to shake again
+	var/next_check_time = 1 SECONDS
+
+	// How long we shake between different calls of Shake(), so that it starts shaking and stops, instead of a steady shake
+	var/shake_duration =  0.3 SECONDS
+
+	for(var/mob/living/mob in contents)
+		if(DOING_INTERACTION_WITH_TARGET(mob, src))
+			// Shake and queue another check_if_shake
+			Shake(x_shake_pixel_shift, y_shake_pixel_shift, shake_duration)
+			addtimer(CALLBACK(src, PROC_REF(check_if_shake)), next_check_time)
+			return TRUE
+
+	// If we reach here, nobody is resisting, so dont shake
+	return FALSE
+
+/obj/structure/closet/relay_container_resist(mob/living/user, obj/container)
+	container.container_resist()
 
 /obj/structure/closet/AltClick(mob/user)
 	..()
@@ -676,7 +784,7 @@
 		return TRUE
 	if(allowed(user))
 		return TRUE
-	to_chat(user, "<span class='notice'>Доступ запрещён.</span>")
+	to_chat(user, "<span class='notice'>Access denied.</span>")
 
 /obj/structure/closet/on_object_saved(depth)
 	if(depth >= 10)

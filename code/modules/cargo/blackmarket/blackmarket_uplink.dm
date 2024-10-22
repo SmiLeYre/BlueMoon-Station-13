@@ -53,7 +53,7 @@
 /obj/item/blackmarket_uplink/ui_interact(mob/user, ui_key = "BlackMarketUplink", datum/tgui/ui = null, force_open = FALSE, datum/tgui/master_ui = null, datum/ui_state/state = GLOB.default_state)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if(!ui)
-		ui = new(user, src, ui_key, name, ui_x, ui_y, master_ui, state)
+		ui = new(user, src, ui_key, name, ui_x, ui_y)
 		ui.open()
 
 /obj/item/blackmarket_uplink/ui_data(mob/user)
@@ -72,13 +72,22 @@
 	if(viewing_category && market)
 		if(market.available_items[viewing_category])
 			for(var/datum/blackmarket_item/I in market.available_items[viewing_category])
-				data["items"] += list(list(
-					"id" = I.type,
-					"name" = I.name,
-					"cost" = I.price,
-					"amount" = I.stock,
-					"desc" = I.desc || I.name
-				))
+				if(user.mind.has_antag_datum(/datum/antagonist/rev/head))
+					data["items"] += list(list(
+						"id" = I.type,
+						"name" = I.name,
+						"cost" = I.price/100, // скидка хедревам
+						"amount" = I.stock,
+						"desc" = I.desc || I.name
+					))
+				else
+					data["items"] += list(list(
+						"id" = I.type,
+						"name" = I.name,
+						"cost" = I.price,
+						"amount" = I.stock,
+						"desc" = I.desc || I.name
+					))
 	return data
 
 /obj/item/blackmarket_uplink/ui_static_data(mob/user)

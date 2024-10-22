@@ -1,3 +1,7 @@
+/mob/living/simple_animal/hostile/retaliate
+	name = "НЕ БЕЙ МЕНЯ"
+	//var/list/enemies = list()
+
 /mob/living/simple_animal/hostile/retaliate/Found(atom/A)
 	if(isliving(A))
 		var/mob/living/L = A
@@ -17,7 +21,7 @@
 	see &= enemies // Remove all entries that aren't in enemies
 	return see
 
-/mob/living/simple_animal/hostile/proc/Retaliate()
+/mob/living/simple_animal/hostile/retaliate/proc/Retaliate()
 	var/list/around = view(src, vision_range)
 
 	for(var/atom/movable/A in around)
@@ -36,7 +40,7 @@
 	for(var/mob/living/simple_animal/hostile/retaliate/H in around)
 		if(faction_check_mob(H) && !attack_same && !H.attack_same)
 			H.enemies |= enemies
-	return 0
+	return FALSE
 
 /mob/living/simple_animal/hostile/retaliate/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()

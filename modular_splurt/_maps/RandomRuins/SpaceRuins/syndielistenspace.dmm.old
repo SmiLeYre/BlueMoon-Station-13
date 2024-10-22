@@ -286,7 +286,7 @@
 	dir = 4;
 	dwidth = 6;
 	height = 7;
-	id = "caravansyndicate3_listeningpost";
+shuttle_id = "caravansyndicate3_listeningpost";
 	name = "Syndicate Listening Post";
 	width = 15
 	},
@@ -294,7 +294,7 @@
 	dir = 4;
 	dwidth = 4;
 	height = 5;
-	id = "caravansyndicate1_listeningpost";
+shuttle_id = "caravansyndicate1_listeningpost";
 	name = "Syndicate Listening Post";
 	width = 9
 	},
@@ -593,7 +593,7 @@
 	pixel_y = 24
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/syndielistenspace)
 "yD" = (

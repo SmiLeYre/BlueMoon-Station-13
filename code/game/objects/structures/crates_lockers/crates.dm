@@ -12,6 +12,9 @@
 	climbable = TRUE
 	climb_time = 10 //real fast, because let's be honest stepping into or onto a crate is easy
 	climb_stun = 0 //climbing onto crates isn't hard, guys
+	door_anim_time = 0 // no animation
+	x_shake_pixel_shift = 1
+	y_shake_pixel_shift = 2
 	delivery_icon = "deliverycrate"
 	material_drop = /obj/item/stack/sheet/plasteel
 	material_drop_amount = 5

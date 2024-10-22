@@ -83,7 +83,7 @@
 	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
 	heat_protection = CHEST|GROIN|ARMS
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	armor = list("melee" = 60, "bullet" = 80, "laser" = 80, "energy" = 90, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 50)
+	//armor = list("melee" = 60, "bullet" = 80, "laser" = 80, "energy" = 90, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 50)
 
 /obj/item/clothing/under/centcomdress/vk
 	name = "Virginkiller CentCom Dress Uniform"
@@ -91,14 +91,21 @@
 	icon_state = "ccdressvk"
 
 /obj/item/clothing/under/raccveralls
-	name = "form fitting overalls"
+	name = "Form Fitting Overalls"
 	desc = "A tight form fitting pair of overalls."
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
-	icon_state = "raccveralls"
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
+	icon_state = "raccveralls"
 	item_state = "raccveralls"
 	can_adjust = FALSE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/under/raccveralls/flush_shirt
+	name = "Flushed Shirt"
+	desc = "Flushed Shirt."
+	icon_state = "flushshirt"
+	item_state = "y_suit"
+	body_parts_covered = CHEST|ARMS
 
 /obj/item/clothing/under/officesexy
 	name = "Revealing office uniform"
@@ -153,3 +160,4 @@
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 	togglename = "buttons"
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+

@@ -24,7 +24,7 @@
 	else if(hasprox_receiver == host) //Default case
 		hasprox_receiver = H
 	host = H
-	RegisterSignal(host, COMSIG_MOVABLE_MOVED, .proc/HandleMove)
+	RegisterSignal(host, COMSIG_MOVABLE_MOVED, PROC_REF(HandleMove))
 	last_host_loc = host.loc
 	SetRange(current_range,TRUE)
 
@@ -32,7 +32,7 @@
 	host = null
 	last_host_loc = null
 	hasprox_receiver = null
-	QDEL_LIST(checkers)
+	QDEL_LAZYLIST(checkers)
 	return ..()
 
 /datum/proximity_monitor/proc/HandleMove()
@@ -69,7 +69,7 @@
 			if(old_checkers_len)
 				pc = checkers_local[old_checkers_len]
 				--checkers_local.len
-				QDEL_LIST(checkers_local)
+				QDEL_LAZYLIST(checkers_local)
 			else
 				pc = new(loc_to_use, src)
 
@@ -109,6 +109,7 @@
 		return INITIALIZE_HINT_QDEL
 
 /obj/effect/abstract/proximity_checker/Destroy()
+	LAZYREMOVE(monitor.checkers, src)
 	monitor = null
 	return ..()
 

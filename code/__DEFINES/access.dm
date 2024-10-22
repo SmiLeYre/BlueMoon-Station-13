@@ -90,6 +90,10 @@
 #define ACCESS_SYNDICATE 150//General Syndicate Access. Includes Syndicate mechs and ruins.
 #define ACCESS_SYNDICATE_LEADER 151//Nuke Op Leader Access
 
+	//The InteQ
+#define ACCESS_INTEQ 152//General Syndicate Access. Includes Syndicate mechs and ruins.
+#define ACCESS_INTEQ_LEADER 153//Nuke Op Leader Access
+
 	//Away Missions or Ruins
 	/*For generic away-mission/ruin access. Why would normal crew have access to a long-abandoned derelict
 	or a 2000 year-old temple? */

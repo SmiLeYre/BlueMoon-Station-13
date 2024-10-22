@@ -6,7 +6,7 @@
 	item_state = "brodie"
 	flags_inv = HIDEEARS
 	mob_overlay_icon = 'modular_sand/icons/mob/clothing/head.dmi'
-	mutantrace_variation = STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	flags_cover = null // Doesn't cover eyes.
 
 /obj/item/clothing/head/helmet/brodie/medic

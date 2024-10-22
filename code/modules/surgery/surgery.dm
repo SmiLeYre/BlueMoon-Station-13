@@ -21,6 +21,8 @@
 	var/datum/wound/operated_wound								//The actual wound datum instance we're targeting
 	var/datum/wound/targetable_wound							//The wound type this surgery targets
 
+	var/list/special_surgery_traits = list() // BLUEMOON ADD - наши особые трейты для операции
+
 /datum/surgery/New(surgery_target, surgery_location, surgery_bodypart)
 	..()
 	if(surgery_target)
@@ -80,7 +82,7 @@
 
 	var/turf/T = get_turf(patient)
 	var/obj/structure/table/optable/table = locate(/obj/structure/table/optable, T)
-	if(table?.computer && !(table.computer.stat & (NOPOWER|BROKEN)))
+	if(table?.computer && !(table.computer.machine_stat & (NOPOWER|BROKEN)))
 		advanced_surgeries |= table.computer.advanced_surgeries
 
 	if(istype(tool, /obj/item/surgical_drapes/advanced))
@@ -94,7 +96,7 @@
 
 /datum/surgery/proc/next_step(mob/user, intent)
 	if(step_in_progress)
-		return 1
+		return TRUE
 
 	var/try_to_fail = FALSE
 	if(intent == INTENT_DISARM)
@@ -105,10 +107,10 @@
 		var/obj/item/tool = user.get_active_held_item()
 		if(S.try_op(user, target, user.zone_selected, tool, src, try_to_fail))
 			return TRUE
-		if(iscyborg(user) && user.a_intent != INTENT_HARM) //to save asimov borgs a LOT of heartache
-			return TRUE
 		if(tool && tool.item_flags & SURGICAL_TOOL) //Just because you used the wrong tool it doesn't mean you meant to whack the patient with it
+			/* BLUERMOON REMOVAL START - перенесено в try_op
 			to_chat(user, "<span class='warning'>This step requires a different tool!</span>")
+			/ BLUEMOON REMOVAL END */
 			return TRUE
 
 /datum/surgery/proc/get_surgery_step()
@@ -130,20 +132,144 @@
 	var/propability = 0.5
 	var/turf/T = get_turf(target)
 
-	if(locate(/obj/structure/table/optable, T))
-		propability = 1
+	if(locate(/obj/structure/table/optable/abductor, T))
+		propability += 1
+	else if(locate(/obj/structure/table/optable, T))
+		propability += 0.5
 	else if(locate(/obj/machinery/stasis))
-		propability = 0.9
+		propability += 0.4
 	else if(locate(/obj/structure/table, T))
-		propability = 0.8
+		propability += 0.3
 	else if(locate(/obj/structure/bed, T))
-		propability = 0.7
+		propability += 0.1
 
 	// BLUEMOON ADDITION AHEAD - сверх-большие персонажи ломают собой столы. Поблажка, дабы с ними всё ещё можно было проводить нормально операции
 	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
 		propability = 0.8
-	// BLUEMOON ADDITION END
 
+	// Шансы на операции в зависимости от состояния пациента
+	var/check_for_painkillers = FALSE
+	var/check_for_pain = FALSE
+	var/pain_propability_debuff = 0
+	var/surgeon_requirments_debuff = 0
+	if(ishuman(target))
+		var/mob/living/carbon/human/patient = target
+		if(!HAS_TRAIT(patient, CAN_BE_OPERATED_WITHOUT_PAIN) && !isbloodfledge(patient)) // на некоторых расах операцию можно проводить без дебафов
+
+			var/in_conscious = !(patient.IsSleeping() || patient.stat >= 2 || patient.IsUnconscious()) // убого, при этом, если не провряется что-то из заявленного, были моменты "пробуждения" пациента
+/*
+			if(patient.stat == DEAD && patient.timeofdeath + 50 SECONDS > world.time) // персонаж погиб И это было недавно (нужно для предотвращения убийства-и-немедленной-операции)
+				patient.visible_message(span_warning("[patient] погиб менее минуты назад, тело ещё напряжено от трупного спазма и его намного сложнее оперировать!"), vision_distance = 1)
+				pain_propability_debuff -= 0.5
+*/
+			if(!in_conscious) // без сознания или уже в гост-чате
+				// Нет штрафов
+			else if(patient.IsParalyzed() || patient.IsStun()) // не может совершать сложные движения, но всё ещё минимальная мимика присутствует
+				pain_propability_debuff -= 0.2
+				check_for_painkillers = TRUE
+				check_for_pain = TRUE
+			else if(patient.handcuffed || istype(patient.wear_suit, /obj/item/clothing/suit/straight_jacket)) // в сознании, может двигаться, но скован наручниками или смерительной рубашкой
+				pain_propability_debuff -= 0.4
+				check_for_painkillers = TRUE
+				check_for_pain = TRUE
+			else // пациент в сознании, не скован
+				pain_propability_debuff -= 0.6 // Операция на полу без обезбола - гарантированный провал без химии и другой помощи
+				check_for_painkillers = TRUE
+				check_for_pain = TRUE
+
+			if(check_for_painkillers)
+				if(HAS_TRAIT(patient, TRAIT_BLUEMOON_FEAR_OF_SURGEONS))
+					pain_propability_debuff -= 0.2 // пациент ЕЩЁ СИЛЬНЕЕ дёргается на месте
+					if(prob(20))
+						if(HAS_TRAIT(patient, TRAIT_PAINKILLER))
+							to_chat(patient, span_danger("ОБЕЗБОЛИВАЮЩЕЕ НЕ ПОМОГАЕТ, ЭТО УЖАСНО! ДАЙТЕ МНЕ АНЕСТЕЗИЮ!"))
+						else
+							to_chat(patient, span_danger("ЭТО УЖАСНО! Я НЕ МОГУ ЭТО ВЫНЕСТИ! ДАЙТЕ МНЕ АНЕСТЕЗИЮ!"))
+				else if(IS_IN_STASIS(patient) || HAS_TRAIT(patient, TRAIT_PAINKILLER))
+					pain_propability_debuff = 0
+					check_for_pain = FALSE
+					SEND_SIGNAL(patient, COMSIG_ADD_MOOD_EVENT, "surgery_pain", /datum/mood_event/surgery_pain/painkiller)
+					if(prob(5))
+						to_chat(patient, span_warning(pick(
+							"Меня оперируют без анестезии... Не по себе от этого.", "А что чувствует доктор, когда режет меня?", \
+							"Что если доктор сделает что-то не так? Я что-то почувствую?", "Боюсь подумать, что это было бы без наркоза.", \
+							"Я вообще ничего не чувствую там, где меня оперируют...", "У меня онемение, я ничего не чувствую в месте операции!")))
+				else if(HAS_TRAIT(patient, TRAIT_BLUEMOON_HIGH_PAIN_THRESHOLD))
+					pain_propability_debuff = max(0, min(pain_propability_debuff + 0.2, 0))
+					check_for_pain = FALSE
+					switch(rand(1,4))
+						if(1)
+							patient.blur_eyes(5)
+						if(2)
+							patient.Dizzy(15)
+						if(3)
+							patient.stuttering = max(patient.stuttering, 10)
+						if(4)
+							patient.Jitter(20) // 4 секунды всего
+					if(patient.mind?.active) // игрок в игре
+						if(prob(15))
+							patient.emote("me", EMOTE_VISIBLE, pick(list(\
+							"сжимает зубы от боли.", "жмурится и рычит, сжимая зубы.", \
+							"жмурится, пока по щеке стекает слеза от боли.", "что-то бубнит про себя, пробуя отвлечься от ощущений при операции.", \
+							"коротко мычит, терпя боль", "цепляется за поверхность рядом, терпя боль.")))
+						if(prob(10))
+							patient.say(pick("Мнгх...", "Ххх...", "Пхх...", "Хррр...", "Нгхх..."))
+					SEND_SIGNAL(patient, COMSIG_ADD_MOOD_EVENT, "surgery_pain", /datum/mood_event/surgery_pain/lesser)
+				else if(patient.drunkenness > 20)
+					pain_propability_debuff += 0.2
+					patient.visible_message(span_notice("[patient] явно в опьянении. Это помогает облегчить боль."), vision_distance = 1)
+
+			// специальные проверки для некоторых операций
+			if(special_surgery_traits.len)
+				if((OPERATION_NEED_FULL_ANESTHETIC in special_surgery_traits) && in_conscious) // пациент в сознания и операция это требует
+					surgeon_requirments_debuff -= 0.5
+					if(prob(30))
+						if(IS_IN_STASIS(patient) || HAS_TRAIT(patient, TRAIT_PAINKILLER))
+							patient.visible_message(span_warning("[patient] под обезболивающим. Это помогает облегчить операцию, но он всё ещё слегка двигается, что затрудняет операцию."), span_notice("Я под обезболивающим... Но кажется, всё равно слегка двигаюсь и мешаю этим врачу при операции."), vision_distance = 1)
+
+				if(OPERATION_MUST_BE_PERFORMED_AWAKE in special_surgery_traits && !in_conscious) // пациент без сознании и операция это требует
+					surgeon_requirments_debuff -= 0.5
+
+			// операция наживую, очень больно
+			if(check_for_pain && in_conscious)
+				// сердечный приступ от боли
+				if(prob(1)) // С учётом кучи проваленных попыток, это серьезный шанс
+					if(!patient.undergoing_cardiac_arrest())
+						patient.visible_message(span_danger("[patient] несколько раз дёргается перед тем, как замереть в скрюченной позе... [patient.ru_who(TRUE)] не дышит!"), span_big_warning("СЕРДЦЕ! БОЛЬ В ГРУДИ..."))
+						patient.set_heartattack(TRUE)
+						patient.set_dizziness(0) // перестаём дрожать
+
+				patient.Jitter(50)
+				patient.Dizzy(100)
+				patient.stuttering = max(patient.stuttering, 20)
+				patient.adjustStaminaLoss(40)
+				patient.blur_eyes(20)
+				if(HAS_TRAIT(patient, TRAIT_BLUEMOON_FEAR_OF_SURGEONS))
+					SEND_SIGNAL(patient, COMSIG_ADD_MOOD_EVENT, "surgery_pain", /datum/mood_event/surgery_pain/trait)
+				else
+					SEND_SIGNAL(patient, COMSIG_ADD_MOOD_EVENT, "surgery_pain", /datum/mood_event/surgery_pain)
+
+				if(patient.mind?.active) // если игрока нет в игре и проигрываются кастомные эмоуты, то игра выдаёт SQL ошибки
+					if(prob(50))
+						to_chat(patient, span_big_warning(pick(\
+							"ГОСПОДИ, КАК ЖЕ БОЛЬНО!", "ЗВЁЗДЫ, МЕНЯ РЕЖУТ НАЖИВУЮ!", "УБЕЙТЕ МЕНЯ, Я НЕ ВЫНЕСУ!", "Я ХОЧУ ЖИТЬ! ПОМОГИТЕ!", "УБЕРИТЕ ИХ ОТ МЕНЯ!", \
+							"УБЛЮДОК! ТВАРЬ! КАК ЖЕ БОЛЬНО!", "АААГХ!", "АААААА!", "ПОМОГИТЕ, Я НЕ МОГУ!", "СПАСИТЕ, МЕНЯ РЕЖУТ!", "АААААААААААА!")))
+					switch(rand(1,10))
+						if(1 to 8)
+							if(prob(50))
+								patient.say(pick("AAA!!", "АААХ!!", "ААГХ!!"))
+								patient.emote("me", EMOTE_VISIBLE, pick(list(\
+									"елозит и кричит от боли!", "выгибается и кричит от агонии!", "трясётся и кричит от боли!", "дрожит и вскрикивает от боли!", \
+									"кричит от боли!", "елозит на месте и кричит от боли!", "жмурится и вопит в агонии!")))
+							else
+								patient.emote(pick("realagony", "scream"))
+						if(9 to 10)
+							patient.emote("cry")
+				else if(prob(40))
+					patient.emote(pick("realagony", "scream", "cry"))
+
+	propability += pain_propability_debuff + surgeon_requirments_debuff
+	// BLUEMOON ADDITION END
 	return propability + success_multiplier
 
 /datum/surgery/advanced

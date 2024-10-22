@@ -49,6 +49,7 @@ em						{font-style: normal;	font-weight: bold;}
 .sciradio				{color: #993399;}
 .comradio				{color: #948f02;}
 .secradio				{color: #a30000;}
+.lawradio				{ color: #ff69d7;}
 .medradio				{color: #337296;}
 .engradio				{color: #fb5613;}
 .suppradio				{color: #a8732b;}
@@ -102,6 +103,7 @@ h1.alert, h2.alert		{color: #000000;}
 .userlove				{color: #FF1493;	font-style: italic; font-weight: bold;	text-shadow: 0 0 6px #ff6dbc;}
 .love					{color: #ff006a;	font-style: italic;	text-shadow: 0 0 6px #ff6d6d;}
 .lewd					{color: #800080;}
+.synth 					{color: #006afe;	font-style: italic; font-weight: bold; text-shadow: 0 0 3px #006eff;}
 .shadowling				{color: #3b2769;}
 .cult					{color: #960000;}
 .cultlarge				{color: #960000;	font-weight: bold;	font-size: 3;}

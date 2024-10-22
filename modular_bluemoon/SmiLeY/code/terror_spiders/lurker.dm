@@ -8,7 +8,7 @@
 // -------------: TO FIGHT IT: shoot it through a window, or make it regret ambushing you
 // -------------: SPRITES FROM: FoS, https://www.paradisestation.org/forum/profile/335-fos
 
-/mob/living/simple_animal/hostile/poison/terror_spider/lurker
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/lurker
 	name = "Lurker of Terror"
 	desc = "An ominous-looking gray spider. It seems to blend into webs, making it hard to see."
 	ai_target_method = TS_DAMAGE_BRUTE
@@ -25,12 +25,12 @@
 	stat_attack = UNCONSCIOUS // ensures they will target people in crit, too!
 	delay_web = 10
 	web_type = /obj/structure/spider/terrorweb/gray
-	special_abillity = list(/obj/effect/proc_holder/spell/aoe_turf/terror_stealth)
+	special_abillity = list(/obj/effect/proc_holder/spell/self/terror_stealth)
 	spider_intro_text = "Будучи Наблюдателем Ужаса, ваша задача - устраивать засады. Вы почти невидимы в паутине, и наносите сокрушительный урон, пробивающий броню, если находитесь в ней. Вы также можете стать полностью невидимым на короткий промежуток времени."
 	ai_spins_webs = FALSE // uses massweb instead
 	var/prob_ai_massweb = 10
 
-/mob/living/simple_animal/hostile/poison/terror_spider/lurker/Move(atom/newloc, dir, step_x, step_y)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/lurker/Move(atom/newloc, dir, step_x, step_y)
 	. = ..()
 	if(stat == DEAD)
 		icon_state = icon_dead
@@ -44,7 +44,7 @@
 			icon_state = "terror_gray"
 			icon_living = "terror_gray"
 
-/mob/living/simple_animal/hostile/poison/terror_spider/lurker/spider_specialattack(mob/living/carbon/human/L)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/lurker/spider_specialattack(mob/living/carbon/human/L)
 	var/obj/structure/spider/terrorweb/W = locate() in get_turf(src)
 	if(W)
 		melee_damage_lower = initial(melee_damage_lower) * 3
@@ -60,7 +60,7 @@
 		visible_message("<span class='danger'>[src] bites [target]!</span>")
 	L.attack_animal(src)
 
-/mob/living/simple_animal/hostile/poison/terror_spider/lurker/spider_special_action()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/lurker/spider_special_action()
 	if(prob(prob_ai_massweb))
 		for(var/turf/open/floor/holofloor/T in oview(2,get_turf(src)))
 			if(T.density == 0)

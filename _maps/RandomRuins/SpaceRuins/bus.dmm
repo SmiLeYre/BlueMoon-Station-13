@@ -334,10 +334,6 @@
 /obj/item/stack/sheet/metal/fifty,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/unpowered/no_grav)
-"uJ" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/mineral/ash_rock,
-/area/ruin/unpowered/no_grav)
 "XA" = (
 /obj/structure/fluff/bus/passable/seat{
 	icon_state = "backseat"
@@ -553,7 +549,7 @@ aa
 ab
 ab
 ab
-uJ
+ab
 ab
 ab
 ad

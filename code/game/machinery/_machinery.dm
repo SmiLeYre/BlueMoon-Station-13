@@ -108,7 +108,7 @@ Class Procs:
 	vocal_pitch = 0.6
 	vocal_volume = 40
 
-	var/stat = 0
+	var/machine_stat = 0
 	var/use_power = IDLE_POWER_USE
 		//0 = dont run the auto
 		//1 = run auto, use idle
@@ -148,11 +148,20 @@ Class Procs:
 
 	var/allow_oversized_characters = FALSE // BLUEMOON ADD - чтобы большие персонажи могли помещаться в некоторые машины
 
+	///A combination of factors such as having power, not being broken and so on. Boolean.
+	var/is_operational = TRUE
+	///Boolean on whether this machines interact with atmos
+	var/atmos_processing = FALSE
+
+
 /obj/machinery/Initialize(mapload)
 	if(!armor)
 		armor = list(MELEE = 25, BULLET = 10, LASER = 10, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 50, ACID = 70)
 	. = ..()
+	SSmachines.register_machine(src)
 	GLOB.machines += src
+
+	check_on_table()
 
 	if(ispath(circuit, /obj/item/circuitboard))
 		circuit = new circuit(src)
@@ -163,7 +172,7 @@ Class Procs:
 			START_PROCESSING(SSfastprocess, src)
 		else
 			START_PROCESSING(SSmachines, src)
-	RegisterSignal(src, COMSIG_ENTER_AREA, .proc/power_change)
+	RegisterSignal(src, COMSIG_ENTER_AREA, PROC_REF(power_change))
 
 	if (occupant_typecache)
 		occupant_typecache = typecacheof(occupant_typecache)
@@ -174,6 +183,7 @@ Class Procs:
 	power_change()
 
 /obj/machinery/Destroy()
+	SSmachines.unregister_machine(src)
 	GLOB.machines.Remove(src)
 	if(!speed_process)
 		STOP_PROCESSING(SSmachines, src)
@@ -199,18 +209,25 @@ Class Procs:
 
 ///Called when we want to change the value of the stat variable. Holds bitflags.
 /obj/machinery/proc/set_machine_stat(new_value)
-	if(new_value == stat)
+	if(new_value == machine_stat)
 		return
-	. = stat
-	stat = new_value
-	on_machine_stat_update(stat)
+	. = machine_stat
+	machine_stat = new_value
+	on_stat_update(machine_stat)
 
-/obj/machinery/proc/on_machine_stat_update(stat)
-	return
+///Called when the value of `stat` changes, so we can react to it.
+/obj/machinery/proc/on_stat_update(old_value)
+	//From off to on.
+	if((old_value & (NOPOWER|BROKEN|MAINT)) && !(machine_stat & (NOPOWER|BROKEN|MAINT)))
+		set_is_operational(TRUE)
+		return
+	//From on to off.
+	if(machine_stat & (NOPOWER|BROKEN|MAINT))
+		set_is_operational(FALSE)
 
 /obj/machinery/emp_act(severity)
 	. = ..()
-	if(use_power && !stat && !(. & EMP_PROTECT_SELF))
+	if(use_power && !machine_stat && !(. & EMP_PROTECT_SELF))
 		use_power(1000 + severity*65)
 		new /obj/effect/temp_visual/emp(loc)
 
@@ -294,10 +311,10 @@ Class Procs:
 		object.forceMove(drop_location())
 
 /obj/machinery/proc/is_operational()
-	return !(stat & (NOPOWER|BROKEN|MAINT))
+	return !(machine_stat & (NOPOWER|BROKEN|MAINT))
 
 /obj/machinery/can_interact(mob/user)
-	if((stat & (NOPOWER|BROKEN)) && !(interaction_flags_machine & INTERACT_MACHINE_OFFLINE)) // Check if the machine is broken, and if we can still interact with it if so
+	if((machine_stat & (NOPOWER|BROKEN)) && !(interaction_flags_machine & INTERACT_MACHINE_OFFLINE)) // Check if the machine is broken, and if we can still interact with it if so
 		return FALSE
 
 	if(IsAdminGhost(user))
@@ -418,6 +435,8 @@ Class Procs:
 	. = ..()
 
 /obj/machinery/ui_act(action, params)
+	if(params["ic_advactivator"])
+		return
 	add_fingerprint(usr)
 	return ..()
 
@@ -524,8 +543,8 @@ Class Procs:
 
 /obj/machinery/obj_break(damage_flag)
 	. = ..()
-	if(!(stat & BROKEN) && !(flags_1 & NODECONSTRUCT_1))
-		stat |= BROKEN
+	if(!(machine_stat & BROKEN) && !(flags_1 & NODECONSTRUCT_1))
+		machine_stat |= BROKEN
 		SEND_SIGNAL(src, COMSIG_MACHINERY_BROKEN, damage_flag)
 		update_appearance()
 		return TRUE
@@ -565,8 +584,8 @@ Class Procs:
 		I.play_tool_sound(src, 50)
 		setDir(turn(dir,-90))
 		to_chat(user, "<span class='notice'>Вы поворачиваете [src].</span>")
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
 /obj/proc/can_be_unfasten_wrench(mob/user, silent) //if we can unwrench this object; returns SUCCESSFUL_UNFASTEN and FAILED_UNFASTEN, which are both TRUE, or CANT_UNFASTEN, which isn't.
 	if(!(isfloorturf(loc) || istype(loc, /turf/open/indestructible)) && !anchored)
@@ -580,13 +599,14 @@ Class Procs:
 		if(!can_be_unfasten || can_be_unfasten == FAILED_UNFASTEN)
 			return can_be_unfasten
 		if(time)
-			to_chat(user, "<span class='notice'>Вы начинаете [anchored ? "un" : ""]вкручивать [src]...</span>")
+			to_chat(user, "<span class='notice'>Вы начинаете [anchored ? "откручивать" : "вкручивать"] [src]...</span>")
 		I.play_tool_sound(src, 50)
 		var/prev_anchored = anchored
 		//as long as we're the same anchored state and we're either on a floor or are anchored, toggle our anchored state
-		if(I.use_tool(src, user, time, extra_checks = CALLBACK(src, .proc/unfasten_wrench_check, prev_anchored, user)))
-			to_chat(user, "<span class='notice'>You [anchored ? "un" : ""]secure [src].</span>")
+		if(I.use_tool(src, user, time, extra_checks = CALLBACK(src, PROC_REF(unfasten_wrench_check), prev_anchored, user)))
+			to_chat(user, "<span class='notice'>Вы начинаете [anchored ? "откручивать" : "вкручивать"] [src].</span>")
 			setAnchored(!anchored)
+			check_on_table()
 			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
 			SEND_SIGNAL(src, COMSIG_OBJ_DEFAULT_UNFASTEN_WRENCH, anchored)
 			return SUCCESSFUL_UNFASTEN
@@ -606,44 +626,46 @@ Class Procs:
 	if((flags_1 & NODECONSTRUCT_1) && !W.works_from_distance)
 		return FALSE
 	var/shouldplaysound = 0
-	if(component_parts)
-		if(panel_open || W.works_from_distance)
-			var/obj/item/circuitboard/machine/CB = locate(/obj/item/circuitboard/machine) in component_parts
-			var/P
-			if(W.works_from_distance)
-				to_chat(user, display_parts(user))
-			for(var/obj/item/A in component_parts)
-				for(var/D in CB.req_components)
-					if(ispath(A.type, D))
-						P = D
-						break
-				for(var/obj/item/B in W.contents)
-					if(istype(B, P) && istype(A, P))
-						if(B.get_part_rating() > A.get_part_rating())
-							if(istype(B,/obj/item/stack)) //conveniently this will mean A is also a stack and I will kill the first person to prove me wrong
-								var/obj/item/stack/SA = A
-								var/obj/item/stack/SB = B
-								var/used_amt = SA.get_amount()
-								if(!SB.use(used_amt))
-									continue //if we don't have the exact amount to replace we don't
-								var/obj/item/stack/SN = new SB.merge_type(null,used_amt)
-								component_parts += SN
-							else
-								if(SEND_SIGNAL(W, COMSIG_TRY_STORAGE_TAKE, B, src))
-									component_parts += B
-									B.moveToNullspace()
-							SEND_SIGNAL(W, COMSIG_TRY_STORAGE_INSERT, A, null, null, TRUE)
-							component_parts -= A
-							to_chat(user, "<span class='notice'>[capitalize(A.name)] заменил с помощью [B.name].</span>")
-							shouldplaysound = 1 //Only play the sound when parts are actually replaced!
-							break
-			RefreshParts()
-		else
-			to_chat(user, display_parts(user))
-		if(shouldplaysound)
-			W.play_rped_sound()
-		return TRUE
-	return FALSE
+	if(!component_parts)
+		return FALSE
+	if(!panel_open && !W.works_from_distance)
+		to_chat(user, display_parts(user))
+		return FALSE
+	var/obj/item/circuitboard/machine/machine_board = locate(/obj/item/circuitboard/machine) in component_parts
+	if(!machine_board)
+		return FALSE
+	var/P
+	if(W.works_from_distance)
+		to_chat(user, display_parts(user))
+	for(var/obj/item/A in component_parts)
+		for(var/D in machine_board.req_components)
+			if(istype(A, D))
+				P = D
+				break
+		for(var/obj/item/B in W.contents)
+			if(istype(B, P) && istype(A, P))
+				if(B.get_part_rating() > A.get_part_rating())
+					if(istype(B,/obj/item/stack)) //conveniently this will mean A is also a stack and I will kill the first person to prove me wrong
+						var/obj/item/stack/SA = A
+						var/obj/item/stack/SB = B
+						var/used_amt = SA.get_amount()
+						if(!SB.use(used_amt))
+							continue //if we don't have the exact amount to replace we don't
+						var/obj/item/stack/SN = new SB.merge_type(null,used_amt)
+						component_parts += SN
+					else
+						if(SEND_SIGNAL(W, COMSIG_TRY_STORAGE_TAKE, B, src))
+							component_parts += B
+							B.moveToNullspace()
+					SEND_SIGNAL(W, COMSIG_TRY_STORAGE_INSERT, A, null, null, TRUE)
+					component_parts -= A
+					to_chat(user, "<span class='notice'>[capitalize(A.name)] replaced with [B.name].</span>")
+					shouldplaysound = 1 //Only play the sound when parts are actually replaced!
+					break
+	RefreshParts()
+	if(shouldplaysound)
+		W.play_rped_sound()
+	return TRUE
 
 /obj/machinery/proc/display_parts(mob/user)
 	. = list()
@@ -654,7 +676,7 @@ Class Procs:
 
 /obj/machinery/examine(mob/user)
 	. = ..()
-	if(stat & BROKEN)
+	if(machine_stat & BROKEN)
 		. += "<span class='notice'>Выглядит сломанным и не рабочим.</span>"
 	if(!(resistance_flags & INDESTRUCTIBLE))
 		if(resistance_flags & ON_FIRE)
@@ -732,4 +754,21 @@ Class Procs:
 			playsound(src, custom_clicksound, clickvol)
 		else if(clicksound)
 			playsound(src, clicksound, clickvol)
+	return
+
+/// Adjusts the vertical pixel offset when the object is anchored on a tile with table
+/obj/proc/check_on_table()
+	if(anchored_tabletop_offset != 0 && !istype(src, /obj/structure/table) && locate(/obj/structure/table) in loc)
+		pixel_y = anchored ? anchored_tabletop_offset : initial(pixel_y)
+
+///Called when we want to change the value of the `is_operational` variable. Boolean.
+/obj/machinery/proc/set_is_operational(new_value)
+	if(new_value == is_operational)
+		return
+	. = is_operational
+	is_operational = new_value
+	on_set_is_operational(.)
+
+///Called when the value of `is_operational` changes, so we can react to it.
+/obj/machinery/proc/on_set_is_operational(old_value)
 	return

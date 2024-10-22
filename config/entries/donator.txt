@@ -4,7 +4,7 @@
 
 #Specify group followed by ckey for each ckey.
 
-#TIER_1_DONATORS SmiLeYcom
+TIER_1_DONATORS SmiLeYcom
 
 #TIER_2_DONATORS SmiLeYcom
 

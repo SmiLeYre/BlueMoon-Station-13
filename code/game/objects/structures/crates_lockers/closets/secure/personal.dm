@@ -27,6 +27,7 @@
 	max_integrity = 70
 	material_drop = /obj/item/stack/sheet/mineral/wood
 	cutting_tool = TOOL_SCREWDRIVER
+	door_anim_time = 0 // no animation
 
 /obj/structure/closet/secure_closet/personal/cabinet/PopulateContents()
 	new /obj/item/storage/backpack/satchel/leather/withwallet( src )

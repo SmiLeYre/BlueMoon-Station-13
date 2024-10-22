@@ -83,7 +83,6 @@
 	max_integrity = 250
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 	armor = list(MELEE = 40, BULLET = 30, LASER = 30, ENERGY = 30, BOMB = 60, BIO = 0, RAD = 70, FIRE = 100, ACID = 100)
-	max_equip = 5 // More armor, less tools
 	enclosed = TRUE
 	enter_delay = 40
 
@@ -153,7 +152,7 @@
 
 /obj/vehicle/sealed/mecha/working/ripley/Exit(atom/movable/O)
 	if(O in cargo)
-		return 0
+		return FALSE
 	return ..()
 
 /obj/vehicle/sealed/mecha/working/ripley/Topic(href, href_list)
@@ -189,6 +188,9 @@
 
 /obj/vehicle/sealed/mecha/working/ripley/relay_container_resist(mob/living/user, obj/O)
 	to_chat(user, "<span class='notice'>You lean on the back of [O] and start pushing so it falls out of [src].</span>")
+	if(INTERACTING_WITH(user, O))
+		to_chat(user, span_warning("You're already interacting with [O]!"))
+		return
 	if(do_after(user, 300, target = O))
 		if(!user || user.stat != CONSCIOUS || user.loc != src || O.loc != src )
 			return

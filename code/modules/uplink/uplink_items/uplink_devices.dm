@@ -106,7 +106,11 @@
 	desc = "A robust seven-slot set of webbing that is capable of holding all manner of tactical equipment."
 	item = /obj/item/storage/belt/military
 	cost = 1
-	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/device_tools/military_belt/inteq
+	item = /obj/item/storage/belt/military/inteq
+	purchasable_from = UPLINK_TRAITORS
 
 /datum/uplink_item/device_tools/ammo_pouch
 	name = "Ammo Pouch"
@@ -137,7 +141,22 @@
 	desc = "The Illegal toolbox is a suspicious black and red. It comes loaded with a full tool set including a \
 			multitool and combat gloves that are resistant to shocks and heat."
 	item = /obj/item/storage/toolbox/syndicate
+	purchasable_from = UPLINK_SYNDICATE
 	cost = 1
+
+/datum/uplink_item/device_tools/tools_inteq
+	name = "Brown toolbox"
+	desc = "Набор базовых инструментов."
+	item = /obj/item/storage/toolbox/inteq
+	cost = 1
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+
+/datum/uplink_item/device_tools/tools_inteq_coller
+	name = "Deluxe Brown toolbox"
+	desc = "Улучшеный набор инструментов. Для тех, кто знает себе цену"
+	item = /obj/item/storage/toolbox/inteq/cooler
+	cost = 3
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/device_tools/syndie_glue
 	name = "Glue"
@@ -152,20 +171,20 @@
 	name = "Hacked AI Law Upload Module"
 	desc = "When used with an upload console, this module allows you to upload priority laws to an artificial intelligence. \
 			Be careful with wording, as artificial intelligences may look for loopholes to exploit."
-	item = /obj/item/aiModule/syndicate
+	item = /obj/item/ai_module/syndicate
 	cost = 9
 
 /datum/uplink_item/device_tools/damaged_module
 	name = "Damaged AI Law Upload Module"
 	desc = "This AI law upload module has been laying around our warehouse for god knows how long. We do not know why you would ever use this."
-	item = /obj/item/aiModule/core/full/damaged
+	item = /obj/item/ai_module/core/full/damaged
 	cost = 5
 
-/datum/uplink_item/device_tools/headsetupgrade
-	name = "Headset Upgrader"
-	desc = "A device that can be used to make one headset immune to flashbangs."
-	item = /obj/item/headsetupgrader
-	cost = 1
+///datum/uplink_item/device_tools/headsetupgrade
+// 	name = "Headset Upgrader"
+// 	desc = "A device that can be used to make one headset immune to flashbangs."
+// 	item = /obj/item/headsetupgrader
+// 	cost = 1
 
 /datum/uplink_item/device_tools/medgun
 	name = "Medbeam Gun"
@@ -208,12 +227,12 @@
 	item = /obj/item/healthanalyzer/rad_laser
 	cost = 3
 
-/datum/uplink_item/device_tools/shadowcloak
-	name = "Cloaker Belt"
-	desc = "Makes you invisible for short periods of time. Recharges in darkness."
-	item = /obj/item/shadowcloak
-	cost = 5
-	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
+///datum/uplink_item/device_tools/shadowcloak
+//	name = "Cloaker Belt"
+//	desc = "Makes you invisible for short periods of time. Recharges in darkness."
+//	item = /obj/item/shadowcloak
+//	cost = 10
+//	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 
 /datum/uplink_item/device_tools/riflery_primer
 	name = "Riflery Primer"
@@ -246,23 +265,33 @@
 	desc = "The Illegal surgery duffel bag is a toolkit containing all surgery tools, surgical drapes, \
 			a Syndicate stolen brand MMI, a straitjacket, and a muzzle."
 	item = /obj/item/storage/backpack/duffelbag/syndie/surgery
-	cost = 3
+	cost = 1  ///bluemoon change
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/device_tools/surgerybag/inteq
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/surgery
+	purchasable_from = ~UPLINK_SYNDICATE
 
 /datum/uplink_item/device_tools/surgerybag_adv
 	name = "Advanced Illegal Surgery Duffel Bag"
 	desc = "A Syndicate stolen surgery duffel bag, with a set of upgraded surgery tools to boot."
 	item = /obj/item/storage/backpack/duffelbag/syndie/surgery_adv
-	cost = 6
+	cost = 3  ///bluemoon change
+	purchasable_from = UPLINK_SYNDICATE
 
-/datum/uplink_item/device_tools/encryptionkey
-	name = "InteQ Encryption Key"
-	desc = "A key that, when inserted into a radio headset, allows you to listen to all station department channels \
-			as well as talk on an encrypted InteQ channel with other agents that have the same key, and even communicate with raiders and nukies teams."
-	item = /obj/item/encryptionkey/inteq
-	cost = 2
-	surplus = 75
-	restricted = TRUE
-	purchasable_from = ~(UPLINK_SYNDICATE)
+/datum/uplink_item/device_tools/surgerybag_adv/inteq
+	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/surgery_adv
+	purchasable_from = ~UPLINK_SYNDICATE
+
+///datum/uplink_item/device_tools/encryptionkey
+// 	name = "InteQ Encryption Key"
+// 	desc = "A key that, when inserted into a radio headset, allows you to listen to all station department channels
+// 			as well as talk on an encrypted InteQ channel with other agents that have the same key, and even communicate with raiders and nukies teams."
+// 	item = /obj/item/encryptionkey/inteq
+// 	cost = 2
+// 	surplus = 75
+// 	restricted = TRUE
+// 	purchasable_from = ~(UPLINK_SYNDICATE)
 
 /datum/uplink_item/device_tools/syndietome
 	name = "Syndicate Tome"
@@ -271,7 +300,17 @@
 			of the originals, these inferior copies are still quite useful, being able to provide \
 			both weal and woe on the battlefield, even if they do occasionally bite off a finger."
 	item = /obj/item/storage/book/bible/syndicate
+	purchasable_from = UPLINK_SYNDICATE
 	cost = 9
+
+/datum/uplink_item/device_tools/inteqtome
+	name = "InteQ Tome"
+	desc = "Магический том, позволяющий использовать силу божеств даже самым неверующим и грешным существам.\
+			 Проведи пальцем по острию страниц, окрапи их своей кровью и книга будет связана со своим хозяином до самой смерти, \
+			а замен божества одолжат частичку своей силы, позволяя залечивать любые раны своих товарищей, \"аккуратно\" прикладывая её к голове пострадавшего. (Лучше бы ему быть в шлеме)."
+	item = /obj/item/storage/book/bible/syndicate/inteq
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
+	cost = 7
 
 /datum/uplink_item/device_tools/thermal
 	name = "Thermal Imaging Glasses"
@@ -299,13 +338,13 @@
 	cost = 7
 	restricted = TRUE
 	limited_stock = 1
-	purchasable_from = ~(UPLINK_SYNDICATE)
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS) //bluemoon change никакого краба через ВР
 
-///datum/uplink_item/device_tools/syndicate_teleporter					ДОДЕЛАТЬ
-//	name = "Experimental Syndicate Teleporter"					ДОДЕЛАТЬ
-//	desc = "The Syndicate teleporter is a handheld device that teleports the user 4-8 meters forward. \					ДОДЕЛАТЬ
-//			Beware, teleporting into a wall will make the teleporter do a parallel emergency teleport, \					ДОДЕЛАТЬ
-//			but if that emergency teleport fails, it will kill you. \					ДОДЕЛАТЬ
-//			Has 4 charges, recharges, warranty voided if exposed to EMP."					ДОДЕЛАТЬ
-//	item = /obj/item/storage/box/syndie_kit/teleporter					ДОДЕЛАТЬ
-//	cost = 8					ДОДЕЛАТЬ
+/datum/uplink_item/device_tools/syndicate_teleporter
+	name = "Experimental Syndicate Teleporter"
+	desc = "The Syndicate teleporter is a handheld device that teleports the user 4-8 meters forward. \
+			Beware, teleporting into a wall will make the teleporter do a parallel emergency teleport, \
+			but if that emergency teleport fails, it will kill you. \
+			Has 4 charges, recharges, warranty voided if exposed to EMP."
+	item = /obj/item/storage/box/syndie_kit/teleporter
+	cost = 4

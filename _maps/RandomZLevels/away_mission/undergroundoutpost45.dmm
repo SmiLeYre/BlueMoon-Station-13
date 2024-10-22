@@ -113,6 +113,7 @@
 	pixel_y = -34
 	},
 /obj/effect/landmark/awaystart,
+/obj/item/gun/energy/laser/carbine,
 /turf/open/floor/plasteel{
 	dir = 8;
 	heat_capacity = 1e+006;
@@ -152,15 +153,6 @@
 /obj/item/clothing/mask/breath,
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/dark{
-	heat_capacity = 1e+006
-	},
-/area/awaymission/undergroundoutpost45/central)
-"ax" = (
-/mob/living/simple_animal/hostile/poison/terror_spider/builder{
-	health = 110
-	},
-/obj/structure/spider/terrorweb,
-/turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
 /area/awaymission/undergroundoutpost45/central)
@@ -307,12 +299,14 @@
 	},
 /area/awaymission/undergroundoutpost45/central)
 "aT" = (
-/mob/living/simple_animal/hostile/poison/terror_spider/healer,
-/obj/structure/spider/terrorweb,
-/turf/open/floor/plasteel/grimy{
-	heat_capacity = 1e+006
+/obj/item/toy/plush/nukeplushie/susplushie,
+/turf/open/floor/plating/asteroid{
+	heat_capacity = 1e+006;
+	initial_gas_mix = "o2=21.78;n2=72.36;TEMP=293.15";
+	initial_temperature = 351.9;
+	name = "Cave Floor"
 	},
-/area/awaymission/undergroundoutpost45/central)
+/area/awaymission/undergroundoutpost45/caves)
 "aU" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/closet/secure_closet{
@@ -355,18 +349,15 @@
 	},
 /area/awaymission/undergroundoutpost45/central)
 "aY" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
+/obj/effect/decal/cleanable/blood/old,
+/obj/effect/mob_spawn/human/corpse/assistant,
+/turf/open/floor/plating/asteroid{
+	heat_capacity = 1e+006;
+	initial_gas_mix = "o2=21.78;n2=72.36;TEMP=293.15";
+	initial_temperature = 351.9;
+	name = "Cave Floor"
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/mob/living/simple_animal/hostile/poison/terror_spider/knight,
-/obj/structure/spider/terrorweb,
-/turf/open/floor/plasteel{
-	heat_capacity = 1e+006
-	},
-/area/awaymission/undergroundoutpost45/central)
+/area/awaymission/undergroundoutpost45/caves)
 "aZ" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
@@ -477,7 +468,6 @@
 	pixel_x = -25
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -673,7 +663,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -699,7 +688,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
-/obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -1400,7 +1388,7 @@
 "dl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/poison/terror_spider/knight,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -2169,7 +2157,7 @@
 /area/awaymission/undergroundoutpost45/central)
 "eA" = (
 /obj/structure/flora/ausbushes/ppflowers,
-/mob/living/simple_animal/hostile/poison/terror_spider/healer,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/grass/grass0{
 	heat_capacity = 1e+006
@@ -2648,7 +2636,6 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/poison/terror_spider/knight,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -2827,7 +2814,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
 	},
-/mob/living/simple_animal/hostile/poison/terror_spider/knight,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -3361,7 +3348,7 @@
 	c_tag = "Research Lab";
 	network = list("uo45","uo45r")
 	},
-/mob/living/simple_animal/hostile/poison/terror_spider/defiler,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler,
 /obj/machinery/light/small/broken/directional/north,
 /obj/structure/spider/terrorweb/white,
 /turf/open/floor/plasteel/white{
@@ -3959,7 +3946,7 @@
 /area/awaymission/undergroundoutpost45/research)
 "ij" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/mob/living/simple_animal/hostile/poison/terror_spider/defiler,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler,
 /obj/structure/spider/terrorweb/white,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
@@ -4180,7 +4167,7 @@
 	dir = 4
 	},
 /obj/structure/spider/terrorweb/white,
-/mob/living/simple_animal/hostile/poison/terror_spider/defiler,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -4325,7 +4312,7 @@
 	icon_state = "1-2"
 	},
 /obj/structure/spider/terrorweb/black,
-/mob/living/simple_animal/hostile/poison/terror_spider/healer,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -4430,7 +4417,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/structure/spider/terrorweb/white,
-/mob/living/simple_animal/hostile/poison/terror_spider/defiler,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler,
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
@@ -5331,7 +5318,7 @@
 	dir = 1
 	},
 /obj/structure/spider/terrorweb/black,
-/obj/item/organ/internal/body_egg/terror_eggs,
+/obj/item/organ/body_egg/terror_eggs,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -5609,7 +5596,7 @@
 /turf/open/floor/plasteel/white{
 	heat_capacity = 1e+006
 	},
-/area/space/nearstation)
+/area/awaymission/undergroundoutpost45/research)
 "la" = (
 /obj/machinery/shower{
 	pixel_y = 15
@@ -5813,7 +5800,7 @@
 	icon_state = "1-4"
 	},
 /obj/structure/spider/terrorweb/black,
-/mob/living/simple_animal/hostile/poison/terror_spider/healer,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -5850,7 +5837,7 @@
 	network = list("uo45","uo45r")
 	},
 /obj/structure/spider/terrorweb/black,
-/mob/living/simple_animal/hostile/poison/terror_spider/prince{
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/prince{
 	damage_coeff = list("brute" = 1, "fire" = 2, "tox" = 1, "clone" = 0, "stamina" = 0, "oxy" = 0.2);
 	desc = "Некогда величественый принц. Хоть и ранен, но всё ещё очень опасен.";
 	name = "Wounded prince of Terror"
@@ -5880,7 +5867,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/spider/terrorweb/black,
-/mob/living/simple_animal/hostile/poison/terror_spider/healer,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -6322,14 +6309,14 @@
 "mb" = (
 /obj/structure/spider/terrorweb/black,
 /obj/effect/mob_spawn/human/commander,
-/obj/item/gun/energy/e_gun/corpus,
+/obj/item/gun/energy/laser/captain/scattershot,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
 /area/awaymission/undergroundoutpost45/gateway)
 "mc" = (
 /obj/structure/spider/terrorweb/black,
-/obj/item/organ/internal/body_egg/terror_eggs,
+/obj/item/organ/body_egg/terror_eggs,
 /turf/open/floor/plasteel{
 	dir = 8;
 	heat_capacity = 1e+006;
@@ -6607,7 +6594,7 @@
 	dir = 8
 	},
 /obj/structure/spider/terrorweb/black,
-/obj/item/organ/internal/body_egg/terror_eggs,
+/obj/item/organ/body_egg/terror_eggs,
 /turf/open/floor/plasteel/dark{
 	heat_capacity = 1e+006
 	},
@@ -6754,7 +6741,7 @@
 /area/awaymission/undergroundoutpost45/research)
 "mO" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/mob/living/simple_animal/hostile/poison/terror_spider/widow,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow,
 /obj/structure/spider/terrorweb/white,
 /obj/structure/spider/terrorweb/white,
 /turf/open/floor/plasteel/cafeteria{
@@ -6881,7 +6868,7 @@
 	name = "Air to Distro"
 	},
 /obj/effect/mob_spawn/human/corpse/engineer,
-/mob/living/simple_animal/hostile/poison/terror_spider/widow,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -7874,7 +7861,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/mob/living/simple_animal/hostile/poison/terror_spider/defiler,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler,
 /turf/open/floor/plating{
 	heat_capacity = 1e+006;
 	icon_state = "platingdmg3"
@@ -8350,7 +8337,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/visible{
 	dir = 6
 	},
-/mob/living/simple_animal/hostile/poison/terror_spider/healer/strong,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer/strong,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -8616,7 +8603,7 @@
 /obj/item/stack/sheet/metal,
 /obj/item/electronics/airlock,
 /obj/structure/spider/terrorweb/white,
-/mob/living/simple_animal/hostile/poison/terror_spider/builder,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder,
 /turf/open/floor/plasteel/dark{
 	heat_capacity = 1e+006
 	},
@@ -9442,7 +9429,7 @@
 	pixel_x = -24
 	},
 /obj/machinery/light/small/broken/directional/west,
-/mob/living/simple_animal/hostile/poison/terror_spider/builder,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	dir = 8;
@@ -9454,7 +9441,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/poison/terror_spider/builder,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -9640,7 +9627,7 @@
 /obj/machinery/atmospherics/pipe/simple/cyan/visible{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/poison/terror_spider/healer/strong,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer/strong,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -10093,7 +10080,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/poison/terror_spider/builder,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -10651,7 +10638,7 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/visible{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/poison/terror_spider/widow,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -10946,7 +10933,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/poison/terror_spider/builder,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -11045,7 +11032,7 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "tE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/visible,
-/mob/living/simple_animal/hostile/poison/terror_spider/healer/strong,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer/strong,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -11603,7 +11590,7 @@
 /area/awaymission/undergroundoutpost45/engineering)
 "uB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/mob/living/simple_animal/hostile/poison/terror_spider/builder,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -11846,7 +11833,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
-/mob/living/simple_animal/hostile/poison/terror_spider/builder,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -12074,7 +12061,7 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/mob/living/simple_animal/hostile/poison/terror_spider/builder,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -12108,7 +12095,7 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/poison/terror_spider/builder,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -12177,7 +12164,7 @@
 /obj/structure/cable{
 	icon_state = "1-8"
 	},
-/mob/living/simple_animal/hostile/poison/terror_spider/widow,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -12839,7 +12826,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
-/mob/living/simple_animal/hostile/poison/terror_spider/widow,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -13846,7 +13833,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/mob/living/simple_animal/hostile/poison/terror_spider/defiler,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler,
 /turf/open/floor/plating{
 	heat_capacity = 1e+006
 	},
@@ -13877,7 +13864,6 @@
 	icon_state = "beacon";
 	name = "tracking beacon"
 	},
-/obj/item/gun/ballistic/automatic/pistol/enforcer,
 /turf/open/floor/plating{
 	heat_capacity = 1e+006;
 	icon_state = "platingdmg3"
@@ -13959,7 +13945,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/turf_decal/stripes/line,
-/mob/living/simple_animal/hostile/poison/terror_spider/widow,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow,
 /obj/structure/spider/terrorweb/white,
 /turf/open/floor/plasteel/dark{
 	heat_capacity = 1e+006
@@ -13997,7 +13983,7 @@
 	},
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "FW" = (
-/mob/living/simple_animal/hostile/poison/terror_spider/healer,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -14224,7 +14210,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/mob/living/simple_animal/hostile/poison/terror_spider/widow,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow,
 /obj/structure/spider/terrorweb,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
@@ -14253,7 +14239,7 @@
 "MD" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/spider/terrorweb/white,
-/mob/living/simple_animal/hostile/poison/terror_spider/builder,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder,
 /turf/open/floor/plasteel/cafeteria{
 	dir = 5;
 	heat_capacity = 1e+006
@@ -14441,7 +14427,7 @@
 "QM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/poison/terror_spider/builder,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -14509,7 +14495,7 @@
 	},
 /area/awaymission/undergroundoutpost45/crew_quarters)
 "RJ" = (
-/mob/living/simple_animal/hostile/poison/terror_spider/knight,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -14534,7 +14520,7 @@
 /area/awaymission/undergroundoutpost45/research)
 "SA" = (
 /obj/effect/decal/cleanable/dirt,
-/mob/living/simple_animal/hostile/poison/terror_spider/healer,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer,
 /turf/open/floor/plasteel{
 	heat_capacity = 1e+006
 	},
@@ -14557,7 +14543,7 @@
 /area/awaymission/undergroundoutpost45/central)
 "SZ" = (
 /obj/structure/spider/terrorweb/white,
-/mob/living/simple_animal/hostile/poison/terror_spider/builder,
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder,
 /turf/open/floor/plasteel/cafeteria{
 	dir = 5;
 	heat_capacity = 1e+006
@@ -14575,15 +14561,14 @@
 /turf/open/floor/catwalk_floor,
 /area/survivalpod)
 "Uj" = (
-/obj/structure/grille/broken,
-/obj/item/stack/rods,
-/obj/item/shard,
-/mob/living/simple_animal/hostile/poison/terror_spider/knight,
-/obj/structure/spider/terrorweb,
-/turf/open/floor/plating{
-	heat_capacity = 1e+006
+/obj/item/kitchen/knife/bloodletter,
+/turf/open/floor/plating/asteroid{
+	heat_capacity = 1e+006;
+	initial_gas_mix = "o2=21.78;n2=72.36;TEMP=293.15";
+	initial_temperature = 351.9;
+	name = "Cave Floor"
 	},
-/area/awaymission/undergroundoutpost45/central)
+/area/awaymission/undergroundoutpost45/caves)
 "Up" = (
 /obj/structure/salvage/metal_frame,
 /turf/open/floor/catwalk_floor,
@@ -44927,7 +44912,7 @@ aS
 aN
 aS
 aS
-IJ
+aS
 bk
 aS
 bA
@@ -45182,7 +45167,7 @@ an
 aS
 aS
 aO
-ax
+IJ
 az
 aB
 bl
@@ -45441,7 +45426,7 @@ aS
 aP
 bg
 ay
-aT
+bg
 bm
 aC
 bC
@@ -45455,7 +45440,7 @@ ae
 aS
 aS
 dT
-Uj
+Ax
 JP
 Ax
 el
@@ -46486,7 +46471,7 @@ dV
 em
 eC
 eC
-aY
+Kb
 fr
 fG
 fW
@@ -58113,8 +58098,8 @@ ad
 eJ
 eJ
 eJ
-eJ
-eJ
+Uj
+aY
 eJ
 eJ
 eJ
@@ -58370,7 +58355,7 @@ ad
 eJ
 eJ
 eJ
-eJ
+aT
 eJ
 eJ
 eJ

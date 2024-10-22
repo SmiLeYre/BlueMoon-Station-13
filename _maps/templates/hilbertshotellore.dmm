@@ -263,7 +263,8 @@
 /area/hilbertshotel)
 "aW" = (
 /obj/machinery/jukebox{
-	req_access = null
+	req_access = null;
+	one_area_play = 1
 	},
 /turf/open/indestructible/hotelwood,
 /area/hilbertshotel)

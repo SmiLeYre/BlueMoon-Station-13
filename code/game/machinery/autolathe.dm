@@ -46,12 +46,12 @@
 
 /obj/machinery/autolathe/Initialize(mapload)
 	. = ..()
-	wires = new /datum/wires/autolathe(src)
+	set_wires(new /datum/wires/autolathe(src))
 	stored_research = new /datum/techweb/specialized/autounlocking/autolathe
 	matching_designs = list()
 
 /obj/machinery/autolathe/ComponentInitialize()
-	AddComponent(/datum/component/material_container, SSmaterials.materialtypes_by_category[MAT_CATEGORY_RIGID], 0, TRUE, null, null, CALLBACK(src, .proc/AfterMaterialInsert))
+	AddComponent(/datum/component/material_container, SSmaterials.materialtypes_by_category[MAT_CATEGORY_RIGID], 0, TRUE, null, null, CALLBACK(src, PROC_REF(AfterMaterialInsert)))
 
 /obj/machinery/autolathe/Destroy()
 	QDEL_NULL(wires)
@@ -67,7 +67,7 @@
 		ui = new(user, src, "Autolathe", capitalize(src.name))
 		ui.open()
 
-	if(shocked && !(stat & NOPOWER))
+	if(shocked && !(machine_stat & NOPOWER))
 		if(shock(user,50))
 			ui.close() //close the window if they got zapped successfully as to prevent them from getting zapped infinitely.
 
@@ -210,7 +210,7 @@
 						if(materials.materials[i] > 0)
 							list_to_show += i
 
-					used_material = tgui_input_list(usr, "Choose [used_material]", "Custom Material", sortList(list_to_show, /proc/cmp_typepaths_asc))
+					used_material = tgui_input_list(usr, "Choose [used_material]", "Custom Material", sort_list(list_to_show, GLOBAL_PROC_REF(cmp_typepaths_asc)))
 					if(isnull(used_material))
 						return //Didn't pick any material, so you can't build shit either.
 					custom_materials[used_material] += amount_needed
@@ -224,7 +224,7 @@
 				icon_state = "autolathe_n"
 				var/time = is_stack ? 32 : (32 * coeff * multiplier) ** 0.8
 				playsound(src, 'sound/machines/prod.ogg', 50)
-				addtimer(CALLBACK(src, .proc/make_item, power, materials_used, custom_materials, multiplier, coeff, is_stack, usr), time)
+				addtimer(CALLBACK(src, PROC_REF(make_item), power, materials_used, custom_materials, multiplier, coeff, is_stack, usr), time)
 				. = TRUE
 			else
 				to_chat(usr, span_alert("Not enough materials for this operation."))
@@ -243,7 +243,7 @@
 	if(user.a_intent == INTENT_HARM) //so we can hit the machine
 		return ..()
 
-	if(stat)
+	if(machine_stat)
 		return TRUE
 
 	if(istype(O, /obj/item/disk/design_disk))
@@ -355,10 +355,12 @@
 	var/datum/component/material_container/materials = GetComponent(/datum/component/material_container)
 	materials.max_amount = mat_capacity
 
-	var/efficiency=1.2
+	var/efficiency=1.19
 	for(var/obj/item/stock_parts/manipulator/new_manipulator in component_parts)
-		efficiency -= new_manipulator.rating*0.2
-	creation_efficiency = max(1,efficiency) // creation_efficiency goes 1 -> 0,8 -> 0,6 -> 0,4 per level of manipulator efficiency
+		efficiency -= new_manipulator.rating*0.19
+	efficiency = round(efficiency*100)
+	efficiency /= 100
+	creation_efficiency = min(1,efficiency) // creation_efficiency goes 1 -> 0,8 -> 0,6 -> 0,4 per level of manipulator efficiency
 
 /obj/machinery/autolathe/examine(mob/user)
 	. += ..()
@@ -406,7 +408,7 @@
 				disabled = FALSE
 
 /obj/machinery/autolathe/proc/shock(mob/user, prb)
-	if(stat & (BROKEN|NOPOWER)) // unpowered, no shock
+	if(machine_stat & (BROKEN|NOPOWER)) // unpowered, no shock
 		return FALSE
 	if(!prob(prb))
 		return FALSE
@@ -479,4 +481,4 @@
 // override the base to allow plastics
 /obj/machinery/autolathe/ComponentInitialize()
 	var/list/extra_mats = list(/datum/material/plastic)
-	AddComponent(/datum/component/material_container, SSmaterials.materialtypes_by_category[MAT_CATEGORY_RIGID] + extra_mats, 0, TRUE, null, null, CALLBACK(src, .proc/AfterMaterialInsert))
+	AddComponent(/datum/component/material_container, SSmaterials.materialtypes_by_category[MAT_CATEGORY_RIGID] + extra_mats, 0, TRUE, null, null, CALLBACK(src, PROC_REF(AfterMaterialInsert)))

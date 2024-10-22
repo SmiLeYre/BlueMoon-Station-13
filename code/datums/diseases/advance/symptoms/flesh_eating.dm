@@ -65,7 +65,7 @@ Bonus
 			var/mob/living/carbon/human/H = M
 			var/obj/item/bodypart/random_part = pick(H.bodyparts)
 			random_part.generic_bleedstacks += 5 * power
-	return 1
+	return TRUE
 
 /*
 //////////////////////////////////////
@@ -85,7 +85,6 @@ Bonus
 */
 
 /datum/symptom/flesh_death
-
 	name = "Autophagocytosis Necrosis"
 	desc = "The virus rapidly consumes infected cells, leading to heavy and widespread damage."
 	stealth = -2
@@ -133,4 +132,4 @@ Bonus
 		M.reagents.add_reagent_list(list(/datum/reagent/toxin/heparin = 2, /datum/reagent/toxin/lipolicide = 2))
 	if(zombie)
 		M.reagents.add_reagent(/datum/reagent/romerol, 1)
-	return 1
+	return TRUE

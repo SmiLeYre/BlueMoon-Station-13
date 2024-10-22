@@ -55,7 +55,7 @@
 	var/current_len = length(summoned_minions)
 	if(current_len > maximum_tanks - tanks_to_summon)
 		for(var/a in (maximum_tanks - tanks_to_summon) to current_len)
-			var/mob/living/simple_animal/hostile/clocktank/weak/S = popleft(summoned_minions)
+			var/mob/living/simple_animal/hostile/clockwork/clocktank/weak/S = popleft(summoned_minions)
 			if(!S.client)
 				qdel(S)
 			else
@@ -65,14 +65,14 @@
 				to_summon--
 
 	var/static/list/minions = list(
-	/mob/living/simple_animal/hostile/clocktank/weak)
+	/mob/living/simple_animal/hostile/clockwork/clocktank/weak)
 
 	var/list/directions = GLOB.cardinals.Copy()
 	for(var/i in 1 to to_summon)
 		var/minions_chosen = pick(minions)
-		var/mob/living/simple_animal/hostile/clocktank/weak/S = new minions_chosen (get_step(boss,pick_n_take(directions)), 1)
+		var/mob/living/simple_animal/hostile/clockwork/clocktank/weak/S = new minions_chosen (get_step(boss,pick_n_take(directions)), 1)
 		S.faction = boss.faction
-		RegisterSignal(S, COMSIG_PARENT_QDELETING, .proc/remove_from_list)
+		RegisterSignal(S, COMSIG_PARENT_QDELETING, PROC_REF(remove_from_list))
 		summoned_minions += S
 
 /datum/action/boss/clockie_summon_minions/proc/remove_from_list(datum/source, forced)

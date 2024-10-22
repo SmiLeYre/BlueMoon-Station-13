@@ -1,6 +1,6 @@
 /mob/living/simple_animal/hostile/megafauna
 	var/retaliated = FALSE
-	var/retaliatedcooldowntime = 6000
+	var/retaliatedcooldowntime = 1 SECONDS
 	var/retaliatedcooldown
 
 /mob/living/simple_animal/hostile/megafauna/Found(atom/A)
@@ -22,7 +22,7 @@
 	see &= enemies // Remove all entries that aren't in enemies
 	return see
 
-/mob/living/simple_animal/hostile/megafauna/Retaliate()
+/mob/living/simple_animal/hostile/megafauna/proc/Retaliate()
 	var/list/around = oview(src, vision_range)
 	for(var/atom/movable/A in around)
 		if(isliving(A))
@@ -50,7 +50,7 @@
 	for(var/mob/living/simple_animal/hostile/megafauna/H in around)
 		if(faction_check_mob(H) && !attack_same && !H.attack_same)
 			H.enemies |= enemies
-	return 0
+	return FALSE
 
 /mob/living/simple_animal/hostile/megafauna/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()

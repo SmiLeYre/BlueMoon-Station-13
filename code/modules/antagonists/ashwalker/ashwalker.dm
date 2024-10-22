@@ -10,6 +10,7 @@
 	show_to_ghosts = TRUE
 	antagpanel_category = "Ash Walkers"
 	var/datum/team/ashwalkers/ashie_team
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/ashwalker/create_team(datum/team/team)
 	if(team)
@@ -23,14 +24,15 @@
 
 /datum/antagonist/ashwalker/on_body_transfer(mob/living/old_body, mob/living/new_body)
 	. = ..()
-	RegisterSignal(new_body, COMSIG_MOB_EXAMINATE, .proc/on_examinate)
+	RegisterSignal(new_body, COMSIG_MOB_EXAMINATE, PROC_REF(on_examinate))
 
 /datum/antagonist/ashwalker/on_gain()
 	. = ..()
-	RegisterSignal(owner.current, COMSIG_MOB_EXAMINATE, .proc/on_examinate)
+	RegisterSignal(owner.current, COMSIG_MOB_EXAMINATE, PROC_REF(on_examinate))
 
 /datum/antagonist/ashwalker/on_removal()
 	. = ..()
+	owner.special_role = null // BLUEMOON ADD
 	UnregisterSignal(owner.current, COMSIG_MOB_EXAMINATE)
 
 /datum/antagonist/ashwalker/proc/on_examinate(datum/source, atom/A)

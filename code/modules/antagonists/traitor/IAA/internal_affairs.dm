@@ -13,7 +13,6 @@
 	var/syndicate = FALSE
 	var/last_man_standing = FALSE
 	var/list/datum/mind/targets_stolen
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/traitor/internal_affairs/New()
 	. = ..()

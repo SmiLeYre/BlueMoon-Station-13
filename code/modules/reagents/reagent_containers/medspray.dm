@@ -32,7 +32,7 @@
 	to_chat(user, "<span class='notice'>You will now apply the medspray's contents in [squirt_mode ? "short bursts":"extended sprays"]. You'll now use [amount_per_transfer_from_this] units per use.</span>")
 
 /obj/item/reagent_containers/medspray/attack(mob/living/L, mob/user, def_zone)
-	INVOKE_ASYNC(src, .proc/attempt_spray, L, user, def_zone)		// this is shitcode because the params for attack aren't even right but i'm not in the mood to refactor right now.
+	INVOKE_ASYNC(src, PROC_REF(attempt_spray), L, user, def_zone)		// this is shitcode because the params for attack aren't even right but i'm not in the mood to refactor right now.
 
 /obj/item/reagent_containers/medspray/proc/attempt_spray(mob/living/L, mob/user, def_zone)
 	if(!reagents || !reagents.total_volume)
@@ -100,15 +100,6 @@
 	desc = "A medical spray bottle, designed for precision application, with an unscrewable cap. This one contains synthflesh, an apex brute and burn healing agent."
 	icon_state = "synthspray"
 	list_reagents = list(/datum/reagent/medicine/synthflesh = 120)
-
-/obj/item/hypospray/mkii/CMO/combat/synthflesh
-	name = "Combat Hypospray with Synthflesh"
-	icon = 'icons/obj/syringe.dmi'
-	lefthand_file = 'icons/mob/inhands/equipment/medical_lefthand.dmi'
-	righthand_file = 'icons/mob/inhands/equipment/medical_righthand.dmi'
-	item_state = "holy_hypo"
-	icon_state = "holy_hypo"
-	start_vial = /obj/item/reagent_containers/glass/bottle/vial/large/synthflesh
 
 /obj/item/reagent_containers/medspray/sterilizine
 	name = "sterilizer spray"

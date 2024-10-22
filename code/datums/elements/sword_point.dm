@@ -7,7 +7,7 @@
 		return
 	if(!istype(target))
 		return ELEMENT_INCOMPATIBLE
-	RegisterSignal(target, COMSIG_ITEM_ALT_AFTERATTACK, .proc/point)
+	RegisterSignal(target, COMSIG_ITEM_ALT_AFTERATTACK, PROC_REF(point))
 
 /datum/element/sword_point/Detach(datum/source)
 	. = ..()
@@ -15,4 +15,4 @@
 
 /datum/element/sword_point/proc/point(datum/source, atom/target, mob/user, proximity_flag, params)
 	if(!proximity_flag && ismob(target))
-		user.visible_message("<span class='notice'>[user] points the tip of [source] at [target].</span>", "<span class='notice'>You point the tip of [source] at [target].</span>")
+		user.visible_message("<span class='warning'>[user] указывает кончиком своего [source] на [target].</span>", "<span class='warning'>Ты направляешь кончик своего [source] на [target].</span>")

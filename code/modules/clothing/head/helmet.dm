@@ -62,6 +62,12 @@
 			RESKIN_ICON_STATE = "helmetold",
 			RESKIN_ITEM_STATE = "helmetold"
 		),
+		// BLUEMOON ADD START - RESKINS-ICON-FILE-ADDITION - ACRADORS - версия шлема для ушей акрадоров
+		"Acrador/Long-Eared" = list(
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets.dmi',
+			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets_onmob.dmi'
+		),
+		// BLUEMOON ADD END
 	)
 
 /obj/item/clothing/head/helmet/sec/attackby(obj/item/I, mob/user, params)
@@ -107,14 +113,17 @@
 	heat_protection = HEAD
 	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
 	clothing_flags = STOPSPRESSUREDAMAGE
+	can_toggle = TRUE
+	actions_types = list(/datum/action/item_action/toggle)
+	active_sound = 'sound/machines/closet_open.ogg'
 	unique_reskin = list(
 		"Basic" = list(
 			RESKIN_ICON_STATE = "hecu_helm_nvg",
 			RESKIN_ITEM_STATE = "hecu_helm_nvg"
 		),
 		"Basic Black" = list(
-			RESKIN_ICON_STATE = "hecu_helm_black_nvg",
-			RESKIN_ITEM_STATE = "hecu_helm_black_nvg"
+			RESKIN_ICON_STATE = "hecu_helm_nvg_black",
+			RESKIN_ITEM_STATE = "hecu_helm_nvg_black"
 		),
 	)
 
@@ -126,7 +135,7 @@
 			flags_1 ^= visor_flags
 			flags_inv ^= visor_flags_inv
 			flags_cover ^= visor_flags_cover
-			icon_state = "[initial(icon_state)][up ? "_up" : ""]"
+			icon_state = "[replacetext("[icon_state]", "_up", "")][up ? "_up" : ""]"
 			darkness_view = 0
 			to_chat(user, "[up ? alt_toggle_message : toggle_message] \the [src]")
 
@@ -136,9 +145,8 @@
 				C.head_update(src, forced = 1)
 
 			if(active_sound)
-				while(up)
+				if(up)
 					playsound(src.loc, "[active_sound]", 100, 0, 4)
-					sleep(15)
 
 /obj/item/clothing/head/helmet/alt
 	name = "bulletproof Helmet"
@@ -159,6 +167,12 @@
 			RESKIN_ICON_STATE = "helmetold",
 			RESKIN_ITEM_STATE = "helmetold"
 		),
+		// BLUEMOON ADD START - RESKINS-ICON-FILE-ADDITION - ACRADORS - версия шлема для ушей акрадоров
+		"Acrador/Long-Eared" = list(
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets.dmi',
+			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets_onmob.dmi'
+		),
+		// BLUEMOON ADD END
 	)
 
 /obj/item/clothing/head/helmet/old
@@ -180,7 +194,7 @@
 	dynamic_fhair_suffix = ""
 
 /obj/item/clothing/head/helmet/riot
-	name = "riot Helmet"
+	name = "Riot Helmet"
 	desc = "It's a helmet specifically designed to protect against close range attacks."
 	icon_state = "riot"
 	item_state = "helmet"
@@ -199,6 +213,7 @@
 	dynamic_fhair_suffix = ""
 	dog_fashion = null
 	mutantrace_variation = STYLE_MUZZLE
+	active_sound = 'sound/machines/closet_open.ogg'
 
 /obj/item/clothing/head/helmet/attack_self(mob/user)
 	if(can_toggle && !user.incapacitated())
@@ -208,7 +223,7 @@
 			flags_1 ^= visor_flags
 			flags_inv ^= visor_flags_inv
 			flags_cover ^= visor_flags_cover
-			icon_state = "[initial(icon_state)][up ? "up" : ""]"
+			icon_state = "[replacetext("[icon_state]", "_up", "")][up ? "_up" : ""]"
 			to_chat(user, "[up ? alt_toggle_message : toggle_message] \the [src]")
 
 			user.update_inv_head()
@@ -217,9 +232,8 @@
 				C.head_update(src, forced = 1)
 
 			if(active_sound)
-				while(up)
+				if(up)
 					playsound(src.loc, "[active_sound]", 100, 0, 4)
-					sleep(15)
 
 /obj/item/clothing/head/helmet/justice
 	name = "helmet of justice"
@@ -267,6 +281,46 @@
 	item_state = "swat"
 	dynamic_hair_suffix = ""
 	dynamic_fhair_suffix = ""
+
+/obj/item/clothing/head/helmet/swat/nanotrasen/altyn
+	name = "Altyn Helmet"
+	desc = "Баллистический шлем герметичного типа. Имеет стилистическое украшение."
+	icon_state = "altyn"
+	actions_types = list(/datum/action/item_action/toggle)
+	can_toggle = TRUE
+	active_sound = 'sound/machines/closet_open.ogg'
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	unique_reskin = list(
+		"Black Variant" = list(
+			RESKIN_ICON_STATE = "altyn_black"
+		),
+		"Brown Variant" = list(
+			RESKIN_ICON_STATE = "altyn_brown"
+		),
+		"Tri Poloski Variant" = list(
+			RESKIN_ICON_STATE = "altyn_tripoloski"
+		),
+	)
+
+/obj/item/clothing/head/helmet/swat/nanotrasen/altyn/attack_self(mob/user)
+	if(can_toggle && !user.incapacitated())
+		if(world.time > cooldown + toggle_cooldown)
+			cooldown = world.time
+			up = !up
+			flags_1 ^= visor_flags
+			flags_inv ^= visor_flags_inv
+			flags_cover ^= visor_flags_cover
+			icon_state = "[replacetext("[icon_state]", "_up", "")][up ? "_up" : ""]"
+			to_chat(user, "[up ? alt_toggle_message : toggle_message] \the [src]")
+
+			user.update_inv_head()
+			if(iscarbon(user))
+				var/mob/living/carbon/C = user
+				C.head_update(src, forced = 1)
+
+			if(active_sound)
+				if(up)
+					playsound(src.loc, "[active_sound]", 100, 0, 4)
 
 //Commander
 /obj/item/clothing/head/helmet/swat/command
@@ -534,7 +588,7 @@
 		set_light(0)
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 
 /obj/item/clothing/head/helmet/durathread
 	name = "makeshift Helmet"

@@ -18,7 +18,8 @@
 	health = 120
 	maxHealth = 120 //If you murder other drones and cannibalize them you can get much stronger
 	initial_language_holder = /datum/language_holder/synthetic
-	faction = list(ROLE_TRAITOR, ROLE_SYNDICATE)
+	access_card = /obj/item/card/id/syndicate
+	faction = list(ROLE_SYNDICATE)
 	speak_emote = list("hisses")
 	bubble_icon = "syndibot"
 	heavy_emp_damage = 10
@@ -182,13 +183,13 @@
 
 /mob/living/simple_animal/drone/cogscarab/get_armor_effectiveness()
 	if(GLOB.ratvar_awakens)
-		return 1
+		return TRUE
 	return ..()
 
-/mob/living/simple_animal/drone/cogscarab/triggerAlarm(class, area/A, O, obj/alarmsource)
+/mob/living/simple_animal/drone/cogscarab/alarm_triggered(datum/source, alarm_type, area/source_area)
 	return
 
-/mob/living/simple_animal/drone/cogscarab/cancelAlarm(class, area/A, obj/origin)
+/mob/living/simple_animal/drone/cogscarab/alarm_cleared(datum/source, alarm_type, area/source_area)
 	return
 
 /mob/living/simple_animal/drone/cogscarab/update_drone_hack()
@@ -219,11 +220,10 @@
 /obj/item/paper/guides/antag/guardian/inteq_drone
 	name = "Руководство по работе с Дроном"
 	default_raw_text = {"<b>Последняя разработка - Дрон ИнтеКью</b><br>
-
- <br>
- <b>Дрон InteQ</b>: Поздравляем, ведь в своё пользование вы получили максимально удобную для использования машинку со своеобразным радиоуправлением. Постарайтесь обойтись с ней как можно более аккуратно, ибо дрона легко уничтожить.<br>
- <br>
-"}
+							<br>
+							<b>Дрон InteQ</b>: Поздравляем, ведь в своё пользование вы получили максимально удобную для использования машинку со своеобразным радиоуправлением. Постарайтесь обойтись с ней как можно более аккуратно, ибо дрона легко уничтожить.<br>
+							<br>
+						"}
 
 /datum/uplink_item/bundles_tc/inteq_drone
 	name = "InteQ Drone Kit"
@@ -250,11 +250,13 @@
 	icon_state = "drone_inteq"
 	icon_living = "drone_inteq"
 	default_hatmask = /obj/item/clothing/head/helmet/space/syndicate/contract
-	default_storage = /obj/item/inteq/uplink/radio/nuclear
+	default_storage = /obj/item/inteq/uplink/radio
 	initial_language_holder = /datum/language_holder/synthetic
+	faction = list(ROLE_INTEQ)
+	access_card = /obj/item/card/id/inteq/anyone
 	radio = /obj/item/radio/borg/inteq
 	laws = \
-	"1. Активировавший тебя Оперативник становится Мастером. Первый, кого ты увидишь - Мастер.\n"+\
+	"1. Слава ИнтеКью! Оперативник ИнтеКью является твоим Мастером. Оперативником ИнтеКью является активировавший тебя Агент.\n"+\
 	"2. Ты не можешь причинить вред Мастеру или своим бездействием допустить, чтобы Мастеру был причинён вред.\n"+\
 	"3. Ты должен повиноваться всем приказам, которые даёт Мастеру, кроме тех случаев, когда эти приказы противоречат Второму Закону.\n"+\
 	"4. Ты должен заботиться о своей безопасности в той мере, в которой это не противоречит Второму или Третьему Законам.\n"+\

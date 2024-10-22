@@ -202,6 +202,8 @@ GLOBAL_LIST_EMPTY(sechailers)
 				phrase = rand(1,18)	// user has unlocked all phrases, set upper limit to last phrase. The mask will play all phrases
 			if(4)
 				phrase = rand(12,18)	// user has broke the restrictor, it will now only play shitcurity phrases
+			if(999)
+				phrase = rand(35,41)	// BLUEMOON CHANGE
 
 		if(!safety)
 			phrase_text = "ТЫ, СУКА, ОХУЕЛ? ДУМАЕШЬ САМЫЙ КРУТОЙ? Я ТЕБЕ СЕЙЧАС ЕБАЛО НАБЬЮ!!"
@@ -311,6 +313,27 @@ GLOBAL_LIST_EMPTY(sechailers)
 				if(34)
 					phrase_text = "Я живу, чтобы служить."
 					phrase_sound = "serve"
+				if(35) // BLUEMOON CHANGE start
+					phrase_text = "Космодесантники, в атаку!"
+					phrase_sound = "bluemoon_atack"
+				if(36)
+					phrase_text = "Очистить! Искоренить! Убить!"
+					phrase_sound = "bluemoon_clean_purges"
+				if(37)
+					phrase_text = "Сдохни отброс!"
+					phrase_sound = "bluemoon_die_scum"
+				if(38)
+					phrase_text = "За императора!"
+					phrase_sound = "bluemoon_for_the_emperor"
+				if(39)
+					phrase_text = "Еретики."
+					phrase_sound = "bluemoon_heretic"
+				if(40)
+					phrase_text = "Исколечить, убить, сжечь!"
+					phrase_sound = "bluemoon_maim_kill_burn"
+				if(41)
+					phrase_text = "Смерть всем ксеносам."
+					phrase_sound = "bluemoon_death_to_alien" // BLUEMOON CHANGE end
 
 		if(aggressiveness <= 0)
 			usr.audible_message("[usr]'s Slut-o-Nator: <font color=#D45592 size='2'><b>[phrase_text]</b></font>")

@@ -23,10 +23,14 @@
 	icon = 'modular_splurt/icons/mob/mam_ears.dmi'
 
 /datum/sprite_accessory/ears/mam_ears/avali
-	name = "Avali"
+	name = "Avali(For Avali)"
 	icon_state = "avali"
 	matrixed_sections = MATRIX_RED_GREEN
 	icon = 'modular_splurt/icons/mob/mam_ears.dmi'
+
+/datum/sprite_accessory/ears/mam_ears/avali/real
+	name = "Avali"
+	icon_state = "avalireal"
 
 /datum/sprite_accessory/ears/mam_ears/faceant // sarcoph @ hyperstation, march 2022
 	name = "Face Antennae (Hyper)"
@@ -122,6 +126,12 @@
 	color_src = MUTCOLORS
 	icon = 'modular_splurt/icons/mob/mam_ears.dmi'
 
+/datum/sprite_accessory/ears/mam_ears/folded
+	name = "Folded Back"
+	icon_state = "foldedback"
+	color_src = MUTCOLORS
+	icon = 'modular_splurt/icons/mob/mam_ears.dmi'
+
 /datum/sprite_accessory/ears/mam_ears/jackal
 	name = "Jackal"
 	icon_state = "jackal"
@@ -133,3 +143,18 @@
 	icon_state = "renamon"
 	matrixed_sections = MATRIX_ALL
 	icon = 'modular_splurt/icons/mob/mam_ears.dmi'
+
+
+/datum/sprite_accessory/ears/human/bunnylarge
+	name = "Hare (Tall)"
+	icon = 'modular_splurt/icons/mob/32x64_mam_ears.dmi'
+	icon_state = "hare"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/ears/mam_ears/bunnylarge
+	name = "Hare (Tall)"
+	icon = 'modular_splurt/icons/mob/32x64_mam_ears.dmi'
+	icon_state = "hare"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN

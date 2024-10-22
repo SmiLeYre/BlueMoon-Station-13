@@ -1,11 +1,12 @@
 /datum/interaction/lewd/fuck
 	description = "Член. Проникнуть в вагину."
-	require_user_penis = REQUIRE_EXPOSED
-	require_target_vagina = REQUIRE_EXPOSED
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_target_exposed = INTERACTION_REQUIRE_VAGINA
 	write_log_user = "fucked"
 	write_log_target = "was fucked by"
 	interaction_sound = null
-	max_distance = 1
+	p13user_emote = PLUG13_EMOTE_PENIS
+	p13target_emote = PLUG13_EMOTE_VAGINA
 
 /datum/interaction/lewd/fuck/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -31,8 +32,11 @@
 
 /datum/interaction/lewd/fuck/anal
 	description = "Член. Проникнуть в задницу."
-	require_target_vagina = null
-	require_target_anus = REQUIRE_EXPOSED
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_target_exposed = INTERACTION_REQUIRE_ANUS
+	p13user_emote = "front"
+	p13target_emote = "back"
+	p13target_emote = PLUG13_EMOTE_ANUS
 
 /datum/interaction/lewd/fuck/anal/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -64,9 +68,11 @@
 /datum/interaction/lewd/breastfuck
 	description = "Член. Проникнуть между сисек."
 	interaction_sound = null
-	require_user_penis = REQUIRE_EXPOSED
-	require_target_breasts = REQUIRE_EXPOSED
-	max_distance = 1
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_target_exposed = INTERACTION_REQUIRE_BREASTS
+	p13user_emote = PLUG13_EMOTE_PENIS
+	p13target_emote = PLUG13_EMOTE_BREASTS
+	p13target_strength = PLUG13_STRENGTH_NORMAL
 
 /datum/interaction/lewd/breastfuck/display_interaction(mob/living/user, spillage = TRUE, mob/living/partner)
 	var/message
@@ -94,10 +100,12 @@
 /datum/interaction/lewd/footfuck
 	description = "Член. Потереться о ботинок."
 	interaction_sound = null
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_target_exposed = INTERACTION_REQUIRE_FEET
+	required_from_target_unexposed = INTERACTION_REQUIRE_FEET
 	require_target_num_feet = 1
-	require_target_feet = REQUIRE_ANY
-	require_user_penis = REQUIRE_EXPOSED
-	max_distance = 1
+	p13user_emote = PLUG13_EMOTE_PENIS
+	p13user_strength = PLUG13_STRENGTH_NORMAL
 
 /datum/interaction/lewd/footfuck/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -153,11 +161,11 @@
 /datum/interaction/lewd/footfuck/vag
 	description = "Вагина. Потереться о ботинок."
 	interaction_sound = null
+	required_from_user_exposed = INTERACTION_REQUIRE_VAGINA
+	required_from_target_exposed = INTERACTION_REQUIRE_FEET
+	required_from_target_unexposed = INTERACTION_REQUIRE_FEET
 	require_target_num_feet = 1
-	require_target_feet = REQUIRE_ANY
-	require_user_vagina = REQUIRE_EXPOSED
-	require_user_penis = REQUIRE_NONE
-	max_distance = 1
+	p13user_emote = PLUG13_EMOTE_VAGINA
 
 /datum/interaction/lewd/footfuck/vag/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -178,3 +186,7 @@
 						'modular_sand/sound/interactions/foot_wet2.ogg'), 70, 1, -1)
 	user.visible_message(span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, partner, ORGAN_SLOT_VAGINA) //SPLURT edit
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(partner.loc)

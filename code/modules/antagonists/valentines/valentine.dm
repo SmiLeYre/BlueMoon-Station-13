@@ -3,6 +3,7 @@
 	roundend_category = "valentines" //there's going to be a ton of them so put them in separate category
 	show_in_antagpanel = FALSE
 	var/datum/mind/date
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/valentine/proc/forge_objectives()
 	var/datum/objective/protect/protect_objective = new /datum/objective/protect

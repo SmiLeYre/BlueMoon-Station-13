@@ -20,7 +20,7 @@
 	var/creationTime
 
 /obj/item/newspaper/suicide_act(mob/user)
-	user.visible_message("<span class='suicide'>[user] is focusing intently on [src]! It looks like [user.ru_who()] trying to commit sudoku... until [user.ru_ego()] eyes light up with realization!</span>")
+	user.visible_message("<span class='suicide'>[user] is focusing intently on [src]! It looks like [user.p_theyre()] trying to commit sudoku... until [user.p_their()] eyes light up with realization!</span>")
 	user.say(";JOURNALISM IS MY CALLING! EVERYBODY APPRECIATES UNBIASED REPORTI-GLORF", forced="newspaper suicide")
 	var/mob/living/carbon/human/H = user
 	var/obj/W = new /obj/item/reagent_containers/food/drinks/bottle/whiskey(H.loc)
@@ -33,7 +33,7 @@
 /obj/item/newspaper/attack_self(mob/user)
 	if(ishuman(user))
 		var/mob/living/carbon/human/human_user = user
-		var/dat
+		var/dat = {"<meta charset="UTF-8">"}
 		pages = 0
 		switch(screen)
 			if(0) //Cover
@@ -113,17 +113,17 @@
 
 /obj/item/newspaper/proc/notContent(list/L)
 	if(!L.len)
-		return 0
+		return FALSE
 	for(var/i=L.len;i>0;i--)
 		var/num = abs(L[i])
 		if(creationTime <= num)
 			continue
 		else
 			if(L[i] > 0)
-				return 1
+				return TRUE
 			else
-				return 0
-	return 0
+				return FALSE
+	return FALSE
 
 /obj/item/newspaper/Topic(href, href_list)
 	var/mob/living/U = usr
@@ -155,7 +155,7 @@
 
 /obj/item/newspaper/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/pen))
-		if(!user.can_write(W))
+		if(!user.is_literate())
 			to_chat(user, "<span class='notice'>You scribble illegibly on [src]!</span>")
 			return
 		if(scribble_page == curr_page)

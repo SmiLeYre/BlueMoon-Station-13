@@ -35,7 +35,7 @@
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/misc.dmi'
 	flags_inv = HIDEFACE|HIDEFACIALHAIR
 	visor_flags_inv = HIDEFACE|HIDEFACIALHAIR
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_MUZZLE|STYLE_NO_ANTHRO_ICON
 	clothing_flags = ALLOWINTERNALS
 
 /obj/item/clothing/mask/balaclava/breath/redscarf/bluescarf
@@ -191,6 +191,25 @@
 	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
 	path = /obj/item/clothing/neck/cloak/nri_cape
 
+// start bluemoon edit - Katana Zero
+
+/datum/gear/head/chronos_beret
+	name = "New Mecca Beret"
+	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
+	path = /obj/item/clothing/head/beret/chronos
+
+/datum/gear/uniform/chronos_uniform
+	name = "New Mecca Uniform"
+	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
+	path = /obj/item/clothing/under/chronos
+
+/datum/gear/neck/chronos_cape
+	name = "New Mecca Cape"
+	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
+	path = /obj/item/clothing/neck/cloak/chronos
+
+// end bluemoon edit - Katana Zero
+
 /datum/gear/backpack/flag
 	name = "Flag"
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
@@ -220,11 +239,11 @@
 	assignment = "NRI"
 	uses_overlays = FALSE
 
-/obj/item/card/id/blumland_citizen
-	name = "Blumland Citizen ID"
-	desc = "An ID made to recognize Blumland Confederation habbitants and tourists."
+/obj/item/card/id/blumenland_citizen
+	name = "Blumenland Citizen ID"
+	desc = "An ID made to recognize Blumenland Confederation habbitants and tourists."
 	icon_state = "blumland"
-	assignment = "Blumland Citizen"
+	assignment = "Blumenland Citizen"
 	uses_overlays = FALSE
 
 /datum/gear/hands/sol_citizen
@@ -237,10 +256,10 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/card/id/nri_citizen
 
-/datum/gear/hands/blumland_citizen
-	name = "Blumland Citizen ID"
+/datum/gear/hands/blumenland_citizen
+	name = "Blumenland Citizen ID"
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/card/id/blumland_citizen
+	path = /obj/item/card/id/blumenland_citizen
 
 //// The default nun robe change to uniform slot
 

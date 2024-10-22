@@ -45,12 +45,13 @@
 	new /obj/item/clothing/gloves/color/latex/nitrile(src)
 	new /obj/item/storage/belt/medical(src)
 	new /obj/item/clothing/glasses/hud/health(src)
+	new /obj/item/roller/heavy(src) // BLUEMOON - HEAVY_QUIRKS - ADD - каталка для сверхтяжей
 	return
 
 /obj/structure/closet/secure_closet/paramedic
     name = "paramedic's locker"
     req_access = list(ACCESS_MEDICAL)
-    icon_state = "paramed_secure"
+    icon_state = "med_secure"
 
 /obj/structure/closet/secure_closet/paramedic/PopulateContents()
     ..()

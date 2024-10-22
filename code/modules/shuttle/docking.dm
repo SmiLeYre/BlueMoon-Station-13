@@ -2,6 +2,10 @@
 /obj/docking_port/mobile/proc/initiate_docking(obj/docking_port/stationary/new_dock, movement_direction, force=FALSE)
 	// Crashing this ship with NO SURVIVORS
 
+	if(!new_dock)
+		message_admins("Порт стыковки для [src] отсутствует. Воспользуйтесь Shuttle Manipulator в категории Admin>Events.")
+		return
+
 	if(new_dock.get_docked() == src)
 		remove_ripples()
 		return DOCKING_SUCCESS

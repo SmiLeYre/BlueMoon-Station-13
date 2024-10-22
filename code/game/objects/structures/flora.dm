@@ -317,8 +317,41 @@
 /obj/item/kirbyplants/ComponentInitialize()
 	. = ..()
 	AddElement(/datum/element/tactical)
-	addtimer(CALLBACK(src, /datum.proc/_AddElement, list(/datum/element/beauty, 500)), 0)
+	addtimer(CALLBACK(src, TYPE_PROC_REF(/datum, _AddElement), list(/datum/element/beauty, 500)), 0)
 	AddComponent(/datum/component/two_handed, require_twohands=TRUE, force_unwielded=10, force_wielded=10)
+
+//BLUEMOON ADD прикрутить кусты, открутить кусты
+/obj/item/kirbyplants/wrench_act(mob/living/user, obj/item/I)
+	default_unfasten_wrench(user, I)
+	return TRUE
+
+/obj/item/kirbyplants/default_unfasten_wrench(mob/user, obj/item/I, time = 20)
+	. = ..()
+	if(. == SUCCESSFUL_UNFASTEN)
+		switch(anchored)
+			if(TRUE)
+				if(user.a_intent == INTENT_GRAB)
+					var/x_shift = 0
+					x_shift = input(user, "Set x shift (-16 to 16)", "Set shift", 0) as num
+					x_shift = clamp(x_shift, -16, 16)
+					var/y_shift = 0
+					y_shift = input(user, "Set y shift (-16 to 16)", "Set shift", 0) as num
+					y_shift = clamp(y_shift, -16, 16)
+					if(anchored && user.CanReach(src))
+						pixel_x = x_shift
+						pixel_y = y_shift
+			if(FALSE)
+				pixel_x = 0
+				pixel_y = 0
+
+/obj/item/kirbyplants/examine(mob/user)
+	. = ..()
+	if(in_range(user, src))
+		if(anchored)
+			. += "<span class='notice'>It is <b>bolted</b> to the ground.</span>"
+		else
+			. += "<span class='notice'>It is can be <b>bolted</b> to the ground. </b> On grab intent can be precise placed.</span>"
+//BLUEMOON ADD END
 
 /obj/item/kirbyplants/random
 	icon = 'icons/obj/flora/_flora.dmi'
@@ -334,7 +367,7 @@
 
 /obj/item/kirbyplants/random/proc/generate_states()
 	states = list()
-	for(var/i in 1 to 25)
+	for(var/i in 1 to 34)
 		var/number
 		if(i < 10)
 			number = "0[i]"
@@ -391,6 +424,7 @@
 /obj/structure/flora/rock/pile
 	icon_state = "lavarocks"
 	desc = "A pile of rocks."
+	density = FALSE //BLUEMOON ADD это реально куча косточек на полу, оно проходимо по всей логике
 
 //Jungle grass
 

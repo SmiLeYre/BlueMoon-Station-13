@@ -18,12 +18,13 @@ GLOBAL_VAR_INIT(dynamic_stacking_limit, 90)
 GLOBAL_LIST_EMPTY(dynamic_forced_roundstart_ruleset)
 // Forced threat level, setting this to zero or higher forces the roundstart threat to the value.
 GLOBAL_VAR_INIT(dynamic_forced_threat_level, -1)
-// BLUEMOON ADD - командный динамик
-GLOBAL_VAR_INIT(teambased_dynamic, FALSE)
+// BLUEMOON ADD
 // Очки для уровней угрозы от различных вариаций динамика
 // Значения изменяются при выборе вариаций динамика
 GLOBAL_VAR_INIT(dynamic_type_threat_min, 40)
 GLOBAL_VAR_INIT(dynamic_type_threat_max, 60)
+// Некоторые пресеты антагонистов не могут выпасть не в свой тип.
+GLOBAL_VAR_INIT(round_type, ROUNDTYPE_DYNAMIC_MEDIUM)
 // BLUEMOON ADD END
 
 /datum/game_mode/dynamic
@@ -172,9 +173,13 @@ GLOBAL_VAR_INIT(dynamic_type_threat_max, 60)
 	dat += "Parameters: centre = [threat_curve_centre] ; width = [threat_curve_width].<br/>"
 	dat += "Split parameters: centre = [roundstart_split_curve_centre] ; width = [roundstart_split_curve_width].<br/>"
 	dat += "<i>On average, <b>[peaceful_percentage]</b>% of the rounds are more peaceful.</i><br/>"
+	/* BLUEMOON CHANGES START - мы используем GLOB.round_type
 	dat += "Forced extended: <a href='?src=\ref[src];[HrefToken()];forced_extended=1'><b>[GLOB.dynamic_forced_extended ? "On" : "Off"]</b></a><br/>"
 	dat += "Dynamic extended: <a href='?src=\ref[src];[HrefToken()];extended=1'><b>[GLOB.dynamic_extended ? "On" : "Off"]</b></a><br/>"
-	dat += "Team Based Dynamic: <a href='?src=\ref[src];[HrefToken()];teambased=1'><b>[GLOB.teambased_dynamic ? "On" : "Off"]</b></a><br/>"
+	/ BLUEMOON CHANGES END */
+	// BLUEMOON ADD START - мы используем GLOB.round_type
+	dat += "Dynamic Round Type: <a href='?src=\ref[src];[HrefToken()];round_type_choose=1'><b>[GLOB.round_type]</b></a><br/>"
+	// BLUEMOON ADD END
 	dat += "No stacking (only one round-ender): <a href='?src=\ref[src];[HrefToken()];no_stacking=1'><b>[GLOB.dynamic_no_stacking ? "On" : "Off"]</b></a><br/>"
 	dat += "Stacking limit: [GLOB.dynamic_stacking_limit] <a href='?src=\ref[src];[HrefToken()];stacking_limit=1'>\[Adjust\]</A>"
 	dat += "<br/>"
@@ -202,14 +207,19 @@ GLOBAL_VAR_INIT(dynamic_type_threat_max, 60)
 		message_admins("[usr.key] has attempted to override the game mode panel!")
 		log_admin("[key_name(usr)] tried to use the game mode panel without authorization.")
 		return
+	/* BLUEMOON ADD START - мы используем GLOB.round_type
 	if (href_list["forced_extended"])
 		GLOB.dynamic_forced_extended = !GLOB.dynamic_forced_extended
 	else if (href_list["Extended"])
 		GLOB.dynamic_extended = !GLOB.dynamic_extended
-//BLUEMOON ADD START - необходимо для изменения через game panel
-	else if (href_list["teambased"])
-		GLOB.teambased_dynamic = !GLOB.teambased_dynamic
-//BLUEMOON ADD END
+	/ BLUEMOON ADD END */
+	// BLUEMOON ADD START
+	if (href_list["round_type_choose"])
+		var/chosen_type = input("Выберите вариацию динамика","Round Type Choose") as null|anything in list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT)
+		message_admins("[key_name(usr)] изменяет режим игры [GLOB.round_type] на [chosen_type]. Это повлияет только на доступность появления новых антагонистов.")
+		GLOB.round_type = chosen_type
+		GLOB.master_mode = "[chosen_type] (Changed Midgame)"
+	// BLUEMOON ADD END
 	else if (href_list["no_stacking"])
 		GLOB.dynamic_no_stacking = !GLOB.dynamic_no_stacking
 	else if (href_list["adjustthreat"])
@@ -325,6 +335,29 @@ GLOBAL_VAR_INIT(dynamic_type_threat_max, 60)
 
 /// Generates the threat level using lorentz distribution and assigns peaceful_percentage.
 /datum/game_mode/dynamic/proc/generate_threat()
+
+	// BLUEMOON ADD START - присвоение минимального и максимального возможного уровня угрозы
+	switch(GLOB.round_type)
+		if(ROUNDTYPE_DYNAMIC_TEAMBASED)
+			GLOB.dynamic_type_threat_min = 75 //от 1 до 2 командных антагов
+			GLOB.dynamic_type_threat_max = 100
+			GLOB.dynamic_no_stacking = FALSE //Welcome To Space Iraq
+		if(ROUNDTYPE_DYNAMIC_HARD)
+			GLOB.dynamic_type_threat_min = 75
+			GLOB.dynamic_type_threat_max = 100
+		if(ROUNDTYPE_DYNAMIC_MEDIUM)
+			GLOB.dynamic_type_threat_min = 40
+			GLOB.dynamic_type_threat_max = 60
+		if(ROUNDTYPE_DYNAMIC_LIGHT)
+			GLOB.dynamic_type_threat_min = 50
+			GLOB.dynamic_type_threat_max = 70
+		if(ROUNDTYPE_EXTENDED)
+			GLOB.dynamic_type_threat_min = 0
+			GLOB.dynamic_type_threat_max = 0
+		if("dynamic")
+			GLOB.master_mode = ROUNDTYPE_DYNAMIC_MEDIUM
+	// BLUEMOON ADD END
+
 	threat_level = round(rand(GLOB.dynamic_type_threat_min, GLOB.dynamic_type_threat_max), 0.1) //BLUEMOON ADDITION
 /*BLUEMOON REMOVAL START - мы не центрируем уровень угрозы по Лоуренцу
 	var/relative_threat = LORENTZ_DISTRIBUTION(threat_curve_centre, threat_curve_width)
@@ -436,7 +469,7 @@ BLUEMOON REMOVAL END*/
 /datum/game_mode/dynamic/post_setup(report)
 	for(var/datum/dynamic_ruleset/roundstart/rule in executed_rules)
 		rule.candidates.Cut() // The rule should not use candidates at this point as they all are null.
-		addtimer(CALLBACK(src, /datum/game_mode/dynamic/.proc/execute_roundstart_rule, rule), rule.delay)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/datum/game_mode/dynamic, execute_roundstart_rule), rule), rule.delay)
 
 	..()
 
@@ -485,12 +518,14 @@ BLUEMOON REMOVAL END*/
 			spend_roundstart_budget(picking_roundstart_rule(rule, scaled_times, forced = TRUE))
 
 /datum/game_mode/dynamic/proc/roundstart(list/roundstart_rules)
+	/* BLUEMOON ADD START - мы используем GLOB.round_type
 	if (GLOB.dynamic_forced_extended)
 		log_game("DYNAMIC: Starting a round of forced extended.")
 		return TRUE
 	if (GLOB.dynamic_extended)
 		log_game("DYNAMIC: Starting a round of dynamic extended.")
 		return TRUE
+	/ BLUEMOON ADD END */
 	var/list/drafted_rules = list()
 	for (var/datum/dynamic_ruleset/roundstart/rule in roundstart_rules)
 		if (!rule.weight)
@@ -525,15 +560,11 @@ BLUEMOON REMOVAL END*/
 		if (check_blocking(ruleset.blocking_rules, rulesets_picked))
 			drafted_rules[ruleset] = null
 			continue
-//BLUEMOON ADD START - проверки для вариаций динамика
-		if(!(ruleset.flags & HIGH_IMPACT_RULESET) && GLOB.teambased_dynamic && !ruleset.team_based_allowed)
+		// BLUEMOON ADD START - проверки для вариаций динамика
+		if(!(GLOB.round_type in ruleset.required_round_type))
 			drafted_rules[ruleset] = null
 			continue
-
-		if(ruleset.flags & HIGH_IMPACT_RULESET && GLOB.dynamic_extended)
-			drafted_rules[ruleset] = null
-			continue
-//BLUEMOON ADD END
+		// BLUEMOON ADD END
 		round_start_budget_left -= cost
 
 		rulesets_picked[ruleset] += 1
@@ -569,7 +600,7 @@ BLUEMOON REMOVAL END*/
 		return ruleset.cost + added_threat
 	else
 		stack_trace("The starting rule \"[ruleset.name]\" failed to pre_execute.")
-	return 0
+	return FALSE
 
 /// Mainly here to facilitate delayed rulesets. All roundstart rulesets are executed with a timered callback to this proc.
 /datum/game_mode/dynamic/proc/execute_roundstart_rule(sent_rule)
@@ -606,8 +637,10 @@ BLUEMOON REMOVAL END*/
 			return FALSE
 		// Check if the ruleset is high impact and if a high impact ruleset has been executed
 		else if(new_rule.flags & HIGH_IMPACT_RULESET)
+			/* BLUEMOON REMOVAL START - глоб больше не используется, его заменил glob.round_type
 			if(GLOB.dynamic_extended)
 				return FALSE
+			/ BLUEMOON REMOVAL END */
 			if(high_impact_ruleset_executed && threat_level < GLOB.dynamic_stacking_limit && GLOB.dynamic_no_stacking)
 				return FALSE
 
@@ -663,20 +696,24 @@ BLUEMOON REMOVAL END*/
 
 		last_midround_injection_attempt = world.time
 
-		if (prob(get_midround_injection_chance()))
+		var/chance_to_appear = get_midround_injection_chance() // BLUEMOON ADD - берём отсюда шанс для появления антагонистов, чтобы потом вывести его админам
+
+		if(prob(chance_to_appear)) // BLUEMOON CHANGES - было prob(get_midround_injection_chance()
 			var/list/drafted_rules = list()
 			for (var/datum/dynamic_ruleset/midround/rule in midround_rules)
 				if (!rule.weight)
 					continue
-//BLUEMOON ADD START - в тимбазу некоторые режимы не должны ролиться
-				if(!(rule.flags & HIGH_IMPACT_RULESET) && GLOB.teambased_dynamic && !rule.team_based_allowed)
+				// BLUEMOON ADD START - в тимбазу некоторые режимы не должны ролиться
+				if(!(GLOB.round_type in rule.required_round_type))
 					continue
-//BLUEMOON ADD END
+				// BLUEMOON ADD END
 				if(rule.flags & HIGH_IMPACT_RULESET)
 					if (high_impact_ruleset_executed && threat_level < GLOB.dynamic_stacking_limit && GLOB.dynamic_no_stacking)
 						continue
+					/* BLUEMOON REMOVAL START - глоб больше не используется, его заменил glob.round_type
 					if(GLOB.dynamic_extended)
 						continue
+					/ BLUEMOON REMOVAL END */
 				if (rule.acceptable(current_players[CURRENT_LIVING_PLAYERS].len, threat_level) && mid_round_budget >= rule.cost)
 					rule.trim_candidates()
 					if (rule.ready())
@@ -692,6 +729,11 @@ BLUEMOON REMOVAL END*/
 			SSevents.spawnEvent()
 			SSevents.reschedule()
 
+		// BLUEMOON ADD START - больше логирования и информации о режиме админам
+		else
+			message_admins("DYNAMIC: Шанс на появление антагонистов в [chance_to_appear] не прошёл.")
+		// BLUEMOON ADD END
+
 		random_event_hijacked = HIJACKED_NOTHING
 
 /// Gets the chance for latejoin injection, the dry_run argument is only used for forced injection.
@@ -701,16 +743,17 @@ BLUEMOON REMOVAL END*/
 		return 100
 	var/chance = 0
 	var/effective_living_players = current_players[CURRENT_LIVING_PLAYERS].len
-/*BLUEMOON REMOVAL START - динамичная экста (лайт динамик) не должны сокращать количество игроков
+	/* BLUEMOON REMOVAL START - динамичная экста (лайт динамик) не должны сокращать количество игроков
 	if(GLOB.dynamic_extended)
 		effective_living_players = min(effective_living_players, length(SSjob.get_living_sec())*2 + length(SSjob.get_living_heads()))
-BLUEMOON REMOVAL END*/
+	/ BLUEMOON REMOVAL END*/
 	var/max_pop_per_antag = max(5,15 - round(threat_level/10) - round(effective_living_players/5))
 	if (!current_players[CURRENT_LIVING_ANTAGS].len)
-/*BLUEMOON REMOVAL START - динамичная экста (лайт динамик) не должны уменьшать шанс появления ролей
+		/* BLUEMOON REMOVAL START - динамичная экста (лайт динамик) не должны уменьшать шанс появления ролей
 		if(GLOB.dynamic_extended)
 			chance += min(50,effective_living_players*5)
-		else BLUEMOON REMOVAL END*/
+		else
+		/ BLUEMOON REMOVAL END*/
 		chance += 50 // No antags at all? let's boost those odds!
 	else
 		var/current_pop_per_antag = effective_living_players / current_players[CURRENT_LIVING_ANTAGS].len
@@ -718,8 +761,10 @@ BLUEMOON REMOVAL END*/
 			chance += min(50, 25+10*(current_pop_per_antag-max_pop_per_antag))
 		else
 			chance += 25-10*(max_pop_per_antag-current_pop_per_antag)
+	/* BLUEMOON REMOVAL START - мёртвыми могут быть в т.ч. игроки не со станции, из-за чего система работает некорректно
 	if (current_players[CURRENT_DEAD_PLAYERS].len > current_players[CURRENT_LIVING_PLAYERS].len)
 		chance -= 30 // More than half the crew died? ew, let's calm down on antags
+	/ BLUEMOON REMOVAL END */
 	if (mid_round_budget > higher_injection_chance_minimum_threat)
 		chance += higher_injection_chance
 	if (mid_round_budget < lower_injection_chance_minimum_threat)
@@ -762,7 +807,7 @@ BLUEMOON REMOVAL END*/
 	return FALSE
 
 /datum/game_mode/dynamic/make_antag_chance(mob/living/carbon/human/newPlayer)
-	if (GLOB.dynamic_forced_extended)
+	if(GLOB.round_type == ROUNDTYPE_EXTENDED) // BLUEMOON CHANGES
 		return
 	if(EMERGENCY_ESCAPED_OR_ENDGAMED) // No more rules after the shuttle has left
 		return
@@ -774,7 +819,7 @@ BLUEMOON REMOVAL END*/
 		if (forced_latejoin_rule.ready(TRUE))
 			if (!forced_latejoin_rule.repeatable)
 				latejoin_rules = remove_from_list(latejoin_rules, forced_latejoin_rule.type)
-			addtimer(CALLBACK(src, /datum/game_mode/dynamic/.proc/execute_midround_latejoin_rule, forced_latejoin_rule), forced_latejoin_rule.delay)
+			addtimer(CALLBACK(src, TYPE_PROC_REF(/datum/game_mode/dynamic, execute_midround_latejoin_rule), forced_latejoin_rule), forced_latejoin_rule.delay)
 		forced_latejoin_rule = null
 
 	else if (latejoin_injection_cooldown < world.time && prob(get_injection_chance()))
@@ -785,13 +830,10 @@ BLUEMOON REMOVAL END*/
 			if (rule.acceptable(current_players[CURRENT_LIVING_PLAYERS].len, threat_level) && mid_round_budget >= rule.cost)
 				// No stacking : only one round-ender, unless threat level > stacking_limit.
 				if (threat_level < GLOB.dynamic_stacking_limit && GLOB.dynamic_no_stacking)
-					if(rule.flags & HIGH_IMPACT_RULESET) //BLUEMOON CHANGES - убран && high_impact_ruleset_executed
+					if(rule.flags & HIGH_IMPACT_RULESET && high_impact_ruleset_executed)
+						continue
 				//BLUEMOON ADDITION START
-						if(GLOB.dynamic_extended)
-							continue
-						else if(high_impact_ruleset_executed)
-							continue
-				if(GLOB.teambased_dynamic)// && !rule.team_based_allowed) - временно убранно в комментарий, т.к. среди лэйтжоина нет крутых командных антагов
+				if(!(GLOB.round_type in rule.required_round_type))
 					continue
 				//BLUEMOON ADDITION END
 				rule.candidates = list(newPlayer)

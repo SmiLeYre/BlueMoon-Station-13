@@ -101,6 +101,31 @@
 	turns_per_move = 10
 	stop_automated_movement = TRUE
 
+/mob/living/simple_animal/tegu/entertains_the_hostages //not a hostile, harmless
+	name = "Entertains-The-Hostages"
+	desc = "Безобидная ящерка синдиката, позволяющая одиноким заключенным не сойти с ума"
+	icon = 'modular_bluemoon/SmiLeY/icons/mob/pets.dmi'
+	icon_state = "tegu"
+	icon_living = "tegu"
+	icon_dead ="tegu_dead"
+	speak_emote = list("hisses")
+	emote_see = list("hisses.", "flicks its tongue.")
+	health = 20
+	maxHealth = 20
+	attack_verb_continuous = "bites"
+	attack_verb_simple = "bite"
+	attack_sound = 'sound/weapons/bite.ogg'
+	footstep_type = FOOTSTEP_MOB_CLAW
+	response_help_continuous = "pets the"
+	response_help_simple = "pet"
+	response_disarm_continuous = "rolls over the"
+	response_disarm_simple = "roll over"
+	response_harm_continuous = "stomps on"
+	response_harm_simple = "stomp on"
+	pass_flags = PASSTABLE
+	mob_biotypes = MOB_ORGANIC|MOB_BEAST|MOB_REPTILE
+	turns_per_move = 10
+
 /mob/living/simple_animal/pet/fox/fennec
 	name = "Red"
 	desc = "It's a fennec!"

@@ -6,7 +6,7 @@
 
 /datum/quirk/social_anxiety/add()
 	. = ..()
-	RegisterSignal(quirk_holder, COMSIG_MOB_SAY, .proc/handle_speech)
+	RegisterSignal(quirk_holder, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 
 /datum/quirk/social_anxiety/remove()
 	. = ..()
@@ -87,8 +87,8 @@
 	desc = "Ваше тело слабее, чем у большинства, здоровье уменьшено на 20%."
 	value = -2
 	medical_record_text = "У пациента чрезвычайно низкая устойчивость к травмам."
-	gain_text = "<span class='notice'>Вы чувствуете, что вас могли бы снести с одного удара."
-	lose_text = "<span class='notice'>Вы чувствуете себя крепче."
+	gain_text = span_notice("Вы чувствуете, что вас могли бы снести с одного удара.")
+	lose_text = span_notice("Вы чувствуете себя крепче.")
 
 /datum/quirk/flimsy/add()
 	quirk_holder.maxHealth *= 0.8
@@ -142,11 +142,15 @@
 										"Было бы неплохо сейчас потребить спермы!",\
 										"Ты начинаешь тосковать по сперме..."
 									  )
+	var/list/uncrave_phrases = list("Вы узнаете хорошо знакомый вам вкус свежей спермы~",\
+									"Незабываемый вкус свежей спермы вы узнаете из тысячи~",\
+									"Ммм~, мне так не хватало этой восхитительной спермы~"
+									)
 
 /datum/quirk/dumb4cum/add()
 	// Set timer
 	timer_trigger = rand(9000, 18000)
-	timer = addtimer(CALLBACK(src, .proc/crave), timer_trigger, TIMER_STOPPABLE)
+	timer = addtimer(CALLBACK(src, PROC_REF(crave)), timer_trigger, TIMER_STOPPABLE)
 
 /datum/quirk/dumb4cum/remove()
 	// Remove status trait
@@ -155,7 +159,6 @@
 	// Remove penalty traits
 	REMOVE_TRAIT(quirk_holder, TRAIT_ILLITERATE, DUMB_CUM_TRAIT)
 	REMOVE_TRAIT(quirk_holder, TRAIT_DUMB, DUMB_CUM_TRAIT)
-	REMOVE_TRAIT(quirk_holder, TRAIT_PACIFISM, DUMB_CUM_TRAIT)
 
 	// Remove mood event
 	SEND_SIGNAL(quirk_holder, COMSIG_CLEAR_MOOD_EVENT, QMOOD_DUMB_CUM)
@@ -167,16 +170,11 @@
 /datum/quirk/dumb4cum/proc/crave()
 	// Check if conscious
 	if(quirk_holder.stat == CONSCIOUS)
-		// Display emote
-		//quirk_holder.emote("sigh")	//это происходит настолько не к месту... пусть игрок сам отыгрывает.
-
-		// Define list of phrases
-
 		// Alert user in chat
 		to_chat(quirk_holder, span_love("[pick(trigger_phrases)]"))
 
 	reminder_trigger = rand(3000, 9000)
-	reminder_timer = addtimer(CALLBACK(src, .proc/reminder), reminder_trigger, TIMER_STOPPABLE)
+	reminder_timer = addtimer(CALLBACK(src, PROC_REF(reminder)), reminder_trigger, TIMER_STOPPABLE)
 
 	// Add active status trait
 	ADD_TRAIT(quirk_holder, TRAIT_DUMB_CUM_CRAVE, DUMB_CUM_TRAIT)
@@ -184,7 +182,6 @@
 	// Add illiterate, dumb, and pacifist
 	ADD_TRAIT(quirk_holder, TRAIT_ILLITERATE, DUMB_CUM_TRAIT)
 	ADD_TRAIT(quirk_holder, TRAIT_DUMB, DUMB_CUM_TRAIT)
-	ADD_TRAIT(quirk_holder, TRAIT_PACIFISM, DUMB_CUM_TRAIT)
 
 	// Add negative mood effect
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_DUMB_CUM, /datum/mood_event/cum_craving)
@@ -194,16 +191,15 @@
 	deltimer(reminder_timer)
 	reminder_timer = null
 	reminder_trigger = rand(3000, 9000)
-	reminder_timer = addtimer(CALLBACK(src, .proc/reminder), reminder_trigger, TIMER_STOPPABLE)
+	reminder_timer = addtimer(CALLBACK(src, PROC_REF(reminder)), reminder_trigger, TIMER_STOPPABLE)
 
-/datum/quirk/dumb4cum/proc/uncrave()
+/datum/quirk/dumb4cum/proc/uncrave(print_text = FALSE)
 	// Remove active status trait
 	REMOVE_TRAIT(quirk_holder, TRAIT_DUMB_CUM_CRAVE, DUMB_CUM_TRAIT)
 
 	// Remove penalty traits
 	REMOVE_TRAIT(quirk_holder, TRAIT_ILLITERATE, DUMB_CUM_TRAIT)
 	REMOVE_TRAIT(quirk_holder, TRAIT_DUMB, DUMB_CUM_TRAIT)
-	REMOVE_TRAIT(quirk_holder, TRAIT_PACIFISM, DUMB_CUM_TRAIT)
 
 	// Add positive mood event
 	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_DUMB_CUM, /datum/mood_event/cum_stuffed)
@@ -215,7 +211,10 @@
 	reminder_timer = null
 	timer_trigger = rand(9000, 18000)
 	// Add new timer
-	timer = addtimer(CALLBACK(src, .proc/crave), timer_trigger, TIMER_STOPPABLE)
+	timer = addtimer(CALLBACK(src, PROC_REF(crave)), timer_trigger, TIMER_STOPPABLE)
+
+	if(print_text)
+		to_chat(quirk_holder, span_love("[pick(uncrave_phrases)]"))
 
 // Small issue with this. If the quirk holder has NO_HUNGER or NO_THIRST, this trait can still be taken and they will still get the benefits of it.
 // It's unlikely that someone will be both, especially at round start, but vampirism makes me wary of having these separate.
@@ -223,22 +222,41 @@
 	name = "Бездонный Желудок"
 	desc = "В вас быстрее просыпаются голод и жажда. Необходимо есть и пить в два раза больше."
 	value = -1
-	gain_text = "<span class='danger'>Вы хотите есть и пить чаще.</span>"
-	lose_text = "<span class='notice'>Жор идёт на спад.</span>"
+	gain_text = span_danger("Вы хотите есть и пить чаще.")
+	lose_text = span_notice("Жор идёт на спад.")
 	medical_record_text = "Пациенту требуется вдвое большее количество еды, по сравнению с типичным представителем их вида."
 
 /datum/quirk/hungry/add()
 	var/mob/living/carbon/human/H = quirk_holder
 	var/datum/physiology/P = H.physiology
 	P.hunger_mod *= 2
-	P.thirst_mod *= 2
 
 /datum/quirk/hungry/remove()
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		var/datum/physiology/P = H.physiology
-		P.hunger_mod /= 2
-		P.thirst_mod /= 2
+		if(P)
+			P.hunger_mod /= 2
+
+/datum/quirk/thirsty
+	name = "Жаждущий"
+	desc = "Вам необычайно хочется пить. Приходится пить в два раза больше, чем обычно."
+	value = -1
+	gain_text = span_danger("Вы начинаете испытывать жажду гораздо быстрее.")
+	lose_text = span_notice("Ваша повышенная тяга к воде начинает угасать.")
+	medical_record_text = "Пациент сообщает, что пьет в два раза больше жидкости в день, чем обычно для его вида."
+
+/datum/quirk/thirsty/add()
+	var/mob/living/carbon/human/H = quirk_holder
+	var/datum/physiology/P = H.physiology
+	P.thirst_mod *= 2
+
+/datum/quirk/thirsty/remove()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H)
+		var/datum/physiology/P = H.physiology
+		if(P)
+			P.thirst_mod /= 2
 
 /datum/quirk/less_nightmare
 	name = "Отпрыск Ночного Кошмара"
@@ -255,4 +273,102 @@
 
 /datum/quirk/less_nightmare/remove()
 	var/mob/living/carbon/human/C = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!C)
+		return
+	// BLUEMOON EDIT END
 	C.RemoveElement(/datum/element/photosynthesis, 1, 1, 0, 0, 0, 0, SHADOW_SPECIES_LIGHT_THRESHOLD, SHADOW_SPECIES_LIGHT_THRESHOLD)
+
+//well-trained moved to neutral to stop the awkward situation of a dom snapping and the 30 trait powergamers fall to the floor.
+/datum/quirk/well_trained
+	name = "Дрессированный"
+	desc = "Вы обожаете, когда над вами доминируют. Мысли о том, что есть кто-то сильнее, достаточно, чтобы завести вас."
+	value = -1
+	gain_text = span_notice("Вы хотите подчиниться кому-нибудь...")
+	lose_text = span_notice("Вы больше не хотите подчиняться...")
+	processing_quirk = TRUE
+	/// BLUEMOON ADDED - optimization
+	var/check_delay = 0
+	var/notice_delay = 0
+	var/mob/living/carbon/human/last_dom
+
+/datum/quirk/well_trained/add()
+	. = ..()
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
+
+/datum/quirk/well_trained/remove()
+	. = ..()
+	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
+
+/datum/quirk/well_trained/proc/on_examine_holder(atom/source, mob/living/user, list/examine_list)
+	SIGNAL_HANDLER
+
+	if(!istype(user))
+		return
+	if(!user.has_quirk(/datum/quirk/dominant_aura))
+		return
+	examine_list += span_lewd("Вы чувствуете сильную ауру подчинения от [quirk_holder.ru_nego()].")
+
+/datum/quirk/well_trained/on_process()
+	. = ..()
+	if(!quirk_holder)
+		return
+	// BLUEMOON EDIT START - оптимизация
+	if(check_delay > world.time)
+		return
+
+	check_delay = world.time + 5 SECONDS
+	// BLUEMOON EDIT END
+
+	var/good_x = "хорошим питомцем"
+	switch(quirk_holder.gender)
+		if(MALE)
+			good_x = "хорошим мальчиком"
+		if(FEMALE)
+			good_x = "хорошей девочкой"
+
+	//Check for possible doms with the dominant_aura quirk, and for the closest one if there is
+	. = FALSE
+	var/list/mob/living/carbon/human/doms = range(DOMINANT_DETECT_RANGE, quirk_holder)
+	var/closest_distance
+	for(var/mob/living/carbon/human/dom in doms)
+		if(dom != quirk_holder && dom.has_quirk(/datum/quirk/dominant_aura))
+			if(!closest_distance || get_dist(quirk_holder, dom) <= closest_distance)
+				. = dom
+				closest_distance = get_dist(quirk_holder, dom)
+
+	//Return if no dom is found
+	if(!.)
+		last_dom = null
+		return
+
+	// BLUEMOON EDIT START - теперь негативный мудлет убирается при появлении позитивного
+	//Handle the mood
+	var/datum/component/mood/mood = quirk_holder.GetComponent(/datum/component/mood)
+	if(!isnull(mood.mood_events[QMOOD_WELL_TRAINED]))
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_WELL_TRAINED, /datum/mood_event/dominant/good_boy)
+	else
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_BAD_TRAINED, /datum/mood_event/dominant/need)
+	// BLUEMOON EDIT END
+
+	//Don't do anything if a previous dom was found
+	if(last_dom)
+		notice_delay = world.time + 15 SECONDS
+		return
+
+	last_dom = .
+
+	if(notice_delay > world.time)
+		return
+
+	//Let them know they're near
+	var/list/notices = list(
+		"Вы ощущаете, как чьё-то присутствие делает вас более покорным...",
+		"Мысли о том, чтобы вами командовали, заполняют ваш разум похотью...",
+		"Вы хотите, чтобы вас назвали [good_x]...",
+		"Чьё-то присутствие сильно возбуждает вас...",
+		"Вы начинаете потеть и возбуждаться..."
+	)
+
+	to_chat(quirk_holder, span_lewd(pick(notices)))
+	notice_delay = world.time + 15 SECONDS

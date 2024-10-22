@@ -67,7 +67,8 @@
 		var/mob/living/carbon/C = target
 		C.adjustBruteLoss(25)
 		C.DefaultCombatKnockdown(60, override_stamdmg = 0)
-		C.adjustStaminaLoss(80)
+		C.adjustStaminaLoss(90) // Bluemoon change, was 80
+		C.Stun(10) // Bluemoon change
 	var/list/knowledge = cultie.get_all_knowledge()
 
 	for(var/X in knowledge)
@@ -359,15 +360,15 @@
 	for(var/X in targets)
 		var/T
 		T = line_target(-25, range, X, user)
-		INVOKE_ASYNC(src, .proc/fire_line, user,T)
+		INVOKE_ASYNC(src, PROC_REF(fire_line), user,T)
 		T = line_target(10, range, X, user)
-		INVOKE_ASYNC(src, .proc/fire_line, user,T)
+		INVOKE_ASYNC(src, PROC_REF(fire_line), user,T)
 		T = line_target(0, range, X, user)
-		INVOKE_ASYNC(src, .proc/fire_line, user,T)
+		INVOKE_ASYNC(src, PROC_REF(fire_line), user,T)
 		T = line_target(-10, range, X, user)
-		INVOKE_ASYNC(src, .proc/fire_line, user,T)
+		INVOKE_ASYNC(src, PROC_REF(fire_line), user,T)
 		T = line_target(25, range, X, user)
-		INVOKE_ASYNC(src, .proc/fire_line, user,T)
+		INVOKE_ASYNC(src, PROC_REF(fire_line), user,T)
 	return ..()
 
 /obj/effect/proc_holder/spell/pointed/nightwatchers_rite/proc/line_target(offset, range, atom/at , atom/user)
@@ -446,7 +447,7 @@
 	action_background_icon_state = "bg_ecult"
 
 /obj/effect/proc_holder/spell/aoe_turf/fire_cascade/cast(list/targets, mob/user = usr)
-	INVOKE_ASYNC(src, .proc/fire_cascade, user,range)
+	INVOKE_ASYNC(src, PROC_REF(fire_cascade), user,range)
 
 /obj/effect/proc_holder/spell/aoe_turf/fire_cascade/proc/fire_cascade(atom/centre,max_range)
 	playsound(get_turf(centre), 'sound/items/welder.ogg', 75, TRUE)
@@ -492,7 +493,7 @@
 	. = ..()
 	current_user = user
 	has_fire_ring = TRUE
-	addtimer(CALLBACK(src, .proc/remove, user), duration, TIMER_OVERRIDE|TIMER_UNIQUE)
+	addtimer(CALLBACK(src, PROC_REF(remove), user), duration, TIMER_OVERRIDE|TIMER_UNIQUE)
 
 /obj/effect/proc_holder/spell/targeted/fire_sworn/proc/remove()
 	has_fire_ring = FALSE

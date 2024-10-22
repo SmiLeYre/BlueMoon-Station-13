@@ -7,6 +7,8 @@
 
 /datum/emote/living/carbon/human/cry/run_emote(mob/user, params)
 	. = ..()
+	if(!. || !iscarbon(user))
+		return
 	var/mob/living/carbon/C = user
 	if(. && isrobotic(user))
 		do_fake_sparks(5,FALSE,user)
@@ -87,6 +89,7 @@
 	key = "wag"
 	key_third_person = "wags"
 	message = "начинает вилять своим хвостом."
+	emote_cooldown = 0 //autowag for felinids won't work properly, because they purr right before it
 
 /datum/emote/living/carbon/human/wag/run_emote(mob/user, params)
 	. = ..()
@@ -101,7 +104,7 @@
 		H.dna.species.stop_wagging_tail(H)
 
 /datum/emote/living/carbon/human/wag/can_run_emote(mob/user, status_check = TRUE)
-	if(!..())
+	if(!..() || !ishuman(user))
 		return FALSE
 	var/mob/living/carbon/human/H = user
 	return H.dna && H.dna.species && H.dna.species.can_wag_tail(user)
@@ -123,7 +126,7 @@
 	. = ..()
 	if(.)
 		var/mob/living/carbon/human/H = user
-		if(findtext(select_message_type(user), "open"))
+		if(H.dna.species.mutant_bodyparts["wings"])
 			H.OpenWings()
 		else
 			H.CloseWings()
@@ -137,7 +140,7 @@
 		. = "closes " + message
 
 /datum/emote/living/carbon/human/wing/can_run_emote(mob/user, status_check = TRUE)
-	if(!..())
+	if(!..() || !ishuman(user))
 		return FALSE
 	var/mob/living/carbon/human/H = user
 	if(H.dna && H.dna.species && (H.dna.features["wings"] != "None"))
@@ -173,6 +176,7 @@
 	message_param = "исполняет воинское приветствие при виде %t."
 	sound = 'sound/voice/salute.ogg'
 	restraint_check = TRUE
+	muzzle_ignore = TRUE
 
 /datum/emote/sound/human/buzz
 	key = "buzz"
@@ -220,7 +224,7 @@
 //rock paper scissors emote handling
 /mob/living/carbon/human/proc/beginRockPaperScissors(var/chosen_move)
 	GLOB.rockpaperscissors_players[src] = list(chosen_move, ROCKPAPERSCISSORS_NOT_DECIDED)
-	do_after(src, ROCKPAPERSCISSORS_TIME_LIMIT, src, extra_checks = CALLBACK(src, .proc/rockpaperscissors_tick))
+	do_after(src, ROCKPAPERSCISSORS_TIME_LIMIT, src, extra_checks = CALLBACK(src, PROC_REF(rockpaperscissors_tick)))
 	var/new_entry = GLOB.rockpaperscissors_players[src]
 	if(new_entry[2] == ROCKPAPERSCISSORS_NOT_DECIDED)
 		to_chat(src, "Вы опускаете руку.")

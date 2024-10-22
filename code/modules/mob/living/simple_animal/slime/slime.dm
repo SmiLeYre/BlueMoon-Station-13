@@ -113,6 +113,10 @@
 	for (var/A in actions)
 		var/datum/action/AC = A
 		AC.Remove(src)
+	Target = null
+	Leader = null
+	Friends.Cut()
+	speech_buffer.Cut()
 	return ..()
 
 /mob/living/simple_animal/slime/proc/initialize_mutations()
@@ -252,7 +256,7 @@
 			Feedon(Food)
 	return ..()
 
-/mob/living/simple_animal/slime/doUnEquip(obj/item/W, silent = FALSE)
+/mob/living/simple_animal/slime/doUnEquip(obj/item/W, invdrop, silent = FALSE)
 	return
 
 /mob/living/simple_animal/slime/start_pulling(atom/movable/AM, state, force = move_force, supress_message = FALSE)
@@ -326,7 +330,7 @@
 			if(M.a_intent == INTENT_HELP || M.a_intent == INTENT_DISARM)
 				for(var/datum/surgery/S in surgeries)
 					if(S.next_step(M,M.a_intent))
-						return 1
+						return TRUE
 		if(..()) //successful attack
 			attacked += 10
 
@@ -343,12 +347,13 @@
 		if(user.a_intent == INTENT_HELP || user.a_intent == INTENT_DISARM)
 			for(var/datum/surgery/S in surgeries)
 				if(S.next_step(user,user.a_intent))
-					return 1
+					return TRUE
 	if(istype(W, /obj/item/stack/sheet/mineral/plasma) && !stat) //Let's you feed slimes plasma.
 		if (user in Friends)
 			++Friends[user]
 		else
 			Friends[user] = 1
+		RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(clear_friend))
 		to_chat(user, "<span class='notice'>You feed the slime the plasma. It chirps happily.</span>")
 		var/obj/item/stack/sheet/mineral/plasma/S = W
 		S.use(1)
@@ -411,6 +416,10 @@
 	else
 		visible_message("<span class='warning'>The mutated core shudders, and collapses into a puddle, unable to maintain its form.</span>")
 	qdel(src)
+
+/mob/living/simple_animal/slime/proc/clear_friend(mob/living/friend)
+	UnregisterSignal(friend, COMSIG_PARENT_QDELETING)
+	Friends -= friend
 
 /mob/living/simple_animal/slime/proc/apply_water()
 	adjustBruteLoss(rand(15,20))
@@ -481,10 +490,10 @@
 	docile = 1
 
 /mob/living/simple_animal/slime/can_unbuckle()
-	return 0
+	return FALSE
 
 /mob/living/simple_animal/slime/can_buckle()
-	return 0
+	return FALSE
 
 /mob/living/simple_animal/slime/get_mob_buckling_height(mob/seat)
 	if(..())

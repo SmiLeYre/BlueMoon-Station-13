@@ -366,7 +366,7 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
 	icon_state = "juggernauthelm"
 	item_state = "juggernauthelm"
-	armor = list(MELEE = 80, BULLET = 60, LASER = 40, ENERGY = 60, BOMB = 80, BIO = 100, RAD = 50, FIRE = 95, ACID = 95)
+	armor = list(MELEE = 95, BULLET = 80, LASER = 50, ENERGY = 60, BOMB = 80, BIO = 100, RAD = 50, FIRE = 95, ACID = 95)
 	strip_delay = 120
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	heat_protection = HEAD
@@ -384,9 +384,9 @@
 	icon_state = "juggernaut"
 	item_state = "juggernaut"
 	tail_state = "juggernaut"
-	mutantrace_variation = STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|FEET
-	armor = list(MELEE = 80, BULLET = 60, LASER = 40, ENERGY = 60, BOMB = 80, BIO = 100, RAD = 50, FIRE = 95, ACID = 95)
+	armor = list(MELEE = 95, BULLET = 80, LASER = 50, ENERGY = 60, BOMB = 80, BIO = 100, RAD = 50, FIRE = 95, ACID = 95)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 	cold_protection = CHEST|GROIN|LEGS|ARMS|FEET
 	heat_protection = CHEST|GROIN|LEGS|ARMS|FEET
@@ -682,6 +682,7 @@
 	body_parts_covered = CHEST|GROIN
 	attack_verb = list("warned", "cautioned", "smashed")
 	armor = list(MELEE = 5, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/petharness
 	name = "pet harness"

@@ -26,6 +26,15 @@
 	var/operated = FALSE	//whether the heart's been operated on to fix some of its damages
 	var/key_for_dreamer = null
 
+// BLUEMOON ADD START
+/obj/item/organ/heart/Insert(mob/living/carbon/organ_mob, special, drop_if_replaced)
+	. = ..()
+	if(HAS_TRAIT(organ_mob, TRAIT_ROBOTIC_ORGANISM))
+		low_threshold_passed = span_info("[name]: обнаружены умеренные повреждения. Риск отказа системы. Рекомендуется замена.")
+		high_threshold_passed = span_warning("[name]: обнаружены тяжёлые повреждения. Риск отказа системы. Требуется замена.")
+		now_fixed = span_info("[name]: функционирование системы восстановлено.")
+// BLUEMOON ADD END
+
 /obj/item/organ/heart/update_icon_state()
 	if(beating)
 		icon_state = "[icon_base]-on"
@@ -34,7 +43,7 @@
 
 /obj/item/organ/heart/Remove(special = FALSE)
 	if(!special)
-		addtimer(CALLBACK(src, .proc/stop_if_unowned), 12 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(stop_if_unowned)), 12 SECONDS)
 	return ..()
 
 /obj/item/organ/heart/proc/stop_if_unowned()
@@ -47,17 +56,17 @@
 		user.visible_message("<span class='notice'>[user] squeezes [src] to \
 			make it beat again!</span>","<span class='notice'>You squeeze [src] to make it beat again!</span>")
 		Restart()
-		addtimer(CALLBACK(src, .proc/stop_if_unowned), 80)
+		addtimer(CALLBACK(src, PROC_REF(stop_if_unowned)), 80)
 
 /obj/item/organ/heart/proc/Stop()
 	beating = 0
 	update_icon()
-	return 1
+	return TRUE
 
 /obj/item/organ/heart/proc/Restart()
 	beating = 1
 	update_icon()
-	return 1
+	return TRUE
 
 /obj/item/organ/heart/proc/HeartStrengthMessage()
 	if(beating)
@@ -81,7 +90,12 @@
 		if(owner.health <= owner.crit_threshold && beat != BEAT_SLOW)
 			beat = BEAT_SLOW
 			owner.playsound_local(get_turf(owner), slowbeat,40,0, channel = CHANNEL_HEARTBEAT)
-			to_chat(owner, "<span class = 'notice'>Стук вашего сердца замедляется...</span>")
+			// BLUEMOON ADD START - кастомное описание для роботов
+			if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
+				// TO DO
+			else
+			// BLUEMOON ADD END
+				to_chat(owner, "<span class = 'notice'>Стук вашего сердца замедляется...</span>")
 		if(beat == BEAT_SLOW && owner.health > owner.crit_threshold)
 			owner.stop_sound_channel(CHANNEL_HEARTBEAT)
 			beat = BEAT_NONE
@@ -259,7 +273,7 @@
 		Stop()
 		owner.visible_message("<span class='danger'>[owner] clutches at [owner.ru_ego()] chest as if [owner.ru_ego()] heart is stopping!</span>", \
 						"<span class='userdanger'>You feel a terrible pain in your chest, as if your heart has stopped!</span>")
-		addtimer(CALLBACK(src, .proc/Restart), 10 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(Restart)), 10 SECONDS)
 
 /obj/item/organ/heart/cybernetic/on_life(delta_time, times_fired)
 	. = ..()
@@ -292,7 +306,7 @@
 	if(prob(10)) //Chance of permanent effects
 		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
 		if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
-			to_chat(owner, span_danger("Fatal failure detected in \the [src] - Emergency mod activated for next 4 minutes - Seek for replace immediately."))
+			to_chat(owner, span_userdanger("Fatal failure detected in \the [src] - Emergency mod activated for next 4 minutes - Seek for replace immediately."))
 // BLUEMOON ADD END
 
 /obj/item/organ/heart/freedom

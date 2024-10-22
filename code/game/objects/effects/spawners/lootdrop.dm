@@ -60,15 +60,15 @@
 	loot = list(
 				/obj/item/gun/ballistic/automatic/pistol = 8,
 				/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
-				/obj/item/gun/ballistic/revolver/mateba,
-				/obj/item/gun/ballistic/automatic/pistol/deagle
-				)
+				/obj/item/kitchen/knife/combat = 5,
+				/obj/item/clothing/gloves/tackler/combat/insulated = 3,
+				/obj/item/storage/box/syndie_kit/throwing_weapons = 3)
 
 /obj/effect/spawner/lootdrop/armory_contraband/metastation
-	loot = list(/obj/item/gun/ballistic/automatic/pistol = 5,
+	loot = list(/obj/item/gun/ballistic/automatic/pistol = 8,
 				/obj/item/gun/ballistic/shotgun/automatic/combat = 5,
-				/obj/item/gun/ballistic/revolver/mateba,
-				/obj/item/gun/ballistic/automatic/pistol/deagle,
+				/obj/item/kitchen/knife/combat = 5,
+				/obj/item/clothing/gloves/tackler/combat/insulated = 3,
 				/obj/item/storage/box/syndie_kit/throwing_weapons = 3)
 
 /obj/effect/spawner/lootdrop/syndicate_present
@@ -77,15 +77,24 @@
 	lootdoubles = FALSE
 	loot = list(
 				/obj/item/poster/random_contraband = 120,
-				/obj/item/reagent_containers/hypospray/medipen/magillitis = 2,
-				/obj/item/storage/box/syndie_kit/space = 4,
-				/obj/item/storage/toolbox/syndicate = 6,
-				/obj/item/clothing/shoes/chameleon/noslip = 6,
-				/obj/item/grenade/clusterbuster/soap = 6,
-				/obj/item/soap/syndie = 12,
-				/obj/item/pen/sleepy = 12,
-				/obj/item/storage/backpack/duffelbag/syndie = 4,
-				/obj/item/storage/box/syndie_kit/chameleon = 4
+//				/obj/item/reagent_containers/hypospray/medipen/magillitis = 2, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
+//				/obj/item/storage/box/syndie_kit/space = 3, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
+				/obj/item/storage/toolbox/syndicate = 5,
+//				/obj/item/clothing/shoes/chameleon/noslip = 6, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
+//				/obj/item/grenade/clusterbuster/soap/inteq = 6, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
+				/obj/item/soap/syndie = 8,
+//				/obj/item/pen/sleepy = 12, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
+				/obj/item/storage/backpack/duffelbag/syndie = 3,
+				/obj/item/storage/box/syndie_kit/chameleon = 4,
+				/obj/item/storage/toolbox/inteq = 1,
+				/obj/item/storage/backpack/duffelbag/syndie/inteq = 1,
+//				/obj/item/storage/box/syndie_kit/space/inteq = 1, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
+				/obj/item/soap/inteq = 4,
+				/obj/item/sign/flag/inteq = 1,
+//				/obj/item/storage/fancy/cigarettes/cigpack_inteq = 1, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
+				/obj/item/storage/backpack/guitarbag/loaded = 1,
+				/obj/structure/reagent_dispensers/kvass_barrel = 1, // BLUEMOON ADD
+				/obj/structure/reagent_dispensers/beerkeg = 2,
 				)
 
 /obj/effect/spawner/lootdrop/prison_contraband
@@ -153,6 +162,87 @@
 			/obj/item/trash/sosjerky = 1,
 			/obj/item/trash/syndi_cakes = 1)
 
+/obj/effect/spawner/lootdrop/trashbin
+	name = "trash spawner"
+	loot = list(/obj/item/cigbutt = 1,
+			/obj/item/trash/cheesie = 1,
+			/obj/item/trash/candy = 1,
+			/obj/item/trash/chips = 1,
+			/obj/item/reagent_containers/food/snacks/deadmouse = 1,
+			/obj/item/trash/pistachios = 1,
+			/obj/item/trash/plate = 1,
+			/obj/item/trash/popcorn = 1,
+			/obj/item/trash/raisins = 1,
+			/obj/item/trash/sosjerky = 1,
+			/obj/item/reagent_containers/food/snacks/grown/poppy = 1,
+			/obj/item/trash/syndi_cakes = 1,
+			/obj/item/broken_bottle = 1)
+
+/obj/effect/spawner/lootdrop/tanks
+	name = "reagent tank spawner"
+	icon_state = "random_tanks"
+	lootdoubles = FALSE
+
+	loot = list(
+			/obj/structure/reagent_dispensers/fueltank = 5,
+			/obj/structure/reagent_dispensers/watertank = 5,
+			/obj/structure/reagent_dispensers/watertank/high = 3,
+			/obj/structure/reagent_dispensers/foamtank = 1,
+		)
+
+/obj/effect/spawner/lootdrop/tanks/lowchance
+	name = "rare reagent tank spawner"
+	lootdoubles = FALSE
+
+	loot = list(
+			"" = 50,
+			/obj/structure/reagent_dispensers/fueltank = 5,
+			/obj/structure/reagent_dispensers/watertank = 5,
+			/obj/structure/reagent_dispensers/watertank/high = 3,
+			/obj/structure/reagent_dispensers/foamtank = 1,
+		)
+
+/obj/effect/spawner/lootdrop/tanks/midchance
+	name = "common reagent tank spawner"
+	lootdoubles = FALSE
+
+	loot = list(
+			"" = 15,
+			/obj/structure/reagent_dispensers/fueltank = 5,
+			/obj/structure/reagent_dispensers/watertank = 5,
+			/obj/structure/reagent_dispensers/watertank/high = 3,
+			/obj/structure/reagent_dispensers/foamtank = 1,
+		)
+
+/obj/effect/spawner/lootdrop/tanks/highchance
+	name = "frequent reagent tank spawner"
+	lootdoubles = FALSE
+
+	loot = list(
+			"" = 5,
+			/obj/structure/reagent_dispensers/fueltank = 5,
+			/obj/structure/reagent_dispensers/watertank = 5,
+			/obj/structure/reagent_dispensers/watertank/high = 3,
+			/obj/structure/reagent_dispensers/foamtank = 1,
+		)
+
+/obj/effect/spawner/lootdrop/tanks/highquality
+	name = "highcap water/foam tank spawner"
+	lootdoubles = FALSE
+
+	loot = list(
+			/obj/structure/reagent_dispensers/watertank/high = 5,
+			/obj/structure/reagent_dispensers/foamtank = 5,
+		)
+
+/obj/effect/spawner/lootdrop/tanks/fuelonly
+	name = "guaranteed fuel tank spawner"
+	lootdoubles = FALSE
+
+	loot = list(
+			/obj/structure/reagent_dispensers/fueltank = 5,
+		)
+
 /obj/effect/spawner/lootdrop/three_course_meal
 	name = "three course meal spawner"
 	lootcount = 3
@@ -188,7 +278,36 @@
 
 /obj/effect/spawner/lootdrop/maintenance/Initialize(mapload)
 	loot = GLOB.maintenance_loot
+	lootcount = 1
 	. = ..()
+
+/obj/effect/spawner/lootdrop/maintenance/two
+	name = "2 x maintenance loot spawner"
+	lootcount = 2
+
+/obj/effect/spawner/lootdrop/maintenance/three
+	name = "3 x maintenance loot spawner"
+	lootcount = 3
+
+/obj/effect/spawner/lootdrop/maintenance/four
+	name = "4 x maintenance loot spawner"
+	lootcount = 4
+
+/obj/effect/spawner/lootdrop/maintenance/five
+	name = "5 x maintenance loot spawner"
+	lootcount = 5
+
+/obj/effect/spawner/lootdrop/maintenance/six
+	name = "6 x maintenance loot spawner"
+	lootcount = 6
+
+/obj/effect/spawner/lootdrop/maintenance/seven
+	name = "7 x maintenance loot spawner"
+	lootcount = 7
+
+/obj/effect/spawner/lootdrop/maintenance/eight
+	name = "8 x maintenance loot spawner"
+	lootcount = 8
 
 /obj/effect/spawner/lootdrop/maintenance/spawn_loot(lootcount_override)
 	if(isnull(lootcount_override))
@@ -264,16 +383,19 @@
 /obj/effect/spawner/lootdrop/organ_spawner
 	name = "organ spawner"
 	loot = list(
-		/obj/item/organ/heart/gland/electric = 3,
-		/obj/item/organ/heart/gland/trauma = 4,
-		/obj/item/organ/heart/gland/egg = 7,
-		/obj/item/organ/heart/gland/chem = 5,
-		/obj/item/organ/heart/gland/mindshock = 5,
-		/obj/item/organ/heart/gland/plasma = 7,
-		/obj/item/organ/heart/gland/transform = 5,
-		/obj/item/organ/heart/gland/slime = 4,
-		/obj/item/organ/heart/gland/spiderman = 5,
-		/obj/item/organ/heart/gland/ventcrawling = 1,
+		/obj/item/organ/heart/cybernetic = 3,
+		/obj/item/organ/heart/cybernetic/tier2 = 4,
+		/obj/item/organ/heart/cybernetic/tier3 = 7,
+		/obj/item/organ/appendix = 5,
+		/obj/item/organ/cyberimp/eyes/hud/medical = 5,
+		/obj/item/organ/genital/penis = 5,
+		/obj/item/organ/lungs/cybernetic = 3,
+		/obj/item/organ/lungs/cybernetic/tier2 = 4,
+		/obj/item/organ/lungs/cybernetic/tier3 = 7,
+		/obj/item/organ/zombie_infection = 3,
+		/obj/item/organ/liver/cybernetic = 3,
+		/obj/item/organ/liver/cybernetic/tier2 = 4,
+		/obj/item/organ/liver/cybernetic/tier3 = 7,
 		/obj/item/organ/body_egg/alien_embryo = 1,
 		/obj/item/organ/regenerative_core = 2)
 	lootcount = 3
@@ -325,37 +447,37 @@
 		/obj/item/clothing/mask/gas/cyborg = 25,
 		"" = 75)
 
-/obj/effect/spawner/lootdrop/aimodule_harmless // These shouldn't allow the AI to start butchering people
+/obj/effect/spawner/lootdrop/ai_module_harmless // These shouldn't allow the AI to start butchering people
 	name = "harmless AI module spawner"
 	loot = list(
-				/obj/item/aiModule/core/full/asimov,
-				/obj/item/aiModule/core/full/asimovpp,
-				/obj/item/aiModule/core/full/hippocratic,
-				/obj/item/aiModule/core/full/paladin_devotion,
-				/obj/item/aiModule/core/full/paladin
+				/obj/item/ai_module/core/full/asimov,
+				/obj/item/ai_module/core/full/asimovpp,
+				/obj/item/ai_module/core/full/hippocratic,
+				/obj/item/ai_module/core/full/paladin_devotion,
+				/obj/item/ai_module/core/full/paladin
 				)
 
-/obj/effect/spawner/lootdrop/aimodule_neutral // These shouldn't allow the AI to start butchering people without reason
+/obj/effect/spawner/lootdrop/ai_module_neutral // These shouldn't allow the AI to start butchering people without reason
 	name = "neutral AI module spawner"
 	loot = list(
-				/obj/item/aiModule/core/full/corp,
-				/obj/item/aiModule/core/full/maintain,
-				/obj/item/aiModule/core/full/drone,
-				/obj/item/aiModule/core/full/peacekeeper,
-				/obj/item/aiModule/core/full/reporter,
-				/obj/item/aiModule/core/full/robocop,
-				/obj/item/aiModule/core/full/liveandletlive,
-				/obj/item/aiModule/core/full/hulkamania
+				/obj/item/ai_module/core/full/corp,
+				/obj/item/ai_module/core/full/maintain,
+				/obj/item/ai_module/core/full/drone,
+				/obj/item/ai_module/core/full/peacekeeper,
+				/obj/item/ai_module/core/full/reporter,
+				/obj/item/ai_module/core/full/robocop,
+				/obj/item/ai_module/core/full/liveandletlive,
+				/obj/item/ai_module/core/full/hulkamania
 				)
 
-/obj/effect/spawner/lootdrop/aimodule_harmful // These will get the shuttle called
+/obj/effect/spawner/lootdrop/ai_module_harmful // These will get the shuttle called
 	name = "harmful AI module spawner"
 	loot = list(
-				/obj/item/aiModule/core/full/antimov,
-				/obj/item/aiModule/core/full/balance,
-				/obj/item/aiModule/core/full/tyrant,
-				/obj/item/aiModule/core/full/thermurderdynamic,
-				/obj/item/aiModule/core/full/damaged
+				/obj/item/ai_module/core/full/antimov,
+				/obj/item/ai_module/core/full/balance,
+				/obj/item/ai_module/core/full/tyrant,
+				/obj/item/ai_module/core/full/thermurderdynamic,
+				/obj/item/ai_module/core/full/damaged
 				)
 
 /obj/effect/spawner/lootdrop/mre
@@ -655,7 +777,7 @@
 		/obj/item/weldingtool/experimental = 1,
 		/obj/item/crowbar/power = 1,
 		/obj/item/analyzer = 1,
-		/obj/item/multitool = 1
+		/obj/item/multitool/tricorder = 1
 		)
 
 /obj/effect/spawner/lootdrop/welder_tools
@@ -858,3 +980,31 @@
 		/obj/item/melee/transforming/energy/blade = 1,
 		/obj/item/banhammer = 1,
 		)
+
+/// Mail loot spawner. Some sort of random and rare building tool. No alien tech here.
+/obj/effect/spawner/lootdrop/space/fancytool/engineonly
+	loot = list(
+		/obj/item/wrench/caravan = 1,
+		/obj/item/wirecutters/caravan = 1,
+		/obj/item/screwdriver/caravan = 1,
+		/obj/item/crowbar/red/caravan = 1
+	)
+
+/// Mail loot spawner. Drop pool of advanced medical tools typically from research. Not endgame content.
+/obj/effect/spawner/lootdrop/space/fancytool/advmedicalonly
+	loot = list(
+		/obj/item/scalpel/advanced = 1,
+		/obj/item/retractor/advanced = 1,
+		/obj/item/surgicaldrill/advanced = 1
+	)
+
+/// Mail loot spawner. Some sort of random and rare surgical tool. Alien tech found here.
+/obj/effect/spawner/lootdrop/space/fancytool/raremedicalonly
+	loot = list(
+		/obj/item/scalpel/alien = 1,
+		/obj/item/hemostat/alien = 1,
+		/obj/item/retractor/alien = 1,
+		/obj/item/circular_saw/alien = 1,
+		/obj/item/surgicaldrill/alien = 1,
+		/obj/item/cautery/alien = 1
+	)

@@ -691,6 +691,8 @@
 	},
 /obj/structure/table/wood,
 /obj/item/storage/lockbox/medal,
+/obj/item/paper_bin,
+/obj/item/pen,
 /turf/open/floor/plasteel,
 /area/command/bridge)
 "abq" = (
@@ -801,8 +803,10 @@
 	icon_state = "1-4"
 	},
 /obj/structure/table/wood,
-/obj/item/paper_bin,
-/obj/item/pen,
+/obj/machinery/fax{
+	fax_name = "Bridge Fax";
+	name = "Bridge Fax"
+	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
 "abF" = (
@@ -2323,12 +2327,12 @@
 	name = "Core Modules";
 	req_access_txt = "20"
 	},
-/obj/effect/spawner/lootdrop/aimodule_harmful{
+/obj/effect/spawner/lootdrop/ai_module_harmful{
 	fan_out_items = 1;
 	lootcount = 2;
 	lootdoubles = 0
 	},
-/obj/item/aiModule/supplied/oxygen{
+/obj/item/ai_module/supplied/oxygen{
 	pixel_x = -3;
 	pixel_y = -3
 	},
@@ -2547,7 +2551,7 @@
 	dir = 4;
 	dwidth = 9;
 	height = 7;
-	id = "supply_home";
+	shuttle_id = "supply_home";
 	name = "Cargo Bay";
 	width = 20
 	},
@@ -2706,12 +2710,12 @@
 	req_access_txt = "20"
 	},
 /obj/structure/window/reinforced,
-/obj/item/aiModule/core/freeformcore{
+/obj/item/ai_module/core/freeformcore{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/aiModule/core/full/custom,
-/obj/item/aiModule/core/full/asimov{
+/obj/item/ai_module/core/full/custom,
+/obj/item/ai_module/core/full/asimov{
 	pixel_x = -3;
 	pixel_y = -3
 	},
@@ -2739,12 +2743,12 @@
 	req_access_txt = "20"
 	},
 /obj/structure/window/reinforced,
-/obj/item/aiModule/supplied/protectStation{
+/obj/item/ai_module/supplied/protectStation{
 	pixel_x = 3;
 	pixel_y = 3
 	},
-/obj/item/aiModule/zeroth/oneHuman,
-/obj/item/aiModule/reset/purge{
+/obj/item/ai_module/zeroth/oneHuman,
+/obj/item/ai_module/reset/purge{
 	pixel_x = -3;
 	pixel_y = -3
 	},
@@ -2860,9 +2864,6 @@
 /turf/open/floor/wood,
 /area/command/heads_quarters/hop)
 "afA" = (
-/obj/machinery/computer/secure_data{
-	dir = 8
-	},
 /obj/machinery/status_display/ai{
 	pixel_x = 32
 	},
@@ -2870,6 +2871,9 @@
 	c_tag = "Bridge - Head of Personnel's Office";
 	dir = 8;
 	name = "command camera"
+	},
+/obj/machinery/computer/account_database{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark/side{
 	dir = 8
@@ -3559,7 +3563,7 @@
 /area/command/bridge)
 "agX" = (
 /obj/structure/table/reinforced,
-/obj/item/aiModule/reset{
+/obj/item/ai_module/reset{
 	pixel_x = 3;
 	pixel_y = 3
 	},
@@ -3570,7 +3574,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/item/aiModule/supplied/freeform,
+/obj/item/ai_module/supplied/freeform,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/nuke_storage)
 "agY" = (
@@ -3627,7 +3631,7 @@
 /area/ai_monitored/command/nuke_storage)
 "ahd" = (
 /obj/structure/table/reinforced,
-/obj/item/aiModule/supplied/quarantine,
+/obj/item/ai_module/supplied/quarantine,
 /obj/item/radio/intercom{
 	broadcasting = 1;
 	frequency = 1447;
@@ -4043,7 +4047,7 @@
 /area/ai_monitored/command/nuke_storage)
 "ahV" = (
 /obj/structure/table/reinforced,
-/obj/effect/spawner/lootdrop/aimodule_neutral{
+/obj/effect/spawner/lootdrop/ai_module_neutral{
 	fan_out_items = 1;
 	lootcount = 3;
 	lootdoubles = 0
@@ -4549,7 +4553,7 @@
 "aiT" = (
 /obj/structure/rack,
 /obj/item/gun/energy/ionrifle,
-/obj/item/clothing/suit/armor/laserproof,
+/obj/item/clothing/suit/hooded/ablative,
 /obj/item/gun/energy/temperature/security,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /obj/effect/turf_decal/bot,
@@ -7540,7 +7544,10 @@
 /obj/machinery/light/small,
 /obj/structure/table/wood,
 /obj/structure/window/reinforced/spawner/west,
-/obj/item/folder/blue,
+/obj/machinery/fax{
+	fax_name = "Lawyer Fax";
+	name = "Lawyer Fax"
+	},
 /turf/open/floor/carpet/green,
 /area/service/lawoffice)
 "aoE" = (
@@ -7969,7 +7976,7 @@
 	dir = 4;
 	dwidth = 3;
 	height = 5;
-	id = "mining_home";
+	shuttle_id = "mining_home";
 	name = "mining shuttle bay";
 	roundstart_template = /datum/map_template/shuttle/mining/delta;
 	width = 7
@@ -8778,6 +8785,13 @@
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 8
+	},
+/obj/machinery/door/window/northright{
+	name = "Security Desk"
+	},
+/obj/machinery/door/window/brigdoor/southright{
+	name = "Security Desk";
+	req_access_txt = "63"
 	},
 /turf/open/floor/plasteel,
 /area/security/brig)
@@ -9616,6 +9630,13 @@
 	dir = 8
 	},
 /obj/item/toy/figure/secofficer,
+/obj/machinery/door/window/brigdoor/southright{
+	name = "Security Desk";
+	req_access_txt = "63"
+	},
+/obj/machinery/door/window/northright{
+	name = "Security Desk"
+	},
 /turf/open/floor/plasteel,
 /area/security/brig)
 "asC" = (
@@ -9719,6 +9740,12 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/item/taperecorder,
+/obj/item/taperecorder,
+/obj/item/flashlight/seclite,
+/obj/item/flashlight/seclite,
+/obj/item/book/manual/splurt_space_law,
+/obj/item/book/manual/splurt_space_law,
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
 "asP" = (
@@ -15074,7 +15101,7 @@
 	dir = 4;
 	dwidth = 11;
 	height = 18;
-	id = "emergency_home";
+	shuttle_id = "emergency_home";
 	name = "OmegaStation emergency evac bay";
 	width = 30
 	},
@@ -23074,7 +23101,6 @@
 /area/service/library)
 "aSc" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole,
 /turf/open/floor/plasteel/dark,
 /area/service/library)
 "aSd" = (
@@ -24788,6 +24814,9 @@
 /obj/machinery/status_display{
 	pixel_x = -32
 	},
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark/side{
 	dir = 10
 	},
@@ -24802,8 +24831,19 @@
 /area/service/library)
 "aVP" = (
 /obj/structure/table/wood,
-/obj/item/flashlight/lamp,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/item/camera_film,
+/obj/item/camera_film{
+	pixel_x = 3;
+	pixel_y = 3
+	},
+/obj/item/flashlight/lamp,
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/structure/window/reinforced/spawner{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark/side{
 	dir = 10
 	},
@@ -25213,17 +25253,6 @@
 /obj/structure/lattice,
 /turf/open/space,
 /area/asteroid/nearstation)
-"aWA" = (
-/obj/machinery/newscaster{
-	pixel_x = -32
-	},
-/obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement,
-/obj/machinery/light_switch{
-	pixel_y = -24
-	},
-/turf/open/floor/plasteel/dark,
-/area/service/library)
 "aWB" = (
 /obj/effect/landmark/start/librarian,
 /obj/structure/chair/office/dark{
@@ -25236,12 +25265,14 @@
 /area/service/library)
 "aWC" = (
 /obj/structure/table/wood,
-/obj/item/camera_film{
-	pixel_x = 3;
-	pixel_y = 3
-	},
-/obj/item/camera_film,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/window/reinforced/spawner{
+	dir = 4
+	},
+/obj/machinery/fax{
+	fax_name = "General Fax";
+	name = "General Fax"
+	},
 /turf/open/floor/plasteel/dark,
 /area/service/library)
 "aWD" = (
@@ -30528,12 +30559,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/xenobiology)
-"bgd" = (
-/obj/structure/closet/l3closet/scientist,
-/turf/open/floor/plasteel/dark/side{
-	dir = 8
-	},
-/area/science/xenobiology)
 "bge" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
@@ -33346,7 +33371,7 @@
 	dir = 8;
 	dwidth = 2;
 	height = 13;
-	id = "ferry_home";
+	shuttle_id = "ferry_home";
 	name = "port bay 2";
 	width = 5
 	},
@@ -33967,12 +33992,12 @@
 	name = "Core Modules";
 	req_access_txt = "20"
 	},
-/obj/effect/spawner/lootdrop/aimodule_harmless{
+/obj/effect/spawner/lootdrop/ai_module_harmless{
 	fan_out_items = 1;
 	lootcount = 3;
 	lootdoubles = 0
 	},
-/obj/effect/spawner/lootdrop/aimodule_lewd{
+/obj/effect/spawner/lootdrop/ai_module_lewd{
 	fan_out_items = 1;
 	lootcount = 3;
 	lootdoubles = 0
@@ -34786,7 +34811,7 @@
 	dir = 2;
 	dwidth = 2;
 	height = 16;
-	id = "arrivals_stationary";
+	shuttle_id = "arrivals_stationary";
 	name = "omega arrivals";
 	roundstart_template = /datum/map_template/shuttle/arrival/omega;
 	width = 5
@@ -35816,7 +35841,7 @@
 	},
 /obj/structure/closet/secure_closet/brigdoc,
 /obj/item/clothing/head/helmet/brigdoc,
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /obj/machinery/light{
 	dir = 8
 	},
@@ -35917,7 +35942,7 @@
 /area/maintenance/starboard/aft)
 "iSy" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/item/toy/poolnoodle/red,
+/obj/item/pool/pool_noodle/red,
 /turf/open/floor/wood,
 /area/maintenance/starboard/aft)
 "iUa" = (
@@ -36501,6 +36526,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/mixing)
+"krB" = (
+/obj/structure/closet/l3closet/scientist,
+/obj/structure/sign/xenobio_guide{
+	pixel_x = -32
+	},
+/turf/open/floor/plasteel/dark/side{
+	dir = 8
+	},
+/area/science/xenobiology)
 "krX" = (
 /obj/machinery/light/floor,
 /turf/open/floor/plasteel/yellowsiding/corner{
@@ -38596,12 +38630,9 @@
 /area/ai_monitored/command/nuke_storage)
 "spY" = (
 /obj/structure/table/reinforced,
-/obj/item/book/manual/splurt_space_law,
-/obj/item/taperecorder,
 /obj/machinery/status_display{
 	pixel_y = -32
 	},
-/obj/item/flashlight/seclite,
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
@@ -38610,6 +38641,10 @@
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
+	},
+/obj/machinery/fax{
+	fax_name = "Security Fax";
+	name = "Security Fax"
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
@@ -38646,7 +38681,7 @@
 	dir = 8;
 	dwidth = 12;
 	height = 17;
-	id = "syndicate_sw";
+	shuttle_id = "syndicate_sw";
 	name = "southwest of station";
 	width = 23
 	},
@@ -38734,6 +38769,7 @@
 	name = "Lawyer RC";
 	pixel_y = -30
 	},
+/obj/item/folder/blue,
 /turf/open/floor/carpet/green,
 /area/service/lawoffice)
 "syT" = (
@@ -41480,6 +41516,17 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/gateway)
+"uPK" = (
+/obj/machinery/newscaster{
+	pixel_x = -32
+	},
+/obj/structure/table/wood,
+/obj/machinery/computer/library/checkout,
+/obj/machinery/light_switch{
+	pixel_y = -24
+	},
+/turf/open/floor/plasteel/dark,
+/area/service/library)
 "uQN" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -41845,7 +41892,6 @@
 /area/service/bar/atrium)
 "vPQ" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole,
 /obj/structure/sign/poster/random{
 	pixel_y = 32
 	},
@@ -76733,7 +76779,7 @@ fHF
 aUc
 aUV
 aVN
-aWA
+uPK
 aQW
 jnK
 aYw
@@ -87037,7 +87083,7 @@ nTi
 jdD
 bhb
 bhO
-bgd
+krB
 uac
 snF
 aad

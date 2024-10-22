@@ -82,7 +82,6 @@
 #define ADMIN_PUNISHMENT_PIE "Cream Pie"
 #define ADMIN_PUNISHMENT_CUSTOM_PIE "Custom Cream Pie"
 #define ADMIN_PUNISHMENT_AIKO "Aikofication"
-#define ADMIN_PUNISHMENT_CUM_JAR "Cum Jar"
 #define ADMIN_PUNISHMENT_SHOES "Knot Shoes"
 #define ADMIN_PUNISHMENT_CRACK ":B:oneless"
 #define ADMIN_PUNISHMENT_BLEED ":B:loodless"
@@ -109,3 +108,6 @@
 #define ADMINSAY_PING_UNDERLINE_NAME_INDEX "!underlined_names"
 
 #define DEFAULT_CENTCOM_NAME "Центральное Командование"
+
+/// Displays "(SHOW)" in the chat, when clicked it tries to show atom(paper). First you need to set the request_state variable to TRUE for the paper.
+#define ADMIN_SHOW_PAPER(atom) "(<A href='?_src_=holder;[HrefToken(forceGlobal = TRUE)];show_paper=[REF(atom)]'>SHOW</a>)"

@@ -7,7 +7,6 @@
 	antag_hud_type = ANTAG_HUD_HERETIC
 	antag_hud_name = "heretic"
 	threat = 10
-	soft_antag = FALSE // BLUEMOON ADDITION
 	var/give_equipment = TRUE
 	var/list/researched_knowledge = list()
 	var/total_sacrifices = 0
@@ -94,8 +93,6 @@
 		return TRUE
 
 /datum/antagonist/heretic/process()
-	. = ..()
-
 	if(owner.current.stat == DEAD)
 		return
 
@@ -146,7 +143,7 @@
 
 /datum/antagonist/heretic/get_admin_commands()
 	. = ..()
-	.["Equip"] = CALLBACK(src,.proc/equip_cultist)
+	.["Equip"] = CALLBACK(src,PROC_REF(equip_cultist))
 
 /datum/antagonist/heretic/roundend_report()
 	var/list/parts = list()

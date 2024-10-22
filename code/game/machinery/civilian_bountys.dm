@@ -245,9 +245,9 @@
 	///Multiplier for the bounty payout received by the Supply budget if the cube is sent without having to nag.
 	var/speed_bonus = 0.2
 	///Multiplier for the bounty payout received by the person who completed the bounty.
-	var/holder_cut = 0.3
+	var/holder_cut = 0.15 //BLUEMOON CHANGE сколько теперь этот срез реально срезает цену куба для карго
 	///Multiplier for the bounty payout received by the person who claims the handling tip.
-	var/handler_tip = 0.1
+	var/handler_tip = 0.05 //BLUEMOON CHANGE сколько теперь этот срез реально срезает цену куба для карго
 	///Time between nags.
 	var/nag_cooldown = 5 MINUTES
 	///How much the time between nags extends each nag.
@@ -340,7 +340,7 @@
 
 /obj/item/civ_bounty_beacon/attack_self()
 	loc.visible_message("<span class='warning'>\The [src] begins to beep loudly!</span>")
-	addtimer(CALLBACK(src, .proc/launch_payload), 4 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(launch_payload)), 4 SECONDS)
 
 /obj/item/civ_bounty_beacon/proc/launch_payload()
 	playsound(src, "sparks", 80, TRUE)

@@ -46,6 +46,10 @@
 	icon_state = "anesthetic"
 	item_state = "an_tank"
 	force = 10
+	// BLUEMOON ADD START - снижаем время надевания и снимания анестезии
+	equip_delay_other = 10
+	strip_delay = 20
+	// BLUEMOON ADD END
 
 /obj/item/tank/internals/anesthetic/populate_gas()
 	air_contents.set_moles(GAS_O2, (3*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C) * O2STANDARD)
@@ -188,6 +192,7 @@
 /obj/item/tank/internals/emergency_oxygen/double
 	name = "double emergency oxygen tank"
 	icon_state = "emergency_double"
+	volume = 12
 
 /obj/item/tank/internals/emergency_oxygen/double/empty/populate_gas()
 	return

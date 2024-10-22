@@ -201,8 +201,9 @@
 		if(health <= 0)
 			death()
 		else
-			stat = CONSCIOUS
+			set_stat(CONSCIOUS)
 	med_hud_set_status()
+	..()
 
 /mob/living/simple_animal/proc/handle_automated_action()
 	set waitfor = FALSE
@@ -219,7 +220,7 @@
 					if(Process_Spacemove(anydir))
 						Move(get_step(src, anydir), anydir)
 						turns_since_move = 0
-			return 1
+			return TRUE
 
 /mob/living/simple_animal/proc/handle_automated_speech(var/override)
 	set waitfor = FALSE
@@ -309,12 +310,25 @@
 
 	if(!environment_is_safe(environment))
 		adjustHealth(unsuitable_atmos_damage)
+		// BLUEMOON ADD START - оповещения для игрока, чтобы ХП не пропадало "само по себе"
+		if(client)
+			if(!(world.time % 3))
+				to_chat(client, span_userdanger("Здесь что-то не так с воздухом!"))
+		// BLUEMOON ADD END
 
 	handle_temperature_damage()
 
 /mob/living/simple_animal/proc/handle_temperature_damage()
 	if((bodytemperature < minbodytemp) || (bodytemperature > maxbodytemp))
 		adjustHealth(unsuitable_atmos_damage)
+		// BLUEMOON ADD START - оповещения для игрока, чтобы ХП не пропадало "само по себе"
+		if(client)
+			if(!(world.time % 3))
+				if(bodytemperature < minbodytemp)
+					to_chat(client, span_userdanger("Здесь слишком холодно!"))
+				if(bodytemperature > maxbodytemp)
+					to_chat(client, span_userdanger("Здесь слишком горячо!"))
+		// BLUEMOON ADD END
 
 /mob/living/simple_animal/gib(no_brain, no_organs, no_bodyparts, datum/explosion/was_explosion)
 	if(butcher_results || guaranteed_butcher_results)
@@ -453,7 +467,7 @@
 		if(target)
 			return new childspawn(target)
 
-/mob/living/simple_animal/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE)
+/mob/living/simple_animal/canUseTopic(atom/movable/M, be_close=FALSE, no_dextery=FALSE, no_tk=FALSE, check_resting=FALSE)
 	if(incapacitated())
 		to_chat(src, "<span class='warning'>You can't do that right now!</span>")
 		return FALSE
@@ -592,7 +606,7 @@
 
 //ANIMAL RIDING
 
-/mob/living/simple_animal/user_buckle_mob(mob/living/M, mob/user)
+/mob/living/simple_animal/user_buckle_mob(mob/living/M, mob/user, check_loc)
 	var/datum/component/riding/riding_datum = GetComponent(/datum/component/riding)
 	if(riding_datum)
 		if(user.incapacitated())
@@ -685,3 +699,18 @@
 	. = ..()
 	if(. && length(src.damaged_sound))
 		playsound(src, pick(src.damaged_sound), 40, 1)
+
+/mob/living/simple_animal/examine(mob/user)
+	var/list/dat = ..()
+	if(stat == DEAD)
+		dat += "<span class='deadsay'>[p_they(TRUE)] appears to be dead.</span>"
+	else if(getBruteLoss())
+		if(health < (maxHealth * 0.15))
+			dat += span_warning("[p_they(TRUE)] looks critically injured.")
+		else if(health < (maxHealth * 0.5))
+			dat += span_warning("[p_they(TRUE)] looks severely injured.")
+		else if(health < (maxHealth * 0.85))
+			dat += span_warning("[p_they(TRUE)] looks injured.")
+		else
+			dat += span_warning("[p_they(TRUE)] looks slightly injured.")
+	return dat

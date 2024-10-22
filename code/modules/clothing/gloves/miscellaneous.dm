@@ -106,7 +106,7 @@
 	AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, null, null, FALSE)
 
 /obj/item/clothing/gloves/fingerless/pugilist/magic
-	name = "armwraps of mighty fists"
+	name = "Armwraps of Mighty Fists"
 	desc = "A series of armwraps. Makes you pretty keen to go adventuring and punch dragons."
 	resistance_flags = FIRE_PROOF | ACID_PROOF //magic items are harder to damage with energy this is a dnd joke okay?
 	enhancement = 1 //They're +1!
@@ -201,7 +201,7 @@
 /obj/item/clothing/gloves/fingerless/ablative/equipped(mob/user, slot)
 	. = ..()
 	if(current_equipped_slot == ITEM_SLOT_GLOVES)
-		RegisterSignal(user, COMSIG_LIVING_ACTIVE_PARRY_START, .proc/get_component_parry_data)
+		RegisterSignal(user, COMSIG_LIVING_ACTIVE_PARRY_START, PROC_REF(get_component_parry_data))
 		wornonce = TRUE
 
 /obj/item/clothing/gloves/fingerless/ablative/dropped(mob/user)
@@ -264,6 +264,12 @@
 	silent = TRUE
 	inherited_trait = TRAIT_CHUNKYFINGERS // your fingers are fat because the gloves are
 	secondary_trait = TRAIT_MAULER // commit table slam
+	var/nextnanitesloop
+	var/list/not_allowed_list = list("Captain", "Blueshield", "Head of Security", "Warden", "Detective", "Security Officer", "Peacekeeper")
+
+/obj/item/clothing/gloves/fingerless/pugilist/mauler/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_NODROP, GLOVE_TRAIT)
 
 /obj/item/clothing/gloves/fingerless/pugilist/mauler/equipped(mob/user, slot)
 	. = ..()
@@ -271,7 +277,19 @@
 		wornonce = TRUE
 		if((HAS_TRAIT(user, TRAIT_NOPUGILIST)))
 			return
+		if(user.mind?.assigned_role in not_allowed_list)
+			var/static/list/zones = list(BODY_ZONE_R_ARM, BODY_ZONE_L_ARM)
+			var/mob/living/carbon/human/H = user
+			for(var/zone in zones)
+				var/obj/item/bodypart/BP = H.get_bodypart(zone)
+				if(BP)
+					BP.drop_limb()
+					H.emote("realagony")
+					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "dismembered", /datum/mood_event/dismembered)
+			return
 		use_mauls(user, TRUE)
+		ADD_TRAIT(user, TRAIT_NOSOFTCRIT, GLOVE_TRAIT)
+		RegisterSignal(user, COMSIG_LIVING_COMBAT_ENABLED, PROC_REF(injectnanites))
 
 /obj/item/clothing/gloves/fingerless/pugilist/mauler/dropped(mob/user)
 	. = ..()
@@ -280,6 +298,9 @@
 		if((HAS_TRAIT(user, TRAIT_NOPUGILIST)))
 			return
 		use_mauls(user, FALSE)
+	REMOVE_TRAIT(user, TRAIT_NOSOFTCRIT, GLOVE_TRAIT)
+	UnregisterSignal(user, COMSIG_LIVING_COMBAT_ENABLED, PROC_REF(injectnanites))
+
 
 /obj/item/clothing/gloves/fingerless/pugilist/mauler/proc/use_mauls(mob/user, maul)
 	if(maul)
@@ -288,6 +309,23 @@
 			H.dna?.species?.attack_sound_override = 'sound/weapons/mauler_punch.ogg'
 			if(silent)
 				to_chat(H, "<span class='danger'>You feel prickles around your wrists as [src] cling to them - strength courses through your veins!</span>")
+
+/obj/item/clothing/gloves/fingerless/pugilist/mauler/proc/injectnanites(mob/living/user, was_forced = FALSE)
+	if(SEND_SIGNAL(user, COMSIG_COMBAT_MODE_CHECK, COMBAT_MODE_TOGGLED) && world.time >= nextnanitesloop)
+		if(user.get_item_by_slot(ITEM_SLOT_GLOVES) != src)
+			return
+		nextnanitesloop = world.time + 5 MINUTES
+		user.reagents.add_reagent(/datum/reagent/medicine/syndicate_nanites, 10)
+		user.reagents.add_reagent(/datum/reagent/medicine/lesser_syndicate_nanites, 10)
+		user.playsound_local(user, 'sound/misc/adrenalinject.ogg', 100, 0, pressure_affected = FALSE)
+
+/obj/item/clothing/gloves/fingerless/pugilist/mauler/examine(mob/user)
+	. = ..()
+	if(user.get_item_by_slot(ITEM_SLOT_GLOVES) == src)
+		if(world.time >= nextnanitesloop)
+			. += "<span class='notice'>The built-in nanite injector is ready for use.</span>"
+		else
+			. += "<span class='notice'>[DisplayTimeText(nextnanitesloop - world.time)] left before the nanite injector can be used again."
 
 /obj/item/clothing/gloves/botanic_leather
 	name = "botanist's leather gloves"

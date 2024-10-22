@@ -15,6 +15,7 @@ GLOBAL_LIST_EMPTY(objectives)
 	var/martyr_compatible = FALSE		//If the objective is compatible with martyr objective, i.e. if you can still do it while dead.
 	var/objective_name = "Objective"	//name used in printing this objective (Objective #1)
 	var/reward = 5
+	var/include_superheavy_character = TRUE // BLUEMOON ADD - некоторые задачи практически невыполнимы, если нужно что-то делать со сверхтяжёлыми персонажами
 
 /datum/objective/New(var/text)
 	GLOB.objectives += src // CITADEL EDIT FOR CRYOPODS
@@ -117,7 +118,10 @@ If not set, defaults to check_completion instead. Set it. It's used by cryo.
 	for(var/datum/mind/possible_target in get_crewmember_minds())
 		if(!(possible_target in owners) && ishuman(possible_target.current) && (possible_target.current.stat != DEAD) && is_unique_objective(possible_target))
 			if(!(possible_target in blacklist))
-				possible_targets += possible_target
+				// BLUEMOON ADD START - если персонаж сверхтяжёлый и установлена настройка, что сверхтяжёлые персонажи не могут быть по заданию, персонажа не добавляет в пулл
+				if(!(!include_superheavy_character && HAS_TRAIT(possible_target.current, TRAIT_BLUEMOON_HEAVY_SUPER)))
+					possible_targets += possible_target
+				// BLUEMOON ADD END
 	if(try_target_late_joiners)
 		var/list/all_possible_targets = possible_targets.Copy()
 		for(var/I in all_possible_targets)
@@ -649,11 +653,11 @@ GLOBAL_LIST_EMPTY(possible_items)
 			if(istype(I, steal_target))
 				if(!targetinfo) //If there's no targetinfo, then that means it was a custom objective. At this point, we know you have the item, so return 1.
 					return TRUE
-				else if(targetinfo.check_special_completion(I))//Returns 1 by default. Items with special checks will return 1 if the conditions are fulfilled.
+				else if(targetinfo.check_special_completion(I))//Returns 1 by default. Items with special checks will return TRUE if the conditions are fulfilled.
 					return TRUE
 
 			if(targetinfo && (I.type in targetinfo.altitems)) //Ok, so you don't have the item. Do you have an alternative, at least?
-				if(targetinfo.check_special_completion(I))//Yeah, we do! Don't return 0 if we don't though - then you could fail if you had 1 item that didn't pass and got checked first!
+				if(targetinfo.check_special_completion(I))//Yeah, we do! Don't return FALSE if we don't though - then you could fail if you had 1 item that didn't pass and got checked first!
 					return TRUE
 	return FALSE
 
@@ -1301,10 +1305,11 @@ GLOBAL_LIST_EMPTY(possible_sabotages)
 	var/payout_bonus = 0
 	var/area/dropoff = null
 	var/static/list/blacklisted_areas = typecacheof(list(/area/ai_monitored/turret_protected,
-														/area/solars/,
-														/area/ruin/,	//thank you station space ruins
-														/area/science/test_area/,
+														/area/solars,
+														/area/ruin,	//thank you station space ruins
+														/area/science/test_area,
 														/area/shuttle/))
+	include_superheavy_character = FALSE // BLUEMOON ADD - todo, вернуть задания, но назначить за такого персонажа повышенную награду
 
 /datum/objective/contract/proc/generate_dropoff()	// Generate a random valid area on the station that the dropoff will happen.
 	var/found = FALSE

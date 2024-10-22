@@ -26,8 +26,4 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_COATS
 	cost = 2
 
-/datum/gear/glasses/sunglass
-	name = "Sunglasses"
-	path = /obj/item/clothing/glasses/sunglasses
-	cost = 3
 

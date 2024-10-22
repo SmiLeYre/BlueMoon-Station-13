@@ -1,3 +1,43 @@
+/datum/sprite_accessory/hair/halfshave_long
+	name ="Half-Shave Long"
+	icon_state = "hair_halfshave_long"
+	icon = 'modular_splurt/icons/mob/hair.dmi'
+
+/datum/sprite_accessory/hair/halfshave_long_alt
+	name ="Half-Shave Long Alt"
+	icon_state = "hair_halfshave_long_alt"
+	icon = 'modular_splurt/icons/mob/hair.dmi'
+
+/datum/sprite_accessory/hair/halfshave_messy
+	name ="Half-Shave Messy"
+	icon_state = "hair_halfshave_messy"
+	icon = 'modular_splurt/icons/mob/hair.dmi'
+
+/datum/sprite_accessory/hair/halfshave_messy_alt
+	name ="Half-Shave Messy Alt"
+	icon_state = "hair_halfshave_messy_alt"
+	icon = 'modular_splurt/icons/mob/hair.dmi'
+
+/datum/sprite_accessory/hair/halfshave_messylong
+	name ="Half-Shave Messy Long"
+	icon_state = "hair_halfshave_messylong"
+	icon = 'modular_splurt/icons/mob/hair.dmi'
+
+/datum/sprite_accessory/hair/halfshave_messylong_alt
+	name ="Half-Shave Messy Long Alt"
+	icon_state = "hair_halfshave_messylong_alt"
+	icon = 'modular_splurt/icons/mob/hair.dmi'
+
+/datum/sprite_accessory/hair/halfshave_glamorous
+	name ="Half-Shave Glamorous"
+	icon_state ="hair_halfshave_glamorous"
+	icon = 'modular_splurt/icons/mob/hair.dmi'
+
+/datum/sprite_accessory/hair/halfshave_glamorous_alt
+	name ="Half-Shave Glamorous Alt"
+	icon_state ="hair_halfshave_glamorous_alt"
+	icon = 'modular_splurt/icons/mob/hair.dmi'
+
 /datum/sprite_accessory/hair/hyenamane
 	name = "Hyena Mane"
 	icon_state = "hair_hyenamane"
@@ -31,6 +71,26 @@
 /datum/sprite_accessory/hair/glamour
 	name = "Glamour"
 	icon_state = "hair_glamourh"
+	icon = 'modular_splurt/icons/mob/hair.dmi'
+
+/datum/sprite_accessory/hair/ThickShort
+	name = "Thick (Short)"
+	icon_state = "hair_thick_(short)"
+	icon = 'modular_splurt/icons/mob/hair.dmi'
+
+/datum/sprite_accessory/hair/ThickLong
+	name = "Thick (Long)"
+	icon_state = "hair_thick_(long)"
+	icon = 'modular_splurt/icons/mob/hair.dmi'
+
+/datum/sprite_accessory/hair/ThickCurly
+	name = "Thick (Curly)"
+	icon_state = "hair_thick_(curly)"
+	icon = 'modular_splurt/icons/mob/hair.dmi'
+
+/datum/sprite_accessory/hair/ThickLongAlt
+	name = "Thick (Long Alt)"
+	icon_state = "hair_thick_(long alt)"
 	icon = 'modular_splurt/icons/mob/hair.dmi'
 
 //Podpeople hair
@@ -171,6 +231,14 @@
 	icon = 'modular_splurt/icons/mob/hair.dmi'
 	icon_state = "hair_phoebe"
 
+//BLUEMOON ADD
+
+/datum/sprite_accessory/hair/dave2
+	name = "Dave 2"
+	icon = 'modular_splurt/icons/mob/hair.dmi'
+	icon_state = "hair_dave2"
+
+//BLUEMOON ADD END
 
 /datum/sprite_accessory/hair/teshari
 	name = "Teshari Default"

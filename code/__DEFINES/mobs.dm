@@ -51,9 +51,9 @@
 #define MOB_NANITES		(1 << 10)
 
 /// Helper to figure out if an organ is organic
-#define IS_ORGANIC_ORGAN(organ) (organ.organ_flags & ORGAN_ORGANIC)
+#define IS_ORGANIC_ORGAN(organ) (!IS_ROBOTIC_ORGAN(organ)) // BLUEMOON EDIT - фикс прока (кривое, но и так сойдёт) [БЫЛО: #define IS_ORGANIC_ORGAN(organ) (organ.organ_flags & ORGAN_ORGANIC)]
 /// Helper to figure out if an organ is robotic
-#define IS_ROBOTIC_ORGAN(organ) (organ.organ_flags & ORGAN_ROBOTIC)
+#define IS_ROBOTIC_ORGAN(organ) (organ.organ_flags & ORGAN_SYNTHETIC)  // BLUEMOON EDIT - фикс прока [БЫЛО: #define IS_ROBOTIC_ORGAN(organ) (organ.organ_flags & ORGAN_ROBOTIC)]
 
 // Organ defines for carbon mobs
 #define ORGAN_ORGANIC   1
@@ -73,7 +73,7 @@
 #define BODYPART_DISABLED_WOUND 3
 
 #define DEFAULT_BODYPART_ICON 'icons/mob/human_parts.dmi'
-#define DEFAULT_BODYPART_ICON_ORGANIC 'icons/mob/human_parts_greyscale.dmi'
+#define DEFAULT_BODYPART_ICON_ORGANIC 'modular_bluemoon/icons/mob/species_legs.dmi' // BLUEMOON CHANGES - was 'icons/mob/human_parts_greyscale.dmi'
 #define DEFAULT_BODYPART_ICON_ROBOTIC 'icons/mob/augmentation/augments.dmi'
 
 #define MONKEY_BODYPART "monkey"
@@ -339,6 +339,13 @@
 
 #define SLEEP_CHECK_DEATH(X) sleep(X); if(QDELETED(src) || stat == DEAD) return;
 #define INTERACTING_WITH(X, Y) (Y in X.do_afters)
+
+#define DOING_INTERACTION_WITH_TARGET(user, target) (LAZYACCESS(user.do_afters, target))
+
+// / Field of vision defines.
+#define FOV_90_DEGREES	90
+#define FOV_180_DEGREES	180
+#define FOV_270_DEGREES	270
 
 // / How far away you can be to make eye contact with someone while examining
 #define EYE_CONTACT_RANGE	5

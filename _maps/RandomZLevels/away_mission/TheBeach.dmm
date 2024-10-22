@@ -1001,6 +1001,10 @@
 /obj/item/clothing/glasses/heat,
 /turf/open/floor/plating/beach/sand,
 /area/awaymission/beach)
+"hY" = (
+/obj/effect/landmark/awaystart,
+/turf/open/floor/plating/beach/sand,
+/area/awaymission/beach)
 "iv" = (
 /obj/structure/dresser{
 	density = 0;
@@ -1024,6 +1028,11 @@
 	},
 /obj/effect/turf_decal/sand,
 /turf/open/floor/plasteel/white,
+/area/awaymission/beach)
+"We" = (
+/obj/effect/turf_decal/sand,
+/obj/effect/landmark/awaystart,
+/turf/open/floor/plating/beach/sand,
 /area/awaymission/beach)
 
 (1,1,1) = {"
@@ -6847,8 +6856,8 @@ ak
 bf
 bp
 bx
-ak
-ak
+hY
+hY
 ba
 ak
 ak
@@ -6954,8 +6963,8 @@ ak
 bg
 aQ
 by
-ba
-ba
+We
+We
 ba
 ba
 ba
@@ -7061,8 +7070,8 @@ ak
 bh
 br
 bz
-ak
-ak
+hY
+hY
 ak
 bA
 ba

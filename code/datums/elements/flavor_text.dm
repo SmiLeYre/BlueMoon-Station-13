@@ -36,7 +36,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 	save_key = _save_key
 	examine_no_preview = _examine_no_preview
 
-	RegisterSignal(target, COMSIG_PARENT_EXAMINE, .proc/show_flavor)
+	//RegisterSignal(target, COMSIG_PARENT_EXAMINE, PROC_REF(show_flavor)) BLUEMOON EDIT - перенос флаворов на хардкод
 
 	if(can_edit && ismob(target)) //but only mobs receive the proc/verb for the time being
 		var/mob/M = target
@@ -46,10 +46,10 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 	if(!save_key)
 		return
 	if(ishuman(target))
-		RegisterSignal(target, COMSIG_HUMAN_PREFS_COPIED_TO, .proc/update_prefs_flavor_text)
+		RegisterSignal(target, COMSIG_HUMAN_PREFS_COPIED_TO, PROC_REF(update_prefs_flavor_text))
 	else if(iscyborg(target))
-		RegisterSignal(target, COMSIG_MOB_ON_NEW_MIND, .proc/borged_update_flavor_text)
-		RegisterSignal(target, COMSIG_MOB_CLIENT_JOINED_FROM_LOBBY, .proc/borged_update_flavor_text)
+		RegisterSignal(target, COMSIG_MOB_ON_NEW_MIND, PROC_REF(borged_update_flavor_text))
+		RegisterSignal(target, COMSIG_MOB_CLIENT_JOINED_FROM_LOBBY, PROC_REF(borged_update_flavor_text))
 
 /datum/element/flavor_text/Attach(datum/target, text = "", _name = "Flavor Text", _addendum, _max_len = MAX_FLAVOR_LEN, _always_show = FALSE, _edit = TRUE, _save_key, _examine_no_preview = FALSE, _show_on_naked)
 	. = ..()
@@ -108,7 +108,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 			var/content
 			if(flavor_name == "OOC Notes")
 
-				content += "[L]'s OOC Notes: <br> <b>ERP:</b> [L.client.prefs.erppref] <b>| Non-Con:</b> [L.client.prefs.nonconpref] <b>| Vore:</b> [L.client.prefs.vorepref] <b>| Mob-Sex:</b> [L.client.prefs.mobsexpref]"
+				content += "[L]'s OOC Notes: <br> <b>ERP:</b> [L.client.prefs.erppref] <b>| Non-Con:</b> [L.client.prefs.nonconpref] <b>| Vore:</b> [L.client.prefs.vorepref] <b>| Mob-Sex:</b> [L.client.prefs.mobsexpref] <b>| Horny Antags:</b> [L.client.prefs.hornyantagspref]"
 
 				if(L.client.prefs.unholypref == "Yes")
 					content += " <b>| Unholy:</b> [L.client.prefs.unholypref]\n"
@@ -138,35 +138,123 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 			onclose(usr, "[target.name]")
 		return TRUE
 
+// BLUEMOON EDIT START - заменил систему ингейм смены флаворов на более простую и релевантную
 /mob/proc/manage_flavor_tests()
 	set name = "Manage Flavor Texts"
 	set desc = "Used to manage your various flavor texts."
 	set category = "IC"
 
-	var/list/L = GLOB.mobs_with_editable_flavor_text[src]
-
-	if(length(L) == 1)
-		var/datum/element/flavor_text/F = L[1]
-		F.set_flavor(src)
+	if(!isliving(src))
 		return
+	var/list/changeable_texts = list(
+		"OOC-заметки",
+		"Временный Флавор (Поза)"
+	)
+	if(iscarbon(src))
+		var/mob/living/carbon/our_mob = src
+		if(!our_mob.dna)
+			return
+		changeable_texts.Add("Флавор", "Обнажённый Флавор", "Лор Расы", "Хедшоты")
 
-	var/list/choices = list()
+	else if(issilicon(src))
+		if(!src.mind)
+			return
+		changeable_texts.Add("Синтетический флавор")
 
-	for(var/i in L)
-		var/datum/element/flavor_text/F = i
-		choices[F.flavor_name] = F
-
-	var/chosen = input(src, "Which flavor text would you like to modify?") as null|anything in choices
+	var/chosen = tgui_input_list(src, "Выберите параметр, который должен быть изменён. Изменения действуют только в течении раунда и не затрагивают сами преференсы. Если вам нужно ввести многострочный текст с ENTER-ами, то лучше введите его вне игры и скопируйте сюда.", "Управление флавор-текстами", changeable_texts, changeable_texts[1])
 	if(!chosen)
 		return
-	var/datum/element/flavor_text/F = choices[chosen]
-	F.set_flavor(src)
+	switch(chosen)
+		if("Флавор")
+			var/mob/living/carbon/our_mob = src
+			var/new_text = tgui_input_text(our_mob, "Введите новый флавор (максимум [MAX_FLAVOR_LEN] символов).", "Новый флавор", our_mob.dna.flavor_text, MAX_FLAVOR_LEN, TRUE, TRUE)
+			if(new_text)
+				our_mob.dna.flavor_text = new_text
+		if("Обнажённый Флавор")
+			var/mob/living/carbon/our_mob = src
+			var/new_text = tgui_input_text(our_mob, "Введите новый флавор обнажённого тела своего персонажа (максимум [MAX_FLAVOR_LEN] символов).", "Новый обнажённый флавор", our_mob.dna.naked_flavor_text, MAX_FLAVOR_LEN, TRUE, TRUE)
+			if(new_text)
+				our_mob.dna.naked_flavor_text = new_text
+		if("Лор Расы")
+			var/mob/living/carbon/our_mob = src
+			var/new_text = tgui_input_text(our_mob, "Введите новый лор биологического (или не совсем биологического) вида своего персонажа (максимум [MAX_FLAVOR_LEN] символов).", "Новый лор расы", our_mob.dna.custom_species_lore, MAX_FLAVOR_LEN, TRUE, TRUE)
+			if(new_text)
+				our_mob.dna.custom_species_lore = new_text
+		if("OOC-заметки")
+			if(iscarbon(src))
+				var/mob/living/carbon/our_mob = src
+				var/new_text = tgui_input_text(our_mob, "Введите новые ООС-заметки своего персонажа (максимум [MAX_FLAVOR_LEN] символов).", "Новые ООС-заметки", our_mob.dna.custom_species_lore, MAX_FLAVOR_LEN, TRUE, TRUE)
+				if(new_text)
+					our_mob.dna.ooc_notes = new_text
+			if(issilicon(src))
+				var/mob/living/silicon/our_borgy = src
+				var/new_text = tgui_input_text(our_borgy, "Введите новые ООС-заметки своего киборга (максимум [MAX_FLAVOR_LEN] символов).", "Новые ООС-заметки", our_borgy.mind.ooc_notes, MAX_FLAVOR_LEN, TRUE, TRUE)
+				if(new_text)
+					our_borgy.mind.ooc_notes = new_text
+		if("Хедшоты")
+			var/mob/living/carbon/our_mob = src
+			var/chosen_headshot_id = tgui_input_list(our_mob, "Выберите номер хедшота, который хотите изменить.", "Управление флавор-текстами", list("1", "2", "3"), "1")
+			// var/max_headshots = 3
+			if(!chosen_headshot_id || !isnum(text2num(chosen_headshot_id)))
+				return
+			chosen_headshot_id = text2num(chosen_headshot_id)
+			if(chosen_headshot_id >= our_mob.dna.headshot_links.len)
+				chosen_headshot_id = our_mob.dna.headshot_links.len || 1
+			var/old_link = our_mob.dna.headshot_links[chosen_headshot_id]
+			var/usr_input = tgui_input_text(our_mob, "Input the image link: (For Discord links, try putting the file's type at the end of the link, after the '&'. for example '&.jpg/.png/.jpeg')", "Headshot Image", old_link, 100, FALSE, FALSE)
+			if(isnull(usr_input))
+				return
+
+			if(!usr_input)
+				our_mob.dna.headshot_links[chosen_headshot_id] = null
+				listclearnulls(our_mob.dna.headshot_links)
+				return
+
+			var/static/link_regex = regex("^(https://i\\.gyazo\\.com|https://static1\\.e621\\.net|https://i\\.ibb\\.co/)")
+			var/static/end_regex = regex("(\\.jpg|\\.png|\\.jpeg)$")
+
+			if(!findtext(usr_input, link_regex))
+				to_chat(our_mob, span_warning("The link needs to be an unshortened Gyazo, iBB, E621 link!"))
+				return
+
+			if(!findtext(usr_input, end_regex))
+				to_chat(our_mob, span_warning("You need either \".png\", \".jpg\", or \".jpeg\" in the end of the link!"))
+				return
+
+			var/static/list/repl_chars = list("\n"="#","\t"="#","'"="","\""=""," "="")
+			var/new_link = sanitize(usr_input, repl_chars)
+			if(our_mob.dna.headshot_links[chosen_headshot_id] == new_link)
+				return
+
+			to_chat(our_mob, span_notice("Если картинка не отображается в игре должным образом, убедитесь, что это прямая ссылка на изображение, которая правильно открывается в обычном браузере."))
+			to_chat(our_mob, span_notice("Имейте в виду, что размер фотографии будет уменьшен до 256x256 пикселей, поэтому чем квадратнее фотография, тем лучше она будет выглядеть."))
+
+			our_mob.dna.headshot_links[chosen_headshot_id] = new_link
+		if("Временный Флавор (Поза)")
+			var/mob/living/our_mob = src
+			var/new_text = tgui_input_text(our_mob, "Введите новую позу своего персонажа (максимум 1024 символа).", "Новая поза", our_mob.tempflavor, 1024, TRUE, TRUE)
+			our_mob.tempflavor = new_text
+		if("Синтетический флавор")
+			var/mob/living/silicon/our_borgy = src
+			if(our_borgy.mind)
+				var/new_text = tgui_input_text(our_borgy, "Введите новый синт-флавор (максимум [MAX_FLAVOR_LEN] символов). Изменения действуют только в течении раунда и не затрагивают сами преференсы.", "Новый синт-флавор", our_borgy.mind.silicon_flavor_text, MAX_FLAVOR_LEN, TRUE, TRUE)
+				if(new_text)
+					our_borgy.mind.silicon_flavor_text = new_text
+// BLUEMOON EDIT END
 
 /mob/proc/set_pose()
 	set name = "Set Pose"
 	set desc = "Sets your temporary flavor text"
 	set category = "IC"
+	// BLUEMOON EDIT START - перенос темпфлавора на хардкод
+	var/mob/living/our_mob = src
 
+	if(!istype(our_mob))
+		return
+	var/new_text = tgui_input_text(our_mob, "Введите новую позу своего персонажа (максимум 1024 символа).", "Новая поза", our_mob.tempflavor, 1024, TRUE, TRUE)
+	our_mob.tempflavor = new_text
+
+	/*
 	var/list/L = GLOB.mobs_with_editable_flavor_text[src]
 	var/datum/element/flavor_text/carbon/temporary/T
 	for(var/i in L)
@@ -176,6 +264,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		to_chat(src, "<span class='warning'>Your mob type does not support temporary flavor text.</span>")
 		return
 	T.set_flavor(src)
+	*/
 
 /datum/element/flavor_text/proc/set_flavor(mob/user)
 	if(!(user in texts_by_atom))
@@ -196,16 +285,16 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 /datum/element/flavor_text/proc/borged_update_flavor_text(mob/new_character, client/C)
 	C = C || GET_CLIENT(new_character)
 	if(!C)
-		LAZYREMOVE(texts_by_atom, new_character)
+		LAZYSET(texts_by_atom, new_character, "")
 		return
 	var/datum/preferences/P = C.prefs
 	if(!P)
-		LAZYREMOVE(texts_by_atom, new_character)
+		LAZYSET(texts_by_atom, new_character, "")
 		return
 	if(P.custom_names["cyborg"] == new_character.real_name)
 		LAZYSET(texts_by_atom, new_character, P.features[save_key])
 	else
-		LAZYREMOVE(texts_by_atom, new_character)
+		LAZYSET(texts_by_atom, new_character, "")
 
 //subtypes with additional hooks for DNA and preferences.
 /datum/element/flavor_text/carbon
@@ -219,11 +308,11 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 	. = ..()
 	if(. == ELEMENT_INCOMPATIBLE)
 		return
-	RegisterSignal(target, COMSIG_CARBON_IDENTITY_TRANSFERRED_TO, .proc/update_dna_flavor_text)
-	RegisterSignal(target, COMSIG_MOB_ANTAG_ON_GAIN, .proc/on_antag_gain)
+	RegisterSignal(target, COMSIG_CARBON_IDENTITY_TRANSFERRED_TO, PROC_REF(update_dna_flavor_text))
+	RegisterSignal(target, COMSIG_MOB_ANTAG_ON_GAIN, PROC_REF(on_antag_gain))
 	if(ishuman(target))
-		RegisterSignal(target, COMSIG_HUMAN_HARDSET_DNA, .proc/update_dna_flavor_text)
-		RegisterSignal(target, COMSIG_HUMAN_ON_RANDOMIZE, .proc/unset_flavor)
+		RegisterSignal(target, COMSIG_HUMAN_HARDSET_DNA, PROC_REF(update_dna_flavor_text))
+		RegisterSignal(target, COMSIG_HUMAN_ON_RANDOMIZE, PROC_REF(unset_flavor))
 
 /datum/element/flavor_text/carbon/Detach(mob/living/carbon/C)
 	. = ..()

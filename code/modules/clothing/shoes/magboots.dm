@@ -36,7 +36,7 @@
 		user.update_gravity(user.has_gravity())
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 
 /obj/item/clothing/shoes/magboots/negates_gravity()
 	return clothing_flags & NOSLIP
@@ -93,19 +93,20 @@
 		if (A != user && A.lying)
 			A.adjustBruteLoss(rand(10,13))
 			to_chat(A,"<span class='userdanger'>[user]'s magboots press down on you, crushing you!</span>")
-			A.emote("scream")
+			if(!HAS_TRAIT(A, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				A.emote("scream")
 
 /obj/item/clothing/shoes/magboots/crushing/attack_self(mob/user)
 	. = ..()
 	if (magpulse)
-		RegisterSignal(user, COMSIG_MOVABLE_MOVED,.proc/crush)
+		RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(crush))
 	else
 		UnregisterSignal(user,COMSIG_MOVABLE_MOVED)
 
 /obj/item/clothing/shoes/magboots/crushing/equipped(mob/user,slot)
 	. = ..()
 	if (slot == ITEM_SLOT_FEET && magpulse)
-		RegisterSignal(user, COMSIG_MOVABLE_MOVED,.proc/crush)
+		RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(crush))
 
 /obj/item/clothing/shoes/magboots/crushing/dropped(mob/user)
 	. = ..()

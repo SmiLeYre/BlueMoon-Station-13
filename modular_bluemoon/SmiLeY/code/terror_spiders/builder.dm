@@ -8,7 +8,7 @@
 // -------------: SPECIAL: wraps web realy fast
 // -------------: TO FIGHT IT: shoot it from range. Kite it.
 
-/mob/living/simple_animal/hostile/poison/terror_spider/builder
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder
 	name = "Drone of Terror"
 	desc = "An ominous-looking spider, he appears to be heavy despite size."
 	gender = MALE
@@ -35,7 +35,7 @@
 	can_wrap = FALSE
 	spider_intro_text = "Будучи Дроном Ужаса, ваша задача - постройка и защита гнезда. Плетите паутину, используйте свои замедляющие плевки и замораживающие укусы для защиты яиц и гнезда. Помните, вы не регенерируете и двигаетесь медленно вне паутины!."
 
-/mob/living/simple_animal/hostile/poison/terror_spider/builder/spider_specialattack(mob/living/carbon/human/L, poisonable)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder/spider_specialattack(mob/living/carbon/human/L, poisonable)
 	L.Slowed(4 SECONDS)
 	if(!poisonable)
 		return ..()
@@ -50,7 +50,7 @@
 		visible_message("<span class='danger'>[src] buries its long fangs deep into the [inject_target] of [target]!</span>")
 	L.attack_animal(src)
 
-/mob/living/simple_animal/hostile/poison/terror_spider/builder/Move(atom/newloc, dir, step_x, step_y)  //moves slow while not in web, but fast while in. does not regenerate if not in web
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/builder/Move(atom/newloc, dir, step_x, step_y)  //moves slow while not in web, but fast while in. does not regenerate if not in web
 	. = ..()
 	var/obj/structure/spider/terrorweb/W = locate() in get_turf(src)
 	if(W)

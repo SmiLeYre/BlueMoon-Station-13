@@ -16,6 +16,12 @@
 	cost = 800
 	contains = list(/obj/item/clothing/gloves/color/yellow)
 
+/datum/supply_pack/goody/sunglasses_single
+	name = "Sunglasses Single-Pack"
+	desc = "Стильные очки, что защитят вас от палящих лучей Солнца и флешеров."
+	cost = 500
+	contains = list(/obj/item/clothing/glasses/sunglasses)
+
 /datum/supply_pack/goody/firstaidbruises_single
 	name = "Bruise Treatment Kit Single-Pack"
 	desc = "Аптечка первой помощи, идеально подходящая для восстановления после того, как вас придавили в воздушном шлюзе. Знаете ли вы, что людей постоянно раздавливает в воздушных шлюзах? Интересно..."

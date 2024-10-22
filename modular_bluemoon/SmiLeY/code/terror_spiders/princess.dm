@@ -8,7 +8,7 @@
 // -------------: TO FIGHT IT: hunt it before it lays eggs
 // -------------: SPRITES FROM: FoS, https://www.paradisestation.org/forum/profile/335-fos
 
-/mob/living/simple_animal/hostile/poison/terror_spider/queen/princess
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/princess
 	name = "Princess of Terror spider"
 	desc = "An enormous spider. It looks strangely cute and fluffy."
 	ai_target_method = TS_DAMAGE_SIMPLE
@@ -33,10 +33,10 @@
 	canlay = 1
 	hasnested = TRUE
 	spider_spawnfrequency = 1600 // 160 seconds
-	special_abillity = list(/obj/effect/proc_holder/spell/aoe_turf/terror_shriek_princess)
+	special_abillity = list(/obj/effect/proc_holder/spell/aoe_turf/terror_shriek/princess)
 	var/spider_max_children = 20
 
-/mob/living/simple_animal/hostile/poison/terror_spider/queen/princess/grant_queen_subtype_abilities()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/princess/grant_queen_subtype_abilities()
 	// Queens start in movement mode, where they can ventcrawl but not lay eggs. Then they move to NestMode() where they can wallsmash and egglay, but not ventcrawl.
 	// Princesses are simpler, and can always lay eggs, always vent crawl, but never smash walls. Unlike queens, they don't have a "nesting" transformation.
 	queeneggs_action = new()
@@ -45,11 +45,11 @@
 	queensense_action.Grant(src)
 
 
-/mob/living/simple_animal/hostile/poison/terror_spider/queen/princess/ListAvailableEggTypes()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/princess/ListAvailableEggTypes()
 	var/list/valid_types = list(TS_DESC_KNIGHT, TS_DESC_LURKER, TS_DESC_HEALER, TS_DESC_REAPER, TS_DESC_REAPER, TS_DESC_BUILDER)
 
 	// Each princess can also have ONE black/purple/brown. If it dies, they can pick a new spider from the 3 advanced types to lay.
-	var/list/spider_array = CountSpidersDetailed(TRUE, list(/mob/living/simple_animal/hostile/poison/terror_spider/widow, /mob/living/simple_animal/hostile/poison/terror_spider/guardian, /mob/living/simple_animal/hostile/poison/terror_spider/destroyer))
+	var/list/spider_array = CountSpidersDetailed(TRUE, list(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/guardian, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/destroyer))
 	if(spider_array["all"] < 3)
 		valid_types |= TS_DESC_WIDOW
 		valid_types |= TS_DESC_GUARDIAN
@@ -57,14 +57,14 @@
 
 	return valid_types
 
-/mob/living/simple_animal/hostile/poison/terror_spider/queen/princess/Life(seconds, times_fired)
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/princess/Life(seconds, times_fired)
 	. = ..()
 	if(stat != DEAD)
 		if(ckey)
 			if(world.time > (spider_lastspawn + spider_spawnfrequency))
 				grant_eggs()
 
-/mob/living/simple_animal/hostile/poison/terror_spider/queen/princess/grant_eggs()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/princess/grant_eggs()
 	spider_lastspawn = world.time
 
 	var/list/spider_array = CountSpidersDetailed(TRUE)
@@ -97,11 +97,11 @@
 		to_chat(src, "<span class='notice'>You have [canlay] eggs available to lay.</span>")
 		SEND_SOUND(src, sound('sound/effects/ping.ogg'))
 
-/mob/living/simple_animal/hostile/poison/terror_spider/queen/princess/NestMode()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/princess/NestMode()
 	// Princesses don't nest. However, we still need to override this in case an AI princess calls it.
 	return
 
-/mob/living/simple_animal/hostile/poison/terror_spider/queen/princess/spider_special_action()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/princess/spider_special_action()
 	// Princess AI routine. GREATLY simplified version of queen routine.
 	if(!stat && !ckey)
 		// Utilize normal queen AI for finding a nest site (neststep=0), and activating NestMode() (neststep=1)
@@ -118,7 +118,7 @@
 		// Yes, this means NPC princesses won't create T2 spiders.
 
 
-/mob/living/simple_animal/hostile/poison/terror_spider/queen/princess/ai_nest_is_full()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/princess/ai_nest_is_full()
 	var/list/spider_array = CountSpidersDetailed(TRUE)
 	if(spider_array["all"] >= spider_max_children)
 		return TRUE

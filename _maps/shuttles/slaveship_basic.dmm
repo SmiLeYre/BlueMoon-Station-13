@@ -52,7 +52,7 @@
 "et" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Slave Holding Pen";
-	req_access_txt = "152"
+	req_access_txt = "154"
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/slaveship)
@@ -98,7 +98,7 @@
 	id = "slaveshipdoor";
 	name = "external door control";
 	pixel_y = 26;
-	req_access_txt = "152"
+	req_access_txt = "154"
 	},
 /obj/docking_port/mobile{
 	dheight = 1;
@@ -106,7 +106,7 @@
 	dwidth = 10;
 	height = 15;
 	hidden = 1;
-	id = "slaver";
+	shuttle_id = "slaver";
 	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
 	name = "slaveship";
 	port_direction = 4;
@@ -143,7 +143,7 @@
 "uB" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Shuttle Storage";
-	req_access_txt = "152"
+	req_access_txt = "154"
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/slaveship)
@@ -224,7 +224,7 @@
 "yq" = (
 /obj/machinery/door/airlock/hatch{
 	name = "EVA Suit Storage";
-	req_access_txt = "152"
+	req_access_txt = "154"
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/slaveship)
@@ -405,7 +405,7 @@
 "Od" = (
 /obj/machinery/door/airlock/hatch{
 	name = "Shuttle Cockpit";
-	req_access_txt = "152"
+	req_access_txt = "154"
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/slaveship)
@@ -546,7 +546,7 @@
 /obj/structure/fans/tiny,
 /obj/machinery/door/airlock/hatch{
 	name = "Exit Hatch";
-	req_access_txt = "152"
+	req_access_txt = "154"
 	},
 /turf/open/floor/plasteel/dark,
 /area/shuttle/slaveship)

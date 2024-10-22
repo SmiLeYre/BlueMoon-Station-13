@@ -25,7 +25,7 @@
 	 * If ==0, the emote doesn't not create a delay and also ignores it.
 	 * If >0, takes into account the delay and adds its own delay.
 	 */
-	var/emote_cooldown = 0
+	var/emote_cooldown = 0.25 SECONDS
 
 	var/chat_popup = TRUE //Skyrat edit
 	var/image_popup
@@ -175,7 +175,7 @@
 
 /datum/emote/sound/run_emote(mob/user, params)
 	. = ..()
-	if(.)
+	if(. && !(user?.is_muzzled() && !muzzle_ignore))
 		playsound(user.loc, sound, volume, vary)
 
 /**

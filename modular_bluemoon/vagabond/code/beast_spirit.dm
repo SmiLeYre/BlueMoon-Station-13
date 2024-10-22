@@ -67,7 +67,7 @@
 
 /datum/action/innate/beastchange/Activate()
 	. = ..()
-	var/appearances = list("Default", "Black", "White", "Skull", "Werecat", "Panther", "Garfield")
+	var/appearances = list("Default", "Black", "White", "Skull", "Aiko", "Werecat", "Panther", "Garfield", "Mouse")
 	var/skin = input(owner, "Pick appearance for your beast", "Change Appearance") as null|anything in appearances
 	switch(skin)
 		if("Default")
@@ -82,6 +82,9 @@
 		if("Skull")
 			beastskin = "skull_"
 			beastsound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
+		if("Aiko")
+			beastskin = "aiko_"
+			beastsound = 'modular_bluemoon/vagabond/sound/wolf.ogg'
 		if("Werecat")
 			beastskin = "werecat_"
 			beastsound = 'modular_bluemoon/vagabond/sound/cat.ogg'
@@ -91,6 +94,9 @@
 		if("Garfield")
 			beastskin = "garfield_"
 			beastsound = 'modular_bluemoon/vagabond/sound/cat.ogg'
+		if("Mouse")
+			beastskin = "mouse_"
+			beastsound = 'sound/effects/mousesqueek.ogg'
 	if(skin)
 		to_chat(owner, "<span class='notice'>Your inner Beast's skin now will be [skin].</span>")
 
@@ -162,6 +168,8 @@
 	change.owner = quirk_holder
 
 /datum/quirk/beastspirit/remove()
+	if(!quirk_holder)
+		return
 	var/obj/effect/proc_holder/spell/targeted/shapeshift/beast/B = locate() in quirk_holder.mob_spell_list
 	quirk_holder.RemoveSpell(B)
 
@@ -225,6 +233,8 @@
 	var/mob/living/shape = new shapeshift_type(caster.loc)
 	H = new(shape, src, action_owner)
 	var/mob/living/simple_animal/hostile/beastspirit/BEAST = shape
+	BEAST.AIStatus = AI_OFF //BLUEMOON ADD шейпы не двигаются и не пытаются кого-то убить если выйти
+	BEAST.wander = FALSE //BLUEMOON ADD END
 	BEAST.name = action_owner.name
 	BEAST.beast_type = beast_type
 	BEAST.gender = action_owner.gender

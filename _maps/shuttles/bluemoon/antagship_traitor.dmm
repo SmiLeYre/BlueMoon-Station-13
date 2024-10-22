@@ -1,0 +1,534 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ab" = (
+/obj/machinery/computer/communications/syndicate{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/syndicate/dropship)
+"ac" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/machinery/light/directional/south,
+/obj/effect/mob_spawn/human/syndicate/battlecruiser{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/dropship)
+"ae" = (
+/obj/machinery/button/door{
+	id = 5434;
+	name = "Poddoors";
+	pixel_y = 24
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/dropship)
+"af" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12345;
+	name = "Engine Poddoor"
+	},
+/obj/structure/shuttle/engine/propulsion/burst/left{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/syndicate/dropship)
+"ag" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/machinery/power/port_gen/pacman,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/syndicate/dropship)
+"ah" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/item/wrench,
+/obj/structure/closet/crate/miningcar,
+/obj/item/stack/sheet/mineral/plasma{
+	amount = 50
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/syndicate/dropship)
+"aj" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/light/directional/east,
+/obj/machinery/sleeper/syndie/fullupgrade{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/syndicate/dropship)
+"ak" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/effect/mob_spawn/human/syndicate/battlecruiser{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/dropship)
+"aw" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/dropship)
+"bY" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/effect/mob_spawn/human/syndicate/battlecruiser,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/dropship)
+"gi" = (
+/obj/machinery/computer/shuttle/syndicate/dropship{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/syndicate/dropship)
+"hB" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12345;
+	name = "Engine Poddoor"
+	},
+/obj/structure/shuttle/engine/propulsion/burst/right{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/shuttle/syndicate/dropship)
+"hJ" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12344;
+	name = "Lockdown"
+	},
+/obj/effect/spawner/structure/window/plastitanium/pirate,
+/turf/open/floor/plating,
+/area/shuttle/syndicate/dropship)
+"hS" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = 12344;
+	name = "Lockdown";
+	pixel_x = -28;
+	pixel_y = -8
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = 12345;
+	name = "Engine Poddoor";
+	pixel_x = -28;
+	pixel_y = 8
+	},
+/obj/machinery/light/directional/west,
+/obj/machinery/power/apc/auto_name/north,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/dropship)
+"jY" = (
+/obj/effect/turf_decal/box,
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/obj/item/reagent_containers/food/snacks/rationpack,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/syndicate/dropship)
+"ku" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/dropship)
+"kB" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/dropship)
+"lp" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/light/directional/east,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/syndicate/dropship)
+"mo" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12345;
+	name = "Engine Poddoor"
+	},
+/obj/machinery/porta_turret/syndicate/pod{
+	dir = 6
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/dropship)
+"mX" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/dropship)
+"rR" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/highsecurity{
+	id_tag = "interdynecomm";
+	name = "Bridge";
+	req_access_txt = "151"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/dropship)
+"te" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = 5434
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/syndicate/dropship)
+"uJ" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/dropship)
+"wh" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/dropship)
+"wJ" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = 5434
+	},
+/obj/structure/fans/tiny,
+/obj/docking_port/mobile{
+	dir = 4;
+	dwidth = 3;
+	height = 12;
+	shuttle_id = "syndicate_dropship";
+	name = "Syndicate Drop Ship";
+	width = 7
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/syndicate/dropship)
+"xc" = (
+/obj/effect/turf_decal/box,
+/obj/structure/closet/crate/internals,
+/obj/item/storage/firstaid/tactical,
+/obj/item/storage/firstaid/tactical,
+/obj/item/storage/firstaid/tactical,
+/obj/item/storage/firstaid/tactical,
+/obj/item/storage/firstaid/tactical,
+/obj/item/storage/firstaid/tactical,
+/obj/item/storage/firstaid/tactical,
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/syndicate/dropship)
+"An" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable,
+/obj/machinery/door/poddoor/preopen{
+	dir = 4;
+	id = 12344;
+	name = "Lockdown"
+	},
+/obj/effect/spawner/structure/window/plastitanium/pirate,
+/turf/open/floor/plating,
+/area/shuttle/syndicate/dropship)
+"Av" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/dropship)
+"Es" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/assault,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/dropship)
+"ES" = (
+/obj/machinery/light/directional/west,
+/obj/item/radio/intercom{
+	pixel_y = -30
+	},
+/obj/machinery/turretid{
+	desc = "Used to control the Inteceptor's automated defenses.";
+	req_access = list(150);
+	pixel_x = -30
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/dropship)
+"Gb" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/machinery/light/directional/north,
+/obj/effect/mob_spawn/human/syndicate/battlecruiser,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/dropship)
+"GH" = (
+/obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/dropship{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/shuttle/syndicate/dropship)
+"Kz" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/dropship)
+"Pq" = (
+/turf/template_noop,
+/area/template_noop)
+"PT" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/dropship)
+"Rd" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/dropship)
+"Rz" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/captain{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/dropship)
+"RL" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12345;
+	name = "Engine Poddoor"
+	},
+/obj/machinery/porta_turret/syndicate/pod{
+	dir = 5
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/dropship)
+"RO" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/dropship)
+"Sh" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/dropship)
+"Tk" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/dropship)
+"Uo" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/dropship)
+"XU" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/assault{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/dropship)
+
+(1,1,1) = {"
+Pq
+kB
+te
+wJ
+te
+kB
+Pq
+"}
+(2,1,1) = {"
+Pq
+kB
+ae
+RO
+RO
+kB
+Pq
+"}
+(3,1,1) = {"
+Pq
+kB
+bY
+RO
+ak
+kB
+Pq
+"}
+(4,1,1) = {"
+af
+kB
+Gb
+RO
+ac
+kB
+hB
+"}
+(5,1,1) = {"
+RL
+Kz
+Es
+aw
+XU
+Av
+mo
+"}
+(6,1,1) = {"
+Pq
+hJ
+ag
+RO
+jY
+hJ
+Pq
+"}
+(7,1,1) = {"
+Pq
+hJ
+ah
+RO
+xc
+hJ
+Pq
+"}
+(8,1,1) = {"
+Pq
+uJ
+lp
+RO
+aj
+mX
+Pq
+"}
+(9,1,1) = {"
+af
+mX
+PT
+rR
+Rd
+Uo
+hB
+"}
+(10,1,1) = {"
+RL
+ku
+hS
+Rz
+ES
+Sh
+mo
+"}
+(11,1,1) = {"
+Pq
+hJ
+GH
+gi
+ab
+hJ
+Pq
+"}
+(12,1,1) = {"
+Pq
+wh
+An
+An
+An
+Tk
+Pq
+"}

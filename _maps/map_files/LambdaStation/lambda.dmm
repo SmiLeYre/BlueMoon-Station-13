@@ -242,7 +242,7 @@
 /area/solars/port/fore)
 "aaN" = (
 /obj/docking_port/stationary/random{
-	id = "pod_lavaland2";
+	shuttle_id = "pod_lavaland2";
 	name = "lavaland"
 	},
 /turf/open/space/basic,
@@ -450,7 +450,7 @@
 /area/security/prison)
 "abr" = (
 /obj/docking_port/stationary/random{
-	id = "pod_lavaland2";
+	shuttle_id = "pod_lavaland2";
 	name = "lavaland"
 	},
 /turf/open/space,
@@ -777,7 +777,7 @@
 /area/security/prison)
 "aci" = (
 /obj/structure/table,
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /obj/structure/window/reinforced{
 	dir = 8;
 	pixel_x = -4
@@ -8733,7 +8733,7 @@
 /obj/item/gun/energy/ionrifle,
 /obj/item/gun/energy/e_gun/dragnet,
 /obj/item/gun/energy/e_gun/dragnet,
-/obj/item/clothing/suit/armor/laserproof,
+/obj/item/clothing/suit/hooded/ablative,
 /obj/structure/window/reinforced{
 	dir = 1;
 	layer = 2.9
@@ -10959,7 +10959,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 1
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "auo" = (
@@ -11503,7 +11503,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/item/clothing/suit/armor/brigdoc/armor,
+/obj/item/clothing/suit/armor/brigdoc,
 /turf/open/floor/plasteel/white,
 /area/security/brig)
 "avj" = (
@@ -16782,6 +16782,11 @@
 	},
 /obj/structure/table,
 /obj/item/storage/fancy/donut_box,
+/obj/item/storage/fancy/donut_box,
+/obj/item/storage/fancy/donut_box,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
+/obj/item/storage/box/donkpockets,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "aDZ" = (
@@ -18793,7 +18798,7 @@
 	dwidth = 3;
 	height = 5;
 	icon_state = "pinonalert";
-	id = "mining_home";
+	shuttle_id = "mining_home";
 	name = "mining shuttle bay";
 	roundstart_template = /datum/map_template/shuttle/mining/box;
 	width = 7
@@ -19433,7 +19438,7 @@
 /obj/docking_port/stationary{
 	dwidth = 5;
 	height = 7;
-	id = "supply_home";
+	shuttle_id = "supply_home";
 	name = "Cargo Bay";
 	width = 12
 	},
@@ -20178,7 +20183,7 @@
 	dir = 4;
 	dwidth = 2;
 	height = 5;
-	id = "laborcamp_home";
+	shuttle_id = "laborcamp_home";
 	name = "fore bay 1";
 	roundstart_template = /datum/map_template/shuttle/labour/box;
 	width = 9
@@ -20635,19 +20640,23 @@
 	pixel_x = 1;
 	pixel_y = 5
 	},
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/folder/blue,
+/obj/item/stamp/law,
 /turf/open/floor/plasteel/grimy,
 /area/service/lawoffice)
 "aLf" = (
 /obj/structure/table/wood,
-/obj/item/folder/blue,
-/obj/item/folder/blue,
-/obj/item/folder/blue,
-/obj/item/folder/blue,
 /obj/machinery/camera{
 	c_tag = "Law Office";
 	dir = 8
 	},
-/obj/item/stamp/law,
+/obj/machinery/fax{
+	fax_name = "Lawyer Fax";
+	name = "Lawyer Fax"
+	},
 /turf/open/floor/plasteel/grimy,
 /area/service/lawoffice)
 "aLg" = (
@@ -23808,10 +23817,10 @@
 	dir = 1;
 	pixel_y = 1
 	},
-/obj/item/aiModule/reset/purge,
-/obj/item/aiModule/zeroth/oneHuman,
-/obj/item/aiModule/supplied/protectStation,
-/obj/item/aiModule/supplied/oxygen,
+/obj/item/ai_module/reset/purge,
+/obj/item/ai_module/zeroth/oneHuman,
+/obj/item/ai_module/supplied/protectStation,
+/obj/item/ai_module/supplied/oxygen,
 /obj/structure/window/reinforced,
 /obj/machinery/door/window/westright{
 	name = "Reserve Modules";
@@ -24053,7 +24062,7 @@
 	},
 /obj/structure/table,
 /obj/structure/window/reinforced,
-/obj/item/aiModule/supplied/freeform,
+/obj/item/ai_module/supplied/freeform,
 /obj/structure/window/reinforced{
 	dir = 1;
 	pixel_y = 1
@@ -24756,8 +24765,8 @@
 	},
 /obj/structure/table,
 /obj/structure/window/reinforced,
-/obj/item/aiModule/supplied/quarantine,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/supplied/quarantine,
+/obj/item/ai_module/reset,
 /obj/structure/window/reinforced{
 	dir = 1;
 	pixel_y = 1
@@ -26962,13 +26971,6 @@
 /obj/structure/table,
 /obj/item/folder/red,
 /obj/item/taperecorder,
-/obj/item/radio/intercom{
-	broadcasting = 1;
-	frequency = 1423;
-	listening = 0;
-	name = "Interrogation Intercom";
-	pixel_y = -24
-	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
@@ -26978,6 +26980,15 @@
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
+	},
+/obj/item/radio/intercom{
+	frequency = 1455;
+	name = "listening to the interrogation room";
+	pixel_y = -32;
+	canhear_range = 3;
+	broadcasting = 1;
+	listening = 0;
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
@@ -28524,7 +28535,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile,
-/obj/item/destTagger,
+/obj/item/dest_tagger,
 /obj/item/hand_labeler,
 /obj/machinery/airalarm{
 	dir = 8;
@@ -30597,6 +30608,11 @@
 "bgU" = (
 /obj/effect/turf_decal/trimline/neutral/filled/line{
 	dir = 6
+	},
+/obj/structure/table/reinforced,
+/obj/machinery/fax{
+	fax_name = "Bridge Fax";
+	name = "Bridge Fax"
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
@@ -36953,6 +36969,11 @@
 /area/security/prison)
 "bzK" = (
 /obj/machinery/light,
+/obj/structure/table/wood,
+/obj/machinery/fax{
+	fax_name = "General Fax";
+	name = "General Fax"
+	},
 /turf/open/floor/wood,
 /area/service/library)
 "bzL" = (
@@ -38161,6 +38182,9 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/effect/turf_decal/trimline/neutral/filled/line{
 	dir = 9
+	},
+/obj/machinery/computer/account_database{
+	dir = 8
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
@@ -43587,6 +43611,10 @@
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/trimline/neutral/filled/line{
 	dir = 4
+	},
+/obj/machinery/fax{
+	fax_name = "Security Fax";
+	name = "Security Fax"
 	},
 /turf/open/floor/plasteel,
 /area/security/brig)
@@ -50280,13 +50308,6 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel,
-/area/engineering/atmos)
-"ckK" = (
-/obj/structure/window/reinforced/spawner/north,
-/obj/machinery/atmospherics/pipe/manifold/yellow/visible{
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
 /area/engineering/atmos)
 "ckL" = (
 /obj/structure/cable{
@@ -59775,7 +59796,7 @@
 	c_tag = "Curators Office";
 	dir = 8
 	},
-/obj/machinery/computer/libraryconsole/bookmanagement,
+/obj/machinery/computer/library/checkout,
 /turf/open/floor/carpet,
 /area/service/library)
 "cMZ" = (
@@ -61755,9 +61776,7 @@
 /area/engineering/storage/tech)
 "cTG" = (
 /obj/structure/window/reinforced/spawner/north,
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
-	dir = 9
-	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating/airless,
 /area/engineering/atmos)
 "cTH" = (
@@ -64185,7 +64204,7 @@
 	dir = 4;
 	dwidth = 9;
 	height = 25;
-	id = "emergency_home";
+	shuttle_id = "emergency_home";
 	name = "MetaStation emergency evac bay";
 	width = 29
 	},
@@ -64554,7 +64573,7 @@
 	dwidth = 3;
 	height = 15;
 	icon_state = "pinonalert";
-	id = "arrivals_stationary";
+	shuttle_id = "arrivals_stationary";
 	name = "arrivals";
 	roundstart_template = /datum/map_template/shuttle/arrival/box;
 	width = 7
@@ -66225,7 +66244,7 @@
 	},
 /obj/structure/table,
 /obj/item/aicard,
-/obj/item/aiModule/reset,
+/obj/item/ai_module/reset,
 /turf/open/floor/plating,
 /area/engineering/storage/tech)
 "iSm" = (
@@ -68511,7 +68530,7 @@
 "mQo" = (
 /obj/docking_port/stationary/random{
 	dir = 8;
-	id = "pod_lavaland1";
+	shuttle_id = "pod_lavaland1";
 	name = "lavaland"
 	},
 /turf/open/space/basic,
@@ -68969,18 +68988,18 @@
 	dir = 1;
 	pixel_y = 1
 	},
-/obj/item/aiModule/core/full/asimov,
-/obj/item/aiModule/core/full/custom,
-/obj/item/aiModule/core/freeformcore,
+/obj/item/ai_module/core/full/asimov,
+/obj/item/ai_module/core/full/custom,
+/obj/item/ai_module/core/freeformcore,
 /obj/structure/window/reinforced,
 /obj/machinery/door/window{
 	dir = 4;
 	name = "Core Modules";
 	req_access_txt = "20"
 	},
-/obj/effect/spawner/lootdrop/aimodule_neutral,
-/obj/effect/spawner/lootdrop/aimodule_harmless,
-/obj/effect/spawner/lootdrop/aimodule_lewd,
+/obj/effect/spawner/lootdrop/ai_module_neutral,
+/obj/effect/spawner/lootdrop/ai_module_harmless,
+/obj/effect/spawner/lootdrop/ai_module_lewd,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/ai_upload)
 "nIP" = (
@@ -69376,6 +69395,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/break_room)
+"oyA" = (
+/obj/machinery/atmospherics/pipe/simple/yellow/visible{
+	dir = 9
+	},
+/obj/structure/grille,
+/turf/closed/wall/r_wall,
+/area/engineering/atmos)
 "oBc" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/green/visible,
@@ -69414,7 +69440,7 @@
 	dir = 2;
 	dwidth = 2;
 	height = 13;
-	id = "ferry_home";
+	shuttle_id = "ferry_home";
 	name = "port bay 2";
 	width = 5
 	},
@@ -69700,7 +69726,7 @@
 	dir = 2;
 	dwidth = 11;
 	height = 22;
-	id = "whiteship_home";
+	shuttle_id = "whiteship_home";
 	name = "SS13: Auxiliary Dock, Station-Port";
 	width = 35
 	},
@@ -70452,7 +70478,7 @@
 	dir = 2;
 	dwidth = 3;
 	height = 5;
-	id = "commonmining_home";
+	shuttle_id = "commonmining_home";
 	name = "SS13: Common Mining Dock";
 	roundstart_template = /datum/map_template/shuttle/mining_common/meta;
 	width = 7
@@ -70659,6 +70685,15 @@
 /obj/effect/turf_decal/tile/red,
 /turf/open/floor/plasteel,
 /area/hallway/secondary/exit/departure_lounge)
+"rfh" = (
+/obj/item/radio/intercom{
+	frequency = 1455;
+	name = "listening to the interrogation room";
+	dir = 8;
+	pixel_y = -32
+	},
+/turf/open/floor/plasteel/grimy,
+/area/security/brig)
 "rgo" = (
 /obj/machinery/power/apc{
 	areastring = "/area/security/brig";
@@ -72175,6 +72210,13 @@
 /obj/machinery/meter,
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
+"uox" = (
+/obj/machinery/atmospherics/pipe/manifold/yellow/visible{
+	dir = 8
+	},
+/obj/structure/grille,
+/turf/closed/wall/r_wall,
+/area/engineering/atmos)
 "uoQ" = (
 /obj/structure/closet/firecloset,
 /obj/effect/turf_decal/tile/neutral,
@@ -72320,7 +72362,7 @@
 "uDy" = (
 /obj/structure/lattice/catwalk,
 /obj/docking_port/stationary{
-	id = "lambda_station";
+	shuttle_id = "lambda_station";
 	name = "Lambda Shuttle Dock";
 	dwidth = 5;
 	width = 10;
@@ -73851,7 +73893,7 @@
 /area/maintenance/aft)
 "xrA" = (
 /obj/structure/window/reinforced/spawner,
-/obj/machinery/atmospherics/pipe/simple/yellow/visible,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating/airless,
 /area/engineering/atmos)
 "xtx" = (
@@ -115758,7 +115800,7 @@ aqG
 aKS
 aLB
 cQM
-aKR
+rfh
 axa
 bap
 aPY
@@ -125364,8 +125406,8 @@ chB
 cji
 cjk
 cjZ
-ckK
-cUj
+cmv
+uox
 pbg
 cnf
 cpT
@@ -125622,7 +125664,7 @@ ciq
 eVS
 clt
 cTG
-cTH
+oyA
 cTH
 cTH
 cTH
@@ -126392,8 +126434,8 @@ chB
 cjh
 cjp
 ckc
-ckK
-cUj
+cmv
+uox
 iXq
 eQt
 csx
@@ -126650,7 +126692,7 @@ ciq
 twF
 rxJ
 cTG
-cTH
+oyA
 cTH
 cTH
 cTH

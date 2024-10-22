@@ -178,10 +178,17 @@
 	name = "Hair dye spray"
 	path = /obj/item/dyespray
 
-/datum/gear/donator/summon_cumburger
+/datum/gear/backpack/summon_cumburger
 	name = "Book: Summon Cumburger"
-	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/book/granter/spell/summon_cumburger
-	ckeywhitelist = list()
 	cost = 4
-	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/backpack/laser_pointer
+	name = "Laser Pointer"
+	path = /obj/item/laser_pointer
+	cost = 1
+
+/datum/gear/backpack/tts_device
+	name = "TTS Device"
+	path = /obj/item/ttsdevice
+	cost = 2

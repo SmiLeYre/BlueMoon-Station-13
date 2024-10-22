@@ -1,12 +1,12 @@
 /datum/export/stack
 	unit_name = "sheet"
-	k_elasticity = 0
+	k_elasticity = 1/200 //BLUEMOON CHANGE
 
 /datum/export/stack/get_amount(obj/O)
 	var/obj/item/stack/S = O
 	if(istype(S))
 		return S.amount
-	return 0
+	return FALSE
 
 // Hides
 
@@ -121,12 +121,14 @@
 
 /datum/export/stack/cloth
 	cost = 20
+	k_elasticity = 1/200 //BLUEMOON CHANGE "Anti-floods"
 	unit_name = "sheets"
 	message = "of cloth"
 	export_types = list(/obj/item/stack/sheet/cloth)
 
 /datum/export/stack/duracloth
 	cost = 40
+	k_elasticity = 1/200 //BLUEMOON CHANGE "Anti-floods"
 	unit_name = "sheets"
 	message = "of duracloth"
 	export_types = list(/obj/item/stack/sheet/durathread)

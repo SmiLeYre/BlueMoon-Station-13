@@ -1,7 +1,7 @@
 /mob/living/carbon/alien
 	name = "alien"
 	icon = 'icons/mob/alien.dmi'
-	gender = FEMALE //All xenos are girls!!
+	gender = FEMALE
 	dna = null
 	faction = list(ROLE_ALIEN)
 	sight = SEE_MOBS
@@ -10,10 +10,14 @@
 	initial_language_holder = /datum/language_holder/alien
 	bubble_icon = "alien"
 	type_of_meat = /obj/item/reagent_containers/food/snacks/meat/slab/xeno
-
+//BLUEMOON EDIT START
+//Дальше бога нет
 	has_anus = TRUE
 	has_vagina = TRUE
+	has_penis = TRUE
+	has_balls = TRUE
 
+//BLUEMOON EDIT END
 	typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/alien
 
 	/// Whether they can ventcrawl; this is set individually for 'humanoid' and 'royal' types
@@ -98,7 +102,7 @@
 		clear_alert("alien_fire")
 
 /mob/living/carbon/alien/reagent_check(datum/reagent/R) //can metabolize all reagents
-	return 0
+	return FALSE
 
 /mob/living/carbon/alien/IsAdvancedToolUser()
 	return has_fine_manipulation
@@ -141,7 +145,7 @@ Des: Removes all infected images from the alien.
 	return
 
 /mob/living/carbon/alien/canBeHandcuffed()
-	return 1
+	return TRUE
 
 /mob/living/carbon/alien/get_standard_pixel_y_offset(lying = 0)
 	return initial(pixel_y)

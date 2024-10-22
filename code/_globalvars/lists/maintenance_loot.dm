@@ -109,7 +109,7 @@ GLOBAL_LIST_INIT(maintenance_loot, list(
 	/obj/item/storage/secure/briefcase = 3,
 	/obj/item/storage/toolbox/artistic = 2,
 	/obj/item/toy/eightball = 1,
-	/obj/item/reagent_containers/pill/floorpill = 1,
+	/obj/item/reagent_containers/pill/floorpill = 5,
 	/obj/item/reagent_containers/food/snacks/cannedpeaches/maint = 2,
 	/obj/item/clothing/shoes/wheelys = 1,
 	/obj/item/clothing/shoes/kindleKicks = 1,
@@ -117,6 +117,11 @@ GLOBAL_LIST_INIT(maintenance_loot, list(
 	/obj/item/clothing/gloves/tackler/offbrand = 1,
 	/obj/item/stack/sticky_tape = 1,
 	/obj/item/reagent_containers/food/snacks/cube/tentacles = 1, //Smiley's request
+	//SPLURT EDIT START
+	/obj/effect/spawner/lootdrop/alien_glands/maintenance = 1,
+    /obj/item/reagent_containers/food/snacks/egg/loaded = 1,
+	/obj/item/reagent_containers/pill/labebium = 15,
+	//SPLURT EDIT END
 	"" = 3
 	))
 

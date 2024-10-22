@@ -225,10 +225,6 @@
 	dir = 4
 	},
 /area/engineering/gravity_generator)
-"aM" = (
-/obj/machinery/suit_storage_unit/industrial/ce,
-/turf/open/floor/plating,
-/area/engineering/atmos)
 "aN" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 4
@@ -1500,6 +1496,13 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/plasteel,
 /area/engineering/storage)
+"fC" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/obj/structure/industrial_lift,
+/turf/open/floor/plating,
+/area/commons/storage/primary)
 "gK" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 8;
@@ -1530,13 +1533,6 @@
 	},
 /turf/open/floor/plating,
 /area/engineering/storage)
-"ij" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/machinery/suit_storage_unit/industrial/ce,
-/turf/open/floor/plasteel,
-/area/construction)
 "ip" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -1572,6 +1568,13 @@
 	},
 /turf/open/floor/plating,
 /area/engineering/storage)
+"jZ" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/obj/structure/industrial_lift,
+/turf/open/floor/plating,
+/area/commons/storage/primary)
 "kg" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 4
@@ -1587,11 +1590,28 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/service)
+"mS" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/structure/industrial_lift,
+/turf/open/floor/plating,
+/area/commons/storage/primary)
 "mZ" = (
 /turf/open/floor/plasteel{
 	dir = 4
 	},
 /area/hallway/secondary/service)
+"nc" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/obj/structure/industrial_lift,
+/turf/open/floor/plating,
+/area/commons/storage/primary)
 "nx" = (
 /turf/open/openspace,
 /area/space/nearstation)
@@ -1632,6 +1652,13 @@
 /obj/effect/turf_decal/stripes/asteroid/line,
 /turf/open/floor/plating,
 /area/maintenance/department/bridge)
+"oK" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/suit_storage_unit/industrial/ce,
+/turf/open/floor/plasteel,
+/area/construction)
 "qo" = (
 /turf/open/openspace,
 /area/engineering/storage)
@@ -1648,6 +1675,12 @@
 	},
 /turf/open/openspace,
 /area/engineering/storage)
+"rD" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/openspace,
+/area/hallway/secondary/service)
 "sh" = (
 /turf/open/floor/plasteel{
 	dir = 1
@@ -1671,6 +1704,13 @@
 	},
 /turf/open/floor/plating,
 /area/engineering/storage)
+"vd" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/landmark/observer_start,
+/turf/open/floor/plasteel,
+/area/commons/storage/primary)
 "vt" = (
 /obj/effect/turf_decal/stripes/asteroid/line{
 	dir = 1
@@ -1694,6 +1734,11 @@
 /obj/item/construction/rcd/combat/admin,
 /turf/open/floor/plasteel,
 /area/construction)
+"xe" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/effect/landmark/blobstart,
+/turf/open/floor/plasteel,
+/area/commons/storage/primary)
 "xr" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -1718,6 +1763,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plating,
 /area/construction)
+"zP" = (
+/obj/structure/industrial_lift,
+/turf/open/floor/plating,
+/area/commons/storage/primary)
 "zZ" = (
 /obj/structure/disposalpipe/trunk{
 	dir = 1;
@@ -1748,14 +1797,10 @@
 /obj/structure/grille,
 /turf/open/openspace,
 /area/space/nearstation)
-"Bm" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/turf/open/floor/plasteel,
+"Ct" = (
+/obj/effect/turf_decal/stripes/line,
+/obj/structure/industrial_lift,
+/turf/open/floor/plating,
 /area/commons/storage/primary)
 "CK" = (
 /obj/structure/disposalpipe/trunk,
@@ -1768,6 +1813,13 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/bridge)
+"Do" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 10
+	},
+/obj/structure/industrial_lift,
+/turf/open/floor/plating,
+/area/commons/storage/primary)
 "DG" = (
 /obj/machinery/light{
 	dir = 4
@@ -1869,6 +1921,13 @@
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/hallway/secondary/entry)
+"Mm" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/structure/industrial_lift,
+/turf/open/floor/plating,
+/area/commons/storage/primary)
 "ME" = (
 /obj/machinery/light,
 /turf/open/floor/plating,
@@ -1882,6 +1941,13 @@
 /obj/machinery/airalarm/directional/north,
 /turf/open/floor/plating,
 /area/engineering/storage)
+"OX" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 6
+	},
+/obj/structure/industrial_lift,
+/turf/open/floor/plating,
+/area/commons/storage/primary)
 "Pu" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -1933,6 +1999,10 @@
 /obj/machinery/atmospherics/pipe/simple/multiz,
 /turf/open/floor/plating,
 /area/engineering/storage)
+"US" = (
+/obj/structure/lattice/catwalk,
+/turf/open/openspace,
+/area/engineering/storage)
 "Vn" = (
 /obj/effect/turf_decal/stripes/asteroid/line,
 /obj/effect/turf_decal/stripes/asteroid/line{
@@ -1951,9 +2021,17 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/secondary/service)
+"XD" = (
+/obj/structure/lattice,
+/turf/open/openspace,
+/area/engineering/storage)
 "XN" = (
 /turf/open/floor/plating,
 /area/hallway/secondary/service)
+"YR" = (
+/obj/machinery/suit_storage_unit/industrial/ce,
+/turf/open/floor/plating,
+/area/engineering/atmos)
 "Zc" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -2691,7 +2769,7 @@ af
 ah
 al
 aw
-aM
+YR
 aZ
 aX
 bA
@@ -3146,7 +3224,7 @@ Tf
 Tf
 Tf
 Tf
-ij
+oK
 cN
 af
 ad
@@ -3733,10 +3811,10 @@ dJ
 dJ
 dB
 dl
-dE
+vd
 dH
 dI
-dB
+xe
 dl
 dE
 dJ
@@ -3945,9 +4023,9 @@ eo
 eo
 cK
 by
-dJ
-dJ
-dB
+fC
+nc
+Do
 dl
 dF
 dk
@@ -3999,9 +4077,9 @@ eo
 eo
 cL
 by
-dJ
-dJ
-dB
+Mm
+zP
+Ct
 dl
 dl
 dl
@@ -4053,9 +4131,9 @@ eo
 eo
 cM
 by
-dk
-Bm
-dC
+jZ
+mS
+OX
 dl
 dl
 dl
@@ -6754,9 +6832,9 @@ dY
 dY
 dY
 TY
-dY
-dY
-dY
+iu
+iu
+iu
 eF
 iu
 iu
@@ -6808,9 +6886,9 @@ dY
 dY
 dY
 TY
-dY
-dY
-dY
+iu
+iu
+iu
 eF
 iu
 iu
@@ -6862,9 +6940,9 @@ dY
 dY
 dY
 TY
-dY
-eN
-dY
+iu
+rD
+iu
 eF
 iu
 iu
@@ -8920,7 +8998,7 @@ dS
 IN
 qo
 qo
-qo
+XD
 qo
 qo
 qo
@@ -8974,7 +9052,7 @@ dS
 IN
 qo
 qo
-qo
+XD
 qo
 qo
 qo
@@ -9026,17 +9104,17 @@ ej
 Qw
 Qw
 Vn
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
 AG
 au
 au
@@ -9074,15 +9152,15 @@ qo
 qo
 qo
 qo
+XD
 qo
 qo
+US
+US
+US
 qo
 qo
-qo
-qo
-qo
-qo
-qo
+XD
 qo
 qo
 qo
@@ -9128,15 +9206,15 @@ qo
 qo
 qo
 qo
+XD
 qo
 qo
+US
+US
+US
 qo
 qo
-qo
-qo
-qo
-qo
-qo
+XD
 qo
 qo
 qo
@@ -9182,15 +9260,15 @@ qo
 qo
 qo
 qo
+XD
 qo
 qo
+US
+US
+US
 qo
 qo
-qo
-qo
-qo
-qo
-qo
+XD
 qo
 qo
 qo
@@ -9236,15 +9314,15 @@ qo
 qo
 qo
 qo
+XD
 qo
 qo
+US
+US
+US
 qo
 qo
-qo
-qo
-qo
-qo
-qo
+XD
 qo
 qo
 qo
@@ -9290,15 +9368,15 @@ qo
 qo
 qo
 qo
+XD
 qo
 qo
+US
+US
+US
 qo
 qo
-qo
-qo
-qo
-qo
-qo
+XD
 qo
 qo
 qo
@@ -9344,15 +9422,15 @@ qo
 qo
 qo
 qo
+XD
 qo
 qo
+US
+US
+US
 qo
 qo
-qo
-qo
-qo
-qo
-qo
+XD
 qo
 qo
 qo
@@ -9398,15 +9476,15 @@ qo
 qo
 qo
 qo
+XD
 qo
 qo
+US
+US
+US
 qo
 qo
-qo
-qo
-qo
-qo
-qo
+XD
 qo
 qo
 qo
@@ -9452,15 +9530,15 @@ qo
 qo
 qo
 qo
+XD
 qo
 qo
+US
+US
+US
 qo
 qo
-qo
-qo
-qo
-qo
-qo
+XD
 qo
 qo
 qo
@@ -9506,15 +9584,15 @@ qo
 qo
 qo
 qo
+XD
 qo
+US
+US
+US
+US
+US
 qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
+XD
 qo
 qo
 qo
@@ -9560,15 +9638,15 @@ qo
 qo
 qo
 qo
+XD
+qo
+US
 qo
 qo
 qo
+US
 qo
-qo
-qo
-qo
-qo
-qo
+XD
 qo
 qo
 qo
@@ -9601,36 +9679,36 @@ au
 au
 au
 AG
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+US
 qo
 qo
 qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
+US
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
+XD
 AG
 au
 au
@@ -9668,15 +9746,15 @@ qo
 qo
 qo
 qo
+XD
+qo
+US
 qo
 qo
 qo
+US
 qo
-qo
-qo
-qo
-qo
-qo
+XD
 qo
 qo
 qo
@@ -9722,15 +9800,15 @@ qo
 qo
 qo
 qo
+XD
 qo
+US
+US
+US
+US
+US
 qo
-qo
-qo
-qo
-qo
-qo
-qo
-qo
+XD
 qo
 qo
 qo
@@ -9776,15 +9854,15 @@ qo
 qo
 qo
 qo
+XD
 qo
 qo
 qo
+XD
 qo
 qo
 qo
-qo
-qo
-qo
+XD
 qo
 qo
 qo

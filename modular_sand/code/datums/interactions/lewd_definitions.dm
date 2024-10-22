@@ -8,7 +8,7 @@
 /proc/playlewdinteractionsound(turf/turf_source, soundin, vol as num, vary, extrarange as num, frequency, falloff, channel = 0, pressure_affected = TRUE, sound/S, envwet = -10000, envdry = 0, manual_x, manual_y, list/ignored_mobs)
 	var/list/hearing_mobs
 	for(var/mob/H in get_hearers_in_view(4, turf_source))
-		if(!H.client || (H.client.prefs.toggles & LEWD_VERB_SOUNDS))
+		if(!H.client || !(H.client.prefs.toggles & LEWD_VERB_SOUNDS))
 			continue
 		LAZYADD(hearing_mobs, H)
 	if(ignored_mobs?.len)
@@ -49,7 +49,7 @@
 /mob/living/Initialize(mapload)
 	. = ..()
 	sexual_potency = rand(10,25)
-	lust_tolerance = rand(75,200)
+	lust_tolerance = rand(25,200)
 
 /mob/living/proc/get_lust_tolerance()
 	. = lust_tolerance
@@ -91,42 +91,32 @@
 /mob/living/proc/toggle_anus_always_accessible(accessibility)
 	anus_always_accessible = isnull(accessibility) ? !anus_always_accessible : accessibility
 
-/mob/living/proc/has_genital(slot, visibility = REQUIRE_ANY)
+/mob/living/proc/has_genital(slot)
 	var/mob/living/carbon/C = src
 	if(istype(C))
 		var/obj/item/organ/genital/genital = C.getorganslot(slot)
 		if(genital)
-			switch(visibility)
-				if(REQUIRE_ANY)
-					return TRUE
-				if(REQUIRE_EXPOSED)
-					return genital.is_exposed() || genital.always_accessible
-				if(REQUIRE_UNEXPOSED)
-					return !genital.is_exposed()
-				else
-					return TRUE
+			if(genital.is_exposed() || genital.always_accessible)
+				return HAS_EXPOSED_GENITAL
+			else
+				return HAS_UNEXPOSED_GENITAL
 	return FALSE
 
-/mob/living/proc/has_penis(visibility = REQUIRE_ANY)
+/mob/living/proc/has_penis()
 	var/mob/living/carbon/C = src
 	if(has_penis && !istype(C))
 		return TRUE
-	return has_genital(ORGAN_SLOT_PENIS, visibility)
+	return has_genital(ORGAN_SLOT_PENIS)
 
-/mob/living/proc/has_strapon(visibility = REQUIRE_ANY)
+/mob/living/proc/has_strapon()
 	var/mob/living/carbon/C = src
 	if(istype(C))
 		var/obj/item/clothing/underwear/briefs/strapon/strapon = C.get_strapon()
 		if(strapon)
-			switch(visibility)
-				if(REQUIRE_ANY)
-					return TRUE
-				if(REQUIRE_EXPOSED)
-					return strapon.is_exposed()
-				if(REQUIRE_UNEXPOSED)
-					return !strapon.is_exposed()
-				else
-					return TRUE
+			if(strapon.is_exposed())
+				return HAS_EXPOSED_GENITAL
+			else
+				return HAS_UNEXPOSED_GENITAL
 	return FALSE
 
 /mob/living/proc/get_strapon()
@@ -140,219 +130,116 @@
 	return has_penis()
 
 /mob/living/proc/get_penetrating_genital_name(long = FALSE)
-	return has_penis() ? (long ? pick(GLOB.dick_nouns) : pick("член", "пенис")) : pick("страпон")
+	return has_penis() ? (long ? pick(GLOB.dick_nouns) : pick("член", "пенис")) : "страпон"
 
-/mob/living/proc/has_balls(visibility = REQUIRE_ANY)
+/mob/living/proc/has_balls()
 	var/mob/living/carbon/C = src
 	if(has_balls && !istype(C))
 		return TRUE
-	return has_genital(ORGAN_SLOT_TESTICLES, visibility)
+	return has_genital(ORGAN_SLOT_TESTICLES)
 
-/mob/living/proc/has_vagina(visibility = REQUIRE_ANY)
+/mob/living/proc/has_vagina()
 	var/mob/living/carbon/C = src
 	if(has_vagina && !istype(C))
 		return TRUE
-	return has_genital(ORGAN_SLOT_VAGINA, visibility)
+	return has_genital(ORGAN_SLOT_VAGINA)
 
-/mob/living/proc/has_breasts(visibility = REQUIRE_ANY)
+/mob/living/proc/has_breasts()
 	var/mob/living/carbon/C = src
 	if(has_breasts && !istype(C))
 		return TRUE
-	return has_genital(ORGAN_SLOT_BREASTS, visibility)
+	return has_genital(ORGAN_SLOT_BREASTS)
 
-/mob/living/proc/has_anus(visibility = REQUIRE_ANY)
+/mob/living/proc/has_butt()
+	var/mob/living/carbon/C = src
+	if(has_butt && !istype(C))
+		return TRUE
+	return has_genital(ORGAN_SLOT_BUTT)
+
+/mob/living/proc/has_anus()
 	if(has_anus && !iscarbon(src))
 		return TRUE
-	switch(visibility)
-		if(REQUIRE_ANY)
-			return TRUE
-		if(REQUIRE_EXPOSED)
-			if (has_anus && anus_always_accessible)
-				return TRUE
-			switch(anus_exposed)
-				if(-1)
-					return FALSE
-				if(1)
-					return TRUE
-				else
-					if(is_bottomless())
-						return TRUE
-					else
-						return FALSE
-		if(REQUIRE_UNEXPOSED)
-			if(anus_exposed == -1)
-				if(!anus_exposed)
-					if(!is_bottomless())
-						return TRUE
-					else
-						return FALSE
-				else
-					return FALSE
-			else
-				return TRUE
+	if (has_anus && anus_always_accessible)
+		return HAS_EXPOSED_GENITAL
+	switch(anus_exposed)
+		if(-1)
+			return HAS_UNEXPOSED_GENITAL
+		if(1)
+			return HAS_EXPOSED_GENITAL
 		else
-			return TRUE
+			if(is_bottomless())
+				return HAS_EXPOSED_GENITAL
+			else
+				return HAS_UNEXPOSED_GENITAL
 
-/mob/living/proc/has_hand(visibility = REQUIRE_ANY)
+/mob/living/proc/has_hand()
 	if(iscarbon(src))
 		var/mob/living/carbon/C = src
 		var/handcount = 0
 		var/covered = 0
-		var/iscovered = FALSE
 		for(var/obj/item/bodypart/l_arm/L in C.bodyparts)
 			handcount++
 		for(var/obj/item/bodypart/r_arm/R in C.bodyparts)
 			handcount++
+		if(!handcount)
+			return FALSE
 		if(C.get_item_by_slot(ITEM_SLOT_HANDS))
 			var/obj/item/clothing/gloves/G = C.get_item_by_slot(ITEM_SLOT_HANDS)
 			covered = G.body_parts_covered
 		if(covered & HANDS)
-			iscovered = TRUE
-		switch(visibility)
-			if(REQUIRE_ANY)
-				return handcount
-			if(REQUIRE_EXPOSED)
-				if(iscovered)
-					return FALSE
-				else
-					return handcount
-			if(REQUIRE_UNEXPOSED)
-				if(!iscovered)
-					return FALSE
-				else
-					return handcount
-			else
-				return handcount
+			return HAS_UNEXPOSED_GENITAL
+		else
+			return HAS_EXPOSED_GENITAL
 	return FALSE
 
-/mob/living/proc/has_feet(visibility = REQUIRE_ANY)
+/mob/living/proc/has_feet()
 	if(iscarbon(src))
 		var/mob/living/carbon/C = src
 		var/feetcount = 0
 		var/covered = 0
-		var/iscovered = FALSE
 		for(var/obj/item/bodypart/l_leg/L in C.bodyparts)
 			feetcount++
 		for(var/obj/item/bodypart/r_leg/R in C.bodyparts)
 			feetcount++
+		if(!feetcount)
+			return FALSE
 		if(!C.is_barefoot())
 			covered = TRUE
 		if(covered)
-			iscovered = TRUE
-		switch(visibility)
-			if(REQUIRE_ANY)
-				return feetcount
-			if(REQUIRE_EXPOSED)
-				if(iscovered)
-					return FALSE
-				else
-					return feetcount
-			if(REQUIRE_UNEXPOSED)
-				if(!iscovered)
-					return FALSE
-				else
-					return feetcount
-			else
-				return feetcount
+			return HAS_UNEXPOSED_GENITAL
+		else
+			return HAS_EXPOSED_GENITAL
 	return FALSE
 
 /mob/living/proc/get_num_feet()
-	return has_feet(REQUIRE_ANY)
+	return 0
+
+/mob/living/carbon/get_num_feet()
+	. = ..()
+	for(var/obj/item/bodypart/l_leg/L in bodyparts)
+		.++
+	for(var/obj/item/bodypart/r_leg/R in bodyparts)
+		.++
 
 //weird procs go here
-/mob/living/proc/has_ears(visibility = REQUIRE_ANY)
+//please check for existance separately
+/mob/living/proc/has_ears()
 	var/mob/living/carbon/C = src
 	if(istype(C))
-		var/obj/item/organ/peepee = C.getorganslot(ORGAN_SLOT_EARS)
-		if(peepee)
-			switch(visibility)
-				if(REQUIRE_ANY)
-					return TRUE
-				if(REQUIRE_EXPOSED)
-					if(C.get_item_by_slot(ITEM_SLOT_EARS_LEFT) || C.get_item_by_slot(ITEM_SLOT_EARS_RIGHT))
-						return FALSE
-					else
-						return TRUE
-				if(REQUIRE_UNEXPOSED)
-					if(!C.get_item_by_slot(ITEM_SLOT_EARS_LEFT || C.get_item_by_slot(ITEM_SLOT_EARS_RIGHT)))
-						return FALSE
-					else
-						return TRUE
-				else
-					return TRUE
+		if(C.get_item_by_slot(ITEM_SLOT_EARS_LEFT) || C.get_item_by_slot(ITEM_SLOT_EARS_RIGHT))
+			return HAS_UNEXPOSED_GENITAL
+		else
+			return HAS_EXPOSED_GENITAL
 	return FALSE
 
-/mob/living/proc/has_earsockets(visibility = REQUIRE_ANY)
+/mob/living/proc/has_eyes()
 	var/mob/living/carbon/C = src
 	if(istype(C))
-		var/obj/item/organ/peepee = C.getorganslot(ORGAN_SLOT_EARS)
-		if(!peepee)
-			switch(visibility)
-				if(REQUIRE_ANY)
-					return TRUE
-				if(REQUIRE_EXPOSED)
-					if(C.get_item_by_slot(ITEM_SLOT_EARS_LEFT) || C.get_item_by_slot(ITEM_SLOT_EARS_RIGHT))
-						return FALSE
-					else
-						return TRUE
-				if(REQUIRE_UNEXPOSED)
-					if(!C.get_item_by_slot(ITEM_SLOT_EARS_LEFT) || !C.get_item_by_slot(ITEM_SLOT_EARS_RIGHT))
-						return FALSE
-					else
-						return TRUE
-				else
-					return TRUE
+		if(C.get_item_by_slot(ITEM_SLOT_EYES))
+			return HAS_UNEXPOSED_GENITAL
+		else
+			return HAS_EXPOSED_GENITAL
 	return FALSE
-
-/mob/living/proc/has_eyes(visibility = REQUIRE_ANY)
-	var/mob/living/carbon/C = src
-	if(istype(C))
-		var/obj/item/organ/peepee = C.getorganslot(ORGAN_SLOT_EYES)
-		if(peepee)
-			switch(visibility)
-				if(REQUIRE_ANY)
-					return TRUE
-				if(REQUIRE_EXPOSED)
-					if(C.get_item_by_slot(ITEM_SLOT_EYES))
-						return FALSE
-					else
-						return TRUE
-				if(REQUIRE_UNEXPOSED)
-					if(!C.get_item_by_slot(ITEM_SLOT_EYES))
-						return FALSE
-					else
-						return TRUE
-				else
-					return TRUE
-	return FALSE
-
-/mob/living/proc/has_eyesockets(visibility = REQUIRE_ANY)
-	var/mob/living/carbon/C = src
-	if(istype(C))
-		var/obj/item/organ/peepee = C.getorganslot(ORGAN_SLOT_EYES)
-		if(!peepee)
-			switch(visibility)
-				if(REQUIRE_ANY)
-					return TRUE
-				if(REQUIRE_EXPOSED)
-					if(get_item_by_slot(ITEM_SLOT_EYES))
-						return FALSE
-					else
-						return TRUE
-				if(REQUIRE_UNEXPOSED)
-					if(!get_item_by_slot(ITEM_SLOT_EYES))
-						return FALSE
-					else
-						return TRUE
-				else
-					return TRUE
-	return FALSE
-
-/mob/living/proc/has_butt(visibility = REQUIRE_ANY)
-	var/mob/living/carbon/C = src
-	if(has_butt && !istype(C))
-		return TRUE
-	return has_genital(ORGAN_SLOT_BUTT, visibility)
 
 ///Are we wearing something that covers our chest?
 /mob/living/proc/is_topless()
@@ -397,16 +284,36 @@
 	return TRUE
 
 /mob/living/proc/moan()
-	if(!(prob(get_lust() / get_lust_tolerance() * 65)))
+	if(is_muzzled() || (mind?.miming))
+		var/message_to_display = pick("mime%S% a pleasured moan","moan%S% in silence")
+		visible_message(span_lewd("<b>\The [src]</b> [replacetext(message_to_display, "%S%", "s")]."),
+			span_lewd("You [replacetext(message_to_display, "%S%", "")]."))
 		return
-	var/moan = rand(1, 7)
-	if(moan == lastmoan)
-		moan--
-	if(!is_muzzled())
-		visible_message(message = span_lewd("<B>[src]</B> [pick("постанывает", "стонет в удовольствии")]."), ignored_mobs = get_unconsenting())
-	if(is_muzzled())//immursion
-		audible_message(span_lewd("<B>[src]</B> [pick("имитирует приятный стон", "бесшумно постанывает")]."))
-	lastmoan = moan
+	var/message_to_display = pick("moan%S%", "moan%S% in pleasure")
+	visible_message(span_lewd("<b>\The [src]</b> [replacetext(message_to_display, "%S%", "s")]."),
+		span_lewd("You [replacetext(message_to_display, "%S%", "")]."),
+		span_lewd("Вы слышите наполненный удовольствием стон."),
+		ignored_mobs = get_unconsenting(), omni = TRUE)
+
+	// Get reference of the list we're using based on gender.
+	var/list/moans
+	if (gender == FEMALE || (gender == PLURAL && isfeminine(src)))
+		moans = GLOB.lewd_moans_female
+	else
+		moans = GLOB.lewd_moans_male
+
+	// Pick a sound from the list.
+	var/sound = pick(moans)
+
+	// If the sound is repeated, get a new from a list without it.
+	if (lastmoan == sound)
+		sound = pick(LAZYCOPY(moans) - lastmoan)
+
+	if(isalien(src))
+		sound = 'sound/voice/hiss6.ogg'
+
+	playlewdinteractionsound(loc, sound, 80, 0, 0)
+	lastmoan = sound
 
 /mob/living/proc/cum(mob/living/partner, target_orifice, cum_inside = FALSE, anonymous = FALSE)
 	if(HAS_TRAIT(src, TRAIT_NEVERBONER))
@@ -453,31 +360,41 @@
 							else
 								message = "кончает на лицо [partner_name] семенем."
 						if(CUM_TARGET_VAGINA)
-							if(partner.has_vagina(REQUIRE_EXPOSED))
+							var/has_vagina = partner.has_vagina()
+							if(has_vagina == TRUE || has_vagina == HAS_EXPOSED_GENITAL)
 								if(partner_carbon_check)
 									target_gen = c_partner.getorganslot(ORGAN_SLOT_VAGINA)
-								message = "кончает на киску [partner_name] семенем."
+								message = "кончает в киску [partner_name] семенем."
 								cumin = TRUE
 							else
 								message = "кончает на живот [partner_name] семенем."
 						if(CUM_TARGET_ANUS)
-							if(partner.has_anus(REQUIRE_EXPOSED))
-								message = "кончает на попку [partner_name] семенем."
+							var/has_anus = partner.has_anus()
+							if(has_anus == TRUE || has_anus == HAS_EXPOSED_GENITAL)
+								message = "кончает в попку <b>[partner_name]</b> семенем."
 								cumin = TRUE
 							else
 								message = "кончает на спину [partner_name] семенем."
 						if(CUM_TARGET_HAND)
-							if(partner.has_hand(REQUIRE_ANY))
-								message = "кончает на руку [partner_name] семенем."
+							if(partner.has_hand())
+								message = "кончает на руку <b>[partner_name]</b> семенем."
 							else
 								message = "кончает на [partner_name]."
-						if(CUM_TARGET_BREASTS)
+						if(CUM_TARGET_BREASTS) //BLUEMOON EDIT добавлено взаимодействие с боргами
+							// BLUEMOON EDIT START - я НЕ ПРЕДСТАВЛЯЮ, чего эти гиганты мысли добивались тут, используя
+							// не инициализированные переменные.
 							var/mob/living/carbon/human/sex
-							for(var/obj/item/organ/genital/G in sex.internal_organs)
-								var/datum/reagents/fluid_source = G.climaxable(partner)
-								if(!fluid_source)
-									continue
-								sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+							var/mob/living/silicon/robot/silicon_sex
+							if (istype(sex))
+								for(var/obj/item/organ/genital/G in sex.internal_organs)
+									var/datum/reagents/fluid_source = G.climaxable(partner)
+									if(!fluid_source)
+										continue
+									sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+							else
+								silicon_sex = src
+								silicon_sex.do_climax_silicon(silicon_sex, src, TRUE) // BLUEMOON EDIT END
+
 							if(partner.has_breasts(REQUIRE_EXPOSED))
 								message = "кончает на грудь [partner_name]."
 							else
@@ -485,13 +402,21 @@
 						if(NUTS_TO_FACE)
 							if(partner.has_mouth() && partner.mouth_is_free())
 								message = "энергично засовывает свои яйца в рот партнёра перед тем, как выпустить густое, липкое семя в глаза и волосы [partner_name]."
-						if(THIGH_SMOTHERING)
-							var/mob/living/carbon/human/sex
-							for(var/obj/item/organ/genital/G in sex.internal_organs)
-								var/datum/reagents/fluid_source = G.climaxable(partner)
-								if(!fluid_source)
-									continue
-								sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+						if(THIGH_SMOTHERING) //BLUEMOON EDIT добавлено взаимодействие с боргами
+							// BLUEMOON EDIT START - я НЕ ПРЕДСТАВЛЯЮ, чего эти гиганты мысли добивались тут, используя
+							// не инициализированные переменные.
+							var/mob/living/carbon/human/sex = src
+							var/mob/living/silicon/robot/silicon_sex
+							if (istype(sex))
+								for(var/obj/item/organ/genital/G in sex.internal_organs)
+									var/datum/reagents/fluid_source = G.climaxable(partner)
+									if(!fluid_source)
+										continue
+									sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+							else
+								silicon_sex = src
+								silicon_sex.do_climax_silicon(silicon_sex, src, TRUE) // BLUEMOON EDIT END
+
 							if(has_penis(REQUIRE_EXPOSED)) //it already checks for the cock before, why the hell would you do this redundant shit
 								message = "держит [partner_name] между бёдрами, пока член пульсирует, по итогу сливая пульсирующую нагрузку в лицо и волосы жертвы."
 							else
@@ -505,25 +430,26 @@
 									message = "кончает под себя!"
 							else
 								if(partner.has_feet())
-									message = "кончает на [partner_name] [last_lewd_datum.require_target_feet == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
+									message = "кончает на [partner_name] [last_lewd_datum.require_target_num_feet == 1 ? pick("стопу", "ножку") : pick("стопы", "ножки")]."
 								else
 									message = "кончает под себя!"
 						//weird shit goes here
 						if(CUM_TARGET_EARS)
 							if(partner.has_ears())
-								message = "кончает в \the ухо [partner_name] сквиртом."
+								message = "кончает в \the ухо [partner_name] сквиртом!"
 							else
-								message = "кончает в \the ушную раковину [partner_name] сквиртом."
+								message = "кончает в \the ушную раковину [partner_name] сквиртом!"
 							cumin = TRUE
 						if(CUM_TARGET_EYES)
 							if(partner.has_eyes())
-								message = "кончает на глаз [partner_name] сквиртом."
+								message = "кончает на глаз [partner_name] сквиртом!"
 							else
-								message = "кончает в \the глазницу [partner_name] сквиртом."
+								message = "кончает в \the глазницу [partner_name] сквиртом!"
 							cumin = TRUE
 						//
 						if(CUM_TARGET_PENIS)
-							if(partner.has_penis(REQUIRE_EXPOSED))
+							var/has_penis = partner.has_penis()
+							if(has_penis == TRUE || has_penis == HAS_EXPOSED_GENITAL)
 								message = "кончает на [partner_name]."
 							else
 								message = "кончает под себя!"
@@ -539,35 +465,38 @@
 								message = "кончает прямо в рот [partner_name]."
 								cumin = TRUE
 							else
-								message = "обливает лицо [partner_name] сквиртом."
+								message = "обливает лицо [partner_name] сквиртом!"
 						if(CUM_TARGET_THROAT)
 							if(partner.has_mouth() && partner.mouth_is_free())
 								message = "трется своей киской о рот [partner_name] и кончает."
 								cumin = TRUE
 							else
-								message = "обливает лицо [partner_name] сквиртом."
+								message = "обливает лицо [partner_name] сквиртом!"
 						if(CUM_TARGET_VAGINA)
-							if(partner.has_vagina(REQUIRE_EXPOSED))
-								message = "обливает киску [partner_name] сквиртом."
+							var/has_vagina = partner.has_vagina()
+							if(has_vagina == TRUE || has_vagina == HAS_EXPOSED_GENITAL)
+								message = "обливает киску [partner_name] сквиртом!"
 								cumin = TRUE
 							else
-								message = "обливает живот [partner_name] сквиртом."
+								message = "обливает живот [partner_name] сквиртом!"
 						if(CUM_TARGET_ANUS)
-							if(partner.has_anus(REQUIRE_EXPOSED))
-								message = "обливает попку [partner_name] сквиртом."
+							var/has_anus = partner.has_anus()
+							if(has_anus == TRUE || has_anus == HAS_EXPOSED_GENITAL)
+								message = "обливает попку [partner_name] сквиртом!"
 								cumin = TRUE
 							else
-								message = "обливает спину [partner_name] сквиртом."
+								message = "обливает спину [partner_name] сквиртом!"
 						if(CUM_TARGET_HAND)
 							if(partner.has_hand(REQUIRE_ANY))
-								message = "обливает руку [partner_name] сквиртом."
+								message = "обливает руку [partner_name] сквиртом!"
 							else
 								message = "обливает [partner_name]."
 						if(CUM_TARGET_BREASTS)
-							if(partner.has_breasts(REQUIRE_EXPOSED))
-								message = "обливает грудь [partner_name] сквиртом."
+							var/has_breasts = partner.has_breasts()
+							if(has_breasts == TRUE || has_breasts == HAS_EXPOSED_GENITAL)
+								message = "обливает грудь [partner_name] сквиртом!"
 							else
-								message = "обливает грудину и торс [partner_name] сквиртом."
+								message = "обливает грудину и торс [partner_name] сквиртом!"
 						if(NUTS_TO_FACE)
 							if(partner.has_mouth() && partner.mouth_is_free())
 								message = "энергично засовывает свои яйца в рот партнёра перед тем, как выпустить густое, липкое семя в глаза и волосы [partner_name]."
@@ -582,25 +511,26 @@
 									message = "обливает пространство под собой сквиртом!"
 							else
 								if(partner.has_feet())
-									message = "обливает [partner_name] [last_lewd_datum.require_target_feet == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
+									message = "обливает [partner_name] [last_lewd_datum.require_target_num_feet == 1 ? pick("стопу", "ножку") : pick("стопы", "ножки")]."
 								else
 									message = "обливает пространство под собой сквиртом!"
 						//weird shit goes here
 						if(CUM_TARGET_EARS)
 							if(partner.has_ears())
-								message = "обливает ухо [partner_name] сквиртом."
+								message = "обливает ухо [partner_name] сквиртом!"
 							else
-								message = "обливает ушную раковину [partner_name] сквиртом."
+								message = "обливает ушную раковину [partner_name] сквиртом!"
 							cumin = TRUE
 						if(CUM_TARGET_EYES)
 							if(partner.has_eyes())
-								message = "обливает глаз [partner_name] сквиртом."
+								message = "обливает глаз [partner_name] сквиртом!"
 							else
-								message = "обливает глазницу [partner_name] сквиртом."
+								message = "обливает глазницу [partner_name] сквиртом!"
 							cumin = TRUE
 						//
 						if(CUM_TARGET_PENIS)
-							if(partner.has_penis(REQUIRE_EXPOSED))
+							var/has_penis = partner.has_penis()
+							if(has_penis == TRUE || has_penis == HAS_EXPOSED_GENITAL)
 								message = "обливает пенис [partner_name] сквиртом"
 							else
 								message = "обливает пространство под собой сквиртом!"
@@ -629,7 +559,8 @@
 								else
 									message = "кончает на лицо [partner_name] семенем."
 							if(CUM_TARGET_VAGINA)
-								if(partner.has_vagina(REQUIRE_EXPOSED))
+								var/has_vagina = partner.has_vagina()
+								if(has_vagina == TRUE || has_vagina == HAS_EXPOSED_GENITAL)
 									if(partner_carbon_check)
 										target_gen = c_partner.getorganslot(ORGAN_SLOT_VAGINA)
 									message = "кончает в киску [partner_name] семенем."
@@ -637,7 +568,8 @@
 								else
 									message = "кончает на живот [partner_name] семенем."
 							if(CUM_TARGET_ANUS)
-								if(partner.has_anus(REQUIRE_EXPOSED))
+								var/has_anus = partner.has_anus()
+								if(has_anus == TRUE || has_anus == HAS_EXPOSED_GENITAL)
 									message = "кончает в попку [partner_name] семенем."
 									cumin = TRUE
 								else
@@ -647,13 +579,21 @@
 									message = "кончает на руку [partner_name] семенем."
 								else
 									message = "кончает на [partner_name]."
-							if(CUM_TARGET_BREASTS)
-								var/mob/living/carbon/human/sex
-								for(var/obj/item/organ/genital/G in sex.internal_organs)
-									var/datum/reagents/fluid_source = G.climaxable(partner)
-									if(!fluid_source)
-										continue
-									sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+							if(CUM_TARGET_BREASTS) //BLUEMOON EDIT добавлено взаимодействие с боргами
+								// BLUEMOON EDIT START - я НЕ ПРЕДСТАВЛЯЮ, чего эти гиганты мысли добивались тут, используя
+								// не инициализированные переменные.
+								var/mob/living/carbon/human/sex = src
+								var/mob/living/silicon/robot/silicon_sex
+								if (istype(sex))
+									for(var/obj/item/organ/genital/G in sex.internal_organs)
+										var/datum/reagents/fluid_source = G.climaxable(partner)
+										if(!fluid_source)
+											continue
+										sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+								else
+									silicon_sex = src
+									silicon_sex.do_climax_silicon(silicon_sex, src, TRUE) // BLUEMOON EDIT END
+
 								if(partner.is_topless() && partner.has_breasts())
 									message = "кончает на грудь [partner_name]."
 								else
@@ -661,13 +601,21 @@
 							if(NUTS_TO_FACE)
 								if(partner.has_mouth() && partner.mouth_is_free())
 									message = "энергично засовывает свои яйца в рот партнёра перед тем, как выпустить густое, липкое семя в глаза и волосы [partner_name]."
-							if(THIGH_SMOTHERING)
-								var/mob/living/carbon/human/sex
-								for(var/obj/item/organ/genital/G in sex.internal_organs)
-									var/datum/reagents/fluid_source = G.climaxable(partner)
-									if(!fluid_source)
-										continue
-									sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+							if(THIGH_SMOTHERING) //BLUEMOON EDIT добавлено взаимодействие с боргами
+								// BLUEMOON EDIT START - я НЕ ПРЕДСТАВЛЯЮ, чего эти гиганты мысли добивались тут, используя
+								// не инициализированные переменные.
+								var/mob/living/carbon/human/sex = src
+								var/mob/living/silicon/robot/silicon_sex
+								if (istype(sex))
+									for(var/obj/item/organ/genital/G in sex.internal_organs)
+										var/datum/reagents/fluid_source = G.climaxable(partner)
+										if(!fluid_source)
+											continue
+										sex.do_climax(fluid_source, src, G, TRUE, FALSE)
+								else
+									silicon_sex = src
+									silicon_sex.do_climax_silicon(silicon_sex, src, TRUE) // BLUEMOON EDIT END
+
 								if(has_penis())
 									message = "держит [partner_name] между бёдрами, пока член пульсирует, по итогу сливая пульсирующую нагрузку в лицо и волосы жертвы."
 								else
@@ -681,25 +629,26 @@
 										message = "кончает под себя!"
 								else
 									if(partner.has_feet())
-										message = "кончает на [partner_name] [last_lewd_datum.require_target_feet == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
+										message = "кончает на [partner_name] [last_lewd_datum.require_target_num_feet == 1 ? pick("стопу", "ножку") : pick("стопы", "ножки")]."
 									else
 										message = "кончает под себя!"
 							//weird shit goes here
 							if(CUM_TARGET_EARS)
 								if(partner.has_ears())
-									message = "кончает в \the ухо [partner_name] сквиртом."
+									message = "кончает в \the ухо [partner_name] сквиртом!"
 								else
-									message = "кончает в \the ушную раковину [partner_name] сквиртом."
+									message = "кончает в \the ушную раковину [partner_name] сквиртом!"
 								cumin = TRUE
 							if(CUM_TARGET_EYES)
 								if(partner.has_eyes())
-									message = "кончает на глаз [partner_name] сквиртом."
+									message = "кончает на глаз [partner_name] сквиртом!"
 								else
-									message = "кончает в \the глазницу [partner_name] сквиртом."
+									message = "кончает в \the глазницу [partner_name] сквиртом!"
 								cumin = TRUE
 							//
 							if(CUM_TARGET_PENIS)
-								if(partner.has_penis(REQUIRE_EXPOSED))
+								var/has_penis = partner.has_penis()
+								if(has_penis == TRUE || has_penis == HAS_EXPOSED_GENITAL)
 									message = "кончает на [partner_name]."
 								else
 									message = "кончает под себя!"
@@ -715,35 +664,38 @@
 									message = "кончает прямо в [partner_name] ротик."
 									cumin = TRUE
 								else
-									message = "обливает лицо [partner_name] сквиртом."
+									message = "обливает лицо [partner_name] сквиртом!"
 							if(CUM_TARGET_THROAT)
 								if(partner.has_mouth() && partner.mouth_is_free())
 									message = "трется своей киской о рот [partner_name] и кончает."
 									cumin = TRUE
 								else
-									message = "обливает лицо [partner_name] сквиртом."
+									message = "обливает лицо [partner_name] сквиртом!"
 							if(CUM_TARGET_VAGINA)
-								if(partner.has_vagina(REQUIRE_EXPOSED))
-									message = "обливает киску [partner_name] сквиртом."
+								var/has_vagina = partner.has_vagina()
+								if(has_vagina == TRUE || has_vagina == HAS_EXPOSED_GENITAL)
+									message = "обливает киску [partner_name] сквиртом!"
 									cumin = TRUE
 								else
-									message = "обливает живот [partner_name] сквиртом."
+									message = "обливает живот [partner_name] сквиртом!"
 							if(CUM_TARGET_ANUS)
-								if(partner.has_anus(REQUIRE_EXPOSED))
-									message = "обливает попку [partner_name] сквиртом."
+								var/has_anus = partner.has_anus()
+								if(has_anus == TRUE || has_anus == HAS_EXPOSED_GENITAL)
+									message = "обливает попку [partner_name] сквиртом!"
 									cumin = TRUE
 								else
-									message = "обливает спину [partner_name] сквиртом."
+									message = "обливает спину [partner_name] сквиртом!"
 							if(CUM_TARGET_HAND)
 								if(partner.has_hand())
-									message = "обливает руку [partner_name] сквиртом."
+									message = "обливает руку [partner_name] сквиртом!"
 								else
-									message = "обливает [partner_name] сквиртом."
+									message = "обливает [partner_name] сквиртом!"
 							if(CUM_TARGET_BREASTS)
-								if(partner.has_breasts(REQUIRE_EXPOSED))
-									message = "обливает грудь [partner_name] сквиртом."
+								var/has_breasts = partner.has_breasts()
+								if(has_breasts == TRUE || has_breasts == HAS_EXPOSED_GENITAL)
+									message = "обливает грудь [partner_name] сквиртом!"
 								else
-									message = "обливает грудь и шейку [partner_name] сквиртом."
+									message = "обливает грудь и шейку [partner_name] сквиртом!"
 							if(NUTS_TO_FACE)
 								if(partner.has_mouth() && partner.mouth_is_free())
 									message = "энергично засовывает свои яйца в рот партнёра перед тем, как выпустить густое, липкое семя в глаза и волосы [partner_name]."
@@ -759,25 +711,26 @@
 										message = "обливает пространство под собой сквиртом!"
 								else
 									if(partner.has_feet())
-										message = "обливает [partner_name] [last_lewd_datum.require_target_feet == 1 ? pick("стопу", "ножку") : pick("стопу", "ножку")]."
+										message = "обливает [partner_name] [last_lewd_datum.require_target_num_feet == 1 ? pick("стопу", "ножку") : pick("стопы", "ножки")]."
 									else
 										message = "обливает пространство под собой сквиртом!"
 							//weird shit goes here
 							if(CUM_TARGET_EARS)
 								if(partner.has_ears())
-									message = "обливает ухо [partner_name] сквиртом."
+									message = "обливает ухо [partner_name] сквиртом!"
 								else
-									message = "обливает ушную раковину [partner_name] сквиртом."
+									message = "обливает ушную раковину [partner_name] сквиртом!"
 								cumin = TRUE
 							if(CUM_TARGET_EYES)
 								if(partner.has_eyes())
-									message = "обливает глаз [partner_name] сквиртом."
+									message = "обливает глаз [partner_name] сквиртом!"
 								else
-									message = "обливает глазницу [partner_name] сквиртом."
+									message = "обливает глазницу [partner_name] сквиртом!"
 								cumin = TRUE
 							//
 							if(CUM_TARGET_PENIS)
-								if(partner.has_penis(REQUIRE_EXPOSED))
+								var/has_penis = partner.has_penis()
+								if(has_penis == TRUE || has_penis == HAS_EXPOSED_GENITAL)
 									message = "обливает пенис [partner_name] сквиртом"
 								else
 									message = "обливает пространство под собой сквиртом!"
@@ -806,6 +759,8 @@
 				target_gen = c_partner.getorganslot(ORGAN_SLOT_BREASTS)
 			if(CUM_TARGET_PENIS)
 				target_gen = c_partner.getorganslot(ORGAN_SLOT_PENIS)
+			if(CUM_TARGET_MOUTH)	//Why wasn't it here?! - Gardelin0
+				target_gen = c_partner.getorganslot(ORGAN_SLOT_STOMACH)
 	if(gender == MALE || (gender == PLURAL && ismasculine(src)))
 		playlewdinteractionsound(loc, pick('modular_sand/sound/interactions/final_m1.ogg',
 							'modular_sand/sound/interactions/final_m2.ogg',
@@ -822,7 +777,7 @@
 	multiorgasms += 1
 
 	COOLDOWN_START(src, refractory_period, (rand(300, 900) - get_sexual_potency()))//sex cooldown
-	if(multiorgasms < get_sexual_potency())
+	if(get_sexual_potency() == -1 || multiorgasms < get_sexual_potency()) //Splurt EDIT: Ignore multi-orgasms check if sexual potency is -1
 		if(ishuman(src))
 			var/mob/living/carbon/human/H = src
 			if(!partner)
@@ -831,6 +786,14 @@
 				H.mob_fill_container(last_genital, partner, 0)
 			else
 				H.mob_climax(TRUE, "sex", partner, !cumin, target_gen, anonymous)
+		if(iscyborg(src)) //BLUEMOON ADD добавлено взаимодействие с боргами
+			var/mob/living/silicon/robot/R = src
+			if(!partner)
+				R.mob_climax_silicon(TRUE, "masturbation", "none")
+			else if(istype(partner, /obj/item/reagent_containers))
+				R.mob_fill_container_silicon(R, partner, 0)
+			else
+				R.mob_climax_silicon(TRUE, "sex", partner, !cumin, target_gen, anonymous)
 	set_lust(0)
 
 	SEND_SIGNAL(src, COMSIG_MOB_POST_CAME, target_orifice, partner, cumin, last_genital)
@@ -879,21 +842,52 @@
 	if(stat != CONSCIOUS)
 		return FALSE
 
+	var/datum/preferences/prefs = client?.prefs
+	var/use_arousal_multiplier = NULL_COALESCE(prefs?.use_arousal_multiplier, FALSE)
+	var/arousal_multiplier = NULL_COALESCE(prefs?.arousal_multiplier, 100)
+	var/use_moaning_multiplier = NULL_COALESCE(prefs?.use_moaning_multiplier, FALSE)
+	var/moaning_multiplier = NULL_COALESCE(prefs?.moaning_multiplier, 25)
+
 	if(amount)
-		add_lust(amount)
-	var/lust = get_lust()
-	var/lust_tolerance = get_lust_tolerance()
-	if(lust >= lust_tolerance)
-		if(prob(10))
-			to_chat(src, "<b>Вам трудно удержаться от оргазма!</b>")
+		if (use_arousal_multiplier)
+			add_lust(amount * (arousal_multiplier/100))
+		else
+			add_lust(amount)
+
+	if (use_moaning_multiplier)
+		if(prob(moaning_multiplier))
 			moan()
-			return FALSE
-		if(lust >= (lust_tolerance * 3))
-			if(cum(partner, orifice, cum_inside, anonymous))
+
+	// Below is an overengineered bezier curve based chance of moaning.
+	/// The current lust (arousal) amount.
+	var/lust = get_lust()
+	/// The lust tolerance as defined in preferences.
+	var/lust_tolerance = get_lust_tolerance()
+	/// The arousal limit upon which you climax.
+	var/climax = lust_tolerance * 3
+	/// Threshold where you start moaning.
+	var/threshold = climax/2
+	///Calculation of 't' in bezier quadratic curve. It's a 0 to 1 version of threshold to climax.
+	var/t = percentage_between(lust, threshold, climax, FALSE)
+	// The Y axis value of the point in the bezier curve.
+	var/bezier = 2 * (1 - t) * t * 13.8 + ((t*t) * 100)
+	/// Probability chance resulting from bezier curve.
+	var/chance = clamp(round(bezier),0,100)
+
+	if (lust >= threshold)
+		if(prob(30))
+			to_chat(src, "<b>Вам трудно удержаться от оргазма!</b>")
+
+		if (!use_moaning_multiplier)
+			if(prob(chance))
+				moan()
+
+		if (lust > climax)
+			if (cum(partner, orifice, cum_inside, anonymous)) //SPLURT EDIT - extra argument `cum_inside` and `anonymous`
 				return TRUE
 	return FALSE
 
-/mob/living/proc/get_unconsenting(extreme = FALSE, list/ignored_mobs)
+/mob/living/proc/get_unconsenting(interaction_flags, list/ignored_mobs)
 	var/list/nope = list()
 	nope += ignored_mobs
 	for(var/mob/M in range(7, src))
@@ -901,7 +895,7 @@
 			var/client/cli = M.client
 			if(!(cli.prefs.toggles & VERB_CONSENT)) //Note: This probably could do with a specific preference
 				nope += M
-			else if(extreme && (cli.prefs.extremepref == "No"))
+			else if(interaction_flags & INTERACTION_FLAG_EXTREME_CONTENT && (cli.prefs.extremepref == "No"))
 				nope += M
 		else
 			nope += M

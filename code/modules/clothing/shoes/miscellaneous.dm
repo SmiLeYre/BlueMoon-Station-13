@@ -167,9 +167,18 @@
 	AddComponent(/datum/component/squeak, list('sound/effects/footstep/sec_boots-1.ogg' = 1,'sound/effects/footstep/sec_boots-2.ogg' = 1), 75)
 
 /obj/item/clothing/shoes/jackboots/sec
-	name = "security jackboots"
+	name = "Security Jackboots"
 	desc = "Nanotrasen-issue Security combat boots for combat scenarios or combat situations. All combat, all the time."
 	icon_state = "jackboots_sec"
+
+/obj/item/clothing/shoes/jackboots/alliance
+	name = "Alliance Jackboots"
+	desc = "Берцовые Ботинки для представителей Вселенского Союза."
+	icon_state = "wjboots"
+
+/obj/item/clothing/shoes/jackboots/alliance/Initialize()
+	. = ..()
+	AddComponent(/datum/component/squeak, list('sound/effects/footstep/jackboot1.ogg' = 1,'sound/effects/footstep/jackboot2.ogg' = 1), 75)
 
 /obj/item/clothing/shoes/jackboots/fast
 	slowdown = -1
@@ -395,13 +404,13 @@
 		return
 	active = TRUE
 	set_light(2, 3, rgb(rand(0,255),rand(0,255),rand(0,255)))
-	addtimer(CALLBACK(src, .proc/lightUp), 5)
+	addtimer(CALLBACK(src, PROC_REF(lightUp)), 5)
 
 /obj/item/clothing/shoes/kindleKicks/proc/lightUp(mob/user)
 	if(lightCycle < 15)
 		set_light(2, 3, rgb(rand(0,255),rand(0,255),rand(0,255)))
 		lightCycle += 1
-		addtimer(CALLBACK(src, .proc/lightUp), 5)
+		addtimer(CALLBACK(src, PROC_REF(lightUp)), 5)
 	else
 		set_light(0)
 		lightCycle = 0
@@ -481,7 +490,7 @@
 /obj/item/clothing/shoes/wallwalkers/equipped(mob/user,slot)
 	. = ..()
 	if(slot == ITEM_SLOT_FEET)
-		RegisterSignal(user, COMSIG_MOB_CLIENT_MOVE,.proc/intercept_user_move)
+		RegisterSignal(user, COMSIG_MOB_CLIENT_MOVE, PROC_REF(intercept_user_move))
 
 /obj/item/clothing/shoes/wallwalkers/dropped(mob/user)
 	. = ..()

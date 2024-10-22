@@ -20,7 +20,6 @@
 	var/list/datum/action/powers = list()// Purchased powers
 	var/list/datum/objective/objectives_given = list()	// For removal if needed.
 	threat = 1
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/vassal/can_be_owned(datum/mind/new_owner)
 	// If we weren't created by a bloodsucker, then we cannot be a vassal (assigned from antag panel)
@@ -39,7 +38,12 @@
 	// Master Pinpointer
 	owner.current.apply_status_effect(/datum/status_effect/agent_pinpointer/vassal_edition)
 	// Powers
-	var/datum/action/bloodsucker/vassal/recuperate/new_Recuperate = new ()
+	var/datum/action/cooldown/bloodsucker/vassal/recuperate/new_Recuperate = new ()
+	// BLUEMOON ADD START
+	var/datum/action/cooldown/bloodsucker/tutorial/vassal/new_Tutorial = new()
+	new_Tutorial.Grant(owner.current)
+	powers += new_Tutorial
+	// BLUEMOON ADD END
 	new_Recuperate.Grant(owner.current)
 	powers += new_Recuperate
 	// Give Vassal Objective
@@ -85,29 +89,31 @@
 	owner.current.remove_language(/datum/language/vampiric, TRUE, TRUE, LANGUAGE_VASSAL)
 	// Clear Antag HUD
 	update_vassal_icons_removed(owner.current)
-
+	owner.special_role = null // BLUEMOON ADD
 	. = ..()
 
 /datum/antagonist/vassal/greet()
-	to_chat(owner, "<span class='userdanger'>You are now the mortal servant of [master.owner.current], a bloodsucking vampire!</span>")
-	to_chat(owner, "<span class='boldannounce'>The power of [master.owner.current.ru_ego()] immortal blood compells you to obey [master.owner.current.ru_na()] in all things, even offering your own life to prolong theirs.<br>\
-			You are not required to obey any other Bloodsucker, for only [master.owner.current] is your master. The laws of Nanotrasen do not apply to you now; only your vampiric master's word must be obeyed.<span>")
+	to_chat(owner, "<span class='cult'>Вы теперь смертный слуга [master.owner.current], кровососущего вампира!</span>")
+	to_chat(owner, "<span class='boldannounce'>Сила бессмертной крови обязывает вас слушаться [master.owner.current.ru_ego()] во всём, даже жертвовать собой ради жизни вампира.<br>\
+			Вы не обязаны слушаться какого-либо другого кровососа, ведь только [master.owner.current] владеет вами. Законы Пакта теперь для вас ничто; только воля вашего хозяина или хозяйки превыше всего.<span>")
+	to_chat(owner, "<span class='userdanger'>Вы - антагонист! Не игнорируйте своего хоязина и тем более не действуйте против него!<span>") // BLUEMOON ADD
+
 	// Effects...
 	owner.current.playsound_local(null, 'sound/magic/mutate.ogg', 100, FALSE, pressure_affected = FALSE)
 	//owner.store_memory("You became the mortal servant of [master.owner.current], a bloodsucking vampire!")
-	antag_memory += "You became the mortal servant of <b>[master.owner.current]</b>, a bloodsucking vampire!<br>"
+	antag_memory += "Вы стали смертным слугой <b>[master.owner.current]</b>, кровососущего вампира!<br>"
 	// And to your new Master...
-	to_chat(master.owner, "<span class='userdanger'>[owner.current] has become addicted to your immortal blood. [owner.current.ru_who(TRUE)] [owner.current.p_are()] now your undying servant!</span>")
+	to_chat(master.owner, "<span class='cult'>[owner.current] падает в пристрастие к вашей бессмертной крови. [owner.current.ru_who(TRUE)] теперь ваш неумирающий слуга!</span>")
 	master.owner.current.playsound_local(null, 'sound/magic/mutate.ogg', 100, FALSE, pressure_affected = FALSE)
 
 /datum/antagonist/vassal/farewell()
-	owner.current.visible_message("[owner.current]'s eyes dart feverishly from side to side, and then stop. [owner.current.ru_who(TRUE)] seem[owner.current.p_s()] calm, \
-			like [owner.current.ru_who()] [owner.current.p_have()] regained some lost part of [owner.current.p_them()]self.",\
-			"<span class='userdanger'><FONT size = 3>With a snap, you are no longer enslaved to [master.owner]! You breathe in heavily, having regained your free will.</FONT></span>")
+	owner.current.visible_message("Глаза [owner.current] лихорадочно мечутся из стороны в сторону, затем останавливаются. [owner.current.ru_who(TRUE)] выглядит спокойно, \
+			словно [owner.current.ru_who()] восстанавливает какую-то часть себя.",\
+			"<span class='warning'><FONT size = 3>Внезапно, вы больше не принадлежите [master.owner]! Вы тяжело вздыхаете, теперь вернув свою свободную волю.</FONT></span>")
 	owner.current.playsound_local(null, 'sound/magic/mutate.ogg', 100, FALSE, pressure_affected = FALSE)
 	// And to your former Master...
 	//if (master && master.owner)
-	//	to_chat(master.owner, "<span class='userdanger'>You feel the bond with your vassal [owner.current] has somehow been broken!</span>")
+	//	to_chat(master.owner, "<span class='cult'>Вы ощущаете, что связь с вашим вассалом [owner.current] была каким то образом разрушена!</span>")
 
 /datum/status_effect/agent_pinpointer/vassal_edition
 	id = "agent_pinpointer"
@@ -118,8 +124,8 @@
 	range_fuzz_factor = 0
 
 /atom/movable/screen/alert/status_effect/agent_pinpointer/vassal_edition
-	name = "Blood Bond"
-	desc = "You always know where your master is."
+	name = "Кровавые Узы"
+	desc = "Вы всегда знаете где ваш хозяин."
 	//icon = 'icons/obj/device.dmi'
 	//icon_state = "pinon"
 
@@ -145,4 +151,4 @@
 
 //Displayed at the start of roundend_category section, default to roundend_category header
 /*/datum/antagonist/vassal/roundend_report_header()
-	return 	"<span class='header'>Loyal to their bloodsucking masters, the Vassals were:</span><br><br>"*/
+	return 	"<span class='header'>Лояльные своим кровососущим хозяевам, Вассалами были:</span><br><br>"*/

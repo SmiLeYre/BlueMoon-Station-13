@@ -14,11 +14,8 @@
 
 /datum/quirk/sheltered/remove() //i mean, the lose text explains it, so i'm making it actually work
 	var/mob/living/carbon/human/H = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!H)
+		return
+	// BLUEMOON EDIT END
 	H.grant_language(/datum/language/common)
-
-/datum/quirk/dnc_order
-	name = "Приказ Не Клонировать"
-	desc = "На вас записан приказ 'Не клонировать', в котором, как бы это странно не звучало, говорится, что вас нельзя клонировать. Вы все еще можете быть оживлены другими способами."
-	value = -2
-	mob_trait = TRAIT_DNC_ORDER
-	medical_record_text = "Пациент имеет приказ DNC (Не Клонировать), в результате чего попытка воспользоваться клонированием будет отклонена."

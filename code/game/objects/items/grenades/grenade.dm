@@ -110,7 +110,7 @@
 	playsound(src, 'sound/weapons/armbomb.ogg', volume, 1)
 	active = TRUE
 	icon_state = initial(icon_state) + "_active"
-	addtimer(CALLBACK(src, .proc/prime), isnull(delayoverride)? det_time : delayoverride)
+	addtimer(CALLBACK(src, PROC_REF(prime)), isnull(delayoverride)? det_time : delayoverride)
 
 /obj/item/grenade/proc/prime(mob/living/lanced_by)
 	var/turf/T = get_turf(src)
@@ -153,6 +153,12 @@
 
 /obj/item/grenade/attack_paw(mob/user)
 	return attack_hand(user)
+
+/obj/item/grenade/attack_hand(mob/user)
+	if(HAS_TRAIT(user, TRAIT_PACIFISM))
+		to_chat(user, span_notice("Я не хочу держать [src]... вдруг это приведёт к катастрофическим последствиям?"))
+		return
+	. = ..()
 
 /obj/item/grenade/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(attack_type & ATTACK_TYPE_PROJECTILE)

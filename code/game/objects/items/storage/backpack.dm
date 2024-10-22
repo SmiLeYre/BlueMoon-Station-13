@@ -387,7 +387,7 @@
 		/obj/item/hypospray/mkii,
 		/obj/item/sensor_device,
 		/obj/item/radio,
-		/obj/item/clothing/gloves/,
+		/obj/item/clothing/gloves,
 		/obj/item/lazarus_injector,
 		/obj/item/bikehorn/rubberducky,
 		/obj/item/clothing/mask/surgical,
@@ -678,7 +678,7 @@
 	new /obj/item/clothing/under/syndicate/soviet(src)
 	new /obj/item/watertank/op(src)
 	new /obj/item/clothing/suit/space/hardsuit/syndi/elite(src)
-	new /obj/item/gun/ballistic/automatic/pistol/aps(src)
+	new /obj/item/gun/ballistic/automatic/pistol/APS(src)
 	new /obj/item/ammo_box/magazine/pistolm9mm(src)
 	new /obj/item/ammo_box/magazine/pistolm9mm(src)
 	new /obj/item/reagent_containers/food/drinks/bottle/vodka/badminka(src)
@@ -744,4 +744,4 @@
 	new /obj/item/weldingtool/experimental/ashwalker(src)
 	new /obj/item/crowbar/ashwalker(src)
 	new /obj/item/wirecutters/ashwalker(src, "red")
-	new /obj/item/clothing/gloves/tackler/combat/insulated/infiltrator(src)
+  // /obj/item/clothing/gloves/tackler/combat/insulated/infiltrator bluemoon removal

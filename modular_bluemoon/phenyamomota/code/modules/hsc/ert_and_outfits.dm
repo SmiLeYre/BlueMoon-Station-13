@@ -46,64 +46,84 @@
 
 /datum/outfit/hsc
 	name = "HSC Security"
-	uniform = /obj/item/clothing/under/syndicate/combat
-	shoes = /obj/item/clothing/shoes/combat/swat
-	back = /obj/item/storage/backpack
+	uniform = /obj/item/clothing/under/syndicate/combat/ert
+	shoes = /obj/item/clothing/shoes/combat/swat/knife
+	back =  /obj/item/storage/backpack/ert_commander/ert_medical
 	ears = /obj/item/radio/headset/headset_cent/alt
-	gloves = /obj/item/clothing/gloves/krav_maga/combatglovesplus
-	belt = /obj/item/storage/belt/military/hsc
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	belt = /obj/item/storage/belt/military/ert_min
 	id = /obj/item/card/id/hsc
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/hsc
-	glasses = /obj/item/clothing/glasses/hud/hsc
+	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
 	mask = /obj/item/clothing/mask/gas/sechailer/hsc
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
-	/obj/item/melee/baton/loaded=1,
-	/obj/item/gun/energy/e_gun=1,
-	/obj/item/storage/firstaid/regular=1,
-	/obj/item/gun/energy/plasma/MP40k=1)
-	l_pocket = /obj/item/melee/transforming/energy/sword/saber
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,
+		/obj/item/storage/box/handcuffs=1,
+		/obj/item/storage/firstaid/regular=1,
+		/obj/item/gun/energy/e_gun/dragnet=1,
+		/obj/item/gun/ballistic/automatic/proto/unrestricted,
+		/obj/item/storage/box/ammo/smgap=1,
+		)
+	l_pocket = /obj/item/gun/energy/e_gun/nuclear/ert
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
 	suit_store = /obj/item/tank/internals/doubleoxygen
 
+	implants = list(
+		/obj/item/implant/mindshield,
+	 	/obj/item/implant/deathrattle/centcom,
+	  	/obj/item/implant/weapons_auth,
+	)
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant,
+		/obj/item/organ/cyberimp/arm/shield,
+	)
 	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
 
 /datum/outfit/hsc/medic
 	name = "HSC Medic"
-	uniform = /obj/item/clothing/under/syndicate/combat
-	shoes = /obj/item/clothing/shoes/combat/swat
-	back = /obj/item/storage/backpack
-	ears = /obj/item/radio/headset/headset_cent/alt
 	gloves = /obj/item/clothing/gloves/color/latex/nitrile/hsc
-	belt = /obj/item/storage/belt/military/hsc
+	belt = /obj/item/defibrillator/compact/loaded_ert
 	id = /obj/item/card/id/hsc/medic
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/hsc/medical
-	glasses = /obj/item/clothing/glasses/hud/hsc
-	mask = /obj/item/clothing/mask/gas/sechailer/hsc
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
-	/obj/item/storage/firstaid/tactical=1,
-	/obj/item/storage/hypospraykit/cmo=1,
-	/obj/item/gun/energy/e_gun/cx=1)
-	l_pocket = null
-	l_hand = /obj/item/storage/backpack/duffelbag/syndie/surgery_adv
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/firstaid/tactical/ert_first = 1,
+		/obj/item/storage/firstaid/tactical/ert_second = 1,
+		/obj/item/reagent_containers/hypospray/combat=1,\
+		/obj/item/gun/medbeam=1,
+		/obj/item/paper/beamgun_istruction=1,
+		/obj/item/roller=1,)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant,
+		/obj/item/organ/cyberimp/arm/surgery/advanced,
+	)
 
 /datum/outfit/hsc/assistant
 	name = "HSC Assistant"
-	uniform = /obj/item/clothing/under/syndicate/combat
-	shoes = /obj/item/clothing/shoes/combat/swat
-	back = /obj/item/storage/backpack
 	ears = /obj/item/radio/headset/headset_cent/alt
-	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
-	belt = /obj/item/storage/belt/military/hsc
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/hsc
+	belt = /obj/item/defibrillator/compact/loaded_ert
 	id = /obj/item/card/id/hsc/assistant
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/alert/hsc/assistant
-	glasses = /obj/item/clothing/glasses/hud/hsc
-	mask = /obj/item/clothing/mask/gas/sechailer/hsc
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,
-	/obj/item/storage/firstaid/tactical=1,
-	/obj/item/gun/medbeam=1,
-	/obj/item/gun/energy/e_gun/cx=1,
-	/obj/item/bodybag/bluespace=1)
-	l_pocket = null
+	backpack_contents = list(
+		/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/firstaid/tactical/ert_first = 1,
+		/obj/item/storage/firstaid/tactical/ert_second = 1,
+		/obj/item/gun/medbeam=1,
+		/obj/item/paper/beamgun_istruction=1,
+		/obj/item/roller=1,
+		/obj/item/bodybag/bluespace=1
+	)
 
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant,
+		/obj/item/organ/cyberimp/arm/surgery,
+	)
 /datum/outfit/hsc/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	ADD_TRAIT(H, TRAIT_SURGEON, TRAIT_GENERIC)
 	if(visualsOnly)

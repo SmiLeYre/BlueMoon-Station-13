@@ -80,6 +80,7 @@
 				to_chat(user, "<span class='warning'>[pushed_mob] is buckled to [pushed_mob.buckled]!</span>")
 				return
 			// BLUEMOON ADDITION AHEAD - сверхтяжёлых персонажей нельзя положить на стол, только если ты сам не сверхтяжёлый, киборг или халк
+			/* - не актуальный сегмент. Их может брать и перемещать большее количество персонажей с момента ввода. Остаётся на случай изменений в будущем
 			if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER))
 				if(!issilicon(user))
 					if(iscarbon(user) && !HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER))
@@ -87,18 +88,19 @@
 						if(!C.dna.check_mutation(HULK))
 							to_chat(user, span_warning("Слишком много весит!"))
 							return
+			*/
 			// BLUEMOON ADDITION END
 			if(user.a_intent == INTENT_GRAB)
 				if(user.grab_state < GRAB_AGGRESSIVE)
-					to_chat(user, "<span class='warning'>You need a better grip to do that!</span>")
+					to_chat(user, "<span class='warning'>Bам нужна более крепкая хватка!</span>")
 					return
 				if(user.grab_state >= GRAB_NECK || HAS_TRAIT(user, TRAIT_MAULER))
 					tablelimbsmash(user, pushed_mob)
 				else
 					tablepush(user, pushed_mob)
 			if(user.a_intent == INTENT_HELP)
-				pushed_mob.visible_message("<span class='notice'>[user] begins to place [pushed_mob] onto [src]...</span>", \
-									"<span class='userdanger'>[user] begins to place [pushed_mob] onto [src]...</span>")
+				pushed_mob.visible_message("<span class='notice'>[user] аккуратно кладёт [pushed_mob] на [src]...</span>", \
+									"<span class='userdanger'>[user] аккуратно кладёт [pushed_mob] на [src]...</span>")
 				if(do_after(user, 35, target = pushed_mob))
 					tableplace(user, pushed_mob)
 				else
@@ -107,8 +109,8 @@
 		else if(user.pulling.pass_flags & PASSTABLE)
 			user.Move_Pulled(src)
 			if (user.pulling.loc == loc)
-				user.visible_message("<span class='notice'>[user] places [user.pulling] onto [src].</span>",
-					"<span class='notice'>You place [user.pulling] onto [src].</span>")
+				user.visible_message("<span class='notice'>[user] кладёт [user.pulling] на [src].</span>",
+					"<span class='notice'>Ты кладёшь [user.pulling] на [src].</span>")
 				user.stop_pulling()
 	return ..()
 
@@ -137,7 +139,7 @@
 	pushed_mob.set_resting(TRUE, FALSE)
 	pushed_mob.visible_message("<span class='notice'>[user] places [pushed_mob] onto [src].</span>", \
 								"<span class='notice'>[user] places [pushed_mob] onto [src].</span>")
-	log_combat(user, pushed_mob, "placed")
+	log_combat(user, pushed_mob, "places", null, "onto [src]")
 	// BLUEMOON ADDITION AHEAD - тяжёлые и сверхтяжёлые персонажи при толчке на стол ломают его
 	var/break_table = FALSE
 	if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлые персонажи всегда ломают стол (им не важно, есть он под ними или нет
@@ -146,14 +148,14 @@
 		if(!istype(src, /obj/structure/table/optable)) // тяжёлых персонажей всё ещё можно класть на хирургический стол, не ломая его в процессе
 			break_table = TRUE
 	if(break_table)
-		pushed_mob.visible_message("<span class='danger'>[user] breaks [src] with [pushed_mob]'s weight!</span>", \
-									"<span class='userdanger'>You break [src] with your weight!</span>")
+		pushed_mob.visible_message("<span class='danger'>[src] ломается под весом [pushed_mob]!</span>", \
+								"<span class='userdanger'>Ты ломаешь [src] собственным весом!</span>")
 		deconstruct(TRUE)
 	// BLUEMOON ADDITION END
 
 /obj/structure/table/proc/tablepush(mob/living/user, mob/living/pushed_mob)
 	if(HAS_TRAIT(user, TRAIT_PACIFISM))
-		to_chat(user, "<span class='danger'>Throwing [pushed_mob] onto the table might hurt them!</span>")
+		to_chat(user, "<span class='danger'>Это может навредить [pushed_mob]!</span>")
 		return
 	var/added_passtable = FALSE
 	if(!(pushed_mob.pass_flags & PASSTABLE))
@@ -165,8 +167,9 @@
 	if(pushed_mob.loc != loc) //Something prevented the tabling
 		return
 	pushed_mob.DefaultCombatKnockdown(40)
-	pushed_mob.visible_message("<span class='danger'>[user] slams [pushed_mob] onto [src]!</span>", \
-								"<span class='userdanger'>[user] slams you onto [src]!</span>")
+	pushed_mob.visible_message("<span class='danger'>[user] пихает [pushed_mob] на [src]!</span>", \
+								"<span class='userdanger'>[user] пихает тебя на [src]!</span>")
+	playsound(pushed_mob, 'sound/weapons/thudswoosh.ogg', 90, TRUE)
 	log_combat(user, pushed_mob, "tabled", null, "onto [src]")
 	if(!ishuman(pushed_mob))
 		return
@@ -175,8 +178,8 @@
 	SEND_SIGNAL(pushed_mob, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table)
 	// BLUEMOON ADDITION AHEAD - тяжёлые и сверхтяжёлые персонажи при толчке на стол ломают его
 	if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY))
-		pushed_mob.visible_message("<span class='danger'>[user] breaks [src] with [pushed_mob]'s weight!</span>", \
-								"<span class='userdanger'>You break [src] with your weight!</span>")
+		pushed_mob.visible_message("<span class='danger'>[src] ломается под весом [pushed_mob]!</span>", \
+								"<span class='userdanger'>Ты ломаешь [src] собственным весом!</span>")
 		deconstruct(TRUE)
 	// BLUEMOON ADDITION END
 
@@ -191,22 +194,22 @@
 	take_damage(50)
 
 	playsound(pushed_mob, 'sound/effects/bang.ogg', 90, TRUE)
-	pushed_mob.visible_message("<span class='danger'>[user] smashes [pushed_mob]'s [banged_limb.name] against \the [src]!</span>",
-								"<span class='userdanger'>[user] smashes your [banged_limb.name] against \the [src]</span>")
+	pushed_mob.visible_message("<span class='danger'>[user] бьёт [banged_limb.ru_name_y] [pushed_mob] об [src]!</span>",
+								"<span class='userdanger'>[user] бьёт вашу [banged_limb.ru_name_y] об [src]</span>")
 	log_combat(user, pushed_mob, "head slammed", null, "against [src]")
 	SEND_SIGNAL(pushed_mob, COMSIG_ADD_MOOD_EVENT, "table", /datum/mood_event/table_limbsmash, banged_limb)
 	// BLUEMOON ADDITION AHEAD - тяжёлые и сверхтяжёлые персонажи при толчке на стол ломают его
 	if(HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(pushed_mob, TRAIT_BLUEMOON_HEAVY))
-		pushed_mob.visible_message("<span class='danger'>[user] breaks [src] with [pushed_mob]'s weight!</span>", \
-								"<span class='userdanger'>You break [src] with your weight!</span>")
+		pushed_mob.visible_message("<span class='danger'>[src] ломается под весом [pushed_mob]!</span>", \
+								"<span class='userdanger'>Ты ломаешь [src] собственным весом!</span>")
 		deconstruct(TRUE)
 	// BLUEMOON ADDITION END
 
 /obj/structure/table/shove_act(mob/living/target, mob/living/user)
 	if(CHECK_MOBILITY(target, MOBILITY_STAND))
 		target.DefaultCombatKnockdown(SHOVE_KNOCKDOWN_TABLE)
-	user.visible_message("<span class='danger'>[user.name] shoves [target.name] onto \the [src]!</span>",
-		"<span class='danger'>You shove [target.name] onto \the [src]!</span>", null, COMBAT_MESSAGE_RANGE)
+	user.visible_message("<span class='danger'>[user.name] толкает [target.name] на [src]!</span>",
+		"<span class='danger'>Ты толкаешь [target.name] на [src]!</span>", null, COMBAT_MESSAGE_RANGE)
 	target.forceMove(loc)
 	log_combat(user, target, "shoved", "onto [src] (table)")
 	return TRUE
@@ -236,6 +239,30 @@
 			user.visible_message("[user] empties [I] on [src].")
 			return
 		// If the tray IS empty, continue on (tray will be placed on the table like other items)
+
+	if(istype(I, /obj/item/riding_offhand))
+		var/obj/item/riding_offhand/riding_item = I
+		var/mob/living/carried_mob = riding_item.rider
+		if(carried_mob == user) //Piggyback user.
+			return
+		if(user.a_intent == INTENT_HARM)
+			user.unbuckle_mob(carried_mob)
+			tablelimbsmash(user, carried_mob)
+		else
+			var/tableplace_delay = 3.5 SECONDS
+			var/skills_space = ""
+			if(HAS_TRAIT(user, TRAIT_QUICKER_CARRY))
+				tableplace_delay = 2 SECONDS
+				skills_space = " expertly"
+			else if(HAS_TRAIT(user, TRAIT_QUICK_CARRY))
+				tableplace_delay = 2.75 SECONDS
+				skills_space = " quickly"
+			carried_mob.visible_message(span_notice("[user] begins to[skills_space] place [carried_mob] onto [src]..."),
+				span_userdanger("[user] begins to[skills_space] place [carried_mob] onto [src]..."))
+			if(do_after(user, tableplace_delay, target = carried_mob))
+				user.unbuckle_mob(carried_mob)
+				tableplace(user, carried_mob)
+		return TRUE
 
 	if(user.a_intent != INTENT_HARM && !(I.item_flags & ABSTRACT))
 		if(user.transferItemToLoc(I, drop_location()))
@@ -329,7 +356,7 @@
 /obj/structure/table/rolling/AfterPutItemOnTable(obj/item/I, mob/living/user)
 	. = ..()
 	attached_items += I
-	RegisterSignal(I, COMSIG_MOVABLE_MOVED, .proc/RemoveItemFromTable) //Listen for the pickup event, unregister on pick-up so we aren't moved
+	RegisterSignal(I, COMSIG_MOVABLE_MOVED, PROC_REF(RemoveItemFromTable)) //Listen for the pickup event, unregister on pick-up so we aren't moved
 
 /obj/structure/table/rolling/proc/RemoveItemFromTable(datum/source, newloc, dir)
 	if(newloc != loc) //Did we not move with the table? because that shit's ok
@@ -370,6 +397,18 @@
 	QDEL_LIST(debris)
 	. = ..()
 
+
+//BLUEMOON ADD стол из стекла можно осмотреть на предмет выдерживания на нём персонажа
+/obj/structure/table/glass/examine(mob/user)
+	. = ..()
+	if(in_range(user, src) && isliving(user))
+		var/mob/living/M = user
+		if(M.has_gravity() && !(M.movement_type & FLYING) && ((M.mob_size > MOB_SIZE_SMALL && !HAS_TRAIT(M, TRAIT_BLUEMOON_LIGHT)) || M.mob_size > MOB_SIZE_HUMAN))
+			. += span_danger("It looks like it will break if you try to climb on it.")
+		else
+			. += span_notice("It seems that it can be crossed safely.")
+//BLUEMOON ADD END
+
 /obj/structure/table/glass/Crossed(atom/movable/AM)
 	. = ..()
 	if(flags_1 & NODECONSTRUCT_1)
@@ -378,7 +417,7 @@
 		return
 	// Don't break if they're just flying past
 	if(AM.throwing)
-		addtimer(CALLBACK(src, .proc/throw_check, AM), 5)
+		addtimer(CALLBACK(src, PROC_REF(throw_check), AM), 5)
 	else
 		check_break(AM)
 
@@ -387,7 +426,7 @@
 		check_break(M)
 
 /obj/structure/table/glass/proc/check_break(mob/living/M)
-	if(M.has_gravity() && M.mob_size > MOB_SIZE_SMALL && !(M.movement_type & FLYING))
+	if(M.has_gravity() && !(M.movement_type & FLYING) && ((M.mob_size > MOB_SIZE_SMALL && !HAS_TRAIT(M, TRAIT_BLUEMOON_LIGHT)) || M.mob_size > MOB_SIZE_HUMAN)) //BLUEMOON ADD столы ломаются при размере 0.81 или если лёгкий, то 1.21
 		table_shatter(M)
 
 /obj/structure/table/glass/proc/table_shatter(mob/living/L)
@@ -673,7 +712,7 @@
 		var/previouscolor = color
 		color = "#960000"
 		animate(src, color = previouscolor, time = 8)
-		addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 8)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_atom_colour)), 8)
 
 /obj/structure/table/reinforced/brass/ratvar_act()
 	obj_integrity = max_integrity
@@ -707,6 +746,142 @@
 	buckle_requires_restraints = 1
 	var/mob/living/carbon/human/patient = null
 	var/obj/machinery/computer/operating/computer = null
+// BLUEMOON ADD START
+	var/obj/item/tank/internals/tank = null // баллон внутри
+	var/obj/item/clothing/mask/mask = null // маска внутри
+
+/obj/structure/table/optable/examine(mob/user)
+	. = ..()
+	. += "<hr>"
+
+	if(tank)
+		. += span_info("Сбоку на нём закреплён [tank].")
+	else
+		. += span_warning("Сбоку есть пустое место под ёмкость с газом (баллон или канистру).")
+
+	if(mask)
+		. += span_info("На стойке висит [mask].")
+	else
+		. += span_warning("Сбоку находится пустая стойка для маски.")
+
+	if(computer)
+		. += span_info("Операционный стол подключен к компьютеру рядом через кабель на полу.")
+
+/obj/structure/table/optable/Destroy()
+	stop_process()
+	. = ..()
+
+/obj/structure/table/optable/examine_more(mob/user)
+	. = ..()
+	. += span_notice("Убирать кислородный баллон и маску можно через Alt.")
+	if(tank && mask) . += span_info("<br>Можно попробовать включить оборудование для анестезии, если положить кого-то на стол.")
+
+/obj/structure/table/optable/attack_hand(mob/user, act_intent, attackchain_flags)
+	. = ..()
+	if(tank && mask)
+		if(!check_patient())
+			return
+		if(!patient.internal) // у пациента не включена подача воздуха
+			to_chat(user, span_notice("Вы начинаете включать подачу анестетика."))
+			if(patient.stat != UNCONSCIOUS) // пациент без сознания не видит сообщение ниже
+				to_chat(patient, span_danger("[user] пытается включить подачу анестетика!"))
+			if(!do_after(user, 3 SECONDS, patient))
+				return
+			if(patient.wear_mask)
+				if(isclothing(patient.wear_mask)) // это одежда
+					var/obj/item/clothing/patient_item_in_mask_slot = patient.wear_mask
+					if(!(patient_item_in_mask_slot.clothing_flags & ALLOWINTERNALS)) // можно использовать для дыхания
+						if(!patient.dropItemToGround(patient.wear_mask)) // если нельзя, то можно ли снять
+							to_chat(user, span_danger("У вас не получилось снять маску с [patient], чтобы надеть кислородную маску!"))
+							return
+				else // это предмет
+					if(!patient.dropItemToGround(patient.wear_mask))
+						to_chat(user, span_danger("У вас не получилось убрать предмет с лица [patient], чтобы надеть кислородную маску!"))
+						return
+			patient.equip_to_slot_if_possible(mask, ITEM_SLOT_MASK)
+			if(!patient.wear_mask) // если головы нет, например
+				to_chat(user, span_danger("У вас не получилось надеть кислородную маску на [patient]!"))
+				return
+			patient.internal = tank
+			user.visible_message("[user] подключает оборудование для анестезии к [patient] и проворачиваете клапан.", span_notice("Вы открываете клапан с анестезией. Убедитесь, что пациент спит и можно начинать."))
+			START_PROCESSING(SSobj, src)
+		else
+			if(patient.internal != tank) // У пациента включен собственный баллон
+				to_chat(user, span_danger("Сначала нужно отключить собственный баллон у [patient]!"))
+				return
+			if(!do_after(user, 1 SECONDS, patient))
+				return
+			user.visible_message("[user] отключает подачу анестетика к [patient].", span_notice("Вы проворачиваете клапан и отключаете подачу анестезии."))
+			stop_process()
+	else
+		to_chat(user, span_warning("[src] не имеет прикрепленного к нему баллона или маски!"))
+		return
+
+/obj/structure/table/optable/attack_robot(mob/user)
+	if(Adjacent(user))
+		return attack_hand(user)
+
+/obj/structure/table/optable/process()
+	if(mask?.loc != patient || tank?.loc != src || patient?.loc != loc)
+		stop_process()
+
+/obj/structure/table/optable/proc/stop_process()
+	STOP_PROCESSING(SSobj, src)
+	if(!patient)
+		if(mask)
+			mask.forceMove(src)
+		return
+	if(mask && mask.loc != src)
+		visible_message(span_notice("[mask] срывается и возвращается на место по втягивающемуся шлангу."))
+		patient.transferItemToLoc(mask, src, TRUE)
+	patient.internal = null
+	patient = null
+
+/obj/structure/table/optable/AltClick(mob/living/user)
+	..()
+	if(!ishuman(user))
+		to_chat(user, span_warning("Это слишком сложно для вас!"))
+		return
+	if(patient)
+		to_chat(user, span_warning("Сначала нужно убрать пациента!"))
+		return
+	if(tank && !patient?.internal)
+		to_chat(user, span_notice("Вы убираете [tank] с бока операционного стола."))
+		user.put_in_hands(tank)
+		tank = null
+	else if(mask && !patient?.internal)
+		to_chat(user, span_notice("Вы убираете [mask] со стойки операционного стола."))
+		user.put_in_hands(mask)
+		mask = null
+
+/obj/structure/table/optable/Destroy()
+	if(tank)
+		tank.forceMove(loc)
+		tank = null
+	if(mask)
+		mask.forceMove(loc)
+		mask = null
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
+
+/obj/structure/table/optable/attackby(obj/item/I, mob/living/user, attackchain_flags, damage_multiplier)
+	if(user.a_intent == INTENT_HELP)
+		if(!tank)
+			if(istype(I, /obj/item/tank/internals))
+				if(user.transferItemToLoc(I, src))
+					user.visible_message("[user] закрепляет [I] сбоку операционного стола.", span_notice("Вы закрепляете [I] сбоку операционного стола."))
+					tank = I
+					return
+		if(!mask)
+			if(istype(I, /obj/item/clothing/mask))
+				var/obj/item/clothing/mask/potential_mask = I
+				if(potential_mask.clothing_flags & ALLOWINTERNALS) // можно использовать для дыхания
+					if(user.transferItemToLoc(I, src))
+						user.visible_message("[user] закрепляет [I] на стойку для маски.", span_notice("Вы закрепляете [I] на стойку для маски."))
+						mask = I
+						return
+	. = ..()
+// BLUEMOON ADD END
 
 /obj/structure/table/optable/New()
 	..()
@@ -759,11 +934,11 @@
 
 /obj/structure/rack/CanPass(atom/movable/mover, turf/target)
 	if(src.density == 0) //Because broken racks -Agouri |TODO: SPRITE!|
-		return 1
+		return TRUE
 	if(istype(mover) && (mover.pass_flags & PASSTABLE))
-		return 1
+		return TRUE
 	else
-		return 0
+		return FALSE
 
 /obj/structure/rack/CanAStarPass(obj/item/card/id/ID, to_dir, atom/movable/caller)
 	. = !density
@@ -787,7 +962,7 @@
 	if(user.a_intent == INTENT_HARM)
 		return ..()
 	if(user.transferItemToLoc(W, drop_location()))
-		return 1
+		return TRUE
 
 /obj/structure/rack/attack_paw(mob/living/user)
 	attack_hand(user)

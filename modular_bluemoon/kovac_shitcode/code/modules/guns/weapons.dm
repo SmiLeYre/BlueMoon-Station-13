@@ -89,6 +89,7 @@
 	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/mob/weapons/weapons_l.dmi'
 	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/mob/weapons/weapons_r.dmi'
 	mag_type = /obj/item/ammo_box/magazine/m10mm_large
+	w_class = WEIGHT_CLASS_NORMAL
 	can_suppress = FALSE
 	burst_size = 4
 	fire_delay = 3
@@ -108,7 +109,7 @@
 	icon_state = "c20r45-16"
 	ammo_type = /obj/item/ammo_casing/c10mm
 	caliber = "10mm"
-	max_ammo = 12
+	max_ammo = 21
 
 /obj/item/ammo_box/magazine/m10mm_large/soporific
 	name = "enlarged pistol magazine (10mm soporific)"
@@ -198,6 +199,7 @@
 	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/mob/weapons/weapons_l.dmi'
 	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/mob/weapons/weapons_r.dmi'
 	force = 10
+	block_chance = 30
 	throwforce = 5
 	throw_speed = 2
 	throw_range = 3
@@ -216,8 +218,8 @@
 
 /obj/item/inteq_sledgehammer/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/inteq_sledgehammer/ComponentInitialize()
 	. = ..()
@@ -243,6 +245,27 @@
 			BP.drop_limb()
 			playsound(src,pick('modular_bluemoon/kovac_shitcode/sound/weapons/sledge.ogg') ,50, 1, -1)
 	return (BRUTELOSS)
+
+/obj/item/inteq_sledgehammer/directional_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return, override_direction)
+	if(wielded & attack_type & ATTACK_TYPE_PROJECTILE & prob(70))
+		return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
+	return ..()
+
+/obj/item/inteq_sledgehammer/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
+	. = ..()
+	if(parry_efficiency >= 90)		// perfect parry
+		block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_DEFLECT
+		. |= BLOCK_SHOULD_REDIRECT
+
+/obj/item/inteq_sledgehammer/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
+	if(wielded)
+		final_block_chance *= 1.5
+	if(prob(final_block_chance))
+		if(attack_type & ATTACK_TYPE_MELEE)
+			playsound(src, 'sound/weapons/parry.ogg', 100, 1)
+			owner.visible_message("<span class='danger'>[owner] parries [attack_text] with [src]!</span>")
+			return BLOCK_SUCCESS | BLOCK_PHYSICAL_EXTERNAL
+	return BLOCK_NONE
 
 /obj/item/inteq_sledgehammer/pre_attack(atom/A, mob/living/user, params, attackchain_flags, damage_multiplier)
 	. = ..()
@@ -274,7 +297,7 @@
 		return
 	..()
 	if((wielded) && prob(50))
-		INVOKE_ASYNC(src, .proc/slash, user)
+		INVOKE_ASYNC(src, PROC_REF(slash), user)
 
 /obj/item/inteq_sledgehammer/proc/slash(mob/living/user, mob/living/target)
 		user.do_attack_animation(target, ATTACK_EFFECT_KICK)
@@ -292,7 +315,7 @@
 	block_damage_absorption = 3
 	block_damage_multiplier = 0.1
 	block_damage_multiplier_override = list(
-		ATTACK_TYPE_MELEE = 0.1
+		ATTACK_TYPE_MELEE = 0.25
 	)
 	block_start_delay = 0.5
 	block_stamina_cost_per_second = 6.5
@@ -319,8 +342,9 @@
 /obj/item/chainsaw/doomslayer/inteq_chainsaw
 	name = "Chainsaw"
 	desc = "<span class='warning'>VRRRRRRR!!!</span>"
-	armour_penetration = 100
 	force_on = 55
+	laser_defl = 0
+	block_parry_data = /datum/block_parry_data/inteq_sledgehammer
 
 ///InteQ Uplink additions
 
@@ -336,7 +360,7 @@
 	name = "High Powered Chainsaw"
 	desc = "A high powered chainsaw for cutting up ...you know...."
 	item = /obj/item/chainsaw/doomslayer/inteq_chainsaw
-	cost = 22
+	cost = 16
 	purchasable_from = ~(UPLINK_SYNDICATE)
 
 /// Clown Ops Uplink additions

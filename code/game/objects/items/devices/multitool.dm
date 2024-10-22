@@ -25,12 +25,12 @@
 	throwforce = 0
 	throw_range = 7
 	throw_speed = 3
-	drop_sound = 'sound/items/handling/multitool_drop.ogg'
-	pickup_sound = 'sound/items/handling/multitool_pickup.ogg'
 	custom_materials = list(/datum/material/iron=50, /datum/material/glass=20)
 	buffer = null // simple machine buffer for device linkage
 	toolspeed = 1
 	usesound = 'sound/weapons/empty.ogg'
+	drop_sound = 'sound/items/handling/multitool_drop.ogg'
+	pickup_sound = 'sound/items/handling/multitool_pickup.ogg'
 	var/mode = 0
 
 /obj/item/multitool/chaplain
@@ -53,10 +53,10 @@
 
 /obj/item/multitool/examine(mob/user)
 	. = ..()
-	if(selected_io)
-		. += "<span class='notice'>Activate [src] to detach the data wire.</span>"
+	if(selected_io || buffer)
+		. += "<span class='notice'>Activate [src] to detach the data wire or clear buffer.</span>"
 	if(buffer)
-		. += "<span class='notice'>Its buffer contains [buffer].</span>"
+		. += "<span class='notice'>Its buffer contains <b>[buffer]</b>.</span>"
 
 /obj/item/multitool/suicide_act(mob/living/carbon/user)
 	user.visible_message("<span class='suicide'>[user] puts the [src] to [user.ru_ego()] chest. It looks like [user.ru_who()] trying to pulse [user.ru_ego()] heart off!</span>")
@@ -66,12 +66,21 @@
 	if(selected_io)
 		selected_io = null
 		to_chat(user, "<span class='notice'>You clear the wired connection from the multitool.</span>")
+	else if(buffer)
+		buffer = null
+		to_chat(user, "<span class='notice'>You clear the multitool's buffer.</span>")
 	update_icon()
 
 /obj/item/multitool/update_icon_state()
 	icon_state = initial(icon_state)
 	if(selected_io)
-		icon_state += "_red"
+		icon_state += "_wiring"
+	else if(buffer)
+		icon_state += "_buffer"
+
+/obj/item/multitool/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
+	. = ..()
+	update_icon()
 
 /obj/item/proc/wire(var/datum/integrated_io/io, mob/user)
 	if(!io.holder.assembly)
@@ -125,8 +134,8 @@
 	var/track_cooldown = 0
 	var/track_delay = 10 //How often it checks for proximity
 	var/detect_state = PROXIMITY_NONE
-	var/rangealert = 8	//Glows red when inside
-	var/rangewarning = 20 //Glows yellow when inside
+	var/rangealert = 11	//Glows red when inside
+	var/rangewarning = 22 //Glows yellow when inside
 	var/hud_type = DATA_HUD_AI_DETECT
 	var/hud_on = FALSE
 	var/mob/camera/aiEye/remote/ai_detector/eye
@@ -150,8 +159,8 @@
 	return
 
 /obj/item/multitool/ai_detect/update_icon_state()
-	if(selected_io)
-		icon_state = "multitool_red"
+	if(detect_state == PROXIMITY_NONE)
+		..()
 	else
 		icon_state = "[initial(icon_state)][detect_state]"
 
@@ -238,11 +247,11 @@
 
 /datum/action/item_action/toggle_multitool/Trigger()
 	if(!..())
-		return 0
+		return FALSE
 	if(target)
 		var/obj/item/multitool/ai_detect/M = target
 		M.toggle_hud(owner)
-	return 1
+	return TRUE
 
 /obj/item/multitool/cyborg
 	name = "multitool"
@@ -250,6 +259,9 @@
 	icon = 'icons/obj/items_cyborg.dmi'
 	icon_state = "multitool_cyborg"
 	toolspeed = 0.5
+
+/obj/item/multitool/cyborg/update_icon_state()
+	return
 
 /obj/item/multitool/abductor
 	name = "alien multitool"
@@ -259,6 +271,9 @@
 	toolspeed = 0.1
 	show_wires = TRUE
 
+/obj/item/multitool/abductor/update_icon_state()
+	return
+
 /obj/item/multitool/advanced
 	name = "advanced multitool"
 	desc = "The reproduction of an abductor's multitool, this multitool is a classy silver."
@@ -266,6 +281,9 @@
 	icon_state = "multitool"
 	toolspeed = 0.2
 	show_wires = TRUE
+
+/obj/item/multitool/advanced/update_icon_state()
+	return
 
 /obj/item/multitool/advanced/brass
 	name = "clockwork multitool"

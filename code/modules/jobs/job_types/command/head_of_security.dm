@@ -12,12 +12,13 @@
 	selection_color = "#b90000"
 	req_admin_notify = 1
 	minimal_player_age = 35
-	exp_requirements = 300
+	exp_requirements = 5000
 	exp_type = EXP_TYPE_CREW
 	considered_combat_role = TRUE
 	exp_type_department = EXP_TYPE_SECURITY
 
 	outfit = /datum/outfit/job/hos
+	departments = DEPARTMENT_BITFLAG_SECURITY | DEPARTMENT_BITFLAG_COMMAND
 	plasma_outfit = /datum/outfit/plasmaman/hos
 
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
@@ -36,7 +37,7 @@
 
 
 	display_order = JOB_DISPLAY_ORDER_HEAD_OF_SECURITY
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/nonviolent, /datum/quirk/blindness, /datum/quirk/monophobia, /datum/quirk/insanity)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/nonviolent, /datum/quirk/blindness, /datum/quirk/monophobia, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal)
 	threat = 3
 
 	family_heirlooms = list(
@@ -57,14 +58,15 @@
 	head = /obj/item/clothing/head/HoS/beret
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	//suit_store = /obj/item/gun/energy/e_gun
-	r_pocket = /obj/item/assembly/flash/handheld
-	l_pocket = /obj/item/restraints/handcuffs
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+	l_pocket = /obj/item/storage/bag/security
+	r_pocket = /obj/item/clothing/accessory/badge
+	backpack_contents = list(/obj/item/storage/box/sec_kit, /obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/choice_beacon/hos_new_weapon = 1, /obj/item/stamp/security = 1)
+	box = /obj/item/storage/box/survival/command
+	accessory = /obj/item/clothing/accessory/permit/special/head_of_sec
 
-	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	box = /obj/item/storage/box/survival/security
+	box = /obj/item/storage/box/survival/command
 
 	implants = list(/obj/item/implant/mindshield)
 
@@ -91,6 +93,7 @@
 	satchel = /obj/item/storage/backpack/duffelbag/syndie/ammo
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie/ammo
 	box = /obj/item/storage/box/survival/syndie
+	accessory = /obj/item/clothing/accessory/permit/special/head_of_sec
 	pda_slot = ITEM_SLOT_BELT
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/syndicate_uplink_high=1)
 
@@ -106,3 +109,12 @@
 	..()
 
 	H.typing_indicator_state = /obj/effect/overlay/typing_indicator/additional/law
+
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/job/hos/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END

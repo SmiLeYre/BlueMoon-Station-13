@@ -22,6 +22,7 @@
 	paycheck_department = ACCOUNT_SCI
 	alt_titles = list("Space Expeditor", "Gateway Explorer", "Space Explorer", "Sexplorer", "Sexpeditor", "Exploration Field Medic", "Exploration Engineer", "Exploration Mercenary", "Exploration Operative")
 	display_order = JOB_DISPLAY_ORDER_EXPEDITOR
+	departments = DEPARTMENT_BITFLAG_SCIENCE
 	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/prosopagnosia, /datum/quirk/insanity)
 	threat = 2
 
@@ -36,10 +37,11 @@
 	head = /obj/item/clothing/head/helmet/exp
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	glasses = /obj/item/clothing/glasses/sunglasses
-	shoes = /obj/item/clothing/shoes/combat
+	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	suit_store = /obj/item/gun/energy/e_gun/mini/expeditor
 	r_pocket = /obj/item/kitchen/knife/combat
 	l_pocket = /obj/item/pda
+	accessory = /obj/item/clothing/accessory/permit/special/explorer
 	backpack_contents = list(/obj/item/storage/firstaid/regular = 1)
 
 /datum/outfit/job/expeditor/syndicate
@@ -63,6 +65,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	box = /obj/item/storage/box/survival/syndie
 	pda_slot = ITEM_SLOT_BELT
+	accessory = /obj/item/clothing/accessory/permit/special/explorer
 	backpack_contents = list(/obj/item/syndicate_uplink=1, /obj/item/storage/firstaid/regular = 1)
 
 /obj/item/radio/headset/headset_exp
@@ -93,6 +96,7 @@
 	desc = "Standart combat turtleneck with printed expiditionary marks."
 	icon_state = "exp_corps"
 	item_state = "exp_corps"
+	has_sensor = HAS_SENSORS //BLUEMOON CHANGE они являются станционным персоналом
 	mutantrace_variation = STYLE_DIGITIGRADE|USE_SNEK_CLIP_MASK|USE_QUADRUPED_CLIP_MASK
 
 /obj/item/clothing/shoes/combat/exp

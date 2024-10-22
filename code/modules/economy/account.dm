@@ -1,4 +1,12 @@
 #define DUMPTIME 3000
+#define STATION_START_CASH 75000
+#define STATION_CREATION_DATE "1 April, 2555"
+#define STATION_CREATION_TIME "11:22:33"
+#define STATION_SOURCE_TERMINAL "Sug Ma Dig IntraNet Terminal #420"
+GLOBAL_DATUM(station_account, /datum/bank_account)
+GLOBAL_LIST_EMPTY(all_money_accounts)
+GLOBAL_VAR_INIT(num_financial_terminals, 1)
+GLOBAL_VAR_INIT(next_account_number, 0)
 
 /datum/bank_account
 	var/account_holder = "Rusty Venture"
@@ -24,6 +32,7 @@
 	account_holder = newname
 	account_job = job
 	account_id = rand(111111,999999)
+	GLOB.all_money_accounts = SSeconomy.bank_accounts.Copy()
 
 /datum/bank_account/Destroy()
 	if(add_to_accounts)
@@ -229,5 +238,133 @@
 		"adjusted_money" = adjusted_money,
 		"reason" = reason,
 	))
+
+
+
+ // Charge is for transferring money from an account to another. The destination account can possibly not exist (Magical money sink)
+/datum/bank_account/proc/charge(transaction_amount = 0, datum/bank_account/dest, transaction_purpose, terminal_name = "", dest_name = "UNKNOWN", dest_purpose, dest_target_name)
+	if(transferable)
+		to_chat(usr, "<span class='warning'>Unable to access source account: account not transferable.</span>")
+		return FALSE
+
+	if(transaction_amount <= account_balance)
+		//transfer the money
+		account_balance -= transaction_amount
+		makeTransactionLog(transaction_amount, transaction_purpose, terminal_name, dest_name)
+		if(dest)
+			dest.account_balance += transaction_amount
+			dest.makeTransactionLog(transaction_amount,
+			dest_purpose ? dest_purpose : transaction_purpose, terminal_name, dest_target_name ? dest_target_name : dest_name, FALSE)
+		return TRUE
+	else
+		to_chat(usr, "<span class='warning'>Insufficient funds in account.</span>")
+		return FALSE
+
+// Seperated from charge so they can reuse the code and also because there's many instances where a log will be made without actually making a transaction
+/datum/bank_account/proc/makeTransactionLog(transaction_amount = 0, transaction_purpose, terminal_name = "", dest_name = "UNKNOWN", charging = TRUE, date = GLOB.current_date_string, time = "")
+	var/datum/transaction/T = new()
+	T.target_name = dest_name
+	T.purpose = transaction_purpose
+	if(!charging || transaction_amount == 0)
+		T.amount = "[transaction_amount]"
+	else
+		T.amount = "([transaction_amount])"
+
+	T.source_terminal = terminal_name
+	T.date = date
+	if(time == "")
+		T.time = STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)
+	else
+		T.time = time
+	transaction_history.Add(T)
+
+//the current ingame time (hh:mm:ss) can be obtained by calling:
+//STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)("hh:mm:ss")
+
+/proc/create_account(var/new_account_holder = "Default user", var/starting_funds = 0, var/obj/machinery/computer/account_database/source_db)
+
+	//create a new account
+	var/datum/bank_account/M = new()
+	M.account_holder = new_account_holder
+	M.account_balance = starting_funds
+
+	//create an entry in the account transaction log for when it was created
+	var/datum/transaction/T = new()
+	T.target_name = new_account_holder
+	T.purpose = "Account creation"
+	T.amount = starting_funds
+	if(!source_db)
+		//set a random date, time and location some time over the past few decades
+		T.date = "[num2text(rand(1,31))] [pick(GLOB.month_names)], [rand(GLOB.year_integer - 20,GLOB.year_integer - 1)]"
+		T.time = "[rand(0,23)]:[rand(0,59)]:[rand(0,59)]"
+		T.source_terminal = "NTGalaxyNet Terminal #[rand(111,1111)]"
+
+		M.account_id = rand(111111, 999999)
+	else
+		T.date = GLOB.current_date_string
+		T.time = STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)
+		T.source_terminal = source_db.machine_id
+
+		M.account_id = GLOB.next_account_number
+		GLOB.next_account_number += rand(1,25)
+
+		//create a sealed package containing the account details
+		var/obj/item/small_delivery/P = new /obj/item/small_delivery(source_db.loc)
+
+		var/obj/item/paper/R = new /obj/item/paper(P)
+		playsound(source_db.loc, 'sound/goonstation/machines/printer_thermal.ogg', 50, 1)
+		P.contents = R
+		R.name = "Account information: [M.account_holder]"
+
+		var/overseer = "Unknown"
+		var/datum/ui_login/L = source_db.ui_login_get()
+		if(L.id)
+			overseer = L.id.registered_name
+		R.default_raw_text = {"<b>Account details (confidential)</b><br><hr><br>
+			<i>Account holder:</i> [M.account_holder]<br>
+			<i>Account number:</i> [M.account_id]<br>
+			<i>Starting balance:</i> $[M.account_balance]<br>
+			<i>Date and time:</i> [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)], [GLOB.current_date_string]<br><br>
+			<i>Creation terminal ID:</i> [source_db.machine_id]<br>
+			<i>Authorised NT officer overseeing creation:</i> [overseer]<br>"}
+
+		//stamp the paper
+		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
+		stampoverlay.icon_state = "paper_stamp-cent"
+		if(!R.stamp_cache)
+			R.stamp_cache = new
+		R.stamp_cache += /obj/item/stamp
+		R.overlays += stampoverlay
+		R.stamp_cache += "<HR><i>This paper has been stamped by the Accounts Database.</i>"
+
+	//add the account
+	M.transaction_history.Add(T)
+	GLOB.all_money_accounts.Add(M)
+
+	return M
+
+/proc/create_station_account()
+	if(!GLOB.station_account)
+		GLOB.next_account_number = rand(111111, 999999)
+
+		GLOB.station_account = new()
+		GLOB.station_account.account_holder = "[station_name()] Station Account"
+		GLOB.station_account.account_id = rand(111111, 999999)
+		GLOB.station_account.account_balance = STATION_START_CASH
+
+		//create an entry in the account transaction log for when it was created
+		GLOB.station_account.makeTransactionLog(STATION_START_CASH, "Account Creation", STATION_SOURCE_TERMINAL, GLOB.station_account.account_holder, FALSE,
+		STATION_CREATION_DATE, STATION_CREATION_TIME)
+
+		//add the account
+		GLOB.all_money_accounts.Add(GLOB.station_account)
+
+/datum/transaction
+	var/target_name = ""
+	var/purpose = ""
+	var/amount = 0
+	var/date = ""
+	var/time = ""
+	var/source_terminal = ""
 
 #undef DUMPTIME

@@ -3,12 +3,15 @@
 
 //Force-set resting variable, without needing to resist/etc.
 /mob/living/proc/set_resting(new_resting, silent = FALSE, updating = TRUE)
+	if(SSevents.holidays && SSevents.holidays[APRIL_FOOLS])
+		if(prob(10))
+			emote("fart")
 	if(new_resting != resting)
 		if(resting && HAS_TRAIT(src, TRAIT_MOBILITY_NOREST)) //forcibly block resting from all sources - BE CAREFUL WITH THIS TRAIT
 			return
 		resting = new_resting
 		if(!silent)
-			to_chat(src, "<span class='notice'>You are now [resting? "resting" : "getting up"].</span>")
+			to_chat(src, "<span class='notice'>Вы [resting? "устало падаете" : "поднимаетесь"].</span>")
 		if(resting == 1)
 			SEND_SIGNAL(src, COMSIG_LIVING_RESTING)
 		update_resting(updating)
@@ -16,6 +19,10 @@
 /mob/living/proc/update_resting(update_mobility = TRUE)
 	if(update_mobility)
 		update_mobility()
+
+	update_icon()
+	update_rest_hud_icon()
+	update_action_buttons()
 
 //Force mob to rest, does NOT do stamina damage.
 //It's really not recommended to use this proc to give feedback, hence why silent is defaulting to true.
@@ -39,7 +46,6 @@
 	else
 		if(!resting)
 			set_resting(TRUE, FALSE)
-			to_chat(src, "<span class='notice'>Вы ложитесь.</span>")
 		else
 			resist_a_rest()
 
@@ -108,8 +114,10 @@
 		mobility_flags |= MOBILITY_STAND
 		lying = 0
 
-	if(should_be_lying || restrained || incapacitated())
-		mobility_flags &= ~(MOBILITY_UI|MOBILITY_PULL)
+	if(restrained || incapacitated())
+		mobility_flags &= ~MOBILITY_UI
+		if(should_be_lying)
+			mobility_flags &= ~MOBILITY_PULL
 	else
 		mobility_flags |= MOBILITY_UI|MOBILITY_PULL
 
@@ -156,7 +164,7 @@
 
 	//Handle citadel autoresist
 	if(CHECK_MOBILITY(src, MOBILITY_MOVE) && !(combat_flags & COMBAT_FLAG_INTENTIONALLY_RESTING) && canstand_involuntary && iscarbon(src) && client?.prefs?.autostand)//CIT CHANGE - adds autostanding as a preference
-		addtimer(CALLBACK(src, .proc/resist_a_rest, TRUE), 0) //CIT CHANGE - ditto
+		addtimer(CALLBACK(src, PROC_REF(resist_a_rest), TRUE), 0) //CIT CHANGE - ditto
 
 	// Movespeed mods based on arms/legs quantity
 	if(!get_leg_ignore())

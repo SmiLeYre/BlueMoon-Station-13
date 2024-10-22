@@ -16,6 +16,14 @@
 		// check that the user has grabbed someone and they are not currently coiling someone
 		if(ishuman(owner.pulling) && !currently_coiling)
 			coil_mob(owner.pulling)
+		else
+			if (currently_coiling)
+				var/mob/living/carbon/human/H = owner
+				if(H.pulling && H.grab_state == GRAB_AGGRESSIVE && H.voremode)
+					var/mob/P = H.pulling
+					H.vore_attack(H, P, H)
+				else
+					currently_coiled.grabbedby(H)
 
 /datum/action/innate/ability/coiling/proc/update_coil_offset(atom/source, old_dir, new_dir)
 	// update the coiling offset on the coiled user depending on the way the owner is facing
@@ -29,7 +37,7 @@
 		if(WEST)
 			currently_coiled.pixel_x = 12
 
-/datum/action/innate/ability/coiling/proc/coil_mob(var/mob/living/carbon/human/H)
+/datum/action/innate/ability/coiling/proc/coil_mob(mob/living/carbon/human/H)
 	if(currently_coiling)
 		to_chat(owner, span_warning("You are already coiling someone!"))
 		return
@@ -41,17 +49,20 @@
 	currently_coiled = H
 
 	H.layer -= 0.1 // LISTEN I HATE TOUCHING MOB LAYERS TOO BUT THIS IS JUST SO THEY RENDER UNDER THE OTHER PLAYER SDFHSDFHDSFHDSH
-
+	var/prev_grab_state = owner.grab_state
 	// move user to same tile
 	H.forceMove(get_turf(owner))
+	owner.start_pulling(H)
+	var/i
+	for (i=1; i<prev_grab_state+1;i++)
+		currently_coiled.grabbedby(owner)
 
 	// cancel the coiling action if certain things are done
-	RegisterSignal(owner, COMSIG_MOVABLE_MOVED, .proc/cancel_coil)
-	RegisterSignal(owner, COMSIG_LIVING_RESTING, .proc/cancel_coil)
-	RegisterSignal(owner, COMSIG_LIVING_STOPPED_PULLING, .proc/cancel_coil)
+	RegisterSignal(owner, COMSIG_LIVING_RESTING, PROC_REF(cancel_coil))
+	RegisterSignal(owner, COMSIG_LIVING_STOPPED_PULLING, PROC_REF(cancel_coil))
 
 	// update the coil offset, update again if owner changes direction
-	RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE, .proc/update_coil_offset)
+	RegisterSignal(owner, COMSIG_ATOM_DIR_CHANGE, PROC_REF(update_coil_offset))
 	update_coil_offset(null, null, owner.dir)
 
 	// set our overlay to new image
@@ -75,7 +86,6 @@
 	currently_coiled = null
 
 	// unregister signals
-	UnregisterSignal(owner, COMSIG_MOVABLE_MOVED)
 	UnregisterSignal(owner, COMSIG_LIVING_RESTING)
 	UnregisterSignal(owner, COMSIG_LIVING_STOPPED_PULLING)
 	UnregisterSignal(owner, COMSIG_ATOM_DIR_CHANGE)

@@ -10,14 +10,14 @@
 #define QAREEN_NAME_FILE "qareen_names.json"
 
 /mob/living/simple_animal/qareen
-	name = "qareen"
+	name = "Qareen"
 	desc = "A horny spirit."
-	icon = 'modular_splurt/icons/mob/mob.dmi'
-	icon_state = "qareen_idle"
-	var/icon_idle = "qareen_idle"
-	var/icon_reveal = "qareen_revealed"
-	var/icon_stun = "qareen_stun"
-	var/icon_drain = "qareen_draining"
+	icon = 'modular_bluemoon/Gardelin0/icons/mob/qareen.dmi'	//It looks pretty tho! - Gardelin0
+	icon_state = "qareen_none_idle"
+	var/icon_idle = "qareen_none_idle"
+	var/icon_reveal = "qareen_none_revealed"
+	var/icon_stun = "qareen_none_stun"
+	var/icon_drain = "qareen_none_draining"
 	var/stasis = FALSE
 	mob_biotypes = MOB_SPIRIT
 	incorporeal_move = INCORPOREAL_MOVE_JAUNT
@@ -61,8 +61,8 @@
 	hud_possible = list(ANTAG_HUD)
 	hud_type = /datum/hud/qareen
 
-	var/essence = 75 //The resource, and health, of qareens.
-	var/essence_regen_cap = 75 //The regeneration cap of essence (go figure); regenerates every Life() tick up to this amount.
+	var/essence = 150 //The resource, and health, of qareens.
+	var/essence_regen_cap = 150 //The regeneration cap of essence (go figure); regenerates every Life() tick up to this amount.
 	var/essence_regenerating = TRUE //If the qareen regenerates essence or not
 	var/essence_regen_amount = 5 //How much essence regenerates
 	var/essence_accumulated = 0 //How much essence the qareen has stolen
@@ -83,31 +83,23 @@
 	ADD_TRAIT(src, TRAIT_SIXTHSENSE, INNATE_TRAIT)
 	AddSpell(new /obj/effect/proc_holder/spell/targeted/night_vision/qareen(null))
 	AddSpell(new /obj/effect/proc_holder/spell/targeted/telepathy/qareen(null))
-	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/defile(null))
+//	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/defile(null))	Reserved for later. - Gardelin0
 	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/overload(null))
-	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/bliss(null))
-	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction(null))
-	random_qareen_name()
+//	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/bliss(null))		Reserved for later. - Gardelin0
+//	AddSpell(new /obj/effect/proc_holder/spell/aoe_turf/qareen/malfunction(null))	Reserved for later. - Gardelin0
 
-/mob/living/simple_animal/qareen/proc/random_qareen_name()
-	var/built_name = ""
-	built_name += pick(strings(QAREEN_NAME_FILE, "spirit_type"))
-	built_name += " "
-	built_name += pick(strings(QAREEN_NAME_FILE, "adverb"))
-	built_name += pick(strings(QAREEN_NAME_FILE, "theme"))
-	name = built_name
+//Removed random names, because revenant names seem too hostile
 
 /mob/living/simple_animal/qareen/Login()
 	..()
 	var/qareen_greet
-	qareen_greet += "<span class='deadsay'><span class='big bold'>You are a qareen.</span></span>"
-	qareen_greet += "<b>Your formerly mundane spirit has been infused with alien energies and empowered into a qareen.</b>"
-	qareen_greet += "<b>You are not dead, not alive, but somewhere in between. You are capable of limited interaction with both worlds.</b>"
-	qareen_greet += "<b>You are invincible and invisible to everyone but other ghosts. Most abilities will reveal you, rendering you vulnerable.</b>"
-	qareen_greet += "<b>To function, you are to drain the life essence from creatures. This essence is a resource, as well as your health, and will power all of your abilities.</b>"
-	qareen_greet += "<b><i>You do not remember anything of your past lives, nor will you remember anything about this one after your death.</i></b>"
-	qareen_greet += "<b>Be sure to read our discord rules for antagonists to learn more.</b>"
-	qareen_greet += "<b>You are also able to telekinetically throw objects by clickdragging them.</b>"
+	qareen_greet += "<span class='deadsay'><span class='big bold'>Вы есть qareen.</span></span>" //Rough translation by Gardelin0
+	qareen_greet += "<b>Ваш прежде мирской дух был запитан инопланетной энергией и преобразован в qareen.</b>"
+	qareen_greet += "<b>Вы не являетесь ни живым, ни мёртвым, а чем-то посередине. Вы способны взаимодействовать с обоими мирами.</b>"
+	qareen_greet += "<b>Вы неуязвимы и невидимы для живых, но не для призраков.</b>"
+	qareen_greet += "<b><i>Вы ничего не помните о своих прошлых жизнях и ничего не вспомните о текущей после своей смерти.</i></b>"
+	qareen_greet += "<b>Не забывайте следовать правилам для антагонистов.</b>"
+	qareen_greet += "<b>Вы также можете телекинетически бросать предметы, перетаскивая их с помощью мыши.</b>"
 	to_chat(src, qareen_greet)
 	if(!generated_objectives_and_spells)
 		generated_objectives_and_spells = TRUE
@@ -122,7 +114,7 @@
 	if(stasis)
 		return
 	if(revealed && essence <= 0)
-		INVOKE_ASYNC(src, .proc/death)
+		INVOKE_ASYNC(src, PROC_REF(death))
 	if(unreveal_time && world.time >= unreveal_time)
 		unreveal_time = 0
 		revealed = FALSE
@@ -161,7 +153,7 @@
 /mob/living/simple_animal/qareen/med_hud_set_status()
 	return //we use no hud
 
-/mob/living/simple_animal/qareen/say(message, bubble_type, var/list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
+/mob/living/proc/qareen_talk(message, bubble_type, var/list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	if(!message)
 		return
 	src.log_talk(message, LOG_SAY)
@@ -204,7 +196,13 @@
 		adjustBruteLoss(25) //hella effective
 		inhibited = TRUE
 		update_action_buttons_icon()
-		addtimer(CALLBACK(src, .proc/reset_inhibit), 30)
+		addtimer(CALLBACK(src, PROC_REF(reset_inhibit)), 30)
+
+/datum/reagent/toxin/on_mob_life(mob/living/simple_animal/qareen/Q) //So the holy water will damage it! - Gardelin0
+	if(istype(Q))
+		Q.adjustFireLoss(4)
+		. = TRUE
+	..()
 
 /mob/living/simple_animal/qareen/proc/reset_inhibit()
 	inhibited = FALSE
@@ -364,7 +362,7 @@
 	icon = 'modular_splurt/icons/effects/effects.dmi'
 	icon_state = "qareenEctoplasm"
 	w_class = WEIGHT_CLASS_SMALL
-	var/essence = 75 //the maximum essence of the reforming qareen
+	var/essence = 150 //the maximum essence of the reforming qareen
 	var/reforming = TRUE
 	var/inert = FALSE
 	var/old_key //key of the previous qareen, will have first pick on reform.
@@ -372,7 +370,7 @@
 
 /obj/item/ectoplasm/qareen/New()
 	..()
-	addtimer(CALLBACK(src, .proc/try_reform), 600)
+	addtimer(CALLBACK(src, PROC_REF(try_reform)), 600)
 
 /obj/item/ectoplasm/qareen/proc/scatter()
 	qdel(src)
@@ -456,9 +454,13 @@
 /obj/item/ectoplasm/qareen/Destroy()
 	if(!QDELETED(qareen))
 		qdel(qareen)
-	return ..()
+	..()
 
+/* BlueMoon Edit Start: Qareens are stated to be able to do this too so I'm fixing this - Flauros
 /mob/living/simple_animal/qareen/proc/qareenThrow(over, mob/user, obj/item/throwable)
+*/
+/proc/QareenThrow(over, mob/user, obj/item/throwable)
+// BlueMoon Edit End
 	var/mob/living/simple_animal/qareen/spooker = user
 	if(!istype(throwable))
 		return
@@ -481,7 +483,7 @@
 		log_combat(throwable, over, "spooky telekinesised at", throwable)
 		var/obj/effect/temp_visual/telekinesis/T = new(get_turf(throwable))
 		T.color = "#8715b4"
-		addtimer(CALLBACK(spooker, /mob/living/simple_animal/qareen.proc/telekinesis_cooldown_end), 50)
+		addtimer(CALLBACK(spooker, TYPE_PROC_REF(/mob/living/simple_animal/qareen, telekinesis_cooldown_end)), 50)
 		sleep(5)
 		throwable.float(FALSE, TRUE)
 
@@ -490,40 +492,36 @@
 /obj/item/proc/DoQareenThrowEffects(atom/target)
 	return TRUE
 
-//objectives
-/datum/objective/qareen
-	var/targetAmount = 100
-
-/datum/objective/qareen/New()
-	targetAmount = rand(150,300)
-	explanation_text = "Absorb [targetAmount] of essence from this sector of space."
-	..()
-
-/datum/objective/qareen/check_completion()
-	if(!isqareen(owner.current))
-		return FALSE
-	var/mob/living/simple_animal/qareen/R = owner.current
-	if(!R || R.stat == DEAD)
-		return FALSE
-	var/essence_stolen = R.essence_accumulated
-	if(essence_stolen < targetAmount)
-		return FALSE
-	return TRUE
-
-/datum/objective/qareenFluff
-
-/datum/objective/qareenFluff/New()
-	var/list/explanationTexts = list("Assist and exacerbate existing threats at critical moments.", \
-									 "Avoid sucking up essence in plain sight.", \
-									 "Cause as much bliss and chaos as you can without being caught or killed.", \
-									 "Modify and render as much of the station rusted and essennce covered as possible.", \
-									 "Curse the crew while attempting to avoid being attacked.", \
-									 "Make the crew as horny as possible.", \
-									 "Make the clown as horny as possible.", \
-									 "Make the captain as horny as possible.", \
-	)
-	explanation_text = pick(explanationTexts)
-	..()
-
-/datum/objective/qareenFluff/check_completion()
-	return TRUE
+//objectives		Reserved for later. - Gardelin0
+//datum/objective/qareen
+//	var/targetAmount = 100
+//
+//datum/objective/qareen/New()
+//	targetAmount = rand(150,300)
+//	explanation_text = "Absorb [targetAmount] of essence from this sector of space."
+//	..()
+//
+//datum/objective/qareen/check_completion()
+//	if(!isqareen(owner.current))
+//		return FALSE
+//	var/mob/living/simple_animal/qareen/R = owner.current
+//	if(!R || R.stat == DEAD)
+//		return FALSE
+//	var/essence_stolen = R.essence_accumulated
+//	if(essence_stolen < targetAmount)
+//		return FALSE
+//	return TRUE
+//
+//datum/objective/qareenFluff
+//
+//datum/objective/qareenFluff/New()
+//	var/list/explanationTexts = list("Избегайте высасывания эссенции у всех на виду.",
+//									 "Распространите заболевание похоти на тех, кого можете.",
+//									 "Оставьте на полу как можно больше следов любовных жидкостей.",
+//									 "Возбудите всех, кого можете.",
+//	)
+//	explanation_text = pick(explanationTexts)
+//	..()
+//
+//datum/objective/qareenFluff/check_completion()
+//	return TRUE

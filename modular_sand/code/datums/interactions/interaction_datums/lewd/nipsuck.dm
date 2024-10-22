@@ -1,140 +1,106 @@
 /datum/interaction/lewd/nipsuck
-	description = "Рот. Пососать соски."
-	require_target_breasts = REQUIRE_EXPOSED
-	require_user_mouth = TRUE
+	description = "Грудь. Пососать соски."
+	required_from_user = INTERACTION_REQUIRE_MOUTH
+	required_from_target_exposed = INTERACTION_REQUIRE_BREASTS
 	write_log_user = "sucked nipples"
 	write_log_target = "had their nipples sucked by"
 	interaction_sound = null
-	max_distance = 1
+	p13target_emote = PLUG13_EMOTE_BREASTS
 
 /datum/interaction/lewd/nipsuck/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
-	if((user.a_intent == INTENT_HELP) || (user.a_intent == INTENT_DISARM))
-		user.visible_message(
-				pick("<span class='lewd'>\The <b>[user]</b> аккуратно хватается за грудь партнёра и нежно обсасывает [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
-					"<span class='lewd'>\The <b>[user]</b> поглаживает грудь партнёра, аккуратно хватаясь своими губами за [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
-					"<span class='lewd'>\The <b>[user]</b> в улыбке облизывает [pick("сосок", "соски")] \the <b>[target]</b> и усмехается.</span>"))
-		if(target.has_breasts(REQUIRE_EXPOSED))
-			var/modifier = 1
-			var/obj/item/organ/genital/breasts/B = target.getorganslot(ORGAN_SLOT_BREASTS)
-			if(B.climaxable(target, TRUE))
-				switch(B.size)
-					if("c", "d", "e")
-						modifier = 2
-					if("f", "g", "h")
-						modifier = 3
-					else
-						if(B.size in GLOB.breast_values)
-							modifier = clamp(GLOB.breast_values[B.size] - 5, 0, INFINITY)
-						else
-							modifier = 1
-				if(B.fluid_id)
-					user.reagents.add_reagent(B.fluid_id, rand(1,2 * modifier) * user.get_fluid_mod(B)) //SPLURT edit
+	var/user_message
+	var/amount_high = 2
 
-	if(user.a_intent == INTENT_HARM)
-		user.visible_message(
-				pick("<span class='lewd'>\The <b>[user]</b> с силой обхватывает грудь партнёра и грубо посасывает [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
-					"<span class='lewd'>\The <b>[user]</b> хватается губами за [pick("сосок", "соски")], касается зубками \the <b>[target]</b>'s и начинает грубо посасывать.</span>"))
-		if(target.has_breasts(REQUIRE_EXPOSED))
-			var/modifier = 1
-			var/obj/item/organ/genital/breasts/B = target.getorganslot(ORGAN_SLOT_BREASTS)
-			if(B.climaxable(target, TRUE))
-				switch(B.size)
-					if("c", "d", "e")
-						modifier = 2
-					if("f", "g", "h")
-						modifier = 3
-					else
-						if(B.size in GLOB.breast_values)
-							modifier = clamp(GLOB.breast_values[B.size] - 5, 0, INFINITY)
-						else
-							modifier = 1
-				if(B.fluid_id)
-					user.reagents.add_reagent(B.fluid_id, rand(1,3 * modifier)) //aggressive sucking leads to high rewards
-
-	if(user.a_intent == INTENT_GRAB)
-		user.visible_message(
-				pick("<span class='lewd'>\The <b>[user]</b> крепко обхватывает грудь партнёра и активно обсасывает [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
-					"<span class='lewd'>\The <b>[user]</b> поглаживает грудь партнёра и крепко хватается своими губами за [pick("сосок", "соски")] \the <b>[target]</b>.</span>",
-					"<span class='lewd'>\The <b>[user]</b> игриво облизывает [pick("сосок", "соски")] \the <b>[target]</b> и ехидно ухмыляется.</span>"))
-		if(target.has_breasts(REQUIRE_EXPOSED))
-			var/modifier = 1
-			var/obj/item/organ/genital/breasts/B = target.getorganslot(ORGAN_SLOT_BREASTS)
-			if(B.climaxable(target, TRUE))
-				switch(B.size)
-					if("c", "d", "e")
-						modifier = 2
-					if("f", "g", "h")
-						modifier = 3
-					else
-						if(B.size in GLOB.breast_values)
-							modifier = clamp(GLOB.breast_values[B.size] - 5, 0, INFINITY)
-						else
-							modifier = 1
-				if(B.fluid_id)
-					user.reagents.add_reagent(B.fluid_id, rand(1,3 * modifier)) //aggressive sucking leads to high rewards
+	switch(user.a_intent)
+		if(INTENT_HELP, INTENT_DISARM)
+			user_message = pick(span_lewd("<b>[user]</b> осторожно обсасывает [pick("сосок", "соски")] <b>[target]</b>"),
+							span_lewd("<b>[user]</b> аккуратно хватается ртом за [pick("сосок", "соски")] <b>[target]</b>"),
+							span_lewd("<b>[user]</b> лижет [pick("сосок", "соски")] <b>[target]</b>"),
+							span_lewd("<b>[user]</b> облизывает [pick("сосок", "соски")] <b>[target]</b>"))
+		if(INTENT_HARM)
+			amount_high = 3 // aggressive sucking has higher rewards
+			user_message = pick(span_lewd("<b>[user]</b> кусает [pick("сосок", "соски")] <b>[target]</b>"),
+							span_lewd("<b>[user]</b> грубо всасывает [pick("сосок", "соски")] <b>[target]</b>"),
+							span_lewd("<b>[user]</b> грубо обсасывает [pick("сосок", "соски")] <b>[target]</b>"))
+		if(INTENT_GRAB)
+			amount_high = 3 // aggressive sucking has higher rewards
+			user_message = pick(span_lewd("<b>[user]</b> активно сосёт [pick("сосок", "соски")] <b>[target]</b>"),
+							span_lewd("<b>[user]</b> с силой втягивает в свой рот [pick("сосок", "соски")] <b>[target]</b>"),
+							span_lewd("<b>[user]</b> крепко держит грудь <b>[target]</b> и обсасывает [pick("сосок", "соски")]"))
+	user.visible_message(user_message)
+	var/has_breasts = target.has_breasts()
+	if(has_breasts == TRUE || has_breasts == HAS_EXPOSED_GENITAL)
+		var/obj/item/organ/genital/breasts/B = target.getorganslot(ORGAN_SLOT_BREASTS)
+		var/modifier = B?.get_lactation_amount_modifier() || 1
+		if(B?.fluid_id)
+			var/milktype = B?.fluid_id
+			var/datum/reagent/milk = find_reagent_object_from_type(milktype)
+			var/milktext = milk.name //So you know what are you drinking. - Gardelin0
+			user.reagents.add_reagent(B.fluid_id, rand(1,amount_high * modifier) * user.get_fluid_mod(B))
+			user_message += ", вытягивая <b>'[lowertext(milktext)]'</b>."
 
 	if(prob(5 + target.get_lust()))
-		if(target.a_intent == INTENT_HELP)
-			user.visible_message(
-				pick("<span class='lewd'>\The <b>[target]</b> дрожит от возбуждения.</span>",
-					"<span class='lewd'>\The <b>[target]</b> тихо стонет.</span>",
-					"<span class='lewd'>\The <b>[target]</b> выдыхает тихий довольный стон.</span>",
-					"<span class='lewd'>\The <b>[target]</b> мурлычет и звучно вздыхает.</span>",
-					"<span class='lewd'>\The <b>[target]</b> тихонько вздрагивает.</span>",
-					"<span class='lewd'>\The <b>[target]</b> возбуждённо проводит пальцем вдоль своей груди.</span>",
-					"<span class='lewd'>\The <b>[target]</b> дрожит от возбуждения и довольно выдыхает, когда \the <b>[user]</b> наслаждается содержимым грудей.</span>"))
-			target.handle_post_sex(LOW_LUST, null, user, ORGAN_SLOT_BREASTS)
-		if(target.a_intent == INTENT_DISARM)
-			if (target.restrained())
+		switch(target.a_intent)
+			if(INTENT_HELP)
 				if(!target.has_breasts())
 					user.visible_message(
-						pick("<span class='lewd'>\The <b>[target]</b> игриво извивается в попытке снять физические ограничения.</span>",
-							"<span class='lewd'>\The <b>[target]</b> хихикает, вырываясь из рук <b>[user]</b>.</span>",
-							"<span class='lewd'>\The <b>[target]</b> скользит в сторону от приближающегося <b>[user]</b>.</span>",
-							"<span class='lewd'>\The <b>[target]</b> с отсутствующим сопротивлением толкает обнажённую грудь вперёд в руки <b>[user]</b>.</span>.</span>"))
+						pick(span_lewd("<b>[target]</b> дрожит от возбуждения."),
+							span_lewd("<b>[target]</b> тихо стонет."),
+							span_lewd("<b>[target]</b> довольно постанывает."),
+							span_lewd("<b>[target]</b> задыхается в удовольствии."),
+							span_lewd("<b>[target]</b> тихонько вздрагивает.")))
 				else
 					user.visible_message(
-						pick("<span class='lewd'>\The <b>[target]</b> игриво бьёт <b>[user]</b> по руке.</span>",
-							"<span class='lewd'>\The <b>[target]</b> хихикает, вырываясь из рук <b>[user]</b>.</span>",
-							"<span class='lewd'>\The <b>[target]</b> нежно проводит рукой <b>[user]</b>'s вдоль обнажённых грудей.</span>",
-							"<span class='lewd'>\The <b>[target]</b> толкает обнажённую грудь вперёд и дразняще проводит несколькими пальцами <b>[user]</b> по своему соску.</span>"))
-			else
-				if(!target.has_breasts())
-					user.visible_message(
-						pick("<span class='lewd'>\The <b>[target]</b> игриво извивается в попытке снять физические ограничения.</span>",
-							"<span class='lewd'>\The <b>[target]</b> хихикает, вырываясь из рук <b>[user]</b>.</span>",
-							"<span class='lewd'>\The <b>[target]</b> скользит в сторону от приближающегося <b>[user]</b>.</span>",
-							"<span class='lewd'>\The <b>[target]</b> с отсутствующим сопротивлением толкает обнажённую грудь вперёд в руки <b>[user]</b>.</span>.</span>"))
+						pick(span_lewd("<b>[target]</b> дрожит от возбуждения."),
+							span_lewd("<b>[target]</b> тихо стонет."),
+							span_lewd("<b>[target]</b> довольно постанывает."),
+							span_lewd("<b>[target]</b> задыхается в удовольствии."),
+							span_lewd("<b>[target]</b> тихонько вздрагивает.")))
+				if(target.get_lust() < 5)
+					target.handle_post_sex(5, CUM_TARGET_MOUTH, user, ORGAN_SLOT_BREASTS) //SPLURT edit
+			if(INTENT_DISARM)
+				if (target.restrained())
+					if(!target.has_breasts())
+						user.visible_message(
+							pick(span_lewd("<b>[target]</b> игриво извивается, будучи в физических ограничениях."),
+								span_lewd("<b>[target]</b> игриво вырывается из захвата <b>[user]</b>."),
+								span_lewd("<b>[target]</b> игриво отводит грудь от <b>[user]</b>."),
+								span_lewd("<b>[target]</b> с отсутствующим сопротивлением толкается ближе к <b>[user]</b>.")))
+					else
+						user.visible_message(
+							pick(span_lewd("<b>[target]</b> игриво извивается, будучи в физических ограничениях."),
+								span_lewd("<b>[target]</b> игриво вырывается из захвата <b>[user]</b>."),
+								span_lewd("<b>[target]</b> игриво отводит грудь от <b>[user]</b>."),
+								span_lewd("<b>[target]</b> с отсутствующим сопротивлением толкается ближе к <b>[user]</b>.")))
 				else
-					user.visible_message(
-						pick("<span class='lewd'>\The <b>[target]</b> игриво бьёт <b>[user]</b> по руке.</span>",
-							"<span class='lewd'>\The <b>[target]</b> хихикает, вырываясь из рук <b>[user]</b>.</span>",
-							"<span class='lewd'>\The <b>[target]</b> нежно проводит рукой <b>[user]</b>'s вдоль обнажённых грудей.</span>",
-							"<span class='lewd'>\The <b>[target]</b> толкает обнажённую грудь вперёд и дразняще проводит несколькими пальцами <b>[user]</b> по своему соску.</span>"))
-			target.handle_post_sex(LOW_LUST, null, user, ORGAN_SLOT_BREASTS)
-	if(target.a_intent == INTENT_GRAB)
-		user.visible_message(
-				pick("<span class='lewd'>\The <b>[target]</b> крепко сжимает запястье <b>[user]</b>.</span>",
-				"<span class='lewd'>\The <b>[target]</b> впивается ногтями в руку <b>[user]</b>.</span>",
-				"<span class='lewd'>\The <b>[target]</b> хватает <b>[user]</b> за запястье буквально на секунду.</span>"))
-	if(target.a_intent == INTENT_HARM)
-		if (target.restrained())
-			user.adjustBruteLoss(5)
-			user.visible_message(
-				pick("<span class='lewd'>\The <b>[target]</b> грубо отталкивает <b>[user]</b> в попытке снять физические огранения.</span>",
-					"<span class='lewd'>\The <b>[target]</b> сердито впивается в руку <b>[user]</b>.</span>",
-					"<span class='lewd'>\The <b>[target]</b> яростно борется с <b>[user]</b> и щёлкает своей челюсть в попытке укусить.</span>",
-					"<span class='lewd'>\The <b>[target]</b> впивается в предплечье <b>[user]</b> роговыми пластинками.</span>",
-					"<span class='lewd'>\The <b>[target]</b> шлёпает <b>[user]</b> по руке.</span>"))
-		else
-			user.adjustBruteLoss(5)
-			user.visible_message(
-				pick("<span class='lewd'>\The <b>[target]</b> грубо отталкивает <b>[user]</b>.</span>",
-				"<span class='lewd'>\The <b>[target]</b> сердито впивается в руку <b>[user]</b>.</span>",
-				"<span class='lewd'>\The <b>[target]</b> яростно борется с <b>[user]</b> и щёлкает своей челюсть в попытке укусить.</span>",
-				"<span class='lewd'>\The <b>[target]</b> впивается в предплечье <b>[user]</b> роговыми пластинками.</span>",
-				"<span class='lewd'>\The <b>[target]</b> шлёпает <b>[user]</b> по руке.</span>"))
-
+					if(!target.has_breasts())
+						user.visible_message(
+							pick(span_lewd("<b>[target]</b> игриво извивается."),
+								span_lewd("<b>[target]</b> игриво вырывается из захвата <b>[user]</b>."),
+								span_lewd("<b>[target]</b> игриво отводит грудь от <b>[user]</b>."),
+								span_lewd("<b>[target]</b> с отсутствующим сопротивлением толкается ближе к <b>[user]</b>.")))
+					else
+						user.visible_message(
+							pick(span_lewd("<b>[target]</b> игриво извивается."),
+								span_lewd("<b>[target]</b> игриво вырывается из захвата <b>[user]</b>."),
+								span_lewd("<b>[target]</b> игриво отводит грудь от <b>[user]</b>"),
+								span_lewd("<b>[target]</b> с отсутствующим сопротивлением толкается ближе к <b>[user]</b>")))
+				if(target.get_lust() < 10)
+					target.handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, user, ORGAN_SLOT_BREASTS) //SPLURT edit
+			if(INTENT_GRAB)
+				user.visible_message(
+						pick(span_lewd("<b>[target]</b> крепко сжимает запястье <b>[user]</b>."),
+						span_lewd("<b>[target]</b> впивается ногтями в кожный покров <b>[user]</b>."),
+						span_lewd("<b>[target]</b> мешает всяческой деятельности <b>[user]</b>.")))
+			if(INTENT_HARM)
+				user.adjustBruteLoss(rand(1, 4))
+				user.visible_message(
+						pick(span_lewd("<b>[target]</b> грубо отталкивает <b>[user]</b>."),
+						span_lewd("<b>[target]</b> сердито впивается в руку <b>[user]</b>."),
+						span_lewd("<b>[target]</b> сопротивляется всяческой деятельности <b>[user]</b>."),
+						span_lewd("<b>[target]</b> демонстративно щёлкает своей челюстью перед <b>[user]</b>."),
+						span_lewd("<b>[target]</b> царапает <b>[user]</b>."),
+						span_lewd("<b>[target]</b> шлёпает <b>[user]</b>.")))
 	target.dir = get_dir(target, user)
 	user.dir = get_dir(user, target)
 	playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/oral1.ogg',

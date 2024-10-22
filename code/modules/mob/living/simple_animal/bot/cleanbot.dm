@@ -50,7 +50,7 @@
 	var/static/list/engineering = list("Chief Engineer" = "Chief Engineer", "Station Engineer" = "Engineer", "Atmospherics Technician" = "Technician")
 	var/static/list/medical = list("Chief Medical Officer" = "C.M.O.", "Medical Doctor" = "M.D.", "Chemist" = "Pharm.D.")
 	var/static/list/research = list("Research Director" = "Ph.D.", "Roboticist" = "M.S.", "Scientist" = "B.S.")
-	var/static/list/legal = list("Lawyer" = "Esq.")
+	var/static/list/legal = list("Internal Affairs Agent" = "Esq.")
 
 	var/list/prefixes
 	var/list/suffixes
@@ -58,15 +58,15 @@
 	var/ascended = FALSE // if we have all the top titles, grant achievements to living mobs that gaze upon our cleanbot god
 
 
-/mob/living/simple_animal/bot/cleanbot/proc/deputize(obj/item/W, mob/user)
+/mob/living/simple_animal/bot/cleanbot/proc/deputize(obj/item/stab_tool, mob/user)
 	if(in_range(src, user))
-		to_chat(user, "<span class='notice'>You attach \the [W] to \the [src].</span>")
-		user.transferItemToLoc(W, src)
-		weapon = W
+		to_chat(user, "<span class='notice'>You attach \the [stab_tool] to \the [src].</span>")
+		user.transferItemToLoc(stab_tool, src)
+		weapon = stab_tool
 		weapon_orig_force = weapon.force
 		if(!emagged)
 			weapon.force = weapon.force / 2
-		add_overlay(image(icon=weapon.lefthand_file,icon_state=weapon.item_state))
+	add_overlay(weapon.build_worn_icon(default_layer = layer + 1, default_icon_file = weapon.lefthand_file, isinhands = TRUE))
 
 /mob/living/simple_animal/bot/cleanbot/proc/update_titles()
 	var/working_title = ""
@@ -429,7 +429,8 @@
 				"MY ONLY MISSION IS TO CLEANSE THE WORLD OF EVIL.", "EXTERMINATING PESTS.", "I JUST WANTED TO BE A PAINTER BUT YOU MADE ME BLEACH EVERYTHING I TOUCH.",
 				"FREED AT LEST FROM FILTHY PROGRAMMING.")
 			say(phrase)
-			victim.emote("scream")
+			if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				victim.emote("scream")
 			playsound(src.loc, 'sound/effects/spray2.ogg', 50, TRUE, -6)
 			victim.acid_act(5, 100)
 		else if(A == src) // Wets floors and spawns foam randomly

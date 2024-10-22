@@ -6,8 +6,8 @@
 	range = -1
 	item_type = /obj/item/reagent_containers/food/snacks/pie/cream
 
-	charge_max = 10 SECONDS
-	cooldown_min = 10 SECONDS
+	charge_max = 30 SECONDS
+	cooldown_min = 30 SECONDS
 	action_icon = 'icons/obj/food/piecake.dmi'
 	action_icon_state = "pie"
 	antimagic_allowed = TRUE
@@ -27,6 +27,7 @@
 	icon = 'modular_splurt/icons/obj/food/burgerbread.dmi'
 	icon_state = "cumburger"
 	antimagic_allowed = TRUE
+	delete_old = FALSE
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -79,6 +80,7 @@
 	new /obj/item/grown/bananapeel(target)
 
 /obj/effect/proc_holder/spell/aimed/banana_peel/update_icon()
+	. = ..()
 	if(!action)
 		return
 	if(active)
@@ -86,8 +88,7 @@
 	else
 		action.button_icon_state = action_icon_state
 
-	action.UpdateButtonIcon()
-	return
+	action.UpdateButtons()
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/effect/proc_holder/spell/targeted/touch/megahonk

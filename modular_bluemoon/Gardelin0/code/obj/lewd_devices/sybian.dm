@@ -8,6 +8,7 @@
 	var/intencity
 	var/on = 0
 	item_chair = null // нельзя брать в руки
+	flags_1 = NODECONSTRUCT_1
 
 /obj/structure/chair/sybian/New()
 	..()
@@ -50,6 +51,7 @@
 		for(var/m in buckled_mobs)
 			var/mob/living/carbon/human/M = m
 			M.handle_post_sex(intencity, null, src)
+			M.client?.plug13.send_emote(pick(PLUG13_EMOTE_GROIN, PLUG13_EMOTE_ANUS), min(intencity * 5, 100), PLUG13_DURATION_NORMAL)
 			switch(mode)
 				if("low")
 					playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/lewd/toys/devicevibrator[rand(1, 3)].ogg", 30, 1)
@@ -66,8 +68,14 @@
 						M.emote("moan")
 
 /obj/structure/chair/sybian/attackby(obj/item/used_item, mob/user, params)
-	if(istype(used_item, /obj/item/screwdriver))
+	if(used_item.tool_behaviour == TOOL_WRENCH)
+		to_chat(user, "<span class='notice'>You begin to [anchored ? "unwrench" : "wrench"] [src].</span>")
+		if(used_item.use_tool(src, user, 20, volume=30))
+			to_chat(user, "<span class='notice'>You successfully [anchored ? "unwrench" : "wrench"] [src].</span>")
+			setAnchored(!anchored)
+	else if(istype(used_item, /obj/item/screwdriver))
 		to_chat(user, span_notice("You unscrew the frame and begin to deconstruct it..."))
+		playsound(loc, "'sound/items/screwdriver.ogg'", 30, 1)
 		if(used_item.use_tool(src, user, 8 SECONDS, volume = 50))
 			to_chat(user, span_notice("You disassemble it."))
 			new /obj/item/sybian_kit (src.loc)
@@ -89,6 +97,7 @@
 	if(istype(used_item, /obj/item/screwdriver))
 		if (!(item_flags & IN_INVENTORY) && !(item_flags & IN_STORAGE))
 			to_chat(user, span_notice("You screw the frame to the floor and begin to construct it..."))
+			playsound(loc, "'sound/items/screwdriver.ogg'", 30, 1)
 			if(used_item.use_tool(src, user, 8 SECONDS, volume = 50))
 				to_chat(user, span_notice("You assemble it."))
 				new /obj/structure/chair/sybian (src.loc)

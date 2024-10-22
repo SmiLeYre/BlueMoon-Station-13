@@ -123,7 +123,7 @@
 
 /obj/item/clockwork/slab/dropped(mob/user)
 	. = ..()
-	addtimer(CALLBACK(src, .proc/check_on_mob, user), 1) //dropped is called before the item is out of the slot, so we need to check slightly later
+	addtimer(CALLBACK(src, PROC_REF(check_on_mob), user), 1) //dropped is called before the item is out of the slot, so we need to check slightly later
 
 /obj/item/clockwork/slab/worn_overlays(isinhands = FALSE, icon_file, used_state, style_flags = NONE)
 	. = ..()
@@ -167,7 +167,7 @@
 		user.visible_message("<span class='warning'>A sizzling sound comes from [user]'s hands!</span>", "<span class='userdanger'>[src] suddenly grows extremely hot in your hands!</span>")
 		playsound(get_turf(user), 'sound/weapons/sear.ogg', 50, 1)
 		user.dropItemToGround(src)
-		user.emote("scream")
+		user.emote("realagony")
 		user.apply_damage(5, BURN, BODY_ZONE_L_ARM)
 		user.apply_damage(5, BURN, BODY_ZONE_R_ARM)
 		return FALSE
@@ -358,7 +358,7 @@
 			recollecting = !recollecting
 			. = TRUE
 		if("recite")
-			INVOKE_ASYNC(src, .proc/recite_scripture, text2path(params["script"]), usr, FALSE)
+			INVOKE_ASYNC(src, PROC_REF(recite_scripture), text2path(params["script"]), usr, FALSE)
 			. = TRUE
 		if("bind")
 			var/datum/clockwork_scripture/path = text2path(params["script"]) //we need a path and not a string
@@ -411,6 +411,6 @@
 			Q.name = "[quickbind_slot.name] ([Q.scripture_index])"
 			Q.desc = quickbind_slot.quickbind_desc
 			Q.button_icon_state = quickbind_slot.name
-			Q.UpdateButtonIcon()
+			Q.UpdateButtons()
 			if(isliving(loc))
 				Q.Grant(loc)

@@ -750,7 +750,6 @@
 	pixel_y = 8;
 	name = "Radio Broadcaster"
 	},
-/obj/machinery/spaceship_navigation_beacon/invion,
 /turf/closed/wall,
 /area/ruin/space/radiostation/control_room)
 "Rm" = (

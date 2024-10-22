@@ -15,7 +15,7 @@
 	restricted = TRUE
 	//
 
-	flags = TONGUELESS_SPEECH | LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD // Hide the icon next to your text if someone doesn't know this language.
+	flags =  LANGUAGE_HIDE_ICON_IF_NOT_UNDERSTOOD // Hide the icon next to your text if someone doesn't know this language. (TONGUELESS_SPEECH bluemoon change)
 	syllables = list(
 		"luk","cha","no","kra","pru","chi","busi","tam","pol","spu","och",		// Start: Vampiric
 		"umf","ora","stu","si","ri","li","ka","red","ani","lup","ala","pro",

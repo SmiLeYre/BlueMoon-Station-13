@@ -31,6 +31,12 @@ GLOBAL_LIST_INIT(marker_beacon_colors, list(
 /obj/item/stack/marker_beacon/thirty //and they're bought in stacks of 1, 10, or 30
 	amount = 30
 
+/obj/item/stack/marker_beacon/cyborg
+	is_cyborg = TRUE
+	custom_materials = null
+	source = /datum/robot_energy_storage/beacon
+	cost = 1
+
 /obj/item/stack/marker_beacon/Initialize(mapload)
 	. = ..()
 	update_icon()
@@ -83,7 +89,8 @@ GLOBAL_LIST_INIT(marker_beacon_colors, list(
 
 /obj/structure/marker_beacon/Initialize(mapload, set_color)
 	. = ..()
-	picked_color = set_color
+	if(set_color)
+		picked_color = set_color
 	update_icon()
 
 /obj/structure/marker_beacon/deconstruct(disassembled = TRUE)
@@ -98,9 +105,10 @@ GLOBAL_LIST_INIT(marker_beacon_colors, list(
 	. += "<span class='notice'>Alt-click to select a color. Current color is [picked_color].</span>"
 
 /obj/structure/marker_beacon/update_icon()
+	. = ..()
 	while(!picked_color || !GLOB.marker_beacon_colors[picked_color])
 		picked_color = pick(GLOB.marker_beacon_colors)
-	icon_state = "[initial(icon_state)][lowertext(picked_color)]-on"
+	icon_state = "marker[lowertext(picked_color)]-on"
 	set_light(light_range, light_power, GLOB.marker_beacon_colors[picked_color])
 
 /obj/structure/marker_beacon/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)

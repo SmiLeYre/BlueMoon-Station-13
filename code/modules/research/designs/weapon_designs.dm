@@ -38,7 +38,7 @@
 	build_path = /obj/item/ammo_box/c38/hotshot
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/c38_iceblox
 	name = "Speed Loader (.38 Iceblox)"
@@ -49,7 +49,7 @@
 	build_path = /obj/item/ammo_box/c38/iceblox
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_RED
 
 //////////////////
 //Mag-Rifle Mags//
@@ -72,7 +72,7 @@
 	id = "mag_magrifle_nl"
 	materials = list(/datum/material/iron = 6000, /datum/material/silver = 500, /datum/material/titanium = 500)
 	build_path = /obj/item/ammo_box/magazine/mmag
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/mag_magpistol
 	name = "Magpistol Magazine"
@@ -91,7 +91,7 @@
 	id = "mag_magpistol_nl"
 	materials = list(/datum/material/iron = 3000, /datum/material/silver = 250, /datum/material/titanium = 250)
 	build_path = /obj/item/ammo_box/magazine/mmag/small
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_BLUE
 
 //////////////
 //WT550 Mags//
@@ -115,7 +115,7 @@
 	materials = list(/datum/material/iron = 6000, /datum/material/silver = 600)
 	build_path = /obj/item/ammo_box/magazine/wt550m9/wtap
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mag_oldsmg/ic_mag
 	name = "WT-550 Semi-Auto SMG Incendiary Magazine (4.6x30mm IC)"
@@ -124,6 +124,7 @@
 	materials = list(/datum/material/iron = 6000, /datum/material/silver = 600, /datum/material/glass = 1000)
 	build_path = /obj/item/ammo_box/magazine/wt550m9/wtic
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/mag_oldsmg/tx_mag
 	name = "WT-550 Semi-Auto SMG Uranium Magazine (4.6x30mm TX)"
@@ -155,46 +156,49 @@
 	build_path = /obj/item/ammo_box/shotgun
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/beanbag_slug/sec
 	id = "sec_beanbag"
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/rubbershot/sec
 	id = "sec_rshot"
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/shotgun_slug/sec
 	id = "sec_slug"
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/buckshot_shell/sec
 	id = "sec_bshot"
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_BLUE
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/shotgun_dart/sec
 	id = "sec_dart"
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_BLUE
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/incendiary_slug/sec
 	id = "sec_islug"
 	build_type = PROTOLATHE
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_RED
 
 /datum/design/stunshell
 	name = "Stun Shell"
@@ -205,6 +209,7 @@
 	build_path = /obj/item/ammo_casing/shotgun/stunslug
 	category = list("Ammo")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/techshell
 	name = "Unloaded Technological Shotshell"
@@ -225,8 +230,8 @@
 	materials = list(/datum/material/iron = 3500)
 	build_path = /obj/item/ammo_casing/shotgun/dart/noreact
 	category = list("Ammo")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-	min_security_level = SEC_LEVEL_AMBER
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE
 
 //////////////
 //Firing Pins/
@@ -241,6 +246,7 @@
 	build_path = /obj/item/firing_pin/test_range
 	category = list("Firing Pins")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_GREEN
 
 /datum/design/pin_mindshield
 	name = "Mindshield Firing Pin"
@@ -251,6 +257,7 @@
 	build_path = /obj/item/firing_pin/implant/mindshield
 	category = list("Firing Pins")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/pin_explorer
 	name = "Outback Firing Pin"
@@ -261,6 +268,7 @@
 	build_path = /obj/item/firing_pin/explorer
 	category = list("Firing Pins")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE
 
 //////////////
 //Guns////////
@@ -272,10 +280,17 @@
 	id = "lasercarbine"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 15000, /datum/material/glass = 10000, /datum/material/gold = 2500, /datum/material/silver = 2500)
-	build_path = /obj/item/gun/energy/laser/carbine/nopin
+	build_path = /obj/item/storage/lockbox/weapon
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_RED
+
+/obj/item/storage/lockbox/weapon
+	name = "Lockbox with Laser Carbine"
+	req_access = list(ACCESS_ARMORY)
+
+/obj/item/storage/lockbox/weapon/PopulateContents()
+	new /obj/item/gun/energy/laser/carbine/nopin(src)
 
 /datum/design/stunrevolver
 	name = "Tesla Revolver"
@@ -283,10 +298,16 @@
 	id = "stunrevolver"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 10000, /datum/material/silver = 10000)
-	build_path = /obj/item/gun/energy/tesla_revolver
+	build_path = /obj/item/storage/lockbox/weapon/tesla_revolver
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_RED
+
+/obj/item/storage/lockbox/weapon/tesla_revolver
+	name = "Lockbox with Tesla Revolver"
+
+/obj/item/storage/lockbox/weapon/tesla_revolver/PopulateContents()
+	new /obj/item/gun/energy/tesla_revolver(src)
 
 /datum/design/nuclear_gun
 	name = "Advanced Energy Gun"
@@ -294,10 +315,16 @@
 	id = "nuclear_gun"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000, /datum/material/uranium = 3000, /datum/material/titanium = 1000)
-	build_path = /obj/item/gun/energy/e_gun/nuclear
+	build_path = /obj/item/storage/lockbox/weapon/nuclear_gun
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_RED
+
+/obj/item/storage/lockbox/weapon/nuclear_gun
+	name = "Lockbox with Advanced Energy Gun"
+
+/obj/item/storage/lockbox/weapon/nuclear_gun/PopulateContents()
+	new /obj/item/gun/energy/e_gun/nuclear(src)
 
 /datum/design/beamrifle
 	name = "Beam Marksman Rifle"
@@ -305,10 +332,16 @@
 	id = "beamrifle"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 10000, /datum/material/glass = 5000, /datum/material/diamond = 5000, /datum/material/uranium = 8000, /datum/material/silver = 4500, /datum/material/gold = 5000)
-	build_path = /obj/item/gun/energy/beam_rifle
+	build_path = /obj/item/storage/lockbox/weapon/beamrifle
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_RED
+
+/obj/item/storage/lockbox/weapon/beamrifle
+	name = "Lockbox with Beam Marksman Rifle"
+
+/obj/item/storage/lockbox/weapon/beamrifle/PopulateContents()
+	new /obj/item/gun/energy/beam_rifle(src)
 
 /datum/design/decloner
 	name = "Decloner"
@@ -317,10 +350,16 @@
 	build_type = PROTOLATHE
 	materials = list(/datum/material/gold = 5000,/datum/material/uranium = 10000)
 	reagents_list = list(/datum/reagent/toxin/mutagen = 40)
-	build_path = /obj/item/gun/energy/decloner
+	build_path = /obj/item/storage/lockbox/weapon/decloner
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 	min_security_level = SEC_LEVEL_RED
+
+/obj/item/storage/lockbox/weapon/decloner
+	name = "Lockbox with Decloner"
+
+/obj/item/storage/lockbox/weapon/decloner/PopulateContents()
+	new /obj/item/gun/energy/decloner(src)
 
 /datum/design/rapidsyringe
 	name = "Rapid Syringe Gun"
@@ -328,10 +367,16 @@
 	id = "rapidsyringe"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 5000, /datum/material/glass = 1000)
-	build_path = /obj/item/gun/syringe/rapidsyringe
+	build_path = /obj/item/storage/lockbox/weapon/rapidsyringe
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_RED
+
+/obj/item/storage/lockbox/weapon/rapidsyringe
+	name = "Lockbox with Rapid Syringe Gun"
+
+/obj/item/storage/lockbox/weapon/rapidsyringe/PopulateContents()
+	new /obj/item/gun/syringe/rapidsyringe(src)
 
 /datum/design/temp_gun
 	name = "Temperature Gun"
@@ -339,20 +384,16 @@
 	id = "temp_gun"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/iron = 5000, /datum/material/glass = 500, /datum/material/silver = 3000)
-	build_path = /obj/item/gun/energy/temperature
+	build_path = /obj/item/storage/lockbox/weapon/temp_gun
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_RED
 
-/datum/design/flora_gun
-	name = "Floral Somatoray"
-	desc = "A tool that discharges controlled radiation which induces mutation in plant cells. Harmless to other organic life."
-	id = "flora_gun"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 2000, /datum/material/glass = 500, /datum/material/uranium = 2000)
-	build_path = /obj/item/gun/energy/floragun
-	category = list("Weapons")
-	departmental_flags = DEPARTMENTAL_FLAG_SERVICE | DEPARTMENTAL_FLAG_SCIENCE
+/obj/item/storage/lockbox/weapon/temp_gun
+	name = "Lockbox with Temperature Gun"
+
+/obj/item/storage/lockbox/weapon/temp_gun/PopulateContents()
+	new /obj/item/gun/energy/temperature(src)
 
 /datum/design/xray
 	name = "X-ray Laser Gun"
@@ -360,10 +401,16 @@
 	id = "xray_laser"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/gold = 5000, /datum/material/uranium = 4000, /datum/material/iron = 5000, /datum/material/titanium = 2000, /datum/material/bluespace = 2000)
-	build_path = /obj/item/gun/energy/xray
+	build_path = /obj/item/storage/lockbox/weapon/xray
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_RED
+
+/obj/item/storage/lockbox/weapon/xray
+	name = "Lockbox with X-ray Laser Gun"
+
+/obj/item/storage/lockbox/weapon/xray/PopulateContents()
+	new /obj/item/gun/energy/xray(src)
 
 /datum/design/ioncarbine
 	name = "Ion Carbine"
@@ -371,10 +418,67 @@
 	id = "ioncarbine"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/silver = 6000, /datum/material/iron = 8000, /datum/material/uranium = 2000)
-	build_path = /obj/item/gun/energy/ionrifle/carbine
+	build_path = /obj/item/storage/lockbox/weapon/ioncarbine
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	min_security_level = SEC_LEVEL_RED
+
+/obj/item/storage/lockbox/weapon/ioncarbine
+	name = "Lockbox with Ion Carbine"
+
+/obj/item/storage/lockbox/weapon/ioncarbine/PopulateContents()
+	new /obj/item/gun/energy/ionrifle/carbine(src)
+
+/datum/design/largecrossbow
+	name = "Energy Crossbow"
+	desc = "A reverse-engineered energy crossbow favored by syndicate infiltration teams and carp hunters."
+	id = "largecrossbow"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 5000, /datum/material/glass = 1500, /datum/material/uranium = 1500, /datum/material/silver = 1500)
+	build_path = /obj/item/storage/lockbox/weapon/largecrossbow
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_RED
+
+/obj/item/storage/lockbox/weapon/largecrossbow
+	name = "Lockbox with Energy Crossbow"
+
+/obj/item/storage/lockbox/weapon/largecrossbow/PopulateContents()
+	new /obj/item/gun/energy/kinetic_accelerator/crossbow/large(src)
+
+/datum/design/magpistol
+	name = "Magpistol"
+	desc = "A weapon which fires ferromagnetic slugs."
+	id = "magpistol"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 7500, /datum/material/glass = 1000, /datum/material/uranium = 1000, /datum/material/titanium = 5000, /datum/material/silver = 2000)
+	build_path = /obj/item/storage/lockbox/weapon/magpistol
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE
+
+/obj/item/storage/lockbox/weapon/magpistol
+	name = "Lockbox with Magpistol"
+
+/obj/item/storage/lockbox/weapon/magpistol/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/magrifle/pistol/nopin(src)
+
+/datum/design/magrifle
+	name = "Magrifle"
+	desc = "An upscaled Magpistol in rifle form."
+	id = "magrifle"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000, /datum/material/uranium = 2000, /datum/material/titanium = 10000, /datum/material/silver = 4000, /datum/material/gold = 2000)
+	build_path = /obj/item/storage/lockbox/weapon/magrifle
+	category = list("Weapons")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE
+
+/obj/item/storage/lockbox/weapon/magrifle
+	name = "Lockbox with Magrifle"
+
+/obj/item/storage/lockbox/weapon/magrifle/PopulateContents()
+	new /obj/item/gun/ballistic/automatic/magrifle/nopin(src)
 
 /datum/design/wormhole_projector
 	name = "Bluespace Wormhole Projector"
@@ -396,38 +500,15 @@
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
 
-/datum/design/largecrossbow
-	name = "Energy Crossbow"
-	desc = "A reverse-engineered energy crossbow favored by syndicate infiltration teams and carp hunters."
-	id = "largecrossbow"
+/datum/design/flora_gun
+	name = "Floral Somatoray"
+	desc = "A tool that discharges controlled radiation which induces mutation in plant cells. Harmless to other organic life."
+	id = "flora_gun"
 	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 5000, /datum/material/glass = 1500, /datum/material/uranium = 1500, /datum/material/silver = 1500)
-	build_path = /obj/item/gun/energy/kinetic_accelerator/crossbow/large
+	materials = list(/datum/material/iron = 2000, /datum/material/glass = 500, /datum/material/uranium = 2000)
+	build_path = /obj/item/gun/energy/floragun
 	category = list("Weapons")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
-
-/datum/design/magpistol
-	name = "Magpistol"
-	desc = "A weapon which fires ferromagnetic slugs."
-	id = "magpistol"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 7500, /datum/material/glass = 1000, /datum/material/uranium = 1000, /datum/material/titanium = 5000, /datum/material/silver = 2000)
-	build_path = /obj/item/gun/ballistic/automatic/magrifle/pistol/nopin
-	category = list("Weapons")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
-
-/datum/design/magrifle
-	name = "Magrifle"
-	desc = "An upscaled Magpistol in rifle form."
-	id = "magrifle"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 10000, /datum/material/glass = 2000, /datum/material/uranium = 2000, /datum/material/titanium = 10000, /datum/material/silver = 4000, /datum/material/gold = 2000)
-	build_path = /obj/item/gun/ballistic/automatic/magrifle/nopin
-	category = list("Weapons")
-	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
-	min_security_level = SEC_LEVEL_AMBER
+	departmental_flags = DEPARTMENTAL_FLAG_SERVICE | DEPARTMENTAL_FLAG_SCIENCE
 
 ///////////
 //Grenades/
@@ -442,6 +523,7 @@
 	build_path = /obj/item/grenade/chem_grenade/large
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/pyro_grenade
 	name = "Pyro Grenade"
@@ -452,6 +534,7 @@
 	build_path = /obj/item/grenade/chem_grenade/pyro
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/cryo_grenade
 	name = "Cryo Grenade"
@@ -462,6 +545,7 @@
 	build_path = /obj/item/grenade/chem_grenade/cryo
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/adv_grenade
 	name = "Advanced Release Grenade"
@@ -472,6 +556,7 @@
 	build_path = /obj/item/grenade/chem_grenade/adv_release
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY | DEPARTMENTAL_FLAG_MEDICAL | DEPARTMENTAL_FLAG_SCIENCE
+	min_security_level = SEC_LEVEL_BLUE
 
 ///////////
 //Shields//
@@ -486,6 +571,7 @@
 	build_path = /obj/item/shield/riot/tele
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/energy_shield
 	name = "Energy Resistant Shield"
@@ -496,6 +582,7 @@
 	build_path = /obj/item/shield/riot/energy_proof
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/kinetic_shield
 	name = "Kinetic Resistant Shield"
@@ -506,6 +593,7 @@
 	build_path = /obj/item/shield/riot/kinetic_proof
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE
 
 //////////
 //MISC////
@@ -520,6 +608,7 @@
 	build_path = /obj/item/suppressor
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_BLUE
 
 /datum/design/cleric_mace
 	name = "Cleric Mace"

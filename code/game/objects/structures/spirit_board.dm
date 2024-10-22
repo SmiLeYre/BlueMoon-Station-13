@@ -25,13 +25,13 @@
 
 /obj/structure/spirit_board/proc/spirit_board_pick_letter(mob/M)
 	if(!spirit_board_checks(M))
-		return 0
+		return FALSE
 
 	if(virgin)
 		virgin = 0
 		notify_ghosts("Someone has begun playing with a [src.name] in [get_area(src)]!", source = src)
 
-	planchette = input("Choose the letter.", "Seance!") as null|anything in list("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z")
+	planchette = input("Choose the letter.", "Seance!") as null|anything in list("A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z", "YES", "NO" ,"GOOD BYE")
 	if(!planchette || !Adjacent(M) || next_use > world.time)
 		return
 	M.log_message("picked a letter on [src], which was \"[planchette]\".")
@@ -48,7 +48,7 @@
 		bonus = 10 //Give some other people a chance, hog.
 
 	if(next_use - bonus > world.time )
-		return 0 //No feedback here, hiding the cooldown a little makes it harder to tell who's really picking letters.
+		return FALSE //No feedback here, hiding the cooldown a little makes it harder to tell who's really picking letters.
 
 	//lighting check
 	var/light_amount = 0
@@ -56,9 +56,9 @@
 	light_amount = T.get_lumcount()
 
 
-	if(light_amount > 0.2)
-		to_chat(M, "<span class='warning'>It's too bright here to use [src.name]!</span>")
-		return 0
+	if(light_amount > 0.3) // Splurt edit, from 0.2 to 0.3
+		to_chat(M, "<span class='warning'>It's too bright here to use the [src.name]!</span>")
+		return FALSE
 
 	//mobs in range check
 	var/users_in_range = 0
@@ -69,8 +69,8 @@
 			else
 				users_in_range++
 
-	if(users_in_range < 2)
+	if(users_in_range < 1) // SPLURT EDIT: 1 is the minimum number of people in range
 		to_chat(M, "<span class='warning'>There aren't enough people to use the [src.name]!</span>")
-		return 0
+		return FALSE
 
-	return 1
+	return TRUE

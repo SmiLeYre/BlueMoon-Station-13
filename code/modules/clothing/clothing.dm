@@ -8,6 +8,7 @@
 	var/flash_protect = 0		//What level of bright light protection item has. 1 = Flashers, Flashes, & Flashbangs | 2 = Welding | -1 = OH GOD WELDING BURNT OUT MY RETINAS
 	var/tint = 0				//Sets the item's level of visual impairment tint, normally set to the same as flash_protect
 	var/up = 0					//but separated to allow items to protect but not impair vision, like space helmets
+	var/can_toggle = null
 	var/visor_flags = 0			//flags that are added/removed when an item is adjusted up/down
 	var/visor_flags_inv = 0		//same as visor_flags, but for flags_inv
 	var/visor_flags_cover = 0	//same as above, but for flags_cover
@@ -118,7 +119,7 @@ MOVED TO: modular_splurt/code/module/clothing/clothing.dm
 				if(do_after(user, 6 SECONDS, src))
 					if(S.use(3))
 						repair(user, params)
-		return 1
+		return TRUE
 	return ..()
 
 // Set the clothing's integrity back to 100%, remove all damage to bodyparts, and generally fix it up
@@ -184,7 +185,7 @@ MOVED TO: modular_splurt/code/module/clothing/clothing.dm
 	if(iscarbon(loc))
 		var/mob/living/carbon/C = loc
 		C.visible_message("<span class='danger'>The [zone_name] on [C]'s [src.name] is [break_verb] away!</span>", "<span class='userdanger'>The [zone_name] on your [src.name] is [break_verb] away!</span>", vision_distance = COMBAT_MESSAGE_RANGE)
-		RegisterSignal(C, COMSIG_MOVABLE_MOVED, .proc/bristle)
+		RegisterSignal(C, COMSIG_MOVABLE_MOVED, PROC_REF(bristle))
 
 	zones_disabled++
 	for(var/i in zone2body_parts_covered(def_zone))
@@ -227,7 +228,7 @@ MOVED TO: modular_splurt/code/module/clothing/clothing.dm
 		return
 	if(slot_flags & slot) //Was equipped to a valid slot for this item?
 		if(iscarbon(user) && LAZYLEN(zones_disabled))
-			RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/bristle)
+			RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(bristle))
 		if(LAZYLEN(user_vars_to_edit))
 			for(var/variable in user_vars_to_edit)
 				if(variable in user.vars)
@@ -408,7 +409,14 @@ BLIND     // can't see anything
 		C.head_update(src, forced = 1)
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
+	return TRUE
+
+/obj/item/clothing/update_icon_state()
+	if(!can_toggle)
+		return FALSE
+	// Done as such to not break chameleon gear since you can't rely on initial states
+	icon_state = "[replacetext("[icon_state]", "up", "")][up ? "up" : ""]"
 	return TRUE
 
 /obj/item/clothing/proc/visor_toggling() //handles all the actual toggling of flags
@@ -416,18 +424,18 @@ BLIND     // can't see anything
 	clothing_flags ^= visor_flags
 	flags_inv ^= visor_flags_inv
 	flags_cover ^= initial(flags_cover)
-	icon_state = "[initial(icon_state)][up ? "up" : ""]"
 	if(visor_vars_to_toggle & VISOR_FLASHPROTECT)
 		flash_protect ^= initial(flash_protect)
 	if(visor_vars_to_toggle & VISOR_TINT)
 		tint ^= initial(tint)
+	update_icon(UPDATE_ICON_STATE)
 
 
 /obj/item/clothing/proc/can_use(mob/user)
 	if(user && ismob(user))
 		if(!user.incapacitated())
-			return 1
-	return 0
+			return TRUE
+	return FALSE
 
 
 /obj/item/clothing/obj_destruction(damage_flag)

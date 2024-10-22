@@ -1,12 +1,14 @@
 /datum/interaction/lewd/fingerass_self
-	description = "Пальчики. Поиграться со своей задницей."
+	description = "Попа. Поиграться со своей задницей."
 	interaction_sound = null
-	require_user_hands = TRUE
-	require_user_anus = REQUIRE_EXPOSED
-	user_is_target = TRUE
+	required_from_user = INTERACTION_REQUIRE_HANDS
+	required_from_user_exposed = INTERACTION_REQUIRE_ANUS
+	interaction_flags = INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
 	max_distance = 0
 	write_log_user = "fingered self"
 	write_log_target = null
+	p13user_emote = PLUG13_EMOTE_ANUS
+	p13target_strength = PLUG13_STRENGTH_NORMAL
 
 /datum/interaction/lewd/fingerass_self/display_interaction(mob/living/user)
 
@@ -18,21 +20,18 @@
 	user.handle_post_sex(NORMAL_LUST, CUM_TARGET_HAND, user, CUM_TARGET_ANUS) //SPLURT edit
 
 /datum/interaction/lewd/finger_self
-	description = "Пальчики. Поиграться со своей вагиной."
-	require_user_hands = TRUE
-	require_user_vagina = REQUIRE_EXPOSED
+	description = "Вагина. Поиграться со своей вагиной."
+	required_from_user = INTERACTION_REQUIRE_HANDS
+	required_from_user_exposed = INTERACTION_REQUIRE_VAGINA
 	interaction_sound = null
-	user_is_target = TRUE
+	interaction_flags = INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
 	max_distance = 0
 	write_log_user = "fingered own pussy"
 	write_log_target = null
+	p13user_emote = PLUG13_EMOTE_VAGINA
 
 	additional_details = list(
-		list(
-			"info" = "You can fill a container if you hold it in your hand or pull it",
-			"icon" = "flask",
-			"color" = "transparent"
-			)
+		INTERACTION_FILLS_CONTAINERS
 	)
 
 /datum/interaction/lewd/finger_self/display_interaction(mob/living/user)

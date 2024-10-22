@@ -17,9 +17,9 @@
 
 /datum/component/storage/concrete/Initialize()
 	. = ..()
-	RegisterSignal(parent, COMSIG_ATOM_CONTENTS_DEL, .proc/on_contents_del)
-	RegisterSignal(parent, COMSIG_OBJ_DECONSTRUCT, .proc/on_deconstruct)
-	RegisterSignal(parent, COMSIG_OBJ_BREAK, .proc/on_break)
+	RegisterSignal(parent, COMSIG_ATOM_CONTENTS_DEL, PROC_REF(on_contents_del))
+	RegisterSignal(parent, COMSIG_OBJ_DECONSTRUCT, PROC_REF(on_deconstruct))
+	RegisterSignal(parent, COMSIG_OBJ_BREAK, PROC_REF(on_break))
 
 /datum/component/storage/concrete/Destroy()
 	var/atom/real_location = real_location()
@@ -137,6 +137,10 @@
 	if(isitem(AM))
 		var/obj/item/removed_item = AM
 		removed_item.item_flags &= ~IN_STORAGE
+		if(istype(removed_item, /obj/item/clothing/accessory)) //evading quantum entanglement of accessories
+			var/obj/item/clothing/accessory/acc = removed_item
+			if(acc.current_uniform)
+				acc.detach(acc.current_uniform, usr) //Это полный пиздос, вообще всю одежду чинить надо, usr вообще не доложно тут быть
 		if(ismob(parent.loc))
 			var/mob/carrying_mob = parent.loc
 			removed_item.dropped(carrying_mob, TRUE)

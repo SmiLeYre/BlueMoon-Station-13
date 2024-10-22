@@ -10,6 +10,7 @@
 	selection_color = "#dddddd"
 
 	outfit = /datum/outfit/job/clown
+	departments = DEPARTMENT_BITFLAG_SERVICE
 	plasma_outfit = /datum/outfit/plasmaman/clown
 
 	access = list(ACCESS_THEATRE)
@@ -24,6 +25,21 @@
 
 	family_heirlooms = list(
 		/obj/item/bikehorn/golden
+	)
+// BLUEMOON ADD START - спелл на вызов пирогов у клоуна раундстартом
+/datum/job/clown/after_spawn(mob/living/H, client/C)
+	. = ..()
+	if(H.mind)
+		var/obj/effect/proc_holder/spell/targeted/conjure_item/summon_pie/S = new
+		H.mind.AddSpell(S)
+// BLUEMOON ADD END
+
+	mail_goodies = list(
+		/obj/item/reagent_containers/food/snacks/grown/banana = 100,
+		/obj/item/reagent_containers/food/snacks/pie/cream = 50,
+		/obj/item/clothing/shoes/clown_shoes/combat = 10,
+		/obj/item/reagent_containers/spray/waterflower/lube = 20, // lube
+		/obj/item/reagent_containers/spray/waterflower/superlube = 1 // Superlube, good lord.
 	)
 
 /datum/outfit/job/clown
@@ -77,7 +93,7 @@
 /datum/outfit/job/clown/pre_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()
 	if(HAS_TRAIT(SSstation, STATION_TRAIT_BANANIUM_SHIPMENTS))
-		backpack_contents[/obj/item/stack/sheet/mineral/bananium] = 5
+		backpack_contents[/obj/item/stack/sheet/mineral/bananium] = 25
 
 /datum/outfit/job/clown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()

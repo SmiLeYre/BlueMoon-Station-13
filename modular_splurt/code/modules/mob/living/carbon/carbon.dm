@@ -28,6 +28,13 @@
 	// Get worn items
 	var/items = get_contents()
 
+	// BLUEMOON ADD START - нельзя сбросить включенный модсьют
+	var/obj/item/mod/control/modsuit = get_item_by_slot(ITEM_SLOT_BACK)
+	if(modsuit && istype(modsuit) && modsuit.active)
+		to_chat(src, "<span class='warning'>Включенный модсьют не даёт сбросить одежду!</span>")
+		return
+	// BLUEMOON ADD END
+
 	// Iterate over worn items
 	for(var/obj/item/item_worn in items)
 		// Ignore non-mob (storage)

@@ -1,9 +1,4 @@
-
-#define BUGMODE_LIST	0
-#define BUGMODE_MONITOR	1
-#define BUGMODE_TRACK	2
-
-
+#define DEFAULT_MAP_SIZE 15
 
 /obj/item/camera_bug
 	name = "camera bug"
@@ -16,293 +11,200 @@
 	throw_range	= 20
 	item_flags = NOBLUDGEON
 
-	var/obj/machinery/camera/current = null
+	var/list/network = list("ss13")
+	var/obj/machinery/camera/active_camera
+	/// The turf where the camera was last updated.
+	var/turf/last_camera_turf
+	var/list/concurrent_users = list()
 
-	var/last_net_update = 0
-	var/list/bugged_cameras = list()
+	// Stuff needed to render the map
+	var/map_name
+	var/atom/movable/screen/map_view/cam_screen
+	/// All the plane masters that need to be applied.
+	var/list/cam_plane_masters
+	var/atom/movable/screen/background/cam_background
 
-	var/track_mode = BUGMODE_LIST
-	var/last_tracked = 0
-	var/refresh_interval = 50
-
-	var/tracked_name = null
-	var/atom/tracking = null
-
-	var/last_found = null
-	var/last_seen = null
-
-/obj/item/camera_bug/New()
-	..()
-	START_PROCESSING(SSobj, src)
+/obj/item/camera_bug/Initialize(mapload)
+	. = ..()
+	// Map name has to start and end with an A-Z character,
+	// and definitely NOT with a square bracket or even a number.
+	// I wasted 6 hours on this. :agony:
+	map_name = "camera_console_[REF(src)]_map"
+	// Convert networks to lowercase
+	for(var/i in network)
+		network -= i
+		network += lowertext(i)
+	// Initialize map objects
+	cam_screen = new
+	cam_screen.name = "screen"
+	cam_screen.assigned_map = map_name
+	cam_screen.del_on_map_removal = FALSE
+	cam_screen.screen_loc = "[map_name]:1,1"
+	cam_plane_masters = list()
+	for(var/plane in subtypesof(/atom/movable/screen/plane_master))
+		var/atom/movable/screen/instance = new plane()
+		instance.assigned_map = map_name
+		instance.del_on_map_removal = FALSE
+		instance.screen_loc = "[map_name]:CENTER"
+		cam_plane_masters += instance
+	cam_background = new
+	cam_background.assigned_map = map_name
+	cam_background.del_on_map_removal = FALSE
 
 /obj/item/camera_bug/Destroy()
-	get_cameras()
-	for(var/cam_tag in bugged_cameras)
-		var/obj/machinery/camera/camera = bugged_cameras[cam_tag]
-		if(camera.bug == src)
-			camera.bug = null
-	bugged_cameras = list()
-	if(tracking)
-		tracking = null
+	qdel(cam_screen)
+	QDEL_LIST(cam_plane_masters)
+	qdel(cam_background)
 	return ..()
 
 /obj/item/camera_bug/interact(mob/user)
 	ui_interact(user)
 
-/obj/item/camera_bug/ui_interact(mob/user = usr)
-	. = ..()
-	var/datum/browser/popup = new(user, "camerabug","Camera Bug",nref=src)
-	popup.set_content(menu(get_cameras()))
-	popup.open()
-
 /obj/item/camera_bug/attack_self(mob/user)
 	user.set_machine(src)
 	interact(user)
 
-/obj/item/camera_bug/check_eye(mob/user)
-	if ( loc != user || user.incapacitated() || user.eye_blind || !current )
-		user.unset_machine()
-		return 0
-	var/turf/T_user = get_turf(user.loc)
-	var/turf/T_current = get_turf(current)
-	if(T_user.z != T_current.z || !current.can_use())
-		to_chat(user, "<span class='danger'>[src] has lost the signal.</span>")
-		current = null
-		user.unset_machine()
-		return 0
-	return 1
-/obj/item/camera_bug/on_unset_machine(mob/user)
-	user.reset_perspective(null)
+/obj/item/camera_bug/ui_interact(mob/user, datum/tgui/ui)
+	// Update UI
+	ui = SStgui.try_update_ui(user, src, ui)
 
-/obj/item/camera_bug/proc/get_cameras()
-	if( world.time > (last_net_update + 100))
-		bugged_cameras = list()
-		for(var/obj/machinery/camera/camera in GLOB.cameranet.cameras)
-			if(camera.stat || !camera.can_use())
-				continue
-			if(length(list("ss13","mine", "rd", "labor", "toxins", "minisat")&camera.network))
-				bugged_cameras[camera.c_tag] = camera
-	return sortList(bugged_cameras)
+	// Update the camera, showing static if necessary and updating data if the location has moved.
+	update_active_camera_screen()
 
+	if(!ui)
+		var/user_ref = REF(user)
+		var/is_living = isliving(user)
+		// Ghosts shouldn't count towards concurrent users, which produces
+		// an audible terminal_on click.
+		if(is_living)
+			concurrent_users += user_ref
+		// Turn on the console
+		if(length(concurrent_users) == 1 && is_living)
+			playsound(src, 'sound/machines/terminal_on.ogg', 25, FALSE)
+		// Register map objects
+		user.client.register_map_obj(cam_screen)
+		for(var/plane in cam_plane_masters)
+			user.client.register_map_obj(plane)
+		user.client.register_map_obj(cam_background)
+		// Open UI
+		ui = new(user, src, "CameraConsole", name)
+		ui.open()
 
-/obj/item/camera_bug/proc/menu(list/cameras)
-	if(!cameras || !cameras.len)
-		return "No bugged cameras found."
+/obj/item/camera_bug/ui_data()
+	var/list/data = list()
+	data["network"] = network
+	data["activeCamera"] = null
+	if(active_camera)
+		data["activeCamera"] = list(
+			name = active_camera.c_tag,
+			status = active_camera.status,
+		)
+	return data
 
-	var/html
-	switch(track_mode)
-		if(BUGMODE_LIST)
-			html = "<h3>Select a camera:</h3> <a href='?src=[REF(src)];view'>\[Cancel camera view\]</a><hr><table>"
-			for(var/entry in cameras)
-				var/obj/machinery/camera/C = cameras[entry]
-				var/functions = ""
-				if(C.bug == src)
-					functions = " - <a href='?src=[REF(src)];monitor=[REF(C)]'>\[Monitor\]</a> <a href='?src=[REF(src)];emp=[REF(C)]'>\[Disable\]</a>"
-				else
-					functions = " - <a href='?src=[REF(src)];monitor=[REF(C)]'>\[Monitor\]</a>"
-				html += "<tr><td><a href='?src=[REF(src)];view=[REF(C)]'>[entry]</a></td><td>[functions]</td></tr>"
+/obj/item/camera_bug/ui_static_data()
+	var/list/data = list()
+	data["mapRef"] = map_name
+	var/list/cameras = get_available_cameras()
+	data["cameras"] = list()
+	for(var/i in cameras)
+		var/obj/machinery/camera/C = cameras[i]
+		data["cameras"] += list(list(
+			name = C.c_tag,
+		))
 
-		if(BUGMODE_MONITOR)
-			if(current)
-				html = "Analyzing Camera '[current.c_tag]' <a href='?[REF(src)];mode=0'>\[Select Camera\]</a><br>"
-				html += camera_report()
-			else
-				track_mode = BUGMODE_LIST
-				return .(cameras)
-		if(BUGMODE_TRACK)
-			if(tracking)
-				html = "Tracking '[tracked_name]'  <a href='?[REF(src)];mode=0'>\[Cancel Tracking\]</a>  <a href='?src=[REF(src)];view'>\[Cancel camera view\]</a><br>"
-				if(last_found)
-					var/time_diff = round((world.time - last_seen) / 150)
-					var/obj/machinery/camera/C = bugged_cameras[last_found]
-					var/outstring
-					if(C)
-						outstring = "<a href='?[REF(src)];view=[REF(C)]'>[last_found]</a>"
-					else
-						outstring = last_found
-					if(!time_diff)
-						html += "Last seen near [outstring] (now)<br>"
-					else
-						// 15 second intervals ~ 1/4 minute
-						var/m = round(time_diff/4)
-						var/s = (time_diff - 4*m) * 15
-						if(!s)
-							s = "00"
-						html += "Last seen near [outstring] ([m]:[s] minute\s ago)<br>"
-					if( C && (C.bug == src)) //Checks to see if the camera has a bug
-						html += "<a href='?src=[REF(src)];emp=[REF(C)]'>\[Disable\]</a>"
+	return data
 
-				else
-					html += "Not yet seen."
-			else
-				track_mode = BUGMODE_LIST
-				return .(cameras)
-	return html
-
-/obj/item/camera_bug/proc/get_seens()
-	if(current && current.can_use())
-		var/list/seen = current.can_see()
-		return seen
-
-/obj/item/camera_bug/proc/camera_report()
-	// this should only be called if current exists
-	var/dat = ""
-	var/list/seen = get_seens()
-	if(seen && seen.len >= 1)
-		var/list/names = list()
-		for(var/obj/singularity/S in seen) // god help you if you see more than one
-			if(S.name in names)
-				names[S.name]++
-				dat += "[S.name] ([names[S.name]])"
-			else
-				names[S.name] = 1
-				dat += "[S.name]"
-			var/stage = round(S.current_size / 2)+1
-			dat += " (Stage [stage])"
-			dat += " <a href='?[REF(src)];track=[REF(S)]'>\[Track\]</a><br>"
-
-		for(var/obj/vehicle/sealed/mecha/M in seen)
-			if(M.name in names)
-				names[M.name]++
-				dat += "[M.name] ([names[M.name]])"
-			else
-				names[M.name] = 1
-				dat += "[M.name]"
-			dat += " <a href='?[REF(src)];track=[REF(M)]'>\[Track\]</a><br>"
-
-
-		for(var/mob/living/M in seen)
-			if(M.name in names)
-				names[M.name]++
-				dat += "[M.name] ([names[M.name]])"
-			else
-				names[M.name] = 1
-				dat += "[M.name]"
-			if(M.buckled && !M.lying)
-				dat += " (Sitting)"
-			if(M.lying)
-				dat += " (Laying down)"
-			dat += " <a href='?[REF(src)];track=[REF(M)]'>\[Track\]</a><br>"
-		if(length(dat) == 0)
-			dat += "No motion detected."
-		return dat
-	else
-		return "Camera Offline<br>"
-
-/obj/item/camera_bug/Topic(href,list/href_list)
-	if(usr != loc)
-		usr.unset_machine()
-		usr << browse(null, "window=camerabug")
+/obj/item/camera_bug/ui_act(action, params)
+	. = ..()
+	if(.)
 		return
-	usr.set_machine(src)
-	if("mode" in href_list)
-		track_mode = text2num(href_list["mode"])
-	if("monitor" in href_list)
-		//You can't locate on a list with keys
-		var/list/cameras = flatten_list(bugged_cameras)
-		var/obj/machinery/camera/C = locate(href_list["monitor"]) in cameras
-		if(C && istype(C))
-			if(!same_z_level(C))
-				return
-			track_mode = BUGMODE_MONITOR
-			current = C
-			usr.reset_perspective(null)
-			interact()
-	if("track" in href_list)
-		var/list/seen = get_seens()
-		if(seen && seen.len >= 1)
-			var/atom/A = locate(href_list["track"]) in seen
-			if(A && istype(A))
-				tracking = A
-				tracked_name = A.name
-				last_found = current.c_tag
-				last_seen = world.time
-				track_mode = BUGMODE_TRACK
-	if("emp" in href_list)
-		//You can't locate on a list with keys
-		var/list/cameras = flatten_list(bugged_cameras)
-		var/obj/machinery/camera/C = locate(href_list["emp"]) in cameras
-		if(C && istype(C) && C.bug == src)
-			if(!same_z_level(C))
-				return
-			C.emp_act(80)
-			C.bug = null
-			bugged_cameras -= C.c_tag
-		interact()
+
+	if(action == "switch_camera")
+		var/c_tag = params["name"]
+		var/list/cameras = get_available_cameras()
+		var/obj/machinery/camera/selected_camera = cameras[c_tag]
+		active_camera = selected_camera
+		playsound(src, get_sfx("terminal_type"), 25, FALSE)
+
+		if(!selected_camera)
+			return TRUE
+
+		update_active_camera_screen()
+
+		return TRUE
+
+/obj/item/camera_bug/proc/update_active_camera_screen()
+	// Show static if can't use the camera
+	if(QDELETED(active_camera) || !active_camera?.can_use())
+		show_camera_static()
 		return
-	if("close" in href_list)
-		usr.unset_machine()
-		current = null
+
+	var/list/visible_turfs = list()
+
+	// Need to get camera's location or it
+	var/cam_location = get_atom_on_turf(active_camera)
+
+	// If we're not forcing an update for some reason and the cameras are in the same location,
+	// we don't need to update anything.
+	// Most security cameras will end here as they're not moving.
+	var/newturf = get_turf(cam_location)
+	if(last_camera_turf == newturf)
 		return
-	if("view" in href_list)
-		//You can't locate on a list with keys
-		var/list/cameras = flatten_list(bugged_cameras)
-		var/obj/machinery/camera/C = locate(href_list["view"]) in cameras
-		if(C && istype(C))
-			if(!same_z_level(C))
-				return
-			if(!C.can_use())
-				to_chat(usr, "<span class='warning'>Something's wrong with that camera!  You can't get a feed.</span>")
-				return
-			current = C
-			spawn(6)
-				if(src.check_eye(usr))
-					usr.reset_perspective(C)
-					interact()
-				else
-					usr.unset_machine()
-					usr << browse(null, "window=camerabug")
-			return
-		else
-			usr.unset_machine()
 
-	interact()
+	// Cameras that get here are moving, and are likely attached to some moving atom such as cyborgs.
+	last_camera_turf = get_turf(cam_location)
 
-/obj/item/camera_bug/process()
-	if(track_mode == BUGMODE_LIST || (world.time < (last_tracked + refresh_interval)))
-		return
-	last_tracked = world.time
-	if(track_mode == BUGMODE_TRACK ) // search for user
-		// Note that it will be tricked if your name appears to change.
-		// This is not optimal but it is better than tracking you relentlessly despite everything.
-		if(!tracking)
-			src.updateSelfDialog()
-			return
+	var/list/visible_things = active_camera.isXRay() ? range(active_camera.view_range, cam_location) : view(active_camera.view_range, cam_location)
 
-		if(tracking.name != tracked_name) // Hiding their identity, tricksy
-			var/mob/M = tracking
-			if(istype(M))
-				if(!(tracked_name == "Unknown" && findtext(tracking.name,"Unknown"))) // we saw then disguised before
-					if(!(tracked_name == M.real_name && findtext(tracking.name,M.real_name))) // or they're still ID'd
-						src.updateSelfDialog()//But if it's neither of those cases
-						return // you won't find em on the cameras
-			else
-				src.updateSelfDialog()
-				return
+	if(istype(active_camera.loc, /obj/item/integrated_circuit/output/video_camera))
+		visible_things = view(active_camera.view_range, newturf)
 
-		var/list/tracking_cams = list()
-		var/list/b_cams = get_cameras()
-		for(var/entry in b_cams)
-			tracking_cams += b_cams[entry]
-		var/list/target_region = view(tracking)
+	for(var/turf/visible_turf in visible_things)
+		visible_turfs += visible_turf
 
-		for(var/obj/machinery/camera/C in (target_region & tracking_cams))
-			if(!can_see(C,tracking)) // target may have xray, that doesn't make them visible to cameras
-				continue
-			if(C.can_use())
-				last_found = C.c_tag
-				last_seen = world.time
-				break
-	src.updateSelfDialog()
+	var/list/bbox = get_bbox_of_atoms(visible_turfs)
+	var/size_x = bbox[3] - bbox[1] + 1
+	var/size_y = bbox[4] - bbox[2] + 1
 
-/obj/item/camera_bug/proc/same_z_level(var/obj/machinery/camera/C)
-	var/turf/T_cam = get_turf(C)
-	var/turf/T_bug = get_turf(loc)
-	if(!T_bug || T_cam.z != T_bug.z)
-		to_chat(usr, "<span class='warning'>You can't get a signal!</span>")
-		return FALSE
-	return TRUE
+	cam_screen.vis_contents = visible_turfs
+	cam_background.icon_state = "clear"
+	cam_background.fill_rect(1, 1, size_x, size_y)
 
-#undef BUGMODE_LIST
-#undef BUGMODE_MONITOR
-#undef BUGMODE_TRACK
+/obj/item/camera_bug/ui_close(mob/user)
+	var/user_ref = REF(user)
+	var/is_living = isliving(user)
+	// Living creature or not, we remove you anyway.
+	concurrent_users -= user_ref
+	// Unregister map objects
+	user.client.clear_map(map_name)
+	// Turn off the console
+	if(length(concurrent_users) == 0 && is_living)
+		active_camera = null
+		playsound(src, 'sound/machines/terminal_off.ogg', 25, FALSE)
+
+/obj/item/camera_bug/proc/show_camera_static()
+	cam_screen.vis_contents.Cut()
+	cam_background.icon_state = "scanline2"
+	cam_background.fill_rect(1, 1, DEFAULT_MAP_SIZE, DEFAULT_MAP_SIZE)
+
+// Returns the list of cameras accessible from this computer
+/obj/item/camera_bug/proc/get_available_cameras()
+	var/list/L = list()
+	for (var/obj/machinery/camera/C in GLOB.cameranet.cameras)
+		if((is_away_level(z) || is_away_level(C.z)) && (C.z != z))//if on away mission, can only receive feed from same z_level cameras
+			continue
+		L.Add(C)
+	var/list/D = list()
+	for(var/obj/machinery/camera/C in L)
+		if(!C.network)
+			stack_trace("Camera in a cameranet has no camera network")
+			continue
+		if(!(islist(C.network)))
+			stack_trace("Camera in a cameranet has a non-list camera network")
+			continue
+		var/list/tempnetwork = C.network & network
+		if(tempnetwork.len)
+			D["[C.c_tag]"] = C
+	return D
+
+#undef DEFAULT_MAP_SIZE

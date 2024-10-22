@@ -4,6 +4,8 @@
 	button_icon_state = "alter_form" //placeholder
 	icon_icon = 'modular_citadel/icons/mob/actions/actions_slime.dmi'
 	background_icon_state = "bg_alien"
+	var/body_size_max
+	var/body_size_min
 
 /datum/action/innate/ability/humanoid_customization/Activate()
 	if(owner.get_ability_property(INNATE_ABILITY_HUMANOID_CUSTOMIZATION, PROPERTY_CUSTOMIZATION_SILENT))
@@ -23,7 +25,7 @@
 /datum/action/innate/ability/humanoid_customization/proc/change_form()
 	var/mob/living/carbon/human/H = owner
 
-	var/select_alteration = input(owner, "Select what part of your form to alter", "Form Alteration", "cancel") in list("Body Color", "Eye Color","Hair Style", "Genitals", "Tail", "Snout", "Wings", "Markings", "Ears", "Taur body", "Penis", "Vagina", "Penis Length", "Breast Size", "Breast Shape", "Butt Size", "Belly Size", /* BLUEMOON REMOVAL START "Body Size", BLUEMOON REMOVAL END */ "Genital Color", "Horns", "Hair Color", "Skin Tone (Non-Mutant)", "Cancel")
+	var/select_alteration = input(owner, "Select what part of your form to alter", "Form Alteration", "cancel") in list("Body Color", "Eye Color","Hair Style", "Genitals", "Tail", "Snout", "Wings", "Markings", "Ears", "Taur body", "Penis", "Vagina", "Penis Length", "Breast Size", "Breast Shape", "Butt Size", "Belly Size", "Body Size", "Genital Color", "Horns", "Hair Color", "Skin Tone (Non-Mutant)", "Gender & Lewd", "Legs", "Cancel")
 
 	if(select_alteration == "Body Color")
 		var/new_color = input(owner, "Choose your skin color:", "Race change","#"+H.dna.features["mcolor"]) as color|null
@@ -271,7 +273,7 @@
 		H.apply_overlay()
 		H.give_genital(/obj/item/organ/genital/belly)
 
-	/* BLUEMOON REMOVAL START - размер персонажа на блюмуне слишком сильно отличается в особенностях механик от сплюрта, как и в тематике сервера, чтобы давать возможность его так легко изменять
+	//BLUEMOON CHANGE изменение размера требует время, сколько слишком сильно отличается в особенностях механик от сплюрта, как и в тематике сервера, чтобы давать возможность его так легко изменять
 	else if (select_alteration == "Body Size")
 		// Check if the user has the size_normalized component attached, to avoid body size accumulation bug
 		var/datum/component/size_normalized = H.GetComponent(/datum/component/size_normalized)
@@ -279,11 +281,20 @@
 			to_chat(owner, "<span class='warning'>The normalizer prevents you from adjusting your entire body's size.</span>")
 			return
 		else
-			var/new_body_size = input(owner, "Choose your desired sprite size: ([CONFIG_GET(number/body_size_min)*100]-[CONFIG_GET(number/body_size_max)*100]%)\nWarning: This may make your character look distorted. Additionally, any size under 100% takes a 10% maximum health penalty", "Character Preference", H.dna.features["body_size"]*100) as num|null
+			if(!body_size_max) body_size_max = CONFIG_GET(number/body_size_max)
+			if(!body_size_min) body_size_min = CONFIG_GET(number/body_size_min)
+			var/owner_size = get_size(H)
+			var/new_body_size = input(owner, "Choose your desired sprite size: ([body_size_min * 100]-[body_size_max * 100]%)\nWarning: This may make your character look distorted. Additionally, any size affects speed and max health", "Character Preference", H.dna.features["body_size"]*100) as num|null
 			if(new_body_size)
-				var/chosen_size = clamp(new_body_size * 0.01, CONFIG_GET(number/body_size_min), CONFIG_GET(number/body_size_max))
-				H.update_size(chosen_size)
-	/ BLUEMOON REMOVAL END */
+				var/chosen_size = clamp(new_body_size * 0.01, body_size_min, body_size_max)
+				var/diff = abs(chosen_size - owner_size)
+				if(diff)
+					var/time_to_use = diff * 40 //10 секунд на 25% размера
+					to_chat(H, span_warning("You need [time_to_use] seconds to change own size."))
+					if(do_after(owner, time_to_use SECONDS, target = owner))
+						H.update_size(chosen_size)
+	//BLUEMOON CHANGE END
+
 	else if (select_alteration == "Genital Color")
 		var/genital_part = input(owner, "Select what part of your genitals to alter", "Genital Color", "cancel") in list("Penis", "Butt", "Balls", "Anus", "Vagina", "Breasts", "Belly", "Toggle genitals using skintone", "Cancel")
 		if(genital_part == "Toggle genitals using skintone")
@@ -334,7 +345,7 @@
 			else
 				H.dna.features["horns_color"] = sanitize_hexcolor(new_horn_color, 6)
 
-		H.update_body()
+			H.update_body()
 
 	else if (select_alteration == "Hair Color")
 		var/new_hair_color = input(owner, "Choose your character's hair color:", "Character Preference", "#" + H.dna.features["hair_color"]) as color|null
@@ -359,8 +370,41 @@
 						H.skin_tone = custom_tone
 			else
 				H.skin_tone = new_s_tone
+			H.update_body()
 
-		H.update_body()
+	else if (select_alteration == "Gender & Lewd")
+		var/lewd_selection = input(owner, "Select what aspect of gender and lewd preferences to alter", "Gender & Lewd", "cancel") in list("Gender", "Body Model", "Cancel")
+		if(lewd_selection == "Gender")
+			var/new_gender = input(owner, "Select your gender:", "Gender Selection") as null|anything in list("Male", "Female", "Non-binary", "Object")
+			if(new_gender)
+				switch(new_gender)
+					if("Male")
+						H.gender = MALE
+					if("Female")
+						H.gender = FEMALE
+					if("Non-binary")
+						H.gender = PLURAL
+					if("Object")
+						H.gender = NEUTER
+		if(lewd_selection == "Body Model")
+			var/new_body_model = input(owner, "Select your body model:", "Body Model Selection") as null|anything in list("Masculine", "Feminine")
+			if(new_body_model)
+				H.dna.features["body_model"] = new_body_model == "Masculine" ? MALE : FEMALE
+				H.update_body()
+
+	else if (select_alteration == "Legs")
+		var/leg_choice = input(owner, "Choose your character's leg type:", "Leg Type Alteration") as null|anything in list("Plantigrade", "Digitigrade", "Cancel")
+		if(leg_choice)
+			switch(leg_choice)
+				if("Plantigrade")
+					H.dna.features["legs"] = "Plantigrade"
+					H.dna.species.mutant_bodyparts["legs"] = "Plantigrade"
+					H.Digitigrade_Leg_Swap(TRUE)
+				if("Digitigrade")
+					H.dna.features["legs"] = "Digitigrade"
+					H.dna.species.mutant_bodyparts["legs"] = "Digitigrade"
+					H.Digitigrade_Leg_Swap(FALSE)
+			H.update_body()
 
 /// SPLURT EDIT END
 	else

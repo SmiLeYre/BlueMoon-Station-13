@@ -26,8 +26,8 @@
 
 	var/obj/item/radio/borg/radio = null //AIs dont use this but this is at the silicon level to advoid copypasta in say()
 
-	var/list/alarm_types_show = list("Motion" = 0, "Fire" = 0, "Atmosphere" = 0, "Power" = 0, "Camera" = 0)
-	var/list/alarm_types_clear = list("Motion" = 0, "Fire" = 0, "Atmosphere" = 0, "Power" = 0, "Camera" = 0)
+	var/list/alarm_types_show = list(ALARM_ATMOS = 0, ALARM_FIRE = 0, ALARM_POWER = 0, ALARM_CAMERA = 0, ALARM_MOTION = 0)
+	var/list/alarm_types_clear = list(ALARM_ATMOS = 0, ALARM_FIRE = 0, ALARM_POWER = 0, ALARM_CAMERA = 0, ALARM_MOTION = 0)
 
 	var/lawcheck[1]
 	var/ioncheck[1]
@@ -43,6 +43,8 @@
 	var/obj/machinery/camera/builtInCamera = null
 	var/updating = FALSE //portable camera camerachunk update
 
+	///Whether we have been emagged
+	var/emagged = FALSE
 	var/hack_software = FALSE //Will be able to use hacking actions
 	var/interaction_range = 7			//wireless control range
 
@@ -67,32 +69,24 @@
 	AddElement(/datum/element/flavor_text, "", "Temporary Flavor Text", "This should be used only for things pertaining to the current round!", _save_key = null)
 	AddElement(/datum/element/flavor_text, _name = "OOC Notes", _addendum = "Put information on ERP/vore/lewd-related preferences here. THIS SHOULD NOT CONTAIN REGULAR FLAVORTEXT!!", _save_key = "ooc_notes", _examine_no_preview = TRUE)
 
+/mob/living/silicon/Destroy()
+	QDEL_NULL(radio)
+	QDEL_NULL(aicamera)
+	QDEL_NULL(builtInCamera)
+	QDEL_NULL(laws)
+	GLOB.silicon_mobs -= src
+	return ..()
+
 /mob/living/silicon/med_hud_set_health()
 	return //we use a different hud
 
 /mob/living/silicon/med_hud_set_status()
 	return //we use a different hud
 
-/mob/living/silicon/Destroy()
-	radio = null
-	aicamera = null
-	QDEL_NULL(builtInCamera)
-	GLOB.silicon_mobs -= src
-	return ..()
-
 /mob/living/silicon/contents_explosion(severity, target, origin)
 	return
 
-/mob/living/silicon/proc/cancelAlarm()
-	return
-
-/mob/living/silicon/proc/freeCamera()
-	return
-
-/mob/living/silicon/proc/triggerAlarm()
-	return
-
-/mob/living/silicon/proc/queueAlarm(message, type, incoming = 1)
+/mob/living/silicon/proc/queueAlarm(message, type, incoming = FALSE)
 	var/in_cooldown = (alarms_to_show.len > 0 || alarms_to_clear.len > 0)
 	if(incoming)
 		alarms_to_show += message
@@ -100,70 +94,39 @@
 	else
 		alarms_to_clear += message
 		alarm_types_clear[type] += 1
+	if(in_cooldown)
+		return
+	addtimer(CALLBACK(src, PROC_REF(show_alarms)), 3 SECONDS)
 
-	if(!in_cooldown)
-		spawn(3 * 10) // 3 seconds
+/mob/living/silicon/proc/show_alarms()
+	if(alarms_to_show.len < 5)
+		for(var/msg in alarms_to_show)
+			to_chat(src, msg)
+	else if(alarms_to_show.len)
 
-			if(alarms_to_show.len < 5)
-				for(var/msg in alarms_to_show)
-					to_chat(src, msg)
-			else if(alarms_to_show.len)
+		var/msg = "--- "
+		for(var/alarm_type in alarm_types_show)
+			msg += "[uppertext(alarm_type)]: [alarm_types_show[alarm_type]] alarms detected. - "
 
-				var/msg = "--- "
+		msg += "<A href=?src=[REF(src)];showalerts=1'>\[Show Alerts\]</a>"
+		to_chat(src, msg)
+	if(alarms_to_clear.len < 3)
+		for(var/msg in alarms_to_clear)
+			to_chat(src, msg)
+	else if(alarms_to_clear.len)
+		var/msg = "--- "
 
-				if(alarm_types_show["Burglar"])
-					msg += "BURGLAR: [alarm_types_show["Burglar"]] alarms detected. - "
+		for(var/alarm_type in alarm_types_clear)
+			msg += "[uppertext(alarm_type)]: [alarm_types_clear[alarm_type]] alarms cleared. - "
 
-				if(alarm_types_show["Motion"])
-					msg += "MOTION: [alarm_types_show["Motion"]] alarms detected. - "
-
-				if(alarm_types_show["Fire"])
-					msg += "FIRE: [alarm_types_show["Fire"]] alarms detected. - "
-
-				if(alarm_types_show["Atmosphere"])
-					msg += "ATMOSPHERE: [alarm_types_show["Atmosphere"]] alarms detected. - "
-
-				if(alarm_types_show["Power"])
-					msg += "POWER: [alarm_types_show["Power"]] alarms detected. - "
-
-				if(alarm_types_show["Camera"])
-					msg += "CAMERA: [alarm_types_show["Camera"]] alarms detected. - "
-
-				msg += "<A href=?src=[REF(src)];showalerts=1'>\[Show Alerts\]</a>"
-				to_chat(src, msg)
-
-			if(alarms_to_clear.len < 3)
-				for(var/msg in alarms_to_clear)
-					to_chat(src, msg)
-
-			else if(alarms_to_clear.len)
-				var/msg = "--- "
-
-				if(alarm_types_clear["Motion"])
-					msg += "MOTION: [alarm_types_clear["Motion"]] alarms cleared. - "
-
-				if(alarm_types_clear["Fire"])
-					msg += "FIRE: [alarm_types_clear["Fire"]] alarms cleared. - "
-
-				if(alarm_types_clear["Atmosphere"])
-					msg += "ATMOSPHERE: [alarm_types_clear["Atmosphere"]] alarms cleared. - "
-
-				if(alarm_types_clear["Power"])
-					msg += "POWER: [alarm_types_clear["Power"]] alarms cleared. - "
-
-				if(alarm_types_show["Camera"])
-					msg += "CAMERA: [alarm_types_clear["Camera"]] alarms cleared. - "
-
-				msg += "<A href=?src=[REF(src)];showalerts=1'>\[Show Alerts\]</a>"
-				to_chat(src, msg)
-
-
-			alarms_to_show = list()
-			alarms_to_clear = list()
-			for(var/key in alarm_types_show)
-				alarm_types_show[key] = 0
-			for(var/key in alarm_types_clear)
-				alarm_types_clear[key] = 0
+		msg += "<A href=?src=[REF(src)];showalerts=1'>\[Show Alerts\]</a>"
+		to_chat(src, msg)
+	alarms_to_show.Cut()
+	alarms_to_clear.Cut()
+	for(var/key in alarm_types_show)
+		alarm_types_show[key] = 0
+	for(var/key in alarm_types_clear)
+		alarm_types_clear[key] = 0
 
 /mob/living/silicon/can_inject(mob/user, error_msg, target_zone, penetrate_thick = FALSE, bypass_immunity = FALSE)
 	if(error_msg)
@@ -283,7 +246,7 @@
 
 /mob/living/silicon/proc/checklaws() //Gives you a link-driven interface for deciding what laws the statelaws() proc will share with the crew. --NeoFite
 
-	var/list = "<b>Which laws do you want to include when stating them for the crew?</b><br><br>"
+	var/list = {"<meta charset="UTF-8"><b>Какие законы вы хотите продемонстрировать, когда будете излагать их для экипажа?</b><br><br>"}
 
 	if (laws.devillaws && laws.devillaws.len)
 		for(var/index = 1, index <= laws.devillaws.len, index++)
@@ -361,12 +324,12 @@
 	to_chat(src, "<span class='notice'>Automatic announcements [Autochan == "None" ? "will not use the radio." : "set to [Autochan]."]</span>")
 
 /mob/living/silicon/put_in_hand_check() // This check is for borgs being able to receive items, not put them in others' hands.
-	return 0
+	return FALSE
 
 // The src mob is trying to place an item on someone
 // But the src mob is a silicon!!  Disable.
 /mob/living/silicon/stripPanelEquip(obj/item/what, mob/who, slot)
-	return 0
+	return FALSE
 
 
 /mob/living/silicon/assess_threat(judgement_criteria, lasercolor = "", datum/callback/weaponcheck=null) //Secbots won't hunt silicon units
@@ -410,16 +373,13 @@
 		return
 	client.crew_manifest_delay = world.time + (1 SECONDS)
 
-	var/dat = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Crew Roster</title></head><body><b>Crew Roster:</b><br><br>"
+	if(!GLOB.crew_manifest_tgui)
+		GLOB.crew_manifest_tgui = new /datum/crew_manifest(src)
 
-	dat += GLOB.data_core.get_manifest()
-	dat += "</body></html>"
-
-	src << browse(dat, "window=airoster")
-	onclose(src, "airoster")
+	GLOB.crew_manifest_tgui.ui_interact(src)
 
 /mob/living/silicon/is_literate()
-	return 1
+	return TRUE
 
 /mob/living/silicon/get_inactive_held_item()
 	return FALSE

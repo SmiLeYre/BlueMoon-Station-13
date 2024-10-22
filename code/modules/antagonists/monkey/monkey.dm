@@ -12,7 +12,6 @@
 	show_to_ghosts = TRUE
 	var/datum/team/monkey/monkey_team
 	var/monkey_only = TRUE
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/monkey/can_be_owned(datum/mind/new_owner)
 	return ..() && (!monkey_only || ismonkey(new_owner.current))

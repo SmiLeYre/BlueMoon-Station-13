@@ -10,11 +10,12 @@ import './styles/themes/light.scss';
 
 import { perf } from 'common/perf';
 import { combineReducers } from 'common/redux';
-import { setupHotReloading } from 'tgui-dev-server/link/client.cjs';
 import { setupGlobalEvents } from 'tgui/events';
 import { captureExternalLinks } from 'tgui/links';
 import { createRenderer } from 'tgui/renderer';
 import { configureStore, StoreProvider } from 'tgui/store';
+import { setupHotReloading } from 'tgui-dev-server/link/client.cjs';
+
 import { audioMiddleware, audioReducer } from './audio';
 import { chatMiddleware, chatReducer } from './chat';
 import { gameMiddleware, gameReducer } from './game';
@@ -22,6 +23,7 @@ import { setupPanelFocusHacks } from './panelFocus';
 import { pingMiddleware, pingReducer } from './ping';
 import { settingsMiddleware, settingsReducer } from './settings';
 import { telemetryMiddleware } from './telemetry';
+import { emotesReducer } from './emotes'; // BLUEMOON ADD
 
 perf.mark('inception', window.performance?.timing?.navigationStart);
 perf.mark('init');
@@ -30,6 +32,7 @@ const store = configureStore({
   reducer: combineReducers({
     audio: audioReducer,
     chat: chatReducer,
+    emotes: emotesReducer, // BLUEMOON ADD
     game: gameReducer,
     ping: pingReducer,
     settings: settingsReducer,
@@ -107,6 +110,7 @@ const setupApp = () => {
     module.hot.accept([
       './audio',
       './chat',
+      './emotes', // BLUEMOON ADD
       './game',
       './Notifications',
       './Panel',

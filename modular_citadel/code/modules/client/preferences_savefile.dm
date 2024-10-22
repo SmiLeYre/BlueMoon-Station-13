@@ -23,7 +23,7 @@
 	S["alt_titles_preferences"]			>> alt_titles_preferences
 	alt_titles_preferences = SANITIZE_LIST(alt_titles_preferences)
 	if(SSjob)
-		for(var/datum/job/job in sortList(SSjob.occupations, /proc/cmp_job_display_asc))
+		for(var/datum/job/job in sort_list(SSjob.occupations, GLOBAL_PROC_REF(cmp_job_display_asc)))
 			if(alt_titles_preferences[job.title])
 				if(!(alt_titles_preferences[job.title] in job.alt_titles))
 					alt_titles_preferences.Remove(job.title)
@@ -32,6 +32,7 @@
 	nonconpref = sanitize_inlist(S["noncon_pref"], GLOB.lewd_prefs_choices, "Ask")
 	vorepref = sanitize_inlist(S["vore_pref"], GLOB.lewd_prefs_choices, "Ask")
 	mobsexpref = sanitize_inlist(S["mobsex_pref"], GLOB.lewd_prefs_choices, "No") //Hentai
+	hornyantagspref = sanitize_inlist(S["hornyantags_pref"], GLOB.lewd_prefs_choices, "No") //Hentai
 	unholypref = sanitize_inlist(S["unholypref"], GLOB.lewd_prefs_choices, "Ask") //I AM MENTAL I AM MAD I AM INSANE
 	extremepref = sanitize_inlist(S["extreme_pref"], GLOB.lewd_prefs_choices, "No") //god has forsaken me
 	extremeharm = sanitize_inlist(S["extreme_harm"], (GLOB.lewd_prefs_choices - "Ask"), "No") //hacky for not saving "Ask"
@@ -39,8 +40,8 @@
 		extremeharm = "No"
 	enable_personal_chat_color	= sanitize_integer(enable_personal_chat_color, 0, 1, initial(enable_personal_chat_color))
 	personal_chat_color	= sanitize_hexcolor(personal_chat_color, 6, 1, "#FFFFFF")
-	lust_tolerance = sanitize_integer(lust_tolerance, 75, 200, initial(lust_tolerance))
-	sexual_potency = sanitize_integer(sexual_potency, 10, 25, initial(sexual_potency))
+	lust_tolerance = sanitize_integer(lust_tolerance, 25, 200, initial(lust_tolerance))
+	sexual_potency = sanitize_integer(sexual_potency, -1, 25, initial(sexual_potency))
 
 	S["silicon_lawset"] >> silicon_lawset
 
@@ -77,6 +78,7 @@
 	WRITE_FILE(S["noncon_pref"], nonconpref)
 	WRITE_FILE(S["vore_pref"], vorepref)
 	WRITE_FILE(S["mobsex_pref"], mobsexpref) //Hentai
+	WRITE_FILE(S["hornyantags_pref"], hornyantagspref) //Hentai
 	WRITE_FILE(S["unholypref"], unholypref)
 	WRITE_FILE(S["extreme_pref"], extremepref)
 	WRITE_FILE(S["extreme_harm"], extremeharm)

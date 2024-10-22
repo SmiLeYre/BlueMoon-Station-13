@@ -62,10 +62,15 @@ a creative player the means to solve many problems.  Circuits are held inside an
 
 // This should be used when someone is examining from an 'outside' perspective, e.g. reading a screen or LED.
 /obj/item/integrated_circuit/proc/external_examine(mob/user)
-	any_examine(user)
+	return (any_examine(user))
 
 /obj/item/integrated_circuit/proc/any_examine(mob/user)
 	return
+
+//called by "Topic - href_list["interact"]" in assemblies.dm
+/obj/item/integrated_circuit/attack_hand(mob/user, act_intent, attackchain_flags)
+	if(!assembly)
+		. = ..()
 
 /obj/item/integrated_circuit/proc/attackby_react(var/atom/movable/A,mob/user)
 	return
@@ -268,7 +273,7 @@ a creative player the means to solve many problems.  Circuits are held inside an
 			if(href_list["link"])
 				linked = locate(href_list["link"]) in pin.linked
 
-			if(istype(held_item, /obj/item/integrated_electronics) || held_item.tool_behaviour == TOOL_MULTITOOL)
+			if(held_item && (istype(held_item, /obj/item/integrated_electronics) || held_item.tool_behaviour == TOOL_MULTITOOL))
 				update_to_assembly = pin.handle_wire(linked, held_item, href_list["act"], usr)
 			else
 				to_chat(usr, "<span class='warning'>You can't do a whole lot without the proper tools.</span>")

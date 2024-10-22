@@ -62,6 +62,8 @@ Credit where due:
 			return FALSE
 		if(M.mind.unconvertable)
 			return FALSE
+		if (IS_HERETIC(M))
+			return FALSE
 	else
 		return FALSE
 	if(iscultist(M) || isconstruct(M) || ispAI(M))
@@ -138,9 +140,9 @@ Credit where due:
 	required_players = 24 //Fixing this directly for now since apparently config machine for forcing modes broke.
 	required_enemies = 3
 	recommended_enemies = 5
-	enemy_minimum_age = 7
-	protected_jobs = list("Prisoner", "AI", "Cyborg", "Security Officer", "Warden", "Detective", "Head of Security", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director", "Quartermaster", "Blueshield", "Brig Physician", "Peacekeeper", "NanoTrasen Representative", "Lawyer", "Chaplain") //Silicons can eventually be converted
-	restricted_jobs = list("Chaplain", "Captain")
+	enemy_minimum_age = 0 // BLUEMOON EDIT - было 7, сделал 0, т.к. на сервере ВЛ и загриферить ролью тяжело
+	protected_jobs = list("Prisoner", "Shaft Miner", "AI", "Cyborg", "Security Officer", "Warden", "Detective", "Head of Security", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director", "Quartermaster", "Blueshield", "Brig Physician", "Peacekeeper", "NanoTrasen Representative", "Internal Affairs Agent", "Chaplain") //Silicons can eventually be converted
+	restricted_jobs = list("Chaplain","Bridge Officer", "Captain")
 	announce_span = "brass"
 	announce_text = "Servants of Ratvar are trying to summon the Justiciar!\n\
 	<span class='brass'>Servants</span>: Construct defenses to protect the Ark. Sabotage the station!\n\
@@ -188,16 +190,16 @@ Credit where due:
 		equip_servant(L)
 		add_servant_of_ratvar(L, TRUE)
 	..()
-	return 1
+	return TRUE
 
 /datum/game_mode/proc/greet_servant(mob/M) //Description of their role
 	if(!M)
-		return 0
+		return FALSE
 	to_chat(M, "<span class='bold large_brass'>You are a servant of Ratvar, the Clockwork Justiciar!</span>")
 	to_chat(M, "<span class='brass'>Unlock <b>Script</b> scripture by converting a new servant or when 35kw of power is reached.</span>")
 	to_chat(M, "<span class='brass'><b>Application</b> scripture will be unlocked when 50kw of power is reached.</span>")
 	M.playsound_local(get_turf(M), 'sound/ambience/antag/clockcultalr.ogg', 100, FALSE, pressure_affected = FALSE)
-	return 1
+	return TRUE
 
 /datum/game_mode/proc/equip_servant(mob/living/M) //Grants a clockwork slab to the mob
 	if(!M || !ishuman(M))

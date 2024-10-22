@@ -9,6 +9,7 @@
 	desc = "Truly, the weapon of a madman. Who would think to fight fire with an axe?"
 	force = 5
 	throwforce = 15
+	armour_penetration = 25
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
 	attack_verb = list("attacked", "chopped", "cleaved", "torn", "cut")
@@ -25,13 +26,13 @@
 
 /obj/item/fireaxe/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/fireaxe/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/butchering, 100, 80, 0 , hitsound) //axes are not known for being precision butchering tools
-	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=24, icon_wielded="fireaxe1")
+	AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=28, icon_wielded="fireaxe1")
 
 /// triggered on wield of two handed item
 /obj/item/fireaxe/proc/on_wield(obj/item/source, mob/user)
@@ -76,13 +77,13 @@
 
 /obj/item/fireaxe/energized
 	desc = "Someone with a love for fire axes decided to turn this one into a high-powered energy weapon. Seems excessive."
-	armour_penetration = 30
+	armour_penetration = 50
 	var/charge = 90
 	var/max_charge = 90
 
 /obj/item/fireaxe/energized/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=30, icon_wielded="fireaxe2")
+	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=30, icon_wielded="fireaxe1")
 
 /obj/item/fireaxe/energized/update_icon_state()
 		icon_state = "fireaxe0"

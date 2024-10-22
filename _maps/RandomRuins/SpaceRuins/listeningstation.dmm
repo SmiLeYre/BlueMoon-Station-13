@@ -8,39 +8,20 @@
 "ac" = (
 /obj/structure/sign/poster/contraband/random,
 /turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ad" = (
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
-"ae" = (
+/obj/structure/fluff/railing/corner,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"ae" = (
+/obj/structure/railing,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "af" = (
 /obj/structure/rack{
 	dir = 8
 	},
-/obj/effect/turf_decal/stripes/line,
 /obj/item/clothing/mask/gas/syndicate{
 	pixel_y = -1;
 	pixel_x = -7
@@ -50,76 +31,73 @@
 	pixel_x = 8
 	},
 /obj/item/clothing/mask/gas/syndicate,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ag" = (
 /turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ah" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
+/obj/effect/turf_decal/stripes/corner{
+	dir = 2;
+	icon_state = "half_stairs_darkfull"
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/structure/fluff/railing/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ai" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
+/obj/effect/turf_decal/stripes/corner{
+	dir = 2;
+	icon_state = "half_stairs_darkfull"
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/structure/fluff/railing/corner{
 	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
-"aj" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"aj" = (
+/obj/structure/fluff/railing/corner{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ak" = (
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/structure/chair/office/dark{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "al" = (
 /obj/structure/table,
-/obj/item/storage/toolbox/syndicate,
 /obj/item/flashlight{
 	pixel_y = -17
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
-"am" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
+/obj/item/flashlight{
+	pixel_y = 10
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/item/storage/toolbox/syndicate,
+/obj/effect/turf_decal/stripes/corner{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"am" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/red/corner,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "an" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
@@ -128,24 +106,21 @@
 	id_tag = "syndie_listeningpost_external";
 	req_access_txt = "150"
 	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/listeningstation)
-"ao" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "delivery"
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"ao" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/red/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ap" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 8
@@ -155,83 +130,68 @@
 	req_access_txt = "150"
 	},
 /obj/structure/fans/tiny,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "delivery"
+	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aq" = (
 /obj/machinery/light/small{
 	brightness = 3;
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 4
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ar" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on{
-	dir = 4;
-	piping_layer = 3;
-	pixel_x = 5;
+/obj/effect/turf_decal/siding/red/corner{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 8
+	},
+/obj/structure/chair/stool/bar{
+	dir = 8;
+	pixel_x = -2;
 	pixel_y = 5
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 5
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "as" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
+	dir = 5
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "at" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 5
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "au" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 10
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 10
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "av" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -240,11 +200,23 @@
 	pixel_x = 25
 	},
 /obj/structure/table,
-/obj/item/paper_bin,
-/obj/item/paper/fluff/ruins/listeningstation/reports/november,
-/obj/item/pen,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/item/paper/fluff/ruins/listeningstation/reports/november{
+	pixel_x = 5
+	},
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 4
+	},
+/obj/item/pen{
+	pixel_x = 3
+	},
+/obj/item/multitool{
+	pixel_y = 4;
+	pixel_x = -5
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 8
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aw" = (
 /obj/structure/table,
 /obj/machinery/cell_charger,
@@ -257,31 +229,31 @@
 	dir = 4;
 	pixel_x = -24
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ax" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
+/obj/effect/turf_decal/siding/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ay" = (
-/obj/structure/filingcabinet,
-/obj/item/paper/fluff/ruins/listeningstation/odd_report,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/item/kirbyplants{
+	icon_state = "plant-33";
+	pixel_y = 6
+	},
+/obj/effect/turf_decal/trimline/dark_red/line,
+/turf/open/floor/iron/dark/side{
+	dir = 1
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "az" = (
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/wood{
+	icon_state = "large_wood"
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -289,127 +261,125 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aB" = (
-/obj/structure/rack{
-	dir = 8
+/obj/item/storage/backpack/duffelbag/syndie/c20rbundle{
+	pixel_y = -1
 	},
-/obj/item/multitool,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/item/storage/backpack/duffelbag/syndie/c20rbundle{
+	pixel_y = 8
+	},
+/obj/structure/rack/shelf,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 6
+	},
+/turf/open/floor/iron/dark/corner{
+	dir = 1
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aC" = (
 /obj/structure/rack{
 	dir = 8;
 	layer = 2.9
 	},
-/obj/item/tank/internals/doubleoxygen,
 /obj/item/tank/internals/doubleoxygen{
-	pixel_x = 9;
-	pixel_y = -6
+	pixel_y = -2;
+	pixel_x = 5
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/item/tank/internals/doubleoxygen{
+	pixel_y = 6
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aD" = (
 /obj/structure/table/wood/poker,
 /obj/item/toy/cards/deck/syndicate,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line,
+/obj/effect/turf_decal/siding/red,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aF" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/glass/reinforced,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aG" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 8
-	},
 /obj/machinery/computer/shuttle/ds_syndicate{
 	dir = 8
 	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot"
+	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aI" = (
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aJ" = (
-/obj/machinery/door/airlock{
-	name = "Cabin"
+/obj/effect/turf_decal/trimline/dark_red,
+/obj/machinery/door/airlock/hatch{
+	name = "Room 2";
+	req_access_txt = "150"
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aK" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/door/airlock/hatch{
 	name = "Telecommunications";
 	req_access_txt = "150"
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/trimline/dark_red,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"aL" = (
+/obj/effect/turf_decal/siding/red{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/trimline/dark_red/line{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
-"aL" = (
-/obj/structure/chair/stool,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
+/obj/effect/turf_decal/siding/red{
+	dir = 8
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/structure/chair/stool/bar{
+	dir = 4;
+	pixel_x = -2;
+	pixel_y = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 10
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aM" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/door/airlock/hatch{
 	name = "E.V.A. Equipment";
 	req_access_txt = "150"
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aN" = (
 /obj/structure/bookcase/random/adult,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
 	},
-/turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aO" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -430,14 +400,19 @@
 	},
 /obj/item/stock_parts/cell/high/plus,
 /obj/item/inducer/sci/combat,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aP" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/siding/red,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aQ" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
@@ -445,44 +420,58 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 1
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aR" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/machinery/door/airlock{
-	name = "Personal Quarters"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/siding/red{
+	dir = 1
+	},
+/obj/effect/turf_decal/trimline/dark_red,
+/obj/machinery/door/airlock/hatch{
+	name = "Cafeteria";
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aS" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
-"aT" = (
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
-/obj/effect/turf_decal/tile/red{
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 9
+	},
+/obj/effect/turf_decal/siding/red{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"aT" = (
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aU" = (
 /obj/machinery/airalarm/syndicate{
 	pixel_y = 24
@@ -491,32 +480,32 @@
 	dir = 1
 	},
 /obj/effect/baseturf_helper/asteroid/airless,
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 1
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aV" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aW" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -528,32 +517,32 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 1
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aX" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/red{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/red{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 5
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aY" = (
 /obj/machinery/vending/snack/random{
 	extended_inventory = 1
@@ -561,28 +550,26 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = 32
 	},
-/obj/effect/turf_decal/tile/red{
-	dir = 1
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot"
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "aZ" = (
 /obj/structure/filingcabinet,
-/obj/item/paper/fluff/ruins/listeningstation/reports/october,
-/obj/item/paper/fluff/ruins/listeningstation/reports/september,
-/obj/item/paper/fluff/ruins/listeningstation/reports/august,
-/obj/item/paper/fluff/ruins/listeningstation/reports/july,
-/obj/item/paper/fluff/ruins/listeningstation/reports/june,
-/obj/item/paper/fluff/ruins/listeningstation/reports/may,
-/obj/item/paper/fluff/ruins/listeningstation/reports/april,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
-"ba" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 9
+/obj/item/paper/fluff/ruins/listeningstation/receipt,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 10
+	},
+/turf/open/floor/iron/dark/corner{
+	dir = 4
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -590,24 +577,33 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bc" = (
 /obj/machinery/light/small,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line,
+/obj/effect/turf_decal/siding/red,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bd" = (
 /obj/structure/bed/pod{
 	dir = 1
 	},
 /obj/item/bedsheet/syndie{
-	dir = 8
+	dir = 4;
+	pixel_y = 5
 	},
 /obj/effect/mob_spawn/human/lavaland_syndicate/comms/space{
 	dir = 4
 	},
 /turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "be" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -615,8 +611,10 @@
 /obj/structure/extinguisher_cabinet{
 	pixel_y = -29
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line,
+/obj/effect/turf_decal/siding/red,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bf" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 1;
@@ -624,21 +622,31 @@
 	pixel_x = 5;
 	pixel_y = 5
 	},
-/turf/open/floor/plasteel/white/corner,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line,
+/obj/effect/turf_decal/siding/red,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bg" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel/white/side,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 6
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bh" = (
 /obj/machinery/vending/cola/random{
 	extended_inventory = 1
 	},
-/turf/open/floor/plasteel/white/corner{
-	dir = 8
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot"
 	},
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bi" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
@@ -646,18 +654,16 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bj" = (
 /obj/structure/chair/comfy/black{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
-"bk" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line,
+/obj/effect/turf_decal/siding/red,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bl" = (
 /obj/structure/sign/warning/securearea{
 	desc = "A warning sign which reads 'DANGER: SELF DESTRUCT DEVICE'.";
@@ -665,37 +671,40 @@
 	pixel_x = 32
 	},
 /turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bm" = (
-/obj/machinery/door/airlock/maintenance,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Main Hall Access"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bn" = (
 /obj/structure/sign/departments/medbay/alt,
 /turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bo" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/door/airlock/medical/glass{
-	name = "Medbay"
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel/white,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red,
+/obj/machinery/door/airlock/hatch{
+	name = "Medical Care";
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bp" = (
-/obj/effect/turf_decal/stripes/red/corner{
-	dir = 1
-	},
-/obj/machinery/door/airlock{
-	name = "Cabin"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red,
+/obj/machinery/door/airlock/hatch{
+	name = "Private Quarters Access";
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bq" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
@@ -703,14 +712,11 @@
 /obj/machinery/power/smes{
 	charge = 5e+006
 	},
-/obj/effect/turf_decal/stripes/line{
-	dir = 6
-	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "br" = (
 /obj/structure/cable/yellow{
 	icon_state = "0-8"
@@ -725,8 +731,11 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bs" = (
 /obj/structure/closet/crate/freezer,
 /obj/item/reagent_containers/blood/OMinus{
@@ -737,42 +746,53 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
 	},
-/turf/open/floor/plasteel/white/side{
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/obj/effect/turf_decal/trimline/blue/line{
 	dir = 9
 	},
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark/corner,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bt" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 9
 	},
-/turf/open/floor/plasteel/white/side{
+/obj/effect/turf_decal/trimline/blue/line{
 	dir = 1
 	},
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark/side,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bu" = (
-/turf/open/floor/plasteel/white/side{
-	dir = 4
+/turf/open/floor/iron/dark/side{
+	dir = 8
 	},
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bv" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
 /turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bx" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/machinery/vending/cigarette/syndicate,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "by" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -784,27 +804,48 @@
 /obj/structure/reagent_dispensers/fueltank,
 /obj/item/clothing/head/welding,
 /obj/item/weldingtool/largetank,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bz" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bA" = (
-/turf/open/floor/plasteel/white/side{
+/obj/effect/turf_decal/trimline/blue/line{
 	dir = 8
 	},
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/obj/structure/closet/secure_closet/medical1{
+	req_access = null;
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 4
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/plasteel/white/side{
-	dir = 8
+/turf/open/floor/iron/dark/side{
+	dir = 4
 	},
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bC" = (
 /obj/structure/cable,
 /obj/machinery/power/port_gen/pacman{
@@ -812,53 +853,50 @@
 	},
 /obj/effect/turf_decal/bot,
 /obj/item/wrench,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bD" = (
 /obj/structure/table,
 /obj/item/storage/box/lights/bulbs,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bF" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/meter,
-/obj/effect/turf_decal/stripes/line,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
-"bH" = (
-/obj/effect/turf_decal/bot,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/structure/cable/yellow{
-	icon_state = "1-2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
-"bI" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/stripes/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"bH" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"bI" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/effect/turf_decal/trimline/dark_red/line,
+/turf/open/floor/iron/dark/side{
+	dir = 1
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "bJ" = (
 /obj/docking_port/stationary{
 	dir = 4;
 	dwidth = 6;
 	height = 16;
-	id = "caravansyndicate1_listeningpost";
+	shuttle_id = "caravansyndicate1_listeningpost";
 	name = "Syndicate Listening Post";
 	width = 16
 	},
@@ -869,7 +907,7 @@
 	color = "#DE3A3A"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "cl" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 6
@@ -877,8 +915,25 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"co" = (
+/obj/effect/turf_decal/siding/red{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 8
+	},
+/obj/structure/chair/stool/bar{
+	dir = 8;
+	pixel_x = -2;
+	pixel_y = 5
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "cz" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -886,13 +941,14 @@
 /obj/structure/cable,
 /obj/machinery/power/rtg/advanced/fullupgrade,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "cA" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
 	},
+/obj/structure/closet/secure_closet/personal/cabinet,
 /turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "cI" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -901,7 +957,7 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "di" = (
 /obj/structure/sink{
 	dir = 8;
@@ -912,45 +968,64 @@
 	pixel_x = -26
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "dF" = (
-/obj/effect/turf_decal/siding/dark{
+/obj/effect/turf_decal/siding/red{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/listeningstation)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "dH" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/door/airlock/maintenance,
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/iron/dark/diagonal,
-/area/ruin/space/has_grav/listeningstation)
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Main Hall Access"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "dO" = (
 /obj/machinery/vending/snack/random{
 	onstation = 0
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot"
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "dV" = (
 /obj/machinery/computer/message_monitor{
 	dir = 2
 	},
 /obj/item/paper/monitorkey,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
-"er" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 1
 	},
+/turf/open/floor/iron/dark/side,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"er" = (
 /obj/machinery/atmospherics/components/unary/thermomachine/freezer{
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 6
+	},
+/obj/effect/turf_decal/bot,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "es" = (
 /obj/structure/table/wood,
 /obj/structure/window/reinforced/survival_pod,
@@ -965,7 +1040,15 @@
 	pixel_x = -10
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"ev" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/effect/turf_decal/siding/red/corner{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ey" = (
 /obj/structure/curtain,
 /obj/machinery/shower{
@@ -973,21 +1056,31 @@
 	},
 /obj/item/soap/syndie,
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"eI" = (
+/obj/effect/turf_decal/trimline/dark_red/corner{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 6
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "eR" = (
 /obj/structure/closet/crate/bin,
 /obj/structure/extinguisher_cabinet{
 	pixel_x = -27;
 	pixel_y = 1
 	},
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/wood{
+	icon_state = "large_wood"
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "fo" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "fE" = (
 /obj/machinery/power/smes{
 	charge = 5e+006
@@ -995,32 +1088,50 @@
 /obj/structure/cable/yellow{
 	icon_state = "0-4"
 	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
-"hg" = (
-/obj/machinery/door/airlock{
-	name = "Cabin"
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot"
 	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"gx" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/listeningstation)
-"hj" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/trimline/dark_red/line,
+/obj/effect/turf_decal/siding/red,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"gU" = (
+/obj/structure/fluff/railing/corner{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/machinery/computer/arcade/amputation{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"hg" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/effect/turf_decal/trimline/dark_red,
+/obj/machinery/door/airlock/hatch{
+	name = "Room 1";
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"hj" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot"
+	},
+/obj/machinery/jukebox{
+	req_one_access = null
+	},
+/obj/effect/turf_decal/trimline/dark_red/line,
+/obj/effect/turf_decal/siding/red,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "hy" = (
 /turf/open/floor/engine/vacuum,
 /area/ruin/unpowered/no_grav)
@@ -1029,8 +1140,10 @@
 	dir = 4;
 	req_access_txt = "150"
 	},
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/wood{
+	icon_state = "large_wood"
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "hG" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -1039,32 +1152,38 @@
 	shut_up = 1;
 	onstation = 0
 	},
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/wood{
+	icon_state = "large_wood"
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ig" = (
 /obj/machinery/portable_atmospherics/pump,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ik" = (
 /turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "is" = (
 /obj/machinery/light/small{
 	dir = 4;
 	light_color = "#d8b1b1"
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/siding/red{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/trimline/dark_red/line{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/siding/red{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "iK" = (
 /obj/structure/table,
 /obj/machinery/firealarm{
@@ -1072,21 +1191,25 @@
 	pixel_x = -26
 	},
 /obj/machinery/microwave,
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/wood{
+	icon_state = "large_wood"
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "jj" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
 	},
 /obj/structure/table/wood,
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/wood{
+	icon_state = "large_wood"
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "js" = (
 /obj/structure/chair/sofa/corp/left{
 	color = "#DE3A3A"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ju" = (
 /obj/structure/table/wood,
 /obj/structure/window/reinforced/survival_pod,
@@ -1098,7 +1221,16 @@
 	},
 /obj/item/reagent_containers/glass/beaker/waterbottle/large,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"ks" = (
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 5
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 5
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "lh" = (
 /obj/structure/grille,
 /obj/structure/window/plastitanium,
@@ -1106,69 +1238,126 @@
 	id = "ds2bridge"
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"lx" = (
+/obj/machinery/status_display/syndie,
+/turf/closed/wall/r_wall,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "mk" = (
-/obj/machinery/telecomms/relay/preset/ruskie{
-	use_power = 0
-	},
 /obj/machinery/light/small{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
-"mR" = (
-/obj/machinery/computer/med_data/syndie{
-	dir = 4;
-	req_one_access = null
+/obj/structure/table,
+/obj/effect/turf_decal/trimline/dark_red/corner{
+	dir = 1
 	},
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/iron/dark/side{
+	dir = 6
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"mD" = (
+/obj/structure/bed/pod{
+	dir = 1
+	},
+/obj/effect/mob_spawn/human/lavaland_syndicate/comms/space{
+	dir = 4
+	},
+/obj/item/bedsheet/syndie{
+	dir = 4;
+	pixel_y = 5
+	},
+/turf/open/floor/carpet/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"mR" = (
 /obj/machinery/light/small{
 	brightness = 3;
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/structure/filingcabinet,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/obj/effect/turf_decal/trimline/dark_red/corner{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 10
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "mV" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on/layer3{
 	dir = 8;
 	volume_rate = 200
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "na" = (
 /obj/structure/table,
 /obj/item/storage/firstaid/regular,
 /obj/item/clothing/neck/stethoscope,
 /obj/item/storage/backpack/duffelbag/med/surgery,
 /obj/item/defibrillator/compact/combat,
-/turf/open/floor/plasteel/white/side{
+/obj/effect/turf_decal/trimline/blue/line{
 	dir = 10
 	},
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark/corner{
+	dir = 4
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "nw" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-4"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"ol" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "or" = (
 /obj/effect/turf_decal/siding/dark,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ow" = (
 /obj/machinery/power/port_gen/pacman/super,
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot"
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"oy" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "oL" = (
 /obj/structure/table/optable,
-/turf/open/floor/plasteel/white/side,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/obj/effect/turf_decal/trimline/blue/line,
+/turf/open/floor/iron/dark/side{
+	dir = 1
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "po" = (
 /obj/structure/toilet{
 	pixel_y = 18
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "pr" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -1177,23 +1366,34 @@
 	icon_state = "2-8"
 	},
 /obj/effect/turf_decal/siding/dark{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
+	dir = 9
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"pR" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/obj/structure/closet/crate/large,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "qc" = (
 /obj/structure/chair/stool,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/siding/red{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"qk" = (
+/obj/structure/closet/crate/engineering/electrical,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "qQ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
-	},
-/obj/machinery/jukebox{
-	req_one_access = null
 	},
 /obj/machinery/light/small{
 	dir = 1
@@ -1201,95 +1401,146 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
-"rc" = (
-/obj/structure/filingcabinet,
-/obj/item/paper/fluff/ruins/listeningstation/receipt,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
-"rt" = (
-/obj/machinery/sleeper/syndie{
-	dir = 8
-	},
-/turf/open/floor/plasteel/white/side{
+/obj/effect/turf_decal/trimline/dark_red/line{
 	dir = 1
 	},
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/siding/red{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"rc" = (
+/obj/effect/turf_decal/trimline/dark_red/line,
+/turf/open/floor/iron/dark/side{
+	dir = 1
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"rt" = (
+/obj/effect/turf_decal/trimline/blue/line{
+	dir = 1
+	},
+/obj/machinery/vending/wallmed/directional/north,
+/turf/open/floor/iron/dark/side,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "rv" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
 /obj/effect/turf_decal/siding/dark{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
+	dir = 9
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "rw" = (
 /obj/machinery/vending/wardrobe/syndie_wardrobe,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot"
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "rx" = (
 /obj/structure/table/wood,
-/obj/machinery/computer/libraryconsole/bookmanagement{
+/obj/machinery/computer/library/checkout{
 	pixel_y = 7
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
-"sb" = (
-/obj/effect/turf_decal/stripes/line,
-/obj/structure/closet/firecloset/full,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
-"sg" = (
-/obj/machinery/door/airlock{
-	name = "Cabin"
-	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"rO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/siding/red/corner,
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"sb" = (
+/obj/structure/closet/firecloset/full,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"sg" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/effect/turf_decal/trimline/dark_red,
+/obj/machinery/door/airlock/hatch{
+	name = "Private Quarters Access";
+	req_access_txt = "150"
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"sm" = (
+/mob/living/simple_animal/pet/penguin/emperor{
+	name = "Kowalski";
+	desc = "Analysis";
+	dir = 1
+	},
+/obj/structure/chair/office/dark{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ss" = (
 /obj/effect/turf_decal/siding/dark,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "sD" = (
-/obj/machinery/door/airlock{
-	name = "Personal Quarters"
-	},
 /obj/machinery/door/firedoor,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/siding/red,
+/obj/machinery/door/airlock/hatch{
+	name = "Cafeteria";
+	req_access_txt = "150"
+	},
+/obj/effect/turf_decal/trimline/dark_red,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "tn" = (
 /obj/structure/chair/office/dark{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/trimline/dark_red/corner{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
+/turf/open/floor/iron/dark/side{
+	dir = 10
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "tI" = (
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "tW" = (
 /obj/machinery/reagentgrinder{
 	pixel_y = 8
 	},
 /obj/structure/table/wood,
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/wood{
+	icon_state = "large_wood"
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"tZ" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "uf" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -1300,22 +1551,30 @@
 /obj/structure/cable,
 /obj/machinery/power/rtg/advanced/fullupgrade,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"uu" = (
+/obj/effect/turf_decal/siding/red{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "uM" = (
 /obj/machinery/firealarm{
 	dir = 2;
 	pixel_y = 24
 	},
-/obj/structure/table,
-/obj/item/storage/backpack/duffelbag/syndie/c20rbundle,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/bot,
+/obj/machinery/telecomms/relay/preset/ruskie{
+	use_power = 0
+	},
+/turf/open/floor/circuit,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ve" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 2
 	},
 /turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "vk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -1323,20 +1582,22 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 10
 	},
-/obj/machinery/door/airlock/maintenance,
+/obj/machinery/door/airlock/maintenance_hatch{
+	name = "Engineering Storage"
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "vG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "vM" = (
 /obj/machinery/light/small,
 /obj/structure/sign/warning/vacuum{
 	pixel_y = 32
 	},
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "vP" = (
 /obj/machinery/airalarm/syndicate{
 	pixel_y = 24
@@ -1347,27 +1608,31 @@
 /obj/machinery/computer/crew/syndie{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 9
+	},
+/turf/open/floor/iron/dark/corner,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "vT" = (
 /obj/effect/turf_decal/siding/dark,
 /obj/structure/bookcase/random/adult,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "vY" = (
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "wa" = (
 /obj/machinery/light/small,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
 /turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "wv" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -1377,18 +1642,24 @@
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "wT" = (
 /obj/structure/chair/sofa/corp/right{
 	color = "#DE3A3A"
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "wV" = (
 /obj/item/reagent_containers/food/drinks/shaker,
 /obj/structure/table/wood,
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/wood{
+	icon_state = "large_wood"
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"xb" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "xf" = (
 /obj/structure/table/wood,
 /obj/item/ammo_box/magazine/m10mm,
@@ -1397,7 +1668,11 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"xD" = (
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "xJ" = (
 /obj/machinery/light/small,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -1405,16 +1680,16 @@
 	dir = 4
 	},
 /turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "xP" = (
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "yg" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "yh" = (
 /obj/machinery/power/terminal{
 	dir = 1
@@ -1433,33 +1708,68 @@
 /obj/structure/cable{
 	icon_state = "0-4"
 	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "yC" = (
 /obj/machinery/space_heater,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"yY" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "zT" = (
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Am" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/rag,
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/wood{
+	icon_state = "large_wood"
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "AC" = (
 /obj/item/kirbyplants/hedge{
 	anchored = 1
 	},
 /obj/machinery/light/dim/directional/north,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "AJ" = (
 /obj/machinery/vending/cola/random{
 	onstation = 0
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot"
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 1
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"AX" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/red/corner{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "BE" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1468,7 +1778,25 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"BZ" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/obj/structure/rack/shelf,
+/obj/item/mod/control/pre_equipped/syndicate_empty{
+	icon_state = "security-control";
+	pixel_y = -3;
+	pixel_x = 3
+	},
+/obj/item/mod/control/pre_equipped/syndicate_empty{
+	icon_state = "security-control";
+	pixel_y = 4;
+	pixel_x = -4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Cd" = (
 /obj/item/radio/intercom{
 	freerange = 1;
@@ -1478,14 +1806,34 @@
 /obj/machinery/computer/secure_data/syndie{
 	dir = 4
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/structure/railing,
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 4
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Ce" = (
 /obj/machinery/vending/donksofttoyvendor{
 	onstation = 0
 	},
-/turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"Cf" = (
+/obj/structure/fluff/railing/corner{
+	dir = 4
+	},
+/obj/structure/filingcabinet,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/obj/item/paper/fluff/ruins/listeningstation/odd_report,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "De" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
@@ -1497,40 +1845,48 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot"
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"Dr" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot"
+	},
+/obj/machinery/recharge_station/upgraded,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "DA" = (
 /obj/machinery/computer/camera_advanced,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 9
+	},
+/turf/open/floor/iron/dark/corner,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "DF" = (
-/mob/living/simple_animal/pet/penguin/emperor{
-	name = "Kowalski";
-	desc = "Analysis"
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "DJ" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
-"DK" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 4
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"Ea" = (
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"Ew" = (
+/obj/effect/turf_decal/siding/red{
+	dir = 8
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/corner,
+/obj/effect/turf_decal/siding/red/corner,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "EU" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -1539,36 +1895,49 @@
 	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
-"Ff" = (
-/obj/machinery/portable_atmospherics/canister,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
-"Fv" = (
-/obj/structure/cable{
-	icon_state = "2-8"
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"Fd" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
 	},
-/obj/effect/spawner/structure/window/plasma/reinforced,
+/obj/effect/turf_decal/siding/red,
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"Ff" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 10
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"Fv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 5
 	},
-/turf/open/floor/plating,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "FX" = (
-/obj/structure/closet/secure_closet/medical1{
-	req_access = null;
-	req_access_txt = "150"
-	},
-/turf/open/floor/plasteel/white/side{
+/obj/effect/turf_decal/trimline/blue/line{
 	dir = 5
 	},
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/bot,
+/obj/machinery/sleeper/syndie{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/corner{
+	dir = 8
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Gr" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 8
 	},
 /turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Gw" = (
 /obj/machinery/vending/autodrobe/all_access{
 	default_price = 0;
@@ -1576,28 +1945,25 @@
 	fair_market_price = 0;
 	onstation = 0
 	},
-/turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "GB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "GN" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral,
 /obj/machinery/computer/arcade/battle{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot"
+	},
+/obj/effect/turf_decal/trimline/dark_red/line,
+/obj/effect/turf_decal/siding/red,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "GY" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4;
@@ -1606,17 +1972,22 @@
 	pixel_y = 5
 	},
 /obj/structure/table/wood,
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/wood{
+	icon_state = "large_wood"
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Hf" = (
 /obj/structure/sink{
 	dir = 4;
 	pixel_x = 11
 	},
-/turf/open/floor/plasteel/white/side{
+/obj/effect/turf_decal/trimline/blue/line{
 	dir = 4
 	},
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark/side{
+	dir = 8
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Hq" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -1625,7 +1996,19 @@
 /obj/structure/cable,
 /obj/machinery/power/rtg/advanced/fullupgrade,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"Hz" = (
+/obj/machinery/computer/arcade/tetris{
+	dir = 1
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot"
+	},
+/obj/effect/turf_decal/trimline/dark_red/line,
+/obj/effect/turf_decal/siding/red,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "HH" = (
 /obj/structure/table/wood,
 /obj/item/ammo_box/magazine/m10mm,
@@ -1636,15 +2019,17 @@
 	dir = 1
 	},
 /turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "HU" = (
 /obj/structure/table/wood,
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/wood{
+	icon_state = "large_wood"
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "HW" = (
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "HX" = (
 /obj/structure/table,
 /obj/machinery/computer/security/telescreen/entertainment{
@@ -1668,8 +2053,10 @@
 /obj/machinery/light/small{
 	dir = 8
 	},
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/wood{
+	icon_state = "large_wood"
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Il" = (
 /obj/machinery/door/window/brigdoor{
 	dir = 2;
@@ -1682,18 +2069,19 @@
 /obj/effect/turf_decal/caution/red{
 	dir = 1
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Jc" = (
-/obj/structure/table,
-/obj/item/storage/backpack/duffelbag/syndie/c20rbundle,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/structure/table/reinforced,
+/obj/machinery/computer/library/checkout,
+/obj/structure/railing,
+/turf/open/floor/circuit,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Jn" = (
 /obj/structure/table,
 /obj/item/pipe_dispenser,
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Jv" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -1705,7 +2093,7 @@
 /obj/structure/cable,
 /obj/machinery/power/rtg/advanced/fullupgrade,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "JY" = (
 /obj/structure/statue/bronze/marx,
 /turf/open/floor/engine/vacuum,
@@ -1715,12 +2103,14 @@
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
 	dir = 4
 	},
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/wood{
+	icon_state = "large_wood"
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Kq" = (
 /obj/structure/bookcase/random/adult,
-/turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Ks" = (
 /obj/structure/table/wood,
 /obj/structure/window/reinforced/survival_pod{
@@ -1731,65 +2121,71 @@
 /obj/item/pen,
 /obj/item/reagent_containers/glass/beaker/waterbottle/large,
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Kw" = (
 /obj/structure/chair/comfy/black{
 	dir = 4
 	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line,
+/obj/effect/turf_decal/siding/red,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "KB" = (
 /obj/structure/chair/stool,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral,
 /obj/machinery/airalarm/syndicate{
 	dir = 8;
 	pixel_x = 22
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
-"KF" = (
-/obj/structure/chair/stool,
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/siding/red/corner{
 	dir = 1
 	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/trimline/dark_red/line{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
+/obj/effect/turf_decal/siding/red{
+	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 9
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"KF" = (
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 10
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "KX" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"KY" = (
+/obj/effect/turf_decal/stripes/corner{
+	dir = 2;
+	icon_state = "half_stairs_darkfull"
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Lu" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral,
 /obj/machinery/computer/arcade/tetris{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot"
+	},
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 6
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 6
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "LL" = (
 /obj/structure/table,
 /obj/item/storage/box/donkpockets{
@@ -1806,14 +2202,16 @@
 /obj/structure/sign/poster/contraband/random{
 	pixel_x = -32
 	},
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/wood{
+	icon_state = "large_wood"
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "LV" = (
-/obj/machinery/light/small{
+/obj/effect/turf_decal/siding/dark{
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Md" = (
 /obj/structure/table,
 /obj/item/storage/toolbox/emergency{
@@ -1825,8 +2223,11 @@
 /obj/item/storage/toolbox/electrical{
 	pixel_y = -3
 	},
+/obj/machinery/light/small{
+	dir = 8
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Mq" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/item/tank/internals/emergency_nitrogen_ext,
@@ -1835,13 +2236,18 @@
 /obj/item/tank/internals/emergency_nitrogen/double,
 /obj/item/tank/internals/emergency_nitrogen/double,
 /obj/item/tank/internals/emergency_nitrogen/double,
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "MH" = (
 /obj/structure/cable,
 /obj/machinery/power/rtg/advanced/fullupgrade,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "MK" = (
 /obj/machinery/syndicatebomb/self_destruct{
 	anchored = 1
@@ -1855,8 +2261,12 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "delivery"
+	},
 /turf/open/floor/circuit/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Nz" = (
 /obj/machinery/vending/kink{
 	default_price = 0;
@@ -1864,14 +2274,18 @@
 	fair_market_price = 0;
 	onstation = 0
 	},
-/turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "NJ" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/effect/turf_decal/trimline/dark_red/line{
 	dir = 4
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/siding/red/corner,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Ow" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 8
@@ -1879,61 +2293,94 @@
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Oz" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/effect/turf_decal/siding/dark,
 /obj/effect/turf_decal/siding/dark{
-	dir = 8
+	dir = 10
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "OD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
 /turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"OQ" = (
+/obj/structure/closet/crate/engineering,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"Pd" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/effect/spawner/structure/window/plasma/reinforced,
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Pg" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
-/turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 9
+	},
+/obj/effect/turf_decal/siding/red{
+	dir = 9
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Pl" = (
 /obj/structure/bookcase/random/adult,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "PB" = (
-/obj/machinery/door/airlock{
-	name = "Toilet"
+/obj/effect/turf_decal/trimline/dark_red,
+/obj/machinery/door/airlock/hatch{
+	name = "Restroom";
+	req_access_txt = "150"
 	},
-/turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "PW" = (
 /obj/machinery/status_display{
 	pixel_x = -32
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/structure/filingcabinet,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/obj/item/paper/fluff/ruins/listeningstation/reports/april,
+/obj/item/paper/fluff/ruins/listeningstation/reports/may,
+/obj/item/paper/fluff/ruins/listeningstation/reports/june,
+/obj/item/paper/fluff/ruins/listeningstation/reports/july,
+/obj/item/paper/fluff/ruins/listeningstation/reports/august,
+/obj/item/paper/fluff/ruins/listeningstation/reports/september,
+/obj/item/paper/fluff/ruins/listeningstation/reports/october,
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 4
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Qe" = (
 /obj/item/paper/fluff/ruins/listeningstation/briefing,
 /obj/structure/table/wood,
 /obj/item/clothing/accessory/ring/syntech,
 /turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Qm" = (
 /obj/machinery/light/small,
 /obj/structure/table,
 /obj/item/melee/baton/stunsword/smithed,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Qu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "QA" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1946,14 +2393,23 @@
 	},
 /obj/effect/spawner/structure/window/plasma/reinforced,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"QM" = (
+/obj/effect/turf_decal/siding/red{
+	dir = 8
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "QP" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
 	dir = 4
 	},
-/turf/open/floor/wood,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/wood{
+	icon_state = "large_wood"
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "RA" = (
 /obj/machinery/light/small,
 /obj/machinery/airalarm/syndicate{
@@ -1967,24 +2423,48 @@
 	dir = 1;
 	name = "Robotics Operating Computer"
 	},
-/turf/open/floor/plasteel/white/side,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/trimline/blue/line,
+/turf/open/floor/iron/dark/side{
+	dir = 1
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "RY" = (
-/obj/structure/table/reinforced,
-/obj/machinery/computer/libraryconsole/bookmanagement,
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/machinery/computer/med_data/syndie{
+	dir = 2;
+	req_one_access = null
+	},
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 5
+	},
+/turf/open/floor/iron/dark/corner{
+	dir = 8
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "So" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/closet/secure_closet/personal/cabinet,
 /turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "SU" = (
-/obj/effect/turf_decal/siding/dark{
+/obj/effect/turf_decal/siding/red/corner{
+	dir = 8
+	},
+/obj/effect/turf_decal/trimline/dark_red/corner{
 	dir = 4
 	},
-/obj/structure/sign/poster/contraband/random,
-/turf/closed/wall/r_wall,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/siding/red/corner{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "SV" = (
 /obj/structure/closet{
 	icon_door = "black";
@@ -2017,24 +2497,29 @@
 	},
 /obj/item/storage/photo_album,
 /obj/machinery/light/small,
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "SY" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/dark{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
 	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 5
+	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Tx" = (
 /obj/machinery/atmospherics/components/unary/tank/air,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "box_white"
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "TM" = (
 /obj/machinery/light/small{
 	brightness = 3;
@@ -2043,19 +2528,8 @@
 /obj/structure/cable,
 /obj/machinery/power/rtg/advanced/fullupgrade,
 /turf/open/floor/plating,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "TO" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on,
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
 /obj/machinery/button/door/directional/east{
 	desc = "To keep the void away.";
 	id = "ds2bridge";
@@ -2064,17 +2538,27 @@
 	pixel_y = 40;
 	pixel_x = 26
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Ue" = (
 /obj/item/kirbyplants/hedge{
 	anchored = 1
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"Vo" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Vr" = (
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 10
+	},
+/obj/effect/turf_decal/siding/red,
+/turf/open/floor/iron/dark/textured,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "VC" = (
 /obj/machinery/button/door{
 	id = "syndie_listeningpost_external";
@@ -2087,37 +2571,38 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
+/obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
-/obj/effect/turf_decal/stripes/corner{
+/obj/effect/turf_decal/siding/red{
 	dir = 8
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "VM" = (
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Wi" = (
 /obj/machinery/washing_machine,
-/turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Xf" = (
 /obj/machinery/iv_drip,
-/turf/open/floor/plasteel/white/side{
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/obj/effect/turf_decal/trimline/blue/line{
 	dir = 6
 	},
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/iron/dark/corner{
+	dir = 1
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Xj" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -2126,30 +2611,29 @@
 	dir = 8
 	},
 /turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/listeningstation)
-"Xq" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 6
-	},
-/turf/open/floor/plasteel,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "XB" = (
 /obj/machinery/atmospherics/components/unary/tank/air{
 	dir = 1
 	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "box_white"
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "XP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "XT" = (
 /obj/machinery/portable_atmospherics/scrubber,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
 /turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "XY" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
@@ -2157,8 +2641,8 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 9
 	},
-/turf/open/floor/carpet/red,
-/area/ruin/space/has_grav/listeningstation)
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "YM" = (
 /obj/structure/table/wood,
 /obj/item/radio/headset/syndicate/alt,
@@ -2170,11 +2654,15 @@
 	pixel_y = -5
 	},
 /turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "YZ" = (
 /obj/machinery/light/small,
-/turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/listeningstation)
+/obj/item/kirbyplants{
+	icon_state = "plant-27";
+	pixel_y = 6
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ZY" = (
 /obj/machinery/vending/clothing{
 	default_price = 0;
@@ -2182,14 +2670,24 @@
 	fair_market_price = 0;
 	onstation = 0
 	},
-/turf/open/floor/carpet/black,
-/area/ruin/space/has_grav/listeningstation)
+/obj/effect/turf_decal/bot,
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "ZZ" = (
 /obj/machinery/status_display{
 	pixel_x = 32
 	},
-/turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/listeningstation)
+/obj/machinery/vending/snack/random{
+	extended_inventory = 1
+	},
+/obj/effect/turf_decal/bot,
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 8
+	},
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 
 (1,1,1) = {"
 aa
@@ -2658,12 +3156,12 @@ ab
 ab
 ab
 ag
-Vr
-aP
-qc
-Vr
+Pg
+rO
+co
+co
 aL
-Vr
+ar
 KF
 ag
 ab
@@ -2698,10 +3196,10 @@ ab
 ag
 AJ
 aP
-Vr
-Vr
-DK
-qc
+aF
+aF
+aF
+dF
 hj
 ag
 ab
@@ -2735,10 +3233,10 @@ ab
 ab
 ag
 dO
-Xq
-bk
-bk
-ba
+aP
+aF
+aF
+aF
 qc
 GN
 ag
@@ -2773,14 +3271,14 @@ ag
 ag
 ag
 rw
-bb
-Vr
-Vr
-Vr
+aP
+aF
+aF
+aF
 qc
-Lu
+Hz
 ag
-bd
+mD
 xf
 cA
 Qu
@@ -2810,10 +3308,10 @@ ab
 ag
 MK
 Il
-Vr
-bb
-Vr
-Vr
+ks
+SU
+QM
+Ew
 is
 KB
 Lu
@@ -2850,7 +3348,7 @@ ag
 ag
 ac
 qQ
-Vr
+aI
 Kw
 ac
 ag
@@ -2888,7 +3386,7 @@ aq
 aZ
 ag
 bb
-Vr
+aI
 aD
 ag
 Pl
@@ -2896,7 +3394,7 @@ Pl
 SV
 ag
 YM
-NJ
+OD
 cl
 yg
 ik
@@ -2919,26 +3417,26 @@ aa
 lh
 lh
 mR
+ak
+ae
+Cf
 aI
-ah
-ah
-ar
 ay
-ag
+lx
 bb
-Vr
+aI
 bj
 ag
 bv
-Vr
-Vr
+ik
+ik
 ag
 Qe
 OD
 aA
 ik
 ik
-ik
+Ea
 PB
 xP
 HW
@@ -2956,22 +3454,22 @@ aa
 aa
 lh
 DA
-tn
-aI
-ah
+eI
+xD
+gU
 ah
 as
 rc
 ag
 aQ
-DJ
-DJ
+NJ
+bg
 bp
 bi
 DJ
 DJ
 hg
-Pg
+DJ
 Ow
 XY
 ik
@@ -2994,12 +3492,12 @@ aa
 aa
 lh
 dV
-tn
+sm
 aI
 DF
-ah
-as
-ak
+KY
+Vo
+rc
 ag
 aR
 sD
@@ -3033,11 +3531,11 @@ aa
 lh
 RY
 tn
-aI
+xb
 ad
 ai
 at
-ak
+rc
 ag
 aS
 Vr
@@ -3054,13 +3552,13 @@ ag
 ag
 ag
 ag
+Dr
+BZ
 ag
 ag
 ag
 ag
 ag
-ag
-ab
 ab
 ab
 ab
@@ -3093,12 +3591,12 @@ Jn
 Md
 ow
 LV
+LV
 vY
 uf
 cz
 TM
 ag
-ab
 ab
 ab
 aa
@@ -3116,7 +3614,7 @@ av
 aB
 ag
 aU
-DJ
+gx
 bm
 br
 bz
@@ -3131,12 +3629,12 @@ cI
 cI
 Oz
 VM
+VM
 QA
 cz
 cz
 MH
 ag
-ab
 ab
 aa
 aa
@@ -3162,7 +3660,7 @@ ag
 ag
 ag
 vk
-dF
+KX
 KX
 GB
 GB
@@ -3170,11 +3668,11 @@ GB
 or
 vG
 Fv
+Pd
 Jv
 cz
 Hq
 ag
-ab
 ab
 ab
 aa
@@ -3207,12 +3705,12 @@ tI
 tI
 ss
 zT
-bw
+oy
 ag
 ag
 ag
 ag
-ab
+ag
 ab
 ab
 aa
@@ -3227,7 +3725,7 @@ ag
 af
 am
 ax
-bI
+ev
 aM
 aX
 bg
@@ -3244,9 +3742,9 @@ Ue
 js
 Ks
 vT
-zT
-bw
-ab
+ol
+tZ
+ag
 ab
 ab
 ab
@@ -3263,9 +3761,9 @@ ab
 ab
 ag
 sb
+Fd
 aF
-aF
-aF
+uu
 ag
 aY
 bh
@@ -3277,14 +3775,14 @@ ag
 yC
 SY
 er
-SU
+ac
 AC
 cg
 ju
 vT
-zT
-bw
-ab
+OQ
+yY
+ag
 ab
 ab
 ab
@@ -3303,7 +3801,7 @@ ag
 sb
 ao
 VC
-aF
+AX
 ag
 ag
 ag
@@ -3320,9 +3818,9 @@ Ue
 wT
 es
 vT
-zT
-bw
-ab
+qk
+pR
+ag
 ab
 ab
 ab
@@ -3360,7 +3858,7 @@ ag
 ag
 ag
 bw
-ab
+ag
 ab
 ab
 ab

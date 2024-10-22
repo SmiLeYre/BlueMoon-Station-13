@@ -5,6 +5,7 @@
 	threat = -1
 	var/mission = "Assist the station."
 	var/datum/outfit/outfit = /datum/outfit/ert/greybois
+	soft_antag = TRUE //BLUEMOON ADD - дружелюбные, малозначимые гостроли не должны считаться за антагонистов (ломает динамик)
 
 /datum/antagonist/greybois/greygod
 	outfit = /datum/outfit/ert/greybois/greygod

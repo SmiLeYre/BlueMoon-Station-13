@@ -59,26 +59,28 @@ Bonus
 			Firestacks_stage_4(M, A)
 			M.IgniteMob()
 			to_chat(M, "<span class='userdanger'>Your skin bursts into flames!</span>")
-			M.emote("scream")
+			if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				M.emote("scream")
 		if(5)
 			Firestacks_stage_5(M, A)
 			M.IgniteMob()
 			to_chat(M, "<span class='userdanger'>Your skin erupts into an inferno!</span>")
-			M.emote("realagony")
+			if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				M.emote("realagony")
 
 /datum/symptom/fire/proc/Firestacks_stage_4(mob/living/M, datum/disease/advance/A)
 	M.adjust_fire_stacks(1 * power)
 	M.adjustFireLoss(3 * power)
 	if(infective)
 		A.spread(2)
-	return 1
+	return TRUE
 
 /datum/symptom/fire/proc/Firestacks_stage_5(mob/living/M, datum/disease/advance/A)
 	M.adjust_fire_stacks(3 * power)
 	M.adjustFireLoss(5 * power)
 	if(infective)
 		A.spread(4)
-	return 1
+	return TRUE
 
 /*
 //////////////////////////////////////
@@ -140,12 +142,14 @@ Bonus
 			Alkali_fire_stage_4(M, A)
 			M.IgniteMob()
 			to_chat(M, "<span class='userdanger'>Your sweat bursts into flames!</span>")
-			M.emote("scream")
+			if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				M.emote("scream")
 		if(5)
 			Alkali_fire_stage_5(M, A)
 			M.IgniteMob()
 			to_chat(M, "<span class='userdanger'>Your skin erupts into an inferno!</span>")
-			M.emote("realagony")
+			if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+				M.emote("realagony")
 			if(M.fire_stacks < 0)
 				M.visible_message("<span class='warning'>[M]'s sweat sizzles and pops on contact with water!</span>")
 				explosion(get_turf(M),0,0,2 * explosion_power)
@@ -157,7 +161,7 @@ Bonus
 	M.adjustFireLoss(get_stacks/2)
 	if(chems)
 		M.reagents.add_reagent(/datum/reagent/clf3, 2 * power)
-	return 1
+	return TRUE
 
 /datum/symptom/alkali/proc/Alkali_fire_stage_5(mob/living/M, datum/disease/advance/A)
 	var/get_stacks = 8 * power
@@ -165,4 +169,4 @@ Bonus
 	M.adjustFireLoss(get_stacks)
 	if(chems)
 		M.reagents.add_reagent_list(list(/datum/reagent/napalm = 4 * power, /datum/reagent/clf3 = 4 * power))
-	return 1
+	return TRUE

@@ -189,6 +189,7 @@
 		"xenodorsal" 		= "Standard",
 		"xenohead" 			= "Standard",
 		"xenotail" 			= "Xenomorph Tail",
+		"hardsuit_with_tail" = FALSE,
 		"genitals_use_skintone"	= FALSE,
 		"has_cock"			= FALSE,
 		"cock_shape"		= pick(GLOB.cock_shapes_list),
@@ -268,8 +269,11 @@
 		"flavor_text"		= "",
 		"silicon_flavor_text"		= "",
 		"naked_flavor_text" = "", //SPLURT edit
+		"custom_deathgasp" = "застывает и падает без сил, глаза мертвы и безжизненны...", // BLUEMOON ADD - пользовательский эмоут смерти
 		"custom_species_lore" = "",
 		"headshot_link"		= "", //SPLURT edit
+		"headshot_link1"		= "", //BLUEMOON edit
+		"headshot_link2"		= "", //BLUEMOON edit
 		"meat_type"			= "Mammalian",
 		"body_model"		= body_model,
 		"body_size"			= RESIZE_DEFAULT_SIZE,
@@ -557,3 +561,50 @@ GLOBAL_LIST_EMPTY(species_datums)
 #define GET_CLIENT(mob) (##mob.client || ##mob.mock_client)
 
 #define IS_IN_STASIS(mob) (mob.has_status_effect(/datum/status_effect/grouped/stasis))
+
+/proc/set_criminal_status(mob/living/user, datum/data/record/target_records , criminal_status, comment, user_rank, list/authcard_access = list(), user_name)
+	var/status = criminal_status
+	var/old_status = target_records.fields["criminal"] // BLUEMOON ADD - логгирование
+	var/their_name = target_records.fields["name"]
+	var/their_rank = target_records.fields["rank"]
+	switch(criminal_status)
+		if("arrest", SEC_RECORD_STATUS_ARREST)
+			status = SEC_RECORD_STATUS_ARREST
+		if("none", SEC_RECORD_STATUS_NONE)
+			status = SEC_RECORD_STATUS_NONE
+		if("execute", SEC_RECORD_STATUS_EXECUTE)
+			if((ACCESS_LAWYER in authcard_access) || (ACCESS_ARMORY in authcard_access))
+				status = SEC_RECORD_STATUS_EXECUTE
+				message_admins("[ADMIN_FULLMONTY(usr)] authorized <span class='warning'>EXECUTION</span> for [their_rank] [their_name], with comment: [comment]")
+				usr.investigate_log("[key_name(usr)] authorized <span class='warning'>EXECUTION</span> for [their_rank] [their_name], with comment: [comment]", INVESTIGATE_RECORDS)
+			else
+				return FALSE
+		if("search", SEC_RECORD_STATUS_SEARCH)
+			status = SEC_RECORD_STATUS_SEARCH
+		if("monitor", SEC_RECORD_STATUS_MONITOR)
+			status = SEC_RECORD_STATUS_MONITOR
+		if("demote", SEC_RECORD_STATUS_DEMOTE)
+			message_admins("[ADMIN_FULLMONTY(usr)] set criminal status to <span class='warning'>DEMOTE</span> for [their_rank] [their_name], with comment: [comment]")
+			usr.investigate_log("[key_name(usr)] authorized <span class='warning'>DEMOTE</span> for [their_rank] [their_name], with comment: [comment]", INVESTIGATE_RECORDS)
+			status = SEC_RECORD_STATUS_DEMOTE
+		if("incarcerated", SEC_RECORD_STATUS_INCARCERATED)
+			status = SEC_RECORD_STATUS_INCARCERATED
+		if("parolled", SEC_RECORD_STATUS_PAROLLED)
+			status = SEC_RECORD_STATUS_PAROLLED
+		if("released", SEC_RECORD_STATUS_RELEASED)
+			status = SEC_RECORD_STATUS_RELEASED
+		if("discharged", SEC_RECORD_STATUS_DISCHARGED)
+			status = SEC_RECORD_STATUS_DISCHARGED
+	target_records.fields["criminal"] = status
+	log_admin("[key_name_admin(user)] set secstatus of [their_rank] [their_name] to [status], comment: [comment]")
+	target_records.fields["comments"] += "Set to [status] by [user_name || user.name] ([user_rank]) on [GLOB.current_date_string] [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)], comment: [comment]"
+	// BLUEMOON EDIT - логгирование
+	GLOB.data_core.append_sec_logs(
+		target_records.fields["id"],
+		"%%GEN_AUTH%% изменил статус с [old_status] на [target_records.fields["criminal"]]. Причина: [comment]",
+		user_name || user.name,
+		user_rank
+	)
+	// BLUEMOON EDIT END
+	update_all_mob_security_hud()
+	return TRUE

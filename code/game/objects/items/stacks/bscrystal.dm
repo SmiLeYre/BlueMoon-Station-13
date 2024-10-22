@@ -13,7 +13,6 @@
 	refined_type = /obj/item/stack/sheet/bluespace_crystal
 	grind_results = list(/datum/reagent/bluespace = 20)
 	scan_state = "rock_BScrystal" //Splurt Change
-	max_amount = 10
 
 /obj/item/stack/ore/bluespace_crystal/refined
 	name = "refined bluespace crystal"
@@ -26,14 +25,19 @@
 	pixel_y = rand(-5, 5)
 
 /obj/item/stack/ore/bluespace_crystal/get_part_rating()
-	return 1
+	return TRUE
 
 /obj/item/stack/ore/bluespace_crystal/attack_self(mob/user)
-	user.visible_message("<span class='warning'>[user] crushes [src]!</span>", "<span class='danger'>You crush [src]!</span>")
-	new /obj/effect/particle_effect/sparks(loc)
-	playsound(loc, "sparks", 50, 1)
-	blink_mob(user)
-	use(1)
+	if(!user.canUseTopic(src))
+		return
+	if(amount <= 2)
+		user.visible_message("<span class='warning'>[user] ломает [src]!</span>", "<span class='danger'>Вы ломаете [src]!</span>")
+		new /obj/effect/particle_effect/sparks(loc)
+		playsound(loc, "sparks", 50, 1)
+		blink_mob(user)
+		use(1)
+	else
+		user.visible_message("<span class='warning'>[user] перебирает [src] в своих руках. Их слишком много!</span>", "<span class='danger'>Ты перебираешь [src] в своих руках. Их слишком много!</span>")
 
 /obj/item/stack/ore/bluespace_crystal/proc/blink_mob(mob/living/L)
 	do_teleport(L, get_turf(L), blink_range, asoundin = 'sound/effects/phasein.ogg', channel = TELEPORT_CHANNEL_BLUESPACE)

@@ -96,10 +96,6 @@
 /obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating/airless,
 /area/ruin/unpowered)
-"O" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/wall,
-/area/ruin/unpowered)
 "T" = (
 /obj/structure/alien/weeds/node,
 /obj/effect/spawner/lootdrop/salvage,
@@ -891,7 +887,7 @@ c
 c
 f
 n
-O
+c
 c
 c
 q

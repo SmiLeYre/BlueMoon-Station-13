@@ -94,6 +94,17 @@
 	bumpopen(M)
 
 /obj/machinery/door/window/bumpopen(mob/user)
+	if(ishuman(user) && prob(5) && src.density)
+		var/mob/living/carbon/human/H = user
+		if((HAS_TRAIT(H, TRAIT_DUMB)) && Adjacent(user))
+			playsound(src.loc, 'sound/effects/bang.ogg', 25, 1)
+			if(!istype(H.head, /obj/item/clothing/head/helmet))
+				H.visible_message("<span class='danger'>[user] headbutts the airlock.</span>", \
+									"<span class='userdanger'>You headbutt the airlock!</span>")
+				H.DefaultCombatKnockdown(100)
+				H.apply_damage(1, BRUTE, BODY_ZONE_HEAD)
+			else
+				visible_message("<span class='danger'>[user] headbutts the airlock. Good thing [user.ru_who()] wearing a helmet.</span>")
 	if( operating || !src.density )
 		return
 	src.add_fingerprint(user)
@@ -129,7 +140,7 @@
 	if(get_dir(loc, T) == dir)
 		return !density
 	else
-		return 1
+		return TRUE
 
 //used in the AStar algorithm to determinate if the turf the door is on is passable
 /obj/machinery/door/window/CanAStarPass(obj/item/card/id/ID, to_dir)
@@ -144,19 +155,19 @@
 
 /obj/machinery/door/window/open(forced=0)
 	if (src.operating == 1) //doors can still open when emag-disabled
-		return 0
+		return FALSE
 	if(!forced)
 		if(!hasPower())
-			return 0
+			return FALSE
 	if(forced < 2)
 		if(obj_flags & EMAGGED)
-			return 0
+			return FALSE
 	if(!src.operating) //in case of emag
 		operating = TRUE
 	do_animate("opening")
 	playsound(src.loc, 'sound/machines/windowdoor.ogg', 100, 1)
 	src.icon_state ="[src.base_state]open"
-	addtimer(CALLBACK(src, .proc/finish_opening), 10)
+	addtimer(CALLBACK(src, PROC_REF(finish_opening)), 10)
 	return TRUE
 
 /obj/machinery/door/window/proc/finish_opening()
@@ -171,13 +182,13 @@
 
 /obj/machinery/door/window/close(forced=0)
 	if (src.operating)
-		return 0
+		return FALSE
 	if(!forced)
 		if(!hasPower())
-			return 0
+			return FALSE
 	if(forced < 2)
 		if(obj_flags & EMAGGED)
-			return 0
+			return FALSE
 	operating = TRUE
 	do_animate("closing")
 	playsound(src.loc, 'sound/machines/windowdoor.ogg', 100, 1)
@@ -186,7 +197,7 @@
 	density = TRUE
 	air_update_turf(TRUE)
 	update_freelook_sight()
-	addtimer(CALLBACK(src, .proc/finish_closing), 10)
+	addtimer(CALLBACK(src, PROC_REF(finish_closing)), 10)
 	return TRUE
 
 /obj/machinery/door/window/proc/finish_closing()
@@ -232,7 +243,7 @@
 	flick("[src.base_state]spark", src)
 	playsound(src, "sparks", 75, 1)
 	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
-	addtimer(CALLBACK(src, .proc/open_windows_me), 6)
+	addtimer(CALLBACK(src, PROC_REF(open_windows_me)), 6)
 	return TRUE
 
 /obj/machinery/door/window/proc/open_windows_me()
@@ -350,11 +361,11 @@
 				return
 
 			if(density)
-				INVOKE_ASYNC(src, .proc/open)
+				INVOKE_ASYNC(src, PROC_REF(open))
 			else
-				INVOKE_ASYNC(src, .proc/close)
+				INVOKE_ASYNC(src, PROC_REF(close))
 		if("touch")
-			INVOKE_ASYNC(src, .proc/open_and_close)
+			INVOKE_ASYNC(src, PROC_REF(open_and_close))
 
 /obj/machinery/door/window/brigdoor
 	name = "secure door"
@@ -420,12 +431,12 @@
 		var/previouscolor = color
 		color = "#960000"
 		animate(src, color = previouscolor, time = 8)
-		addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 8)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_atom_colour)), 8)
 
 /obj/machinery/door/window/clockwork/allowed(mob/M)
 	if(is_servant_of_ratvar(M))
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
 /obj/machinery/door/window/northleft
 	dir = NORTH

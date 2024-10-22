@@ -370,3 +370,19 @@
 	materials = list(/datum/material/iron = 2500, /datum/material/glass = 2000, /datum/material/bluespace = 2000)
 	build_path = /obj/item/mod/module/anomaly_locked/teleporter
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+// BLUEMOON ADD START - новые (старые) модули для модсьюта
+/datum/design/module/mod_advanced_springlock
+	name = "Electronic exoskeleton module"
+	id = "mod_springlock_advanced"
+	materials = list(/datum/material/iron = 9500, /datum/material/titanium = 4000, /datum/material/glass = 2000, /datum/material/bluespace = 1000)
+	build_path = /obj/item/mod/module/springlock/advanced
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/module/mod_advanced_emp_shield
+	name = "Advanced EMP shield module"
+	id = "mod_emp_shield_advanced"
+	materials = list(/datum/material/iron = 1500, /datum/material/uranium = 2000, /datum/material/diamond = 2000, /datum/material/bluespace = 2000)
+	build_path = /obj/item/mod/module/emp_shield/advanced
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+// BLUEMOON ADD END

@@ -5,6 +5,8 @@
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/bikehorn/golden
 	category = LOADOUT_CATEGORY_DONATOR
+	subcategory = LOADOUT_SUBCATEGORIES_DON01
+	donator_group_id = DONATOR_GROUP_TIER_3 // can be accessed by all donators
 	ckeywhitelist = list("This entry should never appear with this variable set.") //If it does, then that means somebody fucked up the whitelist system pretty hard
 
 /datum/gear/donator/pet
@@ -21,12 +23,12 @@
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 
-/datum/gear/donator/money
-	name = "Money, Motherfucker"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/stack/spacecash/c10000
-	ckeywhitelist = list()
-	donator_group_id = DONATOR_GROUP_TIER_1
+// /datum/gear/donator/money
+// 	name = "Money, Motherfucker"
+// 	slot = ITEM_SLOT_BACKPACK
+// 	path = /obj/item/stack/spacecash/c10000
+// 	ckeywhitelist = list()
+// 	donator_group_id = DONATOR_GROUP_TIER_1
 
 /datum/gear/donator/gasmask_syndicate
 	name = "The Syndicate Mask"
@@ -42,7 +44,7 @@
 	ckeywhitelist = list()
 	cost = 4
 	donator_group_id = DONATOR_GROUP_TIER_1
-
+/*
 /datum/gear/donator/summon_pie
 	name = "Book: Summon Pie"
 	slot = ITEM_SLOT_BACKPACK
@@ -50,7 +52,7 @@
 	ckeywhitelist = list()
 	cost = 6
 	donator_group_id = DONATOR_GROUP_TIER_1
-
+*/
 /datum/gear/donator/purple_zippo
 	name = "Purple Zippo"
 	slot = ITEM_SLOT_BACKPACK
@@ -385,7 +387,7 @@
 
 /datum/gear/donator/darksabresheath
 	name = "Dark Sabre Sheath"
-	slot = ITEM_SLOT_BACKPACK
+	slot = ITEM_SLOT_BELT
 	path = /obj/item/storage/belt/sabre/darksabre
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
@@ -425,6 +427,10 @@
 	path = /obj/item/clothing/head/paperhat
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
+	// BLUEMOON EDIT START - иконки лодаута
+	item_icon = 'icons/obj/clothing/hats.dmi'
+	item_icon_state = "paper"
+	// BLUEMOON EDIT END
 
 /datum/gear/donator/cloakce
 	name = "Polychromic CE Cloak"
@@ -790,4 +796,46 @@
 	slot = ITEM_SLOT_MASK
 	path = /obj/item/clothing/mask/gas/plaguedoctor/jason
 	ckeywhitelist = list("goblin335", "mixalic")
-	subcategory = LOADOUT_SUBCATEGORIES_DON12
+	subcategory = LOADOUT_SUBCATEGORIES_DON04
+
+/datum/gear/donator/bluespacePetCarrier
+	name = "The Bluespace Jar"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/pet_carrier/bluespace
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/glassworkTools
+	name = "The Glasswork Tools"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/glasswork/glasskit
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/glassblowingRod
+	name = "The Glassblowing Rod"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/glasswork/blowing_rod
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/gonzoFistZippo
+	name = "Gonzo Fist Zippo"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/lighter/gonzofist
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/bottleOfLizardWine
+	name = "Bottle of Lizard Wine"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/reagent_containers/food/drinks/bottle/lizardwine
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1
+
+/datum/gear/donator/collectableWizardHat
+	name = "The Collectable Wizard's Hat"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/head/collectable/wizard
+	ckeywhitelist = list()
+	donator_group_id = DONATOR_GROUP_TIER_1

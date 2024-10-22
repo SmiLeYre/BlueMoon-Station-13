@@ -170,6 +170,14 @@
 	build_path = /obj/item/ammo_casing/a357
 	category = list("hacked", "Security")
 
+/datum/design/a50AE
+	name = "High-Caliber Bullet (.50)"
+	id = "a50AE"
+	build_type = AUTOLATHE | NO_PUBLIC_LATHE
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_casing/a50AE
+	category = list("hacked", "Security")
+
 /datum/design/a762
 	name = "Rifle Bullet (7.62mm)"
 	id = "a762"
@@ -217,6 +225,14 @@
 	build_type = AUTOLATHE | NO_PUBLIC_LATHE
 	materials = list(/datum/material/iron = 50000)
 	build_path = /obj/item/ammo_box/a762x39
+	category = list("hacked", "Security")
+
+/datum/design/a762x38
+	name = "Revolver Bullet (7.62x38R)"
+	id = "a762x38R"
+	build_type = AUTOLATHE | NO_PUBLIC_LATHE
+	materials = list(/datum/material/iron = 4000)
+	build_path = /obj/item/ammo_casing/n762
 	category = list("hacked", "Security")
 //BlueMoon edit end
 

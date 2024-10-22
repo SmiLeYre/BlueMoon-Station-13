@@ -16,12 +16,14 @@
 	var/datum/track/selectedtrack = null
 	var/list/queuedplaylist = list()
 	var/queuecooldown //This var exists solely to prevent accidental repeats of John Mulaney's 'What's New Pussycat?' incident. Intentional, however......
+	var/repeat = FALSE //BLUEMOON ADD зацикливание плейлистов
+	var/one_area_play = FALSE //BLUEMOON ADD переменная проигрыша джукбокса в одной зоне (для инфдорм)
 
 /obj/machinery/jukebox/disco
 	name = "radiant dance machine mark IV"
 	desc = "The first three prototypes were discontinued after mass casualty incidents."
 	icon_state = "disco"
-	req_one_access = list(ACCESS_ENGINE)
+	// req_one_access = list(ACCESS_ENGINE) SPLURT EDIT
 	anchored = FALSE
 	var/list/spotlights = list()
 	var/list/sparkles = list()
@@ -91,10 +93,12 @@
 /obj/machinery/jukebox/ui_data(mob/user)
 	var/list/data = list()
 	data["active"] = active
-	data["songs"] = list()
-	for(var/datum/track/S in SSjukeboxes.songs)
-		var/list/track_data = list(name = S.song_name)
-		data["songs"] += list(track_data)
+	// BLUEMOON DEL -- ищи в modular_bluemoon/jukebox
+	// data["songs"] = list()
+	// for(var/datum/track/S in SSjukeboxes.songs)
+	// 	var/list/track_data = list(name = S.song_name)
+	// 	data["songs"] += list(track_data)
+	// BLUEMOON DEL END
 	data["queued_tracks"] = list()
 	for(var/datum/track/S in queuedplaylist)
 		var/list/track_data = list(name = S.song_name)
@@ -108,6 +112,7 @@
 	data["is_emagged"] = (obj_flags & EMAGGED)
 	data["cost_for_play"] = queuecost
 	data["has_access"] = allowed(user)
+	data["repeat"] = repeat		//BLUEMOON ADD
 	return data
 
 /obj/machinery/jukebox/ui_act(action, list/params)
@@ -126,6 +131,11 @@
 			else
 				stop = 0
 			return TRUE
+		//BLUEMOON ADD зацикливание плейлистов
+		if("repeat")
+			repeat = !repeat
+			return
+		//BLUEMOON ADD END
 		if("add_to_queue")
 			var/list/available = list()
 			for(var/datum/track/S in SSjukeboxes.songs)
@@ -191,13 +201,22 @@
 /obj/machinery/jukebox/proc/activate_music()
 	if(playing || !queuedplaylist.len)
 		return FALSE
+	// BLUEMOON ADD - Making sure not to play track if all jukebox channels are busy. That shouldn't happen.
+	if(!SSjukeboxes.freejukeboxchannels.len)
+		say("Cannot play song: limit of currently playing tracks has been exceeded.")
+		return FALSE
+	// BLUEMOON ADD END
 	playing = queuedplaylist[1]
-	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, playing, volume/35)
+	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, playing, volume/35, one_area_play) //BLUEMOON EDIT
 	if(jukeboxslottotake)
 		active = TRUE
 		update_icon()
 		START_PROCESSING(SSobj, src)
 		stop = world.time + playing.song_length
+		//BLUEMOON ADD повтор плейлиста (трек добавляется в конец плейлиста)
+		if(repeat)
+			queuedplaylist += queuedplaylist[1]
+		//BLUEMOON ADD END
 		queuedplaylist.Cut(1, 2)
 		say("Сейчас играет: [playing.song_name]")
 		playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, TRUE)
@@ -356,22 +375,22 @@
 				glow.update_light()
 				continue
 		if(prob(2))  // Unique effects for the dance floor that show up randomly to mix things up
-			INVOKE_ASYNC(src, .proc/hierofunk)
+			INVOKE_ASYNC(src, PROC_REF(hierofunk))
 		sleep(playing.song_beat)
 
 #undef DISCO_INFENO_RANGE
 
 /obj/machinery/jukebox/disco/proc/dance(var/mob/living/M) //Show your moves
 	set waitfor = FALSE
-	switch(rand(0,9))
-		if(0 to 1)
-			dance2(M)
-		if(2 to 3)
-			dance3(M)
-		if(4 to 6)
-			dance4(M)
-		if(7 to 9)
-			dance5(M)
+	// switch(rand(0,9))
+	// 	if(0 to 1)
+	dance2(M) // остался только эмоут, не ломающий спрайты
+		// if(2 to 3)
+		// 	dance3(M)
+		// if(4 to 6)
+		// 	dance4(M)
+		// if(7 to 9)
+		// 	dance5(M)
 
 /obj/machinery/jukebox/disco/proc/dance2(var/mob/living/M)
 	for(var/i = 1, i < 10, i++)

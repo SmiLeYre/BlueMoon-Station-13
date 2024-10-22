@@ -1,3 +1,5 @@
+#define OVERMIND_STARTING_AUTO_PLACE_TIME (6 MINUTES) // After this time, randomly place the core somewhere viable
+
 /datum/antagonist/blob
 	name = "Blob"
 	roundend_category = "blobs"
@@ -8,7 +10,6 @@
 	var/datum/action/innate/blobpop/pop_action
 	var/starting_points_human_blob = 60
 	var/point_rate_human_blob = 2
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/blob/threat()
 	. = ..()
@@ -54,6 +55,14 @@
 	desc = "Unleash the blob"
 	icon_icon = 'icons/mob/blob.dmi'
 	button_icon_state = "blob"
+	/// The time taken before this ability is automatically activated.
+	var/autoplace_time = OVERMIND_STARTING_AUTO_PLACE_TIME
+
+/datum/action/innate/blobpop/Grant(Target)
+	. = ..()
+	if(owner)
+		addtimer(CALLBACK(src, PROC_REF(Activate), TRUE), autoplace_time, TIMER_UNIQUE|TIMER_OVERRIDE)
+		to_chat(owner, span_boldannounce("You will automatically pop and place your blob core in [DisplayTimeText(autoplace_time)]."))
 
 /datum/action/innate/blobpop/Activate()
 	var/mob/old_body = owner

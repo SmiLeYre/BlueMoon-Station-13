@@ -15,6 +15,8 @@
 			return
 	. = attackchain_flags
 	if(tool_behaviour && ((. = target.tool_act(user, src, tool_behaviour)) & STOP_ATTACK_PROC_CHAIN))
+		if(tool_behaviour == TOOL_MULTITOOL)
+			update_icon()
 		return
 	if((. |= pre_attack(target, user, params, ., damage_multiplier)) & STOP_ATTACK_PROC_CHAIN)
 		return
@@ -82,7 +84,7 @@
 	SEND_SIGNAL(user, COMSIG_MOB_ITEM_ATTACK, M, user)
 	if(item_flags & NOBLUDGEON)
 		return
-	if(force && damtype != STAMINA && HAS_TRAIT(user, TRAIT_PACIFISM))
+	if(force && damtype != STAMINA && damtype != LUST_DAMAGE && HAS_TRAIT(user, TRAIT_PACIFISM))	//So pacifists can use horny items. - Gardelin0
 		to_chat(user, "<span class='warning'>You don't want to harm other living beings!</span>")
 		return
 
@@ -236,7 +238,7 @@
 		attack_message_local = "You [message_verb] yourself[message_hit_area] with [I]"
 	visible_message("<span class='danger'>[attack_message]</span>",\
 		"<span class='userdanger'>[attack_message_local]</span>", null, COMBAT_MESSAGE_RANGE)
-	return 1
+	return TRUE
 
 /// How much stamina this takes to swing this is not for realism purposes hecc off.
 /obj/item/proc/getweight(mob/living/user, multiplier = 1, trait = SKILL_STAMINA_COST)

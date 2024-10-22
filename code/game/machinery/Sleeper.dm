@@ -50,6 +50,7 @@
 	efficiency = initial(efficiency)* E
 	min_health = initial(min_health) - (10*(E-1)) // CIT CHANGE - changes min health equation to be min_health - (matterbin rating * 10)
 	available_chems = list()
+	I = clamp(I, 1, 5) //patch for T6, fix it later
 	for(var/i in 1 to I)
 		available_chems |= possible_chems[i]
 	reset_chem_buttons()
@@ -165,6 +166,8 @@
 /obj/machinery/sleeper/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Alt-click [src] to [state_open ? "close" : "open"] it.</span>"
+	if(in_range(user, src) || isobserver(user))
+		. += "<span class='notice'>The status display reads: Efficiency: <b>[efficiency*100]%</b>.</span>"
 
 /obj/machinery/sleeper/process()
 	..()

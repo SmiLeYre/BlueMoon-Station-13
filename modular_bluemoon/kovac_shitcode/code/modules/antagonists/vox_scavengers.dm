@@ -6,7 +6,6 @@
 	threat = 12
 	show_to_ghosts = TRUE
 	var/datum/team/vox_scavengers/crew
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/vox_scavengers/greet()
 	SEND_SOUND(owner.current, sound('modular_bluemoon/kovac_shitcode/sound/vox_spawn.ogg'))
@@ -172,7 +171,7 @@
 	shuttleId = "vox_raiders"
 	lock_override = NONE
 	shuttlePortId = "vox_raiders_custom"
-	jumpto_ports = list("whiteship_away" = 1, "whiteship_home" = 1)
+	jump_to_ports = list("whiteship_away" = 1, "whiteship_home" = 1)
 	view_range = 7
 	x_offset = 0
 	y_offset = 0

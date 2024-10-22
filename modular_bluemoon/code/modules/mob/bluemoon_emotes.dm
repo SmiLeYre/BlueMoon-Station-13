@@ -241,3 +241,91 @@
 	else
 		message = "издает крайне громкий звук."
 	. = ..()
+
+/datum/emote/living/audio/rawr2
+	key = "rawr2"
+	key_third_person = "rawr2"
+	message = "издаёт звук - <b>RAWR!</b>"
+	message_mime = "строит грозную мину!"
+	emote_sound = 'sound/voice/rawr2.ogg'
+	emote_cooldown = 1 SECONDS
+
+/datum/emote/living/audio/rocking
+	key = "rocking"
+	key_third_person = "rocking"
+	message = "издаёт звук - <b>LIGHT WEIGHT BABY!</b>"
+	message_mime = "строит грозную мину!"
+	emote_sound = 'sound/voice/light_weight_baby.ogg'
+	emote_cooldown = 15 SECONDS
+
+/datum/emote/living/audio/affirmative
+	key = "affirmative"
+	key_third_person = "affirmative"
+	message = "испускает <b>утвердительный</b> сигнал"
+	message_mime = "быстро кивает"
+	emote_sound = 'sound/machines/synth_yes.ogg'
+	emote_cooldown = 1 SECONDS
+
+/datum/emote/living/audio/negative
+	key = "negative"
+	key_third_person = "negative"
+	message = "испускает <b>отрицательный</b> сигнал"
+	message_mime = "быстро мотает головой"
+	emote_sound = 'sound/machines/synth_no.ogg'
+	emote_cooldown = 1 SECONDS
+
+/datum/emote/living/audio/cat_snores
+	key = "catsnore"
+	key_third_person = "catsnores"
+	message = "храпит."
+	message_mime = "храпит с необычным звуком."
+	emote_sound = 'sound/voice/snore_mimimimimimi.ogg'
+	emote_cooldown = 1 SECONDS
+
+/datum/emote/living/audio/cp_laugh
+	key = "cplaugh"
+	key_third_person = "cplaught"
+	message = "издаёт вокодерский смех."
+	message_mime = "издаёт вокодерский смех."
+	emote_sound = 'sound/voice/cp_laugh.ogg'
+	emote_cooldown = 0.25 SECONDS
+
+/datum/emote/living/audio/oink1
+	key = "oink1"
+	key_third_person = "oink1"
+	message = "хрюкает."
+	message_mime = "кажется, хрюкает."
+	emote_sound = 'modular_bluemoon/sound/emotes/oink1.ogg'
+	emote_cooldown = 1 SECONDS
+
+/datum/emote/living/audio/oink2
+	key = "oink2"
+	key_third_person = "oink2"
+	message = "хрюкает."
+	message_mime = "кажется, хрюкает."
+	emote_sound = 'modular_bluemoon/sound/emotes/oink2.ogg'
+	emote_cooldown = 1 SECONDS
+
+/datum/emote/living/audio/oink3
+	key = "oink3"
+	key_third_person = "oink3"
+	message = "хрюкает."
+	message_mime = "кажется, хрюкает."
+	emote_sound = 'modular_bluemoon/sound/emotes/oink3.ogg'
+	emote_cooldown = 1 SECONDS
+
+/datum/emote/living/audio/mrrp3
+	key = "mrrp3"
+	key_third_person = "mrrp3"
+	message = "mrrp's."
+	message_mime = "silently mrrp's."
+	emote_sound = 'modular_bluemoon/sound/emotes/mrrps3.ogg'
+	emote_cooldown = 0.5 SECONDS
+
+/datum/emote/living/audio/squeal
+	key = "squeal"
+	key_third_person = "squeal"
+	message = "squeals."
+	message_mime = "silently squeals."
+	emote_sound = 'modular_bluemoon/sound/emotes/squeal.ogg'
+	emote_cooldown = 0.75 SECONDS

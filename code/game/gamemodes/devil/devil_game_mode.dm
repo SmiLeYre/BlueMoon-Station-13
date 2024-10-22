@@ -4,7 +4,7 @@
 	antag_flag = ROLE_DEVIL
 	false_report_weight = 1
 	chaos = 3
-	protected_jobs = list("Prisoner", "Lawyer", "NanoTrasen Representative", "Curator", "Chaplain", "Head of Security", "Captain", "AI")
+	protected_jobs = list("Prisoner", "Internal Affairs Agent", "NanoTrasen Representative", "Curator", "Chaplain", "Head of Security","Bridge Officer", "Captain", "AI")
 	required_players = 0
 	required_enemies = 1
 	recommended_enemies = 4
@@ -47,15 +47,15 @@
 
 	if(devils.len < required_enemies)
 		setup_error = "Not enough devil candidates"
-		return 0
-	return 1
+		return FALSE
+	return TRUE
 
 
 /datum/game_mode/devil/post_setup()
 	for(var/datum/mind/devil in devils)
 		post_setup_finalize(devil)
 	..()
-	return 1
+	return TRUE
 
 /datum/game_mode/devil/generate_report()
 	return "Поблизости были замечены инфернальные существа, предлагающие великие блага в обмен на души. Это считается нарушением Космического Закона, поскольку все трудовые контракты содержат залог на \

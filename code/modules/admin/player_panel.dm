@@ -1,7 +1,7 @@
 /datum/admins/proc/player_panel_new()//The new one
 	if(!check_rights())
 		return
-	log_admin("[key_name(usr)] checked the player panel.")
+	log_admin("[key_name(usr)] checked the player panel in [usr.loc] and X:[usr.x] Y:[usr.y] Z:[usr.z] coordinate.")
 	var/dat = "<html><head><meta http-equiv='Content-Type' content='text/html; charset=utf-8'><title>Player Panel</title></head>"
 
 	//javascript, the part that does most of the work~

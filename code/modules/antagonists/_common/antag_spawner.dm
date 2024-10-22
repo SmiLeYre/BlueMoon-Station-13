@@ -50,7 +50,7 @@
 	if(H.stat || H.restrained())
 		return
 	if(!ishuman(H))
-		return 1
+		return TRUE
 
 	if(loc == H || (in_range(src, H) && isturf(loc)))
 		H.set_machine(src)
@@ -121,8 +121,8 @@
 	if(!(check_usability(user)))
 		return
 
-	to_chat(user, "<span class='notice'>You activate [src] and wait for confirmation.</span>")
-	var/list/nuke_candidates = pollGhostCandidates("Do you want to play as a syndicate [borg_to_spawn ? "[lowertext(borg_to_spawn)] cyborg":"operative"]?", ROLE_OPERATIVE, null, ROLE_OPERATIVE, 150, POLL_IGNORE_SYNDICATE)
+	to_chat(user, "<span class='notice'>Вы активировали [src] и ждёте одобрения.</span>")
+	var/list/nuke_candidates = pollGhostCandidates("Желаете ли вы сыграть за [borg_to_spawn ? "[lowertext(borg_to_spawn)] Борга ИнтеКью":"Оперативника ИнтеКью"]?", ROLE_OPERATIVE, null, ROLE_OPERATIVE, 150, POLL_IGNORE_SYNDICATE)
 	if(LAZYLEN(nuke_candidates))
 		if(QDELETED(src) || !check_usability(user))
 			return
@@ -132,7 +132,7 @@
 		do_sparks(4, TRUE, src)
 		qdel(src)
 	else
-		to_chat(user, "<span class='warning'>Unable to connect to Syndicate command. Please wait and try again later or use the teleporter on your uplink to get your points refunded.</span>")
+		to_chat(user, "<span class='warning'>Невозможно подключиться к штабу ИнтеКью. Пожалуйста, подождите и повторите попытку позже или воспользуйтесь возвратом через Аплинк.</span>")
 
 /obj/item/antag_spawner/nuke_ops/spawn_antag(client/C, turf/T, kind, datum/mind/user)
 	var/mob/living/carbon/human/M = new/mob/living/carbon/human(T)
@@ -176,27 +176,27 @@
 
 /obj/item/antag_spawner/nuke_ops/borg_tele/assault
 	name = "InteQ assault cyborg teleporter"
-	borg_to_spawn = "InteQ-Assault"
+	borg_to_spawn = "Assault"
 
 /obj/item/antag_spawner/nuke_ops/borg_tele/medical
 	name = "InteQ medical cyborg teleporter"
-	borg_to_spawn = "InteQ-Medical"
+	borg_to_spawn = "Medical"
 
 /obj/item/antag_spawner/nuke_ops/borg_tele/saboteur
 	name = "InteQ saboteur cyborg teleporter"
-	borg_to_spawn = "InteQ-Saboteur"
+	borg_to_spawn = "Saboteur"
 
 /obj/item/antag_spawner/nuke_ops/borg_tele/spawn_antag(client/C, turf/T, kind, datum/mind/user)
 	var/mob/living/silicon/robot/R
 	var/datum/antagonist/nukeop/creator_op = user.has_antag_datum(/datum/antagonist/nukeop,TRUE)
-	var/datum/antagonist/raiders/raider = user.has_antag_datum(/datum/antagonist/raiders,TRUE)
-	if(!creator_op || !raider)
+
+	if(!creator_op)
 		return
 
 	switch(borg_to_spawn)
-		if("InteQ-Medical")
+		if("Medical")
 			R = new /mob/living/silicon/robot/modules/inteq/medical(T)
-		if("InteQ-Saboteur")
+		if("Saboteur")
 			R = new /mob/living/silicon/robot/modules/inteq/saboteur(T)
 		else
 			R = new /mob/living/silicon/robot/modules/inteq(T)

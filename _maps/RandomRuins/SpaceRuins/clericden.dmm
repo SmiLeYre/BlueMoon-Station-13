@@ -196,10 +196,6 @@
 /obj/item/paper/fluff/ruins/clericsden/warning,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/unpowered/no_grav)
-"W" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/wall,
-/area/ruin/unpowered/no_grav)
 
 (1,1,1) = {"
 a
@@ -427,7 +423,7 @@ a
 e
 e
 d
-W
+d
 e
 O
 d

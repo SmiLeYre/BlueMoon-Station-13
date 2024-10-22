@@ -89,6 +89,22 @@
 				var/datum/surgery/procedure = new S.type(M, selected_zone, affecting)
 				user.visible_message("[user] drapes [I] over [M]'s [parse_zone(selected_zone)] to prepare for surgery.", \
 					"<span class='notice'>You drape [I] over [M]'s [parse_zone(selected_zone)] to prepare for \an [procedure.name].</span>")
+				// BLUEMOON ADD START
+				if(M.AmountSleeping() > 60)
+					M.SetSleeping(60) //пациент не может уснуть через кнопку во вкладке
+				if(!HAS_TRAIT(M, CAN_BE_OPERATED_WITHOUT_PAIN) && !isbloodfledge(M))
+					if(procedure.special_surgery_traits.len) // подсказка хирургу при начале процедуры
+						if(OPERATION_NEED_FULL_ANESTHETIC in procedure.special_surgery_traits)
+							to_chat(user, span_danger("Эта операция требует, чтобы пациент был без сознания для снижения риска провала. Обезболивающее поможет смягчить эффект."))
+						if(OPERATION_MUST_BE_PERFORMED_AWAKE in procedure.special_surgery_traits)
+							to_chat(user, span_boldwarning("Эта операция требует, чтобы пациент обязательно находился в сознании для снижения шанса провала. Также, рекомендуется обезболивающее."))
+					else
+						to_chat(user, span_notice("Для этой операции достаточно дать пациенту обезболивающее. Например, распылить сильный алкоголь, морфий или дать \"мазь шахтёра\"."))
+				else
+					to_chat(user, span_notice("Этой расе не обязательно находиться без сознания или принимать обезболивающее для операции."))
+				if(HAS_TRAIT(M, TRAIT_BLUEMOON_HEAVY_SUPER))
+					to_chat(user, span_notice("Огромный вес пациент позволяет относительно удобно оперировать его без операционного стола или иных приспособлений. Они НЕ повысят шанс операции."))
+				// BLUEMOON ADD END
 
 				log_combat(user, M, "operated on", null, "(OPERATION TYPE: [procedure.name]) (TARGET AREA: [selected_zone])")
 			else
@@ -97,7 +113,7 @@
 	else if(!current_surgery.step_in_progress)
 		attempt_cancel_surgery(current_surgery, I, M, user)
 
-	return 1
+	return TRUE
 
 /proc/attempt_cancel_surgery(datum/surgery/S, obj/item/I, mob/living/M, mob/user)
 	var/selected_zone = user.zone_selected
@@ -128,7 +144,7 @@
 /proc/get_location_modifier(mob/M)
 	var/turf/T = get_turf(M)
 	if(locate(/obj/structure/table/optable, T))
-		return 1
+		return TRUE
 	else if(locate(/obj/structure/table, T))
 		return 0.8
 	else if(locate(/obj/structure/bed, T))
@@ -157,42 +173,42 @@
 	switch(location)
 		if(BODY_ZONE_HEAD)
 			if(covered_locations & HEAD)
-				return 0
+				return FALSE
 		if(BODY_ZONE_PRECISE_EYES)
 			if(covered_locations & HEAD || face_covered & HIDEEYES || eyesmouth_covered & GLASSESCOVERSEYES)
-				return 0
+				return FALSE
 		if(BODY_ZONE_PRECISE_MOUTH)
 			if(covered_locations & HEAD || face_covered & HIDEFACE || eyesmouth_covered & MASKCOVERSMOUTH || eyesmouth_covered & HEADCOVERSMOUTH)
-				return 0
+				return FALSE
 		if(BODY_ZONE_CHEST)
 			if(covered_locations & CHEST)
-				return 0
+				return FALSE
 		if(BODY_ZONE_PRECISE_GROIN)
 			if(covered_locations & GROIN)
-				return 0
+				return FALSE
 		if(BODY_ZONE_L_ARM)
 			if(covered_locations & ARM_LEFT)
-				return 0
+				return FALSE
 		if(BODY_ZONE_R_ARM)
 			if(covered_locations & ARM_RIGHT)
-				return 0
+				return FALSE
 		if(BODY_ZONE_L_LEG)
 			if(covered_locations & LEG_LEFT)
-				return 0
+				return FALSE
 		if(BODY_ZONE_R_LEG)
 			if(covered_locations & LEG_RIGHT)
-				return 0
+				return FALSE
 		if(BODY_ZONE_PRECISE_L_HAND)
 			if(covered_locations & HAND_LEFT)
-				return 0
+				return FALSE
 		if(BODY_ZONE_PRECISE_R_HAND)
 			if(covered_locations & HAND_RIGHT)
-				return 0
+				return FALSE
 		if(BODY_ZONE_PRECISE_L_FOOT)
 			if(covered_locations & FOOT_LEFT)
-				return 0
+				return FALSE
 		if(BODY_ZONE_PRECISE_R_FOOT)
 			if(covered_locations & FOOT_RIGHT)
-				return 0
+				return FALSE
 
-	return 1
+	return TRUE

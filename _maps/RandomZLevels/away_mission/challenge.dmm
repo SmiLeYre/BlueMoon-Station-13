@@ -132,6 +132,7 @@
 "aQ" = (
 /obj/structure/window/reinforced/fulltile/indestructable,
 /obj/effect/decal/cleanable/oil,
+/obj/structure/grille/indestructable,
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "aR" = (
@@ -181,6 +182,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
 	},
+/obj/structure/grille/indestructable,
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
 "bf" = (
@@ -188,6 +190,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
 	},
+/obj/structure/grille/indestructable,
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
 "bg" = (
@@ -195,6 +198,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
+/obj/structure/grille/indestructable,
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
 "bh" = (
@@ -205,6 +209,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
+/obj/structure/grille/indestructable,
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
 "bk" = (
@@ -219,6 +224,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
+/obj/structure/grille/indestructable,
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
 "bm" = (
@@ -233,6 +239,7 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced/fulltile/indestructable,
+/obj/structure/grille/indestructable,
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
 "bp" = (
@@ -247,11 +254,7 @@
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
 "bq" = (
-/obj/machinery/porta_turret{
-	dir = 8;
-	installation = /obj/item/gun/energy/lasercannon;
-	set_obj_flags = "EMAGGED"
-	},
+/obj/machinery/power/emitter/energycannon,
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
 "br" = (
@@ -259,6 +262,7 @@
 	dir = 4
 	},
 /obj/structure/window/reinforced/fulltile/indestructable,
+/obj/structure/grille/indestructable,
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
 "bt" = (
@@ -270,11 +274,13 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 10
 	},
+/obj/structure/grille/indestructable,
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
 "bv" = (
 /obj/structure/window/reinforced/fulltile/indestructable,
 /obj/effect/turf_decal/stripes/line,
+/obj/structure/grille/indestructable,
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
 "bw" = (
@@ -282,6 +288,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
 	},
+/obj/structure/grille/indestructable,
 /turf/open/floor/plating,
 /area/awaymission/challenge/main)
 "by" = (
@@ -311,6 +318,7 @@
 /area/awaymission/challenge/main)
 "bC" = (
 /obj/structure/window/reinforced/fulltile/indestructable,
+/obj/structure/grille/indestructable,
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "bE" = (
@@ -328,20 +336,13 @@
 	dir = 8
 	},
 /area/awaymission/challenge/main)
-"bL" = (
-/obj/structure/window/reinforced/fulltile/indestructable,
-/obj/machinery/power/emitter/energycannon{
-	dir = 1
-	},
-/turf/open/floor/plating/airless,
-/area/awaymission/challenge/main)
 "bP" = (
 /turf/closed/indestructible{
 	icon_state = "iron0"
 	},
 /area/awaymission/challenge/end)
 "bQ" = (
-/obj/item/gun/ballistic/revolver/russian,
+/obj/item/gun/energy/e_gun/nuclear/pin,
 /turf/open/floor/plasteel/white/side,
 /area/awaymission/challenge/main)
 "bR" = (
@@ -371,6 +372,7 @@
 "bV" = (
 /obj/machinery/light,
 /obj/structure/window/reinforced/fulltile/indestructable,
+/obj/structure/grille/indestructable,
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "bW" = (
@@ -444,10 +446,10 @@
 /area/awaymission/challenge/end)
 "ch" = (
 /obj/structure/chair/comfy/black,
-/mob/living/simple_animal/hostile/syndicate{
+/mob/living/simple_animal/hostile/syndicate/real_syndicate{
 	desc = "It's HIM.";
-	environment_smash = 0;
-	name = "John Syndicate"
+	name = "John Syndicate";
+	environment_smash = 0
 	},
 /turf/open/floor/carpet,
 /area/awaymission/challenge/end)
@@ -490,10 +492,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/challenge/end)
-"cp" = (
-/obj/structure/window/reinforced/fulltile/indestructable,
-/turf/open/space,
-/area/space/nearstation)
 "cq" = (
 /obj/structure/table/wood,
 /obj/item/melee/chainofcommand,
@@ -601,8 +599,7 @@
 /area/awaymission/challenge/end)
 "cL" = (
 /obj/structure/window/reinforced/fulltile/indestructable,
-/obj/structure/window/reinforced/fulltile/indestructable,
-/turf/open/space,
+/turf/open/floor/plasteel/dark,
 /area/space/nearstation)
 "cM" = (
 /obj/effect/spawner/structure/window/hollow/reinforced/directional{
@@ -730,8 +727,7 @@
 /turf/open/floor/plating/airless,
 /area/awaymission/challenge/main)
 "zn" = (
-/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper/anthro/fox,
-/turf/open/floor/circuit,
+/turf/open/space/basic,
 /area/awaymission/challenge/end)
 "Db" = (
 /mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper/anthro/fox,
@@ -26399,7 +26395,7 @@ cn
 cn
 cE
 cn
-cp
+cL
 aa
 aa
 aa
@@ -26657,15 +26653,15 @@ cd
 cd
 cn
 cL
-cp
-cp
-cp
-cp
-cp
-cp
-cp
-cp
-cp
+cL
+cL
+cL
+cL
+cL
+cL
+cL
+cL
+cL
 bP
 aa
 aa
@@ -27920,7 +27916,7 @@ aR
 aY
 ba
 aR
-Lm
+aZ
 ba
 aH
 aH
@@ -27929,7 +27925,7 @@ aY
 ba
 aH
 bC
-aF
+UL
 aF
 bP
 bP
@@ -27942,15 +27938,15 @@ cF
 cd
 cn
 cL
-cp
-cp
-cp
-cp
-cp
+cL
+cL
+cL
+cL
+cL
 cL
 co
 cL
-cp
+cL
 bP
 aa
 aa
@@ -28191,14 +28187,14 @@ aF
 aF
 aF
 bP
-cp
-cp
+cL
+cL
 cL
 cn
 cd
 cd
 cn
-cp
+cL
 cM
 cP
 cP
@@ -28455,7 +28451,7 @@ cn
 cd
 cd
 cn
-cp
+cL
 cN
 cE
 cn
@@ -28712,7 +28708,7 @@ cd
 cd
 cd
 cn
-cp
+cL
 cN
 co
 co
@@ -28969,7 +28965,7 @@ ce
 cd
 cd
 Hr
-cp
+cL
 cN
 co
 cW
@@ -29226,7 +29222,7 @@ cn
 cd
 cd
 cn
-cp
+cL
 cN
 co
 co
@@ -29476,14 +29472,14 @@ aF
 aF
 aF
 bP
-cp
-cp
+cL
+cL
 cL
 cn
 cd
 cd
 cn
-cp
+cL
 cN
 cG
 cn
@@ -29719,7 +29715,7 @@ aR
 aZ
 ba
 aR
-hB
+aY
 ba
 aH
 aH
@@ -29728,7 +29724,7 @@ aZ
 ba
 aH
 bC
-aF
+UL
 aF
 bP
 bP
@@ -29740,7 +29736,7 @@ cD
 cd
 cd
 cn
-cp
+cL
 cO
 cP
 cP
@@ -29998,15 +29994,15 @@ cd
 cd
 cn
 cL
-cp
-cp
-cp
-cp
-cp
+cL
+cL
+cL
+cL
+cL
 cL
 co
 cL
-cp
+cL
 bP
 aa
 aa
@@ -30223,7 +30219,7 @@ aH
 aH
 aH
 aR
-Lm
+aZ
 ba
 aH
 aH
@@ -30241,8 +30237,8 @@ aH
 aH
 aH
 aH
-bL
-aF
+bC
+UL
 aF
 bP
 bX
@@ -31022,8 +31018,8 @@ cj
 Db
 bP
 cn
-cn
-cn
+cd
+cd
 cn
 cn
 cn
@@ -31279,19 +31275,19 @@ ct
 cw
 bP
 cn
-zn
-cG
+OT
+cd
 cn
 cL
-cp
-cp
-cp
-cp
-cp
-cp
-cp
-cp
-cp
+cL
+cL
+cL
+cL
+cL
+cL
+cL
+cL
+cL
 bP
 aa
 aa
@@ -31535,20 +31531,20 @@ bP
 bP
 bP
 bP
-bP
-bP
-bP
-bP
-bP
-bP
-bP
-bP
-bP
-bP
-bP
-bP
-bP
-bP
+cn
+cn
+cG
+cn
+cL
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
+zn
 bP
 aa
 aa
@@ -31791,22 +31787,22 @@ aa
 aa
 aa
 aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
-aa
+bP
+bP
+bP
+bP
+bP
+bP
+bP
+bP
+bP
+bP
+bP
+bP
+bP
+bP
+bP
+bP
 aa
 aa
 aa

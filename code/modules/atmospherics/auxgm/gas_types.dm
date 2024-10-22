@@ -108,7 +108,7 @@
 	heat_penalty = -1
 	transmit_modifier = -5
 	heat_resistance = 3
-	price = 6
+	price = 4
 
 /datum/gas/pluoxium/generate_TLV()
 	return new/datum/tlv(-1, -1, 5, 6)
@@ -129,7 +129,7 @@
 	fire_burn_rate = 2
 	fire_radiation_released = 50 // arbitrary number, basically 60 moles of trit burning will just barely start to harm you
 	fire_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50
-	price = 7
+	price = 4
 
 /datum/gas/nitric_oxide
 	id = GAS_NITRIC
@@ -154,7 +154,7 @@
 	fire_products = list(GAS_N2 = 0.5)
 	enthalpy = 33200
 	oxidation_temperature = FIRE_MINIMUM_TEMPERATURE_TO_EXIST - 50
-	price = 3
+	price = 2
 
 /datum/gas/hypernoblium
 	id = GAS_HYPERNOB
@@ -162,7 +162,7 @@
 	name = "Hyper-noblium"
 	gas_overlay = "freon"
 	moles_visible = MOLES_GAS_VISIBLE
-	price = 50
+	price = 17
 
 /datum/gas/hydrogen
 	id = GAS_HYDROGEN
@@ -190,7 +190,7 @@
 	enthalpy = FIRE_CARBON_ENERGY_RELEASED // it is a mystery
 	transmit_modifier = -2
 	radioactivity_modifier = 5
-	price = 3
+	price = 2
 
 /datum/gas/stimulum
 	id = GAS_STIMULUM
@@ -199,7 +199,7 @@
 	odor_strength = 10
 	name = "Stimulum"
 	fusion_power = 7
-	price = 25
+	price = 10
 
 /datum/gas/miasma
 	id = GAS_MIASMA
@@ -211,7 +211,7 @@
 	gas_overlay = "miasma"
 	color = "#963"
 	moles_visible = MOLES_GAS_VISIBLE * 60
-	price = 2
+//	price = 2 BLUEMOON DELETE кому впринципе нужны миазмы?
 
 /datum/gas/methane
 	id = GAS_METHANE

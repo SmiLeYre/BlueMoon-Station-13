@@ -86,7 +86,6 @@
 
 /atom/movable/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_MOVABLE_BARK, .proc/handle_special_bark) //There must be a better way to do this
 	switch(blocks_emissive)
 		if(EMISSIVE_BLOCK_GENERIC)
 			var/mutable_appearance/gen_emissive_blocker = mutable_appearance(icon, icon_state, plane = EMISSIVE_PLANE, alpha = src.alpha)
@@ -184,7 +183,7 @@
 		if(isobj(A) || ismob(A))
 			if(A.layer > highest.layer)
 				highest = A
-	INVOKE_ASYNC(src, .proc/SpinAnimation, 5, 2)
+	INVOKE_ASYNC(src, PROC_REF(SpinAnimation), 5, 2)
 	throw_impact(highest)
 	return TRUE
 
@@ -317,35 +316,6 @@
 	if(pulling.anchored || pulling.move_resist > move_force || !pulling.Adjacent(src))
 		stop_pulling()
 		return FALSE
-	// BLUEMOON ADDITION AHEAD - проверка на возможность тащить мышкой сверхтяжёлого персонажа
-	if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
-		var/can_pull = FALSE
-		if(isalien(src)) // чужие (с абилками) могут тащить
-			can_pull = TRUE
-		if(issilicon(src)) // киборги могут тащить
-			can_pull = TRUE
-		if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // другие сверхтяжёлые персонажи могут тащить
-			can_pull = TRUE
-		if(ishuman(src))
-			var/mob/living/carbon/human/user = src
-			if(user.dna.check_mutation(HULK)) // халки могут тащить
-				can_pull = TRUE
-			for(var/datum/antagonist/antagonist_role in user.mind?.antag_datums) // некоторые антагонисты могут тащить
-				if(antagonist_role.type in list(/datum/antagonist/heretic, /datum/antagonist/abductor/agent, /datum/antagonist/abductor/scientist))
-					can_pull = TRUE
-					break
-			if(istype(user.back, /obj/item/mod/control)) // обычные персонажи с активированными клешнями из МОДа на спине могут тащить
-				var/obj/item/mod/control/MOD = user.back
-				if(MOD.active && istype(MOD.selected_module, /obj/item/mod/module/clamp))
-					can_pull = TRUE
-			var/item_in_hand = user.get_active_held_item()
-			if(istype(item_in_hand, /obj/item/gun/magic/contractor_hook)) // персонажи с некоторыми предметами в активной руке могут тащить
-				can_pull = TRUE
-		if(!can_pull)
-			to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
-			stop_pulling()
-			return
-	// BLUEMOON ADDITION END
 	if(isliving(pulling))
 		var/mob/living/L = pulling
 		if(L.buckled && L.buckled.buckle_prevents_pull) //if they're buckled to something that disallows pulling, prevent it
@@ -388,35 +358,6 @@
 		if(pulling.anchored || pulling.move_resist > move_force)
 			stop_pulling()
 			return
-		// BLUEMOON ADDITION AHEAD - Проверка на возможность ТЯНУТЬ сверхтяжёлого персонажа
-		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER))
-			var/can_pull = FALSE
-			if(isalien(src)) // чужие (с абилками) могут тащить
-				can_pull = TRUE
-			if(issilicon(src)) // киборги могут тащить
-				can_pull = TRUE
-			if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // другие сверхтяжёлые персонажи могут тащить
-				can_pull = TRUE
-			if(ishuman(src))
-				var/mob/living/carbon/human/user = src
-				if(user.dna.check_mutation(HULK)) // халки могут тащить
-					can_pull = TRUE
-				for(var/datum/antagonist/antagonist_role in user.mind?.antag_datums) // некоторые антагонисты могут тащить
-					if(antagonist_role.type in list(/datum/antagonist/heretic, /datum/antagonist/abductor/agent, /datum/antagonist/abductor/scientist))
-						can_pull = TRUE
-						break
-				if(istype(user.back, /obj/item/mod/control)) // обычные персонажи с активированными клешнями из МОДа на спине могут тащить
-					var/obj/item/mod/control/MOD = user.back
-					if(MOD.active && istype(MOD.selected_module, /obj/item/mod/module/clamp))
-						can_pull = TRUE
-				var/item_in_hand = user.get_active_held_item()
-				if(istype(item_in_hand, /obj/item/gun/magic/contractor_hook)) // персонажи с некоторыми предметами в активной руке могут тащить
-					can_pull = TRUE
-			if(!can_pull)
-				to_chat(src, span_warning("[pulling] is too heavy, you cannot move them around!"))
-				stop_pulling()
-				return
-		// BLUEMOON ADDITION END
 	if(pulledby && moving_diagonally != FIRST_DIAG_STEP && get_dist(src, pulledby) > 1)		//separated from our puller and not in the middle of a diagonal move.
 		pulledby.stop_pulling()
 
@@ -451,9 +392,9 @@
 	if(!(impact_signal && (impact_signal & COMPONENT_MOVABLE_IMPACT_NEVERMIND))) // in case a signal interceptor broke or deleted the thing before we could process our hit
 		return hit_atom.hitby(src, throwingdatum=throwingdatum, hitpush=hitpush)
 
-/atom/movable/hitby(atom/movable/AM, skipcatch, hitpush = TRUE, blocked, datum/thrownthing/throwingdatum)
+/atom/movable/hitby(atom/movable/hitting_atom, skipcatch, hitpush = TRUE, blocked, datum/thrownthing/throwingdatum)
 	if(!anchored && hitpush && (!throwingdatum || (throwingdatum.force >= (move_resist * MOVE_FORCE_PUSH_RATIO))))
-		step(src, AM.dir)
+		step(src, hitting_atom.dir)
 	..()
 
 /atom/movable/proc/safe_throw_at(atom/target, range, speed, mob/thrower, spin = TRUE, diagonals_first = FALSE, datum/callback/callback, force = MOVE_FORCE_STRONG, gentle = FALSE)
@@ -509,7 +450,7 @@
 	else
 		target_zone = thrower.zone_selected
 
-	var/datum/thrownthing/TT = new(src, target, get_turf(target), get_dir(src, target), range, speed, thrower, diagonals_first, force, gentle, callback, target_zone)
+	var/datum/thrownthing/TT = new(src, target, get_dir(src, target), range, speed, thrower, diagonals_first, force, gentle, callback, target_zone)
 
 	var/dist_x = abs(target.x - src.x)
 	var/dist_y = abs(target.y - src.y)

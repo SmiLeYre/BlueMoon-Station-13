@@ -83,7 +83,7 @@
 /obj/item/crowbar/large/heavy
 	name = "heavy crowbar"
 	desc = "It's a big crowbar. It doesn't fit in your pockets, because it's big. It feels oddly heavy.."
-	force = 20
+	force = 14 // BLUEMOON - HEAVY_CROWBAR_DAMAGE_CHANGE - EDIT (было 20)
 	icon_state = "crowbar_powergame"
 
 /obj/item/crowbar/cyborg

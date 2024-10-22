@@ -14,6 +14,10 @@
 	name = "Cold goggles"
 	path = /obj/item/clothing/glasses/cold
 
+/datum/gear/glasses/sunglasses
+	name = "Cheap Sunglasses"
+	path = /obj/item/clothing/glasses/sunglasses/fake
+
 /datum/gear/glasses/eyepatch
 	name = "Eyepatch"
 	path = /obj/item/clothing/glasses/eyepatch
@@ -49,3 +53,7 @@
 /datum/gear/glasses/modern
 	name = "Modern prescription glasses"
 	path = /obj/item/clothing/glasses/regular/modern
+
+/datum/gear/glasses/raper
+	name = "Raper Sunglasses"
+	path = /obj/item/clothing/glasses/hud/slaver

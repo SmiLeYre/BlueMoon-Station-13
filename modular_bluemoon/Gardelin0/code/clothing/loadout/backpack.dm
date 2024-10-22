@@ -118,3 +118,48 @@
 	name = "Strapon strap"
 	path = /obj/item/strapon_strap
 	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS
+
+/datum/gear/backpack/latex_key
+	name = "Latex Adjustment Override"
+	path = /obj/item/key/latex
+	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS
+
+/datum/gear/accessory/waistcoat_color
+	name = "A waistcoat"
+	path = /obj/item/clothing/accessory/waistcoat_color
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
+
+/datum/gear/accessory/poly_sweater
+	name = "polychromic sweater"
+	path = /obj/item/clothing/accessory/poly_sweater
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
+
+/datum/gear/accessory/poly_sweater_shoulderless
+	name = "shoulderless polychromic sweater"
+	path = /obj/item/clothing/accessory/poly_sweater_shoulderless
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
+
+/datum/gear/accessory/poly_sweater_shoulderlessalt
+	name = "shoulderless polychromic sweater alt"
+	path = /obj/item/clothing/accessory/poly_sweater_shoulderlessalt
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
+
+/datum/gear/accessory/poly_keyholesweater
+	name = "polychromic keyhole sweater"
+	path = /obj/item/clothing/accessory/poly_keyholesweater
+	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
+
+/datum/gear/backpack/buttplug/small
+    name = "Small buttplug"
+    path = /obj/item/buttplug/small
+    subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS
+
+/datum/gear/backpack/buttplug/medium
+    name = "Medium buttplug"
+    path = /obj/item/buttplug/med
+    subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS
+
+/datum/gear/backpack/buttplug/big
+    name = "Big buttplug"
+    path = /obj/item/buttplug/big
+    subcategory = LOADOUT_SUBCATEGORY_BACKPACK_TOYS

@@ -28,20 +28,22 @@
 	var/trauma_cycle_cooldown = 1.3 MINUTES
 
 /datum/wound/pierce/apply_wound(obj/item/bodypart/L, silent, datum/wound/old_wound, smited)
-	if(L.body_zone == BODY_ZONE_CHEST && (severity == WOUND_SEVERITY_SEVERE || severity == WOUND_SEVERITY_CRITICAL))
-		ru_name = "Пробитие лёгкого"
-		ru_name_r = "пробития лёгкого"
-		occur_text = "раскалывается, приводя к обильному кашлю"
-		examine_desc = "имеет углубленную выемку, из которой выходит воздух"
 	. = ..()
+	if(L.body_zone == BODY_ZONE_CHEST && (severity == WOUND_SEVERITY_SEVERE || severity == WOUND_SEVERITY_CRITICAL))
+		if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD
+			ru_name = "Пробитие лёгкого"
+			ru_name_r = "пробития лёгкого"
+			occur_text = "раскалывается, приводя к обильному кашлю"
+			examine_desc = "имеет углубленную выемку, из которой выходит воздух"
 
 /datum/wound/pierce/wound_injury(datum/wound/old_wound)
 	if(limb.body_zone == BODY_ZONE_CHEST && (severity == WOUND_SEVERITY_SEVERE || severity == WOUND_SEVERITY_CRITICAL))
-		processes = TRUE
-		victim.adjustOxyLoss(15)
-		victim.adjustOrganLoss(ORGAN_SLOT_LUNGS,15)
-		victim.emote("cough")
-		next_trauma_cycle = world.time + (rand(100-20, 100+20) * 0.01 * trauma_cycle_cooldown)
+		if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD
+			processes = TRUE
+			victim.adjustOxyLoss(15)
+			victim.adjustOrganLoss(ORGAN_SLOT_LUNGS,15)
+			victim.emote("cough")
+			next_trauma_cycle = world.time + (rand(100-20, 100+20) * 0.01 * trauma_cycle_cooldown)
 
 	blood_flow = initial_flow
 
@@ -56,10 +58,10 @@
 			if(1 to 6)
 				victim.bleed(blood_bled, TRUE)
 			if(7 to 13)
-				victim.visible_message("<span class='smalldanger'>Капли крови стекают по [limb.ru_name_v] персонажа [victim].</span>", "<span class='danger'>Вы откашливаете немного крови.</span>", vision_distance=COMBAT_MESSAGE_RANGE)
+				victim.visible_message("<span class='smalldanger'>Капли [HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM) ? "чёрной жидкости" : "крови"] стекают по [limb.ru_name_v] персонажа [victim].</span>", "<span class='danger'>Вы откашливаете немного [HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM) ? "чёрной жидкости для защиты внутренних систем" : "крови"].</span>", vision_distance=COMBAT_MESSAGE_RANGE)
 				victim.bleed(blood_bled, TRUE)
 			if(14 to 19)
-				victim.visible_message("<span class='smalldanger'>Небольшая струя крови стекает по [limb.ru_name_v] - персонажа [victim]!</span>", "<span class='danger'>Вы откашливаете сгусток крови!</span>", vision_distance=COMBAT_MESSAGE_RANGE)
+				victim.visible_message("<span class='smalldanger'>Небольшая струя [HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM) ? "чёрной жидкости" : "крови"] стекает по [limb.ru_name_v] - персонажа [victim]!</span>", "<span class='danger'>Вы откашливаете сгусток [HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM) ? "чёрной жидкости" : "крови"]!</span>", vision_distance=COMBAT_MESSAGE_RANGE)
 				if(ishuman(victim))
 					var/mob/living/carbon/human/H = victim
 					new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir, H.dna.species.exotic_blood_color)
@@ -67,7 +69,7 @@
 					new /obj/effect/temp_visual/dir_setting/bloodsplatter(victim.loc, victim.dir)
 				victim.bleed(blood_bled)
 			if(20 to INFINITY)
-				victim.visible_message("<span class='danger'>Струя крови обильно течёт по [limb.ru_name_v] персонажа [victim]!</span>", "<span class='danger'><b>Вы обильно кашляете кровью!</b></span>", vision_distance=COMBAT_MESSAGE_RANGE)
+				victim.visible_message("<span class='danger'>Струя [HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM) ? "чёрной жидкости" : "крови"] обильно течёт по [limb.ru_name_v] персонажа [victim]!</span>", "<span class='danger'><b>Вы обильно кашляете [HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM) ? "чёрной жидкостью" : "кровью"]!</b></span>", vision_distance=COMBAT_MESSAGE_RANGE)
 				victim.bleed(blood_bled)
 				if(ishuman(victim))
 					var/mob/living/carbon/human/H = victim
@@ -80,15 +82,17 @@
 	. = ..()
 	if(limb.body_zone == BODY_ZONE_CHEST && (severity == WOUND_SEVERITY_SEVERE || severity == WOUND_SEVERITY_CRITICAL) && world.time > next_trauma_cycle)
 		next_trauma_cycle = world.time + (rand(100-20, 100+20) * 0.01 * trauma_cycle_cooldown)
-		victim.adjustOxyLoss(20)
-		victim.emote("gasp")
+		if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD
+			victim.adjustOxyLoss(20)
+			victim.emote("gasp")
 
 	blood_flow = min(blood_flow, WOUND_SLASH_MAX_BLOODFLOW)
 
-	if(victim.bodytemperature < (BODYTEMP_NORMAL -  10))
-		blood_flow -= 0.2
-		if(prob(5))
-			to_chat(victim, "<span class='notice'>Вы чувствуете, как [lowertext(name)] в вашей [limb.ru_name_v] застывает за счёт холода!</span>")
+	if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		if(victim.bodytemperature < (BODYTEMP_NORMAL -  10))
+			blood_flow -= 0.2
+			if(prob(5))
+				to_chat(victim, "<span class='notice'>Вы чувствуете, как [lowertext(name)] в вашей [limb.ru_name_v] застывает за счёт холода!</span>")
 
 	if(victim.reagents?.has_reagent(/datum/reagent/toxin/heparin))
 		blood_flow += 0.5 // old herapin used to just add +2 bleed stacks per tick, this adds 0.5 bleed flow to all open cuts which is probably even stronger as long as you can cut them first
@@ -121,9 +125,14 @@
 
 /// If someone is using a suture to close this cut
 /datum/wound/pierce/proc/suture(obj/item/stack/medical/suture/I, mob/user)
+	// BLUEMOON ADD START - нитка и иголка не могут заштопать листы металла
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		to_chat(user, "Это не поможет, это же робот!")
+		return
+	// BLUEMOON ADD END
 	var/self_penalty_mult = (user == victim ? 1.4 : 1)
 	user.visible_message("<span class='notice'>[user] пытается зашить увечия на [limb.ru_name_v] персонажа [victim] с помощью [I]...</span>", "<span class='notice'>Вы начинаете зашивать [user == victim ? "свои увечия" : "увечия персонажа [victim]"] с помощью [I]...</span>")
-	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 	user.visible_message("<span class='green'>[user] зашивает увечия персонажа [victim].</span>", "<span class='green'>Вы зашиваете увечия на [user == victim ? "своей конечности" : "конечности персонажа [victim]"].</span>")
 	var/blood_sutured = I.stop_bleeding / self_penalty_mult * 0.5
@@ -139,13 +148,14 @@
 /datum/wound/pierce/proc/tool_cauterize(obj/item/I, mob/user)
 	var/self_penalty_mult = (user == victim ? 1.5 : 1)
 	user.visible_message("<span class='danger'>[user] пытается прижечь увечие на [limb.ru_name_v] персонажа [victim] с помощью [I]...</span>", "<span class='danger'>Вы пытаетесь прижечь [user == victim ? "свою конечность" : "конечность персонажа [victim]"] с помощью [I]...</span>")
-	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, .proc/still_exists)))
+	if(!do_after(user, base_treat_time * self_penalty_mult, target=victim, extra_checks = CALLBACK(src, PROC_REF(still_exists))))
 		return
 
 	user.visible_message("<span class='green'>[user] прижигает увечия персонажа [victim].</span>", "<span class='green'>Вы прижигаете увечия персонажа [victim].</span>")
-	limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
-	if(prob(30))
-		victim.emote("scream")
+	if(!HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+		limb.receive_damage(burn = 2 + severity, wound_bonus = CANT_WOUND)
+		if(prob(30))
+			victim.emote("scream")
 	var/blood_cauterized = (0.6 / self_penalty_mult) * 0.5
 	blood_flow -= blood_cauterized
 
@@ -171,6 +181,18 @@
 	status_effect_type = /datum/status_effect/wound/pierce/moderate
 	scar_keyword = "piercemoderate"
 
+// BLUEMOON ADD START
+/datum/wound/pierce/moderate/apply_typo_modification()
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		ru_name = "Малая Пробоина Обшивки"
+		ru_name_r = "малой пробоины обшивки"
+		desc = "Обшивка повреждена, что приводит к малой потери жидкостей"
+		treat_text = "Сварить поврежденную область сваркой."
+		examine_desc = "покрыто маленькими отверстиями, из которых течёт чёрная жижа"
+		occur_text = "начинает истекать чёрной жижей"
+		treatable_tool = TOOL_WELDER
+	return
+
 /datum/wound/pierce/severe
 	name = "Open Puncture"
 	ru_name = "Колотая рана"
@@ -189,6 +211,18 @@
 	threshold_penalty = 15
 	status_effect_type = /datum/status_effect/wound/pierce/severe
 	scar_keyword = "piercesevere"
+
+/datum/wound/pierce/severe/apply_typo_modification()
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		name = "Open Puncture"
+		ru_name = "Пробоина Обшивки"
+		ru_name_r = "пробоины обшивки"
+		desc = "Сквозная рана вызывает умеренную потерю жидкостей."
+		treat_text = "Заварить поврежденную область сваркой."
+		examine_desc = "пробита насквозь, чёрная жидкость вытекает."
+		occur_text = "выплескивает струю чёрной жижи, обнажая сквозную пробоину"
+		treatable_tool = TOOL_WELDER
+	return
 
 /datum/wound/pierce/critical
 	name = "Ruptured Cavity"
@@ -209,3 +243,15 @@
 	status_effect_type = /datum/status_effect/wound/pierce/critical
 	scar_keyword = "piercecritical"
 	wound_flags = (FLESH_WOUND | ACCEPTS_GAUZE | MANGLES_FLESH)
+
+/datum/wound/pierce/critical/apply_typo_modification()
+	if(HAS_TRAIT(victim, TRAIT_ROBOTIC_ORGANISM))
+		ru_name = "Прорванная Обшивка"
+		ru_name_r = "прорванная обшивка"
+		desc = "обшивка и трубы гидравлической жидкости пробиты, это приводит к обильной потери жидкостей."
+		treat_text = "Заварить поврежденную часть, заменить гидравлическую жидкость"
+		examine_desc = "буквально разорвана и едва удерживается обнаженными приводами"
+		occur_text = "разрывается со всплеском чёрной жижи, разбрасывая вокруг обломки обшивки и приводов"
+		wound_flags = (FLESH_WOUND | MANGLES_FLESH)
+		treatable_tool = TOOL_WELDER
+	return

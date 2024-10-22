@@ -54,7 +54,7 @@
 /obj/machinery/biogenerator/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Productivity at <b>[productivity*100]%</b>.<br>Matter consumption reduced by <b>[(efficiency*25)-25]</b>%.<br>Machine can hold up to <b>[max_items]</b> pieces of produce.</span>"
+		. += "<span class='notice'>The status display reads: Productivity at <b>[productivity*100]%</b>.<br>Matter consumption at <b>[100/efficiency]</b>%.<br>Machine can hold up to <b>[max_items]</b> pieces of produce.</span>"
 
 /obj/machinery/biogenerator/on_reagent_change(changetype)			//When the reagents change, change the icon as well.
 	update_icon()
@@ -163,7 +163,7 @@
 /obj/machinery/biogenerator/proc/activate(mob/user)
 	if(user.stat != CONSCIOUS)
 		return
-	if(stat != NONE)
+	if(machine_stat != NONE)
 		return
 	if(processing)
 		to_chat(user, "<span class='warning'>The biogenerator is in the process of working.</span>")
@@ -249,7 +249,7 @@
 		update_icon()
 
 /obj/machinery/biogenerator/ui_status(mob/user)
-	if(stat & BROKEN || panel_open)
+	if(machine_stat & BROKEN || panel_open)
 		return UI_CLOSE
 	return ..()
 
@@ -297,7 +297,7 @@
 			cat["items"] += list(list(
 				"id" = D.id,
 				"name" = D.name,
-				"cost" = D.materials[SSmaterials.GetMaterialRef(/datum/material/biomass)]/efficiency,
+				"cost" = ceil(D.materials[SSmaterials.GetMaterialRef(/datum/material/biomass)]/efficiency),
 			))
 		data["categories"] += list(cat)
 

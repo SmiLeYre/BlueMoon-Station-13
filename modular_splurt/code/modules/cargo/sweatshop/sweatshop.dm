@@ -69,7 +69,7 @@
 	attack_verb = list("nailed", "screwed")
 
 /obj/item/cushion
-	name = "basic cushion"
+	name = "Basic Cushion"
 	desc = "Beats sitting on the floor."
 	icon = 'modular_splurt/icons/obj/cargo/sweatshop/cloth.dmi'
 	icon_state = "clothcushion"
@@ -79,7 +79,7 @@
 	attack_verb = list("thomped", "thwacked")
 
 /obj/item/cushion/silk
-	name = "silk cushion"
+	name = "Silk Cushion"
 	desc = "How'd it turn red?!"
 	icon_state = "silkcushion"
 

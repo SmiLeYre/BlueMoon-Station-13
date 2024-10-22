@@ -27,6 +27,9 @@
 
 	/// the last health before updating - to check net change in health
 	var/previous_health
+	/// Station alert datum for showing alerts UI
+	var/datum/station_alert/alert_control
+
 //Hud stuff
 
 	var/atom/movable/screen/inv1 = null
@@ -53,7 +56,6 @@
 	var/obj/item/stock_parts/cell/cell = /obj/item/stock_parts/cell/high ///If this is a path, this gets created as an object in Initialize.
 
 	var/opened = FALSE
-	var/emagged = FALSE
 	var/emag_cooldown = 0
 	var/wiresexposed = FALSE
 
@@ -61,8 +63,6 @@
 	var/ident = 0
 	var/locked = TRUE
 	var/list/req_access = list(ACCESS_ROBOTICS)
-
-	var/alarms = list("Motion"=list(), "Fire"=list(), "Atmosphere"=list(), "Power"=list(), "Camera"=list(), "Burglar"=list())
 
 	var/vtec = 0 // VTEC speed boost.
 	/// vtec shorted out
@@ -116,6 +116,9 @@
 	// cit specific vars //
 	var/sitting = 0
 	var/bellyup = 0
+	var/deep_rest = 0		//DarkSer request by Gardelin0
+	var/wag_rest = 0		//DarkSer request by Gardelin0
+	var/wag_sit = 0			//DarkSer request by Gardelin0
 	var/dogborg = FALSE
 
 	var/cansprint = 1

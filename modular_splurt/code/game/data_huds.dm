@@ -24,12 +24,12 @@
 		holder.icon_state = null
 		return
 
-	if(client.prefs.be_victim)
-		switch(client.prefs.be_victim)
-			if(BEVICTIM_NO)
+	if(client && client?.prefs.nonconpref)
+		switch(client && client?.prefs.nonconpref)
+			if("No")
 				holder.icon_state = "hudtarget-no"
 				return
-			if(BEVICTIM_YES)
+			if("Yes")
 				holder.icon_state = "hudtarget-yes"
 				return
 

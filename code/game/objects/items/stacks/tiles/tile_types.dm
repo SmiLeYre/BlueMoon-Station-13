@@ -350,6 +350,14 @@
 	turf_type = /turf/open/floor/carpet/royalblue
 	tableVariant = /obj/structure/table/wood/fancy/royalblue
 
+/obj/item/stack/tile/eighties
+	name = "retro tile"
+	singular_name = "retro floor tile"
+	desc = "A stack of floor tiles that remind you of simpler times.."
+	icon_state = "tile_eighties"
+	merge_type = /obj/item/stack/tile/eighties
+	turf_type = /turf/open/floor/eighties
+
 /obj/item/stack/tile/carpet/ten
 	amount = 10
 
@@ -613,8 +621,9 @@
 
 /obj/item/stack/tile/plasteel/cyborg
 	custom_materials = null // All other Borg versions of items have no Metal or Glass - RR
-	is_cyborg = 1
-	cost = 125
+	is_cyborg = TRUE
+	source = /datum/robot_energy_storage/metal
+	cost = MINERAL_MATERIAL_AMOUNT * 0.0625
 
 /obj/item/stack/tile/material
 	name = "floor tile"

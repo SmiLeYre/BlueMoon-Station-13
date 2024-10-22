@@ -1,18 +1,14 @@
 /datum/component/personal_crafting/Initialize()
 	if(ismob(parent))
-		RegisterSignal(parent, COMSIG_MOB_CLIENT_LOGIN, .proc/create_mob_button)
+		RegisterSignal(parent, COMSIG_MOB_HUD_CREATED, PROC_REF(create_mob_button))
 
-/datum/component/personal_crafting/proc/create_mob_button(mob/user, client/CL)
+/datum/component/personal_crafting/proc/create_mob_button(mob/user)
 	var/datum/hud/H = user.hud_used
-	for(var/huds in H.static_inventory)
-		if(istype(huds, /atom/movable/screen/craft))
-			return
-	//We don't want to be stacking multiple crafting huds on relogs
 	var/atom/movable/screen/craft/C = new()
 	C.icon = H.ui_style
 	H.static_inventory += C
-	CL.screen += C
-	RegisterSignal(C, COMSIG_CLICK, .proc/component_ui_interact)
+	user.client.screen += C
+	RegisterSignal(C, COMSIG_CLICK, PROC_REF(component_ui_interact))
 
 /datum/component/personal_crafting
 	var/busy
@@ -413,7 +409,7 @@
 
 				if (istype(result, /obj/item/grenade/iedcasing) || istype(result, /obj/item/reagent_containers/food/drinks/bottle/molotov))
 					var/client/client = user.client
-					if (CONFIG_GET(flag/use_exp_tracking) && client && client.get_exp_living(TRUE) < 480) // Player with less than 8 hours playtime is making an IED or molotov cocktail.
+					if (CONFIG_GET(flag/use_exp_tracking) && client && client.get_exp_living(TRUE) < 480) // Player with less than 8 hours playtime is making an IED or molotov cocktail. АХАХААХА
 						if(client.next_ied_grief_warning < world.time)
 							var/turf/T = get_turf(user)
 							client.next_ied_grief_warning = world.time + 15 MINUTES // Wait 15 minutes before alerting admins again

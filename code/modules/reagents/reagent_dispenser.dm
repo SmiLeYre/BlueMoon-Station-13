@@ -18,7 +18,7 @@
 
 /obj/structure/reagent_dispensers/attackby(obj/item/W, mob/user, params)
 	if(W.is_refillable())
-		return 0 //so we can refill them via their afterattack.
+		return FALSE //so we can refill them via their afterattack.
 	else
 		return ..()
 
@@ -39,7 +39,7 @@
 		if(!fuel_amt)
 			visible_message(span_danger("\The [src] ruptures!"))
 		// Leave it up to future terrorists to figure out the best way to mix reagents with fuel for a useful boom here
-		chem_splash(loc, null, 2 + (reagents.total_volume + fuel_amt) / 1000, list(reagents), extra_heat=(fuel_amt / 50),adminlog=(fuel_amt<25))
+		chem_splash(loc, 2 + (reagents.total_volume + fuel_amt) / 1000, list(reagents), extra_heat=(fuel_amt / 50), adminlog=(fuel_amt<25))
 
 	if(fuel_amt) // with that done, actually explode
 		visible_message(span_danger("\The [src] explodes!"))
@@ -202,15 +202,12 @@
 	if(ZAP_OBJ_DAMAGE & zap_flags)
 		explode()
 
-/obj/structure/reagent_dispensers/fueltank/bullet_act(obj/item/projectile/P)
-	. = ..()
-	if(QDELETED(src)) //wasn't deleted by the projectile's effects.
-		return
-	if(!P.nodamage && (P.damage_type == BURN) || (P.damage_type == BRUTE))
-		var/boom_message = "[ADMIN_LOOKUPFLW(P.firer)] triggered a fueltank explosion via projectile."
+/obj/structure/reagent_dispensers/fueltank/bullet_act(obj/item/projectile/hitting_projectile)
+	if(hitting_projectile.damage > 0 && ((hitting_projectile.damage_type == BURN) || (hitting_projectile.damage_type == BRUTE)))
+		var/boom_message = "[ADMIN_LOOKUPFLW(hitting_projectile.firer)] triggered a fueltank explosion via projectile."
 		GLOB.bombers += boom_message
 		message_admins(boom_message)
-		P.firer.log_message("triggered a fueltank explosion via projectile.", LOG_ATTACK)
+		hitting_projectile.firer.log_message("triggered a fueltank explosion via projectile.", LOG_ATTACK)
 		explode() //Bluemoon change
 
 /obj/structure/reagent_dispensers/fueltank/attackby(obj/item/I, mob/living/user, params)
@@ -228,9 +225,9 @@
 			playsound(src, 'sound/effects/refill.ogg', 50, 1)
 			W.update_icon()
 		else
-			if(!HAS_TRAIT(user, TRAIT_DUMB))
-				to_chat("<span class='danger'>That would be stupid.</span>")
-				return
+			// if(!HAS_TRAIT(user, TRAIT_DUMB))
+			// 	to_chat(user, "<span class='danger'>That would be stupid.</span>")
+			// 	return
 			var/turf/T = get_turf(src)
 			user.visible_message("<span class='warning'>[user] catastrophically fails at refilling [user.ru_ego()] [W.name]!</span>", "<span class='userdanger'>That was stupid of you.</span>")
 
@@ -320,7 +317,7 @@
 		return TRUE
 	. = ..()
 
-/obj/structure/reagent_dispensers/beerkeg/take_damage(mob/living/carbon/human/M)
+/obj/structure/reagent_dispensers/beerkeg/on_attack_hand(mob/living/carbon/human/M)
 	. = ..()
 	if(ismammal(M))
 		explosion(src, light_impact_range = 3, flame_range = 5, flash_range = 10)

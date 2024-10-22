@@ -81,7 +81,6 @@
 	mutant_bodyparts = list("mcolor" = "F8F8F8", "mcolor2" = "F8F8F8", "mcolor3" = "F8F8F8", "mam_snouts" = "Vox",  "mam_tail" = "Vox", "deco_wings" = "None",
 						"horns" = "None", "legs" = "Digitigrade", "meat_type" = "Mammalian")
 	allowed_limb_ids = null
-	override_bp_icon = 'modular_bluemoon/kovac_shitcode/icons/species/vox_body.dmi' // Берём части тела из иного файла. Цвет тела всегда один
 
 	limbs_id = SPECIES_VOX
 	icon_limbs = 'modular_splurt/icons/mob/human_parts_greyscale.dmi'
@@ -281,16 +280,16 @@
 
 /datum/language/modular_bluemoon/vox
 	name = "Vox-Pidgin"
-	desc = "A language comprised largely of screeching and squawking sounds. The language is largely shared only between Vox."
+	desc = "A language comprised largely of screeching and squawking sounds. The language is largely shared only between Vox. (Используйте русскую букву для префикса)"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/misc/vox.dmi'
 	speech_verb = "shrieks"
 	ask_verb = "queries"
 	exclaim_verb = "declares"
 	whisper_verb = "hushes"
-	key = "v"
+	key = "в"
 	space_chance = 75
 	default_priority = 99
-	flags = TONGUELESS_SPEECH
+	// flags = TONGUELESS_SPEECH bluemoon change
 	syllables = list("ti","ti","ti","hi","hi","ki","ki","ki","ki","ya","ta","ha","ka","ya", "yi", "chi","cha","kah","SKRE","AHK","EHK","RAWK","KRA","AAA","EEE","KI","II","KRI","KA")
 	icon_state = "vox"
 	restricted = TRUE

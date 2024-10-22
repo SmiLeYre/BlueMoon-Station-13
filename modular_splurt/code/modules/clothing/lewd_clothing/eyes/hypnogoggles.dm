@@ -61,7 +61,7 @@
 		. = ..()
 		if(.)
 			return
-		var/choice = show_radial_menu(user,src, hypnogoggles_designs, custom_check = CALLBACK(src, .proc/check_menu, user, I), radius = 36, require_near = TRUE)
+		var/choice = show_radial_menu(user,src, hypnogoggles_designs, custom_check = CALLBACK(src, PROC_REF(check_menu), user, I), radius = 36, require_near = TRUE)
 		if(!choice)
 			return FALSE
 		current_hypnogoggles_color = choice
@@ -141,4 +141,4 @@
 				new /datum/hallucination/chat(owner, TRUE, FALSE, span_hypnophrase("[hypnotic_phrase]"))
 
 /datum/brain_trauma/induced_hypnosis/handle_hearing(datum/source, list/hearing_args)
-	hearing_args[HEARING_RAW_MESSAGE] = target_phrase.Replace_char(hearing_args[HEARING_RAW_MESSAGE], span_hypnophrase("$1"))
+	hearing_args[HEARING_RAW_MESSAGE] = target_phrase.Replace(hearing_args[HEARING_RAW_MESSAGE], span_hypnophrase("$1"))

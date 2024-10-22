@@ -57,11 +57,11 @@
 				"<span class='userdanger'>A massive brass spike rips through your chassis and bursts into shrapnel in your casing!</span>")
 				squirrel.adjustBruteLoss(50)
 				squirrel.Stun(20)
-				addtimer(CALLBACK(src, .proc/take_damage, max_integrity), 1)
+				addtimer(CALLBACK(src, PROC_REF(take_damage), max_integrity), 1)
 		else
 			squirrel.visible_message("<span class='boldwarning'>A massive brass spike erupts from the ground, impaling [squirrel]!</span>", \
 			"<span class='userdanger'>A massive brass spike rams through your chest, hoisting you into the air!</span>")
-			squirrel.emote("scream")
+			squirrel.emote("realagony")
 			playsound(squirrel, 'sound/effects/splat.ogg', 50, TRUE)
 			playsound(squirrel, 'sound/misc/desceration-03.ogg', 50, TRUE)
 			squirrel.apply_damage(20, BRUTE, BODY_ZONE_CHEST)
@@ -72,7 +72,7 @@
 		if(M)
 			M.take_damage(50,BRUTE,MELEE)
 			M.visible_message("<span class='danger'>A massive brass spike erupts from the ground, penetrating \the [M] and shattering the trap into pieces!</span>")
-			addtimer(CALLBACK(src, .proc/take_damage, max_integrity), 1)
+			addtimer(CALLBACK(src, PROC_REF(take_damage), max_integrity), 1)
 		else
 			visible_message("<span class='danger'>A massive brass spike erupts from the ground!</span>")
 
@@ -81,7 +81,7 @@
 	density = TRUE //Skewers are one-use only
 	desc = "A vicious brass spike protruding from the ground like a stala[pick("gm", "ct")]ite. It makes you sick to look at." //is stalagmite the ground one? or the ceiling one? who can ever remember?
 
-/obj/structure/destructible/clockwork/trap/brass_skewer/user_buckle_mob()
+/obj/structure/destructible/clockwork/trap/brass_skewer/user_buckle_mob(check_loc)
 	return
 
 /obj/structure/destructible/clockwork/trap/brass_skewer/post_buckle_mob(mob/living/L)
@@ -100,9 +100,9 @@
 		user.visible_message("<span class='warning'>[user] starts wriggling off of [src]!</span>", \
 		"<span class='danger'>You start agonizingly working your way off of [src]...</span>")
 		wiggle_wiggle = TRUE
-		if(!do_after(user, 300, target = user))
+		if(!do_after(user, 3 SECONDS, target = user))
 			user.visible_message("<span class='warning'>[user] slides back down [src]!</span>")
-			user.emote("scream")
+			user.emote("realagony")
 			user.apply_damage(10, BRUTE, BODY_ZONE_CHEST)
 			playsound(user, 'sound/misc/desceration-03.ogg', 50, TRUE)
 			wiggle_wiggle = FALSE
@@ -115,7 +115,7 @@
 			skewee.visible_message("<span class='warning'>[skewee] painfully slides back down [src].</span>")
 			if(skewee.stat >= UNCONSCIOUS)
 				return //by ratvar, no more spamming my deadchat, holy fuck
-			skewee.emote("scream")
+			skewee.emote("realagony")
 			return
 	skewee.visible_message("<span class='danger'>[skewee] comes free of [src] with a squelching pop!</span>", \
 	"<span class='boldannounce'>You come free of [src]!</span>")

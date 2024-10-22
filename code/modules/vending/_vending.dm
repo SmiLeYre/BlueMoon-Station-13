@@ -169,6 +169,14 @@
 	/// used for narcing on underages
 	var/obj/item/radio/Radio
 
+	// BLUEMOON EDIT START - возможность кастомных звуков покупки
+	/// Custom vending sound
+	var/vending_sound = 'sound/machines/machine_vend.ogg'
+
+	/// Will vending sound vary
+	var/vending_sound_vary = TRUE
+	// BLUEMOON EDIT END
+
 
 /**
  * Initialize the vending machine
@@ -185,7 +193,7 @@
 		circuit = null
 		build_inv = TRUE
 	. = ..()
-	wires = new /datum/wires/vending(src)
+	set_wires(new /datum/wires/vending(src))
 	if(build_inv) //non-constructable vending machine
 		build_inventory(products, product_records)
 		build_inventory(contraband, hidden_records)
@@ -244,14 +252,14 @@
 
 /obj/machinery/vending/update_appearance(updates=ALL)
 	. = ..()
-	if(stat & BROKEN)
+	if(machine_stat & BROKEN)
 		set_light(0)
 		return
 	set_light(powered() ? MINIMUM_USEFUL_LIGHT_RANGE : 0)
 
 
 /obj/machinery/vending/update_icon_state()
-	if(stat & BROKEN)
+	if(machine_stat & BROKEN)
 		icon_state = "[initial(icon_state)]-broken"
 		return ..()
 	icon_state = "[initial(icon_state)][powered() ? null : "-off"]"
@@ -262,7 +270,7 @@
 	. = ..()
 	if(!light_mask)
 		return
-	if(!(stat & BROKEN) && powered())
+	if(!(machine_stat & BROKEN) && powered())
 		. += emissive_appearance(icon, light_mask)
 
 /obj/machinery/vending/obj_break(damage_flag)
@@ -445,7 +453,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	if(refill_canister && istype(I, refill_canister))
 		if (!panel_open)
 			to_chat(user, span_warning("You should probably unscrew the service panel first!"))
-		else if (stat & (BROKEN|NOPOWER))
+		else if (machine_stat & (BROKEN|NOPOWER))
 			to_chat(user, span_notice("[src] does not respond."))
 		else
 			//if the panel is open we attempt to refill the machine
@@ -503,7 +511,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	visible_message(span_notice("[src] yields [freebies > 1 ? "several free goodies" : "a free goody"]!"))
 
 	for(var/i in 1 to freebies)
-		playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
+		playsound(src, vending_sound, 50, vending_sound_vary, extrarange = -3) // BLUEMOON EDIT - возможность кастомных звуков покупки
 		for(var/datum/data/vending_product/R in shuffle(product_records))
 
 			if(R.amount <= 0) //Try to use a record that actually has something to dump.
@@ -534,11 +542,15 @@ GLOBAL_LIST_EMPTY(vending_products)
 	if(in_range(fatty, src))
 		for(var/mob/living/L in get_turf(fatty))
 			var/was_alive = (L.stat != DEAD)
-			var/mob/living/carbon/C = L
+			//var/mob/living/carbon/C = L  (BLUEMOON CHANGE никогда не доверяй такой конструкции (причина рантаймов на 3 типе падения))
 
 			// SEND_SIGNAL(L, COMSIG_ON_VENDOR_CRUSH)
 
-			if(istype(C))
+			//BLUEMOON CHANGE START 100% проверяем, что мы пытаемся это сделать с карбном, а не кем-либо ещё
+			if(istype(L, /mob/living/carbon))
+
+				var/mob/living/carbon/C = L
+			//BLUEMOON CHANGE END
 				var/crit_rebate = 0 // lessen the normal damage we deal for some of the crits
 
 				if(crit_case < 5) // the body/head asplode case has its own description
@@ -612,7 +624,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 				L.client.give_award(/datum/award/achievement/misc/vendor_squish, L) // good job losing a fight with an inanimate object idiot
 
 			L.Paralyze(60)
-			L.emote("scream")
+			L.emote("realagony")
 			. = TRUE
 			playsound(L, 'sound/effects/blobattack.ogg', 40, TRUE)
 			playsound(L, 'sound/effects/splat.ogg', 50, TRUE)
@@ -714,7 +726,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	to_chat(user, span_notice("You short out the product lock on [src]."))
 
 /obj/machinery/vending/_try_interact(mob/user)
-	if(seconds_electrified && !(stat & NOPOWER))
+	if(seconds_electrified && !(machine_stat & NOPOWER))
 		if(shock(user, 100))
 			return
 
@@ -778,7 +790,14 @@ GLOBAL_LIST_EMPTY(vending_products)
 /obj/machinery/vending/ui_data(mob/user)
 	. = list()
 	var/obj/item/card/id/C
-	if(isliving(user))
+	if(iscyborg(user) || isAI(user) || isdrone(user))
+		var/datum/bank_account/Civ = SSeconomy.get_dep_account(ACCOUNT_SCI)
+		.["user"] = list()
+		.["user"]["name"] = user.name
+		.["user"]["cash"] = Civ.account_balance
+		.["user"]["job"] = "Silicon"
+		.["user"]["department"] = Civ.account_holder
+	else if(isliving(user))
 		var/mob/living/L = user
 		C = L.get_idcard(TRUE)
 	if(C?.registered_account)
@@ -842,7 +861,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 // 			allowed_configs += "[initial(item.greyscale_config_inhand_right)]"
 
 // 	var/datum/greyscale_modify_menu/menu = new(
-// 		src, usr, allowed_configs, CALLBACK(src, .proc/vend_greyscale, params),
+// 		src, usr, allowed_configs, CALLBACK(src, PROC_REF(vend_greyscale), params),
 // 		starting_icon_state=initial(fake_atom.icon_state),
 // 		starting_config=initial(fake_atom.greyscale_config),
 // 		starting_colors=initial(fake_atom.greyscale_colors)
@@ -861,6 +880,9 @@ GLOBAL_LIST_EMPTY(vending_products)
 	if(!can_vend(usr))
 		return
 	vend_ready = FALSE //One thing at a time!!
+	var/silicon_customer = FALSE
+	if(iscyborg(usr) || isAI(usr) || isdrone(usr))
+		silicon_customer = TRUE
 	var/datum/data/vending_product/R = locate(params["ref"])
 	var/list/record_to_check = product_records + coin_records
 	if(extended_inventory)
@@ -886,13 +908,15 @@ GLOBAL_LIST_EMPTY(vending_products)
 		return
 	if(onstation)
 		var/obj/item/card/id/C
-		if(isliving(usr))
-			var/mob/living/L = usr
-			C = L.get_idcard(TRUE)
-		if(!can_transact(C))
-			flick(icon_deny,src)
-			vend_ready = TRUE
-			return
+		var/datum/bank_account/account
+		if(!silicon_customer)
+			if(isliving(usr))
+				var/mob/living/L = usr
+				C = L.get_idcard(TRUE)
+			if(!can_transact(C))
+				flick(icon_deny,src)
+				vend_ready = TRUE
+				return
 		// else if(age_restrictions && R.age_restricted && (!C.registered_age || C.registered_age < AGE_MINOR))
 		// 	say("You are not of legal age to purchase [R.name].")
 		// 	if(!(usr in GLOB.narcd_underages))
@@ -902,26 +926,36 @@ GLOBAL_LIST_EMPTY(vending_products)
 		// 	flick(icon_deny,src)
 		// 	vend_ready = TRUE
 		// 	return
-		var/datum/bank_account/account = C.registered_account
+			account = C?.registered_account
+		else
+			account = SSeconomy.get_dep_account(ACCOUNT_SCI)
 
 		var/discounts = FALSE
 		try // too lazy, and i do NOT want to use for() to check, as & is faster
-			discounts = !!(cost_multiplier_per_dept.len > 0 && (cost_multiplier_per_dept & account.account_job.access) > 0)
+			discounts = !!(cost_multiplier_per_dept.len > 0 && (cost_multiplier_per_dept & account?.account_job.access) > 0)
 		catch
 			// L
 			discounts = FALSE
-
-		if(account.account_job && account.account_job.paycheck_department == payment_department || discounts)
+		if(account?.account_job && account?.account_job.paycheck_department == payment_department || discounts)
 			price_to_use = 0 // it's free shut up
 		if(coin_records.Find(R) || hidden_records.Find(R))
 			price_to_use = R.custom_premium_price ? R.custom_premium_price : extra_price
-		if(price_to_use && !attempt_transact(C, price_to_use))
+		if(price_to_use && silicon_customer)
+			if(!account.adjust_money(-price_to_use))
+				say("You do not possess the funds to purchase [R.name].")
+				flick(icon_deny,src)
+				vend_ready = TRUE
+				return
+			var/datum/bank_account/D = SSeconomy.get_dep_account(payment_department)
+			if(D)
+				D.adjust_money(price_to_use)
+		else if(price_to_use && !attempt_transact(C, price_to_use))
 			say("You do not possess the funds to purchase [R.name].")
 			flick(icon_deny,src)
 			vend_ready = TRUE
 			return
 		SSblackbox.record_feedback("amount", "vending_spent", price_to_use)
-		log_econ("[price_to_use] credits were inserted into [src] by [key_name(usr)] (account: [account.account_holder]) to buy [R].")
+		log_econ("[price_to_use] credits were inserted into [src] by [key_name(usr)] (account: [account?.account_holder]) to buy [R].")
 	if(last_shopper != REF(usr) || purchase_message_cooldown < world.time)
 		say("Спасибо за покупку в [src]!")
 		purchase_message_cooldown = world.time + 5 SECONDS
@@ -930,7 +964,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	use_power(5)
 	if(icon_vend) //Show the vending animation if needed
 		flick(icon_vend,src)
-	playsound(src, 'sound/machines/machine_vend.ogg', 50, TRUE, extrarange = -3)
+	playsound(src, vending_sound, 50, vending_sound_vary, extrarange = -3) // BLUEMOON EDIT - возможность кастомных звуков покупки
 	var/obj/item/vended_item = new R.product_path(get_turf(src))
 	// if(greyscale_colors)
 	// 	vended_item.set_greyscale(colors=greyscale_colors)
@@ -943,7 +977,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 	vend_ready = TRUE
 
 /obj/machinery/vending/process(delta_time)
-	if(stat & (BROKEN|NOPOWER))
+	if(machine_stat & (BROKEN|NOPOWER))
 		return PROCESS_KILL
 	if(!active)
 		return
@@ -968,7 +1002,7 @@ GLOBAL_LIST_EMPTY(vending_products)
  * * message - the message to speak
  */
 /obj/machinery/vending/proc/speak(message)
-	if(stat & (BROKEN|NOPOWER))
+	if(machine_stat & (BROKEN|NOPOWER))
 		return
 	if(!message)
 		return
@@ -1032,7 +1066,7 @@ GLOBAL_LIST_EMPTY(vending_products)
  * * prb - probability the shock happens
  */
 /obj/machinery/vending/proc/shock(mob/living/user, prb)
-	if(!istype(user) || stat & (BROKEN|NOPOWER)) // unpowered, no shock
+	if(!istype(user) || machine_stat & (BROKEN|NOPOWER)) // unpowered, no shock
 		return FALSE
 	if(!prob(prb))
 		return FALSE
@@ -1065,7 +1099,7 @@ GLOBAL_LIST_EMPTY(vending_products)
 
 ///Crush the mob that the vending machine got thrown at
 /obj/machinery/vending/throw_impact(atom/hit_atom, datum/thrownthing/throwingdatum)
-	if(isliving(hit_atom))
+	if(isliving(hit_atom) && !tilted) //BLUEMOON EDIT вендор не падает когда он уже упал
 		tilt(fatty=hit_atom)
 	return ..()
 
@@ -1146,21 +1180,28 @@ GLOBAL_LIST_EMPTY(vending_products)
 			var/N = params["item"]
 			var/obj/S
 			vend_ready = FALSE
-			var/obj/item/card/id/C
-			if(isliving(usr))
-				var/mob/living/L = usr
-				C = L.get_idcard(TRUE)
-			if(!C)
-				say("No card found.")
-				flick(icon_deny,src)
-				vend_ready = TRUE
-				return
-			else if (!C.registered_account)
-				say("No account found.")
-				flick(icon_deny,src)
-				vend_ready = TRUE
-				return
-			var/datum/bank_account/account = C.registered_account
+			var/datum/bank_account/account
+			var/silicon_customer = FALSE
+			if(iscyborg(usr) || isAI(usr) || isdrone(usr))
+				silicon_customer = TRUE
+			if(!silicon_customer)
+				var/obj/item/card/id/C
+				if(isliving(usr))
+					var/mob/living/L = usr
+					C = L.get_idcard(TRUE)
+				if(!C)
+					say("No card found.")
+					flick(icon_deny,src)
+					vend_ready = TRUE
+					return
+				else if (!C.registered_account)
+					say("No account found.")
+					flick(icon_deny,src)
+					vend_ready = TRUE
+					return
+				account = C.registered_account
+			else
+				account = SSeconomy.get_dep_account(ACCOUNT_SCI)
 			for(var/obj/O in contents)
 				if(format_text(O.name) == N)
 					S = O

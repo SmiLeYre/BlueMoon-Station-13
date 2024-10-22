@@ -80,10 +80,6 @@
 /obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating/asteroid/airless,
 /area/ruin/unpowered/no_grav)
-"V" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/wall,
-/area/ruin/unpowered)
 "Y" = (
 /obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating,
@@ -785,7 +781,7 @@ j
 f
 f
 e
-V
+e
 p
 l
 e

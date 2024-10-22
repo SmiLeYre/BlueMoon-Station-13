@@ -21,7 +21,7 @@
 /obj/docking_port/mobile{
 	dwidth = 3;
 	height = 5;
-	id = "smol";
+	shuttle_id = "smol";
 	name = "AI Satellite Access Shuttle";
 	port_direction = 4;
 	width = 7

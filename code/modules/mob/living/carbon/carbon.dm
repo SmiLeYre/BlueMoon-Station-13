@@ -18,7 +18,6 @@
 	QDEL_LIST(internal_organs)
 	QDEL_LIST(stomach_contents)
 	QDEL_LIST(bodyparts)
-	QDEL_LIST(implants)
 	hand_bodyparts = null		//Just references out bodyparts, don't need to delete twice.
 	remove_from_all_data_huds()
 	QDEL_NULL(dna)
@@ -30,7 +29,7 @@
 			if(prob(25))
 				audible_message("<span class='warning'>You hear something rumbling inside [src]'s stomach...</span>", \
 								"<span class='warning'>You hear something rumbling.</span>", 4,\
-								"<span class='userdanger'>Something is rumbling inside your stomach!</span>")
+							    "<span class='userdanger'>Something is rumbling inside your stomach!</span>")
 			var/obj/item/I = user.get_active_held_item()
 			if(I && I.force)
 				var/d = rand(round(I.force / 4), I.force)
@@ -115,7 +114,7 @@
 		damage += 50
 		combat_knockdown += 40
 	// BLUEMOON ADDITION END
-	if(throwingdatum.thrower != src)
+	if(throwingdatum?.thrower != src)
 		extra_speed = min(max(0, throwingdatum.speed - initial(throw_speed)), 3)
 	if(GetComponent(/datum/component/tackler))
 		return
@@ -125,19 +124,19 @@
 			hurt = FALSE
 	if(hit_atom.density && isturf(hit_atom))
 		if(hurt)
-			DefaultCombatKnockdown(combat_knockdown) // BLUEMOON CHANGES
-			take_bodypart_damage(damage + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5) // BLUEMOON CHANGES
+			DefaultCombatKnockdown(20)
+			take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
 	if(iscarbon(hit_atom) && hit_atom != src)
 		var/mob/living/carbon/victim = hit_atom
 		if(victim.movement_type & FLYING)
 			return
 		if(hurt)
-			victim.take_bodypart_damage(damage + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5) // BLUEMOON CHANGES
-			take_bodypart_damage(damage + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5) // BLUEMOON CHANGES
-			victim.DefaultCombatKnockdown(combat_knockdown) // BLUEMOON CHANGES
-			DefaultCombatKnockdown(combat_knockdown) // BLUEMOON CHANGES
-			visible_message("<span class='danger'>[src] crashes into [victim] [extra_speed ? "really hard" : ""], knocking them both over!</span>",\
-				"<span class='userdanger'>You violently crash into [victim] [extra_speed ? "extra hard" : ""]!</span>")
+			victim.take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
+			take_bodypart_damage(10 + 5 * extra_speed, check_armor = TRUE, wound_bonus = extra_speed * 5)
+			victim.DefaultCombatKnockdown(20)
+			DefaultCombatKnockdown(20)
+			visible_message("<span class='danger'>[src] crashes into [victim][extra_speed ? " really hard" : ""], knocking them both over!</span>",\
+				"<span class='userdanger'>You violently crash into [victim][extra_speed ? " extra hard" : ""]!</span>")
 		playsound(src,'sound/weapons/punch1.ogg',50,1)
 
 
@@ -145,34 +144,36 @@
 /mob/living/carbon/proc/toggle_throw_mode()
 	if(stat)
 		return
-	if(in_throw_mode)
+	if(throw_mode)
 		throw_mode_off()
 	else
 		throw_mode_on()
 
 
 /mob/living/carbon/proc/throw_mode_off()
-	in_throw_mode = 0
+	throw_mode = FALSE
 	if(client && hud_used)
 		hud_used.throw_icon.icon_state = "act_throw_off"
 
 
 /mob/living/carbon/proc/throw_mode_on()
-	in_throw_mode = 1
+	throw_mode = TRUE
 	if(client && hud_used)
 		hud_used.throw_icon.icon_state = "act_throw_on"
 
 /mob/proc/throw_item(atom/target)
 	SEND_SIGNAL(src, COMSIG_MOB_THROW, target)
-	return
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_CARBON_THROW_THING, src, target)
+	return TRUE
 
 /mob/living/carbon/throw_item(atom/target)
+	. = ..()
 	throw_mode_off()
 	update_mouse_pointer()
 	if(!target || !isturf(loc))
-		return
+		return FALSE
 	if(istype(target, /atom/movable/screen))
-		return
+		return FALSE
 
 	//CIT CHANGES - makes it impossible to throw while in stamina softcrit
 	if(IS_STAMCRIT(src))
@@ -182,83 +183,68 @@
 	var/random_turn = a_intent == INTENT_HARM
 	//END OF CIT CHANGES
 
-	var/obj/item/held_item = get_active_held_item()
-
 	var/atom/movable/thrown_thing
-	var/mob/living/throwable_mob
+	var/obj/item/held_item = get_active_held_item()
+	var/verb_text = pick("throw", "toss", "hurl", "chuck", "fling")
+	if(prob(0.5))
+		verb_text = "yeet"
 
-	if(istype(held_item, /obj/item/clothing/head/mob_holder))
-		var/obj/item/clothing/head/mob_holder/holder = held_item
-		if(holder.held_mob)
-			throwable_mob = holder.held_mob
-			holder.release()
-
-	if(!held_item || throwable_mob)
-		if(!throwable_mob && pulling && isliving(pulling) && grab_state >= GRAB_AGGRESSIVE)
-			throwable_mob = pulling
-
-		if(throwable_mob && !throwable_mob.buckled)
-			thrown_thing = throwable_mob
-			if(pulling)
+	var/neckgrab_throw = FALSE
+	if(!held_item)
+		if(pulling && isliving(pulling) && grab_state >= GRAB_AGGRESSIVE)
+			var/mob/living/throwable_mob = pulling
+			if(!throwable_mob.buckled)
+				thrown_thing = throwable_mob
+				if(grab_state >= GRAB_NECK)
+					neckgrab_throw = TRUE
 				stop_pulling()
-			if(HAS_TRAIT(src, TRAIT_PACIFISM))
-				to_chat(src, "<span class='notice'>Ты осторожно кладёшь [throwable_mob] под себя.</span>")
-				return
-			if(!UseStaminaBuffer(STAM_COST_THROW_MOB * ((throwable_mob.mob_size+1)**2), TRUE))
-				return
-			var/turf/start_T = get_turf(loc) //Get the start and target tile for the descriptors
-			var/turf/end_T = get_turf(target)
-			if(start_T && end_T)
-				log_combat(src, throwable_mob, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
+				if(HAS_TRAIT(src, TRAIT_PACIFISM))
+					to_chat(src, span_notice("You gently let go of [throwable_mob]."))
+					return FALSE
+				if(!UseStaminaBuffer(STAM_COST_THROW_MOB * ((throwable_mob.mob_size+1)**2), TRUE))
+					return FALSE
 	else
 		thrown_thing = held_item.on_thrown(src, target)
-
-	if(isliving(thrown_thing)) // Благодаря этому и thrown_thing = held_item.on_thrown(src, target) мы можем кидать космонавтиков с плеча.
-		var/turf/start_T = get_turf(loc)
+	if(!thrown_thing)
+		return FALSE
+	if(isliving(thrown_thing))
+		var/turf/start_T = get_turf(loc) //Get the start and target tile for the descriptors
 		var/turf/end_T = get_turf(target)
 		if(start_T && end_T)
 			log_combat(src, thrown_thing, "thrown", addition="grab from tile in [AREACOORD(start_T)] towards tile at [AREACOORD(end_T)]")
-
-	else if(!(held_item.item_flags & ABSTRACT) && !HAS_TRAIT(held_item, TRAIT_NODROP))
-		thrown_thing = held_item
-		dropItemToGround(held_item)
-
-		if(HAS_TRAIT(src, TRAIT_PACIFISM) && held_item.throwforce)
-			to_chat(src, "<span class='notice'>You set [held_item] down gently on the ground.</span>")
-			return
-
-		if(!UseStaminaBuffer(held_item.getweight(src, STAM_COST_THROW_MULT, SKILL_THROW_STAM_COST), warn = TRUE))
-			return
-
-	if(thrown_thing)
-		var/power_throw = 0
-		if(HAS_TRAIT(src, TRAIT_HULK))
-			power_throw++
-		if(HAS_TRAIT(src, TRAIT_DWARF))
-			power_throw--
-		if(HAS_TRAIT(thrown_thing, TRAIT_DWARF))
-			power_throw++
-		if(pulling && grab_state >= GRAB_NECK)
-			power_throw++
-		//BLUEMOON ADDITION AHEAD
-		if(HAS_TRAIT(thrown_thing, TRAIT_BLUEMOON_HEAVY)) // тяжёлый персонаж метается хуже обычного
-			power_throw -= 2
-		if(HAS_TRAIT(thrown_thing, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлого персонажа нельзя кинуть с рук
-			power_throw = -10
-		//BLUEMOON ADDITION END
-		visible_message("<span class='danger'>[src] throws [thrown_thing][power_throw ? " really hard!" : "."]</span>", \
-						"<span class='danger'>You throw [thrown_thing][power_throw ? " really hard!" : "."]</span>")
-		log_message("has thrown [thrown_thing] [power_throw ? "really hard" : ""]", LOG_ATTACK)
-		do_attack_animation(target, no_effect = 1)
-		playsound(loc, 'sound/weapons/punchmiss.ogg', 50, 1, -1)
-		newtonian_move(get_dir(target, src))
-		thrown_thing.safe_throw_at(target, thrown_thing.throw_range, thrown_thing.throw_speed + power_throw, src, null, null, null, move_force, random_turn)
+	var/power_throw = 0
+	if(HAS_TRAIT(src, TRAIT_HULK))
+		power_throw++
+	if(HAS_TRAIT(src, TRAIT_DWARF))
+		power_throw--
+	//BLUEMOON ADDITION AHEAD
+	if(HAS_TRAIT(thrown_thing, TRAIT_BLUEMOON_HEAVY)) // тяжёлый персонаж метается хуже обычного
+		power_throw -= 2
+	if(HAS_TRAIT(thrown_thing, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлого персонажа нельзя кинуть с рук
+		power_throw = -10
+	//BLUEMOON ADDITION END
+	if(HAS_TRAIT(thrown_thing, TRAIT_DWARF))
+		power_throw++
+	if(neckgrab_throw)
+		power_throw++
+	if(isitem(thrown_thing))
+		var/obj/item/thrown_item = thrown_thing
+		if(thrown_item.throw_verb)
+			verb_text = thrown_item.throw_verb
+	visible_message(span_danger("[src] [verb_text][plural_s(verb_text)] [thrown_thing][power_throw ? " really hard!" : "."]"), \
+					span_danger("You [verb_text] [thrown_thing][power_throw ? " really hard!" : "."]"))
+	log_message("has thrown [thrown_thing] [power_throw > 0 ? "really hard" : ""]", LOG_ATTACK)
+	do_attack_animation(target, no_effect = 1)
+	var/extra_throw_range = 0 // HAS_TRAIT(src, TRAIT_THROWINGARM) ? 2 : 0
+	playsound(loc, 'sound/weapons/punchmiss.ogg', 50, 1, -1)
+	newtonian_move(get_dir(target, src))
+	thrown_thing.safe_throw_at(target, thrown_thing.throw_range + extra_throw_range, max(1,thrown_thing.throw_speed + power_throw), src, null, null, null, move_force, random_turn)
 
 /mob/living/carbon/restrained(ignore_grab)
 	. = (handcuffed || (!ignore_grab && pulledby && pulledby.grab_state >= GRAB_AGGRESSIVE))
 
 /mob/living/carbon/proc/canBeHandcuffed()
-	return 0
+	return FALSE
 
 /mob/living/carbon/Topic(href, href_list)
 	..()
@@ -291,16 +277,13 @@
 	if(restrained())
 		// too soon.
 		var/buckle_cd = 600
-		var/obj/item/restraints/O = src.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
-		var/allow_breakout_movement = IGNORE_INCAPACITATED
-		if(O?.allow_breakout_movement)
-			allow_breakout_movement = (IGNORE_INCAPACITATED|IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE)
 		if(handcuffed)
+			var/obj/item/restraints/O = src.get_item_by_slot(ITEM_SLOT_HANDCUFFED)
 			buckle_cd = O.breakouttime
 		MarkResistTime()
 		visible_message("<span class='warning'>[src] пытается выбраться!</span>", \
 					"<span class='notice'>Ты пытаешься выбраться... (Это займёт около [round(buckle_cd/600,1)] минут и тебе не стоит двигаться в процессе.)</span>")
-		if(do_after(src, buckle_cd, target = src, timed_action_flags = allow_breakout_movement, extra_checks = CALLBACK(src, PROC_REF(cuff_resist_check))))
+		if(do_after(src, buckle_cd, src, timed_action_flags = IGNORE_HELD_ITEM | IGNORE_INCAPACITATED, extra_checks = CALLBACK(src, PROC_REF(cuff_resist_check))))
 			if(!buckled)
 				return
 			buckled.user_unbuckle_mob(src, src)
@@ -337,10 +320,7 @@
 	if(I.item_flags & BEING_REMOVED)
 		to_chat(src, "<span class='warning'>Вы уже пытаетесь сбросить [I]!</span>")
 		return
-	var/obj/item/restraints/R = istype(I, /obj/item/restraints) ? I : null
 	var/allow_breakout_movement = IGNORE_INCAPACITATED
-	if(R?.allow_breakout_movement)
-		allow_breakout_movement = (IGNORE_INCAPACITATED|IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE)
 	I.item_flags |= BEING_REMOVED
 	breakouttime = I.breakouttime
 	if(!cuff_break)
@@ -353,8 +333,8 @@
 
 	else if(cuff_break == FAST_CUFFBREAK)
 		breakouttime = 50
-		visible_message("<span class='warning'>[src] пытается сломать [I]!</span>")
-		to_chat(src, "<span class='notice'>Ты пытаешься сломать [I]... (Это займёт около пяти секунд. Тебе не стоит делать лишних движений.)</span>")
+		visible_message("<span class='warning'>[src] is trying to break [I]!</span>")
+		to_chat(src, "<span class='notice'>You attempt to break [I]... (This will take around 5 seconds and you need to stand still.)</span>")
 		if(do_after(src, breakouttime, target = src, timed_action_flags = allow_breakout_movement, extra_checks = CALLBACK(src, PROC_REF(cuff_resist_check))))
 			clear_cuffs(I, cuff_break)
 		else
@@ -484,7 +464,7 @@
 
 /mob/living/carbon/attack_ui(slot)
 	if(!has_hand_for_held_index(active_hand_index))
-		return 0
+		return FALSE
 	return ..()
 
 /mob/living/carbon/proc/vomit(lost_nutrition = 10, blood = FALSE, stun = TRUE, distance = 1, message = TRUE, vomit_type = VOMIT_TOXIC, harm = TRUE, force = FALSE, purge_ratio = 0.1)
@@ -585,14 +565,14 @@
 	var/total_health = getStaminaLoss()
 	if(total_health)
 		if(!(combat_flags & COMBAT_FLAG_HARD_STAMCRIT) && total_health >= STAMINA_CRIT && !stat)
-			to_chat(src, "<span class='notice'>You're too exhausted to keep going...</span>")
+			to_chat(src, "<span class='notice'>Вы слишком устали, чтобы продолжать...</span>")
 			set_resting(TRUE, FALSE, FALSE)
 			SEND_SIGNAL(src, COMSIG_DISABLE_COMBAT_MODE)
 			combat_flags |= COMBAT_FLAG_HARD_STAMCRIT
 			filters += CIT_FILTER_STAMINACRIT
 			update_mobility()
 	if((combat_flags & COMBAT_FLAG_HARD_STAMCRIT) && total_health <= STAMINA_CRIT_REMOVAL_THRESHOLD)
-		to_chat(src, "<span class='notice'>You don't feel nearly as exhausted anymore.</span>")
+		to_chat(src, "<span class='notice'>Вы больше не чувствуете себя так измотанно.</span>")
 		combat_flags &= ~(COMBAT_FLAG_HARD_STAMCRIT)
 		filters -= CIT_FILTER_STAMINACRIT
 		update_mobility()
@@ -632,15 +612,12 @@
 		var/obj/item/clothing/glasses/G = glasses
 		sight |= G.vision_flags
 		see_in_dark = max(G.darkness_view, see_in_dark)
-
 		if(G.invis_override)
 			see_invisible = G.invis_override
 		else
 			see_invisible = min(G.invis_view, see_invisible)
-
 		if(!isnull(G.lighting_alpha))
 			lighting_alpha = min(lighting_alpha, G.lighting_alpha)
-
 	if(head)
 		var/obj/item/clothing/head/H = head
 		if(!istype(H, /obj/item/clothing/head))
@@ -650,7 +627,6 @@
 
 		if(!isnull(H.lighting_alpha))
 			lighting_alpha = min(lighting_alpha, H.lighting_alpha)
-
 	if(dna)
 		for(var/X in dna.mutations)
 			var/datum/mutation/M = X
@@ -855,16 +831,16 @@
 			death()
 			return
 		if(IsUnconscious() || IsSleeping() || getOxyLoss() > 50 || (HAS_TRAIT(src, TRAIT_DEATHCOMA)) || (health <= HEALTH_THRESHOLD_FULLCRIT && !HAS_TRAIT(src, TRAIT_NOHARDCRIT)))
-			stat = UNCONSCIOUS
+			set_stat(UNCONSCIOUS)
 			SEND_SIGNAL(src, COMSIG_DISABLE_COMBAT_MODE)
 			if(!eye_blind)
 				blind_eyes(1)
 		else
 			if(health <= crit_threshold && !HAS_TRAIT(src, TRAIT_NOSOFTCRIT))
-				stat = SOFT_CRIT
+				set_stat(SOFT_CRIT)
 				SEND_SIGNAL(src, COMSIG_DISABLE_COMBAT_MODE)
 			else
-				stat = CONSCIOUS
+				set_stat(CONSCIOUS)
 			if(eye_blind <= 1)
 				adjust_blindness(-1)
 		update_mobility()
@@ -873,6 +849,7 @@
 	update_health_hud()
 	update_hunger_and_thirst_hud()
 	med_hud_set_status()
+	..()
 
 /mob/living/carbon/proc/update_crit_status()
 	remove_filter("hardcrit")
@@ -885,11 +862,14 @@
 		drop_all_held_items()
 		stop_pulling()
 		throw_alert("handcuffed", /atom/movable/screen/alert/restrained/handcuffed, new_master = src.handcuffed)
+		if(HAS_TRAIT(src, "bondaged"))
+			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "mood_bondage", /datum/mood_event/bondage)	 //For bondage enjoyer quirk. - Gardelin0
 		if(handcuffed.demoralize_criminals)
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "handcuffed", /datum/mood_event/handcuffed)
 	else
 		clear_alert("handcuffed")
 		SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "handcuffed")
+		SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "mood_bondage", /datum/mood_event/bondage)	//For bondage enjoyer quirk. - Gardelin0
 	update_action_buttons_icon() //some of our action buttons might be unusable when we're handcuffed.
 	update_inv_handcuffed()
 	update_hud_handcuffed()
@@ -945,7 +925,7 @@
 /mob/living/carbon/can_be_revived()
 	. = ..()
 	if(!getorgan(/obj/item/organ/brain) && (!mind || !mind.has_antag_datum(/datum/antagonist/changeling)))
-		return 0
+		return FALSE
 
 /mob/living/carbon/harvest(mob/living/user)
 	if(QDELETED(src))

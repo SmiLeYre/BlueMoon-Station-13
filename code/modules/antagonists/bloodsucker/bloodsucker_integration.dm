@@ -3,15 +3,15 @@
 /mob/living/proc/HaveBloodsuckerBodyparts(displaymessage = "") // displaymessage can be something such as "rising from death" for Torpid Sleep. givewarningto is the person receiving messages.
 	if(!getorganslot(ORGAN_SLOT_HEART))
 		if(displaymessage != "")
-			to_chat(src, "<span class='warning'>Without a heart, you are incapable of [displaymessage].</span>")
+			to_chat(src, "<span class='cult'>Без сердца вы не можете [displaymessage].</span>")
 		return FALSE
 	if(!get_bodypart(BODY_ZONE_HEAD))
 		if(displaymessage != "")
-			to_chat(src, "<span class='warning'>Without a head, you are incapable of [displaymessage].</span>")
+			to_chat(src, "<span class='cult'>Без головы вы не можете [displaymessage].</span>")
 		return FALSE
 	if(!getorgan(/obj/item/organ/brain)) // NOTE: This is mostly just here so we can do one scan for all needed parts when creating a vamp. You probably won't be trying to use powers w/out a brain.
 		if(displaymessage != "")
-			to_chat(src, "<span class='warning'>Without a brain, you are incapable of [displaymessage].</span>")
+			to_chat(src, "<span class='cult'>Без мозга вы не можете [displaymessage].</span>")
 		return FALSE
 	return TRUE
 
@@ -25,7 +25,7 @@
 		return ""
 	// Viewer is Target's Vassal?
 	if(viewer.mind.has_antag_datum(ANTAG_DATUM_VASSAL) in bloodsuckerdatum.vassals)
-		var/returnString = "\[<span class='warning'><EM>This is your Master!</EM></span>\]"
+		var/returnString = "\[<span class='cult'><EM>Это твой Хозяин!</EM></span>\]"
 		var/returnIcon = "[icon2html('icons/misc/language.dmi', world, "bloodsucker")]"
 		returnString += "\n"
 		return returnIcon + returnString

@@ -27,7 +27,7 @@
 		to_chat(user, span_notice("You must remove the condom from the package first!"))
 		return FALSE
 
-	if(!G.owner.has_penis(REQUIRE_EXPOSED))
+	if(!G.owner.has_penis() == HAS_EXPOSED_GENITAL)
 		to_chat(user, span_notice("You can't find anywhere to put the condom!"))
 		return FALSE
 
@@ -48,7 +48,7 @@
 
 /obj/item/genital_equipment/condom/update_icon()
 	switch(reagents.total_volume)
-		if(0 to 49)
+		if(1 to 49)
 			icon_state = "b_condom_inflated"
 		if(50 to 100)
 			icon_state = "b_condom_inflated_med"
@@ -56,6 +56,8 @@
 			icon_state = "b_condom_inflated_large"
 		if(250 to 300)
 			icon_state = "b_condom_inflated_huge"
+		else
+			icon_state = "b_condom"
 	..()
 
 /obj/item/genital_equipment/condom/on_reagent_change()

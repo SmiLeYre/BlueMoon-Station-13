@@ -11,7 +11,7 @@
 	I.icon_state = state
 	M.vis_contents += I
 	animate(I, alpha = 255, time = 5, easing = BOUNCE_EASING, pixel_y = 10)
-	addtimer(CALLBACK(GLOBAL_PROC, /proc/finish_flick, M, I), time, TIMER_STOPPABLE | TIMER_CLIENT_TIME)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(finish_flick), M, I), time, TIMER_STOPPABLE | TIMER_CLIENT_TIME)
 
 /proc/finish_flick(mob/M, I)
 	M.vis_contents -= I
@@ -29,6 +29,9 @@
 /datum/emote/living/peep/run_emote(mob/living/user, params)
 	if(!(. = ..()))
 		return
+	if(user.nextsoundemote >= world.time)
+		return
+	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_sand/sound/voice/peep_once.ogg', 50, 1, -1)
 
 /datum/emote/living/peep2
@@ -43,4 +46,12 @@
 /datum/emote/living/peep2/run_emote(mob/living/user, params)
 	if(!(. = ..()))
 		return
+	if(user.nextsoundemote >= world.time)
+		return
+	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/peep.ogg', 50, 1, -1)
+
+/datum/emote/living/carbon/moan/run_emote(mob/living/user, params, type_override, intentional)
+	if(!(. = ..()))
+		return
+	user.moan()

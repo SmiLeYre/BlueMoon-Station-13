@@ -38,7 +38,7 @@ GLOBAL_LIST_INIT(anus_traits, list("[TRAIT_HYPERSENS_ANUS]" = 3, "[TRAIT_OVERSTI
 	var/obj/item/organ/genital/G = istype(genital, /obj/item/organ/genital) ? genital : getorganslot(genital)
 
 	for(var/stim_mod in GLOB.lust_modifiers)
-		if(CHECK_BITFIELD(G.genital_flags, text2num(stim_mod)))
+		if(CHECK_BITFIELD(G?.genital_flags, text2num(stim_mod)))
 			LAZYADD(common_flags, stim_mod)
 
 	if(G && !isemptylist(common_flags))

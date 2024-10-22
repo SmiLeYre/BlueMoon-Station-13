@@ -220,7 +220,7 @@
 		spawn(round(proj_data.time) * 10) // in seconds
 			if(!telepad)
 				return
-			if(telepad.stat & NOPOWER)
+			if(telepad.machine_stat & NOPOWER)
 				return
 			teleporting = 0
 			teleport_cooldown = world.time + (power * 2)
@@ -283,6 +283,12 @@
 							log_msg = dd_limittext(log_msg, length(log_msg) - 2)
 							log_msg += ")"
 					log_msg += ", "
+				//BLUEMOON ADD ОКО ВСЁ ВИДИТ
+				if(sending)
+					new /obj/effect/decal/cleanable/bluespace_remains(dest, telepad.x, telepad.y, telepad.z, telepad)
+				else
+					new /obj/effect/decal/cleanable/bluespace_remains(target, telepad.x, telepad.y, telepad.z, telepad)
+				//BLUEMOON ADD END
 				do_teleport(ROI, dest)
 
 			if (dd_hassuffix(log_msg, ", "))
@@ -303,7 +309,7 @@
 		telefail()
 		temp_msg = list("ERROR!", "Elevation is less than 1 or greater than 90.")
 		return
-	if(z_co == 1 /*Centcom*/ || z_co == 6 /*City of Cogs*/ || z_co < 1 || z_co > 13 /*Space max*/)
+	if(z_co == 1 /*Centcom*/ || z_co < 1 || z_co > 13 /*Space max*/)
 		telefail()
 		temp_msg = list("ERROR!", "Sector is outside known time and space!")
 		return

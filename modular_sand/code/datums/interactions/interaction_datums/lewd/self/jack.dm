@@ -1,19 +1,16 @@
 /datum/interaction/lewd/jack
 	description = "Член. Подрочить себе."
 	interaction_sound = null
-	require_user_hands = TRUE
-	require_user_penis = REQUIRE_EXPOSED
-	user_is_target = TRUE
+	required_from_user = INTERACTION_REQUIRE_HANDS
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	interaction_flags = INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
 	max_distance = 0
 	write_log_user = "jerked off"
 	write_log_target = null
+	p13user_emote = PLUG13_EMOTE_PENIS
 
 	additional_details = list(
-		list(
-			"info" = "You can fill a container if you hold it in your hand or pull it",
-			"icon" = "flask",
-			"color" = "transparent"
-			)
+		INTERACTION_FILLS_CONTAINERS
 	)
 
 /datum/interaction/lewd/jack/display_interaction(mob/living/user)

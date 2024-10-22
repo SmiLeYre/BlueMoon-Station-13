@@ -46,9 +46,9 @@
 	// cost = CARGO_CRATE_VALUE * 3
 	cost = 1500
 	contains = list(/obj/item/book/codex_gigas,
-					/obj/item/book/manual/random/,
-					/obj/item/book/manual/random/,
-					/obj/item/book/manual/random/,
+					/obj/item/book/manual/random,
+					/obj/item/book/manual/random,
+					/obj/item/book/manual/random,
 					/obj/item/book/random,
 					/obj/item/book/random,
 					/obj/item/book/random)
@@ -316,6 +316,14 @@
 	cost = 10000
 	contains = list(/obj/machinery/jukebox)
 	crate_name = "Jukebox"
+
+/datum/supply_pack/misc/moniq // BLUEMOON FINK ADD
+	name = "Jukebox (Muz-TV)"
+	desc = "Туц туц туц туц"
+	cost = 15000
+	contains = list(/obj/item/sign/moniq)
+	crate_name = "Jukebox (Muz-TV)"
+
 
 /datum/supply_pack/misc/abandonedcrate
 	name = "Loot Box"

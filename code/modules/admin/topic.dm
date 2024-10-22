@@ -62,39 +62,48 @@
 		switch(href_list["makeAntag"])
 			if("traitors")
 				if(src.makeTraitors())
-					message_admins("[key_name_admin(usr)] created traitors.")
-					log_admin("[key_name(usr)] created traitors.")
+					message_admins("[key_name_admin(usr)] created a traitor.")
+					log_admin("[key_name(usr)] created a traitor.")
 				else
-					message_admins("[key_name_admin(usr)] tried to create traitors. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to create traitors.")
+					message_admins("[key_name_admin(usr)] tried to create a traitor. Unfortunately, there were no candidates available.")
+					log_admin("[key_name(usr)] failed to create a traitor.")
 			if("heretics")
 				if(src.makeHeretics())
-					message_admins("[key_name_admin(usr)] created heretics.")
-					log_admin("[key_name(usr)] created heretics.")
+					message_admins("[key_name_admin(usr)] created a heretic.")
+					log_admin("[key_name(usr)] created a heretic.")
 				else
-					message_admins("[key_name_admin(usr)] tried to create heretics. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to create heretics.")
+					message_admins("[key_name_admin(usr)] tried to create a heretic. Unfortunately, there were no candidates available.")
+					log_admin("[key_name(usr)] failed to create a heretic.")
 			if("changelings")
 				if(src.makeChangelings())
-					message_admins("[key_name(usr)] created changelings.")
-					log_admin("[key_name(usr)] created changelings.")
+					message_admins("[key_name(usr)] created a changeling.")
+					log_admin("[key_name(usr)] created a changeling.")
 				else
-					message_admins("[key_name_admin(usr)] tried to create changelings. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to create changelings.")
+					message_admins("[key_name_admin(usr)] tried to create a changeling. Unfortunately, there were no candidates available.")
+					log_admin("[key_name(usr)] failed to create a changeling.")
+			// BLUEMOON ADD START
+			if("bloodsucker")
+				if(src.makeBloodsucker())
+					message_admins("[key_name_admin(usr)] created a bloodsucker.")
+					log_admin("[key_name(usr)] created a bloodsucker.")
+				else
+					message_admins("[key_name_admin(usr)] tried to create a bloodsucker. Unfortunately, there were no candidates available.")
+					log_admin("[key_name(usr)] failed to create a bloodsucker.")
+			// BLUEMOON ADD END
 			if("revs")
 				if(src.makeRevs())
-					message_admins("[key_name(usr)] started a revolution.")
-					log_admin("[key_name(usr)] started a revolution.")
+					message_admins("[key_name(usr)] created a revolution head.")
+					log_admin("[key_name(usr)] created a revolution head.")
 				else
-					message_admins("[key_name_admin(usr)] tried to start a revolution. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to start a revolution.")
+					message_admins("[key_name_admin(usr)] tried to creat a revolution head. Unfortunately, there were no candidates available.")
+					log_admin("[key_name(usr)] failed to create a revolution head.")
 			if("cult")
 				if(src.makeCult())
-					message_admins("[key_name(usr)] started a cult.")
-					log_admin("[key_name(usr)] started a cult.")
+					message_admins("[key_name(usr)] created a Nar'Sie cultist.")
+					log_admin("[key_name(usr)] started a Nar'Sie cultist.")
 				else
-					message_admins("[key_name_admin(usr)] tried to start a cult. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to start a cult.")
+					message_admins("[key_name_admin(usr)] tried to creat a Nar'Sie cultist. Unfortunately, there were no candidates available.")
+					log_admin("[key_name(usr)] failed to create a Nar'Sie cultist.")
 			if("wizard")
 				message_admins("[key_name(usr)] is creating a wizard...")
 				if(src.makeWizard())
@@ -168,11 +177,11 @@
 					log_admin("[key_name(usr)] failed to create an abductor team.")
 			if("clockcult")
 				if(src.makeClockCult())
-					message_admins("[key_name(usr)] started a clockwork cult.")
-					log_admin("[key_name(usr)] started a clockwork cult.")
+					message_admins("[key_name(usr)] created a Clockwork cultist.")
+					log_admin("[key_name(usr)] started a Clockwork cultist.")
 				else
-					message_admins("[key_name_admin(usr)] tried to start a clockwork cult. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to start a clockwork cult.")
+					message_admins("[key_name_admin(usr)] tried to start a Clockwork cultist. Unfortunately, there were no candidates available.")
+					log_admin("[key_name(usr)] failed to start a Clockwork cultist.")
 			if("revenant")
 				if(src.makeRevenant())
 					message_admins("[key_name(usr)] created a revenant.")
@@ -180,13 +189,14 @@
 				else
 					message_admins("[key_name_admin(usr)] tried to create a revenant. Unfortunately, there were no candidates available.")
 					log_admin("[key_name(usr)] failed to create a revenant.")
-			if("qareen")
-				if(src.makeQareen())
-					message_admins("[key_name(usr)] created a qareen.")
-					log_admin("[key_name(usr)] created a qareen.")
-				else
-					message_admins("[key_name_admin(usr)] tried to create a qareen. Unfortunately, there were no candidates available.")
-					log_admin("[key_name(usr)] failed to create a qareen.")
+
+//			if("qareen")	Temporary removed. - Gardelin0
+//				if(src.makeQareen())
+//					message_admins("[key_name(usr)] created a qareen.")
+//					log_admin("[key_name(usr)] created a qareen.")
+//				else
+//				message_admins("[key_name_admin(usr)] tried to create a qareen. Unfortunately, there were no candidates available.")
+//					log_admin("[key_name(usr)] failed to create a qareen.")
 
 	else if(href_list["dbsearchckey"] || href_list["dbsearchadmin"] || href_list["dbsearchip"] || href_list["dbsearchcid"])
 		var/adminckey = href_list["dbsearchadmin"]
@@ -1093,7 +1103,7 @@
 					to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
 					to_chat(M, "<span class='danger'>This jobban will be lifted in [mins] minutes.</span>")
 					href_list["jobban2"] = 1 // lets it fall through and refresh
-					return 1
+					return TRUE
 				if("Нет")
 					var/reason = input(usr,"Please State Reason For Banning [M.key].","Reason") as message|null
 					severity = input("Set the severity of the note/ban.", "Severity", null, null) as null|anything in list("High", "Medium", "Minor", "None")
@@ -1119,7 +1129,7 @@
 						to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
 						to_chat(M, "<span class='danger'>Jobban can be lifted only upon request.</span>")
 						href_list["jobban2"] = 1 // lets it fall through and refresh
-						return 1
+						return TRUE
 				if("Cancel")
 					return
 
@@ -1148,8 +1158,8 @@
 				message_admins("<span class='adminnotice'>[key_name_admin(usr)] unbanned [key_name_admin(M)] from [msg].</span>")
 				to_chat(M, "<span class='boldannounce'><BIG>You have been un-jobbanned by [usr.client.key] from [msg].</BIG></span>")
 				href_list["jobban2"] = 1 // lets it fall through and refresh
-			return 1
-		return 0 //we didn't do anything!
+			return TRUE
+		return FALSE //we didn't do anything!
 
 	else if(href_list["boot2"])
 		if(!check_rights(R_ADMIN))
@@ -1418,7 +1428,7 @@
 		for (var/rule in subtypesof(/datum/dynamic_ruleset/roundstart))
 			var/datum/dynamic_ruleset/roundstart/newrule = new rule()
 			roundstart_rules[newrule.name] = newrule
-		var/added_rule = input(usr,"What ruleset do you want to force? This will bypass threat level and population restrictions.", "Rigging Roundstart", null) as null|anything in sortList(roundstart_rules)
+		var/added_rule = input(usr,"What ruleset do you want to force? This will bypass threat level and population restrictions.", "Rigging Roundstart", null) as null|anything in sort_list(roundstart_rules)
 		if (added_rule)
 			GLOB.dynamic_forced_roundstart_ruleset += roundstart_rules[added_rule]
 			log_admin("[key_name(usr)] set [added_rule] to be a forced roundstart ruleset.")
@@ -1450,6 +1460,7 @@
 			return tgui_alert(usr, "The game has already started.")
 
 		dynamic_mode_options(usr)
+	/* BLUEMOON REMOVAL START - мы используем GLOB.round_type
 	else if(href_list["f_dynamic_force_extended"])
 		if(!check_rights(R_ADMIN))
 			return
@@ -1458,7 +1469,7 @@
 		log_admin("[key_name(usr)] set 'forced_extended' to [GLOB.dynamic_forced_extended].")
 		message_admins("[key_name(usr)] set 'forced_extended' to [GLOB.dynamic_forced_extended].")
 		dynamic_mode_options(usr)
-
+	/ BLUEMOON REMOVAL END */
 	else if(href_list["f_dynamic_no_stacking"])
 		if(!check_rights(R_ADMIN))
 			return
@@ -1468,22 +1479,17 @@
 		message_admins("[key_name(usr)] set 'no_stacking' to [GLOB.dynamic_no_stacking].")
 		dynamic_mode_options(usr)
 //BLUEMOON ADDITION START
-	else if(href_list["f_teambased_dynamic"])
+	else if(href_list["f_round_type"])
 		if(!check_rights(R_ADMIN))
 			return
 
-		GLOB.teambased_dynamic = !GLOB.teambased_dynamic
-		log_admin("[key_name(usr)] set 'team based dynamic' to [GLOB.teambased_dynamic].")
-		message_admins("[key_name(usr)] set 'team based dynamic' to [GLOB.teambased_dynamic].")
-		dynamic_mode_options(usr)
+		var/chosen_type = input("Выберите вариацию динамика","Round Type Choose") as null|anything in list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD, ROUNDTYPE_DYNAMIC_MEDIUM, ROUNDTYPE_DYNAMIC_LIGHT, ROUNDTYPE_EXTENDED)
+		GLOB.round_type = chosen_type
+		GLOB.master_mode = chosen_type
 
-	else if(href_list["f_extended_dynamic"])
-		if(!check_rights(R_ADMIN))
-			return
+		log_admin("[key_name(usr)] изменяет режим игры на [chosen_type].")
+		to_chat(world, "<span class='adminnotice'><b>Выставлен режим [GLOB.master_mode].</b></span>")
 
-		GLOB.dynamic_extended = !GLOB.dynamic_extended
-		log_admin("[key_name(usr)] set 'extended dynamic' to [GLOB.dynamic_extended].")
-		message_admins("[key_name(usr)] set 'extended dynamic' to [GLOB.dynamic_extended].")
 		dynamic_mode_options(usr)
 //BLUEMOON ADDITION END
 	else if(href_list["f_dynamic_stacking_limit"])
@@ -2269,7 +2275,7 @@
 
 		var/atom/target //Where the object will be spawned
 		var/where = href_list["object_where"]
-		if (!( where in list("onfloor","frompod","inhand","inmarked") ))
+		if (!( where in list("onfloor","frompod","fromquantumspread","inhand","inmarked") ))
 			where = "onfloor"
 
 
@@ -2280,7 +2286,7 @@
 					where = "onfloor"
 				target = usr
 
-			if("onfloor", "frompod")
+			if("onfloor", "frompod", "fromquantumspread")
 				switch(href_list["offset_type"])
 					if ("absolute")
 						target = locate(0 + X,0 + Y,0 + Z)
@@ -2297,9 +2303,12 @@
 					target = marked_datum
 
 		var/obj/structure/closet/supplypod/centcompod/pod
+		var/datum/effect_system/spark_spread/quantum/sparks
 		if(target)
 			if(where == "frompod")
 				pod = new()
+			if(where == "fromquantumspread")
+				sparks = new
 			for (var/path in paths)
 				for (var/i = 0; i < number; i++)
 					if(path in typesof(/turf))
@@ -2334,6 +2343,12 @@
 
 		if(pod)
 			new /obj/effect/pod_landingzone(target, pod)
+
+		if(sparks)
+			playsound(get_turf(target.loc), 'sound/magic/Repulse.ogg', 100, 1)
+			sparks.set_up(10, 1, target)
+			sparks.attach(target.loc)
+			sparks.start()
 
 		if (number == 1)
 			log_admin("[key_name(usr)] created a [english_list(paths)]")
@@ -2785,6 +2800,46 @@
 					log_query_debug("[usr.key] | [response]")
 		else if(answer == "no")
 			log_query_debug("[usr.key] | Reported no server hang")
+	else if(href_list["del_tag"])
+		if(!check_rights(R_ADMIN))
+			return
+		var/datum/datum_to_remove = locate(href_list["del_tag"])
+		if(!datum_to_remove)
+			return
+		return remove_tagged_datum(datum_to_remove)
+
+	else if(href_list["show_tags"])
+		if(!check_rights(R_ADMIN))
+			return
+		return display_tags()
+
+	else if(href_list["clear_tags"])
+		if(!check_rights(R_ADMIN))
+			return
+		return clear_tags()
+
+	else if(href_list["mark_datum"])
+		if(!check_rights(R_ADMIN))
+			return
+		var/datum/datum_to_mark = locate(href_list["mark_datum"])
+		if(!datum_to_mark)
+			return
+		return usr.client?.mark_datum(datum_to_mark)
+
+	else if(href_list["show_paper"])
+		if(!check_rights(R_ADMIN))
+			return
+
+		var/obj/item/paper/paper_to_show = locate(href_list["show_paper"])
+		if(!paper_to_show)
+			return
+		paper_to_show.ui_interact(usr)
+
+	else if(href_list["movepod"])
+		var/obj/docking_port/mobile/pod/pod = src
+		pod.request()
+		message_admins("[key_name_admin(usr)] moved the Escape Pod.")
+		log_admin("[key_name(usr)] moved the Escape Pod.")
 
 /datum/admins/proc/HandleCMode()
 	if(!check_rights(R_ADMIN))

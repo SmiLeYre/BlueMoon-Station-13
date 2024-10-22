@@ -24,11 +24,11 @@ Contains:
 	item_state = "deathsquad"
 	armor = list(MELEE = 80, BULLET = 80, LASER = 50, ENERGY = 50, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 50)
 	strip_delay = 130
+	actions_types = list()
+
+	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
-	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
-	actions_types = list()
 
 /obj/item/clothing/head/helmet/space/hardsuit/deathsquad/attack_self(mob/user)
 	return
@@ -42,10 +42,13 @@ Contains:
 	allowed = list(/obj/item/gun, /obj/item/ammo_box, /obj/item/ammo_casing, /obj/item/melee/baton, /obj/item/restraints/handcuffs, /obj/item/tank/internals, /obj/item/kitchen/knife/combat)
 	armor = list(MELEE = 80, BULLET = 80, LASER = 50, ENERGY = 50, BOMB = 100, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 30)
 	strip_delay = 130
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	resistance_flags = FIRE_PROOF | ACID_PROOF
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/deathsquad
 	dog_fashion = /datum/dog_fashion/back/deathsquad
+	jetpack = /obj/item/tank/jetpack/suit
+
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 //NEW SWAT suit
 /obj/item/clothing/suit/space/swat
@@ -63,7 +66,7 @@ Contains:
 /obj/item/clothing/head/helmet/space/beret
 	name = "officer's beret"
 	desc = "An armored beret commonly used by special operations officers. Uses advanced force field technology to protect the head from space."
-	icon_state = "beret_badge"
+	icon_state = "beret_centcom_officer"
 	dynamic_hair_suffix = "+generic"
 	dynamic_fhair_suffix = "+generic"
 	flags_inv = 0
@@ -76,8 +79,8 @@ Contains:
 /obj/item/clothing/suit/space/officer
 	name = "officer's jacket"
 	desc = "An armored, space-proof jacket used in special operations."
-	icon_state = "detective"
-	item_state = "det_suit"
+	icon_state = "greydet"
+	item_state = "greydet"
 	blood_overlay_type = "coat"
 	slowdown = 0
 	flags_inv = 0
@@ -178,15 +181,18 @@ Contains:
 
 	//Emergency Response Team suits
 /obj/item/clothing/head/helmet/space/hardsuit/ert
-	name = "emergency response unit helmet"
+	name = "Emergency Response Unit Helmet"
 	desc = "Standard issue command helmet for the ERT."
 	icon_state = "hardsuit0-ert_commander"
 	item_state = "hardsuit0-ert_commander"
 	hardsuit_type = "ert_commander"
 	armor = list(MELEE = 65, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 50, BIO = 100, RAD = 100, FIRE = 80, ACID = 80, WOUND = 30)
 	strip_delay = 130
-	brightness_on = 7
-	resistance_flags = ACID_PROOF
+	brightness_on = 16
+
+	heat_protection = HEAD
+	max_heat_protection_temperature = FIRE_SUIT_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/Initialize(mapload)
 	. = ..()
@@ -203,7 +209,11 @@ Contains:
 	armor = list(MELEE = 65, BULLET = 50, LASER = 50, ENERGY = 50, BOMB = 50, BIO = 100, RAD = 100, FIRE = 80, ACID = 80, WOUND = 30)
 	slowdown = 0
 	strip_delay = 130
-	resistance_flags = ACID_PROOF
+
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
+	jetpack = /obj/item/tank/jetpack/suit
 
 	//ERT Security
 /obj/item/clothing/head/helmet/space/hardsuit/ert/sec
@@ -250,15 +260,17 @@ Contains:
 	//Red alert ERT
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/alert
-	name = "emergency response unit helmet"
+	name = "Emergency Response Unit Helmet"
 	desc = "Red alert command helmet for the ERT. This one is more armored than its standard version."
 	icon_state = "hardsuit0-ert_commander-alert"
 	item_state = "hardsuit0-ert_commander-alert"
 	hardsuit_type = "ert_commander-alert"
 	armor = list(MELEE = 70, BULLET = 55, LASER = 50, ENERGY = 50, BOMB = 65, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 50)
-	brightness_on = 8
-	resistance_flags = FIRE_PROOF | ACID_PROOF
+	brightness_on = 12
+
+	heat_protection = HEAD
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/suit/space/hardsuit/ert/alert
 	name = "Emergency Response Team suit"
@@ -268,9 +280,11 @@ Contains:
 	tail_state = "ert-alert"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/alert
 	armor = list(MELEE = 70, BULLET = 55, LASER = 50, ENERGY = 50, BOMB = 65, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 50)
-	resistance_flags = FIRE_PROOF | ACID_PROOF
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
+
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 
 	//ERT Security
 /obj/item/clothing/head/helmet/space/hardsuit/ert/alert/sec
@@ -375,7 +389,7 @@ Contains:
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = ACID_PROOF | FIRE_PROOF
 	slowdown = 0
-	mutantrace_variation = STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 //Carpsuit, bestsuit, lovesuit
 /obj/item/clothing/head/helmet/space/hardsuit/carp
@@ -411,15 +425,17 @@ Contains:
 	icon_state = "hardsuit0-prt"
 	item_state = "hardsuit0-prt"
 	hardsuit_type = "knight_grey"
-	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	actions_types = list()
-	resistance_flags = FIRE_PROOF
+	armor = list(MELEE = 70, BULLET = 55, LASER = 50, ENERGY = 50, BOMB = 65, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 50)
 	mutantrace_variation = STYLE_MUZZLE
+	heat_protection = HEAD
+	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 	var/charges = INFINITY
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_HEAD, charges, TRUE, null, CALLBACK(src, .proc/anti_magic_gone))
+	AddComponent(/datum/component/anti_magic, FALSE, FALSE, TRUE, ITEM_SLOT_HEAD, charges, TRUE, null, CALLBACK(src, PROC_REF(anti_magic_gone)))
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/proc/anti_magic_gone()
 	var/mob/M = loc
@@ -435,13 +451,17 @@ Contains:
 	item_state = "knight_grey"
 	tail_state = "syndicate-winter"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal
+	armor = list(MELEE = 70, BULLET = 55, LASER = 50, ENERGY = 50, BOMB = 65, BIO = 100, RAD = 100, FIRE = 100, ACID = 100, WOUND = 50)
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC|STYLE_PAW_TAURIC
+
+	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
-	resistance_flags = FIRE_PROOF
+	resistance_flags = FIRE_PROOF | ACID_PROOF
 	var/charges = INFINITY
 
 /obj/item/clothing/suit/space/hardsuit/ert/paranormal/Initialize(mapload)
 	. = ..()
-	AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, ITEM_SLOT_OCLOTHING, charges, TRUE, null, CALLBACK(src, .proc/anti_magic_gone))
+	AddComponent(/datum/component/anti_magic, TRUE, TRUE, FALSE, ITEM_SLOT_OCLOTHING, charges, TRUE, null, CALLBACK(src, PROC_REF(anti_magic_gone)))
 
 /obj/item/clothing/suit/space/hardsuit/ert/paranormal/proc/anti_magic_gone()
 	var/mob/M = loc
@@ -480,6 +500,7 @@ Contains:
 	icon_state = "hardsuit-beserker"
 	item_state = "hardsuit-beserker"
 	tail_state = "syndicate-blood"
+	alternate_screams = SPASEMAR_SCREAMS // BLUEMOON CHANGE
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/beserker
 
 /obj/item/clothing/head/helmet/space/hardsuit/ert/paranormal/beserker

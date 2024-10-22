@@ -42,12 +42,12 @@
 	else
 		data["status"] = M.mode == SHUTTLE_IGNITING ? "Igniting" : M.mode != SHUTTLE_IDLE ? "In Transit" : "Idle"
 	for(var/obj/docking_port/stationary/S in SSshuttle.stationary)
-		if(!options.Find(S.id))
+		if(!options.Find(S.shuttle_id))
 			continue
 		if(!M.check_dock(S, silent = TRUE))
 			continue
 		var/list/location_data = list(
-			id = S.id,
+			id = S.shuttle_id,
 			name = S.name
 		)
 		data["locations"] += list(location_data)
@@ -106,7 +106,7 @@
 				return
 			COOLDOWN_START(src, request_cooldown, 1 MINUTES)
 			to_chat(usr, "<span class='notice'>Your request has been received by CentCom.</span>")
-			to_chat(GLOB.admins, "<b>FERRY: <font color='#3d5bc3'>[ADMIN_LOOKUPFLW(usr)] (<A HREF='?_src_=holder;[HrefToken()];secrets=moveferry'>Move Ferry</a>)</b> is requesting to move the transport ferry to CentCom.</font>")
+			to_chat(GLOB.admins, "<b>FERRY: <font color='#3d5bc3'>[ADMIN_LOOKUPFLW(usr)] (<A HREF='?_src_=holder;[HrefToken()];secrets=movepod'>Move Pod</a>)</b> is requesting to move the transport Escape Pod.</font>")
 			return TRUE
 
 /obj/machinery/computer/shuttle/emag_act(mob/user)
@@ -121,4 +121,4 @@
 
 /obj/machinery/computer/shuttle/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override=FALSE)
 	if(port && (shuttleId == initial(shuttleId) || override))
-		shuttleId = port.id
+		shuttleId = port.shuttle_id

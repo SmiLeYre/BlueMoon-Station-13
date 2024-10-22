@@ -1,4 +1,6 @@
 // Weapon exports. Stun batons, disablers, etc.
+/datum/export/weapon
+    k_elasticity = 1/100 //BLUEMOON CHANGE
 
 /datum/export/weapon
 	include_subtypes = FALSE

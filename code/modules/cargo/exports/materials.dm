@@ -1,5 +1,5 @@
 /datum/export/material
-	k_elasticity = 0
+	k_elasticity = 1/200 //BLUEMOON CHANGE
 	cost = 5 // Cost per MINERAL_MATERIAL_AMOUNT, which is 2000cm3 as of April 2016.
 	message = "cm3 of developer's tears. Please, report this on github"
 	var/material_id = null
@@ -11,12 +11,12 @@
 
 /datum/export/material/get_amount(obj/O)
 	if(!material_id)
-		return 0
+		return FALSE
 	if(!isitem(O))
-		return 0
+		return FALSE
 	var/obj/item/I = O
 	if(!(SSmaterials.GetMaterialRef(material_id) in I.custom_materials))
-		return 0
+		return FALSE
 
 	var/amount = I.custom_materials[SSmaterials.GetMaterialRef(material_id)]
 

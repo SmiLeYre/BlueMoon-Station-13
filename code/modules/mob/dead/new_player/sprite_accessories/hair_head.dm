@@ -78,6 +78,10 @@
 	name = "Bedhead"
 	icon_state = "hair_bedhead"
 
+/datum/sprite_accessory/hair/bedhead_short
+	name = "Bedhead (short)"
+	icon_state = "hair_short_bedhead"
+
 /datum/sprite_accessory/hair/bedhead_long
 	name = "Bedhead (Long)"
 	icon_state = "hair_long_bedhead"
@@ -727,6 +731,10 @@
 	name = "Ponytail 6"
 	icon_state = "hair_ponytail6"
 
+/datum/sprite_accessory/hair/ponytail7
+	name = "Ponytail 7"
+	icon_state = "hair_ponytail7"
+
 /datum/sprite_accessory/hair/highponytail
 	name = "Ponytail (High)"
 	icon_state = "hair_highponytail"
@@ -1113,3 +1121,7 @@
 /datum/sprite_accessory/hair_gradient/wavy_spike
 	name = "Spiked Wavy"
 	icon_state = "wavy_spiked"
+
+/datum/sprite_accessory/hair/s_longfringe
+    name = "Smooth Long Fringe"
+    icon_state = "s_hair_longfringe"

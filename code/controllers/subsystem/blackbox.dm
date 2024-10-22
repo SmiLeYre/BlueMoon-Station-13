@@ -140,6 +140,8 @@ SUBSYSTEM_DEF(blackbox)
 			record_feedback("tally", "radio_usage", 1, "engineering")
 		if(FREQ_SECURITY)
 			record_feedback("tally", "radio_usage", 1, "security")
+		if(FREQ_LAW)
+			record_feedback("tally", "radio_usage", 1, "law")
 		if(FREQ_SYNDICATE)
 			record_feedback("tally", "radio_usage", 1, "syndicate")
 		if(FREQ_SERVICE)
@@ -154,6 +156,8 @@ SUBSYSTEM_DEF(blackbox)
 			record_feedback("tally", "radio_usage", 1, "CTF red team")
 		if(FREQ_CTF_BLUE)
 			record_feedback("tally", "radio_usage", 1, "CTF blue team")
+		if(FREQ_GHOST_INTEQ)
+			record_feedback("tally", "radio_usage", 1, "Forgotten Ship")
 		else
 			record_feedback("tally", "radio_usage", 1, "other")
 
@@ -291,8 +295,17 @@ Versioning
 
 	var/datum/db_query/query_log_ahelp = SSdbcore.NewQuery({"
 		INSERT INTO [format_table_name("ticket")] (ticket, action, message, recipient, sender, server_ip, server_port, round_id, timestamp)
-		VALUES (:ticket, :action, :message, :recipient, :sender, INET_ATON(:server_ip), :server_port, :round_id, :time)
-	"}, list("ticket" = ticket, "action" = action, "message" = message, "recipient" = recipient, "sender" = sender, "server_ip" = world.internet_address || "0", "server_port" = world.port, "round_id" = GLOB.round_id, "time" = SQLtime()))
+		VALUES (:ticket, :action, :message, :recipient, :sender, INET_ATON(:server_ip), :server_port, :round_id, NOW())
+	"},  list( // BLUEMOON EDIT, list formatting
+		"ticket" = ticket,
+		"action" = action,
+		"message" = message,
+		"recipient" = recipient,
+		"sender" = sender,
+		"server_ip" = world.internet_address || "0",
+		"server_port" = world.port,
+		"round_id" = GLOB.round_id,
+	))
 	query_log_ahelp.Execute()
 	qdel(query_log_ahelp)
 
@@ -302,6 +315,8 @@ Versioning
 	if(sealed)
 		return
 	if(!L || !L.key || !L.mind)
+		return
+	if (L.mind.assigned_role && L.mind.assigned_role == "Ghost Cafe Visitor")
 		return
 	if(!L.suiciding && !first_death.len)
 		first_death["name"] = "[(L.real_name == L.name) ? L.real_name : "[L.real_name] as [L.name]"]"

@@ -182,7 +182,7 @@ All ShuttleMove procs go here
 	for(var/obj/machinery/door/airlock/A in range(1, src))  // includes src
 		A.shuttledocked = FALSE
 		A.air_tight = TRUE
-		addtimer(CALLBACK(A, /obj/machinery/door/.proc/close), 0)
+		addtimer(CALLBACK(A, TYPE_PROC_REF(/obj/machinery/door, close)), 0)
 
 /obj/machinery/door/airlock/afterShuttleMove(turf/oldT, list/movement_force, shuttle_dir, shuttle_preferred_direction, move_dir, rotation)
 	. = ..()
@@ -317,13 +317,18 @@ All ShuttleMove procs go here
 /mob/living/lateShuttleMove(turf/oldT, list/movement_force, move_dir)
 	if(buckled)
 		return
+	// BLUEMOON ADD START - Персонажи с размером более 150% не падают на пол
+	if(get_size(src) >= 1.5 && !HAS_TRAIT(src, TRAIT_BLUEMOON_LIGHT))
+		to_chat(src, span_notice("Вас тряхнуло, но вы устояли на ногах благодаря своему размеру."))
+		Stun(movement_force["KNOCKDOWN"])
+		return
+	// BLUEMOON ADD END
 
 	. = ..()
 
 	var/knockdown = movement_force["KNOCKDOWN"]
 	if(knockdown)
 		DefaultCombatKnockdown(knockdown)
-
 
 /mob/living/simple_animal/hostile/megafauna/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock)
 	. = ..()
@@ -388,8 +393,8 @@ All ShuttleMove procs go here
 	. = ..()
 
 /obj/docking_port/stationary/public_mining_dock/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock)
-	id = "mining_public" //It will not move with the base, but will become enabled as a docking point.
+	shuttle_id = "mining_public" //It will not move with the base, but will become enabled as a docking point.
 
 /obj/effect/abstract/proximity_checker/onShuttleMove(turf/newT, turf/oldT, list/movement_force, move_dir, obj/docking_port/stationary/old_dock, obj/docking_port/mobile/moving_dock)
 	//timer so it only happens once
-	addtimer(CALLBACK(monitor, /datum/proximity_monitor/proc/SetRange, monitor.current_range, TRUE), 0, TIMER_UNIQUE)
+	addtimer(CALLBACK(monitor, TYPE_PROC_REF(/datum/proximity_monitor, SetRange), monitor.current_range, TRUE), 0, TIMER_UNIQUE)

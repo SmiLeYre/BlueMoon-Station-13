@@ -23,6 +23,10 @@
 	/// Shield bashing push distance
 	var/shieldbash_push_distance = 1
 
+	var/melee_block = 30 // bluemoon add start
+	var/laser_block = 0  // простое распределение, что и с каким шансом блочит щит.
+	var/bullet_block = 0 // bluemoon add end
+
 /datum/block_parry_data/shield
 	block_damage_multiplier = 0.25
 	block_stamina_efficiency = 2.5
@@ -78,8 +82,8 @@
 	animate(effect, alpha = 0, pixel_x = px * 1.5, pixel_y = py * 1.5, time = 3, flags = ANIMATION_PARALLEL | ANIMATION_RELATIVE)
 
 /obj/item/shield/proc/bash_target(mob/living/user, mob/living/target, bashdir, harmful)
-	if(!(HAS_TRAIT(target, CANKNOCKDOWN)) || HAS_TRAIT(target, TRAIT_STUNIMMUNE))	// should probably add stun absorption check at some point I guess..
-		// unified stun absorption system when lol
+	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))	// AYE
+		// unified stun absorption system when lol вот это бля баг и вызвало
 		target.visible_message("<span class='warning'>[user] slams [target] with [src], but [target] doesn't falter!</span>", "<span class='userdanger'>[user] slams you with [src], but it barely fazes you!</span>")
 		return FALSE
 	var/target_downed = !CHECK_MOBILITY(target, MOBILITY_STAND)
@@ -176,10 +180,13 @@
 		var/atom/movable/AM = object
 		if((shield_flags & SHIELD_TRANSPARENT) && (AM.pass_flags & PASSGLASS))
 			return BLOCK_NONE
-	if((shield_flags & SHIELD_NO_RANGED) && (attack_type & ATTACK_TYPE_PROJECTILE))
-		return BLOCK_NONE
-	if((shield_flags & SHIELD_NO_MELEE) && (attack_type & ATTACK_TYPE_MELEE))
-		return BLOCK_NONE
+
+	if((attack_type & ATTACK_TYPE_PROJECTILE) && is_energy_reflectable_projectile(object)) //bluemoon shange start
+		final_block_chance += laser_block
+	if((attack_type & ATTACK_TYPE_PROJECTILE) && !is_energy_reflectable_projectile(object))
+		final_block_chance += bullet_block
+	if(attack_type & ATTACK_TYPE_MELEE)
+		final_block_chance +=  melee_block  //bluemoon shange end
 	if(attack_type & ATTACK_TYPE_THROWN)
 		final_block_chance += 30
 	if(attack_type & ATTACK_TYPE_TACKLE)
@@ -210,6 +217,9 @@
 	var/can_shatter = TRUE
 	shield_flags = SHIELD_FLAGS_DEFAULT | SHIELD_TRANSPARENT
 	max_integrity = 450
+	melee_block = 50
+	bullet_block = 20
+
 
 /obj/item/shield/riot/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/melee/baton))
@@ -224,7 +234,7 @@
 			var/obj/item/stack/S = W
 			S.use(1)
 			obj_integrity = max_integrity
-			to_chat(user, "<span class='notice'>You repair [src] with [S].</span>")
+			to_chat(user, "<span class='notice'>Вы починили [src] with [S].</span>")
 	else
 		return ..()
 
@@ -246,7 +256,7 @@
 /obj/item/shield/riot/on_shield_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	var/final_damage = damage
 
-	if(attack_type & ATTACK_TYPE_MELEE)
+	if(attack_type & (ATTACK_TYPE_MELEE | ATTACK_TYPE_THROWN))
 		if(istype(object, /obj))	//Assumption: non-object attackers are a meleeing mob. Therefore: Assuming physical attack in this case.
 			var/obj/hittingthing = object
 			if(hittingthing.damtype == BURN)
@@ -269,15 +279,15 @@
 			else if((shield_flags & SHIELD_KINETIC_STRONG))
 				final_damage *= 0.5
 
-	if(attack_type & ATTACK_TYPE_PROJECTILE)
-		var/obj/item/projectile/shootingthing = object
+	var/obj/item/projectile/shootingthing = object
+	if(attack_type & ATTACK_TYPE_PROJECTILE && istype(shootingthing))
 		if(is_energy_reflectable_projectile(shootingthing))
 			if((shield_flags & SHIELD_ENERGY_WEAK))
 				final_damage *= 2
 			else if((shield_flags & SHIELD_ENERGY_STRONG))
 				final_damage *= 0.5
 
-		if(!is_energy_reflectable_projectile(object))
+		if(!is_energy_reflectable_projectile(shootingthing))
 			if((shield_flags & SHIELD_KINETIC_WEAK))
 				final_damage *= 2
 			else if((shield_flags & SHIELD_KINETIC_STRONG))
@@ -311,6 +321,8 @@
 	righthand_file = 'icons/mob/inhands/equipment/shields_righthand.dmi'
 	shield_flags = SHIELD_FLAGS_DEFAULT | SHIELD_ENERGY_STRONG | SHIELD_KINETIC_WEAK
 	max_integrity = 300
+	melee_block = 30
+	laser_block = 50
 
 /obj/item/shield/riot/kinetic_proof
 	name = "kinetic resistant shield"
@@ -320,6 +332,8 @@
 	item_state = "riot_bullet"
 	shield_flags = SHIELD_FLAGS_DEFAULT | SHIELD_KINETIC_STRONG | SHIELD_ENERGY_WEAK
 	max_integrity = 300
+	melee_block = 30
+	bullet_block = 50
 
 /obj/item/shield/riot/roman
 	name = "\improper Roman shield"
@@ -337,6 +351,8 @@
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0)
 	shield_flags = SHIELD_ENERGY_WEAK | SHIELD_KINETIC_WEAK | SHIELD_NO_RANGED
 	max_integrity = 40
+	melee_block = 30
+	bullet_block = 0
 
 /obj/item/shield/riot/roman/shatter(mob/living/carbon/human/owner)
 	playsound(owner, 'sound/effects/grillehit.ogg', 100)
@@ -354,6 +370,8 @@
 	repair_material = /obj/item/stack/sheet/mineral/wood
 	shield_flags = SHIELD_FLAGS_DEFAULT | SHIELD_ENERGY_WEAK
 	max_integrity = 150
+	melee_block = 30
+	bullet_block = 0
 
 /obj/item/shield/riot/buckler/shatter(mob/living/carbon/human/owner)
 	playsound(owner, 'sound/effects/bang.ogg', 50)
@@ -469,7 +487,7 @@
 	add_fingerprint(user)
 
 /obj/item/shield/makeshift
-	name = "metal shield"
+	name = "Metal Shield"
 	desc = "A large shield made of wired and welded sheets of metal. The handle is made of cloth and leather, making it unwieldy."
 	armor = list(MELEE = 25, BULLET = 25, LASER = 5, ENERGY = 0, BOMB = 30, BIO = 0, RAD = 0, FIRE = 70, ACID = 80)
 	lefthand_file = 'icons/mob/inhands/equipment/shields_lefthand.dmi'
@@ -477,10 +495,14 @@
 	item_state = "metal"
 	icon_state = "makeshift_shield"
 	custom_materials = list(/datum/material/iron = 18000)
-	slot_flags = null
+	slot_flags = ITEM_SLOT_BACK
+	w_class = WEIGHT_CLASS_BULKY
 	max_integrity = 300 //Made of metal welded together its strong but not unkillable
 	force = 10
 	throwforce = 7
+	melee_block = 30
+	bullet_block = 20
+	laser_block = 20
 
 /obj/item/shield/riot/tower
 	name = "tower shield"
@@ -495,6 +517,9 @@
 	w_class = WEIGHT_CLASS_HUGE
 	item_flags = SLOWS_WHILE_IN_HAND | ITEM_CAN_BLOCK
 	shield_flags = SHIELD_FLAGS_DEFAULT
+	melee_block = 50
+	bullet_block = 40
+	laser_block = 40
 
 /obj/item/shield/riot/tower/swat
 	name = "swat shield"
@@ -530,7 +555,7 @@
 /obj/item/shield/riot/implant/Moved()
 	. = ..()
 	if(istype(loc, /obj/item/organ/cyberimp/arm/shield))
-		recharge_timerid = addtimer(CALLBACK(src, .proc/recharge), recharge_delay, flags = TIMER_STOPPABLE)
+		recharge_timerid = addtimer(CALLBACK(src, PROC_REF(recharge)), recharge_delay, flags = TIMER_STOPPABLE)
 	else		//extending
 		if(recharge_timerid)
 			deltimer(recharge_timerid)
@@ -555,6 +580,9 @@
 	throwforce = 3
 	throw_speed = 3
 	base_icon_state = "eshield" // [base_icon_state]1 for expanded, [base_icon_state]0 for contracted
+	melee_block = 30
+	bullet_block = 0
+	laser_block = 100
 	var/on_force = 10
 	var/on_throwforce = 8
 	var/on_throw_speed = 2

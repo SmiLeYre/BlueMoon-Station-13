@@ -38,6 +38,8 @@
 	new /obj/item/clothing/shoes/sneakers/brown(src)
 	new /obj/item/storage/box/ids(src)
 	new /obj/item/storage/box/ids(src)
+	new /obj/item/storage/box/deviants(src) // bluemoon edit
+	new /obj/item/storage/box/deviants(src)
 	new /obj/item/megaphone/command(src)
 	new /obj/item/clothing/suit/armor/vest/alt(src)
 	new /obj/item/assembly/flash/handheld(src)
@@ -111,6 +113,7 @@
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	new /obj/item/holosign_creator/security(src)
 	new /obj/item/clothing/mask/gas/sechailer(src)
+	new /obj/item/storage/box/body_camera(src)
 	new /obj/item/storage/box/zipties(src)
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/storage/belt/security/full(src)
@@ -166,6 +169,7 @@
 	max_integrity = 70
 	material_drop = /obj/item/stack/sheet/mineral/wood
 	cutting_tool = TOOL_SCREWDRIVER
+	door_anim_time = 0 // no animation
 
 /obj/structure/closet/secure_closet/detective/PopulateContents()
 	..()
@@ -229,7 +233,7 @@
 	icon_state = "armory"
 /obj/structure/closet/secure_closet/armory1/PopulateContents()
 	..()
-	new /obj/item/clothing/suit/armor/laserproof(src)
+	new /obj/item/clothing/suit/hooded/ablative(src)
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/suit/armor/riot(src)
 	for(var/i in 1 to 3)
@@ -271,8 +275,9 @@
 	new /obj/item/clothing/suit/armor/bulletproof(src)
 
 /obj/structure/closet/secure_closet/lethalshots
-	name = "lethal ammunition and riot staves"
+	name = "Lethal Ammunition and Riot Staves"
 	req_access = list(ACCESS_ARMORY)
+	storage_capacity = 50
 	icon_state = "tac"
 /obj/structure/closet/secure_closet/lethalshots/PopulateContents()
 	..()
@@ -280,6 +285,8 @@
 	new /obj/item/electrostaff(src)
 	for(var/i in 1 to 3)
 		new /obj/item/storage/box/lethalshot(src)
+	for(var/k in 1 to 9)
+		new /obj/item/kitchen/knife/combat(src)
 
 /obj/structure/closet/secure_closet/labor_camp_security
 	name = "labor camp security locker"

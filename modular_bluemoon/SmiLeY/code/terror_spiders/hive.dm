@@ -1,11 +1,11 @@
 
 // All terror spider code that relates to queen ruling over a hive
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/DoHiveSense()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/DoHiveSense()
 	var/hsline = ""
 	to_chat(src, "Your Brood: ")
 	for(var/thing in GLOB.ts_spiderlist)
-		var/mob/living/simple_animal/hostile/poison/terror_spider/T = thing
+		var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/T = thing
 		if(T.spider_awaymission != spider_awaymission)
 			continue
 		hsline = "* [T] in [get_area(T)], "
@@ -19,21 +19,21 @@
 			hsline += " AI "
 		to_chat(src,hsline)
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/CountSpiders()
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/CountSpiders()
 	var/numspiders = 0
 	for(var/thing in GLOB.ts_spiderlist)
-		var/mob/living/simple_animal/hostile/poison/terror_spider/T = thing
+		var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/T = thing
 		if(T.stat != DEAD && !T.spider_placed && spider_awaymission == T.spider_awaymission)
 			numspiders += 1
 	return numspiders
 
-/mob/living/simple_animal/hostile/poison/terror_spider/proc/CountSpidersDetailed(check_mine = FALSE, list/mytypes = list())
+/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/CountSpidersDetailed(check_mine = FALSE, list/mytypes = list())
 	var/list/spider_totals = list("all" = 0)
 	var/check_list = length(mytypes) > 0
 	for(var/thistype in mytypes)
 		spider_totals[thistype] = 0
 	for(var/thing in GLOB.ts_spiderlist)
-		var/mob/living/simple_animal/hostile/poison/terror_spider/T = thing
+		var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/T = thing
 		if(T.stat == DEAD || T.spider_placed || spider_awaymission != T.spider_awaymission)
 			continue
 		if(check_mine && T.spider_myqueen != src)
@@ -73,3 +73,21 @@
 		spider_totals["all"]++
 	return spider_totals
 
+/mob/living/proc/terror_talk(message, shown_name = real_name)
+	src.log_talk(message, LOG_SAY)
+	message = trim(message)
+	if(!message)
+		return
+
+	var/message_a = say_quote(message)
+	var/rendered = "<i><span class='alien'>Terror Spider Hivemind, <span class='name'>[shown_name]</span> <span class='message'>[message_a]</span></span></i>"
+	for(var/mob/S in GLOB.player_list)
+		if(!S.stat && S.terrorhivecheck())
+			to_chat(S, rendered)
+		if(S in GLOB.dead_mob_list)
+			var/link = FOLLOW_LINK(S, src)
+			to_chat(S, "[link] [rendered]")
+
+/mob/proc/terrorhivecheck()
+	if(isterrorspider(src))
+		return TRUE

@@ -1,6 +1,6 @@
 
 /obj/machinery/computer/prisoner/management
-	name = "prisoner management console"
+	name = "Prisoner Management Console"
 	desc = "Used to manage tracking implants placed inside criminals."
 	icon_screen = "explosive"
 	icon_keyboard = "security_key"
@@ -14,6 +14,14 @@
 	circuit = /obj/item/circuitboard/computer/prisoner
 
 	light_color = LIGHT_COLOR_RED
+
+/obj/machinery/computer/prisoner/management/New()
+ 	GLOB.prisoncomputer_list += src
+ 	return ..()
+
+/obj/machinery/computer/prisoner/management/Destroy()
+ 	GLOB.prisoncomputer_list -= src
+ 	return ..()
 
 /obj/machinery/computer/prisoner/management/ui_interact(mob/user)
 	. = ..()

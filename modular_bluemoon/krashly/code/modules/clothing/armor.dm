@@ -69,6 +69,17 @@
 	icon_state = "monk_robe_hood"
 	item_state = "monk_robe_hood"
 	flags_inv = HIDEHAIR|HIDEEARS
+
+/obj/item/clothing/suit/donator/bm/rune_jacket
+	name = "rune jacket"
+	desc = "Темное пальто исписанное странного вида рунами неизвестного значения. Она чертовски неудобная, как будто шили под кого то."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
+	icon_state = "deepcoat"
+	item_state = "deepcoat"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 ////////////////////////////////////////////////
 /obj/item/clothing/suit/hooded/plaguedoc_new
 	name = "plague doctor robe"
@@ -182,18 +193,16 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits_digidrated.dmi'
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/inteq
 
-/obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq/equipped(mob/user, slot)
+/obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq/equipped(mob/living/user, slot)
 	..()
 	if(slot == ITEM_SLOT_OCLOTHING)
 		if(!IS_INTEQ(user))
-			to_chat(user, "<span class='danger'><B>СКАФАНДР МОДЕЛЬ ДВА</B>: Обнаружены неавторизованные сигнатуры. <B>Производится нейтрализация экипировки.</B></span>")
+			to_chat(user, "<span class='danger'><B>СКАФАНДР МОДЕЛЬ ОДИН - ЩИТ</B>: Обнаружены неавторизованные сигнатуры. <B>Производится нейтрализация пользователя.</B></span>")
 			playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
-			addtimer(CALLBACK(src, .proc/explode), 3 SECONDS)
-
-/obj/item/clothing/suit/space/hardsuit/syndi/elite/inteq/proc/explode()
-	do_sparks(3, 1, src)
-	explosion(src.loc,0,1,1,1)
-	qdel(src)
+			do_sparks(3, 1, src)
+			user.dropItemToGround(src, TRUE)
+			user.emote("realagony")
+			user.adjustFireLoss(50)
 
 //////////
 
@@ -236,14 +245,11 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 /obj/item/clothing/suit/space/hardsuit/syndi/elite/alliance
 	name = "OTA Hardsuit"
 	desc = "OTA Stormtrooper Hardsuit."
-	icon_state = "hardsuit0-alliance"
-	item_state = "hardsuit0-alliance"
+	icon_state = "hardsuit-alliance"
+	item_state = "hardsuit-alliance"
 	tail_state = "hardsuit-winter"
 	hardsuit_type = "alliance"
-	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
-	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
-	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits_digidrated.dmi'
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/syndi/elite/alliance
 
 //////////
@@ -272,13 +278,16 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/shielded/syndi/inteq
 	shield_state = "shield-yellow"
 
-/obj/item/clothing/suit/space/hardsuit/shielded/syndi/inteq/equipped(mob/user, slot)
+/obj/item/clothing/suit/space/hardsuit/shielded/syndi/inteq/equipped(mob/living/user, slot)
 	..()
 	if(slot == ITEM_SLOT_OCLOTHING)
 		if(!IS_INTEQ(user))
-			to_chat(user, "<span class='danger'><B>СКАФАНДР МОДЕЛЬ ОДИН - ЩИТ</B>: Обнаружены неавторизованные сигнатуры. <B>Производится нейтрализация экипировки.</B></span>")
+			to_chat(user, "<span class='danger'><B>СКАФАНДР МОДЕЛЬ ОДИН - ЩИТ</B>: Обнаружены неавторизованные сигнатуры. <B>Производится нейтрализация пользователя.</B></span>")
 			playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
-			addtimer(CALLBACK(src, .proc/explode), 3 SECONDS)
+			do_sparks(3, 1, src)
+			user.dropItemToGround(src, TRUE)
+			user.emote("realagony")
+			user.adjustFireLoss(50)
 
 /obj/item/clothing/suit/space/hardsuit/shielded/syndi/inteq/proc/explode()
 	do_sparks(3, 1, src)
@@ -305,19 +314,4 @@ obj/item/clothing/suit/donator/bm/cerberus_suit/armored/inkvd
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/suits.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/krashly/icons/mob/clothing/suits_digidrated.dmi'
-
-/////////////////
-
-////InteQ spacesuit box
-/obj/item/storage/box/syndie_kit/space/inteq
-	name = "boxed space suit and helmet"
-
-/obj/item/storage/box/syndie_kit/space/inteq/ComponentInitialize()
-	. = ..()
-	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
-	STR.max_w_class = WEIGHT_CLASS_NORMAL
-	STR.can_hold = typecacheof(list(/obj/item/clothing/suit/space/syndicate/inteq, /obj/item/clothing/head/helmet/space/syndicate/inteq))
-
-/obj/item/storage/box/syndie_kit/space/inteq/PopulateContents()
-	new /obj/item/clothing/suit/space/syndicate/inteq(src) // Black and red is so in right now
-	new /obj/item/clothing/head/helmet/space/syndicate/inteq(src)
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC

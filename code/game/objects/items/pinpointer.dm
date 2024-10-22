@@ -61,7 +61,7 @@
 	if(target)
 		unset_target()
 	target = newtarget
-	RegisterSignal(target, COMSIG_PARENT_QDELETING, .proc/unset_target)
+	RegisterSignal(target, COMSIG_PARENT_QDELETING, PROC_REF(unset_target))
 
 /obj/item/pinpointer/proc/unset_target()
 	if(!target)
@@ -156,7 +156,7 @@
 		user.visible_message("<span class='notice'>[user]'s pinpointer fails to detect a signal.</span>", "<span class='notice'>Your pinpointer fails to detect a signal.</span>")
 		return
 
-	var/A = input(user, "Person to track", "Pinpoint") in names
+	var/A = tgui_input_list(user, "Сотрудники с включёнными в третий режим датчиками:", "Пинпоинтер", names)
 	if(!A || QDELETED(src) || !user || !user.is_holding(src) || user.incapacitated())
 		return
 
@@ -176,9 +176,19 @@
 	if(!target) //target can be set to null from above code, or elsewhere
 		active = FALSE
 
+/obj/item/pinpointer/crew/centcom
+	name = "Centcom Pimpointer"
+	desc = "A handheld tracking device that locks onto certain signals. Ignores suit sensors, but is much less accurate."
+	icon_state = "pinpointer_centcom"
+	item_state = "pinpointer_black"
+	minimum_range = 12
+	ignore_suit_sensor_level = TRUE
+
 /obj/item/pinpointer/pair
 	name = "pair pinpointer"
 	desc = "A handheld tracking device that locks onto its other half of the matching pair."
+	icon_state = "pinpointer_syndicate" // BLUEMOON ADD
+	item_state = "pinpointer_black" // BLUEMOON ADD - чтобы проще отличать от пинпоинтера на диск
 	var/other_pair
 
 /obj/item/pinpointer/pair/Destroy()

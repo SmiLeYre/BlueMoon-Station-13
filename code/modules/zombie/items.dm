@@ -54,6 +54,11 @@
 		// zombies)
 		return
 
+	// BLUEMOON ADD START - роботы не могут быть зомби
+	if(HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM))
+		return
+	// BLUEMOON ADD END
+
 	var/obj/item/organ/zombie_infection/infection
 	infection = target.getorganslot(ORGAN_SLOT_ZOMBIE)
 	if(!infection)

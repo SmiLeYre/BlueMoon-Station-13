@@ -1,9 +1,10 @@
 /datum/interaction/lewd/mount
 	description = "Вагина. Женская доминация."
 	interaction_sound = null
-	require_user_vagina = REQUIRE_EXPOSED
-	require_target_penis = REQUIRE_EXPOSED
-	max_distance = 1
+	required_from_user_exposed = INTERACTION_REQUIRE_VAGINA
+	required_from_target_exposed = INTERACTION_REQUIRE_PENIS
+	p13user_emote = PLUG13_EMOTE_VAGINA
+	p13target_emote = PLUG13_EMOTE_PENIS
 
 /datum/interaction/lewd/mount/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -27,9 +28,10 @@
 /datum/interaction/lewd/mountass
 	description = "Попа. Женская Доминация."
 	interaction_sound = null
-	require_user_anus = REQUIRE_EXPOSED
-	require_target_penis = REQUIRE_EXPOSED
-	max_distance = 1
+	required_from_user_exposed = INTERACTION_REQUIRE_ANUS
+	required_from_target_exposed = INTERACTION_REQUIRE_PENIS
+	p13user_emote = PLUG13_EMOTE_ANUS
+	p13target_emote = PLUG13_EMOTE_PENIS
 
 /datum/interaction/lewd/mountass/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -53,9 +55,11 @@
 /datum/interaction/lewd/mountface
 	description = "Попа. Потереться о лицо."
 	interaction_sound = null
-	require_target_mouth = TRUE
-	require_user_anus = REQUIRE_EXPOSED
-	max_distance = 1
+	required_from_user_exposed = INTERACTION_REQUIRE_ANUS
+	required_from_target = INTERACTION_REQUIRE_MOUTH
+	p13user_emote = PLUG13_EMOTE_ANUS
+	p13target_emote = PLUG13_EMOTE_FACE
+	p13target_strength = PLUG13_STRENGTH_LOW
 
 /datum/interaction/lewd/mountface/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -79,21 +83,21 @@
 
 /datum/interaction/lewd/thighs
 	description = "Член. Придушить."
-	max_distance = 1
-	require_user_penis = REQUIRE_EXPOSED
-	require_target_mouth = TRUE
+	required_from_user_exposed = INTERACTION_REQUIRE_PENIS
+	required_from_target = INTERACTION_REQUIRE_MOUTH
 	interaction_sound = null
 	write_log_user = "thigh-trapped (penis)"
 	write_log_target = "was smothered (penis) by"
 	var/fucktarget = "penis"
+	p13target_emote = PLUG13_EMOTE_PENIS
 
 /datum/interaction/lewd/thighs/vagina
 	description = "Вагина. Придушить."
-	require_user_penis = REQUIRE_NONE
-	require_user_vagina = REQUIRE_EXPOSED
+	required_from_user_exposed = INTERACTION_REQUIRE_VAGINA
 	write_log_user = "thigh-trapped (vagina)"
 	write_log_target = "was smothered (vagina) by"
 	fucktarget = "vagina"
+	p13target_emote = PLUG13_EMOTE_VAGINA
 
 /datum/interaction/lewd/thighs/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -163,3 +167,7 @@
 						'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
 	if(fucktarget != "penis" || user.can_penetrating_genital_cum())
 		user.handle_post_sex(NORMAL_LUST, CUM_TARGET_MOUTH, partner, genital) //SPLURT edit
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(partner.loc)

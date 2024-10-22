@@ -13,7 +13,6 @@
 	var/outfit
 	var/landmark_type
 	var/greet_text
-	soft_antag = FALSE // BLUEMOON ADDITION
 
 /datum/antagonist/abductor/agent
 	name = "Abductor Agent"
@@ -112,7 +111,7 @@
 
 /datum/antagonist/abductor/get_admin_commands()
 	. = ..()
-	.["Equip"] = CALLBACK(src,.proc/admin_equip)
+	.["Equip"] = CALLBACK(src,PROC_REF(admin_equip))
 
 /datum/antagonist/abductor/proc/admin_equip(mob/admin)
 	if(!ishuman(owner.current))

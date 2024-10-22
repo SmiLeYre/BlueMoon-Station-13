@@ -1,6 +1,6 @@
 /datum/export/gear
 	include_subtypes = FALSE
-	k_elasticity = 0 //We always want clothing/gear
+	k_elasticity = 1/100 //BLUEMOON CHANGE
 
 //blanket
 /datum/export/gear/hat
@@ -639,8 +639,8 @@
 
 /datum/export/gear/reflector
 	cost = 500
-	unit_name = "reflector armor"
-	export_types = list(/obj/item/clothing/suit/armor/laserproof)
+	unit_name = "ablative trenchcoat"
+	export_types = list(/obj/item/clothing/suit/hooded/ablative)
 	include_subtypes = TRUE
 
 /datum/export/gear/heavy_armor

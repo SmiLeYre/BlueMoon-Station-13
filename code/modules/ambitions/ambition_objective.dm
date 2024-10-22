@@ -140,8 +140,9 @@
 
 /datum/ambition_objective/proc/random_player()
 	var/list/players = list()
-	for(var/mob/living/carbon/human/player in GLOB.player_list)
-		if(!player.mind || player.mind.assigned_role == player.mind.special_role || player.client.inactivity > 10 MINUTES || player.mind == owner)
+	for(var/i in GLOB.joined_player_list) // BLUEMOON EDIT - было for(var/mob/living/carbon/human/player in GLOB.player_list)
+		var/mob/player = get_mob_by_ckey(i) // BLUEMOON ADD
+		if(!player || !player.client || !player.mind || player.mind.assigned_role == player.mind.special_role || player.client.inactivity > 10 MINUTES || player.mind == owner) //BLUEMOON ADD рантаймы с нулями без !players или без !player.client
 			continue
 		players += player.real_name
 	var/random_player = "Капитан"

@@ -149,7 +149,8 @@
 				heal_amount = min(heal_amount, damage - affecting.threshhold_passed_mindamage)
 
 				if(!heal_amount)
-					to_chat(user, "<span class='notice'>[user == H ? "Your" : "[H]'s"] [affecting.name] appears to have suffered severe internal damage and requires surgery to repair further.</span>")
+//					to_chat(user, "<span class='notice'>[user == H ? "Your" : "[H]'s"] [affecting.name] appears to have suffered severe internal damage and requires surgery to repair further.</span>") - BLUEMOON REMOVAL
+					to_chat(user, span_notice("[user == H ? "Ваша [affecting.ru_name]" : "[affecting.ru_name_capital] [H]"] подверглась сильным внутренним повреждениям. Требуется углубленный ремонт с хирургической точностью.")) // BLUEMOON ADD
 					return
 			item_heal_robotic(H, user, heal_amount, 0)
 	else
@@ -214,8 +215,8 @@
 	if(get_fuel() <= 0 && welding)
 		switched_on(user)
 		update_icon()
-		return 0
-	return 1
+		return FALSE
+	return TRUE
 
 //Switches the welder on
 /obj/item/weldingtool/proc/switched_on(mob/user)

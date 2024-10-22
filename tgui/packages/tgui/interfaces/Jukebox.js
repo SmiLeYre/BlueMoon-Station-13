@@ -1,11 +1,7 @@
-import { filter, map, sortBy, uniq } from 'common/collections';
-import { createSearch } from 'common/string';
-import { flow } from 'common/fp';
-import { useBackend, useLocalState, useSharedState } from '../backend';
+import { useBackend, useSharedState } from '../backend';
 import {
   Box,
   Button,
-  Dropdown,
   Input,
   Section,
   Knob,
@@ -13,7 +9,6 @@ import {
   LabeledList,
   Stack,
   Tabs,
-  Table,
 } from '../components';
 import { Window } from '../layouts';
 
@@ -27,31 +22,36 @@ export const Jukebox = (props, context) => {
     is_emagged,
     cost_for_play,
     has_access,
+    repeat,
+    current_page,
+    pages,
+    songs
   } = data;
-  const [searchText, setSearchText] = useLocalState(context, 'searchText', '');
-  const searchFilter = createSearch(searchText, (entry) => entry.name);
-  const songs = flow([sortBy((song) => song.name)])(data.songs || []);
   const queued_tracks = data.queued_tracks || [];
   const [tab, setTab] = useSharedState(context, 'tab', 1);
-  const visibleSongs = flow([
-    filter(searchFilter),
-    sortBy((entry) => entry.name),
-  ])(songs);
 
   return (
-    <Window width={520} height={480}>
+    <Window width={520} height={680}>
       <Window.Content overflowY="scroll">
         <Section
           fluid
           title="Настройки"
-          buttons={
-            <Button
-              icon={active ? 'pause' : 'play'}
-              content={active ? 'Стоп' : 'Играть'}
-              selected={active}
-              disabled={!has_access}
-              onClick={() => act('toggle')}
+          buttons={ //BLUEMOON EDIT
+            <Box>
+              <Button
+                content={repeat ? 'Повтор' : '1 Раз'}
+                selected={repeat}
+                disabled={!has_access}
+                onClick={() => act('repeat')}
+              />
+              <Button
+                icon={active ? 'pause' : 'play'}
+                content={active ? 'Стоп' : 'Играть'}
+                selected={active}
+                disabled={!has_access}
+                onClick={() => act('toggle')}
             />
+            </Box> //BLUEMOON EDIT END
           }>
           <Stack>
             <Stack.Item>
@@ -144,6 +144,13 @@ export const Jukebox = (props, context) => {
           <Tabs.Tab selected={tab === 2} onClick={() => setTab(2)}>
             Очередь
           </Tabs.Tab>
+          <Stack.Item grow />
+          <Button
+            color="transparent"
+            icon="shuffle"
+            tooltip="Случайная песня"
+            onClick={() => act('random_song')}
+          />
         </Tabs>
         {tab === 1 && (
           <Section fluid vertical>
@@ -153,32 +160,44 @@ export const Jukebox = (props, context) => {
                   fluid
                   autoFocus
                   placeholder="Найти треки..."
-                  onInput={(e, value) => setSearchText(value)}
+                  onChange={(e, query) => act("search", { query })}
                 />
               </Stack.Item>
             </Stack>
 
             <Section fluid>
-              <Tabs vertical style={{ 'pointer-events': 'none' }}>
-                {visibleSongs.map((song) => (
-                  <Tabs.Tab key={song.name}>
-                    <Stack>
-                      <Stack.Item grow>{song.name}</Stack.Item>
-                      <Stack.Item>
-                        <Button
-                          icon="play"
-                          content="Queue"
-                          style={{ 'pointer-events': 'auto' }}
-                          onClick={() => {
-                            act('add_to_queue', { track: song.name });
-                          }}
-                        />
-                      </Stack.Item>
-                    </Stack>
-                  </Tabs.Tab>
-                ))}
-              </Tabs>
+              { songs && songs.length ? (
+                <Tabs vertical style={{ 'pointer-events': 'none' }}>
+                  {songs.map((track) => (
+                    <Tabs.Tab key={track}>
+                      <Stack>
+                        <Stack.Item grow>{track}</Stack.Item>
+                        <Stack.Item>
+                          <Button
+                            icon="play"
+                            content="Queue"
+                            style={{ 'pointer-events': 'auto' }}
+                            onClick={() => {
+                              act('add_to_queue', { track });
+                            }}
+                          />
+                        </Stack.Item>
+                      </Stack>
+                    </Tabs.Tab>
+                  ))}
+                </Tabs>
+              ) : (
+                <Box textColor="gray" textAlign="center" mt={2}>Треков нет</Box>
+              )}
+
             </Section>
+            { pages > 1 ? (
+              <Stack align="center" justify="center">
+                <Stack.Item><Button icon="chevron-left" onClick={() => act('prev_page')} /></Stack.Item>
+                <Stack.Item>Страница {current_page}/{pages}</Stack.Item>
+                <Stack.Item><Button icon="chevron-right" onClick={() => act('next_page')} /></Stack.Item>
+              </Stack>
+            ) : (<Box />)}
           </Section>
         )}
         {tab === 2 && (

@@ -22,7 +22,7 @@
 	if(..())
 		return TRUE
 	var/obj/machinery/bsa/full/B = locate()
-	if(B && !B.stat)
+	if(B && !B.machine_stat)
 		return TRUE
 	return FALSE
 
@@ -215,7 +215,7 @@
 /obj/machinery/bsa/full/proc/reload()
 	ready = FALSE
 	use_power(power_used_per_shot)
-	addtimer(CALLBACK(src,"ready_cannon"),600)
+	addtimer(CALLBACK(src, PROC_REF(ready_cannon)),600)
 
 /obj/machinery/bsa/full/proc/ready_cannon()
 	ready = TRUE
@@ -237,6 +237,7 @@
 	icon = 'icons/obj/machines/particle_accelerator.dmi'
 	icon_state = "control_boxp"
 	unique_icon = TRUE
+	icon_keyboard = null
 
 	var/obj/machinery/bsa/full/cannon
 	var/notice
@@ -307,7 +308,7 @@
 		return get_turf(G.parent)
 
 /obj/machinery/computer/bsa_control/proc/fire(mob/user)
-	if(cannon.stat)
+	if(cannon.machine_stat)
 		notice = "Cannon unpowered!"
 		return
 	notice = null

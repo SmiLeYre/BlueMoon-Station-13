@@ -48,22 +48,30 @@
 	if(affecting && affecting.dismemberable && affecting.get_damage() >= (affecting.max_damage - P.dismemberment))
 		affecting.dismember(P.damtype)
 
-/mob/living/carbon/catch_item(obj/item/I, skip_throw_mode_check = FALSE)
-	. = ..()
-	if(!HAS_TRAIT(src, TRAIT_AUTO_CATCH_ITEM) && !skip_throw_mode_check && !in_throw_mode)
+/mob/living/carbon/proc/can_catch_item(skip_throw_mode_check)
+	. = FALSE
+	if(!HAS_TRAIT(src, TRAIT_AUTO_CATCH_ITEM) && !skip_throw_mode_check && !throw_mode)
 		return
-	if(incapacitated())
+	if(get_active_held_item())
 		return
-	if (get_active_held_item())
-		if (HAS_TRAIT_FROM(src, TRAIT_AUTO_CATCH_ITEM,RISING_BASS_TRAIT))
-			visible_message("<span class='warning'><b>[src]</b> chops [I] out of the air!</span>")
+	if(HAS_TRAIT(src, TRAIT_HANDS_BLOCKED))
+		return
+	return TRUE
+
+/mob/living/carbon/hitby(atom/movable/AM, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
+	if(!skipcatch && can_catch_item() && isitem(AM) && isturf(AM.loc))
+		var/obj/item/I = AM
+		I.attack_hand(src)
+		if(get_active_held_item() == I) //if our attack_hand() picks up the item...
+			visible_message(span_warning("[src] catches [I]!"), \
+							span_userdanger("You catch [I] in mid-air!"))
+			throw_mode_off()
 			return TRUE
-		return
-	I.attack_hand(src)
-	if(get_active_held_item() == I) //if our attack_hand() picks up the item...
-		visible_message("<span class='warning'><b>[src]</b> catches [I]!</span>") //catch that sucker!
-		throw_mode_off()
+	if(isitem(AM) && HAS_TRAIT_FROM(src, TRAIT_AUTO_CATCH_ITEM, RISING_BASS_TRAIT))
+		visible_message(span_warning("[src] chops [AM] out of the air!"), \
+						span_userdanger("You chop [AM] out of the air!"))
 		return TRUE
+	return ..()
 
 /mob/living/carbon/attacked_by(obj/item/I, mob/living/user, attackchain_flags = NONE, damage_multiplier = 1)
 	var/totitemdamage = pre_attacked_by(I, user) * damage_multiplier
@@ -216,10 +224,22 @@
 		//EMPs fuck robots over. Up to ~11.5 corruption per EMP if hit by the full power. They also get up to 15 burn damage per EMP (up to 2.5 per limb), plus short hardstun
 		//Though, note that the burn damage is linear, while corruption is logarythmical, which means at lower severities you still get corruption, but far less burn / stun
 		//Note than as compensation, they only take half the limb burn damage someone fully augmented would take, which would be up to 30 burn.
+
+		// BLUEMOON ADD - кулдаун по получению ЕМП у синтетиков
+		to_chat(src, span_boldwarning("Обнаружен ЭМИ - система переведена в режим повышенной защиты компонентов на 7 секунд."))
+		AddElement(/datum/element/empprotection, EMP_PROTECT_CONTENTS)
+		addtimer(CALLBACK(src, PROC_REF(rollback_emp_protection)), 7 SECONDS)
+
 		adjustToxLoss(round(log(severity)*2.5, 0.1), toxins_type = TOX_SYSCORRUPT)
 	for(var/X in internal_organs)
 		var/obj/item/organ/O = X
 		O.emp_act(severity)
+
+/mob/living/carbon/proc/rollback_emp_protection()
+	if(QDELETED(src))
+		return
+	RemoveElement(/datum/element/empprotection, EMP_PROTECT_CONTENTS)
+	to_chat(src, span_boldwarning("Система повышенной защиты от ЭМИ отключена."))
 
 ///Adds to the parent by also adding functionality to propagate shocks through pulling and doing some fluff effects.
 /mob/living/carbon/electrocute_act(shock_damage, source, siemens_coeff = 1, flags = NONE)
@@ -250,7 +270,7 @@
 	jitteriness += 1000
 	do_jitter_animation(jitteriness)
 	stuttering += 2
-	addtimer(CALLBACK(src, .proc/secondary_shock, should_stun), 20)
+	addtimer(CALLBACK(src, PROC_REF(secondary_shock), should_stun), 20)
 	return shock_damage
 
 ///Called slightly after electrocute act to reduce jittering and apply a secondary stun.
@@ -267,6 +287,12 @@
 	if(M == src && check_self_for_injuries())
 		return
 
+// BLUEMOON ADD START - девайны для проигрывания определённого звука (вместо 2 или даже 3) при применении интента
+#define SOUND_PAT 1
+#define SOUND_BOOP 2
+
+	var/sound_to_play = SOUND_PAT // чтобы проигрывался только 1 звук, а не 2-3
+// BLUEMOON ADD END
 	if(health >= 0 && !(HAS_TRAIT(src, TRAIT_FAKEDEATH)) || iszombie(src))
 		var/friendly_check = FALSE
 		if(mob_run_block(M, 0, M.name, ATTACK_TYPE_UNARMED, 0, null, null, null))
@@ -303,11 +329,41 @@
 							target_message = "<span class='notice'><b>[M]</b> трясёт тебя в однозначной попытке поднять!</span>")
 
 		else if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH) // I ADDED BOOP-EH-DEH-NOSEH - Jon
-			M.visible_message( \
-				"<span class='notice'><b>[M]</b> бупает носик <b>[src]</b>.</span>", \
-				"<span class='notice'>Ты бупаешь носик <b>[src]</b>!</span>", target = src,
-				target_message = "<span class='notice'><b>[M]</b> бупает твой носик!</span>")
-			playsound(src, 'sound/items/Nose_boop.ogg', 50, 0)
+			// BLUEMOON ADD START
+			var/mob/living/carbon/human/H = src
+
+			// Если персонажи слишком сильно различаются в росте, бупать не выйдет
+			if(COMPARE_SIZES(src, M) >= 1.75)
+				M.visible_message( \
+						span_notice("<b>[M]</b> пытается достать до носа <b>[src]</b>, но не может!"), \
+						span_warning("Ты пытаешься бупнуть <b>[src]</b> в нос, но не достаёшь!"), target = src,
+						target_message = span_notice("<b>[M]</b> пытается дотянуть до твоего носа, но не может!"))
+
+			// Если есть квирк "отдалённый", персонажу не нравятся бупы в нос
+			else if(HAS_TRAIT(H, TRAIT_DISTANT)) //No mood buff since you're not really liking it.
+				M.visible_message("<span class='warning'><b>[H]</b> резко осматривается на <b>[M]</b>, когда [ru_ego()] бупает в нос! Кажется, [ru_who()] раздражен[ru_a()]...</span>", \
+					"<span class='warning'>Вы бупаете <b>[H]</b> в нос! Кажется, [ru_ego()] глаза презрительно смещаются в вашу сторону...</span>")
+				sound_to_play = SOUND_BOOP // BLUEMOON EDIT - было playsound(src, 'sound/items/Nose_boop.ogg', 50, 0)
+				H.add_lust(-5) //Why are you touching me?
+				if(prob(20))
+					M.visible_message("<span class='warning'><b>[H]</b> быстро выкручивает руку <b>[M]</b>!</span>", \
+						"<span class='boldwarning'>Твоя рука выкручивается в хватке <b>[H]</b>! Может, тебе следовало понять тот явственный намек...</span>")
+					// playsound(get_turf(H), 'sound/weapons/thudswoosh.ogg', 50, 1, -1) // BLUEMOON REMOVAL - звук проигрывается в конце
+					M.emote("realagony")
+					M.dropItemToGround(M.get_active_held_item())
+					var/hand = pick(BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND)
+					M.apply_damage(50, STAMINA, hand)
+					M.apply_damage(5, BRUTE, hand)
+					M.Knockdown(60)//STOP TOUCHING ME! For those spam head pat individuals
+					friendly_check = FALSE
+
+			else
+			// BLUEMOON ADD END
+				M.visible_message( \
+						"<span class='notice'><b>[M]</b> бупает носик <b>[src]</b>.</span>", \
+						"<span class='notice'>Ты бупаешь носик <b>[src]</b>!</span>", target = src,
+						target_message = "<span class='notice'><b>[M]</b> бупает твой носик!</span>")
+				sound_to_play = SOUND_BOOP // BLUEMOON EDIT - было playsound(src, 'sound/items/Nose_boop.ogg', 50, 0)
 
 		else if(check_zone(M.zone_selected) == BODY_ZONE_HEAD)
 			var/mob/living/carbon/human/H = src
@@ -321,17 +377,27 @@
 					H.remove_quirk(/datum/quirk/headpat_hater)
 				if(!H.has_quirk(/datum/quirk/headpat_slut))
 					H.add_quirk(/datum/quirk/headpat_slut)
-				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "dom_trained", /datum/mood_event/dominant/good_boy)
+				// BLUEMOON EDITED - I want to kill the guy behind it
+				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, QMOOD_WELL_TRAINED, /datum/mood_event/dominant/good_boy)
 
-			if(HAS_TRAIT(H, TRAIT_DISTANT)) //No mood buff since you're not really liking it.
+			// BLUEMOON ADD START - Если персонажи слишком сильно различаются в росте, гладить по голове не получится
+			if(COMPARE_SIZES(src, M) >= 1.75)
+				M.visible_message( \
+						span_notice("<b>[M]</b> пытается достать до головы <b>[src]</b>, но не может!"), \
+						span_warning("Ты пытаешься погладить <b>[src]</b> по голове, но не достаёшь!"), target = src,
+						target_message = span_notice("<b>[M]</b> пытается дотянуть до твоей головы, но не может!"))
+			// BLUEMOON ADD END
+
+			else if(HAS_TRAIT(H, TRAIT_DISTANT)) //No mood buff since you're not really liking it. // BLUEMOON ADD - в начало добавлено else
 				M.visible_message("<span class='warning'><b>[H]</b> резко осматривается на <b>[M]</b>, когда [ru_ego()] гладят по голове! Кажется, [ru_who()] раздражен[ru_a()]...</span>", \
 					"<span class='warning'>Вы гладите <b>[H]</b> по голове! Кажется, [ru_ego()] глаза презрительно смещаются в вашу сторону...</span>")
 				H.add_lust(-5) //Why are you touching me?
-				if(prob(5))
+				if(prob(20)) // BLUEMOON EDIT - было 5%
 					M.visible_message("<span class='warning'><b>[H]</b> быстро выкручивает руку <b>[M]</b>!</span>", \
 						"<span class='boldwarning'>Твоя рука выкручивается в хватке <b>[H]</b>! Может, тебе следовало понять тот явственный намек...</span>")
-					playsound(get_turf(H), 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
-					M.emote("scream")
+					// playsound(get_turf(H), 'sound/weapons/thudswoosh.ogg', 50, 1, -1) // BLUEMOON REMOVAL - звук проигрывается в конце
+					if(!HAS_TRAIT(M, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+						M.emote("scream")
 					M.dropItemToGround(M.get_active_held_item())
 					var/hand = pick(BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND)
 					M.apply_damage(50, STAMINA, hand)
@@ -349,11 +415,14 @@
 								target_message = "<span class='boldnotice'><b>[M]</b> гладит вас по голове, чтобы вы почувствовали себя лучше!</span>")
 					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "lewd_headpat", /datum/mood_event/lewd_headpat)
 					H.handle_post_sex(5, null, H) //Headpats are hot af
+					H.client?.plug13.send_emote(PLUG13_EMOTE_BASIC, PLUG13_STRENGTH_MEDIUM, PLUG13_DURATION_SHORT)
 				else
 					M.visible_message("<span class='notice'><b>[M]</b> похлопывает <b>[src]</b> по голове!</span>", \
 								"<span class='notice'>Ты гладишь <b>[src]</b> по голове, чтобы [ru_who()] почувствовал себя лучше!</span>", target = src,
 								target_message = "<span class='boldnotice'><b>[M]</b> гладит вас по голове, чтобы вы почувствовали себя лучше!</span>")
 					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "headpat", /datum/mood_event/headpat)
+					H.client?.plug13.send_emote(PLUG13_EMOTE_BASIC, PLUG13_STRENGTH_LOW_PLUS, PLUG13_DURATION_TINY)
+					// LOW_PLUS потому что длительность TINY и привод не успеет особо разогнаться
 			//SPLURT EDIT END
 
 			if(!(client?.prefs.cit_toggles & NO_AUTO_WAG) && friendly_check)
@@ -380,6 +449,7 @@
 						"<span class='notice'>Ты обнимаешь <b>[src]</b>!</span>", target = src,\
 						target_message = "<span class='notice'><b>[M]</b> обнимает тебя!</span>")
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug)
+			M.client?.plug13.send_emote(PLUG13_EMOTE_BASIC, PLUG13_STRENGTH_LOW_PLUS, PLUG13_DURATION_TINY)
 			friendly_check = TRUE
 
 		if(friendly_check && (HAS_TRAIT(M, TRAIT_FRIENDLY) || HAS_TRAIT(src, TRAIT_FRIENDLY)))
@@ -399,7 +469,19 @@
 		else
 			set_resting(FALSE, FALSE)
 		update_mobility()
-		playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+		// playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1) // BLUEMOON REMOVAL
+		// BLUEMOON ADD START - проигрышь только 1 звука
+		switch(sound_to_play)
+			if(SOUND_BOOP)
+				playsound(src, 'sound/items/Nose_boop.ogg', 50, 1, -1)
+			if(SOUND_PAT)
+				playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+		//BLUEMOON ADD END
+
+// BLUEMOON ADD START
+#undef SOUND_PAT
+#undef SOUND_BOOP
+// BLUEMOON ADD END
 
 /// Check ourselves to see if we've got any shrapnel, return true if we do. This is a much simpler version of what humans do, we only indicate we're checking ourselves if there's actually shrapnel
 /mob/living/carbon/proc/check_self_for_injuries()
@@ -438,16 +520,31 @@
 			return
 
 		if (damage == 1)
-			to_chat(src, "<span class='warning'>Глаза немного щиплет.</span>")
-			if(prob(40))
-				eyes.applyOrganDamage(1)
+			// BLUEMOON ADD START
+			if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+				to_chat(src, span_warning("Визуальные сенсоры: опасность повреждения ярким светом, искусственная расфокусировка линзы активна. Вред предотвращен."))
+			else
+			// BLUEMOON ADD END
+				to_chat(src, "<span class='warning'>Глаза немного щиплет.</span>")
+				if(prob(40))
+					eyes.applyOrganDamage(1)
 
 		else if (damage == 2)
-			to_chat(src, "<span class='warning'>Глаза горят.</span>")
+			// BLUEMOON ADD START
+			if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+				to_chat(src, span_warning("Визуальные сенсоры: опасность повреждения ярким светом, искусственная расфокусировка линзы активна. Возможен минимальный вред."))
+			else
+			// BLUEMOON ADD END
+				to_chat(src, "<span class='warning'>Глаза горят.</span>")
 			eyes.applyOrganDamage(rand(2, 4))
 
 		else if( damage >= 3)
-			to_chat(src, "<span class='warning'>Ты ощущаешь сильный зуд и жжение в глазах!</span>")
+			// BLUEMOON ADD START
+			if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+				to_chat(src, span_warning("Визуальные сенсоры: опасность повреждения ярким светом, искусственная расфокусировка линзы активна. Оценка повреждений; средние."))
+			else
+			// BLUEMOON ADD END
+				to_chat(src, "<span class='warning'>Ты ощущаешь сильный зуд и жжение в глазах!</span>")
 			eyes.applyOrganDamage(rand(12, 16))
 
 		if(eyes.damage > 10)
@@ -457,16 +554,31 @@
 			if(eyes.damage > 20)
 				if(prob(eyes.damage - 20))
 					if(!HAS_TRAIT(src, TRAIT_NEARSIGHT))
-						to_chat(src, "<span class='warning'>Глаза начинает сильно жечь!</span>")
+						// BLUEMOON ADD START
+						if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+							to_chat(src, span_warning("Визуальные сенсоры: тяжёлое повреждение линзы, необходима замена или ремонт."))
+						else
+						// BLUEMOON ADD END
+							to_chat(src, "<span class='warning'>Глаза начинает сильно жечь!</span>")
 					become_nearsighted(EYE_DAMAGE)
 
 				else if(prob(eyes.damage - 25))
 					if(!HAS_TRAIT(src, TRAIT_BLIND))
-						to_chat(src, "<span class='warning'>Вы ничего не видите!</span>")
+						// BLUEMOON ADD START
+						if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+							to_chat(src, span_warning("Визуальные сенсоры: выгорание линзы, необходима замена или ремонт."))
+						else
+						// BLUEMOON ADD END
+							to_chat(src, "<span class='warning'>Вы ничего не видите!</span>")
 					eyes.applyOrganDamage(eyes.maxHealth)
 
 			else
-				to_chat(src, "<span class='warning'>Ваши глаза начинают болеть. Это не хорошо!</span>")
+				// BLUEMOON ADD START
+				if(HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
+					to_chat(src, span_warning("Визуальные сенсоры: обнаружены умеренные повреждения, рекомендуется ремонт или замена."))
+				else
+				// BLUEMOON ADD END
+					to_chat(src, "<span class='warning'>Ваши глаза начинают болеть. Это не хорошо!</span>")
 		if(has_bane(BANE_LIGHT))
 			mind.disrupt_spells(-500)
 		return TRUE

@@ -1,1 +1,1 @@
-#define ACCESS_SLAVER 152 //Slaver traders
+#define ACCESS_SLAVER 154 //Slaver traders

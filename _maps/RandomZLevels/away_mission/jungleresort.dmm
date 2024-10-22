@@ -1284,6 +1284,10 @@
 /obj/item/lighter,
 /turf/open/floor/wood,
 /area/awaymission/jungleresort)
+"ta" = (
+/obj/effect/landmark/awaystart,
+/turf/open/floor/plating/dirt/dark/jungle,
+/area/awaymission/jungleresort)
 "td" = (
 /obj/structure/flora/tree/jungle,
 /obj/structure/flora/junglebush/c,
@@ -1441,6 +1445,10 @@
 	dir = 9
 	},
 /turf/open/water/jungle,
+/area/awaymission/jungleresort)
+"uL" = (
+/obj/effect/landmark/awaystart,
+/turf/open/floor/plating/dirt/jungle,
 /area/awaymission/jungleresort)
 "uO" = (
 /obj/structure/flora/ausbushes/ywflowers,
@@ -13672,8 +13680,8 @@ du
 io
 io
 du
-du
-io
+ta
+uL
 du
 io
 io
@@ -13824,8 +13832,8 @@ io
 du
 YF
 io
-io
-io
+uL
+uL
 io
 ia
 du
@@ -13976,8 +13984,8 @@ du
 io
 io
 du
-io
-du
+uL
+ta
 yu
 YQ
 sQ

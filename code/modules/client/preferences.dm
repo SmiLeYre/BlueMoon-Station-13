@@ -10,7 +10,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/path
 	var/vr_path
 	var/default_slot = 1				//Holder so it doesn't default to slot 1, rather the last one used
-	var/max_save_slots = 24
+	var/max_save_slots = 40
 
 	// Intra-round persistence begin
 	/// Flags for admin mutes
@@ -41,10 +41,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/last_custom_holoform = 0
 
 	//Cooldowns for saving/loading. These are four are all separate due to loading code calling these one after another
-	var/saveprefcooldown
-	var/loadprefcooldown
-	var/savecharcooldown
-	var/loadcharcooldown
+	COOLDOWN_DECLARE(saveprefcooldown)
+	COOLDOWN_DECLARE(loadprefcooldown)
+	COOLDOWN_DECLARE(savecharcooldown)
+	COOLDOWN_DECLARE(loadcharcooldown)
 
 	//game-preferences
 	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
@@ -65,8 +65,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/screentip_pref = SCREENTIP_PREFERENCE_ENABLED
 	var/screentip_color = "#ffd391"
 	var/screentip_images = TRUE
-	var/buttons_locked = FALSE
-	var/hotkeys = FALSE
+	var/hotkeys = TRUE
 
 	///Runechat preference. If true, certain messages will be displayed on the map, not ust on the chat area. Boolean.
 	var/chat_on_map = TRUE
@@ -88,6 +87,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/tgui_large_buttons = TRUE
 	var/tgui_swapped_buttons = FALSE
 	var/windowflashing = TRUE
+	var/windownoise = TRUE
 	var/toggles = TOGGLES_DEFAULT
 	/// A separate variable for deadmin toggles, only deals with those.
 	var/deadmin = NONE
@@ -103,7 +103,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/preferred_map = null
 	var/preferred_chaos = null
 	var/be_victim = null
-	var/use_new_playerpanel = FALSE
+	var/use_new_playerpanel = TRUE // BLUEMOON - ENABELING-MODERN-PLAYER-PANEL-AS-DEFAULT
 	var/disable_combat_cursor = FALSE
 	var/tg_playerpanel = "TG"
 	var/pda_style = MONO
@@ -111,22 +111,27 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/pda_skin = PDA_SKIN_ALT
 	var/pda_ringtone = "beep"
 
+	var/hardsuit_tail_style = null // Пока не используется. Вскоре нужно будет бахнуть новых спрайтов.
+	var/custom_blood_color = FALSE
+	var/blood_color = BLOOD_COLOR_UNIVERSAL
+
 	var/uses_glasses_colour = 0
 
 	//character preferences
-	var/real_name						//our character's name
-	var/nameless = FALSE				//whether or not our character is nameless
-	var/be_random_name = 0				//whether we'll have a random name every round
-	var/be_random_body = 0				//whether we'll have a random body every round
-	var/gender = MALE					//gender of character (well duh)
-	var/age = 30						//age of character
+	var/real_name							//our character's name
+	var/nameless = FALSE					//whether or not our character is nameless
+	var/be_random_name = FALSE				//whether we'll have a random name every round
+	var/be_random_body = FALSE				//whether we'll have a random body every round
+	var/gender = MALE						//gender of character (well duh)
+	var/age = 30							//age of character
 	//Sandstorm CHANGES BEGIN
 	var/erppref = "Ask"
 	var/nonconpref = "Ask"
 	var/vorepref = "Ask"
-	var/mobsexpref = "No" //Added by Gardelin0 - Sex(mostly non-con) with hostile mobs(tentacles)
-	var/extremepref = "No" //This is for extreme shit, maybe even literal shit, better to keep it on no by default
-	var/extremeharm = "No" //If "extreme content" is enabled, this option serves as a toggle for the related interactions to cause damage or not
+	var/mobsexpref = "No" 					//Added by Gardelin0 - Sex(mostly non-con) with hostile mobs(tentacles)
+	var/hornyantagspref = "No" 				//Added by Gardelin0 - Interactions(mostly non-con) with horny antags(Qareen)
+	var/extremepref = "No" 					//This is for extreme shit, maybe even literal shit, better to keep it on no by default
+	var/extremeharm = "No" 					//If "extreme content" is enabled, this option serves as a toggle for the related interactions to cause damage or not
 	var/see_chat_emotes = TRUE
 	var/view_pixelshift = FALSE
 	var/eorg_enabled = TRUE
@@ -188,6 +193,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 "xenohead" = "Standard",
 "xenotail" = "Xenomorph Tail",
 "taur" = "None",
+"hardsuit_with_tail" = FALSE,
 "genitals_use_skintone" = FALSE,
 "has_cock" = FALSE,
 "cock_shape" = DEF_COCK_SHAPE,
@@ -251,6 +257,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 "naked_flavor_text" = "", //SPLURT edit
 "silicon_flavor_text" = "",
 "custom_species_lore" = "",
+"custom_deathgasp" = "застывает и падает без сил, глаза мертвы и безжизненны...", // BLUEMOON ADD - пользовательский эмоут смерти
+"custom_deathsound" = "По умолчанию", // BLUEMOON ADD - пользовательский эмоут смерти
 "ooc_notes" = "",
 "meat_type" = "Mammalian",
 "body_model" = MALE,
@@ -261,6 +269,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 "neckfire_color" = "ffffff"
 )
 
+	var/list/custom_emote_panel = list() //user custom emote panel
 
 	var/custom_speech_verb = "default" //if your say_mod is to be something other than your races
 	var/custom_tongue = "default" //if your tongue is to be something other than your races
@@ -274,6 +283,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/bark_pitch = 1
 	var/bark_variance = 0.2
 	COOLDOWN_DECLARE(bark_previewing)
+	COOLDOWN_DECLARE(deathsound_preview) // BLUEMOON ADD - пользовательский эмоут смерти
 
 	/// Security record note section
 	var/security_records
@@ -295,7 +305,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/list/job_preferences = list()
 
 	// Want randomjob if preferences already filled - Donkie
-	var/joblessrole = BERANDOMJOB  //defaults to 1 for fewer assistants
+	var/joblessrole = RETURNTOLOBBY  //defaults to 1 for fewer assistants // BLUEMOON EDIT - было BERANDOMJOB, выставил возвращение в лобби, чтобы не ливали в крио
 
 	// 0 = character settings, 1 = game preferences
 	var/current_tab = SETTINGS_TAB
@@ -316,7 +326,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	///Should we be in the widescreen mode set by the config?
 	var/widescreenpref = TRUE
 	///Strip menu style
-	var/long_strip_menu = FALSE
+	var/long_strip_menu = TRUE
 	///What size should pixels be displayed as? 0 is strech to fit
 	var/pixel_size = 0
 	///What scaling method should we use?
@@ -410,6 +420,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/loadout_errors = 0
 
+	var/pref_queue
+	var/char_queue
+
 	var/silicon_lawset
 
 /datum/preferences/New(client/C)
@@ -422,7 +435,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(istype(C))
 		if(!IsGuestKey(C.key))
 			load_path(C.ckey)
-			unlock_content = C.IsByondMember()
+			unlock_content = C.IsByondMember() || IS_CKEY_DONATOR_GROUP(C.key, DONATOR_GROUP_TIER_1)
 			if(unlock_content)
 				max_save_slots += 8 //SPLURT EDIT
 	var/loaded_preferences_successfully = load_preferences()
@@ -498,17 +511,25 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<HR>"
 
 			dat += "<center>"
-			var/client_file = user.client.Import()
+			var/savefile/client_file = new(user.client.Import())
 			var/savefile_name
-			if(client_file)
-				var/savefile/cache_savefile = new(user.client.Import())
-				if(!cache_savefile["deleted"] || savefile_needs_update(cache_savefile) != -2)
-					cache_savefile["real_name"] >> savefile_name
+			if(istype(client_file, /savefile))
+				if(!client_file["deleted"] || savefile_needs_update(client_file) != -2)
+					client_file["real_name"] >> savefile_name
 			dat += "Local storage: [savefile_name ? savefile_name : "Empty"]"
 			dat += "<br />"
 			dat += "<a href='?_src_=prefs;preference=export_slot'>Export current slot</a>"
 			dat += "<a [savefile_name ? "href='?_src_=prefs;preference=import_slot' style='white-space:normal;'" : "class='linkOff'"]>Import into current slot</a>"
 			dat += "<a href='?_src_=prefs;preference=delete_local_copy' style='white-space:normal;background:#eb2e2e;'>Delete locally saved character</a>"
+			dat += "<br />"
+			dat += "<a href='?_src_=prefs;preference=give_slot' [offer ? "style='white-space:normal;background:#eb2e2e;'" : ""]>[offer ? "Cancel offer" : "Offer slot"]</a>"
+			dat += "<a href='?_src_=prefs;preference=retrieve_slot'>Retrieve offered character</a>"
+			if(offer)
+				dat += "<br />"
+				dat += "The redemption code is <b>[offer.redemption_code]</b>"
+				dat += "<br />"
+				dat += "The offer will automatically be cancelled if there is an error, or if someone takes it"
+
 			dat += "</center>"
 
 			dat += "<HR>"
@@ -580,7 +601,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<center><h2>Occupation Choices</h2>"
 					dat += "<a href='?_src_=prefs;preference=job;task=menu'>Set Occupation Preferences</a><br></center>"
 					if(CONFIG_GET(flag/roundstart_traits))
-						dat += "<center><h2>Quirk Setup</h2>"
+						dat += "<center><h2>Quirk Setup ([GetQuirkBalance(user)] points left)</h2>"
 						dat += "<a href='?_src_=prefs;preference=trait;task=menu'>Configure Quirks</a><br></center>"
 						dat += "<center><b>Current Quirks:</b> [english_list(all_quirks, "None")]</center>"
 					dat += "<h2>Identity</h2>"
@@ -593,10 +614,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=name;task=random'>Random Name</a><br>"
 					dat += "<a href='?_src_=prefs;preference=nameless'>Be nameless: [nameless ? "Yes" : "No"]</a><BR>"
 					dat += "<b>Always Random Name:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=name'>[be_random_name ? "Yes" : "No"]</a><BR>"
+					dat += "<b>Hardsuit With Tail:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=hardsuit_with_tail'>[features["hardsuit_with_tail"] == TRUE ? "Yes" : "No"]</a><BR>"
 
-					dat += "<b>Gender:</b> <a href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><BR>"
 					dat += "<b>Age:</b> <a style='display:block;width:30px' href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
-					dat += "<a href='?_src_=prefs;preference=hide_ckey;task=input'><b>Hide ckey: [hide_ckey ? "Enabled" : "Disabled"]</b></a><br>"
+					dat += "<b>Custom Blood Color:</b>"
+					dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_custom_blood_color;task=input'>[custom_blood_color ? "Enabled" : "Disabled"]</a><BR>"
+					if(custom_blood_color)
+						dat += "<b>Blood Color:</b> <span style='border:1px solid #161616; background-color: [blood_color];'><font color='[color_hex2num(blood_color) < 200 ? "FFFFFF" : "000000"]'>[blood_color]</font></span> <a href='?_src_=prefs;preference=blood_color;task=input'>Change</a><BR>"
 					dat += "</td>"
 
 					dat += "<td valign='top'>"
@@ -664,6 +688,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						dat += "[TextPreview(html_encode(features["naked_flavor_text"]))]...<BR>"
 					//SPLURT edit end
+					// BLUEMOON ADD START - пользовательский эмоут смерти
+					dat += "<h2>Custom Deathgasp</h2>"
+					dat += "<a href='?_src_=prefs;preference=custom_deathgasp;task=input'><b>Set Custom Deathgasp</b></a><br>"
+					if(length(features["custom_deathgasp"]) <= MAX_FLAVOR_PREVIEW_LEN)
+						if(!length(features["custom_deathgasp"]))
+							dat += "\[...\]<BR>"
+						else
+							dat += "[html_encode(features["custom_deathgasp"])]<BR>"
+					else
+						dat += "[TextPreview(html_encode(features["custom_deathgasp"]))]...<BR>"
+					dat += "<h2>Custom Deathgasp Sound</h2>"
+					dat += "<a href='?_src_=prefs;preference=custom_deathsound;task=input'><b>Set Custom Deathsound</b></a><br>"
+					dat += "[features["custom_deathsound"]]<BR>"
+					dat += "<BR><a href='?_src_=prefs;preference=deathsoundpreview;task=input''>Preview Deathsound</a><BR>"
+					// BLUEMOON ADD END
 					dat += "<h2>Silicon Flavor Text</h2>"
 					dat += "<a href='?_src_=prefs;preference=silicon_flavor_text;task=input'><b>Set Silicon Examine Text</b></a><br>"
 					if(length(features["silicon_flavor_text"]) <= MAX_FLAVOR_PREVIEW_LEN)
@@ -693,11 +732,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					else
 						dat += "[TextPreview(features["ooc_notes"])]..."
 					//SPLURT EDIT
+					// BLUEMOON REMOVE
+					/*
 					dat += "<h2>Headshot Image</h2>"
 					dat += "<a href='?_src_=prefs;preference=headshot'><b>Set Headshot Image</b></a><br>"
 					if(features["headshot_link"])
 						dat += "<img src='[features["headshot_link"]]' width='160px' height='120px'>"
 					dat += "<br><br>"
+					*/
+					// BLUEMOON REMOVE END
 					//SPLURT EDIT END
 					dat += "</td>"
 
@@ -720,6 +763,26 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "[medical_records]"
 					else
 						dat += "[TextPreview(medical_records)]..."
+
+					// BLUEMOON ADD
+					dat += "<h2>Headshot 1 Image</h2>"
+					dat += "<a href='?_src_=prefs;preference=headshot'><b>Set Headshot 1 Image</b></a><br>"
+					if(features["headshot_link"])
+						dat += "<img src='[features["headshot_link"]]' style='border: 1px solid black' width='140px' height='140px'>"
+					dat += "<br><br>"
+
+					dat += "<h2>Headshot 2 Image</h2>"
+					dat += "<a href='?_src_=prefs;preference=headshot1'><b>Set Headshot 2 Image</b></a><br>"
+					if(features["headshot_link1"])
+						dat += "<img src='[features["headshot_link1"]]' style='border: 1px solid black' width='140px' height='140px'>"
+					dat += "<br><br>"
+
+					dat += "<h2>Headshot 3 Image</h2>"
+					dat += "<a href='?_src_=prefs;preference=headshot2'><b>Set Headshot 3 Image</b></a><br>"
+					if(features["headshot_link2"])
+						dat += "<img src='[features["headshot_link2"]]' style='border: 1px solid black' width='140px' height='140px'>"
+					dat += "<br><br>"
+					// BLUEMOON ADD END
 					dat += "</td></tr></table>"
 				//Character Appearance
 				if(APPEARANCE_CHAR_TAB)
@@ -727,7 +790,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 					dat += "<h2>Body</h2>"
 					dat += "<b>Gender:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=gender;task=input'>[gender == MALE ? "Male" : (gender == FEMALE ? "Female" : (gender == PLURAL ? "Non-binary" : "Object"))]</a><BR>"
-					if(gender != NEUTER && pref_species.sexes)
+					if(pref_species.sexes)
 						dat += "<b>Body Model:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=body_model'>[features["body_model"] == MALE ? "Masculine" : "Feminine"]</a><BR>"
 					dat += "<b>Limb Modification:</b><BR>"
 					dat += "<a href='?_src_=prefs;preference=modify_limbs;task=input'>Modify Limbs</a><BR>"
@@ -910,6 +973,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "Non-Con : <a href='?_src_=prefs;preference=noncon_pref'>[nonconpref]</a><br>"
 					dat += "Vore : <a href='?_src_=prefs;preference=vore_pref'>[vorepref]</a><br>"
 					dat += "Mob-Sex : <a href='?_src_=prefs;preference=mobsex_pref'>[mobsexpref]</a><br>"
+					dat += "Horny Antags : <a href='?_src_=prefs;preference=hornyantags_pref'>[hornyantagspref]</a><br>"
 
 					dat += "<h2>Lewd preferences</h2>"
 					dat += "<b>Lust tolerance:</b><a href='?_src_=prefs;preference=lust_tolerance;task=input'>[lust_tolerance]</a><br>"
@@ -1056,7 +1120,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "<b>Toys and Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_stuffing'>[features["butt_stuffing"] == TRUE ? "Yes" : "No"]</a>"
 							dat += "<b>Max Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_max_size;task=input'>[features["butt_max_size"] ? features["butt_max_size"] : "Disabled"]</a>"
 							dat += "<b>Min Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_min_size;task=input'>[features["butt_min_size"] ? features["butt_min_size"] : "Disabled"]</a>"
-							dat += "<b>Butthole Sprite:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_anus'>[features["has_anus"] == TRUE ? "Yes" : "No"]</a>"
+							dat += "<b>Has Anus:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_anus'>[features["has_anus"] == TRUE ? "Yes" : "No"]</a>"
 							if(features["has_anus"])
 								dat += "<b>Butthole Color:</b></a><BR>"
 								if(pref_species.use_skintones && features["genitals_use_skintone"] == TRUE)
@@ -1218,6 +1282,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								dat += "</td>"
 								iterated_markings = 0
 						dat += "</tr></table>"
+						// BLUEMOON ADD START - кнопка для удаления всех маркингов на персонаже
+						dat += "<center>"
+						dat += "<h3>Danger Zone</h3>"
+						dat += "<a href='?_src_=prefs;preference=markings_remove;task=input'>Remove All Markings</a>"
+						dat += "</center>"
+						// BLUEMOON ADD END
 
 				if(SPEECH_CHAR_TAB)
 					dat += "<table><tr><td width='340px' height='300px' valign='top'>"
@@ -1310,6 +1380,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 									var/class_link = ""
 									var/list/loadout_item = has_loadout_gear(loadout_slot, "[gear.type]")
 									var/extra_loadout_data = ""
+									if(gear.base64icon)
+										extra_loadout_data += "<center><img src=data:image/jpeg;base64,[gear.base64icon]></center>"
 									if(loadout_item)
 										class_link = "style='white-space:normal;' class='linkOn' href='?_src_=prefs;preference=gear;toggle_gear_path=[html_encode(name)];toggle_gear=0'"
 										if(gear.loadout_flags & LOADOUT_CAN_COLOR_POLYCHROMIC)
@@ -1322,10 +1394,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 												loadout_color_non_poly = loadout_item[LOADOUT_COLOR][1]
 											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_color=1;loadout_gear_name=[html_encode(gear.name)];'>Color</a>"
 											extra_loadout_data += "<span style='border: 1px solid #161616; background-color: [loadout_color_non_poly];'><font color='[color_hex2num(loadout_color_non_poly) < 200 ? "FFFFFF" : "000000"]'>[loadout_color_non_poly]</font></span>"
+											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_color_HSV=1;loadout_gear_name=[html_encode(gear.name)];'>HSV Color</a>" // SPLURT EDIT
 										if(gear.loadout_flags & LOADOUT_CAN_NAME)
 											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_rename=1;loadout_gear_name=[html_encode(gear.name)];'>Name</a> [loadout_item[LOADOUT_CUSTOM_NAME] ? loadout_item[LOADOUT_CUSTOM_NAME] : "N/A"]"
 										if(gear.loadout_flags & LOADOUT_CAN_DESCRIPTION)
 											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_redescribe=1;loadout_gear_name=[html_encode(gear.name)];'>Description</a>"
+										else
+											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_addheirloom=1;loadout_gear_name=[html_encode(gear.name)];'>Select as Heirloom</a><BR>"
+										// BLUEMOON ADD START - выбор вещей из лодаута как family heirloom
+										if(loadout_item[LOADOUT_IS_HEIRLOOM])
+											extra_loadout_data += "<BR><a class='linkOn' href='?_src_=prefs;preference=gear;loadout_removeheirloom=1;loadout_gear_name=[html_encode(gear.name)];'>Select as Heirloom</a><BR>"
+										else
+											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_addheirloom=1;loadout_gear_name=[html_encode(gear.name)];'>Select as Heirloom</a><BR>"
+										if(ispath(gear.path, /obj/item/clothing/neck/petcollar)) //"name tag" sounds better for me, but in petcollar code "tagname" is used so let it be.
+											extra_loadout_data += "<BR><a href='?_src_=prefs;preference=gear;loadout_tagname=1;loadout_gear_name=[html_encode(gear.name)];'>Name tag</a> [loadout_item["loadout_custom_tagname"] ? loadout_item["loadout_custom_tagname"] : "Name tag is visible for everyone looking at wearer."]"
+									  // BLUEMOON ADD END
 									else if((gear_points - gear.cost) < 0)
 										class_link = "style='white-space:normal;' class='linkOff'"
 									else if(donoritem)
@@ -1347,8 +1430,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 												dat += gear.restricted_roles.Join(";")
 												dat += "</font>"
 									if(!istype(gear, /datum/gear/unlockable))
+										var/is_heirloom_string = loadout_item ? (loadout_item[LOADOUT_IS_HEIRLOOM] ? "<br><br><center><b>Ваша семейная реликвия!</b></center>" : "") : "" // BLUEMOON EDIT - выбор вещей из лодаута как family heirloom
 										// the below line essentially means "if the loadout item is picked by the user and has a custom description, give it the custom description, otherwise give it the default description"
-										dat += "</td><td><font size=2><i>[loadout_item ? (loadout_item[LOADOUT_CUSTOM_DESCRIPTION] ? loadout_item[LOADOUT_CUSTOM_DESCRIPTION] : gear.description) : gear.description]</i></font></td></tr>"
+										dat += "</td><td><font size=2><i>[loadout_item ? (loadout_item[LOADOUT_CUSTOM_DESCRIPTION] ? loadout_item[LOADOUT_CUSTOM_DESCRIPTION] : gear.description) : gear.description]</i> [is_heirloom_string]</font></td></tr>" // BLUEMOON EDIT - выбор вещей из лодаута как family heirloom
 									else
 										//we add the user's progress to the description assuming they have progress
 										var/datum/gear/unlockable/unlockable = gear
@@ -1411,8 +1495,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					//SANDSTORM CHANGES END
 					dat += "<b>Shift view when pixelshifting:</b> <a href='?_src_=prefs;preference=view_pixelshift'>[view_pixelshift ? "Enabled" : "Disabled"]</a><br>" //SPLURT Edit
 					dat += "<br>"
-					dat += "<b>Action Buttons:</b> <a href='?_src_=prefs;preference=action_buttons'>[(buttons_locked) ? "Locked In Place" : "Unlocked"]</a><br>"
-					dat += "<br>"
 					dat += "<b>Ghost Ears:</b> <a href='?_src_=prefs;preference=ghost_ears'>[(chat_toggles & CHAT_GHOSTEARS) ? "All Speech" : "Nearest Creatures"]</a><br>"
 					dat += "<b>Ghost Radio:</b> <a href='?_src_=prefs;preference=ghost_radio'>[(chat_toggles & CHAT_GHOSTRADIO) ? "All Messages":"No Messages"]</a><br>"
 					dat += "<b>Ghost Sight:</b> <a href='?_src_=prefs;preference=ghost_sight'>[(chat_toggles & CHAT_GHOSTSIGHT) ? "All Emotes" : "Nearest Creatures"]</a><br>"
@@ -1453,7 +1535,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								else
 									enabled_text = "Disabled"
 								dat += "<b>Be [capitalize(i)]:</b> <a href='?_src_=prefs;preference=be_special;be_special_type=[i]'>[enabled_text]</a><br>"
-					dat += "<b>Midround Antagonist:</b> <a href='?_src_=prefs;preference=allow_midround_antag'>[(toggles & MIDROUND_ANTAG) ? "Enabled" : "Disabled"]</a><br>"
+					dat += "<b>Allow Midround Antagonist Roll:</b> <a href='?_src_=prefs;preference=allow_midround_antag'>[(toggles & MIDROUND_ANTAG) ? "Enabled" : "Disabled"]</a><br>"
 
 					dat += "</td></tr></table>"
 
@@ -1462,6 +1544,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<tr><td width='340px' height='300px' valign='top'>"
 					dat += "<h2>OOC Settings</h2>"
 					dat += "<b>Window Flashing:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Enabled":"Disabled"]</a><br>"
+					dat += "<b>Window Noise:</b> <a href='?_src_=prefs;preference=winnoise'>[(windownoise) ? "Enabled":"Disabled"]</a><br>"
 					dat += "<br>"
 					dat += "<b>Play Admin MIDIs:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & SOUND_MIDI) ? "Enabled":"Disabled"]</a><br>"
 					dat += "<b>Play Lobby Music:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
@@ -1516,6 +1599,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 					dat += "<h2>Citadel Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
 					dat += "<b>Widescreen:</b> <a href='?_src_=prefs;preference=widescreenpref'>[widescreenpref ? "Enabled ([CONFIG_GET(string/default_view)])" : "Disabled (15x15)"]</a><br>"
+					dat += "<b>Fullscreen:</b> <a href='?_src_=prefs;preference=fullscreen'>[fullscreen ? "Enabled" : "Disabled"]</a><br>"
 					dat += "<b>Long strip menu:</b> <a href='?_src_=prefs;preference=long_strip_menu'>[long_strip_menu ? "Enabled" : "Disabled"]</a><br>"
 					dat += "<b>Auto stand:</b> <a href='?_src_=prefs;preference=autostand'>[autostand ? "Enabled" : "Disabled"]</a><br>"
 					dat += "<b>Auto OOC:</b> <a href='?_src_=prefs;preference=auto_ooc'>[auto_ooc ? "Enabled" : "Disabled"]</a><br>"
@@ -1613,7 +1697,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<table><tr><td width='340px' height='300px' valign='top'>"
 					dat += "<h2>Fetish content prefs</h2>"
 					dat += "<b>Allow Lewd Verbs:</b> <a href='?_src_=prefs;preference=verb_consent'>[(toggles & VERB_CONSENT) ? "Yes":"No"]</a><br>" // Skyrat - ERP Mechanic Addition
-					dat += "<b>Mute Lewd Verb Sounds:</b> <a href='?_src_=prefs;preference=mute_lewd_verb_sounds'>[(toggles & LEWD_VERB_SOUNDS) ? "Yes":"No"]</a><br>" // Sandstorm - ERP Mechanic Addition
+					dat += "<b>Lewd Verb Sounds:</b> <a href='?_src_=prefs;preference=lewd_verb_sounds'>[(toggles & LEWD_VERB_SOUNDS) ? "Yes":"No"]</a><br>" // Sandstorm - ERP Mechanic Addition
 					dat += "<b>Arousal:</b><a href='?_src_=prefs;preference=arousable'>[arousable == TRUE ? "Enabled" : "Disabled"]</a><BR>"
 					dat += "<b>Genital examine text</b>:<a href='?_src_=prefs;preference=genital_examine'>[(cit_toggles & GENITAL_EXAMINE) ? "Enabled" : "Disabled"]</a><BR>"
 					dat += "<b>Vore examine text</b>:<a href='?_src_=prefs;preference=vore_examine'>[(cit_toggles & VORE_EXAMINE) ? "Enabled" : "Disabled"]</a><BR>"
@@ -1635,6 +1719,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>Hypno:</b> <a href='?_src_=prefs;preference=never_hypno'>[(cit_toggles & NEVER_HYPNO) ? "Disallowed" : "Allowed"]</a><br>"
 					dat += "<b>Aphrodisiacs:</b> <a href='?_src_=prefs;preference=aphro'>[(cit_toggles & NO_APHRO) ? "Disallowed" : "Allowed"]</a><br>"
 					dat += "<b>Ass Slapping:</b> <a href='?_src_=prefs;preference=ass_slap'>[(cit_toggles & NO_ASS_SLAP) ? "Disallowed" : "Allowed"]</a><br>"
+					//Gardelin0 EDIT
+					dat += "<b>Sex Jitter:</b> <a href='?_src_=prefs;preference=sex_jitter'>[(cit_toggles & SEX_JITTER) ? "Allowed" : "Disallowed"]</a><br>"
 					//SPLURT EDIT
 					dat += "<b>Chastity Interactions :</b> <a href='?_src_=prefs;preference=chastitypref'>[(cit_toggles & CHASTITY) ? "Allowed" : "Disallowed"]</a><br>"
 					dat += "<b>Genital Stimulation Modifiers :</b> <a href='?_src_=prefs;preference=stimulationpref'>[(cit_toggles & STIMULATION) ? "Allowed" : "Disallowed"]</a><br>"
@@ -1815,7 +1901,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		//The job before the current job. I only use this to get the previous jobs color when I'm filling in blank rows.
 		var/datum/job/lastJob
 
-		for(var/datum/job/job in sortList(SSjob.occupations, /proc/cmp_job_display_asc))
+		for(var/datum/job/job in sort_list(SSjob.occupations, GLOBAL_PROC_REF(cmp_job_display_asc)))
 
 			index += 1
 			if((index >= limit) || (job.title in splitJobs))
@@ -1980,7 +2066,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	SetJobPreferenceLevel(job, jpval)
 	SetChoices(user)
 
-	return 1
+	return TRUE
 
 
 /datum/preferences/proc/ResetJobs()
@@ -1998,13 +2084,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	else
 		dat += "<center><b>Choose quirk setup</b></center><br>"
+		// BLUEMOON ADD START - настройки для отдельных квирков
+		dat += "Настройки для отдельных квирков. Если нужный квирк не будет выставлен, то они работать не будут.<br>"
+		dat += "<a href='?_src_=prefs;preference=traits_setup;task=change_shriek_option'>([BLUEMOON_TRAIT_NAME_SHRIEK]) Тип Крика: [shriek_type]</a>"
+		dat += "<hr>"
+		// BLUEMOON ADD END
 		dat += "<div align='center'>Left-click to add or remove quirks. You need negative quirks to have positive ones.<br>\
 		Quirks are applied at roundstart and cannot normally be removed.</div>"
 		dat += "<center><a href='?_src_=prefs;preference=trait;task=close'>Done</a></center>"
 		dat += "<hr>"
 		dat += "<center><b>Current quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
 		dat += "<center>[GetPositiveQuirkCount()] / [MAX_QUIRKS] max positive quirks<br>\
-		<b>Quirk balance remaining:</b> [GetQuirkBalance()]<br>"
+		<b>Quirk balance remaining:</b> [GetQuirkBalance(user)]<br>"
 		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_POSITIVE]' [quirk_category == QUIRK_POSITIVE ? "class='linkOn'" : ""]>[QUIRK_POSITIVE]</a> "
 		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_NEUTRAL]' [quirk_category == QUIRK_NEUTRAL ? "class='linkOn'" : ""]>[QUIRK_NEUTRAL]</a> "
 		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_NEGATIVE]' [quirk_category == QUIRK_NEGATIVE ? "class='linkOn'" : ""]>[QUIRK_NEGATIVE]</a> "
@@ -2054,14 +2145,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
 
-/datum/preferences/proc/GetQuirkBalance()
+/datum/preferences/proc/GetQuirkBalance(mob/user)
 	var/bal = 0
 	for(var/V in all_quirks)
 		var/datum/quirk/T = SSquirks.quirks[V]
 		bal -= initial(T.value)
 	for(var/modification in modified_limbs)
 		if(modified_limbs[modification][1] == LOADOUT_LIMB_PROSTHETIC)
-			return bal + 1 //max 1 point regardless of how many prosthetics
+			bal += 1 //max 1 point regardless of how many prosthetics
+	if(bal < 0)
+		all_quirks = list()
+		return FALSE
 	return bal
 
 /datum/preferences/proc/GetPositiveQuirkCount()
@@ -2132,7 +2226,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				for(var/i in J.alt_titles)
 					titles_list += i
 				var/chosen_title
-				chosen_title = input(user, "Choose your job's title:", "Job Preference") as null|anything in titles_list
+				chosen_title = tgui_input_list(user, "Choose your job's title:", "Job Preference", titles_list)
 				if(chosen_title)
 					if(chosen_title == job_title)
 						if(alt_titles_preferences[job_title])
@@ -2143,7 +2237,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			//END OF SKYRAT CHANGES
 			else
 				SetChoices(user)
-		return 1
+		return TRUE
 
 	else if(href_list["preference"] == "trait")
 		switch(href_list["task"])
@@ -2158,17 +2252,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/list/L = V
 					for(var/Q in all_quirks)
 						if((quirk in L) && (Q in L) && !(Q == quirk)) //two quirks have lined up in the list of the list of quirks that conflict with each other, so return (see quirks.dm for more details)
-							to_chat(user, "<span class='danger'>[quirk] is incompatible with [Q].</span>")
+							to_chat(user, "<span class='danger'>[quirk] имеет несовместимость с квирком [Q].</span>") //BLUEMOON EDIT перевод
 							return
 				var/value = SSquirks.quirk_points[quirk]
-				var/balance = GetQuirkBalance()
+				var/balance = GetQuirkBalance(user)
 				if(quirk in all_quirks)
 					if(balance + value < 0)
 						to_chat(user, "<span class='warning'>Refunding this would cause you to go below your balance!</span>")
 						return
 					all_quirks -= quirk
 				else
-					if(GetPositiveQuirkCount() >= MAX_QUIRKS)
+					if(GetPositiveQuirkCount() >= MAX_QUIRKS && value > 0)
 						to_chat(user, "<span class='warning'>You can't have more than [MAX_QUIRKS] positive quirks!</span>")
 						return
 					if(balance - value < 0)
@@ -2181,6 +2275,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				SetQuirks(user)
 			else
 				SetQuirks(user)
+	// BLUEMOON ADD START - возможность настраивать квирки
+	else if(href_list["preference"] == "traits_setup")
+		switch(href_list["task"])
+			if("change_shriek_option") // изменение вида крика от квирка крикуна
+				var/client/C = usr.client
+				if(C)
+					var/new_shriek_type = tgui_input_list(user, "Choose your character's shriek type.", "Character Preference", GLOB.shriek_types)
+					if(new_shriek_type)
+						shriek_type = new_shriek_type
+						SetQuirks(user)
+	// BLUEMOON ADD END
 		return TRUE
 
 	else if(href_list["quirk_category"])
@@ -2201,7 +2306,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					return
 				if(!toggle_language(lang))
 					return
-				language = sortList(language)
+				language = sort_list(language)
 			if("reset")
 				language = list()
 		SetLanguage(user)
@@ -2256,12 +2361,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			switch(href_list["preference"])
 				if("ghostform")
 					if(unlock_content)
-						var/new_form = input(user, "Thanks for supporting BYOND - Choose your ghostly form:","Thanks for supporting BYOND",null) as null|anything in GLOB.ghost_forms
+						var/new_form = tgui_input_list(user, "Thanks for supporting BYOND - Choose your ghostly form:","Thanks for supporting BYOND", GLOB.ghost_forms, null)
 						if(new_form)
 							ghost_form = new_form
 				if("ghostorbit")
 					if(unlock_content)
-						var/new_orbit = input(user, "Thanks for supporting BYOND - Choose your ghostly orbit:","Thanks for supporting BYOND", null) as null|anything in GLOB.ghost_orbits
+						var/new_orbit = tgui_input_list(user, "Thanks for supporting BYOND - Choose your ghostly orbit:","Thanks for supporting BYOND",  GLOB.ghost_orbits, null)
 						if(new_orbit)
 							ghost_orbit = new_orbit
 
@@ -2319,6 +2424,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/msg = input(usr, "Задайте описание вашего персонажа без одежды.", "Описание Bнешности Голого Персонажа", features["naked_flavor_text"]) as message|null
 					if(!isnull(msg))
 						features["naked_flavor_text"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
+
 				//SPLURT edit end
 				if("silicon_flavor_text")
 					var/msg = input(usr, "Задайте особые признаки внешности своего синтетического (борга) персонажа!", "Описание Борга", features["silicon_flavor_text"]) as message|null //Skyrat edit, removed stripped_multiline_input()
@@ -2329,7 +2435,38 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/msg = input(usr, "Задайте особую предысторию расы своего персонажа!", "Предыстория Расы Bашего Персонажа", features["silicon_flavor_text"]) as message|null //Skyrat edit, removed stripped_multiline_input()
 					if(!isnull(msg))
 						features["custom_species_lore"] = strip_html_simple(msg, MAX_FLAVOR_LEN, TRUE)
-
+				// BLUEMOON ADD START - пользовательский эмоут смерти
+				if("custom_deathgasp")
+					var/msg = input(usr, "Задайте эмоцию, которая будет проигрываться при смерти вашего персонажа!", "Сообщение О Смерти", features["custom_deathgasp"]) as message|null
+					if(!isnull(msg))
+						features["custom_deathgasp"] = strip_html_simple(msg, MAX_DEATHGASP_LEN, TRUE)
+				if("custom_deathsound")
+					var/sound_name = tgui_input_list(user, "Выберите звук смерти персонажа!", "Звук Смерти", GLOB.deathgasp_sounds)
+					if(sound_name)
+						features["custom_deathsound"] = sound_name
+				if("deathsoundpreview")
+					if(SSticker.current_state == GAME_STATE_STARTUP) //Timers don't tick at all during game startup, so let's just give an error message
+						to_chat(user, "<span class='warning'>Deathgasp sound previews can't play during initialization!</span>")
+						return
+					if(!COOLDOWN_FINISHED(src, deathsound_preview))
+						return
+					if(!user)
+						return
+					COOLDOWN_START(src, deathsound_preview, (3 SECONDS))
+					var/picked_deathsound_name = features["custom_deathsound"]
+					var/picked_deathsound_path
+					if(picked_deathsound_name)
+						if(picked_deathsound_name == "По умолчанию")
+							picked_deathsound_path = pick('sound/voice/deathgasp1.ogg', 'sound/voice/deathgasp2.ogg')
+						if(picked_deathsound_name == "Беззвучный")
+							picked_deathsound_path = 0
+						if(GLOB.deathgasp_sounds[picked_deathsound_name])
+							picked_deathsound_path = GLOB.deathgasp_sounds[picked_deathsound_name]
+					if(picked_deathsound_path)
+						user.playsound_local(user, picked_deathsound_path, 60)
+					else
+						to_chat(user, "<span class='warning'>Вы выбрали беззвучный deathgasp или выбранный вами звук отсутствует!</span>")
+				// BLUEMOON ADD END
 				if("ooc_notes")
 					var/msg = stripped_multiline_input(usr, "Установите всегда видимые OOC-заметки, связанные с вашими предпочтениями.", "ООС-Заметки", html_decode(features["ooc_notes"]), MAX_FLAVOR_LEN, TRUE)
 					if(!isnull(msg))
@@ -2350,7 +2487,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					fertility = clamp(fert, 0, 100)
 
 				if("egg_shell")
-					var/shell = input(user, "Pick a shell for your eggs", "Character Preferences") as null|anything in GLOB.egg_skins
+					var/shell = tgui_input_list(user, "Pick a shell for your eggs", "Character Preferences", GLOB.egg_skins)
 					if(shell)
 						egg_shell = shell
 
@@ -2369,7 +2506,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("hair_style")
 					var/new_hair_style
-					new_hair_style = input(user, "Choose your character's hair style:", "Character Preference")  as null|anything in GLOB.hair_styles_list
+					new_hair_style = tgui_input_list(user, "Choose your character's hair style:", "Character Preference", GLOB.hair_styles_list)
 					if(new_hair_style)
 						hair_style = new_hair_style
 
@@ -2386,7 +2523,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("facial_hair_style")
 					var/new_facial_hair_style
-					new_facial_hair_style = input(user, "Choose your character's facial-hair style:", "Character Preference")  as null|anything in GLOB.facial_hair_styles_list
+					new_facial_hair_style = tgui_input_list(user, "Choose your character's facial-hair style:", "Character Preference", GLOB.facial_hair_styles_list)
 					if(new_facial_hair_style)
 						facial_hair_style = new_facial_hair_style
 
@@ -2403,7 +2540,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("grad_style")
 					var/new_grad_style
-					new_grad_style = input(user, "Choose your character's hair gradient style:", "Character Preference") as null|anything in GLOB.hair_gradients_list
+					new_grad_style = tgui_input_list(user, "Choose your character's hair gradient style:", "Character Preference", GLOB.hair_gradients_list)
 					if(new_grad_style)
 						grad_style = new_grad_style
 
@@ -2417,12 +2554,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					bgstate = next_list_item(bgstate, bgstate_options)
 
 				if("modify_limbs")
-					var/limb_type = input(user, "Choose the limb to modify:", "Character Preference") as null|anything in LOADOUT_ALLOWED_LIMB_TARGETS
+					var/limb_type = tgui_input_list(user, "Choose the limb to modify:", "Character Preference", LOADOUT_ALLOWED_LIMB_TARGETS)
 					if(limb_type)
-						var/modification_type = input(user, "Choose the modification to the limb:", "Character Preference") as null|anything in LOADOUT_LIMBS
+						var/modification_type = tgui_input_list(user, "Choose the modification to the limb:", "Character Preference", LOADOUT_LIMBS)
 						if(modification_type)
 							if(modification_type == LOADOUT_LIMB_PROSTHETIC)
-								var/prosthetic_type = input(user, "Choose the type of prosthetic", "Character Preference") as null|anything in (list("prosthetic") + GLOB.prosthetic_limb_types)
+								var/prosthetic_type = tgui_input_list(user, "Choose the type of prosthetic", "Character Preference", (list("prosthetic") + GLOB.prosthetic_limb_types))
 								if(prosthetic_type)
 									var/number_of_prosthetics = 0
 									for(var/modified_limb in modified_limbs)
@@ -2488,7 +2625,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						right_eye_color = sanitize_hexcolor(new_eyes, 6)
 
 				if("eye_type")
-					var/new_eye_type = input(user, "Choose your character's eye type.", "Character Preference") as null|anything in GLOB.eye_types
+					var/new_eye_type = tgui_input_list(user, "Choose your character's eye type.", "Character Preference", GLOB.eye_types)
 					if(new_eye_type)
 						eye_type = new_eye_type
 
@@ -2497,7 +2634,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					right_eye_color = left_eye_color
 
 				if("species")
-					var/result = input(user, "Select a species", "Species Selection") as null|anything in GLOB.roundstart_race_names
+					var/result = tgui_input_list(user, "Select a species", "Species Selection", GLOB.roundstart_race_names)
 					if(result)
 						var/newtype = GLOB.species_list[GLOB.roundstart_race_names[result]]
 						pref_species = new newtype()
@@ -2584,7 +2721,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("ipc_screen")
 					var/new_ipc_screen
-					new_ipc_screen = input(user, "Choose your character's screen:", "Character Preference") as null|anything in GLOB.ipc_screens_list
+					new_ipc_screen = tgui_input_list(user, "Choose your character's screen:", "Character Preference", GLOB.ipc_screens_list)
 					if(new_ipc_screen)
 						features["ipc_screen"] = new_ipc_screen
 
@@ -2600,31 +2737,31 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_antenna_list[S.name] = path
 					var/new_ipc_antenna
-					new_ipc_antenna = input(user, "Choose your character's antenna:", "Character Preference") as null|anything in snowflake_antenna_list
+					new_ipc_antenna = tgui_input_list(user, "Choose your character's antenna:", "Character Preference", snowflake_antenna_list)
 					if(new_ipc_antenna)
 						features["ipc_antenna"] = new_ipc_antenna
 
 				if("arachnid_legs")
 					var/new_arachnid_legs
-					new_arachnid_legs = input(user, "Choose your character's variant of arachnid legs:", "Character Preference") as null|anything in GLOB.arachnid_legs_list
+					new_arachnid_legs = tgui_input_list(user, "Choose your character's variant of arachnid legs:", "Character Preference", GLOB.arachnid_legs_list)
 					if(new_arachnid_legs)
 						features["arachnid_legs"] = new_arachnid_legs
 
 				if("arachnid_spinneret")
 					var/new_arachnid_spinneret
-					new_arachnid_spinneret = input(user, "Choose your character's spinneret markings:", "Character Preference") as null|anything in GLOB.arachnid_spinneret_list
+					new_arachnid_spinneret = tgui_input_list(user, "Choose your character's spinneret markings:", "Character Preference", GLOB.arachnid_spinneret_list)
 					if(new_arachnid_spinneret)
 						features["arachnid_spinneret"] = new_arachnid_spinneret
 
 				if("arachnid_mandibles")
 					var/new_arachnid_mandibles
-					new_arachnid_mandibles = input(user, "Choose your character's variant of mandibles:", "Character Preference") as null|anything in GLOB.arachnid_mandibles_list
+					new_arachnid_mandibles = tgui_input_list(user, "Choose your character's variant of mandibles:", "Character Preference", GLOB.arachnid_mandibles_list)
 					if (new_arachnid_mandibles)
 						features["arachnid_mandibles"] = new_arachnid_mandibles
 
 				if("tail_lizard")
 					var/new_tail
-					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.tails_list_lizard
+					new_tail = tgui_input_list(user, "Choose your character's tail:", "Character Preference", GLOB.tails_list_lizard)
 					if(new_tail)
 						features["tail_lizard"] = new_tail
 						if(new_tail != "None")
@@ -2643,7 +2780,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_tails_list[S.name] = path
 					var/new_tail
-					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in snowflake_tails_list
+					new_tail = tgui_input_list(user, "Choose your character's tail:", "Character Preference", snowflake_tails_list)
 					if(new_tail)
 						features["tail_human"] = new_tail
 						if(new_tail != "None")
@@ -2662,7 +2799,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_tails_list[S.name] = path
 					var/new_tail
-					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in snowflake_tails_list
+					new_tail = tgui_input_list(user, "Choose your character's tail:", "Character Preference", snowflake_tails_list)
 					if(new_tail)
 						features["mam_tail"] = new_tail
 						if(new_tail != "None")
@@ -2672,7 +2809,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("meat_type")
 					var/new_meat
-					new_meat = input(user, "Choose your character's meat type:", "Character Preference") as null|anything in GLOB.meat_types
+					new_meat = tgui_input_list(user, "Choose your character's meat type:", "Character Preference", GLOB.meat_types)
 					if(new_meat)
 						features["meat_type"] = new_meat
 
@@ -2687,7 +2824,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_snouts_list[S.name] = path
 					var/new_snout
-					new_snout = input(user, "Choose your character's snout:", "Character Preference") as null|anything in snowflake_snouts_list
+					new_snout = tgui_input_list(user, "Choose your character's snout:", "Character Preference", snowflake_snouts_list)
 					if(new_snout)
 						features["snout"] = new_snout
 						features["mam_snouts"] = "None"
@@ -2704,14 +2841,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_mam_snouts_list[S.name] = path
 					var/new_mam_snouts
-					new_mam_snouts = input(user, "Choose your character's snout:", "Character Preference") as null|anything in snowflake_mam_snouts_list
+					new_mam_snouts = tgui_input_list(user, "Choose your character's snout:", "Character Preference", snowflake_mam_snouts_list)
 					if(new_mam_snouts)
 						features["mam_snouts"] = new_mam_snouts
 						features["snout"] = "None"
 
 				if("horns")
 					var/new_horns
-					new_horns = input(user, "Choose your character's horns:", "Character Preference") as null|anything in GLOB.horns_list
+					new_horns = tgui_input_list(user, "Choose your character's horns:", "Character Preference", GLOB.horns_list)
 					if(new_horns)
 						features["horns"] = new_horns
 
@@ -2725,7 +2862,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("wings")
 					var/new_wings
-					new_wings = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.r_wings_list
+					new_wings = tgui_input_list(user, "Choose your character's wings:", "Character Preference", GLOB.r_wings_list)
 					if(new_wings)
 						features["wings"] = new_wings
 
@@ -2739,61 +2876,61 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("frills")
 					var/new_frills
-					new_frills = input(user, "Choose your character's frills:", "Character Preference") as null|anything in GLOB.frills_list
+					new_frills = tgui_input_list(user, "Choose your character's frills:", "Character Preference", GLOB.frills_list)
 					if(new_frills)
 						features["frills"] = new_frills
 
 				if("spines")
 					var/new_spines
-					new_spines = input(user, "Choose your character's spines:", "Character Preference") as null|anything in GLOB.spines_list
+					new_spines = tgui_input_list(user, "Choose your character's spines:", "Character Preference", GLOB.spines_list)
 					if(new_spines)
 						features["spines"] = new_spines
 
 				if("legs")
 					var/new_legs
-					new_legs = input(user, "Choose your character's legs:", "Character Preference") as null|anything in GLOB.legs_list
+					new_legs = tgui_input_list(user, "Choose your character's legs:", "Character Preference", GLOB.legs_list)
 					if(new_legs)
 						features["legs"] = new_legs
 
 				if("insect_wings")
 					var/new_insect_wings
-					new_insect_wings = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.insect_wings_list
+					new_insect_wings = tgui_input_list(user, "Choose your character's wings:", "Character Preference", GLOB.insect_wings_list)
 					if(new_insect_wings)
 						features["insect_wings"] = new_insect_wings
 
 				if("deco_wings")
 					var/new_deco_wings
-					new_deco_wings = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.deco_wings_list
+					new_deco_wings = tgui_input_list(user, "Choose your character's wings:", "Character Preference", GLOB.deco_wings_list)
 					if(new_deco_wings)
 						features["deco_wings"] = new_deco_wings
 
 				if("insect_fluff")
 					var/new_insect_fluff
-					new_insect_fluff = input(user, "Choose your character's wings:", "Character Preference") as null|anything in GLOB.insect_fluffs_list
+					new_insect_fluff = tgui_input_list(user, "Choose your character's wings:", "Character Preference", GLOB.insect_fluffs_list)
 					if(new_insect_fluff)
 						features["insect_fluff"] = new_insect_fluff
 
 				if("insect_markings")
 					var/new_insect_markings
-					new_insect_markings = input(user, "Choose your character's markings:", "Character Preference") as null|anything in GLOB.insect_markings_list
+					new_insect_markings = tgui_input_list(user, "Choose your character's markings:", "Character Preference", GLOB.insect_markings_list)
 					if(new_insect_markings)
 						features["insect_markings"] = new_insect_markings
 
 				if("arachnid_legs")
 					var/new_arachnid_legs
-					new_arachnid_legs = input(user, "Choose your character's variant of arachnid legs:", "Character Preference") as null|anything in GLOB.arachnid_legs_list
+					new_arachnid_legs = tgui_input_list(user, "Choose your character's variant of arachnid legs:", "Character Preference", GLOB.arachnid_legs_list)
 					if(new_arachnid_legs)
 						features["arachnid_legs"] = new_arachnid_legs
 
 				if("arachnid_spinneret")
 					var/new_arachnid_spinneret
-					new_arachnid_spinneret = input(user, "Choose your character's spinneret markings:", "Character Preference") as null|anything in GLOB.arachnid_spinneret_list
+					new_arachnid_spinneret = tgui_input_list(user, "Choose your character's spinneret markings:", "Character Preference", GLOB.arachnid_spinneret_list)
 					if(new_arachnid_spinneret)
 						features["arachnid_spinneret"] = new_arachnid_spinneret
 
 				if("arachnid_mandibles")
 					var/new_arachnid_mandibles
-					new_arachnid_mandibles = input(user, "Choose your character's variant of mandibles:", "Character Preference") as null|anything in GLOB.arachnid_mandibles_list
+					new_arachnid_mandibles = tgui_input_list(user, "Choose your character's variant of mandibles:", "Character Preference", GLOB.arachnid_mandibles_list)
 					if (new_arachnid_mandibles)
 						features["arachnid_mandibles"] = new_arachnid_mandibles
 
@@ -2801,7 +2938,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/list/choices = GLOB.skin_tones - GLOB.nonstandard_skin_tones
 					if(CONFIG_GET(flag/allow_custom_skintones))
 						choices += "custom"
-					var/new_s_tone = input(user, "Choose your character's skin tone:", "Character Preference")  as null|anything in choices
+					var/new_s_tone = tgui_input_list(user, "Choose your character's skin tone:", "Character Preference", choices)
 					if(new_s_tone)
 						if(new_s_tone == "custom")
 							var/default = use_custom_skin_tone ? skin_tone : null
@@ -2830,7 +2967,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_taur_list[S.name] = path
 					var/new_taur
-					new_taur = input(user, "Choose your character's tauric body:", "Character Preference") as null|anything in snowflake_taur_list
+					new_taur = tgui_input_list(user, "Choose your character's tauric body:", "Character Preference", snowflake_taur_list)
 					if(new_taur)
 						features["taur"] = new_taur
 						if(new_taur != "None")
@@ -2851,7 +2988,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_ears_list[S.name] = path
 					var/new_ears
-					new_ears = input(user, "Choose your character's ears:", "Character Preference") as null|anything in snowflake_ears_list
+					new_ears = tgui_input_list(user, "Choose your character's ears:", "Character Preference", snowflake_ears_list)
 					if(new_ears)
 						features["ears"] = new_ears
 
@@ -2866,20 +3003,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 								snowflake_ears_list[S.name] = path
 					var/new_ears
-					new_ears = input(user, "Choose your character's ears:", "Character Preference") as null|anything in snowflake_ears_list
+					new_ears = tgui_input_list(user, "Choose your character's ears:", "Character Preference", snowflake_ears_list)
 					if(new_ears)
 						features["mam_ears"] = new_ears
 
 				//Xeno Bodyparts
 				if("xenohead")//Head or caste type
 					var/new_head
-					new_head = input(user, "Choose your character's caste:", "Character Preference") as null|anything in GLOB.xeno_head_list
+					new_head = tgui_input_list(user, "Choose your character's caste:", "Character Preference", GLOB.xeno_head_list)
 					if(new_head)
 						features["xenohead"] = new_head
 
 				if("xenotail")//Currently one one type, more maybe later if someone sprites them. Might include animated variants in the future.
 					var/new_tail
-					new_tail = input(user, "Choose your character's tail:", "Character Preference") as null|anything in GLOB.xeno_tail_list
+					new_tail = tgui_input_list(user, "Choose your character's tail:", "Character Preference", GLOB.xeno_tail_list)
 					if(new_tail)
 						features["xenotail"] = new_tail
 						if(new_tail != "None")
@@ -2890,7 +3027,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("xenodorsal")
 					var/new_dors
-					new_dors = input(user, "Choose your character's dorsal tube type:", "Character Preference") as null|anything in GLOB.xeno_dorsal_list
+					new_dors = tgui_input_list(user, "Choose your character's dorsal tube type:", "Character Preference", GLOB.xeno_dorsal_list)
 					if(new_dors)
 						features["xenodorsal"] = new_dors
 
@@ -2920,13 +3057,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				//Genital code
 				if("lust_tolerance")
-					var/lust_tol = input(user, "Set how long you can last without climaxing. \n(75 = minimum, 200 = maximum.)", "Character Preference", lust_tolerance) as num|null
+					var/lust_tol = input(user, "Set how long you can last without climaxing. \n(25 = minimum, 200 = maximum.)", "Character Preference", lust_tolerance) as num|null
 					if(lust_tol)
-						lust_tolerance = clamp(lust_tol, 75, 200)
+						lust_tolerance = clamp(lust_tol, 25, 200)
 				if("sexual_potency")
-					var/sexual_pot = input(user, "Set your sexual potency. \n(10 = minimum, 25 = maximum.)", "Character Preference", sexual_potency) as num|null
+					var/sexual_pot = input(user, "Set your sexual potency. \n(-1 = minimum, 25 = maximum.) This determines the number of times your character can orgasm before becoming impotent, use -1 for no impotency.", "Character Preference", sexual_potency) as num|null
 					if(sexual_pot)
-						sexual_potency = clamp(sexual_pot, 10, 25)
+						sexual_potency = clamp(sexual_pot, -1, 25)
 
 				if("cock_color")
 					var/new_cockcolor = input(user, "Penis color:", "Character Preference","#"+features["cock_color"]) as color|null
@@ -2955,7 +3092,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							var/datum/sprite_accessory/penis/P = GLOB.cock_shapes_list[A]
 							if(P.taur_icon && T.taur_mode & P.accepted_taurs)
 								LAZYSET(hockeys, "[A] (Taur)", A)
-					new_shape = input(user, "Penis shape:", "Character Preference") as null|anything in (GLOB.cock_shapes_list + hockeys)
+					new_shape = tgui_input_list(user, "Penis shape:", "Character Preference", (GLOB.cock_shapes_list + hockeys))
 					if(new_shape)
 						features["cock_taur"] = FALSE
 						if(hockeys[new_shape])
@@ -2971,7 +3108,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["cock_diameter_ratio"] = clamp(round(new_ratio, 0.01), min_diameter_ratio, max_diameter_ratio)
 
 				if("cock_visibility")
-					var/n_vis = input(user, "Penis Visibility", "Character Preference") as null|anything in CONFIG_GET(str_list/safe_visibility_toggles)
+					var/n_vis = tgui_input_list(user, "Penis Visibility", "Character Preference", CONFIG_GET(str_list/safe_visibility_toggles))
 					if(n_vis)
 						features["cock_visibility"] = n_vis
 
@@ -2988,12 +3125,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("balls_shape")
 					var/new_shape
-					new_shape = input(user, "Testicle Shape", "Character Preference") as null|anything in GLOB.balls_shapes_list
+					new_shape = tgui_input_list(user, "Testicle Shape", "Character Preference", GLOB.balls_shapes_list)
 					if(new_shape)
 						features["balls_shape"] = new_shape
 
 				if("balls_visibility")
-					var/n_vis = input(user, "Testicles Visibility", "Character Preference") as null|anything in CONFIG_GET(str_list/safe_visibility_toggles)
+					var/n_vis = tgui_input_list(user, "Testicles Visibility", "Character Preference", CONFIG_GET(str_list/safe_visibility_toggles))
 					if(n_vis)
 						features["balls_visibility"] = n_vis
 
@@ -3008,13 +3145,13 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["balls_fluid"] = new_fluid.type
 
 				if("breasts_size")
-					var/new_size = input(user, "Breast Size", "Character Preference") as null|anything in CONFIG_GET(keyed_list/breasts_cups_prefs)
+					var/new_size = tgui_input_list(user, "Breast Size", "Character Preference", CONFIG_GET(keyed_list/breasts_cups_prefs))
 					if(new_size)
 						features["breasts_size"] = new_size
 
 				if("breasts_shape")
 					var/new_shape
-					new_shape = input(user, "Breast Shape", "Character Preference") as null|anything in GLOB.breasts_shapes_list
+					new_shape = tgui_input_list(user, "Breast Shape", "Character Preference", GLOB.breasts_shapes_list)
 					if(new_shape)
 						features["breasts_shape"] = new_shape
 
@@ -3030,7 +3167,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
 
 				if("breasts_visibility")
-					var/n_vis = input(user, "Breasts Visibility", "Character Preference") as null|anything in CONFIG_GET(str_list/safe_visibility_toggles)
+					var/n_vis = tgui_input_list(user, "Breasts Visibility", "Character Preference", CONFIG_GET(str_list/safe_visibility_toggles))
 					if(n_vis)
 						features["breasts_visibility"] = n_vis
 
@@ -3046,7 +3183,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("vag_shape")
 					var/new_shape
-					new_shape = input(user, "Vagina Type", "Character Preference") as null|anything in GLOB.vagina_shapes_list
+					new_shape = tgui_input_list(user, "Vagina Type", "Character Preference", GLOB.vagina_shapes_list)
 					if(new_shape)
 						features["vag_shape"] = new_shape
 
@@ -3062,7 +3199,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							to_chat(user,"<span class='danger'>Invalid color. Your color is not bright enough.</span>")
 
 				if("vag_visibility")
-					var/n_vis = input(user, "Vagina Visibility", "Character Preference") as null|anything in CONFIG_GET(str_list/safe_visibility_toggles)
+					var/n_vis = tgui_input_list(user, "Vagina Visibility", "Character Preference", CONFIG_GET(str_list/safe_visibility_toggles))
 					if(n_vis)
 						features["vag_visibility"] = n_vis
 
@@ -3111,7 +3248,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("anus_shape")
 					var/new_shape
-					new_shape = input(user, "Butthole Shape", "Character Preference") as null|anything in GLOB.anus_shapes_list
+					new_shape = tgui_input_list(user, "Butthole Shape", "Character Preference", GLOB.anus_shapes_list)
 					if(new_shape)
 						features["anus_shape"] = new_shape
 
@@ -3130,17 +3267,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features["butt_size"] = clamp(round(new_length), min_B, max_B)
 
 				if("butt_visibility")
-					var/n_vis = input(user, "Butt Visibility", "Character Preference") as null|anything in CONFIG_GET(str_list/safe_visibility_toggles)
+					var/n_vis = tgui_input_list(user, "Butt Visibility", "Character Preference", CONFIG_GET(str_list/safe_visibility_toggles))
 					if(n_vis)
 						features["butt_visibility"] = n_vis
 
 				if("anus_visibility")
-					var/n_vis = input(user, "Butthole Visibility", "Character Preference") as null|anything in CONFIG_GET(str_list/safe_visibility_toggles)
+					var/n_vis = tgui_input_list(user, "Butthole Visibility", "Character Preference", CONFIG_GET(str_list/safe_visibility_toggles))
 					if(n_vis)
 						features["anus_visibility"] = n_vis
 
 				if("belly_visibility")
-					var/n_vis = input(user, "Belly Visibility", "Character Preference") as null|anything in CONFIG_GET(str_list/safe_visibility_toggles)
+					var/n_vis = tgui_input_list(user, "Belly Visibility", "Character Preference", CONFIG_GET(str_list/safe_visibility_toggles))
 					if(n_vis)
 						features["belly_visibility"] = n_vis
 
@@ -3160,7 +3297,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features -= "balls_max_size"
 
 				if("breasts_max_size")
-					var/new_size = input(user, "Breast Max Size (cancel to disable)", "Character Preference") as null|anything in GLOB.breast_values
+					var/new_size = tgui_input_list(user, "Breast Max Size (cancel to disable)", "Character Preference", GLOB.breast_values)
 					if(new_size)
 						features["breasts_max_size"] = new_size
 					else
@@ -3198,7 +3335,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						features -= "balls_min_size"
 
 				if("breasts_min_size")
-					var/new_size = input(user, "Breast Min Size (cancel to disable)", "Character Preference") as null|anything in GLOB.breast_values
+					var/new_size = tgui_input_list(user, "Breast Min Size (cancel to disable)", "Character Preference", GLOB.breast_values)
 					if(new_size)
 						features["breasts_min_size"] = new_size
 					else
@@ -3231,7 +3368,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						aooccolor = sanitize_ooccolor(new_aooccolor)
 
 				if("bag")
-					var/new_backbag = input(user, "Choose your character's style of bag:", "Character Preference")  as null|anything in GLOB.backbaglist
+					var/new_backbag = tgui_input_list(user, "Choose your character's style of bag:", "Character Preference", GLOB.backbaglist)
 					if(new_backbag)
 						backbag = new_backbag
 
@@ -3243,17 +3380,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 
 				if("uplink_loc")
-					var/new_loc = input(user, "Choose your character's traitor uplink spawn location:", "Character Preference") as null|anything in GLOB.uplink_spawn_loc_list
+					var/new_loc = tgui_input_list(user, "Choose your character's traitor uplink spawn location:", "Character Preference", GLOB.uplink_spawn_loc_list)
 					if(new_loc)
 						uplink_spawn_loc = new_loc
 
 				if("ai_core_icon")
-					var/ai_core_icon = input(user, "Choose your preferred AI core display screen:", "AI Core Display Screen Selection") as null|anything in GLOB.ai_core_display_screens
+					var/ai_core_icon = tgui_input_list(user, "Choose your preferred AI core display screen:", "AI Core Display Screen Selection", GLOB.ai_core_display_screens)
 					if(ai_core_icon)
 						preferred_ai_core_display = ai_core_icon
 
 				if("sec_dept")
-					var/department = input(user, "Choose your preferred security department:", "Security Departments") as null|anything in GLOB.security_depts_prefs
+					var/department = tgui_input_list(user, "Choose your preferred security department:", "Security Departments", GLOB.security_depts_prefs)
 					if(department)
 						prefered_security_department = department
 
@@ -3269,15 +3406,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							friendlyname += " (disabled)"
 						maplist[friendlyname] = VM.map_name
 					maplist[default] = null
-					var/pickedmap = input(user, "Choose your preferred map. This will be used to help weight random map selection.", "Character Preference")  as null|anything in maplist
+					var/pickedmap = tgui_input_list(user, "Choose your preferred map. This will be used to help weight random map selection.", "Character Preference", maplist)
 					if (pickedmap)
 						preferred_map = maplist[pickedmap]
 
 				if ("preferred_chaos")
-					var/pickedchaos = input(user, "Choose your preferred level of chaos. This will help with dynamic threat level ratings.", "Character Preference") as null|anything in list(CHAOS_NONE,CHAOS_LOW,CHAOS_MED,CHAOS_HIGH,CHAOS_MAX)
+					var/pickedchaos = tgui_input_list(user, "Choose your preferred level of chaos. This will help with dynamic threat level ratings.", "Character Preference", list(CHAOS_NONE,CHAOS_LOW,CHAOS_MED,CHAOS_HIGH,CHAOS_MAX))
 					preferred_chaos = pickedchaos
 				if ("be_victim")
-					var/pickedvictim = input(user, "Are you ok with antagonists interacting with you (e.g. kidnapping)? ERP consent is seperate: This setting does NOT mean they are allowed to rape you.", "Antag Victim Consent") as null|anything in list(BEVICTIM_NO,BEVICTIM_ASK,BEVICTIM_YES)
+					var/pickedvictim = tgui_input_list(user, "Are you ok with antagonists interacting with you (e.g. kidnapping)? ERP consent is seperate: This setting does NOT mean they are allowed to rape you.", "Antag Victim Consent", list(BEVICTIM_NO,BEVICTIM_ASK,BEVICTIM_YES))
 					be_victim = pickedvictim
 				if ("clientfps")
 					var/desiredfps = input(user, "Choose your desired fps. (0 = synced with server tick rate (currently:[world.fps]))", "Character Preference", clientfps)  as null|num
@@ -3285,21 +3422,34 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						clientfps = desiredfps
 						parent.fps = desiredfps
 				if("ui")
-					var/pickedui = input(user, "Choose your UI style.", "Character Preference", UI_style)  as null|anything in GLOB.available_ui_styles
+					var/pickedui = tgui_input_list(user, "Choose your UI style.", "Character Preference", GLOB.available_ui_styles, UI_style)
 					if(pickedui)
 						UI_style = pickedui
-						if (parent && parent.mob && parent.mob.hud_used)
-							parent.mob.hud_used.update_ui_style(ui_style2icon(UI_style))
+						if (pickedui && parent && parent.mob && parent.mob.hud_used)
+							QDEL_NULL(parent.mob.hud_used)
+							parent.mob.create_mob_hud()
+							parent.mob.hud_used.show_hud(1, parent.mob)
+				if("toggle_custom_blood_color")
+					custom_blood_color = !custom_blood_color
+				if("blood_color")
+					var/pickedBloodColor = input(user, "Выбирайте цвет крови своего персонажа.", "Character Preference", blood_color) as color|null
+					if(!pickedBloodColor)
+						return
+					if(pickedBloodColor)
+						blood_color = sanitize_hexcolor(pickedBloodColor, 6, 1, initial(blood_color))
+						if(!custom_blood_color)
+							custom_blood_color = TRUE
+				///
 				if("pda_style")
-					var/pickedPDAStyle = input(user, "Выбирайте стиль своего КПК.", "Character Preference", pda_style)  as null|anything in GLOB.pda_styles
+					var/pickedPDAStyle = tgui_input_list(user, "Выбирайте стиль своего КПК.", "Character Preference", GLOB.pda_styles, pda_style)
 					if(pickedPDAStyle)
 						pda_style = pickedPDAStyle
 				if("pda_color")
-					var/pickedPDAColor = input(user, "Выбирайте цвет интерфейса своего КПК.", "Character Preference",pda_color) as color|null
+					var/pickedPDAColor = input(user, "Выбирайте цвет интерфейса своего КПК.", "Character Preference", pda_color) as color|null
 					if(pickedPDAColor)
 						pda_color = pickedPDAColor
 				if("pda_skin")
-					var/pickedPDASkin = input(user, "Выбирайте модель своего КПК.", "Character Preference", pda_skin) as null|anything in GLOB.pda_reskins
+					var/pickedPDASkin = tgui_input_list(user, "Выбирайте модель своего КПК.", "Character Preference", GLOB.pda_reskins, pda_skin)
 					if(pickedPDASkin)
 						pda_skin = pickedPDASkin
 				if("pda_ringtone")
@@ -3307,7 +3457,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(pickedPDARingtone)
 						pda_ringtone = pickedPDARingtone
 				if("silicon_lawset")
-					var/picked_lawset = input(user, "Выбирайте предпочитаемый список законов", "Silicon preference", silicon_lawset) as null|anything in list("None") + CONFIG_GET(keyed_list/choosable_laws)
+					var/picked_lawset = tgui_input_list(user, "Выбирайте предпочитаемый список законов", "Silicon preference", list("None") + CONFIG_GET(keyed_list/choosable_laws), silicon_lawset)
 					if(picked_lawset)
 						if(picked_lawset == "None")
 							picked_lawset = null
@@ -3333,7 +3483,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						hud_toggle_color = new_toggle_color
 
 				if("gender")
-					var/chosengender = input(user, "Select your character's gender.", "Gender Selection", gender) as null|anything in list(MALE,FEMALE,"nonbinary","object")
+					var/chosengender = tgui_input_list(user, "Select your character's gender.", "Gender Selection", list(MALE,FEMALE,"nonbinary","object"), gender)
 					if(!chosengender)
 						return
 					switch(chosengender)
@@ -3348,7 +3498,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					gender = chosengender
 
 				if("body_size")
-					var/new_body_size = input(user, "Choose your desired sprite size: ([CONFIG_GET(number/body_size_min)*100]-[CONFIG_GET(number/body_size_max)*100]%)\nWarning: This may make your character look distorted. Additionally, any size under 100% takes a 10% maximum health penalty", "Character Preference", features["body_size"]*100) as num|null
+					var/new_body_size = input(user, "Choose your desired sprite size: ([CONFIG_GET(number/body_size_min)*100]-[CONFIG_GET(number/body_size_max)*100]%)\nWarning: This may make your character look distorted. Additionally, any size affects speed and max health", "Character Preference", features["body_size"]*100) as num|null
 					if(new_body_size)
 						features["body_size"] = clamp(new_body_size * 0.01, CONFIG_GET(number/body_size_min), CONFIG_GET(number/body_size_max))
 
@@ -3356,11 +3506,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					fuzzy = !fuzzy
 
 				if("tongue")
-					var/selected_custom_tongue = input(user, "Choose your desired tongue (none means your species tongue)", "Character Preference") as null|anything in GLOB.roundstart_tongues
+					var/selected_custom_tongue = tgui_input_list(user, "Choose your desired tongue (none means your species tongue)", "Character Preference", GLOB.roundstart_tongues)
 					if(selected_custom_tongue)
 						custom_tongue = selected_custom_tongue
 				if("speech_verb")
-					var/selected_custom_speech_verb = input(user, "Choose your desired speech verb (none means your species speech verb)", "Character Preference") as null|anything in GLOB.speech_verbs
+					var/selected_custom_speech_verb = tgui_input_list(user, "Choose your desired speech verb (none means your species speech verb)", "Character Preference", GLOB.speech_verbs)
 					if(selected_custom_speech_verb)
 						custom_speech_verb = selected_custom_speech_verb
 
@@ -3375,7 +3525,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if(!allowed.Find(user.client.ckey))
 								continue
 						woof_woof[initial(B.name)] = initial(B.id)
-					var/new_bork = input(user, "Choose your desired vocal bark", "Character Preference") as null|anything in woof_woof
+					var/new_bork = tgui_input_list(user, "Choose your desired vocal bark", "Character Preference", woof_woof)
 					if(new_bork)
 						bark_id = woof_woof[new_bork]
 						var/datum/bark/B = GLOB.bark_list[bark_id] //Now we need sanitization to take into account bark-specific min/max values
@@ -3402,7 +3552,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						bark_variance = clamp(borkset, initial(B.minvariance), initial(B.maxvariance))
 
 				if("bodysprite")
-					var/selected_body_sprite = input(user, "Choose your desired body sprite", "Character Preference") as null|anything in pref_species.allowed_limb_ids
+					var/selected_body_sprite = tgui_input_list(user, "Choose your desired body sprite", "Character Preference", pref_species.allowed_limb_ids)
 					if(selected_body_sprite)
 						chosen_limb_id = selected_body_sprite //this gets sanitized before loading
 
@@ -3443,7 +3593,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					// add a marking
 					var/marking_type = href_list["marking_type"]
 					if(marking_type && features[marking_type])
-						var/selected_limb = input(user, "Choose the limb to apply to.", "Character Preference") as null|anything in list("Head", "Chest", "Left Arm", "Right Arm", "Left Leg", "Right Leg", "All")
+						var/selected_limb = tgui_input_list(user, "Choose the limb to apply to.", "Character Preference", list("Head", "Chest", "Left Arm", "Right Arm", "Left Leg", "Right Leg", "All"))
 						if(selected_limb)
 							var/list/marking_list = GLOB.mam_body_markings_list
 							var/list/snowflake_markings_list = list()
@@ -3457,8 +3607,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 									if((!S.ckeys_allowed) || (S.ckeys_allowed.Find(user.client.ckey)))
 										snowflake_markings_list[S.name] = path
-
-							var/selected_marking = input(user, "Select the marking to apply to the limb.") as null|anything in snowflake_markings_list
+							var/selected_marking = tgui_input_list(user, "Select the marking to apply to the limb.", "Character Preference", snowflake_markings_list)
 							if(selected_marking)
 								if(selected_limb != "All")
 									var/limb_value = text2num(GLOB.bodypart_values[selected_limb])
@@ -3469,6 +3618,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										var/limb_value = text2num(GLOB.bodypart_values[limb])
 										features[marking_type] += list(list(limb_value, selected_marking))
 
+				// BLUEMOON ADD START - кнопка для удаления всех маркингов на персонаже
+				if("markings_remove")
+					var/are_you_sure_about_that = tgalert(parent.mob, "Это действие удалит все татуировки с персонажа. Вы уверены, что хотите сделать это?", "Удаление всех маркингов" ,"Да", "Нет")
+					if(are_you_sure_about_that == "Да")
+						clearlist(features["mam_body_markings"])
+				// BLUEMOON ADD END
 				if("marking_color_specific")
 					var/index = text2num(href_list["marking_index"])
 					var/marking_type = href_list["marking_type"]
@@ -3533,6 +3688,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					features["genitals_use_skintone"] = !features["genitals_use_skintone"]
 				if("arousable")
 					arousable = !arousable
+				if("hardsuit_with_tail")
+					features["hardsuit_with_tail"] = !features["hardsuit_with_tail"]
 				if("has_cock")
 					features["has_cock"] = !features["has_cock"]
 					if(features["has_cock"] == FALSE)
@@ -3582,6 +3739,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("widescreenpref")
 					widescreenpref = !widescreenpref
 					user.client.view_size.setDefault(getScreenSize(widescreenpref))
+				if("fullscreen")
+					fullscreen = !fullscreen
+					parent.ToggleFullscreen()
 				if("long_strip_menu")
 					long_strip_menu = !long_strip_menu
 				if("cock_stuffing")
@@ -3691,6 +3851,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							mobsexpref = "No"
 						if("No")
 							mobsexpref = "Yes"
+				if("hornyantags_pref") //...
+					switch(hornyantagspref)
+						if("Yes")
+							hornyantagspref = "No"
+						if("No")
+							hornyantagspref = "Yes"
 //				if("stomppref") // What the fuck is this?
 //					stomppref = !stomppref
 				//Skyrat edit - *someone* offered me actual money for this shit
@@ -3784,7 +3950,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if(!length(key_bindings[old_key]))
 								key_bindings -= old_key
 						key_bindings[full_key] += list(kb_name)
-						key_bindings[full_key] = sortList(key_bindings[full_key])
+						key_bindings[full_key] = sort_list(key_bindings[full_key])
 					if(href_list["special"])		// special keys need a full reset
 						user.client.ensure_keys_set(src)
 					user << browse(null, "window=capturekeypress")
@@ -3804,16 +3970,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					chat_on_map = !chat_on_map
 				if("see_chat_non_mob")
 					see_chat_non_mob = !see_chat_non_mob
-				//Skyrat changes begin
+				//Sandstorm changes begin
 				if("see_chat_emotes")
 					see_chat_emotes = !see_chat_emotes
 				if("enable_personal_chat_color")
 					enable_personal_chat_color = !enable_personal_chat_color
-				//End of skyrat changes
+				//End of sandstorm changes
 				if("view_pixelshift") //SPLURT Edit
 					view_pixelshift = !view_pixelshift
-				if("action_buttons")
-					buttons_locked = !buttons_locked
 				if("tgui_fancy")
 					tgui_fancy = !tgui_fancy
 				if("tgui_input_mode")
@@ -3826,10 +3990,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					outline_enabled = !outline_enabled
 				if("outline_color")
 					var/pickedOutlineColor = input(user, "Choose your outline color.", "General Preference", outline_color) as color|null
-					if(pickedOutlineColor != pickedOutlineColor)
+					if(pickedOutlineColor != outline_color)
 						outline_color = pickedOutlineColor // nullable
 				if("screentip_pref")
-					var/choice = input(user, "Choose your screentip preference", "Screentipping?", screentip_pref) as null|anything in GLOB.screentip_pref_options
+					var/choice = tgui_input_list(user, "Choose your screentip preference", "Screentipping?", GLOB.screentip_pref_options, screentip_pref)
 					if(choice)
 						screentip_pref = choice
 				if("screentip_color")
@@ -3842,6 +4006,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					tgui_lock = !tgui_lock
 				if("winflash")
 					windowflashing = !windowflashing
+				if("winnoise")
+					windownoise = !windownoise
 				if("hear_adminhelps")
 					toggles ^= SOUND_ADMINHELP
 				if("announce_login")
@@ -3890,7 +4056,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("verb_consent") // Skyrat - ERP Mechanic Addition
 					toggles ^= VERB_CONSENT // Skyrat - ERP Mechanic Addition
 
-				if("mute_lewd_verb_sounds") // Skyrat - ERP Mechanic Addition
+				if("lewd_verb_sounds") // Skyrat - ERP Mechanic Addition
 					toggles ^= LEWD_VERB_SOUNDS // Skyrat - ERP Mechanic Addition
 
 				if("persistent_scars")
@@ -4004,6 +4170,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				//END CITADEL EDIT
 
+				if("sex_jitter") //By Gardelin0
+					cit_toggles ^= SEX_JITTER
+
 				if("ambientocclusion")
 					ambientocclusion = !ambientocclusion
 					if(parent && parent.screen && parent.screen.len)
@@ -4018,10 +4187,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					auto_fit_viewport = !auto_fit_viewport
 					if(auto_fit_viewport && parent)
 						parent.fit_viewport()
-
-				if("fullscreen")
-					fullscreen = !fullscreen
-					parent.ToggleFullscreen()
 
 				if("hud_toggle_flash")
 					hud_toggle_flash = !hud_toggle_flash
@@ -4039,7 +4204,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					barkbox.set_bark(bark_id)
 					var/total_delay
 					for(var/i in 1 to (round((32 / bark_speed)) + 1))
-						addtimer(CALLBACK(barkbox, /atom/movable/proc/bark, list(parent.mob), 7, 70, BARK_DO_VARY(bark_pitch, bark_variance)), total_delay)
+						addtimer(CALLBACK(barkbox, TYPE_PROC_REF(/atom/movable, bark), list(parent.mob), 7, 70, BARK_DO_VARY(bark_pitch, bark_variance)), total_delay)
 						total_delay += rand(DS2TICKS(bark_speed/4), DS2TICKS(bark_speed/4) + DS2TICKS(bark_speed/4)) TICKS
 					QDEL_IN(barkbox, total_delay)
 
@@ -4052,30 +4217,37 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					load_character()
 
 				if("changeslot")
+					if(char_queue)
+						deltimer(char_queue) // Do not dare.
 					if(!load_character(text2num(href_list["num"])))
 						random_character()
 						real_name = random_unique_name(gender)
 						save_character()
+					if(user.client?.prefs) //custom emote panel is attached to the character
+						var/list/payload = user.client.prefs.custom_emote_panel
+						user.client.tgui_panel?.window.send_message("emotes/setList", payload)
 
 				if("tab")
 					if(href_list["tab"])
 						current_tab = text2num(href_list["tab"])
 				//SPLURT edit
+				// BLUEMOON REMOVE - Ищи в `modular_bluemoon/code/modules/client/preferences.dm`
+				/*
 				if("headshot")
-					var/usr_input = input(user, "Input the image link:", "Headshot Image", features["headshot_link"]) as text|null
+					var/usr_input = input(user, "Input the image link: (For Discord links, try putting the file's type at the end of the link, after the '&'. for example '&.jpg/.png/.jpeg')", "Headshot Image", features["headshot_link"]) as text|null
 					if(isnull(usr_input))
 						return
 					if(!usr_input)
 						features["headshot_link"] = null
 						return
 
-					var/static/link_regex = regex("https://i.gyazo.com|https://media.discordapp.net|https://cdn.discordapp.com|https://media.discordapp.net$") //Do not touch the damn duplicates.
+					var/static/link_regex = regex("https://i.gyazo.com|https://static1.e621.net") //Do not touch the damn duplicates.
 					var/static/end_regex = regex(".jpg|.jpg|.png|.jpeg|.jpeg") //Regex is terrible, don't touch the duplicate extensions
 
-					if(!findtext(usr_input, link_regex, 1, 29))
-						to_chat(usr, span_warning("The link needs to be an unshortened Gyazo or Discordapp link!"))
+					if(!findtext(usr_input, link_regex))
+						to_chat(usr, span_warning("You need a valid link!"))
 						return
-					if(!findtext(usr_input, end_regex, -8))
+					if(!findtext(usr_input, end_regex))
 						to_chat(usr, span_warning("You need either \".png\", \".jpg\", or \".jpeg\" in the link!"))
 						return
 
@@ -4083,6 +4255,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						to_chat(usr, span_notice("If the photo doesn't show up properly in-game, ensure that it's a direct image link that opens properly in a browser."))
 						to_chat(usr, span_notice("Keep in mind that the photo will be downsized to 250x250 pixels, so the more square the photo, the better it will look."))
 					features["headshot_link"] = usr_input
+				*/
+				// BLUEMOON REMOVE END
 
 				if("character_preview")
 					preview_pref = href_list["tab"]
@@ -4116,8 +4290,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("import_slot")
 					var/savefile/S = new(user.client.Import())
 					if(istype(S, /savefile))
-						if(load_character(provided = S) == TRUE)
+						if(load_character(provided = S))
 							tgui_alert_async(user, "Successfully loaded character slot.")
+							save_character(TRUE)
 						else
 							tgui_alert_async(user, "Failed loading character slot")
 							return
@@ -4128,6 +4303,66 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("delete_local_copy")
 					user.client.clear_export()
 					tgui_alert_async(user, "Local save data erased.")
+
+				if("give_slot")
+					if(!QDELETED(offer))
+						var/datum/character_offer_instance/offer_datum = LAZYACCESS(GLOB.character_offers, offer.redemption_code)
+						if(!offer_datum)
+							return
+						qdel(offer_datum)
+					else
+						var/savefile/S = save_character(export = TRUE)
+						if(istype(S, /savefile))
+							var/datum/character_offer_instance/offer_datum = new(usr.ckey, S)
+							if(QDELETED(offer_datum))
+								tgui_alert_async(usr, "Could not set up offer, try again later")
+								return
+							offer_datum.RegisterSignal(usr, COMSIG_MOB_CLIENT_LOGOUT, TYPE_PROC_REF(/datum/character_offer_instance, on_quit))
+							offer = offer_datum
+							tgui_alert_async(usr, "The redemption code is [offer_datum.redemption_code], give it to the receiver")
+
+				if("retrieve_slot")
+					if(!LAZYLEN(GLOB.character_offers))
+						tgui_alert_async(usr, "There are no active offers")
+						return
+					var/retrieve_code = input(usr, "Input the 5 digit redemption code") as text|null
+					if(!retrieve_code)
+						return
+					if(!text2num(retrieve_code))
+						tgui_alert_async(usr, "Only numbers allowed")
+						return
+					if(length(retrieve_code) != 5)
+						tgui_alert_async(usr, "Exactly 5 digits, no less, no more, try again")
+						return
+					var/datum/character_offer_instance/offer_datum = LAZYACCESS(GLOB.character_offers, retrieve_code)
+					if(!offer_datum)
+						tgui_alert_async(usr, "This is an invalid code!")
+						return
+					if(offer == offer_datum)
+						tgui_alert_async(usr, "You cannot accept your own offer")
+						return
+					var/savefile/savefile = offer_datum.character_savefile
+					var/mob/living/the_owner = get_mob_by_ckey(offer_datum.owner_ckey)
+					if(savefile_needs_update(savefile) == -2)
+						tgui_alert_async(usr, "Something's wrong, this savefile is corrupted.")
+						to_chat(the_owner, span_boldwarning("Something went wrong with the trade, it's been canceled."))
+						qdel(offer_datum)
+						return
+					var/character_name = savefile["real_name"]
+					if(alert(usr, "You are overwriting the currently selected slot with the character [character_name]", "Are you sure?", "Yes, load this character deleting the currently selected slot", "No") == "No")
+						return
+					if(QDELETED(offer_datum))
+						tgui_alert_async(usr, "This character is no longer available, such a shame!")
+						return
+					to_chat(the_owner, span_boldwarning("[usr.key] has retrieved your character, [character_name]!"))
+					if(!load_character(provided = savefile))
+						tgui_alert_async(usr, "Something went wrong loading the savefile, even though it has already been checked, please report this issue!")
+						to_chat(the_owner, span_boldwarning("Something went wrong at the final step of the trade, report this."))
+						qdel(offer_datum)
+						return
+					tgui_alert_async(usr, "Successfully received [character_name]!")
+					save_character(TRUE)
+					qdel(offer_datum)
 
 	if(href_list["preference"] == "gear")
 		if(href_list["clear_loadout"])
@@ -4145,6 +4380,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				return
 			var/toggle = text2num(href_list["toggle_gear"])
 			if(!toggle && has_loadout_gear(loadout_slot, "[G.type]"))//toggling off and the item effectively is in chosen gear)
+				var/gear = has_loadout_gear(loadout_slot, "[G.type]")
+				// BLUEMOON EDIT START - выбор вещей из лодаута как family heirloom
+				if (gear[LOADOUT_IS_HEIRLOOM])
+					gear[LOADOUT_IS_HEIRLOOM] = FALSE
+				// BLUEMOON EDIT END - выбор вещей из лодаута как family heirloom
 				remove_gear_from_loadout(loadout_slot, "[G.type]")
 			else if(toggle && !(has_loadout_gear(loadout_slot, "[G.type]")))
 				if(!is_loadout_slot_available(G.category))
@@ -4176,7 +4416,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					sanitize_current_slot.Remove(list(entry))
 					break
 
-		if(href_list["loadout_color"] || href_list["loadout_color_polychromic"] || href_list["loadout_rename"] || href_list["loadout_redescribe"] || href_list["loadout_freqcode"])
+		if(href_list["loadout_color"] || href_list["loadout_color_polychromic"] || href_list["loadout_color_HSV"] || href_list["loadout_rename"] || href_list["loadout_redescribe"] || href_list["loadout_addheirloom"] || href_list["loadout_removeheirloom"] || href_list["loadout_tagname"])
+
 			//if the gear doesn't exist, or they don't have it, ignore the request
 			var/name = html_decode(href_list["loadout_gear_name"])
 			var/datum/gear/G = GLOB.loadout_items[gear_category][gear_subcategory][name]
@@ -4197,12 +4438,23 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/new_color = input(user, "Polychromic options", "Choose Color", current_color) as color|null
 				user_gear[LOADOUT_COLOR][1] = sanitize_hexcolor(new_color, 6, TRUE, current_color)
 
+			// HSV Coloring (SPLURT EDIT)
+			if(href_list["loadout_color_HSV"] && !(G.loadout_flags & LOADOUT_CAN_COLOR_POLYCHROMIC))
+				var/hue = input(user, "Enter Hue (0-360)", "HSV options") as num|null
+				var/saturation = input(user, "Enter Saturation (-10 to 10)", "HSV options") as num|null
+				var/value = input(user, "Enter Value (-10 to 10)", "HSV options") as num|null
+				if(hue && saturation && value)
+					saturation = clamp(saturation, -10, 10)
+					value = clamp(value, -10, 10)
+					var/color_to_use = color_matrix_hsv(hue, saturation, value)
+					user_gear[LOADOUT_COLOR][1] = color_to_use
+
 			//poly coloring can only be done by poly items
 			if(href_list["loadout_color_polychromic"] && (G.loadout_flags & LOADOUT_CAN_COLOR_POLYCHROMIC))
 				var/list/color_options = list()
 				for(var/i=1, i<=length(G.loadout_initial_colors), i++)
 					color_options += "Color [i]"
-				var/color_to_change = input(user, "Polychromic options", "Recolor [name]") as null|anything in color_options
+				var/color_to_change = tgui_input_list(user, "Polychromic options", "Recolor [name]", color_options)
 				if(color_to_change)
 					var/color_index = text2num(copytext(color_to_change, 7))
 					var/current_color = user_gear[LOADOUT_COLOR][color_index]
@@ -4223,9 +4475,26 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				var/new_description = stripped_input(user, "Enter new description for item. Maximum 500 characters.", "Loadout Item Redescribing", null, 500)
 				if(new_description)
 					user_gear[LOADOUT_CUSTOM_DESCRIPTION] = new_description
+			// BLUEMOON ADD START - выбор вещей из лодаута как family heirloom
+			if(href_list["loadout_addheirloom"])
+				// Выбран ли какой-либо другой предмет как семейная реликвия, и если да, то какой?
+				var/existing = find_gear_with_property(loadout_slot, LOADOUT_IS_HEIRLOOM, TRUE)
+				if(!existing)
+					user_gear[LOADOUT_IS_HEIRLOOM] = TRUE
+				else
+					to_chat(user, "<font color='red'>У вас уже выбрана ваша семейная реликвия!</font>")
+			if(href_list["loadout_removeheirloom"])
+				user_gear[LOADOUT_IS_HEIRLOOM] = FALSE
+			// BLUEMOON ADD END
+
+			//for collars with tagnames
+			if(href_list["loadout_tagname"])
+				var/new_tagname = stripped_input(user, "Would you like to change the name on the tag?", "Name your new pet", null, MAX_NAME_LEN)
+				if(new_tagname)
+					user_gear["loadout_custom_tagname"] = new_tagname
 
 	ShowChoices(user)
-	return 1
+	return TRUE
 
 /datum/preferences/proc/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE)
 	if(be_random_name)
@@ -4304,7 +4573,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		character.dna.species.mutant_bodyparts["limbs_id"] = chosen_limb_id
 	character.dna.real_name = character.real_name
 	character.dna.nameless = character.nameless
+	// BLUEMOON EDIT START - привязка флавора и лора кастомных рас к ДНК
 	character.dna.custom_species = character.custom_species
+	character.dna.custom_species_lore = features["custom_species_lore"]
+	character.dna.flavor_text = features["flavor_text"]
+	character.dna.naked_flavor_text = features["naked_flavor_text"]
+	if (features["headshot_link"])
+		character.dna.headshot_links.Add(features["headshot_link"])
+	if (features["headshot_link1"])
+		character.dna.headshot_links.Add(features["headshot_link1"])
+	if (features["headshot_link2"])
+		character.dna.headshot_links.Add(features["headshot_link2"])
+	character.dna.ooc_notes = features["ooc_notes"]
+	if(custom_blood_color)
+		character.dna.species.exotic_blood_color = blood_color //а раньше эта строчка была немного выше и всё ломалось, думайте, когда делаете врезки
+	// BLUEMOON EDIT END
 
 	var/old_size = RESIZE_DEFAULT_SIZE
 	if(isdwarf(character))
@@ -4471,6 +4754,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		else
 			if(L[slot] < DEFAULT_SLOT_AMT)
 				return TRUE
+
+// BLUEMOON ADD START - выбор вещей из лодаута как семейной реликвии
+///Searching for loadout item which `property` ([LOADOUT_ITEM], [LOADOUT_COLOR], etc) equals to `value`; returns this items, or FALSE if no gear matched conditions
+/datum/preferences/proc/find_gear_with_property(save_slot, property, value)
+	var/list/gear_list = loadout_data["SAVE_[save_slot]"]
+	for(var/loadout_gear in gear_list)
+		if(loadout_gear[property] == value)
+			return loadout_gear
+	return FALSE
 
 /datum/preferences/proc/has_loadout_gear(save_slot, gear_type)
 	var/list/gear_list = loadout_data["SAVE_[save_slot]"]

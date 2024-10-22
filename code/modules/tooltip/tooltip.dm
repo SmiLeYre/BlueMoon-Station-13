@@ -87,12 +87,12 @@ Notes:
 
 
 /datum/tooltip/proc/hide()
+	queueHide = showing ? TRUE : FALSE
+
 	if (queueHide)
-		addtimer(CALLBACK(src, .proc/do_hide), 1)
+		addtimer(CALLBACK(src, PROC_REF(do_hide)), 1)
 	else
 		do_hide()
-
-	queueHide = showing ? TRUE : FALSE
 
 	return TRUE
 
@@ -141,7 +141,20 @@ Notes:
 			if(length(tooltip_data))
 				var/examine_data = tooltip_data.Join("<br />")
 				var/timedelay = max(usr.client.prefs.tip_delay * 0.01, 0.01) // I heard multiplying is faster, also runtimes from very low/negative numbers
-				usr.client.tip_timer = addtimer(CALLBACK(GLOBAL_PROC, .proc/openToolTip, usr, src, params, name, examine_data), timedelay, TIMER_STOPPABLE)//timer takes delay in deciseconds, but the pref is in milliseconds. multiplying by 0.01 converts it.
+				params = ClearTooltipsParams(params)
+				usr.client.tip_timer = addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(openToolTip), usr, src, params, name, examine_data), timedelay, TIMER_STOPPABLE)//timer takes delay in deciseconds, but the pref is in milliseconds. multiplying by 0.01 converts it.
+
+//It should be done in tooltip.html but JS is not my cup of tea
+/proc/ClearTooltipsParams(dirty)
+	var/list/parts = splittext(dirty, ";")
+	if(parts.len == 3)
+		return dirty //acceptable.
+	var/list/clear = list()
+	//This "icon-x=32;icon-y=29;screen-loc=3:10,15:29" (example) must be transfered to tooltip.html
+	for(var/part in parts)
+		if((findtext(part, "icon-x")!=0) || (findtext(part, "icon-y")!=0) || (findtext(part, "screen-loc")!=0))
+			clear.Add(part)
+	return clear.Join(";")
 
 /atom/movable/MouseExited(location, control, params)
 	. = ..()

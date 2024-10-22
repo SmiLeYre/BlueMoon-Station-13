@@ -130,6 +130,9 @@
 #define RADIO_TOKEN_INTEQ ":i"
 #define FREQ_INTEQ 1207
 
+#define RADIO_CHANNEL_GHOST_INTEQ "KK-28"
+#define FREQ_GHOST_INTEQ 1219  // Рация оперативников с Забытого Корабля ИнтеКью.
+
 // BlueMoon Kovac added
 #define RADIO_CHANNEL_SOL "Sol"
 #define RADIO_KEY_SOL "x"
@@ -145,3 +148,9 @@
 #define RADIO_KEY_HOTEL "q"
 #define RADIO_TOKEN_HOTEL ":q"
 #define FREQ_HOTEL 1281
+
+// BlueMoon Fink added
+#define RADIO_CHANNEL_LAW "Law"
+#define RADIO_KEY_LAW "l"
+#define RADIO_TOKEN_LAW ":l"
+#define FREQ_LAW 1415

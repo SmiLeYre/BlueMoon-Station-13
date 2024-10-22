@@ -11,6 +11,14 @@
 	name = "Telescopic Baseball Bat"
 	desc = "A robust telescopic baseball bat that hits like a truck and can be concealed when collapsed."
 	item = /obj/item/melee/baseball_bat/telescopic
+	purchasable_from = UPLINK_SYNDICATE
+	cost = 2
+
+/datum/uplink_item/stealthy_weapons/telescopicbat_inteq
+	name = "Telescopic Baseball Bat"
+	desc = "Раскладная бейсбольная бита с шипованым навершием. Для тех, кто в душе не ебёт какие правила у бейсбола."
+	item = /obj/item/melee/baseball_bat/telescopic/inteq
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 	cost = 2
 
 /datum/uplink_item/stealthy_weapons/combatglovesplus
@@ -26,7 +34,7 @@
 	name = "CQC Manual"
 	desc = "A manual that teaches a single user tactical Close-Quarters Combat before self-destructing."
 	item = /obj/item/book/granter/martial/cqc
-	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
+	purchasable_from = ~UPLINK_CLOWN_OPS
 	cost = 12
 	surplus = 0
 
@@ -179,3 +187,20 @@
 	desc = "A traditional clusterbang grenade with a payload consisting entirely of soap. Useful in any scenario!"
 	item = /obj/item/grenade/clusterbuster/soap
 	cost = 3
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/stealthy_weapons/soap_clusterbang/inteq
+	item = /obj/item/grenade/clusterbuster/soap/inteq
+	purchasable_from = ~(UPLINK_SYNDICATE)
+
+//BLUEMOON add добавил набор оригами в аплинк.
+
+/datum/uplink_item/stealthy_weapons/origami_bundle
+	name = "Boxed Origami Kit"
+	desc = "This box contains a guide on how to craft masterful works of origami, allowing you to transform normal pieces of paper into perfectly aerodynamic (and potentially lethal) paper airplanes."
+	item = /obj/item/storage/box/inteq_kit/origami_bundle
+	cost = 4
+	surplus = 0
+	purchasable_from = ~UPLINK_NUKE_OPS
+
+//BLUEMOON add end

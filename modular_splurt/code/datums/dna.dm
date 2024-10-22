@@ -1,3 +1,4 @@
+/* BLUEMOON CHANGE полное переписывание этого чудовища (modular_bluemoon\code\datums\dna.dm)
 /datum/dna
 	var/last_capped_size //For some reason this feels dirty... I suppose it should go somewhere else
 
@@ -13,7 +14,8 @@
 	if(!holder.small_sprite)
 		holder.small_sprite = new(holder)
 
-	if(get_size(holder) >= (RESIZE_A_BIGNORMAL + RESIZE_NORMAL) / 2)
+	var/HSize = get_size(holder) //BLUEMOON CHANGE переменная для взятого размера holder
+	if(HSize >= (RESIZE_A_BIGNORMAL + RESIZE_NORMAL) / 2) //BLUEMOON CHANGE HSize
 		holder.small_sprite.Grant(holder)
 	else
 		holder.small_sprite.Remove(holder)
@@ -40,45 +42,71 @@
 		C.maxHealth -= 10
 
 	//Calculate new slowdown
-	var/new_slowdown = (abs(get_size(holder) - 1) * CONFIG_GET(number/body_size_slowdown_multiplier))
+	var/new_slowdown = (abs(HSize - 1) * CONFIG_GET(number/body_size_slowdown_multiplier)) //BLUEMOON CHANGE HSize
 	holder.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/small_stride, TRUE, new_slowdown)
 
 	//New health
 	var/size_cap = CONFIG_GET(number/macro_health_cap)
-	if((size_cap > 0) && (get_size(holder) > size_cap))
+	if((size_cap > 0) && (HSize > size_cap)) //BLUEMOON CHANGE HSize
 		last_capped_size = (last_capped_size ? last_capped_size : old_size)
 		return
 	if(last_capped_size)
 		old_size = last_capped_size
 		last_capped_size = null
 
+	var/HMaxHealth = C.maxHealth //BLUEMOON CHANGE переменная для взятого максимума хп
 	var/healthmod_old = ((old_size * 120) - 120) //Get the old value to see what we must change. // BLUEMOON CHANGES
-	var/healthmod_new = ((get_size(holder) * 120) - 120) //A size of one would be zero. Big boys get health, small ones lose health. // BLUEMOON CHANGES
+	var/healthmod_new = ((HSize * 120) - 120) //A size of one would be zero. Big boys get health, small ones lose health. // BLUEMOON CHANGES + HSize
 
 	// BLUEMOON ADDITION AHEAD
 	#define MINIMAL_SIZE_HEALTH 10
-	if(holder.maxHealth == MINIMAL_SIZE_HEALTH)
+	if(HMaxHealth == MINIMAL_SIZE_HEALTH)
 		healthmod_old = MINIMAL_SIZE_HEALTH - 100 // переписываем старое значение для возврата от состоянии минимального ХП к любому иному
-	// BLUEMOON ADDITION END
 
 	var/healthchange = healthmod_new - healthmod_old //Get ready to apply the new value, and subtract the old one. (Negative values become positive)
+	var/NewHMaxHealth = HMaxHealth + healthchange
 
-	// BLUEMOON ADDITION AHEAD - если персонаж так мал, что его ХП должно быть ниже MINIMAL_SIZE_HEALTH после всех формул, то оно выставляется таким
-	if((holder.maxHealth + healthchange) < MINIMAL_SIZE_HEALTH)
-		holder.health = (holder.health / holder.maxHealth) * MINIMAL_SIZE_HEALTH
+	// Увеличиваем или уменьшаем ХП у торса в зависимости от размера персонажа
+	for(var/obj/item/bodypart/chest/chest in C.bodyparts)
+		if(HSize >= 1)  chest.max_damage = initial(chest.max_damage) + (HSize - 1) * 100
+		else			chest.max_damage = initial(chest.max_damage) - (1 - HSize) * 100
+
+	// Увеличиваем или уменьшаем ХП у головы в зависимости от размера персонажа
+	for(var/obj/item/bodypart/head/head in C.bodyparts)
+		if(HSize >= 1)  head.max_damage = initial(head.max_damage) + (HSize - 1) * 100
+		else			head.max_damage = initial(head.max_damage) - (1 - HSize) * 100
+
+	// Если персонаж так мал, что его ХП должно быть ниже MINIMAL_SIZE_HEALTH после всех формул, то оно выставляется таким
+	if(NewHMaxHealth < MINIMAL_SIZE_HEALTH)
 		holder.maxHealth = MINIMAL_SIZE_HEALTH
+		C.updatehealth()
 		return
-	if(healthmod_new > healthmod_old) // Больше ли новое максимальное ХП, чем старое
-		if(holder.health < holder.maxHealth * 0.9) // Больше ли урона чем 10%
-			var/damage_formula = abs(holder.health / holder.maxHealth * healthchange - (holder.maxHealth + healthchange)) - holder.health
-			holder.apply_damage(damage_formula, BRUTE, BODY_ZONE_CHEST) // Наносится пропорциональное разнице остатка ХП количество урона
-			holder.visible_message(span_danger("[holder] body damage is getting worse from sudden expansion!"), span_danger("Your body damage is getting worse from sudden expansion!"))
+
+	var/damage_formula = (NewHMaxHealth / HMaxHealth) //Разница между новым и старым хп
+	if(C.health < HMaxHealth * 0.9 && damage_formula > 1) //если хп меньше 90% и персонажа увеличивается хп
+		holder.visible_message(span_danger("[holder] body damage is getting worse from sudden expansion!"), span_danger("Your body damage is getting worse from sudden expansion!"))
+
+		//BRUTE & BURN
+		for(var/X in C.bodyparts)
+			var/obj/item/bodypart/BP = X
+			BP.brute_dam *= damage_formula
+			BP.burn_dam *= damage_formula
+
+		//TOX
+		if(C.getToxLoss())
+			C.setToxLoss(C.getToxLoss()* damage_formula, FALSE)
+
+		//CLONE
+		if(C.getCloneLoss())
+			C.setCloneLoss(C.getCloneLoss() * damage_formula, FALSE)
+
+	holder.maxHealth = NewHMaxHealth
+	C.updatehealth()
+
 	#undef MINIMAL_SIZE_HEALTH
 	// BLUEMOON ADDITION END
 
-	holder.maxHealth += healthchange
-	holder.health += healthchange
-
+*/
 #define TRANSFER_RANDOMIZED(destination, source1, source2) \
 	if(prob(50)) { \
 		destination = source1; \
@@ -118,10 +146,12 @@
 		destination.set_species(species.type, FALSE)
 		destination.dna.species.say_mod = species.say_mod
 		destination.dna.custom_species = custom_species
+		destination.dna.custom_species_lore = custom_species_lore
 	else
 		destination.set_species(second_set.species.type, FALSE)
 		destination.dna.species.say_mod = second_set.species.say_mod
 		destination.dna.custom_species = second_set.custom_species
+		destination.dna.custom_species_lore = second_set.custom_species_lore
 
 	destination.update_size(get_size(destination), old_size)
 

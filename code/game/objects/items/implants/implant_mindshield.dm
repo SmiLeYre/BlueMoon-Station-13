@@ -1,5 +1,5 @@
 /obj/item/implant/mindshield
-	name = "mindshield implant"
+	name = "Mindshield Implant"
 	desc = "Protects against brainwashing."
 	activated = 0
 
@@ -29,7 +29,7 @@
 		if(target.mind.has_antag_datum(ANTAG_DATUM_VASSAL))
 			SSticker.mode.remove_vassal(target.mind)
 
-		if(target.mind.has_antag_datum(/datum/antagonist/rev/head) || (target.mind.unconvertable))
+		if(target.mind.has_antag_datum(/datum/antagonist/rev/head) || target.mind.has_antag_datum(/datum/antagonist/cult) || target.mind.has_antag_datum(/datum/antagonist/clockcult) || (target.mind.unconvertable))
 			if(!silent)
 				target.visible_message("<span class='warning'>[target] сопротивляется Импланту Защиты Разума!</span>", "<span class='warning'>Вы сопротивляетесь Импланту Защиты Разума!</span>")
 			var/obj/item/implanter/I = loc
@@ -64,11 +64,11 @@
 			L.sec_hud_set_implants()
 		if(target.stat != DEAD && !silent)
 			to_chat(target, "<span class='boldnotice'>Вы ощущаете чувство покоя и безопасности. Теперь вы защищены от промывания мозгов.</span>")
-		return 1
-	return 0
+		return TRUE
+	return FALSE
 
 /obj/item/implanter/mindshield
-	name = "Implanter (mindshield)"
+	name = "Implanter (Mindshield)"
 	imp_type = /obj/item/implant/mindshield
 
 /obj/item/implantcase/mindshield

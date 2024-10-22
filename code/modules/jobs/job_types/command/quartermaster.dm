@@ -29,14 +29,19 @@
 	paycheck = PAYCHECK_HARD //They can already buy stuff using cargo budget, don't give em a command-level paycheck.	//alright i'll agree to that -qweq
 	paycheck_department = ACCOUNT_CAR
 	bounty_types = CIV_JOB_RANDOM
+	departments = DEPARTMENT_BITFLAG_SUPPLY | DEPARTMENT_BITFLAG_COMMAND
 
 	display_order = JOB_DISPLAY_ORDER_QUARTERMASTER
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal)
 	threat = 0.5
 
 	family_heirlooms = list(
 		/obj/item/stamp,
 		/obj/item/stamp/denied
+	)
+
+	mail_goodies = list(
+		/obj/item/circuitboard/machine/emitter = 3
 	)
 
 /datum/outfit/job/quartermaster
@@ -50,9 +55,10 @@
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_hand = /obj/item/clipboard
 	id = /obj/item/card/id/silver
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic = 1, /obj/item/modular_computer/tablet/preset/advanced = 1)
-
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced = 1)
+	box = /obj/item/storage/box/survival/command
 	chameleon_extras = /obj/item/stamp/qm
+	accessory = /obj/item/clothing/accessory/permit/special/quartermaster
 
 /datum/outfit/job/quartermaster/syndicate
 	name = "Syndicate Quartermaster"
@@ -70,6 +76,7 @@
 	satchel = /obj/item/storage/backpack/duffelbag/syndie/ammo
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie/ammo
 	box = /obj/item/storage/box/survival/syndie
+	accessory = /obj/item/clothing/accessory/permit/special/quartermaster
 	pda_slot = ITEM_SLOT_BELT
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic = 1, /obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/syndicate_uplink_high=1)
 

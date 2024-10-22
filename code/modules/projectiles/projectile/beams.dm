@@ -28,7 +28,7 @@
 
 /obj/item/projectile/beam/laser/lasgun
 	damage = 12.5
-	armour_penetration = 25
+	armour_penetration = 10
 
 //overclocked laser, does a bit more damage but has much higher wound power (-0 vs -20)
 /obj/item/projectile/beam/laser/hellfire
@@ -101,7 +101,7 @@
 /obj/item/projectile/beam/disabler
 	name = "disabler beam"
 	icon_state = "omnilaser"
-	damage = 36
+	damage = 30
 	damage_type = STAMINA
 	flag = ENERGY
 	hitsound = 'sound/weapons/tap.ogg'
@@ -126,7 +126,12 @@
 
 /obj/item/projectile/beam/pulse/on_hit(atom/target, blocked = FALSE)
 	. = ..()
-	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure/)))
+	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure)))
+		target.ex_act(EXPLODE_HEAVY)
+
+/obj/item/projectile/beam/pulse/danger/on_hit(atom/target, blocked = FALSE) //bluemoon add
+	. = ..()
+	if (!QDELETED(target) && (isturf(target) || istype(target, /obj/structure)))
 		target.ex_act(EXPLODE_HEAVY)
 	var/turf/open/target_turf = get_turf(target)
 	if(istype(target_turf))

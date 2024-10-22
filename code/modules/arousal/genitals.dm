@@ -232,7 +232,7 @@
 	. = ..()
 	if(.)
 		update()
-		RegisterSignal(owner, COMSIG_MOB_DEATH, .proc/update_appearance_genitals)
+		RegisterSignal(owner, COMSIG_MOB_DEATH, PROC_REF(update_appearance_genitals))
 		if(genital_flags & GENITAL_THROUGH_CLOTHES)
 			owner.exposed_genitals += src
 
@@ -308,7 +308,7 @@
 		//
 		if(G.is_exposed()) //Checks appropriate clothing slot and if it's through_clothes
 			LAZYADD(gen_index[G.layer_index], G)
-	if(has_strapon(REQUIRE_EXPOSED))
+	if(has_strapon() == HAS_EXPOSED_GENITAL)
 		LAZYADD(gen_index[PENIS_LAYER_INDEX], get_strapon())
 	for(var/L in gen_index)
 		if(L) //skip nulls

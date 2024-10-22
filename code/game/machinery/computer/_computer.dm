@@ -25,7 +25,7 @@
 	power_change()
 
 /obj/machinery/computer/process()
-	if(stat & (NOPOWER|BROKEN))
+	if(machine_stat & (NOPOWER|BROKEN))
 		return FALSE
 	return TRUE
 
@@ -48,22 +48,27 @@
 /obj/machinery/computer/update_overlays()
 	. = ..()
 	SSvis_overlays.remove_vis_overlay(src, managed_vis_overlays)
-	if(stat & NOPOWER)
-		. += "[icon_keyboard]_off"
-		return
-	. += icon_keyboard
+	if(icon_keyboard)
+		if(machine_stat & NOPOWER)
+			. += "[icon_keyboard]_off"
+		else
+			. += icon_keyboard
 
-	// This whole block lets screens ignore lighting and be visible even in the darkest room
-	// We can't do this for many things that emit light unfortunately because it layers over things that would be on top of it
-	var/overlay_state = icon_screen
-	if(stat & BROKEN)
-		overlay_state = "[icon_state]_broken"
-	. += mutable_appearance(icon, overlay_state)
-	. += emissive_appearance(icon, overlay_state)
+	if(machine_stat & BROKEN)
+		. += mutable_appearance(icon, "[icon_state]_broken")
+		return // If we don't do this broken computers glow in the dark.
+
+	if(machine_stat & NOPOWER) // Your screen can't be on if you've got no damn charge
+		return
+
+	// This lets screens ignore lighting and be visible even in the darkest room
+	if(icon_screen)
+		. += mutable_appearance(icon, icon_screen)
+		. += emissive_appearance(icon, icon_screen)
 
 /obj/machinery/computer/power_change()
 	..()
-	if(stat & NOPOWER)
+	if(machine_stat & NOPOWER)
 		set_light(0)
 	else
 		set_light(brightness_on)
@@ -83,7 +88,7 @@
 /obj/machinery/computer/play_attack_sound(damage_amount, damage_type = BRUTE, damage_flag = 0)
 	switch(damage_type)
 		if(BRUTE)
-			if(stat & BROKEN)
+			if(machine_stat & BROKEN)
 				playsound(src.loc, 'sound/effects/hit_on_shattered_glass.ogg', 70, TRUE)
 			else
 				playsound(src.loc, 'sound/effects/glasshit.ogg', 75, TRUE)
@@ -94,8 +99,8 @@
 	if(!circuit) //no circuit, no breaking
 		return
 	. = ..()
-	if(. && !(stat & BROKEN))
-		stat |= BROKEN
+	if(. && !(machine_stat & BROKEN))
+		machine_stat |= BROKEN
 		playsound(loc, 'sound/effects/glassbr3.ogg', 100, TRUE)
 		set_light(0)
 		update_icon()
@@ -124,7 +129,7 @@
 			circuit = null
 			component_parts -= circuit
 			A.set_anchored(TRUE)
-			if(stat & BROKEN)
+			if(machine_stat & BROKEN)
 				if(user)
 					to_chat(user, "<span class='notice'>Осколки стекла высыпаются из монитора.</span>")
 				else
@@ -144,5 +149,5 @@
 
 /obj/machinery/computer/AltClick(mob/user)
 	. = ..()
-	if(!user.canUseTopic(src, !issilicon(user)) || !(stat & (NOPOWER|BROKEN)))
+	if(!user.canUseTopic(src, !issilicon(user)) || !(machine_stat & (NOPOWER|BROKEN)))
 		return

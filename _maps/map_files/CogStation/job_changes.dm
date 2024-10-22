@@ -1,5 +1,3 @@
-#define JOB_MODIFICATION_MAP_NAME "CogStation"
-
 //Medical
 /datum/job/scientist/New()
 	..()

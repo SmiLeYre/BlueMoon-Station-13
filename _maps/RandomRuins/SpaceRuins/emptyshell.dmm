@@ -57,10 +57,6 @@
 /obj/structure/lattice,
 /turf/template_noop,
 /area/space/nearstation)
-"V" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/wall/r_wall,
-/area/ruin/unpowered)
 "W" = (
 /obj/effect/spawner/lootdrop/salvage,
 /turf/open/floor/plating,
@@ -223,8 +219,9 @@ a
 b
 a
 c
-V
 W
+c
+d
 d
 d
 g

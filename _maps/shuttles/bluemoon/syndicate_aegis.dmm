@@ -1,0 +1,3529 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ag" = (
+/obj/item/paper_bin{
+	pixel_x = -5;
+	pixel_y = 1
+	},
+/obj/machinery/light/small/directional/west,
+/obj/structure/table/reinforced,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/machinery/turretid{
+	ailock = 1;
+	control_area = "/area/shuttle/syndicate/frigate";
+	dir = 1;
+	icon_state = "control_kill";
+	lethal = 1;
+	name = "DS2 turret controls";
+	req_access_txt = 0;
+	pixel_x = -30
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"aJ" = (
+/obj/structure/table/reinforced,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"aQ" = (
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/quantumpad/fullupgrade,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"bp" = (
+/obj/machinery/button/door{
+	id = "exterior";
+	name = "Exterior lockdown";
+	pixel_x = -7;
+	pixel_y = -2
+	},
+/obj/machinery/button/door{
+	id = "shipbridge";
+	name = "Bridge lockdown";
+	pixel_x = 7;
+	pixel_y = -2
+	},
+/obj/machinery/light/small/directional/east,
+/obj/structure/table/reinforced,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"bt" = (
+/obj/effect/turf_decal/bluemoon_decals/syndicate/bottom/right,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"bw" = (
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/captain,
+/turf/open/floor/carpet/red,
+/area/shuttle/syndicate/frigate)
+"bC" = (
+/obj/machinery/light/directional/west,
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"bX" = (
+/obj/structure/closet/wall/orange{
+	name = "Chemical Closet";
+	pixel_y = 30
+	},
+/obj/item/storage/bag/chemistry,
+/obj/item/clothing/suit/toggle/labcoat/chemist,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/gloves/color/latex,
+/obj/item/clothing/gloves/color/latex,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker/large,
+/obj/item/reagent_containers/glass/beaker,
+/obj/item/reagent_containers/glass/beaker,
+/obj/structure/table,
+/obj/item/circuitboard/machine/chem_dispenser,
+/obj/item/circuitboard/machine/chem_heater,
+/obj/item/circuitboard/machine/chem_master,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"cE" = (
+/obj/effect/turf_decal/bluemoon_decals/syndicate/top/left,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"cO" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/machinery/firealarm/directional/north,
+/obj/machinery/light/directional/north,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"cQ" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/table,
+/obj/item/storage/firstaid/tactical{
+	pixel_y = 10
+	},
+/obj/item/storage/firstaid/tactical,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"dk" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 9
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/frigate)
+"dL" = (
+/obj/machinery/door/poddoor{
+	id = "ds2bridge"
+	},
+/obj/effect/spawner/structure/window/plastitanium,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"dY" = (
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_y = 5;
+	pixel_x = -5
+	},
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 5;
+	pixel_y = -5
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"ej" = (
+/obj/machinery/smartfridge/chemistry/preloaded,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"eC" = (
+/obj/effect/turf_decal/bluemoon_decals/syndicate/top/right,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"eG" = (
+/obj/machinery/vending/security/syndicate,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"eN" = (
+/obj/structure/table,
+/obj/item/storage/firstaid/tactical{
+	pixel_y = 10
+	},
+/obj/item/storage/firstaid/tactical,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"eQ" = (
+/obj/item/clothing/under/syndicate,
+/obj/item/clothing/under/syndicate/skirt,
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
+/obj/structure/closet/syndicate{
+	desc = "It's a basic storage unit.";
+	name = "uniform closet"
+	},
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/kitchen/knife/combat/survival,
+/obj/effect/mob_spawn/human/syndicate/battlecruiser,
+/obj/item/gun_voucher/syndicate,
+/obj/machinery/light/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"fb" = (
+/obj/machinery/airalarm/directional/north,
+/obj/structure/extinguisher_cabinet/directional/west,
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"fD" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/window/eastleft{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/effect/spawner/structure/window/plastitanium,
+/obj/structure/shuttle/engine/heater,
+/obj/machinery/door/poddoor{
+	id = "ds2bridge"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"fE" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"fH" = (
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate{
+	pixel_x = 8;
+	pixel_y = 8
+	},
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate{
+	pixel_x = 11;
+	pixel_y = 9
+	},
+/obj/structure/table/reinforced,
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"fI" = (
+/obj/machinery/porta_turret/syndicate,
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/frigate)
+"fJ" = (
+/obj/structure/closet/wall/orange{
+	name = "fuel locker";
+	pixel_y = 28
+	},
+/obj/item/stack/sheet/mineral/uranium/five{
+	pixel_x = 2
+	},
+/obj/item/stack/sheet/mineral/uranium/five{
+	pixel_x = 2
+	},
+/obj/item/stack/sheet/mineral/uranium/five{
+	pixel_x = 2
+	},
+/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/decal/cleanable/oil,
+/obj/effect/decal/cleanable/generic,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/shieldgen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"fL" = (
+/obj/structure/table,
+/obj/machinery/light/directional/south,
+/obj/item/storage/firstaid/tactical{
+	pixel_y = 10
+	},
+/obj/item/storage/firstaid/tactical,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"gp" = (
+/obj/machinery/light/small/directional/west{
+	brightness = 3
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"gt" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "cargo_ageis";
+	name = "Cargo Bay"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"gB" = (
+/obj/machinery/light/small/directional/west{
+	brightness = 3
+	},
+/obj/machinery/firealarm/directional/south,
+/obj/machinery/vending/security/syndicate,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"gK" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"gS" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1;
+	name = "Helm Control"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"gU" = (
+/obj/machinery/computer/security/telescreen/interrogation{
+	pixel_y = 30;
+	network = list("syndicate_frigate1");
+	name = "Syndicate Room Monitor 1"
+	},
+/obj/structure/table/reinforced,
+/obj/effect/landmark/start/nuclear_equipment,
+/obj/effect/landmark/start/nuclear_equipment,
+/obj/effect/landmark/start/nuclear_equipment,
+/obj/item/grenade/syndieminibomb,
+/obj/item/grenade/syndieminibomb,
+/obj/item/grenade/syndieminibomb,
+/obj/item/grenade/syndieminibomb,
+/obj/machinery/computer/pod/old{
+	density = 0;
+	icon = 'icons/obj/airlock_machines.dmi';
+	icon_state = "airlock_control_standby";
+	id = "syndiegun1";
+	name = "Mass Driver Controller";
+	pixel_x = 30
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"gV" = (
+/obj/structure/cable{
+	icon_state = "0-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/window{
+	dir = 1
+	},
+/obj/effect/spawner/structure/window/plastitanium,
+/obj/structure/shuttle/engine/heater,
+/obj/machinery/door/poddoor{
+	id = "ds2bridge"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"gW" = (
+/obj/machinery/door/poddoor{
+	id = "ds2bridge"
+	},
+/obj/effect/spawner/structure/window/plastitanium,
+/obj/structure/cable/yellow{
+	icon_state = "0-2"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"hf" = (
+/obj/structure/shuttle/engine/huge,
+/turf/open/floor/plating/airless,
+/area/shuttle/syndicate/frigate)
+"hw" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"hC" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	name = "Cargo Bay"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"hR" = (
+/obj/machinery/computer/operating{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"hS" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"hZ" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/table,
+/obj/item/storage/firstaid/tactical{
+	pixel_y = 10
+	},
+/obj/item/storage/firstaid/tactical,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"ic" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"it" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 9
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/frigate)
+"iv" = (
+/obj/effect/decal/cleanable/oil{
+	icon_state = "streak3"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"iH" = (
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -24;
+	pixel_y = 10
+	},
+/obj/machinery/iv_drip,
+/obj/machinery/iv_drip,
+/obj/structure/closet/crate/freezer/blood,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"iJ" = (
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"jf" = (
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"jq" = (
+/obj/machinery/camera/xray/directional/east{
+	pixel_x = -33;
+	network = list("syndicate_frigate1")
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/frigate)
+"jJ" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"jS" = (
+/obj/machinery/door/poddoor{
+	id = "chapelgun";
+	name = "Chapel Launcher Door"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"jW" = (
+/obj/machinery/computer/crew/syndie{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"kf" = (
+/obj/structure/bed,
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/item/bedsheet/medical,
+/obj/structure/curtain,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"ku" = (
+/obj/effect/landmark/observer_start,
+/obj/structure/table/reinforced,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"kU" = (
+/turf/open/floor/plating/airless,
+/area/shuttle/syndicate/frigate)
+"lw" = (
+/obj/structure/sign/warning/vacuum{
+	pixel_x = -30
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"lx" = (
+/obj/machinery/autolathe,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty{
+	pixel_x = 6
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"lN" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 9
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/frigate)
+"mb" = (
+/obj/machinery/light/directional/south,
+/obj/machinery/suit_storage_unit/syndicate,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"md" = (
+/obj/structure/extinguisher_cabinet/directional/south,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"mh" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"mp" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"mt" = (
+/obj/machinery/space_heater,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"mE" = (
+/obj/machinery/computer/communications/syndicate{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"mM" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"mQ" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"mS" = (
+/obj/machinery/light/small/directional/south,
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"mT" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 5
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/frigate)
+"ny" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"nY" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Cusodial Closet"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"og" = (
+/obj/machinery/mech_bay_recharge_port{
+	dir = 2
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"oh" = (
+/obj/machinery/computer/med_data/syndie{
+	dir = 4
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"oB" = (
+/obj/item/clipboard{
+	pixel_x = -5
+	},
+/obj/item/paper_bin/bundlenatural,
+/obj/structure/table/reinforced,
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"oJ" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/sign/warning/nosmoking{
+	pixel_y = -32
+	},
+/obj/machinery/shieldgen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"pb" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Dormitories"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"pl" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"pu" = (
+/obj/effect/turf_decal/bluemoon_decals/syndicate/top/middle,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"pT" = (
+/obj/machinery/power/terminal,
+/obj/effect/decal/cleanable/oil,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/shieldgen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"qf" = (
+/obj/machinery/sleeper/syndie{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"qm" = (
+/obj/structure/sign/directions/command{
+	dir = 1;
+	pixel_y = 8
+	},
+/obj/structure/sign/directions/security{
+	pixel_y = -3;
+	dir = 8
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/frigate)
+"qs" = (
+/obj/item/clothing/under/syndicate,
+/obj/item/clothing/under/syndicate/skirt,
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
+/obj/structure/closet/syndicate{
+	desc = "It's a basic storage unit.";
+	name = "uniform closet"
+	},
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/kitchen/knife/combat/survival,
+/obj/effect/mob_spawn/human/syndicate/battlecruiser,
+/obj/item/gun_voucher/syndicate,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"qu" = (
+/obj/structure/table,
+/obj/item/roller{
+	pixel_x = -6;
+	pixel_y = 12
+	},
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/mask/breath/medical,
+/obj/item/tank/internals/anesthetic,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"qv" = (
+/obj/machinery/computer/station_alert{
+	dir = 8
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"qy" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"qA" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/decal/cleanable/plasma,
+/obj/item/circuitboard/machine/techfab/department/service,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"qD" = (
+/obj/machinery/light/directional/east,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"qF" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 6
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/frigate)
+"rg" = (
+/obj/structure/table,
+/obj/structure/window/reinforced,
+/obj/item/storage/firstaid/toxin{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/obj/item/storage/firstaid/toxin{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/obj/item/storage/firstaid/toxin{
+	pixel_x = -4;
+	pixel_y = 5
+	},
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/firstaid/o2,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"rn" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Medbay"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"rs" = (
+/obj/machinery/camera/xray{
+	c_tag = "External View";
+	dir = 4;
+	network = list("syndicate_frigate2");
+	pixel_x = 32
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/frigate)
+"rw" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"rT" = (
+/obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/frigate,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"rW" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"sb" = (
+/obj/structure/window/plasma/reinforced/spawner/north,
+/obj/structure/cable,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plating/airless,
+/area/shuttle/syndicate/frigate)
+"ss" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/effect/decal/cleanable/plasma,
+/obj/machinery/button/door{
+	id = "engine";
+	name = "Engine shutter control";
+	pixel_y = 22;
+	pixel_x = 9;
+	req_one_access_txt = "151"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"sv" = (
+/obj/machinery/computer/shuttle/syndicate/frigate,
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"sE" = (
+/obj/structure/sign/poster/contraband/syndiemoth,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/frigate)
+"sI" = (
+/obj/vehicle/ridden/atv,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"sN" = (
+/obj/machinery/door/poddoor{
+	id = "engine_security"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"sU" = (
+/obj/machinery/sleeper/syndie{
+	dir = 8
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"te" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"tn" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"tG" = (
+/obj/machinery/portable_atmospherics/scrubber,
+/obj/effect/decal/cleanable/plasma,
+/obj/machinery/light/small/directional/north,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"tJ" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8;
+	name = "Crew Monitoring"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"uc" = (
+/obj/machinery/computer/camera_advanced/syndie,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"ue" = (
+/obj/structure/table/reinforced,
+/obj/machinery/cell_charger,
+/obj/item/stock_parts/cell/high{
+	pixel_x = 6;
+	pixel_y = 5
+	},
+/obj/item/stock_parts/cell/high,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"uy" = (
+/obj/machinery/light_switch{
+	pixel_y = 26
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"uE" = (
+/obj/effect/decal/cleanable/plasma,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/machinery/shieldgen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"vh" = (
+/obj/effect/spawner/lootdrop/mre,
+/obj/effect/spawner/lootdrop/mre,
+/obj/effect/spawner/lootdrop/mre,
+/obj/structure/closet/wall/white{
+	pixel_x = -30;
+	dir = 4
+	},
+/obj/effect/spawner/lootdrop/mre,
+/obj/effect/spawner/lootdrop/mre,
+/obj/effect/spawner/lootdrop/mre,
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"vi" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 5
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/frigate)
+"vw" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/obj/machinery/shieldgen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"vG" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/effect/decal/cleanable/plasma,
+/obj/machinery/shieldgen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"vW" = (
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/item/stack/sheet/mineral/plasma{
+	amount = 50
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"wk" = (
+/turf/template_noop,
+/area/template_noop)
+"wu" = (
+/obj/structure/closet/wall/orange{
+	name = "Engineering locker";
+	pixel_y = 30
+	},
+/obj/item/tank/internals/oxygen,
+/obj/item/extinguisher/advanced,
+/obj/item/storage/toolbox/syndicate{
+	name = "syndicate toolbox";
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/item/storage/belt/utility{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/item/storage/belt/utility{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/item/storage/belt/utility/syndicate,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/suit/hooded/wintercoat/engineering,
+/obj/item/holosign_creator/atmos,
+/obj/item/clothing/gloves/color/orange,
+/obj/item/clothing/neck/scarf/orange,
+/obj/item/clothing/glasses/hud/diagnostic/night,
+/obj/item/clothing/glasses/meson/engine/tray,
+/obj/item/clothing/gloves/color/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"wC" = (
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -8;
+	pixel_y = -24
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"wF" = (
+/obj/structure/closet/emcloset/wall{
+	pixel_y = 31
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/storage/toolbox/emergency,
+/obj/item/storage/toolbox/emergency,
+/obj/item/storage/toolbox/emergency,
+/obj/item/storage/toolbox/emergency,
+/obj/item/storage/toolbox/emergency,
+/obj/item/storage/toolbox/emergency,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"wM" = (
+/obj/structure/frame/machine,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"wQ" = (
+/obj/machinery/door/window/brigdoor/northleft{
+	dir = 4;
+	name = "Secure Med Storage"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"xf" = (
+/obj/effect/turf_decal/bluemoon_decals/syndicate/bottom/left,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"xh" = (
+/obj/structure/closet/wall{
+	dir = 1;
+	name = "Patient Clothing Closet";
+	pixel_y = -30
+	},
+/obj/item/clothing/gloves/color/white,
+/obj/item/clothing/gloves/color/white,
+/obj/item/clothing/shoes/sneakers/white,
+/obj/item/clothing/shoes/sneakers/white,
+/obj/item/clothing/under/color/jumpskirt/white,
+/obj/item/clothing/under/color/white,
+/obj/item/clothing/mask/surgical,
+/obj/item/clothing/mask/surgical,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"xq" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/effect/decal/cleanable/plasma,
+/obj/machinery/shieldgen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"xN" = (
+/obj/machinery/vending/medical/syndicate_access,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"xT" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Lead Doctor's Room";
+	req_access_txt = "19"
+	},
+/obj/effect/turf_decal/siding/wood/end,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"ya" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-1"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"yb" = (
+/obj/structure/fireaxecabinet{
+	dir = 8;
+	pixel_x = 32
+	},
+/obj/structure/table/reinforced,
+/obj/item/storage/toolbox/mechanical{
+	pixel_x = 3;
+	pixel_y = 7
+	},
+/obj/item/storage/toolbox/mechanical,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"yc" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor,
+/obj/machinery/door/airlock/hatch{
+	name = "Bridge"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"yu" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/closet/firecloset/wall{
+	pixel_y = 29
+	},
+/obj/item/storage/toolbox/emergency,
+/obj/item/storage/toolbox/emergency,
+/obj/item/storage/toolbox/emergency,
+/obj/item/storage/toolbox/emergency,
+/obj/item/storage/toolbox/emergency,
+/obj/item/storage/toolbox/emergency,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"yA" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"yX" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 6
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/frigate)
+"yZ" = (
+/obj/machinery/light/small/directional/east,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"zA" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	name = "Cargo Bay"
+	},
+/turf/open/space/basic,
+/area/shuttle/syndicate/frigate)
+"zF" = (
+/obj/structure/extinguisher_cabinet/directional/east,
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"zW" = (
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"Ae" = (
+/obj/structure/table/reinforced,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"AA" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"AI" = (
+/obj/machinery/computer/security/telescreen/interrogation{
+	pixel_y = 30;
+	name = "Syndicate Room Monitor 2";
+	network = list("syndicate_frigate2")
+	},
+/obj/structure/table/reinforced,
+/obj/effect/landmark/start/nuclear_equipment,
+/obj/effect/landmark/start/nuclear_equipment,
+/obj/effect/landmark/start/nuclear_equipment,
+/obj/item/grenade/syndieminibomb,
+/obj/item/grenade/syndieminibomb,
+/obj/item/grenade/syndieminibomb,
+/obj/item/grenade/syndieminibomb,
+/obj/machinery/computer/pod/old{
+	density = 0;
+	icon = 'icons/obj/airlock_machines.dmi';
+	icon_state = "airlock_control_standby";
+	id = "syndiegun2";
+	name = "Mass Driver Controller";
+	pixel_x = 30
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Bf" = (
+/obj/machinery/airalarm/directional/north,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"Bq" = (
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"Cc" = (
+/obj/machinery/door/poddoor{
+	dir = 4;
+	id = "cargo_ageis";
+	name = "Cargo Bay"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Ck" = (
+/obj/structure/closet/wall/white{
+	pixel_x = 30;
+	dir = 8
+	},
+/obj/effect/spawner/lootdrop/mre,
+/obj/effect/spawner/lootdrop/mre,
+/obj/effect/spawner/lootdrop/mre,
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"CC" = (
+/obj/structure/bed,
+/obj/item/bedsheet/medical,
+/obj/structure/curtain,
+/obj/structure/mirror{
+	pixel_x = -28
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"CK" = (
+/obj/machinery/shieldgen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"CM" = (
+/obj/machinery/firealarm/directional/south{
+	pixel_y = 30
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Df" = (
+/obj/item/clothing/under/syndicate,
+/obj/item/clothing/under/syndicate/skirt,
+/obj/item/storage/fancy/cigarettes/cigpack_syndicate,
+/obj/structure/closet/syndicate{
+	desc = "It's a basic storage unit.";
+	name = "uniform closet"
+	},
+/obj/item/clothing/gloves/combat,
+/obj/item/clothing/shoes/combat,
+/obj/item/kitchen/knife/combat/survival,
+/obj/machinery/airalarm/directional/south,
+/obj/effect/mob_spawn/human/syndicate/battlecruiser,
+/obj/item/gun_voucher/syndicate,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"Dj" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Produce Production"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"Dk" = (
+/obj/machinery/light/directional/north,
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"Dn" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"Do" = (
+/obj/effect/turf_decal/bluemoon_decals/syndicate/middle/left,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"Du" = (
+/obj/structure/extinguisher_cabinet/directional/west,
+/obj/machinery/suit_storage_unit/syndicate,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"Dw" = (
+/obj/machinery/suit_storage_unit/syndicate/chameleon,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"DV" = (
+/obj/machinery/light/directional/north,
+/obj/machinery/suit_storage_unit/syndicate,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"DX" = (
+/obj/structure/closet/wall/white/med{
+	name = "medical locker";
+	pixel_y = 29
+	},
+/obj/item/clothing/neck/stripedbluescarf,
+/obj/item/clothing/neck/stripedredscarf,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/suit/hooded/wintercoat/medical,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/item/wallframe/defib_mount,
+/obj/item/hypospray/mkii,
+/obj/item/clothing/mask/surgical,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/storage/firstaid/regular,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"Ez" = (
+/obj/structure/extinguisher_cabinet/directional/north,
+/obj/machinery/light_switch{
+	pixel_x = -10;
+	pixel_y = 26
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/frigate)
+"EJ" = (
+/obj/structure/window/plasma/reinforced/spawner/north,
+/turf/open/floor/plating/airless,
+/area/shuttle/syndicate/frigate)
+"EZ" = (
+/obj/machinery/mass_driver{
+	dir = 1;
+	id = "syndiegun1";
+	name = "Syndicate Driver"
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/machinery/quantumpad/fullupgrade,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Ff" = (
+/obj/machinery/porta_turret/syndicate/energy/heavy{
+	dir = 8
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/frigate)
+"Fh" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/closet/wall/orange{
+	name = "Emergency Engineering";
+	pixel_y = 30
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/item/stock_parts/cell/high,
+/obj/item/stock_parts/cell/high,
+/obj/item/grenade/chem_grenade/smart_metal_foam{
+	pixel_x = 2;
+	pixel_y = 8
+	},
+/obj/item/grenade/chem_grenade/smart_metal_foam{
+	pixel_x = 2;
+	pixel_y = 8
+	},
+/obj/item/stack/sheet/glass/fifty{
+	pixel_x = 6
+	},
+/obj/item/stack/sheet/metal/fifty,
+/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/item/circuitboard/machine/pacman,
+/obj/item/circuitboard/machine/pacman/super,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"Fj" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/sign/warning/vacuum{
+	pixel_y = 30
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"Fk" = (
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Fv" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"FB" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"FJ" = (
+/obj/machinery/door/poddoor{
+	id = "ds2bridge"
+	},
+/obj/effect/spawner/structure/window/plastitanium,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"FS" = (
+/obj/effect/decal/cleanable/oil/slippery,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"FU" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"FY" = (
+/obj/item/folder/red,
+/obj/item/folder/red{
+	pixel_x = 6;
+	pixel_y = -3
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Gc" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"Ge" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/airlock/external{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"Gy" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 5
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/frigate)
+"GH" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/light/small/directional/west,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"Ho" = (
+/obj/machinery/suit_storage_unit/syndicate,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"HP" = (
+/obj/structure/bed/dogbed,
+/obj/machinery/light/directional/south,
+/mob/living/simple_animal/pet/cat/Runtime{
+	desc = "The captains prized cat, it seems very friendly!";
+	name = "Cheri"
+	},
+/obj/item/toy/cattoy,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"HV" = (
+/obj/machinery/light/directional/west,
+/obj/machinery/button/door{
+	id = "engine_security";
+	name = "Engine shutter control";
+	pixel_x = -25;
+	req_one_access_txt = "151"
+	},
+/obj/machinery/shieldgen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"It" = (
+/obj/effect/spawner/structure/window/plastitanium,
+/obj/structure/cable/yellow,
+/obj/machinery/door/poddoor{
+	id = "engine"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Iy" = (
+/obj/machinery/door/airlock/hatch{
+	name = "Psychology Office"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"IA" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 6
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/frigate)
+"IC" = (
+/obj/machinery/airalarm/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"IW" = (
+/obj/effect/turf_decal/bluemoon_decals/syndicate/bottom/middle,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"IY" = (
+/obj/effect/turf_decal/bluemoon_decals/syndicate/middle/middle,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"Jg" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/light/directional/north,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"Ju" = (
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"JB" = (
+/obj/structure/table,
+/obj/item/stack/medical/bruise_pack{
+	pixel_x = 6
+	},
+/obj/item/stack/medical/ointment,
+/obj/item/storage/box/bodybags{
+	pixel_x = 4;
+	pixel_y = 9
+	},
+/obj/item/clothing/glasses/hud/health/prescription{
+	pixel_y = 13
+	},
+/obj/machinery/airalarm/directional/east,
+/obj/item/reagent_containers/glass/bottle/formaldehyde{
+	pixel_x = -9;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/glass/bottle/formaldehyde{
+	pixel_x = -9;
+	pixel_y = -2
+	},
+/obj/item/reagent_containers/glass/bottle/charcoal{
+	pixel_x = -7;
+	pixel_y = 9
+	},
+/obj/item/reagent_containers/glass/bottle/charcoal{
+	pixel_x = -7;
+	pixel_y = 9
+	},
+/obj/item/storage/belt/medical{
+	pixel_x = 5;
+	pixel_y = 7
+	},
+/obj/item/storage/belt/medical{
+	pixel_x = 5;
+	pixel_y = 7
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"JI" = (
+/obj/structure/closet/wall/white/med{
+	name = "medical locker";
+	pixel_y = 29
+	},
+/obj/item/clothing/neck/stripedbluescarf,
+/obj/item/clothing/neck/stripedredscarf,
+/obj/item/clothing/shoes/laceup,
+/obj/item/clothing/suit/hooded/wintercoat/medical,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/item/wallframe/defib_mount,
+/obj/item/defibrillator/loaded,
+/obj/item/clothing/mask/surgical,
+/obj/item/storage/backpack/duffelbag/med/surgery,
+/obj/item/clothing/glasses/hud/health,
+/obj/item/storage/firstaid/regular,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"Ko" = (
+/obj/machinery/portable_atmospherics/canister/air,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"KG" = (
+/obj/structure/table,
+/obj/item/storage/box/gum/happiness{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/obj/machinery/light/small/directional/north,
+/obj/item/storage/pill_bottle/psicodine{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"KM" = (
+/obj/machinery/door/window/brigdoor/northright{
+	dir = 4;
+	name = "Secure Med Storage"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"KR" = (
+/obj/structure/closet/crate,
+/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/spawner/lootdrop/maintenance/three,
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"KS" = (
+/obj/effect/spawner/structure/window/plastitanium,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Lb" = (
+/obj/machinery/power/port_gen/pacman/super{
+	anchored = 1
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/item/stack/sheet/mineral/uranium{
+	amount = 50
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"Lc" = (
+/obj/item/paper_bin{
+	pixel_x = 5;
+	pixel_y = 1
+	},
+/obj/item/stamp/syndicate,
+/obj/item/stamp/captain{
+	pixel_x = 9
+	},
+/obj/item/pen/red{
+	pixel_x = 2;
+	pixel_y = 1
+	},
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Ld" = (
+/obj/structure/closet/wall/orange{
+	name = "Engineering locker";
+	pixel_y = 30
+	},
+/obj/item/clothing/suit/space/syndicate/black/engie,
+/obj/item/clothing/head/helmet/space/syndicate/black/engie,
+/obj/item/tank/internals/oxygen,
+/obj/item/extinguisher/advanced,
+/obj/item/storage/toolbox/syndicate{
+	name = "syndicate toolbox";
+	pixel_x = -3;
+	pixel_y = 5
+	},
+/obj/item/storage/belt/utility{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/item/storage/belt/utility{
+	pixel_x = 3;
+	pixel_y = 5
+	},
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/suit/hooded/wintercoat/engineering,
+/obj/item/holosign_creator/atmos,
+/obj/item/clothing/gloves/color/orange,
+/obj/item/clothing/neck/scarf/orange,
+/obj/item/clothing/glasses/hud/diagnostic/night,
+/obj/item/clothing/glasses/meson/engine/tray,
+/obj/item/clothing/gloves/color/yellow,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/shieldgen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"Lt" = (
+/obj/effect/turf_decal/bluemoon_decals/syndicate/middle/right,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"Lu" = (
+/obj/machinery/light/directional/south,
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/assault{
+	dir = 1
+	},
+/obj/structure/closet/syndicate{
+	desc = "It's a basic storage unit.";
+	name = "uniform closet"
+	},
+/obj/item/gun_voucher/syndicate,
+/turf/open/floor/carpet/red,
+/area/shuttle/syndicate/frigate)
+"LN" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/airalarm/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"Mb" = (
+/obj/machinery/portable_atmospherics/canister/air,
+/obj/effect/decal/cleanable/generic,
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"Mc" = (
+/obj/machinery/light/directional/east,
+/obj/structure/table/optable,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"Mv" = (
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/frigate)
+"Mz" = (
+/obj/item/scalpel/advanced,
+/obj/item/retractor/advanced,
+/obj/item/surgicaldrill/advanced,
+/obj/item/healthanalyzer/advanced,
+/obj/item/clothing/glasses/hud/health/sunglasses,
+/obj/item/clothing/shoes/combat,
+/obj/item/clothing/neck/stripedredscarf,
+/obj/item/clothing/neck/stripedbluescarf,
+/obj/item/clothing/neck/tie/blue,
+/obj/item/clothing/head/beret/black,
+/obj/item/clothing/under/syndicate/sniper,
+/obj/item/reagent_containers/food/drinks/bottle/holywater,
+/obj/item/clothing/gloves/color/latex/nitrile,
+/obj/item/clothing/glasses/hud/health/night,
+/obj/item/hypospray/mkii/CMO,
+/obj/item/storage/belt/military/assault,
+/obj/effect/mob_spawn/human/syndicate/battlecruiser,
+/obj/item/gun_voucher/syndicate,
+/obj/structure/closet/wall/red{
+	name = "Uniform Closet";
+	pixel_y = 31
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"MP" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"MV" = (
+/obj/machinery/mass_driver{
+	dir = 1;
+	id = "syndiegun2";
+	name = "Syndicate Driver"
+	},
+/obj/structure/railing{
+	dir = 8
+	},
+/obj/machinery/quantumpad/fullupgrade,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Nd" = (
+/obj/structure/closet/wall/red{
+	name = "Uniform Closet";
+	pixel_y = 31
+	},
+/obj/item/clothing/under/syndicate/maid,
+/obj/item/storage/belt/janitor/ert_maid,
+/obj/item/clothing/head/maid/syndicate,
+/obj/item/clothing/gloves/combat/maid,
+/obj/item/storage/bag/trash,
+/obj/item/soap/syndie,
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_x = 4;
+	pixel_y = 5
+	},
+/obj/item/grenade/chem_grenade/cleaner{
+	pixel_x = -7;
+	pixel_y = 9
+	},
+/obj/item/grenade/chem_grenade/cleaner{
+	pixel_x = -7;
+	pixel_y = 9
+	},
+/obj/effect/mob_spawn/human/syndicate/battlecruiser,
+/obj/item/gun_voucher/syndicate,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"Nv" = (
+/obj/structure/cable/yellow{
+	icon_state = "2-8"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"NB" = (
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"NM" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"NQ" = (
+/obj/machinery/button/door{
+	id = "cargo_ageis";
+	name = "cargobay doors";
+	pixel_x = -30;
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"NS" = (
+/obj/machinery/light/small/directional/east,
+/obj/machinery/airalarm/directional/east,
+/obj/machinery/vending/security/syndicate,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"OQ" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 10
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/frigate)
+"OS" = (
+/obj/vehicle/sealed/mecha/combat/gygax/dark/loaded,
+/turf/open/floor/mech_bay_recharge_floor,
+/area/shuttle/syndicate/frigate)
+"Pe" = (
+/obj/machinery/light/small/directional/west,
+/obj/machinery/mech_bay_recharge_port{
+	dir = 2
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Pq" = (
+/obj/machinery/light/directional/east,
+/obj/structure/table/reinforced,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"PE" = (
+/obj/effect/mob_spawn/human/syndicate/battlecruiser/assault{
+	dir = 1
+	},
+/obj/structure/closet/syndicate{
+	desc = "It's a basic storage unit.";
+	name = "uniform closet"
+	},
+/obj/item/gun_voucher/syndicate,
+/turf/open/floor/carpet/red,
+/area/shuttle/syndicate/frigate)
+"PM" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4;
+	name = "Outpost Monitoring"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"PX" = (
+/obj/machinery/power/smes/engineering,
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/light/small/directional/south,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"Qd" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"QI" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "Engineering"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"QV" = (
+/turf/closed/wall/r_wall/syndicate,
+/area/shuttle/syndicate/frigate)
+"Rg" = (
+/obj/machinery/light/directional/north,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"RF" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"RL" = (
+/obj/structure/sign/directions/medical{
+	dir = 4;
+	pixel_y = -3
+	},
+/obj/structure/sign/directions/engineering{
+	pixel_y = 8
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/frigate)
+"RS" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/hatch{
+	name = "Psychology Office"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"Sx" = (
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"SW" = (
+/obj/machinery/light/small/directional/south,
+/obj/structure/table/reinforced,
+/obj/effect/landmark/start/nuclear_equipment,
+/obj/effect/landmark/start/nuclear_equipment,
+/obj/effect/landmark/start/nuclear_equipment,
+/obj/item/grenade/syndieminibomb,
+/obj/item/grenade/syndieminibomb,
+/obj/item/grenade/syndieminibomb,
+/obj/item/grenade/syndieminibomb,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"To" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/machinery/light/directional/west,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"Tt" = (
+/obj/structure/table,
+/obj/structure/window/reinforced{
+	dir = 1
+	},
+/obj/machinery/light/directional/east,
+/obj/item/defibrillator/compact/combat{
+	pixel_x = 5;
+	pixel_y = -5
+	},
+/obj/item/defibrillator/compact/combat{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/obj/item/defibrillator/compact/combat,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"TE" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	name = "Produce Production"
+	},
+/obj/machinery/door/firedoor,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"TL" = (
+/obj/effect/decal/cleanable/oil,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/machinery/shieldgen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"Us" = (
+/obj/machinery/light/directional/south,
+/obj/item/kirbyplants/random,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Uu" = (
+/obj/machinery/light/small/directional/south,
+/obj/structure/table/reinforced,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"UE" = (
+/obj/vehicle/sealed/mecha/combat/marauder/mauler/loaded,
+/turf/open/floor/mech_bay_recharge_floor,
+/area/shuttle/syndicate/frigate)
+"UH" = (
+/obj/machinery/door/airlock/hatch{
+	dir = 4;
+	name = "Medbay"
+	},
+/obj/machinery/door/firedoor,
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"UI" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"UN" = (
+/obj/structure/sign/warning/nosmoking{
+	pixel_y = -32
+	},
+/obj/item/mop,
+/obj/item/reagent_containers/glass/bucket,
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"UP" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/obj/effect/turf_decal/vg_decals/department/med,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"Vq" = (
+/obj/machinery/vending/medical/syndicate_access,
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Vz" = (
+/obj/machinery/power/terminal,
+/obj/structure/cable/yellow{
+	icon_state = "0-8"
+	},
+/obj/machinery/shieldgen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"VA" = (
+/obj/machinery/door/window/eastleft{
+	dir = 1;
+	name = "Engine Access"
+	},
+/obj/machinery/atmospherics/components/unary/shuttle/heater{
+	dir = 1
+	},
+/obj/effect/spawner/structure/window/plastitanium,
+/obj/structure/shuttle/engine/heater,
+/obj/machinery/door/poddoor{
+	id = "ds2bridge"
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"VU" = (
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = -8;
+	pixel_y = -24
+	},
+/obj/machinery/firealarm/directional/west,
+/obj/machinery/light/directional/west,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Wb" = (
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Wd" = (
+/obj/machinery/vending/wallmed{
+	pixel_y = 30
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Wy" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"WC" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 10
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/frigate)
+"WQ" = (
+/obj/machinery/quantumpad/fullupgrade,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Xb" = (
+/obj/structure/extinguisher_cabinet/directional/east,
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"Xs" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/obj/structure/cable/yellow{
+	icon_state = "2-4"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"XB" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/shuttle/syndicate/frigate)
+"XZ" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/frigate)
+"Yd" = (
+/obj/machinery/firealarm/directional/south,
+/obj/machinery/sleeper/syndie{
+	dir = 4
+	},
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"YW" = (
+/obj/machinery/porta_turret/syndicate/energy{
+	dir = 5
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/shuttle/syndicate/frigate)
+"Zg" = (
+/obj/structure/cable/yellow{
+	icon_state = "1-8"
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/obj/structure/cable/yellow{
+	icon_state = "1-4"
+	},
+/obj/structure/cable/yellow{
+	icon_state = "1-2"
+	},
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"Zj" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 10
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/frigate)
+"Zu" = (
+/obj/structure/closet/wall/red{
+	dir = 8;
+	name = "Captain's Locker";
+	pixel_x = 30
+	},
+/obj/item/storage/belt/sabre,
+/obj/item/clothing/glasses/hud/security/sunglasses,
+/obj/item/clothing/under/syndicate/combat,
+/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
+/obj/item/clothing/head/HoS/syndicate,
+/obj/item/clothing/head/HoS/beret/syndicate,
+/obj/item/gun_voucher/syndicate,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"Zy" = (
+/obj/structure/table/reinforced,
+/obj/item/mop/advanced,
+/obj/item/mop/advanced{
+	pixel_y = -5;
+	pixel_x = 5
+	},
+/obj/item/mop/advanced{
+	pixel_x = -5;
+	pixel_y = 5
+	},
+/turf/open/floor/mineral/plastitanium/red{
+	icon_state = "plastitanium"
+	},
+/area/shuttle/syndicate/frigate)
+"ZD" = (
+/obj/structure/cable/yellow{
+	icon_state = "0-4"
+	},
+/obj/machinery/space_heater,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"ZI" = (
+/obj/machinery/porta_turret/syndicate/energy/heavy{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/syndicate/frigate)
+"ZJ" = (
+/obj/effect/decal/cleanable/plasma,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"ZS" = (
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/shieldgen,
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+"ZU" = (
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/suit_storage_unit/syndicate,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/syndicate/frigate)
+"ZW" = (
+/turf/open/floor/iron/dark/textured,
+/area/shuttle/syndicate/frigate)
+
+(1,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+"}
+(2,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+lN
+XZ
+XZ
+XZ
+XZ
+XZ
+gt
+gt
+Cc
+Cc
+XZ
+XZ
+XZ
+XZ
+OQ
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+"}
+(3,1,1) = {"
+wk
+wk
+wk
+it
+Mv
+Mv
+Mv
+XZ
+XZ
+ZU
+iJ
+Ho
+jf
+NQ
+iJ
+iJ
+iJ
+jf
+Ho
+lw
+Du
+XZ
+XZ
+XZ
+XZ
+OQ
+wk
+wk
+wk
+wk
+wk
+wk
+"}
+(4,1,1) = {"
+wk
+wk
+wk
+Mv
+og
+UE
+og
+UE
+sE
+DV
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+mb
+XZ
+Nd
+Bq
+qs
+XZ
+Mv
+Zj
+wk
+wk
+wk
+wk
+"}
+(5,1,1) = {"
+wk
+wk
+Mv
+Mv
+Fk
+Ju
+Ju
+Ju
+XZ
+Ho
+iJ
+Ho
+sI
+sI
+iJ
+iJ
+sI
+sI
+Ho
+iJ
+Ho
+XZ
+Mz
+iJ
+qs
+XZ
+zW
+XZ
+Mv
+wk
+wk
+wk
+"}
+(6,1,1) = {"
+wk
+Mv
+XZ
+XZ
+Ju
+Ju
+Ju
+Ju
+XZ
+Ez
+XZ
+XZ
+XZ
+XZ
+zA
+hC
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
+uy
+iJ
+qs
+XZ
+tG
+qA
+XZ
+Mv
+wk
+wk
+"}
+(7,1,1) = {"
+lN
+XZ
+XZ
+XZ
+Ju
+Ju
+Ju
+Ju
+Ju
+pb
+MP
+hS
+hS
+GH
+pl
+pl
+GH
+pl
+pl
+FU
+te
+XZ
+IC
+iJ
+qs
+XZ
+mt
+KR
+Wy
+XZ
+wk
+wk
+"}
+(8,1,1) = {"
+XZ
+RF
+Ju
+XZ
+WQ
+Ju
+qD
+Xb
+wC
+XZ
+FJ
+FJ
+FJ
+XZ
+te
+te
+te
+te
+te
+Gc
+te
+Dj
+iJ
+iJ
+eQ
+XZ
+XZ
+sN
+sN
+XZ
+WC
+wk
+"}
+(9,1,1) = {"
+jS
+rW
+EZ
+XZ
+gU
+SW
+XZ
+XZ
+XZ
+Mv
+wk
+wk
+wk
+Mv
+Mv
+XZ
+XZ
+yZ
+te
+Gc
+te
+KS
+rw
+iJ
+Df
+XZ
+HV
+ZW
+pT
+fD
+sb
+hf
+"}
+(10,1,1) = {"
+XZ
+Ju
+XZ
+XZ
+Mv
+XZ
+ZI
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+mT
+XZ
+te
+Gc
+te
+KS
+rw
+iJ
+qs
+XZ
+vw
+UI
+uE
+VA
+EJ
+kU
+"}
+(11,1,1) = {"
+Gy
+jq
+XZ
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+Mv
+XZ
+Jg
+te
+KS
+Pq
+iJ
+qs
+XZ
+fJ
+ZW
+Vz
+fD
+sb
+kU
+"}
+(12,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+XZ
+Fv
+te
+XZ
+XZ
+TE
+XZ
+XZ
+Ld
+ZW
+UN
+XZ
+XZ
+wk
+"}
+(13,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+Mv
+dL
+dL
+dL
+Mv
+wk
+wk
+wk
+wk
+XZ
+Gc
+te
+te
+vh
+te
+gB
+XZ
+wu
+yb
+mt
+Mb
+XZ
+wk
+"}
+(14,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+fI
+XZ
+fH
+jW
+oh
+XZ
+Mv
+wk
+Mv
+Mv
+qm
+Gc
+te
+te
+te
+te
+eG
+XZ
+ny
+XZ
+XZ
+XZ
+XZ
+fI
+"}
+(15,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+gW
+ag
+Ju
+tJ
+mQ
+HP
+XZ
+Mv
+XZ
+fb
+bC
+Gc
+te
+te
+te
+te
+eG
+XZ
+Bf
+vW
+Lb
+hw
+PX
+XZ
+"}
+(16,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+gW
+rT
+Ju
+FY
+aJ
+Ju
+XZ
+te
+te
+te
+te
+Gc
+cE
+Do
+xf
+te
+RF
+XZ
+wF
+iv
+mp
+ya
+ic
+It
+"}
+(17,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+gW
+sv
+gS
+ku
+oB
+jJ
+yc
+pl
+pl
+pl
+pl
+Qd
+pu
+IY
+IW
+te
+Uu
+XZ
+ss
+UI
+UI
+UI
+Zg
+It
+"}
+(18,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+gW
+uc
+Ju
+Lc
+aJ
+NB
+XZ
+te
+te
+te
+te
+Gc
+eC
+Lt
+bt
+te
+RF
+XZ
+yu
+ZJ
+FS
+ZW
+tn
+It
+"}
+(19,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+gW
+bp
+Ju
+PM
+mQ
+Us
+XZ
+Mv
+XZ
+zF
+Sx
+Gc
+te
+te
+te
+te
+eG
+XZ
+ny
+lx
+wM
+ZW
+mS
+Mv
+"}
+(20,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+fI
+XZ
+Ae
+mE
+qv
+XZ
+Mv
+wk
+Mv
+Mv
+RL
+Gc
+te
+te
+te
+te
+eG
+XZ
+ny
+XZ
+XZ
+XZ
+XZ
+fI
+"}
+(21,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+Mv
+FJ
+FJ
+FJ
+Mv
+wk
+wk
+wk
+wk
+XZ
+Gc
+te
+te
+Ck
+te
+NS
+XZ
+Fh
+ue
+ZD
+Ko
+XZ
+wk
+"}
+(22,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+XZ
+Fv
+te
+XZ
+XZ
+Iy
+XZ
+XZ
+Xs
+fE
+oJ
+XZ
+XZ
+wk
+"}
+(23,1,1) = {"
+dk
+rs
+XZ
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+Mv
+XZ
+cO
+pl
+RS
+To
+Dn
+LN
+QI
+gK
+ZW
+vG
+gV
+sb
+hf
+"}
+(24,1,1) = {"
+XZ
+Ju
+XZ
+XZ
+XZ
+XZ
+Ff
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+it
+XZ
+te
+Gc
+te
+XZ
+rw
+iJ
+Dw
+XZ
+Fj
+UI
+TL
+VA
+EJ
+kU
+"}
+(25,1,1) = {"
+jS
+rW
+MV
+XZ
+Pe
+OS
+XZ
+XZ
+XZ
+Mv
+wk
+wk
+wk
+Mv
+XZ
+XZ
+XZ
+te
+MP
+XB
+te
+XZ
+rw
+iJ
+Dw
+XZ
+Rg
+ZW
+xq
+fD
+sb
+kU
+"}
+(26,1,1) = {"
+XZ
+RF
+Ju
+XZ
+aQ
+Ju
+nY
+Wb
+VU
+XZ
+dL
+dL
+dL
+XZ
+KG
+CC
+XZ
+MP
+XB
+te
+te
+XZ
+rw
+iJ
+Dw
+XZ
+ny
+ZW
+CK
+XZ
+yX
+wk
+"}
+(27,1,1) = {"
+vi
+XZ
+XZ
+XZ
+AI
+SW
+XZ
+bX
+Ju
+eN
+hZ
+cQ
+Vq
+Mv
+kf
+xh
+XZ
+UH
+XZ
+XZ
+XZ
+XZ
+Dk
+iJ
+PE
+XZ
+qy
+XZ
+ZS
+XZ
+wk
+wk
+"}
+(28,1,1) = {"
+wk
+Mv
+XZ
+XZ
+XZ
+XZ
+XZ
+CM
+Ju
+Ju
+Ju
+mQ
+fL
+Mv
+ej
+iJ
+qu
+NM
+iH
+qf
+Yd
+XZ
+Dw
+iJ
+PE
+XZ
+ny
+XZ
+XZ
+Mv
+wk
+wk
+"}
+(29,1,1) = {"
+wk
+wk
+Mv
+Mv
+Zy
+gp
+XZ
+Wd
+Ju
+Ju
+Ju
+mQ
+eN
+Mv
+JI
+Dn
+UP
+yA
+iJ
+iJ
+md
+XZ
+Dw
+iJ
+Lu
+XZ
+mM
+XZ
+Mv
+wk
+wk
+wk
+"}
+(30,1,1) = {"
+wk
+wk
+wk
+Mv
+dY
+mh
+xT
+Ju
+wQ
+KM
+Ju
+mQ
+eN
+Mv
+DX
+iJ
+iJ
+iJ
+iJ
+iJ
+iJ
+XZ
+bw
+Zu
+PE
+XZ
+Ge
+IA
+wk
+wk
+wk
+wk
+"}
+(31,1,1) = {"
+wk
+wk
+wk
+mT
+XZ
+XZ
+XZ
+XZ
+Tt
+rg
+AA
+Nv
+FB
+rn
+yA
+iJ
+xN
+JB
+Mc
+hR
+sU
+XZ
+XZ
+XZ
+XZ
+qF
+wk
+wk
+wk
+wk
+wk
+wk
+"}
+(32,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+YW
+XZ
+XZ
+FJ
+FJ
+FJ
+XZ
+QV
+XZ
+XZ
+XZ
+XZ
+XZ
+XZ
+qF
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+"}
+(33,1,1) = {"
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+wk
+"}

@@ -82,6 +82,7 @@ Has a version for organic people and robotic/synthetic ones, considering robotic
 	var/purged = target.getToxLoss(TOX_SYSCORRUPT)
 	target.setToxLoss(0, toxins_type = TOX_SYSCORRUPT)
 	target.radiation = 0 // BLUEMOON ADD - т.к. у них не процессятся реагенты, пока нет возможности вывести радиацию кроме как этой операцией
+	target.drunkenness = 0 // BLUEMOON ADD - радикальное отрезвление синтетиков
 	target.Unconscious(round(purged * 0.2, 1))
 	return TRUE
 

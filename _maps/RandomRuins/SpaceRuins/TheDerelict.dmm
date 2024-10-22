@@ -584,10 +584,6 @@
 "bU" = (
 /obj/structure/rack,
 /obj/item/circuitboard/machine/autolathe,
-/obj/item/circuitboard/machine/protolathe{
-	pixel_x = -5;
-	pixel_y = -3
-	},
 /turf/open/floor/plasteel,
 /area/ruin/space/derelict/bridge/ai_upload)
 "bV" = (
@@ -4161,7 +4157,7 @@
 	dir = 2;
 	dwidth = 11;
 	height = 22;
-	id = "whiteship_z4";
+	shuttle_id = "whiteship_z4";
 	name = "KSS13: Derelict";
 	width = 35
 	},

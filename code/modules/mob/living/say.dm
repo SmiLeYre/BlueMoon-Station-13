@@ -15,7 +15,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	RADIO_KEY_SECURITY = RADIO_CHANNEL_SECURITY,
 	RADIO_KEY_SUPPLY = RADIO_CHANNEL_SUPPLY,
 	RADIO_KEY_SERVICE = RADIO_CHANNEL_SERVICE,
-
+	RADIO_KEY_LAW = RADIO_CHANNEL_LAW,
 	// Faction
 	RADIO_KEY_SYNDICATE = RADIO_CHANNEL_SYNDICATE,
 	RADIO_KEY_CENTCOM = RADIO_CHANNEL_CENTCOM,
@@ -53,7 +53,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	"ы" = RADIO_CHANNEL_SECURITY,
 	"г" = RADIO_CHANNEL_SUPPLY,
 	"м" = RADIO_CHANNEL_SERVICE,
-
+	"д" = RADIO_CHANNEL_LAW,
 	// Faction
 	"е" = RADIO_CHANNEL_SYNDICATE,
 	"н" = RADIO_CHANNEL_CENTCOM,
@@ -91,7 +91,8 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 /mob/living/say(message, bubble_type,var/list/spans = list(), sanitize = TRUE, datum/language/language = null, ignore_spam = FALSE, forced = null)
 	set waitfor = FALSE
-	var/static/list/crit_allowed_modes = list(MODE_WHISPER = TRUE, MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)
+	// Данные режимы обходят проверку на крит и не превращаются в разговор "на последнем вздохе"
+	var/static/list/special_crit_modes = list(MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)  // BLUEMOON EDIT - правки last breath'а
 	var/static/list/unconscious_allowed_modes = list(MODE_CHANGELING = TRUE, MODE_ALIEN = TRUE)
 	var/talk_key = get_key(message)
 
@@ -118,6 +119,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	var/message_mode = get_message_mode(message)
 	var/original_message = message
 	var/in_critical = InCritical()
+	var/fullcrit = InFullCritical() // BLUEMOON EDIT - правки last breath'а
 
 	if(one_character_prefix[message_mode])
 		message = copytext_char(message, 2)
@@ -143,10 +145,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(check_emote(original_message) || !can_speak_basic(original_message, ignore_spam))
 		return
 
-	if(in_critical)
-		if(!(crit_allowed_modes[message_mode]))
-			return
-	else if(stat == UNCONSCIOUS)
+	else if(stat == UNCONSCIOUS && !fullcrit) // BLUEMOON EDIT - правки last breath'а
 		if(!(unconscious_allowed_modes[message_mode]))
 			return
 
@@ -179,12 +178,15 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 	var/succumbed = FALSE
 
-	var/fullcrit = InFullCritical()
-	if((InCritical() && !fullcrit) || message_mode == MODE_WHISPER)
-		message_range = 1
+	// BLUEMOON EDIT START - правки last breath'а
+	if(in_critical && !special_crit_modes[message_mode])
+		message_range = 2
 		message_mode = MODE_WHISPER
 		src.log_talk(message, LOG_WHISPER)
 		if(fullcrit)
+			var/confirm = alert(src, "You are in full crit and can't talk, but you can whisper it in your last breath and succumb to death. Proceed?", "Last Breath", "Yes", "Cancel")
+			if(!confirm || confirm == "Cancel")
+				return
 			var/health_diff = round(-HEALTH_THRESHOLD_DEAD + health)
 			// If we cut our message short, abruptly end it with a-..
 			var/message_len = length_char(message)
@@ -192,6 +194,11 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			message = Ellipsis(message, 10, 1)
 			message_mode = MODE_WHISPER_CRIT
 			succumbed = TRUE
+	// BLUEMOON EDIT END
+	else if(message_mode == MODE_WHISPER)
+		message_range = 1
+		message_mode = MODE_WHISPER
+		src.log_talk(message, LOG_WHISPER)
 	else
 		src.log_talk(message, LOG_SAY, forced_by=forced)
 
@@ -227,7 +234,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(radio_return & REDUCE_RANGE)
 		message_range = 1
 	if(radio_return & NOPASS)
-		return 1
+		return TRUE
 
 	//No screams in space, unless you're next to someone.
 	var/turf/T = get_turf(src)
@@ -245,7 +252,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		succumb()
 		to_chat(src, compose_message(src, language, message, null, spans, message_mode))
 
-	return 1
+	return TRUE
 
 /mob/living/compose_message(atom/movable/speaker, datum/language/message_language, raw_message, radio_freq, list/spans, message_mode, face_name = FALSE, atom/movable/source)
 	. = ..()
@@ -327,7 +334,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			speech_bubble_recipients.Add(M.client)
 	var/image/I = image('icons/mob/talk.dmi', src, "[bubble_type][say_test(message)]", FLY_LAYER)
 	I.appearance_flags = APPEARANCE_UI_IGNORE_ALPHA
-	INVOKE_ASYNC(GLOBAL_PROC, /.proc/flick_overlay, I, speech_bubble_recipients, 30)
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(flick_overlay), I, speech_bubble_recipients, 30)
 
 	//Listening gets trimmed here if a vocal bark's present. If anyone ever makes this proc return listening, make sure to instead initialize a copy of listening in here to avoid wonkiness
 	if(SEND_SIGNAL(src, COMSIG_MOVABLE_QUEUE_BARK, listening, args) || vocal_bark || vocal_bark_id)
@@ -342,7 +349,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 		for(var/i in 1 to barks)
 			if(total_delay > BARK_MAX_TIME)
 				break
-			addtimer(CALLBACK(src, /atom/movable/proc/bark, listening, (message_range * (is_yell ? 4 : 1)), (vocal_volume * (is_yell ? 1.5 : 1)), BARK_DO_VARY(vocal_pitch, vocal_pitch_range), vocal_current_bark), total_delay)
+			addtimer(CALLBACK(src, TYPE_PROC_REF(/atom/movable, bark), listening, (message_range * (is_yell ? 4 : 1)), (vocal_volume * (is_yell ? 1.5 : 1)), BARK_DO_VARY(vocal_pitch, vocal_pitch_range), vocal_current_bark), total_delay)
 			total_delay += rand(DS2TICKS(vocal_speed / BARK_SPEED_BASELINE), DS2TICKS(vocal_speed / BARK_SPEED_BASELINE) + DS2TICKS((vocal_speed / BARK_SPEED_BASELINE) * (is_yell ? 0.5 : 1))) TICKS
 
 
@@ -377,17 +384,17 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 
 /mob/living/can_speak(message) //For use outside of Say()
 	if(can_speak_basic(message) && can_speak_vocal(message))
-		return 1
+		return TRUE
 
 /mob/living/proc/can_speak_basic(message, ignore_spam = FALSE) //Check BEFORE handling of xeno and ling channels
 	if(client)
 		if(client.prefs.muted & MUTE_IC)
 			to_chat(src, "<span class='danger'>You cannot speak in IC (muted).</span>")
-			return 0
-		if(!ignore_spam && client.handle_spam_prevention(message, MUTE_IC))
-			return 0
+			return FALSE
+		if(!ignore_spam && client.handle_spam_prevention(message,MUTE_IC))
+			return FALSE
 
-	return 1
+	return TRUE
 
 /mob/living/proc/can_speak_vocal(message) //Check AFTER handling of xeno and ling channels
 	var/obj/item/bodypart/leftarm = get_bodypart(BODY_ZONE_L_ARM)
@@ -412,7 +419,6 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			return FALSE
 
 	if(is_muzzled())
-		emote("moan")
 		return FALSE
 
 	if(!IsVocal())
@@ -448,14 +454,26 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	if(HAS_TRAIT(src, TRAIT_KARTAVII))
 		message = kartavo(message)
 
+	// BLUEMOON EDIT START - теперь синтетики заикаются более с%инт$тич!ески
 	if(derpspeech)
-		message = derpspeech(message, stuttering)
+		if (isrobotic(src))
+			message = machine_slur(message, FALSE, stuttering)
+		else
+			message = derpspeech(message, stuttering)
 
 	if(stuttering)
-		message = stutter(message)
+		if (isrobotic(src))
+			message = machine_slur(message, FALSE, 30)
+		else
+			message = stutter(message)
 
 	if(slurring)
-		message = slur(message,slurring)
+		if (isrobotic(src))
+			var/replace_characters = (slurring > 65)
+			message = machine_slur(message, replace_characters, slurring * 1.5)
+		else
+			message = slur(message,slurring)
+	// BLUEMOON EDIT END
 
 	if(cultslurring)
 		message = cultslur(message)
@@ -474,8 +492,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			imp.radio.talk_into(src, message, , spans, language)
 			return ITALICS | REDUCE_RANGE
 		if(message_mode == MODE_DEPARTMENT || (message_mode in GLOB.radiochannels))
-			imp.radio.talk_into(src, message, message_mode, spans, language)
-			return ITALICS | REDUCE_RANGE
+			if (imp.radio.channels[message_mode])
+				imp.radio.talk_into(src, message, message_mode, spans, language)
+				return ITALICS | REDUCE_RANGE
 
 	switch(message_mode)
 		if(MODE_WHISPER)
@@ -497,9 +516,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 			return ITALICS | REDUCE_RANGE
 
 		if(MODE_BINARY)
-			return ITALICS | REDUCE_RANGE //Does not return 0 since this is only reached by humans, not borgs or AIs.
+			return ITALICS | REDUCE_RANGE //Does not return FALSE since this is only reached by humans, not borgs or AIs.
 
-	return 0
+	return FALSE
 
 /mob/living/say_mod(input, message_mode)
 	. = ..()

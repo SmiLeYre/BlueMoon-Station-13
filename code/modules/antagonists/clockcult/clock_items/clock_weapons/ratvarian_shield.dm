@@ -11,6 +11,9 @@
 	shield_flags = SHIELD_FLAGS_DEFAULT | SHIELD_KINETIC_STRONG | SHIELD_ENERGY_WEAK
 	max_integrity = 300 //High integrity, extremely strong against melee / bullets, but still quite easy to destroy with lasers and energy
 	repair_material = /obj/item/stack/tile/brass
+	melee_block = 50 //bluemoon shange start
+	bullet_block = 60
+	laser_block = 20 //bluemoon shange end
 	var/dam_absorbed = 0
 	var/bash_mult_steps = 30
 	var/max_bash_mult = 4
@@ -25,7 +28,7 @@
 /obj/item/shield/riot/ratvarian/proc/calc_bash_mult()
 	var/bash_mult = 0
 	if(!dam_absorbed)
-		return 1
+		return TRUE
 	else
 		bash_mult += round(clamp(1 + (dam_absorbed / bash_mult_steps), 1, max_bash_mult), 0.1) //Multiplies the effect of bashes by up to [max_bash_mult], though never less than one
 		return bash_mult
@@ -41,7 +44,7 @@
 
 	if(!is_servant_of_ratvar(owner))
 		owner.visible_message("<span class='warning'>As [owner] blocks the attack with [src], [owner.ru_who()] suddenly drops it, whincing in pain! </span>", "<span class='warning'>As you block the attack with [src], it heats up tremendously, forcing you to drop it from the pain alone! </span>")
-		owner.emote("scream")
+		owner.emote("realagony")
 		playsound(src, 'sound/machines/fryer/deep_fryer_emerge.ogg', 50)
 		if(iscarbon(owner)) //Type safety for if a drone somehow got a shield (ratvar protect us)
 			var/mob/living/carbon/C = owner
@@ -49,7 +52,7 @@
 			C.apply_damage((iscultist(C) ? damage * 2 : damage), BURN, (istype(part, /obj/item/bodypart/l_arm) ? BODY_ZONE_L_ARM : BODY_ZONE_R_ARM)) //Deals the damage to the holder instead of absorbing it instead + forcedrops. Doubled if a cultist of Nar'Sie.
 		else
 			owner.adjustFireLoss(iscultist(owner) ? damage * 2 : damage)
-		addtimer(CALLBACK(owner, /mob/living.proc/dropItemToGround, src, TRUE), 1)
+		addtimer(CALLBACK(owner, TYPE_PROC_REF(/mob/living, dropItemToGround), src, TRUE), 1)
 	else if(!is_servant_of_ratvar(attacker)) //No exploiting my snowflake mechanics
 		dam_absorbed += damage
 		playsound(owner,  'sound/machines/clockcult/steam_whoosh.ogg', 30)

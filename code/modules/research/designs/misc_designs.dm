@@ -622,6 +622,16 @@
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 
+/datum/design/body_camera
+	name = "Body Camera"
+	desc = "A specialized camera to carry on your suit"
+	id = "body_camera"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 400, /datum/material/gold = 200)
+	build_path = /obj/item/clothing/accessory/bodycamera
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
 /datum/design/zipties
 	name = "Zipties"
 	desc = "Plastic, disposable zipties that can be used to restrain temporarily but are destroyed after use."
@@ -816,3 +826,85 @@
 	build_path = /obj/item/shuttle_route_optimisation/void
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
+
+// Ключи Связи для наушников.
+
+/datum/design/encryptionkey_sec
+	name = "Security Radio Encryption Key"
+	desc = "An encryption key for a radio headset!"
+	id = "encryptionkey_sec"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 100)
+	build_path = /obj/item/encryptionkey/headset_sec
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/encryptionkey_eng
+	name = "Engineering Radio Encryption Key"
+	desc = "An encryption key for a radio headset!"
+	id = "encryptionkey_eng"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 100)
+	build_path = /obj/item/encryptionkey/headset_eng
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_ENGINEERING
+
+/datum/design/encryptionkey_med
+	name = "Medical Radio Encryption Key"
+	desc = "An encryption key for a radio headset!"
+	id = "encryptionkey_med"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 100)
+	build_path = /obj/item/encryptionkey/headset_med
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/encryptionkey_medsci
+	name = "Medical Research Radio Encryption Key"
+	desc = "An encryption key for a radio headset!"
+	id = "encryptionkey_medsci"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 100)
+	build_path = /obj/item/encryptionkey/headset_medsci
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_MEDICAL
+
+/datum/design/encryptionkey_sci
+	name = "Science Radio Encryption Key"
+	desc = "An encryption key for a radio headset!"
+	id = "encryptionkey_sci"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 100)
+	build_path = /obj/item/encryptionkey/headset_sci
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+
+/datum/design/encryptionkey_cargo
+	name = "Сargo Radio Encryption Key"
+	desc = "An encryption key for a radio headset!"
+	id = "encryptionkey_cargo"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 100)
+	build_path = /obj/item/encryptionkey/headset_cargo
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
+
+/datum/design/encryptionkey_mining
+	name = "Mining Radio Encryption Key"
+	desc = "An encryption key for a radio headset!"
+	id = "encryptionkey_mining"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 100)
+	build_path = /obj/item/encryptionkey/headset_mining
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_CARGO
+
+/datum/design/encryptionkey_service
+	name = "Service Radio Encryption Key"
+	desc = "An encryption key for a radio headset!"
+	id = "encryptionkey_service"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 1000, /datum/material/glass = 100)
+	build_path = /obj/item/encryptionkey/headset_service
+	category = list("Equipment")
+	departmental_flags = DEPARTMENTAL_FLAG_SERVICE

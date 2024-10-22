@@ -1,10 +1,12 @@
 /datum/interaction/lewd/grindface
 	description = "Ножки. Потереть лицо."
 	interaction_sound = null
-	require_target_mouth = TRUE
+	required_from_user_exposed = INTERACTION_REQUIRE_FEET
+	required_from_user_unexposed = INTERACTION_REQUIRE_FEET
 	require_user_num_feet = 1
-	require_user_feet = REQUIRE_ANY
-	max_distance = 1
+	required_from_target = INTERACTION_REQUIRE_MOUTH
+	p13target_emote = PLUG13_EMOTE_FACE
+	p13target_strength = PLUG13_STRENGTH_LOW
 
 /datum/interaction/lewd/grindface/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -49,14 +51,20 @@
 						'modular_sand/sound/interactions/foot_dry4.ogg'), 70, 1, -1)
 	user.visible_message(message = span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	partner.handle_post_sex(LOW_LUST, null, user)
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(partner.loc)
 
 /datum/interaction/lewd/grindmouth
 	description = "Ножки. Углубиться в ротик."
 	interaction_sound = null
-	require_target_mouth = TRUE
+	required_from_user_exposed = INTERACTION_REQUIRE_FEET
+	required_from_user_unexposed = INTERACTION_REQUIRE_FEET
 	require_user_num_feet = 1
-	require_user_feet = REQUIRE_ANY
-	max_distance = 1
+	required_from_target = INTERACTION_REQUIRE_MOUTH
+	p13target_emote = PLUG13_EMOTE_FACE
+	p13target_strength = PLUG13_STRENGTH_LOW
 
 /datum/interaction/lewd/grindmouth/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -104,14 +112,20 @@
 						'modular_sand/sound/interactions/foot_wet3.ogg'), 70, 1, -1)
 	user.visible_message(message = span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	partner.handle_post_sex(LOW_LUST, null, user)
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(partner.loc)
 
 /datum/interaction/lewd/footjob
 	description = "Ножки. Подрочить одной ногой."
 	interaction_sound = null
+	required_from_user_exposed = INTERACTION_REQUIRE_FEET
+	required_from_user_unexposed = INTERACTION_REQUIRE_FEET
 	require_user_num_feet = 1
-	require_user_feet = REQUIRE_ANY
-	require_target_penis = REQUIRE_EXPOSED
-	max_distance = 1
+	required_from_target_exposed = INTERACTION_REQUIRE_PENIS
+	p13target_emote = PLUG13_EMOTE_PENIS
+	p13target_strength = PLUG13_STRENGTH_NORMAL
 
 /datum/interaction/lewd/footjob/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -139,6 +153,7 @@
 /datum/interaction/lewd/footjob/double
 	description = "Ножки. Подрочить двумя ногами."
 	require_user_num_feet = 2
+	p13target_strength = PLUG13_STRENGTH_NORMAL_PLUS
 
 /datum/interaction/lewd/footjob/double/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -166,8 +181,8 @@
 
 /datum/interaction/lewd/footjob/vagina
 	description = "Ножка. Потереть киску."
-	require_target_vagina = REQUIRE_EXPOSED
-	require_target_penis = null
+	required_from_target_exposed = INTERACTION_REQUIRE_VAGINA
+	p13target_emote = PLUG13_EMOTE_VAGINA
 
 /datum/interaction/lewd/footjob/vagina/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -192,3 +207,7 @@
 						'modular_sand/sound/interactions/foot_wet2.ogg'), 70, 1, -1)
 	user.visible_message(message = span_lewd("<b>\The [user]</b> [message]"), ignored_mobs = user.get_unconsenting())
 	partner.handle_post_sex(NORMAL_LUST, CUM_TARGET_FEET, user, ORGAN_SLOT_VAGINA) //SPLURT edit
+	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(user.loc)
+	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))
+		new /obj/effect/temp_visual/heart(partner.loc)

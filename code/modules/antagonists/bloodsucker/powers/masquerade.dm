@@ -16,12 +16,12 @@
 //	-
 
 
-/datum/action/bloodsucker/masquerade
+/datum/action/cooldown/bloodsucker/masquerade
 	name = "Masquerade"
-	desc = "Feign the vital signs of a mortal, and escape both casual and medical notice as the monster you truly are."
+	desc = "Имитировать жизненные особенности бытия смертных, чтобы скрыть, каким монстром на самом деле являешься."
 	button_icon_state = "power_human"
-	bloodcost = 50
-	cooldown = 200
+	bloodcost = 20 // BLUEMOON EDIT - было 50
+	cooldown_time = 200
 	amToggle = TRUE
 	bloodsucker_can_buy = TRUE
 	warn_constant_cost = TRUE
@@ -31,7 +31,7 @@
 
 // NOTE: Firing off vulgar powers disables your Masquerade!
 
-/*/datum/action/bloodsucker/masquerade/CheckCanUse(display_error)
+/*/datum/action/cooldown/bloodsucker/masquerade/CheckCanUse(display_error)
 	if(!..(display_error))// DEFAULT CHECKS
 		return FALSE
 	// DONE!
@@ -39,7 +39,7 @@
 */
 
 
-/datum/action/bloodsucker/masquerade/ActivatePower()
+/datum/action/cooldown/bloodsucker/masquerade/ActivatePower()
 
 	var/mob/living/user = owner
 	var/datum/antagonist/bloodsucker/bloodsuckerdatum = user.mind.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
@@ -53,7 +53,8 @@
 	REMOVE_TRAIT(user, TRAIT_NOHARDCRIT, "bloodsucker")
 	REMOVE_TRAIT(user, TRAIT_NOSOFTCRIT, "bloodsucker")
 	REMOVE_TRAIT(user, TRAIT_VIRUSIMMUNE, "bloodsucker")
-	REMOVE_TRAIT(user, TRAIT_NOBREATH, "bloodsucker")
+	if(!HAS_TRAIT(user, TRAIT_DEATHCOMA)) // BLUEMOON ADD если вампир в торпоре, то он не начнет задыхаться, пока маскируется под живого
+		REMOVE_TRAIT(user, TRAIT_NOBREATH, "bloodsucker")
 	var/obj/item/organ/heart/vampheart/H = user.getorganslot(ORGAN_SLOT_HEART)
 	var/obj/item/organ/eyes/vassal/bloodsucker/E = user.getorganslot(ORGAN_SLOT_EYES)
 	E.flash_protect = 0
@@ -78,14 +79,14 @@
 		sleep(20) // Check every few ticks that we haven't disabled this power
 
 
-/datum/action/bloodsucker/masquerade/ContinueActive(mob/living/user)
+/datum/action/cooldown/bloodsucker/masquerade/ContinueActive(mob/living/user)
 	// Disable if unable to use power anymore.
 	//if (user.stat == DEAD || user.blood_volume <= 0) // not conscious or soft critor uncon, just dead
 	//	return FALSE
 	return ..() // Active, and still Antag
 
 
-/datum/action/bloodsucker/masquerade/DeactivatePower(mob/living/user = owner, mob/living/target)
+/datum/action/cooldown/bloodsucker/masquerade/DeactivatePower(mob/living/user = owner, mob/living/target)
 	..() // activate = FALSE
 
 	var/datum/antagonist/bloodsucker/bloodsuckerdatum = user.mind.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)

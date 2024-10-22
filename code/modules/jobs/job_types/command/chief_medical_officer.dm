@@ -18,6 +18,7 @@
 	considered_combat_role = TRUE
 
 	outfit = /datum/outfit/job/cmo
+	departments = DEPARTMENT_BITFLAG_MEDICAL | DEPARTMENT_BITFLAG_COMMAND
 	plasma_outfit = /datum/outfit/plasmaman/cmo
 
 	access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_GENETICS, ACCESS_CLONING, ACCESS_HEADS, ACCESS_MINERAL_STOREROOM,
@@ -31,7 +32,7 @@
 	bounty_types = CIV_JOB_MED
 
 	display_order = JOB_DISPLAY_ORDER_CHIEF_MEDICAL_OFFICER
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal)
 	threat = 2
 
 	starting_modifiers = list(/datum/skill_modifier/job/surgery, /datum/skill_modifier/job/affinity/surgery)
@@ -43,6 +44,13 @@
 		/obj/item/circular_saw,
 		/obj/item/retractor,
 		/obj/item/cautery
+	)
+
+	mail_goodies = list(
+		/obj/effect/spawner/lootdrop/organ_spawner = 10,
+//		/obj/effect/spawner/lootdrop/memeorgans = 8,
+		/obj/effect/spawner/lootdrop/space/fancytool/advmedicalonly = 4,
+		/obj/effect/spawner/lootdrop/space/fancytool/raremedicalonly = 1
 	)
 
 /datum/outfit/job/cmo
@@ -58,7 +66,9 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat/cmo
 	l_hand = /obj/item/storage/firstaid/regular
 	suit_store = /obj/item/flashlight/pen/paramedic
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
+	box = /obj/item/storage/box/survival/command
+	accessory = /obj/item/clothing/accessory/permit/special/chief_medic
 
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med
@@ -88,6 +98,7 @@
 	box = /obj/item/storage/box/survival/syndie
 	pda_slot = ITEM_SLOT_BELT
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/syndicate_uplink_high=1)
+	accessory = /obj/item/clothing/accessory/permit/special/chief_medic
 
 	backpack = /obj/item/storage/backpack/medic
 	satchel = /obj/item/storage/backpack/satchel/med

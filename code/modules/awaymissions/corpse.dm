@@ -33,6 +33,7 @@
 	var/ghost_usable = TRUE
 	var/skip_reentry_check = FALSE //Skips the ghost role blacklist time for people who ghost/suicide/cryo
 	var/loadout_enabled = FALSE
+	var/can_load_appearance = FALSE
 
 ///override this to add special spawn conditions to a ghost role
 /obj/effect/mob_spawn/proc/allow_spawn(mob/user, silent = FALSE)
@@ -41,9 +42,6 @@
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/effect/mob_spawn/attack_ghost(mob/user, latejoinercalling)
 	if(!SSticker.HasRoundStarted() || !loc || !ghost_usable)
-		return
-	if(!uses)
-		to_chat(user, "<span class='warning'>This spawner is out of charges!</span>")
 		return
 	if(jobban_isbanned(user, banType))
 		to_chat(user, "<span class='warning'>You are jobanned!</span>")
@@ -59,6 +57,16 @@
 	var/ghost_role = alert(latejoinercalling ? "Latejoin as [mob_name]? (This is a ghost role, and as such, it's very likely to be off-station.)" : "Become [mob_name]? (Warning, You can no longer be cloned!)",,"Да","Нет")
 	if(ghost_role == "Нет" || !loc)
 		return
+	var/requested_char = FALSE
+	if(can_load_appearance == TRUE && ispath(mob_type, /mob/living/carbon/human)) // Can't just use if(can_load_appearance), 2 has a different behavior
+		switch(alert(user, "Желаете загрузить текущего своего выбранного персонажа?", "Play as your character!", "Yes", "No", "Actually nevermind"))
+			if("Yes")
+				requested_char = TRUE
+			if("Actually nevermind")
+				return
+	if(!uses)
+		to_chat(user, "<span class='warning'>This spawner is out of charges!</span>")
+		return
 	if(QDELETED(src) || QDELETED(user))
 		return
 	if(latejoinercalling)
@@ -66,14 +74,14 @@
 		if(istype(NP))
 			NP.close_spawn_windows()
 			NP.stop_sound_channel(CHANNEL_LOBBYMUSIC)
-	log_game("[key_name(user)] became [mob_name]")
-	create(ckey = user.ckey)
+	log_game("[key_name(user)] становится [mob_name]!")
+	create(ckey = user.ckey, load_character = requested_char)
 	return TRUE
 
 /obj/effect/mob_spawn/Initialize(mapload)
 	. = ..()
 	if(instant || (roundstart && (mapload || (SSticker && SSticker.current_state > GAME_STATE_SETTING_UP))))
-		INVOKE_ASYNC(src, .proc/create)
+		INVOKE_ASYNC(src, PROC_REF(create))
 	else if(ghost_usable)
 		GLOB.poi_list |= src
 		LAZYADD(GLOB.mob_spawners[job_description ? job_description : name], src)
@@ -96,10 +104,10 @@
 /obj/effect/mob_spawn/proc/special_post_appearance(mob/H)
 	return
 
-/obj/effect/mob_spawn/proc/equip(mob/M)
+/obj/effect/mob_spawn/proc/equip(mob/M, load_character)
 	return
 
-/obj/effect/mob_spawn/proc/create(ckey, name)
+/obj/effect/mob_spawn/proc/create(ckey, name, load_character)
 	var/mob/living/M = new mob_type(get_turf(src)) //living mobs only
 	if(!random)
 		M.real_name = mob_name ? mob_name : M.name
@@ -117,10 +125,18 @@
 	M.adjustBruteLoss(brute_damage)
 	M.adjustFireLoss(burn_damage)
 	M.color = mob_color
-	equip(M)
+	equip(M, load_character)
 
 	if(ckey)
 		M.ckey = ckey
+		if(ishuman(M) && load_character)
+			var/mob/living/carbon/human/H = M
+			if (H.client)
+				SSlanguage.AssignLanguage(H, H.client)
+				if (loadout_enabled == TRUE)
+					SSjob.equip_loadout(null, H)
+					SSjob.post_equip_loadout(null, H)
+			H.load_client_appearance(H.client)
 		//splurt change
 		if(jobban_isbanned(M, "pacifist")) //do you love repeat code? i sure do
 			to_chat(M, "<span class='cult'>You are pacification banned. Pacifist has been force applied.</span>")
@@ -135,26 +151,24 @@
 			to_chat(M, output_message)
 		var/datum/mind/MM = M.mind
 		var/datum/antagonist/A
-		if(antagonist_type)
-			A = MM.add_antag_datum(antagonist_type)
-		if(objectives)
-			if(!A)
-				A = MM.add_antag_datum(/datum/antagonist/custom)
-			for(var/objective in objectives)
-				var/datum/objective/O = new/datum/objective(objective)
-				O.owner = MM
-				A.objectives += O
+		// BLUEMOON EDIT START - правки гостролей
+		// Хэндлить у хуманов будем, собственно, у хуманов, чтобы нормально с ghost_team работать
+		if(!istype(src, /obj/effect/mob_spawn/human))
+			if(antagonist_type)
+				A = MM.add_antag_datum(antagonist_type)
+			if(objectives)
+				if(!A)
+					A = MM.add_antag_datum(/datum/antagonist/custom)
+				for(var/objective in objectives)
+					var/datum/objective/O = new/datum/objective(objective)
+					O.owner = MM
+					A.objectives += O
+		// BLUEMOON EDIT END
 		if(assignedrole)
 			M.mind.assigned_role = assignedrole
 		special(M, name)
-		if (M.client)
-			if (loadout_enabled == TRUE)
-				M.client.prefs.copy_to(M)
-				SSjob.equip_loadout(null, M)
-				SSjob.post_equip_loadout(null, M)
-				to_chat(M,"<span class='boldwarning'>В Эксту посещать станцию допустимо, в Динамику запрещено!</span>")
 		MM.name = M.real_name
-		M.checkloadappearance()
+		to_chat(M,"<span class='boldwarning'>В Эксту посещать станцию допустимо, в Динамику запрещено!</span>")
 		special_post_appearance(M, name) // BLUEMOON ADD
 	if(uses > 0)
 		uses--
@@ -164,6 +178,7 @@
 // Base version - place these on maps/templates.
 /obj/effect/mob_spawn/human
 	mob_type = /mob/living/carbon/human
+	icon_state = "corpsegreytider"
 	//Human specific stuff.
 	var/mob_species = null		//Set to make them a mutant race such as lizard or skeleton. Uses the datum typepath instead of the ID.
 	var/datum/outfit/outfit = /datum/outfit	//If this is a path, it will be instanced in Initialize()
@@ -199,12 +214,15 @@
 	var/hair_style
 	var/facial_hair_style
 	var/skin_tone
-	var/canloadappearance = FALSE
 
 	assignedrole = "Ghost Role"
 	var/datum/team/ghost_role/ghost_team
 
 	var/give_cooler_to_mob_if_synth = FALSE // BLUEMOON ADD - если персонаж - синтетик, то ему выдаётся заряженный космический охладитель. Для специальных ролей
+
+	/// set this to make the spawner use the outfit.name instead of its name var for things like cryo announcements and ghost records
+	/// modifying the actual name during the game will cause issues with the GLOB.mob_spawners associative list
+	var/use_outfit_name
 
 /obj/effect/mob_spawn/human/Initialize(mapload)
 	if(ispath(outfit))
@@ -228,32 +246,33 @@
 	. = ..()
 // BLUEMOON ADD END
 
-/obj/effect/mob_spawn/human/equip(mob/living/carbon/human/H)
-	if(mob_species)
+/obj/effect/mob_spawn/human/equip(mob/living/carbon/human/H, load_character)
+	if(!load_character && mob_species)
 		H.set_species(mob_species)
 	if(husk)
 		H.Drain()
 	else //Because for some reason I can't track down, things are getting turned into husks even if husk = false. It's in some damage proc somewhere.
 		H.cure_husk()
-	H.underwear = "Nude"
-	H.undershirt = "Nude"
-	H.socks = "Nude"
-	if(hair_style)
-		H.hair_style = hair_style
-	else
-		H.hair_style = random_hair_style(gender)
-	if(facial_hair_style)
-		H.facial_hair_style = facial_hair_style
-	else
-		H.facial_hair_style = random_facial_hair_style(gender)
-	if(skin_tone)
-		H.skin_tone = skin_tone
-		if(!GLOB.skin_tones[H.skin_tone])
-			H.dna.skin_tone_override = H.skin_tone
-	else
-		H.skin_tone = random_skin_tone()
-	H.update_hair()
-	H.update_body() //update_genitals arg FALSE because these don't quite require/have them most times.
+	if(!load_character)
+		H.underwear = "Nude"
+		H.undershirt = "Nude"
+		H.socks = "Nude"
+		if(hair_style)
+			H.hair_style = hair_style
+		else
+			H.hair_style = random_hair_style(gender)
+		if(facial_hair_style)
+			H.facial_hair_style = facial_hair_style
+		else
+			H.facial_hair_style = random_facial_hair_style(gender)
+		if(skin_tone)
+			H.skin_tone = skin_tone
+			if(!GLOB.skin_tones[H.skin_tone])
+				H.dna.skin_tone_override = H.skin_tone
+		else
+			H.skin_tone = random_skin_tone()
+		H.update_hair()
+		H.update_body() //update_genitals arg FALSE because these don't quite require/have them most times.
 	if(outfit)
 		var/static/list/slots = list("uniform", "r_hand", "l_hand", "suit", "shoes", "gloves", "ears", "glasses", "mask", "head", "belt", "r_pocket", "l_pocket", "back", "id", "neck", "backpack_contents", "suit_store")
 		for(var/slot in slots)
@@ -288,10 +307,6 @@
 			W.assignment = id_job
 		W.registered_name = H.real_name
 		W.update_label()
-	if (canloadappearance)
-		H.canloadappearance = TRUE
-	else
-		H.canloadappearance = FALSE
 
 //Instant version - use when spawning corpses during runtime
 /obj/effect/mob_spawn/human/corpse
@@ -313,16 +328,26 @@
 
 //Non-human spawners
 
-/obj/effect/mob_spawn/AICorpse/create(ckey, name) //Creates a corrupted AI
-	var/A = locate(/mob/living/silicon/ai) in loc
-	if(A)
+/obj/effect/mob_spawn/AICorpse //Creates a corrupted AI
+	mob_type = /mob/living/silicon/ai/spawned
+
+/obj/effect/mob_spawn/AICorpse/create(ckey, name, load_character)
+	var/ai_already_present = locate(/mob/living/silicon/ai) in loc
+	if(ai_already_present)
+		qdel(src)
 		return
-	var/mob/living/silicon/ai/spawned/M = new(loc) //spawn new AI at landmark as var M
-	M.name = src.name
-	M.real_name = src.name
-	M.aiPDA.toff = TRUE //turns the AI's PDA messenger off, stopping it showing up on player PDAs
-	M.death() //call the AI's death proc
-	qdel(src)
+	. = ..()
+
+// TODO: Port the upstream tgstation rewrite of this.
+/obj/effect/mob_spawn/AICorpse/equip(mob/living/silicon/ai/ai)
+	. = ..()
+	if(!isAI(ai)) // This should never happen.
+		stack_trace("[type] spawned a mob of type [ai?.type || "NULL"] that was not an AI!")
+		return
+	ai.name = name
+	ai.real_name = name
+	ai.aiPDA.toff = TRUE //turns the AI's PDA messenger off, stopping it showing up on player PDAs
+	ai.death() //call the AI's death proc
 
 /obj/effect/mob_spawn/slime
 	mob_type = 	/mob/living/simple_animal/slime
@@ -333,7 +358,7 @@
 /obj/effect/mob_spawn/slime/equip(mob/living/simple_animal/slime/S)
 	S.colour = mobcolour
 
-/obj/effect/mob_spawn/human/facehugger/create(ckey, name) //Creates a squashed facehugger
+/obj/effect/mob_spawn/human/facehugger/create(ckey, name, load_character) //Creates a squashed facehugger
 	var/obj/item/clothing/mask/facehugger/O = new(src.loc) //variable O is a new facehugger at the location of the landmark
 	O.name = src.name
 	O.Die() //call the facehugger's death proc
@@ -399,6 +424,7 @@
 	short_desc = "You are a space doctor!"
 	assignedrole = "Space Doctor"
 	job_description = "Off-station Doctor"
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/doctor/alive/equip(mob/living/carbon/human/H)
 	..()
@@ -457,7 +483,7 @@
 	flavour_text = "Время смешивать напитки и менять жизни. Курение космических наркотиков облегчает понимание странного диалекта ваших покровителей!"
 	assignedrole = "Space Bartender"
 	id_job = "Bartender"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /datum/outfit/spacebartender
 	name = "Space Bartender"
@@ -470,7 +496,7 @@
 
 /obj/effect/mob_spawn/human/beach
 	outfit = /datum/outfit/beachbum
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/beach/alive
 	death = FALSE
@@ -484,6 +510,7 @@
 	short_desc = "You're a spunky lifeguard!"
 	flavour_text = "Вы посетитель пляжа и вы уже не помните, сколько вы здесь пробыли! Какое же это приятное место."
 	assignedrole = "Beach Bum"
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/beach/alive/lifeguard
 	flavour_text = "Вы - пляжный спасатель! Присматривай за посетителями пляжа, чтобы никто не утонул, не был съеден акулами и так далее."
@@ -492,6 +519,7 @@
 	id_job = "Lifeguard"
 	job_description = "Beach Biodome Lifeguard"
 	uniform = /obj/item/clothing/under/shorts/red
+	can_load_appearance = TRUE
 
 /datum/outfit/beachbum
 	name = "Beach Bum"
@@ -572,6 +600,7 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 	short_desc = "You are a Nanotrasen Commander!"
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/nanotrasensoldier/alive
 	death = FALSE
@@ -583,7 +612,7 @@
 	icon_state = "sleeper"
 	faction = "nanotrasenprivate"
 	short_desc = "You are a Nanotrasen Private Security Officer!"
-
+	can_load_appearance = TRUE
 
 /////////////////Spooky Undead//////////////////////
 
@@ -602,6 +631,31 @@
 	short_desc = "By unknown powers, your skeletal remains have been reanimated!"
 	flavour_text = "Walk this mortal plain and terrorize all living adventurers who dare cross your path."
 	assignedrole = "Skeleton"
+
+/obj/effect/mob_spawn/human/skeleton/alive/Initialize(mapload)
+	. = ..()
+	var/arrpee = rand(1,2)
+	switch(arrpee)
+		if(1)
+			flavour_text += " You're a miner from a long since lost mining expiditon. You had been assigned to this cursed rock to preform work for a individual mining company to preform a survery of its potential gain. \
+			However, the last thing you remember is fighting for your life when you were ambushed by the local fuana with a friend of yours before it all went dark."
+			outfit.uniform = /obj/item/clothing/under/rank/cargo/miner/lavaland
+			outfit.suit = /obj/item/clothing/suit/space/hardsuit/mining
+			outfit.shoes = /obj/item/clothing/shoes/workboots/mining
+			outfit.gloves = /obj/item/clothing/gloves/fingerless
+			outfit.back = /obj/item/storage/backpack
+			outfit.mask = /obj/item/clothing/mask/gas/explorer
+			r_pocket = /obj/item/kitchen/knife/combat
+		if(2)
+			flavour_text += " You were a pirate ship captain on the hunt for a foretold treasure, from stories of cultists to a legendary pirate hiding their treasure in this hellscape! \
+			However, it sadly seems you weren't destined to collect it for when you landed here with your crew, slashing and blasting your way through the hoards of beast lurking below this abandoned facility. \
+			You had been betrayed by your own second in hand, that blasted devil tried to claim the treasure for their own, but jokes on them, they wouldn't get too far."
+			outfit.uniform = /obj/item/clothing/under/costume/pirate
+			outfit.suit = /obj/item/clothing/suit/pirate/captain
+			outfit.back = /obj/item/storage/backpack/satchel
+			outfit.shoes = /obj/item/clothing/shoes/jackboots
+			outfit.head = /obj/item/clothing/head/pirate/captain
+			r_pocket = /obj/item/melee/transforming/energy/sword/pirate
 
 /obj/effect/mob_spawn/human/zombie
 	name = "rotting corpse"
@@ -642,6 +696,7 @@
 	outfit = /datum/outfit/spacebartender
 	assignedrole = "Space Bar Patron"
 	job_description = "Space Bar Patron"
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/alive/space_bar_patron/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	var/despawn = alert("Return to cryosleep? (Warning, Your mob will be deleted!)",,"Да","Нет")

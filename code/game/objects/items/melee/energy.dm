@@ -152,8 +152,10 @@
 /obj/item/melee/transforming/energy/sword/run_block(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, final_block_chance, list/block_return)
 	if(!active)
 		return NONE
-	if(is_energy_reflectable_projectile(object) && (attack_type & ATTACK_TYPE_PROJECTILE))
+	if(is_energy_reflectable_projectile(object) && (attack_type & ATTACK_TYPE_PROJECTILE) && prob(50))
 		block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_RETURN_TO_SENDER			//no you
+		owner.visible_message("<span class='danger'>Ranged attacks just make [owner] angrier!</span>")
+		playsound(src, pick('sound/weapons/bulletflyby.ogg', 'sound/weapons/bulletflyby2.ogg', 'sound/weapons/bulletflyby3.ogg'), 75, 1)
 		return BLOCK_SHOULD_REDIRECT | BLOCK_SUCCESS | BLOCK_REDIRECTED
 	return ..()
 
@@ -308,15 +310,33 @@
 	else
 		return ..()
 
+/obj/item/melee/transforming/energy/sword/ert_min
+	name = "Low quality energy sword"
+	desc = "To serve the corp with low budget"
+	light_color = "#15a7e6"
+	possible_colors = null
+	force_on = 20
+	sword_color = "blue"
+	icon_state_on = "swordblue"
+
+/obj/item/melee/transforming/energy/sword/ert_max
+	name = "Standart energy sword"
+	desc = "To serve the corp"
+	light_color = "#2d7ea1"
+	sword_color = "blue"
+	icon_state_on = "swordblue"
+
 /obj/item/melee/transforming/energy/sword/pirate
 	name = "energy cutlass"
 	desc = "Arrrr matey."
 	icon_state = "cutlass0"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	force_on = 20
 	icon_state_on = "cutlass1"
 	light_color = "#ff0000"
 	possible_colors = null
+
 
 /obj/item/melee/transforming/energy/blade
 	name = "energy blade"

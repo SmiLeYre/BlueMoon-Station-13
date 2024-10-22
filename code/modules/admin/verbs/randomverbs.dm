@@ -256,7 +256,7 @@
 		else
 			to_chat(usr, "<span class='danger'>Error: create_xeno(): no suitable candidates.</span>")
 	if(!istext(ckey))
-		return 0
+		return FALSE
 
 	var/alien_caste = input(usr, "Please choose which caste to spawn.","Pick a caste",null) as null|anything in list("Queen","Praetorian","Hunter","Sentinel","Drone","Larva")
 	var/obj/effect/landmark/spawn_here = GLOB.xeno_spawn.len ? pick(GLOB.xeno_spawn) : null
@@ -275,7 +275,7 @@
 		if("Larva")
 			new_xeno = new /mob/living/carbon/alien/larva(spawn_here)
 		else
-			return 0
+			return FALSE
 	if(!spawn_here)
 		SSjob.SendToLateJoin(new_xeno, FALSE)
 
@@ -283,7 +283,7 @@
 	var/msg = "<span class='notice'>[key_name_admin(usr)] has spawned [ckey] as a filthy xeno [alien_caste].</span>"
 	message_admins(msg)
 	admin_ticket_log(new_xeno, msg)
-	return 1
+	return TRUE
 
 /*
 If a guy was gibbed and you want to revive him, this is a good way to do so.
@@ -800,7 +800,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set desc = "switches between 1x and custom views"
 
 	if(view_size.getView() == view_size.default)
-		view_size.setTo(input("Select view range:", "FUCK YE", 7) in list(1,2,3,4,5,6,7,8,9,10,11,12,13,14,128) - 7)
+		view_size.setTo(input("Select view range:", "FUCK YE", 7) in list(1,2,3,4,5,6,7,8,9,10,11,12,13,14,37) - 7)
 	else
 		view_size.resetToDefault(getScreenSize(prefs.widescreenpref))
 
@@ -965,6 +965,31 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		log_admin("[key_name(usr)] changed the security level to [level]")
 		message_admins("[key_name_admin(usr)] changed the security level to [level]")
 		SSblackbox.record_feedback("tally", "admin_verb", 1, "Set Security Level [capitalize(level)]") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+
+/client/proc/admin_hostile_environment()
+	set category = "Admin.Events"
+	set name = "Hostile Environment"
+
+	if(!check_rights(R_ADMIN))
+		return
+
+	switch(tgui_alert(usr, "Select an Option", "Hostile Environment Manager", list("Enable", "Disable", "Clear All")))
+		if("Enable")
+			if (SSshuttle.hostileEnvironments["Admin"] == TRUE)
+				to_chat(usr, span_warning("Error, admin hostile environment already enabled."))
+			else
+				message_admins(span_adminnotice("[key_name_admin(usr)] Enabled an admin hostile environment"))
+				SSshuttle.registerHostileEnvironment("Admin")
+		if("Disable")
+			if (!SSshuttle.hostileEnvironments["Admin"])
+				to_chat(usr, span_warning("Error, no admin hostile environment found."))
+			else
+				message_admins(span_adminnotice("[key_name_admin(usr)] Disabled the admin hostile environment"))
+				SSshuttle.clearHostileEnvironment("Admin")
+		if("Clear All")
+			message_admins(span_adminnotice("[key_name_admin(usr)] Disabled all current hostile environment sources"))
+			SSshuttle.hostileEnvironments.Cut()
+			SSshuttle.checkHostileEnvironment()
 
 /client/proc/toggle_nuke(obj/machinery/nuclearbomb/N in GLOB.nuke_list)
 	set name = "Toggle Nuke"
@@ -1329,10 +1354,9 @@ Traitors and the like can also be revived with the previous role mostly intact.
 /datum/admins/proc/modify_goals()
 	var/dat = ""
 	for(var/datum/station_goal/S in SSticker.mode.station_goals)
-		dat += "[S.name] - <a href='?src=[REF(S)];[HrefToken()];announce=1'>Announce</a> | <a href='?src=[REF(S)];[HrefToken()];remove=1'>Remove</a><br>"
+		dat += "[S.name] - <a href='?src=[REF(S)];[HrefToken()];announce=1'>Announce</a> | <a href='?src=[REF(S)];[HrefToken()];remove=1'>Remove</a> | <a href='?src=[REF(S)];[HrefToken()];complete=1'>Complete</a><br>"
 	dat += "<br><a href='?src=[REF(src)];[HrefToken()];add_station_goal=1'>Add New Goal</a>"
 	usr << browse(dat, "window=goals;size=400x400")
-
 
 /client/proc/toggle_hub()
 	set category = "Server"
@@ -1409,7 +1433,6 @@ Traitors and the like can also be revived with the previous role mostly intact.
 		ADMIN_PUNISHMENT_PIE,
 		ADMIN_PUNISHMENT_CUSTOM_PIE,
 		ADMIN_PUNISHMENT_AIKO,
-		ADMIN_PUNISHMENT_CUM_JAR,
 		ADMIN_PUNISHMENT_FIREBALL,
 		ADMIN_PUNISHMENT_LIGHTNING,
 		ADMIN_PUNISHMENT_BRAINDAMAGE,
@@ -1536,18 +1559,6 @@ Traitors and the like can also be revived with the previous role mostly intact.
 					human_target.visible_message("[old_name] transforms into [human_target.real_name]")
 					message_admins("[key_name(human_target)]'s dna has been loaded from the punishment buffer.")
 
-		if(ADMIN_PUNISHMENT_CUM_JAR)
-			var/ass = tgui_alert(usr, "Ты уверен?","SECURE. CONTAIN. PROTECT.", list("Да.","Нет."))
-			if(ass=="Нет.")
-				return
-
-			log_admin("[usr.ckey] enforced containment protocols after [target.ckey].")
-			to_chat(usr, span_notice("Preparing containment protocols..."))
-			sleep(10 SECONDS)
-			to_chat(usr, span_alert("Enforcing containment protocols..."))
-			new /obj/item/cum_jar(get_turf(target))
-			to_chat(usr, span_alert("Containment protocols enforced."))
-			return
 		if(ADMIN_PUNISHMENT_CRACK)
 			if(!iscarbon(target))
 				to_chat(usr,"<span class='warning'>This must be used on a carbon mob.</span>", confidential = TRUE)
@@ -1616,7 +1627,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 					var/shots_this_limb = 0
 					for(var/t in shuffle(open_adj_turfs))
 						var/turf/iter_turf = t
-						addtimer(CALLBACK(GLOBAL_PROC, .proc/firing_squad, dude, iter_turf, slice_part.body_zone, wound_bonuses[wound_bonus_rep], damage), delay_counter)
+						addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(firing_squad), dude, iter_turf, slice_part.body_zone, wound_bonuses[wound_bonus_rep], damage), delay_counter)
 						delay_counter += delay_per_shot
 						shots_this_limb++
 						if(shots_this_limb > shots_per_limb_per_rep)
@@ -1647,7 +1658,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 				to_chat(usr, "<span class='warning'>[C] is dead!")
 				return
 			else
-				C.pregoodbye(C) //sandstorm punish and ends here.
+				C.goodbye() //sandstorm punish and ends here.
 		if(ADMIN_PUNISHMENT_TABLETIDESTATIONWIDE) //SPLURT punishments start here
 			priority_announce(html_decode("[target] has brought the wrath of the gods upon themselves and is now being tableslammed across the station. Please stand by."), null, 'sound/misc/announce.ogg', "CentCom")
 			var/list/areas = list()
@@ -1670,23 +1681,23 @@ Traitors and the like can also be revived with the previous role mostly intact.
 				var/obj/item/bodypart/limb = _limb
 				if (limb.body_part == HEAD || limb.body_part == CHEST)
 					continue
-				addtimer(CALLBACK(limb, /obj/item/bodypart/.proc/dismember), timer)
-				addtimer(CALLBACK(GLOBAL_PROC, .proc/playsound, carbon_target, 'modular_splurt/sound/effects/cartoon_pop.ogg', 70), timer)
-				addtimer(CALLBACK(carbon_target, /mob/living/.proc/spin, 4, 1), timer - 0.4 SECONDS)
+				addtimer(CALLBACK(limb, TYPE_PROC_REF(/obj/item/bodypart, dismember)), timer)
+				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(playsound), carbon_target, 'modular_splurt/sound/effects/cartoon_pop.ogg', 70), timer)
+				addtimer(CALLBACK(carbon_target, TYPE_PROC_REF(/mob/living, spin), 4, 1), timer - 0.4 SECONDS)
 				timer += 2 SECONDS
 		if(ADMIN_PUNISHMENT_BREADIFY)
 			#define BREADIFY_TIME (5 SECONDS)
 			var/mutable_appearance/bread_appearance = mutable_appearance('icons/obj/food/burgerbread.dmi', "bread")
 			var/mutable_appearance/transform_scanline = mutable_appearance('modular_splurt/icons/effects/effects.dmi', "transform_effect")
 			target.transformation_animation(bread_appearance, time = BREADIFY_TIME, transform_overlay=transform_scanline, reset_after=TRUE)
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/breadify, target), BREADIFY_TIME)
+			addtimer(CALLBACK(src, PROC_REF(breadify), target), BREADIFY_TIME)
 			#undef BREADIFY_TIME
 		if(ADMIN_PUNISHMENT_BOOKIFY)
 			#define BOOKIFY_TIME (2 SECONDS)
 			var/mutable_appearance/book_appearance = mutable_appearance('icons/obj/library.dmi', "book")
 			var/mutable_appearance/transform_scanline = mutable_appearance('modular_splurt/icons/effects/effects.dmi', "transform_effect")
 			target.transformation_animation(book_appearance, time = BOOKIFY_TIME, transform_overlay=transform_scanline, reset_after=TRUE)
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/bookify, target), BOOKIFY_TIME)
+			addtimer(CALLBACK(src, PROC_REF(bookify), target), BOOKIFY_TIME)
 			playsound(target, 'modular_splurt/sound/misc/bookify.ogg', 60, 1)
 			#undef BOOKIFY_TIME
 		if(ADMIN_PUNISHMENT_BONK)
@@ -1779,7 +1790,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 /obj/effect/temp_visual/target/Initialize(mapload, list/flame_hit)
 	. = ..()
-	INVOKE_ASYNC(src, .proc/fall, flame_hit)
+	INVOKE_ASYNC(src, PROC_REF(fall), flame_hit)
 
 /obj/effect/temp_visual/target/proc/fall(list/flame_hit)
 	var/turf/T = get_turf(src)
@@ -1858,7 +1869,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 				var/name = GLOB.trait_name_map[trait] || trait
 				availible_traits[name] = trait
 
-	var/chosen_trait = input("Select trait to modify", "Trait") as null|anything in sortList(availible_traits)
+	var/chosen_trait = input("Select trait to modify", "Trait") as null|anything in sort_list(availible_traits)
 	if(!chosen_trait)
 		return
 	chosen_trait = availible_traits[chosen_trait]
@@ -1875,7 +1886,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 				if("All")
 					source = null
 				if("Specific")
-					source = input("Source to be removed","Trait Remove/Add") as null|anything in sortList(D.status_traits[chosen_trait])
+					source = input("Source to be removed","Trait Remove/Add") as null|anything in sort_list(D.status_traits[chosen_trait])
 					if(!source)
 						return
 			REMOVE_TRAIT(D,chosen_trait,source)

@@ -1,4 +1,5 @@
 import { Fragment } from 'inferno';
+
 import { useBackend, useLocalState } from '../backend';
 import { Box, Button, Icon, LabeledList, Section, Table } from '../components';
 import { Window } from '../layouts';
@@ -6,7 +7,11 @@ import { Window } from '../layouts';
 const erpTagColor = {
   'Unset': 'label',
   'Top': 'red',
+  'Top-Pref': 'red',
+  'Submissive Top': 'teal',
   'Bottom': 'blue',
+  'Bottom-Pref': 'blue',
+  'Dominant Bottom': 'orange',
   'Switch': 'yellow',
   'No ERP': 'black',
 };

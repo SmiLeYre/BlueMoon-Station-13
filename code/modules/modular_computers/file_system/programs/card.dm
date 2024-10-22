@@ -174,6 +174,10 @@
 
 			target_id_card.access -= get_all_centcom_access() + get_all_accesses()
 			target_id_card.assignment = "Unassigned"
+			//финансовая вставка
+			if(target_id_card?.registered_account)
+				target_id_card.registered_account.account_job = null
+			//конец финансов
 			target_id_card.update_label()
 			playsound(computer, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
 			return TRUE
@@ -216,6 +220,10 @@
 						to_chat(user, "<span class='warning'>No class exists for this job: [target]</span>")
 						return
 					new_access = job.get_access()
+					//финансовая вставка
+					if(target_id_card?.registered_account)
+						target_id_card.registered_account.account_job = job
+					//конец финансов
 				target_id_card.access -= get_all_centcom_access() + get_all_accesses()
 				target_id_card.access |= new_access
 				target_id_card.assignment = target
@@ -277,7 +285,7 @@
 		departments = list("CentCom" = get_all_centcom_jobs())
 	else if(isnull(departments))
 		departments = list(
-			CARDCON_DEPARTMENT_COMMAND = list("Captain"),//lol
+			CARDCON_DEPARTMENT_COMMAND = GLOB.command_positions,//lol
 			CARDCON_DEPARTMENT_ENGINEERING = GLOB.engineering_positions,
 			CARDCON_DEPARTMENT_LAW = GLOB.law_positions,
 			CARDCON_DEPARTMENT_MEDICAL = GLOB.medical_positions,

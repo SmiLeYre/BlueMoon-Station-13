@@ -5,6 +5,9 @@
 /obj/item/clothing/suit/toggle/wbreakpoly
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
+/obj/item/clothing/suit/apron/overalls
+	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi'
+
 //Own stuff
 
 /* Already exists
@@ -43,7 +46,7 @@
 	item_state = "jacket_yellow"
 	body_parts_covered = CHEST|ARMS
 	cold_protection = CHEST|ARMS
-	mutantrace_variation = NONE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 
 /obj/item/clothing/suit/toggle/rp_jacket/orange
@@ -136,7 +139,7 @@
 	name = "Enforcer Voidsuit"
 	desc = "Deluxe issue armored voidsuit. Let the middle class bask in your grofit!"
 	icon_state = "corpuss"
-	armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50, WOUND = 10)
+	armor = list(MELEE = 30, BULLET = 30, LASER = 30, ENERGY = 20, BOMB = 20, BIO = 20, RAD = 0, FIRE = 50, ACID = 50, WOUND = 10)
 	hoodtype = /obj/item/clothing/head/hooded/corpus/s //Enjoy this nice red outfit Nanotrasen! There is NO NEED for a pink one! xoxo -VivI Fanteriso
 
 /obj/item/clothing/suit/hooded/corpus/s/Initialize(mapload)
@@ -212,7 +215,7 @@
 
 /obj/item/clothing/suit/goner/Initialize(mapload)
 	. = ..()
-	allowed = GLOB.detective_vest_allowed // I am probably gonna get fire-line'd for this... But suggestion is a suggestion. Can always revert the changes, right?
+	allowed = GLOB.detective_vest_allowed + typecacheof(/obj/item/toy) // As per suggestion 1913 (06/07/2022). Now able to hold toys!
 
 /obj/item/clothing/suit/goner/fake
 	name = "trencher coat replica"

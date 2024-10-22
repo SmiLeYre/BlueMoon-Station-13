@@ -6,7 +6,6 @@
 	antagpanel_category = "Cult"
 	antag_moodlet = /datum/mood_event/cult
 	threat = 3
-	soft_antag = FALSE // BLUEMOON ADDITION
 	var/datum/action/innate/cult/comm/communion = new
 	var/datum/action/innate/cult/mastervote/vote = new
 	var/datum/action/innate/cult/blood_magic/magic = new
@@ -109,7 +108,7 @@
 	var/where = mob.equip_in_one_of_slots(T, slots, critical = TRUE)
 	if(!where)
 		to_chat(mob, "<span class='userdanger'>Unfortunately, you weren't able to get a [item_name]. This is very bad and you should adminhelp immediately (press F1).</span>")
-		return 0
+		return FALSE
 	else
 		to_chat(mob, "<span class='danger'>You have a [item_name] in your [where].</span>")
 		if(where == "backpack")
@@ -133,6 +132,7 @@
 		cult_team.rise(current)
 		if(cult_team.cult_ascendent)
 			cult_team.ascend(current)
+	ADD_TRAIT(current, TRAIT_HEALS_FROM_CULT_PYLONS, INNATE_TRAIT)
 
 /datum/antagonist/cult/remove_innate_effects(mob/living/mob_override)
 	. = ..()
@@ -153,9 +153,9 @@
 		H.dna?.update_ui_block(DNA_LEFT_EYE_COLOR_BLOCK)
 		H.dna?.update_ui_block(DNA_RIGHT_EYE_COLOR_BLOCK)
 		REMOVE_TRAIT(H, TRAIT_CULT_EYES, "valid_cultist")
+		H.remove_overlay(ANTAG_LAYER)
 		H.update_body()
-		H.cut_overlays()
-		H.regenerate_icons()
+	REMOVE_TRAIT(owner.current, TRAIT_HEALS_FROM_CULT_PYLONS, INNATE_TRAIT)
 
 /datum/antagonist/cult/on_removal()
 	SSticker.mode.cult -= owner
@@ -166,6 +166,7 @@
 		owner.current.log_message("has renounced the cult of Nar'Sie!", LOG_ATTACK, color="#960000")
 	if(cult_team?.blood_target && cult_team.blood_target_image && owner.current.client)
 		owner.current.client.images -= cult_team.blood_target_image
+	owner.special_role = null // BLUEMOON ADD
 	. = ..()
 
 /datum/antagonist/cult/admin_add(datum/mind/new_owner,mob/admin)
@@ -181,8 +182,8 @@
 
 /datum/antagonist/cult/get_admin_commands()
 	. = ..()
-	.["Dagger"] = CALLBACK(src,.proc/admin_give_dagger)
-	.["Dagger and Metal"] = CALLBACK(src,.proc/admin_give_metal)
+	.["Dagger"] = CALLBACK(src,PROC_REF(admin_give_dagger))
+	.["Dagger and Metal"] = CALLBACK(src,PROC_REF(admin_give_metal))
 
 /datum/antagonist/cult/proc/admin_give_dagger(mob/admin)
 	if(!equip_cultist(FALSE))
@@ -249,13 +250,13 @@
 		H.dna?.update_ui_block(DNA_LEFT_EYE_COLOR_BLOCK)
 		H.dna?.update_ui_block(DNA_RIGHT_EYE_COLOR_BLOCK)
 		REMOVE_TRAIT(H, TRAIT_CULT_EYES, "valid_cultist")
-		H.cut_overlays()
-		H.regenerate_icons()
+		H.remove_overlay(ANTAG_LAYER)
+		H.update_body()
 
 /datum/team/cult
 	name = "Cult"
 
-	var/blood_target
+	var/atom/blood_target
 	var/image/blood_target_image
 	var/blood_target_reset_timer
 
@@ -309,7 +310,7 @@
 			if(B.current)
 				SEND_SOUND(B.current, 'sound/hallucinations/i_see_you2.ogg')
 				to_chat(B.current, "<span class='cultlarge'>The veil weakens as your cult grows, your eyes begin to glow...")
-				addtimer(CALLBACK(src, .proc/rise, B.current), 200)
+				addtimer(CALLBACK(src, PROC_REF(rise), B.current), 200)
 		cult_risen = TRUE
 
 	if(ratio > CULT_ASCENDENT && !cult_ascendent)
@@ -317,8 +318,8 @@
 			if(B.current)
 				SEND_SOUND(B.current, 'sound/hallucinations/im_here1.ogg')
 				to_chat(B.current, "<span class='cultlarge'>Your cult is ascendent and the red harvest approaches - you cannot hide your true nature for much longer!!")
-				addtimer(CALLBACK(src, .proc/ascend, B.current), 200)
-		priority_announce("На вашей станции обнаружена внепространственная активность, связанная с культом Нар’Си. Данные свидетельствуют о том, что в ряды культа обращено около Двадцати Процентов Экипажа Станции. Служба безопасности получает право свободно применять летальную силу против культистов. Прочий персонал должен быть готов защищать себя и свои рабочие места от нападений культистов (в том числе используя летальную силу в качестве крайней меры самообороны), но не должен выслеживать культистов и охотиться на них. Погибшие члены экипажа должны быть оживлены и деконвертированы, как только ситуация будет взята под контроль.", "Центральное Командование, Отдел Работы с Реальностью", 'sound/announcer/classic/_admin_horror_music.ogg')
+				addtimer(CALLBACK(src, PROC_REF(ascend), B.current), 200)
+		priority_announce("На вашей станции обнаружена внепространственная активность, связанная с культом Нар’Си. Данные свидетельствуют о том, что в ряды культа обращено около Сорока Процентов Экипажа Станции. Служба безопасности получает право свободно применять летальную силу против культистов. Прочий персонал должен быть готов защищать себя и свои рабочие места от нападений культистов (в том числе используя летальную силу в качестве крайней меры самообороны), но не должен выслеживать культистов и охотиться на них. Погибшие члены экипажа должны быть оживлены и деконвертированы, как только ситуация будет взята под контроль.", "Центральное Командование, Отдел Работы с Реальностью", 'sound/announcer/classic/_admin_horror_music.ogg')
 		cult_ascendent = TRUE
 
 
@@ -337,7 +338,9 @@
 		var/mob/living/carbon/human/H = cultist
 		new /obj/effect/temp_visual/cult/sparks(get_turf(H), H.dir)
 		var/istate = pick("halo[rand(1, 6)]")
-		H.add_overlay(mutable_appearance('icons/effects/32x64.dmi', istate, -FIRE_LAYER))
+		var/mutable_appearance/new_cult_overlay = mutable_appearance('icons/effects/32x64.dmi', istate, -ANTAG_LAYER)
+		H.overlays_standing[ANTAG_LAYER] = new_cult_overlay
+		H.apply_overlay(ANTAG_LAYER)
 
 /datum/team/cult/proc/setup_objectives()
 	//SAC OBJECTIVE , todo: move this to objective internals

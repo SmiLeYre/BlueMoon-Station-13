@@ -1,6 +1,6 @@
 /obj/item/documents
 	name = "secret documents"
-	desc = "\"Top Secret\" documents."
+	desc = "\"Совершенно Секретно\" documents."
 	icon = 'icons/obj/bureaucracy.dmi'
 	icon_state = "docs_generic"
 	item_state = "paper"
@@ -13,27 +13,27 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/documents/nanotrasen
-	desc = "\"Top Secret\" Nanotrasen documents, filled with complex diagrams and lists of names, dates and coordinates."
+	desc = "\"Совершенно Секретно\" Nanotrasen. Документы, наполненные сложными диаграммами и списками имен, дат и координат."
 	icon_state = "docs_verified"
 
 /obj/item/documents/syndicate
-	desc = "\"Top Secret\" documents detailing sensitive Syndicate operational intelligence."
+	desc = "\"Совершенно Секретно\". Документы, содержащие сведения о секретной оперативной информации Синдиката."
 
 /obj/item/documents/syndicate/red
 	name = "red secret documents"
-	desc = "\"Top Secret\" documents detailing sensitive Syndicate operational intelligence. These documents are verified with a red wax seal."
+	desc = "\"Совершенно Секретно\". Документы, содержащие сведения о секретной оперативной информации Синдиката. Эти документы заверяются красной сургучной печатью."
 	icon_state = "docs_red"
 
 /obj/item/documents/syndicate/blue
 	name = "blue secret documents"
-	desc = "\"Top Secret\" documents detailing sensitive Syndicate operational intelligence. These documents are verified with a blue wax seal."
+	desc = "\"Совершенно Секретно\". Документы, содержащие сведения о секретной оперативной информации Синдиката. Эти документы заверяются голубой сургучной печатью."
 	icon_state = "docs_blue"
 
 /obj/item/documents/syndicate/mining
-	desc = "\"Top Secret\" documents detailing Syndicate plasma mining operations."
+	desc = "\"Совершенно Секретно\". Документы, содержащие сведения о Аномалии Синие Луны и предстоящей Межвселенской Гегемонии."
 
 /obj/item/documents/photocopy
-	desc = "A copy of some top-secret documents. Nobody will notice they aren't the originals... right?"
+	desc = "Копия каких-то сверхсекретных документов. Никто не заметит, что это не оригинал... верно?"
 	var/forgedseal = 0
 	var/copy_type = null
 

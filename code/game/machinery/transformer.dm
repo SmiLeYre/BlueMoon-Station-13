@@ -39,7 +39,7 @@
 	update_icon()
 
 /obj/machinery/transformer/update_icon_state()
-	if(stat & (BROKEN|NOPOWER) || cooldown == 1)
+	if(machine_stat & (BROKEN|NOPOWER) || cooldown == 1)
 		icon_state = "separator-AO0"
 	else
 		icon_state = initial(icon_state)
@@ -72,7 +72,7 @@
 		update_icon()
 
 /obj/machinery/transformer/proc/do_transform(mob/living/carbon/human/H)
-	if(stat & (BROKEN|NOPOWER))
+	if(machine_stat & (BROKEN|NOPOWER))
 		return
 	if(cooldown == 1)
 		return
@@ -87,7 +87,8 @@
 	update_icon()
 
 	playsound(src.loc, 'sound/items/welder.ogg', 50, 1)
-	H.emote("scream") // It is painful
+	if(!HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+		H.emote("scream") // It is painful
 	H.adjustBruteLoss(max(0, 80 - H.getBruteLoss())) // Hurt the human, don't try to kill them though.
 
 	// Sleep for a couple of ticks to allow the human to see the pain
@@ -103,7 +104,7 @@
 		R.set_connected_ai(masterAI)
 		R.lawsync()
 		R.lawupdate = 1
-	addtimer(CALLBACK(src, .proc/unlock_new_robot, R), 50)
+	addtimer(CALLBACK(src, PROC_REF(unlock_new_robot), R), 50)
 
 /obj/machinery/transformer/proc/unlock_new_robot(mob/living/silicon/robot/R)
 	playsound(src.loc, 'sound/machines/ping.ogg', 50, 0)

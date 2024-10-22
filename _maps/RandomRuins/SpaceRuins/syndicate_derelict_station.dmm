@@ -241,10 +241,9 @@
 	pixel_x = 24
 	},
 /obj/structure/closet/crate/secure/gear,
-/obj/item/ammo_box/magazine/smgm45,
-/obj/item/melee/transforming/energy/sword,
-/obj/item/gun/ballistic/automatic/c20r/unrestricted,
-/obj/item/ammo_box/magazine/smgm45,
+/obj/item/storage/toolbox/syndicate,
+/obj/item/storage/box/syndie_kit/space,
+/obj/item/melee/transforming/energy/sword/saber,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/syndiederelict/virology)
 "eE" = (
@@ -2119,7 +2118,6 @@
 /obj/item/electronics/apc,
 /obj/item/electronics/apc,
 /obj/item/electronics/apc,
-/obj/item/circuitboard/machine/protolathe,
 /obj/item/circuitboard/machine/circuit_imprinter,
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/has_grav/syndiederelict/engineering)

@@ -324,6 +324,7 @@ GLOBAL_LIST_INIT(atmos_adjacent_savings, list(0,0))
 #define GAS_AMMONIA				"ammonia"
 #define GAS_FLUORINE			"fluorine"
 #define GAS_ETHANOL				"ethanol"
+#define GAS_MOTOR_OIL			"motor_oil" // BLUEMOON ADD - Напитки для синтетиков
 #define GAS_QCD					"qcd"
 
 #define GAS_GROUP_CHEMICALS		"Chemicals"

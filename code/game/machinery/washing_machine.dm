@@ -144,29 +144,47 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	var/has_corgi = 0
 	var/obj/item/color_source
 	var/max_wash_capacity = 5
+	can_buckle = TRUE
+	buckle_lying = FALSE
+	max_buckled_mobs = 1
+	obj_flags = CAN_BE_HIT|SHOVABLE_ONTO
+	var/mutable_appearance/upper_half
+	var/mob_is_immobilized = FALSE //to avoid healing miracles
+	var/mob_size_limit = 1.20 //too big creatures won't fit inside
+
+/obj/machinery/washing_machine/Initialize(mapload)
+	. = ..()
+	upper_half = mutable_appearance(icon, "wm_upper_half")
+	upper_half.layer = ABOVE_MOB_LAYER
+
+/obj/machinery/washing_machine/Destroy()
+	if(has_buckled_mobs())
+		var/mob/living/L = buckled_mobs[1]
+		unbuckle_mob(L)
+	dropContents()
+	. = ..()
 
 /obj/machinery/washing_machine/examine(mob/user)
 	. = ..()
 	if(!busy)
-		. += "<span class='notice'><b>Alt-click</b> it to start a wash cycle.</span>"
+		. += "<span class='notice'><b>Alt-click</b> it to open or close its door.</span>"
+	if(has_buckled_mobs())
+		. += "<span class='notice'>Someone is stuck in it.</span>"
 
 /obj/machinery/washing_machine/AltClick(mob/user)
 	. = ..()
-	if(!user.canUseTopic(src))
-		return
 	if(busy)
-		return
-	if(state_open)
-		to_chat(user, "<span class='notice'>Close the door first</span>")
+		to_chat(user, "<span class='notice'>[src] is busy.</span>")
 		return TRUE
-	if(bloody_mess)
-		to_chat(user, "<span class='warning'>[src] must be cleaned up first.</span>")
+	if(has_buckled_mobs())
+		to_chat(user, "<span class='notice'>Someone is stuck in it.</span>")
 		return TRUE
-
-	busy = TRUE
-	update_icon()
-	addtimer(CALLBACK(src, .proc/wash_cycle), 200)
-	START_PROCESSING(SSfastprocess, src)
+	if(!state_open)
+		open_machine()
+	else
+		state_open = FALSE //close the door
+		can_buckle = FALSE
+		update_icon()
 	return TRUE
 
 /obj/machinery/washing_machine/process()
@@ -266,11 +284,10 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	container_resist(user)
 
 /obj/machinery/washing_machine/container_resist(mob/living/user)
-	if(!busy)
+	if(!busy && !has_buckled_mobs())
 		add_fingerprint(user)
 		open_machine()
-
-
+		dropContents()
 
 /obj/machinery/washing_machine/update_icon_state()
 	if(busy)
@@ -316,6 +333,12 @@ GLOBAL_LIST_INIT(dye_registry, list(
 			to_chat(user, "<span class='warning'>\The [W] is stuck to your hand, you cannot put it in the washing machine!</span>")
 			return TRUE
 
+		if(ishuman(user) && TryStuck(user))
+			to_chat(user, "<span class='warning'>You were trying to put the item in [src], but ended up being stuck in it somehow...</span>")
+			if(iscatperson(user))
+				stoplag(1 SECONDS)
+				user.emote(pick("meow", "mew"))
+
 		if(W.dye_color)
 			color_source = W
 		update_icon()
@@ -323,12 +346,8 @@ GLOBAL_LIST_INIT(dye_registry, list(
 	else
 		return ..()
 
-/obj/machinery/washing_machine/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
-	if(busy)
-		to_chat(user, "<span class='warning'>[src] is busy.</span>")
-		return
-
-	if(user.pulling && user.a_intent == INTENT_GRAB && isliving(user.pulling))
+/obj/machinery/washing_machine/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
+	if(user.pulling && user.a_intent == INTENT_GRAB && isliving(user.pulling) && !has_buckled_mobs())
 		var/mob/living/L = user.pulling
 		if(L.buckled || L.has_buckled_mobs())
 			return
@@ -338,19 +357,120 @@ GLOBAL_LIST_INIT(dye_registry, list(
 				L.forceMove(src)
 				update_icon()
 		return
-
-	if(!state_open)
-		open_machine()
+	if(state_open)
+		if(has_buckled_mobs())
+			if(user == buckled_mobs[1])
+				return
+			else
+				to_chat(user, "<span class='notice'>You are trying to help. It might take a while...</span>")
+				user_unbuckle_mob(buckled_mobs[1], user)
+		else if(ishuman(user) && TryStuck(user, 10, 5))
+			to_chat(user, "<span class='warning'>You were trying to get items from [src], but ended up being stuck in it somehow...</span>")
+			if(iscatperson(user))
+				stoplag(1 SECONDS)
+				user.emote(pick("meow", "mew"))
+		else if(!contents.len)
+			to_chat(user, "<span class='notice'>[src] is empty.</span>")
+		else
+			dropContents()
+			color_source = null
+			has_corgi = 0
+			update_icon()
 	else
-		state_open = FALSE //close the door
+		if(!user.canUseTopic(src))
+			return
+		if(bloody_mess)
+			to_chat(user, "<span class='warning'>[src] must be cleaned up first.</span>")
+			return
+		busy = TRUE
 		update_icon()
+		addtimer(CALLBACK(src, PROC_REF(wash_cycle)), 200)
+		START_PROCESSING(SSfastprocess, src)
 
 /obj/machinery/washing_machine/deconstruct(disassembled = TRUE)
 	new /obj/item/stack/sheet/metal (loc, 2)
 	qdel(src)
 
-/obj/machinery/washing_machine/open_machine(drop = 1)
+/obj/machinery/washing_machine/open_machine(drop = FALSE)
 	..()
 	density = TRUE //because machinery/open_machine() sets it to 0
-	color_source = null
-	has_corgi = 0
+	can_buckle = TRUE
+
+/obj/machinery/washing_machine/can_be_pulled(user, grab_state, force)
+	. = ..()
+	if(has_buckled_mobs() && (buckled_mobs[1] == user))
+		return FALSE
+
+/obj/machinery/washing_machine/proc/TryStuck(mob/living/carbon/human/user, unusual_chance = 5, usual_chance = 2)
+	if(get_size(user) >= mob_size_limit)
+		return FALSE
+	var/stuck_chance = (iscatperson(user) || HAS_TRAIT(user, TRAIT_CLUMSY) || HAS_TRAIT(user, TRAIT_FAT) || HAS_TRAIT(user, TRAIT_CURSED) || HAS_TRAIT(user, TRAIT_NYMPHO) || isclownjob(user)) ? unusual_chance : usual_chance
+	if((user.client && user.client?.prefs.erppref == "Yes" && CHECK_BITFIELD(user.client?.prefs.toggles, VERB_CONSENT) && user.client?.prefs.nonconpref == "Yes"))
+		stuck_chance = stuck_chance * 2 //non-con enjoyers will get what they want.
+	if(prob(stuck_chance))
+		buckle_mob(user)
+		return TRUE
+	else
+		return FALSE
+
+/obj/machinery/washing_machine/user_buckle_mob(mob/living/carbon/human/H, mob/living/user, check_loc)
+	if(!ishuman(H))
+		return
+	if(get_size(H) >= mob_size_limit)
+		to_chat(user, "<span class='danger'>[H] is too big for [src].")
+		return
+	var/shoving_time = 2 SECONDS
+	if(H != user)
+		shoving_time = 5 SECONDS
+		H.visible_message("<span class='danger'>[user] is shoving [H] into [src]!</span>", \
+							"<span class='userdanger'>[user] is shoving [H] into [src]!</span>")
+	if(!do_after(user, shoving_time, H))
+		return FALSE
+	. = ..()
+	if(iscatperson(H))
+		H.emote(pick("meow", "mew", "nya"))
+
+/obj/machinery/washing_machine/user_unbuckle_mob(mob/living/carbon/human/H, mob/living/user)
+	if(QDELETED(H) || QDELETED(user))
+		return
+	if(INTERACTING_WITH(H, src))
+		to_chat(user, "<span class='notice'>You're already trying to unbuckle [H == user ? "yourself" : H]!")
+		return
+	if(!handle_unbuckling(H, user))
+		if(H == user)
+			to_chat(user, "<span class='warning'>You fail to unbuckle yourself.</span>")
+		else
+			to_chat(user, "<span class='warning'>You fail to unbuckle [H].</span>")
+		return
+	. = ..()
+
+/obj/machinery/washing_machine/proc/handle_unbuckling(mob/living/carbon/human/H, mob/living/user)
+	if(H == user)
+		to_chat(user, "<span class='notice'>It might take a while...</span>")
+		return do_after(user, 1 MINUTES, src)
+	else
+		return do_after(user, 10 SECONDS, src)
+
+/obj/machinery/washing_machine/pre_buckle_mob(mob/living/M)
+	if(!ishuman(M))
+		return
+	. = ..()
+
+/obj/machinery/washing_machine/post_buckle_mob(mob/living/M)
+	. = ..()
+	M.northface()
+	if(M.IsImmobilized())
+		mob_is_immobilized = TRUE
+	else
+		M.Immobilize(INFINITY, ignore_canstun = TRUE)
+	add_overlay(upper_half)
+
+/obj/machinery/washing_machine/post_unbuckle_mob(mob/living/M)
+	. = ..()
+	if(!M) //better safe than sorry
+		return
+	if(mob_is_immobilized)
+		mob_is_immobilized = FALSE
+	else
+		M.SetImmobilized(0, ignore_canstun = TRUE)
+	cut_overlay(upper_half)

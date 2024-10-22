@@ -242,10 +242,24 @@ GLOBAL_LIST_EMPTY(station_turfs)
 		return FALSE
 	if(!force && (!can_zFall(A, levels, target) || !A.can_zFall(src, levels, target, DOWN)))
 		return FALSE
-	A.zfalling = TRUE
-	A.forceMove(target)
-	A.zfalling = FALSE
-	target.zImpact(A, levels, src)
+	if(isliving(A))
+		var/mob/living/falling_mob = A
+		var/atom/movable/pulling = falling_mob.pulling
+		falling_mob.zfalling = TRUE
+		falling_mob.forceMove(target)
+		falling_mob.zfalling = FALSE
+		target.zImpact(falling_mob, levels, src)
+		if(pulling)
+			pulling.zfalling = TRUE
+			pulling.forceMove(target)
+			pulling.zfalling = FALSE
+			target.zImpact(pulling, levels, src)
+			INVOKE_ASYNC(falling_mob, TYPE_PROC_REF(/atom/movable, start_pulling), pulling)
+	else
+		A.zfalling = TRUE
+		A.forceMove(target)
+		A.zfalling = FALSE
+		target.zImpact(A, levels, src)
 	return TRUE
 
 /turf/proc/handleRCL(obj/item/rcl/C, mob/user)
@@ -437,7 +451,7 @@ GLOBAL_LIST_EMPTY(station_turfs)
 
 	var/list/things = src_object.contents()
 	var/datum/progressbar/progress = new(user, things.len, src)
-	while (do_after(usr, 1 SECONDS, src, NONE, FALSE, CALLBACK(src_object, /datum/component/storage.proc/mass_remove_from_storage, src, things, progress, TRUE, user)))
+	while (do_after(usr, 1 SECONDS, src, NONE, FALSE, CALLBACK(src_object, TYPE_PROC_REF(/datum/component/storage, mass_remove_from_storage), src, things, progress, TRUE, user)))
 		stoplag(1)
 	progress.end_progress()
 
@@ -525,11 +539,11 @@ GLOBAL_LIST_EMPTY(station_turfs)
 	var/atom/A
 	for(var/i in contents)
 		if(. <= 0)
-			return 0
+			return FALSE
 		A = i
 		if(!QDELETED(A) && A.level >= affecting_level)
 			.  = A.wave_explode(., explosion, dir)
-	maptext = "[.]"
+	maptext = MAPTEXT("[.]")
 
 /turf/narsie_act(force, ignore_mobs, probability = 20)
 	. = (prob(probability) || force)

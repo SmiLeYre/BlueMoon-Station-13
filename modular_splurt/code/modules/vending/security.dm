@@ -56,6 +56,7 @@
 	var/list/extra_premium = list(
 		/obj/item/clothing/gloves/latexsleeves/security = 5,
 		/obj/item/clothing/shoes/jackboots/tall = 5,
+		/obj/item/clothing/shoes/jackboots/alliance = 5,
 		/obj/item/clothing/under/custom/mw2_russian_para = 5,
 		/obj/item/clothing/under/bm/sigu = 5,
 		/obj/item/clothing/head/beret/sec/bitch = 5
@@ -82,9 +83,12 @@
 	new /obj/item/defibrillator(src)
 	new /obj/item/storage/belt/medical(src)
 	new /obj/item/pinpointer/crew(src)
+	new /obj/item/clothing/suit/brigdoc(src)
 	new /obj/item/clothing/suit/armor/brigdoc(src)
 	new /obj/item/clothing/suit/armor/brigdoc/labcoat(src)
 	new /obj/item/mod/module/clamp(src) //BLUEMOOB ADDITION - для перемещения сверхтяжёлых персонажей
+	new /obj/item/reagent_containers/glass/bottle/morphine(src) // BLUEMOON ADD - для операций
+	new /obj/item/roller/heavy(src) // BLUEMOON - HEAVY_QUIRKS - ADD - каталка для сверхтяжей
 
 /obj/structure/closet/secure_closet/blueshield
 	name = "blueshield's locker"
@@ -95,19 +99,15 @@
 /obj/structure/closet/secure_closet/blueshield/PopulateContents()
 	..()
 	new /obj/item/clothing/head/helmet/sec(src)
-	new /obj/item/radio/headset/headset_blueshield(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/clothing/mask/gas/sechailer/swat/blueshield(src)
 	new /obj/item/clothing/mask/gas/sechailer/swat/blueshield(src)
 	new /obj/item/grenade/flashbang(src)
-	new /obj/item/choice_beacon/bsbaton(src)
 	new /obj/item/armorkit/blueshield(src)
 	new /obj/item/armorkit/blueshield/helmet(src)
 	new /obj/item/clothing/head/helmet/sec(src)
-	new /obj/item/radio/headset/headset_blueshield(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/grenade/flashbang(src)
-	new /obj/item/choice_beacon/bsbaton(src)
 	new /obj/item/armorkit/blueshield(src)
 	new /obj/item/armorkit/blueshield/helmet(src)
 	new /obj/item/clothing/neck/cloak/blueshield(src)
@@ -135,7 +135,7 @@
 /obj/structure/closet/secure_closet/mopp
 	name = "advance MOPP locker"
 	req_access = list(ACCESS_CENT_GENERAL)
-	icon_state = "goodies"
+	icon_state = "secure"
 
 /obj/structure/closet/secure_closet/mopp/PopulateContents()
 	..()
@@ -146,12 +146,12 @@
 	new /obj/item/clothing/suit/cbrn/mopp/advance(src)
 	new /obj/item/clothing/gloves/cbrn/mopp/advance(src)
 	new /obj/item/clothing/shoes/jackboots/cbrn/mopp/advance (src)
-	new /obj/item/clothing/mask/gas/cbrn/mopp/advance(src)
+	new /obj/item/clothing/mask/gas/sechailer/mopp/advance(src)
 
 /obj/structure/closet/secure_closet/commandmopp
 	name = "advance MOPP locker 'Commander'"
 	req_access = list(ACCESS_CENT_GENERAL)
-	icon_state = "goodies"
+	icon_state = "secure"
 
 /obj/structure/closet/secure_closet/commandmopp/PopulateContents()
 	..()
@@ -162,12 +162,12 @@
 	new /obj/item/clothing/suit/cbrn/mopp/advance/commander(src)
 	new /obj/item/clothing/gloves/cbrn/mopp/advance(src)
 	new /obj/item/clothing/shoes/jackboots/cbrn/mopp/advance (src)
-	new /obj/item/clothing/mask/gas/cbrn/mopp/advance(src)
+	new /obj/item/clothing/mask/gas/sechailer/mopp/advance(src)
 
 /obj/structure/closet/secure_closet/secmopp
 	name = "advance MOPP locker 'secuirity'"
 	req_access = list(ACCESS_CENT_GENERAL)
-	icon_state = "goodies"
+	icon_state = "secure"
 
 /obj/structure/closet/secure_closet/secmopp/PopulateContents()
 	..()
@@ -178,12 +178,12 @@
 	new /obj/item/clothing/suit/cbrn/mopp/advance/security(src)
 	new /obj/item/clothing/gloves/cbrn/mopp/advance(src)
 	new /obj/item/clothing/shoes/jackboots/cbrn/mopp/advance (src)
-	new /obj/item/clothing/mask/gas/cbrn/mopp/advance(src)
+	new /obj/item/clothing/mask/gas/sechailer/mopp/advance(src)
 
 /obj/structure/closet/secure_closet/medmopp
 	name = "advance MOPP locker 'medical'"
 	req_access = list(ACCESS_CENT_GENERAL)
-	icon_state = "goodies"
+	icon_state = "secure"
 
 /obj/structure/closet/secure_closet/medmopp/PopulateContents()
 	..()
@@ -194,12 +194,12 @@
 	new /obj/item/clothing/suit/cbrn/mopp/advance/medical(src)
 	new /obj/item/clothing/gloves/cbrn/mopp/advance(src)
 	new /obj/item/clothing/shoes/jackboots/cbrn/mopp/advance (src)
-	new /obj/item/clothing/mask/gas/cbrn/mopp/advance(src)
+	new /obj/item/clothing/mask/gas/sechailer/mopp/advance(src)
 
 /obj/structure/closet/secure_closet/engimopp
 	name = "advance MOPP locker 'engineering'"
 	req_access = list(ACCESS_CENT_GENERAL)
-	icon_state = "goodies"
+	icon_state = "secure"
 
 /obj/structure/closet/secure_closet/engimopp/PopulateContents()
 	..()
@@ -210,7 +210,7 @@
 	new /obj/item/clothing/suit/cbrn/mopp/advance/engi(src)
 	new /obj/item/clothing/gloves/cbrn/mopp/advance(src)
 	new /obj/item/clothing/shoes/jackboots/cbrn/mopp/advance (src)
-	new /obj/item/clothing/mask/gas/cbrn/mopp/advance(src)
+	new /obj/item/clothing/mask/gas/sechailer/mopp/advance(src)
 
 
 /obj/structure/closet/secure_closet/hosnew //ITS LOCKER CLEAN OUT DAY! -Radar
@@ -234,7 +234,6 @@
 	new /obj/item/storage/belt/security/full(src)
 	new /obj/item/flashlight/seclite(src)
 	new /obj/item/pinpointer/nuke(src)
-	new /obj/item/choice_beacon/hos_new_weapon(src)
 	new /obj/item/circuitboard/machine/techfab/department/security(src)
 	new /obj/item/storage/photo_album/HoS(src)
 	new /obj/item/card/id/departmental_budget/sec(src)
@@ -264,6 +263,7 @@
 	new /obj/item/clothing/accessory/lawyers_badge(src)
 	new /obj/item/camera/detective(src)
 	new /obj/item/storage/box/evidence(src)
+	new /obj/item/melee/classic_baton/ntcane(src)
 	new /obj/item/folder(src)
 	new /obj/item/folder(src)
 	new /obj/item/folder(src)

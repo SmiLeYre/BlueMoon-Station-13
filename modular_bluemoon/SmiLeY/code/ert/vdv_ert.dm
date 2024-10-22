@@ -96,7 +96,7 @@
 /datum/outfit/ert/vdv/leader
 	name = "NRI VDV Leader"
 
-	suit_store = /obj/item/gun/ballistic/automatic/pistol/aps
+	suit_store = /obj/item/gun/ballistic/automatic/pistol/APS
 	gloves = /obj/item/clothing/gloves/color/black
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	belt = /obj/item/storage/belt/military/army/vdv
@@ -108,7 +108,14 @@
 
 	r_hand = /obj/item/gun/ballistic/automatic/ak12
 
-/datum/outfit/ert/vdv/leader/pre_equip(mob/living/carbon/human/H)
+// BLUEMOON ADD START - командная коробочка для командира
+/datum/outfit/ert/vdv/leader/pre_equip(mob/living/carbon/human/H, visualsOnly, client/preference_source)
+	. = ..()
+	var/list/extra_backpack_items = list(
+		/obj/item/storage/box/pinpointer_squad
+	)
+	LAZYADD(backpack_contents, extra_backpack_items)
+// BLUEMOON ADD END
 
 /datum/outfit/ert/vdv/leader/post_equip(mob/living/carbon/human/H, visualsOnly)
 	. = ..()

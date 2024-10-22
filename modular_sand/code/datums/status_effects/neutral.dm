@@ -3,7 +3,7 @@
 	status_type = STATUS_EFFECT_MULTIPLE
 	// We only end when we run out!
 	duration = -1
-	tick_interval = 1 SECONDS
+	tick_interval = 5 SECONDS
 	alert_type = /atom/movable/screen/alert/status_effect/dripping_cum
 	var/datum/reagents/contents
 	var/list/blood_DNA
@@ -57,6 +57,12 @@
 				cum_in_anus--
 			else if(cum_in_vagina > 0)
 				cum_in_vagina--
+
+			// ДОБАВЛЕНИЕ РЕАГЕНТА В ОБЪЕКТ //
+			S.reagents.add_reagent(/datum/reagent/consumable/semen, 10)
+			if(S.reagents.total_volume > 0)
+				S.reagents.trans_to(S.reagents, S.reagents.total_volume)
+
 			S.blood_DNA |= blood_DNA
 			S.update_icon()
 			return
@@ -124,7 +130,7 @@
 /atom/movable/screen/alert/status_effect/dripping_cum/MouseEntered(location,control,params)
 	desc = initial(desc)
 	var/datum/status_effect/dripping_cum/dripping_cum = attached_effect
-	desc += "<br>You feel like there is about [round(dripping_cum.contents.total_volume, 25)] units inside you. Or even more..."
+	desc += "<br>You feel like there is about [dripping_cum.contents.total_volume] units inside you. Or even more..."
 	if(!dripping_cum.can_drip())
 		desc += "<br>For some reason such as your hole being covered, you are no longer dripping and this amount is not decreasing."
 	..()

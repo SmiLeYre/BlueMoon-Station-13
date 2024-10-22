@@ -120,7 +120,7 @@
 	dir = 4;
 	dwidth = 3;
 	height = 5;
-	id = "sciout_access";
+	shuttle_id = "sciout_access";
 	name = "Science Outpost Access Shuttle";
 	port_direction = 8;
 	width = 7

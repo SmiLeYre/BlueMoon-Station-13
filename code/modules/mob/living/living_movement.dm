@@ -7,6 +7,7 @@
 	. = ..()
 	if(ismousemovement)
 		update_pixel_shifting()
+	SEND_SIGNAL(src, COMSIG_ATOM_DIR_AFTER_CHANGE, dir, newdir)
 
 /mob/living/proc/update_pixel_shifting(moved = FALSE)
 	if(combat_flags & COMBAT_FLAG_ACTIVE_BLOCKING)
@@ -73,14 +74,14 @@
 	var/modified = FALSE
 	if(pulling)
 
-		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER)) // Сверхтяжёлых персонажей очень сложно тянуть (даже тем, кто на это способен)
-			if(!HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
+		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY_SUPER) && !HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER)) // Сверхтяжёлых персонажей очень сложно тянуть
+			if(!HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY))
 				add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag, multiplicative_slowdown = PULL_HEAVY_SUPER_SLOWDOWN)
 			else
 				add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag, multiplicative_slowdown = PULL_HEAVY_SLOWDOWN)
 			modified = TRUE
 
-		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY)) // Тяжёлых персонажей сложнее тянуть
+		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY) && !(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))) // Тяжёлых персонажей сложнее тянуть, но не для тяжёлых или свертяжёлых
 			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag, multiplicative_slowdown = PULL_HEAVY_SLOWDOWN)
 			modified = TRUE
 
@@ -105,7 +106,7 @@
 		if (!buckled.anchored)
 			return buckled.Move(newloc, direct)
 		else
-			return 0
+			return FALSE
 
 	var/old_direction = dir
 	var/turf/T = loc

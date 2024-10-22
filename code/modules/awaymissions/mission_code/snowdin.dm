@@ -209,7 +209,8 @@
 	burn_human.adjustFireLoss(25)
 	if(plasma_parts.len)
 		var/obj/item/bodypart/burn_limb = pick(plasma_parts) //using the above-mentioned list to get a choice of limbs
-		burn_human.emote("scream")
+		if(!HAS_TRAIT(burn_human, TRAIT_ROBOTIC_ORGANISM)) // BLUEMOON ADD - роботы не кричат от боли
+			burn_human.emote("scream")
 		burn_human.update_body_parts()
 		burn_human.visible_message(span_warning("[burn_human] screams in pain as [burn_human.p_their()] [burn_limb] melts down to the bone!"), \
 			span_userdanger("You scream out in pain as your [burn_limb] melts down to the bone, leaving an eerie plasma-like glow where flesh used to be!"))
@@ -540,6 +541,7 @@
 	short_desc = "You are a syndicate operative recently awoken from cryostasis in an underground outpost."
 	flavour_text = "You are a syndicate operative recently awoken from cryostasis in an underground outpost. Monitor Nanotrasen communications and record information. All intruders should be \
 	disposed of swiftly to assure no gathered information is stolen or lost. Try not to wander too far from the outpost as the caves can be a deadly place even for a trained operative such as yourself."
+	can_load_appearance = TRUE
 
 /datum/outfit/snowsyndie
 	name = "Syndicate Snow Operative"

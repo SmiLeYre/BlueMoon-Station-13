@@ -29,9 +29,12 @@
 /datum/block_parry_data/liquidator/quick_parry/proj
 	parry_efficiency_perfect_override = list()
 
+/// Max number of atoms a broom can sweep at once
+#define BROOM_PUSH_LIMIT 20
+
 /obj/item/broom
-	name = "broom"
-	desc = "This is my BROOMSTICK! It can be used manually or braced with two hands to sweep items as you move. It has a telescopic handle for compact storage."
+	name = "Broom"
+	desc = "This is my BROOMSTICK! Её можно использовать вручную или взяться за неё двумя руками, чтобы подметать предметы на ходу. Имеет телескопическую ручку для компактного хранения."
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "broom0"
 	lefthand_file = 'icons/mob/inhands/equipment/custodial_lefthand.dmi'
@@ -41,35 +44,46 @@
 	throw_speed = 3
 	throw_range = 7
 	w_class = WEIGHT_CLASS_NORMAL
-	attack_verb = list("swept", "brushed off", "bludgeoned", "whacked")
+	attack_verb_continuous = list("сметает", "выметает", "долбит", "шлёпает")
+	attack_verb_simple = list("сметает", "выметает", "долбит", "шлёпает")
 	resistance_flags = FLAMMABLE
-	block_parry_data = /datum/block_parry_data/liquidator
-
-/obj/item/staff/broom/on_active_parry(mob/living/owner, atom/object, damage, attack_text, attack_type, armour_penetration, mob/attacker, def_zone, list/block_return, parry_efficiency, parry_time)
-	. = ..()
-	if(!typesof(object, /obj/item/broom))
-		// no counterattack.
-		block_return[BLOCK_RETURN_FORCE_NO_PARRY_COUNTERATTACK] = TRUE
 
 /obj/item/broom/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/broom/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=8, force_wielded=12, icon_wielded="broom1")
 
 /obj/item/broom/update_icon_state()
+	. = ..()
 	icon_state = "broom0"
 
-/// triggered on wield of two handed item
+/**
+ * Handles registering the sweep proc when the broom is wielded
+ *
+ * Arguments:
+ * * source - The source of the on_wield proc call
+ * * user - The user which is wielding the broom
+ */
 /obj/item/broom/proc/on_wield(obj/item/source, mob/user)
-	to_chat(user, "<span class='notice'>You brace the [src] against the ground in a firm sweeping stance.</span>")
-	RegisterSignal(user, COMSIG_MOVABLE_PRE_MOVE, .proc/sweep)
+	SIGNAL_HANDLER
 
-/// triggered on unwield of two handed item
+	to_chat(user, span_notice("Хватаю [src.name] обеими руками и готовлюсь толкать МУСОР."))
+	RegisterSignal(user, COMSIG_MOVABLE_PRE_MOVE, PROC_REF(sweep))
+
+/**
+ * Handles unregistering the sweep proc when the broom is unwielded
+ *
+ * Arguments:
+ * * source - The source of the on_unwield proc call
+ * * user - The user which is unwielding the broom
+ */
 /obj/item/broom/proc/on_unwield(obj/item/source, mob/user)
+	SIGNAL_HANDLER
+
 	UnregisterSignal(user, COMSIG_MOVABLE_PRE_MOVE)
 
 /obj/item/broom/afterattack(atom/A, mob/user, proximity)
@@ -78,31 +92,55 @@
 		return
 	sweep(user, A)
 
-/obj/item/broom/proc/sweep(datum/source, atom/newLoc)
-	if(!ismob(source) || !isturf(newLoc) || (get_dist(source, newLoc) > 1))
+/**
+ * Attempts to push up to BROOM_PUSH_LIMIT atoms from a given location the user's faced direction
+ *
+ * Arguments:
+ * * user - The user of the broom
+ * * A - The atom which is located at the location to push atoms from
+ */
+/obj/item/broom/proc/sweep(mob/user, atom/A)
+	SIGNAL_HANDLER
+
+	var/turf/current_item_loc = isturf(A) ? A : A.loc
+	if (!isturf(current_item_loc))
 		return
-	var/turf/target = newLoc
-	var/atom/movable/AM
-	var/sweep_dir = get_dir(source, target)
-	if(!sweep_dir)
-		return
-	for(var/i in target.contents)
-		AM = i
-		if(AM.density)		// eh good enough heuristic check
-			return
-	var/i = 0
-	for(var/obj/item/garbage in target.contents)
-		if(!garbage.anchored)
-			step(garbage, sweep_dir)
-		if(++i > 20)
+	var/turf/new_item_loc = get_step(current_item_loc, user.dir)
+	var/obj/machinery/disposal/bin/target_bin = locate(/obj/machinery/disposal/bin) in new_item_loc.contents
+	var/i = 1
+	for (var/obj/item/garbage in current_item_loc.contents)
+		if (!garbage.anchored)
+			if (target_bin)
+				garbage.forceMove(target_bin)
+			else
+				garbage.Move(new_item_loc, user.dir)
+			i++
+		if (i > BROOM_PUSH_LIMIT)
 			break
-	if(i)
+	if (i > 1)
+		if (target_bin)
+			target_bin.update_icon()
+			to_chat(user, span_notice("Заталкиваю весь мусор в мусорку."))
 		playsound(loc, 'sound/weapons/thudswoosh.ogg', 30, TRUE, -1)
 
+/**
+ * Attempts to insert the push broom into a janicart
+ *
+ * Arguments:
+ * * user - The user of the push broom
+ * * J - The janicart to insert into
+ */
 /obj/item/broom/proc/janicart_insert(mob/user, obj/structure/janitorialcart/J) //bless you whoever fixes this copypasta
 	J.put_in_cart(src, user)
 	J.mybroom=src
 	J.update_icon()
+
+/obj/item/broom/cyborg
+	name = "Cyborg Broom"
+
+/obj/item/broom/cyborg/janicart_insert(mob/user, obj/structure/janitorialcart/J)
+	to_chat(user, span_notice("Не получается положить [src.name] в [J.name]"))
+	return FALSE
 
 /obj/item/broom/liquidator
 	name = "Грабли Ликвидатора"
@@ -111,7 +149,7 @@
 	icon_state = "rake"
 	lefthand_file = 'icons/mob/inhands/weapons/staves_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/staves_righthand.dmi'
-	force = 19
+	force = 9
 	w_class = WEIGHT_CLASS_NORMAL
 	throwforce = 28
 	attack_verb = list("slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
@@ -122,3 +160,7 @@
 	item_flags = ITEM_CAN_PARRY
 	bare_wound_bonus = 5
 	wound_bonus = 8
+
+/obj/item/broom/liquidator/ComponentInitialize()
+	. = ..()
+	AddComponent(/datum/component/two_handed, force_unwielded=9, force_wielded=16, icon_wielded="rake")

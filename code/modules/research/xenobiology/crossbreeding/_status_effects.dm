@@ -68,7 +68,7 @@
 	var/icon/bluespace
 
 /datum/status_effect/slimerecall/on_apply()
-	RegisterSignal(owner, COMSIG_LIVING_RESIST, .proc/resistField)
+	RegisterSignal(owner, COMSIG_LIVING_RESIST, PROC_REF(resistField))
 	to_chat(owner, "<span class='danger'>You feel a sudden tug from an unknown force, and feel a pull to bluespace!</span>")
 	to_chat(owner, "<span class='notice'>Resist if you wish avoid the force!</span>")
 	bluespace = icon('icons/effects/effects.dmi',"chronofield")
@@ -102,7 +102,7 @@
 	var/obj/structure/ice_stasis/cube
 
 /datum/status_effect/frozenstasis/on_apply()
-	RegisterSignal(owner, COMSIG_LIVING_RESIST, .proc/breakCube)
+	RegisterSignal(owner, COMSIG_LIVING_RESIST, PROC_REF(breakCube))
 	cube = new /obj/structure/ice_stasis(get_turf(owner))
 	owner.forceMove(cube)
 	owner.status_flags |= GODMODE
@@ -457,17 +457,21 @@
 	var/obj/item/slimecross/stabilized/linked_extract
 	var/colour = "null"
 
-/datum/status_effect/stabilized/tick()
-	if(!linked_extract || !linked_extract.loc) //Sanity checking
+/datum/status_effect/stabilized/on_creation(mob/living/new_owner, obj/item/slimecross/stabilized/linked_extract)
+	src.linked_extract = linked_extract
+	return ..()
+
+/datum/status_effect/stabilized/tick(seconds_between_ticks)
+	if(isnull(linked_extract))
 		qdel(src)
 		return
-	if(linked_extract && linked_extract.loc != owner && linked_extract.loc.loc != owner)
+	if(linked_extract.get_held_mob() == owner)
+		return
+	owner.balloon_alert(owner, "power faded!") //bluemoon edit
+	if(!QDELETED(linked_extract))
 		linked_extract.linked_effect = null
-		if(!QDELETED(linked_extract))
-			linked_extract.owner = null
-			START_PROCESSING(SSobj,linked_extract)
-		qdel(src)
-	return ..()
+		START_PROCESSING(SSobj,linked_extract)
+	qdel(src)
 
 /datum/status_effect/stabilized/Destroy()
 	linked_extract = null
@@ -554,7 +558,7 @@
 
 		if(sheets.len > 0)
 			var/obj/item/stack/sheet/S = pick(sheets)
-			S.amount++
+			S.add(1) // Dare var edit directly again and i'll strangle you.
 			to_chat(owner, "<span class='notice'>[linked_extract] adds a layer of slime to [S], which metamorphosizes into another sheet of material!</span>")
 	return ..()
 
@@ -659,13 +663,15 @@
 /datum/status_effect/stabilized/silver/on_apply()
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner
-		H.physiology.hunger_mod *= 0.8 //20% buff
+		H.physiology.hunger_mod *= 0.5 //50% имба бафф. было 20%
+		H.physiology.thirst_mod *= 0.5
 	return ..()
 
 /datum/status_effect/stabilized/silver/on_remove()
 	if(ishuman(owner))
 		var/mob/living/carbon/human/H = owner
-		H.physiology.hunger_mod /= 0.8
+		H.physiology.hunger_mod /= 0.5
+		H.physiology.thirst_mod /= 0.5
 	return ..()
 
 //Bluespace has an icon because it's kinda active.
@@ -902,6 +908,7 @@
 /datum/status_effect/stabilized/oil/tick()
 	if(owner.stat == DEAD)
 		explosion(get_turf(owner),1,2,4,flame_range = 5)
+		owner.gib() // bugfix
 		qdel(linked_extract)
 		return
 	return ..()
@@ -951,8 +958,11 @@
 
 /datum/status_effect/stabilized/lightpink/tick()
 	// BLUEMOON ADD START - умное изменение ускорения на основании размера персонажа
-	if(get_size(owner) > 1)
-		owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/status_effect/slime/light_pink, multiplicative_slowdown = -2*(1/get_size(owner))**2) // Спасибо Максималу за формулу
+	var/owner_size = get_size(owner)
+	if(HAS_TRAIT(owner, TRAIT_BLUEMOON_LIGHT) && owner_size > 1) //лёгкие большие персонажи считаются как при размере 1
+		owner_size = 1
+	if(owner_size > 1)
+		owner.add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/status_effect/slime/light_pink, multiplicative_slowdown = -2*(1/owner_size)**2) // Спасибо Максималу за формулу
 	// BLUEMOON ADD END
 	for(var/mob/living/carbon/human/H in range(1, get_turf(owner)))
 		if(H != owner && H.stat != DEAD && H.health <= 0 && !H.reagents.has_reagent(/datum/reagent/medicine/epinephrine))
@@ -1023,3 +1033,4 @@
 				qdel(src)
 				qdel(linked_extract)
 	return ..()
+//

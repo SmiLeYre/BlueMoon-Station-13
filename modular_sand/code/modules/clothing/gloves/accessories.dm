@@ -10,7 +10,7 @@
 	icon_state = "ringgold"
 	item_state = "gring"
 	strip_delay = 40
-	var/transfer_prints = FALSE
+	var/transfer_prints = TRUE // ахуеть кольца пальчиков не оставляли
 	var/transfer_blood = 0
 	var/strip_mod = 1
 	var/strip_silence = FALSE

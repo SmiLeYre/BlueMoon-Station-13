@@ -11,7 +11,7 @@
 	selection_color = "#aac1ee"
 	req_admin_notify = 1
 	minimal_player_age = 36
-	exp_requirements = 180
+	exp_requirements = 300
 	exp_type = EXP_TYPE_COMMAND
 	exp_type_department = EXP_TYPE_COMMAND
 	considered_combat_role = TRUE
@@ -29,8 +29,9 @@
 	mind_traits = list(TRAIT_CAPTAIN_METABOLISM, TRAIT_DISK_VERIFIER)
 
 	display_order = JOB_DISPLAY_ORDER_CAPTAIN
+	departments = DEPARTMENT_BITFLAG_COMMAND
 
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal, /datum/quirk/blindness)
 	threat = 5
 
 	family_heirlooms = list(
@@ -38,12 +39,18 @@
 		/obj/item/toy/figure/captain
 	)
 
+	mail_goodies = list(
+		/obj/item/clothing/mask/cigarette/cigar/havana = 20,
+		/obj/item/storage/fancy/cigarettes/cigars/havana = 15,
+		/obj/item/reagent_containers/food/drinks/bottle/champagne = 10
+	)
+
 /datum/job/captain/get_access()
 	return get_all_accesses()
 
 /datum/job/captain/announce(mob/living/carbon/human/H)
 	..()
-	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Капитан [H.nameless ? "" : "[H.real_name] "] прибывает на станцию [station_name()]!"))
+	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(minor_announce), "Капитан [H.nameless ? "" : "[H.real_name] "] прибывает на [station_name()]!"))
 
 /datum/outfit/job/captain
 	name = "Captain"
@@ -51,14 +58,16 @@
 
 	id = /obj/item/card/id/gold
 	belt = /obj/item/pda/captain
-	glasses = /obj/item/clothing/glasses/sunglasses
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	ears = /obj/item/radio/headset/heads/captain/alt
 	gloves = /obj/item/clothing/gloves/color/captain
 	uniform =  /obj/item/clothing/under/rank/captain
 	suit = /obj/item/clothing/suit/armor/vest/capcarapace
-	shoes = /obj/item/clothing/shoes/sneakers/brown
+	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/caphat
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/station_charter=1)
+
+	backpack_contents = list( /obj/item/station_charter=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/stamp/command=1, /obj/item/clothing/accessory/permit/special/captain=1)
+	box = /obj/item/storage/box/survival/command
 
 	backpack = /obj/item/storage/backpack/captain
 	satchel = /obj/item/storage/backpack/satchel/cap
@@ -75,7 +84,7 @@
 
 	//belt = /obj/item/pda/syndicate/no_deto
 
-	glasses = /obj/item/clothing/glasses/sunglasses
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	ears = /obj/item/radio/headset/heads/captain/alt
 	neck = /obj/item/clothing/neck/cloak/syndieadm
 	gloves = /obj/item/clothing/gloves/color/captain
@@ -89,7 +98,7 @@
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
 	box = /obj/item/storage/box/survival/syndie
 	pda_slot = ITEM_SLOT_BELT
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/station_charter=1, /obj/item/syndicate_uplink_high=1)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/station_charter=1, /obj/item/syndicate_uplink_high=1, /obj/item/clothing/accessory/permit/special/captain=1)
 
 /datum/outfit/job/captain/hardsuit
 	name = "Captain (Hardsuit)"

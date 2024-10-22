@@ -57,6 +57,12 @@
 	select_name = "DESTROY"
 	fire_sound = 'sound/weapons/pulse.ogg'
 
+/obj/item/ammo_casing/energy/laser/pulse/danger  //bluemoon add
+	projectile_type = /obj/item/projectile/beam/pulse/danger
+	e_cost = 200
+	select_name = "ANNIHILATE"
+	fire_sound = 'sound/weapons/pulse.ogg'
+
 /obj/item/ammo_casing/energy/laser/bluetag
 	projectile_type = /obj/item/projectile/beam/lasertag/bluetag
 	select_name = "bluetag"

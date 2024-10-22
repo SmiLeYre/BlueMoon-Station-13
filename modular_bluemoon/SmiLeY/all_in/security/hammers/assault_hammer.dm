@@ -76,8 +76,8 @@
 		remove_track(user)
 		return FALSE
 	breaching = TRUE
-	INVOKE_ASYNC(src, TYPE_PROC_REF(/obj/item/melee/breaching_hammer, breaching_loop ), user, target)
-	INVOKE_ASYNC(second_hammer, TYPE_PROC_REF(/obj/item/melee/breaching_hammer, breaching_loop ), breacher, target)
+	INVOKE_ASYNC(src, TYPE_PROC_REF(/obj/item/melee/breaching_hammer, breaching_loop), user, target)
+	INVOKE_ASYNC(second_hammer, TYPE_PROC_REF(/obj/item/melee/breaching_hammer, breaching_loop), breacher, target)
 	to_chat(breacher , text = "You begin forcefully smashing the [target]")
 	to_chat(user, text = "You begin forcefully smashing the [target]")
 

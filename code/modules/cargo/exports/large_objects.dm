@@ -1,12 +1,12 @@
 /datum/export/large
-	k_elasticity = 0
+	k_elasticity = 1/50 //BLUEMOON CHANGE
 
 /datum/export/large/crate
 	cost = 500
-	k_elasticity = 0
+	k_elasticity = 1/50 //BLUEMOON CHANGE
 	unit_name = "crate"
 	export_types = list(/obj/structure/closet/crate)
-	exclude_types = list(/obj/structure/closet/crate/large, /obj/structure/closet/crate/wooden, /obj/structure/closet/crate/bin)
+	exclude_types = list(/obj/structure/closet/crate/large, /obj/structure/closet/crate/wooden, /obj/structure/closet/crate/bin, /obj/structure/closet/crate/mail, /obj/structure/closet/crate/coffin)
 
 /datum/export/large/crate/total_printout(datum/export_report/ex, notes = TRUE) // That's why a goddamn metal crate costs that much.
 	. = ..()
@@ -15,6 +15,7 @@
 
 /datum/export/large/crate/wooden
 	cost = 100
+	k_elasticity = 1/50 //BLUEMOON ADD "Anti-floods"
 	unit_name = "large wooden crate"
 	export_types = list(/obj/structure/closet/crate/large)
 	exclude_types = list()
@@ -25,19 +26,23 @@
 
 /datum/export/large/crate/wood
 	cost = 140
+	k_elasticity = 1/50 //BLUEMOON ADD "Anti-floods"
 	unit_name = "wooden crate"
 	export_types = list(/obj/structure/closet/crate/wooden)
 	exclude_types = list()
 
 /datum/export/large/barrel
 	cost = 300 //double the wooden cost of a coffin.
+	k_elasticity = 1/50 //BLUEMOON ADD "Anti-floods"
 	unit_name = "wooden barrel"
 	export_types = list(/obj/structure/fermenting_barrel)
 
 /datum/export/large/crate/coffin
 	cost = 150
+	k_elasticity = 1/50 //BLUEMOON ADD "Anti-floods"
 	unit_name = "coffin"
 	export_types = list(/obj/structure/closet/crate/coffin)
+	exclude_types = list() //BLUEMOON CHANGE фикс засчитывания гробов как ящик
 
 /datum/export/large/reagent_dispenser
 	cost = 100

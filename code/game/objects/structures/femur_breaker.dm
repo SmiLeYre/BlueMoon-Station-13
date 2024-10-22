@@ -45,7 +45,7 @@
 		if (BREAKER_SLAT_DROPPED)
 			slat_status = BREAKER_SLAT_MOVING
 			icon_state = "breaker"
-			addtimer(CALLBACK(src, .proc/raise_slat), BREAKER_ANIMATION_LENGTH)
+			addtimer(CALLBACK(src, PROC_REF(raise_slat)), BREAKER_ANIMATION_LENGTH)
 			return
 		if (BREAKER_SLAT_RAISED)
 			if (LAZYLEN(buckled_mobs))
@@ -74,7 +74,7 @@
 
 /obj/structure/femur_breaker/proc/damage_leg(mob/living/carbon/human/H)
 	var/where_we_snappin_boys = pick(BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
-	H.emote("scream")
+	H.emote("realagony")
 	H.apply_damage(150, BRUTE, where_we_snappin_boys)
 	var/obj/item/bodypart/cracka = H.get_bodypart(where_we_snappin_boys)
 	if(cracka)
@@ -95,7 +95,7 @@
 
 		playsound(src, 'sound/effects/femur_breaker.ogg', 100, FALSE)
 		H.Stun(BREAKER_ANIMATION_LENGTH)
-		addtimer(CALLBACK(src, .proc/damage_leg, H), BREAKER_ANIMATION_LENGTH, TIMER_UNIQUE)
+		addtimer(CALLBACK(src, PROC_REF(damage_leg), H), BREAKER_ANIMATION_LENGTH, TIMER_UNIQUE)
 		log_combat(user, H, "femur broke", src)
 
 	slat_status = BREAKER_SLAT_DROPPED

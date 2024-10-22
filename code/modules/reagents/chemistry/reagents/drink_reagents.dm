@@ -213,6 +213,7 @@
 	glass_desc = "White and nutritious goodness!"
 	pH = 6.5
 	value = REAGENT_VALUE_VERY_COMMON
+	var/decal_path = /obj/effect/decal/cleanable/milk
 
 	// Milk is good for humans, but bad for plants. The sugars cannot be used by plants, and the milk fat harms growth. Not shrooms though. I can't deal with this now...
 /datum/reagent/consumable/milk/on_hydroponics_apply(obj/item/seeds/myseed, datum/reagents/chems, obj/machinery/hydroponics/mytray, mob/user)
@@ -1024,18 +1025,29 @@
 	if(prob(75))
 		return ..()
 	var/newsize = pick(0.5, 0.75, 1, 1.50, 2)
+	// BLUEMOON ADD START - нормализаторы не дружат с изменениями размера во время их ношения
+	if(H.GetComponent(/datum/component/size_normalized))
+		to_chat(H, span_warning("You normalization device fights any changes in size!"))
+		return
+	H.update_size(newsize)
+	// BLUEMOON ADD END
+	/* BLUEMOON REMOVAL START
 	newsize *= RESIZE_DEFAULT_SIZE
 	H.resize = newsize/current_size
 	current_size = newsize
 	H.update_transform()
+	/ BLUEMOON REMOVAL END */
 	if(prob(40))
 		H.emote("sneeze")
 	..()
 
 /datum/reagent/consumable/red_queen/on_mob_end_metabolize(mob/living/M)
+	/* BLUEMOON REMOVAL START
 	M.resize = RESIZE_DEFAULT_SIZE/current_size
 	current_size = RESIZE_DEFAULT_SIZE
 	M.update_transform()
+	/ BLUEMOON REMOVAL END */
+	M.update_size(RESIZE_DEFAULT_SIZE) // BLUEMOON ADD
 	..()
 
 /datum/reagent/consumable/milk/pinkmilk
@@ -1170,3 +1182,14 @@
 	taste_description = "bitter powder"
 	glass_name = "glass of banana peel powder"
 	description = "You took a banana peel... pulped it... baked it... Where are you going with this?"
+
+/datum/reagent/consumable/eggnog
+	name = "Eggnog"
+	description = "A creamy, rich beverage made out of whisked eggs, milk and sugar, for when you feel like celebrating the winter holidays."
+	color = "#fcfdc6" // rgb: 252, 253, 198
+	nutriment_factor = 2 * REAGENTS_METABOLISM
+	quality = DRINK_VERYGOOD
+	taste_description = "custard"
+	glass_icon_state = "nog3"
+	glass_name = "eggnog"
+	glass_desc = "You can't egg-nore the holiday cheer all around you"

@@ -1,4 +1,6 @@
-/datum/proc/key_down(key, client/user) // Called when a key is pressed down initially
+/datum/proc/key_down(key, client/user, full_key) // Called when a key is pressed down initially
+	SHOULD_CALL_PARENT(TRUE)
+	SEND_SIGNAL(src, COMSIG_MOB_KEYDOWN, key, user, full_key)
 	SHOULD_NOT_SLEEP(TRUE)
 
 /datum/proc/key_up(key, client/user) // Called when a key is released
@@ -58,13 +60,16 @@
 		full_macro_assert(prefs_override)
 
 /client/proc/full_macro_assert(datum/preferences/prefs_override = prefs)
-	INVOKE_ASYNC(src, .proc/do_full_macro_assert, prefs_override)		// winget sleeps.
+	INVOKE_ASYNC(src, PROC_REF(do_full_macro_assert), prefs_override)		// winget sleeps.
 
 // TODO: OVERHAUL ALL OF THIS AGAIN. While this works this is flatout horrid with the "use list but also don't use lists" crap. I hate my life.
 /client/proc/do_full_macro_assert(datum/preferences/prefs_override = prefs)
 	// First, wipe
 	erase_all_macros(prefs_override)
-	keys_held.Cut()
+
+	//Reset the buffer
+	reset_held_keys()
+
 	// First, collect sets. Make sure to COPY, as we are modifying these!
 	var/list/macrosets = prefs_override.hotkeys? list(
 			SKIN_MACROSET_HOTKEYS = SSinput.macroset_hotkey.Copy()
@@ -185,3 +190,12 @@
 					if(!KB.clientside)
 						continue
 					.[key] = KB.clientside
+
+/// Manually clears any held keys, in case due to lag or other undefined behavior a key gets stuck.
+/client/proc/reset_held_keys()
+	for(var/key in keys_held)
+		keyUp(key)
+
+	// //In case one got stuck and the previous loop didn't clean it, somehow.
+	// for(var/key in key_combos_held)
+	// 	keyUp(key_combos_held[key])

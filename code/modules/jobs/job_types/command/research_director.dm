@@ -18,6 +18,7 @@
 	considered_combat_role = TRUE
 
 	outfit = /datum/outfit/job/rd
+	departments = DEPARTMENT_BITFLAG_SCIENCE | DEPARTMENT_BITFLAG_COMMAND
 	plasma_outfit = /datum/outfit/plasmaman/rd
 
 	access = list(ACCESS_RD, ACCESS_HEADS, ACCESS_TOX, ACCESS_GENETICS, ACCESS_MORGUE,
@@ -36,7 +37,7 @@
 
 	display_order = JOB_DISPLAY_ORDER_RESEARCH_DIRECTOR
 	starting_modifiers = list(/datum/skill_modifier/job/level/wiring)
-	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity)
+	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal)
 	threat = 5
 
 	family_heirlooms = list(
@@ -55,9 +56,11 @@
 	suit = /obj/item/clothing/suit/toggle/labcoat
 	l_hand = /obj/item/clipboard
 	l_pocket = /obj/item/laser_pointer
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1)
+	backpack_contents = list( /obj/item/modular_computer/tablet/preset/advanced=1)
+	accessory = /obj/item/clothing/accessory/permit/special/research_director
 
 	backpack = /obj/item/storage/backpack/science
+	box = /obj/item/storage/box/survival/command
 	satchel = /obj/item/storage/backpack/satchel/tox
 
 	chameleon_extras = /obj/item/stamp/rd
@@ -82,6 +85,7 @@
 	box = /obj/item/storage/box/survival/syndie
 	pda_slot = ITEM_SLOT_BELT
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/syndicate_uplink_high=1)
+	accessory = /obj/item/clothing/accessory/permit/special/research_director
 
 	neck = /obj/item/clothing/neck/cloak/syndiecap
 

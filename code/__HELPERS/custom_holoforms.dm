@@ -5,8 +5,8 @@
 	var/mob/living/carbon/human/dummy/mannequin = generate_or_wait_for_human_dummy(DUMMY_HUMAN_SLOT_HOLOFORM)
 	prefs.copy_to(mannequin)
 	if(apply_loadout && prefs.parent)
-		SSjob.equip_loadout(prefs.parent.mob, mannequin, bypass_prereqs = TRUE)
-		SSjob.post_equip_loadout(prefs.parent.mob, mannequin, bypass_prereqs = TRUE)
+		SSjob.equip_loadout(prefs.parent.mob, mannequin, bypass_prereqs = TRUE, is_dummy = TRUE)
+		SSjob.post_equip_loadout(prefs.parent.mob, mannequin, bypass_prereqs = TRUE, is_dummy = TRUE)
 	if(copy_job)
 		var/datum/job/highest = prefs.get_highest_job()
 		if(highest && !istype(highest, /datum/job/ai) && !istype(highest, /datum/job/cyborg))
@@ -25,7 +25,6 @@
 	var/icon/combined = new
 	for(var/d in GLOB.cardinals)
 		mannequin.setDir(d)
-		COMPILE_OVERLAYS(mannequin)
 		CHECK_TICK
 		var/icon/capture = getFlatIcon(mannequin)
 		CHECK_TICK

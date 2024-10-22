@@ -228,9 +228,9 @@ Key procs
 
 
 /datum/language_holder/alien
-	understood_languages = list(/datum/language/xenocommon = list(LANGUAGE_ATOM))
-	spoken_languages = list(/datum/language/xenocommon = list(LANGUAGE_ATOM))
-	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	understood_languages = list(/datum/language/xenocommon = list(LANGUAGE_ATOM), /datum/language/common = list(LANGUAGE_ATOM)) //SPLURT EDIT - Gives xenos common
+	spoken_languages = list(/datum/language/xenocommon = list(LANGUAGE_ATOM), /datum/language/common = list(LANGUAGE_ATOM)) //SPLURT EDIT - Gives xenos common
+	//blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM)) //SPLURT EDIT - Removes blocked_languages
 
 /datum/language_holder/terror_spiders
 	understood_languages = list(/datum/language/terrorspiders = list(LANGUAGE_ATOM))
@@ -252,7 +252,7 @@ Key procs
 	understood_languages = list(/datum/language/drone = list(LANGUAGE_ATOM),
 								/datum/language/machine = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/drone = list(LANGUAGE_ATOM))
-	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	//blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM)) //SPLURT EDIT: No blocking languages for nonhuman mobs
 
 /datum/language_holder/drone/syndicate
 	blocked_languages = null
@@ -272,7 +272,7 @@ Key procs
 /datum/language_holder/lightbringer
 	understood_languages = list(/datum/language/slime = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/slime = list(LANGUAGE_ATOM))
-	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	// blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM)) ////SPLURT EDIT: No blocking languages for nonhuman mobs
 
 /datum/language_holder/lizard
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
@@ -282,10 +282,8 @@ Key procs
 
 /datum/language_holder/lizard/ash
 	selected_language = /datum/language/draconic
-	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM), //SKYRAT EDIT - additional languages
-								/datum/language/draconic = list(LANGUAGE_ATOM))
-	spoken_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
-							/datum/language/draconic = list(LANGUAGE_ATOM)) //SKYRAT EDIT - additional languages
+	understood_languages = list(/datum/language/draconic = list(LANGUAGE_ATOM))
+	spoken_languages = list(/datum/language/draconic = list(LANGUAGE_ATOM))
 
 /datum/language_holder/monkey
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),
@@ -306,7 +304,7 @@ Key procs
 /datum/language_holder/swarmer
 	understood_languages = list(/datum/language/swarmer = list(LANGUAGE_ATOM))
 	spoken_languages = list(/datum/language/swarmer = list(LANGUAGE_ATOM))
-	blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM))
+	//blocked_languages = list(/datum/language/common = list(LANGUAGE_ATOM)) //SPLURT EDIT: No blocking languages for nonhuman mobs
 
 /datum/language_holder/sylvan
 	understood_languages = list(/datum/language/common = list(LANGUAGE_ATOM),

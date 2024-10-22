@@ -36,6 +36,10 @@
 #define COMSIG_WEATHER_START(event_type) "!weather_start [event_type]"
 #define COMSIG_WEATHER_WINDDOWN(event_type) "!weather_winddown [event_type]"
 #define COMSIG_WEATHER_END(event_type) "!weather_end [event_type]"
+/// An alarm of some form was sent (datum/alarm_handler/source, alarm_type, area/source_area)
+#define COMSIG_ALARM_FIRE(alarm_type) "!alarm_fire [alarm_type]"
+/// An alarm of some form was cleared (datum/alarm_handler/source, alarm_type, area/source_area)
+#define COMSIG_ALARM_CLEAR(alarm_type) "!alarm_clear [alarm_type]"
 
 /// called by auxgm add_gas: (gas_id)
 #define COMSIG_GLOB_NEW_GAS "!new_gas"
@@ -169,6 +173,8 @@
 	#define COMSIG_ATOM_BLOCKS_BSA_BEAM (1<<0)
 ///from base of atom/setDir(): (old_dir, new_dir). Called before the direction changes.
 #define COMSIG_ATOM_DIR_CHANGE "atom_dir_change"
+///from base of atom/setDir(): (old_dir, new_dir). Called after the direction changes.
+#define COMSIG_ATOM_DIR_AFTER_CHANGE "atom_dir_after_change"
 ///from base of atom/handle_atom_del(): (atom/deleted)
 #define COMSIG_ATOM_CONTENTS_DEL "atom_contents_del"
 ///from base of atom/has_gravity(): (turf/location, list/forced_gravities)
@@ -207,18 +213,6 @@
 
 #define COMSIG_ENTER_AREA "enter_area" 						//from base of area/Entered(): (/area)
 #define COMSIG_EXIT_AREA "exit_area" 							//from base of area/Exited(): (/area)
-
-#define COMSIG_CLICK "atom_click"								//from base of atom/Click(): (location, control, params, mob/user)
-#define COMSIG_CLICK_SHIFT "shift_click"						//from base of atom/ShiftClick(): (/mob), return flags also used by other signals.
-	#define COMPONENT_ALLOW_EXAMINATE 1
-	#define COMPONENT_DENY_EXAMINATE 2 //Higher priority compared to the above one
-
-#define COMSIG_CLICK_CTRL "ctrl_click"							//from base of atom/CtrlClickOn(): (/mob)
-#define COMSIG_CLICK_ALT "alt_click"							//from base of atom/AltClick(): (/mob)
-#define COMSIG_CLICK_CTRL_SHIFT "ctrl_shift_click"				//from base of atom/CtrlShiftClick(/mob)
-#define COMSIG_MOUSEDROP_ONTO "mousedrop_onto"					//from base of atom/MouseDrop(): (/atom/over, /mob/user)
-	#define COMPONENT_NO_MOUSEDROP 1
-#define COMSIG_MOUSEDROPPED_ONTO "mousedropped_onto"			//from base of atom/MouseDrop_T: (/atom/from, /mob/user)
 
 // /area signals
 ///from base of area/proc/power_change(): ()
@@ -512,6 +506,8 @@
 	#define COMPONENT_BLOCK_SHARPEN_BLOCKED 2
 	#define COMPONENT_BLOCK_SHARPEN_ALREADY 4
 	#define COMPONENT_BLOCK_SHARPEN_MAXED 8
+#define COMSIG_ITEM_CHECK_WIELDED "item_check_wielded"  // used to check if the item is wielded for special effects
+	#define COMPONENT_IS_WIELDED 1
 #define COMSIG_ITEM_MICROWAVE_ACT "microwave_act"               //called on item when microwaved (): (obj/machinery/microwave/M)
 /// Return on success - that is, a microwaved item was produced
 #define COMPONENT_MICROWAVE_SUCCESS (1<<0)
@@ -761,9 +757,6 @@
 #define COMSIG_HUD_OFFSET_CHANGED "hud_offset_changed"
 ///from base of mob/set_sight(): (new_sight, old_sight)
 #define COMSIG_MOB_SIGHT_CHANGE "mob_sight_changed"
-
-///from /obj/machinery/set_occupant(atom/movable/O): (new_occupant)
-#define COMSIG_MACHINERY_SET_OCCUPANT "machinery_set_occupant"
 ///from base of mob/living/death(): (gibbed)
 #define COMSIG_LIVING_DEATH "living_death"
 ///from base of /mob/Login(): ()
@@ -799,3 +792,36 @@
 
 /// Used by /obj/item/melee/breaching_hammer
 #define COMSIG_BREACHING "breaching_signal_woop_woop"
+
+/// from /mob/proc/key_down(): (key, client/client, full_key)
+#define COMSIG_MOB_KEYDOWN "mob_key_down"
+
+// Instant Summons
+/// Sent from /datum/action/cooldown/spell/summonitem/cast(), to the item being marked for recall: (datum/action/cooldown/spell/spell, mob/user)
+#define COMSIG_ITEM_MARK_RETRIEVAL "item_mark_retrieval"
+	/// Return to stop the cast and prevent the item from being marked
+	#define COMPONENT_BLOCK_MARK_RETRIEVAL (1 << 0)
+
+// from /client/proc/change_view() : (new_size)
+#define COMSIG_VIEW_SET "view_set"
+
+// from /client/proc/handle_popup_close() : (window_id)
+#define COMSIG_POPUP_CLEARED "popup_cleared"
+
+/// Called after one or more verbs are added: (list of verbs added)
+#define COMSIG_CLIENT_VERB_ADDED "client_verb_added"
+
+/// Called after one or more verbs are added: (list of verbs added)
+#define COMSIG_CLIENT_VERB_REMOVED "client_verb_removed"
+
+/// Called after a client logs into a mob: (mob)
+#define COMSIG_CLIENT_MOB_LOGIN "client_mob_changed"
+
+/// Global signal called after the station changes its name.
+/// (new_name, old_name)
+#define COMSIG_GLOB_STATION_NAME_CHANGED "!station_name_changed"
+// Alarm listener datum signals
+///Sent when an alarm is fired (alarm, area/source_area)
+#define COMSIG_ALARM_TRIGGERED "comsig_alarm_triggered"
+///Send when an alarm source is cleared (alarm_type, area/source_area)
+#define COMSIG_ALARM_CLEARED "comsig_alarm_clear"

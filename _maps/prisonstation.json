@@ -1,0 +1,36 @@
+{
+    "map_name": "PrisonStation",
+    "map_path": "map_files/PrisonStation",
+    "map_file": [
+		"PrisonStation.dmm",
+		"PrisonUnderground.dmm"
+	],
+	"station_ruin_budget":0,
+	"space_ruin_levels":0,
+	"space_empty_levels":0,
+    "shuttles": {
+		"emergency": "emergency_pubby",
+		"whiteship": "whiteship_pubby",
+		"ferry": "ferry_fancy",
+		"cargo": "cargo_box"
+    },
+	"traits":[
+        {
+            "Up":1,
+			"Mining":true,
+			"Linkage":null,
+			"Gravity":true,
+			"Baseturf":"/turf/open/lava/smooth/lava_land_surface"
+        },
+        {
+            "Down":-1,
+			"Mining":true,
+			"Linkage":null,
+			"Gravity":true,
+			"Weather_Ashstorm":true,
+			"Baseturf":"/turf/open/floor/plating/asteroid/basalt"
+        }
+    ],
+
+	"minetype":"none"
+}

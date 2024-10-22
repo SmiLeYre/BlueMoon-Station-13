@@ -41,7 +41,7 @@
 	var/notice_healing                    //Var to see if you are healing for preventing spam of the chat message inform the user of such
 	var/FinalDeath                  //Have we reached final death? Used to prevent spam.
 	// LISTS
-	var/static/list/defaultTraits = list (TRAIT_STABLEHEART, TRAIT_NOBREATH, TRAIT_SLEEPIMMUNE, TRAIT_NOCRITDAMAGE, TRAIT_RESISTCOLD, TRAIT_RADIMMUNE, TRAIT_NIGHT_VISION, \
+	var/static/list/defaultTraits = list (TRAIT_STABLEHEART, TRAIT_NOBREATH, TRAIT_SLEEPIMMUNE, TRAIT_NOCRITDAMAGE, TRAIT_RESISTCOLD, TRAIT_RADIMMUNE, TRAIT_NIGHT_VISION, TRAIT_NOTHIRST, \
 										  TRAIT_NOSOFTCRIT, TRAIT_NOHARDCRIT, TRAIT_AGEUSIA, TRAIT_COLDBLOODED, TRAIT_NONATURALHEAL, TRAIT_NOMARROW, TRAIT_NOPULSE, TRAIT_VIRUSIMMUNE, TRAIT_NODECAP, TRAIT_NOGUT)
 
 	reminded_times_left = 2 // BLUEMOON ADD
@@ -64,14 +64,16 @@
 	ClearAllPowersAndStats()// Clear Powers & Stats
 	clear_bloodsucker_objectives()	// Objectives
 	update_bloodsucker_icons_removed(owner.current)// Clear Antag HUD
+	owner.special_role = null // BLUEMOON ADD
 	. = ..()
 
 
 
 /datum/antagonist/bloodsucker/greet()
 	var/fullname = ReturnFullName(TRUE)
-	to_chat(owner, "<span class='userdanger'>You are [fullname], a strain of vampire dubbed bloodsucker!</span><br>")
+	to_chat(owner, "<span class='userdanger'>Вы - [fullname], потомок одного из древних вампиров!</span><br>")
 	owner.announce_objectives()
+	/* BLUEMOON REMOVAL START
 	to_chat(owner, "<span class='boldannounce'>* You regenerate your health slowly, you're weak to fire, and you depend on blood to survive. Allow your stolen blood to run too low, and you will find yourself at \
 	risk of being discovered!</span><br>")
 	//to_chat(owner, "<span class='boldannounce'>As an immortal, your power is linked to your age. The older you grow, the more abilities you will have access to.<span>")
@@ -81,15 +83,26 @@
 	bloodsucker_greet += "<span class='announce'>Bloodsucker Tip: Rest in a <i>Coffin</i> to claim it, and that area, as your lair.</span><br>"
 	bloodsucker_greet += "<span class='announce'>Bloodsucker Tip: Fear the daylight! Solar flares will bombard the station periodically, and only your coffin can guarantee your safety.</span><br>"
 	bloodsucker_greet += "<span class='announce'>Bloodsucker Tip: You wont loose blood if you are unconcious or sleeping. Use this to your advantage to conserve blood.</span><br>"
+	/ BLUEMOON REMOVAL END */
+	// BLUEMOON ADD START - адаптация предыдущего
+	var/bloodsucker_greet
+	bloodsucker_greet += "<span class='boldannounce'>* Вы медленно восстанавливаете своё здоровье, обладаете слабостью к огню и зависите от крови для выживания. Если крови останется слишком мало, станет невозможным поддерживать маскировку и вас раскроют!</span><br>"
+	bloodsucker_greet += "<span class='boldannounce'>* Сородичи не обязательно ваши друзья, но выживание может зависить от кооперации с ними. Предавайте их на ваше усмотрение.</span><br>"
+	bloodsucker_greet += "<span class='boldannounce'>* Будучи бессмертным существом, ваша сила зависит от поколения. Чтобы повысить его, должен пройти цикл. Становитесь сильнее, чтобы открывать в себе новые способности...<span><br>"
+	bloodsucker_greet += "<span class='boldannounce'><i>* Используйте \",b\" для общения на древнем языке сородичей.</span><br>"
+	bloodsucker_greet += "<span class='announce'>Подсказка: Спите в <i>гробу</i>, чтобы обозначить зону как своё логово.</span><br>"
+//	bloodsucker_greet += "<span class='announce'>Подсказка: Бойтесь света дня! Солнечные вспышки периодически достигают станции. Единственное спасение от них - ваш гроб и шкафы.</span><br>"
+	bloodsucker_greet += "<span class='announce'>Подсказка: Вы не теряете кровь, если спите или без сознания. Используйте это преимущество для сохранения крови.</span><br>"
+	// BLUEMOON ADD END
 	to_chat(owner, bloodsucker_greet)
 
 	owner.current.playsound_local(null, 'sound/bloodsucker/BloodsuckerAlert.ogg', 100, FALSE, pressure_affected = FALSE)
-	antag_memory += "Although you were born a mortal, in un-death you earned the name <b>[fullname]</b>.<br>"
+	antag_memory += "Не смотря на то, что родились вы в смертном теле, в не-жизни вы носите имя <b>[fullname]</b>.<br>"
 
 
 /datum/antagonist/bloodsucker/farewell()
-	owner.current.visible_message("[owner.current]'s skin flushes with color, their eyes growing glossier. They look...alive.",\
-			"<span class='userdanger'><FONT size = 3>With a snap, your curse has ended. You are no longer a Bloodsucker. You live once more!</FONT></span>")
+	owner.current.visible_message("Кожа [owner.current] налилась цветом, глаза снова заблестели. Выглядит... живо.",\
+			"<span class='userdanger'><FONT size = 3>Внезапно, ваше проклятье закончилось. Вы больше не кровосос. Вы снова живой.</FONT></span>")
 	// Refill with Blood
 	owner.current.blood_volume = max(owner.current.blood_volume,BLOOD_VOLUME_SAFE)
 
@@ -100,19 +113,19 @@
 /datum/antagonist/bloodsucker/proc/SelectFirstName()
 	// Names (EVERYONE gets one))
 	if(owner.current.gender == MALE)
-		bloodsucker_name = pick("Desmond","Rudolph","Dracul","Vlad","Pyotr","Gregor","Cristian","Christoff","Marcu","Andrei","Constantin","Gheorghe","Grigore","Ilie","Iacob","Luca","Mihail","Pavel","Vasile","Octavian","Sorin", \
-						"Sveyn","Aurel","Alexe","Iustin","Theodor","Dimitrie","Octav","Damien","Magnus","Caine","Abel", // Romanian/Ancient
-						"Lucius","Gaius","Otho","Balbinus","Arcadius","Romanos","Alexios","Vitellius",  // Latin
-						"Melanthus","Teuthras","Orchamus","Amyntor","Axion",  // Greek
-						"Thoth","Thutmose","Osorkon,","Nofret","Minmotu","Khafra", // Egyptian
-						"Dio")
+		bloodsucker_name = pick("Десмонд","Рудольф","Дракул","Влад","Пётр","Грерог","Кристиан","Кристофф","Марку","Андрей","Константин","Георг","Грэгори","Илья","Якоб","Лука","Михаил","Павел","Василий","Октавий","Сорин", \
+						"Свейн","Аурел","Алекси","Иустин","Теодор","Дмитрий","Октав","Дамиен","Магнус","Каин","Авель", // Romanian/Ancient
+						"Люциус","Гай","Отто","Балбинус","Аркадиус","Романос","Алексиос","Виттелиус",  // Latin
+						"Мелантус","Тевфрант","Орхам","Аминтор","Аксион",  // Greek
+						"Тот","Тутмос","Осоркон,","Нофрет","Минмоту","Кафра", // Egyptian
+						"Дио")
 
 	else
-		bloodsucker_name = pick("Islana","Tyrra","Greganna","Pytra","Hilda","Andra","Crina","Viorela","Viorica","Anemona","Camelia","Narcisa","Sorina","Alessia","Sophia","Gladda","Arcana","Morgan","Lasarra","Ioana","Elena", \
-						"Alina","Rodica","Teodora","Denisa","Mihaela","Svetla","Stefania","Diyana","Kelssa","Lilith", // Romanian/Ancient
-						"Alexia","Athanasia","Callista","Karena","Nephele","Scylla","Ursa",  // Latin
-						"Alcestis","Damaris","Elisavet","Khthonia","Teodora",  // Greek
-						"Nefret","Ankhesenpep") // Egyptian
+		bloodsucker_name = pick("Ислана","Тирра","Греганна","Питра","Хильда","Андра","Крина","Виорела","Виорика","Анемона","Камелия","Нарциса","Сорина","Алессия","София","Гладда","Аркана","Моргана","Лассара","Иоанна","Елена", \
+						"Алина","Родика","Теодора","Дениса","Михаэла","Светла","Стэфания","Диана","Келлса","Лилит", // Romanian/Ancient
+						"Алексия","Антанасия","Каллиста","Карена","Нефеле","Сцилла","Урса",  // Latin
+						"Алкестида","Дамарис","Елизавета","Ктхония","Тэодора",  // Greek
+						"Нефрет","Анхнесмерира") // Egyptian
 
 /datum/antagonist/bloodsucker/proc/SelectTitle(am_fledgling = 0, forced = FALSE)
 	// Already have Title
@@ -121,10 +134,10 @@
 	// Titles [Master]
 	if(!am_fledgling)
 		if(owner.current.gender == MALE)
-			bloodsucker_title = pick ("Count","Baron","Viscount","Prince","Duke","Tzar","Dreadlord","Lord","Master")
+			bloodsucker_title = pick ("Граф","Барон","Виконт","Принц","Герцог","Царь","Повелитель Ужаса","Лорд","Хозяин","Целователь Мальчиков")
 		else
-			bloodsucker_title = pick ("Countess","Baroness","Viscountess","Princess","Duchess","Tzarina","Dreadlady","Lady","Mistress")
-		to_chat(owner, "<span class='announce'>You have earned a title! You are now known as <i>[ReturnFullName(TRUE)]</i>!</span>")
+			bloodsucker_title = pick ("Графиня","Баронесса","Виконтесса","Принцесса","Герцогиня","Царица","Леди Ужаса","Леди","Хозяйка","Профурсетка")
+		to_chat(owner, "<span class='announce'>Вы заслужили титул! Теперь вы известны как <i>[ReturnFullName(TRUE)]</i>!</span>")
 	// Titles [Fledgling]
 	else
 		bloodsucker_title = null
@@ -135,22 +148,22 @@
 		return
 	// Reputations [Master]
 	if(!am_fledgling)
-		bloodsucker_reputation = pick("Butcher","Blood Fiend","Crimson","Red","Black","Terror","Nightman","Feared","Ravenous","Fiend","Malevolent","Wicked","Ancient","Plaguebringer","Sinister","Forgotten","Wretched","Baleful", \
-							"Inqisitor","Harvester","Reviled","Robust","Betrayer","Destructor","Damned","Accursed","Terrible","Vicious","Profane","Vile","Depraved","Foul","Slayer","Manslayer","Sovereign","Slaughterer", \
-							"Forsaken","Mad","Dragon","Savage","Villainous","Nefarious","Inquisitor","Marauder","Horrible","Immortal","Undying","Overlord","Corrupt","Hellspawn","Tyrant","Sanguineous")
+		bloodsucker_reputation = pick("Мясник","Кровавый изверг","Алый","Красный","Черный","Ужасный","Ночной житель","Страшный","Ненасытный","Изверг","Злобный","Безумный","Древний","Чумной","Зловещий","Забытый","Несчастный","Губительный", \
+							"Инквизитор","Поборник","Оскорбительный","Робустный","Предатель","Разрушитель","Проклятый","Ненавистный","Ужасный","Жестокий","Нечистивый","Мерзкий","Развратный","Плохой","Убийца","Человекоубийца","Суверенный","Расчленитель", \
+							"Отрекшийся","Безумный","Дракон","Дикий","Злодейский","Гнусный","Инквизитор","Мародёр","Отвратительный","Бессмертный","Неумирающий","Повелитель","Испорченый","Адское Порождение","Тиран","Кровавый")
 		if(owner.current.gender == MALE)
 			if(prob(10)) // Gender override
-				bloodsucker_reputation = pick("King of the Damned", "Blood King", "Emperor of Blades", "Sinlord", "God-King")
+				bloodsucker_reputation = pick("Король Проклятых", "Кровавый Король", "Император Клинков", "Лорд Греха", "Бог-Король")
 		else if(owner.current.gender == FEMALE)
 			if(prob(10)) // Gender override
-				bloodsucker_reputation = pick("Queen of the Damned", "Blood Queen", "Empress of Blades", "Sinlady", "God-Queen")
+				bloodsucker_reputation = pick("Королева Проклятых", "Кровавая Королева", "Императрица Клинков", "Леди Греха", "Бог-Королева")
 
-		to_chat(owner, "<span class='announce'>You have earned a reputation! You are now known as <i>[ReturnFullName(TRUE)]</i>!</span>")
+		to_chat(owner, "<span class='cult'>Вы заслужили титул! Теперь вы известны как <i>[ReturnFullName(TRUE)]</i>!</span>")
 
 	// Reputations [Fledgling]
 	else
-		bloodsucker_reputation = pick ("Crude","Callow","Unlearned","Neophyte","Novice","Unseasoned","Fledgling","Young","Neonate","Scrapling","Untested","Unproven","Unknown","Newly Risen","Born","Scavenger","Unknowing",\
-							   "Unspoiled","Disgraced","Defrocked","Shamed","Meek","Timid","Broken")//,"Fresh")
+		bloodsucker_reputation = pick ("Сырой","Бескрылый","Неопытный","Неофиь","Новичек","Невыдержанный","Птенец","Молодой","Новорожденный","Срочник","Неиспытанный","Непроверенный","Неизвестный","Ново-восставший","Рожденный","Поберушка","Незнающий",\
+							   "Неиспорченный","Опавший","Лишенный","Опозоренный","Кроткий","Робкий","Сломанный")//,"Fresh")
 
 
 /datum/antagonist/bloodsucker/proc/AmFledgling()
@@ -166,12 +179,12 @@
 		fullname = bloodsucker_title + " " + fullname
 	// Rep
 	if(include_rep && bloodsucker_reputation)
-		fullname = fullname + " the " + bloodsucker_reputation
+		fullname = fullname + " " + bloodsucker_reputation
 
 	return fullname
 
 
-/datum/antagonist/bloodsucker/proc/BuyPower(datum/action/bloodsucker/power)//(obj/effect/proc_holder/spell/power)
+/datum/antagonist/bloodsucker/proc/BuyPower(datum/action/cooldown/bloodsucker/power)//(obj/effect/proc_holder/spell/power)
 	powers += power
 	power.Grant(owner.current)// owner.AddSpell(power)
 
@@ -180,10 +193,12 @@
 	add_hud()
 	update_hud(TRUE) 	// Set blood value, current rank
 	// Powers
-	BuyPower(new /datum/action/bloodsucker/feed)
-	BuyPower(new /datum/action/bloodsucker/masquerade)
-	BuyPower(new /datum/action/bloodsucker/veil)
-	BuyPower(new /datum/action/bloodsucker/levelup)
+	BuyPower(new /datum/action/cooldown/bloodsucker/feed)
+	BuyPower(new /datum/action/cooldown/bloodsucker/masquerade)
+	BuyPower(new /datum/action/cooldown/bloodsucker/veil)
+//	BuyPower(new /datum/action/cooldown/bloodsucker/levelup) // BLUEMOON REMOVAL - возвращаем фазы дня и убираем форсированную эволюцию
+	BuyPower(new /datum/action/cooldown/bloodsucker/tutorial) // BLUEMOON ADD - обучение для самых маленьких неофит
+
 	// Traits
 	for(var/T in defaultTraits)
 		ADD_TRAIT(owner.current, T, BLOODSUCKER_TRAIT)
@@ -210,7 +225,7 @@
 		S.punchdamagehigh += 1      //highest possible punch damage	 9
 		if(istype(H) && owner.assigned_role == "Clown")
 			H.dna.remove_mutation(CLOWNMUT)
-			to_chat(H, "As a vampiric clown, you are no longer a danger to yourself. Your nature is subdued.")
+			to_chat(H, "Будучи вампирским клоуном, вы больше не опасность для самого себя. Ваша клоунская натура подчинена.")
 	// Physiology
 	CheckVampOrgans() // Heart, Eyes
 	// Language
@@ -225,7 +240,7 @@
 	remove_hud()
 	// Powers
 	while(powers.len)
-		var/datum/action/bloodsucker/power = pick(powers)
+		var/datum/action/cooldown/bloodsucker/power = pick(powers)
 		powers -= power
 		power.Remove(owner.current)
 		// owner.RemoveSpell(power)
@@ -266,18 +281,24 @@
 	if(istype(owner.current.loc, /obj/structure/closet/crate/coffin))
 		SpendRank()
 	else
-		to_chat(owner, "<EM><span class='notice'>You have grown more ancient! Sleep in a coffin that you have claimed to thicken your blood and become more powerful.</span></EM>")
+		to_chat(owner, "<EM><span class='cult'>Вы стали более древним! Выспитесь в гробу который вы назначили своим чтобы укрепить кровь и стать еще сильнее.</span></EM>")
 		if(bloodsucker_level_unspent >= 2)
-			to_chat(owner, "<span class='announce'>Bloodsucker Tip: If you cannot find or steal a coffin to use, you can build one from wooden planks.</span><br>")
+			to_chat(owner, "<span class='announce'>Напоминание: Если вы не можете найти или украсть гроб для использования, вы можете построить себе его из досок или листов металла.</span><br>")
 
 /datum/antagonist/bloodsucker/proc/LevelUpPowers()
-	for(var/datum/action/bloodsucker/power in powers)
+	for(var/datum/action/cooldown/bloodsucker/power in powers)
 		power.level_current ++
 
 /datum/antagonist/bloodsucker/proc/SpendRank()
 	set waitfor = FALSE
 	if(bloodsucker_level_unspent <= 0 || !owner || !owner.current || !owner.current.client || !isliving(owner.current))
 		return
+	// BLUEMOON ADD START
+	//if(bloodsucker_level >= 2)
+		//if(vassals.len <= bloodsucker_level / 2) // для прогресса, вампиру необходимо набирать слуг, по 1 за каждые 2 уровня
+			//to_chat(owner.current, span_warning("Нужно больше вассалов, чтобы повысить своё могущество!"))
+			//return
+	// BLUEMOON ADD END
 	var/mob/living/L = owner.current
 	level_bloodcost = max_blood_volume * 0.2
 	//If the blood volume of the bloodsucker is lower than the cost to level up, return and inform the bloodsucker
@@ -285,34 +306,34 @@
 	//TODO: Make this into a radial, or perhaps a tgui next UI
 		// Purchase Power Prompt
 	var/list/options = list()
-	for(var/pickedpower in typesof(/datum/action/bloodsucker))
-		var/datum/action/bloodsucker/power = pickedpower
+	for(var/pickedpower in typesof(/datum/action/cooldown/bloodsucker))
+		var/datum/action/cooldown/bloodsucker/power = pickedpower
 		// If I don't own it, and I'm allowed to buy it.
 		if(!(locate(power) in powers) && initial(power.bloodsucker_can_buy))
 			options[initial(power.name)] = power // TESTING: After working with TGUI, it seems you can use initial() to view the variables inside a path?
 	options["\[ Not Now \]"] = null
 	// Abort?
 	if(options.len > 1)
-		var/choice = input(owner.current, "You have the opportunity to grow more ancient at the cost of [level_bloodcost] units of blood. Select a power to advance your Rank.", "Your Blood Thickens...") in options
+		var/choice = input(owner.current, "У вас есть возможность стать более древним ценой [level_bloodcost] единиц крови. Выберите силу чтобы продвинуть свой Ранг.", "Ваша кровь сгущается...") in options
 		// Cheat-Safety: Can't keep opening/closing coffin to spam levels
 		if(bloodsucker_level_unspent <= 0) // Already spent all your points, and tried opening/closing your coffin, pal.
 			return
 		if(!istype(owner.current.loc, /obj/structure/closet/crate/coffin))
-			to_chat(owner.current, "<span class='warning'>Return to your coffin to advance your Rank.</span>")
+			to_chat(owner.current, "<span class='warning'>Вернитесь в свой гроб чтобы продвинуть свой Ранг.</span>")
 			return
 		if(!choice || !options[choice] || (locate(options[choice]) in powers)) // ADDED: Check to see if you already have this power, due to window stacking.
-			to_chat(owner.current, "<span class='notice'>You prevent your blood from thickening just yet, but you may try again later.</span>")
+			to_chat(owner.current, "<span class='warning'>Вы не позволили своей крови окрепнуть, но вы можете попробовать еще раз позже.</span>")
 			return
 		if(L.blood_volume < level_bloodcost)
-			to_chat(owner.current, "<span class='warning'>You dont have enough blood to thicken your blood, you need [level_bloodcost - L.blood_volume] units more!</span>")
+			to_chat(owner.current, "<span class='warning'>У вас недостаточно крови чтобы укрепить её, вам нужно еще [level_bloodcost - L.blood_volume]!</span>")
 			return
 		// Buy New Powers
-		var/datum/action/bloodsucker/P = options[choice]
+		var/datum/action/cooldown/bloodsucker/P = options[choice]
 		AddBloodVolume(-level_bloodcost)
 		BuyPower(new P)
-		to_chat(owner.current, "<span class='notice'>You have used [level_bloodcost] units of blood and learned [initial(P.name)]!</span>")
+		to_chat(owner.current, "<span class='cult'>Вы использовали [level_bloodcost] единиц крови и изучили [initial(P.name)]!</span>")
 	else
-		to_chat(owner.current, "<span class='notice'>You grow more ancient by the night!</span>")
+		to_chat(owner.current, "<span class='cult'>Вы становитесь более древним порождением ночи!</span>")
 	/////////
 	// Advance Powers (including new)
 	LevelUpPowers()
@@ -336,16 +357,21 @@
 	// Assign True Reputation
 	if(bloodsucker_level == 4)
 		SelectReputation(am_fledgling = FALSE, forced = TRUE)
-	to_chat(owner.current, "<span class='notice'>You are now a rank [bloodsucker_level] Bloodsucker. Your strength, health, feed rate, regen rate, can have up to [bloodsucker_level - count_vassals(owner.current.mind)] vassals, and maximum blood have all increased!</span>")
-	to_chat(owner.current, "<span class='notice'>Your existing powers have all ranked up as well!</span>")
+	to_chat(owner.current, "<span class='warning'>Вы теперь вампир [bloodsucker_level] поколения. Ваша сила, здоровье, скорость поедания, скорость регенерации повысились, можете иметь [bloodsucker_level - count_vassals(owner.current.mind)] вассалов, а максимум сгущаемой крови возрос!</span>")
+	to_chat(owner.current, "<span class='warning'>Все ваши изученые способности так же усилились!</span>")
 	update_hud(TRUE)
 	owner.current.playsound_local(null, 'sound/effects/pope_entry.ogg', 25, TRUE, pressure_affected = FALSE)
+
+	// BLUEMOON ADD START - вампир тратит все уровни без необходимости открыть-закрывать гроб
+	if(bloodsucker_level_unspent)
+		SpendRank()
+	// BLUEMOON ADD END
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //This handles the application of antag huds/special abilities
 /datum/antagonist/bloodsucker/apply_innate_effects(mob/living/mob_override)
-	RegisterSignal(owner.current,COMSIG_LIVING_BIOLOGICAL_LIFE,.proc/LifeTick)
+	RegisterSignal(owner.current,COMSIG_LIVING_BIOLOGICAL_LIFE, PROC_REF(LifeTick))
 	return
 
 //This handles the removal of antag huds/special abilities
@@ -369,6 +395,14 @@
 	lair_objective.owner = owner
 	lair_objective.generate_objective()
 	add_objective(lair_objective)
+
+	// BLUEMOON ADD START
+	// Gain Vassals Objective
+	var/datum/objective/bloodsucker/gain_vassals/gain_vassals_objective = new
+	gain_vassals_objective.owner = owner
+	gain_vassals_objective.generate_objective()
+	add_objective(gain_vassals_objective)
+	// BLUEMOON ADD END
 
 	// Protege Objective
 	var/datum/objective/bloodsucker/protege/protege_objective = new
@@ -425,7 +459,7 @@
 //Include additional information about antag in this part
 /datum/antagonist/bloodsucker/antag_listing_status()
 	if (owner && owner.AmFinalDeath())
-		return "<font color=red>Final Death</font>"
+		return "<font color=red>Окончательная Смерть</font>"
 	return ..()
 
 
@@ -443,7 +477,7 @@
 
 	// Now list their vassals
 	if (vassals.len > 0)
-		report += "<span class='header'>Their Vassals were...</span>"
+		report += "<span class='header'>И вассалами были...</span>"
 		for (var/datum/antagonist/vassal/V in vassals)
 			if (V.owner)
 				var/jobname = V.owner.assigned_role ? "the [V.owner.assigned_role]" : ""
@@ -453,7 +487,7 @@
 
 //Displayed at the start of roundend_category section, default to roundend_category header
 /datum/antagonist/bloodsucker/roundend_report_header()
-	return 	"<span class='header'>Lurking in the darkness, the Bloodsuckers were:</span><br>"
+	return 	"<span class='header'>Крадущимися в тенях, Кровососами были:</span><br>"
 
 
 
@@ -729,7 +763,7 @@
 
 /atom/movable/screen/bloodsucker/blood_counter/update_counter(value, valuecolor)
 	..()
-	maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font color='[valuecolor]'>[round(value,1)]</font></div>"
+	maptext = MAPTEXT("<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font color='[valuecolor]'>[round(value,1)]</font></div>")
 
 /atom/movable/screen/bloodsucker/rank_counter
 	name = "Bloodsucker Rank"
@@ -739,7 +773,7 @@
 
 /atom/movable/screen/bloodsucker/rank_counter/update_counter(value, valuecolor)
 	..()
-	maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font color='[valuecolor]'>[round(value,1)]</font></div>"
+	maptext = MAPTEXT("<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font color='[valuecolor]'>[round(value,1)]</font></div>")
 
 /atom/movable/screen/bloodsucker/sunlight_counter
 	icon = 'icons/mob/actions/bloodsucker.dmi'
@@ -767,7 +801,7 @@
 
 /atom/movable/screen/bloodsucker/sunlight_counter/update_counter(value, valuecolor)
 	..()
-	maptext = "<div align='center' valign='bottom' style='position:relative; top:0px; left:6px'><font color='[valuecolor]'>[value]</font></div>"
+	maptext = MAPTEXT("<div align='center' valign='bottom' style='position:relative; top:0px; left:6px'><font color='[valuecolor]'>[value]</font></div>")
 
 /datum/antagonist/bloodsucker/proc/count_vassals(datum/mind/master)
 	var/datum/antagonist/bloodsucker/B = master.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)

@@ -2,12 +2,12 @@
 
 
 
-/datum/action/bloodsucker/fortitude
+/datum/action/cooldown/bloodsucker/fortitude
 	name = "Fortitude"
 	desc = "Withstand egregious physical wounds and walk away from attacks that would stun, pierce, and dismember lesser beings. You cannot run while active."
 	button_icon_state = "power_fortitude"
 	bloodcost = 60
-	cooldown = 200
+	cooldown_time = 200
 	bloodsucker_can_buy = TRUE
 	amToggle = TRUE
 	warn_constant_cost = TRUE
@@ -15,10 +15,10 @@
 
 	var/fortitude_resist // So we can raise and lower your brute resist based on what your level_current WAS.
 
-/datum/action/bloodsucker/fortitude/ActivatePower()
+/datum/action/cooldown/bloodsucker/fortitude/ActivatePower()
 	var/datum/antagonist/bloodsucker/B = owner.mind.has_antag_datum(ANTAG_DATUM_BLOODSUCKER)
 	var/mob/living/user = owner
-	to_chat(user, "<span class='notice'>Your flesh, skin, and muscles become as steel.</span>")
+//	to_chat(user, "<span class='notice'>Your flesh, skin, and muscles become as steel.</span>") // BLUEMOON REMOVAL - передвинуто ниже
 	// Traits & Effects
 	ADD_TRAIT(user, TRAIT_PIERCEIMMUNE, "fortitude")
 	ADD_TRAIT(user, TRAIT_NODISMEMBER, "fortitude")
@@ -29,6 +29,7 @@
 		fortitude_resist = max(0.3, 0.7 - level_current * 0.1)
 		H.physiology.brute_mod *= fortitude_resist
 		H.physiology.burn_mod *= fortitude_resist
+		to_chat(user, "<span class='notice'>Your flesh, skin, and muscles become as steel. You have [(1 - fortitude_resist) * 100]% resist to brute and burn damage.</span>") // BLUEMOON ADD
 	was_running = (user.m_intent == MOVE_INTENT_RUN)
 	if(was_running)
 		user.toggle_move_intent()
@@ -48,7 +49,7 @@
 		sleep(20) // Check every few ticks that we haven't disabled this power
 	// Return to Running (if you were before)
 
-/datum/action/bloodsucker/fortitude/DeactivatePower(mob/living/user = owner, mob/living/target)
+/datum/action/cooldown/bloodsucker/fortitude/DeactivatePower(mob/living/user = owner, mob/living/target)
 	..()
 	// Restore Traits & Effects
 	REMOVE_TRAIT(user, TRAIT_PIERCEIMMUNE, "fortitude")

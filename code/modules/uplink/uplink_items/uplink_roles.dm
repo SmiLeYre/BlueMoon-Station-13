@@ -87,7 +87,7 @@
 	To activate His Grace, simply unlatch Him."
 	item = /obj/item/his_grace
 	cost = 20
-	restricted_roles = list("Chaplain")
+	restricted_roles = list("Chaplain", "Assistant")
 	hijack_only = TRUE //This is a murderbone weapon, as such, it should only be available in those scenarios.
 	surplus = 5 //Very low chance to get it in a surplus crate even without being the chaplain
 
@@ -279,3 +279,38 @@
 	item = /obj/item/fireaxe/energized
 	cost = 4
 	restricted_roles = list("Chief Engineer", "Station Engineer", "Atmospheric Technician")
+
+/datum/uplink_item/role_restricted/KS23
+	name = "KS-23 shotgun"
+	desc = "War crimes are fun!"
+	item = /obj/item/gun/ballistic/shotgun/KS23/Inquisitor
+	cost = 7
+	restricted_roles = list("Chaplain")
+
+/datum/uplink_item/role_restricted/slug23
+	name = "KS-23 slug box"
+	desc = "8 lead slugs."
+	item = /obj/item/ammo_box/slug23
+	cost = 2
+	restricted_roles = list("Chaplain")
+
+/datum/uplink_item/role_restricted/slug_rubber23
+	name = "KS-23 rubber slug box"
+	desc = "8 rubber slugs."
+	item = /obj/item/ammo_box/slug_rubber23
+	cost = 1
+	restricted_roles = list("Chaplain")
+
+/datum/uplink_item/role_restricted/buckshot23
+	name = "KS-23 buckshot box"
+	desc = "8 buckshots."
+	item = /obj/item/ammo_box/buckshot23
+	cost = 1
+	restricted_roles = list("Chaplain")
+
+/datum/uplink_item/role_restricted/rubbershot23
+	name = "KS-23 rubbershot box"
+	desc = "8 rubber shots."
+	item = /obj/item/ammo_box/rubbershot23
+	cost = 1
+	restricted_roles = list("Chaplain")

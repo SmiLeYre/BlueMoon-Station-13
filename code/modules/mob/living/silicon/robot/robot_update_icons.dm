@@ -54,19 +54,25 @@
 		add_overlay(head_overlay)
 	update_fire()
 
-	if(client && stat != DEAD && module.dogborg == TRUE)
+	if(client && stat != DEAD && (module.dogborg == TRUE || module.hasrest == TRUE))
 		if(resting)
 			if(sitting)
 				icon_state = "[module.cyborg_base_icon]-sit"
 			if(bellyup)
 				icon_state = "[module.cyborg_base_icon]-bellyup"
-			else if(!sitting && !bellyup)
+			if(deep_rest)	//DarkSer request by Gardelin0
+				icon_state = "[module.cyborg_base_icon]-rest_deep"
+			if(wag_rest)	//DarkSer request by Gardelin0
+				icon_state = "[module.cyborg_base_icon]-rest_alt"
+			if(wag_sit)	//DarkSer request by Gardelin0
+				icon_state = "[module.cyborg_base_icon]-sit_alt"
+			else if(!sitting && !bellyup && !deep_rest && !wag_rest && !wag_sit)
 				icon_state = "[module.cyborg_base_icon]-rest"
 			cut_overlays()
 		else
 			icon_state = "[module.cyborg_base_icon]"
 
-	if(client && stat != DEAD && module.canrest == TRUE)	//For the new borgs who are not dogs
+	if(client && stat != DEAD && module.hasrest == TRUE)	//For the new borgs who are not dogs
 		if(resting)
 			if(sitting)
 				icon_state = "[module.cyborg_base_icon]-sit"

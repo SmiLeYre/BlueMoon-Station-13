@@ -42,7 +42,7 @@
 
 		//handle facial hair (if necessary)
 		if(H.gender != FEMALE)
-			var/new_style = input(user, "Select a facial hair style", "Grooming")  as null|anything in GLOB.facial_hair_styles_list
+			var/new_style = tgui_input_list(user, "Select a facial hair style", "Grooming", GLOB.facial_hair_styles_list)
 			if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 				return	//no tele-grooming
 			if(new_style)
@@ -51,7 +51,7 @@
 			H.facial_hair_style = "Shaved"
 
 		//handle normal hair
-		var/new_style = input(user, "Select a hair style", "Grooming")  as null|anything in GLOB.hair_styles_list
+		var/new_style = tgui_input_list(user, "Select a hair style", "Grooming", GLOB.hair_styles_list)
 		if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 			return	//no tele-grooming
 		if(new_style)
@@ -110,9 +110,9 @@
 	if(!I.tool_start_check(user, amount=0))
 		return TRUE
 
-	to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
+	to_chat(user, "<span class='notice'>Вы начинаете чинить [src]...</span>")
 	if(I.use_tool(src, user, 10, volume=50))
-		to_chat(user, "<span class='notice'>You repair [src].</span>")
+		to_chat(user, "<span class='notice'>Вы починили [src].</span>")
 		broken = 0
 		icon_state = initial(icon_state)
 		desc = initial(desc)
@@ -158,7 +158,7 @@
 
 	var/mob/living/carbon/human/H = user
 
-	var/choice = input(user, "Something to change?", "Magical Grooming") as null|anything in list("name", "race", "gender", "hair", "eyes")
+	var/choice = tgui_input_list(user, "Something to change?", "Magical Grooming", list("name", "race", "gender", "hair", "eyes"))
 
 	if(!user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
 		return
@@ -180,7 +180,7 @@
 
 		if("race")
 			var/newrace
-			var/racechoice = input(H, "What are we again?", "Race change") as null|anything in choosable_races
+			var/racechoice = tgui_input_list(H, "What are we again?", "Race change", choosable_races)
 			newrace = GLOB.species_list[racechoice]
 
 			if(!newrace)
@@ -193,7 +193,7 @@
 				var/list/choices = GLOB.skin_tones
 				if(CONFIG_GET(flag/allow_custom_skintones))
 					choices += "custom"
-				var/new_s_tone = input(H, "Choose your skin tone:", "Race change")  as null|anything in choices
+				var/new_s_tone = tgui_input_list(H, "Choose your skin tone:", "Race change", choices)
 				if(new_s_tone)
 					if(new_s_tone == "custom")
 						var/default = H.dna.skin_tone_override || null
@@ -266,7 +266,7 @@
 				H.update_hair()
 
 		if(BODY_ZONE_PRECISE_EYES)
-			var/eye_type = input(H, "Choose the eye you want to color", "Eye Color") as null|anything in list("Both Eyes", "Left Eye", "Right Eye")
+			var/eye_type = tgui_input_list(H, "Choose the eye you want to color", "Eye Color", list("Both Eyes", "Left Eye", "Right Eye"))
 			if(eye_type)
 				var/input_color = H.left_eye_color
 				if(eye_type == "Right Eye")

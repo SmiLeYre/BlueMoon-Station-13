@@ -5,8 +5,9 @@
 	var/description
 	var/mutable_appearance/pic
 	var/list/num_decals_per_atom
-
 	var/first_dir // This stores the direction of the decal compared to the parent facing NORTH
+	// BLUEMOON EDIT
+	var/initial_dir // Stores the initial direction of the decal
 
 /datum/element/decal/Attach(datum/target, _icon, _icon_state, _dir, _cleanable=CLEAN_GOD, _color, _layer=TURF_LAYER, _description, _alpha=255)
 	. = ..()
@@ -20,6 +21,8 @@
 		pic.color = _color
 		pic.alpha = _alpha
 	first_dir = _dir
+	// BLUEMOON EDIT
+	initial_dir = _dir // Store the initial direction
 	description = _description
 	cleanable = _cleanable
 
@@ -27,12 +30,12 @@
 
 	if(!num_decals_per_atom[A])
 		if(first_dir)
-			RegisterSignal(A, COMSIG_ATOM_DIR_CHANGE, .proc/rotate_react)
+			RegisterSignal(A, COMSIG_ATOM_DIR_CHANGE, PROC_REF(rotate_react))
 		if(cleanable)
-			RegisterSignal(A, COMSIG_COMPONENT_CLEAN_ACT, .proc/clean_react)
+			RegisterSignal(A, COMSIG_COMPONENT_CLEAN_ACT, PROC_REF(clean_react))
 		if(description)
-			RegisterSignal(A, COMSIG_PARENT_EXAMINE, .proc/examine)
-		RegisterSignal(A, COMSIG_ATOM_UPDATE_OVERLAYS, .proc/apply_overlay, TRUE)
+			RegisterSignal(A, COMSIG_PARENT_EXAMINE, PROC_REF(examine))
+		RegisterSignal(A, COMSIG_ATOM_UPDATE_OVERLAYS, PROC_REF(apply_overlay), TRUE)
 
 	num_decals_per_atom[A]++
 	apply(A)
@@ -51,17 +54,17 @@
 	if(target.flags_1 & INITIALIZED_1)
 		target.update_icon() //could use some queuing here now maybe.
 	else if(!QDELETED(target) && num_decals_per_atom[target] == 1)
-		RegisterSignal(target, COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZE, .proc/late_update_icon)
+		RegisterSignal(target, COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZE, PROC_REF(late_update_icon))
 	if(isitem(target))
-		addtimer(CALLBACK(target, /obj/item/.proc/update_slot_icon), 0, TIMER_UNIQUE)
+		addtimer(CALLBACK(target, TYPE_PROC_REF(/obj/item, update_slot_icon)), 0, TIMER_UNIQUE)
 
 /datum/element/decal/proc/late_update_icon(atom/source)
 	source.update_icon()
 	UnregisterSignal(source,COMSIG_ATOM_AFTER_SUCCESSFUL_INITIALIZE)
 
 /datum/element/decal/proc/apply_overlay(atom/source, list/overlay_list)
-	if(first_dir)
-		pic.dir = first_dir == SOUTH ? source.dir : turn(first_dir, dir2angle(source.dir)-180) //Never turn a dir by 0.
+	// BLUEMOON EDIT
+	pic.dir = initial_dir // Use the initial direction instead of the turf's direction
 	for(var/i in 1 to num_decals_per_atom[source])
 		overlay_list += pic
 

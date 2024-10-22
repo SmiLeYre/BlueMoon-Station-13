@@ -51,7 +51,8 @@
 	if(prob(3))
 		owner.emote("drool")
 	else if(owner.stat == CONSCIOUS && prob(3))
-		owner.say(pick_list_replacements(BRAIN_DAMAGE_FILE, "brain_damage"), forced = "brain damage")
+		var/braindamage_variant = isrobotic(owner) ? "synth_brain_damage" : "brain_damage"
+		owner.say(pick_list_replacements(BRAIN_DAMAGE_FILE, braindamage_variant), forced = "brain damage")
 	..()
 
 /datum/brain_trauma/mild/dumbness/on_lose()
@@ -183,8 +184,8 @@
 			to_chat(owner, "<span notice='warning'>[pick("You have a coughing fit!", "You can't stop coughing!")]</span>")
 			owner.Stun(20)
 			owner.emote("cough")
-			addtimer(CALLBACK(owner, /mob/.proc/emote, "cough"), 6)
-			addtimer(CALLBACK(owner, /mob/.proc/emote, "cough"), 12)
+			addtimer(CALLBACK(owner, TYPE_PROC_REF(/mob, emote), "cough"), 6)
+			addtimer(CALLBACK(owner, TYPE_PROC_REF(/mob, emote), "cough"), 12)
 		owner.emote("cough")
 	..()
 
@@ -248,7 +249,7 @@
 		if(prob(25))
 			var/deja_vu = pick_n_take(hear_dejavu)
 			var/static/regex/quoted_spoken_message = regex("\".+\"", "gi")
-			hearing_args[HEARING_RAW_MESSAGE] = quoted_spoken_message.Replace_char(hearing_args[HEARING_RAW_MESSAGE], "\"[deja_vu]\"") //Quotes included to avoid cases where someone says part of their name
+			hearing_args[HEARING_RAW_MESSAGE] = quoted_spoken_message.Replace(hearing_args[HEARING_RAW_MESSAGE], "\"[deja_vu]\"") //Quotes included to avoid cases where someone says part of their name
 			return
 	if(hear_dejavu.len >= 15)
 		if(prob(50))

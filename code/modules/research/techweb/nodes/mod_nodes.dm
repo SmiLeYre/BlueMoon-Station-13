@@ -123,3 +123,16 @@
 		"mod_teleporter",
 	)
 	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 2500)
+
+// BLUEMOON ADD START - новые (старые) модули для модсьюта
+/datum/techweb_node/mod_superior
+	id = "mod_superior"
+	display_name = "Superior Modular Suits"
+	description = "Constructively upgraded versions of old modules which can greately enhance modular suit usefulness."
+	prereq_ids = list("mod_anomaly")
+	design_ids = list(
+		"mod_springlock_advanced",
+		"mod_emp_shield_advanced",
+	)
+	research_costs = list(TECHWEB_POINT_TYPE_GENERIC = 7500)
+// BLUEMOON ADD END

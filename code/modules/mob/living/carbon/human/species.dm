@@ -244,6 +244,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/minimal_damage_threshold = 0
 	// BLUEMOON ADD END
 
+	COOLDOWN_DECLARE(ass) // SPLURT ADDITION: ASS-SMACK COOLDOWN
+
 ///////////
 // PROCS //
 ///////////
@@ -277,6 +279,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			qdel(S)
 	if(!GLOB.roundstart_races.len)
 		GLOB.roundstart_races += "human"
+	GLOB.roundstart_race_names = sort_list(GLOB.roundstart_race_names) // BLUEMOON ADD - сортировка названий рас для выбора в меню создания персонажа
 
 /**
  * Checks if a species is eligible to be picked at roundstart.
@@ -331,8 +334,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 //Please override this locally if you want to define when what species qualifies for what rank if human authority is enforced.
 /datum/species/proc/qualifies_for_rank(rank, list/features) //SPECIES JOB RESTRICTIONS
 	//if(rank in GLOB.command_positions) Left as an example: The format qualifies for rank takes.
-	//	return 0 //It returns false when it runs the proc so they don't get jobs from the global list.
-	return 1 //It returns 1 to say they are a-okay to continue.
+	//	return FALSE //It returns false when it runs the proc so they don't get jobs from the global list.
+	return TRUE //It returns 1 to say they are a-okay to continue.
 
 /**
  * Corrects organs in a carbon, removing ones it doesn't need and adding ones it does.
@@ -569,7 +572,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 /datum/species/proc/on_species_loss(mob/living/carbon/human/C, datum/species/new_species, pref_load)
 	if(C.dna.species.exotic_bloodtype)
-		if(!new_species.exotic_bloodtype)
+		if(!new_species?.exotic_bloodtype)
 			C.dna.blood_type = random_blood_type()
 		else
 			C.dna.blood_type = new_species.exotic_bloodtype
@@ -589,7 +592,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		C.type_of_meat = initial(meat)
 
 	//If their inert mutation is not the same, swap it out
-	if((inert_mutation != new_species.inert_mutation) && LAZYLEN(C.dna.mutation_index) && (inert_mutation in C.dna.mutation_index))
+	if(new_species && (inert_mutation != new_species.inert_mutation) && LAZYLEN(C.dna.mutation_index) && (inert_mutation in C.dna.mutation_index))
 		C.dna.remove_mutation(inert_mutation)
 		//keep it at the right spot, so we can't have people taking shortcuts
 		var/location = C.dna.mutation_index.Find(inert_mutation)
@@ -598,7 +601,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		C.dna.mutation_index[new_species.inert_mutation] = create_sequence(new_species.inert_mutation)
 		C.dna.default_mutation_genes[new_species.inert_mutation] = C.dna.mutation_index[new_species.inert_mutation]
 
-	if(!new_species.has_field_of_vision && has_field_of_vision && ishuman(C) && CONFIG_GET(flag/use_field_of_vision))
+	if(new_species && !new_species.has_field_of_vision && has_field_of_vision && ishuman(C) && CONFIG_GET(flag/use_field_of_vision))
 		var/datum/component/field_of_vision/F = C.GetComponent(/datum/component/field_of_vision)
 		if(F)
 			qdel(F)
@@ -1602,7 +1605,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	//The fucking TRAIT_FAT mutation is the dumbest shit ever. It makes the code so difficult to work with
 	if(HAS_TRAIT(H, TRAIT_FAT))//I share your pain, past coder.
 		if(H.overeatduration < 100)
-			to_chat(H, "<span class='notice'>You feel fit again!</span>")
+			to_chat(H, span_notice("Я чувствую себя гораздо лучше!"))
 			REMOVE_TRAIT(H, TRAIT_FAT, OBESITY)
 			H.remove_movespeed_modifier(/datum/movespeed_modifier/obesity)
 			H.update_inv_w_uniform()
@@ -1613,8 +1616,10 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			//
 			H.update_inv_wear_suit()
 	else
-		if(H.overeatduration >= 100)
-			to_chat(H, "<span class='danger'>You suddenly feel blubbery!</span>")
+		if(HAS_TRAIT(H, TRAIT_INCUBUS || TRAIT_SUCCUBUS))
+			return //SPLURT EDIT: Incubi and succubi don't get fat drawbacks (but can still be seen on examine)
+		if(H.overeatduration >= 100 && !HAS_TRAIT(H, TRAIT_BLUEMOON_DEVOURER))
+			to_chat(H, span_danger("Кажется, вы объелись!"))
 			ADD_TRAIT(H, TRAIT_FAT, OBESITY)
 			H.add_movespeed_modifier(/datum/movespeed_modifier/obesity)
 			H.update_inv_w_uniform()
@@ -1625,8 +1630,19 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			//
 			H.update_inv_wear_suit()
 
+
+	//SPLURT: If you haven't walked into a different tile in 5 minutes, don't drain hunger/thirst.
+	if(H.client && (((world.time - H.client?.last_move)) > 5 MINUTES))
+		if(!H.insanelycomfy)
+			to_chat(H, span_notice("You feel comfy."))
+			H.insanelycomfy = TRUE
+	else if(H.insanelycomfy)
+		to_chat(H, span_notice("You no longer feel comfy."))
+		H.insanelycomfy = FALSE
+	//SPLURT ADDITION
+
 	// nutrition decrease and satiety
-	if (H.nutrition > 0 && H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER))
+	if (H.nutrition > 0 && H.stat != DEAD && !HAS_TRAIT(H, TRAIT_NOHUNGER) && !H.insanelycomfy)
 		// THEY HUNGER
 		var/hunger_rate = HUNGER_FACTOR
 		var/datum/component/mood/mood = H.GetComponent(/datum/component/mood)
@@ -1697,7 +1713,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 */
 
 /datum/species/proc/update_health_hud(mob/living/carbon/human/H)
-	return 0
+	return FALSE
 
 /datum/species/proc/handle_mutations_and_radiation(mob/living/carbon/human/H)
 	. = FALSE
@@ -1729,7 +1745,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(radiation > RAD_MOB_HAIRLOSS)
 		if(prob(15) && !(H.hair_style == "Bald") && (HAIR in species_traits))
 			to_chat(H, "<span class='danger'>Your hair starts to fall out in clumps...</span>")
-			addtimer(CALLBACK(src, .proc/go_bald, H), 50)
+			addtimer(CALLBACK(src, PROC_REF(go_bald), H), 50)
 
 /datum/species/proc/go_bald(mob/living/carbon/human/H)
 	if(QDELETED(H))	//may be called from a timer
@@ -1753,7 +1769,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		target.help_shake_act(user)
 		if(target != user)
 			log_combat(user, target, "shaked")
-		return 1
+		return TRUE
 	else
 		var/we_breathe = !HAS_TRAIT(user, TRAIT_NOBREATH)
 		var/we_lung = user.getorganslot(ORGAN_SLOT_LUNGS)
@@ -1769,12 +1785,12 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(target.check_martial_melee_block())
 		target.visible_message("<span class='warning'>[target] blocks [user]'s grab attempt!</span>", target = user, \
 			target_message = "<span class='warning'>[target] blocks your grab attempt!</span>")
-		return 0
+		return FALSE
 	if(attacker_style && attacker_style.grab_act(user,target))
-		return 1
+		return TRUE
 	else
 		target.grabbedby(user)
-		return 1
+		return TRUE
 
 /datum/species/proc/harm(mob/living/carbon/human/user, mob/living/carbon/human/target, datum/martial_art/attacker_style, attackchain_flags = NONE)
 	if(!attacker_style && HAS_TRAIT(user, TRAIT_PACIFISM))
@@ -1855,6 +1871,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				target.visible_message(span_warning("Корпус [target] слишком прочный, удар не повредил его!"), span_notice("Корпус нивелирует наносимые повреждения."))
 			else
 				target.visible_message("Кожа [target] слишком прочная, удар не повредил её!", span_notice("Кожа даже не повреждается от наносимых повреждений."))
+		damage *= get_size(user) // в зависимости от размера персонажа, урон становится больше, или меньше
 		// BLUEMOON ADD END
 
 		if(user.limb_destroyer)
@@ -1910,11 +1927,11 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	var/target_aiming_for_groin = target.zone_selected == "groin"
 
 	if(target.check_martial_melee_block()) //END EDIT
-		target.visible_message("<span class='warning'>[target] blocks [user]'s disarm attempt!</span>", target = user, \
-			target_message = "<span class='warning'>[target] blocks your disarm attempt!</span>")
+		target.visible_message(span_warning("[target] blocks [user]'s disarm attempt!"), target = user, \
+			target_message = span_warning("[target] blocks your disarm attempt!"))
 		return FALSE
 	if(IS_STAMCRIT(user))
-		to_chat(user, "<span class='warning'>You're too exhausted!</span>")
+		to_chat(user, span_warning("You're too exhausted!"))
 		return FALSE
 
 	else if(aim_for_mouth && ( target_on_help || target_restrained || target_aiming_for_mouth))
@@ -1923,16 +1940,17 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
 
 		target.visible_message(\
-			"<span class='danger'>\The [user] slaps [user == target ? "себя" : "\the [target]"] in the face!</span>",\
-			"<span class='notice'>[user] slaps you in the face! </span>",\
-			"You hear a slap.", target = user, target_message = "<span class='notice'>You slap [user == target ? "yourself" : "\the [target]"] in the face! </span>")
+			span_danger("\The [user] slaps [user == target ? "[user.p_them()]self" : "\the [target]"] in the face!"),\
+			span_notice("[user] slaps you in the face!"),\
+			"You hear a slap.", target = user, target_message = span_notice("You slap [user == target ? "yourself" : "\the [target]"] in the face!"))
 		user.do_attack_animation(target, ATTACK_EFFECT_FACE_SLAP)
 		if (!HAS_TRAIT(target, TRAIT_PERMABONER))
 			stop_wagging_tail(target)
 		return FALSE
 	else if(aim_for_groin && (target == user || target.lying || same_dir) && (target_on_help || target_restrained || target_aiming_for_groin))
 		if(target.client?.prefs.cit_toggles & NO_ASS_SLAP)
-			to_chat(user,"A force stays your hand, preventing you from slapping \the [target]'s ass!")
+			to_chat(user, span_warning("По какой-то причине вы не можете сделать это с [target].")) // BLUEMOON EDIT, было 	to_chat(user,"A force stays your hand, preventing you from slapping \the [target]'s ass!")
+			to_chat(user, span_warning(span_small("Игрок отключил механическую возможность шлепать себя. Попробуйте отыгрывать это через действия."))) // BLUEMOON ADD
 			return FALSE
 		if(!user.UseStaminaBuffer(3, warn = TRUE))
 			return FALSE
@@ -1942,8 +1960,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(HAS_TRAIT(target, TRAIT_STEEL_ASS))
 			user.adjustStaminaLoss(50)
 			user.visible_message(\
-				"<span class='danger'>\The [user] slaps \the [target]'s ass, but their hand bounces off like they hit metal!</span>",\
-				"<span class='danger'>You slap [user == target ? "your" : "\the [target]'s"] ass, but feel an intense amount of pain as you realise their buns are harder than steel!</span>",\
+				span_danger("\The [user] slaps \the [target]'s ass, but their hand bounces off like they hit metal!"),\
+				span_danger("You slap [user == target ? "your" : "\the [target]'s"] ass, but feel an intense amount of pain as you realise their buns are harder than steel!"),\
 				"You hear a slap."
 			)
 			var/list/ouchies = list(
@@ -1953,17 +1971,44 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			playsound(target.loc, pick(ouchies), 15, 1, -1)
 			user.emote("scream")
 			return FALSE
-
+		//SPLURT ADDITION START
+		if(HAS_TRAIT(target, TRAIT_JIGGLY_ASS))
+			if(!COOLDOWN_FINISHED(src, ass))
+				if(user == target)
+					to_chat(user, span_alert("Твоя сочная задница все еще [pick("пульсирует","покачивается","трясётся","хлопает","колеблется")] после хорошего удара!"))
+				else
+					to_chat(user, span_alert("Сочной задница [target] все еще [pick("пульсирует","покачивается","трясётся","хлопает","колеблется")] после хорошего удара!"))
+			else
+				COOLDOWN_START(src, ass, 5 SECONDS)
+				if(user == target)
+					playsound(target.loc, 'sound/weapons/slap.ogg', 50, FALSE, -1) // deep bassy butt
+					user.adjustStaminaLoss(25)
+					user.visible_message(
+						span_notice("[user] шлёпает по своей сочной заднице!"),
+						span_lewd("Вы шлёпнули по своей сочной заднице! Она [pick("пульсирует","покачивается","трясётся","хлопает","колеблется","трясётся")] после хорошего удара и мешает вам стоять ровно!"),
+					)
+					return
+				else
+					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "ass", /datum/mood_event/butt_slap)
+					SEND_SIGNAL(target, COMSIG_ADD_MOOD_EVENT, "ass", /datum/mood_event/butt_slapped)
+					playsound(target.loc, 'sound/weapons/slap.ogg', 50, FALSE, -1) // deep bassy butt
+					target.adjustStaminaLoss(25)
+					user.visible_message(
+						span_notice("[user] шлёпает по сочной заднице [target]!"),
+						target = target,
+						target_message = span_lewd("[user] шлёпает по сочной заднице [target]! Она [pick("пульсирует","покачивается","трясётся","хлопает","колеблется","трясётся")] после хорошего удара и мешает вам стоять ровно!"))
+				return FALSE
+		//SPLURT ADDITION END
 		target.adjust_arousal(20,"masochism", maso = TRUE)
 		if (ishuman(target) && HAS_TRAIT(target, TRAIT_MASO) && target.has_dna() && prob(10))
 			target.mob_climax(forced_climax=TRUE, cause = "masochism")
 		if (!HAS_TRAIT(target, TRAIT_PERMABONER))
 			stop_wagging_tail(target)
-		playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1)
+		// playsound(target.loc, 'sound/weapons/slap.ogg', 50, 1, -1) // BLUEMOON REMOVAL - это дубль звука сверху (почему он вообще существует?)
 		target.visible_message(\
-			"<span class='danger'>\The [user] slaps [user == target ? "[user.ru_ego()] own" : "\the [target]'s"] ass!</span>",\
-			"<span class='notice'>[user] slaps your ass! </span>",\
-			"You hear a slap.", target = user, target_message = "<span class='notice'>You slap [user == target ? "your own" : "\the [target]'s"] ass! </span>")
+			span_danger("\The [user] slaps [user == target ? "[user.p_their()] own" : "\the [target]'s"] ass!"),\
+			span_notice("[user] slaps your ass!"),\
+			"You hear a slap.", target = user, target_message = span_notice("You slap [user == target ? "your own" : "\the [target]'s"] ass!"))
 
 		return FALSE
 
@@ -2071,11 +2116,11 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	if(user != H)
 		var/list/block_return = list()
 		if(H.mob_run_block(I, totitemdamage, "the [I.name]", ((attackchain_flags & ATTACK_IS_PARRY_COUNTERATTACK)? ATTACK_TYPE_PARRY_COUNTERATTACK : NONE) | ATTACK_TYPE_MELEE, I.armour_penetration, user, affecting.body_zone, block_return) & BLOCK_SUCCESS)
-			return 0
+			return FALSE
 		totitemdamage = block_calculate_resultant_damage(totitemdamage, block_return)
 	if(H.check_martial_melee_block())
 		H.visible_message("<span class='warning'>[H] blocks [I]!</span>")
-		return 0
+		return FALSE
 
 	var/hit_area
 
@@ -2112,7 +2157,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	I.do_stagger_action(H, user, totitemdamage)
 
 	if(!totitemdamage)
-		return 0 //item force is zero
+		return FALSE //item force is zero
 
 	var/bloody = 0
 	if(((I.damtype == BRUTE) && I.force && prob(25 + (I.force * 2))))
@@ -2177,7 +2222,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 						H.w_socks.add_mob_blood(H)
 						H.update_inv_w_socks()
 					if(H.w_shirt)
-						H.w_underwear.add_mob_blood(H)
+						H.w_shirt.add_mob_blood(H)
 						H.update_inv_w_shirt()
 					//
 
@@ -2233,7 +2278,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 			to_chat(user, "<span class='notice'>You can only force yourself up if you're on the ground.</span>")
 			return
 		// BLUEMOON ADD START
-		var/shove_up_stamina_cost = STAMINA_COST_SHOVE_UP
+		var/shove_up_stamina_cost = MAX_STAMINA_HEALTH * CONFIG_GET(number/percent_stamina_cost_shove_up)
 		if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY_SUPER)) // сверхтяжёлые персонажи поднимаются в два раза тяжелее
 			shove_up_stamina_cost *= 2
 		else if(HAS_TRAIT(user, TRAIT_BLUEMOON_HEAVY)) // тяжёлые персонажи поднимаются в 1.5 раза тяжелее
@@ -2353,11 +2398,15 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		log_combat(user, target, "shoved", append_message)
 
 /datum/species/proc/apply_damage(damage, damagetype = BRUTE, def_zone = null, blocked, mob/living/carbon/human/H, forced = FALSE, spread_damage = FALSE, wound_bonus = 0, bare_wound_bonus = 0, sharpness = SHARP_NONE)
+	// BLUEMOON EDIT START - sanity check
+	if(!H)
+		return
+	// BLUEMOON EDIT END
 	SEND_SIGNAL(H, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone, wound_bonus, bare_wound_bonus, sharpness) // make sure putting wound_bonus here doesn't screw up other signals or uses for this signal
 	var/hit_percent = (100-(blocked+armor))/100
 	hit_percent = (hit_percent * (100-H.physiology.damage_resistance))/100
 	if(!forced && hit_percent <= 0)
-		return 0
+		return FALSE
 
 	var/obj/item/bodypart/BP = null
 	if(!spread_damage)
@@ -2378,7 +2427,17 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 	switch(damagetype)
 		if(BRUTE)
 			H.damageoverlaytemp = 20
-			var/damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
+			var/damage_amount
+			if (HAS_TRAIT(H, TRAIT_TOUGHT) && !forced) // проверка на трейт стойкости
+				if (damage <= 10) //если урон до применения модификаторов не привышает 10, то он не учитывается
+					if(HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
+						H.visible_message(span_warning("Корпус [H] слишком прочный, удар не повредил его!"), span_notice("Корпус нивелирует наносимые повреждения."))
+					else
+						H.visible_message("Кожа [H] слишком прочная, удар не повредил её!", span_notice("Кожа даже не повреждается от наносимых повреждений."))
+					return apply_damage(damage, damagetype = STAMINA)
+				damage_amount = damage * hit_percent * brutemod * H.physiology.brute_mod
+			else
+				damage_amount = forced ? damage : damage * hit_percent * brutemod * H.physiology.brute_mod
 			if(BP)
 				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
@@ -2417,7 +2476,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		if(LUST_DAMAGE)
 			var/damage_amount = forced ? damage : damage * hit_percent * H.get_lust_tolerance() / 100
 			H.handle_post_sex(damage_amount, null, null)
-	return 1
+	return TRUE
 
 /datum/species/proc/on_hit(obj/item/projectile/P, mob/living/carbon/human/H)
 	// called when hit by a projectile
@@ -2698,7 +2757,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 
 	if(flying_species && H.movement_type & FLYING)
 		ToggleFlight(H)
-		INVOKE_ASYNC(src, .proc/flyslip, H)
+		INVOKE_ASYNC(src, PROC_REF(flyslip), H)
 
 	. = stunmod * H.physiology.stun_mod * amount
 
@@ -2845,7 +2904,7 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		buckled_obj.unbuckle_mob(H)
 		step(buckled_obj, olddir)
 	else
-		new /datum/forced_movement(H, get_ranged_target_turf(H, olddir, 4), 1, FALSE, CALLBACK(H, /mob/living/carbon/.proc/spin, 1, 1))
+		new /datum/forced_movement(H, get_ranged_target_turf(H, olddir, 4), 1, FALSE, CALLBACK(H, TYPE_PROC_REF(/mob/living/carbon, spin), 1, 1))
 	return TRUE
 
 //UNSAFE PROC, should only be called through the Activate or other sources that check for CanFly

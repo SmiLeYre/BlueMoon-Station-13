@@ -186,7 +186,7 @@
 				self_temperature_delta = -heat/total_heat_capacity
 				sharer_temperature_delta = heat/sharer_heat_capacity
 			else
-				return 1
+				return TRUE
 
 			air.set_temperature(air.return_temperature() + self_temperature_delta)
 			modeled_location.TakeTemperature(sharer_temperature_delta)
@@ -205,8 +205,8 @@
 /datum/pipeline/proc/return_air()
 	. = other_airs + air
 	if(null in .)
-		stack_trace("[src]([REF(src)]) has one or more null gas mixtures, which may cause bugs. Null mixtures will not be considered in reconcile_air().")
 		listclearnulls(.)
+		stack_trace("[src]([REF(src)]) has one or more null gas mixtures, which may cause bugs. Null mixtures will not be considered in reconcile_air().")
 
 /datum/pipeline/proc/empty()
 	for(var/datum/gas_mixture/GM in get_all_connected_airs())

@@ -68,10 +68,6 @@
 	},
 /turf/open/floor/plasteel/airless,
 /area/ruin/space/oldteleporter)
-"o" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/wall/r_wall,
-/area/ruin/space/oldteleporter)
 
 (1,1,1) = {"
 a
@@ -150,7 +146,7 @@ a
 b
 b
 d
-o
+d
 g
 e
 l

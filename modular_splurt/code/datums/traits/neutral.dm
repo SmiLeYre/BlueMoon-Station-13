@@ -18,14 +18,6 @@
 	var/power = 0
 	var/cachedmoveCalc = 1
 
-/datum/quirk/steel_ass
-	name = "Стальные Булки"
-	desc = "Вы ни разу не пропускали день ягодиц. У вас полный иммунитет ко всем формам ударов по заднице, и любой, кто попытается наградить вас шлепком, как правило, получит перелом кисти."
-	value = 0
-	mob_trait = TRAIT_STEEL_ASS
-	gain_text = span_notice("Ваш зад может составить конкуренцию големскому.")
-	lose_text = span_notice("Ваш зад ощущается более мягким и уязвимым к шлепкам.")
-
 /datum/quirk/cursed_blood
 	name = "Проклятая Кровь"
 	desc = "На вашем роду лежит проклятие бледной крови. Лучше держаться подальше от святой воды... а вот адской воды, напротив..."
@@ -54,7 +46,10 @@
 /datum/quirk/headpat_hater/remove()
 
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
-
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_mob)
+		return
+	// BLUEMOON EDIT END
 	var/datum/action/cooldown/toggle_distant/act_toggle = locate() in quirk_mob.actions
 	if(act_toggle)
 		act_toggle.Remove(quirk_mob)
@@ -74,6 +69,10 @@
 
 /datum/quirk/headpat_slut/remove()
 	. = ..()
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_holder)
+		return
+	// BLUEMOON EDIT END
 	quirk_holder.RemoveElement(/datum/element/wuv/headpat)
 
 /datum/quirk/Hypnotic_gaze
@@ -94,12 +93,15 @@
 	act_hypno.Grant(quirk_mob)
 
 	// Add examine text
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/quirk_examine_Hypnotic_gaze)
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
 
 /datum/quirk/Hypnotic_gaze/remove()
 	// Define quirk mob
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
-
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_mob)
+		return
+	// BLUEMOON EDIT END
 	// Remove quirk ability action datum
 	var/datum/action/cooldown/hypnotize/act_hypno = locate() in quirk_mob.actions
 	act_hypno.Remove(quirk_mob)
@@ -108,7 +110,7 @@
 	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
 
 // Quirk examine text
-/datum/quirk/Hypnotic_gaze/proc/quirk_examine_Hypnotic_gaze(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
+/datum/quirk/Hypnotic_gaze/proc/on_examine_holder(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
 	examine_list += "[quirk_holder.ru_ego(TRUE)] глаза необычайно сверкают..."
 
 /datum/quirk/overweight
@@ -147,43 +149,44 @@
 		if(initial(species.disliked_food) & ~MEAT)
 			species.disliked_food &= ~MEAT
 
-//Zombies + Cumplus Fix\\ Ёбнулись? Нахуй идите.
-//datum/quirk/undead
-//    name = "Undeath"
-//    desc = "Your body, be it anomalous, or just outright refusing to die - has indeed become undead. Due to this you may be more susceptible to burn-based weaponry."
-//    value = 0
-//    mob_trait = TRAIT_UNDEAD
-//    processing_quirk = TRUE
-//    var/list/zperks = list(TRAIT_RESISTCOLD,TRAIT_STABLEHEART,TRAIT_EASYDISMEMBER,TRAIT_NOBREATH,TRAIT_VIRUSIMMUNE,TRAIT_RADIMMUNE,TRAIT_FAKEDEATH,TRAIT_NOSOFTCRIT, TRAIT_NOPULSE)
-//
-///datum/quirk/undead/add()
-//    . = ..()
-//    var/mob/living/carbon/human/H = quirk_holder
-//    if(H.mob_biotypes == MOB_ROBOTIC)
-//        return FALSE //Lol, lmao, even
-//    H.mob_biotypes += MOB_UNDEAD
-//    for(var/A = 1, A <= zperks.len, A++)
-//        ADD_TRAIT(H,zperks[A],ROUNDSTART_TRAIT)
-//
-///datum/quirk/undead/remove()
-//    . = ..()
-//    var/mob/living/carbon/human/H = quirk_holder
-//    H.mob_biotypes -= MOB_UNDEAD
-//    for(var/A = 1, A <= zperks.len, A++)
-//        REMOVE_TRAIT(H,zperks[A], null)
-//
-///datum/quirk/undead/on_process()
-//    . = ..()
-//    var/mob/living/carbon/human/H = quirk_holder
-//    H.adjust_nutrition(-0.05)//The Undead are Hungry.
-//    H.set_screwyhud(SCREWYHUD_HEALTHY)
-//    H.adjustOxyLoss(-3) //Stops a defibrilator bug. Note to future self: Fix defib bug.
-//    H.adjustBruteLoss(-0.5) //The undead will only regenerate if not burnt beyond a specific threshold. A good value is 50 as that will strain them if they decide to spacewalk near fusion.
-//    if(H.getBruteLoss() > 0 && H.getFireLoss() <= 50 || H.getFireLoss() > 0 && H.getFireLoss() <= 50)
-//        H.adjustBruteLoss(-0.5, forced = TRUE)
-//        H.adjustFireLoss(-0.15, forced = TRUE)
-//    else if (H.getToxLoss() <= 90)
-//        H.adjustToxLoss(-0.3, forced = TRUE)
+//Zombies + Cumplus Fix\\
+
+/datum/quirk/undead
+	name = "Не-мёртвый"
+	desc = "Ваше тело, будь то аномальное или просто отказывающееся умирать, действительно стало нежитью. Из-за этого вы испытываете сильный голод."
+	value = 2
+	mob_trait = TRAIT_UNDEAD
+	processing_quirk = TRUE
+	// Note: The Undead cannot take advantage of healing viruses and genetic mutations, since they have no DNA.
+	var/list/zperks = list(TRAIT_STABLEHEART,TRAIT_EASYDISMEMBER,TRAIT_VIRUSIMMUNE,TRAIT_RADIMMUNE,TRAIT_FAKEDEATH,TRAIT_NOSOFTCRIT, TRAIT_NOPULSE)
+
+/datum/quirk/undead/add()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H.mob_biotypes == MOB_ROBOTIC)
+		return FALSE //Lol, lmao, even
+	H.mob_biotypes += MOB_UNDEAD
+	for(var/A = 1, A <= zperks.len, A++)
+		ADD_TRAIT(H,zperks[A],ROUNDSTART_TRAIT)
+
+/datum/quirk/undead/remove()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!H)
+		return
+	// BLUEMOON EDIT END
+	H.mob_biotypes -= MOB_UNDEAD
+	for(var/A = 1, A <= zperks.len, A++)
+		REMOVE_TRAIT(H,zperks[A], null)
+
+/datum/quirk/undead/on_process()
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	H.adjust_nutrition(-0.025)
+	H.adjust_thirst(-0.025)
+	H.set_screwyhud(SCREWYHUD_HEALTHY)
+	H.adjustOxyLoss(-3) //Stops a defibrilator bug. Note to future self: Fix defib bug.
 
 /datum/quirk/cum_plus
 	name = "Сверхпродуктивные Гениталии"
@@ -272,98 +275,16 @@
 /datum/quirk/cosglow/remove()
 	// Define quirk holder mob
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
-
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_mob)
+		return
+	// BLUEMOON EDIT END
 	// Remove glow control action
 	var/datum/action/cosglow/update_glow/quirk_action = locate() in quirk_mob.actions
 	quirk_action.Remove(quirk_mob)
 
 	// Remove glow effect
 	quirk_mob.remove_filter("rad_fiend_glow")
-
-//well-trained moved to neutral to stop the awkward situation of a dom snapping and the 30 trait powergamers fall to the floor.
-/datum/quirk/well_trained
-	name = "Дрессированный"
-	desc = "Вы обожаете, когда над вами доминируют. Мысли о том, что есть кто-то сильнее, достаточно, чтобы завести вас."
-	value = 0
-	gain_text = span_notice("Вы хотите подчиниться кому-нибудь...")
-	lose_text = span_notice("Вы больше не хотите подчиняться...")
-	processing_quirk = TRUE
-	var/notice_delay = 0
-	var/mob/living/carbon/human/last_dom
-
-/datum/quirk/well_trained/add()
-	. = ..()
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
-
-/datum/quirk/well_trained/remove()
-	. = ..()
-	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
-
-/datum/quirk/well_trained/proc/on_examine_holder(atom/source, mob/living/user, list/examine_list)
-	SIGNAL_HANDLER
-
-	if(!istype(user))
-		return
-	if(!user.has_quirk(/datum/quirk/dominant_aura))
-		return
-	examine_list += span_lewd("Вы чувствуете сильную ауру подчинения от [quirk_holder.ru_na()].")
-
-/datum/quirk/well_trained/on_process()
-	. = ..()
-	if(!quirk_holder)
-		return
-
-	var/good_x = "хорошим питомцем"
-	switch(quirk_holder.gender)
-		if(MALE)
-			good_x = "хорошим мальчиком"
-		if(FEMALE)
-			good_x = "хорошей девочкой"
-
-	//Check for possible doms with the dominant_aura quirk, and for the closest one if there is
-	. = FALSE
-	var/list/mob/living/carbon/human/doms = range(DOMINANT_DETECT_RANGE, quirk_holder)
-	var/closest_distance
-	for(var/mob/living/carbon/human/dom in doms)
-		if(dom != quirk_holder && dom.has_quirk(/datum/quirk/dominant_aura))
-			if(!closest_distance || get_dist(quirk_holder, dom) <= closest_distance)
-				. = dom
-				closest_distance = get_dist(quirk_holder, dom)
-
-	//Return if no dom is found
-	if(!.)
-		last_dom = null
-		return
-
-	//Handle the mood
-	var/datum/component/mood/mood = quirk_holder.GetComponent(/datum/component/mood)
-	if(istype(mood.mood_events[QMOOD_WELL_TRAINED], /datum/mood_event/dominant/good_boy))
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_WELL_TRAINED, /datum/mood_event/dominant/good_boy)
-	else
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_WELL_TRAINED, /datum/mood_event/dominant/need)
-
-	//Don't do anything if a previous dom was found
-	if(last_dom)
-		notice_delay = world.time + 15 SECONDS
-		return
-
-	last_dom = .
-
-	if(notice_delay > world.time)
-		return
-
-	//Let them know they're near
-	var/list/notices = list(
-		"Вы ощущаете, как чьё-то присутствие делает вас более покорным...",
-		"Мысли о том, чтобы вами командовали, заполняют ваш разум похотью...",
-		"Вы хотите, чтобы вас назвали [good_x]...",
-		"Чьё-то присутствие сильно возбуждает вас...",
-		"Вы начинаете потеть и возбуждаться..."
-	)
-
-	to_chat(quirk_holder, span_lewd(pick(notices)))
-	notice_delay = world.time + 15 SECONDS
-
 
 //hydra code below
 
@@ -373,7 +294,7 @@
 	value = 0
 	mob_trait = TRAIT_HYDRA_HEADS
 	gain_text = span_notice("Вы слышите два других голоса внутри головы(ов).")
-	lose_text = span_danger("Ваш разум становится единым.")
+	lose_text = span_danger(" становится единым.")
 	medical_record_text = "Пациент имеет несколько голов и личностей, присоединенных к телу."
 
 /datum/quirk/hydra/on_spawn()
@@ -395,6 +316,7 @@
 	gain_text = span_notice("Вы начинаете ощущать специфические запахи, исходящие от чужих промежностей...")
 	lose_text = span_notice("Чужие гениталии начинают пахнуть для вас одинаково...")
 	medical_record_text = "Пациент добивался того, чтобы доктор провёл яйцами по его лицу."
+	human_only = FALSE
 
 /datum/quirk/fluid_infuser
 	name = "Тядзин"
@@ -451,6 +373,7 @@
 /datum/quirk/incubus/remove()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
+
 	REMOVE_TRAIT(H,TRAIT_NO_PROCESS_FOOD,ROUNDSTART_TRAIT)
 	REMOVE_TRAIT(H,TRAIT_NOTHIRST,ROUNDSTART_TRAIT)
 
@@ -482,231 +405,6 @@
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
 	H.adjust_nutrition(-0.09)//increases their nutrition loss rate to encourage them to gain a partner they can essentially leech off of
-
-/datum/quirk/bloodfledge
-	name = "Отпрыск Кровопийцы"
-	desc = "Вы новообращенный, принадлежащий к древнему роду Кровопийц. Благословению еще предстоит полностью изменить вас, но некоторые вещи уже поменялись. Только кровь утолит голод, а божественная сила обуглит вашу плоть. <b>Это НЕ роль антагониста!</b>"
-	value = 2
-	medical_record_text = "Пациент демонстрирует начальные симптомы кровяного проклятия."
-	mob_trait = TRAIT_BLOODFLEDGE
-	gain_text = span_notice("Вы чувствуете жажду крови.")
-	lose_text = span_notice("Вы чувствуете, что жажда крови угасла.")
-	processing_quirk = FALSE //Что-то Сплюртовское.
-
-/datum/quirk/bloodfledge/add()
-	// Define quirk mob
-	var/mob/living/carbon/human/quirk_mob = quirk_holder
-
-	// Add quirk traits
-	ADD_TRAIT(quirk_mob,TRAIT_NOBREATH, ROUNDSTART_TRAIT)
-	ADD_TRAIT(quirk_mob,TRAIT_NO_PROCESS_FOOD, ROUNDSTART_TRAIT)
-	ADD_TRAIT(quirk_mob,TRAIT_NOTHIRST, ROUNDSTART_TRAIT)
-
-	// Set skin tone, if possible
-	//if(!quirk_mob.dna.skin_tone_override)
-		//quirk_mob.skin_tone = "albino" // BlueMoon 27.08.2023 - убрано в угоду разнообразия отыгрыша
-
-	// Add quirk language
-	quirk_mob.grant_language(/datum/language/vampiric, TRUE, TRUE, LANGUAGE_BLOODSUCKER)
-
-	// Register examine text
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/quirk_examine_bloodfledge)
-
-/datum/quirk/bloodfledge/post_add()
-	// Define quirk mob
-	var/mob/living/carbon/human/quirk_mob = quirk_holder
-
-	// Define and grant ability Bite
-	var/datum/action/cooldown/bloodfledge/bite/act_bite = new
-	act_bite.Grant(quirk_mob)
-
-	// Check for synthetic
-	// Robotic mobs have technical issues with adjusting damage
-	if(quirk_mob.mob_biotypes & MOB_ROBOTIC)
-		// Warn user
-		to_chat(quirk_mob, span_warning("As a synthetic lifeform, your components are only able to grant limited sanguine abilities! Regeneration and revival are not possible."))
-
-	// User is not synthetic
-	else
-		// Define and grant ability Revive
-		var/datum/action/cooldown/bloodfledge/revive/act_revive = new
-		act_revive.Grant(quirk_mob)
-
-/datum/quirk/bloodfledge/on_process()
-	// Processing is currently only used for coffin healing
-	// This is started and stopped by a proc in crates.dm
-
-	// Define potential coffin
-	var/quirk_coffin = quirk_holder.loc
-
-	// Check if the current area is a coffin
-	if(istype(quirk_coffin, /obj/structure/closet/crate/coffin))
-		// Define quirk mob
-		var/mob/living/carbon/human/quirk_mob = quirk_holder
-
-		// Quirk mob must be injured
-		if(quirk_mob.health >= quirk_mob.maxHealth)
-			// Warn user
-			to_chat(quirk_mob, span_notice("[quirk_coffin] does nothing more to help you, as your body is fully mended."))
-
-			// Stop processing and return
-			STOP_PROCESSING(SSquirks, src)
-			return
-
-		// Nutrition (blood) level must be above STARVING
-		if(quirk_mob.nutrition <= NUTRITION_LEVEL_STARVING)
-			// Warn user
-			to_chat(quirk_mob, span_warning("[quirk_coffin] requires blood to operate, which you are currently lacking. Your connection to the other-world fades once again."))
-
-			// Stop processing and return
-			STOP_PROCESSING(SSquirks, src)
-			return
-
-		// Define initial health
-		var/health_start = quirk_mob.health
-
-		// Heal brute and burn
-		// Accounts for robotic limbs
-		quirk_mob.heal_overall_damage(2,2)
-		// Heal oxygen
-		quirk_mob.adjustOxyLoss(-2)
-		// Heal clone
-		quirk_mob.adjustCloneLoss(-2)
-
-		// Check for slime race
-		// NOT a slime
-		if(!isslimeperson(quirk_mob))
-			// Heal toxin
-			quirk_mob.adjustToxLoss(-2)
-		// IS a slime
-		else
-			// Grant toxin (heals slimes)
-			quirk_mob.adjustToxLoss(2)
-
-		// Update health
-		quirk_mob.updatehealth()
-
-		// Determine healed amount
-		var/health_restored = quirk_mob.health - health_start
-
-		// Remove nutrition (blood) as compensation for healing
-		// Amount is equal to 50% of healing done
-		quirk_mob.adjust_nutrition(health_restored*-1)
-
-	// User is not in a coffin
-	// This should not occur without teleportation
-	else
-		// Warn user
-		to_chat(quirk_holder, span_warning("Your connection to the other-world is broken upon leaving the [quirk_coffin]!"))
-
-		// Stop processing
-		STOP_PROCESSING(SSquirks, src)
-
-/datum/quirk/bloodfledge/remove()
-	// Define quirk mob
-	var/mob/living/carbon/human/quirk_mob = quirk_holder
-
-	// Remove quirk traits
-	REMOVE_TRAIT(quirk_mob, TRAIT_NO_PROCESS_FOOD, ROUNDSTART_TRAIT)
-	REMOVE_TRAIT(quirk_mob, TRAIT_NOTHIRST, ROUNDSTART_TRAIT)
-
-	// Remove quirk ability action datums
-	var/datum/action/cooldown/bloodfledge/bite/act_bite = locate() in quirk_mob.actions
-	var/datum/action/cooldown/bloodfledge/revive/act_revive = locate() in quirk_mob.actions
-	act_bite.Remove(quirk_mob)
-	act_revive.Remove(quirk_mob)
-
-	// Remove quirk language
-	quirk_mob.remove_language(/datum/language/vampiric, TRUE, TRUE, LANGUAGE_BLOODSUCKER)
-
-	// Unregister examine text
-	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
-
-/datum/quirk/bloodfledge/on_spawn()
-	// Define quirk mob
-	var/mob/living/carbon/human/quirk_mob = quirk_holder
-
-	// Create vampire ID card
-	var/obj/item/card/id/vampire/id_vampire = new /obj/item/card/id/vampire(get_turf(quirk_holder))
-
-	// Update card information
-	id_vampire.registered_name = quirk_mob.real_name
-	id_vampire.update_label(addtext(id_vampire.registered_name, "'s Bloodfledge"))
-
-	// Determine banking ID information
-	for(var/bank_account in SSeconomy.bank_accounts)
-		// Define current iteration's account
-		var/datum/bank_account/account = bank_account
-
-		// Check for match
-		if(account.account_id == quirk_mob.account_id)
-			// Add to cards list
-			account.bank_cards += src
-
-			// Assign account
-			id_vampire.registered_account = account
-
-			// Stop searching
-			break
-
-	// Try to add ID to backpack
-	var/id_in_bag = quirk_mob.equip_to_slot_if_possible(id_vampire, ITEM_SLOT_BACKPACK) || FALSE
-
-	// Text for where the item was sent
-	var/id_location = (id_in_bag ? "in your backpack" : "at your feet" )
-
-	// Alert user in chat
-	// This should not post_add, because the ID is added by on_spawn
-	to_chat(quirk_holder, span_boldnotice("There is a bloodfledge's ID card [id_location], linked to your station account. It functions as a spare ID, but lacks job access."))
-
-/datum/quirk/bloodfledge/proc/quirk_examine_bloodfledge(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
-	SIGNAL_HANDLER
-
-	// Check if human examiner exists
-	if(!istype(examiner))
-		return
-
-	// Check if examiner is dumb
-	if(HAS_TRAIT(examiner, TRAIT_DUMB))
-		// Return with no effects
-		return
-
-	// Define quirk mob
-	var/mob/living/carbon/human/quirk_mob = quirk_holder
-
-	// Define hunger texts
-	var/examine_hunger_public
-	var/examine_hunger_secret
-
-	// Check hunger levels
-	switch(quirk_mob.nutrition)
-		// Hungry
-		if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
-			examine_hunger_secret = "[quirk_holder.p_they(TRUE)] [quirk_holder.p_are()] blood starved!"
-			examine_hunger_public = "[quirk_holder.p_they(TRUE)] seem[quirk_holder.p_s()] on edge from something."
-
-		// Starving
-		if(0 to NUTRITION_LEVEL_STARVING)
-			examine_hunger_secret = "[quirk_holder.p_they(TRUE)] [quirk_holder.p_are()] in dire need of blood!"
-			examine_hunger_public = "[quirk_holder.p_they(TRUE)] [quirk_holder.p_are()] radiating an aura of frenzied hunger!"
-
-		// Invalid hunger
-		else
-			// Return with no message
-			return
-
-	// Check if examiner shares the quirk
-	if(isbloodfledge(examiner))
-		// Add detection text
-		examine_list += span_info("[quirk_holder.p_their(TRUE)] hunger makes it easy to identify [quirk_holder.p_them()] as a fellow Bloodsucker Fledgling!")
-
-		// Add hunger text
-		examine_list += span_warning(examine_hunger_secret)
-
-	// Check if public hunger text exists
-	else
-		// Add hunger text
-		examine_list += span_warning(examine_hunger_public)
 
 /datum/quirk/werewolf //adds the werewolf quirk
 	name = "Оборотень"
@@ -742,6 +440,10 @@
 	quirk_action.Grant(quirk_holder)
 
 /datum/quirk/werewolf/remove()
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_holder)
+		return
+	// BLUEMOON EDIT END
 	// Define quirk action
 	var/datum/action/cooldown/werewolf/transform/quirk_action = locate() in quirk_holder.actions
 
@@ -838,8 +540,8 @@
 
 /datum/quirk/nudist/add()
 	// Register signal handlers
-	RegisterSignal(quirk_holder, COMSIG_MOB_UPDATE_GENITALS, .proc/check_outfit)
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/quirk_examine_nudist)
+	RegisterSignal(quirk_holder, COMSIG_MOB_UPDATE_GENITALS, PROC_REF(check_outfit))
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(quirk_examine_nudist))
 
 /datum/quirk/nudist/remove()
 	// Remove mood event
@@ -1062,7 +764,7 @@ var/static/list/ukraine_replacements = list(
 	if (prob(75))
 		for (var/key in ukraine_replacements)
 			var/regex/rg = regex("(\\A|\[\\s|.,\\-!/?~\])([key])(\\Z|\[\\s|.,\\-!/?~\])")
-			message = rg.Replace_char(message, /proc/ukraine_replace)
+			message = rg.Replace(message, GLOBAL_PROC_REF(ukraine_replace))
 
 		message = replacetextEx_char(message, "ы", "и")
 		message = replacetextEx_char(message, "и", "і")
@@ -1094,8 +796,11 @@ var/static/list/ukraine_replacements = list(
 /datum/quirk/body_morpher/remove()
 	// Define quirk mob
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
-
 	// Remove quirk ability action datum
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_mob)
+		return
+	// BLUEMOON EDIT END
 	alter_form_action.Remove(quirk_mob)
 	QDEL_NULL(alter_form_action)
 
@@ -1110,6 +815,10 @@ var/static/list/ukraine_replacements = list(
 
 /datum/quirk/modular/remove()
 	var/mob/living/carbon/human/C = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!C)
+		return
+	// BLUEMOON EDIT END
 	remove_verb(C,/mob/living/proc/alterlimbs)
 
 /datum/quirk/messy
@@ -1120,3 +829,262 @@ var/static/list/ukraine_replacements = list(
 	gain_text = span_lewd("Вы хотите покрыть что-то с помощью своих органических жидкостей.")
 	lose_text = span_notice("Вы более не ощущаете себя 'грязнулей'.")
 	medical_record_text = "Врачу пришлось принять успокоительное после того, как пациент обкончал весь медбей."
+
+/datum/quirk/bloodfledge
+	name = "Отпрыск Кровопийцы"
+	desc = "Вы новообращенный, принадлежащий к древнему роду Кровопийц. Благословению еще предстоит полностью изменить вас, но некоторые вещи уже поменялись. Только кровь утолит голод, а божественная сила обуглит вашу плоть. <b>Это НЕ роль антагониста!</b>"
+	value = 0
+	medical_record_text = "Пациент демонстрирует начальные симптомы кровяного проклятия."
+	mob_trait = TRAIT_BLOODFLEDGE
+	gain_text = span_notice("Вы чувствуете жажду крови.")
+	lose_text = span_notice("Вы чувствуете, что жажда крови угасла.")
+	processing_quirk = FALSE // Handled by crates.dm
+
+/datum/quirk/bloodfledge/add()
+	// Define quirk mob
+	var/mob/living/carbon/human/quirk_mob = quirk_holder
+
+	// Add quirk traits
+	ADD_TRAIT(quirk_mob,TRAIT_NO_PROCESS_FOOD,ROUNDSTART_TRAIT)
+	ADD_TRAIT(quirk_mob,TRAIT_NOTHIRST,ROUNDSTART_TRAIT)
+
+	// Set skin tone, if possible
+	if(!quirk_mob.dna.skin_tone_override)
+		quirk_mob.skin_tone = "albino"
+
+	// Add quirk language
+	quirk_mob.grant_language(/datum/language/vampiric, TRUE, TRUE, LANGUAGE_BLOODSUCKER)
+
+	// Register examine text
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(quirk_examine_bloodfledge))
+
+/datum/quirk/bloodfledge/post_add()
+	// Define quirk mob
+	var/mob/living/carbon/human/quirk_mob = quirk_holder
+
+	// Define and grant ability Bite
+	var/datum/action/cooldown/bloodfledge/bite/act_bite = new
+	act_bite.Grant(quirk_mob)
+
+	// Check for synthetic
+	// Robotic mobs have technical issues with adjusting damage
+	if(quirk_mob.mob_biotypes & MOB_ROBOTIC)
+		// Warn user
+		to_chat(quirk_mob, span_warning("As a synthetic lifeform, your components are only able to grant limited sanguine abilities! Regeneration and revival are not possible."))
+
+	// User is not synthetic
+	else
+		// Define and grant ability Revive
+		var/datum/action/cooldown/bloodfledge/revive/act_revive = new
+		act_revive.Grant(quirk_mob)
+
+/datum/quirk/bloodfledge/on_process()
+	// Processing is currently only used for coffin healing
+	// This is started and stopped by a proc in crates.dm
+
+	// Define potential coffin
+	var/quirk_coffin = quirk_holder.loc
+
+	// Check if the current area is a coffin
+	if(istype(quirk_coffin, /obj/structure/closet/crate/coffin))
+		// Define quirk mob
+		var/mob/living/carbon/human/quirk_mob = quirk_holder
+
+		// Quirk mob must be injured
+		if(quirk_mob.health >= quirk_mob.maxHealth)
+			// Warn user
+			to_chat(quirk_mob, span_notice("[quirk_coffin] does nothing more to help you, as your body is fully mended."))
+
+			// Stop processing and return
+			STOP_PROCESSING(SSquirks, src)
+			return
+
+		// Nutrition (blood) level must be above STARVING
+		if(quirk_mob.nutrition <= NUTRITION_LEVEL_STARVING)
+			// Warn user
+			to_chat(quirk_mob, span_warning("[quirk_coffin] requires blood to operate, which you are currently lacking. Your connection to the other-world fades once again."))
+
+			// Stop processing and return
+			STOP_PROCESSING(SSquirks, src)
+			return
+
+		// Define initial health
+		var/health_start = quirk_mob.health
+
+		// Heal brute and burn
+		// Accounts for robotic limbs
+		quirk_mob.heal_overall_damage(2,2)
+		// Heal oxygen
+		quirk_mob.adjustOxyLoss(-2)
+		// Heal clone
+		quirk_mob.adjustCloneLoss(-2)
+
+		// Check for slime race
+		// NOT a slime
+		if(!isslimeperson(quirk_mob))
+			// Heal toxin
+			quirk_mob.adjustToxLoss(-2)
+		// IS a slime
+		else
+			// Grant toxin (heals slimes)
+			quirk_mob.adjustToxLoss(2)
+
+		// Update health
+		quirk_mob.updatehealth()
+
+		// Determine healed amount
+		var/health_restored = quirk_mob.health - health_start
+
+		// Remove nutrition (blood) as compensation for healing
+		// Amount is equal to 50% of healing done
+		quirk_mob.adjust_nutrition(health_restored*-1)
+
+	// User is not in a coffin
+	// This should not occur without teleportation
+	else
+		// Warn user
+		to_chat(quirk_holder, span_warning("Your connection to the other-world is broken upon leaving the [quirk_coffin]!"))
+
+		// Stop processing
+		STOP_PROCESSING(SSquirks, src)
+
+/datum/quirk/bloodfledge/remove()
+	// Define quirk mob
+	var/mob/living/carbon/human/quirk_mob = quirk_holder
+
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_mob)
+		return
+	// BLUEMOON EDIT END
+
+	// Remove quirk traits
+	REMOVE_TRAIT(quirk_mob, TRAIT_NO_PROCESS_FOOD, ROUNDSTART_TRAIT)
+	REMOVE_TRAIT(quirk_mob, TRAIT_NOTHIRST, ROUNDSTART_TRAIT)
+
+	// Remove quirk ability action datums
+	var/datum/action/cooldown/bloodfledge/bite/act_bite = locate() in quirk_mob.actions
+	var/datum/action/cooldown/bloodfledge/revive/act_revive = locate() in quirk_mob.actions
+	act_bite.Remove(quirk_mob)
+	act_revive.Remove(quirk_mob)
+
+	// Remove quirk language
+	quirk_mob.remove_language(/datum/language/vampiric, TRUE, TRUE, LANGUAGE_BLOODSUCKER)
+
+	// Unregister examine text
+	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
+
+/datum/quirk/bloodfledge/on_spawn()
+	// Define quirk mob
+	var/mob/living/carbon/human/quirk_mob = quirk_holder
+
+	// Create vampire ID card
+	var/obj/item/card/id/vampire/id_vampire = new /obj/item/card/id/vampire(get_turf(quirk_holder))
+
+	// Update card information
+	id_vampire.registered_name = quirk_mob.real_name
+	id_vampire.update_label(addtext(id_vampire.registered_name, "'s Bloodfledge"))
+
+	// Determine banking ID information
+	for(var/bank_account in SSeconomy.bank_accounts)
+		// Define current iteration's account
+		var/datum/bank_account/account = bank_account
+
+		// Check for match
+		if(account.account_id == quirk_mob.account_id)
+			// Add to cards list
+			account.bank_cards += src
+
+			// Assign account
+			id_vampire.registered_account = account
+
+			// Stop searching
+			break
+
+	// Try to add ID to backpack
+	var/id_in_bag = quirk_mob.equip_to_slot_if_possible(id_vampire, ITEM_SLOT_BACKPACK) || FALSE
+
+	// Text for where the item was sent
+	var/id_location = (id_in_bag ? "in your backpack" : "at your feet" )
+
+	// Alert user in chat
+	// This should not post_add, because the ID is added by on_spawn
+	to_chat(quirk_holder, span_boldnotice("There is a bloodfledge's ID card [id_location], linked to your station account. It functions as a spare ID, but lacks job access."))
+
+/datum/quirk/bloodfledge/proc/quirk_examine_bloodfledge(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
+	SIGNAL_HANDLER
+
+	// Check if human examiner exists
+	if(!istype(examiner))
+		return
+
+	// Check if examiner is dumb
+	if(HAS_TRAIT(examiner, TRAIT_DUMB))
+		// Return with no effects
+		return
+
+	// Define quirk mob
+	var/mob/living/carbon/human/quirk_mob = quirk_holder
+
+	// Define hunger texts
+	var/examine_hunger_public
+	var/examine_hunger_secret
+
+	// Check hunger levels
+	switch(quirk_mob.nutrition)
+		// Hungry
+		if(NUTRITION_LEVEL_STARVING to NUTRITION_LEVEL_HUNGRY)
+			examine_hunger_secret = "[quirk_holder.p_they(TRUE)] [quirk_holder.p_are()] blood starved!"
+			examine_hunger_public = "[quirk_holder.p_they(TRUE)] seem[quirk_holder.p_s()] on edge from something."
+
+		// Starving
+		if(0 to NUTRITION_LEVEL_STARVING)
+			examine_hunger_secret = "[quirk_holder.p_they(TRUE)] [quirk_holder.p_are()] in dire need of blood!"
+			examine_hunger_public = "[quirk_holder.p_they(TRUE)] [quirk_holder.p_are()] radiating an aura of frenzied hunger!"
+
+		// Invalid hunger
+		else
+			// Return with no message
+			return
+
+	// Check if examiner shares the quirk
+	if(isbloodfledge(examiner))
+		// Add detection text
+		examine_list += span_info("[quirk_holder.p_their(TRUE)] hunger makes it easy to identify [quirk_holder.p_them()] as a fellow Bloodsucker Fledgling!")
+
+		// Add hunger text
+		examine_list += span_warning(examine_hunger_secret)
+
+	// Check if public hunger text exists
+	else
+		// Add hunger text
+		examine_list += span_warning(examine_hunger_public)
+
+/datum/quirk/kiss_slut
+	name = "Чувствительные Губы"
+	desc = "Одна только мысль о поцелуе заставляет вас краснеть и возбуждаться, эффективно усиляя ваше возбуждение с каждым поцелуем."
+	value = 0
+	mob_trait = TRAIT_KISS_SLUT
+	gain_text = span_lewd("Вам хочется поцеловать кого-нибудь...")
+	lose_text = span_notice("Вас больше не тянет целоваться...")
+	medical_record_text = "Пациент проявляет необычайную симпатию к поцелуям."
+
+/datum/quirk/russian
+	name = "Русский дух"
+	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. С вами Бог!"
+	value = 0
+	mob_trait = TRAIT_RUSSIAN
+	gain_text = span_notice("Вы чувствуете, как Бог следит за вами!")
+	lose_text = span_notice("Вы чувствуете, как угасает ваша вера в Бога...")
+	medical_record_text = "У пациента обнаружен Ангел-Хранитель."
+
+/datum/quirk/russian/add()
+	// Add examine text.
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(quirk_examine_russian))
+
+/datum/quirk/russian/remove()
+	// Remove examine text
+	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
+
+// Quirk examine text.
+/datum/quirk/russian/proc/quirk_examine_russian(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
+	examine_list += "[quirk_holder.ru_who(TRUE)] излучает русский дух..."

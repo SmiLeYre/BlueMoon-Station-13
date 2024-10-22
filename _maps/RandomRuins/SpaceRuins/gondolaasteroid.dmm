@@ -116,10 +116,6 @@
 	},
 /turf/open/floor/plating/asteroid,
 /area/ruin/space/has_grav)
-"L" = (
-/obj/machinery/spaceship_navigation_beacon/invion,
-/turf/closed/mineral/random,
-/area/ruin/space/has_grav)
 "T" = (
 /obj/machinery/door/airlock/survival_pod/glass{
 	dir = 4
@@ -661,7 +657,7 @@ b
 b
 b
 b
-L
+b
 b
 b
 b

@@ -60,3 +60,29 @@
 	item_state = "lewdcap"
 	alt_covers_chest = TRUE
 	mutantrace_variation = STYLE_DIGITIGRADE|USE_TAUR_CLIP_MASK
+
+
+//Bridge officer
+
+/obj/item/clothing/under/rank/bridgeofficer
+	name = "bridge officer outfit"
+	desc = "The uniform of a bridge officer. It makes you feel extremely important, even if you are not."
+	icon_state = "bridgesec"
+	item_state = "bridgesec"
+	armor = list("melee" = 5, "bullet" = 0, "laser" = 5,"energy" = 5, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 0)
+	alt_covers_chest = TRUE
+	can_adjust = FALSE
+	sensor_flags = NONE
+	sensor_mode = SENSOR_COORDS
+
+/obj/item/clothing/under/rank/bridgeofficer/skirt
+	name = "bridge officer skirt"
+	icon_state = "bridgesecf"
+	item_state = "bridgesecf"
+	body_parts_covered = CHEST|GROIN|ARMS
+
+/obj/item/clothing/under/rank/bridgeofficer/formal
+	name = "bridge officer formal outfit"
+	desc = "The uniform of a bridge officer. Its a formal variant."
+	icon_state = "bridgesecformal"
+	item_state = "bridgesecformal"

@@ -122,7 +122,7 @@
 					var/mob/M = A
 					if(M.mob_negates_gravity())
 						continue
-				INVOKE_ASYNC(src, .proc/do_scatter, A, target)
+				INVOKE_ASYNC(src, PROC_REF(do_scatter), A, target)
 
 			var/turf/T = get_turf(target)
 			log_game("[key_name(source)] used a Gravitational Catapult repulse wave on [AREACOORD(T)]")
@@ -410,7 +410,7 @@
 			return units
 		else
 			to_chat(user, "[icon2html(src, user)]<span class='notice'>Unit is full.</span>")
-			return 0
+			return FALSE
 	else
 		to_chat(user, "[icon2html(src, user)]<span class='warning'>[fuel] traces in target minimal! [P] cannot be used as fuel.</span>")
 		return
@@ -558,8 +558,6 @@
 /obj/item/mecha_parts/mecha_equipment/thrusters/ion //for mechs with built-in thrusters, should never really exist un-attached to a mech
 	name = "Ion thruster package"
 	desc = "A set of thrusters that allow for exosuit movement in zero-gravity environments."
-	detachable = FALSE
-	salvageable = FALSE
 	effect_type = /obj/effect/particle_effect/ion_trails
 
 /obj/item/mecha_parts/mecha_equipment/thrusters/ion/thrust(movement_dir)

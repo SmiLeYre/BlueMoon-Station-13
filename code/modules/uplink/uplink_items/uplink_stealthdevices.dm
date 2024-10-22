@@ -16,6 +16,18 @@
 			with these cards."
 	item = /obj/item/card/id/syndicate
 	cost = 2
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/stealthy_tools/agent_card_inteq
+	name = "Agent Identification Card"
+	desc = "Agent cards prevent artificial intelligences from tracking the wearer, and can copy access \
+			from other identification cards. The access is cumulative, so scanning one card does not erase the \
+			access gained from another. In addition, they can be forged to display a new assignment and name. \
+			This can be done an unlimited amount of times. Some Syndicate areas and devices can only be accessed \
+			with these cards."
+	item = /obj/item/card/id/inteq
+	cost = 2
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS)
 
 /datum/uplink_item/stealthy_tools/ai_detector
 	name = "Artificial Intelligence Detector"
@@ -47,6 +59,14 @@
 			This manual teaches you this Codespeak. You can also hit someone else with the manual in order to teach them. This is the deluxe edition, which has unlimited uses."
 	item = /obj/item/codespeak_manual/unlimited
 	cost = 3
+	purchasable_from = UPLINK_SYNDICATE
+
+/datum/uplink_item/stealthy_tools/codespeak_manual //bluemoon add
+	name = "Fast codes guide"
+	desc = "Толстый мануал, описывающий краткие коды для обозначения любой ситуации. Эти коды использовались военными ещё в ранних космических войнах, но со временем стали заменяться на более простые вариации."
+	item = /obj/item/fastcodes_guide/inf
+	cost = 3
+	purchasable_from = UPLINK_TRAITORS
 
 /datum/uplink_item/stealthy_tools/combatbananashoes
 	name = "Combat Banana Shoes"

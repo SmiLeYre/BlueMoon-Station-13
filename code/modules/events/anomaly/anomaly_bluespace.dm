@@ -1,9 +1,9 @@
 /datum/round_event_control/anomaly/anomaly_bluespace
 	name = "Anomaly: Bluespace"
 	typepath = /datum/round_event/anomaly/anomaly_bluespace
-
-	max_occurrences = 1
 	weight = 15
+	max_occurrences = 1
+	earliest_start = 20 MINUTES
 	description = "This anomaly randomly teleports all items and mobs in a large area."
 
 /datum/round_event/anomaly/anomaly_bluespace

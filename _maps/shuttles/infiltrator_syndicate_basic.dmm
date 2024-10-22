@@ -297,7 +297,7 @@
 	dwidth = 12;
 	height = 17;
 	hidden = 1;
-	id = "real_syndicate";
+	shuttle_id = "real_syndicate";
 	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
 	name = "Syndicate Infiltrator";
 	port_direction = 4;

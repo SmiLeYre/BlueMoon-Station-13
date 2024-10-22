@@ -14,6 +14,7 @@
 		//there should be bone fixing
 		/datum/surgery_step/close
 		)
+	special_surgery_traits = list(OPERATION_NEED_FULL_ANESTHETIC) // BLUEMOON ADD - операция требует, чтобы пациент находился без сознания
 
 /datum/surgery/organ_manipulation/soft
 	possible_locs = list(BODY_ZONE_PRECISE_GROIN, BODY_ZONE_PRECISE_EYES, BODY_ZONE_PRECISE_MOUTH, BODY_ZONE_L_ARM, BODY_ZONE_R_ARM)
@@ -157,4 +158,4 @@
 			display_results(user, target, "<span class='notice'>You can't extract anything from [target]'s [parse_zone(target_zone)]!</span>",
 				"[user] can't seem to extract anything from [target]'s [parse_zone(target_zone)]!",
 				"[user] can't seem to extract anything from [target]'s [parse_zone(target_zone)]!")
-	return 1
+	return TRUE

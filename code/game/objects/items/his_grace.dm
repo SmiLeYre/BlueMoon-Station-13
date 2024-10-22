@@ -31,7 +31,7 @@
 	. = ..()
 	START_PROCESSING(SSprocessing, src)
 	GLOB.poi_list += src
-	RegisterSignal(src, COMSIG_MOVABLE_POST_THROW, .proc/move_gracefully)
+	RegisterSignal(src, COMSIG_MOVABLE_POST_THROW, PROC_REF(move_gracefully))
 
 /obj/item/his_grace/Destroy()
 	STOP_PROCESSING(SSprocessing, src)
@@ -42,7 +42,7 @@
 
 /obj/item/his_grace/attack_self(mob/living/user)
 	if(!awakened)
-		INVOKE_ASYNC(src, .proc/awaken, user)
+		INVOKE_ASYNC(src, PROC_REF(awaken), user)
 
 /obj/item/his_grace/attack(mob/living/M, mob/user)
 	if(awakened && M.stat)
@@ -91,7 +91,7 @@
 			if(HIS_GRACE_CONSUME_OWNER to HIS_GRACE_FALL_ASLEEP)
 				master.visible_message("<span class='boldwarning'>[src] turns on [master]!</span>", "<span class='his_grace big bold'>[src] turns on you!</span>")
 				do_attack_animation(master, null, src)
-				master.emote("scream")
+				master.emote("realagony")
 				master.remove_status_effect(STATUS_EFFECT_HISGRACE)
 				REMOVE_TRAIT(src, TRAIT_NODROP, HIS_GRACE_TRAIT)
 				master.DefaultCombatKnockdown(60)

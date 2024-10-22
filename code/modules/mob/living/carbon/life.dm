@@ -38,9 +38,10 @@
 
 //Procs called while dead
 /mob/living/carbon/proc/handle_death()
-	for(var/datum/reagent/R in reagents.reagent_list)
-		if(R.chemical_flags & REAGENT_DEAD_PROCESS && !is_reagent_processing_invalid(R, src))
-			R.on_mob_dead(src)
+	if(reagents) // BLUEMOON EDIT - sanity check
+		for(var/datum/reagent/R in reagents.reagent_list)
+			if(R.chemical_flags & REAGENT_DEAD_PROCESS && !is_reagent_processing_invalid(R, src))
+				R.on_mob_dead(src)
 
 ///////////////
 // BREATHING //
@@ -167,7 +168,7 @@
 
 		failed_last_breath = 1
 		throw_alert("not_enough_oxy", /atom/movable/screen/alert/not_enough_oxy)
-		return 0
+		return FALSE
 
 	var/safe_oxy_min = 16
 	var/safe_oxy_max = 50
@@ -252,7 +253,7 @@
 		if(SA_partialpressure > SA_para_min)
 			Unconscious(60)
 			if(SA_partialpressure > SA_sleep_min)
-				Sleeping(max(AmountSleeping() + 40, 200))
+				Sleeping(max(AmountSleeping() + 60, 400)) // BLUEMOON EDIT, WAS H.Sleeping(max(H.AmountSleeping() + 40, 400)) - сервак лагает и под анестезией просыпаются
 		else if(SA_partialpressure > 0.01)
 			if(prob(20))
 				emote(pick("giggle","laugh"))
@@ -323,7 +324,7 @@
 	//BREATH TEMPERATURE
 	handle_breath_temperature(breath)
 
-	return 1
+	return TRUE
 
 //Fourth and final link in a breath chain
 /mob/living/carbon/proc/handle_breath_temperature(datum/gas_mixture/breath)
@@ -338,7 +339,7 @@
 			if((check.clothing_flags & ALLOWINTERNALS))
 				internals = TRUE
 	if(internal)
-		if(internal.loc != src)
+		if(internal.loc != src && !istype(internal.loc, /obj/structure/table/optable)) // BLUEMOON ADD - добавлено проверка на хирургический стол, чтобы можно было пользоваться баллоном из него
 			internal = null
 			update_internals_hud_icon(0)
 		else if (!internals && !getorganslot(ORGAN_SLOT_BREATHING_TUBE))
@@ -357,7 +358,7 @@
 		return
 
 	// No decay if formaldehyde/preservahyde in corpse or when the corpse is charred
-	if(reagents.has_reagent(/datum/reagent/toxin/formaldehyde, 1) || HAS_TRAIT(src, TRAIT_HUSK) || reagents.has_reagent(/datum/reagent/preservahyde, 1))
+	if(reagents?.has_reagent(/datum/reagent/toxin/formaldehyde, 1) || HAS_TRAIT(src, TRAIT_HUSK) || reagents?.has_reagent(/datum/reagent/preservahyde, 1))
 		return
 
 	// Also no decay if corpse chilled or not organic/undead
@@ -378,7 +379,7 @@
 
 	var/datum/gas_mixture/stank = new
 
-	stank.set_moles(GAS_MIASMA,1)
+	stank.set_moles(GAS_MIASMA,0.25)
 
 	stank.set_temperature(BODYTEMP_NORMAL)
 
@@ -401,7 +402,7 @@
 			var/obj/item/organ/O = V
 			if(O)
 				O.on_life(seconds, times_fired)
-	else
+	else if(!QDELETED(src))
 		if(reagents.has_reagent(/datum/reagent/toxin/formaldehyde, 1) || reagents.has_reagent(/datum/reagent/preservahyde, 1)) // No organ decay if the body contains formaldehyde. Or preservahyde.
 			return
 		for(var/V in internal_organs)
@@ -498,26 +499,25 @@ All effects don't start immediately, but rather get worse over time; the rate is
 91-100: Dangerously toxic - swift death
 */
 #define BALLMER_POINTS 5
-GLOBAL_LIST_INIT(ballmer_good_msg, list("Hey guys, what if we rolled out a bluespace wiring system so mice can't destroy the powergrid anymore?",
-										"Hear me out here. What if, and this is just a theory, we made R&D controllable from our PDAs?",
-										"I'm thinking we should roll out a git repository for our research under the AGPLv3 license so that we can share it among the other stations freely.",
-										"I dunno about you guys, but IDs and PDAs being separate is clunky as fuck. Maybe we should merge them into a chip in our arms? That way they can't be stolen easily.",
-										"Why the fuck aren't we just making every pair of shoes into galoshes? We have the technology.",
-										"We can link the Ore Silo to our protolathes, so why don't we also link it to autolathes?",
-										"If we can make better bombs with heated plasma, oxygen, and tritium, then why do station nukes still use plutonium?",
- 										"We should port all our NT programs to modular consoles and do away with computers. They're way more customizable, support cross-platform usage, and would allow crazy amounts of multitasking.",
-										"Wait, if we use more manipulators in something, then it prints for cheaper, right? So what if we just made a new type of printer that has like 12 manipulators inside of it to print stuff for really cheap?"
+GLOBAL_LIST_INIT(ballmer_good_msg, list("Эй, народ, а что, если мы заменим обычную проводку на блюспейсовую и тогда мыши не смогут перегрызть электросети?",
+										"Послушайте. А что если, в теории, мы бы смогли управлять порядком исследований с наших КПК?",
+										"Не знаю, как насчёт вас, но ID и КПК по отдельности - это чертовски неудобно. Может нам, стоит объеденить их в чип и вживить его в руку? Тогда, их перестанут так легко красть...",
+										"Почему мы просто не превратим каждую пару обуви в галоши? У нас же есть технологии!",
+										"Мы можем связать СИЛО с нашими протолатами, так почему бы нам не связать его и с автолатами?",
+										"Если мы можем делать лучшие бомбы с помощью нагретой плазмы, кислорода и трития, то почему в станционных ядерных бомбах до сих пор используется плутоний?",
+										"Мы должны перенести весь наш NT-софт на модульные консоли и выкинуть компьютеры. Они гораздо лучше настраиваются, поддерживают кросс-платформенное использование и позволяют использовать безумное количество многозадачности.",
+										"Подождите, если мы используем больше манипуляторов в чем-то, то это печатается дешевле, верно? А если мы просто сделаем новый тип принтера с 12 манипуляторами внутри, чтобы печатать вещи очень дешево?"
 										))
-GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put a webserver that's automatically turned on with default admin passwords into every PDA?",
-											"So like, you know how we separate our codebase from the master copy that runs on our consumer boxes? What if we merged the two and undid the separation between codebase and server?",
-											"Dude, radical idea: H.O.N.K mechs but with no bananium required.",
-											"Best idea ever: Disposal pipes instead of hallways.",
-											"What if we use a language that was written on a napkin and created over 1 weekend for all of our servers?",
-											"What if we took a locker, some random trash, and made an exosuit out of it? Wouldn't that be like, super cool and stuff?",
-											"Okay, hear me out, what if we make illegal things not illegal, so that sec stops arresting us for having it?",
-											"I have a crazy idea, guys. Rather than having monkeys to test on, what if we only used apes?",
-											"Woh man ok, what if we took slime cores and smashed them into other slimes, be kinda cool to see what happens.",
-											"We're NANOtrasen but we need to unlock nano parts, what's the deal with that?"
+GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Йоу, а что, если мы поставим в каждый КПК автоматически включаемый веб-сервер с паролями администраторов по умолчанию?",
+											"Итак, вы знаете, как мы отделяем нашу кодовую базу от мастер-ветки, которая запускается на наших потребительских устройствах? Что, если мы объединим их и отменим разделение между кодовой базой и сервером?",
+											"Чувак, радикальная идея: мехи H.O.N.K, но без бананиума...",
+											"Просто идеальная идея. Установить мусорные трубы по всей станции и использовать их для перемещения.",
+											"Что, если мы будем использовать язык, написанный на салфетке и созданный за одну неделю, для всех наших серверов?",
+											"Что, если мы возьмем шкафчик, случайный мусор и сделаем из него экзокостюм? Разве это не было бы супер круто и все такое?",
+											"Окей, послушай меня, что если мы начнём делать незаконные вещи законными, чтобы охрана перестала нас донимать за их наличие?",
+											"У меня есть безумная идея, ребята. Что если вместо обезьян для испытаний, мы будем использовать только горилл?",
+											"Воу, ладно, а что если мы возьмём чуток ядер слаймов и смешаем их в другого слайма? Было бы круто посмотреть, что получится.",
+											"Мы НАНОтрейзен, и нам нужно разблокировать НАНОчасти. Что в этом предложении не так?"
 											))
 
 //this updates all special effects: stun, sleeping, knockdown, druggy, stuttering, etc..
@@ -590,8 +590,8 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 	if(hallucination)
 		handle_hallucinations()
 
-	if(drunkenness)
-		drunkenness *= 0.96
+	if(drunkenness && !isrobotic(src))
+		drunkenness *= 0.96 // Опьянение для органиков
 		if(drunkenness >= 6)
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "drunk", /datum/mood_event/drunk)
 			if(prob(25))
@@ -668,10 +668,112 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 		else
 			SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "drunk")
 
+	// BLUEMOON ADD START - опьянение для синтетиков
+	else if (drunkenness)
+		drunkenness *= 0.96
+		if(drunkenness >= 6)
+			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "drunk", /datum/mood_event/drunk_synth)
+			if(prob(25))
+				slurring += 2
+			jitteriness = max(jitteriness - 3, 0)
+			if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING))
+				if(prob(2.5))
+					to_chat(src, "<span class='synth'>Вы фиксируете лёгкое уменьшение повреждений вашего корпуса под действием употреблённой жидкости...</span>")
+				adjustBruteLoss(-0.12, FALSE)
+				adjustFireLoss(-0.06, FALSE)
+			sound_environment_override = SOUND_ENVIRONMENT_PSYCHOTIC
+		else
+			SEND_SIGNAL(src, COMSIG_CLEAR_MOOD_EVENT, "drunk")
+			clear_alert("drunk")
+			sound_environment_override = SOUND_ENVIRONMENT_NONE
+			drunkenness = max(drunkenness - 0.2, 0)
+
+		if(mind?.assigned_role == "Scientist" || mind?.assigned_role == "Research Director")
+			if (prob(3))
+				to_chat(src, "<span class='synth'>Вы ощущаете разгон своих аналитических процессоров...</span>")
+			if(SSresearch.science_tech)
+				if(drunkenness >= 12.9 && drunkenness <= 13.8)
+					drunkenness = round(drunkenness, 0.01)
+					var/ballmer_percent = 0
+					if(drunkenness == 13.35)
+						ballmer_percent = 1
+					else
+						ballmer_percent = (-abs(drunkenness - 13.35) / 0.9) + 1
+					if(prob(5))
+						say(pick(GLOB.ballmer_good_msg), forced = "ballmer")
+					SSresearch.science_tech.add_point_list(list(TECHWEB_POINT_TYPE_GENERIC = BALLMER_POINTS * ballmer_percent))
+				if(drunkenness > 26)
+					if(prob(5))
+						SSresearch.science_tech.remove_point_list(list(TECHWEB_POINT_TYPE_GENERIC = BALLMER_POINTS))
+						say(pick(GLOB.ballmer_windows_me_msg), forced = "ballmer")
+
+		if(mind?.assigned_role == "Roboticist" && prob(3))
+			to_chat(src, "<span class='synth'>Ваши манипуляторы подрагивают, а в вашем позитронном мозге роятся невероятные идеи о превосходстве синтетической расы... Нужно построить больше роботов!</span>")
+
+		if(drunkenness >= 41)
+			Dizzy(5)
+			if(prob(5))
+				emote(
+					pick("ping", "beep", "buzz", "buzz2")
+				)
+			if(prob(10))
+				do_fake_sparks(2, TRUE, src)
+			if(prob(15))
+				jitteriness += 3
+			if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING))
+				if(prob(5))
+					to_chat(src, "<span class='synth'>Перегрузка системы, вызванная выпитой жидкостью, ещё сильнее ускоряет процессы саморемонта...</span>")
+				adjustBruteLoss(-0.3, FALSE)
+				adjustFireLoss(-0.15, FALSE)
+
+		if(drunkenness >= 51)
+			if(prob(5))
+				to_chat(src, "<span class='warning'>Зафиксирована перегрузка сенсоров!</span>")
+				blur_eyes(10)
+			if(HAS_TRAIT(src, TRAIT_DRUNK_HEALING))
+				adjustBruteLoss(-0.4, FALSE)
+				adjustFireLoss(-0.2, FALSE)
+			if (prob(25))
+				slurring += 5
+			if(prob(5))
+				to_chat(src, "<span class='warning'>Вы испускаете сноп искр, теряя заряд!</span>")
+				do_sparks(4, TRUE, src)
+				adjust_nutrition(-40)
+
+		if(drunkenness >= 81)
+			if (prob(5))
+				to_chat(src, "<span class='warning'>Употреблённая жидкость вызывает критические ошибки в вашей системе...</span>")
+			adjustToxLoss(1, TRUE, FALSE, TOX_SYSCORRUPT)
+			if(prob(5) && !stat)
+				to_chat(src, "<span class='userdanger'>ОШИБ%!№...</span>")
+				emote("malf")
+				drowsyness += 2
+				Dizzy(10)
+				AdjustUnconscious(60)
+
+		if(drunkenness >= 91)
+			if (prob(5))
+				to_chat(src, "<span class='warning'>Вы фиксируете каскадные повреждения своего позитронного мозга!</span>")
+			adjustOrganLoss(ORGAN_SLOT_BRAIN, 0.8, 60)
+			adjustToxLoss(1.2, TRUE, FALSE, TOX_SYSCORRUPT)
+			if(prob(20) && !stat)
+				if(SSshuttle.emergency.mode == SHUTTLE_DOCKED && is_station_level(z))
+					if(prob(10))
+						to_chat(src, "<span class='warning'>Ваша система фиксирует прибытие шаттла и переходит в режим овердрайва, чтобы не отключиться от перегрузки синтанолом...</span>")
+				else
+					playsound(src, 'modular_splurt/sound/misc/connection_terminated.ogg', 40, FALSE)
+					emote("me", EMOTE_VISIBLE, "с громким щелчком выключается, падая на пол!")
+					to_chat(src, "<span class='userdanger'>Обновление операционной системы, пожалуйста, ожи%@#$$!</span>")
+					AdjustUnconscious(900)
+					if(isipcperson(src))
+						dna.features["ipc_screen"] = "BSOD"
+						update_body()
+	// BLUEMOON ADD END
+
 //used in human and monkey handle_environment()
 /mob/living/carbon/proc/natural_bodytemperature_stabilization()
 	if(HAS_TRAIT(src, TRAIT_COLDBLOODED) || HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
-		return 0 //Return 0 as your natural temperature. Species proc handle_environment() will adjust your temperature based on this.
+		return FALSE //return FALSE as your natural temperature. Species proc handle_environment() will adjust your temperature based on this.
 
 	var/body_temperature_difference = BODYTEMP_NORMAL - bodytemperature
 	switch(bodytemperature)
@@ -686,7 +788,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 
 /mob/living/carbon/proc/get_cooling_efficiency()
 	if(!HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
-		return 1
+		return TRUE
 
 	var/integration_bonus = min(blood_volume * SYNTH_INTEGRATION_COOLANT_CAP, integrating_blood * SYNTH_INTEGRATION_COOLANT_PENALTY)	//Integration blood somewhat helps, though only at 40% impact and to a cap of 25% of current blood level.
 	var/blood_effective_volume = blood_volume + integration_bonus
@@ -704,7 +806,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 BLUEMOON REMOVAL END */
 	var/datum/gas_mixture/environment = loc.return_air()
 	if(!environment)
-		return 0
+		return FALSE
 
 	var/pressure = environment.return_pressure()
 	var/heat = environment.return_temperature()
@@ -724,12 +826,18 @@ BLUEMOON REMOVAL END */
 	var/turf/T = get_turf(src)
 
 	if(istype(head_item, /obj/item/clothing/head/helmet/space) && istype(suit_item, /obj/item/clothing/suit/space))
-		return 1
+		return TRUE
+
+	if(istype(head_item, /obj/item/clothing/head/mod) && istype(suit_item, /obj/item/clothing/suit/mod))
+		var/obj/item/clothing/suit/mod/modsuit = suit_item
+		var/obj/item/mod/control/mod_control = modsuit.mod
+		if(mod_control && mod_control.active)
+			return TRUE
 
 	if(T && is_mining_level(T.z) && istype(head_item, /obj/item/clothing/head/hooded/explorer) && istype(suit_item, /obj/item/clothing/suit/hooded/explorer))
-		return 1
+		return TRUE
 
-	return 0
+	return FALSE
 
 /////////
 //LIVER//

@@ -52,7 +52,7 @@
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "bunnysuit"
-	can_adjust = FALSE
+	can_adjust = TRUE
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	body_parts_covered = CHEST|GROIN
 	unique_reskin = list(
@@ -114,6 +114,17 @@
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
 	icon_state = "whitebunnysuit"
 	body_parts_covered = CHEST|GROIN|ARMS
+
+/obj/item/clothing/under/lewdmaid
+	name = "lewd maid outfit"
+	desc = "For all your lewd maid needs."
+	icon = 'modular_splurt/icons/mob/clothing/lewd_clothing/uniform/lewd_uniform.dmi'
+	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/lewd_clothing/uniform/lewd_uniform.dmi'
+	icon_state = "lewdmaid"
+	item_state = "lewdmaid_obj"
+	can_adjust = FALSE
+	body_parts_covered = CHEST
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/under/rank/security/skirt/slut
 	name = "slutty security jumpskirt"
@@ -225,37 +236,6 @@
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/head.dmi'
 	armor = list("melee" = 40, "bullet" = 30, "laser" = 25, "energy" = 10, "bomb" = 25, "bio" = 10, "rad" = 0, "fire" = 50, "acid" = 60)
 
-/obj/item/clothing/under/rank/bridgeofficer
-	name = "bridge officer outfit"
-	desc = "The uniform of a bridge officer. It makes you feel extremely important, even if you are not."
-	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
-	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "bridgesec"
-	item_state = "bridgesec"
-	armor = list("melee" = 0, "bullet" = 0, "laser" = 5,"energy" = 5, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0, "wound" = 0)
-	can_adjust = FALSE
-	strip_delay = 25
-	alt_covers_chest = TRUE
-	sensor_mode = SENSOR_COORDS
-	sensor_flags = NONE
-	anthro_mob_worn_overlay = 'modular_splurt/icons/mob/clothing/uniform_digi.dmi'
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_ALL_TAURIC
-
-/obj/item/clothing/under/rank/bridgeofficer/skirt
-	name = "bridge officer skirt"
-	icon_state = "bridgesecf"
-	item_state = "bridgesecf"
-	body_parts_covered = CHEST|GROIN|ARMS
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-
-/obj/item/clothing/under/rank/bridgeofficer/formal
-	name = "bridge officer formal outfit"
-	desc = "The uniform of a bridge officer. Its a formal variant."
-	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
-	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
-	icon_state = "bridgesecformal"
-	item_state = "bridgesecformal"
-
 /obj/item/clothing/under/cyberpunksleek
 	name = "modern sweater"
 	desc = "A modern-styled sweater typically worn on more urban planets, made with a neo-laminated fiber lining."
@@ -279,10 +259,11 @@
 	can_adjust = FALSE
 
 /obj/item/clothing/under/pentatop
-	name = "pentagram crop top"
+	name = "Pentagram Crop Top"
 	desc = "For those goth girls with lots of chest to show."
 	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
+	anthro_mob_worn_overlay = 'modular_splurt/icons/mob/clothing/uniform_digi.dmi'
 	icon_state = "pentatop"
 	item_state = "pentatop"
 	body_parts_covered = CHEST
@@ -333,9 +314,6 @@
 	desc = "An utilitarian uniform of rugged warfare, with yellow insignias."
 	icon_state = "goner_uniform_y"
 
-/obj/item/clothing/under/misc/gear_harness
-	body_parts_covered = NONE
-
 /obj/item/clothing/under/misc/leia_outfit
 	name = "space princess outfit"
 	desc = "Chain for your Master's erotic asphyxiation not included."
@@ -366,6 +344,24 @@
 	icon_state = "explorerstripper"
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/uniform.dmi'
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/under/misc/stripper/black
+	name = "black stripper outfit"
+	icon = 'modular_splurt/icons/obj/clothing/uniforms.dmi'
+	mob_overlay_icon= 'modular_splurt/icons/mob/clothing/uniform.dmi'
+	icon_state = "syclothing"
+	item_state = "syclothing"
+	can_adjust = FALSE
+	body_parts_covered = CHEST
+
+/obj/item/clothing/under/misc/stripper/white
+	name = "white stripper outfit"
+	icon = 'modular_splurt/icons/mob/clothing/lewd_clothing/uniform/lewd_uniform.dmi'
+	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/lewd_clothing/uniform/lewd_uniform.dmi'
+	icon_state = "stripper_white"
+	item_state = "stripper_white_obj"
+	can_adjust = FALSE
+	body_parts_covered = CHEST
 
 // Prison Jumpsuit/Jumpskirt override to allow reskins
 /obj/item/clothing/under/rank/prisoner
