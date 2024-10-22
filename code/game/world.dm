@@ -8,7 +8,7 @@ GLOBAL_LIST(topic_status_cache)
 // Enables tracy profiler at compile-time.
 // MAKE SURE you have a compiled library inside the codebase root folder.
 // DO NOT commit the library to the repo.
-#define TRACY_PROFILE
+// #define TRACY_PROFILE
 
 //This happens after the Master subsystem new(s) (it's a global datum)
 //So subsystems globals exist, but are not initialised
