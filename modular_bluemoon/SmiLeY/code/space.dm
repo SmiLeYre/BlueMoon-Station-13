@@ -4,6 +4,7 @@
 	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
 	allow_duplicates = FALSE
 	id = "tarkoff-base"
+	unpickable = TRUE
 
 /datum/map_template/ruin/space/tarkoff/New()
 	var/num = rand(0, 3)
@@ -24,8 +25,9 @@
 	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
 	suffix = "space_syndicate_base.dmm"
 	allow_duplicates = FALSE
-	always_place = TRUE
+	always_place = FALSE
 	id = "ds2-base"
+	unpickable = TRUE
 
 /datum/map_template/ruin/space/forgottenship
 	name = "SCSBC-12"
@@ -33,8 +35,9 @@
 	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
 	suffix = "forgotten_ship.dmm"
 	allow_duplicates = FALSE
-	always_place = TRUE
+	always_place = FALSE
 	id = "forgottenship"
+	unpickable = TRUE
 
 /datum/map_template/ruin/space/forgottenship/New()
 	if(GLOB.master_mode == "Extended")
