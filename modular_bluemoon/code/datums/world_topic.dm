@@ -142,7 +142,7 @@
 		return
 
 	var/datum/db_query/query = SSdbcore.NewQuery(
-		"UPDATE [format_table_name("discord_links")] SET valid = 1, discord_id = :discord_id WHERE token = :token",
+		"UPDATE [format_table_name("discord_links")] SET valid = 1, discord_id = :discord_id WHERE one_time_token = :token",
 		list("discord_id" = discord_id, "token" = input["identifier"])
 	)
 	query.Execute()
