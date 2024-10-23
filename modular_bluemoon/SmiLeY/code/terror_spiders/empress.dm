@@ -11,8 +11,8 @@
 	name = "Empress of Terror"
 	desc = "The unholy offspring of spiders, nightmares, and lovecraft fiction."
 	ai_target_method = TS_DAMAGE_SIMPLE
-	maxHealth = 1000
-	health = 1000
+	maxHealth = 800
+	health = 800
 	melee_damage_lower = 30
 	melee_damage_upper = 60
 	ventcrawler = 1

@@ -40,10 +40,10 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 	maxHealth = 120
 	health = 120
 	a_intent = INTENT_HARM
-	var/regeneration = 2 //pure regen on life
+	var/regeneration = 1 //pure regen on life
 	var/degenerate = FALSE // if TRUE, they slowly degen until they all die off.
 	//also regenerates by using /datum/status_effect/terror/food_regen when wraps a carbon, wich grants full health witin ~25 seconds
-	damage_coeff = list(BRUTE = 0.75, BURN = 1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0.2)
+	damage_coeff = list(BRUTE = 0.85, BURN = 1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0.2)
 
 	//ATTACK
 	melee_damage_lower = 15

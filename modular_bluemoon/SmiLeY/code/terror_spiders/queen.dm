@@ -17,7 +17,7 @@
 	icon_dead = "terror_queen_dead"
 	maxHealth = 340
 	health = 340
-	damage_coeff = list(BRUTE = 0.7, BURN = 1.1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0.2)
+	damage_coeff = list(BRUTE = 0.8, BURN = 1.1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0.2)
 	regeneration = 3
 	deathmessage = "Emits a  piercing screech that echoes through the hallways, chilling the hearts of those around, as the spider lifelessly falls to the ground."
 	death_sound = 'sound/creatures/terrorspiders/queen_death.ogg'
