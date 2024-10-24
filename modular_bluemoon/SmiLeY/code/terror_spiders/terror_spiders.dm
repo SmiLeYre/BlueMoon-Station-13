@@ -4,6 +4,7 @@ GLOBAL_VAR_INIT(ts_count_alive_awaymission, 0)
 GLOBAL_VAR_INIT(ts_count_alive_station, 0)
 GLOBAL_VAR_INIT(ts_death_last, 0)
 GLOBAL_VAR_INIT(ts_death_window, 9000) // 15 minutes
+GLOBAL_VAR_INIT(ts_default_health, 100)
 GLOBAL_LIST_EMPTY(ts_spiderlist)
 GLOBAL_LIST_EMPTY(ts_egg_list)
 GLOBAL_LIST_EMPTY(ts_spiderling_list)
@@ -37,13 +38,13 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 	damaged_sound = list('sound/creatures/terrorspiders/speech_1.ogg', 'sound/creatures/terrorspiders/speech_2.ogg', 'sound/creatures/terrorspiders/speech_3.ogg', 'sound/creatures/terrorspiders/speech_4.ogg', 'sound/creatures/terrorspiders/speech_5.ogg', 'sound/creatures/terrorspiders/speech_6.ogg')
 
 	//HEALTH
-	maxHealth = 120
-	health = 120
+	maxHealth = 100
+	health = 100
 	a_intent = INTENT_HARM
 	var/regeneration = 1 //pure regen on life
 	var/degenerate = FALSE // if TRUE, they slowly degen until they all die off.
 	//also regenerates by using /datum/status_effect/terror/food_regen when wraps a carbon, wich grants full health witin ~25 seconds
-	damage_coeff = list(BRUTE = 0.85, BURN = 1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0.2)
+	damage_coeff = list(BRUTE = 0.85, BURN = 1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0.8)
 
 	//ATTACK
 	melee_damage_lower = 15
