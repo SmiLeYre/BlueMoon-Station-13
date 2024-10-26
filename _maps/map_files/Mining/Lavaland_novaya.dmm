@@ -669,6 +669,12 @@
 	},
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
+"aIc" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/turf/open/floor/iron/elevatorshaft,
+/area/ruin/lavaland/unpowered)
 "aIv" = (
 /obj/structure/frame/machine{
 	anchored = 1;
@@ -909,6 +915,15 @@
 /obj/machinery/vending/hydronutrients,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
+"aVa" = (
+/obj/structure/disposaloutlet{
+	dir = 1
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/turf/open/floor/iron/elevatorshaft,
+/area/ruin/lavaland/unpowered)
 "aVz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -1530,6 +1545,15 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
+"bvi" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/disposalpipe/segment{
+	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
+	dir = 4;
+	name = "Acid-Proof disposal pipe"
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
 "bvz" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -1808,6 +1832,9 @@
 "bId" = (
 /obj/machinery/limbgrower,
 /obj/effect/turf_decal/stripes/white/line,
+/obj/machinery/airalarm/directional/south{
+	req_access = list("syndicate")
+	},
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "bIE" = (
@@ -2524,9 +2551,6 @@
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "cpl" = (
 /obj/machinery/sleeper/syndie/fullupgrade,
-/obj/machinery/airalarm/directional/east{
-	req_access = list("syndicate")
-	},
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 10
 	},
@@ -5067,12 +5091,12 @@
 /turf/open/floor/plasteel,
 /area/mine/storage)
 "eUL" = (
-/obj/structure/disposalpipe/segment{
-	dir = 9
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
+	},
+/obj/structure/disposalpipe/junction/yjunction{
+	dir = 1
 	},
 /turf/open/floor/iron/large,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -6086,6 +6110,10 @@
 "fVT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/door/airlock/medical/glass{
+	name = "Medbay";
+	req_access_txt = "150"
+	},
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "fWb" = (
@@ -7319,12 +7347,12 @@
 /turf/open/floor/plating,
 /area/mine/storage)
 "hns" = (
-/obj/machinery/door/airlock{
-	name = "Bathroom";
-	req_access_txt = "150"
+/obj/effect/turf_decal/tile/dark,
+/obj/structure/disposalpipe/segment{
+	dir = 4
 	},
-/turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main)
+/turf/open/floor/iron,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "hog" = (
 /obj/structure/stone_tile/cracked,
 /obj/structure/stone_tile{
@@ -9655,9 +9683,6 @@
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 5
 	},
-/obj/machinery/airalarm/directional/west{
-	req_access = list("syndicate")
-	},
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "jGF" = (
@@ -9919,6 +9944,7 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/delivery/white,
+/obj/machinery/door/airlock/hatch,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "jSs" = (
@@ -10729,6 +10755,10 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/door/airlock/medical/glass{
+	name = "Medbay";
+	req_access_txt = "150"
+	},
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "kGh" = (
@@ -10802,11 +10832,6 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "kIw" = (
-/obj/machinery/power/apc/syndicate{
-	dir = 4;
-	name = "Medbay APC";
-	pixel_y = 26
-	},
 /obj/structure/cable/yellow{
 	icon_state = "0-2"
 	},
@@ -10815,6 +10840,12 @@
 	},
 /obj/item/kirbyplants{
 	icon_state = "plant-32"
+	},
+/obj/machinery/power/apc/syndicate{
+	dir = 1;
+	name = "Medbay APC";
+	pixel_y = 23;
+	req_access_txt = "150"
 	},
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
@@ -12295,6 +12326,13 @@
 /obj/structure/fence,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
+"lSw" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
 "lSB" = (
 /obj/structure/dresser,
 /turf/open/floor/wood,
@@ -13666,6 +13704,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/storage)
+"naO" = (
+/obj/structure/disposalpipe/segment{
+	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
+	dir = 4;
+	name = "Acid-Proof disposal pipe"
+	},
+/turf/open/floor/iron/elevatorshaft,
+/area/ruin/lavaland/unpowered)
 "naP" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 4
@@ -13893,11 +13939,10 @@
 /turf/open/indestructible/hoteltile,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "nkJ" = (
-/obj/structure/disposaloutlet{
-	dir = 1
+/obj/structure/disposalpipe/segment{
+	dir = 6
 	},
-/obj/structure/disposalpipe/trunk,
-/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/turf/open/floor/iron/elevatorshaft,
 /area/ruin/lavaland/unpowered)
 "nmB" = (
 /obj/effect/turf_decal/tile/green,
@@ -13997,6 +14042,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/delivery/white,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/door/airlock/hatch,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "npX" = (
@@ -15116,7 +15162,8 @@
 /turf/open/floor/iron,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "opQ" = (
-/obj/machinery/smartfridge/drinks,
+/obj/machinery/smartfridge/food,
+/obj/machinery/door/firedoor,
 /turf/open/floor/iron,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "oqi" = (
@@ -17406,9 +17453,6 @@
 /turf/open/floor/plasteel/white,
 /area/mine/xenoarch_area_c)
 "qFF" = (
-/obj/machinery/airalarm/directional/south{
-	req_access = list("syndicate")
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -17441,9 +17485,6 @@
 /turf/open/indestructible/hoteltile,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "qHq" = (
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
 	},
@@ -17704,8 +17745,7 @@
 /area/lavaland/surface/outdoors)
 "qQQ" = (
 /obj/machinery/door/airlock{
-	name = "Unisex Restrooms";
-	req_access_txt = "150"
+	name = "Bathroom"
 	},
 /turf/open/indestructible/hoteltile,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
@@ -17855,9 +17895,6 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
-	},
-/obj/machinery/airalarm/directional/south{
-	req_access = list("syndicate")
 	},
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 4
@@ -18822,13 +18859,11 @@
 /turf/open/floor/plasteel,
 /area/mine/storage)
 "rVU" = (
-/obj/structure/disposalpipe/junction{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/iron/large,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "rWz" = (
@@ -19119,9 +19154,6 @@
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/ruin/lavaland/unpowered/ash_walkers)
 "spM" = (
-/obj/machinery/airalarm/directional/south{
-	req_access = list("syndicate")
-	},
 /obj/structure/table,
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/dark{
@@ -21237,8 +21269,8 @@
 /turf/open/floor/wood,
 /area/mine/living_quarters)
 "usS" = (
-/obj/machinery/smartfridge/drinks,
 /obj/machinery/door/firedoor,
+/obj/machinery/smartfridge/food,
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "utH" = (
@@ -21983,12 +22015,11 @@
 /turf/open/floor/engine,
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "vhu" = (
-/obj/machinery/door/airlock{
-	name = "Unisex Restrooms";
-	req_access_txt = "150"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/door/airlock{
+	name = "Bathroom"
+	},
 /turf/open/indestructible/hoteltile,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "vib" = (
@@ -24403,6 +24434,13 @@
 /obj/effect/clockwork/overlay/floor,
 /turf/open/floor/clockwork/reebe,
 /area/lavaland/necropolis)
+"xxj" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
 "xxA" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
@@ -24613,6 +24651,9 @@
 "xEn" = (
 /obj/machinery/disposal/bin,
 /obj/effect/turf_decal/bot,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
 "xFc" = (
@@ -99331,7 +99372,7 @@ nXf
 nXf
 dqG
 qHq
-nXf
+hns
 nXf
 lHk
 tfw
@@ -101375,7 +101416,7 @@ fgo
 hNp
 eRE
 njN
-hns
+qQQ
 uSg
 vhu
 tsW
@@ -103668,7 +103709,7 @@ tfw
 tfw
 tfw
 tfw
-eia
+tfw
 wLK
 bnj
 xiv
@@ -104182,7 +104223,7 @@ tfw
 tfw
 tfw
 tfw
-eia
+bvi
 wLK
 fhH
 oLE
@@ -104439,7 +104480,7 @@ tfw
 tfw
 tfw
 tfw
-tfw
+bvi
 wLK
 wLK
 wLK
@@ -104696,7 +104737,7 @@ tfw
 tfw
 tfw
 tfw
-tfw
+bvi
 wLK
 jjV
 jGu
@@ -104953,7 +104994,7 @@ tfw
 tfw
 tfw
 tfw
-tfw
+bvi
 wLK
 gwV
 sFD
@@ -105210,7 +105251,7 @@ tfw
 tfw
 tfw
 tfw
-tfw
+bvi
 wLK
 eTd
 nXy
@@ -105467,13 +105508,13 @@ tfw
 tfw
 tfw
 tfw
-tfw
+naO
 wRx
 wLK
 wLK
-dDM
-cXG
 upi
+cXG
+dDM
 cHs
 wLK
 rwy
@@ -105724,9 +105765,9 @@ tfw
 tfw
 tfw
 tfw
-tfw
-tfw
-tfw
+lSw
+aIc
+xxj
 wLK
 eLy
 pyH
@@ -105983,7 +106024,7 @@ tfw
 tfw
 tfw
 tfw
-tfw
+bvi
 wLK
 gCP
 oBu
@@ -106240,7 +106281,7 @@ tfw
 tfw
 tfw
 tfw
-tfw
+bvi
 wLK
 xEn
 lOc
@@ -106497,7 +106538,7 @@ tfw
 tfw
 tfw
 tfw
-tfw
+aVa
 wLK
 wLK
 wLK
