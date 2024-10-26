@@ -950,5 +950,5 @@
 	name = "Dread Kit"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/modkit/dreadmk3_kit
-	ckeywhitelist = list("stasdvrz", "mrsko")
+	ckeywhitelist = list("stasdvrz", "mrsko","akinight")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
