@@ -265,7 +265,9 @@
 		/obj/item/storage/firstaid/tactical/ert_second = 1,
 		/obj/item/gun/medbeam=1,
 		/obj/item/paper/beamgun_istruction=1,
-		/obj/item/roller=1,)
+		/obj/item/roller=1,
+		/obj/item/bodybag/bluespace=1,
+		)
 
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,
@@ -292,7 +294,9 @@
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1,
 		/obj/item/paper/beamgun_istruction=1,
-		/obj/item/roller=1,)
+		/obj/item/roller=1,
+		/obj/item/bodybag/bluespace=1,
+	)
 
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,
@@ -327,7 +331,9 @@
 		/obj/item/reagent_containers/hypospray/combat=1,\
 		/obj/item/gun/medbeam=1,
 		/obj/item/paper/beamgun_istruction=1,
-		/obj/item/roller=1,)
+		/obj/item/roller=1,
+		/obj/item/bodybag/bluespace=1,
+		)
 
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,
@@ -351,7 +357,9 @@
 		/obj/item/reagent_containers/hypospray/combat/nanites=1,\
 		/obj/item/gun/medbeam=1,
 		/obj/item/paper/beamgun_istruction=1,
-		/obj/item/roller=1,)
+		/obj/item/roller=1,
+		/obj/item/bodybag/bluespace=1,
+		)
 
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,
@@ -477,6 +485,7 @@
 /datum/outfit/ert/janitor
 	name = "ERT Janitor"
 
+	l_hand = /obj/item/storage/bag/trash/bluespace
 	id = /obj/item/card/id/ert
 	mask = /obj/item/clothing/mask/gas/sechailer/syndicate
 	head = /obj/item/clothing/head/helmet/swat/janitor
@@ -487,8 +496,19 @@
 	belt = /obj/item/storage/belt/janitor/ert_maid
 	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
 		/obj/item/storage/firstaid/regular=1,\
+		/obj/item/storage/box/ammo/cleaning_grenades=1,
 		/obj/item/bodybag/bluespace=1,
-		/obj/item/mop/advanced=1)
+		/obj/item/mop/advanced=1,
+		/obj/item/gun/energy/broom=1,
+		)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant
+		/obj/item/organ/cyberimp/arm/janitor,
+		)
+
 
 /datum/outfit/ert/janitor/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
