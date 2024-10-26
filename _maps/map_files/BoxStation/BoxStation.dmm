@@ -3083,6 +3083,10 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port/fore)
+"aop" = (
+/mob/living/simple_animal/slime,
+/turf/open/floor/engine,
+/area/science/xenobiology)
 "aoq" = (
 /obj/machinery/door/window/northleft{
 	base_state = "right";
@@ -3394,10 +3398,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
-"apb" = (
-/mob/living/simple_animal/slime,
-/turf/open/floor/engine,
-/area/science/xenobiology)
 "apc" = (
 /obj/structure/chair/office/dark,
 /obj/structure/cable{
@@ -96060,8 +96060,8 @@ bmh
 axy
 aCF
 bjr
-bjr
 aUv
+bjr
 bjr
 ntf
 byz
@@ -96317,8 +96317,8 @@ aGS
 iNe
 bqn
 pTY
-pTY
 bZQ
+brN
 brN
 bxx
 byC
@@ -117447,7 +117447,7 @@ bEm
 bEm
 bDb
 bRU
-apb
+aop
 bEm
 bDb
 bRU
@@ -120017,7 +120017,7 @@ bEm
 bRU
 bDb
 bEm
-apb
+aop
 bRU
 bDb
 bEm
