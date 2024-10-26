@@ -24,7 +24,7 @@
 	melee_damage_upper = 15
 	obj_damage = 50
 	environment_smash = ENVIRONMENT_SMASH_WALLS
-	spider_opens_doors = 2
+	spider_opens_doors = 1
 	ranged = 1
 	rapid = 2
 	ranged_cooldown_time = 30

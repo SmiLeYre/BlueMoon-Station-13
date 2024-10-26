@@ -129,8 +129,8 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 	var/web_infects = 0
 	var/spider_creation_time = 0
 
-	var/datum/action/innate/terrorspider/web/web_action
-	var/datum/action/innate/terrorspider/wrap/wrap_action
+	var/datum/action/terrorspider/web/web_action
+	var/datum/action/terrorspider/wrap/wrap_action
 
 	// Breathing - require some oxygen, and no toxins
 	atmos_requirements = list("min_oxy" = 5, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)

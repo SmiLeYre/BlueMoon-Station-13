@@ -53,7 +53,7 @@
 		new /obj/item/organ/body_egg/terror_eggs(L)
 		visible_message("<span class='danger'>[src] buries its long fangs deep into the [inject_target] of [target]!</span>")
 	else
-		if(prob(20))
+		if(prob(10))
 			new /obj/item/organ/body_egg/terror_eggs(L)
 			visible_message("<span class='danger'>[src] pierces armour and buries its long fangs deep into the [inject_target] of [target]!</span>")
 	if(!ckey && !IsTSInfected(L))
@@ -74,7 +74,7 @@
 
 /obj/structure/spider/terrorweb/white/web_special_ability(mob/living/carbon/C)
 	if(istype(C))
-		if(!IsTSInfected(C) && ishuman(C))
+		if(!IsTSInfected(C) && ishuman(C) && prob(10))
 			var/inject_target = pick("chest","head")
 			if(C.can_inject(null, FALSE, inject_target, FALSE))
 				to_chat(C, "<span class='danger'>[src] slices into you!</span>")

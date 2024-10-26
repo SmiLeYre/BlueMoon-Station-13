@@ -1,132 +1,132 @@
 // ---------- ACTIONS FOR ALL SPIDERS
-/datum/action/innate/terrorspider
+/datum/action/terrorspider
 	background_icon_state = "bg_terror"
 
-/datum/action/innate/terrorspider/web
+/datum/action/terrorspider/web
 	name = "Web"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "stickyweb1"
 
-/datum/action/innate/terrorspider/web/Activate()
+/datum/action/terrorspider/web/Trigger()
 	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/user = owner
 	user.Web()
 
-/datum/action/innate/terrorspider/wrap
+/datum/action/terrorspider/wrap
 	name = "Wrap"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "cocoon_large1"
 
-/datum/action/innate/terrorspider/wrap/Activate()
+/datum/action/terrorspider/wrap/Trigger()
 	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/user = owner
 	user.FindWrapTarget()
 	user.DoWrap()
 
 // ---------- GREEN ACTIONS
 
-/datum/action/innate/terrorspider/greeneggs
+/datum/action/terrorspider/greeneggs
 	name = "Lay Green Eggs"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "eggs"
 
-/datum/action/innate/terrorspider/greeneggs/Activate()
+/datum/action/terrorspider/greeneggs/Trigger()
 	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer/user = owner
 	user.DoLayGreenEggs()
 
 // ---------- KNIGHT ACTIONS
-/datum/action/innate/terrorspider/knight/defaultm
+/datum/action/terrorspider/knight/defaultm
 	name = "Default"
 	icon_icon = 'icons/mob/terrorspider.dmi'
 	button_icon_state = "terror_princess1"
 
-/datum/action/innate/terrorspider/knight/defaultm/Activate()
+/datum/action/terrorspider/knight/defaultm/Trigger()
 	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight/user = owner
 	user.activate_mode(0)
 
-/datum/action/innate/terrorspider/knight/attackm
+/datum/action/terrorspider/knight/attackm
 	name = "Rage"
 	icon_icon = 'icons/mob/actions/actions.dmi'
 	button_icon_state = "attack"
 
-/datum/action/innate/terrorspider/knight/attackm/Activate()
+/datum/action/terrorspider/knight/attackm/Trigger()
 	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight/user = owner
 	user.activate_mode(1)
 
-/datum/action/innate/terrorspider/knight/defencem
+/datum/action/terrorspider/knight/defencem
 	name = "Keratosis"
 	icon_icon = 'icons/mob/actions/actions.dmi'
 	button_icon_state = "defence"
 
-/datum/action/innate/terrorspider/knight/defencem/Activate()
+/datum/action/terrorspider/knight/defencem/Trigger()
 	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight/user = owner
 	user.activate_mode(2)
 
 // ---------- BOSS ACTIONS
 
-/datum/action/innate/terrorspider/ventsmash
+/datum/action/terrorspider/ventsmash
 	name = "Smash Welded Vent"
 	icon_icon = 'icons/obj/atmospherics/pipes/vent_pump.dmi'
 	button_icon_state = "map_vent"
 
-/datum/action/innate/terrorspider/ventsmash/Activate()
+/datum/action/terrorspider/ventsmash/Trigger()
 	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/user = owner
 	user.DoVentSmash()
 
-/datum/action/innate/terrorspider/remoteview
+/datum/action/terrorspider/remoteview
 	name = "Remote View"
 	icon_icon = 'icons/obj/eyes.dmi'
 	button_icon_state = "heye"
 
-/datum/action/innate/terrorspider/remoteview/Activate()
+/datum/action/terrorspider/remoteview/Trigger()
 	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/user = owner
 	user.DoRemoteView()
 
 // ---------- QUEEN ACTIONS
 
-/datum/action/innate/terrorspider/queen/queennest
+/datum/action/terrorspider/queen/queennest
 	name = "Nest"
 	icon_icon = 'icons/mob/terrorspider.dmi'
 	button_icon_state = "terror_queen"
 
-/datum/action/innate/terrorspider/queen/queennest/Activate()
+/datum/action/terrorspider/queen/queennest/Trigger()
 	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/user = owner
 	user.NestPrompt()
 
-/datum/action/innate/terrorspider/queen/queensense
+/datum/action/terrorspider/queen/queensense
 	name = "Hive Sense"
 	icon_icon = 'icons/mob/actions/actions.dmi'
 	button_icon_state = "mindswap"
 
-/datum/action/innate/terrorspider/queen/queensense/Activate()
+/datum/action/terrorspider/queen/queensense/Trigger()
 	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/user = owner
 	user.DoHiveSense()
 
-/datum/action/innate/terrorspider/queen/queeneggs
+/datum/action/terrorspider/queen/queeneggs
 	name = "Lay Queen Eggs"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "eggs"
 
-/datum/action/innate/terrorspider/queen/queeneggs/Activate()
+/datum/action/terrorspider/queen/queeneggs/Trigger()
 	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/user = owner
 	user.LayQueenEggs()
 
 
 // ---------- EMPRESS
 
-/datum/action/innate/terrorspider/queen/empress/empresserase
+/datum/action/terrorspider/queen/empress/empresserase
 	name = "Empress Erase Brood"
 	icon_icon = 'icons/effects/blood.dmi'
 	button_icon_state = "mgibbl1"
 
-/datum/action/innate/terrorspider/queen/empress/empresserase/Activate()
+/datum/action/terrorspider/queen/empress/empresserase/Trigger()
 	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/empress/user = owner
 	user.EraseBrood()
 
-/datum/action/innate/terrorspider/queen/empress/empresslings
+/datum/action/terrorspider/queen/empress/empresslings
 	name = "Empresss Spiderlings"
 	icon_icon = 'icons/effects/effects.dmi'
 	button_icon_state = "spiderling"
 
-/datum/action/innate/terrorspider/queen/empress/empresslings/Activate()
+/datum/action/terrorspider/queen/empress/empresslings/Trigger()
 	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/empress/user = owner
 	user.EmpressLings()
 

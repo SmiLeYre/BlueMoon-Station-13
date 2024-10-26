@@ -33,7 +33,7 @@
 	special_abillity = list(/obj/effect/proc_holder/spell/self/terror_emp,
 							/obj/effect/proc_holder/spell/self/explosion/terror_burn)
 	spider_intro_text = "Будучи Разрушителем Ужаса, ваша цель - саботировать станцию. Выбивайте заваренную вентиляцию, ломайте канистры с опасными газами, уничтожайте АПЦ и любое оборудование, до которого доберётесь. Помните, вы - не боевой паук, хоть вы и можете справиться с небольшой угрозой, убийства это не ваша забота!"
-	var/datum/action/innate/terrorspider/ventsmash/ventsmash_action
+	var/datum/action/terrorspider/ventsmash/ventsmash_action
 
 /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/destroyer/New()
 	..()

@@ -73,6 +73,11 @@
 		new /obj/effect/temp_visual/heal(get_turf(spider), "#09ff00")
 		new /obj/effect/temp_visual/heal(get_turf(spider), "#09ff00")
 
+/obj/effect/proc_holder/spell/aoe_turf/terror_healing/can_cast(mob/user = usr, charge_check = TRUE, show_message = FALSE)
+	if(!isturf(user.loc))
+		return FALSE
+	return ..()
+
 
 //TIER 2 SPIDERS
 
@@ -111,6 +116,11 @@
 
 	return ..()
 
+/obj/effect/proc_holder/spell/aimed/fireball/venom_spit/can_cast(mob/user = usr, charge_check = TRUE, show_message = FALSE)
+	if(!isturf(user.loc))
+		return FALSE
+	return ..()
+
 //SMOKE SPIT
 /obj/effect/proc_holder/spell/aimed/fireball/smoke_spit
 	name = "Smoke spit"
@@ -141,6 +151,11 @@
 
 	return ..()
 
+
+/obj/effect/proc_holder/spell/aimed/fireball/smoke_spit/can_cast(mob/user = usr, charge_check = TRUE, show_message = FALSE)
+	if(!isturf(user.loc))
+		return FALSE
+	return ..()
 
 //DESTROYER//
 
@@ -179,7 +194,7 @@
 	ex_flame = 5
 
 
-/obj/effect/proc_holder/spell/aoe_turf/explosion/terror_burn/can_cast(mob/user = usr, charge_check = TRUE, show_message = FALSE)
+/obj/effect/proc_holder/spell/self/explosion/terror_burn/can_cast(mob/user = usr, charge_check = TRUE, show_message = FALSE)
 	if(!isturf(user.loc))
 		return FALSE
 	return ..()
@@ -242,6 +257,10 @@
 
 	school = "conjuration"
 
+/obj/effect/proc_holder/spell/targeted/smoke/terror_smoke/can_cast(mob/user = usr, charge_check = TRUE, show_message = FALSE)
+	if(!isturf(user.loc))
+		return FALSE
+	return ..()
 
 //PARALYSING SMOKE
 /obj/effect/proc_holder/spell/targeted/smoke/terror_parasmoke
@@ -263,6 +282,11 @@
 	smoke.set_up(reagents, 3, T, TRUE)
 	smoke.start()
 
+
+/obj/effect/proc_holder/spell/targeted/smoke/terror_parasmoke/can_cast(mob/user = usr, charge_check = TRUE, show_message = FALSE)
+	if(!isturf(user.loc))
+		return FALSE
+	return ..()
 
 //TERRIFYING SHRIEK
 /obj/effect/proc_holder/spell/aoe_turf/terror_shriek
@@ -306,6 +330,12 @@
 			playsound(target, 'sound/machines/warning-buzzer.ogg', 50, TRUE)
 			do_sparks(5, 1, target)
 			R.flash_act(affect_silicon = 1)
+
+
+/obj/effect/proc_holder/spell/aoe_turf/terror_shriek/can_cast(mob/user = usr, charge_check = TRUE, show_message = FALSE)
+	if(!isturf(user.loc))
+		return FALSE
+	return ..()
 
 //TIER 3
 
@@ -459,7 +489,7 @@
 				playsound(target, 'sound/machines/warning-buzzer.ogg', 50, 1)
 				do_sparks(5, 1, target)
 				R.flash_act(affect_silicon=1)
-				
+
 
 		for(var/obj/machinery/light/lamp in target_turf.contents)
 			INVOKE_ASYNC(lamp, TYPE_PROC_REF(/obj/machinery/light, break_light_tube))

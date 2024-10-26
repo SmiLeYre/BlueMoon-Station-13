@@ -15,8 +15,8 @@
 	icon_state = "terror_queen"
 	icon_living = "terror_queen"
 	icon_dead = "terror_queen_dead"
-	maxHealth = 340
-	health = 340
+	maxHealth = 300
+	health = 300
 	damage_coeff = list(BRUTE = 0.8, BURN = 1.1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0.2)
 	regeneration = 3
 	deathmessage = "Emits a  piercing screech that echoes through the hallways, chilling the hearts of those around, as the spider lifelessly falls to the ground."
@@ -46,8 +46,8 @@
 	special_abillity = list(/obj/effect/proc_holder/spell/aoe_turf/terror_shriek/queen)
 	can_wrap = FALSE
 	spider_intro_text = "Будучи Королевой Ужаса, ваша цель - управление выводком и откладывание яиц. Вы крайне сильны, и со временем будете откладывать всё больше яиц, однако, ваша смерть будет означать поражение, ведь все пауки погибнут."
-	var/spider_spawnfrequency = 1600 // 160 seconds. Default for player queens and NPC queens on station. Awaymission queens have this changed in New()
-	var/spider_spawnfrequency_stable = 3600 // 360 seconds. Spawnfrequency is set to this on awaymission spiders once nest setup is complete.
+	var/spider_spawnfrequency = 1500 // 150 seconds. Default for player queens and NPC queens on station. Awaymission queens have this changed in New()
+	var/spider_spawnfrequency_stable = 3200 // 320 seconds. Spawnfrequency is set to this on awaymission spiders once nest setup is complete.
 	var/spider_lastspawn = 0
 	var/nestfrequency = 300 // 30 seconds
 	var/lastnestsetup = 0
@@ -57,11 +57,11 @@
 	var/canlay = 5 // main counter for egg-laying ability! # = num uses, incremented at intervals
 	var/eggslaid = 0
 	var/list/spider_types_standard = list(/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/lurker, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/healer, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/widow)
-	var/datum/action/innate/terrorspider/queen/queennest/queennest_action
-	var/datum/action/innate/terrorspider/queen/queensense/queensense_action
-	var/datum/action/innate/terrorspider/queen/queeneggs/queeneggs_action
-	var/datum/action/innate/terrorspider/ventsmash/ventsmash_action
-	var/datum/action/innate/terrorspider/remoteview/remoteview_action
+	var/datum/action/terrorspider/queen/queennest/queennest_action
+	var/datum/action/terrorspider/queen/queensense/queensense_action
+	var/datum/action/terrorspider/queen/queeneggs/queeneggs_action
+	var/datum/action/terrorspider/ventsmash/ventsmash_action
+	var/datum/action/terrorspider/remoteview/remoteview_action
 
 /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/New()
 	..()

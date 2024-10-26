@@ -16,8 +16,8 @@
 	icon_state = "terror_red"
 	icon_living = "terror_red"
 	icon_dead = "terror_red_dead"
-	maxHealth = 220
-	health = 220
+	maxHealth = 200
+	health = 200
 	damage_coeff = list(BRUTE = 0.7, BURN = 1.1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0.2)
 	melee_damage_lower = 15
 	melee_damage_upper = 15
@@ -28,7 +28,7 @@
 	armour_penetration = 25
 	move_to_delay = 10 // at 20ticks/sec, this is 2 tile/sec movespeed
 	speed = 0.8
-	spider_opens_doors = 2
+	spider_opens_doors = 1
 	move_resist = MOVE_FORCE_STRONG // no more pushing a several hundred if not thousand pound spider
 	web_type = /obj/structure/spider/terrorweb/knight
 	spider_intro_text = "Будучи Рыцарем Ужаса, ваша задача - создавать места для прорыва, или же оборонять гнездо. Несмотря на медлительность, вы живучи и опасны вблизи, используйте свою силу и выносливость, чтобы другие пауки могли выполнять свои функции! Ваши способности позволяют вам переключаться между режимом атаки и обороны, первый - увеличивает скорость, а также наносимый и получаемый урон, второй - уменьшает скорость, получаемый и наносимый урон."
@@ -41,9 +41,9 @@
 	var/current_mode = 0
 	var/mode_cooldown = 300
 	var/mode_duration = 100
-	var/datum/action/innate/terrorspider/knight/defaultm/defaultmaction
-	var/datum/action/innate/terrorspider/knight/attackm/attackmaction
-	var/datum/action/innate/terrorspider/knight/defencem/defencemaction
+	var/datum/action/terrorspider/knight/defaultm/defaultmaction
+	var/datum/action/terrorspider/knight/attackm/attackmaction
+	var/datum/action/terrorspider/knight/defencem/defencemaction
 
 /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/knight/New()
 	..()

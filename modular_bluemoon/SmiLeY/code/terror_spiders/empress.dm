@@ -11,8 +11,8 @@
 	name = "Empress of Terror"
 	desc = "The unholy offspring of spiders, nightmares, and lovecraft fiction."
 	ai_target_method = TS_DAMAGE_SIMPLE
-	maxHealth = 800
-	health = 800
+	maxHealth = 600
+	health = 600
 	melee_damage_lower = 30
 	melee_damage_upper = 60
 	ventcrawler = 1
@@ -28,8 +28,8 @@
 	icon_state = "terror_empress"
 	icon_living = "terror_empress"
 	icon_dead = "terror_empress_dead"
-	var/datum/action/innate/terrorspider/queen/empress/empresslings/empresslings_action
-	var/datum/action/innate/terrorspider/queen/empress/empresserase/empresserase_action
+	var/datum/action/terrorspider/queen/empress/empresslings/empresslings_action
+	var/datum/action/terrorspider/queen/empress/empresserase/empresserase_action
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 
 /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/empress/New()
