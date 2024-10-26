@@ -796,17 +796,12 @@ const TechNode = (props, context) => {
       </Box>
       {!!compact && (
         <Box className="Techweb__NodeUnlockedDesigns" mt={1}>
-          {design_ids.map((k, i) => (
-            <Box
+          {design_ids.map((k) => (
+            <Button
               key={id}
               className={`${design_cache[k].class} Techweb__DesignIcon`}
-              // Tooltips are disabled due to performance issues
-              // The interace stutters every time it updates
-              // Those can be uncommented and the Box can be swapped for a
-              //  Button when the issues are resolved. Make sure to test
-              //  that they don't lag and *actually work*.
-              // tooltip={design_cache[k].name}
-              // tooltipPosition={i % 15 < 7 ? "right" : "left"}
+              tooltip={design_cache[k].name}
+              tooltipPosition="bottom"
             />
           ))}
         </Box>
