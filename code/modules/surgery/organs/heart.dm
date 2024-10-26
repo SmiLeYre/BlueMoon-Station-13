@@ -303,10 +303,12 @@
 		owner.Dizzy(10)
 		owner.losebreath += 10
 		COOLDOWN_START(src, severe_cooldown, 20 SECONDS)
+	/* убрано в связи с жалобами на невозможность адекватного противодействия в бою
 	if(prob(10)) //Chance of permanent effects
 		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
 		if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
 			to_chat(owner, span_userdanger("Fatal failure detected in \the [src] - Emergency mod activated for next 4 minutes - Seek for replace immediately."))
+	*/
 // BLUEMOON ADD END
 
 /obj/item/organ/heart/freedom

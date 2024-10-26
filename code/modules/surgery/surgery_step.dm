@@ -93,6 +93,7 @@
 				if(!HAS_TRAIT(user.mind, QUALIFIED_ROBOTIC_MAINTER) && !user.mind.antag_datums) // гост роли и обученный персонал могут оперировать таких синтов
 					to_chat(user, span_warning("Этот протез выглядит слишком сложно... Здесь необходим специалист!"))
 					prob_chance = 0
+		/* вырезано из-за жалоб на невозможность самооперирования (снижение динамики игры)
 		if(target == user)
 			if(HAS_TRAIT(target, CAN_BE_OPERATED_WITHOUT_PAIN)) // Роботам и некоторым другим расам даётся проще. Они не чувствуют боли
 				display_results(target, self_message = "<span class='notice'>Вы пытаетесь [HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM) ? "отремонтироваться" : "вылечитья"] самостоятельно. Это не так сложно, как было бы [HAS_TRAIT(target, TRAIT_ROBOTIC_ORGANISM) ? "органикам" : "другим расам"], но неудобно.</span>")
@@ -102,6 +103,7 @@
 				prob_chance = 0
 			else
 				prob_chance = min(prob_chance, 20)
+		*/
 		if(prob_chance <= 0 && !try_to_fail)
 			to_chat(user, span_warning("Условия операции слишком ужасны, ничего не выйдет!"))
 		// BLUEMOON ADD END

@@ -146,7 +146,10 @@
 			damage = affecting.brute_dam
 			affecting.update_threshhold_state(burn = FALSE)
 			if(affecting.threshhold_brute_passed)
-				heal_amount = min(heal_amount, damage - affecting.threshhold_passed_mindamage)
+				// BLUEMOON ADD - только сложные в обслуживании синтетики зависят от минимальных порогов
+				if(HAS_TRAIT(H, TRAIT_BLUEMOON_COMPLEX_MAINTENANCE)) // только роботехники, РД и борги могут ремонтировать таких роботов
+				// BLUEMOON ADD END
+					heal_amount = min(heal_amount, damage - affecting.threshhold_passed_mindamage)
 
 				if(!heal_amount)
 //					to_chat(user, "<span class='notice'>[user == H ? "Your" : "[H]'s"] [affecting.name] appears to have suffered severe internal damage and requires surgery to repair further.</span>") - BLUEMOON REMOVAL

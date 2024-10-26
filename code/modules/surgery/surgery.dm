@@ -147,6 +147,7 @@
 	if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER))
 		propability = 0.8
 
+	/* Вырезано из-за жалоб на переусложнение операции
 	// Шансы на операции в зависимости от состояния пациента
 	var/check_for_painkillers = FALSE
 	var/check_for_pain = FALSE
@@ -267,8 +268,8 @@
 							patient.emote("cry")
 				else if(prob(40))
 					patient.emote(pick("realagony", "scream", "cry"))
-
 	propability += pain_propability_debuff + surgeon_requirments_debuff
+	*/
 	// BLUEMOON ADDITION END
 	return propability + success_multiplier
 

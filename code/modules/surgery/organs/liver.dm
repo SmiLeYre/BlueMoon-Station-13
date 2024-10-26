@@ -108,10 +108,12 @@
 	if(!COOLDOWN_FINISHED(src, severe_cooldown)) //So we cant just spam emp to kill people.
 		owner.adjustToxLoss(10) // Урон только для людей
 		COOLDOWN_START(src, severe_cooldown, 10 SECONDS)
+	/* убрано в связи с жалобами на невозможность адекватного противодействия в бою
 	if(prob(10)) //Chance of permanent effects
 		organ_flags |= ORGAN_SYNTHETIC_EMP //Starts organ faliure - gonna need replacing soon.
 		if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
 			to_chat(owner, span_userdanger("Fatal failure detected in [src] - Seek for replace immediately."))
+	*/
 // BLUEMOON ADD END
 
 /obj/item/organ/liver/cybernetic

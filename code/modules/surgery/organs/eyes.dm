@@ -439,6 +439,7 @@
 	to_chat(owner, "<span class='warning'>Alert: Perception visuals overload!</span>")
 	owner.flash_act(intensity = 0, visual = TRUE)
 
+	/* убрано в связи с жалобами на невозможность адекватного противодействия в бою
 	// BLUEMOON ADD START - шанс на перманентный выход из строя
 	owner.blur_eyes(rand(5,10))
 	if(prob(10)) //Chance of permanent effects
@@ -446,6 +447,7 @@
 		if(HAS_TRAIT(owner, TRAIT_ROBOTIC_ORGANISM))
 			to_chat(owner, span_userdanger("Fatal failure detected in \the [src] - Seek for replace immediately."))
 	// BLUEMOON ADD END
+	*/
 
 /obj/item/organ/eyes/night_vision/arachnid
 	name = "arachnid eyes"
