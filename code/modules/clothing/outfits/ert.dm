@@ -505,7 +505,7 @@
 	cybernetic_implants = list(
 		/obj/item/organ/cyberimp/eyes/hud/security,
 		/obj/item/organ/cyberimp/chest/nutrimentextreme,
-		/obj/item/organ/cyberimp/chest/chem_implant
+		/obj/item/organ/cyberimp/chest/chem_implant,
 		/obj/item/organ/cyberimp/arm/janitor,
 		)
 
