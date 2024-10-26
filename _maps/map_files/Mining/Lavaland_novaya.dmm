@@ -361,6 +361,15 @@
 /obj/effect/turf_decal/vg_decals/atmos/air,
 /turf/open/floor/engine/air,
 /area/mine/xenoarch_area_a)
+"asL" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/disposalpipe/segment{
+	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
+	dir = 4;
+	name = "Acid-Proof disposal pipe"
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
 "asR" = (
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/lavaland/unpowered)
@@ -474,6 +483,14 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
+"ayL" = (
+/obj/structure/disposalpipe/segment{
+	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
+	dir = 4;
+	name = "Acid-Proof disposal pipe"
+	},
+/turf/open/floor/iron/elevatorshaft,
+/area/ruin/lavaland/unpowered)
 "aAL" = (
 /obj/item/kirbyplants/random,
 /obj/structure/extinguisher_cabinet{
@@ -669,12 +686,6 @@
 	},
 /turf/open/indestructible/boss,
 /area/lavaland/necropolis)
-"aIc" = (
-/obj/structure/disposalpipe/segment{
-	dir = 1
-	},
-/turf/open/floor/iron/elevatorshaft,
-/area/ruin/lavaland/unpowered)
 "aIv" = (
 /obj/structure/frame/machine{
 	anchored = 1;
@@ -915,15 +926,6 @@
 /obj/machinery/vending/hydronutrients,
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
-"aVa" = (
-/obj/structure/disposaloutlet{
-	dir = 1
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
-/turf/open/floor/iron/elevatorshaft,
-/area/ruin/lavaland/unpowered)
 "aVz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -1545,15 +1547,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/xenoarch)
-"bvi" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/disposalpipe/segment{
-	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
-	dir = 4;
-	name = "Acid-Proof disposal pipe"
-	},
-/turf/open/lava/smooth/lava_land_surface,
-/area/ruin/lavaland/unpowered)
 "bvz" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -2221,6 +2214,13 @@
 "cch" = (
 /turf/open/floor/engine/n2,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
+"ccA" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
 "ccF" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -8209,20 +8209,12 @@
 /turf/open/floor/iron/dark,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
 "ifn" = (
-/obj/machinery/power/apc/syndicate{
-	dir = 1;
-	name = "Engineering APC";
-	pixel_y = 23;
-	req_access_txt = "150"
+/obj/structure/lattice/catwalk,
+/obj/structure/disposalpipe/segment{
+	dir = 5
 	},
-/obj/structure/cable/yellow{
-	icon_state = "0-2"
-	},
-/obj/effect/turf_decal/tile/dark{
-	dir = 1
-	},
-/turf/open/floor/iron,
-/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
+/turf/open/lava/smooth/lava_land_surface,
+/area/ruin/lavaland/unpowered)
 "igE" = (
 /obj/structure/stone_tile/block/burnt{
 	dir = 1;
@@ -12326,13 +12318,6 @@
 /obj/structure/fence,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
-"lSw" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/disposalpipe/segment{
-	dir = 10
-	},
-/turf/open/lava/smooth/lava_land_surface,
-/area/ruin/lavaland/unpowered)
 "lSB" = (
 /obj/structure/dresser,
 /turf/open/floor/wood,
@@ -13704,14 +13689,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/storage)
-"naO" = (
-/obj/structure/disposalpipe/segment{
-	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
-	dir = 4;
-	name = "Acid-Proof disposal pipe"
-	},
-/turf/open/floor/iron/elevatorshaft,
-/area/ruin/lavaland/unpowered)
 "naP" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 4
@@ -15243,6 +15220,15 @@
 /obj/effect/turf_decal/delivery/white,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
+"oux" = (
+/obj/structure/disposaloutlet{
+	dir = 1
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/turf/open/floor/iron/elevatorshaft,
+/area/ruin/lavaland/unpowered)
 "ouF" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors/unexplored/danger)
@@ -17028,17 +17014,14 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/structure/cable/yellow{
-	icon_state = "1-8"
-	},
-/obj/structure/cable/yellow{
-	icon_state = "1-4"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 1
+	},
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
 	},
 /turf/open/floor/iron/large,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -19724,9 +19707,6 @@
 /turf/open/lava/smooth/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "sTa" = (
-/obj/machinery/airalarm/directional/south{
-	req_access = list("syndicate")
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
@@ -24189,6 +24169,12 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark,
 /area/mine/maintenance)
+"xmk" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/turf/open/floor/iron/elevatorshaft,
+/area/ruin/lavaland/unpowered)
 "xmp" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -24434,13 +24420,6 @@
 /obj/effect/clockwork/overlay/floor,
 /turf/open/floor/clockwork/reebe,
 /area/lavaland/necropolis)
-"xxj" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/disposalpipe/segment{
-	dir = 5
-	},
-/turf/open/lava/smooth/lava_land_surface,
-/area/ruin/lavaland/unpowered)
 "xxA" = (
 /obj/structure/stone_tile/block/cracked{
 	dir = 4
@@ -102447,7 +102426,7 @@ pZS
 pZS
 nGX
 hNp
-ifn
+jLD
 qlh
 sTa
 hyK
@@ -104223,7 +104202,7 @@ tfw
 tfw
 tfw
 tfw
-bvi
+asL
 wLK
 fhH
 oLE
@@ -104480,7 +104459,7 @@ tfw
 tfw
 tfw
 tfw
-bvi
+asL
 wLK
 wLK
 wLK
@@ -104737,7 +104716,7 @@ tfw
 tfw
 tfw
 tfw
-bvi
+asL
 wLK
 jjV
 jGu
@@ -104994,7 +104973,7 @@ tfw
 tfw
 tfw
 tfw
-bvi
+asL
 wLK
 gwV
 sFD
@@ -105251,7 +105230,7 @@ tfw
 tfw
 tfw
 tfw
-bvi
+asL
 wLK
 eTd
 nXy
@@ -105508,7 +105487,7 @@ tfw
 tfw
 tfw
 tfw
-naO
+ayL
 wRx
 wLK
 wLK
@@ -105765,9 +105744,9 @@ tfw
 tfw
 tfw
 tfw
-lSw
-aIc
-xxj
+ccA
+xmk
+ifn
 wLK
 eLy
 pyH
@@ -106024,7 +106003,7 @@ tfw
 tfw
 tfw
 tfw
-bvi
+asL
 wLK
 gCP
 oBu
@@ -106281,7 +106260,7 @@ tfw
 tfw
 tfw
 tfw
-bvi
+asL
 wLK
 xEn
 lOc
@@ -106538,7 +106517,7 @@ tfw
 tfw
 tfw
 tfw
-aVa
+oux
 wLK
 wLK
 wLK
