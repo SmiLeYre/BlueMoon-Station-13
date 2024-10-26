@@ -361,15 +361,6 @@
 /obj/effect/turf_decal/vg_decals/atmos/air,
 /turf/open/floor/engine/air,
 /area/mine/xenoarch_area_a)
-"asL" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/disposalpipe/segment{
-	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
-	dir = 4;
-	name = "Acid-Proof disposal pipe"
-	},
-/turf/open/lava/smooth/lava_land_surface,
-/area/ruin/lavaland/unpowered)
 "asR" = (
 /turf/closed/mineral/random/high_chance/volcanic,
 /area/ruin/lavaland/unpowered)
@@ -483,14 +474,6 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
-"ayL" = (
-/obj/structure/disposalpipe/segment{
-	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
-	dir = 4;
-	name = "Acid-Proof disposal pipe"
-	},
-/turf/open/floor/iron/elevatorshaft,
-/area/ruin/lavaland/unpowered)
 "aAL" = (
 /obj/item/kirbyplants/random,
 /obj/structure/extinguisher_cabinet{
@@ -2214,13 +2197,6 @@
 "cch" = (
 /turf/open/floor/engine/n2,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
-"ccA" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/disposalpipe/segment{
-	dir = 10
-	},
-/turf/open/lava/smooth/lava_land_surface,
-/area/ruin/lavaland/unpowered)
 "ccF" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -5272,6 +5248,15 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/lavaland/unpowered/deepspaceone/cargo)
+"fdW" = (
+/obj/structure/disposaloutlet{
+	dir = 1
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/turf/open/floor/iron/elevatorshaft,
+/area/ruin/lavaland/unpowered)
 "feF" = (
 /obj/structure/closet/crate,
 /obj/item/storage/box/stockparts/deluxe,
@@ -6931,6 +6916,13 @@
 /obj/machinery/light/small,
 /turf/open/floor/plating,
 /area/mine/xenoarch_area_c)
+"gLK" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/disposalpipe/segment{
+	dir = 5
+	},
+/turf/open/floor/plating,
+/area/ruin/lavaland/unpowered)
 "gMg" = (
 /obj/structure/stone_tile/cracked,
 /obj/structure/stone_tile/block{
@@ -7347,12 +7339,13 @@
 /turf/open/floor/plating,
 /area/mine/storage)
 "hns" = (
-/obj/effect/turf_decal/tile/dark,
 /obj/structure/disposalpipe/segment{
-	dir = 4
+	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
+	dir = 4;
+	name = "Acid-Proof disposal pipe"
 	},
-/turf/open/floor/iron,
-/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
+/turf/open/floor/iron/elevatorshaft,
+/area/ruin/lavaland/unpowered)
 "hog" = (
 /obj/structure/stone_tile/cracked,
 /obj/structure/stone_tile{
@@ -8190,6 +8183,13 @@
 	},
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
+"ice" = (
+/obj/effect/turf_decal/tile/dark,
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/iron,
+/area/ruin/lavaland/unpowered/deepspaceone/dormitories)
 "ieK" = (
 /obj/machinery/button/door{
 	id = "syndie_lavaland_vault";
@@ -8211,9 +8211,11 @@
 "ifn" = (
 /obj/structure/lattice/catwalk,
 /obj/structure/disposalpipe/segment{
-	dir = 5
+	desc = "An underfloor disposal pipe. This one has been applied with an acid-proof coating.";
+	dir = 4;
+	name = "Acid-Proof disposal pipe"
 	},
-/turf/open/lava/smooth/lava_land_surface,
+/turf/open/floor/plating,
 /area/ruin/lavaland/unpowered)
 "igE" = (
 /obj/structure/stone_tile/block/burnt{
@@ -8286,6 +8288,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/mine/production)
+"iiQ" = (
+/obj/structure/lattice/catwalk,
+/obj/structure/disposalpipe/segment{
+	dir = 10
+	},
+/turf/open/floor/plating,
+/area/ruin/lavaland/unpowered)
 "ijr" = (
 /obj/structure/stone_tile/surrounding_tile/cracked{
 	dir = 8
@@ -12314,6 +12323,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/mine/eva)
+"lRu" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/turf/open/floor/iron/elevatorshaft,
+/area/ruin/lavaland/unpowered)
 "lRF" = (
 /obj/structure/fence,
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
@@ -15220,15 +15235,6 @@
 /obj/effect/turf_decal/delivery/white,
 /turf/open/floor/plating,
 /area/ruin/lavaland/unpowered/deepspaceone/engineering)
-"oux" = (
-/obj/structure/disposaloutlet{
-	dir = 1
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
-/turf/open/floor/iron/elevatorshaft,
-/area/ruin/lavaland/unpowered)
 "ouF" = (
 /turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors/unexplored/danger)
@@ -24169,12 +24175,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel/dark,
 /area/mine/maintenance)
-"xmk" = (
-/obj/structure/disposalpipe/segment{
-	dir = 1
-	},
-/turf/open/floor/iron/elevatorshaft,
-/area/ruin/lavaland/unpowered)
 "xmp" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
@@ -99351,7 +99351,7 @@ nXf
 nXf
 dqG
 qHq
-hns
+ice
 nXf
 lHk
 tfw
@@ -104202,7 +104202,7 @@ tfw
 tfw
 tfw
 tfw
-asL
+ifn
 wLK
 fhH
 oLE
@@ -104459,7 +104459,7 @@ tfw
 tfw
 tfw
 tfw
-asL
+ifn
 wLK
 wLK
 wLK
@@ -104716,7 +104716,7 @@ tfw
 tfw
 tfw
 tfw
-asL
+ifn
 wLK
 jjV
 jGu
@@ -104973,7 +104973,7 @@ tfw
 tfw
 tfw
 tfw
-asL
+ifn
 wLK
 gwV
 sFD
@@ -105230,7 +105230,7 @@ tfw
 tfw
 tfw
 tfw
-asL
+ifn
 wLK
 eTd
 nXy
@@ -105487,7 +105487,7 @@ tfw
 tfw
 tfw
 tfw
-ayL
+hns
 wRx
 wLK
 wLK
@@ -105744,9 +105744,9 @@ tfw
 tfw
 tfw
 tfw
-ccA
-xmk
-ifn
+iiQ
+lRu
+gLK
 wLK
 eLy
 pyH
@@ -106003,7 +106003,7 @@ tfw
 tfw
 tfw
 tfw
-asL
+ifn
 wLK
 gCP
 oBu
@@ -106260,7 +106260,7 @@ tfw
 tfw
 tfw
 tfw
-asL
+ifn
 wLK
 xEn
 lOc
@@ -106517,7 +106517,7 @@ tfw
 tfw
 tfw
 tfw
-oux
+fdW
 wLK
 wLK
 wLK
