@@ -295,7 +295,8 @@
 			S.burnmod *= 0.5
 			S.coldmod *= 0.5
 		if(20)
-			to_chat(user, span_notice("Well..."))
+			//Free wizard!
+			user.mind.make_Wizard()
 
 
 /datum/outfit/butler

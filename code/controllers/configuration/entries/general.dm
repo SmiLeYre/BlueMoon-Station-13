@@ -160,7 +160,7 @@
 /datum/config_entry/flag/roundstart_vr 		//Will virtual reality missions be loaded?
 
 /datum/config_entry/number/gateway_delay	//How long the gateway takes before it activates. Default is half an hour. Only matters if roundstart_away is enabled.
-	default = 18000
+	default = 6000
 	min_val = 0
 
 /datum/config_entry/flag/ghost_interaction

@@ -103,7 +103,6 @@
 			to_chat(user, "<span class='userdanger'>A horrible force yanks at your arm!</span>")
 			user.emote("realagony")
 			user.apply_damage(30, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-			user.emote("realagony")
 
 /obj/item/cult_bastard
 	name = "Bloody Bastard Sword"

@@ -19,8 +19,8 @@
 	if(I.force)
 		if(is_servant_of_ratvar(user) && user.a_intent != INTENT_HARM)
 			return ..()
-		if(istype(I,/obj/item/nullrod))
-			user.visible_message("<span class='warning'>[user] scatters [src] with [I]!</span>", "<span class='danger'>You scatter [src] with [I]!</span>")
+		if(istype(I, /obj/item/nullrod) || istype(I, /obj/item/clockwork/slab))
+			user.visible_message("<span class='warning'>[user] убирает [src] при помощи [I]!</span>", "<span class='danger'>Ты убираешь [src] при помощи [I]!</span>")
 			qdel(src)
 		return TRUE
 	return ..()

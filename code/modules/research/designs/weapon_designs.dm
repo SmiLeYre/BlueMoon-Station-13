@@ -418,15 +418,15 @@
 	id = "ioncarbine"
 	build_type = PROTOLATHE
 	materials = list(/datum/material/silver = 6000, /datum/material/iron = 8000, /datum/material/uranium = 2000)
-	build_path = /obj/item/storage/lockbox/weapon/xray
+	build_path = /obj/item/storage/lockbox/weapon/ioncarbine
 	category = list("Weapons")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
 	min_security_level = SEC_LEVEL_RED
 
-/obj/item/storage/lockbox/weapon/xray
+/obj/item/storage/lockbox/weapon/ioncarbine
 	name = "Lockbox with Ion Carbine"
 
-/obj/item/storage/lockbox/weapon/xray/PopulateContents()
+/obj/item/storage/lockbox/weapon/ioncarbine/PopulateContents()
 	new /obj/item/gun/energy/ionrifle/carbine(src)
 
 /datum/design/largecrossbow
