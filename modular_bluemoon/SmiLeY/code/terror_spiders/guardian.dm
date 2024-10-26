@@ -18,10 +18,10 @@
 	gender = MALE
 	maxHealth = 250
 	health = 250
-	damage_coeff = list(BRUTE = 0.7, BURN = 1.1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0.2)
+	damage_coeff = list(BRUTE = 0.7, BURN = 1.1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 1)
 	melee_damage_lower = 20
 	melee_damage_upper = 25
-	obj_damage = 70
+	obj_damage = 42
 	attack_sound = 'sound/creatures/terrorspiders/bite2.ogg'
 	death_sound = 'sound/creatures/terrorspiders/death6.ogg'
 	armour_penetration = 10

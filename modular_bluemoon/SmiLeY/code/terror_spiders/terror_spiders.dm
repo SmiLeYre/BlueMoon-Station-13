@@ -44,11 +44,12 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 	var/regeneration = 1 //pure regen on life
 	var/degenerate = FALSE // if TRUE, they slowly degen until they all die off.
 	//also regenerates by using /datum/status_effect/terror/food_regen when wraps a carbon, wich grants full health witin ~25 seconds
-	damage_coeff = list(BRUTE = 0.85, BURN = 1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0.8)
+	damage_coeff = list(BRUTE = 0.85, BURN = 1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 1)
 
 	//ATTACK
 	melee_damage_lower = 15
 	melee_damage_upper = 20
+	obj_damage = 25
 
 	//MOVEMENT
 	movement_type = GROUND
@@ -193,7 +194,8 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 			to_chat(src, "Closing fire doors does not help.")
 	else if(istype(target, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/A = target
-		try_open_airlock(A)
+		if (!try_open_airlock(A))
+			target.attack_animal(src)
 	else if(isliving(target) && (!client || a_intent == INTENT_HARM))
 		var/mob/living/G = target
 		if(issilicon(G))
@@ -367,7 +369,7 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 
 /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/try_open_airlock(obj/machinery/door/airlock/D)
 	if(D.operating)
-		return
+		return FALSE
 	if(D.welded)
 		to_chat(src, "<span class='warning'>The door is welded.</span>")
 	else if(D.locked)
@@ -390,7 +392,7 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 		else
 			D.close(TRUE)
 		return TRUE
-
+	return FALSE
 
 /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/get_spacemove_backup()
 	. = ..()

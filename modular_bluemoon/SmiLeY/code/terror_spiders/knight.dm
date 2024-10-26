@@ -18,10 +18,10 @@
 	icon_dead = "terror_red_dead"
 	maxHealth = 200
 	health = 200
-	damage_coeff = list(BRUTE = 0.7, BURN = 1.1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0.2)
+	damage_coeff = list(BRUTE = 0.7, BURN = 1.1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 1)
 	melee_damage_lower = 15
 	melee_damage_upper = 15
-	obj_damage = 60
+	obj_damage = 36
 	environment_smash = ENVIRONMENT_SMASH_WALLS
 	attack_sound = 'sound/creatures/terrorspiders/bite2.ogg'
 	death_sound = 'sound/creatures/terrorspiders/death1.ogg'

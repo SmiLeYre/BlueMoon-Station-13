@@ -128,6 +128,6 @@
 	desc = "This web is partly composed of strands of green slime."
 
 /obj/structure/spider/terrorweb/green/web_special_ability(mob/living/carbon/C)
-	if(istype(C) && prob(20))
+	if(istype(C) && prob(40))
 		if(C.adjust_blurriness() < 120 SECONDS)
 			C.adjust_blurriness(30 SECONDS, 0, 60 SECONDS)

@@ -17,7 +17,7 @@
 	icon_dead = "terror_princess1_dead"
 	melee_damage_lower = 15
 	melee_damage_upper = 20
-	obj_damage = 60
+	obj_damage = 36
 	maxHealth = 200
 	health = 200
 	speed = -0.1

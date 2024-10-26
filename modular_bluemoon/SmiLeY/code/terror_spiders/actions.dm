@@ -170,7 +170,7 @@
 	if(prob(50))
 		icon_state = "stickyweb2"
 
-/obj/structure/spider/terrorweb/CanPass(atom/movable/mover, turf/target)
+/obj/structure/spider/terrorweb/Crossed(atom/movable/mover)
 	if(istype(mover, /mob/living/simple_animal/hostile/retaliate/poison/terror_spider))
 		return 1
 	if(istype(mover, /obj/item/projectile/terrorspider))

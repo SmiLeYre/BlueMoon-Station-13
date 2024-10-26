@@ -74,6 +74,6 @@
 	desc = "This web is partly transparent, making it harder to see, and easier to get caught by."
 
 /obj/structure/spider/terrorweb/gray/web_special_ability(mob/living/carbon/C) //super deadly web
-	if(istype(C) && prob(50))
+	if(istype(C) && prob(80))
 		C.AdjustSilence(14 SECONDS)
 		C.Slowed(10 SECONDS)
