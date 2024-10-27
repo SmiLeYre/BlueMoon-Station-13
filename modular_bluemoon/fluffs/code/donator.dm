@@ -562,6 +562,13 @@
 	ckeywhitelist = list("vulpshiro", "dolbajob", "ordinarylife", "leony24", "stgs", "lonofera", "z67", "oni3288", "allazarius", "devildeadspace", "enigma418")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
+/datum/gear/donator/bm/stunadler
+	name = "Adler stunsword Kit"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/modkit/stunadler_kit
+	ckeywhitelist = list("akinight")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
 /datum/gear/donator/bm/harness
 	name = "Harness Armor Modification Kit"
 	slot = ITEM_SLOT_BACKPACK

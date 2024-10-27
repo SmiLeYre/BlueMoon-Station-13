@@ -386,6 +386,45 @@
 
 /////////////////////////////////////////////////////////////////////////////////////
 
+/obj/item/modkit/stunadler_kit
+	name = "Adler stunsword Kit"
+	desc = "A modkit for making an stunbaton into a Adler stunsword."
+	product = /obj/item/melee/baton/stunadler
+	fromitem = list(/obj/item/melee/baton, /obj/item/melee/baton/loaded)
+
+/obj/item/melee/baton/stunadler
+	name = "Adler Stunsword"
+	desc = "A combat stun sword manufactured by the military industrial Complex Adler. It was created for the rapid neutralization of civilians and the use of peacekeepers by troops for destructive purposes."
+	item_state = "stunadler"
+	icon_state = "stunadler"
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+
+/obj/item/melee/baton/stunadler/switch_status(new_status = FALSE, silent = FALSE)
+	if(turned_on != new_status)
+		turned_on = new_status
+		if(!silent)
+			playsound(loc, "sparks", 75, 1, -1)
+		if(turned_on)
+			START_PROCESSING(SSobj, src)
+		else
+			STOP_PROCESSING(SSobj, src)
+	update_icon()
+
+/obj/item/melee/baton/stunadler/update_icon_state()
+	if(turned_on)
+		icon_state = "stunadler_active"
+		item_state = "stunadler_active"
+	else if(!cell)
+		icon_state = "stunadler_nocell"
+		item_state = "stunadler"
+	else
+		icon_state = "stunadler"
+		item_state = "stunadler"
+
+/////////////////////////////////////////////////////////////////////////////////////
+
 /obj/item/modkit/tonfa_kit
 	name = "Ton-Fa Kit"
 	desc = "A modkit for making an stunbaton into a ton-Fa."
