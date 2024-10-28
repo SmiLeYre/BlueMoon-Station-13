@@ -212,5 +212,6 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 		"title" = "Снятие блокировки",
 		"player" = key_name(M),
 		"admin" = key_name_admin(usr),
+		"additional_info" = list("ban_job" = msg),
 		"round" = GLOB.round_id
 	))
