@@ -132,6 +132,18 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 			to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
 			to_chat(M, "<span class='danger'>This jobban will be lifted in [mins] minutes.</span>")
 
+			GLOB.bot_event_sending_que += list(list(
+				"type" = "ban_a",
+				"title" = "Блокировка",
+				"player" = key_name(M),
+				"admin" = key_name_admin(usr),
+				"reason" = reason,
+				"banduration" = mins,
+				"bantimestamp" = SQLtime(),
+				"additional_info" = list("ban_job" = msg),
+				"round" = GLOB.round_id
+			))
+
 		if("Permanent")
 			reason = input(usr,"Please State Reason For Banning [M.key].","Reason") as message|null
 			if (!reason)
@@ -154,10 +166,22 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 				else
 					msg += ", [job]"
 			create_message("note", M.key, null, "Banned  from [msg] - [reason]", null, null, 0, 0, null, 0, severity)
-			message_admins("<span class='adminnotice'>[key_name_admin(usr)] banned [key_name_admin(M)] from [msg].</span>")
+			message_admins("<span class='adminnotice'>[key_name_admin(usr)] banned [key_name(M)] from [msg].</span>")
 			to_chat(M, "<span class='boldannounce'><BIG>You have been [((msg == "ooc") || (msg == "appearance") || (msg == "pacifist")) ? "banned" : "jobbanned"] by [usr.client.key] from: [msg == "pacifist" ? "using violence" : msg].</BIG></span>")
 			to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
 			to_chat(M, "<span class='danger'>This jobban can be lifted only upon request.</span>")
+
+			GLOB.bot_event_sending_que += list(list(
+				"type" = "ban_a",
+				"title" = "Пермаментная Блокировка",
+				"player" = key_name(M),
+				"admin" = key_name_admin(usr),
+				"reason" = reason,
+				"banduration" = null,
+				"bantimestamp" = SQLtime(),
+				"additional_info" = list("ban_job" = msg),
+				"round" = GLOB.round_id
+			))
 
 // notbannedlist is just a list of strings of the job titles you want to unban.
 /datum/admins/proc/UnJobban(mob/M, list/bannedlist)
@@ -180,5 +204,13 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 			else
 				msg += ", [job]"
 	if(msg)
-		message_admins("<span class='adminnotice'>[key_name_admin(usr)] unbanned [key_name_admin(M)] from [msg].</span>")
+		message_admins("<span class='adminnotice'>[key_name_admin(usr)] unbanned [key_name(M)] from [msg].</span>")
 		to_chat(M, "<span class='boldannounce'><BIG>You have been un-jobbanned by [usr.client.key] from [msg].</BIG></span>")
+
+	GLOB.bot_event_sending_que += list(list(
+		"type" = "unban_a",
+		"title" = "Снятие блокировки",
+		"player" = key_name(M),
+		"admin" = key_name_admin(usr),
+		"round" = GLOB.round_id
+	))

@@ -1,4 +1,4 @@
-/proc/create_message(type, target_key, admin_ckey, text, timestamp, server, secret, logged = 1, browse, expiry, note_severity)
+/proc/create_message(type, target_key, admin_ckey, text, timestamp, server, secret, logged = 1, browse, expiry, note_severity, dont_announce_to_events = FALSE)
 	if(!SSdbcore.Connect())
 		to_chat(usr, "<span class='danger'>Failed to establish database connection.</span>", confidential = TRUE)
 		return
@@ -94,7 +94,7 @@
 		"note_severity" = note_severity,
 	))
 
-	if(!secret)
+	if(!secret && !dont_announce_to_events)
 		GLOB.bot_event_sending_que += list(list(
 			"type" = "notes",
 			"player" = target_ckey,

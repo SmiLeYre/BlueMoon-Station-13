@@ -131,10 +131,11 @@ GLOBAL_PROTECT(Banlist)
 
 	GLOB.bot_event_sending_que += list(list(
 		"type" = "ban",
-		"admin" = bannedby,
 		"player" = ban_ckey,
+		"admin" = bannedby,
 		"reason" = reason,
-		"bantimestamp" = bantimestamp,
+		"banduration" = bantimestamp,
+		"bantimestamp" = SQLtime(),
 		"round" = GLOB.round_id,
 		"temp" = temp
 	))
@@ -170,8 +171,9 @@ GLOBAL_PROTECT(Banlist)
 
 	GLOB.bot_event_sending_que += list(list(
 		"type" = "unban",
+		"player" = key,
 		"admin" = usr ? key_name(usr) : null,
-		"player" = key
+		"round" = GLOB.round_id
 	))
 
 	return TRUE
