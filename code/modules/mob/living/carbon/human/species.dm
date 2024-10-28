@@ -2442,7 +2442,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 				if(BP.receive_damage(damage_amount, 0, wound_bonus = wound_bonus, bare_wound_bonus = bare_wound_bonus, sharpness = sharpness))
 					H.update_damage_overlays()
 					if(HAS_TRAIT(H, TRAIT_MASO) && prob(damage_amount))
-						H.mob_climax(forced_climax=TRUE, cause = "masochism")
+						if(!(patient.IsSleeping() || patient.stat >= 2 || patient.IsUnconscious())) // BLUEMOON ADD - персонаж не спит, не без сознания и не мертв
+							H.mob_climax(forced_climax=TRUE, cause = "masochism")
 
 			else//no bodypart, we deal damage with a more general method.
 				H.adjustBruteLoss(damage_amount)
