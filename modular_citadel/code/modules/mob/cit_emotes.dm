@@ -41,14 +41,14 @@
 			sound = 'sound/creatures/gorilla.ogg'
 		if(ishuman(user))
 			user.adjustOxyLoss(5)
-			if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+			if(user.gender != FEMALE && !(user.gender == PLURAL && isfeminine(user)))
 				sound = pick('modular_citadel/sound/voice/scream_m1.ogg', 'modular_citadel/sound/voice/scream_m2.ogg')
-			if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
+			else
 				sound = pick('modular_citadel/sound/voice/scream_f1.ogg', 'modular_citadel/sound/voice/scream_f2.ogg')
 			if(is_species(user, /datum/species/jelly))
 				if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 					sound = pick('modular_citadel/sound/voice/scream_jelly_f1.ogg', 'modular_citadel/sound/voice/scream_jelly_f2.ogg')
-				else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+				else
 					sound = pick('modular_citadel/sound/voice/scream_jelly_m1.ogg', 'modular_citadel/sound/voice/scream_jelly_m2.ogg')
 			if(is_species(user, /datum/species/android) || is_species(user, /datum/species/synth) || is_species(user, /datum/species/ipc))
 				sound = 'modular_citadel/sound/voice/scream_silicon.ogg'
@@ -217,7 +217,7 @@
 	emote_pitch_variance = FALSE
 
 /datum/emote/sound/human/pain/run_emote(mob/user, params)
-	if(user.gender == MALE)
+	if(user.gender != FEMALE && !(user.gender == PLURAL && isfeminine(user)))
 		sound = pick('modular_citadel/sound/voice/human_male_pain_1.ogg', 'modular_citadel/sound/voice/human_male_pain_2.ogg', 'modular_citadel/sound/voice/human_male_pain_3.ogg', 'modular_citadel/sound/voice/human_male_pain_rare.ogg', 'modular_citadel/sound/voice/human_male_scream_1.ogg', 'modular_citadel/sound/voice/human_male_scream_2.ogg', 'modular_citadel/sound/voice/human_male_scream_3.ogg', 'modular_citadel/sound/voice/human_male_scream_4.ogg')
 	else
 		sound = pick('modular_citadel/sound/voice/human_female_pain_1.ogg', 'modular_citadel/sound/voice/human_female_pain_2.ogg', 'modular_citadel/sound/voice/human_female_pain_3.ogg', 'modular_citadel/sound/voice/human_female_scream_2.ogg', 'modular_citadel/sound/voice/human_female_scream_3.ogg', 'modular_citadel/sound/voice/human_female_scream_4.ogg')

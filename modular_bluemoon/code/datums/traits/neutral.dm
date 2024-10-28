@@ -55,6 +55,40 @@
 	// Add new timer
 	//timer = addtimer(CALLBACK(src, PROC_REF(do_awoo), timer_trigger, TIMER_STOPPABLE)
 
+/datum/emote/sound/human/awoo
+	emote_volume = 100
+	emote_range = MEDIUM_RANGE_SOUND_EXTRARANGE
+	emote_falloff_exponent = 1
+	emote_distance_multiplier_min_range = 12
+
+/datum/emote/sound/human/awoo/run_emote(mob/user, params)
+	. = ..()
+	if(!.)
+		return
+	if (HAS_TRAIT(user, TRAIT_AWOO))
+		var/mob/living/carbon/M = user
+		var/datum/quirk/awoo/quirk_target = locate() in M.roundstart_quirks
+		quirk_target.last_awoo = world.time
+		quirk_target.chance = quirk_target.default_chance
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "to_awoo", /datum/mood_event/to_awoo)
+
+/datum/emote/sound/human/howl
+	emote_volume = 100
+	emote_range = MEDIUM_RANGE_SOUND_EXTRARANGE
+	emote_falloff_exponent = 1
+	emote_distance_multiplier_min_range = 12
+
+/datum/emote/sound/human/howl/run_emote(mob/user, params)
+	. = ..()
+	if(!.)
+		return
+	if (HAS_TRAIT(user, TRAIT_AWOO))
+		var/mob/living/carbon/M = user
+		var/datum/quirk/awoo/quirk_target = locate() in M.roundstart_quirks
+		quirk_target.last_awoo = world.time
+		quirk_target.chance = quirk_target.default_chance
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "to_awoo", /datum/mood_event/to_awoo)
+
 /datum/quirk/light
 	name = "Лёгкий"
 	desc = "Вы в разы легче того, чем вы выглядите! Хотя и размеры теперь не особо помогают в выживании."

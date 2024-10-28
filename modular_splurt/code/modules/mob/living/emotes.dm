@@ -56,6 +56,12 @@ To add randomization to your emote, copy and paste this line of code:
 			// Set laugh sound
 			laugh_sound = 'sound/voice/human/womanlaugh.ogg'
 
+		if(PLURAL)
+			if(isfeminine(carbon_user))
+				laugh_sound = 'sound/voice/human/womanlaugh.ogg'
+			else
+				laugh_sound = pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
+
 		/*
 		 * Please add more gendered laughs
 		 *
@@ -841,15 +847,6 @@ To add randomization to your emote, copy and paste this line of code:
 	emote_type = EMOTE_AUDIBLE
 	sound = 'modular_splurt/sound/voice/wolfhowl.ogg'
 	emote_cooldown = 2.04 SECONDS
-
-/datum/emote/sound/human/howl/run_emote(mob/user, params)
-	if (HAS_TRAIT(user, TRAIT_AWOO))
-		var/mob/living/carbon/M = user
-		var/datum/quirk/awoo/quirk_target = locate() in M.roundstart_quirks
-		quirk_target.last_awoo = world.time
-		quirk_target.chance = quirk_target.default_chance
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "to_awoo", /datum/mood_event/to_awoo)
-	. = ..()
 
 /datum/emote/sound/human/coyhowl
 	key = "coyhowl"

@@ -207,7 +207,7 @@
 			sound = 'sound/creatures/gorilla.ogg'
 		if(ishuman(user))
 			user.adjustOxyLoss(10)
-			if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+			if(user.gender != FEMALE && !(user.gender == PLURAL && isfeminine(user)))
 				sound = pick('modular_bluemoon/smiley/sounds/emotes/agony_male_1.ogg',\
 						'modular_bluemoon/smiley/sounds/emotes/agony_male_2.ogg',\
 						'modular_bluemoon/smiley/sounds/emotes/agony_male_3.ogg',\
@@ -217,7 +217,7 @@
 						'modular_bluemoon/smiley/sounds/emotes/agony_male_7.ogg',\
 						'modular_bluemoon/smiley/sounds/emotes/agony_male_8.ogg',\
 						'modular_bluemoon/smiley/sounds/emotes/agony_male_9.ogg')
-			if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
+			else
 				sound = pick('modular_bluemoon/smiley/sounds/emotes/agony_female_1.ogg',\
 						'modular_bluemoon/smiley/sounds/emotes/agony_female_2.ogg',\
 						'modular_bluemoon/smiley/sounds/emotes/agony_female_3.ogg')

@@ -14,7 +14,7 @@
 		do_fake_sparks(5,FALSE,user)
 	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 		playsound(C, pick('sound/voice/female_cry1.ogg', 'sound/voice/female_cry2.ogg'), 50, 1)
-	else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+	else
 		playsound(C, pick('sound/voice/male_cry1.ogg', 'sound/voice/male_cry2.ogg'), 50, 1)
 
 /datum/emote/sound/human/carbon/human/dap

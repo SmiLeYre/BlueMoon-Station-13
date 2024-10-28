@@ -29,7 +29,7 @@
 	if(. && iscarbon(user))
 		if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 			playsound(C, pick('sound/voice/gasp_female1.ogg', 'sound/voice/gasp_female2.ogg', 'sound/voice/gasp_female3.ogg', 'sound/voice/gasp_female4.ogg', 'sound/voice/gasp_female5.ogg', 'sound/voice/gasp_female6.ogg', 'sound/voice/gasp_female7.ogg'), 50, 1)
-		else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+		else
 			playsound(C, pick('sound/voice/gasp_male1.ogg', 'sound/voice/gasp_male2.ogg', 'sound/voice/gasp_male3.ogg', 'sound/voice/gasp_male4.ogg', 'sound/voice/gasp_male5.ogg', 'sound/voice/gasp_male6.ogg', 'sound/voice/gasp_male7.ogg',), 50, 1)
 
 /datum/emote/sound/human/cross
@@ -53,7 +53,7 @@
 	if(. && iscarbon(user))
 		if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 			playsound(C, pick('sound/voice/chuckle_f.ogg'), 50, 1)
-		else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+		else
 			playsound(C, pick('sound/voice/chuckle_m.ogg'), 50, 1)
 
 /datum/emote/sound/human/collapse
@@ -86,7 +86,7 @@
 	if(. && iscarbon(user))
 		if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 			playsound(C, pick('sound/voice/female_cough1.ogg', 'sound/voice/female_cough2.ogg', 'sound/voice/female_cough3.ogg', 'sound/voice/female_cough4.ogg', 'sound/voice/female_cough5.ogg', 'sound/voice/female_cough6.ogg'), 50, 1)
-		else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+		else
 			playsound(C, pick('sound/voice/male_cough1.ogg', 'sound/voice/male_cough2.ogg', 'sound/voice/male_cough3.ogg', 'sound/voice/male_cough4.ogg'), 50, 1)
 
 /datum/emote/sound/human/dance
@@ -222,7 +222,7 @@
 				'sound/voice/gasp_female6.ogg',
 				'sound/voice/gasp_female7.ogg'),
 			10, TRUE, extrarange = -13) //2 tiles around
-		else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+		else
 			playsound(C, pick(
 				'sound/voice/gasp_male1.ogg',
 				'sound/voice/gasp_male2.ogg',
@@ -246,7 +246,7 @@
 	if(. && iscarbon(user))
 		if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 			playsound(C, pick('sound/voice/female_giggle1.ogg', 'sound/voice/female_giggle2.ogg'), 50, 1)
-		else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+		else
 			playsound(C, pick('sound/voice/male_giggle1.ogg', 'sound/voice/male_giggle2.ogg'), 50, 1)
 
 /datum/emote/sound/human/glare
@@ -310,6 +310,7 @@
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/sound/human_emote
+	mob_type_allowed_typecache = list(/mob/living/carbon/human)
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 1 SECONDS
 
@@ -353,13 +354,13 @@
 			else if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 				playsound(C, 'sound/voice/jelly/womanlaugh.ogg', 50, 1)
 				return
-			else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+			else
 				playsound(C, pick('sound/voice/jelly/manlaugh1.ogg', 'sound/voice/jelly/manlaugh2.ogg'), 50, 1)
 				return
 		else if(ishumanbasic(C))
 			if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 				playsound(C, pick('sound/voice/human/womanlaugh.ogg', 'sound/voice/female_laugh1.ogg', 'sound/voice/female_laugh2.ogg', 'sound/voice/female_laugh3.ogg'), 50, 1)
-			else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+			else
 				playsound(C, pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg', 'sound/voice/laugh_m1.ogg', 'sound/voice/laugh_m2.ogg', 'sound/voice/laugh_m3.ogg'), 50, 1)
 
 /datum/emote/sound/human_emote/chitter
@@ -459,7 +460,7 @@
 	var/mob/living/carbon/C = user
 	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 		playsound(C, pick('sound/voice/sigh_female.ogg'), 50, 1)
-	else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+	else
 		playsound(C, pick('sound/voice/sigh_male.ogg'), 50, 1)
 
 /datum/emote/sound/human/sit
@@ -493,7 +494,7 @@
 	var/mob/living/carbon/C = user
 	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 		playsound(C, pick('sound/voice/sneezef1.ogg', 'sound/voice/sneezef2.ogg'), 50, 1)
-	else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+	else
 		playsound(C, pick('sound/voice/sneezem1.ogg', 'sound/voice/sneezem2.ogg'), 50, 1)
 
 /datum/emote/sound/human/smug
@@ -516,7 +517,7 @@
 	var/mob/living/carbon/C = user
 	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 		playsound(C, pick('sound/voice/sniff_f1.ogg'), 50, 1)
-	else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+	else
 		playsound(C, pick('sound/voice/sniff_m1.ogg'), 50, 1)
 
 /datum/emote/sound/human/snore
@@ -618,7 +619,7 @@
 	var/mob/living/carbon/C = user
 	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 		playsound(C, pick('sound/voice/female_yawn1.ogg', 'sound/voice/female_yawn2.ogg'), 50, 1)
-	else if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+	else
 		playsound(C, pick('sound/voice/male_yawn1.ogg', 'sound/voice/male_yawn2.ogg'), 50, 1)
 
 

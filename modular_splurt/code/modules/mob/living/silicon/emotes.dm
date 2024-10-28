@@ -28,6 +28,12 @@
 			// Set laugh sound
 			laugh_sound = 'sound/voice/human/womanlaugh.ogg'
 
+		if(PLURAL)
+			if(isfeminine(carbon_user))
+				laugh_sound = 'sound/voice/human/womanlaugh.ogg'
+			else
+				laugh_sound = pick('sound/voice/human/manlaugh1.ogg', 'sound/voice/human/manlaugh2.ogg')
+
 		/*
 		 * Please add more gendered laughs
 		 *
@@ -251,7 +257,7 @@
 	var/sound
 	var/miming = user.mind ? user.mind.miming : 0
 	if(!user.is_muzzled() && !miming)
-		if(user.gender != FEMALE || (user.gender == PLURAL && ismasculine(user)))
+		if(user.gender != FEMALE && !(user.gender == PLURAL && isfeminine(user)))
 			sound = pick('modular_splurt/sound/voice/moan_m1.ogg', 'modular_splurt/sound/voice/moan_m2.ogg', 'modular_splurt/sound/voice/moan_m3.ogg')
 		if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
 			sound = pick('modular_splurt/sound/voice/moan_f1.ogg', 'modular_splurt/sound/voice/moan_f2.ogg', 'modular_splurt/sound/voice/moan_f3.ogg', 'modular_splurt/sound/voice/moan_f4.ogg', 'modular_splurt/sound/voice/moan_f5.ogg', 'modular_splurt/sound/voice/moan_f6.ogg', 'modular_splurt/sound/voice/moan_f7.ogg')
@@ -699,19 +705,6 @@
 	message_mime = "acts out a howl!"
 	sound = 'modular_splurt/sound/voice/wolfhowl.ogg'
 	emote_cooldown = 5 SECONDS
-	emote_volume = 100
-	emote_range = MEDIUM_RANGE_SOUND_EXTRARANGE
-	emote_falloff_exponent = 1
-	emote_distance_multiplier_min_range = 12
-
-/datum/emote/sound/human/howl/run_emote(mob/user, params)
-	if (HAS_TRAIT(user, TRAIT_AWOO))
-		var/mob/living/carbon/M = user
-		var/datum/quirk/awoo/quirk_target = locate() in M.roundstart_quirks
-		quirk_target.last_awoo = world.time
-		quirk_target.chance = quirk_target.default_chance
-		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "to_awoo", /datum/mood_event/to_awoo)
-	. = ..()
 
 /datum/emote/sound/human/coyhowl
 	key = "coyhowl"
