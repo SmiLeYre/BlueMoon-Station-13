@@ -172,7 +172,7 @@
 	message = "пожимает плечами."
 
 /datum/emote/sound/human
-	mob_type_allowed_typecache = list(/mob/living/carbon/human)
+	mob_type_allowed_typecache = list(/mob/living/)
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/sound/human/salute

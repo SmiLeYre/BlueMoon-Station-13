@@ -310,7 +310,7 @@
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/sound/human_emote
-	mob_type_allowed_typecache = list(/mob/living/carbon/human)
+	mob_type_allowed_typecache = list(/mob/living/)
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 1 SECONDS
 

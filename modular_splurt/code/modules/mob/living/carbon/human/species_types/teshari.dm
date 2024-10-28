@@ -50,7 +50,7 @@
 	multiplicative_slowdown = -0.2
 
 /datum/emote/sound/teshari
-	mob_type_allowed_typecache = list(/mob/living/carbon/human)
+	mob_type_allowed_typecache = list(/mob/living/)
 	emote_type = EMOTE_AUDIBLE
 
 /datum/language_holder/teshari
