@@ -134,7 +134,7 @@ GLOBAL_PROTECT(Banlist)
 		"player" = ban_ckey,
 		"admin" = bannedby,
 		"reason" = reason,
-		"banduration" = bantimestamp,
+		"banduration" = minutes,
 		"bantimestamp" = SQLtime(),
 		"round" = GLOB.round_id,
 		"temp" = temp
