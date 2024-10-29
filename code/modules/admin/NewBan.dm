@@ -172,7 +172,7 @@ GLOBAL_PROTECT(Banlist)
 	GLOB.bot_event_sending_que += list(list(
 		"type" = "unban",
 		"player" = key,
-		"admin" = usr ? key_name(usr) : null,
+		"admin" = usr ? usr.key : null,
 		"round" = GLOB.round_id
 	))
 

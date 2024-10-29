@@ -302,7 +302,7 @@
 			"type" = "ban_a",
 			"title" = bantitle,
 			"player" = bankey,
-			"admin" = key_name(usr),
+			"admin" = usr.key,
 			"reason" = banreason,
 			"banduration" = banduration,
 			"bantimestamp" = SQLtime(),

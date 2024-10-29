@@ -135,8 +135,8 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 			GLOB.bot_event_sending_que += list(list(
 				"type" = "ban_a",
 				"title" = "Блокировка",
-				"player" = key_name(M),
-				"admin" = key_name(usr),
+				"player" = M.key,
+				"admin" = usr.key,
 				"reason" = reason,
 				"banduration" = mins,
 				"bantimestamp" = SQLtime(),
@@ -174,8 +174,8 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 			GLOB.bot_event_sending_que += list(list(
 				"type" = "ban_a",
 				"title" = "Пермаментная Блокировка",
-				"player" = key_name(M),
-				"admin" = key_name(usr),
+				"player" = M.key,
+				"admin" = usr.key,
 				"reason" = reason,
 				"banduration" = null,
 				"bantimestamp" = SQLtime(),
@@ -210,8 +210,8 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 	GLOB.bot_event_sending_que += list(list(
 		"type" = "unban_a",
 		"title" = "Снятие блокировки",
-		"player" = key_name(M),
-		"admin" = key_name(usr),
+		"player" = M.key,
+		"admin" = usr.key,
 		"additional_info" = list("ban_job" = msg),
 		"round" = GLOB.round_id
 	))

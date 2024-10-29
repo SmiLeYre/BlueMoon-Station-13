@@ -41,8 +41,8 @@
 			GLOB.bot_event_sending_que += list(list(
 				"type" = "ban_a",
 				"title" = "Блокировка",
-				"player" = key_name(M),
-				"admin" = key_name(usr),
+				"player" = M.key,
+				"admin" = usr.key,
 				"reason" = reason,
 				"banduration" = mins,
 				"bantimestamp" = SQLtime(),
@@ -81,8 +81,8 @@
 			GLOB.bot_event_sending_que += list(list(
 				"type" = "ban_a",
 				"title" = "Пермаментная Блокировка",
-				"player" = key_name(M),
-				"admin" = key_name(usr),
+				"player" = M.key,
+				"admin" = usr.key,
 				"reason" = reason,
 				"banduration" = null,
 				"bantimestamp" = SQLtime(),
