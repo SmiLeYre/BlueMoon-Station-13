@@ -383,7 +383,7 @@
 		"type" = "unban_a",
 		"title" = "Разбан",
 		"player" = p_key,
-		"admin" = key_name_admin(usr),
+		"admin" = key_name(usr),
 		"round" = GLOB.round_id,
 	))
 

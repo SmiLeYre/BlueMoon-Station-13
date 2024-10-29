@@ -136,7 +136,7 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 				"type" = "ban_a",
 				"title" = "Блокировка",
 				"player" = key_name(M),
-				"admin" = key_name_admin(usr),
+				"admin" = key_name(usr),
 				"reason" = reason,
 				"banduration" = mins,
 				"bantimestamp" = SQLtime(),
@@ -175,7 +175,7 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 				"type" = "ban_a",
 				"title" = "Пермаментная Блокировка",
 				"player" = key_name(M),
-				"admin" = key_name_admin(usr),
+				"admin" = key_name(usr),
 				"reason" = reason,
 				"banduration" = null,
 				"bantimestamp" = SQLtime(),
@@ -211,7 +211,7 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 		"type" = "unban_a",
 		"title" = "Снятие блокировки",
 		"player" = key_name(M),
-		"admin" = key_name_admin(usr),
+		"admin" = key_name(usr),
 		"additional_info" = list("ban_job" = msg),
 		"round" = GLOB.round_id
 	))
