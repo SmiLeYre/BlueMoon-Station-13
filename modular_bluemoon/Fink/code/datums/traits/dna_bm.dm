@@ -1734,13 +1734,13 @@
 	if(!QDELETED(owner))
 		UnregisterSignal(owner, list(COMSIG_MOB_DEATH, COMSIG_MOB_EMOTE))
 
-/datum/mutation/human/bm/onelife/proc/get_rid_of_them(mob/user, list/emote_args)
+/datum/mutation/human/bm/onelife/proc/get_rid_of_them(mob/user, datum/emote/emote)
 	if(owner.stat == DEAD)
 		remove_signals()
 		owner.dust(TRUE, TRUE)
 
-/datum/mutation/human/bm/onelife/proc/get_rid_of_them_emote(mob/user, list/emote_args)
-	var/key = GLOB.emote_list[lowertext(emote_args[EMOTE_ACT])]
+/datum/mutation/human/bm/onelife/proc/get_rid_of_them_emote(mob/user, datum/emote/emote)
+	var/key = emote.key
 	if(key == "deathgasp")
 		remove_signals()
 		owner.dust(TRUE, TRUE)

@@ -100,11 +100,11 @@
 		sub.dir = turn(get_dir(sub, quirk_holder), pick(-90, 90))
 		sub.emote("blush")
 
-/datum/quirk/dominant_aura/proc/handle_snap(datum/source, list/emote_args)
+/datum/quirk/dominant_aura/proc/handle_snap(datum/source, datum/emote/emote)
 	SIGNAL_HANDLER
 
 	. = FALSE
-	var/key = GLOB.emote_list[lowertext(emote_args[EMOTE_ACT])]
+	var/key = emote.key
 	if(TIMER_COOLDOWN_CHECK(quirk_holder, COOLDOWN_DOMINANT_SNAP) || !findtext(key, "snap"))
 		return
 	for(var/mob/living/carbon/human/sub in hearers(DOMINANT_DETECT_RANGE, quirk_holder))

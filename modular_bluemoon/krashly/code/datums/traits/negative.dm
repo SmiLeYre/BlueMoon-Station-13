@@ -19,13 +19,13 @@
 	if(!QDELETED(quirk_holder))
 		UnregisterSignal(quirk_holder, list(COMSIG_MOB_DEATH, COMSIG_MOB_EMOTE))
 
-/datum/quirk/onelife/proc/get_rid_of_them(mob/user, list/emote_args)
+/datum/quirk/onelife/proc/get_rid_of_them(mob/user, datum/emote/emote)
 	if(quirk_holder.stat == DEAD)
 		remove_signals()
 		quirk_holder.dust(TRUE, TRUE)
 
-/datum/quirk/onelife/proc/get_rid_of_them_emote(mob/user, list/emote_args)
-	var/key = GLOB.emote_list[lowertext(emote_args[EMOTE_ACT])]
+/datum/quirk/onelife/proc/get_rid_of_them_emote(mob/user, datum/emote/emote)
+	var/key = emote.key
 	if(key == "deathgasp")
 		remove_signals()
 		quirk_holder.dust(TRUE, TRUE)
