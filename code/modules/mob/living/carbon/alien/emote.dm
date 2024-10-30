@@ -6,14 +6,18 @@
 /datum/emote/sound/human/alien/hiss
 	key = "hiss"
 	key_third_person = "hisses"
+	message = "шипит!"
 	message_alien = "hisses."
 	message_larva = "hisses softly."
 	emote_cooldown = 2 SECONDS
 
 /datum/emote/sound/human/alien/hiss/run_emote(mob/user, params)
 	. = ..()
-	if(. && isalienadult(user))
-		playsound(user.loc, "hiss", 40, 1, 1)
+	if(.)
+		if(isalienadult(user))
+			playsound(user.loc, "hiss", 40, 1, 1)
+		else
+			playsound(user.loc, 'modular_citadel/sound/voice/hiss.ogg', 50, 1, -1)
 
 /datum/emote/sound/human/alien/roar
 	key = "roar"
