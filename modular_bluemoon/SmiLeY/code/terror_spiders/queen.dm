@@ -24,7 +24,8 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 30
 	armour_penetration = 20
-	obj_damage = 60
+	wall_destroy_hardness = 10
+	obj_damage = 50
 	environment_smash = ENVIRONMENT_SMASH_WALLS
 	ventcrawler = 1
 	ai_break_lights = FALSE

@@ -20,7 +20,8 @@
 	speed = -0.1
 	melee_damage_lower = 10
 	melee_damage_upper = 15
-	obj_damage = 60 //for effective breaching
+	obj_damage = 50 //for effective breaching
+	wall_destroy_hardness = 10
 	move_to_delay = 20
 	spider_opens_doors = 2 // Breach specialist.
 	environment_smash = ENVIRONMENT_SMASH_RWALLS

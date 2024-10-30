@@ -26,7 +26,8 @@
 	melee_damage_lower = 35
 	melee_damage_upper = 45
 	armour_penetration = 20
-	obj_damage = 60
+	wall_destroy_hardness = 10
+	obj_damage = 100
 	environment_smash = ENVIRONMENT_SMASH_RWALLS
 	var/delimb_chance = 10
 	attack_sound = 'sound/creatures/terrorspiders/bite2.ogg'

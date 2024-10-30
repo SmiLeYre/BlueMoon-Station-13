@@ -20,6 +20,7 @@
 	can_wrap = FALSE
 	melee_damage_lower = 10
 	melee_damage_upper = 15
+	wall_destroy_hardness = 40
 	ventcrawler = 0
 	spider_tier = TS_TIER_3
 	spider_opens_doors = 2

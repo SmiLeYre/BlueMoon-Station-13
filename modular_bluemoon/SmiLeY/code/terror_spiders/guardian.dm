@@ -21,7 +21,8 @@
 	damage_coeff = list(BRUTE = 0.7, BURN = 1.1, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 1)
 	melee_damage_lower = 20
 	melee_damage_upper = 25
-	obj_damage = 42
+	obj_damage = 45
+	wall_destroy_hardness = 40
 	attack_sound = 'sound/creatures/terrorspiders/bite2.ogg'
 	death_sound = 'sound/creatures/terrorspiders/death6.ogg'
 	armour_penetration = 10

@@ -36,6 +36,7 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 	footstep_type = FOOTSTEP_MOB_CLAW
 	talk_sound = list('sound/creatures/terrorspiders/speech_1.ogg', 'sound/creatures/terrorspiders/speech_2.ogg', 'sound/creatures/terrorspiders/speech_3.ogg', 'sound/creatures/terrorspiders/speech_4.ogg', 'sound/creatures/terrorspiders/speech_5.ogg', 'sound/creatures/terrorspiders/speech_6.ogg')
 	damaged_sound = list('sound/creatures/terrorspiders/speech_1.ogg', 'sound/creatures/terrorspiders/speech_2.ogg', 'sound/creatures/terrorspiders/speech_3.ogg', 'sound/creatures/terrorspiders/speech_4.ogg', 'sound/creatures/terrorspiders/speech_5.ogg', 'sound/creatures/terrorspiders/speech_6.ogg')
+	faction = list(ROLE_TERROR_SPIDER)
 
 	//HEALTH
 	maxHealth = 100
@@ -119,6 +120,7 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 	var/killcount = 0
 	var/busy = 0 // leave this alone!
 	var/spider_tier = TS_TIER_1 // 1 for red,gray,green. 2 for purple,black,white, 3 for prince, mother. 4 for queen
+	var/wall_destroy_hardness = 50
 	var/hasdied = 0
 	var/list/spider_special_drops = list()
 	var/attackstep = 0
@@ -192,6 +194,12 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 				F.open()
 		else
 			to_chat(src, "Closing fire doors does not help.")
+	else if(istype(target, /turf/closed/wall))
+		var/turf/closed/wall/W = target
+		if (src.wall_destroy_hardness <= W.hardness)
+			if (do_after(src, 100 / W.hardness * 10, target = W))
+				playsound(W, 'sound/effects/meteorimpact.ogg', 100, 1)
+				W.dismantle_wall(1)
 	else if(istype(target, /obj/machinery/door/airlock))
 		var/obj/machinery/door/airlock/A = target
 		if (!try_open_airlock(A))
@@ -385,12 +393,14 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 	else if(!spider_opens_doors)
 		to_chat(src, "<span class='warning'>Your type of spider is not strong enough to force open doors.</span>")
 	else
+		playsound(D, 'sound/machines/airlock_alien_prying.ogg', 100, 1)
+		if (do_after(src, 20, target = D))
+			if(D.density)
+				D.open(TRUE)
+			else
+				D.close(TRUE)
 		visible_message("<span class='danger'>[src] forces the door!</span>")
 		playsound(src.loc, "sparks", 100, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
-		if(D.density)
-			D.open(TRUE)
-		else
-			D.close(TRUE)
 		return TRUE
 	return FALSE
 
