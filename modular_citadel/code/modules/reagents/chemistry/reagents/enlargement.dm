@@ -76,6 +76,7 @@
 
 	
 	B.modify_size(0.1)
+	M.reagents.remove_reagent(/datum/reagent/fermi/penis_enlarger, 5000) // BLUEMOON ADD
 	return ..()
 
 /datum/reagent/fermi/breast_enlarger/overdose_process(mob/living/carbon/M) //Turns you into a female if male and ODing, doesn't touch nonbinary and object genders.
@@ -91,8 +92,10 @@
 		M.set_gender(FEMALE)
 
 	if(P)
-		qdel(P) // BLUEMOON CHANGE P.modify_size(-0.05)
-	if(T && (!P || P.size <= 0))
+		P.forceMove(get_turf(M)) // BLUEMOON ADD
+		P.Remove() // BLUEMOON CHANGE P.modify_size(-0.05)
+		to_chat(H, "<span class='warning'>Ой-ой, неловко как...</b></span>") // BLUEMOON ADD
+	if(T)
 		qdel(T)
 	if(!V)
 		V = new
@@ -219,6 +222,7 @@
 		P.Insert(H)
 
 	P.modify_size(0.1)
+	M.reagents.remove_reagent(/datum/reagent/fermi/breast_enlarger, 5000) // BLUEMOON ADD
 	return ..()
 
 /datum/reagent/fermi/penis_enlarger/overdose_process(mob/living/carbon/human/M) //Turns you into a male if female and ODing, doesn't touch nonbinary and object genders.
@@ -237,10 +241,10 @@
 		M.set_gender(MALE)
 
 	if(B)
-		B.modify_size(-0.05)
-	if(V && (!B || B.size <= 0))
+		qdel(B) //BLUEMOON CHANGE B.modify_size(-0.05)
+	if(V) //BLUEMOON CHANGE
 		qdel(V)
-	if(W && (!B || B.size <= 0))
+	if(W) //BLUEMOON CHANGE
 		qdel(W)
 	if(!T)
 		T = new
