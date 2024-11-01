@@ -1628,6 +1628,8 @@ To add randomization to your emote, copy and paste this line of code:
 	emote_pitch_variance = FALSE
 	emote_volume = 70
 
+/*
+"rawr2" duplicate
 /datum/emote/sound/human/rawr
 	key = "rawr"
 	key_third_person = "rawrs"
@@ -1635,6 +1637,7 @@ To add randomization to your emote, copy and paste this line of code:
 	sound = 'modular_sand/sound/voice/rawr.ogg'
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 0.8 SECONDS
+*/
 
 /datum/emote/sound/human/sadness
 	key = "sadness"

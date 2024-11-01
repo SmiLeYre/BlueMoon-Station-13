@@ -329,3 +329,8 @@
 	message_mime = "silently squeals."
 	sound = 'modular_bluemoon/sound/emotes/squeal.ogg'
 	emote_cooldown = 0.75 SECONDS
+
+/datum/emote/sound/human/purr
+	stat_allowed = UNCONSCIOUS
+	emote_volume = 20
+	emote_falloff_exponent = 4
