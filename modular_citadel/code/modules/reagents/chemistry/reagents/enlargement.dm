@@ -94,7 +94,7 @@
 	if(P)
 		P.forceMove(get_turf(M)) // BLUEMOON ADD
 		P.Remove() // BLUEMOON CHANGE P.modify_size(-0.05)
-		to_chat(H, "<span class='warning'>Somtheing fell on the floor</b></span>") // BLUEMOON ADD
+		to_chat(M, "<span class='warning'>Somtheing fell on the floor</b></span>") // BLUEMOON ADD
 	if(T)
 		qdel(T)
 	if(!V)
