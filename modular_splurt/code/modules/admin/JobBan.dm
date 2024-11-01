@@ -126,7 +126,7 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 					msg = job
 				else
 					msg += ", [job]"
-			create_message("note", M.key, null, "Banned  from [msg] - [reason]", null, null, 0, 0, null, 0, severity)
+			create_message("note", M.key, null, "Banned  from [msg] - [reason]", null, null, 0, 0, null, 0, severity, dont_announce_to_events = TRUE)
 			message_admins("<span class='adminnotice'>[key_name_admin(usr)] banned [key_name_admin(M)] from [msg] for [mins] minutes.</span>")
 			to_chat(M, "<span class='boldannounce'><BIG>You have been [((msg == "ooc") || (msg == "appearance") || (msg == "pacifist")) ? "banned" : "jobbanned"] by [usr.client.key] from: [msg == "pacifist" ? "using violence" : msg].</BIG></span>")
 			to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
@@ -165,7 +165,7 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 					msg = job
 				else
 					msg += ", [job]"
-			create_message("note", M.key, null, "Banned  from [msg] - [reason]", null, null, 0, 0, null, 0, severity)
+			create_message("note", M.key, null, "Banned  from [msg] - [reason]", null, null, 0, 0, null, 0, severity, dont_announce_to_events = TRUE)
 			message_admins("<span class='adminnotice'>[key_name_admin(usr)] banned [key_name(M)] from [msg].</span>")
 			to_chat(M, "<span class='boldannounce'><BIG>You have been [((msg == "ooc") || (msg == "appearance") || (msg == "pacifist")) ? "banned" : "jobbanned"] by [usr.client.key] from: [msg == "pacifist" ? "using violence" : msg].</BIG></span>")
 			to_chat(M, "<span class='boldannounce'>The reason is: [reason]</span>")
