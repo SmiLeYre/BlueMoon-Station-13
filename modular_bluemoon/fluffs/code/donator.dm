@@ -455,7 +455,7 @@
 	name = "Silky Body"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/silky_body
-	ckeywhitelist = list("architect0r")
+	ckeywhitelist = list("architect0r", "trora")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/vance_plush
