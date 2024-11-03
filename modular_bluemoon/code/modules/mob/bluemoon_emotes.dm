@@ -332,5 +332,5 @@
 
 /datum/emote/sound/human/purr
 	stat_allowed = UNCONSCIOUS
-	emote_volume = 15
+	emote_volume = 10
 	emote_falloff_exponent = 4
