@@ -232,7 +232,7 @@
 	message = "агрессивно рычит."
 	sound = 'sound/voice/rawr.ogg'
 
-/datum/emote/sound/human/growl
+/datum/emote/sound/human/growl2
 	key = "growl2"
 	key_third_person = "growls2"
 	message = "издаёт особо агрессивное рычание."
