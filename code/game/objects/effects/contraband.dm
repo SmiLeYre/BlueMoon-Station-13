@@ -879,11 +879,6 @@
 	desc = "Stop the xenophobia! Love Voxes! They are valuable employees! (make sure they don't steal anything)"
 	icon_state = "poster_vlm"
 
-/obj/structure/sign/poster/official/ic //bluemoon add
-	name = "Integrated Circuit"
-	desc = "Integrated Circuit (IC) is a complex mechanism. Don't give up, you can assemble this console!"
-	icon_state = "poster_ic"
-
 ////
 
 /obj/structure/sign/poster/contraband/bread
