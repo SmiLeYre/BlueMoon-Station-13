@@ -468,7 +468,7 @@
 		"<span class='warning'>You [actuallyismob ? "try to ":""]stuff [O] into [src].</span>", \
 		"<span class='hear'>You hear clanging.</span>")
 	if(actuallyismob)
-		if(do_after_mob(user, targets, 40))
+		if(!do_after(user, 3 SECONDS, target = targets, timed_action_flags = (IGNORE_HELD_ITEM | IGNORE_INCAPACITATED), extra_checks = CALLBACK(user, TYPE_PROC_REF(/mob/living/carbon, cuff_resist_check))))
 			user.visible_message("<span class='notice'>[user] stuffs [O] into [src].</span>", \
 				"<span class='notice'>You stuff [O] into [src].</span>", \
 				"<span class='hear'>You hear a loud metal bang.</span>")

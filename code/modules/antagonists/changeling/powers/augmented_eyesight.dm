@@ -8,7 +8,6 @@
 	button_icon_state = "augmented_eyesight"
 	dna_cost = 2 //Would be 1 without thermal vision
 	active = FALSE
-	gamemode_restriction_type = ANTAG_DYNAMIC
 
 /datum/action/changeling/augmented_eyesight/on_purchase(mob/user) //The ability starts inactive, so we should be protected from flashes.
 	..()

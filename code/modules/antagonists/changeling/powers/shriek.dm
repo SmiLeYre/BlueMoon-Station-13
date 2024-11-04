@@ -42,6 +42,7 @@
 	chemical_cost = 20
 	dna_cost = 2
 	loudness = 1
+	gamemode_restriction_type = ANTAG_DYNAMIC
 
 //A flashy ability, good for crowd control and sowing chaos.
 /datum/action/changeling/dissonant_shriek/sting_action(mob/user)

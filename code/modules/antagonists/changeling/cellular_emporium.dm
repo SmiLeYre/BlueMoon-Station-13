@@ -81,7 +81,7 @@
 	if(ANTAG_EXTENDED & initial(ability.gamemode_restriction_type) && GLOB.master_mode == "Extended")
 		. = TRUE
 	if(ANTAG_DYNAMIC & initial(ability.gamemode_restriction_type))
-		if(GLOB.master_mode == "Dynamic (Light)" && GLOB.master_mode == "Dynamic (Medium)" && GLOB.master_mode == "Dynamic (Hard)" && GLOB.master_mode == "Dynamic (Team-Based)")
+		if(GLOB.master_mode == ROUNDTYPE_DYNAMIC && GLOB.master_mode == ROUNDTYPE_DYNAMIC_LIGHT && GLOB.master_mode == ROUNDTYPE_DYNAMIC_MEDIUM && GLOB.master_mode == ROUNDTYPE_DYNAMIC_HARD && GLOB.master_mode == ROUNDTYPE_DYNAMIC_TEAMBASED)
 			. = TRUE
 
 /datum/action/innate/cellular_emporium

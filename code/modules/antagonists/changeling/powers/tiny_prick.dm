@@ -202,6 +202,7 @@
 	chemical_cost = 20
 	dna_cost = 2
 	loudness = 2
+	gamemode_restriction_type = ANTAG_EXTENDED|ANTAG_DYNAMIC
 
 /datum/action/changeling/sting/mute/sting_action(mob/user, mob/living/carbon/target)
 	log_combat(user, target, "stung", "mute sting")
@@ -217,6 +218,7 @@
 	chemical_cost = 25
 	dna_cost = 1
 	loudness = 1
+	gamemode_restriction_type = ANTAG_EXTENDED|ANTAG_DYNAMIC
 
 /datum/action/changeling/sting/blind/sting_action(mob/user, mob/living/carbon/target)
 	log_combat(user, target, "stung", "blind sting")
