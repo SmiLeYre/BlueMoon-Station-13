@@ -52,5 +52,5 @@
 	name = "A box of Unholy Armor"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/storage/box/wh_kit
-	ckeywhitelist = list("DarkSunGwyndolin")
+	ckeywhitelist = list("darksungwyndolin")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
