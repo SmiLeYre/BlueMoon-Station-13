@@ -730,3 +730,38 @@
 	desc = "A modkit for making a Heavy crowbar into Heavy pocket hammer."
 	product = /obj/item/crowbar/large/heavy/hammercrowbar
 	fromitem = list(/obj/item/crowbar/large/heavy)
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/modkit/dedication_kit
+	name = "Magnetic Pistol Dedication Kit"
+	desc = "A modkit for making an Enforcer into a Magnetic Pistol Dedication."
+	product = /obj/item/gun/ballistic/automatic/pistol/enforcer/dedication
+	fromitem = list(/obj/item/gun/ballistic/automatic/pistol/enforcer/nomag, /obj/item/gun/ballistic/automatic/pistol/enforcer, /obj/item/gun/ballistic/automatic/pistol/enforcerred, /obj/item/gun/ballistic/automatic/pistol/enforcergold)
+
+/obj/item/gun/ballistic/automatic/pistol/enforcer/dedication
+	name = "\improper Magnetic Pistol Dedication"
+	desc = "A magnetic pistol used in all units of Adler's armed peacekeepers. It is mass-produced by the Adler military-industrial complex and has already entered the space trade market. It includes several advantages, for example, an identifier built into the handle, which transmits the remaining ammunition to the interface of the helmet or glasses, which allows better control of the weapon, as well as an integrated sight, which, however, is effective only at close ranges. He usually has a badge corresponding to his military rank, but this one doesn't seem to have any identification marks on it. Most often, because the owner belongs to Adler's foreign armed formations, which are not controlled by the general directorate of corporate officials. For example, he is assigned to a high-ranking officer."
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	icon_state = "dedication"
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/modkit/cleaver_kit
+	name = "Light Officer's Cleaver Kit"
+	desc = "A modkit for making an Enforcer into a Light Officer's Cleaver."
+	product = /obj/item/melee/sabre/cleaver
+	fromitem = list(/obj/item/melee/sabre)
+
+/obj/item/melee/sabre/cleaver
+	name = "\improper Light Officer's Cleaver"
+	desc = "The blade is made of nanoalloys, sharpened with a high-precision laser, a handle with a winding made of special synthetic leather and, of course, an engraving on the blade corresponding to a personal identification code. This is a weapon of the composition of corporate officials and high-ranking military officers of Adler, in order to earn it, each officer must go a long way in the hierarchy or earn high trust from the highest ranks of Adler. There are only 10,000 such swords produced."
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+	icon_state = "cleaver"
+
+/obj/item/melee/sabre/cleaver/get_belt_overlay()
+	if(istype(loc, /obj/item/storage/belt/scabbard))
+		return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "cleaver")
+	return ..()
