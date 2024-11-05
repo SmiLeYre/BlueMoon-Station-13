@@ -467,6 +467,45 @@
 	icon_state = "bwal"
 	fire_sound = 'modular_bluemoon/oni3288/sounds/weapons/bwalshot.ogg'
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/modkit/magrrinei_kit
+	name = "MAG-R-Rinei"
+	desc = "A modkit for making an Magrifle into a MAG-R-Rinei."
+	product = /obj/item/gun/ballistic/automatic/magrifle/magrrinei
+	fromitem = list(/obj/item/gun/ballistic/automatic/magrifle)
+
+/obj/item/gun/ballistic/automatic/magrifle/magrrinei
+	name = "MAG-R-Rinei"
+	desc = "An assault rifle developed on a planet belonging to the Catcrins : - Lar'rinei, the principle of operation is similar to the Gauss system, ammunition and battery charging are needed."
+	icon = 'modular_bluemoon/oni3288/icons/weapons/icons/magweapon.dmi'
+	lefthand_file = 'modular_bluemoon/oni3288/icons/weapons/hands/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/oni3288/icons/weapons/hands/guns_right.dmi'
+	icon_state = "rinei"
+	item_state = "rinei"
+	fire_sound = 'modular_bluemoon/oni3288/sounds/weapons/magshot.ogg'
+
+/obj/item/gun/ballistic/automatic/magrifle/magrrinei/update_icon_state()
+	icon_state = "rinei[magazine ? "-[CEILING(get_ammo(0)/7, 1)*4]" : ""][chambered ? "" : "-e"]"
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/modkit/magplar_kit
+	name = "MAG-P-Lar"
+	desc = "A modkit for making an Magpistol into a MAG-P-Lar."
+	product = /obj/item/gun/ballistic/automatic/magrifle/pistol/magplar
+	fromitem = list(/obj/item/gun/ballistic/automatic/magrifle/pistol)
+
+/obj/item/gun/ballistic/automatic/magrifle/pistol/magplar
+	name = "MAG-P-Lar"
+	desc = "A one-handed submachine gun with a slow-motion firing mode made specifically on the basis of Gauss rifle. Due to the reduced appearance, the rate of fire and the magazine suffered, but it is popular among Catcrins due to its compactness and ease of use in the caves of the planet Lar'rinei."
+	icon = 'modular_bluemoon/oni3288/icons/weapons/icons/magweapon.dmi'
+	lefthand_file = 'modular_bluemoon/oni3288/icons/weapons/hands/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/oni3288/icons/weapons/hands/guns_right.dmi'
+	icon_state = "lar"
+	item_state = "lar"
+	fire_sound = 'modular_bluemoon/oni3288/sounds/weapons/magshot.ogg'
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////Слот масок.
 
 /obj/item/clothing/mask/gas/syndicate/cool_version
@@ -541,7 +580,10 @@
 	new /obj/item/modkit/yernela(src)
 	new /obj/item/clothing/accessory/ac_patch(src)
 	new /obj/item/modkit/ffshield(src)
-	new /obj/item/modkit/bwal2572_kit(src)
+	new /obj/item/modkit/magplar_kit(src)
+	new /obj/item/modkit/magrrinei_kit(src)
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////ДАТУМы.
 
@@ -689,26 +731,26 @@
 	name = "First Catcrin's tactical gasmask"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_one
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/catcrin_combatmask_two
 	name = "Second Catcrin's tactical gasmask"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_two
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/catcrin_combatmask_tree
 	name = "Thrid Catcrin's tactical gasmask"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_three
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/catcrin_kit
 	name = "Catcrin kit"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/storage/box/catcrin_kit
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin")
+	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
