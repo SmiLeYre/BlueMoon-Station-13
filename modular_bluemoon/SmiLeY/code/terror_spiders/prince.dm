@@ -17,7 +17,7 @@
 	icon_dead = "terror_allblack_dead"
 	maxHealth = 500
 	health = 500
-	speed = 1.2
+	speed = -0.1
 	damage_coeff = list(BRUTE = 0.4, BURN = 0.7, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 1)
 	deathmessage =  "morbidly growls, flailing and crumbling as death finally washes away the burning hatred in it's eyes."
 	death_sound = 'sound/creatures/terrorspiders/prince_dead.ogg'

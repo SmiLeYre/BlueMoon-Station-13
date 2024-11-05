@@ -784,9 +784,9 @@
 	antag_datum = /datum/antagonist/terror_spiders
 	antag_flag = ROLE_TERROR_SPIDER
 	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security","Bridge Officer", "Captain") //BLUEMOON CHANGES
-	required_enemies = list(0,0,0,0,6,6,5,5,4,0)
+	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
 	required_candidates = 1
-	weight = 5
+	weight = 20 // TEST EDIT
 	cost = 12
 	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD) // BLUEMOON ADD
 	requirements = list(101,101,101,101,50,40,30,20,10,10)
@@ -797,7 +797,7 @@
 
 
 /datum/dynamic_ruleset/midround/from_ghosts/terror_spiders/execute()
-	spider_type = pick(range(4))
+	spider_type = pickweight(list(1, 4, 4, 1))
 	required_candidates = spider_types[spider_type]
 	for(var/obj/machinery/atmospherics/components/unary/vent_pump/temp_vent in GLOB.machines)
 		if(QDELETED(temp_vent))

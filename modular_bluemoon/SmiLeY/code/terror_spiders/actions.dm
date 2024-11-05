@@ -139,6 +139,10 @@
 	if(!isturf(loc))
 		to_chat(src, "<span class='danger'>Webs can only be spun while standing on a floor.</span>")
 		return
+	for(var/item in loc.contents)
+		if (istype(item, /obj/structure/spider))
+			to_chat(src, "<span class='danger'>There is already web here.</span>")
+			return
 	var/turf/mylocation = loc
 	visible_message("<span class='notice'>[src] begins to secrete a sticky substance.</span>")
 	playsound(src.loc, 'sound/creatures/terrorspiders/web.ogg', 50, 1)
