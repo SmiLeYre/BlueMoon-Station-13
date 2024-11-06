@@ -582,6 +582,7 @@
 	new /obj/item/modkit/ffshield(src)
 	new /obj/item/modkit/magplar_kit(src)
 	new /obj/item/modkit/magrrinei_kit(src)
+	new /obj/item/modkit/bwal2572_kit(src)
 
 
 
