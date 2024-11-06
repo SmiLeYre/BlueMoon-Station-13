@@ -473,7 +473,7 @@
 	name = "MAG-R-Rinei"
 	desc = "A modkit for making an Magrifle into a MAG-R-Rinei."
 	product = /obj/item/gun/ballistic/automatic/magrifle/magrrinei
-	fromitem = list(/obj/item/gun/ballistic/automatic/magrifle)
+	fromitem = list(/obj/item/gun/ballistic/automatic/magrifle/nopin)
 
 /obj/item/gun/ballistic/automatic/magrifle/magrrinei
 	name = "MAG-R-Rinei"
@@ -494,7 +494,7 @@
 	name = "MAG-P-Lar"
 	desc = "A modkit for making an Magpistol into a MAG-P-Lar."
 	product = /obj/item/gun/ballistic/automatic/magrifle/pistol/magplar
-	fromitem = list(/obj/item/gun/ballistic/automatic/magrifle/pistol)
+	fromitem = list(/obj/item/gun/ballistic/automatic/magrifle/pistol/nopin)
 
 /obj/item/gun/ballistic/automatic/magrifle/pistol/magplar
 	name = "MAG-P-Lar"
