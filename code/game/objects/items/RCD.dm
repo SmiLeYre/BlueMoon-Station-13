@@ -106,9 +106,9 @@ RLD
 		matter += value*amount_to_use
 		playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 		to_chat(user, "<span class='notice'>You insert [amount_to_use] [S.name] sheets into [src]. </span>")
-		return 1
+		return TRUE
 	to_chat(user, "<span class='warning'>You can't insert any more [S.name] sheets into [src]!</span>")
-	return 0
+	return FALSE
 
 /obj/item/construction/proc/activate()
 	playsound(src.loc, 'sound/items/deconstruct.ogg', 50, 1)
@@ -292,7 +292,7 @@ RLD
 		"SOUTH" = image(icon = 'icons/mob/radial.dmi', icon_state = "csouth"),
 		"WEST" = image(icon = 'icons/mob/radial.dmi', icon_state = "cwest")
 		)
-	var/computerdirs = show_radial_menu(user, src, computer_dirs, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
+	var/computerdirs = show_radial_menu(user, src, computer_dirs, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
 	if(!check_menu(user))
 		return
 	switch(computerdirs)
@@ -351,13 +351,13 @@ RLD
 		"External Maintenance" = get_airlock_image(/obj/machinery/door/airlock/maintenance/external/glass)
 	)
 
-	var/airlockcat = show_radial_menu(user, src, solid_or_glass_choices, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE)
+	var/airlockcat = show_radial_menu(user, src, solid_or_glass_choices, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE)
 	if(!check_menu(user))
 		return
 	switch(airlockcat)
 		if("Solid")
 			if(advanced_airlock_setting == 1)
-				var/airlockpaint = show_radial_menu(user, src, solid_choices, radius = 42, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE)
+				var/airlockpaint = show_radial_menu(user, src, solid_choices, radius = 42, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE)
 				if(!check_menu(user))
 					return
 				switch(airlockpaint)
@@ -402,7 +402,7 @@ RLD
 
 		if("Glass")
 			if(advanced_airlock_setting == 1)
-				var/airlockpaint = show_radial_menu(user, src , glass_choices, radius = 42, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE)
+				var/airlockpaint = show_radial_menu(user, src , glass_choices, radius = 42, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE)
 				if(!check_menu(user))
 					return
 				switch(airlockpaint)
@@ -447,21 +447,22 @@ RLD
 	var/list/rcd_results = A.rcd_vals(user, src)
 	if(!rcd_results)
 		return FALSE
+	if(!checkResource(rcd_results["cost"], user))
+		return FALSE
 	var/delay = rcd_results["delay"] * delay_mod
 	var/obj/effect/constructing_effect/rcd_effect = new(get_turf(A), delay, src.mode)
 	var/turf/the_turf = get_turf(A)
 	var/turf_coords = "[COORD(the_turf)]"
 	investigate_log("[user] is attempting to use [src] on [A] (loc [turf_coords] at [the_turf]) with cost [rcd_results["cost"]], delay [rcd_results["delay"]], mode [rcd_results["mode"]].", INVESTIGATE_RCD)
 	if(do_after(user, delay, target = A))
-		if(checkResource(rcd_results["cost"], user))
-			var/atom/cached = A
-			if(A.rcd_act(user, src, rcd_results["mode"]))
-				rcd_effect.end_animation()
-				useResource(rcd_results["cost"], user)
-				activate()
-				investigate_log("[user] used [src] on [cached] (loc [turf_coords] at [the_turf]) with cost [rcd_results["cost"]], delay [rcd_results["delay"]], mode [rcd_results["mode"]].", INVESTIGATE_RCD)
-				playsound(src, 'sound/machines/click.ogg', 50, 1)
-				return TRUE
+		var/atom/cached = A
+		if(A.rcd_act(user, src, rcd_results["mode"]))
+			rcd_effect.end_animation()
+			useResource(rcd_results["cost"], user)
+			activate()
+			investigate_log("[user] used [src] on [cached] (loc [turf_coords] at [the_turf]) with cost [rcd_results["cost"]], delay [rcd_results["delay"]], mode [rcd_results["mode"]].", INVESTIGATE_RCD)
+			playsound(src, 'sound/machines/click.ogg', 50, 1)
+			return TRUE
 	qdel(rcd_effect)
 
 /obj/item/construction/rcd/Initialize(mapload)
@@ -494,7 +495,7 @@ RLD
 		choices += list(
 			"Change Window Type" = image(icon = 'icons/mob/radial.dmi', icon_state = "windowtype")
 		)
-	var/choice = show_radial_menu(user,src,choices, custom_check = CALLBACK(src,.proc/check_menu,user))
+	var/choice = show_radial_menu(user,src,choices, custom_check = CALLBACK(src,PROC_REF(check_menu),user))
 	if(!check_menu(user))
 		return
 	switch(choice)
@@ -548,7 +549,7 @@ RLD
 		buzz loudly!</b></span>","<span class='danger'><b>[src] begins \
 		vibrating violently!</b></span>")
 	// 5 seconds to get rid of it
-	addtimer(CALLBACK(src, .proc/detonate_pulse_explode), 50)
+	addtimer(CALLBACK(src, PROC_REF(detonate_pulse_explode)), 50)
 
 /obj/item/construction/rcd/proc/detonate_pulse_explode()
 	explosion(src, 0, 0, 3, 1, flame_range = 1)
@@ -558,8 +559,9 @@ RLD
 	. = ..()
 	if(has_ammobar)
 		var/ratio = CEILING((matter / max_matter) * ammo_sections, 1)
-		cut_overlays()	//To prevent infinite stacking of overlays
-		add_overlay("[icon_state]_charge[ratio]")
+		if(ratio)
+			cut_overlays()	//To prevent infinite stacking of overlays
+			add_overlay("[icon_state]_charge[ratio]")
 
 /obj/item/construction/rcd/Initialize(mapload)
 	. = ..()
@@ -575,12 +577,12 @@ RLD
 
 /obj/item/construction/rcd/borg/useResource(amount, mob/user)
 	if(!iscyborg(user))
-		return 0
+		return FALSE
 	var/mob/living/silicon/robot/borgy = user
 	if(!borgy.cell)
 		if(user)
 			to_chat(user, no_ammo_message)
-		return 0
+		return FALSE
 	. = borgy.cell.use(amount * energyfactor) //borgs get 1.3x the use of their RCDs
 	if(!. && user)
 		to_chat(user, no_ammo_message)
@@ -588,12 +590,12 @@ RLD
 
 /obj/item/construction/rcd/borg/checkResource(amount, mob/user)
 	if(!iscyborg(user))
-		return 0
+		return FALSE
 	var/mob/living/silicon/robot/borgy = user
 	if(!borgy.cell)
 		if(user)
 			to_chat(user, no_ammo_message)
-		return 0
+		return FALSE
 	. = borgy.cell.charge >= (amount * energyfactor)
 	if(!. && user)
 		to_chat(user, no_ammo_message)
@@ -612,14 +614,18 @@ RLD
 	upgrade = TRUE
 
 /obj/item/construction/rcd/combat
-	name = "Combat RCD"
-	desc = "A device used to rapidly build and deconstruct. Reload with metal, plasteel, glass or compressed matter cartridges. This RCD has been upgraded to be able to remove Rwalls!"
+	name = "combat RCD"
+	desc = "A device used to rapidly build and deconstruct. Reload with metal, plasteel, glass or compressed matter cartridges."
 	icon_state = "ircd"
 	item_state = "ircd"
 	max_matter = 500
 	matter = 500
 	canRturf = TRUE
 	upgrade = TRUE
+
+/obj/item/construction/rcd/combat/examine(mob/user)
+	. = ..()
+	. += "The [name] has a wavelength penetrator installed, allowing it to deconstruct reinforced walls."
 
 /obj/item/construction/rcd/industrial
 	name = "industrial RCD"
@@ -668,6 +674,7 @@ RLD
 	icon_state = "arcd"
 	item_state = "oldrcd"
 	has_ammobar = FALSE
+	upgrade = TRUE
 
 
 // RAPID LIGHTING DEVICE
@@ -751,7 +758,7 @@ RLD
 					playsound(src.loc, 'sound/machines/click.ogg', 50, 1)
 					if(do_after(user, decondelay, target = A))
 						if(!useResource(deconcost, user))
-							return 0
+							return FALSE
 						activate()
 						qdel(A)
 						return TRUE
@@ -812,9 +819,9 @@ RLD
 					playsound(src.loc, 'sound/effects/light_flicker.ogg', 50, 1)
 					if(do_after(user, floordelay, target = A))
 						if(!istype(F))
-							return 0
+							return FALSE
 						if(!useResource(floorcost, user))
-							return 0
+							return FALSE
 						activate()
 						var/destination = get_turf(A)
 						var/obj/machinery/light/floor/FL = new /obj/machinery/light/floor(destination)
@@ -888,7 +895,7 @@ RLD
 				machinery_data["cost"][A] = initial(M.rcd_cost)
 				machinery_data["delay"][A] = initial(M.rcd_delay)
 
-	var/choice = show_radial_menu(user, src, choices, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
+	var/choice = show_radial_menu(user, src, choices, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
 	if(!check_menu(user))
 		return
 

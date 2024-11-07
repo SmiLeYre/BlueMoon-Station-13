@@ -74,14 +74,18 @@
 	icon_state = "mopphood"
 	item_state = "mopphood"
 	can_flashlight = 1
-	armor = list("melee" = 40, "bullet" = 30, "laser" = 30,"energy" = 10, "bomb" = 25, "bio" = 100, "rad" = 100, "fire" = 40, "acid" = 100)
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35,"energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 100, "fire" = 40, "acid" = 100)
 	is_edible = 0
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
+	max_heat_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	cold_protection = HEAD
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 
 /obj/item/clothing/head/helmet/cbrn/mopp/advance
 	name = "advance MOPP hood"
 	desc = "Mission Oriented Protective Posture. A hood design for harsh combat conditions short of no atmosphere. This is an advance versoin for ERT units and Central Command Staff."
 	can_flashlight = 1
-	armor = list("melee" = 50, "bullet" = 40, "laser" = 40,"energy" = 20, "bomb" = 35, "bio" = 110, "rad" = 110, "fire" = 50, "acid" = 110)
+	armor = list("melee" = 50, "bullet" = 40, "laser" = 40,"energy" = 40, "bomb" = 35, "bio" = 110, "rad" = 110, "fire" = 50, "acid" = 110)
 	clothing_flags = NONE
 	is_edible = 0
 

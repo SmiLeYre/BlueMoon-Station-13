@@ -82,7 +82,6 @@
 
 /mob/living/simple_animal/hostile/tentacles/Initialize()
 	. = ..()
-	new/obj/structure/tentacles/node(src.loc)
 	status_flags &= !CANPUSH
 	//SShorny_mobs_pool.horny_mobs += src
 
@@ -172,12 +171,15 @@
 			do_lewd_action(M)
 
 /mob/living/simple_animal/hostile/tentacles/proc/pickNewHole(mob/living/M)
-	if(M.has_vagina())
-		chosen_hole = CUM_TARGET_VAGINA
-	else if(M.has_penis())
-		chosen_hole = CUM_TARGET_PENIS
-	else
-		chosen_hole = CUM_TARGET_ANUS
+	var/hole_chosen = pick(1, 2)
+	switch(hole_chosen)
+		if(1)
+			if(M.has_vagina())
+				chosen_hole = CUM_TARGET_VAGINA
+			if(M.has_penis())
+				chosen_hole = CUM_TARGET_PENIS
+		if(2)
+			chosen_hole = CUM_TARGET_ANUS
 
 /mob/living/simple_animal/hostile/tentacles/proc/do_lewd_action(mob/living/M)
 	if(get_refraction_dif() > 0)
@@ -187,7 +189,6 @@
 		return
 
 	var/result = pick(1, 2)
-	var/datum/interaction/I
 	switch(chosen_hole)
 		if(CUM_TARGET_ANUS)
 			if(tearSlot(M, ITEM_SLOT_OCLOTHING))
@@ -199,8 +200,7 @@
 			if(tearSlot(M, ITEM_SLOT_UNDERWEAR))
 				return
 
-			I = SSinteractions.interactions["/datum/interaction/lewd/tentacle/anus"]
-			I.display_interaction(src, M)
+			tentacle_anal(M)
 
 		if(CUM_TARGET_VAGINA)
 			if(tearSlot(M, ITEM_SLOT_OCLOTHING))
@@ -214,10 +214,9 @@
 
 			switch(result)
 				if(1)
-					I = SSinteractions.interactions["/datum/interaction/lewd/tentacle/female"]
+					tentacle_vaginal(M)
 				if(2)
-					I = SSinteractions.interactions["/datum/interaction/lewd/tentacle/female_double"]
-			I.display_interaction(src, M)
+					tentacle_vaginal_double(M)
 
 		if(CUM_TARGET_PENIS)
 			if(tearSlot(M, ITEM_SLOT_OCLOTHING))
@@ -231,30 +230,35 @@
 
 			switch(result)
 				if(1)
-					I = SSinteractions.interactions["/datum/interaction/lewd/tentacle/female"]
+					tentacle_penis(M)
 				if(2)
-					I = SSinteractions.interactions["/datum/interaction/lewd/tentacle/female_double"]
-			I.display_interaction(src, M)
+					tentacle_penis_double(M)
 
-/mob/living/simple_animal/hostile/tentacles/cum(mob/living/M)
+/mob/living/simple_animal/hostile/tentacles/cum(mob/living/M, target_orifice, cum_inside = FALSE, anonymous = FALSE)
 
 	if(get_refraction_dif() > 0)
 		return
 
 	var/message
+	var/obj/item/organ/genital/target_gen = null
 	switch(chosen_hole)
 		if(CUM_TARGET_VAGINA)
 			message = "вгоняют свои тентакли в дырочки \the [M] и заполняют их спермой!"
+			target_gen = M.getorganslot(ORGAN_SLOT_WOMB)
+			target_gen.reagents.add_reagent(/datum/reagent/consumable/semen, 100)
 			M.impregnate(src, M.getorganslot(ORGAN_SLOT_WOMB), src.type)
 
 		if(CUM_TARGET_PENIS)
 			message = "обхватывают член \the [M] и обливают спермой!"
+			target_gen = M.getorganslot(ORGAN_SLOT_PENIS)
+			target_gen.reagents.add_reagent(/datum/reagent/consumable/semen, 100)
 
 		if(CUM_TARGET_ANUS)
 			message = "вгоняют свои тентакли в задницу \the [M] и заполняют её спермой!"
+			target_gen = M.getorganslot(ORGAN_SLOT_ANUS)
+			target_gen.reagents.add_reagent(/datum/reagent/consumable/semen, 100)
 
 	if(istype(M, /mob/living/carbon))
-		M.reagents.add_reagent(/datum/reagent/consumable/semen, 30)
 		M.reagents.add_reagent(/datum/reagent/drug/aphrodisiacplus, 5) //Cum contains hexocrocin
 	new /obj/effect/decal/cleanable/semen(loc)
 
@@ -264,7 +268,7 @@
 	set_is_fucking(null ,null)
 
 	set_lust(0) // Nuts at 400
-	tired += rand(20, 50)
+	tired += rand(5, 15)
 
 /mob/living/simple_animal/hostile/tentacles/proc/tearSlot(mob/living/M, slot)
 	var/obj/item/W = M.get_item_by_slot(slot)

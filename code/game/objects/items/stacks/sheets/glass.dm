@@ -15,6 +15,7 @@
 GLOBAL_LIST_INIT(glass_recipes, list ( \
 	new/datum/stack_recipe("directional window", /obj/structure/window/unanchored, time = 10, on_floor = TRUE, window_checks = TRUE), \
 	new/datum/stack_recipe("fulltile window", /obj/structure/window/fulltile/unanchored, 2, time = 20, on_floor = TRUE, window_checks = TRUE), \
+	new/datum/stack_recipe("shard", /obj/item/shard, 1), \
 	null, \
 	new/datum/stack_recipe_list("glass working bases", list( \
 		new/datum/stack_recipe("chem dish", /obj/item/glasswork/glass_base/dish, 10), \

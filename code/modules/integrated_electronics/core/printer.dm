@@ -103,7 +103,15 @@
 
 	return ..()
 
-/obj/item/integrated_circuit_printer/attack_self(mob/user)
+/obj/item/integrated_circuit_printer/attack_self(mob/living/carbon/human/user)
+	var/user_job = user.mind.assigned_role
+	if(upgraded)
+		if(user_job == "Roboticist" || user_job == "Research Director" || user_job == "Scientist" || user_job == "Expeditor" || user.mind?.has_antag_datum(/datum/antagonist))
+			interact(user)
+			return
+		else
+			to_chat(user, "<span class='warning'>Улучшения сделали этот принтер сложным и непонятным для вас!")
+			return
 	interact(user)
 
 /obj/item/integrated_circuit_printer/interact(mob/user)
@@ -294,7 +302,7 @@
 					to_chat(usr, "<span class='notice'>You begin printing a custom assembly. This will take approximately [DisplayTimeText(cloning_time)]. You can still print \
 					off normal parts during this time.</span>")
 					playsound(src, 'sound/items/poster_being_created.ogg', 50, TRUE)
-					addtimer(CALLBACK(src, .proc/print_program, usr), cloning_time)
+					addtimer(CALLBACK(src, PROC_REF(print_program), usr), cloning_time)
 
 			if("cancel")
 				if(!cloning || !program)

@@ -1,18 +1,19 @@
-/datum/emote/living/carbon/airguitar
+/datum/emote/sound/human/carbon/airguitar
 	key = "airguitar"
 	message = "играет на воображаемой гитаре и бьет головой, как шимпанзе в сафари."
 	restraint_check = TRUE
 
-/datum/emote/living/carbon/blink
+/datum/emote/sound/human/carbon/blink
 	key = "blink"
 	key_third_person = "blinks"
 	message = "моргает."
 
-/datum/emote/living/carbon/blink_r
+/datum/emote/sound/human/carbon/blink_r
+	name = "blink rapidly"
 	key = "blink3"
 	message = "быстро моргает."
 
-/datum/emote/living/carbon/clap
+/datum/emote/sound/human/clap
 	key = "clap"
 	key_third_person = "claps"
 	message = "хлопает в ладони."
@@ -20,25 +21,16 @@
 	restraint_check = TRUE
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/carbon/clap/run_emote(mob/living/user, params)
+/datum/emote/sound/human/clap/run_emote(mob/user, params)
+	sound = pick('sound/misc/clap1.ogg', 'sound/misc/clap2.ogg', 'sound/misc/clap3.ogg', 'sound/misc/clap4.ogg')
 	. = ..()
-	if (.)
-		if (ishuman(user))
-			// Need hands to clap
-			if (!user.get_bodypart(BODY_ZONE_L_ARM) || !user.get_bodypart(BODY_ZONE_R_ARM))
-				return
-			var/clap = pick('sound/misc/clap1.ogg',
-							'sound/misc/clap2.ogg',
-							'sound/misc/clap3.ogg',
-							'sound/misc/clap4.ogg')
-			playsound(user, clap, 50, 1, -1)
 
-/datum/emote/living/carbon/gnarl
+/datum/emote/sound/human/carbon/gnarl
 	key = "gnarl"
 	key_third_person = "gnarls"
 	message = "gnarls and shows its teeth..."
 
-/datum/emote/living/carbon/moan
+/datum/emote/sound/human/carbon/moan
 	key = "moan"
 	key_third_person = "moans"
 	message = "постанывает!"
@@ -47,73 +39,73 @@
 	stat_allowed = SOFT_CRIT
 	emote_cooldown = 2 SECONDS
 
-/datum/emote/living/carbon/roll
+/datum/emote/sound/human/carbon/roll
 	key = "roll"
 	key_third_person = "rolls"
 	message = "перекатывается."
 	restraint_check = TRUE
 
-/datum/emote/living/carbon/screech
+/datum/emote/sound/human/carbon/screech
 	key = "screech"
 	key_third_person = "screeches"
 	message = "громко скрипит."
 
-/datum/emote/living/carbon/scratch
+/datum/emote/sound/human/carbon/scratch
 	key = "scratch"
 	key_third_person = "scratches"
 	message = "царапается."
 	restraint_check = TRUE
 
-/datum/emote/living/carbon/sign
+/datum/emote/sound/human/carbon/sign
 	key = "sign"
 	key_third_person = "signs"
 	message_param = "signs the number %t."
 	restraint_check = TRUE
 
-/datum/emote/living/carbon/sign/select_param(mob/user, params)
+/datum/emote/sound/human/carbon/sign/select_param(mob/user, params)
 	. = ..()
 	if(!isnum(text2num(params)))
 		return message
 
-/datum/emote/living/carbon/sign/signal
+/datum/emote/sound/human/carbon/sign/signal
 	key = "signal"
 	key_third_person = "signals"
 	message_param = "даёт сигнал для %t своими пальцами."
 
-/datum/emote/living/carbon/tail
+/datum/emote/sound/human/carbon/tail
 	key = "tail"
 	message = "начинает двигать своим хвостом."
 
-/datum/emote/living/carbon/wink
+/datum/emote/sound/human/carbon/wink
 	key = "wink"
 	key_third_person = "winks"
 	message = "подмигивает."
 
-/datum/emote/living/carbon/human/dap
+/datum/emote/sound/human/carbon/human/dap
 	key = "dap"
 	key_third_person = "daps"
 	message = "делает ДЭП и... к сожалению, не может найти никого, кому можно было бы дать DAP. Стыдно."
 	message_param = "ДЭПает при виде %t."
 	restraint_check = TRUE
 
-/datum/emote/living/carbon/human/eyebrow
+/datum/emote/sound/human/carbon/human/eyebrow
 	key = "eyebrow"
 	message = "поднимает бровь."
 
-/datum/emote/living/carbon/human/grumble
+/datum/emote/sound/human/carbon/human/grumble
 	key = "grumble"
 	key_third_person = "grumbles"
 	message = "ворчит!"
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/carbon/human/handshake
+/datum/emote/sound/human/carbon/human/handshake
 	key = "handshake"
 	message = "пожимает собственные руки."
 	message_param = "пожимает руку %t."
 	restraint_check = TRUE
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/carbon/human/hug
+/datum/emote/sound/human/carbon/human/hug
 	key = "hug"
 	key_third_person = "hugs"
 	message = "обнимает себя."
@@ -121,14 +113,14 @@
 	restraint_check = TRUE
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/carbon/human/mawp
+/datum/emote/sound/human/carbon/human/mawp
 	key = "mawp"
 	key_third_person = "mawps"
 	message = "раздраженно бормочет что-то на своём."
 	emote_type = EMOTE_AUDIBLE
 	emote_cooldown = 8 SECONDS
 
-/datum/emote/living/carbon/human/mawp/run_emote(mob/living/user, params)
+/datum/emote/sound/human/carbon/human/mawp/run_emote(mob/living/user, params)
 	. = ..()
 	if(.)
 		if(ishuman(user))
@@ -136,32 +128,32 @@
 				user.adjustEarDamage(-5, -5)
 	playsound(user, 'modular_citadel/sound/voice/purr.ogg', 50, 1, -1)	//почему мурчание?
 
-/datum/emote/living/carbon/human/mumble
+/datum/emote/sound/human/carbon/human/mumble
 	key = "mumble"
 	key_third_person = "mumbles"
 	message = "бормочет."
 	emote_type = EMOTE_AUDIBLE
 
-/datum/emote/living/carbon/lick
+/datum/emote/sound/human/carbon/lick
 	key = "lick"
 	key_third_person = "licks."
 
-/datum/emote/living/carbon/human/pale
+/datum/emote/sound/human/carbon/human/pale
 	key = "pale"
 	message = "бледнеет на секунду."
 
-/datum/emote/living/carbon/human/raise
+/datum/emote/sound/human/carbon/human/raise
 	key = "raise"
 	key_third_person = "raises"
 	message = "демонстративно поднимает свою руку."
 	restraint_check = TRUE
 
-/datum/emote/living/carbon/lick
+/datum/emote/sound/human/carbon/lick
 	key = "lick"
 	key_third_person = "licks."
 	restraint_check = TRUE
 
-/datum/emote/living/carbon/lick/run_emote(mob/user)
+/datum/emote/sound/human/carbon/lick/run_emote(mob/user)
 	. = ..()
 	if(!iscarbon(user) || !.)
 		return
@@ -174,13 +166,13 @@
 	else
 		qdel(licky)
 
-/datum/emote/living/carbon/human/shrug
+/datum/emote/sound/human/carbon/human/shrug
 	key = "shrug"
 	key_third_person = "shrugs"
 	message = "пожимает плечами."
 
 /datum/emote/sound/human
-	mob_type_allowed_typecache = list(/mob/living/carbon/human)
+	mob_type_allowed_typecache = list(/mob/living/)
 	emote_type = EMOTE_AUDIBLE
 
 /datum/emote/sound/human/salute
@@ -240,7 +232,7 @@
 	message = "агрессивно рычит."
 	sound = 'sound/voice/rawr.ogg'
 
-/datum/emote/sound/human/growl
+/datum/emote/sound/human/growl2
 	key = "growl2"
 	key_third_person = "growls2"
 	message = "издаёт особо агрессивное рычание."

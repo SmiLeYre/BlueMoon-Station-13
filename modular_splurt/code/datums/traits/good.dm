@@ -1,11 +1,13 @@
 /datum/quirk/tough
 	name = "Стойкость"
-	desc = "Ваше аномально крепкое тело может вынести на 20% больше урона."
-	value = 3
+	desc = "Ваше аномально крепкое тело не воспринимает физический урон ниже десяти условных единиц."
+	value = 2
+	mob_trait = TRAIT_TOUGHT
 	medical_record_text = "Пациент продемонстрировал аномально высокую устойчивость к травмам."
 	gain_text = "<span class='notice'>Вы чувствуете крепость в мышцах.</span>"
 	lose_text = "<span class='notice'>Вы чувствуете себя менее крепким.</span>"
 
+/*
 /datum/quirk/tough/add()
 	quirk_holder.maxHealth *= 1.20
 
@@ -13,6 +15,7 @@
 	if(!quirk_holder)
 		return
 	quirk_holder.maxHealth *= 0.909 //close enough
+*/
 
 /datum/quirk/ashresistance
 	name = "Пепельная Устойчивость"
@@ -52,6 +55,11 @@
 	// Define quirk holder mob
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
 
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_mob)
+		return
+	// BLUEMOON EDIT END
+
 	// Remove glow control action
 	var/datum/action/rad_fiend/update_glow/quirk_action = locate() in quirk_mob.actions
 	quirk_action.Remove(quirk_mob)
@@ -68,8 +76,8 @@
 
 /datum/quirk/dominant_aura/add()
 	. = ..()
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
-	RegisterSignal(quirk_holder, COMSIG_MOB_EMOTE, .proc/handle_snap)
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
+	RegisterSignal(quirk_holder, COMSIG_MOB_EMOTE, PROC_REF(handle_snap))
 
 /datum/quirk/dominant_aura/remove()
 	. = ..()
@@ -92,13 +100,11 @@
 		sub.dir = turn(get_dir(sub, quirk_holder), pick(-90, 90))
 		sub.emote("blush")
 
-/datum/quirk/dominant_aura/proc/handle_snap(datum/source, list/emote_args)
+/datum/quirk/dominant_aura/proc/handle_snap(datum/source, datum/emote/emote)
 	SIGNAL_HANDLER
 
 	. = FALSE
-	var/datum/emote/E
-	E = E.emote_list[lowertext(emote_args[EMOTE_ACT])]
-	if(TIMER_COOLDOWN_CHECK(quirk_holder, COOLDOWN_DOMINANT_SNAP) || !findtext(E?.key, "snap"))
+	if(TIMER_COOLDOWN_CHECK(quirk_holder, COOLDOWN_DOMINANT_SNAP) || !findtext(emote.key, "snap"))
 		return
 	for(var/mob/living/carbon/human/sub in hearers(DOMINANT_DETECT_RANGE, quirk_holder))
 		if(!sub.has_quirk(/datum/quirk/well_trained) || (sub == quirk_holder))
@@ -109,7 +115,7 @@
 				good_x = "мальчик"
 			if(FEMALE)
 				good_x = "девочка"
-		switch(E?.key)
+		switch(emote.key)
 			if("snap")
 				sub.dir = get_dir(sub, quirk_holder)
 				sub.emote(pick("blush", "pant"))
@@ -157,6 +163,10 @@
 /datum/quirk/arachnid/remove()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!H)
+		return
+	// BLUEMOON EDIT END
 	if(is_species(H,/datum/species/arachnid))
 		return
 	var/datum/action/innate/spin_web/SW = locate(/datum/action/innate/spin_web) in H.actions
@@ -192,6 +202,10 @@
 
 /datum/quirk/ropebunny/remove()
 	var/mob/living/carbon/human/H = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!H)
+		return
+	// BLUEMOON EDIT END
 	var/datum/action/ropebunny/conversion/C = locate() in H.actions
 	C.Remove(H)
 	. = ..()
@@ -207,7 +221,7 @@
 
 /datum/quirk/hallowed/add()
 	// Add examine text.
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
 
 /datum/quirk/hallowed/remove()
 	// Remove examine text
@@ -216,27 +230,6 @@
 // Quirk examine text.
 /datum/quirk/hallowed/proc/on_examine_holder(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
 	examine_list += "[quirk_holder.p_they(TRUE)] излучает священную силу..."
-
-/datum/quirk/russian
-	name = "Русский дух"
-	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. С вами Бог!"
-	value = 2
-	mob_trait = TRAIT_RUSSIAN
-	gain_text = span_notice("Вы чувствуете, как Бог следит за вами!")
-	lose_text = span_notice("Вы чувствуете, как угасает ваша вера в Бога...")
-	medical_record_text = "У пациента обнаружен Ангел-Хранитель."
-
-/datum/quirk/russian/add()
-	// Add examine text.
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/quirk_examine_russian)
-
-/datum/quirk/russian/remove()
-	// Remove examine text
-	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
-
-// Quirk examine text.
-/datum/quirk/russian/proc/quirk_examine_russian(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
-	examine_list += "[quirk_holder.ru_who(TRUE)] излучает русский дух..."
 
 ///datum/quirk/bomber
 //	name = "Подрывник-Самоубийца"
@@ -309,6 +302,10 @@
 /datum/quirk/breathless/remove()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!H)
+		return
+	// BLUEMOON EDIT END
 	REMOVE_TRAIT(H,TRAIT_NOBREATH, ROUNDSTART_TRAIT)
 
 /datum/quirk/breathless/on_process()

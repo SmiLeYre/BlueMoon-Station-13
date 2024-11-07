@@ -156,6 +156,9 @@
 /proc/get_all_syndicate_access()
 	return list(ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER, ACCESS_SLAVER, ACCESS_BLOODCULT, ACCESS_CLOCKCULT, ACCESS_INTEQ, ACCESS_INTEQ_LEADER)
 
+/proc/get_all_inteq_access()
+	return list(ACCESS_INTEQ, ACCESS_INTEQ_LEADER)
+
 /proc/get_region_accesses(code)
 	switch(code)
 		if(0)
@@ -366,8 +369,8 @@
 			return "Code Scotch"
 
 /proc/get_all_jobs()
-	return list("Assistant", "Captain", "Blueshield", "Head of Personnel", "Bridge Officer", "Bartender", "Cook", "Entertainer", "Botanist", "Quartermaster", "Cargo Technician",
-				"Shaft Miner", "Clown", "Mime", "Janitor", "Curator", "Lawyer", "Chaplain", "Chief Engineer", "Station Engineer",
+	return list("Assistant","Bridge Officer", "Captain", "Blueshield", "Head of Personnel", "Bartender", "Cook", "Entertainer", "Botanist", "Quartermaster", "Cargo Technician",
+				"Shaft Miner", "Clown", "Mime", "Janitor", "Curator", "Internal Affairs Agent", "Chaplain", "Chief Engineer", "Station Engineer",
 				"Atmospheric Technician", "Chief Medical Officer", "Medical Doctor", "Chemist", "Geneticist", "Virologist", "Psychologist", "Paramedic",
 				"Research Director", "Scientist", "Roboticist", "Expeditor", "Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Prisoner", "NanoTrasen Representative", "Bouncer") //BlueMoon edit
 
@@ -375,7 +378,7 @@
 	return get_all_jobs()
 
 /proc/get_all_centcom_jobs()
-	return list("VIP Guest","Custodian","Thunderdome Overseer","CentCom Official","Medical Officer","Death Commando","Research Officer","Special Ops Officer","Admiral","CentCom Commander","Emergency Response Team Commander","Security Response Officer","Engineer Response Officer", "Medical Response Officer","CentCom Bartender","Nuclear Waste Expert") //No idea how to modularly edit a global proc
+	return list("VIP Guest","Custodian","Thunderdome Overseer","CentCom Official","Medical Officer","Death Commando","Research Officer","Special Ops Officer","Admiral","CentCom Commander","Emergency Response Team Commander","Security Response Officer","Engineer Response Officer", "Medical Response Officer","CentCom Bartender","Nuclear Waste Expert","Giant Bun Liaison") //No idea how to modularly edit a global proc
 
 /// Gets the job title, if the job name is an alt title, locates the original title using a prebuilt cache
 /proc/GetJobName(jobName)
@@ -383,8 +386,6 @@
 
 /obj/item/proc/get_job_name() //Used in secHUD icon generation
 	if (istype(src, /obj/item/card/id/debug/bst))
-		return "scrambled"
-	if (istype(src, /obj/item/card/id/syndicate))
 		return "scrambled"
 	if (istype(src, /obj/item/card/id/nri))
 		return "nri"
@@ -394,8 +395,26 @@
 		return "sol"
 	if (istype(src, /obj/item/card/id/sol_citizen))
 		return "sol"
+	if (istype(src, /obj/item/card/id/heresy))
+		return "heresy"
+	if (istype(src, /obj/item/card/id/lust))
+		return "lust"
+	if (istype(src, /obj/item/card/id/agony))
+		return "agony"
+	if (istype(src, /obj/item/card/id/muck))
+		return "muck"
+	if (istype(src, /obj/item/card/id/blumenland_citizen))
+		return "bmland"
 	if (istype(src, /obj/item/card/id/death))
 		return "deathcommando"
+	if (istype(src, /obj/item/card/id/syndicate) & src.icon_state == "card_black")
+		var/obj/item/card/id/card = src
+		if (card.assignment == initial(card.assignment))
+			return "syndicate"
+	if (istype(src, /obj/item/card/id/inteq) & src.icon_state == "inteq")
+		var/obj/item/card/id/card = src
+		if (card.assignment == initial(card.assignment))
+			return "inteq"
 	var/obj/item/card/id/I = GetID()
 	if(!I)
 		return

@@ -91,11 +91,15 @@
 	. = 1
 
 //Please don't roast me too hard
-/client/MouseMove(object,location,control,params)
+//Oh don't worry, We Will.
+/client/MouseMove(object, location, control, params)
+	if(!COOLDOWN_FINISHED(src, next_mousemove))
+		return
+	COOLDOWN_START(src, next_mousemove, 0) //COOLDOWN_FINISHED() sees the world tick and cooldown timer being equal as a state wherein the cooldown has not finished. So the cooldown timer here is 0 to throttle only for the rest of the tick.
 	mouseParams = params
-	mouseLocation = location
-	mouseObject = object
-	mouseControlObject = control
+	mouse_location_ref = WEAKREF(location)
+	mouse_object_ref = WEAKREF(object)
+	mouse_control_object = control
 	if(mob)
 		SEND_SIGNAL(mob, COMSIG_MOB_CLIENT_MOUSEMOVE, object, location, control, params)
 		// god forgive me for i have sinned - used for autoparry. currently at 5 objects.
@@ -105,16 +109,20 @@
 	..()
 
 /client/MouseDrag(src_object,atom/over_object,src_location,over_location,src_control,over_control,params)
+	if(!COOLDOWN_FINISHED(src, next_mousedrag))
+		return
+	COOLDOWN_START(src, next_mousedrag, 0) //See comment in MouseMove() for why this is 0.
 	mouseParams = params
-	mouseLocation = over_location
-	mouseObject = over_object
-	mouseControlObject = over_control
-	if(selected_target[1] && over_object && over_object.IsAutoclickable())
+	mouse_location_ref = WEAKREF(over_location)
+	mouse_object_ref = WEAKREF(over_object)
+	mouse_control_object = over_control
+	if(selected_target[1] && over_object?.IsAutoclickable())
 		selected_target[1] = over_object
 		selected_target[2] = params
 	if(active_mousedown_item)
 		active_mousedown_item.onMouseDrag(src_object, over_object, src_location, over_location, params, mob)
 	SEND_SIGNAL(src, COMSIG_CLIENT_MOUSEDRAG, src_object, over_object, src_location, over_location, src_control, over_control, params)
+	return ..()
 
 /obj/item/proc/onMouseDrag(src_object, over_object, src_location, over_location, params, mob)
 	return

@@ -37,6 +37,7 @@ GLOBAL_LIST_INIT(simple_animals, list(list(),list(),list(),list())) // One for e
 GLOBAL_LIST_EMPTY(spidermobs)				//all sentient spider mobs
 GLOBAL_LIST_EMPTY(bots_list)
 GLOBAL_LIST_EMPTY(aiEyes)
+GLOBAL_LIST_EMPTY(suit_sensors_list) //all people with suit sensors on
 
 GLOBAL_LIST_EMPTY(language_datum_instances)
 GLOBAL_LIST_EMPTY(all_languages)
@@ -44,6 +45,8 @@ GLOBAL_LIST_EMPTY(all_languages)
 GLOBAL_LIST_EMPTY(sentient_disease_instances)
 
 GLOBAL_LIST_EMPTY(latejoin_ai_cores)
+
+GLOBAL_LIST_EMPTY(emote_list)
 
 GLOBAL_LIST_EMPTY(mob_config_movespeed_type_lookup)
 GLOBAL_LIST_EMPTY(mob_config_movespeed_type_lookup_floating)
@@ -104,6 +107,24 @@ GLOBAL_LIST_EMPTY(pre_setup_antags) //minds that have been picked as antag by th
 	for(var/i in GLOB.mob_list)
 		var/mob/M = i
 		M.update_config_movespeed()
+
+/proc/init_emote_list()
+	. = list()
+	for(var/path in subtypesof(/datum/emote))
+		var/datum/emote/E = new path()
+		if(E.key)
+			if(!.[E.key])
+				.[E.key] = list(E)
+			else
+				.[E.key] += E
+		else if(E.message) //Assuming all non-base emotes have this
+			stack_trace("Keyless emote: [E.type]")
+
+		if(E.key_third_person) //This one is optional
+			if(!.[E.key_third_person])
+				.[E.key_third_person] = list(E)
+			else
+				.[E.key_third_person] |= E
 
 	//blood types
 GLOBAL_LIST_INIT(regular_bloods,list(

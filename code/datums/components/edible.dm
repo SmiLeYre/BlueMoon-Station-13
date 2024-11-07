@@ -34,20 +34,20 @@ Behavior that's still missing from this component that original food items had t
 	if(!isatom(parent))
 		return COMPONENT_INCOMPATIBLE
 
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/examine)
-	RegisterSignal(parent, COMSIG_ATOM_ATTACK_ANIMAL, .proc/UseByAnimal)
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(examine))
+	RegisterSignal(parent, COMSIG_ATOM_ATTACK_ANIMAL, PROC_REF(UseByAnimal))
 	if(isitem(parent))
-		RegisterSignal(parent, COMSIG_ITEM_ATTACK, .proc/UseFromHand)
+		RegisterSignal(parent, COMSIG_ITEM_ATTACK, PROC_REF(UseFromHand))
 	else if(isturf(parent))
-		RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, .proc/TryToEatTurf)
+		RegisterSignal(parent, COMSIG_ATOM_ATTACK_HAND, PROC_REF(TryToEatTurf))
 
-	src.bite_consumption = bite_consumption
 	src.food_flags = food_flags
 	src.foodtypes = foodtypes
 	src.eat_time = eat_time
 	src.eatverbs = eatverbs
-	src.junkiness = junkiness
+	src.bite_consumption = bite_consumption
 	src.after_eat = after_eat
+	src.junkiness = junkiness
 
 	var/atom/owner = parent
 
@@ -110,7 +110,7 @@ Behavior that's still missing from this component that original food items had t
 		if(!do_mob(feeder, eater, eat_time)) //Gotta pass the minimal eat time
 			return
 		var/eatverb = pick(eatverbs)
-		if(junkiness && eater.satiety < -150 && eater.nutrition > NUTRITION_LEVEL_STARVING + 50 && !HAS_TRAIT(eater, TRAIT_VORACIOUS))
+		if(junkiness && eater.satiety < -150 && eater.nutrition > NUTRITION_LEVEL_STARVING + 50 && !HAS_TRAIT(eater, TRAIT_VORACIOUS || TRAIT_BLUEMOON_DEVOURER))
 			to_chat(eater, span_warning("Не хочу я жрать эти отбросы!"))
 			return
 		else if(fullness <= 50)
@@ -119,7 +119,7 @@ Behavior that's still missing from this component that original food items had t
 			eater.visible_message(span_notice("[eater] жадно [eatverb] [parent].") , span_notice("Жадно пожираю [parent]."))
 		else if(fullness > 150 && fullness < 500)
 			eater.visible_message(span_notice("[eater] [eatverb] [parent].") , span_notice("Кушаю [parent]."))
-		else if(fullness > 500 && fullness < 600)
+		else if((fullness > 500 && fullness < 600) || HAS_TRAIT(eater, TRAIT_BLUEMOON_DEVOURER))
 			eater.visible_message(span_notice("[eater] нехотя [eatverb] кусочек [parent].") , span_notice("Нямкаю кусочек [parent]."))
 		else if(fullness > (600 * (1 + eater.overeatduration / (4000 SECONDS))))	// The more you eat - the more you can eat
 			eater.visible_message(span_warning("[eater] не может запихнуть [parent] в свою глотку!") , span_warning("В меня больше не лезет [parent]!"))

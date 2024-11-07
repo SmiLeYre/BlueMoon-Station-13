@@ -1,6 +1,7 @@
 /datum/orbit_menu
 	var/mob/dead/observer/owner
 	var/auto_observe = FALSE
+	var/compact_mode = TRUE // BLUEMOON ADD - компактный режим без ненужной информации
 
 /datum/orbit_menu/New(mob/dead/observer/new_owner)
 	if(!istype(new_owner))
@@ -41,12 +42,20 @@
 				owner.do_observe(owner.orbit_target)
 			else
 				owner.reset_perspective(null)
+		// BLUEMOON ADD START - компактный режим без ненужной информации
+		if ("toggle_compact_mode")
+			compact_mode = !compact_mode
+			update_static_data(owner, ui)
+			. = TRUE
+		// BLUEMOON ADD END
 
 /datum/orbit_menu/ui_data(mob/user)
 	var/list/data = list()
 	data["auto_observe"] = auto_observe
+	data["compact_mode"] = compact_mode // BLUEMOON ADD - компактный режим без ненужной информации
 	return data
 
+// BLUEMOON EDIT START - правки орбита. В основном, изменение отображения гостролей
 /datum/orbit_menu/ui_static_data(mob/user)
 	var/list/data = list()
 	var/list/alive = list()
@@ -56,8 +65,9 @@
 	var/list/ghosts = list()
 	var/list/misc = list()
 	var/list/npcs = list()
+	var/list/ghost_roles = list()
 
-	var/list/pois = getpois(skip_mindless = FALSE, specify_dead_role = FALSE)
+	var/list/pois = getpois(mobs_only = compact_mode, skip_mindless = !compact_mode, specify_dead_role = FALSE)
 	for (var/name in pois)
 		var/list/serialized = list()
 		serialized["name"] = name
@@ -70,25 +80,31 @@
 		if (istype(M))
 			if (isobserver(M))
 				ghosts += list(serialized)
-			else if (M.mind == null && M.stat == DEAD)
+			else if (M.mind == null && M.stat == DEAD && !compact_mode)
 				dead += list(serialized)
 			else if (M.mind && M.stat == DEAD)
 				dead_players += list(serialized)
 			else if (M.mind == null)
-				npcs += list(serialized)
+				if(!compact_mode)
+					npcs += list(serialized)
 			else
 				var/number_of_orbiters = M.orbiters?.orbiters?.len
 				if (number_of_orbiters)
 					serialized["orbiters"] = number_of_orbiters
 
 				var/datum/mind/mind = M.mind
-				var/was_antagonist = FALSE
+				var/was_special = FALSE
 
 				for (var/_A in mind.antag_datums)
 					var/datum/antagonist/A = _A
 					var/mob/dead/observer/O = user
-					if (A?.show_to_ghosts || !O?.can_reenter_corpse)
-						was_antagonist = TRUE
+					if(istype(A, /datum/antagonist/ghost_role))
+						was_special = TRUE
+						serialized["role"] = A.name
+						ghost_roles += list(serialized)
+						break // Я не верю, что гострольки могут быть антагами. Не хочу верить...
+					else if (A?.show_to_ghosts || !O?.can_reenter_corpse)
+						was_special = TRUE
 						serialized["antag"] = A.name
 						antagonists += list(serialized)
 						break
@@ -101,9 +117,9 @@
 
 				serialized["assignment"] = assignment
 
-				if (!was_antagonist)
+				if (!was_special)
 					alive += list(serialized)
-		else
+		else if(!compact_mode)
 			misc += list(serialized)
 
 	data["alive"] = alive
@@ -113,8 +129,10 @@
 	data["ghosts"] = ghosts
 	data["misc"] = misc
 	data["npcs"] = npcs
+	data["ghost_roles"] = ghost_roles
 
 	return data
+// BLUEMOON EDIT END
 
 /datum/orbit_menu/ui_assets()
 	. = ..() || list()

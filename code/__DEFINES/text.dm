@@ -232,3 +232,12 @@ GLOBAL_LIST_INIT(ddlc_chars, list(
 		var/_measurement = measurement; \
 		return_var = text2num(copytext(_measurement, findtextEx(_measurement, "x") + 1)); \
 	} while(FALSE);
+
+/// Lines the bubblegum hallucinatoin uses when it pops up
+#define BUBBLEGUM_HALLUCINATION_LINES list( \
+		span_colossus("Я БЕССМЕРТНЫЙ!"), \
+		span_colossus("Я ЗАХВАЧУ ВЕСЬ МИР!!"), \
+		span_colossus("Я ВИЖУ ТЕБЯ!"), \
+		span_colossus("НИКТО МЕНЯ НЕ ОСТАНОВИТ!"), \
+		span_colossus("ТЫ НЕ СМОЖЕШЬ БЕЖАТЬ ВЕЧНО!!!"), \
+	)

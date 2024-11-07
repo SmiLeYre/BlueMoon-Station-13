@@ -103,6 +103,7 @@
 	  */
 	var/list/implants = null
 
+	var/list/cybernetic_implants = null
 	///ID of the slot containing a gas tank
 	var/internals_slot = null
 
@@ -214,7 +215,7 @@
 	if(accessory)
 		var/obj/item/clothing/under/U = H.w_uniform
 		if(U)
-			U.attach_accessory(new accessory(H))
+			U.attach_accessory(new accessory(H), H)
 		else
 			WARNING("Unable to equip accessory [accessory] in outfit [name]. No uniform present!")
 
@@ -270,6 +271,11 @@
 			for(var/implant_type in implants)
 				var/obj/item/implant/I = new implant_type(H)
 				I.implant(H, null, TRUE)
+
+		if (cybernetic_implants)
+			for (var/cybernetic_implant_type in cybernetic_implants)
+				var/obj/item/organ/C = new cybernetic_implant_type()
+				C.Insert(H)
 
 	H.update_body()
 	return TRUE

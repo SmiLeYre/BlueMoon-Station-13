@@ -17,7 +17,7 @@
 	restricted_roles = list("Head of Security","Captain","Head of Personnel","Chief Engineer","Research Director","Chief Medical Officer","Quartermaster","Warden","Detective","Security Officer","Brig Physician","Blueshield","Bridge Officer")
 
 /datum/gear/head/orvkepicom
-	restricted_roles = list("Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Research Director", "Chief Medical Officer", "Quartermaster", "Bridge Officer")
+	restricted_roles = list("Head of Security","Bridge Officer", "Captain", "Head of Personnel", "Chief Engineer", "Research Director", "Chief Medical Officer", "Quartermaster", "Bridge Officer")
 
 /datum/gear/head/orvkepisec
 	restricted_roles = list("Warden", "Detective", "Security Officer", "Head of Security", "Brig Physician", "Blueshield")
@@ -105,3 +105,21 @@
 /datum/gear/head/hoodcowl
 	name = "Hood cowl"
 	path= /obj/item/clothing/head/hoodcowl
+
+// BM add
+/datum/gear/head/syndiewarden/civilian
+    name = "Master At Arms' Police Hat"
+    path = /obj/item/clothing/head/hats/warden/syndicate/civil
+
+/datum/gear/head/syndieberet/civil
+    name = "brig officer's beret"
+    path = /obj/item/clothing/head/beret/sec/syndicate/civil
+
+/datum/gear/head/syndieutility/civil
+    name = "engine tech utility cover"
+    path = /obj/item/clothing/head/soft/sec/syndicate/civil
+
+/datum/gear/head/swatds/civilian
+    name = "SWAT helmet"
+    path = /obj/item/clothing/head/helmet/swat/ds/civil
+//BM add end

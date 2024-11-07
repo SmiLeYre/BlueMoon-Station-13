@@ -204,8 +204,8 @@
 		if(isnum(detonation_time.data) && detonation_time.data > 0)
 			dt = clamp(detonation_time.data, 1, 12)*20
 		else
-			dt = 20
-		addtimer(CALLBACK(attached_grenade, /obj/item/grenade.proc/prime), dt)
+			dt = 15
+		addtimer(CALLBACK(attached_grenade, TYPE_PROC_REF(/obj/item/grenade, prime)), dt)
 		var/atom/holder = loc
 		message_admins("activated a grenade assembly. Last touches: Assembly: [holder.fingerprintslast] Circuit: [fingerprintslast] Grenade: [attached_grenade.fingerprintslast]")
 
@@ -345,7 +345,7 @@
 /obj/item/integrated_circuit/weaponized/proc/attempt_stun(var/mob/living/L,var/stunforce = 70) //Copied from stunbaton code.
 
 	if(!L || !isliving(L))
-		return 0
+		return FALSE
 
 	L.DefaultCombatKnockdown(stunforce)
 	SEND_SIGNAL(L, COMSIG_LIVING_MINOR_SHOCK)
@@ -359,4 +359,4 @@
 		var/mob/living/carbon/human/H = L
 		H.forcesay(GLOB.hit_appends)
 
-	return 1
+	return TRUE

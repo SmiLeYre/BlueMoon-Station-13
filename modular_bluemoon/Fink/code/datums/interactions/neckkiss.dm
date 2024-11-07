@@ -7,6 +7,11 @@
 	write_log_target = "was kissed by"
 	interaction_sound = null
 
+	p13user_emote = PLUG13_EMOTE_BASIC
+	p13target_emote = PLUG13_EMOTE_BASIC
+	p13user_strength = PLUG13_STRENGTH_LOW
+	p13target_strength = PLUG13_STRENGTH_LOW
+
 /datum/interaction/lewd/neckkiss/post_interaction(mob/living/user, mob/living/target)
 	. = ..()
 	if(user.get_lust() < 100)

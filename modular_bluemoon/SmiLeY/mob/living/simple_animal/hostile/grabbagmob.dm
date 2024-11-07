@@ -325,7 +325,7 @@
 	projectilesound = 'sound/weapons/laser3.ogg'
 	loot = list(/obj/effect/spawner/lootdrop/maintenance/five)
 	casingtype = null
-	projectiletype = /obj/item/projectile/beam/lasertag
+	projectiletype = /obj/item/projectile/beam/laser //bluemoon change
 
 // Damaged Borgs
 
@@ -409,7 +409,7 @@
 	icon = 'modular_bluemoon/smiley/icons/mob/newmobs.dmi'
 	icon_state = "evilbotsec"
 	icon_living = "evilbotsec"
-	casingtype = /obj/item/ammo_casing/c45
+	casingtype = /obj/item/ammo_casing/c45/lethal
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 	health = 300
 	maxHealth = 300
@@ -468,7 +468,7 @@
 	icon = 'modular_bluemoon/smiley/icons/mob/newmobs.dmi'
 	icon_state = "sentrybot"
 	icon_living = "sentrybot"
-	casingtype = /obj/item/ammo_casing/c45
+	casingtype = /obj/item/ammo_casing/c45/lethal
 	projectilesound = 'sound/weapons/gun/smg/shot.ogg'
 	health = 250
 	maxHealth = 250
@@ -957,7 +957,7 @@
 	icon_living = "voxspacelaser"
 	icon_dead = "voxspacedead"
 	loot = list(/obj/effect/spawner/lootdrop/high_loot_toilet = 4)
-	projectiletype = /obj/item/projectile/beam/lasertag
+	projectiletype = /obj/item/projectile/beam/laser
 	casingtype = null
 	projectilesound = 'sound/weapons/laser3.ogg'
 

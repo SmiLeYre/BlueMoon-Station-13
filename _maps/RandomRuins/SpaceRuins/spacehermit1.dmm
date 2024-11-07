@@ -1,0 +1,3871 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"al" = (
+/mob/living/simple_animal/hostile/carp/megacarp,
+/turf/template_noop,
+/area/template_noop)
+"aF" = (
+/obj/item/stack/sheet/metal,
+/obj/effect/decal/cleanable/glass/plastitanium,
+/obj/item/stack/cable_coil/cut/random,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"aV" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	layer = 2.9
+	},
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/table/glass,
+/obj/machinery/recharger,
+/obj/item/seeds/tower,
+/obj/machinery/plantgenes/seedvault,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"bv" = (
+/obj/item/storage/bag/ore,
+/obj/item/pickaxe/drill,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"bL" = (
+/obj/structure/ore_box,
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"bO" = (
+/obj/item/stack/sheet/metal,
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"bX" = (
+/obj/structure/fluff/drake_statue,
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/ruin/powered)
+"ce" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12344;
+	name = "Lockdown"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"cQ" = (
+/obj/effect/turf_decal/vg_decals/numbers/two,
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/survivalpod/nonpowered)
+"cW" = (
+/obj/effect/decal/cleanable/ash/large,
+/turf/open/floor/wood/damturf/broken6,
+/area/ruin/powered)
+"dc" = (
+/obj/effect/turf_decal/loading_area,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"dt" = (
+/turf/closed/wall/mineral/titanium/interior,
+/area/ruin/powered)
+"dF" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/turf/open/floor/grass,
+/area/ruin/powered)
+"dN" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered)
+"dT" = (
+/turf/open/floor/wood/damturf/broken3,
+/area/ruin/powered)
+"eb" = (
+/obj/structure/rack,
+/obj/item/mining_scanner,
+/obj/item/mining_scanner,
+/obj/item/flashlight/lantern,
+/obj/item/flashlight/lantern,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"eg" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/wood/damturf/broken3,
+/area/ruin/powered)
+"eS" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/pump,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"fc" = (
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"fg" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor/preopen{
+	id = 12345;
+	name = "Poddoor"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/powered)
+"fk" = (
+/obj/effect/mob_spawn/human/corpse/pirate,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plating/asteroid,
+/area/ruin/powered)
+"fQ" = (
+/turf/open/floor/plating/asteroid,
+/area/ruin/powered)
+"fV" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"gc" = (
+/obj/structure/fans/tiny,
+/obj/docking_port/mobile{
+	dir = 4;
+	dwidth = 3;
+	height = 12;
+	shuttle_id = "syndicate_dropship";
+	name = "Syndicate Drop Ship";
+	width = 7
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12345;
+	name = "Poddoor"
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/powered)
+"gm" = (
+/obj/structure/chair/comfy/black{
+	dir = 8
+	},
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"gq" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered)
+"gw" = (
+/obj/effect/turf_decal/vg_decals/numbers/one,
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/survivalpod/nonpowered)
+"gy" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/machinery/light/directional/south,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"gD" = (
+/turf/closed/mineral/random,
+/area/survivalpod/nonpowered)
+"gH" = (
+/obj/machinery/hydroponics/constructable/automagic,
+/turf/open/floor/wood/damturf/broken3,
+/area/ruin/powered)
+"gM" = (
+/obj/structure/rack,
+/obj/item/storage/box/mre/menu1,
+/obj/item/storage/box/mre/menu1,
+/obj/item/storage/box/mre/menu2,
+/obj/item/storage/box/mre/menu2,
+/obj/item/storage/box/mre/menu3,
+/obj/item/storage/box/mre/menu3,
+/obj/item/storage/box/mre/menu4,
+/obj/item/storage/box/mre/menu4,
+/obj/item/reagent_containers/glass/beaker/waterbottle/large,
+/obj/item/reagent_containers/glass/beaker/waterbottle/large,
+/obj/item/reagent_containers/glass/beaker/waterbottle/large,
+/obj/item/reagent_containers/glass/beaker/waterbottle/large,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"hj" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"hm" = (
+/obj/item/circuitboard/machine/autolathe,
+/obj/item/storage/box/stockparts/basic,
+/obj/item/stock_parts/cell/high/plus{
+	charge = 15000
+	},
+/obj/structure/rack/shelf,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"hA" = (
+/obj/structure/barricade/wooden,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"ip" = (
+/turf/closed/mineral/gibtonite,
+/area/ruin/powered)
+"iG" = (
+/obj/item/clothing/suit/space/hardsuit/mining,
+/obj/structure/rack,
+/obj/item/clothing/mask/gas/heva,
+/obj/item/card/id/mining,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"jl" = (
+/obj/effect/turf_decal/stripes/box,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"jy" = (
+/obj/item/stack/sheet/metal,
+/obj/effect/decal/cleanable/glass/plastitanium,
+/obj/item/electronics/airlock,
+/obj/item/stack/cable_coil/cut/random,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8;
+	pixel_y = 11
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"kv" = (
+/obj/item/trash/chips,
+/turf/open/floor/wood/damturf/broken3,
+/area/ruin/powered)
+"kD" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12344;
+	name = "Lockdown"
+	},
+/obj/effect/spawner/structure/window/plastitanium/pirate,
+/obj/structure/sign/poster/contraband/c20r,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"kE" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered)
+"lB" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"lX" = (
+/turf/closed/mineral/random,
+/area/ruin/powered)
+"ml" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/wood/damturf/broken7,
+/area/ruin/powered)
+"mo" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/space/anthro/cat,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"mr" = (
+/obj/effect/mob_spawn/human/hermit{
+	flavour_text = "Твоя крио-капсула на спасательном судне вышла из строя и ты пробудился от своего долгого сна! Проклятая машина, ты должна была пробудить меня через десять дней, а не десять недель! Куда делись остальные, пока нас не было? Удалось ли им выжить? Эти мысли развеиваются еще одним воспоминанием о том, как вы сюда попали... ";
+	job_description = "Space Hermit"
+	},
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"mE" = (
+/obj/structure/fermenting_barrel,
+/turf/open/floor/wood/damturf/broken1,
+/area/ruin/powered)
+"nm" = (
+/turf/template_noop,
+/area/template_noop)
+"nr" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"nu" = (
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plating/asteroid,
+/area/ruin/powered)
+"oE" = (
+/obj/structure/table/wood,
+/obj/item/shovel,
+/obj/item/shovel/serrated,
+/obj/item/toy/plush/miner,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"oX" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/powered)
+"pf" = (
+/turf/closed/wall/mineral/titanium,
+/area/ruin/powered)
+"pm" = (
+/obj/structure/salvage/metal_frame,
+/obj/effect/decal/cleanable/glass,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"pu" = (
+/mob/living/simple_animal/hostile/malf_drone,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"pJ" = (
+/obj/machinery/vending/wardrobe/syndie_wardrobe,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"pT" = (
+/turf/closed/mineral/uranium,
+/area/ruin/powered)
+"qd" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 4
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"qi" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered)
+"qt" = (
+/obj/item/trash/energybar,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/wood/damturf/broken1,
+/area/ruin/powered)
+"qw" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered)
+"qO" = (
+/obj/machinery/door/airlock/public/glass{
+	name = "Shuttle Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/wood/damturf/broken1,
+/area/ruin/powered)
+"rh" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/machinery/light/directional/east,
+/obj/structure/frame,
+/obj/item/circuitboard/machine/smes,
+/obj/item/stack/cable_coil,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/powered)
+"rs" = (
+/turf/closed/mineral/random/high_chance,
+/area/ruin/powered)
+"rv" = (
+/obj/machinery/ore_silo,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"sf" = (
+/obj/machinery/power/terminal{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/item/wrench,
+/obj/item/stack/sheet/mineral/plasma{
+	amount = 50
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/powered)
+"sI" = (
+/obj/structure/window/reinforced{
+	dir = 4
+	},
+/obj/structure/window/reinforced,
+/obj/structure/table/glass,
+/obj/item/seeds/glowshroom/glowcap,
+/obj/item/seeds/glowshroom/glowcap,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"tD" = (
+/turf/open/floor/wood/damturf/broken4,
+/area/ruin/powered)
+"tF" = (
+/obj/machinery/hydroponics/constructable/automagic,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/turf/open/floor/wood/damturf/broken1,
+/area/ruin/powered)
+"tU" = (
+/turf/closed/mineral/titanium,
+/area/ruin/powered)
+"tX" = (
+/obj/machinery/computer,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"tY" = (
+/obj/effect/turf_decal/box,
+/obj/machinery/light/directional/east,
+/obj/effect/spawner/lootdrop/syndicate_present,
+/obj/effect/spawner/lootdrop/syndicate_present,
+/obj/item/gun/ballistic/automatic/ak47/akm,
+/obj/item/gun/ballistic/automatic/ak47/akm,
+/obj/item/ammo_box/magazine/ak47/ap,
+/obj/item/ammo_box/magazine/ak47/ap,
+/obj/item/ammo_box/magazine/ak47/ap,
+/obj/item/ammo_box/magazine/ak47/ap,
+/obj/item/ammo_box/magazine/ak47/ap,
+/obj/item/ammo_box/magazine/ak47/ap,
+/obj/structure/rack,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/random,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/powered)
+"uf" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered)
+"uj" = (
+/obj/structure/sink/oil_well,
+/turf/open/floor/wood/damturf/broken1,
+/area/ruin/powered)
+"ur" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/template_noop,
+/area/template_noop)
+"uE" = (
+/turf/closed/mineral/silver,
+/area/ruin/powered)
+"uM" = (
+/obj/structure/sign/poster/contraband/cybersun,
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered)
+"uY" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered)
+"uZ" = (
+/obj/structure/statue/creepy_statue/corpse,
+/turf/open/floor/plating/asteroid,
+/area/ruin/powered)
+"vv" = (
+/obj/structure/chair/comfy/shuttle,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"vL" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/mob_spawn/human/corpse/pirate,
+/obj/structure/closet/crate/rcd,
+/turf/open/floor/mineral/titanium/blue,
+/area/ruin/powered)
+"wc" = (
+/obj/structure/closet/secure_closet/hydroponics,
+/turf/open/floor/wood/damturf/broken3,
+/area/ruin/powered)
+"wq" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/mob/living/simple_animal/hostile/syndicate/melee/sword/space/stormtrooper{
+	faction = list("Syndicate")
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"wt" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"wx" = (
+/turf/open/floor/plating/asteroid/airless,
+/area/survivalpod/nonpowered)
+"wA" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"xx" = (
+/obj/item/gps/computer,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"xy" = (
+/obj/machinery/light,
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/drone,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"xz" = (
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8;
+	pixel_y = 11
+	},
+/obj/effect/decal/cleanable/blood/gibs/body,
+/obj/effect/decal/cleanable/blood/gibs/core,
+/turf/open/floor/wood/damturf/broken1,
+/area/ruin/powered)
+"ys" = (
+/obj/structure/chair/comfy/shuttle,
+/obj/machinery/light/directional/north,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"yP" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"yS" = (
+/turf/open/floor/wood/damturf/broken5,
+/area/ruin/powered)
+"zf" = (
+/obj/structure/salvage/remains,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/powered)
+"Ab" = (
+/obj/effect/mob_spawn/human/corpse/syndicatesoldier,
+/obj/effect/decal/cleanable/blood/splatter,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"Ak" = (
+/obj/item/stack/sheet/metal,
+/obj/item/stack/sheet/metal,
+/obj/effect/decal/cleanable/glass/plastitanium,
+/obj/item/stack/cable_coil/cut/random,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"Ap" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 8
+	},
+/turf/open/floor/grass,
+/area/ruin/powered)
+"AD" = (
+/obj/machinery/light,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"AE" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating/asteroid/airless,
+/area/survivalpod/nonpowered)
+"AG" = (
+/obj/structure/shuttle/engine/propulsion/burst{
+	dir = 1
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ruin/powered)
+"AT" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"Bf" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 9
+	},
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"Bu" = (
+/turf/closed/mineral/diamond,
+/area/ruin/powered)
+"Bx" = (
+/obj/effect/decal/cleanable/blood/gibs/human/limb,
+/obj/effect/decal/cleanable/blood/tracks,
+/obj/item/claymore/baron,
+/obj/effect/mob_spawn/human/miner,
+/turf/open/floor/plating/asteroid/airless,
+/area/survivalpod/nonpowered)
+"BI" = (
+/mob/living/simple_animal/hostile/syndicate/melee/ushm{
+	faction = list("Syndicate")
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"BT" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"BU" = (
+/turf/open/floor/wood/damturf/broken7,
+/area/ruin/powered)
+"Ct" = (
+/mob/living/simple_animal/hostile/syndicate/ranged/shotgun/space/stormtrooper/anthro/fox,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"CO" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/turf/open/floor/grass,
+/area/ruin/powered)
+"De" = (
+/obj/effect/turf_decal/stripes/line{
+	dir = 8
+	},
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"Es" = (
+/obj/structure/table/wood,
+/obj/item/xenoarch/clean/hammer/cm2,
+/obj/item/xenoarch/clean/hammer/cm3,
+/obj/item/xenoarch/clean/hammer/cm4,
+/obj/item/xenoarch/clean/hammer/cm5,
+/obj/item/xenoarch/clean/hammer/cm6,
+/obj/item/xenoarch/clean/brush,
+/obj/item/pickaxe,
+/obj/item/pickaxe,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"Eu" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/obj/effect/decal/remains/human,
+/obj/effect/mob_spawn/human/corpse/pirate,
+/obj/item/storage/box/stockparts/deluxe,
+/obj/item/circuitboard/machine/circuit_imprinter/department,
+/obj/item/circuitboard/machine/protolathe/department,
+/turf/open/floor/mineral/titanium/blue,
+/area/ruin/powered)
+"ED" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/machinery/mineral/ore_redemption,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"EU" = (
+/obj/item/stack/sheet/metal,
+/obj/effect/decal/cleanable/glass,
+/obj/item/electronics/airlock,
+/obj/item/stack/cable_coil/cut/random,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8;
+	pixel_y = 11
+	},
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"FI" = (
+/turf/closed/mineral/random/low_chance,
+/area/ruin/powered)
+"FM" = (
+/mob/living/simple_animal/hostile/asteroid/goliath/beast/ancient,
+/turf/open/floor/plating/asteroid,
+/area/ruin/powered)
+"Gn" = (
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"Gt" = (
+/obj/effect/spawner/lootdrop/salvage,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"Hb" = (
+/obj/structure/closet/crate/trashcart,
+/obj/effect/spawner/lootdrop/glowstick,
+/obj/effect/spawner/lootdrop/cig_packs,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/turf/open/floor/wood/damturf/broken1,
+/area/ruin/powered)
+"Hd" = (
+/mob/living/simple_animal/hostile/syndicate/melee/space/anthro/lizard,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"Hp" = (
+/mob/living/simple_animal/hostile/asteroid/goliath{
+	health = 20
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/survivalpod/nonpowered)
+"HO" = (
+/obj/structure/closet/crate/trashcart,
+/obj/effect/spawner/lootdrop/seed_vault,
+/turf/open/floor/wood/damturf/broken3,
+/area/ruin/powered)
+"HT" = (
+/obj/effect/decal/cleanable/glass/plastitanium,
+/obj/item/stack/rods,
+/obj/item/stack/rods,
+/obj/item/stack/rods,
+/obj/item/stack/cable_coil,
+/turf/open/floor/plating{
+	initial_gas_mix = "o2=14;n2=23;TEMP=300"
+	},
+/area/ruin/powered)
+"HU" = (
+/obj/item/stack/sheet/metal{
+	amount = 50
+	},
+/obj/item/stack/sheet/metal{
+	amount = 50
+	},
+/obj/item/stack/sheet/glass{
+	amount = 50
+	},
+/obj/item/stack/sheet/glass{
+	amount = 50
+	},
+/obj/item/rcd_ammo,
+/obj/item/rcd_ammo,
+/obj/item/rcd_ammo,
+/obj/item/rcd_ammo,
+/obj/structure/rack/shelf,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"HW" = (
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/survivalpod/nonpowered)
+"Io" = (
+/obj/effect/decal/cleanable/blood/gibs/human,
+/turf/open/floor/plating/asteroid,
+/area/ruin/powered)
+"Iw" = (
+/obj/item/toy/plush/bubbleplush,
+/turf/open/floor/plating/asteroid,
+/area/ruin/powered)
+"Jf" = (
+/obj/item/stack/sheet/metal,
+/obj/effect/decal/cleanable/glass,
+/obj/item/stack/cable_coil/cut/random,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"Jw" = (
+/obj/machinery/light/directional/west,
+/obj/item/radio/intercom{
+	pixel_y = -30
+	},
+/obj/machinery/turretid{
+	desc = "Used to control the Inteceptor's automated defenses.";
+	req_access = list(150);
+	pixel_x = -30
+	},
+/obj/item/broken_missile,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 10
+	},
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"Jy" = (
+/obj/structure/window/reinforced{
+	dir = 1;
+	layer = 2.9
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/table/glass,
+/obj/item/clothing/accessory/armband/hydro,
+/obj/item/clothing/accessory/armband/hydro,
+/obj/item/clothing/accessory/armband/hydro,
+/obj/item/clothing/accessory/armband/hydro,
+/obj/item/seeds/matrigrass,
+/obj/effect/spawner/lootdrop/druggie_pill,
+/obj/effect/spawner/lootdrop/druggie_pill,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"Kf" = (
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random,
+/turf/open/floor/plating/asteroid,
+/area/ruin/powered)
+"Kt" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered)
+"Kw" = (
+/obj/machinery/hydroponics/constructable/automagic,
+/turf/open/floor/wood/damturf/broken4,
+/area/ruin/powered)
+"KE" = (
+/obj/machinery/door/airlock/titanium{
+	name = "Escape Pod Airlock"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/mineral/titanium/blue,
+/area/ruin/powered)
+"KI" = (
+/obj/effect/mob_spawn/human/corpse/assistant,
+/obj/effect/decal/cleanable/vomit,
+/obj/effect/decal/cleanable/blood,
+/mob/living/simple_animal/hostile/syndicate/melee/space/anthro{
+	faction = list("Syndicate")
+	},
+/turf/open/floor/wood/damturf/broken5,
+/area/ruin/powered)
+"KU" = (
+/obj/machinery/light,
+/obj/machinery/power/apc/auto_name/south,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"Lh" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12345;
+	name = "Engine Poddoor"
+	},
+/obj/structure/shuttle/engine/propulsion/burst/left{
+	dir = 8
+	},
+/turf/open/floor/plating,
+/area/ruin/powered)
+"LH" = (
+/mob/living/simple_animal/hostile/malf_drone,
+/turf/template_noop,
+/area/template_noop)
+"LU" = (
+/obj/structure/shuttle/engine/propulsion/burst{
+	dir = 8
+	},
+/turf/closed/wall/mineral/titanium/interior,
+/area/ruin/powered)
+"LV" = (
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = 12344;
+	name = "Lockdown";
+	pixel_x = -28;
+	pixel_y = -8
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = 12345;
+	name = "Engine Poddoor";
+	pixel_x = -28;
+	pixel_y = 8
+	},
+/obj/machinery/light/directional/west,
+/obj/machinery/power/apc/auto_name/north{
+	cell_type = null
+	},
+/obj/item/mod/construction/broken_core,
+/obj/effect/decal/cleanable/vomit/old,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"Mi" = (
+/obj/structure/rack,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/effect/turf_decal/bot,
+/obj/item/tank/internals/oxygen,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"MY" = (
+/turf/closed/mineral/gold,
+/area/ruin/powered)
+"Nf" = (
+/obj/effect/turf_decal/vg_decals/numbers/five,
+/turf/closed/wall/mineral/titanium/survival/pod,
+/area/survivalpod/nonpowered)
+"Np" = (
+/obj/effect/mob_spawn/human/miner/explorer,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"NG" = (
+/obj/structure/elite_tumor,
+/turf/closed/mineral/random/low_chance,
+/area/ruin/powered)
+"Oh" = (
+/obj/item/claymore/cerberus,
+/obj/effect/mob_spawn/human/corpse/miner,
+/turf/open/floor/plating/asteroid,
+/area/ruin/powered)
+"Ot" = (
+/obj/item/stack/ore/uranium,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"ON" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12344;
+	name = "Lockdown"
+	},
+/obj/effect/spawner/structure/window/plastitanium/pirate,
+/turf/open/floor/plating,
+/area/ruin/powered)
+"OP" = (
+/mob/living/simple_animal/hostile/syndicate/melee/anthro,
+/turf/open/floor/wood/damturf/broken3,
+/area/ruin/powered)
+"Pc" = (
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/plating/asteroid,
+/area/ruin/powered)
+"Pl" = (
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/obj/structure/window/reinforced,
+/obj/structure/table/glass,
+/obj/item/vending_refill/hydronutrients,
+/obj/item/vending_refill/hydroseeds,
+/turf/open/floor/grass,
+/area/ruin/powered)
+"Ps" = (
+/obj/machinery/smartfridge/survival_pod,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"PK" = (
+/obj/structure/salvage/remains,
+/obj/effect/decal/cleanable/glass/plastitanium,
+/obj/item/stack/cable_coil/cut/random,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"Qk" = (
+/obj/item/trash/raisins,
+/turf/open/floor/wood/damturf/broken7,
+/area/ruin/powered)
+"QF" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered)
+"QG" = (
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/machinery/power/port_gen/pacman,
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/powered)
+"QH" = (
+/mob/living/simple_animal/hostile/shark/laser{
+	health = 100;
+	name = "Special Gorlex Laser-Shark";
+	faction = list("Syndicate")
+	},
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"Rv" = (
+/obj/machinery/mineral/equipment_vendor/golem,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"RD" = (
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating/asteroid,
+/area/ruin/powered)
+"RX" = (
+/obj/structure/chair/comfy/shuttle{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/spawner/lootdrop/healing_kits,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"Si" = (
+/obj/structure/chair/comfy/black{
+	dir = 4
+	},
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"SL" = (
+/obj/machinery/door/airlock/survival_pod,
+/obj/machinery/poweredfans,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"TB" = (
+/mob/living/simple_animal/hostile/carp,
+/turf/template_noop,
+/area/template_noop)
+"TZ" = (
+/obj/machinery/button/door{
+	id = 5434;
+	name = "Poddoors";
+	pixel_y = 24
+	},
+/obj/structure/tank_dispenser,
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"Un" = (
+/obj/item/ancientartifact/florafossil,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"Vx" = (
+/obj/structure/shuttle/engine/propulsion/burst{
+	dir = 4
+	},
+/turf/closed/wall/mineral/titanium,
+/area/ruin/powered)
+"VX" = (
+/mob/living/simple_animal/hostile/asteroid/basilisk/watcher/random,
+/obj/effect/decal/cleanable/blood/tracks,
+/turf/open/floor/plating/asteroid,
+/area/ruin/powered)
+"Wc" = (
+/obj/structure/chair/comfy/black{
+	dir = 1
+	},
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"Wv" = (
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/powered)
+"WE" = (
+/obj/item/analyzer,
+/obj/item/xenoarch/help/scanner,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"WF" = (
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"WH" = (
+/obj/effect/decal/cleanable/blood/gibs/xeno/torso,
+/obj/effect/decal/cleanable/blood/gibs/xeno/up,
+/obj/effect/decal/remains/human,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"WJ" = (
+/obj/effect/mob_spawn/human/miner/explorer,
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/obj/effect/decal/cleanable/blood,
+/turf/open/floor/wood/damturf/broken7,
+/area/ruin/powered)
+"WZ" = (
+/obj/item/storage/bag/ore,
+/obj/item/stack/ore/diamond,
+/obj/item/stack/ore/diamond,
+/obj/item/stack/ore/diamond,
+/obj/item/stack/ore/diamond,
+/obj/item/stack/ore/diamond,
+/obj/item/stack/ore/diamond,
+/obj/item/stack/ore/plasma,
+/obj/item/stack/ore/plasma,
+/obj/item/stack/ore/plasma,
+/obj/item/stack/ore/plasma,
+/obj/item/stack/ore/plasma,
+/obj/item/stack/ore/plasma,
+/obj/item/stack/ore/plasma,
+/obj/item/stack/ore/plasma,
+/obj/item/stack/ore/plasma,
+/obj/item/stack/ore/plasma,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"Xc" = (
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"Xg" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/decal/cleanable/blood/tracks{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/powered)
+"Xu" = (
+/mob/living/simple_animal/hostile/shark/kawaii,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+"Xy" = (
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket"
+	},
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket"
+	},
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket"
+	},
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket"
+	},
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket"
+	},
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 3
+	},
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 3
+	},
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 3
+	},
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 3
+	},
+/obj/item/tank/internals/emergency_oxygen/double{
+	pixel_x = 3
+	},
+/obj/item/clothing/mask/breath{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/obj/item/clothing/mask/breath{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/obj/item/clothing/mask/breath{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/obj/item/clothing/mask/breath{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/obj/item/clothing/mask/breath{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/obj/item/clothing/head/hardhat/orange{
+	name = "protective hat";
+	pixel_y = 9
+	},
+/obj/item/clothing/head/hardhat/orange{
+	name = "protective hat";
+	pixel_y = 9
+	},
+/obj/item/clothing/head/hardhat/orange{
+	name = "protective hat";
+	pixel_y = 9
+	},
+/obj/item/clothing/head/hardhat/orange{
+	name = "protective hat";
+	pixel_y = 9
+	},
+/obj/item/clothing/head/hardhat/orange{
+	name = "protective hat";
+	pixel_y = 9
+	},
+/obj/structure/closet/crate/internals,
+/obj/effect/spawner/lootdrop/armory_contraband,
+/obj/effect/spawner/lootdrop/melee,
+/turf/open/floor/pod/dark,
+/area/survivalpod/nonpowered)
+"Yh" = (
+/obj/structure/shuttle/engine/propulsion/burst,
+/turf/closed/wall/mineral/titanium,
+/area/ruin/powered)
+"Yn" = (
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = 12345;
+	name = "Engine Poddoor"
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/ruin/powered)
+"ZV" = (
+/obj/structure/shipping_container/gorlex/red,
+/turf/open/floor/plating/asteroid/airless,
+/area/ruin/powered)
+
+(1,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+TB
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+fc
+fc
+pu
+fc
+fc
+pu
+nm
+nm
+nm
+LH
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(2,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+LU
+KE
+LU
+FI
+fc
+fc
+fc
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(3,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+FI
+FI
+FI
+FI
+FI
+FI
+fc
+fc
+fc
+pf
+vL
+pf
+lX
+FI
+FI
+FI
+Gt
+fc
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(4,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+fc
+pu
+fc
+pf
+Eu
+pf
+lX
+FI
+FI
+FI
+FI
+FI
+fc
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(5,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+fc
+fc
+fc
+fc
+fc
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+rs
+fc
+fc
+fc
+dt
+HT
+dt
+lX
+FI
+FI
+FI
+FI
+FI
+FI
+fc
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(6,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+FI
+FI
+FI
+FI
+Gt
+FI
+FI
+FI
+rs
+FI
+lX
+FI
+lX
+FI
+FI
+FI
+lX
+fc
+fc
+fc
+ip
+lX
+lX
+lX
+lX
+FI
+FI
+FI
+FI
+FI
+fc
+nm
+nm
+nm
+nm
+nm
+"}
+(7,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+FI
+lX
+lX
+lX
+lX
+FI
+FI
+rs
+FI
+FI
+FI
+FI
+FI
+lX
+lX
+lX
+lX
+lX
+fc
+fc
+fc
+lX
+lX
+lX
+FI
+lX
+lX
+lX
+lX
+FI
+FI
+FI
+fc
+nm
+nm
+nm
+nm
+"}
+(8,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+FI
+nm
+nm
+nm
+nm
+nm
+fc
+FI
+lX
+lX
+lX
+lX
+FI
+FI
+FI
+pT
+FI
+FI
+FI
+FI
+lX
+FI
+lX
+lX
+tU
+lX
+rs
+fc
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+FI
+FI
+FI
+fc
+nm
+nm
+nm
+"}
+(9,1,1) = {"
+nm
+nm
+nm
+nm
+fc
+FI
+FI
+fc
+nm
+nm
+nm
+nm
+fc
+FI
+lX
+lX
+lX
+lX
+rs
+rs
+rs
+FI
+FI
+FI
+FI
+lX
+lX
+FI
+tU
+FI
+FI
+FI
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+lX
+lX
+lX
+lX
+rs
+FI
+FI
+FI
+fc
+nm
+nm
+"}
+(10,1,1) = {"
+nm
+nm
+nm
+nm
+FI
+FI
+FI
+FI
+QH
+nm
+nm
+fc
+fc
+FI
+lX
+lX
+lX
+lX
+rs
+pT
+rs
+FI
+lX
+rs
+rs
+lX
+FI
+lX
+lX
+lX
+rs
+lX
+lX
+lX
+lX
+rs
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+fc
+nm
+nm
+"}
+(11,1,1) = {"
+nm
+nm
+nm
+fc
+FI
+FI
+FI
+FI
+Ab
+ur
+ur
+wt
+fc
+FI
+lX
+lX
+lX
+lX
+FI
+FI
+lX
+FI
+Bu
+FI
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+rs
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+rs
+lX
+FI
+FI
+fc
+nm
+"}
+(12,1,1) = {"
+nm
+nm
+nm
+fc
+FI
+FI
+FI
+FI
+fc
+nm
+nm
+fc
+fc
+fc
+FI
+lX
+lX
+lX
+lX
+lX
+Bu
+FI
+lX
+FI
+FI
+lX
+rs
+lX
+rs
+rs
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+MY
+lX
+lX
+lX
+uE
+rs
+lX
+FI
+FI
+fc
+nm
+"}
+(13,1,1) = {"
+nm
+nm
+nm
+fc
+FI
+FI
+FI
+FI
+QH
+nm
+nm
+fc
+QH
+fc
+FI
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+FI
+FI
+FI
+lX
+FI
+lX
+FI
+FI
+lX
+rs
+lX
+lX
+lX
+lX
+rs
+lX
+MY
+rs
+lX
+lX
+rs
+lX
+lX
+lX
+FI
+FI
+fc
+nm
+"}
+(14,1,1) = {"
+nm
+nm
+nm
+nm
+FI
+FI
+FI
+fc
+fc
+nm
+nm
+fc
+ZV
+fc
+lX
+lX
+lX
+lX
+lX
+lX
+rs
+lX
+FI
+rs
+FI
+lX
+lX
+lX
+FI
+FI
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+uE
+lX
+lX
+rs
+FI
+FI
+fc
+nm
+"}
+(15,1,1) = {"
+nm
+nm
+nm
+nm
+fc
+FI
+FI
+fc
+fc
+kE
+fg
+gc
+fg
+kE
+lX
+lX
+rs
+lX
+lX
+lX
+lX
+lX
+FI
+FI
+FI
+BT
+rs
+rs
+lX
+rs
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+FI
+fc
+nm
+"}
+(16,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+FI
+nm
+fc
+kE
+TZ
+Xc
+Xc
+kE
+lX
+lX
+lX
+rs
+lX
+lX
+lX
+rs
+lX
+lX
+lX
+lX
+lX
+FI
+FI
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+fc
+TB
+"}
+(17,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+uM
+hj
+wA
+mo
+kE
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+FI
+lX
+lX
+lX
+lX
+MY
+lX
+rs
+lX
+lX
+lX
+lX
+lX
+lX
+rs
+lX
+lX
+lX
+lX
+FI
+fc
+nm
+"}
+(18,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+Lh
+kE
+ys
+wA
+gy
+kE
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+MY
+lX
+lX
+lX
+lX
+rs
+lX
+MY
+rs
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+fc
+nm
+"}
+(19,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+Yn
+QF
+wq
+fV
+RX
+Wv
+lX
+lX
+lX
+lX
+rs
+lX
+lX
+lX
+rs
+lX
+MY
+rs
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+rs
+uE
+lX
+lX
+lX
+FI
+Gt
+nm
+"}
+(20,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+kD
+QG
+wA
+pJ
+ON
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+MY
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+fc
+nm
+"}
+(21,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+ce
+sf
+Xc
+Ct
+ON
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+rs
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+fk
+fQ
+fQ
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+fc
+nm
+"}
+(22,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+dN
+rh
+lB
+tY
+qi
+lX
+rs
+lX
+lX
+lX
+rs
+lX
+wx
+wx
+wx
+wx
+wx
+wx
+HW
+HW
+HW
+HW
+HW
+HW
+lX
+lX
+fQ
+fQ
+Pc
+Io
+RD
+VX
+lX
+lX
+lX
+rs
+FI
+FI
+FI
+fc
+nm
+"}
+(23,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+Lh
+qi
+Kt
+Xg
+uf
+gq
+lX
+lX
+lX
+lX
+lX
+wx
+wx
+wx
+wx
+wx
+wx
+AT
+bL
+HW
+Rv
+iG
+HU
+hm
+HW
+MY
+lX
+fQ
+FM
+nu
+nu
+bX
+fQ
+lX
+lX
+lX
+lX
+FI
+FI
+fc
+nm
+nm
+"}
+(24,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+Yn
+qw
+LV
+qd
+Jw
+uY
+lX
+wx
+gD
+gD
+wx
+gD
+wx
+wx
+Hp
+wx
+wx
+nr
+bv
+HW
+Si
+WF
+WF
+WF
+HW
+rs
+lX
+fQ
+fQ
+Io
+Oh
+fQ
+Kf
+lX
+lX
+lX
+rs
+FI
+FI
+fc
+nm
+nm
+"}
+(25,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+ON
+zf
+pm
+EU
+Ak
+bO
+fc
+wx
+gD
+gD
+gD
+gD
+wx
+AE
+AE
+Bx
+nr
+Gn
+HW
+yP
+Wc
+WF
+xy
+HW
+lX
+lX
+rs
+rs
+lX
+fQ
+Iw
+fQ
+lX
+rs
+lX
+lX
+FI
+fc
+nm
+nm
+nm
+"}
+(26,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+pf
+oX
+aF
+Jf
+jy
+PK
+pf
+fc
+Np
+wx
+lX
+rs
+lX
+lX
+wx
+wx
+wx
+nr
+rv
+HW
+gm
+WF
+WF
+Xy
+HW
+lX
+rs
+lX
+lX
+lX
+uZ
+fQ
+fQ
+lX
+FI
+FI
+FI
+FI
+nm
+nm
+nm
+nm
+"}
+(27,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+pf
+pf
+KI
+cW
+tD
+xz
+tF
+pf
+pf
+hA
+lX
+Un
+lX
+lX
+lX
+wx
+Bf
+De
+WF
+WF
+SL
+WF
+WF
+WF
+WF
+SL
+lX
+lX
+rs
+lX
+lX
+lX
+fQ
+fQ
+lX
+FI
+FI
+FI
+fc
+nm
+nm
+nm
+TB
+"}
+(28,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+AG
+Hb
+yS
+Jy
+dF
+Pl
+ml
+uj
+Yh
+Ot
+WH
+WE
+fc
+lX
+lX
+HW
+eS
+dc
+ED
+jl
+HW
+WF
+WF
+WF
+KU
+Nf
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+FI
+FI
+fc
+TB
+nm
+nm
+nm
+"}
+(29,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+eg
+BU
+tD
+vv
+tX
+CO
+qt
+BU
+qO
+fc
+fc
+fc
+fc
+fc
+lX
+HW
+HW
+HW
+HW
+HW
+HW
+WF
+WF
+WF
+AD
+gw
+lX
+lX
+lX
+lX
+lX
+lX
+MY
+lX
+lX
+FI
+FI
+FI
+fc
+nm
+nm
+nm
+nm
+"}
+(30,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+AG
+HO
+kv
+aV
+Ap
+sI
+WJ
+mE
+Yh
+fc
+Hd
+fc
+fc
+fc
+lX
+HW
+Ps
+WF
+WF
+WF
+WF
+WF
+WF
+WF
+WF
+cQ
+lX
+lX
+lX
+rs
+lX
+MY
+rs
+lX
+lX
+lX
+FI
+FI
+nm
+nm
+nm
+nm
+nm
+"}
+(31,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+pf
+pf
+OP
+dT
+Qk
+yS
+BU
+pf
+pf
+fc
+BI
+fc
+fc
+fc
+lX
+HW
+xx
+WF
+Mi
+eb
+WF
+WF
+mr
+gM
+mr
+HW
+rs
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(32,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+pf
+pf
+Kw
+BU
+BU
+yS
+gH
+pf
+pf
+lX
+oE
+Es
+WZ
+lX
+lX
+HW
+HW
+HW
+HW
+HW
+SL
+HW
+HW
+HW
+HW
+HW
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+rs
+lX
+FI
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(33,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+pf
+pf
+wc
+dT
+wc
+pf
+pf
+fc
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(34,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+pf
+Vx
+eg
+Vx
+pf
+fc
+fc
+FI
+FI
+FI
+FI
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+rs
+lX
+lX
+lX
+lX
+rs
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(35,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+fc
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+FI
+FI
+FI
+FI
+FI
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+rs
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+FI
+fc
+TB
+nm
+TB
+nm
+nm
+nm
+"}
+(36,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+FI
+FI
+fc
+nm
+nm
+nm
+nm
+nm
+fc
+FI
+FI
+FI
+FI
+FI
+lX
+lX
+lX
+rs
+lX
+lX
+lX
+lX
+FI
+FI
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+MY
+lX
+FI
+FI
+fc
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(37,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+FI
+FI
+FI
+FI
+nm
+nm
+nm
+nm
+nm
+fc
+fc
+FI
+FI
+FI
+FI
+lX
+lX
+lX
+lX
+lX
+lX
+rs
+rs
+FI
+FI
+lX
+rs
+lX
+lX
+lX
+lX
+rs
+lX
+MY
+rs
+lX
+fc
+FI
+fc
+fc
+nm
+nm
+nm
+nm
+nm
+"}
+(38,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+FI
+FI
+FI
+FI
+FI
+nm
+nm
+nm
+nm
+nm
+fc
+fc
+FI
+FI
+FI
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+FI
+FI
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+fc
+FI
+fc
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(39,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+fc
+FI
+FI
+FI
+FI
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+fc
+FI
+FI
+rs
+rs
+lX
+lX
+lX
+lX
+lX
+FI
+FI
+FI
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+fc
+FI
+fc
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(40,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+FI
+FI
+fc
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+fc
+FI
+FI
+FI
+FI
+FI
+FI
+lX
+lX
+FI
+FI
+FI
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+lX
+FI
+FI
+fc
+fc
+nm
+nm
+nm
+nm
+nm
+"}
+(41,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+fc
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+FI
+NG
+NG
+FI
+NG
+NG
+NG
+NG
+FI
+FI
+NG
+NG
+NG
+NG
+FI
+FI
+fc
+fc
+nm
+TB
+nm
+nm
+nm
+"}
+(42,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+fc
+fc
+fc
+fc
+Gt
+fc
+fc
+fc
+FI
+FI
+NG
+FI
+FI
+FI
+FI
+NG
+NG
+FI
+FI
+FI
+FI
+NG
+NG
+fc
+Xu
+nm
+nm
+nm
+nm
+nm
+"}
+(43,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+fc
+fc
+FI
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+fc
+nm
+nm
+nm
+nm
+nm
+"}
+(44,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+fc
+fc
+fc
+NG
+nm
+nm
+nm
+nm
+nm
+fc
+fc
+fc
+fc
+fc
+nm
+nm
+nm
+nm
+nm
+"}
+(45,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+TB
+nm
+nm
+nm
+nm
+al
+nm
+nm
+TB
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+TB
+nm
+fc
+fc
+fc
+nm
+nm
+nm
+nm
+nm
+"}
+(46,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+fc
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(47,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+TB
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(48,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+TB
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(49,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+TB
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+TB
+nm
+nm
+nm
+nm
+TB
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+"}
+(50,1,1) = {"
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+TB
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+TB
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+nm
+"}

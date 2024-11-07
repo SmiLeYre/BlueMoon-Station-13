@@ -1,6 +1,11 @@
 /obj/machinery/vending/kink/Initialize()
-	var/list/extra_products = list()
-	var/list/extra_contraband = list()
+	var/list/extra_products = list(
+		/obj/item/summon_chalk = 5,
+		/obj/item/card/id/lust = 5,
+	)
+	var/list/extra_contraband = list(
+		/obj/item/reagent_containers/hypospray/medipen/lewdsleepy = 6,
+	)
 
 	var/list/extra_premium = list(
 		/obj/item/clothing/mask/muzzle/mouthring = 5

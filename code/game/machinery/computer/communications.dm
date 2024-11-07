@@ -2,6 +2,7 @@
 #define MAX_STATUS_LINE_LENGTH 40
 
 #define STATE_BUYING_SHUTTLE "buying_shuttle"
+#define STATE_CALLING_ERT "calling_ert"
 #define STATE_CHANGING_STATUS "changing_status"
 #define STATE_MAIN "main"
 #define STATE_MESSAGES "messages"
@@ -110,7 +111,7 @@
 	SSshuttle.shuttle_purchase_requirements_met["emagged"] = TRUE
 
 /obj/machinery/computer/communications/ui_act(action, list/params)
-	var/static/list/approved_states = list(STATE_BUYING_SHUTTLE, STATE_CHANGING_STATUS, STATE_MAIN, STATE_MESSAGES)
+	var/static/list/approved_states = list(STATE_BUYING_SHUTTLE, STATE_CALLING_ERT, STATE_CHANGING_STATUS, STATE_MAIN, STATE_MESSAGES)
 	var/static/list/approved_status_pictures = list("biohazard", "blank", "default", "lockdown", "redalert", "shuttle")
 	var/static/list/state_status_pictures = list("blank", "shuttle")
 
@@ -265,6 +266,22 @@
 			log_shuttle("[key_name(usr)] has purchased [shuttle.name].")
 			SSblackbox.record_feedback("text", "shuttle_purchase", 1, shuttle.name)
 			state = STATE_MAIN
+		if ("purchaseERT")
+			var/id = params["ert"]
+			var/list/data = GLOB.payed_ert[id]
+			var/datum/bank_account/bank_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
+			if (data && data["available"] && bank_account.account_balance >= data["price"])
+				GLOB.payed_ert[id]["available"] = FALSE
+				bank_account.adjust_money(-data["price"])
+
+				minor_announce("[usr.real_name] вызвал [data["name"]] за [data["price"]] кредитов")
+				message_admins("[ADMIN_LOOKUPFLW(usr)] purchased ERT: [data["name"]].")
+				SSblackbox.record_feedback("text", "ert_purchase", 1, data["name"])
+				state = STATE_MAIN
+
+				//а тут надо вызывать
+				INVOKE_ASYNC(src, PROC_REF(makeEmergencyresponseteam), data["link"], id)
+
 		if ("recallShuttle")
 			// AIs cannot recall the shuttle
 			if (!authenticated(usr) || issilicon(usr) || syndicate)
@@ -286,6 +303,52 @@
 			priority_announce("Запрос на коды от ядерного заряда станции для активации протокола самоуничтожения были запрошены [usr]. Решение будет отправлено в ближайшее время.", "Запрошены коды для запуска систем ядерного самоуничтожения.", SSstation.announcer.get_rand_report_sound())
 			playsound(src, 'sound/machines/terminal_prompt.ogg', 50, FALSE)
 			COOLDOWN_START(src, important_action_cooldown, IMPORTANT_ACTION_COOLDOWN)
+		if ("declareTheExistenceOfSyndicate")
+			if (syndicate == TRUE)
+				balloon_alert_to_viewers("ОШИБКА")
+				to_chat(usr, span_danger("ОШИБКА"))
+				return
+			if (!authenticated_as_non_silicon_captain(usr))
+				return
+			if (!(obj_flags & EMAGGED))
+				return
+			to_chat(usr, span_notice("Backup routing data restored."))
+			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+
+			message_admins("[ADMIN_LOOKUPFLW(usr)] toggled Syndicate Displays")
+			priority_announce("Синдикат берёт Космическую Станцию в свою ответственность.", null, 'sound/machines/AISyndiHack.ogg')
+			var/obj/machinery/computer/communications/C = locate() in GLOB.machines
+			if(C)
+				C.post_status("alert", "synd")
+			for(var/mob/living/silicon/silicon as anything in GLOB.silicon_mobs)
+				var/new_board = new /obj/item/ai_module/core/full/syndicate(src)
+				var/obj/item/ai_module/chosenboard = new_board
+				var/mob/living/silicon/beepboop = silicon
+				chosenboard.install(beepboop.laws, usr)
+				qdel(new_board)
+		if ("declareTheExistenceOfInteQ")
+			if (syndicate == TRUE)
+				balloon_alert_to_viewers("ОШИБКА")
+				to_chat(usr, span_danger("ОШИБКА"))
+				return
+			if (!authenticated_as_non_silicon_captain(usr))
+				return
+			if (!(obj_flags & EMAGGED))
+				return
+			to_chat(usr, span_notice("Backup routing data restored."))
+			playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+
+			message_admins("[ADMIN_LOOKUPFLW(usr)] toggled InteQ Displays")
+			priority_announce("InteQ открыто объявляет притязание на [station_name()].", null, 'sound/announcer/classic/_admin_war_pizdec.ogg')
+			var/obj/machinery/computer/communications/C = locate() in GLOB.machines
+			if(C)
+				C.post_status("alert", "inteq")
+			for(var/mob/living/silicon/silicon as anything in GLOB.silicon_mobs)
+				var/new_board = new /obj/item/ai_module/core/full/inteq(src)
+				var/obj/item/ai_module/chosenboard = new_board
+				var/mob/living/silicon/beepboop = silicon
+				chosenboard.install(beepboop.laws, usr)
+				qdel(new_board)
 		if ("restoreBackupRoutingData")
 			if (syndicate == TRUE)
 				balloon_alert_to_viewers("ОШИБКА")
@@ -457,6 +520,7 @@
 		switch (ui_state)
 			if (STATE_MAIN)
 				data["canBuyShuttles"] = can_buy_shuttles(user)
+				data["canCallERT"] = authenticated_as_non_silicon_captain(user)
 				data["canMakeAnnouncement"] = FALSE
 				data["canMessageAssociates"] = FALSE
 				data["canRecallShuttles"] = !issilicon(user)
@@ -583,6 +647,23 @@
 
 				data["budget"] = bank_account.account_balance
 				data["shuttles"] = shuttles
+			if (STATE_CALLING_ERT)
+				var/datum/bank_account/bank_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
+				var/list/erts = list()
+				var/id = 1
+
+				for (var/list/E in GLOB.payed_ert)
+					erts += list(list(
+						"available" = E["available"],
+						"name" = E["name"],
+						"description" = E["disc"],
+						"creditCost" = E["price"],
+						"ref" = id,
+					))
+					id += 1
+
+				data["budget"] = bank_account.account_balance
+				data["ert"] = erts
 			if (STATE_CHANGING_STATUS)
 				data["lineOne"] = last_status_display ? last_status_display[1] : ""
 				data["lineTwo"] = last_status_display ? last_status_display[2] : ""
@@ -592,15 +673,14 @@
 /obj/machinery/computer/communications/ui_interact(mob/user, datum/tgui/ui)
 	ui = SStgui.try_update_ui(user, src, ui)
 	if (!ui)
-		if (EMAGGED && GLOB.master_mode == "Extended" || syndicate == TRUE)
+		if ((obj_flags && EMAGGED && GLOB.master_mode == "Extended") || syndicate == TRUE)
 			ui = new(user, src, "CommunicationsConsole")
-			ui.open()
-		else if (EMAGGED)
-			ui = new(user, src, "CommunicationsConsoleInteq")
 			ui.open()
 		else
-			ui = new(user, src, "CommunicationsConsole")
-			ui.open()
+			if (obj_flags && EMAGGED)
+				ui = new(user, src, "CommunicationsConsoleInteq")
+				ui.open()
+			else
 
 /obj/machinery/computer/communications/ui_static_data(mob/user)
 	return list(
@@ -644,6 +724,131 @@
 		return
 
 	return length(CONFIG_GET(keyed_list/cross_server)) > 0
+
+//ERT Calls
+
+
+/obj/machinery/computer/communications/proc/makeERTTemplateModified(list/settings)
+	. = settings
+	var/datum/ert/newtemplate = settings["mainsettings"]["template"]["value"]
+	if (isnull(newtemplate))
+		return
+	if (!ispath(newtemplate))
+		newtemplate = text2path(newtemplate)
+	newtemplate = new newtemplate
+	.["mainsettings"]["teamsize"]["value"] = newtemplate.teamsize
+	.["mainsettings"]["mission"]["value"] = newtemplate.mission
+	.["mainsettings"]["polldesc"]["value"] = newtemplate.polldesc
+	.["mainsettings"]["ertphrase"]["value"] = newtemplate.ertphrase
+	.["mainsettings"]["open_armory"]["value"] = newtemplate.opendoors ? "Yes" : "No"
+
+/obj/machinery/computer/communications/proc/makeEmergencyresponseteam(var/datum/ert/ertemplate = null, var/id)
+	if (ertemplate)
+		ertemplate = new ertemplate
+	else
+		ertemplate = new /datum/ert/centcom_official
+
+	var/list/settings = list(
+		"mainsettings" = list(
+		"template" = list("desc" = "Template", "callback" = CALLBACK(src, PROC_REF(makeERTTemplateModified)), "type" = "datum", "path" = "/datum/ert", "subtypesonly" = TRUE, "value" = ertemplate.type),
+		"teamsize" = list("desc" = "Team Size", "type" = "number", "value" =  GLOB.payed_ert[id]["teamsize"]),
+		"mission" = list("desc" = "Mission", "type" = "string", "value" = GLOB.payed_ert[id]["mission"]),
+		"polldesc" = list("desc" = "Ghost poll description", "type" = "string", "value" = ertemplate.polldesc),
+		"ertphrase" = list("desc" = "ERT Sending Sound", "type" = "string", "value" = ertemplate.ertphrase),
+		"enforce_human" = list("desc" = "Enforce human authority", "type" = "boolean", "value" = "[(CONFIG_GET(flag/enforce_human_authority) ? "Yes" : "No")]"),
+		"open_armory" = list("desc" = "Open armory doors", "type" = "boolean", "value" = "[(ertemplate.opendoors ? "Yes" : "No")]"),
+		)
+	)
+
+	var/list/prefs = settings["mainsettings"]
+
+	var/templtype = prefs["template"]["value"]
+	if (!ispath(prefs["template"]["value"]))
+		templtype = text2path(prefs["template"]["value"]) // new text2path ... doesn't compile in 511
+
+	if (ertemplate.type != templtype)
+		ertemplate = new templtype
+
+	ertemplate.teamsize = prefs["teamsize"]["value"]
+	ertemplate.mission = prefs["mission"]["value"]
+	ertemplate.polldesc = prefs["polldesc"]["value"]
+	ertemplate.ertphrase = prefs["ertphrase"]["value"]
+	ertemplate.enforce_human = prefs["enforce_human"]["value"] == "Yes" ? TRUE : FALSE
+	ertemplate.opendoors = prefs["open_armory"]["value"] == "Yes" ? TRUE : FALSE
+	priority_announce("Внимание, [station_name()]. Мы формируем [ertemplate.polldesc] для отправки на станцию. Ожидайте.", "Инициализирован протокол ОБР", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_send.ogg') //BlueMoon sound
+
+	var/list/mob/candidates = pollGhostCandidates("Do you wish to be considered for [ertemplate.polldesc]?", "Deathsquad", null)
+	var/teamSpawned = FALSE
+
+	if(candidates.len > 0)
+		//Pick the (un)lucky players
+		var/numagents = min(ertemplate.teamsize,candidates.len)
+
+		//Create team
+		var/datum/team/ert/ert_team = new ertemplate.team
+		if(ertemplate.rename_team)
+			ert_team.name = ertemplate.rename_team
+
+		//Asign team objective
+		var/datum/objective/missionobj = new
+		missionobj.team = ert_team
+		missionobj.explanation_text = ertemplate.mission
+		missionobj.completed = TRUE
+		ert_team.objectives += missionobj
+		ert_team.mission = missionobj
+
+		var/list/spawnpoints = GLOB.emergencyresponseteamspawn
+		while(numagents && candidates.len)
+			if (numagents > spawnpoints.len)
+				numagents--
+				continue // This guy's unlucky, not enough spawn points, we skip him.
+			var/spawnloc = spawnpoints[numagents]
+			var/mob/chosen_candidate = pick(candidates)
+			candidates -= chosen_candidate
+			if(!chosen_candidate.key)
+				continue
+
+			//Spawn the body
+			var/mob/living/carbon/human/ERTOperative = new ertemplate.mobtype(spawnloc)
+			chosen_candidate.client.prefs.copy_to(ERTOperative)
+			chosen_candidate.transfer_ckey(ERTOperative)
+
+			if(ertemplate.enforce_human || ERTOperative.dna.species.dangerous_existence) // Don't want any exploding plasmemes
+				ERTOperative.set_species(/datum/species/human)
+
+			//Give antag datum
+			var/datum/antagonist/ert/ert_antag
+
+			if(numagents == 1)
+				ert_antag = new ertemplate.leader_role
+			else
+				ert_antag = ertemplate.roles[WRAP(numagents,1,length(ertemplate.roles) + 1)]
+				ert_antag = new ert_antag
+
+			ERTOperative.mind.add_antag_datum(ert_antag,ert_team)
+			ERTOperative.mind.assigned_role = ert_antag.name
+
+			//Logging and cleanup
+			log_game("[key_name(ERTOperative)] has been selected as an [ert_antag.name]")
+			numagents--
+			teamSpawned++
+
+		if (teamSpawned)
+			message_admins("[ertemplate.polldesc] были отправлены на станцию со следующей миссией: [ertemplate.mission]")
+			priority_announce("Внимание, [station_name()]. Мы отправляем поздразделение - [ertemplate.polldesc]. Вам следует приготовиться.", "Подготовка Отряда Быстрого Реагирования", ertemplate.ertphrase) //BlueMoon sound
+
+		//Open the Armory doors
+		if(ertemplate.opendoors)
+			for(var/obj/machinery/door/poddoor/ert/door in GLOB.airlocks)
+				door.open()
+				CHECK_TICK
+		return TRUE
+	else
+		priority_announce("[station_name()], мы не можем выслать [ertemplate.polldesc] ввиду занятости всех действующих оперативников. Средства были возвращены.", "Отряд Быстрого Реагирования недоступен", 'modular_bluemoon/kovac_shitcode/sound/ert/ert_no.ogg') //BlueMoon sound
+		var/datum/bank_account/bank_account = SSeconomy.get_dep_account(ACCOUNT_CAR)
+		GLOB.payed_ert[id]["available"] = TRUE
+		bank_account.adjust_money(GLOB.payed_ert[id]["price"])
+		return FALSE
 
 /**
  * Call an emergency meeting
@@ -741,6 +946,7 @@
 #undef IMPORTANT_ACTION_COOLDOWN
 #undef MAX_STATUS_LINE_LENGTH
 #undef STATE_BUYING_SHUTTLE
+#undef STATE_CALLING_ERT
 #undef STATE_CHANGING_STATUS
 #undef STATE_MAIN
 #undef STATE_MESSAGES

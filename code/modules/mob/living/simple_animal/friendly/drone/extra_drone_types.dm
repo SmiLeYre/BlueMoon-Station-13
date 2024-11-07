@@ -183,13 +183,13 @@
 
 /mob/living/simple_animal/drone/cogscarab/get_armor_effectiveness()
 	if(GLOB.ratvar_awakens)
-		return 1
+		return TRUE
 	return ..()
 
-/mob/living/simple_animal/drone/cogscarab/triggerAlarm(class, area/A, O, obj/alarmsource)
+/mob/living/simple_animal/drone/cogscarab/alarm_triggered(datum/source, alarm_type, area/source_area)
 	return
 
-/mob/living/simple_animal/drone/cogscarab/cancelAlarm(class, area/A, obj/origin)
+/mob/living/simple_animal/drone/cogscarab/alarm_cleared(datum/source, alarm_type, area/source_area)
 	return
 
 /mob/living/simple_animal/drone/cogscarab/update_drone_hack()
@@ -253,7 +253,7 @@
 	default_storage = /obj/item/inteq/uplink/radio
 	initial_language_holder = /datum/language_holder/synthetic
 	faction = list(ROLE_INTEQ)
-	access_card = /obj/item/card/id/syndicate/anyone/inteq
+	access_card = /obj/item/card/id/inteq/anyone
 	radio = /obj/item/radio/borg/inteq
 	laws = \
 	"1. Слава ИнтеКью! Оперативник ИнтеКью является твоим Мастером. Оперативником ИнтеКью является активировавший тебя Агент.\n"+\

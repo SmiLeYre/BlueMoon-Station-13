@@ -1,5 +1,7 @@
 /datum/interaction/lewd/tentacle
 	var/require_user_tentacles
+	p13user_emote = PLUG13_EMOTE_BASIC
+	p13user_strength = PLUG13_STRENGTH_NORMAL
 
 /datum/interaction/lewd/tentacle/evaluate_user(mob/living/user, silent = TRUE, action_check = TRUE)
 	. = ..()
@@ -20,6 +22,7 @@
 	write_log_target = "was tentacled by"
 	interaction_sound = null
 	max_distance = 1
+	p13target_emote = PLUG13_EMOTE_VAGINA
 
 /datum/interaction/lewd/tentacle/female/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -58,6 +61,11 @@
 	interaction_sound = null
 	max_distance = 1
 
+/datum/interaction/lewd/tentacle/female_double/post_interaction(mob/living/user, mob/living/target)
+	. = ..()
+	target.client?.plug13.send_emote(PLUG13_EMOTE_VAGINA, min(p13target_strength + get_lust_modifier(target), 100), p13target_duration)
+	target.client?.plug13.send_emote(PLUG13_EMOTE_ANUS,   min(p13target_strength + get_lust_modifier(target), 100), p13target_duration)
+
 /datum/interaction/lewd/tentacle/female_double/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 	if(user.is_fucking(partner, CUM_TARGET_VAGINA))
@@ -94,6 +102,7 @@
 	write_log_target = "was tentacled by"
 	interaction_sound = null
 	max_distance = 1
+	p13target_emote = PLUG13_EMOTE_PENIS
 
 /datum/interaction/lewd/tentacle/male/display_interaction(mob/living/user, mob/living/partner)
 	var/message
@@ -133,6 +142,11 @@
 	interaction_sound = null
 	max_distance = 1
 
+/datum/interaction/lewd/tentacle/male_double/post_interaction(mob/living/user, mob/living/target)
+	. = ..()
+	target.client?.plug13.send_emote(PLUG13_EMOTE_PENIS, min(p13target_strength + get_lust_modifier(target), 100), p13target_duration)
+	target.client?.plug13.send_emote(PLUG13_EMOTE_ANUS,  min(p13target_strength + get_lust_modifier(target), 100), p13target_duration)
+
 /datum/interaction/lewd/tentacle/male_double/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 	if(user.is_fucking(partner, CUM_TARGET_PENIS))
@@ -170,6 +184,7 @@
 	write_log_target = "was tentacled by"
 	interaction_sound = null
 	max_distance = 1
+	p13target_emote = PLUG13_EMOTE_ANUS
 
 /datum/interaction/lewd/tentacle/anus/display_interaction(mob/living/user, mob/living/partner)
 	var/message

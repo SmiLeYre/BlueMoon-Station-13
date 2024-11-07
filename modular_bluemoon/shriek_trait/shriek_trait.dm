@@ -18,11 +18,7 @@ GLOBAL_LIST_INIT(shriek_types, list(\
 	cooldown_time = 400 // КД, 40 секунд
 	transparent_when_unavailable = TRUE
 
-/datum/action/cooldown/shriek/Trigger()
-	. = ..()
-	if(!.) // Что-то мешает, например не прошёл КД или персонаж без сознания
-		return FALSE
-
+/datum/action/cooldown/shriek/Activate()
 	var/mob/living/carbon/human/H = owner
 	var/sound_type = SHRIEK_TYPE_GENERIC
 	var/sound_description = "крик"
@@ -109,6 +105,8 @@ GLOBAL_LIST_INIT(shriek_types, list(\
 
 /datum/quirk/shriek/remove()
 	var/mob/living/carbon/human/H = quirk_holder
+	if(!H)
+		return
 	var/datum/action/cooldown/shriek/C = locate() in H.actions
 	C.Remove(H)
 	. = ..()

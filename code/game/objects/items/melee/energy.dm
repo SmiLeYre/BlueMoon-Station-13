@@ -310,15 +310,33 @@
 	else
 		return ..()
 
+/obj/item/melee/transforming/energy/sword/ert_min
+	name = "Low quality energy sword"
+	desc = "To serve the corp with low budget"
+	light_color = "#15a7e6"
+	possible_colors = null
+	force_on = 20
+	sword_color = "blue"
+	icon_state_on = "swordblue"
+
+/obj/item/melee/transforming/energy/sword/ert_max
+	name = "Standart energy sword"
+	desc = "To serve the corp"
+	light_color = "#2d7ea1"
+	sword_color = "blue"
+	icon_state_on = "swordblue"
+
 /obj/item/melee/transforming/energy/sword/pirate
 	name = "energy cutlass"
 	desc = "Arrrr matey."
 	icon_state = "cutlass0"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
 	righthand_file = 'icons/mob/inhands/weapons/swords_righthand.dmi'
+	force_on = 20
 	icon_state_on = "cutlass1"
 	light_color = "#ff0000"
 	possible_colors = null
+
 
 /obj/item/melee/transforming/energy/blade
 	name = "energy blade"

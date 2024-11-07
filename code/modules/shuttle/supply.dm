@@ -27,6 +27,10 @@ GLOBAL_LIST_INIT(blacklisted_cargo_types, typecacheof(list(
 		/obj/machinery/syndicatebomb,
 		/obj/item/hilbertshotel,
 		/obj/machinery/launchpad,
+		/obj/machinery/disposal,
+		/obj/structure/disposalpipe,
+		/obj/structure/disposaloutlet, //BLUEMOON ADD Добавлен запрет на отправку мусорного выхода наравне с другими мусорными трубами и входами
+		/obj/item/mail,
 		/obj/item/hilbertshotel,
 		/obj/machinery/camera,
 		/obj/item/gps,
@@ -45,7 +49,7 @@ GLOBAL_LIST_INIT(cargo_shuttle_leave_behind_typecache, typecacheof(list(
 
 /obj/docking_port/mobile/supply
 	name = "supply shuttle"
-	id = "supply"
+	shuttle_id = "supply"
 	callTime = 600
 
 	dir = WEST
@@ -102,6 +106,7 @@ GLOBAL_LIST_INIT(cargo_shuttle_leave_behind_typecache, typecacheof(list(
 /obj/docking_port/mobile/supply/initiate_docking()
 	if(getDockedId() == "supply_away") // Buy when we leave home.
 		buy()
+		request_mail()
 	. = ..() // Fly/enter transit.
 	if(. != DOCKING_SUCCESS)
 		return
@@ -236,6 +241,7 @@ GLOBAL_LIST_INIT(cargo_shuttle_leave_behind_typecache, typecacheof(list(
 		SO.generateCombo(miscboxes[I], I, misc_contents[I])
 		qdel(SO)
 
+	SSeconomy.import_total += value
 	var/datum/bank_account/cargo_budget = SSeconomy.get_dep_account(ACCOUNT_CAR)
 	investigate_log("[purchases] orders in this shipment, worth [value] credits. [cargo_budget.account_balance] credits left.", INVESTIGATE_CARGO)
 
@@ -286,8 +292,28 @@ GLOBAL_LIST_INIT(cargo_shuttle_leave_behind_typecache, typecacheof(list(
 	D.adjust_money(gain)
 	msg = copytext_char(msg, 1, MAX_MESSAGE_LEN)
 
+	SSeconomy.export_total += (D.account_balance - presale_points)
 	SSshuttle.centcom_message = msg
 	investigate_log("Shuttle contents sold for [D.account_balance - presale_points] credits. Contents: [ex.exported_atoms ? ex.exported_atoms.Join(",") + "." : "none."] Message: [SSshuttle.centcom_message || "none."]", INVESTIGATE_CARGO)
+
+/*
+	По отбытию шаттла перемещает к себе ящик с письмами с каморки на ЦК
+*/
+/// Requesting mail crate from SSmail subsystem
+/obj/docking_port/mobile/supply/proc/request_mail()
+
+	//Early return if there's no mail waiting to prevent taking up a slot.
+	if(!SSmail.mail_waiting)
+		return
+
+	var/list/empty_turfs = list()
+	for(var/area/shuttle/shuttle_area as anything in shuttle_areas)
+		for(var/turf/open/floor/shuttle_floor in shuttle_area)
+			if(is_blocked_turf(shuttle_floor))
+				continue
+			empty_turfs += shuttle_floor
+	if(empty_turfs.len)
+		SSmail.send_storage(pick(empty_turfs))
 
 #undef GOODY_FREE_SHIPPING_MAX
 #undef CRATE_TAX

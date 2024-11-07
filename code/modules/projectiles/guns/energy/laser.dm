@@ -59,6 +59,7 @@
 	item_state = "caplaser"
 	desc = "This is an antique laser gun. All craftsmanship is of the highest quality. It is decorated with assistant leather and chrome. The object menaces with spikes of energy. On the item is an image of Space Station 13. The station is exploding."
 	force = 10
+	w_class = WEIGHT_CLASS_NORMAL
 	ammo_x_offset = 3
 	selfcharge = EGUN_SELFCHARGE
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF
@@ -74,6 +75,9 @@
 	inaccuracy_modifier = 0.7
 	force = 10
 	throwforce = 10
+	burst_size = 2
+	fire_delay = 2
+	fire_select_modes = list(SELECT_SEMI_AUTOMATIC, SELECT_BURST_SHOT)
 	cell_type = /obj/item/stock_parts/cell/lascarbine
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 
@@ -86,6 +90,7 @@
 	item_state = "laser"
 	desc = "An industrial-grade heavy-duty laser rifle with a modified laser lens to scatter its shot into multiple smaller lasers. The inner-core can self-charge for theoretically infinite use."
 	ammo_type = list(/obj/item/ammo_casing/energy/laser/scatter, /obj/item/ammo_casing/energy/laser)
+	shaded_charge = FALSE
 
 /obj/item/gun/energy/laser/cyborg
 	can_charge = FALSE

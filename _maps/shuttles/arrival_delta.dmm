@@ -220,9 +220,9 @@
 	},
 /area/shuttle/arrival)
 "s" = (
-/obj/machinery/holopad,
 /obj/effect/turf_decal/bot,
 /obj/machinery/light,
+/obj/structure/cloth_drive,
 /turf/open/floor/plasteel,
 /area/shuttle/arrival)
 "t" = (

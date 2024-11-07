@@ -69,6 +69,13 @@
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	dog_fashion = null
 
+/obj/item/clothing/suit/armor/vest/command
+	name = "command staff armored vest"
+	desc = "A Type I armored vest that provides decent protection against most types of damage. This one is used by the command officer"
+	icon_state = "press_armor"
+	item_state = "press_armor"
+	dog_fashion = null
+
 /obj/item/clothing/suit/armor/vest/peacekeeper
 	name = "peacekeeper armored vest"
 	desc = "A Type I armored vest that provides decent protection against most types of damage. This one is used by the peace minded officer"
@@ -92,6 +99,7 @@
 	item_state = "peacekeeper_trench_warden"
 	icon = 'modular_splurt/icons/obj/clothing/suits.dmi'
 	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/suit.dmi'
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON // BLUEMOON ADD - фикс отсутствия спрайта для персонажей с альтернативными ногами
 
 /obj/item/clothing/suit/armor/hos/peacekeeper
 	name = "head of security's peacekeeper armored trench coat"

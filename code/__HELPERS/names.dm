@@ -49,6 +49,7 @@ GLOBAL_VAR(command_name)
 	return GLOB.station_name
 
 /proc/set_station_name(newname)
+	var/oldname = GLOB.station_name
 	GLOB.station_name = newname
 
 	var/config_server_name = CONFIG_GET(string/servername)
@@ -56,6 +57,8 @@ GLOBAL_VAR(command_name)
 		world.name = "[config_server_name][config_server_name == GLOB.station_name ? "" : ": [GLOB.station_name]"]"
 	else
 		world.name = GLOB.station_name
+
+	SEND_GLOBAL_SIGNAL(COMSIG_GLOB_STATION_NAME_CHANGED, newname, oldname)
 
 /proc/new_station_name()
 	var/random = rand(1,5)

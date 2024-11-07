@@ -88,6 +88,8 @@
 	var/list/data = list()
 	if(istype(src, /obj/item/folder/syndicate))
 		data["theme"] = "syndicate"
+	if(istype(src, /obj/item/folder/inteq)) //bluemoon add
+		data["theme"] = "inteq"
 	data["bg_color"] = "[bg_color]"
 	data["folder_name"] = "[name]"
 

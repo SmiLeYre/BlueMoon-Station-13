@@ -14,7 +14,7 @@
 	exp_type = EXP_TYPE_MEDICAL
 	considered_combat_role = TRUE
 	exp_type_department = EXP_TYPE_MEDICAL
-	alt_titles = list("Security Doctor", "Security Medic", "Brig Doctor", "Brig EMT", "Security Physician", "Security EMT", "Slutcurity Nurse", "Fucking Slave", "Well-Trained Girl", "Well-Trained Boy", "Trauma Team", "Security Corpsman")
+	alt_titles = list("NT Safeguard Physician", "Syndicate Field Medic", "Security Doctor", "Security Medic", "Brig Doctor", "Brig EMT", "Security Physician", "Security EMT", "Slutcurity Nurse", "Fucking Slave", "Well-Trained Girl", "Well-Trained Boy", "Trauma Team", "Security Corpsman", "AC Combat Medic", "Field Medic of Interdyne", "Syndicate Corpsman")
 
 
 	outfit = /datum/outfit/job/brigdoc
@@ -42,9 +42,12 @@
 	glasses = /obj/item/clothing/glasses/hud/health/sunglasses
 	suit = /obj/item/clothing/suit/armor/brigdoc
 	shoes = /obj/item/clothing/shoes/jackboots
-	l_pocket = /obj/item/reagent_containers/spray/pepper
-	r_pocket = /obj/item/assembly/flash/handheld
-	backpack_contents = list(/obj/item/storage/hypospraykit/regular, /obj/item/storage/firstaid/regular, /obj/item/melee/classic_baton/telescopic)
+	backpack_contents = list(
+		/obj/item/storage/hypospraykit/regular,
+		/obj/item/storage/firstaid/regular,
+		/obj/item/sensor_device_security,
+		/obj/item/melee/classic_baton/telescopic,
+		/obj/item/clothing/accessory/permit/special/security = 1)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -68,7 +71,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	l_pocket = /obj/item/reagent_containers/spray/pepper
 	r_pocket = /obj/item/assembly/flash/handheld
-	backpack_contents = list(/obj/item/storage/hypospraykit/regular, /obj/item/storage/firstaid/regular, /obj/item/melee/classic_baton/telescopic, /obj/item/syndicate_uplink_high=1)
+	backpack_contents = list(/obj/item/storage/hypospraykit/regular, /obj/item/storage/firstaid/regular, /obj/item/melee/classic_baton/telescopic, /obj/item/syndicate_uplink_high=1, /obj/item/clothing/accessory/permit/special/security = 1)
 
 	backpack = /obj/item/storage/backpack/duffelbag/syndie/med
 	satchel = /obj/item/storage/backpack/duffelbag/syndie/med

@@ -11,7 +11,7 @@ GLOBAL_VAR(changeling_team_objective_type) //If this is not null, we hand our th
 	antag_flag = ROLE_CHANGELING
 	false_report_weight = 10
 	chaos = 5
-	protected_jobs = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Lawyer", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
+	protected_jobs = list("Prisoner", "Shaft Miner", "NanoTrasen Representative", "Internal Affairs Agent", "Security Officer", "Blueshield", "Peacekeeper", "Brig Physician", "Warden", "Detective", "Head of Security","Bridge Officer", "Captain", "Head of Personnel", "Quartermaster", "Chief Engineer", "Chief Medical Officer", "Research Director")
 	restricted_jobs = list("AI", "Cyborg", "Positronic Brain") // BLUEMOON EDIT
 
 	required_players = 2
@@ -52,10 +52,10 @@ GLOBAL_VAR(changeling_team_objective_type) //If this is not null, we hand our th
 			changelings += changeling
 			changeling.special_role = ROLE_CHANGELING
 			changeling.restricted_roles = restricted_jobs
-		return 1
+		return TRUE
 	else
 		setup_error = "Not enough changeling candidates"
-		return 0
+		return FALSE
 
 /datum/game_mode/changeling/post_setup()
 	for(var/datum/mind/changeling in changelings)

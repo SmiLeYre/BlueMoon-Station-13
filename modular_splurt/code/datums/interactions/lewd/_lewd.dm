@@ -20,6 +20,8 @@
 		return donut.toggle_accessibility(accessibility)
 	. = ..()
 
+/*
+SPLURT теперь обрабатывают все это дело в /mob/living/proc/moan() -> весь код снизу теперь не имеет смысла.
 /mob/living/moan()
 	var/moaned = lastmoan
 	var/miming = mind ? mind?.miming : FALSE
@@ -31,9 +33,10 @@
 		moans = list('sound/voice/hiss6.ogg')
 	else if(gender == FEMALE || (gender == PLURAL && isfeminine(src)))
 		moans = list('modular_splurt/sound/voice/moan_f1.ogg', 'modular_splurt/sound/voice/moan_f2.ogg', 'modular_splurt/sound/voice/moan_f3.ogg', 'modular_splurt/sound/voice/moan_f4.ogg', 'modular_splurt/sound/voice/moan_f5.ogg', 'modular_splurt/sound/voice/moan_f6.ogg', 'modular_splurt/sound/voice/moan_f7.ogg')
-	else if(gender != FEMALE || (gender == PLURAL && ismasculine(src)))
+	else
 		moans = list('modular_splurt/sound/voice/moan_m1.ogg', 'modular_splurt/sound/voice/moan_m2.ogg', 'modular_splurt/sound/voice/moan_m3.ogg')
 	playlewdinteractionsound(src, pick(moans), 50, 1, 4, 1.2, ignored_mobs = get_unconsenting())
+*/
 
 /mob/living/proc/get_refraction_dif() //Got snapped in upstream, may delete later when I figure something out
 	var/dif = (refractory_period - world.time)
@@ -222,6 +225,12 @@
 				H.mob_climax(TRUE, "masturbation", "none")
 			else
 				H.mob_climax(TRUE, "sex", partner, !cumin, target_gen)
+		if(iscyborg(src)) //BLUEMOON ADD Также добавлено взаимодействие с боргами
+			var/mob/living/silicon/robot/R = src
+			if(!partner)
+				R.mob_climax_silicon(TRUE, "masturbation", "none")
+			else
+				R.mob_climax_silicon(TRUE, "sex", partner, !cumin, target_gen)
 	set_lust(0)
 
 	SEND_SIGNAL(src, COMSIG_MOB_POST_CAME, target_orifice, partner, cumin, last_genital)
@@ -571,7 +580,7 @@
 						'modular_sand/sound/interactions/bang2.ogg',
 						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
 	if(target.can_penetrating_genital_cum())
-		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, src, ORGAN_SLOT_PENIS)
+		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, target, CUM_TARGET_PENIS)
 
 /mob/living/proc/lick_nuts(mob/living/target)
 	var/message

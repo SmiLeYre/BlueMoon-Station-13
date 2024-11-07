@@ -52,7 +52,7 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 
 /datum/outfit/mafia/lawyer
-	name = "Mafia Lawyer"
+	name = "Mafia Internal Affairs Agent"
 
 	uniform = /obj/item/clothing/under/rank/civilian/lawyer/bluesuit
 	suit = /obj/item/clothing/suit/toggle/lawyer

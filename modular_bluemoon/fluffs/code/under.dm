@@ -93,3 +93,88 @@
 	icon_state = "booma"
 	item_state = "booma"
 	can_adjust = TRUE
+
+/obj/item/clothing/under/donator/bm/silky_body
+	name = "Silky Body"
+	desc = "A perfectly tailored bodysuit that fits the body and does not constrain you in any movements. Ties are visible on the sides so that you can adjust the force with which it fits your body."
+	icon_state = "silky_body"
+	item_state = "bl_suit"
+	mutantrace_variation = STYLE_DIGITIGRADE
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/Frieren_skirt
+    name = "Frieren skirt"
+    desc = "Изысканный эльфийский наряд, что выполнен из нежной ткани и украшен золотыми нитями."
+    icon_state = "Elf_skirt"
+    item_state = "Elf_skirt"
+
+/obj/item/clothing/under/donator/bm/Prosecutor_suit
+    name = "Prosecutor_suit"
+    desc = "Невероятный фиолетовый костюм, что бросается в ваши глаза выглядит довольно качественным, на него явно было потрачено не одна сотня тысяч кредитов, присмотревшись вы видите на кайме пиджака аккуратно пришита именная бирка 'Berly Blight'."
+    icon_state = "Prosecutor_suit"
+    item_state = "Prosecutor_suit"
+
+/obj/item/clothing/under/donator/bm/monolith_uniform
+	name = "Granite M1 ''Monolith'' uniform"
+	desc = "The jumpsuit of the stalker from the Monolith group, the manufacturer is unknown. We thank you for the boon bestowed upon your servants. The monolith has shown us the sacred path, the path of unity with the monolith. We are all united in our faith. As long as we are united, we are invincible, damn the infidels who reject his path, for they are blind in their desires. Strength is in the unity of our brothers, blessed be the eternal strength given to us by the monolith in fulfillment of his will. Let's establish eternal order in the zone, brothers and sisters, and may eternal unity with the monolith come. GLORY TO THE MONOLITH."
+	icon_state = "monolith"
+	item_state = "monolith"
+	can_adjust = FALSE
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+
+/obj/item/clothing/under/donator/bm/SATT_combat_uniform
+	name = "SATT combat uniform"
+	desc = "High-quality clothes made of a mixture of fleece and cotton. The logo in the form of an eagle and the caption of the Strategic Assault Tactical Team are visible on the tag. If you inhale the smell, you can smell the slices of a war crime."
+	icon_state = "SATTcombat"
+	item_state = "SATTcombat"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/SATT_turtleneck
+	name = "SATT turtleneck"
+	desc = "High-quality clothes made of a mixture of fleece and cotton. The logo in the form of an eagle and the caption of the Strategic Assault Tactical Team are visible on the tag. If you inhale the smell, you can smell the slices of a war crime."
+	icon_state = "SATTturtleneck"
+	item_state = "SATTturtleneck"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/SATT_vdv
+	name = "SATT VDV uniform"
+	desc = "High-quality clothes made of a mixture of fleece and cotton. The logo in the form of an eagle and the caption of the Strategic Assault Tactical Team are visible on the tag. If you inhale the smell, you can smell the slices of a war crime."
+	icon_state = "SATTvdv"
+	item_state = "SATTvdv"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/aki_camo
+	name = "Old Guard NRI uniform"
+	desc = "A sample of the old uniform of the border special forces-troops of the NRI Guard. This one is adapted for anthropomorphs."
+	icon_state = "adlercamo"
+	item_state = "adlercamo"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/aki_adler_camo
+	name = "Adler Peacekeeper uniform"
+	desc = "Peacekeeper uniforms are custom-made for corporations in the Taywar sector. Simulates all the features of Merenid biology to perfectly match any personality, as well as some types of low-quality races."
+	icon_state = "adlerpk"
+	item_state = "adlerpk"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/aki_seu
+	name = "Corporate S.E.U."
+	desc = "Corporate Standardized Engineering Uniforms. The uniform of engineering workers used by several large corporations on Tayvar. It is equipped with additional gaskets to reduce the risk of injury and special signs to indicate the engineering level of access."
+	icon_state = "seu"
+	item_state = "seu"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/aki_les
+	name = "L.E.S."
+	desc = "Lightweight Exo Skeleton. An exoskeleton for performing simple jobs using pneumatic amplifiers and engineering magic. No, it does not connect to your spine, but it is also adapted to this. It is sometimes used for medical purposes after spinal or lower limb injuries. It can completely replace your old piece of meat with a modern equivalent."
+	icon_state = "les"
+	item_state = "les"
+	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/laskaskirt
+	name = "HoS cosplay skirt"
+	desc = "Skirt that looks like HoS one, but without any armor."
+	icon_state = "laskaskirt"
+	item_state = "laskaskirt"
+	can_adjust = TRUE

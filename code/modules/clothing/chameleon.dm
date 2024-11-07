@@ -17,7 +17,7 @@
 		var/obj/item/clothing/mask/chameleon/drone/Z = target
 		Z.chameleon_action.random_look(owner)
 
-	return 1
+	return TRUE
 
 
 /datum/action/item_action/chameleon/drone/togglehatmask
@@ -65,7 +65,7 @@
 		qdel(old_headgear)
 		// where is `ITEM_SLOT_HEAD` defined? WHO KNOWS
 		D.equip_to_slot(new_headgear, ITEM_SLOT_HEAD)
-	return 1
+	return TRUE
 
 
 /datum/action/chameleon_outfit
@@ -84,7 +84,7 @@
 		for(var/path in subtypesof(/datum/outfit/job))
 			var/datum/outfit/O = path
 			standard_outfit_options[initial(O.name)] = path
-		sortTim(standard_outfit_options, /proc/cmp_text_asc)
+		sortTim(standard_outfit_options, GLOBAL_PROC_REF(cmp_text_asc))
 	outfit_options = standard_outfit_options
 
 /datum/action/chameleon_outfit/Trigger()
@@ -105,6 +105,13 @@
 	for(var/V in user.chameleon_item_actions)
 		var/datum/action/item_action/chameleon/change/A = V
 		var/done = FALSE
+		if(istype(A.target, /obj/item/card/id/))
+			var/obj/item/card/id/ID = A.target
+			ID.assignment = selected
+			ID.update_label()
+			var/mob/living/carbon/human/H = user
+			H.sec_hud_set_ID()
+			break
 		for(var/T in outfit_types)
 			for(var/name in A.chameleon_list)
 				if(A.chameleon_list[name] == T)
@@ -162,8 +169,8 @@
 	..()
 
 /datum/action/item_action/chameleon/change/proc/initialize_disguises()
-	if(button)
-		button.name = "Change [chameleon_name] Appearance"
+	name = "Change [chameleon_name] Appearance"
+	UpdateButtons()
 
 	chameleon_blacklist |= typecacheof(target.type)
 	for(var/V in typesof(chameleon_type))
@@ -209,16 +216,18 @@
 		update_item(picked_item)
 		var/obj/item/thing = target
 		thing.update_slot_icon()
-	UpdateButtonIcon()
+	UpdateButtons()
 
 /datum/action/item_action/chameleon/change/proc/update_item(obj/item/picked_item)
-	target.name = initial(picked_item.name)
-	target.desc = initial(picked_item.desc)
-	target.icon_state = initial(picked_item.icon_state)
-	if(isitem(target))
-		var/obj/item/I = target
+	var/obj/item/chameleon_item = target
+
+	chameleon_item.name = initial(picked_item.name)
+	chameleon_item.desc = initial(picked_item.desc)
+	chameleon_item.icon_state = initial(picked_item.icon_state)
+	if(isitem(chameleon_item))
+		var/obj/item/I = chameleon_item
 		I.item_state = initial(picked_item.item_state)
-	var/obj/item/clothing/CL = target
+	var/obj/item/clothing/CL = chameleon_item
 	var/obj/item/clothing/PCL = new picked_item
 	if(istype(CL) && istype(PCL))
 		CL.flags_cover = PCL.flags_cover
@@ -226,7 +235,7 @@
 		CL.mutantrace_variation = PCL.mutantrace_variation
 		CL.mob_overlay_icon = PCL.mob_overlay_icon
 		qdel(PCL)
-	target.icon = initial(picked_item.icon)
+	chameleon_item.icon = initial(picked_item.icon)
 
 /datum/action/item_action/chameleon/change/pda/update_item(obj/item/pda/picked_item)
 	if(!istype(target, /obj/item/pda))
@@ -245,7 +254,7 @@
 		return
 
 	select_look(owner)
-	return 1
+	return TRUE
 
 /datum/action/item_action/chameleon/change/proc/emp_randomise(var/amount = EMP_RANDOMISE_TIME)
 	START_PROCESSING(SSprocessing, src)
@@ -436,9 +445,9 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/head/chameleon)
 	ADD_TRAIT(src, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
 	chameleon_action.random_look()
 	var/datum/action/item_action/chameleon/drone/togglehatmask/togglehatmask_action = new(src)
-	togglehatmask_action.UpdateButtonIcon()
+	togglehatmask_action.UpdateButtons()
 	var/datum/action/item_action/chameleon/drone/randomise/randomise_action = new(src)
-	randomise_action.UpdateButtonIcon()
+	randomise_action.UpdateButtons()
 
 CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/mask/chameleon)
 	name = "gas mask"
@@ -490,9 +499,9 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/clothing/mask/chameleon)
 	ADD_TRAIT(src, TRAIT_NODROP, ABSTRACT_ITEM_TRAIT)
 	chameleon_action.random_look()
 	var/datum/action/item_action/chameleon/drone/togglehatmask/togglehatmask_action = new(src)
-	togglehatmask_action.UpdateButtonIcon()
+	togglehatmask_action.UpdateButtons()
 	var/datum/action/item_action/chameleon/drone/randomise/randomise_action = new(src)
-	randomise_action.UpdateButtonIcon()
+	randomise_action.UpdateButtons()
 
 /obj/item/clothing/mask/chameleon/drone/attack_self(mob/user)
 	to_chat(user, "<span class='notice'>[src] does not have a voice changer.</span>")
@@ -632,6 +641,7 @@ CHAMELEON_CLOTHING_DEFINE(/obj/item/stamp/chameleon)
 	chameleon_action = new(src)
 	chameleon_action.chameleon_type = /obj/item/stamp
 	chameleon_action.chameleon_name = "Stamp"
+	chameleon_action.chameleon_blacklist = typecacheof(/obj/item/stamp/machine, ignore_root_path = FALSE) // BLUEMOON EDIT - переработка анализаторов здоровья, новый штамп для автобумажек
 	chameleon_action.initialize_disguises()
 
 /obj/item/stamp/chameleon/broken/Initialize(mapload)

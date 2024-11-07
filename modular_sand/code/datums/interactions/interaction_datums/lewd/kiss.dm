@@ -5,13 +5,10 @@
 	write_log_user = "kissed"
 	write_log_target = "was kissed by"
 	interaction_sound = null
-
-/datum/interaction/lewd/kiss/post_interaction(mob/living/user, mob/living/partner)
-	. = ..()
-	if(user.get_lust() < 100)
-		user.add_lust(12)
-	if(partner.get_lust() < 100)
-		partner.add_lust(12)
+	p13user_emote = PLUG13_EMOTE_BASIC
+	p13target_emote = PLUG13_EMOTE_BASIC
+	p13user_strength = PLUG13_STRENGTH_LOW
+	p13target_strength = PLUG13_STRENGTH_LOW
 
 /datum/interaction/lewd/kiss/display_interaction(mob/living/user, mob/living/partner)
 	if(user.a_intent == INTENT_HELP)
@@ -36,4 +33,4 @@
 			span_lewd("\The <b>[user]</b> душит \the <b>[partner]</b>, целуя в распухшие губы.")))
 		if(HAS_TRAIT(user, TRAIT_KISS_OF_DEATH))
 			partner.reagents.add_reagent(/datum/reagent/toxin/amanitin , 4)
-			user.reagents.add_reagent(/datum/reagent/toxin/amanitin , 1)
+			user.reagents.add_reagent(/datum/reagent/toxin/amanitin , 0.5)

@@ -224,10 +224,22 @@
 		//EMPs fuck robots over. Up to ~11.5 corruption per EMP if hit by the full power. They also get up to 15 burn damage per EMP (up to 2.5 per limb), plus short hardstun
 		//Though, note that the burn damage is linear, while corruption is logarythmical, which means at lower severities you still get corruption, but far less burn / stun
 		//Note than as compensation, they only take half the limb burn damage someone fully augmented would take, which would be up to 30 burn.
+
+		// BLUEMOON ADD - кулдаун по получению ЕМП у синтетиков
+		to_chat(src, span_boldwarning("Обнаружен ЭМИ - система переведена в режим повышенной защиты компонентов на 7 секунд."))
+		AddElement(/datum/element/empprotection, EMP_PROTECT_CONTENTS)
+		addtimer(CALLBACK(src, PROC_REF(rollback_emp_protection)), 7 SECONDS)
+
 		adjustToxLoss(round(log(severity)*2.5, 0.1), toxins_type = TOX_SYSCORRUPT)
 	for(var/X in internal_organs)
 		var/obj/item/organ/O = X
 		O.emp_act(severity)
+
+/mob/living/carbon/proc/rollback_emp_protection()
+	if(QDELETED(src))
+		return
+	RemoveElement(/datum/element/empprotection, EMP_PROTECT_CONTENTS)
+	to_chat(src, span_boldwarning("Система повышенной защиты от ЭМИ отключена."))
 
 ///Adds to the parent by also adding functionality to propagate shocks through pulling and doing some fluff effects.
 /mob/living/carbon/electrocute_act(shock_damage, source, siemens_coeff = 1, flags = NONE)
@@ -258,7 +270,7 @@
 	jitteriness += 1000
 	do_jitter_animation(jitteriness)
 	stuttering += 2
-	addtimer(CALLBACK(src, .proc/secondary_shock, should_stun), 20)
+	addtimer(CALLBACK(src, PROC_REF(secondary_shock), should_stun), 20)
 	return shock_damage
 
 ///Called slightly after electrocute act to reduce jittering and apply a secondary stun.
@@ -365,7 +377,8 @@
 					H.remove_quirk(/datum/quirk/headpat_hater)
 				if(!H.has_quirk(/datum/quirk/headpat_slut))
 					H.add_quirk(/datum/quirk/headpat_slut)
-				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "dom_trained", /datum/mood_event/dominant/good_boy)
+				// BLUEMOON EDITED - I want to kill the guy behind it
+				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, QMOOD_WELL_TRAINED, /datum/mood_event/dominant/good_boy)
 
 			// BLUEMOON ADD START - Если персонажи слишком сильно различаются в росте, гладить по голове не получится
 			if(COMPARE_SIZES(src, M) >= 1.75)
@@ -402,11 +415,14 @@
 								target_message = "<span class='boldnotice'><b>[M]</b> гладит вас по голове, чтобы вы почувствовали себя лучше!</span>")
 					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "lewd_headpat", /datum/mood_event/lewd_headpat)
 					H.handle_post_sex(5, null, H) //Headpats are hot af
+					H.client?.plug13.send_emote(PLUG13_EMOTE_BASIC, PLUG13_STRENGTH_MEDIUM, PLUG13_DURATION_SHORT)
 				else
 					M.visible_message("<span class='notice'><b>[M]</b> похлопывает <b>[src]</b> по голове!</span>", \
 								"<span class='notice'>Ты гладишь <b>[src]</b> по голове, чтобы [ru_who()] почувствовал себя лучше!</span>", target = src,
 								target_message = "<span class='boldnotice'><b>[M]</b> гладит вас по голове, чтобы вы почувствовали себя лучше!</span>")
 					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "headpat", /datum/mood_event/headpat)
+					H.client?.plug13.send_emote(PLUG13_EMOTE_BASIC, PLUG13_STRENGTH_LOW_PLUS, PLUG13_DURATION_TINY)
+					// LOW_PLUS потому что длительность TINY и привод не успеет особо разогнаться
 			//SPLURT EDIT END
 
 			if(!(client?.prefs.cit_toggles & NO_AUTO_WAG) && friendly_check)
@@ -433,6 +449,7 @@
 						"<span class='notice'>Ты обнимаешь <b>[src]</b>!</span>", target = src,\
 						target_message = "<span class='notice'><b>[M]</b> обнимает тебя!</span>")
 			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug)
+			M.client?.plug13.send_emote(PLUG13_EMOTE_BASIC, PLUG13_STRENGTH_LOW_PLUS, PLUG13_DURATION_TINY)
 			friendly_check = TRUE
 
 		if(friendly_check && (HAS_TRAIT(M, TRAIT_FRIENDLY) || HAS_TRAIT(src, TRAIT_FRIENDLY)))

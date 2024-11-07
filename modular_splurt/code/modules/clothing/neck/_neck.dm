@@ -85,3 +85,14 @@
 	icon_state = "petcollar"
 	poly_states = 2
 	poly_colors = list("#00bb70", "#FFC600")
+
+/obj/item/clothing/neck/cloak/altpolychromic
+	name = "polychromic cloak alt"
+	icon = 'modular_splurt/icons/obj/clothing/neck.dmi'
+	mob_overlay_icon = 'modular_splurt/icons/mob/clothing/neck.dmi'
+	icon_state = "poly_cloak"
+	var/poly_colors = list("#FFFFFF", "#808080")
+
+/obj/item/clothing/neck/cloak/altpolychromic/ComponentInitialize()
+	. = ..()
+	AddElement(/datum/element/polychromic, poly_colors, 2)

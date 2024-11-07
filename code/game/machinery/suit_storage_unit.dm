@@ -239,7 +239,7 @@
 			. += "[base_icon_state]_storage"
 		if(uv && uv_super)
 			. += "[base_icon_state]_super"
-	if(!(stat & BROKEN || stat & NOPOWER))
+	if(!(machine_stat & BROKEN || machine_stat & NOPOWER))
 		if(state_open)
 			. += "[base_icon_state]_lights_open"
 		else
@@ -439,7 +439,7 @@
 				mob_occupant.adjustFireLoss(rand(10, 16))
 			if(iscarbon(mob_occupant) && mob_occupant.stat < UNCONSCIOUS)
 				//Awake, organic and screaming
-				mob_occupant.emote("agony")
+				mob_occupant.emote("realagony")
 		addtimer(CALLBACK(src, PROC_REF(cook)), 50)
 	else
 		uv_cycles = initial(uv_cycles)
@@ -522,7 +522,7 @@
 		s.set_up(5, 1, src)
 		s.start()
 		if(electrocute_mob(user, src, src, 1, TRUE))
-			return 1
+			return TRUE
 
 /obj/machinery/suit_storage_unit/relaymove(mob/living/user, direction)
 	if(locked)

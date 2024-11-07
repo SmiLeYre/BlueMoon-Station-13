@@ -33,7 +33,7 @@
 	canlay = 1
 	hasnested = TRUE
 	spider_spawnfrequency = 1600 // 160 seconds
-	special_abillity = list(/obj/effect/proc_holder/spell/aoe_turf/terror_shriek_princess)
+	special_abillity = list(/obj/effect/proc_holder/spell/aoe_turf/terror_shriek/princess)
 	var/spider_max_children = 20
 
 /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/princess/grant_queen_subtype_abilities()

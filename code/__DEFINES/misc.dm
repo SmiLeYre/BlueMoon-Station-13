@@ -37,21 +37,21 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 //Human Overlays Indexes/////////
 //LOTS OF CIT CHANGES HERE. BE CAREFUL WHEN UPSTREAM ADDS MORE LAYERS
 #define MUTATIONS_LAYER			41		//mutations. Tk headglows, cold resistance glow, etc
-#define ANTAG_LAYER 			40		//stuff for things like cultism indicators (clock cult glow, cultist red halos, whatever else new that comes up)
-#define GENITALS_BEHIND_LAYER	39		//Some genitalia needs to be behind everything, such as with taurs (Taurs use body_behind_layer
-#define BODY_BEHIND_LAYER		38		//certain mutantrace features (tail when looking south) that must appear behind the body parts
-#define BODYPARTS_LAYER			37		//Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
-#define MARKING_LAYER			36		//Matrixed body markings because clashing with snouts?
-#define BODY_ADJ_LAYER			35		//certain mutantrace features (snout, body markings) that must appear above the body parts
-#define GENITALS_FRONT_LAYER	34		//Draws some genitalia above clothes and the TAUR body if need be.
-#define BODY_LAYER				33		//underwear, undershirts, socks, eyes, lips(makeup)
-#define BODY_ADJ_UPPER_LAYER	32
-#define FRONT_MUTATIONS_LAYER	31		//mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
-#define UNDERWEAR_LAYER			30
-#define SOCKS_LAYER				29
-#define SHIRT_LAYER				28
-#define UNIFORM_LAYER			27
-#define ID_LAYER				26
+#define GENITALS_BEHIND_LAYER	40		//Some genitalia needs to be behind everything, such as with taurs (Taurs use body_behind_layer
+#define BODY_BEHIND_LAYER		39		//certain mutantrace features (tail when looking south) that must appear behind the body parts
+#define BODYPARTS_LAYER			38		//Initially "AUGMENTS", this was repurposed to be a catch-all bodyparts flag
+#define MARKING_LAYER			37		//Matrixed body markings because clashing with snouts?
+#define BODY_ADJ_LAYER			36		//certain mutantrace features (snout, body markings) that must appear above the body parts
+#define GENITALS_FRONT_LAYER	35		//Draws some genitalia above clothes and the TAUR body if need be.
+#define BODY_LAYER				34		//underwear, undershirts, socks, eyes, lips(makeup)
+#define BODY_ADJ_UPPER_LAYER	33
+#define FRONT_MUTATIONS_LAYER	32		//mutations that should appear above body, body_adj and bodyparts layer (e.g. laser eyes)
+#define UNDERWEAR_LAYER			31
+#define SOCKS_LAYER				30
+#define SHIRT_LAYER				29
+#define UNIFORM_LAYER			28
+#define ID_LAYER				27
+#define GENITALS_EXPOSED_LAYER	26
 #define HANDS_PART_LAYER		25
 #define DAMAGE_LAYER			24		//damage indicators (cuts and burns)
 #define LOWER_MEDICINE_LAYER	23		//Medicine, like gauze and tourniquets
@@ -59,23 +59,23 @@ Will print: "/mob/living/carbon/human/death" (you can optionally embed it in a s
 #define SHOES_LAYER				21
 #define GLOVES_LAYER			20
 #define WRISTS_LAYER			19
-#define GENITALS_EXPOSED_LAYER	18
-#define EAR_RIGHT_LAYER			17
-#define EAR_LEFT_LAYER			16
-#define SUIT_LAYER				15
-#define GLASSES_LAYER			14
-#define BELT_LAYER				13		//Possible make this an overlay of somethign required to wear a belt?
-#define SUIT_STORE_LAYER		12
-#define NECK_LAYER				11
-#define BACK_LAYER				10
-#define HAIR_LAYER				9		//TODO: make part of head layer?
-#define HORNS_LAYER				8
-#define FACEMASK_LAYER			7
-#define HEAD_LAYER				6
-#define HANDCUFF_LAYER			5
-#define LEGCUFF_LAYER			4
-#define HANDS_LAYER				3
-#define BODY_FRONT_LAYER		2
+#define EAR_RIGHT_LAYER			18
+#define EAR_LEFT_LAYER			17
+#define SUIT_LAYER				16
+#define GLASSES_LAYER			15
+#define BELT_LAYER				14		//Possible make this an overlay of somethign required to wear a belt?
+#define SUIT_STORE_LAYER		13
+#define NECK_LAYER				12
+#define BACK_LAYER				11
+#define HAIR_LAYER				10		//TODO: make part of head layer?
+#define HORNS_LAYER				9
+#define FACEMASK_LAYER			8
+#define HEAD_LAYER				7
+#define HANDCUFF_LAYER			6
+#define LEGCUFF_LAYER			5
+#define HANDS_LAYER				4
+#define BODY_FRONT_LAYER		3
+#define ANTAG_LAYER				2		//stuff for things like cultism indicators (clock cult glow, cultist red halos, whatever else new that comes up)
 #define FIRE_LAYER				1		//If you're on fire
 #define TOTAL_LAYERS			41		//KEEP THIS UP-TO-DATE OR SHIT WILL BREAK ;_;
 
@@ -223,10 +223,6 @@ GLOBAL_LIST_EMPTY(bloody_footprints_cache)
 #define POLLTYPE_IRV		"IRV"
 
 
-
-//subtypesof(), typesof() without the parent path
-#define subtypesof(typepath) ( typesof(typepath) - typepath )
-
 //Gets the turf this atom inhabits
 #define get_turf(A) (get_step(A, 0))
 
@@ -292,6 +288,55 @@ GLOBAL_LIST_INIT(pda_reskins, list(
 	PDA_SKIN_MINIMAL = list("icon" = 'icons/obj/pda_minimal.dmi')
 	))
 
+//Payed ERT calls
+GLOBAL_LIST_INIT(payed_ert, list(
+	list(
+		"available" = TRUE,
+		"price" = 40000,
+		"name" = "Доставщики питцы",
+		"disc" = "Нечего есть? Поешьте питцы.",
+		"mission" = "Накормите станцию питцей. Вы не полноправное ОБР и подчиняетесь капитану станции в разумных пределах. Готовьте, развлекайте экипаж и веселитесь.",
+		"size" = 3,
+		"link" = /datum/ert/pizza,
+	),
+	list(
+		"available" = TRUE,
+		"price" = 80000,
+		"name" = "Развлекательная труппа",
+		"disc" = "Смена стала скучной? -Пора вызывать этих ребят",
+		"mission" = "Развеселите экипаж. Вы не полноправное ОБР и подчиняетесь капитану станции в разумных пределах. Стройте, творите, сделайте смену веселее.",
+		"teamsize" = 5,
+		"link" = /datum/ert/erp,
+	),
+	list(
+		"available" = TRUE,
+		"price" = 85000,
+		"name" = "Отряд зачистки",
+		"disc" = "Вся грязь и вредители на станции будут уничтожены",
+		"mission" = "Очистите станцию. Вы не полноправное ОБР и подчиняетесь капитану станции в разумных пределах. Приложите все усилия, что бы станция сверкала.",
+		"teamsize" = 3,
+		"link" = /datum/ert/janitor,
+	),
+	list(
+		"available" = TRUE,
+		"price" = 160000,
+		"name" = "Санитарная бригада",
+		"disc" = "Горы трупов и полное отсуствие медиков? Этот вопрос решаем",
+		"mission" = "Лечите экипаж. Вы не полноправное ОБР и подчиняетесь капитану станции в разумных пределах.",
+		"teamsize" = 4,
+		"link" = /datum/ert/hsc,
+	),
+	list(
+		"available" = TRUE,
+		"price" = 240000,
+		"name" = "Ремонтная бригада",
+		"disc" = "Разгермы, последствия аварий, подача питания - они справятся со всем",
+		"mission" = "Ремонт и строительство - это ваша работа. Вы не полноправное ОБР и подчиняетесь капитану станции в разумных пределах.",
+		"teamsize" = 4,
+		"link" = /datum/ert/engineer_ert,
+	),
+))
+
 /////////////////////////////////////
 // atom.appearence_flags shortcuts //
 /////////////////////////////////////
@@ -315,10 +360,6 @@ GLOBAL_LIST_INIT(pda_reskins, list(
 #define APPEARANCE_LONG_GLIDE				LONG_GLIDE
 
 */
-
-// Consider these images/atoms as part of the UI/HUD
-#define APPEARANCE_UI_IGNORE_ALPHA			(RESET_COLOR|RESET_TRANSFORM|NO_CLIENT_COLOR|RESET_ALPHA|PIXEL_SCALE)
-#define APPEARANCE_UI						(RESET_COLOR|RESET_TRANSFORM|NO_CLIENT_COLOR|PIXEL_SCALE)
 
 //Just space
 #define SPACE_ICON_STATE	"[((x + y) ^ ~(x * y) + z) % 25]"
@@ -532,7 +573,8 @@ GLOBAL_LIST_INIT(pda_reskins, list(
 #define VARSET_TO_LIST(L, V) if(L) L[#V] = V
 #define VARSET_TO_LIST_IF(L, V, C...) if(L && (C)) L[#V] = V
 
-#define PREF_SAVELOAD_COOLDOWN 5
+#define PREF_LOAD_COOLDOWN 5
+#define PREF_SAVE_COOLDOWN 2 SECONDS
 
 #define VOMIT_TOXIC 1
 #define VOMIT_PURPLE 2
@@ -559,8 +601,6 @@ GLOBAL_LIST_INIT(pda_reskins, list(
 #define NIGHTSHIFT_AREA_RECREATION			2		//dorms common areas, etc
 #define NIGHTSHIFT_AREA_DEPARTMENT_HALLS	3		//interior hallways, etc
 #define NIGHTSHIFT_AREA_NONE				4		//default/highest.
-
-#define UNTIL(X) while(!(X)) stoplag()
 
 
 //Scavenging element defines for special loot "events".

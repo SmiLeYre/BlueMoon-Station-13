@@ -18,7 +18,9 @@
 	update_movespeed(TRUE)
 	initialize_actionspeed()
 	init_rendering()
-	hook_vr("mob_new",list(src))
+	var/list/hook_args = list(src)
+	hook_vr("mob_new", hook_args)
+	hook_args.Cut()
 
 /mob/Destroy()//This makes sure that mobs with clients/keys are not just deleted from the game.
 	// if(client)
@@ -30,6 +32,7 @@
 	remove_from_dead_mob_list()
 	remove_from_alive_mob_list()
 	QDEL_LIST(mob_spell_list)
+	QDEL_LIST(actions)
 	GLOB.all_clockwork_mobs -= src
 	// remove_from_mob_suicide_list()
 	focus = null
@@ -74,7 +77,7 @@
 	set hidden = 1
 
 	if(!loc)
-		return 0
+		return FALSE
 
 	var/datum/gas_mixture/environment = loc.return_air()
 
@@ -117,7 +120,7 @@
 	// voice muffling
 	if(stat == UNCONSCIOUS)
 		if(type & MSG_AUDIBLE) //audio
-			to_chat(src, "<I>... Вы едва можете что-то услышать ...</I>")
+			to_chat(src, "<I>... вы едва можете что-то услышать ...</I>")
 		return
 	to_chat(src, msg)
 
@@ -346,7 +349,7 @@
   * [this byond forum post](https://secure.byond.com/forum/?post=1326139&page=2#comment8198716)
   * for why this isn't atom/verb/examine()
   */
-/mob/verb/examinate(atom/A as mob|obj|turf in view()) //It used to be oview(12), but I can't really say why
+/mob/verb/examinate(atom/A as mob|obj|turf in view(client ? client.view : world.view, src)) //It used to be oview(12), but I can't really say why
 	set name = "Examine"
 	set category = "IC"
 
@@ -365,15 +368,15 @@
 		if(isnull(client.recent_examines[A]) || client.recent_examines[A] < world.time)
 			result = A.examine(src)
 			client.recent_examines[A] = world.time + EXAMINE_MORE_TIME // set the value to when the examine cooldown ends
-			RegisterSignal(A, COMSIG_PARENT_QDELETING, .proc/clear_from_recent_examines, override=TRUE) // to flush the value if deleted early
-			addtimer(CALLBACK(src, .proc/clear_from_recent_examines, A), EXAMINE_MORE_TIME)
+			RegisterSignal(A, COMSIG_PARENT_QDELETING, PROC_REF(clear_from_recent_examines), override=TRUE) // to flush the value if deleted early
+			addtimer(CALLBACK(src, PROC_REF(clear_from_recent_examines), A), EXAMINE_MORE_TIME)
 			handle_eye_contact(A)
 		else
 			result = A.examine_more(src)
 	else
 		result = A.examine(src) // if a tree is examined but no client is there to see it, did the tree ever really exist?
 
-	if(result.len)
+	if(result && result.len) // BLUEMOON EDIT - sanity check
 		for(var/i = 1, i <= result.len, i++)
 			if(!findtext(result[i], "<hr>"))
 				result[i] += "\n"
@@ -464,13 +467,13 @@
 	if(!istype(examined_carbon) || (!(examined_carbon.wear_mask && examined_carbon.wear_mask.flags_inv & HIDEFACE) && !(examined_carbon.head && examined_carbon.head.flags_inv & HIDEFACE)))
 		if(SEND_SIGNAL(src, COMSIG_MOB_EYECONTACT, examined_mob, TRUE) != COMSIG_BLOCK_EYECONTACT)
 			var/msg = "<span class='smallnotice'>You make eye contact with [examined_mob].</span>"
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, src, msg), 3) // so the examine signal has time to fire and this will print after
+			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), src, msg), 3) // so the examine signal has time to fire and this will print after
 
 	var/mob/living/carbon/us_as_carbon = src // i know >casting as subtype, but this isn't really an inheritable check
 	if(!istype(us_as_carbon) || (!(us_as_carbon.wear_mask && us_as_carbon.wear_mask.flags_inv & HIDEFACE) && !(us_as_carbon.head && us_as_carbon.head.flags_inv & HIDEFACE)))
 		if(SEND_SIGNAL(examined_mob, COMSIG_MOB_EYECONTACT, src, FALSE) != COMSIG_BLOCK_EYECONTACT)
 			var/msg = "<span class='smallnotice'>[src] makes eye contact with you.</span>"
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/to_chat, examined_mob, msg), 3)
+			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), examined_mob, msg), 3)
 
 /mob/proc/can_resist()
 	return FALSE		//overridden in living.dm
@@ -571,7 +574,7 @@
 	if(send_signal)
 		SEND_SIGNAL(src, COMSIG_MOB_KEY_CHANGE, new_mob, src)
 	//splurt changeh
-	INVOKE_ASYNC(GLOBAL_PROC, .proc/_paci_check, new_mob, src)
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(_paci_check), new_mob, src)
 	//
 	return TRUE
 
@@ -782,7 +785,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	return
 
 /mob/proc/assess_threat(judgement_criteria, lasercolor = "", datum/callback/weaponcheck=null) //For sec bot threat assessment
-	return 0
+	return FALSE
 
 /mob/proc/get_ghost(even_if_they_cant_reenter = 0)
 	if(mind)
@@ -799,8 +802,9 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		return ghost
 
 /mob/proc/AddSpell(obj/effect/proc_holder/spell/S)
-	mob_spell_list += S
-	S.action.Grant(src)
+	if (S?.action)
+		mob_spell_list += S
+		S.action.Grant(src)
 
 /mob/proc/RemoveSpell(obj/effect/proc_holder/spell/spell)
 	if(!spell)
@@ -855,7 +859,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 	if(isliving(seat))
 		var/mob/living/L = seat
 		if(L.mob_size <= MOB_SIZE_SMALL) //being on top of a small mob doesn't put you very high.
-			return 0
+			return FALSE
 	return 9
 
 //can the mob be buckled to something by default?
@@ -909,7 +913,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 /mob/proc/fully_replace_character_name(oldname,newname)
 	log_message("[src] name changed from [oldname] to [newname]", LOG_OWNERSHIP)
 	if(!newname)
-		return 0
+		return FALSE
 	real_name = newname
 	name = newname
 	if(mind)
@@ -927,7 +931,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 				// Only update if this player is a target
 				if(obj.target && obj.target.current && obj.target.current.real_name == name)
 					obj.update_explanation_text()
-	return 1
+	return TRUE
 
 //Updates GLOB.data_core records with new name , see mob/living/carbon/human
 /mob/proc/replace_records_name(oldname,newname)
@@ -997,7 +1001,7 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		client.mouse_pointer_icon = client.mouse_override_icon
 
 /mob/proc/is_literate()
-	return 0
+	return FALSE
 
 /**
  * Can this mob see in the dark
@@ -1146,6 +1150,11 @@ GLOBAL_VAR_INIT(exploit_warn_spam_prevention, 0)
 		if(I.item_flags & SLOWS_WHILE_IN_HAND)
 			. += I.slowdown
 
+/**
+ * Used to wrap stat setting to trigger on-stat-change functionality.
+ * Must be used instead of directly setting a mob's stat var,
+ * so that the signal is sent properly.
+ */
 /mob/proc/set_stat(new_stat)
 	if(new_stat == stat)
 		return

@@ -114,11 +114,6 @@
 	for(var/path in subtypesof(/datum/surgery))
 		GLOB.surgeries_list += new path()
 
-	//Emotes
-	for(var/path in subtypesof(/datum/emote))
-		var/datum/emote/E = new path()
-		E.emote_list[E.key] = E
-
 	for(var/path in subtypesof(/datum/bark))
 		var/datum/bark/B = new path()
 		GLOB.bark_list[B.id] = path
@@ -132,10 +127,10 @@
 
 	// Keybindings
 	init_keybindings()
-
+	GLOB.emote_list = init_emote_list()
 	init_subtypes(/datum/crafting_recipe, GLOB.crafting_recipes)
 
-	INVOKE_ASYNC(GLOBAL_PROC, /proc/init_ref_coin_values) //so the current procedure doesn't sleep because of UNTIL()
+	INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(init_ref_coin_values)) //so the current procedure doesn't sleep because of UNTIL()
 
 //creates every subtype of prototype (excluding prototype) and adds it to list L.
 //if no list/L is provided, one is created.

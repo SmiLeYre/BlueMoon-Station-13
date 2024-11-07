@@ -1,20 +1,20 @@
 /datum/job/captain/New()
 	. = ..()
 	if(SSmapping.config?.map_name == "PrisonStation")
-		total_positions = 0
-		spawn_positions = 0
+		total_positions = 1
+		spawn_positions = 1
 
 /datum/job/blueshield/New()
 	. = ..()
 	if(SSmapping.config?.map_name == "PrisonStation")
-		total_positions = 0
-		spawn_positions = 0
+		total_positions = 1
+		spawn_positions = 1
 
 /datum/job/ntr/New()
 	. = ..()
 	if(SSmapping.config?.map_name == "PrisonStation")
-		total_positions = 0
-		spawn_positions = 0
+		total_positions = 1
+		spawn_positions = 1
 
 /datum/job/lawyer/New()
 	. = ..()
@@ -163,14 +163,14 @@
 /datum/job/chief_engineer/New()
 	. = ..()
 	if(SSmapping.config?.map_name == "PrisonStation")
-		total_positions = 0
-		spawn_positions = 0
+		total_positions = 1
+		spawn_positions = 1
 
 /datum/job/engineer/New()
 	. = ..()
 	if(SSmapping.config?.map_name == "PrisonStation")
-		total_positions = 4
-		spawn_positions = 4
+		total_positions = 8
+		spawn_positions = 8
 
 /datum/job/atmos/New()
 	. = ..()
@@ -181,8 +181,8 @@
 /datum/job/qm/New()
 	. = ..()
 	if(SSmapping.config?.map_name == "PrisonStation")
-		total_positions = 0
-		spawn_positions = 0
+		total_positions = 1
+		spawn_positions = 1
 
 /datum/job/cargo_tech/New()
 	. = ..()
@@ -199,8 +199,8 @@
 /datum/job/hos/New()
 	. = ..()
 	if(SSmapping.config?.map_name == "PrisonStation")
-		total_positions = 0
-		spawn_positions = 0
+		total_positions = 1
+		spawn_positions = 1
 
 /datum/job/warden/New()
 	. = ..()

@@ -24,7 +24,7 @@
 		if(!IS_INTEQ(user))
 			to_chat(user, "<span class='danger'><B>ЗАЩИТНОЕ УСТРОЙСТВО 'ПУЗЫРЬ'</B>: Обнаружены неавторизованные сигнатуры. <B>Производится нейтрализация экипировки.</B></span>")
 			playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
-			addtimer(CALLBACK(src, .proc/explode), 3 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(explode)), 3 SECONDS)
 
 /obj/item/shieldbelt/proc/explode()
 	do_sparks(3, 1, src)

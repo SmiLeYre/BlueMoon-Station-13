@@ -17,6 +17,7 @@
 	exp_type_department = EXP_TYPE_SERVICE
 	considered_combat_role = TRUE
 	outfit = /datum/outfit/job/hop
+	departments = DEPARTMENT_BITFLAG_COMMAND | DEPARTMENT_BITFLAG_SERVICE
 	plasma_outfit = /datum/outfit/plasmaman/hop
 
 	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_COURT, ACCESS_WEAPONS,
@@ -44,19 +45,24 @@
 		/obj/item/reagent_containers/food/drinks/trophy/silver_cup
 	)
 
+	mail_goodies = list(
+		/obj/item/card/id/silver = 10,
+		/obj/item/stack/sheet/bone = 5
+	)
 
 /datum/outfit/job/hop
 	name = "Head of Personnel"
 	jobtype = /datum/job/hop
-
+	glasses = /obj/item/clothing/glasses/hud/skills
 	id = /obj/item/card/id/silver
 	belt = /obj/item/pda/heads/hop
 	ears = /obj/item/radio/headset/heads/hop
 	uniform = /obj/item/clothing/under/rank/civilian/head_of_personnel
 	shoes = /obj/item/clothing/shoes/sneakers/brown
 	head = /obj/item/clothing/head/hopcap
-	backpack_contents = list(/obj/item/storage/box/ids=1,\
-		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
+	backpack_contents = list(/obj/item/storage/box/ids=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
+	box = /obj/item/storage/box/survival/command
+	accessory = /obj/item/clothing/accessory/permit/special/head_of_personnel
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/hop)
 
@@ -71,7 +77,7 @@
 	uniform = /obj/item/clothing/under/rank/captain/util
 	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	head = /obj/item/clothing/head/hopcap
-
+	glasses = /obj/item/clothing/glasses/hud/skills
 	backpack = /obj/item/storage/backpack/duffelbag/syndie
 	satchel = /obj/item/storage/backpack/duffelbag/syndie
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie
@@ -79,4 +85,12 @@
 	pda_slot = ITEM_SLOT_BELT
 	backpack_contents = list(/obj/item/storage/box/ids=1, /obj/item/syndicate_uplink_high=1,\
 		/obj/item/melee/classic_baton/telescopic=1, /obj/item/modular_computer/tablet/preset/advanced = 1)
+	accessory = /obj/item/clothing/accessory/permit/special/head_of_personnel
 
+//only pet worth reviving
+/datum/job/hop/get_mail_goodies(mob/recipient)
+	. = ..()
+	// Strange Reagent if the pet is dead.
+	for(var/mob/living/simple_animal/pet/dog/corgi/Ian/staff_pet in GLOB.dead_mob_list)
+		. += list(/datum/reagent/medicine/strange_reagent = 20)
+		break

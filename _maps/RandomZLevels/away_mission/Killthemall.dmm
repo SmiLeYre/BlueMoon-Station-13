@@ -76,11 +76,6 @@
 /obj/structure/sign/poster/contraband/nri_pistol,
 /turf/closed/indestructible/wall,
 /area/awaymission/Killthemall/start)
-"aW" = (
-/obj/effect/turf_decal/delivery,
-/obj/structure/shipping_container/donk_co,
-/turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level)
 "aZ" = (
 /mob/living/simple_animal/hostile/jungle/mook{
 	stop_automated_movement = 1;
@@ -1571,8 +1566,10 @@
 /turf/open/floor/circuit/green,
 /area/awaymission/Killthemall/Boss)
 "zC" = (
-/obj/structure/shipping_container/nakamura,
 /obj/effect/turf_decal/delivery,
+/obj/structure/closet/crate/secure/weapon{
+	anchored = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/awaymission/Killthemall/Level)
 "zU" = (
@@ -1617,11 +1614,6 @@
 /obj/effect/decal/cleanable/blood/gibs,
 /turf/open/floor/iron/kitchen,
 /area/awaymission/Killthemall/Level)
-"AK" = (
-/obj/structure/shipping_container/gorlex/red,
-/obj/effect/turf_decal/delivery,
-/turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level)
 "AM" = (
 /obj/structure/shipping_container/gorlex,
 /turf/open/floor/mineral/plastitanium,
@@ -1645,11 +1637,6 @@
 /obj/item/storage/box/lethalslugs,
 /obj/item/storage/toolbox/ammo,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level)
-"AT" = (
-/obj/structure/shipping_container/kosmologistika,
-/obj/effect/turf_decal/delivery,
-/turf/open/floor/mineral/plastitanium,
 /area/awaymission/Killthemall/Level)
 "AX" = (
 /turf/closed/wall/mineral/plastitanium,
@@ -2127,10 +2114,6 @@
 /obj/structure/noticeboard/rd,
 /turf/closed/wall/r_wall/syndicate/nosmooth,
 /area/awaymission/Killthemall/Level)
-"HT" = (
-/obj/effect/turf_decal/delivery,
-/turf/open/floor/mineral/plastitanium,
-/area/awaymission/Killthemall/Level)
 "HU" = (
 /obj/structure/destructible/cult/talisman,
 /obj/item/book/granter/spell/random,
@@ -2190,11 +2173,6 @@
 "IO" = (
 /obj/structure/flora/grass/green,
 /turf/open/floor/holofloor/snow,
-/area/awaymission/Killthemall/Level)
-"IT" = (
-/obj/structure/shipping_container,
-/obj/effect/turf_decal/delivery,
-/turf/open/floor/mineral/plastitanium,
 /area/awaymission/Killthemall/Level)
 "Jr" = (
 /obj/structure/ladder/unbreakable/rune{
@@ -2952,7 +2930,7 @@
 /obj/item/clothing/glasses/hud/health/night/syndicate,
 /obj/item/clothing/neck/cloak/healer,
 /obj/item/clothing/head/soft/inteq_med,
-/obj/item/clothing/under/inteq_med,
+/obj/item/clothing/under/inteq/med,
 /turf/open/floor/padded,
 /area/awaymission/Killthemall/Level)
 "UB" = (
@@ -3079,11 +3057,6 @@
 /obj/machinery/chem_dispenser/drinks/beer,
 /obj/structure/table,
 /turf/open/floor/mineral/plastitanium/red,
-/area/awaymission/Killthemall/Level)
-"WH" = (
-/obj/structure/shipping_container/cybersun,
-/obj/effect/turf_decal/delivery,
-/turf/open/floor/mineral/plastitanium,
 /area/awaymission/Killthemall/Level)
 "WK" = (
 /obj/effect/turf_decal/delivery/blue,
@@ -4533,7 +4506,7 @@ Vf
 Kt
 Kt
 Kt
-aW
+zC
 pY
 Kt
 Kt
@@ -4790,7 +4763,7 @@ Kt
 Kt
 Kt
 Kt
-HT
+zC
 Kq
 Kt
 Kt
@@ -5042,12 +5015,12 @@ Kt
 Kt
 Kt
 Kt
-AK
+zC
 JX
 Kt
 Kt
 Kt
-HT
+zC
 iE
 Kt
 Kt
@@ -5299,7 +5272,7 @@ Kt
 Kt
 Kt
 Kt
-HT
+zC
 kU
 Kt
 Pi
@@ -5556,10 +5529,10 @@ Kt
 AM
 Kt
 Kt
-HT
+zC
 JX
 Kt
-AT
+zC
 WK
 Kt
 Kt
@@ -5816,7 +5789,7 @@ Kt
 Kt
 Kt
 Kt
-HT
+zC
 LV
 Kt
 Vf
@@ -6073,7 +6046,7 @@ hU
 Kt
 Kt
 Kt
-HT
+zC
 LV
 Kt
 Kt
@@ -6847,7 +6820,7 @@ Kt
 Kt
 Kt
 Kt
-HT
+zC
 JN
 Kt
 Kt
@@ -7104,7 +7077,7 @@ Kt
 Kt
 Kt
 Kt
-HT
+zC
 WK
 Kt
 ak
@@ -7356,7 +7329,7 @@ Kt
 Kt
 Kt
 Kt
-WH
+zC
 nP
 Kt
 Pi
@@ -7613,10 +7586,10 @@ Kt
 Kt
 Kt
 Kt
-HT
+zC
 WK
 Kt
-IT
+zC
 kv
 Kt
 Kt
@@ -7870,10 +7843,10 @@ bZ
 Kt
 Kt
 Kt
-HT
+zC
 WK
 Kt
-HT
+zC
 ru
 Kt
 Kt
@@ -8130,7 +8103,7 @@ Kt
 Kt
 Kt
 Kt
-HT
+zC
 Dp
 Kt
 Kt

@@ -470,4 +470,4 @@
 				to_chat(M, "<span class='warning'>Установленный вам имплант предотвратил попытку взлома, но это ненадолго...</span>")
 				return
 			M.emote("hack")
-			addtimer(CALLBACK(M, /mob/living/carbon.proc/clothing_burst, TRUE), 9 SECONDS)
+			addtimer(CALLBACK(M, TYPE_PROC_REF(/mob/living/carbon, clothing_burst), TRUE), 9 SECONDS)

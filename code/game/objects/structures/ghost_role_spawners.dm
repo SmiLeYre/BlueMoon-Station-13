@@ -4,7 +4,7 @@
 	var/list/players_spawned = new
 
 /datum/antagonist/ghost_role
-	name = "\improper Ghost Role"
+	name = "\improper Misc Ghost Role"
 	job_rank = ROLE_GHOSTROLE
 	show_in_antagpanel = FALSE
 	soft_antag = TRUE
@@ -114,7 +114,7 @@
 	move_resist = MOVE_FORCE_NORMAL
 	density = FALSE
 	loadout_enabled = FALSE
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	short_desc = "Вы Пеплоход."
 	flavour_text = "Ваше племя поклоняется матери Некрополю, как вашей Спасительнице и Наставнице. Священные стены дворца Некрополя \
 	дали вашему Тендрилу и вашему Роду защиту. Испокон веков, ваша священная обитель дарует вам Дар Перерождения, из цикла в цикл за \
@@ -132,19 +132,21 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/ash_walker/allow_spawn(mob/user, silent = FALSE)
-	if(!(user.key in team.players_spawned) || spawnOverride)//one per person unless you get a bonus spawn
+	if(!(user.ckey in team.players_spawned) || spawnOverride)//one per person unless you get a bonus spawn
 		return TRUE
 	to_chat(user, span_warning("<b>You have exhausted your usefulness to the Necropolis</b>."))
 	return FALSE
 
 /obj/effect/mob_spawn/human/ash_walker/special(mob/living/new_spawn)
-	new_spawn.real_name = random_unique_lizard_name(gender)
-	if(is_mining_level(z))
-		to_chat(new_spawn, "<b>Drag the corpses of men and beasts to your nest. It will absorb them to create more of your kind. Glory to the Necropolis!</b>")
+	// new_spawn.real_name = random_unique_lizard_name(gender)
+	if(is_mining_level(new_spawn.z))
+		to_chat(new_spawn, "<b>Drag the corpses of beasts to your nest. It will absorb them to create more of your kind. Glory to the Necropolis!</b>")
 		to_chat(new_spawn, "<b>You can expand the weather proof area provided by your shelters by using the 'New Area' key near the bottom right of your HUD.</b>")
 		to_chat(new_spawn, "<b>Dragging injured ashwalkers to the tentacle or using the sleep verb next to it youself causes the body to remade whole after a short delay!</b>")
 	else
 		to_chat(new_spawn, "<span class='userdanger'>You have been born outside of your natural home! Whether you decide to return home, or make due with your new home is your own decision.</span>")
+
+	new_spawn.add_quirk(/datum/quirk/body_morpher, TRUE)
 
 //Ash walkers on birth understand how to make bone bows, bone arrows and ashen arrows
 
@@ -156,7 +158,7 @@
 		H.update_body()
 		if(team)
 			new_spawn.mind.add_antag_datum(/datum/antagonist/ashwalker, team)
-			team.players_spawned += (new_spawn.key)
+			team.players_spawned += (new_spawn.ckey)
 		eggshell.egg = null
 		QDEL_NULL(eggshell)
 
@@ -317,8 +319,9 @@
 	враждебными существами и Пепельными Дрейками, слетающими с безоблачного неба. Все, что вы можете пожелать, это почувствовать мягкую траву между пальцами ног и \
 	свежий воздух Земли. Эти мысли развеиваются очередным воспоминанием о том, как вы сюда попали..."
 	assignedrole = "Hermit"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	loadout_enabled = TRUE
+	antagonist_type = /datum/antagonist/ghost_role/hermit
 
 /obj/effect/mob_spawn/human/hermit/Initialize(mapload)
 	. = ..()
@@ -372,7 +375,7 @@
 	все? Куда они делись? Что случилось с больницей? И этот запах дыма? Вам нужно найти кого-нибудь еще. Может быть, они думают, что все ушли. Одна из кошек поцарапала тебя всего несколько минут назад. Поэтому вы и были в капсуле - чтобы залечить царапину. Струпья еще свежие..."
 	important_info = "Вы не Антагонист."
 	assignedrole = "Translocated Vet"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/doctor/alive/lavaland/Destroy()
 	var/obj/structure/fluff/empty_sleeper/S = new(drop_location())
@@ -394,7 +397,7 @@
 	though fate has other plans for you."
 	flavour_text = "Good. It seems as though your ship crashed. You remember that you were convicted of "
 	assignedrole = "Escaped Prisoner"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/prisoner_transport/special(mob/living/L)
 	. = ..()
@@ -436,8 +439,9 @@
 	flavour_text = "Вы нанялись в качестве персонала общего профиля для уборки, готовки, обслуживания гостей и всего, что прикажет менеджер на время пребывания на борту космического отеля. Ни в коем случае не грубите, не хамите и не ругайтесь с посетителями. Помните, что в вашем случае, клиент всегда прав."
 	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или установки телепада)."
 	assignedrole = "Hotel Staff"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	loadout_enabled = TRUE
+	antagonist_type = /datum/antagonist/ghost_role/space_hotel
 
 /datum/outfit/hotelstaff
 	name = "Hotel Staff"
@@ -455,7 +459,7 @@
 	outfit = /datum/outfit/hotelstaff/security
 	short_desc = "Вы - охранник космического отеля."
 	flavour_text = "Вы были назначены в этот отель, чтобы защищать интересы компании Nanotrasen, недавно выкупившей его. Ведите себя вежливо, не размахивайте оружием и бронёй, не грубите посетителям - в первую очередь, вы не должны мешать наслаждаться пребыванием и отпугивать адекватных клиентов."
-	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или установки телепада). Не ведите себя как СБ со станции - вы обычный гражданский и не обучены для борьбы с террористами, предателями, аномалиями и другими неординарными сущностями."
+	important_info = "Персоналу отеля запрещается покидать его (кроме неординарных случаев или для установки телепада). Не ведите себя как СБ со станции - вы обычный гражданский и не обучены для борьбы с террористами, предателями, аномалиями и другими неординарными сущностями."
 
 /datum/outfit/hotelstaff/security
 	name = "Hotel Secuirty"
@@ -490,6 +494,7 @@
 	var/obj/effect/proc_holder/spell/targeted/summon_friend/spell
 	var/datum/mind/owner
 	assignedrole = "SuperFriend"
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/demonic_friend/Initialize(mapload, datum/mind/owner_mind, obj/effect/proc_holder/spell/targeted/summon_friend/summoning_spell)
 	. = ..()
@@ -520,8 +525,8 @@
 		id.registered_name = L.real_name
 		id.update_label()
 	else
-		to_chat(L, "<span class='userdanger'>Your owner is already dead! You will soon perish.</span>")
-		addtimer(CALLBACK(L, /mob.proc/dust, 150)) //Give em a few seconds as a mercy.
+		to_chat(L, "<span class='userdanger'>Your owner is already dead!  You will soon perish.</span>")
+		addtimer(CALLBACK(L, TYPE_PROC_REF(/mob, dust), 150)) //Give em a few seconds as a mercy.
 
 /datum/outfit/demonic_friend
 	name = "Demonic Friend"
@@ -539,8 +544,8 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	outfit = /datum/outfit/syndicate_empty
-	assignedrole = "Space Syndicate"
-	canloadappearance = TRUE
+	assignedrole = "Space Syndicate"	//I know this is really dumb, but Syndicate operative is nuke ops
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/solfed
 	name = "Solar Federation Marine"
@@ -550,7 +555,7 @@
 	icon_state = "oldpod"
 	outfit = /datum/outfit/ert/sol_soldier
 	assignedrole = "Solar Federation Operative"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/solfed/demoman
 	name = "Solar Federation Support"
@@ -560,8 +565,22 @@
 	name = "Solar Federation Field Officer"
 	outfit = /datum/outfit/ert/sol_soldier_leader
 
-/obj/effect/mob_spawn/human/solfed/admiral
+/obj/effect/mob_spawn/human/solfed/diplomacy
+	name = "Solar Federation Diplomacy Worker"
+	short_desc = "Вы - дипломат Солнечной Федерации."
+	flavour_text = "Вы - дипломат, который должен обеспечить мирное сосуществование с другими расами. Вы - не боец, но вы должны быть готовы защищать себя и своих коллег."
+	important_info = "Защитите корабль и Адмирала ценой своей жизни."
+	outfit = /datum/outfit/sol_diplomacy
+
+/obj/effect/mob_spawn/human/solfed/diplomacy/slut
+	name = "Solar Federation Secretary (SLUT)"
+	outfit = /datum/outfit/sol_diplomacy/slut
+
+/obj/effect/mob_spawn/human/solfed/diplomacy/admiral
 	name = "Solar Federation Battle Admiral"
+	short_desc = "Вы - Адмирал Солнечной Федерации."
+	flavour_text = "Вы - Адмирал. Вы - лидер экипажа и ответственный за его безопасность. Вам нужно найти способ обеспечить корабль энергией."
+	important_info = "Защитите корабль и секретные документы ценой своей жизни."
 	outfit = /datum/outfit/sol_diplomacy/consul/admiral
 
 /datum/outfit/syndicate_empty
@@ -571,7 +590,7 @@
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	ears = /obj/item/radio/headset/syndicate/alt
 	back = /obj/item/storage/backpack
-	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/deathrattle, /obj/item/implant/explosive, /obj/item/implant/mindshield)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/deathrattle/centcom, /obj/item/implant/explosive, /obj/item/implant/mindshield)
 	id = /obj/item/card/id/syndicate
 
 	give_space_cooler_if_synth = TRUE // BLUEMOON ADD
@@ -588,6 +607,7 @@
 	flavour_text = "Your job is to follow your captain's orders, maintain the ship, and keep the engine running. If you are not familiar with how the supermatter engine functions: do not attempt to start it."
 	important_info = "The armory is not a candy store, and your role is not to assault the station directly, leave that work to the assault operatives."
 	outfit = /datum/outfit/syndicate_empty/battlecruiser
+	can_load_appearance = TRUE
 
 /datum/outfit/syndicate_empty/battlecruiser
 	name = "Syndicate Battlecruiser Ship Operative"
@@ -621,7 +641,7 @@
 	important_info = "As the captain, this whole operation falls on your shoulders. You do not need to nuke the station, causing sufficient damage and preventing your ship from being destroyed will be enough."
 	outfit = /datum/outfit/syndicate_empty/battlecruiser/assault/captain
 	id_access_list = list(150,151)
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /datum/outfit/syndicate_empty/battlecruiser/assault/captain
 	name = "Syndicate Battlecruiser Captain"
@@ -666,7 +686,7 @@
 	l_pocket = /obj/item/assembly/flash/handheld
 	job_description = "Oldstation Crew"
 	assignedrole = "Ancient Crew"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/oldsec/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
@@ -694,7 +714,7 @@
 	gloves = /obj/item/clothing/gloves/color/fyellow/old
 	l_pocket = /obj/item/tank/internals/emergency_oxygen
 	assignedrole = "Ancient Crew"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/oldeng/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
@@ -721,7 +741,7 @@
 	l_pocket = /obj/item/stack/medical/suture
 	assignedrole = "Ancient Crew"
 	job_description = "Oldstation Crew"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/oldsci/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
@@ -745,7 +765,8 @@
 	short_desc = "You are a space pirate."
 	flavour_text = "Станция отказалась платить вам за крышу. Похитьте её ресурсы, обнесите хранилище на кредиты. Избегайте ненужных жертв. Не забывайте следить за своим кораблем."
 	assignedrole = "Space Pirate"
-	var/rank = "Матрос"
+	var/rank = "Mate"
+	can_load_appearance = FALSE
 
 /obj/effect/mob_spawn/human/pirate/on_attack_hand(mob/living/user, act_intent = user.a_intent, unarmed_attack_flags)
 	. = ..()
@@ -791,7 +812,7 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/pirate/corpse/captain
-	rank = "Капитан"
+	rank = "Captain"
 	mob_name = "Dead Space Pirate Captain"
 	outfit = /datum/outfit/pirate/space/captain
 
@@ -809,11 +830,11 @@
 	return ..()
 
 /obj/effect/mob_spawn/human/pirate/captain
-	rank = "Капитан"
+	rank = "Captain"
 	outfit = /datum/outfit/pirate/space/captain
 
 /obj/effect/mob_spawn/human/pirate/gunner
-	rank = "Канонир"
+	rank = "Gunner"
 
 /obj/effect/mob_spawn/human/ghostcafe
 	name = "Ghost Cafe Sleeper"
@@ -832,6 +853,8 @@
 	skip_reentry_check = TRUE
 	banType = ROLE_GHOSTCAFE
 	back = /obj/item/storage/backpack/holding/satchel // BLUEMOON ADD
+	can_load_appearance = 2
+	antagonist_type = /datum/antagonist/ghost_role/ghost_cafe // BLUEMOON ADD
 
 /datum/action/toggle_dead_chat_mob
 	icon_icon = 'icons/mob/mob.dmi'
@@ -841,7 +864,7 @@
 
 /datum/action/toggle_dead_chat_mob/Trigger()
 	if(!..())
-		return 0
+		return FALSE
 	var/mob/M = target
 	if(HAS_TRAIT_FROM(M,TRAIT_SIXTHSENSE,GHOSTROLE_TRAIT))
 		REMOVE_TRAIT(M,TRAIT_SIXTHSENSE,GHOSTROLE_TRAIT)
@@ -1001,11 +1024,13 @@
 	outfit = /datum/outfit/tarkoff
 	assignedrole = "Ancient Crew"
 	job_description = "Oldstation Crew"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 	computer_area = /area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall
 
 	give_cooler_to_mob_if_synth = TRUE
+
+	antagonist_type = /datum/antagonist/ghost_role/tarkov
 
 /datum/outfit/tarkoff
 	name = "Default Port Tarkov Outfit"
@@ -1018,6 +1043,8 @@
 	l_pocket = /obj/item/card/mining_point_card
 	r_pocket = /obj/item/mining_voucher
 	ears = /obj/item/radio/headset/tarkoff
+
+	implants = list(/obj/item/implant/anchor)
 
 /datum/outfit/tarkoff/post_equip(mob/living/carbon/human/tarkoff, visualsOnly = FALSE)
 	var/obj/item/card/id/id_card = tarkoff.wear_id
@@ -1171,6 +1198,117 @@
 	name = "Tarkov Ensign's Access Card"
 	desc = "An access card designated for \"Tarkov Ensign\". No one has to listen to you... but you're the closest there is for command around here."
 
+// CENTCOM
+
+/obj/effect/mob_spawn/human/centcom_syndicate
+	name = "Special Operations Forces Syndicate Intern"
+	roundstart = FALSE
+	death = FALSE
+	job_description = "Special Operations Forces Syndicate Intern"
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper_s"
+	short_desc = "Вы Интерн-Специалист, взятый на работу Центральным Командованием в качестве очередной рабочей единицы."
+	flavour_text = "Не так давно вы были взяты на работу в качестве дежурного на Аванпосту Центрального Командования. Ваша задача проста - следить за факсом и отвечать на сообщения, полученные через факс. Помните, что часть сообщений поступает из иного пласта Вселенной, потому не пугайтесь, если вдруг окажется, что где-то там вызывают Кровавого Бога. Просто выполняйте свою работу и отправляйте инструкции."
+	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей. Bы можете выдавать около-шуточные требования и указания в Эксту. Ни в коем случае не оказывайте прямое влияние на станцию в Динамику."
+	outfit = /datum/outfit/centcom_syndicate
+	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
+	assignedrole = "Centcom Intern"
+	can_load_appearance = TRUE
+	loadout_enabled = TRUE
+	antagonist_type = /datum/antagonist/ghost_role/centcom_intern
+
+/datum/outfit/centcom_syndicate
+	name = "Special Ops Syndicate Intern"
+	head = /obj/item/clothing/head/HoS/beret/syndicate
+	ears = /obj/item/radio/headset/syndicate/alt
+	mask = /obj/item/clothing/mask/cigarette/cigar/havana
+	glasses = /obj/item/clothing/glasses/aviators
+	suit = /obj/item/clothing/suit/armor/vest/warden/syndicate
+	uniform = /obj/item/clothing/under/syndicate/combat
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	shoes = /obj/item/clothing/shoes/combat/swat
+
+	l_pocket = /obj/item/extinguisher/mini
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+	back = /obj/item/storage/backpack/satchel/sec
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/firstaid/regular=1,
+		/obj/item/stamp/chameleon=1,
+		)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/deathrattle/centcom, /obj/item/implant/explosive, /obj/item/implant/mindshield, /obj/item/implant/radio/centcom)
+	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
+	id = /obj/item/card/id/ert
+
+/datum/outfit/centcom_syndicate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	if(visualsOnly)
+		return
+
+	var/obj/item/card/id/W = H.wear_id
+	W.icon_state = "centcom"
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("Special Ops Syndicate Intern")
+	W.assignment = "Special Ops Syndicate Intern"
+	W.registered_name = H.real_name
+	W.update_label()
+
+	var/obj/item/radio/headset/R = H.ears
+	R.set_frequency(FREQ_CENTCOM)
+	R.freqlock = TRUE
+
+/obj/effect/mob_spawn/human/centcom_nanotrasen
+	name = "Special Operations Forces Nanotrasen Intern"
+	roundstart = FALSE
+	death = FALSE
+	job_description = "Special Operations Forces Nanotrasen Intern"
+	icon = 'icons/obj/machines/sleeper.dmi'
+	icon_state = "sleeper_s"
+	short_desc = "Вы Интерн-Специалист, взятый на работу Центральным Командованием в качестве очередной рабочей единицы."
+	flavour_text = "Не так давно вы были взяты на работу в качестве дежурного на Аванпосту Центрального Командования. Ваша задача проста - следить за факсом и отвечать на сообщения, полученные через факс. Помните, что часть сообщений поступает из иного пласта Вселенной, потому не пугайтесь, если вдруг окажется, что где-то там вызывают Кровавого Бога. Просто выполняйте свою работу и отправляйте инструкции."
+	important_info = "Вы не Антагонист. Вы гид-помощник. Отвечайте на Факсы и создавайте ролевую ценность в идущем раунде с использованием своих возможностей. Bы можете выдавать около-шуточные требования и указания в Эксту. Ни в коем случае не оказывайте прямое влияние на станцию в Динамику."
+	outfit = /datum/outfit/centcom_nanotrasen
+	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
+	assignedrole = "Centcom Intern"
+	can_load_appearance = TRUE
+	loadout_enabled = TRUE
+	antagonist_type = /datum/antagonist/ghost_role/centcom_intern
+
+/datum/outfit/centcom_nanotrasen
+	name = "Special Ops Nanotrasen Intern"
+	head = /obj/item/clothing/head/beret/black
+	ears = /obj/item/radio/headset/syndicate/alt
+	glasses = /obj/item/clothing/glasses/aviators
+	suit = /obj/item/clothing/suit/space/officer
+	uniform = /obj/item/clothing/under/syndicate
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	shoes = /obj/item/clothing/shoes/combat/swat
+
+	l_pocket = /obj/item/extinguisher/mini
+	r_pocket = /obj/item/tank/internals/emergency_oxygen/double
+	back = /obj/item/storage/backpack/satchel/leather
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1,\
+		/obj/item/storage/firstaid/regular=1,
+		/obj/item/stamp/chameleon=1,
+		)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/deathrattle/centcom, /obj/item/implant/explosive, /obj/item/implant/mindshield, /obj/item/implant/radio/centcom)
+	cybernetic_implants = list(/obj/item/organ/cyberimp/eyes/hud/security,/obj/item/organ/cyberimp/chest/nutrimentextreme, /obj/item/organ/cyberimp/chest/chem_implant)
+	id = /obj/item/card/id/ert
+
+/datum/outfit/centcom_nanotrasen/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	if(visualsOnly)
+		return
+
+	var/obj/item/card/id/W = H.wear_id
+	W.icon_state = "centcom"
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("Special Ops Centcom Intern")
+	W.assignment = "Special Ops Centcom Intern"
+	W.registered_name = H.real_name
+	W.update_label()
+
+	var/obj/item/radio/headset/R = H.ears
+	R.set_frequency(FREQ_CENTCOM)
+	R.freqlock = TRUE
+
 //DS-2.
 /obj/effect/mob_spawn/human/ds2
 	name = "DS-2 personnel"
@@ -1181,10 +1319,11 @@
 	roundstart = FALSE
 	death = FALSE
 	random = TRUE
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 	use_outfit_name = TRUE
 	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
+	antagonist_type = /datum/antagonist/ghost_role/ds2
 
 /obj/effect/mob_spawn/human/ds2/prisoner
 	name = "Syndicate Prisoner"
@@ -1221,9 +1360,6 @@
 	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
 	var/obj/item/implant/anchor/ghost_anchor = new
-	ghost_anchor.allowed_z_levels = list(1, 6, 12, src.z) // dynamic набор: цк, ксено межшатолье, инфдормы, сектор имплантации
-	if(GLOB.master_mode == "Extended")
-		ghost_anchor.allowed_z_levels.Add(2,5) // экстовая добавка: станционный, шахта
 	ghost_anchor.implant(new_spawn, null, TRUE)
 
 /obj/effect/mob_spawn/human/ds2/syndicate_command/special(mob/living/new_spawn)
@@ -1231,9 +1367,6 @@
 	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
 	var/obj/item/implant/anchor/ghost_anchor = new
-	ghost_anchor.allowed_z_levels = list(1, 6, 12, src.z) // dynamic набор: цк, ксено межшатолье, инфдормы, сектор имплантации
-	if(GLOB.master_mode == "Extended")
-		ghost_anchor.allowed_z_levels.Add(2,5) // экстовая добавка: станционный, шахта
 	ghost_anchor.implant(new_spawn, null, TRUE)
 
 /obj/effect/mob_spawn/human/ds2/syndicate/service

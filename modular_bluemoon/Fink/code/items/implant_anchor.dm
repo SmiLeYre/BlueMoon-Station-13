@@ -20,29 +20,32 @@
 	desc = "A glass case containing an anchor implant."
 	imp_type = /obj/item/implant/anchor
 
-/obj/item/implant/anchor/proc/Setsectors()
-	allowed_z_levels = list(1,6,12) // dynamic набор: цк, ксено межшатолье, инфдормы, сектор имплантации
-	if(GLOB.master_mode == "Extended")
-		allowed_z_levels.Add(2,5) // экстовая добавка: станционный, шахта
-	return allowed_z_levels
-
 /obj/item/implant/anchor/implant(mob/living/target, mob/user, silent, force)
 	. = ..()
-	RegisterSignal(imp_in, COMSIG_LIVING_LIFE, .proc/on_life)
+	allowed_z_levels += SSmapping.levels_by_trait(ZTRAIT_CENTCOM)// цк
+	allowed_z_levels += SSmapping.levels_by_all_trait(ZTRAITS_LAVALAND_JUNGLE)// ксено межшатолье
+	allowed_z_levels += SSmapping.levels_by_trait(ZTRAIT_RESERVED)// инфдормы
+	if(GLOB.master_mode == "Extended")
+		allowed_z_levels += SSmapping.levels_by_trait(ZTRAIT_STATION)// станция
+		allowed_z_levels += SSmapping.levels_by_all_trait(ZTRAITS_LAVALAND)// шахта
+	if(!(target in allowed_z_levels))
+		allowed_z_levels += target.z
+
+	RegisterSignal(imp_in, COMSIG_LIVING_LIFE, PROC_REF(on_life))
 	ADD_TRAIT(target, TRAIT_ANCHOR, "implant")
 	target.sec_hud_set_implants()
 	return TRUE
 
 /obj/item/implant/anchor/proc/on_life(mob/living/owner)
-	if(!(allowed_z_levels))
-		allowed_z_levels = Setsectors()
 //	to_chat(owner, "<span class='rose'>allowed_z_levels [allowed_z_levels], owner.z [owner.z] </span>")
 //	to_chat(owner, "<span class='rose'>Tick</span>")
-	if(get_area(owner) in GLOB.areas_by_type[/area/ruin/space/has_grav/bluemoon])
+	var/area/my_area = get_area(owner)
+	if(istype(my_area, /area/ruin/space/has_grav/bluemoon) || istype(my_area, /area/shuttle/sbc_corvette))
 		return
 	var/turf/my_location = get_turf(owner)
 	if(!(my_location.z in allowed_z_levels))
 		to_chat(owner, "<span class='warning'>Больно!</span>")
-		owner.adjustBruteLoss(2.5, FALSE) //Provides slow harassing for both brute and burn damage.
-		owner.adjustFireLoss(2.5, FALSE)
+		owner.adjustBruteLoss(5, FALSE) //Provides slow harassing for both brute and burn damage.
+		owner.adjustFireLoss(5, FALSE)
+		owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10) // BLUEMOON ADD ебём мозг гостролькам любителям лутать космос и ходить на станцию
 		to_chat(owner, "<span class='warning'>Мне становится плохо при отдалении от своего родного сектора....</span>")

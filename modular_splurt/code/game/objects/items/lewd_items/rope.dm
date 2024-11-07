@@ -173,7 +173,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 				apply_legs(C)
 
 	// BLUEMOON ADD START - сверхтяжёлых персонажей нельзя таскать за собой
-	if((!HAS_TRAIT(C, TRAIT_BLUEMOON_HEAVY_SUPER)))
+	if(HAS_TRAIT(C, TRAIT_BLUEMOON_HEAVY_SUPER))
 		to_chat(user, span_warning("[C] is too heavy to be moved on ropes. It would be useless."))
 		return
 	// BLUEMOON ADD END
@@ -439,14 +439,14 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 			roped_mob.clear_cuffs(roped_mob.legcuffed, 0)
 	roped_mob = new_mob
 	if(roped_mob != null)
-		RegisterSignal(roped_mob, COMSIG_MOVABLE_MOVED, .proc/on_mob_move)
+		RegisterSignal(roped_mob, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
 
 /obj/item/restraints/bondage_rope/proc/set_roped_master(mob/living/carbon/new_master)
 	if(roped_master != null && roped_mob != roped_master)
 		UnregisterSignal(roped_master, COMSIG_MOVABLE_MOVED)
 	roped_master = new_master
 	if(roped_master != null && roped_mob != roped_master)
-		RegisterSignal(roped_master, COMSIG_MOVABLE_MOVED, .proc/on_master_move)
+		RegisterSignal(roped_master, COMSIG_MOVABLE_MOVED, PROC_REF(on_master_move))
 
 /obj/item/restraints/bondage_rope/proc/set_roped_object(obj/new_object, new_object_type)
 	if(roped_object != null)
@@ -455,7 +455,7 @@ GLOBAL_LIST_INIT(bondage_rope_slowdowns, list(
 	roped_object_type = new_object_type
 	set_rope_slowdown(roped_mob)
 	if(roped_object != null)
-		RegisterSignal(roped_object, COMSIG_MOVABLE_MOVED, .proc/on_object_move)
+		RegisterSignal(roped_object, COMSIG_MOVABLE_MOVED, PROC_REF(on_object_move))
 
 // Returns true, if roped mob can tug their object behind them
 /obj/item/restraints/bondage_rope/proc/can_move_object()

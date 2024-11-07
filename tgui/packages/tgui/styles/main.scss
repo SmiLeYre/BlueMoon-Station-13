@@ -61,6 +61,7 @@
 @include meta.load-css('./interfaces/Techweb.scss');
 @include meta.load-css('./interfaces/SecurityRecords.scss');
 @include meta.load-css('./interfaces/AccountsUplinkTerminal.scss');
+@include meta.load-css('./interfaces/MedalsViewer.scss');
 
 // Layouts
 @include meta.load-css('./layouts/Layout.scss');

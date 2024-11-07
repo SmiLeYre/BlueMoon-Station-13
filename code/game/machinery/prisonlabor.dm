@@ -6,6 +6,7 @@
 	use_power = IDLE_POWER_USE
 	idle_power_usage = 2
 	active_power_usage = 50
+	density = TRUE
 	var/obj/item/stack/license_plates/empty/current_plate
 	var/pressing = FALSE
 
@@ -28,7 +29,7 @@
 	if(!is_operational())
 		to_chat(user, "<span class='warning'>[src] has to be on to do this!</span>")
 		return FALSE
-	if(pressing)
+	if(pressing || current_plate)
 		to_chat(user, "<span class='warning'>[src] already has a plate in it!</span>")
 		return FALSE
 	if(istype(I, /obj/item/stack/license_plates/empty))

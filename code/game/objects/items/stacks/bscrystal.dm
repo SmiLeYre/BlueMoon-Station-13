@@ -25,7 +25,7 @@
 	pixel_y = rand(-5, 5)
 
 /obj/item/stack/ore/bluespace_crystal/get_part_rating()
-	return 1
+	return TRUE
 
 /obj/item/stack/ore/bluespace_crystal/attack_self(mob/user)
 	if(!user.canUseTopic(src))

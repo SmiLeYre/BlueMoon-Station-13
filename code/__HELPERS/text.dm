@@ -245,15 +245,15 @@
 /proc/text_in_list(haystack, list/needle_list, start=1, end=0)
 	for(var/needle in needle_list)
 		if(findtext(haystack, needle, start, end))
-			return 1
-	return 0
+			return TRUE
+	return FALSE
 
 //Like above, but case sensitive
 /proc/text_in_list_case(haystack, list/needle_list, start=1, end=0)
 	for(var/needle in needle_list)
 		if(findtextEx(haystack, needle, start, end))
-			return 1
-	return 0
+			return TRUE
+	return FALSE
 
 //Adds 'char' ahead of 'text' until there are 'count' characters total
 /proc/add_leading(text, count, char = " ")
@@ -335,7 +335,7 @@
 			else if(b == replace) //if B is the replacement char
 				newtext = copytext(newtext, 1, newtext_it) + a + copytext(newtext, newtext_it + length(newtext[newtext_it]))
 			else //The lists disagree, Uh-oh!
-				return 0
+				return FALSE
 		text_it += length(a)
 		comp_it += length(b)
 		newtext_it += length(newtext[newtext_it])
@@ -345,7 +345,7 @@
 //This proc returns the number of chars of the string that is the character
 //This is used for detective work to determine fingerprint completion.
 	if(!text || !character)
-		return 0
+		return FALSE
 	var/count = 0
 	var/lentext = length(text)
 	var/a = ""
@@ -437,7 +437,7 @@ GLOBAL_LIST_INIT(binary, list("0","1"))
 		. = findtextEx(haystack, char, start, end)
 		if(.)
 			return
-	return 0
+	return FALSE
 
 /proc/parsemarkdown_basic_step1(t, limited=FALSE)
 	if(length(t) <= 0)

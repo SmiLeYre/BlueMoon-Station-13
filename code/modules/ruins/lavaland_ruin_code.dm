@@ -131,7 +131,7 @@
 	important_info = "Вы не Антагонист. Вы можете отправиться на станцию в Эксту. В Динамик вам следует быть ниже травы и тише воды."
 	outfit = /datum/outfit/lavaland_syndicate
 	assignedrole = "Lavaland Syndicate"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 
 /obj/effect/mob_spawn/human/lavaland_syndicate/special(mob/living/new_spawn)
@@ -150,7 +150,7 @@
 	back = /obj/item/storage/backpack
 	r_pocket = /obj/item/gun/ballistic/automatic/pistol
 	id = /obj/item/card/id/syndicate/anyone
-	implants = list(/obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/anchor)
 
 /datum/outfit/lavaland_syndicate/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	H.faction |= ROLE_SYNDICATE
@@ -167,7 +167,7 @@
 	important_info = "Вы не Антагонист. Вы можете отправиться на станцию в Эксту. В Динамик вам следует быть ниже травы и тише воды."
 	outfit = /datum/outfit/lavaland_syndicate/shaft
 	assignedrole = "Lavaland Syndicate"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 
 /datum/outfit/lavaland_syndicate/shaft
@@ -183,7 +183,7 @@
 	back = /obj/item/storage/backpack
 	r_pocket = /obj/item/gun/ballistic/automatic/pistol
 	id = /obj/item/card/id/syndicate/anyone
-	implants = list(/obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/anchor)
 
 /obj/effect/mob_spawn/human/lavaland_syndicate/comms
 	name = "Syndicate Comms Agent"
@@ -192,7 +192,7 @@
 	flavour_text = "К сожалению это или к счастью, но сотрудники вашего партнёра, Мега-Корпорации Nanotrasen, начали добычу полезных ископаемых в этом секторе. Следите за вражеской активностью как можно лучше и старайтесь не высовываться. Используйте коммуникационное оборудование для оказания поддержки любым полевым агентам и сотрудникам Космической Станции."
 	important_info = "Вы не Антагонист. Вы можете отправиться на станцию в Эксту. В Динамик вам следует быть ниже травы и тише воды."
 	outfit = /datum/outfit/lavaland_syndicate/comms
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /obj/effect/mob_spawn/human/lavaland_syndicate/comms/space/Initialize(mapload)
 	. = ..()

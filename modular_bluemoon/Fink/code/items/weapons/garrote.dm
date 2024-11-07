@@ -14,7 +14,6 @@
 	var/mob/living/carbon/human/strangling
 	var/mob/living/carbon/human/strangler
 	var/improvised = 0
-	var/garrote_time = 30
 	var/wielded = FALSE
 	var/oxydamage = 6
 
@@ -23,8 +22,8 @@
 
 /obj/item/garrote/Initialize()
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/garrote/ComponentInitialize()
 	. = ..()
@@ -100,33 +99,27 @@
 		strangling = M
 		strangler = U
 		ADD_TRAIT(strangling, TRAIT_GARROTED,"garroted")
-		if(do_after(user,garrote_time, target = src))
 
-			if(improvised) // Not a trash anymore :[
-				U.grab_state = GRAB_AGGRESSIVE
-				M.grabbedby(U, 1)
-				M.dir = victimdir
-				U.setGrabState(GRAB_AGGRESSIVE)
+		if(improvised) // Not a trash anymore :[
+			U.grab_state = GRAB_AGGRESSIVE
+			M.grabbedby(U, 1)
+			M.dir = victimdir
+			U.setGrabState(GRAB_AGGRESSIVE)
+		else
+			U.grab_state = GRAB_KILL
+			M.grabbedby(U, 1)
+			M.dir = victimdir
+			M.AdjustSilence(6 SECONDS)
+			M.drop_all_held_items()
+			U.setGrabState(GRAB_KILL)
 
-			else
-				U.grab_state = GRAB_KILL
-				M.grabbedby(U, 1)
-				M.dir = victimdir
-				M.AdjustSilence(6 SECONDS)
-				M.drop_all_held_items()
-				U.setGrabState(GRAB_KILL)
+		playsound(src.loc, 'sound/weapons/cablecuff.ogg', 15, 1, -1)
+		M.visible_message("<span class='danger'>[U] comes from behind and begins garroting [M] with the [src]!</span>", \
+					"<span class='userdanger'>[U] begins garroting you with the [src]![improvised ? "" : " You are unable to speak!"]</span>", \
+					"You hear struggling and wire strain against flesh!")
+		START_PROCESSING(SSobj, src)
 
-
-
-			playsound(src.loc, 'sound/weapons/cablecuff.ogg', 15, 1, -1)
-			M.visible_message("<span class='danger'>[U] comes from behind and begins garroting [M] with the [src]!</span>", \
-						"<span class='userdanger'>[U] begins garroting you with the [src]![improvised ? "" : " You are unable to speak!"]</span>", \
-						"You hear struggling and wire strain against flesh!")
-			START_PROCESSING(SSobj, src)
-
-
-
-			return
+		return
 
 	return
 

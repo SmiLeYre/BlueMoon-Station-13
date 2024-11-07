@@ -181,8 +181,6 @@ do { \
 ///1000 is an unimportant number, it's just to normalize copied layers
 #define RADIAL_CONTENT_LAYER 1000
 
-#define ADMIN_POPUP_LAYER 1
-
 ///Layer for tooltips
 #define TOOLTIP_LAYER 4
 

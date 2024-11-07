@@ -76,6 +76,9 @@
 	var/pre_noise = FALSE
 	var/post_noise = FALSE
 
+	var/pre_noise_sound = 'sound/effects/spray.ogg' // BLUEMOON EDIT || MODULARIZE
+	var/post_noise_sound = 'sound/effects/spray.ogg' // BLUEMOON EDIT || MODULARIZE
+
 	var/datum/team/gang/gang //For marking territory.
 	var/gang_tag_delay = 30 //this is the delay for gang mode tag applications on anything that gang = true on.
 
@@ -134,7 +137,7 @@
 		refill()
 	else
 		if(check_empty(user, amount, requires_full))
-			return 0
+			return FALSE
 		else
 			. = min(charges_left, amount)
 			charges_left -= .
@@ -420,8 +423,8 @@
 		to_chat(user, "<span class='notice'>You start drawing a [temp] on the [target.name]...</span>")
 
 	if(pre_noise)
-		audible_message("<span class='notice'>You hear spraying.</span>")
-		playsound(user.loc, 'sound/effects/spray.ogg', 5, 1, 5)
+		audible_message("<span class='notice'>You can hear something.</span>") // BLUEMOON EDIT
+		playsound(user.loc, pre_noise_sound, 5, 1, 5) // BLUEMOON EDIT || MODULARIZE
 
 	var/wait_time = 50
 	if(paint_mode == PAINT_LARGE_HORIZONTAL)
@@ -483,8 +486,8 @@
 		SStgui.update_uis(src)
 
 	if(post_noise)
-		audible_message("<span class='notice'>You hear spraying.</span>")
-		playsound(user.loc, 'sound/effects/spray.ogg', 5, 1, 5)
+		audible_message("<span class='notice'>You can hear something.</span>") // BLUEMOON EDIT
+		playsound(user.loc, post_noise_sound, 5, 1, 5) // BLUEMOON EDIT || MODULARIZE
 
 	var/fraction = min(1, . / reagents.maximum_volume)
 	if(affected_turfs.len)
@@ -666,7 +669,7 @@
 /obj/item/storage/crayons/update_overlays()
 	. = ..()
 	for(var/obj/item/toy/crayon/crayon in contents)
-		add_overlay(mutable_appearance('icons/obj/crayons.dmi', crayon.crayon_color))
+		. += mutable_appearance('icons/obj/crayons.dmi', crayon.crayon_color)
 
 /obj/item/storage/crayons/attackby(obj/item/W, mob/user, params)
 	if(istype(W, /obj/item/toy/crayon))
@@ -699,7 +702,7 @@
 //Spraycan stuff
 
 /obj/item/toy/crayon/spraycan
-	name = "spray can"
+	name = "Spray Can"
 	icon_state = "spraycan"
 
 	icon_capped = "spraycan_cap"
@@ -849,7 +852,7 @@
 		. += spray_overlay
 
 /obj/item/toy/crayon/spraycan/borg
-	name = "cyborg spraycan"
+	name = "Cyborg Spraycan"
 	desc = "A metallic container containing shiny synthesised paint."
 	charges = -1
 	stun_delay = 5 SECONDS
@@ -874,7 +877,7 @@
 		borgy.cell.use(cost)
 
 /obj/item/toy/crayon/spraycan/hellcan
-	name = "hellcan"
+	name = "Hellcan"
 	desc = "This spraycan doesn't seem to be filled with paint..."
 	icon_state = "deathcan2_cap"
 	icon_capped = "deathcan2_cap"
@@ -888,7 +891,7 @@
 	paint_color = "#000000"
 
 /obj/item/toy/crayon/spraycan/lubecan
-	name = "slippery spraycan"
+	name = "Slippery Spraycan"
 	desc = "You can barely keep hold of this thing."
 	icon_state = "clowncan2_cap"
 	icon_capped = "clowncan2_cap"
@@ -902,7 +905,7 @@
 	return istype(surface, /turf/open/floor)
 
 /obj/item/toy/crayon/spraycan/mimecan
-	name = "silent spraycan"
+	name = "Silent Spraycan"
 	desc = "Art is best seen, not heard."
 	icon_state = "mimecan_cap"
 	icon_capped = "mimecan_cap"
@@ -917,7 +920,7 @@
 	reagent_contents = list(/datum/reagent/consumable/nothing = 1, /datum/reagent/toxin/mutetoxin = 1)
 
 /obj/item/toy/crayon/spraycan/infinite
-	name = "infinite spraycan"
+	name = "Infinite Spraycan"
 	charges = -1
 	desc = "Now with 30% more bluespace technology."
 

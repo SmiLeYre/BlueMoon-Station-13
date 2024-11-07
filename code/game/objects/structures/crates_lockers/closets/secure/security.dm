@@ -6,9 +6,6 @@
 	..()
 	new /obj/item/clothing/neck/petcollar(src) //I considered removing the pet stuff too but eh, who knows. We might get Renault back. Plus I guess you could use that collar for... other means. Aren't you supposed to be guarding the disk?
 	new /obj/item/pet_carrier(src)
-	new /obj/item/clothing/suit/armor/vest/capcarapace(src)
-	new /obj/item/clothing/suit/toggle/captains_parade(src)
-	new /obj/item/clothing/head/crown/fancy(src)
 	new /obj/item/cartridge/captain(src)
 	new /obj/item/storage/box/silver_ids(src)
 	new /obj/item/radio/headset/heads/captain/alt(src)
@@ -19,6 +16,7 @@
 	new /obj/item/storage/photo_album/Captain(src)
 	new /obj/item/mod/construction/armor/magnate(src)
 	new /obj/item/mod/module/holster(src)
+	new /obj/item/storage/garment_case/captain(src) //BLUEMOON add
 
 /obj/structure/closet/secure_closet/hop
 	name = "\proper head of personnel's locker"
@@ -26,22 +24,15 @@
 	icon_state = "hop"
 /obj/structure/closet/secure_closet/hop/PopulateContents()
 	..()
-	new /obj/item/clothing/neck/cloak/hop(src)
-	new /obj/item/clothing/neck/mantle/head_of_personnel(src)
-	new /obj/item/clothing/under/rank/civilian/head_of_personnel/whimsy(src)
-	new /obj/item/clothing/under/rank/civilian/head_of_personnel(src)
-	new /obj/item/clothing/under/rank/civilian/head_of_personnel/skirt(src)
-	new /obj/item/clothing/head/hopcap(src)
-	new /obj/item/clothing/head/hopcap/beret(src)
 	new /obj/item/cartridge/hop(src)
 	new /obj/item/radio/headset/heads/hop(src)
 	new /obj/item/clothing/shoes/sneakers/brown(src)
 	new /obj/item/storage/box/ids(src)
 	new /obj/item/storage/box/ids(src)
+	new /obj/item/storage/box/deviants(src) // bluemoon edit
+	new /obj/item/storage/box/deviants(src)
 	new /obj/item/megaphone/command(src)
-	new /obj/item/clothing/suit/armor/vest/alt(src)
 	new /obj/item/assembly/flash/handheld(src)
-	new /obj/item/clothing/glasses/sunglasses(src)
 	new /obj/item/restraints/handcuffs/cable/zipties(src)
 	new /obj/item/gun/energy/e_gun(src)
 	new /obj/item/clothing/neck/petcollar(src)
@@ -51,6 +42,7 @@
 	new /obj/item/storage/photo_album/HoP(src)
 	new /obj/item/clothing/suit/hooded/wintercoat/hop(src)
 	new /obj/item/clothing/head/hopcap/beret/white(src)
+	new /obj/item/storage/garment_case/hop(src) // BLUEMOON add
 
 /obj/structure/closet/secure_closet/hos
 	name = "\proper head of security's locker"
@@ -111,6 +103,7 @@
 	new /obj/item/clothing/glasses/hud/security/sunglasses(src)
 	new /obj/item/holosign_creator/security(src)
 	new /obj/item/clothing/mask/gas/sechailer(src)
+	new /obj/item/storage/box/body_camera(src)
 	new /obj/item/storage/box/zipties(src)
 	new /obj/item/storage/box/flashbangs(src)
 	new /obj/item/storage/belt/security/full(src)
@@ -166,6 +159,7 @@
 	max_integrity = 70
 	material_drop = /obj/item/stack/sheet/mineral/wood
 	cutting_tool = TOOL_SCREWDRIVER
+	door_anim_time = 0 // no animation
 
 /obj/structure/closet/secure_closet/detective/PopulateContents()
 	..()
@@ -229,7 +223,7 @@
 	icon_state = "armory"
 /obj/structure/closet/secure_closet/armory1/PopulateContents()
 	..()
-	new /obj/item/clothing/suit/armor/laserproof(src)
+	new /obj/item/clothing/suit/hooded/ablative(src)
 	for(var/i in 1 to 3)
 		new /obj/item/clothing/suit/armor/riot(src)
 	for(var/i in 1 to 3)
@@ -271,8 +265,9 @@
 	new /obj/item/clothing/suit/armor/bulletproof(src)
 
 /obj/structure/closet/secure_closet/lethalshots
-	name = "lethal ammunition and riot staves"
+	name = "Lethal Ammunition and Riot Staves"
 	req_access = list(ACCESS_ARMORY)
+	storage_capacity = 50
 	icon_state = "tac"
 /obj/structure/closet/secure_closet/lethalshots/PopulateContents()
 	..()
@@ -280,6 +275,8 @@
 	new /obj/item/electrostaff(src)
 	for(var/i in 1 to 3)
 		new /obj/item/storage/box/lethalshot(src)
+	for(var/k in 1 to 9)
+		new /obj/item/kitchen/knife/combat(src)
 
 /obj/structure/closet/secure_closet/labor_camp_security
 	name = "labor camp security locker"

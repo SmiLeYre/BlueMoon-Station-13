@@ -27,14 +27,14 @@
 	if(owner.stat != DEAD)
 		START_PROCESSING(SSobj, src)
 
-	RegisterSignal(parent, COMSIG_ADD_MOOD_EVENT, .proc/add_event)
-	RegisterSignal(parent, COMSIG_CLEAR_MOOD_EVENT, .proc/clear_event)
-	RegisterSignal(parent, COMSIG_MODIFY_SANITY, .proc/modify_sanity)
-	RegisterSignal(parent, COMSIG_LIVING_REVIVE, .proc/on_revive)
-	RegisterSignal(parent, COMSIG_MOB_HUD_CREATED, .proc/modify_hud)
-	RegisterSignal(parent, COMSIG_MOB_DEATH, .proc/stop_processing)
-	RegisterSignal(parent, COMSIG_VOID_MASK_ACT, .proc/direct_sanity_drain)
-	RegisterSignal(parent, COMSIG_ENTER_AREA, .proc/update_beauty)
+	RegisterSignal(parent, COMSIG_ADD_MOOD_EVENT, PROC_REF(add_event))
+	RegisterSignal(parent, COMSIG_CLEAR_MOOD_EVENT, PROC_REF(clear_event))
+	RegisterSignal(parent, COMSIG_MODIFY_SANITY, PROC_REF(modify_sanity))
+	RegisterSignal(parent, COMSIG_LIVING_REVIVE, PROC_REF(on_revive))
+	RegisterSignal(parent, COMSIG_MOB_HUD_CREATED, PROC_REF(modify_hud))
+	RegisterSignal(parent, COMSIG_MOB_DEATH, PROC_REF(stop_processing))
+	RegisterSignal(parent, COMSIG_VOID_MASK_ACT, PROC_REF(direct_sanity_drain))
+	RegisterSignal(parent, COMSIG_ENTER_AREA, PROC_REF(update_beauty))
 
 
 	if(owner.hud_used)
@@ -56,13 +56,13 @@
 	msg += "<span class='notice'>Ментальное состояние: </span>" //Long term
 	switch(sanity)
 		if(SANITY_GREAT to INFINITY)
-			msg += "<span class='nicegreen'>Мой разум - словно чистеший храм!<span>\n"
+			msg += "<span class='nicegreen'>Мой разум - словно чистейший храм!<span>\n"
 		if(SANITY_NEUTRAL to SANITY_GREAT)
 			msg += "<span class='nicegreen'>Чувствую себя отлично!<span>\n"
 		if(SANITY_DISTURBED to SANITY_NEUTRAL)
 			msg += "<span class='nicegreen'>В последнее время чувствую себя нормально.<span>\n"
 		if(SANITY_UNSTABLE to SANITY_DISTURBED)
-			msg += "<span class='warning'>Чувствую себя растроенно...</span>\n"
+			msg += "<span class='warning'>Чувствую себя расстроенно...</span>\n"
 		if(SANITY_CRAZY to SANITY_UNSTABLE)
 			msg += "<span class='boldwarning'>У меня крыша едет!!</span>\n"
 		if(SANITY_INSANE to SANITY_CRAZY)
@@ -196,21 +196,28 @@
 			setInsanityEffect(MAJOR_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/insane)
 			master.add_actionspeed_modifier(/datum/actionspeed_modifier/low_sanity)
+			if(master?.client?.prefs.windownoise)
+				master.overlay_fullscreen("depression", /atom/movable/screen/fullscreen/scaled/depression, 3)
 			sanity_level = 6
 		if(SANITY_CRAZY to SANITY_UNSTABLE)
 			setInsanityEffect(MINOR_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/crazy)
 			master.add_actionspeed_modifier(/datum/actionspeed_modifier/low_sanity)
+			if(master?.client?.prefs.windownoise)
+				master.overlay_fullscreen("depression", /atom/movable/screen/fullscreen/scaled/depression, 2)
 			sanity_level = 5
 		if(SANITY_UNSTABLE to SANITY_DISTURBED)
 			setInsanityEffect(SLIGHT_INSANITY_PEN)
 			master.add_movespeed_modifier(/datum/movespeed_modifier/sanity/disturbed)
 			master.add_actionspeed_modifier(/datum/actionspeed_modifier/low_sanity)
+			if(master?.client?.prefs.windownoise)
+				master.overlay_fullscreen("depression", /atom/movable/screen/fullscreen/scaled/depression, 1)
 			sanity_level = 4
 		if(SANITY_DISTURBED to SANITY_NEUTRAL)
 			setInsanityEffect(0)
 			master.remove_movespeed_modifier(MOVESPEED_ID_SANITY)
 			master.remove_actionspeed_modifier(ACTIONSPEED_ID_SANITY)
+			master.clear_fullscreen("depression")
 			sanity_level = 3
 		if(SANITY_NEUTRAL+1 to SANITY_GREAT+1) //shitty hack but +1 to prevent it from responding to super small differences
 			setInsanityEffect(0)
@@ -239,7 +246,7 @@
 					if(master.mind)
 						master.mind.add_skill_modifier(malus.identifier)
 					else
-						malus.RegisterSignal(master, COMSIG_MOB_ON_NEW_MIND, /datum/skill_modifier.proc/on_mob_new_mind, TRUE)
+						malus.RegisterSignal(master, COMSIG_MOB_ON_NEW_MIND, TYPE_PROC_REF(/datum/skill_modifier, on_mob_new_mind), TRUE)
 			malus.value_mod = malus.level_mod = 1 - (sanity_level - 3) * MOOD_INSANITY_MALUS
 		else if(malus)
 			if(master.mind)
@@ -275,20 +282,20 @@
 			clear_event(null, category)
 		else
 			if(the_event.timeout)
-				addtimer(CALLBACK(src, .proc/clear_event, null, category), the_event.timeout, TIMER_UNIQUE|TIMER_OVERRIDE)
-			return 0 //Don't have to update the event.
+				addtimer(CALLBACK(src, PROC_REF(clear_event), null, category), the_event.timeout, TIMER_UNIQUE|TIMER_OVERRIDE)
+			return FALSE //Don't have to update the event.
 	the_event = new type(src, param)//This causes a runtime for some reason, was this me? No - there's an event floating around missing a definition.
 
 	mood_events[category] = the_event
 	update_mood()
 
 	if(the_event.timeout)
-		addtimer(CALLBACK(src, .proc/clear_event, null, category), the_event.timeout, TIMER_UNIQUE|TIMER_OVERRIDE)
+		addtimer(CALLBACK(src, PROC_REF(clear_event), null, category), the_event.timeout, TIMER_UNIQUE|TIMER_OVERRIDE)
 
 /datum/component/mood/proc/clear_event(datum/source, category)
 	var/datum/mood_event/event = mood_events[category]
 	if(!event)
-		return 0
+		return FALSE
 
 	mood_events -= category
 	qdel(event)
@@ -310,8 +317,8 @@
 	screen_obj_sanity = new // Sandstorm sanity
 	hud.infodisplay += screen_obj
 	hud.infodisplay += screen_obj_sanity // Sandstorm sanity
-	RegisterSignal(hud, COMSIG_PARENT_QDELETING, .proc/unmodify_hud)
-	RegisterSignal(screen_obj, COMSIG_CLICK, .proc/hud_click)
+	RegisterSignal(hud, COMSIG_PARENT_QDELETING, PROC_REF(unmodify_hud))
+	RegisterSignal(screen_obj, COMSIG_CLICK, PROC_REF(hud_click))
 
 /datum/component/mood/proc/unmodify_hud(datum/source)
 	if(!screen_obj || !parent)

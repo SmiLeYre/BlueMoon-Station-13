@@ -131,13 +131,7 @@
 	// Log interaction
 	log_admin("[key_name(owner)] [log_message_type] hypnotic brainwashing powers.")
 
-/datum/action/cooldown/hypnotize/Trigger()
-	. = ..()
-
-	// Check parent return
-	if(!.)
-		return
-
+/datum/action/cooldown/hypnotize/Activate()
 	// Define action owner
 	var/mob/living/carbon/human/action_owner = owner
 
@@ -147,7 +141,7 @@
 	// Check for target
 	if(!grab_target)
 		// Warn the user, then return
-		to_chat(action_owner, span_warning("You you need to grab someone first!"))
+		to_chat(action_owner, span_warning("You need to grab someone first!"))
 		return
 
 	// Check for cyborg
@@ -189,7 +183,7 @@
 	// Check if target has a mind
 	if(!action_target.mind)
 		// Warn the user, then return
-		to_chat(action_owner, span_warning("[grab_target] doesn\'t have a compatible mind!"))
+		to_chat(action_owner, span_warning("[grab_target] doesn't have a compatible mind!"))
 		return
 
 	/* Unused: Replaced by get_eye_protection
@@ -442,13 +436,7 @@
 	// Create reagent holder
 	blood_bank = new(BLOODFLEDGE_BANK_CAPACITY)
 
-/datum/action/cooldown/bloodfledge/bite/Trigger()
-	. = ..()
-
-	// Check parent return
-	if(!.)
-		return
-
+/datum/action/cooldown/bloodfledge/bite/Activate()
 	// Define action owner
 	var/mob/living/carbon/action_owner = owner
 
@@ -1038,13 +1026,7 @@
 	button_icon_state = "power_strength"
 	cooldown_time = BLOODFLEDGE_COOLDOWN_REVIVE
 
-/datum/action/cooldown/bloodfledge/revive/Trigger()
-	. = ..()
-
-	// Check parent return
-	if(!.)
-		return
-
+/datum/action/cooldown/bloodfledge/revive/Activate()
 	// Define mob
 	var/mob/living/carbon/human/action_owner = owner
 
@@ -1245,15 +1227,7 @@
 		if(NEUTER)
 			werewolf_gender = "Þing"
 
-/datum/action/cooldown/werewolf/transform/Trigger()
-	. = ..()
-
-	// Check if unavailable
-	// Checks the parent function's return value
-	if(!.)
-		// Messages will not display here
-		return FALSE
-
+/datum/action/cooldown/werewolf/transform/Activate()
 	// Define action owner
 	var/mob/living/carbon/human/action_owner = owner
 
@@ -1484,22 +1458,18 @@
 //Quirk: Cosmetic Glow
 //Copy and pasted. Cry about it.
 /datum/action/cosglow
-	name = "Broken Glow Action"
-	desc = "Report this to a coder."
-	icon_icon = 'icons/effects/effects.dmi'
-	button_icon_state = "static"
-
-/datum/action/cosglow/update_glow
 	name = "Modify Glow"
 	desc = "Change your glow color."
 	button_icon_state = "blank"
 
 	// Glow color to use
-	var/glow_color = "#39ff14" // Neon green
+	var/glow_color
 
 	// Thickness of glow outline
-	var/glow_range = 2
+	var/glow_range
 
+	// Alpha of the glow outline
+	var/glow_intensity
 
 /datum/action/cosglow/update_glow/Grant()
 	. = ..()
@@ -1507,8 +1477,12 @@
 	// Define user mob
 	var/mob/living/carbon/human/action_mob = owner
 
+	// Default glow intensity to 48 (in decimal)
+	glow_intensity = "30"
+
 	// Add outline effect
-	action_mob.add_filter("cos_glow", 1, list("type" = "outline", "color" = glow_color+"30", "size" = glow_range))
+	if(glow_color && glow_range)
+		action_mob.add_filter("rad_fiend_glow", 1, list("type" = "outline", "color" = glow_color + glow_intensity, "size" = glow_range))
 
 /datum/action/cosglow/update_glow/Remove()
 	. = ..()
@@ -1516,8 +1490,13 @@
 	// Define user mob
 	var/mob/living/carbon/human/action_mob = owner
 
+	// BLUEMOON EDIT START - sanity check
+	if(!action_mob)
+		return
+	// BLUEMOON EDIT END
+
 	// Remove glow
-	action_mob.remove_filter("cos_glow")
+	action_mob.remove_filter("rad_fiend_glow")
 
 /datum/action/cosglow/update_glow/Trigger()
 	. = ..()
@@ -1533,16 +1512,29 @@
 	glow_color = (input_color ? input_color : glow_color)
 
 	// Ask user for range input
-	var/input_range = input(action_mob, "How much do you glow? Value may range between 1 to 2.", "Select Glow Range", glow_range) as num|null
+	var/input_range = input(action_mob, "How much do you glow? Value may range between 0 to 4. 0 disables glow.", "Select Glow Range", glow_range) as num|null
 
 	// Check if range input was given
-	// Reset to stored color when not given input
-	// Input is clamped in the 1-4 range
-	glow_range = (input_range ? clamp(input_range, 0, 4) : glow_range) //More customisable, so you know when you're looking at someone with Radfiend (doom) or a normal player.
+	// Disable glow if input is 0.
+	// Reset to stored range when input is null.
+	// Input is clamped in the 0-4 range
+	glow_range = isnull(input_range) ? glow_range : clamp(input_range, 0, 4) //More customisable, so you know when you're looking at someone with Radfiend (doom) or a normal player.
+
+	// Ask user for intensity input
+	var/input_intensity = input(action_mob, "How intense is your glow? Value may range between 0 to 255. 0 disables glow.", "Select Glow Intensity", hex2num(glow_intensity)) as num|null
+
+	// Check if intensity input was given and clamp it
+	// If no input is given, reset to stored intensity
+	var/intensity_clamped = isnull(input_intensity) ? hex2num(glow_intensity) : clamp(input_intensity, 0, 255)
+
+	// Update glow intensity
+	glow_intensity = num2hex(intensity_clamped)
 
 	// Update outline effect
-	action_mob.remove_filter("cos_glow")
-	action_mob.add_filter("cos_glow", 1, list("type" = "outline", "color" = glow_color+"30", "size" = glow_range))
+	if(glow_range && glow_color)
+		action_mob.add_filter("rad_fiend_glow", 1, list("type" = "outline", "color" = glow_color + glow_intensity, "size" = glow_range))
+	else
+		action_mob.remove_filter("rad_fiend_glow")
 
 //
 // Quirk: Rad Fiend
@@ -1580,6 +1572,11 @@
 
 	// Define user mob
 	var/mob/living/carbon/human/action_mob = owner
+
+	// BLUEMOON EDIT START - sanity check
+	if(!action_mob)
+		return
+	// BLUEMOON EDIT END
 
 	// Remove glow
 	action_mob.remove_filter("rad_fiend_glow")
@@ -1698,11 +1695,7 @@
 	icon_icon = 'modular_splurt/icons/mob/actions/lewd_actions/lewd_icons.dmi'
 	button_icon_state = "pain_max"
 
-/datum/action/cooldown/toggle_distant/Trigger()
-	. = ..()
-	if(!.)
-		return
-
+/datum/action/cooldown/toggle_distant/Activate()
 	var/mob/living/carbon/human/action_owner = owner
 
 	if(HAS_TRAIT(action_owner, TRAIT_DISTANT))

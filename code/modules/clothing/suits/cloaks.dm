@@ -105,14 +105,19 @@
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/neck/cloak/syndiecap
-	name = "syndicate officer's cloak"
+	name = "Syndicate Officer's Cloak"
 	desc = "A cloak that inspires fear among Nanotrasen employees, worn by the greatest Syndicate officer."
 	icon_state = "syndcapt"
-	item_state = "syndcapt"
+	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
+
+/obj/item/clothing/neck/cloak/sencloak
+	name = "Senior Commander's Trenchcloak"
+	desc = "Dark trenchcloak made to order for senior officers. Consists of really strong leather and armored fabric. The inside of the collar has a label with ''V'' written on it."
+	icon_state = "sencloak"
 	resistance_flags = LAVA_PROOF | FIRE_PROOF | ACID_PROOF
 
 /obj/item/clothing/neck/cloak/syndieadm
-	name = "syndicate admiral's cloak"
+	name = "Syndicate Admiral's Cloak"
 	desc = "A deep red cloak, worn by only the greatest of the Syndicate. If you are looking at this, you probably won't be looking at it for much longer."
 	icon_state = "syndadmiral"
 	item_state = "syndadmiral"
@@ -131,6 +136,7 @@
 	armor = list(MELEE = 35, BULLET = 10, LASER = 25, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 60, ACID = 60) //a fair alternative to bone armor, requiring alternative materials and gaining a suit slot
 	hoodtype = /obj/item/clothing/head/hooded/cloakhood/goliath
 	body_parts_covered = CHEST|ARMS|GROIN|LEGS
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/clothing/head/hooded/cloakhood/goliath
 	name = "goliath cloak hood"
@@ -152,6 +158,7 @@
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	resistance_flags = FIRE_PROOF | ACID_PROOF | GOLIATH_RESISTANCE
 	flags_inv = HIDETAUR
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/clothing/head/hooded/cloakhood/drake
 	name = "drake helm"

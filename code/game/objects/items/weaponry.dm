@@ -1097,7 +1097,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 /obj/item/melee/flyswatter/Initialize(mapload)
 	. = ..()
 	strong_against = typecacheof(list(
-					/mob/living/simple_animal/hostile/poison/bees/,
+					/mob/living/simple_animal/hostile/poison/bees,
 					/mob/living/simple_animal/butterfly,
 					/mob/living/simple_animal/cockroach,
 					/obj/item/queen_bee,
@@ -1181,8 +1181,8 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 
 /obj/item/vibro_weapon/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/vibro_weapon/ComponentInitialize()
 	. = ..()
@@ -1230,3 +1230,57 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	item_flags = DROPDEL | ABSTRACT | HAND_ITEM
 	attack_verb = list("licked", "lapped", "mlemmed")
 	hitsound = 'sound/effects/gib_step.ogg'
+
+/obj/item/soap/tongue/organic/afterattack(atom/target, mob/user, proximity)
+	var/mob/living/R = user
+	if(!proximity || !check_allowed_items(target))
+		return
+	if(R.client && (target in R.client.screen))
+		to_chat(R, "<span class='warning'>You need to take that [target.name] off before cleaning it!</span>")
+	else if(is_cleanable(target))
+		R.visible_message("[R] begins to lick off \the [target.name].", "<span class='warning'>You begin to lick off \the [target.name]...</span>")
+		if(do_after(R, src.cleanspeed, target = target))
+			if(!in_range(src, target)) //Proximity is probably old news by now, do a new check.
+				return //If they moved away, you can't eat them.
+			to_chat(R, "<span class='notice'>You finish licking off \the [target.name].</span>")
+			qdel(target)
+	else if(isobj(target)) //hoo boy. danger zone man
+		if(istype(target,/obj/item/trash))
+			R.visible_message("[R] nibbles away at \the [target.name].", "<span class='warning'>You begin to nibble away at \the [target.name]...</span>")
+			if(!do_after(R, src.cleanspeed, target = target))
+				return //If they moved away, you can't eat them.
+			to_chat(R, "<span class='notice'>You finish off \the [target.name].</span>")
+			qdel(target)
+			return
+		R.visible_message("[R] begins to lick \the [target.name] clean...", "<span class='notice'>You begin to lick \the [target.name] clean...</span>")
+	else if(ishuman(target))
+		var/mob/living/L = target
+		if(status == 0 && check_zone(R.zone_selected) == "head")
+			R.visible_message("<span class='warning'>\the [R] affectionally licks \the [L]'s face!</span>", "<span class='notice'>You affectionally lick \the [L]'s face!</span>")
+			playsound(src.loc, 'sound/effects/attackblob.ogg', 50, 1)
+			if(istype(L) && L.fire_stacks > 0)
+				L.adjust_fire_stacks(-10)
+			return
+		else if(status == 0)
+			R.visible_message("<span class='warning'>\the [R] affectionally licks \the [L]!</span>", "<span class='notice'>You affectionally lick \the [L]!</span>")
+			playsound(src.loc, 'sound/effects/attackblob.ogg', 50, 1)
+			if(istype(L) && L.fire_stacks > 0)
+				L.adjust_fire_stacks(-10)
+			return
+	else if(istype(target, /obj/structure/window))
+		R.visible_message("[R] begins to lick \the [target.name] clean...", "<span class='notice'>You begin to lick \the [target.name] clean...</span>")
+		if(do_after(user, src.cleanspeed, target = target))
+			to_chat(user, "<span class='notice'>You clean \the [target.name].</span>")
+			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
+			target.set_opacity(initial(target.opacity))
+	else
+		R.visible_message("[R] begins to lick \the [target.name] clean...", "<span class='notice'>You begin to lick \the [target.name] clean...</span>")
+		if(do_after(user, src.cleanspeed, target = target))
+			to_chat(user, "<span class='notice'>You clean \the [target.name].</span>")
+			var/obj/effect/decal/cleanable/C = locate() in target
+			qdel(C)
+			target.remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
+			SEND_SIGNAL(target, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_MEDIUM)
+			target.wash_cream()
+			target.wash_cum()
+	return

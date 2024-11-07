@@ -6,7 +6,7 @@
 	ask_verb = "mrowls"
 	exclaim_verb = "yowls"
 	key = "3"
-	flags = TONGUELESS_SPEECH
+	// flags = TONGUELESS_SPEECH bluemoon change
 	space_chance = 100
 	syllables = list("meow","mewoo","mewl","prrt","mew","mrow","meewr","hsss","meowr","growl","mrowl","rawr", \
 					 "mrawr~","nya~","nya~","nya~","nyaw~","nyawr~","yaaaw~","mrrr~","rrr~","awwr~","purr~","mrrya~","rawr~")

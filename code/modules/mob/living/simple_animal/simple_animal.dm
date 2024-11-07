@@ -201,7 +201,7 @@
 		if(health <= 0)
 			death()
 		else
-			stat = CONSCIOUS
+			set_stat(CONSCIOUS)
 	med_hud_set_status()
 	..()
 
@@ -220,7 +220,7 @@
 					if(Process_Spacemove(anydir))
 						Move(get_step(src, anydir), anydir)
 						turns_since_move = 0
-			return 1
+			return TRUE
 
 /mob/living/simple_animal/proc/handle_automated_speech(var/override)
 	set waitfor = FALSE
@@ -699,3 +699,18 @@
 	. = ..()
 	if(. && length(src.damaged_sound))
 		playsound(src, pick(src.damaged_sound), 40, 1)
+
+/mob/living/simple_animal/examine(mob/user)
+	var/list/dat = ..()
+	if(stat == DEAD)
+		dat += "<span class='deadsay'>[p_they(TRUE)] appears to be dead.</span>"
+	else if(getBruteLoss())
+		if(health < (maxHealth * 0.15))
+			dat += span_warning("[p_they(TRUE)] looks critically injured.")
+		else if(health < (maxHealth * 0.5))
+			dat += span_warning("[p_they(TRUE)] looks severely injured.")
+		else if(health < (maxHealth * 0.85))
+			dat += span_warning("[p_they(TRUE)] looks injured.")
+		else
+			dat += span_warning("[p_they(TRUE)] looks slightly injured.")
+	return dat

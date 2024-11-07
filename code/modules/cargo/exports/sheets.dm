@@ -1,12 +1,12 @@
 /datum/export/stack
 	unit_name = "sheet"
-	k_elasticity = 0
+	k_elasticity = 1/200 //BLUEMOON CHANGE
 
 /datum/export/stack/get_amount(obj/O)
 	var/obj/item/stack/S = O
 	if(istype(S))
 		return S.amount
-	return 0
+	return FALSE
 
 // Hides
 

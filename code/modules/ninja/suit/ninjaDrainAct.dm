@@ -114,7 +114,7 @@
 
 	. = DRAIN_RD_HACK_FAILED
 
-	to_chat(ninja, "<span class='notice'>Hacking \the [src]...</span>")
+	to_chat(ninja, "<span class='notice'>Идёт процесс взлома \the [src]...</span>")
 	AI_notify_hack()
 
 	if(stored_research)
@@ -130,7 +130,7 @@
 
 	. = DRAIN_RD_HACK_FAILED
 
-	to_chat(ninja, "<span class='notice'>Hacking \the [src]...</span>")
+	to_chat(ninja, "<span class='notice'>Идёт процесс взлома \the [src]...</span>")
 	AI_notify_hack()
 
 	if(stored_research)
@@ -145,7 +145,7 @@
 		return INVALID_DRAIN
 	if(ninja_gloves.security_console_hack_success)
 		return
-	to_chat(ninja, "<span class='notice'>Hacking \the [src]...</span>")
+	to_chat(ninja, "<span class='notice'>Идёт процесс взлома \the [src]...</span>")
 	AI_notify_hack()
 	if(do_after(ninja, ninja_suit.s_longdelay, target = src) && ninja_gloves.candrain && src)
 		for(var/datum/data/record/rec in sortRecord(GLOB.data_core.general))
@@ -166,7 +166,7 @@
 		return INVALID_DRAIN
 	if(ninja_gloves.communication_console_hack_success)
 		return
-	to_chat(ninja, "<span class='notice'>Hacking \the [src]...</span>")
+	to_chat(ninja, "<span class='notice'>Идёт процесс взлома \the [src]...</span>")
 	AI_notify_hack()
 	if(do_after(ninja, ninja_suit.s_longdelay, target = src) && ninja_gloves.candrain && src)
 		var/announcement_pick = rand(0, 2)

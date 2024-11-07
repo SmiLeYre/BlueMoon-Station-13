@@ -1,6 +1,6 @@
 /datum/quirk/onelife
 	name = "Одна Жизнь"
-	desc = "С вас буквально сыпется песок. И... кажется если вы погибнете - никто этот песок собрать воедино больше не сможет."
+	desc = "С вас буквально сыпется песок. И... кажется, если вы погибнете (даже если это будет шуткой) - никто этот песок собрать воедино больше не сможет."
 	mob_trait = TRAIT_ONELIFE
 	value = -6
 	gain_text = "<span class='danger'>Вы чувствуете, что вам нельзя умирать.</span>"
@@ -9,8 +9,8 @@
 	processing_quirk = TRUE
 
 /datum/quirk/onelife/add()
-	RegisterSignal(quirk_holder, COMSIG_MOB_DEATH, .proc/get_rid_of_them)
-	RegisterSignal(quirk_holder, COMSIG_MOB_EMOTE, .proc/get_rid_of_them_emote)
+	RegisterSignal(quirk_holder, COMSIG_MOB_DEATH, PROC_REF(get_rid_of_them))
+	RegisterSignal(quirk_holder, COMSIG_MOB_EMOTE, PROC_REF(get_rid_of_them_emote))
 
 /datum/quirk/onelife/remove()
 	remove_signals()
@@ -19,14 +19,13 @@
 	if(!QDELETED(quirk_holder))
 		UnregisterSignal(quirk_holder, list(COMSIG_MOB_DEATH, COMSIG_MOB_EMOTE))
 
-/datum/quirk/onelife/proc/get_rid_of_them(mob/user, list/emote_args)
+/datum/quirk/onelife/proc/get_rid_of_them(mob/user, datum/emote/emote)
 	if(quirk_holder.stat == DEAD)
 		remove_signals()
 		quirk_holder.dust(TRUE, TRUE)
 
-/datum/quirk/onelife/proc/get_rid_of_them_emote(mob/user, list/emote_args)
-	var/datum/emote/E
-	E = E.emote_list[lowertext(emote_args[EMOTE_ACT])]
-	if(E.key == "deathgasp")
+/datum/quirk/onelife/proc/get_rid_of_them_emote(mob/user, datum/emote/emote)
+	var/key = emote.key
+	if(key == "deathgasp")
 		remove_signals()
 		quirk_holder.dust(TRUE, TRUE)

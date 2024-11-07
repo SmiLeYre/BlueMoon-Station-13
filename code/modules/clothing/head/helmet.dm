@@ -62,6 +62,12 @@
 			RESKIN_ICON_STATE = "helmetold",
 			RESKIN_ITEM_STATE = "helmetold"
 		),
+		// BLUEMOON ADD START - RESKINS-ICON-FILE-ADDITION - ACRADORS - версия шлема для ушей акрадоров
+		"Acrador/Long-Eared" = list(
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets.dmi',
+			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets_onmob.dmi'
+		),
+		// BLUEMOON ADD END
 	)
 
 /obj/item/clothing/head/helmet/sec/attackby(obj/item/I, mob/user, params)
@@ -107,6 +113,8 @@
 	heat_protection = HEAD
 	max_heat_protection_temperature = SPACE_HELM_MAX_TEMP_PROTECT
 	clothing_flags = STOPSPRESSUREDAMAGE
+	can_toggle = TRUE
+	actions_types = list(/datum/action/item_action/toggle)
 	active_sound = 'sound/machines/closet_open.ogg'
 	unique_reskin = list(
 		"Basic" = list(
@@ -114,8 +122,8 @@
 			RESKIN_ITEM_STATE = "hecu_helm_nvg"
 		),
 		"Basic Black" = list(
-			RESKIN_ICON_STATE = "hecu_helm_black_nvg",
-			RESKIN_ITEM_STATE = "hecu_helm_black_nvg"
+			RESKIN_ICON_STATE = "hecu_helm_nvg_black",
+			RESKIN_ITEM_STATE = "hecu_helm_nvg_black"
 		),
 	)
 
@@ -127,7 +135,7 @@
 			flags_1 ^= visor_flags
 			flags_inv ^= visor_flags_inv
 			flags_cover ^= visor_flags_cover
-			icon_state = "[initial(icon_state)][up ? "_up" : ""]"
+			icon_state = "[replacetext("[icon_state]", "_up", "")][up ? "_up" : ""]"
 			darkness_view = 0
 			to_chat(user, "[up ? alt_toggle_message : toggle_message] \the [src]")
 
@@ -137,9 +145,8 @@
 				C.head_update(src, forced = 1)
 
 			if(active_sound)
-				while(up)
+				if(up)
 					playsound(src.loc, "[active_sound]", 100, 0, 4)
-					sleep(15)
 
 /obj/item/clothing/head/helmet/alt
 	name = "bulletproof Helmet"
@@ -160,6 +167,12 @@
 			RESKIN_ICON_STATE = "helmetold",
 			RESKIN_ITEM_STATE = "helmetold"
 		),
+		// BLUEMOON ADD START - RESKINS-ICON-FILE-ADDITION - ACRADORS - версия шлема для ушей акрадоров
+		"Acrador/Long-Eared" = list(
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets.dmi',
+			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets_onmob.dmi'
+		),
+		// BLUEMOON ADD END
 	)
 
 /obj/item/clothing/head/helmet/old
@@ -210,7 +223,7 @@
 			flags_1 ^= visor_flags
 			flags_inv ^= visor_flags_inv
 			flags_cover ^= visor_flags_cover
-			icon_state = "[initial(icon_state)][up ? "up" : ""]"
+			icon_state = "[replacetext("[icon_state]", "_up", "")][up ? "_up" : ""]"
 			to_chat(user, "[up ? alt_toggle_message : toggle_message] \the [src]")
 
 			user.update_inv_head()
@@ -219,9 +232,8 @@
 				C.head_update(src, forced = 1)
 
 			if(active_sound)
-				while(up)
+				if(up)
 					playsound(src.loc, "[active_sound]", 100, 0, 4)
-					sleep(15)
 
 /obj/item/clothing/head/helmet/justice
 	name = "helmet of justice"
@@ -275,6 +287,7 @@
 	desc = "Баллистический шлем герметичного типа. Имеет стилистическое украшение."
 	icon_state = "altyn"
 	actions_types = list(/datum/action/item_action/toggle)
+	can_toggle = TRUE
 	active_sound = 'sound/machines/closet_open.ogg'
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 	unique_reskin = list(
@@ -297,7 +310,7 @@
 			flags_1 ^= visor_flags
 			flags_inv ^= visor_flags_inv
 			flags_cover ^= visor_flags_cover
-			icon_state = "[initial(icon_state)][up ? "_up" : ""]"
+			icon_state = "[replacetext("[icon_state]", "_up", "")][up ? "_up" : ""]"
 			to_chat(user, "[up ? alt_toggle_message : toggle_message] \the [src]")
 
 			user.update_inv_head()
@@ -306,9 +319,8 @@
 				C.head_update(src, forced = 1)
 
 			if(active_sound)
-				while(up)
+				if(up)
 					playsound(src.loc, "[active_sound]", 100, 0, 4)
-					sleep(15)
 
 //Commander
 /obj/item/clothing/head/helmet/swat/command
@@ -576,7 +588,7 @@
 		set_light(0)
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 
 /obj/item/clothing/head/helmet/durathread
 	name = "makeshift Helmet"

@@ -38,7 +38,7 @@
 	dir = 8;
 	dwidth = 2;
 	height = 5;
-	id = "smolperma";
+	shuttle_id = "smolperma";
 	name = "Perma Prison Access shuttle";
 	port_direction = 4;
 	preferred_direction = 4;

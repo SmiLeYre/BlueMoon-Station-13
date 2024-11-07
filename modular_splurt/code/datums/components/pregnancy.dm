@@ -97,11 +97,11 @@
 /datum/component/pregnancy/RegisterWithParent()
 	if(carrier)
 		register_carrier()
-	RegisterSignal(parent, COMSIG_ATOM_ENTERING, .proc/on_entering)
-	RegisterSignal(parent, COMSIG_OBJ_BREAK, .proc/on_obj_break)
-	RegisterSignal(parent, COMSIG_OBJ_WRITTEN_ON, .proc/name_egg)
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/handle_hatch)
-	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, .proc/eg_status)
+	RegisterSignal(parent, COMSIG_ATOM_ENTERING, PROC_REF(on_entering))
+	RegisterSignal(parent, COMSIG_OBJ_BREAK, PROC_REF(on_obj_break))
+	RegisterSignal(parent, COMSIG_OBJ_WRITTEN_ON, PROC_REF(name_egg))
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(handle_hatch))
+	RegisterSignal(parent, COMSIG_PARENT_EXAMINE, PROC_REF(eg_status))
 
 /datum/component/pregnancy/UnregisterFromParent()
 	if(carrier)
@@ -113,12 +113,12 @@
 	UnregisterSignal(parent, COMSIG_PARENT_EXAMINE)
 
 /datum/component/pregnancy/proc/register_carrier()
-	RegisterSignal(carrier, COMSIG_MOB_DEATH, .proc/fetus_mortus)
-	RegisterSignal(carrier, COMSIG_LIVING_BIOLOGICAL_LIFE, .proc/handle_life)
-	RegisterSignal(carrier, COMSIG_HEALTH_SCAN, .proc/on_scan)
-	RegisterSignal(carrier, COMSIG_MOB_APPLY_DAMAGE, .proc/handle_damage)
+	RegisterSignal(carrier, COMSIG_MOB_DEATH, PROC_REF(fetus_mortus))
+	RegisterSignal(carrier, COMSIG_LIVING_BIOLOGICAL_LIFE, PROC_REF(handle_life))
+	RegisterSignal(carrier, COMSIG_HEALTH_SCAN, PROC_REF(on_scan))
+	RegisterSignal(carrier, COMSIG_MOB_DEATH, PROC_REF(handle_damage))
 	if(oviposition)
-		RegisterSignal(carrier, COMSIG_MOB_CLIMAX, .proc/on_climax)
+		RegisterSignal(carrier, COMSIG_MOB_CLIMAX, PROC_REF(on_climax))
 
 /datum/component/pregnancy/proc/unregister_carrier()
 	UnregisterSignal(carrier, COMSIG_MOB_DEATH)
@@ -181,18 +181,20 @@
 /datum/component/pregnancy/proc/handle_life(seconds)
 	SIGNAL_HANDLER
 
-	if(oviposition)
-		handle_ovi_preg()
-	else
-		handle_incubation()
+	if(!HAS_TRAIT(carrier, TRAIT_COMMON_PREGNANCY)) //For normal pregnancy - Gardelin0
+		if(oviposition)
+			handle_ovi_preg()
+		else
+			handle_incubation()
 
 	if((stage >= 2) && !revealed)
 		revealed = TRUE
 		carrier.apply_status_effect(/datum/status_effect/pregnancy)
 		carrier.apply_status_effect(/datum/status_effect/lactation)
 
-	if(stage > 3 && ishuman(carrier) && oviposition)
-		SEND_SIGNAL(carrier, COMSIG_ADD_MOOD_EVENT, "pregnancy", /datum/mood_event/pregnant_negative)
+	if(!HAS_TRAIT(carrier, TRAIT_COMMON_PREGNANCY)) //For normal pregnancy - Gardelin0
+		if(stage > 3 && ishuman(carrier) && oviposition)
+			SEND_SIGNAL(carrier, COMSIG_ADD_MOOD_EVENT, "pregnancy", /datum/mood_event/pregnant_negative)
 
 	if(COOLDOWN_FINISHED(src, stage_time))
 		stage += 1
@@ -227,7 +229,7 @@
 	if(stage < max_stage)
 		return
 
-	INVOKE_ASYNC(src, .proc/hatch, source, I, user, params)
+	INVOKE_ASYNC(src, PROC_REF(hatch), source, I, user, params)
 
 /datum/component/pregnancy/proc/hatch(datum/source, obj/item/I, mob/user, params)
 	if(!COOLDOWN_FINISHED(src, hatch_request_cooldown))
@@ -300,6 +302,9 @@
 	lay_eg(get_turf(carrier))
 
 /datum/component/pregnancy/proc/lay_eg(atom/location, datum/reagents/senders_cum)
+	if(HAS_TRAIT(carrier, TRAIT_COMMON_PREGNANCY)) //For normal pregnancy - Gardelin0
+		return
+
 	to_chat(carrier, span_userlove("You feel your egg sliding slowly inside!"))
 
 	if(prob(60))

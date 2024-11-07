@@ -153,11 +153,9 @@
 
 		if("robot")
 			var/robot = pick(200;/mob/living/silicon/robot,
-							/mob/living/silicon/robot/modules/inteq, //BM Changes /Krashly
-							/mob/living/silicon/robot/modules/inteq/medical, //BM Changes /Krashly
-							/mob/living/silicon/robot/modules/inteq/saboteur, //BM Changes /Krashly
-							200;/mob/living/simple_animal/drone/polymorphed,
-							/mob/living/simple_animal/drone/syndrone/badass/inteq)
+							/mob/living/silicon/robot/modules/inteq,
+							/mob/living/silicon/robot/modules/inteq/medical,
+							/mob/living/silicon/robot/modules/inteq/saboteur)
 
 			new_mob = new robot(M.loc)
 			if(issilicon(new_mob))
@@ -242,6 +240,8 @@
 	M.log_message("became [new_mob.real_name]", LOG_ATTACK, color="orange")
 
 	new_mob.a_intent = INTENT_HARM
+
+	new_mob.fully_replace_character_name("[pick(GLOB.nightmare_names)]")
 
 	M.wabbajack_act(new_mob)
 
@@ -389,8 +389,8 @@
 /obj/structure/closet/decay/Initialize(mapload)
 	. = ..()
 	if(auto_destroy)
-		addtimer(CALLBACK(src, .proc/bust_open), 5 MINUTES)
-	addtimer(CALLBACK(src, .proc/magicly_lock), 5)
+		addtimer(CALLBACK(src, PROC_REF(bust_open)), 5 MINUTES)
+	addtimer(CALLBACK(src, PROC_REF(magicly_lock)), 5)
 
 /obj/structure/closet/decay/proc/magicly_lock()
 	if(!welded)
@@ -404,7 +404,7 @@
 
 /obj/structure/closet/decay/proc/decay()
 	animate(src, alpha = 0, time = 30)
-	addtimer(CALLBACK(GLOBAL_PROC, .proc/qdel, src), 30)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), src), 30)
 
 /obj/structure/closet/decay/open(mob/living/user)
 	. = ..()
@@ -412,12 +412,12 @@
 		if(icon_state == magic_icon) //check if we used the magic icon at all before giving it the lesser magic icon
 			unmagify()
 		else
-			addtimer(CALLBACK(src, .proc/decay), 15 SECONDS)
+			addtimer(CALLBACK(src, PROC_REF(decay)), 15 SECONDS)
 
 /obj/structure/closet/decay/proc/unmagify()
 	icon_state = weakened_icon
 	update_icon()
-	addtimer(CALLBACK(src, .proc/decay), 15 SECONDS)
+	addtimer(CALLBACK(src, PROC_REF(decay)), 15 SECONDS)
 	icon_welded = "welded"
 
 /obj/item/projectile/magic/aoe
@@ -526,7 +526,7 @@
 			return BULLET_ACT_BLOCK
 	var/turf/T = get_turf(target)
 	for(var/i=0, i<50, i+=10)
-		addtimer(CALLBACK(GLOBAL_PROC, .proc/explosion, T, -1, exp_heavy, exp_light, exp_flash, FALSE, FALSE, exp_fire), i)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(explosion), T, -1, exp_heavy, exp_light, exp_flash, FALSE, FALSE, exp_fire), i)
 
 /obj/item/projectile/magic/nuclear
 	name = "\proper blazing manliness"

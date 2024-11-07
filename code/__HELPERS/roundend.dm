@@ -298,7 +298,7 @@
 			broadcastmessage += "[GLOB.round_end_notifiees.Join(", ")], "
 
 
-		broadcastmessage += "[((broadcastmessage == "") ? "the" : "The")] current round has ended. Please standby for your shift interlude Nanotrasen News Network's report!\n"
+		broadcastmessage += "[((broadcastmessage == "") ? "The" : "the")] current round has ended. Please standby for your shift interlude Nanotrasen News Network's report!\n"
 		broadcastmessage += "```\n[send_news_report()]\n```"
 
 		if(CONFIG_GET(string/chat_reboot_role))
@@ -347,14 +347,12 @@
 	ready_for_reboot = TRUE
 	standard_reboot()
 
-	sleep(5 SECONDS)
-
 /datum/controller/subsystem/ticker/proc/standard_reboot()
 	if(ready_for_reboot)
 		if(mode.station_was_nuked)
 			Reboot("Станция уничтожена Ядерной бомбой.", "nuke")
 		else
-			Reboot("КОНЕЦ РАУНДА! ЕОРГ ТОЛЬКО НА ЕОРГ-АРЕНЕ!!", "proper completion", 240 SECONDS)
+			Reboot("КОНЕЦ РАУНДА! ЕОРГ ТОЛЬКО НА ЕОРГ-АРЕНЕ!!", "proper completion")
 	else
 		CRASH("Attempted standard reboot without ticker roundend completion")
 
@@ -742,7 +740,7 @@
 	var/currrent_category
 	var/datum/antagonist/previous_category
 
-	sortTim(all_antagonists, /proc/cmp_antag_category)
+	sortTim(all_antagonists, GLOBAL_PROC_REF(cmp_antag_category))
 
 	for(var/datum/antagonist/A in all_antagonists)
 		if(!A.show_in_roundend)
@@ -785,7 +783,7 @@
 		SSticker.show_roundend_report(owner.client)
 
 /datum/action/report/IsAvailable()
-	return 1
+	return TRUE
 
 /datum/action/report/Topic(href,href_list)
 	if(usr != owner)

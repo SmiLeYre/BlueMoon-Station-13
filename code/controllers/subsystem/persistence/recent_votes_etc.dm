@@ -22,15 +22,22 @@
 	LoadRecentMaps()
 	LoadRecentDynamicType() //BLUEMOON ADDITION
 
-/datum/controller/subsystem/persistence/proc/CollectRoundtype()
-	saved_modes[3] = saved_modes[2]
-	saved_modes[2] = saved_modes[1]
-	saved_modes[1] = SSticker.mode.config_tag
-	var/json_file = file("data/RecentModes.json")
+// BLUEMOON EDITED - режимы теперь могут записываться после двух часов игры
+/datum/controller/subsystem/persistence/proc/CollectRoundtype(record_chaos = TRUE)
+	var/json_file = null
 	var/list/file_data = list()
-	file_data["data"] = saved_modes
-	fdel(json_file)
-	WRITE_FILE(json_file, json_encode(file_data))
+	if(!GLOB.midround_recorded)
+		saved_modes[3] = saved_modes[2]
+		saved_modes[2] = saved_modes[1]
+		saved_modes[1] = SSticker.mode.config_tag
+		json_file = file("data/RecentModes.json")
+		file_data["data"] = saved_modes
+		fdel(json_file)
+		WRITE_FILE(json_file, json_encode(file_data))
+	else
+		message_admins("Режим был записан посреди раунда через midround_record, и по окончанию раунда записан не будет.")
+	if(!record_chaos)
+		return
 	saved_chaos[3] = saved_chaos[2]
 	saved_chaos[2] = saved_chaos[1]
 	saved_chaos[1] = SSticker.mode.get_chaos()
@@ -41,21 +48,54 @@
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data))
 
+// BLUEMOON EDITED - режимы теперь могут записываться после двух часов игры
 /datum/controller/subsystem/persistence/proc/RecordMaps()
+	if(GLOB.midround_recorded)
+		message_admins("Карта была записана посреди раунда через midround_record, и по окончанию раунда записана не будет.")
+		return
 	saved_maps = saved_maps?.len ? list("[SSmapping.config.map_name]") | saved_maps : list("[SSmapping.config.map_name]")
 	var/json_file = file("data/RecentMaps.json")
 	var/list/file_data = list()
 	file_data["maps"] = saved_maps
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data))
+
 //BLUEMOON ADDITION START
 /datum/controller/subsystem/persistence/proc/RecordDynamicType(var/type)
+	if(GLOB.midround_recorded)
+		message_admins("Тип динамика был записан посреди раунда через midround_record, и по окончанию раунда записан не будет.")
+		return
 	last_dynamic_gamemode = type
 	var/json_file = file("data/RecentDynamicType.json")
 	var/list/file_data = list()
 	file_data["data"] = last_dynamic_gamemode
 	fdel(json_file)
 	WRITE_FILE(json_file, json_encode(file_data))
+
+/datum/controller/subsystem/persistence/proc/UnrecordGracefulEnding()
+	var/json_file = file("data/GracefulEnding.json")
+	var/list/file_data = list()
+	file_data["data"] = "NOT_GRACEFULLY_ENDED"
+	fdel(json_file)
+	WRITE_FILE(json_file, json_encode(file_data))
+	message_admins("Раунд начался. Пометка \"Нормально завершившийся\" удалена.")
+
+/datum/controller/subsystem/persistence/proc/RecordGracefulEnding()
+	var/json_file = file("data/GracefulEnding.json")
+	var/list/file_data = list()
+	file_data["data"] = "GRACEFULLY_ENDED"
+	fdel(json_file)
+	WRITE_FILE(json_file, json_encode(file_data))
+	message_admins("Раунд помечен как \"Нормально завершившийся\"")
+
+/datum/controller/subsystem/persistence/proc/CheckGracefulEnding()
+	var/json_file = file("data/GracefulEnding.json")
+	if(!fexists(json_file))
+		return TRUE
+	var/list/json = json_decode(file2text(json_file))
+	if(!json)
+		return TRUE
+	return json["data"] == "GRACEFULLY_ENDED"
 
 /datum/controller/subsystem/persistence/proc/LoadRecentDynamicType()
 	var/json_file = file("data/RecentDynamicType.json")

@@ -67,15 +67,19 @@
 	icon_state = "moppsuit"
 	item_state = "moppsuit"
 	allowed = list(/obj/item/flashlight, /obj/item/gun/ballistic/revolver, /obj/item/gun/ballistic/automatic, /obj/item/gun/ballistic/automatic/pistol, /obj/item/gun/energy, /obj/item/gun/ballistic/shotgun,  /obj/item/tank/internals/doubleoxygen, /obj/item/tank/internals/oxygen, /obj/item/tank/internals/emergency_oxygen, /obj/item/tank/internals/plasmaman, /obj/item/geiger_counter)
-	slowdown = 0.5
-	armor = list("melee" = 35, "bullet" = 50, "laser" = 30,"energy" = 20, "bomb" = 10, "bio" = 100, "rad" = 100, "fire" = 40, "acid" = 100) //I can tell I will have to fucking balance this... several times it feels like -Radar
+	slowdown = 0
+	armor = list("melee" = 35, "bullet" = 35, "laser" = 35,"energy" = 40, "bomb" = 25, "bio" = 100, "rad" = 100, "fire" = 40, "acid" = 100) //I can tell I will have to fucking balance this... several times it feels like -Radar
+	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL
+	heat_protection = CHEST|GROIN|LEGS|ARMS
+	max_heat_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
+	cold_protection = CHEST|GROIN|LEGS|ARMS
+	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
 
 /obj/item/clothing/suit/cbrn/mopp/advance
 	name = "advance MOPP suit"
 	desc = "Mission Oriented Protective Posture. A suit design for harsh combat conditions short of no atmosphere. This is an advance version for Non-ERT Central Command Staff."
 	slowdown = 0 // This is suppose to be advance, hopefully not too OP
-	armor = list("melee" = 40, "bullet" = 60, "laser" = 40,"energy" = 30, "bomb" = 20, "bio" = 110, "rad" = 110, "fire" = 50, "acid" = 110) //Scale with standard MOPP suits as this effects all ERT suits
-	clothing_flags = NONE
+	armor = list("melee" = 40, "bullet" = 60, "laser" = 40,"energy" = 40, "bomb" = 30, "bio" = 110, "rad" = 110, "fire" = 50, "acid" = 110) //Scale with standard MOPP suits as this effects all ERT suits
 
 /obj/item/clothing/suit/cbrn/mopp/advance/commander
 	name = "advance MOPP suit 'Commander'"

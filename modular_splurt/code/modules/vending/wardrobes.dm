@@ -84,7 +84,11 @@
 					/obj/item/clothing/mask/balaclava/pmc_leader_balaclava = 2,
 					/obj/item/clothing/head/HoS/pmc_leader_cap = 2,
 					/obj/item/clothing/head/HoS/pmc_leader_beret = 2,
-					/obj/item/clothing/suit/armor/hos/pmc_leader_armor = 2)
+					/obj/item/clothing/suit/armor/hos/pmc_leader_armor = 2,
+					/obj/item/clothing/under/syndicate/maid = 2,
+					/obj/item/clothing/under/syndicate/maid_revealing = 2,
+					/obj/item/clothing/gloves/combat/maid = 2,
+					/obj/item/clothing/head/maid/syndicate = 2)
 	refill_canister = /obj/item/vending_refill/wardrobe/blueshield_wardrobe
 	payment_department = ACCOUNT_SEC
 	light_color = COLOR_STRONG_BLUE
@@ -158,7 +162,10 @@
 					/obj/item/clothing/mask/balaclava/pmc_leader_balaclava = 1, //BlueMoon Add
 					/obj/item/clothing/head/HoS/pmc_leader_cap = 1, //BlueMoon Add
 					/obj/item/clothing/head/HoS/pmc_leader_beret = 1, //BlueMoon Add
-					/obj/item/clothing/suit/armor/hos/pmc_leader_armor = 1) //BlueMoon Add
+					/obj/item/clothing/suit/armor/hos/pmc_leader_armor = 1, //BlueMoon Add
+					/obj/item/clothing/neck/tie/dread_neck = 1, //BlueMoon Add
+					/obj/item/clothing/suit/armor/hos/dread_armor = 1, //BlueMoon Add
+					/obj/item/clothing/head/HoS/dread_helmet = 1) //BlueMoon Add
 	refill_canister = /obj/item/vending_refill/wardrobe/sec_wardrobe
 	payment_department = ACCOUNT_SEC
 	light_color = COLOR_MOSTLY_PURE_RED

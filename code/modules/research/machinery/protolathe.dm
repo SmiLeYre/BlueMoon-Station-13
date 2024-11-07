@@ -1,6 +1,6 @@
 /obj/machinery/rnd/production/protolathe
-	name = "protolathe"
-	desc = "Converts raw materials into useful objects."
+	name = "Hacked Protolat"
+	desc = "Принтер с абсолютным доступом к большинству технологий. Запрещён к использованию в многих Корпорациях с делением власти меж множеством Отделов."
 	icon_state = "protolathe"
 	circuit = /obj/item/circuitboard/machine/protolathe
 	categories = list(

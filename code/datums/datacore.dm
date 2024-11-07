@@ -34,14 +34,19 @@
 	var/author = ""
 	var/time = ""
 	var/dataId = 0
+	// BLUEMOON ADD START - авторизация ЦК и возможность пометить правонарушение как уже обработанное
+	var/centcom_enforced = FALSE // Создана ли данная запись сотрудниками ЦК
+	var/penalties_incurred = FALSE // Понёс ли субъект наказание за свои преступления
+	// BLUEMOON ADD END
 
-/datum/datacore/proc/createCrimeEntry(cname = "", cdetails = "", author = "", time = "")
+/datum/datacore/proc/createCrimeEntry(cname = "", cdetails = "", author = "", time = "", centcom_enforced = FALSE) // BLUEMOON EDIT - авторизация ЦК
 	var/datum/data/crime/c = new /datum/data/crime
 	c.crimeName = cname
 	c.crimeDetails = cdetails
 	c.author = author
 	c.time = time
 	c.dataId = ++securityCrimeCounter
+	c.centcom_enforced = centcom_enforced // BLUEMOON EDIT - авторизация ЦК
 	return c
 
 /datum/datacore/proc/addMinorCrime(id = "", datum/data/crime/crime)
@@ -51,21 +56,25 @@
 			crimes |= crime
 			return
 
-/datum/datacore/proc/removeMinorCrime(id, cDataId)
+/datum/datacore/proc/removeMinorCrime(id, cDataId, centcom_authority = FALSE) // BLUEMOON EDIT - авторизация ЦК
 	for(var/datum/data/record/R in security)
 		if(R.fields["id"] == id)
 			var/list/crimes = R.fields["mi_crim"]
 			for(var/datum/data/crime/crime in crimes)
 				if(crime.dataId == text2num(cDataId))
+					if(crime.centcom_enforced && !centcom_authority) // BLUEMOON EDIT - авторизация ЦК
+						return
 					crimes -= crime
 					return
 
-/datum/datacore/proc/removeMajorCrime(id, cDataId)
+/datum/datacore/proc/removeMajorCrime(id, cDataId, centcom_authority = FALSE) // BLUEMOON EDIT - авторизация ЦК
 	for(var/datum/data/record/R in security)
 		if(R.fields["id"] == id)
 			var/list/crimes = R.fields["ma_crim"]
 			for(var/datum/data/crime/crime in crimes)
 				if(crime.dataId == text2num(cDataId))
+					if(crime.centcom_enforced && !centcom_authority) // BLUEMOON EDIT - авторизация ЦК
+						return
 					crimes -= crime
 					return
 
@@ -75,6 +84,33 @@
 			var/list/crimes = R.fields["ma_crim"]
 			crimes |= crime
 			return
+
+// BLUEMOON ADD START - возможность пометить правонарушение как обработанное | Логи
+/datum/datacore/proc/switch_incur(id, cDataId)
+	for(var/datum/data/record/R in security)
+		if(R.fields["id"] == id)
+			var/list/crimes = R.fields["mi_crim"] + R.fields["ma_crim"]
+			for(var/datum/data/crime/crime in crimes)
+				if(crime.dataId == text2num(cDataId))
+					crime.penalties_incurred = !crime.penalties_incurred
+					return
+
+/datum/datacore/proc/get_actions_logs(id)
+	for(var/datum/data/record/R in security)
+		if(R.fields["id"] == id)
+			var/list/logs = R.fields["actions_logs"]
+			return logs
+
+/datum/datacore/proc/append_sec_logs(id, log, auth_name, auth_rank)
+	for(var/datum/data/record/R in security)
+		if(R.fields["id"] == id)
+			var/timestamp = "\[[STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)]\]"
+			var/log_text = "<b>[timestamp]</b> [log]"
+			log_text = replacetext(log_text, "%%RANK%%", "<u>[auth_rank]</u>")
+			log_text = replacetext(log_text, "%%AUTH%%", "<u>[auth_name]</u>")
+			log_text = replacetext(log_text, "%%GEN_AUTH%%", "<u>[auth_name] ([auth_rank])</u>")
+			R.fields["actions_logs"] += log_text
+// BLUEMOON ADD END
 
 /datum/datacore/proc/manifest()
 	for(var/mob/dead/new_player/N in GLOB.player_list)
@@ -91,7 +127,7 @@
 	if(foundrecord)
 		foundrecord.fields["rank"] = assignment
 
-/datum/datacore/proc/get_manifest_tg() //copypasted from tg, renamed to avoid namespace conflicts
+/datum/datacore/proc/get_manifest()
 	var/list/manifest_out = list()
 	var/list/departments = list(
 		"Command" = GLOB.command_positions,
@@ -114,22 +150,31 @@
 			if(department_check in jobs)
 				if(!manifest_out[department])
 					manifest_out[department] = list()
-				manifest_out[department] += list(list(
-					"name" = name,
-					"rank" = rank
-				))
+				// Append to beginning of list if captain or department head
+				if (department_check == "Captain" || (department != "Command" && (rank in GLOB.command_positions)))
+					manifest_out[department] = list(list(
+						"name" = name,
+						"rank" = rank,
+						"department_check" = department_check
+					)) + manifest_out[department]
+				else
+					manifest_out[department] += list(list(
+						"name" = name,
+						"rank" = rank,
+						"department_check" = department_check
+					))
 				has_department = TRUE
-				break
 		if(!has_department)
 			if(!manifest_out["Misc"])
 				manifest_out["Misc"] = list()
 			manifest_out["Misc"] += list(list(
 				"name" = name,
-				"rank" = rank
+				"rank" = rank,
+				"department_check" = department_check
 			))
 	return manifest_out
 
-/datum/datacore/proc/get_manifest(monochrome, OOC)
+/datum/datacore/proc/get_manifest_bm(monochrome, OOC)
 	var/list/heads = list()
 	var/list/sec = list()
 	var/list/eng = list()
@@ -246,7 +291,6 @@
 	dat = replacetext(dat, "\t", "")
 	return dat
 
-
 /datum/datacore/proc/manifest_inject(mob/living/carbon/human/H, client/C, datum/preferences/prefs)
 	set waitfor = FALSE
 	var/static/list/show_directions = list(SOUTH, WEST)
@@ -327,6 +371,11 @@
 		S.fields["ma_crim"]		= list()
 		S.fields["ma_crim_d"]	= "No major crime convictions."
 		S.fields["notes"]		= prefs.security_records || "No notes."
+		// BLUEMOON ADD START - логи
+		S.fields["actions_logs"] = list(
+			"<u>[GLOB.current_date_string] | [STATION_TIME_TIMESTAMP("hh:mm:ss", world.time)] ЗАПИСЬ НАЧАТА. СУБЪЕКТ - [H.real_name] | [assignment] | [id];</u><br>"
+			)
+		// BLUEMOON ADD END
 		LAZYINITLIST(S.fields["comments"])
 		security += S
 

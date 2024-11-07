@@ -15,10 +15,10 @@
 	icon_state = "terror_allblack"
 	icon_living = "terror_allblack"
 	icon_dead = "terror_allblack_dead"
-	maxHealth = 1600
-	health = 1600
+	maxHealth = 600
+	health = 600
 	speed = 1.2
-	damage_coeff = list(BRUTE = 0.3, BURN = 0.6, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 0.2)
+	damage_coeff = list(BRUTE = 0.3, BURN = 0.6, TOX = 1, CLONE = 0, STAMINA = 0, OXY = 1)
 	deathmessage =  "morbidly growls, flailing and crumbling as death finally washes away the burning hatred in it's eyes."
 	death_sound = 'sound/creatures/terrorspiders/prince_dead.ogg'
 	regeneration = 0 //no healing on life, prince should play agressive

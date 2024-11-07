@@ -1,12 +1,14 @@
 import { sortBy } from "common/collections";
 import { capitalize } from "common/string";
+
 import { useBackend, useLocalState } from "../backend";
-import { Blink, Box, Button, Dimmer, Flex, Icon, Input, Modal, Section, TextArea, LabeledList } from "../components";
+import { Blink, Box, Button, Dimmer, Flex, Icon, Input, LabeledList, Modal, Section, TextArea } from "../components";
+import { formatMoney } from '../format';
 import { Window } from "../layouts";
 import { sanitizeText } from "../sanitize";
-import { formatMoney } from '../format';
 
 const STATE_BUYING_SHUTTLE = "buying_shuttle";
+const STATE_CALLING_ERT = "calling_ert";
 const STATE_CHANGING_STATUS = "changing_status";
 const STATE_MAIN = "main";
 const STATE_MESSAGES = "messages";
@@ -15,6 +17,7 @@ const STATE_MESSAGES = "messages";
 const SWIPE_NEEDED = "SWIPE_NEEDED";
 
 const sortByCreditCost = sortBy(shuttle => shuttle.creditCost);
+const sortByCreditCostERT = sortBy(ert => ert.creditCost);
 
 const AlertButton = (props, context) => {
   const { act, data } = useBackend(context);
@@ -197,6 +200,57 @@ const PageBuyingShuttle = (props, context) => {
   );
 };
 
+const PageCallingERT = (props, context) => {
+  const { act, data } = useBackend(context);
+
+  return (
+    <Box>
+      <Section>
+        <Button
+          icon="chevron-left"
+          content="Назад"
+          onClick={() => act("setState", { state: STATE_MAIN })}
+        />
+      </Section>
+
+      <Section>
+        Бюджет: <b>{data.budget.toLocaleString()}</b> кредитов
+      </Section>
+      {sortByCreditCostERT(data.ert).map(ert => (
+        <Section
+          title={(
+            <span
+              style={{
+                display: "inline-block",
+                width: "70%",
+              }}>
+              {ert.name}
+            </span>
+          )}
+          key={ert.ref}
+          buttons={(
+            <Button
+              content={`${ert.creditCost.toLocaleString()} кредитов`}
+              disabled={data.budget < ert.creditCost || !ert.available}
+              onClick={() => act("purchaseERT", {
+                ert: ert.ref,
+              })}
+              tooltip={
+                data.budget < ert.creditCost
+                  ? `Требуется ещё ${ert.creditCost - data.budget} кредитов`
+                  : undefined
+              }
+              tooltipPosition="left"
+            />
+          )}>
+          <Box>{ert.description}</Box>
+        </Section>
+      ))}
+    </Box>
+  );
+};
+
+
 const PageChangingStatus = (props, context) => {
   const { act, data } = useBackend(context);
   const { maxStatusLineLength } = data;
@@ -303,6 +357,7 @@ const PageMain = (props, context) => {
     aprilFools,
     callShuttleReasonMinLength,
     canBuyShuttles,
+    canCallERT,
     canMakeAnnouncement,
     canMessageAssociates,
     canRecallShuttles,
@@ -471,6 +526,15 @@ const PageMain = (props, context) => {
             onClick={() => act("setState", { state: STATE_BUYING_SHUTTLE })}
           />}
 
+          {(canCallERT !== 0) && <Button
+            icon="shopping-cart"
+            content="Вызвать платное ОБР"
+            disabled={canCallERT !== 1}
+            tooltip={canCallERT !== 1 ? canCallERT : undefined}
+            tooltipPosition="right"
+            onClick={() => act("setState", { state: STATE_CALLING_ERT })}
+          />}
+
           {!!canMessageAssociates && <Button
             icon="comment-o"
             content={`Отправить сообщение ${emagged ? "[НЕИЗВЕСТНЫМ]" : "ЦК"}`}
@@ -483,6 +547,12 @@ const PageMain = (props, context) => {
             content="Запросить коды Ядерной Аутентификации"
             disabled={!importantActionReady}
             onClick={() => setRequestingNukeCodes(true)}
+          />}
+
+          {!!emagged && <Button
+            icon="bullhorn"
+            content="Заявить о существовании Syndicate"
+            onClick={() => act("declareTheExistenceOfSyndicate")}
           />}
 
           {!!emagged && <Button
@@ -823,6 +893,7 @@ export const CommunicationsConsole = (props, context) => {
 
         {!!authenticated && (
           page === STATE_BUYING_SHUTTLE && <PageBuyingShuttle />
+          || page === STATE_CALLING_ERT && <PageCallingERT />
           || page === STATE_CHANGING_STATUS && <PageChangingStatus />
           || page === STATE_MAIN && <PageMain />
           || page === STATE_MESSAGES && <PageMessages />

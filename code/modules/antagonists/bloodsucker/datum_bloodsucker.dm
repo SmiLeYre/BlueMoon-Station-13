@@ -184,7 +184,7 @@
 	return fullname
 
 
-/datum/antagonist/bloodsucker/proc/BuyPower(datum/action/bloodsucker/power)//(obj/effect/proc_holder/spell/power)
+/datum/antagonist/bloodsucker/proc/BuyPower(datum/action/cooldown/bloodsucker/power)//(obj/effect/proc_holder/spell/power)
 	powers += power
 	power.Grant(owner.current)// owner.AddSpell(power)
 
@@ -193,11 +193,12 @@
 	add_hud()
 	update_hud(TRUE) 	// Set blood value, current rank
 	// Powers
-	BuyPower(new /datum/action/bloodsucker/feed)
-	BuyPower(new /datum/action/bloodsucker/masquerade)
-	BuyPower(new /datum/action/bloodsucker/veil)
-//	BuyPower(new /datum/action/bloodsucker/levelup) // BLUEMOON REMOVAL - возвращаем фазы дня и убираем форсированную эволюцию
-	BuyPower(new /datum/action/bloodsucker/tutorial) // BLUEMOON ADD - обучение для самых маленьких неофит
+	BuyPower(new /datum/action/cooldown/bloodsucker/feed)
+	BuyPower(new /datum/action/cooldown/bloodsucker/masquerade)
+	BuyPower(new /datum/action/cooldown/bloodsucker/veil)
+//	BuyPower(new /datum/action/cooldown/bloodsucker/levelup) // BLUEMOON REMOVAL - возвращаем фазы дня и убираем форсированную эволюцию
+	BuyPower(new /datum/action/cooldown/bloodsucker/tutorial) // BLUEMOON ADD - обучение для самых маленьких неофит
+
 	// Traits
 	for(var/T in defaultTraits)
 		ADD_TRAIT(owner.current, T, BLOODSUCKER_TRAIT)
@@ -239,7 +240,7 @@
 	remove_hud()
 	// Powers
 	while(powers.len)
-		var/datum/action/bloodsucker/power = pick(powers)
+		var/datum/action/cooldown/bloodsucker/power = pick(powers)
 		powers -= power
 		power.Remove(owner.current)
 		// owner.RemoveSpell(power)
@@ -285,7 +286,7 @@
 			to_chat(owner, "<span class='announce'>Напоминание: Если вы не можете найти или украсть гроб для использования, вы можете построить себе его из досок или листов металла.</span><br>")
 
 /datum/antagonist/bloodsucker/proc/LevelUpPowers()
-	for(var/datum/action/bloodsucker/power in powers)
+	for(var/datum/action/cooldown/bloodsucker/power in powers)
 		power.level_current ++
 
 /datum/antagonist/bloodsucker/proc/SpendRank()
@@ -305,8 +306,8 @@
 	//TODO: Make this into a radial, or perhaps a tgui next UI
 		// Purchase Power Prompt
 	var/list/options = list()
-	for(var/pickedpower in typesof(/datum/action/bloodsucker))
-		var/datum/action/bloodsucker/power = pickedpower
+	for(var/pickedpower in typesof(/datum/action/cooldown/bloodsucker))
+		var/datum/action/cooldown/bloodsucker/power = pickedpower
 		// If I don't own it, and I'm allowed to buy it.
 		if(!(locate(power) in powers) && initial(power.bloodsucker_can_buy))
 			options[initial(power.name)] = power // TESTING: After working with TGUI, it seems you can use initial() to view the variables inside a path?
@@ -327,7 +328,7 @@
 			to_chat(owner.current, "<span class='warning'>У вас недостаточно крови чтобы укрепить её, вам нужно еще [level_bloodcost - L.blood_volume]!</span>")
 			return
 		// Buy New Powers
-		var/datum/action/bloodsucker/P = options[choice]
+		var/datum/action/cooldown/bloodsucker/P = options[choice]
 		AddBloodVolume(-level_bloodcost)
 		BuyPower(new P)
 		to_chat(owner.current, "<span class='cult'>Вы использовали [level_bloodcost] единиц крови и изучили [initial(P.name)]!</span>")
@@ -370,7 +371,7 @@
 
 //This handles the application of antag huds/special abilities
 /datum/antagonist/bloodsucker/apply_innate_effects(mob/living/mob_override)
-	RegisterSignal(owner.current,COMSIG_LIVING_BIOLOGICAL_LIFE,.proc/LifeTick)
+	RegisterSignal(owner.current,COMSIG_LIVING_BIOLOGICAL_LIFE, PROC_REF(LifeTick))
 	return
 
 //This handles the removal of antag huds/special abilities

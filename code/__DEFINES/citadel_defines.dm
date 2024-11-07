@@ -132,6 +132,7 @@
 #define EDGING				(1<<20)
 #define NO_DISCO_DANCE		(1<<21)
 #define CUM_ONTO			(1<<22)
+#define SEX_JITTER			(1<<23) //The maximum limit was reached by Gardelin0
 //Note: reminder, if you're a coder adding more bitflags here in the event we add more horny things, the maximum is (1<<23).
 #define TOGGLES_CITADEL 0
 

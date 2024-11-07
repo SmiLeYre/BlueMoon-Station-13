@@ -12,8 +12,10 @@
 #define PLANE_SPACE_PARALLAX_RENDER_TARGET "PLANE_SPACE_PARALLAX"
 
 #define OPENSPACE_LAYER 17 //Openspace layer over all
+
 #define GRAVITY_PULSE_PLANE -12
 #define GRAVITY_PULSE_RENDER_TARGET "*GRAVPULSE_RENDER_TARGET"
+
 #define OPENSPACE_PLANE -10 //Openspace plane below all turfs
 #define OPENSPACE_BACKDROP_PLANE -9 //Black square just over openspace plane to guaranteed cover all in openspace turf
 
@@ -107,6 +109,7 @@
 #define ON_EDGED_TURF_LAYER 4.35
 #define LARGE_MOB_LAYER 4.4
 #define ABOVE_ALL_MOB_LAYER 4.5
+#define RAILING_LAYER 4.7
 
 #define SPACEVINE_LAYER 4.8
 #define SPACEVINE_MOB_LAYER 4.9
@@ -209,7 +212,16 @@
 //-------------------- Rendering ---------------------
 #define RENDER_PLANE_GAME 100
 #define RENDER_PLANE_NON_GAME 101
-#define RENDER_PLANE_MASTER 102
+
+// Only VERY special planes should be here, as they are above not just the game, but the UI planes as well.
+
+/// Plane related to the menu when pressing Escape.
+/// Needed so that we can apply a blur effect to EVERYTHING, and guarantee we are above all UI.
+#define ESCAPE_MENU_PLANE 105
+#define ESCAPE_MENU_DIMMER_LAYER 105.1
+#define ESCAPE_MENU_DEFAULT_LAYER 105.2
+
+#define RENDER_PLANE_MASTER 110
 
 // Lummox I swear to god I will find you
 // NOTE! You can only ever have planes greater then -10000, if you add too many with large offsets you will brick multiz
@@ -235,5 +247,9 @@
 #define RENDER_PLANE_GAME_WORLD -1
 
 #define RENDER_PLANE_LIGHTING 15
+
+// Admin popup layer
+#define ADMIN_POPUP_LAYER 1
+
 ///Layer for screentips
 #define SCREENTIP_LAYER 40

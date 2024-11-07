@@ -15,7 +15,7 @@
 
 /datum/quirk/awoo/add()
 	// Set timer
-	//timer = addtimer(CALLBACK(src, .proc/do_awoo), timer_trigger, TIMER_STOPPABLE)
+	//timer = addtimer(CALLBACK(src, PROC_REF(do_awoo), timer_trigger, TIMER_STOPPABLE)
 	last_awoo = world.time
 	chance = default_chance
 
@@ -53,4 +53,48 @@
 	//deltimer(timer)
 	//timer = null
 	// Add new timer
-	//timer = addtimer(CALLBACK(src, .proc/do_awoo), timer_trigger, TIMER_STOPPABLE)
+	//timer = addtimer(CALLBACK(src, PROC_REF(do_awoo), timer_trigger, TIMER_STOPPABLE)
+
+/datum/emote/sound/human/awoo
+	emote_volume = 100
+	emote_range = MEDIUM_RANGE_SOUND_EXTRARANGE
+	emote_falloff_exponent = 1
+	emote_distance_multiplier_min_range = 12
+
+/datum/emote/sound/human/awoo/run_emote(mob/user, params)
+	. = ..()
+	if(!.)
+		return
+	if (HAS_TRAIT(user, TRAIT_AWOO))
+		var/mob/living/carbon/M = user
+		var/datum/quirk/awoo/quirk_target = locate() in M.roundstart_quirks
+		quirk_target.last_awoo = world.time
+		quirk_target.chance = quirk_target.default_chance
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "to_awoo", /datum/mood_event/to_awoo)
+
+/datum/emote/sound/human/howl
+	emote_volume = 100
+	emote_range = MEDIUM_RANGE_SOUND_EXTRARANGE
+	emote_falloff_exponent = 1
+	emote_distance_multiplier_min_range = 12
+
+/datum/emote/sound/human/howl/run_emote(mob/user, params)
+	. = ..()
+	if(!.)
+		return
+	if (HAS_TRAIT(user, TRAIT_AWOO))
+		var/mob/living/carbon/M = user
+		var/datum/quirk/awoo/quirk_target = locate() in M.roundstart_quirks
+		quirk_target.last_awoo = world.time
+		quirk_target.chance = quirk_target.default_chance
+		SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "to_awoo", /datum/mood_event/to_awoo)
+
+/datum/quirk/light
+	name = "Лёгкий"
+	desc = "Вы в разы легче того, чем вы выглядите! Хотя и размеры теперь не особо помогают в выживании."
+	value = 0
+	mob_trait = TRAIT_BLUEMOON_LIGHT
+	gain_text = "<span class='notice'>Вы ощущаете себя легче пёрышка!</span>"
+	lose_text = "<span class='danger'>Вы ощёщаете себя тяжелее.</span>"
+	medical_record_text = "Пациент имеет аномально низкий вес."
+	antag_removal_text // Text will be given to the quirk holder if they get an antag that has it blacklisted.

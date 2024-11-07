@@ -36,6 +36,7 @@
 #define MODE_KEY_DEADMIN "d"
 
 #define MODE_ALIEN "alientalk"
+#define MODE_TERROR "terrortalk"
 #define MODE_HOLOPAD "holopad"
 #define MODE_STATUSDISPLAY "statusdisplay"
 

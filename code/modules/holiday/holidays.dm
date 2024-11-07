@@ -12,6 +12,9 @@
 	var/year_offset = 0
 	var/obj/item/drone_hat //If this is defined, drones without a default hat will spawn with this one during the holiday; check drones_as_items.dm to see this used
 
+	// Special things to be given during this!
+	var/list/mail_goodies = list()
+
 // This proc gets run before the game starts when the holiday is activated. Do festive shit here.
 /datum/holiday/proc/celebrate()
 	return
@@ -26,7 +29,7 @@
 	var/i = findtext(name, "  Сектор |")
 	return copytext(name, 1, i)
 
-// Return 1 if this holiday should be celebrated today
+// return TRUE if this holiday should be celebrated today
 /datum/holiday/proc/shouldCelebrate(dd, mm, yy, ww, ddd)
 	if(always_celebrate)
 		return TRUE
@@ -175,7 +178,7 @@
 	begin_month = APRIL
 
 /datum/holiday/april_fools/celebrate()
-	SSjob.set_overflow_role("Clown Сектор |")
+	SSjob.set_overflow_role("Clown")
 	SSticker.login_music = 'sound/ambience/clown.ogg'
 	for(var/mob/dead/new_player/P in GLOB.mob_list)
 		if(P.client)
@@ -441,7 +444,7 @@
 	drone_hat = /obj/item/clothing/head/that
 
 /datum/holiday/lgbt/intersexawareness
-	name = "Intersex Awareness Day"
+	name = "Intersex Awareness Day |"
 	begin_day = 26
 	begin_month = OCTOBER
 
@@ -460,6 +463,11 @@
 	begin_month = OCTOBER
 	end_day = 2
 	end_month = NOVEMBER
+
+	mail_goodies = list(
+		/obj/item/reagent_containers/food/snacks/lollipop = 10,
+		/obj/item/reagent_containers/food/snacks/chocolatebar = 10
+	)
 
 /datum/holiday/halloween/greet()
 	return "Жуткий Хэллоуин!"
@@ -496,7 +504,7 @@
 	drone_hat = /obj/item/clothing/head/peaceflower
 
 /datum/holiday/lgbt/transawareness
-	name = "Transgender Awareness Week"
+	name = "Transgender Awareness Week |"
 	begin_day = 13
 	begin_month = NOVEMBER
 	end_day = 19
@@ -512,7 +520,7 @@
 	return "This week is Transgender Awareness Week!"
 
 /datum/holiday/lgbt/transremembrance
-	name = "Transgender Day of Remembrance"
+	name = "Transgender Day of Remembrance |"
 	begin_day = 20
 	begin_month = NOVEMBER
 
@@ -578,7 +586,7 @@
 	begin_weekday = MONDAY
 
 /datum/holiday/lgbt/aceawareness
-	name = "Asexual Awareness Week"
+	name = "Asexual Awareness Week |"
 	begin_month = OCTOBER
 
 	holiday_colors = list(
@@ -605,19 +613,22 @@
 		return TRUE //the end of next week falls on a different month, meaning that the current week is the last full week
 
 /datum/holiday/mother
-	name = "Mother's Day"
+	name = "День Матери"
 	begin_week = 2
 	begin_month = MAY
 	begin_weekday = SUNDAY
 
 /datum/holiday/mother/greet()
-	return "Happy Mother's Day in most of the Americas, Asia, and Oceania!"
+	return "Счастливого дня Матери!"
 
 /datum/holiday/father
-	name = "Father's Day"
+	name = "День Отца"
 	begin_week = 3
 	begin_month = JUNE
 	begin_weekday = SUNDAY
+
+/datum/holiday/father/greet()
+	return "Счастливого дня Отца!"
 
 /datum/holiday/pride //Won't be typing this as /lgbt/ because the typing is meant for LGBT holidays that will change the station's decals. Having a full month of pride decals seems a bit long.
 	name = PRIDE_MONTH
@@ -626,7 +637,7 @@
 	end_day = 30
 
 /datum/holiday/pride/getStationPrefix()
-	return pick("Pride", "Gay", "Bi", "Trans", "Lesbian", "Ace", "Aro", "Agender", pick("Enby", "Enbie"), "Pan", "Intersex", "Demi", "Poly", "Closeted", "Genderfluid")
+	return pick("Сектор Прайд |", "Сектор Гей |", "Сектор Би |", "Сектор Транс |", "Сектор Лесби |", "Сектор Эйс |", "Сектор Эро |", "Сектор Неопределившийся |", pick("Сектор Энби |", "Сектор Энбис |"), "Сектор Пан |", "Сектор Фута |", "Сектор Деми |", "Сектор Поли |", "Сектор Закрытости |", "Сектор Гендерфлюида |")
 
 /datum/holiday/stonewall //decal patterns covered in "Pride Week"
 	name = "Stonewall Riots Anniversary"
@@ -651,7 +662,7 @@
 	return "Today is Pansexual and Panromantic Awareness Day!"
 
 /datum/holiday/lgbt/pan/getStationPrefix()
-	return pick("Pansexual","Panromantic")
+	return pick("Пансексуальный Сектор |","Панромантичный Сектор |")
 
 /datum/holiday/moth
 	name = "Moth Week"
@@ -671,7 +682,7 @@
 		return TRUE //the end of next week falls on a different month, meaning that the current week is the last full week
 
 /datum/holiday/moth/getStationPrefix()
-	return pick("Mothball","Lepidopteran","Lightbulb","Moth","Giant Atlas","Twin-spotted Sphynx","Madagascan Sunset","Luna","Death's Head","Emperor Gum","Polyphenus","Oleander Hawk","Io","Rosy Maple","Cecropia","Noctuidae","Giant Leopard","Dysphania Militaris","Garden Tiger")
+	return pick("Mothball |","Lepidopteran |","Lightbulb |","Moth |","Giant Atlas |","Twin-spotted Sphynx |","Madagascan Sunset |","Luna |","Death's Head |","Emperor Gum |","Polyphenus |","Oleander Hawk |","Io |","Rosy Maple |","Cecropia |","Noctuidae |","Giant Leopard |","Dysphania Militaris |","Garden Tiger |")
 
 /*
 
@@ -696,7 +707,7 @@ This used to be a comment about ramadan but it got deleted because we don't prea
 	return "Счастливого Рождества!"
 
 /datum/holiday/xmas/celebrate()
-	SSticker.OnRoundstart(CALLBACK(src, .proc/roundstart_celebrate))
+	SSticker.OnRoundstart(CALLBACK(src, PROC_REF(roundstart_celebrate)))
 
 /datum/holiday/xmas/proc/roundstart_celebrate()
 	for(var/obj/machinery/computer/security/telescreen/entertainment/Monitor in GLOB.machines)

@@ -51,7 +51,7 @@
 	examine_text = span_danger("SUBJECTPRONOUN выглядит лишенн[user.gender == MALE ? "ым" : "ой"] сознания и дик[user.gender == MALE ? "им" : "ой"]!")
 
 	// Disable ALL Powers and notify their entry
-	for(var/datum/action/bloodsucker/power in bloodsuckerdatum.powers)
+	for(var/datum/action/cooldown/bloodsucker/power in bloodsuckerdatum.powers)
 		if(power.active && !power.can_use_in_torpor)
 			power.DeactivatePower()
 	to_chat(owner, span_userdanger("<FONT size = 3>Blood! You need Blood, now! You enter a total Frenzy!"))

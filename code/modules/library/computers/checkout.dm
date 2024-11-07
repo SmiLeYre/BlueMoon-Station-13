@@ -394,7 +394,7 @@
 					else
 						var/datum/db_query/query = SSdbcore.NewQuery({"
 							INSERT INTO [format_table_name("library")] (author, title, content, category, ckey, flagged, datetime, round_id_created)
-							VALUES (:author, :title, :content, :category, :ckey, Now(), :round_id, 0)"}, list(
+							VALUES (:author, :title, :content, :category, :ckey, 0, Now(), :round_id)"}, list(
 								"author" = scanner.cache.author,
 								"title" = scanner.cache.name,
 								"content" = scanner.cache.dat,
@@ -462,7 +462,7 @@
 			make_external_book(newbook)
 
 	src.add_fingerprint(usr)
-	src.updateUsrDialog()
+	src.interact(usr)
 	return
 
 /*

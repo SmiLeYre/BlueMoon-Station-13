@@ -189,6 +189,7 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/structure/cloth_drive,
 /turf/open/floor/plasteel,
 /area/shuttle/arrival)
 "v" = (

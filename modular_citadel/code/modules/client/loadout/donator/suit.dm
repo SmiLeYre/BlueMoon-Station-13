@@ -52,11 +52,6 @@
 	path = /obj/item/clothing/under/custom/mimeoveralls
 	ckeywhitelist = list()
 
-/datum/gear/donator/suit/zuliecloak
-	name = "Project: Zul-E"
-	path = /obj/item/clothing/suit/hooded/cloak/zuliecloak
-	ckeywhitelist = list()
-
 /datum/gear/donator/suit/blackredgold
 	name = "Black, Red, and Gold Coat"
 	path = /obj/item/clothing/suit/blackredgold

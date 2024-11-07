@@ -51,7 +51,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/item_action_slot_check(slot, mob/user, datum/action/A)
 	if(slot == ITEM_SLOT_HEAD)
-		return 1
+		return TRUE
 
 /obj/item/clothing/head/helmet/space/hardsuit/equipped(mob/user, slot)
 	..()
@@ -107,7 +107,7 @@
 	var/helmettype = /obj/item/clothing/head/helmet/space/hardsuit
 	var/obj/item/tank/jetpack/suit/jetpack = null
 	var/hardsuit_type
-
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemood add
 
 /obj/item/clothing/suit/space/hardsuit/Initialize(mapload)
 	if(jetpack && ispath(jetpack))
@@ -161,7 +161,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/item_action_slot_check(slot, mob/user, datum/action/A)
 	if(slot == ITEM_SLOT_OCLOTHING) //we only give the mob the ability to toggle the helmet if he's wearing the hardsuit.
-		return 1
+		return TRUE
 
 	//Engineering
 /obj/item/clothing/head/helmet/space/hardsuit/engine
@@ -246,7 +246,7 @@
 /obj/item/clothing/head/helmet/space/hardsuit/mining/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
-	RegisterSignal(src, COMSIG_ARMOR_PLATED, .proc/upgrade_icon)
+	RegisterSignal(src, COMSIG_ARMOR_PLATED, PROC_REF(upgrade_icon))
 
 /obj/item/clothing/head/helmet/space/hardsuit/mining/proc/upgrade_icon(datum/source, amount, maxamount)
 	SIGNAL_HANDLER
@@ -281,7 +281,7 @@
 /obj/item/clothing/suit/space/hardsuit/mining/Initialize(mapload)
 	. = ..()
 	AddComponent(/datum/component/armor_plate)
-	RegisterSignal(src, COMSIG_ARMOR_PLATED, .proc/upgrade_icon)
+	RegisterSignal(src, COMSIG_ARMOR_PLATED, PROC_REF(upgrade_icon))
 
 /obj/item/clothing/suit/space/hardsuit/mining/proc/upgrade_icon(datum/source, amount, maxamount)
 	SIGNAL_HANDLER
@@ -358,7 +358,7 @@
 		C.head_update(src, forced = 1)
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 
 /obj/item/clothing/head/helmet/space/hardsuit/syndi/proc/toggle_hardsuit_mode(mob/user) //Helmet Toggles Suit Mode
 	if(linkedsuit)
@@ -518,7 +518,7 @@
 	armor = list(MELEE = 40, BULLET = 40, LASER = 40, ENERGY = 40, BOMB = 35, BIO = 100, RAD = 50, FIRE = 100, ACID = 100, WOUND = 30)
 	allowed = list(/obj/item/teleportation_scroll, /obj/item/tank/internals)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/wizard
-	mutantrace_variation = STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 	var/magic_flags = SPELL_WIZARD_ROBE|SPELL_CULT_ARMOR
 
 	heat_protection = CHEST|GROIN|LEGS|FEET|ARMS|HANDS
@@ -612,6 +612,29 @@
 	armor = list(MELEE = 30, BULLET = 5, LASER = 10, ENERGY = 5, BOMB = 100, BIO = 100, RAD = 60, FIRE = 60, ACID = 80, WOUND = 15)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/rd
 
+	//Blue Shield hardsuit
+/obj/item/clothing/head/helmet/space/hardsuit/blue_shield
+	name = "Blue Shield hardsuit helmet"
+	desc = "A special helmet designed for light combat suit."
+	icon_state = "hardsuit0-blueshield"
+	item_state = "hardsuit0-blueshield"
+	hardsuit_type = "blueshield"
+	armor = list(MELEE = 20, BULLET = 20, LASER = 30, ENERGY = 30, BOMB = 20, BIO = 100, RAD = 40, FIRE = 60, ACID = 60, WOUND = 30)
+
+/obj/item/clothing/suit/space/hardsuit/blue_shield
+	name = "Blue Shield hardsuit"
+	desc = "A special suit that protects against hazardous, low pressure environments. Made from light matrials with layer of armor"
+	icon_state = "hardsuit-blueshield"
+	item_state = "hardsuit-blueshield"
+	hardsuit_type = "blueshield"
+	tail_state = "hos"
+	slowdown = 0
+	w_class = WEIGHT_CLASS_NORMAL
+	jetpack = /obj/item/tank/jetpack/suit
+	armor = list(MELEE = 20, BULLET = 20, LASER = 30, ENERGY = 30, BOMB = 20, BIO = 100, RAD = 40, FIRE = 60, ACID = 60, WOUND = 30)
+	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/blue_shield
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
+
 	//Security hardsuit
 /obj/item/clothing/head/helmet/space/hardsuit/security
 	name = "security hardsuit helmet"
@@ -619,7 +642,16 @@
 	icon_state = "hardsuit0-sec"
 	item_state = "sec_helm"
 	hardsuit_type = "sec"
-	armor = list(MELEE = 40, BULLET = 35, LASER = 35, ENERGY = 45, BOMB = 25, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 30)
+	armor = list(MELEE = 35, BULLET = 15, LASER = 30,ENERGY = 20, BOMB = 10, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 30)
+	// BLUEMOON ADD START - RESKINS-ICON-FILE-ADDITION - ACRADORS - версия шлема для ушей акрадоров
+	unique_reskin = list(
+		"Acrador/Long-Eared" = list(
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets.dmi',
+			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets_onmob.dmi',
+			RESKIN_ANTHRO_WORN_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets_onmob.dmi'
+		)
+	)
+	// BLUEMOON ADD END
 
 /obj/item/clothing/suit/space/hardsuit/security
 	icon_state = "hardsuit-sec"
@@ -627,7 +659,7 @@
 	desc = "A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
 	item_state = "sec_hardsuit"
 	tail_state = "sec"
-	armor = list(MELEE = 40, BULLET = 35, LASER = 35, ENERGY = 45, BOMB = 25, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 30)
+	armor = list(MELEE = 35, BULLET = 15, LASER = 30,ENERGY = 20, BOMB = 10, BIO = 100, RAD = 50, FIRE = 75, ACID = 75, WOUND = 30)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_ALL_TAURIC
 	//BLUEMOON ADD вариация хардсьюта сб
@@ -638,14 +670,14 @@
 
 /obj/item/clothing/suit/space/hardsuit/security/reskin_obj(mob/user)
 	if(current_skin == "Alt")
-		mutantrace_variation = STYLE_DIGITIGRADE
+		mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 		tail_state = "sec2"
 		if(helmet)
 			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
 			Helm.hardsuit_type = "sec2"
 			Helm.update_icon_state()
 	if(current_skin == "Blue Variation")
-		mutantrace_variation = STYLE_DIGITIGRADE
+		mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 		tail_state = "ert-commander"
 		if(helmet)
 			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
@@ -663,7 +695,7 @@
 	desc = "A special bulky helmet designed for work in a hazardous, low pressure environment. Has an additional layer of armor."
 	icon_state = "hardsuit0-hos"
 	hardsuit_type = "hos"
-	armor = list(MELEE = 45, BULLET = 50, LASER = 40, ENERGY = 50, BOMB = 25, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 40)
+	armor = list(MELEE = 45, BULLET = 25, LASER = 30, ENERGY = 30, BOMB = 25, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 40)
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
 /obj/item/clothing/suit/space/hardsuit/security/hos
@@ -671,7 +703,7 @@
 	desc = "A special bulky suit that protects against hazardous, low pressure environments. Has an additional layer of armor."
 	icon_state = "hardsuit-hos"
 	tail_state = "hos"
-	armor = list(MELEE = 45, BULLET = 50, LASER = 40, ENERGY = 50, BOMB = 25, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 40)
+	armor = list(MELEE = 45, BULLET = 25, LASER = 30, ENERGY = 30, BOMB = 25, BIO = 100, RAD = 50, FIRE = 95, ACID = 95, WOUND = 40)
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/security/hos
 	jetpack = /obj/item/tank/jetpack/suit
 	unique_reskin = list(
@@ -679,16 +711,16 @@
 		"OTA Variation" = list(RESKIN_ICON_STATE = "hardsuit-alliance")
 	)
 
-/obj/item/clothing/suit/space/hardsuit/security/reskin_obj(mob/user)
+/obj/item/clothing/suit/space/hardsuit/security/hos/reskin_obj(mob/user)
 	if(current_skin == "OTA Variation")
-		mutantrace_variation = STYLE_DIGITIGRADE
+		mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 		tail_state = "syndicate-winter"
 		if(helmet)
 			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
 			Helm.hardsuit_type = "alliance"
 			Helm.update_icon_state()
 	if(current_skin == "Standart Variation")
-		mutantrace_variation = STYLE_DIGITIGRADE
+		mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 		tail_state = "hos"
 		if(helmet)
 			var/obj/item/clothing/head/helmet/space/hardsuit/Helm = helmet
@@ -849,7 +881,7 @@
 		return
 	if(listeningTo)
 		UnregisterSignal(listeningTo, COMSIG_MOVABLE_MOVED)
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/on_mob_move)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(on_mob_move))
 	listeningTo = user
 
 /obj/item/clothing/suit/space/hardsuit/ancient/dropped(mob/user)
@@ -1059,7 +1091,7 @@
 		set_light(0)
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 
 /obj/item/clothing/head/helmet/space/hardsuit/lavaknight/update_overlays()
 	. = ..()

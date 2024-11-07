@@ -378,11 +378,6 @@
 	icon = "papacafe"
 	desc = "Уважай своего Космического Папу!"
 
-/datum/barsign/wycctide
-	name = "Wycctide"
-	icon = "wycctide"
-	desc = "О нет, он близится!"
-
 /datum/barsign/shitcur
 	name = "Shitcur"
 	icon = "shitcur"

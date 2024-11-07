@@ -170,6 +170,7 @@
 	desc = "It's for pets. Though you probably could wear it yourself, you'd doubtless be the subject of ridicule. It seems to be made out of a polychromic material."
 	icon_state = "petcollar"
 	pocket_storage_component_path = /datum/component/storage/concrete/pockets/small/collar
+	w_class = WEIGHT_CLASS_SMALL
 	var/poly_states = 1
 	var/poly_colors = list("#00BBBB")
 	var/tagname = null

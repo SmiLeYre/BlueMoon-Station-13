@@ -7,6 +7,7 @@
 	dna_cost = 1
 	loudness = 4
 	req_absorbs = 3
+	gamemode_restriction_type = ANTAG_DYNAMIC
 
 //Makes some spiderlings. Good for setting traps and causing general trouble.
 /datum/action/changeling/spiders/sting_action(mob/user)

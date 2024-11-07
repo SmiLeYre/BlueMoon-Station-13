@@ -18,6 +18,7 @@
 	dualwield_spread_mult = 1.4
 	weapon_weight = WEAPON_HEAVY
 	w_class = WEIGHT_CLASS_BULKY
+	automatic_burst_overlay = FALSE
 	var/obj/item/stock_parts/cell/cell
 	var/cell_type = /obj/item/stock_parts/cell/magnetic
 
@@ -37,13 +38,13 @@
 
 /obj/item/gun/ballistic/automatic/magrifle/can_shoot()
 	if(QDELETED(cell))
-		return 0
+		return FALSE
 
 	var/obj/item/ammo_casing/caseless/magnetic/shot = chambered
 	if(!shot)
-		return 0
+		return FALSE
 	if(cell.charge < shot.energy_cost * burst_size)
-		return 0
+		return FALSE
 	. = ..()
 
 /obj/item/gun/ballistic/automatic/magrifle/shoot_live_shot(mob/living/user, pointblank = FALSE, mob/pbtarget, message = 1, stam_cost = 0)
@@ -83,7 +84,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	fire_sound = 'sound/weapons/magpistol.ogg'
 	mag_type = /obj/item/ammo_box/magazine/mmag/small
-	fire_delay = 2
+	fire_delay = 4.5 //BLUEMOON REBALANCE 2 ----> 4.5
 	inaccuracy_modifier = 0.25
 	cell_type = /obj/item/stock_parts/cell/magnetic/pistol
 	automatic_burst_overlay = FALSE

@@ -26,11 +26,10 @@
 	var/escape_time = 200 //how long it takes for mobs above small sizes to escape (for small sizes, its randomly 1.5 to 2x this)
 	var/alternate_escape_time = 0 //how long it takes for mobs to escape when the entrance is open
 	var/load_time = 30 //how long it takes for mobs to be loaded into the pet carrier
+	var/human_load_time = 6 SECONDS
+	var/human_size_limit = 0.8 //80% sprite size = MOB_SIZE_SMALL
 	var/has_lock_sprites = TRUE //whether to load the lock overlays or not
 	var/allows_hostiles = FALSE //does the pet carrier allow hostile entities to be held within it?
-
-/obj/item/pet_carrier/donator
-	custom_materials = null //you cant just use the loadout item to get free metal!
 
 /obj/item/pet_carrier/Destroy()
 	if(occupants.len)
@@ -56,10 +55,11 @@
 	if(occupants.len)
 		for(var/V in occupants)
 			var/mob/living/L = V
-			. += "<span class='notice'>It has [L] inside.</span>"
+			. += "<span class='notice'>It has <b>[L]</b> inside.</span>"
 	else
 		. += "<span class='notice'>It has nothing inside.</span>"
 	if(user.canUseTopic(src))
+		. += "<span class='notice'>Drag and drop the [src] to free your pets.</span>"
 		. += "<span class='notice'>Activate it in your hand to [open ? "close" : "open"] its [entrance_name].</span>"
 		if(!open)
 			. += "<span class='notice'>Alt-click to [locked ? "unlock" : "lock"] its [entrance_name].</span>"
@@ -99,13 +99,13 @@
 		return
 	if(target.mob_size > max_occupant_weight)
 		if(ishuman(target))
-			if(iscatperson(target))
-				to_chat(user, "<span class='warning'>You'd need a lot of catnip and treats, plus maybe a laser pointer, for that to work.</span>")
-			else
+			human_size_limit = iscatperson(target) ? initial(human_size_limit)+0.1 : initial(human_size_limit) //90% size limit for felinids
+			if(get_size(target) > human_size_limit)
 				to_chat(user, "<span class='warning'>Humans, generally, do not fit into [name]s.</span>")
+				return
 		else
 			to_chat(user, "<span class='warning'>You get the feeling [target] isn't meant for a [name].</span>")
-		return
+			return
 	if(user == target)
 		to_chat(user, "<span class='warning'>Why would you ever do that?</span>")
 		return
@@ -146,7 +146,6 @@
 
 	if(user.mob_size <= MOB_SIZE_SMALL)
 		to_chat(user, "<span class='notice'>You begin to try escaping the [src] and start fumbling for the lock switch... (This will take some time.)</span>")
-		to_chat(loc, "<span class='warning'>You see [user] attempting to unlock the [src]!</span>")
 		if(!do_after(user, rand(escape_time * 1.5, escape_time * 2), target = user) || open || !locked || !(user in occupants))
 			return
 		loc.visible_message("<span class='warning'>[user] flips the lock switch on [src] by reaching through!</span>", null, null, null, user)
@@ -155,7 +154,6 @@
 		playsound(src, 'sound/machines/boltsup.ogg', 30, TRUE)
 		update_icon()
 	else
-		loc.visible_message("<span class='warning'>[src] starts rattling as something pushes against the [entrance_name]!</span>", null, null, null, user)
 		to_chat(user, "<span class='notice'>You start pushing out of [src]... (This will take about [escape_time/10] seconds.)</span>")
 		if(!do_after(user, escape_time, target = user) || open || !locked || !(user in occupants))
 			return
@@ -193,6 +191,7 @@
 	user.visible_message("<span class='notice'>[user] starts loading [target] into [src].</span>", \
 	"<span class='notice'>You start loading [target] into [src]...</span>", null, null, target)
 	to_chat(target, "<span class='userdanger'>[user] starts loading you into [user.ru_ego()] [name]!</span>")
+	load_time = ishuman(target) ? human_load_time : initial(load_time)
 	if(!do_mob(user, target, load_time))
 		return FALSE
 	if(target in occupants)
@@ -220,6 +219,20 @@
 	occupants -= occupant
 	occupant_weight -= occupant.mob_size
 	occupant.setDir(SOUTH)
+
+/obj/item/pet_carrier/remove_air_ratio(ratio)
+	if(type == /obj/item/pet_carrier)
+		if(loc)
+			if(istype(loc, /mob/))
+				var/turf/holding_mob_turf = get_turf(loc)
+				return holding_mob_turf.remove_air_ratio(ratio)	//"remove_air_ratio" proc from mob returns null -> breathing problems
+			else
+				return loc.remove_air_ratio(ratio)
+		else
+			return null
+	else
+		//Initial proc as /obj/remove_air_ratio(ratio). Because bluespace pet carrier already has some sort of isolated gas system, I don't want to break it.
+		. = ..()
 
 //bluespace jar, a reskin of the pet carrier that can fit people and smashes when thrown
 /obj/item/pet_carrier/bluespace

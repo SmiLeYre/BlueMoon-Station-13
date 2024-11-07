@@ -21,20 +21,20 @@
 	if(istype(SSticker.mode,/datum/game_mode/dynamic))
 		var/datum/game_mode/dynamic/mode = SSticker.mode
 		if(dynamic_requirement > 0 && mode.threat_level < dynamic_requirement)
-			return 0
+			return FALSE
 	else if(istype(SSticker.mode,/datum/game_mode/extended) && dynamic_requirement)
-		return 0
-	return 1
+		return FALSE
+	return TRUE
 
 /datum/spellbook_entry/proc/CanBuy(mob/living/carbon/human/user,obj/item/spellbook/book) // Specific circumstances
 	if(book.uses<cost || limit == 0)
-		return 0
+		return FALSE
 	for(var/spell in user.mind.spell_list)
 		if(is_type_in_typecache(spell, no_coexistance_typecache))
-			return 0
-	return 1
+			return FALSE
+	return TRUE
 
-/datum/spellbook_entry/proc/Buy(mob/living/carbon/human/user,obj/item/spellbook/book) //return 1 on success
+/datum/spellbook_entry/proc/Buy(mob/living/carbon/human/user,obj/item/spellbook/book) //return TRUE on success
 	if(!S || QDELETED(S))
 		S = new spell_type()
 	//Check if we got the spell already
@@ -42,7 +42,7 @@
 		if(initial(S.name) == initial(aspell.name)) // Not using directly in case it was learned from one spellbook then upgraded in another
 			if(aspell.spell_level >= aspell.level_max)
 				to_chat(user,  "<span class='warning'>This spell cannot be improved further.</span>")
-				return 0
+				return FALSE
 			else
 				aspell.name = initial(aspell.name)
 				aspell.spell_level++
@@ -65,22 +65,22 @@
 				if(aspell.spell_level >= aspell.level_max)
 					to_chat(user, "<span class='notice'>This spell cannot be strengthened any further.</span>")
 				SSblackbox.record_feedback("nested tally", "wizard_spell_improved", 1, list("[name]", "[aspell.spell_level]"))
-				return 1
+				return TRUE
 	//No same spell found - just learn it
 	SSblackbox.record_feedback("tally", "wizard_spell_learned", 1, name)
 	user.mind.AddSpell(S)
 	to_chat(user, "<span class='notice'>You have learned [S.name].</span>")
-	return 1
+	return TRUE
 
 /datum/spellbook_entry/proc/CanRefund(mob/living/carbon/human/user,obj/item/spellbook/book)
 	if(!refundable)
-		return 0
+		return FALSE
 	if(!S)
 		S = new spell_type()
 	for(var/obj/effect/proc_holder/spell/aspell in user.mind.spell_list)
 		if(initial(S.name) == initial(aspell.name))
-			return 1
-	return 0
+			return TRUE
+	return FALSE
 
 /datum/spellbook_entry/proc/Refund(mob/living/carbon/human/user,obj/item/spellbook/book) //return point value or -1 for failure
 	var/area/wizard_station/A = GLOB.areas_by_type[/area/wizard_station]
@@ -230,7 +230,7 @@
 	spell_type = /obj/effect/proc_holder/spell/aimed/lightningbolt
 	cost = 3
 
-/datum/spellbook_entry/lightningbolt/Buy(mob/living/carbon/human/user,obj/item/spellbook/book) //return 1 on success
+/datum/spellbook_entry/lightningbolt/Buy(mob/living/carbon/human/user,obj/item/spellbook/book) //return TRUE on success
 	. = ..()
 	ADD_TRAIT(user, TRAIT_TESLA_SHOCKIMMUNE, "lightning_bolt_spell")
 
@@ -293,7 +293,7 @@
 /datum/spellbook_entry/item/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
 	new item_path(get_turf(user))
 	SSblackbox.record_feedback("tally", "wizard_spell_learned", 1, name)
-	return 1
+	return TRUE
 
 /datum/spellbook_entry/item/GetInfo()
 	var/dat =""
@@ -537,7 +537,7 @@
 
 /datum/spellbook_entry/summon/guns/IsAvailible()
 	if(!SSticker.mode) // In case spellbook is placed on map
-		return 0
+		return FALSE
 	return (!CONFIG_GET(flag/no_summon_guns) && ..())
 
 /datum/spellbook_entry/summon/guns/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
@@ -546,7 +546,7 @@
 	active = 1
 	playsound(get_turf(user), 'sound/magic/castsummon.ogg', 50, 1)
 	to_chat(user, "<span class='notice'>You have cast summon guns!</span>")
-	return 1
+	return TRUE
 
 /datum/spellbook_entry/summon/magic
 	name = "Summon Magic"
@@ -556,7 +556,7 @@
 
 /datum/spellbook_entry/summon/magic/IsAvailible()
 	if(!SSticker.mode) // In case spellbook is placed on map
-		return 0
+		return FALSE
 	return (!CONFIG_GET(flag/no_summon_guns) && ..())
 
 /datum/spellbook_entry/summon/magic/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
@@ -565,7 +565,7 @@
 	active = 1
 	playsound(get_turf(user), 'sound/magic/castsummon.ogg', 50, 1)
 	to_chat(user, "<span class='notice'>You have cast summon magic!</span>")
-	return 1
+	return TRUE
 
 /datum/spellbook_entry/summon/events
 	name = "Summon Events"
@@ -575,7 +575,7 @@
 
 /datum/spellbook_entry/summon/events/IsAvailible()
 	if(!SSticker.mode) // In case spellbook is placed on map
-		return 0
+		return FALSE
 	return (!CONFIG_GET(flag/no_summon_events) && ..())
 
 /datum/spellbook_entry/summon/events/Buy(mob/living/carbon/human/user,obj/item/spellbook/book)
@@ -584,7 +584,7 @@
 	times++
 	playsound(get_turf(user), 'sound/magic/castsummon.ogg', 50, 1)
 	to_chat(user, "<span class='notice'>You have cast summon events.</span>")
-	return 1
+	return TRUE
 
 /datum/spellbook_entry/summon/events/GetInfo()
 	. = ..()
@@ -772,7 +772,7 @@
 	if(H.stat || H.restrained())
 		return
 	if(!ishuman(H))
-		return 1
+		return TRUE
 
 	if(H.mind.special_role == "apprentice")
 		temp = "If you got caught sneaking a peek from your teacher's spellbook, you'd likely be expelled from the Wizard Academy. Better not."

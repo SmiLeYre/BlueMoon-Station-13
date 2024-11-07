@@ -114,7 +114,7 @@
 #define jaro_winkler_distance(text_a, text_b, scaling_factor) (1 - jaro_winkler_similarity(text_a, text_b, scaling_factor))
 
 
-/proc/fuzzy_search(needle, list/haystack, key, amount=0, case_sensitive=FALSE)
+/proc/fuzzy_search(needle, list/haystack, key, amount=0, case_sensitive=TRUE)
 	var/list/weights = list()
 
 	if (!case_sensitive) needle = lowertext(needle)
@@ -131,10 +131,32 @@
 
 		weights[haystack[i]] = val
 
-	sortTim(weights, /proc/cmp_numeric_asc, TRUE)
+	sortTim(weights, GLOBAL_PROC_REF(cmp_numeric_asc), TRUE)
 
 	var/list/winners = list()
 	for (var/winner in weights)
 		winners += winner
 
 	return winners.Copy(1, amount+1)
+
+
+/proc/simple_search(needle, list/haystack, key, case_sensitive=TRUE)
+	var/list/winners = list()
+	for (var/i in 1 to length(haystack))
+		var/candidate = haystack[i]
+
+		// На случай если нам нужно искать по подэлементу
+		if (key) candidate = candidate[key]
+
+		if (!candidate) continue
+
+		if (case_sensitive)
+			if (!findtextEx_char(candidate, needle))
+				continue
+		else
+			if (!findtext_char(candidate, needle))
+				continue
+
+		winners += haystack[i]
+
+	return winners

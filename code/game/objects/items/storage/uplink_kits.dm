@@ -612,3 +612,27 @@
 	new /obj/item/clothing/suit/space/hardsuit/contractor(src)
 	new /obj/item/clothing/mask/gas/syndicate(src)
 	new /obj/item/tank/internals/emergency_oxygen/engi/syndi(src)
+
+/obj/item/storage/box/inteq_kit/conversion_kit
+	name = "InteQ Conversion Kit"
+	desc = "Коробка с набором конвертации наушника в bowman headset и ключом-шифратором InteQ. Набор конвертации, после использования на наушнике обеспечивает пользователю защиту от звука светошумовой гранаты. Вставьте в наушник чтобы получить доступ к каналу InteQ (говорить и слышать) и остальным каналам на станции (только слышать)."
+
+/obj/item/storage/box/inteq_kit/conversion_kit/PopulateContents()
+	new /obj/item/headsetupgrader(src)
+	new /obj/item/encryptionkey/inteq(src)
+
+//Bluemoon ADD Добавил бандл с оригами + книгу + бумажки туда же.
+
+/obj/item/storage/box/inteq_kit/origami_bundle
+	name = "Origami Bundle"
+	desc = "Box with book, that will teach you how to use origami to kill your enemies"
+
+/obj/item/storage/box/inteq_kit/origami_bundle/PopulateContents()
+	new /obj/item/book/granter/action/origami(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+	new /obj/item/paper(src)
+
+//Bluemoon ADD end

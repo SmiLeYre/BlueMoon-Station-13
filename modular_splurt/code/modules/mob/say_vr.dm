@@ -1,17 +1,17 @@
-/datum/emote/living/narrate
+/datum/emote/sound/human/narrate
 	key = "narrate"
 	key_third_person = "narrates"
 	message = null
 	mob_type_blacklist_typecache = list(/mob/living/brain)
 	emote_type = EMOTE_OMNI
 
-/datum/emote/living/narrate/proc/check_invalid(mob/user, input)
+/datum/emote/sound/human/narrate/proc/check_invalid(mob/user, input)
 	if(stop_bad_mime.Find(input, 1, 1))
 		to_chat(user, "<span class='danger'>Invalid emote.</span>")
 		return TRUE
 	return FALSE
 
-/datum/emote/living/narrate/run_emote(mob/user, params, type_override, intentional)
+/datum/emote/sound/human/narrate/run_emote(mob/user, params, type_override, intentional)
 	. = TRUE
 	if(jobban_isbanned(user, "emote"))
 		to_chat(user, "You cannot send narrates (banned).")
@@ -49,7 +49,7 @@
 	message = trim(html_encode(message), MAX_MESSAGE_LEN)
 	emote("narrate", message=message)
 
-/datum/emote/living/subtle/subtle_indicator
+/datum/emote/sound/human/subtle/subtle_indicator
 	key = "subtle-indicator"
 	key_third_person = "subtle-indicator"
 
@@ -65,7 +65,7 @@
 		return
 
 	// Display typing indicator
-	display_typing_indicator()
+	display_typing_indicator(isMe = TRUE)
 
 	// Prompt user for text input
 	var/input_message = input(usr, "What would you like to subtly emote, with a typing indicator?", "Input subtle emote") as message|null

@@ -251,8 +251,3 @@
 			if(spider_growinstantly)
 				S.amount_grown = 250
 		qdel(src)
-
-/obj/structure/spider/royaljelly
-	name = "royal jelly"
-	desc = "A pulsating mass of slime, jelly, blood, and or liquified human organs considered delicious and highly nutritious by terror spiders."
-	icon_state = "spiderjelly"

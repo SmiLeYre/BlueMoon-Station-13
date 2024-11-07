@@ -257,6 +257,7 @@
 			if(points)
 				if(I)
 					I.mining_points += points
+					I.mining_points_total += points
 					if(usr.client)
 						usr.client.increment_progress("miner", points)
 					points = 0

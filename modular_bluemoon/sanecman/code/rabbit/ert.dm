@@ -28,11 +28,19 @@
 	uniform = /obj/item/clothing/under/suit/lobotomy/rabbit
 	head = /obj/item/clothing/head/rabbit_helmet
 	suit = /obj/item/clothing/suit/armor/ego_gear/rabbit
-	r_hand = /obj/item/gun/energy/e_gun/rabbit/captain
-	glasses = /obj/item/clothing/glasses/hud/health/night
-	belt = /obj/item/ego_weapon/city/rabbit_blade
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1)
-	r_pocket = /obj/item/melee/classic_baton/telescopic
+	l_hand = /obj/item/gun/energy/e_gun/rabbit/captain
+	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
+	belt = /obj/item/storage/belt/military/ert_max
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/cyberimp/arm/shield,
+		/obj/item/organ/eyes/robotic/thermals,
+		/obj/item/organ/cyberimp/chest/thrusters,
+	)
 
 /datum/outfit/ert/commander/rabbit/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -49,11 +57,19 @@
 	uniform = /obj/item/clothing/under/suit/lobotomy/rabbit
 	head = /obj/item/clothing/head/rabbit_helmet/grunt
 	suit = /obj/item/clothing/suit/armor/ego_gear/rabbit/grunts
-	r_hand = /obj/item/gun/energy/e_gun/rabbit
-	glasses = /obj/item/clothing/glasses/hud/health/night
-	belt = /obj/item/ego_weapon/city/rabbit_blade
-	r_pocket = /obj/item/melee/classic_baton/telescopic
-	backpack_contents = list(/obj/item/storage/box/survival/engineer=1)
+	l_hand = /obj/item/gun/energy/e_gun/rabbit
+	glasses = /obj/item/clothing/glasses/hud/health/night/syndicate
+	belt = /obj/item/storage/belt/military/ert_max
+	backpack_contents = list(/obj/item/storage/box/survival/centcom=1)
+
+	cybernetic_implants = list(
+		/obj/item/organ/cyberimp/eyes/hud/security,
+		/obj/item/organ/cyberimp/chest/nutrimentextreme,
+		/obj/item/organ/cyberimp/chest/chem_implant/plus,
+		/obj/item/organ/cyberimp/arm/shield,
+		/obj/item/organ/eyes/robotic/thermals,
+		/obj/item/organ/cyberimp/chest/thrusters,
+	)
 
 /datum/outfit/ert/security/rabbit/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)

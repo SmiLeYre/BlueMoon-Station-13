@@ -22,6 +22,9 @@
 
 	var/lathe_prod_time = 0.5
 
+	/// What color is this machine's stripe? Leave null to not have a stripe.
+	var/stripe_color = null
+
 /obj/machinery/rnd/production/Initialize(mapload)
 	if(mapload && offstation_security_levels)
 		log_mapping("Depricated var named \"offstation_security_levels\" at ([x], [y], [z])!")
@@ -32,7 +35,7 @@
 	stored_research = new
 	host_research = SSresearch.science_tech
 	update_research()
-	materials = AddComponent(/datum/component/remote_materials, "lathe", mapload, _after_insert=CALLBACK(src, .proc/AfterMaterialInsert))
+	materials = AddComponent(/datum/component/remote_materials, "lathe", mapload, _after_insert=CALLBACK(src, PROC_REF(AfterMaterialInsert)))
 	RefreshParts()
 
 /obj/machinery/rnd/production/Destroy()
@@ -42,6 +45,16 @@
 	QDEL_NULL(stored_research)
 	host_research = null
 	return ..()
+
+/obj/machinery/rnd/production/update_overlays()
+	. = ..()
+
+	if(!stripe_color)
+		return
+
+	var/mutable_appearance/stripe = mutable_appearance('icons/obj/machines/research.dmi', "protolathe_stripe[panel_open ? "_t" : ""]")
+	stripe.color = stripe_color
+	. += stripe
 
 /obj/machinery/rnd/production/proc/update_research()
 	set waitfor = FALSE
@@ -110,7 +123,7 @@
 
 /obj/machinery/rnd/production/proc/check_mat(datum/design/being_built, var/mat)	// now returns how many times the item can be built with the material
 	if (!materials.mat_container)  // no connected silo
-		return 0
+		return FALSE
 	var/list/all_materials = being_built.reagents_list + being_built.materials
 
 	var/A = materials.mat_container.get_material_amount(mat)
@@ -178,8 +191,8 @@
 	if(production_animation)
 		flick(production_animation, src)
 	var/timecoeff = D.lathe_time_factor * print_cost_coeff
-	addtimer(CALLBACK(src, .proc/reset_busy), (20 * timecoeff * amount) ** lathe_prod_time)
-	addtimer(CALLBACK(src, .proc/do_print, D.build_path, amount, efficient_mats, D.dangerous_construction, usr), (20 * timecoeff * amount) ** lathe_prod_time)
+	addtimer(CALLBACK(src, PROC_REF(reset_busy)), (20 * timecoeff * amount) ** 0.5)
+	addtimer(CALLBACK(src, PROC_REF(do_print), D.build_path, amount, efficient_mats, D.dangerous_construction, usr), (20 * timecoeff * amount) ** lathe_prod_time)
 	playsound(src, 'sound/machines/prod.ogg', 50)
 	return TRUE
 
@@ -309,6 +322,9 @@
 			l += "<A href='?src=[REF(src)];build=[D.id];amount=5'>x5</A>[RDSCREEN_NOBREAK]"
 		if(c >= 10)
 			l += "<A href='?src=[REF(src)];build=[D.id];amount=10'>x10</A>[RDSCREEN_NOBREAK]"
+		//SPLURT EDIT: Print x30 stock parts at once
+		if(c >= 30 && selected_category == "Stock Parts")
+			l += "<A href='?src=[REF(src)];build=[D.id];amount=30'>x30</A>[RDSCREEN_NOBREAK]"
 		l += "[temp_material][sec_text][RDSCREEN_NOBREAK]"
 	else
 		l += "<span class='linkOff'>[D.name]</span>[temp_material][sec_text][RDSCREEN_NOBREAK]"
@@ -348,10 +364,10 @@
 	var/datum/component/material_container/mat_container = materials.mat_container
 	if (!mat_container)
 		say("No access to material storage, please contact the quartermaster.")
-		return 0
+		return FALSE
 	if (materials.on_hold())
 		say("Mineral access is on hold, please contact the quartermaster.")
-		return 0
+		return FALSE
 	var/count = mat_container.retrieve_sheets(text2num(eject_amt), eject_sheet, drop_location())
 	var/list/matlist = list()
 	matlist[eject_sheet] = MINERAL_MATERIAL_AMOUNT

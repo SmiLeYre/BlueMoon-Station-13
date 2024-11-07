@@ -1,4 +1,4 @@
-/mob/living/carbon/proc/dream()
+/mob/living/carbon/proc/dream(var/dreaming_in_shower = FALSE) // BLUEMOON EDIT - добавлено dreaming_in_shower, чтобы во время мытья в душе персонаж находился "в размышлениях"
 	set waitfor = FALSE
 	var/list/dream_fragments = list()
 	var/list/custom_dream_nouns = list()
@@ -7,7 +7,12 @@
 	for(var/obj/item/bedsheet/sheet in loc)
 		custom_dream_nouns += sheet.dream_messages
 
-	dream_fragments += "Вижу..."
+	// BLUEMOON ADD START
+	if(dreaming_in_shower)
+		dream_fragments += "Вспоминаю"
+	else
+	// BLUEMOON ADD END
+		dream_fragments += "Вижу"
 
 	//NIGHTMARE
 	var/datum/component/mood/mood = src.GetComponent(/datum/component/mood)
@@ -48,12 +53,12 @@
 			fragment += "[pick(GLOB.adverbs)] "
 		fragment += pick(GLOB.ing_verbs)
 	else
-		fragment += "will "
+		fragment += "будет ... " // BLUEMOON EDIT
 		fragment += pick(GLOB.verbs)
 	dream_fragments += fragment
 
 	if(prob(25))
-		dream_sequence(dream_fragments)
+		dream_sequence(dream_fragments, dreaming_in_shower) // BLUEMOON EDIT - добавлено dreaming_in_shower, чтобы во время мытья в душе персонаж находился "в размышлениях"
 		return
 
 	//Object
@@ -68,16 +73,17 @@
 	dream_fragments += fragment
 
 	dreaming = TRUE
-	dream_sequence(dream_fragments)
+	dream_sequence(dream_fragments, dreaming_in_shower) // BLUEMOON EDIT - добавлено dreaming_in_shower, чтобы во время мытья в душе персонаж находился "в размышлениях"
 
-/mob/living/carbon/proc/dream_sequence(list/dream_fragments)
-	if(stat != UNCONSCIOUS || InCritical())
-		dreaming = FALSE
-		return
+/mob/living/carbon/proc/dream_sequence(list/dream_fragments, var/dreaming_in_shower = FALSE) // BLUEMOON EDIT - добавлено dreaming_in_shower, чтобы во время мытья в душе персонаж находился "в размышлениях"
+	if(!dreaming_in_shower) // BLUEMOON ADD
+		if(stat != UNCONSCIOUS || InCritical())
+			dreaming = FALSE
+			return
 	var/next_message = dream_fragments[1]
 	dream_fragments.Cut(1,2)
 	to_chat(src, "<span class='notice'><i>... [next_message] ...</i></span>")
 	if(LAZYLEN(dream_fragments))
-		addtimer(CALLBACK(src, .proc/dream_sequence, dream_fragments), rand(10,30))
+		addtimer(CALLBACK(src, PROC_REF(dream_sequence), dream_fragments, dreaming_in_shower), rand(10,30))
 	else
 		dreaming = FALSE

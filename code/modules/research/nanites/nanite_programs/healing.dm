@@ -226,7 +226,7 @@
 
 /datum/nanite_program/defib/on_trigger(comm_message)
 	host_mob.notify_ghost_cloning("Your heart is being defibrillated by nanites. Re-enter your corpse if you want to be revived!")
-	addtimer(CALLBACK(src, .proc/zap), 50)
+	addtimer(CALLBACK(src, PROC_REF(zap)), 50)
 
 /datum/nanite_program/defib/proc/check_revivable()
 	if(!iscarbon(host_mob)) //nonstandard biology
@@ -260,6 +260,8 @@
 		if(policy)
 			to_chat(C, policy)
 		C.log_message("has been successfully defibrillated by nanites, [tplus] deciseconds from time of death, considered [late? "late" : "memory-intact"] revival under configured policy limits.", LOG_GAME)
+		message_admins("[ADMIN_LOOKUPFLW(C)] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
+		log_admin(C, "[C] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
 	else
 		playsound(C, 'sound/machines/defib_failed.ogg', 50, FALSE)
 

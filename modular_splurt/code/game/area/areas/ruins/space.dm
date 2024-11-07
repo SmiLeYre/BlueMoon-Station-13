@@ -57,7 +57,7 @@
 	short_desc = "Вы Специалист Разведки Синдиката, работающий на Аванпосту Прослушки и изучающий аномальное поле Системы Синих Лун."
 	flavour_text = "К сожалению это или к счастью, но сотрудники вашего партнёра, Nanotrasen, начали добычу полезных ископаемых в этом секторе. Следите за вражеской активностью как можно лучше и старайтесь не высовываться. Используйте коммуникационное оборудование для оказания поддержки любым полевым агентам и сотрудникам Космической Станции."
 	important_info = "Вы не Антагонист. Вы можете отправиться на станцию в Эксту. В Динамик вам следует быть ниже травы и тише воды."
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 
 /datum/outfit/syndicate_comms_space
 	name = "Space Syndicate Comms Agent"
@@ -71,7 +71,7 @@
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 	r_pocket = /obj/item/gun/ballistic/automatic/pistol
 	id = /obj/item/card/id/syndicate/anyone
-	implants = list(/obj/item/implant/weapons_auth)
+	implants = list(/obj/item/implant/weapons_auth, /obj/item/implant/anchor)
 
 /datum/outfit/syndicate_empty/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	H.faction |= ROLE_SYNDICATE

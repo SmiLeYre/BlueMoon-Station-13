@@ -90,7 +90,7 @@
 		if(iscatperson(target))
 			target.emote("hiss")
 	last_spray = world.time
-	INVOKE_ASYNC(D, /obj/effect/decal/chempuff/proc/run_puff, A)
+	INVOKE_ASYNC(D, TYPE_PROC_REF(/obj/effect/decal/chempuff, run_puff), A)
 
 /obj/item/reagent_containers/spray/attack_self(mob/user)
 	stream_mode = !stream_mode

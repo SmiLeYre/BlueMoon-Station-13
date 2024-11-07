@@ -226,14 +226,27 @@
 	spawn_flags = IC_SPAWN_RESEARCH
 
 /obj/item/integrated_circuit/output/sound/vox
-	name = "ai vox sound circuit"
+	name = "Female ai vox sound circuit"
 	desc = "Takes a sound name as an input, and will play said sound when pulsed. This circuit is often found in AI announcement systems."
 	spawn_flags = IC_SPAWN_RESEARCH
+	var/voice_type = "Female"
 
 /obj/item/integrated_circuit/output/sound/vox/Initialize(mapload)
-	.= ..()
-	sounds = GLOB.vox_sounds
+	sounds = GLOB.vox_types[voice_type]
+	. = ..()
 	extended_desc = "The first input pin determines which sound is used. It uses the AI Vox Broadcast word list. So either experiment to find words that work, or ask the AI to help in figuring them out. The second pin determines the volume of sound that is played, and the third determines if the frequency of the sound will vary with each activation."
+
+/obj/item/integrated_circuit/output/sound/vox/male
+	name = "Male ai vox sound circuit"
+	desc = "Takes a sound name as an input, and will play said sound when pulsed. This circuit is often found in AI announcement systems."
+	spawn_flags = IC_SPAWN_RESEARCH
+	voice_type = "Male"
+
+/obj/item/integrated_circuit/output/sound/vox/military
+	name = "Military ai vox sound circuit"
+	desc = "Takes a sound name as an input, and will play said sound when pulsed. This circuit is often found in AI announcement systems."
+	spawn_flags = IC_SPAWN_RESEARCH
+	voice_type = "Military"
 
 /obj/item/integrated_circuit/output/text_to_speech
 	name = "text-to-speech circuit"
@@ -333,7 +346,7 @@
 	oldLoc = get_turf(oldLoc)
 	if(!QDELETED(camera) && !updating && oldLoc != get_turf(src))
 		updating = TRUE
-		addtimer(CALLBACK(src, .proc/do_camera_update, oldLoc), update_speed)
+		addtimer(CALLBACK(src, PROC_REF(do_camera_update), oldLoc), update_speed)
 
 /obj/item/integrated_circuit/output/video_camera/proc/do_camera_update(oldLoc)
 	if(!QDELETED(camera) && oldLoc != get_turf(src))

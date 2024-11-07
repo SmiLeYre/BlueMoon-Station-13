@@ -4,7 +4,7 @@ SUBSYSTEM_DEF(economy)
 	init_order = INIT_ORDER_ECONOMY
 	runlevels = RUNLEVEL_GAME
 	var/roundstart_paychecks = 10
-	var/budget_pool = 35000
+	var/budget_pool = 70000
 	var/list/department_accounts = list(ACCOUNT_CIV = ACCOUNT_CIV_NAME,
 										ACCOUNT_ENG = ACCOUNT_ENG_NAME,
 										ACCOUNT_SCI = ACCOUNT_SCI_NAME,
@@ -66,6 +66,11 @@ SUBSYSTEM_DEF(economy)
 	var/pack_price_modifier = 1
 	// var/market_crashing = FALSE
 
+	/// Total value of exported materials.
+	var/export_total = 0
+	/// Total value of imported goods.
+	var/import_total = 0
+
 /datum/controller/subsystem/economy/Initialize(timeofday)
 	var/budget_to_hand_out = round(budget_pool / department_accounts.len)
 	for(var/A in department_accounts)
@@ -89,12 +94,14 @@ SUBSYSTEM_DEF(economy)
 	for(var/account in bank_accounts)
 		var/datum/bank_account/bank_account = account
 		bank_account.payday(1)
+
 	for(var/account in bank_accounts_by_id)
 		var/datum/bank_account/bank_account = bank_accounts_by_id[account]
 		if(bank_account?.account_job && !ispath(bank_account.account_job))
 			temporary_total += (bank_account.account_job.paycheck * STARTING_PAYCHECKS)
 		station_total += bank_account.account_balance
 	station_target = max(round(temporary_total / max(bank_accounts_by_id.len * 2, 1)) + station_target_buffer, 1)
+
 	// if(!market_crashing)
 		// price_update()
 

@@ -24,13 +24,13 @@
 
 /datum/atom_hud/data/human/medical/basic/proc/check_sensors(mob/living/carbon/human/H)
 	if(!istype(H))
-		return 0
+		return FALSE
 	var/obj/item/clothing/under/U = H.w_uniform
 	if(!istype(U))
-		return 0
+		return FALSE
 	if(U.sensor_mode <= SENSOR_VITALS)
-		return 0
-	return 1
+		return FALSE
+	return TRUE
 
 /datum/atom_hud/data/human/medical/basic/add_to_single_hud(mob/M, mob/living/carbon/H)
 	if(check_sensors(H))
@@ -154,6 +154,20 @@
 /mob/living/carbon/proc/update_suit_sensors()
 	var/datum/atom_hud/data/human/medical/basic/B = GLOB.huds[DATA_HUD_MEDICAL_BASIC]
 	B.update_suit_sensors(src)
+
+/mob/living/carbon/human/update_suit_sensors()
+	. = ..()
+	update_sensor_list()
+
+/mob/living/carbon/human/proc/update_sensor_list()
+	var/obj/item/clothing/under/U = w_uniform
+	if(istype(U) && U.has_sensor > NO_SENSORS && U.sensor_mode)
+		GLOB.suit_sensors_list |= src
+	else
+		GLOB.suit_sensors_list -= src
+
+/mob/living/carbon/human/dummy/update_sensor_list()
+	return
 
 //called when a living mob changes health
 /mob/living/proc/med_hud_set_health()

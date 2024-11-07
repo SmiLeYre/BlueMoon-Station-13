@@ -6,6 +6,8 @@
 	var/throwforce_on = 20
 	var/icon_state_on = "axe1"
 	var/hitsound_on = 'sound/weapons/blade1.ogg'
+	var/transform_on_sound = 'sound/weapons/saberon.ogg' // bluemoon add для большей вариативности. Складными могут быть не только лазерные мечи
+	var/transform_off_sound = 'sound/weapons/saberoff.ogg' // bluemoon add
 	var/list/attack_verb_on = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	var/list/attack_verb_off = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	w_class = WEIGHT_CLASS_SMALL
@@ -77,7 +79,7 @@
 	return
 
 /obj/item/melee/transforming/proc/transform_messages(mob/living/user, supress_message_text)
-	playsound(user, active ? 'sound/weapons/saberon.ogg' : 'sound/weapons/saberoff.ogg', 35, 1)  //changed it from 50% volume to 35% because deafness
+	playsound(user, active ? "[transform_on_sound]" : "[transform_off_sound]", 35, 1)  //changed it from 50% volume to 35% because deafness ;bluemoon add круто иметь возможность менять звук включения
 	if(!supress_message_text)
 		to_chat(user, "<span class='notice'>[src] [active ? "is now active":"can now be concealed"].</span>")
 

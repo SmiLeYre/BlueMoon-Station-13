@@ -473,7 +473,7 @@
 	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL
 
 /datum/design/cyberimp_shield
-	name = "Riot Shield Arm Implant"
+	name = "Riot shieldimplant"
 	desc = "An implanted riot shield, designed to be installed on subject's arm."
 	id = "ci-shield"
 	build_type = PROTOLATHE
@@ -482,6 +482,18 @@
 	build_path = /obj/item/organ/cyberimp/arm/shield
 	category = list("Misc", "Medical Designs")
 	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+
+/datum/design/cyberimp_chem
+	name = "Chemical Sequencer Implant"
+	desc = "This implant can inject limited list of basic reagents into your blood."
+	id = "ci-chemseq"
+	build_type = PROTOLATHE
+	materials = list(/datum/material/iron = 600, /datum/material/glass = 600, /datum/material/silver = 500, /datum/material/gold = 1000)
+	construction_time = 120
+	build_path = /obj/item/organ/cyberimp/chest/chem_implant
+	category = list("Misc", "Medical Designs")
+	departmental_flags = DEPARTMENTAL_FLAG_SECURITY
+	min_security_level = SEC_LEVEL_AMBER
 
 /datum/design/cyberimp_janitor
 	name = "Janitor Arm Implant"

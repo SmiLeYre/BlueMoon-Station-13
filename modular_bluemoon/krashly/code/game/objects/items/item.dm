@@ -72,12 +72,48 @@
 
 //InteQ
 
+/obj/structure/sign/flag/fake_inteq
+	name = "Flag of PMC InteQ"
+	desc = "Коричнево-Оранжевый флаг с щитом по центру. Флаг пахнет кровью."
+	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
+	icon_state = "full"
+	item_flag = /obj/item/sign/flag/fake_inteq
+
+/obj/item/sign/flag/fake_inteq
+	name = "Folded Flag of the PMC InteQ"
+	desc = "Сложенный флаг ЧВК 'InteQ'."
+	flag_type = "inteq"
+	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
+	icon_state = "mini"
+	sign_path = /obj/structure/sign/flag/fake_inteq
+
 /obj/structure/sign/flag/inteq
 	name = "flag of PMC InteQ"
 	desc = "Коричнево-Оранжевый флаг с щитом по центру. Флаг пахнет кровью."
 	icon = 'modular_bluemoon/krashly/icons/obj/inteq_flag.dmi'
 	icon_state = "full"
 	item_flag = /obj/item/sign/flag/inteq
+	var/datum/proximity_monitor/advanced/demoraliser/demotivator
+
+/obj/structure/sign/flag/inteq/Initialize(mapload)
+	demotivator = new(src, 7, TRUE)
+	START_PROCESSING(SSobj,src)
+	return ..()
+
+/obj/structure/sign/flag/inteq/process()
+	if(world.time < demotivator.next_scare)
+		return
+	var/scared_someone = FALSE
+	for(var/mob/living/viewer in view(5, src))
+		demotivator.pugach(viewer)
+		scared_someone = TRUE
+	if(scared_someone)
+		demotivator.next_scare = world.time + 120
+
+
+/obj/structure/sign/flag/inteq/Destroy()
+	QDEL_NULL(demotivator)
+	return ..()
 
 /obj/item/sign/flag/inteq
 	name = "folded flag of the PMC InteQ"
@@ -87,11 +123,92 @@
 	icon_state = "mini"
 	sign_path = /obj/structure/sign/flag/inteq
 
+/obj/item/sign/flag/inteq/afterattack(atom/target, mob/user, proximity)
+	if(!iswallturf(target) || !proximity)
+		return ..()
+	if(!ishuman(user))
+		return FALSE
+	var/mob/living/carbon/human/placer = user
+	if(!IS_INTEQ(placer) && !placer.mind?.antag_datums)
+		to_chat(placer, span_warning("Вы разворачиваете флаг, и тут замечаете, что это пропаганда InteQ! Ну его, от греха подальше!"))
+		placer.drop_all_held_items()
+		return
+	. = ..()
+
 /obj/item/poster/random_inteq
 	name = "random InteQ poster"
 	poster_type = /obj/structure/sign/poster/contraband/inteq/random
 	icon_state = "rolled_contraband"
 
+/obj/item/storage/box/inteq_box/posters
+	name = "InteQ Posters Box"
+	desc = "Каробочка. Крутая."
+
+/obj/item/storage/box/inteq_box/posters/PopulateContents()
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+	new	/obj/item/poster/random_inteq(src)
+
+///////
+
+/obj/structure/sign/poster/contraband/inteq
+	var/datum/proximity_monitor/advanced/demoraliser/demotivator
+
+/obj/structure/sign/poster/contraband/inteq/Initialize(mapload)
+	demotivator = new(src, 7, TRUE)
+	START_PROCESSING(SSobj,src)
+	return ..()
+
+/obj/structure/sign/poster/contraband/inteq/process()
+	if(world.time < demotivator.next_scare)
+		return
+	var/scared_someone = FALSE
+	for(var/mob/living/viewer in view(5, src))
+		demotivator.pugach(viewer)
+		scared_someone = TRUE
+	if(scared_someone)
+		demotivator.next_scare = world.time + 120
+
+/obj/item/poster/random_inteq/poster_place_check(mob/user, turf/closed/wall)
+	// Хз, как ты пытаешься повесить постер, будучи не хуманом, но мало ли
+	if(!ishuman(user))
+		return FALSE
+	var/mob/living/carbon/human/placer = user
+	if(IS_INTEQ(placer) || placer.mind?.antag_datums)
+		return ..()
+	to_chat(placer, span_warning("Вы разворачиваете постер, и тут замечаете, что это пропаганда InteQ! Ну его, от греха подальше!"))
+	placer.drop_all_held_items()
+	return FALSE
+//////
+
+
+/obj/structure/sign/poster/contraband/inteq/attackby(obj/item/tool, mob/user, params)
+	if (tool.tool_behaviour == TOOL_WIRECUTTER)
+		QDEL_NULL(demotivator)
+	return ..()
+
+/obj/structure/sign/poster/contraband/inteq/Destroy()
+	QDEL_NULL(demotivator)
+	return ..()
+
+/obj/structure/sign/poster/contraband/inteq/on_attack_hand(mob/living/carbon/human/user)
+	if(istype(user) && user.dna.check_mutation(TK))
+		to_chat(user, "<span class='notice'>You telekinetically remove the [src].</span>")
+	else if(user.gloves)
+		if(istype(user.gloves,/obj/item/clothing/gloves/tackler))
+			to_chat(user, "<span class='warning'>Вы срываете [src], но лезвия на обороте режут вам руку!</span>")
+			user.apply_damage(5, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+	else
+		to_chat(user, "<span class='warning'>Вы пытаетесь сорвать [src], но лезвия на обороте режут вам руку и мешают поддеть [src]!</span>")
+		to_chat(user, "<span class='warning'>Нужны кусачки!</span>")
+		user.apply_damage(5, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
+		return
+	.=..()
+///////
 /obj/structure/sign/poster/contraband/inteq/random
 	name = "random contraband poster"
 	icon_state = "random_contraband"
@@ -151,7 +268,7 @@
 	new /obj/item/storage/belt/military/inteq(src)
 	new /obj/item/clothing/glasses/hud/security/sunglasses/inteq(src)
 	new /obj/item/clothing/head/helmet/swat/inteq(src)
-	new /obj/item/clothing/mask/balaclava/breath/inteq(src)
+	new /obj/item/clothing/mask/gas/inteq(src)
 	new /obj/item/storage/backpack/security/inteq(src)
 
 /obj/item/soap/inteq

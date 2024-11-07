@@ -200,7 +200,7 @@ GLOBAL_LIST_EMPTY(movespeed_modification_cache)
 	var/list/read = floating? GLOB.mob_config_movespeed_type_lookup_floating : GLOB.mob_config_movespeed_type_lookup
 	/* BLUEMOON REMOVAL START
 	if(!islist(read) || !read[type])
-		return 0
+		return FALSE
 	else
 		return read[type]
 	/ BLUEMOON REMOVAL END */
@@ -237,6 +237,10 @@ GLOBAL_LIST_EMPTY(movespeed_modification_cache)
 	cached_multiplicative_slowdown = .
 	if(!client)
 		return
+	// BLUEMOON ADD START - ограничение максимальной скорости для персонажа
+	if(movespeed_override)
+		cached_multiplicative_slowdown = max(cached_multiplicative_slowdown, movespeed_override)
+	// BLUEMOON ADD END
 	var/diff = (client.last_move - client.move_delay) - cached_multiplicative_slowdown
 	if(diff > 0)
 		if(client.move_delay > world.time + 1.5)

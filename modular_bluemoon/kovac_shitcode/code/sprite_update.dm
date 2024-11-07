@@ -23,10 +23,11 @@
 	name = "tacticool security jumpsuit"
 	icon_state = "tacticool_sec"
 	item_state = "tacticool_sec"
-	can_adjust = FALSE
 	unique_reskin = list(
-		"Red" = list("icon_state" = "tacticool_sec")
-	)
+		"Blue" = list("icon_state" = "tacticool_sec_blue", "item_state" = "tacticool_sec_blue"),
+		"Black" = list("icon_state" = "tacticool_sec_black", "item_state" = "tacticool_sec_black"),
+		"Pink" = list("icon_state" = "tacticool_sec_pink", "item_state" = "tacticool_sec_pink"),
+	) ///bluemoon add
 
 /obj/item/clothing/suit/armor/vest/agent
 	name = "agent armored vest"
@@ -554,6 +555,17 @@
 	gender = FEMALE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
+/mob/living/simple_animal/pet/cat/space/alta
+	name = "Space Alta"
+	desc = "An ordinary Alta, except that she is wearing a special elite modsuit from a Cybersun to protect herself in space."
+	icon_state = "spacealta"
+	icon_living = "spacealta"
+	icon_dead = "spacealta_dead"
+	held_icon = "spacealta"
+	unique_pet = TRUE
+	gender = FEMALE
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
+
 /mob/living/simple_animal/pet/dog/corgi/Lisa/ada
 	name = "Ada"
 	real_name = "Ada"
@@ -564,6 +576,19 @@
 	icon_state = "ada"
 	icon_living = "ada"
 	icon_dead = "ada_dead"
+	held_icon = "ada"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
+
+/mob/living/simple_animal/pet/dog/corgi/Lisa/zlatchek
+	name = "Zlat"
+	real_name = "Zlat"
+	gender = MALE
+	desc = "A happy coyote, in a green officer's cap with the name Zlat written on the back."
+	gold_core_spawnable = NO_SPAWN
+	unique_pet = TRUE
+	icon_state = "zlat"
+	icon_living = "zlat"
+	icon_dead = "zlat_dead"
 	held_icon = "ada"
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
@@ -578,45 +603,6 @@
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
 ///////////////
-
-/obj/item/toy/plush/mammal/fox/emma
-	name = "Emma plushie"
-	desc = "An adorable stuffed toy resembling a vulp."
-	icon_state = "emma"
-	item_state = "emma"
-	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
-	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
-	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
-
-/obj/item/toy/plush/mammal/fox/emma/shiro
-	name = "Shiro plushie"
-	icon_state = "shiro"
-	item_state = "shiro"
-
-/obj/item/toy/plush/mammal/fox/emma/raita
-	name = "Raita plushie"
-	icon_state = "raita"
-	item_state = "raita"
-
-/obj/item/toy/plush/mammal/fox/emma/aiko
-	name = "Aiko Plushie"
-	icon_state = "aiko"
-	item_state = "aiko"
-
-/obj/item/toy/plush/mammal/fox/emma/rozgo
-	name = "Rozgo Plushie"
-	icon_state = "rozgo"
-	item_state = "aiko"
-
-/obj/item/toy/plush/mammal/fox/emma/taliza
-	name = "Siya Taliza Plushie"
-	icon_state = "siya"
-	item_state = "aiko"
-
-/obj/item/toy/plush/mammal/fox/emma/red
-	name = "Red plushie"
-	icon_state = "red"
-	item_state = "red"
 
 /obj/item/toy/plush/nukeplushie/who
 	name = "security officer plushie"
@@ -669,6 +655,11 @@
 /obj/item/storage/backpack/ert_commander
 	name = "Tactical Backpack"
 	icon_state = "ert_commander"
+
+/obj/item/storage/backpack/ert_commander/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_volume = STORAGE_VOLUME_BAG_OF_HOLDING
 
 /obj/item/storage/backpack/ert_commander/ert_security
 	icon_state = "ert_security"

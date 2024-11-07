@@ -63,6 +63,7 @@
 	path= /obj/item/clothing/head/maid/polychromic
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
 	loadout_initial_colors = list("#333333", "#FFFFFF")
+	item_icon_state = "maid" // BLUEMOON EDIT - багованная иконка
 
 /datum/gear/head/bunnyears
 	name = "Bunny Ears"
@@ -113,7 +114,7 @@
 	path = /obj/item/clothing/head/kepi/orvi/command
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_JOBS
 	restricted_desc = "Heads of Staff"
-	restricted_roles = list("Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Research Director", "Chief Medical Officer", "Quartermaster")
+	restricted_roles = list("Head of Security","Bridge Officer", "Captain", "Head of Personnel", "Chief Engineer", "Research Director", "Chief Medical Officer", "Quartermaster")
 
 /datum/gear/head/orvkepieng
 	name = "Federation Kepi, eng"
@@ -144,7 +145,7 @@
 	description = "A visored cap. Intended to be used with ORV uniform."
 	path = /obj/item/clothing/head/kepi/orvi/service
 	subcategory = LOADOUT_SUBCATEGORY_HEAD_JOBS
-	restricted_desc = "Service, Cargo and Civilian, barring Clown, Mime and Lawyer"
+	restricted_desc = "Service, Cargo and Civilian, barring Clown, Mime and Internal Affairs Agent"
 	restricted_roles = list("Bartender", "Botanist", "Cook", "Curator", "Janitor", "Chaplain", "Cargo Technician", "Shaft Miner")
 
 /datum/gear/head/orvkepiass
@@ -195,6 +196,7 @@
 	path = /obj/item/clothing/head/cowboyhat/polychromic
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION | LOADOUT_CAN_COLOR_POLYCHROMIC
 	loadout_initial_colors = list("#5F5F5F", "#DDDDDD")
+	item_icon_state = "cowboyhat" // BLUEMOON EDIT - багованная иконка
 
 /datum/gear/head/wkepi
 	name = "white kepi"

@@ -283,7 +283,7 @@
 /obj/docking_port/mobile{
 	name = "InteQ Collosus";
 	preferred_direction = 4;
-	id = "inteq_collosus";
+	shuttle_id = "inteq_collosus";
 	height = 19;
 	width = 35;
 	dir = 2;
@@ -965,10 +965,7 @@
 /area/shuttle/inteq/collosus)
 "xD" = (
 /obj/structure/table/reinforced,
-/obj/item/folder/syndicate{
-	desc = "A slick black folder stamped 'Property of InteQ Risk Management Group.'";
-	name = "folder"
-	},
+/obj/item/folder/inteq,
 /obj/item/pen/fourcolor,
 /obj/item/reagent_containers/food/drinks/coffee{
 	pixel_y = 20

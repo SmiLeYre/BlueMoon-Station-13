@@ -313,7 +313,7 @@
 
 /obj/item/electronic_assembly/Topic(href, href_list)
 	if(..())
-		return 1
+		return TRUE
 
 	if(href_list["ghostscan"])
 		if((isobserver(usr) && ckeys_allowed_to_scan[usr.ckey]) || IsAdminGhost(usr))
@@ -388,7 +388,7 @@
 			if(istype(I))
 				I.melee_attack_chain(usr, component)
 			else
-				component.attack_hand(usr)
+				component.attack_self(usr)
 
 		// Adjust the position
 		if(href_list["change_pos"])

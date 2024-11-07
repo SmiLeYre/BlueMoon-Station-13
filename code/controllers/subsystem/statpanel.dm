@@ -42,7 +42,7 @@ SUBSYSTEM_DEF(statpanels)
 			"Отклонения Во Времени: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)",
 			"Время Сервера: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
 			" ",
-			"Время Раунда: [GAMETIMESTAMP("hh:mm:ss", round_time)]",
+			"Время Раунда: [time2text(round_time, "hh:mm:ss", 0)]",
 			"Настоящее Время Раунда: [time2text(real_round_time, "hh:mm:ss", 0)]", //A back up control to check the round time to see if round time has descyed as well as properly track round time
 			" ",
 			"Дата: [time2text(world.realtime, "MMM DD")] [GLOB.year_integer]",
@@ -170,7 +170,7 @@ SUBSYSTEM_DEF(statpanels)
 						if(length(turfitems) < 30) // only create images for the first 30 items on the turf, for performance reasons
 							if(!(REF(turf_content) in cached_images))
 								cached_images += REF(turf_content)
-								turf_content.RegisterSignal(turf_content, COMSIG_PARENT_QDELETING, /atom/.proc/remove_from_cache) // we reset cache if anything in it gets deleted
+								turf_content.RegisterSignal(turf_content, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/atom, remove_from_cache)) // we reset cache if anything in it gets deleted
 								if(ismob(turf_content) || length(turf_content.overlays) > 2)
 									turfitems[++turfitems.len] = list("[turf_content.name]", REF(turf_content), costly_icon2html(turf_content, target, sourceonly=TRUE))
 								else

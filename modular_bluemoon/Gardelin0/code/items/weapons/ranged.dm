@@ -23,11 +23,6 @@
 	icon_state = "KS-23TheInquisitor"
 	item_state = "KS-23TheInquisitor"
 
-/obj/item/clothing/accessory/permit/chaplain
-	name = "church weapon permit"
-	desc = "A card indicating that the chaplain is allowed to carry a weapon, most likely their shotgun."
-	icon_state = "permit"
-
 /obj/item/gun/ballistic/shotgun/KS23/attack_self(mob/living/user)
 	if(do_after(user, rand(2,4), src))
 		..()

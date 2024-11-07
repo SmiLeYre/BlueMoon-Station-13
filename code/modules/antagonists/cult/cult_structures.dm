@@ -10,7 +10,7 @@
 /obj/structure/destructible/cult/proc/conceal() //for spells that hide cult presence
 	density = FALSE
 	visible_message("<span class='danger'>[src] fades away.</span>")
-	invisibility = INVISIBILITY_OBSERVER
+	invisibility = INVISIBILITY_HIDDEN_RUNES
 	alpha = 100 //To help ghosts distinguish hidden runes
 	light_range = 0
 	light_power = 0
@@ -72,7 +72,7 @@
 		var/previouscolor = color
 		color = "#FAE48C"
 		animate(src, color = previouscolor, time = 8)
-		addtimer(CALLBACK(src, /atom/proc/update_atom_colour), 8)
+		addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_atom_colour)), 8)
 
 /obj/structure/destructible/cult/proc/check_menu(mob/living/user)
 	if(!user || user.incapacitated() || !iscultist(user) || !anchored || cooldowntime > world.time)
@@ -111,7 +111,7 @@
 	to_chat(user, "<span class='cultitalic'>You study the schematics etched into the altar...</span>")
 
 	var/list/options = list("Eldritch Whetstone" = radial_whetstone, "Construct Shell" = radial_shell, "Flask of Unholy Water" = radial_unholy_water)
-	var/choice = show_radial_menu(user, src, options, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
+	var/choice = show_radial_menu(user, src, options, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
 
 	var/reward
 	switch(choice)
@@ -138,7 +138,6 @@
 	var/static/image/radial_flagellant = image(icon = 'icons/obj/clothing/suits.dmi', icon_state = "cultrobes")
 	var/static/image/radial_shielded = image(icon = 'icons/obj/clothing/suits.dmi', icon_state = "cult_armor")
 	var/static/image/radial_mirror = image(icon = 'icons/obj/items_and_weapons.dmi', icon_state = "mirror_shield")
-	var/static/image/radial_bastard = image(icon = 'icons/obj/items_and_weapons.dmi', icon_state = "cultbastard")
 
 /obj/structure/destructible/cult/forge/ui_interact(mob/user)
 	. = ..()
@@ -158,8 +157,8 @@
 	to_chat(user, "<span class='cultitalic'>You study the schematics etched into the forge...</span>")
 
 
-	var/list/options = list("\improper Nar'Sien Empowered Armor" = radial_shielded, "Flagellant's Robe" = radial_flagellant, "Mirror Shield" = radial_mirror, "Bloody Bastard Sword" = radial_bastard)
-	var/choice = show_radial_menu(user, src, options, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
+	var/list/options = list("\improper Nar'Sien Empowered Armor" = radial_shielded, "Flagellant's Robe" = radial_flagellant, "Mirror Shield" = radial_mirror)
+	var/choice = show_radial_menu(user, src, options, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
 
 	var/reward
 	switch(choice)
@@ -169,8 +168,6 @@
 			reward = /obj/item/clothing/suit/hooded/cultrobes/berserker
 		if("Mirror Shield")
 			reward = /obj/item/shield/mirror
-		if("Bloody Bastard Sword")
-			reward = /obj/item/cult_bastard
 
 	if(!QDELETED(src) && reward && check_menu(user))
 		cooldowntime = world.time + 2400
@@ -202,36 +199,47 @@
 /obj/structure/destructible/cult/pylon/New()
 	START_PROCESSING(SSfastprocess, src)
 	..()
+	AddComponent( \
+		/datum/component/aura_healing, \
+		range = 5, \
+		brute_heal = 0.4, \
+		burn_heal = 0.4, \
+		blood_heal = 0.4, \
+		simple_heal = 1, \
+		requires_visibility = FALSE, \
+		limit_to_trait = TRAIT_HEALS_FROM_CULT_PYLONS, \
+		healing_color = COLOR_CULT_RED, \
+	)
 
 /obj/structure/destructible/cult/pylon/Destroy()
 	STOP_PROCESSING(SSfastprocess, src)
 	return ..()
 
-/obj/structure/destructible/cult/pylon/proc/heal_friends()
-	set waitfor = FALSE
-	for(var/mob/living/L in range(5, src))
-		if(iscultist(L) || isshade(L) || isconstruct(L))
-			if(L.health != L.maxHealth)
-				new /obj/effect/temp_visual/heal(get_turf(src), "#960000")
-				if(ishuman(L))
-					L.adjustBruteLoss(-1, 0, only_organic = FALSE)
-					L.adjustFireLoss(-1, 0, only_organic = FALSE)
-					L.updatehealth()
-				if(isshade(L) || isconstruct(L))
-					var/mob/living/simple_animal/M = L
-					if(M.health < M.maxHealth)
-						M.adjustHealth(-3)
-			if(ishuman(L) && L.blood_volume < (BLOOD_VOLUME_NORMAL * L.blood_ratio))
-				L.adjust_integration_blood(1.0)
-		CHECK_TICK
+// /obj/structure/destructible/cult/pylon/proc/heal_friends()
+// 	set waitfor = FALSE
+// 	for(var/mob/living/L in range(5, src))
+// 		if(iscultist(L) || isshade(L) || isconstruct(L))
+// 			if(L.health != L.maxHealth)
+// 				new /obj/effect/temp_visual/heal(get_turf(src), "#960000")
+// 				if(ishuman(L))
+// 					L.adjustBruteLoss(-1, 0, only_organic = FALSE)
+// 					L.adjustFireLoss(-1, 0, only_organic = FALSE)
+// 					L.updatehealth()
+// 				if(isshade(L) || isconstruct(L))
+// 					var/mob/living/simple_animal/M = L
+// 					if(M.health < M.maxHealth)
+// 						M.adjustHealth(-3)
+// 			if(ishuman(L) && L.blood_volume < (BLOOD_VOLUME_NORMAL * L.blood_ratio))
+// 				L.adjust_integration_blood(1.0)
+// 		CHECK_TICK
 
 
 /obj/structure/destructible/cult/pylon/process()
 	if(!anchored)
 		return
-	if(last_heal <= world.time)
-		last_heal = world.time + heal_delay
-		heal_friends()
+	// if(last_heal <= world.time)
+	// 	last_heal = world.time + heal_delay
+	// 	heal_friends()
 	if(last_corrupt <= world.time)
 		var/list/validturfs = list()
 		var/list/cultturfs = list()
@@ -277,7 +285,8 @@
 
 	var/static/image/radial_blindfold = image(icon = 'icons/obj/clothing/glasses.dmi', icon_state = "blindfold")
 	var/static/image/radial_curse = image(icon = 'icons/obj/cult.dmi', icon_state ="shuttlecurse")
-	var/static/image/radial_veilwalker = image(icon = 'icons/obj/cult.dmi', icon_state ="shifter")
+	var/static/image/radial_veilshifter = image(icon = 'icons/obj/cult.dmi', icon_state ="shifter")
+	var/static/image/radial_voidtorch = image(icon = 'icons/obj/lighting.dmi', icon_state ="torch")
 
 /obj/structure/destructible/cult/tome/ui_interact(mob/user)
 	. = ..()
@@ -296,8 +305,8 @@
 
 	to_chat(user, "<span class='cultitalic'>You flip through the black pages of the archives...</span>")
 
-	var/list/options = list("Zealot's Blindfold" = radial_blindfold, "Shuttle Curse" = radial_curse, "Veil Walker Set" = radial_veilwalker)
-	var/choice = show_radial_menu(user, src, options, custom_check = CALLBACK(src, .proc/check_menu, user), require_near = TRUE, tooltips = TRUE)
+	var/list/options = list("Zealot's Blindfold" = radial_blindfold, "Shuttle Curse" = radial_curse, "Veil Shifter" = radial_veilshifter, "Void Torch" = radial_voidtorch)
+	var/choice = show_radial_menu(user, src, options, custom_check = CALLBACK(src, PROC_REF(check_menu), user), require_near = TRUE, tooltips = TRUE)
 
 	var/reward
 	switch(choice)
@@ -305,15 +314,14 @@
 			reward = /obj/item/clothing/glasses/hud/health/night/cultblind
 		if("Shuttle Curse")
 			reward = /obj/item/shuttle_curse
-		if("Veil Walker Set")
-			reward = /obj/effect/spawner/bundle/veil_walker
+		if("Veil Shifter")
+			reward = /obj/item/cult_shift
+		if("Void Torch")
+			reward = /obj/item/flashlight/flare/culttorch
 	if(!QDELETED(src) && reward && check_menu(user))
 		cooldowntime = world.time + 2400
 		new reward(get_turf(src))
 		to_chat(user, "<span class='cultitalic'>You summon the [choice] from the archives!</span>")
-
-/obj/effect/spawner/bundle/veil_walker
-	items = list(/obj/item/cult_shift, /obj/item/flashlight/flare/culttorch)
 
 /obj/effect/gateway
 	name = "gateway"

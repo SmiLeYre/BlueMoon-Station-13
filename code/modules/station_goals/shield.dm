@@ -178,7 +178,7 @@ GLOBAL_LIST_EMPTY(meteor_satellites) // BLUEMOON ADD - список всех п�
 	oldLoc = get_turf(oldLoc)
 	if(!QDELETED(camera) && !updating && oldLoc != get_turf(src))
 		updating = TRUE
-		addtimer(CALLBACK(src, .proc/update_camera, oldLoc), 10)
+		addtimer(CALLBACK(src, PROC_REF(update_camera), oldLoc), 10)
 
 /obj/machinery/satellite/proc/update_camera(oldloc)
 	if(!QDELETED(camera) && oldLoc != get_turf(src))

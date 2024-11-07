@@ -9,7 +9,7 @@
 
 /datum/deathrattle_group/proc/rattle(obj/item/implant/deathrattle/origin, mob/living/owner)
 	var/name = owner.mind ? owner.mind.name : owner.real_name
-	var/area = get_area_name(get_turf(owner))
+	var/turf/T = get_turf(owner)
 
 	for(var/r in implant_refs)
 		var/datum/weakref/R = r
@@ -22,9 +22,10 @@
 		if(!implant.imp_in)
 			continue
 
+
 		// Deliberately the same message framing as nanite message + ghost deathrattle
 		var/mob/living/recipient = implant.imp_in
-		to_chat(recipient, "<i>Вы слышите странный механический голос в голове...</i>\"<span class='robot'><b>[name]</b> отдал[owner.ru_a()] Богу душу в локации: <b>[area]</b>.</span>\"")
+		to_chat(recipient, "<i>Вы слышите странный механический голос в голове...</i>\"<span class='robot'><b>[name]</b> был[owner.ru_a()] убит[owner.ru_a()] по координатам: [AREACOORD(T)].</span>\"")
 		SEND_SOUND(recipient, pick(
 		'sound/items/knell1.ogg',
 		'sound/items/knell2.ogg',
@@ -62,13 +63,60 @@
 /obj/item/implant/deathrattle/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)
 	. = ..()
 	if(.)
-		RegisterSignal(target, COMSIG_LIVING_PREDEATH, .proc/on_predeath)
+		RegisterSignal(target, COMSIG_LIVING_PREDEATH, PROC_REF(on_predeath))
 
 		if(!group)
 			to_chat(target, "<i>Вы слышите странный механический голос в голове...</i> \"<span class='robot'>Внимание: Не выявлены другие подключенные импланты.</span>\"")
-
 
 /obj/item/implantcase/deathrattle
 	name = "implant case - 'Deathrattle'"
 	desc = "A glass case containing a deathrattle implant."
 	imp_type = /obj/item/implant/deathrattle
+
+GLOBAL_DATUM_INIT(centcom_deathrattle_group, /datum/deathrattle_group, new)
+
+/obj/item/implant/deathrattle/centcom
+	name = "centcom deathrattle implant"
+	desc = "Hope no one else dies, prepare for when they do"
+
+/obj/item/implant/deathrattle/centcom/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)
+	. = ..()
+	group = GLOB.centcom_deathrattle_group
+	group.register(src)
+
+/obj/item/implant/death_alert
+	name = "death alert implant"
+	desc = "Hope no one else dies, prepare for when they do"
+	var/obj/item/radio/radio = null
+
+/obj/item/implant/death_alert/implant(mob/living/target, mob/user, silent = FALSE, force = FALSE)
+	. = ..()
+
+	if(radio)
+		radio.forceMove(target)
+		return
+	radio = new(target)
+	// almost like an internal headset, but without the
+	// "must be in ears to hear" restriction.
+	radio.name = "death alert system"
+	radio.subspace_transmission = TRUE
+	radio.canhear_range = 0
+
+
+	RegisterSignal(target, COMSIG_LIVING_PREDEATH, PROC_REF(on_predeath))
+
+/obj/item/implant/death_alert/proc/on_predeath(datum/source, gibbed)
+	SIGNAL_HANDLER
+	var/mob/living/owner = source
+	var/turf/T = get_turf(owner)
+
+	radio.talk_into(src, "[owner.real_name] был[owner.ru_a()] убит[owner.ru_a()] по координатам: [AREACOORD(T)] ")
+
+/obj/item/implantcase/death_alert
+	name = "implant case - 'death alert'"
+	desc = "A glass case containing a death alert implant."
+	imp_type = /obj/item/implant/death_alert
+
+/obj/item/implanter/death_alert
+	name = "implanter (death alert)"
+	imp_type = /obj/item/implant/death_alert

@@ -1,6 +1,6 @@
-#define TS_HIGHPOP_TRIGGER 80
-#define TS_MIDPOP_TRIGGER 50
-#define TS_MINPLAYERS_TRIGGER 35
+#define TS_HIGHPOP_TRIGGER 100
+#define TS_MIDPOP_TRIGGER 80
+#define TS_MINPLAYERS_TRIGGER 50
 
 /datum/round_event_control/spider_terror
 	name = "Terror Spider Infestation"

@@ -41,10 +41,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/last_custom_holoform = 0
 
 	//Cooldowns for saving/loading. These are four are all separate due to loading code calling these one after another
-	var/saveprefcooldown
-	var/loadprefcooldown
-	var/savecharcooldown
-	var/loadcharcooldown
+	COOLDOWN_DECLARE(saveprefcooldown)
+	COOLDOWN_DECLARE(loadprefcooldown)
+	COOLDOWN_DECLARE(savecharcooldown)
+	COOLDOWN_DECLARE(loadcharcooldown)
 
 	//game-preferences
 	var/lastchangelog = ""				//Saved changlog filesize to detect if there was a change
@@ -65,8 +65,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/screentip_pref = SCREENTIP_PREFERENCE_ENABLED
 	var/screentip_color = "#ffd391"
 	var/screentip_images = TRUE
-	var/buttons_locked = FALSE
-	var/hotkeys = FALSE
+	var/hotkeys = TRUE
 
 	///Runechat preference. If true, certain messages will be displayed on the map, not ust on the chat area. Boolean.
 	var/chat_on_map = TRUE
@@ -88,6 +87,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/tgui_large_buttons = TRUE
 	var/tgui_swapped_buttons = FALSE
 	var/windowflashing = TRUE
+	var/windownoise = TRUE
 	var/toggles = TOGGLES_DEFAULT
 	/// A separate variable for deadmin toggles, only deals with those.
 	var/deadmin = NONE
@@ -103,7 +103,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/preferred_map = null
 	var/preferred_chaos = null
 	var/be_victim = null
-	var/use_new_playerpanel = FALSE
+	var/use_new_playerpanel = TRUE // BLUEMOON - ENABELING-MODERN-PLAYER-PANEL-AS-DEFAULT
 	var/disable_combat_cursor = FALSE
 	var/tg_playerpanel = "TG"
 	var/pda_style = MONO
@@ -112,8 +112,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	var/pda_ringtone = "beep"
 
 	var/hardsuit_tail_style = null // Пока не используется. Вскоре нужно будет бахнуть новых спрайтов.
-
-	var/blood_color = "#ff0000"
+	var/custom_blood_color = FALSE
+	var/blood_color = BLOOD_COLOR_UNIVERSAL
 
 	var/uses_glasses_colour = 0
 
@@ -269,6 +269,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 "neckfire_color" = "ffffff"
 )
 
+	var/list/custom_emote_panel = list() //user custom emote panel
 
 	var/custom_speech_verb = "default" //if your say_mod is to be something other than your races
 	var/custom_tongue = "default" //if your tongue is to be something other than your races
@@ -325,7 +326,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	///Should we be in the widescreen mode set by the config?
 	var/widescreenpref = TRUE
 	///Strip menu style
-	var/long_strip_menu = FALSE
+	var/long_strip_menu = TRUE
 	///What size should pixels be displayed as? 0 is strech to fit
 	var/pixel_size = 0
 	///What scaling method should we use?
@@ -368,7 +369,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	///loadout stuff
 	var/gear_points = 20 // Больше очков - сочнее персонажи.
 	var/list/gear_categories
-	var/list/loadout_data = list()
+	var/list/loadout_data
 	var/list/unlockable_loadout_data = list()
 	var/loadout_slot = 1 //goes from 1 to MAXIMUM_LOADOUT_SAVES
 	var/gear_category
@@ -419,6 +420,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 	var/loadout_errors = 0
 
+	var/pref_queue
+	var/char_queue
+
 	var/silicon_lawset
 
 /datum/preferences/New(client/C)
@@ -431,7 +435,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	if(istype(C))
 		if(!IsGuestKey(C.key))
 			load_path(C.ckey)
-			unlock_content = C.IsByondMember()
+			unlock_content = C.IsByondMember() || IS_CKEY_DONATOR_GROUP(C.key, DONATOR_GROUP_TIER_1)
 			if(unlock_content)
 				max_save_slots += 8 //SPLURT EDIT
 	var/loaded_preferences_successfully = load_preferences()
@@ -507,17 +511,25 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			dat += "<HR>"
 
 			dat += "<center>"
-			var/client_file = user.client.Import()
+			var/savefile/client_file = new(user.client.Import())
 			var/savefile_name
-			if(client_file)
-				var/savefile/cache_savefile = new(user.client.Import())
-				if(!cache_savefile["deleted"] || savefile_needs_update(cache_savefile) != -2)
-					cache_savefile["real_name"] >> savefile_name
+			if(istype(client_file, /savefile))
+				if(!client_file["deleted"] || savefile_needs_update(client_file) != -2)
+					client_file["real_name"] >> savefile_name
 			dat += "Local storage: [savefile_name ? savefile_name : "Empty"]"
 			dat += "<br />"
 			dat += "<a href='?_src_=prefs;preference=export_slot'>Export current slot</a>"
 			dat += "<a [savefile_name ? "href='?_src_=prefs;preference=import_slot' style='white-space:normal;'" : "class='linkOff'"]>Import into current slot</a>"
 			dat += "<a href='?_src_=prefs;preference=delete_local_copy' style='white-space:normal;background:#eb2e2e;'>Delete locally saved character</a>"
+			dat += "<br />"
+			dat += "<a href='?_src_=prefs;preference=give_slot' [offer ? "style='white-space:normal;background:#eb2e2e;'" : ""]>[offer ? "Cancel offer" : "Offer slot"]</a>"
+			dat += "<a href='?_src_=prefs;preference=retrieve_slot'>Retrieve offered character</a>"
+			if(offer)
+				dat += "<br />"
+				dat += "The redemption code is <b>[offer.redemption_code]</b>"
+				dat += "<br />"
+				dat += "The offer will automatically be cancelled if there is an error, or if someone takes it"
+
 			dat += "</center>"
 
 			dat += "<HR>"
@@ -549,7 +561,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				//calculate your gear points from the chosen item
 				gear_points = CONFIG_GET(number/initial_gear_points)
 				var/list/chosen_gear = loadout_data["SAVE_[loadout_slot]"]
-				if(chosen_gear)
+				if(islist(chosen_gear))
 					loadout_errors = 0
 					for(var/loadout_item in chosen_gear)
 						var/loadout_item_path = loadout_item[LOADOUT_ITEM]
@@ -589,7 +601,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<center><h2>Occupation Choices</h2>"
 					dat += "<a href='?_src_=prefs;preference=job;task=menu'>Set Occupation Preferences</a><br></center>"
 					if(CONFIG_GET(flag/roundstart_traits))
-						dat += "<center><h2>Quirk Setup</h2>"
+						dat += "<center><h2>Quirk Setup ([GetQuirkBalance(user)] points left)</h2>"
 						dat += "<a href='?_src_=prefs;preference=trait;task=menu'>Configure Quirks</a><br></center>"
 						dat += "<center><b>Current Quirks:</b> [english_list(all_quirks, "None")]</center>"
 					dat += "<h2>Identity</h2>"
@@ -605,7 +617,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>Hardsuit With Tail:</b><a style='display:block;width:30px' href='?_src_=prefs;preference=hardsuit_with_tail'>[features["hardsuit_with_tail"] == TRUE ? "Yes" : "No"]</a><BR>"
 
 					dat += "<b>Age:</b> <a style='display:block;width:30px' href='?_src_=prefs;preference=age;task=input'>[age]</a><BR>"
-					dat += "<b>Blood Color:</b> <span style='border:1px solid #161616; background-color: [blood_color];'><font color='[color_hex2num(blood_color) < 200 ? "FFFFFF" : "000000"]'>[blood_color]</font></span> <a href='?_src_=prefs;preference=blood_color;task=input'>Change</a><BR>"
+					dat += "<b>Custom Blood Color:</b>"
+					dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=toggle_custom_blood_color;task=input'>[custom_blood_color ? "Enabled" : "Disabled"]</a><BR>"
+					if(custom_blood_color)
+						dat += "<b>Blood Color:</b> <span style='border:1px solid #161616; background-color: [blood_color];'><font color='[color_hex2num(blood_color) < 200 ? "FFFFFF" : "000000"]'>[blood_color]</font></span> <a href='?_src_=prefs;preference=blood_color;task=input'>Change</a><BR>"
 					dat += "</td>"
 
 					dat += "<td valign='top'>"
@@ -762,7 +777,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						dat += "<img src='[features["headshot_link1"]]' style='border: 1px solid black' width='140px' height='140px'>"
 					dat += "<br><br>"
 
-					dat += "<h2>Headshot 2 Image</h2>"
+					dat += "<h2>Headshot 3 Image</h2>"
 					dat += "<a href='?_src_=prefs;preference=headshot2'><b>Set Headshot 3 Image</b></a><br>"
 					if(features["headshot_link2"])
 						dat += "<img src='[features["headshot_link2"]]' style='border: 1px solid black' width='140px' height='140px'>"
@@ -1105,7 +1120,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "<b>Toys and Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_stuffing'>[features["butt_stuffing"] == TRUE ? "Yes" : "No"]</a>"
 							dat += "<b>Max Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_max_size;task=input'>[features["butt_max_size"] ? features["butt_max_size"] : "Disabled"]</a>"
 							dat += "<b>Min Size:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=butt_min_size;task=input'>[features["butt_min_size"] ? features["butt_min_size"] : "Disabled"]</a>"
-							dat += "<b>Butthole Sprite:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_anus'>[features["has_anus"] == TRUE ? "Yes" : "No"]</a>"
+							dat += "<b>Has Anus:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=has_anus'>[features["has_anus"] == TRUE ? "Yes" : "No"]</a>"
 							if(features["has_anus"])
 								dat += "<b>Butthole Color:</b></a><BR>"
 								if(pref_species.use_skintones && features["genitals_use_skintone"] == TRUE)
@@ -1267,6 +1282,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 								dat += "</td>"
 								iterated_markings = 0
 						dat += "</tr></table>"
+						// BLUEMOON ADD START - кнопка для удаления всех маркингов на персонаже
+						dat += "<center>"
+						dat += "<h3>Danger Zone</h3>"
+						dat += "<a href='?_src_=prefs;preference=markings_remove;task=input'>Remove All Markings</a>"
+						dat += "</center>"
+						// BLUEMOON ADD END
 
 				if(SPEECH_CHAR_TAB)
 					dat += "<table><tr><td width='340px' height='300px' valign='top'>"
@@ -1294,6 +1315,11 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "</tr></table>"
 				if(LOADOUT_CHAR_TAB)
 					dat += "<table align='center' width='100%'>"
+					dat += "<tr><td colspan=4><center><b>Loadout slot</b></center></td></tr>"
+					dat += "<tr><td colspan=4><center>"
+					for(var/iteration in 1 to MAXIMUM_LOADOUT_SAVES)
+						dat += "<a [loadout_slot == iteration ? "class='linkOn'" : "href='?_src_=prefs;preference=gear;select_slot=[iteration]'"]>[iteration]</a>"
+					dat += "</center></td></tr>"
 					dat += "<tr><td colspan=4><center><i style=\"color: grey;\">You can only choose one item per category, unless it's an item that spawns in your backpack or hands.</center></td></tr>"
 					dat += "<tr><td colspan=4><center><b>"
 
@@ -1359,6 +1385,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 									var/class_link = ""
 									var/list/loadout_item = has_loadout_gear(loadout_slot, "[gear.type]")
 									var/extra_loadout_data = ""
+									if(gear.base64icon)
+										extra_loadout_data += "<center><img src=data:image/jpeg;base64,[gear.base64icon]></center>"
 									if(loadout_item)
 										class_link = "style='white-space:normal;' class='linkOn' href='?_src_=prefs;preference=gear;toggle_gear_path=[html_encode(name)];toggle_gear=0'"
 										if(gear.loadout_flags & LOADOUT_CAN_COLOR_POLYCHROMIC)
@@ -1472,8 +1500,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					//SANDSTORM CHANGES END
 					dat += "<b>Shift view when pixelshifting:</b> <a href='?_src_=prefs;preference=view_pixelshift'>[view_pixelshift ? "Enabled" : "Disabled"]</a><br>" //SPLURT Edit
 					dat += "<br>"
-					dat += "<b>Action Buttons:</b> <a href='?_src_=prefs;preference=action_buttons'>[(buttons_locked) ? "Locked In Place" : "Unlocked"]</a><br>"
-					dat += "<br>"
 					dat += "<b>Ghost Ears:</b> <a href='?_src_=prefs;preference=ghost_ears'>[(chat_toggles & CHAT_GHOSTEARS) ? "All Speech" : "Nearest Creatures"]</a><br>"
 					dat += "<b>Ghost Radio:</b> <a href='?_src_=prefs;preference=ghost_radio'>[(chat_toggles & CHAT_GHOSTRADIO) ? "All Messages":"No Messages"]</a><br>"
 					dat += "<b>Ghost Sight:</b> <a href='?_src_=prefs;preference=ghost_sight'>[(chat_toggles & CHAT_GHOSTSIGHT) ? "All Emotes" : "Nearest Creatures"]</a><br>"
@@ -1523,6 +1549,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<tr><td width='340px' height='300px' valign='top'>"
 					dat += "<h2>OOC Settings</h2>"
 					dat += "<b>Window Flashing:</b> <a href='?_src_=prefs;preference=winflash'>[(windowflashing) ? "Enabled":"Disabled"]</a><br>"
+					dat += "<b>Window Noise:</b> <a href='?_src_=prefs;preference=winnoise'>[(windownoise) ? "Enabled":"Disabled"]</a><br>"
 					dat += "<br>"
 					dat += "<b>Play Admin MIDIs:</b> <a href='?_src_=prefs;preference=hear_midis'>[(toggles & SOUND_MIDI) ? "Enabled":"Disabled"]</a><br>"
 					dat += "<b>Play Lobby Music:</b> <a href='?_src_=prefs;preference=lobby_music'>[(toggles & SOUND_LOBBY) ? "Enabled":"Disabled"]</a><br>"
@@ -1577,6 +1604,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 					dat += "<h2>Citadel Preferences</h2>" //Because fuck me if preferences can't be fucking modularized and expected to update in a reasonable timeframe.
 					dat += "<b>Widescreen:</b> <a href='?_src_=prefs;preference=widescreenpref'>[widescreenpref ? "Enabled ([CONFIG_GET(string/default_view)])" : "Disabled (15x15)"]</a><br>"
+					dat += "<b>Fullscreen:</b> <a href='?_src_=prefs;preference=fullscreen'>[fullscreen ? "Enabled" : "Disabled"]</a><br>"
 					dat += "<b>Long strip menu:</b> <a href='?_src_=prefs;preference=long_strip_menu'>[long_strip_menu ? "Enabled" : "Disabled"]</a><br>"
 					dat += "<b>Auto stand:</b> <a href='?_src_=prefs;preference=autostand'>[autostand ? "Enabled" : "Disabled"]</a><br>"
 					dat += "<b>Auto OOC:</b> <a href='?_src_=prefs;preference=auto_ooc'>[auto_ooc ? "Enabled" : "Disabled"]</a><br>"
@@ -1674,7 +1702,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<table><tr><td width='340px' height='300px' valign='top'>"
 					dat += "<h2>Fetish content prefs</h2>"
 					dat += "<b>Allow Lewd Verbs:</b> <a href='?_src_=prefs;preference=verb_consent'>[(toggles & VERB_CONSENT) ? "Yes":"No"]</a><br>" // Skyrat - ERP Mechanic Addition
-					dat += "<b>Mute Lewd Verb Sounds:</b> <a href='?_src_=prefs;preference=mute_lewd_verb_sounds'>[(toggles & LEWD_VERB_SOUNDS) ? "Yes":"No"]</a><br>" // Sandstorm - ERP Mechanic Addition
+					dat += "<b>Lewd Verb Sounds:</b> <a href='?_src_=prefs;preference=lewd_verb_sounds'>[(toggles & LEWD_VERB_SOUNDS) ? "Yes":"No"]</a><br>" // Sandstorm - ERP Mechanic Addition
 					dat += "<b>Arousal:</b><a href='?_src_=prefs;preference=arousable'>[arousable == TRUE ? "Enabled" : "Disabled"]</a><BR>"
 					dat += "<b>Genital examine text</b>:<a href='?_src_=prefs;preference=genital_examine'>[(cit_toggles & GENITAL_EXAMINE) ? "Enabled" : "Disabled"]</a><BR>"
 					dat += "<b>Vore examine text</b>:<a href='?_src_=prefs;preference=vore_examine'>[(cit_toggles & VORE_EXAMINE) ? "Enabled" : "Disabled"]</a><BR>"
@@ -1696,6 +1724,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					dat += "<b>Hypno:</b> <a href='?_src_=prefs;preference=never_hypno'>[(cit_toggles & NEVER_HYPNO) ? "Disallowed" : "Allowed"]</a><br>"
 					dat += "<b>Aphrodisiacs:</b> <a href='?_src_=prefs;preference=aphro'>[(cit_toggles & NO_APHRO) ? "Disallowed" : "Allowed"]</a><br>"
 					dat += "<b>Ass Slapping:</b> <a href='?_src_=prefs;preference=ass_slap'>[(cit_toggles & NO_ASS_SLAP) ? "Disallowed" : "Allowed"]</a><br>"
+					//Gardelin0 EDIT
+					dat += "<b>Sex Jitter:</b> <a href='?_src_=prefs;preference=sex_jitter'>[(cit_toggles & SEX_JITTER) ? "Allowed" : "Disallowed"]</a><br>"
 					//SPLURT EDIT
 					dat += "<b>Chastity Interactions :</b> <a href='?_src_=prefs;preference=chastitypref'>[(cit_toggles & CHASTITY) ? "Allowed" : "Disallowed"]</a><br>"
 					dat += "<b>Genital Stimulation Modifiers :</b> <a href='?_src_=prefs;preference=stimulationpref'>[(cit_toggles & STIMULATION) ? "Allowed" : "Disallowed"]</a><br>"
@@ -1876,7 +1906,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		//The job before the current job. I only use this to get the previous jobs color when I'm filling in blank rows.
 		var/datum/job/lastJob
 
-		for(var/datum/job/job in sort_list(SSjob.occupations, /proc/cmp_job_display_asc))
+		for(var/datum/job/job in sort_list(SSjob.occupations, GLOBAL_PROC_REF(cmp_job_display_asc)))
 
 			index += 1
 			if((index >= limit) || (job.title in splitJobs))
@@ -2041,7 +2071,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	SetJobPreferenceLevel(job, jpval)
 	SetChoices(user)
 
-	return 1
+	return TRUE
 
 
 /datum/preferences/proc/ResetJobs()
@@ -2070,7 +2100,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		dat += "<hr>"
 		dat += "<center><b>Current quirks:</b> [all_quirks.len ? all_quirks.Join(", ") : "None"]</center>"
 		dat += "<center>[GetPositiveQuirkCount()] / [MAX_QUIRKS] max positive quirks<br>\
-		<b>Quirk balance remaining:</b> [GetQuirkBalance()]<br>"
+		<b>Quirk balance remaining:</b> [GetQuirkBalance(user)]<br>"
 		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_POSITIVE]' [quirk_category == QUIRK_POSITIVE ? "class='linkOn'" : ""]>[QUIRK_POSITIVE]</a> "
 		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_NEUTRAL]' [quirk_category == QUIRK_NEUTRAL ? "class='linkOn'" : ""]>[QUIRK_NEUTRAL]</a> "
 		dat += " <a href='?_src_=prefs;quirk_category=[QUIRK_NEGATIVE]' [quirk_category == QUIRK_NEGATIVE ? "class='linkOn'" : ""]>[QUIRK_NEGATIVE]</a> "
@@ -2120,14 +2150,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	popup.set_content(dat.Join())
 	popup.open(FALSE)
 
-/datum/preferences/proc/GetQuirkBalance()
+/datum/preferences/proc/GetQuirkBalance(mob/user)
 	var/bal = 0
 	for(var/V in all_quirks)
 		var/datum/quirk/T = SSquirks.quirks[V]
 		bal -= initial(T.value)
 	for(var/modification in modified_limbs)
 		if(modified_limbs[modification][1] == LOADOUT_LIMB_PROSTHETIC)
-			return bal + 1 //max 1 point regardless of how many prosthetics
+			bal += 1 //max 1 point regardless of how many prosthetics
+	if(bal < 0)
+		all_quirks = list()
+		return FALSE
 	return bal
 
 /datum/preferences/proc/GetPositiveQuirkCount()
@@ -2209,7 +2242,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 			//END OF SKYRAT CHANGES
 			else
 				SetChoices(user)
-		return 1
+		return TRUE
 
 	else if(href_list["preference"] == "trait")
 		switch(href_list["task"])
@@ -2227,7 +2260,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							to_chat(user, "<span class='danger'>[quirk] имеет несовместимость с квирком [Q].</span>") //BLUEMOON EDIT перевод
 							return
 				var/value = SSquirks.quirk_points[quirk]
-				var/balance = GetQuirkBalance()
+				var/balance = GetQuirkBalance(user)
 				if(quirk in all_quirks)
 					if(balance + value < 0)
 						to_chat(user, "<span class='warning'>Refunding this would cause you to go below your balance!</span>")
@@ -3401,12 +3434,17 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							QDEL_NULL(parent.mob.hud_used)
 							parent.mob.create_mob_hud()
 							parent.mob.hud_used.show_hud(1, parent.mob)
+				if("toggle_custom_blood_color")
+					custom_blood_color = !custom_blood_color
 				if("blood_color")
 					var/pickedBloodColor = input(user, "Выбирайте цвет крови своего персонажа.", "Character Preference", blood_color) as color|null
 					if(!pickedBloodColor)
 						return
 					if(pickedBloodColor)
-						blood_color = pickedBloodColor
+						blood_color = sanitize_hexcolor(pickedBloodColor, 6, 1, initial(blood_color))
+						if(!custom_blood_color)
+							custom_blood_color = TRUE
+				///
 				if("pda_style")
 					var/pickedPDAStyle = tgui_input_list(user, "Выбирайте стиль своего КПК.", "Character Preference", GLOB.pda_styles, pda_style)
 					if(pickedPDAStyle)
@@ -3465,7 +3503,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					gender = chosengender
 
 				if("body_size")
-					var/new_body_size = input(user, "Choose your desired sprite size: ([CONFIG_GET(number/body_size_min)*100]-[CONFIG_GET(number/body_size_max)*100]%)\nWarning: This may make your character look distorted. Additionally, any size under 100% takes a 10% maximum health penalty", "Character Preference", features["body_size"]*100) as num|null
+					var/new_body_size = input(user, "Choose your desired sprite size: ([CONFIG_GET(number/body_size_min)*100]-[CONFIG_GET(number/body_size_max)*100]%)\nWarning: This may make your character look distorted. Additionally, any size affects speed and max health", "Character Preference", features["body_size"]*100) as num|null
 					if(new_body_size)
 						features["body_size"] = clamp(new_body_size * 0.01, CONFIG_GET(number/body_size_min), CONFIG_GET(number/body_size_max))
 
@@ -3585,6 +3623,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 										var/limb_value = text2num(GLOB.bodypart_values[limb])
 										features[marking_type] += list(list(limb_value, selected_marking))
 
+				// BLUEMOON ADD START - кнопка для удаления всех маркингов на персонаже
+				if("markings_remove")
+					var/are_you_sure_about_that = tgalert(parent.mob, "Это действие удалит все татуировки с персонажа. Вы уверены, что хотите сделать это?", "Удаление всех маркингов" ,"Да", "Нет")
+					if(are_you_sure_about_that == "Да")
+						clearlist(features["mam_body_markings"])
+				// BLUEMOON ADD END
 				if("marking_color_specific")
 					var/index = text2num(href_list["marking_index"])
 					var/marking_type = href_list["marking_type"]
@@ -3700,6 +3744,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("widescreenpref")
 					widescreenpref = !widescreenpref
 					user.client.view_size.setDefault(getScreenSize(widescreenpref))
+				if("fullscreen")
+					fullscreen = !fullscreen
+					parent.ToggleFullscreen()
 				if("long_strip_menu")
 					long_strip_menu = !long_strip_menu
 				if("cock_stuffing")
@@ -3928,16 +3975,14 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					chat_on_map = !chat_on_map
 				if("see_chat_non_mob")
 					see_chat_non_mob = !see_chat_non_mob
-				//Skyrat changes begin
+				//Sandstorm changes begin
 				if("see_chat_emotes")
 					see_chat_emotes = !see_chat_emotes
 				if("enable_personal_chat_color")
 					enable_personal_chat_color = !enable_personal_chat_color
-				//End of skyrat changes
+				//End of sandstorm changes
 				if("view_pixelshift") //SPLURT Edit
 					view_pixelshift = !view_pixelshift
-				if("action_buttons")
-					buttons_locked = !buttons_locked
 				if("tgui_fancy")
 					tgui_fancy = !tgui_fancy
 				if("tgui_input_mode")
@@ -3966,6 +4011,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					tgui_lock = !tgui_lock
 				if("winflash")
 					windowflashing = !windowflashing
+				if("winnoise")
+					windownoise = !windownoise
 				if("hear_adminhelps")
 					toggles ^= SOUND_ADMINHELP
 				if("announce_login")
@@ -4014,7 +4061,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("verb_consent") // Skyrat - ERP Mechanic Addition
 					toggles ^= VERB_CONSENT // Skyrat - ERP Mechanic Addition
 
-				if("mute_lewd_verb_sounds") // Skyrat - ERP Mechanic Addition
+				if("lewd_verb_sounds") // Skyrat - ERP Mechanic Addition
 					toggles ^= LEWD_VERB_SOUNDS // Skyrat - ERP Mechanic Addition
 
 				if("persistent_scars")
@@ -4128,6 +4175,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				//END CITADEL EDIT
 
+				if("sex_jitter") //By Gardelin0
+					cit_toggles ^= SEX_JITTER
+
 				if("ambientocclusion")
 					ambientocclusion = !ambientocclusion
 					if(parent && parent.screen && parent.screen.len)
@@ -4142,10 +4192,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					auto_fit_viewport = !auto_fit_viewport
 					if(auto_fit_viewport && parent)
 						parent.fit_viewport()
-
-				if("fullscreen")
-					fullscreen = !fullscreen
-					parent.ToggleFullscreen()
 
 				if("hud_toggle_flash")
 					hud_toggle_flash = !hud_toggle_flash
@@ -4163,7 +4209,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					barkbox.set_bark(bark_id)
 					var/total_delay
 					for(var/i in 1 to (round((32 / bark_speed)) + 1))
-						addtimer(CALLBACK(barkbox, /atom/movable/proc/bark, list(parent.mob), 7, 70, BARK_DO_VARY(bark_pitch, bark_variance)), total_delay)
+						addtimer(CALLBACK(barkbox, TYPE_PROC_REF(/atom/movable, bark), list(parent.mob), 7, 70, BARK_DO_VARY(bark_pitch, bark_variance)), total_delay)
 						total_delay += rand(DS2TICKS(bark_speed/4), DS2TICKS(bark_speed/4) + DS2TICKS(bark_speed/4)) TICKS
 					QDEL_IN(barkbox, total_delay)
 
@@ -4176,10 +4222,15 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					load_character()
 
 				if("changeslot")
+					if(char_queue)
+						deltimer(char_queue) // Do not dare.
 					if(!load_character(text2num(href_list["num"])))
 						random_character()
 						real_name = random_unique_name(gender)
 						save_character()
+					if(user.client?.prefs) //custom emote panel is attached to the character
+						var/list/payload = user.client.prefs.custom_emote_panel
+						user.client.tgui_panel?.window.send_message("emotes/setList", payload)
 
 				if("tab")
 					if(href_list["tab"])
@@ -4198,8 +4249,8 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					var/static/link_regex = regex("https://i.gyazo.com|https://static1.e621.net") //Do not touch the damn duplicates.
 					var/static/end_regex = regex(".jpg|.jpg|.png|.jpeg|.jpeg") //Regex is terrible, don't touch the duplicate extensions
 
-					if(!findtext(usr_input, link_regex, 1, 29))
-						to_chat(usr, span_warning("The link needs to be an unshortened Gyazo, E621, or Discordapp link!"))
+					if(!findtext(usr_input, link_regex))
+						to_chat(usr, span_warning("You need a valid link!"))
 						return
 					if(!findtext(usr_input, end_regex))
 						to_chat(usr, span_warning("You need either \".png\", \".jpg\", or \".jpeg\" in the link!"))
@@ -4244,8 +4295,9 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if("import_slot")
 					var/savefile/S = new(user.client.Import())
 					if(istype(S, /savefile))
-						if(load_character(provided = S) == TRUE)
+						if(load_character(provided = S))
 							tgui_alert_async(user, "Successfully loaded character slot.")
+							save_character(TRUE)
 						else
 							tgui_alert_async(user, "Failed loading character slot")
 							return
@@ -4257,7 +4309,75 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					user.client.clear_export()
 					tgui_alert_async(user, "Local save data erased.")
 
+				if("give_slot")
+					if(!QDELETED(offer))
+						var/datum/character_offer_instance/offer_datum = LAZYACCESS(GLOB.character_offers, offer.redemption_code)
+						if(!offer_datum)
+							return
+						qdel(offer_datum)
+					else
+						var/savefile/S = save_character(export = TRUE)
+						if(istype(S, /savefile))
+							var/datum/character_offer_instance/offer_datum = new(usr.ckey, S)
+							if(QDELETED(offer_datum))
+								tgui_alert_async(usr, "Could not set up offer, try again later")
+								return
+							offer_datum.RegisterSignal(usr, COMSIG_MOB_CLIENT_LOGOUT, TYPE_PROC_REF(/datum/character_offer_instance, on_quit))
+							offer = offer_datum
+							tgui_alert_async(usr, "The redemption code is [offer_datum.redemption_code], give it to the receiver")
+
+				if("retrieve_slot")
+					if(!LAZYLEN(GLOB.character_offers))
+						tgui_alert_async(usr, "There are no active offers")
+						return
+					var/retrieve_code = input(usr, "Input the 5 digit redemption code") as text|null
+					if(!retrieve_code)
+						return
+					if(!text2num(retrieve_code))
+						tgui_alert_async(usr, "Only numbers allowed")
+						return
+					if(length(retrieve_code) != 5)
+						tgui_alert_async(usr, "Exactly 5 digits, no less, no more, try again")
+						return
+					var/datum/character_offer_instance/offer_datum = LAZYACCESS(GLOB.character_offers, retrieve_code)
+					if(!offer_datum)
+						tgui_alert_async(usr, "This is an invalid code!")
+						return
+					if(offer == offer_datum)
+						tgui_alert_async(usr, "You cannot accept your own offer")
+						return
+					var/savefile/savefile = offer_datum.character_savefile
+					var/mob/living/the_owner = get_mob_by_ckey(offer_datum.owner_ckey)
+					if(savefile_needs_update(savefile) == -2)
+						tgui_alert_async(usr, "Something's wrong, this savefile is corrupted.")
+						to_chat(the_owner, span_boldwarning("Something went wrong with the trade, it's been canceled."))
+						qdel(offer_datum)
+						return
+					var/character_name = savefile["real_name"]
+					if(alert(usr, "You are overwriting the currently selected slot with the character [character_name]", "Are you sure?", "Yes, load this character deleting the currently selected slot", "No") == "No")
+						return
+					if(QDELETED(offer_datum))
+						tgui_alert_async(usr, "This character is no longer available, such a shame!")
+						return
+					to_chat(the_owner, span_boldwarning("[usr.key] has retrieved your character, [character_name]!"))
+					if(!load_character(provided = savefile))
+						tgui_alert_async(usr, "Something went wrong loading the savefile, even though it has already been checked, please report this issue!")
+						to_chat(the_owner, span_boldwarning("Something went wrong at the final step of the trade, report this."))
+						qdel(offer_datum)
+						return
+					tgui_alert_async(usr, "Successfully received [character_name]!")
+					save_character(TRUE)
+					qdel(offer_datum)
+
 	if(href_list["preference"] == "gear")
+		if(href_list["select_slot"])
+			var/chosen = text2num(href_list["select_slot"])
+			if(!chosen)
+				return
+			chosen = floor(chosen)
+			if(chosen > MAXIMUM_LOADOUT_SAVES || chosen < 1)
+				return
+			loadout_slot = chosen
 		if(href_list["clear_loadout"])
 			loadout_data["SAVE_[loadout_slot]"] = list()
 			save_preferences()
@@ -4387,7 +4507,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					user_gear["loadout_custom_tagname"] = new_tagname
 
 	ShowChoices(user)
-	return 1
+	return TRUE
 
 /datum/preferences/proc/copy_to(mob/living/carbon/human/character, icon_updates = 1, roundstart_checks = TRUE, initial_spawn = FALSE)
 	if(be_random_name)
@@ -4415,7 +4535,6 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.nameless = nameless
 	character.custom_species = custom_species
 
-	character.dna.species.exotic_blood_color = blood_color
 	character.gender = gender
 	character.age = age
 
@@ -4468,11 +4587,19 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.real_name = character.real_name
 	character.dna.nameless = character.nameless
 	// BLUEMOON EDIT START - привязка флавора и лора кастомных рас к ДНК
-	character.dna.custom_species = custom_species
+	character.dna.custom_species = character.custom_species
 	character.dna.custom_species_lore = features["custom_species_lore"]
 	character.dna.flavor_text = features["flavor_text"]
 	character.dna.naked_flavor_text = features["naked_flavor_text"]
-	character.dna.headshot_link = features["headshot_link"]
+	if (features["headshot_link"])
+		character.dna.headshot_links.Add(features["headshot_link"])
+	if (features["headshot_link1"])
+		character.dna.headshot_links.Add(features["headshot_link1"])
+	if (features["headshot_link2"])
+		character.dna.headshot_links.Add(features["headshot_link2"])
+	character.dna.ooc_notes = features["ooc_notes"]
+	if(custom_blood_color)
+		character.dna.species.exotic_blood_color = blood_color //а раньше эта строчка была немного выше и всё ломалось, думайте, когда делаете врезки
 	// BLUEMOON EDIT END
 
 	var/old_size = RESIZE_DEFAULT_SIZE

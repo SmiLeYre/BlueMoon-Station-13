@@ -1,7 +1,8 @@
 /obj/item/seeds/rose
 	name = "pack of rose seeds"
 	desc = "These seeds grow into roses."
-	icon_state = "seed-rose"
+	icon = 'modular_bluemoon/icons/obj/hydroponics/seeds.dmi'
+	icon_state = "seed-redrose"
 	species = "rose"
 	plantname = "Rose Bush"
 	product = /obj/item/grown/rose
@@ -31,7 +32,8 @@
 /obj/item/seeds/carbon_rose
 	name = "pack of carbon rose seeds"
 	desc = "These seeds grow into carbon roses."
-	icon_state = "seed-carbonrose"
+	icon = 'modular_bluemoon/icons/obj/hydroponics/seeds.dmi'
+	icon_state = "seed-whiterose"
 	species = "carbonrose"
 	plantname = "Carbon Rose Flower"
 	product = /obj/item/grown/carbon_rose
@@ -45,8 +47,6 @@
 	mutatelist = list(/obj/item/seeds/carbon_rose)
 	reagents_add = list(/datum/reagent/plastic_polymers = 0.05)
 	rarity = 10
-
-
 
 /obj/item/grown/carbon_rose
 	seed = /obj/item/seeds/carbon_rose

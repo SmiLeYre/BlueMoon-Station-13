@@ -45,6 +45,23 @@ Stabilized extracts:
 		S.linked_extract = src
 		STOP_PROCESSING(SSobj,src)
 
+/// Returns the mob that is currently holding us if we are either in their inventory or a backpack analogue.
+/// Returns null if it's in an invalid location, so that we can check explicitly for null later.
+/obj/item/slimecross/stabilized/proc/get_held_mob()
+	if(isnull(loc))
+		return null
+	if(isliving(loc))
+		return loc
+	// Snowflake check for modsuit backpacks, which should be valid but are 3 rather than 2 steps from the owner
+	if(istype(loc, /obj/item/mod/module/storage))
+		var/obj/item/mod/module/storage/mod_backpack = loc
+		var/mob/living/modsuit_wearer = mod_backpack.mod?.wearer
+		return modsuit_wearer ? modsuit_wearer : null
+	var/nested_loc = loc.loc
+	if (isliving(nested_loc))
+		return nested_loc
+	return null
+
 //Colors and subtypes:
 /obj/item/slimecross/stabilized/grey
 	colour = "grey"

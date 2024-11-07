@@ -311,7 +311,7 @@
 		soundloop.start()
 		wash_turf()
 		for(var/atom/movable/G in loc)
-			SEND_SIGNAL(G, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
+//			SEND_SIGNAL(G, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK) // BLUEMOON REMOVAL - убираем дубликат сигнала помывки
 			if(isliving(G))
 				var/mob/living/L = G
 				wash_mob(L)
@@ -354,10 +354,10 @@
 	// If there was already mist, and the shower was turned off (or made cold): remove the existing mist in 25 sec
 	var/obj/effect/mist/mist = locate() in loc
 	if(!mist && on && watertemp != "freezing")
-		addtimer(CALLBACK(src, .proc/make_mist), 5 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(make_mist)), 5 SECONDS)
 
 	if(mist && (!on || watertemp == "freezing"))
-		addtimer(CALLBACK(src, .proc/clear_mist), 25 SECONDS)
+		addtimer(CALLBACK(src, PROC_REF(clear_mist)), 25 SECONDS)
 
 /obj/machinery/shower/proc/make_mist()
 	var/obj/effect/mist/mist = locate() in loc
@@ -368,7 +368,7 @@
 	var/obj/effect/mist/mist = locate() in loc
 	if(mist && (!on || watertemp == "freezing"))
 		qdel(mist)
-
+/* BLUEMOON REMOVAL START - чтобы корректно работало мытьё персонажа, убираем абуз через частый заход в душ
 /obj/machinery/shower/Crossed(atom/movable/AM)
 	..()
 	if(on)
@@ -379,7 +379,7 @@
 				C.slip(80,null,NO_SLIP_WHEN_WALKING)
 		else if(isobj(AM))
 			wash_obj(AM)
-
+/ BLUEMOON REMOVAL END */
 /obj/machinery/shower/proc/wash_obj(obj/O)
 	if(!O)
 		return
@@ -456,7 +456,7 @@
 			//
 			if(washgloves)
 				H.clean_blood()
-				SEND_SIGNAL(H, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
+//				SEND_SIGNAL(H, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK) // BLUEMOON REMOVAL - убираем дубликат сигнала помывки
 			if(H.shoes && washshoes && wash_obj(H.shoes))
 				H.update_inv_shoes()
 			if(H.wear_mask && washmask && wash_obj(H.wear_mask))
@@ -477,10 +477,10 @@
 			if(M.wear_mask && wash_obj(M.wear_mask))
 				M.update_inv_wear_mask(0)
 			M.clean_blood()
-			SEND_SIGNAL(M, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
+//			SEND_SIGNAL(M, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK) // BLUEMOON REMOVAL - убираем дубликат сигнала помывки
 	else
 		L.clean_blood()
-		SEND_SIGNAL(L, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
+//		SEND_SIGNAL(L, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK) // BLUEMOON REMOVAL - убираем дубликат сигнала помывки
 
 /obj/machinery/shower/proc/contamination_cleanse(atom/movable/thing)
 	var/datum/component/radioactive/healthy_green_glow = thing.GetComponent(/datum/component/radioactive)
@@ -663,7 +663,7 @@
 		busy = TRUE
 		if(!do_after(user, 4 SECONDS, src))
 			busy = FALSE
-			return 1
+			return TRUE
 		busy = FALSE
 		SEND_SIGNAL(O, COMSIG_COMPONENT_CLEAN_ACT, CLEAN_WEAK)
 		O.clean_blood()
@@ -676,7 +676,7 @@
 		reagents.reaction(O, TOUCH)
 		user.visible_message("<span class='notice'>[user] washes [O] using [src].</span>", \
 							"<span class='notice'>You wash [O] using [src].</span>")
-		return 1
+		return TRUE
 	else
 		return ..()
 

@@ -5,8 +5,8 @@
 	item_state = "techpriest"
 	body_parts_covered = CHEST|GROIN|LEGS|ARMS
 	hoodtype = /obj/item/clothing/head/hooded/techpriest
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-	taur_mob_worn_overlay = 'modular_sand/icons/mob/suits_taur.dmi'
+	flags_inv = HIDETAUR //bluemood add
+	mutantrace_variation = STYLE_ALL_TAURIC //bluemood add
 
 /obj/item/clothing/head/hooded/techpriest
 	name = "techpriest's hood"

@@ -19,7 +19,7 @@
 /obj/effect/countdown/Initialize(mapload)
 	. = ..()
 	attach(loc)
-	RegisterSignal(loc, COMSIG_PARENT_QDELETING, .proc/on_parent_deleting)
+	RegisterSignal(loc, COMSIG_PARENT_QDELETING, PROC_REF(on_parent_deleting))
 
 /obj/effect/countdown/proc/on_parent_deleting(atom/being_deleted, force)
 	qdel(src)
@@ -172,3 +172,15 @@
 
 /obj/effect/countdown/singularity_act()
 	return
+
+/obj/effect/countdown/flower_bud
+	name = "flower bud countdown"
+
+/obj/effect/countdown/flower_bud/get_value()
+	var/obj/structure/alien/resin/flower_bud/bud = attached_to
+	if(!istype(bud))
+		return
+	if(!bud.finish_time)
+		return -1
+	var/time_left = max(0, (bud.finish_time - world.time) / 10)
+	return time_left

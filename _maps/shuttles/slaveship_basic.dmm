@@ -106,7 +106,7 @@
 	dwidth = 10;
 	height = 15;
 	hidden = 1;
-	id = "slaver";
+	shuttle_id = "slaver";
 	movement_force = list("KNOCKDOWN" = 0, "THROW" = 0);
 	name = "slaveship";
 	port_direction = 4;

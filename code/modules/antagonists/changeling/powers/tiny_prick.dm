@@ -1,6 +1,7 @@
 /datum/action/changeling/sting//parent path, not meant for users afaik
 	name = "Tiny Prick"
 	desc = "Stabby stabby"
+	gamemode_restriction_type = ANTAG_DYNAMIC
 	var/sting_icon = null
 
 /datum/action/changeling/sting/Trigger()
@@ -58,7 +59,7 @@
 	if(target.mind && target.mind.has_antag_datum(/datum/antagonist/changeling))
 		sting_feedback(user, target)
 		changeling.chem_charges -= chemical_cost
-	return 1
+	return TRUE
 
 /datum/action/changeling/sting/sting_feedback(mob/user, mob/target)
 	if(!target)
@@ -66,7 +67,7 @@
 	to_chat(user, "<span class='notice'>We stealthily sting [target.name].</span>")
 	if(target.mind && target.mind.has_antag_datum(/datum/antagonist/changeling))
 		to_chat(target, "<span class='warning'>You feel a tiny prick.</span>")
-	return 1
+	return TRUE
 
 
 /datum/action/changeling/sting/transformation
@@ -99,8 +100,8 @@
 		return
 	if((HAS_TRAIT(target, TRAIT_HUSK)) || !iscarbon(target) || (NOTRANSSTING in target.dna.species.species_traits))
 		to_chat(user, "<span class='warning'>Our sting appears ineffective against its DNA.</span>")
-		return 0
-	return 1
+		return FALSE
+	return TRUE
 
 /datum/action/changeling/sting/transformation/sting_action(mob/user, mob/target)
 	if(ismonkey(target))
@@ -138,8 +139,8 @@
 		var/mob/living/L = target
 		if((HAS_TRAIT(L, TRAIT_HUSK)) || !L.has_dna())
 			to_chat(user, "<span class='warning'>Our sting appears ineffective against its DNA.</span>")
-			return 0
-	return 1
+			return FALSE
+	return TRUE
 
 /datum/action/changeling/sting/false_armblade/sting_action(mob/user, mob/target)
 	log_combat(user, target, "stung", object="false armblade sting")
@@ -157,7 +158,7 @@
 	target.visible_message("<span class='warning'>A grotesque blade forms around [target.name]\'s arm!</span>", "<span class='userdanger'>Your arm twists and mutates, transforming into a horrific monstrosity!</span>", "<span class='italics'>You hear organic matter ripping and tearing!</span>")
 	playsound(target, 'sound/effects/blobattack.ogg', 30, 1)
 
-	addtimer(CALLBACK(src, .proc/remove_fake, target, blade), 600)
+	addtimer(CALLBACK(src, PROC_REF(remove_fake), target, blade), 600)
 	return TRUE
 
 /datum/action/changeling/sting/false_armblade/proc/remove_fake(mob/target, obj/item/melee/arm_blade/false/blade)
@@ -178,6 +179,7 @@
 	sting_icon = "sting_extract"
 	chemical_cost = 25
 	dna_cost = 0
+	gamemode_restriction_type = ANTAG_EXTENDED|ANTAG_DYNAMIC
 
 /datum/action/changeling/sting/extract_dna/can_sting(mob/user, mob/target)
 	if(..())
@@ -200,6 +202,7 @@
 	chemical_cost = 20
 	dna_cost = 2
 	loudness = 2
+	gamemode_restriction_type = ANTAG_EXTENDED|ANTAG_DYNAMIC
 
 /datum/action/changeling/sting/mute/sting_action(mob/user, mob/living/carbon/target)
 	log_combat(user, target, "stung", "mute sting")
@@ -215,6 +218,7 @@
 	chemical_cost = 25
 	dna_cost = 1
 	loudness = 1
+	gamemode_restriction_type = ANTAG_EXTENDED|ANTAG_DYNAMIC
 
 /datum/action/changeling/sting/blind/sting_action(mob/user, mob/living/carbon/target)
 	log_combat(user, target, "stung", "blind sting")
@@ -233,6 +237,7 @@
 	chemical_cost = 10
 	dna_cost = 1
 	loudness = 1
+	gamemode_restriction_type = ANTAG_EXTENDED|ANTAG_DYNAMIC
 
 /datum/action/changeling/sting/LSD/sting_action(mob/user, mob/target)
 	log_combat(user, target, "stung", "LSD sting")

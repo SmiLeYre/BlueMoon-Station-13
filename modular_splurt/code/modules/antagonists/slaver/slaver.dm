@@ -15,6 +15,7 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 	"Research Director" 		= 120000,
 	"Chief Medical Officer" 	= 120000,
 	"Blueshield" 				= 100000,
+	"Bridge Officer" 			= 80000,
 
 	"Warden" 					= 80000,
 	"Brig Physician" 			= 40000,
@@ -33,7 +34,7 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 	"Clown"						= SLAVER_STANDARD_RANSOM,
 	"Mime"						= SLAVER_STANDARD_RANSOM,
 	"Curator"					= SLAVER_STANDARD_RANSOM,
-	"Lawyer"					= SLAVER_STANDARD_RANSOM,
+	"Internal Affairs Agent"	= SLAVER_STANDARD_RANSOM,
 	"Chaplain"					= SLAVER_STANDARD_RANSOM,
 	"Station Engineer"			= SLAVER_STANDARD_RANSOM,
 	"Atmospheric Technician"	= SLAVER_STANDARD_RANSOM,
@@ -47,7 +48,6 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 	"Prisoner"					= SLAVER_STANDARD_RANSOM,
 	"Stowaway"					= SLAVER_STANDARD_RANSOM,
 	"Curator"					= SLAVER_STANDARD_RANSOM,
-	"Lawyer"					= SLAVER_STANDARD_RANSOM,
 	"Chaplain"					= SLAVER_STANDARD_RANSOM,
 	"Bouncer"					= SLAVER_STANDARD_RANSOM,
 ))
@@ -149,7 +149,7 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 
 /datum/antagonist/slaver/get_admin_commands()
 	. = ..()
-	.["Send to base"] = CALLBACK(src,.proc/admin_send_to_base)
+	.["Send to base"] = CALLBACK(src,PROC_REF(admin_send_to_base))
 
 /datum/antagonist/slaver/proc/admin_send_to_base(mob/admin)
 	owner.current.forceMove(pick(GLOB.slaver_start))
@@ -168,7 +168,7 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 	if(istype(H))
 		H.set_antag_target_indicator() // Hide consent of this player, they are an antag and can't be a target
 
-	addtimer(CALLBACK(src, .proc/slavers_name_assign), 1)
+	addtimer(CALLBACK(src, PROC_REF(slavers_name_assign)), 1)
 
 /datum/antagonist/slaver/proc/spawnText()
 	to_chat(owner, "<br><B>You are tasked with infiltrating the station and kidnapping members of the crew. Once brought back to the hideout, they can be collared and priced using the console.</B>")
@@ -240,6 +240,6 @@ GLOBAL_LIST_INIT(slavers_ransom_values, list(
 
 /obj/item/clothing/glasses/hud/slaver
 	name = "Raper Sunglasses"
-	desc = "Солнцезащитные очки тёмного цвета, дающие способность увидеть, подвергался ли определённый сотрудник сексуальному насилию ранее и каковой была его реакция."
+	desc = "Солнцезащитные очки тёмного цвета, дающие способность увидеть, желает ли член экипажа подвергнуться сексуальному насилию."
 	icon_state = "bigsunglasses"
 	hud_type = DATA_HUD_ANTAGTARGET

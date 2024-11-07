@@ -53,6 +53,18 @@
 					/obj/item/reagent_containers/blood/oilblood)
 	crate_name = "hydraulic fluid crate"
 	crate_type = /obj/structure/closet/crate
+
+/datum/supply_pack/medical/oilblood_deluxe
+	name = "Super-Pressurized Hydraulic Fluid Crate"
+	desc = "Содержит пять ёмкостей с инновационной гидравлической жидкостью, способной усваиваться гораздо быстрее и в большем объёме."
+	cost = 4000
+	contains = list(/obj/item/reagent_containers/glass/bottle/synthblood_deluxe,
+					/obj/item/reagent_containers/glass/bottle/synthblood_deluxe,
+					/obj/item/reagent_containers/glass/bottle/synthblood_deluxe,
+					/obj/item/reagent_containers/glass/bottle/synthblood_deluxe,
+					/obj/item/reagent_containers/glass/bottle/synthblood_deluxe)
+	crate_name = "deluxe hydraulic fluid crate"
+	crate_type = /obj/structure/closet/crate
 // BLUEMOON ADD END
 
 /datum/supply_pack/medical/chemical
@@ -247,8 +259,8 @@
 	name = "Medipen Variety-Pak"
 	desc = "Содержит восемь различных медикаментов в трех различных вариантах, чтобы помочь в быстром лечении пациентов с серьезными травмами."
 	cost = 2000
-	contains = list(/obj/item/reagent_containers/hypospray/medipen/,
-					/obj/item/reagent_containers/hypospray/medipen/,
+	contains = list(/obj/item/reagent_containers/hypospray/medipen,
+					/obj/item/reagent_containers/hypospray/medipen,
 					/obj/item/reagent_containers/hypospray/medipen/ekit,
 					/obj/item/reagent_containers/hypospray/medipen/ekit,
 					/obj/item/reagent_containers/hypospray/medipen/ekit,
@@ -258,9 +270,9 @@
 	crate_name = "medipen crate"
 
 /datum/supply_pack/medical/medbeamgun
-	name = "Two Medbeam Guns"
-	desc = "Содержит два медицинского орудия для лечения при помощи лечебных нанитов."
-	cost = 50000
-	contains = list(/obj/item/gun/medbeam,
-					/obj/item/gun/medbeam)
-	crate_name = "Medbeam Guns Crate"
+	name = "Two Civilian Medbeam Guns"
+	desc = "Содержит одну слабую версию медицинского орудия, которое хорошо подходит для стабилизации пациентов в критическом состоянии."
+	cost = 25000
+	contains = list(/obj/item/gun/medbeam/weak,
+					/obj/item/gun/medbeam/weak)
+	crate_name = "Two Civilian Medbeam Guns Crate"

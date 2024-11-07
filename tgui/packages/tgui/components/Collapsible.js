@@ -5,6 +5,7 @@
  */
 
 import { Component } from 'inferno';
+
 import { Box } from './Box';
 import { Button } from './Button';
 
@@ -25,10 +26,11 @@ export class Collapsible extends Component {
       color = 'default',
       title,
       buttons,
+      marginBottom = 1,
       ...rest
     } = props;
     return (
-      <Box mb={1}>
+      <Box mb={marginBottom}>
         <div className="Table">
           <div className="Table__cell">
             <Button

@@ -1,3 +1,4 @@
+/* BLUEMOON CHANGE полное переписывание этого чудовища (modular_bluemoon\code\datums\dna.dm)
 /datum/dna
 	var/last_capped_size //For some reason this feels dirty... I suppose it should go somewhere else
 
@@ -105,6 +106,7 @@
 	#undef MINIMAL_SIZE_HEALTH
 	// BLUEMOON ADDITION END
 
+*/
 #define TRANSFER_RANDOMIZED(destination, source1, source2) \
 	if(prob(50)) { \
 		destination = source1; \

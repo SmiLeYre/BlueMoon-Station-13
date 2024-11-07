@@ -14,7 +14,7 @@
 	max_integrity = 250
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 100, RAD = 100, FIRE = 80, ACID = 10)
 	circuit = /obj/item/circuitboard/machine/space_heater
-	var/obj/item/stock_parts/cell/cell
+	var/obj/item/stock_parts/cell/cell = /obj/item/stock_parts/cell
 	var/on = FALSE
 	var/mode = HEATER_MODE_STANDBY
 	var/setMode = "auto" // Anything other than "heat" or "cool" is considered auto.
@@ -30,7 +30,8 @@
 
 /obj/machinery/space_heater/Initialize(mapload)
 	. = ..()
-	cell = new(src)
+	if(ispath(cell))
+		cell = new cell(src)
 	update_icon()
 
 /obj/machinery/space_heater/on_construction()
@@ -40,10 +41,15 @@
 	update_icon()
 	return ..()
 
+/obj/machinery/space_heater/Destroy()
+	SSair.stop_processing_machine(src)
+	return..()
+
 /obj/machinery/space_heater/on_deconstruction()
 	if(cell)
-		component_parts += cell
+		LAZYADD(component_parts, cell)
 		cell = null
+	SSair.stop_processing_machine(src)
 	return ..()
 
 /obj/machinery/space_heater/examine(mob/user)
@@ -54,7 +60,7 @@
 	else
 		. += "There is no power cell installed."
 	if(in_range(user, src) || isobserver(user))
-		. += "<span class='notice'>The status display reads: Temperature range at <b>[settableTemperatureRange]°C</b>.<br>Heating power at <b>[heatingPower*0.001]kJ</b>.<br>Power consumption at <b>[(efficiency*-0.0025)+150]%</b>.<span>" //100%, 75%, 50%, 25%
+		. += "<span class='notice'>The status display reads: Temperature range at <b>[settableTemperatureRange]°C</b>.<br>Heating power at <b>[heatingPower*0.001]kJ</b>.<br>Power consumption at <b>[(100/(1/30000))*(1/efficiency)]%</b>.<span>" //initial efficiency is actually 30.000 due to RefreshParts()
 
 /obj/machinery/space_heater/update_icon_state()
 	if(on)
@@ -68,26 +74,18 @@
 		. += "sheater-open"
 
 /obj/machinery/space_heater/process_atmos()
-	if(!on || !is_operational())
+	if(!on || !is_operational() || QDELETED(cell) || cell.charge <= 1)
 		if (on) // If it's broken, turn it off too
 			on = FALSE
+			update_icon()
 		return PROCESS_KILL
 
-	if(cell && cell.charge > 1 / efficiency)
-		var/turf/L = loc
-		PerformHeating(L)
-
-		for(var/direction in GLOB.alldirs)
-			L=get_step(src,direction)
-			if(!locate(/turf/closed) in L) // we don't want to heat walls and cause jank
-				PerformHeating(L)
-
-	else
+	if(!cell || cell.charge <= 1)
 		on = FALSE
 		update_icon()
 		return PROCESS_KILL
 
-/obj/machinery/space_heater/proc/PerformHeating(turf/L)
+	var/turf/L = loc
 	if(!istype(L))
 		if(mode != HEATER_MODE_STANDBY)
 			mode = HEATER_MODE_STANDBY
@@ -113,17 +111,19 @@
 	var/requiredPower = abs(env.return_temperature() - targetTemperature) * heat_capacity
 	requiredPower = min(requiredPower, heatingPower)
 
-	if(requiredPower < 1 || !cell.use(requiredPower / efficiency))
-		on = FALSE
-		update_icon()
+	if(requiredPower < 1)
 		return
 
 	var/deltaTemperature = requiredPower / heat_capacity
 	if(mode == HEATER_MODE_COOL)
 		deltaTemperature *= -1
+
 	if(deltaTemperature)
-		env.set_temperature(env.return_temperature() + deltaTemperature)
-		air_update_turf()
+		for(var/turf/open/turf in ((L.atmos_adjacent_turfs || list()) + L))
+			var/datum/gas_mixture/turf_gasmix = turf.return_air()
+			turf_gasmix.set_temperature(env.return_temperature() + deltaTemperature)
+			air_update_turf(FALSE)
+	cell.use(requiredPower / efficiency)
 
 /obj/machinery/space_heater/RefreshParts()
 	var/laser = 2
@@ -144,7 +144,7 @@
 
 /obj/machinery/space_heater/emp_act(severity)
 	. = ..()
-	if(stat & (NOPOWER|BROKEN) || . & EMP_PROTECT_CONTENTS)
+	if(machine_stat & (NOPOWER|BROKEN) || . & EMP_PROTECT_CONTENTS)
 		return
 	if(cell)
 		cell.emp_act(severity)
@@ -213,16 +213,12 @@
 	return data
 
 /obj/machinery/space_heater/ui_act(action, params)
-	if(..())
+	. = ..()
+	if(.)
 		return
 	switch(action)
 		if("power")
-			on = !on
-			mode = HEATER_MODE_STANDBY
-			usr.visible_message("<span class='notice'>[usr] switches [on ? "on" : "off"] \the [src].</span>", "<span class='notice'>You switch [on ? "on" : "off"] \the [src].</span>")
-			update_icon()
-			if (on)
-				SSair.atmos_machinery += src
+			toggle_power()
 			. = TRUE
 		if("mode")
 			setMode = params["mode"]
@@ -243,6 +239,17 @@
 				cell.forceMove(drop_location())
 				cell = null
 				. = TRUE
+
+
+/obj/machinery/space_heater/proc/toggle_power()
+	on = !on
+	mode = HEATER_MODE_STANDBY
+	usr.visible_message("<span class='notice'>[usr] switches [on ? "on" : "off"] \the [src].</span>", "<span class='notice'>You switch [on ? "on" : "off"] \the [src].</span>")
+	update_appearance()
+	if(on)
+		SSair.start_processing_machine(src)
+	else
+		SSair.stop_processing_machine(src)
 
 #undef HEATER_MODE_STANDBY
 #undef HEATER_MODE_HEAT

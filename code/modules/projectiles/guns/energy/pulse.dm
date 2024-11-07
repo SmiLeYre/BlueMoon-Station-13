@@ -2,14 +2,14 @@
 	name = "\improper Pulse Rifle"
 	desc = "A heavy-duty, multifaceted energy rifle with three modes. Preferred by front-line combat personnel."
 	icon_state = "pulse"
-	item_state = null
+	item_state = "gun"
 	w_class = WEIGHT_CLASS_BULKY
 	force = 10
 	modifystate = TRUE
 	flags_1 =  CONDUCT_1
 	slot_flags = ITEM_SLOT_BACK
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse, /obj/item/ammo_casing/energy/electrode, /obj/item/ammo_casing/energy/laser)
-	cell_type = "/obj/item/stock_parts/cell/pulse"
+	ammo_type = list(/obj/item/ammo_casing/energy/laser, /obj/item/ammo_casing/energy/laser/pulse, /obj/item/ammo_casing/energy/laser/pulse/danger,  /obj/item/ammo_casing/energy/electrode)
+	cell_type = /obj/item/stock_parts/cell/pulse
 
 /obj/item/gun/energy/pulse/emp_act(severity)
 	return
@@ -42,7 +42,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	icon_state = "pulse_carbine"
 	item_state = null
-	cell_type = "/obj/item/stock_parts/cell/pulse/carbine"
+	cell_type = /obj/item/stock_parts/cell/pulse/carbine
 	can_flashlight = 1
 	flight_x_offset = 18
 	flight_y_offset = 12
@@ -57,7 +57,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	icon_state = "pulse_pistol"
 	item_state = "gun"
-	cell_type = "/obj/item/stock_parts/cell/pulse/pistol"
+	cell_type = /obj/item/stock_parts/cell/pulse/pistol
 
 /obj/item/gun/energy/pulse/pistol/loyalpin
 	pin = /obj/item/firing_pin/implant/mindshield
@@ -65,8 +65,8 @@
 /obj/item/gun/energy/pulse/destroyer
 	name = "\improper Pulse Destroyer"
 	desc = "A heavy-duty energy rifle built for pure destruction."
-	cell_type = "/obj/item/stock_parts/cell/infinite"
-	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse)
+	cell_type = /obj/item/stock_parts/cell/infinite
+	ammo_type = list(/obj/item/ammo_casing/energy/laser/pulse/danger)
 
 /obj/item/gun/energy/pulse/destroyer/attack_self(mob/living/user)
 	to_chat(user, "<span class='danger'>[src.name] has three settings, and they are all DESTROY.</span>")
@@ -81,4 +81,5 @@
 	desc = "A compact pulse core in a classic handgun frame for Nanotrasen officers. It's not the size of the gun, it's the size of the hole it puts through people."
 	icon_state = "m1911"
 	item_state = "gun"
-	cell_type = "/obj/item/stock_parts/cell/infinite"
+	cell_type = /obj/item/stock_parts/cell/infinite
+	modifystate = FALSE

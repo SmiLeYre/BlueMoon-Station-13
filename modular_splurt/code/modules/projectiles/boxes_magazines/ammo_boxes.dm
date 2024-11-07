@@ -65,6 +65,10 @@
 	ammo_type = /obj/item/ammo_casing/c22lr
 	max_ammo = 24
 
+/obj/item/ammo_box/c22lr/rubber
+	name = "ammo box (.22 Rubber)"
+	ammo_type = /obj/item/ammo_casing/c22lr/rubber
+
 /obj/item/ammo_box/c9mm/rubber
 	name = "ammo box (9mm Rubber)"
 	ammo_type = /obj/item/ammo_casing/c9mm/rubber
@@ -224,6 +228,34 @@
 	materials = list(/datum/material/iron = 30000)
 	build_path = /obj/item/ammo_box/c45/lethal
 	category = list("hacked", "Security")
+
+//BLUEMOON ADD
+/datum/design/e45/e45_extended
+	name = "Extended Enforcer magazine"
+	id = "c45lethal"
+	build_type = AUTOLATHE | NO_PUBLIC_LATHE
+	materials = list(/datum/material/iron = 17000)
+	build_path = /obj/item/ammo_box/magazine/e45/e45_extended
+	category = list("hacked", "Security")
+
+/datum/design/e45/e45_extended_empty
+	name = "Empty Extended Enforcer magazine"
+	id = "c45_empy_extended"
+	build_type = AUTOLATHE | NO_PUBLIC_LATHE
+	materials = list(/datum/material/iron = 1200)
+	build_path = /obj/item/ammo_box/magazine/e45/e45_extended/empty
+	category = list("hacked", "Security")
+
+/datum/design/e45/empty
+	name = "Empty Enforcer magazine"
+	id = "c45_empy"
+	build_type = AUTOLATHE | NO_PUBLIC_LATHE
+	materials = list(/datum/material/iron = 600)
+	build_path = /obj/item/ammo_box/magazine/e45/empty
+	category = list("hacked", "Security")
+
+//BLUEMOON ADD END
+
 
 /datum/design/c22
 	name = "Ammo Box (.22)"

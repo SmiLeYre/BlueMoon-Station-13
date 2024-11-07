@@ -2,6 +2,13 @@
 /mob/living/proc/run_armor_check(def_zone = null, attack_flag = MELEE, absorb_text = "Your armor absorbs the blow!", soften_text = "Your armor softens the blow!", armour_penetration, penetrated_text = "Your armor was penetrated!", silent=FALSE)
 	var/armor = getarmor(def_zone, attack_flag)
 
+	// BLUEMOON ADD START - characters_size_changes - броня хуже работает на персонажей большого размера
+	if(get_size(src) > 1)
+		if(attack_flag in list(MELEE, BULLET, LASER)) // было бы смешно, если бы защита от размера не работала бы от радиации, потому что вы порвали рад костюм . . .
+			if(!HAS_TRAIT(src, TRAIT_BLUEMOON_DEVOURER)) // у пожирателей уже дебаф к ХП, для них исключение
+				armor = max(0, armor * (2 - get_size(src))) // За каждый % увеличения размера, броня работает на % хуже. Вплоть до того, что персонажи с размером +200% не получают бонусов от брони. Сделано для компенсации факта, что от увеличения размера уже повышается ХП, которое сродни наличию брони
+	// BLUEMOON ADD END
+
 	if(silent)
 		return max(0, armor - armour_penetration)
 
@@ -20,15 +27,15 @@
 
 
 /mob/living/proc/getarmor(def_zone, type)
-	return 0
+	return FALSE
 
 //this returns the mob's protection against eye damage (number between -1 and 2) from bright lights
 /mob/living/proc/get_eye_protection()
-	return 0
+	return FALSE
 
 //this returns the mob's protection against ear damage (0:no protection; 1: some ear protection; 2: has no ears)
 /mob/living/proc/get_ear_protection()
-	return 0
+	return FALSE
 
 /mob/living/proc/is_mouth_covered(head_only = 0, mask_only = 0)
 	return FALSE
@@ -89,7 +96,7 @@
 	// BLUEMOON ADD START - больших и тяжёлых существ проблематично нормально оглушить
 	if(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))
 		if(P.damage_type == STAMINA)
-			totaldamage *= 0.5
+			totaldamage *= 0.75
 	// BLUEMOON ADD END
 
 	if(!P.nodamage)
@@ -103,7 +110,7 @@
 	return P.on_hit(src, final_percent, def_zone) ? BULLET_ACT_HIT : BULLET_ACT_BLOCK
 
 /mob/living/proc/check_projectile_dismemberment(obj/item/projectile/P, def_zone)
-	return 0
+	return FALSE
 
 /obj/item/proc/get_volume_by_throwforce_and_or_w_class()
 		if(throwforce && w_class)
@@ -111,12 +118,12 @@
 		else if(w_class)
 				return clamp(w_class * 8, 20, 100) // Multiply the item's weight class by 8, then clamp the value between 20 and 100
 		else
-				return 0
+				return FALSE
 
 /mob/living/hitby(atom/movable/AM, skipcatch, hitpush = TRUE, blocked = FALSE, datum/thrownthing/throwingdatum)
 	if(!isitem(AM))
 		// Filled with made up numbers for non-items.
-		if(mob_run_block(AM, 30, "\the [AM.name]", ATTACK_TYPE_PROJECTILE, 0, throwingdatum.thrower, throwingdatum.thrower.zone_selected, list()))
+		if(mob_run_block(AM, 30, "\the [AM.name]", ATTACK_TYPE_THROWN, 0, throwingdatum?.thrower, throwingdatum?.thrower?.zone_selected, list()))
 			hitpush = FALSE
 			skipcatch = TRUE
 			blocked = TRUE
@@ -125,16 +132,22 @@
 		return ..()
 
 	var/obj/item/thrown_item = AM
+	var/zone = ran_zone(BODY_ZONE_CHEST, 65)//Hits a random part of the body, geared towards the chest
 	if(thrown_item.thrownby == WEAKREF(src)) //No throwing stuff at yourself to trigger hit reactions
 		return ..()
 
-	if(mob_run_block(AM, thrown_item.throwforce, "\the [thrown_item.name]", ATTACK_TYPE_PROJECTILE, 0, throwingdatum.thrower, throwingdatum.thrower.zone_selected, list()))
-		hitpush = FALSE
-		skipcatch = TRUE
-		blocked = TRUE
+	if(throwingdatum.thrower)
+		if(mob_run_block(AM, thrown_item.throwforce, "\the [thrown_item.name]", ATTACK_TYPE_THROWN, 0, throwingdatum.thrower, throwingdatum.thrower.zone_selected, list()))
+			hitpush = FALSE
+			skipcatch = TRUE
+			blocked = TRUE
+	else
+		if(mob_run_block(AM, thrown_item.throwforce, "\the [thrown_item.name]", ATTACK_TYPE_THROWN, 0, throwingdatum.thrower, zone, list()))
+			hitpush = FALSE
+			skipcatch = TRUE
+			blocked = TRUE
 
-	var/zone = ran_zone(BODY_ZONE_CHEST, 65)//Hits a random part of the body, geared towards the chest
-	var/nosell_hit = SEND_SIGNAL(thrown_item, COMSIG_MOVABLE_IMPACT_ZONE, src, zone, blocked, throwingdatum) // TODO: find a better way to handle hitpush and skipcatch for humans
+	var/nosell_hit = SEND_SIGNAL(thrown_item, COMSIG_MOVABLE_IMPACT_ZONE, src, zone, throwingdatum, blocked, FALSE)
 	if(nosell_hit)
 		skipcatch = TRUE
 		hitpush = FALSE
@@ -209,11 +222,11 @@
 				if(GRAB_NECK)
 					log_combat(user, src, "attempted to strangle", addition="kill grab")
 			if(!do_mob(user, src, grab_upgrade_time))
-				return 0
+				return FALSE
 			if(!user.pulling || user.pulling != src || user.grab_state != old_grab_state || user.a_intent != INTENT_GRAB)
-				return 0
+				return FALSE
 			if(user.voremode && user.grab_state == GRAB_AGGRESSIVE)
-				return 0
+				return FALSE
 		user.setGrabState(user.grab_state + 1)
 		switch(user.grab_state)
 			if(GRAB_AGGRESSIVE)
@@ -247,7 +260,7 @@
 				if(!buckled && !density)
 					Move(user.loc)
 		user.set_pull_offsets(src, grab_state)
-		return 1
+		return TRUE
 
 /mob/living/on_attack_hand(mob/user, act_intent = user.a_intent, attackchain_flags)
 	..() //Ignoring parent return value here.
@@ -309,7 +322,7 @@
 		M.visible_message("<span class='notice'>\The [M] [M.friendly_verb_continuous] [src]!</span>",
 			"<span class='notice'>You [M.friendly_verb_simple] [src]!</span>", target = src,
 			target_message = "<span class='notice'>\The [M] [M.friendly_verb_continuous] you!</span>")
-		return 0
+		return FALSE
 	else
 		if(HAS_TRAIT(M, TRAIT_PACIFISM))
 			to_chat(M, "<span class='notice'>You don't want to hurt anyone!</span>")
@@ -317,7 +330,7 @@
 		var/damage = rand(M.melee_damage_lower, M.melee_damage_upper)
 		var/list/return_list = list()
 		if(mob_run_block(M, damage, "the [M.name]", ATTACK_TYPE_MELEE, M.armour_penetration, M, check_zone(M.zone_selected), return_list) & BLOCK_SUCCESS)
-			return 0
+			return FALSE
 		damage = block_calculate_resultant_damage(damage, return_list)
 		if(M.attack_sound)
 			playsound(src, M.attack_sound, 50, 1, 1)
@@ -425,7 +438,7 @@
 
 /mob/living/acid_act(acidpwr, acid_volume)
 	take_bodypart_damage(acidpwr * min(1, acid_volume * 0.1))
-	return 1
+	return TRUE
 
 ///As the name suggests, this should be called to apply electric shocks.
 /mob/living/proc/electrocute_act(shock_damage, source, siemens_coeff = 1, flags = NONE)
@@ -477,8 +490,8 @@
 		if((GLOB.cult_narsie.souls == GLOB.cult_narsie.soul_goal) && (GLOB.cult_narsie.resolved == FALSE))
 			GLOB.cult_narsie.resolved = TRUE
 			sound_to_playing_players('sound/machines/alarm.ogg')
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/cult_ending_helper, CULT_VICTORY_MASS_CONVERSION), 120)
-			addtimer(CALLBACK(GLOBAL_PROC, .proc/ending_helper), 270)
+			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper), CULT_VICTORY_MASS_CONVERSION), 120)
+			addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(ending_helper)), 270)
 	if(client)
 		makeNewConstruct(/mob/living/simple_animal/hostile/construct/harvester, src, cultoverride = TRUE)
 	else
@@ -519,13 +532,13 @@
 /mob/living/proc/flash_act(intensity = 1, override_blindness_check = 0, affect_silicon = 0, visual = 0, type = /atom/movable/screen/fullscreen/tiled/flash, override_protection = 0)
 	if((override_protection || get_eye_protection() < intensity) && (override_blindness_check || !(HAS_TRAIT(src, TRAIT_BLIND))))
 		overlay_fullscreen("flash", type)
-		addtimer(CALLBACK(src, .proc/clear_fullscreen, "flash", 25), 25)
+		addtimer(CALLBACK(src, PROC_REF(clear_fullscreen), "flash", 25), 25)
 		return TRUE
 	return FALSE
 
 //called when the mob receives a loud bang
 /mob/living/proc/soundbang_act()
-	return 0
+	return FALSE
 
 //to damage the clothes worn by a mob
 /mob/living/proc/damage_clothes(damage_amount, damage_type = BRUTE, damage_flag = 0, def_zone)

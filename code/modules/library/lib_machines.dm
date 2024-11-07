@@ -162,7 +162,10 @@ GLOBAL_LIST_INIT(library_section_names, list("Any", "Fiction", "Non-Fiction", "A
 		to_chat(user, "<span class='danger'>Nope.</span>")
 		return
 	add_fingerprint(user)
-	usr.set_machine(src)
+	interact(usr)
+
+/obj/machinery/libraryscanner/interact(mob/user)
+	. = ..()
 	var/dat = {"<meta charset="UTF-8"><HEAD><TITLE>Scanner Control Interface</TITLE></HEAD><BODY>\n"} // <META HTTP-EQUIV='Refresh' CONTENT='10'>
 	if(cache)
 		dat += "<FONT color=#005500>Data stored in memory.</FONT><BR>"
@@ -192,7 +195,7 @@ GLOBAL_LIST_INIT(library_section_names, list("Any", "Fiction", "Non-Fiction", "A
 		for(var/obj/item/book/B in contents)
 			B.loc = src.loc
 	src.add_fingerprint(usr)
-	src.updateUsrDialog()
+	src.interact(usr)
 	return
 
 
@@ -217,10 +220,13 @@ GLOBAL_LIST_INIT(library_section_names, list("Any", "Fiction", "Non-Fiction", "A
 		user.transferItemToLoc(P, src)
 		user.visible_message("[user] loads some paper into [src].", "You load some paper into [src].")
 		src.visible_message("[src] begins to hum as it warms up its printing drums.")
-		sleep(rand(200,400))
+		playsound(src, 'sound/effects/printer.ogg', 50, FALSE)
+		sleep(rand(50,150))
+		playsound(loc, 'sound/machines/synth_yes.ogg', 30 , TRUE)
 		src.visible_message("[src] whirs as it prints and binds a new book.")
 		var/obj/item/book/b = new(loc)
-		b.dat = P.default_raw_text
+		for(var/datum/paper_input/line in P.raw_text_inputs)
+			b.dat += line.to_raw_html() + "\n"
 		b.name = "Print Job #[rand(100, 999)]"
 		b.icon_state = "book[rand(1,16)]"
 		qdel(P)

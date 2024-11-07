@@ -103,8 +103,7 @@
 		CHECK_TICK
 	for(var/v in consoles_accessing)
 		var/obj/machinery/computer/rdconsole/V = v
-		V.rescan_views()
-		V.updateUsrDialog()
+		V.ui_update()
 
 /datum/techweb/proc/add_point_list(list/pointlist, income = TRUE)
 	if(income) // i DO NOT TRUST byond to optimize this way properly
@@ -156,6 +155,7 @@
 			CHECK_TICK
 			if(available_nodes[i] || researched_nodes[i] || visible_nodes[i])
 				receiver.hidden_nodes -= i		//We can see it so let them see it too.
+				receiver.update_node_status(SSresearch.techweb_node_by_id(i), autoupdate_consoles=FALSE)
 	for(var/i in researched_nodes)
 		CHECK_TICK
 		receiver.research_node_id(i, TRUE, FALSE)
@@ -337,8 +337,7 @@
 	if(autoupdate_consoles)
 		for(var/v in consoles_accessing)
 			var/obj/machinery/computer/rdconsole/V = v
-			V.rescan_views()
-			V.updateUsrDialog()
+			V.ui_update()
 
 //Laggy procs to do specific checks, just in case. Don't use them if you can just use the vars that already store all this!
 /datum/techweb/proc/designHasReqs(datum/design/D)

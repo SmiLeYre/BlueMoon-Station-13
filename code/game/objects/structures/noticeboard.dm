@@ -2,37 +2,27 @@
 
 /obj/structure/noticeboard
 	name = "notice board"
-	desc = "A board for pinning important notices upon."
-	icon = 'icons/obj/stationobjs.dmi'
-	icon_state = "nboard00"
-	plane = ABOVE_WALL_PLANE
+	desc = "A board for pinning important notices upon. It is made of the finest Spanish cork."
+	icon = 'icons/obj/wallmounts.dmi'
+	icon_state = "noticeboard"
 	density = FALSE
 	anchored = TRUE
-	max_integrity = 150
+	max_integrity = 100
 	/// Current number of a pinned notices
 	var/notices = 0
 
-/obj/structure/noticeboard/directional/north
-	dir = SOUTH
-	pixel_y = 32
-
-/obj/structure/noticeboard/directional/south
-	dir = NORTH
-	pixel_y = -32
-
-/obj/structure/noticeboard/directional/east
-	dir = WEST
-	pixel_x = 32
-
-/obj/structure/noticeboard/directional/west
-	dir = EAST
-	pixel_x = -32
-
-/obj/structure/noticeboard/Initialize(mapload)
+/obj/structure/noticeboard/Initialize(mapload, ndir, building)
 	. = ..()
 
-	if(!mapload)
-		return
+	if(building)
+		setDir(ndir)
+
+	var/static/list/tool_behaviors = list(
+		TOOL_WRENCH = list(
+			SCREENTIP_CONTEXT_LMB = list(INTENT_ANY = "Detach"),
+		)
+	)
+	AddElement(/datum/element/contextual_screentip_tools, tool_behaviors)
 
 	for(var/obj/item/I in loc)
 		if(notices >= MAX_NOTICES)
@@ -40,7 +30,7 @@
 		if(istype(I, /obj/item/paper))
 			I.forceMove(src)
 			notices++
-	icon_state = "nboard0[notices]"
+	update_appearance(UPDATE_ICON)
 
 //attaching papers!!
 /obj/structure/noticeboard/attackby(obj/item/O, mob/user, params)
@@ -52,12 +42,21 @@
 			if(!user.transferItemToLoc(O, src))
 				return
 			notices++
-			icon_state = "nboard0[notices]"
-			to_chat(user, span_notice("You pin the [O] to the noticeboard."))
+			update_appearance(UPDATE_ICON)
+			to_chat(user, span_notice("You pin the [O] to the [src]."))
 		else
-			to_chat(user, span_warning("The notice board is full!"))
+			to_chat(user, span_warning("There is no space left on the [src]!"))
+	else if(O.tool_behaviour == TOOL_WRENCH)
+		user.visible_message("<span class='notice'>[user] starts unsecuring [src]...</span>", "<span class='notice'>You start unsecuring [src]...</span>")
+		O.play_tool_sound(src)
+		if(O.use_tool(src, user, 80))
+			user.visible_message("<span class='notice'>[user] unsecures [src]!</span>", "<span class='notice'>You detach [src] from the wall.</span>")
+			playsound(src, 'sound/items/deconstruct.ogg', 50, 1)
+			deconstruct()
+		return
 	else
 		return ..()
+	return ..()
 
 /obj/structure/noticeboard/ui_state(mob/user)
 	return GLOB.physical_state
@@ -80,7 +79,7 @@
 		data["items"] += list(content_data)
 	return data
 
-/obj/structure/noticeboard/ui_act(action, params)
+/obj/structure/noticeboard/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
@@ -111,22 +110,53 @@
  * * item - The item that is to be removed
  * * user - The mob that is trying to get the item removed, if there is one
  */
+
 /obj/structure/noticeboard/proc/remove_item(obj/item/item, mob/user)
 	item.forceMove(drop_location())
 	if(user)
 		user.put_in_hands(item)
+		to_chat(user, span_notice("You tear the [item] off the [src]."))
 		balloon_alert(user, "removed from board")
 	notices--
-	icon_state = "nboard0[notices]"
+	update_appearance(UPDATE_ICON)
 
 /obj/structure/noticeboard/deconstruct(disassembled = TRUE)
-	if(!(flags_1 & NODECONSTRUCT_1))
-		new /obj/item/stack/sheet/metal (loc, 1)
+	if(!disassembled)
+		new /obj/item/stack/sheet/mineral/wood(loc, 2)
+	else
+		new /obj/item/wallframe/noticeboard(loc)
 	for(var/obj/item/content in contents)
 		remove_item(content)
 	qdel(src)
 
-// Notice boards for the heads of staff (plus the qm)
+/obj/item/wallframe/noticeboard
+	name = "notice board"
+	desc = "Right now it's more of a clipboard. Attach to a wall to use."
+	icon = 'icons/obj/wallframe.dmi'
+	icon_state = "noticeboard"
+	pixel_shift = -32
+	custom_materials = list(
+		/datum/material/wood = SHEET_MATERIAL_AMOUNT,
+	)
+	resistance_flags = FLAMMABLE
+	result_path = /obj/structure/noticeboard
+
+/obj/structure/noticeboard/update_overlays()
+	. = ..()
+	if(notices)
+		. += "notices_[notices]"
+
+/obj/structure/noticeboard/directional/north
+	pixel_y = 32
+
+/obj/structure/noticeboard/directional/south
+	pixel_y = -32
+
+/obj/structure/noticeboard/directional/east
+	pixel_x = 32
+
+/obj/structure/noticeboard/directional/west
+	pixel_x = -32
 
 /obj/structure/noticeboard/captain
 	name = "Captain's Notice Board"

@@ -22,6 +22,7 @@
 	var/disguise_icon_override = null
 	var/disguise_pixel_offset = null
 	var/disguise_dogborg = FALSE
+	var/disguise_drakerest = FALSE	//DarkSer request by Gardelin0
 	var/mob/listeningTo
 	var/list/signalCache = list( // list here all signals that should break the camouflage
 			COMSIG_PARENT_ATTACKBY,
@@ -136,7 +137,7 @@
 		"Clown" = image(icon = 'icons/mob/robots.dmi', icon_state = "clown"),
 		"Syndicate" = image(icon = 'icons/mob/robots.dmi', icon_state = "synd_sec")
 		))
-		var/module_selection = show_radial_menu(R, R , module_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+		var/module_selection = show_radial_menu(R, R , module_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 		if(!module_selection)
 			return FALSE
 
@@ -145,7 +146,7 @@
 				var/static/list/standard_icons = sort_list(list(
 					"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "robot")
 				))
-				var/borg_icon = show_radial_menu(R, R , standard_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+				var/borg_icon = show_radial_menu(R, R , standard_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 				if(!borg_icon)
 					return FALSE
 				switch(borg_icon)
@@ -173,7 +174,7 @@
 					wide.pixel_x = -16
 					med_icons[a] = wide
 				med_icons = sort_list(med_icons)
-				var/borg_icon = show_radial_menu(R, R , med_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+				var/borg_icon = show_radial_menu(R, R , med_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 				if(!borg_icon)
 					return FALSE
 				switch(borg_icon)
@@ -215,6 +216,7 @@
 						disguise_icon_override = 'modular_sand/icons/mob/cyborg/drakemech.dmi'
 						disguise_pixel_offset = -16
 						disguise_dogborg = TRUE
+						disguise_drakerest = TRUE
 					if("Fembot") // //Gardelin0 Addon
 						disguise = "fembot-medic"
 						disguise_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi'
@@ -245,7 +247,7 @@
 					wide.pixel_x = -16
 					engi_icons[a] = wide
 				engi_icons = sort_list(engi_icons)
-				var/borg_icon = show_radial_menu(R, R , engi_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+				var/borg_icon = show_radial_menu(R, R , engi_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 				if(!borg_icon)
 					return FALSE
 				switch(borg_icon)
@@ -296,6 +298,7 @@
 						disguise_icon_override = 'modular_sand/icons/mob/cyborg/drakemech.dmi'
 						disguise_pixel_offset = -16
 						disguise_dogborg = TRUE
+						disguise_drakerest = TRUE
 					if("Fembot") // //Gardelin0 Addon
 						disguise = "fembot-engineering"
 						disguise_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi'
@@ -322,7 +325,7 @@
 					wide.pixel_x = -16
 					sec_icons[a] = wide
 				sec_icons = sort_list(sec_icons)
-				var/borg_icon = show_radial_menu(R, R , sec_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+				var/borg_icon = show_radial_menu(R, R , sec_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 				if(!borg_icon)
 					return FALSE
 				switch(borg_icon)
@@ -372,6 +375,7 @@
 						disguise_icon_override = 'modular_sand/icons/mob/cyborg/drakemech.dmi'
 						disguise_pixel_offset = -16
 						disguise_dogborg = TRUE
+						disguise_drakerest = TRUE
 					if("Fembot") // //Gardelin0 Addon
 						disguise = "fembot-security"
 						disguise_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi'
@@ -405,7 +409,7 @@
 					wide.pixel_x = -16
 					service_icons[a] = wide
 				service_icons = sort_list(service_icons)
-				var/borg_icon = show_radial_menu(R, R , service_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+				var/borg_icon = show_radial_menu(R, R , service_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 				if(!borg_icon)
 					return FALSE
 				switch(borg_icon)
@@ -476,6 +480,7 @@
 						disguise_icon_override = 'modular_sand/icons/mob/cyborg/drakemech.dmi'
 						disguise_pixel_offset = -16
 						disguise_dogborg = TRUE
+						disguise_drakerest = TRUE
 					if("(Janitor) Fembot") // //Gardelin0 Addon
 						disguise = "fembot-janitor"
 						disguise_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi'
@@ -506,7 +511,7 @@
 					wide.pixel_x = -16
 					mining_icons[a] = wide
 				mining_icons = sort_list(mining_icons)
-				var/borg_icon = show_radial_menu(R, R , mining_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+				var/borg_icon = show_radial_menu(R, R , mining_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 				if(!borg_icon)
 					return FALSE
 				switch(borg_icon)
@@ -549,6 +554,7 @@
 						disguise_icon_override = 'modular_sand/icons/mob/cyborg/drakemech.dmi'
 						disguise_pixel_offset = -16
 						disguise_dogborg = TRUE
+						disguise_drakerest = TRUE
 					if("Fembot") // //Gardelin0 Addon
 						disguise = "fembot-miner"
 						disguise_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi'
@@ -566,7 +572,7 @@
 					"Fembot" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi', icon_state = "fembot-peace"), //Gardelin0 Addon
 					"Meka" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mekacargo") //Krashly Request
 				))
-				var/borg_icon = show_radial_menu(R, R , peace_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+				var/borg_icon = show_radial_menu(R, R , peace_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 				if(!borg_icon)
 					return FALSE
 				switch(borg_icon)
@@ -584,6 +590,7 @@
 						disguise_icon_override = 'modular_sand/icons/mob/cyborg/drakemech.dmi'
 						disguise_pixel_offset = -16
 						disguise_dogborg = TRUE
+						disguise_drakerest = TRUE
 					if("Fembot") // //Gardelin0 Addon
 						disguise = "fembot-peace"
 						disguise_icon_override = 'modular_bluemoon/Gardelin0/icons/mob/robots.dmi'
@@ -596,7 +603,7 @@
 				var/static/list/clown_icons = sort_list(list(
 					"Default" = image(icon = 'icons/mob/robots.dmi', icon_state = "clown")
 				))
-				var/borg_icon = show_radial_menu(R, R , clown_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+				var/borg_icon = show_radial_menu(R, R , clown_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 				if(!borg_icon)
 					return FALSE
 				switch(borg_icon)
@@ -613,7 +620,7 @@
 					"Meka Syndie" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mekasyndi"), //Krashly Request
 					"Meka Ninja" = image(icon = 'modular_bluemoon/Gardelin0/icons/mob/tallrobot.dmi', icon_state = "mekaninja") //Krashly Request
 				))
-				var/borg_icon = show_radial_menu(R, R , syndicatejack_icons, custom_check = CALLBACK(src, .proc/check_menu, R), radius = 42, require_near = TRUE)
+				var/borg_icon = show_radial_menu(R, R , syndicatejack_icons, custom_check = CALLBACK(src, PROC_REF(check_menu), R), radius = 42, require_near = TRUE)
 				if(!borg_icon)
 					return FALSE
 				switch(borg_icon)
@@ -688,6 +695,7 @@
 	user.module.cyborg_icon_override = disguise_icon_override
 	user.module.cyborg_pixel_offset = disguise_pixel_offset
 	user.module.dogborg = disguise_dogborg
+	user.module.drakerest = disguise_drakerest		//DarkSer request by Gardelin0
 	user.bubble_icon = "robot"
 	active = TRUE
 	user.update_icons()
@@ -696,7 +704,7 @@
 		return
 	if(listeningTo)
 		UnregisterSignal(listeningTo, signalCache)
-	RegisterSignal(user, signalCache, .proc/disrupt)
+	RegisterSignal(user, signalCache, PROC_REF(disrupt))
 	listeningTo = user
 
 /obj/item/borg_shapeshifter/proc/deactivate(mob/living/silicon/robot/user)
@@ -711,11 +719,13 @@
 	user.module.cyborg_icon_override = savedOverride
 	user.module.cyborg_pixel_offset = 0
 	user.module.dogborg = FALSE
+	user.module.drakerest = FALSE		//DarkSer request by Gardelin0
 	user.bubble_icon = savedBubbleIcon
 	active = FALSE
 	user.update_icons()
 	disguise_pixel_offset = 0
 	disguise_dogborg = FALSE
+	disguise_drakerest = FALSE		//DarkSer request by Gardelin0
 	src.user = user
 
 /obj/item/borg_shapeshifter/proc/disrupt(mob/living/silicon/robot/user)

@@ -36,20 +36,20 @@ GLOBAL_LIST_EMPTY(uplinks)
 		return COMPONENT_INCOMPATIBLE
 
 
-	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, .proc/OnAttackBy)
-	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, .proc/interact)
+	RegisterSignal(parent, COMSIG_PARENT_ATTACKBY, PROC_REF(OnAttackBy))
+	RegisterSignal(parent, COMSIG_ITEM_ATTACK_SELF, PROC_REF(interact))
 	if(istype(parent, /obj/item/implant))
-		RegisterSignal(parent, COMSIG_IMPLANT_ACTIVATED, .proc/implant_activation)
-		RegisterSignal(parent, COMSIG_IMPLANT_IMPLANTING, .proc/implanting)
-		RegisterSignal(parent, COMSIG_IMPLANT_OTHER, .proc/old_implant)
-		RegisterSignal(parent, COMSIG_IMPLANT_EXISTING_UPLINK, .proc/new_implant)
+		RegisterSignal(parent, COMSIG_IMPLANT_ACTIVATED, PROC_REF(implant_activation))
+		RegisterSignal(parent, COMSIG_IMPLANT_IMPLANTING, PROC_REF(implanting))
+		RegisterSignal(parent, COMSIG_IMPLANT_OTHER, PROC_REF(old_implant))
+		RegisterSignal(parent, COMSIG_IMPLANT_EXISTING_UPLINK, PROC_REF(new_implant))
 	else if(istype(parent, /obj/item/pda))
-		RegisterSignal(parent, COMSIG_PDA_CHANGE_RINGTONE, .proc/new_ringtone)
-		// RegisterSignal(parent, COMSIG_PDA_CHECK_DETONATE, .proc/check_detonate)
+		RegisterSignal(parent, COMSIG_PDA_CHANGE_RINGTONE, PROC_REF(new_ringtone))
+		// RegisterSignal(parent, COMSIG_PDA_CHECK_DETONATE, PROC_REF(check_detonate))
 	else if(istype(parent, /obj/item/radio))
-		RegisterSignal(parent, COMSIG_RADIO_NEW_FREQUENCY, .proc/new_frequency)
+		RegisterSignal(parent, COMSIG_RADIO_NEW_FREQUENCY, PROC_REF(new_frequency))
 	else if(istype(parent, /obj/item/pen))
-		RegisterSignal(parent, COMSIG_PEN_ROTATED, .proc/pen_rotation)
+		RegisterSignal(parent, COMSIG_PEN_ROTATED, PROC_REF(pen_rotation))
 
 	GLOB.uplinks |= src
 
@@ -145,7 +145,7 @@ GLOBAL_LIST_EMPTY(uplinks)
 	active = TRUE
 	update_items()
 	if(user)
-		INVOKE_ASYNC(src, .proc/ui_interact, user)
+		INVOKE_ASYNC(src, PROC_REF(ui_interact), user)
 	// an unlocked uplink blocks also opening the PDA or headset menu
 	return COMPONENT_NO_INTERACT
 
@@ -241,10 +241,9 @@ GLOBAL_LIST_EMPTY(uplinks)
 	if (!user || user.incapacitated())
 		return
 	if(U.hijack_only)
-		if(!(usr.mind.special_role == ROLE_OPERATIVE) || !(usr.mind.special_role == "nukie mid") || !(usr.mind.special_role == "Lone Operative"))//nukies get items that regular traitors only get with hijack. If a hijack-only item is not for nukies, then exclude it via the gamemode list.
-			if(!(locate(/datum/objective/hijack) in usr.mind.get_all_objectives()) || !(locate(/datum/objective/martyr) in usr.mind.get_all_objectives()))
-				to_chat(usr, "<span class='warning'>InteQ выдает этот чрезвычайно опасный предмет только агентам, получившим особо сложное задание.</span>")
-				return
+		if(!(user.mind?.has_antag_datum(/datum/antagonist/nukeop)) && !(user.mind?.has_objective(/datum/objective/hijack)) && !(user.mind?.has_objective(/datum/objective/martyr)))
+			to_chat(user, "<span class='warning'>InteQ выдает этот чрезвычайно опасный предмет только агентам, получившим особо сложное задание.</span>")
+			return
 
 	if(telecrystals < U.cost || U.limited_stock == 0)
 		return

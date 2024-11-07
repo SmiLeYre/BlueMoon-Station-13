@@ -96,7 +96,7 @@
 	. = ..()
 	if(swarming)
 		AddComponent(/datum/component/swarming) //oh god not the bees
-	addtimer(CALLBACK(src, .proc/death), 100)
+	addtimer(CALLBACK(src, PROC_REF(death)), 100)
 
 //Legion
 /mob/living/simple_animal/hostile/asteroid/hivelord/legion
@@ -198,18 +198,30 @@
 	swarming = TRUE
 	var/can_infest_dead = FALSE
 
-/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/BiologicalLife(delta_time, times_fired)
-	if(!(. = ..()))
+/mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/Life()
+	. = ..()
+	if(stat == DEAD || !isturf(loc))
 		return
-	if(isturf(loc))
-		for(var/mob/living/carbon/human/H in view(src,1)) //Only for corpse right next to/on same tile
-			if(H.stat == UNCONSCIOUS || (can_infest_dead && H.stat == DEAD))
-				infest(H)
+
+	for(var/mob/living/carbon/human/victim in viewers(1, src)) //Only for corpse right next to/on same tile
+		switch(victim.stat)
+			if(UNCONSCIOUS) //We don't have HARD_CRIT, works well anyway
+				infest(victim)
+				return //This will qdelete the legion.
+			if(DEAD)
+				if(can_infest_dead)
+					infest(victim)
+					return //This will qdelete the legion.
 
 /mob/living/simple_animal/hostile/asteroid/hivelordbrood/legion/proc/infest(mob/living/carbon/human/H)
 	visible_message("<span class='warning'>[name] burrows into the flesh of [H]!</span>")
-	var/mob/living/simple_animal/hostile/asteroid/hivelord/legion/L = check_infest_type(H)
-	visible_message("<span class='warning'>[L] staggers to [L.ru_ego()] feet!</span>")
+	var/mob/living/simple_animal/hostile/asteroid/hivelord/legion/L
+	if(H.dna.check_mutation(DWARFISM)) //dwarf legions aren't just fluff!
+		L = new /mob/living/simple_animal/hostile/asteroid/hivelord/legion/dwarf(H.loc)
+	else
+		L = new(H.loc)
+	visible_message("<span class='warning'>[L] staggers to [L.p_their()] feet!</span>")
+	H.investigate_log("has been killed by hivelord infestation.", INVESTIGATE_DEATHS)
 	H.death()
 	H.adjustBruteLoss(1000)
 	L.stored_mob = H

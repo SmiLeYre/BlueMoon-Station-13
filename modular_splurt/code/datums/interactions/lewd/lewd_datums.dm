@@ -515,18 +515,26 @@
 
 	playlewdinteractionsound(target, 'sound/items/bikehorn.ogg', 40, 1, -1)
 
+/datum/interaction/lewd/kiss/post_interaction(mob/living/user, mob/living/partner)
+	. = ..()
+
+	//SPLURT EDIT START:
+	// Check if user has TRAIT_KISS_SLUT and increase their lust
+	if(HAS_TRAIT(user, TRAIT_KISS_SLUT))
+		user.handle_post_sex(LOW_LUST, null, partner)
+
+	// Check if partner has TRAIT_KISS_SLUT and increase their lust
+	if(HAS_TRAIT(partner, TRAIT_KISS_SLUT))
+		partner.handle_post_sex(LOW_LUST, null, user)
+	//SPLURT EDIT END
+
 /datum/interaction/lewd/kiss/display_interaction(mob/living/user, mob/living/partner)
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
 		new /obj/effect/temp_visual/heart(user.loc)
 	if(!HAS_TRAIT(partner, TRAIT_LEWD_JOB))
 		new /obj/effect/temp_visual/heart(partner.loc)
 	. = ..()
-	playlewdinteractionsound(partner, pick(
-		'modular_splurt/sound/interactions/kiss/kiss1.ogg',
-		'modular_splurt/sound/interactions/kiss/kiss2.ogg',
-		'modular_splurt/sound/interactions/kiss/kiss3.ogg',
-		'modular_splurt/sound/interactions/kiss/kiss4.ogg',
-		'modular_splurt/sound/interactions/kiss/kiss5.ogg'), 50, 1, -1, ignored_mobs = user.get_unconsenting())
+	playlewdinteractionsound(user.loc, pick(GLOB.lewd_kiss_sounds), 90, 1, -1)
 
 //Own stuff
 /datum/interaction/lewd/oral/selfsuck
@@ -541,6 +549,8 @@
 	max_distance = 0
 	write_log_user = "Отсосал(а) сам(а) себе"
 	write_log_target = null
+	p13user_emote = PLUG13_EMOTE_MOUTH
+	p13target_emote = PLUG13_EMOTE_PENIS
 
 /datum/interaction/lewd/oral/selfsuck/display_interaction(mob/living/carbon/human/user)
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
@@ -567,6 +577,8 @@
 	max_distance = 0
 	write_log_user = "отлизал(а) свою собственную киску"
 	write_log_target = null
+	p13user_emote = PLUG13_EMOTE_MOUTH
+	p13target_emote = PLUG13_EMOTE_VAGINA
 
 /datum/interaction/lewd/oral/suckvagself/display_interaction(mob/living/carbon/human/user)
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
@@ -585,6 +597,8 @@
 	max_distance = 0
 	write_log_user = "Трахнул(а) свои сиськи."
 	write_log_target = null
+	p13user_emote = PLUG13_EMOTE_PENIS
+	p13target_emote = PLUG13_EMOTE_VAGINA
 
 /datum/interaction/lewd/breastfuckself/display_interaction(mob/living/carbon/human/user)
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
@@ -606,6 +620,8 @@
 	required_from_user_unexposed = NONE
 	write_log_user = "belly fucked"
 	write_log_target = "was belly fucked by"
+	p13user_emote = PLUG13_EMOTE_PENIS
+	p13target_emote = PLUG13_EMOTE_CHEST
 
 /datum/interaction/lewd/fuck/belly/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
@@ -655,6 +671,40 @@
 	var/obj/item/organ/genital/belly/gut = user.getorganslot(ORGAN_SLOT_BELLY)
 	if(gut)
 		gut.modify_size(1)
+
+/datum/interaction/lewd/deflate_breasts
+	description = "Грудь. Уменьшить свою грудь."
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_BREASTS
+	required_from_user_unexposed = NONE
+	interaction_sound = null
+	max_distance = 0
+	interaction_flags = INTERACTION_FLAG_ADJACENT | INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
+	write_log_user = "deflated their breasts"
+	write_log_target = null
+
+/datum/interaction/lewd/deflate_breasts/display_interaction(mob/living/carbon/user)
+	var/obj/item/organ/genital/breasts/breasts = user.getorganslot(ORGAN_SLOT_BREASTS)
+	if(breasts)
+		breasts.modify_size(-1)
+
+/datum/interaction/lewd/inflate_breasts
+	description = "Грудь. Надуть свою грудь."
+	required_from_target_exposed = NONE
+	required_from_target_unexposed = NONE
+	required_from_user_exposed = INTERACTION_REQUIRE_BREASTS
+	required_from_user_unexposed = NONE
+	interaction_sound = null
+	max_distance = 0
+	interaction_flags = INTERACTION_FLAG_ADJACENT | INTERACTION_FLAG_OOC_CONSENT | INTERACTION_FLAG_USER_IS_TARGET
+	write_log_user = "inflated their breasts"
+	write_log_target = null
+
+/datum/interaction/lewd/inflate_breasts/display_interaction(mob/living/carbon/user)
+	var/obj/item/organ/genital/breasts/breasts = user.getorganslot(ORGAN_SLOT_BREASTS)
+	if(breasts)
+		breasts.modify_size(1)
 
 /datum/interaction/lewd/nuzzle_belly
 	description = "Живот. Тыкнуться носом."
@@ -759,6 +809,10 @@
 	interaction_sound = null
 	write_log_target = "был(-а) трахнут(-а) в подмышку"
 	write_log_user = "трахнул(-а) подмышку"
+	p13user_emote = PLUG13_EMOTE_PENIS
+	p13user_strength = PLUG13_STRENGTH_NORMAL
+	p13target_emote = PLUG13_EMOTE_BASIC
+	p13target_strength = PLUG13_STRENGTH_LOW
 
 /datum/interaction/lewd/fuck_armpit/display_interaction(mob/living/user, mob/living/target)
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
@@ -785,6 +839,10 @@
 	interaction_sound = null
 	write_log_target = "получил(-а) мастурбацию подмышкой от"
 	write_log_user = "вздрочнул(-а) своей подмышкой пенис"
+	p13user_emote = PLUG13_EMOTE_BASIC
+	p13user_strength = PLUG13_STRENGTH_LOW
+	p13target_emote = PLUG13_EMOTE_PENIS
+	p13target_strength = PLUG13_STRENGTH_NORMAL
 
 /datum/interaction/lewd/do_pitjob/display_interaction(mob/living/user, mob/living/target)
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
@@ -813,6 +871,9 @@
 	max_distance = 1
 	write_log_target = "получил(-а) мастурбацию сиськами от"
 	write_log_user = "вздрочнул(-а) своими сиськами пенис"
+	p13user_emote = PLUG13_EMOTE_BREASTS
+	p13user_strength = PLUG13_STRENGTH_NORMAL
+	p13target_emote = PLUG13_EMOTE_PENIS
 
 /datum/interaction/lewd/do_boobjob/display_interaction(mob/living/user, mob/living/target)
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
@@ -840,6 +901,10 @@
 	max_distance = 1
 	write_log_target = "Её/его яйца были вылизаны"
 	write_log_user = "Отлизал(а) яйца"
+	p13user_emote = PLUG13_EMOTE_MOUTH
+	p13user_strength = PLUG13_STRENGTH_LOW
+	p13target_emote = PLUG13_EMOTE_GROIN
+	p13target_strength = PLUG13_STRENGTH_NORMAL
 
 /datum/interaction/lewd/lick_nuts/display_interaction(mob/living/user, mob/living/target)
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
@@ -858,6 +923,8 @@
 	max_distance = 1
 	write_log_target = "Был трахнут(-а) в уретру"
 	write_log_user = "Трахнул(-а) уретру"
+	p13user_emote = PLUG13_EMOTE_PENIS
+	p13target_emote = PLUG13_EMOTE_PENIS
 
 /datum/interaction/lewd/fuck_cock/display_interaction(mob/living/user, mob/living/target)
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
@@ -882,6 +949,8 @@
 	write_log_target = "got their nipples fucked by"
 	interaction_sound = null
 	max_distance = 1
+	p13user_emote = PLUG13_EMOTE_PENIS
+	p13target_emote = PLUG13_EMOTE_CHEST
 
 /datum/interaction/lewd/nipple_fuck/display_interaction(mob/living/user, mob/living/target)
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
@@ -910,6 +979,9 @@
 	write_log_target = "got their thighs fucked by"
 	interaction_sound = null
 	max_distance = 1
+	p13user_emote = PLUG13_EMOTE_PENIS
+	p13target_emote = PLUG13_EMOTE_GROIN
+	p13target_strength = PLUG13_STRENGTH_LOW
 
 /datum/interaction/lewd/fuck_thighs/display_interaction(mob/living/user, mob/living/target)
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))
@@ -940,6 +1012,9 @@
 	write_log_target = "Got a thighjob from"
 	interaction_sound = null
 	max_distance = 1
+	p13user_emote = PLUG13_EMOTE_GROIN
+	p13user_strength = PLUG13_STRENGTH_LOW
+	p13target_emote = PLUG13_EMOTE_PENIS
 
 /datum/interaction/lewd/do_thighjob/display_interaction(mob/living/user, mob/living/target)
 	if(!HAS_TRAIT(user, TRAIT_LEWD_JOB))

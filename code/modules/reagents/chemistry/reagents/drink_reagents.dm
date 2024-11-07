@@ -1025,18 +1025,29 @@
 	if(prob(75))
 		return ..()
 	var/newsize = pick(0.5, 0.75, 1, 1.50, 2)
+	// BLUEMOON ADD START - нормализаторы не дружат с изменениями размера во время их ношения
+	if(H.GetComponent(/datum/component/size_normalized))
+		to_chat(H, span_warning("You normalization device fights any changes in size!"))
+		return
+	H.update_size(newsize)
+	// BLUEMOON ADD END
+	/* BLUEMOON REMOVAL START
 	newsize *= RESIZE_DEFAULT_SIZE
 	H.resize = newsize/current_size
 	current_size = newsize
 	H.update_transform()
+	/ BLUEMOON REMOVAL END */
 	if(prob(40))
 		H.emote("sneeze")
 	..()
 
 /datum/reagent/consumable/red_queen/on_mob_end_metabolize(mob/living/M)
+	/* BLUEMOON REMOVAL START
 	M.resize = RESIZE_DEFAULT_SIZE/current_size
 	current_size = RESIZE_DEFAULT_SIZE
 	M.update_transform()
+	/ BLUEMOON REMOVAL END */
+	M.update_size(RESIZE_DEFAULT_SIZE) // BLUEMOON ADD
 	..()
 
 /datum/reagent/consumable/milk/pinkmilk

@@ -18,6 +18,7 @@
 	exp_type_department = EXP_TYPE_SECURITY
 
 	outfit = /datum/outfit/job/hos
+	departments = DEPARTMENT_BITFLAG_SECURITY | DEPARTMENT_BITFLAG_COMMAND
 	plasma_outfit = /datum/outfit/plasmaman/hos
 
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
@@ -57,14 +58,15 @@
 	head = /obj/item/clothing/head/HoS/beret
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	//suit_store = /obj/item/gun/energy/e_gun
-	r_pocket = /obj/item/assembly/flash/handheld
-	l_pocket = /obj/item/restraints/handcuffs
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1)
+	l_pocket = /obj/item/storage/bag/security
+	r_pocket = /obj/item/clothing/accessory/badge
+	backpack_contents = list(/obj/item/storage/box/sec_kit, /obj/item/modular_computer/tablet/preset/advanced = 1, /obj/item/choice_beacon/hos_new_weapon = 1, /obj/item/stamp/security = 1)
+	box = /obj/item/storage/box/survival/command
+	accessory = /obj/item/clothing/accessory/permit/special/head_of_sec
 
-	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
 	duffelbag = /obj/item/storage/backpack/duffelbag/sec
-	box = /obj/item/storage/box/survival/security
+	box = /obj/item/storage/box/survival/command
 
 	implants = list(/obj/item/implant/mindshield)
 
@@ -91,6 +93,7 @@
 	satchel = /obj/item/storage/backpack/duffelbag/syndie/ammo
 	duffelbag = /obj/item/storage/backpack/duffelbag/syndie/ammo
 	box = /obj/item/storage/box/survival/syndie
+	accessory = /obj/item/clothing/accessory/permit/special/head_of_sec
 	pda_slot = ITEM_SLOT_BELT
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/syndicate_uplink_high=1)
 

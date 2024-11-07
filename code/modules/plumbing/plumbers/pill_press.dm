@@ -27,6 +27,7 @@
 	var/list/stored_products = list()
 	///max amount of pills allowed on our tile before we start storing them instead
 	var/max_floor_products = 50 //haha massive pill piles
+	var/patch_number = 1 //BM-ADD end
 
 /obj/machinery/plumbing/pill_press/examine(mob/user)
 	. = ..()
@@ -47,7 +48,7 @@
 
 
 /obj/machinery/plumbing/pill_press/process()
-	if(stat & NOPOWER)
+	if(machine_stat & NOPOWER)
 		return
 	if(reagents.total_volume >= current_volume)
 		if (product == "pill")
@@ -66,6 +67,7 @@
 			reagents.trans_to(P, current_volume)
 			P.name = trim("[product_name] patch")
 			stored_products += P
+			P.icon_state = "patch[patch_number]" //BM-ADD
 		else if (product == "bottle")
 			var/obj/item/reagent_containers/glass/bottle/P = new(src)
 			reagents.trans_to(P, current_volume)

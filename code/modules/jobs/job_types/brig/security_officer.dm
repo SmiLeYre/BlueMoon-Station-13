@@ -22,6 +22,7 @@
 	paycheck = PAYCHECK_HARD
 	paycheck_department = ACCOUNT_SEC
 	bounty_types = CIV_JOB_SEC
+	departments = DEPARTMENT_BITFLAG_SECURITY
 
 	mind_traits = list(TRAIT_LAW_ENFORCEMENT_METABOLISM)
 
@@ -32,6 +33,14 @@
 	family_heirlooms = list(
 		/obj/item/book/manual/wiki/security_space_law,
 		/obj/item/clothing/head/beret/sec
+	)
+
+	mail_goodies = list(
+		/obj/item/reagent_containers/food/snacks/donut/caramel = 10,
+		/obj/item/reagent_containers/food/snacks/donut/matcha = 10,
+		/obj/item/reagent_containers/food/snacks/donut/blumpkin = 5,
+//		/obj/item/clothing/mask/whistle = 5,
+		/obj/item/melee/baton/boomerang/loaded = 1
 	)
 
 /datum/job/officer/get_access()
@@ -132,9 +141,9 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	head = /obj/item/clothing/head/helmet/sec
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	shoes = /obj/item/clothing/shoes/jackboots/sec
-	l_pocket = /obj/item/restraints/handcuffs
-	r_pocket = /obj/item/assembly/flash/handheld
-	backpack_contents = list(/obj/item/storage/ifak)
+	l_pocket = /obj/item/storage/bag/security
+	r_pocket = /obj/item/clothing/accessory/badge
+	backpack_contents = list(/obj/item/storage/ifak, /obj/item/storage/box/sec_kit, /obj/item/clothing/accessory/permit/special/security = 1)
 
 	backpack = /obj/item/storage/backpack/security
 	satchel = /obj/item/storage/backpack/satchel/sec
@@ -159,7 +168,7 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 	shoes = /obj/item/clothing/shoes/jackboots/tall_default
 	l_pocket = /obj/item/restraints/handcuffs
 	r_pocket = /obj/item/assembly/flash/handheld
-	backpack_contents = list(/obj/item/storage/ifak, /obj/item/syndicate_uplink_high=1)
+	backpack_contents = list(/obj/item/storage/ifak, /obj/item/syndicate_uplink_high=1, /obj/item/clothing/accessory/permit/special/security = 1)
 
 	backpack = /obj/item/storage/backpack/duffelbag/syndie/ammo
 	satchel = /obj/item/storage/backpack/duffelbag/syndie/ammo

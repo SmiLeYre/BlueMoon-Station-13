@@ -30,7 +30,7 @@
 	dir = 2;
 	dwidth = 4;
 	height = 12;
-	id = "arrivals_stationary";
+	shuttle_id = "arrivals_stationary";
 	name = "cog arrivals";
 	roundstart_template = /datum/map_template/shuttle/arrival/cog;
 	width = 9
@@ -901,7 +901,7 @@
 /obj/item/gun/grenadelauncher{
 	pixel_y = -3
 	},
-/obj/item/clothing/suit/armor/laserproof,
+/obj/item/clothing/suit/hooded/ablative,
 /turf/open/floor/plasteel,
 /area/ai_monitored/security/armory)
 "acz" = (
@@ -10321,7 +10321,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
-/obj/item/toy/poolnoodle/red,
+/obj/item/pool/pool_noodle/red,
 /turf/open/floor/plasteel/white,
 /area/commons/fitness/cogpool)
 "aBN" = (
@@ -10555,7 +10555,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
-/obj/item/toy/poolnoodle/blue,
+/obj/item/pool/pool_noodle/blue,
 /turf/open/floor/plasteel/white,
 /area/commons/fitness/cogpool)
 "aCr" = (
@@ -10899,7 +10899,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
-/obj/item/toy/poolnoodle/yellow,
+/obj/item/pool/pool_noodle/yellow,
 /turf/open/floor/plasteel/white,
 /area/commons/fitness/cogpool)
 "aDa" = (
@@ -22110,7 +22110,7 @@
 	dir = 8;
 	dwidth = 2;
 	height = 5;
-	id = "laborcamp_home";
+	shuttle_id = "laborcamp_home";
 	name = "fore bay 1";
 	roundstart_template = /datum/map_template/shuttle/labour/cog;
 	width = 9
@@ -43544,7 +43544,7 @@
 	dir = 8;
 	dwidth = 2;
 	height = 13;
-	id = "ferry_home";
+	shuttle_id = "ferry_home";
 	name = "port bay 2";
 	width = 5
 	},
@@ -44320,7 +44320,7 @@
 	dir = 4;
 	dwidth = 3;
 	height = 5;
-	id = "mining_home";
+	shuttle_id = "mining_home";
 	name = "mining shuttle bay";
 	roundstart_template = /datum/map_template/shuttle/mining/delta;
 	width = 7
@@ -46849,7 +46849,7 @@
 	dir = 2;
 	dwidth = 9;
 	height = 22;
-	id = "emergency_home";
+	shuttle_id = "emergency_home";
 	name = "CogStation Escape Dock";
 	width = 29
 	},
@@ -48513,7 +48513,7 @@
 	dir = 4;
 	dwidth = 5;
 	height = 7;
-	id = "supply_home";
+	shuttle_id = "supply_home";
 	name = "Cargo Shuttle";
 	width = 12
 	},
@@ -50259,7 +50259,7 @@
 	dir = 2;
 	dwidth = 7;
 	height = 9;
-	id = "whiteship_home";
+	shuttle_id = "whiteship_home";
 	name = "SS13: Merchant Dock";
 	width = 13
 	},
@@ -61402,7 +61402,7 @@
 /area/engineering/main)
 "dwp" = (
 /obj/docking_port/stationary{
-	id = "lambda_station";
+	shuttle_id = "lambda_station";
 	name = "Lambda Shuttle Dock";
 	dwidth = 5;
 	width = 10;
@@ -64116,7 +64116,7 @@
 	dir = 8;
 	dwidth = 3;
 	height = 5;
-	id = "commonmining_home";
+	shuttle_id = "commonmining_home";
 	name = "SS13: Common Mining Dock";
 	roundstart_template = /datum/map_template/shuttle/mining_common/meta;
 	width = 7

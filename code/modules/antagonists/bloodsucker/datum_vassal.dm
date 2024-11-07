@@ -38,9 +38,9 @@
 	// Master Pinpointer
 	owner.current.apply_status_effect(/datum/status_effect/agent_pinpointer/vassal_edition)
 	// Powers
-	var/datum/action/bloodsucker/vassal/recuperate/new_Recuperate = new ()
+	var/datum/action/cooldown/bloodsucker/vassal/recuperate/new_Recuperate = new ()
 	// BLUEMOON ADD START
-	var/datum/action/bloodsucker/tutorial/vassal/new_Tutorial = new()
+	var/datum/action/cooldown/bloodsucker/tutorial/vassal/new_Tutorial = new()
 	new_Tutorial.Grant(owner.current)
 	powers += new_Tutorial
 	// BLUEMOON ADD END

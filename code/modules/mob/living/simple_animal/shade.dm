@@ -10,6 +10,7 @@
 	emote_hear = list("wails.","screeches.")
 	response_help_continuous = "puts their hand through"
 	response_help_simple = "put your hand through"
+	see_invisible = SEE_INVISIBLE_HIDDEN_RUNES
 	melee_damage_lower = 5
 	melee_damage_upper = 12
 	attack_verb_continuous = "metaphysically strikes"
@@ -17,6 +18,10 @@
 	speed = -1 //they don't have to lug a body made of runed metal around
 	loot = list(/obj/item/ectoplasm)
 	playstyle_string = "<span class='big bold'>You are a shade!</span><b> Your job is to survive until you are granted a shell, and help out cultists with casting runes!</b>"
+
+/mob/living/simple_animal/hostile/construct/shade/Initialize(mapload)
+	. = ..()
+	ADD_TRAIT(src, TRAIT_HEALS_FROM_CULT_PYLONS, INNATE_TRAIT)
 
 /mob/living/simple_animal/hostile/construct/shade/death()
 	deathmessage = "lets out a contented sigh as [ru_ego()] form unwinds."

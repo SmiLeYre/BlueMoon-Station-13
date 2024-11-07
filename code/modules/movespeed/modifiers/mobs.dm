@@ -31,7 +31,7 @@
 
 /datum/movespeed_modifier/equipment_speedmod
 	variable = TRUE
-	blacklisted_movetypes = FLOATING
+	blacklisted_movetypes = FLOATING|FLYING
 
 /datum/movespeed_modifier/grab_slowdown
 	id = MOVESPEED_ID_MOB_GRAB_STATE

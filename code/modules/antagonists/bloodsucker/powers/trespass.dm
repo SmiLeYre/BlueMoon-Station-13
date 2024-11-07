@@ -1,12 +1,11 @@
 
 
-/datum/action/bloodsucker/targeted/trespass
+/datum/action/cooldown/bloodsucker/targeted/trespass
 	name = "Trespass"
 	desc = "Become mist and advance two tiles in one direction, ignoring all obstacles except for walls. Useful for skipping past doors and barricades."
 	button_icon_state = "power_tres"
-
 	bloodcost = 30
-	cooldown = 180
+	cooldown_time = 180
 	amToggle = FALSE
 	//target_range = 2
 
@@ -16,7 +15,7 @@
 
 	var/turf/target_turf		// We need to decide where we're going based on where we clicked. It's not actually the tile we clicked.
 
-/datum/action/bloodsucker/targeted/trespass/CheckCanUse(display_error)
+/datum/action/cooldown/bloodsucker/targeted/trespass/CheckCanUse(display_error)
 	. = ..()
 	if(!.)
 		return
@@ -26,7 +25,7 @@
 	return TRUE
 
 
-/datum/action/bloodsucker/targeted/trespass/CheckValidTarget(atom/A)
+/datum/action/cooldown/bloodsucker/targeted/trespass/CheckValidTarget(atom/A)
 	// Can't target my tile
 	if(A == get_turf(owner) || get_turf(A) == get_turf(owner))
 		return FALSE
@@ -34,7 +33,7 @@
 	return TRUE //  All we care about is destination. Anything you click is fine.
 
 
-/datum/action/bloodsucker/targeted/trespass/CheckCanTarget(atom/A, display_error)
+/datum/action/cooldown/bloodsucker/targeted/trespass/CheckCanTarget(atom/A, display_error)
 	// NOTE: Do NOT use ..()! We don't want to check distance or anything.
 
 	// Get clicked tile
@@ -60,7 +59,7 @@
 	return TRUE
 
 
-/datum/action/bloodsucker/targeted/trespass/FireTargetedPower(atom/A)
+/datum/action/cooldown/bloodsucker/targeted/trespass/FireTargetedPower(atom/A)
 	// set waitfor = FALSE   <---- DONT DO THIS!We WANT this power to hold up ClickWithPower(), so that we can unlock the power when it's done.
 
 	// Find target turf, at or below Atom

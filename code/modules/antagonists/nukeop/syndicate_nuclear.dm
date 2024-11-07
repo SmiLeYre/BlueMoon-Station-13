@@ -132,8 +132,8 @@
 
 /datum/antagonist/syndicate_op/get_admin_commands()
 	. = ..()
-	.["Send to base"] = CALLBACK(src,.proc/admin_send_to_base)
-	.["Tell code"] = CALLBACK(src,.proc/admin_tell_code)
+	.["Send to base"] = CALLBACK(src,PROC_REF(admin_send_to_base))
+	.["Tell code"] = CALLBACK(src,PROC_REF(admin_tell_code))
 
 /datum/antagonist/syndicate_op/proc/admin_send_to_base(mob/admin)
 	owner.current.forceMove(pick(GLOB.syndiop_start))
@@ -180,7 +180,7 @@
 	to_chat(owner, "<B>If you feel you are not up to this task, give your ID to another operative.</B>")
 	to_chat(owner, "<B>In your hand you will find a special item capable of triggering a greater challenge for your team. Examine it carefully and consult with your fellow operatives before activating it.</B>")
 	owner.announce_objectives()
-	addtimer(CALLBACK(src, .proc/nuketeam_name_assign), 1)
+	addtimer(CALLBACK(src, PROC_REF(nuketeam_name_assign)), 1)
 
 
 /datum/antagonist/syndicate_op/leader/proc/nuketeam_name_assign()
@@ -507,8 +507,7 @@
 
 	var/obj/item/card/id/syndicate/W = H.wear_id
 	W.icon_state = "syndie"
-	W.access = get_all_accesses()//They get full station access.
-	W.access += get_centcom_access("Death Commando")//Let's add their alloted CentCom access.
+	W.access = get_all_accesses()+get_centcom_access("Death Commando")+get_all_syndicate_access()//They get full station access.
 	W.assignment = "Syndicate Special Forces"
 	W.registered_name = H.real_name
 	W.update_label(W.registered_name, W.assignment)

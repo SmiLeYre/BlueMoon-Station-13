@@ -94,6 +94,8 @@
 		/obj/item/clothing/ears/earring/single/dangle/ruby = 3,
 		/obj/item/clothing/ears/earring/single/dangle/sapphire = 3,
 		/obj/item/clothing/ears/earring/single/dangle/diamond = 3,
+		/obj/item/clothing/wrists/armwarmer/transparent = 3,
+		/obj/item/clothing/wrists/armwarmer/transparent_long = 3,
 	)
 	var/list/extra_contraband = list()
 	var/list/extra_premium = list()

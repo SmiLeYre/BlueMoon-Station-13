@@ -5,12 +5,13 @@
 	write_log_user = "breastfed"
 	write_log_target = "was breastfed by"
 	interaction_sound = null
+	p13user_emote = PLUG13_EMOTE_BREASTS
+	p13target_strength = PLUG13_STRENGTH_LOW
 
 /datum/interaction/lewd/do_breastfeed/display_interaction(mob/living/user, mob/living/target)
 	var/message
 	var/obj/item/organ/genital/breasts/milkers = user.getorganslot(ORGAN_SLOT_BREASTS)
 	var/milktype = milkers?.fluid_id
-	var/modifier
 	var/list/lines
 
 	if(!milkers || !milktype)
@@ -33,17 +34,7 @@
 		playlewdinteractionsound(get_turf(user), pick('modular_sand/sound/interactions/oral1.ogg',
 							'modular_sand/sound/interactions/oral2.ogg'), 70, 1, -1)
 
-		switch(milkers.size)
-			if("c", "d", "e")
-				modifier = 2
-			if("f", "g", "h")
-				modifier = 3
-			else
-				if(milkers.size in GLOB.breast_values)
-					modifier = clamp(GLOB.breast_values[milkers.size] - 5, 0, INFINITY)
-				else
-					modifier = 1
-		target.reagents.add_reagent(milktype, rand(1,3 * modifier))
+		target.reagents.add_reagent(milktype, rand(1,3 * milkers.get_lactation_amount_modifier()))
 	else
 		lines = list(
 			"прижимает свою грудь ко рту <b>[target]</b>, позволяя пососать свой сосок",
@@ -63,13 +54,11 @@
 	write_log_user = "groped"
 	write_log_target = "was groped by"
 	interaction_sound = null
+	p13target_emote = PLUG13_EMOTE_BREASTS
+	p13target_strength = PLUG13_STRENGTH_NORMAL
 
 	additional_details = list(
-		list(
-			"info" = "You can fill a container if you hold it in your hand or pull it",
-			"icon" = "flask",
-			"color" = "transparent"
-			)
+		INTERACTION_FILLS_CONTAINERS
 	)
 
 /datum/interaction/lewd/titgrope/display_interaction(mob/living/carbon/human/user, mob/living/carbon/human/target)
@@ -89,19 +78,7 @@
 
 		if(milkers && milktype)
 			if(milkers.climaxable(target, TRUE))
-				var/modifier
-				switch(milkers.size)
-					if("c", "d", "e")
-						modifier = 2
-					if("f", "g", "h")
-						modifier = 3
-					else
-						if(milkers.size in GLOB.breast_values) //SPLURT edit - global breast values
-							modifier = clamp(GLOB.breast_values[milkers.size] - 5, 0, INFINITY)
-						else
-							modifier = 1
-				liquid_container.reagents.add_reagent(milktype, rand(1,3 * modifier))
-
+				liquid_container.reagents.add_reagent(milktype, rand(1,3 * milkers.get_lactation_amount_modifier()))
 				user.visible_message(span_lewd("<b>\The [user]</b> выдавливает содержимое груди <b>[target]</b> в [liquid_container]."), ignored_mobs = user.get_unconsenting())
 				target.handle_post_sex(LOW_LUST, null, user, ORGAN_SLOT_BREASTS)
 				playlewdinteractionsound(get_turf(user), 'modular_sand/sound/interactions/squelch1.ogg', 50, 1, -1)

@@ -135,8 +135,8 @@
 			return
 
 	victim = L.owner
-	apply_typo_modification() // BLUEMOON ADD, изменяющийся текст для синтетиков
-	RegisterSignal(victim, COMSIG_PARENT_QDELETING, .proc/null_victim)
+	apply_typo_modification()
+	RegisterSignal(victim, COMSIG_PARENT_QDELETING, PROC_REF(null_victim))
 	limb = L
 	LAZYADD(victim.all_wounds, src)
 	LAZYADD(limb.wounds, src)

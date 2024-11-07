@@ -140,7 +140,7 @@
 			R.module.rebuild_modules()
 		else if(isAI(S))
 			var/mob/living/silicon/ai/A = S
-			A.add_blocked_language(subtypesof(/datum/language) - /datum/language/ratvar, LANGUAGE_CLOCKIE)
+			A.grant_language(/datum/language/ratvar, TRUE, TRUE, LANGUAGE_CLOCKIE)
 			A.can_be_carded = FALSE
 			A.requires_power = POWER_REQ_CLOCKCULT
 			var/list/AI_frame = list(mutable_appearance('icons/mob/clockwork_mobs.dmi', "aiframe")) //make the AI's cool frame
@@ -173,7 +173,7 @@
 	current.throw_alert("clockinfo", /atom/movable/screen/alert/clockwork/infodump)
 	var/obj/structure/destructible/clockwork/massive/celestial_gateway/G = GLOB.ark_of_the_clockwork_justiciar
 	if(G && G.active && ishuman(current))
-		current.add_overlay(mutable_appearance('icons/effects/genetics.dmi', "servitude", -ANTAG_LAYER))
+		current.add_overlay(mutable_appearance('icons/effects/genetics.dmi', "servitude", -MUTATIONS_LAYER))
 
 /datum/antagonist/clockcult/remove_innate_effects(mob/living/mob_override)
 	var/mob/living/current = owner.current
@@ -237,7 +237,7 @@
 
 /datum/antagonist/clockcult/get_admin_commands()
 	. = ..()
-	.["Give slab"] = CALLBACK(src,.proc/admin_give_slab)
+	.["Give slab"] = CALLBACK(src,PROC_REF(admin_give_slab))
 
 /datum/antagonist/clockcult/proc/admin_give_slab(mob/admin)
 	if(!SSticker.mode.equip_servant(owner.current))

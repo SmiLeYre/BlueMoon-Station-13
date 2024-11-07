@@ -16,8 +16,11 @@
 	paycheck = PAYCHECK_EASY
 	paycheck_department = ACCOUNT_SRV
 	bounty_types = CIV_JOB_BASIC
+
 	display_order = JOB_DISPLAY_ORDER_ENTERTAINER
+	departments = DEPARTMENT_BITFLAG_SERVICE
 	threat = 0.5
+
 	custom_spawn_text = "<font color='red'>Вы — сотрудник обслуживающего персонала. \
 	Ваша задача - обслуживать персонал и экипаж согласно своей профессии. У вас нет своего отдела или прямого начальника помимо Главы Персонала. \
 	Коммуницируйте с остальным обслуживающим персоналом для достижения наилучшего эффекта. В конце концов, развлекайте туристов и тех, \
@@ -32,6 +35,8 @@
 		"Fitness Coach",
 		"Guide",
 		"Masseur",
+		"Fortuneteller", // add nta_of
+		"Palmist", // add nta_of
 		"Musician",
 		"Scene Performer",
 		"Stylist",

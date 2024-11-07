@@ -3,13 +3,11 @@
 	required_from_user = INTERACTION_REQUIRE_HANDS
 	required_from_target_exposed = INTERACTION_REQUIRE_VAGINA
 	interaction_sound = null
+	p13target_emote = PLUG13_EMOTE_VAGINA
+	p13target_strength = PLUG13_STRENGTH_NORMAL
 
 	additional_details = list(
-		list(
-			"info" = "You can fill a container if you hold it in your hand or pull it",
-			"icon" = "flask",
-			"color" = "transparent"
-			)
+		INTERACTION_FILLS_CONTAINERS
 	)
 
 /datum/interaction/lewd/finger/display_interaction(mob/living/user, mob/living/partner)
@@ -44,6 +42,8 @@
 	interaction_sound = null
 	required_from_user = INTERACTION_REQUIRE_HANDS
 	required_from_target_exposed = INTERACTION_REQUIRE_ANUS
+	p13target_emote = PLUG13_EMOTE_ANUS
+	p13target_strength = PLUG13_STRENGTH_NORMAL
 
 /datum/interaction/lewd/fingerass/display_interaction(mob/living/user, mob/living/partner)
 	user.visible_message("<span class='lewd'><b>\The [user]</b> [pick("погружает палец в сфинктер <b>[partner]</b>.",

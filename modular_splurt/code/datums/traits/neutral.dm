@@ -46,7 +46,10 @@
 /datum/quirk/headpat_hater/remove()
 
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
-
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_mob)
+		return
+	// BLUEMOON EDIT END
 	var/datum/action/cooldown/toggle_distant/act_toggle = locate() in quirk_mob.actions
 	if(act_toggle)
 		act_toggle.Remove(quirk_mob)
@@ -66,6 +69,10 @@
 
 /datum/quirk/headpat_slut/remove()
 	. = ..()
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_holder)
+		return
+	// BLUEMOON EDIT END
 	quirk_holder.RemoveElement(/datum/element/wuv/headpat)
 
 /datum/quirk/Hypnotic_gaze
@@ -86,12 +93,15 @@
 	act_hypno.Grant(quirk_mob)
 
 	// Add examine text
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
 
 /datum/quirk/Hypnotic_gaze/remove()
 	// Define quirk mob
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
-
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_mob)
+		return
+	// BLUEMOON EDIT END
 	// Remove quirk ability action datum
 	var/datum/action/cooldown/hypnotize/act_hypno = locate() in quirk_mob.actions
 	act_hypno.Remove(quirk_mob)
@@ -142,29 +152,33 @@
 //Zombies + Cumplus Fix\\
 
 /datum/quirk/undead
-    name = "Не-мёртвый"
-    desc = "Ваше тело, будь то аномальное или просто отказывающееся умирать, действительно стало нежитью. Из-за этого вы не можете быть голодным."
-    value = 2
-    mob_trait = TRAIT_UNDEAD
-    processing_quirk = TRUE
+	name = "Не-мёртвый"
+	desc = "Ваше тело, будь то аномальное или просто отказывающееся умирать, действительно стало нежитью. Из-за этого вы испытываете сильный голод."
+	value = 2
+	mob_trait = TRAIT_UNDEAD
+	processing_quirk = TRUE
 	// Note: The Undead cannot take advantage of healing viruses and genetic mutations, since they have no DNA.
-    var/list/zperks = list(TRAIT_STABLEHEART,TRAIT_EASYDISMEMBER,TRAIT_VIRUSIMMUNE,TRAIT_RADIMMUNE,TRAIT_FAKEDEATH,TRAIT_NOSOFTCRIT, TRAIT_NOPULSE)
+	var/list/zperks = list(TRAIT_STABLEHEART,TRAIT_EASYDISMEMBER,TRAIT_VIRUSIMMUNE,TRAIT_RADIMMUNE,TRAIT_FAKEDEATH,TRAIT_NOSOFTCRIT, TRAIT_NOPULSE)
 
 /datum/quirk/undead/add()
-    . = ..()
-    var/mob/living/carbon/human/H = quirk_holder
-    if(H.mob_biotypes == MOB_ROBOTIC)
-        return FALSE //Lol, lmao, even
-    H.mob_biotypes += MOB_UNDEAD
-    for(var/A = 1, A <= zperks.len, A++)
-        ADD_TRAIT(H,zperks[A],ROUNDSTART_TRAIT)
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	if(H.mob_biotypes == MOB_ROBOTIC)
+		return FALSE //Lol, lmao, even
+	H.mob_biotypes += MOB_UNDEAD
+	for(var/A = 1, A <= zperks.len, A++)
+		ADD_TRAIT(H,zperks[A],ROUNDSTART_TRAIT)
 
 /datum/quirk/undead/remove()
-    . = ..()
-    var/mob/living/carbon/human/H = quirk_holder
-    H.mob_biotypes -= MOB_UNDEAD
-    for(var/A = 1, A <= zperks.len, A++)
-        REMOVE_TRAIT(H,zperks[A], null)
+	. = ..()
+	var/mob/living/carbon/human/H = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!H)
+		return
+	// BLUEMOON EDIT END
+	H.mob_biotypes -= MOB_UNDEAD
+	for(var/A = 1, A <= zperks.len, A++)
+		REMOVE_TRAIT(H,zperks[A], null)
 
 /datum/quirk/undead/on_process()
 	. = ..()
@@ -261,7 +275,10 @@
 /datum/quirk/cosglow/remove()
 	// Define quirk holder mob
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
-
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_mob)
+		return
+	// BLUEMOON EDIT END
 	// Remove glow control action
 	var/datum/action/cosglow/update_glow/quirk_action = locate() in quirk_mob.actions
 	quirk_action.Remove(quirk_mob)
@@ -299,6 +316,7 @@
 	gain_text = span_notice("Вы начинаете ощущать специфические запахи, исходящие от чужих промежностей...")
 	lose_text = span_notice("Чужие гениталии начинают пахнуть для вас одинаково...")
 	medical_record_text = "Пациент добивался того, чтобы доктор провёл яйцами по его лицу."
+	human_only = FALSE
 
 /datum/quirk/fluid_infuser
 	name = "Тядзин"
@@ -355,6 +373,7 @@
 /datum/quirk/incubus/remove()
 	. = ..()
 	var/mob/living/carbon/human/H = quirk_holder
+
 	REMOVE_TRAIT(H,TRAIT_NO_PROCESS_FOOD,ROUNDSTART_TRAIT)
 	REMOVE_TRAIT(H,TRAIT_NOTHIRST,ROUNDSTART_TRAIT)
 
@@ -421,6 +440,10 @@
 	quirk_action.Grant(quirk_holder)
 
 /datum/quirk/werewolf/remove()
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_holder)
+		return
+	// BLUEMOON EDIT END
 	// Define quirk action
 	var/datum/action/cooldown/werewolf/transform/quirk_action = locate() in quirk_holder.actions
 
@@ -517,8 +540,8 @@
 
 /datum/quirk/nudist/add()
 	// Register signal handlers
-	RegisterSignal(quirk_holder, COMSIG_MOB_UPDATE_GENITALS, .proc/check_outfit)
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/quirk_examine_nudist)
+	RegisterSignal(quirk_holder, COMSIG_MOB_UPDATE_GENITALS, PROC_REF(check_outfit))
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(quirk_examine_nudist))
 
 /datum/quirk/nudist/remove()
 	// Remove mood event
@@ -741,7 +764,7 @@ var/static/list/ukraine_replacements = list(
 	if (prob(75))
 		for (var/key in ukraine_replacements)
 			var/regex/rg = regex("(\\A|\[\\s|.,\\-!/?~\])([key])(\\Z|\[\\s|.,\\-!/?~\])")
-			message = rg.Replace_char(message, /proc/ukraine_replace)
+			message = rg.Replace(message, GLOBAL_PROC_REF(ukraine_replace))
 
 		message = replacetextEx_char(message, "ы", "и")
 		message = replacetextEx_char(message, "и", "і")
@@ -773,8 +796,11 @@ var/static/list/ukraine_replacements = list(
 /datum/quirk/body_morpher/remove()
 	// Define quirk mob
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
-
 	// Remove quirk ability action datum
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_mob)
+		return
+	// BLUEMOON EDIT END
 	alter_form_action.Remove(quirk_mob)
 	QDEL_NULL(alter_form_action)
 
@@ -789,6 +815,10 @@ var/static/list/ukraine_replacements = list(
 
 /datum/quirk/modular/remove()
 	var/mob/living/carbon/human/C = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!C)
+		return
+	// BLUEMOON EDIT END
 	remove_verb(C,/mob/living/proc/alterlimbs)
 
 /datum/quirk/messy
@@ -819,14 +849,14 @@ var/static/list/ukraine_replacements = list(
 	ADD_TRAIT(quirk_mob,TRAIT_NOTHIRST,ROUNDSTART_TRAIT)
 
 	// Set skin tone, if possible
-	// if(!quirk_mob.dna.skin_tone_override)
-	// 	quirk_mob.skin_tone = "albino"
+	if(!quirk_mob.dna.skin_tone_override)
+		quirk_mob.skin_tone = "albino"
 
 	// Add quirk language
 	quirk_mob.grant_language(/datum/language/vampiric, TRUE, TRUE, LANGUAGE_BLOODSUCKER)
 
 	// Register examine text
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/quirk_examine_bloodfledge)
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(quirk_examine_bloodfledge))
 
 /datum/quirk/bloodfledge/post_add()
 	// Define quirk mob
@@ -921,6 +951,11 @@ var/static/list/ukraine_replacements = list(
 /datum/quirk/bloodfledge/remove()
 	// Define quirk mob
 	var/mob/living/carbon/human/quirk_mob = quirk_holder
+
+	// BLUEMOON EDIT START - sanity check
+	if(!quirk_mob)
+		return
+	// BLUEMOON EDIT END
 
 	// Remove quirk traits
 	REMOVE_TRAIT(quirk_mob, TRAIT_NO_PROCESS_FOOD, ROUNDSTART_TRAIT)
@@ -1023,3 +1058,33 @@ var/static/list/ukraine_replacements = list(
 	else
 		// Add hunger text
 		examine_list += span_warning(examine_hunger_public)
+
+/datum/quirk/kiss_slut
+	name = "Чувствительные Губы"
+	desc = "Одна только мысль о поцелуе заставляет вас краснеть и возбуждаться, эффективно усиляя ваше возбуждение с каждым поцелуем."
+	value = 0
+	mob_trait = TRAIT_KISS_SLUT
+	gain_text = span_lewd("Вам хочется поцеловать кого-нибудь...")
+	lose_text = span_notice("Вас больше не тянет целоваться...")
+	medical_record_text = "Пациент проявляет необычайную симпатию к поцелуям."
+
+/datum/quirk/russian
+	name = "Русский дух"
+	desc = "Вы были благословлены высшими силами или каким-то иным образом наделены святой энергией. С вами Бог!"
+	value = 0
+	mob_trait = TRAIT_RUSSIAN
+	gain_text = span_notice("Вы чувствуете, как Бог следит за вами!")
+	lose_text = span_notice("Вы чувствуете, как угасает ваша вера в Бога...")
+	medical_record_text = "У пациента обнаружен Ангел-Хранитель."
+
+/datum/quirk/russian/add()
+	// Add examine text.
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(quirk_examine_russian))
+
+/datum/quirk/russian/remove()
+	// Remove examine text
+	UnregisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE)
+
+// Quirk examine text.
+/datum/quirk/russian/proc/quirk_examine_russian(atom/examine_target, mob/living/carbon/human/examiner, list/examine_list)
+	examine_list += "[quirk_holder.ru_who(TRUE)] излучает русский дух..."

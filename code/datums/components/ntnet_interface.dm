@@ -7,7 +7,7 @@
 
 /datum/proc/ntnet_send(datum/netdata/data, netid)
 	var/datum/component/ntnet_interface/NIC = GetComponent(/datum/component/ntnet_interface)
-	if(!NIC)
+	if(!NIC || NIC.blocked) //Bluemoon ADD (NIC.blocked) - Возможность заблокировать отправку любого устройства.
 		return FALSE
 	return NIC.__network_send(data, netid)
 
@@ -16,6 +16,7 @@
 	var/network_name = ""			//text
 	var/list/networks_connected_by_id = list()		//id = datum/ntnet
 	var/differentiate_broadcast = TRUE				//If false, broadcasts go to ntnet_receive. NOT RECOMMENDED.
+	var/blocked 			//Bluemoon ADD. Если это значение TRUE, все действия с этого адреса не будут выполняться.
 
 /datum/component/ntnet_interface/Initialize(force_name = "NTNet Device", autoconnect_station_network = TRUE)			//Don't force ID unless you know what you're doing!
 	hardware_id = "[SSnetworks.get_next_HID()]"

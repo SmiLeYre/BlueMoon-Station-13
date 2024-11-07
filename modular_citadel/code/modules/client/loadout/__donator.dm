@@ -6,6 +6,7 @@
 	path = /obj/item/bikehorn/golden
 	category = LOADOUT_CATEGORY_DONATOR
 	subcategory = LOADOUT_SUBCATEGORIES_DON01
+	donator_group_id = DONATOR_GROUP_TIER_3 // can be accessed by all donators
 	ckeywhitelist = list("This entry should never appear with this variable set.") //If it does, then that means somebody fucked up the whitelist system pretty hard
 
 /datum/gear/donator/pet
@@ -22,12 +23,12 @@
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 
-/datum/gear/donator/money
-	name = "Money, Motherfucker"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/stack/spacecash/c10000
-	ckeywhitelist = list()
-	donator_group_id = DONATOR_GROUP_TIER_1
+// /datum/gear/donator/money
+// 	name = "Money, Motherfucker"
+// 	slot = ITEM_SLOT_BACKPACK
+// 	path = /obj/item/stack/spacecash/c10000
+// 	ckeywhitelist = list()
+// 	donator_group_id = DONATOR_GROUP_TIER_1
 
 /datum/gear/donator/gasmask_syndicate
 	name = "The Syndicate Mask"
@@ -43,7 +44,7 @@
 	ckeywhitelist = list()
 	cost = 4
 	donator_group_id = DONATOR_GROUP_TIER_1
-
+/*
 /datum/gear/donator/summon_pie
 	name = "Book: Summon Pie"
 	slot = ITEM_SLOT_BACKPACK
@@ -51,7 +52,7 @@
 	ckeywhitelist = list()
 	cost = 6
 	donator_group_id = DONATOR_GROUP_TIER_1
-
+*/
 /datum/gear/donator/purple_zippo
 	name = "Purple Zippo"
 	slot = ITEM_SLOT_BACKPACK
@@ -426,6 +427,10 @@
 	path = /obj/item/clothing/head/paperhat
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
+	// BLUEMOON EDIT START - иконки лодаута
+	item_icon = 'icons/obj/clothing/hats.dmi'
+	item_icon_state = "paper"
+	// BLUEMOON EDIT END
 
 /datum/gear/donator/cloakce
 	name = "Polychromic CE Cloak"

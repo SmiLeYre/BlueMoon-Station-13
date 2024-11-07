@@ -44,33 +44,21 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	data["character_ref"] = examine_panel_screen.assigned_map
 	data["directory_visible"] = M?.client?.prefs?.show_in_directory
 
-	var/list/headshots = list()
-	if (M?.client?.prefs)
-		if (M.client.prefs.features["headshot_link"])
-			headshots.Add(M.client.prefs.features["headshot_link"])
-		if (M.client.prefs.features["headshot_link1"])
-			headshots.Add(M.client.prefs.features["headshot_link1"])
-		if (M.client.prefs.features["headshot_link2"])
-			headshots.Add(M.client.prefs.features["headshot_link2"])
+	// BLUEMOON EDIT START - перепривязка к ДНК и майнду флаворов
 
-	data["headshot_links"] = headshots
-
-	if (istype(M, /mob/living/silicon))
-		data["flavortext"] = M?.client?.prefs.features["silicon_flavor_text"] || ""
-
-	data["oocnotes"] = M?.client?.prefs?.features["ooc_notes"] || ""
-
-	// BLUEMOON EDIT START
-	if(ishuman(M))
-		var/mob/living/carbon/human/H = M
-		data["species_name"] = H.dna?.custom_species || H.dna?.species
-		data["custom_species_lore"] = H.dna?.custom_species_lore || ""
-	else
-		data["species_name"] = M?.client?.prefs?.custom_species || M // BLUEMOON EDIT - после || замениил "космонавтик" на имя самого моба
-	data["custom_species_lore"] = M?.client?.prefs.features["custom_species_lore"] || "" // BLUEMOON EDIT - если нет кастомного лора, то там 3 чёрточки
+	if(iscarbon(M))
+		var/mob/living/carbon/H = M
+		data["oocnotes"] = H.dna?.ooc_notes || ""
+		// mechanical_erp_verbs_examine AHEAD
+		if(H.client.prefs.toggles & VERB_CONSENT)
+			data["erp_verbs"] = "Allowed"
+		else
+			data["erp_verbs"] = "Text Only"
+		// mechanical_erp_verbs_examine END
 	if (isobserver(user))
 		data["security_records"] = M?.client?.prefs.security_records || "" //BLUEMOON ADD - призраки видят базы данных в описании персонажей
 		data["medical_records"] = M?.client?.prefs.medical_records || "" //BLUEMOON ADD - призраки видят базы данных в описании персонажей
+	// BLUEMOON EDIT END
 	data["vore_tag"] = M?.client?.prefs?.vorepref || "No"
 	data["erp_tag"] = M?.client?.prefs?.erppref || "No"
 	data["mob_tag"] = M?.client?.prefs?.mobsexpref || "No"
@@ -87,15 +75,34 @@ GLOBAL_LIST_EMPTY(cached_previews)
 	var/data[0]
 	var/mob/living/M = host.resolve()
 	var/unknown = FALSE
+	// BLUEMOON EDIT START - правка видимости текстов персонажа и привязка их к ДНК
 	if (iscarbon(M))
 		var/mob/living/carbon/C = M
 		unknown = (C.wear_mask && (C.wear_mask.flags_inv & HIDEEYES) && !isobserver(user)) || (C.head && (C.head.flags_inv & HIDEEYES) && !isobserver(user))
 		data["flavortext"] = (!unknown) ? (C.dna?.flavor_text || "") : "Скрыто"
-		data["headshot_link"] = (!unknown) ? (C.dna?.headshot_link || "") : ""
+		data["headshot_links"] = (!unknown) ? (C.dna.headshot_links.Copy() || "") : list()
+		data["species_name"] = (!unknown) ? (C.dna?.custom_species || C.dna?.species) : "????"
+		data["custom_species_lore"] = (!unknown) ? (C.dna?.custom_species_lore || "")  : ""
 		if (istype(M, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = C
-			var/can_see_naked = !(unknown || (H.w_uniform || H.wear_suit))
+			var/can_see_naked = TRUE
+			var/list/obj/item/clothings = list(
+				H.wear_suit,
+				H.w_uniform,
+				H.belt,
+				H.w_underwear,
+				H.w_socks,
+				H.w_shirt,
+				H.wrists,
+				H.wear_neck
+			)
+			removeNullsFromList(clothings)
+			for (var/obj/item/clothing/clothpiece in clothings)
+				if(clothpiece.body_parts_covered & GROIN || clothpiece.body_parts_covered & CHEST)
+					can_see_naked = FALSE
+					break
 			data["flavortext_naked"] = can_see_naked ? (C.dna?.naked_flavor_text || "") : ""
+	// BLUEMOON EDIT END
 
 	data["is_unknown"] = unknown
 

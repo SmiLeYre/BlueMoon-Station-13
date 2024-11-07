@@ -61,5 +61,29 @@
 	desc = "Нашивка давно ушедшей ЧВК. На нем вышит череп красным контуром. Надпись гласит: «За кровь и честь!»'"
 	icon = 'modular_bluemoon/krashly/icons/obj/clothing/patch.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/patch.dmi'
-	icon_state = "patch"
-	item_state = "patch"
+	icon_state = "skull_patch"
+	item_state = "skull_patch"
+
+/obj/item/clothing/accessory/ac_patch
+	name = "PMC AC patch"
+	desc = "Patch that wear every Mercenary  in PMC Adamas Cattus. It looks like a cat... Or dog... in the some sort of diamond.'"
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/patch.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/patch.dmi'
+	icon_state = "ac_patch"
+	item_state = "ac_patch"
+
+/obj/item/clothing/accessory/monolith_patch
+	name = "Monolith patch"
+	desc = "We are the guardians of the Monolith! We are His chosen warriors! And each of us is a messenger of His will! We don't know fatigue! We know no fear! GLORY TO THE MONOLITH."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/patch.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/patch.dmi'
+	icon_state = "monolith_patch"
+	item_state = "monolith_patch"
+
+/obj/item/clothing/accessory/SATTdogtag
+	name = "SATT dogtag"
+	desc = "Таких жетонов много, но этот - твой."
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/patch.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/patch.dmi'
+	icon_state = "SATTdogtag"
+	item_state = "SATTdogtag"

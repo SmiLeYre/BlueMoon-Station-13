@@ -61,6 +61,7 @@
 	item = /obj/item/storage/secure/briefcase/syndie
 	cost = 1
 	restricted = TRUE
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS) //bluemoon change никакого фарма денег через ВР
 
 /datum/uplink_item/badass/syndiecards
 	name = "Syndicate Playing Cards"

@@ -252,7 +252,7 @@
 					var/datum/round_event_control/disease_outbreak/DC = locate(/datum/round_event_control/disease_outbreak) in SSevents.control
 					E = DC.runEvent()
 				if("Choose")
-					var/virus = input("Choose the virus to spread", "BIOHAZARD") as null|anything in sort_list(typesof(/datum/disease), /proc/cmp_typepaths_asc)
+					var/virus = input("Choose the virus to spread", "BIOHAZARD") as null|anything in sort_list(typesof(/datum/disease), GLOBAL_PROC_REF(cmp_typepaths_asc))
 					var/datum/round_event_control/disease_outbreak/DC = locate(/datum/round_event_control/disease_outbreak) in SSevents.control
 					var/datum/round_event/disease_outbreak/DO = DC.runEvent()
 					DO.virus_type = virus
@@ -369,6 +369,21 @@
 				priority_announce("The NAP is now in full effect.", null, SSstation.announcer.get_rand_report_sound())
 			else
 				priority_announce("The NAP has been revoked.", null, SSstation.announcer.get_rand_report_sound())
+		if("inteq_displays")
+			if(!is_funmin)
+				return
+			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("InteQ Displays on Station"))
+			message_admins("[key_name_admin(holder)] toggled InteQ Displays")
+			priority_announce("InteQ открыто объявляет притязание на данную Космическую Станцию.", null, 'sound/announcer/classic/_admin_war_pizdec.ogg')
+			var/obj/machinery/computer/communications/C = locate() in GLOB.machines
+			if(C)
+				C.post_status("alert", "inteq")
+			for(var/mob/living/silicon/silicon as anything in GLOB.silicon_mobs)
+				var/new_board = new /obj/item/ai_module/core/full/inteq(src)
+				var/obj/item/ai_module/chosenboard = new_board
+				var/mob/living/silicon/beepboop = silicon
+				chosenboard.install(beepboop.laws, usr)
+				qdel(new_board)
 		if("synd_displays")
 			if(!is_funmin)
 				return
@@ -392,8 +407,19 @@
 				if(!GLOB.dna_for_copying || !istype(GLOB.dna_for_copying, /datum/dna))
 					alert(usr, "ERROR: There's nothing to copy!")
 					return
+				if(!is_station_level(H.z))
+					continue
 				GLOB.dna_for_copying.transfer_identity(H, TRUE)
 				H.real_name = H.dna.real_name
+				var/obj/item/pda/worn = H.wear_id
+				var/obj/item/card/id/W = H.wear_id?.GetID()
+				if(W)
+					W.registered_name = H.real_name
+					W.update_label(W.registered_name, W.assignment)
+					if(worn)
+						if(istype(worn, /obj/item/pda))
+							worn.owner = W.registered_name
+							worn.update_label()
 				H.updateappearance(mutcolor_update=1)
 				H.domutcheck()
 				amount_modified++
@@ -482,9 +508,9 @@
 						var/ghostcandidates = list()
 						for (var/j in 1 to min(prefs["amount"]["value"], length(candidates)))
 							ghostcandidates += pick_n_take(candidates)
-							addtimer(CALLBACK(GLOBAL_PROC, .proc/doPortalSpawn, get_random_station_turf(), pathToSpawn, length(ghostcandidates), storm, ghostcandidates, outfit), i*prefs["delay"]["value"])
+							addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(doPortalSpawn), get_random_station_turf(), pathToSpawn, length(ghostcandidates), storm, ghostcandidates, outfit), i*prefs["delay"]["value"])
 					else if (prefs["playersonly"]["value"] != "Yes")
-						addtimer(CALLBACK(GLOBAL_PROC, .proc/doPortalSpawn, get_random_station_turf(), pathToSpawn, prefs["amount"]["value"], storm, null, outfit), i*prefs["delay"]["value"])
+						addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(doPortalSpawn), get_random_station_turf(), pathToSpawn, prefs["amount"]["value"], storm, null, outfit), i*prefs["delay"]["value"])
 		if("changebombcap")
 			if(!is_funmin)
 				return
@@ -503,7 +529,7 @@
 			SSblackbox.record_feedback("nested tally", "admin_secrets_fun_used", 1, list("Monkeyize All Humans"))
 			for(var/i in GLOB.human_list)
 				var/mob/living/carbon/human/H = i
-				INVOKE_ASYNC(H, /mob/living/carbon.proc/monkeyize)
+				INVOKE_ASYNC(H, TYPE_PROC_REF(/mob/living/carbon, monkeyize))
 			ok = TRUE
 		if("traitor_all")
 			if(!is_funmin)
@@ -606,20 +632,21 @@
 			message_admins("[key_name_admin(holder)] has removed everyone from \
 				purrbation.")
 			log_admin("[key_name(holder)] has removed everyone from purrbation.")
-		// if("massimmerse") // my immursion is ruinned :(
-		// 	if(!is_funmin)
-		// 		return
-		// 	mass_immerse()
-		// 	message_admins("[key_name_admin(holder)] has Fully Immersed
-		// 		everyone!")
-		// 	log_admin("[key_name(holder)] has Fully Immersed everyone.")
-		// if("unmassimmerse")
-		// 	if(!is_funmin)
-		// 		return
-		// 	mass_immerse(remove=TRUE)
-		// 	message_admins("[key_name_admin(holder)] has Un-Fully Immersed
-		// 		everyone!")
-		// 	log_admin("[key_name(holder)] has Un-Fully Immersed everyone.")
+		// Shh!! Don't let badmins know this isn't actually a button!
+		if("massimmerse")
+			if(!is_funmin)
+				return
+			mass_immerse()
+			message_admins("[key_name_admin(holder)] has Fully Immersed \
+				everyone!")
+			log_admin("[key_name(holder)] has Fully Immersed everyone.")
+		if("unmassimmerse")
+			if(!is_funmin)
+				return
+			mass_immerse(remove=TRUE)
+			message_admins("[key_name_admin(holder)] has Un-Fully Immersed \
+				everyone!")
+			log_admin("[key_name(holder)] has Un-Fully Immersed everyone.")
 	if(E)
 		E.processing = FALSE
 		if(E.announce_when>0)

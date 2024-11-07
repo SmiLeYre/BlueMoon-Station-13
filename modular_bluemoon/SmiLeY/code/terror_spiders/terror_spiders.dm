@@ -50,6 +50,7 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 	melee_damage_upper = 20
 
 	//MOVEMENT
+	movement_type = GROUND
 	pass_flags = PASSTABLE
 	turns_per_move = 3 // number of turns before AI-controlled spiders wander around. No effect on actual player or AI movement speed!
 	move_to_delay = 6
@@ -201,7 +202,7 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 			var/can_poison = 1
 			if(ishuman(G))
 				var/mob/living/carbon/human/H = G
-				if(!(H.metabolism_efficiency & REAGENT_ORGANIC_PROCESS) || (!H.physiology.tox_mod))
+				if(!H.physiology.tox_mod)
 					can_poison = 0
 			spider_specialattack(G,can_poison)
 		else
@@ -325,7 +326,7 @@ GLOBAL_LIST_EMPTY(ts_spiderling_list)
 
 /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/proc/give_intro_text()
 	to_chat(src, "<center><span class='userdanger'>Вы паук ужаса!</span></center>")
-	to_chat(src, "<center>Работайте сообща, помогайте своим братьям и сёстрам, саботируйте станцию, убивайте экипаж, превратите это место в своё гнездо!</center>")
+	to_chat(src, "<center>Работайте сообща, помогайте своим братьям и сёстрам, саботируйте станцию, убивайте экипаж, превратите это место в своё гнездо! Чтобы общаться с другими пауками используйте :t</center>")
 	to_chat(src, "<center><span class='big'>[spider_intro_text]</span></center><br>")
 	SEND_SOUND(src, sound('sound/ambience/antag/terrorspider.ogg'))
 

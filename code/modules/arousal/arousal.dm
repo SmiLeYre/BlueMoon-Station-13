@@ -85,6 +85,9 @@
 		condomning = locate(/obj/item/genital_equipment/condom) in P.contents
 	sender.generate_fluid(R)
 	log_message("Кончает [sender] благодаря [target]", LOG_EMOTE)
+
+	client?.plug13.send_emote(PLUG13_EMOTE_GROIN, PLUG13_STRENGTH_MAX, PLUG13_DURATION_ORGASM)
+
 	if(condomning)
 		to_chat(src, "<span class='userlove'>Ты чувствуешь, как презерватив наполняется изнутри твоей спермой!</span>")
 		R.trans_to(condomning, R.total_volume)
@@ -94,7 +97,7 @@
 			var/obj/effect/decal/cleanable/semen/S = locate(/obj/effect/decal/cleanable/semen) in location
 			var/obj/effect/decal/cleanable/semen/femcum/F = locate(/obj/effect/decal/cleanable/semen/femcum) in location
 			if(istype(sender, /obj/item/organ/genital/penis))
-				if(S)
+				if(S && !istype(S, /obj/effect/decal/cleanable/semen/femcum))
 					if(R.trans_to(S, R.total_volume))
 						S.blood_DNA |= get_blood_dna_list()
 						S.update_icon()
@@ -264,7 +267,7 @@
 
 //Here's the main proc itself
 //skyrat edit - forced partner and spillage
-/mob/living/carbon/human/proc/mob_climax(forced_climax=FALSE,cause = "", var/mob/living/forced_partner = null, var/forced_spillage = TRUE, var/obj/item/organ/genital/forced_receiving_genital = null, anonymous = FALSE)
+/mob/living/carbon/human/proc/mob_climax(forced_climax = FALSE, cause = "", var/mob/living/forced_partner = null, var/forced_spillage = TRUE, var/obj/item/organ/genital/forced_receiving_genital = null, anonymous = FALSE)
 	set waitfor = FALSE
 	if(mb_cd_timer > world.time)
 		if(!forced_climax) //Don't spam the message to the victim if forced to come too fast

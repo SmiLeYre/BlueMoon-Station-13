@@ -14,7 +14,7 @@
 	var/mob/living/owner = loc
 	if(!istype(owner))
 		return
-	RegisterSignal(owner, COMSIG_PARENT_EXAMINE, .proc/ownerExamined)
+	RegisterSignal(owner, COMSIG_PARENT_EXAMINE, PROC_REF(ownerExamined))
 
 /obj/item/hand_item/circlegame/Destroy()
 	var/mob/owner = loc
@@ -33,7 +33,7 @@
 
 	if(!istype(sucker) || !in_range(owner, sucker))
 		return
-	addtimer(CALLBACK(src, .proc/waitASecond, owner, sucker), 4)
+	addtimer(CALLBACK(src, PROC_REF(waitASecond), owner, sucker), 4)
 
 /// Stage 2: Fear sets in
 /obj/item/hand_item/circlegame/proc/waitASecond(mob/living/owner, mob/living/sucker)
@@ -42,10 +42,10 @@
 
 	if(owner == sucker) // big mood
 		to_chat(owner, "<span class='danger'>Wait a second... you just looked at your own [src.name]!</span>")
-		addtimer(CALLBACK(src, .proc/selfGottem, owner), 10)
+		addtimer(CALLBACK(src, PROC_REF(selfGottem), owner), 10)
 	else
 		to_chat(sucker, "<span class='danger'>Wait a second... was that a-</span>")
-		addtimer(CALLBACK(src, .proc/GOTTEM, owner, sucker), 6)
+		addtimer(CALLBACK(src, PROC_REF(GOTTEM), owner, sucker), 6)
 
 /// Stage 3A: We face our own failures
 /obj/item/hand_item/circlegame/proc/selfGottem(mob/living/owner)
@@ -246,6 +246,10 @@
 	/// TRUE if the user was aiming anywhere but the mouth when they offer the kiss, if it's offered
 	var/cheek_kiss
 
+/obj/item/hand_item/kisser/Initialize(mapload)
+	. = ..()
+	AddComponent(/datum/component/two_handed, require_twohands=TRUE)
+
 /obj/item/hand_item/kisser/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
 	// . |= AFTERATTACK_PROCESSED_ITEM
@@ -340,7 +344,7 @@
 		if(2)
 			other_msg = "stammers softly for a moment before choking on something!"
 			self_msg = "You feel your tongue disappear down your throat as you fight to remember how to make words!"
-			addtimer(CALLBACK(living_target, /atom/movable.proc/say, pick("Uhhh...", "O-oh, uhm...", "I- uhhhhh??", "What?")), rand(0.5 SECONDS, 1.5 SECONDS))
+			addtimer(CALLBACK(living_target, TYPE_PROC_REF(/atom/movable, say), pick("Uhhh...", "O-oh, uhm...", "I- uhhhhh??", "What?")), rand(0.5 SECONDS, 1.5 SECONDS))
 			living_target.stuttering += rand(5, 15)
 		if(3)
 			other_msg = "locks up with a stunned look on [living_target.p_their()] face, staring at [firer ? firer : "the ceiling"]!"

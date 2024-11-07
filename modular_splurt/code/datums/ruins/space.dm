@@ -19,8 +19,8 @@
 
 /datum/map_template/ruin/space/spacehotelsplurt
 	prefix = "modular_splurt/_maps/RandomRuins/SpaceRuins/"
-	id = "spacehotelsplurt"
-	suffix = "spacehotelsplurt.dmm"
+	id = "spacehotelbluemoon"
+	suffix = "spacehotelbluemoon.dmm"
 	name = "Twin Spires Hotel and Club"
 	description = "A Nanotrasen-partnered interstellar hotel and stripclub"
 	always_place = TRUE

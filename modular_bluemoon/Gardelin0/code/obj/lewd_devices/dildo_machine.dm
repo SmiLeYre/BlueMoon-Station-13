@@ -68,6 +68,7 @@
 					if(M.has_vagina(REQUIRE_EXPOSED))
 						fuck_hole = "pussy"
 						M.handle_post_sex(intencity, null, src)
+						M.client?.plug13.send_emote(PLUG13_EMOTE_GROIN, min(intencity * 5, 100), PLUG13_DURATION_NORMAL)
 						playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/lewd/interactions/bang[rand(1, 6)].ogg", 30, 1)
 						switch(mode)
 							if("low")
@@ -83,6 +84,7 @@
 				if(CUM_TARGET_ANUS)
 					if(M.has_anus(REQUIRE_EXPOSED))
 						M.handle_post_sex(intencity, null, src)
+						M.client?.plug13.send_emote(PLUG13_EMOTE_ANUS, min(intencity * 5, 100), PLUG13_DURATION_NORMAL)
 						playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/lewd/interactions/bang[rand(1, 6)].ogg.ogg", 30, 1)
 						switch(mode)
 							if("low")

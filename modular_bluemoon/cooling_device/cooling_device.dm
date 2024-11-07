@@ -166,8 +166,6 @@
 			charge += drain
 			target.update_icon()
 			if(maxcapacity)
-				if(charge > max_charge)
-					charge = max_charge
 				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger as it beep and place it in the socket on the PCU."))
 	is_charging = FALSE
 
@@ -197,6 +195,8 @@
 			target.update_icon()
 			if(maxcapacity || !cell.charge)
 				user.visible_message(span_notice("[user] takes back the PCU's magnetic charger."), span_notice("You take back the magnetic charger as it beep and place it in the socket on the PCU."))
+
+	charge = clamp(charge, 0, max_charge) // не меньше нуля, не больше максимума
 
 /obj/item/device/cooler/attack_obj(atom/target, mob/user)
 	if(istype(target, /obj/machinery/power/apc))

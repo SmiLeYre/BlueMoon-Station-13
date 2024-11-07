@@ -22,14 +22,19 @@ SUBSYSTEM_DEF(npcpool)
 
 	//cache for sanic speed (lists are references anyways)
 	var/list/currentrun = src.currentrun
-
+	var/removes_nulls = FALSE //BLUEMOON ADD не начинаем убирать нули если мы уже убираем нули (на всякий случай)
 	while(currentrun.len)
 		var/mob/living/simple_animal/SA = currentrun[currentrun.len]
 		--currentrun.len
+		if(QDELETED(SA)) //BLIEMOON ADD убираем нули из списка если мы нашли хоть одного нуля
+			if(!removes_nulls)
+				removeNullsFromList(GLOB.simple_animals[AI_ON])
+				removes_nulls = TRUE
+			continue //BLUEMOON ADD END
 
 		invoking = TRUE
 		invoke_start = world.time
-		INVOKE_ASYNC(src, .proc/invoke_process, SA)
+		INVOKE_ASYNC(src, PROC_REF(invoke_process), SA)
 		if(invoking)
 			stack_trace("WARNING: [SA] ([SA.type]) slept during NPCPool processing.")
 			invoking = FALSE
@@ -41,6 +46,9 @@ SUBSYSTEM_DEF(npcpool)
 	if(!SA.ckey && !SA.mob_transforming)
 		if(SA.stat != DEAD)
 			SA.handle_automated_movement()
+			if(QDELETED(SA))
+				invoking = FALSE
+				return
 		if(SA.stat != DEAD)
 			SA.handle_automated_action()
 		if(SA.stat != DEAD)

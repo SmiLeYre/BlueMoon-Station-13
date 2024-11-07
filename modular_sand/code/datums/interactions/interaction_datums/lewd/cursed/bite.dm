@@ -7,19 +7,29 @@
 	write_log_user = "bite"
 	write_log_target = "had their body bited by"
 
+	p13user_emote = PLUG13_EMOTE_FACE
+	p13user_strength = PLUG13_STRENGTH_LOW
+	p13user_duration = PLUG13_DURATION_SHORT
+
+	p13target_emote = PLUG13_EMOTE_MASOCHISM
+
 /datum/interaction/lewd/bite/display_interaction(mob/living/user, mob/living/partner)
 	var/message
 
 	if(user.a_intent == INTENT_HARM)
 		user.is_fucking(partner, CUM_TARGET_HAND)
-		partner.adjustBruteLoss(rand(3,6))
+		var/dam_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+		var/obj/item/bodypart/affecting = partner.get_bodypart(ran_zone(dam_zone))
+		partner.apply_damage(rand(3, 6), BRUTE, affecting, partner.run_armor_check(affecting, MELEE))
 		message = "[pick("прижимается к <b>[partner]</b>, раскрывает рот и начинает кусаться.",
 					"резко разрывает контакт своей челюсти с <b>[partner]</b>, тем самым образом отрывая кусок плоти.",
 					"крепко прижимает <b>[partner]</b> к своему телу и одновременно с этим прижимается зубами.",
 					"с силой закрепляется за <b>[partner]</b> своими ногтями и наносит укус за укусом.",
 					"максимально грубым образом закусывает плоть <b>[partner]</b> до самой крови.")]"
 	else
-		partner.adjustBruteLoss(rand(1,3))
+		var/dam_zone = pick(BODY_ZONE_CHEST, BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND, BODY_ZONE_L_LEG, BODY_ZONE_R_LEG)
+		var/obj/item/bodypart/affecting = partner.get_bodypart(ran_zone(dam_zone))
+		partner.apply_damage(rand(1, 3), BRUTE, affecting, partner.run_armor_check(affecting, MELEE))
 		message = "[pick("нежно прижимается к <b>[partner]</b>, раскрывает рот и начинает кусаться.",
 					"медленно разрывает контакт своей челюсти с <b>[partner]</b>, тем самым образом открывая свежую рану.",
 					"нежно прижимает <b>[partner]</b> к своему телу и одновременно с этим прижимается зубами.",

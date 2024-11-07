@@ -123,6 +123,11 @@ export const RADIO_CHANNELS = [
     color: '#5177ff',
   },
   {
+    name: 'Law',
+    freq: 1415,
+    color: '#ff69d7',
+  },
+  {
     name: 'Procedure',
     freq: 1339,
     color: '#F70285',

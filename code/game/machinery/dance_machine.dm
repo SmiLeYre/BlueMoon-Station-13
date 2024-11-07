@@ -201,6 +201,11 @@
 /obj/machinery/jukebox/proc/activate_music()
 	if(playing || !queuedplaylist.len)
 		return FALSE
+	// BLUEMOON ADD - Making sure not to play track if all jukebox channels are busy. That shouldn't happen.
+	if(!SSjukeboxes.freejukeboxchannels.len)
+		say("Cannot play song: limit of currently playing tracks has been exceeded.")
+		return FALSE
+	// BLUEMOON ADD END
 	playing = queuedplaylist[1]
 	var/jukeboxslottotake = SSjukeboxes.addjukebox(src, playing, volume/35, one_area_play) //BLUEMOON EDIT
 	if(jukeboxslottotake)
@@ -370,22 +375,22 @@
 				glow.update_light()
 				continue
 		if(prob(2))  // Unique effects for the dance floor that show up randomly to mix things up
-			INVOKE_ASYNC(src, .proc/hierofunk)
+			INVOKE_ASYNC(src, PROC_REF(hierofunk))
 		sleep(playing.song_beat)
 
 #undef DISCO_INFENO_RANGE
 
 /obj/machinery/jukebox/disco/proc/dance(var/mob/living/M) //Show your moves
 	set waitfor = FALSE
-	switch(rand(0,9))
-		if(0 to 1)
-			dance2(M)
-		if(2 to 3)
-			dance3(M)
-		if(4 to 6)
-			dance4(M)
-		if(7 to 9)
-			dance5(M)
+	// switch(rand(0,9))
+	// 	if(0 to 1)
+	dance2(M) // остался только эмоут, не ломающий спрайты
+		// if(2 to 3)
+		// 	dance3(M)
+		// if(4 to 6)
+		// 	dance4(M)
+		// if(7 to 9)
+		// 	dance5(M)
 
 /obj/machinery/jukebox/disco/proc/dance2(var/mob/living/M)
 	for(var/i = 1, i < 10, i++)

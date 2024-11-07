@@ -14,15 +14,41 @@ Our Method:
 • Scan through the player list an count how many alive engineers are there. If you sign up as an engineer, you consent to fixing the damage.
 */
 
-#define EXPLOSION_MODIFIER_SMALL 100
-#define EXPLOSION_MODIFIER_MEDIUM 200
-#define EXPLOSION_MODIFIER_LARGE 300
+#define EXPLOSION_MODIFIER_SMALL 10000
+#define EXPLOSION_MODIFIER_MEDIUM 20000
+#define EXPLOSION_MODIFIER_LARGE 30000
+
+// Check if the SM Can explode at all or not
+/proc/check_sm_delam()
+	switch(GLOB.delam_override)
+		if(TRUE)
+			return TRUE
+		if(FALSE)
+			return FALSE
+
+	var/cooldown_sm = CONFIG_GET(number/sm_delamination_cooldown)
+
+	// If fully disabled
+	if(cooldown_sm == -1)
+		return FALSE
+
+	// Check if the cooldown is still active
+	if(!rustg_file_exists("data/last_sm_delam.txt"))
+		return TRUE
+	var/last_sm_delam = text2num(rustg_file_read("data/last_sm_delam.txt"))
+	if(GLOB.round_id > last_sm_delam + cooldown_sm)
+		return TRUE
+	return FALSE
+
+// Proc to log the round in which the sm or another engine goes boom
+/proc/write_sm_delam()
+	rustg_file_write("data/last_sm_delam.txt", "[GLOB.round_id]")
 
 // Let's turn the base explosion power down a little...
 /obj/machinery/power/supermatter_crystal
-	explosion_power = 120
+	explosion_power = 240
 /obj/machinery/power/supermatter_crystal/shard
-	explosion_power = 60
+	explosion_power = 120
 
 // Proc to screen the mob list for engineers. We'll need this later!
 /proc/count_alive_engineers(mob/M)
@@ -44,7 +70,18 @@ Our Method:
 	priority_announce("На станции присутствует [alive_engineers] живых инженеров!", "А сколько у нас инженеров?")
 
 /obj/machinery/power/supermatter_crystal/explode()
+	for(var/mob in GLOB.alive_mob_list)
+		var/mob/living/L = mob
+		if(istype(L) && L.z == z)
+			if(ishuman(mob))
+				//Hilariously enough, running into a closet should make you get hit the hardest.
+				var/mob/living/carbon/human/H = mob
+				H.hallucination += max(50, min(300, DETONATION_HALLUCINATION * sqrt(1 / (get_dist(mob, src) + 1)) ) )
+			var/rads = DETONATION_RADS * sqrt( 1 / (get_dist(L, src) + 1) )
+			L.rad_act(rads)
+
 // Handle the mood event.
+	var/turf/T = get_turf(src)
 	for(var/mob/M in GLOB.player_list)
 		if(M.z == z)
 			SEND_SOUND(M, 'sound/magic/charge.ogg')
@@ -52,23 +89,37 @@ Our Method:
 			SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "delam", /datum/mood_event/delam)
 
 // Don't explode if we no allow
-	if(!CONFIG_GET(flag/sm_delamination))
+	if(!check_sm_delam())
 		investigate_log("has attempted a delamination, but the config disallows it", INVESTIGATE_SUPERMATTER)
 		priority_announce("Симуляция Суперматерии отозвана. Текущий экипаж признан неподходящим для работы с двигателями повышенной опасности. Вам надо тренироваться.", "ОТКЛЮЧЕНИЕ СИМУЛЯЦИИ")
 		var/skill_issue_sound = pick('modular_splurt/sound/voice/boowomp.ogg', 'modular_splurt/sound/effects/fart_reverb.ogg')
 		sound_to_playing_players(skill_issue_sound)
-		var/obj/item/toy/plush/random/plushe = new(get_turf(src))
-		plushe.name = "Consolation plushie"
-		plushe.desc = "It has \"You tried\" poorly written in its tag."
-		plushe.squeak_override = list(skill_issue_sound = 1)
-		plushe.resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF | FREEZE_PROOF
+		var/turf/plush_turf = get_turf(src)
+		var/obj/item/toy/plush/random/plushe = new(plush_turf)
+		plushe = locate(/obj/item/toy/plush) in plush_turf
+		plushe?.name = "Consolation plushie"
+		plushe?.desc = "It has \"You tried\" poorly written in its tag."
+		plushe?.squeak_override = list(skill_issue_sound = 1)
+		plushe?.resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | ACID_PROOF | FREEZE_PROOF
 		qdel(src)
 		return
 
-// Replace the singularity and tesla delaminations with an EMP pulse. It's hard to achieve this without deliberate sabotage.
-	if(combined_gas > MOLE_PENALTY_THRESHOLD || power > POWER_PENALTY_THRESHOLD)
-		investigate_log("has reached critical mass, causing an EMP.", INVESTIGATE_SUPERMATTER)
-		empulse_using_range(src, 14)
+// Log if it explodes
+	write_sm_delam()
+
+// Ахуй.
+	if(combined_gas > MOLE_PENALTY_THRESHOLD)
+		investigate_log("has collapsed into a singularity.", INVESTIGATE_SUPERMATTER)
+		if(T) //If something fucks up we blow anyhow. This fix is 4 years old and none ever said why it's here. help.
+			var/obj/singularity/S = new(T)
+			S.energy = 800
+			S.consume(src)
+			return //No boom for me sir
+	else if(power > POWER_PENALTY_THRESHOLD)
+		investigate_log("has spawned additional energy balls.", INVESTIGATE_SUPERMATTER)
+		if(T)
+			var/obj/singularity/energy_ball/E = new(T)
+			E.energy = power
 
 // Grab the mob list and count the amount of engineers there are.
 	var/alive_engineers = 0
@@ -88,14 +139,14 @@ Our Method:
 		if(1)
 			investigate_log("has delaminated with [alive_engineers] engineers, explosion size has been halved!", INVESTIGATE_SUPERMATTER)
 			priority_announce("Обнаружено множественное расслоение структуры Суперматерии. Гиперструктура кристалла завершила коллапс фатально. Bозможны жертвы.", "BНИМАНИЕ: СУПЕРМАТЕРИЯ ПОТЕРЯНА!")
-			explosion(get_turf(src), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM), 0, 2), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM), 1, 4), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM), 3, 10), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM), 5, 20), TRUE, FALSE)
+			explosion(get_turf(src), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM), 2, 4), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM), 4, 8), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM), 8, 16), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM), 16, 32), TRUE, FALSE)
 			qdel(src)
 			return
 //	DELAMINATION D:
 		if(2 to INFINITY)
 			investigate_log("has delaminated with full effect due to there being [alive_engineers] engineers.", INVESTIGATE_SUPERMATTER)
 			priority_announce("Обнаружено катастрофическое расслоение структуры Суперматерии. Гиперструктура кристалла создала катастрофический хлопок.", sender_override="BНИМАНИЕ: СУПЕРМАТЕРИЯ ПОТЕРЯНА!")
-			explosion(get_turf(src), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE), 1, 3), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE), 2, 7), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE), 3, 15), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE), 5, 30), TRUE, FALSE)
+			explosion(get_turf(src), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE), 4, 8), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE), 8, 16), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE), 16, 32), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE), 32, 64), TRUE, FALSE)
 			qdel(src)
 			return
 		if(null)

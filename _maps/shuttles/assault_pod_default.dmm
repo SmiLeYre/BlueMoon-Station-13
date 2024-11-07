@@ -1,6 +1,6 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "b" = (
-/obj/machinery/porta_turret/syndicate{
+/obj/machinery/porta_turret/syndicate/shuttle{
 	faction = list("InteQ")
 	},
 /turf/closed/wall/mineral/plastitanium,
@@ -19,7 +19,7 @@
 	aiControlDisabled = 1;
 	name = "Assault Pod";
 	opacity = 1;
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /obj/docking_port/mobile/assault_pod{
 	dwidth = 3;
@@ -29,6 +29,12 @@
 	},
 /turf/open/floor/plating,
 /area/shuttle/assault_pod)
+"g" = (
+/obj/machinery/shuttle/engine/plasma{
+	dir = 1
+	},
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/assault_pod)
 "h" = (
 /obj/machinery/computer/shuttle/syndicate/drop_pod,
 /turf/closed/wall/mineral/plastitanium,
@@ -37,14 +43,24 @@
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/assault_pod)
+"r" = (
+/obj/machinery/shuttle/engine/plasma,
+/turf/closed/wall/mineral/plastitanium,
+/area/shuttle/assault_pod)
 "t" = (
 /obj/machinery/door/airlock/centcom{
 	aiControlDisabled = 1;
 	name = "Assault Pod";
 	opacity = 1;
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/plating,
+/area/shuttle/assault_pod)
+"u" = (
+/obj/machinery/shuttle/engine/plasma{
+	dir = 4
+	},
+/turf/closed/wall/mineral/plastitanium,
 /area/shuttle/assault_pod)
 "y" = (
 /obj/effect/turf_decal/tile/brown/opposingcorners,
@@ -83,9 +99,15 @@
 /obj/machinery/door/airlock/centcom{
 	name = "Assault Pod";
 	opacity = 1;
-	req_access_txt = "150"
+	req_access_txt = "152"
 	},
 /turf/open/floor/plating,
+/area/shuttle/assault_pod)
+"S" = (
+/obj/machinery/shuttle/engine/plasma{
+	dir = 8
+	},
+/turf/closed/wall/mineral/plastitanium,
 /area/shuttle/assault_pod)
 "T" = (
 /obj/structure/chair/comfy/shuttle{
@@ -101,9 +123,9 @@
 (1,1,1) = {"
 V
 b
-d
+u
 t
-d
+u
 b
 V
 "}
@@ -117,13 +139,13 @@ d
 b
 "}
 (3,1,1) = {"
-d
+r
 c
 y
 Q
 y
 c
-d
+g
 "}
 (4,1,1) = {"
 R
@@ -135,13 +157,13 @@ p
 e
 "}
 (5,1,1) = {"
-d
+r
 H
 y
 T
 y
 H
-d
+g
 "}
 (6,1,1) = {"
 b
@@ -155,9 +177,9 @@ b
 (7,1,1) = {"
 V
 b
-d
+S
 t
-d
+S
 b
 V
 "}

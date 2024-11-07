@@ -125,7 +125,7 @@
 	back = /obj/item/storage/backpack
 	ears = /obj/item/radio/headset/inteq/alt
 	l_pocket = /obj/item/pinpointer/nuke/syndicate
-	id = /obj/item/card/id/syndicate/inteq
+	id = /obj/item/card/id/inteq
 	belt = /obj/item/gun/ballistic/automatic/pistol
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
 		/obj/item/kitchen/knife/combat/survival)
@@ -138,7 +138,7 @@
 
 /datum/outfit/inteq/leader
 	name = "InteQ Leader - Basic"
-	id = /obj/item/card/id/syndicate/nuke_leader/inteq
+	id = /obj/item/card/id/inteq/nuke_leader
 	gloves = /obj/item/clothing/gloves/krav_maga/combatglovesplus
 	r_hand = /obj/item/nuclear_challenge
 	command_radio = TRUE
@@ -189,6 +189,10 @@
 		/obj/item/gun/ballistic/automatic/pistol=1,\
 		/obj/item/kitchen/knife/combat/survival)
 
+/datum/outfit/inteq/full/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+	. = ..()
+	H.mind.make_Traitor()
+
 /datum/outfit/inteq/lone/inteq
 	name = "InteQ Lone Operative"
 
@@ -197,7 +201,7 @@
 	mask = /obj/item/clothing/mask/gas/sechailer
 	suit = /obj/item/clothing/suit/space/syndicate/inteq
 	head = /obj/item/clothing/head/helmet/space/syndicate/inteq
-	id = /obj/item/card/id/syndicate/inteq
+	id = /obj/item/card/id/inteq
 	r_pocket = /obj/item/tank/internals/emergency_oxygen/engi/syndi
 	internals_slot = ITEM_SLOT_RPOCKET
 	belt = /obj/item/storage/belt/military/inteq

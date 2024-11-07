@@ -5,16 +5,9 @@
 	icon_state = "container_blank"
 	max_integrity = 1000
 	bound_width = 96
-	bound_height = 32
+	bound_height = 64
 	density = TRUE
 	anchored = TRUE
-	layer = ABOVE_ALL_MOB_LAYER
-	plane = ABOVE_GAME_PLANE
-
-/obj/structure/shipping_container/Initialize(mapload)
-	. = ..()
-
-	AddComponent(/datum/component/seethrough, SEE_THROUGH_MAP_SHIPPING_CONTAINER)
 
 /obj/structure/shipping_container/conarex
 	name = "\improper Conarex Aeronautics shipping container"

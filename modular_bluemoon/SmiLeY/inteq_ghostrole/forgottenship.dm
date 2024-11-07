@@ -21,7 +21,11 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 
 /obj/item/paper/fluff/ruins/forgottenship/password/Initialize(mapload)
 	. = ..()
-	var/report_text = "Добро пожаловать на самый продвинутый крейсер, принадлежащий Cyber Sun Industries!<br>Вы могли заметить, что этот крейсер оснащен 12 прототипами улучшенных лазерных турелей, что делает любые попытки абордажа затруднительными.<br><br>Другие объекты, построенные на корабле: атмосферная система, система камер со встроенными X-RAY модулями, позволяющим использовать аварийные двигатели в случае... ну, вы знаете, чрезвычайной ситуации.<br><br><br>Аварийная система доставит вас к ближайшему аванпосту Конгломерата Синдикат, содержащему все необходимое для жизни человека.<br><br><b>В случае возникновения чрезвычайной ситуации необходимо запомнить код активации шлюза в бункерную часть аванпоста - [GLOB.fscpassword]</b><br><br>Cyber Sun Industries (C) 2484.<br>"
+	var/report_text
+	if(GLOB.master_mode == "Extended")
+		report_text = "Добро пожаловать на самый бюджетный крейсер, принадлежащий Mars Industries!<br>Вы могли заметить, что этот крейсер оснащен 12 прототипами улучшенных лазерных турелей, что делает любые попытки абордажа затруднительными.<br><br>Другие объекты, построенные на корабле: атмосферная система, система камер со встроенными X-RAY модулями, позволяющим использовать аварийные двигатели в случае... ну, вы знаете, чрезвычайной ситуации.<br><br><br>Аварийная система доставит вас к ближайшему аванпосту Солнечной Федерации, содержащему все необходимое для жизни гуманоида.<br><br><b>В случае возникновения чрезвычайной ситуации необходимо запомнить код активации шлюза в бункерную часть аванпоста - [GLOB.fscpassword]</b><br><br>Mars Industries (C) 2484.<br>"
+	else
+		report_text = "Добро пожаловать на самый продвинутый крейсер, принадлежащий Cyber Sun Industries!<br>Вы могли заметить, что этот крейсер оснащен 12 прототипами улучшенных лазерных турелей, что делает любые попытки абордажа затруднительными.<br><br>Другие объекты, построенные на корабле: атмосферная система, система камер со встроенными X-RAY модулями, позволяющим использовать аварийные двигатели в случае... ну, вы знаете, чрезвычайной ситуации.<br><br><br>Аварийная система доставит вас к ближайшему аванпосту Конгломерата Синдикат, содержащему все необходимое для жизни человека.<br><br><b>В случае возникновения чрезвычайной ситуации необходимо запомнить код активации шлюза в бункерную часть аванпоста - [GLOB.fscpassword]</b><br><br>Cyber Sun Industries (C) 2484.<br>"
 	icon_state = "paper_words"
 	item_state = "paper"
 	add_raw_text(report_text)
@@ -56,6 +60,34 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	name = "Отчет о Катастрофической Ошибке"
 	default_raw_text = "<br><br><b>ВНИМАНИЕ, КАТАСТРОФИЧЕСКАЯ ОШИБКА... </b><br><br><br>ВНИМАНИЕ: произошла общесистемная аномалия, инициировавшая ПРОТОКОЛ 'СПЯЩИЙ ФЕНИКС', попытка сохранить экипаж и VIP-персон, находящихся в крио-статизе... невозможно обработать координаты назначения, попытка вернуться в предыдущее местоположение... ошибка системы: не удалось зарегистрировать КОМАНДНЫЙ ЦЕНТР ИНТЕКЬЮ ТИП ТЕРРА-СЕМЬ. Корабль переходит в АВАРИЙНЫЙ РЕЖИМ ПИТАНИЯ!<br><br>Попытка связаться с Высшим Командованием... произошла ошибка: невозможно выполнить проброс пакетов, рекомендуется вернуться в Галактику Млечный Путь. Попытка активировать аварийный маяк... аварийная система не может активировать аварийный маяк...<br><br>Активация последней попытки... активировано: корабль начнет приближаться к ближайшему объекту ИнтеКью, расчетное время прибытия: неизвестно.<br ><br>...<br><br>...<br><br>...<br><br>Аварийный маяк аванпоста обнаружил попытку перехвата, запускается процесс разморозки, прибытие: неизбежно.<br>"
 
+/obj/item/paper/fluff/ruins/forgottenship/powerissues/sol
+	name = "Проблемы с Питанием"
+	default_raw_text = "Добро пожаловать в помещение запасного питания!<br>Наши самые передовые системы позволяют вам летать в космосе и никогда не беспокоиться о проблемах с электропитанием!<br>Однако случаются чрезвычайные ситуации, так что... в случае отключения электроэнергии <b>вы должны</b> включить аварийный генератор, использующий уран в качестве топлива, а затем включить турели на мостике.<br><br><b>ПОМНИТЕ! MARS INDUSTRIES НЕ НЕСЕТ ОТВЕТСТВЕННОСТИ ЗА ВАШУ СМЕРТЬ ИЛИ ПОТЕРЮ КОРАБЛЯ ПРИ ВЫКЛЮЧЕННЫХ ТУРЕЛЯХ!</b><br><br>Mars Industries (C) 2484."
+
+/obj/item/paper/fluff/ruins/forgottenship/missionobj/sol
+	name = "Цели Миссии"
+	default_raw_text = "Приветствую, оперативники. Вы назначены на П-220 (Проклятье Двести Двадцать) для защиты нашего высокопоставленного офицера на время командировки в СИЗО-37. Он является высокопоставленным лицом и <b>вы должны</b> подчиняться его приказам.<br><br>Помните, неподчинение приказам высокопоставленного лица является основанием для ликвидации вашего трудового договора."
+
+/obj/item/paper/fluff/ruins/forgottenship/distress/sol
+	name = "Журнал Передачи"
+	default_raw_text = "<br><br><b>ЭКСТРЕННАЯ ПЕРЕДАЧА...</b><br><br><br><b>ФОРТ — СИЗО-37; </b>Были замечены неизвестные в темной форме на обшивке объекта. Поступило радиосообщение о том, что в секторе проходит вечеринка. Нам обещали тортик. Покидаем объект для расследования ситуации.<br>"
+
+/obj/item/paper/fluff/ruins/forgottenship/survivor/sol
+	name = "Исписанный Лист Бумаги"
+	default_raw_text = "<br>Для всех, кто читает это: ЗДЕСЬ БОГА НЕТ.<br><br> Не сопротивляйтесь! В противном случае Смотритель запрет вас в газовой камере.<br>"
+
+/obj/item/paper/fluff/ruins/forgottenship/nanostrasen/sol
+	name = "Уведомление"
+	default_raw_text = "<br><br><b>ЗАКЛЮЧЕННЫЕ ФЕДЕРАЛЬНОГО СИЗО-37...</b><br><br><br>Вы обвиняетесь в преступлениях против Солнечной Федерации. Вы будете заключены под стражу до выяснения обстоятельств.<br><br>Любая попытка побега будет пресечена. Следуйте приказам своих смотрителей.<br>"
+
+/obj/item/paper/fluff/ruins/forgottenship/emergency/sol
+	name = "Emergency Equipment"
+	default_raw_text = "<br><br><b>Emergency Equipment</b><br><br><br>Greetings! This is the emergency vault for specialized equipment used in nearby operations and facility maintence, under no circumstances should the equipment be taken/tampered with in the vault without direct orders from a high command syndicate officer. Any attempt in unathorized access/tampering with the equipment in this vault will be means of termination of your employment. br>"
+
+/obj/item/paper/fluff/ruins/forgottenship/error/sol
+	name = "Командование Солнечной Федерации"
+	default_raw_text = "<br><br><b>ВНИМАНИЕ, ИДЕТ ПЕРЕДАЧА ДАННЫХ... </b><br><br><br>ВНИМАНИЕ: приветствую, адмирал.<br><br>Благодарим вас за долгое время службы Солнечной Федерации. До вашего ухода на пенсию осталась неделя, поэтому вам выдается спокойное задание, где вы сможете расслабиться.<br><br>Вам назначается объект 'СИЗО-37' для надзора над федеральными преступниками. Команда оперативников Солнечной Федерации заступила под ваше командование, уважайте их личные границы. <br><br>...<br><br>...<br><br>...<br><br>Слава Солнечной Федерации.<br>"
+
 ///////////	forgottenship items
 
 /obj/item/disk/surgery/forgottenship
@@ -82,6 +114,7 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	armor = list(MELEE = 35, BULLET = 40, LASER = 25, ENERGY = 10, BOMB = 25, BIO = 20, RAD = 20, FIRE = 60, ACID = 60)
 	body_parts_covered = CHEST|LEGS|ARMS
 	is_edible = 0
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/storage/belt/esabre_belt
 	name = "Energy Sabre Sheath"
@@ -267,8 +300,8 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 		var/speedbase = abs((4 SECONDS) / limbs_to_dismember.len)
 		for(bodypart in limbs_to_dismember)
 			i++
-			addtimer(CALLBACK(src, .proc/suicide_dismember, user, bodypart), speedbase * i)
-	addtimer(CALLBACK(src, .proc/manual_suicide, user), (5 SECONDS) * i)
+			addtimer(CALLBACK(src, PROC_REF(suicide_dismember), user, bodypart), speedbase * i)
+	addtimer(CALLBACK(src, PROC_REF(manual_suicide), user), (5 SECONDS) * i)
 	return MANUAL_SUICIDE
 
 /obj/item/melee/transforming/energy/sword/energy_sabre/proc/suicide_dismember(mob/living/user, obj/item/bodypart/affecting)
@@ -320,11 +353,44 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambigen4.ogg', 'sound/ambience/signal.ogg')
 
-/area/ruin/space/has_grav/powered/inteq_forgotten_vault
+/area/ruin/space/has_grav/inteq_forgotten_vault
 	name = "InteQ Forgotten Vault"
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+/area/ruin/space/has_grav/inteq_forgotten_bar
+	name = "InteQ Forgotten Bar"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
 
+/area/ruin/space/has_grav/inteq_forgotten_bridge
+	name = "InteQ Forgotten Bridge"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/inteq_forgotten_medbay
+	name = "InteQ Forgotten Medical Bay"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/inteq_forgotten_atmos
+	name = "InteQ Forgotten Turbine Control"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/inteq_forgotten_rnd
+	name = "InteQ Forgotten Research and Development"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/inteq_forgotten_permabrig
+	name = "InteQ Forgotten Permanent Brig"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+
+/area/ruin/space/has_grav/inteq_forgotten_inspection
+	name = "InteQ Forgotten Inspection room"
+	icon_state = "inteq-ship"
+	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
 //Special NT NPCs
 
 /mob/living/simple_animal/hostile/nanotrasen/ranged/assault

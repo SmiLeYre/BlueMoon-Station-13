@@ -1,58 +1,58 @@
 /mob/living/silicon/robot/examine(mob/user)
-	. = list("<span class='info'>This is [icon2html(src, user)] \a <EM>[src]</EM>, a [src.module.name] unit!")
+	. = list("<span class='info'>Это [icon2html(src, user)] \a <EM>[src]</EM>, [src.module.name] юнит!")
 	if(desc)
 		. += "[desc]"
 
 	var/obj/act_module = get_active_held_item()
 	if(act_module)
-		. += "It is holding [icon2html(act_module, user)] \a [act_module]."
+		. += "В его манипуляторах [icon2html(act_module, user)] \a [act_module].\n"
 	var/effects_exam = status_effect_examines()
 	if(!isnull(effects_exam))
 		. += effects_exam
 	if (getBruteLoss())
 		if (getBruteLoss() < maxHealth*0.5)
-			. += "<span class='warning'>It looks slightly dented.</span>"
+			. += "<span class='warning'>Он выглядит слегка повреждённым.</span>\n"
 		else
-			. += "<span class='warning'><B>It looks severely dented!</B></span>"
+			. += "<span class='warning'><B>Он сильно повреждён!</B></span>\n"
 	if (getFireLoss() || getToxLoss())
 		var/overall_fireloss = getFireLoss() + getToxLoss()
 		if (overall_fireloss < maxHealth * 0.5)
-			. += "<span class='warning'>It looks slightly charred.</span>"
+			. += "<span class='warning'>Он выглядит слегка обгоревшим.</span>\n"
 		else
-			. += "<span class='warning'>It looks slightly charred.</span>"
+			. += "<span class='warning'><B>Он сильно обгорел!</B></span>\n"
 	if (health < -maxHealth*0.5)
-		. += "<span class='warning'>It looks barely operational.</span>"
+		. += "<span class='warning'>Он вот-вот отключится.</span>\n"
 	if (fire_stacks < 0)
-		. += "<span class='warning'>It's covered in water.</span>"
+		. += "<span class='warning'>Он вымок в воде.</span>\n"
 	else if (fire_stacks > 0)
-		. += "<span class='warning'>It's coated in something flammable.</span>"
+		. += "<span class='warning'>Он покрыт чем-то горючим.</span>\n"
 
 	if(opened)
-		. += "<span class='warning'>Its cover is open and the power cell is [cell ? "installed" : "missing"].</span>"
+		. += "<span class='warning'>Люк техобслуживания открыт, [cell ? "вы видите [icon2html(cell, user)] [cell] внутри " : "батарея отсутствует"].\n</span>"
 	else
-		. += "Its cover is closed[locked ? "" : ", and looks unlocked"]."
+		. += "Люк техобслуживания закрыт[locked ? "" : ", однако разблокирован"].\n"
 
 	if(cell && cell.charge <= 0)
-		. += "<span class='warning'>Its battery indicator is blinking red!</span>"
+		. += "<span class='warning'>Индикатор батареи горит красным!</span>\n"
 
 	if(is_servant_of_ratvar(src) && get_dist(user, src) <= 1 && !stat) //To counter pseudo-stealth by using headlamps
-		. += "<span class='warning'>Its eyes are glowing a blazing yellow!</span>"
+		. += "<span class='brass'>Его дисплей горит ярко-жёлтым цветом!</span>\n"
 
 	switch(stat)
 		if(CONSCIOUS)
 			if(shell)
-				. += "It appears to be an [deployed ? "active" : "empty"] AI shell."
+				. += "Видимо, это [deployed ? "активная" : "пустая"] оболочка ИИ.\n"
 			else if(!client)
-				. += "It appears to be in stand-by mode." //afk
+				. += "Позитронный мозг киборга не отвечает.\n" //afk
 		if(UNCONSCIOUS)
-			. += "<span class='warning'>It doesn't seem to be responding.</span>"
+			. += "<span class='warning'>Похоже, он временно отключён.</span>\n"
 		if(DEAD)
-			. += "<span class='deadsay'>It looks like its system is corrupted and requires a reset.</span>"
+			. += "<span class='deadsay'>Система критически повреждена. Требуется перезагрузка.</span>\n"
 
 	if(LAZYLEN(.) > 1)
 		.[2] = "<hr>[.[2]]"
 
-	//. += span_boldnotice("Профиль Персонажа: <a href='?src=\ref[src];character_profile=1'>\[Осмотреть\]</a>") Доделать.
+	. += span_boldnotice("Профиль киборга: <a href='?src=\ref[src];cyborg_profile=1'>\[Осмотреть\]</a>")
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, usr, .)
 
 	if(length(.) > 1)

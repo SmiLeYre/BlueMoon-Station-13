@@ -95,7 +95,7 @@
 	name = "Liquid Burger"
 	id = /datum/reagent/consumable/nutriment/liquid_burger
 	results = list(/datum/reagent/consumable/nutriment/liquid_burger = 5)
-	required_reagents = list(/datum/reagent/consumable/sugar = 1, /datum/reagent/medicine/synthflesh = 1, /datum/reagent/blood = 1)
+	required_reagents = list(/datum/reagent/medicine/synthflesh = 1, /datum/reagent/consumable/space_cola = 1)
 	mix_message = "Смесь бурно реагирует, оставляя после себя огромную кучу микро-мини-нано бургеров."
 
 /datum/chemical_reaction/solid_burger
@@ -108,12 +108,10 @@
 /datum/chemical_reaction/solid_burger/on_reaction(datum/reagents/holder, multiplier)
 	var/location = get_turf(holder.my_atom)
 	for(var/i in 1 to multiplier)
-		switch(id)
-			if("solid_burger")
-				var/list/burgers = list(typecacheof(/obj/item/reagent_containers/food/snacks/burger))
-				playsound(location, 'sound/effects/phasein.ogg', 100, 1)
-				var/random_burger = pick(burgers)
-				new random_burger(location)
+		var/list/burgers = subtypesof(/obj/item/reagent_containers/food/snacks/burger)
+		playsound(location, 'sound/effects/phasein.ogg', 100, 1)
+		var/random_burger = pick(burgers)
+		new random_burger(location)
 
 /datum/reagent/drug/pendosovka/on_mob_metabolize(mob/living/M)
 	. = ..()
@@ -454,7 +452,7 @@
 	icon_state = ""
 
 /obj/item/reagent_containers/pill/labebium
-	name = "Лабебиум"
+	name = "Весёлая Таблетка"
 	desc = "Выпей меня."
 	icon_state = "pill5"
 	list_reagents = list(/datum/reagent/drug/labebium = 10)

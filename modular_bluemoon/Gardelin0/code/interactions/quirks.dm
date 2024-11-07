@@ -1,5 +1,5 @@
-#define TRAIT_BONDAGED				"bondaged"
 #define QUIRK_SHY					"quirk_shy"
+#define TRAIT_COMMON_PREGNANCY		"common_pregnancy"
 
 /datum/quirk/bondage_lover
 	name = "Любитель бондажа"
@@ -23,7 +23,7 @@
 
 /datum/quirk/quirk_shy/add()
 	. = ..()
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
 
 /datum/quirk/quirk_shy/remove()
 	. = ..()
@@ -55,3 +55,12 @@
 		examine_list += span_lewd("[quirk_holder] заметив ваш взгляд, сильно краснеет и смущённо отворачивается!")
 		to_chat(quirk_holder, span_notice("Вы замечаете чужой взгляд и сильно смущаетесь!"))
 	quirk_holder.emote("blush")
+
+/datum/quirk/common_pregnancy
+	name = "Обычная беременность"
+	desc = "Ваша беременность протекает как у нормального млекопитающего и вы не откладываете яйца! Залетев, вы не скоро родите ребёнка!"
+	gain_text = span_notice("Ваша беременность будет протекать нормально.")
+	lose_text = span_notice("Теперь вы будете откладывать яйца.")
+	medical_record_text = "Беременность у пациента протекает как у нормальных млекопитающих."
+	mob_trait = TRAIT_COMMON_PREGNANCY
+	value = 0

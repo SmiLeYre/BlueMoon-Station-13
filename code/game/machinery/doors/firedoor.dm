@@ -125,10 +125,10 @@
 
 /obj/machinery/door/firedoor/power_change()
 	if(powered(power_channel))
-		stat &= ~NOPOWER
-		INVOKE_ASYNC(src, .proc/latetoggle)
+		machine_stat &= ~NOPOWER
+		INVOKE_ASYNC(src, PROC_REF(latetoggle))
 	else
-		stat |= NOPOWER
+		machine_stat |= NOPOWER
 
 /obj/machinery/door/firedoor/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 	if(operating || !density)
@@ -209,7 +209,7 @@
 
 /obj/machinery/door/firedoor/attack_ai(mob/user)
 	add_fingerprint(user)
-	if(welded || operating || stat & NOPOWER)
+	if(welded || operating || machine_stat & NOPOWER)
 		return TRUE
 	if(density)
 		open()
@@ -319,13 +319,10 @@
 				unbuilt_lock.constructionStep = CONSTRUCTION_WIRES_EXPOSED
 				unbuilt_lock.obj_integrity = unbuilt_lock.max_integrity * 0.5
 			unbuilt_lock.update_appearance()
-		else
-			new /obj/item/electronics/firelock (targetloc)
-			new /obj/item/stack/sheet/metal/five (targetloc)
 	qdel(src)
 
 /obj/machinery/door/firedoor/proc/latetoggle()
-	if(operating || stat & NOPOWER || !nextstate)
+	if(operating || machine_stat & NOPOWER || !nextstate)
 		return
 	switch(nextstate)
 		if(FIREDOOR_OPEN)
@@ -395,7 +392,7 @@
 		for(var/T2 in T.atmos_adjacent_turfs)
 			turfs[T2] = 1
 	if(turfs.len <= 10)
-		return 0 // not big enough to matter
+		return FALSE // not big enough to matter
 	return start_point.air.return_pressure() < 20 ? -1 : 1
 
 /obj/machinery/door/firedoor/border_only/CanAllowThrough(atom/movable/mover, turf/target)
@@ -467,6 +464,16 @@
 			. += "<span class='notice'>The maintenance panel is missing <i>wires</i> and the circuit board is <b>loosely connected</b>.</span>"
 		if(CONSTRUCTION_NOCIRCUIT)
 			. += "<span class='notice'>There are no <i>firelock electronics</i> in the frame. The frame could be <b>cut</b> apart.</span>"
+
+/obj/structure/firelock_frame/deconstruct(disassembled = TRUE)
+	if(!(flags_1 & NODECONSTRUCT_1))
+		if(reinforced)
+			new /obj/item/stack/sheet/plasteel(loc, 5)
+			new /obj/item/electronics/firelock(loc)
+		else
+			new /obj/item/stack/sheet/metal(loc, 5)
+			new /obj/item/electronics/firelock(loc)
+	qdel(src)
 
 /obj/structure/firelock_frame/update_icon_state()
 	icon_state = "frame[constructionStep]"

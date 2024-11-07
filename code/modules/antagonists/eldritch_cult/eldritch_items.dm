@@ -1,12 +1,13 @@
 /obj/item/living_heart
 	name = "Living Heart"
-	desc = "Связь с другим миром... смажь меня кровью, если хочешь возобновить биение сердца."
+	desc = "Связь с другим миром... смажь меня кровью, если хочешь возобновить биение сердца. Нажмите АЛЬТ-ЛКМ, чтобы сбросить жертву."
 	icon = 'icons/obj/eldritch.dmi'
 	icon_state = "living_heart"
 	w_class = WEIGHT_CLASS_SMALL
 	///Target
 	var/mob/living/carbon/human/target
 	var/datum/antagonist/heretic/sac_targetter	//The heretic who used this to acquire the current target - gets cleared when target gets sacrificed.
+	COOLDOWN_DECLARE(cooldown)
 
 /obj/item/living_heart/Initialize(mapload)
 	. = ..()
@@ -17,6 +18,26 @@
 	if(sac_targetter && target)
 		sac_targetter.sac_targetted.Remove(target.real_name)
 	return ..()
+
+/obj/item/living_heart/add_context(atom/source, list/context, obj/item/held_item, mob/living/user)
+	. = ..()
+	if(COOLDOWN_FINISHED(src, cooldown))
+		LAZYSET(context[SCREENTIP_CONTEXT_ALT_LMB], INTENT_ANY, "Restart")
+	return CONTEXTUAL_SCREENTIP_SET
+
+/obj/item/living_heart/AltClick(mob/user)
+	. = ..()
+	if(COOLDOWN_FINISHED(src, cooldown))
+		COOLDOWN_START(src, cooldown, 300 SECONDS)
+		playsound(src, 'sound/misc/bloop.ogg', 50, FALSE)
+		GLOB.living_heart_cache.Remove(src)
+		if(sac_targetter)
+			sac_targetter.sac_targetted.Remove(target.real_name)
+		target = null
+		user.balloon_alert(user,"<span class='warning'>Состояние Живого Сердца сброшено.</span>")
+		to_chat(user,"<span class='warning'>Состояние Живого Сердца сброшено!</span>")
+	else
+		to_chat(user, "<span class='warning'>Состояние Живого Сердца пока что не может быть сброшено.</span>")
 
 /obj/item/living_heart/attack_self(mob/user)
 	. = ..()
@@ -29,19 +50,30 @@
 	var/dir = get_dir(user.loc,target.loc)
 
 	if(user.z != target.z)
+		user.balloon_alert(user,"<span class='warning'>[target.real_name] is on another plane of existance!</span>")
 		to_chat(user,"<span class='warning'>[target.real_name] is on another plane of existance!</span>")
 	else
 		switch(dist)
 			if(0 to 15)
+				user.balloon_alert(user,"<span class='warning'>[target.real_name] is near you. They are to the [dir2text(dir)] of you!</span>")
+
 				to_chat(user,"<span class='warning'>[target.real_name] is near you. They are to the [dir2text(dir)] of you!</span>")
 			if(16 to 31)
+				user.balloon_alert(user,"<span class='warning'>[target.real_name] is somewhere in your vicinity. They are to the [dir2text(dir)] of you!</span>")
+
 				to_chat(user,"<span class='warning'>[target.real_name] is somewhere in your vicinity. They are to the [dir2text(dir)] of you!</span>")
 			if(32 to 127)
+				user.balloon_alert(user,"<span class='warning'>[target.real_name] is far away from you. They are to the [dir2text(dir)] of you!</span>")
+
 				to_chat(user,"<span class='warning'>[target.real_name] is far away from you. They are to the [dir2text(dir)] of you!</span>")
 			else
+				user.balloon_alert(user,"<span class='warning'>[target.real_name] is beyond our reach.</span>")
+
 				to_chat(user,"<span class='warning'>[target.real_name] is beyond our reach.</span>")
 
 	if(target.stat == DEAD)
+		user.balloon_alert(user,"<span class='warning'>[target.real_name] is dead. Bring them onto a transmutation rune!</span>")
+
 		to_chat(user,"<span class='warning'>[target.real_name] is dead. Bring them onto a transmutation rune!</span>")
 
 /obj/item/melee/sickly_blade

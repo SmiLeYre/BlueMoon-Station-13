@@ -254,7 +254,7 @@
 // Viro bottles
 
 /obj/item/reagent_containers/glass/bottle/romerol
-	name = "romerol bottle"
+	name = "Romerol Bottle"
 	desc = "A small bottle of Romerol. The REAL zombie powder."
 	list_reagents = list(/datum/reagent/romerol = 30)
 
@@ -456,6 +456,11 @@
 	name = "Hexacamphor bottle"
 	desc = "A bottle of strong anaphrodisiac. Reduces libido."
 	list_reagents = list(/datum/reagent/drug/anaphrodisiacplus = 30)
+
+/obj/item/reagent_containers/glass/bottle/copium // BLUEMOON FINK ADD
+	name = "Copium bottle"
+	desc = "A bottle of strong anaphrodisiac. Reduces libido."
+	list_reagents = list(/datum/reagent/drug/copium = 30)
 
 //Ichors
 /obj/item/reagent_containers/glass/bottle/ichor

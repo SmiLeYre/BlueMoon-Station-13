@@ -19,6 +19,8 @@
 	var/on = FALSE //if the paddles are equipped (1) or on the defib (0)
 	var/safety = TRUE //if you can zap people with the defibs on harm mode
 	var/powered = FALSE //if there's a cell in the defib with enough power for a revive, blocks paddles from reviving otherwise
+	/// If the cell can be removed via screwdriver
+	var/cell_removable = TRUE
 	var/obj/item/shockpaddles/paddles
 	var/obj/item/stock_parts/cell/cell
 	var/combat = FALSE //if true, revive through hardsuits, allow for combat shocking, and tint paddles syndicate colors
@@ -29,6 +31,16 @@
 	var/timedeath = 10
 	var/disarm_shock_time = 10
 	var/always_emagged = FALSE
+	/// The icon state for the paddle overlay, not applied if null
+	var/paddle_state = "defibunit-paddles"
+	/// The icon state for the powered on overlay, not applied if null
+	var/powered_state = "defibunit-powered"
+	/// The icon state for the charge bar overlay, not applied if null
+	var/charge_state = "defibunit-charge"
+	/// The icon state for the missing cell overlay, not applied if null
+	var/nocell_state = "defibunit-nocell"
+	/// The icon state for the emagged overlay, not applied if null
+	var/emagged_state = "defibunit-emagged"
 
 /obj/item/defibrillator/get_cell()
 	return cell
@@ -56,18 +68,19 @@
 
 /obj/item/defibrillator/update_overlays()
 	. = ..()
-	if(!on)
-		. += "[initial(icon_state)]-paddles"
-	if(powered)
-		. += "[initial(icon_state)]-powered"
-		if(!QDELETED(cell))
+
+	if(!on && paddle_state)
+		. += paddle_state
+	if(powered && powered_state)
+		. += powered_state
+		if(!QDELETED(cell) && charge_state)
 			var/ratio = cell.charge / cell.maxcharge
 			ratio = CEILING(ratio*4, 1) * 25
-			add_overlay("[initial(icon_state)]-charge[ratio]")
-	if(!cell)
-		. += "[initial(icon_state)]-nocell"
-	if(!safety)
-		. += "[initial(icon_state)]-emagged"
+			. += "[charge_state][ratio]"
+	if(!cell && nocell_state)
+		. += "[nocell_state]"
+	if(!safety && emagged_state)
+		. += emagged_state
 
 /obj/item/defibrillator/CheckParts(list/parts_list)
 	..()
@@ -103,6 +116,18 @@
 			var/atom/movable/screen/inventory/hand/H = over_object
 			M.putItemFromInventoryInHandIfPossible(src, H.held_index)
 
+/obj/item/defibrillator/screwdriver_act(mob/living/user, obj/item/tool)
+	if(!cell || !cell_removable)
+		return FALSE
+
+	cell.update_appearance()
+	cell.forceMove(get_turf(src))
+	balloon_alert(user, "removed [cell]")
+	cell = null
+	tool.play_tool_sound(src, 50)
+	update_power()
+	return TRUE
+
 /obj/item/defibrillator/attackby(obj/item/W, mob/user, params)
 	if(W == paddles)
 		toggle_paddles()
@@ -120,13 +145,6 @@
 			to_chat(user, "<span class='notice'>You install a cell in [src].</span>")
 			update_power()
 
-	else if(W.tool_behaviour == TOOL_SCREWDRIVER)
-		if(cell)
-			cell.update_icon()
-			cell.forceMove(get_turf(src))
-			cell = null
-			to_chat(user, "<span class='notice'>You remove the cell from [src].</span>")
-			update_power()
 	else
 		return ..()
 
@@ -174,7 +192,7 @@
 	update_power()
 	for(var/X in actions)
 		var/datum/action/A = X
-		A.UpdateButtonIcon()
+		A.UpdateButtons()
 
 /obj/item/defibrillator/proc/make_paddles()
 	if(!combat)
@@ -189,7 +207,7 @@
 
 /obj/item/defibrillator/item_action_slot_check(slot, mob/user, datum/action/A)
 	if(slot == user.getBackSlot())
-		return 1
+		return TRUE
 
 /obj/item/defibrillator/proc/remove_paddles(mob/user) //this fox the bug with the paddles when other player stole you the defib when you have the paddles equiped
 	if(ismob(paddles.loc))
@@ -237,6 +255,11 @@
 	item_state = "defibcompact"
 	w_class = WEIGHT_CLASS_NORMAL
 	slot_flags = ITEM_SLOT_BELT
+	paddle_state = "defibcompact-paddles"
+	powered_state = "defibcompact-powered"
+	charge_state = "defibcompact-charge"
+	nocell_state = "defibcompact-nocell"
+	emagged_state = "defibcompact-emagged"
 
 /obj/item/defibrillator/compact/item_action_slot_check(slot, mob/user, datum/action/A)
 	if(slot == user.getBeltSlot())
@@ -244,6 +267,9 @@
 
 /obj/item/defibrillator/compact/loaded
 	cell = /obj/item/stock_parts/cell/high
+
+/obj/item/defibrillator/compact/loaded_ert
+	cell = /obj/item/stock_parts/cell/bluespacereactor
 
 /obj/item/defibrillator/compact/combat
 	name = "combat defibrillator"
@@ -255,6 +281,13 @@
 	always_emagged = TRUE
 	disarm_shock_time = 0
 	cell = /obj/item/stock_parts/cell/infinite
+	paddles = /obj/item/shockpaddles/syndicate
+	paddle_state = "defibcombat-paddles"
+	powered_state = null
+	emagged_state = null
+
+/obj/item/defibrillator/compact/combat/loaded
+	cell_removable = FALSE // Don't let people just have an infinite power cell
 
 /obj/item/shockpaddles/syndicate
 	name = "syndicate defibrillator paddles"
@@ -294,8 +327,8 @@
 
 /obj/item/shockpaddles/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 	if(!req_defib)
 		return //If it doesn't need a defib, just say it exists
 	if (!loc || !istype(loc, /obj/item/defibrillator)) //To avoid weird issues from admin spawns
@@ -325,7 +358,7 @@
 	. = ..()
 	if(!req_defib)
 		return
-	RegisterSignal(user, COMSIG_MOVABLE_MOVED, .proc/check_range)
+	RegisterSignal(user, COMSIG_MOVABLE_MOVED, PROC_REF(check_range))
 
 /obj/item/shockpaddles/Moved()
 	. = ..()
@@ -639,6 +672,8 @@
 					if(policy)
 						to_chat(H, policy)
 					H.log_message("revived using a defibrillator, [tplus] deciseconds from time of death, considered [late? "late" : "memory-intact"] revival under configured policy limits.", LOG_GAME)
+					message_admins("[ADMIN_LOOKUPFLW(H)] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
+					log_admin(H, "[H] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
 				if(req_defib)
 					defib.deductcharge(revivecost)
 					cooldown = 1

@@ -45,6 +45,8 @@
 /mob/living/silicon/robot/Initialize(mapload)
 	.=..()
 	AddComponent(/datum/component/personal_crafting)
+	src.add_quirk(/datum/quirk/estrous_detection) //Bluemoon ADD
+	src.add_quirk(/datum/quirk/cum_sniff) //Bluemoon ADD
 
 
 /mob/living/silicon/robot/pick_module()

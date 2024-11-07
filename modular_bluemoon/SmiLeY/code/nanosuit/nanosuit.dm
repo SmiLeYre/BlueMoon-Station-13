@@ -1000,7 +1000,7 @@
 			return
 		else if(iscarbon(A) && !ishuman(A) && style.harm_act(src, A))
 			return
-	..()
+	. = ..()
 
 /mob/living/simple_animal/attack_hand(mob/living/carbon/human/M)
 	. = ..()

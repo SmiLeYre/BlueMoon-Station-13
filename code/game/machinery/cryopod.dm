@@ -24,6 +24,9 @@ GLOBAL_LIST_EMPTY(ghost_records)
 	req_one_access = list(ACCESS_HEADS, ACCESS_ARMORY) // Heads of staff or the warden can go here to claim recover items from their department that people went were cryodormed with.
 	var/mode = null
 
+	max_integrity = 10000
+	obj_integrity = 10000
+
 	// Used for logging people entering cryosleep and important items they are carrying.
 	var/list/frozen_crew = list()
 	var/list/stored_packages = list()
@@ -37,6 +40,8 @@ GLOBAL_LIST_EMPTY(ghost_records)
 
 	var/storage_type = "crewmembers"
 	var/storage_name = "Cryogenic/Teleporter Oversight Control"
+
+	COOLDOWN_DECLARE(cooldown)
 
 /obj/machinery/computer/cryopod/deconstruct()
 	. = ..()
@@ -55,14 +60,14 @@ GLOBAL_LIST_EMPTY(ghost_records)
 	return ..()
 
 /obj/machinery/computer/cryopod/update_icon_state()
-	if(stat & (NOPOWER|BROKEN))
+	if(machine_stat & (NOPOWER|BROKEN))
 		icon_state = "cellconsole"
 		return ..()
 	icon_state = "cellconsole_1"
 	return ..()
 
 /obj/machinery/computer/cryopod/ui_interact(mob/user, datum/tgui/ui)
-	if(stat & (NOPOWER|BROKEN))
+	if(machine_stat & (NOPOWER|BROKEN))
 		return
 
 	add_fingerprint(user)
@@ -99,7 +104,14 @@ GLOBAL_LIST_EMPTY(ghost_records)
 
 	if(action == "item")
 		if(!allowed(usr) && !(obj_flags & EMAGGED))
-			to_chat(usr, "<span class='warning'>Access Denied.</span>")
+			to_chat(usr, "<span class='warning'>Доступ Запрещён.</span>")
+			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
+			return
+
+		if(COOLDOWN_FINISHED(src, cooldown))
+			COOLDOWN_START(src, cooldown, 120 SECONDS)
+		else
+			to_chat(usr, "<span class='warning'>ОЖИДАЙТЕ В ТЕЧЕНИИ [cooldown] СЕКУНД.</span>")
 			playsound(src, 'sound/machines/terminal_prompt_deny.ogg', 50, 0)
 			return
 
@@ -368,7 +380,8 @@ GLOBAL_LIST_EMPTY(ghost_records)
 
 	// No computer passed in, use admin-cryo instead
 	if (!control_computer_weakref)
-		control_computer_weakref = cryo_find_control_computer(urgent = TRUE)
+		if(!pod) // BLUEMOON - CRYO_ITEMS_AND_MESSAGES_FIX - ADD - админская кнопка, перемещение в ГК и другие приблуды используют эту функцию
+			control_computer_weakref = cryo_find_control_computer(urgent = TRUE)
 
 		if (effects)
 			// Fancy effect for admin-cryo
@@ -408,12 +421,14 @@ GLOBAL_LIST_EMPTY(ghost_records)
 	if(!control_computer)
 		control_computer_weakref = null
 	else
-		control_computer.frozen_crew += list(crew_member)
+		if(control_computer.z == (pod ? pod.z : mob_occupant.z)) // BLUEMOON - CRYO_ITEMS_AND_MESSAGES_FIX - ADD - в консоли не будет имени ушедшего в крио, если телепортированный не на её уровне
+			control_computer.frozen_crew += list(crew_member)
 
 	// Make an announcement and log the person entering storage.
-	if(GLOB.announcement_systems.len)
-		var/obj/machinery/announcement_system/announcer = pick(GLOB.announcement_systems)
-		announcer.announce(is_teleporter ? "CRYOSTORAGE_TELE" : "CRYOSTORAGE", mob_occupant.real_name, announce_rank, list())
+	if(mob_occupant.loc.z in SSmapping.levels_by_trait(ZTRAIT_STATION)) // BLUEMOON - CRYO_ITEMS_AND_MESSAGES_FIX - ADD - не будет оповещения, если уходящий в крио вне станции
+		if(GLOB.announcement_systems.len)
+			var/obj/machinery/announcement_system/announcer = pick(GLOB.announcement_systems)
+			announcer.announce(is_teleporter ? "CRYOSTORAGE_TELE" : "CRYOSTORAGE", mob_occupant.real_name, announce_rank, list())
 
 	if (pod)
 		pod.visible_message(span_notice("\The [pod] hums and hisses as it [is_teleporter ? "teleports" : "moves"] [mob_occupant.real_name] [is_teleporter ? "to centcom" : "into storage"]."))
@@ -471,23 +486,21 @@ GLOBAL_LIST_EMPTY(ghost_records)
 			if(pod)
 				item_content.forceMove(pod)
 
-			// WEE WOO SNOWFLAKE TIME
-			if(istype(item_content, /obj/item/pda))
-				var/obj/item/pda/P = item_content
-				if((P.owner == mind_identity) || (P.owner == occupant_identity))
-					destroying += P
+				// WEE WOO SNOWFLAKE TIME
+				if(istype(item_content, /obj/item/pda))
+					var/obj/item/pda/P = item_content
+					if((P.owner == mind_identity) || (P.owner == occupant_identity))
+						destroying += P
+					else
+						storing += P
+				else if(istype(item_content, /obj/item/card/id))
+					var/obj/item/card/id/idcard = item_content
+					if((idcard.registered_name == mind_identity) || (idcard.registered_name == occupant_identity))
+						destroying += idcard
+					else
+						storing += idcard
 				else
-					storing += P
-			else if(istype(item_content, /obj/item/card/id))
-				var/obj/item/card/id/idcard = item_content
-				if((idcard.registered_name == mind_identity) || (idcard.registered_name == occupant_identity))
-					destroying += idcard
-				else
-					storing += idcard
-			else
-				storing += item_content
-
-	// get rid of mobs
+					storing += item_content
 	if (pod)
 		for(var/mob/living/L in mob_occupant.GetAllContents() - mob_occupant)
 			L.forceMove(pod.drop_location())
@@ -499,7 +512,7 @@ GLOBAL_LIST_EMPTY(ghost_records)
 		for(var/i in storing)
 			var/obj/item/I = i
 			I.forceMove(O)
-		O.forceMove(drop_to_ground ? control_computer.drop_location() : control_computer)
+		O.forceMove(drop_to_ground ? mob_occupant.drop_location() : control_computer) //BLUEMOON CHANGE было control_computer.drop_location (не работало при отсутсвии контроль компьютера)
 		if((control_computer == control_computer) && !drop_to_ground)
 			control_computer.stored_packages += O
 	/* ============================= */
@@ -542,7 +555,16 @@ GLOBAL_LIST_EMPTY(ghost_records)
 	. = ..()
 	if(ishuman(spawned_mob))
 		if(ghost_team)
-			spawned_mob.mind.add_antag_datum(/datum/antagonist/ghost_role, ghost_team)
+			var/datum/antagonist/antag_type = null
+			if(antagonist_type)
+				antag_type = spawned_mob.mind.add_antag_datum(antagonist_type, ghost_team)
+			else
+				antag_type = spawned_mob.mind.add_antag_datum(/datum/antagonist/ghost_role, ghost_team)
+			if(objectives)
+				for(var/objective in objectives)
+					var/datum/objective/O = new/datum/objective(objective)
+					O.owner = spawned_mob.mind
+					antag_type.objectives += O
 			ghost_team.players_spawned += (spawned_mob.key)
 
 	var/obj/machinery/computer/cryopod/control_computer = find_control_computer()
@@ -574,3 +596,4 @@ GLOBAL_LIST_EMPTY(ghost_records)
 
 /obj/effect/mob_spawn/human/lavaland_syndicate
 	computer_area = /area/ruin/lavaland/unpowered/deepspaceone/dormitories
+	antagonist_type = /datum/antagonist/ghost_role/lavaland_syndicate

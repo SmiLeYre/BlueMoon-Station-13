@@ -676,10 +676,6 @@
 /obj/structure/closet/athletic_mixed,
 /turf/open/floor/pod/dark,
 /area/ruin/lavaland/powered/beach)
-"vr" = (
-/obj/item/toy/poolnoodle/blue,
-/turf/open/floor/plasteel,
-/area/ruin/lavaland/powered/beach)
 "wY" = (
 /turf/open/floor/pod/light,
 /area/ruin/lavaland/powered/beach)
@@ -776,10 +772,6 @@
 /obj/effect/turf_decal/sand,
 /turf/open/floor/pod/dark,
 /area/ruin/lavaland/powered/beach)
-"HE" = (
-/obj/item/toy/poolnoodle/yellow,
-/turf/open/floor/plasteel,
-/area/ruin/lavaland/powered/beach)
 "Ii" = (
 /obj/effect/turf_decal/sand,
 /obj/machinery/vending/kink,
@@ -863,6 +855,13 @@
 /obj/effect/turf_decal/sand,
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/powered/beach)
+"QJ" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/item/pool/pool_noodle,
+/turf/open/floor/plasteel,
+/area/ruin/lavaland/powered/beach)
 "QS" = (
 /obj/effect/turf_decal/sand,
 /obj/machinery/light{
@@ -899,11 +898,8 @@
 	dir = 10
 	},
 /area/ruin/lavaland/powered/beach)
-"Uv" = (
-/obj/machinery/light{
-	dir = 4
-	},
-/obj/item/toy/poolnoodle/red,
+"UN" = (
+/obj/item/pool/pool_noodle,
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/powered/beach)
 "VO" = (
@@ -1811,9 +1807,9 @@ bW
 bW
 bW
 bW
-vr
-Uv
-HE
+UN
+QJ
+UN
 Gk
 bW
 zw

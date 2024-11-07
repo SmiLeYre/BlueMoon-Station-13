@@ -4,15 +4,18 @@
 	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
 	allow_duplicates = FALSE
 	id = "tarkoff-base"
+
 /datum/map_template/ruin/space/tarkoff/New()
-	if(prob(20))
-		suffix = "defcon5.dmm"
-	else if(prob(20))
-		suffix = "defcon4.dmm"
-	else if(prob(20))
-		suffix = "defcon3.dmm"
-	else
-		suffix = "defcon2.dmm"
+	var/num = rand(0, 3)
+	switch(num)
+		if(0)
+			suffix = "defcon5.dmm"
+		if(1)
+			suffix = "defcon4.dmm"
+		if(2)
+			suffix = "defcon3.dmm"
+		if(3)
+			suffix = "defcon2.dmm"
 	. = ..()
 
 //DS2.
@@ -32,3 +35,10 @@
 	allow_duplicates = FALSE
 	always_place = TRUE
 	id = "forgottenship"
+
+/datum/map_template/ruin/space/forgottenship/New()
+	if(GLOB.master_mode == "Extended")
+		suffix = "sol_ship.dmm"
+	else
+		suffix = "forgotten_ship.dmm"
+	. = ..()

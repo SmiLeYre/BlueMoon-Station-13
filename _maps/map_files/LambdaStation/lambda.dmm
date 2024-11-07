@@ -242,7 +242,7 @@
 /area/solars/port/fore)
 "aaN" = (
 /obj/docking_port/stationary/random{
-	id = "pod_lavaland2";
+	shuttle_id = "pod_lavaland2";
 	name = "lavaland"
 	},
 /turf/open/space/basic,
@@ -450,7 +450,7 @@
 /area/security/prison)
 "abr" = (
 /obj/docking_port/stationary/random{
-	id = "pod_lavaland2";
+	shuttle_id = "pod_lavaland2";
 	name = "lavaland"
 	},
 /turf/open/space,
@@ -8733,7 +8733,7 @@
 /obj/item/gun/energy/ionrifle,
 /obj/item/gun/energy/e_gun/dragnet,
 /obj/item/gun/energy/e_gun/dragnet,
-/obj/item/clothing/suit/armor/laserproof,
+/obj/item/clothing/suit/hooded/ablative,
 /obj/structure/window/reinforced{
 	dir = 1;
 	layer = 2.9
@@ -18798,7 +18798,7 @@
 	dwidth = 3;
 	height = 5;
 	icon_state = "pinonalert";
-	id = "mining_home";
+	shuttle_id = "mining_home";
 	name = "mining shuttle bay";
 	roundstart_template = /datum/map_template/shuttle/mining/box;
 	width = 7
@@ -19438,7 +19438,7 @@
 /obj/docking_port/stationary{
 	dwidth = 5;
 	height = 7;
-	id = "supply_home";
+	shuttle_id = "supply_home";
 	name = "Cargo Bay";
 	width = 12
 	},
@@ -20183,7 +20183,7 @@
 	dir = 4;
 	dwidth = 2;
 	height = 5;
-	id = "laborcamp_home";
+	shuttle_id = "laborcamp_home";
 	name = "fore bay 1";
 	roundstart_template = /datum/map_template/shuttle/labour/box;
 	width = 9
@@ -28535,7 +28535,7 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/tile,
-/obj/item/destTagger,
+/obj/item/dest_tagger,
 /obj/item/hand_labeler,
 /obj/machinery/airalarm{
 	dir = 8;
@@ -50309,13 +50309,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
-"ckK" = (
-/obj/structure/window/reinforced/spawner/north,
-/obj/machinery/atmospherics/pipe/manifold/yellow/visible{
-	dir = 8
-	},
-/turf/open/floor/plating/airless,
-/area/engineering/atmos)
 "ckL" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -61783,9 +61776,7 @@
 /area/engineering/storage/tech)
 "cTG" = (
 /obj/structure/window/reinforced/spawner/north,
-/obj/machinery/atmospherics/pipe/simple/yellow/visible{
-	dir = 9
-	},
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating/airless,
 /area/engineering/atmos)
 "cTH" = (
@@ -64213,7 +64204,7 @@
 	dir = 4;
 	dwidth = 9;
 	height = 25;
-	id = "emergency_home";
+	shuttle_id = "emergency_home";
 	name = "MetaStation emergency evac bay";
 	width = 29
 	},
@@ -64582,7 +64573,7 @@
 	dwidth = 3;
 	height = 15;
 	icon_state = "pinonalert";
-	id = "arrivals_stationary";
+	shuttle_id = "arrivals_stationary";
 	name = "arrivals";
 	roundstart_template = /datum/map_template/shuttle/arrival/box;
 	width = 7
@@ -68539,7 +68530,7 @@
 "mQo" = (
 /obj/docking_port/stationary/random{
 	dir = 8;
-	id = "pod_lavaland1";
+	shuttle_id = "pod_lavaland1";
 	name = "lavaland"
 	},
 /turf/open/space/basic,
@@ -69404,6 +69395,13 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/break_room)
+"oyA" = (
+/obj/machinery/atmospherics/pipe/simple/yellow/visible{
+	dir = 9
+	},
+/obj/structure/grille,
+/turf/closed/wall/r_wall,
+/area/engineering/atmos)
 "oBc" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/green/visible,
@@ -69442,7 +69440,7 @@
 	dir = 2;
 	dwidth = 2;
 	height = 13;
-	id = "ferry_home";
+	shuttle_id = "ferry_home";
 	name = "port bay 2";
 	width = 5
 	},
@@ -69728,7 +69726,7 @@
 	dir = 2;
 	dwidth = 11;
 	height = 22;
-	id = "whiteship_home";
+	shuttle_id = "whiteship_home";
 	name = "SS13: Auxiliary Dock, Station-Port";
 	width = 35
 	},
@@ -70480,7 +70478,7 @@
 	dir = 2;
 	dwidth = 3;
 	height = 5;
-	id = "commonmining_home";
+	shuttle_id = "commonmining_home";
 	name = "SS13: Common Mining Dock";
 	roundstart_template = /datum/map_template/shuttle/mining_common/meta;
 	width = 7
@@ -72212,6 +72210,13 @@
 /obj/machinery/meter,
 /turf/open/floor/plasteel,
 /area/maintenance/disposal/incinerator)
+"uox" = (
+/obj/machinery/atmospherics/pipe/manifold/yellow/visible{
+	dir = 8
+	},
+/obj/structure/grille,
+/turf/closed/wall/r_wall,
+/area/engineering/atmos)
 "uoQ" = (
 /obj/structure/closet/firecloset,
 /obj/effect/turf_decal/tile/neutral,
@@ -72357,7 +72362,7 @@
 "uDy" = (
 /obj/structure/lattice/catwalk,
 /obj/docking_port/stationary{
-	id = "lambda_station";
+	shuttle_id = "lambda_station";
 	name = "Lambda Shuttle Dock";
 	dwidth = 5;
 	width = 10;
@@ -73888,7 +73893,7 @@
 /area/maintenance/aft)
 "xrA" = (
 /obj/structure/window/reinforced/spawner,
-/obj/machinery/atmospherics/pipe/simple/yellow/visible,
+/obj/machinery/atmospherics/pipe/layer_manifold,
 /turf/open/floor/plating/airless,
 /area/engineering/atmos)
 "xtx" = (
@@ -125401,8 +125406,8 @@ chB
 cji
 cjk
 cjZ
-ckK
-cUj
+cmv
+uox
 pbg
 cnf
 cpT
@@ -125659,7 +125664,7 @@ ciq
 eVS
 clt
 cTG
-cTH
+oyA
 cTH
 cTH
 cTH
@@ -126429,8 +126434,8 @@ chB
 cjh
 cjp
 ckc
-ckK
-cUj
+cmv
+uox
 iXq
 eQt
 csx
@@ -126687,7 +126692,7 @@ ciq
 twF
 rxJ
 cTG
-cTH
+oyA
 cTH
 cTH
 cTH

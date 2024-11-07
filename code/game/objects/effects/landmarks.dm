@@ -1,3 +1,5 @@
+GLOBAL_LIST_EMPTY(chosen_station_templates)
+
 /obj/effect/landmark
 	name = "landmark"
 	icon = 'icons/effects/landmarks_static.dmi'
@@ -145,8 +147,8 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark)
 	icon_state = "Curator"
 
 /obj/effect/landmark/start/lawyer
-	name = "Lawyer"
-	icon_state = "Lawyer"
+	name = "Internal Affairs Agent"
+	icon_state = "Internal Affairs Agent"
 
 /obj/effect/landmark/start/ntr
 	name = "NanoTrasen Representative"
@@ -406,6 +408,10 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	GLOB.emergencyresponseteamspawn += get_turf(src)
 	return INITIALIZE_HINT_QDEL
 
+/obj/effect/landmark/ert_shuttle_brief_spawn
+	name = "ertshuttlebriefspawn"
+	icon_state = "ert_brief_spawn"
+
 /obj/effect/landmark/holding_facility
 	name = "Holding Facility"
 	icon_state = "holding_facility"
@@ -503,7 +509,9 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 
 //------Station Rooms Landmarks------------//
 /obj/effect/landmark/stationroom
-	var/list/templates = list()
+	var/list/template_names = list()
+	/// Whether or not we can choose templates that have already been chosen
+	var/unique = FALSE
 	layer = BULLET_HOLE_LAYER
 	plane = ABOVE_WALL_PLANE
 
@@ -521,38 +529,52 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	if(!T)
 		return FALSE
 	if(!template_name)
-		for(var/t in templates)
+		for(var/t in template_names)
 			if(!SSmapping.station_room_templates[t])
-				log_world("Station room spawner placed at ([T.x], [T.y], [T.z]) has invalid ruin name of \"[t]\" in its list")
-				templates -= t
-		template_name = pickweight(templates, 0)
+				stack_trace("Station room spawner placed at ([T.x], [T.y], [T.z]) has invalid ruin name of \"[t]\" in its list")
+				template_names -= t
+		template_name = choose()
 	if(!template_name)
 		GLOB.stationroom_landmarks -= src
 		qdel(src)
 		return FALSE
+	GLOB.chosen_station_templates += template_name
 	var/datum/map_template/template = SSmapping.station_room_templates[template_name]
 	if(!template)
 		return FALSE
-	testing("Room \"[template_name]\" placed at ([T.x], [T.y], [T.z])")
-	template.load(T, centered = FALSE, orientation = dir, rotate_placement_to_orientation = TRUE)
+	testing("Ruin \"[template_name]\" placed at ([T.x], [T.y], [T.z])")
+	template.load(T, centered = FALSE)
 	template.loaded++
 	GLOB.stationroom_landmarks -= src
 	qdel(src)
 	return TRUE
 
+// Proc to allow you to add conditions for choosing templates, instead of just randomly picking from the template list.
+// Examples where this would be useful, would be choosing certain templates depending on conditions such as holidays,
+// Or co-dependent templates, such as having a template for the core and one for the satelite, and swapping AI and comms.git
+/obj/effect/landmark/stationroom/proc/choose()
+	if(unique)
+		var/list/current_templates = template_names
+		for(var/i in GLOB.chosen_station_templates)
+			template_names -= i
+		if(!template_names.len)
+			stack_trace("Station room spawner (type: [type]) has run out of ruins, unique will be ignored")
+			template_names = current_templates
+	return pickweight(template_names)
+
 // The landmark for the Engine on Box
 
 /obj/effect/landmark/stationroom/box/engine
-	templates = list("Engine SM" = 3, "Engine Singulo" = 3, "Engine Tesla" = 3)
+	template_names = list("Engine SM" = 3, "Engine Singulo" = 3, "Engine Tesla" = 3)
 	icon = 'icons/rooms/box/engine.dmi'
 
 /obj/effect/landmark/stationroom/box/engine/New()
 	. = ..()
-	templates = CONFIG_GET(keyed_list/box_random_engine)
+	template_names = CONFIG_GET(keyed_list/box_random_engine)
 
 // Landmark for the mining station
 /obj/effect/landmark/stationroom/lavaland/station
-	templates = list("Public Mining Base" = 3)
+	template_names = list("Public Mining Base" = 3)
 	icon = 'icons/rooms/Lavaland/Mining.dmi'
 
 // handled in portals.dm, id connected to one-way portal
@@ -627,3 +649,32 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 		joining_mob.forceMove(closet)
 		return
 	return ..() //Call parent as fallback
+
+/obj/effect/landmark/stationroom/maint/
+	unique = TRUE
+
+/obj/effect/landmark/stationroom/maint/threexthree
+	template_names = list("Maint 2storage", "Maint 9storage", "Maint airstation", "Maint biohazard", "Maint boxbedroom", "Maint boxchemcloset", "Maint boxclutter2", "Maint boxclutter3", "Maint boxclutter4", "Maint boxclutter5", "Maint boxclutter6", "Maint boxclutter8",
+	"Maint boxwindow", "Maint bubblegumaltar", "Maint deltajanniecloset", "Maint deltaorgantrade", "Maint donutcapgun", "Maint dronehole", "Maint gibs", "Maint hazmat", "Maint hobohut", "Maint hullbreach", "Maint kilolustymaid", "Maint kilomechcharger", "Maint kilotheatre",
+	"Maint medicloset", "Maint memorial", "Maint metaclutter2", "Maint metaclutter4", "Maint metagamergear", "Maint owloffice", "Maint plasma", "Maint pubbyartism", "Maint pubbyclutter1", "Maint pubbyclutter2", "Maint pubbyclutter3", "Maint radspill", "Maint shrine", "Maint singularity",
+	"Maint tanning", "Maint tranquility", "Maint wash", "Maint command", "Maint dummy", "Maint spaceart", "Maint containmentcell", "Maint naughtyroom", "Maint vendoraccident", "Maint donut", "Maint lair" = 0.25, "Maint lair2" = 0.25, "Maint lair3" = 0.25, "Maint lair4" = 0.25)
+
+/obj/effect/landmark/stationroom/maint/threexfive
+	template_names = list("Maint airlockstorage", "Maint boxclutter7", "Maint boxkitchen", "Maint boxmaintfreezers", "Maint canisterroom", "Maint checkpoint", "Maint hank", "Maint junkcloset", "Maint kilomobden", "Maint laststand", "Maint monky", "Maint onioncult", "Maint pubbyclutter5",
+	"Maint pubbyclutter6", "Maint pubbyrobotics", "Maint ripleywreck", "Maint churchroach", "Maint mirror", "Maint chromosomes", "Maint clutter", "Maint dissection", "Maint emergencyoxy", "Maint oreboxes", "Maint gaxbotany")
+
+/obj/effect/landmark/stationroom/maint/fivexthree
+	template_names = list("Maint boxclutter1", "Maint breach", "Maint cloner", "Maint deltaclutter2", "Maint deltaclutter3", "Maint incompletefloor", "Maint kiloclutter1", "Maint metaclutter1", "Maint metaclutter3", "Maint minibreakroom", "Maint nastytrap", "Maint pills", "Maint pubbybedroom",
+	"Maint pubbyclutter4", "Maint pubbyclutter7", "Maint pubbykitchen", "Maint storeroom", "Maint yogsmaintdet", "Maint yogsmaintrpg", "Maint waitingroom", "Maint podmin", "Maint highqualitysurgery", "Maint chestburst", "Maint gloveroom", "Maint magicroom", "Maint spareparts", "Maint smallfish")
+
+/obj/effect/landmark/stationroom/maint/fivexfour
+	template_names = list("Maint blasted", "Maint boxbar", "Maint boxdinner", "Maint boxsurgery", "Maint comproom", "Maint deltabar", "Maint deltadetective", "Maint deltadressing", "Maint deltaEVA", "Maint deltagamble", "Maint deltalounge", "Maint deltasurgery", "Maint firemanroom", "Maint icicle",
+	"Maint kilohauntedlibrary", "Maint kilosurgery", "Maint medusa", "Maint metakitchen", "Maint metamedical", "Maint metarobotics", "Maint metatheatre", "Maint pubbysurgery", "Maint tinybarbershop", "Maint laundromat", "Maint pass", "Maint boxclutter", "Maint posterstore", "Maint shoestore", "Maint nanitechamber", "Maint oldcryoroom")
+
+/obj/effect/landmark/stationroom/maint/tenxfive
+	template_names = list("Maint barbershop", "Maint deltaarcade", "Maint deltabotnis", "Maint deltacafeteria", "Maint deltaclutter1", "Maint deltarobotics", "Maint factory", "Maint maintmedical", "Maint meetingroom", "Maint phage", "Maint skidrow", "Maint transit", "Maint ballpit", "Maint commie", "Maint firingrange", "Maint clothingstore",
+	"Maint butchersden", "Maint courtroom", "Maint gaschamber", "Maint oldaichamber", "Maint radiationtherapy", "Maint ratburger", "Maint tank_heaven", "Maint bamboo", "Maint medicalmaint")
+
+/obj/effect/landmark/stationroom/maint/tenxten
+	template_names = list("Maint aquarium", "Maint bigconstruction", "Maint bigtheatre", "Maint deltalibrary", "Maint graffitiroom", "Maint junction", "Maint podrepairbay", "Maint pubbybar", "Maint roosterdome", "Maint sanitarium", "Maint snakefighter", "Maint vault", "Maint ward", "Maint assaultpod", "Maint maze", "Maint maze2", "Maint boxfactory",
+	"Maint sixsectorsdown", "Maint advbotany", "Maint beach", "Maint botany_apiary", "Maint gamercave", "Maint ladytesla_altar", "Maint olddiner", "Maint smallmagician", "Maint fourshops", "Maint fishinghole", "Maint fakewalls", "Maint wizard", "Maint halloween")

@@ -10,6 +10,7 @@
 	req_human = TRUE
 	var/stacks = 0 //Increments every 5 seconds; damage increases over time
 	active = FALSE //Whether or not you are a hedgehog
+	gamemode_restriction_type = ANTAG_DYNAMIC
 
 /datum/action/changeling/strained_muscles/sting_action(mob/living/carbon/user)
 	..()
@@ -27,7 +28,7 @@
 			user.DefaultCombatKnockdown(60)
 			user.emote("gasp")
 
-	INVOKE_ASYNC(src, .proc/muscle_loop, user)
+	INVOKE_ASYNC(src, PROC_REF(muscle_loop), user)
 
 	return TRUE
 

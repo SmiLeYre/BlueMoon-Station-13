@@ -68,6 +68,7 @@ God bless America.
 	for(var/obj/item/stock_parts/micro_laser/M in component_parts)
 		oil_efficiency += M.rating
 	oil_use = initial(oil_use) - (oil_efficiency * 0.0095)
+	oil_use = max(oil_use, 0.001)
 	fry_speed = oil_efficiency
 
 /obj/machinery/deepfryer/examine(mob/user)

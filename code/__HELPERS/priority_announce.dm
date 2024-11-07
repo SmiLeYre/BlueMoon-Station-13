@@ -65,16 +65,17 @@
 /proc/call_emergency_meeting(mob/living/user, area/button_zone)
 	var/meeting_sound = sound('sound/misc/emergency_meeting.ogg')
 	var/announcement
-	announcement += "<h1 class='alert'>Тревога!</h1>"
+	announcement += "<h1 class='alert'>ТРЕВОГА!!!</h1>"
 	announcement += "<br>[span_alert("[user] устраивает экстренный сбор!")]<br><br>"
 
 	for(var/mob/mob_to_teleport in GLOB.player_list) //gotta make sure the whole crew's here!
 		if(isnewplayer(mob_to_teleport) || iscameramob(mob_to_teleport))
 			continue
+
 		to_chat(mob_to_teleport, announcement)
 		SEND_SOUND(mob_to_teleport, meeting_sound) //no preferences here, you must hear the funny sound
 		mob_to_teleport.overlay_fullscreen("emergency_meeting", /atom/movable/screen/fullscreen/scaled/emergency_meeting, 1)
-		addtimer(CALLBACK(mob_to_teleport, /mob/.proc/clear_fullscreen, "emergency_meeting"), 3 SECONDS)
+		addtimer(CALLBACK(mob_to_teleport, TYPE_PROC_REF(/mob, clear_fullscreen), "emergency_meeting"), 3 SECONDS)
 
 		if (is_station_level(mob_to_teleport.z)) //teleport the mob to the crew meeting
 			var/turf/target

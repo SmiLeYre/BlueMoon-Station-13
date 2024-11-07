@@ -36,8 +36,9 @@
 		buckled.unbuckle_mob(src,force=1)
 	QDEL_LIST_ASSOC_VAL(ability_actions)
 	QDEL_LIST(abilities)
-
+	QDEL_LIST(implants)
 	remove_from_all_data_huds()
+	cleanse_trait_datums()
 	GLOB.mob_living_list -= src
 	GLOB.ssd_mob_list -= src
 	QDEL_LIST(diseases)
@@ -257,7 +258,7 @@
 
 	// If there's no dir_to_target then the player is on the same turf as the atom they're trying to push.
 	// This can happen when a player is stood on the same turf as a directional window. All attempts to push
-	// the window will fail as get_dir will return 0 and the player will be unable to move the window when
+	// the window will fail as get_dir will return FALSE and the player will be unable to move the window when
 	// it should be pushable.
 	// In this scenario, we will use the facing direction of the /mob/living attempting to push the atom as
 	// a fallback.
@@ -265,12 +266,18 @@
 		dir_to_target = dir
 
 	var/push_anchored = FALSE
-	if((AM.move_resist * MOVE_FORCE_CRUSH_RATIO) <= force)
-		if(move_crush(AM, move_force, dir_to_target))
-			push_anchored = TRUE
-	if((AM.move_resist * MOVE_FORCE_FORCEPUSH_RATIO) <= force) //trigger move_crush and/or force_push regardless of if we can push it normally
-		if(force_push(AM, move_force, dir_to_target, push_anchored))
-			push_anchored = TRUE
+
+	// Sandstorm change - stop breaking structures for no raisin!!
+	var/mob/living/simple_animal/hostile/angry_fella = src
+	if(client || (istype(angry_fella) && angry_fella.target))
+		if((AM.move_resist * MOVE_FORCE_CRUSH_RATIO) <= force)
+			if(move_crush(AM, move_force, dir_to_target))
+				push_anchored = TRUE
+		if((AM.move_resist * MOVE_FORCE_FORCEPUSH_RATIO) <= force) //trigger move_crush and/or force_push regardless of if we can push it normally
+			if(force_push(AM, move_force, dir_to_target, push_anchored))
+				push_anchored = TRUE
+	//
+
 	if(ismob(AM))
 		var/mob/mob_to_push = AM
 		var/atom/movable/mob_buckle = mob_to_push.buckled
@@ -476,6 +483,7 @@
 		adjustOxyLoss(health - HEALTH_THRESHOLD_DEAD)
 		updatehealth()
 		to_chat(src, "<span class='notice'>You have given up life and succumbed to death.</span>")
+		visible_message(span_boldnotice("Кажется, [src] [gender == MALE ? "сдался" : "сдалась"].")) // BLUEMOON - SUCCUMB_MESSAGE - ADD
 		death()
 
 /mob/living/incapacitated(ignore_restraints = FALSE, ignore_grab = FALSE, check_immobilized = FALSE, ignore_stasis = FALSE)
@@ -542,38 +550,6 @@
 	else
 		if(alert(src, "You sure you want to sleep for a while?", "Sleep", "Yes", "No") == "Yes")
 			SetSleeping(400) //Short nap
-
-//SET_ACTIVITY START
-/mob/living/verb/set_activity()
-	set name = "Деятельность"
-	set desc = "Описывает то, что вы сейчас делаете."
-	set category = "IC"
-
-	if(activity)
-		activity = ""
-		to_chat(src, "<span class='notice'>Деятельность сброшена.</span>")
-		return
-	if(stat == CONSCIOUS)
-		display_typing_indicator()
-		activity = stripped_input(src, "Здесь можно описать продолжительную (долго длящуюся) деятельность, которая будет отображаться столько, сколько тебе нужно.", "Опиши свою деятельность", "", MAX_MESSAGE_LEN)
-		clear_typing_indicator()
-		if(activity)
-			activity = capitalize(activity)
-			return me_verb(activity)
-	else
-		to_chat(src, "<span class='warning'>Недоступно в твоем нынешнем состоянии.</span>")
-
-/mob/living/update_stat()
-	if(stat != CONSCIOUS)
-		activity = ""
-
-/mob/living/get_tooltip_data()
-	if(activity)
-		. = list()
-		. += activity
-
-//SET_ACTIVITY END
-
 
 /mob/proc/get_contents()
 
@@ -675,7 +651,7 @@
 		remove_from_dead_mob_list()
 		add_to_alive_mob_list()
 		suiciding = 0
-		stat = UNCONSCIOUS //the mob starts unconscious,
+		set_stat(UNCONSCIOUS) //the mob starts unconscious,
 		if(!eye_blind)
 			blind_eyes(1)
 		updatehealth() //then we check if the mob should wake up.
@@ -687,7 +663,7 @@
 		if(mind)
 			for(var/S in mind.spell_list)
 				var/obj/effect/proc_holder/spell/spell = S
-				spell.updateButtonIcon()
+				spell.UpdateButton()
 
 //proc used to remove all immobilisation effects + reset stamina
 /mob/living/proc/remove_CC(should_update_mobility = TRUE)
@@ -736,7 +712,7 @@
 /mob/living/proc/can_be_revived()
 	. = 1
 	if(health <= HEALTH_THRESHOLD_DEAD)
-		return 0
+		return FALSE
 
 /mob/living/proc/update_damage_overlays()
 	return
@@ -967,7 +943,7 @@
 	else
 		throw_alert("gravity", /atom/movable/screen/alert/weightless)
 	if(!override && !is_flying())
-		INVOKE_ASYNC(src, /atom/movable.proc/float, !has_gravity)
+		float(!has_gravity)
 
 /mob/living/float(on)
 	if(throwing)
@@ -1109,27 +1085,27 @@
 	//basic fast checks go first. When overriding this proc, I recommend calling ..() at the end.
 	var/turf/T = get_turf(src)
 	if(!T)
-		return 0
+		return FALSE
 	if(is_centcom_level(T.z)) //dont detect mobs on centcom
-		return 0
+		return FALSE
 	if(is_away_level(T.z))
-		return 0
+		return FALSE
 	if(user != null && src == user)
-		return 0
+		return FALSE
 	if(invisibility || alpha == 0)//cloaked
-		return 0
+		return FALSE
 	if(digitalcamo || digitalinvis)
-		return 0
+		return FALSE
 
 	// Now, are they viewable by a camera? (This is last because it's the most intensive check)
 	if(!near_camera(src))
-		return 0
+		return FALSE
 
-	return 1
+	return TRUE
 
 //used in datum/reagents/reaction() proc
 /mob/living/proc/get_permeability_protection(list/target_zones)
-	return 0
+	return FALSE
 
 /mob/living/proc/harvest(mob/living/user) //used for extra objects etc. in butchering
 	return
@@ -1178,7 +1154,7 @@
 /mob/living/proc/check_weakness(obj/item/weapon, mob/living/attacker)
 	if(mind && mind.has_antag_datum(/datum/antagonist/devil))
 		return check_devil_bane_multiplier(weapon, attacker)
-	return 1
+	return TRUE
 
 /mob/living/proc/check_acedia()
 	if(mind && mind.has_objective(/datum/objective/sintouched/acedia))
@@ -1382,10 +1358,10 @@
 			return FALSE
 		if(NAMEOF(src, resize))
 			update_size(var_value)
-			return FALSE
+			return TRUE
 		if(NAMEOF(src, size_multiplier))
 			update_size(var_value)
-			return FALSE
+			return TRUE
 	. = ..()
 	switch(var_name)
 		if(NAMEOF(src, eye_blind))

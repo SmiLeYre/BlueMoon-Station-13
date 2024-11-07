@@ -38,9 +38,10 @@
 
 //Procs called while dead
 /mob/living/carbon/proc/handle_death()
-	for(var/datum/reagent/R in reagents.reagent_list)
-		if(R.chemical_flags & REAGENT_DEAD_PROCESS && !is_reagent_processing_invalid(R, src))
-			R.on_mob_dead(src)
+	if(reagents) // BLUEMOON EDIT - sanity check
+		for(var/datum/reagent/R in reagents.reagent_list)
+			if(R.chemical_flags & REAGENT_DEAD_PROCESS && !is_reagent_processing_invalid(R, src))
+				R.on_mob_dead(src)
 
 ///////////////
 // BREATHING //
@@ -167,7 +168,7 @@
 
 		failed_last_breath = 1
 		throw_alert("not_enough_oxy", /atom/movable/screen/alert/not_enough_oxy)
-		return 0
+		return FALSE
 
 	var/safe_oxy_min = 16
 	var/safe_oxy_max = 50
@@ -323,7 +324,7 @@
 	//BREATH TEMPERATURE
 	handle_breath_temperature(breath)
 
-	return 1
+	return TRUE
 
 //Fourth and final link in a breath chain
 /mob/living/carbon/proc/handle_breath_temperature(datum/gas_mixture/breath)
@@ -401,7 +402,7 @@
 			var/obj/item/organ/O = V
 			if(O)
 				O.on_life(seconds, times_fired)
-	else
+	else if(!QDELETED(src))
 		if(reagents.has_reagent(/datum/reagent/toxin/formaldehyde, 1) || reagents.has_reagent(/datum/reagent/preservahyde, 1)) // No organ decay if the body contains formaldehyde. Or preservahyde.
 			return
 		for(var/V in internal_organs)
@@ -498,26 +499,25 @@ All effects don't start immediately, but rather get worse over time; the rate is
 91-100: Dangerously toxic - swift death
 */
 #define BALLMER_POINTS 5
-GLOBAL_LIST_INIT(ballmer_good_msg, list("Hey guys, what if we rolled out a bluespace wiring system so mice can't destroy the powergrid anymore?",
-										"Hear me out here. What if, and this is just a theory, we made R&D controllable from our PDAs?",
-										"I'm thinking we should roll out a git repository for our research under the AGPLv3 license so that we can share it among the other stations freely.",
-										"I dunno about you guys, but IDs and PDAs being separate is clunky as fuck. Maybe we should merge them into a chip in our arms? That way they can't be stolen easily.",
-										"Why the fuck aren't we just making every pair of shoes into galoshes? We have the technology.",
-										"We can link the Ore Silo to our protolathes, so why don't we also link it to autolathes?",
-										"If we can make better bombs with heated plasma, oxygen, and tritium, then why do station nukes still use plutonium?",
- 										"We should port all our NT programs to modular consoles and do away with computers. They're way more customizable, support cross-platform usage, and would allow crazy amounts of multitasking.",
-										"Wait, if we use more manipulators in something, then it prints for cheaper, right? So what if we just made a new type of printer that has like 12 manipulators inside of it to print stuff for really cheap?"
+GLOBAL_LIST_INIT(ballmer_good_msg, list("Эй, народ, а что, если мы заменим обычную проводку на блюспейсовую и тогда мыши не смогут перегрызть электросети?",
+										"Послушайте. А что если, в теории, мы бы смогли управлять порядком исследований с наших КПК?",
+										"Не знаю, как насчёт вас, но ID и КПК по отдельности - это чертовски неудобно. Может нам, стоит объеденить их в чип и вживить его в руку? Тогда, их перестанут так легко красть...",
+										"Почему мы просто не превратим каждую пару обуви в галоши? У нас же есть технологии!",
+										"Мы можем связать СИЛО с нашими протолатами, так почему бы нам не связать его и с автолатами?",
+										"Если мы можем делать лучшие бомбы с помощью нагретой плазмы, кислорода и трития, то почему в станционных ядерных бомбах до сих пор используется плутоний?",
+										"Мы должны перенести весь наш NT-софт на модульные консоли и выкинуть компьютеры. Они гораздо лучше настраиваются, поддерживают кросс-платформенное использование и позволяют использовать безумное количество многозадачности.",
+										"Подождите, если мы используем больше манипуляторов в чем-то, то это печатается дешевле, верно? А если мы просто сделаем новый тип принтера с 12 манипуляторами внутри, чтобы печатать вещи очень дешево?"
 										))
-GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put a webserver that's automatically turned on with default admin passwords into every PDA?",
-											"So like, you know how we separate our codebase from the master copy that runs on our consumer boxes? What if we merged the two and undid the separation between codebase and server?",
-											"Dude, radical idea: H.O.N.K mechs but with no bananium required.",
-											"Best idea ever: Disposal pipes instead of hallways.",
-											"What if we use a language that was written on a napkin and created over 1 weekend for all of our servers?",
-											"What if we took a locker, some random trash, and made an exosuit out of it? Wouldn't that be like, super cool and stuff?",
-											"Okay, hear me out, what if we make illegal things not illegal, so that sec stops arresting us for having it?",
-											"I have a crazy idea, guys. Rather than having monkeys to test on, what if we only used apes?",
-											"Woh man ok, what if we took slime cores and smashed them into other slimes, be kinda cool to see what happens.",
-											"We're NANOtrasen but we need to unlock nano parts, what's the deal with that?"
+GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Йоу, а что, если мы поставим в каждый КПК автоматически включаемый веб-сервер с паролями администраторов по умолчанию?",
+											"Итак, вы знаете, как мы отделяем нашу кодовую базу от мастер-ветки, которая запускается на наших потребительских устройствах? Что, если мы объединим их и отменим разделение между кодовой базой и сервером?",
+											"Чувак, радикальная идея: мехи H.O.N.K, но без бананиума...",
+											"Просто идеальная идея. Установить мусорные трубы по всей станции и использовать их для перемещения.",
+											"Что, если мы будем использовать язык, написанный на салфетке и созданный за одну неделю, для всех наших серверов?",
+											"Что, если мы возьмем шкафчик, случайный мусор и сделаем из него экзокостюм? Разве это не было бы супер круто и все такое?",
+											"Окей, послушай меня, что если мы начнём делать незаконные вещи законными, чтобы охрана перестала нас донимать за их наличие?",
+											"У меня есть безумная идея, ребята. Что если вместо обезьян для испытаний, мы будем использовать только горилл?",
+											"Воу, ладно, а что если мы возьмём чуток ядер слаймов и смешаем их в другого слайма? Было бы круто посмотреть, что получится.",
+											"Мы НАНОтрейзен, и нам нужно разблокировать НАНОчасти. Что в этом предложении не так?"
 											))
 
 //this updates all special effects: stun, sleeping, knockdown, druggy, stuttering, etc..
@@ -773,7 +773,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 //used in human and monkey handle_environment()
 /mob/living/carbon/proc/natural_bodytemperature_stabilization()
 	if(HAS_TRAIT(src, TRAIT_COLDBLOODED) || HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
-		return 0 //Return 0 as your natural temperature. Species proc handle_environment() will adjust your temperature based on this.
+		return FALSE //return FALSE as your natural temperature. Species proc handle_environment() will adjust your temperature based on this.
 
 	var/body_temperature_difference = BODYTEMP_NORMAL - bodytemperature
 	switch(bodytemperature)
@@ -788,7 +788,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 
 /mob/living/carbon/proc/get_cooling_efficiency()
 	if(!HAS_TRAIT(src, TRAIT_ROBOTIC_ORGANISM))
-		return 1
+		return TRUE
 
 	var/integration_bonus = min(blood_volume * SYNTH_INTEGRATION_COOLANT_CAP, integrating_blood * SYNTH_INTEGRATION_COOLANT_PENALTY)	//Integration blood somewhat helps, though only at 40% impact and to a cap of 25% of current blood level.
 	var/blood_effective_volume = blood_volume + integration_bonus
@@ -806,7 +806,7 @@ GLOBAL_LIST_INIT(ballmer_windows_me_msg, list("Yo man, what if, we like, uh, put
 BLUEMOON REMOVAL END */
 	var/datum/gas_mixture/environment = loc.return_air()
 	if(!environment)
-		return 0
+		return FALSE
 
 	var/pressure = environment.return_pressure()
 	var/heat = environment.return_temperature()
@@ -826,18 +826,18 @@ BLUEMOON REMOVAL END */
 	var/turf/T = get_turf(src)
 
 	if(istype(head_item, /obj/item/clothing/head/helmet/space) && istype(suit_item, /obj/item/clothing/suit/space))
-		return 1
+		return TRUE
 
 	if(istype(head_item, /obj/item/clothing/head/mod) && istype(suit_item, /obj/item/clothing/suit/mod))
 		var/obj/item/clothing/suit/mod/modsuit = suit_item
 		var/obj/item/mod/control/mod_control = modsuit.mod
 		if(mod_control && mod_control.active)
-			return 1
+			return TRUE
 
 	if(T && is_mining_level(T.z) && istype(head_item, /obj/item/clothing/head/hooded/explorer) && istype(suit_item, /obj/item/clothing/suit/hooded/explorer))
-		return 1
+		return TRUE
 
-	return 0
+	return FALSE
 
 /////////
 //LIVER//

@@ -1,53 +1,99 @@
-<!-- FILLING OUT THIS FORM PROPERLY AND ADDING A PROPER CHANGELOG SECTION IS **NECESSARY** FOR PULL REQUESTS. IF THE INFORMATION IS NOT PROVIDED YOUR PR WILL NOT BE CONSIDERED FOR MERGING -->
+<!-- Это комментаррий, можно не сносить. Это поле внизу пока не трогай. -->
+- [ ] Hungry?
 
-<!-- Write **BELOW** The Headers and **ABOVE** The comments else it may not be viewable. -->
-<!-- You can view Contributing.MD for a detailed description of the pull request process. -->
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░▄▄▄░░░░░░░░░
+░░░░░░░░░░░░░░▄▄▄▄▄▄▄▄░░░░░░█████▄░░░░░░
+░░░░░░░░░▄▄█████████████▀░░▄░░▀████▄░░░░
+░░░░░░▄▄███▀▀░░▄▄▄▄▄▄░░▀░░████▄░▀████░░░
+░░░░▄███▀░▄▄██████▀▀███░░▄█▀▀░▀▀▄░▀███▄░
+░░░▄██▀░▄███▀▀▀███▄▄██░░▄██░░░░░█▄░▀███░
+░░███░▄██████████████▀░░███▄░░░▄██▄░████
+░███░▄████░█████░▀██▀░░█████████▀▀▀░░░░░
+▄██░░██████▀▀███████░░▀▀▀▀▀░░░░░░░░░░░░░
+███░██████░░░░█████░░░░░░░░░▄▄▄▄░░██░░░░
+██░░██████▄░░▄█████▄▄▄█████▀▀███░░██░░░░
+███░███▄░▀█████▀▀███████████████░░██░░░░
+███░▀██████▀████▄▄█████▄▄███▀███░▄██░░░░
+░██▄░██████▄▄██████▀▀▀█████▄▄██░░██▀░░░░
+░▀██▄░▀█▀▀████████░░░░░███████░░██▀░░░░░
+░░▀██▄░▀███████████▄░▄▄█████▀░▄██▀░░░░░░
+░░░░▀██▄░░▀███▄▄▄████████▀▀░▄███▀░░░░░░░
+░░░░░░▀███▄░░▀▀▀▀▀▀▀▀▀▀░░▄▄███▀░░░░░░░░░
+░░░░░░░░▀▀████▄▄▄▄▄▄▄▄█████▀░░░░░░░░░░░░
+░░░░░░░░░░░░░▀▀▀▀▀▀▀▀▀▀░░░░░░░░░░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
+░░░░░░░█████████████████████████░░░░░░░░
+░░░░░░░█────█───█────█────█────█░░░░░░░░
+░░░░░░░█─██─██─████──███──█─██─█░░░░░░░░
+░░░░░░░█────██─███──███──██────█░░░░░░░░
+░░░░░░░█─█████─██──███──███─██─█░░░░░░░░
+░░░░░░░█─████───█────█────█─██─█░░░░░░░░
+░░░░░░░█████████████████████████░░░░░░░░
+░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-# About The Pull Request
+- [ ] Or horny?
+⣿⣿⣿⣿⣿⣿⣿⡇⡌⡰⢃⡿⡡⠟⣠⢹⡏⣦⢸⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⡿⢰⠋⡿⢋⣐⡈⣽⠟⢀⢻⢸⡂⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣋⠴⢋⡘⢰⣄⣀⣅⣡⠌⠛⠆⣿⡄⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣶⣁⣐⠄⠹⣟⠯⢿⣷⠾⠁⠥⠃⣹⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⠟⠋⡍⢴⣶⣶⣶⣤⣭⡐⢶⣾⣿⣶⡆⢨⠛⠻⣿⣿⣿
+⣿⣿⣿⢏⣘⣚⣣⣾⣿⣿⣿⣿⣿⣿⢈⣿⣿⣿⣧⣘⠶⢂⠹⣿⣿
+⣿⣿⠃⣾⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⡀⢿⣿⣿⣿⣿⣿⣿⡇⣿⣿
+⣿⣿⡄⣿⣿⣿⣿⣿⣿⡯⠄⠄⠾⠿⠿⢦⣝⠻⣿⣿⣿⣿⠇⣿⣿
+⣿⣿⣷⣜⠿⢿⣿⡿⠟⣴⣾⣿⡇⢰⣾⣦⡹⣷⣮⡙⢟⣩⣾⣿⣿
+⣿⣿⣿⣿⣿⣆⢶⣶⣦⢻⣿⣿⣷⢸⣿⣿⣷⣌⠻⡷⣺⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⡜⢿⣿⡎⢿⣿⣿⡬⣿⣿⣿⡏⢦⣔⠻⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⠎⠻⣷⡈⢿⣿⡇⢛⣻⣿⣿⢸⣿⣷⠌⡛⢿⣿
+⣿⣿⣿⣿⣿⣿⡏⢰⣷⡙⢷⣌⢻⣿⣿⣿⣿⣿⢸⡿⢡⣾⣿⡶⠻
+⣿⣿⣿⣿⣿⡟⣰⣶⣭⣙⠊⣿⣷⣬⣛⠻⣿⣿⠈⣴⣿⣿⣿⠃⠄
+⣿⣿⣿⣿⡟⠄⠹⢿⣿⣿⣿⣤⠻⠟⠋⠡⠘⠋⢸⣿⣿⡿⠁⠄⠄
+⣿⣿⣿⣿⠁⠄⠄⠄⠙⢻⣿⣿⣇⠄⠄⠄⠄⠄⣺⡿⠛⠄⠄⠄⠄
+⣿⣿⣿⡏⠄⠄⠄⠄⠄⠄⠄⠉⠻⠷⠄⢠⣄⠄⠋⠄⠄⠄⠄⠄⠄
+⣿⣿⣿⣿⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⣿⠄⠄⠄⠄⠄⠄⠄⠄
 
-<!-- Describe The Pull Request. Please be sure every change is documented or this can delay review and even discourage maintainers from merging your PR! -->
-<!-- If your PR is related to one of our discord suggestions, please add the number of this suggestion to this section. Or if you may, the message link of said suggestion-->
+- [ ] Or, maybe, you want post something like a fucking joke?
+211_1_1____2¶¶¶¶66¶¶¶¶¶¶¶88¶88__¶888¶¶2________126
+__________¶¶¶¶¶12¶¶¶¶¶8¶¶¶866¶612¶8¶¶¶6_1_________
+211_1___6¶¶¶¶¶¶¶¶¶¶¶¶¶¶866¶¶66¶822¶¶8886681_______
+1111____2¶¶¶¶¶¶¶¶¶¶¶¶¶¶8688¶¶8_8¶2168¶61126_______
+21___268¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶8¶¶¶¶¶¶68¶6_188__666______
+11__12¶¶¶¶¶¶228¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶68¶2_26¶2_2861____
+1__16¶¶¶¶¶6___¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶61¶¶_¶¶6¶____122__
+1__8¶¶¶¶¶6____6¶¶¶¶8¶¶¶¶¶¶¶¶¶¶¶¶218¶18¶61¶1______1
+2186¶¶¶¶2_1____28682¶8¶8¶¶¶¶¶¶¶¶¶_68266¶1_2¶1_____
+6862¶¶¶¶__1_____6___26_16¶8¶¶¶8__¶211612¶8_¶¶81886
+¶88¶¶¶¶81_1____12________________¶¶1_11_6¶_2¶¶2___
+6¶¶¶¶¶¶6__2____1________________2_88_2_1_¶1¶8661__
+1_¶¶¶¶¶2__8______________________1¶22____¶688¶¶12_
+_2¶¶¶¶¶8__21_1_11_____________1__¶_111_1_¶81¶¶¶1__
+_2¶¶¶¶¶¶1_2621_1________________18___26__2¶2_¶¶___
+28_¶¶¶¶¶1__262_____1_______1_____2___1611_8¶126___
+8__¶¶¶¶¶2_282_______________1____2___62_2__2¶¶6___
+__2¶8¶8¶6_6¶¶¶8182______________622__16__12__82___
+__¶2_2¶¶¶_6¶¶¶¶¶¶¶¶12__61_2¶¶¶¶¶¶¶¶66_6___¶¶21112_
+1_81__8¶¶__6¶¶268¶¶¶¶61¶¶¶¶¶¶¶2_18¶¶1__1_2¶¶¶2_1_1
+8_22__1¶¶1__6¶¶¶¶¶¶¶¶_____¶¶¶¶¶¶¶_1¶____1¶¶¶¶8____
+1_22__1¶¶8____6¶¶¶2__________81___6______¶¶¶¶¶2___
+_______¶¶¶2_______________________2______626¶¶6___
+_______8¶¶6_______16__________________1__¶¶¶¶8¶81_
+_____686¶¶¶¶2___12______________________¶¶¶¶8¶¶¶86
+___2¶¶¶¶8¶¶¶6_____26_______________16___¶¶¶¶¶¶¶¶¶6
+86¶¶¶¶¶¶¶¶¶¶¶¶221__2¶881__________22_____¶¶¶¶¶128¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶882_16_____¶¶¶21____1_1¶¶¶¶¶228¶
+¶¶¶¶¶¶¶¶8¶¶¶¶8¶¶¶8¶¶¶¶¶¶¶¶¶62¶¶¶8___2___¶¶¶¶¶¶86¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶8162__6¶¶¶¶¶¶66_______6____¶¶¶¶¶¶66¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶66___88¶88________¶¶____¶¶¶¶¶¶862¶¶
+¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶6¶1____________¶¶¶1___¶¶¶¶¶¶¶¶626¶
+¶¶¶¶¶¶¶8¶¶¶¶¶2¶8¶¶¶2_________2¶81___2¶¶¶¶¶¶¶¶86618
+¶¶¶¶¶¶8¶¶¶¶¶¶2¶¶¶¶8¶¶¶8¶622¶¶¶_____6¶¶¶¶¶8¶¶¶8288¶
+¶¶¶¶¶¶¶¶¶¶¶8¶¶8888¶628¶¶¶¶¶2¶¶6____1¶¶¶¶¶8¶¶¶8¶¶¶¶
+¶¶¶¶¶¶¶¶6¶¶8¶¶2666866¶¶¶¶¶¶_¶¶¶____6¶¶¶¶¶8¶¶68¶¶8¶
+¶¶¶¶¶¶¶¶68¶6¶¶668628¶¶¶¶¶¶82¶¶¶¶__1¶¶¶¶¶62¶¶68¶¶88
+¶¶¶¶¶¶¶¶6¶¶¶¶¶¶6666¶¶¶8¶2118¶¶¶¶6_8¶¶¶¶¶128¶6¶¶¶¶¶
+¶¶¶¶¶¶¶¶¶¶¶88¶¶862¶¶¶8¶¶2826¶¶¶¶¶¶¶¶66¶¶16¶¶¶¶¶¶¶8
+¶¶¶¶¶¶¶¶8¶¶¶2¶¶¶8¶¶¶28¶¶¶¶_2¶¶¶8¶¶¶22¶¶618¶¶¶¶¶¶¶¶
+¶¶¶¶¶¶¶¶82¶¶28¶¶¶¶8_28¶¶¶2__¶881_¶618¶¶12¶¶¶¶¶¶¶¶¶
 
-## Why It's Good For The Game
+<!-- Ниже описывай что было сделано, какие изменения делает ПР и т.д. Всё тут написаное и предоставленое - облегчет смотрящему работу) Картинки можно вставлять комбинацией ctrl+C ctrl+V. -->
 
-<!-- Please add a short description of why you think these changes would benefit the game. If you can't justify it in words, it might not be worth adding. -->
-
-## A Port?
-
-<!-- Just say if it is a port of something and link the original pr/commit/whatever. -->
-
-## Pre-Merge Checklist
-<!-- Don't bother filling these in while creating your Pull Request, just click the checkboxes after the Pull Request is opened and you are redirected to the page. -->
-- [ ] You tested this on a local server.
-- [ ] This code did not runtime during testing.
-- [ ] You documented all of your changes.
-<!-- Neither the compiler nor workflow checks are perfect at detecting runtimes and errors. It is important to test your code/feature/fix locally. -->
-
-## Changelog
-
-:cl:
-add: Added new things
-add: Added more things
-del: Removed old things
-tweak: tweaked a few things
-balance: rebalanced something
-fix: fixed a few things
-soundadd: added a new sound thingy
-sounddel: removed an old sound thingy
-imageadd: added some icons and images
-imagedel: deleted some icons and images
-spellcheck: fixed a few typos
-code: changed some code
-refactor: refactored some code
-config: changed some config setting
-admin: messed with admin stuff
-server: something server ops should know
-wip: still being worked on
-experiment: experimental
-tgs: has something to do with tgs
-expansion: expands on something
-qol: quality of life content
-/:cl:
-
-<!-- Both :cl:'s are required for the changelog to work! You can put your name to the right of the first :cl: if you want to overwrite your GitHub username as author ingame. -->
-<!-- You can use multiple of the same prefix (they're only used for the icon ingame) and delete the unneeded ones. Despite some of the tags, changelogs should generally represent how a player might be affected by the changes rather than a summary of the PR's contents. -->
+<!-- Заполнил ПР? Отлично! Просто отправляй свой ПР на ревью. А когда увидишь его, то поле сверху станет интерактивным) -->

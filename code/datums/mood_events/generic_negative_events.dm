@@ -73,7 +73,7 @@
 
 /datum/mood_event/delam //SM delamination
 	description = span_boldwarning("Эти чертовы инженеры вообще ничего умеют...\n")
-	mood_change = -2
+	mood_change = -8
 	timeout = 4 MINUTES
 
 /datum/mood_event/depression
@@ -118,7 +118,7 @@
 		var/mob/living/carbon/human/H = owner
 		if(iscatperson(H))
 			H.dna.species.start_wagging_tail(H)
-			addtimer(CALLBACK(H.dna.species, /datum/species.proc/stop_wagging_tail, H), 30)
+			addtimer(CALLBACK(H.dna.species, TYPE_PROC_REF(/datum/species, stop_wagging_tail), H), 30)
 			description =  span_nicegreen("Они хотят поиграть на столе!\n")
 			mood_change = 2
 
@@ -126,6 +126,15 @@
 	mood_change = -3
 
 /datum/mood_event/brain_damage/add_effects()
+	// BLUEMOON EDIT START - это проклято и не должно так работать, но увы
+	var/datum/component/mood/parent_element = owner
+	if(istype(parent_element))
+		var/mob/living/carbon/human/human_owner = parent_element.parent
+		if(istype(human_owner) && isrobotic(human_owner))
+			var/damage_message = pick_list_replacements(BRAIN_DAMAGE_FILE, "synth_brain_damage")
+			description = span_warning("K-k-k-k-ERNEL ERR$@OR: [damage_message]\n")
+			return
+	// BLUEMOON EDIT END
 	var/damage_message = pick_list_replacements(BRAIN_DAMAGE_FILE, "brain_damage")
 	description = span_warning("Хр-р-р р-р-р... [damage_message]\n")
 
@@ -398,3 +407,8 @@
 	description = span_warning("Проклятые дикари!</span>\n")
 	mood_change = -5
 	timeout = 2 MINUTES
+
+/datum/mood_event/uncomfortably
+	description = span_warning("Я что-то защемил!</span>\n")
+	mood_change = -12
+	timeout = 6 MINUTES

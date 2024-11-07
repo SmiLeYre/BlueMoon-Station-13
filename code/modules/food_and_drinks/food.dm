@@ -50,3 +50,17 @@
 			if((foodtype & BREAKFAST) && world.time - SSticker.round_start_time < STOP_SERVING_BREAKFAST)
 				SEND_SIGNAL(H, COMSIG_ADD_MOOD_EVENT, "breakfast", /datum/mood_event/breakfast)
 			last_check_time = world.time
+
+///This proc adds the edible component, overwrite this if you for some reason want to change some specific args like callbacks.
+/obj/item/reagent_containers/food/snacks/proc/make_edible()
+	AddComponent(/datum/component/edible,\
+		initial_reagents = list_reagents,\
+		food_flags = null,\
+		foodtypes = foodtype,\
+		volume = volume,\
+		eat_time = 10,\
+		tastes = tastes,\
+		eatverbs = list("ест","вкушает","поедает","пожирает","наяривает","кушает"),\
+		bite_consumption = 2,\
+		junkiness = junkiness,\
+	)

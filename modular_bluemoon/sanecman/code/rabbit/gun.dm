@@ -8,7 +8,7 @@
 	icon_state = "rabbit"
 	item_state = null
 	cell_type = /obj/item/stock_parts/cell/high
-	can_charge = FALSE
+	can_charge = TRUE
 	weapon_weight = WEAPON_HEAVY // No dual wielding
 	pin = /obj/item/firing_pin/implant/mindshield
 

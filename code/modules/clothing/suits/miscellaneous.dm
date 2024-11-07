@@ -384,7 +384,7 @@
 	icon_state = "juggernaut"
 	item_state = "juggernaut"
 	tail_state = "juggernaut"
-	mutantrace_variation = STYLE_DIGITIGRADE
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC
 	body_parts_covered = CHEST|GROIN|ARMS|LEGS|FEET
 	armor = list(MELEE = 95, BULLET = 80, LASER = 50, ENERGY = 60, BOMB = 80, BIO = 100, RAD = 50, FIRE = 95, ACID = 95)
 	resistance_flags = FIRE_PROOF | ACID_PROOF

@@ -80,13 +80,14 @@
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper"
 	mob_name = "an InteQ raider"
-	canloadappearance = TRUE
+	can_load_appearance = TRUE
 	outfit = /datum/outfit/inteq_raider
 	roundstart = FALSE
 	death = FALSE
 	anchored = TRUE
 	density = FALSE
 	show_flavour = FALSE //Flavour only exists for spawners menu
+	can_load_appearance = TRUE
 	short_desc = "You are an InteQ raider."
 	flavour_text = "Капитан станции отказался платить в ответ на требование наёмников InteQ. Атакуйте её: похищайте ресурсы, берите заложников. Избегайте ненужных жертв. Не забывайте следить за своим корабль."
 	assignedrole = "InteQ Raider"
@@ -126,6 +127,7 @@
 
 /obj/effect/mob_spawn/human/raider/special(mob/living/new_spawn)
 	new_spawn.mind.add_antag_datum(/datum/antagonist/raiders)
+	new_spawn.grant_language(/datum/language/old_codes, TRUE, TRUE, LANGUAGE_MIND)
 
 /obj/effect/mob_spawn/human/raider/Destroy()
 	new/obj/structure/showcase/machinery/oldpod/used(drop_location())
@@ -139,7 +141,7 @@
 	uniform = /obj/item/clothing/under/inteq
 	shoes = /obj/item/clothing/shoes/combat
 	ears = /obj/item/radio/headset/inteq/alt
-	id = /obj/item/card/id/syndicate/inteq
+	id = /obj/item/card/id/inteq
 
 	var/command_radio = FALSE
 
@@ -147,7 +149,7 @@
 
 /datum/outfit/inteq_raider/vanguard
 	name = "InteQ Vanguard"
-	id = /obj/item/card/id/syndicate/anyone/inteq
+	id = /obj/item/card/id/inteq/anyone
 	suit = /obj/item/clothing/suit/armor/inteq/vanguard
 	head = /obj/item/clothing/head/HoS/inteq_vanguard
 	l_pocket = /obj/item/clothing/gloves/krav_maga/combatglovesplus
@@ -168,7 +170,7 @@
 		B.registered_name = H.real_name
 		B.update_label(H.real_name)
 
-	H.grant_language(/datum/language/codespeak, TRUE, TRUE)
+	H.grant_language(/datum/language/old_codes, TRUE, TRUE)
 	H.faction |= ROLE_INTEQ
 	H.update_icons()
 
@@ -176,7 +178,7 @@
 	name = "InteQ Honorable Vanguard"
 	suit = /obj/item/clothing/suit/armor/inteq/honorable_vanguard
 	head = /obj/item/clothing/head/HoS/inteq_honorable_vanguard
-	uniform = /obj/item/clothing/under/inteq_honorable_vanguard
+	uniform = /obj/item/clothing/under/inteq/honorable_vanguard
 	r_hand = /obj/item/gun/ballistic/revolver/inteq
 	r_pocket = /obj/item/ammo_box/a357
 
@@ -210,7 +212,7 @@
 	shuttleId = "inteq_collosus"
 	lock_override = NONE
 	shuttlePortId = "inteq_collosus_custom"
-	jumpto_ports = list("whiteship_away" = 1, "whiteship_home" = 1)
+	jump_to_ports = list("whiteship_away" = 1, "whiteship_home" = 1)
 	view_range = 14
 	x_offset = -7
 	y_offset = -7

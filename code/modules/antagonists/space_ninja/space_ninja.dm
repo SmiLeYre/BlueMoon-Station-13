@@ -130,8 +130,10 @@
 
 	owner.current.mind.assigned_role = ROLE_NINJA
 	owner.current.mind.special_role = ROLE_NINJA
-	owner.current.canloadappearance = TRUE
-	owner.current.checkloadappearance()
+	var/mob/living/carbon/human/H = owner.current
+	var/load_character = alert(H.client, "Желаете загрузить текущего своего выбранного персонажа?", "Играть своим персонажем!", "Да", "Нет")
+	if(load_character == "Да")
+		H.load_client_appearance(H.client)
 	return ..()
 
 /datum/antagonist/ninja/admin_add(datum/mind/new_owner,mob/admin)

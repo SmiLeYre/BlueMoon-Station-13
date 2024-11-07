@@ -5,16 +5,14 @@ GLOBAL_VAR(restart_counter)
 GLOBAL_VAR(topic_status_lastcache)
 GLOBAL_LIST(topic_status_cache)
 
-
 //This happens after the Master subsystem new(s) (it's a global datum)
 //So subsystems globals exist, but are not initialised
 
 /world/New()
-	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
-	if (debug_server)
-		call(debug_server, "auxtools_init")()
+	var/dll = GetConfig("env", "AUXTOOLS_DEBUG_DLL")
+	if (dll)
+		LIBCALL(dll, "auxtools_init")()
 		enable_debugging()
-	AUXTOOLS_CHECK(AUXMOS)
 	world.Profile(PROFILE_START)
 	log_world("World loaded at [TIME_STAMP("hh:mm:ss", FALSE)]!")
 
@@ -35,7 +33,7 @@ GLOBAL_LIST(topic_status_cache)
 	config.Load(params[OVERRIDE_CONFIG_DIRECTORY_PARAMETER])
 
 	load_admins()
-	load_mentors()
+	//load_mentors() BLUEMOON EDIT
 
 	//SetupLogs depends on the RoundID, so lets check
 	//DB schema and set RoundID if we can
@@ -82,11 +80,11 @@ GLOBAL_LIST(topic_status_cache)
 	CONFIG_SET(number/round_end_countdown, 0)
 	var/datum/callback/cb
 #ifdef UNIT_TESTS
-	cb = CALLBACK(GLOBAL_PROC, /proc/RunUnitTests)
+	cb = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(RunUnitTests))
 #else
 	cb = VARSET_CALLBACK(SSticker, force_ending, TRUE)
 #endif
-	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, /proc/_addtimer, cb, 10 SECONDS))
+	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(_addtimer), cb, 10 SECONDS))
 
 /world/proc/SetupLogs()
 	var/override_dir = params[OVERRIDE_LOG_DIRECTORY_PARAMETER]
@@ -243,15 +241,19 @@ GLOBAL_LIST(topic_status_cache)
 		if (usr)
 			log_admin("[key_name(usr)] Has requested an immediate world restart via client side debugging tools")
 			message_admins("[key_name_admin(usr)] Has requested an immediate world restart via client side debugging tools")
-		to_chat(world, span_boldannounce("Rebooting World immediately due to host request."))
+		to_chat(world, "<span class='boldannounce'>Rebooting World immediately due to host request.</span>")
 	else
-		to_chat(world, span_boldannounce("Ведётся перезагрузка Игрового Мира..."))
-		Master.Shutdown() //run SS shutdowns
+		to_chat(world, "<span class='boldannounce'>Rebooting world...</span>")
+		Master.Shutdown()	//run SS shutdowns
+	SSpersistence.RecordGracefulEnding() // BLUEMOON ADD - система запоминает, успешно ли завершился прошлый раунд, или крашнулся
+
+	TgsReboot()
 
 	#ifdef UNIT_TESTS
 	FinishTestRun()
 	return
-	#else
+	#endif
+
 	if(TgsAvailable())
 		var/do_hard_reboot
 		// check the hard reboot counter
@@ -269,32 +271,27 @@ GLOBAL_LIST(topic_status_cache)
 					do_hard_reboot = FALSE
 
 		if(do_hard_reboot)
-			log_world("Игровой Мир будет перезагружен в [TIME_STAMP("hh:mm:ss", FALSE)]")
+			log_world("World hard rebooted at [TIME_STAMP("hh:mm:ss", FALSE)]")
 			shutdown_logging() // See comment below.
-			auxcleanup()
+			var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
+			if (debug_server)
+				LIBCALL(debug_server, "auxtools_shutdown")()
 			TgsEndProcess()
 			return ..()
 
-	log_world("Игровой Мир будет перезагружен в [TIME_STAMP("hh:mm:ss", FALSE)]")
-
+	log_world("World rebooted at [TIME_STAMP("hh:mm:ss", FALSE)]")
 	shutdown_logging() // Past this point, no logging procs can be used, at risk of data loss.
-	auxcleanup()
-
-	TgsReboot() // TGS can decide to kill us right here, so it's important to do it last
-
-	..()
-	#endif
-
-/world/proc/auxcleanup()
-	AUXTOOLS_SHUTDOWN(AUXMOS)
 	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
 	if (debug_server)
-		call(debug_server, "auxtools_shutdown")()
+		LIBCALL(debug_server, "auxtools_shutdown")()
+	..()
 
 /world/Del()
 	shutdown_logging() // makes sure the thread is closed before end, else we terminate
-	auxcleanup()
-	. = ..()
+	var/debug_server = world.GetConfig("env", "AUXTOOLS_DEBUG_DLL")
+	if (debug_server)
+		LIBCALL(debug_server, "auxtools_shutdown")()
+	..()
 
 /world/proc/update_status()
 	. = ""
@@ -310,7 +307,7 @@ GLOBAL_LIST(topic_status_cache)
 	var/defaultstation = CONFIG_GET(string/stationname)
 	if(servername || stationname != defaultstation)
 		. += (servername ? "<b>[servername]" : "<b>")
-		. += (stationname != defaultstation ? "[servername ? " - " : ""][stationname]</b>\] " : "</b>\] ")
+		. += (stationname != defaultstation ? "[servername ? " &#8212 " : ""][stationname]</b>\] " : "</b>\] ")
 
 	var/communityname = CONFIG_GET(string/communityshortname)
 	var/communitylink = CONFIG_GET(string/communitylink)
@@ -335,7 +332,7 @@ GLOBAL_LIST(topic_status_cache)
 	if(NUM2SECLEVEL(GLOB.security_level))
 		. += "[NUM2SECLEVEL(GLOB.security_level)] alert, "
 
-	. += "[get_active_player_count(afk_check = TRUE)] playing"
+	. += "[get_total_player_count()] playing"
 
 	status = .
 
@@ -358,7 +355,7 @@ GLOBAL_LIST(topic_status_cache)
 /// Auxtools atmos
 /world/proc/refresh_atmos_grid()
 
-/world/proc/change_fps(new_value = 60)
+/world/proc/change_fps(new_value = 20)
 	if(new_value <= 0)
 		CRASH("change_fps() called with [new_value] new_value.")
 	if(fps == new_value)
@@ -380,3 +377,20 @@ GLOBAL_LIST(topic_status_cache)
 
 /world/proc/on_tickrate_change()
 	SStimer?.reset_buckets()
+
+#ifdef TRACY_PROFILING
+/proc/prof_init()
+	var/lib
+
+	switch(world.system_type)
+		if(MS_WINDOWS) lib = "prof.dll"
+		if(UNIX) lib = "libprof.so"
+		else CRASH("unsupported platform")
+
+	var/init = LIBCALL(lib, "init")()
+	if("0" != init) CRASH("[lib] init error: [init]")
+
+/world/New()
+	prof_init()
+	. = ..()
+#endif

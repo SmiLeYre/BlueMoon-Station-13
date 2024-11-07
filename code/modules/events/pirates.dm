@@ -46,7 +46,7 @@
 			threat_msg.content = "Приветствуем вас с корабля [ship_name]. Ваш сектор нуждается в защите, заплатите нам [payoff] кредитов или на вас наверняка кто-то нападёт."
 			threat_msg.possible_answers = list("Мы заплатим.","Мы заплатим, но на самом деле нет.")
 
-	threat_msg.answer_callback = CALLBACK(GLOBAL_PROC, .proc/pirates_answered, threat_msg, payoff, ship_name, initial_send_time, response_max_time, ship_template)
+	threat_msg.answer_callback = CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(pirates_answered), threat_msg, payoff, ship_name, initial_send_time, response_max_time, ship_template)
 	SScommunications.send_message(threat_msg,unique = TRUE)
 
 /proc/pirates_answered(datum/comm_message/threat_msg, payoff, ship_name, initial_send_time, response_max_time, ship_template)
@@ -150,7 +150,7 @@
 //interrupt_research
 /obj/machinery/shuttle_scrambler/proc/interrupt_research()
 	for(var/obj/machinery/rnd/server/S in GLOB.machines)
-		if(S.stat & (NOPOWER|BROKEN))
+		if(S.machine_stat & (NOPOWER|BROKEN))
 			continue
 		S.emp_act(80)
 		new /obj/effect/temp_visual/emp(get_turf(S))
@@ -199,8 +199,8 @@
 	see_hidden = FALSE
 
 /obj/docking_port/mobile/pirate
-	name = "Pirate shuttle"
-	id = "pirateship"
+	name = "pirate shuttle"
+	shuttle_id = "pirateship"
 	rechargeTime = 3 MINUTES
 
 /obj/machinery/suit_storage_unit/pirate
@@ -422,7 +422,7 @@
 	status_report = "Sending... "
 	pad.visible_message("<span class='notice'>[pad] starts charging up.</span>")
 	pad.icon_state = pad.warmup_state
-	sending_timer = addtimer(CALLBACK(src,.proc/send),warmup_time, TIMER_STOPPABLE)
+	sending_timer = addtimer(CALLBACK(src,PROC_REF(send)),warmup_time, TIMER_STOPPABLE)
 
 /obj/machinery/computer/piratepad_control/proc/stop_sending(custom_report)
 	if(!sending)
@@ -457,9 +457,9 @@
 /datum/export/pirate/ransom/get_cost(atom/movable/AM)
 	var/mob/living/carbon/human/H = AM
 	if(H.stat != CONSCIOUS || !H.mind || !H.mind.assigned_role) //mint condition only
-		return 0
+		return FALSE
 	else if("pirate" in H.faction) //can't ransom your fellow pirates to CentCom!
-		return 0
+		return FALSE
 	else
 		if(H.mind.assigned_role in GLOB.command_positions)
 			return 100000

@@ -18,7 +18,7 @@
 	set_wires(new /datum/wires/robot(src))
 	AddElement(/datum/element/empprotection, EMP_PROTECT_WIRES)
 	// AddElement(/datum/element/ridable, /datum/component/riding/creature/cyborg)
-	RegisterSignal(src, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, .proc/charge)
+	RegisterSignal(src, COMSIG_PROCESS_BORGCHARGER_OCCUPANT, PROC_REF(charge))
 
 	robot_modules_background = new()
 	robot_modules_background.icon_state = "block"
@@ -83,12 +83,18 @@
 			mmi.brainmob.container = mmi
 			mmi.update_appearance()
 
-	INVOKE_ASYNC(src, .proc/updatename)
+	INVOKE_ASYNC(src, PROC_REF(updatename))
 
 	aicamera = new/obj/item/camera/siliconcam/robot_camera(src)
 	toner = tonermax
 	diag_hud_set_borgcell()
 	logevent("System brought online.")
+
+	alert_control = new(src, list(ALARM_ATMOS, ALARM_FIRE, ALARM_POWER, ALARM_CAMERA, ALARM_BURGLAR, ALARM_MOTION), list(z))
+	RegisterSignal(alert_control.listener, COMSIG_ALARM_TRIGGERED, PROC_REF(alarm_triggered))
+	RegisterSignal(alert_control.listener, COMSIG_ALARM_CLEARED, PROC_REF(alarm_cleared))
+	alert_control.listener.RegisterSignal(src, COMSIG_LIVING_PREDEATH, TYPE_PROC_REF(/datum/alarm_listener, prevent_alarm_changes))
+	alert_control.listener.RegisterSignal(src, COMSIG_LIVING_REVIVE, TYPE_PROC_REF(/datum/alarm_listener, allow_alarm_changes))
 
 	add_verb(src, /mob/living/proc/lay_down) //CITADEL EDIT gimmie rest verb kthx
 	add_verb(src, /mob/living/silicon/robot/proc/rest_style)
@@ -118,18 +124,51 @@
 	QDEL_NULL(cell)
 	QDEL_NULL(robot_suit)
 	QDEL_NULL(thruster_button)
+	QDEL_NULL(alert_control)
 	cell = null
 	return ..()
 
 /mob/living/silicon/robot/Topic(href, href_list)
 	. = ..()
-
+	// BLUEMOON ADD START - профиль для боргов
+	if(href_list["cyborg_profile"])
+		ui_interact(usr)
+	// BLUEMOON ADD END
 	if(href_list["character_profile"])
 		if(!profile)
 			profile = new(src)
 		profile.ui_interact(usr)
+	//Show alerts window if user clicked on "Show alerts" in chat
+	if(href_list["showalerts"])
+		alert_control.ui_interact(src)
 
 	return
+
+// BLUEMOON ADD START - профиль для боргов
+// Да, это проклято и должно быть перенесено в отдельный датум, но...
+/mob/living/silicon/robot/ui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "CyborgProfile", "Профиль юнита [src]")
+		ui.open()
+
+/mob/living/silicon/robot/ui_static_data(mob/user, datum/tgui/ui, datum/ui_state/state)
+	. = ..()
+	var/data[0]
+	if(!src || !istype(src))
+		return
+	data["silicon_flavor_text"] = mind?.silicon_flavor_text || ""
+	data["oocnotes"] = mind?.ooc_notes || ""
+	data["vore_tag"] = client?.prefs?.vorepref || "No"
+	data["erp_tag"] = client?.prefs?.erppref || "No"
+	data["mob_tag"] = client?.prefs?.mobsexpref || "No"
+	data["nc_tag"] = client?.prefs?.nonconpref || "No"
+	data["unholy_tag"] = client?.prefs?.unholypref || "No"
+	data["extreme_tag"] = client?.prefs?.extremepref || "No"
+	data["very_extreme_tag"] = client?.prefs?.extremeharm || "No"
+
+	return data
+// BLUEMOON ADD END
 
 /mob/living/silicon/robot/proc/pick_module()
 	if(module.type != /obj/item/robot_module)
@@ -190,27 +229,7 @@
 	if(usr.stat == DEAD)
 		to_chat(src, "<span class='userdanger'>Alert: You are dead.</span>")
 		return //won't work if dead
-	robot_alerts()
-
-/mob/living/silicon/robot/proc/robot_alerts()
-	var/dat = ""
-	for (var/cat in alarms)
-		dat += text("<B>[cat]</B><BR>\n")
-		var/list/L = alarms[cat]
-		if (L.len)
-			for (var/alarm in L)
-				var/list/alm = L[alarm]
-				var/area/A = alm[1]
-				dat += "<NOBR>"
-				dat += text("-- [A.name]")
-				dat += "</NOBR><BR>\n"
-		else
-			dat += "-- All Systems Nominal<BR>\n"
-		dat += "<BR>\n"
-
-	var/datum/browser/alerts = new(usr, "robotalerts", "Current Station Alerts", 400, 410)
-	alerts.set_content(dat)
-	alerts.open()
+	alert_control.ui_interact(src)
 
 /mob/living/silicon/robot/proc/ionpulse()
 	if(!ionpulse_on)
@@ -258,62 +277,13 @@
 /mob/living/silicon/robot/restrained(ignore_grab)
 	. = 0
 
-/mob/living/silicon/robot/triggerAlarm(class, area/home, cameras, obj/source)
-	if(source.z != z)
-		return
-	if(stat == DEAD)
-		return 1
-	var/list/our_sort = alarms[class]
-	for(var/areaname in our_sort)
-		if (areaname == home.name)
-			var/list/alarm = our_sort[areaname]
-			var/list/sources = alarm[3]
-			if (!(source in sources))
-				sources += source
-			return 1
+/mob/living/silicon/robot/proc/alarm_triggered(datum/source, alarm_type, area/source_area)
+	SIGNAL_HANDLER
+	queueAlarm("--- [alarm_type] alarm detected in [source_area.name]!", alarm_type)
 
-	var/obj/machinery/camera/cam = null
-	var/list/our_cams = null
-	if(cameras && islist(cameras))
-		our_cams = cameras
-		if (our_cams.len == 1)
-			cam = our_cams[1]
-	else if(cameras && istype(cameras, /obj/machinery/camera))
-		cam = cameras
-	our_sort[home.name] = list(home, (cam ? cam : cameras), list(source))
-	queueAlarm(text("--- [class] alarm detected in [home.name]!"), class)
-	return TRUE
-
-/mob/living/silicon/robot/freeCamera(area/home, obj/machinery/camera/cam)
-	for(var/class in alarms)
-		var/our_area = alarms[class][home.name]
-		if(!our_area)
-			continue
-		var/cams = our_area[2] //Get the cameras
-		if(!cams)
-			continue
-		if(islist(cams))
-			cams -= cam
-			if(length(cams) == 1)
-				our_area[2] = cams[1]
-		else
-			our_area[2] = null
-
-/mob/living/silicon/robot/cancelAlarm(class, area/A, obj/origin)
-	var/list/L = alarms[class]
-	var/cleared = 0
-	for (var/I in L)
-		if (I == A.name)
-			var/list/alarm = L[I]
-			var/list/srcs  = alarm[3]
-			if (origin in srcs)
-				srcs -= origin
-			if (srcs.len == 0)
-				cleared = 1
-				L -= I
-	if (cleared)
-		queueAlarm("--- [class] alarm in [A.name] has been cleared.", class, 0)
-	return !cleared
+/mob/living/silicon/robot/proc/alarm_cleared(datum/source, alarm_type, area/source_area)
+	SIGNAL_HANDLER
+	queueAlarm("--- [alarm_type] alarm in [source_area.name] has been cleared.", alarm_type, FALSE)
 
 /mob/living/silicon/robot/can_interact_with(atom/A)
 	if (A == modularInterface)
@@ -755,7 +725,7 @@
 	. = ..()
 	radio = new /obj/item/radio/borg/syndicate(src)
 	laws = new /datum/ai_laws/syndicate_override()
-	addtimer(CALLBACK(src, .proc/show_playstyle), 5)
+	addtimer(CALLBACK(src, PROC_REF(show_playstyle)), 5)
 
 /mob/living/silicon/robot/modules/syndicate/create_modularInterface()
 	if(!modularInterface)
@@ -812,8 +782,8 @@
 /mob/living/silicon/robot/modules/inteq/Initialize(mapload)
 	. = ..()
 	radio = new /obj/item/radio/borg/inteq(src)
-	laws = new /datum/ai_laws/syndicate_override()
-	addtimer(CALLBACK(src, .proc/show_playstyle), 5)
+	laws = new /datum/ai_laws/inteq_override()
+	addtimer(CALLBACK(src, PROC_REF(show_playstyle)), 5)
 
 /mob/living/silicon/robot/modules/inteq/create_modularInterface()
 	if(!modularInterface)
@@ -983,9 +953,9 @@
 			toggle_headlamp(1)
 			return
 		if(IsUnconscious() || IsStun() || IsKnockdown() || IsParalyzed() || getOxyLoss() > maxHealth * 0.5)
-			stat = UNCONSCIOUS
+			set_stat(UNCONSCIOUS)
 		else
-			stat = CONSCIOUS
+			set_stat(CONSCIOUS)
 		update_mobility()
 	diag_hud_set_status()
 	diag_hud_set_health()
@@ -1036,7 +1006,7 @@
 	ionpulse = FALSE
 	revert_shell()
 
-	return 1
+	return TRUE
 
 /mob/living/silicon/robot/proc/has_module()
 	if(!module || module.type == /obj/item/robot_module)
@@ -1063,7 +1033,7 @@
 	hat_offset = module.hat_offset
 
 	magpulse = module.magpulsing
-	INVOKE_ASYNC(src, .proc/updatename)
+	INVOKE_ASYNC(src, PROC_REF(updatename))
 
 
 /mob/living/silicon/robot/proc/place_on_head(obj/item/new_hat)
@@ -1356,16 +1326,38 @@
 	set desc = "Select your resting pose."
 	sitting = 0
 	bellyup = 0
-	var/choice = alert(src, "Select resting pose", "", "Resting", "Sitting", "Belly up")
-	switch(choice)
-		if("Resting")
-			update_icons()
-			return 0
-		if("Sitting")
-			sitting = 1
-		if("Belly up")
-			bellyup = 1
-	update_icons()
+	deep_rest = 0		//DarkSer request by Gardelin0
+	wag_rest = 0		//DarkSer request by Gardelin0
+	wag_sit = 0			//DarkSer request by Gardelin0
+
+	if(module.drakerest == TRUE)	//DarkSer request by Gardelin0
+		var/choice_drake = tgui_alert(usr, "Select resting pose", "Pose", list("Resting", "Sitting", "Belly up", "Napping", "Resting Wag", "Sitting Wag"))
+		switch(choice_drake)
+			if("Resting")
+				update_icons()
+				return FALSE
+			if("Sitting")
+				sitting = 1
+			if("Belly up")
+				bellyup = 1
+			if("Napping")
+				deep_rest = 1
+			if("Resting Wag")
+				wag_rest = 1
+			if("Sitting Wag")
+				wag_sit = 1
+		update_icons()
+	if(module.drakerest == FALSE)
+		var/choice = tgui_alert(usr, "Select resting pose", "Pose", list("Resting", "Sitting", "Belly up"))
+		switch(choice)
+			if("Resting")
+				update_icons()
+				return FALSE
+			if("Sitting")
+				sitting = 1
+			if("Belly up")
+				bellyup = 1
+		update_icons()
 
 /mob/living/silicon/robot/verb/viewmanifest()
 	set category = "Robot Commands"

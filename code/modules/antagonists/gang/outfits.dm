@@ -42,7 +42,7 @@
 
 /datum/outfit/families_police/beatcop/fbi
 	name = "Families: Space FBI Officer"
-	suit = /obj/item/clothing/suit/armor/laserproof
+	suit = /obj/item/clothing/suit/hooded/ablative
 	head = /obj/item/clothing/head/helmet/riot
 	belt = /obj/item/gun/energy/laser/scatter
 	gloves = /obj/item/clothing/gloves/combat
@@ -50,7 +50,7 @@
 /datum/outfit/families_police/beatcop/military
 	name = "Families: Space Military"
 	uniform = /obj/item/clothing/under/syndicate/camo
-	suit = /obj/item/clothing/suit/armor/laserproof
+	suit = /obj/item/clothing/suit/hooded/ablative
 	head = /obj/item/clothing/head/beret/durathread
 	belt = /obj/item/gun/energy/laser/scatter
 	gloves = /obj/item/clothing/gloves/combat

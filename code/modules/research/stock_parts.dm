@@ -62,6 +62,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 		new /obj/item/stock_parts/micro_laser(src)
 		new /obj/item/stock_parts/matter_bin(src)
 		new /obj/item/stock_parts/cell/high(src)
+		new /obj/item/reagent_containers/glass/beaker/large(src)
 
 /obj/item/storage/part_replacer/bluespace/tier2
 
@@ -73,6 +74,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 		new /obj/item/stock_parts/micro_laser/high(src)
 		new /obj/item/stock_parts/matter_bin/adv(src)
 		new /obj/item/stock_parts/cell/super(src)
+		new /obj/item/reagent_containers/glass/beaker/large(src)
 
 /obj/item/storage/part_replacer/bluespace/tier3
 
@@ -84,6 +86,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 		new /obj/item/stock_parts/micro_laser/ultra(src)
 		new /obj/item/stock_parts/matter_bin/super(src)
 		new /obj/item/stock_parts/cell/hyper(src)
+		new /obj/item/reagent_containers/glass/beaker/large(src)
 
 /obj/item/storage/part_replacer/bluespace/tier4
 
@@ -95,6 +98,7 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 		new /obj/item/stock_parts/micro_laser/quadultra(src)
 		new /obj/item/stock_parts/matter_bin/bluespace(src)
 		new /obj/item/stock_parts/cell/bluespace(src)
+		new /obj/item/reagent_containers/glass/beaker/bluespace(src)
 
 /obj/item/storage/part_replacer/bluespace/tier5
 
@@ -106,6 +110,19 @@ If you create T5+ please take a pass at gene_modder.dm [L40]. Max_values MUST fi
 		new /obj/item/stock_parts/micro_laser/super_quadultra(src)
 		new /obj/item/stock_parts/matter_bin/darkmatter(src)
 		new /obj/item/stock_parts/cell/vortex(src)
+		new /obj/item/reagent_containers/glass/beaker/ultimate(src)
+
+/obj/item/storage/part_replacer/bluespace/tier6
+
+/obj/item/storage/part_replacer/bluespace/tier6/PopulateContents()
+	for(var/i in 1 to 25)
+		new /obj/item/stock_parts/capacitor/geis(src)
+		new /obj/item/stock_parts/scanning_module/ocular(src)
+		new /obj/item/stock_parts/manipulator/zepto(src)
+		new /obj/item/stock_parts/micro_laser/ansible(src)
+		new /obj/item/stock_parts/matter_bin/replicantmatter(src)
+		new /obj/item/stock_parts/cell/vortex(src)
+		new /obj/item/reagent_containers/glass/beaker/ultimate(src)
 
 /obj/item/storage/part_replacer/cargo //used in a cargo crate
 

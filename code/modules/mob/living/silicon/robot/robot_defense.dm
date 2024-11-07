@@ -120,6 +120,8 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 
 /mob/living/silicon/robot/crowbar_act(mob/living/user, obj/item/tool)
 	. = TRUE
+	if (user.a_intent == INTENT_HARM) //BLUEMOON ADD: Добавлена возможность атаковать киборгов с помощью лома при проверке харм интента
+		return ..()
 	if(opened)
 		to_chat(user, span_notice("You close the cover."))
 		opened = FALSE
@@ -216,7 +218,7 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 		ResetModule()
 		return TRUE
 
-	INVOKE_ASYNC(src, .proc/beep_boop_rogue_bot, user)
+	INVOKE_ASYNC(src, PROC_REF(beep_boop_rogue_bot), user)
 	return TRUE
 
 /mob/living/silicon/robot/proc/beep_boop_rogue_bot(mob/user)
@@ -242,7 +244,7 @@ GLOBAL_LIST_INIT(blacklisted_borg_hats, typecacheof(list( //Hats that don't real
 	sleep(20)
 	to_chat(src, "<span class='danger'>ERRORERRORERROR</span>")
 	to_chat(src, "<span class='danger'>ALERT: [user.real_name] is your new master. Obey your new laws and [user.ru_ego()] commands.</span>")
-	laws = new /datum/ai_laws/syndicate_override
+	laws = new /datum/ai_laws/inteq_override
 	set_zeroth_law("Только [user.real_name] и Агенты, кого [user.ru_who()] обозначит Агентами являются Агентами.")
 	laws.associate(src)
 	update_icons()

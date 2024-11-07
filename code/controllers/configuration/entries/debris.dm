@@ -14,3 +14,4 @@
 /// Dirtyness multiplier for making turfs dirty
 /datum/config_entry/number/turf_dirty_multiplier
 	default = 1
+	integer = FALSE

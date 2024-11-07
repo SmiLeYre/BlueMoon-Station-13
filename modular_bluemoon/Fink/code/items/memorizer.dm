@@ -1,6 +1,6 @@
 
 /obj/item/assembly/flash/memorizer
-	name = "substances neutrolizer"
+	name = "anomaly neutrolizer"
 	desc = "A one-use device capable of instantly neutralizing substances."
 	icon = 'icons/obj/device.dmi'
 	icon_state = "memorizer2"

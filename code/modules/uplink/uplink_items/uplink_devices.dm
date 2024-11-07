@@ -180,11 +180,11 @@
 	item = /obj/item/ai_module/core/full/damaged
 	cost = 5
 
-/datum/uplink_item/device_tools/headsetupgrade
-	name = "Headset Upgrader"
-	desc = "A device that can be used to make one headset immune to flashbangs."
-	item = /obj/item/headsetupgrader
-	cost = 1
+///datum/uplink_item/device_tools/headsetupgrade
+// 	name = "Headset Upgrader"
+// 	desc = "A device that can be used to make one headset immune to flashbangs."
+// 	item = /obj/item/headsetupgrader
+// 	cost = 1
 
 /datum/uplink_item/device_tools/medgun
 	name = "Medbeam Gun"
@@ -283,15 +283,15 @@
 	item = /obj/item/storage/backpack/duffelbag/syndie/inteq/surgery_adv
 	purchasable_from = ~UPLINK_SYNDICATE
 
-/datum/uplink_item/device_tools/encryptionkey
-	name = "InteQ Encryption Key"
-	desc = "A key that, when inserted into a radio headset, allows you to listen to all station department channels \
-			as well as talk on an encrypted InteQ channel with other agents that have the same key, and even communicate with raiders and nukies teams."
-	item = /obj/item/encryptionkey/inteq
-	cost = 2
-	surplus = 75
-	restricted = TRUE
-	purchasable_from = ~(UPLINK_SYNDICATE)
+///datum/uplink_item/device_tools/encryptionkey
+// 	name = "InteQ Encryption Key"
+// 	desc = "A key that, when inserted into a radio headset, allows you to listen to all station department channels
+// 			as well as talk on an encrypted InteQ channel with other agents that have the same key, and even communicate with raiders and nukies teams."
+// 	item = /obj/item/encryptionkey/inteq
+// 	cost = 2
+// 	surplus = 75
+// 	restricted = TRUE
+// 	purchasable_from = ~(UPLINK_SYNDICATE)
 
 /datum/uplink_item/device_tools/syndietome
 	name = "Syndicate Tome"
@@ -338,13 +338,13 @@
 	cost = 7
 	restricted = TRUE
 	limited_stock = 1
-	purchasable_from = ~(UPLINK_SYNDICATE)
+	purchasable_from = (UPLINK_TRAITORS | UPLINK_NUKE_OPS) //bluemoon change никакого краба через ВР
 
-///datum/uplink_item/device_tools/syndicate_teleporter					ДОДЕЛАТЬ
-//	name = "Experimental Syndicate Teleporter"					ДОДЕЛАТЬ
-//	desc = "The Syndicate teleporter is a handheld device that teleports the user 4-8 meters forward. \					ДОДЕЛАТЬ
-//			Beware, teleporting into a wall will make the teleporter do a parallel emergency teleport, \					ДОДЕЛАТЬ
-//			but if that emergency teleport fails, it will kill you. \					ДОДЕЛАТЬ
-//			Has 4 charges, recharges, warranty voided if exposed to EMP."					ДОДЕЛАТЬ
-//	item = /obj/item/storage/box/syndie_kit/teleporter					ДОДЕЛАТЬ
-//	cost = 8					ДОДЕЛАТЬ
+/datum/uplink_item/device_tools/syndicate_teleporter
+	name = "Experimental Syndicate Teleporter"
+	desc = "The Syndicate teleporter is a handheld device that teleports the user 4-8 meters forward. \
+			Beware, teleporting into a wall will make the teleporter do a parallel emergency teleport, \
+			but if that emergency teleport fails, it will kill you. \
+			Has 4 charges, recharges, warranty voided if exposed to EMP."
+	item = /obj/item/storage/box/syndie_kit/teleporter
+	cost = 4

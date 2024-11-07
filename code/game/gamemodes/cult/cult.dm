@@ -27,6 +27,8 @@
 			return FALSE
 		if(M.mind.unconvertable)
 			return FALSE
+		if(IS_HERETIC(M))
+			return FALSE
 	else
 		return FALSE
 	if(HAS_TRAIT(M, TRAIT_MINDSHIELD) || issilicon(M) || isbot(M) || isdrone(M) || is_servant_of_ratvar(M) || !M.client)
@@ -40,7 +42,7 @@
 	false_report_weight = 10
 	chaos = 8
 	restricted_jobs = list("Prisoner", "AI", "Cyborg")
-	protected_jobs = list("Security Officer", "Shaft Miner", "Warden", "Detective", "Head of Security", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director", "Quartermaster", "Blueshield", "Brig Physician", "Peacekeeper", "NanoTrasen Representative", "Lawyer", "Chaplain")
+	protected_jobs = list("Security Officer", "Shaft Miner", "Warden", "Detective", "Head of Security","Bridge Officer", "Captain", "Head of Personnel", "Chief Engineer", "Chief Medical Officer", "Research Director", "Quartermaster", "Blueshield", "Brig Physician", "Peacekeeper", "NanoTrasen Representative", "Internal Affairs Agent", "Chaplain")
 	required_players = 0
 	required_enemies = 3
 	recommended_enemies = 5
@@ -154,9 +156,9 @@
 			if(cult_mind.current.onCentCom() || cult_mind.current.onSyndieBase())
 				acolytes_survived++
 	if(acolytes_survived>=acolytes_needed)
-		return 0
+		return FALSE
 	else
-		return 1
+		return TRUE
 
 
 /datum/game_mode/cult/generate_report()

@@ -6,7 +6,7 @@
 
 /datum/quirk/social_anxiety/add()
 	. = ..()
-	RegisterSignal(quirk_holder, COMSIG_MOB_SAY, .proc/handle_speech)
+	RegisterSignal(quirk_holder, COMSIG_MOB_SAY, PROC_REF(handle_speech))
 
 /datum/quirk/social_anxiety/remove()
 	. = ..()
@@ -150,7 +150,7 @@
 /datum/quirk/dumb4cum/add()
 	// Set timer
 	timer_trigger = rand(9000, 18000)
-	timer = addtimer(CALLBACK(src, .proc/crave), timer_trigger, TIMER_STOPPABLE)
+	timer = addtimer(CALLBACK(src, PROC_REF(crave)), timer_trigger, TIMER_STOPPABLE)
 
 /datum/quirk/dumb4cum/remove()
 	// Remove status trait
@@ -174,7 +174,7 @@
 		to_chat(quirk_holder, span_love("[pick(trigger_phrases)]"))
 
 	reminder_trigger = rand(3000, 9000)
-	reminder_timer = addtimer(CALLBACK(src, .proc/reminder), reminder_trigger, TIMER_STOPPABLE)
+	reminder_timer = addtimer(CALLBACK(src, PROC_REF(reminder)), reminder_trigger, TIMER_STOPPABLE)
 
 	// Add active status trait
 	ADD_TRAIT(quirk_holder, TRAIT_DUMB_CUM_CRAVE, DUMB_CUM_TRAIT)
@@ -191,7 +191,7 @@
 	deltimer(reminder_timer)
 	reminder_timer = null
 	reminder_trigger = rand(3000, 9000)
-	reminder_timer = addtimer(CALLBACK(src, .proc/reminder), reminder_trigger, TIMER_STOPPABLE)
+	reminder_timer = addtimer(CALLBACK(src, PROC_REF(reminder)), reminder_trigger, TIMER_STOPPABLE)
 
 /datum/quirk/dumb4cum/proc/uncrave(print_text = FALSE)
 	// Remove active status trait
@@ -211,7 +211,7 @@
 	reminder_timer = null
 	timer_trigger = rand(9000, 18000)
 	// Add new timer
-	timer = addtimer(CALLBACK(src, .proc/crave), timer_trigger, TIMER_STOPPABLE)
+	timer = addtimer(CALLBACK(src, PROC_REF(crave)), timer_trigger, TIMER_STOPPABLE)
 
 	if(print_text)
 		to_chat(quirk_holder, span_love("[pick(uncrave_phrases)]"))
@@ -235,7 +235,8 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		var/datum/physiology/P = H.physiology
-		P.hunger_mod /= 2
+		if(P)
+			P.hunger_mod /= 2
 
 /datum/quirk/thirsty
 	name = "Жаждущий"
@@ -254,7 +255,8 @@
 	var/mob/living/carbon/human/H = quirk_holder
 	if(H)
 		var/datum/physiology/P = H.physiology
-		P.thirst_mod /= 2
+		if(P)
+			P.thirst_mod /= 2
 
 /datum/quirk/less_nightmare
 	name = "Отпрыск Ночного Кошмара"
@@ -271,6 +273,10 @@
 
 /datum/quirk/less_nightmare/remove()
 	var/mob/living/carbon/human/C = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!C)
+		return
+	// BLUEMOON EDIT END
 	C.RemoveElement(/datum/element/photosynthesis, 1, 1, 0, 0, 0, 0, SHADOW_SPECIES_LIGHT_THRESHOLD, SHADOW_SPECIES_LIGHT_THRESHOLD)
 
 //well-trained moved to neutral to stop the awkward situation of a dom snapping and the 30 trait powergamers fall to the floor.
@@ -281,12 +287,14 @@
 	gain_text = span_notice("Вы хотите подчиниться кому-нибудь...")
 	lose_text = span_notice("Вы больше не хотите подчиняться...")
 	processing_quirk = TRUE
+	/// BLUEMOON ADDED - optimization
+	var/check_delay = 0
 	var/notice_delay = 0
 	var/mob/living/carbon/human/last_dom
 
 /datum/quirk/well_trained/add()
 	. = ..()
-	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, .proc/on_examine_holder)
+	RegisterSignal(quirk_holder, COMSIG_PARENT_EXAMINE, PROC_REF(on_examine_holder))
 
 /datum/quirk/well_trained/remove()
 	. = ..()
@@ -305,6 +313,12 @@
 	. = ..()
 	if(!quirk_holder)
 		return
+	// BLUEMOON EDIT START - оптимизация
+	if(check_delay > world.time)
+		return
+
+	check_delay = world.time + 5 SECONDS
+	// BLUEMOON EDIT END
 
 	var/good_x = "хорошим питомцем"
 	switch(quirk_holder.gender)
@@ -328,12 +342,14 @@
 		last_dom = null
 		return
 
+	// BLUEMOON EDIT START - теперь негативный мудлет убирается при появлении позитивного
 	//Handle the mood
 	var/datum/component/mood/mood = quirk_holder.GetComponent(/datum/component/mood)
-	if(istype(mood.mood_events[QMOOD_WELL_TRAINED], /datum/mood_event/dominant/good_boy))
+	if(!isnull(mood.mood_events[QMOOD_WELL_TRAINED]))
 		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_WELL_TRAINED, /datum/mood_event/dominant/good_boy)
 	else
-		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_WELL_TRAINED, /datum/mood_event/dominant/need)
+		SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, QMOOD_BAD_TRAINED, /datum/mood_event/dominant/need)
+	// BLUEMOON EDIT END
 
 	//Don't do anything if a previous dom was found
 	if(last_dom)

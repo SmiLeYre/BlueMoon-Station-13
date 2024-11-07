@@ -55,7 +55,7 @@
 
 /datum/antagonist/rev/greet()
 	SEND_SOUND(owner.current, sound('sound/ambience/antag/revolution.ogg'))
-	to_chat(owner, "<span class='userdanger'>Вы - революционер! Помогайте всем, чем можете. Не атакуйте своих товарищей. Вы можете опознать их с помощью красных \"R\" на интерфейсе, а лидеров - с помощью синих \"R\". Ведите революцию к победе, помогая убивать глав станции!</span>")
+	to_chat(owner, "<span class='userdanger'>Вы - революционер! Помогайте всем, чем можете. Не атакуйте своих товарищей. Вы можете опознать их с помощью красных \"R\" на интерфейсе, а лидеров - с помощью синих \"R\". Лидерам предоставляется скидка 99% на товары с черного рынка. Ведите революцию к победе, помогая убивать глав станции!</span>")
 	owner.announce_objectives()
 
 /datum/antagonist/rev/create_team(datum/team/revolution/new_team)
@@ -98,7 +98,7 @@
 
 /datum/antagonist/rev/get_admin_commands()
 	. = ..()
-	.["Promote"] = CALLBACK(src,.proc/admin_promote)
+	.["Promote"] = CALLBACK(src,PROC_REF(admin_promote))
 
 /datum/antagonist/rev/proc/admin_promote(mob/admin)
 	var/datum/mind/O = owner
@@ -118,10 +118,10 @@
 /datum/antagonist/rev/head/get_admin_commands()
 	. = ..()
 	. -= "Promote"
-	.["Take flash"] = CALLBACK(src,.proc/admin_take_flash)
-	.["Give flash"] = CALLBACK(src,.proc/admin_give_flash)
-	.["Repair flash"] = CALLBACK(src,.proc/admin_repair_flash)
-	.["Demote"] = CALLBACK(src,.proc/admin_demote)
+	.["Take flash"] = CALLBACK(src,PROC_REF(admin_take_flash))
+	.["Give flash"] = CALLBACK(src,PROC_REF(admin_give_flash))
+	.["Repair flash"] = CALLBACK(src,PROC_REF(admin_repair_flash))
+	.["Demote"] = CALLBACK(src,PROC_REF(admin_demote))
 
 /datum/antagonist/rev/head/proc/admin_take_flash(mob/admin)
 	var/list/L = owner.current.get_contents()
@@ -276,6 +276,7 @@
 
 	if(give_flash)
 		var/obj/item/assembly/flash/T = new(H)
+		var/obj/item/blackmarket_uplink/TT = new(H)
 		var/list/slots = list (
 			"backpack" = ITEM_SLOT_BACKPACK,
 			"left pocket" = ITEM_SLOT_LPOCKET,
@@ -286,7 +287,11 @@
 			to_chat(H, "We are unfortunately unable to get you a flash.")
 		else
 			to_chat(H, "The flash in your [where] will help you to persuade the crew to join your cause.")
-
+		var/where2 = H.equip_in_one_of_slots(TT, slots, critical = TRUE)
+		if (!where2)
+			to_chat(H, "We are unfortunately unable to get you a black market uplink.")
+		else
+			to_chat(H, "The black market uplink in your [where2].")
 	if(give_hud)
 		var/obj/item/organ/cyberimp/eyes/hud/security/syndicate/S = new(H)
 		S.Insert(H, special = FALSE, drop_if_replaced = FALSE)
@@ -328,7 +333,7 @@
 		var/datum/antagonist/rev/R = M.has_antag_datum(/datum/antagonist/rev)
 		R.objectives |= objectives
 
-	addtimer(CALLBACK(src,.proc/update_objectives),HEAD_UPDATE_PERIOD,TIMER_UNIQUE)
+	addtimer(CALLBACK(src,PROC_REF(update_objectives)),HEAD_UPDATE_PERIOD,TIMER_UNIQUE)
 
 /datum/team/revolution/proc/head_revolutionaries()
 	. = list()
@@ -354,7 +359,7 @@
 				var/datum/antagonist/rev/rev = new_leader.has_antag_datum(/datum/antagonist/rev)
 				rev.promote()
 
-	addtimer(CALLBACK(src,.proc/update_heads),HEAD_UPDATE_PERIOD,TIMER_UNIQUE)
+	addtimer(CALLBACK(src,PROC_REF(update_heads)),HEAD_UPDATE_PERIOD,TIMER_UNIQUE)
 
 /datum/team/revolution/proc/save_members()
 	ex_headrevs = get_antag_minds(/datum/antagonist/rev/head, TRUE)
@@ -391,12 +396,12 @@
 	save_members()
 
 	// Remove everyone as a revolutionary
-	for (var/_rev_mind in members)
-		var/datum/mind/rev_mind = _rev_mind
-		if (rev_mind.has_antag_datum(/datum/antagonist/rev))
-			var/datum/antagonist/rev/rev_antag = rev_mind.has_antag_datum(/datum/antagonist/rev)
-			rev_antag.remove_revolutionary(FALSE, . == STATION_VICTORY ? DECONVERTER_STATION_WIN : DECONVERTER_REVS_WIN)
-			LAZYADD(rev_mind.special_statuses, "<span class='bad'>Former [(rev_mind in ex_headrevs) ? "head revolutionary" : "revolutionary"]</span>")
+	// for (var/_rev_mind in members)
+	// 	var/datum/mind/rev_mind = _rev_mind
+	// 	if (rev_mind.has_antag_datum(/datum/antagonist/rev))
+	// 		var/datum/antagonist/rev/rev_antag = rev_mind.has_antag_datum(/datum/antagonist/rev)
+	// 		rev_antag.remove_revolutionary(FALSE, . == STATION_VICTORY ? DECONVERTER_STATION_WIN : DECONVERTER_REVS_WIN)
+	// 		LAZYADD(rev_mind.special_statuses, "<span class='bad'>Former [(rev_mind in ex_headrevs) ? "head revolutionary" : "revolutionary"]</span>")
 
 	if (. == STATION_VICTORY)
 		// If the revolution was quelled, make rev heads unable to be revived through pods

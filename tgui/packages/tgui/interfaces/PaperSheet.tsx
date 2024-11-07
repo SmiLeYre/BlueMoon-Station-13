@@ -112,9 +112,9 @@ const canEdit = (heldItemDetails?: WritingImplement): boolean => {
 const fieldRegex: RegExp = /\[((?:_+))\]/gi;
 
 // Handles the ghost stamp when attempting to stamp paper sheets.
-class PaperSheetStamper extends Component<PaperSheetStamperProps,
-  PaperSheetStamperState> {
+class PaperSheetStamper extends Component<PaperSheetStamperProps> {
   style: null;
+  state: PaperSheetStamperState = { x: 0, y: 0, rotation: 0, yOffset: 0 };
   scrollableRef: RefObject<HTMLDivElement>;
 
   constructor(props, context) {
@@ -122,9 +122,7 @@ class PaperSheetStamper extends Component<PaperSheetStamperProps,
 
     this.style = null;
     this.scrollableRef = props.scrollableRef;
-    this.state = { x: 0, y: 0, rotation: 0, yOffset: 0 };
   }
-
 
   // Stops propagation of a given event.
   pauseEvent = (e: Event): boolean => {

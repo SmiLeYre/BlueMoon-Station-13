@@ -22,6 +22,7 @@
 #define DYE_QM "qm"
 #define DYE_LAW "law"
 #define DYE_CAPTAIN "captain"
+#define DYE_COMMAND "command"
 #define DYE_HOP "hop"
 #define DYE_HOS "hos"
 #define DYE_CE "ce"

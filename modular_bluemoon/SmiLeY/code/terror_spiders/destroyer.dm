@@ -30,8 +30,8 @@
 	freq_ventcrawl_idle =  1800
 	can_wrap = FALSE
 	web_type = null
-	special_abillity = list(/obj/effect/proc_holder/spell/targeted/emplosion/terror_emp,
-							/obj/effect/proc_holder/spell/aoe_turf/terror_burn)
+	special_abillity = list(/obj/effect/proc_holder/spell/self/terror_emp,
+							/obj/effect/proc_holder/spell/self/explosion/terror_burn)
 	spider_intro_text = "Будучи Разрушителем Ужаса, ваша цель - саботировать станцию. Выбивайте заваренную вентиляцию, ломайте канистры с опасными газами, уничтожайте АПЦ и любое оборудование, до которого доберётесь. Помните, вы - не боевой паук, хоть вы и можете справиться с небольшой угрозой, убийства это не ваша забота!"
 	var/datum/action/innate/terrorspider/ventsmash/ventsmash_action
 

@@ -22,7 +22,10 @@
 	var/chargerate = 100 //how much power is given every tick in a recharger
 	var/self_recharge = 0 //does it self recharge, over time, or not?
 	var/ratingdesc = TRUE
-	var/grown_battery = FALSE // If it's a grown that acts as a battery, add a wire overlay to it.
+	///If it's a grown that acts as a battery, add a wire overlay to it.
+	var/grown_battery = FALSE
+	/// If true, add the o1 and o2 overlays based on charge level.
+	var/has_charge_overlay = TRUE
 	rad_flags = RAD_NO_CONTAMINATE // Prevent the same cheese as with the stock parts
 
 /obj/item/stock_parts/cell/get_cell()
@@ -63,8 +66,9 @@
 /obj/item/stock_parts/cell/update_overlays()
 	. = ..()
 	if(grown_battery)
-		. += image('icons/obj/power.dmi',"grown_wires")
-	if(charge < 0.01)
+		. += image('icons/obj/power.dmi', "grown_wires")
+		return
+	if(!has_charge_overlay || charge < 0.01)
 		return
 	else if(charge/maxcharge >=0.995)
 		. += "cell-o2"
@@ -78,13 +82,13 @@
 /obj/item/stock_parts/cell/use(amount, can_explode = TRUE)
 	if(rigged && amount > 0 && can_explode)
 		explode()
-		return 0
+		return FALSE
 	if(charge < amount)
-		return 0
+		return FALSE
 	charge -= amount
 	if(!istype(loc, /obj/machinery/power/apc))
 		SSblackbox.record_feedback("tally", "cell_used", 1, type)
-	return 1
+	return TRUE
 
 // recharge the cell
 /obj/item/stock_parts/cell/proc/give(amount)
@@ -92,7 +96,7 @@
 		return
 	if(rigged && amount > 0)
 		explode()
-		return 0
+		return FALSE
 	if(maxcharge < amount)
 		amount = maxcharge
 	var/power_used = min(maxcharge-charge,amount)
@@ -184,7 +188,7 @@
 	if(charge >= 1000)
 		return clamp(round(charge/10000), 10, 90) + rand(-5,5)
 	else
-		return 0
+		return FALSE
 
 /obj/item/stock_parts/cell/get_part_rating()
 	return self_recharge > 0 ? rating * maxcharge * self_recharge * 5 : rating * maxcharge
@@ -306,7 +310,7 @@
 	chargerate = 30000
 
 /obj/item/stock_parts/cell/infinite/use()
-	return 1
+	return TRUE
 
 /obj/item/stock_parts/cell/infinite/abductor
 	name = "void core"

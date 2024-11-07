@@ -42,7 +42,7 @@
 	var/power_gen = 4000	// amount of power output at max speed
 
 /obj/machinery/status_display/proc/get_power_output()
-	if(speed && !stat && anchored)
+	if(speed && !machine_stat && anchored)
 		return power_gen * speed / MAX_SPEED
 	return 0
 
@@ -75,7 +75,7 @@
 		return TRUE
 	balloon_alert(user, "repaired")
 	obj_integrity = max_integrity
-	set_machine_stat(stat & ~BROKEN)
+	set_machine_stat(machine_stat & ~BROKEN)
 	update_appearance()
 	return TRUE
 
@@ -148,7 +148,7 @@
 /obj/machinery/status_display/update_appearance(updates=ALL)
 	. = ..()
 	if( \
-		(stat & (NOPOWER|BROKEN)) || \
+		(machine_stat & (NOPOWER|BROKEN)) || \
 		(current_mode == SD_BLANK) || \
 		(current_mode != SD_PICTURE && message1 == "" && message2 == "") \
 	)
@@ -159,7 +159,7 @@
 /obj/machinery/status_display/update_overlays()
 	. = ..()
 
-	if(stat & (NOPOWER|BROKEN))
+	if(machine_stat & (NOPOWER|BROKEN))
 		remove_messages()
 		return
 
@@ -191,7 +191,7 @@
 
 // Timed process - performs nothing in the base class
 /obj/machinery/status_display/process()
-	if(stat & NOPOWER)
+	if(machine_stat & NOPOWER)
 		// No power, no processing.
 		update_appearance()
 
@@ -208,7 +208,7 @@
 
 /obj/machinery/status_display/emp_act(severity)
 	. = ..()
-	if(stat & (NOPOWER|BROKEN) || . & EMP_PROTECT_SELF)
+	if(machine_stat & (NOPOWER|BROKEN) || . & EMP_PROTECT_SELF)
 		return
 	current_mode = SD_PICTURE
 	set_picture("ai_bsod")
@@ -334,7 +334,7 @@
 	return ..()
 
 /obj/machinery/status_display/evac/process()
-	if(stat & NOPOWER)
+	if(machine_stat & NOPOWER)
 		// No power, no processing.
 		update_appearance()
 		return PROCESS_KILL
@@ -391,7 +391,7 @@
 	current_mode = SD_MESSAGE
 
 /obj/machinery/status_display/supply/process()
-	if(stat & NOPOWER)
+	if(machine_stat & NOPOWER)
 		// No power, no processing.
 		update_appearance()
 		return PROCESS_KILL
@@ -439,7 +439,7 @@
 	var/shuttle_id
 
 /obj/machinery/status_display/shuttle/process()
-	if(!shuttle_id || (stat & NOPOWER))
+	if(!shuttle_id || (machine_stat & NOPOWER))
 		// No power, no processing.
 		update_appearance()
 		return PROCESS_KILL
@@ -463,7 +463,7 @@
 
 /obj/machinery/status_display/shuttle/connect_to_shuttle(obj/docking_port/mobile/port, obj/docking_port/stationary/dock, idnum, override)
 	if(port && (shuttle_id == initial(shuttle_id) || override))
-		shuttle_id = port.id
+		shuttle_id = port.shuttle_id
 	update()
 
 
@@ -560,7 +560,7 @@
 		master.relay_speech(message, speaker, message_language, raw_message, radio_freq, spans, message_mods)
 
 /obj/machinery/status_display/ai/process()
-	if(stat & NOPOWER)
+	if(machine_stat & NOPOWER)
 		update_appearance()
 		return PROCESS_KILL
 
@@ -569,18 +569,33 @@
 
 /obj/machinery/status_display/emag_act(mob/user)
 	. = ..()
-	if(obj_flags & EMAGGED)
-		to_chat(user, "<span class='warning'>Ничего интересного не произошло!!</span>")
-		return
-	obj_flags |= EMAGGED
-	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
-	to_chat(user, "<span class='notice'>Вы взломали дисплей. Осуществляется взлом систем...</span>")
-	addtimer(CALLBACK(src, .proc/syndie_display_good), 10 SECONDS)
-	return TRUE
+	if(GLOB.master_mode == "Extended")
+		if(obj_flags & EMAGGED)
+			to_chat(user, "<span class='warning'>Ничего интересного не произошло!!</span>")
+			return
+		obj_flags |= EMAGGED
+		log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
+		to_chat(user, "<span class='notice'>Вы взломали дисплей. Осуществляется взлом систем...</span>")
+		addtimer(CALLBACK(src, PROC_REF(syndie_display_good)), 10 SECONDS)
+		return TRUE
+	else
+		if(obj_flags & EMAGGED)
+			to_chat(user, "<span class='warning'>Ничего интересного не произошло!!</span>")
+			return
+		obj_flags |= EMAGGED
+		log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
+		to_chat(user, "<span class='notice'>Вы взломали дисплей. Осуществляется взлом систем...</span>")
+		addtimer(CALLBACK(src, PROC_REF(inteq_display_good)), 10 SECONDS)
+		return TRUE
+
 
 /obj/machinery/status_display/proc/syndie_display_good()
 	req_access = list(ACCESS_SYNDICATE)
 	set_picture("synd")
+
+/obj/machinery/status_display/proc/inteq_display_good()
+	req_access = list(ACCESS_INTEQ)
+	set_picture("inteq")
 
 /obj/machinery/status_display/syndie
 	name = "Syndicate Status Display"
@@ -701,7 +716,7 @@
 			break
 
 /obj/machinery/treadmill_monitor/process()
-	if(stat & (NOPOWER|BROKEN))
+	if(machine_stat & (NOPOWER|BROKEN))
 		return
 	if(treadmill && on)
 		var/output = treadmill.get_power_output()
@@ -723,10 +738,10 @@
 
 /obj/machinery/treadmill_monitor/update_icon()
 	overlays.Cut()
-	if(stat & NOPOWER || !total_joules || !on)
+	if(machine_stat & NOPOWER || !total_joules || !on)
 		line1 = ""
 		line2 = ""
-	else if(stat & BROKEN)
+	else if(machine_stat & BROKEN)
 		overlays += image('icons/obj/status_display.dmi', icon_state = "ai_bsod")
 		line1 = "A@#$A"
 		line2 = "729%!"
@@ -735,7 +750,7 @@
 			line1 = "-W/S-"
 			line2 = "-TIX-"
 		else
-			if(!treadmill || treadmill.stat)
+			if(!treadmill || treadmill.machine_stat)
 				line1 = "???"
 			else
 				line1 = "[add_zero(num2text(round(treadmill.get_power_output())), 4)]"
@@ -765,11 +780,11 @@
 
 /obj/machinery/treadmill_monitor/emp_act(severity)
 	..()
-	if(!(stat & BROKEN))
-		stat |= BROKEN
+	if(!(machine_stat & BROKEN))
+		machine_stat |= BROKEN
 		update_icon()
 		spawn(100)
-			stat &= ~BROKEN
+			machine_stat &= ~BROKEN
 			update_icon()
 
 #undef CHARS_PER_LINE

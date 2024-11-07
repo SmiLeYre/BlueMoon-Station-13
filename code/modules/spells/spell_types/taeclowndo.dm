@@ -80,6 +80,7 @@
 	new /obj/item/grown/bananapeel(target)
 
 /obj/effect/proc_holder/spell/aimed/banana_peel/update_icon()
+	. = ..()
 	if(!action)
 		return
 	if(active)
@@ -87,8 +88,7 @@
 	else
 		action.button_icon_state = action_icon_state
 
-	action.UpdateButtonIcon()
-	return
+	action.UpdateButtons()
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /obj/effect/proc_holder/spell/targeted/touch/megahonk

@@ -25,7 +25,7 @@
 	stat_attack = UNCONSCIOUS // ensures they will target people in crit, too!
 	delay_web = 10
 	web_type = /obj/structure/spider/terrorweb/gray
-	special_abillity = list(/obj/effect/proc_holder/spell/aoe_turf/terror_stealth)
+	special_abillity = list(/obj/effect/proc_holder/spell/self/terror_stealth)
 	spider_intro_text = "Будучи Наблюдателем Ужаса, ваша задача - устраивать засады. Вы почти невидимы в паутине, и наносите сокрушительный урон, пробивающий броню, если находитесь в ней. Вы также можете стать полностью невидимым на короткий промежуток времени."
 	ai_spins_webs = FALSE // uses massweb instead
 	var/prob_ai_massweb = 10

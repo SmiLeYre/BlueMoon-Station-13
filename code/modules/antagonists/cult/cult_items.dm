@@ -103,7 +103,6 @@
 			to_chat(user, "<span class='userdanger'>A horrible force yanks at your arm!</span>")
 			user.emote("realagony")
 			user.apply_damage(30, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-			user.emote("realagony")
 
 /obj/item/cult_bastard
 	name = "Bloody Bastard Sword"
@@ -161,9 +160,11 @@
 /obj/item/cult_bastard/attack_self(mob/user)
 	dash_toggled = !dash_toggled
 	if(dash_toggled)
-		to_chat(loc, "<span class='notice'>You raise [src] and prepare to jaunt with it.</span>")
+		to_chat(loc, "<span class='notice'>Ты готовишься к совершению рывка при помощи [src].</span>")
+		balloon_alert_to_viewers("[user] готовится к совершению рывка!")
 	else
-		to_chat(loc, "<span class='notice'>You lower [src] and prepare to swing it normally.</span>")
+		to_chat(loc, "<span class='notice'>Ты больше не готовишься к совершению рывка при помощи [src].</span>")
+		balloon_alert_to_viewers("[user] больше не готовится к совершению рывка!")
 
 /obj/item/cult_bastard/pickup(mob/living/carbon/human/user)
 	. = ..()
@@ -250,7 +251,7 @@
 	phaseout = /obj/effect/temp_visual/dir_setting/cult/phase/out
 
 /datum/action/innate/dash/cult/IsAvailable(silent = FALSE)
-	if(iscultist(holder) && current_charges)
+	if(iscultist(owner) && current_charges)
 		return TRUE
 	else
 		return FALSE
@@ -282,7 +283,7 @@
 	sword.spinning = TRUE
 	sword.block_chance = 100
 	sword.slowdown += 1.5
-	addtimer(CALLBACK(src, .proc/stop_spinning), 50)
+	addtimer(CALLBACK(src, PROC_REF(stop_spinning)), 50)
 	holder.update_action_buttons_icon()
 
 /datum/action/innate/cult/spin2win/proc/stop_spinning()
@@ -337,6 +338,7 @@
 	heat_protection = CHEST|GROIN|LEGS|ARMS
 	max_heat_protection_temperature = ARMOR_MAX_TEMP_PROTECT
 	alternate_screams = BLOOD_SCREAMS
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/clothing/head/culthood/alt
 	name = "cultist hood"
@@ -447,6 +449,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/cult_hoodie
 	clothing_flags = STOPSPRESSUREDAMAGE | THICKMATERIAL | ALLOWINTERNALS
 	alternate_screams = BLOOD_SCREAMS
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/clothing/head/hooded/cult_hoodie
 	name = "\improper Nar'Sien Empowered Helmet"
@@ -508,6 +511,7 @@
 	armor = list(MELEE = -50, BULLET = -50, LASER = -50,ENERGY = -50, BOMB = -50, BIO = -50, RAD = -50, FIRE = 0, ACID = 0)
 	slowdown = -1
 	hoodtype = /obj/item/clothing/head/hooded/berserkerhood
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_SNEK_TAURIC //bluemoon add
 
 /obj/item/clothing/head/hooded/berserkerhood
 	name = "Flagellant's Robes"
@@ -540,7 +544,7 @@
 	icon_state = "blindfold"
 	item_state = "blindfold"
 	flash_protect = 1
-	invis_override = INVISIBILITY_OBSERVER
+	invis_override = SEE_INVISIBLE_HIDDEN_RUNES
 
 /obj/item/clothing/glasses/hud/health/night/cultblind/equipped(mob/living/user, slot)
 	..()
@@ -652,7 +656,7 @@
 	curselimit++
 
 /obj/item/cult_shift
-	name = "veil shifter"
+	name = "Veil Shifter"
 	desc = "This relic instantly teleports you, and anything you're pulling, forward by a moderate distance."
 	icon = 'icons/obj/cult.dmi'
 	icon_state ="shifter"
@@ -687,7 +691,7 @@
 
 	var/mob/living/carbon/C = user
 	var/turf/mobloc = get_turf(C)
-	var/turf/destination = get_teleport_loc(mobloc,C,9,1,3,1,0,1)
+	var/turf/destination = get_teleport_loc(location = mobloc, target = C, distance = 9, density_check = TRUE, errorx = 3, errory = 1, eoffsety = 1)
 
 	if(destination)
 		uses--
@@ -708,7 +712,7 @@
 		to_chat(C, "<span class='danger'>The veil cannot be torn here!</span>")
 
 /obj/item/flashlight/flare/culttorch
-	name = "void torch"
+	name = "Void Torch"
 	desc = "Used by veteran cultists to instantly transport items to their needful brethren."
 	w_class = WEIGHT_CLASS_SMALL
 	brightness_on = 1
@@ -785,8 +789,8 @@
 
 /obj/item/cult_spear/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/cult_spear/ComponentInitialize()
 	. = ..()
@@ -894,8 +898,8 @@
 
 /obj/item/cult_halberd/Initialize(mapload)
 	. = ..()
-	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, .proc/on_wield)
-	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, .proc/on_unwield)
+	RegisterSignal(src, COMSIG_TWOHANDED_WIELD, PROC_REF(on_wield))
+	RegisterSignal(src, COMSIG_TWOHANDED_UNWIELD, PROC_REF(on_unwield))
 
 /obj/item/cult_halberd/ComponentInitialize()
 	. = ..()
@@ -986,14 +990,13 @@
 	desc = "Call the blood spear back to your hand!"
 	background_icon_state = "bg_demon"
 	button_icon_state = "bloodspear"
+	default_button_position = "6:157,4:-2"
 	var/obj/item/cult_spear/spear
 	var/cooldown = 0
 
 /datum/action/innate/cult/spear/Grant(mob/user, obj/blood_spear)
 	. = ..()
 	spear = blood_spear
-	button.screen_loc = "6:157,4:-2"
-	button.moved = "6:157,4:-2"
 
 /datum/action/innate/cult/spear/Activate()
 	if(owner == spear.loc || cooldown > world.time)
@@ -1080,10 +1083,10 @@
 		qdel(src)
 		return
 	charging = TRUE
-	INVOKE_ASYNC(src, .proc/charge, user)
+	INVOKE_ASYNC(src, PROC_REF(charge), user)
 	if(do_after(user, 90, target = user))
 		firing = TRUE
-		INVOKE_ASYNC(src, .proc/pewpew, user, params)
+		INVOKE_ASYNC(src, PROC_REF(pewpew), user, params)
 		var/obj/structure/emergency_shield/invoker/N = new(user.loc)
 		if(do_after(user, 90, target = user))
 			user.DefaultCombatKnockdown(40)
@@ -1156,7 +1159,7 @@
 						playsound(L, 'sound/hallucinations/wail.ogg', 50, 1)
 						L.emote("realagony")
 		var/datum/beam/current_beam = new(user,temp_target,time=7,beam_icon_state="blood_beam",btype=/obj/effect/ebeam/blood)
-		INVOKE_ASYNC(current_beam, /datum/beam.proc/Start)
+		INVOKE_ASYNC(current_beam, TYPE_PROC_REF(/datum/beam, Start))
 
 
 /obj/effect/ebeam/blood
@@ -1173,6 +1176,7 @@
 	throwforce = 15
 	throw_speed = 1
 	throw_range = 4
+	block_chance = 30 //bluemoon shange
 	w_class = WEIGHT_CLASS_BULKY
 	attack_verb = list("bumped", "prodded")
 	hitsound = 'sound/weapons/smash.ogg'
@@ -1186,7 +1190,9 @@
 	if(iscultist(owner))
 		if(istype(object, /obj/item/projectile) && (attack_type == ATTACK_TYPE_PROJECTILE))
 			if(is_energy_reflectable_projectile(object))
+				final_block_chance += 70 //bluemoon shange
 				if(prob(final_block_chance))
+					block_return[BLOCK_RETURN_REDIRECT_METHOD] = REDIRECT_METHOD_RETURN_TO_SENDER //bluemoon shange
 					return BLOCK_SUCCESS | BLOCK_SHOULD_REDIRECT | BLOCK_PHYSICAL_EXTERNAL | BLOCK_REDIRECTED
 				return BLOCK_NONE	//To avoid reflection chance double-dipping with block chance
 			var/obj/item/projectile/P = object
@@ -1195,7 +1201,7 @@
 				T.visible_message("<span class='warning'>The sheer force from [P] shatters the mirror shield!</span>")
 				new /obj/effect/temp_visual/cult/sparks(T)
 				playsound(T, 'sound/effects/glassbr3.ogg', 100)
-				owner.DefaultCombatKnockdown(25)
+				owner.Paralyze(25) //BULEMOON REBALANCE Смена обычного падения на паралич.
 				qdel(src)
 				return BLOCK_NONE
 		. = ..()
@@ -1203,7 +1209,7 @@
 			playsound(src, 'sound/weapons/parry.ogg', 100, 1)
 			if(illusions > 0)
 				illusions--
-				addtimer(CALLBACK(src, /obj/item/shield/mirror.proc/readd), 450)
+				addtimer(CALLBACK(src, TYPE_PROC_REF(/obj/item/shield/mirror, readd)), 450)
 				if(prob(60))
 					var/mob/living/simple_animal/hostile/illusion/M = new(owner.loc)
 					M.faction = list("cult")

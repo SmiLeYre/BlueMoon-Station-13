@@ -2,7 +2,7 @@
 /obj/item/clothing/head/helmet/space/rad
 	unique_reskin = list(
 		"Default" = list(
-			"name" = "radiation voidsuit helmet",
+			"name" = "Radiation Voidsuit Helmet",
 			"desc" = "A special helmet that protects against radiation and space. Not much else unfortunately.",
 			"icon" = 'icons/obj/clothing/hats.dmi',
 			"icon_state" = "cespace_helmet",
@@ -10,7 +10,7 @@
 			"anthro_mob_worn_overlay" = null
 		),
 		"Hazard" = list(
-			"name" = "Hazard helmet",
+			"name" = "Hazard Helmet",
 			"desc" = "The helmet that completes the hazard suit, stop looking at this and bring the company profits.",
 			"icon" = 'modular_sand/icons/obj/clothing/hats.dmi',
 			"icon_state" = "lethalhelmet",
@@ -27,7 +27,7 @@
 /obj/item/clothing/suit/space/rad
 	unique_reskin = list(
 		"Default" = list(
-			"name" = "radiation voidsuit",
+			"name" = "Radiation Voidsuit",
 			"desc" = "A special suit that protects against radiation and space. Not much else unfortunately.",
 			"icon" = 'icons/obj/clothing/suits.dmi',
 			"icon_state" = "hardsuit-rad",
@@ -36,13 +36,14 @@
 			"mutantrace_variation" = NONE
 		),
 		"Hazard" = list(
-			"name" = "Hazard suit",
+			"name" = "Hazard Suit",
 			"desc" = "A suit fit for the company workers, radiation and space-proof, now get moving before you get fired for your laziness.",
 			"icon" = 'modular_sand/icons/obj/clothing/suits.dmi',
 			"icon_state" = "lethalsuit",
 			"mob_overlay_icon" = 'modular_sand/icons/mob/clothing/suit.dmi',
 			"anthro_mob_worn_overlay" = 'modular_sand/icons/mob/clothing/suit_digi.dmi',
-			"mutantrace_variation" = STYLE_DIGITIGRADE
+			"mutantrace_variation" = STYLE_DIGITIGRADE,
+			"tail_state" = "hev"
 		)
 	)
 

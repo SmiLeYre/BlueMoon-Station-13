@@ -10,7 +10,7 @@
 	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/obj_sol.dmi'
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_digi.dmi'
-	//mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	unique_reskin = list()
 
 /obj/item/clothing/under/rank/security/officer/formal/sol/armorless
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0,  WOUND = 0)
@@ -23,7 +23,7 @@
 	can_adjust = FALSE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/obj_sol.dmi'
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol.dmi'
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+	anthro_mob_worn_overlay = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_digi.dmi'
 	unique_reskin = list(
 		"Military" = list("icon_state" = "solfed"),
 	)
@@ -36,8 +36,7 @@
 	can_adjust = FALSE
 	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/obj_sol.dmi'
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol.dmi'
-	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
-
+	anthro_mob_worn_overlay = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_digi.dmi'
 
 /// Suits
 
@@ -289,7 +288,7 @@
 	r_hand = /obj/item/storage/briefcase/lawyer
 	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/poster/sol=5)
 
-	//implants = list(/obj/item/implant/mindshield)
+	implants = list(/obj/item/implant/anchor)
 
 /datum/outfit/sol_diplomacy/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
@@ -303,12 +302,14 @@
 
 	H.grant_language(/datum/language/modular_sand/solcommon, TRUE, TRUE)
 
-	var/obj/item/card/id/sol/W = H.wear_id
+	var/obj/item/card/id/sol_citizen/W = H.wear_id
 	W.registered_name = H.real_name
+	W.access = get_all_inteq_access()
 	W.update_label(W.registered_name)
 
 /datum/outfit/sol_diplomacy/slut
 	name = "SolFed Secretary?"
+	uniform = /obj/item/clothing/under/rank/security/officer/formal/sol
 	suit = /obj/item/clothing/suit/sol_dress
 
 /datum/outfit/sol_diplomacy/consul
@@ -328,7 +329,7 @@
 /datum/outfit/sol_diplomacy/consul/admiral
 	name = "SolFed Fleet Admiral"
 
-	glasses = /obj/item/clothing/glasses/hud/security/sunglasses/inteq
+	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
 	head = /obj/item/clothing/head/HoS/beret/sol
 	belt = /obj/item/storage/belt/sabre
 	ears = /obj/item/radio/headset/sol/bowman/command

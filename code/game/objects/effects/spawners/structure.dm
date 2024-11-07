@@ -42,6 +42,25 @@ again.
 		if(electrochromatic == ELECTROCHROMATIC_DIMMED)
 			W.electrochromatic_dim()
 
+//shutter
+/obj/effect/spawner/structure/window/shutter
+	name = "shutter window spawner"
+	icon_state = "shwindow_spawner"
+	spawn_list = list(/obj/machinery/door/firedoor/window, /obj/structure/grille, /obj/structure/window/fulltile)
+
+//reinforced
+
+/obj/effect/spawner/structure/window/reinforced
+	name = "reinforced window spawner"
+	icon_state = "rwindow_spawner"
+	spawn_list = list(/obj/structure/grille, /obj/structure/window/reinforced/fulltile)
+
+//reinforced shutter
+/obj/effect/spawner/structure/window/reinforced/shutter
+	name = "reinforced shutter window spawner"
+	icon_state = "shrwindow_spawner"
+	spawn_list = list(/obj/machinery/door/firedoor/window, /obj/structure/grille, /obj/structure/window/reinforced/fulltile)
+
 /obj/effect/spawner/structure/window/hollow
 	name = "hollow Window Spawner"
 	icon_state = "hwindow_spawner_full"

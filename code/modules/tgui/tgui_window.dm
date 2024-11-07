@@ -108,7 +108,7 @@
 	// Detect whether the control is a browser
 	is_browser = winexists(client, id) == "BROWSER"
 	// Instruct the client to signal UI when the window is closed.
-	if(!is_browser)
+	if(!is_browser && istype(client)) // BLUEMOON EDIT - sanity check
 		winset(client, id, "on-close=\"uiclose [id]\"")
 
 /**
@@ -215,7 +215,7 @@
 	// to read the error message.
 	if(!fatally_errored)
 		client << browse(null, "window=[id]")
-		if(!logout && client)
+		if(!logout && istype(client)) // BLUEMOON EDIT - sanity check
 			winset(client, null, "mapwindow.map.focus=true")
 
 /**

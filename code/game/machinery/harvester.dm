@@ -97,7 +97,7 @@
 	visible_message("<span class='notice'>The [name] begins warming up!</span>")
 	say("Initializing harvest protocol.")
 	update_icon()
-	addtimer(CALLBACK(src, .proc/harvest), interval)
+	addtimer(CALLBACK(src, PROC_REF(harvest)), interval)
 
 /obj/machinery/harvester/proc/harvest()
 	warming_up = FALSE
@@ -133,7 +133,7 @@
 		operation_order.Remove(BP)
 		break
 	use_power(5000)
-	addtimer(CALLBACK(src, .proc/harvest), interval)
+	addtimer(CALLBACK(src, PROC_REF(harvest)), interval)
 
 /obj/machinery/harvester/proc/end_harvesting()
 	warming_up = FALSE
@@ -197,7 +197,7 @@
 
 /obj/machinery/harvester/examine(mob/user)
 	. = ..()
-	if(stat & BROKEN)
+	if(machine_stat & BROKEN)
 		return
 	if(state_open)
 		. += "<span class='notice'>[src] must be closed before harvesting.</span>"

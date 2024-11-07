@@ -255,7 +255,7 @@ Code:
 		if (41) //crew manifest
 
 			menu = "<h4>[PDAIMG(notes)] Crew Manifest</h4>"
-			menu += "<center>[GLOB.data_core.get_manifest(monochrome=TRUE)]</center>"
+			menu += "<center>[GLOB.data_core.get_manifest_bm(monochrome=TRUE)]</center>"
 
 		if (42) //status displays
 			menu = "<h4>[PDAIMG(status)] Station Status Display Interlink</h4>"
@@ -280,7 +280,7 @@ Code:
 
 			var/turf/pda_turf = get_turf(src)
 			for(var/obj/machinery/computer/monitor/pMon in GLOB.machines)
-				if(pMon.stat & (NOPOWER | BROKEN)) //check to make sure the computer is functional
+				if(pMon.machine_stat & (NOPOWER | BROKEN)) //check to make sure the computer is functional
 					continue
 				if(pda_turf.z != pMon.z) //and that we're on the same zlevel as the computer (lore: limited signal strength)
 					continue
@@ -626,7 +626,7 @@ Code:
 			playsound(src, 'sound/machines/terminal_select.ogg', 50, 1)
 
 		if("Send Signal")
-			INVOKE_ASYNC(radio, /obj/item/integrated_signaler.proc/send_activation)
+			INVOKE_ASYNC(radio, TYPE_PROC_REF(/obj/item/integrated_signaler, send_activation))
 			playsound(src, 'sound/machines/terminal_select.ogg', 50, 1)
 
 		if("Signal Frequency")

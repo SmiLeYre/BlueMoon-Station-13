@@ -23,7 +23,7 @@
 	shuttleId = "syndicate_fighter"
 	lock_override = NONE
 	shuttlePortId = "syndicate_fighter_custom"
-	jumpto_ports = list("ds2_syndicate" = 1, "whiteship_home" = 1)
+	jump_to_ports = list("ds2_syndicate" = 1, "whiteship_home" = 1)
 	view_range = 5.5
 	x_offset = 7
 	y_offset = 1
@@ -54,7 +54,7 @@
 	shuttleId = "syndicate_dropship"
 	lock_override = NONE
 	shuttlePortId = "syndicate_dropship_custom"
-	jumpto_ports = list("ds2_syndicate" = 1, "whiteship_home" = 1)
+	jump_to_ports = list("ds2_syndicate" = 1, "whiteship_home" = 1)
 	view_range = 5.5
 	x_offset = 7
 	y_offset = 1
@@ -85,7 +85,7 @@
 	shuttleId = "syndicate_frigate"
 	lock_override = NONE
 	shuttlePortId = "syndicate_frigate_custom"
-	jumpto_ports = list("ds2_syndicate" = 1, "whiteship_home" = 1)
+	jump_to_ports = list("ds2_syndicate" = 1, "whiteship_home" = 1)
 	view_range = 5.5
 	x_offset = 7
 	y_offset = 1

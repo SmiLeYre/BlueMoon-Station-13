@@ -3,9 +3,9 @@
 /datum/element/mob_holder/micro/Attach(datum/target, worn_state, alt_worn, right_hand, left_hand, inv_slots = NONE, proctype, escape_on_find)
 	. = ..()
 
-	RegisterSignal(target, COMSIG_CLICK_ALT, .proc/mob_try_pickup_micro, TRUE)
-	RegisterSignal(target, COMSIG_MICRO_PICKUP_FEET, .proc/mob_pickup_micro_feet)
-	RegisterSignal(target, COMSIG_MOB_RESIZED, .proc/on_resize)
+	RegisterSignal(target, COMSIG_CLICK_ALT, PROC_REF(mob_try_pickup_micro), TRUE)
+	RegisterSignal(target, COMSIG_MICRO_PICKUP_FEET, PROC_REF(mob_pickup_micro_feet))
+	RegisterSignal(target, COMSIG_MOB_RESIZED, PROC_REF(on_resize))
 
 /datum/element/mob_holder/micro/Detach(datum/source, force)
 	. = ..()
@@ -15,18 +15,24 @@
 	var/obj/item/clothing/head/mob_holder/holder = micro.loc
 	if(istype(holder))
 		var/mob/living/living = get_atom_on_turf(micro.loc, /mob/living)
-		if(living && (COMPARE_SIZES(living, micro)) < (1 / CONFIG_GET(number/max_pick_ratio)))
+		var/compare_size = 1
+		if(HAS_TRAIT(micro, TRAIT_BLUEMOON_LIGHT))
+			compare_size = 0.8
+		if(living && (COMPARE_SIZES(living, micro)) < (compare_size / CONFIG_GET(number/max_pick_ratio)))
 			living.visible_message(span_warning("\The [living] drops [micro] as [micro.p_they()] grow\s too big to carry."),
-								span_warning("You drop \The [living] as [living.p_they()] grow\s too big to carry."),
-								target=micro,
-								target_message=span_notice("\The [living] drops you as you grow too big to carry."))
+				span_warning("You drop \The [living] as [living.p_they()] grow\s too big to carry."),
+				target = micro,
+				target_message = span_notice("\The [living] drops you as you grow too big to carry."))
 			holder.release()
 		else if(!istype(living)) // Somehow a inside a mob_holder and the mob_holder isn't inside any livings? release.
 			holder.release()
 
 /datum/element/mob_holder/micro/on_examine(mob/living/source, mob/user, list/examine_list)
-	if(ishuman(user) && !istype(source.loc, /obj/item/clothing/head/mob_holder) && (COMPARE_SIZES(user, source)) >= (1 / CONFIG_GET(number/max_pick_ratio)))
-		examine_list += span_notice("Looks like [source.p_they(FALSE)] can be picked up using <b>Alt+Click and grab intent</b>!")
+	var/compare_size = 1
+	if(HAS_TRAIT(source, TRAIT_BLUEMOON_LIGHT))
+		compare_size = 0.8
+	if(ishuman(user) && !istype(source.loc, /obj/item/clothing/head/mob_holder) && (COMPARE_SIZES(user, source)) >= (compare_size / CONFIG_GET(number/max_pick_ratio)))
+		examine_list += span_notice("Похоже [source.ru_ego(FALSE)] можно взять в руки через <b>Alt+Click</b> (grab) или раздавить (disarm/harm).")
 
 /// Do not inherit from /mob_holder, interactions are different.
 /datum/element/mob_holder/micro/on_requesting_context_from_item(
@@ -56,7 +62,7 @@
 	return
 
 /datum/element/mob_holder/micro/proc/mob_try_pickup_micro(mob/living/carbon/source, mob/living/carbon/user)
-	if(!(user.a_intent == INTENT_GRAB))
+	if(user.a_intent != INTENT_GRAB)
 		return FALSE
 	if(!ishuman(user) || !user.Adjacent(source) || user.incapacitated())
 		return FALSE
@@ -64,7 +70,12 @@
 		to_chat(user, "<span class='warning'>You can't pick yourself up.</span>")
 		source.balloon_alert(user, "cannot pick yourself!")
 		return FALSE
-	if(COMPARE_SIZES(user, source) < (1 / CONFIG_GET(number/max_pick_ratio)))
+	//BLUEMOON ADD лёгких персонажей легче взять
+	var/compare_size = 1
+	if(HAS_TRAIT(source, TRAIT_BLUEMOON_LIGHT))
+		compare_size = 0.8
+	if(COMPARE_SIZES(user, source) < (compare_size / CONFIG_GET(number/max_pick_ratio)))
+	//BLUEMOON ADD END
 		to_chat(user, span_warning("They're too big to pick up!"))
 		source.balloon_alert(user, "too big to pick up!")
 		return FALSE
@@ -76,10 +87,12 @@
 		to_chat(user, "<span class='warning'>[source] is buckled to something!</span>")
 		source.balloon_alert(user, "buckled to something!")
 		return FALSE
-	source.visible_message("<span class='warning'>[user] starts picking up [source].</span>", \
-					"<span class='userdanger'>[user] starts picking you up!</span>")
+	source.visible_message(span_warning("[user] starts picking up [source]."), \
+		span_userdanger("[user] starts picking you up!"))
 	source.balloon_alert(user, "picking up")
 	var/time_required = COMPARE_SIZES(source, user) * 4 SECONDS //Scale how fast the pickup will be depending on size difference
+	if(get_size(source) > 0.5 && HAS_TRAIT(user, TRAIT_BLUEMOON_LIGHT)) //BLUEMOON ADD лёгкие большие персонажи дольше поднимают тех, кто имеет размер больше 50%
+		time_required += 8 SECONDS //BLUEMOON ADD END
 	if(!do_after(user, time_required, source))
 		return FALSE
 
@@ -92,10 +105,10 @@
 		source.balloon_alert(user, "buckled!")
 		return FALSE
 
-	source.visible_message("<span class='warning'>[user] picks up [source]!</span>",
-					"<span class='userdanger'>[user] picks you up!</span>",
-					target = user,
-					target_message = "<span class='notice'>You pick [source] up.</span>")
+	source.visible_message(span_warning("[user] picks up [source]!"),
+		span_userdanger("[user] picks you up!"),
+		target = user,
+		target_message = span_notice("You pick [source] up."))
 	source.drop_all_held_items()
 	mob_pickup_micro(source, user)
 	return TRUE
@@ -109,57 +122,53 @@
 	w_class = null //handled by their size
 	body_parts_covered = FEET // BLUEMOON ADD - чтобы нельзя было брать более 1 персонажа в ноги, TODO - сделать возможность брать несколько маленьких
 
-/obj/item/clothing/head/mob_holder/micro/container_resist(mob/living/user)
-	if(user.incapacitated())
-		to_chat(user, "<span class='warning'>You can't escape while you're restrained like this!</span>")
+/obj/item/clothing/head/mob_holder/micro/container_resist(mob/living/resisting)
+	if(resisting.incapacitated())
+		to_chat(resisting, span_warning("You can't escape while you're restrained like this!"))
 		return
-	var/mob/living/L = get_atom_on_turf(src, /mob/living)
-	visible_message(span_warning("[src] begins to squirm in [L]'s grasp!"))
-	var/time_required = COMPARE_SIZES(L, user) / 4 SECONDS //Scale how fast the resisting will be depending on size difference
-	if(!do_after(user, time_required, L, IGNORE_TARGET_LOC_CHANGE|IGNORE_HELD_ITEM))
-		if(!user || user.stat != CONSCIOUS || user.loc != src)
-			return
-		to_chat(loc, "<span class='warning'>[src] stops resisting.</span>")
+	var/mob/living/carrier = get_atom_on_turf(src, /mob/living)
+	visible_message(span_warning("[resisting] begins to squirm in [carrier]'s grasp!"))
+	var/time_required = COMPARE_SIZES(carrier, resisting) / 4 SECONDS //Scale how fast the resisting will be depending on size difference
+	if(get_size(resisting) > 0.5 && HAS_TRAIT(carrier, TRAIT_BLUEMOON_LIGHT)) //BLUEMOON ADD персонажу размером больше 50% выбраться из хватки лёгкого большого персонажа достаточно просто
+		time_required = abs((1 / get_size(resisting))) / 4 SECONDS //BLUEMOON ADD END
+	if(do_after(resisting, time_required, carrier, IGNORE_TARGET_LOC_CHANGE | IGNORE_HELD_ITEM))
+		visible_message(span_warning("[src] escapes [carrier]!"))
+		release()
 		return
-	visible_message("<span class='warning'>[src] escapes [L]!")
-	release()
+	if(QDELETED(resisting) || resisting.loc != src)
+		return
+	visible_message(span_warning("[src] stops resisting."))
 
-/obj/item/clothing/head/mob_holder/micro/MouseDrop(mob/M as mob)
-	..()
-	if(M != usr)
+/obj/item/clothing/head/mob_holder/micro/MouseDrop(mob/living/carbon/human/carrier)
+	. = ..()
+	if(carrier != usr)
 		return
-	if(usr == src)
+	if(usr == held_mob)
 		return
-	if(!Adjacent(usr))
+	if(!(src in carrier.held_items))
 		return
-	if(istype(M,/mob/living/silicon/ai))
-		return
-	var/mob/living/carbon/human/O = held_mob
-	if(istype(O))
-		O.MouseDrop(usr)
+	held_mob.MouseDrop(usr)
 
-/obj/item/clothing/head/mob_holder/micro/attack_self(mob/living/user)
-	if(!user.CheckActionCooldown())
+/obj/item/clothing/head/mob_holder/micro/attack_self(mob/living/carbon/human/bully)
+	if(!bully.CheckActionCooldown())
 		return
-	user.DelayNextAction(CLICK_CD_MELEE, flush = TRUE)
-	var/mob/living/carbon/human/M = held_mob
-	if(istype(M))
-		if(user.a_intent == "harm") //TO:DO, rework all of these interactions to be a lot more in depth
-			visible_message("<span class='danger'>[user] slams their fist down on [M]!</span>", runechat_popup = TRUE, rune_msg = " slams their fist down on [M]!")
-			playsound(loc, 'sound/weapons/punch1.ogg', 50, 1)
-			M.adjustBruteLoss(5)
-			return
-		if(user.a_intent == "disarm")
-			visible_message("<span class='danger'>[user] pins [M] down with a finger!</span>", runechat_popup = TRUE, rune_msg = " pins [M] down with a finger!")
-			playsound(loc, 'sound/effects/bodyfall1.ogg', 50, 1)
-			M.adjustStaminaLoss(10)
-			return
-		if(user.a_intent == "grab")
-			visible_message("<span class='danger'>[user] squeezes their fist around [M]!</span>", runechat_popup = TRUE, rune_msg = " squeezes their fist around [M]!")
-			playsound(loc, 'sound/weapons/thudswoosh.ogg', 50, 1)
-			M.adjustOxyLoss(5)
-			return
-		M.help_shake_act(user)
+	bully.DelayNextAction(CLICK_CD_MELEE, flush = TRUE)
+	var/mob/living/carbon/bullied = held_mob
+	switch(bully.a_intent)
+		if(INTENT_HARM) //TO:DO, rework all of these interactions to be a lot more in depth
+			visible_message(span_danger("[bully] slams their fist down on [bullied]!"), runechat_popup = TRUE, rune_msg = " slams their fist down on [bullied]!")
+			playsound(drop_location(), 'sound/weapons/punch1.ogg', 50, 1)
+			bullied.adjustBruteLoss(5)
+		if(INTENT_DISARM)
+			visible_message(span_danger("[bully] pins [bullied] down with a finger!"), runechat_popup = TRUE, rune_msg = " pins [bullied] down with a finger!")
+			playsound(drop_location(), 'sound/effects/bodyfall1.ogg', 50, 1)
+			bullied.adjustStaminaLoss(10)
+		if(INTENT_GRAB)
+			visible_message(span_danger("[bully] squeezes their fist around [bullied]!"), runechat_popup = TRUE, rune_msg = " squeezes their fist around [bullied]!")
+			playsound(drop_location(), 'sound/weapons/thudswoosh.ogg', 50, 1)
+			bullied.adjustOxyLoss(5)
+		else
+			bullied.help_shake_act(bully)
 
 /obj/item/clothing/head/mob_holder/micro/attacked_by(obj/item/I, mob/living/user)
 	return held_mob?.attacked_by(I, user) || ..()
@@ -174,21 +183,11 @@
 	user.vore_attack(user, held_mob, pred)
 	return STOP_ATTACK_PROC_CHAIN
 
-/obj/item/clothing/head/mob_holder/micro/verb/interact_with()
-	set name = "Interact With"
-	set desc = "Perform an interaction with someone."
-	set category = "IC"
-	set src in view(usr.client)
-
-	var/datum/component/interaction_menu_granter/menu = usr.GetComponent(/datum/component/interaction_menu_granter)
-	if(!menu)
-		to_chat(usr, span_warning("You must have done something really bad to not have an interaction component."))
-		return
-
-	if(!src)
-		to_chat(usr, span_warning("Your interaction target is gone!"))
-		return
-	menu.open_menu(usr, held_mob)
+/obj/item/clothing/head/mob_holder/micro/Exited(mob/living/vored, direction)
+	if(istype(vored.loc, /obj/belly))
+		held_mob = null
+		qdel(src)
+	return ..()
 
 /obj/item/clothing/head/mob_holder/micro/GetAccess()
 	. = ..()

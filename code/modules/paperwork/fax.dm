@@ -52,6 +52,9 @@ GLOBAL_VAR_INIT(nt_fax_department, pick("NT HR Department", "NT Legal Department
 		nanotrasen = list(fax_name = "NT HR Department", fax_id = "central_command", color = "teal", emag_needed = FALSE),
 		syndicate = list(fax_name = "Sabotage Department", fax_id = "syndicate", color = "red", emag_needed = TRUE),
 	)
+	var/obj/item/radio/Radio
+	var/radio_key = /obj/item/encryptionkey/ai
+	var/radio_channel = RADIO_CHANNEL_SECURITY //Security channel
 
 /obj/machinery/fax/Initialize(mapload)
 	. = ..()
@@ -62,6 +65,13 @@ GLOBAL_VAR_INIT(nt_fax_department, pick("NT HR Department", "NT Legal Department
 	set_wires(new /datum/wires/fax(src))
 	register_context()
 	special_networks["nanotrasen"]["fax_name"] = GLOB.nt_fax_department
+
+	Radio = new/obj/item/radio(src)
+	if(radio_key)
+		Radio.keyslot = new radio_key
+	Radio.subspace_transmission = TRUE
+	Radio.canhear_range = 0 // anything greater will have the bot broadcast the channel as if it were saying it out loud.
+	Radio.recalculateChannels()
 
 /obj/machinery/fax/Destroy()
 	QDEL_NULL(loaded_item_ref)
@@ -93,7 +103,7 @@ GLOBAL_VAR_INIT(nt_fax_department, pick("NT HR Department", "NT Legal Department
 		seconds_electrified -= seconds_per_tick
 
 /obj/machinery/fax/attack_hand(mob/user, list/modifiers)
-	if(seconds_electrified && !(stat & NOPOWER))
+	if(seconds_electrified && !(machine_stat & NOPOWER))
 		if(shock(user, 100))
 			return
 	return ..()
@@ -269,6 +279,7 @@ GLOBAL_VAR_INIT(nt_fax_department, pick("NT HR Department", "NT Legal Department
 			var/destination = params["id"]
 			if(send(loaded, destination))
 				log_fax(loaded, destination, params["name"])
+				Radio.talk_into(src, "Внимание. Прислан факс от [fax_name]/[fax_id] на [params["name"]].", RADIO_CHANNEL_COMMAND)
 				loaded_item_ref = null
 				update_appearance()
 				return TRUE
@@ -457,7 +468,7 @@ GLOBAL_VAR_INIT(nt_fax_department, pick("NT HR Department", "NT Legal Department
  * * chance - probability the shock happens
  */
 /obj/machinery/fax/proc/shock(mob/living/user, chance)
-	if(!istype(user) || stat & (BROKEN|NOPOWER))
+	if(!istype(user) || machine_stat & (BROKEN|NOPOWER))
 		return FALSE
 	if(!prob(chance))
 		return FALSE
