@@ -1225,6 +1225,12 @@
 		addtimer(CALLBACK(src, PROC_REF(close)), 1)
 	return TRUE
 
+// BLUEMOON ADD START - ModernTG Wide Airlocks.
+/obj/machinery/door/airlock/proc/sensor_obstacle_check()
+	for(var/atom/movable/M in (get_turf(src) - src))
+		if(M.density) //something is blocking the door
+			return TRUE	// BLUEMOON ADD END
+
 
 /obj/machinery/door/airlock/close(forced=0)
 	if(operating || welded || locked)
@@ -1234,11 +1240,16 @@
 	if(!forced)
 		if(!hasPower() || wires.is_cut(WIRE_BOLTS))
 			return
-	if(safe)
+/*	if(safe)	// BLUEMOON REMOVAL BEGIN - ModernTG Wide Airlocks.
 		for(var/atom/movable/M in get_turf(src))
 			if(M.density && M != src) //something is blocking the door
 				autoclose_in(60)
-				return
+				return	*/	// BLUEMOON REMOVAL END
+
+// BLUEMOON ADD START - ModernTG Wide Airlocks.
+	if(safe && sensor_obstacle_check())
+		autoclose_in(60)
+		return	// BLUEMOON ADD END
 
 	if(forced < 2)
 		if(obj_flags & EMAGGED)

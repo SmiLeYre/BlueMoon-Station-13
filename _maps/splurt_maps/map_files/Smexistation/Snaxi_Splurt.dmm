@@ -43157,7 +43157,7 @@
 /obj/machinery/door/firedoor/border_only{
 	name = "south facing firelock"
 	},
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
@@ -52908,7 +52908,7 @@
 	name = "north facing firelock"
 	},
 /obj/structure/disposalpipe/segment,
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /obj/effect/turf_decal/siding/wood,
 /turf/open/floor/plasteel,
 /area/service/bar)
@@ -55296,7 +55296,7 @@
 /obj/machinery/door/firedoor/border_only{
 	name = "south facing firelock"
 	},
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
@@ -55663,7 +55663,7 @@
 /turf/open/floor/wood,
 /area/maintenance/bar)
 "wyk" = (
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /turf/open/floor/plasteel,
 /area/commons/fitness)
 "wyZ" = (

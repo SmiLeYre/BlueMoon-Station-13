@@ -1950,7 +1950,7 @@
 /area/hilbertshotel)
 "aLz" = (
 /obj/structure/fans/tiny,
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /turf/open/floor/pod/dark,
 /area/ruin/lavaland/powered)
 "aLE" = (
@@ -14002,7 +14002,7 @@
 /turf/open/floor/plasteel/dark,
 /area/security/processing)
 "eZW" = (
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /obj/structure/fans/tiny,
 /turf/open/floor/pod/dark,
 /area/ruin/lavaland/powered)
@@ -17818,7 +17818,7 @@
 /turf/open/floor/plating/rust,
 /area/awaymission)
 "gtD" = (
-/obj/machinery/door/airlock/glass_large{
+/obj/machinery/door/airlock/multi_tile/glass{
 	name = "Medical"
 	},
 /turf/open/floor/plating/rust,

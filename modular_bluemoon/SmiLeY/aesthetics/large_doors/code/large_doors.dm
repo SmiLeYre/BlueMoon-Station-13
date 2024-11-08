@@ -1,112 +1,186 @@
-/obj/machinery/door/airlock
-	var/multi_tile = FALSE
-	var/width = 1
+/obj/machinery/door/airlock/multi_tile
 	var/obj/airlock_filler_object/filler
 
-/obj/machinery/door/airlock/Move()
-	if(multi_tile)
-		SetBounds()
+
+/obj/machinery/door/airlock/multi_tile/Initialize(mapload)
+	. = ..()
+
+	SetBounds()
+
+
+/obj/machinery/door/airlock/multi_tile/Move()
+	SetBounds()
+
 	return ..()
 
-/obj/machinery/door/airlock/Destroy()
+
+/obj/machinery/door/airlock/multi_tile/Destroy()
 	if(filler)
-		qdel(filler)
-		filler = null
+		filler.force_destroy()
+
 	return ..()
 
-/obj/machinery/door/airlock/proc/SetBounds()
-	if(!multi_tile)
+
+/obj/machinery/door/airlock/multi_tile/Adjacent(atom/neighbor)
+	return ..() || filler?.Adjacent(neighbor)
+
+
+/obj/machinery/door/airlock/multi_tile/open(forced)
+	. = ..()
+
+	filler?.sync()
+
+
+/obj/machinery/door/airlock/multi_tile/close(forced)
+	. = ..()
+
+	filler?.sync()
+
+
+/obj/machinery/door/airlock/multi_tile/sensor_obstacle_check()
+	. = ..()
+
+	if(.)
 		return
+
+	for(var/atom/movable/M in (get_turf(filler) - filler))
+		if(M.density) //something is blocking the door
+			return TRUE
+
+
+/obj/machinery/door/airlock/multi_tile/proc/SetBounds()
 	if(dir in list(NORTH, SOUTH))
-		bound_width = width * world.icon_size
+		bound_width = 2 * world.icon_size
 		bound_height = world.icon_size
+
 		if(!filler)
-			filler = new(get_step(src,EAST))
-			filler.parent_airlock = src
+			filler = new(get_step(src, EAST), src)
+
 		else
-			filler.loc = get_step(src,EAST)
+			filler.loc = get_step(src, EAST)
+
 	else
 		bound_width = world.icon_size
-		bound_height = width * world.icon_size
+		bound_height = 2 * world.icon_size
+
 		if(!filler)
-			filler = new(get_step(src,NORTH))
-			filler.parent_airlock = src
+			filler = new(get_step(src, NORTH), src)
+
 		else
-			filler.loc = get_step(src,NORTH)
-	filler.density = density
-	filler.set_opacity(opacity)
+			filler.loc = get_step(src, NORTH)
 
-/obj/machinery/door/airlock/multi_tile
-	multi_tile = TRUE
-	width = 2
-	has_environment_lights = FALSE
+	filler.sync()
 
-/obj/machinery/door/airlock/glass_large
-	name = "Large Glass Airlock"
-	icon = 'modular_bluemoon/smiley/aesthetics/large_doors/icons/glass/multi_tile.dmi'
-	overlays_file = 'modular_bluemoon/smiley/aesthetics/large_doors/icons/glass/overlays.dmi'
-	opacity = FALSE
-	airlock_material = "glass"
-	glass = TRUE
-	bound_width = 64 // 2x1
-	assemblytype = /obj/structure/door_assembly/multi_tile/glass
 
 /obj/machinery/door/airlock/multi_tile/metal
-	name = "Large Airlock"
-	icon = 'modular_bluemoon/smiley/aesthetics/large_doors/icons/metal/multi_tile.dmi'
-	overlays_file = 'modular_bluemoon/smiley/aesthetics/large_doors/icons/metal/overlays.dmi'
+	name = "large airlock"
 	assemblytype = /obj/structure/door_assembly/multi_tile/metal
-	bound_width = 64 // 2x1
+	has_environment_lights = FALSE
+
+
+/obj/machinery/door/airlock/multi_tile/glass
+	name = "large glass airlock"
+	assemblytype = /obj/structure/door_assembly/multi_tile/glass
+	airlock_material = "glass"
+	opacity = FALSE
+	glass = TRUE
+
+
+/obj/machinery/door/airlock/multi_tile/narsie_act()
+	return
+
 
 /obj/airlock_filler_object
 	name = ""
 	density = TRUE
 	opacity = TRUE
 	anchored = TRUE
-	var/parent_airlock
+	var/obj/machinery/door/airlock/multi_tile/parent_airlock
+
+
+/obj/airlock_filler_object/Initialize(mapload, obj/machinery/door/airlock/parent_airlock)
+	. = ..()
+
+	if(!parent_airlock)
+		return INITIALIZE_HINT_QDEL_FORCE
+
+	src.parent_airlock = parent_airlock
+
+
+/obj/airlock_filler_object/Bump(atom/A)
+	return parent_airlock.Bump(A)
+
 
 /obj/airlock_filler_object/CanAllowThrough(atom/movable/mover, turf/target)
 	. = ..()
+
 	if(.)
 		return
+
 	// Snowflake handling for PASSGLASS.
 	if(istype(mover) && (mover.pass_flags & PASSGLASS))
 		return !opacity
 
+
 /obj/airlock_filler_object/can_be_pulled(user, grab_state, force)
 	return FALSE
+
 
 /obj/airlock_filler_object/singularity_act()
 	return
 
+
 /obj/airlock_filler_object/singularity_pull(S, current_size)
 	return
 
+
 /obj/airlock_filler_object/Destroy(force)
-	if(parent_airlock)
-		parent_airlock = null
+	if(parent_airlock)	//
+		parent_airlock.filler = null
+		parent_airlock.SetBounds()
+
 	return ..()
+
+
+/obj/airlock_filler_object/proc/sync()
+	if(!parent_airlock)
+		return
+
+	density = parent_airlock.density
+	set_opacity(parent_airlock.opacity)
+
+
+/obj/airlock_filler_object/proc/force_destroy()
+	parent_airlock = null
+	qdel(src)
+
 
 //ASSEMBLYS!
 /obj/structure/door_assembly/multi_tile
-	dir = EAST
 	var/width = 1
+
 
 /obj/structure/door_assembly/multi_tile/Initialize(mapload)
 	. = ..()
-	update_dir()
+
+	SetBounds()
+
 
 /obj/structure/door_assembly/multi_tile/Move()
 	. = ..()
-	update_dir()
 
-/obj/structure/door_assembly/multi_tile/proc/update_dir()
+	SetBounds()
+
+
+/obj/structure/door_assembly/multi_tile/proc/SetBounds()
 	if(dir in list(NORTH, SOUTH))
 		bound_width = width * world.icon_size
 		bound_height = world.icon_size
+
 	else
 		bound_width = world.icon_size
 		bound_height = width * world.icon_size
+
 
 /obj/structure/door_assembly/multi_tile/metal
 	name = "Large Airlock Assembly"
@@ -114,14 +188,14 @@
 	base_name = "Large Airlock"
 	overlays_file = 'modular_bluemoon/smiley/aesthetics/large_doors/icons/metal/overlays.dmi'
 	airlock_type = /obj/machinery/door/airlock/multi_tile/metal
-	glass_type = /obj/machinery/door/airlock/glass_large
-	bound_width = 64 // 2x1
+	glass_type = /obj/machinery/door/airlock/multi_tile/glass
+	width = 2
+
 
 /obj/structure/door_assembly/multi_tile/glass
 	name = "Large Glass Airlock Assembly"
 	icon = 'modular_bluemoon/smiley/aesthetics/large_doors/icons/glass/multi_tile.dmi'
 	base_name = "Large Glass Airlock"
 	overlays_file = 'modular_bluemoon/smiley/aesthetics/large_doors/icons/glass/overlays.dmi'
-	airlock_type = /obj/machinery/door/airlock/glass_large
-	bound_width = 64 // 2x1
-
+	airlock_type =/obj/machinery/door/airlock/multi_tile/glass
+	width = 2

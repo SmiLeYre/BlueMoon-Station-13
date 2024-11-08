@@ -34017,7 +34017,7 @@
 /turf/open/floor/plasteel,
 /area/engineering/break_room)
 "eZH" = (
-/obj/machinery/door/airlock/glass_large{
+/obj/machinery/door/airlock/multi_tile/glass{
 	name = "Medical"
 	},
 /turf/open/floor/plasteel/white{
@@ -62089,7 +62089,7 @@
 /area/security/prison)
 "jfG" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/glass_large{
+/obj/machinery/door/airlock/multi_tile/glass{
 	name = "Visitation"
 	},
 /obj/structure/cable{
@@ -123900,7 +123900,7 @@
 /area/commons/fitness)
 "sco" = (
 /obj/machinery/door/firedoor,
-/obj/machinery/door/airlock/glass_large{
+/obj/machinery/door/airlock/multi_tile/glass{
 	name = "Medical"
 	},
 /turf/open/floor/plasteel/white{
@@ -129928,7 +129928,7 @@
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
 "sTl" = (
-/obj/machinery/door/airlock/glass_large{
+/obj/machinery/door/airlock/multi_tile/glass{
 	name = "Medical"
 	},
 /obj/effect/turf_decal/tile/neutral{
@@ -150709,7 +150709,7 @@
 	},
 /area/command/heads_quarters/captain)
 "vUH" = (
-/obj/machinery/door/airlock/glass_large{
+/obj/machinery/door/airlock/multi_tile/glass{
 	name = "Art Supplies"
 	},
 /turf/open/floor/plating,
