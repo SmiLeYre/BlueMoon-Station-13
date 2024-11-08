@@ -121,8 +121,7 @@
 		pre_light_power = door_light_power
 		if(has_environment_lights)
 			set_light(pre_light_range, pre_light_power, pre_light_color, TRUE)
-			if(multi_tile)
-				filler.set_light(pre_light_range, pre_light_power, pre_light_color)
+			filler?.set_light(pre_light_range, pre_light_power, pre_light_color)
 	else
 		lights_overlay = ""
 
@@ -131,7 +130,7 @@
 	if(greyscale_lights_color && !light_state)
 		lights_appearance.color = greyscale_lights_color
 
-	if(multi_tile)
+	if(filler)
 		lights_appearance.dir = dir
 
 	. += lights_appearance

@@ -1,4 +1,4 @@
-/obj/machinery/door/airlock/multi_tile
+/obj/machinery/door/airlock
 	var/obj/airlock_filler_object/filler
 
 
