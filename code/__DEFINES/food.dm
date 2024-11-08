@@ -36,3 +36,10 @@
 #define CRAFTED_FOOD_INGREDIENT_REAGENT_MODIFIER 0.5
 
 #define BLACKBOX_LOG_FOOD_MADE(food) SSblackbox.record_feedback("tally", "food_made", 1, food)
+
+// Всё ради еды
+#define SEAFOOD (1<<15)
+#define NUTS 	(1<<16)
+#define SAUCE 	(1<<17)
+
+#define CAT_EAST "East foods"

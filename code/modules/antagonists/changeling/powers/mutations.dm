@@ -20,6 +20,8 @@
 	helptext = "Yell at Miauw and/or Perakp"
 	chemical_cost = 1000
 
+	gamemode_restriction_type = ANTAG_DYNAMIC
+
 	var/recharge_slowdown = 0
 	var/silent = FALSE
 	var/weapon_type

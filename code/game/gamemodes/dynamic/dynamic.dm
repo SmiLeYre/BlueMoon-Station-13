@@ -29,7 +29,7 @@ GLOBAL_VAR_INIT(round_type, ROUNDTYPE_DYNAMIC_MEDIUM)
 
 /datum/game_mode/dynamic
 	name = "dynamic mode"
-	config_tag = "dynamic"
+	config_tag = "Dynamic"
 	announce_span = "danger"
 	announce_text = "Dynamic mode!" // This needs to be changed maybe
 	// Threat logging vars

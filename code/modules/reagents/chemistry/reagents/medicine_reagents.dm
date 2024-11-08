@@ -1048,10 +1048,14 @@
 					M.emote("gasp")
 					log_combat(M, M, "revived", src)
 					var/list/policies = CONFIG_GET(keyed_list/policy)
+					var/timelimit = CONFIG_GET(number/defib_cmd_time_limit) * 10 //the config is in seconds, not deciseconds
+					var/late = timelimit && (tplus > timelimit)
 					var/policy = policies[POLICYCONFIG_ON_DEFIB_LATE]	//Always causes memory loss due to the nature of strange reagent.
 					if(policy)
 						to_chat(M, policy)
 					M.log_message("revived using strange reagent, [tplus] deciseconds from time of death, considered late revival due to usage of strange reagent.", LOG_GAME)
+					message_admins("[ADMIN_LOOKUPFLW(M)] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
+					log_admin(M, "[M] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
 	..()
 
 

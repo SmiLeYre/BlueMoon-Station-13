@@ -1140,7 +1140,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			belly_prefs = json_from_file["belly_prefs"]
 
 	//gear loadout
-	if(S["loadout"])
+	if(istext(S["loadout"]))
 		loadout_data = safe_json_decode(S["loadout"])
 		var/list/sanitize_current_slot = loadout_data["SAVE_[loadout_slot]"]
 		if(LAZYLEN(sanitize_current_slot))
@@ -1168,6 +1168,10 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 			loadout_data["SAVE_[loadout_slot]"] = list()
 	else
 		loadout_data = list()
+
+	//let's remember their last used slot, i'm sure "oops i brought the wrong stuff" will be an issue now
+	S["loadout_slot"] >> loadout_slot
+
 	//try to fix any outdated data if necessary
 	//preference updating will handle saving the updated data for us.
 	if(needs_update >= 0)
@@ -1408,6 +1412,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["pregnancy_inflation"] >> pregnancy_inflation
 	S["pregnancy_breast_growth"] >> pregnancy_breast_growth
 	//SPLURT EDIT END
+
+	loadout_slot = sanitize_num_clamp(loadout_slot, 1, MAXIMUM_LOADOUT_SAVES, 1, TRUE)
 
 	cit_character_pref_load(S)
 
@@ -1670,10 +1676,11 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	//SPLURT EDIT END
 
 	//gear loadout
-	if(length(loadout_data))
+	if(islist(loadout_data))
 		S["loadout"] << safe_json_encode(loadout_data)
 	else
 		S["loadout"] << safe_json_encode(list())
+	WRITE_FILE(S["loadout_slot"], loadout_slot)
 
 	if(length(tcg_cards))
 		S["tcg_cards"] << safe_json_encode(tcg_cards)

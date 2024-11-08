@@ -1,6 +1,7 @@
 /datum/action/changeling/sting//parent path, not meant for users afaik
 	name = "Tiny Prick"
 	desc = "Stabby stabby"
+	gamemode_restriction_type = ANTAG_DYNAMIC
 	var/sting_icon = null
 
 /datum/action/changeling/sting/Trigger()
@@ -178,6 +179,7 @@
 	sting_icon = "sting_extract"
 	chemical_cost = 25
 	dna_cost = 0
+	gamemode_restriction_type = ANTAG_EXTENDED|ANTAG_DYNAMIC
 
 /datum/action/changeling/sting/extract_dna/can_sting(mob/user, mob/target)
 	if(..())
@@ -200,6 +202,7 @@
 	chemical_cost = 20
 	dna_cost = 2
 	loudness = 2
+	gamemode_restriction_type = ANTAG_EXTENDED|ANTAG_DYNAMIC
 
 /datum/action/changeling/sting/mute/sting_action(mob/user, mob/living/carbon/target)
 	log_combat(user, target, "stung", "mute sting")
@@ -215,6 +218,7 @@
 	chemical_cost = 25
 	dna_cost = 1
 	loudness = 1
+	gamemode_restriction_type = ANTAG_EXTENDED|ANTAG_DYNAMIC
 
 /datum/action/changeling/sting/blind/sting_action(mob/user, mob/living/carbon/target)
 	log_combat(user, target, "stung", "blind sting")
@@ -233,6 +237,7 @@
 	chemical_cost = 10
 	dna_cost = 1
 	loudness = 1
+	gamemode_restriction_type = ANTAG_EXTENDED|ANTAG_DYNAMIC
 
 /datum/action/changeling/sting/LSD/sting_action(mob/user, mob/target)
 	log_combat(user, target, "stung", "LSD sting")

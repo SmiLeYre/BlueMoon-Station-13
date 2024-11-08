@@ -109,6 +109,7 @@
 #define ON_EDGED_TURF_LAYER 4.35
 #define LARGE_MOB_LAYER 4.4
 #define ABOVE_ALL_MOB_LAYER 4.5
+#define RAILING_LAYER 4.7
 
 #define SPACEVINE_LAYER 4.8
 #define SPACEVINE_MOB_LAYER 4.9
@@ -246,5 +247,9 @@
 #define RENDER_PLANE_GAME_WORLD -1
 
 #define RENDER_PLANE_LIGHTING 15
+
+// Admin popup layer
+#define ADMIN_POPUP_LAYER 1
+
 ///Layer for screentips
 #define SCREENTIP_LAYER 40

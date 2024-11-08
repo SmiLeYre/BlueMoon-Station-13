@@ -462,16 +462,16 @@
 	else if(!isitem(O))
 		return
 	var/turf/T = get_turf(src)
-	var/list/targets = list(O, src)
+//	var/list/targets = list(O, src) / BLUEMOON REMOVAL - CLOSET DROP RUNTIME FIX
 	add_fingerprint(user)
-	user.visible_message("<span class='warning'>[user] [actuallyismob ? "tries to ":""]stuff [O] into [src].</span>", \
-		"<span class='warning'>You [actuallyismob ? "try to ":""]stuff [O] into [src].</span>", \
-		"<span class='hear'>You hear clanging.</span>")
+	user.visible_message(span_warning("[user] [actuallyismob ? "tries to ":""]stuff [O] into [src]."), \
+		span_warning("You [actuallyismob ? "try to ":""]stuff [O] into [src]."), \
+		span_hear("You hear clanging."))
 	if(actuallyismob)
-		if(do_after_mob(user, targets, 40))
-			user.visible_message("<span class='notice'>[user] stuffs [O] into [src].</span>", \
-				"<span class='notice'>You stuff [O] into [src].</span>", \
-				"<span class='hear'>You hear a loud metal bang.</span>")
+		if(do_after(user, 3 SECONDS, O)) // BLUEMOON EDIT - CLOSET DROP RUNTIME FIX - WAS if(!do_after(user, 3 SECONDS, target = targets, timed_action_flags = (IGNORE_HELD_ITEM | IGNORE_INCAPACITATED), extra_checks = CALLBACK(user, TYPE_PROC_REF(/mob/living/carbon, cuff_resist_check))))
+			user.visible_message(span_notice("[user] stuffs [O] into [src]."), \
+				span_notice("You stuff [O] into [src]."), \
+				span_hear("You hear a loud metal bang."))
 			var/mob/living/L = O
 			if(!issilicon(L))
 				L.DefaultCombatKnockdown(40)
@@ -480,9 +480,9 @@
 			else
 				O.forceMove(T)
 				close()
+			log_combat(user, O, "stuffed", addition = "inside of [src]") // BLUEMOON ADD - CLOSET DROP RUNTIME FIX
 	else
 		O.forceMove(T)
-	return TRUE
 
 /obj/structure/closet/relaymove(mob/living/user, direction)
 	if(user.stat || !isturf(loc))

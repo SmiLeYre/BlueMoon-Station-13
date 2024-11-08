@@ -11099,6 +11099,12 @@
 	},
 /turf/open/floor/iron/dark,
 /area/syndicate_mothership/control)
+"con" = (
+/obj/effect/mob_spawn/qareen{
+	dir = 1
+	},
+/turf/open/indestructible/boss,
+/area/horny_antags/qareen)
 "cot" = (
 /obj/effect/turf_decal/box,
 /obj/effect/turf_decal/caution/stand_clear,
@@ -22821,6 +22827,11 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
+"mUC" = (
+/obj/effect/decal/cleanable/ash,
+/obj/effect/mob_spawn/human/changeling_extended,
+/turf/open/indestructible/boss,
+/area/horny_antags/qareen)
 "mVF" = (
 /obj/effect/turf_decal/tile/brown/fourcorners,
 /obj/machinery/light{
@@ -22943,6 +22954,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/centcom/ferry)
+"mZW" = (
+/obj/effect/mob_spawn/qareen/wendigo_lore{
+	dir = 1
+	},
+/turf/open/indestructible/boss,
+/area/horny_antags/qareen)
 "naZ" = (
 /obj/structure/closet/crate/coffin,
 /turf/open/floor/plating,
@@ -31594,6 +31611,12 @@
 /obj/structure/flora/biolumi/flower,
 /turf/open/floor/grass,
 /area/centcom/evac)
+"uWT" = (
+/obj/effect/mob_spawn/human/changeling_extended{
+	dir = 1
+	},
+/turf/open/indestructible/boss,
+/area/horny_antags/qareen)
 "uXT" = (
 /obj/machinery/door/airlock/centcom{
 	name = "Raiders Barracks";
@@ -49589,11 +49612,11 @@ aaa
 aaa
 aaa
 wIy
-eyk
+mUC
 qWG
 qWG
 tzG
-qWG
+uWT
 wIy
 aaa
 aaa
@@ -49850,7 +49873,7 @@ puU
 qWG
 eyk
 qWG
-puU
+con
 wIy
 aaa
 aaa
@@ -50107,7 +50130,7 @@ ylX
 pha
 qWG
 qWG
-ylX
+mZW
 wIy
 aaa
 aaa

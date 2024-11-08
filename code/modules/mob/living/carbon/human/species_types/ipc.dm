@@ -7,9 +7,9 @@
 	sexes = 0
 	inherent_traits = list(TRAIT_EASYDISMEMBER,TRAIT_LIMBATTACHMENT,TRAIT_NO_PROCESS_FOOD, TRAIT_ROBOTIC_ORGANISM, TRAIT_RESISTLOWPRESSURE, TRAIT_NOBREATH, TRAIT_AUXILIARY_LUNGS, TRAIT_VIRUSIMMUNE, TRAIT_RESISTCOLD, TRAIT_NOTHIRST) // BLUEMOON ADD - добавлены TRAIT_VIRUSIMMUNE, TRAIT_RESISTCOLD, TRAIT_NOTHIRST
 	species_traits = list(MUTCOLORS,NOEYES,NOTRANSSTING,HAS_FLESH,HAS_BONE,HAIR,ROBOTIC_LIMBS)
-	hair_alpha = 210
+	hair_alpha = 255
 	inherent_biotypes = MOB_ROBOTIC|MOB_HUMANOID
-	mutant_bodyparts = list("ipc_screen" = "Blank", "deco_wings" = "None", "ipc_antenna" = "None")
+	mutant_bodyparts = list("ipc_screen" = "Blank", "deco_wings" = "None", "ipc_antenna" = "None", "mam_tail" = "None", "mam_ears" = "None", "horns" = "None")
 	meat = /obj/item/reagent_containers/food/snacks/meat/slab/human/mutant/ipc
 	gib_types = list(/obj/effect/gibspawner/ipc, /obj/effect/gibspawner/ipc/bodypartless)
 

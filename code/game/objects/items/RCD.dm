@@ -674,6 +674,7 @@ RLD
 	icon_state = "arcd"
 	item_state = "oldrcd"
 	has_ammobar = FALSE
+	upgrade = TRUE
 
 
 // RAPID LIGHTING DEVICE

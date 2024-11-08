@@ -672,6 +672,8 @@
 					if(policy)
 						to_chat(H, policy)
 					H.log_message("revived using a defibrillator, [tplus] deciseconds from time of death, considered [late? "late" : "memory-intact"] revival under configured policy limits.", LOG_GAME)
+					message_admins("[ADMIN_LOOKUPFLW(H)] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
+					log_admin(H, "[H] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
 				if(req_defib)
 					defib.deductcharge(revivecost)
 					cooldown = 1

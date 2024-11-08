@@ -1,0 +1,60 @@
+2024-10-01:
+  Just-Sim:
+  - rscadd: Added Emote Panel
+  - rscdel: Remove herobrine.
+  - refactor: refactored emote code.
+2024-10-05:
+  Just-Sim:
+  - bugfix: fixes bugs brought about by the emote panel
+2024-10-07:
+  SaraSayomi:
+  - bugfix: Crop top
+  - bugfix: HOP parade
+  - bugfix: explorer suit (fukin spaget code)
+2024-10-14:
+  SaraSayomi:
+  - bugfix: Fixed the susplush and steppy poster
+2024-10-16:
+  cyfause:
+  - bugfix: allow facial hair on anthromorph species
+2024-10-24:
+  MosleyTheMalO:
+  - rscadd: adds the emote panel using tgui
+  - code_imp: refractors emote code
+  Sara:
+  - rscadd: Added a full new station.
+  - rscadd: Added new shuttles, arrival, escape, and whiteship.
+  - rscadd: Added new lore page for the station.
+2024-10-25:
+  SaraSayomi:
+  - bugfix: 4nal tubes
+2024-10-30:
+  LeDrascol:
+  - tweak: Storage Concealment implant uses new SFX
+  - tweak: Storage Concealment implant now has a one-second cooldown
+  - tweak: Storage Concealment implant chat messages now display what you're wearing
+  - tweak: Storage Concealment implant will not produce SFX without a back item
+  SaraSayomi:
+  - rscadd: More fire safety in the halls
+  - rscadd: More intercoms
+  - tweak: Hydro is now bigger
+  - bugfix: Maints names now follow department and floor over direction and floor
+  - bugfix: Departments better differ from upper, lower, and mid
+  - rscadd: Certain rooms have names now
+  - rscadd: Service lathe is now easier for hydro and cooks to reach
+  - tweak: Wolf pit is now harder to break out of, indestrucable on directions facing
+      maints, but see through to make up for it- Thanks Takumi
+  - rscadd: Sec gets a very specific warning
+  - rscadd: New area names
+  - tweak: Engineering shower now shows some departmental pride
+  - rscadd: Departures now has tiny fans at the airlock
+  - tweak: HoP bully hole is now slightly easier to notice
+  - tweak: APCs are standardized
+  - bugfix: Fixed the kitchen wheelies
+  - rscadd: Engi stuff, (please leave me alone, it's 2 am and I work at 7)
+  - bugfix: Cargo door access bullshit
+  - bugfix: Some firelock direction stuff
+  - rscadd: Clown and mime office is now above the department known to explode, enjoy!
+  cyfause:
+  - tweak: enables tail + horns + ears bodyparts for ipc characters
+  - tweak: disables opacity on ipc character hair

@@ -209,3 +209,59 @@
 	item_state = "nrimundir"
 	body_parts_covered = CHEST
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/suit/armor/hos/dread_armor
+	name = "Броня Судьи"
+	desc = "Стандартный  бронежилет судьи из Мега-Города Солнечной Федерации. Броня покрывает плечи и большую часть тела. На наплечниках красуются орлы из скорее всего золота как и на левой части груди с ремнём где красуется значок с потертым именем Дредд. Вам кажется это имя знакомым. Эта броня так и веет чуством что вас защищает Закон."
+	icon_state = "dread_armor"
+	item_state = "dread_armor"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+
+/obj/item/clothing/suit/armor/renegat
+	name = "Peacekeeper Officer's Armor Renegat"
+	desc = "The armor of the Adler peacekeepers. There are several patches indicating rank, it looks like it's a uniform for commanders. It is produced by the Adler Military-Industrial complex of the same name. It seems that it can only be worn by high-ranking officials and it is marked with an appropriate alphanumeric code."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/clothing_right.dmi'
+	icon_state = "renegat"
+	item_state = "renegat"
+	blood_overlay_type = "armor"
+	body_parts_covered = CHEST
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/head/helmet/sec/renegat
+	name = "Peacekeeper Officer's Helmet Renegat"
+	desc = "The helmet of the Adler peacekeepers. There are several patches indicating rank, it looks like it's a uniform for commanders. It is produced by the Adler Military-Industrial complex of the same name. It seems that it can only be worn by high-ranking officials, it looks like it has a special friend-foe identification interface built into it."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon_state = "renegat"
+	item_state = "renegat"
+
+/obj/item/clothing/suit/armor/armor_shield
+	name = "Heavy Peacekeeper Armor Shield"
+	desc = "The heavy armored suit of the Adler peacekeepers. It is more durable than the regular version, the identification code is indicated under one of the plates on the armor, each plate seems to be designed to reflect the impact, signaling the force on several accompanying plates, reducing the force of impact and damage inflicted. The armor fits well on the body, but it is relatively heavy for an ordinary person, wearing it without implants and training does not seem to be the best option. The Adler encoding on the armor also makes it easier for their owners to identify them using the same access code and poses a danger to opponents and looters."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	icon_state = "shield"
+	item_state = "shield"
+	blood_overlay_type = "armor"
+	body_parts_covered = CHEST
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/head/helmet/sec/helmet_shield
+	name = "Heavy Peacekeeper Helmet Shield"
+	desc = "The heavy, armored helmet of Adler's Peacekeepers. It seems to be adapted for long and complex operations, inside there is a soft lining under the armor, outside there are durable plates and a friend-foe identification system. Additional plates are located on the front to protect the head."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon_state = "shield"
+	item_state = "shield"
+
+/obj/item/clothing/head/helmet/sec/adler_skull
+	name = "Tactical Skull Helmet"
+	desc = "The tactical helmet of desert hunters from the Russian Empire planet Tyrana-1, a lightweight helmet for action in hot conditions, relatively protects against sandstorms, bullets and monster strikes, but slightly narrows the view. It seems that this option is more like an anthropomorphic, but it is also suitable for an ordinary person. Usually the hunters themselves scratch their initials on them, but this one is not marked in any way."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/hats.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
+	icon_state = "adler_skull"
+	item_state = "adler_skull"

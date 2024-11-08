@@ -22,21 +22,21 @@
 	priority_announce("Обнаружен гипер-энергетический поток на [ANOMALY_ANNOUNCE_DANGEROUS_TEXT] [impact_area.name].", "ВНИМАНИЕ: АНОМАЛИЯ", 'sound/announcer/classic/anomaly/anomaly_flux.ogg')
 
 /datum/round_event/anomaly/start()
-	var/turf/anomaly_turf
-	if(spawn_location)
-		anomaly_turf = spawn_location
-		impact_area = get_area(spawn_location)
-	else
-		anomaly_turf = placer.findValidTurf(impact_area)
-		impact_area = placer.findValidArea()
+    var/turf/anomaly_turf
+    if(spawn_location)
+        impact_area = get_area(spawn_location)
+        anomaly_turf = spawn_location
+    else
+        impact_area = placer.findValidArea()
+        anomaly_turf = placer.findValidTurf(impact_area)
 
-	if(anomaly_turf)
-		return FALSE
+    if(!anomaly_turf)
+        return
 
-	. = new anomaly_path(anomaly_turf)
-	if(.)
-		apply_anomaly_properties(.)
-		announce_to_ghosts(.)
+    . = new anomaly_path(anomaly_turf)
+    if(.)
+        apply_anomaly_properties(.)
+        announce_to_ghosts(.)
 
 /// Make any further post-creation modifications to the anomaly
 /datum/round_event/anomaly/proc/apply_anomaly_properties(obj/effect/anomaly/new_anomaly)

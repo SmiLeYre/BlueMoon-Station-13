@@ -34,8 +34,10 @@
 		if(sac_targetter)
 			sac_targetter.sac_targetted.Remove(target.real_name)
 		target = null
+		user.balloon_alert(user,"<span class='warning'>Состояние Живого Сердца сброшено.</span>")
+		to_chat(user,"<span class='warning'>Состояние Живого Сердца сброшено!</span>")
 	else
-		to_chat(user, "<span class='warning'>The heart is still recovering from the last use.</span>")
+		to_chat(user, "<span class='warning'>Состояние Живого Сердца пока что не может быть сброшено.</span>")
 
 /obj/item/living_heart/attack_self(mob/user)
 	. = ..()

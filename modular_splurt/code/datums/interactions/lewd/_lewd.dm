@@ -580,7 +580,7 @@ SPLURT теперь обрабатывают все это дело в /mob/livi
 						'modular_sand/sound/interactions/bang2.ogg',
 						'modular_sand/sound/interactions/bang3.ogg'), 70, 1, -1)
 	if(target.can_penetrating_genital_cum())
-		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, src, ORGAN_SLOT_PENIS)
+		target.handle_post_sex(NORMAL_LUST, CUM_TARGET_BREASTS, target, CUM_TARGET_PENIS)
 
 /mob/living/proc/lick_nuts(mob/living/target)
 	var/message

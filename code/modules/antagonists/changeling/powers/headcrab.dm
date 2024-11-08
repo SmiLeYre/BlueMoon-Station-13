@@ -7,6 +7,7 @@
 	dna_cost = 1
 	loudness = 2
 	req_human = TRUE
+	gamemode_restriction_type = ANTAG_DYNAMIC
 
 /datum/action/changeling/headcrab/sting_action(mob/user)
 	set waitfor = FALSE

@@ -35,7 +35,7 @@
 	var/datum/action/innate/slime/reproduce/repro_action = new
 	repro_action.Grant(pyro)
 
-	var/list/mob/dead/observer/candidates = pollCandidatesForMob("Do you want to play as a pyroclastic anomaly slime?", ROLE_SENTIENCE, null, 10 SECONDS, pyro, POLL_IGNORE_SENTIENCE_POTION)
+	var/list/mob/dead/observer/candidates = pollCandidatesForMob("Do you want to play as a pyroclastic anomaly slime?", ROLE_SENTIENCE, null, ROLE_SENTIENCE, 10 SECONDS, pyro, POLL_IGNORE_SENTIENCE_POTION)
 	if(!LAZYLEN(candidates))
 		return
 

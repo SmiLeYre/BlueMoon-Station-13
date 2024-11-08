@@ -27,5 +27,5 @@
 	required_reagents = list(/datum/reagent/drug/aphrodisiacplus = 1, /datum/reagent/fermi/breast_enlarger = 1)
 
 /datum/chemical_reaction/peen_pop
-	results = list(/datum/reagent/drug/genital_stimulator/peen_pop)
+	results = list(/datum/reagent/drug/genital_stimulator/peen_pop = 2)
 	required_reagents = list(/datum/reagent/drug/aphrodisiacplus = 1, /datum/reagent/fermi/penis_enlarger = 1)

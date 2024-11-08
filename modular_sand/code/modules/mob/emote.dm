@@ -17,7 +17,7 @@
 	M.vis_contents -= I
 	qdel(I)
 
-/datum/emote/living/peep
+/datum/emote/sound/human/peep
 	key = "peep"
 	key_third_person = "peeps like a bird"
 	message = "peeps like a bird!"
@@ -26,7 +26,7 @@
 	restraint_check = FALSE
 	mob_type_allowed_typecache = list(/mob/living/carbon, /mob/living/silicon/pai)
 
-/datum/emote/living/peep/run_emote(mob/living/user, params)
+/datum/emote/sound/human/peep/run_emote(mob/living/user, params)
 	if(!(. = ..()))
 		return
 	if(user.nextsoundemote >= world.time)
@@ -34,7 +34,7 @@
 	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_sand/sound/voice/peep_once.ogg', 50, 1, -1)
 
-/datum/emote/living/peep2
+/datum/emote/sound/human/peep2
 	key = "peep2"
 	key_third_person = "peeps twice like a bird"
 	message = "peeps twice like a bird!"
@@ -43,7 +43,7 @@
 	restraint_check = FALSE
 	mob_type_allowed_typecache = list(/mob/living/carbon, /mob/living/silicon/pai)
 
-/datum/emote/living/peep2/run_emote(mob/living/user, params)
+/datum/emote/sound/human/peep2/run_emote(mob/living/user, params)
 	if(!(. = ..()))
 		return
 	if(user.nextsoundemote >= world.time)
@@ -51,7 +51,7 @@
 	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/peep.ogg', 50, 1, -1)
 
-/datum/emote/living/carbon/moan/run_emote(mob/living/user, params, type_override, intentional)
+/datum/emote/sound/human/carbon/moan/run_emote(mob/living/user, params, type_override, intentional)
 	if(!(. = ..()))
 		return
 	user.moan()

@@ -147,12 +147,13 @@
 	w_class = WEIGHT_CLASS_BULKY
 	weapon_weight = WEAPON_HEAVY
 	recoil = 2
-	mag_type = /obj/item/ammo_box/magazine/aa12
+	mag_type = /obj/item/ammo_box/magazine/aa12/small
 	fire_sound = 'sound/weapons/gunshotshotgunshot.ogg'
 	automatic_burst_overlay = FALSE
 	can_suppress = FALSE
 	fire_select = 1
 	burst_size = 1
+	fire_delay = 5 // BLUEMOON EDIT - was NOTHING
 	actions_types = list()
 
 /obj/item/gun/ballistic/automatic/shotgun/aa12/update_icon_state()

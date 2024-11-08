@@ -96,6 +96,16 @@
 
 ////////////////////////
 
+/obj/item/clothing/neck/tie/dread_neck
+	name = "Наплечники судьи"
+	desc = "Довольно большой полу-жилет что крепится на тонкую ткань, на плечах большие и довольно массивные словно отлитые из золота регалии, где на правом плече красовался Орёл, и на втором уже простое покрытие брусками, и на левой стороне передней части жилетки виднеется массивный значок с потертым именем Дредд что кажется вам знакомым. Одевая эти регалии вас переполняет чуство груза за решения что вы принимаете вынося вердикт."
+	icon_state = "dread_neck"
+	item_state = "dread_neck"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+
+////////////////////////
+
 /obj/item/clothing/gloves/fingerless/monolith_gloves
 	name = "Monolith gloves"
 	desc = "The gloves of the jumpsuit Granite M1 from the Monolith group, the manufacturer is unknown."
@@ -127,3 +137,51 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/shoes.dmi'
 	icon_state = "SATTjackboots"
 	item_state = "SATTjackboots"
+
+////////////////////////
+
+/obj/item/clothing/suit/kimono/warai
+	name = "Кимоно 笑い"
+	desc = "Дорогая одежда на восточный мотив. Слишком большая для ношения существами без дополнительных пар лап. При детальном осмотре выясняется что соткана она из необычного материала, а именно сушеных сухожилий и чьей то шерсти. Вдоль всего кимоно виднеются позвонки и выпирающие ребра, что улучшают прочность одеяния. Так же имеется что то типа самурайской пластинчатой брони под кимоно, состоящих из плоских костей. А еще местами виднеется орнамент в виде странных цветов... вам показалось или они моргают?"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_ALL_TAURIC
+	icon = 'icons/obj/clothing/uniforms.dmi'
+	mob_overlay_icon = 'icons/mob/clothing/uniform_digi.dmi'
+	taur_mob_worn_overlay = 'modular_sand/icons/mob/suits_taur.dmi'
+
+///////////////////////////
+
+/obj/item/storage/belt/scabbard
+	name = "Scabbard for a officer's cleaver"
+	desc = "The special scabbard is well suited for the officer's cleaver issued to high-ranking Adler officers and their officials. You could call it superfluous, it is made of the skin of some rare creature and perhaps even intelligent, the scabbard itself is attached to the belt in the belt area at the back for the convenience of sharply removing the blade and striking, which is taught to officers when they learn how to use this specialized cleaver. For ordinary people, they are inconvenient and difficult to use."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/belts.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/belts.dmi'
+	icon_state = "scabbard"
+	item_state = "scabbard"
+	w_class = WEIGHT_CLASS_BULKY
+	content_overlays = TRUE
+	onmob_overlays = TRUE
+	var/list/fitting_swords = list(/obj/item/melee/sabre/cleaver)
+
+/obj/item/storage/belt/scabbard/ComponentInitialize()
+	. = ..()
+	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_items = 1
+	STR.rustle_sound = FALSE
+	STR.max_w_class = WEIGHT_CLASS_BULKY
+	STR.can_hold = typecacheof(fitting_swords)
+	STR.quickdraw = TRUE
+
+/obj/item/storage/belt/scabbard/examine(mob/user)
+	. = ..()
+	if(length(contents))
+		. += "<span class='notice'>Alt-click it to quickly draw the blade.</span>"
+
+////////////////////////
+
+/obj/item/clothing/neck/tie/shoulder_coat
+	name = "Officer's shoulder coat"
+	desc = "The officer's raincoat is also usually worn by Adler's officers as an additional identification mark, it is made of nanofibers of light fabric, it is usually given to officers who have passed advanced training and have at least the second rank in the hierarchy of officers. For officials and senior officers, it is usually not used since their rank is much higher. But for tactical designation in the officer corps, it is necessary to wear. Even a second-rank officer can already give full orders to a first-rank officer, despite the small gap in ranks. White stripes can also be applied to the cloak as a rank identifier, but this practice is usually used only in regular forces."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+	icon_state = "shoulder_coat"
+	item_state = "shoulder_coat"

@@ -24,6 +24,7 @@
 
 	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
+		H.pulledby?.stop_pulling()
 		if(HAS_TRAIT(H, TRAIT_PIERCEIMMUNE))
 			return
 

@@ -1,26 +1,68 @@
 /obj/structure/railing
 	name = "railing"
 	desc = "Basic railing meant to protect idiots like you from falling."
-	icon = 'icons/obj/fluff.dmi'
+	icon = 'icons/obj/railings.dmi'
 	icon_state = "railing"
 	density = TRUE
 	anchored = TRUE
 	climbable = TRUE
+	layer = RAILING_LAYER
 	///Initial direction of the railing.
 	var/ini_dir
+
+/obj/structure/railing/unbreakable
+	resistance_flags = INDESTRUCTIBLE
 
 /obj/structure/railing/corner //aesthetic corner sharp edges hurt oof ouch
 	icon_state = "railing_corner"
 	density = FALSE
 	climbable = FALSE
 
+/obj/structure/railing/corner/unbreakable
+	resistance_flags = INDESTRUCTIBLE
+
+/obj/structure/railing/corner/end //end of a segment of railing without making a loop
+	icon_state = "railing_end"
+
+/obj/structure/railing/corner/end/unbreakable
+	resistance_flags = INDESTRUCTIBLE
+
+/obj/structure/railing/corner/end/flip //same as above but flipped around
+	icon_state = "railing_end_flip"
+
+/obj/structure/railing/corner/end/flip/unbreakable
+	resistance_flags = INDESTRUCTIBLE
+
 /obj/structure/railing/ComponentInitialize()
 	. = ..()
 	AddComponent(/datum/component/simple_rotation,ROTATION_ALTCLICK | ROTATION_CLOCKWISE | ROTATION_COUNTERCLOCKWISE | ROTATION_VERBS ,null,CALLBACK(src, PROC_REF(can_be_rotated)),CALLBACK(src, PROC_REF(after_rotation)))
 
+/obj/structure/railing/examine(mob/user)
+	. = ..()
+	if(anchored == TRUE)
+		. += span_notice("The railing is <b>bolted</b> to the floor.")
+	else
+		. += span_notice("The railing is <i>unbolted</i> from the floor and can be deconstructed with <b>wirecutters</b>.")
+
 /obj/structure/railing/Initialize(mapload)
 	. = ..()
-	ini_dir = dir
+
+	var/static/list/tool_behaviors = list(
+		TOOL_WELDER = list(
+			SCREENTIP_CONTEXT_LMB = list(INTENT_HELP = "Repair"),
+		),
+		TOOL_WRENCH = list(
+			SCREENTIP_CONTEXT_LMB = list(INTENT_ANY = "Anchor/Unanchor"),
+		),
+		TOOL_WIRECUTTER= list(
+			SCREENTIP_CONTEXT_LMB = list(INTENT_ANY = "Cut"),
+		)
+	)
+
+	AddElement(/datum/element/contextual_screentip_tools, tool_behaviors)
+
+	RegisterSignal(src, COMSIG_ATOM_DIR_CHANGE, PROC_REF(on_change_layer))
+	adjust_dir_layer(dir)
 
 /obj/structure/railing/attackby(obj/item/I, mob/living/user, params)
 	..()
@@ -34,13 +76,13 @@
 				obj_integrity = max_integrity
 				to_chat(user, "<span class='notice'>Вы починили [src].</span>")
 		else
-			to_chat(user, "<span class='warning'>[src] is already in good condition!</span>")
+			to_chat(user, "<span class='warning'>[src] выглядит целым.</span>")
 		return
 
 /obj/structure/railing/wirecutter_act(mob/living/user, obj/item/I)
 	. = ..()
 	if(!anchored)
-		to_chat(user, "<span class='warning'>You cut apart the railing.</span>")
+		to_chat(user, "<span class='warning'>Вы перекусываете крепление [src].</span>")
 		I.play_tool_sound(src, 100)
 		deconstruct()
 		return TRUE
@@ -50,8 +92,7 @@
 	if(!loc) //quick check if it's qdeleted already.
 		return
 	if(!(flags_1 & NODECONSTRUCT_1))
-		var/obj/item/stack/rods/rod = new /obj/item/stack/rods(drop_location(), 3)
-		transfer_fingerprints_to(rod)
+		new /obj/item/stack/rods(loc, 2)
 		qdel(src)
 ///Implements behaviour that makes it possible to unanchor the railing.
 /obj/structure/railing/wrench_act(mob/living/user, obj/item/I)
@@ -105,3 +146,14 @@
 	air_update_turf(TRUE)
 	ini_dir = dir
 	add_fingerprint(user)
+
+/obj/structure/railing/proc/on_change_layer(datum/source, old_dir, new_dir)
+	SIGNAL_HANDLER
+	adjust_dir_layer(new_dir)
+
+/obj/structure/railing/proc/adjust_dir_layer(direction)
+	layer = (direction & NORTH) ? MOB_LAYER : initial(layer)
+
+
+
+

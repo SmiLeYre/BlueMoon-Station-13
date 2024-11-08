@@ -305,8 +305,12 @@
 	ammo = /obj/item/ammo_box/magazine/wt550m9
 
 /obj/item/storage/box/ammo/holy
-	name = "some holy water"
+	name = "box of holy water"
 	ammo = /obj/item/reagent_containers/food/drinks/bottle/holywater
+
+/obj/item/storage/box/ammo/cleaning_grenades
+	name = "box of cleaning grenades"
+	ammo = /obj/item/grenade/chem_grenade/cleaner
 
 /obj/item/storage/box/ammo/PopulateContents()
 	..()

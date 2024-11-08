@@ -446,10 +446,10 @@
 	desc = "A poster advertising a movie about some masked men."
 	icon_state = "poster_bumba"
 
-///obj/structure/sign/poster/contraband/steppy
-	//name = "Step On Me"
-	//desc = "A phrase associated with a chubby reptile notoriously used in uncivilized Orion space as a deterrent towards would be pirate vessels by instructing them to 'fuck around and find out'."
-	//icon_state = "steppy"
+/obj/structure/sign/poster/contraband/steppy
+	name = "Step On Me"
+	desc = "A phrase associated with a chubby reptile notoriously used in uncivilized Orion space as a deterrent towards would be pirate vessels by instructing them to 'fuck around and find out'."
+	icon_state = "poster_steppy"
 
 /obj/structure/sign/poster/contraband/scum
 	name = "Security are Scum"
@@ -548,6 +548,16 @@
 	name = "NRI declaration of sovereignity"
 	desc = "This poster references the translated copy of Novaya Rossiyskaya Imperiya's declaration of sovereignity."
 	icon_state = "nri_texto"
+
+/obj/structure/sign/poster/contraband/cai
+	name = "Cry About It"
+	desc = "An outdated poster of Gorlex Marouders. It's says :- Oh, dear... Did we interrupt your fun in the dormitories? Is the evacuation shuttle urgently called? Cry about it."
+	icon_state = "poster_cai"
+
+/obj/structure/sign/poster/contraband/poly
+	name = "Snuff The Mascots"
+	desc = "No heroes, no mascots. The InteQ cuts deeper."
+	icon_state = "poster_deadpoly"
 
 /obj/structure/sign/poster/contraband/nri_text/examine_more(mob/user)
 	. = ..()
@@ -858,6 +868,16 @@
 	name = "Spider Risk"
 	desc = "A poster detailing what to do when giant spiders are seen."
 	icon_state = "poster_spiders"
+
+/obj/structure/sign/poster/official/dymai //bluemoon add
+	name = "Dymaite"
+	desc = "Think and weigh every decision you make. You're a security officer, you have a responsibility."
+	icon_state = "poster_dymai"
+
+/obj/structure/sign/poster/official/vlm //bluemoon add
+	name = "VLM"
+	desc = "Stop the xenophobia! Love Voxes! They are valuable employees! (make sure they don't steal anything)"
+	icon_state = "poster_vlm"
 
 ////
 

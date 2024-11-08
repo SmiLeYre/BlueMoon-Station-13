@@ -216,10 +216,10 @@
 		return
 	new /obj/item/stack/medical/gauze(src)
 	new /obj/item/reagent_containers/medspray/sterilizine(src)
-	new /obj/item/reagent_containers/glass/bottle/morphine(src)
-	new /obj/item/reagent_containers/glass/bottle/morphine(src)
+	new /obj/item/reagent_containers/glass/bottle/chloralhydrate(src)
+	new /obj/item/reagent_containers/glass/bottle/chloralhydrate(src)
+	new /obj/item/reagent_containers/glass/bottle/chloralhydrate(src)
 	new /obj/item/reagent_containers/hypospray/combat/omnizine(src)
-	new /obj/item/reagent_containers/hypospray/medipen/penacid(src)
 	new /obj/item/reagent_containers/hypospray/medipen/penacid(src)
 	new /obj/item/reagent_containers/hypospray/medipen/penacid(src)
 
