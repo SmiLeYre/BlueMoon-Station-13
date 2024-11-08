@@ -4504,6 +4504,7 @@
 #include "modular_bluemoon\lewd_armory\code\game\projectiles\ero_projectiles.dm"
 #include "modular_bluemoon\loadout_rings\rings.dm"
 #include "modular_bluemoon\maintenance_quirk\maintenance_quirk.dm"
+#include "modular_bluemoon\modules\acradors\acradors_markings.dm"
 #include "modular_bluemoon\modules\pig_barks\pig_barks.dm"
 #include "modular_bluemoon\oni3288\code\catcrin_stuff.dm"
 #include "modular_bluemoon\Painiscupcake\code\game\objects\items\heroin.dm"

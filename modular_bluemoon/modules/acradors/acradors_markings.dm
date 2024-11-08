@@ -124,4 +124,16 @@
 	name = "Acrador (Narrow and Very Long)"
 	icon_state = "acrador_5"
 
+/*
+ * NECK
+ */
 
+/datum/sprite_accessory/insect_fluff/acradors_neckfluff
+	icon = 'modular_bluemoon/modules/acradors/acradors_neck.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+	relevant_layers = list(BODY_ADJ_LAYER, BODY_FRONT_LAYER)
+
+/datum/sprite_accessory/insect_fluff/acradors_neckfluff/first
+	name = "Neckfluff (Acradors 1)"
+	icon_state = "neckfluff_acradors_1"
