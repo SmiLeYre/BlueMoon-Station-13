@@ -4,7 +4,7 @@
 
 /datum/sprite_accessory/ears/mam_ears/acrador
 	name = "Acrador Long"
-	icon = 'modular_bluemoon/acradors/acradors_ears.dmi'
+	icon = 'modular_bluemoon/modules/acradors/acradors_ears.dmi'
 	icon_state = "acrador_long"
 	matrixed_sections = MATRIX_ALL
 
@@ -41,7 +41,7 @@
 
 /datum/sprite_accessory/snouts/mam_snouts/acrador
 	name = "Acrador 1 (Short)"
-	icon = 'modular_bluemoon/acradors/acradors_snouts.dmi'
+	icon = 'modular_bluemoon/modules/acradors/acradors_snouts.dmi'
 	icon_state = "acrador_1"
 	matrixed_sections = MATRIX_ALL
 	extra = TRUE
@@ -89,11 +89,11 @@
  */
 
 /datum/sprite_accessory/tails/mam_tails/acrador
-	icon = 'modular_bluemoon/acradors/acradors_tails.dmi'
+	icon = 'modular_bluemoon/modules/acradors/acradors_tails.dmi'
 	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/acrador
-	icon = 'modular_bluemoon/acradors/acradors_tails.dmi'
+	icon = 'modular_bluemoon/modules/acradors/acradors_tails.dmi'
 	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/tails/mam_tails/acrador/femine
