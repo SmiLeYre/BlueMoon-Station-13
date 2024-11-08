@@ -1012,7 +1012,7 @@
 		if(M.suiciding || M.hellbound) //they are never coming back
 			M.visible_message("<span class='warning'>[M]'s body does not react...</span>")
 			return ..()
-		if(M.getBruteLoss() >= 100 || M.getFireLoss() >= 100 || HAS_TRAIT(M, TRAIT_HUSK)) //body is too damaged to be revived
+		if(M.getBruteLoss() >= 100 || M.getFireLoss() >= 100 || M.getToxLoss() >= 10 || HAS_TRAIT(M, TRAIT_HUSK)) //body is too damaged to be revived
 			M.visible_message("<span class='warning'>[M]'s body convulses a bit, and then falls still once more.</span>")
 			M.do_jitter_animation(10)
 			return ..()
@@ -1037,6 +1037,11 @@
 
 				M.adjustOxyLoss(-20, 0)
 				M.adjustToxLoss(-20, 0)
+
+				M.adjustCloneLoss(rand(15, 80), 0)
+				M.adjustOrganLoss(ORGAN_SLOT_BRAIN, 60)
+				M.adjustOrganLoss(ORGAN_SLOT_LIVER, rand(10, 60))
+
 				M.updatehealth()
 				if(iscarbon(M))
 					var/mob/living/carbon/C = M
