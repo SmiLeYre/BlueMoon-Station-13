@@ -265,3 +265,13 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
 	icon_state = "adler_skull"
 	item_state = "adler_skull"
+
+/obj/item/clothing/suit/bm/aki_les
+	name = "L.E.S."
+	desc = "Lightweight Exo Skeleton. An exoskeleton for performing simple jobs using pneumatic amplifiers and engineering magic. No, it does not connect to your spine, but it is also adapted to this. It is sometimes used for medical purposes after spinal or lower limb injuries. It can completely replace your old piece of meat with a modern equivalent."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	icon_state = "les"
+	item_state = "les"
+	body_parts_covered = CHEST
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
