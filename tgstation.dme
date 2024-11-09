@@ -4537,6 +4537,7 @@
 #include "modular_bluemoon\plug13_integration\tgui.dm"
 #include "modular_bluemoon\rakeideas\flag\code\parties_flags.dm"
 #include "modular_bluemoon\rakeideas\hca\code\hca_forms.dm"
+#include "modular_bluemoon\rarytech\code\tails\tails.dm"
 #include "modular_bluemoon\rbmk_modification\rbmk_modification.dm"
 #include "modular_bluemoon\real_round_time\real_round_time.dm"
 #include "modular_bluemoon\Ren\Code\accessories.dm"
