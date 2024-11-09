@@ -38,12 +38,11 @@
 
 
 /obj/machinery/door/airlock/multi_tile/sensor_obstacle_check()
-	. = ..()
+	if(..())
+		return TRUE
 
-	if(.)
-		return
-
-	for(var/atom/movable/M in (get_turf(filler) - filler))
+	var/turf/our_turf = get_turf(filler)
+	for(var/atom/movable/M in (our_turf.contents - filler))
 		if(M.density) //something is blocking the door
 			return TRUE
 
