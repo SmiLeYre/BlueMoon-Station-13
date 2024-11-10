@@ -350,6 +350,8 @@
 
 	var/obj/item/paper/transcript_paper = new /obj/item/paper(get_turf(src))
 	transcript_paper.add_raw_text(transcribed_text)
+	var/datum/asset/spritesheet/sheet = get_asset_datum(/datum/asset/spritesheet/simple/paper)
+	transcript_paper.add_stamp(sheet.icon_class_name("stamp-record"), 100, 150, 0, "stamp-record")
 	transcript_paper.name = "[paper_name] page [page_count]"
 	transcript_paper.update_appearance()
 
