@@ -39,7 +39,8 @@
 	/obj/item/assembly/flash,
 	/obj/item/laser_pointer,
 	/obj/item/pda,
-	/obj/item/paicard
+	/obj/item/paicard,
+	/obj/item/storage/fancy/cigarettes
 	))
 
 /obj/item/storage/wallet/tailbag/xtralg
