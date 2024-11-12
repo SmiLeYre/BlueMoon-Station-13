@@ -23,6 +23,7 @@
 	sharpness = SHARP_EDGED
 	embedding = list("embed_chance" = 75, "impact_pain_mult" = 10)
 	armour_penetration = 35
+	block_chance = 50
 	item_flags = NEEDS_PERMIT | ITEM_CAN_PARRY
 	block_parry_data = /datum/block_parry_data/energy_sword
 	light_color = "#FF3900"
@@ -105,7 +106,7 @@
 	wound_bonus = 7
 	bare_wound_bonus = 13
 	block_parry_data = /datum/block_parry_data/dual_esword
-	block_chance = 60
+	block_chance = 75
 	/// Can this reflect all energy projectiles?
 	var/can_reflect = TRUE
 	var/brightness_on = 6 //TWICE AS BRIGHT AS A REGULAR ESWORD

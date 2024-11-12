@@ -262,6 +262,10 @@
 			cell.forceMove(WR)
 			cell.use(rand(0, cell.charge), TRUE)
 			cell = null
+		if(internal_tank)
+			WR.crowbar_salvage += internal_tank
+			internal_tank.forceMove(WR)
+			cell = null
 	return ..()
 
 /obj/vehicle/sealed/mecha/update_icon()

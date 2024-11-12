@@ -26,7 +26,7 @@
 	wound_bonus = 7
 	bare_wound_bonus = 13
 	block_parry_data = /datum/block_parry_data/dual_esword
-	block_chance = 60
+	block_chance = 75
 	var/hacked = FALSE
 	/// Can this reflect all energy projectiles?
 	var/can_reflect = TRUE

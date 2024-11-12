@@ -66,7 +66,7 @@
 			to_chat(ninja, "<span class='warning'>You don't have enough power to enable Stealth!</span>")
 			return
 		stealth = !stealth
-		animate(ninja, alpha = 12,time = 6)
+		animate(ninja, alpha = 5, time = 6)
 		ninja.visible_message("<span class='warning'>[ninja.name] vanishes into thin air!</span>", \
 						"<span class='notice'>You are now mostly invisible to normal detection.</span>")
 
