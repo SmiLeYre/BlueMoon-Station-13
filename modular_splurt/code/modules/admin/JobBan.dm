@@ -76,7 +76,8 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 			ROLE_ALIEN,
 			ROLE_FAMILIES,
 			ROLE_BLOODSUCKER,
-			ROLE_SLAVER
+			ROLE_SLAVER,
+			ROLE_INTEQ
 			)
 	),
 	list(

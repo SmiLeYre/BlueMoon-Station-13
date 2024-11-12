@@ -314,7 +314,7 @@
 	name = "Monolith Patch"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/accessory/monolith_patch
-	ckeywhitelist = list("irfish", "devildeadspace", "mikolaostavkin")
+	ckeywhitelist = list("irfish", "devildeadspace", "mikolaostavkin", "allazarius", "definitelynotnesuby")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/SH_jacket
@@ -601,21 +601,21 @@
 	name = "Monolith Gloves"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/gloves/fingerless/monolith_gloves
-	ckeywhitelist = list("irfish", "devildeadspace", "mikolaostavkin")
+	ckeywhitelist = list("irfish", "devildeadspace", "mikolaostavkin", "allazarius", "definitelynotnesuby")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/monolith_armor
 	name = "Granite M1 Vest"
 	slot = ITEM_SLOT_OCLOTHING
 	path = /obj/item/clothing/suit/bm/monolith_armor
-	ckeywhitelist = list("irfish", "devildeadspace", "mikolaostavkin")
+	ckeywhitelist = list("irfish", "devildeadspace", "mikolaostavkin", "allazarius", "definitelynotnesuby")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/monolith_uniform
 	name = " Granite M1 ''Monolith'' Uniform"
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/donator/bm/monolith_uniform
-	ckeywhitelist = list("irfish", "devildeadspace", "mikolaostavkin")
+	ckeywhitelist = list("irfish", "devildeadspace", "mikolaostavkin", "allazarius", "definitelynotnesuby")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/commissar_hat
@@ -914,7 +914,7 @@
 /datum/gear/donator/bm/aki_les
 	name = "L.E.S."
 	slot = ITEM_SLOT_ICLOTHING
-	path = /obj/item/clothing/under/donator/bm/aki_les
+	path = /obj/item/clothing/suit/bm/aki_les
 	ckeywhitelist = list("akinight")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 

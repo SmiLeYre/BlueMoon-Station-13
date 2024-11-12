@@ -743,7 +743,11 @@
 	name = "\improper Magnetic Pistol Dedication"
 	desc = "A magnetic pistol used in all units of Adler's armed peacekeepers. It is mass-produced by the Adler military-industrial complex and has already entered the space trade market. It includes several advantages, for example, an identifier built into the handle, which transmits the remaining ammunition to the interface of the helmet or glasses, which allows better control of the weapon, as well as an integrated sight, which, however, is effective only at close ranges. He usually has a badge corresponding to his military rank, but this one doesn't seem to have any identification marks on it. Most often, because the owner belongs to Adler's foreign armed formations, which are not controlled by the general directorate of corporate officials. For example, he is assigned to a high-ranking officer."
 	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
 	icon_state = "dedication"
+	item_state = "dedication"
+	fire_sound = 'modular_bluemoon/fluffs/sound/weapon/adlershot.ogg'
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
@@ -760,6 +764,7 @@
 	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
 	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
 	icon_state = "cleaver"
+	item_state = "cleaver"
 
 /obj/item/melee/sabre/cleaver/get_belt_overlay()
 	if(istype(loc, /obj/item/storage/belt/scabbard))

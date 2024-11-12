@@ -1,7 +1,7 @@
 /datum/round_event_control/shuttle_catastrophe
 	name = "Shuttle Catastrophe"
 	typepath = /datum/round_event/shuttle_catastrophe
-	weight = 20
+	weight = 10
 	max_occurrences = 1
 	category = EVENT_CATEGORY_ANOMALIES
 
@@ -13,7 +13,6 @@
 	if(EMERGENCY_AT_LEAST_DOCKED)
 		return FALSE //don't remove all players when its already on station or going to centcom
 	return ..()
-
 
 /datum/round_event/shuttle_catastrophe
 	var/datum/map_template/shuttle/new_shuttle

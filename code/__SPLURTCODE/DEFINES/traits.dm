@@ -19,6 +19,7 @@
 #define TRAIT_PHARMA            		"hepatic_pharmacokinesis"
 #define TRAIT_CHOKE_SLUT				"choke_slut"
 #define TRAIT_BLOODFLEDGE				"bloodfledge"
+#define TRAIT_BLOODFLEDGE_LITE			"bloodfledge_lite"
 #define TRAIT_INCUBUS					"incubus"
 #define TRAIT_SUCCUBUS					"succubus"
 #define TRAIT_ARACHNID					"arachnid"
