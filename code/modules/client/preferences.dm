@@ -862,20 +862,20 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 						dat += "<h3>Hair Style</h3>"
 
-						dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=hair_style;task=input'>[hair_style]</a>"
+						dat += "<a style='display:block;width:180px' href='?_src_=prefs;preference=hair_style;task=input'>[hair_style]</a>" // BLUEMOON EDIT - увеличена ширина со 100 до 180
 						dat += "<a href='?_src_=prefs;preference=previous_hair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_hair_style;task=input'>&gt;</a><BR>"
 						dat += "<span style='border:1px solid #161616; background-color: #[hair_color];'><font color='[color_hex2num(hair_color) < 200 ? "FFFFFF" : "000000"]'>#[hair_color]</font></span> <a href='?_src_=prefs;preference=hair;task=input'>Change</a><BR>"
 
 						dat += "<h3>Facial Hair Style</h3>"
 
-						dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=facial_hair_style;task=input'>[facial_hair_style]</a>"
+						dat += "<a style='display:block;width:180px' href='?_src_=prefs;preference=facial_hair_style;task=input'>[facial_hair_style]</a>" // BLUEMOON EDIT - увеличена ширина со 100 до 180
 						dat += "<a href='?_src_=prefs;preference=previous_facehair_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_facehair_style;task=input'>&gt;</a><BR>"
 						dat += "<span style='border:1px solid #161616; background-color: #[facial_hair_color];'><font color='[color_hex2num(facial_hair_color) < 200 ? "FFFFFF" : "000000"]'>#[facial_hair_color]</font></span> <a href='?_src_=prefs;preference=facial;task=input'>Change</a><BR>"
 
 						dat += "<h3>Hair Gradient</h3>"
 
-						dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=grad_style;task=input'>[grad_style]</a>"
-						dat += "<a href='?_src_=prefs;preference=previous_grad_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_grad_style;task=input'>&gt;</a><BR>"
+						dat += "<a style='display:block;width:180px' href='?_src_=prefs;preference=grad_style;task=input'>[grad_style]</a>"
+						dat += "<a href='?_src_=prefs;preference=previous_grad_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_grad_style;task=input'>&gt;</a><BR>" // BLUEMOON EDIT - увеличена ширина со 100 до 180
 						dat += "<span style='border:1px solid #161616; background-color: #[grad_color];'><font color='[color_hex2num(grad_color) < 200 ? "FFFFFF" : "000000"]'>#[grad_color]</font></span> <a href='?_src_=prefs;preference=grad_color;task=input'>Change</a><BR>"
 
 						dat += "</td>"
@@ -890,7 +890,10 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							if(!mutant_category)
 								dat += APPEARANCE_CATEGORY_COLUMN
 							dat += "<h3>[GLOB.all_mutant_parts[mutant_part]]</h3>"
-							dat += "<a style='display:block;width:100px' href='?_src_=prefs;preference=[mutant_part];task=input'>[features[mutant_part]]</a>"
+							dat += "<a style='display:block;width:180px' href='?_src_=prefs;preference=[mutant_part];task=input'>[features[mutant_part]]</a>" // BLUEMOON EDIT - увеличена ширина со 100 до 180
+							// BLUEMOON ADD START - <_AND_>_FOR_CHARACTER_REDACTOR
+							dat += "<a href='?_src_=prefs;preference=previous_[mutant_part]_style;task=input'>&lt;</a> <a href='?_src_=prefs;preference=next_[mutant_part]_style;task=input'>&gt;</a><BR>"
+							// BLUEMOON ADD END
 							var/color_type = GLOB.colored_mutant_parts[mutant_part] //if it can be coloured, show the appropriate button
 							if(color_type)
 								dat += "<span style='border:1px solid #161616; background-color: #[features[color_type]];'><font color='[color_hex2num(features[color_type]) < 200 ? "FFFFFF" : "000000"]'>#[features[color_type]]</font></span> <a href='?_src_=prefs;preference=[color_type];task=input'>Change</a><BR>"
@@ -2554,6 +2557,184 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 
 				if("previous_grad_style")
 					grad_style = previous_list_item(grad_style, GLOB.hair_gradients_list)
+
+				// BLUEMOON ADD START - <_AND_>_FOR_CHARACTER_REDACTOR
+
+				// HORNS
+				if("next_horns_style")
+					features["horns"] = next_list_item(features["horns"], GLOB.horns_list)
+
+				if("previous_horns_style")
+					features["horns"] = previous_list_item(features["horns"], GLOB.horns_list)
+
+				// MEAT TYPE
+				if("next_meat_type_style")
+					features["meat_type"] = next_list_item(features["meat_type"], GLOB.meat_types)
+
+				if("previous_meat_type_style")
+					features["meat_type"] = previous_list_item(features["meat_type"], GLOB.meat_types)
+
+				// IPC ANTENNA
+				if("next_ipc_antenna_style")
+					features["ipc_antenna"] = next_list_item(features["ipc_antenna"], GLOB.ipc_antennas_list)
+
+				if("previous_ipc_antenna_style")
+					features["ipc_antenna"] = previous_list_item(features["ipc_antenna"], GLOB.ipc_antennas_list)
+
+				// IPC SCREENS
+				if("next_ipc_screen_style")
+					features["ipc_screen"] = next_list_item(features["ipc_screen"], GLOB.ipc_screens_list)
+
+				if("previous_ipc_screen_style")
+					features["ipc_screen"] = previous_list_item(features["ipc_screen"], GLOB.ipc_screens_list)
+
+				// XENO DORSALS
+				if("next_xenodorsal_style")
+					features["xenodorsal"] = next_list_item(features["xenodorsal"], GLOB.xeno_dorsal_list)
+
+				if("previous_xenodorsal_style")
+					features["xenodorsal"] = previous_list_item(features["xenodorsal"], GLOB.xeno_dorsal_list)
+
+				// XENO TAILS
+				if("next_xenotail_style")
+					features["xenotail"] = next_list_item(features["xenotail"], GLOB.xeno_tail_list)
+
+				if("previous_xenotail_style")
+					features["xenotail"] = previous_list_item(features["xenotail"], GLOB.xeno_tail_list)
+
+				// XENO HEADS
+				if("next_xenohead_style")
+					features["xenohead"] = next_list_item(features["xenohead"], GLOB.xeno_head_list)
+
+				if("previous_xenohead_style")
+					features["xenohead"] = previous_list_item(features["xenohead"], GLOB.xeno_head_list)
+
+				// ARACHNIDS MANDIBLES
+				if("next_arachnid_mandibles_style")
+					features["arachnid_mandibles"] = next_list_item(features["arachnid_mandibles"], GLOB.arachnid_mandibles_list)
+
+				if("previous_arachnid_mandibles_style")
+					features["arachnid_mandibles"] = previous_list_item(features["arachnid_mandibles"], GLOB.arachnid_mandibles_list)
+
+				// ARACHINDS SPHINNERET
+				if("next_arachnid_spinneret_style")
+					features["arachnid_spinneret"] = next_list_item(features["arachnid_spinneret"], GLOB.arachnid_spinneret_list)
+
+				if("previous_arachnid_spinneret_style")
+					features["arachnid_spinneret"] = previous_list_item(features["arachnid_spinneret"], GLOB.arachnid_spinneret_list)
+
+				// ARACHNIDS LEGS
+				if("next_arachnid_legs_style")
+					features["arachnid_legs"] = next_list_item(features["arachnid_legs"], GLOB.arachnid_legs_list)
+
+				if("previous_arachnid_legs_style")
+					features["arachnid_legs"] = previous_list_item(features["arachnid_legs"], GLOB.arachnid_legs_list)
+
+				// WINGS
+				if("next_wings_style")
+					features["wings"] = next_list_item(features["wings"], GLOB.wings_list)
+
+				if("previous_wings_style")
+					features["wings"] = previous_list_item(features["wings"], GLOB.wings_list)
+
+				// TAUR BODY
+				if("next_taur_style")
+					features["taur"] = next_list_item(features["taur"], GLOB.taur_list)
+
+				if("previous_taur_style")
+					features["taur"] = previous_list_item(features["taur"], GLOB.taur_list)
+
+				// INSECT FLUFF (NECK AND SPINE)
+				if("next_insect_fluff_style")
+					features["insect_fluff"] = next_list_item(features["insect_fluff"], GLOB.insect_fluffs_list)
+
+				if("previous_insect_fluff_style")
+					features["insect_fluff"] = previous_list_item(features["insect_fluff"], GLOB.insect_fluffs_list)
+
+				// INSECT WINGS
+				if("next_insect_wings_style")
+					features["insect_wings"] = next_list_item(features["insect_wings"], GLOB.insect_wings_list)
+
+				if("previous_insect_wings_style")
+					features["insect_wings"] = previous_list_item(features["insect_wings"], GLOB.insect_wings_list)
+
+				// DECO WINGS
+				if("next_deco_wings_style")
+					features["deco_wings"] = next_list_item(features["deco_wings"], GLOB.deco_wings_list)
+
+				if("previous_deco_wings_style")
+					features["deco_wings"] = previous_list_item(features["deco_wings"], GLOB.deco_wings_list)
+
+				// LEGS
+				if("next_legs_style")
+					features["legs"] = next_list_item(features["legs"], GLOB.legs_list)
+
+				if("previous_legs_style")
+					features["legs"] = previous_list_item(features["legs"], GLOB.legs_list)
+
+				// MAMMAL SNOUTS
+				if("next_mam_snouts_style")
+					features["mam_snouts"] = next_list_item(features["mam_snouts"], GLOB.mam_snouts_list)
+
+				if("previous_mam_snouts_style")
+					features["mam_snouts"] = previous_list_item(features["mam_snouts"], GLOB.mam_snouts_list)
+
+				// EARS
+				if("next_ears_style")
+					features["ears"] = next_list_item(features["ears"], GLOB.ears_list)
+
+				if("previous_ears_style")
+					features["ears"] = previous_list_item(features["ears"], GLOB.ears_list)
+
+				// MAMMAL EARS
+				if("next_mam_ears_style")
+					features["mam_ears"] = next_list_item(features["mam_ears"], GLOB.mam_ears_list)
+
+				if("previous_mam_ears_style")
+					features["mam_ears"] = previous_list_item(features["mam_ears"], GLOB.mam_ears_list)
+
+				// LIZARDS SPINES
+				if("next_spines_style")
+					features["spines"] = next_list_item(features["spines"], GLOB.spines_list)
+
+				if("previous_spines_style")
+					features["spines"] = previous_list_item(features["spines"], GLOB.spines_list)
+
+				// LIZARDS FRILLS
+				if("next_frills_style")
+					features["frills"] = next_list_item(features["frills"], GLOB.frills_list)
+
+				if("previous_frills_style")
+					features["frills"] = previous_list_item(features["frills"], GLOB.frills_list)
+
+				// LIZARDS SNOUTS
+				if("next_snout_style")
+					features["snout"] = next_list_item(features["snout"], GLOB.snouts_list)
+
+				if("previous_snout_style")
+					features["snout"] = previous_list_item(features["snout"], GLOB.snouts_list)
+
+				// HUMAN TAILS
+				if("next_tail_human_style")
+					features["tail_human"] = next_list_item(features["tail_human"], GLOB.tails_list_human)
+
+				if("previous_tail_human_style")
+					features["tail_human"] = previous_list_item(features["tail_human"], GLOB.tails_list_human)
+
+				// LIZARDS TAILS
+				if("next_tail_lizard_style")
+					features["tail_lizard"] = next_list_item(features["tail_lizard"], GLOB.tails_list_lizard)
+
+				if("previous_tail_lizard_style")
+					features["tail_lizard"] = previous_list_item(features["tail_lizard"], GLOB.tails_list_lizard)
+
+				// MAMMAL TAILS
+				if("next_mam_tail_style")
+					features["mam_tail"] = next_list_item(features["mam_tail"], GLOB.mam_tails_list)
+
+				if("previous_mam_tail_style")
+					features["mam_tail"] = previous_list_item(features["mam_tail"], GLOB.mam_tails_list)
+				// BLUEMOON ADD END
 
 				if("cycle_bg")
 					bgstate = next_list_item(bgstate, bgstate_options)
