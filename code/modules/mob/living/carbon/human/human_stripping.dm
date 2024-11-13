@@ -202,7 +202,7 @@ GLOBAL_LIST_INIT(strippable_human_items, create_strippable_list(list(
 
 	to_chat(user, span_notice("Вы пробуете обчистить [pocket_side] карман [source]."))
 
-	var/log_message = "[key_name(source)] стал жертвой воровства. Предмет [item] был украден из [pocket_side] кармана [key_name(user)]."
+	var/log_message = "[key_name(user)] обчистил [pocket_side] карман [key_name(source)]. Наградой стал следующий предмет - [item]."
 	user.log_message(log_message, LOG_ATTACK, color="red")
 	source.log_message(log_message, LOG_VICTIM, color="red", log_globally=FALSE)
 	item.add_fingerprint(source)
@@ -227,17 +227,17 @@ GLOBAL_LIST_INIT(strippable_human_items, create_strippable_list(list(
 	return result
 
 /datum/strippable_item/mob_item_slot/pocket/proc/warn_owner(atom/owner)
-	to_chat(owner, span_warning("Вы чувствуете чьи-то пальцы в [pocket_side] кармане!"))
+	to_chat(owner, span_warning("Кто-то пытался обчистить ваш [pocket_side] карман!"))
 
 /datum/strippable_item/mob_item_slot/pocket/left
 	key = STRIPPABLE_ITEM_LPOCKET
 	item_slot = ITEM_SLOT_LPOCKET
-	pocket_side = "левом"
+	pocket_side = "левый"
 
 /datum/strippable_item/mob_item_slot/pocket/right
 	key = STRIPPABLE_ITEM_RPOCKET
 	item_slot = ITEM_SLOT_RPOCKET
-	pocket_side = "правом"
+	pocket_side = "правый"
 
 /proc/get_strippable_alternate_action_internals(obj/item/item, atom/source)
 	if (!iscarbon(source))

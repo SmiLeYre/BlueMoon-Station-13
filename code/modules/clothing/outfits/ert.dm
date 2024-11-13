@@ -657,7 +657,7 @@
 		/obj/item/implant/deathrattle/centcom,
 	 	/obj/item/implant/weapons_auth,
 		/obj/item/implant/radio/centcom,
-	 	/obj/item/implant/krav_maga,
+	 	/obj/item/implant/cqc,
 	)
 
 	cybernetic_implants = list(

@@ -430,6 +430,7 @@
 					var/static/list/many_tails = list("tail_human", "tail_lizard", "mam_tail")
 					for(var/T in many_tails)
 						if(S.mutant_bodyparts[T] && dna.features[T] != "None")
+							nextsoundemote = world.time - 10
 							emote("wag")
 
 		else if(check_zone(M.zone_selected) == BODY_ZONE_R_ARM || check_zone(M.zone_selected) == BODY_ZONE_L_ARM)
