@@ -643,7 +643,8 @@
 		/obj/item/assembly/mousetrap,
 		/obj/item/screwdriver,
 		/obj/item/stack/cable_coil,
-		/obj/item/holosign_creator
+		/obj/item/holosign_creator,
+		/obj/item/t_scanner/dirt_scanner
 		))
 
 /obj/item/storage/belt/janitor/ert_maid

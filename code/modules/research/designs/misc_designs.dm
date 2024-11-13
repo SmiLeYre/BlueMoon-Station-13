@@ -337,6 +337,15 @@
 	category = list("Equipment")
 	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
 
+/datum/design/Dirtscanner
+	name = "Dirt Scanner (Sniffer)"
+	id = "dirtscanner"
+	build_type = AUTOLATHE | PROTOLATHE
+	materials = list(/datum/material/iron = 150)
+	build_path = /obj/item/t_scanner/dirt_scanner
+	category = list("initial", "Equipment", "Misc")
+	departmental_flags = DEPARTMENTAL_FLAG_SERVICE
+
 /datum/design/advbroom
 	name = "Advanced Broom"
 	desc = "Новейшая разработка отдела РнД. Позволяет вам эффективно подметать мусор, не вставая с кресла.."
