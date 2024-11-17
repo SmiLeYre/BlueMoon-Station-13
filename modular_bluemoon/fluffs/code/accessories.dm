@@ -96,6 +96,18 @@
 
 ////////////////////////
 
+/obj/item/clothing/neck/tie/oftok
+	name = "Holographical Token"
+	desc = "A strange holographic token made of strong material to mark something."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+	icon_state = "oftok"
+	item_state = "oftok"
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/accessories_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/inhands/accessories_right.dmi'
+
+////////////////////////
+
 /obj/item/clothing/neck/tie/dread_neck
 	name = "Наплечники судьи"
 	desc = "Довольно большой полу-жилет что крепится на тонкую ткань, на плечах большие и довольно массивные словно отлитые из золота регалии, где на правом плече красовался Орёл, и на втором уже простое покрытие брусками, и на левой стороне передней части жилетки виднеется массивный значок с потертым именем Дредд что кажется вам знакомым. Одевая эти регалии вас переполняет чуство груза за решения что вы принимаете вынося вердикт."
