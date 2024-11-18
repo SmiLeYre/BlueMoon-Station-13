@@ -775,6 +775,63 @@
 
 //////////////////////////////////////////////
 //                                          //
+//           TERROR SPIDERS (GHOST)              //
+//                                          //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/midround/from_ghosts/terror_spiders
+	name = "Terror Infestation"
+	antag_datum = /datum/antagonist/terror_spiders
+	antag_flag = ROLE_TERROR_SPIDER
+	enemy_roles = list("Blueshield", "Peacekeeper", "Brig Physician", "Security Officer", "Warden", "Detective", "Head of Security","Bridge Officer", "Captain") //BLUEMOON CHANGES
+	required_enemies = list(0,0,0,0,0,0,0,0,0,0)
+	required_candidates = 1
+	weight = 20 // TEST EDIT
+	cost = 12
+	required_round_type = list(ROUNDTYPE_DYNAMIC_TEAMBASED, ROUNDTYPE_DYNAMIC_HARD) // BLUEMOON ADD
+	requirements = list(101,101,101,101,50,40,30,20,10,10)
+	repeatable = TRUE
+	var/list/vents = list()
+	var/spider_type = list()
+	var/spider_types = list(4,2,2,1)
+
+
+/datum/dynamic_ruleset/midround/from_ghosts/terror_spiders/execute()
+	spider_type = pickweight(list(1, 4, 4, 1))
+	required_candidates = spider_types[spider_type]
+	for(var/obj/machinery/atmospherics/components/unary/vent_pump/temp_vent in GLOB.machines)
+		if(QDELETED(temp_vent))
+			continue
+		if(is_station_level(temp_vent.loc.z) && !temp_vent.welded)
+			var/datum/pipeline/temp_vent_parent = temp_vent.parents[1]
+			if(!temp_vent_parent)
+				continue // No parent vent
+			// Stops Aliens getting stuck in small networks.
+			// See: Security, Virology
+			if(temp_vent_parent.other_atmosmch.len > 20)
+				vents += temp_vent
+	if(!vents.len)
+		return FALSE
+	. = ..()
+
+/datum/dynamic_ruleset/midround/from_ghosts/terror_spiders/generate_ruleset_body(mob/applicant)
+	var/obj/vent = pick_n_take(vents)
+	var/mob/living/simple_animal/hostile/retaliate/poison/terror_spider/new_spider
+	if (spider_type == 1)
+		new_spider = new /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/defiler(vent.loc)
+	else if (spider_type == 2)
+		new_spider = new /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/princess(vent.loc)
+	else if (spider_type == 3)
+		new_spider = new /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen(vent.loc)
+	else if (spider_type == 4)
+		new_spider = new /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/prince(vent.loc)
+	new_spider.key = applicant.key
+	message_admins("[ADMIN_LOOKUPFLW(new_spider)] has been made into an alien by the midround ruleset.")
+	log_game("DYNAMIC: [key_name(new_spider)] was spawned as an alien by the midround ruleset.")
+	return new_spider
+
+//////////////////////////////////////////////
+//                                          //
 //           NIGHTMARE (GHOST)              //
 //                                          //
 //////////////////////////////////////////////

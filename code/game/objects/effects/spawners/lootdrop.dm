@@ -78,23 +78,27 @@
 	loot = list(
 				/obj/item/poster/random_contraband = 120,
 //				/obj/item/reagent_containers/hypospray/medipen/magillitis = 2, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
-//				/obj/item/storage/box/syndie_kit/space = 3, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
+				/obj/item/storage/box/syndie_kit/space = 3,
 				/obj/item/storage/toolbox/syndicate = 5,
+				/obj/item/storage/toolbox/inteq = 5,
 //				/obj/item/clothing/shoes/chameleon/noslip = 6, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
 //				/obj/item/grenade/clusterbuster/soap/inteq = 6, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
 				/obj/item/soap/syndie = 8,
 //				/obj/item/pen/sleepy = 12, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
 				/obj/item/storage/backpack/duffelbag/syndie = 3,
 				/obj/item/storage/box/syndie_kit/chameleon = 4,
-				/obj/item/storage/toolbox/inteq = 1,
-				/obj/item/storage/backpack/duffelbag/syndie/inteq = 1,
-//				/obj/item/storage/box/syndie_kit/space/inteq = 1, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
+				/obj/item/storage/backpack/duffelbag/syndie = 2,
+				/obj/item/storage/box/syndie_kit/space/inteq = 3,
 				/obj/item/soap/inteq = 4,
 				/obj/item/sign/flag/inteq = 1,
+				/obj/item/sign/flag/syndicate = 2,
 //				/obj/item/storage/fancy/cigarettes/cigpack_inteq = 1, / BLUEMOON REMOVAL - убираем манчерские вещи из техов
-				/obj/item/storage/backpack/guitarbag/loaded = 1,
-				/obj/structure/reagent_dispensers/kvass_barrel = 1, // BLUEMOON ADD
-				/obj/structure/reagent_dispensers/beerkeg = 2,
+				/obj/item/storage/backpack/guitarbag/loaded = 2,
+				/obj/structure/reagent_dispensers/kvass_barrel = 2,
+				/obj/structure/reagent_dispensers/beerkeg = 12,
+				/obj/item/reagent_containers/pill/labebium = 12,
+				/obj/item/gun/ballistic/automatic/pistol = 2,
+				/obj/item/ammo_box/magazine/m10mm = 8,
 				)
 
 /obj/effect/spawner/lootdrop/prison_contraband

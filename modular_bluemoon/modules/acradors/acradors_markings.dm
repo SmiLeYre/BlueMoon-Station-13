@@ -4,7 +4,7 @@
 
 /datum/sprite_accessory/ears/mam_ears/acrador
 	name = "Acrador Long"
-	icon = 'modular_bluemoon/acradors/acradors_ears.dmi'
+	icon = 'modular_bluemoon/modules/acradors/acradors_ears.dmi'
 	icon_state = "acrador_long"
 	matrixed_sections = MATRIX_ALL
 
@@ -41,7 +41,7 @@
 
 /datum/sprite_accessory/snouts/mam_snouts/acrador
 	name = "Acrador 1 (Short)"
-	icon = 'modular_bluemoon/acradors/acradors_snouts.dmi'
+	icon = 'modular_bluemoon/modules/acradors/acradors_snouts.dmi'
 	icon_state = "acrador_1"
 	matrixed_sections = MATRIX_ALL
 	extra = TRUE
@@ -89,16 +89,10 @@
  */
 
 /datum/sprite_accessory/tails/mam_tails/acrador
-	icon = 'modular_bluemoon/acradors/acradors_tails.dmi'
-	matrixed_sections = MATRIX_RED_GREEN
-
-/datum/sprite_accessory/tails_animated/mam_tails_animated/acrador
-	icon = 'modular_bluemoon/acradors/acradors_tails.dmi'
-	matrixed_sections = MATRIX_RED_GREEN
-
-/datum/sprite_accessory/tails/mam_tails/acrador/femine
 	name = "Acrador (Narrow)"
 	icon_state = "acrador_1"
+	icon = 'modular_bluemoon/modules/acradors/acradors_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/tails/mam_tails/acrador/normal
 	name = "Acrador (Medium)"
@@ -112,9 +106,11 @@
 	name = "Acrador (Narrow and Long)"
 	icon_state = "acrador_4"
 
-/datum/sprite_accessory/tails_animated/mam_tails_animated/acrador/femine_long
+/datum/sprite_accessory/tails_animated/mam_tails_animated/acrador
 	name = "Acrador (Narrow and Long)"
 	icon_state = "acrador_4"
+	icon = 'modular_bluemoon/modules/acradors/acradors_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/tails/mam_tails/acrador/femine_very_long
 	name = "Acrador (Narrow and Very Long)"
@@ -124,4 +120,34 @@
 	name = "Acrador (Narrow and Very Long)"
 	icon_state = "acrador_5"
 
+/*
+ * NECK
+ */
 
+/datum/sprite_accessory/insect_fluff/acradors_neckfluff
+	name = "Neckfluff (Acradors 1)"
+	icon_state = "neckfluff_acradors_1"
+	icon = 'modular_bluemoon/modules/acradors/acradors_neck.dmi'
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED
+	relevant_layers = list(BODY_ADJ_LAYER, BODY_FRONT_LAYER)
+
+/datum/sprite_accessory/insect_fluff/acradors_neckfluff/second
+	name = "Neckfluff (Acradors 2)"
+	icon_state = "neckfluff_acradors_2"
+
+/datum/sprite_accessory/insect_fluff/acradors_neckfluff/third
+	name = "Neckfluff (Acradors 3)"
+	icon_state = "neckfluff_acradors_3"
+
+/datum/sprite_accessory/insect_fluff/acradors_neckfluff/fourth
+	name = "Neckfluff (Acradors 4)"
+	icon_state = "neckfluff_acradors_4"
+
+/datum/sprite_accessory/insect_fluff/acradors_neckfluff/fifth
+	name = "Neckfluff (Acradors 5)"
+	icon_state = "neckfluff_acradors_5"
+
+/datum/sprite_accessory/insect_fluff/acradors_neckfluff/sixth
+	name = "Neckfluff (Acradors 6)"
+	icon_state = "neckfluff_acradors_6"

@@ -15,19 +15,20 @@
 	icon_state = "terror_mother"
 	icon_living = "terror_mother"
 	icon_dead = "terror_mother_dead"
-	maxHealth = 220
-	health = 220
+	maxHealth = 200
+	health = 200
 	can_wrap = FALSE
 	melee_damage_lower = 10
 	melee_damage_upper = 15
+	wall_destroy_hardness = 40
 	ventcrawler = 0
 	spider_tier = TS_TIER_3
 	spider_opens_doors = 2
 	special_abillity = list(/obj/effect/proc_holder/spell/aoe_turf/conjure/terror_jelly,
 							/obj/effect/proc_holder/spell/aoe_turf/terror_healing/greater)
 	spider_intro_text = "Будучи Матерью Ужаса, ваша задача - массовое исцеление пауков. Вы пассивно исцеляете всех пауков вокруг вас и наносите наносите урон гуманоидам. Вы также можете создавать желе, употребив которое, пауки быстро исцеляются. Ваша вторая способность действует аналогично желе, но работает по области для всех пауков в радиусе вашей видимости!"
-	var/datum/action/innate/terrorspider/ventsmash/ventsmash_action
-	var/datum/action/innate/terrorspider/remoteview/remoteview_action
+	var/datum/action/terrorspider/ventsmash/ventsmash_action
+	var/datum/action/terrorspider/remoteview/remoteview_action
 
 /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/mother/New()
 	..()

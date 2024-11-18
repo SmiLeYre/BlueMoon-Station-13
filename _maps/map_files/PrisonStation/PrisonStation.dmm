@@ -7488,6 +7488,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/service/chapel/main)
+"cHr" = (
+/obj/machinery/power/tesla_coil,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
 "cHv" = (
 /obj/item/bedsheet/nanotrasen,
 /turf/open/floor/plating/rust,
@@ -20985,6 +20989,7 @@
 /obj/machinery/light{
 	light_color = "#cee5d2"
 	},
+/obj/machinery/power/grounding_rod,
 /turf/open/floor/plasteel,
 /area/engineering/main)
 "hBO" = (
@@ -21599,6 +21604,13 @@
 /obj/item/trash/candy,
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
+"hNj" = (
+/obj/machinery/door/poddoor{
+	id = "engstorage";
+	name = "Engineering Secure Storage Lockdown"
+	},
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
 "hNl" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 1
@@ -34463,6 +34475,10 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
+"mrY" = (
+/obj/machinery/power/grounding_rod,
+/turf/open/floor/plasteel,
+/area/engineering/main)
 "msm" = (
 /obj/machinery/light{
 	dir = 4
@@ -34740,6 +34756,7 @@
 	id = "engsm";
 	name = "Radiation Chamber Shutters"
 	},
+/obj/machinery/power/grounding_rod,
 /turf/open/floor/plasteel,
 /area/engineering/main)
 "mws" = (
@@ -41371,6 +41388,9 @@
 /obj/effect/landmark/event_spawn,
 /turf/open/floor/carpet/red,
 /area/command/heads_quarters/captain)
+"oFE" = (
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
 "oFH" = (
 /obj/machinery/light{
 	dir = 1;
@@ -53439,6 +53459,7 @@
 	dir = 1;
 	name = "command camera"
 	},
+/obj/effect/landmark/start/research_director,
 /turf/open/floor/carpet/red,
 /area/command/bridge)
 "taT" = (
@@ -57862,6 +57883,10 @@
 	},
 /turf/closed/wall,
 /area/engineering/main)
+"uFe" = (
+/obj/machinery/power/emitter,
+/turf/open/floor/plasteel/dark,
+/area/engineering/main)
 "uFu" = (
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/tree/jungle/small,
@@ -59233,6 +59258,17 @@
 	},
 /turf/open/floor/plating/rust,
 /area/awaymission)
+"vmE" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/button/door{
+	id = "engstorage";
+	name = "Engineering Secure Storage Control";
+	pixel_y = 30
+	},
+/turf/open/floor/plasteel,
+/area/engineering/main)
 "vmM" = (
 /obj/machinery/light{
 	dir = 4
@@ -66187,7 +66223,8 @@
 /area/lavaland/surface/outdoors)
 "xQW" = (
 /obj/machinery/computer/rdconsole/core{
-	dir = 8
+	dir = 8;
+	req_access = null
 	},
 /turf/open/floor/plasteel,
 /area/engineering/main)
@@ -126098,8 +126135,8 @@ tzn
 jHB
 cMR
 lwK
-nRn
-nRn
+cHr
+uFe
 hSB
 dax
 xFR
@@ -126400,9 +126437,9 @@ fIC
 xix
 xSf
 lwK
-nRn
-nRn
-hSB
+cHr
+oFE
+hNj
 grW
 tJR
 tJR
@@ -126705,7 +126742,7 @@ skh
 skh
 skh
 skh
-huE
+vmE
 tJR
 hnB
 wrz
@@ -127331,8 +127368,8 @@ pql
 nRn
 nRn
 uYK
-lcj
 mGM
+lcj
 pZP
 bgX
 uYK
@@ -130938,7 +130975,7 @@ byg
 pvV
 nmm
 sVw
-tJR
+mrY
 mwl
 hBM
 hSB

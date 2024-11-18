@@ -413,6 +413,7 @@
 					/obj/item/storage/belt/janitor = 2,
 					/obj/item/screwdriver = 2,
 					/obj/item/clothing/mask/balaclava/breath/redscarf/purplescarf = 2,
+					/obj/item/t_scanner/dirt_scanner = 2,
 					/obj/item/stack/cable_coil/random = 4)
 	refill_canister = /obj/item/vending_refill/wardrobe/jani_wardrobe
 	default_price = PRICE_CHEAP

@@ -22,9 +22,10 @@
 	delay_web = 10
 	melee_damage_lower = 10
 	melee_damage_upper = 15
-	obj_damage = 50
+	obj_damage = 30
+	wall_destroy_hardness = 40
 	environment_smash = ENVIRONMENT_SMASH_WALLS
-	spider_opens_doors = 2
+	spider_opens_doors = 1
 	ranged = 1
 	rapid = 2
 	ranged_cooldown_time = 30

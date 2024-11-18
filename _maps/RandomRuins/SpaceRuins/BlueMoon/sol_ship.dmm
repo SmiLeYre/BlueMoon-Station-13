@@ -2119,7 +2119,7 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "mp" = (
-/obj/machinery/rnd/production/protolathe/department,
+/obj/machinery/rnd/production/protolathe,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_rnd)
 "mq" = (
@@ -2504,7 +2504,9 @@
 	dir = 4;
 	pixel_x = -27
 	},
-/obj/machinery/mecha_part_fabricator/offstation,
+/obj/machinery/mecha_part_fabricator/offstation{
+	req_one_access = null
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_rnd)
 "os" = (
@@ -4689,7 +4691,9 @@
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "Be" = (
-/obj/machinery/computer/rdconsole/core,
+/obj/machinery/computer/rdconsole/core{
+	req_access = null
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_rnd)
 "Bf" = (
@@ -7253,7 +7257,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "Qf" = (
-/obj/machinery/rnd/production/circuit_imprinter/department/science,
+/obj/machinery/rnd/production/circuit_imprinter/department/science{
+	req_one_access = null
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_rnd)
 "Ql" = (
@@ -8137,6 +8143,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
+"VB" = (
+/obj/machinery/rnd/production/circuit_imprinter/department,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/inteq_forgotten_atmos)
 "VD" = (
 /obj/effect/turf_decal/tile/dark_blue/fourcorners,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -12468,7 +12478,7 @@ pV
 cs
 Uy
 Xl
-lK
+VB
 JZ
 Gf
 Im

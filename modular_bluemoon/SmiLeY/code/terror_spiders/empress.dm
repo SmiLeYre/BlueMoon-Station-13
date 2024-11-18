@@ -11,14 +11,14 @@
 	name = "Empress of Terror"
 	desc = "The unholy offspring of spiders, nightmares, and lovecraft fiction."
 	ai_target_method = TS_DAMAGE_SIMPLE
-	maxHealth = 1000
-	health = 1000
+	maxHealth = 600
+	health = 600
 	melee_damage_lower = 30
 	melee_damage_upper = 60
 	ventcrawler = 1
 	idle_ventcrawl_chance = 0
 	ai_playercontrol_allowtype = 0
-	canlay = 1000
+	canlay = 800
 	spider_tier = TS_TIER_5
 	projectiletype = /obj/item/projectile/terrorqueenspit/empress
 	icon = 'icons/mob/terrorspider64.dmi'
@@ -28,8 +28,8 @@
 	icon_state = "terror_empress"
 	icon_living = "terror_empress"
 	icon_dead = "terror_empress_dead"
-	var/datum/action/innate/terrorspider/queen/empress/empresslings/empresslings_action
-	var/datum/action/innate/terrorspider/queen/empress/empresserase/empresserase_action
+	var/datum/action/terrorspider/queen/empress/empresslings/empresslings_action
+	var/datum/action/terrorspider/queen/empress/empresserase/empresserase_action
 	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 0, "min_co2" = 0, "max_co2" = 0, "min_n2" = 0, "max_n2" = 0)
 
 /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/queen/empress/New()

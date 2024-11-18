@@ -646,9 +646,9 @@
 	// BLUEMOON ADD START - RESKINS-ICON-FILE-ADDITION - ACRADORS - версия шлема для ушей акрадоров
 	unique_reskin = list(
 		"Acrador/Long-Eared" = list(
-			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets.dmi',
-			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets_onmob.dmi',
-			RESKIN_ANTHRO_WORN_STATE_FILE = 'modular_bluemoon/acradors/acradors_helmets_onmob.dmi'
+			RESKIN_ICON_STATE_FILE = 'modular_bluemoon/modules/acradors/acradors_helmets.dmi',
+			RESKIN_WORN_STATE_FILE = 'modular_bluemoon/modules/acradors/acradors_helmets_onmob.dmi',
+			RESKIN_ANTHRO_WORN_STATE_FILE = 'modular_bluemoon/modules/acradors/acradors_helmets_onmob.dmi'
 		)
 	)
 	// BLUEMOON ADD END
