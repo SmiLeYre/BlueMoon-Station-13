@@ -33,14 +33,17 @@
 	// Определяем максимальную ширину для каждого столбца
 	for (var/row in rows)
 		for (var/i = 1, i <= length(row), i++)
-			column_widths[i] = max(column_widths[i], length("[row[i]]"))
+			if (i > length(column_widths))
+				column_widths += max(length("[row[i]]"), 1)
+			else
+				column_widths[i] = max(column_widths[i], length("[row[i]]"))
 
-	// Форматируем под табличный формат
+	// Формируем разделитель и заголовок
 	var/table_output = ""
 	var/divider = ""
 	for (var/width in column_widths)
 		divider += "-" * (width + 2) + "+"
-	divider = "|" + divider[1:] + "\n"
+	divider = "|" + copytext(divider, 2) + "\n"
 	table_output += divider
 
 	// Формируем заголовок
@@ -49,7 +52,7 @@
 		header_row += " [headers[i]] " + " " * (column_widths[i] - length(headers[i])) + "|"
 	table_output += header_row + "\n" + divider
 
-	// Формируем строки данных
+	// Формируем строки
 	for (var/row in rows)
 		var/data_row = "|"
 		for (var/i = 1, i <= length(row), i++)
