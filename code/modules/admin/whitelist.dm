@@ -104,7 +104,7 @@
 
 			var/datum/db_query/query_add_whitelist = SSdbcore.NewQuery({"
 				INSERT INTO [format_table_name("whitelist")] (ckey, manager, manager_id, comment)
-				VALUES (:ckey, :manager, :manager_id)
+				VALUES (:ckey, :manager, :manager_id, comment)
 			"}, list("ckey" = key, "manager" = sender.friendly_name, "manager_id" = sender.id, "comment" = comment))
 
 			if(!query_add_whitelist.Execute())
