@@ -34,9 +34,9 @@
 	for (var/row in rows)
 		for (var/i = 1, i <= length(row), i++)
 			if (i > length(column_widths))
-				column_widths += max(length("[row[i]]"), 1)
+				column_widths += max(length(row[i]), 1)
 			else
-				column_widths[i] = max(column_widths[i], length("[row[i]]"))
+				column_widths[i] = max(column_widths[i], length(row[i]))
 
 	// Формируем разделитель и заголовок
 	var/table_output = ""
@@ -51,7 +51,7 @@
 	// Формируем заголовок
 	var/header_row = "|"
 	for (var/i = 1, i <= length(headers), i++)
-		header_row += " [headers[i]] "
+		header_row += " " + headers[i] + " "
 		for (var/j = 1, j <= (column_widths[i] - length(headers[i])), j++)
 			header_row += " "
 		header_row += "|"
@@ -61,8 +61,8 @@
 	for (var/row in rows)
 		var/data_row = "|"
 		for (var/i = 1, i <= length(row), i++)
-			data_row += " [row[i]] "
-			for (var/j = 1, j <= (column_widths[i] - length("[row[i]]")), j++)
+			data_row += " " + row[i] + " "
+			for (var/j = 1, j <= (column_widths[i] - length(row[i])), j++)
 				data_row += " "
 			data_row += "|"
 		table_output += data_row + "\n"
@@ -232,15 +232,15 @@
 
 			var/list/rows = list()
 			while(query_get_logs.NextRow())
-				rows += list(
+				var/list/row = list(
 					query_get_logs.item[1],
 					query_get_logs.item[2],
 					query_get_logs.item[3],
 					query_get_logs.item[4],
 					query_get_logs.item[5],
-					query_get_logs.item[6],
-					query_get_logs.item[7]
+					query_get_logs.item[6]
 				)
+				rows += list(row)
 			qdel(query_get_logs)
 
 			var/list/headers = list("id", "ckey", "manager", "manager_id", "action", "date", "comment")
@@ -277,7 +277,7 @@
 
 			var/list/rows = list()
 			while(query_get_logs.NextRow())
-				rows += list(
+				var/list/row = list(
 					query_get_logs.item[1],
 					query_get_logs.item[2],
 					query_get_logs.item[3],
@@ -286,6 +286,7 @@
 					query_get_logs.item[6],
 					query_get_logs.item[7]
 				)
+				rows += list(row)
 			qdel(query_get_logs)
 
 			var/list/headers = list("id", "ckey", "manager", "manager_id", "action", "date", "comment")
@@ -322,7 +323,7 @@
 
 			var/list/rows = list()
 			while(query_get_logs.NextRow())
-				rows += list(
+				var/list/row = list(
 					query_get_logs.item[1],
 					query_get_logs.item[2],
 					query_get_logs.item[3],
@@ -331,6 +332,7 @@
 					query_get_logs.item[6],
 					query_get_logs.item[7]
 				)
+				rows += list(row)
 			qdel(query_get_logs)
 
 			var/list/headers = list("id", "ckey", "manager", "manager_id", "action", "date", "comment")
