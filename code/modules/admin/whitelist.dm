@@ -42,21 +42,29 @@
 	var/table_output = ""
 	var/divider = ""
 	for (var/width in column_widths)
-		divider += "-" * (width + 2) + "+"
+		for (var/j = 1, j <= width + 2, j++)
+			divider += "-"
+		divider += "+"
 	divider = "|" + copytext(divider, 2) + "\n"
 	table_output += divider
 
 	// Формируем заголовок
 	var/header_row = "|"
 	for (var/i = 1, i <= length(headers), i++)
-		header_row += " [headers[i]] " + " " * (column_widths[i] - length(headers[i])) + "|"
+		header_row += " [headers[i]] "
+		for (var/j = 1, j <= (column_widths[i] - length(headers[i])), j++)
+			header_row += " "
+		header_row += "|"
 	table_output += header_row + "\n" + divider
 
 	// Формируем строки
 	for (var/row in rows)
 		var/data_row = "|"
 		for (var/i = 1, i <= length(row), i++)
-			data_row += " [row[i]] " + " " * (column_widths[i] - length("[row[i]]")) + "|"
+			data_row += " [row[i]] "
+			for (var/j = 1, j <= (column_widths[i] - length("[row[i]]")), j++)
+				data_row += " "
+			data_row += "|"
 		table_output += data_row + "\n"
 	table_output += divider
 
