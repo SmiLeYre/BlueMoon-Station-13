@@ -222,7 +222,7 @@
 
 			var/datum/db_query/query_get_logs = SSdbcore.NewQuery({"
 				SELECT ckey, manager, manager_id, action, date, comment FROM [format_table_name("whitelist_log")]
-				WHERE REPLACE(REPLACE(manager_id, '<@', ''), '>', '') = :manager_id
+				WHERE manager_id =  REPLACE(REPLACE(:manager_id, '<@', ''), '>', '')
 				ORDER BY date DESC
 				LIMIT :limit
 			"}, list("manager_id" = manager_id, "limit" = limit))
