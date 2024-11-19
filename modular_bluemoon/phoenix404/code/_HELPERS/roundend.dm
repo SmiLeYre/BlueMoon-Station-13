@@ -48,11 +48,11 @@
 	message.embed = embed
 	embed.author = CreateAuthor()
 	embed.title = "Статистика окончания раунда"
-	embed.description = ":blushcat:"
+	embed.description = ":mending_heart:"
 	embed.colour = "#34a5c2"
 
-	var/datum/tgs_chat_embed/field/survivors_field = new(":god_save_me:Выжившие", "[num_survivors]")
-	var/datum/tgs_chat_embed/field/deads_field = new(":wolf_skull:Погибшие", "[num_deads]")
+	var/datum/tgs_chat_embed/field/survivors_field = new(":people_holding_hands:Выжившие", "[num_survivors]")
+	var/datum/tgs_chat_embed/field/deads_field = new(":skull:Погибшие", "[num_deads]")
 	var/datum/tgs_chat_embed/field/escapees_field = new(":door:Эвакуировавшиеся", "[num_escapees]")
 	var/datum/tgs_chat_embed/field/shuttle_escapees_field = new(":rocket:Эвакуировались на шаттле", "[num_shuttle_escapees]")
 	var/datum/tgs_chat_embed/field/another_escapees_field = new(":ambulance:Эвакуировались другими способами", "[num_another_escapees]")
@@ -70,7 +70,7 @@
 
 		var/random_link = pick(random_links)
 		var/datum/tgs_message_content/random_message = new(random_link)
-
-		send2chat(random_message, channel_tag)
+		spawn(5)
+			send2chat(random_message, channel_tag)
 
 #undef FUNNY_VIDEOS_FILE_NAME
