@@ -23,41 +23,6 @@
 
 	return allow
 
-/proc/format_table(headers, rows)
-	var/list/column_widths = list()
-
-	// Определяем ширину заголовков
-	for (var/header in headers)
-		column_widths += max(length(header), 1)
-
-	// Определяем максимальную ширину для каждого столбца
-	for (var/row in rows)
-		for (var/i = 1, i <= length(row), i++)
-			column_widths[i] = max(column_widths[i], length("[row[i]]"))
-
-	// Форматируем под табличный формат
-	var/table_output = ""
-	var/divider = ""
-	for (var/width in column_widths)
-		divider += "-" * (width + 2) + "+"
-	divider = "|" + divider[1:] + "\n"
-	table_output += divider
-
-	// Формируем заголовок
-	var/header_row = "|"
-	for (var/i = 1, i <= length(headers), i++)
-		header_row += " [headers[i]] " + " " * (column_widths[i] - length(headers[i])) + "|"
-	table_output += header_row + "\n" + divider
-
-	// Формируем строки данных
-	for (var/row in rows)
-		var/data_row = "|"
-		for (var/i = 1, i <= length(row), i++)
-			data_row += " [row[i]] " + " " * (column_widths[i] - length("[row[i]]")) + "|"
-		table_output += data_row + "\n"
-	table_output += divider
-
-	return table_output
 
 // usually, this would go into chat_commands.dm
 // BUT i don't want to put so much code there
@@ -69,6 +34,13 @@
 /datum/tgs_chat_command/whitelist/Run(datum/tgs_chat_user/sender, params)
 	// Declare variables before any code
 	var/default_limit = 100
+	var/ckey_width = 20
+	var/manager_width = 20
+	var/manager_id_width = 20
+	var/action_width = 10
+	var/date_width = 19
+	var/comment_width = 30
+
 	var/limit
 	var/comment
 	var/manager_id
@@ -219,24 +191,21 @@
 				qdel(query_get_logs)
 				return
 
-			var/list/rows = list()
-			while(query_get_logs.NextRow())
-				rows += list(
-					query_get_logs.item[1],
-					query_get_logs.item[2],
-					query_get_logs.item[3],
-					query_get_logs.item[4],
-					query_get_logs.item[5],
-					query_get_logs.item[6],
-					query_get_logs.item[7]
-				)
-			qdel(query_get_logs)
-
-			var/list/headers = list("id", "ckey", "manager", "manager_id", "action", "date", "comment")
 			. += "```\n"
 			. += "Whitelist Log (last [limit] entries):\n"
-			. += format_table(headers, rows)
+
+			. += pad_string("ckey", ckey_width) + pad_string("manager", manager_width) + pad_string("manager_id", manager_id_width) + pad_string("action", action_width) + pad_string("date", date_width) + pad_string("comment", comment_width) + "\n"
+			while(query_get_logs.NextRow())
+				var/ckey_value = query_get_logs.item[1]
+				var/manager_value = query_get_logs.item[2]
+				var/manager_id_value = query_get_logs.item[3]
+				var/action_value = query_get_logs.item[4]
+				var/date_value = query_get_logs.item[5]
+				var/comment_value = query_get_logs.item[6]
+				. += pad_string(ckey_value, ckey_width) + pad_string(manager_value, manager_width) + pad_string(manager_id_value, manager_id_width) + pad_string(action_value, action_width) + pad_string(date_value, date_width) + pad_string(comment_value, comment_width) + "\n"
+
 			. += "```\n"
+			qdel(query_get_logs)
 			return
 
 		if("managerlog")
@@ -252,7 +221,7 @@
 					limit = default_limit
 
 			var/datum/db_query/query_get_logs = SSdbcore.NewQuery({"
-				SELECT id, ckey, manager, manager_id, action, date, comment FROM [format_table_name("whitelist_log")]
+				SELECT ckey, manager, manager_id, action, date, comment FROM [format_table_name("whitelist_log")]
 				WHERE manager_id =  REPLACE(REPLACE(:manager_id, '<@', ''), '>', '')
 				ORDER BY date DESC
 				LIMIT :limit
@@ -264,24 +233,21 @@
 				qdel(query_get_logs)
 				return
 
-			var/list/rows = list()
-			while(query_get_logs.NextRow())
-				rows += list(
-					query_get_logs.item[1],
-					query_get_logs.item[2],
-					query_get_logs.item[3],
-					query_get_logs.item[4],
-					query_get_logs.item[5],
-					query_get_logs.item[6],
-					query_get_logs.item[7]
-				)
-			qdel(query_get_logs)
-
-			var/list/headers = list("id", "ckey", "manager", "manager_id", "action", "date", "comment")
 			. += "```\n"
 			. += "Whitelist Log for manager_id `[manager_id]` (last [limit] entries):\n"
-			. += format_table(headers, rows)
+
+			. += pad_string("ckey", ckey_width) + pad_string("manager", manager_width) + pad_string("manager_id", manager_id_width) + pad_string("action", action_width) + pad_string("date", date_width) + pad_string("comment", comment_width) + "\n"
+			while(query_get_logs.NextRow())
+				var/ckey_value = query_get_logs.item[1]
+				var/manager_value = query_get_logs.item[2]
+				var/manager_id_value = query_get_logs.item[3]
+				var/action_value = query_get_logs.item[4]
+				var/date_value = query_get_logs.item[5]
+				var/comment_value = query_get_logs.item[6]
+				. += pad_string(ckey_value, ckey_width) + pad_string(manager_value, manager_width) + pad_string(manager_id_value, manager_id_width) + pad_string(action_value, action_width) + pad_string(date_value, date_width) + pad_string(comment_value, comment_width) + "\n"
+
 			. += "```\n"
+			qdel(query_get_logs)
 			return
 
 		if("useraudit")
@@ -297,7 +263,7 @@
 					limit = default_limit
 
 			var/datum/db_query/query_get_logs = SSdbcore.NewQuery({"
-				SELECT id, ckey, manager, manager_id, action, date, comment FROM [format_table_name("whitelist_log")]
+				SELECT ckey, manager, manager_id, action, date, comment FROM [format_table_name("whitelist_log")]
 				WHERE ckey = :ckey
 				ORDER BY date DESC
 				LIMIT :limit
@@ -309,27 +275,30 @@
 				qdel(query_get_logs)
 				return
 
-			var/list/rows = list()
-			while(query_get_logs.NextRow())
-				rows += list(
-					query_get_logs.item[1],
-					query_get_logs.item[2],
-					query_get_logs.item[3],
-					query_get_logs.item[4],
-					query_get_logs.item[5],
-					query_get_logs.item[6],
-					query_get_logs.item[7]
-				)
-			qdel(query_get_logs)
-
-			var/list/headers = list("id", "ckey", "manager", "manager_id", "action", "date", "comment")
 			. += "```\n"
 			. += "Whitelist Log for ckey `[key]` (last [limit] entries):\n"
-			. += format_table(headers, rows)
+
+			. += pad_string("ckey", ckey_width) + pad_string("manager", manager_width) + pad_string("manager_id", manager_id_width) + pad_string("action", action_width) + pad_string("date", date_width) + pad_string("comment", comment_width) + "\n"
+			while(query_get_logs.NextRow())
+				var/ckey_value = query_get_logs.item[1]
+				var/manager_value = query_get_logs.item[2]
+				var/manager_id_value = query_get_logs.item[3]
+				var/action_value = query_get_logs.item[4]
+				var/date_value = query_get_logs.item[5]
+				var/comment_value = query_get_logs.item[6]
+				. += pad_string(ckey_value, ckey_width) + pad_string(manager_value, manager_width) + pad_string(manager_id_value, manager_id_width) + pad_string(action_value, action_width) + pad_string(date_value, date_width) + pad_string(comment_value, comment_width) + "\n"
+
 			. += "```\n"
+			qdel(query_get_logs)
 			return
 
 		else
 			. += "Unknown command!"
 			. += "[src.help_text]"
 			return
+
+/proc/pad_string(str, width)
+	var/padded_str = "[str]"
+	while(length(padded_str) < width)
+		padded_str += " "
+	return padded_str
