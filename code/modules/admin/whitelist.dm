@@ -28,7 +28,7 @@
 // BUT i don't want to put so much code there
 /datum/tgs_chat_command/whitelist
 	name = "whitelist"
-	help_text = "Usage: whitelist (add ckey (comment)|remove ckey (comment)|reload|list (limit)|logs (limit)|adminworklog manager_id (limit)|useraudit ckey (limit))"
+	help_text = "Usage: whitelist (add ckey (comment)|remove ckey (comment)|reload|list (limit)|logs (limit)|managerlog manager_id (limit)|useraudit ckey (limit))"
 	admin_only = TRUE
 
 /datum/tgs_chat_command/whitelist/Run(datum/tgs_chat_user/sender, params)
@@ -208,7 +208,7 @@
 			qdel(query_get_logs)
 			return
 
-		if("adminworklog")
+		if("managerlog")
 			if(length(all_params) < 2)
 				. += "Invalid argument: manager_id is required."
 				return
@@ -222,7 +222,7 @@
 
 			var/datum/db_query/query_get_logs = SSdbcore.NewQuery({"
 				SELECT ckey, manager, manager_id, action, date, comment FROM [format_table_name("whitelist_log")]
-				WHERE manager_id in (:manager_id)
+				WHERE REPLACE(REPLACE(manager_id, '<@', ''), '>', '') = :manager_id
 				ORDER BY date DESC
 				LIMIT :limit
 			"}, list("manager_id" = manager_id, "limit" = limit))
