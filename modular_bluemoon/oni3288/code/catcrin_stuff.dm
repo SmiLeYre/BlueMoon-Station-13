@@ -9,6 +9,9 @@
 	item_state = "mark45_helmet"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "mark45_helmet"),
+	)
 
 /obj/item/clothing/head/helmet/sec/mark45_desert
 	name = "Mk. 45 Desert Hunter helmet"
@@ -19,6 +22,9 @@
 	item_state = "mark45_helmet_desert"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "mark45_helmet_desert"),
+	)
 
 /obj/item/clothing/head/helmet/sec/mark45_anomalist
 	name = "Mk. 45 Anomalist helmet"
@@ -29,6 +35,9 @@
 	item_state = "mark45_helmet_anomalist"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "mark45_helmet_anomalist"),
+	)
 
 /obj/item/clothing/head/helmet/sec/mark45_combatengineer
 	name = "Mk. 45 Combat engineer helmet"
@@ -39,6 +48,9 @@
 	item_state = "mark45_helmet_combatengineer"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "mark45_helmet_combatengineer"),
+	)
 
 /obj/item/clothing/head/helmet/sec/mark45_support
 	name = "Mk. 45 Support helmet"
@@ -49,6 +61,9 @@
 	item_state = "mark45_helmet_support"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "mark45_helmet_support"),
+	)
 
 /obj/item/clothing/head/helmet/sec/mark45_snow
 	name = "Mk. 45 Snow Cover helmet"
@@ -59,6 +74,9 @@
 	item_state = "mark45_helmet_snow"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "mark45_helmet_snow"),
+	)
 
 /obj/item/clothing/head/HoS/mark45_officer
 	name = "Mk. 45 officer helmet"
@@ -71,6 +89,19 @@
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEHAIR|HIDEEARS
+
+/obj/item/clothing/head/helmet/sec/mark45_ce
+	name = "Mk. 45 Master Engineer Specialist Helmet"
+	desc = "A modified Mk.45 Snow Cover helmet of the Catcrin army. It seems to have an armor comb on it alongside engineer-grade visor and Yernela white color scheme. The whole helmet looks like an individual design and does have personal code written on the helmet nape: ME-KVM:82991"
+	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
+	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
+	icon_state = "mark45_helmet_ce"
+	item_state = "mark45_helmet_ce"
+	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "mark45_helmet_ce"),
+	)
 
 /obj/item/clothing/head/helmet/brigdoc/mark45_medic_l
 	name = "Mk. 45 light medic helmet"
@@ -99,6 +130,9 @@
 	item_state = "mark45_armor"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "mark45_armor"),
+	)
 
 /obj/item/clothing/suit/armor/mark45_armor_desert
 	name = "Mk. 45 Desert Hunter Armor"
@@ -109,6 +143,9 @@
 	item_state = "mark45_armor_desert"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "mark45_armor_desert"),
+	)
 
 /obj/item/clothing/suit/armor/mark45_armor_snow
 	name = "Mk. 45 Snow Cover Аrmor"
@@ -119,6 +156,9 @@
 	item_state = "mark45_armor_snow"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "mark45_armor_snow"),
+	)
 
 /obj/item/clothing/suit/armor/mark45_armor_anomalist
 	name = "Mk. 45 Anomalist Аrmor"
@@ -129,6 +169,9 @@
 	item_state = "mark45_armor_anomalist"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "mark45_armor_anomalist"),
+	)
 
 /obj/item/clothing/suit/armor/mark45_armor_combatengineer
 	name = "Mk. 45 Combat engineer Аrmor"
@@ -140,6 +183,9 @@
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
 	alternate_worn_layer = "31" //чтобы клешня инженерная была видна поверх шлема
+	unique_reskin = list(
+		"Default" = list("icon_state" = "mark45_armor_combatengineer"),
+	)
 
 /obj/item/clothing/suit/armor/mark45_armor_support
 	name = "Mk. 45 Support Аrmor"
@@ -150,6 +196,22 @@
 	item_state = "mark45_armor_support"
 	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "mark45_armor_support"),
+	)
+
+/obj/item/clothing/suit/armor/mark45_armor_ce
+	name = "Mk. 45 Master Engineer Specialist Armor"
+	desc = "An exquisite example of extra-padded engineer mark 45 armor of the Catcrin army with officer-rank cape, featuring some of the Yernela winter armor elements and white color scheme. It seems that this armor is special design for one specific individual and does have his personal code written on the neckplate: ME-KVM:829917"
+	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
+	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/mob/clothing/mark45.dmi'
+	icon_state = "mark45_armor_ce"
+	item_state = "mark45_armor_ce"
+	lefthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/oni3288/icons/mob/inhands/mark45_righthand.dmi'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "mark45_armor_ce"),
+	)
 
 /obj/item/clothing/suit/armor/hos/mark45_armor_officer
 	name = "Mk. 45 Officer Аrmor"
@@ -264,6 +326,9 @@
 	fire_sound = "modular_bluemoon/oni3288/sounds/weapons/frontlineshot.ogg"
 	stock = FALSE
 	extend_sound = 'sound/weapons/batonextend.ogg'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "csfrontline"),
+	)
 
 /obj/item/gun/ballistic/shotgun/automatic/combat/frontline/update_icon_state()
 	icon_state = "csfrontline[stock ? "" : "c"]-[get_ammo(FALSE)]"
@@ -291,6 +356,9 @@
 	icon_state = "yernela"
 	item_state = "yernela"
 	fire_sound = 'modular_bluemoon/oni3288/sounds/weapons/yernelashot.ogg'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "yernela"),
+	)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -466,6 +534,9 @@
 	icon = 'modular_bluemoon/oni3288/icons/weapons/icons/bwal.dmi'
 	icon_state = "bwal"
 	fire_sound = 'modular_bluemoon/oni3288/sounds/weapons/bwalshot.ogg'
+	unique_reskin = list(
+		"Default" = list("icon_state" = "bwal"),
+	)
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -584,7 +655,34 @@
 	new /obj/item/modkit/magrrinei_kit(src)
 	new /obj/item/modkit/bwal2572_kit(src)
 
+// Закину коробку с постерами для спратера сюда, чтоб особо не срать.
 
+/obj/item/storage/box/poster_box
+	name = "Box with posters"
+	desc = "Contains three posters inside."
+	icon_state = "box"
+
+/obj/item/storage/box/poster_box/PopulateContents()
+	new /obj/item/poster/vlm(src)
+	new /obj/item/poster/erthelp(src)
+	new /obj/item/poster/dymai(src)
+
+// И скрутки определённых постеров тож сюда закину, чтоб не срать х2
+
+/obj/item/poster/erthelp
+	name = "No one will help you poster"
+	poster_type = /obj/structure/sign/poster/contraband/erthelp
+	icon_state = "rolled_contraband"
+
+/obj/item/poster/dymai
+	name = "Dymai poster"
+	poster_type = /obj/structure/sign/poster/official/dymai
+	icon_state = "rolled_legit"
+
+/obj/item/poster/vlm
+	name = "Voxes Lives Matter poster"
+	poster_type = /obj/structure/sign/poster/official/vlm
+	icon_state = "rolled_legit"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////ДАТУМы.
 
@@ -739,7 +837,9 @@
 	name = "Second Catcrin's tactical gasmask"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_two
-	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx")
+
+	ckeywhitelist = list("oni3288", "ghos7ik", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin")
+
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/catcrin_combatmask_tree

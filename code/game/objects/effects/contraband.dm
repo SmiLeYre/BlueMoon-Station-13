@@ -559,6 +559,16 @@
 	desc = "No heroes, no mascots. The InteQ cuts deeper."
 	icon_state = "poster_deadpoly"
 
+/obj/structure/sign/poster/contraband/erthelp //bluemoon add
+	name = "No one will help you"
+	desc = "Outdated poster of Gorlex Marouders. It's says :- ERT won't help you. Just give up."
+	icon_state = "poster_erthelp"
+
+/obj/structure/sign/poster/contraband/femsec //bluemoon add
+	name = "Fem-sec"
+	desc = "What is it? Your masculinity is too fragile to wear these tactical socks?"
+	icon_state = "poster_femsec"
+
 /obj/structure/sign/poster/contraband/nri_text/examine_more(mob/user)
 	. = ..()
 	. += span_notice("<i>You browse some of the poster's information...</i>")
