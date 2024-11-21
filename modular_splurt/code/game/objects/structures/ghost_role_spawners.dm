@@ -192,6 +192,7 @@
 	outfit = /datum/outfit/inteqspace/inteq_crew
 	assignedrole = ROLE_GHOSTROLE_INTEQ
 	antagonist_type = /datum/antagonist/ghost_role/inteq
+	loadout_enabled = TRUE
 
 /datum/outfit/inteqspace/inteq_crew/post_equip(mob/living/carbon/human/H)
 	H.faction |= ROLE_INTEQ
