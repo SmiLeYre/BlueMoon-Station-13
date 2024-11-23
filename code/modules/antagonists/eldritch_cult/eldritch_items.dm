@@ -1,5 +1,5 @@
 /obj/item/living_heart
-	name = "Living Heart"
+	name = "Живое сердце"
 	desc = "Связь с другим миром... смажь меня кровью, если хочешь возобновить биение сердца. Нажмите АЛЬТ-ЛКМ, чтобы сбросить жертву."
 	icon = 'icons/obj/eldritch.dmi'
 	icon_state = "living_heart"
@@ -44,37 +44,37 @@
 	if(!IS_HERETIC(user))
 		return
 	if(!target)
-		to_chat(user,"<span class='warning'>No target could be found. Put the living heart on the rune and use the rune to recieve a target.</span>")
+		to_chat(user,"<span class='warning'>Не найдено ни одной цели. Нужно поместить живое сердце на руну чтобы найти новую цель.</span>")
 		return
 	var/dist = get_dist(user.loc,target.loc)
 	var/dir = get_dir(user.loc,target.loc)
 
 	if(user.z != target.z)
-		user.balloon_alert(user,"<span class='warning'>[target.real_name] is on another plane of existance!</span>")
-		to_chat(user,"<span class='warning'>[target.real_name] is on another plane of existance!</span>")
+		user.balloon_alert(user,"<span class='warning'>[target.real_name] находится на другом плане существования!</span>")
+		to_chat(user,"<span class='warning'>[target.real_name] находится на другом плане существования!</span>")
 	else
 		switch(dist)
 			if(0 to 15)
-				user.balloon_alert(user,"<span class='warning'>[target.real_name] is near you. They are to the [dir2text(dir)] of you!</span>")
+				user.balloon_alert(user,"<span class='warning'>[target.real_name] рядом со мной. Он находится на [dir2text(dir)] от меня!</span>")
 
-				to_chat(user,"<span class='warning'>[target.real_name] is near you. They are to the [dir2text(dir)] of you!</span>")
+				to_chat(user,"<span class='warning'>[target.real_name] облизко ко мне. Он находится на [dir2text(dir)] от меня!</span>")
 			if(16 to 31)
-				user.balloon_alert(user,"<span class='warning'>[target.real_name] is somewhere in your vicinity. They are to the [dir2text(dir)] of you!</span>")
+				user.balloon_alert(user,"<span class='warning'>[target.real_name] поблизости со мной. Он находится на [dir2text(dir)] от меня!</span>")
 
-				to_chat(user,"<span class='warning'>[target.real_name] is somewhere in your vicinity. They are to the [dir2text(dir)] of you!</span>")
+				to_chat(user,"<span class='warning'>[target.real_name] поблизости со мной. Он находится на [dir2text(dir)] от меня!</span>")
 			if(32 to 127)
-				user.balloon_alert(user,"<span class='warning'>[target.real_name] is far away from you. They are to the [dir2text(dir)] of you!</span>")
+				user.balloon_alert(user,"<span class='warning'>[target.real_name] далеко от меня. Он находится на [dir2text(dir)] от меня!</span>")
 
-				to_chat(user,"<span class='warning'>[target.real_name] is far away from you. They are to the [dir2text(dir)] of you!</span>")
+				to_chat(user,"<span class='warning'>[target.real_name] далеко от меня. Он находится на [dir2text(dir)] от меня!</span>")
 			else
-				user.balloon_alert(user,"<span class='warning'>[target.real_name] is beyond our reach.</span>")
+				user.balloon_alert(user,"<span class='warning'>[target.real_name] находится за пределами моих возможностей.</span>")
 
-				to_chat(user,"<span class='warning'>[target.real_name] is beyond our reach.</span>")
+				to_chat(user,"<span class='warning'>[target.real_name] находится за пределами моих возможностей.</span>")
 
 	if(target.stat == DEAD)
-		user.balloon_alert(user,"<span class='warning'>[target.real_name] is dead. Bring them onto a transmutation rune!</span>")
+		user.balloon_alert(user,"<span class='warning'>[target.real_name] мертва. Нужно перенести её на руну трансмутации!</span>")
 
-		to_chat(user,"<span class='warning'>[target.real_name] is dead. Bring them onto a transmutation rune!</span>")
+		to_chat(user,"<span class='warning'>[target.real_name] мертва. Нужно перенести её на руну трансмутации!</span>")
 
 /obj/item/melee/sickly_blade
 	name = "sickly blade"
