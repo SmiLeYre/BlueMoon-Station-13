@@ -97,7 +97,7 @@
 		else
 	return
 
-/proc/dir2rutext(direction)
+/proc/dir2text_ru(direction)
 	switch(direction)
 		if(NORTH)
 			return "север"

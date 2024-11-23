@@ -55,17 +55,17 @@
 	else
 		switch(dist)
 			if(0 to 15)
-				user.balloon_alert(user,"<span class='warning'>[target.real_name] рядом со мной. Он находится на [dir2rutext(dir)] от меня!</span>")
+				user.balloon_alert(user,"<span class='warning'>[target.real_name] рядом со мной. Он находится на [dir2text_ru(dir)] от меня!</span>")
 
-				to_chat(user,"<span class='warning'>[target.real_name] облизко ко мне. Он находится на [dir2rutext(dir)] от меня!</span>")
+				to_chat(user,"<span class='warning'>[target.real_name] облизко ко мне. Он находится на [dir2text_ru(dir)] от меня!</span>")
 			if(16 to 31)
-				user.balloon_alert(user,"<span class='warning'>[target.real_name] поблизости со мной. Он находится на [dir2rutext(dir)] от меня!</span>")
+				user.balloon_alert(user,"<span class='warning'>[target.real_name] поблизости со мной. Он находится на [dir2text_ru(dir)] от меня!</span>")
 
-				to_chat(user,"<span class='warning'>[target.real_name] поблизости со мной. Он находится на [dir2rutext(dir)] от меня!</span>")
+				to_chat(user,"<span class='warning'>[target.real_name] поблизости со мной. Он находится на [dir2text_ru(dir)] от меня!</span>")
 			if(32 to 127)
-				user.balloon_alert(user,"<span class='warning'>[target.real_name] далеко от меня. Он находится на [dir2rutext(dir)] от меня!</span>")
+				user.balloon_alert(user,"<span class='warning'>[target.real_name] далеко от меня. Он находится на [dir2text_ru(dir)] от меня!</span>")
 
-				to_chat(user,"<span class='warning'>[target.real_name] далеко от меня. Он находится на [dir2rutext(dir)] от меня!</span>")
+				to_chat(user,"<span class='warning'>[target.real_name] далеко от меня. Он находится на [dir2text_ru(dir)] от меня!</span>")
 			else
 				user.balloon_alert(user,"<span class='warning'>[target.real_name] находится за пределами моих возможностей.</span>")
 
