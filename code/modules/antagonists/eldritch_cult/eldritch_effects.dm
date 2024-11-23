@@ -1,6 +1,6 @@
 /obj/effect/eldritch
 	name = "Руна"
-	desc = "На полу выгравирован плавный круг фигур и рун, наполненный густой черной смолистой  жидкостью."
+	desc = "На полу выгравирован плавный круг фигур и рун, наполненный густой черной смолистой жидкостью."
 	anchored = TRUE
 	icon_state = ""
 	resistance_flags = FIRE_PROOF | UNACIDABLE | ACID_PROOF
@@ -249,7 +249,7 @@
 		return ..()
 	var/mob/living/carbon/human/human_user = user
 	if(IS_HERETIC(human_user))
-		to_chat(human_user,"<span class='boldwarning'>Я знаю, что лучше не тревожить силы, вышедшие из-под вашего контроля!</span>")
+		to_chat(human_user,"<span class='boldwarning'>Я знаю, что лучше не тревожить силы, вышедшие из-под моего контроля!</span>")
 	else
 		var/obj/item/bodypart/arm = human_user.get_active_hand()
 		if(prob(25))
@@ -265,7 +265,7 @@
 		return
 	var/mob/living/carbon/human/human_user = user
 	if(IS_HERETIC(human_user))
-		to_chat(human_user,"<span class='boldwarning'>Я знаю, что лучше не тревожить силы, вышедшие из-под вашего контроля!</span>")
+		to_chat(human_user,"<span class='boldwarning'>Я знаю, что лучше не тревожить силы, вышедшие из-под моего контроля!</span>")
 		return
 	//a very elaborate way to suicide
 	to_chat(human_user,"<span class='userdanger'>Жуткая энергия пронзает пространство, увеча мой хрупкий разум и разрывая его на клочки!</span>")
