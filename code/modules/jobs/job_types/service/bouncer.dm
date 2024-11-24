@@ -79,8 +79,8 @@
 	backpack_contents = list(/obj/item/reagent_containers/spray/pepper=1, /obj/item/restraints/handcuffs/cable/zipties=2, /obj/item/syndicate_uplink=1)
 
 //BLUEMOON ADD
-/datum/martial_art/cqc/restricted/bouncer
-	name = "Close Quarters bounCing"
+/datum/martial_art/krav_maga/restricted/bouncer
+	name = "Krav Maga (bouncer edition)"
 	valid_areas = list(/area/service/bar/atrium, /area/service/bar)
 //BLUEMOON ADD END
 /*
@@ -148,5 +148,5 @@
 	..()
 	if(visualsOnly)
 		return
-	var/datum/martial_art/cqc/restricted/bouncer/B = new //BLUEMOON CHANGE
+	var/datum/martial_art/krav_maga/restricted/bouncer/B = new //BLUEMOON CHANGE
 	B.teach(H)
