@@ -126,25 +126,21 @@
 	name = "Blueshield's Quarters"
 	icon_state = "bridge"
 
+//BLUEMOON CHANGE однородность для cqc с ограниченой зоной использования
 ///Subtype of CQC. Only used for the Blueshield.
-/datum/martial_art/cqc/blueshield
+/datum/martial_art/cqc/restricted/blueshield
 	name = "Close Quarters Combat, Blueshield Edition"
-	var/list/valid_areas = list(/area/command, /area/command/bridge, /area/command/meeting_room, /area/command/meeting_room/council,
+	valid_areas = list(/area/command, /area/command/bridge, /area/command/meeting_room, /area/command/meeting_room/council,
 								/area/command/heads_quarters/captain, /area/command/heads_quarters/ce, /area/command/heads_quarters/ce/private,
 								/area/command/heads_quarters/cmo, /area/command/heads_quarters/cmo/private, /area/command/heads_quarters/hop,
 								/area/command/heads_quarters/hop/private, /area/command/heads_quarters/hos, /area/command/heads_quarters/hos/private,
 								/area/command/heads_quarters/rd, /area/command/heads_quarters/rd/private, /area/command/teleporter, /area/command/gateway,
 								/area/command/corporate_showroom)
 
-/datum/martial_art/cqc/blueshield/can_use(mob/living/owner)
-	if(!is_type_in_list(get_area(owner), valid_areas))
-		return FALSE
-	return ..()
-
-
 /datum/outfit/job/blueshield/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
 	if(visualsOnly)
 		return
-	var/datum/martial_art/cqc/blueshield/justablue = new
+	var/datum/martial_art/cqc/restricted/blueshield/justablue = new
 	justablue.teach(H)
+//BLUEMOON CHANGE END

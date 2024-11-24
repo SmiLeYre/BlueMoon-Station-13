@@ -86,6 +86,6 @@
 	..()
 	if(visualsOnly)
 		return
-	var/datum/martial_art/cqc/under_siege/justacook = new
+	var/datum/martial_art/cqc/restricted/under_siege/justacook = new //BLUEMOON CHANGE
 	justacook.teach(H)
 
