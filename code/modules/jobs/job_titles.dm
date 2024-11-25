@@ -30,7 +30,7 @@
 	alt_titles = list("Custodian", "Sanitation Technician", "Maid", "Trash Can", "Disposal Unit")
 
 /datum/job/lawyer
-	alt_titles = list("Human Resources Agent", "Internal Affairs Agent", "Attorney")
+	alt_titles = list("Human Resources Agent", "Attorney")
 
 /datum/job/clown
 	alt_titles = list("Jester", "Comedian")
