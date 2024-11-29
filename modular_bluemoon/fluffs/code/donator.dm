@@ -1077,3 +1077,10 @@
 	path = /obj/item/storage/box/poster_box
 	ckeywhitelist = list("tonya677")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/ushankich
+    name = "Soviet ushanka"
+    slot = ITEM_SLOT_HEAD
+    path = /obj/item/clothing/head/donator/bm/ushankich
+    ckeywhitelist = list("fedor1545")
+    subcategory = LOADOUT_SUBCATEGORIES_DON04

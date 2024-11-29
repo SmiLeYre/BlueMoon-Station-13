@@ -4298,6 +4298,7 @@
 #include "modular_bluemoon\dementia\code\modules\clothing\hats.dm"
 #include "modular_bluemoon\dementia\code\modules\clothing\helmets.dm"
 #include "modular_bluemoon\dementia\code\modules\clothing\under.dm"
+#include "modular_bluemoon\fedor1545\code\clohing\hat.dm"
 #include "modular_bluemoon\fedor1545\code\clohing\suit.dm"
 #include "modular_bluemoon\fedor1545\code\clohing\underwear.dm"
 #include "modular_bluemoon\fedor1545\code\clohing\uniform.dm"
