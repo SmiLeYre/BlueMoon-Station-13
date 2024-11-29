@@ -1738,3 +1738,7 @@
 /// Sets the wire datum of an atom
 /atom/proc/set_wires(datum/wires/new_wires)
 	wires = new_wires
+
+///Return the air if we can analyze it
+/atom/proc/return_analyzable_air()
+	return null

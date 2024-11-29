@@ -15,3 +15,9 @@
 2024-11-20:
   Arrhythmia_V:
   - rscadd: Blade tail now available in character creator (Ported from VOREstation)
+2024-11-25:
+  Mosley:
+  - bugfix: Fixes the arrivals announcements
+2024-11-27:
+  Mosley:
+  - bugfix: Fixes the rest of the announcement systems from the update

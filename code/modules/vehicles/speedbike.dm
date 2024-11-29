@@ -26,6 +26,10 @@
 	D.set_vehicle_dir_offsets(SOUTH, -16, -16)
 	D.set_vehicle_dir_offsets(EAST, -18, 0)
 	D.set_vehicle_dir_offsets(WEST, -18, 0)
+	D.set_vehicle_dir_layer(SOUTH, ABOVE_MOB_LAYER)
+	D.set_vehicle_dir_layer(NORTH, OBJ_LAYER)
+	D.set_vehicle_dir_layer(EAST, OBJ_LAYER)
+	D.set_vehicle_dir_layer(WEST, OBJ_LAYER)
 
 /obj/vehicle/ridden/space/speedbike/Move(newloc,move_dir)
 	if(has_buckled_mobs())

@@ -3,9 +3,6 @@
 	var/list/extra_titles = list(
 		"NT Senior Manager",
 		"Syndicate Admiral",
-		"Station Director",
-		"Station Commander",
-		"Station Overseer",
 		"Sectorial Commander",
 		"Station Mistress",
 		"Station Master",
@@ -22,10 +19,6 @@
 	var/list/extra_titles = list(
 		"NT Construction Manager",
 		"Syndicate Construction Chief",
-		"Head Engineer",
-		"Construction Coordinator",
-		"Project Manager",
-		"Power Plant Director",
 		"Mother Destroyer",
 		"Bordel Architect",
 		"Big Iron",
@@ -45,9 +38,6 @@
 		"Head Of Slutty Personnel",
 		"Headpat Of Personnel",
 		"Headgiver To Personnel",
-		"Personnel Manager",
-		"Staff Administrator",
-		"Records Administrator",
 		"Personnel Manager of Syndicate",
 		"Captain Attachment"
 	)
@@ -58,7 +48,6 @@
 	var/list/extra_titles = list(
 		"NT Safeguard Manager",
 		"Syndicate Field Commander",
-		"Security Commander",
 		"Division Leader",
 		"Cerberus Leader",
 		"AC Special Lieutenant",
@@ -74,7 +63,6 @@
 	var/list/extra_titles = list(
 		"NT Supply Manager",
 		"Logistics Syndicate Supervisor",
-		"Supply Chief",
 		"Cargonia Chief",
 		"Brigadier",
 		"Manager of Shipping Sex"
@@ -87,10 +75,8 @@
 		"NT Research Manager",
 		"Cybersun Lead Specialist",
 		"Donk Co. Lead Specialist",
-		"Science Administrator",
 		"CEO of Sex",
 		"Sex Research Director",
-		"Research Manager"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
@@ -117,7 +103,6 @@
 		"Anal Plumber",
 		"Atmos-Slut",
 		"Buttplug",
-		"Disposals Technician"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
@@ -178,13 +163,8 @@
 
 /datum/job/bartender/New()
 	var/list/extra_titles = list(
-		"Mixologist",
-		"Sommelier",
-		"Bar Owner",
-		"Barmaid",
 		"The Semen Degustator",
 		"Crocin Terrorist",
-		"Expediter"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
@@ -253,11 +233,7 @@
 
 /datum/job/hydro/New()
 	var/list/extra_titles = list(
-		"Hydroponicist",
-		"Farmer",
-		"Beekeeper",
 		"Plants Breeder",
-		"Vintner",
 		"Soiler"
 	)
 	LAZYADD(alt_titles, extra_titles)
@@ -270,17 +246,14 @@
 		"NT Legal Agent",
 		"Syndicate Legal Expert",
 		"Law-Slut",
-		"Attorney"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
 
 /datum/job/mime/New()
 	var/list/extra_titles = list(
-		"Pantomime",
 		"Cumtomime",
 		"Sexy Mime",
-		"Mimic"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
@@ -339,7 +312,6 @@
 	var/list/extra_titles = list(
 		"NT Physician",
 		"Syndicate Medical Techinician",
-		"Physician",
 		"Medical Intern",
 		"Medical Resident",
 		"Medtech",
@@ -374,7 +346,6 @@
 	var/list/extra_titles = list(
 		"NT Genetist",
 		"Syndicate Genetist",
-		"Genetics Researcher",
 		"Gene-Slut",
 		"Gene-Stud"
 	)
@@ -399,8 +370,6 @@
 	var/list/extra_titles = list(
 		"NT Microbiologist",
 		"Syndicate Bioweapon Scientist",
-		"Microbiologist",
-		"Biochemist",
 		"Plague Doctor",
 		"Monkey Destroyer",
 		"Viro-Slut",
@@ -415,7 +384,6 @@
 	var/list/extra_titles = list(
 		"NT Safeguard Investigator",
 		"Syndicate Survey Specialist",
-		"Gumshoe",
 		"Slutective",
 		"Studective",
 		"Van Dorn Agent",
@@ -432,9 +400,6 @@
 	var/list/extra_titles = list(
 		"NT Safeguard Agent",
 		"Syndicate Combatant",
-		"Security Agent",
-		"Probation Officer",
-		"Guardsman",
 		"Civil Protection",
 		"Police Officer",
 		"SAARE Operative",
@@ -459,11 +424,7 @@
 	var/list/extra_titles = list(
 		"NT Safeguard Sergeant",
 		"Syndicate Warden",
-		"Prison Chief",
-		"Armory Manager",
-		"Prison Administrator",
 		"Dungeon Master",
-		"Brig Superintendent",
 		"Brig Overwatch",
 		"AC Sergeant",
 		"Slutcurity Captain",
@@ -480,9 +441,6 @@
 	var/list/extra_titles = list(
 		"NT Supply Specialist",
 		"Donk Co. Specialist",
-		"Deliveries Officer",
-		"Mail Man",
-		"Mail Woman",
 		"Horny Mailer",
 		"Pleasures Deliverer",
 		"Cock Packager",
@@ -499,8 +457,6 @@
 	var/list/extra_titles = list(
 		"NT Prospector",
 		"Shaft Syndi-Miner",
-		"Exotic Ore Miner",
-		"Digger",
 		"Hunter",
 		"Ashwalker Sex Slave",
 		"Ashwalker Breeder",

@@ -6,7 +6,7 @@
 // END_INTERNALS
 
 // BEGIN_FILE_DIR
-#define FILE_DIR .
+#define FILE_DIR . 
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
@@ -4302,6 +4302,7 @@
 #include "modular_bluemoon\dementia\code\modules\clothing\hats.dm"
 #include "modular_bluemoon\dementia\code\modules\clothing\helmets.dm"
 #include "modular_bluemoon\dementia\code\modules\clothing\under.dm"
+#include "modular_bluemoon\fedor1545\code\clohing\hat.dm"
 #include "modular_bluemoon\fedor1545\code\clohing\suit.dm"
 #include "modular_bluemoon\fedor1545\code\clohing\underwear.dm"
 #include "modular_bluemoon\fedor1545\code\clohing\uniform.dm"
@@ -4517,6 +4518,7 @@
 #include "modular_bluemoon\MRSKO\code\modules\mod\mod_theme.dm"
 #include "modular_bluemoon\MRSKO\code\modules\mod\mod_types.dm"
 #include "modular_bluemoon\MRSKO\code\uplink\uplink_items.dm"
+#include "modular_bluemoon\modules\pull_slowdown\pull_slowdown.dm"
 #include "modular_bluemoon\oni3288\code\catcrin_stuff.dm"
 #include "modular_bluemoon\Painiscupcake\code\game\objects\items\heroin.dm"
 #include "modular_bluemoon\phenyamomota\code\modules\cargo\packs\engineering.dm"
