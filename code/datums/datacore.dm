@@ -296,16 +296,20 @@
 	var/static/list/show_directions = list(SOUTH, WEST)
 	if(H.mind && (H.mind.assigned_role != H.mind.special_role)  && (H.mind.assigned_role != "Stowaway"))
 		var/assignment
+		var/displayed_rank
 		if(H.mind.assigned_role)
 			assignment = H.mind.assigned_role
 		else if(H.job)
 			assignment = H.job
 		else
 			assignment = "Unassigned"
-		//Skyrat changes
-		if(C && C.prefs && C.prefs.alt_titles_preferences[assignment])
-			assignment = C.prefs.alt_titles_preferences[assignment]
-		//End of skyrat changes
+			if(C && C.prefs && C.prefs.alt_titles_preferences[assignment])
+				assignment = C.prefs.alt_titles_preferences[assignment]
+
+		if(assignment && C.prefs.alt_titles_preferences[assignment])
+			displayed_rank = C.prefs.alt_titles_preferences[assignment]
+		else
+			displayed_rank = assignment
 
 		var/static/record_id_num = 1001
 		var/id = num2hex(record_id_num++,6)
@@ -328,7 +332,7 @@
 		var/datum/data/record/G = new()
 		G.fields["id"]			= id
 		G.fields["name"]		= H.real_name
-		G.fields["rank"]		= assignment
+		G.fields["rank"]		= displayed_rank
 		G.fields["age"]			= H.age
 		G.fields["species"]		= H.dna.species.name
 		G.fields["fingerprint"]	= md5(H.dna.uni_identity)
@@ -383,7 +387,7 @@
 		var/datum/data/record/L = new()
 		L.fields["id"]			= md5("[H.real_name][H.mind.assigned_role]")	//surely this should just be id, like the others?
 		L.fields["name"]		= H.real_name
-		L.fields["rank"] 		= H.mind.assigned_role
+		L.fields["rank"] 		= displayed_rank
 		L.fields["age"]			= H.age
 		if(H.gender == MALE)
 			G.fields["gender"]  = "Male"

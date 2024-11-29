@@ -8,3 +8,16 @@
   - bugfix: Code disabling the shuttle_catastrophe event while a BYOS is active.
   LeDrascol:
   - rscadd: 'Added a new quirk: Sanguine Metabolism (variant of Bloodsucker Fledgling)'
+2024-11-14:
+  LeDrascol:
+  - code_imp: Modular quirks are now in separate files
+  - code_imp: Modularized edits to upstream quirks
+2024-11-20:
+  Arrhythmia_V:
+  - rscadd: Blade tail now available in character creator (Ported from VOREstation)
+2024-11-25:
+  Mosley:
+  - bugfix: Fixes the arrivals announcements
+2024-11-27:
+  Mosley:
+  - bugfix: Fixes the rest of the announcement systems from the update

@@ -71,12 +71,13 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 	else
 		return ..()
 
-/obj/machinery/announcement_system/proc/CompileText(str, user, rank) //replaces user-given variables with actual thingies.
+/obj/machinery/announcement_system/proc/CompileText(str, user, rank, displayed_rank) //replaces user-given variables with actual thingies.
 	str = replacetext(str, "%PERSON", "[user]")
 	str = replacetext(str, "%RANK", "[rank]")
+	str = replacetext(str, "%DISP_RANK", "[displayed_rank]")
 	return str
 
-/obj/machinery/announcement_system/proc/announce(message_type, user, rank, list/channels)
+/obj/machinery/announcement_system/proc/announce(message_type, user, rank, displayed_rank, list/channels)
 	if(!is_operational())
 		return
 
@@ -87,13 +88,13 @@ GLOBAL_LIST_EMPTY(announcement_systems)
 		rank = "Unknown"
 
 	if(message_type == "ARRIVAL" && arrivalToggle)
-		message = CompileText(arrival, user, rank)
+		message = CompileText(arrival, user, rank, displayed_rank)
 	else if(message_type == "NEWHEAD" && newheadToggle)
-		message = CompileText(newhead, user, rank)
+		message = CompileText(newhead, user, rank, displayed_rank)
 	else if(message_type == "CRYOSTORAGE")
-		message = CompileText(cryostorage, user, rank)
+		message = CompileText(cryostorage, user, rank, displayed_rank)
 	else if(message_type == "CRYOSTORAGE_TELE")
-		message = CompileText(cryostorage_tele, user, rank)
+		message = CompileText(cryostorage_tele, user, rank, displayed_rank)
 	else if(message_type == "ARRIVALS_BROKEN")
 		message = "The arrivals shuttle has been damaged. Docking for repairs..."
 

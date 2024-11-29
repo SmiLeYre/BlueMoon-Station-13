@@ -70,7 +70,7 @@
 		remove_movespeed_modifier(/datum/movespeed_modifier/turf_slowdown)
 
 /mob/living/proc/update_pull_movespeed()
-	// BLUEMOON ADDITION AHEAD
+	// BLUEMOON ADD START
 	var/modified = FALSE
 	if(pulling)
 
@@ -84,19 +84,27 @@
 		if(HAS_TRAIT(pulling, TRAIT_BLUEMOON_HEAVY) && !(HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY) || HAS_TRAIT(src, TRAIT_BLUEMOON_HEAVY_SUPER))) // Тяжёлых персонажей сложнее тянуть, но не для тяжёлых или свертяжёлых
 			add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag, multiplicative_slowdown = PULL_HEAVY_SLOWDOWN)
 			modified = TRUE
+	// BLUEMOON ADD END
 
-		if(isliving(pulling)) // оригинальный код сплюрта
+		if(isliving(pulling)) // BLUEMOON EDIT - WAS if(pulling && isliving(pulling))
 			var/mob/living/L = pulling
 			if(drag_slowdown && L.lying && !L.buckled && grab_state < GRAB_AGGRESSIVE)
 				add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/bulky_drag, multiplicative_slowdown = PULL_PRONE_SLOWDOWN)
-				modified = TRUE
+				return
 
+			// BLUEMOON ADD START - PULL_SLOWDOWN
+			else if(drag_slowdown && !modified)
+				add_or_update_variable_movespeed_modifier(/datum/movespeed_modifier/pull_slowdown, multiplicative_slowdown = PULL_SLOWDOWN)
+				modified = TRUE
+			// BLUEMOON ADD END
+
+	// BLUEMOON ADD START
 	if(modified)
 		return
-
+	remove_movespeed_modifier(/datum/movespeed_modifier/pull_slowdown)
 	remove_movespeed_modifier(/datum/movespeed_modifier/bulky_drag)
 	remove_movespeed_modifier(/datum/movespeed_modifier/heavy_mob_drag)
-	// BLUEMOON ADDITION END
+	// BLUEMOON ADD END
 
 /mob/living/canZMove(dir, turf/target)
 	return can_zTravel(target, dir) && (movement_type & FLYING)

@@ -57,11 +57,13 @@
 	qdel(src)
 
 /datum/escape_menu/proc/home_stop_sounds()
-	client?.tgui_panel?.stop_music()
+	var/client/C = usr.client
+	SEND_SOUND(usr, sound(null))
+	C?.tgui_panel?.stop_music()
 	qdel(src)
 
 /datum/escape_menu/proc/home_close_game()
-	qdel(client)
+	qdel(usr.client)
 	qdel(src)
 
 /atom/movable/screen/escape_menu/home_button

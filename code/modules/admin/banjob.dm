@@ -8,6 +8,8 @@
 			SELECT reason FROM [format_table_name("ban")]
 			WHERE ckey = :ckey AND (bantype = 'JOB_PERMABAN' OR (bantype = 'JOB_TEMPBAN' AND expiration_time > Now())) AND isnull(unbanned) AND job = :rank
 			"}, list("ckey" = M.ckey, "rank" = rank))
+		if(!query_jobban_check_ban) //BLUEMOON ADD лишние проверки не помешают
+			return
 		if(!query_jobban_check_ban.warn_execute())
 			qdel(query_jobban_check_ban)
 			return

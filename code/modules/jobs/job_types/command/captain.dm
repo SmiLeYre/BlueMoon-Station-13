@@ -50,7 +50,10 @@
 
 /datum/job/captain/announce(mob/living/carbon/human/H)
 	..()
-	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(minor_announce), "Капитан [H.nameless ? "" : "[H.real_name] "] прибывает на [station_name()]!"))
+	var/displayed_rank = H.client?.prefs?.alt_titles_preferences[title]
+	if(!displayed_rank)	//Default to Captain
+		displayed_rank = "Капитан"
+	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(minor_announce), "[displayed_rank] [H.nameless ? "" : "[H.real_name] "] прибывает на [station_name()]!"))
 
 /datum/outfit/job/captain
 	name = "Captain"

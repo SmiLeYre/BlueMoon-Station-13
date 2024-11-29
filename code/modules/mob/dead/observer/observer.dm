@@ -59,6 +59,7 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	var/deadchat_name
 	var/datum/orbit_menu/orbit_menu
 	var/datum/spawners_menu/spawners_menu
+	var/lastclienttime = 0 //BLUEMOON ADD фиксируем время выхода игрока
 
 /mob/dead/observer/Initialize(mapload, mob/body)
 	set_invisibility(GLOB.observer_default_invisibility)
@@ -161,6 +162,12 @@ GLOBAL_VAR_INIT(observer_default_invisibility, INVISIBILITY_OBSERVER)
 	addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_atom_colour)), 10)
 
 /mob/dead/observer/Destroy()
+	//BLUEMOON ADD проверяем клиента на все болячки и ссылаем его в лобби при наличии его в госте или удаляем сикей, чтобы при заходе его отправило в лобби (fix undeleting ghosts)
+	if(client)
+		transfer_to_lobby()
+	if(ckey)
+		ckey = null
+	//BLUEMOON ADD END
 	if(data_huds_on)
 		remove_data_huds()
 	GLOB.ghost_images_default -= ghostimage_default

@@ -40,7 +40,7 @@
 /datum/quirk/empath
 	name = "Эмпат"
 	desc = "Будь то шестое чувство или тщательное изучения языка тела, вы можете с определить настроение цели посмотрев на неё."
-	value = 1 // SPLURT EDIT
+	value = 1
 	mob_trait = TRAIT_EMPATH
 	gain_text = "<span class='notice'>Вы чувствуете себя в гармонии с другими.</span>"
 	lose_text = "<span class='danger'>Вы чувствуете себя изолированно.</span>"
@@ -244,3 +244,33 @@
 	mob_trait = TRAIT_HARD_SOLES
 	gain_text = "<span class='notice'>Мусор под ногами теперь вам не помеха.</span>"
 	lose_text = "<span class='danger'>Вы чувствуете, как пол под вашими ногами становится грубее.</span>"
+
+///datum/quirk/bomber
+//	name = "Подрывник-Самоубийца"
+//	desc = "Благодаря своим связям с Красной Бригадой вы получили специальный имплант для самоуничтожения! Ну или почему-то вы решили ввести себе какую-то зелёную штуку из имплантера с мусорки и теперь вы научились делать что-то потрясное..."
+//	value = 4
+//
+///datum/quirk/bomber/add()
+//	. = ..()
+//	var/mob/living/carbon/human/H = quirk_holder
+//	if (!H)
+//		return
+//	var/obj/item/implant/explosive/E = new
+//	E.implant(H)
+//	H.update_icons()
+
+/datum/quirk/breathing_tube
+	name = "Трубка для Горлового Дыхания"
+	desc = "Похоже, что вам не нравятся стандартные противогазы и прочие методы дыхания в безвоздушных условиях. Есть решение!"
+	value = 1
+	mood_quirk = FALSE
+	processing_quirk = FALSE
+
+/datum/quirk/breathing_tube/on_spawn()
+	. = ..()
+
+	// Create a new augment item
+	var/obj/item/organ/cyberimp/mouth/breathing_tube/put_in = new
+
+	// Apply the augment to the quirk holder
+	put_in.Insert(quirk_holder, null, TRUE, TRUE)
