@@ -199,7 +199,7 @@
 	start_when = 1
 
 /datum/round_event/sniper/announce(fake)
-	send_fax_to_area(new /obj/item/paper/fax_CC_message/escapee/crazy_shooter_announce, /area/security/office, "Психиатрический Отдел Nanotrasen", FALSE)
+	send_fax_to_area(new /obj/item/paper/fax_CC_message/escapee/crazy_shooter_announce, /area/security, "Психиатрический Отдел Nanotrasen", FALSE)
 	// priority_announce("Один из наших... кхм... особых заключённых сбежал. Так получилось, что его последнее известное местонахождение до того, как их маячок заглох, - это ваша станция, так что будьте осторожней и остерегайтесь Технических Тоннелей. И еще... никто не знает, куда подевались ключи от оружейного сейфа?",
 	// sender_override = "Психиатрический Отдел Nanotrasen", has_important_message = TRUE)
 
