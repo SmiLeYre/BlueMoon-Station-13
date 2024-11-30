@@ -121,8 +121,7 @@
 		pre_light_power = door_light_power
 		if(has_environment_lights)
 			set_light(pre_light_range, pre_light_power, pre_light_color, TRUE)
-			if(multi_tile)
-				filler.set_light(pre_light_range, pre_light_power, pre_light_color)
+			filler?.set_light(pre_light_range, pre_light_power, pre_light_color)
 	else
 		lights_overlay = ""
 
@@ -131,7 +130,7 @@
 	if(greyscale_lights_color && !light_state)
 		lights_appearance.color = greyscale_lights_color
 
-	if(multi_tile)
+	if(filler)
 		lights_appearance.dir = dir
 
 	. += lights_appearance
@@ -376,11 +375,18 @@
 	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/highsec/highsec.dmi'
 	overlays_file = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/highsec/overlays.dmi'
 
-//GLASS
-/obj/machinery/door/airlock/glass_large
+
+//MULTI TILE
+
+/obj/machinery/door/airlock/multi_tile/metal
+	icon = 'modular_bluemoon/smiley/aesthetics/large_doors/icons/metal/multi_tile.dmi'
+	overlays_file = 'modular_bluemoon/smiley/aesthetics/large_doors/icons/metal/overlays.dmi'
+
+
+/obj/machinery/door/airlock/multi_tile/glass
 	icon = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/multi_tile/multi_tile.dmi'
 	overlays_file = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/multi_tile/overlays.dmi'
-	multi_tile = TRUE
+
 
 //ASSEMBLYS
 /obj/structure/door_assembly/door_assembly_public

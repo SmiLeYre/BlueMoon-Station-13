@@ -24618,7 +24618,7 @@
 /turf/closed/wall/r_wall,
 /area/command/teleporter)
 "hWq" = (
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /obj/machinery/door/firedoor,
 /turf/open/floor/glass,
 /area/commons/fitness/pool)

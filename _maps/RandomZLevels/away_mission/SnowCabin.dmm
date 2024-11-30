@@ -5469,7 +5469,7 @@
 	},
 /area/awaymission/cabin/caves/sovietcave)
 "nM" = (
-/obj/machinery/door/airlock/glass_large{
+/obj/machinery/door/airlock/multi_tile/glass{
 	name = "Medical Bay"
 	},
 /turf/open/floor/plasteel/white,

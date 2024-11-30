@@ -15568,7 +15568,7 @@
 /turf/open/floor/plating,
 /area/maintenance/department/science)
 "fqv" = (
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /turf/open/floor/plasteel,
 /area/commons/storage/primary)
 "fqC" = (
