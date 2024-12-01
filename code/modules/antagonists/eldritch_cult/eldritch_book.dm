@@ -106,7 +106,7 @@
 		else
 			lore["disabled"] = TRUE
 		lore["path"] = EK.route
-		lore["state"] = "Research"
+		lore["state"] = "Изучить"
 		lore["flavour"] = EK.gain_text
 		lore["desc"] = EK.desc
 		data["to_know"] += list(lore)
@@ -119,7 +119,7 @@
 		lore["sacs"] = EK.sacs_needed
 		lore["disabled"] = TRUE
 		lore["path"] = EK.route
-		lore["state"] = "Researched"
+		lore["state"] = "Изучен"
 		lore["flavour"] = EK.gain_text
 		lore["desc"] = EK.desc
 		data["to_know"] += list(lore)

@@ -103,7 +103,7 @@
 
 // BlueMoon edit. Transforming 3x3 runes into the regular dull variants
 /obj/effect/eldritch/big
-	name = "transmutation rune"
+	name = "Руна трансмутации"
 	icon = 'icons/obj/rune.dmi'
 	icon_state = "eld"
 	//pixel_x = -32 // BlueMoon edit
