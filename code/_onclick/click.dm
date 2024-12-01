@@ -157,7 +157,7 @@
 	var/list/closed = list()
 	var/list/checking = list(ultimate_target)
 	
-	while(checking.len && depth > 0)
+	while(checking.len && depth)
 		var/list/next = list()
 		--depth
 
@@ -168,7 +168,8 @@
 			closed[target] = TRUE
 
 			if(isturf(target) || isturf(target.loc) || (target in direct_access)) // Directly accessible atoms
-				if(target.Adjacent(src) || (tool && CheckToolReach(src, target, tool.reach))) // Adjacent or reaching attacks	// BLUEMOON EDIT - ModernTG Wide Airlocks.
+				// Adjacent or reaching attacks
+				if(target.Adjacent(src) || (tool && CheckToolReach(src, target, tool.reach))) // BLUEMOON EDIT - ModernTG Wide Airlocks.
 					return TRUE
 
 			if(!target.loc)
