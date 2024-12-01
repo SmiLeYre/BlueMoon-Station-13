@@ -236,6 +236,7 @@
 	pH = 8
 	taste_description = "chalky metal"
 	color = "#FFDADA"
+	chemical_flags = REAGENT_ALL_PROCESS
 	metabolization_rate = 8 * REAGENTS_METABOLISM //Metabolizes fast but heals a lot! Lasts far longer if more pure.
 	value = REAGENT_VALUE_RARE //Relatively hard to make now, might be fine with VERY_RARE instead depending on feedback.
 
