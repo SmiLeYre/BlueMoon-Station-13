@@ -1208,7 +1208,7 @@
 		playsound(src.loc, 'sound/machines/airlockforced.ogg', 30, 1)
 
 	if(autoclose)
-		autoclose_in(normalspeed ? 150 : 15)
+		autoclose_in(normalspeed ? 15 SECONDS : 15 DECISECONDS)
 
 	if(!density)
 		return TRUE
@@ -1253,7 +1253,7 @@
 
 	// BLUEMOON ADD START - ModernTG Wide Airlocks.
 	if(safe && sensor_obstacle_check())
-		autoclose_in(60)
+		autoclose_in(6 SECONDS)
 		return	// BLUEMOON ADD END
 
 	if(forced < 2)
