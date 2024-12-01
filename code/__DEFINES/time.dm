@@ -50,6 +50,8 @@ When using time2text(), please use "DDD" to find the weekday. Refrain from using
 
 #define TICKS *world.tick_lag
 
+#define DECISECONDS *1 // the base unit all of these defines are scaled by
+
 #define MILLISECONDS * 0.01
 
 #define DS2TICKS(DS) ((DS)/world.tick_lag)

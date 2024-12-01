@@ -126,7 +126,7 @@
 		set_frequency(frequency)
 
 	if(closeOtherId != null)
-		addtimer(CALLBACK(src, PROC_REF(update_other_id)), 5)
+		addtimer(CALLBACK(src, PROC_REF(update_other_id)), 5 DECISECONDS)
 	if(glass)
 		airlock_material = "glass"
 	if(security_level > AIRLOCK_SECURITY_METAL)
@@ -343,7 +343,7 @@
 			if(!justzap)
 				if(shock(user, 100))
 					justzap = TRUE
-					addtimer(VARSET_CALLBACK(src, justzap, FALSE) , 10)
+					addtimer(VARSET_CALLBACK(src, justzap, FALSE) , 1 SECONDS)
 					return
 			else
 				return
@@ -359,7 +359,7 @@
 			if(cyclelinkedairlock.operating)
 				cyclelinkedairlock.delayed_close_requested = TRUE
 			else
-				addtimer(CALLBACK(cyclelinkedairlock, PROC_REF(close)), 2)
+				addtimer(CALLBACK(cyclelinkedairlock, PROC_REF(close)), 2 DECISECONDS)
 	if(ishuman(user) && prob(5) && src.density)
 		var/mob/living/carbon/human/H = user
 		if((HAS_TRAIT(H, TRAIT_DUMB)) && Adjacent(user))
@@ -1226,7 +1226,7 @@
 	operating = FALSE
 	if(delayed_close_requested)
 		delayed_close_requested = FALSE
-		addtimer(CALLBACK(src, PROC_REF(close)), 1)
+		addtimer(CALLBACK(src, PROC_REF(close)), 1 DECISECONDS)
 	return TRUE
 
 // BLUEMOON ADD START - ModernTG Wide Airlocks.
