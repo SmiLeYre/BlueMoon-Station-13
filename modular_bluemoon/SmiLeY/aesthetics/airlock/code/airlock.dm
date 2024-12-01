@@ -376,7 +376,7 @@
 	overlays_file = 'modular_bluemoon/smiley/aesthetics/airlock/icons/airlocks/highsec/overlays.dmi'
 
 
-//MULTI TILE
+// MULTI TILE
 
 /obj/machinery/door/airlock/multi_tile/metal
 	icon = 'modular_bluemoon/smiley/aesthetics/large_doors/icons/metal/multi_tile.dmi'

@@ -43,7 +43,7 @@
 
 	var/turf/our_turf = get_turf(filler)
 	for(var/atom/movable/M in (our_turf.contents - filler))
-		if(M.density) //something is blocking the door
+		if(M.density) // something is blocking the door
 			return TRUE
 
 
@@ -134,7 +134,7 @@
 
 
 /obj/airlock_filler_object/Destroy(force)
-	if(parent_airlock)	//
+	if(parent_airlock)
 		parent_airlock.filler = null
 		parent_airlock.SetBounds()
 
@@ -154,7 +154,7 @@
 	qdel(src)
 
 
-//ASSEMBLYS!
+// ASSEMBLYS!
 /obj/structure/door_assembly/multi_tile
 	var/width = 1
 

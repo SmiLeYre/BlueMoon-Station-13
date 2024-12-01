@@ -1229,7 +1229,7 @@
 /obj/machinery/door/airlock/proc/sensor_obstacle_check()
 	var/turf/our_turf = get_turf(src)
 	for(var/atom/movable/M in (our_turf.contents - src))
-		if(M.density) //something is blocking the door
+		if(M.density) // something is blocking the door
 			return TRUE	// BLUEMOON ADD END
 
 
