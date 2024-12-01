@@ -1757,7 +1757,7 @@
 /turf/open/floor/iron/cafeteria,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/kitchen)
 "iA" = (
-/obj/machinery/door/airlock/glass_large{
+/obj/machinery/door/airlock/multi_tile/glass{
 	req_access = list("tarkoff")
 	},
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
@@ -6191,7 +6191,7 @@
 /turf/open/floor/plasteel/cult,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "Ih" = (
-/obj/machinery/door/airlock/glass_large{
+/obj/machinery/door/airlock/multi_tile/glass{
 	req_access = list("tarkoff")
 	},
 /obj/machinery/door/firedoor/solid,
@@ -8783,7 +8783,7 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
 "Xj" = (
-/obj/machinery/door/airlock/glass_large{
+/obj/machinery/door/airlock/multi_tile/glass{
 	req_access = list("tarkoff")
 	},
 /obj/machinery/door/firedoor/solid,

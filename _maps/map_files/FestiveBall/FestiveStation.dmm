@@ -47762,7 +47762,7 @@
 /area/edina/backstreet/supply)
 "cbY" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/machinery/door/airlock/glass_large{
+/obj/machinery/door/airlock/multi_tile/glass{
 	name = "Pub"
 	},
 /obj/structure/fans/tiny,
@@ -49689,7 +49689,7 @@
 /turf/open/floor/plasteel/white,
 /area/commons/fitness/pool)
 "cgB" = (
-/obj/machinery/door/airlock/glass_large{
+/obj/machinery/door/airlock/multi_tile/glass{
 	name = "Gymnasium"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -56648,7 +56648,7 @@
 /turf/closed/festive/bluebrick,
 /area/maintenance/department/medical)
 "cxg" = (
-/obj/machinery/door/airlock/glass_large{
+/obj/machinery/door/airlock/multi_tile/glass{
 	name = "Clinic"
 	},
 /obj/structure/barricade/wooden/snowed,

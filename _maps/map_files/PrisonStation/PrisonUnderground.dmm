@@ -2776,7 +2776,7 @@
 /turf/open/floor/plasteel,
 /area/awaymission)
 "dPo" = (
-/obj/machinery/door/airlock/glass_large{
+/obj/machinery/door/airlock/multi_tile/glass{
 	name = "Ian's Pet Care"
 	},
 /obj/structure/fans/tiny/invisible,
@@ -10680,7 +10680,7 @@
 /turf/closed/wall/mineral/iron,
 /area/ruin/space/has_grav/deepstorage/dorm)
 "qTv" = (
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /obj/structure/fans/tiny,
 /obj/structure/barricade/wooden/snowed,
 /turf/open/floor/pod/dark,
@@ -12666,7 +12666,7 @@
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/powered/animal_hospital)
 "uXW" = (
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /turf/open/floor/pod/dark,
 /area/ruin/lavaland/powered/snow_biodome)
 "uZo" = (

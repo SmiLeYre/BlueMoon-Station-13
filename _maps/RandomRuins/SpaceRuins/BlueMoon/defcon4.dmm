@@ -1462,7 +1462,7 @@
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/door/firedoor/solid,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/trauma)
 "iC" = (
@@ -4124,7 +4124,7 @@
 /area/ruin/space/has_grav/bluemoon/port_tarkon/starboardhall)
 "zR" = (
 /obj/machinery/door/firedoor/solid,
-/obj/machinery/door/airlock/glass_large,
+/obj/machinery/door/airlock/multi_tile/glass,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/garden)
 "zW" = (

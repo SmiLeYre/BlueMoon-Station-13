@@ -156,25 +156,30 @@
 
 	var/list/closed = list()
 	var/list/checking = list(ultimate_target)
-	while (checking.len && depth > 0)
+	
+	while(checking.len && depth)
 		var/list/next = list()
 		--depth
 
 		for(var/atom/target in checking)  // will filter out nulls
 			if(closed[target] || isarea(target))  // avoid infinity situations
 				continue
+
 			closed[target] = TRUE
-			if(isturf(target) || isturf(target.loc) || (target in direct_access)) //Directly accessible atoms
-				if(Adjacent(target) || (tool && CheckToolReach(src, target, tool.reach))) //Adjacent or reaching attacks
+
+			if(isturf(target) || isturf(target.loc) || (target in direct_access)) // Directly accessible atoms
+				// Adjacent or reaching attacks
+				if(target.Adjacent(src) || (tool && CheckToolReach(src, target, tool.reach))) // BLUEMOON EDIT - ModernTG Wide Airlocks.
 					return TRUE
 
-			if (!target.loc)
+			if(!target.loc)
 				continue
 
 			if(!(SEND_SIGNAL(target.loc, COMSIG_ATOM_CANREACH, next) & COMPONENT_BLOCK_REACH) && target.loc.canReachInto(src, ultimate_target, next, view_only, tool))
 				next += target.loc
 
 		checking = next
+
 	return FALSE
 
 /atom/movable/proc/DirectAccess()
