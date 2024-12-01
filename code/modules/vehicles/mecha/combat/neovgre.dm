@@ -3,7 +3,7 @@
 	desc = "Nezbere's most powerful creation, a mighty war machine of unmatched power said to have ended wars in a single night. Armed with a heavy laser and a tesla sphere generator. Requires a pilot and a gunner."
 	icon = 'icons/mecha/neovgre.dmi'
 	icon_state = "neovgre"
-	max_integrity = 500 //This is THE ratvarian superweaon, its deployment is an investment
+	max_integrity = 1000 //This is THE ratvarian superweaon, its deployment is an investment
 	armor = list(MELEE = 60, BULLET = 70, LASER = 65, ENERGY = 65, BOMB = 60, BIO = 100, RAD = 100, FIRE = 100, ACID = 100) //Its similar to the clockwork armour albeit with a few buffs becuase RATVARIAN SUPERWEAPON!!
 	force = 50 //SMASHY SMASHY!!
 	movedelay = 4
@@ -21,7 +21,7 @@
 //override this proc if you need to split up mecha control between multiple people (see savannah_ivanov.dm)
 /obj/vehicle/sealed/mecha/combat/neovgre/auto_assign_occupant_flags(mob/M)
 	if(driver_amount() < max_drivers)
-		add_control_flags(M, VEHICLE_CONTROL_DRIVE|VEHICLE_CONTROL_SETTINGS)
+		add_control_flags(M, VEHICLE_CONTROL_DRIVE|VEHICLE_CONTROL_SETTINGS|VEHICLE_CONTROL_MELEE)
 	else
 		add_control_flags(M, VEHICLE_CONTROL_MELEE|VEHICLE_CONTROL_EQUIPMENT)
 
@@ -52,7 +52,7 @@
 	addtimer(CALLBACK(src,PROC_REF(go_critical)),breach_time)
 
 /obj/vehicle/sealed/mecha/combat/neovgre/proc/go_critical()
-	explosion(get_turf(loc), 3, 5, 10, 20, 30)
+	explosion(get_turf(loc), 6, 10, 20, 40, 60)
 	if(!QDELETED(src))
 		qdel(src)
 

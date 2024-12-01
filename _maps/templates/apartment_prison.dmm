@@ -410,14 +410,13 @@
 	pixel_y = 13;
 	pixel_x = 3
 	},
-/obj/structure/railing{
+/obj/structure/fluff/railing{
 	dir = 4;
-	icon_state = "railing";
-	pixel_x = -24
+	pixel_x = -22
 	},
-/obj/structure/railing{
+/obj/structure/fluff/railing{
 	dir = 8;
-	pixel_x = 30
+	pixel_x = 29
 	},
 /turf/open/floor/plasteel/dark,
 /area/hilbertshotel)
@@ -452,11 +451,6 @@
 "nC" = (
 /obj/structure/flora/spookyrock,
 /obj/machinery/light/floor,
-/obj/structure/fluff/railing/corner{
-	dir = 8;
-	pixel_x = 33;
-	pixel_y = 33
-	},
 /turf/open/water/lavaland_jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
@@ -616,6 +610,9 @@
 	icon_state = "railing"
 	},
 /obj/structure/lattice/catwalk,
+/obj/structure/railing/corner{
+	dir = 8
+	},
 /turf/open/floor/plating/dirt/dark/jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
@@ -629,11 +626,6 @@
 /area/hilbertshotel)
 "st" = (
 /obj/structure/flora/junglebush/large,
-/obj/structure/fluff/railing/corner{
-	dir = 4;
-	pixel_x = -33;
-	pixel_y = -33
-	},
 /turf/open/water/lavaland_jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},
@@ -712,7 +704,7 @@
 	dir = 1
 	},
 /obj/machinery/jukebox{
-	req_one_access = null;
+	req_one_access = null
 	},
 /turf/open/floor/plasteel,
 /area/hilbertshotel)
@@ -1438,6 +1430,9 @@
 	dir = 8
 	},
 /obj/structure/lattice/catwalk,
+/obj/structure/railing/corner{
+	dir = 4
+	},
 /turf/open/floor/plating/dirt/dark/jungle{
 	initial_gas_mix = "o2=21.78;n2=82.36;TEMP=293.15"
 	},

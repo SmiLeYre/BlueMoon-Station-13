@@ -40,6 +40,11 @@
 	path = /obj/item/clothing/head/rice_hat
 
 /datum/gear/head/ushanka
+	name = "Ushanka"
+	path = /obj/item/clothing/head/ushanka
+
+/datum/gear/head/ushanka/soviet
+	name = "Soviet Ushanka"
 	path = /obj/item/clothing/head/ushanka
 
 /datum/gear/head/slime
@@ -211,5 +216,9 @@
 	path = /obj/item/clothing/head/kabuto
 
 /datum/gear/head/maid_headband
+	name = "Tactical Maid Headband"
+	path = /obj/item/clothing/head/maid/syndicate
+
+/datum/gear/head/
 	name = "Tactical Maid Headband"
 	path = /obj/item/clothing/head/maid/syndicate

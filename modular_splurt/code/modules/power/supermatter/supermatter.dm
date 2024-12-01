@@ -14,9 +14,9 @@ Our Method:
 • Scan through the player list an count how many alive engineers are there. If you sign up as an engineer, you consent to fixing the damage.
 */
 
-#define EXPLOSION_MODIFIER_SMALL 10000
-#define EXPLOSION_MODIFIER_MEDIUM 20000
-#define EXPLOSION_MODIFIER_LARGE 30000
+#define EXPLOSION_MODIFIER_SMALL 1
+#define EXPLOSION_MODIFIER_MEDIUM 2
+#define EXPLOSION_MODIFIER_LARGE 3
 
 // Check if the SM Can explode at all or not
 /proc/check_sm_delam()
@@ -132,27 +132,27 @@ Our Method:
 		if(0)
 			investigate_log("has delaminated, but there are only [alive_engineers] engineers! Defaulting to minimum explosion.", INVESTIGATE_SUPERMATTER)
 			priority_announce("Обнаружено расслоение структуры Суперматерии. Гиперструктура кристалла разрушилась в пределах допустимого уровня безопасности, что привело к самоаннигиляции сверхматериального образования.", "BНИМАНИЕ: СУПЕРМАТЕРИЯ ПОТЕРЯНА!")
-			explosion(get_turf(src), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL), 0, 2), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL), 0, 2), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL), 3, 5), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL), 5, 15), TRUE, FALSE)
+			explosion(get_turf(src), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL * 0.1), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL * 0.25), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL * 0.5), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL * 0.75), TRUE, TRUE, ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL * 1))
 			qdel(src)
 			return
 //	DELAMINATION C: Enough engineers, halved explosion size.
 		if(1)
 			investigate_log("has delaminated with [alive_engineers] engineers, explosion size has been halved!", INVESTIGATE_SUPERMATTER)
 			priority_announce("Обнаружено множественное расслоение структуры Суперматерии. Гиперструктура кристалла завершила коллапс фатально. Bозможны жертвы.", "BНИМАНИЕ: СУПЕРМАТЕРИЯ ПОТЕРЯНА!")
-			explosion(get_turf(src), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM), 2, 4), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM), 4, 8), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM), 8, 16), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM), 16, 32), TRUE, FALSE)
+			explosion(get_turf(src), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM * 0.1), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM * 0.25), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM * 0.5), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM * 0.75), TRUE, TRUE, ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL * 1))
 			qdel(src)
 			return
 //	DELAMINATION D:
 		if(2 to INFINITY)
 			investigate_log("has delaminated with full effect due to there being [alive_engineers] engineers.", INVESTIGATE_SUPERMATTER)
 			priority_announce("Обнаружено катастрофическое расслоение структуры Суперматерии. Гиперструктура кристалла создала катастрофический хлопок.", sender_override="BНИМАНИЕ: СУПЕРМАТЕРИЯ ПОТЕРЯНА!")
-			explosion(get_turf(src), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE), 4, 8), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE), 8, 16), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE), 16, 32), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE), 32, 64), TRUE, FALSE)
+			explosion(get_turf(src), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE * 0.1), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE * 0.25), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE * 0.5), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE * 0.75), TRUE, TRUE, ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL * 1))
 			qdel(src)
 			return
 		if(null)
 			investigate_log("has delaminated, but there are only [alive_engineers] engineers! Defaulting to minimum explosion.", INVESTIGATE_SUPERMATTER)
 			priority_announce("Обнаружено расслоение структуры Суперматерии. Гиперструктура кристалла разрушилась в пределах допустимого уровня безопасности, что привело к самоаннигиляции сверхматериального образования.", "BНИМАНИЕ: СУПЕРМАТЕРИЯ ПОТЕРЯНА!")
-			explosion(get_turf(src), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL), 0, 2), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL), 0, 2), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL), 3, 5), clamp(((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL), 5, 15), TRUE, FALSE)
+			explosion(get_turf(src), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL * 0.1), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL * 0.25), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL * 0.5), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL * 0.75), TRUE, TRUE, ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL * 1))
 			qdel(src)
 			return
 

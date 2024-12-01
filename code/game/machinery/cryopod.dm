@@ -428,7 +428,7 @@ GLOBAL_LIST_EMPTY(ghost_records)
 	if(mob_occupant.loc.z in SSmapping.levels_by_trait(ZTRAIT_STATION)) // BLUEMOON - CRYO_ITEMS_AND_MESSAGES_FIX - ADD - не будет оповещения, если уходящий в крио вне станции
 		if(GLOB.announcement_systems.len)
 			var/obj/machinery/announcement_system/announcer = pick(GLOB.announcement_systems)
-			announcer.announce(is_teleporter ? "CRYOSTORAGE_TELE" : "CRYOSTORAGE", mob_occupant.real_name, announce_rank, list())
+			announcer.announce(is_teleporter ? "CRYOSTORAGE_TELE" : "CRYOSTORAGE", mob_occupant.real_name, announce_rank, announce_rank, list())
 
 	if (pod)
 		pod.visible_message(span_notice("\The [pod] hums and hisses as it [is_teleporter ? "teleports" : "moves"] [mob_occupant.real_name] [is_teleporter ? "to centcom" : "into storage"]."))

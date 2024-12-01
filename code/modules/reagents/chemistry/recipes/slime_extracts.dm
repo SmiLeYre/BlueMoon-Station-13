@@ -12,7 +12,7 @@
 
 /datum/chemical_reaction/slime/proc/delete_extract(datum/reagents/holder)
 	var/obj/item/slime_extract/M = holder.my_atom
-	if(M.Uses <= 0 && !results.len) //if the slime doesn't output chemicals
+	if(M?.Uses <= 0 && !results.len) //if the slime doesn't output chemicals //	BLUEMOON EDIT: TODO:runtime
 		qdel(M)
 
 //Grey
@@ -586,7 +586,7 @@
 	var/turf/T = get_turf(holder.my_atom)
 	new /obj/effect/timestop(T, null, null, null)
 	if(istype(extract))
-		if(extract.Uses > 0)
+		if(extract?.Uses > 0) //	BLUEMOON EDIT: TODO:runtime
 			var/mob/lastheld = get_mob_by_key(holder.my_atom.fingerprintslast)
 			if(lastheld && !lastheld.equip_to_slot_if_possible(extract, ITEM_SLOT_HANDS, disable_warning = TRUE))
 				extract.forceMove(get_turf(lastheld))

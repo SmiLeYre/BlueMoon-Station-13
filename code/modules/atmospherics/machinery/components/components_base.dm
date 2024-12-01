@@ -161,6 +161,11 @@
 	to_chat(user, "<span class='danger'>Доступ запрещён.</span>")
 	return UI_CLOSE
 
+// Tool acts
+
+/obj/machinery/atmospherics/components/return_analyzable_air()
+	return airs
+
 /obj/machinery/atmospherics/components/attack_ghost(mob/dead/observer/O)
 	. = ..()
 	atmosanalyzer_scan(airs, O, src, FALSE)

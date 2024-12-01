@@ -63,12 +63,13 @@
 	//msg = "<b>[user]</b> " + msg //SKYRAT CHANGE
 	var/dchatmsg = "<span class='emote'><b>[user]</b> [msg]</span>" //SKYRAT CHANGE
 
-	for(var/mob/M in GLOB.dead_mob_list)
-		if(!M.client || isnewplayer(M))
-			continue
-		var/T = get_turf(user)
-		if(M.stat == DEAD && M.client && (M.client.prefs && (M.client.prefs.chat_toggles & CHAT_GHOSTSIGHT)) && !(M in viewers(T, null)) && (user.client)) //SKYRAT CHANGE - only user controlled mobs show their emotes to all-seeing ghosts, to reduce chat spam
-			M.show_message(dchatmsg) //SKYRAT CHANGE
+	if(user.client)
+		for(var/mob/M in GLOB.dead_mob_list)
+			if(!M.client || isnewplayer(M))
+				continue
+			var/T = get_turf(user)
+			if(M.stat == DEAD && M.client && (M.client.prefs.chat_toggles & CHAT_GHOSTSIGHT) && !(M in viewers(T, null)))
+				M.show_message(dchatmsg)
 
 	if(emote_type == EMOTE_AUDIBLE)
 		user.audible_message(dchatmsg, runechat_popup = chat_popup, rune_msg = msg)

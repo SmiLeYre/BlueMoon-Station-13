@@ -90,7 +90,7 @@
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEHAIR|HIDEEARS
 
-/obj/item/clothing/head/helmet/sec/mark45_ce
+/obj/item/clothing/head/helmet/sec/mark45_ce //Личный предмет.
 	name = "Mk. 45 Master Engineer Specialist Helmet"
 	desc = "A modified Mk.45 Snow Cover helmet of the Catcrin army. It seems to have an armor comb on it alongside engineer-grade visor and Yernela white color scheme. The whole helmet looks like an individual design and does have personal code written on the helmet nape: ME-KVM:82991"
 	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
@@ -200,7 +200,7 @@
 		"Default" = list("icon_state" = "mark45_armor_support"),
 	)
 
-/obj/item/clothing/suit/armor/mark45_armor_ce
+/obj/item/clothing/suit/armor/mark45_armor_ce //Личный респрайт.
 	name = "Mk. 45 Master Engineer Specialist Armor"
 	desc = "An exquisite example of extra-padded engineer mark 45 armor of the Catcrin army with officer-rank cape, featuring some of the Yernela winter armor elements and white color scheme. It seems that this armor is special design for one specific individual and does have his personal code written on the neckplate: ME-KVM:829917"
 	icon = 'modular_bluemoon/oni3288/icons/mob/icons/mark45.dmi'
@@ -837,9 +837,7 @@
 	name = "Second Catcrin's tactical gasmask"
 	slot = ITEM_SLOT_BACKPACK
 	path = /obj/item/clothing/mask/gas/syndicate/cool_version/catcrin_combatmask_two
-
-	ckeywhitelist = list("oni3288", "ghos7ik", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin")
-
+	ckeywhitelist = list("oni3288", "ghos7ik", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/catcrin_combatmask_tree
@@ -855,3 +853,24 @@
 	path = /obj/item/storage/box/catcrin_kit
 	ckeywhitelist = list("oni3288", "discord980", "mihana964", "romontesque", "enigma418", "smol42", "notlikeluls",  "kladmenuwu", "alexsandoor", "scramblescream", "nai1ten", "devildeadspace", "zetneskov", "hazzi", "definitelynotnesuby", "silverfoxpaws", "pr1zrak", "earthphobia", "wafflemeow", "trora", "kosep", "urfdrf", "mikolaostavkin", "xaeshkavd", "deltarayx")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+
+//////////////////// ДАТУМы для личных кастомных Кеткринских вещей.
+
+/datum/gear/donator/bm/mark45_ce
+	name = "Mk. 45 Master Engineer Specialist Helmet"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/head/helmet/sec/mark45_ce
+	ckeywhitelist = list("silverfoxpaws")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
+	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
+
+/datum/gear/donator/bm/mark45_armor_ce
+	name = "Mk. 45 Master Engineer Specialist Armor"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/clothing/suit/armor/mark45_armor_ce
+	ckeywhitelist = list("silverfoxpaws")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
+	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")

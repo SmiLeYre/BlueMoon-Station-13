@@ -78,6 +78,12 @@
 
 	backpack_contents = list(/obj/item/reagent_containers/spray/pepper=1, /obj/item/restraints/handcuffs/cable/zipties=2, /obj/item/syndicate_uplink=1)
 
+//BLUEMOON ADD
+/datum/martial_art/krav_maga/restricted/bouncer
+	name = "Krav Maga (bouncer edition)"
+	valid_areas = list(/area/service/bar/atrium, /area/service/bar)
+//BLUEMOON ADD END
+/*
 /datum/martial_art/bouncer
 	name = "Bouncer martial art"
 	id = MARTIALART_BOUNCER
@@ -137,10 +143,10 @@
 	if(check_streak(A,D))
 		return TRUE
 	..()
-
+*/
 /datum/outfit/job/bouncer/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
 	if(visualsOnly)
 		return
-	var/datum/martial_art/bouncer/B = new
+	var/datum/martial_art/krav_maga/restricted/bouncer/B = new //BLUEMOON CHANGE
 	B.teach(H)

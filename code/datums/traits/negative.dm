@@ -359,73 +359,6 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	to_chat(quirk_holder, "<span class='big bold info'>Пожалуйста учтите, что диссоциативное расстройство НЕ даёт права атаковать или вмешиваться в \
 	раунд. Вы не антагонист и правила будут к вам применены те же, что и к обычным членам экипажа.</span>")
 
-/datum/quirk/social_anxiety
-	name = "Социофобия"
-	desc = "Вам с трудом даётся общение с другими — вы часто заикаетесь или даже замыкаетесь."
-	value = -1
-	gain_text = "<span class='danger'>Вы начинаете волноваться о своих словах.</span>"
-	lose_text = "<span class='notice'>Вам становится легче говорить.</span>" //if only it were that easy!
-	medical_record_text = "Пациент предпочитает избегать социальных взаимодействий."
-	mob_trait = TRAIT_ANXIOUS
-	var/dumb_thing = TRUE
-	processing_quirk = TRUE
-
-/datum/quirk/social_anxiety/add()
-	RegisterSignal(quirk_holder, COMSIG_MOB_EYECONTACT, PROC_REF(eye_contact))
-	RegisterSignal(quirk_holder, COMSIG_MOB_EXAMINATE, PROC_REF(looks_at_floor))
-
-/datum/quirk/social_anxiety/remove()
-	UnregisterSignal(quirk_holder, list(COMSIG_MOB_EYECONTACT, COMSIG_MOB_EXAMINATE))
-
-/datum/quirk/social_anxiety/on_process()
-	var/nearby_people = 0
-	for(var/mob/living/carbon/human/H in oview(3, quirk_holder))
-		if(H.client)
-			nearby_people++
-	var/mob/living/carbon/human/H = quirk_holder
-	if(prob(2 + nearby_people))
-		H.stuttering = max(3, H.stuttering)
-	else if(prob(min(3, nearby_people)) && !H.silent)
-		to_chat(H, "<span class='danger'>Вы замыкаетесь в себе. Вы <i>действительно</i> не в настроении для разговоров.</span>")
-		H.silent = max(10, H.silent)
-	else if(prob(0.5) && dumb_thing)
-		to_chat(H, "<span class='userdanger'>Вы думаете о глупости, сказанной давно, и сгораете от стыда.</span>")
-		dumb_thing = FALSE //only once per life
-		if(prob(1))
-			new/obj/item/reagent_containers/food/snacks/pastatomato(get_turf(H)) //now that's what I call spaghetti code
-
-// small chance to make eye contact with inanimate objects/mindless mobs because of nerves
-/datum/quirk/social_anxiety/proc/looks_at_floor(datum/source, atom/A)
-	var/mob/living/mind_check = A
-	if(prob(85) || (istype(mind_check) && mind_check.mind))
-		return
-
-	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), quirk_holder, "<span class='smallnotice'>Вы пересекаетесь взглядами с [A].</span>"), 3)
-
-/datum/quirk/social_anxiety/proc/eye_contact(datum/source, mob/living/other_mob, triggering_examiner)
-	if(prob(75))
-		return
-	var/msg
-	if(triggering_examiner)
-		msg = "Вы смотрите на [other_mob], "
-	else
-		msg = "[other_mob] смотрит на вас, "
-
-	switch(rand(1,3))
-		if(1)
-			quirk_holder.Jitter(10)
-			msg += "из-за чего вы начинаете ёрзать!"
-		if(2)
-			quirk_holder.stuttering = max(3, quirk_holder.stuttering)
-			msg += "из-за чего вы начинаете заикаться!"
-		if(3)
-			quirk_holder.Stun(2 SECONDS)
-			msg += "из-за чего вы замираете!"
-
-	SEND_SIGNAL(quirk_holder, COMSIG_ADD_MOOD_EVENT, "anxiety_eyecontact", /datum/mood_event/anxiety_eyecontact)
-	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(to_chat), quirk_holder, "<span class='userdanger'>[msg]</span>"), 3) // so the examine signal has time to fire and this will print after
-	return COMSIG_BLOCK_EYECONTACT
-
 /datum/mood_event/anxiety_eyecontact
 	description = "<span class='warning'>Иногда из-за визуального контакта я нервничаю...</span>\n"
 	mood_change = -5
@@ -585,3 +518,24 @@ GLOBAL_LIST_EMPTY(family_heirlooms)
 	if(H)
 		var/datum/species/species = H.dna.species
 		species.disliked_food &= ~ALCOHOL
+
+/datum/quirk/less_nightmare
+	name = "Отпрыск Ночного Кошмара"
+	desc = "Вы очень схожи с так называемыми Ночными Кошмарами. Каким бы образом это не получилось, теперь всякое свечение вам опасно."
+	value = -4
+	mob_trait = TRAIT_LESS_NIGHTMARE
+	gain_text = span_notice("Ваше тело становится уязвимым к свету...")
+	lose_text = span_notice("Ваше тело более устойчивым, чем раньше.")
+	medical_record_text = "Тело пациента уязвимо к свету."
+
+/datum/quirk/less_nightmare/add()
+	var/mob/living/carbon/human/C = quirk_holder
+	C.AddElement(/datum/element/photosynthesis, 1, 1, 0, 0, 0, 0, SHADOW_SPECIES_LIGHT_THRESHOLD, SHADOW_SPECIES_LIGHT_THRESHOLD)
+
+/datum/quirk/less_nightmare/remove()
+	var/mob/living/carbon/human/C = quirk_holder
+	// BLUEMOON EDIT START - sanity check
+	if(!C)
+		return
+	// BLUEMOON EDIT END
+	C.RemoveElement(/datum/element/photosynthesis, 1, 1, 0, 0, 0, 0, SHADOW_SPECIES_LIGHT_THRESHOLD, SHADOW_SPECIES_LIGHT_THRESHOLD)

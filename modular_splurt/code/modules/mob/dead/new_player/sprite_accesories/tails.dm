@@ -433,6 +433,13 @@
 	icon_state = "succubus"
 	matrixed_sections = MUTCOLORS
 
+/datum/sprite_accessory/tails/mam_tail/takahiro_kitsune
+	name = "Takahiro Kitsune Tails" //takahiro had five tails i just wanted to follow the 'T' naming convention vs. tamamo and triple
+	icon_state = "7sune"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/tails_animated/mam_tails_animated/demon_spade
 	name = "Succubus tail"
 	icon = 'modular_splurt/icons/mob/mam_tails.dmi'
@@ -514,3 +521,4 @@
 	matrixed_sections = MATRIX_RED_BLUE
 	icon = 'modular_splurt/icons/mob/mam_tails.dmi'
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
+
