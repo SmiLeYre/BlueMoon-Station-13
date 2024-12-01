@@ -675,11 +675,12 @@
 		if("closing")
 			update_icon(AIRLOCK_CLOSING)
 		if("deny")
-			if(!machine_stat)
-				update_icon(AIRLOCK_DENY)
-				playsound(src,doorDeni,50,0,3)
-				sleep(6)
-				update_icon(AIRLOCK_CLOSED)
+			if(machine_stat)
+				return
+
+			update_icon(AIRLOCK_DENY)
+			playsound(src, doorDeni, 50, 0, 3)
+			addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_icon), AIRLOCK_CLOSED), 6 DECISECONDS, TIMER_DELETE_ME)
 
 /obj/machinery/door/airlock/examine(mob/user)
 	. = ..()
@@ -769,15 +770,18 @@
 	return .
 
 /obj/machinery/door/airlock/attack_ai(mob/user)
-	if(!src.canAIControl(user))
-		if(src.canAIHack())
-			src.hack(user)
+	if(!canAIControl(user))
+		if(canAIHack())
+			hack(user)
 			return
+
 		else
 			to_chat(user, "<span class='warning'>Airlock AI control has been blocked with a firewall. Unable to hack.</span>")
+
 	if(obj_flags & EMAGGED)
 		to_chat(user, "<span class='warning'>Unable to interface: Airlock is unresponsive.</span>")
 		return
+
 	if(detonated)
 		to_chat(user, "<span class='warning'>Unable to interface. Airlock control panel damaged.</span>")
 		return
@@ -1328,12 +1332,15 @@
 
 /obj/machinery/door/airlock/emag_act(mob/user)
 	. = ..()
+
 	if(operating || !density || !hasPower() || obj_flags & EMAGGED)
 		return
+
 	operating = TRUE
 	update_icon(AIRLOCK_EMAG, 1)
 	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
-	addtimer(CALLBACK(src, PROC_REF(open_sesame)), 6)
+	addtimer(CALLBACK(src, PROC_REF(open_sesame)), 6 DECISECONDS, TIMER_DELETE_ME)
+
 	return TRUE
 
 /obj/machinery/door/airlock/proc/open_sesame()
