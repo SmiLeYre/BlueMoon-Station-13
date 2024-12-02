@@ -848,6 +848,17 @@
 		if(isElectrified())
 			if(shock(user, 100))
 				return
+	if(act_intent == INTENT_GRAB && note)
+		user.visible_message("<span class='notice'>[user] rips down [note] from [src].</span>", "<span class='notice'>You remove [note] from [src].</span>")
+		note.forceMove(user.loc)
+		user.put_in_hands(note)
+		playsound(src.loc, 'sound/items/poster_ripped.ogg', 30, 1)
+		add_fingerprint(user)
+		note.add_fingerprint(user)
+		note = null
+		update_icon()
+		return
+	
 	return ..()
 
 /obj/machinery/door/airlock/attempt_wire_interaction(mob/user)
