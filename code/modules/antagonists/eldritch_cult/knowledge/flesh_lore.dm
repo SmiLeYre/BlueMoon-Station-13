@@ -14,7 +14,7 @@
 /datum/eldritch_knowledge/flesh_ghoul
 	name = "Незавершенный Ритуал"
 	desc = "Позволяет произвести ритуал трансмутации мертвого тела и мака для создания Безмолвного Мертвеца. \
-	Безмолвный мертвец не способен говорить и имеет 50 очков здоровья, но он может использовать Кровавый клинок."
+		Безмолвный мертвец не способен говорить и имеет 50 очков здоровья, но он может использовать Кровавый клинок. "
 	gain_text = "Мною были найдены запретные темные знания, их незаконченные обрывки...пока, незаконченные. Я продолжил двигаться вперед."
 	cost = 1
 	required_atoms = list(/mob/living/carbon/human,/obj/item/reagent_containers/food/snacks/grown/poppy)
@@ -137,11 +137,9 @@
 	UnregisterSignal(source, COMSIG_MOB_DEATH)
 
 /datum/eldritch_knowledge/flesh_mark
-/datum/heretic_knowledge/mark/flesh_mark
 	name = "Метка Плоти"
-	desc = "Ваша Хватка Мансуса теперь накладывает Метку Плоти. Её активация происходит после того, как вы атакуете жертву Кровавым клинком. \
-		При активации метка вызывает у носителя обильное кровотечение."
 	gain_text = "И тогда я узрел их, отмеченных. Они были недостижимы. А крики их наполнены агонией."
+	desc = "Ваша Хватка Мансуса теперь накладывает Метку Плоти. Её активация происходит после того, как вы атакуете жертву Кровавым клинком. При активации метка вызывает у носителя обильное кровотечение."
 	cost = 2
 	next_knowledge = list(/datum/eldritch_knowledge/summon/raw_prophet)
 	banned_knowledge = list(/datum/eldritch_knowledge/rust_mark,/datum/eldritch_knowledge/ash_mark,/datum/eldritch_knowledge/void_mark)
