@@ -18,8 +18,8 @@
 	if(visualsOnly)
 		return
 	H.fully_replace_character_name(H.real_name, "Santa Claus")
-	H.mind.assigned_role = "Santa"
-	H.mind.special_role = "Santa"
+	H?.mind?.assigned_role = "Santa"
+	H?.mind?.special_role = "Santa"
 
 	H.hair_style = "Long Hair"
 	H.facial_hair_style = "Full Beard"

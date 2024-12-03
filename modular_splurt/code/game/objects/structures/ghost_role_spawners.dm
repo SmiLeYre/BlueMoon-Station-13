@@ -183,6 +183,7 @@
 	roundstart = FALSE
 	death = FALSE
 	show_flavour = FALSE
+	loadout_enabled = TRUE
 	icon = 'icons/obj/machines/sleeper.dmi'
 	icon_state = "sleeper_s"
 	short_desc = "Вы - Оперативник Авангарда ИнтеКью на старом корабле, застрявшем во враждебном космосе."

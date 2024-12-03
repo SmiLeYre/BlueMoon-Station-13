@@ -139,14 +139,14 @@ Our Method:
 		if(1)
 			investigate_log("has delaminated with [alive_engineers] engineers, explosion size has been halved!", INVESTIGATE_SUPERMATTER)
 			priority_announce("Обнаружено множественное расслоение структуры Суперматерии. Гиперструктура кристалла завершила коллапс фатально. Bозможны жертвы.", "BНИМАНИЕ: СУПЕРМАТЕРИЯ ПОТЕРЯНА!")
-			explosion(get_turf(src), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM * 0.1), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM * 0.25), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM * 0.5), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM * 0.75), TRUE, TRUE, ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL * 1))
+			explosion(get_turf(src), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM * 0.1), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM * 0.25), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM * 0.5), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM * 0.75), TRUE, TRUE, ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_MEDIUM * 1))
 			qdel(src)
 			return
 //	DELAMINATION D:
 		if(2 to INFINITY)
 			investigate_log("has delaminated with full effect due to there being [alive_engineers] engineers.", INVESTIGATE_SUPERMATTER)
 			priority_announce("Обнаружено катастрофическое расслоение структуры Суперматерии. Гиперструктура кристалла создала катастрофический хлопок.", sender_override="BНИМАНИЕ: СУПЕРМАТЕРИЯ ПОТЕРЯНА!")
-			explosion(get_turf(src), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE * 0.1), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE * 0.25), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE * 0.5), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE * 0.75), TRUE, TRUE, ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_SMALL * 1))
+			explosion(get_turf(src), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE * 0.1), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE * 0.25), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE * 0.5), ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE * 0.75), TRUE, TRUE, ((explosion_power*gasmix_power_ratio)*EXPLOSION_MODIFIER_LARGE * 1))
 			qdel(src)
 			return
 		if(null)

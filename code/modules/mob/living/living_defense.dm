@@ -136,7 +136,7 @@
 	if(thrown_item.thrownby == WEAKREF(src)) //No throwing stuff at yourself to trigger hit reactions
 		return ..()
 
-	if(throwingdatum.thrower)
+	if(throwingdatum?.thrower)
 		if(mob_run_block(AM, thrown_item.throwforce, "\the [thrown_item.name]", ATTACK_TYPE_THROWN, 0, throwingdatum.thrower, throwingdatum.thrower.zone_selected, list()))
 			hitpush = FALSE
 			skipcatch = TRUE

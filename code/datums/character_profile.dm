@@ -50,7 +50,7 @@ GLOBAL_LIST_EMPTY(cached_previews)
 		var/mob/living/carbon/H = M
 		data["oocnotes"] = H.dna?.ooc_notes || ""
 		// mechanical_erp_verbs_examine AHEAD
-		if(H.client.prefs.toggles & VERB_CONSENT)
+		if(H.client?.prefs.toggles & VERB_CONSENT)
 			data["erp_verbs"] = "Allowed"
 		else
 			data["erp_verbs"] = "Text Only"

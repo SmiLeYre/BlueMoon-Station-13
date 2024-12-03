@@ -590,7 +590,7 @@
 	has_panel_overlay = FALSE
 	amount = 10
 	pixel_y = 6
-	layer = WALL_OBJ_LAYER
+	layer = BELOW_OBJ_LAYER
 	circuit = /obj/item/circuitboard/machine/chem_dispenser/drinks
 	working_state = null
 	nopower_state = null

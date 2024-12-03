@@ -34,7 +34,7 @@
 	var/num_traitors = get_antag_cap(population) * (scaled_times + 1)
 	for (var/i = 1 to num_traitors)
 		var/mob/M = pick_n_take(candidates)
-		assigned += M.mind
+		assigned += M?.mind
 		M.mind.special_role = ROLE_TRAITOR
 		M.mind.restricted_roles = restricted_roles
 	return TRUE

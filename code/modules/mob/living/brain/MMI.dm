@@ -112,7 +112,7 @@
 		name = initial(name)
 
 /obj/item/mmi/proc/eject_brain(mob/user)
-	if(brain.brainmob)
+	if(brainmob)
 		brainmob.container = null //Reset brainmob mmi var.
 		brainmob.forceMove(brain) //Throw mob into brain.
 		brainmob.set_stat(DEAD)

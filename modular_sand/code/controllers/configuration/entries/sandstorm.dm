@@ -29,3 +29,6 @@
 	min_val = 10
 
 /datum/config_entry/flag/reveal_everything // On Round end, reveal roles and ghosts
+
+/datum/config_entry/number/roundstart_ai_shells // Per AI, if you ever do get a triumvirate!
+	min_val = 0
