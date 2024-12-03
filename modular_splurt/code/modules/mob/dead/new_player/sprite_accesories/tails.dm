@@ -440,6 +440,13 @@
 	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
 	matrixed_sections = MATRIX_RED_GREEN
 
+/datum/sprite_accessory/tails_animated/mam_tail/takahiro_kitsune
+	name = "Takahiro Kitsune Tails"
+	icon_state = "7sune"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/tails_animated/mam_tails_animated/demon_spade
 	name = "Succubus tail"
 	icon = 'modular_splurt/icons/mob/mam_tails.dmi'
