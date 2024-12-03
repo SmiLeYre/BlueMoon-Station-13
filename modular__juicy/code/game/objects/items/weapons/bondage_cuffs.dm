@@ -5,6 +5,7 @@
 	icon_state = "silk_ribbon"
 	custom_materials = null
 	breakouttime = 450 //Deciseconds = 45s
+	demoralize_criminals = FALSE //Негативный moodlet всех restrains/
 
 /obj/item/restraints/handcuffs/cable/silk_ribbon/attack_self() //Not cable
 	return
@@ -49,6 +50,7 @@
 	icon_state = "cuff_rope"
 	custom_materials = null
 	breakouttime = 450 //Deciseconds = 45s
+	demoralize_criminals = FALSE //Негативный moodlet всех restrains/
 
 /obj/item/restraints/handcuffs/cable/rope/attack_self() //Not cable
 	return
@@ -60,6 +62,7 @@
 	icon_state = "cuff_belts"
 	custom_materials = null
 	breakouttime = 450 //Deciseconds = 45s
+	demoralize_criminals = FALSE //Негативный moodlet всех restrains/
 
 /obj/item/restraints/handcuffs/cable/belts/attack_self() //Not cable
 	return
