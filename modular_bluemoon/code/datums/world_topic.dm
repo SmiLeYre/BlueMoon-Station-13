@@ -366,4 +366,4 @@ GLOBAL_LIST_EMPTY(bot_event_sending_que)
 	data["events"] = GLOB.bot_event_sending_que
 	GLOB.bot_event_sending_que = list()
 	statuscode = 200
-	response = "Events sended."
+	response = "Events sent."
