@@ -42,6 +42,7 @@
 	visible_message("<span class='notice'>[src] has finished printing its assembly!</span>")
 	playsound(src, 'sound/items/poster_being_created.ogg', 50, TRUE)
 	var/obj/item/electronic_assembly/assembly = SScircuit.load_electronic_assembly(get_turf(src), program)
+	WRITE_LOG(GLOB.click_log, "INTEGRAL BITCH [user.ckey] завершил печать программы на [src]. Созданная сборка: [assembly], Программа: [program]")
 	assembly.creator = key_name(user)
 	assembly.investigate_log("was printed by [assembly.creator].", INVESTIGATE_CIRCUIT)
 	cloning = FALSE
@@ -105,6 +106,7 @@
 
 /obj/item/integrated_circuit_printer/attack_self(mob/living/carbon/human/user)
 	var/user_job = user.mind.assigned_role
+	WRITE_LOG(GLOB.click_log, "INTEGRAL BITCH [user.ckey] взаимодействует с [src].")
 	if(upgraded)
 		if(user_job == "Roboticist" || user_job == "Research Director" || user_job == "Scientist" || user_job == "Expeditor" || user.mind?.has_antag_datum(/datum/antagonist))
 			interact(user)
@@ -254,6 +256,7 @@
 					program = null
 					return
 
+				WRITE_LOG(GLOB.click_log, "INTEGRAL BITCH [usr.ckey] загрузил программу: [input] в [src]")
 				var/validation = SScircuit.validate_electronic_assembly(input)
 
 				// Validation error codes are returned as text.
@@ -277,6 +280,7 @@
 			if("print")
 				if(!program || cloning)
 					return
+				WRITE_LOG(GLOB.click_log, "INTEGRAL BITCH [usr.ckey] начал печать программы на [src]. Программа: [program]")
 
 				if(program["requires_upgrades"] && !upgraded && !debug)
 					to_chat(usr, "<span class='warning'>This program uses unknown component designs. Printer upgrade is required to proceed.</span>")
