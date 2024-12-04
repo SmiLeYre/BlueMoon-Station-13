@@ -334,3 +334,27 @@
 	stat_allowed = UNCONSCIOUS
 	emote_volume = 10
 	emote_falloff_exponent = 4
+
+/datum/emote/sound/human/meow4
+	key = "meow4"
+	key_third_person = "meow4"
+	message = "meows."
+	message_mime = "silently meows."
+	sound = 'modular_bluemoon/sound/emotes/meow4.ogg'
+	emote_cooldown = 0.5 SECONDS
+
+/datum/emote/sound/human/meow5
+	key = "meow5"
+	key_third_person = "meow5"
+	message = "meows."
+	message_mime = "silently meows."
+	sound = 'modular_bluemoon/sound/emotes/meow5.ogg'
+	emote_cooldown = 0.5 SECONDS
+
+/datum/emote/sound/human/meow6
+	key = "meow6"
+	key_third_person = "meow6"
+	message = "meows."
+	message_mime = "silently meows."
+	sound = 'modular_bluemoon/sound/emotes/meow6.ogg'
+	emote_cooldown = 0.5 SECONDS
