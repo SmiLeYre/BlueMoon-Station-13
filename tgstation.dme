@@ -4518,6 +4518,7 @@
 #include "modular_bluemoon\modules\acradors\acradors_markings.dm"
 #include "modular_bluemoon\modules\pig_barks\pig_barks.dm"
 #include "modular_bluemoon\modules\pull_slowdown\pull_slowdown.dm"
+#include "modular_bluemoon\MRSKO\code\misc.dm"
 #include "modular_bluemoon\MRSKO\code\modules\mod\mod_theme.dm"
 #include "modular_bluemoon\MRSKO\code\modules\mod\mod_types.dm"
 #include "modular_bluemoon\MRSKO\code\uplink\uplink_items.dm"
