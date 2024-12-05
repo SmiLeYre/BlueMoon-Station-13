@@ -577,6 +577,24 @@
 	item_state = "lar"
 	fire_sound = 'modular_bluemoon/oni3288/sounds/weapons/magshot.ogg'
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/obj/item/modkit/hopesh_kit
+	name = "HO-P3-sh Kit"
+	desc = "A modkit for making an combat knife into a HO-P3-sh."
+	product = /obj/item/kitchen/knife/combat/hopesh
+	fromitem = list(/obj/item/kitchen/knife/combat)
+
+/obj/item/kitchen/knife/combat/hopesh
+	name = "HO-P3-sh"
+	desc = "A sharp dagger used in the Catcrin army as a regular melee weapon. It is issued to each soldier in a case. Its blade is extremely sharp and slightly curved."
+	item_state = "hopesh"
+	icon_state = "hopesh"
+	icon = 'modular_bluemoon/oni3288/icons/weapons/icons/hopesh.dmi'
+	lefthand_file = 'modular_bluemoon/oni3288/icons/weapons/hands/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/oni3288/icons/weapons/hands/guns_right.dmi'
+	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/weapons/mob/back.dmi'
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////Слот масок.
 
 /obj/item/clothing/mask/gas/syndicate/cool_version
@@ -654,6 +672,7 @@
 	new /obj/item/modkit/magplar_kit(src)
 	new /obj/item/modkit/magrrinei_kit(src)
 	new /obj/item/modkit/bwal2572_kit(src)
+	new /obj/item/modkit/hopesh_kit(src)
 
 // Закину коробку с постерами для спратера сюда, чтоб особо не срать.
 

@@ -1,3 +1,4 @@
+/* // BLUEMOON EDIT:START IPINTEL FROM TG
 SUBSYSTEM_DEF(ipintel)
 	name = "XKeyScore"
 	init_order = INIT_ORDER_XKEYSCORE
@@ -11,4 +12,4 @@ SUBSYSTEM_DEF(ipintel)
 /datum/controller/subsystem/ipintel/Initialize(timeofday, zlevel)
 	enabled = TRUE
 	. = ..()
-
+*/ // BLUEMOON EDIT:END IPINTEL FROM TG

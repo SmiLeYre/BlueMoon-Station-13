@@ -497,7 +497,14 @@
 		var/damage = 10*multiplier
 		H.apply_damage(damage, BRUTE, picked_def_zone, wound_bonus = 5)
 
-
+/obj/item/toy/plush/bao
+	name = "Stupid cat plush"
+	desc = "Every time you hug this toy, your IQ drops, but is it worth stopping because of this?."
+	icon_state = "plushie_bao"
+	icon = 'modular_bluemoon/Ren/Icons/Obj/misc.dmi'
+	lefthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_l.dmi'
+	righthand_file = 'modular_bluemoon/Ren/Icons/Mob/inhand_r.dmi'
+	squeak_override = list('modular_bluemoon/Ren/Sound/bao_sex.ogg'=1)
 
 
 

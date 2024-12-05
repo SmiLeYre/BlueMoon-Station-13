@@ -607,13 +607,14 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		qdel(query_client_in_db)
 		return
 
+	var/client_is_in_db = query_client_in_db.NextRow() // BLUEMOON EDIT: IPINTEL FROM TG
 	//If we aren't an admin, and the flag is set
 	if(CONFIG_GET(flag/panic_bunker) && !holder && !GLOB.deadmins[ckey] && !(ckey in GLOB.bunker_passthrough))
 		var/living_recs = CONFIG_GET(number/panic_bunker_living)
-		var/vpn_living_recs = CONFIG_GET(number/panic_bunker_living_vpn)
+		//var/vpn_living_recs = CONFIG_GET(number/panic_bunker_living_vpn)
 		//Relies on pref existing, but this proc is only called after that occurs, so we're fine.
 		var/minutes = get_exp_living(pure_numeric = TRUE)
-		if((minutes <= living_recs) || (IsVPN() && (minutes < vpn_living_recs)))
+		if((living_recs == 0 && !client_is_in_db) || living_recs >= minutes) // BLUEMOON EDIT: IPINTEL FROM TG //if((minutes <= living_recs) || (IsVPN() && (minutes < vpn_living_recs)))
 			var/reject_message = "Failed Login: [key] - Account attempting to connect during panic bunker, but they do not have the required living time [minutes]/[living_recs]"
 			log_access(reject_message)
 			message_admins("<span class='adminnotice'>[reject_message]</span>")
@@ -872,6 +873,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	create_message("note", key, system_ckey, message, null, null, 0, 0, null, 0, 0)
 
 
+/*// BLUEMOON EDIT:START IPINTEL FROM TG
 /client/proc/check_ip_intel()
 	set waitfor = 0 //we sleep when getting the intel, no need to hold up the client connection while we sleep
 	if (CONFIG_GET(string/ipintel_email))
@@ -879,6 +881,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if (res.intel >= CONFIG_GET(number/ipintel_rating_bad))
 			message_admins("<span class='adminnotice'>Proxy Detection: [key_name_admin(src)] IP intel rated [res.intel*100]% likely to be a Proxy/VPN.</span>")
 		ip_intel = res.intel
+*/ // BLUEMOON EDIT:END IPINTEL FROM TG
 
 /client/Click(atom/object, atom/location, control, params, ignore_spam = FALSE, extra_info)
 	if(last_click > world.time - world.tick_lag)

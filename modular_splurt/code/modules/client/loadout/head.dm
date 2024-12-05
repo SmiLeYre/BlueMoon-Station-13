@@ -122,4 +122,13 @@
 /datum/gear/head/swatds/civilian
     name = "SWAT helmet"
     path = /obj/item/clothing/head/helmet/swat/ds/civil
+
+/datum/gear/head/npc_questhuh_hat
+    name = "NPC Huh hat"
+    path = /obj/item/clothing/head/npc_questhuh_hat
+
+/datum/gear/head/npc_questhey_hat
+    name = "NPC Hey hat"
+    path = /obj/item/clothing/head/npc_questhey_hat
+
 //BM add end

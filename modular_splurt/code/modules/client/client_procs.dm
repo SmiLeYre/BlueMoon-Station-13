@@ -1,3 +1,4 @@
+/* // BLUEMOON EDIT:START IPINTEL FROM TG
 /client/check_ip_intel()
 	. = ..()
 	if(!(ip_intel != initial(ip_intel) && ip_intel >= CONFIG_GET(number/ipintel_rating_bad)))
@@ -20,6 +21,7 @@
 	log_admin(logg)
 	message_admins(span_adminnotice(logg))
 	qdel(src)
+*/ // BLUEMOON EDIT:END IPINTEL FROM TG
 
 /client/proc/toggle_quirk(mob/living/carbon/human/H)
 	if (!istype(H))
