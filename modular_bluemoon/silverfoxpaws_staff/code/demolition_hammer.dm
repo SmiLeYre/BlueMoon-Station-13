@@ -1,6 +1,6 @@
 /obj/item/demolition_hammer	// https://en.wikipedia.org/wiki/Demolition_Hammer
 	name = "Demolition Hammer"
-	desc = "Chief Engineer's sledgehammer. The finest choice for tasks of demolishing something... or someone."
+	desc = "Chief Engineer's sledgehammer, also called \"the Molot\" in the USSP. The finest choice for tasks of demolishing something... Or someone."
 	icon = 'modular_bluemoon/silverfoxpaws_staff/icons/obj/items_and_weapons.dmi'
 	lefthand_file = 'modular_bluemoon/silverfoxpaws_staff/icons/mob/inhands/items_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/silverfoxpaws_staff/icons/mob/inhands/items_righthand.dmi'
@@ -46,13 +46,18 @@
 		return
 
 	if(istype(A, /obj/structure/window/reinforced))	// Works better with unarmored windows.
-		var/obj/structure/window/reinforced = A
+		var/obj/structure/window/reinforced/reinforced = A
 		reinforced.take_damage(5, BRUTE, MELEE, FALSE)
 		user.visible_message(span_warning("The sledge's head bounced off the glass!"))
 
-	else if(istype(A, /obj/structure/window))
+	else if(istype(A, /obj/structure/window/plasma))
+		var/obj/structure/window/plasma/plasma = A
+		plasma.take_damage(5, BRUTE, MELEE, FALSE)
+		user.visible_message(span_warning("The sledge's head bounced off the plasma glass!"))
+
+	else if(istype(A, /obj/structure/window)) // Is breaking unarmored in ~2 hits.
 		var/obj/structure/window/window = A
-		window.take_damage(200, BRUTE, MELEE, FALSE)
+		window.take_damage(15, BRUTE, MELEE, FALSE)
 
 
 /// Triggered on wield of two handed item.
@@ -71,6 +76,7 @@
 
 	var/initial_wall_type = src.type
 	to_chat(user, span_notice("You begin to crush though [src]..."))
+	playsound(src, 'sound/alien/Effects/bang1.ogg', 50, 1)
 
 	if(!do_after(user, 5 SECONDS, target = src))
 		return FALSE
@@ -93,6 +99,7 @@
 
 	var/initial_wall_type = src.type
 	to_chat(user, span_notice("You begin to crush though [src]..."))
+	playsound(src, 'sound/alien/Effects/bang1.ogg', 50, 1)
 
 	if(!do_after(user, 12 SECONDS, target = src))
 		return FALSE
