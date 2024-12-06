@@ -36,7 +36,7 @@
 	. = ..()
 	var/obj/item/multitool/silo/S = new /obj/item/multitool/silo(get_turf(loc))
 	if(prob(5))
-		unwrap_count = rand(5,20)
+		times_to_unwrap = rand(5,20)
 	S.forceMove(src)
 
 /obj/item/multitool/silo
