@@ -64,16 +64,6 @@
 			visible_message("<span class='warning'>[user] smashes through [src] with [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
 			dismantle_wall()
 			return TRUE
-
-	else if (istype(I, /obj/item/dmolot)) // Demolishing Molot от silverfox_paws
-		to_chat(user, "<span class='notice'>You begin to crush though [src]...</span>")
-		if(do_after(user, 120, target = src)) // 12 секунд
-			if(!istype(src, /turf/closed/wall/r_wall))
-				return TRUE
-			I.play_tool_sound(src)
-			visible_message("<span class='warning'>[user] crushes through [src] with [I]!</span>", "<span class='italics'>You hear the grinding of metal.</span>")
-			dismantle_wall()
-			return TRUE
 	return FALSE
 
 /turf/closed/wall/r_wall/try_decon(obj/item/W, mob/user, turf/T)
