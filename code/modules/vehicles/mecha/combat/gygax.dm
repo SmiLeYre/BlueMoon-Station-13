@@ -14,7 +14,7 @@
 	force = 25
 	wreckage = /obj/structure/mecha_wreckage/gygax
 	internal_damage_threshold = 35
-	max_equip = 3
+	max_equip = 5
 	normal_step_energy_drain = 3
 
 /obj/vehicle/sealed/mecha/combat/gygax/dark

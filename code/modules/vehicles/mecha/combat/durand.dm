@@ -9,6 +9,7 @@
 	armor = list(MELEE = 50, BULLET = 55, LASER = 40, ENERGY = 30, BOMB = 30, BIO = 0, RAD = 60, FIRE = 100, ACID = 100)
 	max_temperature = 50000
 	force = 40
+	max_equip = 4
 	wreckage = /obj/structure/mecha_wreckage/durand
 	var/obj/durand_shield/shield
 
