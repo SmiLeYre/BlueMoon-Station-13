@@ -44,6 +44,8 @@ obj/vehicle/sealed/mecha/combat/durand/tu802/generate_actions()
 /obj/vehicle/sealed/mecha/combat/savannah_ivanov/loaded/Initialize(mapload)
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/thrusters/ion(src)
+	ME.detachable = FALSE
+	max_equip++
 	ME.attach(src)
 
 /obj/vehicle/sealed/mecha/combat/savannah_ivanov/loaded/Initialize(mapload)
@@ -66,6 +68,7 @@ obj/vehicle/sealed/mecha/combat/durand/tu802/generate_actions()
 	armor = list(MELEE = 40, BULLET = 50, LASER = 70, ENERGY = 75, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 100)
 	max_temperature = 70000
 	wreckage = /obj/structure/mecha_wreckage/zeus
+	max_equip = 6
 	turnsound = 'modular_bluemoon/kovac_shitcode/sound/mecha/turn.ogg'
 	nominalphrase = 'modular_bluemoon/kovac_shitcode/sound/mecha/nominal_sol.ogg'
 
@@ -77,10 +80,13 @@ obj/vehicle/sealed/mecha/combat/durand/tu802/generate_actions()
 /obj/vehicle/sealed/mecha/combat/durand/zeus/Initialize(mapload)
 	. = ..()
 	var/obj/item/mecha_parts/mecha_equipment/ME = new /obj/item/mecha_parts/mecha_equipment/thrusters/ion(src)
+	ME.detachable = FALSE
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/energy/tesla
+	ME.detachable = FALSE
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/weapon/ballistic/lmg
+	ME.detachable = FALSE
 	ME.attach(src)
 	ME = new /obj/item/mecha_parts/mecha_equipment/anticcw_armor_booster
 	ME.attach(src)
