@@ -4242,7 +4242,7 @@
 #include "modular_bluemoon\anti_normalizer_quirk\anti_normalizer_quirk.dm"
 #include "modular_bluemoon\Azaar\Tajaran.dm"
 #include "modular_bluemoon\Azaar\code\donator_wh.dm"
-#include "modular_bluemoon\bater\Code\misc.dm"
+#include "modular_bluemoon\bater\code\misc.dm"
 #include "modular_bluemoon\bigtalk\bigtalk.dm"
 #include "modular_bluemoon\bloodsuckers_upgrade\bloodsucker_objectives.dm"
 #include "modular_bluemoon\bloodsuckers_upgrade\bloodsuckers_defines.dm"
