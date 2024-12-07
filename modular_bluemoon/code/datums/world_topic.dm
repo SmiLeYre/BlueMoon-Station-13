@@ -367,7 +367,7 @@ GLOBAL_LIST_EMPTY(bot_asay_sending_que)
 	//Yeah, we can use /datum/http_request, but nuh... it's less fun.
 	data["events"] = GLOB.bot_event_sending_que
 	data["ooc"] = GLOB.bot_ooc_sending_que
-	data["asay"] = GLOB.bot_asay_sending_que
+	data["admin"] = GLOB.bot_asay_sending_que
 	GLOB.bot_event_sending_que = list()
 	GLOB.bot_ooc_sending_que = list()
 	GLOB.bot_asay_sending_que = list()
