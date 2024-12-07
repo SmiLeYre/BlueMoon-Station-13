@@ -4885,6 +4885,7 @@
 #include "modular_sand\code\game\objects\items\cosmetics.dm"
 #include "modular_sand\code\game\objects\items\extinguisher.dm"
 #include "modular_sand\code\game\objects\items\fleshlight.dm"
+#include "modular_bluemoon\code\game\objects\items\fleshlight.dm"
 #include "modular_sand\code\game\objects\items\miscellaneous.dm"
 #include "modular_sand\code\game\objects\items\plushes.dm"
 #include "modular_sand\code\game\objects\items\circuitboards\computer_circuitboards.dm"
