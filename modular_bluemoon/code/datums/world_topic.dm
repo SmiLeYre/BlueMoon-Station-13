@@ -351,19 +351,52 @@
 	qdel(exp_read)
 
 GLOBAL_LIST_EMPTY(bot_event_sending_que)
+GLOBAL_LIST_EMPTY(bot_ooc_sending_que)
+GLOBAL_LIST_EMPTY(bot_asay_sending_que)
 
 /datum/world_topic/recieve_info
 	key = "recieve_info"
 
 /datum/world_topic/recieve_info/Run(list/input)
 	data = list()
-
-	if(!length(GLOB.bot_event_sending_que))
+	if(!length(GLOB.bot_event_sending_que) && !length(GLOB.bot_ooc_sending_que) && !length(GLOB.bot_asay_sending_que))
 		statuscode = 501
 		response = "No events pool."
 		return
 
+	//Yeah, we can use /datum/http_request, but nuh... it's less fun.
 	data["events"] = GLOB.bot_event_sending_que
+	data["ooc"] = GLOB.bot_ooc_sending_que
+	data["asay"] = GLOB.bot_asay_sending_que
 	GLOB.bot_event_sending_que = list()
+	GLOB.bot_ooc_sending_que = list()
+	GLOB.bot_asay_sending_que = list()
 	statuscode = 200
 	response = "Events sent."
+
+/datum/world_topic/send_info
+	key = "send_info"
+	required_params = list("data")
+
+/datum/world_topic/send_info/Run(list/input)
+	data = list()
+
+	var/list/bot_data = input["data"]
+	if(!istype(bot_data) || !length(bot_data))
+		statuscode = 403
+		response = "Wrong data"
+		return
+
+	if(bot_data["ooc"])
+		for(var/list/data in bot_data["ooc"])
+			var/msg = sanitize(data["message"])
+			for(var/client/C in GLOB.clients)
+				if(C.prefs.chat_toggles & CHAT_OOC)
+					to_chat(C, "<span class='ooc'><span class='prefix'>DISCORD OOC:</span> <EM>[data["author"]]:</EM> <span class='message linkify'>[msg]</span></span>")
+
+	if(bot_data["admin"])
+		for(var/list/data in bot_data["admin"])
+			to_chat(GLOB.admins, "<span class='adminsay'><span class='prefix'>DISCORD ADMIN:</span> <EM>[data["author"]]</EM>: <span class='message linkify'>[sanitize(data["message"])])]</span></span>", confidential = TRUE)
+
+	statuscode = 200
+	response = "Events received."
