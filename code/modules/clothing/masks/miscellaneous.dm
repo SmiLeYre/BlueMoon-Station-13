@@ -76,7 +76,7 @@
 
 /obj/item/clothing/mask/fakemoustache/italian/handle_speech(datum/source, list/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
-	if(message[1] != "*")
+	if(message[1] != "*" && message[1] != "!")
 		message = " [message]"
 		var/list/italian_words = strings("italian_replacement.json", "italian")
 
@@ -438,7 +438,7 @@
 
 /obj/item/clothing/mask/gondola/handle_speech(datum/source, list/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
-	if(message[1] != "*")
+	if(message[1] != "*" && message[1] != "!")
 		message = " [message]"
 		var/list/spurdo_words = strings("spurdo_replacement.json", "spurdo")
 		for(var/key in spurdo_words)
