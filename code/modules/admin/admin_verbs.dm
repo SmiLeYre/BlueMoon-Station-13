@@ -58,6 +58,7 @@ GLOBAL_PROTECT(admin_verbs_admin)
 	/client/proc/Getkey,				/*teleports a mob with a certain ckey to our location*/
 	/client/proc/game_panel,			/*game panel, allows to change game-mode etc*/
 	/client/proc/mail_panel,			/*BLUEMOON ADD - панель управления почтой*/
+	/datum/admins/proc/vpn_whitelist,	/*BLUEMOON ADD - Допуск */
 	/client/proc/fax_panel, /*send a paper to fax*/
 //	/client/proc/sendmob,				/*sends a mob somewhere*/ -Removed due to it needing two sorting procs to work, which were executed every time an admin right-clicked. ~Errorage
 	/client/proc/jumptoarea,

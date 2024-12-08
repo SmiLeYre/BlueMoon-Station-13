@@ -48,18 +48,18 @@
 	message.embed = embed
 	embed.author = CreateAuthor()
 	embed.title = "Статистика окончания раунда"
-	embed.description = ":mending_heart:"
+	//embed.description = ":mending_heart:"
 	embed.colour = "#34a5c2"
 
-	var/datum/tgs_chat_embed/field/survivors_field = new(":people_holding_hands:Выжившие", "[num_survivors]")
-	var/datum/tgs_chat_embed/field/deads_field = new(":skull:Погибшие", "[num_deads]")
-	var/datum/tgs_chat_embed/field/escapees_field = new(":door:Эвакуировавшиеся", "[num_escapees]")
-	var/datum/tgs_chat_embed/field/shuttle_escapees_field = new(":rocket:Эвакуировались на шаттле", "[num_shuttle_escapees]")
-	var/datum/tgs_chat_embed/field/another_escapees_field = new(":ambulance:Эвакуировались другими способами", "[num_another_escapees]")
-	var/datum/tgs_chat_embed/field/station_integrity_field = new(":bar_chart:Состояние станции", "[station_integrity]%")
+	var/embed_text = ""
+	embed_text += ":people_holding_hands: Выжившие:                         [num_survivors]\n"
+	embed_text += ":skull: Погибшие:                         [num_deads]\n"
+	embed_text += ":door: Эвакуировавшиеся:                 [num_escapees]\n"
+	embed_text += ":rocket: Эвакуировались на шаттле:         [num_shuttle_escapees]\n"
+	embed_text += ":ambulance: Эвакуировались другими способами: [num_another_escapees]\n"
+	embed_text += ":bar_chart: Состояние станции:                [station_integrity]%"
 
-	embed.fields = list(survivors_field, deads_field, escapees_field, shuttle_escapees_field, another_escapees_field, station_integrity_field)
-
+	embed.description = embed_text
 	send2chat(message, channel_tag)
 
 	if (CONFIG_GET(string/roundend_chat_command_enabled))
@@ -69,7 +69,9 @@
 			return
 
 		var/random_link = pick(random_links)
-		var/datum/tgs_message_content/random_message = new(random_link)
+		var/message_for_video = pick(CONFIG_GET(str_list/randomizing_message_for_video))
+		var/last_roundend_message = "[message_for_video]\n [random_link]"
+		var/datum/tgs_message_content/random_message = new(last_roundend_message)
 		spawn(5)
 			send2chat(random_message, channel_tag)
 

@@ -5,6 +5,7 @@
 
 /obj/structure/closet/secure_closet/engineering_chief/PopulateContents()
 	..()
+	new /obj/item/storage/lockbox/anti_singulo(src)
 	new /obj/item/tank/jetpack/suit(src)
 	new /obj/item/cartridge/ce(src)
 	new /obj/item/radio/headset/heads/ce(src)

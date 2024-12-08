@@ -5,3 +5,6 @@
 /datum/config_entry/string/roundend_status_enabled
 
 /datum/config_entry/string/roundend_chat_command_enabled
+
+/datum/config_entry/str_list/randomizing_message_for_video
+	default = list()

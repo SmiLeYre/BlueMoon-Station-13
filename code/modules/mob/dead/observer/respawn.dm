@@ -190,5 +190,5 @@
 	client.view_size.resetToDefault()
 
 	var/mob/dead/new_player/M = new /mob/dead/new_player
-	M.ckey = ckey
+	M.key = key
 	return M

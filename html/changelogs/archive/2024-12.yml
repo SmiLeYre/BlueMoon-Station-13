@@ -1,0 +1,46 @@
+
+2024-12-04:
+  SandPoot:
+  - rscadd: Higher staff can now set titles for you on the manifest using the security
+      console.
+  - bugfix: Manifest will no longer have people with null jobs.
+  - bugfix: High security vulnerability, you can no longer set your rank to be anything
+      (see pr for info).
+2024-12-05:
+  SaraSayomi:
+  - bugfix: Crew manifests default titles
+  - rscadd: Now shows both alt title and normal to help people who don't know what
+      role a condom is
+  - rscadd: Poly V-neck dress
+  - rscadd: Poly Revealing dress
+  - rscadd: Poly Wench outfit with alt style
+  - rscadd: Poly Tian Dress
+  - bugfix: Attempt 2 at the penta top
+  - tweak: Update the cloaks
+  - rscadd: Poly Ripped Punk jeans. and digi version
+  - rscadd: Poly Petagram strap dress
+  - rscadd: Poly Gothic Mesh Dress
+  - rscadd: Poly Swoop dress
+  - rscadd: Poly Asym dress
+  - rscadd: Poly Sheer dress
+  - rscadd: Poly Corset dress
+  - rscadd: Poly Miniskirt
+  - rscadd: Poly Sheer Miniskirt
+  - rscadd: Polychrome Maebari heart
+  - rscadd: Polychrome Maebari sheer
+  - rscadd: Polychrome Maebari mini
+  - rscadd: Polychrome Maebari sheer mini
+  - rscadd: Polychrome Maebari vag sheer
+  - rscadd: Polychrome Maebari vag mini
+  - rscadd: Polychrome Maebari vag
+  - rscadd: Polychrome Maebari anal
+  - rscadd: Polychrome Maebari vag x
+  - rscadd: Polychrome Maebari vag bandaid
+  - rscadd: Polychrome Maebari anal bandaid
+  - rscadd: garden seed extract
+  - rscadd: Perma spades
+  - rscadd: Engi tank
+  - rscadd: Increase the amount of fire alarms, fire doors, air alarms, and extinguishers
+  - bugfix: Misc things, like removing the bombs
+  - rscadd: Medical patient rooms, for "fun"
+  - rscadd: A work-around fix for medical having issues monitoring crew

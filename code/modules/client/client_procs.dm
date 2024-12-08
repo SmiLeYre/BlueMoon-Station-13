@@ -458,9 +458,10 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if (CONFIG_GET(flag/irc_first_connection_alert))
 			send2tgs_adminless_only("new_byond_user", "[key_name(src)] (IP: [address], ID: [computer_id]) is a new BYOND account [account_age] day[(account_age==1?"":"s")] old, created on [account_join_date].")
 	get_message_output("watchlist entry", ckey)
-	check_ip_intel()
+	//check_ip_intel() // BLUEMOON EDIT: IPINTEL FROM TG
 	validate_key_in_db()
 
+	check_ip_intel() // BLUEMOON EDIT: IPINTEL FROM TG
 	send_resources()
 
 	update_clickcatcher()
@@ -514,7 +515,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			menuitem.Load_checked(src)
 
 	SSambience.remove_ambience_client(src)
-
 	view_size = new(src, getScreenSize(prefs.widescreenpref))
 	view_size.resetFormat()
 	view_size.setZoomMode()
@@ -882,6 +882,45 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			message_admins("<span class='adminnotice'>Proxy Detection: [key_name_admin(src)] IP intel rated [res.intel*100]% likely to be a Proxy/VPN.</span>")
 		ip_intel = res.intel
 */ // BLUEMOON EDIT:END IPINTEL FROM TG
+
+// BLUEMOON EDIT:START IPINTEL FROM TG
+/client/proc/check_ip_intel()
+	set waitfor = 0 //we sleep when getting the intel, no need to hold up the client connection while we sleep
+	if(CONFIG_GET(flag/ipintel_enabled))
+		if(CONFIG_GET(number/playtime_ignore_threshold) && CONFIG_GET(flag/use_exp_tracking))
+			var/living_hours = text2num(prefs.exp[EXP_TYPE_LIVING]) / 60
+			if(living_hours >= CONFIG_GET(number/playtime_ignore_threshold))
+				return
+
+		if(is_connecting_from_localhost())
+			log_access("check_ip_intel: skip check for player [key_name_admin(src)] connecting from localhost.")
+			return
+
+		if(GLOB.ipintel_manager.vpn_whitelist_check(ckey))
+			log_access("check_ip_intel: skip check for player [key_name_admin(src)] [address] on whitelist.")
+			return
+
+		var/datum/ipintel/res = GLOB.ipintel_manager.get_ip_intel(address)
+		ip_intel = res.intel
+		verify_ip_intel()
+
+/client/proc/verify_ip_intel()
+	if(ip_intel >= CONFIG_GET(number/bad_rating))
+		var/detailsurl = CONFIG_GET(string/details_url) ? "(<a href='[CONFIG_GET(string/details_url)][address]'>IP Info</a>)" : ""
+		if(CONFIG_GET(flag/whitelist_mode))
+			// Do not move this to isBanned(). This may sound weird, but:
+			// This needs to happen after their account is put into the DB
+			// This way, admins can then note people
+			spawn(40) // This is necessary because without it, they won't see the message, and addtimer cannot be used because the timer system may not have initialized yet
+				message_admins("<span class='adminnotice'>IPIntel: [key_name_admin(src)] on IP [address] was rejected. [detailsurl]</span>")
+				var/blockmsg = "<B>Error: proxy/VPN detected. Proxy/VPN use is not allowed here. Deactivate it before you reconnect.</B>"
+				if(CONFIG_GET(string/banappeals))
+					blockmsg += "\nIf you are not actually using a proxy/VPN, or have no choice but to use one, request whitelisting at: [CONFIG_GET(string/banappeals)]"
+				to_chat(src, blockmsg)
+				qdel(src)
+		else
+			message_admins("<span class='adminnotice'>IPIntel: [key_name_admin(src)] on IP [address] is likely to be using a Proxy/VPN. [detailsurl]</span>")
+// BLUEMOON EDIT:END IPINTEL FROM TG
 
 /client/Click(atom/object, atom/location, control, params, ignore_spam = FALSE, extra_info)
 	if(last_click > world.time - world.tick_lag)
