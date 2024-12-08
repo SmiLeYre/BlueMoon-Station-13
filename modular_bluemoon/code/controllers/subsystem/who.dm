@@ -11,7 +11,7 @@ SUBSYSTEM_DEF(who)
 /datum/controller/subsystem/who/Initialize()
 	who.update_data()
 	staff_who.update_data()
-	return SS_INIT_SUCCESS
+	initialized = TRUE
 
 /datum/controller/subsystem/who/fire(resumed = TRUE)
 	who.update_data()
