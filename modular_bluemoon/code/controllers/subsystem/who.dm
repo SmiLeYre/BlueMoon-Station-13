@@ -49,7 +49,7 @@ SUBSYSTEM_DEF(who)
 	for(var/client/client as anything in sortTim(GLOB.clients, GLOBAL_PROC_REF(cmp_ckey_asc)))
 		var/list/client_payload = list()
 		var/fake_key = client.holder?.fakekey
-		client_payload["text"] = "[fake_key ? fake_key : client.key] ([round(C.avgping, 1)]ms)"
+		client_payload["text"] = "[fake_key ? fake_key : client.key] ([round(client.avgping, 1)]ms)"
 		client_payload["ckey_color"] = "white"
 
 		base_data["total_players"] += list(list(client.key = list(client_payload.Copy())))
