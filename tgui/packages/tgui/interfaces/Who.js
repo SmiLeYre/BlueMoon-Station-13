@@ -1,6 +1,4 @@
-import { useState } from 'react';
-
-import { useBackend } from '../backend';
+import { useBackend, useLocalState } from "../backend";
 import {
   Box,
   Button,
@@ -13,7 +11,7 @@ import {
 import { Window } from '../layouts';
 
 export const Who = (props, context) => {
-  const { act, data } = useBackend();
+  const { act, data } = useBackend(context);
   const {
     base_data,
     player_additional,
@@ -27,7 +25,7 @@ export const Who = (props, context) => {
     player_stealthed_additional?.total_players,
   );
 
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useLocalState(context, "searchQuery", "");
 
   const searchPlayers = () =>
     total_players.filter((playerObj) => isMatch(playerObj, searchQuery));
@@ -138,7 +136,7 @@ const FilterPlayers = (props, context) => {
 };
 
 const GetPlayerInfo = (props, context) => {
-  const { act } = useBackend();
+  const { act } = useBackend(context);
   const { ckey, text, color, ckey_color } = props;
 
   return (
