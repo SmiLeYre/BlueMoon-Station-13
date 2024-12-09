@@ -23,7 +23,7 @@ SUBSYSTEM_DEF(who)
 	staff_who.update_data()
 	initialized = TRUE
 
-/datum/controller/subsystem/who/fire(resumed = TRUE)
+/datum/controller/subsystem/who/fire()
 	who.update_data()
 	staff_who.update_data()
 
