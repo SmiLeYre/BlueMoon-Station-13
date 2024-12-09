@@ -7,10 +7,9 @@
 			var/datum/quirk/dumb4cum/quirk_target = locate() in M.roundstart_quirks
 			quirk_target.uncrave()
 			M.set_drugginess(1)
-			if(prob(15) && ishuman(M))
+			if(prob(15))
 				to_chat(M, span_love(pick("Как же вкусно!~", "Восхитительно!~", "Невозможно удержаться!~")))
-				var/mob/living/carbon/human/H = M
-				H.emote("moan")
+				M.emote("moan")
 
 /datum/reagent/consumable/semen/on_mob_life(mob/living/carbon/M)
 	. = ..()
