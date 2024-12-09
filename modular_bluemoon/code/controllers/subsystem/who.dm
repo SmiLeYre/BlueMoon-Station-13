@@ -59,15 +59,15 @@ SUBSYSTEM_DEF(who)
 	for(var/client/client as anything in sortTim(GLOB.clients, GLOBAL_PROC_REF(cmp_ckey_asc)))
 		var/fake_key = client.holder?.fakekey
 		var/list/client_payload = list(
-			"text" = "[fake_key ? fake_key : client.key] ([round(client.avgping, 1)]ms)"
+			"text" = "[fake_key ? fake_key : client.key] ([round(client.avgping, 1)]ms)",
 			"ckey_color" = "white"
 		)
-
 		base_data["total_players"] += list(list(client.key = list(client_payload.Copy())))
-		player_additional["total_players"] += list(list(client.key = list(client_payload)))
-
 		if(fake_key)
 			client_payload["text"] += " (HIDDEN '[client.key]')"
+			player_stealthed_additional["total_players"] += list(list(client.key = list(client_payload)))
+		else
+			player_additional["total_players"] += list(list(client.key = list(client_payload)))
 
 		var/mob/client_mob = client.mob
 		if(client_mob)
@@ -85,7 +85,7 @@ SUBSYSTEM_DEF(who)
 
 				var/mob/dead/observer/observer = client_mob
 				if(observer.started_as_observer)
-					client_payload["color"] = COLOR_STARTED_AS_OBSERVER
+					client_payload["color"] = WHO_COLOR_STARTED_AS_OBSERVER
 					client_payload["text"] += " - Spectating"
 				else
 					client_payload["color"] = WHO_COLOR_DEAD
@@ -176,6 +176,9 @@ SUBSYSTEM_DEF(who)
 	var/list/admin_additional = list()
 	admin_sorted_additional["admin_additional"] = list("flags" = R_ADMIN, "data" = admin_additional)
 
+	var/list/admin_stealthed_additional = list()
+	admin_sorted_additional["admin_stealthed_additional"] = list("flags" = R_STEALTH, "data" = admin_stealthed_additional)
+
 	var/list/listings = list(
 		"Management" = list(R_PERMISSIONS, list(), "purple"),
 		"Administrators" = list(R_ADMIN, list(), "red"),
@@ -196,22 +199,20 @@ SUBSYSTEM_DEF(who)
 		))
 
 		for(var/client/client as anything in listings[category][2])
-			var/list/admin_payload = list("category" = category)
-			var/rank = client.holder.rank
-
-			admin_additional["total_admins"] += list(list("[client.key] ([rank])" = list(admin_payload)))
+			var/list/admin_payload = list("category" = category, "special_text" = " ([round(client.avgping, 1)]ms)")
 			if(client.holder?.fakekey)
+				admin_stealthed_additional["total_admins"] += list(list("[client.key] ([client.holder.rank])" = list(admin_payload)))
 				admin_payload["special_color"] = WHO_COLOR_HIDDEN_ADMIN
 				admin_payload["special_text"] += " (HIDDEN AS '[client.holder?.fakekey]')"
 			else
-				admin_payload["special_text"] += " ([round(client.avgping, 1)]ms)"
-				base_data["total_admins"] += list(list("[client.key] ([rank])" = list(admin_payload.Copy())))
+				admin_additional["total_admins"] += list(list("[client.key] ([client.holder.rank])" = list(admin_payload)))
+				base_data["total_admins"] += list(list("[client.key] ([client.holder.rank])" = list(admin_payload.Copy())))
 
 			admin_payload["text"] = ""
 			if(istype(client.mob, /mob/dead/observer))
 				var/mob/dead/observer/observer = client.mob
 				if(observer.started_as_observer)
-					admin_payload["color"] = COLOR_STARTED_AS_OBSERVER
+					admin_payload["color"] = WHO_COLOR_STARTED_AS_OBSERVER
 					admin_payload["text"] += "Spectating"
 				else
 					admin_payload["color"] = WHO_COLOR_DEAD
