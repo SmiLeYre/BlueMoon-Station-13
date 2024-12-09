@@ -200,7 +200,7 @@
 	var/uses_overlays = TRUE
 	var/icon/cached_flat_icon
 	var/card_sticker = FALSE //BLUEMOON ADD часть карт можно навешивать на другие карты
-	var/list/previus_icon[3] //BLUEMOON ADD лист для наклеек на карты, порядок icon, icon_state, assignment
+	var/list/previous_icon_data[3] //BLUEMOON ADD лист для наклеек на карты, порядок icon, icon_state, assignment
 
 /obj/item/card/id/Initialize(mapload)
 	. = ..()
@@ -248,9 +248,9 @@
 			if(!do_after(user, 15, target = user))
 				return
 			ID.forceMove(src)
-			previus_icon[1] = icon
-			previus_icon[2] = icon_state
-			previus_icon[3] = assignment
+			previous_icon_data[1] = icon
+			previous_icon_data[2] = icon_state
+			previous_icon_data[3] = assignment
 			icon = ID.icon
 			icon_state = ID.icon_state
 			assignment = ID.assignment
@@ -366,9 +366,9 @@
 					if(!do_after(user, 15, target = user))
 						return
 					user.put_in_hands(ID)
-					icon = previus_icon[1]
-					icon_state = previus_icon[2]
-					assignment = previus_icon[3]
+					icon = previous_icon_data[1]
+					icon_state = previous_icon_data[2]
+					assignment = previous_icon_data[3]
 					return
 	//BLUEMOON ADD END
 
@@ -420,8 +420,10 @@
 			. += "<span class='boldnotice'>If you lose this ID card, you can reclaim your account by Alt-Clicking a blank ID card while holding it and entering your account ID number.</span>"
 	else
 		. += "<span class='info'>There is no registered account linked to this card. Alt-Click to add one.</span>"
+	//BLUEMOON ADD
 	if(card_sticker)
 		. += "<span class='info'>Can be used like a card sticker on another card.</span>"
+	//BLUEMOON ADD END
 
 /obj/item/card/id/GetAccess()
 	return access
