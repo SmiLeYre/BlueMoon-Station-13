@@ -1,4 +1,4 @@
-/*
+/* Перенос был в modular_bluemoon\code\controllers\subsystem\who.dm
 /client/verb/mentorwho()
 	set category = "Mentor"
 	set name = "Mentorwho"
