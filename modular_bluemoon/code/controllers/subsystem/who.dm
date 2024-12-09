@@ -1,3 +1,13 @@
+#define WHO_COLOR_STARTED_AS_OBSERVER "#ce89cd"
+#define WHO_COLOR_LOBBY "#FFFFFF"
+#define WHO_COLOR_PLAYING "#688944"
+#define WHO_COLOR_UNCONS "#959595"
+#define WHO_COLOR_DEAD "#A000D0"
+#define WHO_COLOR_ANTAG "#894444"
+#define WHO_COLOR_AFK "#90779d"
+#define WHO_COLOR_HIDDEN_ADMIN "#7b582f"
+#define WHO_COLOR_ADDITIONAL_FILL "#777"
+
 SUBSYSTEM_DEF(who)
 	name = "Who"
 	flags = SS_BACKGROUND
@@ -47,10 +57,11 @@ SUBSYSTEM_DEF(who)
 
 	// Running thru all clients and doing some counts
 	for(var/client/client as anything in sortTim(GLOB.clients, GLOBAL_PROC_REF(cmp_ckey_asc)))
-		var/list/client_payload = list()
 		var/fake_key = client.holder?.fakekey
-		client_payload["text"] = "[fake_key ? fake_key : client.key] ([round(client.avgping, 1)]ms)"
-		client_payload["ckey_color"] = "white"
+		var/list/client_payload = list(
+			"text" = "[fake_key ? fake_key : client.key] ([round(client.avgping, 1)]ms)"
+			"ckey_color" = "white"
+		)
 
 		base_data["total_players"] += list(list(client.key = list(client_payload.Copy())))
 		player_additional["total_players"] += list(list(client.key = list(client_payload)))
@@ -62,6 +73,7 @@ SUBSYSTEM_DEF(who)
 		if(client_mob)
 			if(istype(client_mob, /mob/dead/new_player))
 				client_payload["text"] += " - in Lobby"
+				client_payload["color"] = WHO_COLOR_LOBBY
 				counted_additional["lobby"]++
 
 			else if(isobserver(client_mob))
@@ -73,10 +85,10 @@ SUBSYSTEM_DEF(who)
 
 				var/mob/dead/observer/observer = client_mob
 				if(observer.started_as_observer)
-					client_payload["color"] = "#ce89cd"
+					client_payload["color"] = COLOR_STARTED_AS_OBSERVER
 					client_payload["text"] += " - Spectating"
 				else
-					client_payload["color"] = "#A000D0"
+					client_payload["color"] = WHO_COLOR_DEAD
 					client_payload["text"] += " - DEAD"
 
 			else
@@ -84,24 +96,28 @@ SUBSYSTEM_DEF(who)
 
 				switch(client_mob.stat)
 					if(UNCONSCIOUS)
-						client_payload["color"] = "#B0B0B0"
+						client_payload["color"] = WHO_COLOR_UNCONS
 						client_payload["text"] += " - Unconscious"
 					if(DEAD)
-						client_payload["color"] = "#A000D0"
+						client_payload["color"] = WHO_COLOR_DEAD
 						client_payload["text"] += " - DEAD"
 
 				if(client_mob.stat != DEAD)
+					client_payload["color"] = WHO_COLOR_PLAYING
 					counted_additional["playing"]++
 
 				if(is_special_character(client.mob))
-					client_payload["color"] = "#894444"
+					client_payload["color"] = WHO_COLOR_ANTAG
 					client_payload["text"] += " (Antagonist)"
 
+		if(fake_key)
+			client_payload["color"] = WHO_COLOR_HIDDEN_ADMIN
+
 	//Bulky section with pre writen names and desc for counts
-	statistic_additional += list(list("content" = "In Lobby: [counted_additional["lobby"]]", "color" = "#777", "text" = "Player in lobby"))
-	statistic_additional += list(list("content" = "Spectating Players: [counted_additional["observers"]]", "color" = "#777", "text" = "Spectating players"))
-	statistic_additional += list(list("content" = "Spectating Admins: [counted_additional["admin_observers"]]", "color" = "#777", "text" = "Spectating administrators"))
-	statistic_additional += list(list("content" = "Playing: [counted_additional["playing"]]", "color" = "#249408", "text" = "Players playing"))
+	statistic_additional += list(list("content" = "In Lobby: [counted_additional["lobby"]]", "color" = WHO_COLOR_ADDITIONAL_FILL, "text" = "Player in lobby"))
+	statistic_additional += list(list("content" = "Spectating Players: [counted_additional["observers"]]", "color" = WHO_COLOR_ADDITIONAL_FILL, "text" = "Spectating players"))
+	statistic_additional += list(list("content" = "Spectating Admins: [counted_additional["admin_observers"]]", "color" = WHO_COLOR_ADDITIONAL_FILL, "text" = "Spectating administrators"))
+	statistic_additional += list(list("content" = "Playing: [counted_additional["playing"]]", "color" = WHO_COLOR_PLAYING, "text" = "Players playing"))
 
 	src.base_data = base_data
 	src.admin_sorted_additional = admin_sorted_additional
@@ -115,13 +131,13 @@ SUBSYSTEM_DEF(who)
 
 /datum/player_list/ui_data(mob/user)
 	. = list()
-	// Sending base client data, this data sended to EVERYONE
+	// Sending base client data, this data sent to EVERYONE
 	.["base_data"] = base_data
 
 	// Admin rights based data
 	if(!check_rights_for(user.client, R_ADMIN))
 		return
-	for(var/data_packet_name in admin_sorted_additional) // One by one for Drulikar complains
+	for(var/data_packet_name in admin_sorted_additional)
 		if(!check_rights_for(user.client, admin_sorted_additional[data_packet_name]["flags"]))
 			continue
 		. += list("[data_packet_name]" = admin_sorted_additional[data_packet_name]["data"])
@@ -180,13 +196,12 @@ SUBSYSTEM_DEF(who)
 		))
 
 		for(var/client/client as anything in listings[category][2])
-			var/list/admin_payload = list()
-			admin_payload["category"] = category
+			var/list/admin_payload = list("category" = category)
 			var/rank = client.holder.rank
 
 			admin_additional["total_admins"] += list(list("[client.key] ([rank])" = list(admin_payload)))
 			if(client.holder?.fakekey)
-				admin_payload["special_color"] = "#7b582f"
+				admin_payload["special_color"] = WHO_COLOR_HIDDEN_ADMIN
 				admin_payload["special_text"] += " (HIDDEN AS '[client.holder?.fakekey]')"
 			else
 				admin_payload["special_text"] += " ([round(client.avgping, 1)]ms)"
@@ -196,25 +211,25 @@ SUBSYSTEM_DEF(who)
 			if(istype(client.mob, /mob/dead/observer))
 				var/mob/dead/observer/observer = client.mob
 				if(observer.started_as_observer)
-					admin_payload["color"] = "#808080"
+					admin_payload["color"] = COLOR_STARTED_AS_OBSERVER
 					admin_payload["text"] += "Spectating"
 				else
-					admin_payload["color"] = "#161616"
+					admin_payload["color"] = WHO_COLOR_DEAD
 					admin_payload["text"] += "DEAD"
 
 			else if(istype(client.mob, /mob/dead/new_player))
-				admin_payload["color"] = "#FFFFFF"
+				admin_payload["color"] = WHO_COLOR_LOBBY
 				admin_payload["text"] += "in Lobby"
 			else
-				admin_payload["color"] = "#688944"
+				admin_payload["color"] = WHO_COLOR_PLAYING
 				admin_payload["text"] += "Playing"
 
 			if(is_special_character(client.mob))
-				admin_payload["color"] = "#894444"
+				admin_payload["color"] = WHO_COLOR_ANTAG
 				admin_payload["special_text"] += " (Antagonist)"
 
 			if(client.is_afk())
-				admin_payload["color"] = "#A040D0"
+				admin_payload["color"] = WHO_COLOR_AFK
 				admin_payload["special_text"] += " (AFK)"
 
 	src.base_data = base_data
@@ -233,3 +248,13 @@ SUBSYSTEM_DEF(who)
 	set name = "StaffWho"
 
 	SSwho.staff_who.ui_interact(src)
+
+#undef WHO_COLOR_STARTED_AS_OBSERVER
+#undef WHO_COLOR_LOBBY
+#undef WHO_COLOR_PLAYING
+#undef WHO_COLOR_UNCONS
+#undef WHO_COLOR_DEAD
+#undef WHO_COLOR_ANTAG
+#undef WHO_COLOR_AFK
+#undef WHO_COLOR_HIDDEN_ADMIN
+#undef WHO_COLOR_ADDITIONAL_FILL
