@@ -99,6 +99,3 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEHAIR|HIDEEARS|HIDESNOUT
-
-/obj/item/clothing/head/helmet/abductor/fake
-	blockTracking = FALSE

@@ -37,6 +37,7 @@
 
 /datum/config_entry/flag/check_randomizer
 
+/* BLUEMOON EDIT:START IPINTEL FROM TG
 /datum/config_entry/string/ipintel_email
 
 /datum/config_entry/string/ipintel_email/ValidateAndSet(str_val)
@@ -58,6 +59,7 @@
 
 /datum/config_entry/string/ipintel_domain
 	default = "check.getipintel.net"
+*/ // BLUEMOON EDIT:END IPINTEL FROM TG
 
 /datum/config_entry/flag/aggressive_changelog
 

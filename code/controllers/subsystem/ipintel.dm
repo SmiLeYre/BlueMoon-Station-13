@@ -11,4 +11,3 @@ SUBSYSTEM_DEF(ipintel)
 /datum/controller/subsystem/ipintel/Initialize(timeofday, zlevel)
 	enabled = TRUE
 	. = ..()
-

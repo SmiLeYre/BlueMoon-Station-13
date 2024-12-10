@@ -276,9 +276,6 @@
 	body_parts_covered = CHEST
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
 
-/obj/item/clothing/suit/armor/abductor/vest/fake
-	actions_types = list()
-
 /obj/item/clothing/suit/donator/bm/soviet_coat
     name = "Soviet coat"
     desc = "Красивая красная кожанная шуба, которая пахнет старостью, она довольно тёплая, но кажется её комфортно носить везде."

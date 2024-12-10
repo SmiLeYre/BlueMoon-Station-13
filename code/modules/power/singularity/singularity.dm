@@ -1,4 +1,54 @@
+// effects planes we don't relay directly
+// instead we use them as render_source for rendering_plate/game_world filters
 
+/atom/movable/screen/plane_master/singularity_0
+	name = "singularity_0 plane"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	plane = SINGULARITY_EFFECT_PLANE_0
+	render_target = SINGULARITY_0_RENDER_TARGET
+	blend_mode = BLEND_ADD
+
+/atom/movable/screen/plane_master/singularity_1
+	name = "singularity_1 plane"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	plane = SINGULARITY_EFFECT_PLANE_1
+	render_target = SINGULARITY_1_RENDER_TARGET
+	blend_mode = BLEND_ADD
+
+/atom/movable/screen/plane_master/singularity_2
+	name = "singularity_2 plane"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	plane = SINGULARITY_EFFECT_PLANE_2
+	render_target = SINGULARITY_2_RENDER_TARGET
+	blend_mode = BLEND_ADD
+
+/atom/movable/screen/plane_master/singularity_3
+	name = "singularity_3 plane"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	plane = SINGULARITY_EFFECT_PLANE_3
+	render_target = SINGULARITY_3_RENDER_TARGET
+	blend_mode = BLEND_ADD
+
+/atom/movable/singularity_effect
+	plane = SINGULARITY_EFFECT_PLANE_1
+	appearance_flags = PIXEL_SCALE | RESET_TRANSFORM
+	icon = 'icons/effects/288x288.dmi'
+	icon_state = "gravitational_lens"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+/atom/movable/singularity_swirl
+	plane = SINGULARITY_EFFECT_PLANE_1
+	appearance_flags = PIXEL_SCALE | RESET_TRANSFORM
+	icon = 'icons/effects/288x288.dmi'
+	icon_state = "gravitational_swirl"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+
+/atom/movable/singularity_lens
+	plane = SINGULARITY_EFFECT_PLANE_0
+	appearance_flags = PIXEL_SCALE | RESET_TRANSFORM
+	icon = 'icons/effects/288x288.dmi'
+	icon_state = "gravitational_lens"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
 
 /obj/singularity
 	name = "gravitational singularity"
@@ -30,12 +80,41 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 	obj_flags = CAN_BE_HIT | DANGEROUS_POSSESSION
 
+	var/atom/movable/singularity_effect/singulo_effect
+	var/atom/movable/singularity_swirl/singulo_swirl
+	var/atom/movable/singularity_lens/singulo_lens
+
+	var/atom/movable/warp_effect/warp
+
 /obj/singularity/Initialize(mapload, starting_energy = 50)
 	//CARN: admin-alert for chuckle-fuckery.
 	admin_investigate_setup()
 
 	src.energy = starting_energy
 	. = ..()
+
+	add_filter("singa_ring", 1, bloom_filter(rgb(100,0,0), 2, 2, 255))
+
+	animate(src, transform = turn(matrix(), -120), time = 5, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(transform = turn(matrix(), -240), time = 7, loop = -1)
+	animate(transform = turn(matrix(), 0), time = 5, loop = -1)
+	animate(get_filter("singa_ring"), size = 1, offset = 1, time = 5, loop = -1, easing = CIRCULAR_EASING, flags = ANIMATION_PARALLEL)
+	animate(size = 2, offset = 2, time = 10, loop = -1, easing = CIRCULAR_EASING)
+
+	warp = new(src)
+	vis_contents += warp
+
+	singulo_lens = new(src)
+	vis_contents += singulo_lens
+
+	singulo_swirl = new(src)
+	vis_contents += singulo_swirl
+
+	singulo_effect = new(src)
+	vis_contents += singulo_effect
+
+	expand()
+
 	START_PROCESSING(SSobj, src)
 	GLOB.poi_list |= src
 	GLOB.singularities |= src
@@ -49,6 +128,14 @@
 	STOP_PROCESSING(SSobj, src)
 	GLOB.poi_list.Remove(src)
 	GLOB.singularities.Remove(src)
+	vis_contents -= singulo_swirl
+	QDEL_NULL(singulo_swirl)
+	vis_contents -= singulo_effect
+	QDEL_NULL(singulo_effect)
+	vis_contents -= singulo_lens
+	QDEL_NULL(singulo_lens)
+	vis_contents -= warp
+	QDEL_NULL(warp)
 	return ..()
 
 /obj/singularity/Move(atom/newloc, direct)
@@ -114,6 +201,8 @@
 
 
 /obj/singularity/bullet_act(obj/item/projectile/P)
+	if(istype(P, /obj/item/projectile/bullet/anti_singulo))
+		return . = ..()
 	qdel(P)
 	return BULLET_ACT_HIT //Will there be an impact? Who knows.  Will we see it? No.
 
@@ -129,7 +218,7 @@
 /obj/singularity/process()
 	if(current_size >= STAGE_TWO)
 		move()
-		radiation_pulse(src, min(5000, (energy*4.5)+1000), RAD_DISTANCE_COEFFICIENT*0.5)
+		radiation_pulse(src, min(20000, (energy*18)+4000), RAD_DISTANCE_COEFFICIENT*0.25)
 		if(prob(event_chance))//Chance for it to run a special event TODO:Come up with one or two more that fit
 			event()
 	eat()
@@ -155,14 +244,14 @@
 	if(!dissipate)
 		return
 	if(dissipate_track >= dissipate_delay)
-		src.energy -= dissipate_strength
+		energy -= dissipate_strength
 		dissipate_track = 0
 	else
 		dissipate_track++
 
 
 /obj/singularity/proc/expand(force_size = 0)
-	var/temp_allowed_size = src.allowed_size
+	var/temp_allowed_size = allowed_size
 	if(force_size)
 		temp_allowed_size = force_size
 	if(temp_allowed_size >= STAGE_SIX && !consumedSupermatter)
@@ -179,6 +268,18 @@
 			dissipate_delay = 10
 			dissipate_track = 0
 			dissipate_strength = 1
+			singulo_swirl.plane = SINGULARITY_EFFECT_PLANE_1
+			singulo_effect.plane = SINGULARITY_EFFECT_PLANE_1
+			animate(singulo_lens, transform = matrix().Scale(0.5), time = 25)
+			singulo_lens.pixel_x = -128
+			singulo_lens.pixel_y = -128
+			animate(singulo_swirl, transform = matrix().Scale(0.25), time = 25)
+			singulo_swirl.pixel_x = -128
+			singulo_swirl.pixel_y = -128
+			animate(singulo_effect, transform = matrix().Scale(0.015), time = 25)
+			singulo_effect.pixel_x = -128
+			singulo_effect.pixel_y = -128
+			animate(warp, time = 5 SECONDS, transform = matrix().Scale(1,1))
 		if(STAGE_TWO)
 			if(check_cardinals_range(1, TRUE))
 				current_size = STAGE_TWO
@@ -191,6 +292,18 @@
 				dissipate_delay = 5
 				dissipate_track = 0
 				dissipate_strength = 5
+				singulo_swirl.plane = SINGULARITY_EFFECT_PLANE_2
+				singulo_effect.plane = SINGULARITY_EFFECT_PLANE_2
+				animate(singulo_lens, transform = matrix().Scale(0.95), time = 25)
+				singulo_lens.pixel_x = -102
+				singulo_lens.pixel_y = -102
+				animate(singulo_swirl, transform = matrix().Scale(0.6), time = 25)
+				singulo_swirl.pixel_x = -102
+				singulo_swirl.pixel_y = -102
+				animate(singulo_effect, transform = matrix().Scale(0.22), time = 25)
+				singulo_effect.pixel_x = -106
+				singulo_effect.pixel_y = -96
+				animate(warp, time = 5 SECONDS, transform = matrix().Scale(1.3,1.3))
 		if(STAGE_THREE)
 			if(check_cardinals_range(2, TRUE))
 				current_size = STAGE_THREE
@@ -203,6 +316,18 @@
 				dissipate_delay = 4
 				dissipate_track = 0
 				dissipate_strength = 20
+				singulo_swirl.plane = SINGULARITY_EFFECT_PLANE_2
+				singulo_effect.plane = SINGULARITY_EFFECT_PLANE_2
+				animate(singulo_lens, transform = matrix().Scale(1.25), time = 25)
+				singulo_lens.pixel_x = -64
+				singulo_lens.pixel_y = -64
+				animate(singulo_swirl, transform = matrix().Scale(0.75), time = 25)
+				singulo_swirl.pixel_x = -64
+				singulo_swirl.pixel_y = -64
+				animate(singulo_effect, transform = matrix().Scale(0.3), time = 25)
+				singulo_effect.pixel_x = -64
+				singulo_effect.pixel_y = -64
+				animate(warp, time = 5 SECONDS, transform = matrix().Scale(1.6,1.6))
 		if(STAGE_FOUR)
 			if(check_cardinals_range(3, TRUE))
 				current_size = STAGE_FOUR
@@ -215,6 +340,18 @@
 				dissipate_delay = 10
 				dissipate_track = 0
 				dissipate_strength = 10
+				singulo_swirl.plane = SINGULARITY_EFFECT_PLANE_2
+				singulo_effect.plane = SINGULARITY_EFFECT_PLANE_2
+				animate(singulo_lens, transform = matrix().Scale(1.75), time = 25)
+				singulo_lens.pixel_x = -32
+				singulo_lens.pixel_y = -32
+				animate(singulo_swirl, transform = matrix().Scale(1), time = 25)
+				singulo_swirl.pixel_x = -32
+				singulo_swirl.pixel_y = -32
+				animate(singulo_effect, transform = matrix().Scale(0.41), time = 25)
+				singulo_effect.pixel_x = -32
+				singulo_effect.pixel_y = -32
+				animate(warp, time = 5 SECONDS, transform = matrix().Scale(1.9,1.9))
 		if(STAGE_FIVE)//this one also lacks a check for gens because it eats everything
 			current_size = STAGE_FIVE
 			icon = 'icons/effects/288x288.dmi'
@@ -224,6 +361,18 @@
 			grav_pull = 10
 			consume_range = 4
 			dissipate = 0 //It cant go smaller due to e loss
+			singulo_swirl.plane = SINGULARITY_EFFECT_PLANE_2
+			singulo_effect.plane = SINGULARITY_EFFECT_PLANE_2
+			animate(singulo_lens, transform = matrix().Scale(3), time = 25)
+			singulo_lens.pixel_x = -12
+			singulo_lens.pixel_y = -16
+			animate(singulo_swirl, transform = matrix().Scale(1.5), time = 25)
+			singulo_swirl.pixel_x = -16
+			singulo_swirl.pixel_y = -16
+			animate(singulo_effect, transform = matrix().Scale(0.5), time = 25)
+			singulo_effect.pixel_x = -16
+			singulo_effect.pixel_y = -16
+			animate(warp, time = 5 SECONDS, transform = matrix().Scale(2.2,2.2))
 		if(STAGE_SIX) //This only happens if a stage 5 singulo consumes a supermatter shard.
 			current_size = STAGE_SIX
 			icon = 'icons/effects/352x352.dmi'
@@ -233,6 +382,18 @@
 			grav_pull = 15
 			consume_range = 5
 			dissipate = 0
+			singulo_swirl.plane = SINGULARITY_EFFECT_PLANE_2
+			singulo_effect.plane = SINGULARITY_EFFECT_PLANE_2
+			animate(singulo_lens, transform = matrix().Scale(5), time = 25)
+			singulo_lens.pixel_x = -8
+			singulo_lens.pixel_y = -8
+			animate(singulo_swirl, transform = matrix().Scale(2.5), time = 25)
+			singulo_swirl.pixel_x = -8
+			singulo_swirl.pixel_y = -8
+			animate(singulo_effect, transform = matrix().Scale(0.6), time = 25)
+			singulo_effect.pixel_x = -8
+			singulo_effect.pixel_y = -8
+			animate(warp, time = 5 SECONDS, transform = matrix().Scale(2.5,2.5))
 	if(current_size == allowed_size)
 		investigate_log("<font color='red'>grew to size [current_size]</font>", INVESTIGATE_SINGULO)
 		return TRUE

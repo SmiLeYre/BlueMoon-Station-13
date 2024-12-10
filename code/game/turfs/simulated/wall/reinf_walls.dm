@@ -226,7 +226,9 @@
 		icon_state = "r_wall"
 
 /turf/closed/wall/r_wall/singularity_pull(S, current_size)
-	..()
+	. = ..()
+	if(.)
+		return .
 	if(current_size >= STAGE_FIVE)
 		if(prob(30))
 			dismantle_wall()

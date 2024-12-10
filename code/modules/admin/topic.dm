@@ -2322,7 +2322,7 @@
 		var/datum/effect_system/spark_spread/quantum/sparks
 		if(target)
 			if(where == "frompod")
-				pod = new()
+				pod = new
 			if(where == "fromquantumspread")
 				sparks = new
 			for (var/path in paths)
@@ -2358,12 +2358,12 @@
 										R.activate_module(I)
 
 		if(pod)
-			new /obj/effect/pod_landingzone(target, pod)
+			new /obj/effect/pod_landingzone(get_turf(target), pod)
 
 		if(sparks)
-			playsound(get_turf(target.loc), 'sound/magic/Repulse.ogg', 100, 1)
-			sparks.set_up(10, 1, target)
-			sparks.attach(target.loc)
+			playsound(get_turf(target), 'sound/magic/Repulse.ogg', 100, 1)
+			sparks.set_up(10, 1, get_turf(target))
+			sparks.attach(get_turf(target))
 			sparks.start()
 
 		if (number == 1)

@@ -386,6 +386,45 @@
 
 /////////////////////////////////////////////////////////////////////////////////////
 
+/obj/item/modkit/razorsong_kit
+	name = "Razorsong MK-III Kit"
+	desc = "A modkit for making an stunbaton into a Razorsong MK-III."
+	product = /obj/item/melee/baton/razorsong
+	fromitem = list(/obj/item/melee/baton, /obj/item/melee/baton/loaded)
+
+/obj/item/melee/baton/razorsong
+	name = "Razorsong MK-III"
+	desc = "A telescopic katana made of vibrating steel. The mechanism is very simple, but quite very sturdy. About 100 copies were made in production, because the limited material would not allow making many of these melee weapons. But this instance is the Razorsong MK-III, a more homemade modified version designed to work in the Security Service for non-lethal close-range combat."
+	item_state = "razorsong"
+	icon_state = "razorsong"
+	icon = 'modular_bluemoon/fluffs/icons/obj/guns.dmi'
+	lefthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_left.dmi'
+	righthand_file = 'modular_bluemoon/fluffs/icons/mob/guns_right.dmi'
+
+/obj/item/melee/baton/razorsong/switch_status(new_status = FALSE, silent = FALSE)
+	if(turned_on != new_status)
+		turned_on = new_status
+		if(!silent)
+			playsound(loc, 'modular_bluemoon/fluffs/sound/weapon/razorsong.ogg', 75, 1, -1)
+		if(turned_on)
+			START_PROCESSING(SSobj, src)
+		else
+			STOP_PROCESSING(SSobj, src)
+	update_icon()
+
+/obj/item/melee/baton/razorsong/update_icon_state()
+	if(turned_on)
+		icon_state = "razorsong_active"
+		item_state = "razorsong_active"
+	else if(!cell)
+		icon_state = "razorsong_nocell"
+		item_state = "razorsong"
+	else
+		icon_state = "razorsong"
+		item_state = "razorsong"
+
+/////////////////////////////////////////////////////////////////////////////////////
+
 /obj/item/modkit/stunadler_kit
 	name = "Adler stunsword Kit"
 	desc = "A modkit for making an stunbaton into a Adler stunsword."

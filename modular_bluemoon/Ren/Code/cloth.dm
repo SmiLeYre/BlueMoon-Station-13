@@ -550,7 +550,7 @@
 	armor = list()
 
 /obj/item/clothing/head/helmet/skull/ftu
-	name = "FTU combat skull"
+	name = "FTU Combat Skull"
 	desc = "Бронированая маска из полимеров стилизованая под череп. Вселяет страх в каждого пирата."
 	anthro_mob_worn_overlay = 'modular_bluemoon/Ren/Icons/Mob/clothing_digi.dmi'
 	flash_protect = 2

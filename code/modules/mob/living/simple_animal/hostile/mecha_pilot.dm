@@ -24,6 +24,7 @@
 	wanted_objects = list()
 	search_objects = 0
 	mob_biotypes = MOB_ORGANIC|MOB_HUMANOID
+	faction = list(ROLE_SYNDICATE)
 
 	var/spawn_mecha_type = /obj/vehicle/sealed/mecha/combat/marauder/mauler/loaded
 	var/obj/vehicle/sealed/mecha/mecha //Ref to pilot's mecha instance
@@ -51,6 +52,14 @@
 	icon_state = "nanotrasen"
 	faction = list("nanotrasen")
 	spawn_mecha_type = /obj/vehicle/sealed/mecha/combat/marauder/loaded
+
+/mob/living/simple_animal/hostile/syndicate/mecha_pilot/inteq
+	name = "\improper InteQ Mecha Pilot"
+	faction = list(ROLE_INTEQ)
+	spawn_mecha_type = /obj/vehicle/sealed/mecha/combat/marauder/mauler/loaded/ares
+
+/mob/living/simple_animal/hostile/syndicate/mecha_pilot/inteq/light
+	spawn_mecha_type = /obj/vehicle/sealed/mecha/combat/gygax/dark/loaded/hermes
 
 /mob/living/simple_animal/hostile/syndicate/mecha_pilot/no_mech/nanotrasen
 	name = "\improper Nanotrasen Mecha Pilot"

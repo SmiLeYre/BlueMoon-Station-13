@@ -1,0 +1,17 @@
+
+# Whether or not the auxiliary alarm system is activated. COMMENT TO DISABLE IT
+ROUNDEND_STATUS_ENABLED TRUE
+
+# SEND OR NOT ADDITIONAL COMMAND. COMMENT TO DISABLE IT
+ROUNDEND_CHAT_COMMAND_ENABLED TRUE
+
+# NAME FOR ANNOUNCE
+BOT_NAME Цунода вещает
+
+# ICON FOR EMBED MESSAGE
+BOT_ICON https://cdn.discordapp.com/attachments/1049298549550100480/1287452387660791900/browser_UtXYhWxGEZ.png?ex=673c15b8&is=673ac438&hm=17d75b172b3da57164549e1523d4f20ad5ffb494643f0b6ee3cc8c71b1706a09&format=webp&
+
+## Strings for the "Randomizing message for discord video"
+RANDOMIZING_MESSAGE_FOR_VIDEO Check this video!>
+RANDOMIZING_MESSAGE_FOR_VIDEO Did you see that?
+RANDOMIZING_MESSAGE_FOR_VIDEO OH shi~~

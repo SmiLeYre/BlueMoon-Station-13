@@ -1726,7 +1726,6 @@
 	dir = 1;
 	icon_state = "delivery_red"
 	},
-/obj/machinery/suit_storage_unit/syndicate/inteq,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_vault)
 "jo" = (
@@ -3742,7 +3741,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/syndicate/inteq,
+/obj/machinery/suit_storage_unit/syndicate/inteq{
+	mod_type = /obj/item/mod/control/pre_equipped/InteQ
+	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "se" = (

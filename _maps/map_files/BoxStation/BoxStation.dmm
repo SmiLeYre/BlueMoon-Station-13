@@ -53879,7 +53879,7 @@
 "kMt" = (
 /obj/machinery/computer/prisoner/gulag_teleporter_computer,
 /turf/open/floor/plasteel,
-/area/security/prison)
+/area/security/processing)
 "kNe" = (
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
@@ -59963,7 +59963,7 @@
 "oDm" = (
 /obj/machinery/gulag_teleporter,
 /turf/open/floor/plasteel,
-/area/security/prison)
+/area/security/processing)
 "oDr" = (
 /obj/machinery/vending/autodrobe/all_access,
 /turf/open/floor/plasteel/dark,
@@ -61036,7 +61036,7 @@
 	icon_state = "0-2"
 	},
 /turf/open/floor/plating,
-/area/security/prison)
+/area/security/processing)
 "plQ" = (
 /obj/machinery/door/airlock/maintenance/external{
 	name = "Sauna"

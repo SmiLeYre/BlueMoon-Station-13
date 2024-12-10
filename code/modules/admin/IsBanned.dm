@@ -6,7 +6,7 @@
 #define STICKYBAN_MAX_EXISTING_USER_MATCHES 5 //ie, users who were connected before the ban triggered
 #define STICKYBAN_MAX_ADMIN_MATCHES 2
 
-/world/IsBanned(key,address,computer_id,type,real_bans_only=FALSE)
+/world/IsBanned(key,address,computer_id,type,real_bans_only=FALSE, check_ipintel = TRUE, log_info = TRUE) // BLUEMOON EDIT:START IPINTEL FROM TG
 	var/static/key_cache = list()
 	if(!real_bans_only)
 		if(key_cache[key] >= REALTIMEOFDAY)
@@ -17,13 +17,17 @@
 		if(real_bans_only)
 			key_cache[key] = 0
 			return FALSE
-		log_access("Failed Login (invalid data): [key] [address]-[computer_id]")
+		log_access("Login (invalid data): [key] [address]-[computer_id]")
 		key_cache[key] = 0
+		if(log_info)	// BLUEMOON EDIT:START IPINTEL FROM TG
+			INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(log_connection), (ckey(key) || ""), (address || ""), (computer_id || ""), CONNECTION_TYPE_DROPPED_INVALID)
 		return list("reason"="invalid login data", "desc"="Error: Could not check ban status, Please try again. Error message: Your computer provided invalid or blank information to the server on connection (byond username, IP, and Computer ID.) Provided information for reference: Username:'[key]' IP:'[address]' Computer ID:'[computer_id]'. (If you continue to get this error, please restart byond or contact byond support.)")
 
 	if (text2num(computer_id) == 2147483647) //this cid causes stickybans to go haywire
-		log_access("Failed Login (invalid cid): [key] [address]-[computer_id]")
+		log_access("Login (invalid cid): [key] [address]-[computer_id]")
 		key_cache[key] = 0
+		if(log_info)	// BLUEMOON EDIT:START IPINTEL FROM TG
+			INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(log_connection), ckey(key), address, computer_id, CONNECTION_TYPE_DROPPED_INVALID)
 		return list("reason"="invalid login data", "desc"="Error: Could not check ban status, Please try again. Error message: Your computer provided an invalid Computer ID.)")
 
 	if (type == "world")
@@ -48,8 +52,10 @@
 				message_admins("<span class='adminnotice'>The admin [key] has been allowed to bypass the whitelist</span>")
 				addclientmessage(ckey,"<span class='adminnotice'>You have been allowed to bypass the whitelist</span>")
 			else
-				log_access("Failed Login: [key] - Not on whitelist")
+				log_access("Login: [key] - Not on whitelist")
 				key_cache[key] = 0
+				if(log_info)	// BLUEMOON EDIT:START IPINTEL FROM TG
+					INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(log_connection), ckey(key), address, computer_id, CONNECTION_TYPE_DROPPED_IPINTEL)
 				return list("reason"="whitelist", "desc" = "\nReason: You are not on the white list for this server")
 
 	//Guest Checking
@@ -57,10 +63,14 @@
 		if (CONFIG_GET(flag/guest_ban))
 			log_access("Failed Login: [key] - Guests not allowed")
 			key_cache[key] = 0
+			if(log_info)	// BLUEMOON EDIT:START IPINTEL FROM TG
+				INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(log_connection), ckey(key), address, computer_id, CONNECTION_TYPE_DROPPED_BANNED)
 			return list("reason"="guest", "desc"="\nReason: Guests not allowed. Please sign in with a byond account.")
 		if (CONFIG_GET(flag/panic_bunker) && SSdbcore.Connect())
 			log_access("Failed Login: [key] - Guests not allowed during panic bunker")
 			key_cache[key] = 0
+			if(log_info)	// BLUEMOON EDIT:START IPINTEL FROM TG
+				INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(log_connection), ckey(key), address, computer_id, CONNECTION_TYPE_DROPPED_BANNED)
 			return list("reason"="guest", "desc"="\nReason: Sorry but the server is currently not accepting connections from never before seen players or guests. If you have played on this server with a byond account before, please log in to the byond account you have played from.")
 
 	//Population Cap Checking
@@ -69,6 +79,16 @@
 		log_access("Failed Login: [key] - Population cap reached")
 		key_cache[key] = 0
 		return list("reason"="popcap", "desc"= "\nReason: [CONFIG_GET(string/extreme_popcap_message)]")
+
+	// BLUEMOON EDIT:START IPINTEL FROM TG
+	//check if the IP address is a known proxy/vpn, and the user is not whitelisted
+	if(check_ipintel && CONFIG_GET(string/contact_email) && CONFIG_GET(flag/whitelist_mode) && GLOB.ipintel_manager.ipintel_is_banned(key, address))
+		log_admin("Failed Login: [key] [computer_id] [address] - Proxy/VPN")
+		var/mistakemessage = ""
+		if(CONFIG_GET(string/banappeals))
+			mistakemessage = "\nIf you have to use one, request whitelisting at:  [CONFIG_GET(string/banappeals)]"
+		return list("reason"="using proxy or vpn", "desc"="\nReason: Proxies/VPNs are not allowed here. [mistakemessage]")
+	// BLUEMOON EDIT:END IPINTEL FROM TG
 
 	if(CONFIG_GET(flag/ban_legacy_system))
 
@@ -82,6 +102,8 @@
 			else
 				log_access("Failed Login: [key] [computer_id] [address] - Banned [.["reason"]]")
 				key_cache[key] = 0
+				if(log_info) // BLUEMOON EDIT: IPINTEL FROM TG
+					INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(log_connection), ckey(key), address, computer_id, CONNECTION_TYPE_DROPPED_BANNED)
 				return .
 
 	else
@@ -154,6 +176,8 @@
 			log_access("Failed Login: [key] [computer_id] [address] - Banned (#[banid]) [.["reason"]]")
 			qdel(query_ban_check)
 			key_cache[key] = 0
+			if(log_info) // BLUEMOON EDIT IPINTEL FROM TG
+				INVOKE_ASYNC(GLOBAL_PROC, GLOBAL_PROC_REF(log_connection), ckey(key), address, computer_id, CONNECTION_TYPE_DROPPED_BANNED)
 			return .
 		qdel(query_ban_check)
 
@@ -232,7 +256,7 @@
 
 		var/desc = "\nReason:(StickyBan) You, or another user of this computer or connection ([bannedckey]) is banned from playing here. The ban reason is:\n[ban["message"]]\nThis ban was applied by [ban["admin"]]\nThis is a BanEvasion Detection System ban, if you think this ban is a mistake, please wait EXACTLY 6 seconds, then try again before filing an appeal.\n"
 		. = list("reason" = "Stickyban", "desc" = desc)
-		log_access("Failed Login: [key] [computer_id] [address] - StickyBanned [ban["message"]] Target Username: [bannedckey] Placed by [ban["admin"]]")
+		log_access("Login: [key] [computer_id] [address] - StickyBanned [ban["message"]] Target Username: [bannedckey] Placed by [ban["admin"]]")
 
 	key_cache[key] = 0
 	return .

@@ -724,6 +724,7 @@ const PunishmentActions = (props, context) => {
             <LabeledList.Item label="First joined server">{data_player_join_date}</LabeledList.Item>
             <LabeledList.Item label="Byond version">{data_byond_version}</LabeledList.Item>
             <LabeledList.Item label="Active bans">{active_role_ban_count}</LabeledList.Item>
+            <LabeledList.Item label="VPN/Proxies">{active_role_ban_count}</LabeledList.Item>
           </LabeledList>
         </Collapsible>
       </Section>

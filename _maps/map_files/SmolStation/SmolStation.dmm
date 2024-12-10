@@ -30487,6 +30487,10 @@
 /obj/structure/chair/office/dark,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hop)
+"wFn" = (
+/obj/item/hilbertshotel/ghostdojo,
+/turf/open/floor/plasteel,
+/area/hallway/primary/port/aft)
 "wFr" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 4
@@ -68627,7 +68631,7 @@ sVI
 sVI
 sVI
 sVI
-sVI
+wFn
 sVI
 sVI
 aFv

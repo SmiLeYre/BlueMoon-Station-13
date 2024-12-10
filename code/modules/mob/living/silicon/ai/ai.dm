@@ -1037,7 +1037,7 @@
 			if(GLOB.announcement_systems.len)
 				// Sends an announcement the AI has cryoed.
 				var/obj/machinery/announcement_system/announcer = pick(GLOB.announcement_systems)
-				announcer.announce("CRYOSTORAGE", src.real_name, announce_rank, announce_rank, list())
+				announcer.announce("CRYOSTORAGE", real_name, announce_rank, announce_rank, list())
 			new /obj/structure/ai_core/latejoin_inactive(loc)
 			if(src.mind)
 				//Handle job slot/tater cleanup.
