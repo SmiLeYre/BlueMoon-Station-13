@@ -51395,6 +51395,10 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
+/obj/structure/fireaxecabinet/sledgehammercabinet{
+	pixel_x = -32;
+	pixel_y = -1
+	},
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/ce)
 "eyj" = (

@@ -20,7 +20,7 @@
 	hitsound = 'modular_bluemoon/fluffs/sound/weapon/stab_hammer.ogg'
 	usesound = 'sound/weapons/sonic_jackhammer.ogg'
 
-	/// Track wielded status on item.
+	// Track wielded status on item.
 	var/wielded = FALSE
 
 
@@ -39,6 +39,7 @@
 	icon_state = "dmolotred_0"
 
 
+// Fireaxe window breaking feature, reworked
 /obj/item/demolition_hammer/afterattack(atom/A, mob/living/user, proximity)
 	. = ..()
 
@@ -55,31 +56,33 @@
 		plasma.take_damage(5, BRUTE, MELEE, FALSE)
 		user.visible_message(span_warning("The sledge's head bounced off the plasma glass!"))
 
-	else if(istype(A, /obj/structure/window)) // Is breaking unarmored in ~2 hits.
+	else if(istype(A, /obj/structure/window)) // Unarmored breaks in ~2 hits.
 		var/obj/structure/window/window = A
 		window.take_damage(15, BRUTE, MELEE, FALSE)
 
 
-/// Triggered on wield of two handed item.
+// Triggered on wield of two handed item.
 /obj/item/demolition_hammer/proc/on_wield(obj/item/source, mob/user)
 	wielded = TRUE
 
 
-/// Triggered on unwield of two handed item.
+// Triggered on unwield of two handed item.
 /obj/item/demolition_hammer/proc/on_unwield(obj/item/source, mob/user)
 	wielded = FALSE
 
 
+// Sonic jackhammer dismantling feauture, reworked
 /turf/closed/wall/try_destroy(obj/item/I, mob/user, turf/T)
 	if(!istype(I, /obj/item/demolition_hammer))
 		return ..()
 
+	var/obj/item/demolition_hammer/hammer = I // Checks if the hammer is dual-wielded
+	if (!hammer.wielded)
+		return FALSE
+
 	var/initial_wall_type = src.type
 	to_chat(user, span_notice("You begin to crush though [src]..."))
-	playsound(src, 'sound/alien/Effects/bang1.ogg', 50, 1)
-
-	if(!do_after(user, 5 SECONDS, target = src))
-		return FALSE
+	playsound(src, 'sound/alien/Effects/bang3.ogg', 50, 1)
 
 	if(src.type != initial_wall_type)
 		return FALSE
@@ -87,22 +90,24 @@
 	if(user.loc != T)
 		return FALSE
 
-	I.play_tool_sound(src)
-	visible_message(span_warning("[user] crushes through [src] with [I]!"), "<i>You hear the grinding of metal.</i>")
-	dismantle_wall()
-	return TRUE
+	if(do_after(user, 5 SECONDS, target = src))
+		I.play_tool_sound(src)
+		visible_message(span_warning("[user] crushes through [src] with [I]!"), "<i>You hear the grinding of metal.</i>")
+		dismantle_wall()
+		return TRUE
 
 
 /turf/closed/wall/r_wall/try_destroy(obj/item/I, mob/user, turf/T)
 	if(!istype(I, /obj/item/demolition_hammer))
 		return ..()
 
+	var/obj/item/demolition_hammer/hammer = I // Checks if the hammer is dual-wielded
+	if (!hammer.wielded)
+		return FALSE
+
 	var/initial_wall_type = src.type
 	to_chat(user, span_notice("You begin to crush though [src]..."))
-	playsound(src, 'sound/alien/Effects/bang1.ogg', 50, 1)
-
-	if(!do_after(user, 12 SECONDS, target = src))
-		return FALSE
+	playsound(src, 'sound/alien/Effects/bang3.ogg', 50, 1)
 
 	if(src.type != initial_wall_type)
 		return FALSE
@@ -110,7 +115,8 @@
 	if(user.loc != T)
 		return FALSE
 
-	I.play_tool_sound(src)
-	visible_message(span_warning("[user] crushes through [src] with [I]!"), "<i>You hear the grinding of metal.</i>")
-	dismantle_wall()
-	return TRUE
+	if(do_after(user, 12 SECONDS, target = 	src))
+		I.play_tool_sound(src)
+		visible_message(span_warning("[user] crushes through [src] with [I]!"), "<i>You hear the grinding of metal.</i>")
+		dismantle_wall()
+		return TRUE

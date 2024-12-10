@@ -126261,6 +126261,9 @@
 	},
 /obj/item/storage/secure/briefcase,
 /obj/item/reagent_containers/pill/patch/silver_sulf,
+/obj/structure/fireaxecabinet/sledgehammercabinet{
+	pixel_y = -34
+	},
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/ce)
 "wDV" = (
