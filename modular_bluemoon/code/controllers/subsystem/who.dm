@@ -200,13 +200,14 @@ SUBSYSTEM_DEF(who)
 
 		for(var/client/client as anything in listings[category][2])
 			var/list/admin_payload = list("category" = category, "special_text" = " ([round(client.avgping, 1)]ms)")
+			var/rank = client.holder ? client.holder.rank : "Mentor"// Если это не админ, мы предпологаем что это ментор... потому шо менторь эть отдельная датум! (а я думал атом... урана...)
 			if(client.holder?.fakekey)
-				admin_stealthed_additional["total_admins"] += list(list("[client.key] ([client.holder.rank])" = list(admin_payload)))
+				admin_stealthed_additional["total_admins"] += list(list("[client.key] ([rank])" = list(admin_payload)))
 				admin_payload["special_color"] = WHO_COLOR_HIDDEN_ADMIN
 				admin_payload["special_text"] += " (HIDDEN AS '[client.holder?.fakekey]')"
 			else
-				admin_additional["total_admins"] += list(list("[client.key] ([client.holder.rank])" = list(admin_payload)))
-				base_data["total_admins"] += list(list("[client.key] ([client.holder.rank])" = list(admin_payload.Copy())))
+				admin_additional["total_admins"] += list(list("[client.key] ([rank])" = list(admin_payload)))
+				base_data["total_admins"] += list(list("[client.key] ([rank])" = list(admin_payload.Copy())))
 
 			admin_payload["text"] = ""
 			if(istype(client.mob, /mob/dead/observer))
