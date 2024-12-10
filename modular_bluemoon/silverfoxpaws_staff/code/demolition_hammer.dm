@@ -82,13 +82,17 @@
 
 	var/initial_wall_type = src.type
 	to_chat(user, span_notice("You begin to crush though [src]..."))
-	playsound(src, 'sound/alien/Effects/bang3.ogg', 50, 1)
+	playsound(src, 'sound/alien/Effects/bang1.ogg', 50, 1)
 
 	if(src.type != initial_wall_type)
 		return FALSE
 
 	if(user.loc != T)
 		return FALSE
+
+	spawn(2.5 SECONDS) // Plays sound mid-destroying
+		if(user.loc == T)
+			playsound(src, 'sound/alien/Effects/bang7.ogg', 100, 1)
 
 	if(do_after(user, 5 SECONDS, target = src))
 		I.play_tool_sound(src)
@@ -107,13 +111,17 @@
 
 	var/initial_wall_type = src.type
 	to_chat(user, span_notice("You begin to crush though [src]..."))
-	playsound(src, 'sound/alien/Effects/bang3.ogg', 50, 1)
+	playsound(src, 'sound/alien/Effects/bang1.ogg', 50, 1)
 
 	if(src.type != initial_wall_type)
 		return FALSE
 
 	if(user.loc != T)
 		return FALSE
+
+	spawn(6 SECONDS) // Plays sound mid-destroying
+		if(user.loc == T)
+			playsound(src, 'sound/alien/Effects/bang7.ogg', 100, 1)
 
 	if(do_after(user, 12 SECONDS, target = 	src))
 		I.play_tool_sound(src)
