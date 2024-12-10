@@ -543,7 +543,7 @@
 	return pick("Aloha Сектор |", "Bonjour Сектор |", "Hello Сектор |", "Hi Сектор |", "Greetings Сектор |", "Salutations Сектор |", "Bienvenidos Сектор |", "Hola Сектор |", "Howdy Сектор |", "Ni hao Сектор |", "Guten Tag Сектор |", "Konnichiwa Сектор |", "G'day cunt Сектор |", "Здорова Сектор |")
 
 /datum/holiday/human_rights
-	name = "день прав человека"
+	name = "День Прав Человека |"
 	begin_day = 10
 	begin_month = DECEMBER
 

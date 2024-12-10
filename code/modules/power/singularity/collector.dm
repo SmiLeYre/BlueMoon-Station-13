@@ -38,6 +38,8 @@
 	Radio = new /obj/item/radio(src)
 	Radio.listening = 0
 	Radio.set_frequency(FREQ_ENGINEERING)
+	if(anchored)
+		connect_to_network()
 
 /obj/machinery/power/rad_collector/Destroy()
 	QDEL_NULL(Radio)
