@@ -80,17 +80,13 @@
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF | FREEZE_PROOF
 	obj_flags = CAN_BE_HIT | DANGEROUS_POSSESSION
 
+/obj/singularity/gravitational
 	var/atom/movable/singularity_effect/singulo_effect
 	var/atom/movable/singularity_swirl/singulo_swirl
 	var/atom/movable/singularity_lens/singulo_lens
-
 	var/atom/movable/warp_effect/warp
 
-/obj/singularity/Initialize(mapload, starting_energy = 50)
-	//CARN: admin-alert for chuckle-fuckery.
-	admin_investigate_setup()
-
-	src.energy = starting_energy
+/obj/singularity/gravitational/Initialize(mapload, starting_energy = 50)
 	. = ..()
 
 	add_filter("singa_ring", 1, bloom_filter(rgb(100,0,0), 2, 2, 255))
@@ -115,6 +111,24 @@
 
 	expand()
 
+/obj/singularity/gravitational/Destroy()
+	vis_contents -= singulo_swirl
+	QDEL_NULL(singulo_swirl)
+	vis_contents -= singulo_effect
+	QDEL_NULL(singulo_effect)
+	vis_contents -= singulo_lens
+	QDEL_NULL(singulo_lens)
+	vis_contents -= warp
+	QDEL_NULL(warp)
+	return ..()
+
+/obj/singularity/Initialize(mapload, starting_energy = 50)
+	//CARN: admin-alert for chuckle-fuckery.
+	admin_investigate_setup()
+
+	src.energy = starting_energy
+	. = ..()
+
 	START_PROCESSING(SSobj, src)
 	GLOB.poi_list |= src
 	GLOB.singularities |= src
@@ -128,14 +142,6 @@
 	STOP_PROCESSING(SSobj, src)
 	GLOB.poi_list.Remove(src)
 	GLOB.singularities.Remove(src)
-	vis_contents -= singulo_swirl
-	QDEL_NULL(singulo_swirl)
-	vis_contents -= singulo_effect
-	QDEL_NULL(singulo_effect)
-	vis_contents -= singulo_lens
-	QDEL_NULL(singulo_lens)
-	vis_contents -= warp
-	QDEL_NULL(warp)
 	return ..()
 
 /obj/singularity/Move(atom/newloc, direct)
@@ -215,7 +221,7 @@
 	set waitfor = FALSE
 	consume(AM)
 
-/obj/singularity/process()
+/obj/singularity/gravitational/process()
 	if(current_size >= STAGE_TWO)
 		move()
 		radiation_pulse(src, min(10000, (energy*9)+2000), RAD_DISTANCE_COEFFICIENT*0.5)
@@ -250,7 +256,7 @@
 		dissipate_track++
 
 
-/obj/singularity/proc/expand(force_size = 0)
+/obj/singularity/gravitational/proc/expand(force_size = 0)
 	var/temp_allowed_size = allowed_size
 	if(force_size)
 		temp_allowed_size = force_size
@@ -403,7 +409,7 @@
 		return FALSE
 
 
-/obj/singularity/proc/check_energy()
+/obj/singularity/gravitational/proc/check_energy()
 	if(energy <= 0)
 		investigate_log("collapsed.", INVESTIGATE_SINGULO)
 		qdel(src)
@@ -568,7 +574,7 @@
 /obj/singularity/proc/combust_mobs()
 	for(var/mob/living/carbon/C in urange(20, src, 1))
 		C.visible_message("<span class='warning'>[C]'s skin bursts into flame!</span>", \
-						  "<span class='userdanger'>You feel an inner fire as your skin bursts into flames!</span>")
+						"<span class='userdanger'>You feel an inner fire as your skin bursts into flames!</span>")
 		C.adjust_fire_stacks(5)
 		C.IgniteMob()
 	return
@@ -588,7 +594,6 @@
 		M.visible_message("<span class='danger'>[M] stares blankly at the [src.name]!</span>", \
 						"<span class='userdanger'>You look directly into the [src.name] and feel weak.</span>")
 	return
-
 
 /obj/singularity/proc/emp_area()
 	empulse_using_range(src, 10)
