@@ -389,34 +389,35 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	connection_realtime = world.realtime
 	connection_timeofday = world.timeofday
 	winset(src, null, "command=\".configure graphics-hwmode on\"")
-	var/cev = CONFIG_GET(number/client_error_version)
-	var/ceb = CONFIG_GET(number/client_error_build)
-	var/cwv = CONFIG_GET(number/client_warn_version)
-	if (byond_version < cev || (byond_version == cev && byond_build < ceb))		//Out of date client.
-		to_chat(src, "<span class='danger'><b>Your version of BYOND is too old:</b></span>")
-		to_chat(src, CONFIG_GET(string/client_error_message))
-		to_chat(src, "Your version: [byond_version].[byond_build]")
-		to_chat(src, "Required version: [cev].[ceb] or later")
-		to_chat(src, "Visit <a href=\"https://secure.byond.com/download\">BYOND's website</a> to get the latest version of BYOND.")
+	// Bluemoon Edit:Start Better byond warning
+	var/breaking_version = CONFIG_GET(number/client_error_version)
+	var/breaking_build = CONFIG_GET(number/client_error_build)
+	var/warn_version = CONFIG_GET(number/client_warn_version)
+	if (byond_version < breaking_version || (byond_version == breaking_version && byond_build < breaking_build))		//Out of date client.
+		to_chat_immediate(src, span_danger("<b>Your version of BYOND is too old:</b>"))
+		to_chat_immediate(src, CONFIG_GET(string/client_error_message))
+		to_chat_immediate(src, "Your version: [byond_version].[byond_build]")
+		to_chat_immediate(src, "Required version: [breaking_version].[breaking_build] or later")
+		to_chat_immediate(src, "Visit <a href=\"https://secure.byond.com/download\">BYOND's website</a> to get the latest version of BYOND.")
 		if (connecting_admin)
-			to_chat(src, "Because you are an admin, you are being allowed to walk past this limitation, But it is still STRONGLY suggested you upgrade")
+			to_chat_immediate(src, "Because you are an admin, you are being allowed to walk past this limitation, But it is still STRONGLY suggested you upgrade")
+			// Bluemoon Edit:End Better byond warning
 		else
 			qdel(src)
 			return FALSE
-	else if (byond_version < cwv)	//We have words for this client.
+	else if (byond_version < warn_version)	// Bluemoon Edit: Better byond warning //We have words for this client.
 		if(CONFIG_GET(flag/client_warn_popup))
 			var/msg = "<b>Your version of byond may be getting out of date:</b><br>"
 			msg += CONFIG_GET(string/client_warn_message) + "<br><br>"
 			msg += "Your version: [byond_version]<br>"
-			msg += "Required version to remove this message: [cwv] or later<br>"
+			msg += "Required version to remove this message: [warn_version] or later<br>" // Bluemoon Edit: Better byond warning
 			msg += "Visit <a href=\"https://secure.byond.com/download\">BYOND's website</a> to get the latest version of BYOND.<br>"
 			src << browse(msg, "window=warning_popup")
 		else
 			to_chat(src, "<span class='danger'><b>Your version of byond may be getting out of date:</b></span>")
 			to_chat(src, CONFIG_GET(string/client_warn_message))
 			to_chat(src, "Your version: [byond_version]")
-			to_chat(src, "Required version to remove this message: [cwv] or later")
-			to_chat(src, "Visit <a href=\"https://secure.byond.com/download\">BYOND's website</a> to get the latest version of BYOND.")
+			to_chat(src, "Required version to remove this message: [warn_version] or later") // Bluemoon Edit: Better byond warning
 
 	if (connection == "web" && !connecting_admin)
 		if (!CONFIG_GET(flag/allow_webclient))
@@ -458,10 +459,9 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if (CONFIG_GET(flag/irc_first_connection_alert))
 			send2tgs_adminless_only("new_byond_user", "[key_name(src)] (IP: [address], ID: [computer_id]) is a new BYOND account [account_age] day[(account_age==1?"":"s")] old, created on [account_join_date].")
 	get_message_output("watchlist entry", ckey)
-	//check_ip_intel() // BLUEMOON EDIT: IPINTEL FROM TG
+	check_ip_intel()
 	validate_key_in_db()
 
-	check_ip_intel() // BLUEMOON EDIT: IPINTEL FROM TG
 	send_resources()
 
 	update_clickcatcher()
@@ -515,6 +515,7 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 			menuitem.Load_checked(src)
 
 	SSambience.remove_ambience_client(src)
+
 	view_size = new(src, getScreenSize(prefs.widescreenpref))
 	view_size.resetFormat()
 	view_size.setZoomMode()
@@ -607,14 +608,13 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		qdel(query_client_in_db)
 		return
 
-	var/client_is_in_db = query_client_in_db.NextRow() // BLUEMOON EDIT: IPINTEL FROM TG
 	//If we aren't an admin, and the flag is set
 	if(CONFIG_GET(flag/panic_bunker) && !holder && !GLOB.deadmins[ckey] && !(ckey in GLOB.bunker_passthrough))
 		var/living_recs = CONFIG_GET(number/panic_bunker_living)
-		//var/vpn_living_recs = CONFIG_GET(number/panic_bunker_living_vpn)
+		var/vpn_living_recs = CONFIG_GET(number/panic_bunker_living_vpn)
 		//Relies on pref existing, but this proc is only called after that occurs, so we're fine.
 		var/minutes = get_exp_living(pure_numeric = TRUE)
-		if((living_recs == 0 && !client_is_in_db) || living_recs >= minutes) // BLUEMOON EDIT: IPINTEL FROM TG //if((minutes <= living_recs) || (IsVPN() && (minutes < vpn_living_recs)))
+		if((minutes <= living_recs) || (IsVPN() && (minutes < vpn_living_recs)))
 			var/reject_message = "Failed Login: [key] - Account attempting to connect during panic bunker, but they do not have the required living time [minutes]/[living_recs]"
 			log_access(reject_message)
 			message_admins("<span class='adminnotice'>[reject_message]</span>")
@@ -873,7 +873,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 	create_message("note", key, system_ckey, message, null, null, 0, 0, null, 0, 0)
 
 
-/*// BLUEMOON EDIT:START IPINTEL FROM TG
 /client/proc/check_ip_intel()
 	set waitfor = 0 //we sleep when getting the intel, no need to hold up the client connection while we sleep
 	if (CONFIG_GET(string/ipintel_email))
@@ -881,46 +880,6 @@ GLOBAL_LIST_INIT(blacklisted_builds, list(
 		if (res.intel >= CONFIG_GET(number/ipintel_rating_bad))
 			message_admins("<span class='adminnotice'>Proxy Detection: [key_name_admin(src)] IP intel rated [res.intel*100]% likely to be a Proxy/VPN.</span>")
 		ip_intel = res.intel
-*/ // BLUEMOON EDIT:END IPINTEL FROM TG
-
-// BLUEMOON EDIT:START IPINTEL FROM TG
-/client/proc/check_ip_intel()
-	set waitfor = 0 //we sleep when getting the intel, no need to hold up the client connection while we sleep
-	if(CONFIG_GET(flag/ipintel_enabled))
-		if(CONFIG_GET(number/playtime_ignore_threshold) && CONFIG_GET(flag/use_exp_tracking))
-			var/living_hours = text2num(prefs.exp[EXP_TYPE_LIVING]) / 60
-			if(living_hours >= CONFIG_GET(number/playtime_ignore_threshold))
-				return
-
-		if(is_connecting_from_localhost())
-			log_access("check_ip_intel: skip check for player [key_name_admin(src)] connecting from localhost.")
-			return
-
-		if(GLOB.ipintel_manager.vpn_whitelist_check(ckey))
-			log_access("check_ip_intel: skip check for player [key_name_admin(src)] [address] on whitelist.")
-			return
-
-		var/datum/ipintel/res = GLOB.ipintel_manager.get_ip_intel(address)
-		ip_intel = res.intel
-		verify_ip_intel()
-
-/client/proc/verify_ip_intel()
-	if(ip_intel >= CONFIG_GET(number/bad_rating))
-		var/detailsurl = CONFIG_GET(string/details_url) ? "(<a href='[CONFIG_GET(string/details_url)][address]'>IP Info</a>)" : ""
-		if(CONFIG_GET(flag/whitelist_mode))
-			// Do not move this to isBanned(). This may sound weird, but:
-			// This needs to happen after their account is put into the DB
-			// This way, admins can then note people
-			spawn(40) // This is necessary because without it, they won't see the message, and addtimer cannot be used because the timer system may not have initialized yet
-				message_admins("<span class='adminnotice'>IPIntel: [key_name_admin(src)] on IP [address] was rejected. [detailsurl]</span>")
-				var/blockmsg = "<B>Error: proxy/VPN detected. Proxy/VPN use is not allowed here. Deactivate it before you reconnect.</B>"
-				if(CONFIG_GET(string/banappeals))
-					blockmsg += "\nIf you are not actually using a proxy/VPN, or have no choice but to use one, request whitelisting at: [CONFIG_GET(string/banappeals)]"
-				to_chat(src, blockmsg)
-				qdel(src)
-		else
-			message_admins("<span class='adminnotice'>IPIntel: [key_name_admin(src)] on IP [address] is likely to be using a Proxy/VPN. [detailsurl]</span>")
-// BLUEMOON EDIT:END IPINTEL FROM TG
 
 /client/Click(atom/object, atom/location, control, params, ignore_spam = FALSE, extra_info)
 	if(last_click > world.time - world.tick_lag)
