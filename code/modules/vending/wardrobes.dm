@@ -788,7 +788,7 @@
 		/obj/item/clothing/head/maid/syndicate/civil = 5,
 		/obj/item/clothing/head/helmet/swat/ds/civil = 5,
 		/obj/item/clothing/head/hats/warden/syndicate/civil = 5,
-		/obj/item/card/id/syndicate/one_access_copy = 5
+		/obj/item/card/id/syndicate/civilian/vending = 5
 	)
 	refill_canister = /obj/item/vending_refill/wardrobe/syndie_wardrobe/civil
 	light_color = COLOR_MOSTLY_PURE_RED
