@@ -1,12 +1,11 @@
 /datum/eldritch_knowledge/base_ash
 	name = "Секрет Ночного Стража"
 	desc = "Открывает перед вами путь пепла. \
-		Позволяет трансмутировать спичку и кухонный нож в Пепельный клинок. \
-		Одновременно может быть лишь два клинка."
+		Позволяет трансмутировать спичку и кухонный нож в Пепельный клинок."
 	gain_text = "Ночная стража знает своё дело. Если вы загляните к ним ночью, то они расскажут вам историю о пепельном фонаре."
 	banned_knowledge = list(/datum/eldritch_knowledge/base_rust,/datum/eldritch_knowledge/base_flesh,/datum/eldritch_knowledge/final_eldritch/rust_final,/datum/eldritch_knowledge/final_eldritch/flesh_final,/datum/eldritch_knowledge/final_eldritch/void_final,/datum/eldritch_knowledge/base_void)
 	next_knowledge = list(/datum/eldritch_knowledge/ashen_grasp)
-	required_atoms = list(/obj/item/spear,/obj/item/match)
+	required_atoms = list(/obj/item/kitchen/knife,/obj/item/match)
 	result_atoms = list(/obj/item/melee/sickly_blade/ash)
 	cost = 0
 	route = PATH_ASH

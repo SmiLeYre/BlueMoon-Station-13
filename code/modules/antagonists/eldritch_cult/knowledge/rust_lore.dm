@@ -1,13 +1,12 @@
 /datum/eldritch_knowledge/base_rust
 	name = "История кузнеца"
 	desc = "Открывает перед вами Путь Ржавчины. \
-		Позволяет трансмутировать кухонный нож с любым мусорным предметом в Ржавый Клинок. \
-		Одновременно можно иметь только два."
+		Позволяет трансмутировать кухонный нож с любым мусорным предметом в Ржавый Клинок."
 	gain_text = "\"Позвольте мне рассказать вам одну историю\", - сказал кузнец, глянув на свой ржавый клинок."
 	banned_knowledge = list(/datum/eldritch_knowledge/base_ash,/datum/eldritch_knowledge/base_flesh,/datum/eldritch_knowledge/final_eldritch/ash_final,/datum/eldritch_knowledge/final_eldritch/flesh_final,/datum/eldritch_knowledge/final_eldritch/void_final,/datum/eldritch_knowledge/base_void)
 	next_knowledge = list(/datum/eldritch_knowledge/rust_fist)
 	required_atoms = list(
-		/obj/item/spear = 1,
+		/obj/item/kitchen/knife = 1,
 		/obj/item/trash = 1,
 	)
 	result_atoms = list(/obj/item/melee/sickly_blade/rust)

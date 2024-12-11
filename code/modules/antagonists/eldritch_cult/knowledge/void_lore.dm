@@ -1,13 +1,12 @@
 /datum/eldritch_knowledge/base_void
 	name = "Мерцание зимы"
 	desc = "Открывает перед вами путь Пустоты. \
-		Позволяет трансмутировать нож при минусовой температуре в Клинок Пустоты. \
-		Одновременно у вас могут быть лишь два клинка."
+		Позволяет трансмутировать нож при минусовой температуре в Клинок Пустоты."
 	gain_text = "Я чувствую мерцание вокруг, воздух вокруг меня становится холоднее. \
 		Я начинаю осознавать пустоту существования. Что-то наблюдает за мной."
 	banned_knowledge = list(/datum/eldritch_knowledge/base_ash,/datum/eldritch_knowledge/base_flesh,/datum/eldritch_knowledge/final_eldritch/ash_final,/datum/eldritch_knowledge/final_eldritch/flesh_final,/datum/eldritch_knowledge/base_rust,/datum/eldritch_knowledge/final_eldritch/rust_final)
 	next_knowledge = list(/datum/eldritch_knowledge/void_grasp)
-	required_atoms = list(/obj/item/spear)
+	required_atoms = list(/obj/item/kitchen/knife)
 	result_atoms = list(/obj/item/melee/sickly_blade/void)
 	cost = 0
 	route = PATH_VOID

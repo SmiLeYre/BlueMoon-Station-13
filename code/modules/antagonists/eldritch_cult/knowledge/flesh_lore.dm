@@ -1,12 +1,11 @@
 /datum/eldritch_knowledge/base_flesh
 	name = "Принцип Голода"
 	desc = "Открывает вам Путь Плоти. \
-		Позволяет вам трансмутировать кухонный нож и лужу крови в Кровавый клинок. \
-		У вас может быть только три клинка одновременно."
+		Позволяет вам трансмутировать кухонный нож и лужу крови в Кровавый клинок."
 	gain_text = "Сотни из нас голодали, но не я... Меня питала моя алчность."
 	banned_knowledge = list(/datum/eldritch_knowledge/base_ash,/datum/eldritch_knowledge/base_rust,/datum/eldritch_knowledge/final_eldritch/ash_final,/datum/eldritch_knowledge/final_eldritch/rust_final,/datum/eldritch_knowledge/final_eldritch/void_final,/datum/eldritch_knowledge/base_void)
 	next_knowledge = list(/datum/eldritch_knowledge/flesh_grasp)
-	required_atoms = list(/obj/item/spear,/obj/effect/decal/cleanable/blood)
+	required_atoms = list(/obj/item/kitchen/knife,/obj/effect/decal/cleanable/blood)
 	result_atoms = list(/obj/item/melee/sickly_blade/flesh)
 	cost = 0
 	route = PATH_FLESH
