@@ -396,7 +396,7 @@ GLOBAL_LIST_EMPTY(bot_asay_sending_que)
 
 	if(bot_data["admin"])
 		for(var/list/data in bot_data["admin"])
-			to_chat(GLOB.admins, "<span class='adminsay'><span class='prefix'>DISCORD ADMIN:</span> <EM>[data["author"]]</EM>: <span class='message linkify'>[sanitize(data["message"])])]</span></span>", confidential = TRUE)
+			to_chat(GLOB.admins, "<span class='adminsay'><span class='prefix'>DISCORD ADMIN:</span> <EM>[data["author"]]</EM>: <span class='message linkify'>[sanitize(data["message"])]</span></span>", confidential = TRUE)
 
 	statuscode = 200
 	response = "Events received."
