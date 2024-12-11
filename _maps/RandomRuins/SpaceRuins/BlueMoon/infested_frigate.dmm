@@ -873,7 +873,7 @@
 /obj/item/pickaxe/emergency,
 /obj/item/storage/toolbox/inteq,
 /obj/item/bedsheet/inteq,
-/obj/effect/spawner/lootdrop/trader/illigal{
+/obj/effect/spawner/lootdrop/trader/illegal{
 	lootcount = 2
 	},
 /turf/open/floor/plating,
