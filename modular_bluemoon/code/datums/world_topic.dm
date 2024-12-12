@@ -68,6 +68,8 @@
 
 	data = list()
 
+	data["mode"] = SSticker.hide_mode ? "secret" : "[GLOB.round_type]"
+
 	data["round_id"] = null
 	if(GLOB.round_id)
 		data["round_id"] = GLOB.round_id
