@@ -1,12 +1,12 @@
-/datum/reagent/consumable/semen/reaction_mob(mob/living/M, method, reac_volume)
+/datum/reagent/consumable/semen/reaction_mob(mob/living/M, method, reac_volume) //splashing or ingesting
 	. = ..()
 	if(!istype(src, /datum/reagent/consumable/semen/femcum))
-		if(HAS_TRAIT(M, TRAIT_GFLUID_DETECT) || HAS_TRAIT(M,TRAIT_DUMB_CUM))
+		if(HAS_TRAIT(M, TRAIT_GFLUID_DETECT))
 			to_chat(M, span_love("Вы узнаете хорошо знакомый вам вкус свежей спермы~"))
 		if(HAS_TRAIT(M, TRAIT_DUMB_CUM))
 			var/datum/quirk/dumb4cum/quirk_target = locate() in M.roundstart_quirks
 			quirk_target.uncrave()
-			M.set_drugginess(1)
+			//M.set_drugginess(1)
 			if(prob(15))
 				to_chat(M, span_love(pick("Как же вкусно!~", "Восхитительно!~", "Невозможно удержаться!~")))
 				M.emote("moan")
