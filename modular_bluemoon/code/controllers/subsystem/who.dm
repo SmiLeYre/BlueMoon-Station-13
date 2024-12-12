@@ -161,7 +161,7 @@ SUBSYSTEM_DEF(who)
 				break
 
 /datum/player_list/ui_status(mob/user, datum/ui_state/state)
-	return UI_INTERACTIVE
+	return GLOB.always_state
 
 
 // STAFF DATA
