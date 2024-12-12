@@ -13,7 +13,7 @@
 				to_chat(M, span_love(pick("Как же вкусно!~", "Восхитительно!~", "Невозможно удержаться!~")))
 				M.emote("moan")
 
-/datum/reagent/consumable/semen/on_merge(data, amount, mob/living/carbon/M, purity)
+/datum/reagent/consumable/semen/on_merge(data, amount, mob/living/carbon/M, purity) //when we add more through ERP panel
 	. = ..()
 	if(!iscarbon(M))
 		return

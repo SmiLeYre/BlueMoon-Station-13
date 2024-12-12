@@ -18,7 +18,7 @@
 		var/datum/quirk/dumb4cum/quirk_target = locate() in M.roundstart_quirks
 
 		// Remove reset timer
-		quirk_target.uncrave(FALSE)
+		quirk_target.uncrave(FALSE) //diluted, so no "wow effect".
 
 //incubus and succubus additions below
 /datum/reagent/consumable/semen/on_mob_life(mob/living/carbon/M)
