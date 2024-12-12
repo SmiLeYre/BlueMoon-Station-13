@@ -42784,6 +42784,10 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
+/obj/structure/fireaxecabinet/sledgehammercabinet{
+	pixel_x = -32;
+	pixel_y = -1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/command/heads_quarters/ce)
 "cfG" = (

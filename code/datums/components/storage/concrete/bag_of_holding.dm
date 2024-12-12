@@ -39,7 +39,7 @@
 		// 			M.DefaultCombatKnockdown(5, TRUE, TRUE)		//Overrides stun absorbs.
 		// 	T.TerraformTurf(/turf/open/chasm/magic, /turf/open/chasm/magic)
 
-		var/obj/singularity/singulo = new /obj/singularity (get_turf(A)) // Теперь БОХ в БОХ - это Сингулярность.
+		var/obj/singularity/gravitational/singulo = new /obj/singularity (get_turf(A)) // Теперь БОХ в БОХ - это Сингулярность.
 		singulo.energy = 300 //should make it a bit bigger~
 
 		for (var/obj/structure/ladder/unbreakable/binary/ladder in GLOB.ladders)

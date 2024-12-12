@@ -64320,6 +64320,10 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
 	},
+/obj/structure/fireaxecabinet/sledgehammercabinet{
+	pixel_x = -32;
+	pixel_y = -2
+	},
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/ce)
 "llb" = (

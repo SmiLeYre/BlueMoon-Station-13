@@ -6550,6 +6550,9 @@
 	dir = 4
 	},
 /obj/item/stamp/ce,
+/obj/structure/fireaxecabinet/sledgehammercabinet{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/ce)
 "amG" = (

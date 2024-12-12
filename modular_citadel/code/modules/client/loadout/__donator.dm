@@ -86,7 +86,7 @@
 /datum/gear/donator/agent_card
 	name = "Agent Card (without microscanners)" //BLUEMOON CHANGES
 	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/card/id/syndicate/one_access_copy //BLUEMOON CHANGES
+	path = /obj/item/card/id/syndicate/civilian/vending/loadout  //BLUEMOON CHANGES
 	ckeywhitelist = list()
 	donator_group_id = DONATOR_GROUP_TIER_1
 

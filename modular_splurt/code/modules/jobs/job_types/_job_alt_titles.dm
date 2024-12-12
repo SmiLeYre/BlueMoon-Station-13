@@ -387,6 +387,7 @@
 		"Slutective",
 		"Studective",
 		"Van Dorn Agent",
+		"AC Recon Agent",
 		"Forensic Investigator",
 		"Cinder Dick",
 		"Cooperate Auditor"

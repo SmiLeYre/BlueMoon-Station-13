@@ -182,8 +182,8 @@
 			/obj/item/ammo_box/magazine/smgm9mm
 	)
 
-/obj/effect/spawner/lootdrop/trader/illigal
-	name = "illigal product"
+/obj/effect/spawner/lootdrop/trader/illegal
+	name = "illegal product"
 	lootcount = 12
 	loot = list(
 			/obj/item/grenade/clusterbuster/smoke,
