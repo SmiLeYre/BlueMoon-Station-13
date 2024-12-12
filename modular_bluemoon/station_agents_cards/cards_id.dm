@@ -6,6 +6,7 @@
 	desc = "A card used to provide ID and determine access across the station. It has a small graved in label, marking it as \"One-Use Electromagnetic Access Copier Device\". \
 	<span class='danger'>The technology is well known and illegal to use in almost all nations and private organizations, but seems like the Pact solds them as souvenirs at its territory.</span>"
 	uses = 1
+	anyone = TRUE // все могут изменять характеристики
 
 /obj/item/card/id/syndicate/civilian/vending // для раздатчиков
 	desc = "A card used to provide ID and determine access across the station. It has a small graved in label, marking it as \"Appearence Changing ID\". \
