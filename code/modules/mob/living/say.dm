@@ -59,8 +59,7 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	"н" = RADIO_CHANNEL_CENTCOM,
 	// Ghostrole
 	"ф" = RADIO_CHANNEL_DS1,
-	"ц" = RADIO_CHANNEL_DS2,
-	"й" = RADIO_CHANNEL_HOTEL,
+	"й" = RADIO_CHANNEL_DS2,
 
 	// Admin
 	"з" = MODE_ADMIN,
