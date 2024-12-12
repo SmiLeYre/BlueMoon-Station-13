@@ -111,8 +111,8 @@
 #define FREQ_TARKOFF 1243
 
 #define RADIO_CHANNEL_DS1 "DS-1"
-#define RADIO_KEY_DS1 "q"
-#define RADIO_TOKEN_DS1 ":q"
+#define RADIO_KEY_DS1 "a"
+#define RADIO_TOKEN_DS1 ":a"
 #define FREQ_DS1 1210
 
 #define RADIO_CHANNEL_DS2 "DS-2"

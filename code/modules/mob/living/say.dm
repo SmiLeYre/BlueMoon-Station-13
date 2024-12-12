@@ -57,6 +57,10 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	// Faction
 	"е" = RADIO_CHANNEL_SYNDICATE,
 	"н" = RADIO_CHANNEL_CENTCOM,
+	// Ghostrole
+	"ф" = RADIO_CHANNEL_DS1,
+	"ц" = RADIO_CHANNEL_DS2,
+	"й" = RADIO_CHANNEL_HOTEL,
 
 	// Admin
 	"з" = MODE_ADMIN,
