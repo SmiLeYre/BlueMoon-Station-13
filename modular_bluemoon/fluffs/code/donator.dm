@@ -1049,7 +1049,6 @@
 	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
 	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
 
-
 /datum/gear/donator/bm/soviet_coat
     name = "Soviet coat"
     slot = ITEM_SLOT_OCLOTHING
@@ -1077,3 +1076,10 @@
 	path = /obj/item/modkit/razorsong_kit
 	ckeywhitelist = list("xaeshkavd")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/agentcape
+    name = "Marketing agent's cape"
+    slot = ITEM_SLOT_OCLOTHING
+    path = /obj/item/clothing/suit/donator/bm/agentcape
+    ckeywhitelist = list("sosnovskii")
+    subcategory = LOADOUT_SUBCATEGORIES_DON02

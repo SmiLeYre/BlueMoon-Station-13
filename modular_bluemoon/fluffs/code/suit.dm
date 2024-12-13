@@ -281,3 +281,20 @@
     desc = "Красивая красная кожанная шуба, которая пахнет старостью, она довольно тёплая, но кажется её комфортно носить везде."
     icon_state = "soviet_trench"
     item_state = "soviet_trench"
+
+/obj/item/clothing/suit/donator/bm/agentcape
+    name = "Marketing agent's cape"
+    desc = "The advertising agent's cape is saturated with the smell of instant noodles."
+    icon_state = "agentcape"
+    item_state = "agentcape"
+
+
+/obj/item/clothing/suit/donator/bm/agentcape
+	name = "Marketing agent's cape"
+	desc = "The advertising agent's cape is saturated with the smell of instant noodles."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/suit.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/suit.dmi'
+	icon_state = "agentcape"
+	item_state = "agentcape"
+	body_parts_covered = CHEST
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
