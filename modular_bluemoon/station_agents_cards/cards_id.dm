@@ -28,6 +28,12 @@
 
 		if(my_owner) // копирование свойств старой карты и её замена
 			var/obj/item/card/id/id_card = my_owner.get_item_by_slot(ITEM_SLOT_ID)
+
+			if(istype(id_card, /obj/item/card/id/inteq) || istype(id_card, /obj/item/card/id/syndicate))
+				to_chat(my_owner, span_warning("Ваша карта уже обладает свойствами, доступными гражданской карте синдиката! Лишняя была удалена."))
+				qdel(src)
+				return
+
 			if(id_card?.access.len)
 				access |= id_card.access
 				assignment = id_card.assignment
@@ -42,6 +48,6 @@
 
 		registred = TRUE
 
-		if(src != my_owner.get_item_by_slot(ITEM_SLOT_ID)) // Если в будущем что-то переделают и карта будет спавниться в отдельной коробке или вроде того
+		if(src != my_owner?.get_item_by_slot(ITEM_SLOT_ID)) // Если в будущем что-то переделают и карта будет спавниться в отдельной коробке или вроде того
 			visible_message(span_warning("ID карта из лодаута не нашла цель для копирования доступа, сообщите разработчикам."))
 	. = ..()
