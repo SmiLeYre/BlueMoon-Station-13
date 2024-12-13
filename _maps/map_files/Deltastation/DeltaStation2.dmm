@@ -82936,7 +82936,13 @@
 	pixel_y = -32
 	},
 /obj/effect/turf_decal/bot,
-/obj/machinery/vending/hydronutrients,
+/obj/item/watertank,
+/obj/item/reagent_containers/spray/plantbgone,
+/obj/item/reagent_containers/spray/plantbgone{
+	pixel_x = 16
+	},
+/obj/structure/table/glass,
+/obj/item/grenade/chem_grenade/antiweed,
 /turf/open/floor/plasteel,
 /area/service/hydroponics)
 "kdA" = (
@@ -83605,17 +83611,11 @@
 /turf/open/space,
 /area/solars/port/fore)
 "kmn" = (
-/obj/structure/table/glass,
-/obj/item/reagent_containers/spray/plantbgone,
-/obj/item/reagent_containers/spray/plantbgone{
-	pixel_x = 16
-	},
-/obj/item/watertank,
-/obj/item/grenade/chem_grenade/antiweed,
 /obj/effect/turf_decal/bot,
 /obj/structure/sign/poster/official/ian{
 	pixel_y = -32
 	},
+/obj/machinery/vending/hydronutrients,
 /turf/open/floor/plasteel,
 /area/service/hydroponics)
 "kmz" = (
@@ -115086,6 +115086,7 @@
 /obj/structure/cable/white{
 	icon_state = "0-2"
 	},
+/obj/structure/chair/sofa/right/maroon,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "tsO" = (
@@ -116931,16 +116932,6 @@
 /obj/effect/turf_decal/tile/red,
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
-	},
-/obj/structure/lattice/catwalk,
-/obj/docking_port/stationary{
-	shuttle_id = "lambda_station";
-	name = "Lambda Shuttle Dock";
-	dwidth = 5;
-	width = 10;
-	dheight = 5;
-	height = 10;
-	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
@@ -126145,6 +126136,16 @@
 	},
 /turf/open/floor/plasteel,
 /area/cargo/storage)
+"wCL" = (
+/obj/effect/turf_decal/tile/red/half{
+	dir = 1
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/chair/sofa/middle/maroon,
+/turf/open/floor/plasteel,
+/area/security/brig)
 "wCO" = (
 /obj/structure/chair,
 /obj/machinery/shower{
@@ -126564,6 +126565,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/chair/sofa/left/maroon,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "wHQ" = (
@@ -184715,7 +184717,7 @@ sPY
 nVC
 xYZ
 mOt
-gHo
+wCL
 gJO
 rJV
 bYk
