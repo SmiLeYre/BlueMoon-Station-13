@@ -49255,10 +49255,6 @@
 /area/maintenance/department/medical/morgue)
 "dDZ" = (
 /obj/structure/closet/secure_closet/medical2,
-/obj/machinery/light{
-	dir = 8;
-	light_color = "#e8eaff"
-	},
 /obj/effect/turf_decal/tile/red{
 	dir = 8
 	},
@@ -57181,6 +57177,7 @@
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/plasteel,
 /area/security/brig)
 "dUv" = (
@@ -71550,9 +71547,6 @@
 /obj/item/reagent_containers/syringe{
 	name = "steel point"
 	},
-/obj/machinery/light{
-	light_color = "#c9d3e8"
-	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
@@ -78789,10 +78783,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
 	},
-/obj/machinery/light{
-	dir = 4;
-	light_color = "#c1caff"
-	},
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
 "iXK" = (
@@ -81844,6 +81834,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
+"jNY" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/structure/extinguisher_cabinet/directional/west,
+/turf/open/floor/plasteel,
+/area/hallway/primary/central)
 "jOm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/conveyor{
@@ -83758,6 +83756,13 @@
 	},
 /turf/open/floor/plasteel/chapel_floor,
 /area/security/prison/upper)
+"kpM" = (
+/obj/effect/turf_decal/tile/red/half{
+	dir = 1
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel/dark,
+/area/security/prison)
 "kpU" = (
 /obj/structure/table/wood,
 /obj/structure/cable/white{
@@ -84441,6 +84446,9 @@
 "kzL" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/item/defibrillator,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
 "kAf" = (
@@ -91043,6 +91051,9 @@
 	},
 /obj/effect/turf_decal/tile/red{
 	dir = 1
+	},
+/obj/machinery/light{
+	dir = 8
 	},
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
@@ -106468,6 +106479,7 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
 	},
+/obj/machinery/light,
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
 "qXZ" = (
@@ -116803,6 +116815,7 @@
 /obj/effect/turf_decal/tile/red{
 	dir = 4
 	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
 "tSq" = (
@@ -121394,6 +121407,16 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/aisat/exterior)
+"vgL" = (
+/obj/effect/turf_decal/tile/red/half{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/structure/extinguisher_cabinet/directional/north,
+/turf/open/floor/plasteel,
+/area/security/brig)
 "vgN" = (
 /obj/structure/cable/white{
 	icon_state = "2-8"
@@ -122153,6 +122176,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/plasteel,
 /area/security/brig_briefing)
 "vtq" = (
@@ -126965,6 +126989,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/structure/extinguisher_cabinet/directional/north,
 /turf/open/floor/iron/dark,
 /area/security/detectives_office/private_investigators_office/investigators_room)
 "wNR" = (
@@ -175212,7 +175237,7 @@ bun
 bwY
 bXj
 bvL
-bvL
+jNY
 bwY
 bvL
 bvL
@@ -187773,7 +187798,7 @@ oPe
 smV
 bYj
 aFm
-qGa
+kpM
 iRe
 squ
 aFm
@@ -188301,7 +188326,7 @@ qgU
 aaa
 aaa
 bgZ
-wOr
+vgL
 jLZ
 sWJ
 aKZ
