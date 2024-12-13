@@ -29,8 +29,8 @@
 		if(my_owner) // копирование свойств старой карты и её замена
 			var/obj/item/card/id/id_card = my_owner.get_item_by_slot(ITEM_SLOT_ID)
 
-			if(istype(id_card, /obj/item/card/id/inteq) || istype(id_card, /obj/item/card/id/syndicate))
-				to_chat(my_owner, span_warning("Ваша карта уже обладает свойствами, доступными гражданской карте синдиката! Лишняя была удалена."))
+			if(istype(id_card, /obj/item/card/id/inteq) || istype(id_card, /obj/item/card/id/syndicate) || istype(id_card, /obj/item/card/id/prisoner))
+				to_chat(my_owner, span_warning("Ваша карта уже обладает свойствами, доступными гражданской карте синдиката или принадлежит заключенному! Лишняя была удалена."))
 				qdel(src)
 				return
 
