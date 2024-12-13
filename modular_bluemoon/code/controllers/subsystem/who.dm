@@ -160,7 +160,7 @@ SUBSYSTEM_DEF(who)
 					holder.show_player_panel(target.mob)
 				break
 
-/datum/player_list/ui_state(mob/user, datum/ui_state/state)
+/datum/player_list/ui_state(mob/user)
 	return GLOB.always_state
 
 /datum/player_list/ui_status(mob/user, datum/ui_state/state)
