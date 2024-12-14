@@ -594,6 +594,7 @@
 	lefthand_file = 'modular_bluemoon/oni3288/icons/weapons/hands/guns_left.dmi'
 	righthand_file = 'modular_bluemoon/oni3288/icons/weapons/hands/guns_right.dmi'
 	mob_overlay_icon = 'modular_bluemoon/oni3288/icons/weapons/mob/back.dmi'
+	hitsound = 'modular_bluemoon/oni3288/sounds/weapons/hopesh.ogg'
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////Слот масок.
 

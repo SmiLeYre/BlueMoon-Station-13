@@ -542,6 +542,7 @@
 	maxHealth = 250
 	health = 250
 	gender = MALE
+	speak = list("*meow", "*meow2", "*meow3", "*meow4", "*meow5", "*meow6", "*mrrp", "*mrrp3", "*purr", "*oink1")
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
 /mob/living/simple_animal/pet/cat/alta
@@ -553,6 +554,7 @@
 	held_icon = "alta"
 	unique_pet = TRUE
 	gender = FEMALE
+	speak = list("*meow", "*meow2", "*meow3", "*meow4", "*meow5", "*meow6", "*mrrp", "*mrrp3", "*purr")
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
 /mob/living/simple_animal/pet/cat/space/alta
@@ -564,6 +566,7 @@
 	held_icon = "spacealta"
 	unique_pet = TRUE
 	gender = FEMALE
+	speak = list("*meow", "*meow2", "*meow3", "*meow4", "*meow5", "*meow6", "*mrrp", "*mrrp3", "*purr")
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
 /mob/living/simple_animal/pet/dog/corgi/Lisa/ada
