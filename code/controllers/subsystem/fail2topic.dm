@@ -1,4 +1,4 @@
-/* NO
+/* NO, this ait work for ya, replaced with normal one in modular_bluemoon\code\controllers\topic.dm
 SUBSYSTEM_DEF(fail2topic)
 	name = "Fail2Topic"
 	init_order = INIT_ORDER_FAIL2TOPIC
