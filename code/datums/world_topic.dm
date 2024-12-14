@@ -1,4 +1,4 @@
-/* JUST NO
+/* JUST NO, this topic replaced with better one
 // SETUP
 
 /proc/TopicHandlers()
