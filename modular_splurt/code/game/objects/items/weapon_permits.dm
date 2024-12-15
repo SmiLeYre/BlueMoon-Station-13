@@ -156,7 +156,7 @@ GLOBAL_VAR_INIT(weapon_permits_issued, 0)
 		var/obj/item/card/id/redactor_card = redactor.get_id_card()
 		if(!redactor_card)
 			return FALSE
-		if(ACCESS_ARMORY in redactor_card.GetAccess())
+		if(ACCESS_WEAPONS in redactor_card.GetAccess())
 			return TRUE
 	return FALSE
 
