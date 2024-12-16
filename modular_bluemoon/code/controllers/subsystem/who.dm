@@ -201,7 +201,7 @@ SUBSYSTEM_DEF(who)
 			"category_color" = listings[category][3],
 		))
 
-		for(var/client/client as anything in listings[category][2])
+		for(var/client/client in listings[category][2])
 			var/list/admin_payload = list("category" = category, "special_text" = " ([round(client.avgping, 1)]ms)")
 			var/rank = client.holder ? client.holder.rank : "Mentor"// Если это не админ, мы предпологаем что это ментор... потому шо менторь эть отдельная датум! (а я думал атом... урана...)
 			if(client.holder?.fakekey)
