@@ -118,6 +118,10 @@
 
 /datum/world_topic/certify/Run(list/input)
 	data = list()
+
+	statuscode = 500
+	response = "Something went wrong, address issues."
+
 	var/discord_id = text2num(input["discord_id"])
 
 	var/datum/discord_link_record/player_link = SSdiscord.find_discord_link_by_token(input["identifier"])
@@ -159,6 +163,10 @@
 
 /datum/world_topic/certify_by_ckey/Run(list/input)
 	data = list()
+
+	statuscode = 500
+	response = "Something went wrong, address issues."
+
 	var/discord_id = text2num(input["discord_id"])
 
 	var/datum/discord_link_record/player_link = SSdiscord.find_discord_link_by_token(input["ckey"])
@@ -198,6 +206,9 @@
 /datum/world_topic/decertify_by_ckey/Run(list/input)
 	data = list()
 
+	statuscode = 500
+	response = "Something went wrong, address issues."
+
 	var/datum/discord_link_record/player_link = SSdiscord.find_discord_link_by_ckey(input["ckey"])
 	if(!player_link)
 		statuscode = 500
@@ -227,6 +238,10 @@
 
 /datum/world_topic/decertify_by_discord_id/Run(list/input)
 	data = list()
+
+	statuscode = 500
+	response = "Something went wrong, address issues."
+
 	var/discord_id = text2num(input["discord_id"])
 
 	var/datum/discord_link_record/player_link = SSdiscord.find_discord_link_by_discord_id(discord_id)
@@ -253,6 +268,10 @@
 
 /datum/world_topic/lookup_discord_id/Run(list/input)
 	data = list()
+
+	statuscode = 500
+	response = "Something went wrong, address issues."
+
 	var/discord_id = text2num(input["discord_id"])
 
 	var/datum/discord_link_record/player_link = SSdiscord.find_discord_link_by_discord_id(discord_id)
@@ -261,15 +280,137 @@
 		response = "No linked Discord."
 		return
 
-	statuscode = 500
-	response = "Something went wrong in generation, address issues."
-
 	data["ckey"] = player_link.ckey
 	data["discord_id"] = player_link.discord_id
 	if(input["additional"])
 		request_additional_data(data)
 	statuscode = 200
 	response = "Lookup successful."
+
+/datum/world_topic/ban
+	key = "ban_ckey"
+	required_params = list("ckey", "ban_data")
+	var/datum/admins/our_solution
+
+/datum/world_topic/ban/New()
+	our_solution = new (forced_holder = TRUE)
+
+/datum/world_topic/ban/Run(list/input)
+	data = list()
+
+	statuscode = 500
+	response = "Something went wrong, address issues."
+
+	var/list/ban_data = input["ban_data"]
+	var/mob/playermob
+	for(var/mob/M in GLOB.player_list)
+		if(M.ckey == ban_data["ckey"])
+			if(!playermob || M.client) // prioritise mobs with a client to stop the 'oops the dead body with no client got forwarded'
+				playermob = M
+
+	if(ban_data["job"])
+		var/list/joblist = list()
+		for(var/name in ban_data["job"])
+			switch (name)
+				if("commanddept")
+					joblist += GLOB.command_positions
+				if("securitydept")
+					joblist += GLOB.security_positions
+				if("engineeringdept")
+					joblist += GLOB.engineering_positions
+				if("medicaldept")
+					joblist += GLOB.medical_positions
+				if("sciencedept")
+					joblist += GLOB.science_positions
+				if("supplydept")
+					joblist += GLOB.supply_positions
+				if("civiliandept")
+					joblist += GLOB.civilian_positions
+				if("lawdept")
+					joblist += GLOB.law_positions
+				if("nonhumandept")
+					joblist += GLOB.nonhuman_positions
+				if("ghostroles")
+					joblist += list(ROLE_PAI, ROLE_POSIBRAIN, ROLE_DRONE , ROLE_DEATHSQUAD, ROLE_LAVALAND, ROLE_SENTIENCE)
+				if("teamantags")
+					joblist += list(ROLE_OPERATIVE, ROLE_REV, ROLE_CULTIST, ROLE_SERVANT_OF_RATVAR, ROLE_ABDUCTOR, ROLE_ALIEN, ROLE_FAMILIES)
+				if("convertantags")
+					joblist += list(ROLE_REV, ROLE_CULTIST, ROLE_SERVANT_OF_RATVAR, ROLE_ALIEN)
+				if("otherroles")
+					joblist += list(ROLE_MIND_TRANSFER)
+				else
+					joblist += name
+
+		var/list/notbannedlist = list()
+		if(playermob)
+			for(var/job in joblist)
+				if(!jobban_isbanned(playermob, job))
+					notbannedlist += job
+		else
+			notbannedlist = joblist
+
+		if(!length(notbannedlist))
+			return
+
+		var/ban_time_text = ban_data["duration"] > 0 ? "for [ban_data["duration"]] minutes" : " permamently"
+		var/msg
+		for(var/job in notbannedlist)
+			if(!our_solution.DB_ban_record(ban_data["bantype"], playermob, ban_data["duration"], ban_data["reason"], job, forced_holder = TRUE))
+				statuscode = 501
+				response = "Failed to apply ban."
+				return
+			if(playermob?.client)
+				jobban_buildcache(playermob.client)
+			ban_unban_log_save("[ban_data["admin_id"]] (DISCORD ID) jobbanned [ban_data["ckey"]] from [job] [ban_time_text]. reason: [ban_data["reason"]]")
+			log_admin_private("[ban_data["admin_id"]] (DISCORD ID) jobbanned [ban_data["ckey"]] from [job] [ban_time_text].")
+			if(!msg)
+				msg = job
+			else
+				msg += ", [job]"
+		create_message("note", ban_data["ckey"], null, "Banned  from [msg] - [ban_data["reason"]]", null, null, 0, 0, null, 0, ban_data["severity"] || "None", dont_announce_to_events = TRUE)
+		message_admins("<span class='adminnotice'>[ban_data["admin_id"]] (DISCORD ID) banned [ban_data["ckey"]] from [msg] [ban_time_text].</span>")
+		if(playermob)
+			to_chat(playermob, "<span class='boldannounce'><BIG>You have been jobbanned by [ban_data["admin_id"]] (DISCORD ID) from: [msg]\n[ban_time_text].</BIG></span>")
+			to_chat(playermob, "<span class='boldannounce'>The reason is: [ban_data["reason"]]</span>")
+
+		GLOB.bot_event_sending_que += list(list(
+			"type" = "ban_a",
+			"title" = ban_data["duration"] > 0 ? "Блокировка Роли" : "Пермаментная Блокировка Роли",
+			"player" = ban_data["ckey"],
+			"admin" = ban_data["admin_id"],
+			"reason" = ban_data["reason"],
+			"banduration" = ban_data["duration"] > 0 ? ban_data["duration"] : null,
+			"bantimestamp" = SQLtime(),
+			"round" = GLOB.round_id,
+			"additional_info" = list("ban_job" = msg)
+		))
+
+	else
+		if(!our_solution.DB_ban_record(ban_data["bantype"], playermob, ban_data["duration"], ban_data["reason"], forced_holder = TRUE))
+			statuscode = 501
+			response = "Failed to apply ban."
+			return
+		var/ban_time_text = ban_data["duration"] > 0 ? "For [ban_data["duration"]] minutes." : "This is a permanent ban."
+		ban_unban_log_save("[ban_data["admin_id"]] (DISCORD ID) has banned [ban_data["ckey"]].\nReason: [ban_data["reason"]]\n[ban_time_text]")
+		log_admin_private("[ban_data["admin_id"]] (DISCORD ID) has banned [ban_data["ckey"]].\nReason: [ban_data["reason"]]\n[ban_time_text]")
+		create_message("note", ban_data["ckey"], null, ban_data["reason"], null, null, 0, 0, null, 0, ban_data["severity"] || "None", dont_announce_to_events = TRUE)
+		if(playermob)
+			qdel(playermob.client)
+
+		GLOB.bot_event_sending_que += list(list(
+			"type" = "ban_a",
+			"title" = ban_data["duration"] > 0 ? "Блокировка" : "Пермаментная Блокировка",
+			"player" = ban_data["ckey"],
+			"admin" = ban_data["admin_id"],
+			"reason" = ban_data["reason"],
+			"banduration" = ban_data["duration"] > 0 ? ban_data["duration"] : null,
+			"bantimestamp" = SQLtime(),
+			"round" = GLOB.round_id,
+			"additional_info" = list()
+		))
+
+	statuscode = 200
+	response = "Ban successful."
 
 /datum/world_topic/lookup_ckey
 	key = "lookup_ckey"
@@ -278,17 +419,30 @@
 /datum/world_topic/lookup_ckey/Run(list/input)
 	data = list()
 
+	statuscode = 500
+	response = "Something went wrong, address issues."
+
+	var/datum/db_query/query_player_ckey = SSdbcore.NewQuery({"
+		SELECT ckey
+		FROM [format_table_name("player")]
+		WHERE ckey LIKE :ckey"},
+		list("ckey" = input["ckey"])
+	)
+
+	var/seen_before
+	if(query_player_ckey.warn_execute())
+		seen_before = query_player_ckey.NextRow()
+
 	var/datum/discord_link_record/player_link = SSdiscord.find_discord_link_by_ckey(input["ckey"])
-	if(!player_link)
-		statuscode = 500
-		response = "Database lookup failed."
+	if(!player_link && !seen_before)
+		statuscode = 501
+		response = "Not found player."
+		qdel(query_player_ckey)
 		return
 
-	statuscode = 500
-	response = "Something went wrong in generation, address issues."
-
-	data["ckey"] = player_link.ckey
-	data["discord_id"] = player_link.discord_id
+	data["ckey"] = player_link ? player_link.ckey : query_player_ckey.item[1]
+	data["discord_id"] = player_link ? player_link.discord_id : FALSE
+	qdel(query_player_ckey)
 	if(input["additional"])
 		request_additional_data(data)
 	statuscode = 200

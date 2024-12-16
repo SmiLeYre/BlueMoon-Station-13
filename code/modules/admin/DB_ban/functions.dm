@@ -2,9 +2,9 @@
 #define MAX_ADMIN_BANS_PER_HEADMIN 3
 
 //Either pass the mob you wish to ban in the 'banned_mob' attribute, or the banckey, banip and bancid variables. If both are passed, the mob takes priority! If a mob is not passed, banckey is the minimum that needs to be passed! banip and bancid are optional.
-/datum/admins/proc/DB_ban_record(bantype, mob/banned_mob, duration = -1, reason, job = "", bankey = null, banip = null, bancid = null)
+/datum/admins/proc/DB_ban_record(bantype, mob/banned_mob, duration = -1, reason, job = "", bankey = null, banip = null, bancid = null, forced_holder = FALSE)
 
-	if(!check_rights(R_BAN))
+	if(!check_rights(R_BAN) && !forced_holder)
 		return
 
 	if(!SSdbcore.Connect())
