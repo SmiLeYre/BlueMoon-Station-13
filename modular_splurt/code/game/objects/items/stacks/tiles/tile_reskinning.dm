@@ -13,6 +13,7 @@
 			R.deselect_module(selected_module)			// Deactivate the selected module so we don't cry about it later
 			moveToNullspace()							// This was breaking stuff so it's here now
 			choice.is_cyborg = 1						// Let borgos use the new tile
+			choice.source = src.source
 			choice.custom_materials = null				// Get rid of custom materials so we don't make exploits
 			choice.cost = 125							// A tile costs 125 materials
 			R.module.remove_module(src, TRUE)			// And remove the old one
@@ -30,6 +31,7 @@
 			R.deselect_module(selected_module)
 			moveToNullspace()
 			choice.is_cyborg = 1
+			choice.source = src.source
 			choice.custom_materials = null
 			choice.cost = 125
 			R.module.remove_module(src, TRUE)
