@@ -185,12 +185,13 @@
 
 /obj/item/clothing/glasses/eyepatch/syndicate/dropped(mob/living/carbon/human/user)
 	. = ..()
-	if(user.get_item_by_slot(ITEM_SLOT_EYES) == src)
-		REMOVE_TRAIT(user, TRAIT_INSANE_AIM, "SYNDICATE_EYEPATCH_AIM")
-		var/obj/item/organ/eyes/eyes = user.getorganslot(ORGAN_SLOT_EYES)
-		if(eyes)
-			eyes.applyOrganDamage(30)
-			user.visible_message("<span class='warning'>Your eye stings as the circuitry is removed from your eye!")
+	if(user.get_item_by_slot(ITEM_SLOT_EYES) != src)
+		return
+	REMOVE_TRAIT(user, TRAIT_INSANE_AIM, "SYNDICATE_EYEPATCH_AIM")
+	var/obj/item/organ/eyes/eyes = user.getorganslot(ORGAN_SLOT_EYES)
+	if(eyes)
+		eyes.applyOrganDamage(30)
+		user.visible_message("<span class='warning'>Your eye stings as the circuitry is removed from your eye!")
 
 /obj/item/clothing/glasses/monocle
 	name = "monocle"
