@@ -474,8 +474,12 @@
 "adP" = (
 /obj/structure/table/greyscale,
 /obj/item/storage/box/donkpockets,
-/obj/item/storage/box/donkpockets,
-/obj/item/reagent_containers/spray/cleaner,
+/obj/item/storage/box/donkpockets{
+	pixel_y = 13
+	},
+/obj/item/reagent_containers/spray/cleaner{
+	pixel_y = 9
+	},
 /turf/open/floor/plasteel/cafeteria{
 	dir = 5
 	},
