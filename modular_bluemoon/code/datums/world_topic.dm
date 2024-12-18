@@ -355,7 +355,7 @@
 		var/ban_time_text = ban_data["duration"] > 0 ? "for [ban_data["duration"]] minutes" : " permamently"
 		var/msg
 		for(var/job in notbannedlist)
-			if(!our_solution.DB_ban_record(ban_data["bantype"], playermob, ban_data["duration"], ban_data["reason"], job, forced_holder = TRUE))
+			if(!our_solution.DB_ban_record(ban_data["bantype"], playermob, ban_data["duration"], ban_data["reason"], job, ban_data["ckey"], forced_holder = TRUE))
 				statuscode = 501
 				response = "Failed to apply ban."
 				return
@@ -386,7 +386,7 @@
 		))
 
 	else
-		if(!our_solution.DB_ban_record(ban_data["bantype"], playermob, ban_data["duration"], ban_data["reason"], forced_holder = TRUE))
+		if(!our_solution.DB_ban_record(ban_data["bantype"], playermob, ban_data["duration"], ban_data["reason"], "", ban_data["ckey"], forced_holder = TRUE))
 			statuscode = 501
 			response = "Failed to apply ban."
 			return
