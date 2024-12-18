@@ -116,15 +116,6 @@
 	},
 /turf/open/floor/wood,
 /area/ruin/unpowered/russianbunker)
-"ay" = (
-/obj/effect/mine/explosive{
-	range_flash = 6;
-	range_heavy = 2;
-	range_light = 4;
-	range_devastation = 1
-	},
-/turf/open/floor/wood,
-/area/ruin/unpowered/russianbunker)
 "aA" = (
 /obj/structure/table/wood,
 /obj/item/reagent_containers/food/snacks/meat/steak/bear,
@@ -161,10 +152,6 @@
 /turf/open/floor/plating,
 /area/ruin/unpowered/russianbunker)
 "aI" = (
-/obj/machinery/light{
-	dir = 8;
-	icon_state = "tube1"
-	},
 /obj/structure/table/reinforced,
 /obj/machinery/turretid{
 	ailock = 1;
@@ -180,6 +167,9 @@
 	},
 /obj/item/clothing/suit/armor/heavy/juggernaut,
 /obj/item/clothing/head/helmet/juggernaut,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/circuit/off,
 /area/ruin/unpowered/russianbunker)
 "aJ" = (
@@ -228,6 +218,12 @@
 /area/ruin/unpowered/russianbunker)
 "aL" = (
 /obj/effect/decal/cleanable/blood/splatter,
+/obj/effect/mine/explosive{
+	range_flash = 6;
+	range_heavy = 2;
+	range_light = 4;
+	range_devastation = 1
+	},
 /turf/open/floor/wood{
 	icon_state = "wood-broken4"
 	},
@@ -305,7 +301,7 @@
 "be" = (
 /obj/effect/decal/cleanable/blood/splatter,
 /mob/living/simple_animal/hostile/bear/snow{
-	name = "Миша Белый"
+	name = "Медведь Белый"
 	},
 /turf/open/floor/grass/snow,
 /area/ruin/unpowered/russianbunker)
@@ -344,6 +340,7 @@
 	faction = list("russian");
 	name = "Russ-erator"
 	},
+/obj/item/gun/ballistic/revolver/nagant,
 /turf/open/floor/wood,
 /area/ruin/unpowered/russianbunker)
 "br" = (
@@ -416,7 +413,7 @@
 "gj" = (
 /obj/item/weldingtool/experimental,
 /mob/living/simple_animal/hostile/bear{
-	name = "Миша"
+	name = "Медведыч"
 	},
 /turf/open/floor/grass/snow,
 /area/ruin/unpowered/russianbunker)
@@ -457,10 +454,6 @@
 	name = "Сталин"
 	},
 /turf/open/floor/wood,
-/area/ruin/unpowered/russianbunker)
-"js" = (
-/obj/effect/mine/gas/plasma,
-/turf/open/floor/pod,
 /area/ruin/unpowered/russianbunker)
 "kN" = (
 /obj/structure/sign/poster/contraband/d_day_promo,
@@ -616,6 +609,12 @@
 /obj/item/restraints/handcuffs,
 /obj/effect/decal/cleanable/blood/old,
 /turf/open/floor/pod,
+/area/ruin/unpowered/russianbunker)
+"zK" = (
+/mob/living/simple_animal/hostile/russian/ranged/trooper{
+	name = "Валерьевич"
+	},
+/turf/open/floor/wood,
 /area/ruin/unpowered/russianbunker)
 "Am" = (
 /obj/structure/table/wood,
@@ -781,6 +780,12 @@
 "Ni" = (
 /turf/closed/indestructible/opshuttle,
 /area/ruin/unpowered/russianbunker)
+"NL" = (
+/mob/living/simple_animal/hostile/bear{
+	name = "Михаил"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/russianbunker)
 "NU" = (
 /obj/effect/decal/cleanable/blood/drip,
 /mob/living/simple_animal/hostile/russian/ranged/trooper{
@@ -922,6 +927,12 @@
 	},
 /turf/closed/wall/r_wall,
 /area/ruin/unpowered/russianbunker)
+"Zk" = (
+/mob/living/simple_animal/hostile/bear{
+	name = "Медведьев"
+	},
+/turf/open/floor/grass/snow,
+/area/ruin/unpowered/russianbunker)
 "ZD" = (
 /obj/effect/decal/cleanable/blood/drip,
 /mob/living/simple_animal/hostile/viscerator{
@@ -940,7 +951,7 @@
 "ZU" = (
 /obj/effect/decal/cleanable/blood/old,
 /mob/living/simple_animal/hostile/bear{
-	name = "Миша"
+	name = "Мишутко"
 	},
 /turf/open/floor/grass/snow,
 /area/ruin/unpowered/russianbunker)
@@ -1407,8 +1418,8 @@ aF
 AY
 YQ
 Yi
-xP
-xP
+Zk
+NL
 IF
 Cf
 YQ
@@ -1437,7 +1448,7 @@ ag
 ak
 ag
 DW
-ay
+ag
 ZD
 aL
 Vh
@@ -1518,7 +1529,7 @@ ww
 YQ
 YQ
 zB
-js
+aY
 aY
 aY
 aY
@@ -1549,7 +1560,7 @@ ag
 ag
 ag
 OY
-ag
+zK
 hU
 ZP
 hU
@@ -1594,7 +1605,7 @@ QW
 aY
 aY
 aY
-js
+aY
 aY
 aK
 bt
@@ -1630,7 +1641,7 @@ au
 GM
 Cu
 yw
-js
+aY
 GM
 aY
 br

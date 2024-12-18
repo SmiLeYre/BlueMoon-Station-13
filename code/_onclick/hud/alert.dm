@@ -332,6 +332,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	icon_state = "default"
 	var/mob/living/carbon/offerer
 	var/obj/item/receiving
+	var/offerer_name //is used specally for clear_alert() to prevent infinite alert when object "offerer" suddenly changes its name during item transfering.
 
 /**
  * Handles assigning most of the variables for the alert that pops up when an item is offered
@@ -351,6 +352,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 	add_overlay(receiving)
 	src.receiving = receiving
 	src.offerer = offerer
+	offerer_name = offerer.name
 	RegisterSignal(taker, COMSIG_MOVABLE_MOVED, PROC_REF(check_in_range), override = TRUE) //Override to prevent runtimes when people offer a item multiple times
 
 /atom/movable/screen/alert/give/Click(location, control, params)
@@ -372,7 +374,7 @@ or shoot a gun to move around via Newton's 3rd Law of Motion."
 
 	if(!offerer.CanReach(taker))
 		to_chat(owner, span_warning("You moved out of range of [offerer]!"))
-		owner.clear_alert("[offerer]")
+		owner.clear_alert("[offerer_name]")
 
 /atom/movable/screen/alert/give/highfive/setup(mob/living/carbon/taker, mob/living/carbon/offerer, obj/item/receiving)
 	. = ..()

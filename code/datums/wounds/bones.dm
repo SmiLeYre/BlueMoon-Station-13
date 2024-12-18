@@ -226,7 +226,6 @@
 	limp_slowdown = 1.3
 	threshold_minimum = 35
 	threshold_penalty = 13
-	disabling = TRUE
 	treatable_tool = TOOL_BONESET
 	wound_flags = (BONE_WOUND)
 	status_effect_type = /datum/status_effect/wound/blunt/moderate

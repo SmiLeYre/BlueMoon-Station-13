@@ -90,7 +90,7 @@
 	mask = /obj/item/clothing/mask/gas/welding/up
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	belt = /obj/item/storage/belt/military/abductor/full/debug
-	shoes = /obj/item/clothing/shoes/combat/debug
+	shoes = /obj/item/clothing/shoes/magboots/advance/debug
 	id = /obj/item/card/id/debug/bst
 	back = /obj/item/storage/backpack/holding/duffel/debug
 	box = /obj/item/storage/box/debugtools
@@ -106,6 +106,7 @@
 		/obj/item/lightreplacer/blue=1,\
 		/obj/item/debug/human_spawner=1,\
 		/obj/item/gun/energy/pulse=1,\
+		/obj/item/storage/lockbox/anti_singulo=1,\
 		/obj/item/gun/energy/taser/debug,\
 		)
 	implants = list(/obj/item/implant/mindshield, /obj/item/implant/deathrattle/centcom, /obj/item/implant/weapons_auth, /obj/item/implant/radio/centcom)

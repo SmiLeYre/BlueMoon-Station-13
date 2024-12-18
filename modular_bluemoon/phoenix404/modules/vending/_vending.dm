@@ -235,8 +235,6 @@ GLOBAL_LIST_EMPTY(vending_machines_to_restock)
 			onstation = FALSE
 			if(circuit)
 				circuit.onstation = onstation //sync up the circuit so the pricing schema is carried over if it's reconstructed.
-		Radio = new /obj/item/radio(src)
-		Radio.listening = 0
 
 	else if(circuit && (circuit.onstation != onstation)) //check if they're not the same to minimize the amount of edited values.
 		onstation = circuit.onstation //if it was constructed outside mapload, sync the vendor up with the circuit's var so you can't bypass price requirements by moving / reconstructing it off station.

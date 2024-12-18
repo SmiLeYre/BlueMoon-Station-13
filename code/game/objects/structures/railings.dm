@@ -152,7 +152,7 @@
 	adjust_dir_layer(new_dir)
 
 /obj/structure/railing/proc/adjust_dir_layer(direction)
-	layer = (direction & NORTH) ? TURF_LAYER : initial(layer)
+	layer = (direction & SOUTH) ? TURF_LAYER : initial(layer)
 
 
 
