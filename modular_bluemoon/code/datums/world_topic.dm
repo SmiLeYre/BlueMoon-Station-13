@@ -302,6 +302,9 @@
 	response = "Something went wrong, address issues."
 
 	var/list/ban_data = input["ban_data"]
+	// Make sure we got NUMBERS
+	ban_data["bantype"] = text2num(ban_data["bantype"])
+	ban_data["duration"] = text2num(ban_data["duration"])
 	var/mob/playermob
 	for(var/mob/M in GLOB.player_list)
 		if(M.ckey == ban_data["ckey"])
@@ -355,9 +358,10 @@
 		var/ban_time_text = ban_data["duration"] > 0 ? "for [ban_data["duration"]] minutes" : " permamently"
 		var/msg
 		for(var/job in notbannedlist)
-			if(!our_solution.DB_ban_record(ban_data["bantype"], playermob, ban_data["duration"], ban_data["reason"], job, ban_data["ckey"], forced_holder = TRUE))
+			var/result_of_run = our_solution.DB_ban_record(ban_data["bantype"], playermob, ban_data["duration"], ban_data["reason"], job, ban_data["ckey"], forced_holder = TRUE)
+			if(result_of_run != TRUE)
 				statuscode = 501
-				response = "Failed to apply ban."
+				response = result_of_run ? result_of_run : "Failed to apply ban."
 				return
 			if(playermob?.client)
 				jobban_buildcache(playermob.client)
@@ -386,9 +390,10 @@
 		))
 
 	else
-		if(!our_solution.DB_ban_record(ban_data["bantype"], playermob, ban_data["duration"], ban_data["reason"], "", ban_data["ckey"], forced_holder = TRUE))
+		var/result_of_run = our_solution.DB_ban_record(ban_data["bantype"], playermob, ban_data["duration"], ban_data["reason"], "", ban_data["ckey"], forced_holder = TRUE)
+		if(result_of_run != TRUE)
 			statuscode = 501
-			response = "Failed to apply ban."
+			response = result_of_run ? result_of_run : "Failed to apply ban."
 			return
 		var/ban_time_text = ban_data["duration"] > 0 ? "For [ban_data["duration"]] minutes." : "This is a permanent ban."
 		ban_unban_log_save("[ban_data["admin_id"]] (DISCORD ID) has banned [ban_data["ckey"]].\nReason: [ban_data["reason"]]\n[ban_time_text]")

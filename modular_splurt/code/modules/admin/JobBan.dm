@@ -115,7 +115,7 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 				return
 			var/msg
 			for(var/job in notbannedlist)
-				if(!DB_ban_record(BANTYPE_JOB_TEMP, M, mins, reason, job))
+				if(DB_ban_record(BANTYPE_JOB_TEMP, M, mins, reason, job) != TRUE)
 					to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 					return
 				if(M.client)
@@ -154,7 +154,7 @@ GLOBAL_LIST_INIT(jobban_panel_data, list(
 
 			var/msg
 			for(var/job in notbannedlist)
-				if(!DB_ban_record(BANTYPE_JOB_PERMA, M, -1, reason, job))
+				if(DB_ban_record(BANTYPE_JOB_PERMA, M, -1, reason, job) != TRUE)
 					to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 					return
 				if(M.client)

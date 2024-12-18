@@ -293,7 +293,7 @@
 		else
 			message_admins("Ban process: A mob matching [playermob.key] was found at location [playermob.x], [playermob.y], [playermob.z]. Custom ip and computer id fields replaced with the ip and computer id from the located mob.")
 
-		if(!DB_ban_record(bantype, playermob, banduration, banreason, banjob, bankey, banip, bancid ))
+		if(DB_ban_record(bantype, playermob, banduration, banreason, banjob, bankey, banip, bancid) != TRUE)
 			to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 			return
 		create_message("note", bankey, null, banreason, null, null, 0, 0, null, 0, banseverity, dont_announce_to_events = TRUE)
@@ -645,7 +645,7 @@
 				var/severity = input("Set the severity of the note/ban.", "Severity", null, null) as null|anything in list("High", "Medium", "Minor", "None")
 				if(!severity)
 					return
-				if(!DB_ban_record(BANTYPE_JOB_PERMA, M, -1, reason, "appearance"))
+				if(DB_ban_record(BANTYPE_JOB_PERMA, M, -1, reason, "appearance") != TRUE)
 					to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 					return
 				if(M.client)
@@ -1106,7 +1106,7 @@
 						return
 					var/msg
 					for(var/job in notbannedlist)
-						if(!DB_ban_record(BANTYPE_JOB_TEMP, M, mins, reason, job))
+						if(DB_ban_record(BANTYPE_JOB_TEMP, M, mins, reason, job) != TRUE)
 							to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 							return
 						if(M.client)
@@ -1132,7 +1132,7 @@
 					if(reason)
 						var/msg
 						for(var/job in notbannedlist)
-							if(!DB_ban_record(BANTYPE_JOB_PERMA, M, -1, reason, job))
+							if(DB_ban_record(BANTYPE_JOB_PERMA, M, -1, reason, job) != TRUE)
 								to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 								return
 							if(M.client)
@@ -1377,7 +1377,7 @@
 				var/reason = input(usr,"Please State Reason For Banning [M.key].","Reason") as message|null
 				if(!reason)
 					return
-				if(!DB_ban_record(BANTYPE_TEMP, M, mins, reason))
+				if(DB_ban_record(BANTYPE_TEMP, M, mins, reason) != TRUE)
 					to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 					return
 				AddBan(M.ckey, M.computer_id, reason, usr.ckey, 1, mins)
@@ -1414,7 +1414,7 @@
 					to_chat(M, "<span class='danger'>To try to resolve this matter head to [bran]</span>")
 				else
 					to_chat(M, "<span class='danger'>No ban appeals URL has been set.</span>")
-				if(!DB_ban_record(BANTYPE_PERMA, M, -1, reason))
+				if(DB_ban_record(BANTYPE_PERMA, M, -1, reason) != TRUE)
 					to_chat(usr, "<span class='danger'>Failed to apply ban.</span>")
 					return
 				ban_unban_log_save("[key_name(usr)] has permabanned [key_name(M)]. - Reason: [reason] - This is a permanent ban.")
