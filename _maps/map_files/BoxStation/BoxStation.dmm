@@ -46980,6 +46980,26 @@
 /obj/structure/bedsheetbin,
 /turf/open/floor/plasteel/cafeteria,
 /area/security/prison/upper)
+"hFm" = (
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/general/visible{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/north{
+	pixel_y = 0;
+	pixel_x = -28
+	},
+/turf/open/floor/plasteel,
+/area/medical/medbay/central)
 "hFt" = (
 /obj/effect/turf_decal/trimline/blue/filled/corner{
 	dir = 4
@@ -49745,6 +49765,20 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/service/park)
+"jma" = (
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/structure/table/optable,
+/obj/machinery/light/directional/north,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 26
+	},
+/turf/open/floor/plasteel/white,
+/area/medical/surgery)
 "jmc" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -52313,26 +52347,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
-"kNn" = (
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/manifold/general/visible{
-	dir = 8
-	},
-/obj/machinery/firealarm/directional/north{
-	pixel_y = 0;
-	pixel_x = -28
-	},
-/turf/open/floor/plasteel,
-/area/medical/medbay/central)
 "kNv" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -72779,6 +72793,9 @@
 	},
 /obj/structure/table/optable,
 /obj/machinery/light/directional/north,
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 25
+	},
 /turf/open/floor/plasteel/white,
 /area/medical/surgery)
 "xbW" = (
@@ -110959,7 +110976,7 @@ wpc
 oVB
 bof
 joG
-kNn
+hFm
 pkX
 bUb
 lRd
@@ -114810,7 +114827,7 @@ qeQ
 xiS
 wwN
 nEu
-xbo
+jma
 bLd
 nUY
 wai
