@@ -26261,16 +26261,10 @@
 /turf/open/floor/plasteel,
 /area/medical/virology)
 "bSV" = (
-/obj/effect/turf_decal/tile/blue,
-/obj/effect/turf_decal/tile/blue{
-	dir = 8
-	},
-/obj/effect/turf_decal/tile/blue{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/blue{
+/obj/machinery/shower{
 	dir = 1
 	},
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/medical/medbay/central)
 "bSW" = (
@@ -28732,10 +28726,10 @@
 /turf/open/floor/iron/dark,
 /area/medical/morgue)
 "bZR" = (
-/obj/machinery/stasis{
+/obj/effect/turf_decal/tile/blue/fourcorners,
+/obj/machinery/sleeper{
 	dir = 8
 	},
-/obj/effect/turf_decal/tile/blue/fourcorners,
 /turf/open/floor/plasteel,
 /area/medical/medbay/central)
 "bZS" = (
@@ -52319,6 +52313,26 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
+"kNn" = (
+/obj/effect/turf_decal/tile/blue,
+/obj/effect/turf_decal/tile/blue{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 4
+	},
+/obj/effect/turf_decal/tile/blue{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/manifold/general/visible{
+	dir = 8
+	},
+/obj/machinery/firealarm/directional/north{
+	pixel_y = 0;
+	pixel_x = -28
+	},
+/turf/open/floor/plasteel,
+/area/medical/medbay/central)
 "kNv" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -61344,8 +61358,10 @@
 /turf/open/floor/plasteel/white,
 /area/medical/virology)
 "qic" = (
-/obj/effect/turf_decal/tile/blue/fourcorners,
-/obj/machinery/firealarm/directional/north,
+/obj/machinery/shower{
+	pixel_y = 16
+	},
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/medical/medbay/central)
 "qip" = (
@@ -61469,12 +61485,12 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
 	},
-/obj/machinery/sleeper{
-	dir = 8
-	},
 /obj/machinery/light/directional/east,
 /obj/machinery/vending/wallmed{
 	pixel_x = 32
+	},
+/obj/machinery/stasis{
+	dir = 8
 	},
 /turf/open/floor/plasteel,
 /area/medical/medbay/central)
@@ -110943,7 +110959,7 @@ wpc
 oVB
 bof
 joG
-lRd
+kNn
 pkX
 bUb
 lRd
