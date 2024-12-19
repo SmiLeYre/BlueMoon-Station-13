@@ -29164,6 +29164,7 @@
 	id = "testigniter";
 	pixel_x = -25
 	},
+/obj/machinery/light/dim/directional/west,
 /turf/open/floor/engine,
 /area/science/misc_lab)
 "caY" = (
@@ -29546,15 +29547,6 @@
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/engine,
 /area/science/xenobiology)
-"cbV" = (
-/obj/machinery/camera{
-	c_tag = "Testing Chamber";
-	dir = 1;
-	network = list("test","rd")
-	},
-/obj/machinery/light,
-/turf/open/floor/engine,
-/area/science/misc_lab)
 "cbW" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -30607,15 +30599,15 @@
 /obj/machinery/light{
 	light_color = "#cee5d2"
 	},
-/turf/open/floor/plasteel/white,
-/area/science/xenobiology)
+/turf/open/floor/engine,
+/area/science/misc_lab)
 "ceP" = (
-/obj/machinery/door/airlock/research{
-	name = "Xenobiology Lab";
-	req_access_txt = "55"
+/obj/machinery/camera{
+	c_tag = "Testing Chamber";
+	dir = 4;
+	network = list("test","rd")
 	},
-/obj/machinery/door/firedoor,
-/turf/open/floor/plasteel/white,
+/turf/open/floor/engine,
 /area/science/misc_lab)
 "ceQ" = (
 /obj/structure/cable{
@@ -33063,15 +33055,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/aft)
-"clq" = (
-/obj/structure/rack,
-/obj/structure/disposalpipe/segment,
-/obj/effect/spawner/lootdrop/maintenance{
-	lootcount = 2;
-	name = "2maintenance loot spawner"
-	},
-/turf/open/floor/plating,
-/area/maintenance/starboard/aft)
 "clr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
@@ -36866,6 +36849,7 @@
 /obj/structure/cable{
 	icon_state = "2-4"
 	},
+/obj/structure/closet,
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "czH" = (
@@ -36972,10 +36956,11 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "cAb" = (
-/obj/structure/closet,
-/obj/structure/disposalpipe/segment{
-	dir = 10
+/obj/effect/spawner/lootdrop/maintenance{
+	lootcount = 2;
+	name = "2maintenance loot spawner"
 	},
+/obj/structure/rack,
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "cAc" = (
@@ -46176,10 +46161,6 @@
 "hda" = (
 /turf/open/floor/wood/wood_large,
 /area/service/abandoned_gambling_den)
-"hdg" = (
-/obj/item/kirbyplants/random,
-/turf/open/floor/plasteel/white,
-/area/science/xenobiology)
 "hdk" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
@@ -53060,10 +53041,11 @@
 /turf/open/floor/wood/wood_large,
 /area/service/chapel/office)
 "liG" = (
-/obj/machinery/camera{
-	c_tag = "Xenobiology corridor"
+/obj/machinery/door/airlock/maintenance{
+	name = "Xenobiology Maintenance";
+	req_access_txt = "55"
 	},
-/turf/open/floor/plasteel/white,
+/turf/open/floor/plating,
 /area/science/xenobiology)
 "liJ" = (
 /obj/effect/turf_decal/stripes/line{
@@ -59219,7 +59201,6 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/starboard)
 "oRN" = (
-/obj/machinery/photocopier,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/white,
 /area/science/xenobiology)
@@ -64642,10 +64623,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/prison/cells)
-"sjZ" = (
-/obj/machinery/firealarm/directional/north,
-/turf/open/floor/plasteel/white,
-/area/science/xenobiology)
 "skk" = (
 /obj/machinery/button/door{
 	id = "psych_shutters";
@@ -116900,7 +116877,7 @@ bDb
 bDb
 bDb
 bDb
-bDb
+liG
 bDb
 bDb
 bDb
@@ -120769,17 +120746,17 @@ bQZ
 bTl
 bZY
 caX
+ceP
+bTl
+bTl
 bTl
 bQZ
-bMi
-ceO
-bJN
 czG
 exl
 czW
-cAb
-cko
-clq
+fup
+ciI
+ciI
 cmq
 ciI
 cnJ
@@ -121027,10 +121004,10 @@ bZc
 bTl
 bTl
 bTl
+bTl
+bTl
+bTl
 bQZ
-sjZ
-bMi
-bJN
 cgm
 czS
 cOe
@@ -121283,11 +121260,11 @@ bYi
 bTl
 bTl
 caY
-cbV
+bTl
+bTl
+bTl
+bTl
 bQZ
-liG
-bMi
-bJN
 cgm
 cQw
 cNW
@@ -121541,10 +121518,10 @@ cba
 bTl
 cbc
 bTl
-bQZ
-bMi
+bTl
+bTl
 ceO
-bJN
+bQZ
 cgm
 chw
 ciK
@@ -121798,10 +121775,10 @@ bTl
 bTl
 cbb
 bTl
+bTl
+bTl
+bTl
 bQZ
-hdg
-bMi
-bJN
 cgp
 chv
 ciJ
@@ -122056,9 +122033,9 @@ bQZ
 cka
 bQZ
 bQZ
-bZZ
-ceP
-bPN
+bQZ
+bQZ
+bQZ
 cgr
 chx
 cNW
@@ -122066,7 +122043,7 @@ cNW
 cNW
 cgr
 cQw
-cOe
+cAb
 cOe
 bNA
 cOT
