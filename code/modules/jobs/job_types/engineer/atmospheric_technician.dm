@@ -23,7 +23,7 @@
 	bounty_types = CIV_JOB_ENG
 	departments = DEPARTMENT_BITFLAG_ENGINEERING
 
-	starting_modifiers = list(/datum/skill_modifier/job/level/wiring, /datum/skill_modifier/job/affinity/wiring)
+	starting_modifiers = list(/datum/skill_modifier/job/level/wiring/trained, /datum/skill_modifier/job/affinity/wiring) //BLUEMOON CHANGE job/level to trained
 
 	display_order = JOB_DISPLAY_ORDER_ATMOSPHERIC_TECHNICIAN
 	threat = 0.5

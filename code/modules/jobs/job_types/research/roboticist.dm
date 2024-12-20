@@ -23,6 +23,8 @@
 
 	starting_modifiers = list(/datum/skill_modifier/job/level/wiring, /datum/skill_modifier/job/affinity/wiring)
 
+	mind_traits = list(TRAIT_KNOW_CYBORG_WIRES) //BLUEMOON ADD use #define TRAIT system
+
 	display_order = JOB_DISPLAY_ORDER_ROBOTICIST
 	threat = 1
 

@@ -2,6 +2,7 @@
 	holder_type = /obj/machinery/power/apc
 	proper_name = "APC"
 	req_knowledge = JOB_SKILL_MASTER
+	visibility_trait = TRAIT_KNOW_ENGI_WIRES // BLUEMOON ADD
 
 /datum/wires/apc/New(atom/holder)
 	wires = list(

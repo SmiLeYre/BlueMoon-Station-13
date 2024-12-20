@@ -2,6 +2,7 @@
 	holder_type = /obj/machinery/door/airlock
 	proper_name = "Generic Airlock"
 	req_skill = JOB_SKILL_UNTRAINED //Training wheel, as per request.
+	visibility_trait = TRAIT_KNOW_ENGI_WIRES // BLUEMOON ADD
 	var/wiretype
 
 /datum/wires/airlock/secure

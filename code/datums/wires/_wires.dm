@@ -34,6 +34,8 @@
 	var/req_skill = JOB_SKILL_BASIC //used in user's cutting/pulsing/mending speed calculations.
 	var/list/current_users //list of untrained people currently interacting with this set of wires.
 
+	var/visibility_trait = null //BLUEMOON ADD use of TRAIT system for /datum/wires/* machinery
+
 /datum/wires/New(atom/holder)
 	..()
 	if(!istype(holder, holder_type))
@@ -263,6 +265,10 @@
 
 	// Admin ghost can see a purpose of each wire.
 	if(IsAdminGhost(user) || user.mind.get_skill_level(/datum/skill/level/job/wiring) >= req_knowledge)
+		reveal_wires = TRUE
+
+	// BLUEMOON ADD engineers, roboticist with required TRAIT can see a purpose of wire for needed machinery
+	if (visibility_trait && HAS_TRAIT(user.mind, visibility_trait))
 		reveal_wires = TRUE
 
 	// Same for anyone with an abductor multitool.
