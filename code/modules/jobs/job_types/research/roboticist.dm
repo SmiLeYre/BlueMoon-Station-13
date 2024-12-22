@@ -21,7 +21,7 @@
 	paycheck_department = ACCOUNT_SCI
 	bounty_types = CIV_JOB_ROBO
 
-	starting_modifiers = list(/datum/skill_modifier/job/level/wiring, /datum/skill_modifier/job/affinity/wiring)
+	starting_modifiers = list(/datum/skill_modifier/job/level/wiring/basic, /datum/skill_modifier/job/affinity/wiring) //BLUEMOON CHANGE job/level to basic
 
 	mind_traits = list(TRAIT_KNOW_CYBORG_WIRES) //BLUEMOON ADD use #define TRAIT system
 
