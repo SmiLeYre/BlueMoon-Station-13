@@ -1362,14 +1362,14 @@
 	important_info = "Вы не Антагонист. Вы можете отправиться на станцию в Эксту. В Динамик вам следует быть ниже травы и тише воды."
 	outfit = /datum/outfit/ds2/syndicate_command
 
-/obj/effect/mob_spawn/human/ds2/syndicate/special(mob/living/new_spawn)
+/obj/effect/mob_spawn/human/ds2/syndicate/special(mob/living/carbon/human/new_spawn)
 	. = ..()
 	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
 	var/obj/item/implant/anchor/ghost_anchor = new
 	ghost_anchor.implant(new_spawn, null, TRUE)
 
-/obj/effect/mob_spawn/human/ds2/syndicate_command/special(mob/living/new_spawn)
+/obj/effect/mob_spawn/human/ds2/syndicate_command/special(mob/living/carbon/human/new_spawn)
 	. = ..()
 	new_spawn.grant_language(/datum/language/codespeak, TRUE, TRUE, LANGUAGE_MIND)
 
@@ -1377,31 +1377,52 @@
 	ghost_anchor.implant(new_spawn, null, TRUE)
 
 /obj/effect/mob_spawn/human/ds2/syndicate/service
+	mob_name = "a Waffle Co worker"
 	outfit = /datum/outfit/ds2/syndicate/service
 
 /obj/effect/mob_spawn/human/ds2/syndicate/miner
+	mob_name = "a Donk Co mining worker"
+
 	outfit = /datum/outfit/ds2/syndicate/miner
 
 /obj/effect/mob_spawn/human/ds2/syndicate/enginetech
+	mob_name = "a GEC ship engineer"
 	outfit = /datum/outfit/ds2/syndicate/enginetech
 
 /obj/effect/mob_spawn/human/ds2/syndicate/researcher
+	mob_name = "a Cybersun research specialist"
 	outfit = /datum/outfit/ds2/syndicate/researcher
 
 /obj/effect/mob_spawn/human/ds2/syndicate/stationmed
+	mob_name = "an Interdyne medical doctor"
 	outfit = /datum/outfit/ds2/syndicate/stationmed
 
 /obj/effect/mob_spawn/human/ds2/syndicate/brigoff
+	mob_name = "a Gorlex Marauders soldier"
 	outfit = /datum/outfit/ds2/syndicate/brigoff
 
 /obj/effect/mob_spawn/human/ds2/syndicate_command/masteratarms
+	mob_name = "a Gorlex Marauders sergeant"
 	outfit = /datum/outfit/ds2/syndicate_command/masteratarms
 
 /obj/effect/mob_spawn/human/ds2/syndicate_command/corporateliaison
+	mob_name = "a Triglav Syndicate representative"
 	outfit = /datum/outfit/ds2/syndicate_command/corporateliaison
 
 /obj/effect/mob_spawn/human/ds2/syndicate_command/admiral
+	mob_name = "a Triglav Syndicate admiral"
 	outfit = /datum/outfit/ds2/syndicate_command/admiral
+
+// BLUEMOON ADD wires trait system + */special proc place for future coding
+/obj/effect/mob_spawn/human/ds2/syndicate/enginetech/special(mob/living/carbon/human/new_spawn)
+	. = ..()
+	ADD_TRAIT(new_spawn.mind, TRAIT_KNOW_ENGI_WIRES, GHOSTROLE_TRAIT)
+
+/obj/effect/mob_spawn/human/ds2/syndicate/researcher/special(mob/living/carbon/human/new_spawn)
+	. = ..()
+	ADD_TRAIT(new_spawn.mind, TRAIT_KNOW_CYBORG_WIRES, GHOSTROLE_TRAIT)
+
+// BLUEMOON ADD END
 
 /datum/outfit/ds2
 	name = "default ds2 outfit"
