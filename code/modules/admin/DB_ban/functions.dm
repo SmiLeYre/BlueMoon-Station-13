@@ -109,6 +109,12 @@
 		a_computerid = owner.computer_id
 		a_ip = owner.address
 
+	if(forced_holder)
+		a_key = "DISCORD BAN PASSTHRU"
+		a_ckey = "DISCORD BAN PASSTHRU"
+		a_computerid = "0"
+		a_ip = "0.0.0.0"
+
 	if(blockselfban)
 		if(a_ckey == ckey)
 			to_chat(usr, "<span class='danger'>You cannot apply this ban type on yourself.</span>")
