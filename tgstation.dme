@@ -4647,6 +4647,7 @@
 #include "modular_bluemoon\SmiLeY\all_in\security\hammers\assault_hammer.dm"
 #include "modular_bluemoon\SmiLeY\all_in\ships\solfed_ships.dm"
 #include "modular_bluemoon\SmiLeY\all_in\ships\syndicate_ships.dm"
+#include "modular_bluemoon\SmiLeY\all_in\nyamagotchi\nyamagotchi.dm"
 #include "modular_bluemoon\SmiLeY\blastwave_outfits\code\cargo_packs.dm"
 #include "modular_bluemoon\SmiLeY\blastwave_outfits\code\clothing\blastwave_head.dm"
 #include "modular_bluemoon\SmiLeY\blastwave_outfits\code\clothing\blastwave_mask.dm"
