@@ -390,7 +390,7 @@
 		))
 
 	else
-		var/result_of_run = our_solution.DB_ban_record(ban_data["bantype"], playermob, ban_data["duration"], ban_data["reason"], "", ban_data["ckey"], forced_holder = TRUE)
+		var/result_of_run = our_solution.DB_ban_record(ban_data["bantype"], playermob, ban_data["duration"], ban_data["reason"], null, ban_data["ckey"], forced_holder = TRUE)
 		if(result_of_run != TRUE)
 			statuscode = 501
 			response = result_of_run ? result_of_run : "Failed to apply ban."
