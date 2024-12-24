@@ -529,7 +529,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
-/area/ai_monitored/security/armory)
+/area/space/nearstation)
 "abz" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -567,10 +567,6 @@
 /obj/item/flashlight/lamp,
 /turf/open/floor/mineral/plastitanium,
 /area/security/prison)
-"abG" = (
-/obj/structure/lattice/catwalk,
-/turf/open/space/basic,
-/area/ai_monitored/security/armory)
 "abI" = (
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 32
@@ -46308,17 +46304,12 @@
 	name = "Incinerator Output Pump"
 	},
 /turf/open/space,
-/area/maintenance/disposal/incinerator)
+/area/space/nearstation)
 "cpP" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
 /turf/open/space,
 /area/space/nearstation)
-"cpQ" = (
-/obj/structure/lattice,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/turf/open/space,
-/area/maintenance/disposal/incinerator)
 "cpR" = (
 /obj/machinery/door/airlock/abandoned{
 	name = "Observatory Access"
@@ -46727,7 +46718,7 @@
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
 /turf/open/space,
-/area/maintenance/aft)
+/area/space/nearstation)
 "csg" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -46752,12 +46743,6 @@
 	},
 /turf/open/space,
 /area/space/nearstation)
-"csm" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	dir = 1
-	},
-/turf/open/floor/plating/airless,
-/area/maintenance/aft)
 "csn" = (
 /obj/structure/transit_tube/horizontal,
 /turf/open/space,
@@ -48074,7 +48059,7 @@
 	start_active = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "cvG" = (
 /obj/machinery/porta_turret/ai{
 	dir = 4;
@@ -48121,7 +48106,7 @@
 	start_active = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "cvL" = (
 /obj/structure/sign/warning/securearea{
 	pixel_x = 32
@@ -48814,7 +48799,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/airless,
-/area/maintenance/disposal/incinerator)
+/area/space/nearstation)
 "czK" = (
 /turf/closed/wall/r_wall/syndicate{
 	smooth = 2
@@ -49153,7 +49138,7 @@
 	start_active = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "cAV" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -49188,7 +49173,7 @@
 	start_active = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "cAY" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -49250,7 +49235,7 @@
 	start_active = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "cBg" = (
 /obj/effect/spawner/structure/window/plastitanium,
 /obj/effect/landmark/event_spawn,
@@ -50936,7 +50921,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space,
-/area/engineering/atmos)
+/area/space/nearstation)
 "dbg" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin{
@@ -51603,7 +51588,7 @@
 /area/security/execution/transfer)
 "ebE" = (
 /obj/effect/spawner/structure/window/plastitanium,
-/turf/open/space,
+/turf/open/floor/plating,
 /area/security/range)
 "ecp" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -54470,10 +54455,6 @@
 	},
 /turf/open/floor/wood/wood_diagonal,
 /area/security/prison)
-"hxm" = (
-/obj/effect/spawner/structure/window/plastitanium,
-/turf/open/space/basic,
-/area/security/range)
 "hxn" = (
 /obj/effect/spawner/structure/window/plastitanium,
 /obj/machinery/atmospherics/pipe/simple/green/visible,
@@ -67198,10 +67179,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/maintenance/fore/secondary)
-"ydO" = (
-/obj/effect/spawner/structure/window/plastitanium,
-/turf/open/space/basic,
-/area/medical/genetics)
 "yeA" = (
 /obj/machinery/status_display/evac,
 /turf/closed/wall/r_wall/syndicate{
@@ -95853,7 +95830,7 @@ jRV
 acd
 aaT
 gXs
-abG
+gJi
 aaZ
 aeW
 acl
@@ -96110,7 +96087,7 @@ dqd
 acd
 abY
 gXs
-abG
+gJi
 aaZ
 ahB
 aco
@@ -96367,7 +96344,7 @@ nIx
 acd
 aaT
 gXs
-abG
+gJi
 aaZ
 aeY
 aco
@@ -96624,7 +96601,7 @@ aaa
 aaa
 aaT
 gXs
-abG
+gJi
 aaZ
 aeZ
 aco
@@ -96881,7 +96858,7 @@ aaa
 aaa
 abY
 gXs
-abG
+gJi
 aaZ
 afc
 aco
@@ -100989,7 +100966,7 @@ aaa
 aaa
 aaa
 aaa
-hxm
+ebE
 xxp
 xxp
 xxp
@@ -101503,7 +101480,7 @@ fIs
 fIs
 piS
 aaa
-hxm
+ebE
 xxp
 xxp
 xxp
@@ -104958,10 +104935,10 @@ ckg
 cmb
 yan
 cpO
-cpQ
-cpQ
-cpQ
-cpQ
+csc
+csc
+csc
+csc
 czJ
 aaf
 aoV
@@ -106199,7 +106176,7 @@ bkR
 bfL
 bpE
 bFE
-ydO
+bpE
 bua
 bvn
 brd
@@ -107273,7 +107250,7 @@ cbQ
 cnF
 cot
 csc
-csm
+czJ
 aaa
 aaa
 aaa

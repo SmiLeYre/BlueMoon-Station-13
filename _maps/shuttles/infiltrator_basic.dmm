@@ -131,7 +131,9 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/inteq/bridge)
 "at" = (
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/inteq/bridge)
 "au" = (
 /obj/machinery/status_display/evac,

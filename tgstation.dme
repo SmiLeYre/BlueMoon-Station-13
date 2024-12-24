@@ -16,7 +16,6 @@
 // BEGIN_INCLUDE
 #include "_maps\_basemap.dm"
 #include "_maps\map_files\FestiveBall\doorButtonOrganizer.dm"
-#include "_maps\map_files\PrisonStation\job_changes.dm"
 #include "code\__byond_version_compat.dm"
 #include "code\_compile_options.dm"
 #include "code\world.dm"
@@ -4235,6 +4234,7 @@
 #include "modular_bluemoon\_balaam\replica_stamps\code\paper.dm"
 #include "modular_bluemoon\_balaam\replica_stamps\code\replica_stamps.dm"
 #include "modular_bluemoon\_balaam\replica_stamps\code\stamp_base.dm"
+#include "modular_bluemoon\_maps\PrisonStation\job_changes.dm"
 #include "modular_bluemoon\_medicalAndCyberpunk\code\augments_arms.dm"
 #include "modular_bluemoon\_medicalAndCyberpunk\code\augments_chest.dm"
 #include "modular_bluemoon\_medicalAndCyberpunk\code\augments_eyes.dm"

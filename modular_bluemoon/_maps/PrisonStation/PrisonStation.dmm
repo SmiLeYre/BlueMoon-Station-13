@@ -1455,10 +1455,6 @@
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	dir = 4;
-	name = "scrubbers pipe"
-	},
 /turf/open/floor/plating,
 /area/cargo/storage)
 "aAY" = (
@@ -2097,13 +2093,6 @@
 /mob/living/simple_animal/hostile/cult/magic,
 /turf/open/floor/iron/cult,
 /area/awaymission)
-"aOz" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
-	dir = 8;
-	name = "air scrubber"
-	},
-/turf/open/floor/plasteel,
-/area/cargo/storage)
 "aOE" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -2206,6 +2195,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/hallway/secondary/entry)
+"aQY" = (
+/obj/docking_port/stationary/random{
+	shuttle_id = "pod_lavaland2";
+	name = "lavaland"
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "aRb" = (
 /obj/effect/turf_decal/bot_white,
 /obj/structure/closet/crate,
@@ -5082,10 +5078,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	dir = 4;
-	name = "scrubbers pipe"
-	},
 /turf/open/floor/plasteel,
 /area/cargo/storage)
 "bOp" = (
@@ -7025,11 +7017,7 @@
 	name = "Cargo Bay";
 	width = 12
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
-	dir = 8;
-	name = "air supply pipe"
-	},
-/turf/open/floor/plasteel,
+/turf/open/floor/plating,
 /area/cargo/storage)
 "cAu" = (
 /obj/structure/spawner/lavaland/imp,
@@ -7456,6 +7444,9 @@
 	},
 /turf/open/lava/smooth/lava_land_surface,
 /area/awaymission)
+"cGM" = (
+/turf/open/floor/plating,
+/area/cargo/storage)
 "cHd" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
 	dir = 8;
@@ -9092,7 +9083,9 @@
 /turf/open/floor/plating/rust,
 /area/ruin/lavaland/powered)
 "dms" = (
-/obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic,
+/obj/effect/spawner/structure/window/reinforced/tinted/electrochromatic{
+	electrochromatic_id = "sauna_room"
+	},
 /obj/structure/grille,
 /obj/structure/cable,
 /turf/open/floor/plasteel,
@@ -9218,10 +9211,6 @@
 	dir = 8
 	},
 /obj/structure/fans/tiny,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	dir = 4;
-	name = "scrubbers pipe"
-	},
 /turf/open/floor/plating,
 /area/cargo/storage)
 "dop" = (
@@ -10226,23 +10215,6 @@
 /obj/effect/spawner/lootdrop/salvage,
 /turf/closed/mineral/random/high_chance,
 /area/lavaland/surface/outdoors)
-"dGB" = (
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
-	dir = 8;
-	name = "air supply pipe"
-	},
-/turf/open/floor/plasteel,
-/area/cargo/storage)
 "dGM" = (
 /obj/machinery/air_sensor/atmos/carbon_tank,
 /turf/open/floor/engine/co2,
@@ -12460,6 +12432,14 @@
 	},
 /turf/open/floor/plasteel,
 /area/hallway/primary/port)
+"evw" = (
+/obj/docking_port/stationary/random{
+	dir = 2;
+	shuttle_id = "pod_lavaland3";
+	name = "lavaland"
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "evE" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -13620,10 +13600,6 @@
 /area/hallway/secondary/service)
 "eTl" = (
 /obj/machinery/light/small,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
-	dir = 8;
-	name = "air supply pipe"
-	},
 /turf/open/floor/plating,
 /area/cargo/storage)
 "eTz" = (
@@ -15016,10 +14992,6 @@
 /obj/machinery/conveyor_switch/oneway{
 	id = "QMLoad"
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
-	dir = 8;
-	name = "air supply pipe"
-	},
 /turf/open/floor/plasteel,
 /area/cargo/storage)
 "frJ" = (
@@ -16311,8 +16283,7 @@
 	dir = 4;
 	name = "air supply pipe"
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer1{
-	dir = 8;
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	name = "scrubbers pipe"
 	},
 /turf/open/floor/plasteel,
@@ -26134,21 +26105,6 @@
 /obj/effect/landmark/start/atmospheric_technician,
 /turf/open/floor/plasteel,
 /area/engineering/atmos)
-"jnW" = (
-/obj/machinery/door/airlock/external{
-	name = "Supply Dock Airlock";
-	req_access_txt = "31"
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/obj/structure/fans/tiny,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
-	dir = 8;
-	name = "air supply pipe"
-	},
-/turf/open/floor/plating,
-/area/cargo/storage)
 "joi" = (
 /obj/machinery/light{
 	dir = 4;
@@ -26773,10 +26729,6 @@
 /area/service/chapel/office)
 "jBy" = (
 /obj/effect/turf_decal/stripes/line,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	dir = 4;
-	name = "scrubbers pipe"
-	},
 /turf/open/floor/plasteel,
 /area/cargo/storage)
 "jBD" = (
@@ -27467,10 +27419,6 @@
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	dir = 4;
-	name = "scrubbers pipe"
 	},
 /turf/open/floor/plasteel,
 /area/cargo/storage)
@@ -28626,13 +28574,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/lavaland/powered)
-"kmd" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
-	dir = 8;
-	name = "air supply pipe"
-	},
-/turf/open/floor/plasteel,
-/area/cargo/storage)
 "kmk" = (
 /obj/structure/bodycontainer/morgue{
 	dir = 2
@@ -28843,10 +28784,6 @@
 "krD" = (
 /obj/machinery/light/small{
 	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	dir = 4;
-	name = "scrubbers pipe"
 	},
 /turf/open/floor/plating,
 /area/cargo/storage)
@@ -30401,6 +30338,17 @@
 	color = "#FFFFFF"
 	},
 /turf/open/floor/plating/rust,
+/area/lavaland/surface/outdoors)
+"kRC" = (
+/obj/docking_port/stationary{
+	dir = 2;
+	dwidth = 1;
+	height = 4;
+	name = "escape pod loader";
+	roundstart_template = /datum/map_template/shuttle/escape_pod/default;
+	width = 3
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
 /area/lavaland/surface/outdoors)
 "kRG" = (
 /obj/effect/decal/remains/human,
@@ -33446,8 +33394,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	name = "scrubbers pipe"
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer3{
-	dir = 8;
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
 	name = "air supply pipe"
 	},
 /turf/open/floor/plasteel,
@@ -35541,16 +35488,6 @@
 	},
 /turf/open/floor/wood,
 /area/service/library)
-"mIE" = (
-/obj/effect/turf_decal/stripes/line{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
-	dir = 8;
-	name = "air supply pipe"
-	},
-/turf/open/floor/plasteel,
-/area/cargo/storage)
 "mIG" = (
 /obj/structure/railing{
 	dir = 1
@@ -37409,10 +37346,6 @@
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/conveyor_switch/oneway{
 	id = "QMLoad2"
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	dir = 4;
-	name = "scrubbers pipe"
 	},
 /turf/open/floor/plasteel,
 /area/cargo/storage)
@@ -41737,6 +41670,14 @@
 /obj/item/stack/sheet/mineral/uranium/five,
 /turf/open/floor/engine,
 /area/ruin/lavaland/powered)
+"oOp" = (
+/obj/docking_port/stationary/random{
+	dir = 2;
+	shuttle_id = "pod_lavaland4";
+	name = "lavaland"
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "oON" = (
 /obj/effect/turf_decal/loading_area{
 	dir = 4;
@@ -43662,6 +43603,16 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/ruin/lavaland/powered)
+"pyo" = (
+/obj/docking_port/stationary{
+	dwidth = 1;
+	height = 4;
+	name = "escape pod loader";
+	roundstart_template = /datum/map_template/shuttle/escape_pod/default;
+	width = 3
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "pyp" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -44350,7 +44301,7 @@
 /area/service/library)
 "pMl" = (
 /obj/machinery/turretid{
-	control_area = "/area/ai_monitored/turret_protected/aisat/hallway";
+	control_area = "/area/awaymission";
 	name = "Chamber Hallway Turret Control";
 	pixel_x = 32;
 	pixel_y = -24;
@@ -46299,20 +46250,6 @@
 /obj/machinery/door/airlock/titanium/glass,
 /turf/open/floor/plasteel/freezer,
 /area/ruin/lavaland/powered)
-"qyS" = (
-/obj/machinery/door/airlock/external{
-	name = "Supply Dock Airlock";
-	req_access_txt = "31"
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer3{
-	dir = 8;
-	name = "air supply pipe"
-	},
-/turf/open/floor/plating,
-/area/cargo/storage)
 "qyV" = (
 /obj/structure/chair/office/dark{
 	dir = 4
@@ -55624,6 +55561,18 @@
 	},
 /turf/open/floor/plasteel,
 /area/tcommsat/computer)
+"tNj" = (
+/obj/docking_port/stationary{
+	dheight = 1;
+	dir = 8;
+	dwidth = 12;
+	height = 17;
+	shuttle_id = "syndicate_ne";
+	name = "northeast of station";
+	width = 23
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "tNo" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Prison Yard"
@@ -58596,6 +58545,13 @@
 	},
 /turf/open/floor/plating/rust,
 /area/lavaland/surface/outdoors)
+"uXo" = (
+/obj/docking_port/stationary/random{
+	shuttle_id = "pod_lavaland1";
+	name = "lavaland"
+	},
+/turf/open/floor/plating/asteroid/basalt/lava_land_surface,
+/area/lavaland/surface/outdoors)
 "uXw" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
@@ -60707,13 +60663,6 @@
 	},
 /turf/open/floor/carpet/purple,
 /area/security/prison/cells)
-"vPn" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
-	dir = 4;
-	name = "scrubbers pipe"
-	},
-/turf/open/floor/plasteel,
-/area/cargo/storage)
 "vPr" = (
 /obj/machinery/computer/communications{
 	dir = 8
@@ -60776,6 +60725,10 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/lavaland/powered)
+"vQp" = (
+/obj/effect/landmark/blobstart,
+/turf/open/floor/plating/rust,
+/area/maintenance/aft)
 "vQz" = (
 /obj/structure/bed/shadow{
 	dir = 4
@@ -62584,13 +62537,6 @@
 	},
 /turf/open/floor/plating/rust,
 /area/ruin/lavaland/powered)
-"wAk" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer3{
-	dir = 8;
-	name = "air vent"
-	},
-/turf/open/floor/plasteel,
-/area/cargo/storage)
 "wAB" = (
 /obj/structure/flora/ausbushes/sparsegrass,
 /obj/structure/flora/tree/spookybranch,
@@ -113199,7 +113145,7 @@ oBT
 wIm
 eEh
 xZq
-xZq
+vQp
 dIN
 dIN
 cMz
@@ -116146,7 +116092,7 @@ eFg
 dsk
 kgm
 kgm
-eba
+kgm
 kgm
 kgm
 dsk
@@ -116448,7 +116394,7 @@ kgm
 kgm
 dsk
 kgm
-kgm
+eba
 kgm
 dsk
 kgm
@@ -131902,7 +131848,7 @@ cjb
 pNF
 hxb
 dJQ
-dGB
+cjU
 rig
 bOo
 dJQ
@@ -132204,7 +132150,7 @@ uoG
 qEG
 cjU
 mZh
-dGB
+cjU
 fdq
 jQq
 vrg
@@ -132506,9 +132452,9 @@ dPC
 dJQ
 jYq
 dJQ
-kmd
+sRO
 mZh
-vPn
+sRO
 xlx
 jYq
 jaW
@@ -133110,7 +133056,7 @@ kRm
 vqj
 iMx
 qPK
-mIE
+nAq
 sRO
 jBy
 qHG
@@ -133412,7 +133358,7 @@ mdj
 rmC
 iMx
 qRB
-mIE
+nAq
 sRO
 jBy
 qHG
@@ -133714,7 +133660,7 @@ cSY
 aUe
 iMx
 qPK
-mIE
+nAq
 hSl
 jBy
 btR
@@ -134016,7 +133962,7 @@ pFh
 sAS
 iMx
 pbm
-qyS
+aAL
 lVW
 aAL
 glw
@@ -134620,7 +134566,7 @@ iMx
 iMx
 iMx
 ovx
-jnW
+doa
 lVW
 doa
 ntT
@@ -134916,20 +134862,20 @@ lUh
 uvd
 uvd
 kVj
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
 cAl
-sRO
-vPn
-sRO
-sRO
-sRO
-sRO
-sRO
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
 kVj
 bzZ
 bzZ
@@ -135218,20 +135164,20 @@ lUh
 nRn
 nRn
 kVj
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-kmd
-sRO
-vPn
-sRO
-sRO
-sRO
-sRO
-sRO
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
 kVj
 bzZ
 bzZ
@@ -135342,7 +135288,7 @@ sKA
 nRn
 nRn
 nRn
-nRn
+tNj
 nRn
 nRn
 nRn
@@ -135520,20 +135466,20 @@ lUh
 nRn
 nRn
 kVj
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-kmd
-sRO
-vPn
-sRO
-sRO
-sRO
-sRO
-sRO
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
 kVj
 bzZ
 bzZ
@@ -135822,20 +135768,20 @@ lUh
 nRn
 nRn
 kVj
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-wAk
-sRO
-aOz
-sRO
-sRO
-sRO
-sRO
-sRO
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
 kVj
 bzZ
 bzZ
@@ -136124,20 +136070,20 @@ nRn
 nRn
 nRn
 kVj
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
 kVj
 bzZ
 bzZ
@@ -136426,20 +136372,20 @@ nRn
 nRn
 nRn
 kVj
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
 kVj
 bzZ
 bzZ
@@ -136728,20 +136674,20 @@ nRn
 nRn
 nRn
 kVj
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
-sRO
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
+cGM
 kVj
 bzZ
 bzZ
@@ -155309,10 +155255,10 @@ sKA
 sKA
 bzZ
 bzZ
-bzZ
-bzZ
 rLQ
 rLQ
+nRn
+nRn
 nRn
 nRn
 nRn
@@ -155611,10 +155557,10 @@ sKA
 sKA
 bzZ
 bzZ
-bzZ
-bzZ
 rLQ
 rLQ
+nRn
+nRn
 nRn
 nRn
 nRn
@@ -155913,10 +155859,10 @@ sKA
 sKA
 bzZ
 bzZ
-bzZ
-bzZ
 rLQ
 rLQ
+nRn
+nRn
 nRn
 nRn
 nRn
@@ -176393,20 +176339,20 @@ sKA
 sKA
 "}
 (362,1,1) = {"
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
 sKA
 sKA
 sKA
@@ -176695,20 +176641,20 @@ sKA
 sKA
 "}
 (363,1,1) = {"
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
+uXo
+nRn
+nRn
+nRn
+pyo
+nRn
+nRn
+nRn
+nRn
+kRC
+nRn
+nRn
+nRn
+evw
 sKA
 sKA
 sKA
@@ -176997,20 +176943,20 @@ sKA
 sKA
 "}
 (364,1,1) = {"
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
 sKA
 sKA
 sKA
@@ -177299,20 +177245,20 @@ sKA
 sKA
 "}
 (365,1,1) = {"
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
 sKA
 sKA
 sKA
@@ -177601,20 +177547,20 @@ sKA
 sKA
 "}
 (366,1,1) = {"
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
 sKA
 sKA
 sKA
@@ -177903,20 +177849,20 @@ sKA
 sKA
 "}
 (367,1,1) = {"
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
 sKA
 sKA
 sKA
@@ -178205,20 +178151,20 @@ sKA
 sKA
 "}
 (368,1,1) = {"
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
 sKA
 sKA
 sKA
@@ -178507,20 +178453,20 @@ sKA
 sKA
 "}
 (369,1,1) = {"
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
+aQY
+nRn
+nRn
+nRn
+pyo
+nRn
+nRn
+nRn
+nRn
+kRC
+nRn
+nRn
+nRn
+oOp
 sKA
 sKA
 sKA
@@ -178809,20 +178755,20 @@ sKA
 sKA
 "}
 (370,1,1) = {"
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
-sKA
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
+nRn
 sKA
 sKA
 sKA

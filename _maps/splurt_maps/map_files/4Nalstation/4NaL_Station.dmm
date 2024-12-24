@@ -310,7 +310,7 @@
 	name = "The consent button"
 	},
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "aeo" = (
 /obj/effect/decal/cleanable/blood/gibs/torso,
 /obj/effect/decal/cleanable/blood/gibs/torso,
@@ -651,10 +651,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/cargo/storage)
-"aki" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/space/basic,
-/area/science/misc_lab/range)
 "akk" = (
 /obj/machinery/light{
 	dir = 8
@@ -2611,7 +2607,7 @@
 "aVY" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "aWa" = (
 /obj/structure/railing{
 	pixel_x = 1
@@ -7867,7 +7863,7 @@
 "cBN" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/grass/fairy/blue,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "cBU" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Maintenance Access";
@@ -9181,7 +9177,7 @@
 	},
 /obj/structure/fans/tiny/invisible,
 /turf/open/space/transparent/openspace,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "cXJ" = (
 /obj/structure/girder,
 /turf/open/floor/plating,
@@ -12268,7 +12264,7 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
-/area/engineering/transit_tube)
+/area/space/nearstation)
 "dPH" = (
 /turf/closed/wall/mineral/wood,
 /area/command/teleporter)
@@ -12726,7 +12722,7 @@
 	icon_state = "0-8"
 	},
 /turf/open/floor/plasteel/airless/solarpanel,
-/area/maintenance/solars/starboard)
+/area/solars/starboard)
 "dXL" = (
 /obj/machinery/light{
 	dir = 4
@@ -13058,7 +13054,7 @@
 "ecN" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/grass/fairy/red,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "ecR" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb,
@@ -13800,7 +13796,7 @@
 "emr" = (
 /obj/structure/flora/biolumi/flower,
 /turf/open/floor/grass/fairy/red,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "ems" = (
 /mob/living/simple_animal/bot/hugbot,
 /turf/open/floor/carpet/black,
@@ -16345,7 +16341,7 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/cable,
 /turf/open/space/transparent/openspace,
-/area/medical/virology)
+/area/space/nearstation)
 "fbC" = (
 /obj/structure/cable{
 	icon_state = "2-4"
@@ -16490,7 +16486,7 @@
 	},
 /obj/structure/fans/tiny/invisible,
 /turf/open/space/transparent/openspace,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "fel" = (
 /obj/machinery/door/window{
 	base_state = "right";
@@ -16624,7 +16620,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/space,
-/area/maintenance/solars/starboard)
+/area/solars/starboard)
 "ffY" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb{
@@ -17535,17 +17531,6 @@
 	},
 /turf/open/floor/plating,
 /area/engineering/atmos)
-"fvw" = (
-/obj/structure/lattice/catwalk,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/space/basic,
-/area/engineering/transit_tube)
 "fvy" = (
 /turf/closed/wall,
 /area/hallway/secondary/exit)
@@ -19433,7 +19418,7 @@
 /area/medical/medbay/central)
 "gdt" = (
 /turf/open/space/basic,
-/area/maintenance/prison/lower)
+/area/space/nearstation)
 "gdB" = (
 /obj/machinery/computer/cryopod{
 	dir = 8;
@@ -20215,7 +20200,7 @@
 "gri" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass/fairy/blue,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "grk" = (
 /obj/structure/disposalpipe/segment,
 /turf/closed/wall,
@@ -20624,7 +20609,7 @@
 /area/service/janitor)
 "gxy" = (
 /obj/machinery/power/apc/highcap/five_k{
-	areastring = "/area/command/bridge";
+	areastring = "/area/command/bridge/upper";
 	name = "Bridge APC";
 	pixel_y = -23
 	},
@@ -20885,7 +20870,7 @@
 /obj/structure/cable,
 /obj/structure/lattice/catwalk,
 /turf/open/space/transparent/openspace,
-/area/medical/break_room)
+/area/space/nearstation)
 "gBt" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -22226,7 +22211,7 @@
 "gVh" = (
 /obj/structure/flora/biolumi/mine,
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "gVr" = (
 /obj/machinery/conveyor_switch/oneway{
 	dir = 8;
@@ -23066,7 +23051,7 @@
 "hlz" = (
 /obj/structure/lattice/catwalk,
 /turf/open/space,
-/area/maintenance/disposal/incinerator)
+/area/space/nearstation)
 "hlE" = (
 /obj/machinery/camera{
 	c_tag = "Pool"
@@ -23312,7 +23297,7 @@
 /area/cargo/sorting)
 "hoS" = (
 /turf/open/floor/grass/fairy/blue,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "hoT" = (
 /obj/structure/sign/departments/engineering{
 	pixel_x = 32
@@ -24619,7 +24604,7 @@
 /area/maintenance/disposal/incinerator)
 "hIk" = (
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "hIA" = (
 /obj/structure/table/wood,
 /obj/machinery/computer/med_data/laptop,
@@ -25401,10 +25386,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/wood,
 /area/maintenance/central/zoo)
-"hTY" = (
-/obj/structure/lattice/catwalk,
-/turf/open/space/basic,
-/area/engineering/transit_tube)
 "hUo" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 10
@@ -25951,7 +25932,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/space/basic,
-/area/engineering/transit_tube)
+/area/space/nearstation)
 "icG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 5;
@@ -27370,7 +27351,7 @@
 	dir = 9
 	},
 /turf/open/space/basic,
-/area/engineering/transit_tube)
+/area/space/nearstation)
 "izJ" = (
 /obj/structure/ladder,
 /obj/effect/turf_decal/siding/wideplating/dark{
@@ -28626,7 +28607,7 @@
 "iVI" = (
 /obj/structure/flora/biolumi/lamp,
 /turf/open/floor/grass/fairy/blue,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "iWa" = (
 /turf/open/floor/plasteel/dark,
 /area/security/prison)
@@ -28777,7 +28758,7 @@
 /obj/structure/glowshroom/shadowshroom,
 /obj/structure/flora/biolumi/flower,
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "iYz" = (
 /obj/effect/turf_decal/trimline/blue/filled/corner{
 	dir = 8
@@ -30942,7 +30923,7 @@
 "jIj" = (
 /obj/structure/flora/ausbushes/brflowers,
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "jIl" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -31729,7 +31710,7 @@
 /area/cargo/office)
 "jUK" = (
 /obj/effect/spawner/structure/window/reinforced,
-/turf/open/space/basic,
+/turf/open/floor/plating,
 /area/maintenance/solars/starboard)
 "jUR" = (
 /obj/structure/stairs{
@@ -33080,10 +33061,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/engineering/workshop)
-"kpG" = (
-/obj/structure/lattice/catwalk,
-/turf/open/space/transparent/openspace,
-/area/medical/virology)
 "kqa" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 1
@@ -33128,7 +33105,7 @@
 "kqF" = (
 /obj/structure/flora/biolumi,
 /turf/open/floor/grass/fairy/white,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "kqJ" = (
 /obj/item/clothing/mask/rat/fox,
 /obj/effect/decal/cleanable/semen{
@@ -33204,7 +33181,7 @@
 "krJ" = (
 /obj/structure/flora/biolumi,
 /turf/open/floor/grass/fairy/blue,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "krL" = (
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	color = "#63138f"
@@ -34827,21 +34804,6 @@
 /area/hallway/primary/fore)
 "kRj" = (
 /obj/structure/safe,
-/obj/item/gun/ballistic/automatic/speargun,
-/obj/item/projectile/bullet/reusable/magspear,
-/obj/item/projectile/bullet/reusable/magspear,
-/obj/item/projectile/bullet/reusable/magspear,
-/obj/item/reagent_containers/glass/bottle/semen{
-	pixel_x = 7
-	},
-/obj/item/reagent_containers/glass/bottle{
-	list_reagents = list(/datum/reagent/consumable/ethanol/panty_dropper=30);
-	desc = "A small bottle of one of the most useful medicines.";
-	name = "Bottle of Fun";
-	icon_state = "bottle19";
-	pixel_y = 10;
-	pixel_x = -12
-	},
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/command/nuke_storage)
 "kRv" = (
@@ -36784,7 +36746,7 @@
 	},
 /obj/structure/fans/tiny/invisible,
 /turf/open/space/transparent/openspace,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "lwO" = (
 /obj/machinery/camera/motion{
 	c_tag = "AI Chamber - Fore";
@@ -36907,7 +36869,7 @@
 "lzi" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/grass/fairy/blue,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "lzk" = (
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/glass,
@@ -37242,7 +37204,7 @@
 "lFP" = (
 /obj/structure/flora/biolumi/flower,
 /turf/open/floor/grass/fairy/white,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "lFR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
@@ -38205,7 +38167,7 @@
 "lYl" = (
 /obj/structure/flora/tree/shadow,
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "lYo" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden,
 /turf/closed/wall/r_wall,
@@ -39012,7 +38974,7 @@
 "mlX" = (
 /obj/structure/flora/bush,
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "mmf" = (
 /obj/machinery/vending/coffee,
 /turf/open/floor/plasteel,
@@ -44373,7 +44335,7 @@
 /obj/structure/flora/biolumi/mine,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass/fairy/white,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "nVB" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/visible{
 	dir = 4
@@ -45473,7 +45435,7 @@
 /area/maintenance/department/engine/mid)
 "opa" = (
 /turf/closed/wall/mineral/wood/shadow,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "opc" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -45885,10 +45847,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/courtroom)
-"ovj" = (
-/obj/structure/lattice/catwalk,
-/turf/open/space/transparent/openspace,
-/area/medical/break_room)
 "ovu" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/structure/disposalpipe/segment{
@@ -46913,7 +46871,7 @@
 "oJI" = (
 /obj/structure/flora/bush,
 /turf/open/floor/grass/fairy/blue,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "oJJ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -50674,7 +50632,7 @@
 	},
 /obj/structure/fans/tiny/invisible,
 /turf/open/space/transparent/openspace,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "pUD" = (
 /obj/machinery/door/window{
 	base_state = "right";
@@ -51434,7 +51392,7 @@
 /area/maintenance/department/engine/upper)
 "qgY" = (
 /turf/open/floor/plating/dirt/space/airless,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "qhc" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 1
@@ -51700,7 +51658,7 @@
 "qkX" = (
 /obj/structure/flora/biolumi/lamp,
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "qkZ" = (
 /obj/structure/railing{
 	dir = 5
@@ -52824,7 +52782,7 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/disposalpipe/segment,
 /turf/open/space/basic,
-/area/engineering/transit_tube)
+/area/space/nearstation)
 "qFH" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -55454,7 +55412,7 @@
 	name = "The consent button"
 	},
 /turf/open/floor/grass/fairy/blue,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "rxD" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 1
@@ -56155,7 +56113,7 @@
 /obj/structure/flora/biolumi/lamp,
 /obj/structure/flora/biolumi,
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "rII" = (
 /obj/structure/transit_tube/crossing,
 /obj/structure/cable{
@@ -57262,7 +57220,7 @@
 "rZA" = (
 /obj/structure/flora/tree/shadow,
 /turf/open/floor/plating/dirt/space/airless,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "saa" = (
 /obj/docking_port/stationary{
 	dwidth = 1;
@@ -58139,7 +58097,7 @@
 "sny" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "snD" = (
 /obj/machinery/door/airlock/mining/glass{
 	name = "Mining Dock";
@@ -61803,7 +61761,7 @@
 "txE" = (
 /obj/structure/flora/bush,
 /turf/open/floor/grass/fairy/white,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "txF" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 6
@@ -63470,7 +63428,7 @@
 "tWl" = (
 /obj/structure/fluff/fokoff_sign,
 /turf/open/floor/plating/dirt/space/airless,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "tWu" = (
 /turf/closed/wall/r_wall,
 /area/command/heads_quarters/captain)
@@ -63977,7 +63935,7 @@
 "udE" = (
 /obj/structure/flora/biolumi/flower,
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "udG" = (
 /obj/machinery/atmospherics/pipe/layer_manifold,
 /obj/structure/ladder,
@@ -64708,7 +64666,7 @@
 "urJ" = (
 /obj/structure/sign/warning/securearea,
 /turf/open/floor/plating/dirt/space/airless,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "urM" = (
 /obj/machinery/door/firedoor,
 /obj/structure/fans/tiny/invisible,
@@ -66424,7 +66382,7 @@
 /obj/structure/flora/stump/shadow,
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "uWF" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 4
@@ -67009,7 +66967,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space/transparent/openspace,
-/area/engineering/atmos)
+/area/space/nearstation)
 "viI" = (
 /obj/effect/landmark/start/cyborg,
 /obj/machinery/ai_slipper{
@@ -67596,7 +67554,7 @@
 	},
 /obj/structure/fans/tiny/invisible,
 /turf/open/space/transparent/openspace,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "vrj" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -67629,7 +67587,7 @@
 "vrN" = (
 /obj/structure/flora/biolumi,
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "vrO" = (
 /obj/machinery/door/airlock/security{
 	name = "Security Post - Medical";
@@ -68498,7 +68456,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/space/basic,
-/area/engineering/transit_tube)
+/area/space/nearstation)
 "vEU" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -69254,7 +69212,7 @@
 /area/service/bar/atrium)
 "vRl" = (
 /turf/open/floor/grass/fairy/red,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "vRm" = (
 /obj/structure/sink{
 	dir = 4;
@@ -70248,7 +70206,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space/transparent/openspace,
-/area/engineering/break_room)
+/area/space/nearstation)
 "wjc" = (
 /turf/open/floor/grass/fakebasalt,
 /area/maintenance/central/zoo)
@@ -70359,7 +70317,7 @@
 "wjV" = (
 /obj/structure/flora/stump/shadow,
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "wjY" = (
 /obj/machinery/button/door{
 	id = "PoolShut";
@@ -72518,7 +72476,7 @@
 /area/maintenance/prison/lower)
 "wSh" = (
 /turf/open/space/transparent/openspace,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "wSH" = (
 /obj/item/kirbyplants/random,
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -73015,7 +72973,7 @@
 /area/maintenance/department/bridge)
 "xbH" = (
 /turf/open/floor/grass/fairy/white,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "xbU" = (
 /obj/item/gun/energy/ionrifle,
 /obj/item/gun/energy/temperature/security,
@@ -73367,7 +73325,7 @@
 "xhC" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/grass/fairy/white,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "xhE" = (
 /obj/structure/table/wood/fancy/blackred,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
@@ -75681,7 +75639,7 @@
 /obj/structure/flora/ausbushes/ppflowers,
 /obj/structure/flora/ausbushes/lavendergrass,
 /turf/open/floor/grass/fairy/purple,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "xTp" = (
 /obj/structure/table/wood,
 /turf/open/floor/carpet/black,
@@ -75743,7 +75701,7 @@
 "xVy" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass/fairy/red,
-/area/ruin/unpowered/ylvaturf)
+/area/ruin/space/has_grav/ylvaturf)
 "xVW" = (
 /obj/machinery/door/poddoor/preopen{
 	id = "hosprivacy";
@@ -75786,7 +75744,7 @@
 /obj/structure/lattice/catwalk,
 /obj/item/wrench,
 /turf/open/space,
-/area/maintenance/disposal/incinerator)
+/area/space/nearstation)
 "xWO" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 1
@@ -102199,7 +102157,7 @@ bEo
 bEo
 hyn
 mjB
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -102409,9 +102367,9 @@ oEf
 oEf
 qBZ
 rgf
-hTY
+pEt
 ePC
-hTY
+pEt
 uVe
 caX
 oQV
@@ -102456,7 +102414,7 @@ bEo
 bEo
 pUq
 mjB
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -102666,9 +102624,9 @@ rgf
 rgf
 rgf
 rgf
-hTY
+pEt
 ePC
-hTY
+pEt
 uVe
 caX
 xoE
@@ -102713,7 +102671,7 @@ kEx
 kEx
 vER
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -102923,9 +102881,9 @@ rgf
 ssw
 vKM
 rgf
-hTY
+pEt
 ePC
-hTY
+pEt
 uVe
 caX
 uVe
@@ -102970,7 +102928,7 @@ kEx
 kEx
 vER
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -103180,9 +103138,9 @@ rgf
 rgf
 nWo
 rgf
-hTY
+pEt
 ePC
-hTY
+pEt
 uVe
 wBQ
 lYr
@@ -103227,7 +103185,7 @@ kEx
 kEx
 vER
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -103437,9 +103395,9 @@ rgf
 oEf
 nWo
 rgf
-hTY
+pEt
 ePC
-hTY
+pEt
 uVe
 caX
 uVe
@@ -103484,7 +103442,7 @@ kEx
 kEx
 vER
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -103694,9 +103652,9 @@ uJl
 oEf
 rgf
 rgf
-hTY
+pEt
 ePC
-hTY
+pEt
 uVe
 esw
 uVe
@@ -103741,7 +103699,7 @@ kEx
 kEx
 vER
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -103951,9 +103909,9 @@ kru
 jny
 kru
 rgf
-hTY
+pEt
 ePC
-hTY
+pEt
 uVe
 wSf
 xPL
@@ -103998,7 +103956,7 @@ kEx
 kEx
 vER
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -104208,9 +104166,9 @@ rgf
 kru
 kru
 rgf
-hTY
+pEt
 ePC
-hTY
+pEt
 hxt
 qLu
 hxt
@@ -104255,7 +104213,7 @@ kEx
 kEx
 vER
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -104465,9 +104423,9 @@ mbV
 veO
 uJl
 rgf
-hTY
+pEt
 ePC
-hTY
+pEt
 gJz
 vXm
 wXj
@@ -104512,7 +104470,7 @@ kEx
 kEx
 vER
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -104722,9 +104680,9 @@ hWe
 mqD
 hWe
 hWe
-hTY
+pEt
 ePC
-hTY
+pEt
 gJz
 kWV
 tEi
@@ -104769,7 +104727,7 @@ kEx
 kEx
 vER
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -104979,9 +104937,9 @@ rxe
 bCk
 hxP
 hWe
-hTY
+pEt
 ePC
-hTY
+pEt
 gJz
 iIb
 uml
@@ -105026,7 +104984,7 @@ kEx
 kEx
 vER
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -105236,9 +105194,9 @@ fyv
 uHY
 fDI
 hWe
-hTY
+pEt
 ePC
-hTY
+pEt
 vkd
 vkd
 vkd
@@ -105283,7 +105241,7 @@ kEx
 kEx
 vER
 ePC
-hTY
+pEt
 pEt
 pEt
 pEt
@@ -105493,9 +105451,9 @@ aUR
 uHY
 gWo
 hWe
-hTY
+pEt
 ePC
-hTY
+pEt
 vkd
 iok
 prD
@@ -105540,7 +105498,7 @@ kEx
 kEx
 icD
 nEZ
-fvw
+fuk
 fuk
 fuk
 fuk
@@ -105750,9 +105708,9 @@ qVS
 xKA
 mPL
 hWe
-hTY
+pEt
 ePC
-hTY
+pEt
 vkd
 hNz
 skI
@@ -105795,9 +105753,9 @@ baH
 dpk
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 pEt
 pEt
 pEt
@@ -106007,9 +105965,9 @@ piW
 iRM
 pMc
 hWe
-hTY
+pEt
 ePC
-hTY
+pEt
 vkd
 bfJ
 hGJ
@@ -106052,9 +106010,9 @@ mYz
 dpk
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -106264,9 +106222,9 @@ cqP
 bRo
 jGH
 hWe
-hTY
+pEt
 ePC
-hTY
+pEt
 vkd
 otl
 kYm
@@ -106309,9 +106267,9 @@ jdX
 dpk
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -106521,9 +106479,9 @@ pNs
 dPH
 dPH
 dPH
-hTY
+pEt
 ePC
-hTY
+pEt
 vkd
 vgq
 wRu
@@ -106566,9 +106524,9 @@ qOU
 dpk
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -106778,9 +106736,9 @@ weJ
 dja
 rIc
 pJy
-hTY
+pEt
 ePC
-hTY
+pEt
 vkd
 sZP
 otl
@@ -106823,9 +106781,9 @@ nCF
 dpk
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -107035,9 +106993,9 @@ rLk
 aFy
 jUR
 pJy
-hTY
+pEt
 ePC
-hTY
+pEt
 vkd
 ddd
 otl
@@ -107080,9 +107038,9 @@ dwg
 dpk
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -107292,9 +107250,9 @@ dbZ
 xhR
 pJy
 pJy
-hTY
+pEt
 ePC
-hTY
+pEt
 vkd
 dFp
 vUP
@@ -107337,9 +107295,9 @@ dpk
 dpk
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -107549,9 +107507,9 @@ rkZ
 xhR
 cCK
 cCK
-hTY
+pEt
 ePC
-hTY
+pEt
 vkd
 vkd
 vkd
@@ -107594,9 +107552,9 @@ cCK
 cCK
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -107806,9 +107764,9 @@ fNM
 xhR
 cCK
 cCK
-hTY
+pEt
 ePC
-hTY
+pEt
 nLh
 xnb
 pCt
@@ -107851,9 +107809,9 @@ cCK
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -108063,9 +108021,9 @@ ecK
 cCK
 cCK
 cCK
-hTY
+pEt
 ePC
-hTY
+pEt
 nLh
 hRE
 aes
@@ -108108,9 +108066,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 cCK
 kEx
 kEx
@@ -108320,9 +108278,9 @@ cCK
 cCK
 cCK
 cCK
-hTY
+pEt
 ePC
-hTY
+pEt
 nLh
 wWZ
 lTH
@@ -108365,9 +108323,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 cCK
 cCK
 cCK
@@ -108577,9 +108535,9 @@ kEx
 kEx
 kEx
 cCK
-hTY
+pEt
 ePC
-hTY
+pEt
 nLh
 oml
 cbe
@@ -108622,9 +108580,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 cCK
 kEx
 kEx
@@ -108834,9 +108792,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 nLh
 qFl
 klO
@@ -108879,9 +108837,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -109091,9 +109049,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 nLh
 gbt
 oBt
@@ -109136,9 +109094,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -109348,9 +109306,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 nLh
 iAw
 oBC
@@ -109393,9 +109351,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -109605,9 +109563,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 nLh
 nLh
 nLh
@@ -109650,9 +109608,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -109862,9 +109820,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 qTR
 ijf
@@ -109907,9 +109865,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -110119,9 +110077,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 yka
 pNi
@@ -110164,9 +110122,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -110376,9 +110334,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 yka
 goZ
@@ -110421,9 +110379,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -110633,9 +110591,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 yka
 ijf
@@ -110678,9 +110636,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -110890,9 +110848,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 qTR
 ijf
@@ -110935,9 +110893,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -111147,9 +111105,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 qTR
 qTR
@@ -111191,11 +111149,11 @@ lJO
 kEx
 kEx
 kEx
-hTY
-hTY
+pEt
+pEt
 ePC
-hTY
-hTY
+pEt
+pEt
 kEx
 kEx
 kEx
@@ -111404,9 +111362,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 qTR
 jAV
@@ -111448,11 +111406,11 @@ lJO
 kEx
 kEx
 kEx
-hTY
+pEt
 hLI
 uRY
 hLI
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -111661,9 +111619,9 @@ otd
 otd
 otd
 otd
-hTY
+pEt
 ePC
-hTY
+pEt
 qTR
 qTR
 jgW
@@ -111705,11 +111663,11 @@ lJO
 kEx
 kEx
 kEx
-hTY
+pEt
 hQJ
 hLI
 eSx
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -111918,9 +111876,9 @@ cCK
 cCK
 cCK
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 qTR
 obR
 btm
@@ -111962,11 +111920,11 @@ lJO
 kEx
 kEx
 kEx
-hTY
+pEt
 aOH
 hLI
 koV
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -112175,9 +112133,9 @@ kEx
 cCK
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 qTR
 obR
 oht
@@ -112219,11 +112177,11 @@ lJO
 kEx
 kEx
 kEx
-hTY
+pEt
 hLI
 eSx
 hLI
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -112432,9 +112390,9 @@ kEx
 cCK
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 qTR
 obR
 ujW
@@ -112476,11 +112434,11 @@ lJO
 kEx
 kEx
 kEx
-hTY
-hTY
+pEt
+pEt
 ePC
-hTY
-hTY
+pEt
+pEt
 kEx
 kEx
 kEx
@@ -112689,9 +112647,9 @@ kEx
 cCK
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 qTR
 obR
 obR
@@ -112734,9 +112692,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -112946,9 +112904,9 @@ kEx
 cCK
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 qTR
 obR
 iFN
@@ -112991,9 +112949,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -113203,9 +113161,9 @@ cCK
 cCK
 cCK
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 qTR
 obR
 axo
@@ -113248,9 +113206,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -113505,9 +113463,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -113762,9 +113720,9 @@ lJO
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -114019,9 +113977,9 @@ lJO
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 cCK
 cCK
 cCK
@@ -114276,9 +114234,9 @@ lJO
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 cCK
 cCK
 cCK
@@ -114533,9 +114491,9 @@ lJO
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 cCK
@@ -114790,9 +114748,9 @@ lJO
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -115047,9 +115005,9 @@ lJO
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -115261,7 +115219,7 @@ cCK
 fZD
 jJn
 hHc
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -115306,7 +115264,7 @@ kEx
 bEo
 dOg
 mjB
-hTY
+pEt
 pEt
 kEx
 kEx
@@ -115518,7 +115476,7 @@ kEx
 fZD
 hjw
 hHc
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -115563,7 +115521,7 @@ kEx
 bEo
 hLI
 mjB
-hTY
+pEt
 pEt
 kEx
 kEx
@@ -115773,9 +115731,9 @@ kEx
 cCK
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -116030,9 +115988,9 @@ kEx
 cCK
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -116287,9 +116245,9 @@ kEx
 cCK
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -116544,9 +116502,9 @@ otd
 otd
 otd
 otd
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -116801,9 +116759,9 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
+pEt
 kEx
 kEx
 kEx
@@ -117058,10 +117016,10 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 ePC
-hTY
-hTY
+pEt
+pEt
 kEx
 kEx
 kEx
@@ -117315,20 +117273,20 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 aOH
 hLI
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
 nyj
 rmh
 gHY
@@ -117341,23 +117299,23 @@ dag
 aHo
 rmh
 wCa
-hTY
-hTY
-hTY
-hTY
-hTY
+pEt
+pEt
+pEt
+pEt
+pEt
 qOH
 qOH
 aKN
 kCX
 qOH
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
 irn
 bEo
 bEo
@@ -117572,7 +117530,7 @@ kEx
 kEx
 kEx
 kEx
-hTY
+pEt
 hLI
 axa
 aqa
@@ -117618,7 +117576,7 @@ aqa
 ncO
 aqa
 uMf
-hTY
+pEt
 pEt
 pEt
 kEx
@@ -117830,21 +117788,21 @@ kEx
 kEx
 kEx
 dPA
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
-hTY
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
+pEt
 mlm
 vJw
 ykk
@@ -117873,9 +117831,9 @@ qFE
 qFE
 qFE
 izI
-hTY
-hTY
-hTY
+pEt
+pEt
+pEt
 kEx
 kEx
 kEx
@@ -171622,11 +171580,11 @@ hgP
 hgP
 hgP
 hgP
-kpG
+dPt
 cCy
 czW
 cxI
-kpG
+dPt
 hgP
 hgP
 hgP
@@ -171878,13 +171836,13 @@ hgP
 hgP
 hgP
 hgP
-kpG
-kpG
+dPt
+dPt
 cCy
 iIH
 mXr
 fbr
-kpG
+dPt
 hgP
 hgP
 hgP
@@ -172134,9 +172092,9 @@ hgP
 hgP
 hgP
 hgP
-kpG
-kpG
-kpG
+dPt
+dPt
+dPt
 cCy
 gbk
 cCy
@@ -227398,7 +227356,7 @@ fnv
 anl
 qVI
 syL
-aki
+cxr
 nCP
 hgP
 hgP
@@ -237162,7 +237120,7 @@ jxx
 iXT
 mjc
 gli
-ovj
+dPt
 hgP
 hgP
 hgP
@@ -237420,7 +237378,7 @@ iXT
 mjc
 xNW
 gBq
-ovj
+dPt
 hgP
 hgP
 hgP

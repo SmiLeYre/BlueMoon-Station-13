@@ -28007,7 +28007,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /turf/open/space,
-/area/maintenance/disposal/incinerator)
+/area/space/nearstation)
 "ckD" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -36946,10 +36946,6 @@
 	dir = 9
 	},
 /area/science/research)
-"cEq" = (
-/obj/structure/lattice,
-/turf/open/space,
-/area/science/mixing)
 "cEr" = (
 /obj/machinery/door/poddoor/incinerator_toxmix,
 /turf/open/floor/engine/vacuum,
@@ -44777,7 +44773,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-/area/science/xenobiology)
+/area/space/nearstation)
 "dcG" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/effect/turf_decal/stripes/line,
@@ -46178,7 +46174,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space,
-/area/science/xenobiology)
+/area/space/nearstation)
 "dju" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/closed/wall,
@@ -52507,10 +52503,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/office)
-"fLL" = (
-/obj/structure/lattice,
-/turf/open/space,
-/area/ai_monitored/aisat/exterior)
 "fLM" = (
 /obj/item/wrench,
 /obj/item/stack/sheet/glass{
@@ -57943,7 +57935,7 @@
 	},
 /obj/structure/lattice,
 /turf/open/space/basic,
-/area/security/execution/education)
+/area/space/nearstation)
 "ikm" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
@@ -61115,10 +61107,6 @@
 /obj/structure/window/reinforced,
 /turf/open/floor/plating/airless,
 /area/ai_monitored/aisat/exterior)
-"jNE" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/space/basic,
-/area/maintenance/starboard/aft)
 "jOd" = (
 /obj/structure/flora/junglebush{
 	icon_state = "grassa4"
@@ -61609,10 +61597,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
-"kaq" = (
-/obj/effect/spawner/structure/window/reinforced,
-/turf/open/space,
-/area/maintenance/starboard/aft)
 "kar" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -63554,13 +63538,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/solars/starboard/aft)
-"kSF" = (
-/obj/structure/lattice,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/open/space,
-/area/ai_monitored/aisat/exterior)
 "kSV" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -68364,7 +68341,7 @@
 	},
 /obj/structure/lattice,
 /turf/open/space/basic,
-/area/security/execution/education)
+/area/space/nearstation)
 "nhK" = (
 /obj/structure/chair/pew{
 	dir = 1
@@ -69041,7 +69018,7 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/window/reinforced,
 /turf/open/space,
-/area/ai_monitored/aisat/exterior)
+/area/space/nearstation)
 "nAB" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
@@ -71454,7 +71431,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space,
-/area/engineering/atmos)
+/area/space/nearstation)
 "oCy" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
@@ -79642,7 +79619,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/lattice/catwalk,
 /turf/open/space,
-/area/ai_monitored/aisat/exterior)
+/area/space/nearstation)
 "sln" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
@@ -85159,10 +85136,6 @@
 	},
 /turf/closed/wall,
 /area/service/library)
-"uOH" = (
-/obj/structure/lattice,
-/turf/open/space/basic,
-/area/security/execution/education)
 "uPv" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -91495,13 +91468,6 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/dark,
 /area/security/execution/education)
-"xJf" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/lattice,
-/turf/open/space,
-/area/ai_monitored/aisat/exterior)
 "xJi" = (
 /obj/structure/chair/office/dark{
 	dir = 1
@@ -116072,7 +116038,7 @@ oRp
 oRp
 oRp
 aaa
-uOH
+lMJ
 abg
 aby
 abW
@@ -124411,9 +124377,9 @@ cAx
 cFr
 cCt
 cyK
-cEq
-cEq
-cEq
+aaf
+aaf
+aaf
 cHe
 cIa
 cIU
@@ -124423,8 +124389,8 @@ dAx
 dwv
 dvY
 dvY
-kaq
-jNE
+dxk
+dxk
 aaa
 cRe
 cZa
@@ -124681,7 +124647,7 @@ ciL
 oiM
 dBe
 nWu
-jNE
+dxk
 aaa
 cRe
 cZa
@@ -145686,7 +145652,7 @@ aOY
 aOY
 aOY
 aOY
-xJf
+aNC
 aaa
 aaa
 aaa
@@ -145943,7 +145909,7 @@ aaa
 aaa
 aaa
 aaa
-fLL
+aaf
 aaa
 aaa
 xVW
@@ -149541,7 +149507,7 @@ aaa
 aaa
 aaa
 aaa
-fLL
+aaf
 aaa
 aaa
 xVW
@@ -149798,7 +149764,7 @@ aNw
 aNw
 aNw
 aNw
-kSF
+bJl
 aaa
 aaa
 xVW
