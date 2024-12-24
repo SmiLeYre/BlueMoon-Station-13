@@ -45,6 +45,7 @@
 				/obj/item/storage/dice = 10,
 				/obj/item/toy/prizeball/therapy = 6,
 				/obj/item/tvcamera = 3,
+				/obj/item/toy/nyamagotchi = 10,
 			),
 		),
 	)

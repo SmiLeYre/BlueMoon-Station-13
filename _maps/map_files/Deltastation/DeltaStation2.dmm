@@ -47623,10 +47623,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/science/mixing)
-"dAD" = (
-/obj/structure/lattice,
-/turf/open/space/basic,
-/area/science/mixing)
 "dAJ" = (
 /obj/item/stack/sheet/plasteel{
 	amount = 15
@@ -61982,7 +61978,7 @@
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible,
 /turf/open/space,
-/area/engineering/atmos)
+/area/space/nearstation)
 "emZ" = (
 /turf/closed/wall,
 /area/hallway/primary/port)
@@ -80119,7 +80115,7 @@
 	dir = 8
 	},
 /turf/open/space,
-/area/engineering/atmospherics_engine)
+/area/space/nearstation)
 "jsR" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
@@ -88202,7 +88198,7 @@
 	dir = 10
 	},
 /turf/open/space,
-/area/engineering/atmos)
+/area/space/nearstation)
 "lJN" = (
 /turf/closed/wall/r_wall,
 /area/command/heads_quarters/hop)
@@ -97328,7 +97324,7 @@
 	dir = 4
 	},
 /turf/open/space,
-/area/engineering/atmos)
+/area/space/nearstation)
 "onf" = (
 /obj/item/kirbyplants/random,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -98336,10 +98332,6 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/white,
 /area/science/xenobiology)
-"oDg" = (
-/obj/structure/lattice,
-/turf/open/space,
-/area/engineering/atmos)
 "oDp" = (
 /turf/open/floor/plasteel/white,
 /area/service/kitchen)
@@ -99168,7 +99160,7 @@
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/pipe/manifold/yellow/visible,
 /turf/open/space,
-/area/engineering/atmos)
+/area/space/nearstation)
 "oNW" = (
 /obj/effect/turf_decal/tile/neutral/fourcorners,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -107953,7 +107945,7 @@
 	dir = 4
 	},
 /turf/open/space,
-/area/engineering/atmos)
+/area/space/nearstation)
 "rrP" = (
 /obj/effect/turf_decal/tile/bar,
 /obj/effect/turf_decal/tile/purple{
@@ -109802,13 +109794,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plasteel,
 /area/command/heads_quarters/rd)
-"rSf" = (
-/obj/structure/lattice/catwalk,
-/obj/machinery/atmospherics/pipe/simple/orange/visible{
-	dir = 10
-	},
-/turf/open/space,
-/area/engineering/atmos)
 "rSp" = (
 /obj/structure/chair/comfy/brown{
 	color = "#596479";
@@ -114707,7 +114692,7 @@
 	dir = 10
 	},
 /turf/open/space,
-/area/engineering/atmos)
+/area/space/nearstation)
 "tof" = (
 /obj/machinery/door/airlock/public/glass{
 	name = "Library Access"
@@ -125988,7 +125973,7 @@
 	dir = 4
 	},
 /turf/open/space,
-/area/engineering/atmos)
+/area/space/nearstation)
 "wzB" = (
 /obj/structure/cable/white{
 	icon_state = "0-8"
@@ -153873,23 +153858,23 @@ aNX
 aPC
 aFr
 aad
-oDg
+aad
 wzA
-oDg
+aad
 onb
-oDg
+aad
 wzA
-oDg
+aad
 onb
-oDg
+aad
 wzA
-oDg
+aad
 onb
-oDg
+aad
 onb
-oDg
+aad
 wzA
-oDg
+aad
 abj
 jWO
 kRY
@@ -159784,17 +159769,17 @@ aad
 aad
 tnR
 emB
-oDg
+aad
 rrK
 lJG
 oNU
-oDg
+aad
 onb
 lJG
 oNU
-oDg
+aad
 onb
-rSf
+aMP
 aMM
 lUA
 rix
@@ -164741,7 +164726,7 @@ dgz
 cQP
 gPv
 drP
-dAD
+qgU
 svv
 sfo
 qnx
@@ -164998,7 +164983,7 @@ dgA
 dhY
 djP
 dEn
-dAD
+qgU
 svv
 oYI
 exE
@@ -165255,7 +165240,7 @@ dgB
 dhZ
 mQE
 drP
-dAD
+qgU
 svv
 ixL
 xXn

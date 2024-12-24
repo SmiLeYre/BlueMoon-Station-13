@@ -18194,7 +18194,7 @@
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
 /turf/open/space/basic,
-/area/maintenance/disposal/incinerator)
+/area/space/nearstation)
 "aFO" = (
 /obj/machinery/atmospherics/pipe/simple/general/visible,
 /turf/closed/wall/r_wall,
@@ -55350,7 +55350,7 @@
 	picked_color = "Burgundy"
 	},
 /turf/open/floor/plating/airless,
-/area/hallway/secondary/entry)
+/area/space/nearstation)
 "bOe" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1{
 	dir = 4
@@ -56560,7 +56560,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
-/area/hallway/secondary/entry)
+/area/space/nearstation)
 "bQb" = (
 /obj/structure/flora/rock,
 /turf/open/floor/plating/asteroid/airless{
@@ -57510,10 +57510,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/port/aft)
-"bRv" = (
-/obj/structure/lattice/catwalk,
-/turf/open/space/basic,
-/area/hallway/secondary/entry)
 "bRx" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/external{
@@ -59184,7 +59180,7 @@
 	picked_color = "Burgundy"
 	},
 /turf/open/floor/plating/airless,
-/area/hallway/secondary/entry)
+/area/space/nearstation)
 "bUk" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -59212,10 +59208,7 @@
 /turf/open/floor/plasteel/dark,
 /area/hallway/secondary/exit/departure_lounge)
 "bUn" = (
-/obj/structure/flora/rock/pile,
-/turf/open/floor/plating/asteroid/airless{
-	initial_gas_mix = "o2=14;n2=23;TEMP=300"
-	},
+/turf/closed/wall/rust,
 /area/hallway/secondary/entry)
 "bUp" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
@@ -59383,7 +59376,7 @@
 /turf/open/floor/plating/asteroid/airless{
 	initial_gas_mix = "o2=14;n2=23;TEMP=300"
 	},
-/area/hallway/secondary/entry)
+/area/space/nearstation)
 "bUF" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
@@ -59463,9 +59456,6 @@
 	},
 /turf/closed/wall,
 /area/engineering/atmos)
-"bUN" = (
-/turf/open/floor/plating/airless,
-/area/hallway/secondary/entry)
 "bUP" = (
 /obj/machinery/door/airlock/external{
 	name = "Labor Camp Shuttle Airlock";
@@ -65672,7 +65662,7 @@
 	picked_color = "Burgundy"
 	},
 /turf/open/floor/plating/airless,
-/area/hallway/secondary/entry)
+/area/space/nearstation)
 "ceV" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
@@ -65697,14 +65687,14 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
-/area/hallway/secondary/entry)
+/area/space/nearstation)
 "ceX" = (
 /obj/machinery/light{
 	dir = 8
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
-/area/hallway/secondary/entry)
+/area/space/nearstation)
 "ceY" = (
 /obj/machinery/airalarm{
 	dir = 4;
@@ -66230,7 +66220,7 @@
 "cgg" = (
 /obj/structure/sign/warning/docking,
 /turf/closed/wall/rust,
-/area/hallway/secondary/exit/departure_lounge)
+/area/hallway/secondary/entry)
 "cgi" = (
 /obj/effect/turf_decal/tile/yellow,
 /obj/effect/turf_decal/tile/yellow{
@@ -66521,7 +66511,7 @@
 "cgI" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plating/airless,
-/area/hallway/secondary/entry)
+/area/space/nearstation)
 "cgJ" = (
 /obj/machinery/door/poddoor/preopen,
 /turf/open/floor/plating/airless,
@@ -71692,7 +71682,7 @@
 /turf/open/floor/plating/asteroid/airless{
 	initial_gas_mix = "o2=14;n2=23;TEMP=300"
 	},
-/area/hallway/secondary/entry)
+/area/space/nearstation)
 "cpG" = (
 /obj/effect/turf_decal/caution/stand_clear,
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
@@ -75525,7 +75515,7 @@
 	dir = 4
 	},
 /turf/open/floor/plating/airless,
-/area/maintenance/disposal/incinerator)
+/area/space/nearstation)
 "cwA" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/incinerator_input{
 	dir = 1
@@ -76510,7 +76500,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc{
-	areastring = "/area/security/vacant";
+	areastring = "/area/commons/vacant_room/office";
 	name = "Vacant Office APC";
 	pixel_y = 24
 	},
@@ -78070,10 +78060,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/maintenance/fore)
-"cDp" = (
-/obj/structure/lattice/catwalk,
-/turf/open/floor/plating/airless,
-/area/hallway/secondary/entry)
 "cDq" = (
 /obj/machinery/door/airlock/maintenance{
 	req_access_txt = "12"
@@ -83002,9 +82988,6 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/ai_monitored/security/armory)
-"hxn" = (
-/turf/open/space/basic,
-/area/hallway/secondary/entry)
 "hBu" = (
 /obj/structure/sign/poster/contraband/yes_erp{
 	pixel_y = -32
@@ -83387,7 +83370,7 @@
 /obj/structure/lattice/catwalk,
 /obj/machinery/light,
 /turf/open/floor/plating/airless,
-/area/hallway/secondary/entry)
+/area/space/nearstation)
 "jBb" = (
 /mob/living/simple_animal/butterfly,
 /turf/open/floor/grass/grass0,
@@ -84476,7 +84459,7 @@
 	width = 7
 	},
 /turf/open/space/basic,
-/area/hallway/secondary/entry)
+/area/space/nearstation)
 "oUc" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -85063,7 +85046,7 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating/airless,
-/area/hallway/secondary/entry)
+/area/space/nearstation)
 "rRj" = (
 /obj/effect/landmark/secequipment,
 /obj/effect/turf_decal/tile/neutral,
@@ -125076,10 +125059,10 @@ bWx
 bPJ
 ceU
 cgI
-cDp
-cDp
+cHu
+cHu
 bOd
-cDp
+cHu
 rNm
 cgI
 ceU
@@ -125331,15 +125314,15 @@ kXo
 ykB
 bWx
 bPJ
-bUN
-hxn
-hxn
-hxn
+cko
+bhA
+bhA
+bhA
 oTy
-hxn
-hxn
-hxn
-bUN
+bhA
+bhA
+bhA
+cko
 aeu
 aeu
 cju
@@ -125589,14 +125572,14 @@ gPA
 bWx
 bPJ
 bQa
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-bUN
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+cko
 bUE
 aeu
 bzG
@@ -125846,15 +125829,15 @@ bSL
 bWx
 bSr
 cgx
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-bUN
-bUn
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+cko
+bKl
 aeu
 bzG
 cjB
@@ -126103,14 +126086,14 @@ ccC
 bXd
 bYE
 cTr
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-bUN
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+cko
 cke
 aeu
 bzG
@@ -126360,13 +126343,13 @@ bXc
 bUf
 bUf
 bUf
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
 jAT
 aeu
 aeu
@@ -126616,15 +126599,15 @@ bUc
 cji
 bUh
 bUf
-bUN
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-bUN
+cko
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+cko
 aeu
 aeu
 bzG
@@ -126874,14 +126857,14 @@ bWY
 bUi
 caN
 ceW
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-bUN
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+cko
 aeu
 aeu
 bzG
@@ -127130,15 +127113,15 @@ bWZ
 bVl
 bXl
 bUf
-bUN
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-bUN
+cko
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+cko
 cke
 aeu
 bzG
@@ -127388,13 +127371,13 @@ bXc
 bUf
 bUf
 bUf
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
 jAT
 aeu
 aeu
@@ -127645,14 +127628,14 @@ bWt
 bXd
 ccm
 cTr
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-bUN
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+cko
 cpF
 aeu
 aeu
@@ -127900,16 +127883,16 @@ bZC
 bPe
 bOc
 bSr
-krJ
+bUn
 cgg
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-bUN
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+cko
 bUE
 aeu
 aeu
@@ -128159,14 +128142,14 @@ bOc
 bPJ
 bPK
 ceX
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-bUN
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+cko
 cpF
 aeu
 aeu
@@ -128415,15 +128398,15 @@ bZL
 bOc
 bPJ
 bPJ
-bUN
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-bUN
+cko
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+cko
 aeu
 aeu
 aeu
@@ -128672,15 +128655,15 @@ bXf
 bWO
 aeu
 bPJ
-bUN
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-hxn
-bUN
+cko
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+bhA
+cko
 aeu
 aeu
 aeu
@@ -128930,13 +128913,13 @@ bOc
 aeu
 bPJ
 bUj
-bRv
-bRv
-bRv
-bRv
-bRv
-bRv
-bRv
+acK
+acK
+acK
+acK
+acK
+acK
+acK
 bUj
 aeu
 aeu
