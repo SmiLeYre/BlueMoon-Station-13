@@ -45,7 +45,7 @@
 	w_class = WEIGHT_CLASS_NORMAL
 	mag_type = /obj/item/ammo_box/magazine/e45
 	can_suppress = TRUE
-	burst_shot_delay = 2.5
+	burst_shot_delay = 2
 	burst_size = 2
 	fire_delay = 2.5
 	fire_select_modes = list(SELECT_SEMI_AUTOMATIC, SELECT_BURST_SHOT, SELECT_FULLY_AUTOMATIC)
