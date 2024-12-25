@@ -518,7 +518,7 @@ SUBSYSTEM_DEF(job)
 			flavor_display_text += "\n<li>[job.custom_spawn_text]</li>"
 	if(ishuman(H))
 		var/mob/living/carbon/human/wageslave = H
-		flavor_display_text += "<li>номер вашего банковского аккаунта - [wageslave.account_id].</li>"
+		flavor_display_text += "\n<li>номер вашего банковского аккаунта - [wageslave.account_id].</li>"
 		H.add_memory("Номер вашего банковского аккаунта - [wageslave.account_id].")
 	to_chat(M, examine_block(flavor_display_text))
 	// BLUEMOON EDIT END
