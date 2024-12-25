@@ -511,14 +511,14 @@ SUBSYSTEM_DEF(job)
 		flavor_display_text += "<p>Начните своё сообщение с :р или .р, чтобы воспользоваться радиоканалом вашего отдела. Другие префиксы указаны на вашей гарнитуре.\n</p>"
 		flavor_display_text += "<b class='notice_l'>Обратите внимание:\n</b>"
 		if(job.req_admin_notify)
-			flavor_display_text += "\n<li>вы играете роль, важную для прогрессии раунда. Если вам необходимо отключиться, пожалуйста, уведомите администрацию и верните всю экипировку в шкафчик.</li>"
+			flavor_display_text += "\n<li><span class='notice'>вы играете роль, важную для прогрессии раунда. Если вам необходимо отключиться, пожалуйста, уведомите администрацию и верните всю экипировку в шкафчик.</span></li>"
 		if(CONFIG_GET(number/minimal_access_threshold) && !CONFIG_GET(flag/jobs_have_minimal_access))
 			flavor_display_text += "\n<li>ввиду критической нехватки персонала, ваша ID-карта имеет дополнительный доступ.</li>"
 		if(job.custom_spawn_text)
 			flavor_display_text += "\n<li>[job.custom_spawn_text]</li>"
 	if(ishuman(H))
 		var/mob/living/carbon/human/wageslave = H
-		flavor_display_text += "\n<li>номер вашего банковского аккаунта - [wageslave.account_id].</li>"
+		flavor_display_text += "<li>номер вашего банковского аккаунта - [wageslave.account_id].</li>"
 		H.add_memory("Номер вашего банковского аккаунта - [wageslave.account_id].")
 	to_chat(M, examine_block(flavor_display_text))
 	// BLUEMOON EDIT END
@@ -555,7 +555,7 @@ SUBSYSTEM_DEF(job)
 			binder.decks = N.client.prefs.tcg_decks
 
 	if(ambition_text)
-		to_chat(M, span_info(ambition_text))
+		to_chat(M, span_notice(ambition_text))
 
 	return H
 

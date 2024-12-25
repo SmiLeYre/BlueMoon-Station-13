@@ -23,7 +23,7 @@
 		"AC Recruit",
 		"Russian Officer"
 		)
-	custom_spawn_text = "<font color='black' size='2'><b> Your job is to keep the peace. Conflict de-escalation through diplomacy is your top priority. Only use your baton as a last resort.</b></font><font color='red' size='4'><b>You are NOT a Security Officer.</b></font>"
+	custom_spawn_text = "вы не офицер. Ваша задача — мирное урегулирование конфликтов и их деэскалация. Используйте табельное оружие только в крайних случаях."
 
 	outfit = /datum/outfit/job/peacekeeper
 	plasma_outfit = /datum/outfit/plasmaman/peacekeeper

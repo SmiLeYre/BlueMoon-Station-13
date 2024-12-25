@@ -18,7 +18,7 @@
 	outfit = /datum/outfit/job/bridgeofficer
 	plasma_outfit = /datum/outfit/plasmaman/bridgeofficer
 	//SPLURT CHANGES (Changes the custom spawn text for the Bridge Officer)
-	custom_spawn_text = "<font color='red'>You are an Captain deputy.</font>"
+	custom_spawn_text = "вы - подчинённый и заместитель капитана на его рабочем месте."
 	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_COURT, ACCESS_WEAPONS,
 						ACCESS_MEDICAL, ACCESS_ENGINE, ACCESS_CHANGE_IDS, ACCESS_HEADS,
 						ACCESS_ALL_PERSONAL_LOCKERS, ACCESS_MAINT_TUNNELS, ACCESS_BAR, ACCESS_JANITOR, ACCESS_CONSTRUCTION, ACCESS_MORGUE,

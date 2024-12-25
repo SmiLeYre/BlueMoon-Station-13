@@ -8,7 +8,7 @@
 	spawn_positions = 6
 	supervisors = "the quartermaster"
 	selection_color = "#ca8f55"
-	custom_spawn_text = "Remember, you are a miner, not a hunter. Hunting monsters is not a requirement of your job, the only requirement of your job is to provide materials for the station. Don't be afraid to run away if you're inexperienced with fighting the mining area's locals."
+	custom_spawn_text = "не забывайте, что вы шахтёр, а не охотник. Ваша главная цель - поставлять ресурсы станции."
 
 
 	outfit = /datum/outfit/job/miner

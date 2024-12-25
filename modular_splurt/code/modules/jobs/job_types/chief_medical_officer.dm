@@ -1,5 +1,5 @@
 /datum/job/cmo
-	custom_spawn_text = "<font color='red'>Keep the Fridge stocked with Medicine. Have SOME competency at performing surgeries. Ensure that if a Virus breaks out, that you or the Virologist handles creating a vaccine. You are Fourth in line to be Acting Captain.</font>"
+	custom_spawn_text = "стремитесь поддерживать чистоту в отделе. Следите за наличием лекарств в холодильниках. Оповещайте о угрозе вируса и принимайте соответсвующие решения. Вы - четвёртый в очереди на пост ВрИО капитана"
 
 /datum/job/cmo/New()
 	. = ..()

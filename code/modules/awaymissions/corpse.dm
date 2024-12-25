@@ -144,12 +144,12 @@
 		//
 		if(show_flavour)
 			var/output_message = ""
-
-			output_message += "<span class='big bold'>[short_desc]</span>"
+			output_message += "<b class='medium'>Вы - [name].</b>"
+			output_message += "<p>[flavour_text]</p>"
 			if(flavour_text != "")
-				output_message += "<p class='bold'>[flavour_text]</p>"
+				output_message += "<p>[flavour_text]</p>"
 			if(important_info != "")
-				output_message += "<span class='userdanger'>[important_info]</span>"
+				output_message += "<span class='warning'>[important_info]</span>"
 			to_chat(M, examine_block(output_message))
 		var/datum/mind/MM = M.mind
 		var/datum/antagonist/A
