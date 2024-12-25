@@ -144,7 +144,7 @@
 		// BLUEMOON EDIT START
 		if(show_flavour)
 			var/output_message = ""
-			output_message += "<b class='medium'>Вы - [src.name].</b>"
+			output_message += "<p class='medium'>Вы - <b>[src.name]</b>.</p>"
 			output_message += "<p>[short_desc]</p>"
 			if(flavour_text != "")
 				output_message += "<p>[flavour_text]</p>"
