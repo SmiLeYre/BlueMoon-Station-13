@@ -503,20 +503,25 @@ SUBSYSTEM_DEF(job)
 	var/display_rank = rank
 	if(M.client && M.client.prefs && M.client?.prefs?.alt_titles_preferences[rank])
 		display_rank = M.client?.prefs?.alt_titles_preferences[rank]
-	to_chat(M, "<b>Вы [display_rank].</b>")
+	// BLUEMOON EDIT - текст при входе в раунд
+	var/flavor_display_text = ""
+	flavor_display_text += "<p class='medium'>Вы - <b>[display_rank].</b></p>\n"
 	if(job)
-		to_chat(M, "<b>As the [display_rank] you answer directly to [job.supervisors]. Special circumstances may change this.</b>") //Skyrat change
-		job.radio_help_message(M)
+		flavor_display_text += "<p>Будучи <b>[display_rank]</b>, вы обязаны подчиняться приказам <b>[job.supervisors]</b>. В некоторых случаях, это может измениться.\n</p>"
+		flavor_display_text += "<p>Начните своё сообщение с :р или .р, чтобы воспользоваться радиоканалом вашего отдела. Другие префиксы указаны на вашей гарнитуре.\n</p>"
+		flavor_display_text += "<b class='notice_l'>Обратите внимание:\n</b>"
 		if(job.req_admin_notify)
-			to_chat(M, "<b>You are playing a job that is important for Game Progression. If you have to disconnect immediately, please notify the admins via adminhelp. Otherwise put your locker gear back into the locker and cryo out.</b>")
+			flavor_display_text += "\n<li>вы играете роль, важную для прогрессии раунда. Если вам необходимо отключиться, пожалуйста, уведомите администрацию и верните всю экипировку в шкафчик.</li>"
+		if(CONFIG_GET(number/minimal_access_threshold) && !CONFIG_GET(flag/jobs_have_minimal_access))
+			flavor_display_text += "\n<li>ввиду критической нехватки персонала, ваша ID-карта имеет дополнительный доступ.</li>"
 		if(job.custom_spawn_text)
-			to_chat(M, "<b>[job.custom_spawn_text]</b>")
-		if(CONFIG_GET(number/minimal_access_threshold))
-			to_chat(M, "<span class='notice'><B>As this station was initially staffed with a [CONFIG_GET(flag/jobs_have_minimal_access) ? "full crew, only your job's necessities" : "skeleton crew, additional access may"] have been added to your ID card.</B></span>")
+			flavor_display_text += "\n<li>[job.custom_spawn_text]</li>"
 	if(ishuman(H))
 		var/mob/living/carbon/human/wageslave = H
-		to_chat(M, "<b><span class = 'big'>Your account ID is [wageslave.account_id].</span></b>")
-		H.add_memory("Your account ID is [wageslave.account_id].")
+		flavor_display_text += "\n<li>номер вашего банковского аккаунта - [wageslave.account_id].</li>"
+		H.add_memory("Номер вашего банковского аккаунта - [wageslave.account_id].")
+	to_chat(M, examine_block(flavor_display_text))
+	// BLUEMOON EDIT END
 	if(job && H)
 		if(job.dresscodecompliant)// CIT CHANGE - dress code compliance
 			equip_loadout(N, H) // CIT CHANGE - allows players to spawn with loadout items

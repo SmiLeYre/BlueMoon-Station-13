@@ -143,12 +143,14 @@
 			ADD_TRAIT(M, TRAIT_PACIFISM, "pacification ban")
 		//
 		if(show_flavour)
-			var/output_message = "<span class='big bold'>[short_desc]</span>"
+			var/output_message = ""
+
+			output_message += "<span class='big bold'>[short_desc]</span>"
 			if(flavour_text != "")
-				output_message += "\n<span class='bold'>[flavour_text]</span>"
+				output_message += "<p class='bold'>[flavour_text]</p>"
 			if(important_info != "")
-				output_message += "\n<span class='userdanger'>[important_info]</span>"
-			to_chat(M, output_message)
+				output_message += "<span class='userdanger'>[important_info]</span>"
+			to_chat(M, examine_block(output_message))
 		var/datum/mind/MM = M.mind
 		var/datum/antagonist/A
 		// BLUEMOON EDIT START - правки гостролей
