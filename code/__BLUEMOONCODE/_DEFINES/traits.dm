@@ -9,7 +9,7 @@
 #define TRAIT_BLUEMOON_SHOWER_NEED			"shower_need"
 #define TRAIT_BLUEMOON_COMPLEX_MAINTENANCE	"high_quality_maintenance"
 #define TRAIT_LEWD_JOB						"lewd_job"
-#define TRAIT_LEWD_SUMMON					"lewd_summon"
+#define TRAIT_LEWD_SUMMON					"Призываемый"
 #define TRAIT_LEWD_SUMMONED					"lewd_summoned"
 #define TRAIT_SPIKY							"spiky"
 // Отдельные наименования для квирков, чтобы не повторять их в настройках

@@ -47,14 +47,17 @@
 	var/list/applicants = list()	// Делаем список всех с квирком призываемого
 	var/list/applicants_result = list() // Формулируем список для выбора
 	for(var/mob/living/carbon/human/H in GLOB.carbon_list)
-		if(!HAS_TRAIT(H, TRAIT_LEWD_SUMMON))
+		if(!HAS_TRAIT(H, TRAIT_LEWD_SUMMON) || HAS_TRAIT(H, TRAIT_LEWD_SUMMONED))
 			continue
 
 		applicants += H
 		var/species = "[H.dna.species]"
 		if(H.dna.custom_species)
 			species = "[H.dna.custom_species]"
-		var/player_info = "[H.gender] - [species]"
+		var/player_info
+		if(H.client.prefs.summon_nickname)
+			player_info += "[H.client.prefs.summon_nickname], "
+		player_info += "[H.gender] [species]"
 		applicants_result[initial(player_info)] = player_info
 
 	var/target_info = input("Please, select a person to summon!", "Select", null, null) as null|anything in applicants_result
@@ -65,13 +68,20 @@
 		to_chat(M, span_userdanger("Nobody to summon!"))
 		return
 
-	if(!HAS_TRAIT(target, TRAIT_LEWD_SUMMON)) // Двойная проверка на случай если призываемого уже призвали
+	if(HAS_TRAIT(target, TRAIT_LEWD_SUMMONED)) // Двойная проверка на случай если призываемого уже призвали
 		to_chat(M, span_userdanger("It seems that this soul has already been called by someone else!"))
 		return
 
 	if(tgui_alert(target, "You have been summoned! Do you want to answer?", "Do you want to answer?", list("Yes", "No")) == "Yes")
 		to_chat(M, span_lewd("Something is happening!"))
 		var/old_pos = target.loc
+		var/summon_nickname = "unus ex satellitibus tuis"
+		if(M.client.prefs.summon_nickname)
+			summon_nickname = M.client.prefs.summon_nickname
+		var/phrase = pick("O magne Asmodee! Quaeso inducere [summon_nickname] ad me!", \
+						  "Coniuro te, daemon luxuriae! Utinam [summon_nickname] mea vota persolvat!", \
+						  "Cupidus meus ardet, magne! Amor [summon_nickname] me moveat affectus!")
+		M.say(phrase)
 		if(!teleport_summoned(target, src.loc, TRUE, TRUE))
 			to_chat(M, span_userdanger("Something went wrong in summoning ritual!"))
 			new /obj/effect/temp_visual/yellowsparkles(src.loc)
@@ -83,16 +93,14 @@
 
 	to_chat(M, span_userdanger("It refuses to answer!"))
 
-/obj/effect/summon_rune/proc/teleport_summoned(mob/living/carbon/target, pos_to_teleport, switch_traits = FALSE, nude_target = TRUE)
+/obj/effect/summon_rune/proc/teleport_summoned(mob/living/carbon/target, pos_to_teleport, switch_summoned = FALSE, nude_target = TRUE)
 	if(!target || !pos_to_teleport)
 		return FALSE
-	if(switch_traits)
+	if(switch_summoned)
 		if(HAS_TRAIT(target, TRAIT_LEWD_SUMMONED))
-			REMOVE_TRAIT(target, TRAIT_LEWD_SUMMONED, src)
-			ADD_TRAIT(target, TRAIT_LEWD_SUMMON, src)
+			REMOVE_TRAIT(target, TRAIT_LEWD_SUMMONED, TRAIT_LEWD_SUMMONED)
 		else
-			ADD_TRAIT(target, TRAIT_LEWD_SUMMONED, src)
-			REMOVE_TRAIT(target, TRAIT_LEWD_SUMMON, src)
+			ADD_TRAIT(target, TRAIT_LEWD_SUMMONED, TRAIT_LEWD_SUMMONED)
 
 	playsound(loc, "modular_bluemoon/Gardelin0/sound/effect/spook.ogg", 50, 1)
 	new /obj/effect/temp_visual/yellowsparkles(target.loc)
@@ -132,6 +140,7 @@
 		return
 	if(tgui_alert(M, "Do you want to attempt to return?", "Attempt to return?", list("Yes", "No")) == "Yes")
 		teleport_summoned(M, return_pos, TRUE)
+		returner = null
 		qdel(src)
 
 /obj/effect/summon_rune/return_rune/Destroy(force)
