@@ -222,7 +222,6 @@
  * other_version - The [/datum/tgs_version] to compare against.
  */
 /datum/tgs_version/proc/Equals(datum/tgs_version/other_version)
-	CAN_BE_REDEFINED(TRUE)
 	return
 
 /// Represents a merge of a GitHub pull request.
