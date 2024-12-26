@@ -608,7 +608,7 @@
 		if(A.update_remote_sight(src)) //returns 1 if we override all other sight updates.
 			return
 
-	if(glasses && istype(glasses, /obj/item/clothing/head))
+	if(glasses && istype(glasses, /obj/item/clothing/glasses))
 		var/obj/item/clothing/glasses/G = glasses
 		sight |= G.vision_flags
 		see_in_dark = max(G.darkness_view, see_in_dark)
