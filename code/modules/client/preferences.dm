@@ -2092,7 +2092,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		// BLUEMOON ADD START - настройки для отдельных квирков
 		dat += "Настройки для отдельных квирков. Если нужный квирк не будет выставлен, то они работать не будут.<br>"
 		dat += "<a href='?_src_=prefs;preference=traits_setup;task=change_shriek_option'>([BLUEMOON_TRAIT_NAME_SHRIEK]) Тип Крика: [shriek_type]</a>"
-		dat += "<a href='?_src_=prefs;preference=traits_setup;task=lewd_summon_nickname'>([TRAIT_LEWD_SUMMON]) Прозвище для призываемого[summon_nickname ? ": ":][summon_nickname]</a>"
+		dat += "<a href='?_src_=prefs;preference=traits_setup;task=lewd_summon_nickname'>([TRAIT_LEWD_SUMMON]) Прозвище для призываемого[summon_nickname ? ": ": ""][summon_nickname]</a>"
 		dat += "<hr>"
 		// BLUEMOON ADD END
 		dat += "<div align='center'>Left-click to add or remove quirks. You need negative quirks to have positive ones.<br>\
