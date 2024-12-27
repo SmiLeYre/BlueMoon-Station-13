@@ -124,6 +124,7 @@
 	ears = /obj/item/radio/headset/headset_srv/hotel
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 						/obj/item/storage/ifak=1)
+	make_bank_account = TRUE
 
 /obj/effect/mob_spawn/human/hotel_staff/splurt/security
 	name = "Hotel Security Sleeper"
@@ -174,7 +175,8 @@
 	head = /obj/item/clothing/head/beret/black
 	r_pocket = /obj/item/pda
 	back = /obj/item/storage/backpack
-	r_hand = /obj/item/storage/secure/briefcase/syndie
+	make_bank_account = TRUE // BLUEMOON ADD
+	starting_money = 10000 // BLUEMOON ADD
 
 //Forgotten syndicate ship
 

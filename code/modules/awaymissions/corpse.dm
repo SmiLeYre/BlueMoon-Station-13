@@ -34,6 +34,8 @@
 	var/skip_reentry_check = FALSE //Skips the ghost role blacklist time for people who ghost/suicide/cryo
 	var/loadout_enabled = FALSE
 	var/can_load_appearance = FALSE
+	var/make_bank_account = FALSE // BLUEMOON ADD
+	var/starting_money = 0 // BLUEMOON ADD работает только при make_bank_account = TRUE
 
 ///override this to add special spawn conditions to a ghost role
 /obj/effect/mob_spawn/proc/allow_spawn(mob/user, silent = FALSE)
@@ -172,6 +174,8 @@
 			M.mind.assigned_role = assignedrole
 		special(M, name)
 		MM.name = M.real_name
+		if(make_bank_account)
+			handlebank(M, starting_money)
 		special_post_appearance(M, name) // BLUEMOON ADD
 	if(uses > 0)
 		uses--
@@ -247,6 +251,21 @@
 				to_chat(H, span_reallybig("Не забудьте забрать космический охладитель под собой.")) // чтобы не упустили из виду при резком спавне
 				new /obj/item/device/cooler/charged(H.loc)
 	. = ..()
+
+// Создаём банк аккаунт и всё такое
+/obj/effect/mob_spawn/proc/handlebank(mob/living/carbon/human/owner, starting_money = 0)
+	return
+
+/obj/effect/mob_spawn/human/handlebank(mob/living/carbon/human/owner, starting_money = 0)
+	var/datum/bank_account/offstation_bank_account = new(owner.real_name)
+	owner.account_id = offstation_bank_account.account_id
+	owner.add_memory("Номер вашего банковского аккаунта - [owner.account_id].")
+	if(owner.wear_id)
+		var/obj/item/card/id/id_card = owner.wear_id
+		id_card.registered_account = offstation_bank_account
+	if(starting_money > 0)
+		offstation_bank_account.account_balance = starting_money
+
 // BLUEMOON ADD END
 
 /obj/effect/mob_spawn/human/equip(mob/living/carbon/human/H, load_character)

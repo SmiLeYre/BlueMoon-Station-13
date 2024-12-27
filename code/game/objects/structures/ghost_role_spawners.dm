@@ -1034,6 +1034,7 @@
 	can_load_appearance = TRUE
 	loadout_enabled = TRUE
 	computer_area = /area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall
+	make_bank_account = TRUE
 
 	give_cooler_to_mob_if_synth = TRUE
 
@@ -1063,7 +1064,6 @@
 	target_radio.set_frequency(FREQ_TARKOFF)
 	target_radio.recalculateChannels()
 
-	handlebank(tarkoff)
 	return ..()
 
 /obj/effect/mob_spawn/human/tarkon/sci
@@ -1137,14 +1137,6 @@
 	gloves = /obj/item/clothing/gloves/combat
 	l_pocket = /obj/item/melee/classic_baton/telescopic
 	r_pocket = /obj/item/grenade/barrier
-
-/datum/outfit/proc/handlebank(mob/living/carbon/human/owner)
-	var/datum/bank_account/offstation_bank_account = new(owner.real_name)
-	owner.account_id = offstation_bank_account.account_id
-	if(owner.wear_id)
-		var/obj/item/card/id/id_card = owner.wear_id
-		id_card.registered_account = offstation_bank_account
-	return
 
 /obj/item/radio/headset/tarkoff
 	name = "Tarkov Headset"
@@ -1331,6 +1323,7 @@
 	use_outfit_name = TRUE
 	computer_area = /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms
 	antagonist_type = /datum/antagonist/ghost_role/ds2
+	make_bank_account = TRUE // BLUEMOON ADD
 
 /obj/effect/mob_spawn/human/ds2/prisoner
 	name = "Syndicate Prisoner"
@@ -1434,7 +1427,6 @@
 		id_card.update_label()
 		id_card.update_icon()
 
-	handlebank(syndicate)
 	return ..()
 
 //DS-2 Hostage
