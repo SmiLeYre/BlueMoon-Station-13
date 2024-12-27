@@ -4314,6 +4314,7 @@
 #include "modular_bluemoon\fedor1545\code\clohing\suit.dm"
 #include "modular_bluemoon\fedor1545\code\clohing\underwear.dm"
 #include "modular_bluemoon\fedor1545\code\clohing\uniform.dm"
+#include "modular_bluemoon\fedor1545\code\items\autolathe.dm"
 #include "modular_bluemoon\fedor1545\code\items\bottles.dm"
 #include "modular_bluemoon\fedor1545\code\loadout\items.dm"
 #include "modular_bluemoon\fedor1545\code\loadout\suit.dm"

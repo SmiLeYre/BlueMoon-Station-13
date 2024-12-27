@@ -108,3 +108,26 @@
 	time = 10 SECONDS
 	subcategory = CAT_TOOL
 	category = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/cable_coil
+	name = "cable coil"
+	result = /obj/item/stack/cable_coil
+	reqs = list(/obj/item/stack/rods = 30,
+			/obj/item/stack/sheet/glass = 30)
+	tools = list(TOOL_CROWBAR, TOOL_SCREWDRIVER)
+	time = 70
+	subcategory = CAT_TOOL
+	category = CAT_MISCELLANEOUS
+
+/datum/crafting_recipe/autolathe
+	name = "Makeshift autolathe"
+	result = /obj/item/circuitboard/machine/autolathe_makeshift
+	reqs = list(/obj/item/stack/rods = 1,
+				/obj/item/stack/sheet/metal = 5,
+				/obj/item/stack/sheet/glass = 4,
+				/obj/item/stack/cable_coil = 5,
+				/obj/item/gibtonite = 1)
+	tools = list(TOOL_CROWBAR, TOOL_SCREWDRIVER,TOOL_WELDER)
+	time = 70
+	subcategory = CAT_TOOL
+	category = CAT_MISCELLANEOUS
