@@ -171,3 +171,19 @@
 	icon_state = "laskaskirt"
 	item_state = "laskaskirt"
 	can_adjust = TRUE
+
+/obj/item/clothing/underwear/briefs/kladmen_panties
+	name = "Panties"
+	icon_state = "kladmen_panties"
+	item_state = "kladmen_panties"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/underwear.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/underwear.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/underwear.dmi'
+
+/obj/item/clothing/underwear/shirt/bra/kladmen_bra
+	name = "Bra - A bra"
+	icon_state = "kladmen_bra"
+	item_state = "kladmen_bra"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/underwear.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/underwear.dmi'
+	anthro_mob_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/underwear.dmi'
