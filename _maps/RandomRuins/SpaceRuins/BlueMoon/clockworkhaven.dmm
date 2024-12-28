@@ -55,14 +55,10 @@
 "mM" = (
 /obj/effect/clockwork/sigil/transgression,
 /obj/effect/clockwork/overlay/gateway_glow,
-/mob/living/simple_animal/hostile/syndicate/mecha_pilot{
-	spawn_mecha_type = /obj/vehicle/sealed/mecha/combat/neovgre;
-	faction = list("ratvar");
-	mecha_charge_evacuate = 0;
-	loot = 0;
-	icon = 'modular_splurt/icons/mobs/vharmob.dmi';
-	icon_living = "clockboss";
-	icon_state = "clockboss"
+/mob/living/simple_animal/hostile/boss/clockcultistboss{
+	spacewalk = 1;
+	atmos_requirements = list("min_oxy" = 0, "max_oxy" = 0, "min_tox" = 0, "max_tox" = 1, "min_co2" = 0, "max_co2" = 5, "min_n2" = 0, "max_n2" = 0);
+	unsuitable_atmos_damage = 0
 	},
 /turf/open/floor/clockwork/reebe,
 /area/ruin/space/has_grav/powered/clockworkhaven)
@@ -179,6 +175,10 @@
 /obj/structure/lattice/clockwork,
 /turf/open/space/basic,
 /area/template_noop)
+"Ny" = (
+/mob/living/simple_animal/hostile/clockwork/clocktank/weak,
+/turf/open/floor/clockwork/reebe,
+/area/ruin/space/has_grav/powered/clockworkhaven)
 "NM" = (
 /obj/effect/clockwork/sigil/transgression,
 /obj/structure/destructible/clockwork/heralds_beacon,
@@ -317,7 +317,7 @@ bR
 IE
 IE
 bR
-Rv
+Ny
 Rv
 Os
 Rv
@@ -1025,7 +1025,7 @@ Rv
 Rv
 Os
 Rv
-Rv
+Ny
 bR
 IE
 IE

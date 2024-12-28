@@ -525,7 +525,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
-/area/ai_monitored/security/armory)
+/area/space/nearstation)
 "abz" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -563,10 +563,6 @@
 /obj/item/flashlight/lamp,
 /turf/open/floor/mineral/plastitanium,
 /area/security/prison)
-"abG" = (
-/obj/structure/lattice/catwalk,
-/turf/open/space/basic,
-/area/ai_monitored/security/armory)
 "abI" = (
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 32
@@ -28525,8 +28521,6 @@
 /obj/effect/turf_decal/tile/purple,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
-"bvv" = (
-)
 "bvy" = (
 /obj/machinery/camera{
 	c_tag = "Genetics Research";
@@ -46421,7 +46415,7 @@
 	name = "Incinerator Output Pump"
 	},
 /turf/open/space,
-/area/maintenance/disposal/incinerator)
+/area/space/nearstation)
 "cpP" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
@@ -46431,7 +46425,7 @@
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
 /turf/open/space,
-/area/maintenance/disposal/incinerator)
+/area/space/nearstation)
 "cpR" = (
 /obj/machinery/door/airlock/abandoned{
 	name = "Observatory Access"
@@ -46836,11 +46830,6 @@
 /obj/structure/transit_tube,
 /turf/open/floor/plating,
 /area/engineering/main)
-"csc" = (
-/obj/structure/lattice,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/turf/open/space,
-/area/maintenance/aft)
 "csg" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -46870,7 +46859,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/airless,
-/area/maintenance/aft)
+/area/space/nearstation)
 "csn" = (
 /obj/structure/transit_tube/horizontal,
 /turf/open/space,
@@ -48199,7 +48188,7 @@
 	start_active = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "cvG" = (
 /obj/machinery/porta_turret/ai{
 	dir = 4;
@@ -48246,7 +48235,7 @@
 	start_active = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "cvL" = (
 /obj/structure/sign/warning/securearea{
 	pixel_x = 32
@@ -48917,12 +48906,6 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space,
 /area/space/nearstation)
-"czJ" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	dir = 1
-	},
-/turf/open/floor/plating/airless,
-/area/maintenance/disposal/incinerator)
 "czK" = (
 /turf/closed/wall/r_wall/syndicate{
 	smooth = 2
@@ -49261,7 +49244,7 @@
 	start_active = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "cAV" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -49296,7 +49279,7 @@
 	start_active = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "cAY" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -49358,7 +49341,7 @@
 	start_active = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "cBg" = (
 /obj/effect/spawner/structure/window/plastitanium,
 /obj/effect/landmark/event_spawn,
@@ -51028,7 +51011,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space,
-/area/engineering/atmos)
+/area/space/nearstation)
 "dbg" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin{
@@ -95793,7 +95776,7 @@ jRV
 acd
 aaT
 gXs
-abG
+gJi
 aaZ
 aeW
 acl
@@ -96050,7 +96033,7 @@ dqd
 acd
 abY
 gXs
-abG
+gJi
 aaZ
 ahB
 aco
@@ -96307,7 +96290,7 @@ nIx
 acd
 aaT
 gXs
-abG
+gJi
 aaZ
 aeY
 aco
@@ -96564,7 +96547,7 @@ aaa
 aaa
 aaT
 gXs
-abG
+gJi
 aaZ
 aeZ
 aco
@@ -96821,7 +96804,7 @@ aaa
 aaa
 abY
 gXs
-abG
+gJi
 aaZ
 afc
 aco
@@ -104902,7 +104885,7 @@ cpQ
 cpQ
 cpQ
 cpQ
-czJ
+csm
 aaf
 aoV
 aaa
@@ -107212,7 +107195,7 @@ cmi
 cbQ
 cnF
 cot
-csc
+cpQ
 csm
 aaa
 aaa
@@ -107798,7 +107781,7 @@ cNd
 cNd
 cNd
 cNd
-bvv
+aaa
 "}
 (159,1,1) = {"
 cNd

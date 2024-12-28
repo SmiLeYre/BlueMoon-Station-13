@@ -52,6 +52,7 @@
 /obj/item/storage/belt/utility/ComponentInitialize()
 	. = ..()
 	var/datum/component/storage/STR = GetComponent(/datum/component/storage)
+	STR.max_w_class = WEIGHT_CLASS_NORMAL
 	var/static/list/can_hold = typecacheof(list(
 		/obj/item/crowbar,
 		/obj/item/screwdriver,
@@ -78,7 +79,10 @@
 		/obj/item/inducer,
 		/obj/item/lightreplacer,
 		/obj/item/healthanalyzer, /// Для робототехников
-		/obj/item/surgical_drapes ///
+		/obj/item/surgical_drapes, ///
+        /obj/item/construction/rcd,
+        /obj/item/construction/rld,
+        /obj/item/pipe_dispenser,
 		))
 	STR.can_hold = can_hold
 
@@ -639,7 +643,8 @@
 		/obj/item/assembly/mousetrap,
 		/obj/item/screwdriver,
 		/obj/item/stack/cable_coil,
-		/obj/item/holosign_creator
+		/obj/item/holosign_creator,
+		/obj/item/t_scanner/dirt_scanner
 		))
 
 /obj/item/storage/belt/janitor/ert_maid
@@ -652,7 +657,7 @@
 	new /obj/item/grenade/chem_grenade/cleaner(src)
 	new /obj/item/grenade/chem_grenade/cleaner(src)
 	new /obj/item/grenade/chem_grenade/cleaner(src)
-	new /obj/item/soap(src)
+	new /obj/item/grenade/chem_grenade/cleaner(src)
 	new /obj/item/soap(src)
 
 /obj/item/storage/belt/bandolier

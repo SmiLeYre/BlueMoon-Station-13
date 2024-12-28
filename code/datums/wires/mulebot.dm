@@ -2,6 +2,7 @@
 	holder_type = /mob/living/simple_animal/bot/mulebot
 	randomize = TRUE
 	req_knowledge = JOB_SKILL_MASTER
+	visibility_trait = TRAIT_KNOW_CYBORG_WIRES // BLUEMOON ADD
 
 /datum/wires/mulebot/New(atom/holder)
 	wires = list(

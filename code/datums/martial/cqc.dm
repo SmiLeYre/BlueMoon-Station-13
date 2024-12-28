@@ -224,13 +224,18 @@
 
 	to_chat(usr, "<b><i>In addition, by having your throw mode on when being attacked, you enter an active defense mode where you have a chance to block and sometimes even counter attacks done to you.</i></b>")
 
+///BLUEMOON CHANGE версия CQC с ограничением для использования в определённой зоне
 ///Subtype of CQC. Only used for the chef.
-/datum/martial_art/cqc/under_siege
+/datum/martial_art/cqc/restricted
+	var/list/valid_areas = list()
+
+/datum/martial_art/cqc/restricted/under_siege
 	name = "Close Quarters Cooking"
-	var/list/valid_areas = list(/area/service/kitchen)
+	valid_areas = list(/area/service/kitchen)
 
 ///Prevents use if the cook is not in the kitchen.
-/datum/martial_art/cqc/under_siege/can_use(mob/living/owner) //this is used to make chef CQC only work in kitchen
+/datum/martial_art/cqc/restricted/can_use(mob/living/owner) //this is used to make chef CQC only work in kitchen
 	if(!is_type_in_list(get_area(owner), valid_areas))
 		return FALSE
 	return ..()
+//BLUEMOON CHANGE END

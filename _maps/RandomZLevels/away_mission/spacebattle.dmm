@@ -4272,6 +4272,10 @@
 /obj/effect/turf_decal/tile/brown,
 /turf/open/floor/iron/dark,
 /area/awaymission/spacebattle/syndicate1)
+"sB" = (
+/mob/living/simple_animal/hostile/syndicate/mecha_pilot/inteq/light,
+/turf/open/floor/plasteel,
+/area/awaymission/spacebattle/cruiser)
 "sD" = (
 /obj/structure/shuttle/engine/heater,
 /turf/open/floor/plating,
@@ -4303,7 +4307,7 @@
 /turf/open/floor/iron/dark,
 /area/awaymission/spacebattle/syndicate4)
 "sQ" = (
-/mob/living/simple_animal/hostile/syndicate/mecha_pilot,
+/mob/living/simple_animal/hostile/syndicate/mecha_pilot/inteq,
 /turf/open/floor/plasteel,
 /area/awaymission/spacebattle/cruiser)
 "sS" = (
@@ -5268,6 +5272,10 @@
 	},
 /turf/open/floor/iron/dark,
 /area/awaymission/spacebattle/syndicate6)
+"zO" = (
+/mob/living/simple_animal/hostile/syndicate/mecha_pilot/inteq/light,
+/turf/open/floor/plating/airless,
+/area/awaymission/spacebattle/cruiser)
 "zR" = (
 /obj/item/soap/inteq,
 /turf/open/floor/plating/asteroid/airless,
@@ -39263,7 +39271,7 @@ cc
 fm
 cc
 cm
-cc
+sB
 cc
 cc
 cc
@@ -45691,7 +45699,7 @@ fT
 gg
 zr
 cZ
-cZ
+zO
 cZ
 cZ
 cZ

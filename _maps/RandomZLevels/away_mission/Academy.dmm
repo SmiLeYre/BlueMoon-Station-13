@@ -223,11 +223,9 @@
 /turf/open/floor/plasteel/white,
 /area/awaymission/academy/classrooms)
 "aK" = (
-/mob/living/simple_animal/hostile/morph{
-	faction = list("skeleton")
-	},
-/turf/open/floor/engine/cult,
-/area/awaymission/academy/academycellar)
+/mob/living/simple_animal/hostile/wizard,
+/turf/open/floor/carpet/royalblack,
+/area/awaymission/academy/headmaster)
 "aL" = (
 /turf/closed/wall/mineral/wood,
 /area/awaymission/academy/academycellar)
@@ -377,7 +375,6 @@
 /obj/structure/chair/office/dark{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/wizard,
 /turf/open/floor/carpet/royalblack,
 /area/awaymission/academy/headmaster)
 "bm" = (
@@ -1408,7 +1405,7 @@
 /turf/closed/wall/mineral/wood,
 /area/awaymission/academy/academycellar)
 "eu" = (
-/obj/singularity/academy,
+/obj/singularity/gravitational/academy,
 /turf/open/space,
 /area/space/nearstation)
 "ev" = (
@@ -1770,11 +1767,12 @@
 /turf/open/floor/wood,
 /area/awaymission/academy/classrooms)
 "ft" = (
-/mob/living/simple_animal/hostile/netherworld{
-	name = "Experiment 35b"
+/obj/item/shard,
+/obj/structure/cable{
+	icon_state = "1-4"
 	},
-/turf/open/floor/vault,
-/area/awaymission/academy/academyengine)
+/turf/open/floor/carpet/purple,
+/area/awaymission/academy/academyaft)
 "fu" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
@@ -3143,9 +3141,8 @@
 	},
 /area/awaymission/academy/academyaft)
 "iY" = (
-/obj/structure/mineral_door/iron,
 /obj/structure/trap/damage,
-/obj/item/pitchfork,
+/obj/structure/mineral_door/iron,
 /turf/open/floor/plasteel/cafeteria,
 /area/awaymission/academy/academyaft)
 "iZ" = (
@@ -3352,12 +3349,12 @@
 /area/awaymission/academy/academyaft)
 "jw" = (
 /obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow{
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/yellow,
-/obj/effect/turf_decal/tile/yellow{
-	dir = 8
-	},
 /turf/open/floor/plasteel,
 /area/awaymission/academy/academyaft)
 "jx" = (
@@ -3406,7 +3403,7 @@
 /turf/open/floor/plating,
 /area/awaymission/academy/academyaft)
 "jD" = (
-/obj/structure/window/reinforced,
+/obj/structure/window/plasma/reinforced,
 /turf/open/floor/carpet/purple,
 /area/awaymission/academy/academyaft)
 "jE" = (
@@ -3415,22 +3412,22 @@
 /turf/open/floor/plating,
 /area/awaymission/academy/academyaft)
 "jF" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 4
+	},
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/obj/structure/window/reinforced{
-	dir = 4
 	},
 /turf/open/floor/carpet/purple,
 /area/awaymission/academy/academyaft)
 "jG" = (
-/obj/structure/window/reinforced{
+/obj/structure/window/plasma/reinforced{
 	dir = 8
 	},
 /turf/open/floor/carpet/purple,
 /area/awaymission/academy/academyaft)
 "jH" = (
-/obj/structure/window/reinforced{
+/obj/structure/window/plasma/reinforced{
 	dir = 4
 	},
 /turf/open/floor/carpet/purple,
@@ -3442,16 +3439,16 @@
 /turf/open/floor/carpet/purple,
 /area/awaymission/academy/academyaft)
 "jJ" = (
+/obj/structure/window/plasma/reinforced{
+	dir = 1
+	},
 /obj/structure/cable{
 	icon_state = "4-8"
-	},
-/obj/structure/window/reinforced{
-	dir = 1
 	},
 /turf/open/floor/carpet/purple,
 /area/awaymission/academy/academyaft)
 "jK" = (
-/obj/structure/window/reinforced{
+/obj/structure/window/plasma/reinforced{
 	dir = 1
 	},
 /turf/open/floor/carpet/purple,
@@ -4171,7 +4168,6 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/mob/living/simple_animal/hostile/netherworld,
 /turf/open/floor/vault,
 /area/awaymission/academy/academyengine)
 "mi" = (
@@ -4282,6 +4278,7 @@
 /area/awaymission/academy/academycellar)
 "mE" = (
 /obj/effect/decal/cleanable/cobweb,
+/mob/living/simple_animal/hostile/skeleton,
 /turf/open/floor/plating,
 /area/awaymission/academy/academygate)
 "mF" = (
@@ -4600,10 +4597,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/academy/academyengine)
-"oI" = (
-/obj/item/pizzabox/pineapple,
-/turf/open/space,
-/area/space/nearstation)
 "oK" = (
 /obj/item/kirbyplants/random,
 /turf/open/floor/plasteel/cafeteria,
@@ -4700,10 +4693,6 @@
 /obj/item/clothing/under/color/lightpurple,
 /turf/open/floor/carpet/purple,
 /area/awaymission/academy/classrooms)
-"pF" = (
-/obj/item/pizzabox/margherita,
-/turf/open/space,
-/area/space/nearstation)
 "pG" = (
 /obj/machinery/light{
 	dir = 8
@@ -4918,14 +4907,10 @@
 /obj/structure/flora/ausbushes/stalkybush,
 /turf/open/floor/grass/grass0,
 /area/awaymission/academy/academygate)
-"rI" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/open/water,
-/area/awaymission/academy/academycellar)
+"rH" = (
+/mob/living/simple_animal/hostile/netherworld,
+/turf/open/floor/vault,
+/area/awaymission/academy/academyengine)
 "rJ" = (
 /obj/structure/bed,
 /mob/living/simple_animal/hostile/wizard,
@@ -5079,9 +5064,16 @@
 /turf/open/floor/plasteel/chapel,
 /area/awaymission/academy/headmaster)
 "tl" = (
-/obj/machinery/vending/games,
-/turf/open/floor/wood,
-/area/awaymission/academy/headmaster)
+/obj/effect/turf_decal/tile/yellow{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/yellow,
+/obj/structure/window/reinforced{
+	dir = 1;
+	layer = 2.9
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/academy/academyaft)
 "tm" = (
 /obj/machinery/door/airlock/maintenance_hatch,
 /turf/open/floor/engine,
@@ -5275,6 +5267,17 @@
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/awaymission/academy/headmaster)
+"vk" = (
+/obj/structure/lattice,
+/mob/living/simple_animal/hostile/carp{
+	icon_dead = "magicarp_dead";
+	icon_gib = "magicarp_gib";
+	icon_living = "magicarp";
+	icon_state = "magicarp";
+	name = "bootleg  magicarp"
+	},
+/turf/open/space,
+/area/space/nearstation)
 "vm" = (
 /obj/machinery/processor,
 /turf/open/floor/plasteel/white,
@@ -5410,9 +5413,14 @@
 /obj/item/clothing/shoes/sandal,
 /turf/open/floor/plasteel,
 /area/awaymission/academy/academyaft)
+"wh" = (
+/obj/item/pizzabox/pineapple,
+/turf/open/space,
+/area/space/nearstation)
 "wj" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/barricade/wooden,
+/obj/machinery/light{
+	dir = 8
+	},
 /turf/open/floor/plating,
 /area/awaymission/academy/academygate)
 "wn" = (
@@ -5454,6 +5462,10 @@
 /obj/item/scalpel/alien,
 /turf/open/floor/carpet/purple,
 /area/awaymission/academy/classrooms)
+"wF" = (
+/obj/item/pizzabox/margherita,
+/turf/open/space,
+/area/space/nearstation)
 "wG" = (
 /mob/living/simple_animal/hostile/wizard,
 /turf/open/floor/wood,
@@ -5912,6 +5924,10 @@
 /obj/item/gun/ballistic/automatic/m1garand/nomag,
 /turf/open/floor/plasteel,
 /area/awaymission/academy/classrooms)
+"Ah" = (
+/obj/item/pizzabox/vegetable,
+/turf/open/space,
+/area/space/nearstation)
 "Aj" = (
 /obj/structure/curtain,
 /obj/machinery/shower{
@@ -6200,17 +6216,6 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/awaymission/academy/headmaster)
-"Cb" = (
-/obj/structure/lattice,
-/mob/living/simple_animal/hostile/carp{
-	icon_dead = "magicarp_dead";
-	icon_gib = "magicarp_gib";
-	icon_living = "magicarp";
-	icon_state = "magicarp";
-	name = "bootleg  magicarp"
-	},
-/turf/open/space,
-/area/space/nearstation)
 "Cc" = (
 /obj/effect/turf_decal/tile/green{
 	dir = 1
@@ -6283,11 +6288,18 @@
 "CU" = (
 /obj/structure/flora/ausbushes/lavendergrass,
 /obj/structure/flora/ausbushes/stalkybush,
+/obj/machinery/light{
+	dir = 8;
+	light_color = "#e8eaff"
+	},
 /turf/open/floor/grass/grass0,
 /area/awaymission/academy/academygate)
 "CY" = (
 /obj/structure/flora/ausbushes/stalkybush,
 /obj/structure/flora/ausbushes/brflowers,
+/obj/machinery/light{
+	dir = 4
+	},
 /turf/open/floor/grass/grass0,
 /area/awaymission/academy/academygate)
 "Da" = (
@@ -6516,11 +6528,6 @@
 	dir = 1;
 	layer = 2.9
 	},
-/obj{
-	name = "---Merge conflict marker---"
-	},
-/obj/structure/destructible/cult/tome,
-/obj/item/dice/d20/fate/one_use,
 /turf/open/floor/carpet/royalblack,
 /area/awaymission/academy/headmaster)
 "EP" = (
@@ -6561,6 +6568,10 @@
 /obj/structure/flora/ausbushes/fernybush,
 /turf/open/floor/grass/grass0,
 /area/awaymission/academy/academygate)
+"Fg" = (
+/obj/item/pizzabox/mushroom,
+/turf/open/space,
+/area/space/nearstation)
 "Fh" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -6624,9 +6635,11 @@
 /turf/open/floor/wood,
 /area/awaymission/academy/headmaster)
 "FH" = (
-/obj/structure/fermenting_barrel,
-/turf/open/floor/carpet/royalblack,
-/area/awaymission/academy/academyengine)
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plating,
+/area/awaymission/academy/academygate)
 "FM" = (
 /obj/machinery/light{
 	dir = 1
@@ -6655,10 +6668,6 @@
 /obj/structure/fluff/divine/shrine,
 /turf/open/floor/plating,
 /area/awaymission/academy/academyengine)
-"FV" = (
-/obj/item/pizzabox/mushroom,
-/turf/open/space,
-/area/space/nearstation)
 "FX" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6672,6 +6681,11 @@
 /obj/effect/decal/cleanable/flour,
 /turf/open/floor/plasteel/cafeteria,
 /area/awaymission/academy/classrooms)
+"Ga" = (
+/obj/structure/lattice,
+/obj/item/pizzabox/vegetable,
+/turf/open/space,
+/area/space/nearstation)
 "Gj" = (
 /obj/structure/table/wood,
 /obj/item/hand_labeler,
@@ -7074,14 +7088,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/academy/classrooms)
-"JJ" = (
-/obj/structure/lattice,
-/obj/item/picket_sign{
-	name = "ПОСЛАНИЕ УРОДУ ДАБИЛЬСОНУ!";
-	desc = "ТВОЯ ПИЦЦА МЕШАЕТ ДВИЖЕНИЮ КОРАБЛЯ! ТУПОЙ ТЫ УРОД!"
-	},
-/turf/open/space,
-/area/space/nearstation)
 "JN" = (
 /obj/machinery/door/window/brigdoor{
 	dir = 4
@@ -7093,11 +7099,6 @@
 /obj/item/clothing/head/wizard/red,
 /turf/open/floor/iron/rockvault/alien,
 /area/awaymission/academy/academyaft)
-"JQ" = (
-/obj/structure/lattice,
-/obj/item/pizzabox/vegetable,
-/turf/open/space,
-/area/space/nearstation)
 "JR" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -8060,6 +8061,13 @@
 /obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/grass/grass0,
 /area/awaymission/academy/classrooms)
+"RU" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/mob/living/simple_animal/hostile/wizard,
+/turf/open/floor/carpet/purple,
+/area/awaymission/academy/classrooms)
 "RW" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -8199,10 +8207,6 @@
 /obj/item/kirbyplants/random,
 /turf/open/floor/wood,
 /area/awaymission/academy/classrooms)
-"SQ" = (
-/obj/item/pizzabox/vegetable,
-/turf/open/space,
-/area/space/nearstation)
 "SS" = (
 /obj/machinery/computer/operating,
 /turf/open/floor/plasteel,
@@ -8422,15 +8426,6 @@
 "UC" = (
 /turf/open/floor/circuit/red,
 /area/awaymission/academy/classrooms)
-"UD" = (
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/obj/item/toy/plush/carpplushie,
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/open/water,
-/area/awaymission/academy/academycellar)
 "UF" = (
 /obj/structure/window/reinforced,
 /obj/structure/flora/ausbushes/brflowers,
@@ -8588,12 +8583,6 @@
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/awaymission/academy/classrooms)
-"VY" = (
-/obj/item/toy/plush/carpplushie,
-/obj/effect/overlay/water,
-/obj/effect/overlay/water/top,
-/turf/open/water,
-/area/awaymission/academy/academycellar)
 "Wc" = (
 /obj/structure/closet/crate/wooden,
 /obj/item/circuitboard/computer/labor_shuttle,
@@ -8720,7 +8709,7 @@
 /turf/open/floor/plasteel,
 /area/awaymission/academy/classrooms)
 "Xl" = (
-/obj/singularity/academy,
+/obj/singularity/gravitational/academy,
 /turf/open/space,
 /area/awaymission/academy/classrooms)
 "Xm" = (
@@ -8775,9 +8764,6 @@
 	dir = 4
 	},
 /area/awaymission/academy/headmaster)
-"XG" = (
-/turf/open/floor/plating/ashplanet/wateryrock,
-/area/awaymission/academy/academycellar)
 "XI" = (
 /obj/machinery/light,
 /obj/item/kirbyplants/hedge,
@@ -8992,6 +8978,14 @@
 /obj/item/storage/toolbox/plastitanium,
 /turf/open/floor/plating,
 /area/awaymission/academy/classrooms)
+"ZM" = (
+/obj/structure/lattice,
+/obj/item/picket_sign{
+	name = "ПОСЛАНИЕ УРОДУ ДАБИЛЬСОНУ!";
+	desc = "ТВОЯ ПИЦЦА МЕШАЕТ ДВИЖЕНИЮ КОРАБЛЯ! ТУПОЙ ТЫ УРОД!"
+	},
+/turf/open/space,
+/area/space/nearstation)
 "ZR" = (
 /obj/machinery/light,
 /mob/living/simple_animal/hostile/wizard,
@@ -15805,7 +15799,7 @@ aa
 aa
 aa
 aa
-pF
+wF
 aa
 aa
 aa
@@ -16321,7 +16315,7 @@ aa
 aa
 aa
 aa
-SQ
+Ah
 aa
 aa
 aa
@@ -16589,7 +16583,7 @@ aa
 aa
 aa
 aa
-JQ
+Ga
 qV
 pK
 aF
@@ -16920,11 +16914,11 @@ hc
 hc
 hc
 hc
-jX
-jX
-jX
-wj
-jX
+jS
+jS
+jS
+jS
+jS
 jS
 aa
 aa
@@ -17176,7 +17170,7 @@ jI
 jI
 jI
 jF
-hB
+ft
 pO
 jL
 hc
@@ -17351,7 +17345,7 @@ aa
 aa
 aa
 aa
-FV
+Fg
 aa
 aa
 aP
@@ -17454,7 +17448,7 @@ NK
 kx
 jS
 mE
-kf
+wj
 mG
 jS
 aa
@@ -17563,7 +17557,7 @@ hI
 fF
 jl
 Ni
-jx
+tl
 fF
 fF
 hk
@@ -17711,7 +17705,7 @@ kn
 kI
 QT
 DR
-CO
+Ao
 ky
 mF
 kf
@@ -17744,7 +17738,7 @@ aa
 aa
 aa
 aa
-JJ
+ZM
 kF
 ae
 UW
@@ -17869,7 +17863,7 @@ aa
 aa
 aa
 aa
-oI
+wh
 aa
 aa
 aa
@@ -18104,7 +18098,7 @@ Ao
 kx
 jS
 mH
-kf
+FH
 mG
 jS
 aa
@@ -18183,7 +18177,7 @@ dc
 el
 eN
 eW
-fe
+RU
 dc
 ej
 fD
@@ -18287,7 +18281,7 @@ ab
 SB
 aF
 ah
-ah
+aK
 ah
 ah
 bn
@@ -18610,11 +18604,11 @@ hc
 hc
 hc
 hc
-jX
-wj
-jX
-jX
-wj
+jS
+jS
+jS
+jS
+jS
 jS
 aa
 aa
@@ -18679,7 +18673,7 @@ AI
 aF
 bm
 bm
-tl
+aF
 ab
 yG
 Hl
@@ -19048,7 +19042,7 @@ aa
 aa
 aa
 aa
-FV
+Fg
 aa
 aa
 aa
@@ -20661,7 +20655,7 @@ aP
 aP
 aP
 aP
-Cb
+vk
 aP
 aP
 aP
@@ -21143,11 +21137,11 @@ aL
 aG
 aG
 aG
-aG
-aG
-aG
-aG
-aG
+WZ
+aa
+aa
+aa
+aa
 aa
 aa
 ac
@@ -21273,11 +21267,11 @@ aL
 aG
 aG
 aG
-aL
-aL
-aL
-aL
 aG
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -21403,12 +21397,12 @@ aL
 aL
 aL
 aL
-aL
-XG
-VY
-aL
 aG
-aG
+aa
+aa
+aa
+aa
+aa
 aa
 aa
 aa
@@ -21534,11 +21528,11 @@ dK
 pa
 aL
 aL
-UD
-rI
-aL
-aG
-aG
+WZ
+WZ
+WZ
+aa
+aa
 aa
 aa
 aa
@@ -21664,8 +21658,8 @@ kS
 Hw
 Vs
 aL
-dK
-dK
+aL
+aL
 aL
 aG
 aG
@@ -21871,10 +21865,10 @@ mC
 mo
 mc
 Fr
-ct
+mq
 ct
 Tv
-FH
+GI
 GI
 mc
 aG
@@ -21907,7 +21901,7 @@ tF
 aL
 kX
 dK
-aK
+dK
 dK
 kX
 aL
@@ -22001,10 +21995,10 @@ mc
 mc
 mc
 Fr
+mq
 ct
 ct
-ct
-FH
+GI
 GI
 mc
 aG
@@ -22774,7 +22768,7 @@ aG
 md
 mg
 sI
-ft
+lt
 lt
 md
 mq
@@ -23035,7 +23029,7 @@ md
 mh
 lt
 lt
-lt
+rH
 md
 mq
 mc
@@ -23685,7 +23679,7 @@ aG
 aG
 mc
 kA
-mq
+mI
 Qe
 mq
 mc
@@ -23819,7 +23813,7 @@ mq
 mq
 mq
 mp
-mq
+mI
 Yo
 Wr
 mc
@@ -23946,7 +23940,7 @@ aG
 mc
 mq
 mq
-mI
+mq
 mq
 ob
 ct
@@ -24597,7 +24591,7 @@ mc
 RJ
 mq
 Qe
-mI
+mq
 mc
 mc
 mc

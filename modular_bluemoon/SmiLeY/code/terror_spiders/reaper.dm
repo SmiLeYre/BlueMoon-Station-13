@@ -15,7 +15,7 @@
 	melee_damage_lower = 25
 	melee_damage_upper = 25
 	armour_penetration = 15
-	obj_damage = 50
+	obj_damage = 30
 	spider_opens_doors = 2
 	speed = -0.3
 	web_type = null
@@ -30,7 +30,7 @@
 /mob/living/simple_animal/hostile/retaliate/poison/terror_spider/reaper/spider_specialattack(mob/living/carbon/human/L)
 	if(L.stat != DEAD) //no healing when biting corpses
 		L.attack_animal(src)
-		L.bleed(25) //bloodsucker
-		src.adjustBruteLoss(-30)   //vampirism
+		L.bleed(20) //bloodsucker
+		src.adjustBruteLoss(-20)   //vampirism
 	else
 		..()

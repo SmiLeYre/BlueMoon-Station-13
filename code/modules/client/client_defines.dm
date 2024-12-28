@@ -194,3 +194,7 @@
 
 	///Are we locking our movement input?
 	var/movement_locked = FALSE
+
+	/// The next point in time at which the client is allowed to send a mousemove() or mousedrag()
+	COOLDOWN_DECLARE(next_mousemove)
+	COOLDOWN_DECLARE(next_mousedrag)

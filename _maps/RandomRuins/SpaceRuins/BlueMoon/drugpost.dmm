@@ -14,7 +14,6 @@
 /obj/item/reagent_containers/pill/happinesspsych,
 /obj/item/reagent_containers/pill/labebium,
 /obj/item/reagent_containers/pill/mannitol,
-/obj/item/reagent_containers/pill/planz,
 /obj/item/reagent_containers/pill/salicyclic,
 /obj/item/reagent_containers/pill/zoom,
 /obj/item/storage/pill_bottle/lsd{
@@ -113,7 +112,6 @@
 	},
 /obj/item/reagent_containers/pill/labebium,
 /obj/item/reagent_containers/pill/labebium,
-/obj/item/reagent_containers/pill/planz,
 /obj/item/reagent_containers/pill/zoom,
 /obj/item/storage/pill_bottle/neurine{
 	pixel_x = -8;
@@ -164,7 +162,6 @@
 /obj/item/reagent_containers/pill/happinesspsych,
 /obj/item/reagent_containers/pill/labebium,
 /obj/item/reagent_containers/pill/mannitol,
-/obj/item/reagent_containers/pill/planz,
 /obj/item/reagent_containers/pill/salicyclic,
 /obj/item/reagent_containers/pill/zoom,
 /obj/item/storage/pill_bottle/lsd{
@@ -323,7 +320,6 @@
 /obj/item/reagent_containers/pill/labebium,
 /obj/item/reagent_containers/pill/labebium,
 /obj/item/reagent_containers/pill/mannitol,
-/obj/item/reagent_containers/pill/planz,
 /obj/item/reagent_containers/pill/salicyclic{
 	pixel_x = 5;
 	pixel_y = -7

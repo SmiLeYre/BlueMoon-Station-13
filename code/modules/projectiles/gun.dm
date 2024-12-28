@@ -788,7 +788,7 @@
 	playsound('sound/weapons/dink.ogg', 30, 1)
 
 	if(chambered && chambered.BB)
-		chambered.BB.damage *= 5
+		chambered.BB.damage *= 10
 
 	process_fire(target, user, TRUE, params, BODY_ZONE_HEAD, stam_cost = getstamcost(user))
 

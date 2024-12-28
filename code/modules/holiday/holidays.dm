@@ -69,7 +69,7 @@
 
 /datum/holiday/new_year
 	name = NEW_YEAR
-	begin_day = 29
+	begin_day = 1
 	begin_month = DECEMBER
 	end_day = 3
 	end_month = JANUARY
@@ -77,6 +77,36 @@
 
 /datum/holiday/new_year/getStationPrefix()
 	return pick("Праздничный Сектор |","Новый Сектор |","Похмельный Сектор |","Новогодний Сектор |")
+
+/datum/holiday/new_year/celebrate()
+	SSticker.OnRoundstart(CALLBACK(src, PROC_REF(roundstart_celebrate)))
+
+/datum/holiday/new_year/proc/roundstart_celebrate()
+	for(var/obj/machinery/computer/security/telescreen/entertainment/Monitor in GLOB.machines)
+		Monitor.icon_state_on = "entertainment_xmas"
+
+	for(var/mob/living/simple_animal/pet/dog/corgi/Ian/Ian in GLOB.mob_living_list)
+		Ian.place_on_head(new /obj/item/clothing/head/helmet/space/santahat(Ian))
+
+/datum/holiday/xmas
+	name = CHRISTMAS
+	begin_day = 3
+	begin_month = JANUARY
+	end_day = 12
+	drone_hat = /obj/item/clothing/head/santa
+
+/datum/holiday/xmas/greet()
+	return "Счастливого Рождества!"
+
+/datum/holiday/xmas/celebrate()
+	SSticker.OnRoundstart(CALLBACK(src, PROC_REF(roundstart_celebrate)))
+
+/datum/holiday/xmas/proc/roundstart_celebrate()
+	for(var/obj/machinery/computer/security/telescreen/entertainment/Monitor in GLOB.machines)
+		Monitor.icon_state_on = "entertainment_xmas"
+
+	for(var/mob/living/simple_animal/pet/dog/corgi/Ian/Ian in GLOB.mob_living_list)
+		Ian.place_on_head(new /obj/item/clothing/head/helmet/space/santahat(Ian))
 
 /datum/holiday/groundhog
 	name = "день Сурка"
@@ -265,6 +295,21 @@
 /datum/holiday/lgbt/russianday/greet()
 	return "С днём России, ебать!"
 
+/datum/holiday/lgbt/bluemoonday
+	name = "День Рождения Синих Лун |"
+	begin_day = 11
+	end_day = 12
+	begin_month = DECEMBER
+
+	holiday_colors = list(
+		COLOR_WHITE,
+		RUNE_COLOR_RED,
+		COLOR_BLUE
+	)
+
+/datum/holiday/lgbt/bluemoonday/greet()
+	return "С днём Дня Рождения Синих Лун, ебать!"
+
 /datum/holiday/labor
 	name = "День Труда |"
 	begin_day = 1
@@ -444,7 +489,7 @@
 	drone_hat = /obj/item/clothing/head/that
 
 /datum/holiday/lgbt/intersexawareness
-	name = "Intersex Awareness Day"
+	name = "Intersex Awareness Day |"
 	begin_day = 26
 	begin_month = OCTOBER
 
@@ -504,7 +549,7 @@
 	drone_hat = /obj/item/clothing/head/peaceflower
 
 /datum/holiday/lgbt/transawareness
-	name = "Transgender Awareness Week"
+	name = "Transgender Awareness Week |"
 	begin_day = 13
 	begin_month = NOVEMBER
 	end_day = 19
@@ -520,7 +565,7 @@
 	return "This week is Transgender Awareness Week!"
 
 /datum/holiday/lgbt/transremembrance
-	name = "Transgender Day of Remembrance"
+	name = "Transgender Day of Remembrance |"
 	begin_day = 20
 	begin_month = NOVEMBER
 
@@ -543,7 +588,7 @@
 	return pick("Aloha Сектор |", "Bonjour Сектор |", "Hello Сектор |", "Hi Сектор |", "Greetings Сектор |", "Salutations Сектор |", "Bienvenidos Сектор |", "Hola Сектор |", "Howdy Сектор |", "Ni hao Сектор |", "Guten Tag Сектор |", "Konnichiwa Сектор |", "G'day cunt Сектор |", "Здорова Сектор |")
 
 /datum/holiday/human_rights
-	name = "день прав человека"
+	name = "День Прав Человека |"
 	begin_day = 10
 	begin_month = DECEMBER
 
@@ -586,7 +631,7 @@
 	begin_weekday = MONDAY
 
 /datum/holiday/lgbt/aceawareness
-	name = "Asexual Awareness Week"
+	name = "Asexual Awareness Week |"
 	begin_month = OCTOBER
 
 	holiday_colors = list(
@@ -694,27 +739,6 @@ This used to be a comment about ramadan but it got deleted because we don't prea
 	begin_day = 21
 	begin_month = DECEMBER
 	drone_hat = /obj/item/clothing/mask/rat/tribal
-
-/datum/holiday/xmas
-	name = CHRISTMAS
-	begin_day = 22
-	begin_month = DECEMBER
-	end_day = 3
-	end_month = JANUARY
-	drone_hat = /obj/item/clothing/head/santa
-
-/datum/holiday/xmas/greet()
-	return "Счастливого Рождества!"
-
-/datum/holiday/xmas/celebrate()
-	SSticker.OnRoundstart(CALLBACK(src, PROC_REF(roundstart_celebrate)))
-
-/datum/holiday/xmas/proc/roundstart_celebrate()
-	for(var/obj/machinery/computer/security/telescreen/entertainment/Monitor in GLOB.machines)
-		Monitor.icon_state_on = "entertainment_xmas"
-
-	for(var/mob/living/simple_animal/pet/dog/corgi/Ian/Ian in GLOB.mob_living_list)
-		Ian.place_on_head(new /obj/item/clothing/head/helmet/space/santahat(Ian))
 
 /datum/holiday/festive_season
 	name = FESTIVE_SEASON

@@ -481,7 +481,7 @@
 	pixel_y = -1
 	},
 /obj/machinery/power/apc{
-	areastring = "/area/storage/primary";
+	areastring = "/area/commons/storage/primary";
 	dir = 4;
 	name = "Primary Tool Storage APC";
 	pixel_x = 26
@@ -1145,7 +1145,7 @@
 	dir = 8
 	},
 /obj/machinery/power/apc{
-	areastring = "/area/crew_quarters/heads/captain/private";
+	areastring = "/area/command/heads_quarters/captain";
 	dir = 8;
 	name = "Captain's Quarters APC";
 	pixel_x = -26;
@@ -2641,10 +2641,6 @@
 	},
 /turf/open/floor/engine,
 /area/science/xenobiology)
-"bKJ" = (
-/obj/structure/lattice,
-/turf/open/space/basic,
-/area/security/brig)
 "bKN" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
@@ -3199,7 +3195,7 @@
 	icon_state = "1-8"
 	},
 /turf/open/space/basic,
-/area/security/prison)
+/area/space/nearstation)
 "cfz" = (
 /obj/machinery/telecomms/server/presets/command,
 /turf/open/floor/circuit/telecomms/mainframe,
@@ -3663,7 +3659,6 @@
 	dir = 8;
 	dwidth = 3;
 	height = 5;
-	id = "sciout_dock";
 	name = "Science Outpost Shuttle Dock";
 	width = 7
 	},
@@ -3702,7 +3697,6 @@
 	dir = 8;
 	dwidth = 2;
 	height = 5;
-	id = "perma_station";
 	name = "Station Dock";
 	roundstart_template = /datum/map_template/shuttle/modular_sand/permabrig;
 	width = 8
@@ -3970,7 +3964,7 @@
 	icon_state = "0-2"
 	},
 /obj/machinery/power/apc{
-	areastring = "/area/quartermaster/storage";
+	areastring = "/area/cargo/qm";
 	dir = 1;
 	name = "Cargo Bay APC";
 	pixel_x = 1;
@@ -4724,10 +4718,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/command/bridge)
-"dji" = (
-/obj/structure/lattice,
-/turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
 "djw" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Engineering Maintenance";
@@ -5565,13 +5555,6 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
 /area/security/brig)
-"dSd" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/turf/open/space/basic,
-/area/security/prison)
 "dSq" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -5984,7 +5967,7 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/window/reinforced,
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "egZ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -6110,13 +6093,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/medical/virology)
-"elH" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/cable{
-	icon_state = "1-4"
-	},
-/turf/open/space/basic,
-/area/security/prison)
 "ent" = (
 /obj/structure/rack,
 /obj/item/storage/box/teargas{
@@ -6265,7 +6241,7 @@
 	icon_state = "1-8"
 	},
 /turf/open/space/basic,
-/area/security/prison)
+/area/space/nearstation)
 "euR" = (
 /obj/effect/turf_decal/delivery,
 /obj/machinery/light{
@@ -6468,7 +6444,7 @@
 "eAF" = (
 /obj/structure/cable,
 /obj/machinery/power/apc{
-	areastring = "/area/crew_quarters/toilet";
+	areastring = "/area/commons/toilet";
 	dir = 4;
 	name = "Dormitory Bathrooms APC";
 	pixel_x = 26
@@ -7331,7 +7307,7 @@
 /area/maintenance/central)
 "foK" = (
 /obj/machinery/power/apc{
-	areastring = "/area/ai_monitored/storage/eva";
+	areastring = "/area/ai_monitored/command/storage/eva";
 	dir = 1;
 	name = "EVA Storage APC";
 	pixel_y = 24
@@ -8387,7 +8363,7 @@
 /area/science/lab)
 "gck" = (
 /obj/machinery/power/apc{
-	areastring = "/area/ai_monitored/nuke_storage";
+	areastring = "/area/ai_monitored/command/nuke_storage";
 	dir = 1;
 	name = "AI Vault APC";
 	pixel_y = 24
@@ -9125,7 +9101,6 @@
 	dir = 4;
 	dwidth = 3;
 	height = 5;
-	id = "sciout_station";
 	name = "Science Shuttle Dock";
 	roundstart_template = /datum/map_template/shuttle/modular_sand/scioutpost;
 	width = 7
@@ -10783,7 +10758,7 @@
 	level = 1
 	},
 /turf/open/space/basic,
-/area/security/prison)
+/area/space/nearstation)
 "hQP" = (
 /obj/effect/turf_decal/tile/blue,
 /obj/effect/turf_decal/tile/blue{
@@ -11229,7 +11204,6 @@
 	dir = 2;
 	dwidth = 3;
 	height = 5;
-	id = "ai_sat";
 	name = "AI Access";
 	width = 7
 	},
@@ -11396,7 +11370,7 @@
 	dir = 8
 	},
 /obj/machinery/power/apc/highcap/five_k{
-	areastring = "/area/crew_quarters/heads/hop";
+	areastring = "/area/command/heads_quarters/hop";
 	dir = 4;
 	name = "Head of Personnel Quarter's APC";
 	pixel_x = 25
@@ -17283,7 +17257,7 @@
 /area/hallway/primary/central)
 "mxC" = (
 /obj/machinery/power/apc{
-	areastring = "/area/gateway";
+	areastring = "/area/command/gateway";
 	dir = 8;
 	name = "Gateway APC";
 	pixel_x = -26;
@@ -18023,7 +17997,7 @@
 /area/commons/storage/primary)
 "nbD" = (
 /obj/machinery/power/apc{
-	areastring = "/area/crew_quarters/bar";
+	areastring = "/area/service/bar";
 	dir = 1;
 	name = "Bar APC";
 	pixel_y = 24
@@ -19073,7 +19047,7 @@
 	},
 /obj/item/storage/toolbox/emergency,
 /obj/machinery/power/apc{
-	areastring = "/area/storage/tools";
+	areastring = "/area/commons/storage/tools";
 	dir = 4;
 	name = "Auxiliary Tool Storage APC";
 	pixel_x = 26
@@ -19575,7 +19549,7 @@
 	dir = 8
 	},
 /obj/machinery/power/apc/highcap/fifteen_k{
-	areastring = "/area/engine/engineering";
+	areastring = "/area/engineering/main";
 	dir = 4;
 	name = "Engineering APC";
 	pixel_x = 24;
@@ -19838,7 +19812,7 @@
 	icon_state = "1-4"
 	},
 /turf/open/space/basic,
-/area/security/prison)
+/area/space/nearstation)
 "osA" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -20377,7 +20351,7 @@
 	dir = 8
 	},
 /obj/machinery/power/apc{
-	areastring = "/area/teleporter";
+	areastring = "/area/command/teleporter";
 	dir = 8;
 	name = "Teleporter APC";
 	pixel_x = -26
@@ -21030,13 +21004,6 @@
 /mob/living/simple_animal/opossum/poppy,
 /turf/open/floor/plasteel,
 /area/engineering/main)
-"ppe" = (
-/obj/structure/lattice,
-/obj/structure/window/reinforced{
-	dir = 4
-	},
-/turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
 "ppU" = (
 /obj/effect/turf_decal/tile/red,
 /obj/effect/turf_decal/tile/red{
@@ -21064,7 +21031,7 @@
 /area/security/brig)
 "pqb" = (
 /obj/machinery/power/apc{
-	areastring = "/area/crew_quarters/heads/hos";
+	areastring = "/area/command/heads_quarters/hos";
 	dir = 8;
 	name = "Head of Security's Office APC";
 	pixel_x = -24
@@ -22636,13 +22603,6 @@
 	dir = 1
 	},
 /area/hallway/secondary/entry)
-"qBw" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/cable{
-	icon_state = "1-2"
-	},
-/turf/open/space/basic,
-/area/security/prison)
 "qBM" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
@@ -22858,7 +22818,6 @@
 /obj/docking_port/stationary{
 	dwidth = 3;
 	height = 5;
-	id = "ai_station";
 	name = "Station Access";
 	roundstart_template = /datum/map_template/shuttle/modular_sand/satshuttle;
 	width = 7
@@ -23016,7 +22975,7 @@
 /area/science/xenobiology)
 "qSA" = (
 /obj/machinery/power/apc{
-	areastring = "/area/aisat";
+	areastring = "/area/ai_monitored/turret_protected/aisat";
 	name = "MiniSat Exterior APC";
 	pixel_y = -24
 	},
@@ -23254,7 +23213,7 @@
 	dir = 1
 	},
 /obj/machinery/power/apc{
-	areastring = "/area/engine/atmos";
+	areastring = "/area/engineering/atmos";
 	dir = 1;
 	name = "Atmospherics APC";
 	pixel_y = 25
@@ -23398,7 +23357,7 @@
 	pixel_y = 5
 	},
 /turf/open/space/basic,
-/area/security/prison)
+/area/space/nearstation)
 "riO" = (
 /turf/open/floor/plasteel/yellowsiding/corner,
 /area/commons/dorms)
@@ -24456,7 +24415,6 @@
 	dir = 2;
 	dwidth = 2;
 	height = 5;
-	id = "perma_prison";
 	name = "Perma Dock";
 	width = 8
 	},
@@ -24957,7 +24915,7 @@
 	dir = 8
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "sCS" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/virology{
@@ -25661,7 +25619,6 @@
 /turf/open/floor/plasteel/cafeteria{
 	heat_capacity = 1e+006;
 	initial_gas_mix = "co2=48.7;n2=13.2;o2=32.4;TEMP=251";
-	temperature = 251
 	},
 /area/commons/dorms)
 "taE" = (
@@ -26078,7 +26035,7 @@
 	icon_state = "1-8"
 	},
 /obj/machinery/power/apc{
-	areastring = "/area/bridge";
+	areastring = "/area/command/bridge";
 	name = "Bridge APC";
 	pixel_y = -26
 	},
@@ -26863,7 +26820,7 @@
 	dir = 4
 	},
 /turf/open/space/basic,
-/area/security/brig)
+/area/space/nearstation)
 "tSG" = (
 /obj/structure/table,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -28967,7 +28924,6 @@
 /turf/open/floor/plasteel/cafeteria{
 	heat_capacity = 1e+006;
 	initial_gas_mix = "co2=48.7;n2=13.2;o2=32.4;TEMP=251";
-	temperature = 251
 	},
 /area/commons/dorms)
 "vwg" = (
@@ -29692,7 +29648,7 @@
 /area/hallway/primary/central)
 "wbW" = (
 /obj/machinery/power/apc{
-	areastring = "/area/janitor";
+	areastring = "/area/service/janitor";
 	dir = 8;
 	name = "Custodial Closet APC";
 	pixel_x = -26
@@ -29798,7 +29754,7 @@
 /area/service/bar)
 "wfA" = (
 /obj/machinery/power/apc{
-	areastring = "/area/crew_quarters/dorms";
+	areastring = "/area/commons/dorms";
 	dir = 8;
 	name = "Dormitory APC";
 	pixel_x = -25
@@ -30165,7 +30121,7 @@
 	icon_state = "2-8"
 	},
 /turf/open/space/basic,
-/area/security/prison)
+/area/space/nearstation)
 "wsP" = (
 /obj/structure/lattice,
 /turf/open/space/basic,
@@ -30487,6 +30443,10 @@
 /obj/structure/chair/office/dark,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hop)
+"wFn" = (
+/obj/item/hilbertshotel/ghostdojo,
+/turf/open/floor/plasteel,
+/area/hallway/primary/port/aft)
 "wFr" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 4
@@ -31942,7 +31902,7 @@
 	pixel_y = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "xzN" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -32063,13 +32023,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/xenobiology)
-"xCI" = (
-/obj/structure/window/reinforced{
-	dir = 8
-	},
-/obj/structure/lattice,
-/turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
 "xDt" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_y = 26
@@ -32956,13 +32909,6 @@
 	},
 /turf/open/floor/plating,
 /area/science/xenobiology)
-"ykU" = (
-/obj/structure/lattice/catwalk,
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/turf/open/space/basic,
-/area/security/prison)
 "ylE" = (
 /obj/item/radio/intercom{
 	pixel_x = -28
@@ -39032,14 +38978,14 @@ aHj
 iyM
 aHj
 aHj
-dSd
-qBw
-qBw
-qBw
-qBw
-qBw
-qBw
-elH
+row
+qKc
+qKc
+qKc
+qKc
+qKc
+qKc
+hSy
 aHj
 aHj
 aHj
@@ -39288,7 +39234,7 @@ yeY
 aHj
 iyM
 aHj
-dSd
+row
 etl
 jBz
 enX
@@ -39297,7 +39243,7 @@ qyL
 qBM
 jBz
 wsq
-elH
+hSy
 aHj
 aHj
 aHj
@@ -39544,7 +39490,7 @@ tfa
 yeY
 aHj
 iyM
-dSd
+row
 etl
 enX
 qyL
@@ -39555,7 +39501,7 @@ nFA
 fIu
 qFd
 wsq
-elH
+hSy
 aHj
 aHj
 aHj
@@ -39800,7 +39746,7 @@ qRu
 tfa
 yeY
 aHj
-dSd
+row
 etl
 enX
 aiz
@@ -39813,7 +39759,7 @@ xev
 iLg
 qFd
 wsq
-elH
+hSy
 aHj
 aHj
 aHj
@@ -40056,7 +40002,7 @@ aHj
 qRu
 tfa
 yeY
-dSd
+row
 etl
 enX
 aiz
@@ -40070,7 +40016,7 @@ tiz
 xev
 iLg
 qFd
-ykU
+ygw
 riA
 aHj
 aHj
@@ -40313,7 +40259,7 @@ aHj
 qRu
 tfa
 yeY
-ykU
+ygw
 jBz
 hrN
 nle
@@ -40570,7 +40516,7 @@ aHj
 aHj
 qXU
 aHj
-ykU
+ygw
 enX
 vaj
 sGQ
@@ -41341,7 +41287,7 @@ aHj
 aHj
 qXU
 aHj
-ykU
+ygw
 iLg
 iYK
 seY
@@ -41598,7 +41544,7 @@ aHj
 qRu
 qHT
 yeY
-ykU
+ygw
 jBz
 jQB
 nle
@@ -41856,7 +41802,7 @@ qRu
 qHT
 yeY
 wsq
-elH
+hSy
 iLg
 qFd
 nle
@@ -41869,7 +41815,7 @@ tiz
 mZH
 enX
 aiz
-ykU
+ygw
 hQN
 aHj
 aHj
@@ -42114,7 +42060,7 @@ qHT
 yeY
 aHj
 wsq
-elH
+hSy
 iLg
 qFd
 ncj
@@ -42125,7 +42071,7 @@ tiz
 mZH
 enX
 aiz
-dSd
+row
 etl
 aHj
 aHj
@@ -42372,7 +42318,7 @@ yeY
 aHj
 iyM
 wsq
-elH
+hSy
 iLg
 qyL
 vRp
@@ -42381,7 +42327,7 @@ pjd
 psk
 qyL
 aiz
-dSd
+row
 etl
 aHj
 aHj
@@ -42630,14 +42576,14 @@ aHj
 iyM
 aHj
 wsq
-elH
+hSy
 jBz
 iLg
 qyL
 qyL
 aiz
 jBz
-dSd
+row
 etl
 aHj
 aHj
@@ -42888,12 +42834,12 @@ iyM
 aHj
 aHj
 wsq
-qBw
-qBw
-qBw
-qBw
-qBw
-qBw
+qKc
+qKc
+qKc
+qKc
+qKc
+qKc
 etl
 aHj
 aHj
@@ -61682,7 +61628,7 @@ inK
 gdJ
 inK
 kea
-bKJ
+oqW
 kea
 vzy
 vzy
@@ -61939,8 +61885,8 @@ cvc
 dnD
 vYt
 kea
-bKJ
-bKJ
+oqW
+oqW
 vzy
 ssd
 mxC
@@ -62196,8 +62142,8 @@ inK
 csh
 xBH
 kea
-bKJ
-bKJ
+oqW
+oqW
 vzy
 jCo
 mbi
@@ -62453,8 +62399,8 @@ qqv
 joM
 hUy
 kea
-bKJ
-bKJ
+oqW
+oqW
 vzy
 nua
 iJU
@@ -68627,7 +68573,7 @@ sVI
 sVI
 sVI
 sVI
-sVI
+wFn
 sVI
 sVI
 aFv
@@ -88789,7 +88735,7 @@ xzm
 xzm
 xzm
 xzm
-xCI
+dMv
 xzm
 xzm
 xzm
@@ -89039,14 +88985,14 @@ nie
 riW
 xzm
 xzm
-xCI
+dMv
 aHj
 aHj
 aHj
 aHj
 aHj
 aHj
-dji
+fXv
 aHj
 aHj
 aHj
@@ -89056,7 +89002,7 @@ wwr
 bNo
 xgV
 xgV
-xCI
+dMv
 xzm
 xzm
 xzm
@@ -89296,7 +89242,7 @@ nie
 jWr
 aHj
 aHj
-dji
+fXv
 aHj
 eKW
 eKW
@@ -89313,13 +89259,13 @@ bgO
 bNo
 aHj
 aHj
-dji
+fXv
 aHj
 aHj
 aHj
 aHj
 aHj
-dji
+fXv
 aHj
 aHj
 aHj
@@ -92380,7 +92326,7 @@ whG
 jWr
 aHj
 aHj
-dji
+fXv
 aHj
 eKW
 eKW
@@ -92397,13 +92343,13 @@ qmv
 bNo
 aHj
 aHj
-dji
+fXv
 aHj
 aHj
 aHj
 aHj
 aHj
-dji
+fXv
 aHj
 aHj
 aHj
@@ -92637,14 +92583,14 @@ whG
 gHI
 wDL
 wDL
-ppe
+oef
 aHj
 aHj
 aHj
 aHj
 aHj
 aHj
-dji
+fXv
 xgV
 aHj
 aHj
@@ -92654,13 +92600,13 @@ ruw
 pBr
 aHj
 xgV
-ppe
+oef
 wDL
 wDL
 wDL
 wDL
 wDL
-ppe
+oef
 wDL
 wDL
 wDL
@@ -92901,7 +92847,7 @@ wDL
 wDL
 wDL
 wDL
-ppe
+oef
 wDL
 wDL
 wDL

@@ -183,6 +183,9 @@
 /obj/machinery/power/apc/syndicate //general syndicate access
 	req_access = list(ACCESS_SYNDICATE)
 
+/obj/machinery/power/apc/inteq //general inteq access
+	req_access = list(ACCESS_INTEQ)
+
 /obj/machinery/power/apc/away //general away mission access
 	req_access = list(ACCESS_AWAY_GENERAL)
 

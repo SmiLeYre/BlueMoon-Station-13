@@ -1,4 +1,3 @@
-#define TRAIT_BONDAGED				"bondaged"
 #define QUIRK_SHY					"quirk_shy"
 #define TRAIT_COMMON_PREGNANCY		"common_pregnancy"
 

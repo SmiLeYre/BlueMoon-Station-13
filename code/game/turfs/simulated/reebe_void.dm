@@ -37,7 +37,10 @@
 		else if(prob(5))
 			new /obj/structure/lattice/clockwork(src)
 
-/turf/open/indestructible/reebe_void/Enter(atom/movable/AM, atom/old_loc)
+// MODULAR_JUICY-EDIT
+// /turf/open/indestructible/reebe_void/Enter(atom/movable/AM, atom/old_loc)	// ORIGINAL
+/turf/open/indestructible/reebe_void/Enter(atom/movable/AM, atom/old_loc, no_side_effects = FALSE)
+// MODULAR_JUICY-EDIT
 	if(!..())
 		return FALSE
 	else

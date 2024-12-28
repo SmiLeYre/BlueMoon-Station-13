@@ -187,6 +187,7 @@ ooo++++++++ooymyosh/`````````````````````````````````````````````````..-:/oyddys
 				STOP_PROCESSING(SSobj, src)
 				return
 			buckled_mob.adjustOxyLoss(5)
+			buckled_mob.apply_damage(5, BRUTE, BODY_ZONE_HEAD, wound_bonus = 15)
 			if(prob(40) && buckled_mob.stat == CONSCIOUS)
 				buckled_mob.emote("gasp")
 			if(prob(20))

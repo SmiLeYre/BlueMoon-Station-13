@@ -19,6 +19,12 @@
 	for(var/mob/living/carbon/coffin_user in contents)
 		// Check for bloodfledge
 		if(isbloodfledge(coffin_user))
+			// Check for lite version
+			if (HAS_TRAIT(coffin_user, TRAIT_BLOODFLEDGE_LITE))
+				// Warn user and continue
+				to_chat(coffin_user, span_warning("Your body lacks a proper sanguine connection! [src] does not respond."))
+				continue
+
 			// Check for synthetic
 			if(coffin_user.mob_biotypes && (coffin_user.mob_biotypes & MOB_ROBOTIC))
 				// Warn user and continue
@@ -50,6 +56,11 @@
 	for(var/mob/living/carbon/coffin_user in coffin_turf.contents)
 		// Check for bloodfledge
 		if(isbloodfledge(coffin_user))
+			// Check for lite version
+			if (HAS_TRAIT(coffin_user, TRAIT_BLOODFLEDGE_LITE))
+				// Do nothing
+				continue
+
 			// Define quirk entry
 			var/datum/quirk/bloodfledge/quirk_target = locate() in coffin_user.roundstart_quirks
 

@@ -1,4 +1,4 @@
-/datum/emote/living/fart/run_emote(mob/living/user, params, type_override, intentional)
+/datum/emote/sound/human/fart/run_emote(mob/living/user, params, type_override, intentional)
 	. = ..()
 	if(!farted_on_something)
 		if(HAS_TRAIT(user, TRAIT_CLUMSY) && prob(50))

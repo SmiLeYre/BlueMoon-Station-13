@@ -7,6 +7,7 @@
 	loudness = 2
 	dna_cost = 2
 	req_stat = UNCONSCIOUS
+	gamemode_restriction_type = ANTAG_DYNAMIC
 
 //Starts healing you every second for 10 seconds.
 //Can be used whilst unconscious.

@@ -379,7 +379,7 @@
 		/obj/item/ammo_box/magazine/recharge = 4,\
 		/obj/item/storage/barricade=1)
 
-/datum/outfit/ert/sol_soldier/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
+/datum/outfit/ert/sol_soldier_support/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE, client/preference_source)
 	..()
 
 	if(visualsOnly)

@@ -18,6 +18,8 @@
 	var/loudness = 0.5 //Determines how much having this ability will affect changeling blood tests. This is averaged with other purchased abilities. Above 1, the blood will react violently and turn to ash, creating a unique message in the process. Above 2, the blood will explode when heated.
 	var/active = FALSE//used by a few powers that toggle
 
+	var/gamemode_restriction_type = ANTAG_EXTENDED|ANTAG_DYNAMIC
+
 /*
 changeling code now relies on on_purchase to grant powers.
 if you override it, MAKE SURE you call parent or it will not be usable

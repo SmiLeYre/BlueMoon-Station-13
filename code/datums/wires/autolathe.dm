@@ -2,6 +2,7 @@
 	holder_type = /obj/machinery/autolathe
 	proper_name = "Autolathe"
 	req_knowledge = JOB_SKILL_EXPERT
+	visibility_trait = TRAIT_KNOW_ENGI_WIRES // BLUEMOON ADD
 
 /datum/wires/autolathe/New(atom/holder)
 	wires = list(

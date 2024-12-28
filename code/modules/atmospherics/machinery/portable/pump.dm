@@ -42,8 +42,8 @@
 /obj/machinery/portable_atmospherics/pump/process_atmos()
 	..()
 	if(!on)
-		pump.airs[1] = null
-		pump.airs[2] = null
+		pump?.airs[1] = null
+		pump?.airs[2] = null
 		return
 
 	var/turf/T = get_turf(src)

@@ -126,7 +126,7 @@
 		set_frequency(frequency)
 
 	if(closeOtherId != null)
-		addtimer(CALLBACK(src, PROC_REF(update_other_id)), 5)
+		addtimer(CALLBACK(src, PROC_REF(update_other_id)), 5 DECISECONDS)
 	if(glass)
 		airlock_material = "glass"
 	if(security_level > AIRLOCK_SECURITY_METAL)
@@ -343,7 +343,7 @@
 			if(!justzap)
 				if(shock(user, 100))
 					justzap = TRUE
-					addtimer(VARSET_CALLBACK(src, justzap, FALSE) , 10)
+					addtimer(VARSET_CALLBACK(src, justzap, FALSE) , 1 SECONDS)
 					return
 			else
 				return
@@ -359,7 +359,7 @@
 			if(cyclelinkedairlock.operating)
 				cyclelinkedairlock.delayed_close_requested = TRUE
 			else
-				addtimer(CALLBACK(cyclelinkedairlock, PROC_REF(close)), 2)
+				addtimer(CALLBACK(cyclelinkedairlock, PROC_REF(close)), 2 DECISECONDS)
 	if(ishuman(user) && prob(5) && src.density)
 		var/mob/living/carbon/human/H = user
 		if((HAS_TRAIT(H, TRAIT_DUMB)) && Adjacent(user))
@@ -675,11 +675,12 @@
 		if("closing")
 			update_icon(AIRLOCK_CLOSING)
 		if("deny")
-			if(!machine_stat)
-				update_icon(AIRLOCK_DENY)
-				playsound(src,doorDeni,50,0,3)
-				sleep(6)
-				update_icon(AIRLOCK_CLOSED)
+			if(machine_stat)
+				return
+
+			update_icon(AIRLOCK_DENY)
+			playsound(src, doorDeni, 50, 0, 3)
+			addtimer(CALLBACK(src, TYPE_PROC_REF(/atom, update_icon), AIRLOCK_CLOSED), 6 DECISECONDS, TIMER_DELETE_ME)
 
 /obj/machinery/door/airlock/examine(mob/user)
 	. = ..()
@@ -769,15 +770,18 @@
 	return .
 
 /obj/machinery/door/airlock/attack_ai(mob/user)
-	if(!src.canAIControl(user))
-		if(src.canAIHack())
-			src.hack(user)
+	if(!canAIControl(user))
+		if(canAIHack())
+			hack(user)
 			return
+
 		else
 			to_chat(user, "<span class='warning'>Airlock AI control has been blocked with a firewall. Unable to hack.</span>")
+
 	if(obj_flags & EMAGGED)
 		to_chat(user, "<span class='warning'>Unable to interface: Airlock is unresponsive.</span>")
 		return
+
 	if(detonated)
 		to_chat(user, "<span class='warning'>Unable to interface. Airlock control panel damaged.</span>")
 		return
@@ -844,6 +848,17 @@
 		if(isElectrified())
 			if(shock(user, 100))
 				return
+	if(act_intent == INTENT_GRAB && note)
+		user.visible_message("<span class='notice'>[user] rips down [note] from [src].</span>", "<span class='notice'>You remove [note] from [src].</span>")
+		note.forceMove(user.loc)
+		user.put_in_hands(note)
+		playsound(src.loc, 'sound/items/poster_ripped.ogg', 30, 1)
+		add_fingerprint(user)
+		note.add_fingerprint(user)
+		note = null
+		update_icon()
+		return
+	
 	return ..()
 
 /obj/machinery/door/airlock/attempt_wire_interaction(mob/user)
@@ -1065,9 +1080,9 @@
 			if(obj_integrity < max_integrity)
 				if(!W.tool_start_check(user, amount=0))
 					return
-				user.visible_message("[user] чинит шлюз сваркой.", \
-								"<span class='notice'>Вы начинаете чинить шлюз...</span>", \
-								"<span class='italics'>Вы слышите звук сварки.</span>")
+				user.visible_message("[user] is welding the airlock.", \
+								"<span class='notice'>You begin repairing the airlock...</span>", \
+								"<span class='italics'>You hear welding.</span>")
 				if(W.use_tool(src, user, 40, volume=50, extra_checks = CALLBACK(src, PROC_REF(weld_checks), W, user)))
 					obj_integrity = max_integrity
 					machine_stat &= ~BROKEN
@@ -1204,7 +1219,7 @@
 		playsound(src.loc, 'sound/machines/airlockforced.ogg', 30, 1)
 
 	if(autoclose)
-		autoclose_in(normalspeed ? 150 : 15)
+		autoclose_in(normalspeed ? 15 SECONDS : 15 DECISECONDS)
 
 	if(!density)
 		return TRUE
@@ -1222,8 +1237,15 @@
 	operating = FALSE
 	if(delayed_close_requested)
 		delayed_close_requested = FALSE
-		addtimer(CALLBACK(src, PROC_REF(close)), 1)
+		addtimer(CALLBACK(src, PROC_REF(close)), 1 DECISECONDS)
 	return TRUE
+
+// BLUEMOON ADD START - ModernTG Wide Airlocks.
+/obj/machinery/door/airlock/proc/sensor_obstacle_check()
+	var/turf/our_turf = get_turf(src)
+	for(var/atom/movable/M in (our_turf.contents - src))
+		if(M.density) // something is blocking the door
+			return TRUE	// BLUEMOON ADD END
 
 
 /obj/machinery/door/airlock/close(forced=0)
@@ -1234,11 +1256,16 @@
 	if(!forced)
 		if(!hasPower() || wires.is_cut(WIRE_BOLTS))
 			return
-	if(safe)
+	/*if(safe)	// BLUEMOON REMOVAL BEGIN - ModernTG Wide Airlocks.
 		for(var/atom/movable/M in get_turf(src))
 			if(M.density && M != src) //something is blocking the door
 				autoclose_in(60)
-				return
+				return	*/	// BLUEMOON REMOVAL END
+
+	// BLUEMOON ADD START - ModernTG Wide Airlocks.
+	if(safe && sensor_obstacle_check())
+		autoclose_in(6 SECONDS)
+		return	// BLUEMOON ADD END
 
 	if(forced < 2)
 		if(obj_flags & EMAGGED)
@@ -1316,12 +1343,15 @@
 
 /obj/machinery/door/airlock/emag_act(mob/user)
 	. = ..()
+
 	if(operating || !density || !hasPower() || obj_flags & EMAGGED)
 		return
+
 	operating = TRUE
 	update_icon(AIRLOCK_EMAG, 1)
 	log_admin("[key_name(usr)] emagged [src] at [AREACOORD(src)]")
-	addtimer(CALLBACK(src, PROC_REF(open_sesame)), 6)
+	addtimer(CALLBACK(src, PROC_REF(open_sesame)), 6 DECISECONDS, TIMER_DELETE_ME)
+
 	return TRUE
 
 /obj/machinery/door/airlock/proc/open_sesame()

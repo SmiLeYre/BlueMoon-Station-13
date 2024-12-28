@@ -19990,7 +19990,7 @@
 	dir = 4
 	},
 /turf/open/space/basic,
-/area/maintenance/department/eva)
+/area/space/nearstation)
 "aZA" = (
 /obj/machinery/modular_computer/console/preset/id{
 	dir = 8
@@ -58976,7 +58976,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/airless,
-/area/engineering/atmos)
+/area/space/nearstation)
 "cMj" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -59230,7 +59230,7 @@
 /obj/machinery/atmospherics/pipe/simple/orange/visible,
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
-/area/engineering/atmos)
+/area/space/nearstation)
 "cMQ" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/manifold/yellow/visible{
@@ -64191,7 +64191,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/space/basic,
-/area/engineering/secure_construction)
+/area/space/nearstation)
 "jkc" = (
 /turf/closed/wall,
 /area/security/prison/upper)
@@ -64303,7 +64303,7 @@
 /obj/structure/lattice/catwalk,
 /obj/structure/plasticflaps,
 /obj/structure/fans/tiny,
-/turf/open/space/basic,
+/turf/open/floor/plasteel,
 /area/engineering/secure_construction)
 "jur" = (
 /obj/effect/turf_decal/tile/yellow{
@@ -66299,10 +66299,6 @@
 /obj/effect/turf_decal/bot,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
-"nOP" = (
-/obj/structure/lattice/catwalk,
-/turf/open/space/basic,
-/area/engineering/secure_construction)
 "nPD" = (
 /obj/effect/turf_decal/stripes/end{
 	dir = 8
@@ -66578,7 +66574,7 @@
 	name = "\improper KEEP CLEAR: HIGH SPEED DELIVERIES"
 	},
 /turf/closed/wall/r_wall,
-/area/space/nearstation)
+/area/engineering/secure_construction)
 "oHI" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 8
@@ -67434,7 +67430,7 @@
 	icon_state = "4-8"
 	},
 /turf/open/space/basic,
-/area/engineering/secure_construction)
+/area/space/nearstation)
 "quQ" = (
 /turf/closed/wall,
 /area/medical/psychology)
@@ -125140,17 +125136,17 @@ aaa
 aaa
 aaa
 aaa
-abp
-nOP
-nOP
-nOP
-nOP
-nOP
+aRA
+aWj
+aWj
+aWj
+aWj
+aWj
 jjm
-nOP
-nOP
-nOP
-nOP
+aWj
+aWj
+aWj
+aWj
 aRA
 aaa
 aaa
@@ -125398,7 +125394,7 @@ jMl
 aaa
 aaa
 oGg
-nOP
+aWj
 cNQ
 dMI
 tIU
@@ -125654,17 +125650,17 @@ aaa
 aaa
 aaa
 aaa
-abp
-nOP
-nOP
-nOP
-nOP
-nOP
+aRA
+aWj
+aWj
+aWj
+aWj
+aWj
 jjm
-nOP
-nOP
-nOP
-nOP
+aWj
+aWj
+aWj
+aWj
 aRA
 aaa
 aaa

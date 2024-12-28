@@ -1694,6 +1694,13 @@ GLOBAL_LIST(objective_choices)
 		special_role = ROLE_CHANGELING
 	return C
 
+/datum/mind/proc/make_XenoChangeling()
+	var/datum/antagonist/changeling/C = has_antag_datum(/datum/antagonist/changeling/xenobio)
+	if(!C)
+		C = add_antag_datum(/datum/antagonist/changeling/xenobio)
+		special_role = ROLE_CHANGELING
+	return C
+
 /datum/mind/proc/make_Wizard()
 	if(!has_antag_datum(/datum/antagonist/wizard))
 		special_role = ROLE_WIZARD

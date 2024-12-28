@@ -40,9 +40,9 @@ $include entries/urls.txt
 $include entries/vote.txt
 
 $include plushies/defines.txt
-# Special Sandstorm configs
-$include sandstorm/config.txt
-$include sandstorm/balance.txt
+
+# Sandstorm configs
+$include sandstorm/includes.txt
 
 # Special SPLURT configs
 $include splurt/fetish_content.txt
@@ -56,4 +56,5 @@ $include splurt/donator.txt
 $include splurt/autocryo.txt
 
 # Bluemoon stuff!
-$include entries/bluemoon.txt
+$include bluemoon/bluemoon.txt
+$include bluemoon/discord.txt

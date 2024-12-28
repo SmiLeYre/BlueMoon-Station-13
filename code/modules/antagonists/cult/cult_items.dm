@@ -103,7 +103,6 @@
 			to_chat(user, "<span class='userdanger'>A horrible force yanks at your arm!</span>")
 			user.emote("realagony")
 			user.apply_damage(30, BRUTE, pick(BODY_ZONE_L_ARM, BODY_ZONE_R_ARM))
-			user.emote("realagony")
 
 /obj/item/cult_bastard
 	name = "Bloody Bastard Sword"
@@ -1202,7 +1201,7 @@
 				T.visible_message("<span class='warning'>The sheer force from [P] shatters the mirror shield!</span>")
 				new /obj/effect/temp_visual/cult/sparks(T)
 				playsound(T, 'sound/effects/glassbr3.ogg', 100)
-				owner.DefaultCombatKnockdown(25)
+				owner.Paralyze(25) //BULEMOON REBALANCE Смена обычного падения на паралич.
 				qdel(src)
 				return BLOCK_NONE
 		. = ..()

@@ -6,6 +6,14 @@
 	var/datum/action/leg_sweep/legsweep = new/datum/action/leg_sweep()
 	var/datum/action/lung_punch/lungpunch = new/datum/action/lung_punch()
 
+/datum/martial_art/krav_maga/restricted
+	var/list/valid_areas = list()
+
+/datum/martial_art/krav_maga/restricted/can_use(mob/living/owner) //this is used to make Krav Maga only work in specific area
+	if(!is_type_in_list(get_area(owner), valid_areas))
+		return FALSE
+	return ..()
+
 /datum/action/neck_chop
 	name = "Neck Chop - Injures the neck, stopping the victim from speaking for a while."
 	icon_icon = 'icons/mob/actions/actions_items.dmi'
@@ -81,6 +89,8 @@
 	lungpunch.Remove(H)
 
 /datum/martial_art/krav_maga/proc/check_streak(var/mob/living/carbon/human/A, var/mob/living/carbon/human/D)
+	if(!can_use(A))
+		return FALSE
 	switch(streak)
 		if("neck_chop")
 			streak = ""
@@ -97,6 +107,8 @@
 	return FALSE
 
 /datum/martial_art/krav_maga/proc/leg_sweep(mob/living/carbon/human/A, mob/living/carbon/human/D)
+	if(!can_use(A))
+		return FALSE
 	var/obj/item/bodypart/affecting = D.get_bodypart(BODY_ZONE_CHEST)
 	var/armor_block = D.run_armor_check(affecting, MELEE)
 	var/damage = (damage_roll(A,D)*2 + 25)
@@ -111,6 +123,8 @@
 	return TRUE
 
 /datum/martial_art/krav_maga/proc/quick_choke(var/mob/living/carbon/human/A, var/mob/living/carbon/human/D)//is actually lung punch
+	if(!can_use(A))
+		return FALSE
 	var/damage = damage_roll(A,D)
 	D.visible_message("<span class='warning'>[A] pounds [D] on the chest!</span>", \
 				  	"<span class='userdanger'>[A] slams your chest! You can't breathe!</span>")
@@ -122,6 +136,8 @@
 	return TRUE
 
 /datum/martial_art/krav_maga/proc/neck_chop(var/mob/living/carbon/human/A, var/mob/living/carbon/human/D)
+	if(!can_use(A))
+		return FALSE
 	var/damage = (damage_roll(A,D)*0.5)
 	D.visible_message("<span class='warning'>[A] karate chops [D]'s neck!</span>", \
 				  	"<span class='userdanger'>[A] karate chops your neck, rendering you unable to speak!</span>")
@@ -133,12 +149,16 @@
 	return TRUE
 
 /datum/martial_art/krav_maga/grab_act(var/mob/living/carbon/human/A, var/mob/living/carbon/human/D)
+	if(!can_use(A))
+		return FALSE
 	if(check_streak(A,D))
 		return TRUE
 	log_combat(A, D, "grabbed (Krav Maga)")
 	..()
 
 /datum/martial_art/krav_maga/harm_act(var/mob/living/carbon/human/A, var/mob/living/carbon/human/D)
+	if(!can_use(A))
+		return FALSE
 	var/obj/item/bodypart/affecting = D.get_bodypart(ran_zone(A.zone_selected))
 	var/armor_block = D.run_armor_check(affecting, MELEE)
 	if(check_streak(A,D))
@@ -163,6 +183,8 @@
 	return TRUE
 
 /datum/martial_art/krav_maga/disarm_act(mob/living/carbon/human/A, mob/living/carbon/human/D)
+	if(!can_use(A))
+		return FALSE
 	if(check_streak(A,D))
 		return TRUE
 	var/obj/item/bodypart/affecting = D.get_bodypart(ran_zone(A.zone_selected))

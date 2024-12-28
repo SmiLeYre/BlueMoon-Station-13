@@ -455,6 +455,20 @@
 	center = TRUE
 	color_src = MUTCOLORS
 
+/datum/sprite_accessory/tails/mam_tails/takahiro_kitsune
+	name = "Takahiro Kitsune Tails"
+	icon_state = "7sune"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/takahiro_kitsune
+	name = "Takahiro Kitsune Tails"
+	icon_state = "7sune"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/tails/human/nightstalker
 	name = "Nightstalker"
 	icon_state = "nightstalker"
@@ -514,3 +528,6 @@
 	matrixed_sections = MATRIX_RED_BLUE
 	icon = 'modular_splurt/icons/mob/mam_tails.dmi'
 	relevant_layers = list(BODY_BEHIND_LAYER, BODY_FRONT_LAYER)
+
+
+

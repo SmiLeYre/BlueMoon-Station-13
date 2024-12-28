@@ -47,11 +47,9 @@
 
 /obj/effect/landmark/xmastree/Initialize(mapload)
 	..()
-	if((NEW_YEAR in SSevents.holidays) && christmas_tree) // Я запрещаю вам отмену Нового Года.
+	if((FESTIVE_SEASON in SSevents.holidays) && festive_tree)
 		new christmas_tree(get_turf(src))
-	if((CHRISTMAS in SSevents.holidays)  && christmas_tree) // Я запрещаю вам отмену Нового Года.
-		new christmas_tree(get_turf(src))
-	else if((FESTIVE_SEASON in SSevents.holidays) && festive_tree)
+	else if(((NEW_YEAR in SSevents.holidays) && christmas_tree) || ((CHRISTMAS in SSevents.holidays)  && christmas_tree))
 		new festive_tree(get_turf(src))
 	return INITIALIZE_HINT_QDEL
 

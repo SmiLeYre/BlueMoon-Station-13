@@ -4,7 +4,7 @@
 /datum/supply_pack/security/armory/riotshotgun
 	name = "Riot Shotguns Crate"
 	desc = "Peace is broken, time to quell a riot. Contains 3 NT made Riot control shotguns and assoiated ammo. Also comes with three shotgun bandoliers . Requires Armory access to open."
-	cost = 8000
+	cost = 6000 //BLUEMOON REBALANCE 8000 --> 6000
 	contains = list(/obj/item/gun/ballistic/shotgun/riot,
 					/obj/item/gun/ballistic/shotgun/riot,
 					/obj/item/gun/ballistic/shotgun/riot,

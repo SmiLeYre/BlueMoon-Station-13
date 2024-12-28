@@ -78,3 +78,12 @@
 	chameleon_action.chameleon_type = /obj/item/clothing/underwear/briefs
 	chameleon_action.chameleon_name = "Panties"
 	chameleon_action.initialize_disguises()
+	if(icon_state == "portalpanties")
+		body_parts_covered = null
+
+/obj/item/clothing/underwear/briefs/panties/portalpanties/update_icon()
+	if(icon_state == "portalpanties")
+		body_parts_covered = null
+	else
+		body_parts_covered = GROIN
+	..()

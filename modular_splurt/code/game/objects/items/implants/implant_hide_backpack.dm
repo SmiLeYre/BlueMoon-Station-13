@@ -39,15 +39,22 @@
 	// Is this being used?
 	var/ability_active = TRUE
 
+	// Cooldown variables
+	var/cooldown = 1 SECONDS
+	var/last_use = 0
+
+	// Effect used when toggling
+	var/obj/effect/temp_visual/effect_toggle = /obj/effect/temp_visual/telekinesis
+
 // Runs on gaining the ability
-/datum/action/item_action/hide_backpack/Grant(mob/user)
+/datum/action/item_action/hide_backpack/Grant(mob/grant_to)
 	. = ..()
 
 	// Add the trait
 	adjust_trait(TRUE)
 
 // Runs on losing the ability
-/datum/action/item_action/hide_backpack/Remove(mob/user)
+/datum/action/item_action/hide_backpack/Remove(mob/remove_from)
 	// Remove the trait (must be done before removal so that owner still exists)
 	adjust_trait(FALSE)
 	return ..()
@@ -70,9 +77,18 @@
 	action_owner.update_inv_back()
 
 // Runs on toggling the ability
-/datum/action/item_action/hide_backpack/Trigger()
+/datum/action/item_action/hide_backpack/Trigger(trigger_flags)
+	// Check for cooldown
+	if(last_use + cooldown > world.time)
+		// Warn user and return
+		to_chat(owner, span_warning("The Storage Concealment implant is still recharging!"))
+		return
+
 	// Set owner
 	var/mob/living/carbon/human/action_owner = owner
+
+	// Set last use time
+	last_use = world.time
 
 	// Update active status
 	ability_active = !ability_active
@@ -93,15 +109,37 @@
 	// Update icon state
 	UpdateButtons()
 
+	// Define back item slot
+	var/obj/item/item_backpack = action_owner.get_item_by_slot(ITEM_SLOT_BACK)
+
+	// Check if a back item exists
+	if(!istype(item_backpack))
+		// This is not a valid back item!
+		// Alert user
+		to_chat(action_owner, span_notice("You toggle the Storage Concealment implant, but nothing seems to happen. Try wearing something on your back."))
+
+		// Exit without effect or message
+		return
+
 	// Display fake sparks to match flavor text
-	do_fake_sparks(2,FALSE,action_owner)
+	// Replaced by new temporary effect
+	//do_fake_sparks(2,FALSE,action_owner)
+
+	// Define mob location
+	var/current_turf = get_turf(action_owner)
+
+	// Create particle effect
+	spawn_atom_to_turf(effect_toggle, current_turf, 1, FALSE)
+
+	// Play sound
+	playsound(current_turf, 'sound/effects/chairwhoosh.ogg', 50, 1)
 
 	// Set toggle text based on active state
 	var/implant_toggle_text = (!ability_active ? "discernible" : "imperceptible")
 	var/implant_toggle_text_2 = (!ability_active ? "dis" : "") // Engage or Disengage
 
 	// Display a chat message
-	action_owner.visible_message("<span class='notice'>The equipment worn on [action_owner]'s back-region flickers momentarily, before becoming [implant_toggle_text].</span>", "<span class='notice'>You [implant_toggle_text_2]engage the Storage Concealment Implant, causing your backpack to be [implant_toggle_text].</span>")
+	action_owner.visible_message(span_notice("[item_backpack] worn by [action_owner] flickers momentarily, before becoming [implant_toggle_text]."), span_notice("You [implant_toggle_text_2]engage the Storage Concealment implant, causing [item_backpack] to be [implant_toggle_text]."))
 
 /*
  * Implant items

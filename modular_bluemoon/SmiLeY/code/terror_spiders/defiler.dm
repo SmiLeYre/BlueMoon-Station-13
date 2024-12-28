@@ -14,12 +14,14 @@
 	icon_state = "terror_white"
 	icon_living = "terror_white"
 	icon_dead = "terror_white_dead"
-	maxHealth = 200
-	health = 200
+	maxHealth = 220
+	health = 220
 	death_sound = 'sound/creatures/terrorspiders/death2.ogg'
 	speed = -0.3
 	melee_damage_lower = 1
 	melee_damage_upper = 1
+	obj_damage = 50
+	wall_destroy_hardness = 40
 	spider_opens_doors = 2
 	spider_tier = TS_TIER_3
 	gender = MALE
@@ -53,7 +55,7 @@
 		new /obj/item/organ/body_egg/terror_eggs(L)
 		visible_message("<span class='danger'>[src] buries its long fangs deep into the [inject_target] of [target]!</span>")
 	else
-		if(prob(20))
+		if(prob(15))
 			new /obj/item/organ/body_egg/terror_eggs(L)
 			visible_message("<span class='danger'>[src] pierces armour and buries its long fangs deep into the [inject_target] of [target]!</span>")
 	if(!ckey && !IsTSInfected(L))

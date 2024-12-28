@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\games.dm'
 /obj/machinery/vending/games
 	name = "\improper Good Clean Fun"
 	desc = "Vends things that the Captain and Head of Personnel are probably not going to appreciate you fiddling with instead of your job..."
@@ -17,8 +18,9 @@
 					/obj/item/canvas/twentythreeXtwentythree = 3,
 					/obj/item/toy/crayon/spraycan = 6,
 					/obj/item/storage/crayons = 3,
-					/obj/item/dyespray=3,
-					/obj/item/toy/prizeball/therapy=6,
+					/obj/item/dyespray = 3,
+					/obj/item/toy/prizeball/therapy = 6,
+					/obj/item/tvcamera = 3,
 					)
 	contraband = list(/obj/item/dice/fudge = 9,
 					/obj/item/cardpack/syndicate = 10)
@@ -33,3 +35,4 @@
 /obj/item/vending_refill/games
 	machine_name = "\improper Good Clean Fun"
 	icon_state = "refill_games"
+*/

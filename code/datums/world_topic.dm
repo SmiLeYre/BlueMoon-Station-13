@@ -1,3 +1,4 @@
+/* JUST NO, this topic replaced with better one
 // SETUP
 
 /proc/TopicHandlers()
@@ -26,7 +27,7 @@
 	var/require_comms_key = FALSE
 
 /datum/world_topic/proc/TryRun(list/input, addr)
-	key_valid = config && (CONFIG_GET(string/comms_key) == input["key"])
+	key_valid = (CONFIG_GET(string/comms_key) == input["key"]) && CONFIG_GET(string/comms_key) && input["key"]
 	if(require_comms_key && !key_valid)
 		return "Bad Key"
 	input -= "key"
@@ -309,3 +310,4 @@
 			))
 
 	return json_encode(data)
+*/

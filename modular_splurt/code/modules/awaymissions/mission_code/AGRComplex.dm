@@ -1391,6 +1391,7 @@
 	roundstart = FALSE
 	death = FALSE
 	random = TRUE
+	loadout_enabled = TRUE
 	mob_species = /datum/species/human
 	short_desc = "Вы были сотрудником горнодобывающего предприятия Nanotrasen, но оказались обращены Культом Ратвара."
 	flavour_text = "Прошло несколько месяцев с тех пор, как осела пыль. \
@@ -1425,6 +1426,7 @@
 	roundstart = FALSE
 	death = FALSE
 	random = TRUE
+	loadout_enabled = TRUE
 	mob_species = /datum/species/human
 	short_desc = "Вы были сотрудником горнодобывающего предприятия Nanotrasen, но оказались обращены Культом Нар'Си."
 	flavour_text = "Прошло несколько месяцев с тех пор, как осела пыль. \

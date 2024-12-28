@@ -28,20 +28,26 @@
 		to_chat(user, "<span class='danger'>The Bluespace interfaces of the two devices catastrophically malfunction!</span>")
 		qdel(W)
 		playsound(loccheck,'sound/effects/supermatter.ogg', 200, 1)
-		user.gib(TRUE, TRUE, TRUE)
-		for(var/turf/T in range(1,loccheck))
-			if(istype(T, /turf/open/space/transit))
-				continue
-			for(var/mob/living/M in T)
-				if(M.movement_type & FLYING)
-					M.visible_message("<span class='danger'>The bluespace collapse crushes the air towards it, pulling [M] towards the ground...</span>")
-					M.DefaultCombatKnockdown(5, TRUE, TRUE)		//Overrides stun absorbs.
-			T.TerraformTurf(/turf/open/chasm/magic, /turf/open/chasm/magic)
+		// user.gib(TRUE, TRUE, TRUE)
+
+		// for(var/turf/T in range(1,loccheck))
+		// 	if(istype(T, /turf/open/space/transit))
+		// 		continue
+		// 	for(var/mob/living/M in T)
+		// 		if(M.movement_type & FLYING)
+		// 			M.visible_message("<span class='danger'>The bluespace collapse crushes the air towards it, pulling [M] towards the ground...</span>")
+		// 			M.DefaultCombatKnockdown(5, TRUE, TRUE)		//Overrides stun absorbs.
+		// 	T.TerraformTurf(/turf/open/chasm/magic, /turf/open/chasm/magic)
+
+		var/obj/singularity/gravitational/singulo = new /obj/singularity/gravitational (get_turf(A)) // Теперь БОХ в БОХ - это Сингулярность.
+		singulo.energy = 300 //should make it a bit bigger~
+
 		for (var/obj/structure/ladder/unbreakable/binary/ladder in GLOB.ladders)
 			ladder.ActivateAlmonds()
 		message_admins("[ADMIN_LOOKUPFLW(user)] detonated a bag of holding at [ADMIN_VERBOSEJMP(loccheck)].")
 		log_game("[key_name(user)] detonated a bag of holding at [loc_name(loccheck)].")
 		qdel(A)
+		singulo.process()
 		return
 	. = ..()
 

@@ -73,7 +73,7 @@
 
 /datum/mood_event/delam //SM delamination
 	description = span_boldwarning("Эти чертовы инженеры вообще ничего умеют...\n")
-	mood_change = -2
+	mood_change = -8
 	timeout = 4 MINUTES
 
 /datum/mood_event/depression

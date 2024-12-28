@@ -6,7 +6,7 @@
 	ears = /obj/item/radio/headset/abductor
 
 /datum/outfit/abductor/proc/link_to_console(mob/living/carbon/human/H, team_number)
-	var/datum/antagonist/abductor/A = H.mind.has_antag_datum(/datum/antagonist/abductor)
+	var/datum/antagonist/abductor/A = H?.mind?.has_antag_datum(/datum/antagonist/abductor)
 	if(!team_number && A)
 		team_number = A.team.team_number
 	if(!team_number)
@@ -36,6 +36,7 @@
 	suit = /obj/item/clothing/suit/armor/abductor/vest
 	suit_store = /obj/item/abductor/baton
 	belt = /obj/item/storage/belt/military/abductor/full
+	gloves = /obj/item/clothing/gloves/combat
 
 	backpack_contents = list(
 		/obj/item/gun/energy/alien = 1,
@@ -44,6 +45,7 @@
 
 /datum/outfit/abductor/scientist
 	name = "Abductor Scientist"
+	gloves = /obj/item/clothing/gloves/color/latex/nitrile/infiltrator
 
 	backpack_contents = list(
 		/obj/item/abductor/gizmo = 1

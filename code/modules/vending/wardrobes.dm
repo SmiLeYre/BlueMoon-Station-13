@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\wardrobes.dm'
 /obj/item/vending_refill/wardrobe
 	icon_state = "refill_clothes"
 
@@ -227,7 +228,7 @@
 	name = "RoboDrobe"
 	desc = "A vending machine designed to dispense clothing known only to roboticists."
 	icon_state = "robodrobe"
-	product_slogans = "Ты превращаешь меня в TRUE, используй определения!;1000011110010000110000100010000101000100110010000010000110101100001100011000011000010000111011"
+	product_slogans = "Ты превращаешь меня в TRUE, используй определения!;11010000 10111100 11010000 10110000 11010001 10000010 11010001 10001100 100000 11010000 10110101 11010000 10110001 11010000 10110000 11010000 10111011"
 	vend_reply = "Спасибо за использование RoboDrobe!"
 	products = list(/obj/item/clothing/glasses/hud/diagnostic = 3,
 					/obj/item/stack/medical/nanogel = 5,
@@ -413,6 +414,7 @@
 					/obj/item/storage/belt/janitor = 2,
 					/obj/item/screwdriver = 2,
 					/obj/item/clothing/mask/balaclava/breath/redscarf/purplescarf = 2,
+					/obj/item/t_scanner/dirt_scanner = 2,
 					/obj/item/stack/cable_coil/random = 4)
 	refill_canister = /obj/item/vending_refill/wardrobe/jani_wardrobe
 	default_price = PRICE_CHEAP
@@ -787,7 +789,7 @@
 		/obj/item/clothing/head/maid/syndicate/civil = 5,
 		/obj/item/clothing/head/helmet/swat/ds/civil = 5,
 		/obj/item/clothing/head/hats/warden/syndicate/civil = 5,
-		/obj/item/card/id/syndicate/one_access_copy = 5
+		/obj/item/card/id/callsign = 5
 	)
 	refill_canister = /obj/item/vending_refill/wardrobe/syndie_wardrobe/civil
 	light_color = COLOR_MOSTLY_PURE_RED
@@ -795,3 +797,4 @@
 /obj/item/vending_refill/wardrobe/syndie_wardrobe/civil
 	machine_name = "Civilian SynDrobe"
 	icon_state = "refill_donksoft"
+*/

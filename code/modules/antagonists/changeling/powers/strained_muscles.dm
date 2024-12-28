@@ -10,6 +10,7 @@
 	req_human = TRUE
 	var/stacks = 0 //Increments every 5 seconds; damage increases over time
 	active = FALSE //Whether or not you are a hedgehog
+	gamemode_restriction_type = ANTAG_DYNAMIC
 
 /datum/action/changeling/strained_muscles/sting_action(mob/living/carbon/user)
 	..()

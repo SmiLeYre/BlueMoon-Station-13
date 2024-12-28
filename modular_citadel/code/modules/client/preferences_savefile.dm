@@ -20,14 +20,6 @@
 	S["lust_tolerance"] 				>> lust_tolerance
 	S["sexual_potency"]					>> sexual_potency
 
-	S["alt_titles_preferences"]			>> alt_titles_preferences
-	alt_titles_preferences = SANITIZE_LIST(alt_titles_preferences)
-	if(SSjob)
-		for(var/datum/job/job in sort_list(SSjob.occupations, GLOBAL_PROC_REF(cmp_job_display_asc)))
-			if(alt_titles_preferences[job.title])
-				if(!(alt_titles_preferences[job.title] in job.alt_titles))
-					alt_titles_preferences.Remove(job.title)
-
 	erppref = sanitize_inlist(S["erp_pref"], GLOB.lewd_prefs_choices, "Ask")
 	nonconpref = sanitize_inlist(S["noncon_pref"], GLOB.lewd_prefs_choices, "Ask")
 	vorepref = sanitize_inlist(S["vore_pref"], GLOB.lewd_prefs_choices, "Ask")
@@ -84,7 +76,6 @@
 	WRITE_FILE(S["extreme_harm"], extremeharm)
 	WRITE_FILE(S["enable_personal_chat_color"], enable_personal_chat_color)
 	WRITE_FILE(S["personal_chat_color"], personal_chat_color)
-	WRITE_FILE(S["alt_titles_preferences"], alt_titles_preferences)
 	WRITE_FILE(S["lust_tolerance"], lust_tolerance)
 	WRITE_FILE(S["sexual_potency"], sexual_potency)
 	WRITE_FILE(S["silicon_lawset"], silicon_lawset)

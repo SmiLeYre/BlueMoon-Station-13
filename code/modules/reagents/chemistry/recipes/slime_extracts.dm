@@ -12,7 +12,7 @@
 
 /datum/chemical_reaction/slime/proc/delete_extract(datum/reagents/holder)
 	var/obj/item/slime_extract/M = holder.my_atom
-	if(M.Uses <= 0 && !results.len) //if the slime doesn't output chemicals
+	if(M?.Uses <= 0 && !results.len) //if the slime doesn't output chemicals //	BLUEMOON EDIT: TODO:runtime
 		qdel(M)
 
 //Grey
@@ -119,6 +119,13 @@
 
 /datum/chemical_reaction/slime/slimemobspawn/on_reaction(datum/reagents/holder)
 	var/turf/T = get_turf(holder.my_atom)
+	var/lastkey = holder.my_atom.fingerprintslast
+	var/touch_msg = "N/A"
+	if(lastkey)
+		var/mob/toucher = get_mob_by_key(lastkey)
+		touch_msg = "[ADMIN_LOOKUPFLW(toucher)]."
+	message_admins("Реакция Золотого Слайма (наплыв мобов) началась в [ADMIN_VERBOSEJMP(T)]. Последний отпечаток: [touch_msg]")
+	log_game("Реакция Золотого Слайма (наплыв мобов) началась в [AREACOORD(T)]. Последний отпечаток: [lastkey ? lastkey : "N/A"].")
 	summon_mobs(holder, T)
 	var/obj/item/slime_extract/M = holder.my_atom
 	deltimer(M.qdel_timer)
@@ -579,7 +586,7 @@
 	var/turf/T = get_turf(holder.my_atom)
 	new /obj/effect/timestop(T, null, null, null)
 	if(istype(extract))
-		if(extract.Uses > 0)
+		if(extract?.Uses > 0) //	BLUEMOON EDIT: TODO:runtime
 			var/mob/lastheld = get_mob_by_key(holder.my_atom.fingerprintslast)
 			if(lastheld && !lastheld.equip_to_slot_if_possible(extract, ITEM_SLOT_HANDS, disable_warning = TRUE))
 				extract.forceMove(get_turf(lastheld))

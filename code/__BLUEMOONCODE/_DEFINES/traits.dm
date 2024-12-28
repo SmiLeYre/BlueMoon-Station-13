@@ -11,6 +11,7 @@
 #define TRAIT_LEWD_JOB						"lewd_job"
 #define TRAIT_LEWD_SUMMON					"lewd_summon"
 #define TRAIT_LEWD_SUMMONED					"lewd_summoned"
+#define TRAIT_SPIKY							"spiky"
 // Отдельные наименования для квирков, чтобы не повторять их в настройках
 #define BLUEMOON_TRAIT_NAME_SHRIEK				"Крикун"
 

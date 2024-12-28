@@ -67,6 +67,34 @@
 /obj/effect/turf_decal/bluemoon_decals/enclave/top/right
 	icon_state = "e3,3"
 
+//SOLGOV//
+/obj/effect/turf_decal/solgov/all
+	icon_state = "top-left-all"
+
+/obj/effect/turf_decal/solgov/all/top
+	icon_state = "top-center-all"
+
+/obj/effect/turf_decal/solgov/all/top_right
+	icon_state = "top-right-all"
+
+/obj/effect/turf_decal/solgov/all/center_left
+	icon_state = "center-left-all"
+
+/obj/effect/turf_decal/solgov/all/center
+	icon_state = "center-all"
+
+/obj/effect/turf_decal/solgov/all/center_right
+	icon_state = "center-right-all"
+
+/obj/effect/turf_decal/solgov/all/bottom_left
+	icon_state = "bottom-left-all"
+
+/obj/effect/turf_decal/solgov/all/bottom_center
+	icon_state = "bottom-center-all"
+
+/obj/effect/turf_decal/solgov/all/bottom_right
+	icon_state = "bottom-right-all"
+
 ///Departments///
 /obj/effect/turf_decal/bluemoon_decals/departments/bridge
 	icon_state = "bridge"

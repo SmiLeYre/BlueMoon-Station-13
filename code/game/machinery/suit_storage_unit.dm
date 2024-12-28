@@ -192,6 +192,12 @@
 	helmet_type = /obj/item/clothing/head/radiation
 	storage_type = /obj/item/geiger_counter
 
+/obj/machinery/suit_storage_unit/sol_combat
+	suit_type = /obj/item/clothing/suit/space/hardsuit/ert/alert/sol
+
+/obj/machinery/suit_storage_unit/sol_combat/elite
+	suit_type = /obj/item/clothing/suit/space/hardsuit/ert/alert/sol/adv
+
 /obj/machinery/suit_storage_unit/open
 	state_open = TRUE
 	density = FALSE

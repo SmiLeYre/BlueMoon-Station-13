@@ -38,6 +38,8 @@
 	Radio = new /obj/item/radio(src)
 	Radio.listening = 0
 	Radio.set_frequency(FREQ_ENGINEERING)
+	if(anchored)
+		connect_to_network()
 
 /obj/machinery/power/rad_collector/Destroy()
 	QDEL_NULL(Radio)
@@ -177,6 +179,12 @@
 	if(loaded_tank)
 		loaded_tank.analyzer_act(user, I)
 	return TRUE
+
+/obj/machinery/power/rad_collector/return_analyzable_air()
+	if(loaded_tank)
+		return loaded_tank.return_analyzable_air()
+	else
+		return null
 
 /obj/machinery/power/rad_collector/examine(mob/user)
 	. = ..()

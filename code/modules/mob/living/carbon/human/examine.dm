@@ -23,7 +23,12 @@
 		var/obj/item/clothing/neck/petcollar/collar = wear_neck
 		if(collar.tagname)
 			collar_tagname = " \[[collar.tagname]\]"
-	. = list("<span class='info'>Это - <EM>[!obscure_name ? name : "Неизвестный"][collar_tagname]</EM>!")
+	var/id_card_callsign_name = ""
+	if(istype(wear_id?.GetID(), /obj/item/card/id/callsign))
+		var/obj/item/card/id/callsign/callsign_id = wear_id?.GetID()
+		if(callsign_id.callsign)
+			id_card_callsign_name = " \[[callsign_id.callsign]\]"
+	. = list("<span class='info'>Это - <EM>[!obscure_name ? name : "Неизвестный"][collar_tagname][id_card_callsign_name]</EM>!")
 	if(skipface || get_visible_name() == "Unknown")
 		. += "Вы не можете разобрать, к какому виду относится находящееся перед вами существо."
 	else
@@ -216,7 +221,8 @@ BLUEMOON - mechanical_erp_verbs_examine - REMOVAL END*/
 	for(var/obj/item/organ/genital/G in internal_organs)
 		if(istype(G) && G.is_exposed())
 			if(CHECK_BITFIELD(G.genital_flags, GENITAL_CHASTENED))
-				. += span_lewd("[t_on] носит БДСМ-клетку. БДСМ-клетка покрывает [G.name].")
+				var/obj/item/genital_equipment/chastity_cage/cage = locate(/obj/item/genital_equipment/chastity_cage) in G.contents
+				. += span_lewd("[t_on] носит <b>[cage?.name || "БДСМ-клетку"]</b>. БДСМ-клетка покрывает [G.name].")
 	//
 	if(covered_in_cum)
 		. += "<span style='color:["#FFFFFF"]';>[t_on] измазан[t_a] свежими половыми выделениями...</span>\n" //"Вы чувствуете, как от [t_ego] тела пахнет <b>'<span style='color:[cummies.color]';>[cummies.name]</span>'</b>..."

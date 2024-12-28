@@ -1,4 +1,4 @@
-#define SYNDICATE_CHALLENGE_TIMER 9000	// 15 minutes
+#define SYNDICATE_CHALLENGE_TIMER 17500 // 20 minutes
 
 /obj/machinery/computer/shuttle/syndicate
 	name = "InteQ shuttle terminal"
@@ -32,19 +32,19 @@
 				to_chat(usr, "<span class='warning'>Вы объявили станции Войну! Вы должны прождать [DisplayTimeText(SYNDICATE_CHALLENGE_TIMER - world.time)] перед началом атаки.</span>")
 				return
 			board.moved = TRUE
-			if(board?.challenge && board.moved == TRUE)
-				war_music()
+			// if(board?.challenge && board.moved == TRUE)
+			// 	war_music()
 	return ..()
 
-/obj/machinery/computer/shuttle/syndicate/proc/war_music()
-	var/static/musiclimit = 0
-	for(var/mob/H in GLOB.player_list)
-		if(!(H.client))
-			continue
-		if(musiclimit >= 1)
-			return
-		SEND_SOUND(H, sound('modular_bluemoon/SmiLeY/sounds/Nuclear_Operations.ogg'))
-		musiclimit++
+// /obj/machinery/computer/shuttle/syndicate/proc/war_music()
+// 	var/static/musiclimit = 0
+// 	for(var/mob/H in GLOB.player_list)
+// 		if(!(H.client))
+// 			continue
+// 		if(musiclimit >= 1)
+// 			return
+// 		SEND_SOUND(H, sound('modular_bluemoon/SmiLeY/sounds/Nuclear_Operations.ogg'))
+// 		musiclimit++
 
 /obj/machinery/computer/shuttle/syndicate/recall
 	name = "InteQ shuttle recall terminal"

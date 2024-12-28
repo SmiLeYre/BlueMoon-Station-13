@@ -405,6 +405,29 @@
 					M.Knockdown(60)//STOP TOUCHING ME! For those spam head pat individuals
 					friendly_check = FALSE
 
+			//BLUTEMOON ADD START (TRAIT_SPIKY)
+
+			else if(HAS_TRAIT(H, TRAIT_SPIKY))
+				if(M.gloves) // поглады в перчатках не наносят урон, но сообщение чуть-чуть отличается
+					M.visible_message("<span class='notice'><b>[M]</b> похлопывает <b>[src]</b> по колючей голове рукой в перчатке!</span>", \
+								"<span class='notice'>Ты гладишь <b>[src]</b> по голове, не боясь уколоться!</span>", target = src,
+								target_message = "<span class='boldnotice'><b>[M]</b> гладит вас по голове, чтобы вы почувствовали себя лучше!</span>")
+					SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "headpat", /datum/mood_event/headpat)
+					return
+				else
+					M.visible_message("<span class='notice'><b>[M]</b> похлопывает <b>[src]</b> по колючей голове!</span>", \
+								"<span class='notice'>Ты гладишь <b>[src]</b> по голове, рискуя пораниться!</span>", target = src,
+								target_message = "<span class='boldnotice'><b>[M]</b> гладит вас по голове, чтобы вы почувствовали себя лучше!</span>")
+					if(prob(50))
+						M.visible_message("<span class='warning'><b>[M]</b> отдергивает руку от игл на голове <b>[H]</b>!</span>", \
+							"<span class='boldwarning'>Ай! Иглы на голове <b>[H]</b> впиваются в твою руку!</span>")
+						var/hand = pick(BODY_ZONE_PRECISE_L_HAND, BODY_ZONE_PRECISE_R_HAND)
+						M.apply_damage(7, STAMINA, hand)
+						M.apply_damage(3, BRUTE, hand)
+						friendly_check = TRUE // колючим все ещё могут нравиться поглады
+
+			//BLUTEMOON ADD END (TRAIT_SPIKY)
+
 			else
 				friendly_check = TRUE
 				if(iscatperson(H)) //felinids love headpats
@@ -430,6 +453,7 @@
 					var/static/list/many_tails = list("tail_human", "tail_lizard", "mam_tail")
 					for(var/T in many_tails)
 						if(S.mutant_bodyparts[T] && dna.features[T] != "None")
+							nextsoundemote = world.time - 10
 							emote("wag")
 
 		else if(check_zone(M.zone_selected) == BODY_ZONE_R_ARM || check_zone(M.zone_selected) == BODY_ZONE_L_ARM)
@@ -444,13 +468,30 @@
 					"<span class='notice'>Ты пожимаешь руку <b>[src]</b>.</span>", target = src,
 					target_message = "<span class='notice'><b>[M]</b> пожимает твою руку.</span>")
 
+			//BLUTEMOON ADD START (TRAIT_SPIKY)
+
 		else
-			M.visible_message("<span class='notice'><b>[M]</b> обнимает <b>[src]</b>!</span>", \
-						"<span class='notice'>Ты обнимаешь <b>[src]</b>!</span>", target = src,\
-						target_message = "<span class='notice'><b>[M]</b> обнимает тебя!</span>")
-			SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug)
-			M.client?.plug13.send_emote(PLUG13_EMOTE_BASIC, PLUG13_STRENGTH_LOW_PLUS, PLUG13_DURATION_TINY)
-			friendly_check = TRUE
+			var/mob/living/carbon/human/H = src
+			if(HAS_TRAIT(H, TRAIT_SPIKY))
+				M.visible_message("<span class='notice'><b>[M]</b> обнимает <b>[H]</b>!</span>", \
+					"<span class='notice'>Ты пытаешься обнять <b>[H]</b>, избегая иголок!</span>", \
+					target_message = "<span class='notice'><b>[M]</b> обнимает тебя!</span>")
+				if(prob(50))
+					M.visible_message("<span class='warning'><b>[M]</b> колется об иглы на теле <b>[H]</b>!</span>", \
+					"<span class='boldwarning'>Иглы <b>[H]</b> впиваются тебе в тело!</span>")
+					M.apply_damage(10, STAMINA)
+					M.apply_damage(4, BRUTE)
+					friendly_check = TRUE // колючим все ещё могут нравиться поглады
+
+			//BLUTEMOON ADD END (TRAIT_SPIKY)
+
+			else // к 5 строчкам ниже добавлен ещё один ТАБ, чтобы выполнялось if else для TRAIT_SPIKY
+				M.visible_message("<span class='notice'><b>[M]</b> обнимает <b>[src]</b>!</span>", \
+							"<span class='notice'>Ты обнимаешь <b>[src]</b>!</span>", target = src,\
+							target_message = "<span class='notice'><b>[M]</b> обнимает тебя!</span>")
+				SEND_SIGNAL(src, COMSIG_ADD_MOOD_EVENT, "hug", /datum/mood_event/hug)
+				M.client?.plug13.send_emote(PLUG13_EMOTE_BASIC, PLUG13_STRENGTH_LOW_PLUS, PLUG13_DURATION_TINY)
+				friendly_check = TRUE
 
 		if(friendly_check && (HAS_TRAIT(M, TRAIT_FRIENDLY) || HAS_TRAIT(src, TRAIT_FRIENDLY)))
 			var/datum/component/mood/mood = M.GetComponent(/datum/component/mood)

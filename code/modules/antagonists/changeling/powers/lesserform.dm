@@ -7,6 +7,7 @@
 	dna_cost = 1
 	loudness = 2
 	req_human = TRUE
+	gamemode_restriction_type = ANTAG_DYNAMIC
 
 //Transform into a monkey.
 /datum/action/changeling/lesserform/sting_action(mob/living/carbon/human/user)

@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\autodrobe.dm'
 /obj/machinery/vending/autodrobe
 	name = "\improper AutoDrobe"
 	desc = "A vending machine for costumes."
@@ -172,7 +173,9 @@
 					/obj/item/clothing/head/helmet/aviator_helmet/no_armor = 3,
 					/obj/item/clothing/neck/cloak/chronos = 5,
 					/obj/item/clothing/under/chronos = 5,
-					/obj/item/clothing/head/beret/chronos = 5
+					/obj/item/clothing/head/beret/chronos = 5,
+					/obj/item/clothing/head/npc_questhuh_hat = 3,
+					/obj/item/clothing/head/npc_questhey_hat = 3
 					)
 	contraband = list(/obj/item/clothing/suit/judgerobe = 1,
 					/obj/item/clothing/head/powdered_wig = 1,
@@ -191,6 +194,9 @@
 					/obj/item/clothing/shoes/roman = 1,
 					/obj/item/shield/riot/roman/fake = 1,
 					/obj/item/skub = 1,
+					/obj/item/clothing/underwear/briefs/garland_panties = 1,
+					/obj/item/clothing/underwear/shirt/garland_bra = 1,
+					/obj/item/clothing/suit/garland_suit = 1,
 					/obj/item/clothing/under/costume/lobster = 1,
 					/obj/item/clothing/head/lobsterhat = 1,
 					/obj/item/clothing/head/drfreezehat = 1,
@@ -237,3 +243,4 @@
 /obj/item/vending_refill/autodrobe
 	machine_name = "AutoDrobe"
 	icon_state = "refill_costume"
+*/

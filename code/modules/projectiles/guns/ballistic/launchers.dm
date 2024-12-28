@@ -93,6 +93,7 @@
 	casing_ejector = FALSE
 	weapon_weight = WEAPON_HEAVY
 	magazine_wording = "rocket"
+	slot_flags = ITEM_SLOT_BELT|ITEM_SLOT_BACK
 
 /obj/item/gun/ballistic/rocketlauncher/unrestricted
 	pin = /obj/item/firing_pin

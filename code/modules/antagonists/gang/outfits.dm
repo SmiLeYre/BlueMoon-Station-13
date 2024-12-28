@@ -1,4 +1,4 @@
-/datum/outfit/families_police/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+/datum/outfit/families_police/beatcop/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 

@@ -50,6 +50,7 @@
 		/datum/language/modular_bluemoon/acratarian, // BLUEMOON ADD - язык акрадоров
 		/datum/language/modular_bluemoon/cetria, // BLUEMOON ADD - язык кеткринов
 		/datum/language/modular_bluemoon/demonic, // BLUEMOON ADD - демонический
+		/datum/language/modular_splurt/nyanese, //SPLURT change - meow meow!
 	))
 	healing_factor = STANDARD_ORGAN_HEALING*5 //Fast!!
 	decay_factor = STANDARD_ORGAN_DECAY/2

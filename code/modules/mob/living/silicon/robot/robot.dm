@@ -963,7 +963,7 @@
 	update_health_hud()
 	..()
 
-/mob/living/silicon/robot/revive(full_heal = FALSE, admin_revive = FALSE)
+/mob/living/silicon/robot/revive(full_heal = FALSE, admin_revive = FALSE, excess_healing = 0)
 	if(..()) //successfully ressuscitated from death
 		if(!QDELETED(builtInCamera) && !wires.is_cut(WIRE_CAMERA))
 			builtInCamera.toggle_cam(src,0)
@@ -1026,7 +1026,7 @@
 		status_flags &= ~CANPUSH
 
 	if(module.clean_on_move)
-		AddElement(/datum/element/cleaning)
+		AddElement(/datum/element/cleaning, cleaning_range = 1)
 	else
 		RemoveElement(/datum/element/cleaning)
 
@@ -1256,6 +1256,11 @@
 		buckle_mob(M)
 
 /mob/living/silicon/robot/buckle_mob(mob/living/M, force = FALSE, check_loc = TRUE)
+	// BLUEMOON ADD START - дубликает проверки, т.к. функция переписывает попытку сесть
+	if(!pre_buckle_mob(M))
+		return FALSE
+	// BLUEMOON ADD END
+
 	if(!is_type_in_typecache(M, can_ride_typecache))
 		M.visible_message("<span class='warning'>[M] really can't seem to mount [src]...</span>")
 		return
@@ -1296,8 +1301,8 @@
 		var/mob/unbuckle_me_now = i
 		unbuckle_mob(unbuckle_me_now, FALSE)
 
-/mob/living/silicon/robot/proc/TryConnectToAI()
-	set_connected_ai(select_active_ai_with_fewest_borgs(z))
+/mob/living/silicon/robot/proc/TryConnectToAI(mob/living/silicon/ai/connect_to)
+	set_connected_ai(connect_to || select_active_ai_with_fewest_borgs(z))
 	if(connected_ai)
 		lawsync()
 		lawupdate = TRUE

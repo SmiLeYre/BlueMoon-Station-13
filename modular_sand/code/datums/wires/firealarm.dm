@@ -2,6 +2,7 @@
 	holder_type = /obj/machinery/firealarm
 	proper_name = "Fire alarm's"
 	req_knowledge = JOB_SKILL_MASTER
+	visibility_trait = TRAIT_KNOW_ENGI_WIRES //BLUEMOON ADD
 
 /datum/wires/firealarm/New(atom/holder)
 	wires = list(
@@ -37,7 +38,7 @@
 			A.detecting = !A.detecting
 		if(WIRE_FIRE_TRIGGER)
 			A.alarm()
-			addtimer(CALLBACK(A, TYPE_PROC_REF(/obj/machinery/firealarm, reset), wire), 1000)				
+			addtimer(CALLBACK(A, TYPE_PROC_REF(/obj/machinery/firealarm, reset), wire), 1000)
 
 /datum/wires/firealarm/on_cut(index, mend)
 	var/obj/machinery/firealarm/A = holder

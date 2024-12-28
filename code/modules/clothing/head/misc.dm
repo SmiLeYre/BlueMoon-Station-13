@@ -9,6 +9,12 @@
 	armor = list(MELEE = 30, BULLET = 15, LASER = 30, ENERGY = 10, BOMB = 25, BIO = 0, RAD = 0, FIRE = 50, ACID = 50)
 	strip_delay = 80
 
+
+/obj/item/clothing/head/centhat/cap
+	name = "\improper CentCom Cap"
+	icon_state = "centcom_cap"
+
+
 /obj/item/clothing/head/spacepolice
 	name = "space police cap"
 	desc = "A blue cap for patrolling the daily beat."
@@ -377,7 +383,7 @@
 
 /obj/item/clothing/head/frenchberet/proc/handle_speech(datum/source, mob/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
-	if(message[1] != "*")
+	if(message[1] != "*" && message[1] != "!")
 		message = " [message]"
 		var/list/french_words = strings("french_replacement.json", "french")
 

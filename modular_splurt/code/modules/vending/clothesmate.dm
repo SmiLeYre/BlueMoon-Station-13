@@ -1,3 +1,4 @@
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\clothesmate.dm'
 /obj/machinery/vending/clothing/Initialize()
 	var/list/extra_products = list(
 		/obj/item/clothing/suit/assu_suit = 16,
@@ -35,6 +36,19 @@
 		/obj/item/clothing/suit/invisijacket = 3,
 		/obj/item/clothing/head/invisihat = 3,
 		/obj/item/clothing/under/pentatop = 3,
+		/obj/item/clothing/under/misc/pentagram = 3,
+		/obj/item/clothing/under/misc/revealingdress = 3,
+		/obj/item/clothing/under/misc/vneck = 3,
+		/obj/item/clothing/under/misc/tian_dress = 3,
+		/obj/item/clothing/under/misc/wench = 3,
+		/obj/item/clothing/under/misc/gothic = 3,
+		/obj/item/clothing/under/misc/rippedpunk = 3,
+		/obj/item/clothing/under/misc/corsetdress = 3,
+		/obj/item/clothing/under/misc/sheer = 3,
+		/obj/item/clothing/under/misc/asym = 3,
+		/obj/item/clothing/under/misc/swoop = 3,
+		/obj/item/clothing/under/misc/miniskirt_sheer = 3,
+		/obj/item/clothing/under/misc/miniskirt = 3,
 		/obj/item/clothing/wrists/armwarmer = 3,
 		/obj/item/clothing/wrists/armwarmer/long = 3,
 		/obj/item/clothing/wrists/armwarmer_striped = 3,
@@ -42,6 +56,18 @@
 		/obj/item/clothing/under/pants/yoga = 3,
 		/obj/item/clothing/under/blutigen_undergarment = 3,
 		/obj/item/clothing/glasses/contact = 3,
+		/obj/item/clothing/underwear/briefs/panties/maebari = 3,
+		/obj/item/clothing/underwear/briefs/panties/maebari/maebari_heart = 3,
+		/obj/item/clothing/underwear/briefs/panties/maebari/maebari_sheer = 3,
+		/obj/item/clothing/underwear/briefs/panties/maebari/maebari_mini = 3,
+		/obj/item/clothing/underwear/briefs/panties/maebari/maebari_sheer_mini = 3,
+		/obj/item/clothing/underwear/briefs/panties/maebari/maebari_vag_sheer = 3,
+		/obj/item/clothing/underwear/briefs/panties/maebari/maebari_vag_mini = 3,
+		/obj/item/clothing/underwear/briefs/panties/maebari/maebari_vag = 3,
+		/obj/item/clothing/underwear/briefs/panties/maebari/maebari_anal = 3,
+		/obj/item/clothing/underwear/briefs/panties/maebari/maebari_vag_x = 3,
+		/obj/item/clothing/underwear/briefs/panties/maebari/maebari_vag_bandaid = 3,
+		/obj/item/clothing/underwear/briefs/panties/maebari/maebari_anal_bandaid = 3,
 		/obj/item/clothing/accessory/pride/other = 30
 	)
 	var/list/extra_contraband = list(
@@ -79,3 +105,4 @@
 	LAZYADD(contraband, extra_contraband)
 	LAZYADD(premium, extra_premium)
 	. = ..()
+*/

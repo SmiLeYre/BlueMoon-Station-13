@@ -333,6 +333,8 @@
 		var/list/L = total_antagonists[antag_name]
 		log_game("[antag_name]s :[L.Join(", ")].")
 
+	send_roundend_stats_tgs_message(popcount) //BLUEMOON EDIT: TGS ROUND END STATS
+
 	CHECK_TICK
 	SSdbcore.SetRoundEnd()
 	//Collects persistence features

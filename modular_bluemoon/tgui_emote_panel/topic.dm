@@ -105,9 +105,8 @@
 
 
 /datum/tgui_panel/proc/emotes_rename(emote_key, old_emote_name)
-	var/datum/emote/EL //to avoid errors
-	EL = EL.emote_list
-	if (!(emote_key in EL))
+	var/key = GLOB.emote_list
+	if (!(emote_key in key))
 		to_chat(client, span_warning("Эмоция [emote_key] не существует!"))
 		return FALSE
 

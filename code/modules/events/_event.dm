@@ -1,5 +1,5 @@
 
-#define RANDOM_EVENT_ADMIN_INTERVENTION_TIME 180
+#define RANDOM_EVENT_ADMIN_INTERVENTION_TIME 30
 
 //this datum is used by the events controller to dictate how it selects events
 /datum/round_event_control

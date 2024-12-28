@@ -17,19 +17,19 @@
 ///////////////// EMOTE CODE
 // Maybe making this as an emote is less messy?
 // It was - ktccd
-/datum/emote/living/subtle
+/datum/emote/sound/human/subtle
 	key = "subtle"
 	key_third_person = "subtle"
 	message = null
 	mob_type_blacklist_typecache = list(/mob/living/brain)
 
-/datum/emote/living/subtle/proc/check_invalid(mob/user, input)
+/datum/emote/sound/human/subtle/proc/check_invalid(mob/user, input)
 	if(stop_bad_mime.Find(input, 1, 1))
 		to_chat(user, "<span class='danger'>Invalid emote.</span>")
 		return TRUE
 	return FALSE
 
-/datum/emote/living/subtle/run_emote(mob/user, params, type_override = null)
+/datum/emote/sound/human/subtle/run_emote(mob/user, params, type_override = null)
 	if(jobban_isbanned(user, "emote"))
 		to_chat(user, "You cannot send subtle emotes (banned).")
 		return FALSE
@@ -64,19 +64,19 @@
 
 ///////////////// SUBTLE 2: NO GHOST BOOGALOO
 
-/datum/emote/living/subtler
+/datum/emote/sound/human/subtler
 	key = "subtler"
 	key_third_person = "subtler"
 	message = null
 	mob_type_blacklist_typecache = list(/mob/living/brain)
 
-/datum/emote/living/subtler/proc/check_invalid(mob/user, input)
+/datum/emote/sound/human/subtler/proc/check_invalid(mob/user, input)
 	if(stop_bad_mime.Find(input, 1, 1))
 		to_chat(user, "<span class='danger'>Invalid emote.</span>")
 		return TRUE
 	return FALSE
 
-/datum/emote/living/subtler/run_emote(mob/user, params, type_override = null)
+/datum/emote/sound/human/subtler/run_emote(mob/user, params, type_override = null)
 	if(jobban_isbanned(user, "emote"))
 		to_chat(user, "You cannot send subtle emotes (banned).")
 		return FALSE
@@ -104,19 +104,19 @@
 
 ///////////////// SUBTLE 3: DARE DICE
 
-/datum/emote/living/subtler_table
+/datum/emote/sound/human/subtler_table
 	key = "subtler_table"
 	key_third_person = "subtler_table"
 	message = null
 	mob_type_blacklist_typecache = list(/mob/living/brain)
 
-/datum/emote/living/subtler_table/proc/check_invalid(mob/user, input)
+/datum/emote/sound/human/subtler_table/proc/check_invalid(mob/user, input)
 	if(stop_bad_mime.Find(input, 1, 1))
 		to_chat(user, "<span class='danger'>Invalid emote.</span>")
 		return TRUE
 	return FALSE
 
-/datum/emote/living/subtler_table/run_emote(mob/user, params, type_override = null)
+/datum/emote/sound/human/subtler_table/run_emote(mob/user, params, type_override = null)
 	if(!locate(/obj/structure/table) in range(user, 1))
 		to_chat(user, "There are no tables around you.")
 		return FALSE

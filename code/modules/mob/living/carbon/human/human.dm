@@ -1255,3 +1255,11 @@ Mark this mob, then navigate to the preferences of the client you desire and cal
 
 /mob/living/carbon/human/species/arachnid
 	race = /datum/species/arachnid
+
+/mob/living/carbon/human/singularity_pull(S, current_size)
+	..()
+	if(current_size >= STAGE_THREE)
+		for(var/obj/item/hand in held_items)
+			if(prob(current_size * 5) && hand.w_class >= ((11-current_size)/2)  && dropItemToGround(hand))
+				step_towards(hand, src)
+				to_chat(src, span_warning("\The [S] pulls \the [hand] from your grip!"))

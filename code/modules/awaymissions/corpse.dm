@@ -141,14 +141,18 @@
 		if(jobban_isbanned(M, "pacifist")) //do you love repeat code? i sure do
 			to_chat(M, "<span class='cult'>You are pacification banned. Pacifist has been force applied.</span>")
 			ADD_TRAIT(M, TRAIT_PACIFISM, "pacification ban")
-		//
+		// BLUEMOON EDIT START
 		if(show_flavour)
-			var/output_message = "<span class='big bold'>[short_desc]</span>"
+			var/output_message = ""
+			output_message += "<p class='medium'>Вы - <b>[src.name]</b>.</p>"
+			output_message += "<p>[short_desc]</p>"
 			if(flavour_text != "")
-				output_message += "\n<span class='bold'>[flavour_text]</span>"
+				output_message += "<p>[flavour_text]</p>"
 			if(important_info != "")
-				output_message += "\n<span class='userdanger'>[important_info]</span>"
-			to_chat(M, output_message)
+				output_message += "<span class='warning'>[important_info]</span>"
+			output_message += "\n<span class='boldwarning'>В режим игры Extended станцию посещать допустимо, в Dynamic — запрещено!</span>"
+			to_chat(M, examine_block(output_message))
+		// BLUEMOON EDIT END
 		var/datum/mind/MM = M.mind
 		var/datum/antagonist/A
 		// BLUEMOON EDIT START - правки гостролей
@@ -168,7 +172,6 @@
 			M.mind.assigned_role = assignedrole
 		special(M, name)
 		MM.name = M.real_name
-		to_chat(M,"<span class='boldwarning'>В Эксту посещать станцию допустимо, в Динамику запрещено!</span>")
 		special_post_appearance(M, name) // BLUEMOON ADD
 	if(uses > 0)
 		uses--

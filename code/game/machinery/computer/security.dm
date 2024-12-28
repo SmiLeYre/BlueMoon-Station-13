@@ -183,7 +183,12 @@
 						<tr><td>Gender:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=gender'>&nbsp;[active1.fields["gender"]]&nbsp;</A></td></tr>
 						<tr><td>Age:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=age'>&nbsp;[active1.fields["age"]]&nbsp;</A></td></tr>"}
 						dat += "<tr><td>Species:</td><td><A href ='?src=[REF(src)];choice=Edit Field;field=species'>&nbsp;[active1.fields["species"]]&nbsp;</A></td></tr>"
-						dat += {"<tr><td>Rank:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=rank'>&nbsp;[active1.fields["rank"]]&nbsp;</A></td></tr>
+						var/record_rank = GetJobName(active1.fields["rank"])
+						var/datum/job/job_datum = SSjob.name_occupations[record_rank]
+						var/how_many_alts = job_datum ? length(job_datum.alt_titles) : null
+						dat += {"<tr><td>Rank:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=rank'>&nbsp;[active1.fields["rank"]]&nbsp;</A>
+						<br />
+						<a href='?src=[REF(src)];choice=Edit Field;field=alt_title;rank=[record_rank]'>Change title<span style='color:#BBBBBB; font-style: italic;'> ([how_many_alts + 1] options)</span></a></td></tr>
 						<tr><td>Fingerprint:</td><td><A href='?src=[REF(src)];choice=Edit Field;field=fingerprint'>&nbsp;[active1.fields["fingerprint"]]&nbsp;</A></td></tr>
 						<tr><td>Physical Status:</td><td>&nbsp;[active1.fields["p_stat"]]&nbsp;</td></tr>
 						<tr><td>Mental Status:</td><td>&nbsp;[active1.fields["m_stat"]]&nbsp;</td></tr>
@@ -941,23 +946,44 @@ What a mess.*/
 						temp += "<li><a href='?src=[REF(src)];choice=Change Criminal Status;criminal2=discharged'>Сняты Обвинения</a></li>"
 						temp += "</ul>"
 				if("rank")
-					if(istype(active1, /datum/data/record) && ((ACCESS_CAPTAIN in logged_access) || (ACCESS_HOP in logged_access)))
+					if(istype(active1, /datum/data/record) && ((ACCESS_CAPTAIN in logged_access) || (ACCESS_HOP in logged_access) || (ACCESS_CENT_GENERAL in logged_access)))
 						temp = "<h5>Rank:</h5>"
 						temp += "<ul>"
 						for(var/rank in get_all_jobs())
-							temp += "<li><a href='?src=[REF(src)];choice=Change Rank;rank=[rank]'>[rank]</a></li>"
+							temp += "<li><a href='?src=[REF(src)];choice=Change Rank;rank=[rank]'>[rank]</a>"
+							var/datum/job/job_datum = SSjob.name_occupations[rank]
+							if(job_datum && length(job_datum.alt_titles))
+								var/how_many_alts = length(job_datum.alt_titles)
+								temp += "<a href='?src=[REF(src)];choice=Edit Field;field=alt_title;rank=[rank]'>Use Title<span style='color:#BBBBBB; font-style: italic;'> ([how_many_alts + 1] options)</span></a>"
+							temp += "</li>"
 						temp += "</ul>"
 					else
 						alert(usr, "You do not have the required rank to do this!")
+				if("alt_title")
+					if(istype(active1, /datum/data/record) && ((ACCESS_CAPTAIN in logged_access) || (ACCESS_HOP in logged_access) || (ACCESS_CENT_GENERAL in logged_access)))
+						temp = "<h5>Rank Title:</h5>"
+						temp += "<ul>"
+						var/chosen_rank = href_list["rank"]
+						temp += "<li><a href='?src=[REF(src)];choice=Change Rank;rank=[chosen_rank]'>[chosen_rank]</a></li><br />"
+						var/datum/job/job_datum = SSjob.name_occupations[chosen_rank]
+						if(job_datum && length(job_datum.alt_titles))
+							for(var/rank in job_datum.alt_titles)
+								temp += "<li><a href='?src=[REF(src)];choice=Change Rank;rank=[rank]'>[rank]</a></li>"
+						else
+							temp += "<li><b>We're very sorry, there was an internal error fetching titles. Report to centcom error: </b>null_job_or_no_titles</li>"
+						temp += "</ul>"
+					else
+						alert(usr, "You do not have the required rank to do this!")
+
 		//TEMPORARY MENU FUNCTIONS
 		else//To properly clear as per clear screen.
 			temp=null
 			switch(href_list["choice"])
 				if("Change Rank")
 					if(active1)
-						active1.fields["rank"] = href_list["rank"]
-						if(href_list["rank"] in get_all_jobs())
-							active1.fields["real_rank"] = href_list["real_rank"]
+						if(GetJobName(href_list["rank"]) != "Unknown" && GetJobName(href_list["rank"]) != "Centcom") // hi hello you looking, stop trying to exploit html
+							active1.fields["rank"] = href_list["rank"]
+							active1.fields["real_rank"] = GetJobName(href_list["rank"])
 
 				if("Change Criminal Status")
 					if(active2)

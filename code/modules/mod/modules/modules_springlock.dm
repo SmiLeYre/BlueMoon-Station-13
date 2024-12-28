@@ -379,7 +379,7 @@
 	set category = "Эмоции.2: Звуковые Действия"
 	emote("laughmaniac")
 
-/datum/emote/living/afton_laugh
+/datum/emote/sound/human/afton_laugh
 	key = "laughmaniac"
 	key_third_person = "laughs maniacally"
 	message = "маниакально смеётся!"
@@ -389,7 +389,7 @@
 	restraint_check = FALSE
 	emote_cooldown = 4 SECONDS
 
-/datum/emote/living/afton_laugh/run_emote(mob/living/user, params)
+/datum/emote/sound/human/afton_laugh/run_emote(mob/living/user, params)
 	var/obj/item/mod/module/springlock/spring = check_springlocks(user)
 	var/miming = user.mind?.miming
 	// На нас нет включённого пружинного костюма - просто смеёмся
@@ -433,7 +433,7 @@
 		message_mime = initial(message_mime)
 
 /// Checks if user wears active modsuit with the springlock module
-/datum/emote/living/afton_laugh/proc/check_springlocks(mob/living/user)
+/datum/emote/sound/human/afton_laugh/proc/check_springlocks(mob/living/user)
 	if(!istype(user, /mob/living/carbon/human))
 		return FALSE
 	var/obj/item/mod/control/modsuit = user.get_item_by_slot(ITEM_SLOT_BACK)

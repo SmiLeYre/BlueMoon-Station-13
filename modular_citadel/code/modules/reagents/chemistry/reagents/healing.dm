@@ -130,10 +130,14 @@
 							borrowed_health = 100
 						log_combat(C, C, "revived", src)
 						var/list/policies = CONFIG_GET(keyed_list/policy)
+						var/timelimit = CONFIG_GET(number/defib_cmd_time_limit) * 10 //the config is in seconds, not deciseconds
+						var/late = timelimit && (tplus > timelimit)
 						var/policy = policies[POLICYCONFIG_ON_DEFIB_LATE]	//Always causes memory loss due to the nature of synthtissue
 						if(policy)
 							to_chat(C, policy)
 						C.log_message("revived using synthtissue, [tplus] deciseconds from time of death, considered late revival due to usage of synthtissue.", LOG_GAME)
+						message_admins("[ADMIN_LOOKUPFLW(C)] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
+						log_admin(C, "[C] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
 			else
 				var/preheal_brute = C.getBruteLoss()
 				var/preheal_burn = C.getFireLoss()
@@ -232,6 +236,7 @@
 	pH = 8
 	taste_description = "chalky metal"
 	color = "#FFDADA"
+	chemical_flags = REAGENT_ALL_PROCESS
 	metabolization_rate = 8 * REAGENTS_METABOLISM //Metabolizes fast but heals a lot! Lasts far longer if more pure.
 	value = REAGENT_VALUE_RARE //Relatively hard to make now, might be fine with VERY_RARE instead depending on feedback.
 

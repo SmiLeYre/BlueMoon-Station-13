@@ -19,6 +19,7 @@
 #define TRAIT_PHARMA            		"hepatic_pharmacokinesis"
 #define TRAIT_CHOKE_SLUT				"choke_slut"
 #define TRAIT_BLOODFLEDGE				"bloodfledge"
+#define TRAIT_BLOODFLEDGE_LITE			"bloodfledge_lite"
 #define TRAIT_INCUBUS					"incubus"
 #define TRAIT_SUCCUBUS					"succubus"
 #define TRAIT_ARACHNID					"arachnid"
@@ -46,7 +47,8 @@
 #define TRAIT_HARD_SOLES 				"hard_soles"
 #define TRAIT_MESSY						"messy"
 #define TRAIT_RESTORATIVE_METABOLISM	"restorative_metabolism"
-#define TRAIT_KISS_SLUT			"kiss_slut"
+#define TRAIT_KISS_SLUT					"kiss_slut"
+#define TRAIT_HYDRA_HEADS				"hydrahead" //Hydra head port.
 
 // Chastity traits
 #define TRAIT_CHASTENED_ANUS "chastened_anus"

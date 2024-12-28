@@ -52,6 +52,25 @@
 
 /atom/movable/screen/plane_master/openspace/Initialize(mapload)
 	. = ..()
+	add_filter("displacer", 1, displacement_map_filter(render_source = GRAVITY_PULSE_RENDER_TARGET, size = 10))
+
+	add_filter("singularity_0", 1, displacement_map_filter(render_source = SINGULARITY_0_RENDER_TARGET, size = -20))
+	add_filter("singularity_1", 2, displacement_map_filter(render_source = SINGULARITY_1_RENDER_TARGET, size = 75))
+	add_filter("singularity_2", 3, displacement_map_filter(render_source = SINGULARITY_2_RENDER_TARGET, size = 400))
+	add_filter("singularity_3", 4, displacement_map_filter(render_source = SINGULARITY_3_RENDER_TARGET, size = 700))
+
+	animate(get_filter("singularity_0"), size = -20, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = -30, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_1"), size = 50, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 100, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_2"), size = 400, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 300, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_3"), size = 750, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 600, time = 10, easing = LINEAR_EASING, loop = -1)
+
 	filters += filter(type="alpha", render_source=FIELD_OF_VISION_RENDER_TARGET, flags=MASK_INVERSE)
 	filters += filter(type="alpha", render_source = LIGHTING_RENDER_TARGET, flags = MASK_INVERSE)
 	filters += filter(type = "drop_shadow", color = "#04080FAA", size = -10)
@@ -71,6 +90,27 @@
 	appearance_flags = PLANE_MASTER
 	blend_mode = BLEND_OVERLAY
 
+/atom/movable/screen/plane_master/floor/Initialize(mapload)
+	. = ..()
+	add_filter("displacer", 1, displacement_map_filter(render_source = GRAVITY_PULSE_RENDER_TARGET, size = 10))
+
+	add_filter("singularity_0", 1, displacement_map_filter(render_source = SINGULARITY_0_RENDER_TARGET, size = -20))
+	add_filter("singularity_1", 2, displacement_map_filter(render_source = SINGULARITY_1_RENDER_TARGET, size = 75))
+	add_filter("singularity_2", 3, displacement_map_filter(render_source = SINGULARITY_2_RENDER_TARGET, size = 400))
+	add_filter("singularity_3", 4, displacement_map_filter(render_source = SINGULARITY_3_RENDER_TARGET, size = 700))
+
+	animate(get_filter("singularity_0"), size = -20, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = -30, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_1"), size = 50, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 100, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_2"), size = 400, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 300, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_3"), size = 750, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 600, time = 10, easing = LINEAR_EASING, loop = -1)
+
 /atom/movable/screen/plane_master/wall
 	name = "wall plane master"
 	plane = WALL_PLANE
@@ -89,6 +129,25 @@
 
 /atom/movable/screen/plane_master/above_wall/Initialize(mapload)
 	. = ..()
+	add_filter("displacer", 1, displacement_map_filter(render_source = GRAVITY_PULSE_RENDER_TARGET, size = 10))
+
+	add_filter("singularity_0", 1, displacement_map_filter(render_source = SINGULARITY_0_RENDER_TARGET, size = -20))
+	add_filter("singularity_1", 2, displacement_map_filter(render_source = SINGULARITY_1_RENDER_TARGET, size = 75))
+	add_filter("singularity_2", 3, displacement_map_filter(render_source = SINGULARITY_2_RENDER_TARGET, size = 400))
+	add_filter("singularity_3", 4, displacement_map_filter(render_source = SINGULARITY_3_RENDER_TARGET, size = 700))
+
+	animate(get_filter("singularity_0"), size = -20, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = -30, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_1"), size = 50, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 100, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_2"), size = 400, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 300, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_3"), size = 750, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 600, time = 10, easing = LINEAR_EASING, loop = -1)
+
 	add_filter("vision_cone", 100, list(type="alpha", render_source=FIELD_OF_VISION_RENDER_TARGET, flags=MASK_INVERSE))
 
 /atom/movable/screen/plane_master/above_wall/backdrop(mob/mymob)
@@ -106,6 +165,26 @@
 
 /atom/movable/screen/plane_master/game_world/Initialize(mapload)
 	. = ..()
+
+	add_filter("displacer", 1, displacement_map_filter(render_source = GRAVITY_PULSE_RENDER_TARGET, size = 10))
+
+	add_filter("singularity_0", 1, displacement_map_filter(render_source = SINGULARITY_0_RENDER_TARGET, size = -20))
+	add_filter("singularity_1", 2, displacement_map_filter(render_source = SINGULARITY_1_RENDER_TARGET, size = 75))
+	add_filter("singularity_2", 3, displacement_map_filter(render_source = SINGULARITY_2_RENDER_TARGET, size = 400))
+	add_filter("singularity_3", 4, displacement_map_filter(render_source = SINGULARITY_3_RENDER_TARGET, size = 700))
+
+	animate(get_filter("singularity_0"), size = -20, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = -30, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_1"), size = 50, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 100, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_2"), size = 400, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 300, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_3"), size = 750, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 600, time = 10, easing = LINEAR_EASING, loop = -1)
+
 	add_filter("vision_cone", 100, list(type="alpha", render_source=FIELD_OF_VISION_RENDER_TARGET, flags=MASK_INVERSE))
 
 /atom/movable/screen/plane_master/game_world/backdrop(mob/mymob)
@@ -168,6 +247,24 @@
 	. = ..()
 	add_filter("emissives", 1, alpha_mask_filter(render_source = EMISSIVE_RENDER_TARGET, flags = MASK_INVERSE))
 	add_filter("object_lighting", 2, alpha_mask_filter(render_source = O_LIGHTING_VISUAL_RENDER_TARGET, flags = MASK_INVERSE))
+	add_filter("displacer", 3, displacement_map_filter(render_source = GRAVITY_PULSE_RENDER_TARGET, size = 10))
+
+	add_filter("singularity_0", 1, displacement_map_filter(render_source = SINGULARITY_0_RENDER_TARGET, size = -20))
+	add_filter("singularity_1", 2, displacement_map_filter(render_source = SINGULARITY_1_RENDER_TARGET, size = 75))
+	add_filter("singularity_2", 3, displacement_map_filter(render_source = SINGULARITY_2_RENDER_TARGET, size = 400))
+	add_filter("singularity_3", 4, displacement_map_filter(render_source = SINGULARITY_3_RENDER_TARGET, size = 700))
+
+	animate(get_filter("singularity_0"), size = -20, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = -30, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_1"), size = 50, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 100, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_2"), size = 400, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 300, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_3"), size = 750, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 600, time = 10, easing = LINEAR_EASING, loop = -1)
 
 /**
  * Handles emissive overlays and emissive blockers.
@@ -194,6 +291,27 @@
 	name = "parallax backdrop/space turf plane master"
 	plane = PLANE_SPACE
 
+/atom/movable/screen/plane_master/parallax_white/Initialize(mapload)
+	. = ..()
+	add_filter("displacer", 3, displacement_map_filter(render_source = GRAVITY_PULSE_RENDER_TARGET, size = 10))
+
+	add_filter("singularity_0", 1, displacement_map_filter(render_source = SINGULARITY_0_RENDER_TARGET, size = -20))
+	add_filter("singularity_1", 2, displacement_map_filter(render_source = SINGULARITY_1_RENDER_TARGET, size = 75))
+	add_filter("singularity_2", 3, displacement_map_filter(render_source = SINGULARITY_2_RENDER_TARGET, size = 400))
+	add_filter("singularity_3", 4, displacement_map_filter(render_source = SINGULARITY_3_RENDER_TARGET, size = 700))
+
+	animate(get_filter("singularity_0"), size = -20, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = -30, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_1"), size = 50, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 100, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_2"), size = 400, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 300, time = 10, easing = LINEAR_EASING, loop = -1)
+
+	animate(get_filter("singularity_3"), size = 750, time = 10, easing = LINEAR_EASING, loop = -1, flags = ANIMATION_PARALLEL)
+	animate(size = 600, time = 10, easing = LINEAR_EASING, loop = -1)
+
 /atom/movable/screen/plane_master/camera_static
 	name = "camera static plane master"
 	plane = CAMERA_STATIC_PLANE
@@ -206,3 +324,10 @@
 	plane = CHAT_PLANE
 	appearance_flags = PLANE_MASTER
 	blend_mode = BLEND_OVERLAY
+
+/atom/movable/screen/plane_master/gravpulse
+	name = "gravpulse plane"
+	mouse_opacity = MOUSE_OPACITY_TRANSPARENT
+	plane = GRAVITY_PULSE_PLANE
+	render_target = GRAVITY_PULSE_RENDER_TARGET
+	blend_mode = BLEND_ADD

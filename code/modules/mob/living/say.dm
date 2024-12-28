@@ -57,6 +57,9 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	// Faction
 	"е" = RADIO_CHANNEL_SYNDICATE,
 	"н" = RADIO_CHANNEL_CENTCOM,
+	// Ghostrole
+	"й" = RADIO_CHANNEL_DS1,
+	"ц" = RADIO_CHANNEL_DS2,
 
 	// Admin
 	"з" = MODE_ADMIN,
@@ -202,7 +205,8 @@ GLOBAL_LIST_INIT(department_radio_keys, list(
 	else
 		src.log_talk(message, LOG_SAY, forced_by=forced)
 
-	message = treat_message(message) // unfortunately we still need this
+	if(message[1] != "!")
+		message = treat_message(message) // unfortunately we still need this
 	var/sigreturn = SEND_SIGNAL(src, COMSIG_MOB_SAY, args)
 	if (sigreturn & COMPONENT_UPPERCASE_SPEECH)
 		message = uppertext(message)

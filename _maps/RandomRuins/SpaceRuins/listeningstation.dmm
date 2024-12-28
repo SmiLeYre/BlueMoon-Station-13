@@ -4,7 +4,7 @@
 /area/template_noop)
 "ab" = (
 /turf/closed/mineral/random,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "ac" = (
 /obj/structure/sign/poster/contraband/random,
 /turf/closed/wall/r_wall,
@@ -857,6 +857,7 @@
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "bD" = (
 /obj/structure/table,
+/obj/item/melee/baton/stunsword/smithed,
 /obj/item/storage/box/lights/bulbs,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
@@ -1134,7 +1135,7 @@
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "hy" = (
 /turf/open/floor/engine/vacuum,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "hC" = (
 /obj/machinery/door/window/brigdoor{
 	dir = 4;
@@ -1338,6 +1339,9 @@
 "oy" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
@@ -1728,6 +1732,15 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
+"zu" = (
+/obj/structure/cable{
+	icon_state = "1-4"
+	},
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 8
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "zT" = (
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
@@ -1780,22 +1793,10 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "BZ" = (
-/obj/effect/turf_decal/stripes/corner{
-	dir = 4;
-	icon_state = "bot_white"
+/obj/effect/turf_decal/siding/dark{
+	dir = 10
 	},
-/obj/structure/rack/shelf,
-/obj/item/mod/control/pre_equipped/syndicate_empty{
-	icon_state = "security-control";
-	pixel_y = -3;
-	pixel_x = 3
-	},
-/obj/item/mod/control/pre_equipped/syndicate_empty{
-	icon_state = "security-control";
-	pixel_y = 4;
-	pixel_x = -4
-	},
-/turf/open/floor/mineral/plastitanium,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "Cd" = (
 /obj/item/radio/intercom{
@@ -1917,6 +1918,9 @@
 "Fv" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 5
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
@@ -2077,6 +2081,24 @@
 /obj/structure/railing,
 /turf/open/floor/circuit,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
+"Ji" = (
+/obj/structure/rack/shelf,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/obj/item/mod/control/pre_equipped/syndicate_empty{
+	icon_state = "security-control";
+	pixel_y = -3;
+	pixel_x = 3
+	},
+/obj/item/mod/control/pre_equipped/syndicate_empty{
+	icon_state = "security-control";
+	pixel_y = 4;
+	pixel_x = -4
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
 "Jn" = (
 /obj/structure/table,
 /obj/item/pipe_dispenser,
@@ -2097,7 +2119,7 @@
 "JY" = (
 /obj/structure/statue/bronze/marx,
 /turf/open/floor/engine/vacuum,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "Kf" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
@@ -2373,8 +2395,14 @@
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "Qm" = (
 /obj/machinery/light/small,
-/obj/structure/table,
-/obj/item/melee/baton/stunsword/smithed,
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/obj/structure/closet/syndicate,
+/obj/item/melee/classic_baton/telescopic/contractor_baton,
+/obj/item/melee/classic_baton/telescopic/contractor_baton,
+/obj/item/storage/box/handcuffs,
 /turf/open/floor/iron/dark/textured,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "Qu" = (
@@ -2589,6 +2617,30 @@
 /obj/machinery/washing_machine,
 /obj/effect/turf_decal/bot,
 /turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/listeningstation)
+"Wr" = (
+/obj/structure/rack/shelf,
+/obj/item/mod/module/storage{
+	pixel_x = 2;
+	pixel_y = 4
+	},
+/obj/item/mod/module/storage{
+	pixel_x = -5;
+	pixel_y = 6
+	},
+/obj/item/mod/module/flashlight{
+	pixel_x = 3;
+	pixel_y = -8
+	},
+/obj/item/mod/module/flashlight{
+	pixel_x = -6;
+	pixel_y = -4
+	},
+/obj/effect/turf_decal/stripes/corner{
+	dir = 4;
+	icon_state = "bot_white"
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "Xf" = (
 /obj/machinery/iv_drip,
@@ -3517,7 +3569,7 @@ ag
 ag
 ag
 ag
-ab
+ag
 ab
 ab
 ab
@@ -3553,12 +3605,12 @@ ag
 ag
 ag
 Dr
-BZ
+tI
+Ji
 ag
-ag
-ag
-ag
-ag
+ab
+ab
+ab
 ab
 ab
 ab
@@ -3591,12 +3643,12 @@ Jn
 Md
 ow
 LV
-LV
-vY
-uf
-cz
-TM
+BZ
+Wr
 ag
+ab
+ab
+ab
 ab
 ab
 aa
@@ -3629,11 +3681,11 @@ cI
 cI
 Oz
 VM
-VM
-QA
-cz
-cz
-MH
+zu
+ag
+ag
+ag
+ag
 ag
 ab
 aa
@@ -3668,10 +3720,10 @@ GB
 or
 vG
 Fv
-Pd
-Jv
+vY
+uf
 cz
-Hq
+TM
 ag
 ab
 ab
@@ -3706,10 +3758,10 @@ tI
 ss
 zT
 oy
-ag
-ag
-ag
-ag
+QA
+cz
+cz
+MH
 ag
 ab
 ab
@@ -3744,11 +3796,11 @@ Ks
 vT
 ol
 tZ
+Pd
+Jv
+cz
+Hq
 ag
-ab
-ab
-ab
-ab
 ab
 ab
 ab
@@ -3783,10 +3835,10 @@ vT
 OQ
 yY
 ag
-ab
-ab
-ab
-ab
+ag
+ag
+ag
+ag
 ab
 ab
 ab

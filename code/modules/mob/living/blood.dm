@@ -213,7 +213,7 @@
 		var/datum/disease/D = thing
 		blood_data["viruses"] += D.Copy()
 
-	blood_data["blood_DNA"] = dna.unique_enzymes
+	blood_data["blood_DNA"] = dna?.unique_enzymes //	BLUEMOON EDIT: TODO:runtime
 	blood_data["bloodcolor"] = dna.species.exotic_blood_color
 	blood_data["bloodblend"] = dna.species.exotic_blood_blend_mode
 	if(disease_resistances && disease_resistances.len)

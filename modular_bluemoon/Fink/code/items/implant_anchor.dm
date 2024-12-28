@@ -39,12 +39,13 @@
 /obj/item/implant/anchor/proc/on_life(mob/living/owner)
 //	to_chat(owner, "<span class='rose'>allowed_z_levels [allowed_z_levels], owner.z [owner.z] </span>")
 //	to_chat(owner, "<span class='rose'>Tick</span>")
-	if(get_area(owner) in GLOB.areas_by_type[/area/ruin/space/has_grav/bluemoon])
+	var/area/my_area = get_area(owner)
+	if(istype(my_area, /area/ruin/space/has_grav/bluemoon) || istype(my_area, /area/shuttle/sbc_corvette))
 		return
 	var/turf/my_location = get_turf(owner)
 	if(!(my_location.z in allowed_z_levels))
 		to_chat(owner, "<span class='warning'>Больно!</span>")
-		owner.adjustBruteLoss(2.5, FALSE) //Provides slow harassing for both brute and burn damage.
-		owner.adjustFireLoss(2.5, FALSE)
-		owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, 5) // BLUEMOON ADD ебём мозг гостролькам любителям лутать космос и ходить на станцию
+		owner.adjustBruteLoss(5, FALSE) //Provides slow harassing for both brute and burn damage.
+		owner.adjustFireLoss(5, FALSE)
+		owner.adjustOrganLoss(ORGAN_SLOT_BRAIN, 10) // BLUEMOON ADD ебём мозг гостролькам любителям лутать космос и ходить на станцию
 		to_chat(owner, "<span class='warning'>Мне становится плохо при отдалении от своего родного сектора....</span>")

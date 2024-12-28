@@ -37,6 +37,17 @@
 
 /obj/item/clockwork/weapon/ratvarian_spear/attack(mob/living/target, mob/living/carbon/human/user)
 	. = ..()
+	if(!is_servant_of_ratvar(user))
+		user.visible_message("<span class='warning'>As [user] blocks the attack with [src], [user.ru_who()] suddenly drops it, whincing in pain! </span>", "<span class='warning'>As you block the attack with [src], it heats up tremendously, forcing you to drop it from the pain alone! </span>")
+		user.emote("realagony")
+		playsound(src, 'sound/machines/fryer/deep_fryer_emerge.ogg', 50)
+		if(iscarbon(user)) //Type safety for if a drone somehow got a shield (ratvar protect us)
+			var/mob/living/carbon/C = user
+			var/obj/item/bodypart/part = C.get_holding_bodypart_of_item(src)
+			C.apply_damage((iscultist(C) ? force * 2 : force), BURN, (istype(part, /obj/item/bodypart/l_arm) ? BODY_ZONE_L_ARM : BODY_ZONE_R_ARM)) //Deals the damage to the holder instead of absorbing it instead + forcedrops. Doubled if a cultist of Nar'Sie.
+		else
+			user.adjustFireLoss(iscultist(user) ? force * 2 : force)
+		addtimer(CALLBACK(user, TYPE_PROC_REF(/mob/living, dropItemToGround), src, TRUE), 1)
 	if(!QDELETED(target) && target.stat != DEAD && !target.anti_magic_check(chargecost = 0) && !is_servant_of_ratvar(target)) //we do bonus damage on attacks unless they're a servant, have a null rod, or are dead
 		var/bonus_damage = bonus_burn //normally a total of 20 damage, 30 with ratvar
 		if(issilicon(target))
