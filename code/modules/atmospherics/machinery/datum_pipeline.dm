@@ -28,7 +28,7 @@
 		return	//	BLUEMOON EDIT: TODO:runtime
 	update = FALSE
 	reconcile_air()
-	update = air.react(src)
+	update = air?.react(src)
 
 /datum/pipeline/proc/build_pipeline(obj/machinery/atmospherics/base)
 	if(QDELETED(base))	//	BLUEMOON EDIT: TODO:runtime

@@ -21,7 +21,7 @@
 	display_order = JOB_DISPLAY_ORDER_BOUNCER
 	threat = 1
 	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/nonviolent, /datum/quirk/blindness, /datum/quirk/monophobia)
-	custom_spawn_text = "<font color='red'>Вы — сервисный вышибала. Ваша задача — помогать сервисным сотрудникам в обеспечении порядка и спокойствия в их кабинетах и отделах, а также по небольшим поручениям. В основном вы успокаиваете буйных клиентов и неадекватов, не исполняйте работу СБ.</font>"
+	custom_spawn_text = "ваша задача — помогать сервисным сотрудникам обеспечивать порядок и спокойствие в их кабинетах и отделах, а также выполнять небольшие поручения. Не выполняйте работу офицеров за них самих."
 
 	family_heirlooms = list(
 		/obj/item/toy/plush/beeplushie,

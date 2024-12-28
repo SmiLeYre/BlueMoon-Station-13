@@ -107,13 +107,13 @@
 /datum/supply_pack/goody/brushgun2_signle
 	name = ".45 Brush Gun Single-Pack"
 	desc = "Contains a parts kit to assemble a 45 Long Brush Gun. Comes with a box of .45 Long"
-	cost = 1500
+	cost = 2200 //BLUEMOON REBALANCE 1500 --> 2200
 	contains = list( /obj/item/gunpart/riflebrush2stock, /obj/item/gunpart/riflebrush2barrel, /obj/item/ammo_box/g45l)
 
 /datum/supply_pack/goody/revolver45_single
 	name = ".45 Revolver Single-Pack"
 	desc = "Contains a parts kit to assemble a 45 Revolver Gun. Comes with a box of .45 Long"
-	cost = 800
+	cost = 1600 //BLUEMOON REBALANCE 800 --> 1600
 	contains = list( /obj/item/gunpart/revolver45cylinder, /obj/item/gunpart/revolver45frame, /obj/item/ammo_box/g45l)
 
 /datum/supply_pack/goody/huntingshotgun_single

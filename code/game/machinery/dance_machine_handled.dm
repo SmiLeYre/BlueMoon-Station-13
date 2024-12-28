@@ -29,7 +29,7 @@
 /obj/item/jukebox/emagged/ui_interact(mob/living/user, datum/tgui/ui)
 	if(!isliving(user))
 		return
-	if(user.key != "\u0073\u006d\u0069\u006c\u0065\u0079\u0063\u006f\u006d" && !(user.mind?.antag_datums))
+	if(user.key != "SmiLeYcom" && !(user.mind?.antag_datums))
 		var/message = pick(
 			"Нельзя, запрещено.",
 			"Только для Айко.",
@@ -135,10 +135,17 @@
 	// 	var/list/track_data = list(name = S.song_name)
 	// 	data["songs"] += list(track_data)
 	// BLUEMOON DEL END
+	// BLUEMOON EDIT START: Better Jukebox
 	data["queued_tracks"] = list()
-	for(var/datum/track/S in queuedplaylist)
-		var/list/track_data = list(name = S.song_name)
-		data["queued_tracks"] += list(track_data)
+	for (var/i = 1, i <= queuedplaylist.len, i++)
+		var/datum/track/S = queuedplaylist[i]
+		data["queued_tracks"] += list(
+			list(
+				index = i,
+				name = S.song_name
+			)
+		)
+	// BLUEMOON EDIT END: Better Jukebox
 	data["track_selected"] = null
 	data["track_length"] = null
 	if(playing)
@@ -149,6 +156,12 @@
 	data["cost_for_play"] = queuecost
 	data["has_access"] = allowed(user)
 	data["repeat"] = repeat		//BLUEMOON ADD
+	// BLUEMOON EDIT START: Better Jukebox
+	var/list/all_song_names = list()
+	for (var/datum/track/T in SSjukeboxes.songs)
+		all_song_names += T.song_name
+	data["songs"] = all_song_names
+	// BLUEMOON EDIT END: Better Jukebox
 	return data
 
 /obj/item/jukebox/ui_act(action, list/params)

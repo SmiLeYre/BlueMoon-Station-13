@@ -12243,7 +12243,7 @@
 	icon_state = "0-4"
 	},
 /obj/machinery/power/apc/highcap/five_k{
-	areastring = "/area/hydrophonics";
+	areastring = "/area/service/hydroponics";
 	dir = 1;
 	name = "Hydroponics APC";
 	pixel_y = 23

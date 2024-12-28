@@ -3,6 +3,7 @@
 	randomize = TRUE
 	req_knowledge = JOB_SKILL_MASTER
 	req_skill = JOB_SKILL_TRAINED
+	visibility_trait = TRAIT_KNOW_CYBORG_WIRES // BLUEMOON ADD
 
 /datum/wires/robot/New(atom/holder)
 	wires = list(

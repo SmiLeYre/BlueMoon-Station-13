@@ -35,8 +35,14 @@
 /datum/skill_modifier/job/level/wiring/basic
 	level_mod = JOB_SKILL_BASIC
 
+/datum/skill_modifier/job/level/wiring/trained // BLUEMOON ADD
+	level_mod = JOB_SKILL_TRAINED
+
 /datum/skill_modifier/job/level/wiring/expert
 	level_mod = JOB_SKILL_EXPERT
+
+/datum/skill_modifier/job/level/wiring/master //BLUEMOON ADD... Why wasn't it there while we have had master machinery for hacking?
+	level_mod = JOB_SKILL_MASTER
 
 /datum/skill_modifier/job/level/dwarfy/blacksmithing
 	target_skills = /datum/skill/level/dwarfy/blacksmithing

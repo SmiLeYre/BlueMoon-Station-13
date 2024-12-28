@@ -1,2 +1,2 @@
 /datum/job/rd
-	custom_spawn_text = "<font color='red'> Allocate research points efficiently. Keep track of your Mechs, ensuring that any and all Combat Mechs do not leave the Robotics bay OR the Security Wing outside of Amber/Red Alert. Do Toxins if you're bored need points. Assist the station in performing upgrades. Don't let the slimes get loose from Xenobiology. You are third in line to be Acting Captain.</font>"
+	custom_spawn_text = "эффективно распределяйте очки исследований. Следите за изготовлением и эксплуатацией боевых и технических мехов. Вы - третий в очереди на пост ВрИО капитана</font>"

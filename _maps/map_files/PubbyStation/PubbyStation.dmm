@@ -1063,7 +1063,7 @@
 "acF" = (
 /obj/machinery/atmospherics/components/unary/outlet_injector/on,
 /turf/open/floor/plating/airless,
-/area/ai_monitored/turret_protected/AIsatextAS)
+/area/space/nearstation)
 "acG" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -1551,9 +1551,6 @@
 	},
 /turf/closed/wall/r_wall,
 /area/ai_monitored/turret_protected/AIsatextAP)
-"adV" = (
-/turf/open/space,
-/area/ai_monitored/turret_protected/AIsatextAP)
 "adW" = (
 /obj/structure/lattice,
 /obj/machinery/light/small{
@@ -1565,7 +1562,7 @@
 	network = list("minisat")
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/AIsatextAP)
+/area/space/nearstation)
 "adX" = (
 /turf/closed/wall/r_wall,
 /area/ai_monitored/turret_protected/aisat_interior)
@@ -1580,7 +1577,7 @@
 /area/ai_monitored/turret_protected/aisat_interior)
 "adZ" = (
 /turf/open/space,
-/area/ai_monitored/turret_protected/AIsatextAS)
+/area/space/nearstation)
 "aea" = (
 /obj/structure/lattice,
 /obj/machinery/light/small{
@@ -1592,7 +1589,7 @@
 	network = list("minisat")
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/AIsatextAS)
+/area/space/nearstation)
 "aeb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
@@ -1752,7 +1749,7 @@
 	network = list("minisat")
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/AIsatextAP)
+/area/space/nearstation)
 "aey" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on,
 /obj/structure/cable/yellow{
@@ -1770,7 +1767,7 @@
 	network = list("minisat")
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/AIsatextAS)
+/area/space/nearstation)
 "aeA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
@@ -43331,7 +43328,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space,
-/area/engineering/atmos)
+/area/space/nearstation)
 "bZL" = (
 /obj/machinery/atmospherics/pipe/simple,
 /obj/structure/grille,
@@ -46786,22 +46783,16 @@
 /obj/effect/landmark/start/cyborg,
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/turret_protected/aisat_interior)
-"cnD" = (
-/turf/open/space/basic,
-/area/ai_monitored/turret_protected/AIsatextAP)
 "cnE" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/lattice,
 /turf/open/space/basic,
-/area/ai_monitored/turret_protected/AIsatextAP)
-"cnG" = (
-/turf/open/space/basic,
-/area/ai_monitored/turret_protected/AIsatextAS)
+/area/space/nearstation)
 "cnH" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/space/basic,
-/area/ai_monitored/turret_protected/AIsatextAS)
+/area/space/nearstation)
 "cnJ" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -51031,7 +51022,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/airless,
-/area/engineering/main)
+/area/space/nearstation)
 "dSr" = (
 /obj/item/chair,
 /turf/open/floor/wood,
@@ -59180,7 +59171,7 @@
 	dir = 6
 	},
 /turf/open/floor/plating/airless,
-/area/engineering/main)
+/area/space/nearstation)
 "pbm" = (
 /turf/open/floor/plating,
 /area/service/chapel/dock)
@@ -60565,7 +60556,7 @@
 "qVk" = (
 /obj/machinery/door/poddoor/incinerator_atmos_aux,
 /obj/structure/lattice/catwalk,
-/turf/open/space/basic,
+/turf/open/floor/engine/vacuum,
 /area/maintenance/disposal/incinerator)
 "qVn" = (
 /obj/effect/turf_decal/tile/blue{
@@ -97860,11 +97851,11 @@ acY
 adj
 adu
 adJ
-adV
-adV
-cnD
-adV
-adV
+adZ
+adZ
+mZE
+adZ
+adZ
 aeL
 afb
 acP
@@ -98374,11 +98365,11 @@ acZ
 adk
 adw
 adL
-adV
-adV
-cnD
-adV
-adV
+adZ
+adZ
+mZE
+adZ
+adZ
 aeN
 afd
 afw
@@ -99404,7 +99395,7 @@ adA
 adL
 adZ
 adZ
-cnG
+mZE
 adZ
 adZ
 aeP
@@ -99918,7 +99909,7 @@ adC
 adO
 adZ
 adZ
-cnG
+mZE
 adZ
 adZ
 aeR

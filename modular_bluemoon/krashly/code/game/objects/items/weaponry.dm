@@ -135,6 +135,29 @@
 	pre_noise_sound = 'sound/items/sheath.ogg'
 	post_noise_sound = 'sound/weapons/slice.ogg'
 
+// Chaplain
+/obj/item/nullrod/hadar_red
+	name = "Carnagecarver"
+	desc = "A legendary relic of a devoted servant of his faith. It is a huge, bright red blade from which tongues of red flame emanate. It is ideal for exterminating heretics and all dark lords."
+	icon_state = "hadar_sword1"
+	item_state = "hadar_sword1"
+	icon = 'modular_bluemoon/krashly/icons/obj/weapons/tall.dmi'
+	lefthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/tall/lefthand.dmi'
+	righthand_file = 'modular_bluemoon/krashly/icons/mob/inhands/weapons/tall/righthand.dmi'
+	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/item_back/tall.dmi'
+	w_class = WEIGHT_CLASS_HUGE
+	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
+	block_chance = 30
+	sharpness = SHARP_EDGED
+	hitsound = 'sound/weapons/bladeslice.ogg'
+
+/obj/item/nullrod/hadar_red/blue_one
+	name = "Fatebreather"
+	desc = "A legendary relic of a devoted servant of his faith. It is a huge sky-blue blade from which tongues of blue flame emanate. It is ideal for protecting yourself and those following your path."
+	icon_state = "hadar_sword2"
+	item_state = "hadar_sword2"
+
+// Misc
 /obj/item/toy/crayon/atam/draw_on(atom/target, mob/living/carbon/human/user, proximity, params)
 	. = ..()
 	if(user.blood_volume)

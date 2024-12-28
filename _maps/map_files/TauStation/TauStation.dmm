@@ -11163,7 +11163,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/airless,
-/area/engineering/atmos)
+/area/space/nearstation)
 "dPs" = (
 /obj/structure/chair/stool,
 /obj/machinery/power/apc{
@@ -27895,7 +27895,7 @@
 	name = "Incinerator Output Pump"
 	},
 /turf/open/space,
-/area/maintenance/disposal/incinerator)
+/area/space/nearstation)
 "jGo" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/components/unary/vent_pump/on,
@@ -53179,7 +53179,7 @@
 /obj/structure/lattice/catwalk,
 /obj/machinery/atmospherics/components/unary/outlet_injector/atmos/atmos_waste,
 /turf/open/space/basic,
-/area/engineering/atmos)
+/area/space/nearstation)
 "svQ" = (
 /obj/machinery/atmospherics/pipe/manifold/orange/hidden{
 	dir = 4

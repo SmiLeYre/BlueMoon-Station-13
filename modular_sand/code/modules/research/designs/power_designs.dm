@@ -8,4 +8,4 @@
 	build_path = /obj/item/stock_parts/cell/vortex/empty
 	reagents_list = list(/datum/reagent/liquid_dark_matter = 5, /datum/reagent/bluespace = 5, /datum/reagent/teslium/energized_jelly = 10)
 	category = list("Misc","Power Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING

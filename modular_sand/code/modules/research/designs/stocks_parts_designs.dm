@@ -8,7 +8,7 @@
 	reagents_list = list(/datum/reagent/teslium/energized_jelly = 5)
 	category = list("Stock Parts")
 	lathe_time_factor = 0.8
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/unilatera_triphasic_scanning
 	name = "Unilatera Triphasic Scanning Module"
@@ -20,7 +20,7 @@
 	reagents_list = list(/datum/reagent/teslium/energized_jelly = 5)
 	category = list("Stock Parts")
 	lathe_time_factor = 0.8
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/atto_mani
 	name = "Atto Manipulator"
@@ -32,7 +32,7 @@
 	reagents_list = list(/datum/reagent/teslium/energized_jelly = 5)
 	category = list("Stock Parts")
 	lathe_time_factor = 0.8
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/super_quadultra_micro_laser
 	name = "Super-Ultra Micro-Laser"
@@ -44,7 +44,7 @@
 	reagents_list = list(/datum/reagent/teslium/energized_jelly = 5)
 	category = list("Stock Parts")
 	lathe_time_factor = 0.8
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING
 
 /datum/design/dark_matter_bin
 	name = "Dark-Matter Bin"
@@ -56,4 +56,4 @@
 	reagents_list = list(/datum/reagent/liquid_dark_matter = 5)
 	category = list("Stock Parts")
 	lathe_time_factor = 0.8
-	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE
+	departmental_flags = DEPARTMENTAL_FLAG_SCIENCE | DEPARTMENTAL_FLAG_ENGINEERING

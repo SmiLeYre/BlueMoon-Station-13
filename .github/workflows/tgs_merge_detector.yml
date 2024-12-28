@@ -1,0 +1,74 @@
+name: TGS Test Merge Detector
+
+on:
+  issue_comment:
+    types:
+      - created
+
+jobs:
+  handle_test_merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check if comment is from the specified user
+        id: filter_comment
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const comment = context.payload.comment;
+            const user = comment.user.login;
+            const body = comment.body;
+            const targetUser = process.env.TARGET_USER;
+
+            if (!targetUser) {
+              core.setFailed('TARGET_USER environment variable is not set.');
+            }
+
+            if (user !== targetUser) {
+              core.info(`Comment is not from the target user: ${user}`);
+              return "no_match";
+            }
+
+            if (body.includes('Test Merge Deployed')) {
+              return "deployed";
+            }
+
+            if (body.includes('Test Merge Removed')) {
+              return "removed";
+            }
+
+            core.info(`Comment does not contain target text.`);
+            return "no_match";
+          result-encoding: 'string'
+        env:
+          TARGET_USER: ${{ vars.TARGET_USER }}
+
+      - name: Skip if comment doesn't match criteria
+        if: steps.filter_comment.outputs.result == 'no_match'
+        run: echo "Comment did not meet criteria. Skipping."
+
+      - name: Add or remove label based on comment content
+        if: steps.filter_comment.outputs.result == 'deployed' || steps.filter_comment.outputs.result == 'removed'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const body = context.payload.comment.body;
+            const issueNumber = context.payload.issue.number;
+
+            if (body.includes('Test Merge Deployed')) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                labels: ['Test Merged']
+              });
+              core.info('Label "Test Merged" added.');
+            } else if (body.includes('Test Merge Removed')) {
+              await github.rest.issues.removeLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                name: 'Test Merged'
+              });
+              core.info('Label "Test Merged" removed.');
+            }

@@ -45,5 +45,8 @@
 
 /obj/item/multitool/silo/Initialize(mapload)
 	. = ..()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/item/multitool/silo/LateInitialize()
 	buffer = GLOB.ore_silo_default
 	update_icon()

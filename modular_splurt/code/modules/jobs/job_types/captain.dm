@@ -1,2 +1,2 @@
 /datum/job/captain
-	custom_spawn_text = "<font color='red' size='4'><b> Do NOT rename the station something Sexual.</b></font>"
+	custom_spawn_text = "не забывайте о том, что ваша запасная карта должна находиться на территории мостика. И <b>прошу</b>, не переименовывайте станцию во что-нибудь похабное..."

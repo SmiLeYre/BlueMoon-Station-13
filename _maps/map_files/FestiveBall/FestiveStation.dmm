@@ -2806,7 +2806,7 @@
 	light_color = "#e8eaff"
 	},
 /obj/machinery/power/apc{
-	areastring = "/area/maintenance/aft";
+	areastring = "/area/command/heads_quarters/hop/private";
 	dir = 8;
 	name = "Head of Personnel APC";
 	pixel_x = -25
@@ -49935,7 +49935,7 @@
 	},
 /obj/effect/landmark/event_spawn,
 /obj/machinery/power/apc{
-	areastring = "/area/maintenance/aft";
+	areastring = "/area/service/janitor";
 	dir = 8;
 	name = "Aft Maintenance APC";
 	pixel_y = 25
@@ -65726,10 +65726,6 @@
 /obj/item/stack/sheet/bone,
 /turf/open/floor/carpet/royalblue,
 /area/edina/crew_quarters/store/pet)
-"qAF" = (
-/obj/effect/spawner/structure/window/plasma/reinforced,
-/turf/open/space/basic,
-/area/engineering/atmos)
 "qBf" = (
 /obj/structure/cable/yellow{
 	icon_state = "2-4"
@@ -67209,7 +67205,7 @@
 /area/engineering/atmos)
 "tjc" = (
 /obj/machinery/power/apc{
-	areastring = "/area/command/meeting_room";
+	areastring = "/area/command/meeting_room/council";
 	dir = 4;
 	name = "Conference Room APC";
 	pixel_x = 24
@@ -76117,7 +76113,7 @@ aub
 aAv
 atB
 aAv
-qAF
+aub
 aAv
 atB
 aAv

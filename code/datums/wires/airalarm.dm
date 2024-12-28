@@ -2,6 +2,7 @@
 	holder_type = /obj/machinery/airalarm
 	proper_name = "Air Alarm"
 	req_knowledge = JOB_SKILL_MASTER
+	visibility_trait = TRAIT_KNOW_ENGI_WIRES // BLUEMOON ADD
 
 /datum/wires/airalarm/New(atom/holder)
 	wires = list(
