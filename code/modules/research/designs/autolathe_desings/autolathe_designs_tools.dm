@@ -192,10 +192,4 @@
 	build_path = /obj/item/chisel
 	category = list("initial","Tools")
 
-/datum/design/chisel
-	name = "mining drill"
-	id = "mining drill"
-	build_type = AUTOLATHE
-	materials = list(/datum/material/iron = 1000)
-	build_path = /obj/item/pickaxe/drill
-	category = list("initial","Tools")
+

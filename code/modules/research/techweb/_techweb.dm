@@ -413,6 +413,9 @@
 /datum/techweb/specialized/autounlocking/autolathe/toy/public
 	design_autounlock_skip_types = NO_PUBLIC_LATHE
 
+/datum/techweb/specialized/autounlocking/autolathe/makeshift
+	design_autounlock_buildtypes = AUTOLATHE|MAKESHIFTLATHE
+
 /datum/techweb/specialized/autounlocking/limbgrower
 	design_autounlock_buildtypes = LIMBGROWER
 	allowed_buildtypes = LIMBGROWER
