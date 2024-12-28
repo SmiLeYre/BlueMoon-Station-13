@@ -113,7 +113,7 @@
 	name = "cable coil"
 	result = /obj/item/stack/cable_coil
 	reqs = list(/obj/item/stack/rods = 30,
-			/obj/item/stack/sheet/glass = 30)
+			/obj/item/stack/sheet/glass = 15)
 	tools = list(TOOL_CROWBAR, TOOL_SCREWDRIVER)
 	time = 70
 	subcategory = CAT_TOOL
