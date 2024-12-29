@@ -72,26 +72,32 @@
 		to_chat(M, span_userdanger("It seems that this soul has already been called by someone else!"))
 		return
 
-	if(tgui_alert(target, "You have been summoned! Do you want to answer?", "Do you want to answer?", list("Yes", "No")) == "Yes")
-		to_chat(M, span_lewd("Something is happening!"))
-		var/old_pos = target.loc
-		var/summon_nickname = "unus ex satellitibus tuis"
-		if(M.client.prefs.summon_nickname)
-			summon_nickname = M.client.prefs.summon_nickname
-		var/phrase = pick("O magne Asmodee! Quaeso inducere [summon_nickname] ad me!", \
-						  "Coniuro te, daemon luxuriae! Utinam [summon_nickname] mea vota persolvat!", \
-						  "Cupidus meus ardet, magne! Amor [summon_nickname] me moveat affectus!")
-		M.say(phrase)
-		if(!teleport_summoned(target, src.loc, TRUE, TRUE))
-			to_chat(M, span_userdanger("Something went wrong in summoning ritual!"))
-			new /obj/effect/temp_visual/yellowsparkles(src.loc)
-			return
-		to_chat(target, span_hypnophrase("You are turning on!"))
-		new /obj/effect/summon_rune/return_rune(src.loc, target, old_pos)
-		qdel(src)
+	var/massage_time = world.time + 1 SECONDS //Поглощаем энтропию и теорио вероятности тыкнуть энтер в момент появления
+	if(tgui_alert(target, "You have been summoned! Do you want to answer?", "Do you want to answer?", list("Yes", "No")) != "Yes")
+		to_chat(M, span_userdanger("It refuses to answer!"))
 		return
 
-	to_chat(M, span_userdanger("It refuses to answer!"))
+	if(massage_time > world.time)
+		if(tgui_alert(target, "Too quick! You are really want to answer?", "Do you really want to answer the summon?", list("Yes", "No")) != "Yes")
+			to_chat(M, span_userdanger("It refuses to answer!"))
+			return
+
+	to_chat(M, span_lewd("Something is happening!"))
+	var/old_pos = target.loc
+	var/summon_nickname = "unus ex satellitibus tuis"
+	if(M.client.prefs.summon_nickname)
+		summon_nickname = M.client.prefs.summon_nickname
+	var/phrase = pick("O magne Asmodee! Quaeso inducere [summon_nickname] ad me!", \
+					  "Coniuro te, daemon luxuriae! Utinam [summon_nickname] mea vota persolvat!", \
+					  "Cupidus meus ardet, magne! Amor [summon_nickname] me moveat affectus!")
+	M.say(phrase)
+	if(!teleport_summoned(target, src.loc, TRUE, TRUE))
+		to_chat(M, span_userdanger("Something went wrong in summoning ritual!"))
+		new /obj/effect/temp_visual/yellowsparkles(src.loc)
+		return
+	to_chat(target, span_hypnophrase("You are turning on!"))
+	new /obj/effect/summon_rune/return_rune(src.loc, target, old_pos)
+	qdel(src)
 
 /obj/effect/summon_rune/proc/teleport_summoned(mob/living/carbon/target, pos_to_teleport, switch_summoned = FALSE, nude_target = TRUE)
 	if(!target || !pos_to_teleport)
