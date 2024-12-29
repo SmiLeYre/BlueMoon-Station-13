@@ -65901,6 +65901,10 @@
 	},
 /turf/open/floor/plating,
 /area/security/execution/transfer)
+"sNp" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/closed/wall,
+/area/medical/medbay/central)
 "sNr" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
 	dir = 1
@@ -111104,7 +111108,7 @@ viA
 bln
 agz
 dDF
-bof
+sNp
 uEG
 tKk
 oWf
