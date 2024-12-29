@@ -771,22 +771,22 @@
 	icon_state = "fish_alt"
 	matrixed_sections = MATRIX_RED
 
-/datum/sprite_accessory/tails/mam_tails/fox //BLUEMOON ADD bubber nova TG port
+/datum/sprite_accessory/tails/mam_tails/fox
 	name = "Fox"
 	icon_state = "fox"
 	matrixed_sections = MATRIX_RED_GREEN
 
-/datum/sprite_accessory/tails_animated/mam_tails_animated/fox //BLUEMOON ADD bubber nova TG port
+/datum/sprite_accessory/tails_animated/mam_tails_animated/fox
 	name = "Fox"
 	icon_state = "fox"
 	matrixed_sections = MATRIX_RED_GREEN
 
-/datum/sprite_accessory/tails/mam_tails/fox_alt
+/datum/sprite_accessory/tails/mam_tails/fox_alt //BLUEMOON ADD bubber nova TG port
 	name = "Fox alt"
 	icon_state = "fox_alt"
 	matrixed_sections = MATRIX_RED_GREEN
 
-/datum/sprite_accessory/tails_animated/mam_tails_animated/fox_alt
+/datum/sprite_accessory/tails_animated/mam_tails_animated/fox_alt //BLUEMOON ADD bubber nova TG port
 	name = "Fox alt"
 	icon_state = "fox_alt"
 	matrixed_sections = MATRIX_RED_GREEN
