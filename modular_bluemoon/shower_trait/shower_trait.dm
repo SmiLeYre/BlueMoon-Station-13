@@ -5,6 +5,18 @@
 #define DIRTY 900 // негативное настроение
 #define VERY_DIRTY 1000 // негативное настроение, визуальный эффект, сообщение при экзейме окружающим
 
+/area/var/valid_to_shower = FALSE //Нарушаем правила кодинга сски ради красоты и практичности; переменная используемая для проверки является-ли зона правильной для душа
+/area/security/prison/valid_to_shower = TRUE
+/area/commons/toilet/valid_to_shower = TRUE
+/area/command/heads_quarters/captain/valid_to_shower = TRUE
+/area/commons/dorms/valid_to_shower = TRUE
+/area/command/blueshielquarters/valid_to_shower = TRUE
+/area/service/chapel/main/monastery/valid_to_shower = TRUE
+/area/mine/laborcamp/valid_to_shower = TRUE
+/area/survivalpod/valid_to_shower = TRUE
+/area/mine/living_quarters/valid_to_shower = TRUE
+/area/hilbertshotel/valid_to_shower = TRUE
+
 /datum/quirk/bluemoon_shower_need
 	name = BLUEMOON_TRAIT_NAME_SHOWER_NEED
 	desc = "Вам нужно периодически ходить в душ. Хотя бы на станции. Из-за особенностей здешних мест, делать это нужно раз в час на пару минут. Можно мыться в душевых, сауне и бассейне. Лучше всего подходят душевые в жилых зонах, а также личных каютах."
@@ -60,7 +72,8 @@
 
 /datum/quirk/bluemoon_shower_need/process()
 	. = ..()
-	cleanse_level = clamp(cleanse_level + 0.23, 0, 1001) // около 70 минут (без учёта лагов) нужно, чтобы требование к мытью поднялось до максимума (оверлея)
+	if(!human_owner.insanelycomfy)
+		cleanse_level = clamp(cleanse_level + 0.23, 0, 1001) // около 70 минут (без учёта лагов) нужно, чтобы требование к мытью поднялось до максимума (оверлея)
 
 	var/turf/open/T = get_turf(quirk_holder)
 	if(T.air)
@@ -143,7 +156,7 @@
 		return
 
 	var/area/A = get_area(quirk_holder)
-	if(A.type in typesof(/area/security/prison, /area/commons/toilet, /area/command/heads_quarters/captain, /area/commons/dorms, /area/command/blueshielquarters, /area/service/chapel/main/monastery, /area/mine/laborcamp, /area/survivalpod, /area/mine/living_quarters, /area/hilbertshotel))
+	if(A.valid_to_shower)
 		if(!doing_shower && warning_level != 0)
 			to_chat(quirk_holder, span_notice("Теперь только подождать... Есть время разгрузить голову и расслабиться. Это займёт до пары минут."))
 			doing_shower = TRUE
