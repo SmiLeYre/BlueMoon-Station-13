@@ -103,7 +103,12 @@
 
 	//gloves
 	if(gloves && !(ITEM_SLOT_GLOVES in obscured))
-		. += "[t_on] одет[t_a] в [gloves.get_examine_string(user)]."
+		var/gloves_accessory_msg
+		var/obj/item/clothing/gloves/G = gloves
+		if(istype(G))
+			if(G.attached_accessories.len == 1)
+				gloves_accessory_msg = " c [G.attached_accessories[1].get_examine_string(user)]"
+		. += "[t_on] одет[t_a] в [gloves.get_examine_string(user)][gloves_accessory_msg]."
 	else if(length(blood_DNA))
 		var/hand_number = get_num_arms(FALSE)
 		if(hand_number)
