@@ -382,14 +382,14 @@
 
 /mob/verb/up()
 	set name = "Move Upwards"
-	set category = "IC"
+	set category = "IC.Z Layer Move"
 
 	if(zMove(UP, TRUE))
 		to_chat(src, "<span class='notice'>You move upwards.</span>")
 
 /mob/verb/down()
 	set name = "Move Down"
-	set category = "IC"
+	set category = "IC.Z Layer Move"
 
 	if(zMove(DOWN, TRUE))
 		to_chat(src, "<span class='notice'>You move down.</span>")

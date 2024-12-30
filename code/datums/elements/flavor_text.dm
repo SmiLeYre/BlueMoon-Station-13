@@ -245,7 +245,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 /mob/proc/set_pose()
 	set name = "Set Pose"
 	set desc = "Sets your temporary flavor text"
-	set category = "IC"
+	set category = "Say"
 	// BLUEMOON EDIT START - перенос темпфлавора на хардкод
 	var/mob/living/our_mob = src
 

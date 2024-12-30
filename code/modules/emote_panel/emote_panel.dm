@@ -56,7 +56,7 @@
 
 /mob/living/verb/emote_panel()
 	set name = "Emote Panel"
-	set category = "IC"
+	set category = "Say"
 
 	var/static/datum/emote_panel/emote_panel
 	if(isnull(emote_panel))

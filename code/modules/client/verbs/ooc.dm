@@ -147,7 +147,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 
 /client/verb/colorooc() //this is admin and people who bought byond.
 	set name = "Set Your OOC Color"
-	set category = "Preferences"
+	set category = "Preferences.OOC"
 
 	if(!holder || check_rights_for(src, R_ADMIN) && IS_CKEY_DONATOR_GROUP(key, DONATOR_GROUP_TIER_1))
 		if(!is_content_unlocked())
@@ -164,7 +164,7 @@ GLOBAL_VAR_INIT(normal_ooc_colour, "#002eb8")
 /client/verb/resetcolorooc()
 	set name = "Reset Your OOC Color"
 	set desc = "Returns your OOC Color to default"
-	set category = "Preferences"
+	set category = "Preferences.OOC"
 
 	if(!holder || check_rights_for(src, R_ADMIN))
 		if(!is_content_unlocked())
