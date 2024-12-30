@@ -183,7 +183,7 @@ GLOBAL_LIST_EMPTY(mobs_with_editable_flavor_text) //et tu, hacky code
 		if("OOC-заметки")
 			if(iscarbon(src))
 				var/mob/living/carbon/our_mob = src
-				var/new_text = tgui_input_text(our_mob, "Введите новые ООС-заметки своего персонажа (максимум [MAX_FLAVOR_LEN] символов).", "Новые ООС-заметки", our_mob.dna.custom_species_lore, MAX_FLAVOR_LEN, TRUE, TRUE)
+				var/new_text = tgui_input_text(our_mob, "Введите новые ООС-заметки своего персонажа (максимум [MAX_FLAVOR_LEN] символов).", "Новые ООС-заметки", our_mob.dna.ooc_notes, MAX_FLAVOR_LEN, TRUE, TRUE)
 				if(new_text)
 					our_mob.dna.ooc_notes = new_text
 			if(issilicon(src))

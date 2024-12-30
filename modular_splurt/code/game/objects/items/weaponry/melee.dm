@@ -7,7 +7,7 @@
 
 /obj/item/melee/baseball_bat/attack(mob/living/target, mob/living/user)
 	. = ..()
-	if(homerun_ready && !HAS_TRAIT(user, TRAIT_PACIFISM))
+	if(homerun_ready && !HAS_TRAIT(user, TRAIT_PACIFISM) && user != target)
 		if(!user.canUseTopic(target, BE_CLOSE))
 			return
 		var/atom/throw_target = get_edge_target_turf(target, user.dir)
@@ -26,9 +26,11 @@
 		// BLUEMOON ADDITION AHEAD - нельзя отправлять в полёт тяжёлых, т.к. у них модификатор к урону и это можно абузить для предотвращения проблем с мобильностью
 		if(HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY_SUPER) || HAS_TRAIT(target, TRAIT_BLUEMOON_HEAVY))
 			return
+		// Нельзя отправить в полёт самого себя
+		if(user != target)
+			var/whack_speed = (prob(60) ? 1 : 4)
+			target.throw_at(throw_target, rand(1, 2), whack_speed, user) // sorry friends, 7 speed batting caused wounds to absolutely delete whoever you knocked your target into (and said target)
 		// BLUEMOON ADDITION END
-		var/whack_speed = (prob(60) ? 1 : 4)
-		target.throw_at(throw_target, rand(1, 2), whack_speed, user) // sorry friends, 7 speed batting caused wounds to absolutely delete whoever you knocked your target into (and said target)
 		return
 
 // Prova, cause I can
