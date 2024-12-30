@@ -8244,10 +8244,8 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/medical{
-	name = "Paramedic Dispatch"
-	},
-/obj/machinery/door/airlock/medical{
-	name = "Paramedic Dispatch"
+	name = "Paramedic Dispatch";
+	req_access_txt = "5"
 	},
 /turf/open/floor/iron/dark,
 /area/medical/paramedic)
@@ -57205,7 +57203,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/maintenance{
-	name = "Paramedic Maintenance"
+	name = "Paramedic Maintenance";
+	req_access_txt = "5"
 	},
 /turf/open/floor/plating,
 /area/maintenance/aft)
@@ -60172,7 +60171,8 @@
 /area/security/prison/cells)
 "pzB" = (
 /obj/machinery/door/airlock/maintenance{
-	name = "Medbay Maintenance"
+	name = "Medbay Maintenance";
+	req_access_txt = "5"
 	},
 /turf/open/floor/plating,
 /area/maintenance/aft)
@@ -65658,7 +65658,8 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/medical{
-	name = "Paramedic Dispatch"
+	name = "Paramedic Dispatch";
+	req_access_txt = "5"
 	},
 /turf/open/floor/iron/dark,
 /area/medical/medbay/factory)
