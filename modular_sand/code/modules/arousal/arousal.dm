@@ -7,12 +7,12 @@
 	var/crocin_amount = reagents.get_reagent_amount(/datum/reagent/drug/aphrodisiac)
 	if(crocin_amount)
 		reagents.remove_reagent(/datum/reagent/drug/aphrodisiac, rand(10, max(30, crocin_amount / 5)))
-		message_to_display = span_userlove("Mnn.. Yes...~")
+		message_to_display = span_userlove("Мммм.. Да...~")
 	// More potent, harder to get rid of
 	var/hexacrocin_amount = reagents.get_reagent_amount(/datum/reagent/drug/aphrodisiacplus)
 	if(hexacrocin_amount)
 		reagents.remove_reagent(/datum/reagent/drug/aphrodisiacplus, rand(2, max(15, hexacrocin_amount / 6)))
-		message_to_display = span_userlove("YES~!")
+		message_to_display = span_userlove("АХХХ... ДА...~!")
 	if(message_to_display)
 		to_chat(src, message_to_display)
 
