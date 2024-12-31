@@ -14,7 +14,7 @@
 	var/atom/spawn_location //where the trader appears
 
 /datum/round_event/travelling_trader/setup()
-	if(GLOB.generic_event_spawns)
+	if(GLOB.generic_event_spawns.len)
 		spawn_location = pick(GLOB.generic_event_spawns)
 	else
 		message_admins("No event spawn landmarks exist on the map while placing a travelling trader, resorting to random station turf. (go yell at a mapper)")
