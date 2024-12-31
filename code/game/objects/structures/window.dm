@@ -209,6 +209,12 @@ GLOBAL_LIST_EMPTY(electrochromatic_window_lookup)
 	if(user.a_intent == INTENT_HARM)
 		user.visible_message(span_warning("[user] долбится об [src]!"))
 		balloon_alert_to_viewers("СТУК!!!")
+		take_damage(8, BRUTE, MELEE, 0)
+		var/mob/living/carbon/human/pro_user = user
+		if(user.active_hand_index == 1)
+			pro_user.apply_damage(4, BRUTE, BODY_ZONE_L_ARM, wound_bonus = 15)
+		else
+			pro_user.apply_damage(4, BRUTE, BODY_ZONE_R_ARM, wound_bonus = 15)
 		playsound(src, 'sound/effects/Glassknock.ogg', 100, 1)
 	else if(user.a_intent != INTENT_HARM)
 		user.visible_message("[user] стучится в [src].")

@@ -279,6 +279,7 @@
 	key_third_person = "jumps"
 	message = "прыгает!"
 	restraint_check = TRUE
+	emote_cooldown = 1 SECONDS
 
 /datum/emote/sound/human/kiss
 	key = "kiss"

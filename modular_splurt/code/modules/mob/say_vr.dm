@@ -40,7 +40,7 @@
 	user.visible_message(message = message, self_message = message, omni = TRUE)
 
 /mob/living/verb/player_narrate(message as message)
-	set category = "IC"
+	set category = "Say"
 	set name = "Narrate (Player)"
 	set desc = "Narrate an action or event! An alternative to emoting, for when your emote shouldn't start with your name!"
 	if(GLOB.say_disabled)
@@ -56,7 +56,7 @@
 /mob/living/verb/subtle_indicator()
 	// Set data
 	set name = "Subtle (Indicator)"
-	set category = "IC"
+	set category = "Say"
 
 	// Check if say is disabled
 	if(GLOB.say_disabled)

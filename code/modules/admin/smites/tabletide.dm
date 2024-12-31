@@ -4,7 +4,7 @@
 
 /datum/smite/tabletide/effect(client/user, mob/living/target)
 	. = ..()
-	priority_announce(html_decode("[target] has brought the wrath of the gods upon themselves and is now being tableslammed across the station. Please stand by."), null, 'sound/misc/announce.ogg', "CentCom")
+	priority_announce(html_decode("[target] навлёк на себя гнев Богов и теперь размазывается по столам всей станции. Пожалуйста, будьте готовы."), null, 'sound/misc/announce.ogg', "Центральное Командование")
 	var/list/areas = list()
 	for(var/area/A in world)
 		if(A.z == SSmapping.station_start)

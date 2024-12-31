@@ -83,7 +83,7 @@
 /obj/item/clothing/accessory/tratch_patch
 	name = "Tratch patch"
 	desc = "Нашивка повстанческого движения Таяр, текст на которой гласит: «держись достойно»."
-	icon = 'modular_bluemoon/krashly/icons/obj/clothing/64_patch.dmi'
+	icon = 'modular_bluemoon/krashly/icons/obj/clothing/patch.dmi'
 	mob_overlay_icon = 'modular_bluemoon/krashly/icons/mob/clothing/patch.dmi'
 	icon_state = "tratch_patch"
 	item_state = "tratch_patch"

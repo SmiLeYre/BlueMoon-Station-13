@@ -387,18 +387,18 @@
 	throwforce = 15
 	w_class = WEIGHT_CLASS_BULKY
 	attack_verb = list("bashed", "slashes", "prods", "pokes")
-	fitting_swords = list(/obj/item/melee/sabre/karakurt)
-	starting_sword = /obj/item/melee/sabre/karakurt
+	fitting_swords = list(/obj/item/melee/rapier/karakurt)
+	starting_sword = /obj/item/melee/rapier/karakurt
 
-/obj/item/melee/sabre/karakurt/get_belt_overlay()
+/obj/item/melee/rapier/karakurt/get_belt_overlay()
 	if(istype(loc, /obj/item/storage/belt/sabre/karakurt))
 		return mutable_appearance('icons/obj/clothing/belt_overlays.dmi', "karakurt")
 	return ..()
 
-/obj/item/melee/sabre/karakurt/get_worn_belt_overlay(icon_file)
+/obj/item/melee/rapier/karakurt/get_worn_belt_overlay(icon_file)
 	return mutable_appearance(icon_file, "-karakurt")
 
-/obj/item/melee/sabre/karakurt
+/obj/item/melee/rapier/karakurt
 	name = "Karakurt"
 	desc = "<span class='nicegreen'>Лучше не трогать это лезвие руками</span>"
 	icon_state = "karakurt"
@@ -408,7 +408,7 @@
 	armour_penetration = 50
 	block_parry_data = /datum/block_parry_data/traitor_rapier
 
-/obj/item/melee/sabre/karakurt/attack(mob/living/target, mob/living/user)
+/obj/item/melee/rapier/karakurt/attack(mob/living/target, mob/living/user)
 	. = ..()
 	if(iscarbon(target))
 		if(HAS_TRAIT(user, TRAIT_PACIFISM))

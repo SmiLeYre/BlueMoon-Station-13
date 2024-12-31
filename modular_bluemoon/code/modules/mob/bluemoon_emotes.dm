@@ -103,7 +103,7 @@
 /datum/emote/sound/human/jacket1
 	key = "jacket"
 	key_third_person = "jacket"
-	message = "speaking: <b>'Help Is On The Way!'</b>"
+	message = "speaking: <b>'Do you know what time is it?'</b>"
 	message_mime = null
 	sound = 'sound/voice/jacket1.ogg'
 	emote_cooldown = 10 SECONDS

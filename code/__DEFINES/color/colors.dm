@@ -250,3 +250,5 @@ GLOBAL_LIST_INIT(random_color_list, list("#00aedb","#a200ff","#f47835","#d41243"
 #define COLOR_PAN_DODGERBLUE "#1BB3FF"
 
 /// === LGBT Colors End ===
+
+#define COLOR_TRANSPARENT_SHADOW "#03020781"
