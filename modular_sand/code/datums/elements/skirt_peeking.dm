@@ -29,6 +29,10 @@
 			// And are you under us while we're standing up?
 			if(!(CHECK_BITFIELD(living_peeker.mobility_flags, MOBILITY_STAND)) && (CHECK_BITFIELD(peeked.mobility_flags, MOBILITY_STAND)) && (peeked.loc == living_peeker.loc))
 				return TRUE
+
+			if((peeked.dir == living_peeker.dir) && (peeked.loc > living_peeker.loc))
+				if(peeked in view(2, peeker.client))
+					return TRUE
 			// Do you happen to be small enough to easily look under us?
 			if(COMPARE_SIZES(peeked, peeker) >= 2)
 				return TRUE
@@ -122,5 +126,6 @@
 		!peeker.is_eyes_covered(FALSE) && !(eye_blocker && eye_blocker.tint > 0) && \
 		!(peeker.invisibility > peeked.invisibility) && !(peeker.alpha <= 30)))
 		return
-	to_chat(peeked, span_warning("[peeker] подсматривает под твою [worn_uniform.name]!"))
-	to_chat(peeker, span_warning("[peeked] замечает, как ты подсматриваешь под [peeked.ru_ego()] [worn_uniform.name]!"))
+	if(peeker in view(1, peeked.client))
+		to_chat(peeked, span_warning("[peeker] подсматривает под твою [worn_uniform.name]!"))
+		to_chat(peeker, span_warning("[peeked] замечает, как ты подсматриваешь под [peeked.ru_ego()] [worn_uniform.name]!"))

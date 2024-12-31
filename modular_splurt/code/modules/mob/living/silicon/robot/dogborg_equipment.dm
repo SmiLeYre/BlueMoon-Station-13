@@ -382,7 +382,7 @@ SLEEPER CODE IS IN game/objects/items/devices/dogborg_sleeper.dm !
 			update_mobility()
 
 //pleasuremaw stuff
-/obj/item/milking_machine/pleasuremaw
+/obj/item/sucking_machine/pleasuremaw
 	name = "pleasuremaw"
 	desc = "A module that makes hound maws become slippery, warm, sticky, and soft, perfect place to slip your dick inside and relax, feed and help charge the borgs."
 	icon = 'modular_sand/icons/mob/dogborg.dmi'
@@ -392,19 +392,19 @@ SLEEPER CODE IS IN game/objects/items/devices/dogborg_sleeper.dm !
 	var/consumption_rate = 2
 	var/mob/living/silicon/robot/borg_self = null
 
-/obj/item/milking_machine/pleasuremaw/Initialize()
+/obj/item/sucking_machine/pleasuremaw/Initialize()
 	. = ..()
 	inserted_item = new /obj/item/reagent_containers/glass/beaker/large(src)
 	inserted_item.name = "cyborg stomach"
 	inserted_item.desc = "A cyborg stomach. It seems integrated into [src]'s machinery."
 
-/obj/item/milking_machine/pleasuremaw/Destroy()
+/obj/item/sucking_machine/pleasuremaw/Destroy()
 	STOP_PROCESSING(SSobj, src) //please no
 	QDEL_NULL(inserted_item)
 	borg_self = null
 	. = ..()
 
-/obj/item/milking_machine/pleasuremaw/interact(mob/user)
+/obj/item/sucking_machine/pleasuremaw/interact(mob/user)
 	//start processing the regents in the container - and slowly use em up to create power
 	toggle_process_regents = !toggle_process_regents
 	if (toggle_process_regents)
@@ -416,7 +416,7 @@ SLEEPER CODE IS IN game/objects/items/devices/dogborg_sleeper.dm !
 		to_chat(user, "<span class='notice'>You stop processing the fluids from the [inserted_item.name].</span>")
 	return
 
-/obj/item/milking_machine/pleasuremaw/process()
+/obj/item/sucking_machine/pleasuremaw/process()
 	//TODO: Check if any of the regents are not erotic fluids - if they are - stop the process and spit out a message to the user.
 	if (inserted_item.reagents.total_volume < consumption_rate)
 		src.interact(borg_self)
@@ -424,11 +424,11 @@ SLEEPER CODE IS IN game/objects/items/devices/dogborg_sleeper.dm !
 	inserted_item.reagents.remove_all(consumption_rate)
 	borg_self.cell.charge = min(borg_self.cell.charge + borg_self.cell.maxcharge/50, borg_self.cell.maxcharge)
 
-/obj/item/milking_machine/pleasuremaw/AltClick(mob/living/user)
+/obj/item/sucking_machine/pleasuremaw/AltClick(mob/living/user)
 	//function for when alt-clicked -  do nothing for now - do not call parent
 	return
 
-/obj/item/milking_machine/pleasuremaw/afterattack(atom/target, mob/living/silicon/robot/user, proximity)
+/obj/item/sucking_machine/pleasuremaw/afterattack(atom/target, mob/living/silicon/robot/user, proximity)
 	//use pleasuremaw on designated body part in different ways depending on the intent
 	if(!proximity || !check_allowed_items(target) || !istype(user))
 		return
