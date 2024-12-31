@@ -348,7 +348,7 @@
 
 /datum/action/item_action/nyamagotchi_menu
 	name = "Check Nyamagotchi"
-	button_icon = 'icons/obj/toys.dmi'
+	icon_icon = 'icons/obj/toys.dmi'
 	button_icon_state = "nya"
 
 /datum/job/psychologist/New()

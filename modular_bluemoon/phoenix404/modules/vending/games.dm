@@ -28,7 +28,7 @@
 				/obj/item/canvas/twentyfour_twentyfour = 5,
 				/obj/item/canvas/twentythreeXnineteen = 5,
 				/obj/item/canvas/twentythreeXtwentythree = 5,
-				/obj/item/wallframe/painting/ = 5,
+				/obj/item/wallframe/painting = 5,
 			),
 		),
 		list(
@@ -46,6 +46,7 @@
 				/obj/item/toy/prizeball/therapy = 6,
 				/obj/item/tvcamera = 3,
 				/obj/item/toy/nyamagotchi = 10,
+				/obj/item/gun/ballistic/revolver/russian/lewd = 5,
 			),
 		),
 	)
@@ -53,12 +54,15 @@
 		/obj/item/dice/fudge = 9,
 		/obj/item/cardpack/syndicate = 10,
 		/obj/item/clothing/shoes/wheelys = 4,
-//		/obj/item/gun/ballistic/revolver/russian = 1, //the most dangerous game
+		/obj/item/gun/ballistic/revolver/russian = 1,
 	)
 	premium = list(
 		/obj/item/disk/holodisk = 5,
-//		/obj/item/rcl = 2,
+		/obj/item/rcl = 2,
 		/obj/item/airlock_painter = 1,
+		/obj/item/pipe_painter = 1,
+		/obj/item/airlock_painter/decal = 1,
+		/obj/item/airlock_painter/decal/tile = 1,
 		/obj/item/melee/skateboard/pro = 3,
 		/obj/item/melee/skateboard/hoverboard = 1,
 	)

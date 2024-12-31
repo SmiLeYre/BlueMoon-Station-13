@@ -58,3 +58,18 @@
 	else
 		to_chat(M, "<span class='notice'>There's nothing that you can cancel right now.</span>")
 	return TRUE
+
+/datum/keybinding/living/jump
+	hotkey_keys = list("Space")
+	name = "Jump"
+	full_name = "Jump"
+	description = "Jumps, if your mob is capable of doing so."
+	keybind_signal = COMSIG_KB_LIVING_JUMP
+
+/datum/keybinding/living/jump/down(client/user)
+	var/mob/living/L = user.mob
+	if(L.resting)
+		return FALSE
+	L.emote("jump")
+	SEND_SIGNAL(L, COMSIG_KB_LIVING_JUMP)
+	return TRUE

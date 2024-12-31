@@ -948,6 +948,7 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	S["headshot1"] 							>> features["headshot_link1"] //BLUEMOON edit
 	S["headshot2"] 							>> features["headshot_link2"] //BLUEMOON edit
 	S["shriek_type"] 						>> shriek_type // BLUEMOON ADD - выбор вида крика для квирка
+	S["summon_nickname"] 					>> summon_nickname // BLUEMOON ADD - выбор прозвища для призываемого
 	S["feature_hardsuit_with_tail"] 		>> features["hardsuit_with_tail"]
 	S["persistent_scars"] 					>> persistent_scars
 	S["scars1"] 							>> scars_list["1"]
@@ -1464,7 +1465,8 @@ SAVEFILE UPDATING/VERSIONING - 'Simplified', or rather, more coder-friendly ~Car
 	WRITE_FILE(S["hair_color"]							, hair_color)
 	WRITE_FILE(S["facial_hair_color"]					, facial_hair_color)
 	WRITE_FILE(S["eye_type"]							, eye_type)
-	WRITE_FILE(S["shriek_type"]							, shriek_type) // BLUEMOON AD
+	WRITE_FILE(S["shriek_type"]							, shriek_type) // BLUEMOON ADD
+	WRITE_FILE(S["summon_nickname"]						, summon_nickname) // BLUEMOON ADD
 	WRITE_FILE(S["feature_hardsuit_with_tail"]			, features["hardsuit_with_tail"])
 	WRITE_FILE(S["left_eye_color"]						, left_eye_color)
 	WRITE_FILE(S["right_eye_color"]						, right_eye_color)

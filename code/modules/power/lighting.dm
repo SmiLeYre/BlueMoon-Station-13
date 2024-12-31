@@ -213,7 +213,7 @@
 	var/nightshift_allowed = TRUE	//Set to FALSE to never let this light get switched to night mode.
 	var/nightshift_brightness = 8
 	var/nightshift_light_power = 0.45
-	var/nightshift_light_color = "#f5faca"
+	var/nightshift_light_color = "#ffcc33"
 
 	var/emergency_mode = FALSE	// if true, the light is in emergency mode
 	var/fire_mode = FALSE // if true, the light swaps over to emergency colour

@@ -1,6 +1,6 @@
 /mob/living/verb/subtler_indicatored()
 	set name = "Subtler Anti-Ghost (Indicator)"
-	set category = "IC"
+	set category = "Say"
 	// Check if say is disabled
 	if(GLOB.say_disabled)
 		// Warn user and return

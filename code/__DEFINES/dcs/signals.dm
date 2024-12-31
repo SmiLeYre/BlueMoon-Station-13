@@ -833,3 +833,10 @@
 
 /// Called when the player replies. From /client/proc/cmd_admin_pm().
 #define COMSIG_ADMIN_HELP_REPLIED "admin_help_replied"
+
+///from /datum/element/jump when a jump has started and ended
+#define COMSIG_ELEMENT_JUMP_STARTED "element_jump_started"
+#define COMSIG_ELEMENT_JUMP_ENDED "element_jump_ended"
+#define COMSIG_KB_LIVING_JUMP "keybind_jump"
+#define COMSIG_TURF_JUMP_ENDED_HERE "turf_jump_ended_here"      //from datum/element/jump/end_jump(): (jumper)
+#define COMSIG_KB_ACTIVATED (1<<0)

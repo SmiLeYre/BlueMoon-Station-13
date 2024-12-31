@@ -1,6 +1,6 @@
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggle_lewd_sounds)()
 	set name = "Hear/Silence Lewd Verb Sounds"
-	set category = "Preferences"
+	set category = "Preferences.Sounds"
 	set desc = "Hear Lewd Verb Sounds From Interactions"
 	usr.client.prefs.toggles ^= LEWD_VERB_SOUNDS
 	usr.client.prefs.save_preferences()

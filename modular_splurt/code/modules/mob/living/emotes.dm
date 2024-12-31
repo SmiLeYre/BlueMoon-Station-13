@@ -1647,6 +1647,15 @@ To add randomization to your emote, copy and paste this line of code:
 	vary = FALSE
 	volume = 30
 
+/datum/emote/sound/human/squirm
+	key = "squirm"
+	key_third_person = "squirm"
+	name = "squirm"
+	message = "squirms in place!"
+	message_mime = "squirms in place!"
+	emote_type = EMOTE_VISIBLE
+	emote_cooldown = 0.8 SECONDS
+
 /datum/emote/sound/human/malaysia
 	key = "malaysia"
 	key_third_person = "admits to blowing up Malaysia!"
