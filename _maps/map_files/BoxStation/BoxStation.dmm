@@ -15172,6 +15172,7 @@
 	network = list("ss13","medbay")
 	},
 /obj/machinery/cell_charger,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "blo" = (
@@ -43439,6 +43440,13 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
 /turf/closed/wall,
 /area/commons/dorms)
+"ghr" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/turf/open/floor/plasteel,
+/area/hallway/primary/starboard)
 "ghs" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 4
@@ -111871,7 +111879,7 @@ xku
 oAT
 dKa
 aYV
-bdp
+ghr
 bet
 wng
 pju
