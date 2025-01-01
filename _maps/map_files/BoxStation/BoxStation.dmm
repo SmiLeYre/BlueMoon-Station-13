@@ -43440,13 +43440,6 @@
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
 /turf/closed/wall,
 /area/commons/dorms)
-"ghr" = (
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/turf/open/floor/plasteel,
-/area/hallway/primary/starboard)
 "ghs" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 4
@@ -56517,6 +56510,17 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/white,
+/area/medical/medbay/factory)
+"nuY" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "chemistry_shutters2";
+	name = "Chemistry Shutter"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/open/floor/plating,
 /area/medical/medbay/factory)
 "nvj" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -74142,17 +74146,6 @@
 /obj/effect/spawner/lootdrop/syndicate_present,
 /turf/open/floor/plating,
 /area/maintenance/fore)
-"xFe" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/machinery/door/poddoor/preopen{
-	id = "chemistry_shutters2";
-	name = "Chemistry Shutter"
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/turf/open/floor/plating,
-/area/medical/medbay/factory)
 "xFf" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -108823,7 +108816,7 @@ uJS
 qYG
 epz
 fCQ
-xFe
+nuY
 uJS
 uJS
 uJS
@@ -111890,7 +111883,7 @@ xku
 oAT
 dKa
 aYV
-ghr
+bdp
 bet
 wng
 pju
