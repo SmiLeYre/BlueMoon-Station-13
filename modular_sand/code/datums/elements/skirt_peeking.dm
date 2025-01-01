@@ -126,6 +126,5 @@
 		!peeker.is_eyes_covered(FALSE) && !(eye_blocker && eye_blocker.tint > 0) && \
 		!(peeker.invisibility > peeked.invisibility) && !(peeker.alpha <= 30)))
 		return
-	if(peeker in view(1, peeked.client))
-		to_chat(peeked, span_warning("[peeker] подсматривает под твою [worn_uniform.name]!"))
-		to_chat(peeker, span_warning("[peeked] замечает, как ты подсматриваешь под [peeked.ru_ego()] [worn_uniform.name]!"))
+	to_chat(peeked, span_warning("[peeker] подсматривает под твою [worn_uniform.name]!"))
+	to_chat(peeker, span_warning("[peeked] замечает, как ты подсматриваешь под [peeked.ru_ego()] [worn_uniform.name]!"))

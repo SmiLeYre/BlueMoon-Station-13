@@ -1,6 +1,6 @@
-/obj/item/sucking_machine
-	icon = 'modular_splurt/icons/obj/sucking_machine.dmi'
-	name = "sucking machine"
+/obj/item/milking_machine
+	icon = 'modular_splurt/icons/obj/milking_machine.dmi'
+	name = "milking machine"
 	icon_state = "Off"
 	item_state = "Off"
 	desc = "A pocket sized pump and tubing assembly designed to collect and store products from mammary glands."
@@ -15,18 +15,18 @@
 	var/target_organ  = ORGAN_SLOT_BREASTS // What organ we are transfering from
 	var/inuse = FALSE
 
-/obj/item/sucking_machine/Destroy()
+/obj/item/milking_machine/Destroy()
 	inserted_item?.forceMove(loc) //edge case of being inside another object which i don't care about
 	inserted_item = null //null your refs
 	. = ..()
 
-/obj/item/sucking_machine/examine(mob/user)
+/obj/item/milking_machine/examine(mob/user)
 	. = ..()
 	to_chat(user, span_notice("[src] is currently [on ? "on" : "off"]."))
 	if (inserted_item)
 		to_chat(user, span_notice("[inserted_item] contains [inserted_item.reagents.total_volume]/[inserted_item.reagents.maximum_volume] units."))
 
-/obj/item/sucking_machine/attackby(obj/item/wielded, mob/user, params)
+/obj/item/milking_machine/attackby(obj/item/wielded, mob/user, params)
 	add_fingerprint(user)
 	if(!istype(wielded, /obj/item/reagent_containers)) //the slash at the end was bugging me so hard.
 		return ..()
@@ -42,7 +42,7 @@
 	inserted_item = wielded
 	update_icon_state() //this is a proc that exists, you know
 
-/obj/item/sucking_machine/interact(mob/user)
+/obj/item/milking_machine/interact(mob/user)
 	. = ..() //call parent
 	if(issilicon(user))
 		return //use early returns
@@ -53,31 +53,31 @@
 	to_chat(user, span_notice("You turn \the [src] [on ? "on" : "off"].")) //text ternaries are good (if not in excess amounts)
 	update_icon_state()
 
-/obj/item/sucking_machine/update_icon_state()
+/obj/item/milking_machine/update_icon_state()
 	. = ..()
 	icon_state = "[on ? "On" : "Off"][inserted_item ? "Beaker" : ""]" //hardcoding icon states isn't particularly good
 	item_state = icon_state //but i'll leave it since i don't want to fuck with icons
 
-/obj/item/sucking_machine/AltClick(mob/living/user)
+/obj/item/milking_machine/AltClick(mob/living/user)
 	add_fingerprint(user)
 	user.put_in_hands(inserted_item)
 	inserted_item = null
 	on = FALSE
 	update_icon_state()
 
-/obj/item/sucking_machine/penis
+/obj/item/milking_machine/penis
 	name = "cock milker"
 	icon_state = "PenisOff"
 	item_state = "PenisOff"
 	desc = "A pocket sized pump and tubing assembly designed to collect and store products from the penis."
 	target_organ = ORGAN_SLOT_PENIS
 
-/obj/item/sucking_machine/penis/update_icon_state()
+/obj/item/milking_machine/penis/update_icon_state()
 	. = ..()
 	icon_state = "Penis[icon_state]" //for the record, i'm not doing icon states any better than sand.
 	item_state = icon_state
 
-/obj/item/sucking_machine/afterattack(mob/living/carbon/human/victim, mob/living/user) //use clear argument names, "H" is quite unclear
+/obj/item/milking_machine/afterattack(mob/living/carbon/human/victim, mob/living/user) //use clear argument names, "H" is quite unclear
 	if(!istype(victim) || !istype(user)) //check if we actually have the type we're expecting
 		return ..()
 

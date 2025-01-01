@@ -9,8 +9,6 @@
 	var/obj/structure/resulting_structure = /obj/structure/chair
 	///How much time does it take to construct an item using this?
 	var/construction_time = 8 SECONDS
-	///What color is the item using? If none, leave this blank.
-	var/current_color = ""
 
 /obj/item/construction_kit/Initialize(mapload)
 	. = ..()
@@ -29,19 +27,7 @@
 		to_chat(user, span_warning("You fail to assemble [src]!"))
 		return
 
-	var/obj/structure/chair/final_structure = new resulting_structure (get_turf(user))
-	if(current_color && istype(final_structure, /obj/structure/chair/milking_machine))
-		var/obj/structure/chair/milking_machine/new_milker = final_structure
-		new_milker.machine_color = current_color
-
-		if(current_color == "pink")
-			new_milker.icon_state = "milking_pink_off"
-		else
-			new_milker.icon_state = "milking_teal_off"
-
-	if(istype(final_structure, /obj/structure/chair/shibari_stand))
-		var/obj/structure/chair/shibari_stand/stand = final_structure
-
+	new resulting_structure (get_turf(src))
 	qdel(src)
 	to_chat(user, span_notice("You assemble [src]."))
 
@@ -63,21 +49,3 @@
 /obj/item/construction_kit/bdsm/shibari
 	icon_state = "shibari_kit"
 	resulting_structure = /obj/structure/chair/shibari_stand
-
-// MILKER
-
-/obj/item/construction_kit/milker
-	icon = 'modular__juicy/icons/obj/structures/milking_machine.dmi'
-	icon_state = "milkbuild_pink"
-	base_icon_state = "milkbuild"
-	current_color = "pink"
-	resulting_structure = /obj/structure/chair/milking_machine
-
-/obj/item/construction_kit/milker/Initialize(mapload)
-	. = ..()
-	update_icon_state()
-	update_icon()
-
-/obj/item/construction_kit/milker/update_icon_state()
-	icon_state = "[initial(base_icon_state)]_[current_color]"
-	return ..()

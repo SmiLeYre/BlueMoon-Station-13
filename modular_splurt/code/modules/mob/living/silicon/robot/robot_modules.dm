@@ -295,7 +295,7 @@
 /// End Cargo Borg ///
 
 /obj/item/robot_module/Initialize()
-	basic_modules += /obj/item/sucking_machine/pleasuremaw
+	basic_modules += /obj/item/milking_machine/pleasuremaw
 	. = ..()
 
 /obj/item/robot_module/syndicate_medical/slaver

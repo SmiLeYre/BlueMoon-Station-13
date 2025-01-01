@@ -1,7 +1,7 @@
 //Milking machines
-/datum/crafting_recipe/sucking_machine
+/datum/crafting_recipe/milking_machine
 	name = "Milking Machine"
-	result = /obj/item/sucking_machine
+	result = /obj/item/milking_machine
 	reqs = list(
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stack/rods = 2,
@@ -13,9 +13,9 @@
 	subcategory = CAT_MISCELLANEOUS
 	category = CAT_MISCELLANEOUS
 
-/datum/crafting_recipe/sucking_machine/penis
+/datum/crafting_recipe/milking_machine/penis
 	name = "Cock Milker"
-	result = /obj/item/sucking_machine/penis
+	result = /obj/item/milking_machine/penis
 	reqs = list(
 		/obj/item/stack/cable_coil = 5,
 		/obj/item/stack/rods = 1,

@@ -118,7 +118,6 @@
 
 /obj/structure/chair/shibari_stand/post_buckle_mob(mob/living/buckled)
 	buckled.pixel_y = buckled.base_pixel_y + 4
-	buckled.pixel_x = buckled.base_pixel_x
 	buckled.layer = BELOW_MOB_LAYER
 
 	if(LAZYLEN(buckled_mobs))
@@ -141,8 +140,7 @@
 
 //Restore the position of the mob after unbuckling.
 /obj/structure/chair/shibari_stand/post_unbuckle_mob(mob/living/buckled)
-	buckled.pixel_x = buckled.base_pixel_x + buckled.body_position_pixel_x_offset
-	buckled.pixel_y = buckled.base_pixel_y + buckled.body_position_pixel_y_offset - 4
+	buckled.pixel_y = buckled.get_standard_pixel_y_offset()
 	buckled.layer = initial(buckled.layer)
 
 	cut_overlay(shibari_shadow_overlay)
@@ -166,8 +164,7 @@
 		to_chat(user, span_warning("You fail to disassemble \the [src]."))
 		return FALSE
 
-	deconstruct(TRUE)
-	to_chat(user, span_notice("You disassemble [src]."))
+	to_chat(user, span_notice("You disassemble \the [src]."))
 	unbuckle_all_mobs()
 	qdel(src)
 	return TRUE
