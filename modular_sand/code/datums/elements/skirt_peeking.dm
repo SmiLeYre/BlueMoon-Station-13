@@ -29,10 +29,6 @@
 			// And are you under us while we're standing up?
 			if(!(CHECK_BITFIELD(living_peeker.mobility_flags, MOBILITY_STAND)) && (CHECK_BITFIELD(peeked.mobility_flags, MOBILITY_STAND)) && (peeked.loc == living_peeker.loc))
 				return TRUE
-
-			if((peeked.dir == living_peeker.dir) && (peeked.loc > living_peeker.loc))
-				if(peeked in view(2, peeker.client))
-					return TRUE
 			// Do you happen to be small enough to easily look under us?
 			if(COMPARE_SIZES(peeked, peeker) >= 2)
 				return TRUE
