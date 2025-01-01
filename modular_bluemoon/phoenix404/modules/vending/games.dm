@@ -49,6 +49,32 @@
 				/obj/item/gun/ballistic/revolver/russian/lewd = 5,
 			),
 		),
+		list(
+			"name" = "cosmetic",
+			"icon" = "theater-masks",
+			"products" = list(
+				/obj/item/lipstick/white = 5,
+				/obj/item/lipstick = 5,
+				/obj/item/lipstick/purple = 5,
+				/obj/item/lipstick/jade = 5,
+				/obj/item/lipstick/black = 5,
+				/obj/item/lipstick/yellow = 5,
+				/obj/item/lipstick/blue = 5,
+				/obj/item/lipstick/teal = 5,
+				/obj/item/lipstick/fuchsia = 5,
+				/obj/item/lipstick/navy = 5,
+				/obj/item/lipstick/aqua = 5,
+				/obj/item/lipstick/white = 5,
+				/obj/item/nailpolish/red = 5,
+				/obj/item/nailpolish/blue = 5,
+				/obj/item/nailpolish/aqua = 5,
+				/obj/item/nailpolish/black = 5,
+				/obj/item/nailpolish/white = 5,
+				/obj/item/nailpolish/navy = 5,
+				/obj/item/nailpolish/yellow = 5,
+				/obj/item/nailpolish/purple = 5,
+			),
+		)
 	)
 	contraband = list(
 		/obj/item/dice/fudge = 9,
