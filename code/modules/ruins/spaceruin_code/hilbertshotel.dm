@@ -95,7 +95,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	if(!mob_dorms[user] || !mob_dorms[user].Find(chosenRoomNumber)) //BLUEMOON ADD владелец комнаты может зайти в комнату даже если она закрыта и активна
 		if(activeRooms.len && activeRooms["[chosenRoomNumber]"])	//лесенка ради удобства восприятия, точно-точно говорю
 			if(lockedRooms.len && lockedRooms["[chosenRoomNumber]"])
-				to_chat(user, span_warning("Your cant enter in locked room, contact with room owner."))
+				to_chat(user, span_warning("You cant enter in locked room, contact with room owner."))
 				return												//BLUEMOON ADD END
 	if(max_rooms > 0 && mob_dorms[user]?.len >= max_rooms && !activeRooms["[chosenRoomNumber]"] && !storedRooms["[chosenRoomNumber]"])
 		to_chat(user, span_warning("Your free trial of Hilbert's Hotel has ended! Please select one of the rooms you've already visited."))
