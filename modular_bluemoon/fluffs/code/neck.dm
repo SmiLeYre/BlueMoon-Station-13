@@ -12,7 +12,7 @@
 
 /obj/item/clothing/neck/SMART_fabric_boatcloak/Initialize(mapload)
 	. = ..()
-	plashik_zaeb_designs = list(
+	SMART_fabric_boatcloak_designs = list(
 		"Roboticist" = image(icon = src.icon, icon_state = "roboticist"),
 		"Scientist" = image(icon = src.icon, icon_state = "scienist"),
 		"Atmos" = image(icon = src.icon, icon_state = "atmos"),
@@ -24,7 +24,7 @@
 	if(!istype(user) || user.incapacitated())
 		return
 
-	var/static/list/options = list("Roboticist" = "roboticist", "Scientist" = "scientist", "Atmos" = "atmos",
+	var/static/list/options = list("Roboticist" = "roboticist", "Scientist" = "scienist", "Atmos" = "atmos",
 							"Engineer" = "engineer", "General" = "general")
 
 	var/choice = show_radial_menu(user, src, SMART_fabric_boatcloak_designs, custom_check = FALSE, radius = 36, require_near = TRUE)
