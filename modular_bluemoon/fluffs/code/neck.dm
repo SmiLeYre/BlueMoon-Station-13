@@ -24,7 +24,7 @@
 	if(!istype(user) || user.incapacitated())
 		return
 
-	var/static/list/options = list("Roboticist" = "roboticist, "Scientist" = "scientist", "Atmos" = "atmos",
+	var/static/list/options = list("Roboticist" = "roboticist", "Scientist" = "scientist", "Atmos" = "atmos",
 							"Engineer" = "engineer", "General" = "general")
 
 	var/choice = show_radial_menu(user, src, SMART_fabric_boatcloak_designs, custom_check = FALSE, radius = 36, require_near = TRUE)
