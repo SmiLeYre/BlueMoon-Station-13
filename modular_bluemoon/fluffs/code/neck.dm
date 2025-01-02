@@ -31,7 +31,7 @@
 
 	if(src && choice && !user.incapacitated() && in_range(user,src))
 		icon_state = options[choice]
-		user.update_inv_wear_mask()
+		user.update_inv_neck()
 		for(var/X in actions)
 			var/datum/action/A = X
 			A.UpdateButtons()
