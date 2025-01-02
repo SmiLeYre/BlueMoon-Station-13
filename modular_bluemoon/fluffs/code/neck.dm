@@ -1,8 +1,8 @@
 /obj/item/clothing/neck/SMART_fabric_boatcloak
 	name = "SMART-fabric boatcloak"
 	desc = "The tissue is capable of changing its structure by reading small nerve impulses from the body."
-	icon_state = "basa"
-	item_state = "basa"
+	icon_state = "general"
+	item_state = "general"
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/neck.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/neck.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/neck.dmi'
