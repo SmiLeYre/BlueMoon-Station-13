@@ -1,4 +1,4 @@
-/obj/item/clothing/neck/plashik_zaeb
+/obj/item/clothing/neck/SMART_fabric_boatcloak
 	name = "SMART-fabric boatcloak"
 	desc = "The tissue is capable of changing its structure by reading small nerve impulses from the body."
 	icon_state = "basa"
@@ -7,27 +7,27 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/neck.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/neck.dmi'
 	actions_types = list(/datum/action/item_action/adjust)
-	var/list/plashik_zaeb_designs = list()
+	var/list/SMART_fabric_boatcloak_designs = list()
 
 
-/obj/item/clothing/neck/plashik_zaeb/Initialize(mapload)
+/obj/item/clothing/neck/SMART_fabric_boatcloak/Initialize(mapload)
 	. = ..()
 	plashik_zaeb_designs = list(
-		"roboeb" = image(icon = src.icon, icon_state = "roboeb"),
-		"sci" = image(icon = src.icon, icon_state = "scienist"),
-		"atmos" = image(icon = src.icon, icon_state = "atmos"),
-		"engi" = image(icon = src.icon, icon_state = "engi"),
-		"basa" = image(icon = src.icon, icon_state = "basa"),
+		"Roboticist" = image(icon = src.icon, icon_state = "roboticist"),
+		"Scientist" = image(icon = src.icon, icon_state = "scienist"),
+		"Atmos" = image(icon = src.icon, icon_state = "atmos"),
+		"Engineer" = image(icon = src.icon, icon_state = "engineer"),
+		"General" = image(icon = src.icon, icon_state = "general"),
 		)
 
-/obj/item/clothing/neck/plashik_zaeb/ui_action_click(mob/user)
+/obj/item/clothing/neck/SMART_fabric_boatcloak/ui_action_click(mob/user)
 	if(!istype(user) || user.incapacitated())
 		return
 
-	var/static/list/options = list("roboeb" = "roboeb", "sci" = "scienist", "atmos" = "atmos",
-							"engi" = "engi", "basa" = "basa")
+	var/static/list/options = list("Roboticist" = "roboticist, "Scientist" = "scientist", "Atmos" = "atmos",
+							"Engineer" = "engineer", "General" = "general")
 
-	var/choice = show_radial_menu(user, src, plashik_zaeb_designs, custom_check = FALSE, radius = 36, require_near = TRUE)
+	var/choice = show_radial_menu(user, src, SMART_fabric_boatcloak_designs, custom_check = FALSE, radius = 36, require_near = TRUE)
 
 	if(src && choice && !user.incapacitated() && in_range(user,src))
 		icon_state = options[choice]
