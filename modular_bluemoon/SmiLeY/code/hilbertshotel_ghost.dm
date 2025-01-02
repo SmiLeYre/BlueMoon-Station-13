@@ -36,6 +36,14 @@
 
 	to_chat(user, "<span class='notice'>You [parentSphere.lockedRooms[roomnumber] ? "locked" : "unlocked"] room...</span>")
 
+/turf/closed/indestructible/hoteldoor/examine(mob/user)
+	. = ..()
+	if(!isliving(user))
+		return
+	. += "The placard reads 'Room [roomnumber]'."
+	. += "<span class='info'>Alt-Click to look through the peephole.</span>"
+	. += "<span class='info'>Ctrl-Click to lock door if you owner of the room.</span>"
+
 /datum/map_template/hilbertshotel/apartment
 	name = "Apartment"
 	mappath = '_maps/templates/apartment.dmm'

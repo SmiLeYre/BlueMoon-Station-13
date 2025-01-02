@@ -323,10 +323,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	currentArea.reservation = currentReservation
 	for(var/turf/closed/indestructible/hoteldoor/door in currentArea)
 		door.parentSphere = src
-		door.desc = "The door to this hotel room. The placard reads 'Room [currentRoomnumber]'. \
-			Strange, this door doesnt even seem openable. The doorknob, however, seems to buzz with unusual energy...<br/>\
-			<span class='info'>Alt-Click to look through the peephole.</span><br/>\
-			<span class='info'>Ctrl-Click to lock door if you owner of the room.</span>"
+		door.roomnumber = currentRoomnumber
 	for(var/turf/open/space/bluespace/BSturf in currentArea)
 		BSturf.parentSphere = src
 
@@ -382,10 +379,7 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	var/area/hilbertshotel/currentArea = get_area(locate(currentReservation.bottom_left_coords[1], currentReservation.bottom_left_coords[2], currentReservation.bottom_left_coords[3]))
 	for(var/turf/closed/indestructible/hoteldoor/door in currentArea)
 		door.parentSphere = src
-		door.desc = "The door to this hotel room. The placard reads 'Room [currentRoomnumber]'. \
-			Strange, this door doesnt even seem openable. The doorknob, however, seems to buzz with unusual energy...<br/>\
-			<span class='info'>Alt-Click to look through the peephole.</span><br/>\
-			<span class='info'>Ctrl-Click to lock door if you owner of the room.</span>"
+		door.roomnumber = currentRoomnumber
 
 //Template Stuff
 /datum/map_template/hilbertshotel
@@ -444,6 +438,8 @@ GLOBAL_VAR_INIT(hhmysteryRoomNumber, 1337)
 	icon_state = "hoteldoor"
 	explosion_block = INFINITY
 	var/obj/item/hilbertshotel/parentSphere
+	var/roomnumber
+	desc = "The door to this hotel room. Strange, this door doesnt even seem openable. The doorknob, however, seems to buzz with unusual energy..."
 
 /turf/closed/indestructible/hoteldoor/proc/promptExit(mob/living/user)
 	if(!isliving(user))
