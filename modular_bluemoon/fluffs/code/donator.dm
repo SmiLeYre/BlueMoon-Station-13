@@ -1102,5 +1102,5 @@
 	name = "SMART-fabric boatcloak"
 	slot = ITEM_SLOT_NECK
 	path = /obj/item/clothing/neck/SMART_fabric_boatcloak
-	ckeywhitelist = list("KiJoking")
+	ckeywhitelist = list("kijoking")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
