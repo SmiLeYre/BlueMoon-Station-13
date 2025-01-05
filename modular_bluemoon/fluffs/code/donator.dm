@@ -1103,7 +1103,7 @@
 	slot = ITEM_SLOT_NECK
 	path = /obj/item/clothing/neck/tie/f_haori
 	ckeywhitelist = list ("romontesque")
-  subcategory = LOADOUT_SUBCATEGORIES_DON02
+  	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/SMART_fabric_boatcloak
 	name = "SMART-fabric boatcloak"
