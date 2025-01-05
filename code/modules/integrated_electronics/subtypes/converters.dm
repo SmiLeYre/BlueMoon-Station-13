@@ -12,20 +12,30 @@
 	desc = "This circuit can convert a number variable into a string."
 	extended_desc = "Because of circuit limitations, null/false variables will output a '0' string."
 	icon_state = "num-string"
-	inputs = list("input" = IC_PINTYPE_NUMBER)
-	outputs = list("output" = IC_PINTYPE_STRING)
+	inputs = list("A" = IC_PINTYPE_STRING,
+		"B" = IC_PINTYPE_STRING,
+		"C" = IC_PINTYPE_STRING,
+		"D" = IC_PINTYPE_STRING,
+		"E" = IC_PINTYPE_STRING,
+		"F" = IC_PINTYPE_STRING,
+		"G" = IC_PINTYPE_STRING,
+		"H" = IC_PINTYPE_STRING,)
+	outputs = list(
+		"A" = IC_PINTYPE_STRING,
+		"B" = IC_PINTYPE_STRING,
+		"C" = IC_PINTYPE_STRING,
+		"D" = IC_PINTYPE_STRING,
+		"E" = IC_PINTYPE_STRING,
+		"F" = IC_PINTYPE_STRING,
+		"G" = IC_PINTYPE_STRING,
+		"H" = IC_PINTYPE_STRING,
+	)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
 /obj/item/integrated_circuit/converter/num2text/do_work()
-	var/result = null
 	pull_data()
-	var/incoming = get_pin_data(IC_INPUT, 1)
-	if(!isnull(incoming))
-		result = num2text(incoming)
-	else if(!incoming)
-		result = "0"
-
-	set_pin_data(IC_OUTPUT, 1, result)
+	for(var/i = 1 to inputs.len)
+		set_pin_data(IC_OUTPUT, i,num2text(get_pin_data(IC_INPUT, i)) )
 	push_data()
 	activate_pin(2)
 
@@ -33,18 +43,32 @@
 	name = "string to number"
 	desc = "This circuit can convert a string variable into a number."
 	icon_state = "string-num"
-	inputs = list("input" = IC_PINTYPE_STRING)
-	outputs = list("output" = IC_PINTYPE_NUMBER)
+	inputs = list(
+		"A" = IC_PINTYPE_STRING,
+		"B" = IC_PINTYPE_STRING,
+		"C" = IC_PINTYPE_STRING,
+		"D" = IC_PINTYPE_STRING,
+		"E" = IC_PINTYPE_STRING,
+		"F" = IC_PINTYPE_STRING,
+		"G" = IC_PINTYPE_STRING,
+		"H" = IC_PINTYPE_STRING,
+	)
+	outputs = list(
+		"A" = IC_PINTYPE_NUMBER,
+		"B" = IC_PINTYPE_NUMBER,
+		"C" = IC_PINTYPE_NUMBER,
+		"D" = IC_PINTYPE_NUMBER,
+		"E" = IC_PINTYPE_NUMBER,
+		"F" = IC_PINTYPE_NUMBER,
+		"G" = IC_PINTYPE_NUMBER,
+		"H" = IC_PINTYPE_NUMBER,
+	)
 	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
 
 /obj/item/integrated_circuit/converter/text2num/do_work()
-	var/result = null
 	pull_data()
-	var/incoming = get_pin_data(IC_INPUT, 1)
-	if(!isnull(incoming))
-		result = text2num(incoming)
-
-	set_pin_data(IC_OUTPUT, 1, result)
+	for(var/i = 1 to inputs.len)
+		set_pin_data(IC_OUTPUT, i,text2num(get_pin_data(IC_INPUT, i)) )
 	push_data()
 	activate_pin(2)
 
