@@ -12,14 +12,15 @@
 	desc = "This circuit can convert a number variable into a string."
 	extended_desc = "Because of circuit limitations, null/false variables will output a '0' string."
 	icon_state = "num-string"
-	inputs = list("A" = IC_PINTYPE_STRING,
-		"B" = IC_PINTYPE_STRING,
-		"C" = IC_PINTYPE_STRING,
-		"D" = IC_PINTYPE_STRING,
-		"E" = IC_PINTYPE_STRING,
-		"F" = IC_PINTYPE_STRING,
-		"G" = IC_PINTYPE_STRING,
-		"H" = IC_PINTYPE_STRING,)
+	inputs = list("A" = IC_PINTYPE_NUMBER,
+		"B" = IC_PINTYPE_NUMBER,
+		"C" = IC_PINTYPE_NUMBER,
+		"D" = IC_PINTYPE_NUMBER,
+		"E" = IC_PINTYPE_NUMBER,
+		"F" = IC_PINTYPE_NUMBER,
+		"G" = IC_PINTYPE_NUMBER,
+		"H" = IC_PINTYPE_NUMBER,
+	)
 	outputs = list(
 		"A" = IC_PINTYPE_STRING,
 		"B" = IC_PINTYPE_STRING,
@@ -34,8 +35,12 @@
 
 /obj/item/integrated_circuit/converter/num2text/do_work()
 	pull_data()
-	for(var/i = 1 to inputs.len)
-		set_pin_data(IC_OUTPUT, i,num2text(get_pin_data(IC_INPUT, i)) )
+	for(var/i = 0 to inputs.len)
+		var/incoming = get_pin_data(IC_INPUT, i)
+		if (!isnull(incoming))
+			set_pin_data(IC_OUTPUT, i,num2text(incoming))
+		else if(!incoming)
+			set_pin_data(IC_OUTPUT, i, null)
 	push_data()
 	activate_pin(2)
 
