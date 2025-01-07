@@ -35,6 +35,7 @@
 
 /obj/item/integrated_circuit/converter/num2text/do_work()
 	pull_data()
+
 	for(var/i = 0 to inputs.len)
 		var/incoming = get_pin_data(IC_INPUT, i)
 		if (!isnull(incoming))
