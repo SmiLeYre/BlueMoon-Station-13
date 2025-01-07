@@ -28,7 +28,7 @@
 "bA" = (/obj/structure/reagent_dispensers/cooking_oil,/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "bC" = (/obj/structure/table/wood,/obj/item/reagent_containers/food/snacks/popcorn,/turf/open/floor/carpet/black,/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "bG" = (/obj/structure/table/wood,/obj/machinery/light{dir = 1},/turf/open/floor/carpet/blue,/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
-"bK" = (/obj/structure/table/glass,/turf/open/floor/plasteel/white,/area/ruin/space/has_grav/bluemoon/hotel/pool)
+"bK" = (/obj/structure/table/glass,/obj/structure/bedsheetbin/towel,/obj/item/reagent_containers/rag/towel/random,/turf/open/floor/plasteel/white,/area/ruin/space/has_grav/bluemoon/hotel/pool)
 "bO" = (/obj/structure/reagent_dispensers/watertank,/turf/open/floor/wood/wood_tiled,/area/ruin/space/has_grav/bluemoon/hotel/pool)
 "bQ" = (/obj/effect/turf_decal/tile/green{dir = 1},/obj/effect/turf_decal/tile/blue{dir = 4},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,/obj/structure/cable{icon_state = "1-2"},/turf/open/floor/plasteel,/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "bR" = (/obj/structure/bed/double{dir = 1},/obj/item/toy/plush/Synth,/turf/open/floor/glass,/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
@@ -313,7 +313,7 @@
 "qy" = (/obj/structure/cable{icon_state = "2-8"},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,/turf/open/floor/plasteel/grimy,/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "qA" = (/obj/effect/turf_decal/siding/white/end,/obj/effect/turf_decal/tile/blue/full,/turf/open/floor/plasteel/white,/area/ruin/space/has_grav/bluemoon/hotel/pool)
 "qE" = (/obj/structure/table,/obj/structure/table,/obj/item/storage/firstaid/regular{pixel_x = 3; pixel_y = 3},/obj/item/storage/firstaid/o2,/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/bluemoon/hotel/workroom)
-"qF" = (/obj/effect/spawner/structure/window/reinforced,/obj/machinery/door/firedoor,/obj/machinery/door/poddoor/shutters/preopen{id = "banyahotelwindow"; name = "Privacy Shutters"},/turf/open/floor/plating,/area/ruin/space/has_grav/bluemoon/hotel/pool)
+"qF" = (/obj/effect/spawner/structure/window/reinforced,/obj/machinery/door/poddoor/shutters/preopen{id = "banyahotelwindow"; name = "Privacy Shutters"},/turf/open/floor/plating,/area/ruin/space/has_grav/bluemoon/hotel/pool)
 "qG" = (/obj/effect/turf_decal/tile/red/half{dir = 1},/obj/machinery/vending/wardrobe/sec_wardrobe{onstation = 0},/obj/machinery/light{dir = 1},/turf/open/floor/plasteel,/area/ruin/space/has_grav/bluemoon/hotel/security)
 "qN" = (/turf/open/floor/plating,/area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "qO" = (/obj/effect/spawner/structure/window/plasma/reinforced,/obj/structure/cable,/obj/machinery/door/poddoor/shutters/preopen{id = "penthouse"; name = "Privacy Shutters"},/turf/open/floor/plating,/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
@@ -467,7 +467,7 @@
 "yY" = (/obj/structure/table,/obj/item/reagent_containers/food/condiment/soysauce,/turf/open/floor/plasteel/cafeteria,/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "zc" = (/obj/machinery/chem_dispenser/drinks{dir = 8},/obj/structure/table/glass,/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{dir = 4},/turf/open/floor/plasteel/dark,/area/ruin/space/has_grav/bluemoon/hotel/pool)
 "zd" = (/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{dir = 8},/turf/open/floor/wood/wood_tiled,/area/ruin/space/has_grav/bluemoon/hotel/bar)
-"zh" = (/obj/machinery/door/firedoor,/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/plating,/area/ruin/space/has_grav/bluemoon/hotel/dock)
+"zh" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/plating,/area/ruin/space/has_grav/bluemoon/hotel/dock)
 "zj" = (/obj/machinery/door/airlock/grunge{name = "Hotel Staff Room"; req_access_txt = "200"},/turf/open/floor/wood/wood_tiled,/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "zo" = (/obj/structure/sign/warning/vacuum/external,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/bluemoon/hotel/power)
 "zr" = (/obj/machinery/power/apc/away{name = "Staff Areas APC"; pixel_y = -23},/obj/structure/cable,/turf/open/floor/plating,/area/ruin/space/has_grav/bluemoon/hotel/workroom)
@@ -645,7 +645,7 @@
 "IS" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 6},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 5},/turf/open/floor/plasteel/dark,/area/ruin/space/has_grav/bluemoon/hotel/security)
 "IU" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 6},/obj/machinery/light/small{dir = 8},/turf/open/floor/carpet/royalblack,/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "IW" = (/obj/structure/table/wood,/obj/item/toy/plush/lampplushie,/obj/structure/window/reinforced{dir = 4},/turf/open/floor/wood/wood_tiled,/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
-"IY" = (/obj/effect/turf_decal/siding/white/corner,/obj/effect/turf_decal/siding/white/corner{dir = 8},/obj/structure/table/glass,/obj/effect/turf_decal/tile/blue/half,/turf/open/floor/plasteel/white,/area/ruin/space/has_grav/bluemoon/hotel/pool)
+"IY" = (/obj/effect/turf_decal/siding/white/corner,/obj/effect/turf_decal/siding/white/corner{dir = 8},/obj/structure/table/glass,/obj/effect/turf_decal/tile/blue/half,/obj/item/reagent_containers/rag/towel/random,/turf/open/floor/plasteel/white,/area/ruin/space/has_grav/bluemoon/hotel/pool)
 "IZ" = (/obj/structure/closet/crate/trashcart,/turf/open/floor/plating,/area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "Jd" = (/turf/open/pool,/area/ruin/space/has_grav/bluemoon/hotel/pool)
 "Jf" = (/obj/item/kirbyplants{icon_state = "plant-22"},/turf/open/floor/carpet{icon_state = "carpetsymbol"},/area/ruin/space/has_grav/bluemoon/hotel/dock)
@@ -735,7 +735,6 @@
 "NH" = (/obj/machinery/door/airlock{name = "Private Restroom"},/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "NL" = (/turf/open/space/basic,/area/space/nearstation)
 "NO" = (/obj/item/stack/tile/carpet/blackred/fifty,/turf/open/floor/plating,/area/ruin/space/has_grav/bluemoon/hotel/workroom)
-"NQ" = (/obj/effect/spawner/structure/window/reinforced,/obj/machinery/door/firedoor,/turf/open/floor/plating,/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "NS" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 10},/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{dir = 1},/obj/structure/cable{icon_state = "2-8"},/obj/structure/cable{icon_state = "1-2"},/obj/effect/turf_decal/tile/red{dir = 1},/obj/effect/turf_decal/tile/red,/turf/open/floor/plasteel,/area/ruin/space/has_grav/bluemoon/hotel/security)
 "NV" = (/obj/effect/turf_decal/tile/yellow/half{dir = 8},/obj/machinery/power/smes{charge = 5e+006},/obj/structure/cable{icon_state = "0-4"},/turf/open/floor/plasteel,/area/ruin/space/has_grav/bluemoon/hotel/power)
 "NY" = (/obj/machinery/camera{c_tag = "Bar South"; dir = 8; network = list("hotel")},/turf/open/floor/carpet/black,/area/ruin/space/has_grav/bluemoon/hotel/bar)
@@ -857,10 +856,10 @@
 "Tg" = (/obj/structure/cable{icon_state = "4-8"},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 8},/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 8},/turf/open/floor/carpet/black,/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "Tj" = (/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{dir = 6},/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{dir = 10},/turf/open/floor/plasteel/vaporwave,/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Tm" = (/obj/structure/window/reinforced/tinted{dir = 1},/obj/item/kirbyplants/random,/obj/structure/cable{icon_state = "2-4"},/turf/open/floor/plasteel/showroomfloor,/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
-"Tq" = (/obj/effect/spawner/structure/window/reinforced,/obj/machinery/door/firedoor,/turf/open/floor/plating,/area/ruin/space/has_grav/bluemoon/hotel/dock)
+"Tq" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/plating,/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Tr" = (/obj/structure/disposalpipe/junction{dir = 4},/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{dir = 1},/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{dir = 1},/obj/structure/cable{icon_state = "2-4"},/turf/open/floor/carpet/black,/area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Tt" = (/obj/machinery/shower{dir = 4},/turf/open/floor/plasteel/freezer,/area/ruin/space/has_grav/bluemoon/hotel/pool)
-"Tv" = (/obj/effect/spawner/structure/window/reinforced,/obj/machinery/door/firedoor,/turf/closed/wall/r_wall,/area/ruin/space/has_grav/bluemoon/hotel/pool)
+"Tv" = (/obj/effect/spawner/structure/window/reinforced,/turf/open/floor/plating,/area/ruin/space/has_grav/bluemoon/hotel/pool)
 "Tx" = (/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{dir = 4},/turf/open/floor/carpet/black,/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "TA" = (/obj/effect/turf_decal/trimline/brown/filled/line{dir = 6},/obj/machinery/pool/drain{pixel_x = -17; pixel_y = 17},/turf/open/pool,/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
 "TD" = (/obj/machinery/airalarm/directional/south,/obj/structure/chair/sofa/corp/right{dir = 1},/turf/open/floor/wood,/area/ruin/space/has_grav/bluemoon/hotel/dock)
@@ -989,22 +988,22 @@ DlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDl
 DlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDl
 DlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlpYpYpYpYDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlpYpYpYpYDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDl
 DlDlDlDlDlDlDlDlDlDlDlDlDlDlDlpYpYpYpYDlDlDleEDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDleEDlDleEpYpYpYpYDlDlDlDlDlDlDlDlDlDlDlDlDl
-DlDlDlDlDlDlDlDlDlDlDlpYpYpYpYDlDleEDlDlDlDleEDlDlDlDlDlDlDlDlDlDlTqcqTqDlDlDlDlDlDlDlDlDlDleEDlDleEDlDlDlDlpYpYpYpYDlDlDlDlDlDlDlDlDl
-DlDlDlDlDlDlDlDlpYpYpYDlDlDlDlDlDleEDlDlDlDleEDlDlDlDlDlDlDlDlDlDlTqFdTqDlDlDlDlDlDlDlDlDlDlvhvhvhvhvhDlDlDleEDlDlDlpYpYpYDlDlDlDlDlDl
-DlDlDlDlDlDlDlpYDlDlDlDlDlDlDlvhvhvhvhvhKVvhvhDlDlDlDlDlDlDlDlDlrPTqpeTqrPDlDlDlDlDlDlDlDlDlvhIglkAwvhDlDlDleEDlDlDlDlDlDlpYDlDlDlDlDl
-DlDlDlDlDlDlDlpYDlDlDlDlDlDlDlvhSifaMoQWKxOgvhDlDlDlDlDlDlDlrPTqCkRqRqRqCkTqrPDlDlDlDlDlDlDlvhvhxTvhvhVnVnVnvheEeEeEeEeEeEpYDlDlDlDlDl
-DlDlDlDlDlDlpYDlDlDlDlDlDlDlDlvhisvhvhUiJrHBvhNLNLNLrPTqTqTqrPJfmiRqRqRqmiJfrPTqTqTqrPNLNLNLvhSsgVSsSsKcKcrMVnDlDlDlDlDlDlDlpYDlDlDlDl
-DlDlDlDlDlDlpYDlDlDlDlDlDlDlDlvhvhvhRMkrJrkrvhNLNLNLTqkeXhJgrPRgmimimimimiRgrPkeXhJgTqNLNLNLvhhwVAsYxnenKcKcVnDlDlDlDlDlDlDlpYDlDlDlDl
-DlDlDlDlDlDlpYDlDlDlDlvhhShShSvhvhvhHsnHjzcZvhNLNLNLTqoIoIhdrPIKmimirdmimimJrPCJoIoITqNLNLNLvhIzkQSsutqPFiKcVnDlDlDlDlDlDlDlpYDlDlDlDl
-DlDlDlDlDlpYeEDlDlDlDlhSJvJvJvSgbWvhvhvhSLvhvhNLNLNLTqoIoIoIrPzwmimifUmimizwrPoIoIoITqNLNLNLvhfHAXDSIWdhyqNkVnDlDlDlDlDlDlDleEpYDlDlDl
+DlDlDlDlDlDlDlDlDlDlDlpYpYpYpYDlDleEDlDlDlDleEDlDlDlDlDlDlDlDlDlDlzhcqzhDlDlDlDlDlDlDlDlDlDleEDlDleEDlDlDlDlpYpYpYpYDlDlDlDlDlDlDlDlDl
+DlDlDlDlDlDlDlDlpYpYpYDlDlDlDlDlDleEDlDlDlDleEDlDlDlDlDlDlDlDlDlDlzhFdzhDlDlDlDlDlDlDlDlDlDlvhvhvhvhvhDlDlDleEDlDlDlpYpYpYDlDlDlDlDlDl
+DlDlDlDlDlDlDlpYDlDlDlDlDlDlDlvhvhvhvhvhKVvhvhDlDlDlDlDlDlDlDlDlrPzhpezhrPDlDlDlDlDlDlDlDlDlvhIglkAwvhDlDlDleEDlDlDlDlDlDlpYDlDlDlDlDl
+DlDlDlDlDlDlDlpYDlDlDlDlDlDlDlvhSifaMoQWKxOgvhDlDlDlDlDlDlDlrPzhCkRqRqRqCkzhrPDlDlDlDlDlDlDlvhvhxTvhvhVnVnVnvheEeEeEeEeEeEpYDlDlDlDlDl
+DlDlDlDlDlDlpYDlDlDlDlDlDlDlDlvhisvhvhUiJrHBvhNLNLNLrPzhzhzhrPJfmiRqRqRqmiJfrPzhzhzhrPNLNLNLvhSsgVSsSsKcKcrMVnDlDlDlDlDlDlDlpYDlDlDlDl
+DlDlDlDlDlDlpYDlDlDlDlDlDlDlDlvhvhvhRMkrJrkrvhNLNLNLzhkeXhJgrPRgmimimimimiRgrPkeXhJgzhNLNLNLvhhwVAsYxnenKcKcVnDlDlDlDlDlDlDlpYDlDlDlDl
+DlDlDlDlDlDlpYDlDlDlDlvhhShShSvhvhvhHsnHjzcZvhNLNLNLzhoIoIhdrPIKmimirdmimimJrPCJoIoIzhNLNLNLvhIzkQSsutqPFiKcVnDlDlDlDlDlDlDlpYDlDlDlDl
+DlDlDlDlDlpYeEDlDlDlDlhSJvJvJvSgbWvhvhvhSLvhvhNLNLNLzhoIoIoIrPzwmimifUmimizwrPoIoIoIzhNLNLNLvhfHAXDSIWdhyqNkVnDlDlDlDlDlDlDleEpYDlDlDl
 DlDlDlDlpYDleEDlDlDlDlhSCTPIOUSgNcvhZzGrESMJvhNLNLNLrPcLoIoIJfoImiOQROCUmioIJfoIoIalrPNLNLNLvhvhMPvhvhvhvhvhvhvhvheEeEeEeEeEeEeEpYDlDl
-DlDlpYpYeEDleEDlDlDlDlhSsKZsxGMnSgvhdtGrESGrNQNLNLNLTqoIoIoIoIoIoIoIBmoIoIoIoIoIoIoITqNLNLNLNQvDESGrvhRaGrGrHddKUBDlDlDlDlDlDlDlpYDlDl
-DlpYDlDleEDleEDlDlDlDlvhvhvhvhHkSgvhvhGrESGrNQNLNLNLTqoIoIoIoIoIoIoItuoIoIoIoIoIoIoITqNLNLNLNQtNlNQIKgQIQIpAVlLrUBDlDlDlDlDlDlDlpYDlDl
-DlpYDlBoBoBoBoBoBoBoBoBomqOGMoLbGDSycdRBENGrNQNLNLNLTqfdWJoIoIRqRqRqbVRqRqRqoIoItEuNTqNLNLNLNQGruMuHvhsXGrESvjtNUBDlDlDlDlDlDlDlpYDlDl
-DlpYeEBoBimwEeLUEemwILBoisFtvhcgZbQYvhGrESGrNQNLNLNLTqgiTDoIRqRqRqRqbyRqRqRqRqoIvOORTqNLNLNLNQGruMGrvhvhGrESvjYNvhvhvhvhvhDlDlDlDlpYDl
-DlpYDlBomfmwlyoBnSeBjbBoBoBoBoBoBoBoBoGrESuHvhNLNLNLrPTqrPpSRqKuDxmuwKAfeeNuRqLarPzhrPNLNLNLvhGruMuDvhJIjoTxvjrvvhfRAKyKvhvhvheEeEpYDl
-DlpYDlBohVuaWfmwsHmwrZBoJhScjmiWLcvFyRGrESGrNQNLNLNLTqNLrPRqRqLNOMWOMEdGTFunRqRqrPNLTqNLNLNLNQGruMGrvhzNGrESvjSrvhuvaiTmgnuclEDlDlpYDl
-DlpYDlBoqEmbwhnQtAJBadBoCnKkEJEJGtoRdPuEEiGrvhiGiGiGrPTqrPlClCrPcGdCqyYSYcrPlClCrPTqrPiGiGiGDeGruMGrvhzNGrESvjZzvhMFJoBYsWqsUyDlDlpYDl
+DlDlpYpYeEDleEDlDlDlDlhSsKZsxGMnSgvhdtGrESGrhSNLNLNLzhoIoIoIoIoIoIoIBmoIoIoIoIoIoIoIzhNLNLNLhSvDESGrvhRaGrGrHddKUBDlDlDlDlDlDlDlpYDlDl
+DlpYDlDleEDleEDlDlDlDlvhvhvhvhHkSgvhvhGrESGrhSNLNLNLzhoIoIoIoIoIoIoItuoIoIoIoIoIoIoIzhNLNLNLhStNlNQIKgQIQIpAVlLrUBDlDlDlDlDlDlDlpYDlDl
+DlpYDlBoBoBoBoBoBoBoBoBomqOGMoLbGDSycdRBENGrhSNLNLNLzhfdWJoIoIRqRqRqbVRqRqRqoIoItEuNzhNLNLNLhSGruMuHvhsXGrESvjtNUBDlDlDlDlDlDlDlpYDlDl
+DlpYeEBoBimwEeLUEemwILBoisFtvhcgZbQYvhGrESGrhSNLNLNLzhgiTDoIRqRqRqRqbyRqRqRqRqoIvOORzhNLNLNLhSGruMGrvhvhGrESvjYNvhvhvhvhvhDlDlDlDlpYDl
+DlpYDlBomfmwlyoBnSeBjbBoBoBoBoBoBoBoBoGrESuHvhNLNLNLrPzhrPpSRqKuDxmuwKAfeeNuRqLarPzhrPNLNLNLvhGruMuDvhJIjoTxvjrvvhfRAKyKvhvhvheEeEpYDl
+DlpYDlBohVuaWfmwsHmwrZBoJhScjmiWLcvFyRGrESGrhSNLNLNLzhNLrPRqRqLNOMWOMEdGTFunRqRqrPNLzhNLNLNLhSGruMGrvhzNGrESvjSrvhuvaiTmgnuclEDlDlpYDl
+DlpYDlBoqEmbwhnQtAJBadBoCnKkEJEJGtoRdPuEEiGrvhTqTqTqrPzhrPlClCrPcGdCqyYSYcrPlClCrPzhrPTqTqTqDeGruMGrvhzNGrESvjZzvhMFJoBYsWqsUyDlDlpYDl
 DlpYeEBoBoBoWbBoBoBoBoBowPlDbdYZOptHyRGrUYGrtZaoaoaoaoaoHeaoaoDeDeDefrDeDeDeaoaoHeaoaoaoaoaotZGruMGrvhtYGrbzyhTgQHXSfWUMRXTAqODlDlpYDl
 DlpYDlZFDlZFGwBotkjmswBorXmNrlnOOpqVyRGrUYGrDeaoaoaoaoaoaoaoaoDeDXjWEjPfDUDeaoaoaoaoaoaoaoaoDehKuMuHvhvhvhvhvhvhvhvhvhvhvhvhvheEeEpYDl
 DlpYDlZFDlZFGwBoXbPyQaeopjmHScScScxjyRGrMwwAmGiBgXiBiBiBTrRwRwiezXiclbkKzXieRwRwdSRwRwRwAoRwYloMAaGrvhNLNLNLvhGnFGoPvhDlDlDlDlDlDlpYDl
@@ -1027,21 +1026,21 @@ DlpYDlQhrLbxQhVmgARbfvHpRUqffvpdXMpiRvXMyYXMXMDvXMXMPSgrHKaoFVZqFVjXqrjXFVZqFVao
 DlpYeEQhQhQhQhyoatZPfvYGjiuIfvOyXMRtNbXMfEquvYbSXMXMdYTPHKaoBBpVBPjXSljXBBpVBPaoLADOUFQEfvNLVsGrOoGrvhDZyWLiyWXAPshSDlDlDlDlDlDlpYDlDl
 DlpYDlQhrOqNUmqNdywwfvZlWSHAfvOysdazXMXMXMXMXMXMsdXMPSjvHKaoWrGuYKjXjXjXWrGuYKaoLlXRemFVfvNLVshKHQRBhDIDIDOYIolwYAhSDlDlDlDlDlDlpYDlDl
 DlpYDlQhrLcSQhAjqNorfvsbVXvaaQeGaQaQaQaQmsmsmsmsmsOnaEWvdkaoaoaoaoaoaoaoaoaoaoaoLAaoaoaofvNLVsGrOoGrvhPtyWyWgOcuDRhSDlDlDlDlDlDleEpYDl
-DlpYDlQhQhQhQhuBQgqNfvVCTWAraQCIJJDmpcaQTtcycytymsaoaoTUZyiwiwiwiwiwPTiwiwiwiwiwmaaoaofvfvNLNQGrOoGrJiJiJiJiJiJiJiJiJiDlDlDlDlDleEpYDl
-DlpYeEQhrOqNqgZPqNINaQCOCOFUaQQyrgrgnMaQTtnVnVQqmsaoaojvHKaoaopuYLYLjFYLYLpuaoaoaoaoaofvNLNLNQGrOoGrJiGJSTlahnvKsAOLzvDlDlDlDlDleEpYDl
-DlpYDlQhrLUjQhpvqNvLaQNaAOAOQcaeDPNplFaQTtnVnVtymsmsmsvtMmHbZHZHEhEhtbEhEhZHZHHbHbVOmsmsNLNLNQGrOoGrJisAsAsAsAsAsAuXzvDlDlDlDlDleEeEDl
+DlpYDlQhQhQhQhuBQgqNfvVCTWAraQCIJJDmpcaQTtcycytymsaoaoTUZyiwiwiwiwiwPTiwiwiwiwiwmaaoaofvfvNLhSGrOoGrJiJiJiJiJiJiJiJiJiDlDlDlDlDleEpYDl
+DlpYeEQhrOqNqgZPqNINaQCOCOFUaQQyrgrgnMaQTtnVnVQqmsaoaojvHKaoaopuYLYLjFYLYLpuaoaoaoaoaofvNLNLhSGrOoGrJiGJSTlahnvKsAOLzvDlDlDlDlDleEpYDl
+DlpYDlQhrLUjQhpvqNvLaQNaAOAOQcaeDPNplFaQTtnVnVtymsmsmsvtMmHbZHZHEhEhtbEhEhZHZHHbHbVOmsmsNLNLhSGrOoGrJisAsAsAsAsAsAuXzvDlDlDlDlDleEeEDl
 DlpYDlBoBoBoBoBobltaaQNVFzFzejOJpNpNCqaQMGRyRyummsPjGCCvkwdmdmcxzLhoLThofTRDdmdmdmdmjRmsNLNLVshKOouDJiMKsAnzKfIysAsAJiJiJiJiJiJiJiJiNL
-DlpYDlBoAYdyoQBoqNfQaQsIrgCtzPwNwShEtgaQGHKWKWSKzRjxjxtRkwdmdmcKhohoeXhohoGXdmdmdmdmbKZHNLNLNQGrOoGrJiiXsAPAEdIusAsAgysUGWpIzvfIAdodNL
-DlpYeEBosuZdqNBodyueaQKeIiCDCDCDPUAUomaQMjRyRycfmsdmdmdmrmgGgGHJhozcHDvWhoRDdmdmdmdmOfZHNLNLNQGrXEQfprOAPgRRkxcpSeDdJinmsUsUzvQbsUJiNL
-DlpYDlBoBoIZqNYWdyDJaQhMSAelelpMqRzSOaaQmsmsWAmsmsaWAGaWaWaWAGEOhohoQuhohoGzAGaWaWaWIYZHNLNLNQGriSGrJisAGdmelOfPQpPcpEWPsUFuoLRYsUJiNL
+DlpYDlBoAYdyoQBoqNfQaQsIrgCtzPwNwShEtgaQGHKWKWSKzRjxjxtRkwdmdmcKhohoeXhohoGXdmdmdmdmbKTvNLNLhSGrOoGrJiiXsAPAEdIusAsAgysUGWpIzvfIAdodNL
+DlpYeEBosuZdqNBodyueaQKeIiCDCDCDPUAUomaQMjRyRycfmsdmdmdmrmgGgGHJhozcHDvWhoRDdmdmdmdmOfTvNLNLhSGrXEQfprOAPgRRkxcpSeDdJinmsUsUzvQbsUJiNL
+DlpYDlBoBoIZqNYWdyDJaQhMSAelelpMqRzSOaaQmsmsWAmsmsaWAGaWaWaWAGEOhohoQuhohoGzAGaWaWaWIYTvNLNLhSGriSGrJisAGdmelOfPQpPcpEWPsUFuoLRYsUJiNL
 DlpYDlBoBoBoVxBoBoBoaQaQspzoUxoKHYoKUxaQmsPHhabOmsmsXkcUcUcUqAmtMrhohohorUhxqAcUcUcUnAmsmsNLVsVsKQVsJiJinqJiJiJiJiJiJiJiJiJiJiJiJiJiDl
-DlpYDlBohQSHBJBJlqBoDlaQaYaQUxnFjQWTUxNLmsdcHFsqqFJdJdJdJdJdJdgjmtEFEFEFhxgjJdJdJdJdJdJdZHNLQPbalQJKWMwQzALFVsDlDlDlDleEDlDlDlDlDleEDl
-DlpYeEBojVXJQnrjmRBoDlaQEpaQUxuUBQuUUxNLmsyaHFBsqFJdJdJdJdSOJdJdcFMzPddxcFJdJdSOJdJdJdJdZHNLQPKcKcKcWMWnvUbCVsDlDlDlDleEDlDlDlDlDlpYDl
-DlpYDlBoBoBoBoBoBoBoDlNLEYmkUxuULouUUxNLmsxhHFrCqFJdJdxkJdJdJdJdJdJdJdJdJdJdJdJdJdfxJdJdZHNLQPKcbRKcVscCVsVsVsDlDlDlDleEDlDlDlDlDlpYDl
-DlpYDlDleEDlDlDleEDlDlNLEKNLuyUxUxUxUxNLmsAcHFHFqFJdJdJdJdJdSOJdJdJdSOJdJdJdSOJdJdJdJdJdZHNLQPKcKcKcNHsPCwVseEDlDlDlDleEDlDlDlDleEpYDl
-DlpYDlDleEDlDlDleEDlDlDlEKDlDlDleEDlDlNLmsqFqFqFmsZHJdJdJdOdJdJdJdJdJdJdJdJdJdOdJdJdJdZHmsNLVsQVkVLkVsVsVsVseEDlDlDlDleEDlDlDlDlpYDlDl
-DlDlpYpYeEDlDlDleEDlDlDlEKDlDlDleEDlDlDlDlDlDlDlSBmsZHZHZHmscQciciVQJdcQciciVQmsZHZHZHmsDlDlVsVsVsVsVsDlDlDleEDlDlDlDleEDlDlDleEpYDlDl
-DlDlDlDlpYpYpYpYpYeEDlDlEKDlDlDleEDlDlDlDlDlDlDlDlDlDlDlDlmsZHZHZHZHmsZHZHZHTvmsDlDlDlDlDlDleEDlDlDleEDlDlDleEDlDlDlDleEpYpYpYpYDlDlDl
+DlpYDlBohQSHBJBJlqBoDlaQaYaQUxnFjQWTUxNLmsdcHFsqqFJdJdJdJdJdJdgjmtEFEFEFhxgjJdJdJdJdJdJdTvNLQPbalQJKWMwQzALFVsDlDlDlDleEDlDlDlDlDleEDl
+DlpYeEBojVXJQnrjmRBoDlaQEpaQUxuUBQuUUxNLmsyaHFBsqFJdJdJdJdSOJdJdcFMzPddxcFJdJdSOJdJdJdJdTvNLQPKcKcKcWMWnvUbCVsDlDlDlDleEDlDlDlDlDlpYDl
+DlpYDlBoBoBoBoBoBoBoDlNLEYmkUxuULouUUxNLmsxhHFrCqFJdJdxkJdJdJdJdJdJdJdJdJdJdJdJdJdfxJdJdTvNLQPKcbRKcVscCVsVsVsDlDlDlDleEDlDlDlDlDlpYDl
+DlpYDlDleEDlDlDleEDlDlNLEKNLuyUxUxUxUxNLmsAcHFHFqFJdJdJdJdJdSOJdJdJdSOJdJdJdSOJdJdJdJdJdTvNLQPKcKcKcNHsPCwVseEDlDlDlDleEDlDlDlDleEpYDl
+DlpYDlDleEDlDlDleEDlDlDlEKDlDlDleEDlDlNLmsqFqFqFmsTvJdJdJdOdJdJdJdJdJdJdJdJdJdOdJdJdJdTvmsNLVsQVkVLkVsVsVsVseEDlDlDlDleEDlDlDlDlpYDlDl
+DlDlpYpYeEDlDlDleEDlDlDlEKDlDlDleEDlDlDlDlDlDlDlSBmsTvTvTvmscQciciVQJdcQciciVQmsTvTvTvmsDlDlVsVsVsVsVsDlDlDleEDlDlDlDleEDlDlDleEpYDlDl
+DlDlDlDlpYpYpYpYpYeEDlDlEKDlDlDleEDlDlDlDlDlDlDlDlDlDlDlDlmsTvTvTvTvmsTvTvTvTvmsDlDlDlDlDlDleEDlDlDleEDlDlDleEDlDlDlDleEpYpYpYpYDlDlDl
 DlDlDlDlDlDlDlDlDlpYpYpYeEpYeEDleEDlDlDlDlDlDlDlDlDlDlDlDleEDlDlDlDleEDlDlDlDleEDlDlDlDlDlDleEDlDlDleEDlDlDleEpYpYeEpYpYDlDlDlDlDlDlDl
 DlDlDlDlDlDlDlDlDlDlDlDlDlDlpYpYpYpYpYeEDlDlDlDlDlDlDlDlDleEDlDlDlDleEDlDlDlDleEDlDlDlDlDlDleEDlDleEpYpYpYpYpYDlDlDlDlDlDlDlDlDlDlDlDl
 DlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlpYpYpYpYpYDlDlDlDlDleEDlDlDlDleEDlDlDlDleEDlDlDlDleEpYpYpYpYpYDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDlDl
