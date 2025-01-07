@@ -771,6 +771,11 @@
 	name = "Ponytail (Spiky)"
 	icon_state = "hair_spikyponytail"
 
+//Добавил спрайт пред прически для вульп
+/datum/sprite_accessory/hair/spikytail2
+	name = "Ponytail (Spiky) ALT"
+	icon_state = "hair_spikyponytail_alt"
+
 /datum/sprite_accessory/hair/poofy
 	name = "Poofy"
 	icon_state = "hair_poofy"
