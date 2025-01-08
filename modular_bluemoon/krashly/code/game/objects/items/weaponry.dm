@@ -150,6 +150,7 @@
 	block_chance = 30
 	sharpness = SHARP_EDGED
 	hitsound = 'sound/weapons/bladeslice.ogg'
+	base_pixel_x = -16
 
 /obj/item/nullrod/hadar_red/ComponentInitialize() // Попросили чтобы занимал обе руки.
 	. = ..()
