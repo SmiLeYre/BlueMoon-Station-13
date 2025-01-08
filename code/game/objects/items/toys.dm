@@ -934,6 +934,7 @@
 	cardUser.visible_message("<span class='notice'>[cardUser] draws a card from [cardUser.ru_ego()] hand.</span>", "<span class='notice'>You take the [C.cardname] from your hand.</span>")
 
 	interact(cardUser)
+	update_sprite()
 	if(length(currenthand) == 1)
 		var/obj/item/toy/cards/singlecard/N = new/obj/item/toy/cards/singlecard(loc)
 		N.parentdeck = parentdeck
@@ -943,9 +944,6 @@
 		N.pickup(cardUser)
 		cardUser.put_in_hands(N)
 		to_chat(cardUser, "<span class='notice'>You also take [currenthand[1]] and hold it.</span>")
-		return
-
-	update_sprite()
 
 /obj/item/toy/cards/cardhand/attackby(obj/item/toy/cards/singlecard/C, mob/living/user, params)
 	if(istype(C))
@@ -992,10 +990,8 @@
 	cut_overlays()
 	var/overlay_cards = currenthand.len
 
-	if(deckstyle && currenthand.len)
-		icon_state = "[deckstyle]_hand[currenthand.len < 5 ? "[currenthand.len]" : "5"]"
-	var/k = overlay_cards <= 2 ? 1 : overlay_cards - 2
-	for(var/i in k to overlay_cards)
+	var/k = overlay_cards == 2 ? 1 : overlay_cards - 2
+	for(var/i = k; i <= overlay_cards; i++)
 		var/card_overlay = image(icon=src.icon,icon_state="sc_[currenthand[i]]_[deckstyle]",pixel_x=(1-i+k)*3,pixel_y=(1-i+k)*3)
 		add_overlay(card_overlay)
 
@@ -1045,8 +1041,8 @@
 		var/obj/item/toy/cards/singlecard/C = I
 		if(C.parentdeck == src.parentdeck)
 			var/obj/item/toy/cards/cardhand/H = new/obj/item/toy/cards/cardhand(user.loc)
-			H.currenthand += src.cardname
 			H.currenthand += C.cardname
+			H.currenthand += src.cardname
 			H.parentdeck = C.parentdeck
 			H.apply_card_vars(H,C)
 			to_chat(user, "<span class='notice'>You combine the [C.cardname] and the [src.cardname] into a hand.</span>")
@@ -1064,6 +1060,12 @@
 			user.visible_message("[user] adds a card to [user.ru_ego()] hand.", "<span class='notice'>You add the [cardname] to your hand.</span>")
 			qdel(src)
 			H.interact(user)
+			if(H.currenthand.len > 4)
+				H.icon_state = "[deckstyle]_hand5"
+			else if(H.currenthand.len > 3)
+				H.icon_state = "[deckstyle]_hand4"
+			else if(H.currenthand.len > 2)
+				H.icon_state = "[deckstyle]_hand3"
 		else
 			to_chat(user, "<span class='warning'>You can't mix cards from other decks!</span>")
 	else
