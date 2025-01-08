@@ -151,6 +151,20 @@
 	sharpness = SHARP_EDGED
 	hitsound = 'sound/weapons/bladeslice.ogg'
 
+/obj/item/nullrod/hadar_red/ComponentInitialize() // Попросили чтобы занимал обе руки.
+	. = ..()
+	AddComponent(/datum/component/two_handed, require_twohands = TRUE)
+
+/obj/item/nullrod/hadar_red/add_blood_overlay() // Меч слишком большой для старой иконки крови на предметах, моя новая иконка фиксит красную половину меча.
+	if(!blood_DNA.len)
+		return
+	if(initial(icon) && initial(icon_state))
+		blood_splatter_icon = icon(initial(icon), initial(icon_state), , 1)
+		blood_splatter_icon.Blend("#fff", ICON_ADD)
+		blood_splatter_icon.Blend(icon('modular_bluemoon/krashly/icons/obj/weapons/tall.dmi', "item_blood"), ICON_MULTIPLY)
+		blood_splatter_icon.Blend(blood_DNA_to_color(), ICON_MULTIPLY)
+		add_overlay(blood_splatter_icon)
+
 /obj/item/nullrod/hadar_red/blue_one
 	name = "Fatebreather"
 	desc = "A legendary relic of a devoted servant of his faith. It is a huge sky-blue blade from which tongues of blue flame emanate. It is ideal for protecting yourself and those following your path."
