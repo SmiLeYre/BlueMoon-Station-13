@@ -446,8 +446,8 @@
 	if(!data)
 		data = list("misc" = 1)
 	data["misc"]++
-	if(HAS_TRAIT(M, TRAIT_HALLOWED) || M.mind?.isholy)
-		return
+	if(!iscultist(M, FALSE, TRUE) && !is_servant_of_ratvar(M) && (HAS_TRAIT(M, TRAIT_HALLOWED) || M.mind?.isholy))
+		return ..()
 	if(iscultist(M, FALSE, TRUE))
 		for(var/datum/action/innate/cult/blood_magic/BM in M.actions)
 			if(!BM.holy_dispel)
