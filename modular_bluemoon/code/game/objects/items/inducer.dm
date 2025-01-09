@@ -11,6 +11,7 @@
 	slot_flags = ITEM_SLOT_BELT
 	item_flags = SURGICAL_TOOL
 	var/powertransfer = 1000
+	var/obj/item/stock_parts/cell/cell
 	var/recharging = FALSE
 	var/gun_charger = FALSE
 	var/mob/living/silicon/robot/owner
@@ -24,8 +25,9 @@
 
 /obj/item/cyborg_inducer/examine(mob/living/M)
 	. = ..()
-	if(get_cell())
-		. += "<span class='notice'>Its display shows: [DisplayEnergy(get_cell().charge)].</span>"
+	cell = get_cell()
+	if(cell)
+		. += "<span class='notice'>Its display shows: [DisplayEnergy(cell.charge)].</span>"
 	else
 		. += "<span class='notice'>Its display is dark.</span>"
 
@@ -47,21 +49,23 @@
 	return ..()
 
 /obj/item/cyborg_inducer/proc/induce(obj/item/stock_parts/cell/target, coefficient)
-	var/totransfer = min(get_cell().charge, (powertransfer * coefficient), get_cell().maxcharge * 0.2) //Тратим максимум до 20% заряда
+	cell = get_cell()
+	var/totransfer = min(cell.charge, (powertransfer * coefficient), cell.maxcharge * 0.2) //Тратим максимум до 20% заряда
 	var/transferred = target.give(totransfer)
-	get_cell().use(transferred)
-	get_cell().update_icon()
+	cell.use(transferred)
+	cell.update_icon()
 	target.update_icon()
 
 /obj/item/cyborg_inducer/get_cell()
 	return owner.cell
 
 /obj/item/cyborg_inducer/proc/cantbeused(mob/user)
-	if(!get_cell())
+	cell = get_cell()
+	if(!cell)
 		to_chat(user, "<span class='warning'>Unit doesn't have a power cell installed!</span>")
 		return TRUE
 
-	if(!get_cell().charge)
+	if(!cell.charge)
 		to_chat(user, "<span class='warning'>Unit's battery is dead!</span>")
 		return TRUE
 	return FALSE
@@ -77,6 +81,7 @@
 		return TRUE
 
 	recharging = TRUE
+	cell = get_cell()
 	var/obj/item/stock_parts/cell/C = A.get_cell()
 	var/obj/O
 	var/coefficient = 1
@@ -93,7 +98,7 @@
 			return TRUE
 		user.visible_message("[user] starts recharging [A] with [src].","<span class='notice'>You start recharging [A] with [src].</span>")
 		while(C.charge < C.maxcharge)
-			if(do_after(user, 10, target = user) && get_cell().charge && (get_cell().maxcharge * min_remaining_charge < get_cell().charge))
+			if(do_after(user, 10, target = user) && cell.charge && (cell.maxcharge * min_remaining_charge < cell.charge))
 				done_any = TRUE
 				induce(C, coefficient)
 				do_sparks(1, FALSE, A)
