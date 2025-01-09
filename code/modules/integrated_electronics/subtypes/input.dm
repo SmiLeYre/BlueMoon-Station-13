@@ -1314,3 +1314,28 @@
 	set_pin_data(IC_OUTPUT, 2, regurgitated_contents)
 	push_data()
 	activate_pin(2)
+
+/obj/item/integrated_circuit/input/anomaly_scanner
+	name = "anomaly scanner"
+	desc = "A small anomaly analyzer, it is accurate enough to give the frequency, but it may make a mistake with the code. It will be equal to a random number within a radius of 10 numbers from the desired number."
+	complexity = 12
+	inputs = list("target" = IC_PINTYPE_REF)
+	outputs = list(
+		"freq"				= IC_PINTYPE_NUMBER,
+		"code"				= IC_PINTYPE_NUMBER,
+	)
+	activators = list("scan" = IC_PINTYPE_PULSE_IN, "on scann" = IC_PINTYPE_PULSE_OUT, "not scanned" = IC_PINTYPE_PULSE_OUT)
+	spawn_flags = IC_SPAWN_DEFAULT|IC_SPAWN_RESEARCH
+	power_draw_per_use = 80
+
+/obj/item/integrated_circuit/input/anomaly_scanner/do_work()
+	var/obj/effect/anomaly/T = get_pin_data_as_type(IC_INPUT, 1, /obj/effect/anomaly)
+	if(!istype(T)) //Invalid input
+		activate_pin(3)
+		return
+	if(T in view(get_turf(src))) // Like medbot's analyzer it can be used in range..
+
+		set_pin_data(IC_OUTPUT, 2, T.aSignal.code+rand(-10,10))
+		set_pin_data(IC_OUTPUT, 1, (T.aSignal.frequency))
+	push_data()
+	activate_pin(2)
