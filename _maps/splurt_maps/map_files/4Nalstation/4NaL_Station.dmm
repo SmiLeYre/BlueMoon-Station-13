@@ -64721,10 +64721,6 @@
 	},
 /turf/open/floor/circuit,
 /area/science/nanite)
-"usD" = (
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/openspace,
-/area/maintenance/department/science/upper)
 "usO" = (
 /obj/structure/chair/comfy,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
@@ -240918,7 +240914,7 @@ ylx
 kWS
 oxE
 dFe
-usD
+pVM
 pVM
 pVM
 pVM
