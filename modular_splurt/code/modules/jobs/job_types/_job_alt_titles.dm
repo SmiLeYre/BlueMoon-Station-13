@@ -52,6 +52,7 @@
 		"Division Leader",
 		"Cerberus Leader",
 		"AC Special Lieutenant",
+		"Big Boss",
 		"Head of Slutcurity",
 		"Head of Studcurity"
 	)

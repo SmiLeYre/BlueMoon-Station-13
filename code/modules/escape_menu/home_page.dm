@@ -40,12 +40,12 @@
 	)
 
 	page_holder.give_screen_object(
-		new /atom/movable/screen/escape_menu/home_button/leave_body(
+		new /atom/movable/screen/escape_menu/home_button(
 			null,
 			src,
-			"Покинуть Игру",
-			/* offset = */ 4,
-			CALLBACK(src, PROC_REF(home_close_game)),
+			"Включить/Выключить Полноэкранный Режим",
+			/* offset = */ 5,
+			CALLBACK(src, PROC_REF(home_fullscreen)),
 		)
 	)
 
@@ -62,9 +62,9 @@
 	C?.tgui_panel?.stop_music()
 	qdel(src)
 
-/datum/escape_menu/proc/home_close_game()
-	qdel(usr.client)
-	qdel(src)
+/datum/escape_menu/proc/home_fullscreen()
+	usr.client.prefs.fullscreen = !usr.client.prefs.fullscreen
+	usr.client.ToggleFullscreen()
 
 /atom/movable/screen/escape_menu/home_button
 	mouse_opacity = MOUSE_OPACITY_OPAQUE
