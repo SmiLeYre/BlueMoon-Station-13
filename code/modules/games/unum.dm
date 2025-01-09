@@ -5,7 +5,7 @@
 	icon = 'icons/obj/toys/toy.dmi'
 	icon_state = "deck_unum_full"
 	deckstyle = "unum"
-	original_size = 108
+	original_size =108
 
 //Populate the deck.
 /obj/item/toy/cards/deck/unum/populate_deck()
