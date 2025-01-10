@@ -243,7 +243,7 @@
 
 /mob/living/simple_animal/bot/adjustHealth(amount, updating_health = TRUE, forced = FALSE)
 	. = ..()
-	if(. && prob(10) && amount > 0)
+	if(. && amount > 0 && prob(10))
 		new oil_spill_type(loc)
 
 /mob/living/simple_animal/bot/updatehealth()
