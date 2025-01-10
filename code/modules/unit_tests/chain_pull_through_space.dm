@@ -33,7 +33,7 @@
 	qdel(charlie)
 	return ..()
 
-/datum/unit_test/chain_pull_through_space/Run() ХА-ХА СМЕШНО
+/datum/unit_test/chain_pull_through_space/Run()
 	// Alice pulls Bob, who pulls Charlie
 	// Normally, when Alice moves forward, the rest follow
 	alice.start_pulling(bob)
