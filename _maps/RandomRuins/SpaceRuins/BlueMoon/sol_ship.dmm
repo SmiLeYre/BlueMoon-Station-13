@@ -222,7 +222,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_vault)
 "aQ" = (
 /obj/machinery/atmospherics/miner/toxins,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "aR" = (
 /obj/effect/turf_decal/tile/dark_blue/opposingcorners,
@@ -3209,12 +3209,12 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_bridge)
 "sf" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon{
 	dir = 8;
 	id_tag = "forgotten_outpost_tox_out";
 	name = "toxin out"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "sg" = (
 /obj/structure/table/glass,
@@ -3878,7 +3878,7 @@
 	dir = 4;
 	volume_rate = 200
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "wX" = (
 /obj/effect/decal/cleanable/dirt,
@@ -5866,7 +5866,7 @@
 	id_tag = "forgotten_outpost_o2_out";
 	name = "oxygen out"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "If" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -6257,7 +6257,7 @@
 	id_tag = "forgotten_outpost_n2_out";
 	name = "nitrogen out"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "Ky" = (
 /obj/effect/decal/cleanable/robot_debris/limb,
@@ -6354,7 +6354,7 @@
 	frequency = 1442;
 	id_tag = "syndie_lavaland_o2_sensor"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "KR" = (
 /obj/machinery/computer/med_data/syndie{
@@ -6714,7 +6714,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
 "MI" = (
 /obj/machinery/atmospherics/miner/nitrogen,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "MJ" = (
 /obj/effect/turf_decal/tile/dark_blue/anticorner,
@@ -8258,7 +8258,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_rnd)
 "Wc" = (
 /obj/machinery/atmospherics/miner/oxygen,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "Wl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -8279,7 +8279,7 @@
 	frequency = 1442;
 	id_tag = "syndie_lavaland_n2_sensor"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "Wt" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/plasma{

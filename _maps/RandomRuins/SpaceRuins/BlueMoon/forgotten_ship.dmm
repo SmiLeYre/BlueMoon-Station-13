@@ -3760,7 +3760,7 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_bridge)
 "sf" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon{
 	dir = 8;
 	id_tag = "forgotten_outpost_tox_out";
 	name = "toxin out"
