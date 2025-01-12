@@ -49,13 +49,14 @@
 	for(var/mob/living/carbon/human/H in GLOB.carbon_list)
 		if(!HAS_TRAIT(H, TRAIT_LEWD_SUMMON) || HAS_TRAIT(H, TRAIT_LEWD_SUMMONED))
 			continue
-
+		if(!H.client)
+			continue
 		applicants += H
 		var/species = "[H.dna.species]"
-		if(H.dna.custom_species)
+		if(H.dna && H.dna.custom_species)
 			species = "[H.dna.custom_species]"
 		var/player_info
-		if(H.client.prefs.summon_nickname)
+		if(H.client.prefs && H.client.prefs.summon_nickname)
 			player_info += "[H.client.prefs.summon_nickname], "
 		player_info += "[H.gender] [species]"
 		applicants_result[initial(player_info)] = player_info
