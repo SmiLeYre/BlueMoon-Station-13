@@ -3967,6 +3967,12 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/awaymission/complex/facilityresearch)
+"dCR" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/complex/logistics)
 "dDv" = (
 /obj/structure/grille/broken,
 /obj/item/shard,
@@ -6668,6 +6674,9 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel,
 /area/awaymission/complex/logistics)
 "fMa" = (
@@ -8491,6 +8500,9 @@
 "hqo" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/closet/crate/large,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/awaymission/complex/logistics)
 "hqV" = (
@@ -8854,6 +8866,18 @@
 /obj/item/chair,
 /turf/open/floor/plasteel,
 /area/awaymission/complex/mainfacility)
+"hHa" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/complex/logistics)
 "hHm" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 10
@@ -18639,6 +18663,12 @@
 /obj/structure/table,
 /turf/open/floor/plasteel,
 /area/awaymission/complex/engineering)
+"qoG" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/complex/logistics)
 "qoV" = (
 /obj/machinery/door/airlock/medical/glass,
 /turf/open/floor/plating,
@@ -58045,12 +58075,12 @@ dgV
 skA
 uTV
 kRH
-gCn
-nyD
-nyD
-nyD
-nyD
-nyD
+hHa
+qoG
+qoG
+qoG
+qoG
+dCR
 nyD
 nyD
 nyD

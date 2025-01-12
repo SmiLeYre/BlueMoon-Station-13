@@ -6698,6 +6698,9 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel,
 /area/awaymission/complex/logistics)
 "fMa" = (
@@ -8558,6 +8561,9 @@
 "hqo" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/closet/crate/large,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/awaymission/complex/logistics)
 "hqV" = (
@@ -12209,6 +12215,12 @@
 	},
 /turf/open/floor/clockwork,
 /area/awaymission/complex/engineering)
+"kwd" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/complex/logistics)
 "kwe" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -13493,6 +13505,18 @@
 /obj/effect/turf_decal/tile/purple,
 /turf/open/floor/plasteel,
 /area/awaymission/complex/medical)
+"lLx" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/complex/logistics)
 "lLK" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -14896,6 +14920,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/complex/engineering)
+"mXx" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/complex/logistics)
 "mYr" = (
 /obj/item/ammo_casing/a762,
 /turf/open/floor/plasteel{
@@ -58008,12 +58038,12 @@ dgV
 skA
 uTV
 kRH
-gCn
-nyD
-nyD
-nyD
-nyD
-nyD
+lLx
+mXx
+mXx
+mXx
+mXx
+kwd
 nyD
 nyD
 nyD
