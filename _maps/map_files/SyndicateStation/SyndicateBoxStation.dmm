@@ -33405,7 +33405,6 @@
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "bHq" = (
-/obj/structure/disposalpipe/segment,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -33415,6 +33414,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/disposalpipe/junction,
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "bHr" = (
@@ -35424,8 +35424,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/disposalpipe/junction,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "bMf" = (
