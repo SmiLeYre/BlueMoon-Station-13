@@ -60,6 +60,8 @@
 		player_info += "[H.gender] [species]"
 		applicants_result[initial(player_info)] = player_info
 
+	if(!applicants_result.len)
+		to_chat(M, span_userdanger("Nobody to summon!"))
 	var/target_info = input("Please, select a person to summon!", "Select", null, null) as null|anything in applicants_result
 	if(!target_info)
 		return
