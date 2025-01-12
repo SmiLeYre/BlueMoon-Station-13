@@ -8339,13 +8339,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/hallway/primary/fore)
-"ate" = (
-/obj/effect/landmark/xeno_spawn,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/open/floor/carpet/black,
-/area/commons/dorms)
 "atf" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
@@ -97602,7 +97595,7 @@ aod
 aqe
 ctq
 apY
-ate
+ath
 ctq
 apY
 ath
