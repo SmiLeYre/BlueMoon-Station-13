@@ -39,6 +39,13 @@
 	stat_allowed = SOFT_CRIT
 	emote_cooldown = 2 SECONDS
 
+/datum/emote/sound/human/carbon/moan/run_emote(mob/user, params)
+	if(user.gender == FEMALE || (user.gender == PLURAL && isfeminine(user)))
+		sound = pick(GLOB.lewd_moans_female)
+	else
+		sound = pick(GLOB.lewd_moans_male)
+	. = ..()
+
 /datum/emote/sound/human/carbon/roll
 	key = "roll"
 	key_third_person = "rolls"

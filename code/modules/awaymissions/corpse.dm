@@ -36,6 +36,7 @@
 	var/can_load_appearance = FALSE
 	var/make_bank_account = FALSE // BLUEMOON ADD
 	var/starting_money = 0 // BLUEMOON ADD работает только при make_bank_account = TRUE
+	var/category = "misc" // BLUEMOON ADD - категоризация для отображения по спискам
 
 ///override this to add special spawn conditions to a ghost role
 /obj/effect/mob_spawn/proc/allow_spawn(mob/user, silent = FALSE)
@@ -533,6 +534,7 @@
 	flavour_text = "Вы посетитель пляжа и вы уже не помните, сколько вы здесь пробыли! Какое же это приятное место."
 	assignedrole = "Beach Bum"
 	can_load_appearance = TRUE
+	category = "offstation"
 
 /obj/effect/mob_spawn/human/beach/alive/lifeguard
 	flavour_text = "Вы - пляжный спасатель! Присматривай за посетителями пляжа, чтобы никто не утонул, не был съеден акулами и так далее."
@@ -542,6 +544,7 @@
 	job_description = "Beach Biodome Lifeguard"
 	uniform = /obj/item/clothing/under/shorts/red
 	can_load_appearance = TRUE
+	category = "offstation"
 
 /datum/outfit/beachbum
 	name = "Beach Bum"

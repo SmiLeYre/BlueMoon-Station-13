@@ -53,7 +53,8 @@
 		/obj/item/borg/lollipop,
 		/obj/item/holosign_creator/cyborg,
 		/obj/item/stamp/chameleon,
-		/obj/item/borg_shapeshifter
+		/obj/item/borg_shapeshifter,
+		/obj/item/cyborg_inducer
 		)
 
 	ratvar_modules = list(

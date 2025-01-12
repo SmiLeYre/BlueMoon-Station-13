@@ -310,7 +310,8 @@
 		/obj/item/pipe/quaternary = 1,
 	)
 	time = 6 SECONDS
-	category = CAT_OTHER
+	category = CAT_WEAPONRY
+	subcategory = CAT_OTHER
 
 /obj/item/pipe/welder_act(mob/living/user, obj/item/welder)
 	. = ..()
