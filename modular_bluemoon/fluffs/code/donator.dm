@@ -1111,3 +1111,12 @@
 	path = /obj/item/clothing/neck/SMART_fabric_boatcloak
 	ckeywhitelist = list("kijoking")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/famas098_NoirSuitskirt
+	name = "Noir suitskirt"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/rank/security/detective/grey/skirt
+	ckeywhitelist = list("famas098")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
+	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
