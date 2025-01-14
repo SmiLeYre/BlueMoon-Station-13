@@ -31785,6 +31785,7 @@
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "cmk" = (
+/obj/structure/disposalpipe/segment,
 /obj/structure/chair/stool{
 	pixel_y = 8
 	},
@@ -57792,8 +57793,7 @@
 /obj/machinery/atmospherics/components/binary/pump/on{
 	name = "Incinerator Output Pump"
 	},
-/obj/structure/lattice/catwalk,
-/turf/open/space/basic,
+/turf/open/floor/plating/airless,
 /area/maintenance/disposal/incinerator)
 "oce" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -116425,7 +116425,7 @@ bAw
 bFr
 ceJ
 ccM
-ccM
+cmk
 cng
 bzs
 bzs
@@ -116682,7 +116682,7 @@ ciH
 bHd
 bzs
 bAw
-cmk
+bAw
 cnf
 bzs
 aaf

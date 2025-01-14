@@ -28005,8 +28005,7 @@
 	name = "Incinerator Output Pump"
 	},
 /obj/structure/disposalpipe/segment,
-/obj/structure/lattice/catwalk,
-/turf/open/space/basic,
+/turf/open/floor/plating/airless,
 /area/maintenance/disposal/incinerator)
 "ckD" = (
 /obj/machinery/light/small{
