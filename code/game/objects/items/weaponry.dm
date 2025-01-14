@@ -943,6 +943,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 	var/throwforce_off // Damage when off
 	var/weight_class_on // What is the new size class when turned on
 
+/* BLUEMOON DELETE добавить когда спрайт от него найдётся ;P
 /obj/item/melee/baseball_bat/Initialize(mapload)
 	. = ..()
 	if(prob(1))
@@ -950,6 +951,7 @@ for further reading, please see: https://github.com/tgstation/tgstation/pull/301
 		desc = "You've got red on you."
 		icon_state = "baseball_bat_brit"
 		item_state = "baseball_bat_brit"
+*/
 
 /obj/item/melee/baseball_bat/chaplain
 	name = "blessed baseball bat"

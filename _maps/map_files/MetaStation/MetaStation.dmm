@@ -28001,13 +28001,12 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "ckC" = (
-/obj/structure/lattice,
 /obj/machinery/atmospherics/components/binary/pump/on{
 	name = "Incinerator Output Pump"
 	},
 /obj/structure/disposalpipe/segment,
-/turf/open/space,
-/area/space/nearstation)
+/turf/open/floor/plating/airless,
+/area/maintenance/disposal/incinerator)
 "ckD" = (
 /obj/machinery/light/small{
 	dir = 8

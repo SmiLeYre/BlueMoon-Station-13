@@ -16290,10 +16290,6 @@
 	icon_state = "wood_tile"
 	},
 /area/maintenance/space_hut/cabin)
-"faj" = (
-/obj/effect/spawner/lootdrop/maintenance,
-/turf/open/openspace,
-/area/space/nearstation)
 "fam" = (
 /obj/machinery/airalarm/directional/west,
 /turf/open/floor/wood,
@@ -230896,7 +230892,7 @@ bAb
 djY
 djY
 djY
-faj
+qbe
 qbe
 qbe
 rOv

@@ -49,17 +49,20 @@
 	for(var/mob/living/carbon/human/H in GLOB.carbon_list)
 		if(!HAS_TRAIT(H, TRAIT_LEWD_SUMMON) || HAS_TRAIT(H, TRAIT_LEWD_SUMMONED))
 			continue
-
+		if(!H.client)
+			continue
 		applicants += H
 		var/species = "[H.dna.species]"
-		if(H.dna.custom_species)
+		if(H.dna && H.dna.custom_species)
 			species = "[H.dna.custom_species]"
 		var/player_info
-		if(H.client.prefs.summon_nickname)
+		if(H.client.prefs && H.client.prefs.summon_nickname)
 			player_info += "[H.client.prefs.summon_nickname], "
 		player_info += "[H.gender] [species]"
 		applicants_result[initial(player_info)] = player_info
 
+	if(!applicants_result.len)
+		to_chat(M, span_userdanger("Nobody to summon!"))
 	var/target_info = input("Please, select a person to summon!", "Select", null, null) as null|anything in applicants_result
 	if(!target_info)
 		return

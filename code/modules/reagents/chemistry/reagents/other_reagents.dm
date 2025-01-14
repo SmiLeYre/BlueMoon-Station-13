@@ -52,7 +52,7 @@
 			C.adjust_integration_blood(round(reac_volume, 0.1))
 			// we don't care about bloodtype here, we're just refilling the mob
 
-	if(reac_volume >= 10 && istype(L) && method != INJECT)
+	if(reac_volume >= 10 && istype(L) && (method != INJECT && method != INGEST))
 		L.add_blood_DNA(list(data["blood_DNA"] = data["blood_type"]))
 
 /datum/reagent/blood/on_mob_life(mob/living/carbon/C)	//Because lethals are preferred over stamina. damnifino.
