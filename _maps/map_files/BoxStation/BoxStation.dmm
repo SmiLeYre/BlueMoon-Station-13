@@ -37465,16 +37465,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
-"cWS" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/machinery/door/poddoor/preopen{
-	id = "secdorm1"
-	},
-/turf/open/floor/plating,
-/area/security/office)
 "cXJ" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 10
@@ -38349,16 +38339,6 @@
 	dir = 5
 	},
 /area/medical/medbay/zone2)
-"dvA" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-4"
-	},
-/obj/machinery/door/poddoor/preopen{
-	id = "secdorm1"
-	},
-/turf/open/floor/plating,
-/area/security/office)
 "dvL" = (
 /obj/machinery/light{
 	dir = 1
@@ -60929,6 +60909,16 @@
 	},
 /turf/open/floor/carpet/royalblack,
 /area/service/library)
+"pSP" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "secdorm1"
+	},
+/turf/open/floor/plating,
+/area/security/office)
 "pTa" = (
 /obj/structure/table,
 /obj/machinery/microwave{
@@ -64971,6 +64961,22 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/range)
+"shO" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "secdorm1"
+	},
+/turf/open/floor/plating,
+/area/security/office)
 "shR" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -68744,6 +68750,14 @@
 	dir = 1
 	},
 /area/science)
+"urM" = (
+/obj/machinery/button/door{
+	id = "secdorm2";
+	name = "Cabin Shutters";
+	pixel_y = -25
+	},
+/turf/open/floor/plasteel/dark,
+/area/security/office)
 "usE" = (
 /obj/effect/spawner/lootdrop/maintenance,
 /obj/structure/rack,
@@ -69848,14 +69862,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/medical/morgue)
-"uZr" = (
-/obj/machinery/button/door{
-	id = "secdorm2";
-	name = "Cabin Bolt Control";
-	pixel_y = -25
-	},
-/turf/open/floor/plasteel/dark,
-/area/security/office)
 "uZM" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
@@ -69975,6 +69981,16 @@
 /obj/structure/table/wood,
 /turf/open/floor/wood,
 /area/service/bar)
+"veL" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "secdorm1"
+	},
+/turf/open/floor/plating,
+/area/security/office)
 "vfS" = (
 /turf/open/floor/carpet,
 /area/commons/cryopod)
@@ -73422,22 +73438,6 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/fore)
-"xbW" = (
-/obj/effect/spawner/structure/window/reinforced,
-/obj/structure/cable{
-	icon_state = "0-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-8"
-	},
-/obj/structure/cable{
-	icon_state = "2-4"
-	},
-/obj/machinery/door/poddoor/preopen{
-	id = "secdorm1"
-	},
-/turf/open/floor/plating,
-/area/security/office)
 "xcd" = (
 /obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel,
@@ -105559,7 +105559,7 @@ aaa
 aaa
 aaa
 aaa
-dvA
+veL
 bvj
 kHv
 adR
@@ -105816,7 +105816,7 @@ aaa
 aaa
 aaa
 aaf
-xbW
+shO
 gnA
 gnA
 uNQ
@@ -106073,7 +106073,7 @@ aaa
 aaa
 aaa
 aaa
-cWS
+pSP
 eDH
 adR
 adR
@@ -106588,7 +106588,7 @@ aaa
 aaa
 aaa
 orP
-uZr
+urM
 adR
 adR
 kfC
