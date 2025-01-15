@@ -90655,8 +90655,8 @@
 /obj/item/kirbyplants/random,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/light_switch{
-	pixel_x = 22;
-	pixel_y = -10
+	pixel_x = 25;
+	pixel_y = -2
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
