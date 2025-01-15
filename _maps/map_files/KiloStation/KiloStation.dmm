@@ -9136,7 +9136,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/item/beacon,
+/obj/effect/landmark/event_spawn,
 /turf/open/floor/engine,
 /area/science/explab)
 "aqr" = (
@@ -11523,20 +11523,20 @@
 	dir = 8
 	},
 /obj/structure/table,
-/obj/item/paper_bin{
-	pixel_x = -4;
-	pixel_y = 4
+/obj/item/storage/box/beakers{
+	pixel_y = 10;
+	pixel_x = 8
 	},
-/obj/item/pen,
+/obj/item/stack/cable_coil{
+	pixel_x = 1;
+	pixel_y = 2
+	},
 /obj/machinery/requests_console{
 	department = "Science";
 	departmentType = 2;
 	name = "Science RC";
 	pixel_y = 30;
 	receive_ore_updates = 1
-	},
-/obj/machinery/light{
-	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
@@ -11558,6 +11558,9 @@
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
+	},
+/obj/machinery/light{
+	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
@@ -13931,22 +13934,15 @@
 /turf/closed/wall/r_wall,
 /area/science/explab)
 "ayx" = (
-/obj/machinery/computer/rdconsole/experiment{
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
-/obj/effect/turf_decal/bot,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 8
-	},
-/obj/effect/turf_decal/tile/neutral,
-/obj/effect/turf_decal/tile/neutral{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/neutral{
-	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
@@ -15540,6 +15536,10 @@
 	pixel_y = 4
 	},
 /obj/item/stock_parts/cell/high,
+/obj/item/book/manual/wiki/experimentor{
+	pixel_x = -12;
+	pixel_y = -6
+	},
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
 "aBa" = (
@@ -18023,6 +18023,7 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 4
 	},
+/obj/item/beacon,
 /turf/open/floor/engine,
 /area/science/explab)
 "aFt" = (
@@ -21718,20 +21719,18 @@
 /turf/closed/wall/r_wall,
 /area/engineering/main)
 "aLO" = (
+/obj/effect/turf_decal/tile/purple{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/purple,
+/obj/effect/turf_decal/tile/purple,
 /obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
 	},
-/obj/machinery/door/firedoor/heavy,
-/obj/machinery/door/poddoor/preopen{
-	id = "telelab";
-	name = "Test Chamber Blast Door"
+/obj/machinery/computer/rdconsole/experiment{
+	dir = 4
 	},
-/obj/effect/turf_decal/caution/stand_clear,
-/obj/machinery/door/airlock/research/glass{
-	name = "Experimentor Lab";
-	req_one_access_txt = "7;29"
-	},
-/turf/open/floor/engine,
+/turf/open/floor/plasteel/showroomfloor,
 /area/science/explab)
 "aLP" = (
 /obj/effect/turf_decal/tile/purple{
@@ -29001,6 +29000,14 @@
 "aWV" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer1,
+/obj/effect/turf_decal/box/corners{
+	dir = 8
+	},
+/obj/machinery/button/door{
+	id = "telelab";
+	name = "Test Chamber Toggle";
+	pixel_y = 25
+	},
 /turf/open/floor/engine,
 /area/science/explab)
 "aWW" = (
@@ -29055,9 +29062,11 @@
 	},
 /area/maintenance/central)
 "aXb" = (
-/obj/effect/landmark/blobstart,
-/obj/effect/landmark/xeno_spawn,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1,
+/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+	dir = 4
+	},
+/obj/effect/landmark/blobstart,
 /turf/open/floor/engine,
 /area/science/explab)
 "aXc" = (
@@ -29190,7 +29199,6 @@
 /area/science/lab)
 "aXo" = (
 /obj/machinery/rnd/experimentor,
-/obj/effect/landmark/event_spawn,
 /turf/open/floor/engine,
 /area/science/explab)
 "aXp" = (
@@ -29536,6 +29544,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 5
 	},
+/obj/effect/turf_decal/box/corners,
 /turf/open/floor/engine,
 /area/science/explab)
 "aXT" = (
@@ -29550,15 +29559,31 @@
 	},
 /area/maintenance/central/secondary)
 "aXU" = (
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 8
+	},
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_x = -4;
+	pixel_y = 4
+	},
 /obj/machinery/button/door{
 	id = "telelab";
 	name = "Test Chamber Toggle";
-	pixel_y = 25
+	pixel_x = 9;
+	pixel_y = 5
 	},
-/obj/effect/turf_decal/box/corners{
-	dir = 8
+/obj/item/pen,
+/obj/item/pen{
+	pixel_x = -2;
+	pixel_y = -2
 	},
-/turf/open/floor/engine,
+/obj/item/folder{
+	pixel_x = 11;
+	pixel_y = -8
+	},
+/turf/open/floor/plasteel/dark,
 /area/science/explab)
 "aXV" = (
 /obj/structure/sink{
@@ -29686,18 +29711,21 @@
 	},
 /area/science/robotics/mechbay)
 "aYj" = (
-/obj/effect/spawner/structure/window/reinforced,
+/obj/effect/turf_decal/bot,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 8
 	},
-/obj/machinery/door/poddoor/preopen{
-	id = "telelab";
-	name = "Test Chamber Blast Door"
+/obj/effect/turf_decal/tile/neutral,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 4
 	},
-/turf/open/floor/plating,
+/obj/effect/turf_decal/tile/neutral{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/science/explab)
 "aYk" = (
 /obj/machinery/door/firedoor,
@@ -30218,9 +30246,9 @@
 /obj/effect/turf_decal/bot,
 /obj/machinery/power/apc/highcap/five_k{
 	areastring = "/area/ai_monitored/turret_protected/ai_upload";
-	dir = 1;
 	name = "Upload APC";
-	pixel_y = 23
+	pixel_x = 0;
+	pixel_y = -24
 	},
 /obj/structure/cable,
 /turf/open/floor/engine,
@@ -32761,26 +32789,22 @@
 /turf/open/floor/plasteel/dark,
 /area/science/mixing/chamber)
 "bdb" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
+/obj/machinery/atmospherics/pipe/simple/general/visible{
 	dir = 4
 	},
-/turf/open/floor/engine,
+/obj/effect/spawner/structure/window/reinforced,
+/obj/machinery/door/poddoor/preopen{
+	id = "telelab";
+	name = "Test Chamber Blast Door"
+	},
+/turf/open/floor/plating,
 /area/science/explab)
 "bdc" = (
-/obj/structure/table,
-/obj/item/storage/box/beakers{
-	pixel_y = 5
-	},
-/obj/item/stack/cable_coil,
-/obj/machinery/button/door{
-	id = "telelab";
-	name = "Test Chamber Toggle";
-	pixel_x = -24
-	},
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/structure/closet/bombcloset,
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
 "bdd" = (
@@ -32800,6 +32824,7 @@
 	name = "science camera";
 	network = list("ss13","rd")
 	},
+/obj/effect/landmark/xeno_spawn,
 /turf/open/floor/engine,
 /area/science/explab)
 "bdf" = (
@@ -33119,6 +33144,10 @@
 /obj/effect/turf_decal/box/corners{
 	dir = 1
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -26
+	},
 /turf/open/floor/engine,
 /area/science/explab)
 "bdB" = (
@@ -33336,29 +33365,29 @@
 	},
 /area/maintenance/starboard)
 "bdR" = (
-/obj/structure/table,
-/obj/item/folder{
-	pixel_x = -6
-	},
-/obj/item/book/manual/wiki/experimentor,
-/obj/item/pen,
 /obj/effect/turf_decal/tile/neutral,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+/obj/structure/closet/l3closet/scientist,
 /turf/open/floor/plasteel/dark,
 /area/science/explab)
 "bdS" = (
-/obj/effect/turf_decal/box/corners,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer1{
 	dir = 8
 	},
-/obj/machinery/firealarm{
-	dir = 1;
-	pixel_y = -26
+/obj/machinery/door/poddoor/preopen{
+	id = "telelab";
+	name = "Test Chamber Blast Door"
+	},
+/obj/machinery/door/firedoor/heavy,
+/obj/effect/turf_decal/caution/stand_clear,
+/obj/machinery/door/airlock/research/glass{
+	name = "Experimentor Lab";
+	req_one_access_txt = "7;29"
 	},
 /turf/open/floor/engine,
 /area/science/explab)
@@ -122169,7 +122198,7 @@ aWY
 aFs
 aqq
 bdA
-bah
+aZS
 aXg
 aAT
 aAC
@@ -122937,10 +122966,10 @@ alB
 aeT
 agg
 aWY
-aXU
+aXc
 bdb
 bdS
-bah
+aZS
 aZC
 bad
 aBr
@@ -123194,7 +123223,7 @@ alB
 aqa
 aga
 aWY
-aXc
+aXU
 aLO
 aYj
 bah
