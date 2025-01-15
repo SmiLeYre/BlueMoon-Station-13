@@ -37465,6 +37465,16 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/security/brig/brig_medical)
+"cWS" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "secdorm1"
+	},
+/turf/open/floor/plating,
+/area/security/office)
 "cXJ" = (
 /obj/effect/turf_decal/trimline/green/filled/line{
 	dir = 10
@@ -38339,6 +38349,16 @@
 	dir = 5
 	},
 /area/medical/medbay/zone2)
+"dvA" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "secdorm1"
+	},
+/turf/open/floor/plating,
+/area/security/office)
 "dvL" = (
 /obj/machinery/light{
 	dir = 1
@@ -40534,11 +40554,9 @@
 /area/maintenance/starboard/aft)
 "eDH" = (
 /obj/machinery/button/door{
-	id = "secdorm2";
+	id = "secdorm1";
 	name = "Cabin Bolt Control";
-	normaldoorcontrol = 1;
-	pixel_y = -25;
-	specialfunctions = 4
+	pixel_y = -25
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/office)
@@ -56090,7 +56108,7 @@
 /obj/item/bedsheet/red,
 /obj/structure/bed,
 /obj/machinery/button/door{
-	id = "secdormone";
+	id = "secdormtwo";
 	name = "Cabin Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_y = -25;
@@ -69830,6 +69848,14 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/department/medical/morgue)
+"uZr" = (
+/obj/machinery/button/door{
+	id = "secdorm2";
+	name = "Cabin Bolt Control";
+	pixel_y = -25
+	},
+/turf/open/floor/plasteel/dark,
+/area/security/office)
 "uZM" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
@@ -73396,6 +73422,22 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/fore)
+"xbW" = (
+/obj/effect/spawner/structure/window/reinforced,
+/obj/structure/cable{
+	icon_state = "0-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/machinery/door/poddoor/preopen{
+	id = "secdorm1"
+	},
+/turf/open/floor/plating,
+/area/security/office)
 "xcd" = (
 /obj/machinery/suit_storage_unit/standard_unit,
 /turf/open/floor/plasteel,
@@ -105517,7 +105559,7 @@ aaa
 aaa
 aaa
 aaa
-orP
+dvA
 bvj
 kHv
 adR
@@ -105774,7 +105816,7 @@ aaa
 aaa
 aaa
 aaf
-joD
+xbW
 gnA
 gnA
 uNQ
@@ -106031,7 +106073,7 @@ aaa
 aaa
 aaa
 aaa
-jke
+cWS
 eDH
 adR
 adR
@@ -106546,7 +106588,7 @@ aaa
 aaa
 aaa
 orP
-eDH
+uZr
 adR
 adR
 kfC
