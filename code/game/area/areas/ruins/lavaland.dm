@@ -71,6 +71,13 @@
 
 /area/ruin/lavaland/unpowered/deepspaceone/main
 	name = "DS-1 'Dune' | Primary Hallway"
+	sub_areas = list(/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
+
+/area/ruin/lavaland/unpowered/deepspaceone/main/shower
+	icon = 'icons/turf/areas.dmi'
+	icon_state = "shower"
+	name = "DS-1 'Dune' | Shower room"
+	valid_to_shower = TRUE
 
 /area/ruin/lavaland/unpowered/deepspaceone/cargo
 	name = "DS-1 'Dune' | Cargo Bay"

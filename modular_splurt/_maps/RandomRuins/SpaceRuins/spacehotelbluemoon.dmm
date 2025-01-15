@@ -53,7 +53,11 @@
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "al" = (
 /obj/machinery/light{
 	dir = 4
@@ -239,7 +243,11 @@
 "bO" = (
 /obj/structure/reagent_dispensers/watertank,
 /turf/open/floor/wood/wood_tiled,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "bQ" = (
 /obj/effect/turf_decal/tile/green{
 	dir = 1
@@ -303,7 +311,11 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "cg" = (
 /obj/item/toy/plush/catgirl/fermis,
 /obj/structure/dresser,
@@ -361,7 +373,11 @@
 	pixel_y = 24
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "cA" = (
 /obj/structure/mirror{
 	pixel_y = -32
@@ -466,7 +482,11 @@
 	dir = 4
 	},
 /turf/open/floor/wood/wood_tiled,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "de" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -838,7 +858,11 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "fd" = (
 /obj/structure/chair/sofa/corp/right{
 	dir = 4
@@ -975,7 +999,11 @@
 	pixel_y = 19
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "fT" = (
 /obj/structure/table/wood/fancy/royalblack,
 /turf/open/floor/plasteel/dark,
@@ -995,7 +1023,11 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "gi" = (
 /obj/structure/chair/sofa/corp/corner{
 	dir = 1
@@ -1014,7 +1046,11 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "gr" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -1069,7 +1105,11 @@
 	pixel_y = 24
 	},
 /turf/open/floor/wood/wood_tiled,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "hd" = (
 /obj/machinery/light/small{
 	dir = 4
@@ -1337,7 +1377,11 @@
 	},
 /obj/item/soap,
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "iw" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 8
@@ -1741,7 +1785,11 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "ln" = (
 /obj/structure/toilet/secret/low_loot{
 	dir = 4
@@ -1750,7 +1798,11 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "lq" = (
 /obj/machinery/ore_silo,
 /turf/open/floor/engine,
@@ -1953,7 +2005,11 @@
 	pixel_y = 10
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "ms" = (
 /turf/closed/wall/r_wall,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
@@ -2182,7 +2238,11 @@
 /area/ruin/space/has_grav/bluemoon/hotel/workroom)
 "nV" = (
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "nZ" = (
 /obj/structure/disposalpipe/segment{
 	dir = 10
@@ -2301,7 +2361,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "oQ" = (
 /obj/item/trash/candy,
 /obj/effect/decal/cleanable/cobweb{
@@ -2595,7 +2659,11 @@
 	dir = 5
 	},
 /turf/open/pool,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "qu" = (
 /obj/structure/table,
 /obj/item/kitchen/rollingpin,
@@ -2730,7 +2798,11 @@
 	dir = 8
 	},
 /turf/open/floor/wood/wood_tiled,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "rD" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
@@ -2860,7 +2932,11 @@
 	dir = 8
 	},
 /turf/open/floor/wood/wood_tiled,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "ss" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 2
@@ -2945,7 +3021,11 @@
 	dir = 5
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "sU" = (
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/hotel)
@@ -2955,7 +3035,11 @@
 	},
 /obj/structure/pool/ladder,
 /turf/open/pool,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "sX" = (
 /obj/machinery/button/door{
 	id = "a6";
@@ -3020,7 +3104,11 @@
 /obj/structure/closet/athletic_mixed,
 /obj/item/clothing/under/misc/bathrobe,
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "tA" = (
 /obj/structure/table,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
@@ -3117,7 +3205,11 @@
 	icon_state = "4-8"
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "ud" = (
 /obj/machinery/light,
 /turf/open/floor/wood/wood_tiled,
@@ -3168,7 +3260,11 @@
 	icon_state = "window"
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "un" = (
 /obj/machinery/vending/clothing{
 	onstation = 0
@@ -3193,7 +3289,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "uy" = (
 /obj/structure/grille,
 /obj/structure/grille,
@@ -3665,7 +3765,11 @@
 	dir = 4
 	},
 /turf/open/floor/wood/wood_tiled,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "xi" = (
 /obj/structure/table/wood,
 /obj/item/quantum_keycard{
@@ -3835,7 +3939,11 @@
 	dir = 8
 	},
 /turf/open/floor/wood/wood_tiled,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "yb" = (
 /obj/structure/chair/sofa/corp/left{
 	dir = 1
@@ -3939,7 +4047,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "yR" = (
 /obj/effect/spawner/structure/window/reinforced,
 /obj/structure/cable{
@@ -4133,7 +4245,11 @@
 "Ac" = (
 /obj/structure/sauna_oven,
 /turf/open/floor/wood/wood_tiled,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "Ad" = (
 /obj/machinery/mass_driver{
 	dir = 4;
@@ -4215,14 +4331,22 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Az" = (
 /obj/machinery/light/small,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "AB" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -4242,7 +4366,11 @@
 	pixel_y = 32
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "AN" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/effect/turf_decal/siding/dark{
@@ -4311,7 +4439,11 @@
 	dir = 8
 	},
 /turf/open/floor/wood/wood_tiled,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "BB" = (
 /obj/structure/chair/sofa/corp/right{
 	dir = 4
@@ -4354,7 +4486,11 @@
 	icon_state = "1-2"
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Cc" = (
 /obj/machinery/smartfridge,
 /turf/open/floor/plasteel/cafeteria,
@@ -4418,7 +4554,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Cy" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
@@ -4858,7 +4998,11 @@
 	pixel_x = 24
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Fu" = (
 /obj/machinery/conveyor{
 	dir = 4;
@@ -4891,7 +5035,11 @@
 	pixel_y = 24
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "FN" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/effect/turf_decal/siding/dark{
@@ -4948,7 +5096,11 @@
 /obj/item/soap,
 /obj/structure/bedsheetbin/towel,
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Gp" = (
 /obj/structure/table/plasmaglass,
 /turf/open/floor/carpet/purple,
@@ -5024,7 +5176,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "GJ" = (
 /obj/structure/closet/wardrobe/pjs,
 /turf/open/floor/plasteel/showroomfloor,
@@ -5181,7 +5337,11 @@
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
 "HF" = (
 /turf/open/floor/wood/wood_tiled,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "HI" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
@@ -5238,7 +5398,11 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Ii" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible{
 	dir = 6
@@ -5275,7 +5439,11 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Iy" = (
 /obj/structure/table,
 /obj/item/clothing/under/misc/bathrobe,
@@ -5380,7 +5548,11 @@
 "Jo" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Jr" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -5589,7 +5761,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "La" = (
 /obj/machinery/light{
 	dir = 4
@@ -5758,7 +5934,11 @@
 /obj/structure/table,
 /obj/structure/bedsheetbin/towel,
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "Mk" = (
 /obj/structure/mirror{
 	pixel_x = 28
@@ -5860,14 +6040,22 @@
 /area/ruin/space/has_grav/bluemoon/hotel/dock)
 "MF" = (
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "MG" = (
 /obj/structure/window{
 	dir = 1;
 	icon_state = "window"
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "MJ" = (
 /obj/machinery/light{
 	dir = 1;
@@ -6148,7 +6336,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "OE" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 8
@@ -6169,7 +6361,11 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "OJ" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -6248,6 +6444,13 @@
 	},
 /turf/open/pool,
 /area/ruin/space/has_grav/bluemoon/hotel/pool)
+"Pe" = (
+/turf/closed/wall,
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Pf" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
 /obj/machinery/light{
@@ -6380,7 +6583,11 @@
 	pixel_y = 7
 	},
 /turf/open/floor/wood/wood_tiled,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "PI" = (
 /obj/structure/table/wood/fancy/cyan,
 /turf/open/floor/carpet/cyan,
@@ -6519,7 +6726,11 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "Qu" = (
 /obj/machinery/light{
 	dir = 1
@@ -6555,7 +6766,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "QA" = (
 /obj/structure/table/wood/fancy/royalblack,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -6763,7 +6978,11 @@
 /area/ruin/space/has_grav/bluemoon/hotel/bar)
 "Ry" = (
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "RA" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 10
@@ -6846,7 +7065,11 @@
 	dir = 10
 	},
 /turf/open/pool,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "RY" = (
 /obj/machinery/conveyor/inverted{
 	dir = 10;
@@ -6885,7 +7108,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Sl" = (
 /obj/structure/table/glass,
 /turf/open/floor/glass/reinforced,
@@ -6925,7 +7152,11 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Sy" = (
 /obj/machinery/button/door{
 	id = "a9";
@@ -6992,7 +7223,11 @@
 	dir = 6
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "SL" = (
 /obj/machinery/door/airlock{
 	id_tag = "a7";
@@ -7070,7 +7305,11 @@
 	icon_state = "2-4"
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "To" = (
 /obj/effect/turf_decal/tile/red/half{
 	dir = 4
@@ -7097,7 +7336,11 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/bluemoon/hotel/pool)
+/area/ruin/space/has_grav/bluemoon/hotel/pool{
+	valid_to_shower = 1;
+	name = "Hotel Pool Shower";
+	icon_state = "shower"
+	})
 "Tx" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
@@ -7114,7 +7357,11 @@
 	pixel_y = 17
 	},
 /turf/open/pool,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "TD" = (
 /obj/machinery/airalarm/directional/south,
 /obj/structure/chair/sofa/corp/right{
@@ -7279,7 +7526,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "UM" = (
 /obj/structure/table/wood,
 /obj/structure/bedsheetbin/towel,
@@ -7300,7 +7551,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "UY" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
@@ -7507,7 +7762,11 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Wr" = (
 /obj/structure/chair/sofa/corp/corner{
 	dir = 1
@@ -7628,7 +7887,11 @@
 	},
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "Xb" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
@@ -7717,7 +7980,11 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "XT" = (
 /obj/structure/chair/comfy/brown{
 	color = "#596479"
@@ -7989,7 +8256,11 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/hotel/guestroom)
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom{
+	valid_to_shower = 1;
+	name = "Hotel Guest Shower";
+	icon_state = "shower"
+	})
 "ZN" = (
 /obj/structure/table/wood,
 /obj/item/storage/box/stockparts/basic,
@@ -9238,7 +9509,7 @@ eE
 eE
 vh
 fa
-vh
+Pe
 vh
 vh
 vh

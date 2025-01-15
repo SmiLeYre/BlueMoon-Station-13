@@ -457,7 +457,7 @@
 	},
 /turf/open/floor/plasteel/showroomfloor/shower,
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower)
 "bw" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
@@ -1135,7 +1135,7 @@
 	},
 /turf/open/floor/plasteel/showroomfloor/shower,
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness/shower)
 "dS" = (
 /obj/effect/turf_decal/bot_white,
 /obj/machinery/portable_atmospherics/scrubber,
@@ -4055,7 +4055,7 @@
 	dir = 8
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower)
 "qo" = (
 /obj/structure/rack/shelf,
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
@@ -4279,7 +4279,7 @@
 	level = 1
 	},
 /turf/open/floor/iron/dark/textured_large,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower)
 "rb" = (
 /obj/effect/turf_decal/trimline/dark_red/filled/line{
 	dir = 8
@@ -4392,7 +4392,7 @@
 	},
 /turf/open/floor/plasteel/showroomfloor/shower,
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness/shower)
 "rx" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/trimline/purple/filled/line{
@@ -4745,7 +4745,7 @@
 	},
 /turf/open/floor/plasteel/showroomfloor/shower,
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness/shower)
 "tk" = (
 /obj/effect/turf_decal/trimline/yellow/line,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
@@ -5339,7 +5339,7 @@
 	},
 /turf/open/floor/plasteel/showroomfloor/shower,
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower)
 "vK" = (
 /obj/structure/table/reinforced,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
@@ -6681,7 +6681,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness/shower)
 "Cm" = (
 /obj/effect/mob_spawn/human/ds2/syndicate_command/corporateliaison,
 /turf/open/floor/carpet/blackred,
@@ -6843,7 +6843,7 @@
 	dir = 9
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower)
 "Dt" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
@@ -7404,7 +7404,7 @@
 	},
 /turf/open/floor/plasteel/showroomfloor/shower,
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness/shower)
 "Fx" = (
 /obj/machinery/hydroponics/constructable,
 /obj/machinery/door/window/survival_pod{
@@ -7484,7 +7484,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness/shower)
 "FJ" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 10
@@ -8180,7 +8180,7 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "IQ" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness/shower)
 "IV" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/iron/dark,
@@ -9931,7 +9931,7 @@
 	req_access = list(151)
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower)
 "Qo" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
@@ -11840,7 +11840,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower)
 "Xf" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -12205,6 +12205,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
+"YF" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower)
 "YG" = (
 /obj/effect/mob_spawn/human/ds2/syndicate_command/admiral,
 /turf/open/floor/carpet/red,
@@ -12220,7 +12223,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/dark/textured_large,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness/shower)
 "YI" = (
 /obj/effect/turf_decal/stripes/red/corner{
 	dir = 8
@@ -12787,11 +12790,11 @@ pX
 kF
 kF
 Wv
-kF
-kF
+YF
+YF
 ra
-kF
-kF
+YF
+YF
 hC
 Lw
 OT
@@ -12842,11 +12845,11 @@ xZ
 kF
 av
 sh
-kF
+YF
 Ds
 Xb
 bu
-kF
+YF
 kF
 SF
 kF
@@ -12897,11 +12900,11 @@ TH
 kF
 Ue
 wc
-kF
+YF
 Qi
 qn
 vF
-kF
+YF
 aa
 Fb
 BN

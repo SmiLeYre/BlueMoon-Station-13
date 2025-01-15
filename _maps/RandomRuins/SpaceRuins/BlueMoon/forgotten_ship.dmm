@@ -112,7 +112,7 @@
 	pixel_y = -8
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "az" = (
 /obj/effect/mob_spawn/human/corpse/damaged,
 /obj/effect/decal/cleanable/blood,
@@ -617,7 +617,7 @@
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "dd" = (
 /obj/structure/filingcabinet,
 /obj/machinery/door/window{
@@ -768,7 +768,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "dW" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
@@ -946,7 +946,7 @@
 	pixel_x = 26
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "fl" = (
 /obj/structure/chair/stool/bar/directional/south,
 /obj/effect/turf_decal/tile/brown/opposingcorners,
@@ -1723,7 +1723,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "jn" = (
 /obj/effect/turf_decal/stripes{
 	dir = 1;
@@ -3367,7 +3367,7 @@
 	dir = 10
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "qa" = (
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
@@ -3905,7 +3905,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "sx" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/inteq_forgotten_inspection)
@@ -3949,7 +3949,7 @@
 	dir = 10
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "sD" = (
 /obj/effect/turf_decal/tile/brown/opposingcorners,
 /obj/structure/cable/yellow{
@@ -4089,6 +4089,9 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
+"tS" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "tV" = (
 /obj/structure/table/reinforced,
 /obj/machinery/chem_dispenser/drinks/beer,
@@ -5049,7 +5052,7 @@
 	},
 /obj/structure/curtain,
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "yB" = (
 /obj/machinery/door/poddoor/incinerator_syndicatelava_main,
 /turf/open/floor/engine/vacuum,
@@ -6209,7 +6212,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "Eo" = (
 /obj/machinery/processor,
 /obj/effect/turf_decal/stripes/red/line{
@@ -6300,6 +6303,9 @@
 /obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plasteel/damturf/platdmg1,
 /area/ruin/space/has_grav/inteq_forgotten_permabrig)
+"EU" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "Fb" = (
 /obj/machinery/light,
 /turf/open/floor/iron/dark,
@@ -6344,7 +6350,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "Fk" = (
 /obj/machinery/door/window{
 	dir = 1;
@@ -6764,7 +6770,7 @@
 	name = "Bathroom"
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "HA" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
@@ -7201,7 +7207,7 @@
 /obj/machinery/pool/drain,
 /obj/structure/curtain,
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "JX" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -7553,7 +7559,7 @@
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "Ly" = (
 /obj/machinery/computer/camera_advanced{
 	dir = 8
@@ -8171,7 +8177,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "Of" = (
 /obj/effect/decal/cleanable/glass,
 /obj/item/trash/semki,
@@ -8438,7 +8444,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_rnd)
 "Ql" = (
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "Qo" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -9066,7 +9072,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "TL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -10165,7 +10171,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "Zk" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Vault";
@@ -11798,10 +11804,10 @@ Pl
 Yp
 kw
 kw
-kw
-kw
-kw
-kw
+tS
+tS
+tS
+tS
 WP
 sz
 sz
@@ -11873,10 +11879,10 @@ Pl
 Pl
 Pl
 dT
-kw
+tS
 Em
 yA
-kw
+tS
 sz
 sz
 sz
@@ -11948,10 +11954,10 @@ pq
 Nz
 Rj
 wx
-kw
+tS
 dc
 Ql
-kw
+tS
 sz
 sz
 sz
@@ -12023,10 +12029,10 @@ bk
 kw
 kw
 kw
-kw
-kw
+tS
+tS
 Hy
-kw
+tS
 kw
 sz
 sz
@@ -12625,10 +12631,10 @@ kw
 kw
 Rf
 Pl
-kw
+tS
 Hy
-kw
-kw
+tS
+tS
 sz
 Vp
 Vp
@@ -12700,10 +12706,10 @@ kw
 uB
 xE
 xE
-kw
+tS
 Fj
 TJ
-kw
+tS
 sz
 XD
 XD
@@ -12775,10 +12781,10 @@ Rz
 qi
 AG
 Ml
-kw
+tS
 dU
 ay
-kw
+tS
 sz
 Jb
 kn
@@ -12850,10 +12856,10 @@ kw
 sG
 Pl
 Tc
-kw
-kw
-kw
-kw
+tS
+tS
+tS
+tS
 Jb
 Jb
 be
@@ -14860,10 +14866,10 @@ OA
 nm
 nm
 sx
-gb
+EU
 JW
 sw
-gb
+EU
 rF
 xv
 gb
@@ -14935,10 +14941,10 @@ sx
 sx
 GE
 sx
-gb
+EU
 Zj
 Od
-gb
+EU
 YU
 db
 oL
@@ -15010,7 +15016,7 @@ ye
 ye
 lO
 sz
-gb
+EU
 sC
 pX
 jf
@@ -15085,10 +15091,10 @@ sz
 sz
 sz
 sz
-gb
+EU
 Lp
 fk
-gb
+EU
 Dl
 cl
 EA
@@ -15160,10 +15166,10 @@ sz
 sz
 sz
 sz
-gb
-gb
-gb
-gb
+EU
+EU
+EU
+EU
 Ii
 rQ
 ch

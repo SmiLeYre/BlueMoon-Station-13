@@ -235,7 +235,10 @@
 /obj/structure/window/reinforced/survival_pod,
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/grass/grass0,
-/area/ruin/lavaland/unpowered/deepspaceone/cargo)
+/area/ruin/lavaland/unpowered/deepspaceone/cargo{
+	name = "DS-1 'Dune' | Comm Shower";
+	icon_state = "shower"
+	})
 "bh" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
@@ -260,7 +263,10 @@
 	pixel_y = 16
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/cargo)
+/area/ruin/lavaland/unpowered/deepspaceone/cargo{
+	name = "DS-1 'Dune' | Comm Shower";
+	icon_state = "shower"
+	})
 "bm" = (
 /obj/structure/closet/secure_closet{
 	icon_state = "qm";
@@ -362,7 +368,10 @@
 	level = 1
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/cargo)
+/area/ruin/lavaland/unpowered/deepspaceone/cargo{
+	name = "DS-1 'Dune' | Comm Shower";
+	icon_state = "shower"
+	})
 "bR" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -404,7 +413,10 @@
 	light_color = "#c1caff"
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/cargo)
+/area/ruin/lavaland/unpowered/deepspaceone/cargo{
+	name = "DS-1 'Dune' | Comm Shower";
+	icon_state = "shower"
+	})
 "ca" = (
 /obj/machinery/door/airlock/external{
 	req_access_txt = "150"
@@ -464,14 +476,17 @@
 	dir = 1
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/cargo)
+/area/ruin/lavaland/unpowered/deepspaceone/cargo{
+	name = "DS-1 'Dune' | Comm Shower";
+	icon_state = "shower"
+	})
 "co" = (
 /obj/machinery/door/airlock{
 	name = "Unisex Restrooms";
 	req_access_txt = "150"
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main)
+/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
 "cp" = (
 /obj/structure/closet/crate/freezer,
 /obj/item/reagent_containers/blood/random,
@@ -565,7 +580,10 @@
 	pixel_x = 28
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/cargo)
+/area/ruin/lavaland/unpowered/deepspaceone/cargo{
+	name = "DS-1 'Dune' | Comm Shower";
+	icon_state = "shower"
+	})
 "cD" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/yellow{
@@ -606,7 +624,7 @@
 	pixel_y = 28
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main)
+/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
 "cZ" = (
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
@@ -1963,7 +1981,7 @@
 	level = 1
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main)
+/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
 "mD" = (
 /obj/machinery/door/poddoor{
 	id = "interdynecargo"
@@ -2393,7 +2411,7 @@
 	level = 1
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main)
+/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
 "pK" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 8
@@ -2481,7 +2499,7 @@
 /obj/item/soap/syndie,
 /obj/machinery/light/small,
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main)
+/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
 "qz" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -3017,7 +3035,7 @@
 	dir = 8
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main)
+/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
 "vt" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -3622,7 +3640,7 @@
 	dir = 4
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main)
+/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
 "zt" = (
 /obj/effect/turf_decal/stripes/white/line{
 	dir = 1
@@ -3894,7 +3912,7 @@
 	pixel_y = 16
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main)
+/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
 "AW" = (
 /obj/structure/window/reinforced/survival_pod{
 	dir = 8
@@ -5189,6 +5207,9 @@
 /obj/item/storage/box/masks,
 /turf/open/floor/iron/white,
 /area/ruin/lavaland/unpowered/deepspaceone/medbay)
+"Jk" = (
+/turf/closed/wall/mineral/plastitanium/nodiagonal,
+/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
 "Jm" = (
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -6114,7 +6135,7 @@
 /area/ruin/lavaland/unpowered/deepspaceone/testlab)
 "PM" = (
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main)
+/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
 "PS" = (
 /obj/effect/decal/cleanable/blood/old,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
@@ -7577,7 +7598,7 @@
 	},
 /obj/item/seeds/gatfruit,
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main)
+/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
 "YB" = (
 /obj/structure/chair,
 /turf/open/floor/iron/dark,
@@ -7733,7 +7754,7 @@
 	req_access_txt = "150"
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/main)
+/area/ruin/lavaland/unpowered/deepspaceone/main/shower)
 "Zn" = (
 /obj/machinery/atmospherics/components/unary/portables_connector{
 	dir = 4
@@ -9631,12 +9652,12 @@ bh
 Jt
 aj
 Jt
-bh
-bh
-bh
-bh
-bh
-bh
+Jk
+Jk
+Jk
+Jk
+Jk
+Jk
 xP
 St
 Pt
@@ -9693,12 +9714,12 @@ MO
 ds
 Uv
 SU
-bh
+Jk
 AV
 qt
-bh
+Jk
 cW
-bh
+Jk
 Tz
 Ci
 TX
@@ -9755,7 +9776,7 @@ mG
 mz
 WG
 rQ
-bh
+Jk
 AV
 PM
 Zj
@@ -9817,12 +9838,12 @@ hA
 hA
 BP
 bh
-bh
-bh
-bh
-bh
+Jk
+Jk
+Jk
+Jk
 vm
-bh
+Jk
 Nj
 St
 Pt
@@ -9880,11 +9901,11 @@ bh
 HM
 bh
 Jg
-bh
+Jk
 Yz
 co
 zr
-bh
+Jk
 Nj
 St
 Pt
@@ -9942,11 +9963,11 @@ Jr
 GY
 WM
 bh
-bh
-bh
-bh
-bh
-bh
+Jk
+Jk
+Jk
+Jk
+Jk
 Nj
 St
 Pt
