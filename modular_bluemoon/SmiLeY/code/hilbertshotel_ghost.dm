@@ -1,6 +1,12 @@
+/obj/item/hilbertshotel
+	var/rooms_can_be_locked = FALSE
+
 /obj/item/hilbertshotel/ghostdojo
 	name = "infinite dormitories"
 	anchored = TRUE
+
+/obj/item/hilbertshotel/ghostdojo/ghostcafe
+	rooms_can_be_locked = TRUE
 
 /obj/item/hilbertshotel/ghostdojo/attack_hand(mob/user, list/modifiers)
 	. = ..()
@@ -20,7 +26,9 @@
 	. = ..()
 	var/area/hilbertshotel/HB = get_area(src)
 	var/roomnumber = "[HB.roomnumber]"
-	if(!parentSphere )
+	if(!parentSphere)
+		return
+	if(!parentSphere.rooms_can_be_locked)
 		return
 	if(!parentSphere.mob_dorms[user] || !parentSphere.mob_dorms[user].Find(HB.roomnumber))
 		return
@@ -42,7 +50,8 @@
 		return
 	. += "The placard reads 'Room [roomnumber]'."
 	. += "<span class='info'>Alt-Click to look through the peephole.</span>"
-	. += "<span class='info'>Ctrl-Click to lock door if you owner of the room.</span>"
+	if(parentSphere && parentSphere.rooms_can_be_locked)
+		. += "<span class='info'>Ctrl-Click to lock door if you owner of the room.</span>"
 
 /datum/map_template/hilbertshotel/apartment
 	name = "Apartment"
