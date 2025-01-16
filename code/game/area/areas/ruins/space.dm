@@ -569,6 +569,13 @@
 /area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall
 	name = "P-T Central Hallway"
 	icon_state = "hallC"
+	sub_areas = list(/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
+
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower
+	icon = 'icons/turf/areas.dmi'
+	icon_state = "shower"
+	name = "P-T Shower Room"
+	valid_to_shower = TRUE
 
 /area/ruin/space/has_grav/bluemoon/port_tarkon/secoff
 	name = "P-T Security Office"
@@ -795,6 +802,13 @@
 /area/ruin/space/has_grav/bluemoon/listeningstation
 	name = "Listening Post"
 	icon_state = "yellow"
+	sub_areas = list(/area/ruin/space/has_grav/bluemoon/listeningstation/shower)
+
+/area/ruin/space/has_grav/bluemoon/listeningstation/shower
+	icon = 'icons/turf/areas.dmi'
+	icon_state = "shower"
+	name = "Listening Post Shower"
+	valid_to_shower = TRUE
 
 /area/ruin/space/has_grav/powered/ancient_shuttle
 	name = "Ancient Shuttle"

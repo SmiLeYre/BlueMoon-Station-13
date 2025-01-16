@@ -235,10 +235,7 @@
 /obj/structure/window/reinforced/survival_pod,
 /obj/structure/flora/junglebush/large,
 /turf/open/floor/grass/grass0,
-/area/ruin/lavaland/unpowered/deepspaceone/cargo{
-	name = "DS-1 'Dune' | Comm Shower";
-	icon_state = "shower"
-	})
+/area/ruin/lavaland/unpowered/deepspaceone/cargo/shower)
 "bh" = (
 /turf/closed/wall/mineral/plastitanium/nodiagonal,
 /area/ruin/lavaland/unpowered/deepspaceone/main)
@@ -263,10 +260,7 @@
 	pixel_y = 16
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/cargo{
-	name = "DS-1 'Dune' | Comm Shower";
-	icon_state = "shower"
-	})
+/area/ruin/lavaland/unpowered/deepspaceone/cargo/shower)
 "bm" = (
 /obj/structure/closet/secure_closet{
 	icon_state = "qm";
@@ -368,10 +362,7 @@
 	level = 1
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/cargo{
-	name = "DS-1 'Dune' | Comm Shower";
-	icon_state = "shower"
-	})
+/area/ruin/lavaland/unpowered/deepspaceone/cargo/shower)
 "bR" = (
 /obj/structure/disposalpipe/segment{
 	dir = 6
@@ -413,10 +404,7 @@
 	light_color = "#c1caff"
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/cargo{
-	name = "DS-1 'Dune' | Comm Shower";
-	icon_state = "shower"
-	})
+/area/ruin/lavaland/unpowered/deepspaceone/cargo/shower)
 "ca" = (
 /obj/machinery/door/airlock/external{
 	req_access_txt = "150"
@@ -476,10 +464,7 @@
 	dir = 1
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/cargo{
-	name = "DS-1 'Dune' | Comm Shower";
-	icon_state = "shower"
-	})
+/area/ruin/lavaland/unpowered/deepspaceone/cargo/shower)
 "co" = (
 /obj/machinery/door/airlock{
 	name = "Unisex Restrooms";
@@ -580,10 +565,7 @@
 	pixel_x = 28
 	},
 /turf/open/indestructible/hoteltile,
-/area/ruin/lavaland/unpowered/deepspaceone/cargo{
-	name = "DS-1 'Dune' | Comm Shower";
-	icon_state = "shower"
-	})
+/area/ruin/lavaland/unpowered/deepspaceone/cargo/shower)
 "cD" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/yellow{
