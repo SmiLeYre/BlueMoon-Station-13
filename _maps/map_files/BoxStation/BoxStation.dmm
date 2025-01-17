@@ -23920,8 +23920,8 @@
 	},
 /area/maintenance/port/fore)
 "bOj" = (
-/obj/item/kirbyplants/random,
 /obj/effect/turf_decal/bot,
+/obj/structure/closet/secure_closet/medical1,
 /turf/open/floor/plasteel,
 /area/medical/virology)
 "bOk" = (
@@ -48270,9 +48270,16 @@
 /area/service/park)
 "iWE" = (
 /obj/structure/table/glass,
-/obj/item/paper_bin,
+/obj/item/paper_bin{
+	pixel_x = -5;
+	pixel_y = 3
+	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
+	},
+/obj/item/folder/white{
+	pixel_x = 7;
+	pixel_y = 2
 	},
 /turf/open/floor/plasteel,
 /area/medical/virology)
@@ -55583,7 +55590,7 @@
 /obj/effect/turf_decal/stripes/line{
 	dir = 5
 	},
-/obj/machinery/computer/pandemic,
+/obj/structure/table/glass,
 /turf/open/floor/plasteel,
 /area/medical/virology)
 "mPT" = (
@@ -60599,9 +60606,9 @@
 /area/security/detectives_office/private_investigators_office)
 "pKR" = (
 /obj/structure/disposalpipe/segment,
-/obj/effect/turf_decal/trimline/green/filled/end,
-/obj/structure/closet/secure_closet/medical1,
-/turf/open/floor/plasteel/white,
+/obj/structure/closet/l3closet/virology,
+/obj/effect/turf_decal/bot,
+/turf/open/floor/plasteel,
 /area/medical/virology)
 "pKV" = (
 /turf/closed/wall/r_wall,
