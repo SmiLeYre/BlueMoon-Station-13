@@ -66,7 +66,7 @@
 	for(var/mob/living/player in GLOB.player_list)
 		if(player.stat != DEAD && player.loc && is_station_level(player.loc.z) && !iscultist(player) && !isanimal(player))
 			souls_needed[player] = TRUE
-	soul_goal = round(1 + LAZYLEN(souls_needed) * 0.75)
+	soul_goal = round(1 + LAZYLEN(souls_needed) * 0.25)
 	INVOKE_ASYNC(src, PROC_REF(begin_the_end))
 
 /obj/singularity/narsie/large/cult/proc/begin_the_end()
@@ -84,7 +84,11 @@
 		priority_announce("Датчики более не фиксируют обозначенного пространственного разлома. Решения ЦК отозваны. Тем не менее, рекомендуется произвести немедленную эвакуацию персонала.","Центральное Командование, Отдел Работы с Реальностью")
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper), CULT_FAILURE_NARSIE_KILLED), 2 SECONDS)
 		return
-	if(resolved == FALSE)
+	if(souls >= soul_goal && !resolved)
+		resolved = TRUE
+		sound_to_playing_players('sound/machines/alarm.ogg')
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper), CULT_VICTORY_MASS_CONVERSION), 10 SECONDS)
+	else if(!resolved)
 		resolved = TRUE
 		sound_to_playing_players('sound/machines/alarm.ogg')
 		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(cult_ending_helper), CULT_VICTORY_NUKE), 10 SECONDS)
@@ -100,13 +104,13 @@
 	switch(ending_type)
 
 		if(CULT_FAILURE_NARSIE_KILLED)
-			Cinematic(CINEMATIC_CULT,world,CALLBACK(GLOBAL_PROC,GLOBAL_PROC_REF(ending_helper)))
+			Cinematic(CINEMATIC_CULT_FA,world,CALLBACK(GLOBAL_PROC,GLOBAL_PROC_REF(ending_helper)))
 
 		if(CULT_VICTORY_MASS_CONVERSION)
 			Cinematic(CINEMATIC_CULT,world,CALLBACK(GLOBAL_PROC,GLOBAL_PROC_REF(ending_helper)))
 
 		if(CULT_VICTORY_NUKE)
-			Cinematic(CINEMATIC_CULT,world,CALLBACK(GLOBAL_PROC,GLOBAL_PROC_REF(ending_helper)))
+			Cinematic(CINEMATIC_CULT_NUKE,world,CALLBACK(GLOBAL_PROC,GLOBAL_PROC_REF(ending_helper)))
 
 //ATTACK GHOST IGNORING PARENT RETURN VALUE
 /obj/singularity/narsie/large/attack_ghost(mob/dead/observer/user as mob)

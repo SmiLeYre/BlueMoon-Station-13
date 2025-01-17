@@ -10939,12 +10939,6 @@
 	},
 /turf/open/floor/plasteel/bluespace,
 /area/centcom)
-"clt" = (
-/obj/structure/flora/tree/jungle/small{
-	icon_state = "tree4"
-	},
-/turf/open/floor/grass/grass0,
-/area/centcom/holding)
 "clL" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 8
@@ -10960,12 +10954,6 @@
 	},
 /obj/structure/fans/tiny/invisible,
 /turf/open/indestructible/hoteltile,
-/area/centcom/holding)
-"clV" = (
-/obj/structure/flora/tree/jungle/small{
-	icon_state = "tree3"
-	},
-/turf/open/floor/grass/grass0,
 /area/centcom/holding)
 "cmn" = (
 /obj/effect/turf_decal/tile/neutral{
@@ -13115,7 +13103,7 @@
 /area/centcom/control)
 "eqf" = (
 /obj/machinery/door/airlock/centcom{
-	name = "Medical Bay";
+	name = "VIP cell 1";
 	req_access_txt = "154"
 	},
 /turf/open/floor/plasteel/dark/side{
@@ -14444,12 +14432,6 @@
 /obj/item/immortality_talisman,
 /turf/open/floor/plasteel/bluespace,
 /area/centcom)
-"fvP" = (
-/obj/structure/flora/tree/jungle/small{
-	icon_state = "tree6"
-	},
-/turf/open/floor/grass/grass0,
-/area/centcom/holding)
 "fvW" = (
 /obj/effect/turf_decal/tile/dark_blue/half,
 /obj/effect/turf_decal/delivery,
@@ -14598,9 +14580,7 @@
 /area/tdome/arena_source)
 "fAu" = (
 /obj/structure/flora/ausbushes/lavendergrass,
-/obj/structure/flora/tree/jungle/small{
-	icon_state = "tree6"
-	},
+/obj/structure/flora/tree/jungle/small,
 /obj/structure/flora/rock/jungle,
 /obj/structure/flora/junglebush,
 /turf/open/floor/grass/grass2,
@@ -18263,7 +18243,7 @@
 /area/syndicate_mothership/control)
 "iNE" = (
 /obj/machinery/door/airlock/centcom{
-	name = "Medical Bay";
+	name = "VIP cell 3";
 	req_access_txt = "154"
 	},
 /turf/open/floor/plating,
@@ -26965,9 +26945,7 @@
 /turf/open/floor/grass/grass0,
 /area/centcom/holding)
 "qLP" = (
-/obj/structure/flora/tree/jungle/small{
-	icon_state = "tree5"
-	},
+/obj/structure/flora/tree/jungle/small,
 /obj/structure/flora/ausbushes/fullgrass,
 /obj/structure/flora/rock/jungle,
 /turf/open/floor/grass,
@@ -27490,7 +27468,7 @@
 	dir = 8
 	},
 /obj/machinery/door/airlock/centcom{
-	name = "Medical Bay";
+	name = "VIP cells";
 	req_access_txt = "154"
 	},
 /turf/open/floor/plasteel,
@@ -30756,9 +30734,7 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "ukF" = (
-/obj/structure/flora/tree/jungle/small{
-	icon_state = "tree3"
-	},
+/obj/structure/flora/tree/jungle/small,
 /obj/structure/flora/bush,
 /turf/open/floor/grass/grass2,
 /area/centcom/control)
@@ -31854,12 +31830,6 @@
 	name = "Shrine"
 	},
 /turf/open/indestructible/hotelwood,
-/area/centcom/holding)
-"vgJ" = (
-/obj/structure/flora/tree/jungle/small{
-	icon_state = "tree5"
-	},
-/turf/open/floor/grass/grass0,
 /area/centcom/holding)
 "vgW" = (
 /obj/structure/bed/double,
@@ -48161,8 +48131,8 @@ fON
 fON
 fON
 fON
-clt
-clt
+pbN
+pbN
 fON
 fON
 fON
@@ -49216,7 +49186,7 @@ ncJ
 ncJ
 ncJ
 ncJ
-fvP
+pbN
 ncJ
 ncJ
 ncJ
@@ -51278,7 +51248,7 @@ cwD
 ncJ
 ncJ
 ncJ
-clV
+pbN
 fON
 fON
 fON
@@ -55632,7 +55602,7 @@ fON
 fON
 fON
 fON
-vgJ
+pbN
 fON
 fON
 fON
@@ -57433,8 +57403,8 @@ aFe
 uTC
 aFe
 aFe
-clt
-clt
+pbN
+pbN
 fON
 fON
 fON
@@ -57952,7 +57922,7 @@ fON
 fON
 fON
 fON
-clt
+pbN
 hmY
 hmY
 hmY
@@ -58720,7 +58690,7 @@ oOC
 fON
 fON
 fON
-clt
+pbN
 fON
 fON
 fON

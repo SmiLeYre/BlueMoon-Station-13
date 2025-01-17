@@ -5,7 +5,7 @@
 	movedelay = 2
 	dir_in = 2 //Facing South.
 	normal_step_energy_drain = 3
-	max_integrity = 200
+	max_integrity = 100
 	deflect_chance = 30
 	armor = list(MELEE = 10, BULLET = 25, LASER = 25, ENERGY = 25, BOMB = 20, BIO = 0, RAD = 50, FIRE = 100, ACID = 100)
 	max_temperature = 25000

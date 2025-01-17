@@ -13,6 +13,7 @@
 				/obj/item/seeds/apple = 3,		//	 Apple
 				/obj/item/seeds/banana = 3,		//	 Banana
 				/obj/item/seeds/cherry = 3,		//	 Cherry
+				/obj/item/seeds/berry = 3,		//	 Berry
 				/obj/item/seeds/cocoapod = 3,  	//	 Cocoa Pod
 				/obj/item/seeds/coconut = 3,	//	 Coconut
 				/obj/item/seeds/grape = 3,		//	 Grape

@@ -29,7 +29,7 @@
 	pixel_x = -28
 	},
 /turf/open/floor/iron/white,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
 "ah" = (
 /obj/effect/turf_decal/tile/blue/half,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -82,7 +82,7 @@
 	},
 /obj/machinery/door/window/brigdoor/westright,
 /turf/open/floor/iron/white,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
 "as" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -1450,7 +1450,7 @@
 "iq" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/white,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
 "iu" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -3141,7 +3141,7 @@
 	req_access = list("tarkoff")
 	},
 /turf/open/floor/iron/white,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
 "sc" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/spawner/lootdrop/grille_or_trash,
@@ -3495,7 +3495,7 @@
 	},
 /obj/effect/spawner/lootdrop/cigars_cases,
 /turf/open/floor/iron/white,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
 "uD" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
@@ -3730,7 +3730,7 @@
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/white,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
 "vZ" = (
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
@@ -3992,7 +3992,7 @@
 /obj/effect/spawner/lootdrop/grille_or_trash,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/white,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
 "xY" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4;
@@ -6294,7 +6294,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
 "KW" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	piping_layer = 1
@@ -6533,7 +6533,7 @@
 	},
 /obj/machinery/door/firedoor/solid,
 /turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
 "MD" = (
 /obj/machinery/atmospherics/miner/toxins,
 /turf/open/floor/engine/plasma,
@@ -7572,7 +7572,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
 "SM" = (
 /obj/effect/decal/cleanable/confetti,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -7897,7 +7897,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/loot_pile/maint,
 /turf/open/floor/iron/white,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
 "Ur" = (
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/effect/turf_decal/tile/brown,
@@ -8333,6 +8333,9 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/developement)
+"WR" = (
+/turf/closed/wall,
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
 "WU" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/bluemoon/port_tarkon/porthall)
@@ -8419,7 +8422,7 @@
 	req_access = list("tarkoff")
 	},
 /turf/open/floor/iron/white,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
 "XG" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/iron,
@@ -8688,7 +8691,7 @@
 	pixel_x = -28
 	},
 /turf/open/floor/iron/white,
-/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall)
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
 "Za" = (
 /obj/effect/turf_decal/tile/purple/half{
 	dir = 8
@@ -10828,7 +10831,7 @@ Qs
 AN
 hA
 WU
-Ki
+WR
 vR
 iq
 iq
@@ -10901,9 +10904,9 @@ ro
 CA
 ep
 Kg
-Ki
+WR
 MC
-Ki
+WR
 xW
 iq
 Up
@@ -10976,8 +10979,8 @@ Oo
 Uz
 ro
 MB
-Ki
-Ki
+WR
+WR
 XE
 aq
 Iw
@@ -11050,9 +11053,9 @@ xU
 XS
 on
 IE
-Ki
-Ki
-Iw
+WR
+WR
+WR
 hs
 Iw
 Iw

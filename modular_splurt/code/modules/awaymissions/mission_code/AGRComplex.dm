@@ -65,6 +65,12 @@
 /area/awaymission/complex/mainfacility
 	name = "Primary Complex"
 	icon_state = "awaycontent12"
+	sub_areas = list(/area/awaymission/complex/shower)
+
+/area/awaymission/complex/shower
+	icon = 'icons/turf/areas.dmi'
+	icon_state = "shower"
+	name = "Shower"
 
 /area/awaymission/complex/logistics
 	name = "Logistics Department"

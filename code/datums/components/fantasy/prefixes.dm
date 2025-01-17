@@ -38,6 +38,8 @@
 	else
 		return "[pick(badPrefixes)] [newName]"
 
+/* BLUEMOON DELETE Оставь надежду, всяк сюда входящий, каким-то неимоверным образом уводить сам объект как элемент в _AddElement(list/arguments)
+//времени попыток решить данную околесицу 4 часа
 /datum/fantasy_affix/tactical
 	placement = AFFIX_PREFIX
 	alignment = AFFIX_GOOD
@@ -50,6 +52,7 @@
 	comp.appliedElements += list(dat)
 	return "tactical [newName]"
 
+*/
 /datum/fantasy_affix/pyromantic
 	placement = AFFIX_PREFIX
 	alignment = AFFIX_GOOD

@@ -108,7 +108,7 @@
 	pixel_y = -8
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "aD" = (
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/metal/twenty,
@@ -222,7 +222,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_vault)
 "aQ" = (
 /obj/machinery/atmospherics/miner/toxins,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "aR" = (
 /obj/effect/turf_decal/tile/dark_blue/opposingcorners,
@@ -561,7 +561,7 @@
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "dd" = (
 /obj/structure/filingcabinet,
 /obj/machinery/door/window{
@@ -694,7 +694,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "dW" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
@@ -872,7 +872,7 @@
 	pixel_x = 26
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "fl" = (
 /obj/structure/chair/stool/bar/directional/south,
 /obj/effect/turf_decal/tile/dark_blue/opposingcorners,
@@ -1539,7 +1539,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "jn" = (
 /obj/effect/turf_decal/stripes{
 	dir = 1;
@@ -2840,7 +2840,7 @@
 	dir = 10
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "qa" = (
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
@@ -3209,12 +3209,12 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_bridge)
 "sf" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon{
 	dir = 8;
 	id_tag = "forgotten_outpost_tox_out";
 	name = "toxin out"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "sg" = (
 /obj/structure/table/glass,
@@ -3333,7 +3333,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "sx" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/inteq_forgotten_inspection)
@@ -3357,7 +3357,7 @@
 	dir = 6
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "sD" = (
 /obj/effect/turf_decal/tile/dark_blue/opposingcorners,
 /obj/structure/cable/yellow{
@@ -3806,6 +3806,9 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_bridge)
+"wt" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "wu" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -3878,7 +3881,7 @@
 	dir = 4;
 	volume_rate = 200
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "wX" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4258,7 +4261,7 @@
 	},
 /obj/structure/curtain,
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "yB" = (
 /obj/machinery/door/poddoor/incinerator_syndicatelava_main,
 /turf/open/floor/engine/vacuum,
@@ -4693,6 +4696,9 @@
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
+"Bc" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "Be" = (
 /obj/machinery/computer/rdconsole/core{
 	req_access = null
@@ -5256,7 +5262,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "Eo" = (
 /obj/machinery/processor,
 /obj/effect/turf_decal/stripes/red/line{
@@ -5382,7 +5388,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "Fk" = (
 /obj/machinery/door/window{
 	dir = 1;
@@ -5760,7 +5766,7 @@
 	name = "Bathroom"
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "HA" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
@@ -5866,7 +5872,7 @@
 	id_tag = "forgotten_outpost_o2_out";
 	name = "oxygen out"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "If" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -6174,7 +6180,7 @@
 /obj/machinery/pool/drain,
 /obj/structure/curtain,
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "JX" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6257,7 +6263,7 @@
 	id_tag = "forgotten_outpost_n2_out";
 	name = "nitrogen out"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "Ky" = (
 /obj/effect/decal/cleanable/robot_debris/limb,
@@ -6354,7 +6360,7 @@
 	frequency = 1442;
 	id_tag = "syndie_lavaland_o2_sensor"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "KR" = (
 /obj/machinery/computer/med_data/syndie{
@@ -6463,7 +6469,7 @@
 	dir = 8
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "Ly" = (
 /obj/machinery/computer/camera_advanced{
 	dir = 8
@@ -6714,7 +6720,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
 "MI" = (
 /obj/machinery/atmospherics/miner/nitrogen,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "MJ" = (
 /obj/effect/turf_decal/tile/dark_blue/anticorner,
@@ -7023,7 +7029,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "Oh" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/inteq_forgotten_bar)
@@ -7266,7 +7272,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_rnd)
 "Ql" = (
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "Qo" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -7830,7 +7836,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "TL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8258,7 +8264,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_rnd)
 "Wc" = (
 /obj/machinery/atmospherics/miner/oxygen,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "Wl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -8279,7 +8285,7 @@
 	frequency = 1442;
 	id_tag = "syndie_lavaland_n2_sensor"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "Wt" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/plasma{
@@ -8835,7 +8841,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "Zk" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Vault";
@@ -10466,10 +10472,10 @@ Pl
 Yp
 kw
 kw
-kw
-kw
-kw
-kw
+wt
+wt
+wt
+wt
 WP
 sz
 sz
@@ -10541,10 +10547,10 @@ Pl
 Pl
 Pl
 dT
-kw
+wt
 Em
 yA
-kw
+wt
 sz
 sz
 sz
@@ -10616,10 +10622,10 @@ pq
 Nz
 Rj
 wx
-kw
+wt
 dc
 Ql
-kw
+wt
 sz
 sz
 sz
@@ -10691,10 +10697,10 @@ bk
 kw
 kw
 kw
-kw
-kw
+wt
+wt
 Hy
-kw
+wt
 kw
 sz
 sz
@@ -11293,10 +11299,10 @@ kw
 kw
 Rf
 Pl
-kw
+wt
 Hy
-kw
-kw
+wt
+wt
 lO
 lO
 ye
@@ -11368,10 +11374,10 @@ kw
 uB
 xE
 xE
-kw
+wt
 Fj
 TJ
-kw
+wt
 lO
 lO
 lO
@@ -11443,10 +11449,10 @@ Rz
 qi
 AG
 Ml
-kw
+wt
 dU
 ay
-kw
+wt
 lO
 lO
 lO
@@ -11518,10 +11524,10 @@ kw
 sG
 Pl
 Tc
-kw
-kw
-kw
-kw
+wt
+wt
+wt
+wt
 lO
 lO
 lO
@@ -13528,10 +13534,10 @@ OA
 nm
 nm
 sx
-gb
+Bc
 JW
 sw
-gb
+Bc
 rF
 xv
 gb
@@ -13603,10 +13609,10 @@ sx
 sx
 GE
 sx
-gb
+Bc
 Zj
 Od
-gb
+Bc
 io
 db
 oL
@@ -13678,7 +13684,7 @@ ye
 ye
 lO
 sz
-gb
+Bc
 sC
 pX
 jf
@@ -13753,10 +13759,10 @@ sz
 sz
 sz
 sz
-gb
+Bc
 Lp
 fk
-gb
+Bc
 Dl
 cl
 EA
@@ -13828,10 +13834,10 @@ sz
 sz
 sz
 sz
-gb
-gb
-gb
-gb
+Bc
+Bc
+Bc
+Bc
 Ii
 rQ
 ch

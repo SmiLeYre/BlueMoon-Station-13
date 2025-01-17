@@ -3448,7 +3448,7 @@
 /area/security/prison)
 "ajD" = (
 /turf/closed/wall/r_wall,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "ajE" = (
 /turf/closed/wall/r_wall,
 /area/security/execution/transfer)
@@ -3724,7 +3724,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "aks" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -3738,7 +3738,7 @@
 /obj/effect/turf_decal/tile/blue,
 /obj/structure/closet/secure_closet/medical2,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "aku" = (
 /obj/machinery/airalarm{
 	pixel_y = 22
@@ -3751,7 +3751,7 @@
 	},
 /obj/machinery/computer/crew,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "akx" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -4021,13 +4021,13 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "alk" = (
 /obj/machinery/atmospherics/pipe/simple/cyan/hidden{
 	dir = 6
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "all" = (
 /obj/machinery/door/window/westleft{
 	dir = 4;
@@ -4041,7 +4041,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "aln" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 8
@@ -4242,7 +4242,7 @@
 	},
 /obj/effect/landmark/start/brigdoc,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "alV" = (
 /obj/machinery/door/window/westleft{
 	base_state = "right";
@@ -4261,7 +4261,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "alW" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -45641,7 +45641,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "cjl" = (
 /obj/structure/chair/wood/normal,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
@@ -46820,7 +46820,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "cnQ" = (
 /obj/machinery/door/window/southleft{
 	name = "Operating room";
@@ -46835,7 +46835,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "cnV" = (
 /turf/closed/wall/r_wall,
 /area/command/heads_quarters/hos)
@@ -47674,7 +47674,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "cqU" = (
 /obj/structure/window/reinforced{
 	dir = 4
@@ -48996,7 +48996,7 @@
 	},
 /obj/effect/turf_decal/tile/blue,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "cwk" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 4
@@ -49006,7 +49006,7 @@
 	},
 /obj/effect/turf_decal/tile/blue,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "cwl" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 4
@@ -49042,7 +49042,7 @@
 	},
 /obj/machinery/iv_drip,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "cwo" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -49065,7 +49065,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "cwr" = (
 /obj/item/kirbyplants{
 	icon_state = "plant-22"
@@ -49199,7 +49199,7 @@
 	},
 /obj/effect/turf_decal/tile/blue,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "cxh" = (
 /obj/machinery/door/poddoor/shutters/preopen{
 	id = "datboidetective";
@@ -49264,7 +49264,7 @@
 "cxL" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "cxM" = (
 /obj/structure/window/reinforced/fulltile,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -49309,7 +49309,7 @@
 	},
 /obj/effect/turf_decal/tile/blue,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "cyz" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -50399,7 +50399,7 @@
 	req_access_txt = "71"
 	},
 /turf/open/floor/plating,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "deJ" = (
 /turf/open/floor/plasteel/yellowsiding/corner,
 /area/hallway/secondary/entry)
@@ -50850,7 +50850,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "dFJ" = (
 /turf/open/floor/engine,
 /area/engineering/supermatter)
@@ -50865,7 +50865,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "dHo" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -51042,7 +51042,7 @@
 	},
 /obj/effect/turf_decal/tile/blue,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "dVI" = (
 /obj/structure/cable{
 	icon_state = "1-8"
@@ -51092,7 +51092,7 @@
 /obj/effect/turf_decal/tile/blue,
 /obj/structure/closet/crate/freezer/blood,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "dYe" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -52464,7 +52464,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "fWv" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/carpet,
@@ -53855,7 +53855,7 @@
 /obj/machinery/suit_storage_unit/cmo,
 /obj/machinery/light,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "hOz" = (
 /obj/item/weldingtool,
 /turf/open/floor/plating,
@@ -54723,7 +54723,7 @@
 /obj/item/clothing/suit/armor/vest/alt,
 /obj/item/defibrillator,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "iZO" = (
 /obj/machinery/disposal/bin,
 /obj/structure/disposalpipe/trunk{
@@ -54826,7 +54826,7 @@
 /obj/item/clothing/suit/armor/brigdoc,
 /obj/item/defibrillator,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "jhk" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -56576,7 +56576,7 @@
 	icon_state = "plant-10"
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "lNW" = (
 /obj/structure/grille,
 /turf/open/floor/plating,
@@ -58803,7 +58803,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "oEG" = (
 /obj/structure/mirror{
 	icon_state = "mirror_broke";
@@ -59857,7 +59857,7 @@
 	dir = 9
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "pVD" = (
 /obj/machinery/light/small{
 	dir = 1
@@ -60448,7 +60448,7 @@
 	},
 /obj/machinery/light,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "qOE" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 8
@@ -60515,7 +60515,7 @@
 "qSj" = (
 /obj/machinery/vending/wallmed,
 /turf/closed/wall/r_wall,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "qTV" = (
 /obj/item/radio/intercom{
 	name = "Station Intercom (General)";
@@ -60705,7 +60705,7 @@
 	light_color = "#cee5d2"
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "rbe" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -61002,7 +61002,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "rxa" = (
 /obj/machinery/atmospherics/components/unary/portables_connector/visible{
 	dir = 1
@@ -61547,12 +61547,10 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/tile/blue,
-/obj/machinery/power/apc/auto_name/south{
-	name = "Brig Infirmary"
-	},
 /obj/structure/cable,
+/obj/machinery/power/apc/auto_name/south,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "slJ" = (
 /obj/machinery/atmospherics/pipe/simple/green/visible{
 	dir = 4
@@ -62240,7 +62238,7 @@
 /area/engineering/main)
 "tmm" = (
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "tmE" = (
 /obj/effect/mapping_helpers/airlock/cyclelink_helper{
 	dir = 1
@@ -62409,7 +62407,7 @@
 	},
 /obj/effect/turf_decal/tile/blue,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "tyL" = (
 /obj/effect/spawner/lootdrop/maintenance{
 	lootcount = 2;
@@ -63462,7 +63460,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "vay" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -64536,7 +64534,7 @@
 	},
 /obj/machinery/vending/brigdoc_vendomat,
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "wta" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -65170,7 +65168,7 @@
 	dir = 10
 	},
 /turf/open/floor/plasteel/white,
-/area/security/processing/cremation)
+/area/security/brig/brig_medical)
 "xgh" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,

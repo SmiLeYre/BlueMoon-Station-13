@@ -1,3 +1,6 @@
+/mob/living/carbon/human
+	var/fleshlight_nickname //Используется для анонимизации персонажа
+
 /obj/item/portallight/examine(mob/user)
 	. = ..()
 	. += "<span class='notice'>Возможен более точный <b>контроль ситуации</b>. (Ctrl+Click для кастомного эмоута)</span>"
@@ -61,6 +64,18 @@
 			return FALSE
 
 	var/list/show_to = list()
+	if(!H_user.fleshlight_nickname)
+		var/new_fleshlight_nickname = stripped_input(user, "Задайте своё прозвище, его можно задать только 1 раз (Если не выбрать, будет задано случайное):", "Character Preference", null, MAX_NAME_LEN)
+		if(new_fleshlight_nickname)
+			new_fleshlight_nickname = reject_bad_name(new_fleshlight_nickname, allow_numbers = TRUE)
+			if(new_fleshlight_nickname)
+				H_user.fleshlight_nickname = new_fleshlight_nickname
+	if(!H_user.fleshlight_nickname)
+		H_user.fleshlight_nickname = pick("Aqua", "Azure", "Black", "Blue", "Coral", "Crimson","Cyan", "Red", "Violet", "Gray",\
+								"White", "Yellow", "Indigo", "Ivory", "Lime", "Orchid", "Olive", "Silver", "Teal", "Turquoise")
+		H_user.fleshlight_nickname += " " + pick("Adara", "Aeon", "Aerilon", "Agora", "Berea", "Cascor", "Cogito", "Eadu", "Eldar", "Farrfin",\
+								"Gaia", "Glacia", "Gorta", "Gree", "Hala", "Heian", "Hillys", "Ingo", "Ivax", "Nix")
+
 	if(istype(choosen_flesh, /obj/item/portallight))
 		var/obj/item/portallight/PF = choosen_flesh
 		if(PF.portalunderwear && ishuman(PF.portalunderwear.loc))
@@ -94,7 +109,7 @@
 		return FALSE
 
 	user.log_message("[message] (FLESHLIGH)", LOG_SUBTLER)
-	message = "<span class='emote'><b>[user]</b> <i>[user.say_emphasis(message)]</i></span>"
+	message = "<span class='emote'><b>[H_user.fleshlight_nickname]</b> <i>[user.say_emphasis(message)]</i></span>"
 
 	for(var/mob/living/L in range(user, 1))
 		show_to |= L

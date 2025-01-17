@@ -1111,3 +1111,10 @@
 	path = /obj/item/clothing/neck/SMART_fabric_boatcloak
 	ckeywhitelist = list("kijoking")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/famas098_NoirSuitskirt
+	name = "Noir suitskirt"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/rank/security/detective/grey/skirt/no_armor
+	ckeywhitelist = list("famas098")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

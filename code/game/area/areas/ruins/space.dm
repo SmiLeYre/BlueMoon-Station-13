@@ -72,6 +72,12 @@
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom
 	name = "Hotel Guest Room"
 	icon_state = "Sleep"
+	sub_areas = list(/area/ruin/space/has_grav/bluemoon/hotel/guestroom/shower)
+
+/area/ruin/space/has_grav/bluemoon/hotel/guestroom/shower
+	name = "Hotel Guest Shower"
+	icon_state = "shower"
+	valid_to_shower = TRUE
 
 /area/ruin/space/has_grav/bluemoon/hotel/guestroom/room_1
 	name = "Hotel Guest Room 1"
@@ -98,6 +104,12 @@
 /area/ruin/space/has_grav/bluemoon/hotel/pool
 	name = "Hotel Pool Room"
 	icon_state = "fitness"
+	sub_areas = list(/area/ruin/space/has_grav/bluemoon/hotel/pool/shower)
+
+/area/ruin/space/has_grav/bluemoon/hotel/pool/shower
+	name = "Hotel Pool Shower"
+	icon_state = "shower"
+	valid_to_shower = TRUE
 
 /area/ruin/space/has_grav/bluemoon/hotel/bar
 	name = "Hotel Bar"
@@ -557,6 +569,13 @@
 /area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall
 	name = "P-T Central Hallway"
 	icon_state = "hallC"
+	sub_areas = list(/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower)
+
+/area/ruin/space/has_grav/bluemoon/port_tarkon/centerhall/shower
+	icon = 'icons/turf/areas.dmi'
+	icon_state = "shower"
+	name = "P-T Shower Room"
+	valid_to_shower = TRUE
 
 /area/ruin/space/has_grav/bluemoon/port_tarkon/secoff
 	name = "P-T Security Office"
@@ -648,6 +667,13 @@
 
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison
 	name = "DS-2 'Blessed' | Long-Term Brig"
+	sub_areas = list(/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower)
+
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower
+	icon = 'icons/turf/areas.dmi'
+	icon_state = "shower"
+	name = "DS-2 'Blessed' | Brig Shower Room"
+	valid_to_shower = TRUE
 
 //Service
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service
@@ -661,6 +687,13 @@
 
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness
 	name = "DS-2 'Blessed' | Fitness Room"
+	sub_areas = list(/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness/shower)
+
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness/shower
+	icon = 'icons/turf/areas.dmi'
+	icon_state = "shower"
+	name = "DS-2 'Blessed' | Shower Room"
+	valid_to_shower = TRUE
 
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge
 	name = "DS-2 'Blessed' | Lounge"
@@ -769,6 +802,13 @@
 /area/ruin/space/has_grav/bluemoon/listeningstation
 	name = "Listening Post"
 	icon_state = "yellow"
+	sub_areas = list(/area/ruin/space/has_grav/bluemoon/listeningstation/shower)
+
+/area/ruin/space/has_grav/bluemoon/listeningstation/shower
+	icon = 'icons/turf/areas.dmi'
+	icon_state = "shower"
+	name = "Listening Post Shower"
+	valid_to_shower = TRUE
 
 /area/ruin/space/has_grav/powered/ancient_shuttle
 	name = "Ancient Shuttle"

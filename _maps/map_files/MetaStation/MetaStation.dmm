@@ -28001,13 +28001,12 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/aft)
 "ckC" = (
-/obj/structure/lattice,
 /obj/machinery/atmospherics/components/binary/pump/on{
 	name = "Incinerator Output Pump"
 	},
 /obj/structure/disposalpipe/segment,
-/turf/open/space,
-/area/space/nearstation)
+/turf/open/floor/plating/airless,
+/area/maintenance/disposal/incinerator)
 "ckD" = (
 /obj/machinery/light/small{
 	dir = 8
@@ -55128,16 +55127,32 @@
 /turf/closed/wall/r_wall,
 /area/maintenance/disposal/incinerator)
 "gZf" = (
-/obj/structure/table,
-/obj/item/paper_bin{
-	pixel_x = -3;
-	pixel_y = 7
-	},
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
 	},
-/obj/item/toy/figure/qm,
+/obj/structure/table,
+/obj/item/cartridge/quartermaster{
+	pixel_x = 11;
+	pixel_y = 14
+	},
+/obj/item/clipboard{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/item/gps{
+	gpstag = "QM0";
+	pixel_x = -4;
+	pixel_y = -1
+	},
+/obj/item/cartridge/quartermaster{
+	pixel_x = 11;
+	pixel_y = 10
+	},
+/obj/item/cartridge/quartermaster{
+	pixel_x = 11;
+	pixel_y = 6
+	},
 /turf/open/floor/plasteel,
 /area/cargo/qm)
 "gZo" = (
@@ -56464,11 +56479,11 @@
 /area/service/chapel/main)
 "hDb" = (
 /obj/effect/landmark/start/quartermaster,
-/obj/structure/disposalpipe/segment{
-	dir = 10
-	},
 /obj/structure/chair/office/dark{
 	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 9
 	},
 /turf/open/floor/plasteel,
 /area/cargo/qm)
@@ -56896,8 +56911,6 @@
 /turf/open/floor/plasteel/freezer,
 /area/commons/toilet/restrooms)
 "hMN" = (
-/obj/structure/disposalpipe/segment,
-/obj/machinery/holopad/secure,
 /turf/open/floor/plasteel,
 /area/cargo/qm)
 "hMQ" = (
@@ -59795,6 +59808,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /obj/structure/cable/yellow{
 	icon_state = "1-8"
+	},
+/obj/machinery/holopad/secure{
+	pixel_x = 16;
+	pixel_y = -16
 	},
 /turf/open/floor/plasteel,
 /area/cargo/qm)
@@ -65915,13 +65932,18 @@
 /turf/open/floor/plasteel/white,
 /area/science/xenobiology)
 "lYW" = (
-/obj/machinery/disposal/bin,
-/obj/structure/disposalpipe/trunk{
-	dir = 1
-	},
 /obj/effect/turf_decal/tile/brown,
 /obj/effect/turf_decal/tile/brown{
 	dir = 8
+	},
+/obj/structure/table,
+/obj/item/paper_bin{
+	pixel_x = 5;
+	pixel_y = 7
+	},
+/obj/item/toy/figure/qm{
+	pixel_x = -8;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel,
 /area/cargo/qm)
@@ -66246,19 +66268,14 @@
 /turf/open/floor/plasteel/freezer,
 /area/commons/toilet/restrooms)
 "mgb" = (
-/obj/structure/table,
-/obj/item/folder/yellow,
-/obj/item/pen{
-	pixel_x = 4;
-	pixel_y = 4
-	},
-/obj/item/pen/red,
 /obj/machinery/requests_console{
 	department = "Cargo Bay";
 	departmentType = 2;
 	pixel_x = 32
 	},
-/obj/item/stamp/qm,
+/obj/machinery/computer/card/minor/qm{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/cargo/qm)
 "mgh" = (
@@ -67331,8 +67348,16 @@
 /obj/machinery/status_display/supply{
 	pixel_x = 32
 	},
-/obj/machinery/computer/card/minor/qm{
-	dir = 8
+/obj/structure/table,
+/obj/item/folder/yellow,
+/obj/item/stamp/qm{
+	pixel_x = -8;
+	pixel_y = -4
+	},
+/obj/item/pen/red,
+/obj/item/pen{
+	pixel_x = 4;
+	pixel_y = 4
 	},
 /turf/open/floor/plasteel,
 /area/cargo/qm)
@@ -81798,19 +81823,6 @@
 /turf/closed/wall,
 /area/command/bridge)
 "tmr" = (
-/obj/structure/table,
-/obj/item/cartridge/quartermaster{
-	pixel_x = -4;
-	pixel_y = 7
-	},
-/obj/item/cartridge/quartermaster{
-	pixel_x = 6;
-	pixel_y = 5
-	},
-/obj/item/cartridge/quartermaster,
-/obj/item/gps{
-	gpstag = "QM0"
-	},
 /obj/effect/turf_decal/tile/brown{
 	dir = 1
 	},
@@ -81820,7 +81832,10 @@
 /obj/machinery/keycard_auth{
 	pixel_y = 23
 	},
-/obj/item/clipboard,
+/obj/machinery/disposal/bin,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
 /turf/open/floor/plasteel,
 /area/cargo/qm)
 "tmB" = (
@@ -83422,6 +83437,9 @@
 	},
 /obj/effect/turf_decal/tile/brown{
 	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 6
 	},
 /turf/open/floor/plasteel,
 /area/cargo/qm)

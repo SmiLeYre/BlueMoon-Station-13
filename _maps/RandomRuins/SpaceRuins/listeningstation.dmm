@@ -969,7 +969,7 @@
 	pixel_x = -26
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation/shower)
 "dF" = (
 /obj/effect/turf_decal/siding/red{
 	dir = 1
@@ -1057,7 +1057,7 @@
 	},
 /obj/item/soap/syndie,
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation/shower)
 "eI" = (
 /obj/effect/turf_decal/trimline/dark_red/corner{
 	dir = 1
@@ -1361,7 +1361,7 @@
 	pixel_y = 18
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation/shower)
 "pr" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -1391,6 +1391,9 @@
 	},
 /turf/open/floor/iron/dark/textured,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
+"qg" = (
+/turf/closed/wall/r_wall,
+/area/ruin/space/has_grav/bluemoon/listeningstation/shower)
 "qk" = (
 /obj/structure/closet/crate/engineering/electrical,
 /turf/open/floor/mineral/plastitanium,
@@ -1687,7 +1690,7 @@
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "xP" = (
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation/shower)
 "yg" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 1
@@ -2033,7 +2036,7 @@
 "HW" = (
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation/shower)
 "HX" = (
 /obj/structure/table,
 /obj/machinery/computer/security/telescreen/entertainment{
@@ -2363,7 +2366,7 @@
 	req_access_txt = "150"
 	},
 /turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/listeningstation)
+/area/ruin/space/has_grav/bluemoon/listeningstation/shower)
 "PW" = (
 /obj/machinery/status_display{
 	pixel_x = -32
@@ -3413,10 +3416,10 @@ bw
 aJ
 ag
 ag
-ag
-ag
-ag
-ag
+qg
+qg
+qg
+qg
 ab
 ab
 ab
@@ -3451,10 +3454,10 @@ cl
 yg
 ik
 Wi
-ag
+qg
 po
 di
-ag
+qg
 ab
 ab
 ab
@@ -3492,7 +3495,7 @@ Ea
 PB
 xP
 HW
-ag
+qg
 ab
 ab
 ab
@@ -3527,10 +3530,10 @@ XY
 ik
 ik
 YZ
-ag
+qg
 ey
 xP
-ag
+qg
 ab
 ab
 ab
@@ -3565,10 +3568,10 @@ Ce
 Nz
 Gw
 ZY
-ag
-ag
-ag
-ag
+qg
+qg
+qg
+qg
 ag
 ab
 ab
