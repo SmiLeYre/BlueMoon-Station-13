@@ -11,11 +11,10 @@
 	usesound = 'modular_bluemoon/Ren/Sound/USHM_hit.ogg'
 	hitsound = 'modular_bluemoon/Ren/Sound/USHM_hit.ogg'
 	desc = "УШМ с алмазным диском и четырёх тактовым двигателем на жидкой плазме. Что ещё может быть нужно, когда требуется взять штурмом чью то крепость? "
-	block_chance = 50
 	force = 30
 	throwforce = 10
-	wound_bonus = 50
-	armour_penetration = 80
+	wound_bonus = 35
+	armour_penetration = 30
 	sharpness = SHARP_EDGED
 	attack_verb = list("slashed", "sliced", "shredded")
 
