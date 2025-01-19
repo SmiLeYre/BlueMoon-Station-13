@@ -101,11 +101,13 @@
 	else
 		return ..()
 
+/*
 /obj/machinery/pdapainter/deconstruct(disassembled = TRUE)
 	if(!(flags_1 & NODECONSTRUCT_1))
 		if(!(machine_stat & BROKEN))
 			machine_stat |= BROKEN
 			update_icon()
+*/
 
 /obj/machinery/pdapainter/on_attack_hand(mob/user, act_intent = user.a_intent, unarmed_attack_flags)
 
