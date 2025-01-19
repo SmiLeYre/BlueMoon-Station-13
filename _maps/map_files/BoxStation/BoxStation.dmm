@@ -37695,7 +37695,6 @@
 	dir = 4
 	},
 /obj/machinery/door/airlock/research{
-	autoclose = 0;
 	frequency = 1449;
 	id_tag = "xeno_airlock_exterior";
 	name = "Xenobiology Lab External Airlock";
