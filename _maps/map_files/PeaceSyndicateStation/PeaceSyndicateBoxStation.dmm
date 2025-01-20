@@ -9593,6 +9593,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
+/obj/effect/landmark/xeno_spawn,
 /turf/open/floor/plating,
 /area/maintenance/department/electrical)
 "axb" = (
@@ -13012,11 +13013,8 @@
 /area/hallway/secondary/entry)
 "aHw" = (
 /obj/effect/landmark/event_spawn,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 10
-	},
 /turf/open/floor/carpet/black,
-/area/commons/dorms)
+/area/commons/arcade)
 "aHx" = (
 /obj/effect/spawner/structure/window/plasma,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -54830,6 +54828,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/landmark/xeno_spawn,
 /turf/open/floor/plating,
 /area/service/abandoned_gambling_den/secondary)
 "hSf" = (
@@ -58119,7 +58118,6 @@
 	dir = 4
 	},
 /obj/item/soap,
-/obj/effect/landmark/xeno_spawn,
 /turf/open/floor/plasteel/freezer,
 /area/commons/toilet)
 "lQG" = (
@@ -100423,7 +100421,7 @@ aqk
 ctq
 aqo
 eQb
-aHw
+blU
 avn
 awv
 axX
@@ -101461,7 +101459,7 @@ cHf
 tZp
 wxk
 xwB
-lWD
+aHw
 dvb
 aJC
 nNF
