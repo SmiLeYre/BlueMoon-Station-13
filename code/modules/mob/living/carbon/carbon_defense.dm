@@ -335,8 +335,6 @@
 					"<span class='warning'>Ты дёргаешь <b>[src]</b> за хвост!</span>", target = src,
 					target_message = "<span class='warning'><b>[M]</b> дёргает тебя за хвост!</span>")
 				sound_to_play = SOUND_PAT
-			else
-				return
 
 		else if(M.zone_selected == BODY_ZONE_PRECISE_MOUTH) // I ADDED BOOP-EH-DEH-NOSEH - Jon
 			// BLUEMOON ADD START
