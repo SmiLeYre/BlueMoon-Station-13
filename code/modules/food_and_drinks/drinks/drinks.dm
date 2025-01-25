@@ -221,6 +221,7 @@
 		if(prob(33))
 			new/obj/item/shard(drop_location())
 		obj_integrity = 1
+		qdel(src)
 	..()
 
 ////////////////////////////////////////////////////////////////////////////////
