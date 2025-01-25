@@ -1118,3 +1118,9 @@
 	path = /obj/item/clothing/under/rank/security/detective/grey/skirt/no_armor
 	ckeywhitelist = list("famas098")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/letuale
+	name = "Элегантное красное платье"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/rank/civilian/ElegantRedDress
+	ckeywhitelist = list("loonel")
