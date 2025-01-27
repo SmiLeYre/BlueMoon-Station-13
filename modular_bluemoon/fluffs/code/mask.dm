@@ -29,3 +29,7 @@
 
 /datum/component/fluff/proc/on_drop(datum/source, mob/user)
 	user.visible_message("<span class='warning'> [message_drop]</span>")
+
+/obj/item/clothing/mask/paper/underhair
+	name = "The paper mask"
+	alternate_worn_layer = BACK_LAYER

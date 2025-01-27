@@ -1124,3 +1124,10 @@
 	slot = ITEM_SLOT_ICLOTHING
 	path = /obj/item/clothing/under/rank/civilian/ElegantRedDress
 	ckeywhitelist = list("loonel")
+
+/datum/gear/donator/bm/papermaskunderhair
+	name = "The paper mask"
+	slot = ITEM_SLOT_MASK
+	path = /obj/item/clothing/mask/paper/underhair
+	ckeywhitelist = list("kijoking")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
