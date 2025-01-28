@@ -18517,6 +18517,11 @@
 /obj/item/storage/backpack/duffelbag/med/surgery{
 	pixel_y = 8
 	},
+/obj/machinery/camera{
+	c_tag = "Medbay - Surgery 1";
+	name = "medbay camera";
+	network = list("ss13","medbay")
+	},
 /turf/open/floor/plasteel,
 /area/medical/surgery)
 "bSm" = (
@@ -72975,7 +72980,8 @@
 	},
 /obj/machinery/door/window{
 	dir = 8;
-	name = "Library Desk"
+	name = "Library Desk";
+	req_access_txt = "37"
 	},
 /turf/open/floor/plasteel/grimy,
 /area/service/library)
@@ -93061,7 +93067,7 @@
 	height = 5;
 	shuttle_id = "laborcamp_home";
 	name = "fore bay 1";
-	roundstart_template = /datum/map_template/shuttle/labour/box;
+	roundstart_template = /datum/map_template/shuttle/labour/delta;
 	width = 9
 	},
 /turf/open/space/basic,
@@ -93589,7 +93595,7 @@
 	pixel_y = -26
 	},
 /obj/machinery/camera{
-	c_tag = "Medbay - Surgery";
+	c_tag = "Medbay - Surgery 2";
 	dir = 1;
 	name = "medbay camera";
 	network = list("ss13","medbay")
@@ -119520,10 +119526,6 @@
 /obj/structure/window/reinforced{
 	dir = 8
 	},
-/obj/machinery/fax{
-	fax_name = "General Fax";
-	name = "General Fax"
-	},
 /turf/open/floor/plasteel/grimy,
 /area/service/library)
 "uyf" = (
@@ -123667,6 +123669,10 @@
 /obj/structure/table/wood,
 /obj/machinery/light_switch{
 	pixel_y = 26
+	},
+/obj/machinery/fax{
+	fax_name = "General Fax";
+	name = "General Fax"
 	},
 /turf/open/floor/plasteel/dark,
 /area/service/library)
