@@ -16844,7 +16844,7 @@
 	name = "Gateway Access Shutter Control";
 	pixel_x = -1;
 	pixel_y = -24;
-	req_access_txt = "31"
+	req_access_txt = "19"
 	},
 /turf/open/floor/plasteel,
 /area/command/gateway)
@@ -40185,7 +40185,7 @@
 /area/service/hydroponics)
 "erm" = (
 /obj/machinery/button/door{
-	id = "sauna2";
+	id = "saunab";
 	name = "Cabin Bolt Control";
 	normaldoorcontrol = 1;
 	pixel_x = -32;
