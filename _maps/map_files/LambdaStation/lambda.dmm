@@ -15461,7 +15461,7 @@
 	dir = 1
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Science Checkpoint";
 	departmentType = 5;
 	pixel_y = -30
 	},
@@ -42330,7 +42330,7 @@
 "bNC" = (
 /obj/machinery/airalarm/directional/west,
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Medbay Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},
@@ -45877,7 +45877,7 @@
 "bXE" = (
 /obj/machinery/vending/wardrobe/sec_wardrobe,
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Engineering Checkpoint";
 	departmentType = 5;
 	pixel_x = -30
 	},
@@ -51949,7 +51949,7 @@
 	dir = 8
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Arrival Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},

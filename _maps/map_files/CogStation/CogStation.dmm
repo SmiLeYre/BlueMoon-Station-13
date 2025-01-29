@@ -4708,7 +4708,7 @@
 	pixel_x = 24
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Arrival Checkpoint";
 	departmentType = 5;
 	name = "Security RC";
 	pixel_y = -32
@@ -6698,8 +6698,11 @@
 /turf/closed/wall,
 /area/security/brig)
 "asM" = (
-/obj/machinery/light_switch{
-	pixel_x = 24
+/obj/machinery/requests_console{
+	department = "Public Router";
+	name = "Public Router RC";
+	pixel_x = 32;
+	pixel_y = 0
 	},
 /turf/open/floor/plasteel/white,
 /area/commons/fitness/cogpool)
@@ -60188,7 +60191,7 @@
 /obj/structure/table,
 /obj/machinery/recharger,
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Cargo Checkpoint";
 	departmentType = 5;
 	name = "Security RC";
 	pixel_x = 32
@@ -67921,13 +67924,13 @@
 /area/security/prison/work)
 "rDB" = (
 /obj/machinery/requests_console{
-	department = "Public Router";
-	name = "Public Router RC";
+	department = "Engineering Router";
+	name = "Engineering Router RC";
+	pixel_y = 0;
 	pixel_x = -32
 	},
-/obj/structure/lattice,
-/turf/open/space/basic,
-/area/space/nearstation)
+/turf/open/floor/plasteel,
+/area/engineering/main)
 "rEG" = (
 /obj/structure/disposalpipe/segment,
 /obj/structure/table,
@@ -68601,11 +68604,6 @@
 /area/security/prison/mess)
 "sRZ" = (
 /obj/machinery/light/small,
-/obj/machinery/requests_console{
-	department = "Engineering Router";
-	name = "Engineering Router RC";
-	pixel_y = -32
-	},
 /turf/closed/wall/r_wall,
 /area/engineering/main)
 "sSg" = (
@@ -69292,6 +69290,16 @@
 	},
 /turf/open/floor/plating,
 /area/maintenance/central/secondary)
+"uqr" = (
+/obj/machinery/light{
+	dir = 4;
+	light_color = "#e8eaff"
+	},
+/obj/machinery/light_switch{
+	pixel_x = 24
+	},
+/turf/open/floor/plasteel/white,
+/area/commons/fitness/cogpool)
 "uqO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/easel,
@@ -106053,7 +106061,7 @@ asx
 asM
 auN
 auN
-arN
+uqr
 aAy
 aGH
 aKj
@@ -106564,7 +106572,7 @@ aHO
 xQe
 vuq
 aHt
-rDB
+aaU
 aaU
 dQE
 aaU
@@ -107629,7 +107637,7 @@ aaa
 aaa
 aaU
 aQC
-cnK
+rDB
 bqS
 bqS
 bqS

@@ -41034,12 +41034,6 @@
 /turf/open/floor/plasteel,
 /area/medical/chemistry)
 "dir" = (
-/obj/machinery/requests_console{
-	department = "Chemistry Lab";
-	name = "Chemistry RC";
-	pixel_y = -64;
-	receive_ore_updates = 1
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 4
 	},
@@ -41963,6 +41957,13 @@
 /obj/machinery/chem_heater,
 /obj/effect/turf_decal/stripes/line{
 	dir = 6
+	},
+/obj/machinery/requests_console{
+	department = "Chemistry Lab";
+	name = "Chemistry RC";
+	pixel_y = -32;
+	receive_ore_updates = 1;
+	pixel_x = 0
 	},
 /turf/open/floor/plasteel,
 /area/medical/chemistry)
@@ -67209,14 +67210,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/engineering/main)
-"fMG" = (
-/obj/machinery/requests_console{
-	department = "Chapel Office";
-	name = "Chapel RC";
-	pixel_y = -32
-	},
-/turf/closed/wall/r_wall,
-/area/engineering/main)
 "fMJ" = (
 /obj/effect/turf_decal/tile/red/half{
 	dir = 1
@@ -70323,6 +70316,12 @@
 /obj/item/clipboard,
 /obj/item/toy/figure/engineer,
 /obj/effect/turf_decal/bot,
+/obj/machinery/requests_console{
+	department = "Chapel Office";
+	name = "Chapel RC";
+	pixel_y = 0;
+	pixel_x = -32
+	},
 /turf/open/floor/plasteel,
 /area/engineering/main)
 "gHQ" = (
@@ -72502,6 +72501,12 @@
 /turf/open/floor/plasteel,
 /area/engineering/gravity_generator)
 "hnV" = (
+/obj/machinery/requests_console{
+	department = "Detective's Office";
+	name = "Detective RC";
+	pixel_x = 0;
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel/dark,
 /area/security/detectives_office)
 "hnW" = (
@@ -83154,6 +83159,14 @@
 /obj/structure/table/wood,
 /obj/item/paper_bin,
 /obj/item/stamp/hop,
+/obj/machinery/requests_console{
+	announcementConsole = 1;
+	department = "Head of Personnel's Desk";
+	departmentType = 5;
+	name = "Head of Personnel RC";
+	pixel_x = 0;
+	pixel_y = 32
+	},
 /turf/open/floor/wood,
 /area/command/heads_quarters/hop)
 "kdz" = (
@@ -90659,14 +90672,6 @@
 "mqf" = (
 /obj/structure/table/wood,
 /obj/machinery/computer/med_data/laptop,
-/obj/machinery/requests_console{
-	announcementConsole = 1;
-	department = "Head of Personnel's Desk";
-	departmentType = 5;
-	name = "Head of Personnel RC";
-	pixel_x = 32;
-	pixel_y = 32
-	},
 /obj/machinery/light_switch{
 	pixel_x = -38;
 	pixel_y = 7
@@ -100467,11 +100472,6 @@
 /area/ai_monitored/aisat/exterior)
 "pdX" = (
 /obj/structure/table/wood,
-/obj/machinery/requests_console{
-	department = "Law Office";
-	name = "'Law Office RC";
-	pixel_y = -64
-	},
 /obj/item/folder/blue{
 	pixel_x = 3;
 	pixel_y = 3
@@ -115673,6 +115673,12 @@
 	name = "Station Intercom";
 	pixel_x = -26
 	},
+/obj/machinery/requests_console{
+	department = "Law Office";
+	name = "'Law Office RC";
+	pixel_y = -32;
+	pixel_x = 0
+	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
 "tug" = (
@@ -130828,14 +130834,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/service/chapel/office)
-"xNs" = (
-/obj/machinery/requests_console{
-	department = "Detective's Office";
-	name = "Detective RC";
-	pixel_x = 30
-	},
-/turf/closed/wall,
-/area/security/detectives_office)
 "xOe" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/disposalpipe/segment,
@@ -157338,7 +157336,7 @@ lNk
 kYh
 kue
 xkp
-fMG
+qjg
 qjg
 wGe
 qjg
@@ -178400,7 +178398,7 @@ bKX
 bMW
 bJn
 qdI
-xNs
+bMW
 bUX
 bXr
 bZw

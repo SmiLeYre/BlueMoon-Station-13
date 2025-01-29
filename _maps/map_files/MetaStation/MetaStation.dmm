@@ -10689,7 +10689,7 @@
 	dir = 1
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Cargo Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},
@@ -13375,7 +13375,7 @@
 	dir = 1
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Arrival Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},
@@ -23127,7 +23127,7 @@
 	},
 /obj/structure/table/reinforced,
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Medbay Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},
@@ -24159,16 +24159,15 @@
 /obj/effect/turf_decal/tile/blue{
 	dir = 4
 	},
-/turf/open/floor/plasteel/white,
-/area/medical/storage)
-"cbP" = (
 /obj/machinery/requests_console{
 	department = "Medbay";
 	departmentType = 1;
-	name = "Medbay RC"
+	name = "Medbay RC";
+	pixel_x = 32;
+	pixel_y = 0
 	},
-/turf/closed/wall,
-/area/security/checkpoint/medical)
+/turf/open/floor/plasteel/white,
+/area/medical/storage)
 "cbQ" = (
 /obj/machinery/computer/secure_data{
 	dir = 4
@@ -32100,7 +32099,7 @@
 	dir = 9
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Science Checkpoint";
 	departmentType = 5;
 	name = "Science Checkpoint RC";
 	pixel_y = -30
@@ -55755,14 +55754,6 @@
 /obj/structure/closet/emcloset,
 /turf/open/floor/plasteel,
 /area/commons/fitness/recreation)
-"hwv" = (
-/obj/machinery/requests_console{
-	department = "Engineering";
-	departmentType = 4;
-	name = "Engineering RC"
-	},
-/turf/closed/wall,
-/area/engineering/main)
 "hwM" = (
 /obj/item/candle,
 /obj/machinery/light_switch{
@@ -58632,6 +58623,13 @@
 "iJM" = (
 /obj/effect/turf_decal/stripes/line,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/obj/machinery/requests_console{
+	department = "Engineering";
+	departmentType = 4;
+	name = "Engineering RC";
+	pixel_x = 0;
+	pixel_y = -32
+	},
 /turf/open/floor/plasteel,
 /area/engineering/main)
 "iKH" = (
@@ -80416,7 +80414,7 @@
 	dir = 4
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Engineering Checkpoint";
 	departmentType = 5;
 	pixel_x = 30
 	},
@@ -115862,7 +115860,7 @@ bWm
 bXL
 bXL
 cad
-cbP
+bXL
 cdv
 cez
 cfP
@@ -132787,7 +132785,7 @@ urs
 iGQ
 dYF
 iJM
-hwv
+eDX
 nmz
 nmz
 nmz

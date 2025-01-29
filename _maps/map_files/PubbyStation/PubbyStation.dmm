@@ -14689,7 +14689,7 @@
 /area/hallway/primary/central)
 "aMd" = (
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Cargo Checkpoint";
 	departmentType = 5;
 	pixel_x = -32
 	},
@@ -19965,7 +19965,7 @@
 	dir = 4
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Arrival Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},
@@ -24529,7 +24529,7 @@
 "bjX" = (
 /obj/structure/filingcabinet,
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Medbay Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},
@@ -41271,7 +41271,7 @@
 	dir = 8
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Engineering Checkpoint";
 	departmentType = 5;
 	pixel_x = -32
 	},

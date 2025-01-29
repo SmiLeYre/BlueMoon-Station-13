@@ -11479,7 +11479,7 @@
 "aDf" = (
 /obj/machinery/computer/secure_data,
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Arrival Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},
@@ -22415,7 +22415,7 @@
 	c_tag = "Security Post - Medbay"
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Medbay Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},
@@ -29783,7 +29783,7 @@
 /area/hallway/primary/central)
 "byO" = (
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Cargo Checkpoint";
 	departmentType = 5;
 	pixel_y = -30
 	},
@@ -31162,7 +31162,7 @@
 	dir = 1
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Science Checkpoint";
 	departmentType = 5;
 	pixel_y = -30
 	},
@@ -39711,7 +39711,7 @@
 /area/security/checkpoint/engineering)
 "bXP" = (
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Engineering Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},
