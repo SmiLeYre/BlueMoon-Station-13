@@ -1131,3 +1131,10 @@
 	path = /obj/item/clothing/mask/paper/underhair
 	ckeywhitelist = list("kijoking")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/shock_collar
+	name = "Shock Collar Kit"
+	slot = ITEM_SLOT_POCKETS
+	path = /obj/item/storage/box/shockcollar
+	ckeywhitelist = list("sierra_iv")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
