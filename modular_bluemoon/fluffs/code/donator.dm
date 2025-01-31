@@ -1132,9 +1132,16 @@
 	ckeywhitelist = list("kijoking")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
-/datum/gear/donator/bm/shock_collar
-	name = "Shock Collar Kit"
+/datum/gear/donator/bm/sierra_shock_collar
+	name = "Shock Collar"
 	slot = ITEM_SLOT_POCKETS
-	path = /obj/item/storage/box/shockcollar
-	ckeywhitelist = list("sierra_iv")
+	path = /obj/item/electropack/shockcollar
+	ckeywhitelist = list("sierra_iv", "kijoking")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/sierra_remotecontrol
+	name = "remote signaling device"
+	slot = ITEM_SLOT_POCKETS
+	path = /obj/item/assembly/signaler
+	ckeywhitelist = list("sierra_iv", "kijoking")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
