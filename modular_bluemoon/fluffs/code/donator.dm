@@ -1136,12 +1136,12 @@
 	name = "Shock Collar"
 	slot = ITEM_SLOT_POCKETS
 	path = /obj/item/electropack/shockcollar
-	ckeywhitelist = list("sierra_iv", "kijoking")
+	ckeywhitelist = list("sierra_iv")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
 
 /datum/gear/donator/bm/sierra_remotecontrol
 	name = "remote signaling device"
 	slot = ITEM_SLOT_POCKETS
 	path = /obj/item/assembly/signaler
-	ckeywhitelist = list("sierra_iv", "kijoking")
+	ckeywhitelist = list("sierra_iv")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
