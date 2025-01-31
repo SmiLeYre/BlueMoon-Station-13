@@ -51,7 +51,9 @@
 	user.nextsoundemote = world.time + 7
 	playsound(user, 'modular_citadel/sound/voice/peep.ogg', 50, 1, -1)
 
+/*
 /datum/emote/sound/human/carbon/moan/run_emote(mob/living/user, params, type_override, intentional)
 	if(!(. = ..()))
 		return
 	user.moan()
+*/
