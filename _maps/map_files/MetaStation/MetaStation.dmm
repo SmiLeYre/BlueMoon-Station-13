@@ -28464,7 +28464,7 @@
 "cmy" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Medbay Maintenance";
-	req_one_access_txt = "12;5;9"
+	req_access_txt = "5"
 	},
 /turf/open/floor/plating,
 /area/medical/medbay/central)
@@ -31600,7 +31600,7 @@
 "ctC" = (
 /obj/machinery/door/airlock/maintenance{
 	name = "Medbay Maintenance";
-	req_access_txt = "9"
+	req_access_txt = "5"
 	},
 /obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
@@ -72336,7 +72336,7 @@
 /obj/structure/disposalpipe/segment,
 /obj/machinery/door/airlock/security/glass{
 	name = "Security Office";
-	req_one_access_txt = "2;4"
+	req_one_access_txt = "1;4"
 	},
 /turf/open/floor/plasteel,
 /area/security/office)
@@ -83598,9 +83598,9 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/door/airlock/security/glass{
-	name = "Law Office";
-	req_access_txt = "38"
+/obj/machinery/door/airlock/security{
+	req_access_txt = "38";
+	name = "Law Office"
 	},
 /turf/open/floor/wood,
 /area/service/lawoffice)
@@ -85781,7 +85781,7 @@
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/security/glass{
 	name = "Security Office";
-	req_one_access_txt = "2;4"
+	req_one_access_txt = "1;4"
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/structure/cable/yellow{
@@ -91742,19 +91742,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/commons/storage/primary)
-"xZN" = (
-/obj/effect/turf_decal/tile/purple{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/purple{
-	dir = 4
-	},
-/obj/machinery/door/poddoor/preopen{
-	id = "xenobio_e";
-	name = "containment blast door"
-	},
-/turf/open/floor/plasteel/white,
-/area/science/xenobiology)
 "yah" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/light/small{
@@ -126184,7 +126171,7 @@ lMJ
 rpQ
 aaf
 qve
-xZN
+cRS
 dcn
 deY
 cRk
