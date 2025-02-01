@@ -187,3 +187,10 @@
 	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/underwear.dmi'
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/underwear.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/underwear.dmi'
+
+/obj/item/clothing/under/donator/bm/urban_misteran
+	name = "urban camouflage uniform"
+	desc = "an urban painted military suit, developed the Bibis&Co. Usually associated with CEHU and LonoMith PMC's"
+	icon_state = "urban_misteran"
+	item_state = "urban_misteran"
+	can_adjust = FALSE
