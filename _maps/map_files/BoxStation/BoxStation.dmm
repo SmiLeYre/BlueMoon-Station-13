@@ -15166,15 +15166,15 @@
 /obj/item/reagent_containers/food/drinks/britcup{
 	desc = "Kingston's personal cup."
 	},
+/obj/machinery/camera{
+	c_tag = "Medbay Foyer";
+	dir = 5;
+	network = list("ss13","medbay")
+	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/central)
 "bln" = (
 /obj/structure/table/reinforced,
-/obj/machinery/camera{
-	c_tag = "Medbay Foyer";
-	dir = 8;
-	network = list("ss13","medbay")
-	},
 /obj/machinery/cell_charger,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/open/floor/plasteel/white,
@@ -20371,7 +20371,6 @@
 /turf/open/floor/plasteel,
 /area/hallway/primary/central)
 "bBy" = (
-/obj/machinery/light,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -56646,12 +56645,15 @@
 /turf/open/floor/plating,
 /area/maintenance/starboard/fore)
 "nwL" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
-/obj/effect/landmark/xeno_spawn,
-/turf/closed/wall,
-/area/commons/dorms)
+/obj/machinery/light,
+/turf/open/floor/plasteel,
+/area/hallway/primary/central)
 "nxf" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
@@ -60474,6 +60476,7 @@
 	dir = 4;
 	pixel_x = -24
 	},
+/obj/effect/landmark/xeno_spawn,
 /turf/open/floor/mineral/titanium/blue,
 /area/commons/toilet)
 "pHO" = (
@@ -107187,7 +107190,7 @@ buY
 bqH
 gns
 aJq
-jEb
+nwL
 bCv
 bDP
 bCv
@@ -110994,7 +110997,7 @@ arj
 arj
 arj
 arj
-nwL
+asd
 arf
 arf
 arf
