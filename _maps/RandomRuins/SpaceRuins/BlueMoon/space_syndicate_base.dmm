@@ -1681,7 +1681,7 @@
 	dir = 9
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "gk" = (
 /obj/effect/turf_decal/stripes/line{
@@ -4054,9 +4054,6 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "pu" = (
 /obj/effect/turf_decal/siding/dark/corner,
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 8
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -4990,10 +4987,10 @@
 "tm" = (
 /obj/machinery/vending/assist,
 /obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 1
+	dir = 9
 	},
 /turf/open/floor/iron/dark/side{
-	dir = 1
+	dir = 9
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "tn" = (
@@ -5546,7 +5543,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
-/turf/open/floor/iron,
+/obj/effect/turf_decal/trimline/purple/filled/warning{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 8
+	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "vD" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
@@ -6442,9 +6444,6 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "zU" = (
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 5
-	},
 /obj/machinery/light/dim/directional/west,
 /obj/structure/chair/office/light,
 /obj/machinery/turretid{
@@ -6456,7 +6455,13 @@
 	pixel_x = -29;
 	pixel_y = -3
 	},
-/turf/open/floor/iron/dark,
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 8
+	},
+/obj/effect/turf_decal/siding/dark,
+/turf/open/floor/iron/dark/side{
+	dir = 8
+	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "zV" = (
 /obj/item/kirbyplants/hedge{
@@ -8850,7 +8855,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
-/turf/open/floor/iron,
+/obj/effect/turf_decal/trimline/purple/filled/warning{
+	dir = 4
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 4
+	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "Kz" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
@@ -8963,12 +8973,12 @@
 /turf/open/floor/iron/dark/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "KT" = (
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 1
-	},
 /obj/structure/closet/l3closet/scientist,
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 5
+	},
 /turf/open/floor/iron/dark/side{
-	dir = 1
+	dir = 5
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "KV" = (
@@ -9309,7 +9319,7 @@
 /obj/structure/chair/office/light{
 	dir = 8
 	},
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "Mk" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
@@ -9443,7 +9453,7 @@
 "MP" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/catwalk_floor,
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "MT" = (
 /obj/machinery/computer/shuttle/ds_syndicate,
@@ -10709,7 +10719,6 @@
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "RH" = (
-/obj/effect/turf_decal/siding/dark,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -10721,7 +10730,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
-/turf/open/floor/iron,
+/obj/effect/turf_decal/trimline/purple/filled/warning{
+	dir = 8
+	},
+/turf/open/floor/iron/dark/side{
+	dir = 8
+	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "RK" = (
 /obj/machinery/jukebox{
@@ -10982,11 +10996,11 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "SB" = (
-/obj/effect/turf_decal/trimline/purple/filled/corner{
+/obj/effect/turf_decal/siding/dark,
+/obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 8
 	},
-/obj/effect/turf_decal/siding/dark,
-/turf/open/floor/iron/dark/corner{
+/turf/open/floor/iron/dark/side{
 	dir = 8
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
@@ -11075,7 +11089,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/dark,
-/turf/open/floor/iron/textured,
+/turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "SR" = (
 /obj/effect/turf_decal/bluemoon_decals/syndicate/top/right,
@@ -12125,7 +12139,10 @@
 	level = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/catwalk_floor,
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 1
+	},
+/turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "WE" = (
 /obj/effect/spawner/structure/window/plastitanium,
@@ -12696,9 +12713,6 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "YR" = (
 /obj/structure/table,
-/obj/effect/turf_decal/trimline/purple/filled/line{
-	dir = 4
-	},
 /obj/machinery/camera/xray/directional/west{
 	c_tag = "DS-2 Research";
 	network = list("ds2")
@@ -12708,6 +12722,9 @@
 	id = "DS2lab";
 	name = "Research shutters control";
 	req_access_txt = "150"
+	},
+/obj/effect/turf_decal/trimline/purple/filled/line{
+	dir = 5
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
@@ -12754,6 +12771,20 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
+"Zl" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "Zo" = (
 /obj/effect/turf_decal/tile/yellow,
 /turf/open/floor/iron/dark,
@@ -14951,7 +14982,7 @@ at
 Hz
 QM
 pu
-fA
+Zl
 fA
 cz
 WC
