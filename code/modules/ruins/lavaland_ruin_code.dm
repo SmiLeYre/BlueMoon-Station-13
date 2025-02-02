@@ -195,11 +195,13 @@
 	outfit = /datum/outfit/lavaland_syndicate/comms
 	can_load_appearance = TRUE
 
+/*
 /obj/effect/mob_spawn/human/lavaland_syndicate/comms/space/Initialize(mapload)
 	. = ..()
 	if(prob(1)) //only has a 99% chance of existing, otherwise it'll just be a NPC syndie.
 		new /mob/living/simple_animal/hostile/syndicate/ranged(get_turf(src))
 		return INITIALIZE_HINT_QDEL
+*/
 
 /datum/outfit/lavaland_syndicate/comms
 	name = "Syndicate Comms Agent"
