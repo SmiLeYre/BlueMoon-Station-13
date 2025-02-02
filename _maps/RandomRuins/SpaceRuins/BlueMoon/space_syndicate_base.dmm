@@ -1997,14 +1997,11 @@
 	dir = 8
 	},
 /obj/machinery/disposal/bin,
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 6
-	},
 /obj/structure/disposalpipe/trunk{
 	dir = 4
 	},
 /obj/machinery/firealarm/directional/north,
-/turf/open/floor/plasteel/showroomfloor/shower,
+/obj/effect/turf_decal/siding/thinplating/end,
 /turf/open/floor/iron/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "hs" = (
@@ -5081,9 +5078,7 @@
 	pixel_y = 1
 	},
 /obj/effect/turf_decal/tile/dark_blue/full,
-/obj/effect/turf_decal/siding/white{
-	dir = 8
-	},
+/obj/effect/turf_decal/siding/white/end,
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "tN" = (
@@ -6515,8 +6510,8 @@
 /obj/structure/sink/directional/east{
 	pixel_x = -11
 	},
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 5
+/obj/effect/turf_decal/siding/thinplating/end{
+	dir = 1
 	},
 /turf/open/floor/iron/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
@@ -7007,6 +7002,20 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
+"Cz" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "CC" = (
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 1
@@ -9372,7 +9381,9 @@
 	amount = 10
 	},
 /obj/machinery/light/dim/directional/north,
-/turf/open/floor/plasteel/white,
+/obj/effect/turf_decal/tile/dark_blue/full,
+/obj/effect/turf_decal/siding/white,
+/turf/open/floor/iron/white/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "MC" = (
 /obj/structure/chair/sofa/corner{
@@ -9407,10 +9418,8 @@
 /obj/machinery/shower/directional/east{
 	pixel_x = -13
 	},
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 6
-	},
 /obj/machinery/smartfridge/chemistry/virology/preloaded,
+/obj/effect/turf_decal/siding/thinplating/end,
 /turf/open/floor/plasteel/showroomfloor/shower,
 /turf/open/floor/iron/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
@@ -11611,6 +11620,9 @@
 /obj/effect/turf_decal/siding/white{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/white{
+	dir = 4
+	},
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "UO" = (
@@ -12771,20 +12783,6 @@
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
-"Zl" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	level = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "Zo" = (
 /obj/effect/turf_decal/tile/yellow,
 /turf/open/floor/iron/dark,
@@ -12931,6 +12929,7 @@
 /obj/effect/turf_decal/siding/white/corner{
 	dir = 8
 	},
+/obj/effect/turf_decal/siding/white/corner,
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "ZP" = (
@@ -14982,7 +14981,7 @@ at
 Hz
 QM
 pu
-Zl
+Cz
 fA
 cz
 WC
