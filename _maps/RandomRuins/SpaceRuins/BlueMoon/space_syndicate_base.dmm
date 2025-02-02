@@ -1009,6 +1009,9 @@
 	},
 /obj/structure/table/wood/fancy/black,
 /obj/item/reagent_containers/glass/beaker/waterbottle/large,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 4
+	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "dr" = (
@@ -1376,8 +1379,8 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "eU" = (
 /obj/machinery/light/dim/directional/east,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 9
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
@@ -4046,7 +4049,9 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "pt" = (
 /obj/machinery/light/dim/directional/north,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 6
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "pu" = (
@@ -4173,6 +4178,9 @@
 	},
 /obj/item/bedsheet/brown/double{
 	dir = 1
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 4
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
@@ -4519,7 +4527,6 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 5
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "rk" = (
@@ -4707,6 +4714,9 @@
 	pixel_x = 24
 	},
 /obj/item/reagent_containers/glass/beaker/waterbottle/large,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 8
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "se" = (
@@ -6649,6 +6659,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/lawyer)
 "AS" = (
@@ -7002,20 +7015,6 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
-"Cz" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	level = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 8
-	},
-/turf/open/floor/iron,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "CC" = (
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 1
@@ -7224,8 +7223,8 @@
 	dir = 6;
 	level = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 6
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 8
 	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
@@ -7303,7 +7302,9 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "DK" = (
@@ -8356,7 +8357,7 @@
 	level = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 5
+	dir = 8
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/lawyer)
@@ -9584,6 +9585,9 @@
 	color = "#596479";
 	dir = 8
 	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 10
+	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "No" = (
@@ -10028,6 +10032,20 @@
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
+"Pc" = (
+/obj/effect/turf_decal/siding/dark{
+	dir = 4
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 8
+	},
+/turf/open/floor/iron,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "Pe" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 9
@@ -10477,6 +10495,9 @@
 	},
 /obj/item/clothing/glasses/sunglasses,
 /obj/structure/table/wood,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 4
+	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/lawyer)
 "QK" = (
@@ -11873,7 +11894,6 @@
 /obj/machinery/airalarm/syndicate{
 	pixel_y = 24
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/lawyer)
 "VE" = (
@@ -12634,6 +12654,9 @@
 /obj/structure/table/wood,
 /obj/effect/turf_decal/siding/wood{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
 	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/lawyer)
@@ -14981,7 +15004,7 @@ at
 Hz
 QM
 pu
-Cz
+Pc
 fA
 cz
 WC
