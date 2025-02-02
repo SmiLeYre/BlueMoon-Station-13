@@ -2866,7 +2866,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
 	},
-/obj/structure/table/reinforced/plastitaniumglass{
+/obj/structure/table/reinforced{
 	color = "#777777"
 	},
 /turf/open/floor/wood/wood_tiled,
@@ -4605,7 +4605,7 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
 "rM" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/structure/table/reinforced/plastitaniumglass{
+/obj/structure/table/reinforced{
 	color = "#777777"
 	},
 /turf/open/floor/carpet/blackred,
@@ -4914,7 +4914,7 @@
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness/shower)
 "tj" = (
-/obj/structure/table/reinforced/plastitaniumglass{
+/obj/structure/table/reinforced{
 	color = "#777777"
 	},
 /turf/open/floor/carpet/blackred,
@@ -5833,7 +5833,7 @@
 	pixel_x = 3;
 	pixel_y = 0
 	},
-/obj/structure/table/reinforced/plastitaniumglass{
+/obj/structure/table/reinforced{
 	color = "#777777"
 	},
 /turf/open/floor/wood/wood_tiled,
@@ -9251,7 +9251,7 @@
 /obj/effect/spawner/lootdrop/three_course_meal{
 	pixel_y = 3
 	},
-/obj/structure/table/reinforced/plastitaniumglass{
+/obj/structure/table/reinforced{
 	color = "#777777"
 	},
 /turf/open/floor/wood/wood_tiled,
@@ -9532,7 +9532,7 @@
 /obj/effect/spawner/lootdrop/three_course_meal{
 	pixel_y = 3
 	},
-/obj/structure/table/reinforced/plastitaniumglass{
+/obj/structure/table/reinforced{
 	color = "#777777"
 	},
 /turf/open/floor/wood/wood_tiled,
@@ -9766,7 +9766,7 @@
 	pixel_x = -6;
 	pixel_y = -7
 	},
-/obj/structure/table/reinforced/plastitaniumglass{
+/obj/structure/table/reinforced{
 	color = "#777777"
 	},
 /turf/open/floor/wood/wood_tiled,
@@ -11382,7 +11382,7 @@
 	pixel_x = 12;
 	pixel_y = 6
 	},
-/obj/structure/table/reinforced/plastitaniumglass{
+/obj/structure/table/reinforced{
 	color = "#777777"
 	},
 /turf/open/floor/wood/wood_tiled,
@@ -12685,7 +12685,7 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "Zt" = (
 /obj/machinery/light/dim/directional/north,
-/obj/structure/table/reinforced/plastitaniumglass{
+/obj/structure/table/reinforced{
 	color = "#777777"
 	},
 /obj/item/reagent_containers/glass/beaker/waterbottle/large{
