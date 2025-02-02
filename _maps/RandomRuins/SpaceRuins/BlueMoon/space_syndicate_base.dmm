@@ -38,6 +38,13 @@
 	pixel_x = 4
 	},
 /obj/effect/spawner/lootdrop/maintenance/three,
+/obj/item/kirbyplants/hedge,
+/obj/item/kirbyplants/hedge,
+/obj/item/kirbyplants/hedge,
+/obj/item/kirbyplants/hedge,
+/obj/item/kirbyplants/hedge,
+/obj/item/kirbyplants/hedge,
+/obj/item/kirbyplants/hedge,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "ag" = (
@@ -453,17 +460,11 @@
 	dir = 1;
 	name = "station admiral's bedsheet"
 	},
-/obj/machinery/turretid{
-	ailock = 1;
-	dir = 1;
-	icon_state = "control_kill";
-	lethal = 1;
-	name = "Base turret controls";
-	pixel_x = -30;
-	req_access = null;
-	req_access_txt = "151"
+/obj/effect/mob_spawn/human/ds2/syndicate_command/admiral{
+	dir = 4;
+	layer = 4.1
 	},
-/turf/open/floor/carpet/red,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "bu" = (
 /obj/structure/curtain,
@@ -624,12 +625,6 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "ch" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
-	},
-/obj/structure/chair{
-	dir = 8
-	},
 /obj/machinery/camera/xray/directional/north{
 	c_tag = "DS-2 Diner";
 	network = list("ds2")
@@ -637,7 +632,11 @@
 /obj/machinery/airalarm/syndicate{
 	pixel_y = 24
 	},
-/turf/open/floor/iron/cafeteria,
+/obj/structure/chair/comfy{
+	dir = 8;
+	color = "#800000"
+	},
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "cj" = (
 /obj/effect/turf_decal/bluemoon_decals/syndicate/middle/middle,
@@ -854,6 +853,10 @@
 	name = "corporate liaison's bedsheet"
 	},
 /obj/structure/bed/double,
+/obj/effect/mob_spawn/human/ds2/syndicate_command/corporateliaison{
+	dir = 8;
+	layer = 4.1
+	},
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "cI" = (
@@ -1056,19 +1059,11 @@
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "dD" = (
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/effect/turf_decal/trimline/dark_red/end,
-/obj/effect/turf_decal/trimline/dark_red/mid_joiner,
-/obj/effect/turf_decal/trimline/dark_red/mid_joiner{
-	dir = 4
+/obj/structure/chair/comfy/shuttle{
+	dir = 1;
+	name = "tactical chair"
 	},
-/obj/effect/turf_decal/trimline/dark_red/mid_joiner{
-	dir = 8
-	},
-/obj/structure/chair/office{
-	dir = 1
-	},
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "dF" = (
 /obj/machinery/button/door/directional/north{
@@ -1084,9 +1079,9 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 8
 	},
-/obj/structure/bed/dogbed,
-/obj/effect/decal/cleanable/oil,
-/mob/living/simple_animal/pet/syndifox,
+/obj/item/kirbyplants/hedge{
+	anchored = 1
+	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "dI" = (
@@ -1225,11 +1220,9 @@
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "ep" = (
-/obj/structure/closet/secure_closet/freezer/meat{
-	req_access_txt = "150"
-	},
 /obj/effect/turf_decal/bot_blue,
 /obj/machinery/light/dim/directional/west,
+/obj/machinery/icecream_vat,
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "ez" = (
@@ -1295,6 +1288,16 @@
 	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
+"eG" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/structure/chair/sofa/middle{
+	dir = 4;
+	color = "#800000"
+	},
+/turf/open/floor/wood/wood_large,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "eH" = (
 /obj/effect/turf_decal/box/red/corners,
 /obj/effect/turf_decal/stripes/red/corner{
@@ -1424,16 +1427,17 @@
 "fa" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/disposalpipe/segment{
-	dir = 4
+	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	dir = 4;
+	level = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
-	dir = 1
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
+/turf/open/floor/carpet/blackred,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "fc" = (
 /obj/effect/turf_decal/box/red/corners{
 	dir = 8
@@ -1494,9 +1498,6 @@
 /obj/structure/closet/emcloset,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 4
-	},
-/obj/structure/window/reinforced/survival_pod{
-	dir = 6
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
@@ -1934,11 +1935,11 @@
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/eva)
 "hh" = (
-/obj/structure/chair/comfy/brown{
-	color = "#596479";
-	dir = 1
-	},
 /obj/machinery/firealarm/directional/south,
+/obj/structure/chair/sofa/left{
+	dir = 1;
+	color = "#4D4D4D"
+	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "hi" = (
@@ -2135,9 +2136,6 @@
 	anchored = 1
 	},
 /obj/structure/window/reinforced/survival_pod,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 6
-	},
 /obj/structure/extinguisher_cabinet/directional/south,
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
@@ -2428,14 +2426,12 @@
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay/chem)
 "iY" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
-	},
-/obj/structure/chair{
-	dir = 4
-	},
 /obj/structure/extinguisher_cabinet/directional/north,
-/turf/open/floor/iron/cafeteria,
+/obj/structure/chair/comfy{
+	dir = 4;
+	color = "#800000"
+	},
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "iZ" = (
 /obj/machinery/light/dim/directional/south,
@@ -2492,9 +2488,6 @@
 /obj/structure/closet/emcloset,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 8
-	},
-/obj/structure/window/reinforced/survival_pod{
-	dir = 10
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
@@ -2573,7 +2566,7 @@
 	dir = 4
 	},
 /obj/item/reagent_containers/glass/beaker/waterbottle/large,
-/turf/open/floor/carpet/red,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "jt" = (
 /obj/effect/turf_decal/siding/wood,
@@ -2593,9 +2586,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "jB" = (
-/obj/structure/chair/comfy/brown{
-	color = "#596479"
-	},
 /obj/machinery/button/door{
 	desc = "Keep out the paperwork.";
 	id = "ds2admiral";
@@ -2604,6 +2594,15 @@
 	pixel_y = 24;
 	req_access_txt = "151"
 	},
+/obj/item/camera{
+	pixel_x = -9;
+	pixel_y = 6
+	},
+/obj/item/paper{
+	default_raw_text = "<h1>Командный Отчёт DS2</h1><p>Передовая оперативная база 'Благословлённый' под кодовым названием Deep Space 2 успешно разместилась вблизи активных объектов NanoTrasen. Идет перезагрузка двигателей шаттла...</p><p>Синдикат рад видеть вас на поле боя, адмирал. Nanotrasen находится в опасном секторе и, как таковой, является прямой целью оперативников из других Пластов Вселенной. Управляйте своим экипажем хорошо и с уважением, а весь свой гнев оставьте для достойной битвы с Аномалиями. Помните о том, что DS1 находятся под вашей ответственностью и их проблемы - ваши проблемы. Не советуем вашему экипажу выставлять напоказ свою групповую принадлежность, если только вы не являетесь представителем Кайберсанов или Горлексов.</p><p>Не болейте и оставайтесь в выигрыше.</p>";
+	name = "paper- 'Командный Отчёт DS2'"
+	},
+/obj/structure/table/wood/fancy/black,
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "jC" = (
@@ -2617,9 +2616,10 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "jD" = (
-/obj/item/storage/secure/briefcase/permits{
-	pixel_y = 13
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 4
 	},
+/obj/structure/table/wood/fancy/blackred,
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "jJ" = (
@@ -2761,14 +2761,14 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/lawyer)
 "kc" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/structure/disposalpipe/junction/yjunction{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	dir = 10;
 	level = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 10
+	},
+/obj/structure/disposalpipe/segment{
 	dir = 10
 	},
 /turf/open/floor/wood/wood_tiled,
@@ -2778,9 +2778,6 @@
 	dir = 1
 	},
 /obj/structure/window/reinforced/survival_pod,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 10
-	},
 /obj/machinery/button/door/incinerator_vent_syndicatelava_aux{
 	name = "Combustion Chamber Blast Door Control";
 	pixel_x = -24;
@@ -2855,13 +2852,18 @@
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "kG" = (
-/obj/structure/table/reinforced/plastitaniumglass,
 /obj/item/reagent_containers/food/condiment/peppermill{
 	pixel_x = 6;
 	pixel_y = 4
 	},
 /obj/item/reagent_containers/food/condiment/saltshaker{
 	pixel_y = 2
+	},
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 4
+	},
+/obj/structure/table/reinforced/plastitaniumglass{
+	color = "#777777"
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
@@ -3042,7 +3044,7 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "lu" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
+	dir = 5
 	},
 /obj/effect/turf_decal/trimline/dark_red/line,
 /obj/effect/turf_decal/trimline/dark_red/line{
@@ -3054,23 +3056,16 @@
 /obj/effect/turf_decal/trimline/dark_red/mid_joiner,
 /obj/machinery/light/dim/directional/south,
 /obj/machinery/firealarm/directional/south,
+/obj/machinery/photocopier,
 /turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "lD" = (
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/effect/turf_decal/trimline/dark_red/line,
-/obj/effect/turf_decal/trimline/dark_red/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark_red/mid_joiner,
-/obj/effect/turf_decal/trimline/dark_red/mid_joiner{
-	dir = 1
-	},
-/obj/structure/chair/office{
-	dir = 1
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/iron/dark/textured_half,
+/obj/structure/chair/comfy/shuttle{
+	dir = 1;
+	name = "tactical chair"
+	},
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "lF" = (
 /obj/effect/turf_decal/tile/dark_red/fourcorners,
@@ -3407,19 +3402,11 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "mY" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
-/obj/machinery/computer/station_alert{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/dark_red/line,
-/obj/effect/turf_decal/trimline/dark_red/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark_red/mid_joiner{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark_red/mid_joiner,
 /obj/machinery/airalarm/syndicate{
 	pixel_y = 24
+	},
+/obj/machinery/computer/camera_advanced/syndie{
+	dir = 8
 	},
 /turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
@@ -3480,9 +3467,6 @@
 /turf/open/floor/iron/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "nG" = (
-/obj/structure/window/reinforced/survival_pod{
-	dir = 6
-	},
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 4
 	},
@@ -3603,14 +3587,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "nV" = (
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/soymilk,
-/obj/item/storage/fancy/egg_box,
 /obj/effect/turf_decal/bot_blue,
-/obj/structure/closet/secure_closet/freezer/kitchen{
-	req_access = null;
-	req_access_txt = "150"
-	},
+/obj/machinery/gibber,
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "ob" = (
@@ -3631,9 +3609,6 @@
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/window/reinforced/survival_pod,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 6
-	},
 /turf/open/floor/iron/kitchen{
 	dir = 4
 	},
@@ -3653,7 +3628,7 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "of" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 1
+	dir = 9
 	},
 /obj/effect/turf_decal/trimline/dark_red/line,
 /obj/effect/turf_decal/trimline/dark_red/line{
@@ -3664,6 +3639,9 @@
 	},
 /obj/effect/turf_decal/trimline/dark_red/mid_joiner,
 /obj/machinery/light/dim/directional/south,
+/obj/item/kirbyplants/hedge{
+	anchored = 1
+	},
 /turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "og" = (
@@ -3733,10 +3711,6 @@
 /turf/open/floor/iron/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "ou" = (
-/obj/effect/turf_decal/trimline/dark_red/corner,
-/obj/effect/turf_decal/trimline/dark_red/corner{
-	dir = 8
-	},
 /obj/item/paper{
 	default_raw_text = "<h1>Отчёт о Пополнении Состава DS2</h1><p>Передовая оперативная база 'Благословлённый' под кодовым названием Deep Space 2 успешно переместилась вблизи активных объектов NanoTrasen. Идет перезагрузка двигателей шаттла...</p><p>Активные оперативники Синдиката были переведены на DS2 для слежки за Кордоном и не должны взаимодействовать с Космической Станцией Тринадцатого Сектора, если только командование Синдиката это не разрешит или не появится особо серьёзная для этого причина. Разрешение на наблюдение за их деятельностью получено и настоятельно рекомендуется.</p><p>Не болейте и оставайтесь в выигрыше.</p>";
 	name = "paper- 'Отчёт о Пополнении Состава DS2'"
@@ -3751,14 +3725,17 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "ox" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
+/obj/machinery/disposal/bin,
+/obj/structure/window/reinforced/survival_pod{
 	dir = 8
 	},
-/obj/machinery/jukebox/disco{
-	anchored = 1;
-	req_one_access = null
+/obj/effect/turf_decal/siding/thinplating/end{
+	dir = 4
 	},
-/turf/open/floor/iron/cafeteria,
+/obj/structure/disposalpipe/trunk{
+	dir = 4
+	},
+/turf/open/floor/iron/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "oz" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
@@ -3832,8 +3809,10 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "oT" = (
-/obj/machinery/icecream_vat,
-/turf/open/floor/iron/white,
+/obj/item/kirbyplants/hedge{
+	anchored = 1
+	},
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "oV" = (
 /obj/machinery/door/firedoor,
@@ -3984,9 +3963,6 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	dir = 4;
 	level = 1
@@ -4057,15 +4033,6 @@
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo/hangar)
 "pz" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
-	},
-/obj/structure/chair/stool/bar{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -4077,25 +4044,24 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
-/turf/open/floor/iron/cafeteria,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/obj/structure/chair/sofa/left{
+	dir = 4;
+	color = "#800000"
+	},
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "pI" = (
-/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/item/kirbyplants/hedge{
+	anchored = 1
+	},
 /obj/structure/window/reinforced/survival_pod,
-/obj/machinery/disposal/bin,
-/obj/effect/turf_decal/siding/thinplating/end{
-	dir = 8
-	},
-/obj/structure/window/reinforced/survival_pod{
-	dir = 4
-	},
-/obj/structure/window/reinforced/survival_pod{
-	dir = 6
-	},
-/obj/structure/disposalpipe/trunk{
-	dir = 8
-	},
-/turf/open/floor/iron/small,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "pL" = (
 /obj/structure/table/reinforced,
@@ -4154,10 +4120,6 @@
 "qa" = (
 /obj/structure/table,
 /obj/item/book/manual/wiki/cooking_to_serve_man,
-/obj/item/storage/box/donkpockets{
-	pixel_x = 5;
-	pixel_y = 6
-	},
 /turf/open/floor/iron/kitchen{
 	dir = 4
 	},
@@ -4256,9 +4218,6 @@
 	dir = 4
 	},
 /obj/structure/railing/corner,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 6
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 4
@@ -4336,20 +4295,17 @@
 "qH" = (
 /obj/structure/table,
 /obj/machinery/light/dim/directional/east,
-/obj/item/rsf{
-	pixel_y = 14
-	},
-/obj/item/rcd_ammo{
-	pixel_y = 11
-	},
 /obj/structure/extinguisher_cabinet/directional/east,
-/obj/item/storage/box/beakers/variety,
+/obj/item/storage/belt/military/snack,
+/obj/item/storage/box/donkpockets{
+	pixel_x = -8;
+	pixel_y = 10
+	},
 /turf/open/floor/iron/kitchen{
 	dir = 4
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "qI" = (
-/obj/effect/turf_decal/trimline/dark_red/line,
 /obj/effect/turf_decal/trimline/dark_red/mid_joiner,
 /obj/machinery/computer/crew/syndie,
 /turf/open/floor/iron/dark/textured_large,
@@ -4357,6 +4313,9 @@
 "qK" = (
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
+	},
+/mob/living/simple_animal/pet/penguin/emperor/shamebrero{
+	name = "Alberto Diego San Francisco Diaz Mias Buritos"
 	},
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
@@ -4631,13 +4590,11 @@
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
 "rM" = (
-/obj/structure/table,
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/item/reagent_containers/glass/beaker/waterbottle/large,
-/turf/open/floor/iron/cafeteria,
+/obj/structure/table/reinforced/plastitaniumglass{
+	color = "#777777"
+	},
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "rN" = (
 /obj/effect/turf_decal/stripes/line{
@@ -4657,6 +4614,10 @@
 	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
+"rR" = (
+/obj/structure/disposalpipe/segment,
+/turf/open/floor/carpet/blackred,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "rU" = (
 /obj/structure/sink/directional/east{
 	pixel_y = -6
@@ -4708,6 +4669,14 @@
 /obj/item/storage/fancy/egg_box,
 /obj/effect/turf_decal/bot_blue,
 /obj/machinery/light/dim/directional/south,
+/obj/item/storage/fancy/egg_box,
+/obj/item/reagent_containers/food/condiment/soymilk,
+/obj/item/reagent_containers/food/condiment/milk,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/flour,
+/obj/item/reagent_containers/food/condiment/rice,
+/obj/item/reagent_containers/food/condiment/sugar,
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "sh" = (
@@ -4869,6 +4838,10 @@
 /obj/effect/turf_decal/trimline/purple/filled/end,
 /obj/structure/table,
 /obj/effect/spawner/lootdrop/maintenance/eight,
+/obj/item/export/bottle/tequila{
+	pixel_x = 11;
+	pixel_y = 3
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "sV" = (
@@ -5342,19 +5315,11 @@
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "uZ" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/disposalpipe/segment{
-	dir = 4
+	dir = 9
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 4;
-	level = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 8
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
+/turf/open/floor/carpet/blackred,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "va" = (
 /obj/effect/spawner/structure/window/plastitanium,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
@@ -5674,9 +5639,6 @@
 	anchored = 1
 	},
 /obj/structure/window/reinforced/survival_pod,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 10
-	},
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
 "wj" = (
@@ -5838,10 +5800,13 @@
 "xk" = (
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
 	dir = 8;
-	pixel_y = 0;
-	flags_1 = 2
+	flags_1 = 2;
+	pixel_x = 3;
+	pixel_y = 0
 	},
-/obj/structure/table/wood,
+/obj/structure/table/reinforced/plastitaniumglass{
+	color = "#777777"
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "xp" = (
@@ -5910,6 +5875,9 @@
 	dir = 4
 	},
 /obj/machinery/door/firedoor,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "DS2lab"
+	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "xH" = (
@@ -6083,13 +6051,7 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "yy" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
-	},
-/obj/structure/chair{
-	dir = 1
-	},
-/turf/open/floor/iron/cafeteria,
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "yA" = (
 /obj/docking_port/stationary{
@@ -6115,19 +6077,11 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "yI" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/structure/disposalpipe/segment{
-	dir = 10
+/obj/structure/table/reinforced/plastitaniumglass{
+	color = "#777777"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 4;
-	level = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 8
-	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
+/turf/open/floor/carpet/blackred,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "yL" = (
 /obj/effect/turf_decal/siding/dark,
 /obj/structure/closet/secure_closet{
@@ -6199,9 +6153,6 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "zb" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden/layer1,
 /turf/open/floor/iron/dark,
@@ -6351,7 +6302,10 @@
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "zD" = (
-/obj/machinery/photocopier,
+/obj/structure/chair/sofa/corner{
+	dir = 1;
+	color = "#4D4D4D"
+	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "zH" = (
@@ -6395,15 +6349,16 @@
 /obj/structure/window/reinforced/survival_pod{
 	dir = 4
 	},
-/obj/structure/window/reinforced/survival_pod{
-	dir = 6
-	},
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
+"zR" = (
+/mob/living/simple_animal/cockroach,
+/turf/open/floor/engine,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "zS" = (
 /obj/effect/turf_decal/trimline/purple/line{
 	dir = 4
@@ -6435,11 +6390,10 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "zV" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
+/obj/structure/chair/sofa/left{
+	color = "#800000"
 	},
-/obj/structure/chair,
-/turf/open/floor/iron/cafeteria,
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "zX" = (
 /obj/structure/window/reinforced/tinted{
@@ -6502,7 +6456,7 @@
 	pixel_x = -4;
 	pixel_y = 15
 	},
-/turf/open/floor/carpet/red,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "Au" = (
 /obj/structure/extinguisher_cabinet/directional/east,
@@ -6521,7 +6475,6 @@
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "Av" = (
-/obj/effect/turf_decal/trimline/dark_red/line,
 /obj/effect/turf_decal/trimline/dark_red/mid_joiner,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/computer/message_monitor{
@@ -6553,17 +6506,18 @@
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "AC" = (
-/obj/machinery/disposal/bin,
-/obj/effect/turf_decal/siding/thinplating/end{
+/obj/effect/turf_decal/trimline/dark_red/corner{
 	dir = 4
 	},
-/obj/structure/window/reinforced/survival_pod{
-	dir = 8
+/obj/effect/turf_decal/trimline/dark_red/line{
+	dir = 10
 	},
-/obj/structure/disposalpipe/trunk{
+/obj/machinery/computer/station_alert{
 	dir = 1
 	},
-/turf/open/floor/iron/small,
+/turf/open/floor/iron/dark/textured_corner{
+	dir = 4
+	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "AG" = (
 /obj/structure/closet/secure_closet{
@@ -6894,19 +6848,15 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "Ch" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood,
 /obj/machinery/door/window/survival_pod{
 	name = "Diner";
 	req_access_txt = "150"
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 6
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/iron/cafeteria,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "Cj" = (
 /obj/machinery/light/dim/directional/west,
@@ -6919,7 +6869,10 @@
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness/shower)
 "Cm" = (
-/obj/effect/mob_spawn/human/ds2/syndicate_command/corporateliaison,
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/pet/fox{
+	name = "Rhials"
+	},
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "Cn" = (
@@ -6999,7 +6952,7 @@
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "CH" = (
-/turf/open/floor/carpet/red,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "CJ" = (
 /obj/structure/window/reinforced/tinted{
@@ -7199,25 +7152,14 @@
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "DF" = (
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/effect/turf_decal/trimline/dark_red/corner,
-/obj/effect/turf_decal/trimline/dark_red/line{
-	dir = 9
-	},
-/obj/effect/turf_decal/trimline/dark_red/mid_joiner{
-	dir = 1
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/table/reinforced/plastitaniumglass,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
-/obj/item/paper_bin/carbon{
-	pixel_y = 3
-	},
+/obj/item/paper_bin/carbon,
 /obj/item/pen/fountain/captain{
-	name = "admiral's fountain pen";
-	pixel_y = 5
+	name = "admiral's fountain pen"
 	},
-/turf/open/floor/iron/dark/textured_half,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "DH" = (
 /obj/effect/turf_decal/siding/dark{
@@ -7485,14 +7427,12 @@
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "EU" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
-	},
-/obj/structure/chair{
-	dir = 1
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/iron/cafeteria,
+/obj/structure/chair/sofa/right{
+	dir = 1;
+	color = "#800000"
+	},
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "EV" = (
 /obj/structure/weightmachine/stacklifter,
@@ -7559,6 +7499,13 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
+"Fc" = (
+/obj/effect/spawner/structure/window/plastitanium,
+/obj/machinery/door/poddoor/shutters/preopen{
+	id = "DS2lab"
+	},
+/turf/open/floor/plating,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "Fe" = (
 /obj/structure/chair/office{
 	dir = 1
@@ -7567,9 +7514,6 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "Ff" = (
 /obj/structure/window/reinforced/survival_pod,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 6
-	},
 /obj/structure/table,
 /obj/item/stack/sheet/mineral/plastitanium,
 /obj/item/stack/sheet/plastitaniumglass,
@@ -7589,15 +7533,11 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "Fi" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood,
 /obj/structure/window/reinforced/survival_pod,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 10
-	},
-/turf/open/floor/iron/cafeteria,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "Fj" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
@@ -7709,9 +7649,6 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "FD" = (
 /obj/effect/turf_decal/siding/wood,
-/obj/item/kirbyplants{
-	icon_state = "plant-21"
-	},
 /obj/machinery/button/door/directional/north{
 	desc = "Keep out the paperwork.";
 	id = "scorpliaison";
@@ -7721,6 +7658,9 @@
 	specialfunctions = 4
 	},
 /obj/machinery/light/dim/directional/west,
+/obj/item/kirbyplants/hedge{
+	anchored = 1
+	},
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "FG" = (
@@ -7787,13 +7727,7 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "FY" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/structure/disposalpipe/segment{
-	dir = 8
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	dir = 4;
 	level = 1
@@ -7801,7 +7735,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
-/turf/open/floor/iron/cafeteria,
+/obj/structure/disposalpipe/segment{
+	dir = 8
+	},
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "FZ" = (
 /turf/open/floor/iron/dark,
@@ -7885,24 +7822,15 @@
 /obj/structure/window/reinforced/survival_pod,
 /obj/effect/turf_decal/siding/dark,
 /obj/structure/table,
-/obj/item/choice_beacon/ingredients{
-	pixel_y = 11
-	},
-/obj/item/choice_beacon/ingredients{
-	pixel_x = -5;
-	pixel_y = 2
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/item/clothing/accessory/armband/hydro{
 	desc = "An armband, worn by the FOB's operatives to display which department they're assigned to.";
-	name = "service armband";
-	pixel_x = 15
+	name = "service armband"
 	},
 /obj/item/reagent_containers/food/condiment/enzyme{
-	pixel_x = 17;
-	pixel_y = 8
+	pixel_x = 9;
+	pixel_y = 15
 	},
-/obj/item/storage/belt/military/snack,
 /turf/open/floor/iron/kitchen{
 	dir = 4
 	},
@@ -8035,14 +7963,9 @@
 /turf/open/floor/iron/white/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/hydroponics)
 "GV" = (
-/obj/structure/table/wood,
-/obj/item/camera{
-	pixel_x = -9;
-	pixel_y = 6
-	},
-/obj/item/paper{
-	default_raw_text = "<h1>Командный Отчёт DS2</h1><p>Передовая оперативная база 'Благословлённый' под кодовым названием Deep Space 2 успешно разместилась вблизи активных объектов NanoTrasen. Идет перезагрузка двигателей шаттла...</p><p>Синдикат рад видеть вас на поле боя, адмирал. Nanotrasen находится в опасном секторе и, как таковой, является прямой целью оперативников из других Пластов Вселенной. Управляйте своим экипажем хорошо и с уважением, а весь свой гнев оставьте для достойной битвы с Аномалиями. Помните о том, что DS1 находятся под вашей ответственностью и их проблемы - ваши проблемы. Не советуем вашему экипажу выставлять напоказ свою групповую принадлежность, если только вы не являетесь представителем Кайберсанов или Горлексов.</p><p>Не болейте и оставайтесь в выигрыше.</p>";
-	name = "paper- 'Командный Отчёт DS2'"
+/obj/structure/chair/sofa/middle{
+	dir = 8;
+	color = "#4D4D4D"
 	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
@@ -8095,12 +8018,17 @@
 "Hh" = (
 /obj/structure/table,
 /obj/machinery/light/dim/directional/east,
-/obj/machinery/microwave{
-	pixel_y = 5
-	},
 /obj/machinery/airalarm/syndicate{
 	dir = 8;
 	pixel_x = 24
+	},
+/obj/effect/spawner/lootdrop/pizzaparty{
+	loot = list(/obj/item/pizzabox/margherita=2,/obj/item/pizzabox/meat=2,/obj/item/pizzabox/mushroom=2,/obj/item/pizzabox/pineapple=2,/obj/item/pizzabox/vegetable=2);
+	pixel_y = 9
+	},
+/obj/effect/spawner/lootdrop/pizzaparty{
+	loot = list(/obj/item/pizzabox/margherita=2,/obj/item/pizzabox/meat=2,/obj/item/pizzabox/mushroom=2,/obj/item/pizzabox/pineapple=2,/obj/item/pizzabox/vegetable=2);
+	pixel_y = 9
 	},
 /turf/open/floor/iron/kitchen{
 	dir = 4
@@ -8134,9 +8062,6 @@
 	dir = 4
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 1
 	},
@@ -8146,7 +8071,6 @@
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "Ht" = (
-/obj/effect/turf_decal/trimline/dark_red/line,
 /obj/effect/turf_decal/trimline/dark_red/mid_joiner,
 /obj/machinery/computer/shuttle{
 	desc = "A shuttle terminal which allows a connection to the DS-2 forward base's supply shuttle.";
@@ -8189,7 +8113,9 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	level = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
+	dir = 4
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "Hz" = (
@@ -8221,19 +8147,12 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo/hangar)
 "HE" = (
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/structure/disposalpipe/segment{
-	dir = 6
+/obj/structure/chair/sofa/left{
+	dir = 1;
+	color = "#800000"
 	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	dir = 4;
-	level = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 8
-	},
-/turf/open/floor/iron/dark,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
+/turf/open/floor/carpet/blackred,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "HF" = (
 /obj/effect/turf_decal/siding/yellow{
 	dir = 8
@@ -8449,7 +8368,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "IN" = (
-/obj/structure/table/wood,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 8
 	},
@@ -8458,6 +8376,7 @@
 	pixel_y = 6
 	},
 /obj/item/reagent_containers/glass/beaker/waterbottle/large,
+/obj/structure/table/wood/fancy/blackred,
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "IQ" = (
@@ -8482,9 +8401,6 @@
 	},
 /obj/structure/window/reinforced/survival_pod{
 	dir = 8
-	},
-/obj/structure/window/reinforced/survival_pod{
-	dir = 10
 	},
 /obj/machinery/suit_storage_unit/syndicate/chameleon,
 /turf/open/floor/iron/dark/smooth_large,
@@ -8594,9 +8510,6 @@
 /obj/item/clothing/head/HoS/beret/syndicate,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 4
-	},
-/obj/structure/window/reinforced/survival_pod{
-	dir = 6
 	},
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
@@ -8977,6 +8890,17 @@
 	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
+"La" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/turf/open/floor/wood/wood_tiled,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "Lb" = (
 /obj/effect/turf_decal/tile/dark_red/half,
 /obj/effect/turf_decal/siding/wideplating_new/dark,
@@ -8988,7 +8912,7 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
-/turf/open/floor/carpet/red,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "Lf" = (
 /obj/effect/turf_decal/siding/wood,
@@ -9208,9 +9132,6 @@
 /obj/structure/sign/flag/syndicate/directional/south,
 /obj/machinery/light/dim/directional/south,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 9
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 5
 	},
@@ -9236,19 +9157,10 @@
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "LQ" = (
-/obj/structure/table/wood,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
-	dir = 4
-	},
 /obj/machinery/firealarm/directional/south,
-/obj/item/poster/random_contraband{
-	pixel_x = 5;
-	pixel_y = 5
-	},
-/obj/item/poster/random_contraband,
-/obj/item/poster/random_contraband{
-	pixel_x = 2;
-	pixel_y = 5
+/obj/structure/chair/sofa/right{
+	dir = 1;
+	color = "#4D4D4D"
 	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
@@ -9310,7 +9222,15 @@
 /turf/open/floor/catwalk_floor,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "Mk" = (
-/obj/structure/table/reinforced/plastitaniumglass,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 4
+	},
+/obj/effect/spawner/lootdrop/three_course_meal{
+	pixel_y = 3
+	},
+/obj/structure/table/reinforced/plastitaniumglass{
+	color = "#777777"
+	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "Mn" = (
@@ -9331,13 +9251,12 @@
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/vault)
 "Mw" = (
-/obj/structure/table,
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
-	},
 /obj/machinery/light/dim/directional/west,
-/obj/item/reagent_containers/glass/beaker/waterbottle/large,
-/turf/open/floor/iron/cafeteria,
+/obj/structure/chair/comfy{
+	dir = 4;
+	color = "#800000"
+	},
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "MB" = (
 /obj/structure/cable,
@@ -9356,10 +9275,9 @@
 /turf/open/floor/plasteel/white,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "MC" = (
-/obj/structure/table/wood,
-/obj/machinery/fax{
-	fax_name = "DS-2 Syndicate Fax";
-	name = "DS-2 Fax Machine"
+/obj/structure/chair/sofa/corner{
+	dir = 8;
+	color = "#4D4D4D"
 	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
@@ -9375,8 +9293,14 @@
 "MF" = (
 /obj/effect/turf_decal/bot_blue,
 /obj/structure/closet/secure_closet/freezer/meat{
-	req_access_txt = "150"
+	req_access_txt = "150";
+	pixel_x = 0;
+	pixel_y = 0
 	},
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
+/obj/item/reagent_containers/food/snacks/meat/slab/monkey,
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "MG" = (
@@ -9571,7 +9495,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/hydroponics)
 "Nr" = (
-/obj/structure/table/reinforced/plastitaniumglass,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/disposalpipe/segment{
 	dir = 8
@@ -9582,6 +9505,12 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
+	},
+/obj/effect/spawner/lootdrop/three_course_meal{
+	pixel_y = 3
+	},
+/obj/structure/table/reinforced/plastitaniumglass{
+	color = "#777777"
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
@@ -9772,10 +9701,11 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "NX" = (
-/obj/structure/chair/comfy/brown{
-	color = "#596479"
-	},
 /obj/machinery/light/dim/directional/north,
+/obj/structure/chair/sofa/right{
+	dir = 8;
+	color = "#4D4D4D"
+	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "NY" = (
@@ -9783,14 +9713,18 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "Ob" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 9
-	},
-/obj/effect/turf_decal/trimline/dark_red/corner,
-/obj/effect/turf_decal/trimline/dark_red/line{
-	dir = 9
-	},
-/turf/open/floor/iron/dark/textured_corner,
+/obj/machinery/light/dim/directional/north,
+/obj/structure/filingcabinet,
+/obj/item/paper/fluff/ruins/listeningstation/odd_report,
+/obj/item/paper/fluff/ruins/listeningstation/receipt,
+/obj/item/paper/fluff/ruins/listeningstation/reports/october,
+/obj/item/paper/fluff/ruins/listeningstation/reports/september,
+/obj/item/paper/fluff/ruins/listeningstation/reports/august,
+/obj/item/paper/fluff/ruins/listeningstation/reports/july,
+/obj/item/paper/fluff/ruins/listeningstation/reports/june,
+/obj/item/paper/fluff/ruins/listeningstation/reports/may,
+/obj/item/paper/fluff/ruins/listeningstation/reports/april,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "Oc" = (
 /obj/effect/turf_decal/siding/dark{
@@ -9807,14 +9741,17 @@
 "Od" = (
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
 	dir = 8;
-	pixel_y = 4;
-	flags_1 = 2
+	pixel_y = 0;
+	flags_1 = 2;
+	pixel_x = 3
 	},
-/obj/structure/table/wood,
 /obj/machinery/firealarm/directional/east,
 /obj/item/reagent_containers/food/drinks/shaker{
 	pixel_x = -6;
 	pixel_y = -7
+	},
+/obj/structure/table/reinforced/plastitaniumglass{
+	color = "#777777"
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
@@ -9827,9 +9764,6 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo)
 "Ok" = (
-/obj/structure/window/reinforced/survival_pod{
-	dir = 10
-	},
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 1
 	},
@@ -9842,10 +9776,6 @@
 	},
 /obj/machinery/light/dim/directional/east,
 /obj/machinery/vending/snack,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 10;
-	pixel_y = -7
-	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "Ov" = (
@@ -9892,9 +9822,6 @@
 	dir = 8
 	},
 /obj/structure/window/reinforced/survival_pod,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 10
-	},
 /obj/effect/turf_decal/siding/dark{
 	dir = 10
 	},
@@ -10091,20 +10018,14 @@
 /turf/open/floor/iron/dark/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "Pt" = (
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/effect/turf_decal/trimline/dark_red/line,
-/obj/effect/turf_decal/trimline/dark_red/line{
-	dir = 1
+/obj/structure/table,
+/obj/machinery/microwave{
+	pixel_y = 5
 	},
-/obj/effect/turf_decal/trimline/dark_red/mid_joiner{
-	dir = 1
+/turf/open/floor/iron/kitchen{
+	dir = 4
 	},
-/obj/effect/turf_decal/trimline/dark_red/mid_joiner,
-/obj/structure/chair/office{
-	dir = 1
-	},
-/turf/open/floor/iron/dark/textured_half,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "Px" = (
 /obj/effect/turf_decal/siding/dark,
 /obj/structure/window/reinforced/survival_pod,
@@ -10210,7 +10131,16 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
 	},
-/obj/machinery/grill,
+/obj/structure/rack,
+/obj/item/rsf{
+	pixel_y = 10;
+	pixel_x = 3
+	},
+/obj/item/rcd_ammo{
+	pixel_y = -3;
+	pixel_x = 10
+	},
+/obj/item/storage/box/beakers/variety,
 /turf/open/floor/iron/kitchen{
 	dir = 4
 	},
@@ -10242,10 +10172,10 @@
 /turf/open/floor/carpet/blue,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
 "Qa" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
+/obj/machinery/jukebox{
+	req_one_access = null
 	},
-/turf/open/floor/iron/cafeteria,
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "Qb" = (
 /turf/open/floor/engine,
@@ -10322,15 +10252,21 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 10
 	},
-/obj/structure/bed/dogbed,
 /obj/structure/window/reinforced/survival_pod{
 	dir = 4
 	},
-/obj/structure/window/reinforced/survival_pod{
-	dir = 6
+/obj/structure/rack,
+/obj/item/storage/secure/briefcase/permits{
+	pixel_y = 13
 	},
-/mob/living/simple_animal/pet/fox{
-	name = "Rhials"
+/obj/item/poster/random_contraband,
+/obj/item/poster/random_contraband{
+	pixel_x = 5;
+	pixel_y = 5
+	},
+/obj/item/poster/random_contraband{
+	pixel_x = 2;
+	pixel_y = 5
 	},
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
@@ -10385,12 +10321,6 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "QB" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
-	},
-/obj/structure/chair{
-	dir = 1
-	},
 /obj/machinery/button/door/directional/east{
 	desc = "To keep your food away from the carp.";
 	id = "diner-view";
@@ -10398,7 +10328,7 @@
 	pixel_y = -24;
 	req_access_txt = "150"
 	},
-/turf/open/floor/iron/cafeteria,
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "QC" = (
 /obj/effect/turf_decal/trimline/dark_green/corner,
@@ -10509,8 +10439,9 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "QW" = (
-/obj/structure/chair/office/light{
-	dir = 8
+/obj/structure/chair/sofa/left{
+	dir = 4;
+	color = "#4D4D4D"
 	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
@@ -10619,16 +10550,14 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "Rr" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
+/obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/chair/stool/bar{
-	dir = 4
+/obj/structure/chair/sofa/right{
+	dir = 4;
+	color = "#800000"
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/turf/open/floor/iron/cafeteria,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "Rt" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
@@ -10659,13 +10588,12 @@
 	req_access = null;
 	req_access_txt = "150"
 	},
-/obj/effect/spawner/lootdrop/pizzaparty{
-	loot = list(/obj/item/pizzabox/margherita=2,/obj/item/pizzabox/meat=2,/obj/item/pizzabox/mushroom=2,/obj/item/pizzabox/pineapple=2,/obj/item/pizzabox/vegetable=2);
-	pixel_y = 9
+/obj/item/choice_beacon/ingredients{
+	pixel_x = -5;
+	pixel_y = 2
 	},
-/obj/effect/spawner/lootdrop/pizzaparty{
-	loot = list(/obj/item/pizzabox/margherita=2,/obj/item/pizzabox/meat=2,/obj/item/pizzabox/mushroom=2,/obj/item/pizzabox/pineapple=2,/obj/item/pizzabox/vegetable=2);
-	pixel_y = 9
+/obj/item/choice_beacon/ingredients{
+	pixel_y = 11
 	},
 /turf/open/floor/iron/kitchen{
 	dir = 4
@@ -10732,7 +10660,6 @@
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "RQ" = (
-/obj/structure/table/wood,
 /obj/item/stamp{
 	pixel_x = -7;
 	pixel_y = 6
@@ -10759,6 +10686,7 @@
 	pixel_x = 5;
 	pixel_y = 3
 	},
+/obj/structure/table/wood/fancy/blackred,
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "RT" = (
@@ -10792,10 +10720,10 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "RY" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	level = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 9
+	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "RZ" = (
@@ -10824,9 +10752,6 @@
 /obj/structure/table/wood,
 /obj/structure/window/reinforced/survival_pod,
 /obj/item/paper_bin,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 10
-	},
 /obj/item/pen,
 /obj/item/reagent_containers/glass/beaker/waterbottle/large,
 /turf/open/floor/wood,
@@ -10934,7 +10859,6 @@
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
 "Sx" = (
-/obj/effect/turf_decal/trimline/dark_red/line,
 /obj/effect/turf_decal/trimline/dark_red/mid_joiner,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/computer/camera_advanced/syndie,
@@ -11059,7 +10983,6 @@
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "SY" = (
-/obj/structure/table/wood,
 /obj/item/storage/photo_album/syndicate{
 	pixel_x = -5;
 	pixel_y = -3
@@ -11079,6 +11002,7 @@
 	pixel_x = -7;
 	pixel_y = 6
 	},
+/obj/structure/table/wood/fancy/black,
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "SZ" = (
@@ -11404,9 +11328,6 @@
 	},
 /obj/structure/table/wood,
 /obj/structure/window/reinforced/survival_pod,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 6
-	},
 /obj/item/flashlight/lamp/green{
 	pixel_x = -10
 	},
@@ -11417,11 +11338,21 @@
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
 "Ui" = (
-/obj/structure/table/wood,
 /obj/item/reagent_containers/rag,
 /obj/item/storage/fancy/cigarettes/cigpack_syndicate{
 	pixel_x = 3;
 	pixel_y = 6
+	},
+/obj/item/reagent_containers/glass/beaker/waterbottle/large{
+	pixel_x = 11;
+	pixel_y = 12
+	},
+/obj/item/reagent_containers/glass/beaker/waterbottle/large{
+	pixel_x = 12;
+	pixel_y = 6
+	},
+/obj/structure/table/reinforced/plastitaniumglass{
+	color = "#777777"
 	},
 /turf/open/floor/wood/wood_tiled,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
@@ -11429,9 +11360,6 @@
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/door/firedoor,
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
 /obj/machinery/door/airlock/command{
 	hackProof = 1;
 	name = "Bridge";
@@ -11459,14 +11387,13 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "Un" = (
-/obj/structure/table,
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
-	},
 /obj/machinery/light/dim/directional/east,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/item/reagent_containers/glass/beaker/waterbottle/large,
-/turf/open/floor/iron/cafeteria,
+/obj/structure/chair/comfy{
+	dir = 8;
+	color = "#800000"
+	},
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "Up" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -11712,22 +11639,20 @@
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "Vn" = (
-/obj/effect/turf_decal/siding/thinplating/dark{
-	dir = 5
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	dir = 4;
+	level = 1
 	},
-/obj/effect/turf_decal/trimline/dark_red/line{
-	dir = 5
-	},
-/obj/effect/turf_decal/trimline/dark_red/corner{
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
-/obj/structure/disposalpipe/segment{
-	dir = 2
+/obj/structure/disposalpipe/junction/flip{
+	dir = 8;
+	name = "disposal pipe"
 	},
-/turf/open/floor/iron/dark/textured_corner{
-	dir = 8
-	},
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
+/turf/open/floor/carpet/blackred,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "Vo" = (
 /obj/machinery/light/dim/directional/west,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
@@ -11761,8 +11686,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "Vw" = (
-/obj/machinery/gibber,
 /obj/machinery/light/dim/directional/south,
+/obj/machinery/grill,
 /turf/open/floor/iron/kitchen{
 	dir = 4
 	},
@@ -12082,11 +12007,10 @@
 /turf/open/floor/iron/dark/side,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "WA" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
+/obj/effect/turf_decal/siding/wood{
+	dir = 9
 	},
-/obj/effect/turf_decal/siding/wood/corner,
-/turf/open/floor/iron/cafeteria,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "WC" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
@@ -12142,28 +12066,12 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "WN" = (
-/obj/effect/turf_decal/siding/thinplating/dark,
-/obj/effect/turf_decal/trimline/dark_red/corner{
-	dir = 8
-	},
-/obj/effect/turf_decal/trimline/dark_red/line{
-	dir = 5
-	},
-/obj/effect/turf_decal/trimline/dark_red/mid_joiner{
-	dir = 1
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/obj/structure/table/reinforced/plastitaniumglass,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
-/obj/item/paper_bin{
-	pixel_x = -2;
-	pixel_y = 5
-	},
-/obj/item/pen{
-	pixel_x = -2;
-	pixel_y = 5
-	},
-/turf/open/floor/iron/dark/textured_half,
+/obj/structure/table/reinforced/plastitaniumglass,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "WS" = (
 /obj/effect/turf_decal/stripes/red/line{
@@ -12465,21 +12373,15 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "XN" = (
 /obj/effect/turf_decal/siding/thinplating/dark,
-/obj/effect/turf_decal/trimline/dark_red/line,
-/obj/effect/turf_decal/trimline/dark_red/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/trimline/dark_red/mid_joiner,
-/obj/effect/turf_decal/trimline/dark_red/mid_joiner{
-	dir = 1
-	},
-/obj/machinery/computer/monitor{
-	dir = 4
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/power/apc/auto_name/west{
 	req_access = null;
 	req_access_txt = "150"
+	},
+/obj/structure/table/reinforced/plastitaniumglass,
+/obj/machinery/fax{
+	fax_name = "DS-2 Syndicate Fax";
+	name = "DS-2 Fax Machine"
 	},
 /turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
@@ -12498,17 +12400,17 @@
 	dir = 4
 	},
 /obj/machinery/light/dim/directional/west,
-/obj/structure/disposalpipe/junction/flip{
-	dir = 2
+/obj/structure/disposalpipe/segment{
+	dir = 6
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "XV" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
-	},
 /obj/machinery/firealarm/directional/north,
-/turf/open/floor/iron/cafeteria,
+/obj/structure/chair/sofa/right{
+	color = "#800000"
+	},
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "XX" = (
 /obj/structure/railing{
@@ -12526,16 +12428,6 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/hydroponics)
 "Ya" = (
-/obj/structure/filingcabinet,
-/obj/item/paper/fluff/ruins/listeningstation/reports/april,
-/obj/item/paper/fluff/ruins/listeningstation/reports/may,
-/obj/item/paper/fluff/ruins/listeningstation/reports/june,
-/obj/item/paper/fluff/ruins/listeningstation/reports/july,
-/obj/item/paper/fluff/ruins/listeningstation/reports/august,
-/obj/item/paper/fluff/ruins/listeningstation/reports/september,
-/obj/item/paper/fluff/ruins/listeningstation/reports/october,
-/obj/item/paper/fluff/ruins/listeningstation/receipt,
-/obj/item/paper/fluff/ruins/listeningstation/odd_report,
 /obj/effect/turf_decal/trimline/dark_red/line,
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 1
@@ -12544,6 +12436,9 @@
 	pixel_x = -16
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 1
+	},
+/obj/machinery/computer/monitor{
 	dir = 1
 	},
 /turf/open/floor/iron/dark/textured_half,
@@ -12604,10 +12499,6 @@
 "Yz" = (
 /obj/machinery/light/dim/directional/west,
 /obj/machinery/vending/games,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 6;
-	pixel_y = -7
-	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "YC" = (
@@ -12629,8 +12520,10 @@
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower)
 "YG" = (
-/obj/effect/mob_spawn/human/ds2/syndicate_command/admiral,
-/turf/open/floor/carpet/red,
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/pet/syndifox,
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "YH" = (
 /obj/machinery/door/airlock/silver{
@@ -12680,6 +12573,11 @@
 	network = list("ds2")
 	},
 /obj/effect/spawner/lootdrop/maintenance/eight,
+/obj/machinery/button/door/directional/west{
+	id = "DS2lab";
+	name = "Research shutters control";
+	req_access_txt = "150"
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "YT" = (
@@ -12753,19 +12651,15 @@
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "Zt" = (
-/obj/effect/turf_decal/tile/bar/opposingcorners{
-	dir = 8
-	},
-/obj/structure/table,
-/obj/effect/spawner/lootdrop/three_course_meal{
-	pixel_x = -7;
-	pixel_y = 8
-	},
-/obj/effect/spawner/lootdrop/three_course_meal{
-	pixel_y = 3
-	},
 /obj/machinery/light/dim/directional/north,
-/turf/open/floor/iron/cafeteria,
+/obj/structure/table/reinforced/plastitaniumglass{
+	color = "#777777"
+	},
+/obj/item/reagent_containers/glass/beaker/waterbottle/large{
+	pixel_y = 7;
+	pixel_x = 0
+	},
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "Zz" = (
 /obj/machinery/door/firedoor,
@@ -13752,8 +13646,8 @@ on
 yP
 sO
 NW
-HE
-Lz
+Fj
+on
 XR
 Lz
 Lz
@@ -14026,8 +13920,8 @@ wg
 wg
 aT
 Bk
-VM
-fa
+Ob
+Ke
 dO
 ak
 hi
@@ -14082,7 +13976,7 @@ Bk
 Bk
 XN
 AV
-uZ
+BT
 lu
 RX
 RX
@@ -14137,8 +14031,8 @@ UB
 qI
 lD
 AV
-yI
-Vn
+BT
+AV
 AC
 RX
 Cm
@@ -14168,7 +14062,7 @@ Io
 OK
 OD
 Cn
-Qb
+zR
 YC
 Tt
 Tt
@@ -14355,10 +14249,10 @@ iE
 wg
 UB
 Ht
-Pt
+dD
 AV
 BT
-Ob
+AV
 ZA
 EY
 YG
@@ -14811,9 +14705,9 @@ Hz
 Fm
 Hz
 Hz
-Fz
-Fz
-Fz
+Fc
+Fc
+Fc
 xG
 Hz
 my
@@ -15125,9 +15019,9 @@ LT
 Vm
 bw
 Zt
-FY
-Qa
-Qa
+Vn
+rR
+uZ
 Iw
 uf
 DH
@@ -15180,9 +15074,9 @@ bw
 bw
 bw
 ch
-FY
-Qa
-Qa
+fa
+yy
+yy
 lO
 No
 kD
@@ -15231,12 +15125,12 @@ wg
 xr
 NB
 bw
-zV
+oT
 Mw
 yy
 WA
 pz
-Rr
+eG
 Rr
 tZ
 jT
@@ -15244,7 +15138,7 @@ WL
 Ws
 Rz
 ep
-oT
+Kg
 nV
 Hz
 YK
@@ -15287,8 +15181,8 @@ wg
 xr
 bw
 XV
-Qa
-Qa
+yI
+HE
 Fi
 Nr
 Mk
@@ -15347,7 +15241,7 @@ EU
 Ch
 kc
 Hw
-Hw
+La
 ro
 eP
 zq
@@ -15396,7 +15290,7 @@ EJ
 kx
 Mt
 bw
-zV
+oT
 Un
 QB
 pI
@@ -15461,7 +15355,7 @@ bw
 bw
 qa
 qH
-jj
+Pt
 aC
 Cf
 Cf
@@ -15516,7 +15410,7 @@ wg
 gv
 bw
 bw
-jj
+Pt
 Bt
 Hh
 Bj
