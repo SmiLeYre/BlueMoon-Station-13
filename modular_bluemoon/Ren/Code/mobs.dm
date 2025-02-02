@@ -241,7 +241,7 @@
 
 //спавн трупа
 /obj/effect/mob_spawn/human/corpse/inteq_dead
-	name = "InteQ Operative"
+	name = "InteQ Operative
 	id_job = "Operative"
 	hair_style = "Bald"
 	facial_hair_style = "Shaved"
