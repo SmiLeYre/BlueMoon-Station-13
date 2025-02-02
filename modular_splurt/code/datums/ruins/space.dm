@@ -24,3 +24,4 @@
 	name = "Twin Spires Hotel and Club"
 	description = "A Nanotrasen-partnered interstellar hotel and stripclub"
 	always_place = TRUE
+	//variants = list("map_variant1.dmm", "map_variant2.dmm") should be in the same prefix directory as parent map

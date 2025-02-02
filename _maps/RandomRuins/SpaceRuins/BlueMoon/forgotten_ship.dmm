@@ -267,9 +267,10 @@
 /obj/machinery/porta_turret/syndicate{
 	dir = 5;
 	faction = list("152","neutral");
-	pixel_y = -31
+	pixel_x = -32;
+	pixel_y = 0
 	},
-/turf/template_noop,
+/turf/open/floor/holofloor/asteroid,
 /area/ruin/space)
 "bb" = (
 /obj/structure/chair{
@@ -688,6 +689,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_permabrig)
+"dr" = (
+/mob/living/simple_animal/hostile/carp,
+/turf/open/space/basic,
+/area/space/nearstation)
 "dt" = (
 /obj/effect/spawner/structure/window/plastitanium,
 /turf/open/floor/plating,
@@ -3024,8 +3029,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "oz" = (
-/turf/open/floor/holofloor/asteroid,
-/area/template_noop)
+/obj/machinery/porta_turret/syndicate{
+	faction = list("InteQ");
+	pixel_y = 32
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "oB" = (
 /obj/machinery/vending/wallmed{
 	pixel_y = 29
@@ -5958,6 +5967,14 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
+"CZ" = (
+/obj/machinery/porta_turret/syndicate{
+	faction = list("InteQ");
+	pixel_x = 32;
+	pixel_y = 0
+	},
+/turf/open/floor/holofloor/asteroid,
+/area/ruin/space)
 "Dc" = (
 /obj/effect/turf_decal/bluemoon_decals/enclave/middle/right,
 /turf/open/floor/mineral/plastitanium,
@@ -7110,6 +7127,10 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
+"Jv" = (
+/mob/living/simple_animal/hostile/carp/megacarp,
+/turf/open/space/basic,
+/area/space/nearstation)
 "Jx" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Recreation";
@@ -8203,13 +8224,8 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_permabrig)
 "Os" = (
-/obj/machinery/porta_turret/syndicate{
-	dir = 5;
-	faction = list("152","neutral");
-	pixel_y = -31
-	},
-/turf/closed/mineral/random/high_chance,
-/area/ruin/space)
+/turf/open/space/basic,
+/area/space/nearstation)
 "Ow" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
@@ -10001,8 +10017,8 @@
 	faction = list("152","neutral");
 	pixel_y = -31
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space/basic,
+/area/space/nearstation)
 "YH" = (
 /obj/effect/turf_decal/tile/brown/anticorner{
 	dir = 4
@@ -11206,8 +11222,8 @@ ye
 ye
 ye
 ye
-sz
-sz
+Os
+Os
 sz
 sz
 sz
@@ -11281,8 +11297,8 @@ ye
 Jc
 ye
 lO
-sz
-sz
+Os
+Os
 ye
 lO
 sz
@@ -11356,8 +11372,8 @@ Jc
 Jc
 ye
 lO
-sz
-sz
+Os
+Os
 ye
 lO
 sz
@@ -11431,7 +11447,7 @@ Jc
 ye
 ye
 ye
-sz
+Os
 ye
 ye
 ye
@@ -11506,10 +11522,10 @@ lO
 lO
 ye
 ye
-sz
+Os
 lO
-sz
-sz
+Os
+Os
 sz
 sz
 sz
@@ -11583,8 +11599,8 @@ lO
 lO
 lO
 lO
-sz
-sz
+Os
+Os
 sz
 sz
 sz
@@ -11641,7 +11657,7 @@ sz
 sz
 sz
 sz
-sz
+Os
 lO
 lO
 Jc
@@ -11652,14 +11668,14 @@ lO
 lO
 lO
 lO
-lO
+CZ
 lO
 lO
 lO
 ye
 ye
 lO
-sz
+Os
 sz
 sz
 sz
@@ -11716,8 +11732,8 @@ sz
 lO
 lO
 lO
-sz
-sz
+Os
+Os
 lO
 lO
 lO
@@ -11728,13 +11744,13 @@ tH
 tH
 tH
 kw
-WL
+lO
 Jc
 Jc
 Jc
 ye
 lO
-sz
+Os
 sz
 sz
 sz
@@ -11760,29 +11776,29 @@ sz
 sz
 sz
 sz
-sz
-sz
+Os
+Os
 Kh
 Kh
 Dr
-sz
-sz
+Os
+Os
 Kh
 Kh
 Dr
-sz
-sz
+Os
+Os
 Kh
 Kh
 Dr
-sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
+Os
+Os
+Os
+Os
+Os
+Os
+Os
+Os
 lO
 lO
 lO
@@ -11808,8 +11824,8 @@ tS
 tS
 tS
 tS
-WP
-sz
+oz
+Os
 sz
 sz
 sz
@@ -11835,28 +11851,28 @@ sz
 sz
 sz
 sz
-sz
-sz
+Os
+Os
 Kh
 Kh
 Kh
-sz
-sz
+Os
+Os
 Kh
 Kh
 Kh
-sz
-sz
+Os
+Os
 Kh
 Kh
 Kh
-sz
-sz
-sz
-sz
-sz
-sz
-sz
+Os
+Os
+Os
+Os
+Os
+Os
+Os
 lO
 lO
 Jc
@@ -11883,10 +11899,10 @@ tS
 Em
 yA
 tS
-sz
-sz
-sz
-sz
+Os
+Os
+Os
+Os
 ye
 ye
 sz
@@ -11910,7 +11926,7 @@ sz
 sz
 sz
 sz
-sz
+Os
 ub
 Ed
 Ed
@@ -11926,10 +11942,10 @@ Ed
 Ed
 Ed
 ub
-sz
-sz
-sz
-sz
+Os
+Os
+Os
+Os
 lO
 lO
 lO
@@ -11958,9 +11974,9 @@ tS
 dc
 Ql
 tS
-sz
-sz
-sz
+Os
+Os
+Os
 ye
 lO
 ye
@@ -11985,7 +12001,7 @@ sz
 sz
 sz
 sz
-sz
+Os
 Nr
 Nr
 Nr
@@ -12001,9 +12017,9 @@ Nr
 Nr
 Nr
 Nr
-sz
-sz
-sz
+Os
+Os
+Os
 lO
 IP
 Oh
@@ -12034,9 +12050,9 @@ tS
 Hy
 tS
 kw
-sz
-sz
-sz
+Os
+Os
+Os
 Jc
 lO
 ye
@@ -12077,8 +12093,8 @@ Nr
 cG
 gu
 Zr
-sz
-sz
+Os
+Os
 lO
 Oh
 Oh
@@ -12109,9 +12125,9 @@ Ml
 vw
 Yp
 kw
-sz
-sz
-sz
+Os
+Os
+Os
 Jc
 Jc
 ye
@@ -12152,8 +12168,8 @@ Nr
 ur
 MO
 Nr
-sz
-sz
+Os
+Os
 lO
 Oh
 tV
@@ -12186,8 +12202,8 @@ kw
 kw
 kw
 kw
-WP
-sz
+oz
+Os
 Jc
 ye
 lO
@@ -12227,8 +12243,8 @@ Nr
 rJ
 Nr
 Nr
-sz
-sz
+Os
+Os
 lO
 Oh
 xh
@@ -12261,7 +12277,7 @@ aX
 Xm
 Sy
 tH
-sz
+Os
 Jc
 Jc
 Jc
@@ -12302,8 +12318,8 @@ Jm
 Jm
 Us
 Nr
-sz
-sz
+Os
+Os
 lO
 Oh
 BK
@@ -12336,7 +12352,7 @@ Nf
 Kk
 Ve
 tH
-sz
+Os
 lO
 Jc
 Jc
@@ -12377,8 +12393,8 @@ th
 th
 Nq
 Nr
-sz
-sz
+Os
+Os
 lO
 Oh
 uM
@@ -12411,7 +12427,7 @@ LP
 hu
 Sy
 tH
-sz
+Os
 lO
 ye
 Jc
@@ -12452,8 +12468,8 @@ bs
 bs
 qz
 UD
-sz
-sz
+Os
+Os
 lO
 Oh
 Oh
@@ -12486,8 +12502,8 @@ kw
 kw
 kw
 kw
-WP
-sz
+Os
+Os
 lO
 ye
 lO
@@ -12527,8 +12543,8 @@ Nr
 TF
 Nr
 Nr
-sz
-sz
+Os
+Os
 Sp
 Nk
 Oh
@@ -12560,10 +12576,10 @@ Pl
 Pl
 Yp
 kw
-sz
-sz
-sz
-sz
+Os
+Os
+Os
+Os
 ye
 lO
 "}
@@ -12602,7 +12618,7 @@ Nr
 ur
 kH
 Nr
-sz
+Os
 eG
 Cc
 Nk
@@ -12635,7 +12651,7 @@ tS
 Hy
 tS
 tS
-sz
+Os
 Vp
 Vp
 Vp
@@ -12677,7 +12693,7 @@ Nr
 CG
 gu
 Zr
-sz
+Os
 VX
 Nk
 Nk
@@ -12710,7 +12726,7 @@ tS
 Fj
 TJ
 tS
-sz
+Os
 XD
 XD
 XD
@@ -12735,7 +12751,7 @@ sz
 sz
 sz
 sz
-sz
+Os
 Nr
 Nr
 Nr
@@ -12751,8 +12767,8 @@ Nr
 Nr
 Nr
 Nr
-sz
-sz
+Os
+Os
 Sp
 Nk
 Nk
@@ -12785,7 +12801,7 @@ tS
 dU
 ay
 tS
-sz
+Os
 Jb
 kn
 kn
@@ -12810,7 +12826,7 @@ sz
 sz
 sz
 sz
-sz
+Os
 Nr
 xj
 ic
@@ -12826,7 +12842,7 @@ oe
 oe
 JD
 Nr
-sz
+Os
 lO
 Sp
 Nk
@@ -12885,7 +12901,7 @@ sz
 sz
 sz
 sz
-sz
+Os
 Nr
 Sf
 th
@@ -12901,7 +12917,7 @@ oe
 nu
 Lg
 Nr
-sz
+Os
 lO
 kw
 nl
@@ -12960,7 +12976,7 @@ sz
 sz
 sz
 sz
-sz
+Os
 Nr
 gK
 al
@@ -12976,8 +12992,8 @@ oe
 oe
 hh
 Nr
-sz
-sz
+Os
+Os
 kw
 Nf
 kw
@@ -13235,7 +13251,7 @@ Et
 ys
 OI
 Li
-oz
+lO
 VZ
 wT
 wT
@@ -13310,7 +13326,7 @@ CJ
 BC
 GQ
 Li
-oz
+lO
 VZ
 VZ
 VZ
@@ -13539,7 +13555,7 @@ WL
 lO
 lO
 ye
-sz
+Os
 sz
 "}
 (44,1,1) = {"
@@ -13560,7 +13576,7 @@ sz
 sz
 sz
 sz
-sz
+Os
 Nr
 Bb
 Nr
@@ -13576,7 +13592,7 @@ Nr
 Nr
 Nr
 Nr
-sz
+Os
 Jc
 kw
 nb
@@ -13614,7 +13630,7 @@ lO
 lO
 ye
 ye
-sz
+Os
 sz
 "}
 (45,1,1) = {"
@@ -13635,8 +13651,8 @@ sz
 sz
 sz
 sz
-sz
-sz
+Os
+Os
 em
 Nr
 aI
@@ -13649,9 +13665,9 @@ ZU
 tf
 Dj
 Nr
-sz
-sz
-sz
+Os
+Os
+Os
 Jc
 kw
 me
@@ -13764,7 +13780,7 @@ WL
 lO
 Jc
 ye
-sz
+Os
 sz
 "}
 (47,1,1) = {"
@@ -13839,7 +13855,7 @@ lK
 mB
 Jc
 ye
-sz
+Os
 sz
 "}
 (48,1,1) = {"
@@ -13877,7 +13893,7 @@ Vt
 Ni
 xq
 Nr
-sz
+Os
 kw
 kw
 kw
@@ -13914,7 +13930,7 @@ nM
 yB
 lO
 lO
-sz
+Os
 sz
 "}
 (49,1,1) = {"
@@ -13952,7 +13968,7 @@ Nr
 OJ
 gu
 Zr
-sz
+Os
 lO
 lO
 Jc
@@ -14026,9 +14042,9 @@ xU
 Nr
 Nr
 Nr
-sz
-sz
-sz
+Os
+Os
+Os
 lO
 Jc
 Jc
@@ -14060,9 +14076,9 @@ gC
 lK
 qq
 lK
-WP
-sz
-sz
+oz
+Os
+Os
 sz
 sz
 sz
@@ -14100,10 +14116,10 @@ Pf
 NT
 Nr
 Zr
-sz
-sz
-sz
-sz
+Os
+Os
+Os
+Os
 lO
 Jc
 Jc
@@ -14174,12 +14190,12 @@ li
 li
 li
 gu
-sz
-sz
-sz
-sz
-sz
-sz
+Os
+Os
+Os
+Os
+Os
+Os
 lO
 Jc
 Jc
@@ -14210,8 +14226,8 @@ Kd
 lO
 lO
 lO
-sz
-sz
+Os
+Os
 sz
 sz
 sz
@@ -14248,14 +14264,14 @@ sz
 sz
 sz
 sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
+Os
+Os
+Os
+Os
+Os
+Os
+Os
+Os
 lO
 Jc
 Jc
@@ -14284,9 +14300,9 @@ gb
 gb
 gb
 gb
-DI
-sz
-sz
+dr
+Os
+Os
 sz
 sz
 sz
@@ -14323,15 +14339,15 @@ sz
 sz
 sz
 sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
+Os
+Os
+Os
+Os
+Os
+Os
+Os
+Os
+Os
 lO
 lO
 Jc
@@ -14361,7 +14377,7 @@ io
 gb
 lO
 lO
-sz
+Os
 sz
 sz
 sz
@@ -14399,15 +14415,15 @@ sz
 sz
 sz
 Jc
-sz
+Os
 lO
 Jc
 ye
-sz
-sz
-sz
-sz
-sz
+Os
+Os
+Os
+Os
+Os
 lO
 lO
 sx
@@ -14481,10 +14497,10 @@ ye
 Jc
 Jc
 lO
-sz
-sz
-sz
-sz
+Os
+Os
+Os
+Os
 sx
 Kc
 Lz
@@ -14557,9 +14573,9 @@ ye
 ye
 ye
 ye
-sz
-sz
-sz
+Os
+Os
+Os
 sx
 ep
 zu
@@ -14633,7 +14649,7 @@ ye
 Jc
 Jc
 ye
-sz
+Os
 YG
 sx
 sx
@@ -14708,9 +14724,9 @@ Jc
 Jc
 Jc
 Jc
-sz
-RV
-sz
+Os
+Jv
+Os
 sx
 St
 lk
@@ -14736,8 +14752,8 @@ Ek
 jq
 gb
 ye
-sz
-sz
+Os
+Os
 sz
 sz
 sz
@@ -14785,7 +14801,7 @@ sz
 sz
 sz
 sz
-sz
+Os
 sx
 nm
 nm
@@ -15015,7 +15031,7 @@ Jc
 ye
 ye
 lO
-sz
+Os
 EU
 sC
 pX
@@ -15087,10 +15103,10 @@ sz
 sz
 Jc
 Jc
-sz
-sz
-sz
-sz
+Os
+Os
+Os
+Os
 EU
 Lp
 fk
@@ -15161,11 +15177,11 @@ sz
 sz
 sz
 sz
-sz
-sz
-sz
-sz
-sz
+Os
+Os
+Os
+Os
+YG
 EU
 EU
 EU
@@ -15185,9 +15201,9 @@ GG
 Mj
 Hg
 gb
-sz
-RV
-sz
+Os
+Jv
+Os
 sz
 sz
 sz
@@ -15238,9 +15254,9 @@ sz
 sz
 sz
 sz
-sz
-sz
-ba
+Os
+Os
+ng
 Jc
 Jc
 Jc
@@ -15314,11 +15330,11 @@ sz
 sz
 sz
 sz
-sz
-sz
+Os
+Os
 ng
 Jc
-Os
+ye
 gb
 gb
 gb
@@ -15334,7 +15350,7 @@ AT
 Mn
 gb
 Jc
-sz
+Os
 ye
 lO
 sz
@@ -15394,7 +15410,7 @@ sz
 ng
 ng
 lO
-lO
+ba
 ye
 ye
 RV

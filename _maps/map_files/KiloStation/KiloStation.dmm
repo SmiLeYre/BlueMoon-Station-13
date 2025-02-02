@@ -1299,14 +1299,6 @@
 	icon_state = "4-8"
 	},
 /obj/structure/window/reinforced,
-/obj/machinery/requests_console{
-	department = "Science";
-	departmentType = 2;
-	name = "Science RC";
-	pixel_x = -30;
-	pixel_y = 30;
-	receive_ore_updates = 1
-	},
 /obj/machinery/light{
 	dir = 1
 	},
@@ -5801,6 +5793,14 @@
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
+	},
+/obj/machinery/requests_console{
+	department = "Science";
+	departmentType = 2;
+	name = "Science RC";
+	pixel_x = -32;
+	pixel_y = 0;
+	receive_ore_updates = 1
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/science/xenobiology)
@@ -12989,7 +12989,7 @@
 /obj/structure/table,
 /obj/effect/turf_decal/tile/neutral,
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Engineering Checkpoint";
 	departmentType = 5;
 	name = "Engineering Checkpoint RC";
 	pixel_x = -30
@@ -20986,7 +20986,7 @@
 	dir = 8
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Medbay Checkpoint";
 	departmentType = 5;
 	name = "Medbay Checkpoint RC";
 	pixel_y = 30
@@ -34146,7 +34146,7 @@
 	dir = 4
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Science Checkpoint";
 	departmentType = 5;
 	name = "Science Checkpoint RC";
 	pixel_y = -30
@@ -37376,7 +37376,7 @@
 /obj/machinery/computer/security/labor,
 /obj/effect/turf_decal/tile/neutral,
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Cargo Checkpoint";
 	departmentType = 5;
 	name = "Cargo Checkpoint RC";
 	pixel_y = 30
@@ -56752,7 +56752,7 @@
 	dir = 4
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Arrival Checkpoint";
 	departmentType = 5;
 	name = "Security RC";
 	pixel_x = 30

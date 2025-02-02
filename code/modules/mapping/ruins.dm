@@ -21,7 +21,7 @@
 
 			if(!valid)
 				break
-			
+
 
 		if(!valid)
 			continue
@@ -94,6 +94,11 @@
 		if(forced_ruins.len) //We have something we need to load right now, so just pick it
 			for(var/ruin in forced_ruins)
 				current_pick = ruin
+				if(current_pick.variants)
+					var/list/pool = current_pick.variants + current_pick.suffix
+					var/picked_variant = pickweight(pool)
+					current_pick.suffix = picked_variant
+					current_pick.mappath = current_pick.prefix + picked_variant
 				if(isturf(forced_ruins[ruin]))
 					var/turf/T = forced_ruins[ruin]
 					forced_z = T.z //In case of chained ruins

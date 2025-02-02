@@ -1663,6 +1663,7 @@
 	trim_state = "trim_ds2prisoner"
 	subdepartment_color = COLOR_MAROON
 	sechud_icon_state = SECHUD_DS2_PRISONER
+	access = list()
 
 /datum/id_trim/syndicom/ds2/miner
 	assignment = "DS-2 Mining Officer"
@@ -1720,6 +1721,7 @@
 	name = "Prisoner"
 	assignment = "DS-2 Hostage"
 	icon_state = "card_ds2prisoner"
+	access = list()
 
 /obj/item/card/id/syndicate/advanced/black
 	name = "Agent Card"

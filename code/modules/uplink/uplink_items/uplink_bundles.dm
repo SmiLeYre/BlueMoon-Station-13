@@ -38,7 +38,7 @@
 			specialised contractor baton, and three randomly selected low cost items. Can include otherwise unobtainable items."
 	item = /obj/item/storage/box/syndie_kit/contract_kit
 	cost = 30
-	player_minimum = 25
+	player_minimum = 50
 	purchasable_from = ~(UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
 	restricted = TRUE
 

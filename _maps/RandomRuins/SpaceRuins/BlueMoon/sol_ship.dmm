@@ -259,11 +259,11 @@
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "ba" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 5;
-	faction = list("150","neutral");
-	pixel_y = -31
+	faction = list("neutral");
+	pixel_x = 32;
+	pixel_y = 0
 	},
-/turf/template_noop,
+/turf/open/floor/holofloor/asteroid,
 /area/ruin/space)
 "bb" = (
 /obj/structure/chair{
@@ -1331,6 +1331,15 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_vault)
+"hO" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 5;
+	faction = list("150","neutral");
+	pixel_x = -32;
+	pixel_y = 0
+	},
+/turf/open/floor/holofloor/asteroid,
+/area/ruin/space)
 "hV" = (
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 1
@@ -3744,6 +3753,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_vault)
+"vV" = (
+/mob/living/simple_animal/hostile/carp/megacarp,
+/turf/open/space/basic,
+/area/space/nearstation)
 "vX" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -5586,13 +5599,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_bridge)
 "GE" = (
-/obj/machinery/porta_turret/syndicate{
-	dir = 5;
-	faction = list("150","neutral");
-	pixel_y = -31
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/space/has_grav/inteq_forgotten_inspection)
+/turf/open/space/basic,
+/area/space/nearstation)
 "GG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
@@ -5954,6 +5962,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
+"Is" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 5;
+	faction = list("150","neutral");
+	pixel_x = 0;
+	pixel_y = -32
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "IE" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 4
@@ -6651,6 +6668,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
+"Me" = (
+/obj/machinery/porta_turret/syndicate{
+	faction = list("neutral");
+	pixel_y = 32
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "Mj" = (
 /obj/structure/table,
 /obj/machinery/light/dim/directional/east,
@@ -7041,13 +7065,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_rnd)
 "Os" = (
-/obj/machinery/porta_turret/syndicate{
-	dir = 5;
-	faction = list("150","neutral");
-	pixel_y = -31
-	},
-/turf/closed/mineral/random/high_chance,
-/area/ruin/space)
+/mob/living/simple_animal/hostile/carp,
+/turf/open/space/basic,
+/area/space/nearstation)
 "Ow" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -8701,8 +8721,8 @@
 	faction = list("150","neutral");
 	pixel_y = -31
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space/basic,
+/area/space/nearstation)
 "YH" = (
 /obj/effect/turf_decal/tile/dark_blue/anticorner{
 	dir = 4
@@ -9874,8 +9894,8 @@ ye
 ye
 ye
 ye
-sz
-sz
+GE
+GE
 sz
 sz
 sz
@@ -9949,8 +9969,8 @@ ye
 Jc
 ye
 lO
-sz
-sz
+GE
+GE
 ye
 lO
 sz
@@ -10024,8 +10044,8 @@ Jc
 Jc
 ye
 lO
-sz
-sz
+GE
+GE
 ye
 lO
 sz
@@ -10099,7 +10119,7 @@ Jc
 ye
 ye
 ye
-sz
+GE
 ye
 ye
 ye
@@ -10174,10 +10194,10 @@ lO
 lO
 ye
 ye
-sz
+GE
 lO
-sz
-sz
+GE
+GE
 sz
 sz
 sz
@@ -10251,8 +10271,8 @@ lO
 lO
 lO
 lO
-sz
-sz
+GE
+GE
 sz
 sz
 sz
@@ -10309,7 +10329,7 @@ sz
 sz
 sz
 sz
-sz
+GE
 lO
 lO
 Jc
@@ -10320,14 +10340,14 @@ lO
 lO
 lO
 lO
-lO
+ba
 lO
 lO
 lO
 ye
 ye
 lO
-sz
+GE
 sz
 sz
 sz
@@ -10384,8 +10404,8 @@ sz
 lO
 lO
 lO
-sz
-sz
+GE
+GE
 lO
 lO
 lO
@@ -10396,13 +10416,13 @@ tH
 tH
 tH
 kw
-WL
+lO
 Jc
 Jc
 Jc
 ye
 lO
-sz
+GE
 sz
 sz
 sz
@@ -10433,24 +10453,24 @@ sz
 Kh
 Kh
 Dr
-sz
-sz
+GE
+GE
 Kh
 Kh
 Dr
-sz
-sz
+GE
+GE
 Kh
 Kh
 Dr
-sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
+GE
+GE
+GE
+GE
 lO
 lO
 lO
@@ -10476,8 +10496,8 @@ wt
 wt
 wt
 wt
-WP
-sz
+Me
+GE
 sz
 sz
 sz
@@ -10508,23 +10528,23 @@ sz
 Kh
 Kh
 Kh
-sz
-sz
+GE
+GE
 Kh
 Kh
 Kh
-sz
-sz
+GE
+GE
 Kh
 Kh
 Kh
-sz
-sz
-sz
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
+GE
+GE
+GE
 lO
 lO
 Jc
@@ -10551,10 +10571,10 @@ wt
 Em
 yA
 wt
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
 ye
 ye
 sz
@@ -10594,10 +10614,10 @@ Ed
 Ed
 Ed
 ub
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
 lO
 lO
 lO
@@ -10626,9 +10646,9 @@ wt
 dc
 Ql
 wt
-sz
-sz
-sz
+GE
+GE
+GE
 ye
 lO
 ye
@@ -10669,9 +10689,9 @@ Nr
 Nr
 Nr
 Nr
-sz
-sz
-sz
+GE
+GE
+GE
 lO
 IP
 Oh
@@ -10702,9 +10722,9 @@ wt
 Hy
 wt
 kw
-sz
-sz
-sz
+GE
+GE
+GE
 Jc
 lO
 ye
@@ -10745,8 +10765,8 @@ Nr
 cG
 gu
 Zr
-sz
-sz
+GE
+GE
 lO
 Oh
 Oh
@@ -10777,9 +10797,9 @@ Ml
 vw
 Yp
 kw
-sz
-sz
-sz
+GE
+GE
+GE
 Jc
 Jc
 ye
@@ -10820,8 +10840,8 @@ Nr
 ur
 MO
 Nr
-sz
-sz
+GE
+GE
 lO
 Oh
 tV
@@ -10854,8 +10874,8 @@ kw
 kw
 kw
 kw
-WP
-sz
+Me
+GE
 Jc
 ye
 lO
@@ -10895,8 +10915,8 @@ Nr
 rJ
 Nr
 Nr
-sz
-sz
+GE
+GE
 lO
 Oh
 xh
@@ -10929,7 +10949,7 @@ aX
 Xm
 Sy
 tH
-sz
+GE
 Jc
 Jc
 Jc
@@ -10970,8 +10990,8 @@ Jm
 Jm
 Us
 Nr
-sz
-sz
+GE
+GE
 lO
 Oh
 BK
@@ -11004,7 +11024,7 @@ Nf
 Kk
 Ve
 tH
-sz
+GE
 lO
 Jc
 Jc
@@ -11045,8 +11065,8 @@ th
 th
 Nq
 Nr
-sz
-sz
+GE
+GE
 lO
 Oh
 uM
@@ -11120,8 +11140,8 @@ bs
 bs
 qz
 UD
-sz
-sz
+GE
+GE
 lO
 Oh
 Oh
@@ -11195,8 +11215,8 @@ Nr
 TF
 Nr
 Nr
-sz
-sz
+GE
+GE
 Sp
 Nk
 Oh
@@ -11270,7 +11290,7 @@ Nr
 ur
 kH
 Nr
-sz
+GE
 eG
 Cc
 Nk
@@ -11306,8 +11326,8 @@ wt
 lO
 lO
 ye
-sz
-sz
+GE
+GE
 sz
 "}
 (32,1,1) = {"
@@ -11345,7 +11365,7 @@ Nr
 CG
 gu
 Zr
-sz
+GE
 Sp
 Nk
 Nk
@@ -11382,7 +11402,7 @@ lO
 lO
 lO
 lO
-sz
+GE
 sz
 "}
 (33,1,1) = {"
@@ -11419,8 +11439,8 @@ Nr
 Nr
 Nr
 Nr
-sz
-sz
+GE
+GE
 Sp
 Nk
 Nk
@@ -11494,7 +11514,7 @@ th
 th
 JD
 Nr
-sz
+GE
 lO
 Sp
 Nk
@@ -11569,7 +11589,7 @@ th
 th
 Lg
 Nr
-sz
+GE
 lO
 kw
 nl
@@ -11644,8 +11664,8 @@ th
 th
 hh
 Nr
-sz
-sz
+GE
+GE
 kw
 Nf
 kw
@@ -11907,7 +11927,7 @@ lO
 ye
 ye
 ye
-sz
+GE
 sz
 "}
 (40,1,1) = {"
@@ -11981,8 +12001,8 @@ Li
 lO
 lO
 ye
-sz
-sz
+GE
+GE
 sz
 "}
 (41,1,1) = {"
@@ -12207,7 +12227,7 @@ WL
 ye
 ye
 ye
-sz
+GE
 sz
 "}
 (44,1,1) = {"
@@ -12244,7 +12264,7 @@ Nr
 Nr
 Nr
 Nr
-sz
+GE
 Jc
 kw
 nb
@@ -12282,7 +12302,7 @@ lO
 lO
 ye
 ye
-sz
+GE
 sz
 "}
 (45,1,1) = {"
@@ -12318,8 +12338,8 @@ tf
 Dj
 Nr
 zy
-sz
-sz
+GE
+GE
 Jc
 kw
 me
@@ -12545,7 +12565,7 @@ Vt
 Ni
 xq
 Nr
-sz
+GE
 kw
 kw
 kw
@@ -12620,7 +12640,7 @@ Nr
 OJ
 gu
 Zr
-sz
+GE
 lO
 lO
 Jc
@@ -12694,9 +12714,9 @@ xU
 Nr
 Nr
 Nr
-sz
-sz
-sz
+GE
+GE
+GE
 lO
 Jc
 Jc
@@ -12728,9 +12748,9 @@ gC
 lK
 qq
 lK
-WP
-sz
-sz
+Me
+GE
+GE
 sz
 sz
 sz
@@ -12768,10 +12788,10 @@ Pf
 NT
 Nr
 Zr
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
 lO
 Jc
 Jc
@@ -12842,12 +12862,12 @@ li
 li
 li
 gu
-sz
-sz
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
+GE
+GE
 lO
 Jc
 Jc
@@ -12878,8 +12898,8 @@ Kd
 lO
 lO
 lO
-sz
-sz
+GE
+GE
 sz
 sz
 sz
@@ -12916,14 +12936,14 @@ sz
 sz
 sz
 sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
+GE
+GE
+GE
+GE
 lO
 Jc
 Jc
@@ -12952,9 +12972,9 @@ gb
 gb
 gb
 gb
-DI
-sz
-sz
+Os
+GE
+GE
 sz
 sz
 sz
@@ -12991,15 +13011,15 @@ sz
 sz
 sz
 sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
+GE
+GE
+GE
+GE
+GE
 lO
 lO
 Jc
@@ -13029,7 +13049,7 @@ io
 gb
 lO
 lO
-sz
+GE
 sz
 sz
 sz
@@ -13067,15 +13087,15 @@ sz
 sz
 sz
 Jc
-sz
+GE
 lO
 Jc
 ye
-sz
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
+GE
 lO
 lO
 sx
@@ -13149,10 +13169,10 @@ ye
 Jc
 Jc
 lO
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
 sx
 Kc
 Lz
@@ -13225,9 +13245,9 @@ ye
 ye
 ye
 ye
-sz
-sz
-sz
+GE
+GE
+GE
 sx
 ep
 zu
@@ -13301,7 +13321,7 @@ ye
 Jc
 Jc
 ye
-sz
+GE
 YG
 sx
 sx
@@ -13376,9 +13396,9 @@ Jc
 Jc
 Jc
 Jc
-sz
-sz
-sz
+GE
+GE
+GE
 sx
 St
 lk
@@ -13404,8 +13424,8 @@ Rd
 jq
 gb
 ye
-sz
-sz
+GE
+GE
 sz
 sz
 sz
@@ -13453,7 +13473,7 @@ sz
 sz
 sz
 sz
-sz
+GE
 sx
 nm
 nm
@@ -13607,7 +13627,7 @@ Jc
 sx
 sx
 sx
-GE
+sx
 sx
 Bc
 Zj
@@ -13682,8 +13702,8 @@ Jc
 Jc
 ye
 ye
-lO
-sz
+hO
+GE
 Bc
 sC
 pX
@@ -13755,10 +13775,10 @@ sz
 sz
 Jc
 Jc
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
 Bc
 Lp
 fk
@@ -13829,11 +13849,11 @@ sz
 sz
 sz
 sz
-sz
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
+Is
 Bc
 Bc
 Bc
@@ -13853,9 +13873,9 @@ GG
 Mj
 Hg
 gb
-sz
-RV
-sz
+GE
+vV
+GE
 sz
 sz
 sz
@@ -13905,10 +13925,10 @@ sz
 sz
 sz
 sz
-sz
-sz
-sz
-ba
+GE
+GE
+GE
+ng
 Jc
 Jc
 Jc
@@ -13982,11 +14002,11 @@ sz
 sz
 sz
 sz
-sz
-sz
+GE
+GE
 ng
 Jc
-Os
+ye
 gb
 gb
 gb
@@ -14002,7 +14022,7 @@ AT
 Mn
 gb
 Jc
-sz
+GE
 ye
 lO
 sz
@@ -14062,7 +14082,7 @@ sz
 ng
 ng
 lO
-lO
+hO
 ye
 ye
 RV

@@ -153,17 +153,12 @@
 		SEND_SIGNAL(M, COMSIG_ADD_MOOD_EVENT, "fav_food", /datum/mood_event/favorite_food/russian)
 
 /datum/reagent/consumable/ethanol/vodka/on_mob_life(mob/living/carbon/M)
-
+	. = ..()
 	//Makes holy water generally good for Hallowed users.
 	//Holy water is tough to get in comparison to other medicine anyways.
 	if(HAS_TRAIT(M,TRAIT_RUSSIAN))
 		// Reduce disgust.
 		M.adjust_disgust(-3)
-
-		return
-
-	// Return normally.
-	. = ..()
 
 /datum/reagent/consumable/ethanol/vodka/on_mob_metabolize(mob/living/L)
 	. = ..()
@@ -184,4 +179,4 @@
 		var/mutable_appearance/forbearance = mutable_appearance('icons/effects/genetics.dmi', "servitude", -MUTATIONS_LAYER)
 		M.cut_overlay(forbearance)
 
-		M.cure_trauma_type(/datum/brain_trauma/special/godwoken)
+		M.cure_trauma_type(/datum/brain_trauma/special/godwoken, TRAUMA_RESILIENCE_ABSOLUTE)

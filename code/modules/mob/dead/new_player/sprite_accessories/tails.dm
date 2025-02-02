@@ -174,6 +174,34 @@
 	color_src = MATRIXED
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/tails/human/carp // BLUEMOON CHANGE ' /shark' to ' /carp' and 'name = ' to carp
+	name = "Carp"
+	icon_state = "carp"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails_animated/human/carp // BLUEMOON CHANGE ' /shark' to ' /carp' and 'name = ' to carp.
+	name = "Carp"
+	icon_state = "carp"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/human/datacarp // BLUEMOON CHANGE ' /datashark' to ' /datacarp' and 'name = ' to datacarp. Alphabeth ignored on puprose
+	name = "datacarp"
+	icon_state = "datacarp"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_BLUE
+
+/datum/sprite_accessory/tails_animated/human/datacarp // BLUEMOON CHANGE ' /datashark' to ' /datacarp' and 'name = ' to datacarp. Alphabeth ignored on puprose
+	name = "datacarp"
+	icon_state = "datacarp"
+	color_src = MATRIXED
+	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
+	matrixed_sections = MATRIX_RED_BLUE
+
 /datum/sprite_accessory/tails/human/corvid
 	name = "Corvid"
 	icon_state = "crow"
@@ -203,20 +231,6 @@
 /datum/sprite_accessory/tails_animated/human/dtiger
 	name = "Dark Tiger"
 	icon_state = "dtiger"
-
-/datum/sprite_accessory/tails/human/datashark
-	name = "datashark"
-	icon_state = "datashark"
-	color_src = MATRIXED
-	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
-	matrixed_sections = MATRIX_RED_BLUE
-
-/datum/sprite_accessory/tails_animated/human/datashark
-	name = "datashark"
-	icon_state = "datashark"
-	color_src = MATRIXED
-	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
-	matrixed_sections = MATRIX_RED_BLUE
 
 /datum/sprite_accessory/tails/human/eevee
 	name = "Eevee"
@@ -420,6 +434,17 @@
 	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/tails/mam_tails/sabresune // BLUEMOON CHANGE PORT from Citadel_Snowflake.dm file
+	name = "Sabresune"
+	icon_state = "sabresune"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/sabresune // BLUEMOON CHANGE PORT from Citadel_Snowflake.dm file
+	name = "Sabresune"
+	icon_state = "sabresune"
+	color_src = MATRIXED
+	matrixed_sections = MATRIX_RED_GREEN
+
 /datum/sprite_accessory/tails/human/sergal
 	name = "Sergal"
 	icon_state = "sergal"
@@ -436,33 +461,17 @@
 
 /datum/sprite_accessory/tails/human/shark
 	name = "Shark"
-	icon_state = "carp"
+	icon_state = "shark"
 	color_src = MATRIXED
 	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
 	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/tails_animated/human/shark
 	name = "Shark"
-	icon_state = "carp"
-	color_src = MATRIXED
-	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
-	matrixed_sections = MATRIX_RED
-
-/datum/sprite_accessory/tails/human/sharkalt
-	name = "Shark (alt)"
 	icon_state = "shark"
 	color_src = MATRIXED
 	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
 	matrixed_sections = MATRIX_RED
-
-/datum/sprite_accessory/tails_animated/human/sharkalt
-	name = "Shark (alt)"
-	icon_state = "shark"
-	color_src = MATRIXED
-	icon = 'modular_citadel/icons/mob/mam_tails.dmi'
-	matrixed_sections = MATRIX_RED
-
-
 
 /datum/sprite_accessory/tails/human/skunk
 	name = "Skunk"
@@ -699,6 +708,24 @@
 	icon_state = "twocat"
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/tails/mam_tails/carp // BLUEMOON CHANGE ' /shark' to ' /carp' and 'name = ' to carp
+	name = "Carp"
+	icon_state = "carp"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/carp // BLUEMOON CHANGE ' /shark' to ' /carp' and 'name = ' to carp
+	name = "Carp"
+	icon_state = "carp"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails/mam_tails/carp/datacarp //BLUEMOON CHANGE ' /datashark' to ' /datacarp' and 'name = ' to datacarp. Alphabeth ignored on puprose
+	name = "DataCarp"
+	icon_state = "datacarp"
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/carp/datacarp // BLUEMOON CHANGE ' /datashark' to ' /datacarp' and 'name = ' to datacarp. Alphabeth ignored on puprose
+	name = "DataCarp"
+	icon_state = "datacarp"
+
 /datum/sprite_accessory/tails/mam_tails/corvid
 	name = "Corvid"
 	icon_state = "crow"
@@ -761,16 +788,6 @@
 	icon_state = "fish"
 	matrixed_sections = MATRIX_RED
 
-/datum/sprite_accessory/tails/mam_tails/fish_alt //BLUEMOON ADD
-	name = "Fish alt"
-	icon_state = "fish_alt"
-	matrixed_sections = MATRIX_RED
-
-/datum/sprite_accessory/tails_animated/mam_tails_animated/fish_alt //BLUEMOON ADD
-	name = "Fish alt"
-	icon_state = "fish_alt"
-	matrixed_sections = MATRIX_RED
-
 /datum/sprite_accessory/tails/mam_tails/fox
 	name = "Fox"
 	icon_state = "fox"
@@ -779,16 +796,6 @@
 /datum/sprite_accessory/tails_animated/mam_tails_animated/fox
 	name = "Fox"
 	icon_state = "fox"
-	matrixed_sections = MATRIX_RED_GREEN
-
-/datum/sprite_accessory/tails/mam_tails/fox_alt //BLUEMOON ADD bubber nova TG port
-	name = "Fox alt"
-	icon_state = "fox_alt"
-	matrixed_sections = MATRIX_RED_GREEN
-
-/datum/sprite_accessory/tails_animated/mam_tails_animated/fox_alt //BLUEMOON ADD bubber nova TG port
-	name = "Fox alt"
-	icon_state = "fox_alt"
 	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/tails/mam_tails/hawk
@@ -873,6 +880,16 @@
 	color_src = MUTCOLORS
 	icon = 'icons/mob/mutant_bodyparts.dmi'
 
+/datum/sprite_accessory/tails/mam_tails/lunasune // BLUEMOON CHANGE PORT from Citadel_Snowflake.dm file also added matrix
+	name = "lunasune"
+	icon_state = "lunasune"
+	matrixed_sections = MATRIX_RED
+
+/datum/sprite_accessory/tails_animated/mam_tails_animated/lunasune // BLUEMOON CHANGE PORT from Citadel_Snowflake.dm file also added matrix
+	name = "lunasune"
+	icon_state = "lunasune"
+	matrixed_sections = MATRIX_RED
+
 /datum/sprite_accessory/tails/mam_tails/murid // BLUEMOON Fink edited
 	name = "Murid"
 	icon_state = "murid"
@@ -951,21 +968,11 @@
 
 /datum/sprite_accessory/tails/mam_tails/shark
 	name = "Shark"
-	icon_state = "carp"
+	icon_state = "shark"
 	matrixed_sections = MATRIX_RED
 
 /datum/sprite_accessory/tails_animated/mam_tails_animated/shark
 	name = "Shark"
-	icon_state = "carp"
-	matrixed_sections = MATRIX_RED
-
-/datum/sprite_accessory/tails/mam_tails/sharkalt
-	name = "Shark (alt)"
-	icon_state = "shark"
-	matrixed_sections = MATRIX_RED
-
-/datum/sprite_accessory/tails_animated/mam_tails_animated/sharkalt
-	name = "Shark (alt)"
 	icon_state = "shark"
 	matrixed_sections = MATRIX_RED
 

@@ -1,7 +1,7 @@
 /obj/item/stamp_block
 	name = "wooden block"
 	desc = "A hatchet-hewn middle-sized wooden block. Too tough to carve anything out of."
-	icon = './modular_bluemoon/_balaam/replica_stamps/icons/items.dmi'
+	icon = './modular_bluemoon/replica_stamps/icons/items.dmi'
 	icon_state = "block"
 
 /obj/item/stamp_block/attackby(obj/item/T, mob/user, params)
@@ -21,7 +21,7 @@
 /obj/item/stamp_base
 	name = "wooden stamp base"
 	desc = "A blank stamp base, sloppily cut from a block of wood. It lacks any marking."
-	icon = './modular_bluemoon/_balaam/replica_stamps/icons/items.dmi'
+	icon = './modular_bluemoon/replica_stamps/icons/items.dmi'
 	icon_state = "stamp"
 	custom_materials = list(/datum/material/wood=60)
 	pressure_resistance = 2

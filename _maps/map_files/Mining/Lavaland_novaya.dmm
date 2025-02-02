@@ -9823,7 +9823,8 @@
 "jJb" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
-	dir = 1
+	dir = 1;
+	flags_1 = 2
 	},
 /turf/open/floor/iron,
 /area/ruin/lavaland/unpowered/deepspaceone/dormitories)
@@ -14335,7 +14336,8 @@
 "nyy" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
-	dir = 1
+	dir = 1;
+	flags_1 = 2
 	},
 /obj/machinery/airalarm/directional/south{
 	req_access = list("syndicate")

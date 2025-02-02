@@ -2126,7 +2126,8 @@
 "Kf" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
-	dir = 4
+	dir = 4;
+	flags_1 = 2
 	},
 /turf/open/floor/wood{
 	icon_state = "large_wood"
@@ -2435,7 +2436,8 @@
 "QP" = (
 /obj/structure/table,
 /obj/machinery/chem_dispenser/drinks/fullupgrade{
-	dir = 4
+	dir = 4;
+	flags_1 = 2
 	},
 /turf/open/floor/wood{
 	icon_state = "large_wood"

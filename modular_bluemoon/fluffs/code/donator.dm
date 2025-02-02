@@ -1118,3 +1118,30 @@
 	path = /obj/item/clothing/under/rank/security/detective/grey/skirt/no_armor
 	ckeywhitelist = list("famas098")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/letuale
+	name = "Элегантное красное платье"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/rank/civilian/ElegantRedDress
+	ckeywhitelist = list("loonel")
+
+/datum/gear/donator/bm/papermaskunderhair
+	name = "The paper mask"
+	slot = ITEM_SLOT_MASK
+	path = /obj/item/clothing/mask/paper/underhair
+	ckeywhitelist = list("kijoking")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/sierra_shock_collar
+	name = "Shock Collar"
+	slot = ITEM_SLOT_POCKETS
+	path = /obj/item/electropack/shockcollar
+	ckeywhitelist = list("sierra_iv")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/sierra_remotecontrol
+	name = "remote signaling device"
+	slot = ITEM_SLOT_POCKETS
+	path = /obj/item/assembly/signaler
+	ckeywhitelist = list("sierra_iv")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02

@@ -9558,6 +9558,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
+/obj/effect/landmark/xeno_spawn,
 /turf/open/floor/plating,
 /area/maintenance/department/electrical)
 "axb" = (
@@ -11478,7 +11479,7 @@
 "aDf" = (
 /obj/machinery/computer/secure_data,
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Arrival Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},
@@ -12943,11 +12944,8 @@
 /area/hallway/secondary/entry)
 "aHw" = (
 /obj/effect/landmark/event_spawn,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 10
-	},
 /turf/open/floor/carpet/black,
-/area/commons/dorms)
+/area/commons/arcade)
 "aHx" = (
 /obj/effect/spawner/structure/window/plasma,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -22417,7 +22415,7 @@
 	c_tag = "Security Post - Medbay"
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Medbay Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},
@@ -29785,7 +29783,7 @@
 /area/hallway/primary/central)
 "byO" = (
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Cargo Checkpoint";
 	departmentType = 5;
 	pixel_y = -30
 	},
@@ -31164,7 +31162,7 @@
 	dir = 1
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Science Checkpoint";
 	departmentType = 5;
 	pixel_y = -30
 	},
@@ -39713,7 +39711,7 @@
 /area/security/checkpoint/engineering)
 "bXP" = (
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Engineering Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},
@@ -54654,6 +54652,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/landmark/xeno_spawn,
 /turf/open/floor/plating,
 /area/service/abandoned_gambling_den/secondary)
 "hSf" = (
@@ -57910,7 +57909,6 @@
 	dir = 4
 	},
 /obj/item/soap,
-/obj/effect/landmark/xeno_spawn,
 /turf/open/floor/plasteel/freezer,
 /area/commons/toilet)
 "lQG" = (
@@ -100477,7 +100475,7 @@ aqk
 ctq
 aqo
 eQb
-aHw
+blU
 avn
 awv
 axX
@@ -101515,7 +101513,7 @@ cHf
 tZp
 wxk
 xwB
-lWD
+aHw
 dvb
 aJC
 nNF
