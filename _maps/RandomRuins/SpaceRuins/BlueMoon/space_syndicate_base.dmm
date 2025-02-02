@@ -85,7 +85,9 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "ak" = (
-/obj/effect/turf_decal/siding/wood,
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/command{
@@ -1144,7 +1146,9 @@
 	level = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/iron/dark/textured_half,
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 1
+	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "dQ" = (
 /obj/effect/turf_decal/siding/wood{
@@ -3069,7 +3073,9 @@
 /obj/effect/turf_decal/trimline/dark_red/corner{
 	dir = 8
 	},
-/turf/open/floor/iron/dark/textured_half,
+/turf/open/floor/iron/dark/textured_corner{
+	dir = 8
+	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "lD" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
@@ -3432,7 +3438,9 @@
 /obj/effect/turf_decal/trimline/dark_red/mid_joiner{
 	dir = 8
 	},
-/turf/open/floor/iron/dark/textured_half,
+/turf/open/floor/iron/dark/textured_corner{
+	dir = 4
+	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "nd" = (
 /obj/effect/turf_decal/trimline/blue/line{
@@ -3665,7 +3673,9 @@
 	dir = 9
 	},
 /obj/effect/turf_decal/trimline/dark_red/corner,
-/turf/open/floor/iron/dark/textured_half,
+/turf/open/floor/iron/dark/textured_corner{
+	dir = 2
+	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "og" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
@@ -3748,7 +3758,7 @@
 	},
 /obj/effect/turf_decal/trimline/dark_red/mid_joiner,
 /obj/effect/turf_decal/siding/thinplating/dark,
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "ov" = (
 /obj/structure/disposalpipe/segment{
@@ -4355,7 +4365,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "qK" = (
 /obj/effect/turf_decal/siding/dark{
@@ -4871,7 +4881,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
-/turf/open/floor/iron/dark/smooth_corner{
+/turf/open/floor/iron/dark/textured_corner{
 	dir = 4
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
@@ -6191,7 +6201,7 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
-/turf/open/floor/iron/dark/smooth_corner{
+/turf/open/floor/iron/dark/textured_corner{
 	dir = 1
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
@@ -6548,7 +6558,7 @@
 	dir = 1
 	},
 /obj/effect/turf_decal/siding/thinplating/dark,
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "Aw" = (
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
@@ -8134,8 +8144,8 @@
 /obj/effect/turf_decal/trimline/dark_red/corner{
 	dir = 1
 	},
-/turf/open/floor/iron/dark/textured_half{
-	dir = 1
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 4
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "Ht" = (
@@ -8159,7 +8169,7 @@
 	},
 /obj/effect/turf_decal/trimline/dark_red/mid_joiner,
 /obj/effect/turf_decal/siding/thinplating/dark,
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "Hu" = (
 /obj/structure/closet/crate,
@@ -10873,21 +10883,19 @@
 	anchorable = 0;
 	anchored = 1
 	},
-/obj/effect/turf_decal/trimline/dark_red/corner,
-/obj/effect/turf_decal/trimline/dark_red/corner{
-	dir = 8
-	},
 /obj/machinery/camera/xray/directional/south{
 	c_tag = "DS-2 Bridge";
 	network = list("ds2")
 	},
 /obj/structure/extinguisher_cabinet/directional/south,
+/obj/effect/turf_decal/trimline/dark_red/line,
 /obj/effect/turf_decal/trimline/dark_red/line{
 	dir = 1
 	},
 /obj/effect/turf_decal/trimline/dark_red/mid_joiner{
 	dir = 1
 	},
+/obj/effect/turf_decal/trimline/dark_red/mid_joiner,
 /turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "Sj" = (
@@ -10964,7 +10972,7 @@
 	},
 /obj/effect/turf_decal/trimline/dark_red/mid_joiner,
 /obj/effect/turf_decal/siding/thinplating/dark,
-/turf/open/floor/iron/dark/textured_large,
+/turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "Sy" = (
 /obj/effect/turf_decal/siding/dark,
@@ -11516,8 +11524,8 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/trimline/dark_red/corner,
-/turf/open/floor/iron/dark/textured_half{
-	dir = 1
+/turf/open/floor/iron/dark/textured_edge{
+	dir = 8
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "Us" = (
@@ -12497,7 +12505,9 @@
 /obj/effect/turf_decal/trimline/dark_red/mid_joiner{
 	dir = 4
 	},
-/turf/open/floor/iron/dark/textured_half,
+/turf/open/floor/iron/dark/textured_corner{
+	dir = 1
+	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "XP" = (
 /obj/structure/window/reinforced/tinted{
@@ -12821,7 +12831,7 @@
 /obj/effect/turf_decal/trimline/dark_red/mid_joiner{
 	dir = 4
 	},
-/turf/open/floor/iron/dark/smooth_corner{
+/turf/open/floor/iron/dark/textured_corner{
 	dir = 1
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
