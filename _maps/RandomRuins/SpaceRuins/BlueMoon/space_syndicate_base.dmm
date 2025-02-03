@@ -65,10 +65,10 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "ah" = (
-/obj/structure/chair/office/dark{
-	dir = 4
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
 	},
-/turf/open/floor/wood/wood_parquet,
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "aj" = (
 /obj/structure/frame/machine{
@@ -5081,9 +5081,13 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "tH" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
+/obj/structure/closet/secure_closet/personal{
+	icon_state = "cabinet"
 	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/obj/item/clothing/under/syndicate/baseball,
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "tJ" = (
@@ -7387,14 +7391,10 @@
 /turf/open/floor/iron/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "DV" = (
-/obj/structure/closet/secure_closet/personal{
-	icon_state = "cabinet"
-	},
-/obj/effect/turf_decal/siding/wood/corner{
+/obj/structure/chair/office/dark{
 	dir = 4
 	},
-/obj/item/clothing/under/syndicate/baseball,
-/turf/open/floor/carpet/blackred,
+/turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "DZ" = (
 /obj/machinery/airalarm/syndicate{
@@ -9118,6 +9118,10 @@
 "KY" = (
 /obj/structure/extinguisher_cabinet/directional/south,
 /obj/effect/turf_decal/siding/thinplating/dark,
+/obj/machinery/camera/xray/directional/south{
+	c_tag = "DS-2 Dormitories 2";
+	network = list("ds2")
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "Lb" = (
@@ -13230,7 +13234,7 @@ wg
 nO
 Kf
 Kf
-DV
+tH
 EP
 mX
 Fq
@@ -13451,7 +13455,7 @@ Az
 Kf
 qc
 qc
-ah
+DV
 kF
 pX
 uS
@@ -13780,7 +13784,7 @@ nn
 Pe
 Kf
 qs
-tH
+ah
 QO
 uV
 xy
