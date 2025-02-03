@@ -1372,10 +1372,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "eU" = (
-/obj/structure/chair/office/dark{
-	dir = 1
-	},
-/turf/open/floor/wood/wood_parquet,
+/obj/structure/bed/double,
+/obj/item/bedsheet/brown/double,
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "eV" = (
 /obj/effect/turf_decal/tile/dark_blue{
@@ -2448,11 +2447,11 @@
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "iZ" = (
-/obj/structure/table/wood/fancy/black,
 /obj/item/flashlight/lamp/green{
 	pixel_x = -4;
 	pixel_y = 2
 	},
+/obj/structure/table/wood/fancy/blackred,
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "jb" = (
@@ -2844,9 +2843,14 @@
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "km" = (
-/obj/structure/table/wood/fancy/black,
-/obj/machinery/light/dim/directional/north,
-/turf/open/floor/wood/wood_parquet,
+/obj/structure/closet/secure_closet/personal{
+	icon_state = "cabinet"
+	},
+/obj/item/clothing/under/costume/jabroni{
+	has_sensor = 0
+	},
+/obj/item/storage/wallet/random,
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "kt" = (
 /obj/effect/turf_decal/stripes/end{
@@ -4244,14 +4248,12 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "qs" = (
-/obj/structure/window/reinforced/survival_pod{
+/obj/structure/sign/flag/syndicate/directional/north,
+/obj/machinery/light/dim/directional/north,
+/obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
-/obj/structure/table/wood/fancy/black,
-/obj/structure/sign/flag/syndicate/directional/north,
-/obj/item/paper_bin,
-/obj/item/pen,
-/turf/open/floor/wood/wood_parquet,
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "qt" = (
 /obj/effect/turf_decal/trimline/brown/warning,
@@ -5080,9 +5082,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "tH" = (
-/obj/structure/dresser,
 /obj/effect/turf_decal/siding/wood{
-	dir = 4
+	dir = 8
 	},
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
@@ -5973,7 +5974,6 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "xD" = (
-/obj/structure/table/wood/fancy/black,
 /obj/item/flashlight/lamp/green{
 	pixel_x = -4;
 	pixel_y = 2
@@ -5984,6 +5984,7 @@
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
+/obj/structure/table/wood/fancy/blackred,
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "xE" = (
@@ -7221,6 +7222,12 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 5
 	},
+/obj/item/kirbyplants/hedge{
+	anchored = 1
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "Dy" = (
@@ -8055,13 +8062,6 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo)
 "GL" = (
-/obj/structure/closet/secure_closet/personal{
-	icon_state = "cabinet"
-	},
-/obj/item/clothing/under/costume/jabroni{
-	has_sensor = 0
-	},
-/obj/item/storage/wallet/random,
 /obj/machinery/button/door{
 	id = "TESRedguard";
 	name = "Dorm Bolt Control";
@@ -8073,10 +8073,10 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
 	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
+/obj/item/kirbyplants/hedge{
+	anchored = 1
 	},
-/turf/open/floor/carpet/blackred,
+/turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "GO" = (
 /obj/effect/turf_decal/stripes/red/corner,
@@ -10111,6 +10111,14 @@
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 9
 	},
+/obj/machinery/button/door/directional/north{
+	req_access_txt = "150";
+	name = "Dorms Blast Door Control";
+	desc = "To keep your sleepy heads away from the carp.";
+	id = "dorms-view";
+	pixel_x = 6;
+	pixel_y = 30
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "OK" = (
@@ -10670,13 +10678,14 @@
 /turf/open/floor/iron/white/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "QO" = (
-/obj/item/kirbyplants/hedge{
-	anchored = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 8
 	},
-/turf/open/floor/wood/wood_parquet,
+/obj/structure/dresser,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "QQ" = (
 /obj/effect/turf_decal/siding/dark{
@@ -13601,8 +13610,8 @@ Zz
 KY
 Kf
 Kf
-gb
-iZ
+AU
+lz
 uV
 uV
 uV
@@ -13656,8 +13665,8 @@ Tr
 xH
 Kf
 GL
-DE
-tH
+qc
+tR
 uV
 it
 QH
@@ -13766,7 +13775,7 @@ nn
 Pe
 Kf
 qs
-qc
+tH
 QO
 uV
 xy
@@ -13822,7 +13831,7 @@ Lf
 Kf
 km
 eU
-dW
+iZ
 uV
 VC
 Ii
