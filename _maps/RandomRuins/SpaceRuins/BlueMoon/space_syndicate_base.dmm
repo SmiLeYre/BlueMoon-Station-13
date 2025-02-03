@@ -65,11 +65,11 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "ah" = (
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
-	dir = 1
+/obj/structure/chair/office/dark{
+	dir = 4
 	},
-/turf/open/floor/iron/white/textured_large,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
+/turf/open/floor/wood/wood_parquet,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "aj" = (
 /obj/structure/frame/machine{
 	anchored = 1;
@@ -1777,11 +1777,11 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 8
-	},
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 5
 	},
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
@@ -2171,11 +2171,11 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo/hangar)
 "hP" = (
 /obj/machinery/light/dim/directional/east,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
-	dir = 8
-	},
 /obj/machinery/vending/cigarette,
 /obj/effect/turf_decal/stripes/red/corner{
+	dir = 8
+	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 8
 	},
 /turf/open/floor/iron/dark/small,
@@ -3489,11 +3489,11 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "nj" = (
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
-	dir = 4
+	dir = 8
 	},
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
@@ -4511,14 +4511,14 @@
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
 "rj" = (
-/obj/machinery/door/airlock/grunge{
-	id_tag = "TESBattlespire";
-	name = "Dormitory"
-	},
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
+/obj/machinery/door/airlock/grunge{
+	id_tag = "TESBattlespire";
+	name = "Dormitory"
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "rk" = (
@@ -4620,9 +4620,6 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "rH" = (
 /obj/machinery/light/dim/directional/west,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	dir = 4
-	},
 /turf/open/floor/carpet/blue,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "rI" = (
@@ -4666,13 +4663,15 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "rQ" = (
-/obj/structure/window/reinforced/survival_pod{
+/obj/structure/table/wood/fancy/blackred,
+/obj/item/flashlight/lamp/green{
+	pixel_x = -4;
+	pixel_y = 2
+	},
+/obj/effect/turf_decal/siding/wood{
 	dir = 4
 	},
-/obj/item/kirbyplants/hedge{
-	anchored = 1
-	},
-/turf/open/floor/wood/wood_parquet,
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "rU" = (
 /obj/structure/sink/directional/east{
@@ -5244,6 +5243,9 @@
 /obj/item/kitchen/rollingpin,
 /obj/item/storage/box/drinkingglasses,
 /obj/effect/turf_decal/bot_white,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 4
+	},
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "ue" = (
@@ -5974,18 +5976,16 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "xD" = (
-/obj/item/flashlight/lamp/green{
-	pixel_x = -4;
-	pixel_y = 2
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 1
 	},
-/obj/effect/turf_decal/siding/wood{
+/obj/structure/window/reinforced/survival_pod{
 	dir = 8
 	},
-/obj/structure/table/wood/fancy/blackred,
-/turf/open/floor/carpet/blackred,
+/obj/item/kirbyplants/hedge{
+	anchored = 1
+	},
+/turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "xE" = (
 /obj/effect/turf_decal/box/red/corners{
@@ -6528,7 +6528,7 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "Al" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
-	dir = 6
+	dir = 4
 	},
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
@@ -7348,7 +7348,8 @@
 	},
 /obj/machinery/door/firedoor,
 /obj/machinery/door/airlock/public/glass{
-	name = "Dormitories"
+	name = "Dormitories";
+	req_access_txt = "150"
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -7389,10 +7390,10 @@
 /obj/structure/closet/secure_closet/personal{
 	icon_state = "cabinet"
 	},
-/obj/item/clothing/under/syndicate/baseball,
 /obj/effect/turf_decal/siding/wood/corner{
-	dir = 1
+	dir = 4
 	},
+/obj/item/clothing/under/syndicate/baseball,
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "DZ" = (
@@ -7501,6 +7502,7 @@
 	dir = 1
 	},
 /obj/item/reagent_containers/rag/towel/syndicate,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "Ey" = (
@@ -8263,16 +8265,15 @@
 /turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "Hu" = (
-/obj/structure/window/reinforced/survival_pod{
-	dir = 4
-	},
-/obj/item/kirbyplants/hedge{
-	anchored = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
 	},
-/turf/open/floor/wood/wood_parquet,
+/obj/structure/bed/double,
+/obj/item/bedsheet/brown/double,
+/obj/effect/turf_decal/siding/wood{
+	dir = 5
+	},
+/turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "Hw" = (
 /obj/structure/disposalpipe/segment{
@@ -9483,17 +9484,14 @@
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "MA" = (
-/obj/structure/bed/double{
-	dir = 1
-	},
-/obj/item/bedsheet/brown/double{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/obj/effect/turf_decal/siding/wood{
-	dir = 9
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8
 	},
-/turf/open/floor/carpet/blackred,
+/obj/item/kirbyplants/hedge{
+	anchored = 1
+	},
+/turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "MB" = (
 /obj/structure/cable,
@@ -9643,7 +9641,14 @@
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo)
 "Ne" = (
-/obj/machinery/vending/kink,
+/obj/machinery/vending/kink{
+	shut_up = 1
+	},
+/obj/structure/curtain{
+	open = 1;
+	color = "#555555";
+	alpha = 255
+	},
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "Ng" = (
@@ -13225,8 +13230,8 @@ wg
 nO
 Kf
 Kf
-lz
-AU
+DV
+EP
 mX
 Fq
 rH
@@ -13279,9 +13284,9 @@ WE
 WE
 Kf
 Kf
-qc
-qc
-tR
+Et
+RP
+Jp
 kF
 Ew
 gA
@@ -13291,7 +13296,7 @@ fy
 UR
 Xm
 Jl
-vc
+VT
 kM
 Vp
 Vp
@@ -13304,7 +13309,7 @@ yh
 Ua
 Ua
 Al
-ah
+Ua
 Ua
 Jf
 NB
@@ -13444,9 +13449,9 @@ UT
 Ir
 Az
 Kf
-Et
-RP
-Jp
+qc
+qc
+ah
 kF
 pX
 uS
@@ -13500,8 +13505,8 @@ ok
 Qu
 Kf
 Kf
-DV
-EP
+lz
+AU
 kF
 Dz
 Gh
@@ -13610,8 +13615,8 @@ Zz
 KY
 Kf
 Kf
-AU
 lz
+AU
 uV
 uV
 uV
