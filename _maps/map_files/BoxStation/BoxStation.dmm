@@ -32928,6 +32928,12 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/medical/medbay/factory)
+"cqh" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 4
+	},
+/turf/open/floor/plasteel,
+/area/commons/fitness)
 "cqn" = (
 /obj/structure/grille,
 /turf/open/floor/plating,
@@ -36558,8 +36564,16 @@
 /turf/closed/wall,
 /area/service/lawoffice)
 "cIw" = (
-/obj/item/kirbyplants/random,
-/turf/open/floor/wood/wood_diagonal,
+/obj/effect/turf_decal/tile/dark_green/opposingcorners{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/dark_green{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
 /area/service/park)
 "cIG" = (
 /turf/open/floor/plasteel/white,
@@ -39739,14 +39753,12 @@
 /turf/open/floor/plasteel/white,
 /area/medical/virology)
 "ecN" = (
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/effect/turf_decal/siding/wood/corner{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/effect/turf_decal/siding/wood{
 	dir = 1
 	},
-/turf/open/floor/plasteel/dark,
-/area/service/park)
+/turf/open/floor/plasteel,
+/area/commons/fitness)
 "ecZ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -40021,11 +40033,12 @@
 	},
 /area/service/theater)
 "ekD" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 4
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 0;
+	pixel_y = 32
 	},
-/turf/open/floor/plasteel,
-/area/commons/fitness)
+/turf/open/floor/plasteel/dark,
+/area/commons/dorms)
 "ekP" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 1
@@ -40567,10 +40580,10 @@
 /turf/open/floor/plasteel,
 /area/medical/virology)
 "eBv" = (
-/obj/structure/flora/tree/jungle/small,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
 	},
+/obj/structure/flora/ausbushes/ywflowers,
 /turf/open/floor/grass,
 /area/service/park)
 "eBX" = (
@@ -46491,6 +46504,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/security/detectives_office/private_investigators_office/investigators_room)
+"hHJ" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/service/park)
 "hHM" = (
 /obj/machinery/light,
 /turf/open/floor/wood,
@@ -47052,13 +47071,13 @@
 /turf/open/floor/wood,
 /area/service/library)
 "iaw" = (
-/obj/structure/flora/ausbushes/ywflowers,
 /obj/effect/turf_decal/siding/wood/corner{
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 8
 	},
+/obj/structure/flora/tree/jungle/small,
 /turf/open/floor/grass,
 /area/service/park)
 "iaB" = (
@@ -58277,18 +58296,6 @@
 	},
 /turf/open/floor/plating/airless,
 /area/maintenance/disposal/incinerator)
-"obP" = (
-/obj/effect/turf_decal/tile/dark_green/opposingcorners{
-	dir = 1
-	},
-/obj/effect/turf_decal/tile/dark_green{
-	dir = 1
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 1
-	},
-/turf/open/floor/plasteel/dark,
-/area/service/park)
 "oce" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
@@ -62572,8 +62579,12 @@
 /turf/open/floor/plasteel/dark,
 /area/ai_monitored/security/armory)
 "qBx" = (
-/obj/effect/turf_decal/siding/wood/corner{
-	dir = 1
+/obj/effect/turf_decal/tile/dark_green/opposingcorners,
+/obj/effect/turf_decal/tile/dark_green{
+	dir = 4
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 4
 	},
 /turf/open/floor/plasteel/dark,
 /area/service/park)
@@ -68900,20 +68911,9 @@
 	},
 /turf/open/floor/plasteel,
 /area/cargo/office)
-"ucs" = (
-/obj/effect/turf_decal/tile/dark_green/opposingcorners,
-/obj/effect/turf_decal/tile/dark_green{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
-/turf/open/floor/plasteel/dark,
-/area/service/park)
 "ucE" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /obj/effect/turf_decal/siding/wood{
-	dir = 1
+	dir = 5
 	},
 /turf/open/floor/plasteel,
 /area/commons/fitness)
@@ -69816,12 +69816,9 @@
 /turf/open/floor/plasteel,
 /area/service/hydroponics)
 "uEq" = (
-/obj/structure/extinguisher_cabinet{
-	pixel_x = 0;
-	pixel_y = 32
-	},
-/turf/open/floor/plasteel/dark,
-/area/commons/dorms)
+/obj/item/kirbyplants/random,
+/turf/open/floor/wood/wood_diagonal,
+/area/service/park)
 "uEG" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -72068,6 +72065,15 @@
 	},
 /turf/open/floor/plating,
 /area/command/bridge)
+"vQc" = (
+/obj/structure/flora/tree/jungle/small,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/grass,
+/area/service/park)
 "vQf" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -72164,6 +72170,15 @@
 /obj/structure/frame/machine,
 /turf/open/floor/plasteel/dark,
 /area/science/circuit)
+"vTw" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/turf/open/floor/plasteel/dark,
+/area/service/park)
 "vTP" = (
 /obj/machinery/door/airlock/external{
 	name = "Labor Camp Shuttle Airlock";
@@ -72809,12 +72824,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/command/teleporter)
-"wjC" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 5
-	},
-/turf/open/floor/plasteel,
-/area/commons/fitness)
 "wjQ" = (
 /obj/machinery/door/firedoor,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
@@ -73303,10 +73312,6 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel,
 /area/security/prison/upper)
-"wxy" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/turf/open/floor/wood/wood_diagonal,
-/area/commons/fitness)
 "wyA" = (
 /obj/structure/table,
 /obj/item/storage/backpack/duffelbag/sec/surgery,
@@ -75646,14 +75651,9 @@
 /turf/open/floor/plasteel/dark,
 /area/commons/dorms)
 "xXg" = (
-/obj/structure/flora/tree/jungle/small,
-/obj/machinery/firealarm{
-	dir = 4;
-	pixel_x = 0;
-	pixel_y = 32
-	},
-/turf/open/floor/grass,
-/area/service/park)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/turf/open/floor/wood/wood_diagonal,
+/area/commons/fitness)
 "xXh" = (
 /obj/machinery/holopad,
 /turf/open/floor/wood,
@@ -112311,7 +112311,7 @@ gXs
 aaa
 aaa
 lXr
-xXg
+vQc
 nUT
 mMI
 uHB
@@ -112322,8 +112322,8 @@ egM
 oyc
 oQA
 xoY
-wjC
-ekD
+ucE
+cqh
 fHG
 vWh
 ghD
@@ -112579,8 +112579,8 @@ fLM
 lkr
 xde
 gGX
-wxy
-ucE
+xXg
+ecN
 ghD
 euw
 ltW
@@ -113104,7 +113104,7 @@ arf
 arf
 arf
 arf
-uEq
+ekD
 eSR
 asd
 dtn
@@ -113348,7 +113348,7 @@ nfW
 duP
 cFY
 pgT
-ucs
+qBx
 nHQ
 sWo
 eOJ
@@ -113862,7 +113862,7 @@ bBw
 sad
 xkq
 pgT
-cIw
+uEq
 omM
 lig
 sYW
@@ -114376,9 +114376,9 @@ eUU
 sad
 eDt
 pgT
-cIw
+uEq
 omM
-obP
+cIw
 sYW
 fHG
 ahm
@@ -114635,7 +114635,7 @@ sad
 qQS
 sad
 kwp
-qBx
+hHJ
 wlc
 fHG
 ahm
@@ -114891,7 +114891,7 @@ hoG
 hoG
 pgT
 vDt
-ecN
+vTw
 uab
 sYW
 fHG
