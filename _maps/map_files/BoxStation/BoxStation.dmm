@@ -38389,10 +38389,6 @@
 	},
 /turf/open/floor/carpet,
 /area/service/chapel/main)
-"duP" = (
-/obj/structure/flora/grass/jungle,
-/turf/open/floor/wood/wood_diagonal,
-/area/service/park)
 "duS" = (
 /obj/structure/lattice,
 /obj/structure/grille,
@@ -39438,10 +39434,6 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/security/prison/cells)
-"dRH" = (
-/obj/structure/flora/grass/jungle/b,
-/turf/open/floor/wood/wood_diagonal,
-/area/service/park)
 "dSv" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -49745,11 +49737,7 @@
 /obj/structure/chair/pew{
 	dir = 1
 	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on{
-	external_pressure_bound = 140;
-	name = "killroom vent";
-	pressure_checks = 0
-	},
+/obj/machinery/atmospherics/components/unary/vent_pump/on,
 /turf/open/floor/grass,
 /area/service/park)
 "jtf" = (
@@ -57742,12 +57730,6 @@
 	dir = 5
 	},
 /area/medical/medbay/zone2)
-"nEl" = (
-/obj/structure/flora/grass/jungle/b{
-	icon_state = "grassa1"
-	},
-/turf/open/floor/wood/wood_diagonal,
-/area/service/park)
 "nEu" = (
 /turf/closed/wall,
 /area/medical/surgery)
@@ -70165,7 +70147,6 @@
 /turf/open/floor/plasteel,
 /area/service/hydroponics)
 "uEq" = (
-/obj/structure/flora/tree/jungle/small,
 /obj/machinery/firealarm{
 	dir = 4;
 	pixel_x = 0;
@@ -70939,6 +70920,7 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 6
 	},
+/obj/structure/flora/tree/jungle/small,
 /turf/open/floor/grass,
 /area/service/park)
 "vcx" = (
@@ -73790,11 +73772,11 @@
 /turf/open/floor/plasteel/cafeteria,
 /area/security/prison/upper)
 "wAN" = (
-/obj/structure/flora/tree/jungle,
 /obj/effect/turf_decal/siding/wood,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/structure/flora/tree/jungle,
 /turf/open/floor/grass,
 /area/service/park)
 "wAU" = (
@@ -74976,6 +74958,9 @@
 	},
 /obj/effect/turf_decal/tile/green,
 /obj/effect/mapping_helpers/airlock/access/any/medical/virology,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden{
+	dir = 4
+	},
 /turf/open/floor/plasteel,
 /area/medical/virology)
 "xmS" = (
@@ -113232,7 +113217,7 @@ gnP
 ddb
 spY
 oOe
-nEl
+sad
 djp
 lXr
 lXr
@@ -113489,7 +113474,7 @@ vuI
 jAP
 spY
 npI
-dRH
+sad
 tlX
 lXr
 prj
@@ -113746,7 +113731,7 @@ mes
 vys
 vys
 nfW
-duP
+sad
 cFY
 pgT
 lig
