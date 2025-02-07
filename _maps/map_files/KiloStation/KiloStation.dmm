@@ -39,6 +39,10 @@
 /obj/structure/table,
 /obj/item/paper_bin,
 /obj/item/pen,
+/obj/item/stack/sheet/plastic/five{
+	pixel_x = 11;
+	pixel_y = 8
+	},
 /turf/open/floor/plasteel/dark,
 /area/science/robotics/lab)
 "aae" = (

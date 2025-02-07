@@ -16108,13 +16108,17 @@
 /turf/open/floor/plasteel,
 /area/science/lab)
 "aCI" = (
+/obj/item/stack/sheet/plastic/five{
+	pixel_x = 7;
+	pixel_y = 7
+	},
 /obj/item/stack/sheet/glass/fifty{
 	pixel_x = 3;
 	pixel_y = 3
 	},
 /obj/item/stack/sheet/metal/fifty,
-/obj/item/clothing/glasses/welding,
 /obj/structure/table,
+/obj/item/clothing/glasses/welding,
 /obj/machinery/requests_console{
 	department = "Science";
 	departmentType = 2;

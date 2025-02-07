@@ -13990,6 +13990,10 @@
 /area/science/research)
 "bhE" = (
 /obj/structure/table,
+/obj/item/stack/sheet/plastic/five{
+	pixel_x = 7;
+	pixel_y = 7
+	},
 /obj/item/stack/sheet/glass/fifty{
 	pixel_x = 3;
 	pixel_y = 3
