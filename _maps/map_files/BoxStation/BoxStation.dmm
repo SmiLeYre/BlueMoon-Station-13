@@ -1377,9 +1377,6 @@
 /obj/machinery/door/airlock/external{
 	req_access_txt = "13"
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/maintenance/fore/secondary)
 "aiB" = (
@@ -30298,9 +30295,6 @@
 /obj/machinery/door/airlock/external{
 	req_access_txt = "13"
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
 /obj/structure/fans/tiny,
 /turf/open/floor/plating,
 /area/maintenance/fore/secondary)
@@ -39412,9 +39406,6 @@
 /turf/open/floor/plasteel,
 /area/security/brig)
 "dRp" = (
-/obj/structure/sign/warning/vacuum/external{
-	pixel_x = 31
-	},
 /obj/machinery/camera{
 	c_tag = "Security Escape Pod";
 	dir = 4
@@ -47327,8 +47318,11 @@
 /turf/open/floor/plasteel,
 /area/security/brig)
 "ifB" = (
-/turf/closed/wall/r_wall,
-/area/maintenance/fore/secondary)
+/obj/structure/sign/warning/vacuum/external{
+	pixel_x = 31
+	},
+/turf/open/floor/plating,
+/area/security/office)
 "ifJ" = (
 /obj/machinery/biogenerator,
 /obj/structure/sign/poster/contraband/have_a_puff{
@@ -50121,15 +50115,6 @@
 /obj/effect/turf_decal/tile/red,
 /turf/open/floor/plasteel,
 /area/security/prison)
-"jFG" = (
-/obj/machinery/door/airlock/external{
-	name = "Escape Pod Three"
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 8
-	},
-/turf/open/floor/plating,
-/area/security/office)
 "jFH" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
@@ -54728,12 +54713,6 @@
 /obj/machinery/door/airlock/external{
 	name = "Escape Pod Three"
 	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
-/obj/effect/mapping_helpers/airlock/cyclelink_helper{
-	dir = 4
-	},
 /turf/open/floor/plating,
 /area/security/office)
 "mcq" = (
@@ -56527,9 +56506,12 @@
 /turf/open/floor/carpet/black,
 /area/service/chapel/main)
 "mWm" = (
-/obj/structure/lattice,
-/turf/open/space/basic,
-/area/space)
+/obj/machinery/door/airlock/external{
+	name = "Escape Pod Three"
+	},
+/obj/structure/fans/tiny,
+/turf/open/floor/plating,
+/area/security/office)
 "mWr" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -61773,7 +61755,7 @@
 /obj/item/reagent_containers/food/snacks/cube/ape,
 /obj/structure/closet/crate/coffin/meatcoffin,
 /turf/open/floor/plating,
-/area/maintenance/fore/secondary)
+/area/security/office)
 "pTA" = (
 /obj/effect/turf_decal/trimline/blue/filled/line,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -65368,19 +65350,6 @@
 "rTD" = (
 /turf/open/floor/plasteel,
 /area/command/gateway)
-"rTU" = (
-/obj/structure/lattice/catwalk,
-/obj/item/stack/marker_beacon{
-	anchored = 1;
-	icon_state = "markerburgundy-on";
-	light_color = "#FA644B";
-	light_power = 3;
-	light_range = 3;
-	name = "Docking Beacon";
-	picked_color = "Burgundy"
-	},
-/turf/open/floor/plating/airless,
-/area/space)
 "rUs" = (
 /obj/effect/turf_decal/tile/red{
 	dir = 4
@@ -72185,7 +72154,8 @@
 "vLG" = (
 /obj/structure/statue/sandstone/venus{
 	pixel_x = 1;
-	pixel_y = 11
+	pixel_y = 11;
+	anchored = 1
 	},
 /turf/open/floor/iron/large,
 /area/service/park)
@@ -72957,10 +72927,6 @@
 /obj/structure/table/wood/fancy,
 /turf/open/floor/plasteel,
 /area/commons/fitness)
-"wdv" = (
-/obj/structure/fans/tiny/invisible,
-/turf/open/space/basic,
-/area/space)
 "wdS" = (
 /obj/structure/chair/comfy/black{
 	dir = 8
@@ -74646,7 +74612,6 @@
 /area/maintenance/starboard/aft)
 "xcL" = (
 /obj/structure/fans/tiny,
-/obj/effect/mapping_helpers/airlock/cyclelink_helper,
 /obj/machinery/door/airlock/external{
 	name = "Security External Airlock";
 	req_access_txt = "63"
@@ -111154,7 +111119,7 @@ sXV
 mcp
 adR
 pTz
-ahn
+abp
 ahk
 vCg
 aib
@@ -111403,15 +111368,15 @@ wQU
 xcL
 vCV
 vCV
-vCV
+ifB
 vCV
 dRp
 vCV
 vCV
 vCV
 iaB
-ifB
-ahn
+adR
+abp
 ahn
 aiA
 ahn
@@ -111654,20 +111619,20 @@ aaa
 aaa
 aaa
 aaa
+aaa
 aoV
 aoV
-aoV
+adR
+adR
+mWm
 adR
 adR
 adR
 adR
 adR
 adR
-jFG
 adR
 adR
-adR
-ifB
 aaa
 chO
 gHR
@@ -111914,15 +111879,15 @@ aaa
 aaa
 aaa
 aaa
+adR
 aaa
-gJi
-gJi
-aag
-adR
-wdv
 afp
-wdv
+aaa
 adR
+gJi
+gJi
+gJi
+aoV
 aaa
 aaa
 aaa
@@ -112171,15 +112136,15 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-gXs
-gXs
 adR
 aaa
 aaa
 aaa
 adR
+gXs
+gXs
+aaa
+aaa
 aaa
 aaa
 aaa
@@ -112428,15 +112393,15 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
 gXs
 aaa
 aaa
 aaa
 gXs
+aaa
+aaa
+aaa
+aaa
 aaa
 aaa
 lXr
@@ -112685,15 +112650,15 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
 gXs
 aaa
 aaa
 aaa
 gXs
+aaa
+aaa
+aaa
+aaa
 aaa
 aaa
 lXr
@@ -112942,15 +112907,15 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
 bvG
 ktS
 sKq
 ktS
 oyN
+aaa
+aaa
+aaa
+aaa
 aaa
 aaa
 lXr
@@ -113199,15 +113164,15 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
 tqB
 vae
 ktS
 vae
 efO
+aaa
+aaa
+aaa
+aaa
 aaa
 lXr
 lXr
@@ -113456,15 +113421,15 @@ aaa
 aaa
 aaa
 aaa
+gJi
+gJi
+gXs
+gJi
+gJi
 aaa
 aaa
 aaa
 aaa
-gJi
-gJi
-mWm
-gJi
-gJi
 aaa
 pgT
 spY
@@ -113714,13 +113679,13 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
 gXs
 aaa
 gXs
+aaa
+aaa
+aaa
+aaa
 aaa
 aaa
 pgT
@@ -113971,13 +113936,13 @@ aaa
 aaa
 aaa
 aaa
-aae
+xLX
+aaa
+xLX
 aaa
 aaa
 aaa
-rTU
 aaa
-rTU
 aaa
 aaa
 pgT
@@ -115509,7 +115474,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+aae
 aaa
 aaa
 aaa
