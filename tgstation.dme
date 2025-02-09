@@ -4461,7 +4461,6 @@
 #include "modular_bluemoon\heavy_and_superheavy_quirks\traits.dm"
 #include "modular_bluemoon\honest_box\honest_box.dm"
 #include "modular_bluemoon\icons\code\under.dm"
-#include "modular_bluemoon\jobs_species_blacklist\jobs_species_blacklist.dm"
 #include "modular_bluemoon\jukebox\jukebox_function.dm"
 #include "modular_bluemoon\KiJoking\code\clothing\suit.dm"
 #include "modular_bluemoon\KiJoking\code\loadout\suit.dm"
