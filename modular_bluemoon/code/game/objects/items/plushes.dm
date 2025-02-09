@@ -114,3 +114,23 @@
 	'modular_bluemoon/SmiLeY/sounds/tiamat_meow2.ogg' = 1,
 	'modular_bluemoon/SmiLeY/sounds/tiamat_meow3.ogg' = 1
 	)
+
+/obj/item/toy/plush/stasik
+	name = "Stasik"
+	desc = "Игрушка XXXL размера, на бирке красуется надпись Стасик."
+	icon_state = "stasik"
+	item_state = "stasik"
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
+	squeak_override = list('modular_bluemoon/sound/voice/stasik_volcahara.ogg' = 1)
+
+/obj/item/toy/plush/rainbow_cat
+	name = "Rainbow cat"
+	desc = "Нанотехнологическая игрушка, созданная в стенах научных комплексов НТ. Видимо яркие переливающиеся цвета их рук дело."
+	icon_state = "rainbow"
+	item_state = "rainbow"
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
+	squeak_override = list('modular_bluemoon/SmiLeY/sounds/allta_mew1.ogg' = 1)
