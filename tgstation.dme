@@ -4737,8 +4737,6 @@
 #include "modular_bluemoon\SmiLeY\venicle\tank.dm"
 #include "modular_bluemoon\SmiLeY\venicle\funny_movement\funny_movement.dm"
 #include "modular_bluemoon\SmiLeY\venicle\funny_movement\human_rocket.dm"
-#include "modular_bluemoon\spiky_trait\code\datums\traits\dna_bm.dm"
-#include "modular_bluemoon\spiky_trait\code\datums\traits\neutral.dm"
 #include "modular_bluemoon\station_agents_cards\cards_id.dm"
 #include "modular_bluemoon\surgery_traits\surgery_traits.dm"
 #include "modular_bluemoon\tgui_emote_panel\topic.dm"
