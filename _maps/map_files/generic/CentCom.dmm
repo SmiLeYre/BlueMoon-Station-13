@@ -18929,7 +18929,7 @@
 /turf/open/floor/wood/wood_parquet,
 /area/syndicate_mothership/control)
 "jyu" = (
-/obj/item/paper/pastes/part3,
+/obj/item/paper/fluff/pastes/andrew,
 /turf/open/space/basic,
 /area/space)
 "jyx" = (
@@ -22868,7 +22868,7 @@
 /turf/open/floor/plasteel/white,
 /area/centcom/control)
 "mZl" = (
-/obj/item/paper/pastes/part1,
+/obj/item/paper/fluff/pastes/dolphin,
 /turf/open/space/basic,
 /area/space)
 "mZN" = (
@@ -26915,7 +26915,7 @@
 /turf/open/floor/plasteel/dark,
 /area/centcom/control)
 "qJH" = (
-/obj/item/paper/pastes/part2,
+/obj/item/paper/fluff/pastes/vaporeon,
 /turf/open/space/basic,
 /area/space)
 "qKj" = (
