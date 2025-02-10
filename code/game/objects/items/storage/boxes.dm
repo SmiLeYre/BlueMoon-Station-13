@@ -1323,7 +1323,7 @@
 
 /obj/item/storage/box/gum/PopulateContents()
 	for(var/i in 1 to 4)
-		new/obj/item/reagent_containers/food/snacks/bubblegum/bubblegum(src)
+		new/obj/item/reagent_containers/food/snacks/bubblegum(src)
 
 /obj/item/storage/box/gum/nicotine
 	name = "nicotine gum packet"
