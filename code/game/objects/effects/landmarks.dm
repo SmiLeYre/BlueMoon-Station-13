@@ -692,3 +692,12 @@ INITIALIZE_IMMEDIATE(/obj/effect/landmark/start/new_player)
 	else
 		template_names = list("SCSBC-12" = 3)
 	. = ..()
+
+/obj/effect/landmark/stationroom/maint/smexi1
+	template_names = list("Icemaint Center Boring", "Icemaint Center Danger", "Icemaint Center Frosty")
+
+/obj/effect/landmark/stationroom/maint/smexi2
+	template_names = list("Icemaint West Boring")
+
+/obj/effect/landmark/stationroom/maint/smexi3
+	template_names = list("Icemaint East Boring", "Icemaint East Danger", "Icemaint East Knotways", "Icemaint East Icering", "Icemaint East Maze")

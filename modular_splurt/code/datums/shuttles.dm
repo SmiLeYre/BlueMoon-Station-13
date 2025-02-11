@@ -27,3 +27,10 @@
 	description = "Cere's taller but lankier cousin, this is more an art peice included when we got our advanced 	location, big, 'stylish', and well stocked."
 	admin_notes = "Seriously big, even larger than the Delta shuttle, and probably will get a few groans."
 	credit_cost = 10000
+
+/datum/map_template/shuttle/emergency/koipond
+	suffix = "koipond"
+	name = "The Koi Pond"
+	description = "Designed by top-of-the-line Nanotrasen synthetics, this stylish and rustic shuttle is perfect for giving the crew a taste of home."
+	credit_cost = 2500
+	admin_notes = "Quite large and lacking a dedicated medical area. Airlocks are placed near the bottom which should prevent docking issues with some stations."

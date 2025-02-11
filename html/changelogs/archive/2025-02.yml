@@ -1,0 +1,25 @@
+2025-02-03:
+  Noktpapilio:
+  - rscadd: true
+  - rscdel: Technically?
+  - tweak: One hundred percent yes
+  - balance: true
+  - bugfix: The previous small outpost being dogshit
+  - soundadd: false
+  - sounddel: false
+  - imageadd: false
+  - imagedel: false
+  - spellcheck: true
+  - code_imp: Only for the Outpost
+  - refactor: Not sure what that is
+  - config: false
+  - admin: false
+  - server: Nothing really
+  - tgs: Not sure what that is
+  SaraSayomi:
+  - bugfix: fixed small mapping bugs
+  - rscadd: Civilian bounty space
+  - rscadd: A maintenance area that snaxi has always lacked
+  - tweak: Sci mains are now public as on every map
+  - rscadd: Several random map gens
+  - rscadd: Nav beacons

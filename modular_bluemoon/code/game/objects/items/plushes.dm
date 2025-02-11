@@ -134,3 +134,12 @@
 	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
 	squeak_override = list('modular_bluemoon/SmiLeY/sounds/allta_mew1.ogg' = 1)
+
+/obj/item/toy/plush/atmosian
+	name = "Atmosian Plushie"
+	desc = "Очаровательная мягкая игрушка, напоминающая храброго атмосианина. К сожалению, он не устранит разгерметизацию за вас."
+	icon = 'modular_bluemoon/icons/obj/plushes.dmi'
+	icon_state = "plush_atmosian"
+	item_state = "plush_atmosian"
+	attack_verb = list("thumped", "whomped", "bumped")
+	resistance_flags = FIRE_PROOF
