@@ -63,7 +63,10 @@
 	description = "Nanotrasen's annual blood drive is back up to full speed, following the garlic incident. Good blood in good volumes accepted for Credit returns."
 	reward = 4500
 	required_volume = 600
-	wanted_reagent = /datum/reagent/blood
+	//wanted_reagent = /datum/reagent/blood //специфика работы wanted_reagent требует использования не путя к реагенту, а его датум
+
+/datum/bounty/reagent/simple_drink/New()
+	wanted_reagent = new /datum/reagent/blood
 
 /* If anyone wants to try and fix/work, go for it
 /datum/bounty/item/medical/medibot // Mob so this dosn't work yet*
