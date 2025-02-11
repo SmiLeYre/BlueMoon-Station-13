@@ -23,6 +23,9 @@
 
 	var/gulp_amount = gulp_size
 	var/self_fed = M == user
+	if(self_fed && ishuman(M))
+		var/mob/living/carbon/human/H = M
+		gulp_amount = H.self_gulp_size
 	if(istype(M))
 		if(user.a_intent == INTENT_HARM)
 			M.visible_message("<span class='danger'>[user] splashes the contents of [src] onto [M]!</span>", \
