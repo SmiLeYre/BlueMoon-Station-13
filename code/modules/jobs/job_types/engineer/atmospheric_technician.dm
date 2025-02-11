@@ -45,7 +45,7 @@
 	r_pocket = /obj/item/analyzer
 
 	backpack = /obj/item/storage/backpack/atmospheric
-	satchel = /obj/item/storage/backpack/satchel/atm
+	satchel = /obj/item/storage/backpack/satchel/atmospheric
 	duffelbag = /obj/item/storage/backpack/duffelbag/atmospheric
 	box = /obj/item/storage/box/survival/engineer
 	pda_slot = ITEM_SLOT_LPOCKET
@@ -65,7 +65,7 @@
 	head = /obj/item/clothing/head/hardhat/red/upgraded
 
 	backpack = /obj/item/storage/backpack/atmospheric
-	satchel = /obj/item/storage/backpack/satchel/atm
+	satchel = /obj/item/storage/backpack/satchel/atmospheric
 	duffelbag = /obj/item/storage/backpack/duffelbag/atmospheric
 	box = /obj/item/storage/box/survival/syndie
 	pda_slot = ITEM_SLOT_LPOCKET

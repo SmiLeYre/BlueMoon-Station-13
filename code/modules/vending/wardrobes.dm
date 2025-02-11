@@ -178,10 +178,11 @@
 	products = list(/obj/item/clothing/accessory/pocketprotector = 3,
 					/obj/item/clothing/head/beret/atmos = 3,
 					/obj/item/storage/backpack/atmospheric = 3,
-					/obj/item/storage/backpack/satchel/atm = 3,
+					/obj/item/storage/backpack/satchel/atmospheric = 3,
 					/obj/item/storage/backpack/duffelbag/atmospheric = 3,
 					/obj/item/clothing/head/hardhat/weldhat/dblue = 3,
 					/obj/item/clothing/suit/hooded/wintercoat/engineering/atmos = 3,
+					/obj/item/toy/plush/atmosian = 1,
 					/obj/item/clothing/under/rank/engineering/atmospheric_technician = 5,
 					/obj/item/clothing/under/rank/engineering/atmospheric_technician/skirt = 5,
 					/obj/item/clothing/shoes/sneakers/black = 5)

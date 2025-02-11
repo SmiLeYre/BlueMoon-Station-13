@@ -214,7 +214,7 @@
 	resistance_flags = FIRE_PROOF
 	rad_flags = RAD_PROTECT_CONTENTS | RAD_NO_CONTAMINATE
 
-/obj/item/storage/backpack/satchel/atm
+/obj/item/storage/backpack/satchel/atmospheric
 	name = "atmospheric satchel"
 	desc = "A tough satchel made of fire resistant fibers. Smells like plasma."
 	icon_state = "satchel-atmos"
