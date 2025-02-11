@@ -65,7 +65,6 @@
 	required_volume = 600
 	wanted_reagent = /datum/reagent/blood
 
-
 /* If anyone wants to try and fix/work, go for it
 /datum/bounty/item/medical/medibot // Mob so this dosn't work yet*
 	name = "Medibot"
