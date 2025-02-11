@@ -993,7 +993,10 @@
 	var/overlay_cards = currenthand.len
 
 	if(deckstyle && currenthand.len)
-		icon_state = "[deckstyle]_hand[currenthand.len < 5 ? "[currenthand.len]" : "5"]"
+		if(currenthand.len > 3)
+			icon_state = "[deckstyle]_hand[currenthand.len - 3 < 5 ? "[currenthand.len - 3]" : "5"]"
+		else
+			icon_state = ""
 	var/k = overlay_cards <= 2 ? 1 : overlay_cards - 2
 	for(var/i in k to overlay_cards)
 		var/card_overlay = image(icon=src.icon,icon_state="sc_[currenthand[i]]_[deckstyle]",pixel_x=(1-i+k)*3,pixel_y=(1-i+k)*3)
@@ -1022,7 +1025,7 @@
 /obj/item/toy/cards/singlecard/verb/Flip()
 	set name = "Flip Card"
 	set category = "Object"
-	set src in range(1)
+	set src in range(2)
 	if(!ishuman(usr) || !usr.canUseTopic(src, BE_CLOSE))
 		return
 	if(!flipped)
@@ -1049,11 +1052,18 @@
 			H.currenthand += C.cardname
 			H.parentdeck = C.parentdeck
 			H.apply_card_vars(H,C)
-			to_chat(user, "<span class='notice'>You combine the [C.cardname] and the [src.cardname] into a hand.</span>")
 			qdel(C)
+			var/turf = isturf(src.loc) ? src.loc : null
 			qdel(src)
-			H.pickup(user)
-			user.put_in_active_hand(H)
+			if(src.flipped && turf)
+				to_chat(user, "<span class='notice'>You combine the [C.cardname] and the [src.cardname].</span>")
+				H.pixel_x = src.pixel_x
+				H.pixel_y = src.pixel_y
+				H.forceMove(turf)
+			else
+				to_chat(user, "<span class='notice'>You combine the [C.cardname] and the [src.cardname] into a hand.</span>")
+				H.pickup(user)
+				user.put_in_active_hand(H)
 		else
 			to_chat(user, "<span class='warning'>You can't mix cards from other decks!</span>")
 

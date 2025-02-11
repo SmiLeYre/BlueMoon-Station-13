@@ -533,25 +533,23 @@
 	name = "bubblegum gum"
 	desc = "A rubbery strip of gum. You don't feel like eating it is a good idea."
 	color = "#913D3D"
-	list_reagents = list(/datum/reagent/blood = 15)
+	list_reagents = null // Кровь добавляем конкретную, поэтому не добавляем реагенты базово
 	tastes = list("hell" = 1, "people" = 1)
 	metabolization_amount = REAGENTS_METABOLISM
 
-/obj/item/reagent_containers/food/snacks/bubblegum/bubblegum/process()
-	if(iscarbon(loc))
-		hallucinate(loc)
+/obj/item/reagent_containers/food/snacks/bubblegum/bubblegum/add_initial_reagents()
+	reagents.add_reagent(/datum/reagent/blood, 15, list("donor"=null,"viruses"=null,"blood_DNA"=null,"bloodcolor"=bloodtype_to_color("O-"), "bloodblend" = BLEND_MULTIPLY, "blood_type"="O-","resistances"=null,"trace_chem"=null))
 
-/obj/item/reagent_containers/food/snacks/bubblegum/bubblegum/make_edible()
+/obj/item/reagent_containers/food/snacks/bubblegum/bubblegum/On_Consume(mob/living/eater)
 	. = ..()
-	AddComponent(/datum/component/edible, after_eat = CALLBACK(src, PROC_REF(OnConsume)))
-
-/obj/item/reagent_containers/food/snacks/bubblegum/bubblegum/proc/OnConsume(mob/living/eater, mob/living/feeder)
 	if(iscarbon(eater))
 		hallucinate(eater)
 
-///This proc has a 5% chance to have a bubblegum line appear, with an 85% chance for just text and 15% for a bubblegum hallucination and scarier text.
+///This proc has a 50% chance to have a bubblegum line appear, with an 85% chance for just text and 15% for a bubblegum hallucination and scarier text.
 /obj/item/reagent_containers/food/snacks/bubblegum/bubblegum/proc/hallucinate(mob/living/carbon/victim)
-	if(prob(95)) //cursed by bubblegum
+	if(isbloodfledge(victim)) //BLUEMOON ADD вполне жевательная жвачка для кровососов
+		return
+	if(prob(50)) //cursed by bubblegum
 		return
 	if(prob(15))
 		new /datum/hallucination/oh_yeah(victim, TRUE)
