@@ -58,12 +58,12 @@
 	reward = 6000
 	wanted_types = list(/obj/item/organ/tail/cat)
 
-/datum/bounty/item/medical/blood
+/datum/bounty/reagent/blood
 	name = "Generic Blood"
 	description = "Nanotrasen's annual blood drive is back up to full speed, following the garlic incident. Good blood in good volumes accepted for Credit returns."
 	reward = 4500
-	required_count = 600
-	wanted_types = list(/datum/reagent/blood)
+	required_volume = 600
+	wanted_reagent = /datum/reagent/blood
 
 /* If anyone wants to try and fix/work, go for it
 /datum/bounty/item/medical/medibot // Mob so this dosn't work yet*
