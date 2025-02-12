@@ -3750,6 +3750,7 @@
 #include "code\modules\research\designs\autolathe_desings\autolathe_designs_tcomms_and_misc.dm"
 #include "code\modules\research\designs\autolathe_desings\autolathe_designs_tools.dm"
 #include "code\modules\research\designs\comp_board_designs\comp_board_designs_all_misc.dm"
+#include "modular_bluemoon\code\game\objects\items\energy_axe.dm"
 #include "modular_bluemoon\code\modules\mining\shelters.dm"
 #include "modular_bluemoon\code\modules\mining\equipment\survival_pod.dm"
 #include "modular_bluemoon\code\modules\paperwork\paper_premade.dm"
