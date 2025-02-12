@@ -81,6 +81,10 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
+/obj/structure/sign/poster/contraband/dancing_honk{
+	pixel_x = 0;
+	pixel_y = 32
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "ak" = (
@@ -131,6 +135,9 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "at" = (
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
+	dir = 1
+	},
 /obj/effect/turf_decal/siding/dark{
 	dir = 6
 	},
@@ -140,9 +147,6 @@
 	pixel_y = 5
 	},
 /obj/machinery/light/dim/directional/south,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	dir = 1
-	},
 /turf/open/floor/iron/white/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/hydroponics)
 "au" = (
@@ -304,19 +308,16 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "aY" = (
-/obj/structure/window/reinforced/survival_pod{
-	dir = 4
-	},
-/obj/structure/table/reinforced,
 /obj/effect/turf_decal/siding/dark{
 	dir = 4
 	},
-/obj/machinery/recharger,
-/obj/item/paper_bin{
-	pixel_x = -14
+/obj/machinery/computer/camera_advanced/syndie,
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
 	},
-/obj/item/pen{
-	pixel_x = -14
+/obj/structure/sign/poster/contraband/bulldog{
+	pixel_x = 0;
+	pixel_y = 32
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
@@ -409,39 +410,12 @@
 /turf/open/floor/iron/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "bq" = (
-/obj/item/storage/belt/security/full,
-/obj/item/radio/headset/ds2,
-/obj/item/clothing/under/rank/security/officer/util/syndicate,
-/obj/item/storage/belt/security/webbing/ds,
-/obj/item/clothing/head/beret/sec/syndicate,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 8
+/obj/effect/spawner/structure/window/plastitanium,
+/obj/machinery/door/poddoor/shutters{
+	id = "smasteratarms";
+	name = "Master At Arms Shutters"
 	},
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
-/obj/item/clothing/accessory/armband{
-	desc = "An armband, worn by the FOB's operatives to display which department they're assigned to.";
-	name = "brig officer armband"
-	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
-	dir = 8
-	},
-/obj/structure/closet/secure_closet{
-	icon_state = "sec";
-	name = "brig officer gear locker";
-	req_access_txt = "151"
-	},
-/obj/item/clothing/mask/gas/syndicate/ds,
-/obj/item/clothing/suit/toggle/labcoat/depjacket/sec{
-	name = "brig officer jacket"
-	},
-/obj/item/clothing/mask/gas/sechailer/syndicate,
-/obj/item/gun/energy/disabler,
-/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
-/obj/item/clothing/glasses/hud/security/sunglasses/aviators,
-/obj/item/clothing/neck/cloak/syndiecap,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "bs" = (
 /obj/effect/turf_decal/stripes/red/line{
@@ -826,10 +800,6 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "cA" = (
-/obj/structure/railing{
-	pixel_y = -2
-	},
-/obj/effect/turf_decal/siding/dark,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	dir = 4;
 	level = 1
@@ -837,6 +807,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
+/obj/structure/railing{
+	pixel_y = -2
+	},
+/obj/effect/turf_decal/siding/dark,
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay/chem)
 "cD" = (
@@ -965,6 +939,10 @@
 	anchored = 1
 	},
 /obj/machinery/light/dim/directional/north,
+/obj/structure/sign/poster/contraband/syndicate_logo{
+	pixel_x = 0;
+	pixel_y = 32
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
 "dg" = (
@@ -1217,6 +1195,10 @@
 /obj/item/kirbyplants/hedge{
 	anchored = 1
 	},
+/obj/structure/sign/poster/contraband/cybersun{
+	pixel_x = 0;
+	pixel_y = 32
+	},
 /turf/open/floor/wood/wood_parquet,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
 "em" = (
@@ -1392,11 +1374,19 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 4
 	},
-/obj/structure/closet/crate/silvercrate,
 /obj/machinery/airalarm/syndicate{
 	dir = 1;
 	pixel_y = -24
 	},
+/obj/structure/safe,
+/obj/item/gun/ballistic/rocketlauncher,
+/obj/item/storage/box/syndie_kit/chameleon/ghostcafe{
+	desc = "A sleek, sturdy box.";
+	name = "Chameleon Kit"
+	},
+/obj/item/ammo_casing/caseless/rocket/hedp,
+/obj/item/ammo_casing/caseless/rocket/hedp,
+/obj/item/ammo_casing/caseless/rocket/hedp,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/vault)
 "eW" = (
@@ -1421,16 +1411,28 @@
 /turf/open/floor/iron/dark/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "eY" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
+/obj/machinery/door/airlock/security{
+	hackProof = 1;
+	id_tag = "smasteratarms";
+	name = "Master At Arms' Office";
+	req_access_txt = "151"
+	},
+/obj/effect/turf_decal/delivery/red,
+/obj/effect/turf_decal/stripes/red/line,
 /obj/effect/turf_decal/stripes/red/line{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
-	dir = 8
-	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
-	dir = 4
-	},
+/obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/mapping_helpers/airlock/cutaiwire,
+/obj/effect/mapping_helpers/airlock/locked,
+/obj/effect/mapping_helpers/airlock/unres{
+	dir = 1
+	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "fa" = (
@@ -1477,16 +1479,16 @@
 /turf/open/floor/iron/dark/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "fh" = (
-/obj/structure/railing{
-	pixel_y = -2
-	},
-/obj/effect/turf_decal/siding/dark,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
+/obj/structure/railing{
+	pixel_y = -2
+	},
+/obj/effect/turf_decal/siding/dark,
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay/chem)
 "fl" = (
@@ -1848,12 +1850,20 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "gK" = (
-/obj/machinery/light/dim/directional/east,
-/obj/machinery/firealarm/directional/east,
-/obj/structure/table/reinforced,
-/obj/item/paper{
-	default_raw_text = "<h1>Отчет для Тюремного Отдела DS2</h1><p>Передовая оперативная база 'Благословлённый' под кодовым названием Deep Space 2 успешно разместилась вблизи активных объектов NanoTrasen. Идет перезагрузка двигателей шаттла...</p><p>Синдикат смог похитить несколько ключевых работников NanoTrasen различных уровней иерархии из иных Пластов Вселенной. Возможно, они являются оперативниками Синдиката, тяжело нарушивших местный Кодекс. Быть может, они являются высокопоставленными лицами иных фракций. Ваша задача - допросить, расспросить и сломить их волю, чтобы получить больше информации.</p><p>Оставайтесь победителями.";
-	name = "paper- 'Отчет для Тюремного Отдела DS2'"
+/obj/effect/mob_spawn/human/ds2/syndicate/brigoff{
+	dir = 8;
+	layer = 4.1
+	},
+/obj/structure/bed,
+/obj/item/bedsheet/red{
+	dir = 4
+	},
+/obj/item/bedsheet/red{
+	dir = 4
+	},
+/obj/structure/sign/poster/contraband/woof{
+	pixel_x = 0;
+	pixel_y = 32
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
@@ -1884,15 +1894,15 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "gW" = (
-/obj/structure/disposalpipe/segment{
-	dir = 2
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	dir = 9;
 	level = 1
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 2
 	},
 /turf/open/floor/iron/white/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
@@ -1959,11 +1969,11 @@
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/eva)
 "hh" = (
-/obj/machinery/firealarm/directional/south,
 /obj/structure/chair/sofa/left{
 	dir = 1;
 	color = "#4D4D4D"
 	},
+/obj/machinery/firealarm/directional/south,
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "hi" = (
@@ -2036,6 +2046,39 @@
 	dir = 4
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
+"hw" = (
+/obj/machinery/power/apc/auto_name/south{
+	req_access = null;
+	req_access_txt = "150";
+	pixel_x = 0;
+	pixel_y = -27
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "cap";
+	name = "\proper station admiral's locker";
+	req_access_txt = "150"
+	},
+/obj/item/syndicate_uplink_high,
+/obj/item/clothing/neck/cloak/syndieadm,
+/obj/item/card/emag,
+/obj/item/ammo_box/a357,
+/obj/item/ammo_box/a357,
+/obj/item/ammo_box/a357,
+/obj/item/gun/ballistic/revolver/mateba,
+/obj/item/clothing/suit/armor/vest/capcarapace/syndicate/winter,
+/obj/item/clothing/accessory/medal/gold{
+	desc = "A golden medal awarded exclusively to those promoted to the rank of captain. It signifies the codified responsibilities of an Admiral to the Sothran Syndicate, and their undisputable authority over their crew.";
+	name = "medal of admiralty"
+	},
+/obj/item/clothing/glasses/sunglasses,
+/obj/item/radio/headset/ds2/command,
+/obj/item/clothing/under/rank/captain/utility/syndicate,
+/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
+/obj/item/clothing/head/HoS/beret/syndicate,
+/obj/item/clothing/head/HoS/syndicate,
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "hx" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -2065,10 +2108,10 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 8
 	},
-/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
-	dir = 8
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 6
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/vault)
 "hz" = (
@@ -2103,16 +2146,16 @@
 /turf/open/floor/iron/dark/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "hE" = (
-/obj/effect/turf_decal/siding/dark/corner{
-	dir = 8
-	},
-/obj/machinery/light/dim/directional/north,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 10
 	},
+/obj/effect/turf_decal/siding/dark/corner{
+	dir = 8
+	},
+/obj/machinery/light/dim/directional/north,
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay/chem)
 "hF" = (
@@ -2243,6 +2286,10 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 10
+	},
+/obj/effect/mob_spawn/human/ds2/syndicate_command/masteratarms{
+	dir = 8;
+	layer = 4.1
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
@@ -2475,34 +2522,13 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "jd" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
+/obj/machinery/suit_storage_unit/syndicate/chameleon,
+/obj/machinery/airalarm/syndicate{
+	pixel_y = 0;
+	pixel_x = 27;
+	dir = 8
 	},
-/obj/item/bodybag/containment/prisoner/syndicate{
-	pixel_x = -7;
-	pixel_y = 15
-	},
-/obj/item/bodybag/containment/prisoner/syndicate{
-	pixel_x = 7;
-	pixel_y = 15
-	},
-/obj/item/bodybag/containment/prisoner/syndicate{
-	pixel_y = 8
-	},
-/obj/structure/table/reinforced,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	dir = 4
-	},
-/obj/machinery/power/apc/auto_name/west{
-	req_access = null;
-	req_access_txt = "150"
-	},
-/obj/machinery/camera/xray/directional/west{
-	c_tag = "DS-2 Brig Storage";
-	network = list("ds2")
-	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "jf" = (
 /obj/structure/closet/emcloset,
@@ -2667,6 +2693,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "jM" = (
@@ -3063,16 +3092,20 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "lt" = (
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
+/obj/item/bodybag/containment/prisoner/syndicate{
+	pixel_y = 0;
+	pixel_x = 0
 	},
-/obj/item/wirecutters,
-/obj/machinery/syndicatebomb/training,
-/obj/machinery/airalarm/syndicate{
-	dir = 4;
-	pixel_x = -24
+/obj/item/bodybag/containment/prisoner/syndicate{
+	pixel_x = 7;
+	pixel_y = 7
 	},
-/turf/open/floor/mineral/plastitanium/red,
+/obj/item/bodybag/containment/prisoner/syndicate{
+	pixel_x = -7;
+	pixel_y = 7
+	},
+/obj/machinery/light/dim/directional/west,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "lu" = (
 /obj/effect/turf_decal/siding/thinplating/dark{
@@ -3518,15 +3551,33 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
 "ny" = (
 /obj/machinery/light/dim/directional/south,
-/turf/open/floor/carpet/blue,
+/obj/structure/table,
+/obj/item/radio{
+	desc = "An old handheld radio. You could use it, if you really wanted to.";
+	icon_state = "radio";
+	name = "old radio";
+	pixel_y = 5
+	},
+/obj/item/reagent_containers/rag/towel/syndicate{
+	pixel_x = 6;
+	pixel_y = -5
+	},
+/obj/effect/turf_decal/trimline/dark/corner,
+/obj/effect/turf_decal/trimline/dark/corner,
+/turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
 "nz" = (
-/obj/structure/closet/crate/freezer/blood,
-/obj/machinery/airalarm/syndicate{
-	pixel_y = 24
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
 	},
-/turf/open/floor/iron/showroomfloor,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 9
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "nG" = (
 /obj/effect/turf_decal/trimline/purple/filled/line{
 	dir = 4
@@ -3653,6 +3704,7 @@
 /turf/open/floor/iron/white/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "ob" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 8
 	},
@@ -3669,7 +3721,6 @@
 	pixel_x = 6
 	},
 /obj/structure/window/reinforced/survival_pod,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/kitchen{
 	dir = 4
 	},
@@ -3747,16 +3798,38 @@
 /turf/open/floor/iron/dark/textured_half,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "or" = (
+/obj/structure/closet/secure_closet{
+	icon_state = "warden";
+	name = "master at arms' locker";
+	req_access_txt = "151"
+	},
+/obj/item/storage/belt/security/full,
+/obj/item/radio/headset/ds2,
+/obj/item/clothing/suit/armor/vest/warden/syndicate,
+/obj/item/clothing/under/rank/security/officer/util/syndicate,
+/obj/item/clothing/head/beret/sec/navywarden/syndicate,
+/obj/item/clothing/suit/armor/hos/trenchcoat{
+	desc = "A trenchcoat enhanced with a special lightweight kevlar. It has little Syndicate logos sewn onto the shoulder badges with the letters 'MAA' just under it.";
+	name = "Master at arms' armored trenchcoat"
+	},
+/obj/item/clothing/suit/armor/hos{
+	desc = "A greatcoat enhanced with a special alloy for some extra protection and style for those with a likely chance to get bullied for being outside of the brig";
+	name = "Master at arms' armored greatcoat"
+	},
+/obj/item/gun/energy/disabler,
+/obj/item/clothing/head/HoS/beret/syndicate,
+/obj/item/clothing/mask/gas/sechailer/syndicate,
+/obj/item/clothing/accessory/medal/silver{
+	desc = "The Sothran Syndicate's dictionary defines excellence as \"the ability to crush NT scum under one's boot\". This is awarded to those rare operatives who fit that definition.";
+	name = "Military Excellence Medal"
+	},
+/obj/item/gun/ballistic/revolver/mateba,
+/obj/item/ammo_box/a357,
+/obj/item/ammo_box/a357,
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 1
 	},
-/obj/item/sign/flag/syndicate{
-	pixel_x = -3;
-	pixel_y = 6
-	},
-/obj/structure/table/glass,
-/obj/item/reagent_containers/glass/beaker/waterbottle/large,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "ot" = (
@@ -3764,7 +3837,11 @@
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
 	},
-/turf/open/floor/iron/showroomfloor,
+/obj/effect/turf_decal/siding/thinplating{
+	dir = 10
+	},
+/obj/structure/closet/crate/freezer/blood,
+/turf/open/floor/iron/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "ou" = (
 /obj/item/paper{
@@ -3868,11 +3945,16 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/armory)
 "oS" = (
-/obj/effect/mob_spawn/human/ds2/syndicate/brigoff{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
 	},
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/turf_decal/trimline/dark_blue/line{
+	dir = 4
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "oT" = (
 /obj/structure/disposalpipe/segment{
 	dir = 1
@@ -3976,10 +4058,8 @@
 	dir = 4;
 	level = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 8
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "pi" = (
@@ -4171,11 +4251,7 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "pW" = (
-/obj/structure/window/reinforced/survival_pod,
-/obj/effect/turf_decal/siding/dark,
-/obj/effect/mob_spawn/human/ds2/syndicate/brigoff{
-	dir = 8
-	},
+/obj/machinery/light/dim/directional/east,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "pX" = (
@@ -4200,11 +4276,11 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 1
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/atmospherics/pipe/manifold4w/scrubbers/hidden/layer3,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "qh" = (
@@ -4214,11 +4290,18 @@
 	},
 /turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo)
+"qi" = (
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
+/turf/open/floor/carpet/royalblack,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "qj" = (
-/obj/structure/dresser,
-/obj/item/flashlight/lamp/green{
-	pixel_x = 5;
-	pixel_y = 15
+/obj/structure/table/reinforced,
+/obj/item/reagent_containers/glass/beaker/waterbottle/large,
+/obj/item/sign/flag/syndicate{
+	pixel_x = -3;
+	pixel_y = 6
 	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
@@ -4385,11 +4468,21 @@
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "qL" = (
-/obj/structure/sign/poster/contraband/random,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo)
+/obj/structure/bed/dogbed,
+/mob/living/simple_animal/pet/syndifox,
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "qN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
+	dir = 8
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8;
+	pixel_x = -1;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/siding/wood{
 	dir = 8
 	},
 /turf/open/floor/carpet/royalblack,
@@ -4437,11 +4530,6 @@
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
 "ra" = (
-/obj/effect/turf_decal/delivery/white,
-/obj/machinery/door/airlock/bathroom{
-	name = "Brig Restroom"
-	},
-/obj/machinery/door/firedoor,
 /obj/effect/mapping_helpers/airlock/cutaiwire,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	dir = 4;
@@ -4450,6 +4538,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
+/obj/effect/turf_decal/delivery/white,
+/obj/machinery/door/airlock/bathroom{
+	name = "Brig Restroom"
+	},
+/obj/machinery/door/firedoor,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower)
 "rb" = (
@@ -4555,10 +4648,13 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "rr" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	level = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/turf_decal/stripes/red/line{
+	dir = 1
+	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
@@ -4581,13 +4677,13 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "rz" = (
-/obj/effect/turf_decal/stripes/red/line,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	level = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/mineral/plastitanium,
+/obj/effect/turf_decal/siding/dark_red,
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "rB" = (
 /obj/effect/turf_decal/tile/purple,
@@ -4600,10 +4696,6 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "rG" = (
-/obj/machinery/door/airlock/engineering{
-	name = "Ship Atmospherics";
-	req_access_txt = "150"
-	},
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
 	},
@@ -4619,6 +4711,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
+/obj/machinery/door/airlock/atmos{
+	name = "Ship Atmospherics";
+	req_access_txt = "150"
+	},
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "rH" = (
@@ -4626,7 +4722,6 @@
 /turf/open/floor/carpet/blue,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "rI" = (
-/obj/structure/reagent_dispensers/water_cooler,
 /obj/effect/turf_decal/tile/neutral{
 	dir = 1
 	},
@@ -4636,6 +4731,7 @@
 /obj/effect/turf_decal/trimline/dark/corner{
 	dir = 1
 	},
+/obj/structure/reagent_dispensers/water_cooler,
 /turf/open/floor/iron/dark/side{
 	dir = 4
 	},
@@ -5279,6 +5375,11 @@
 	level = 1
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/item/coin/silver,
+/obj/item/coin/silver,
+/obj/item/coin/silver,
+/obj/item/coin/silver,
+/obj/item/coin/silver,
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/vault)
 "uf" = (
@@ -5304,11 +5405,20 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "um" = (
-/obj/effect/turf_decal/siding/thinplating{
-	dir = 10
+/obj/effect/turf_decal/trimline/dark_blue/line{
+	dir = 4
 	},
-/turf/open/floor/iron/small,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/power/apc/auto_name/east{
+	req_access_txt = "150";
+	req_access = null
+	},
+/turf/open/floor/iron/dark,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "uo" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	level = 1
@@ -5343,24 +5453,8 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "uE" = (
-/obj/effect/turf_decal/tile/dark_blue,
-/obj/effect/turf_decal/tile/dark_blue{
-	dir = 1
-	},
 /obj/effect/turf_decal/siding/dark/corner,
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	dir = 4
-	},
-/obj/structure/safe,
-/obj/item/storage/box/syndie_kit/chameleon/ghostcafe{
-	desc = "A sleek, sturdy box.";
-	name = "Chameleon Kit"
-	},
-/obj/item/gun/ballistic/rocketlauncher,
-/obj/item/ammo_casing/caseless/rocket/hedp,
-/obj/item/ammo_casing/caseless/rocket/hedp,
-/obj/item/ammo_casing/caseless/rocket/hedp,
-/turf/open/floor/iron/dark,
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/vault)
 "uL" = (
 /obj/effect/turf_decal/stripes/red/corner{
@@ -5446,6 +5540,10 @@
 	dir = 8
 	},
 /obj/effect/turf_decal/trimline/dark_red/filled/line,
+/obj/structure/sign/poster/contraband/self{
+	pixel_x = 0;
+	pixel_y = 32
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/research)
 "ve" = (
@@ -5514,8 +5612,19 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/eva)
 "vr" = (
-/obj/effect/mob_spawn/human/ds2/syndicate_command/masteratarms,
-/obj/machinery/suit_storage_unit/syndicate/chameleon,
+/obj/structure/dresser,
+/obj/item/flashlight/lamp/green{
+	pixel_x = 5;
+	pixel_y = 15
+	},
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8;
+	pixel_x = -1;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "vv" = (
@@ -5533,35 +5642,10 @@
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/cl)
 "vx" = (
-/obj/structure/closet/secure_closet{
-	icon_state = "cap";
-	name = "\proper station admiral's locker";
-	req_access_txt = "150"
-	},
-/obj/item/clothing/head/HoS/syndicate,
-/obj/item/clothing/head/HoS/beret/syndicate,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate,
-/obj/item/clothing/under/rank/captain/utility/syndicate,
-/obj/item/radio/headset/ds2/command,
-/obj/item/clothing/suit/armor/vest/capcarapace/syndicate/winter,
-/obj/effect/turf_decal/siding/wood{
-	dir = 4
-	},
 /obj/structure/window/reinforced/survival_pod{
 	dir = 8
 	},
-/obj/item/clothing/glasses/sunglasses,
-/obj/item/clothing/accessory/medal/gold{
-	desc = "A golden medal awarded exclusively to those promoted to the rank of captain. It signifies the codified responsibilities of an Admiral to the Sothran Syndicate, and their undisputable authority over their crew.";
-	name = "medal of admiralty"
-	},
-/obj/item/gun/ballistic/revolver/mateba,
-/obj/item/ammo_box/a357,
-/obj/item/ammo_box/a357,
-/obj/item/ammo_box/a357,
-/obj/item/card/emag,
-/obj/item/clothing/neck/cloak/syndieadm,
-/obj/item/syndicate_uplink_high,
+/obj/machinery/suit_storage_unit/syndicate/chameleon,
 /turf/open/floor/iron/dark/smooth_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "vB" = (
@@ -5618,14 +5702,12 @@
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower)
 "vK" = (
-/obj/structure/table/reinforced,
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3,
-/obj/item/paper{
-	default_raw_text = "<h1>Отчет для Тюремного Отдела DS2</h1><p>Передовая оперативная база 'Благословлённый' под кодовым названием Deep Space 2 успешно разместилась вблизи активных объектов NanoTrasen. Идет перезагрузка двигателей шаттла...</p><p>Синдикат смог похитить несколько ключевых работников NanoTrasen различных уровней иерархии из иных Пластов Вселенной. Ваша задача - допросить, расспросить и сломить их волю, чтобы получить больше информации о нашем враге.</p><p>Оставайтесь победителями.";
-	name = "paper- 'Отчет для Тюремного Отдела DS2'"
+/obj/machinery/computer/crew/syndie{
+	dir = 2
 	},
-/obj/machinery/airalarm/syndicate{
-	pixel_y = 24
+/obj/structure/sign/flag/syndicate/directional/west{
+	pixel_x = 0;
+	pixel_y = 32
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
@@ -5658,14 +5740,14 @@
 /turf/open/floor/iron/white/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/hydroponics)
 "vQ" = (
-/obj/machinery/firealarm/directional/west,
-/obj/machinery/door/firedoor,
-/obj/effect/turf_decal/delivery,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	level = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/firealarm/directional/west,
+/obj/machinery/door/firedoor,
+/obj/effect/turf_decal/delivery,
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "vR" = (
@@ -5818,11 +5900,19 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "wz" = (
 /obj/machinery/light/dim/directional/west,
-/obj/machinery/computer/security{
-	dir = 4;
-	network = list("ds2")
+/obj/structure/table/reinforced,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 4
 	},
-/obj/structure/sign/flag/syndicate/directional/west,
+/obj/item/weaponcrafting/receiver,
+/obj/item/weaponcrafting/stock{
+	pixel_x = 4;
+	pixel_y = -9
+	},
+/obj/structure/sign/poster/contraband/c20r{
+	pixel_x = -32;
+	pixel_y = 0
+	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "wE" = (
@@ -5853,6 +5943,14 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "wN" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8;
+	pixel_x = -1;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/carpet/royalblack,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "wR" = (
@@ -5975,6 +6073,15 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "xy" = (
 /obj/machinery/light/dim/directional/north,
+/obj/machinery/button/door/directional/south{
+	desc = "Keep out the Truth.";
+	id = "ds2detective";
+	name = "Interrogation Room shutters control";
+	req_access_txt = "150";
+	dir = 2;
+	pixel_x = 0;
+	pixel_y = 27
+	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/lawyer)
 "xB" = (
@@ -6040,12 +6147,14 @@
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "xX" = (
-/obj/structure/chair/office{
-	dir = 1
-	},
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 6
+	},
+/obj/structure/chair/office/dark{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 10
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
@@ -6073,23 +6182,47 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "yb" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/structure/table/reinforced,
+/obj/machinery/recharger,
+/obj/effect/turf_decal/siding/dark_red,
+/obj/machinery/power/apc/auto_name/west{
+	req_access = null;
+	req_access_txt = "150"
+	},
+/turf/open/floor/mineral/plastitanium/red,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
+"yd" = (
 /obj/effect/turf_decal/stripes/red/corner,
+/obj/structure/bed/dogbed,
 /mob/living/simple_animal/pet/cat/kitten{
 	desc = "What appears to be a single-celled organism with a pronounced low-level intelligence.";
 	name = "Murder-Mittens"
 	},
-/obj/structure/bed/dogbed,
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/mineral/plastitanium,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
-"yd" = (
-/obj/effect/spawner/structure/window/plastitanium,
-/obj/machinery/door/poddoor/shutters{
-	id = "smasteratarms";
-	name = "Master At Arms Shutters"
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/plating,
+/obj/structure/sign/poster/contraband/gl{
+	pixel_x = -32;
+	pixel_y = 0
+	},
+/obj/machinery/button/door/directional/south{
+	desc = "Keep out the Officers.";
+	id = "smasteratarms";
+	name = "Master at Arms' shutters control";
+	pixel_x = -6;
+	req_access_txt = "151"
+	},
+/obj/machinery/button/door/directional/south{
+	desc = "Keep out the Officers.";
+	id = "smasteratarms";
+	name = "Master at Arms' room bolt";
+	normaldoorcontrol = 1;
+	pixel_x = 6;
+	req_access_txt = "151";
+	specialfunctions = 4
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "ye" = (
 /obj/structure/window/reinforced/survival_pod{
@@ -6340,12 +6473,23 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "zn" = (
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
+/obj/machinery/recharger{
+	pixel_x = -7;
+	pixel_y = -2
 	},
-/obj/machinery/light/dim/directional/west,
-/obj/machinery/recharger,
-/turf/open/floor/mineral/plastitanium/red,
+/obj/machinery/recharger{
+	pixel_x = 6;
+	pixel_y = -2
+	},
+/obj/effect/turf_decal/stripes/red/corner{
+	dir = 8
+	},
+/obj/machinery/power/apc/auto_name/west{
+	req_access = null;
+	req_access_txt = "150"
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "zp" = (
 /obj/effect/turf_decal/stripes/red/line,
@@ -6719,12 +6863,6 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
 "AW" = (
 /obj/machinery/light/dim/directional/south,
-/obj/machinery/button/door/directional/south{
-	desc = "Keep out the Truth.";
-	id = "ds2detective";
-	name = "Interrogation Room shutters control";
-	req_access_txt = "150"
-	},
 /obj/item/kirbyplants{
 	icon_state = "plant-21"
 	},
@@ -6763,9 +6901,6 @@
 	anchored = 1;
 	icon_state = "box_1";
 	state = 2
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 8
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/vault)
@@ -7597,7 +7732,6 @@
 /turf/open/floor/carpet/blackred,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/diner)
 "EV" = (
-/obj/structure/weightmachine/stacklifter,
 /obj/machinery/light/dim/directional/north,
 /obj/effect/turf_decal/tile/neutral/half/contrasted{
 	dir = 1
@@ -7609,6 +7743,7 @@
 	dir = 1
 	},
 /obj/machinery/firealarm/directional/north,
+/obj/structure/weightmachine/stacklifter,
 /turf/open/floor/iron,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
 "EW" = (
@@ -7880,8 +8015,13 @@
 /turf/open/floor/iron/white,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay/chem)
 "FP" = (
-/obj/machinery/computer/crew/syndie{
-	dir = 4
+/obj/machinery/computer/security{
+	dir = 2;
+	network = list("ds2")
+	},
+/obj/structure/sign/poster/contraband/syndicate_pistol{
+	pixel_x = 0;
+	pixel_y = 32
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
@@ -7911,11 +8051,11 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "Ge" = (
-/obj/effect/turf_decal/stripes/red/line,
-/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
+	level = 1
+	},
+/obj/effect/turf_decal/stripes/red/line,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
@@ -7979,6 +8119,7 @@
 /turf/open/floor/engine,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "Gl" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/window/reinforced/survival_pod,
 /obj/effect/turf_decal/siding/dark,
 /obj/structure/table,
@@ -7990,7 +8131,6 @@
 	pixel_x = 9;
 	pixel_y = 15
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/kitchen{
 	dir = 4
 	},
@@ -8583,13 +8723,9 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "IZ" = (
 /obj/effect/turf_decal/siding/wood{
-	dir = 6
+	dir = 9
 	},
-/obj/structure/window/reinforced/survival_pod{
-	dir = 8
-	},
-/obj/machinery/suit_storage_unit/syndicate/chameleon,
-/turf/open/floor/iron/dark/smooth_large,
+/turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "Jc" = (
 /obj/structure/disposalpipe/segment{
@@ -8683,55 +8819,32 @@
 /turf/open/floor/catwalk_floor,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "JD" = (
-/obj/structure/closet/secure_closet{
-	icon_state = "warden";
-	name = "master at arms' locker";
-	req_access_txt = "151"
-	},
-/obj/item/storage/belt/security/full,
-/obj/item/radio/headset/ds2,
-/obj/item/clothing/suit/armor/vest/warden/syndicate,
-/obj/item/clothing/under/rank/security/officer/util/syndicate,
-/obj/item/clothing/head/beret/sec/navywarden/syndicate,
-/obj/item/clothing/suit/armor/hos/trenchcoat{
-	desc = "A trenchcoat enhanced with a special lightweight kevlar. It has little Syndicate logos sewn onto the shoulder badges with the letters 'MAA' just under it.";
-	name = "Master at arms' armored trenchcoat"
-	},
-/obj/item/clothing/suit/armor/hos{
-	desc = "A greatcoat enhanced with a special alloy for some extra protection and style for those with a likely chance to get bullied for being outside of the brig";
-	name = "Master at arms' armored greatcoat"
-	},
-/obj/item/gun/energy/disabler,
-/obj/item/clothing/head/HoS/beret/syndicate,
-/obj/structure/window/reinforced/survival_pod{
-	dir = 4
-	},
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
-	},
-/obj/item/clothing/mask/gas/sechailer/syndicate,
-/obj/item/clothing/accessory/medal/silver{
-	desc = "The Sothran Syndicate's dictionary defines excellence as \"the ability to crush NT scum under one's boot\". This is awarded to those rare operatives who fit that definition.";
-	name = "Military Excellence Medal"
-	},
-/obj/item/gun/ballistic/revolver/mateba,
-/obj/item/ammo_box/a357,
-/obj/item/ammo_box/a357,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
+	},
+/obj/structure/table/reinforced,
+/obj/item/paper_bin{
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/obj/item/pen{
+	pixel_x = -1;
+	pixel_y = 2
+	},
+/obj/item/paper{
+	default_raw_text = "<h1>Отчет для Тюремного Отдела DS2</h1><p>Передовая оперативная база 'Благословлённый' под кодовым названием Deep Space 2 успешно разместилась вблизи активных объектов NanoTrasen. Идет перезагрузка двигателей шаттла...</p><p>Синдикат смог похитить несколько ключевых работников NanoTrasen различных уровней иерархии из иных Пластов Вселенной. Ваша задача - допросить, расспросить и сломить их волю, чтобы получить больше информации о нашем враге.</p><p>Оставайтесь победителями.";
+	name = "paper- 'Отчет для Тюремного Отдела DS2'";
+	pixel_x = -9;
+	pixel_y = -6
+	},
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 4
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "JE" = (
-/obj/structure/table,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 1
-	},
-/obj/item/radio{
-	desc = "An old handheld radio. You could use it, if you really wanted to.";
-	icon_state = "radio";
-	name = "old radio";
-	pixel_y = 5
 	},
 /obj/effect/turf_decal/tile/neutral{
 	dir = 8
@@ -8746,11 +8859,8 @@
 	req_access = null;
 	req_access_txt = "150"
 	},
-/obj/item/reagent_containers/rag/towel/syndicate{
-	pixel_x = 6;
-	pixel_y = -5
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/gear_painter,
 /turf/open/floor/iron/dark/side{
 	dir = 4
 	},
@@ -9066,9 +9176,7 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "KO" = (
-/turf/open/floor/iron/dark/side{
-	dir = 8
-	},
+/turf/open/floor/carpet/blue,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
 "KQ" = (
 /obj/effect/turf_decal/tile/dark_red/half{
@@ -9141,15 +9249,15 @@
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "Lf" = (
-/obj/structure/sign/poster/contraband/random{
-	pixel_x = 0;
-	pixel_y = -32
-	},
 /obj/effect/turf_decal/siding/thinplating/dark{
 	dir = 6
 	},
 /obj/item/kirbyplants/hedge{
 	anchored = 1
+	},
+/obj/structure/sign/poster/contraband/slep{
+	pixel_x = 0;
+	pixel_y = -32
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms)
@@ -9295,28 +9403,16 @@
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "Lx" = (
-/obj/machinery/door/airlock/security{
-	hackProof = 1;
-	id_tag = "smasteratarms";
-	name = "Master At Arms' Office";
-	req_access_txt = "151"
-	},
-/obj/effect/mapping_helpers/airlock/cutaiwire,
-/obj/machinery/door/firedoor,
-/obj/effect/turf_decal/delivery/red,
-/obj/effect/mapping_helpers/airlock/locked,
-/obj/effect/turf_decal/stripes/red/line{
-	dir = 1
-	},
-/obj/effect/turf_decal/stripes/red/line,
-/obj/effect/mapping_helpers/airlock/unres{
-	dir = 1
-	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	level = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
-/turf/open/floor/iron/dark/textured_large,
+/obj/effect/turf_decal/stripes/red/line,
+/obj/effect/turf_decal/siding/dark{
+	dir = 1
+	},
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "Lz" = (
 /obj/structure/disposalpipe/segment,
@@ -9860,20 +9956,15 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
 "NP" = (
-/obj/structure/window/reinforced/survival_pod{
-	dir = 8
-	},
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
 /obj/structure/table/reinforced,
-/obj/item/assembly/flash/handheld{
-	pixel_x = 3;
-	pixel_y = 10
+/obj/item/paper{
+	default_raw_text = "<h1>Отчет для Тюремного Отдела DS2</h1><p>Передовая оперативная база 'Благословлённый' под кодовым названием Deep Space 2 успешно разместилась вблизи активных объектов NanoTrasen. Идет перезагрузка двигателей шаттла...</p><p>Синдикат смог похитить несколько ключевых работников NanoTrasen различных уровней иерархии из иных Пластов Вселенной. Возможно, они являются оперативниками Синдиката, тяжело нарушивших местный Кодекс. Быть может, они являются высокопоставленными лицами иных фракций. Ваша задача - допросить, расспросить и сломить их волю, чтобы получить больше информации.</p><p>Оставайтесь победителями.";
+	name = "paper- 'Отчет для Тюремного Отдела DS2'"
 	},
-/obj/item/crowbar/red,
-/obj/machinery/recharger,
-/turf/open/floor/mineral/plastitanium/red,
+/obj/effect/turf_decal/stripes/red/corner{
+	dir = 4
+	},
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "NQ" = (
 /obj/effect/turf_decal/stripes/red/line{
@@ -9935,9 +10026,10 @@
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "NU" = (
-/obj/structure/sign/poster/contraband/random,
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
+/obj/structure/sign/flag/syndicate/directional/south,
+/obj/machinery/light/dim/directional/south,
+/turf/open/floor/carpet/black,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "NW" = (
 /obj/structure/chair{
 	dir = 1
@@ -9953,8 +10045,15 @@
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "NY" = (
-/obj/structure/closet/firecloset/full,
-/turf/open/floor/mineral/plastitanium,
+/obj/structure/bed,
+/obj/item/bedsheet/red{
+	dir = 4
+	},
+/obj/effect/mob_spawn/human/ds2/syndicate/brigoff{
+	dir = 8;
+	layer = 4.1
+	},
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "Ob" = (
 /obj/effect/spawner/structure/window/plastitanium,
@@ -9968,11 +10067,14 @@
 	dir = 4
 	},
 /obj/machinery/light/dim/directional/west,
-/obj/machinery/firealarm/directional/west,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	level = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/machinery/airalarm/syndicate{
+	dir = 4;
+	pixel_x = -24
+	},
 /turf/open/floor/iron/dark/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "Od" = (
@@ -10017,22 +10119,22 @@
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "Ov" = (
 /obj/structure/table/reinforced,
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
-	},
-/obj/item/restraints/handcuffs{
-	pixel_y = 17
+/obj/machinery/syndicatebomb/training,
+/obj/item/wirecutters,
+/obj/effect/turf_decal/stripes/red/corner,
+/obj/machinery/airalarm/syndicate{
+	dir = 4;
+	pixel_x = -24
 	},
 /obj/item/assembly/flash/handheld{
-	pixel_x = 3;
-	pixel_y = 10
+	pixel_x = -10;
+	pixel_y = 16
 	},
-/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
-	dir = 4
+/obj/item/crowbar/red{
+	pixel_x = 1;
+	pixel_y = 16
 	},
-/obj/item/crowbar/red,
-/obj/structure/reagent_dispensers/peppertank/directional/west,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "Ox" = (
 /obj/machinery/sleeper/syndie/fullupgrade{
@@ -10058,40 +10160,13 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison)
 "OC" = (
-/obj/item/storage/belt/security/full,
-/obj/item/radio/headset/ds2,
-/obj/item/clothing/under/rank/security/officer/util/syndicate,
-/obj/item/storage/belt/security/webbing/ds,
-/obj/item/clothing/head/beret/sec/syndicate,
-/obj/structure/window/reinforced/survival_pod{
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
-/obj/structure/window/reinforced/survival_pod,
-/obj/effect/turf_decal/siding/dark{
-	dir = 10
-	},
-/obj/item/clothing/accessory/armband{
-	desc = "An armband, worn by the FOB's operatives to display which department they're assigned to.";
-	name = "brig officer armband"
-	},
-/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
-	dir = 8
-	},
-/obj/structure/closet/secure_closet{
-	icon_state = "sec";
-	name = "brig officer gear locker";
-	req_access_txt = "151"
-	},
-/obj/item/clothing/mask/gas/syndicate/ds,
-/obj/item/clothing/suit/toggle/labcoat/depjacket/sec{
-	name = "brig officer jacket"
-	},
-/obj/item/clothing/mask/gas/sechailer/syndicate,
-/obj/item/gun/energy/disabler,
-/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
-/obj/item/clothing/glasses/hud/security/sunglasses/aviators,
-/obj/item/clothing/neck/cloak/syndiecap,
-/turf/open/floor/mineral/plastitanium/red,
+/turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "OD" = (
 /obj/effect/turf_decal/stripes/line{
@@ -10153,6 +10228,17 @@
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge)
+"OQ" = (
+/obj/effect/turf_decal/stripes/red/corner{
+	dir = 1
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 5;
+	pixel_x = 0;
+	pixel_y = 0
+	},
+/turf/open/floor/mineral/plastitanium,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "OT" = (
 /obj/machinery/cryopod{
 	dir = 8
@@ -10262,14 +10348,14 @@
 	c_tag = "DS-2 Engineering";
 	network = list("ds2")
 	},
-/obj/machinery/airalarm/syndicate{
-	dir = 4;
-	pixel_x = -24
-	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
 	level = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
+/obj/structure/sign/poster/contraband/atmosia_independence{
+	pixel_x = -32;
+	pixel_y = 0
+	},
 /turf/open/floor/iron/dark/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "Pt" = (
@@ -10296,6 +10382,11 @@
 	dir = 2
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3,
+/obj/machinery/firealarm/directional/west{
+	dir = 1;
+	pixel_x = 27;
+	pixel_y = 0
+	},
 /turf/open/floor/iron/dark/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "Py" = (
@@ -10744,6 +10835,10 @@
 	pixel_y = -8
 	},
 /obj/item/gun/medbeam,
+/obj/structure/sign/poster/contraband/syndicate_medical{
+	pixel_x = -32;
+	pixel_y = 0
+	},
 /turf/open/floor/iron/white/diagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "Ra" = (
@@ -10829,9 +10924,18 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "Rp" = (
-/obj/structure/sign/flag/syndicate/directional/north,
-/turf/open/floor/mineral/plastitanium/red,
-/area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
+/obj/effect/turf_decal/siding/wood{
+	dir = 1
+	},
+/obj/item/kirbyplants/hedge{
+	anchored = 1
+	},
+/obj/structure/sign/poster/contraband/donut_corp{
+	pixel_x = 0;
+	pixel_y = 32
+	},
+/turf/open/floor/wood/wood_parquet,
+/area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
 "Rr" = (
 /obj/effect/turf_decal/siding/wood{
 	dir = 8
@@ -10863,6 +10967,7 @@
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
 "Rz" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/window/reinforced/survival_pod,
 /obj/effect/turf_decal/siding/dark,
 /obj/structure/table,
@@ -10877,7 +10982,6 @@
 /obj/item/choice_beacon/ingredients{
 	pixel_y = 11
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/kitchen{
 	dir = 4
 	},
@@ -10935,13 +11039,13 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "RM" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
-	level = 1
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
+	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden/layer1{
 	dir = 8
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "RP" = (
@@ -11000,9 +11104,6 @@
 /obj/machinery/camera/xray/directional/north{
 	c_tag = "DS-2 Vault";
 	network = list("ds2")
-	},
-/obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
-	dir = 10
 	},
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/vault)
@@ -11737,6 +11838,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1,
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/turf_decal/siding/wood{
+	dir = 8
+	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "Uv" = (
@@ -11899,33 +12003,44 @@
 /turf/open/floor/catwalk_floor,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "Va" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 4
-	},
-/obj/effect/turf_decal/stripes/red/corner{
-	dir = 8
-	},
-/obj/machinery/button/door/directional/south{
-	desc = "Keep out the Officers.";
-	id = "smasteratarms";
-	name = "Master at Arms' room bolt";
-	normaldoorcontrol = 1;
-	pixel_x = 6;
-	req_access_txt = "151";
-	specialfunctions = 4
-	},
-/obj/machinery/button/door/directional/south{
-	desc = "Keep out the Officers.";
-	id = "smasteratarms";
-	name = "Master at Arms' shutters control";
-	pixel_x = -6;
-	req_access_txt = "151"
-	},
-/obj/effect/turf_decal/stripes/red/corner{
-	dir = 1
-	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
-/turf/open/floor/mineral/plastitanium,
+/obj/structure/table/reinforced,
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = -8;
+	pixel_y = 11
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = -5;
+	pixel_y = 11
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = -2;
+	pixel_y = 11
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = 1;
+	pixel_y = 11
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = 4;
+	pixel_y = 11
+	},
+/obj/item/ammo_casing/shotgun/techshell{
+	pixel_x = 7;
+	pixel_y = 11
+	},
+/obj/item/firing_pin/implant/pindicate{
+	pixel_x = -2;
+	pixel_y = -6
+	},
+/obj/item/firing_pin/implant/pindicate{
+	pixel_x = 0;
+	pixel_y = -3
+	},
+/obj/effect/turf_decal/siding/dark_red{
+	dir = 6
+	},
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "Vb" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible/layer3{
@@ -12115,12 +12230,6 @@
 /obj/effect/turf_decal/siding/dark{
 	dir = 1
 	},
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
-	dir = 6
-	},
-/obj/machinery/atmospherics/pipe/simple/cyan/visible{
-	dir = 6
-	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "VM" = (
@@ -12238,6 +12347,39 @@
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/lounge)
 "Wq" = (
+/obj/item/storage/belt/security/full,
+/obj/item/radio/headset/ds2,
+/obj/item/clothing/under/rank/security/officer/util/syndicate,
+/obj/item/storage/belt/security/webbing/ds,
+/obj/item/clothing/head/beret/sec/syndicate,
+/obj/item/clothing/accessory/armband{
+	desc = "An armband, worn by the FOB's operatives to display which department they're assigned to.";
+	name = "brig officer armband"
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	name = "brig officer gear locker";
+	req_access_txt = "151"
+	},
+/obj/item/clothing/mask/gas/syndicate/ds,
+/obj/item/clothing/suit/toggle/labcoat/depjacket/sec{
+	name = "brig officer jacket"
+	},
+/obj/item/clothing/mask/gas/sechailer/syndicate,
+/obj/item/gun/energy/disabler,
+/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
+/obj/item/clothing/glasses/hud/security/sunglasses/aviators,
+/obj/item/clothing/neck/cloak/syndiecap,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8;
+	pixel_x = -3;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
+	},
+/obj/structure/sign/flag/syndicate/directional/north,
+/obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
 /turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "Ws" = (
@@ -12470,14 +12612,14 @@
 	},
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/engineering)
 "Xb" = (
-/obj/effect/turf_decal/siding/dark{
-	dir = 8
-	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1{
 	dir = 8
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
 	dir = 4
+	},
+/obj/effect/turf_decal/siding/dark{
+	dir = 8
 	},
 /turf/open/floor/iron/white/small,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower)
@@ -12597,10 +12739,10 @@
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/cargo)
 "Xy" = (
+/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/structure/disposalpipe/segment{
 	dir = 5
 	},
-/obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /turf/open/floor/iron/kitchen{
 	dir = 4
 	},
@@ -12674,17 +12816,13 @@
 /turf/open/floor/iron/dark,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/halls)
 "XI" = (
-/obj/effect/turf_decal/siding/wood{
-	dir = 8
-	},
-/obj/machinery/power/apc/auto_name/south{
-	req_access = null;
-	req_access_txt = "150"
-	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 8
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/effect/turf_decal/siding/wood{
+	dir = 10
+	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "XN" = (
@@ -12860,9 +12998,9 @@
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security/prison/shower)
 "YG" = (
-/obj/structure/bed/dogbed,
-/mob/living/simple_animal/pet/syndifox,
-/obj/effect/decal/cleanable/oil,
+/obj/structure/closet/secure_closet/personal{
+	icon_state = "cabinet"
+	},
 /turf/open/floor/carpet/black,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "YH" = (
@@ -12880,10 +13018,41 @@
 /turf/open/floor/iron/dark/textured_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/service/dorms/fitness)
 "YI" = (
-/obj/effect/turf_decal/stripes/red/corner{
+/obj/item/storage/belt/security/full,
+/obj/item/radio/headset/ds2,
+/obj/item/clothing/under/rank/security/officer/util/syndicate,
+/obj/item/storage/belt/security/webbing/ds,
+/obj/item/clothing/head/beret/sec/syndicate,
+/obj/item/clothing/accessory/armband{
+	desc = "An armband, worn by the FOB's operatives to display which department they're assigned to.";
+	name = "brig officer armband"
+	},
+/obj/structure/closet/secure_closet{
+	icon_state = "sec";
+	name = "brig officer gear locker";
+	req_access_txt = "151"
+	},
+/obj/item/clothing/mask/gas/syndicate/ds,
+/obj/item/clothing/suit/toggle/labcoat/depjacket/sec{
+	name = "brig officer jacket"
+	},
+/obj/item/clothing/mask/gas/sechailer/syndicate,
+/obj/item/gun/energy/disabler,
+/obj/item/clothing/glasses/hud/security/sunglasses/eyepatch,
+/obj/item/clothing/glasses/hud/security/sunglasses/aviators,
+/obj/item/clothing/neck/cloak/syndiecap,
+/obj/structure/window/reinforced/survival_pod{
+	dir = 8;
+	pixel_x = -3;
+	pixel_y = 0
+	},
+/obj/effect/turf_decal/siding/dark{
 	dir = 8
 	},
-/turf/open/floor/mineral/plastitanium,
+/obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
+	dir = 1
+	},
+/turf/open/floor/mineral/plastitanium/red,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/security)
 "YK" = (
 /obj/item/circuitboard/computer/mech_bay_power_console,
@@ -12987,15 +13156,31 @@
 	level = 1
 	},
 /obj/machinery/atmospherics/components/unary/vent_pump/on/layer1,
+/obj/machinery/airalarm/syndicate{
+	pixel_y = 24
+	},
 /turf/open/floor/iron/showroomfloor,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/medbay)
 "Zq" = (
-/obj/structure/sign/flag/syndicate/directional/south,
-/obj/machinery/light/dim/directional/south,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layer1{
 	dir = 9
 	},
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
+/obj/machinery/turretid{
+	ailock = 1;
+	dir = 1;
+	icon_state = "control_kill";
+	lethal = 1;
+	name = "Base turret controls";
+	pixel_x = 0;
+	req_access = null;
+	req_access_txt = "151";
+	pixel_y = -32;
+	control_area = "/area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/vault"
+	},
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 8
+	},
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/bluemoon/deepspacetwo/bridge/admiral)
 "Zs" = (
@@ -13100,6 +13285,10 @@
 	},
 /obj/effect/turf_decal/trimline/dark/corner{
 	dir = 4
+	},
+/obj/structure/sign/poster/contraband/vulp7{
+	pixel_x = 0;
+	pixel_y = 32
 	},
 /turf/open/floor/iron/dark/side{
 	dir = 8
@@ -13688,7 +13877,7 @@ FP
 wz
 yb
 yd
-jd
+Xh
 zn
 lt
 Ov
@@ -13721,7 +13910,7 @@ wg
 IC
 Oi
 qh
-NU
+wj
 ZF
 DK
 KO
@@ -13797,7 +13986,7 @@ Xh
 aY
 JD
 Va
-Xh
+OQ
 bq
 NP
 OC
@@ -13852,10 +14041,10 @@ Xh
 vr
 qN
 wN
+qi
 Xh
-Rp
 Wq
-tf
+nz
 YI
 Rf
 cr
@@ -13907,8 +14096,8 @@ Xh
 qj
 ie
 or
+jd
 Xh
-oS
 gK
 pW
 NY
@@ -14071,9 +14260,9 @@ gY
 wp
 Uz
 AI
+um
 mx
-mx
-mx
+oS
 aF
 lU
 zp
@@ -14560,8 +14749,8 @@ EY
 At
 bt
 jr
+qL
 Rt
-nz
 Zp
 cY
 cu
@@ -14615,8 +14804,8 @@ EY
 YG
 CH
 Le
+NU
 Rt
-um
 ot
 nR
 Rt
@@ -14670,7 +14859,7 @@ EY
 vx
 IZ
 XI
-Rt
+hw
 Rt
 Rt
 Rt
@@ -15041,8 +15230,8 @@ wg
 Nc
 Oi
 qh
-qL
-ek
+NB
+Rp
 Wn
 Sc
 Xk
@@ -15096,7 +15285,7 @@ wg
 Mt
 NB
 NB
-qL
+NB
 da
 Hb
 mK
@@ -15151,7 +15340,7 @@ wg
 Nc
 zI
 qh
-qL
+NB
 ek
 GY
 Uh
