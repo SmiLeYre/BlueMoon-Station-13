@@ -274,7 +274,7 @@
 
 /obj/machinery/autolathe/screwdriver_act(mob/living/user, obj/item/I)
 	. = ..()
-	if(user.a_intent == INTENT_DISARM)
+	if(user.a_intent == INTENT_DISARM || HAS_TRAIT(I, TRAIT_NODROP))
 		if(busy)
 			balloon_alert(user, "Занято!")
 			return STOP_ATTACK_PROC_CHAIN
