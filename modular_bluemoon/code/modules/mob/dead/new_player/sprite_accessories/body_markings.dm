@@ -1,5 +1,5 @@
 /datum/sprite_accessory/insect_fluff/neckfluff
-	icon = 'modular_bluemoon/DarwickTheDork/skyrat_ported/icons/mob/neck_fluff.dmi'
+	icon = 'modular_bluemoon/icons/mob/wings.dmi'
 	icon_state = "neckfluff"
 
 /datum/sprite_accessory/insect_fluff/neckfluff/mutcolors
@@ -17,4 +17,3 @@
 /datum/sprite_accessory/insect_fluff/neckfluff/hair
 	name = "Neckfluff (Hair)"
 	color_src = HAIR
-	
