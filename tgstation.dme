@@ -4314,6 +4314,7 @@
 #include "modular_bluemoon\code\modules\mob\dead\new_player\sprite_accesories\tails.dm"
 #include "modular_bluemoon\code\modules\mob\dead\new_player\sprite_accesories\tertiary.dm"
 #include "modular_bluemoon\code\modules\mob\dead\new_player\sprite_accesories\vox.dm"
+#include "modular_bluemoon\code\modules\mob\dead\new_player\sprite_accessories\hair_head.dm"
 #include "modular_bluemoon\code\modules\mob\living\living_movement.dm"
 #include "modular_bluemoon\code\modules\mob\living\carbon\human\self_gulp_size.dm"
 #include "modular_bluemoon\code\modules\paperwork\paper_premade.dm"
