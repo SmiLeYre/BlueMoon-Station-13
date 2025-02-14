@@ -65,6 +65,12 @@
 /area/awaymission/complex/mainfacility
 	name = "Primary Complex"
 	icon_state = "awaycontent12"
+	sub_areas = list(/area/awaymission/complex/shower)
+
+/area/awaymission/complex/shower
+	icon = 'icons/turf/areas.dmi'
+	icon_state = "shower"
+	name = "Shower"
 
 /area/awaymission/complex/logistics
 	name = "Logistics Department"
@@ -1085,7 +1091,7 @@
 	armed = FALSE
 	trap_damage = 40
 
-/obj/item/restraints/legcuffs/beartrap/Crossed(AM as mob|obj)
+/obj/item/restraints/legcuffs/beartrap/crystalwire/Crossed(AM as mob|obj)
 	if(armed && isturf(src.loc))
 		if(isliving(AM))
 			var/mob/living/L = AM

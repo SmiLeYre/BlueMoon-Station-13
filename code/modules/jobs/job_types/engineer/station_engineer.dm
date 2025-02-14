@@ -23,7 +23,9 @@
 	bounty_types = CIV_JOB_ENG
 	departments = DEPARTMENT_BITFLAG_ENGINEERING
 
-	starting_modifiers = list(/datum/skill_modifier/job/level/wiring, /datum/skill_modifier/job/affinity/wiring)
+	starting_modifiers = list(/datum/skill_modifier/job/level/wiring/expert, /datum/skill_modifier/job/affinity/wiring) //BLUEMOON CHANGE job/level to expert
+
+	mind_traits = list(TRAIT_KNOW_ENGI_WIRES) //BLUEMOON ADD use #define TRAIT system
 
 	display_order = JOB_DISPLAY_ORDER_STATION_ENGINEER
 

@@ -58,7 +58,7 @@
 					return
 
 				if(user != T)
-					src.visible_message("<span class='notice'>[user] начинает выводить натпись на [T]'s [BP.name].</span>")
+					src.visible_message("<span class='notice'>[user] начинает выводить надпись на [T]'s [BP.name].</span>")
 				else
 					to_chat(user, "<span class='notice'>Вы начали выводить надпись на [BP.name].</span>")
 

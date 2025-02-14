@@ -383,7 +383,7 @@
 
 /obj/item/clothing/head/frenchberet/proc/handle_speech(datum/source, mob/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
-	if(message[1] != "*")
+	if(message[1] != "*" && message[1] != "!")
 		message = " [message]"
 		var/list/french_words = strings("french_replacement.json", "french")
 

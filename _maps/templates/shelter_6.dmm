@@ -208,6 +208,10 @@
 "Gc" = (
 /obj/structure/table/reinforced,
 /obj/machinery/microwave,
+/obj/item/reagent_containers/rag{
+	pixel_y = 15;
+	pixel_x = 10
+	},
 /turf/open/floor/mineral/titanium/white,
 /area/survivalpod/nonpowered)
 "Gn" = (

@@ -48,5 +48,16 @@
 /obj/item/vending_refill/inteq_vendomat
 	machine_name = "InteDrobe"
 
-/obj/machinery/vending/kink
-	light_mask = "kink-light-mask"
+// /obj/machinery/vending/kink
+// 	light_mask = "kink-light-mask"
+
+/obj/machinery/vending/inteq_vendomat/wrench_act(mob/living/user, obj/item/I)
+	. = ..()
+	if(!I.tool_behaviour == TOOL_WRENCH)
+		return
+	if(is_station_level(src.z))
+		balloon_alert_to_viewers("ОБНАРУЖЕНА ВРАЖЕСКАЯ СИГНАТУРА!")
+		playsound(get_turf(src), 'sound/machines/nuke/confirm_beep.ogg', 65, 1, 1)
+		do_sparks(3, 1, src)
+		addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(explosion), get_turf(src), 2, 3, 4, 8), 2 SECONDS)
+		return

@@ -23,7 +23,7 @@
 	bounty_types = CIV_JOB_ENG
 	departments = DEPARTMENT_BITFLAG_ENGINEERING
 
-	starting_modifiers = list(/datum/skill_modifier/job/level/wiring, /datum/skill_modifier/job/affinity/wiring)
+	starting_modifiers = list(/datum/skill_modifier/job/level/wiring/trained, /datum/skill_modifier/job/affinity/wiring) //BLUEMOON CHANGE job/level to trained
 
 	display_order = JOB_DISPLAY_ORDER_ATMOSPHERIC_TECHNICIAN
 	threat = 0.5
@@ -44,9 +44,9 @@
 	uniform = /obj/item/clothing/under/rank/engineering/atmospheric_technician
 	r_pocket = /obj/item/analyzer
 
-	backpack = /obj/item/storage/backpack/industrial
-	satchel = /obj/item/storage/backpack/satchel/eng
-	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	backpack = /obj/item/storage/backpack/atmospheric
+	satchel = /obj/item/storage/backpack/satchel/atmospheric
+	duffelbag = /obj/item/storage/backpack/duffelbag/atmospheric
 	box = /obj/item/storage/box/survival/engineer
 	pda_slot = ITEM_SLOT_LPOCKET
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1)
@@ -64,9 +64,9 @@
 	gloves = /obj/item/clothing/gloves/combat
 	head = /obj/item/clothing/head/hardhat/red/upgraded
 
-	backpack = /obj/item/storage/backpack/industrial
-	satchel = /obj/item/storage/backpack/satchel/eng
-	duffelbag = /obj/item/storage/backpack/duffelbag/engineering
+	backpack = /obj/item/storage/backpack/atmospheric
+	satchel = /obj/item/storage/backpack/satchel/atmospheric
+	duffelbag = /obj/item/storage/backpack/duffelbag/atmospheric
 	box = /obj/item/storage/box/survival/syndie
 	pda_slot = ITEM_SLOT_LPOCKET
 	backpack_contents = list(/obj/item/modular_computer/tablet/preset/advanced=1, /obj/item/syndicate_uplink=1)

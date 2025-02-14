@@ -166,9 +166,10 @@
 		pushed_mob.pass_flags &= ~PASSTABLE
 	if(pushed_mob.loc != loc) //Something prevented the tabling
 		return
-	pushed_mob.DefaultCombatKnockdown(40)
-	pushed_mob.visible_message("<span class='danger'>[user] пихает [pushed_mob] на [src]!</span>", \
-								"<span class='userdanger'>[user] пихает тебя на [src]!</span>")
+	pushed_mob.DefaultCombatKnockdown(120)
+	pushed_mob.apply_damage(15, BRUTE)
+	pushed_mob.visible_message("<span class='danger'>[user] кидает [pushed_mob] на [src]!</span>", \
+								"<span class='userdanger'>[user] кидает тебя на [src]!</span>")
 	playsound(pushed_mob, 'sound/weapons/thudswoosh.ogg', 90, TRUE)
 	log_combat(user, pushed_mob, "tabled", null, "onto [src]")
 	if(!ishuman(pushed_mob))
@@ -190,7 +191,7 @@
 	if(HAS_TRAIT(user, TRAIT_HULK) || HAS_TRAIT(user, TRAIT_MAULER))
 		extra_wound = 20
 	banged_limb.receive_damage(30, wound_bonus = extra_wound)
-	pushed_mob.apply_damage(60, STAMINA)
+	pushed_mob.apply_damage(120, STAMINA)
 	take_damage(50)
 
 	playsound(pushed_mob, 'sound/effects/bang.ogg', 90, TRUE)

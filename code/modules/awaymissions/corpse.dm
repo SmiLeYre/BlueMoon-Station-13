@@ -34,6 +34,9 @@
 	var/skip_reentry_check = FALSE //Skips the ghost role blacklist time for people who ghost/suicide/cryo
 	var/loadout_enabled = FALSE
 	var/can_load_appearance = FALSE
+	var/make_bank_account = FALSE // BLUEMOON ADD
+	var/starting_money = 0 // BLUEMOON ADD работает только при make_bank_account = TRUE
+	var/category = "misc" // BLUEMOON ADD - категоризация для отображения по спискам
 
 ///override this to add special spawn conditions to a ghost role
 /obj/effect/mob_spawn/proc/allow_spawn(mob/user, silent = FALSE)
@@ -141,14 +144,18 @@
 		if(jobban_isbanned(M, "pacifist")) //do you love repeat code? i sure do
 			to_chat(M, "<span class='cult'>You are pacification banned. Pacifist has been force applied.</span>")
 			ADD_TRAIT(M, TRAIT_PACIFISM, "pacification ban")
-		//
+		// BLUEMOON EDIT START
 		if(show_flavour)
-			var/output_message = "<span class='big bold'>[short_desc]</span>"
+			var/output_message = ""
+			output_message += "<p class='medium'>Вы - <b>[src.name]</b>.</p>"
+			output_message += "<p>[short_desc]</p>"
 			if(flavour_text != "")
-				output_message += "\n<span class='bold'>[flavour_text]</span>"
+				output_message += "<p>[flavour_text]</p>"
 			if(important_info != "")
-				output_message += "\n<span class='userdanger'>[important_info]</span>"
-			to_chat(M, output_message)
+				output_message += "<span class='warning'>[important_info]</span>"
+			output_message += "\n<span class='boldwarning'>В режим игры Extended станцию посещать допустимо, в Dynamic — запрещено!</span>"
+			to_chat(M, examine_block(output_message))
+		// BLUEMOON EDIT END
 		var/datum/mind/MM = M.mind
 		var/datum/antagonist/A
 		// BLUEMOON EDIT START - правки гостролей
@@ -168,7 +175,8 @@
 			M.mind.assigned_role = assignedrole
 		special(M, name)
 		MM.name = M.real_name
-		to_chat(M,"<span class='boldwarning'>В Эксту посещать станцию допустимо, в Динамику запрещено!</span>")
+		if(make_bank_account)
+			handlebank(M, starting_money)
 		special_post_appearance(M, name) // BLUEMOON ADD
 	if(uses > 0)
 		uses--
@@ -244,6 +252,21 @@
 				to_chat(H, span_reallybig("Не забудьте забрать космический охладитель под собой.")) // чтобы не упустили из виду при резком спавне
 				new /obj/item/device/cooler/charged(H.loc)
 	. = ..()
+
+// Создаём банк аккаунт и всё такое
+/obj/effect/mob_spawn/proc/handlebank(mob/living/carbon/human/owner, starting_money = 0)
+	return
+
+/obj/effect/mob_spawn/human/handlebank(mob/living/carbon/human/owner, starting_money = 0)
+	var/datum/bank_account/offstation_bank_account = new(owner.real_name)
+	owner.account_id = offstation_bank_account.account_id
+	owner.add_memory("Номер вашего банковского аккаунта - [owner.account_id].")
+	if(owner.wear_id)
+		var/obj/item/card/id/id_card = owner.wear_id
+		id_card.registered_account = offstation_bank_account
+	if(starting_money > 0)
+		offstation_bank_account.account_balance = starting_money
+
 // BLUEMOON ADD END
 
 /obj/effect/mob_spawn/human/equip(mob/living/carbon/human/H, load_character)
@@ -511,6 +534,7 @@
 	flavour_text = "Вы посетитель пляжа и вы уже не помните, сколько вы здесь пробыли! Какое же это приятное место."
 	assignedrole = "Beach Bum"
 	can_load_appearance = TRUE
+	category = "offstation"
 
 /obj/effect/mob_spawn/human/beach/alive/lifeguard
 	flavour_text = "Вы - пляжный спасатель! Присматривай за посетителями пляжа, чтобы никто не утонул, не был съеден акулами и так далее."
@@ -520,6 +544,7 @@
 	job_description = "Beach Biodome Lifeguard"
 	uniform = /obj/item/clothing/under/shorts/red
 	can_load_appearance = TRUE
+	category = "offstation"
 
 /datum/outfit/beachbum
 	name = "Beach Bum"

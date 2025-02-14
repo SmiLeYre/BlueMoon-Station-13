@@ -1156,7 +1156,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 							dat += "<b>Toys and Egg Stuffing:</b><a style='display:block;width:50px' href='?_src_=prefs;preference=belly_stuffing'>[features["belly_stuffing"] == TRUE ? "Yes" : "No"]</a>"
 							dat += "<b>Belly Always Accessible:</b><a style='display:block;width:100px' href='?_src_=prefs;preference=belly_accessible'>[features["belly_accessible"] ? "Yes" : "No"]</a>"
 						dat += "</td>"
-						if(all_quirks.Find("Dullahan"))
+						if(all_quirks.Find("Дуллахан"))
 							dat += APPEARANCE_CATEGORY_COLUMN
 							dat += "<h3>Neckfire</h3>"
 							dat += "<a style='display:block;width:50px' href='?_src_=prefs;preference=has_neckfire;task=input'>[features["neckfire"] ? "Yes" : "No"]</a>"
@@ -2092,6 +2092,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 		// BLUEMOON ADD START - настройки для отдельных квирков
 		dat += "Настройки для отдельных квирков. Если нужный квирк не будет выставлен, то они работать не будут.<br>"
 		dat += "<a href='?_src_=prefs;preference=traits_setup;task=change_shriek_option'>([BLUEMOON_TRAIT_NAME_SHRIEK]) Тип Крика: [shriek_type]</a>"
+		dat += "<a href='?_src_=prefs;preference=traits_setup;task=lewd_summon_nickname'>([TRAIT_LEWD_SUMMON]) Прозвище для призываемого[summon_nickname ? ": ": ""][summon_nickname]</a>"
 		dat += "<hr>"
 		// BLUEMOON ADD END
 		dat += "<div align='center'>Left-click to add or remove quirks. You need negative quirks to have positive ones.<br>\
@@ -2288,6 +2289,18 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_shriek_type)
 						shriek_type = new_shriek_type
 						SetQuirks(user)
+			if("lewd_summon_nickname")
+				var/client/C = usr.client
+				if(C)
+					var/new_summon_nickname = input(user, "Задайте прозвище во время призыва вашего персонажа:", "Character Preference")  as text|null
+					if(new_summon_nickname)
+						new_summon_nickname = reject_bad_name(new_summon_nickname, allow_numbers = TRUE)
+						if(new_summon_nickname)
+							summon_nickname = new_summon_nickname
+							SetQuirks(user)
+						else
+							to_chat(user, "<font color='red'>Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, А-Я, а-я, -, ' and .</font>")
+
 	// BLUEMOON ADD END
 		return TRUE
 

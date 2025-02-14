@@ -441,7 +441,8 @@
 		playsound(get_turf(H), 'modular_citadel/sound/voice/merowr.ogg', 50, 1, -1)
 	to_chat(H, "<span class='notice'>You suddenly turn into a cat!</span>")
 	catto = new(get_turf(H.loc))
-	H.mind.transfer_to(catto)
+	if(H.mind) //BLUEMOON FIX
+		H.mind.transfer_to(catto) //BLUEMOON FIX END
 	catto.name = H.name
 	catto.desc = "A cute catto! They remind you of [H] somehow."
 	catto.color = "#[H.dna.features["mcolor"]]"
@@ -474,8 +475,12 @@
 		to_chat(H, "<span class='notice'>You feel your body settle into it's new form. You won't be able to shift back on death anymore.</span>")
 		return
 	var/words = "Your body shifts back to normal."
-	H.forceMove(catto.loc)
-	catto.mind.transfer_to(H)
+	if(istype(catto.loc, /obj/item/clothing/head/mob_holder)) //BLUEMOON FIX случаи удаления если кот был в сумке
+		H.forceMove(get_turf(catto)) //Не будем пытаться исхищраться с этим
+	else
+		H.forceMove(catto.loc)
+	if(catto.mind)
+		catto.mind.transfer_to(H) //BLUEMOON FIX END
 	if(catshift == TRUE)
 		words += " ...But wait, are those cat ears?"
 		H.say("*wag")//force update sprites.

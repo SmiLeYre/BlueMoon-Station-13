@@ -748,7 +748,8 @@
 /area/ruin/powered)
 "Hp" = (
 /mob/living/simple_animal/hostile/asteroid/goliath{
-	health = 20
+	health = 20;
+	wander = 0
 	},
 /turf/open/floor/plating/asteroid/airless,
 /area/survivalpod/nonpowered)

@@ -6,7 +6,7 @@
 	icon_state = "mime"
 
 /obj/item/clothing/shoes/combat //basic syndicate combat boots for nuke ops and mob corpses
-	name = "combat boots"
+	name = "Combat Boots"
 	desc = "High speed, low drag combat boots."
 	icon_state = "combat"
 	item_state = "jackboots"

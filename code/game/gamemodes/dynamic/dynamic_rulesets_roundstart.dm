@@ -896,59 +896,55 @@ BLUEMOON REMOVAL END*/
 		else if(HAS_TRAIT(P, TRAIT_ROBOTIC_ORGANISM)) // никаких роботов-вампиров из далекого космоса
 			candidates -= P
 
-//////////////////////////////////////////////
+// ////////////////////////////////////////////
 //                                          //
 //          SLAVERS OF SYNDICATE            //
 //                                          //
-//////////////////////////////////////////////
+// ////////////////////////////////////////////
 
-// /datum/dynamic_ruleset/roundstart/slavers
-// 	name = "Slavers"
-// 	antag_flag = ROLE_SLAVER
-// 	antag_datum = /datum/antagonist/slaver
-// 	var/datum/antagonist/antag_leader_datum = /datum/antagonist/slaver/leader
-// 	minimum_required_age = 0
-// 	restricted_roles = list("Head of Security","Bridge Officer", "Captain") // Just to be sure that a nukie getting picked won't ever imply a Captain or HoS not getting drafted
-// 	required_candidates = 4
-// 	weight = 3
-// 	cost = 20
-// 	requirements = list(101,101,101,101,101,101,60,40,30,10)
-// 	required_round_type = list(ROUNDTYPE_DYNAMIC_LIGHT)
-// 	flags = LONE_RULESET
-// 	antag_cap = list("denominator" = 18, "offset" = 1)
-// 	var/datum/team/slavers/slavers_team
+/datum/dynamic_ruleset/roundstart/slavers
+	name = "Slavers"
+	antag_flag = ROLE_SLAVER
+	antag_datum = /datum/antagonist/slaver
+	var/datum/antagonist/antag_leader_datum = /datum/antagonist/slaver/leader
+	minimum_required_age = 0
+	restricted_roles = list("Head of Security","Bridge Officer", "Captain") // Just to be sure that a nukie getting picked won't ever imply a Captain or HoS not getting drafted
+	required_candidates = 4
+	weight = 3
+	cost = 20
+	requirements = list(101,101,101,101,101,101,60,40,30,10)
+	required_round_type = list(ROUNDTYPE_DYNAMIC_LIGHT)
+	flags = LONE_RULESET
+	antag_cap = list("denominator" = 18, "offset" = 1)
+	var/datum/team/slavers/slavers_team
 
-// /datum/dynamic_ruleset/roundstart/slavers/ready(population, forced = FALSE)
-// 	required_candidates = get_antag_cap(population)
-// 	. = ..()
+/datum/dynamic_ruleset/roundstart/slavers/ready(population, forced = FALSE)
+	required_candidates = get_antag_cap(population)
+	. = ..()
 
-// /datum/dynamic_ruleset/roundstart/slavers/pre_execute(population)
-// 	. = ..()
-// 	// If ready() did its job, candidates should have 5 or more members in it
-// 	var/operatives = get_antag_cap(population)
-// 	for(var/operatives_number = 1 to operatives)
-// 		// BLUEMOON ADD START - если нет кандидатов и не выданы все роли, иначе выдаст рантайм
-// 		if(candidates.len <= 0)
-// 			message_admins("Рулсет [name] не был активирован по причине отсутствия кандидатов.")
-// 			break
-// 		// BLUEMOON ADD END
-// 		var/mob/M = pick_n_take(candidates)
-// 		assigned += M.mind
-// 		M.mind.assigned_role = "Slaver"
-// 		M.mind.special_role = "Slaver"
-// 	return TRUE
+/datum/dynamic_ruleset/roundstart/slavers/pre_execute(population)
+	. = ..()
+	var/operatives = get_antag_cap(population)
+	for(var/operatives_number = 1 to operatives)
+		if(!candidates.len) // Проверяем наличие кандидатов
+			message_admins("Ruleset [name] failed to activate due to lack of candidates.")
+			return FALSE // Возвращаем FALSE если нет кандидатов
+		var/mob/M = pick_n_take(candidates)
+		assigned += M.mind
+		M.mind.assigned_role = "Slaver"
+		M.mind.special_role = "Slaver"
+	return TRUE
 
-// /datum/dynamic_ruleset/roundstart/slavers/execute()
-// 	var/leader = TRUE
-// 	for(var/datum/mind/M in assigned)
-// 		if (leader)
-// 			leader = FALSE
-// 			var/datum/antagonist/slaver/leader/slavers_op = M.add_antag_datum(antag_leader_datum)
-// 			slavers_team = slavers_op.slaver_team
-// 		else
-// 			var/datum/antagonist/slaver/new_op = new antag_datum()
-// 			M.add_antag_datum(new_op)
-// 	return TRUE
+/datum/dynamic_ruleset/roundstart/slavers/execute()
+	var/leader = TRUE
+	for(var/datum/mind/M in assigned)
+		if (leader)
+			leader = FALSE
+			M.add_antag_datum(antag_leader_datum)
+		else
+			var/datum/antagonist/slaver/slavers_op = new antag_datum()
+			M.add_antag_datum(slavers_op)
+	return TRUE
 
 //////////////////////////////////////////////
 //                                          //

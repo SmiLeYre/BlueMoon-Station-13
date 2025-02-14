@@ -30,7 +30,7 @@ GLOBAL_VAR_INIT(singularity_counter, 0)
 		return FALSE
 	if(is_station_level(z))
 		increment_meteor_waves()
-	for(var/obj/singularity/singulo in GLOB.singularities)
+	for(var/obj/singularity/gravitational/singulo in GLOB.singularities)
 		if(singulo.z == z)
 			singulo.target = src
 	icon_state = "[icontype]1"
@@ -42,7 +42,7 @@ GLOBAL_VAR_INIT(singularity_counter, 0)
 /obj/machinery/power/singularity_beacon/proc/Deactivate(mob/user)
 	if(!active)
 		return FALSE
-	for(var/obj/singularity/singulo in GLOB.singularities)
+	for(var/obj/singularity/gravitational/singulo in GLOB.singularities)
 		if(singulo.target == src)
 			singulo.target = null
 	icon_state = "[icontype]0"
@@ -115,7 +115,7 @@ GLOBAL_VAR_INIT(singularity_counter, 0)
 		add_load(1500)
 		if(cooldown <= world.time)
 			cooldown = world.time + 80
-			for(var/obj/singularity/singulo in GLOB.singularities)
+			for(var/obj/singularity/gravitational/singulo in GLOB.singularities)
 				if(singulo.z == z)
 					say("[singulo] is now [get_dist(src,singulo)] standard lengths away to the [dir2text(get_dir(src,singulo))]")
 	else

@@ -82,6 +82,11 @@
 	icon_state = "dog"
 	covered_limbs = list("Head" = MATRIX_RED_BLUE, "Chest" = MATRIX_ALL, "Left Leg" = MATRIX_GREEN_BLUE, "Right Leg" = MATRIX_GREEN_BLUE, "Left Arm" = MATRIX_ALL, "Right Arm" = MATRIX_ALL)
 
+datum/sprite_accessory/mam_body_markings/shark/datashark // BLUEMOON CHANGE PORT from Citadel_Snowflake.dm file
+	name = "DataShark"
+	icon_state = "datashark"
+	covered_limbs = list("Head" = MATRIX_RED_GREEN, "Chest" = MATRIX_GREEN, "Left Leg" = MATRIX_GREEN, "Right Leg" = MATRIX_GREEN, "Left Arm" = MATRIX_GREEN, "Right Arm" = MATRIX_GREEN)
+
 /datum/sprite_accessory/mam_body_markings/eevee
 	name = "Eevee"
 	icon_state = "eevee"
@@ -179,6 +184,11 @@
 	name = "Raccoon"
 	icon_state = "raccoon"
 	covered_limbs = list("Head" = MATRIX_ALL, "Chest" = MATRIX_RED_GREEN, "Left Leg" = MATRIX_ALL, "Right Leg" = MATRIX_ALL, "Left Arm" = MATRIX_RED_GREEN, "Right Arm" = MATRIX_RED_GREEN)
+
+/datum/sprite_accessory/mam_body_markings/sabresune  // BLUEMOON CHANGE PORT from Citadel_Snowflake.dm file
+	name = "Sabresune"
+	icon_state = "sabresune"
+	covered_limbs = list("Head" = MATRIX_RED_GREEN, "Chest" = MATRIX_RED_GREEN, "Left Leg" = MATRIX_RED_GREEN, "Right Leg" = MATRIX_RED_GREEN, "Left Arm" = MATRIX_RED_GREEN, "Right Arm" = MATRIX_RED_GREEN)
 
 /datum/sprite_accessory/mam_body_markings/sergal
 	name = "Sergal"

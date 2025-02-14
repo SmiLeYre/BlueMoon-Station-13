@@ -1,4 +1,3 @@
-
 2024-12-04:
   SandPoot:
   - rscadd: Higher staff can now set titles for you on the manifest using the security
@@ -44,3 +43,56 @@
   - bugfix: Misc things, like removing the bombs
   - rscadd: Medical patient rooms, for "fun"
   - rscadd: A work-around fix for medical having issues monitoring crew
+2024-12-12:
+  JWosak:
+  - rscadd: Aux Engine
+  - rscadd: Junk collector shuttle (non movable)
+  - tweak: Genpop closets now uses secure closet sprite due to lack of prisoner one
+  - tweak: Genpop no longer creates new copy of prisoner uniform
+  - bugfix: Floor tiles are now fixed (not sprites codewise just location and orientations
+      of tiles on map file)
+  SpaceCat404:
+  - rscadd: Old Glory sunflower seeds, a junk food available in snack machines.
+  - rscadd: Nyanese (feline) language.
+  - rscadd: TSC gasmask, available in sci wardrobe vendors. Slightly better bio and
+      acid protection at the cost of rad protection.
+  - rscadd: carbonated cum soda (cola vending machines)
+  - rscadd: femcum soda (cola vending machines)
+  - rscadd: can of blood (For fledglings & NT CEOs)(cola vending machines)
+  - rscadd: discreet can of blood (cola vending machines)
+  - rscadd: cum rum to booze-o-mat
+  - rscadd: femcum whiskey to booze-o-mat
+  - rscadd: bloodwine to booze-o-mat
+2024-12-14:
+  Darkest08:
+  - tgs: has something to do with tgs
+2024-12-23:
+  Phoenix4O4:
+  - server: unit tests for Maps
+2024-12-24:
+  Phoenix4O4:
+  - rscadd: "\u0412\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u0443\
+      \u0434\u0430\u043B\u0435\u043D\u0438\u044F \u043F\u0435\u0441\u0435\u043D \u0438\
+      \u0437 \u043E\u0447\u0435\u0440\u0435\u0434\u0438 Jukebox"
+  - rscadd: "\u041C\u0433\u043D\u043E\u0432\u0435\u043D\u043D\u0430\u044F \u0437\u0430\
+      \u0433\u0440\u0443\u0437\u043A\u0430 \u043F\u043E\u043B\u043D\u043E\u0433\u043E\
+      \ \u0441\u043F\u0438\u0441\u043A\u0430 \u043F\u0435\u0441\u0435\u043D \u0431\
+      \u0435\u0437 \u0437\u0430\u0434\u0435\u0440\u0436\u0435\u043A."
+  - rscadd: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u043F\u0435\u0440\u0435\
+      \u0445\u043E\u0434 \u043A \u043B\u044E\u0431\u043E\u0439 \u0441\u0442\u0440\u0430\
+      \u043D\u0438\u0446\u0435 \u0441\u043F\u0438\u0441\u043A\u0430."
+  - refactor: "\u0423\u0441\u0442\u0440\u0430\u043D\u0435\u043D\u0430 \u0437\u0430\
+      \u0434\u0435\u0440\u0436\u043A\u0430 \u043F\u0440\u0438 \u043F\u0435\u0440\u0435\
+      \u043B\u0438\u0441\u0442\u044B\u0432\u0430\u043D\u0438\u0438 \u0441\u0442\u0440\
+      \u0430\u043D\u0438\u0446."
+2024-12-25:
+  blackcrystall:
+  - code_imp: Another topic datum call from other codebase
+2024-12-15:
+  Cecily-C-Catherine:
+  - rscadd: Added new tallborg dullahan sprites for the existing modules
+2024-12-18:
+  SpaceCat404:
+  - rscadd: CC Uniform item sprites
+  - rscadd: CC uniform item directories
+  - rscadd: squirm emote

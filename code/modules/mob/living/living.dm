@@ -1051,9 +1051,11 @@
 
 /mob/living/singularity_pull(S, current_size)
 	..()
-	if(current_size >= STAGE_SIX)
+	if(move_resist == INFINITY)
+		return
+	if(current_size >= STAGE_FIVE) //your puny magboots/wings/whatever will not save you against five level singularity
 		throw_at(S, 14, 3, src, TRUE)
-	else
+	else if(!src.mob_negates_gravity())
 		step_towards(src,S)
 
 /mob/living/proc/do_jitter_animation(jitteriness)

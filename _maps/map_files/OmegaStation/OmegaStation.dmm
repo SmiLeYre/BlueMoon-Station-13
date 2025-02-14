@@ -6550,6 +6550,9 @@
 	dir = 4
 	},
 /obj/item/stamp/ce,
+/obj/structure/fireaxecabinet/sledgehammercabinet{
+	pixel_y = 30
+	},
 /turf/open/floor/plasteel/dark,
 /area/command/heads_quarters/ce)
 "amG" = (
@@ -16819,7 +16822,7 @@
 	network = list("ss13","engine")
 	},
 /obj/machinery/power/apc{
-	areastring = "/area/engineering/break_room";
+	areastring = "/area/engineering/lobby";
 	name = "Engineering Foyer APC";
 	pixel_y = -26
 	},
@@ -24406,33 +24409,33 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space,
-/area/asteroid/nearstation)
+/area/space/nearstation)
 "aUR" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 10
 	},
 /obj/structure/lattice,
 /turf/open/space,
-/area/asteroid/nearstation)
+/area/space/nearstation)
 "aUS" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 6
 	},
 /obj/structure/lattice,
 /turf/open/space,
-/area/asteroid/nearstation)
+/area/space/nearstation)
 "aUT" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 10
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space,
-/area/asteroid/nearstation)
+/area/space/nearstation)
 "aUU" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple,
 /obj/structure/lattice/catwalk,
 /turf/open/space,
-/area/asteroid/nearstation)
+/area/space/nearstation)
 "aUV" = (
 /obj/machinery/light{
 	dir = 8
@@ -24787,14 +24790,14 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space,
-/area/asteroid/nearstation)
+/area/space/nearstation)
 "aVL" = (
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple{
 	dir = 9
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space,
-/area/asteroid/nearstation)
+/area/space/nearstation)
 "aVM" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
@@ -25252,7 +25255,7 @@
 /obj/machinery/atmospherics/pipe/heat_exchanging/simple,
 /obj/structure/lattice,
 /turf/open/space,
-/area/asteroid/nearstation)
+/area/space/nearstation)
 "aWB" = (
 /obj/effect/landmark/start/librarian,
 /obj/structure/chair/office/dark{
@@ -25523,10 +25526,6 @@
 	icon_state = "panelscorched"
 	},
 /area/maintenance/starboard)
-"aXc" = (
-/obj/structure/lattice/catwalk,
-/turf/open/space,
-/area/asteroid/nearstation)
 "aXd" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -29492,10 +29491,6 @@
 /obj/item/healthanalyzer,
 /turf/open/floor/plasteel/dark,
 /area/science/robotics/lab)
-"bes" = (
-/obj/structure/lattice,
-/turf/open/space,
-/area/science/mixing)
 "bet" = (
 /obj/machinery/door/poddoor/incinerator_toxmix,
 /turf/open/floor/engine/vacuum,
@@ -33424,7 +33419,7 @@
 	dir = 4
 	},
 /turf/open/space/basic,
-/area/engineering/main)
+/area/space/nearstation)
 "bxd" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -72925,7 +72920,7 @@ aUa
 aUQ
 aVK
 aUQ
-aXc
+sNM
 aqo
 aqo
 bbc
@@ -74417,7 +74412,7 @@ aaa
 aaa
 aaa
 aaa
-aXc
+sNM
 aac
 aac
 aad
@@ -74674,7 +74669,7 @@ aaa
 aaa
 aaa
 aaa
-aXc
+sNM
 aac
 aac
 aad
@@ -90409,9 +90404,9 @@ wOe
 tPn
 hXc
 iio
-bes
-bes
-bes
+aae
+aae
+aae
 mgV
 aRy
 bhm

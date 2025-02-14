@@ -10,7 +10,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
  */
 /datum/gateway_destination
 	var/name = "Unknown Destination"
-	var/wait = 30 /// How long after roundstart this destination becomes active
+	var/wait = 0 /// How long after roundstart this destination becomes active
 	var/enabled = TRUE /// If disabled, the destination won't be available
 	var/hidden = FALSE /// Will not show on gateway controls at all.
 
@@ -22,17 +22,13 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 /datum/gateway_destination/proc/get_available_reason()
 	. = "Unreachable"
 	if(world.time - SSticker.round_start_time < wait)
+		playsound(src, 'sound/machines/gateway/gateway_calibrating.ogg', 80, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		. = "Connection desynchronized. Recalibration in progress."
 
 /* Check if the movable is allowed to arrive at this destination (exile implants mostly) */
-/** SKYRAT EDIT - CYBORGS CANT USE GETWAY
 /datum/gateway_destination/proc/incoming_pass_check(atom/movable/AM)
 	return TRUE
-**/
-// Just a reminder that the home gateway overrides this proc so if a borg someone finds themself in an away mission they can still leave
-/datum/gateway_destination/proc/incoming_pass_check(atom/movable/AM)
-	return !iscyborg(AM)
-// SKYRAT EDIT - END
+
 /* Get the actual turf we'll arrive at */
 /datum/gateway_destination/proc/get_target_turf()
 	CRASH("get target turf not implemented for this destination type")
@@ -90,11 +86,11 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 		. = "Exit gateway unpowered."
 
 /datum/gateway_destination/gateway/get_target_turf()
-	return get_step(target_gateway.portal,SOUTH)
+	return get_step(target_gateway.portal, target_gateway.dir)
 
 /datum/gateway_destination/gateway/post_transfer(atom/movable/AM)
 	. = ..()
-	addtimer(CALLBACK(AM,TYPE_PROC_REF(/atom/movable, setDir),SOUTH),0)
+	addtimer(CALLBACK(AM, TYPE_PROC_REF(/atom/movable, setDir), target_gateway.dir),0)
 
 /* Special home destination, so we can check exile implants */
 /datum/gateway_destination/gateway/home
@@ -138,20 +134,8 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	invisibility = INVISIBILITY_ABSTRACT
 
 /obj/effect/gateway_portal_bumper/Bumped(atom/movable/AM)
-	//SKYRAT EDIT ADDITION
-	var/list/type_blacklist = list(
-		/obj/item/mmi,
-		/mob/living/silicon,
-	)
-	if(is_type_in_list(AM, type_blacklist))
-		return
-	for(var/atom/movable/content_item as anything in AM.get_all_contents())
-		if(!is_type_in_list(content_item, type_blacklist))
-			continue
-		to_chat(AM, span_warning("[content_item] seems to be blocking you from entering the gateway!"))
-		return
-	//SKYRAT EDIT END
-	if(get_dir(src,AM) == SOUTH)
+	if(get_dir(src,AM) == gateway?.dir)
+		playsound(src, 'sound/machines/gateway/gateway_travel.ogg', 70, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		gateway.Transfer(AM)
 
 /obj/effect/gateway_portal_bumper/Destroy(force)
@@ -236,6 +220,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 /obj/machinery/gateway/proc/deactivate()
 	var/datum/gateway_destination/dest = target
 	target = null
+	playsound(src, 'sound/machines/gateway/gateway_close.ogg', 140, TRUE, TRUE, SOUND_RANGE)
 	dest.deactivate(src)
 	QDEL_NULL(portal)
 	use_power(IDLE_POWER_USE)
@@ -294,14 +279,13 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 /obj/machinery/gateway/proc/activate(datum/gateway_destination/D)
 	if(!powered() || target)
 		return
-	//SKYRAT EDIT ADDITION
 	if(requires_key && !key_used)
 		return
-	//SKYRAT EDIT END
 	target = D
 	target.activate(destination)
 	portal_visuals.setup_visuals(target)
 	transport_active = TRUE
+	playsound(src, 'sound/machines/gateway/gateway_open.ogg', 140, TRUE, TRUE, SOUND_RANGE)
 	generate_bumper()
 	use_power(ACTIVE_POWER_USE)
 	update_appearance()
@@ -320,9 +304,6 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	if(isnull(tar_turf))
 		to_chat(user, span_warning("There's no active destination for the gateway... or it's broken. Maybe try again later?"))
 		return
-//	if(is_secret_level(tar_turf.z) && !user.client?.holder)
-//		to_chat(user, span_warning("The gateway destination is secret."))
-//		return
 	Transfer(user)
 
 /* Station's primary gateway */
@@ -344,6 +325,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	if(calibrated)
 		to_chat(user, span_alert("The gate is already calibrated, there is no work for you to do here."))
 	else
+		playsound(src, 'sound/machines/gateway/gateway_calibrated.ogg', 80, TRUE, SHORT_RANGE_SOUND_EXTRARANGE)
 		to_chat(user, "[span_boldnotice("Recalibration successful!")]: \black This gate's systems have been fine tuned. Travel to this gate will now be on target.")
 		calibrated = TRUE
 	return TRUE
@@ -353,22 +335,8 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	density = TRUE
 	use_power = NO_POWER_USE
 
-/obj/machinery/gateway/away/interact(mob/user, special_state)
+/obj/machinery/gateway/away/interact(mob/user)
 	. = ..()
-	//SKYRAT EDIT ADDITION
-	var/list/type_blacklist = list(
-		/obj/item/mmi,
-		/mob/living/silicon,
-		/obj/item/borg/upgrade/ai,
-	)
-	if(is_type_in_list(user, type_blacklist))
-		return
-	for(var/atom/movable/content_item as anything in user.get_contents())
-		if(!is_type_in_list(content_item, type_blacklist))
-			continue
-		to_chat(user, span_warning("[content_item] seems to be blocking you from entering the gateway!"))
-		return
-	//SKYRAT EDIT END
 	if(!target)
 		if(!GLOB.the_gateway)
 			to_chat(user,span_warning("Home gateway is not responding!"))
@@ -378,11 +346,14 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	else
 		deactivate()
 
+
+/obj/machinery/gateway/away/required_key
+	requires_key = TRUE
+
 /* Gateway control computer */
 /obj/machinery/computer/gateway_control
 	name = "Gateway Control"
 	desc = "Human friendly interface to the mysterious gate next to it."
-	req_access = list(ACCESS_GATEWAY) //SKYRAT EDIT ADDITION
 	var/obj/machinery/gateway/G
 
 /obj/machinery/computer/gateway_control/Initialize(mapload, obj/item/circuitboard/C)
@@ -411,7 +382,7 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 			destinations += list(possible_destination.get_ui_data())
 	.["destinations"] = destinations
 
-/obj/machinery/computer/gateway_control/ui_act(action, list/params)
+/obj/machinery/computer/gateway_control/ui_act(action, list/params, datum/tgui/ui, datum/ui_state/state)
 	. = ..()
 	if(.)
 		return
@@ -420,13 +391,6 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 			try_to_linkup()
 			return TRUE
 		if("activate")
-			//SKYRAT EDIT ADDITION BEGIN
-			if(ishuman(usr))
-				var/mob/living/carbon/human/interacting_human = usr
-				if(!allowed(interacting_human))
-					to_chat(interacting_human, "<span class='notice'>Error, you do not have the required access to link up the gateway.</span>")
-					return FALSE
-			//SKYRAT EDIT END
 			var/datum/gateway_destination/D = locate(params["destination"]) in GLOB.gateway_destinations
 			try_to_connect(D)
 			return TRUE
@@ -467,16 +431,13 @@ GLOBAL_LIST_EMPTY(gateway_destinations)
 	cam_background.plane = HIGHEST_EVER_PLANE
 	cam_background.blend_mode = BLEND_OVERLAY
 
-/atom/movable/screen/map_view/proc/generate_view(map_key)
+/atom/movable/screen/map_view/gateway_port/proc/generate_view(map_key)
 	// Map keys have to start and end with an A-Z character,
 	// and definitely NOT with a square bracket or even a number.
 	// I wasted 6 hours on this. :agony:
 	// -- Stylemistake
 	assigned_map = map_key
 	set_position(1, 1)
-
-/atom/movable/screen/map_view/gateway_port/generate_view(map_key)
-	. = ..()
 	cam_background.assigned_map = assigned_map
 	cam_background.fill_rect(1, 1, 3, 3)
 

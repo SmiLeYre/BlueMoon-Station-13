@@ -390,6 +390,12 @@
 		.[model_key] = list(members, members_attributes)
 
 /datum/parsed_map/proc/build_coordinate(list/areaCache, list/model, turf/crds, no_changeturf as num, placeOnTop as num, turn_angle as num, annihilate_tiles = FALSE, swap_xy, invert_y, invert_x)
+	// BLUEMOON EDIT START: BAD TURFS
+	// If we don't have a turf, nothing we will do next will actually acomplish anything, so just go back
+	// Note, this would actually drop area vvs in the tile, but like, why tho
+	if(!crds)
+		return
+	// BLUEMOON EDIT END: BAD TURFS
 	var/index
 	var/list/members = model[1]
 	var/list/members_attributes = model[2]

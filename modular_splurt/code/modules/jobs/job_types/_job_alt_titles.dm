@@ -10,7 +10,8 @@
 		"Cuntpitain",
 		"Cap-Slut",
 		"Grey Cardinals",
-		"Condom"
+		"Condom",
+		"Catpain"
 	)
 	LAZYADD(alt_titles, extra_titles)
 	. = ..()
@@ -51,6 +52,7 @@
 		"Division Leader",
 		"Cerberus Leader",
 		"AC Special Lieutenant",
+		"Big Boss",
 		"Head of Slutcurity",
 		"Head of Studcurity"
 	)
@@ -387,6 +389,7 @@
 		"Slutective",
 		"Studective",
 		"Van Dorn Agent",
+		"AC Recon Agent",
 		"Forensic Investigator",
 		"Cinder Dick",
 		"Cooperate Auditor"

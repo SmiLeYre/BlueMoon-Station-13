@@ -23,7 +23,12 @@
 		var/obj/item/clothing/neck/petcollar/collar = wear_neck
 		if(collar.tagname)
 			collar_tagname = " \[[collar.tagname]\]"
-	. = list("<span class='info'>Это - <EM>[!obscure_name ? name : "Неизвестный"][collar_tagname]</EM>!")
+	var/id_card_callsign_name = ""
+	if(istype(wear_id?.GetID(), /obj/item/card/id/callsign))
+		var/obj/item/card/id/callsign/callsign_id = wear_id?.GetID()
+		if(callsign_id.callsign)
+			id_card_callsign_name = " \[[callsign_id.callsign]\]"
+	. = list("<span class='info'>Это - <EM>[!obscure_name ? name : "Неизвестный"][collar_tagname][id_card_callsign_name]</EM>!")
 	if(skipface || get_visible_name() == "Unknown")
 		. += "Вы не можете разобрать, к какому виду относится находящееся перед вами существо."
 	else
@@ -98,7 +103,12 @@
 
 	//gloves
 	if(gloves && !(ITEM_SLOT_GLOVES in obscured))
-		. += "[t_on] одет[t_a] в [gloves.get_examine_string(user)]."
+		var/gloves_accessory_msg
+		var/obj/item/clothing/gloves/G = gloves
+		if(istype(G))
+			if(G.attached_accessories.len == 1)
+				gloves_accessory_msg = " c [G.attached_accessories[1].get_examine_string(user)]"
+		. += "[t_on] одет[t_a] в [gloves.get_examine_string(user)][gloves_accessory_msg]."
 	else if(length(blood_DNA))
 		var/hand_number = get_num_arms(FALSE)
 		if(hand_number)

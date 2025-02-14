@@ -585,7 +585,7 @@
 	spawn(30)
 		for(var/obj/machinery/the_singularitygen/G in GLOB.machines)
 			if(G.anchored)
-				var/obj/singularity/S = new /obj/singularity(get_turf(G), 50)
+				var/obj/singularity/gravitational/S = new /obj/singularity/gravitational (get_turf(G), 50)
 //				qdel(G)
 				S.energy = 1750
 				S.current_size = 7

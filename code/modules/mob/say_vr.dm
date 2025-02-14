@@ -160,7 +160,7 @@
 ///////////////// VERB CODE
 /mob/living/verb/subtle()
 	set name = "Subtle"
-	set category = "IC"
+	set category = "Say"
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
@@ -169,7 +169,7 @@
 ///////////////// VERB CODE 2
 /mob/living/verb/subtler()
 	set name = "Subtler Anti-Ghost"
-	set category = "IC"
+	set category = "Say"
 	if(GLOB.say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
@@ -178,7 +178,7 @@
 ///////////////// VERB CODE 3
 /mob/living/verb/subtler_table()
 	set name = "Subtler Around Table"
-	set category = "IC"
+	set category = "Say"
 	if(GLOB.say_disabled)	//This is dumb but it's here because heehoo copypaste, who the FUCK uses this to identify lag?
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return

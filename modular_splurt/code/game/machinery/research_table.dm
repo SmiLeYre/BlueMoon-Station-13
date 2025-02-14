@@ -122,6 +122,8 @@
 	tier /= parts
 
 /obj/machinery/research_table/proc/on_cum(mob/living/carbon/buckled_mob, obj/item/organ/genital/target_orifice, mob/living/partner)
+	if(is_centcom_level(src.z) && !slaver_mode) //BLUEMOON ADD защита от абузов и набивания очков через гост кафе
+		return
 	if(!configured)
 		say("Failed to get any data, the table is not configured!")
 		return

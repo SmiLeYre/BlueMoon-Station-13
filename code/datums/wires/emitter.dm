@@ -3,6 +3,7 @@
 	holder_type = /obj/machinery/power/emitter
 	req_knowledge = JOB_SKILL_TRAINED
 	req_skill = JOB_SKILL_UNTRAINED
+	visibility_trait = TRAIT_KNOW_ENGI_WIRES // BLUEMOON ADD
 
 /datum/wires/emitter/New(atom/holder)
 	wires = list(WIRE_ZAP,WIRE_HACK)

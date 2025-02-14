@@ -16,7 +16,7 @@ GLOBAL_LIST_EMPTY(roundstart_stowaway)
 	exp_requirements = 100
 	exp_type = EXP_TYPE_CREW
 	considered_combat_role = FALSE
-	custom_spawn_text = "<font color='red' size='4'><b>Вы - безбилетный пассажир. Вы НЕ должны начинать драки или пытаться бороться с охраной по какой-либо причине. В лучшем случае вы должны активно убегать от них, поскольку находитесь на станции нелегально.</b></font>"
+	custom_spawn_text = "вы - <b>безбилетный</b> пассажир. Вы НЕ должны начинать драки или пытаться бороться с охраной по какой-либо причине. В лучшем случае вы должны активно убегать от них, поскольку находитесь на станции нелегально."
 	outfit = /datum/outfit/job/stowaway
 	plasma_outfit = /datum/outfit/plasmaman/stowaway
 	display_order = JOB_DISPLAY_ORDER_STOWAWAY

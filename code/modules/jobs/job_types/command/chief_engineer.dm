@@ -33,7 +33,9 @@
 	paycheck_department = ACCOUNT_ENG
 	bounty_types = CIV_JOB_ENG
 
-	starting_modifiers = list(/datum/skill_modifier/job/level/wiring/expert, /datum/skill_modifier/job/affinity/wiring)
+	starting_modifiers = list(/datum/skill_modifier/job/level/wiring/master, /datum/skill_modifier/job/affinity/wiring) //BLUEMOON CHANGE job/level to master
+
+	mind_traits = list(TRAIT_KNOW_ENGI_WIRES) //BLUEMOON ADD use #define TRAIT system
 
 	display_order = JOB_DISPLAY_ORDER_CHIEF_ENGINEER
 	blacklisted_quirks = list(/datum/quirk/mute, /datum/quirk/brainproblems, /datum/quirk/insanity, /datum/quirk/bluemoon_criminal)

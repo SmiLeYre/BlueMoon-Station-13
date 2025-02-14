@@ -108,6 +108,13 @@
 	contains = list(/obj/machinery/the_singularitygen)
 	crate_name = "singularity generator crate"
 
+/datum/supply_pack/engine/sing_buster
+	name = "Singularity Buster Kit Crate"
+	desc = "Ключ к раскрытию слабости Лорда Сингулятора. Навыки владения в комплект не входят."
+	cost = 6000
+	contains = list(/obj/item/storage/lockbox/anti_singulo)
+	crate_name = "Singularity Buster Kit Crate"
+
 /datum/supply_pack/engine/solar
 	name = "Solar Panel Crate"
 	desc = "Вступите в Greenpeace с этим набором. Содержит двадцать одну солнечную панель, печатную плату управления солнечными панелями и трекер. Если у вас есть какие-либо вопросы, пожалуйста, ознакомьтесь с прилагаемой инструкцией."

@@ -525,7 +525,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space/basic,
-/area/ai_monitored/security/armory)
+/area/space/nearstation)
 "abz" = (
 /obj/machinery/light/small{
 	dir = 4;
@@ -563,10 +563,6 @@
 /obj/item/flashlight/lamp,
 /turf/open/floor/mineral/plastitanium,
 /area/security/prison)
-"abG" = (
-/obj/structure/lattice/catwalk,
-/turf/open/space/basic,
-/area/ai_monitored/security/armory)
 "abI" = (
 /obj/structure/reagent_dispensers/peppertank{
 	pixel_y = 32
@@ -8343,13 +8339,6 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/hallway/primary/fore)
-"ate" = (
-/obj/effect/landmark/xeno_spawn,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
-	dir = 4
-	},
-/turf/open/floor/carpet/black,
-/area/commons/dorms)
 "atf" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 4
@@ -9604,6 +9593,7 @@
 /obj/machinery/atmospherics/components/unary/vent_pump/on{
 	dir = 8
 	},
+/obj/effect/landmark/xeno_spawn,
 /turf/open/floor/plating,
 /area/maintenance/department/electrical)
 "axb" = (
@@ -11525,7 +11515,7 @@
 "aDf" = (
 /obj/machinery/computer/secure_data,
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Arrival Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},
@@ -13023,11 +13013,8 @@
 /area/hallway/secondary/entry)
 "aHw" = (
 /obj/effect/landmark/event_spawn,
-/obj/machinery/atmospherics/pipe/simple/supply/hidden{
-	dir = 10
-	},
 /turf/open/floor/carpet/black,
-/area/commons/dorms)
+/area/commons/arcade)
 "aHx" = (
 /obj/effect/spawner/structure/window/plasma,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
@@ -22501,7 +22488,7 @@
 	c_tag = "Security Post - Medbay"
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Medbay Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},
@@ -22738,6 +22725,10 @@
 /area/science/research)
 "bhE" = (
 /obj/structure/table,
+/obj/item/stack/sheet/plastic/five{
+	pixel_x = 7;
+	pixel_y = 7
+	},
 /obj/item/stack/sheet/glass/fifty{
 	pixel_x = 3;
 	pixel_y = 3
@@ -28525,8 +28516,6 @@
 /obj/effect/turf_decal/tile/purple,
 /turf/open/floor/mineral/plastitanium,
 /area/medical/genetics)
-"bvv" = (
-)
 "bvy" = (
 /obj/machinery/camera{
 	c_tag = "Genetics Research";
@@ -29911,7 +29900,7 @@
 /area/hallway/primary/central)
 "byO" = (
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Cargo Checkpoint";
 	departmentType = 5;
 	pixel_y = -30
 	},
@@ -31271,7 +31260,7 @@
 	dir = 1
 	},
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Science Checkpoint";
 	departmentType = 5;
 	pixel_y = -30
 	},
@@ -33518,7 +33507,6 @@
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "bHq" = (
-/obj/structure/disposalpipe/segment,
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
@@ -33528,6 +33516,7 @@
 /obj/structure/cable{
 	icon_state = "2-8"
 	},
+/obj/structure/disposalpipe/junction,
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "bHr" = (
@@ -35551,8 +35540,8 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
-/obj/structure/disposalpipe/junction,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/structure/disposalpipe/segment,
 /turf/open/floor/plating,
 /area/maintenance/aft)
 "bMf" = (
@@ -39847,7 +39836,7 @@
 /area/security/checkpoint/engineering)
 "bXP" = (
 /obj/machinery/requests_console{
-	department = "Security";
+	department = "Engineering Checkpoint";
 	departmentType = 5;
 	pixel_y = 30
 	},
@@ -46421,7 +46410,7 @@
 	name = "Incinerator Output Pump"
 	},
 /turf/open/space,
-/area/maintenance/disposal/incinerator)
+/area/space/nearstation)
 "cpP" = (
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/cyan/visible,
@@ -46431,7 +46420,7 @@
 /obj/structure/lattice,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
 /turf/open/space,
-/area/maintenance/disposal/incinerator)
+/area/space/nearstation)
 "cpR" = (
 /obj/machinery/door/airlock/abandoned{
 	name = "Observatory Access"
@@ -46836,11 +46825,6 @@
 /obj/structure/transit_tube,
 /turf/open/floor/plating,
 /area/engineering/main)
-"csc" = (
-/obj/structure/lattice,
-/obj/machinery/atmospherics/pipe/simple/scrubbers/visible,
-/turf/open/space,
-/area/maintenance/aft)
 "csg" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -46870,7 +46854,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating/airless,
-/area/maintenance/aft)
+/area/space/nearstation)
 "csn" = (
 /obj/structure/transit_tube/horizontal,
 /turf/open/space,
@@ -48199,7 +48183,7 @@
 	start_active = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "cvG" = (
 /obj/machinery/porta_turret/ai{
 	dir = 4;
@@ -48246,7 +48230,7 @@
 	start_active = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "cvL" = (
 /obj/structure/sign/warning/securearea{
 	pixel_x = 32
@@ -48917,12 +48901,6 @@
 /obj/structure/lattice/catwalk,
 /turf/open/space,
 /area/space/nearstation)
-"czJ" = (
-/obj/machinery/atmospherics/components/unary/outlet_injector/on{
-	dir = 1
-	},
-/turf/open/floor/plating/airless,
-/area/maintenance/disposal/incinerator)
 "czK" = (
 /turf/closed/wall/r_wall/syndicate{
 	smooth = 2
@@ -49261,7 +49239,7 @@
 	start_active = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "cAV" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -49296,7 +49274,7 @@
 	start_active = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "cAY" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -49358,7 +49336,7 @@
 	start_active = 1
 	},
 /turf/open/space,
-/area/ai_monitored/turret_protected/aisat)
+/area/space/nearstation)
 "cBg" = (
 /obj/effect/spawner/structure/window/plastitanium,
 /obj/effect/landmark/event_spawn,
@@ -51028,7 +51006,7 @@
 	},
 /obj/structure/lattice/catwalk,
 /turf/open/space,
-/area/engineering/atmos)
+/area/space/nearstation)
 "dbg" = (
 /obj/structure/table/wood,
 /obj/item/paper_bin{
@@ -54854,6 +54832,7 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/effect/landmark/xeno_spawn,
 /turf/open/floor/plating,
 /area/service/abandoned_gambling_den/secondary)
 "hSf" = (
@@ -58143,7 +58122,6 @@
 	dir = 4
 	},
 /obj/item/soap,
-/obj/effect/landmark/xeno_spawn,
 /turf/open/floor/plasteel/freezer,
 /area/commons/toilet)
 "lQG" = (
@@ -60866,11 +60844,11 @@
 /turf/open/floor/plasteel/kitchen_coldroom,
 /area/commons/dorms)
 "puV" = (
-/obj/structure/chair/sofa/corp/right{
-	dir = 1
-	},
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on{
 	dir = 8
+	},
+/obj/structure/chair/sofa/corp/left{
+	dir = 1
 	},
 /turf/open/floor/mineral/plastitanium/red,
 /area/maintenance/bar)
@@ -89462,7 +89440,7 @@ bCq
 mqZ
 rVy
 cNW
-rgW
+aCr
 bcU
 dfL
 aXL
@@ -89719,7 +89697,7 @@ bCq
 mqZ
 fLN
 fxa
-aCr
+rgW
 bcU
 dfL
 aLt
@@ -90753,7 +90731,7 @@ fxa
 puV
 rVy
 fxa
-sAH
+oKh
 bLv
 bUs
 bLv
@@ -91004,13 +90982,13 @@ bCq
 mqZ
 usO
 xJa
-oKh
+sAH
 usO
 mpI
-oKh
+sAH
 usO
 izv
-oKh
+sAH
 bCq
 bUs
 bCq
@@ -95793,7 +95771,7 @@ jRV
 acd
 aaT
 gXs
-abG
+gJi
 aaZ
 aeW
 acl
@@ -96050,7 +96028,7 @@ dqd
 acd
 abY
 gXs
-abG
+gJi
 aaZ
 ahB
 aco
@@ -96307,7 +96285,7 @@ nIx
 acd
 aaT
 gXs
-abG
+gJi
 aaZ
 aeY
 aco
@@ -96564,7 +96542,7 @@ aaa
 aaa
 aaT
 gXs
-abG
+gJi
 aaZ
 aeZ
 aco
@@ -96821,7 +96799,7 @@ aaa
 aaa
 abY
 gXs
-abG
+gJi
 aaZ
 afc
 aco
@@ -97619,7 +97597,7 @@ aod
 aqe
 ctq
 apY
-ate
+ath
 ctq
 apY
 ath
@@ -100447,7 +100425,7 @@ aqk
 ctq
 aqo
 eQb
-aHw
+blU
 avn
 awv
 axX
@@ -101485,7 +101463,7 @@ cHf
 tZp
 wxk
 xwB
-lWD
+aHw
 dvb
 aJC
 nNF
@@ -104902,7 +104880,7 @@ cpQ
 cpQ
 cpQ
 cpQ
-czJ
+csm
 aaf
 aoV
 aaa
@@ -107212,7 +107190,7 @@ cmi
 cbQ
 cnF
 cot
-csc
+cpQ
 csm
 aaa
 aaa
@@ -107798,7 +107776,7 @@ cNd
 cNd
 cNd
 cNd
-bvv
+aaa
 "}
 (159,1,1) = {"
 cNd

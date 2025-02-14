@@ -1110,7 +1110,7 @@
 			to_chat(exposed_mob, policy)
 		exposed_mob.log_message("revived using strange reagent, [tplus] deciseconds from time of death, considered late revival due to usage of strange reagent.", LOG_GAME)
 		message_admins("[ADMIN_LOOKUPFLW(exposed_mob)] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
-		log_admin(exposed_mob, "[exposed_mob] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
+		log_admin("[exposed_mob] возвращён к жизни и [late? "всё помнит" : "ничего не помнит"].")
 
 	return ..()
 

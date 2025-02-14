@@ -32,7 +32,7 @@
 	req_access_txt = "208";
 	name = "Не показывать"
 	},
-/obj/effect/spawner/lootdrop/trader/illigal,
+/obj/effect/spawner/lootdrop/trader/illegal,
 /turf/open/floor/mineral/titanium,
 /area/shuttle/ftu_trade)
 "bz" = (

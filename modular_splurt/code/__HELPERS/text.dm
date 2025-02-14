@@ -1,6 +1,6 @@
 /proc/detongueify(message) //for the half gag speech impediment function of deprivation helmets. could also be used for a standalone ring gag item.
 
-	if(message[1] != "*")
+	if(message[1] != "*" && message[1] != "!")
 		// Английский вариант замен
 		var/static/regex/tongueless_lower_1 = new("\[tdpsfjz]+", "g")
 		var/static/regex/tongueless_upper_1 = new("\[TDPSFJZ]+", "g")

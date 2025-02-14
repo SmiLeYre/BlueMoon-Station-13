@@ -53,8 +53,8 @@
 	name = "\improper tactical M16A4 rifle"
 	desc = "An american automatic rifle chambered for the 5.56 round, designed for use by Special Ops."
 	icon_state = "m16_tactical"
-	burst_size = 5
-	fire_delay = 3
+	burst_size = 3 // BLUEMOON EDIT - was "burst_size = 5"
+	fire_delay = 2 // BLUEMOON EDIT - was "fire_delay = 3"
 
 /obj/item/gun/ballistic/automatic/m16a4/tactical/update_icon_state()
 	if(magazine)

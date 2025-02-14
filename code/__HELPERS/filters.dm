@@ -294,6 +294,17 @@ GLOBAL_LIST_INIT(master_filter_info, list(
 	if(!isnull(flags))
 		.["flags"] = flags
 
+/proc/bloom_filter(threshold, size, offset, alpha)
+	. = list("type" = "bloom")
+	if(!isnull(threshold))
+		.["threshold"] = threshold
+	if(!isnull(size))
+		.["size"] = size
+	if(!isnull(offset))
+		.["offset"] = offset
+	if(!isnull(alpha))
+		.["alpha"] = alpha
+
 /proc/apply_wibbly_filters(atom/in_atom, length)
 	for(var/i in 1 to 7)
 		//This is a very baffling and strange way of doing this but I am just preserving old functionality

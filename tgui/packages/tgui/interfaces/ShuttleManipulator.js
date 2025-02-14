@@ -50,30 +50,30 @@ export const ShuttleManipulatorStatus = (props, context) => {
     <Section>
       <Table>
         {shuttles.map(shuttle => (
-          <Table.Row key={shuttle.id}>
+          <Table.Row key={shuttle.shuttle_id}>
             <Table.Cell>
               <Button
                 content="JMP"
-                key={shuttle.id}
+                key={shuttle.shuttle_id}
                 onClick={() => act('jump_to', {
                   type: 'mobile',
-                  id: shuttle.id,
+                  shuttle_id: shuttle.shuttle_id,
                 })} />
             </Table.Cell>
             <Table.Cell>
               <Button
                 content="Fly"
-                key={shuttle.id}
+                key={shuttle.shuttle_id}
                 disabled={!shuttle.can_fly}
                 onClick={() => act('fly', {
-                  id: shuttle.id,
+                  shuttle_id: shuttle.shuttle_id,
                 })} />
             </Table.Cell>
             <Table.Cell>
               {shuttle.name}
             </Table.Cell>
             <Table.Cell>
-              {shuttle.id}
+              {shuttle.shuttle_id}
             </Table.Cell>
             <Table.Cell>
               {shuttle.status}
@@ -85,10 +85,10 @@ export const ShuttleManipulatorStatus = (props, context) => {
                   ({shuttle.timeleft})
                   <Button
                     content="Fast Travel"
-                    key={shuttle.id}
+                    key={shuttle.shuttle_id}
                     disabled={!shuttle.can_fast_travel}
                     onClick={() => act('fast_travel', {
-                      id: shuttle.id,
+                      shuttle_id: shuttle.shuttle_id,
                     })} />
                 </>
               )}
@@ -206,7 +206,7 @@ export const ShuttleManipulatorModification = (props, context) => {
                       content="Jump To"
                       onClick={() => act('jump_to', {
                         type: 'mobile',
-                        id: existingShuttle.id,
+                        shuttle_id: existingShuttle.shuttle_id,
                       })} />
                   )}>
                   {existingShuttle.status}

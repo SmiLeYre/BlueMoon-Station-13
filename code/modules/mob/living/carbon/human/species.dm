@@ -1298,7 +1298,8 @@ GLOBAL_LIST_EMPTY(roundstart_race_names)
 		var/takes_crit_damage = !HAS_TRAIT(H, TRAIT_NOCRITDAMAGE)
 		if((H.health < H.crit_threshold) && takes_crit_damage)
 			if(!HAS_TRAIT(H, TRAIT_ROBOTIC_ORGANISM))
-				H.adjustBruteLoss(1)
+				if(!HAS_TRAIT(H, TRAIT_RESTORATIVE_METABOLISM)) //Война регена с уроном, за свою цену имеют право иметь синергию
+					H.adjustBruteLoss(1)
 			else
 				H.adjustToxLoss(1, toxins_type = TOX_SYSCORRUPT) // BLUEMOON CHANGES - вместо урона ожогами, у синтетиков начинают пегреваться внутренности, что выражено уроном токсинами
 

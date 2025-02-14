@@ -37,11 +37,11 @@ Ask ninjanomnom if they're around
 #define RAD_MOB_KNOCKDOWN_AMOUNT 3					// Amount of knockdown when it occurs
 
 #define RAD_NO_INSULATION 1.0						// For things that shouldn't become irradiated for whatever reason
-#define RAD_VERY_LIGHT_INSULATION 0.9				// What girders have
-#define RAD_LIGHT_INSULATION 0.8
-#define RAD_MEDIUM_INSULATION  0.7					// What common walls have
-#define RAD_HEAVY_INSULATION 0.6					// What reinforced walls have
-#define RAD_EXTREME_INSULATION 0.5					// What rad collectors have
+#define RAD_VERY_LIGHT_INSULATION 0.8				// What girders have
+#define RAD_LIGHT_INSULATION 0.6
+#define RAD_MEDIUM_INSULATION  0.4					// What common walls have
+#define RAD_HEAVY_INSULATION 0.2					// What reinforced walls have
+#define RAD_EXTREME_INSULATION 0.1					// What rad collectors have
 #define RAD_FULL_INSULATION 0						// Unused
 
 // WARNING: The deines below could have disastrous consequences if tweaked incorrectly. See: The great SM purge of Oct.6.2017

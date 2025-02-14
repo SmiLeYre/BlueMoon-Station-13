@@ -18,6 +18,7 @@
 	important_info = "Вам запрещено использовать товар или присваивать товар корабля себе. Не нападайте и не грабьте станцию, вы здесь для ведения торговли. Если на вас совершили нападение или украли товар, то вы можете применить силу в ответ."
 	assignedrole = "FTU worker"
 	antagonist_type = /datum/antagonist/ghost_role/traders
+	category = "midround"
 
 /obj/effect/mob_spawn/human/ftu_crew/qm
 	name = "Trade ship QM"
@@ -185,6 +186,9 @@
 /area/ruin/space/has_grav/powered/drugpost
 	name = "Pirat secret post"
 
+/area/ruin/space/has_grav/powered/fisherstore
+	name = "Fishing store"
+
 /area/ruin/space/has_grav/powered/clockworkhaven
 	name = "Ratvar citadel"
 
@@ -193,7 +197,6 @@
 	description = "Захваченый пиратами корабль."
 	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
 	suffix = "cargodiselost.dmm"
-	allow_duplicates = FALSE
 	id = "cargodiselost"
 
 datum/map_template/ruin/space/vaulttango
@@ -244,3 +247,10 @@ datum/map_template/ruin/space/vaulttango
 	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
 	suffix = "clockworkhaven.dmm"
 	id = "clockworkhaven"
+
+/datum/map_template/ruin/space/fisherstore
+	name = "Fishing store"
+	description = "Рыболовный магазин"
+	prefix = "_maps/RandomRuins/SpaceRuins/BlueMoon/"
+	suffix = "fisher_store.dmm"
+	id = "fisher_store"

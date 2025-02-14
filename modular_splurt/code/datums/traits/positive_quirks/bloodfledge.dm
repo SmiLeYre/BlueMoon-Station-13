@@ -137,8 +137,10 @@
 	// Remove quirk ability action datums
 	var/datum/action/cooldown/bloodfledge/bite/act_bite = locate() in quirk_mob.actions
 	var/datum/action/cooldown/bloodfledge/revive/act_revive = locate() in quirk_mob.actions
-	act_bite.Remove(quirk_mob)
-	act_revive.Remove(quirk_mob)
+	if(act_bite)
+		act_bite.Remove(quirk_mob)
+	if(act_revive)
+		act_revive.Remove(quirk_mob)
 
 	// Remove quirk language
 	quirk_mob.remove_language(/datum/language/vampiric, TRUE, TRUE, LANGUAGE_BLOODSUCKER)

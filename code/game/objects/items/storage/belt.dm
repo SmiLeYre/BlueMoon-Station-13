@@ -903,10 +903,10 @@
 
 /obj/item/storage/belt/sabre/civil
 	name = "Civil Sabre Sheath"
-	fitting_swords = list(/obj/item/melee/sabre, /obj/item/melee/sabre/civil, /obj/item/melee/baton/stunsword)
-	starting_sword = /obj/item/melee/sabre/civil
+	fitting_swords = list(/obj/item/melee/rapier, /obj/item/melee/rapier/civil, /obj/item/melee/baton/stunsword)
+	starting_sword = /obj/item/melee/rapier/civil
 
-/obj/item/melee/sabre/civil
+/obj/item/melee/rapier/civil
 	name = "Off-duty Officer's Sabre"
 	desc = "Изящное оружие."
 	force = 8

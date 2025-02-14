@@ -370,6 +370,11 @@
 	icon_state = "lablight"
 	matrixed_sections = MATRIX_RED
 
+/datum/sprite_accessory/ears/mam_ears/lunasune // BLUEMOON CHANGE PORT from Citadel_Snowflake.dm file
+	name = "lunasune"
+	icon_state = "lunasune"
+	matrixed_sections = MATRIX_RED
+
 /datum/sprite_accessory/ears/mam_ears/murid
 	name = "Murid"
 	icon_state = "murid"
@@ -393,6 +398,13 @@
 /datum/sprite_accessory/ears/mam_ears/pede
 	name = "Scolipede"
 	icon_state = "pede"
+	matrixed_sections = MATRIX_RED_GREEN
+
+/datum/sprite_accessory/ears/mam_ears/sabresune // BLUEMOON CHANGE PORT from Citadel_Snowflake.dm file
+	name = "Sabresune"
+	icon_state = "sabresune"
+	extra = TRUE
+	extra_color_src = MUTCOLORS3
 	matrixed_sections = MATRIX_RED_GREEN
 
 /datum/sprite_accessory/ears/mam_ears/sergal

@@ -98,3 +98,19 @@
 	lose_text = "<span class='danger'>Вы ощёщаете себя тяжелее.</span>"
 	medical_record_text = "Пациент имеет аномально низкий вес."
 	antag_removal_text // Text will be given to the quirk holder if they get an antag that has it blacklisted.
+
+/datum/quirk/anti_normalizer
+	name = "Невосприимчивость к нормалайзеру"
+	desc = "Syntech производит устройства-нормалайзеры, подводящие параметры размера существ к человеческим. \
+	По тем или иным причинам, на вас эта технология не работает, как и их size tool."
+	value = 0
+	mob_trait = TRAIT_BLUEMOON_ANTI_NORMALIZER
+	gain_text = "<span class='notice'>В последний раз, когда вы пытались надеть нормалайзер, он не работал.</span>"
+	lose_text = "<span class='notice'>Может быть стоит попробовать надеть нормалайзер и теперь он будет работать?</span>"
+	medical_record_text = "Пациент обладает параметрами, которые делают его неподходящим кандидатом для нормалайзеров и части других девайсов от Syntech."
+
+/datum/quirk/spiky
+	name = "Колючий"
+	desc = "Ваше тело частично или полностью покрыто острыми иглами. Любой, кто попытается вас потрогать, рискует пораниться."
+	value = 0
+	mob_trait = TRAIT_SPIKY

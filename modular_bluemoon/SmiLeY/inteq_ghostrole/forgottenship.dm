@@ -347,6 +347,13 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	name = "InteQ Forgotten Outpost"
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambigen4.ogg', 'sound/ambience/signal.ogg')
+	sub_areas = list(/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
+
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower
+	icon = 'icons/turf/areas.dmi'
+	icon_state = "shower"
+	name = "InteQ Forgotten Outpost Shower"
+	valid_to_shower = TRUE
 
 /area/ruin/space/has_grav/inteq_forgotten_cargopod
 	name = "InteQ Forgotten Cargo pod"
@@ -386,6 +393,13 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	name = "InteQ Forgotten Permanent Brig"
 	icon_state = "inteq-ship"
 	ambientsounds = list('sound/ambience/ambitech2.ogg', 'sound/ambience/ambitech3.ogg')
+	sub_areas = list(/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
+
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower
+	icon = 'icons/turf/areas.dmi'
+	icon_state = "shower"
+	name = "InteQ Forgotten Permanent Brig Shower"
+	valid_to_shower = TRUE
 
 /area/ruin/space/has_grav/inteq_forgotten_inspection
 	name = "InteQ Forgotten Inspection room"
@@ -464,6 +478,9 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	desc = "Стандартный наушник InteQ."
 	icon_state = "inteq_headset"
 	item_state = "inteq_headset"
+	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/obj_sol_head.dmi'
+	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_head.dmi'
+	radiosound = 'modular_bluemoon/kovac_shitcode/sound/radio.ogg'
 
 /obj/item/radio/headset/ghost_inteq/leader
 	name = "InteQ Headset"
@@ -471,6 +488,3 @@ GLOBAL_VAR_INIT(fscpassword, generate_password())
 	icon_state = "inteq_headset_alt"
 	item_state = "inteq_headset_alt"
 	bowman = TRUE
-	icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/obj_sol_head.dmi'
-	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/solfed/mob_sol_head.dmi'
-	radiosound = 'modular_bluemoon/kovac_shitcode/sound/radio.ogg'

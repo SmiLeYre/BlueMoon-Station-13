@@ -29,7 +29,7 @@
 
 /obj/effect/anomaly/grav/Destroy()
 	vis_contents -= warp
-	warp = null
+	QDEL_NULL(warp)
 	return ..()
 
 /obj/effect/anomaly/grav/on_changed_z_level(turf/old_turf, turf/new_turf, same_z_layer, notify_contents)

@@ -163,25 +163,25 @@
 		//BLUEMOON FIX
 		if(ingredient_count > 90)// don't fuck around with byond overlays for too long, or byond overlays fuck you around.
 			break
+
+		if(ingredient.icon && ingredient.icon_state)
+			var/image/ingredient_overlay = image(ingredient, src)
+
+			var/icon/ingredient_icon = icon(ingredient.icon, ingredient.icon_state)
+
+			ingredient_overlay.transform = ingredient_overlay.transform.Scale(
+				MICROWAVE_INGREDIENT_OVERLAY_SIZE / ingredient_icon.Width(),
+				MICROWAVE_INGREDIENT_OVERLAY_SIZE / ingredient_icon.Height(),
+			)
+
+			ingredient_overlay.pixel_y = -4
+			ingredient_overlay.layer = FLOAT_LAYER
+			ingredient_overlay.plane = FLOAT_PLANE
+			ingredient_overlay.blend_mode = BLEND_INSET_OVERLAY
+			ingredient_overlay.pixel_x = ingredient_shifts[(ingredient_count % ingredient_shifts.len) + 1]
+			. += ingredient_overlay
 		//BLUEMOON FIX
-		var/image/ingredient_overlay = image(ingredient, src)
-
-		var/icon/ingredient_icon = icon(ingredient.icon, ingredient.icon_state)
-
-		ingredient_overlay.transform = ingredient_overlay.transform.Scale(
-			MICROWAVE_INGREDIENT_OVERLAY_SIZE / ingredient_icon.Width(),
-			MICROWAVE_INGREDIENT_OVERLAY_SIZE / ingredient_icon.Height(),
-		)
-
-		ingredient_overlay.pixel_y = -4
-		ingredient_overlay.layer = FLOAT_LAYER
-		ingredient_overlay.plane = FLOAT_PLANE
-		ingredient_overlay.blend_mode = BLEND_INSET_OVERLAY
-		ingredient_overlay.pixel_x = ingredient_shifts[(ingredient_count % ingredient_shifts.len) + 1]
-
 		ingredient_count += 1
-
-		. += ingredient_overlay
 
 	var/border_icon_state
 	var/door_icon_state

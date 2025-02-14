@@ -1,4 +1,5 @@
 
+/* BLUEMOON EDIT - CODE OVERRIDDEN IN 'modular_bluemoon\phoenix404\modules\vending\cola.dm'
 /obj/machinery/vending/cola
 	name = "\improper Robust Softdrinks"
 	desc = "A softdrink vendor provided by Robust Industries, LLC."
@@ -13,7 +14,8 @@
 					/obj/item/reagent_containers/food/drinks/soda_cans/pwr_game = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/lemon_lime = 10,
 					/obj/item/reagent_containers/food/drinks/soda_cans/sol_dry = 10,
-					/obj/item/reagent_containers/glass/beaker/waterbottle = 10)
+					/obj/item/reagent_containers/glass/beaker/waterbottle = 10
+					)
 	contraband = list(/obj/item/reagent_containers/food/drinks/soda_cans/thirteenloko = 6,
 					/obj/item/reagent_containers/food/drinks/soda_cans/shamblers = 6,
 					/obj/item/reagent_containers/glass/beaker/waterbottle/wataur = 2)
@@ -104,6 +106,7 @@
 	product_slogans = "~Взболтай мне немного этого сока Шамблера! ~;Освежающий!;Jyrbv dv lg jfdv fw kyrk Jyrdscvi'j Alztv!;Более 1 триллиона душ выпито!;Жаждущий?;Nyp efk uizeb kyv uribevjj?;Kyv Jyrdscvi uizebj kyv ezxyk!;Drink up!;Krjkp."
 	light_mask = "shamblers-light-mask"
 	light_color = COLOR_MOSTLY_PURE_PINK
+
 /obj/machinery/vending/cola/buzz_fuzz
 	name = "\improper Buzz Fuzz Vendor"
 	desc = "~A hive of Flavour!~"
@@ -122,3 +125,4 @@
 	premium = list(/obj/item/reagent_containers/food/drinks/beer/light = 1,
 					/obj/item/reagent_containers/food/drinks/soda_cans/grey_bull = 1)
 	product_slogans = "~Улей со вкусом!;Жгучий вкус!;Идеал рабочего трутня!;Жужжание!;Есть мед?;Королева одобряет этот напиток!;Верните недостающую энергию!;Пчела - потребитель!"
+*/

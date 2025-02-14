@@ -1,6 +1,6 @@
 /obj/item/mod/control/pre_equipped/InteQ
 	theme = /datum/mod_theme/InteQ
-	cell = /obj/item/stock_parts/cell/bluespacereactor
+	cell = /obj/item/stock_parts/cell/bluespace
 	initial_modules = list(
 		/obj/item/mod/module/storage,
 		/obj/item/mod/module/welding,

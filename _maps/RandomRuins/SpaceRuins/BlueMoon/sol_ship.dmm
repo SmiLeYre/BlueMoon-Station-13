@@ -108,7 +108,7 @@
 	pixel_y = -8
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "aD" = (
 /obj/structure/closet/crate,
 /obj/item/stack/sheet/metal/twenty,
@@ -222,7 +222,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_vault)
 "aQ" = (
 /obj/machinery/atmospherics/miner/toxins,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "aR" = (
 /obj/effect/turf_decal/tile/dark_blue/opposingcorners,
@@ -259,12 +259,12 @@
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "ba" = (
 /obj/machinery/porta_turret/syndicate{
-	dir = 5;
-	faction = list("150","neutral");
-	pixel_y = -31
+	faction = list("neutral");
+	pixel_x = 32;
+	pixel_y = 0
 	},
-/turf/template_noop,
-/area/ruin/unpowered/no_grav)
+/turf/open/floor/holofloor/asteroid,
+/area/ruin/space)
 "bb" = (
 /obj/structure/chair{
 	dir = 4
@@ -527,7 +527,7 @@
 /obj/structure/sign/flag/terragov{
 	pixel_y = 32
 	},
-/obj/effect/mob_spawn/human/fugitive/spacepol{
+/obj/effect/mob_spawn/human/solfed/diplomacy/secret_service{
 	dir = 4
 	},
 /turf/open/floor/wood,
@@ -561,7 +561,7 @@
 	pixel_y = 28
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "dd" = (
 /obj/structure/filingcabinet,
 /obj/machinery/door/window{
@@ -694,7 +694,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "dW" = (
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
 	dir = 8
@@ -821,7 +821,7 @@
 	dir = 9
 	},
 /turf/open/floor/holofloor/asteroid,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "eJ" = (
 /obj/machinery/light{
 	dir = 8
@@ -872,7 +872,7 @@
 	pixel_x = 26
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "fl" = (
 /obj/structure/chair/stool/bar/directional/south,
 /obj/effect/turf_decal/tile/dark_blue/opposingcorners,
@@ -1213,6 +1213,9 @@
 	dir = 1;
 	icon_state = "delivery_red"
 	},
+/obj/machinery/atmospherics/components/unary/portables_connector/visible{
+	dir = 1
+	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "hm" = (
@@ -1328,6 +1331,15 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_vault)
+"hO" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 5;
+	faction = list("150","neutral");
+	pixel_x = -32;
+	pixel_y = 0
+	},
+/turf/open/floor/holofloor/asteroid,
+/area/ruin/space)
 "hV" = (
 /obj/effect/turf_decal/siding/dark/corner{
 	dir = 1
@@ -1536,13 +1548,13 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/dark,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "jn" = (
 /obj/effect/turf_decal/stripes{
 	dir = 1;
 	icon_state = "delivery_red"
 	},
-/obj/machinery/suit_storage_unit/ftu_combat,
+/obj/machinery/suit_storage_unit/sol_combat,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_vault)
 "jo" = (
@@ -1938,7 +1950,8 @@
 "ll" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/n2{
 	dir = 1;
-	piping_layer = 3
+	piping_layer = 3;
+	on = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
@@ -2001,11 +2014,11 @@
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
 "lI" = (
 /obj/machinery/porta_turret/syndicate{
-	faction = list("InteQ");
+	faction = list("neutral");
 	pixel_y = 32
 	},
 /turf/closed/mineral/random,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "lJ" = (
 /obj/effect/turf_decal/tile/dark_blue/anticorner{
 	dir = 1
@@ -2023,7 +2036,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "lO" = (
 /turf/open/floor/holofloor/asteroid,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "lQ" = (
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plasteel/dark,
@@ -2324,7 +2337,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_permabrig)
 "ng" = (
 /turf/template_noop,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "nk" = (
 /obj/structure/window/reinforced/spawner/north,
 /obj/effect/turf_decal/trimline/yellow/filled/line{
@@ -2538,7 +2551,8 @@
 "ox" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/o2{
 	dir = 1;
-	piping_layer = 3
+	piping_layer = 3;
+	on = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
@@ -2835,7 +2849,7 @@
 	dir = 10
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "qa" = (
 /turf/open/floor/wood/wood_large,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
@@ -3193,7 +3207,7 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/obj/machinery/suit_storage_unit/syndicate/inteq,
+/obj/machinery/suit_storage_unit/sol_combat/elite,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "se" = (
@@ -3204,12 +3218,12 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_bridge)
 "sf" = (
-/obj/machinery/atmospherics/components/unary/vent_pump/siphon/on{
+/obj/machinery/atmospherics/components/unary/vent_pump/siphon{
 	dir = 8;
 	id_tag = "forgotten_outpost_tox_out";
 	name = "toxin out"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "sg" = (
 /obj/structure/table/glass,
@@ -3247,9 +3261,6 @@
 "sm" = (
 /obj/structure/closet,
 /obj/item/coin/antagtoken,
-/obj/item/encryptionkey/inteq,
-/obj/item/encryptionkey/inteq,
-/obj/item/encryptionkey/inteq,
 /obj/machinery/light/small{
 	dir = 1
 	},
@@ -3312,6 +3323,7 @@
 /obj/structure/closet/cabinet,
 /obj/item/storage/belt/esabre_belt,
 /obj/item/paper/fluff/ruins/forgottenship/missionobj/sol,
+/obj/item/paper/fluff/ruins/forgottenship/password,
 /turf/open/floor/carpet/royalblue,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "st" = (
@@ -3330,7 +3342,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "sx" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/inteq_forgotten_inspection)
@@ -3354,7 +3366,7 @@
 	dir = 6
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "sD" = (
 /obj/effect/turf_decal/tile/dark_blue/opposingcorners,
 /obj/structure/cable/yellow{
@@ -3603,7 +3615,7 @@
 /obj/machinery/porta_turret/syndicate/energy{
 	armor = list("melee" = 80, "bullet" = 40, "laser" = 60, "energy" = 60, "bomb" = 60, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100);
 	dir = 4;
-	faction = list("InteQ");
+	faction = list("neutral");
 	name = "СИЗО-37 Ship Turret";
 	shot_delay = 10
 	},
@@ -3741,6 +3753,10 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_vault)
+"vV" = (
+/mob/living/simple_animal/hostile/carp/megacarp,
+/turf/open/space/basic,
+/area/space/nearstation)
 "vX" = (
 /obj/effect/mapping_helpers/network_builder/power_cable/auto,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -3803,6 +3819,9 @@
 	},
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_bridge)
+"wt" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "wu" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
@@ -3875,7 +3894,7 @@
 	dir = 4;
 	volume_rate = 200
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "wX" = (
 /obj/effect/decal/cleanable/dirt,
@@ -4135,7 +4154,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_inspection)
 "ye" = (
 /turf/closed/mineral/random/high_chance,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "yf" = (
 /obj/structure/table,
 /obj/effect/turf_decal/tile/dark_blue/fourcorners,
@@ -4255,7 +4274,7 @@
 	},
 /obj/structure/curtain,
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "yB" = (
 /obj/machinery/door/poddoor/incinerator_syndicatelava_main,
 /turf/open/floor/engine/vacuum,
@@ -4690,6 +4709,9 @@
 	},
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
+"Bc" = (
+/turf/closed/wall/r_wall/syndicate/nodiagonal,
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "Be" = (
 /obj/machinery/computer/rdconsole/core{
 	req_access = null
@@ -4834,7 +4856,7 @@
 	dir = 1
 	},
 /turf/open/floor/holofloor/asteroid,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "Cd" = (
 /obj/machinery/computer/turbine_computer{
 	dir = 4;
@@ -4954,9 +4976,7 @@
 /obj/structure/sign/flag/terragov{
 	pixel_y = 32
 	},
-/obj/effect/mob_spawn/human/fugitive/spacepol{
-	dir = 8
-	},
+/obj/effect/mob_spawn/human/solfed/diplomacy/secret_service,
 /turf/open/floor/wood,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "CJ" = (
@@ -5255,7 +5275,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "Eo" = (
 /obj/machinery/processor,
 /obj/effect/turf_decal/stripes/red/line{
@@ -5296,7 +5316,8 @@
 /area/ruin/space/has_grav/inteq_forgotten_medbay)
 "Ez" = (
 /obj/machinery/atmospherics/components/trinary/mixer/airmix/flipped{
-	dir = 4
+	dir = 4;
+	on = 0
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -5367,7 +5388,7 @@
 	},
 /obj/structure/fans/tiny,
 /obj/machinery/door/poddoor{
-	id = "colossus_port"
+	id = "colossus_starboard"
 	},
 /obj/effect/turf_decal/stripes{
 	dir = 1
@@ -5380,7 +5401,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "Fk" = (
 /obj/machinery/door/window{
 	dir = 1;
@@ -5578,13 +5599,8 @@
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_bridge)
 "GE" = (
-/obj/machinery/porta_turret/syndicate{
-	dir = 5;
-	faction = list("150","neutral");
-	pixel_y = -31
-	},
-/turf/closed/wall/r_wall/syndicate/nodiagonal,
-/area/ruin/space/has_grav/inteq_forgotten_inspection)
+/turf/open/space/basic,
+/area/space/nearstation)
 "GG" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
@@ -5758,7 +5774,7 @@
 	name = "Bathroom"
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "HA" = (
 /turf/closed/wall/r_wall/syndicate,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
@@ -5864,7 +5880,7 @@
 	id_tag = "forgotten_outpost_o2_out";
 	name = "oxygen out"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "If" = (
 /obj/effect/turf_decal/trimline/blue/filled/line{
@@ -5946,6 +5962,15 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
+"Is" = (
+/obj/machinery/porta_turret/syndicate{
+	dir = 5;
+	faction = list("150","neutral");
+	pixel_x = 0;
+	pixel_y = -32
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "IE" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 4
@@ -5981,11 +6006,11 @@
 "IP" = (
 /obj/machinery/porta_turret/syndicate{
 	dir = 8;
-	faction = list("InteQ");
+	faction = list("neutral");
 	pixel_x = 31
 	},
 /turf/open/floor/holofloor/asteroid,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "IS" = (
 /obj/effect/turf_decal/tile/dark_blue/half,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer3{
@@ -6011,7 +6036,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_rnd)
 "Jc" = (
 /turf/closed/mineral/random,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "Jd" = (
 /obj/machinery/camera/xray{
 	c_tag = "Conference room";
@@ -6172,7 +6197,7 @@
 /obj/machinery/pool/drain,
 /obj/structure/curtain,
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "JX" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -6231,7 +6256,7 @@
 	volume_rate = 200
 	},
 /turf/open/floor/holofloor/asteroid,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "Kg" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden/layer3{
 	dir = 8
@@ -6255,7 +6280,7 @@
 	id_tag = "forgotten_outpost_n2_out";
 	name = "nitrogen out"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "Ky" = (
 /obj/effect/decal/cleanable/robot_debris/limb,
@@ -6352,7 +6377,7 @@
 	frequency = 1442;
 	id_tag = "syndie_lavaland_o2_sensor"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "KR" = (
 /obj/machinery/computer/med_data/syndie{
@@ -6461,7 +6486,7 @@
 	dir = 8
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "Ly" = (
 /obj/machinery/computer/camera_advanced{
 	dir = 8
@@ -6643,6 +6668,13 @@
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
+"Me" = (
+/obj/machinery/porta_turret/syndicate{
+	faction = list("neutral");
+	pixel_y = 32
+	},
+/turf/open/space/basic,
+/area/space/nearstation)
 "Mj" = (
 /obj/structure/table,
 /obj/machinery/light/dim/directional/east,
@@ -6712,7 +6744,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_outpost)
 "MI" = (
 /obj/machinery/atmospherics/miner/nitrogen,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "MJ" = (
 /obj/effect/turf_decal/tile/dark_blue/anticorner,
@@ -6831,7 +6863,7 @@
 "Nk" = (
 /obj/structure/lattice/catwalk,
 /turf/open/floor/holofloor/asteroid,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "Nm" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/tile/dark_blue/fourcorners,
@@ -7021,7 +7053,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "Oh" = (
 /turf/closed/wall/r_wall/syndicate/nodiagonal,
 /area/ruin/space/has_grav/inteq_forgotten_bar)
@@ -7033,13 +7065,9 @@
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_rnd)
 "Os" = (
-/obj/machinery/porta_turret/syndicate{
-	dir = 5;
-	faction = list("150","neutral");
-	pixel_y = -31
-	},
-/turf/closed/mineral/random/high_chance,
-/area/ruin/unpowered/no_grav)
+/mob/living/simple_animal/hostile/carp,
+/turf/open/space/basic,
+/area/space/nearstation)
 "Ow" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3,
@@ -7264,7 +7292,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_rnd)
 "Ql" = (
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "Qo" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -7593,7 +7621,7 @@
 	dir = 1
 	},
 /turf/open/floor/holofloor/asteroid,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "Sr" = (
 /obj/structure/dresser,
 /turf/open/floor/carpet/royalblue,
@@ -7828,7 +7856,7 @@
 	pixel_y = 2
 	},
 /turf/open/floor/plasteel/freezer,
-/area/ruin/space/has_grav/inteq_forgotten_outpost)
+/area/ruin/space/has_grav/inteq_forgotten_outpost/shower)
 "TL" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -8256,7 +8284,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_rnd)
 "Wc" = (
 /obj/machinery/atmospherics/miner/oxygen,
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "Wl" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layer3{
@@ -8277,12 +8305,13 @@
 	frequency = 1442;
 	id_tag = "syndie_lavaland_n2_sensor"
 	},
-/turf/open/floor/plasteel/dark,
+/turf/open/floor/plating/airless,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
 "Wt" = (
 /obj/machinery/atmospherics/components/trinary/filter/atmos/flipped/plasma{
 	dir = 1;
-	piping_layer = 3
+	piping_layer = 3;
+	on = 0
 	},
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_atmos)
@@ -8348,11 +8377,11 @@
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "WL" = (
 /obj/machinery/porta_turret/syndicate{
-	faction = list("InteQ");
+	faction = list("neutral");
 	pixel_y = 32
 	},
 /turf/open/floor/holofloor/asteroid,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "WN" = (
 /obj/effect/turf_decal/trimline/yellow/filled/line{
 	dir = 8
@@ -8362,7 +8391,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "WP" = (
 /obj/machinery/porta_turret/syndicate{
-	faction = list("InteQ");
+	faction = list("neutral");
 	pixel_y = 32
 	},
 /turf/template_noop,
@@ -8692,8 +8721,8 @@
 	faction = list("150","neutral");
 	pixel_y = -31
 	},
-/turf/template_noop,
-/area/template_noop)
+/turf/open/space/basic,
+/area/space/nearstation)
 "YH" = (
 /obj/effect/turf_decal/tile/dark_blue/anticorner{
 	dir = 4
@@ -8832,7 +8861,7 @@
 	dir = 4
 	},
 /turf/open/floor/iron/white/small,
-/area/ruin/space/has_grav/inteq_forgotten_permabrig)
+/area/ruin/space/has_grav/inteq_forgotten_permabrig/shower)
 "Zk" = (
 /obj/machinery/door/airlock/grunge{
 	name = "Vault";
@@ -8851,7 +8880,7 @@
 /obj/machinery/porta_turret/syndicate/energy{
 	armor = list("melee" = 80, "bullet" = 40, "laser" = 60, "energy" = 60, "bomb" = 60, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100);
 	dir = 4;
-	faction = list("InteQ");
+	faction = list("neutral");
 	name = "СИЗО-37 Ship Turret";
 	shot_delay = 10
 	},
@@ -9865,8 +9894,8 @@ ye
 ye
 ye
 ye
-sz
-sz
+GE
+GE
 sz
 sz
 sz
@@ -9940,8 +9969,8 @@ ye
 Jc
 ye
 lO
-sz
-sz
+GE
+GE
 ye
 lO
 sz
@@ -10015,8 +10044,8 @@ Jc
 Jc
 ye
 lO
-sz
-sz
+GE
+GE
 ye
 lO
 sz
@@ -10090,7 +10119,7 @@ Jc
 ye
 ye
 ye
-sz
+GE
 ye
 ye
 ye
@@ -10165,10 +10194,10 @@ lO
 lO
 ye
 ye
-sz
+GE
 lO
-sz
-sz
+GE
+GE
 sz
 sz
 sz
@@ -10242,8 +10271,8 @@ lO
 lO
 lO
 lO
-sz
-sz
+GE
+GE
 sz
 sz
 sz
@@ -10300,7 +10329,7 @@ sz
 sz
 sz
 sz
-sz
+GE
 lO
 lO
 Jc
@@ -10311,14 +10340,14 @@ lO
 lO
 lO
 lO
-lO
+ba
 lO
 lO
 lO
 ye
 ye
 lO
-sz
+GE
 sz
 sz
 sz
@@ -10375,8 +10404,8 @@ sz
 lO
 lO
 lO
-sz
-sz
+GE
+GE
 lO
 lO
 lO
@@ -10387,13 +10416,13 @@ tH
 tH
 tH
 kw
-WL
+lO
 Jc
 Jc
 Jc
 ye
 lO
-sz
+GE
 sz
 sz
 sz
@@ -10424,24 +10453,24 @@ sz
 Kh
 Kh
 Dr
-sz
-sz
+GE
+GE
 Kh
 Kh
 Dr
-sz
-sz
+GE
+GE
 Kh
 Kh
 Dr
-sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
+GE
+GE
+GE
+GE
 lO
 lO
 lO
@@ -10463,12 +10492,12 @@ Pl
 Yp
 kw
 kw
-kw
-kw
-kw
-kw
-WP
-sz
+wt
+wt
+wt
+wt
+Me
+GE
 sz
 sz
 sz
@@ -10499,23 +10528,23 @@ sz
 Kh
 Kh
 Kh
-sz
-sz
+GE
+GE
 Kh
 Kh
 Kh
-sz
-sz
+GE
+GE
 Kh
 Kh
 Kh
-sz
-sz
-sz
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
+GE
+GE
+GE
 lO
 lO
 Jc
@@ -10538,14 +10567,14 @@ Pl
 Pl
 Pl
 dT
-kw
+wt
 Em
 yA
-kw
-sz
-sz
-sz
-sz
+wt
+GE
+GE
+GE
+GE
 ye
 ye
 sz
@@ -10585,10 +10614,10 @@ Ed
 Ed
 Ed
 ub
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
 lO
 lO
 lO
@@ -10613,13 +10642,13 @@ pq
 Nz
 Rj
 wx
-kw
+wt
 dc
 Ql
-kw
-sz
-sz
-sz
+wt
+GE
+GE
+GE
 ye
 lO
 ye
@@ -10660,9 +10689,9 @@ Nr
 Nr
 Nr
 Nr
-sz
-sz
-sz
+GE
+GE
+GE
 lO
 IP
 Oh
@@ -10688,14 +10717,14 @@ bk
 kw
 kw
 kw
-kw
-kw
+wt
+wt
 Hy
+wt
 kw
-kw
-sz
-sz
-sz
+GE
+GE
+GE
 Jc
 lO
 ye
@@ -10736,8 +10765,8 @@ Nr
 cG
 gu
 Zr
-sz
-sz
+GE
+GE
 lO
 Oh
 Oh
@@ -10768,9 +10797,9 @@ Ml
 vw
 Yp
 kw
-sz
-sz
-sz
+GE
+GE
+GE
 Jc
 Jc
 ye
@@ -10811,8 +10840,8 @@ Nr
 ur
 MO
 Nr
-sz
-sz
+GE
+GE
 lO
 Oh
 tV
@@ -10845,8 +10874,8 @@ kw
 kw
 kw
 kw
-WP
-sz
+Me
+GE
 Jc
 ye
 lO
@@ -10886,8 +10915,8 @@ Nr
 rJ
 Nr
 Nr
-sz
-sz
+GE
+GE
 lO
 Oh
 xh
@@ -10920,7 +10949,7 @@ aX
 Xm
 Sy
 tH
-sz
+GE
 Jc
 Jc
 Jc
@@ -10961,8 +10990,8 @@ Jm
 Jm
 Us
 Nr
-sz
-sz
+GE
+GE
 lO
 Oh
 BK
@@ -10995,7 +11024,7 @@ Nf
 Kk
 Ve
 tH
-sz
+GE
 lO
 Jc
 Jc
@@ -11036,8 +11065,8 @@ th
 th
 Nq
 Nr
-sz
-sz
+GE
+GE
 lO
 Oh
 uM
@@ -11111,8 +11140,8 @@ bs
 bs
 qz
 UD
-sz
-sz
+GE
+GE
 lO
 Oh
 Oh
@@ -11186,8 +11215,8 @@ Nr
 TF
 Nr
 Nr
-sz
-sz
+GE
+GE
 Sp
 Nk
 Oh
@@ -11261,7 +11290,7 @@ Nr
 ur
 kH
 Nr
-sz
+GE
 eG
 Cc
 Nk
@@ -11290,15 +11319,15 @@ kw
 kw
 Rf
 Pl
-kw
+wt
 Hy
-kw
-kw
+wt
+wt
 lO
 lO
 ye
-sz
-sz
+GE
+GE
 sz
 "}
 (32,1,1) = {"
@@ -11336,7 +11365,7 @@ Nr
 CG
 gu
 Zr
-sz
+GE
 Sp
 Nk
 Nk
@@ -11365,15 +11394,15 @@ kw
 uB
 xE
 xE
-kw
+wt
 Fj
 TJ
-kw
+wt
 lO
 lO
 lO
 lO
-sz
+GE
 sz
 "}
 (33,1,1) = {"
@@ -11410,8 +11439,8 @@ Nr
 Nr
 Nr
 Nr
-sz
-sz
+GE
+GE
 Sp
 Nk
 Nk
@@ -11440,10 +11469,10 @@ Rz
 qi
 AG
 Ml
-kw
+wt
 dU
 ay
-kw
+wt
 lO
 lO
 lO
@@ -11485,7 +11514,7 @@ th
 th
 JD
 Nr
-sz
+GE
 lO
 Sp
 Nk
@@ -11515,10 +11544,10 @@ kw
 sG
 Pl
 Tc
-kw
-kw
-kw
-kw
+wt
+wt
+wt
+wt
 lO
 lO
 lO
@@ -11560,7 +11589,7 @@ th
 th
 Lg
 Nr
-sz
+GE
 lO
 kw
 nl
@@ -11635,8 +11664,8 @@ th
 th
 hh
 Nr
-sz
-sz
+GE
+GE
 kw
 Nf
 kw
@@ -11898,7 +11927,7 @@ lO
 ye
 ye
 ye
-sz
+GE
 sz
 "}
 (40,1,1) = {"
@@ -11972,8 +12001,8 @@ Li
 lO
 lO
 ye
-sz
-sz
+GE
+GE
 sz
 "}
 (41,1,1) = {"
@@ -12198,7 +12227,7 @@ WL
 ye
 ye
 ye
-sz
+GE
 sz
 "}
 (44,1,1) = {"
@@ -12235,7 +12264,7 @@ Nr
 Nr
 Nr
 Nr
-sz
+GE
 Jc
 kw
 nb
@@ -12273,7 +12302,7 @@ lO
 lO
 ye
 ye
-sz
+GE
 sz
 "}
 (45,1,1) = {"
@@ -12309,8 +12338,8 @@ tf
 Dj
 Nr
 zy
-sz
-sz
+GE
+GE
 Jc
 kw
 me
@@ -12536,7 +12565,7 @@ Vt
 Ni
 xq
 Nr
-sz
+GE
 kw
 kw
 kw
@@ -12611,7 +12640,7 @@ Nr
 OJ
 gu
 Zr
-sz
+GE
 lO
 lO
 Jc
@@ -12685,9 +12714,9 @@ xU
 Nr
 Nr
 Nr
-sz
-sz
-sz
+GE
+GE
+GE
 lO
 Jc
 Jc
@@ -12719,9 +12748,9 @@ gC
 lK
 qq
 lK
-WP
-sz
-sz
+Me
+GE
+GE
 sz
 sz
 sz
@@ -12759,10 +12788,10 @@ Pf
 NT
 Nr
 Zr
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
 lO
 Jc
 Jc
@@ -12833,12 +12862,12 @@ li
 li
 li
 gu
-sz
-sz
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
+GE
+GE
 lO
 Jc
 Jc
@@ -12869,8 +12898,8 @@ Kd
 lO
 lO
 lO
-sz
-sz
+GE
+GE
 sz
 sz
 sz
@@ -12907,14 +12936,14 @@ sz
 sz
 sz
 sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
+GE
+GE
+GE
+GE
 lO
 Jc
 Jc
@@ -12943,9 +12972,9 @@ gb
 gb
 gb
 gb
-DI
-sz
-sz
+Os
+GE
+GE
 sz
 sz
 sz
@@ -12982,15 +13011,15 @@ sz
 sz
 sz
 sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
+GE
+GE
+GE
+GE
+GE
 lO
 lO
 Jc
@@ -13020,7 +13049,7 @@ io
 gb
 lO
 lO
-sz
+GE
 sz
 sz
 sz
@@ -13058,15 +13087,15 @@ sz
 sz
 sz
 Jc
-sz
+GE
 lO
 Jc
 ye
-sz
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
+GE
 lO
 lO
 sx
@@ -13140,10 +13169,10 @@ ye
 Jc
 Jc
 lO
-sz
-sz
-sz
-sz
+GE
+GE
+GE
+GE
 sx
 Kc
 Lz
@@ -13216,9 +13245,9 @@ ye
 ye
 ye
 ye
-sz
-sz
-sz
+GE
+GE
+GE
 sx
 ep
 zu
@@ -13292,7 +13321,7 @@ ye
 Jc
 Jc
 ye
-sz
+GE
 YG
 sx
 sx
@@ -13367,9 +13396,9 @@ Jc
 Jc
 Jc
 Jc
-sz
-sz
-sz
+GE
+GE
+GE
 sx
 St
 lk
@@ -13395,8 +13424,8 @@ Rd
 jq
 gb
 ye
-sz
-sz
+GE
+GE
 sz
 sz
 sz
@@ -13444,7 +13473,7 @@ sz
 sz
 sz
 sz
-sz
+GE
 sx
 nm
 nm
@@ -13525,10 +13554,10 @@ OA
 nm
 nm
 sx
-gb
+Bc
 JW
 sw
-gb
+Bc
 rF
 xv
 gb
@@ -13598,12 +13627,12 @@ Jc
 sx
 sx
 sx
-GE
 sx
-gb
+sx
+Bc
 Zj
 Od
-gb
+Bc
 io
 db
 oL
@@ -13673,9 +13702,9 @@ Jc
 Jc
 ye
 ye
-lO
-sz
-gb
+hO
+GE
+Bc
 sC
 pX
 jf
@@ -13746,14 +13775,14 @@ sz
 sz
 Jc
 Jc
-sz
-sz
-sz
-sz
-gb
+GE
+GE
+GE
+GE
+Bc
 Lp
 fk
-gb
+Bc
 Dl
 cl
 EA
@@ -13820,15 +13849,15 @@ sz
 sz
 sz
 sz
-sz
-sz
-RV
-sz
-sz
-gb
-gb
-gb
-gb
+GE
+GE
+GE
+GE
+Is
+Bc
+Bc
+Bc
+Bc
 Ii
 rQ
 ch
@@ -13844,9 +13873,9 @@ GG
 Mj
 Hg
 gb
-sz
-RV
-sz
+GE
+vV
+GE
 sz
 sz
 sz
@@ -13896,10 +13925,10 @@ sz
 sz
 sz
 sz
-sz
-sz
-sz
-ba
+GE
+GE
+GE
+ng
 Jc
 Jc
 Jc
@@ -13973,11 +14002,11 @@ sz
 sz
 sz
 sz
-sz
-sz
+GE
+GE
 ng
 Jc
-Os
+ye
 gb
 gb
 gb
@@ -13993,7 +14022,7 @@ AT
 Mn
 gb
 Jc
-sz
+GE
 ye
 lO
 sz
@@ -14047,18 +14076,18 @@ sz
 sz
 sz
 sz
+sz
+sz
+sz
+ng
+ng
+lO
+hO
+ye
+ye
 RV
 sz
-sz
-ng
-ng
-lO
-lO
-ye
-ye
-sz
-sz
-sz
+RV
 gb
 gb
 gb

@@ -1,6 +1,6 @@
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggleeatingnoise)()
 	set name = "Toggle Eating Noises"
-	set category = "Preferences"
+	set category = "Preferences.Sounds"
 	set desc = "Hear Eating noises"
 	usr.client.prefs.cit_toggles ^= EATING_NOISES
 	usr.client.prefs.save_preferences()
@@ -12,7 +12,7 @@ TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggleeatingnoise)()
 
 TOGGLE_CHECKBOX(/datum/verbs/menu/Settings/Sound, toggledigestionnoise)()
 	set name = "Toggle Digestion Noises"
-	set category = "Preferences"
+	set category = "Preferences.Sounds"
 	set desc = "Hear digestive noises"
 	usr.client.prefs.cit_toggles ^= DIGESTION_NOISES
 	usr.client.prefs.save_preferences()

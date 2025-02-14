@@ -205,8 +205,9 @@
 
 /obj/structure/closet/secure_closet/ds2atmos/PopulateContents()
 	..()
-	new /obj/item/fireaxe(src)
+	new /obj/item/fireaxe/energy(src)
 	new /obj/item/extinguisher/advanced(src)
 	new /obj/item/extinguisher/advanced(src)
 	new /obj/item/clothing/suit/fire/atmos(src)
+	new /obj/item/clothing/head/hardhat/atmos(src)
 	new /obj/item/tank/internals/oxygen/red(src)

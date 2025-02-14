@@ -4,7 +4,7 @@
 /area/template_noop)
 "ab" = (
 /turf/closed/mineral/random,
-/area/ruin/unpowered/no_grav)
+/area/ruin/space)
 "ac" = (
 /turf/closed/wall,
 /area/ruin/space/has_grav/bluemoon/listeningstation)
@@ -583,7 +583,7 @@
 /area/ruin/space/has_grav/bluemoon/listeningstation)
 "aT" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/mob_spawn/human/lavaland_syndicate/comms/space{
+/obj/effect/mob_spawn/human/lavaland_syndicate/comms{
 	assignedrole = "Space Syndicate";
 	dir = 8;
 	flavour_text = "<span class='big bold'>You are a syndicate agent,</span><b> assigned to a small listening post station situated near your hated enemy's top secret research facility: Space Station 13. <b>Monitor enemy activity as best you can, and try to keep a low profile. <font size=6>DON'T</font> abandon the base without good cause.</b> Use the communication equipment to provide support to any field agents, and sow disinformation to throw Nanotrasen off your trail. Do not let the base fall into enemy hands!</b>"

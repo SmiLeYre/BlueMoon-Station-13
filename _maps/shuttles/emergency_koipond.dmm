@@ -1,0 +1,2410 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"ae" = (
+/obj/machinery/door/airlock/shuttle,
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"aq" = (
+/obj/structure/filingcabinet/chestdrawer,
+/turf/open/floor/wood/wood_tiled,
+/area/shuttle/escape)
+"ar" = (
+/obj/item/chair,
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/wood/wood_large,
+/area/shuttle/escape)
+"ay" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = -32
+	},
+/obj/structure/closet/crate/trashcart/laundry,
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"aC" = (
+/obj/structure/table/wood,
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"aQ" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/chair/sofa/right,
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"ba" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp,
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"bI" = (
+/turf/open/floor/plasteel/stairs{
+	icon_state = "stairs_wood_l";
+	dir = 4
+	},
+/area/shuttle/escape)
+"cf" = (
+/obj/item/kirbyplants/random,
+/turf/open/floor/wood/wood_tiled,
+/area/shuttle/escape)
+"de" = (
+/obj/machinery/door/airlock/freezer,
+/obj/structure/fans/tiny,
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"eb" = (
+/turf/open/floor/plasteel/stairs{
+	icon_state = "stairs_wood_r";
+	dir = 8
+	},
+/area/shuttle/escape)
+"eh" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"ej" = (
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer/on/coldroom,
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"eo" = (
+/obj/machinery/grill,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"eC" = (
+/obj/structure/well_foundation{
+	pixel_y = 16;
+	color = "gray"
+	},
+/obj/structure/healingfountain{
+	pixel_y = 23
+	},
+/turf/open/water/jungle,
+/area/shuttle/escape)
+"eM" = (
+/obj/structure/table/wood,
+/obj/item/candle/infinite{
+	pixel_y = 20;
+	pixel_x = -16
+	},
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"fg" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"fv" = (
+/obj/structure/toilet/secret/low_loot{
+	dir = 8;
+	pixel_x = 6
+	},
+/turf/open/floor/plasteel/cafeteria,
+/area/shuttle/escape)
+"fF" = (
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 8
+	},
+/obj/machinery/portable_atmospherics/canister,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"fO" = (
+/obj/machinery/camera/autoname,
+/turf/open/floor/wood/wood_large,
+/area/shuttle/escape)
+"fU" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"gh" = (
+/turf/open/floor/plasteel/stairs{
+	icon_state = "stairs_wood_l";
+	dir = 8
+	},
+/area/shuttle/escape)
+"gm" = (
+/obj/machinery/light/floor,
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"gE" = (
+/obj/machinery/atmospherics/pipe/simple/general/hidden{
+	dir = 4
+	},
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"gP" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/shuttle{
+	name = "Emergency Shuttle Airlock"
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"gW" = (
+/obj/structure/table,
+/obj/machinery/microwave,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/plasteel/checker,
+/area/shuttle/escape)
+"hy" = (
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 6
+	},
+/obj/item/storage/toolbox/electrical,
+/obj/item/stack/sheet/mineral/wood/fifty,
+/obj/item/lighter,
+/obj/structure/table,
+/obj/structure/railing,
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"hD" = (
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"hQ" = (
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/beer,
+/obj/item/reagent_containers/food/drinks/beer,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"hS" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"iq" = (
+/obj/machinery/modular_computer/console/preset{
+	dir = 1
+	},
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"it" = (
+/obj/machinery/defibrillator_mount/loaded{
+	pixel_y = 32
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"iv" = (
+/obj/machinery/atmospherics/pipe/simple/general/hidden{
+	dir = 9
+	},
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"iz" = (
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"iF" = (
+/obj/structure/table,
+/obj/item/pizzabox/margherita,
+/turf/open/floor/plasteel/checker,
+/area/shuttle/escape)
+"jj" = (
+/obj/structure/toilet/secret/low_loot{
+	dir = 8;
+	pixel_x = 6
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plasteel/cafeteria,
+/area/shuttle/escape)
+"jo" = (
+/obj/machinery/airalarm/directional/east,
+/obj/structure/closet/crate/bin,
+/obj/effect/spawner/lootdrop/trashbin,
+/obj/effect/spawner/lootdrop/trashbin,
+/obj/effect/spawner/lootdrop/trashbin,
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"jp" = (
+/obj/machinery/shower{
+	pixel_y = 16
+	},
+/obj/structure/curtain,
+/obj/machinery/door/window,
+/obj/structure/window/reinforced/spawner/east,
+/obj/item/soap/deluxe,
+/turf/open/floor/plasteel/showroomfloor/shower,
+/area/shuttle/escape)
+"jq" = (
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"jC" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/maintenance/abandoned,
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"jU" = (
+/obj/structure/closet/secure_closet/freezer/meat/open,
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken,
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken,
+/obj/item/reagent_containers/food/snacks/meat/slab/chicken,
+/turf/open/floor/plasteel/freezer,
+/area/shuttle/escape)
+"jY" = (
+/obj/item/cushion,
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"kd" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"kg" = (
+/obj/structure/closet/firecloset/full,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"ki" = (
+/obj/structure/shuttle/engine/propulsion{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"kl" = (
+/obj/machinery/light,
+/obj/structure/flora/rock/jungle,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"kq" = (
+/obj/machinery/computer/emergency_shuttle{
+	dir = 4
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"kr" = (
+/obj/item/chair,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"ky" = (
+/obj/machinery/recharge_station/fullupgrade,
+/turf/open/floor/wood/wood_tiled,
+/area/shuttle/escape)
+"kX" = (
+/obj/structure/flora/grass/jungle/b,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"lb" = (
+/obj/structure/rack,
+/obj/item/broom,
+/obj/item/plunger,
+/obj/item/mop,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/item/lightreplacer,
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"lc" = (
+/obj/structure/table/wood,
+/obj/item/toy/cards/deck/cas,
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"lj" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/structure/fans/tiny,
+/obj/machinery/door/firedoor,
+/obj/structure/grille,
+/obj/structure/curtain,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"lG" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"lI" = (
+/obj/structure/bed/dogbed,
+/obj/item/drone_shell{
+	name = "Minnow";
+	desc = "A shell of a maintenance drone, an expendable robot built to perform station repairs. There's a tag tied to it labelled 'Minnow'."
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"lL" = (
+/obj/structure/flora/tree/jungle/small,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"lQ" = (
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/escape)
+"mb" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/closet/crate/grave,
+/obj/item/soapstone,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"mu" = (
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"my" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"mz" = (
+/obj/structure/sign/painting/library{
+	pixel_y = -32
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"mG" = (
+/obj/structure/flora/grass/jungle,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"mH" = (
+/obj/machinery/jukebox,
+/obj/structure/sign/painting/library{
+	pixel_x = 32
+	},
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
+/turf/open/floor/wood/wood_tiled,
+/area/shuttle/escape)
+"mJ" = (
+/obj/structure/flora/tree/jungle,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"mQ" = (
+/obj/structure/railing,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"mX" = (
+/obj/structure/tank_dispenser/oxygen,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"nn" = (
+/obj/structure/table,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"nw" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"nB" = (
+/obj/structure/closet/toolcloset,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"nN" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/firedoor,
+/obj/structure/fans/tiny,
+/obj/structure/grille,
+/obj/structure/curtain,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"nY" = (
+/obj/structure/table/glass,
+/turf/open/floor/wood/wood_large,
+/area/shuttle/escape)
+"oN" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/railing,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"oO" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"oS" = (
+/obj/structure/bookcase/random,
+/turf/open/floor/wood/wood_tiled,
+/area/shuttle/escape)
+"pc" = (
+/obj/machinery/atmospherics/pipe/manifold/general/hidden{
+	dir = 8
+	},
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"pd" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/structure/fans/tiny,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper,
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"pk" = (
+/obj/structure/table/wood,
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"pJ" = (
+/mob/living/simple_animal/butterfly,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"pL" = (
+/obj/machinery/light/floor,
+/turf/open/water/jungle,
+/area/shuttle/escape)
+"pP" = (
+/turf/open/floor/festive/cobblestone/safe,
+/area/shuttle/escape)
+"pZ" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"qe" = (
+/obj/structure/chair/comfy/plywood,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"qF" = (
+/obj/structure/flora/ausbushes/palebush,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"qK" = (
+/obj/structure/mineral_door/woodrustic,
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"qM" = (
+/obj/structure/sign/painting/library{
+	pixel_x = -32
+	},
+/obj/structure/chair/sofa/right{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"qQ" = (
+/obj/item/storage/firstaid{
+	pixel_y = 6
+	},
+/obj/item/storage/firstaid/brute,
+/obj/item/storage/firstaid/fire{
+	pixel_y = -6
+	},
+/obj/structure/table,
+/obj/structure/railing{
+	dir = 1
+	},
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"qR" = (
+/obj/structure/mineral_door/woodrustic,
+/obj/structure/fans/tiny,
+/obj/machinery/door/firedoor,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"qV" = (
+/obj/structure/curtain,
+/obj/machinery/door/window,
+/obj/machinery/shower{
+	pixel_y = 16
+	},
+/obj/item/soap/deluxe,
+/turf/open/floor/plasteel/showroomfloor/shower,
+/area/shuttle/escape)
+"rb" = (
+/obj/item/kirbyplants/random,
+/obj/machinery/light,
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"rh" = (
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
+/turf/open/floor/wood/wood_large,
+/area/shuttle/escape)
+"rx" = (
+/obj/machinery/light,
+/obj/structure/flora/junglebush/b,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"rG" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"rP" = (
+/obj/machinery/vending/dinnerware,
+/obj/machinery/atmospherics/components/unary/passive_vent/layer3,
+/turf/open/floor/plasteel/freezer,
+/area/shuttle/escape)
+"rX" = (
+/obj/structure/window/reinforced/fulltile,
+/obj/machinery/door/firedoor,
+/obj/structure/grille,
+/obj/structure/curtain,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"sa" = (
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"se" = (
+/obj/structure/railing{
+	dir = 6
+	},
+/obj/structure/table/wood/poker,
+/obj/item/storage/fancy/donut_box,
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"sk" = (
+/obj/machinery/washing_machine,
+/turf/open/floor/plasteel/cafeteria,
+/area/shuttle/escape)
+"sH" = (
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"sS" = (
+/obj/item/storage/box/marshmallow,
+/obj/structure/table/glass,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"sU" = (
+/obj/structure/sink/kitchen{
+	dir = 4;
+	pixel_x = -12
+	},
+/turf/open/floor/plasteel/checker,
+/area/shuttle/escape)
+"sX" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"sY" = (
+/obj/structure/bonfire/prelit,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"tf" = (
+/obj/structure/table/wood,
+/obj/machinery/computer/security/wooden_tv,
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"th" = (
+/obj/structure/table,
+/obj/machinery/chem_dispenser/drinks/fullupgrade{
+	pixel_y = 16
+	},
+/turf/open/floor/plasteel/checker,
+/area/shuttle/escape)
+"tn" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"to" = (
+/obj/structure/flora/rock/pile,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"tI" = (
+/turf/closed/wall/mineral/titanium/nodiagonal,
+/area/shuttle/escape)
+"ud" = (
+/turf/open/water/jungle,
+/area/shuttle/escape)
+"un" = (
+/obj/structure/closet/cabinet,
+/obj/item/stock_parts/cell/bluespacereactor,
+/obj/item/clothing/head/beret/qm,
+/turf/open/floor/wood/wood_tiled,
+/area/shuttle/escape)
+"ux" = (
+/obj/structure/bed,
+/obj/item/bedsheet/random,
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"uR" = (
+/obj/structure/window/shuttle,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"vA" = (
+/obj/structure/flora/ausbushes/sunnybush,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"vK" = (
+/obj/structure/sink{
+	dir = 4;
+	pixel_x = 16;
+	pixel_y = 6
+	},
+/obj/structure/mirror{
+	pixel_x = 32
+	},
+/turf/open/floor/plasteel/cafeteria,
+/area/shuttle/escape)
+"vS" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"vZ" = (
+/obj/item/reagent_containers/food/snacks/twobread,
+/obj/item/reagent_containers/food/drinks/bottle/wine,
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"wd" = (
+/obj/structure/flora/ausbushes/sparsegrass,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"wE" = (
+/obj/structure/dresser,
+/obj/machinery/light,
+/turf/open/floor/wood/wood_tiled,
+/area/shuttle/escape)
+"xs" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"xv" = (
+/turf/template_noop,
+/area/template_noop)
+"xE" = (
+/obj/structure/railing/corner,
+/obj/structure/flora/ausbushes/ywflowers,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"xN" = (
+/obj/structure/dresser,
+/obj/item/flashlight/lamp{
+	pixel_y = 16
+	},
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"ym" = (
+/obj/structure/table,
+/obj/item/stack/sheet/mineral/coal/five,
+/obj/item/kitchen/knife,
+/obj/item/kitchen/fork,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"yn" = (
+/obj/structure/closet/firecloset/full,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"yz" = (
+/obj/structure/mineral_door/woodrustic,
+/obj/structure/fans/tiny,
+/obj/machinery/door/firedoor,
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"zh" = (
+/obj/structure/sign/painting/library{
+	pixel_y = 32
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"zm" = (
+/obj/structure/flora/rock/jungle,
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"zN" = (
+/obj/structure/sign/nanotrasen,
+/turf/closed/wall/mineral/titanium,
+/area/shuttle/escape)
+"zP" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/condiment/peppermill{
+	pixel_x = -12
+	},
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"zT" = (
+/obj/machinery/firealarm{
+	pixel_y = -32
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"Aa" = (
+/obj/structure/table/wood,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Ae" = (
+/obj/item/kirbyplants/random,
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"Ak" = (
+/obj/structure/closet/crate/awfulwickerbasket,
+/obj/item/candle,
+/obj/item/reagent_containers/food/snacks/chocolatebar,
+/obj/item/reagent_containers/food/snacks/chocolatebar,
+/obj/item/reagent_containers/food/snacks/sandwich,
+/obj/item/reagent_containers/food/snacks/sandwich,
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"Am" = (
+/obj/structure/closet/emcloset/anchored,
+/obj/machinery/light,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"As" = (
+/obj/structure/table/reinforced,
+/obj/item/storage/box/stockparts/basic,
+/obj/item/stack/cable_coil,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Av" = (
+/obj/structure/bed/double{
+	dir = 1
+	},
+/obj/item/bedsheet/qm/double{
+	dir = 4
+	},
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"AU" = (
+/obj/structure/chair/wood/normal{
+	dir = 4
+	},
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"Bc" = (
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"BB" = (
+/obj/structure/table,
+/obj/item/screwdriver,
+/obj/item/reagent_containers/spray/cleaner,
+/obj/item/storage/box/lights/mixed,
+/obj/effect/decal/cleanable/cobweb/cobweb2,
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"BN" = (
+/obj/machinery/atmospherics/components/unary/portables_connector{
+	dir = 1
+	},
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"BQ" = (
+/obj/machinery/door/firedoor/border_only{
+	dir = 1
+	},
+/obj/structure/sign/painting/library{
+	pixel_x = 32
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"BS" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"BW" = (
+/obj/structure/flora/junglebush/c,
+/obj/structure/railing{
+	dir = 6
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Cf" = (
+/obj/structure/fireplace,
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"Cl" = (
+/turf/open/floor/plasteel/stairs{
+	icon_state = "stairs_wood_r";
+	dir = 4
+	},
+/area/shuttle/escape)
+"Cr" = (
+/obj/structure/flora/junglebush/b,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"CU" = (
+/obj/structure/flora/grass/jungle/b,
+/obj/structure/railing{
+	dir = 9
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Do" = (
+/obj/machinery/door/firedoor/border_only,
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"DX" = (
+/obj/structure/rack,
+/obj/item/stack/sheet/metal/fifty,
+/obj/item/stack/sheet/glass/fifty,
+/obj/item/stack/sheet/mineral/titanium/fifty,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Ed" = (
+/obj/machinery/camera/autoname,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Eh" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/airlock/shuttle,
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"Et" = (
+/obj/structure/railing{
+	dir = 9
+	},
+/obj/structure/table/wood/poker,
+/obj/item/toy/cards/deck,
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"EG" = (
+/obj/structure/chair/sofa/corner,
+/obj/structure/railing{
+	dir = 5
+	},
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"EO" = (
+/obj/structure/chair/comfy/brown{
+	dir = 4
+	},
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/wood/wood_tiled,
+/area/shuttle/escape)
+"EP" = (
+/obj/machinery/atmospherics/components/unary/thermomachine/heater/on,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"ES" = (
+/obj/structure/table/wood,
+/obj/item/clipboard,
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"EW" = (
+/obj/structure/mopbucket,
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"Fd" = (
+/obj/structure/table,
+/obj/machinery/chem_dispenser/drinks/beer/fullupgrade{
+	pixel_y = 16
+	},
+/turf/open/floor/plasteel/checker,
+/area/shuttle/escape)
+"Fj" = (
+/obj/item/shovel,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Fy" = (
+/obj/effect/turf_decal/siding/wood/corner{
+	dir = 1
+	},
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/structure/flora/junglebush/large,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"FB" = (
+/obj/structure/flora/ausbushes/brflowers,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"FF" = (
+/obj/structure/closet/crate/bin,
+/obj/effect/spawner/lootdrop/trashbin,
+/obj/effect/spawner/lootdrop/trashbin,
+/obj/effect/spawner/lootdrop/trashbin,
+/turf/open/floor/wood/wood_large,
+/area/shuttle/escape)
+"FK" = (
+/obj/machinery/light/floor,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Gg" = (
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Gi" = (
+/obj/machinery/airalarm/directional/north,
+/obj/machinery/portable_atmospherics/scrubber,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Gk" = (
+/obj/structure/flora/ausbushes/sunnybush,
+/obj/structure/railing/corner{
+	dir = 4
+	},
+/obj/machinery/light,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"GF" = (
+/obj/structure/chair/wood/normal{
+	dir = 8
+	},
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"GL" = (
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/open/floor/festive/cobblestone/safe,
+/area/shuttle/escape)
+"GZ" = (
+/obj/structure/rack,
+/obj/item/storage/toolbox/mechanical{
+	pixel_y = 6
+	},
+/obj/item/storage/toolbox/electrical,
+/obj/item/storage/toolbox/emergency{
+	pixel_y = -6
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Hg" = (
+/obj/machinery/atmospherics/pipe/simple/general/hidden/layer1{
+	dir = 5
+	},
+/obj/item/crowbar,
+/turf/open/floor/plasteel/freezer,
+/area/shuttle/escape)
+"Hs" = (
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
+/obj/machinery/space_heater,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"HJ" = (
+/obj/structure/table,
+/obj/item/kitchen/knife,
+/obj/item/kitchen/rollingpin,
+/turf/open/floor/plasteel/checker,
+/area/shuttle/escape)
+"HK" = (
+/obj/structure/shuttle/engine/heater{
+	dir = 1
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"IF" = (
+/obj/structure/mirror{
+	pixel_x = -32
+	},
+/obj/structure/sink{
+	dir = 8;
+	pixel_x = -16;
+	pixel_y = 6
+	},
+/turf/open/floor/plasteel/cafeteria,
+/area/shuttle/escape)
+"IR" = (
+/obj/structure/flora/rock/pile,
+/obj/structure/closet/emcloset/anchored,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"IZ" = (
+/obj/structure/fence{
+	dir = 4
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Jf" = (
+/obj/machinery/firealarm{
+	pixel_y = 32
+	},
+/obj/machinery/door/firedoor/border_only{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"JN" = (
+/turf/open/floor/plasteel/stairs{
+	icon_state = "stairs_wood";
+	dir = 1
+	},
+/area/shuttle/escape)
+"JS" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green,
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"Kb" = (
+/turf/open/floor/wood/wood_large,
+/area/shuttle/escape)
+"Kd" = (
+/turf/open/floor/wood/wood_tiled,
+/area/shuttle/escape)
+"Kg" = (
+/obj/structure/closet/crate/freezer,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/item/reagent_containers/food/snacks/meat/slab,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Kp" = (
+/obj/structure/flora/junglebush/large,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Kt" = (
+/obj/structure/fans/tiny,
+/obj/structure/window/shuttle,
+/obj/structure/grille,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Ky" = (
+/obj/structure/railing{
+	dir = 10
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Lj" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_x = 32
+	},
+/obj/machinery/camera/autoname{
+	dir = 8
+	},
+/obj/machinery/processor,
+/turf/open/floor/plasteel/checker,
+/area/shuttle/escape)
+"Lk" = (
+/obj/machinery/camera/autoname{
+	dir = 4
+	},
+/turf/open/floor/festive/cobblestone/safe,
+/area/shuttle/escape)
+"Ln" = (
+/obj/structure/flora/ausbushes/brflowers,
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Lq" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"LT" = (
+/obj/machinery/airalarm/directional/south,
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"Mb" = (
+/obj/structure/closet/emcloset/anchored,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Mk" = (
+/obj/structure/fence/door,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Mo" = (
+/obj/structure/chair{
+	dir = 4
+	},
+/turf/open/floor/wood/wood_large,
+/area/shuttle/escape)
+"MD" = (
+/obj/machinery/atmospherics/pipe/simple/general/hidden{
+	dir = 5
+	},
+/obj/machinery/portable_atmospherics/canister/air,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"ML" = (
+/obj/structure/flora/rock/jungle,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Ng" = (
+/obj/structure/railing{
+	dir = 8
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Nl" = (
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/railing/corner,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"NE" = (
+/obj/item/processed/wood/stoolsilk,
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"NT" = (
+/obj/machinery/shieldgen,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"NX" = (
+/obj/item/lighter,
+/obj/structure/table/glass,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"OH" = (
+/obj/structure/bookcase/random,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"OI" = (
+/obj/structure/closet/secure_closet/freezer/meat/open,
+/obj/item/reagent_containers/food/snacks/meat/rawbacon,
+/obj/item/reagent_containers/food/snacks/meat/rawbacon,
+/obj/item/reagent_containers/food/snacks/meat/rawbacon,
+/obj/machinery/atmospherics/components/unary/passive_vent/layer1,
+/turf/open/floor/plasteel/freezer,
+/area/shuttle/escape)
+"OM" = (
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Py" = (
+/obj/structure/table/glass,
+/obj/item/melee/roastingstick,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Qb" = (
+/obj/structure/table,
+/obj/item/reagent_containers/food/condiment/pack/bbqsauce,
+/obj/item/reagent_containers/food/condiment/pack/bbqsauce,
+/obj/item/reagent_containers/food/condiment/pack/bbqsauce,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Qz" = (
+/obj/structure/rack,
+/obj/item/pipe_dispenser,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"QD" = (
+/obj/machinery/atmospherics/components/unary/thermomachine/freezer/on,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"QG" = (
+/obj/structure/chair/sofa/middle{
+	dir = 8
+	},
+/obj/structure/railing{
+	dir = 4
+	},
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"QO" = (
+/turf/open/floor/plasteel/cafeteria,
+/area/shuttle/escape)
+"QP" = (
+/obj/structure/table/wood,
+/obj/item/flashlight/lamp/green,
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"QR" = (
+/obj/structure/table/wood,
+/obj/item/paper,
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"QS" = (
+/obj/structure/railing/corner{
+	dir = 1
+	},
+/obj/machinery/light,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"QV" = (
+/obj/machinery/atmospherics/components/binary/pump{
+	dir = 4
+	},
+/obj/machinery/light,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Rd" = (
+/obj/machinery/atmospherics/pipe/simple/general/hidden/layer3{
+	dir = 5
+	},
+/obj/machinery/atmospherics/pipe/simple/general/hidden/layer1{
+	dir = 4
+	},
+/turf/open/floor/plasteel/freezer,
+/area/shuttle/escape)
+"Rw" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/open/floor/wood/wood_large,
+/area/shuttle/escape)
+"Ry" = (
+/obj/structure/closet/secure_closet/freezer/fridge/open,
+/obj/item/reagent_containers/food/snacks/butter,
+/obj/item/reagent_containers/food/snacks/butter,
+/obj/item/reagent_containers/food/snacks/grown/apple,
+/obj/item/reagent_containers/food/snacks/grown/apple,
+/obj/item/reagent_containers/food/snacks/grown/banana,
+/obj/item/reagent_containers/food/snacks/grown/onion,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/snacks/grown/potato,
+/obj/item/reagent_containers/food/drinks/soda_cans/cola,
+/obj/item/reagent_containers/food/drinks/soda_cans/cola,
+/obj/item/reagent_containers/food/drinks/soda_cans/cola,
+/obj/item/storage/box/ingredients/wildcard,
+/obj/item/storage/box/ingredients/wildcard,
+/turf/open/floor/plasteel/checker,
+/area/shuttle/escape)
+"RA" = (
+/obj/structure/reagent_dispensers/watertank,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"RP" = (
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket"
+	},
+/obj/item/clothing/suit/hazardvest{
+	desc = "A high-visibility lifejacket complete with whistle and slot for oxygen tanks.";
+	name = "emergency lifejacket"
+	},
+/obj/item/tank/internals/emergency_oxygen{
+	pixel_x = 3
+	},
+/obj/item/tank/internals/emergency_oxygen{
+	pixel_x = 3
+	},
+/obj/item/clothing/mask/breath{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/obj/item/clothing/mask/breath{
+	pixel_x = -3;
+	pixel_y = -3
+	},
+/obj/item/clothing/head/hardhat/orange{
+	name = "protective hat";
+	pixel_y = 9
+	},
+/obj/item/clothing/head/hardhat/orange{
+	name = "protective hat";
+	pixel_y = 9
+	},
+/obj/structure/closet/crate/internals,
+/turf/open/floor/plasteel/dark,
+/area/shuttle/escape)
+"Sc" = (
+/obj/machinery/camera/autoname{
+	dir = 1
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"Su" = (
+/obj/structure/beebox{
+	name = "mailbox";
+	desc = "A 'mailbox'. It's empty."
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"SV" = (
+/obj/structure/railing/corner{
+	dir = 8
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Te" = (
+/obj/structure/table/wood,
+/obj/structure/sign/painting/library{
+	pixel_y = -32
+	},
+/obj/item/reagent_containers/rag/towel/random,
+/turf/open/floor/wood/wood_tiled,
+/area/shuttle/escape)
+"TM" = (
+/obj/structure/railing{
+	dir = 4
+	},
+/obj/structure/chair/sofa/left{
+	dir = 8
+	},
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"TO" = (
+/obj/structure/flora/ausbushes/fernybush,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"TQ" = (
+/obj/structure/chair{
+	dir = 8
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"TR" = (
+/obj/structure/table/reinforced,
+/obj/item/wrench,
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"Uk" = (
+/obj/machinery/door/airlock/external/glass,
+/obj/effect/mapping_helpers/airlock/cyclelink_helper{
+	dir = 1
+	},
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"UH" = (
+/obj/structure/railing/corner,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"US" = (
+/obj/structure/chair/office/dark{
+	dir = 8
+	},
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"Va" = (
+/obj/structure/fence,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"VB" = (
+/obj/structure/flora/junglebush/c,
+/obj/structure/railing,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"VX" = (
+/obj/structure/fans/tiny,
+/obj/docking_port/mobile/emergency{
+	name = "Kilo emergency shuttle"
+	},
+/obj/machinery/door/airlock/shuttle{
+	name = "Emergency Shuttle Airlock"
+	},
+/turf/open/floor/plating,
+/area/shuttle/escape)
+"VZ" = (
+/obj/machinery/jukebox,
+/obj/structure/railing{
+	dir = 10
+	},
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"Wc" = (
+/obj/machinery/atmospherics/pipe/simple/general/hidden/layer1{
+	dir = 4
+	},
+/obj/machinery/light/small,
+/turf/open/floor/plasteel/freezer,
+/area/shuttle/escape)
+"Wf" = (
+/obj/structure/flora/junglebush,
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Ws" = (
+/turf/open/floor/plasteel/checker,
+/area/shuttle/escape)
+"Ww" = (
+/obj/structure/bookcase/random,
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"Wy" = (
+/obj/structure/chair/sofa/left{
+	dir = 4
+	},
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"WB" = (
+/obj/structure/table/wood,
+/obj/effect/spawner/lootdrop/cigars_cases,
+/turf/open/floor/wood/wood_large,
+/area/shuttle/escape)
+"WL" = (
+/obj/machinery/light/small{
+	dir = 4
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"WP" = (
+/obj/structure/table/wood,
+/obj/item/paper_bin,
+/obj/item/pen/fountain,
+/turf/open/floor/wood,
+/area/shuttle/escape)
+"WY" = (
+/obj/machinery/atmospherics/pipe/manifold/general/hidden{
+	dir = 1
+	},
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"XC" = (
+/obj/machinery/atmospherics/pipe/layer_manifold{
+	dir = 4
+	},
+/turf/closed/wall/mineral/wood,
+/area/shuttle/escape)
+"XW" = (
+/obj/structure/table/wood,
+/obj/item/paper_bin,
+/obj/item/pen,
+/turf/open/floor/wood/wood_tiled,
+/area/shuttle/escape)
+"Yh" = (
+/obj/structure/table,
+/obj/machinery/dish_drive,
+/turf/open/floor/plasteel/checker,
+/area/shuttle/escape)
+"Yp" = (
+/obj/machinery/door/airlock/freezer,
+/turf/open/floor/catwalk_floor,
+/area/shuttle/escape)
+"Yw" = (
+/obj/structure/railing{
+	dir = 5
+	},
+/turf/open/floor/grass/grass0,
+/area/shuttle/escape)
+"Zb" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/bedsheetbin/towel,
+/obj/structure/table,
+/turf/open/floor/plasteel/cafeteria,
+/area/shuttle/escape)
+"Zo" = (
+/obj/structure/table/wood,
+/obj/item/reagent_containers/food/condiment/saltshaker{
+	pixel_x = 12
+	},
+/turf/open/floor/carpet,
+/area/shuttle/escape)
+"Zy" = (
+/turf/closed/wall/mineral/wood,
+/area/shuttle/escape)
+"ZS" = (
+/obj/machinery/vending/boozeomat/all_access,
+/turf/closed/wall/mineral/wood,
+/area/shuttle/escape)
+"ZZ" = (
+/obj/structure/table/wood,
+/obj/item/storage/box/matches,
+/turf/open/floor/wood/wood_large,
+/area/shuttle/escape)
+
+(1,1,1) = {"
+xv
+xv
+lQ
+Kt
+lQ
+xv
+lQ
+lQ
+uR
+lQ
+lQ
+xv
+lQ
+lQ
+uR
+uR
+uR
+uR
+lQ
+uR
+uR
+uR
+lQ
+lQ
+lQ
+gP
+zN
+VX
+lQ
+uR
+uR
+uR
+lQ
+gP
+zN
+gP
+lQ
+lQ
+lQ
+xv
+"}
+(2,1,1) = {"
+lQ
+lQ
+lQ
+NT
+lQ
+tI
+tI
+Va
+Va
+Va
+tI
+lQ
+tI
+OM
+OM
+OM
+OM
+wd
+WL
+OM
+OM
+kX
+Mk
+OM
+pP
+pP
+GL
+pP
+pP
+pP
+pP
+pP
+pP
+pP
+GL
+pP
+pP
+pP
+tI
+lQ
+"}
+(3,1,1) = {"
+ki
+lQ
+hD
+sa
+GZ
+lQ
+OM
+qF
+OM
+OM
+OM
+OM
+WL
+Wf
+Zy
+lj
+lj
+Zy
+Zy
+Zy
+lj
+Zy
+Zy
+Ed
+TO
+pP
+pP
+pP
+pP
+pP
+pP
+pP
+pP
+pP
+pP
+pP
+pP
+pP
+Lk
+lQ
+"}
+(4,1,1) = {"
+ki
+Kt
+RA
+sa
+DX
+lQ
+mb
+lL
+OM
+xs
+OM
+Zy
+Zy
+Zy
+Zy
+qQ
+hy
+Zy
+XW
+kq
+ES
+QP
+Zy
+OM
+OM
+OM
+iz
+OM
+OM
+lL
+Su
+pP
+pP
+wd
+OM
+OM
+OM
+OM
+IR
+uR
+"}
+(5,1,1) = {"
+ki
+Kt
+HK
+sa
+Am
+lQ
+to
+OM
+mG
+pJ
+rx
+Zy
+jp
+IF
+Zy
+it
+sH
+qK
+Kd
+jq
+US
+iq
+nN
+Kp
+OM
+rX
+lj
+lj
+rX
+OM
+qF
+pP
+pP
+OM
+TO
+hS
+OM
+OM
+kg
+uR
+"}
+(6,1,1) = {"
+ki
+Kt
+HK
+sa
+yn
+lQ
+Qb
+OM
+OM
+OM
+OM
+Zy
+Zb
+QO
+Yp
+sH
+sH
+Zy
+oS
+mH
+Kd
+aq
+Zy
+OM
+rX
+Zy
+WP
+QR
+Zy
+rX
+OM
+pP
+pP
+OM
+pJ
+sY
+Fj
+OM
+NX
+uR
+"}
+(7,1,1) = {"
+ki
+Kt
+RP
+sa
+nB
+lQ
+ym
+OM
+mQ
+gh
+eb
+Zy
+sk
+fv
+Zy
+my
+mu
+Zy
+Zy
+Zy
+qK
+Zy
+Zy
+xs
+lj
+qe
+sH
+sH
+OH
+lj
+xE
+pP
+pP
+Gg
+OM
+kr
+ML
+OM
+Py
+uR
+"}
+(8,1,1) = {"
+ki
+lQ
+RP
+sa
+As
+lQ
+eo
+kX
+mQ
+Kb
+rh
+Zy
+Zy
+Zy
+Zy
+Jf
+fU
+Zy
+ba
+Av
+jq
+cf
+Zy
+Zy
+Zy
+JS
+sH
+sH
+Ww
+Zy
+Zy
+gh
+eb
+eh
+UH
+Lq
+Lq
+Gg
+sS
+uR
+"}
+(9,1,1) = {"
+lQ
+lQ
+lQ
+ae
+tI
+tI
+Kg
+OM
+mQ
+Kb
+Kb
+Zy
+Wy
+qM
+lc
+sH
+Sc
+Zy
+aC
+jq
+jq
+wE
+Zy
+sH
+sH
+sH
+sH
+sH
+sH
+rb
+Zy
+Rw
+Kb
+Nl
+BW
+ud
+ud
+Yw
+Gk
+lQ
+"}
+(10,1,1) = {"
+lQ
+Mb
+lQ
+oO
+lQ
+IZ
+FB
+OM
+VB
+FF
+Kb
+yz
+sH
+jq
+jq
+jq
+sH
+Zy
+un
+Kd
+Kd
+ky
+Zy
+zh
+Et
+tn
+tn
+VZ
+sH
+sH
+lj
+Kb
+Kb
+Ln
+pL
+ud
+ud
+pL
+eh
+uR
+"}
+(11,1,1) = {"
+pd
+FK
+Uk
+sa
+Eh
+Mk
+OM
+OM
+mQ
+ZZ
+Kb
+lj
+sH
+jq
+jq
+jq
+sH
+Zy
+Zy
+qK
+Zy
+Zy
+Zy
+Cf
+aQ
+gm
+jq
+JN
+sH
+sH
+lj
+Kb
+Kb
+lG
+ud
+ud
+eC
+ud
+eh
+uR
+"}
+(12,1,1) = {"
+lQ
+yn
+lQ
+oO
+lQ
+IZ
+Kp
+OM
+mQ
+WB
+Kb
+yz
+sH
+jq
+jq
+jq
+sH
+sH
+fg
+sH
+Do
+sH
+sH
+sH
+EG
+QG
+TM
+se
+sH
+mz
+Zy
+fO
+Kb
+lG
+pL
+ud
+ud
+pL
+eh
+uR
+"}
+(13,1,1) = {"
+lQ
+lQ
+lQ
+ae
+tI
+tI
+sX
+OM
+oN
+Kb
+Kb
+Zy
+tf
+sH
+Ae
+lI
+sH
+sH
+BQ
+vS
+Do
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+sH
+yz
+Kb
+Kb
+rG
+Ky
+ud
+ud
+CU
+QS
+lQ
+"}
+(14,1,1) = {"
+ki
+lQ
+Gi
+sa
+Qz
+lQ
+hS
+hS
+mQ
+Kb
+Kb
+Zy
+Zy
+jC
+Zy
+Zy
+qK
+Zy
+Zy
+Zy
+Zy
+ZS
+NE
+NE
+NE
+NE
+sH
+AU
+AU
+sH
+yz
+Kb
+Kb
+eh
+SV
+Ng
+Ng
+BS
+pJ
+uR
+"}
+(15,1,1) = {"
+ki
+Kt
+QD
+pc
+BN
+lQ
+Aa
+Aa
+mQ
+Cl
+bI
+Zy
+EW
+sa
+Zy
+xN
+Kd
+EO
+Zy
+OI
+Hg
+Zy
+th
+iF
+HJ
+Yh
+sH
+Zo
+pk
+zT
+Zy
+Kb
+Kb
+eh
+OM
+vZ
+jY
+OM
+qF
+uR
+"}
+(16,1,1) = {"
+ki
+Kt
+HK
+WY
+MD
+lQ
+TQ
+kd
+OM
+OM
+OM
+Zy
+lb
+LT
+Zy
+ux
+Kd
+Te
+Zy
+jU
+Wc
+Zy
+Fd
+Ws
+Ws
+sU
+sH
+zP
+eM
+sH
+lj
+Mo
+Kb
+eh
+Wf
+jY
+jq
+OM
+OM
+uR
+"}
+(17,1,1) = {"
+ki
+Kt
+HK
+gE
+QV
+lQ
+Cr
+pJ
+OM
+OM
+kl
+Zy
+BB
+ay
+Zy
+Zy
+Yp
+Zy
+Zy
+rP
+Rd
+de
+Ws
+Ws
+Ws
+Ws
+sH
+GF
+GF
+sH
+lj
+nY
+Kb
+eh
+OM
+jq
+Ak
+TO
+OM
+uR
+"}
+(18,1,1) = {"
+ki
+Kt
+EP
+iv
+fF
+lQ
+hQ
+OM
+vA
+OM
+OM
+Zy
+Zy
+Zy
+Zy
+qV
+vK
+jj
+Zy
+Zy
+XC
+Zy
+Ry
+gW
+Ws
+Lj
+jo
+sH
+sH
+rb
+Zy
+ar
+Kb
+eh
+OM
+OM
+OM
+mJ
+OM
+uR
+"}
+(19,1,1) = {"
+ki
+lQ
+Hs
+sa
+TR
+lQ
+nn
+OM
+OM
+OM
+OM
+OM
+pZ
+TO
+Zy
+Zy
+Zy
+Zy
+Zy
+ej
+iv
+Zy
+Zy
+Zy
+qR
+Zy
+Zy
+lj
+lj
+Zy
+Zy
+zm
+Ng
+Fy
+OM
+nw
+mG
+OM
+iz
+lQ
+"}
+(20,1,1) = {"
+lQ
+lQ
+lQ
+mX
+lQ
+tI
+tI
+Va
+Va
+Va
+tI
+lQ
+tI
+OM
+OM
+OM
+pZ
+OM
+OM
+OM
+OM
+OM
+pZ
+FB
+OM
+OM
+OM
+Wf
+OM
+pZ
+Mk
+pJ
+OM
+OM
+Bc
+OM
+OM
+to
+tI
+lQ
+"}
+(21,1,1) = {"
+xv
+xv
+lQ
+Kt
+lQ
+xv
+lQ
+lQ
+uR
+lQ
+lQ
+xv
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+uR
+uR
+uR
+uR
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+lQ
+xv
+"}

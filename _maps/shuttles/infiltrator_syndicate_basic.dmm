@@ -26,36 +26,50 @@
 "ag" = (
 /obj/machinery/computer/med_data/syndie,
 /obj/effect/turf_decal/bot_white,
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/bridge)
 "ah" = (
 /obj/machinery/computer/crew/syndie,
 /obj/effect/turf_decal/bot_white,
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/bridge)
 "ai" = (
 /obj/effect/turf_decal/bot_white,
 /obj/machinery/computer/camera_advanced/shuttle_docker/syndicate/real_syndicate,
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/bridge)
 "aj" = (
 /obj/effect/turf_decal/bot_white,
 /obj/machinery/computer/shuttle/real_syndicate,
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/bridge)
 "ak" = (
 /obj/structure/table/reinforced,
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/bridge)
 "al" = (
 /obj/machinery/computer/camera_advanced/syndie,
 /obj/effect/turf_decal/bot_white,
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/bridge)
 "am" = (
 /obj/machinery/computer/secure_data/syndie,
 /obj/effect/turf_decal/bot_white,
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/bridge)
 "an" = (
 /obj/structure/table/reinforced,
@@ -68,14 +82,18 @@
 	},
 /obj/item/folder/red,
 /obj/item/toy/figure/syndie,
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/bridge)
 "ao" = (
 /obj/structure/chair/office/dark{
 	dir = 8;
 	name = "tactical swivel chair"
 	},
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/bridge)
 "aq" = (
 /obj/structure/chair/office/dark{
@@ -89,14 +107,18 @@
 	pixel_y = 32;
 	req_access_txt = "150"
 	},
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/bridge)
 "ar" = (
 /obj/structure/chair/office/dark{
 	dir = 4;
 	name = "tactical swivel chair"
 	},
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/bridge)
 "as" = (
 /obj/structure/table/reinforced,
@@ -107,10 +129,14 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/bridge)
 "at" = (
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/bridge)
 "au" = (
 /obj/machinery/status_display/evac,
@@ -134,7 +160,9 @@
 /turf/open/floor/iron/dark/smooth_large,
 /area/shuttle/syndicate/hallway)
 "az" = (
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/hallway)
 "aA" = (
 /obj/structure/table/reinforced,
@@ -202,7 +230,9 @@
 /turf/open/floor/mineral/plastitanium,
 /area/shuttle/syndicate/eva)
 "aM" = (
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/eva)
 "aN" = (
 /obj/effect/turf_decal/bluemoon_decals/syndicate/middle/left,
@@ -216,10 +246,14 @@
 	name = "tactical chair"
 	},
 /obj/effect/turf_decal/bot_white,
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/airlock)
 "aP" = (
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/airlock)
 "aQ" = (
 /obj/structure/table/reinforced,
@@ -255,7 +289,9 @@
 	dir = 4
 	},
 /obj/effect/turf_decal/bot_white,
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/eva)
 "aV" = (
 /obj/structure/grille,
@@ -278,7 +314,9 @@
 /obj/machinery/light{
 	dir = 8
 	},
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/airlock)
 "aY" = (
 /obj/machinery/door/poddoor{
@@ -858,7 +896,9 @@
 /area/shuttle/syndicate/armory)
 "eW" = (
 /obj/effect/turf_decal/bluemoon_decals/syndicate/top/middle,
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/hallway)
 "gZ" = (
 /obj/effect/turf_decal/bot_white,
@@ -868,7 +908,9 @@
 /area/shuttle/syndicate/airlock)
 "ij" = (
 /obj/machinery/holopad,
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/hallway)
 "kx" = (
 /obj/structure/sign/flag/syndicate,
@@ -876,7 +918,9 @@
 /area/shuttle/syndicate/medical)
 "lA" = (
 /obj/effect/turf_decal/bluemoon_decals/syndicate/middle/middle,
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/hallway)
 "sM" = (
 /obj/effect/turf_decal/bluemoon_decals/syndicate/top/right,
@@ -898,7 +942,9 @@
 "vv" = (
 /obj/effect/turf_decal/bot_white,
 /obj/structure/tank_dispenser/oxygen,
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/eva)
 "xt" = (
 /obj/effect/turf_decal/bluemoon_decals/syndicate/middle/right,
@@ -911,7 +957,9 @@
 /area/shuttle/syndicate/airlock)
 "Aw" = (
 /obj/effect/turf_decal/bluemoon_decals/syndicate/bottom/middle,
-/turf/open/floor/iron/dark/smooth_half,
+/turf/open/floor/iron/dark/smooth_half{
+	dir = 1
+	},
 /area/shuttle/syndicate/hallway)
 "Fg" = (
 /obj/effect/turf_decal/bluemoon_decals/syndicate/bottom/left,

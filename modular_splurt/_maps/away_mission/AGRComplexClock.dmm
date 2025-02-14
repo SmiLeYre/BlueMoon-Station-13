@@ -410,7 +410,7 @@
 	},
 /obj/item/soap/homemade,
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/woodcabin)
+/area/awaymission/complex/shower)
 "apf" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -742,7 +742,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/command)
+/area/awaymission/complex/shower)
 "aHk" = (
 /obj/structure/lattice/catwalk,
 /turf/open/floor/plating,
@@ -1065,10 +1065,6 @@
 /obj/item/wallframe/camera,
 /turf/open/floor/wood,
 /area/awaymission/complex/command)
-"aUU" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/miningcamp)
 "aVn" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 9
@@ -1675,7 +1671,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/prison)
+/area/awaymission/complex/shower)
 "bxa" = (
 /obj/effect/decal/cleanable/oil,
 /turf/open/floor/plasteel,
@@ -1693,7 +1689,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/facilityresearch)
+/area/awaymission/complex/shower)
 "byu" = (
 /obj/machinery/light/small,
 /obj/effect/turf_decal/siding/brown{
@@ -2114,7 +2110,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/prison)
+/area/awaymission/complex/shower)
 "bZb" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/railing{
@@ -2377,7 +2373,7 @@
 /obj/structure/bedsheetbin/towel,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/command)
+/area/awaymission/complex/shower)
 "clp" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/closet/crate/engineering/electrical,
@@ -3497,12 +3493,6 @@
 "dhO" = (
 /turf/open/floor/festive/stairs/stairssouth,
 /area/awaymission/complex/janitorial)
-"dib" = (
-/obj/structure/toilet/secret/high_loot{
-	pixel_y = 17
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/command)
 "din" = (
 /obj/structure/closet/crate/bin,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -4175,7 +4165,7 @@
 /obj/machinery/space_heater,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/miningcamp)
+/area/awaymission/complex/shower)
 "dPB" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 4
@@ -4401,13 +4391,6 @@
 /obj/effect/decal/cleanable/blood,
 /turf/open/floor/plasteel,
 /area/awaymission/complex/engineering)
-"dWU" = (
-/obj/structure/curtain,
-/obj/machinery/shower{
-	dir = 1
-	},
-/turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/research)
 "dWW" = (
 /obj/machinery/door/poddoor/shutters{
 	name = "lockdown shutters";
@@ -4424,17 +4407,10 @@
 	},
 /turf/closed/wall,
 /area/awaymission/complex/janitorial)
-"dXo" = (
-/obj/machinery/shower{
-	dir = 1
-	},
-/obj/structure/curtain,
-/turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/miningcamp)
 "dXu" = (
 /obj/machinery/light,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/miningcamp)
+/area/awaymission/complex/shower)
 "dXA" = (
 /obj/effect/turf_decal/tile/green{
 	dir = 8
@@ -5117,14 +5093,14 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/dorms)
+/area/awaymission/complex/shower)
 "eyP" = (
 /obj/structure/sink{
 	pixel_y = 30
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/miningcamp)
+/area/awaymission/complex/shower)
 "ezB" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /turf/open/floor/wood,
@@ -5382,7 +5358,7 @@
 /obj/item/stack/sheet/glass,
 /obj/item/stack/sheet/glass,
 /turf/open/floor/clockwork,
-/area/awaymission/complex/cultfacility)
+/area/awaymission/complex/shower)
 "eHb" = (
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
@@ -6243,7 +6219,7 @@
 	pixel_y = 17
 	},
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/security)
+/area/awaymission/complex/shower)
 "fuB" = (
 /obj/machinery/vending/cola,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -6449,7 +6425,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/freezer,
-/area/awaymission/complex/logistics)
+/area/awaymission/complex/shower)
 "fDT" = (
 /obj/structure/railing{
 	dir = 8
@@ -6698,6 +6674,9 @@
 	dir = 1
 	},
 /obj/machinery/power/apc/auto_name/west,
+/obj/structure/cable{
+	icon_state = "0-4"
+	},
 /turf/open/floor/plasteel,
 /area/awaymission/complex/logistics)
 "fMa" = (
@@ -6836,13 +6815,6 @@
 	},
 /turf/open/floor/plating/snowed/smoothed/warmer,
 /area/awaymission/complex/exterior)
-"fTe" = (
-/obj/structure/curtain,
-/obj/machinery/shower{
-	dir = 1
-	},
-/turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/dorms)
 "fTF" = (
 /obj/machinery/airalarm,
 /turf/closed/wall,
@@ -7347,13 +7319,6 @@
 	},
 /turf/open/floor/wood,
 /area/awaymission/complex/engineering)
-"goP" = (
-/obj/structure/toilet/secret/high_loot{
-	dir = 8;
-	pixel_x = 6
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/research)
 "goU" = (
 /obj/machinery/power/apc/auto_name/west,
 /obj/structure/cable{
@@ -7474,7 +7439,7 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/miningcamp)
+/area/awaymission/complex/shower)
 "gxe" = (
 /obj/effect/turf_decal/delivery,
 /turf/open/floor/plating,
@@ -7738,7 +7703,7 @@
 	},
 /obj/structure/curtain,
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/dorms)
+/area/awaymission/complex/shower)
 "gHJ" = (
 /obj/structure/railing,
 /obj/effect/turf_decal/tile/yellow,
@@ -8036,7 +8001,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/clockwork,
-/area/awaymission/complex/cultfacility)
+/area/awaymission/complex/shower)
 "gUJ" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 8
@@ -8046,9 +8011,8 @@
 /turf/open/floor/plasteel,
 /area/awaymission/complex/janitorial)
 "gVg" = (
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/prison)
+/turf/closed/wall/ice,
+/area/awaymission/complex/shower)
 "gVm" = (
 /obj/machinery/atmospherics/miner/oxygen,
 /turf/open/floor/plating,
@@ -8490,7 +8454,7 @@
 /obj/structure/table,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/miningcamp)
+/area/awaymission/complex/shower)
 "hpa" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 9
@@ -8558,6 +8522,9 @@
 "hqo" = (
 /obj/effect/turf_decal/delivery,
 /obj/structure/closet/crate/large,
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
 /turf/open/floor/plasteel,
 /area/awaymission/complex/logistics)
 "hqV" = (
@@ -9023,14 +8990,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/complex/engineering)
-"hMh" = (
-/obj/structure/curtain,
-/obj/machinery/shower{
-	pixel_y = 17
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/hydroponics)
 "hMj" = (
 /obj/structure/table,
 /obj/item/newspaper,
@@ -9448,7 +9407,7 @@
 	dir = 1
 	},
 /turf/open/floor/plating,
-/area/awaymission/complex/engineering)
+/area/awaymission/complex/shower)
 "icr" = (
 /obj/structure/table,
 /obj/item/camera/detective,
@@ -9569,7 +9528,7 @@
 "iis" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/engineering)
+/area/awaymission/complex/shower)
 "iiT" = (
 /obj/structure/flora/tree/dead,
 /turf/open/floor/plating/asteroid/snow/complex,
@@ -9871,7 +9830,7 @@
 	},
 /obj/structure/curtain,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/engineering)
+/area/awaymission/complex/shower)
 "izP" = (
 /obj/machinery/light{
 	dir = 8
@@ -10577,12 +10536,10 @@
 /turf/open/floor/plating/asteroid/snow/complex,
 /area/awaymission/complex/exterior)
 "jgk" = (
-/obj/structure/curtain,
-/obj/machinery/shower{
-	pixel_y = 17
-	},
-/turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/logistics)
+/obj/structure/table/reinforced/brass,
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/clockwork,
+/area/awaymission/complex/shower)
 "jgt" = (
 /obj/effect/turf_decal/siding/brown{
 	dir = 9
@@ -10634,13 +10591,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
 /area/awaymission/complex/dorms)
-"jjr" = (
-/obj/structure/sink{
-	dir = 8;
-	pixel_x = -11
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/command)
 "jjw" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/tile/red{
@@ -11090,7 +11040,7 @@
 	},
 /obj/structure/curtain,
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/dorms)
+/area/awaymission/complex/shower)
 "jDF" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light{
@@ -11133,7 +11083,7 @@
 	pixel_x = -11
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/engineering)
+/area/awaymission/complex/shower)
 "jEs" = (
 /obj/effect/turf_decal/tile/purple{
 	dir = 4
@@ -11328,7 +11278,7 @@
 	},
 /obj/effect/decal/cleanable/cobweb,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/miningcamp)
+/area/awaymission/complex/shower)
 "jMA" = (
 /turf/open/floor/wood{
 	icon_state = "wood-broken7"
@@ -12031,7 +11981,7 @@
 "kos" = (
 /obj/structure/curtain,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/security)
+/area/awaymission/complex/shower)
 "koy" = (
 /obj/item/chair/wood,
 /turf/open/floor/wood,
@@ -12209,6 +12159,12 @@
 	},
 /turf/open/floor/clockwork,
 /area/awaymission/complex/engineering)
+"kwd" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/complex/logistics)
 "kwe" = (
 /obj/structure/flora/ausbushes/brflowers,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
@@ -12688,8 +12644,10 @@
 /turf/open/floor/plating,
 /area/awaymission/complex/mainfacility)
 "kTE" = (
-/turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/engineering)
+/obj/machinery/door/airlock/mining,
+/obj/machinery/poweredfans,
+/turf/open/floor/plating,
+/area/awaymission/complex/shower)
 "kTI" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/sink{
@@ -13021,17 +12979,11 @@
 	},
 /turf/open/floor/wood,
 /area/awaymission/complex/miningcamp)
-"llJ" = (
-/obj/structure/toilet/secret/high_loot{
-	dir = 4
-	},
-/turf/open/floor/plasteel/freezer,
-/area/awaymission/complex/logistics)
 "lmc" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/freezer,
-/area/awaymission/complex/hydroponics)
+/area/awaymission/complex/shower)
 "lnf" = (
 /turf/closed/wall/rust,
 /area/awaymission/complex/dorms)
@@ -13441,7 +13393,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/engineering)
+/area/awaymission/complex/shower)
 "lJk" = (
 /obj/structure/flora/ausbushes/ppflowers,
 /turf/open/floor/grass/fairy/pink,
@@ -13493,6 +13445,18 @@
 /obj/effect/turf_decal/tile/purple,
 /turf/open/floor/plasteel,
 /area/awaymission/complex/medical)
+"lLx" = (
+/obj/structure/chair{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/structure/cable{
+	icon_state = "2-8"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/complex/logistics)
 "lLK" = (
 /obj/effect/turf_decal/stripes/line{
 	dir = 1
@@ -14169,7 +14133,7 @@
 	pixel_y = 17
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/engineering)
+/area/awaymission/complex/shower)
 "mwq" = (
 /turf/closed/indestructible/rock/snow,
 /area/awaymission/complex/research)
@@ -14307,7 +14271,7 @@
 	pixel_x = 28
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/facilityresearch)
+/area/awaymission/complex/shower)
 "mCK" = (
 /turf/open/floor/plasteel/dark,
 /area/awaymission/complex/minerhouse)
@@ -14622,14 +14586,14 @@
 	},
 /obj/structure/curtain,
 /turf/open/floor/plating,
-/area/awaymission/complex/engineering)
+/area/awaymission/complex/shower)
 "mMt" = (
 /obj/machinery/shower{
 	pixel_y = 17
 	},
 /obj/structure/curtain,
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/miningcamp)
+/area/awaymission/complex/shower)
 "mMN" = (
 /obj/machinery/door/airlock/security/glass,
 /turf/open/floor/plating,
@@ -14665,7 +14629,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/miningcamp)
+/area/awaymission/complex/shower)
 "mOv" = (
 /obj/machinery/modular_computer/console/preset/civilian{
 	dir = 8
@@ -14775,7 +14739,7 @@
 	},
 /obj/structure/destructible/clockwork/trap/steam_vent,
 /turf/open/floor/clockwork,
-/area/awaymission/complex/cultfacility)
+/area/awaymission/complex/shower)
 "mTR" = (
 /obj/structure/table,
 /obj/item/clothing/head/welding{
@@ -14896,6 +14860,12 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/complex/engineering)
+"mXx" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/open/floor/plasteel,
+/area/awaymission/complex/logistics)
 "mYr" = (
 /obj/item/ammo_casing/a762,
 /turf/open/floor/plasteel{
@@ -15075,7 +15045,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating,
-/area/awaymission/complex/miningcamp)
+/area/awaymission/complex/shower)
 "ngz" = (
 /turf/closed/wall/rust,
 /area/awaymission/complex/hydroponics)
@@ -15370,7 +15340,7 @@
 	pixel_y = 17
 	},
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/medical)
+/area/awaymission/complex/shower)
 "nsG" = (
 /obj/structure/destructible/clockwork/trap/trigger/pressure_sensor,
 /obj/structure/destructible/clockwork/trap/brass_skewer,
@@ -15817,7 +15787,7 @@
 "nNi" = (
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/freezer,
-/area/awaymission/complex/logistics)
+/area/awaymission/complex/shower)
 "nNT" = (
 /obj/item/wallframe/picture,
 /turf/closed/wall/ice,
@@ -16226,7 +16196,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/medical)
+/area/awaymission/complex/shower)
 "oiQ" = (
 /obj/structure/filingcabinet/chestdrawer,
 /turf/open/floor/plating,
@@ -16834,7 +16804,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/freezer,
-/area/awaymission/complex/janitorial)
+/area/awaymission/complex/shower)
 "oJZ" = (
 /obj/effect/turf_decal/weather/snow/corner,
 /obj/effect/turf_decal/weather/snow/corner{
@@ -17472,7 +17442,7 @@
 	},
 /obj/structure/window/reinforced/tinted,
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/engineering)
+/area/awaymission/complex/shower)
 "psW" = (
 /obj/machinery/light,
 /turf/open/floor/clockwork,
@@ -17605,7 +17575,7 @@
 	pixel_x = -11
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/research)
+/area/awaymission/complex/shower)
 "pwU" = (
 /obj/structure/railing{
 	dir = 8
@@ -18083,7 +18053,7 @@
 "pPy" = (
 /mob/living/simple_animal/hostile/russian/remnant,
 /turf/open/floor/clockwork,
-/area/awaymission/complex/cultfacility)
+/area/awaymission/complex/shower)
 "pPB" = (
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -18207,7 +18177,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/engineering)
+/area/awaymission/complex/shower)
 "pUZ" = (
 /obj/structure/table,
 /obj/item/storage/firstaid/regular{
@@ -18399,7 +18369,7 @@
 "qen" = (
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/command)
+/area/awaymission/complex/shower)
 "qev" = (
 /obj/structure/guncase/shotgun,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -18689,7 +18659,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/security)
+/area/awaymission/complex/shower)
 "qtE" = (
 /obj/structure/table/reinforced/brass,
 /obj/effect/decal/cleanable/dirt/dust,
@@ -18882,7 +18852,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/freezer,
-/area/awaymission/complex/janitorial)
+/area/awaymission/complex/shower)
 "qCM" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/blood/drip,
@@ -18906,7 +18876,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/engineering)
+/area/awaymission/complex/shower)
 "qDo" = (
 /obj/effect/turf_decal/siding/brown,
 /turf/open/floor/carpet,
@@ -19082,7 +19052,7 @@
 	pixel_y = 17
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/security)
+/area/awaymission/complex/shower)
 "qJV" = (
 /obj/effect/spawner/structure/window/reinforced,
 /turf/open/floor/plating,
@@ -19267,7 +19237,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/facilityresearch)
+/area/awaymission/complex/shower)
 "qUe" = (
 /obj/effect/turf_decal/tile/green{
 	dir = 1
@@ -19640,7 +19610,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/command)
+/area/awaymission/complex/shower)
 "rkz" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/wood/damturf/broken7,
@@ -20593,13 +20563,6 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel,
 /area/awaymission/complex/engineering)
-"rQN" = (
-/obj/structure/toilet/secret/high_loot{
-	dir = 4
-	},
-/obj/effect/decal/cleanable/dirt/dust,
-/turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/command)
 "rRn" = (
 /turf/closed/wall/ice,
 /area/awaymission/complex/prison)
@@ -20982,7 +20945,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/janitorial)
+/area/awaymission/complex/shower)
 "sgH" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light{
@@ -21470,13 +21433,6 @@
 	floor_variance = 0
 	},
 /area/awaymission/complex/janitorial)
-"sCC" = (
-/obj/machinery/shower{
-	dir = 1
-	},
-/obj/structure/curtain,
-/turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/prison)
 "sCM" = (
 /obj/item/trash/can,
 /turf/open/floor/plating/asteroid/snow/complex,
@@ -21857,14 +21813,6 @@
 	},
 /turf/open/floor/plasteel/white,
 /area/awaymission/complex/facilityresearch)
-"sUu" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 13;
-	pixel_y = 7
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/engineering)
 "sUX" = (
 /obj/item/clockwork/component/vanguard_cogwheel/onyx_prism,
 /turf/open/floor/clockwork,
@@ -22073,8 +22021,8 @@
 /turf/open/floor/plasteel/white,
 /area/awaymission/complex/medical)
 "tfP" = (
-/turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/command)
+/turf/closed/wall,
+/area/awaymission/complex/shower)
 "tgP" = (
 /turf/open/floor/carpet,
 /area/awaymission/complex/janitorial)
@@ -22142,7 +22090,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/woodcabin)
+/area/awaymission/complex/shower)
 "tjA" = (
 /obj/structure/chair{
 	dir = 1
@@ -22219,7 +22167,7 @@
 /area/awaymission/complex/research)
 "tmw" = (
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/miningcamp)
+/area/awaymission/complex/shower)
 "tmx" = (
 /obj/structure/fence,
 /obj/structure/cable{
@@ -22431,7 +22379,7 @@
 /obj/structure/window/reinforced/tinted,
 /obj/item/soap,
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/engineering)
+/area/awaymission/complex/shower)
 "tyo" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/structure/reagent_dispensers/cooking_oil,
@@ -22508,7 +22456,7 @@
 	},
 /obj/effect/decal/cleanable/ash/large,
 /turf/open/floor/plasteel/freezer,
-/area/awaymission/complex/hydroponics)
+/area/awaymission/complex/shower)
 "tAm" = (
 /obj/structure/bed,
 /turf/open/floor/plasteel,
@@ -22625,7 +22573,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/freezer,
-/area/awaymission/complex/hydroponics)
+/area/awaymission/complex/shower)
 "tHi" = (
 /obj/machinery/photocopier,
 /turf/open/floor/plasteel,
@@ -22740,7 +22688,7 @@
 	pixel_y = 7
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/security)
+/area/awaymission/complex/shower)
 "tKT" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -22928,7 +22876,7 @@
 /obj/structure/curtain,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/dorms)
+/area/awaymission/complex/shower)
 "tPN" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plating/asteroid/snow/complex{
@@ -23178,7 +23126,7 @@
 /area/awaymission/complex/engineering)
 "ubg" = (
 /turf/open/floor/plasteel/freezer,
-/area/awaymission/complex/janitorial)
+/area/awaymission/complex/shower)
 "ubR" = (
 /obj/effect/turf_decal/weather/snow/corner,
 /turf/open/floor/plasteel/damturf/scorched,
@@ -23535,7 +23483,7 @@
 	dir = 1
 	},
 /turf/open/floor/clockwork,
-/area/awaymission/complex/cultfacility)
+/area/awaymission/complex/shower)
 "uqC" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/tile/red,
@@ -23880,7 +23828,7 @@
 	dir = 8
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/woodcabin)
+/area/awaymission/complex/shower)
 "uHQ" = (
 /obj/structure/table/reinforced,
 /obj/machinery/light{
@@ -24922,7 +24870,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/machinery/light/small,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/medical)
+/area/awaymission/complex/shower)
 "vxJ" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 9
@@ -25639,7 +25587,7 @@
 	pixel_y = 30
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/prison)
+/area/awaymission/complex/shower)
 "wds" = (
 /obj/structure/cable{
 	icon_state = "0-2"
@@ -25822,7 +25770,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /obj/effect/decal/cleanable/cobweb/cobweb2,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/prison)
+/area/awaymission/complex/shower)
 "wnc" = (
 /obj/effect/turf_decal/weather/snow/corner{
 	dir = 9
@@ -26040,12 +25988,9 @@
 /turf/open/floor/plating,
 /area/awaymission/complex/thewall)
 "wyb" = (
-/obj/machinery/light/small{
-	brightness = 3;
-	dir = 8
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/engineering)
+/obj/effect/decal/cleanable/dirt/dust,
+/turf/open/floor/plating,
+/area/awaymission/complex/shower)
 "wyD" = (
 /turf/closed/wall/clockwork,
 /area/awaymission/complex/prison)
@@ -26287,13 +26232,6 @@
 /obj/item/circuitboard/computer/cloning/prototype,
 /turf/open/floor/plating,
 /area/awaymission/complex/medical)
-"wKH" = (
-/obj/structure/curtain,
-/obj/machinery/shower{
-	pixel_y = 17
-	},
-/turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/command)
 "wKJ" = (
 /obj/structure/mecha_wreckage/phazon,
 /turf/open/floor/plating/snowed/complex,
@@ -26397,7 +26335,7 @@
 	pixel_x = 6
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/security)
+/area/awaymission/complex/shower)
 "wPn" = (
 /obj/effect/turf_decal/stripes/corner,
 /turf/open/floor/plating,
@@ -26573,7 +26511,7 @@
 /obj/structure/curtain,
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/miningcamp)
+/area/awaymission/complex/shower)
 "xbw" = (
 /obj/structure/closet/crate/engineering,
 /obj/structure/railing{
@@ -26634,17 +26572,6 @@
 	},
 /turf/open/floor/plasteel,
 /area/awaymission/complex/research)
-"xdH" = (
-/obj/structure/sink{
-	dir = 4;
-	pixel_x = 13;
-	pixel_y = 7
-	},
-/obj/structure/mirror{
-	pixel_x = 28
-	},
-/turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/medical)
 "xdN" = (
 /obj/structure/chair/comfy/brown{
 	dir = 8
@@ -26740,7 +26667,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/woodcabin)
+/area/awaymission/complex/shower)
 "xhM" = (
 /obj/structure/table,
 /obj/item/storage/box/bodybags,
@@ -26816,7 +26743,7 @@
 	dir = 1
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/facilityresearch)
+/area/awaymission/complex/shower)
 "xkO" = (
 /obj/effect/turf_decal/siding/yellow{
 	dir = 1
@@ -26922,9 +26849,6 @@
 	},
 /turf/open/floor/plasteel/showroomfloor,
 /area/awaymission/complex/hydroponics)
-"xpq" = (
-/turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/research)
 "xqd" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -27180,7 +27104,7 @@
 	},
 /obj/item/soap/deluxe,
 /turf/open/floor/plasteel/showroomfloor/shower,
-/area/awaymission/complex/command)
+/area/awaymission/complex/shower)
 "xBI" = (
 /obj/effect/decal/cleanable/cobweb,
 /obj/machinery/light/small{
@@ -27553,7 +27477,7 @@
 	dir = 4
 	},
 /turf/open/floor/plasteel/showroomfloor,
-/area/awaymission/complex/miningcamp)
+/area/awaymission/complex/shower)
 "xTW" = (
 /obj/machinery/light{
 	dir = 1
@@ -28823,11 +28747,11 @@ sFr
 sFr
 sFr
 sFr
-tcn
-tcn
-tcn
-tcn
-tcn
+tfP
+tfP
+tfP
+tfP
+tfP
 sFr
 sFr
 sFr
@@ -29080,11 +29004,11 @@ sFr
 sFr
 sFr
 sFr
-tcn
+tfP
 hoT
-aUU
+iis
 nfZ
-tcn
+tfP
 sFr
 sFr
 sFr
@@ -29337,11 +29261,11 @@ sFr
 sFr
 sFr
 sFr
-jRV
+gVg
 gwT
-aUU
+iis
 mOl
-jRV
+gVg
 sFr
 sFr
 sFr
@@ -29594,11 +29518,11 @@ sFr
 sFr
 gIA
 gIA
-jRV
+gVg
 mMt
 tmw
 xbo
-jRV
+gVg
 gIA
 sFr
 sFr
@@ -29851,11 +29775,11 @@ gIA
 iwF
 gIA
 gIA
-jRV
+gVg
 mMt
 tmw
-dXo
-jRV
+gHy
+gVg
 gIA
 gIA
 gIA
@@ -30108,11 +30032,11 @@ gIA
 gIA
 gIA
 sQR
-jRV
-jRV
+gVg
+gVg
 dXu
-jRV
-jRV
+gVg
+gVg
 gIA
 gIA
 whP
@@ -30365,11 +30289,11 @@ lvw
 lvw
 gIA
 gIA
-jRV
+gVg
 jMe
 tmw
 xTw
-jRV
+gVg
 gIA
 ssH
 gIA
@@ -30622,11 +30546,11 @@ cvC
 hjJ
 gIA
 gIA
-jRV
+gVg
 eyP
 tmw
 xTw
-jRV
+gVg
 gIA
 gIA
 gIA
@@ -30879,11 +30803,11 @@ aRw
 vKB
 gIA
 gIA
-jRV
+gVg
 dPv
 tmw
 xTw
-jRV
+gVg
 gIA
 gIA
 gIA
@@ -31136,11 +31060,11 @@ aRw
 lHj
 gIA
 wVH
-jRV
-jRV
-euK
-jRV
-jRV
+gVg
+gVg
+kTE
+gVg
+gVg
 gIA
 gIA
 gIA
@@ -35380,7 +35304,7 @@ ngz
 ngz
 sEb
 ngz
-hMh
+qTC
 tGZ
 hFQ
 sFr
@@ -49270,7 +49194,7 @@ dgV
 skA
 uVT
 eyI
-qwY
+iis
 viZ
 qwY
 gMH
@@ -51336,10 +51260,10 @@ qKJ
 jJE
 dWB
 ner
-fTe
+sgr
 rmT
-wKH
-jjr
+nsb
+pwH
 hSI
 lwD
 cVw
@@ -51595,7 +51519,7 @@ uxh
 hRK
 xCU
 rmT
-dib
+mvF
 qen
 hSI
 eBg
@@ -54420,7 +54344,7 @@ rmT
 rmT
 xBt
 rku
-rQN
+oik
 hSI
 pbz
 hjy
@@ -54676,7 +54600,7 @@ iTJ
 pTn
 hSI
 cln
-tfP
+tmw
 aHj
 kyi
 aGV
@@ -57506,8 +57430,8 @@ gZt
 gZt
 tLY
 nIn
-jgk
-llJ
+nsb
+qCA
 nIn
 exV
 hTE
@@ -57776,7 +57700,7 @@ gXp
 gGl
 tUw
 kVK
-xdH
+mCv
 vxv
 kVK
 qEx
@@ -58008,12 +57932,12 @@ dgV
 skA
 uTV
 kRH
-gCn
-nyD
-nyD
-nyD
-nyD
-nyD
+lLx
+mXx
+mXx
+mXx
+mXx
+kwd
 nyD
 nyD
 nyD
@@ -62231,7 +62155,7 @@ gnT
 icb
 oXP
 eGk
-tYh
+jgk
 oXP
 icb
 xYX
@@ -67693,8 +67617,8 @@ buI
 buI
 buI
 vOn
-gVg
-sCC
+iis
+gHy
 hYg
 sFr
 sFr
@@ -80661,7 +80585,7 @@ fcb
 fcb
 fcb
 jEn
-wyb
+rku
 qOF
 nPW
 hHX
@@ -85790,7 +85714,7 @@ tym
 psb
 psb
 iis
-gKd
+wyb
 pHa
 kve
 kve
@@ -86043,10 +85967,10 @@ iDa
 jPd
 fcb
 icj
-kTE
-kTE
-kTE
-kTE
+tmw
+tmw
+tmw
+tmw
 qCP
 pHa
 uoO
@@ -86300,10 +86224,10 @@ iDa
 gIA
 fcb
 mMo
-fcb
+gVg
 izJ
-fcb
-sUu
+gVg
+tKQ
 pUK
 pHa
 rID
@@ -89963,7 +89887,7 @@ wmI
 wmI
 dum
 pwH
-dWU
+sgr
 dum
 dum
 dum
@@ -90219,8 +90143,8 @@ wmI
 wmI
 wmI
 dum
-xpq
-goP
+tmw
+wOW
 dum
 sfF
 uwS

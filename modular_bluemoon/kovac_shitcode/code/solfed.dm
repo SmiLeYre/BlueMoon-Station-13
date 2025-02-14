@@ -312,6 +312,13 @@
 	uniform = /obj/item/clothing/under/rank/security/officer/formal/sol
 	suit = /obj/item/clothing/suit/sol_dress
 
+/datum/outfit/sol_diplomacy/secret_service
+	name = "SolFed Secret Service"
+	uniform = /obj/item/clothing/under/rank/security/officer/solfed_military
+	suit = /obj/item/clothing/suit/armor/vest/agent
+
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/energy/disabler=1)
+
 /datum/outfit/sol_diplomacy/consul
 	name = "SolFed Consul"
 
@@ -337,4 +344,4 @@
 	suit = /obj/item/clothing/suit/armor/vest/warden/sol_robe
 	neck = /obj/item/clothing/neck/cloak/cloak
 	r_hand = /obj/item/gun/energy/laser/captain
-	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/poster/sol=5)
+	backpack_contents = list(/obj/item/melee/classic_baton/telescopic=1, /obj/item/gun/energy/disabler=1)

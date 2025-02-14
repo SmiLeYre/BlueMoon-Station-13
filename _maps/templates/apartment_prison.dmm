@@ -1515,8 +1515,8 @@
 	},
 /area/hilbertshotel)
 "Vz" = (
-/obj/machinery/research_table/slaver,
 /obj/effect/turf_decal/siding/wood,
+/obj/machinery/research_table,
 /turf/open/floor/iron/grimy,
 /area/hilbertshotel)
 "VI" = (

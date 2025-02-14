@@ -21,7 +21,7 @@
 
 /obj/item/clothing/mask/gas/space_ninja/handle_speech(datum/source, list/speech_args)
 	var/message = speech_args[SPEECH_MESSAGE]
-	if(message[1] != "*")
+	if(message[1] != "*" && message[1] != "!")
 		var/list/temp_message = splittext(message, " ")
 		var/list/pick_list = list()
 		for(var/i in 1 to temp_message.len)

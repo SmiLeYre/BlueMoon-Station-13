@@ -188,7 +188,6 @@ do { \
 #define CINEMATIC_LAYER -1
 
 ///Plane master controller keys
-#define PLANE_MASTERS_GAME "plane_masters_game"
 #define PLANE_MASTERS_COLORBLIND "plane_masters_colorblind"
 
 #define PLANE_CRITICAL_FUCKO_PARALLAX (PLANE_CRITICAL_DISPLAY|PLANE_CRITICAL_NO_EMPTY_RELAY)

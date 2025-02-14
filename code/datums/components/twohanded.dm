@@ -210,14 +210,21 @@
 
 	// Update icons
 	parent_item.update_icon()
-	if(user.get_item_by_slot(ITEM_SLOT_BACK) == parent)
+	if(user.get_item_by_slot(ITEM_SLOT_BACK) == parent_item) // Bluemoon Edit-Fix || if(user.get_item_by_slot(ITEM_SLOT_BACK) == parent)
 		user.update_inv_back()
-	else
-		user.update_inv_hands()
+
+	// Bluemoon Addition - Start || Доп. проверка
+	if(user.get_item_by_slot(ITEM_SLOT_BELT) == parent_item)
+		user.update_inv_belt()
+	// Bluemoon Addition - End
+
+	user.update_inv_hands() // Bluemoon Edit-Fix || Вынес, чтобы обновляло всегда.
 
 	// if the item requires two handed drop the item on unwield
-	if(require_twohands)
-		user.dropItemToGround(parent, force=TRUE)
+	/* // Bluemoon Removed - Start // Нахуя оно надо? Автор, ты еблан? Это буквально руин на ровном месте, который иначе никак не используется.
+	// if(require_twohands)
+	// 	user.dropItemToGround(parent, force=TRUE)
+	*/ // Bluemoon Removed - End
 
 	// Show message if requested
 	if(show_message)
@@ -235,7 +242,8 @@
 	// Remove the object in the offhand
 	if(offhand_item)
 		UnregisterSignal(offhand_item, COMSIG_ITEM_DROPPED)
-		qdel(offhand_item)
+		if(!QDELETED(offhand_item))
+			qdel(offhand_item)
 	// Clear any old refrence to an item that should be gone now
 	offhand_item = null
 
