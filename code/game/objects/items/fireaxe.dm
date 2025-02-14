@@ -42,8 +42,10 @@
 /obj/item/fireaxe/proc/on_unwield(obj/item/source, mob/user)
 	wielded = FALSE
 
+/* Check modular_bluemoon\code\game\objects\items\energy_axe.dm
 /obj/item/fireaxe/update_icon_state()
 	icon_state = "fireaxe0"
+*/
 
 /obj/item/fireaxe/suicide_act(mob/user)
 	user.visible_message("<span class='suicide'>[user] axes себя from head to toe! It looks like [user.p_theyre()] trying to commit suicide!</span>")
@@ -78,15 +80,16 @@
 /obj/item/fireaxe/energized
 	desc = "Someone with a love for fire axes decided to turn this one into a high-powered energy weapon. Seems excessive."
 	armour_penetration = 50
+	icon = 'modular_bluemoon/icons/obj/items_and_weapons.dmi'
 	var/charge = 90
 	var/max_charge = 90
 
 /obj/item/fireaxe/energized/ComponentInitialize()
 	. = ..()
-	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=30, icon_wielded="fireaxe1")
+	AddComponent(/datum/component/two_handed, force_unwielded=12, force_wielded=30, icon_wielded="fireaxe_old1")
 
 /obj/item/fireaxe/energized/update_icon_state()
-		icon_state = "fireaxe0"
+		icon_state = "fireaxe_old0"
 
 /obj/item/fireaxe/energized/Initialize(mapload)
 	. = ..()

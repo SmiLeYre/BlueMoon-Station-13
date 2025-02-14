@@ -569,6 +569,15 @@
 	speak = list("*meow", "*meow2", "*meow3", "*meow4", "*meow5", "*meow6", "*mrrp", "*mrrp3", "*purr")
 	icon = 'modular_bluemoon/kovac_shitcode/icons/animals.dmi'
 
+
+/mob/living/simple_animal/pet/cat/space/alta/Initialize(mapload)
+	. = ..()
+	if((NEW_YEAR || CHRISTMAS || FESTIVE_SEASON) in SSevents.holidays)
+		icon_state = "spacealta_santa"
+		icon_living = "spacealta_santa"
+		icon_dead = "spacealta_dead_santa"
+		held_icon = "spacealta_santa"
+
 /mob/living/simple_animal/pet/dog/corgi/Lisa/ada
 	name = "Ada"
 	real_name = "Ada"

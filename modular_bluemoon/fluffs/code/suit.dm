@@ -298,3 +298,11 @@
 	item_state = "agentcape"
 	body_parts_covered = CHEST
 	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON
+
+/obj/item/clothing/suit/donator/bm/SyndAngelicJaket
+	name = "Angelic-made Syndicate parade Jacket"
+	desc = "Custom designed Syndicate parade jacket. Specially created to maintain the body features of the jacket for long \
+			time comfortable stay in it, and also it is quite small in size, with graceful look and shine. Glory Syndicate!"
+	icon_state = "SyndAngelicJaket"
+	item_state = "SyndAngelicJaket"
+	mutantrace_variation = STYLE_DIGITIGRADE|STYLE_NO_ANTHRO_ICON

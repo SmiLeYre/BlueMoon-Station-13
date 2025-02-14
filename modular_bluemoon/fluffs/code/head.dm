@@ -99,3 +99,10 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/hats.dmi'
 	flags_cover = HEADCOVERSEYES
 	flags_inv = HIDEHAIR|HIDEEARS|HIDESNOUT
+
+/obj/item/clothing/head/donator/bm/royal_hunters
+	name = "Royal hunters hat"
+	desc = "Even Hunters die, but not memories"
+	icon_state = "royal_hunters"
+	item_state = "royal_hunters"
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/large-worn-icons/32x48/head.dmi'
