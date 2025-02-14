@@ -1,5 +1,31 @@
-// Energy fire axes, for DS-2
+// Fireaxe reskin
+/obj/item/fireaxe
+	unique_reskin = list(
+		"Original" = list(RESKIN_ICON_STATE = "fireaxe_old0", RESKIN_ICON_STATE_FILE = 'modular_bluemoon/icons/obj/items_and_weapons.dmi')
+	)
 
+/obj/item/fireaxe/boneaxe
+	unique_reskin = null
+
+/obj/item/fireaxe/energy
+	unique_reskin = null
+
+/obj/item/fireaxe/energized
+	unique_reskin = null
+
+/obj/item/fireaxe/reskin_obj(mob/user)
+	. = ..()
+	if(current_skin == "Original")
+		AddComponent(/datum/component/two_handed, force_unwielded=5, force_wielded=28, icon_wielded="fireaxe_old1")
+		icon_state = "fireaxe_old[wielded]"
+
+/obj/item/fireaxe/update_icon_state()
+	if(current_skin == "Original")
+		icon_state = "fireaxe_old0"
+	else
+		icon_state = "fireaxe0"
+
+// Energy fire axes, for DS-2
 /obj/item/fireaxe/energy
 	icon_state = "energy_axe0"
 	icon = 'modular_bluemoon/icons/obj/items_and_weapons.dmi'
@@ -13,7 +39,7 @@
 	. = ..()
 	AddComponent(/datum/component/two_handed, force_unwielded=10, force_wielded=30, icon_wielded="energy_axe1", wieldsound='sound/weapons/saberon.ogg', unwieldsound='sound/weapons/saberoff.ogg')
 
-/obj/item/fireaxe/update_icon_state()
+/obj/item/fireaxe/energy/update_icon_state()
 	icon_state = "energy_axe0"
 
 /obj/item/fireaxe/energy/on_wield(obj/item/source, mob/living/carbon/user)
