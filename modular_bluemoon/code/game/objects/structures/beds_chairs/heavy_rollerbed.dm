@@ -33,24 +33,3 @@
 	var/obj/structure/bed/roller/heavy/R = new /obj/structure/bed/roller/heavy(location)
 	R.add_fingerprint(user)
 	qdel(src)
-
-/*
- * RESEARCH
- */
-
-/datum/design/roller_heavy
-	name = "heavy roller bed"
-	desc = "A collapsed roller bed that can be carried around. Can be used to move heavy spacemens and spacevulfs."
-	id = "heavy_roller_bed"
-	build_type = PROTOLATHE
-	materials = list(/datum/material/iron = 8000)
-	build_path = /obj/item/roller/heavy
-	category = list("Medical Designs")
-	departmental_flags = DEPARTMENTAL_FLAG_MEDICAL|DEPARTMENTAL_FLAG_SECURITY
-
-/datum/techweb_node/base/New()
-	var/extra_designs = list(
-		"heavy_roller_bed"
-	)
-	LAZYADD(design_ids, extra_designs)
-	. = ..()
