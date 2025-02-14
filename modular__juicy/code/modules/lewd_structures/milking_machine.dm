@@ -288,7 +288,8 @@
 */
 
 // Empty Hand Attack Handler
-/obj/structure/chair/milking_machine/attack_hand(mob/user)
+/obj/structure/chair/milking_machine/CtrlClick(mob/user)
+	. = ..()
 	if(!LAZYLEN(buckled_mobs) || !(user in buckled_mobs))
 		return ..()
 
@@ -440,14 +441,14 @@
 
 		if(istype(current_selected_organ, /obj/item/organ/genital/breasts))
 			switch(current_selected_organ.shape)
-				if("pair")
+				if("Pair")
 					current_selected_organ_type = "double_breast"
-				if("quad")
+				if("Quad")
 					current_selected_organ_type = "quad_breast"
-				if("sextuple")
+				if("Sextuple")
 					current_selected_organ_type = "six_breast"
 
-			if((current_selected_organ.shape == "sextuple") || (current_selected_organ.shape == "quad"))
+			if((current_selected_organ.shape == "Sextuple") || (current_selected_organ.shape == "Quad"))
 				switch(current_selected_organ.size)
 					if(0 to 2)
 						current_selected_organ_size = "0"

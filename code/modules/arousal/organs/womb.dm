@@ -1,5 +1,5 @@
 /obj/item/organ/genital/womb
-	name = "матка"
+	name = "womb"
 	desc = "A female reproductive organ."
 	icon = 'icons/obj/genitals/vagina.dmi'
 	icon_state = "womb"

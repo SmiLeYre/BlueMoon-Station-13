@@ -1,5 +1,5 @@
 /obj/item/organ/genital/testicles
-	name = "яйца"
+	name = "testicles"
 	ru_name = "яйца" // BLUEMOON ADD
 	ru_name_v = "яйцах" // BLUEMOON ADD
 	ru_name_capital = "Яйца" // BLUEMOON ADD

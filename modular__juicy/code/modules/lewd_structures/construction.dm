@@ -29,7 +29,7 @@
 		to_chat(user, span_warning("You fail to assemble [src]!"))
 		return
 
-	var/obj/structure/chair/final_structure = new resulting_structure (get_turf(user))
+	var/obj/structure/chair/final_structure = new resulting_structure (get_turf(src))
 	if(current_color && istype(final_structure, /obj/structure/chair/milking_machine))
 		var/obj/structure/chair/milking_machine/new_milker = final_structure
 		new_milker.machine_color = current_color
@@ -39,8 +39,9 @@
 		else
 			new_milker.icon_state = "milking_teal_off"
 
-	if(istype(final_structure, /obj/structure/chair/shibari_stand))
-		var/obj/structure/chair/shibari_stand/stand = final_structure
+	// if(istype(final_structure, /obj/structure/chair/shibari_stand))
+	// 	var/obj/structure/chair/shibari_stand/stand = final_structure
+	// 	input(user, "КАКОГО ЦВЕТА БУДЕТ АППАРАТ?", "ЦВЕТ АППАРАТА", )
 
 	qdel(src)
 	to_chat(user, span_notice("You assemble [src]."))

@@ -2,7 +2,7 @@
 #define BREASTS_ICON_MAX_SIZE 6
 
 /obj/item/organ/genital/breasts
-	name = "Грудь"
+	name = "breasts"
 	ru_name = "грудь" // BLUEMOON ADD
 	ru_name_v = "груди" // BLUEMOON ADD
 	ru_name_capital = "Грудь" // BLUEMOON ADD

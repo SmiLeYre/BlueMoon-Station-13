@@ -1,5 +1,5 @@
 /obj/item/organ/genital/vagina
-	name = "вагина"
+	name = "vagina"
 	ru_name = "вагина" // BLUEMOON ADD
 	ru_name_v = "вагине" // BLUEMOON ADD
 	ru_name_capital = "Вагина" // BLUEMOON ADD
