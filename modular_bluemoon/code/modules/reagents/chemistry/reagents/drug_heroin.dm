@@ -100,9 +100,9 @@
 	M.overlay_fullscreen("flash", /atom/movable/screen/fullscreen/tiled/flash)
 	M.clear_fullscreen("flash", 60)
 	shake_camera(M, 30, 1)
-	SEND_SOUND(M, sound('modular_bluemoon/Painiscupcake/sounds/PhotoFlash.ogg', volume = 100))
-	SEND_SOUND(M, sound(pick('modular_bluemoon/Painiscupcake/sounds/HeroinRing2.ogg','modular_bluemoon/Painiscupcake/sounds/HeroinRing1.ogg', \
-	'modular_bluemoon/Painiscupcake/sounds/HeroinRing3.ogg'),  volume = 70))
+	SEND_SOUND(M, sound('modular_bluemoon/sound/hallucinations/heroin/PhotoFlash.ogg', volume = 100))
+	SEND_SOUND(M, sound(pick('modular_bluemoon/sound/hallucinations/heroin/HeroinRing2.ogg','modular_bluemoon/sound/hallucinations/heroin/HeroinRing1.ogg', \
+	'modular_bluemoon/sound/hallucinations/heroin/HeroinRing3.ogg'),  volume = 70))
 	to_chat(M, "<span class='warning'>В ушах начинает сильно гудеть!</span>")
 	M.blur_eyes(60)
 	M.Paralyze(30)
@@ -125,8 +125,8 @@
 			addtimer(VARSET_CALLBACK(whole_screen, filters, list()), 600)
 	if(prob(10))
 		M.Jitter(35)
-		SEND_SOUND(M, sound(pick('modular_bluemoon/Painiscupcake/sounds/HeroinPrihodRing.ogg', 'modular_bluemoon/Painiscupcake/sounds/HeroinPrihodRing2.ogg', \
-		'modular_bluemoon/Painiscupcake/sounds/HeroinPrihodRing3.ogg','modular_bluemoon/Painiscupcake/sounds/HeroinPrihodRing4.ogg'), volume = 100))
+		SEND_SOUND(M, sound(pick('modular_bluemoon/sound/hallucinations/heroin/HeroinPrihodRing.ogg', 'modular_bluemoon/sound/hallucinations/heroin/HeroinPrihodRing2.ogg', \
+		'modular_bluemoon/sound/hallucinations/heroin/HeroinPrihodRing3.ogg','modular_bluemoon/sound/hallucinations/heroin/HeroinPrihodRing4.ogg'), volume = 100))
 		M.emote(pick("twitch","drool","moan","realagony","gasp"))
 		M.overlay_fullscreen("prihod", /atom/movable/screen/fullscreen/heroin, rand(1, 9))
 		M.clear_fullscreen("prihod", rand(15, 60))
@@ -154,7 +154,7 @@
 
 
 /atom/movable/screen/fullscreen/heroin
-	icon = 'modular_bluemoon/Painiscupcake/icons/Heroin/HeroinPrihod.dmi'
+	icon = 'modular_bluemoon/icons/screen/heroin_fullscreen.dmi'
 	plane = SPLASHSCREEN_PLANE
 	screen_loc = "CENTER-7,SOUTH"
 	icon_state = ""
@@ -169,7 +169,7 @@
 /obj/effect/hallucination/simple/zavisimost
 	name = "А-оо"
 	desc = "НЕЕЕТ!"
-	image_icon = 'modular_bluemoon/Painiscupcake/icons/Heroin/AddictHall.dmi'
+	image_icon = 'modular_bluemoon/icons/effects/heroin_phrases.dmi'
 	image_state = "eshe1"
 	var/list/states = list("dose1", "dose2", "dose3", "eshe1", "eshe2", "eshe3", "need1", \
 		"need2", "need3", "want1", "want2", "want3", "more1", "more2", "more3", \
