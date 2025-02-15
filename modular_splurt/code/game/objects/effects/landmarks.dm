@@ -1,7 +1,7 @@
 /obj/effect/landmark/start/slaver
 	name = "slaver"
 	icon = 'icons/effects/landmarks_static.dmi'
-	icon_state = "sslaver_spawn"
+	icon_state = "x"
 
 /obj/effect/landmark/start/slaver/Initialize()
 	..()
@@ -11,7 +11,7 @@
 /obj/effect/landmark/start/slaver_leader
 	name = "slaver leader"
 	icon = 'icons/effects/landmarks_static.dmi'
-	icon_state = "sslaver_leader_spawn"
+	icon_state = "x2"
 
 /obj/effect/landmark/start/slaver_leader/Initialize()
 	..()
