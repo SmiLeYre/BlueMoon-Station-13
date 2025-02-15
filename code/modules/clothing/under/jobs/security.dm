@@ -62,6 +62,8 @@
 		"Maid blue" = list("icon_state" = "secmaid_blue", "item_state" = "secmaid_blue"),
 	) ///bluemoon add
 
+/obj/item/clothing/under/rank/security/officer/skirt/no_armor // Donat stuff - Borisovych
+	armor = list(MELEE = 0, BULLET = 0, LASER = 0,ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 0, ACID = 0, WOUND = 0)
 
 /obj/item/clothing/under/rank/security/stripper
 	name = "secukini"
