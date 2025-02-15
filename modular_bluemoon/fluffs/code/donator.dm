@@ -1179,4 +1179,18 @@
 	slot = ITEM_SLOT_UNDERWEAR
 	path = /obj/item/clothing/under/bm/gothrevskirt
 	ckeywhitelist = list("angrylaska")
+  subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/prisoner
+	name = "prison jumpsuit"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/rank/prisoner
+	ckeywhitelist = list("borisovych")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/borisovych_SecurityJumpskirt
+	name = "security jumpskirt"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/rank/security/officer/skirt/no_armor
+	ckeywhitelist = list("borisovych")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
