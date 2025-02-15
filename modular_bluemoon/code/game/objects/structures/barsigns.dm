@@ -1,5 +1,5 @@
 /obj/structure/sign/barsign
-    icon = 'modular_bluemoon/SmiLeY/aesthetics/barsign/barsigns.dmi'
+    icon = 'modular_bluemoon/icons/obj/barsigns.dmi'
 
 /datum/barsign/maltesefalcon
 	name = "Maltese Falcon"
@@ -141,6 +141,11 @@
 	icon = "goose"
 	desc = "Drink till you puke and/or break the laws of reality!"
 
+/datum/barsign/cybersylph
+	name = "Cyber Sylph's"
+	icon = "cybersylph"
+	desc = "A cafe renowed for its out-of-boundaries futuristic insignia."
+
 /datum/barsign/topmen
 	name = "Top Men"
 	icon = "topmen"
@@ -259,9 +264,15 @@
 	icon = "vault13"
 	desc = "Coincidence is intentional."
 
-/datum/barsign/thehive
+/datum/barsign/meow_mix
+	name = "Meow Mix"
+	icon = "Meow Mix"
+	desc = "No, we don't serve catnip, officer!"
+
+/datum/barsign/the_hive
 	name = "The Hive"
 	icon = "thehive"
+	desc = "Comb in for some sweet drinks! Not known for serving any sappy drink."
 
 /datum/barsign/cantina
 	name = "Chalmun's Cantina"
@@ -392,4 +403,28 @@
 	name = "Mooniverse pub"
 	icon = "mooni"
 	desc = "Совершенно новый паб."
+
+/datum/barsign/juicy // из modular__juicy\code\game\objects\structures\barsigns.dm
+	name = "Juicy Moons"
+	icon = "juicy"
+	desc = "The most juicy!"
+
+/datum/barsign/hiddensigns
+	hidden = TRUE
+
+//Hidden signs list below this point
+/datum/barsign/hiddensigns/empbarsign
+	name = "Haywire Barsign"
+	icon = "empbarsign"
+	desc = "Something has gone very wrong."
+
+/datum/barsign/hiddensigns/syndibarsign
+	name = "Syndi Cat Takeover"
+	icon = "syndibarsign"
+	desc = "Syndicate or die."
+
+/datum/barsign/hiddensigns/signoff
+	name = "Bar Sign"
+	icon = "empty"
+	desc = "This sign doesn't seem to be on."
 
