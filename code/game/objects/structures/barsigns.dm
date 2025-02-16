@@ -136,6 +136,7 @@
 	var/desc = "desc"
 	var/hidden = FALSE
 
+/* Переписано в modular_bluemoon\code\game\objects\structures\barsigns.dm
 //Anything below this is where all the specific signs are. If people want to add more signs, add them below.
 /datum/barsign/maltesefalcon
 	name = "Maltese Falcon"
@@ -310,3 +311,4 @@
 	name = "Bar Sign"
 	icon = "empty"
 	desc = "This sign doesn't seem to be on."
+*/

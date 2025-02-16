@@ -1,0 +1,232 @@
+//MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+"a" = (
+/obj/machinery/door/airlock/maintenance/abandoned{
+	req_access_txt = "12"
+	},
+/obj/machinery/button/door{
+	dir = 4;
+	id = "supplybridge";
+	name = "Shuttle Bay Space Bridge Control";
+	pixel_x = -22;
+	pixel_y = -1
+	},
+/turf/open/floor/plating,
+/area/maintenance/port)
+"e" = (
+/obj/structure/fans/tiny,
+/obj/machinery/door/poddoor/shutters{
+	id = "supplybridge"
+	},
+/turf/open/floor/plating,
+/area/maintenance/port)
+"f" = (
+/obj/structure/closet/emcloset,
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
+"i" = (
+/turf/open/floor/plating,
+/area/maintenance/port)
+"l" = (
+/obj/structure/closet/firecloset,
+/turf/open/floor/plating,
+/area/maintenance/port)
+"n" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	initial_gas_mix = "o2=0.01;n2=0.01;TEMP=2.7";
+	luminosity = 2
+	},
+/area/maintenance/port)
+"r" = (
+/obj/effect/decal/cleanable/oil,
+/turf/open/floor/plating,
+/area/maintenance/port)
+"s" = (
+/obj/effect/decal/cleanable/oil{
+	icon_state = "floor6"
+	},
+/turf/open/floor/plating,
+/area/maintenance/port)
+"w" = (
+/obj/machinery/light/floor,
+/turf/open/floor/plating,
+/area/maintenance/port)
+"x" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/maintenance/port/aft)
+"y" = (
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
+"C" = (
+/turf/closed/wall,
+/area/maintenance/port/aft)
+"D" = (
+/turf/open/space/basic,
+/area/space)
+"G" = (
+/obj/machinery/door/airlock/maintenance/abandoned{
+	req_access_txt = "12"
+	},
+/turf/open/floor/plating,
+/area/maintenance/port)
+"O" = (
+/turf/open/floor/plating{
+	initial_gas_mix = "o2=0.01;n2=0.01;TEMP=2.7";
+	luminosity = 2
+	},
+/area/maintenance/port)
+"P" = (
+/obj/effect/decal/cleanable/oil{
+	icon_state = "floor5"
+	},
+/turf/open/floor/plating,
+/area/maintenance/port)
+"S" = (
+/obj/structure/closet/emcloset,
+/turf/open/floor/plating,
+/area/maintenance/port)
+"U" = (
+/turf/closed/wall,
+/area/maintenance/port)
+"W" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/maintenance/port)
+"Y" = (
+/obj/structure/closet/firecloset,
+/turf/open/floor/plating,
+/area/maintenance/port/aft)
+"Z" = (
+/turf/open/floor/plating{
+	icon_state = "platingdmg3"
+	},
+/area/maintenance/port/aft)
+
+(1,1,1) = {"
+U
+U
+U
+D
+D
+D
+D
+D
+D
+D
+D
+D
+D
+D
+D
+U
+C
+C
+"}
+(2,1,1) = {"
+U
+l
+U
+e
+e
+e
+e
+e
+e
+e
+e
+e
+e
+e
+e
+U
+Y
+C
+"}
+(3,1,1) = {"
+n
+i
+a
+W
+s
+i
+i
+i
+i
+i
+i
+P
+w
+i
+i
+a
+Z
+x
+"}
+(4,1,1) = {"
+O
+O
+G
+i
+i
+w
+i
+i
+r
+i
+W
+i
+i
+i
+i
+G
+y
+y
+"}
+(5,1,1) = {"
+U
+S
+U
+e
+e
+e
+e
+e
+e
+e
+e
+e
+e
+e
+e
+U
+f
+C
+"}
+(6,1,1) = {"
+U
+U
+U
+D
+D
+D
+D
+D
+D
+D
+D
+D
+D
+D
+D
+U
+C
+C
+"}
