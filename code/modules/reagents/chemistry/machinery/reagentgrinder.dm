@@ -85,6 +85,9 @@
 	return TRUE
 
 /obj/machinery/reagentgrinder/attackby(obj/item/I, mob/user, params)
+	if(user.a_intent == INTENT_HARM) //BLUEMOON FIX невозможность атаковать пока панель открыта
+		return ..()
+
 	//You can only screw open empty grinder
 	if(!beaker && !length(holdingitems) && default_deconstruction_screwdriver(user, icon_state, icon_state, I))
 		return
@@ -97,7 +100,11 @@
 
 	if(panel_open) //Can't insert objects when its screwed open
 		return TRUE
-
+	//BLUEMOON CHANGE в блендер ничего нельзя запихать пока он работает
+	if(operating)
+		to_chat(user, "<span class='warning'>[src] currently working!</span>")
+		return TRUE
+	//BLUEMOON CHANGE END
 	if (istype(I, /obj/item/reagent_containers) && !(I.item_flags & ABSTRACT) && I.is_open_container())
 		var/obj/item/reagent_containers/B = I
 		. = TRUE
@@ -125,11 +132,8 @@
 		return TRUE
 
 	if(!I.grind_results && !I.juice_results)
-		if(user.a_intent == INTENT_HARM)
-			return ..()
-		else
-			to_chat(user, "<span class='warning'>You cannot grind [I] into reagents!</span>")
-			return TRUE
+		to_chat(user, "<span class='warning'>You cannot grind [I] into reagents!</span>") //BLUEMOON CHANGE перенесено взаимодействие на харм в самое начало
+		return TRUE
 
 	if(!I.grind_requirements(src)) //Error messages should be in the objects' definitions
 		return
@@ -216,7 +220,13 @@
 /obj/machinery/reagentgrinder/AltClick(mob/user)
 	. = ..()
 	if(istype(user) && user.canUseTopic(src, BE_CLOSE, FALSE, NO_TK))
-		replace_beaker(user)
+	//BLUEMOON CHANGE нельзя вытащить из блендера банку когда он работает
+		if(operating)
+			to_chat(user, "<span class='warning'>[src] currently working!</span>")
+			replace_beaker(user)
+		else
+			replace_beaker(user)
+	//BLUEMOON CHANGE END
 
 /obj/machinery/reagentgrinder/proc/eject(mob/user)
 	for(var/i in holdingitems)
