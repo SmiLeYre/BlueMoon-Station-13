@@ -12,3 +12,8 @@
 	name = "A diamond ring (without box)"
 	path = /obj/item/clothing/accessory/ring/diamond
 	cost = 5
+
+/datum/gear/backpack/hcaarmband
+    name = "HCA armband"
+    subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
+    path = /obj/item/clothing/accessory/armband/hcaarmband

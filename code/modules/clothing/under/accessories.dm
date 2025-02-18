@@ -545,16 +545,6 @@
 	desc = "An armband, worn by the station's security forces to display which department they're assigned to. This one is white and blue."
 	icon_state = "medblueband"
 
-/obj/item/clothing/accessory/armband/hcaarmband
-	name = "HCA Armband"
-	desc = "A black and white armband depicting two swords crossed around the fascia within wreaths representing prosperity. This flag refers to the political party of the Human Commonwealth."
-	icon_state = "hcaarmbanditem"
-	item_state = "hcaarmbanditem"
-	icon = 'modular_bluemoon/rakeideas/hca/icons/hcaarmbanditem.dmi'
-	mob_overlay_icon = 'modular_bluemoon/rakeideas/hca/icons/hcaarmbandchar.dmi'
-	strip_delay = 60
-	dog_fashion = null
-
 /obj/item/clothing/accessory/armband/sfparmband
 	name = "SFP Department Armpatch"
 	desc = "Armpatch one of superior forces of Federal Agencies on territory of SolGov. This one belongs to Agent."
