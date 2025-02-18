@@ -143,3 +143,12 @@
 	item_state = "plush_atmosian"
 	attack_verb = list("thumped", "whomped", "bumped")
 	resistance_flags = FIRE_PROOF
+
+/obj/item/toy/plush/laska
+	name = "Lotti Plushie"
+	desc = " Мягкая игрушка в форме кошки легко утолит вашу жажду объятий и ласки, от неё вы можете почувствовать легкий аромат пепла и сладковато ягодного вкуса."
+	icon_state = "laska"
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
+	squeak_override = list('modular_bluemoon/SmiLeY/sounds/tiamat_mrrp1.ogg'=1,'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp2.ogg'=1, 'modular_bluemoon/SmiLeY/sounds/tiamat_meow1.ogg'=1)

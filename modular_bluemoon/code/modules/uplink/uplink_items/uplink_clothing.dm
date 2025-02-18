@@ -37,5 +37,3 @@
 	item = /obj/item/mod/module/emp_shield/advanced
 	cost = 6
 	purchasable_from = (UPLINK_NUKE_OPS | UPLINK_CLOWN_OPS)
-
-
