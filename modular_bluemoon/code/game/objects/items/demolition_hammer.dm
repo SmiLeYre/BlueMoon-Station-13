@@ -1,9 +1,9 @@
 /obj/item/demolition_hammer	// https://en.wikipedia.org/wiki/Demolition_Hammer
 	name = "Demolition Hammer"
 	desc = "Chief Engineer's sledgehammer, also called \"the Molot\" in the USSP. The finest choice for tasks of demolishing something... Or someone."
-	icon = 'modular_bluemoon/silverfoxpaws_staff/icons/obj/items_and_weapons.dmi'
-	lefthand_file = 'modular_bluemoon/silverfoxpaws_staff/icons/mob/inhands/items_lefthand.dmi'
-	righthand_file = 'modular_bluemoon/silverfoxpaws_staff/icons/mob/inhands/items_righthand.dmi'
+	icon = 'modular_bluemoon/icons/obj/items_and_weapons.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/items_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/items_righthand.dmi'
 	icon_state = "dmolotred_0"
 	armor = list(MELEE = 0, BULLET = 0, LASER = 0, ENERGY = 0, BOMB = 0, BIO = 0, RAD = 0, FIRE = 100, ACID = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF

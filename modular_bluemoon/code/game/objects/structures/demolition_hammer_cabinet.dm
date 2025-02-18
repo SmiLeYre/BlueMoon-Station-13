@@ -1,7 +1,7 @@
 /obj/structure/fireaxecabinet/sledgehammercabinet
 	name = "Sledgehammer cabinet"
 	desc = "White pattern cabinet made with titanium, for storing some of Chief Engineer's \"heavy\" arguments."
-	icon = 'modular_bluemoon/silverfoxpaws_staff/icons/obj/hammer_wallmounts.dmi'
+	icon = 'modular_bluemoon/icons/obj/hammer_wallmounts.dmi'
 	icon_state = "dhammer"
 	max_integrity = 200
 	var/obj/item/demolition_hammer/hammer
