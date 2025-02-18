@@ -223,7 +223,6 @@
 	//BLUEMOON CHANGE нельзя вытащить из блендера банку когда он работает
 		if(operating)
 			to_chat(user, "<span class='warning'>[src] currently working!</span>")
-			replace_beaker(user)
 		else
 			replace_beaker(user)
 	//BLUEMOON CHANGE END
