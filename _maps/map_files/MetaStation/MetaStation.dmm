@@ -15603,10 +15603,9 @@
 /obj/effect/turf_decal/tile/red/opposingcorners{
 	dir = 1
 	},
-/obj/item/stack/sheet/glass{
-	amount = 20;
-	pixel_x = -3;
-	pixel_y = 6
+/obj/item/reagent_containers/rag{
+	pixel_x = 5;
+	pixel_y = -11
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/service/kitchen)
@@ -20385,6 +20384,11 @@
 	},
 /obj/structure/table,
 /obj/effect/turf_decal/tile/bar/opposingcorners,
+/obj/item/reagent_containers/food/condiment/milk{
+	pixel_x = 6;
+	pixel_y = 2
+	},
+/obj/item/reagent_containers/food/condiment/milk,
 /turf/open/floor/plasteel,
 /area/service/bar)
 "bJU" = (
@@ -67620,11 +67624,6 @@
 "mPv" = (
 /obj/structure/table/reinforced,
 /obj/effect/turf_decal/tile/bar/opposingcorners,
-/obj/item/reagent_containers/food/condiment/milk,
-/obj/item/reagent_containers/food/condiment/milk{
-	pixel_x = 6;
-	pixel_y = 2
-	},
 /turf/open/floor/plasteel,
 /area/service/bar)
 "mPQ" = (
