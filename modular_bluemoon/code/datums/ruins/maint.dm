@@ -23,6 +23,6 @@
 
 
 /obj/effect/landmark/stationroom/box/cargo_shuttle_shuttters
-	template_names = list("Shutters good integrity" = 5, "Shutters bad integrity" = 300, "Shutters lavaland" = 1, "Shutters cracked" = 1)
+	template_names = list("Shutters good integrity" = 5, "Shutters bad integrity" = 3, "Shutters lavaland" = 1, "Shutters cracked" = 1)
 	icon = 'icons/mob/landmarks.dmi'
 	icon_state = "x"
