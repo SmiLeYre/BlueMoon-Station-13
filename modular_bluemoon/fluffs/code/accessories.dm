@@ -207,3 +207,12 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
 	icon_state = "shoulder_coat"
 	item_state = "shoulder_coat"
+
+/obj/item/clothing/underwear/socks/savannah_piercing
+	name = "piercings and bracers"
+	desc = "A gold piercings and bracers."
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/accessories.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/accessories.dmi'
+	icon_state = "pier"
+	slot_flags = ITEM_SLOT_SOCKS
+	body_parts_covered = 0

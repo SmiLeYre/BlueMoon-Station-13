@@ -152,3 +152,13 @@
 	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
 	squeak_override = list('modular_bluemoon/SmiLeY/sounds/tiamat_mrrp1.ogg'=1,'modular_bluemoon/SmiLeY/sounds/tiamat_mrrp2.ogg'=1, 'modular_bluemoon/SmiLeY/sounds/tiamat_meow1.ogg'=1)
+
+/obj/item/toy/plush/plushy_savannah
+	name = "Plushy Savannah"
+	desc = "A plush felinigger for hard lesbian-sex and hugs."
+	icon_state = "savannah"
+	item_state = "savannah"
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
+	squeak_override = list('modular_bluemoon/sound/voice/moans.ogg' = 1)

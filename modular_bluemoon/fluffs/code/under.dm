@@ -188,9 +188,25 @@
 	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/underwear.dmi'
 	anthro_mob_worn_overlay = 'modular_bluemoon/fluffs/icons/mob/clothing/underwear.dmi'
 
+/obj/item/clothing/underwear/shirt/toggle/savannah_sleepwear
+	name = "sleepwear"
+	desc = "A sleepshirt. Fancy?"
+	icon_state = "savannah_sleepwear"
+	icon = 'modular_bluemoon/fluffs/icons/obj/clothing/underwear.dmi'
+	mob_overlay_icon = 'modular_bluemoon/fluffs/icons/mob/clothing/underwear.dmi'
+	togglename = "buttons"
+	body_parts_covered = CHEST | ARMS
+
 /obj/item/clothing/under/donator/bm/urban_misteran
 	name = "urban camouflage uniform"
 	desc = "an urban painted military suit, developed the Bibis&Co. Usually associated with CEHU and LonoMith PMC's"
 	icon_state = "urban_misteran"
 	item_state = "urban_misteran"
 	can_adjust = FALSE
+
+/obj/item/clothing/under/donator/bm/archangel_turtleneck
+    name = "Archangel Group turtleneck"
+    desc = "Archangel group turtleneck for special missions. Black and Stylish."
+    mutantrace_variation = STYLE_DIGITIGRADE | STYLE_NO_ANTHRO_ICON
+    icon_state = "arch_group_turtleneck"
+    item_state = "arch_group_turtleneck"

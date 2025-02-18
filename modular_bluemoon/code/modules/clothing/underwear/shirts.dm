@@ -42,13 +42,3 @@
     . += "Alt-click on [src] to toggle the [togglename]."
 
 //Copypaste ends
-
-/obj/item/clothing/underwear/shirt/toggle/savannah_sleepwear
-    name = "sleepwear"
-    desc = "A sleepshirt. Fancy?"
-    icon = 'modular_bluemoon/moscowthirdrome/icons/clothing/obj/sleepwear.dmi'
-    mob_overlay_icon = 'modular_bluemoon/moscowthirdrome/icons/clothing/mob/sleepwear.dmi'
-    icon_state = "sleepwear"
-    item_state = "sleepwear"
-    togglename = "buttons"
-    body_parts_covered = CHEST | ARMS
