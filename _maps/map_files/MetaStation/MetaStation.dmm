@@ -81060,12 +81060,12 @@
 	dir = 1
 	},
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
-/obj/machinery/door/airlock/public{
-	name = "Kitchen";
-	req_one_access_txt = "28;25"
-	},
 /obj/effect/turf_decal/siding/wood{
 	dir = 1
+	},
+/obj/machinery/door/airlock/public/glass{
+	name = "Kitchen";
+	req_one_access_txt = "28;25"
 	},
 /turf/open/floor/plasteel/cafeteria,
 /area/service/kitchen)
