@@ -1,9 +1,3 @@
-/obj/item/stamp/solgov
-	name = "dark blue rubber stamp"
-	icon_state = "stamp-cap"
-	on_paper_icon_state = "stamp-solgov"
-	dye_color = DYE_CAPTAIN
-
 /obj/item/stamp/replica
 	name = "rubber stamp replica"
 	icon_state = "stamp-ok"
@@ -19,8 +13,8 @@
 	name = "[quality_list[quality]][item] rubber stamp"
 	desc = "A rubber stamp for stamping important documents. [quality_desc[quality]]"
 	on_paper_icon_state = quality_stamps[quality]
-	
-/obj/item/stamp/replica/qm 
+
+/obj/item/stamp/replica/qm
 	name = "quartermaster's rubber stamp replica"
 	item = "quartermaster's"
 	quality_stamps = list("fake-gud-stamp-qm", "fake-mid-stamp-qm", "fake-bad-stamp-qm")
@@ -41,7 +35,7 @@
 	icon_state = "stamp-qm"
 	dye_color = DYE_QM
 
-/obj/item/stamp/replica/command 
+/obj/item/stamp/replica/command
 	name = "command rubber stamp replica"
 	item = "command"
 	quality_stamps = list("fake-gud-stamp-com", "fake-mid-stamp-com", "fake-bad-stamp-com")
@@ -60,6 +54,7 @@
 	item = "security's"
 	quality_stamps = list("fake-gud-stamp-hos", "fake-mid-stamp-hos", "fake-bad-stamp-hos")
 	icon_state = "stamp-qm"
+	icon = null
 	dye_color = DYE_QM
 
 /obj/item/stamp/replica/ce

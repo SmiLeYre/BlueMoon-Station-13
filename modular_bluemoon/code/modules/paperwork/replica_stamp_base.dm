@@ -1,8 +1,8 @@
 /obj/item/stamp_block
 	name = "wooden block"
 	desc = "A hatchet-hewn middle-sized wooden block. Too tough to carve anything out of."
-	icon = './modular_bluemoon/replica_stamps/icons/items.dmi'
-	icon_state = "block"
+	icon = 'modular_bluemoon/icons/obj/bureaucracy.dmi'
+	icon_state = "replica_stamp_block"
 
 /obj/item/stamp_block/attackby(obj/item/T, mob/user, params)
 	if(T.sharpness && T.force > 0)
@@ -21,8 +21,8 @@
 /obj/item/stamp_base
 	name = "wooden stamp base"
 	desc = "A blank stamp base, sloppily cut from a block of wood. It lacks any marking."
-	icon = './modular_bluemoon/replica_stamps/icons/items.dmi'
-	icon_state = "stamp"
+	icon = 'modular_bluemoon/icons/obj/bureaucracy.dmi'
+	icon_state = "replica_stamp_base"
 	custom_materials = list(/datum/material/wood=60)
 	pressure_resistance = 2
 	attack_verb = list("stamped")
@@ -30,28 +30,28 @@
 	var/current_step = 1
 	var/list/remarks = list(
 		"You cut the edges of the wooden stamp base.",
-		"You shape the handle of the wooden stamp base.", 
-		"You smooth the handle for a more comfortable grip.", 
-		"You carefully carve out the stamp pattern on the wooden stamp base.", 
+		"You shape the handle of the wooden stamp base.",
+		"You smooth the handle for a more comfortable grip.",
+		"You carefully carve out the stamp pattern on the wooden stamp base.",
 		"You cut off excess wood and blow away any leftover wood chips."
 		)
 	var/list/types = list(
-		"quartermaster's stamp" = /obj/item/stamp/replica/qm, 
-		"law office stamp" = /obj/item/stamp/replica/law, 
-		"captain's stamp" = /obj/item/stamp/replica/captain, 
-		"command's stamp" = /obj/item/stamp/replica/command, 
-		"head of personnel's stamp" = /obj/item/stamp/replica/hop, 
-		"head of security's stamp" = /obj/item/stamp/replica/hos, 
-		"chief engineer's stamp" = /obj/item/stamp/replica/ce, 
-		"research director's stamp" = /obj/item/stamp/replica/rd, 
-		"chief medical officer's stamp" = /obj/item/stamp/replica/cmo, 
-		"clown's stamp" = /obj/item/stamp/replica/clown, 
-		"syndicate stamp" = /obj/item/stamp/replica/syndicate, 
-		"NanoTrasen stamp" = /obj/item/stamp/replica/ntr, 
-		"warden's stamp" = /obj/item/stamp/replica/warden, 
+		"quartermaster's stamp" = /obj/item/stamp/replica/qm,
+		"law office stamp" = /obj/item/stamp/replica/law,
+		"captain's stamp" = /obj/item/stamp/replica/captain,
+		"command's stamp" = /obj/item/stamp/replica/command,
+		"head of personnel's stamp" = /obj/item/stamp/replica/hop,
+		"head of security's stamp" = /obj/item/stamp/replica/hos,
+		"chief engineer's stamp" = /obj/item/stamp/replica/ce,
+		"research director's stamp" = /obj/item/stamp/replica/rd,
+		"chief medical officer's stamp" = /obj/item/stamp/replica/cmo,
+		"clown's stamp" = /obj/item/stamp/replica/clown,
+		"syndicate stamp" = /obj/item/stamp/replica/syndicate,
+		"NanoTrasen stamp" = /obj/item/stamp/replica/ntr,
+		"warden's stamp" = /obj/item/stamp/replica/warden,
 		"security stamp" = /obj/item/stamp/replica/security
 		)
-	
+
 
 /obj/item/stamp_base/Initialize(mapload)
 	. = ..()
@@ -74,7 +74,7 @@
 	var/obj/stamp = new typefromlist
 	qdel(src)
 	user.put_in_hands(stamp)
-	
+
 
 /obj/item/stamp_base/attackby(obj/item/T, mob/user, params)
 	if(T.get_sharpness())
