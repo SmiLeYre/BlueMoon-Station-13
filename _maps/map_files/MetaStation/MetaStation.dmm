@@ -20900,7 +20900,7 @@
 	},
 /obj/machinery/door/window{
 	dir = 8;
-	req_access_txt = "25"
+	req_access_txt = "28"
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
@@ -21320,8 +21320,8 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/maintenance{
-	name = "Kitchen Maintenance";
-	req_one_access_txt = "35;28;25"
+	name = "Service Maintenance";
+	req_one_access_txt = "35;28;25;26"
 	},
 /turf/open/floor/plating,
 /area/maintenance/starboard)
@@ -60650,6 +60650,7 @@
 /area/security/prison/upper)
 "jIS" = (
 /obj/structure/dresser,
+/obj/machinery/light_switch/directional/south,
 /turf/open/floor/wood,
 /area/service/theater)
 "jIU" = (
@@ -79006,10 +79007,6 @@
 /obj/item/clothing/glasses/meson/engine,
 /turf/open/floor/plasteel,
 /area/engineering/main)
-"rWE" = (
-/obj/machinery/light_switch/directional/south,
-/turf/closed/wall,
-/area/service/theater)
 "rXs" = (
 /obj/machinery/door/airlock{
 	name = "Unit B"
@@ -131129,7 +131126,7 @@ bFA
 xze
 xze
 xze
-rWE
+xze
 oCU
 bPf
 oCU
