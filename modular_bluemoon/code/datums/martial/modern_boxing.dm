@@ -61,7 +61,7 @@
 	desc = "A pair of modern electronic fighting gloves. They do count the amount of times you strike and send a signal to the opponent's boxing gloves, \
 	as a sign of round end. Usually used in modern box matches to remove any strength advantages, leaving only technique. \
 	Some people find it less entertaining due lack of primal randomness."
-	icon = 'modular_bluemoon/honest_box/modern_boxing_gloves.dmi'
+	icon = 'modular_bluemoon/icons/obj/clothing/gloves.dmi'
 	icon_state = "modern_boxing_gloves_red"
 	style = new /datum/martial_art/modern_boxing
 	var/hits_done = 0
