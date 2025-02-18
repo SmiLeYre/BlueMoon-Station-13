@@ -4780,6 +4780,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 	character.dna.custom_species_lore = features["custom_species_lore"]
 	character.dna.flavor_text = features["flavor_text"]
 	character.dna.naked_flavor_text = features["naked_flavor_text"]
+	character.dna.headshot_links.Cut()
 	if (features["headshot_link"])
 		character.dna.headshot_links.Add(features["headshot_link"])
 	if (features["headshot_link1"])
