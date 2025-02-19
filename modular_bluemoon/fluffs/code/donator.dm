@@ -1230,3 +1230,16 @@
 	path = /obj/item/toy/plush/bm/plushy_savannah
 	ckeywhitelist = list("n1ght1ngale")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donator/bm/tavern_skirt
+	name = "Tavern skirt"
+	slot = ITEM_SLOT_ICLOTHING
+	path = /obj/item/clothing/under/donator/bm/tavern_skirt
+	ckeywhitelist = list("fedor1545")
+	subcategory = LOADOUT_SUBCATEGORIES_DON04
+
+/datum/gear/donator/bm/elf_bottle
+	name = "Potion bottle"
+	path = /obj/item/reagent_containers/glass/beaker/elf_bottle
+	ckeywhitelist = list("fedor1545")
+	subcategory = LOADOUT_SUBCATEGORIES_DON04

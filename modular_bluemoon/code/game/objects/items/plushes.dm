@@ -117,7 +117,6 @@
 /obj/item/toy/plush/bm/atmosian
 	name = "Atmosian Plushie"
 	desc = "Очаровательная мягкая игрушка, напоминающая храброго атмосианина. К сожалению, он не устранит разгерметизацию за вас."
-	icon = 'modular_bluemoon/icons/obj/plushes.dmi'
 	icon_state = "plush_atmosian"
 	attack_verb = list("thumped", "whomped", "bumped")
 	resistance_flags = FIRE_PROOF
@@ -223,3 +222,42 @@
 	desc = "Молчалив."
 	icon_state = "hank"
 	squeak_override = list('modular_bluemoon/sound/plush/grunt-kill.ogg' = 1)
+
+#define BASIC_NEKO_SKIN "Silly Neko Plushie"
+#define ANGRY_NEKO_SKIN "Angry Neko Plushie"
+/obj/item/toy/plush/bm/silly_neko_plushie
+	name = BASIC_NEKO_SKIN
+	desc = "Cмешная плюшевая игрушка в виде забавной кошки, на бирке написано 'Осторожно, дешёвый, радиоактивный материал может вызвать уменьшение члена'."
+	icon_state = "silly_neko_plushie"
+	attack_verb = list("meows", "nya", "purrs")
+	squeak_override = list('modular_bluemoon/sound/plush/nekoark/necoarc-nyeh.ogg',
+'modular_bluemoon/sound/plush/nekoark/necoarc-1.ogg',
+'modular_bluemoon/sound/plush/nekoark/necoarc-2.ogg',
+'modular_bluemoon/sound/plush/nekoark/necoarc-3.ogg',
+'modular_bluemoon/sound/plush/nekoark/necoarc-4.ogg',
+'modular_bluemoon/sound/plush/nekoark/necoarc-5.ogg' = 1)
+	always_reskinnable = TRUE
+	unique_reskin = list(
+		BASIC_NEKO_SKIN = list(RESKIN_ICON_STATE = "silly_neko_plushie", RESKIN_ITEM_STATE = "silly_neko_plushie"),
+		ANGRY_NEKO_SKIN = list(RESKIN_ICON_STATE = "angry__neko_plushie", RESKIN_ITEM_STATE = "angry__neko_plushie")
+	)
+	COOLDOWN_DECLARE(change_neko_cooldown)
+
+/obj/item/toy/plush/bm/silly_neko_plushie/reskin_obj(mob/user)
+	. = ..()
+	name = current_skin
+	if(COOLDOWN_FINISHED(src, change_neko_cooldown))
+		COOLDOWN_START(src, change_neko_cooldown, 6 SECONDS)
+		switch(current_skin)
+			if(BASIC_NEKO_SKIN)
+				say("Burunya")
+				playsound(src, 'modular_bluemoon/sound/plush/nekoark/burunya.ogg', 50, 1)
+			else
+				say("Dori dori dori dori")
+				playsound(src, 'modular_bluemoon/sound/plush/nekoark/neco-arc-dori.ogg', 50, 1)
+	if(ismob(loc))
+		var/mob/M = loc
+		M.update_inv_hands()
+
+#undef BASIC_NEKO_SKIN
+#undef ANGRY_NEKO_SKIN

@@ -1,5 +1,5 @@
 /obj/machinery/autolathe/makeshift
-	icon = 'modular_bluemoon/fedor1545/icons/clothing/obj/makeshift_autolathe.dmi'
+	icon = 'modular_bluemoon/icons/obj/makeshift_autolathe.dmi'
 	name = "makeshift autolathe"
 	desc = "It produces items using metal and glass."
 	icon_state = "autolathe"
