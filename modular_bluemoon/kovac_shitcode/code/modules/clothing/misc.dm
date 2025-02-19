@@ -125,30 +125,10 @@
 	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
 	path = /obj/item/clothing/neck/tie/bandagewraps
 
-/datum/gear/suit/suspenders
-	name = "Suspenders"
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	path = /obj/item/clothing/suit/suspenders
-
-/datum/gear/suit/suspenders_white
-	name = "White Suspenders"
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	path = /obj/item/clothing/suit/suspenders/suspenders_white
-
 /datum/gear/uniform/solfed_formal
 	name = "SolFed Formal Uniform"
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
 	path = /obj/item/clothing/under/rank/security/officer/formal/sol/armorless
-
-/datum/gear/suit/solfed_dress
-	name = "SolFed Dress"
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	path = /obj/item/clothing/suit/sol_dress
-
-/datum/gear/suit/nri_coat
-	name = "Russian Empire Coat"
-	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
-	path = /obj/item/clothing/suit/armor/nri_coat/armorless
 
 /datum/gear/neck/cape_blue
 	name = "Blue Cape"

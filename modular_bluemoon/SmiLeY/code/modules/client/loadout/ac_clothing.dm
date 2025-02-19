@@ -36,13 +36,6 @@
 	anthro_mob_worn_overlay = 'modular_bluemoon/SmiLeY/icons/mob/clothing/ac_clothing.dmi'
 	icon_state = "ac_coat"
 
-/datum/gear/suit/ac_armoredcoat
-	name = "AC Armored Coat"
-	path = /obj/item/clothing/suit/toggle/armor/hos/hos_formal/ac
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Head of Security, Warden, Blueshield."
-	restricted_roles = list("Head of Security", "Warden", "Blueshield")
-
 //					УНИФОРМА					//
 //					УНИФОРМА					//
 //					УНИФОРМА					//
