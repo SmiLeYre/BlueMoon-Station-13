@@ -4461,7 +4461,6 @@
 #include "modular_bluemoon\Gardelin0\code\clothing\loadout\gloves.dm"
 #include "modular_bluemoon\Gardelin0\code\clothing\loadout\item.dm"
 #include "modular_bluemoon\Gardelin0\code\clothing\loadout\mask.dm"
-#include "modular_bluemoon\Gardelin0\code\clothing\loadout\shoes.dm"
 #include "modular_bluemoon\Gardelin0\code\clothing\loadout\socks.dm"
 #include "modular_bluemoon\Gardelin0\code\clothing\loadout\suit.dm"
 #include "modular_bluemoon\Gardelin0\code\clothing\loadout\uniform.dm"
