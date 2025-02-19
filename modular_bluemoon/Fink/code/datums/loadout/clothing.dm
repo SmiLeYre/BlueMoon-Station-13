@@ -2,9 +2,6 @@
 	name = "Hijab"
 	path = /obj/item/clothing/mask/balaclava/breath/hijab
 
-/datum/gear/head/turban
-	name = "Turban"
-	path = /obj/item/clothing/head/turban
 
 /* Migrated to: modular_bluemoon/firstghost/code/datums/loadout/clothing
 /datum/gear/hands/lust_id

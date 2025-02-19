@@ -24,27 +24,6 @@
 	mob_overlay_icon = 'modular_bluemoon/SmiLeY/icons/mob/clothing/ac_clothing.dmi'
 	icon_state = "ac_beret"
 
-/datum/gear/head/ac_beret
-	name = "AC Beret"
-	path = /obj/item/clothing/head/beret/sec/ac
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
-	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
-
-/datum/gear/head/ac_cap
-	name = "AC Cap"
-	path = /obj/item/clothing/head/soft/sec/ac
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Brig Physician, Peacekeeper, Blueshield."
-	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Brig Physician", "Peacekeeper", "Blueshield")
-
-/datum/gear/head/ac_officercap
-	name = "AC Officer Cap"
-	path = /obj/item/clothing/head/warden/ac
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Head of Security, Warden, Blueshield."
-	restricted_roles = list("Head of Security", "Warden", "Blueshield")
-
 //					КОСТЮМЫ					//
 //					КОСТЮМЫ					//
 //					КОСТЮМЫ					//

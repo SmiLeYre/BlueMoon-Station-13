@@ -768,69 +768,6 @@
 	restricted_desc = "Brig Physician."
 	restricted_roles = list("Brig Physician")
 
-/datum/gear/head/helmet/mark45
-	name = "Mk. 45 Black Legionnaire helmet"
-	path = /obj/item/clothing/head/helmet/sec/mark45
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Peacekeeper, Blueshield."
-	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Peacekeeper", "Blueshield")
-
-/datum/gear/head/helmet/mark45_desert
-	name = "Mk. 45 Desert Hunter helmet"
-	path = /obj/item/clothing/head/helmet/sec/mark45_desert
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Peacekeeper, Blueshield."
-	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Peacekeeper", "Blueshield")
-
-/datum/gear/head/helmet/mark45_snow
-	name = "Mk. 45 Snow Cover helmet"
-	path = /obj/item/clothing/head/helmet/sec/mark45_snow
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Head of Security, Warden, Detective, Security Officer, Peacekeeper, Blueshield."
-	restricted_roles = list("Head of Security", "Warden", "Detective", "Security Officer", "Peacekeeper", "Blueshield")
-
-/datum/gear/head/helmet/mark45_anomalist
-	name = "Mk. 45 Anomalist helmet"
-	path = /obj/item/clothing/head/helmet/sec/mark45_anomalist
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Security Officer, Peacekeeper."
-	restricted_roles = list("Security Officer", "Peacekeeper")
-
-/datum/gear/head/helmet/mark45_combatengineer
-	name = "Mk. 45 Combat engineer helmet"
-	path = /obj/item/clothing/head/helmet/sec/mark45_combatengineer
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Security Officer, Peacekeeper."
-	restricted_roles = list("Security Officer", "Peacekeeper")
-
-/datum/gear/head/helmet/mark45_support
-	name = "Mk. 45 Support helmet"
-	path = /obj/item/clothing/head/helmet/sec/mark45_support
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Security Officer, Peacekeeper."
-	restricted_roles = list("Security Officer", "Peacekeeper")
-
-/datum/gear/head/HoS/mark45_officer
-	name = "Mk. 45 Officer helmet"
-	path = /obj/item/clothing/head/HoS/mark45_officer
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Head of Security, Blueshield."
-	restricted_roles = list("Head of Security", "Blueshield")
-
-/datum/gear/head/helmet/brigdoc/mark45_medic_l
-	name = "Mk. 45 light medic helmet"
-	path = /obj/item/clothing/head/helmet/brigdoc/mark45_medic_l
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Brig Physician."
-	restricted_roles = list("Brig Physician")
-
-/datum/gear/head/helmet/brigdoc/mark45_medic_h
-	name = "Mk. 45 heavy medic helmet"
-	path = /obj/item/clothing/head/helmet/brigdoc/mark45_medic_h
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Brig Physician."
-	restricted_roles = list("Brig Physician")
-
 /datum/gear/uniform/catcrin_combat_medic_uniform_blue
 	name = "Catcrin blue combat medic uniform"
 	path = /obj/item/clothing/under/rank/brigdoc/catcrin_combat_medic_uniform_blue

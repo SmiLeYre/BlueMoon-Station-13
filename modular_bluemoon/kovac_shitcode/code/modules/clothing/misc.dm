@@ -135,12 +135,6 @@
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	path = /obj/item/clothing/suit/suspenders/suspenders_white
 
-/datum/gear/head/syndicate_cap
-	name = "Syndicate Cap"
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_JOBS
-	path = /obj/item/clothing/head/HoS/syndicate
-	restricted_roles = list("Captain","Head of Security")
-
 /datum/gear/uniform/solfed_formal
 	name = "SolFed Formal Uniform"
 	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
@@ -155,21 +149,6 @@
 	name = "Russian Empire Coat"
 	subcategory = LOADOUT_SUBCATEGORY_SUIT_JACKETS
 	path = /obj/item/clothing/suit/armor/nri_coat/armorless
-
-/datum/gear/head/sol_beret
-	name = "SolFed Beret"
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	path = /obj/item/clothing/head/HoS/beret/sol/plain/armorless
-
-/datum/gear/head/sol_cap
-	name = "SolFed Cap"
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	path = /obj/item/clothing/head/HoS/beret/sol/cap/armorless
-
-/datum/gear/head/nri_cap
-	name = "Russian Empire Cap"
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	path = /obj/item/clothing/head/HoS/beret/nri/cap/armorless
 
 /datum/gear/neck/cape_blue
 	name = "Blue Cape"
@@ -192,11 +171,6 @@
 	path = /obj/item/clothing/neck/cloak/nri_cape
 
 // start bluemoon edit - Katana Zero
-
-/datum/gear/head/chronos_beret
-	name = "New Mecca Beret"
-	subcategory = LOADOUT_SUBCATEGORY_HEAD_GENERAL
-	path = /obj/item/clothing/head/beret/chronos
 
 /datum/gear/uniform/chronos_uniform
 	name = "New Mecca Uniform"
