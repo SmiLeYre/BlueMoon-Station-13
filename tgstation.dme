@@ -4458,7 +4458,6 @@
 #include "modular_bluemoon\Gardelin0\code\clothing\wrists.dm"
 #include "modular_bluemoon\Gardelin0\code\clothing\loadout\backpack.dm"
 #include "modular_bluemoon\Gardelin0\code\clothing\loadout\item.dm"
-#include "modular_bluemoon\Gardelin0\code\clothing\loadout\socks.dm"
 #include "modular_bluemoon\Gardelin0\code\clothing\loadout\wrists.dm"
 #include "modular_bluemoon\Gardelin0\code\clothing\misc\alt_suits.dm"
 #include "modular_bluemoon\Gardelin0\code\clothing\underwear\portals.dm"

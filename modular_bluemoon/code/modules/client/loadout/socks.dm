@@ -61,3 +61,39 @@
 /datum/gear/socks/poly_garter_faux
 	name = "Faux Polychromic Garters"
 	path = /obj/item/clothing/underwear/socks/thigh/stockings/poly_garter_faux
+
+/datum/gear/socks/socks_garterbelt
+	name = "Polychromic Socks Garterbelt"
+	path = /obj/item/clothing/underwear/socks/thigh/stockings/socks_garterbelt
+
+/datum/gear/socks/stocking_2strip
+	name = "Polychromic Two Strip Stocking"
+	path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_2strip
+
+/datum/gear/socks/stocking_checkered
+	name = "Polychromic Checkered Stocking"
+	path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_checkered
+
+/datum/gear/socks/stocking_1strip
+	name = "Polychromic One Strip Stocking"
+	path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_1strip
+
+/datum/gear/socks/stocking_line
+	name = "Polychromic Line Stocking"
+	path = /obj/item/clothing/underwear/socks/thigh/stockings/stocking_line
+
+/datum/gear/socks/socks_2strip
+	name = "Polychromic Two Strip Socks"
+	path = /obj/item/clothing/underwear/socks/socks_2strip
+
+/datum/gear/socks/socks_checkered
+	name = "Polychromic Checkered Socks"
+	path = /obj/item/clothing/underwear/socks/socks_checkered
+
+/datum/gear/socks/socks_2strip
+	name = "Polychromic Two Strip Socks"
+	path = /obj/item/clothing/underwear/socks/socks_2strip
+
+/datum/gear/socks/socks_line
+	name = "Polychromic Line Socks"
+	path = /obj/item/clothing/underwear/socks/socks_line
