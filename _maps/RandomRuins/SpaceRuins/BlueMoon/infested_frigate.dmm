@@ -2480,7 +2480,7 @@
 /obj/machinery/nuclearbomb/beer,
 /obj/item/toy/figure,
 /obj/item/toy/figure/inteq,
-/obj/item/toy/plush/hank,
+/obj/item/toy/plush/bm/hank,
 /obj/item/book/granter/crafting_recipe/trash_cannon,
 /turf/open/floor/plating,
 /area/ruin/space/has_grav/powered/infestedship)

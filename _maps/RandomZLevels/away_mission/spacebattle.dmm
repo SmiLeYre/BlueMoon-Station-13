@@ -3783,7 +3783,7 @@
 /turf/open/floor/iron/dark,
 /area/awaymission/spacebattle/syndicate1)
 "oM" = (
-/obj/item/toy/plush/silly_neko_plushie,
+/obj/item/toy/plush/bm/silly_neko_plushie,
 /obj/item/slime_cookie/gold,
 /turf/open/floor/mineral/gold,
 /area/awaymission/spacebattle/secret)

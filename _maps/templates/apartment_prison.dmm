@@ -957,7 +957,7 @@
 /area/hilbertshotel)
 "CS" = (
 /obj/structure/chair/office/dark,
-/obj/item/toy/plush/silly_neko_plushie{
+/obj/item/toy/plush/bm/silly_neko_plushie{
 	pixel_y = 6;
 	pixel_x = 3
 	},
