@@ -28153,7 +28153,7 @@
 	name = "Radiation Chamber Shutters"
 	},
 /obj/structure/table,
-/obj/item/toy/plush/shark{
+/obj/item/toy/plush/bm/shark{
 	name = "Инженерная Акула";
 	desc = "Чернаяакулка. Цветпиздоблядскийведьперепуталиназаводе. 'ТЫ ГДЕ БЛЯТЬ ПРОЕБАЛ ПРОВОД ДО АПЦ В МЕДИБЕЕ И БРИГЕ? ЗАЧЕМ В ИНЖЕНЕРКЕ, ГДЕ ВСЕГО 1 ЗОНА, - 3 АПЦ?!?!'"
 	},

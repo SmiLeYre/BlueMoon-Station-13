@@ -4415,7 +4415,7 @@
 "zy" = (
 /obj/structure/railing,
 /obj/structure/reagent_dispensers/fueltank/limitka,
-/obj/item/toy/plush/mammal/fox/emma/aiko,
+/obj/item/toy/plush/bm/emma/aiko,
 /turf/open/floor/plasteel/dark,
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "zz" = (
@@ -5175,7 +5175,7 @@
 /area/ruin/space/has_grav/inteq_forgotten_ship)
 "DG" = (
 /obj/structure/table/reinforced,
-/obj/item/toy/plush/nukeplushie/who,
+/obj/item/toy/plush/bm/who,
 /turf/open/floor/mineral/plastitanium,
 /area/ruin/space/has_grav/inteq_forgotten_bridge)
 "DI" = (
