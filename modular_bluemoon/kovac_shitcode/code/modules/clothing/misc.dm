@@ -125,11 +125,6 @@
 	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
 	path = /obj/item/clothing/neck/tie/bandagewraps
 
-/datum/gear/uniform/solfed_formal
-	name = "SolFed Formal Uniform"
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
-	path = /obj/item/clothing/under/rank/security/officer/formal/sol/armorless
-
 /datum/gear/neck/cape_blue
 	name = "Blue Cape"
 	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
@@ -151,11 +146,6 @@
 	path = /obj/item/clothing/neck/cloak/nri_cape
 
 // start bluemoon edit - Katana Zero
-
-/datum/gear/uniform/chronos_uniform
-	name = "New Mecca Uniform"
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_SUITS
-	path = /obj/item/clothing/under/chronos
 
 /datum/gear/neck/chronos_cape
 	name = "New Mecca Cape"

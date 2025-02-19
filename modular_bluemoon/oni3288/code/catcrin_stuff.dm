@@ -705,20 +705,6 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////ДАТУМы.
 
-/datum/gear/uniform/catcrin_combat_medic_uniform_blue
-	name = "Catcrin blue combat medic uniform"
-	path = /obj/item/clothing/under/rank/brigdoc/catcrin_combat_medic_uniform_blue
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Brig Physician."
-	restricted_roles = list("Brig Physician")
-
-/datum/gear/uniform/catcrin_combat_medic_uniform_green
-	name = "Catcrin green combat medic uniform"
-	path = /obj/item/clothing/under/rank/brigdoc/catcrin_combat_medic_uniform_green
-	subcategory = LOADOUT_SUBCATEGORY_UNIFORM_JOBS
-	restricted_desc = "Brig Physician."
-	restricted_roles = list("Brig Physician")
-
 /datum/gear/donator/bm/catcrin_combatmask_one
 	name = "First Catcrin's tactical gasmask"
 	slot = ITEM_SLOT_BACKPACK
