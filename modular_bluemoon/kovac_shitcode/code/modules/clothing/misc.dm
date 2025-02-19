@@ -154,21 +154,6 @@
 
 // end bluemoon edit - Katana Zero
 
-/datum/gear/backpack/flag
-	name = "Flag"
-	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
-	path = /obj/item/sign/flag
-
-/datum/gear/backpack/sol_poster
-	name = "SolFed poster"
-	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
-	path = /obj/item/poster/sol
-
-/datum/gear/backpack/nri_poster
-	name = "NRI poster"
-	subcategory = LOADOUT_SUBCATEGORY_BACKPACK_GENERAL
-	path = /obj/item/poster/nri
-
 /obj/item/card/id/sol_citizen
 	name = "SolFed Citizen ID"
 	desc = "An ID made to recognize Solar Federation habbitants and tourists."
