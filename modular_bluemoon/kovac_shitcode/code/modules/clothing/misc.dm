@@ -114,44 +114,6 @@
 	icon = 'modular_bluemoon/kovac_shitcode/icons/obj/clothing/misc.dmi'
 	mob_overlay_icon = 'modular_bluemoon/kovac_shitcode/icons/mob/clothing/misc.dmi'
 
-/// loadout additions
-/datum/gear/neck/cross
-	name = "Christian Cross Necklace"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
-	path = /obj/item/clothing/neck/tie/cross
-
-/datum/gear/neck/bandagewraps
-	name = "Bandage wraps"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_TIE
-	path = /obj/item/clothing/neck/tie/bandagewraps
-
-/datum/gear/neck/cape_blue
-	name = "Blue Cape"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
-	path = /obj/item/clothing/neck/cloak/cape_blue
-
-/datum/gear/neck/armplate_blue
-	name = "Blue Armplate"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
-	path =/obj/item/clothing/neck/cloak/armplate_blue
-
-/datum/gear/neck/sol_cape
-	name = "SolFed Cape"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
-	path = /obj/item/clothing/neck/cloak/cape
-
-/datum/gear/neck/nri_cape
-	name = "Russian Empire Cape"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
-	path = /obj/item/clothing/neck/cloak/nri_cape
-
-// start bluemoon edit - Katana Zero
-
-/datum/gear/neck/chronos_cape
-	name = "New Mecca Cape"
-	subcategory = LOADOUT_SUBCATEGORY_NECK_GENERAL
-	path = /obj/item/clothing/neck/cloak/chronos
-
 // end bluemoon edit - Katana Zero
 
 /obj/item/card/id/sol_citizen
