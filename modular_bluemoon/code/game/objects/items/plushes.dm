@@ -46,9 +46,9 @@
 	desc = "An adorable stuffed toy resembling a vulp."
 	icon_state = "emma"
 	item_state = "emma"
-	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
-	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
-	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
 
 /obj/item/toy/plush/mammal/fox/emma/shiro
 	name = "Shiro plushie"
@@ -100,11 +100,11 @@
 /obj/item/toy/plush/mammal/tiamat
 	name = "Tiamat plushie"
 	desc = "Some cat-like plushie. Oh, his eyes shining!"
-	icon = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps.dmi'
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
 	icon_state = "tiamat"
 	item_state = "tiamat"
-	lefthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_l.dmi'
-	righthand_file = 'modular_bluemoon/kovac_shitcode/icons/vulps/vulps_r.dmi'
 	squeak_override = list(
 	'modular_splurt/sound/voice/mrowl.ogg' = 1,
 	'modular_splurt/sound/voice/meow_meme.ogg' = 1,
@@ -162,3 +162,116 @@
 	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
 	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
 	squeak_override = list('modular_bluemoon/sound/voice/moans.ogg' = 1)
+
+/obj/item/toy/plush/chaotic_toaster/gaston
+	name = "Gaston"
+	desc = "Игрушка фиолетового цвета, её хозяин кажется так сильно любит фиолетовый, что красит буквально всё в этот цвет. Также эта игрушка кого-то явно напоминает из сотрудников на станции."
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	icon_state = "gaston_toaster"
+	attack_verb = list("beeped", "booped", "pinged")
+	squeak_override = list('sound/machines/beep.ogg' = 1)
+
+/obj/item/toy/plush/grayson
+	name = "Grayson plush"
+	desc = "дорогая плюшевая игрушка! Сделана явно на заказ (и явно любителем прятатся в шкафах)"
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
+	icon_state = "grayson"
+	item_state = "grayson"
+	squeak_override = list('modular_bluemoon/sound/voice/graysonplush.ogg'=1)
+
+/obj/item/toy/plush/nukeplushie/who
+	name = "security officer plushie"
+	desc = "A stuffed toy that resembles a Nanotrasen operative. He smells like burnt cotton."
+	icon_state = "who"
+	item_state = "who"
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
+	squeak_override = list('modular_bluemoon/sound/plush/plush_1.ogg' = 9, 'modular_bluemoon/sound/plush/plush_2.ogg' = 1)
+
+/obj/item/toy/plush/deer/qm
+	name = "supply chief plushie"
+	desc = "A stuffed toy that resembles a Cargonia Chief. Looks like a fallen economy."
+	icon_state = "qm"
+	item_state = "qm"
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
+
+/obj/item/toy/plush/sergal/judas
+	name = "yellow shark plushie"
+	desc = "An adorable stuffed plushie that resembles a yellow security shark."
+	icon_state = "judas"
+	item_state = "judas"
+	squeak_override = list('modular_splurt/sound/voice/barks/undertale/voice_alphys.ogg' = 9)
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
+
+/obj/item/toy/plush/nukeplushie/omega
+	name = "Omega plushie"
+	desc = "This plushie really has an empty noggin and zero thoughts about commiting something especially cruel."
+	icon_state = "omega"
+	item_state = "omega"
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	squeak_override = list('modular_bluemoon/sound/plush/ooh.ogg' = 9)
+
+/obj/item/toy/plush/sergal/judas/vance
+	name = "Vance plushie"
+	desc = "A plush rodent, she smells like cheese and xenobiology!"
+	icon_state = "vance"
+	item_state = "vance"
+	squeak_override = list('sound/items/toysqueak1.ogg' = 3, 'sound/items/toysqueak2.ogg' = 3, 'sound/items/toysqueak3.ogg' = 3)
+
+/obj/item/toy/plush/bao
+	name = "Stupid cat plush"
+	desc = "Every time you hug this toy, your IQ drops, but is it worth stopping because of this?."
+	icon_state = "plushie_bao"
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
+	squeak_override = list('modular_bluemoon/sound/plush/bao_sex.ogg'=1)
+
+/obj/item/toy/plush/asgore
+	name = "Bergentrückung plushie"
+	desc = "Король подземной сказки."
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	icon_state = "asgore"
+	item_state = "asgore"
+	squeak_override = list('modular_bluemoon/sound/plush/savepoint.ogg' = 1)
+
+/obj/item/toy/plush/cirno
+	name = "Cirno plushie"
+	desc = "Чирно? Сырно? Даже она не знает как правильно произносить."
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	icon_state = "cirno"
+	item_state = "cirno"
+	squeak_override = list('modular_bluemoon/sound/plush/baka-cirno.ogg' = 1)
+
+/obj/item/toy/plush/doctor_k
+	name = "Doctor K plushie"
+	desc = "Это не входило в его планы."
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	icon_state = "doctor_k"
+	item_state = "doctor_k"
+	squeak_override = list('modular_bluemoon/sound/plush/miss.ogg' = 1)
+
+/obj/item/toy/plush/puro
+	name = "Puro plushie"
+	desc = "Он любит читать книжки."
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	icon_state = "puro"
+	item_state = "puro"
+	squeak_override = list('modular_bluemoon/sound/plush/jump.ogg' = 1)
+
+/obj/item/toy/plush/hank
+	name = "Hank plushie"
+	desc = "Молчалив."
+	icon = 'modular_bluemoon/icons/obj/toys/plushes.dmi'
+	lefthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_lefthand.dmi'
+	righthand_file = 'modular_bluemoon/icons/mob/inhands/items/plushes_righthand.dmi'
+	icon_state = "hank"
+	item_state = "hank"
+	squeak_override = list('modular_bluemoon/sound/plush/grunt-kill.ogg' = 1)
