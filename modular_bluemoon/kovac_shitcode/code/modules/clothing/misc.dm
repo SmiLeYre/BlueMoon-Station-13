@@ -178,21 +178,6 @@
 	uses_overlays = FALSE
 	card_sticker = TRUE
 
-/datum/gear/hands/sol_citizen
-	name = "Solar Federation Citizen ID"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/card/id/sol_citizen
-
-/datum/gear/hands/nri_citizen
-	name = "New Russian Empire Citizen ID"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/card/id/nri_citizen
-
-/datum/gear/hands/blumenland_citizen
-	name = "Blumenland Citizen ID"
-	slot = ITEM_SLOT_BACKPACK
-	path = /obj/item/card/id/blumenland_citizen
-
 //// The default nun robe change to uniform slot
 
 
