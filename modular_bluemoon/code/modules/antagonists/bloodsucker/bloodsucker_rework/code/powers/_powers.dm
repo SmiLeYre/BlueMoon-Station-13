@@ -1,9 +1,9 @@
 /datum/action/cooldown/bloodsucker
 	name = "Vampiric Gift"
 	desc = "A vampiric gift."
-	background_icon = 'modular_bluemoon/bloodsucker_rework/icons/actions_bloodsucker.dmi'
+	background_icon = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/actions_bloodsucker.dmi'
 	background_icon_state = "vamp_power_off"
-	button_icon = 'modular_bluemoon/bloodsucker_rework/icons/actions_bloodsucker.dmi'
+	button_icon = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/actions_bloodsucker.dmi'
 	button_icon_state = "power_feed"
 	buttontooltipstyle = "cult"
 	transparent_when_unavailable = TRUE

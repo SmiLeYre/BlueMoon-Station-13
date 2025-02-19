@@ -11,7 +11,7 @@
 	show_in_antagpanel = FALSE
 	silent = TRUE
 	ui_name = FALSE
-	hud_icon = 'modular_bluemoon/bloodsucker_rework/icons/bloodsucker_icons.dmi'
+	hud_icon = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/bloodsucker_icons.dmi'
 
 	///The revenge vassal that brought us into the fold.
 	var/datum/antagonist/vassal/revenge/revenge_vassal

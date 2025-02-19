@@ -18,4 +18,4 @@
 		)
 
 	icon_state = "bloodsucker"
-	icon = 'modular_bluemoon/bloodsucker_rework/icons/vampiric.dmi'
+	icon = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/vampiric.dmi'

@@ -169,10 +169,10 @@
 	name = "blood shield"
 	desc = "A shield made out of blood, requiring blood to sustain hits."
 	item_flags = ABSTRACT | DROPDEL
-	icon = 'modular_bluemoon/bloodsucker_rework/icons/vamp_obj.dmi'
+	icon = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/vamp_obj.dmi'
 	icon_state = "blood_shield"
-	lefthand_file = 'modular_bluemoon/bloodsucker_rework/icons/bs_leftinhand.dmi'
-	righthand_file = 'modular_bluemoon/bloodsucker_rework/icons/bs_rightinhand.dmi'
+	lefthand_file = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/bs_leftinhand.dmi'
+	righthand_file = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/bs_rightinhand.dmi'
 	block_chance = 75
 
 /obj/item/shield/bloodsucker/Initialize()

@@ -8,7 +8,7 @@
 	show_name_in_check_antagonists = TRUE
 	can_coexist_with_others = FALSE
 	hijack_speed = 0.5
-	hud_icon = 'modular_bluemoon/bloodsucker_rework/icons/bloodsucker_icons.dmi'
+	hud_icon = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/bloodsucker_icons.dmi'
 	ui_name = "AntagInfoBloodsucker"
 	preview_outfit = /datum/outfit/bloodsucker_outfit
 	tip_theme = "spookyconsole"
@@ -264,7 +264,7 @@
 	owner.announce_objectives()
 	if(bloodsucker_level_unspent >= 2)
 		to_chat(owner, span_announce("As a latejoiner, you have [bloodsucker_level_unspent] bonus Ranks, entering your claimed coffin allows you to spend a Rank."))
-	owner.current.playsound_local(null, 'modular_bluemoon/bloodsucker_rework/sounds/BloodsuckerAlert.ogg', 100, FALSE, pressure_affected = FALSE)
+	owner.current.playsound_local(null, 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/sounds/BloodsuckerAlert.ogg', 100, FALSE, pressure_affected = FALSE)
 	antag_memory += "Although you were born a mortal, in undeath you earned the name <b>[fullname]</b>.<br>"
 
 /datum/antagonist/bloodsucker/farewell()

@@ -12,8 +12,8 @@
 	background_icon_state = "tremere_power_off"
 	active_background_icon_state = "tremere_power_on"
 	base_background_icon_state = "tremere_power_off"
-	button_icon = 'modular_bluemoon/bloodsucker_rework/icons/actions_tremere_bloodsucker.dmi'
-	background_icon = 'modular_bluemoon/bloodsucker_rework/icons/actions_tremere_bloodsucker.dmi'
+	button_icon = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/actions_tremere_bloodsucker.dmi'
+	background_icon = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/actions_tremere_bloodsucker.dmi'
 
 	// Tremere powers don't level up, we have them hardcoded.
 	level_current = 0

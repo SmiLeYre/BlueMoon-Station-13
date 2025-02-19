@@ -100,11 +100,11 @@
 /obj/item/stake
 	name = "wooden stake"
 	desc = "A simple wooden stake carved to a sharp point."
-	icon = 'modular_bluemoon/bloodsucker_rework/icons/stakes.dmi'
+	icon = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/stakes.dmi'
 	icon_state = "wood"
 	inhand_icon_state = "wood"
-	lefthand_file = 'modular_bluemoon/bloodsucker_rework/icons/bs_leftinhand.dmi'
-	righthand_file = 'modular_bluemoon/bloodsucker_rework/icons/bs_rightinhand.dmi'
+	lefthand_file = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/bs_leftinhand.dmi'
+	righthand_file = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/bs_rightinhand.dmi'
 	slot_flags = ITEM_SLOT_POCKETS
 	w_class = WEIGHT_CLASS_SMALL
 	hitsound = 'sound/weapons/bladeslice.ogg'
@@ -215,9 +215,9 @@
 	name = "\improper Archive of the Kindred"
 	starting_title = "the Archive of the Kindred"
 	desc = "Cryptic documents explaining hidden truths behind Undead beings. It is said only Curators can decipher what they really mean."
-	icon = 'modular_bluemoon/bloodsucker_rework/icons/vamp_obj.dmi'
-	lefthand_file = 'modular_bluemoon/bloodsucker_rework/icons/bs_leftinhand.dmi'
-	righthand_file = 'modular_bluemoon/bloodsucker_rework/icons/bs_rightinhand.dmi'
+	icon = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/vamp_obj.dmi'
+	lefthand_file = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/bs_leftinhand.dmi'
+	righthand_file = 'modular_bluemoon/code/modules/antagonists/bloodsucker/bloodsucker_rework/icons/bs_rightinhand.dmi'
 	icon_state = "kindred_book"
 	starting_author = "dozens of generations of Curators"
 	unique = TRUE
