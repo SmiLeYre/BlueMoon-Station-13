@@ -335,13 +335,6 @@
 	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
 
 /////// Заказ Алхимика. ///////
-// Общие шмотки в лодаут:
-
-/datum/gear/mask/pipe
-	name = "Smoking Pipe"
-	path = /obj/item/clothing/mask/cigarette/pipe
-	loadout_flags = LOADOUT_CAN_NAME | LOADOUT_CAN_DESCRIPTION
-
 // Рескин шмоток:
 
 /obj/item/paper/book_alch
