@@ -1230,3 +1230,10 @@
 	path = /obj/item/toy/plush/plushy_savannah
 	ckeywhitelist = list("n1ght1ngale")
 	subcategory = LOADOUT_SUBCATEGORIES_DON02
+
+/datum/gear/donatom/bm/pet_jruttie
+	name = "Jruttie Cat"
+	slot = ITEM_SLOT_BACKPACK
+	path = /obj/item/choice_beacon/pet/jruttie
+	ckeywhitelist = list("scramblescream", "nai1ten")
+	subcategory = LOADOUT_SUBCATEGORIES_DON02
